@@ -1,0 +1,22 @@
+{
+  "name": "source-factory-core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Reusable Source Factory automation core for GitHub queue, worker reports, artifact ledger, and local runner.",
+  "type": "module",
+  "scripts": {
+    "check:js": "node --check src/queue/dailyQueueReader.js && node --check src/collector/workerReportExtractor.js && node --check src/gate/statusClassifier.js",
+    "smoke:status": "node src/gate/statusClassifier.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "source-factory",
+    "github-queue",
+    "worker-report",
+    "artifact-ledger",
+    "automation"
+  ],
+  "license": "UNLICENSED"
+}
