@@ -1,0 +1,32 @@
+{
+  "state_id": "SOURCE_FACTORY_CORE_MIGRATION_RUN_STATE_20260730",
+  "created_at_local": "2026-07-30T17:08:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "purpose": "Migrate reusable Source Factory sources to GitHub and route large artifacts to Google Drive pointers.",
+  "parallel_product_track": "gas_station_professional_portal",
+  "pc_agent_model": {
+    "commander_count": 4,
+    "workers_per_commander": 6,
+    "total_worker_slots": 24,
+    "routing_authority": "GitHub directive / queue / receipt ledger",
+    "delivery_pattern": "commander_request_to_worker_prompt_to_worker_output_to_commander_receipt"
+  },
+  "current_step": "001_SOURCE_FACTORY_LOCAL_SOURCE_INVENTORY_SCAN",
+  "current_status": "LOCAL_EXECUTION_REQUIRED",
+  "created_github_files": [
+    "tools/source_factory_local_inventory_scan.ps1",
+    "daily_queue/2026-07-30/001_SOURCE_FACTORY_LOCAL_SOURCE_INVENTORY_EXECUTION.md"
+  ],
+  "local_scan_roots": [
+    "D:\\SOURCE FACTORY",
+    "E:\\YOLLA"
+  ],
+  "github_storage_policy": "small reusable source, docs, templates, ledgers, reports",
+  "google_drive_storage_policy": "large ZIP, DB dump, evidence bundle, raw data, binary artifacts",
+  "next_needed": [
+    "User or PC Agent runs tools/source_factory_local_inventory_scan.ps1 on local PC",
+    "Submit generated WORKER_REPORT.md and inventory reports",
+    "Commander selects P0 reusable source files for first migration batch",
+    "Large artifact pointers are created for Google Drive assets"
+  ]
+}
