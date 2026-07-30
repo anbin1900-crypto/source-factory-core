@@ -25,7 +25,7 @@ Safety:
 
 Hotfix notes:
   - Classification uses ASCII-only Contains() checks instead of regex.
-  - This avoids Windows PowerShell locale/encoding regex failures.
+  - Uses ArrayList with explicit [void] Add() calls to avoid PowerShell Generic.List conversion failures.
 #>
 
 param(
@@ -41,6 +41,7 @@ function Test-ContainsAny {
     [string]$Text,
     [string[]]$Needles
   )
+  if ($null -eq $Text) { return $false }
   foreach ($needle in $Needles) {
     if ($Text.Contains($needle)) { return $true }
   }
@@ -112,12 +113,12 @@ $includeExtensions = @(
 
 $excludeDirTokens = @("\node_modules\", "\.git\", "\dist\", "\build\", "\coverage\", "\.next\")
 
-$items = New-Object System.Collections.Generic.List[object]
-$missingRoots = New-Object System.Collections.Generic.List[string]
+$items = New-Object System.Collections.ArrayList
+$missingRoots = New-Object System.Collections.ArrayList
 
 foreach ($root in $Roots) {
   if (-not (Test-Path -LiteralPath $root)) {
-    $missingRoots.Add($root)
+    [void]$missingRoots.Add($root)
     continue
   }
 
@@ -125,9 +126,14 @@ foreach ($root in $Roots) {
     $full = $_.FullName
     $fullLower = $full.ToLowerInvariant()
 
+    $skip = $false
     foreach ($token in $excludeDirTokens) {
-      if ($fullLower.Contains($token)) { return }
+      if ($fullLower.Contains($token)) {
+        $skip = $true
+        break
+      }
     }
+    if ($skip) { return }
 
     $ext = $_.Extension.ToLowerInvariant()
     if ($includeExtensions -notcontains $ext) { return }
@@ -136,7 +142,7 @@ foreach ($root in $Roots) {
     $category = Get-Category -Path $full -Extension $ext
     $storage = Get-StorageTarget -Size $_.Length -Extension $ext
 
-    $items.Add([pscustomobject]@{
+    [void]$items.Add([pscustomobject]@{
       source_path = $full
       file_name = $_.Name
       extension = $ext
@@ -150,7 +156,12 @@ foreach ($root in $Roots) {
   }
 }
 
-$itemsArray = @($items)
+$itemsArray = @()
+foreach ($item in $items) { $itemsArray += $item }
+
+$missingRootsArray = @()
+foreach ($missingRoot in $missingRoots) { $missingRootsArray += $missingRoot }
+
 $large = @($itemsArray | Where-Object { $_.storage_target -like "GOOGLE_DRIVE*" })
 $githubCandidates = @($itemsArray | Where-Object { $_.storage_target -eq "GITHUB_SOURCE_REPO" })
 
@@ -165,7 +176,7 @@ $itemsArray | Sort-Object category, source_path | Export-Csv -NoTypeInformation 
 $summary = [pscustomobject]@{
   generated_at = (Get-Date).ToString("o")
   roots = $Roots
-  missing_roots = @($missingRoots)
+  missing_roots = $missingRootsArray
   total_files = $itemsArray.Count
   github_candidate_count = $githubCandidates.Count
   large_or_binary_pointer_count = $large.Count
@@ -194,11 +205,11 @@ $md += "|---|---:|"
 $md += "| Total scanned files | $($itemsArray.Count) |"
 $md += "| GitHub source candidates | $($githubCandidates.Count) |"
 $md += "| Google Drive pointer candidates | $($large.Count) |"
-$md += "| Missing roots | $($missingRoots.Count) |"
+$md += "| Missing roots | $($missingRootsArray.Count) |"
 $md += ""
 $md += "## Missing Roots"
 $md += ""
-if ($missingRoots.Count -eq 0) { $md += "None" } else { foreach ($r in $missingRoots) { $md += "- $r" } }
+if ($missingRootsArray.Count -eq 0) { $md += "None" } else { foreach ($r in $missingRootsArray) { $md += "- $r" } }
 $md += ""
 $md += "## Category Counts"
 $md += ""
