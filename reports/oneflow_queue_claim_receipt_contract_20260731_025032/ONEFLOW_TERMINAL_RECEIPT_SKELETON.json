@@ -1,0 +1,26 @@
+{
+  "schema_version": "SOURCE_FACTORY_TERMINAL_WORKER_RECEIPT_V1",
+  "status": "PENDING_NOT_EXECUTED_DRY_RUN_SKELETON",
+  "worker_id": "SOURCE_FACTORY_DRY_RUN_WORKER_001",
+  "task_id": "PORTAL_PHASE_1_OPINET_DATA_REPROCESSING",
+  "assignment_id": "DRYRUN-c0f6a24baf539e56",
+  "claim_key": "CLAIM-DRYRUN-47abd7a72fec3a0b0676",
+  "queue_id": "GAS_STATION_PORTAL_016_PIPELINE_SMOKE_QUEUE_EXAMPLE",
+  "project_code": "GAS_STATION_PORTAL",
+  "outputs": [],
+  "verification": {
+    "expected_required_fields_present": true,
+    "source_factory_claim_contract_status": "PASS_QUEUE_CLAIM_DRY_RUN_CONTRACT",
+    "dry_run_only": true
+  },
+  "blockers": [],
+  "forbidden_effect_counters": {
+    "prompt_send_count": 0,
+    "browser_launch_count": 0,
+    "pc_agent_service_start_count": 0,
+    "external_api_call_count": 0,
+    "middleware_transmission_count": 0,
+    "production_deploy_count": 0
+  },
+  "created_at": "2026-07-31T02:50:32+09:00"
+}
