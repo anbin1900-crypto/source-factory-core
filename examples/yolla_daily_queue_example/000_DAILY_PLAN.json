@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-30",
+  "run_id": "YOLLA_DAILY_RUN_20260730_001",
+  "max_tasks": 4,
+  "max_runtime_hours": 6,
+  "concurrency": 1,
+  "cooldown_after_task_seconds": 120,
+  "max_red_failures": 1,
+  "github_commit_each_task": true,
+  "tasks": [
+    {
+      "order": 1,
+      "task_id": "W12C_W05_RECONSTRUCTION",
+      "prompt_path": "daily_queue/2026-07-30/001_W12C_W05_RECONSTRUCTION.md",
+      "output_dir": "runs/2026-07-30/001_W12C_W05_RECONSTRUCTION",
+      "allowed_mode": "READ_ONLY_AUDIT_AND_RECONSTRUCTION",
+      "stop_policy": "continue_if_yellow_stop_if_red"
+    },
+    {
+      "order": 2,
+      "task_id": "W12B_W04_REAL_SITE_MRI",
+      "prompt_path": "daily_queue/2026-07-30/002_W12B_W04_REAL_SITE_MRI.md",
+      "output_dir": "runs/2026-07-30/002_W12B_W04_REAL_SITE_MRI",
+      "allowed_mode": "REAL_BROWSER_RUNTIME",
+      "stop_policy": "stop_if_runtime_blocked"
+    }
+  ]
+}
