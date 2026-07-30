@@ -1,0 +1,17 @@
+﻿{
+    "schema_version":  "1.0.0",
+    "wake_id":  "B1-WAKE-TARGET-PC-ACCESS-AVAILABLE-20260728-001",
+    "source_worker":  "B-2",
+    "source_pr":  165,
+    "source_head":  "c4f68299e67443a2902e5cc6f84f920016714e28",
+    "mission_id":  "B2-SELF-MATERIALIZING-BOOTSTRAP-PERSISTENT-AGENT-API-COMMON-V2-20260728-001",
+    "execution_id":  "B2-ACTUAL-PC-EVENT-AUTOMATION-E-DRIVE-EXECUTION-V1-20260728-001",
+    "candidate_event":  "TARGET_PC_ACCESS_AVAILABLE",
+    "access_evidence_path":  "workers/b2/actual_pc_event_automation_e_drive_state_v1/B2_TARGET_PC_ACCESS_EVIDENCE_V2.json",
+    "access_evidence_commit":  "c4f68299e67443a2902e5cc6f84f920016714e28",
+    "access_evidence_blob":  "38cabe751b02949d0d5957ebc08ad04afd1bda1a",
+    "access_evidence_sha256":  "187dbf664540f7d2bcf5d5827998388f05f344b4f84ad3f26d1d957a5c142595",
+    "requested_commander":  "B-1_NEXT_INTEGRATION_COMMANDER",
+    "requested_review":  "INDEPENDENT_REMOTE_READBACK_AND_EVENT_PUBLICATION",
+    "created_at":  "2026-07-28T21:26:29.4542344+09:00"
+}

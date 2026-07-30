@@ -1,0 +1,166 @@
+{
+  "object_type": "SOURCE_FACTORY_ASSEMBLY_MANIFEST",
+  "assembly_id": "STAGE1_BROWSER_V0_1_RUNTIME_PASS",
+  "status": "ASSEMBLY_COMPLETED_WITH_WARNINGS",
+  "created_at": "2026-07-01T03:52:23",
+  "official_root": "D:\\SOURCE FACTORY",
+  "project": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER",
+  "forbidden_roots": [
+    "D:\\BABY",
+    "C:\\Windows",
+    "C:\\Program Files"
+  ],
+  "runtime_evidence_summary": {
+    "diagnostic_pass_without_blocking_failures": true,
+    "electron_7_windows_observed_by_user": true,
+    "gpt_webview_observed_by_user": true,
+    "sfapi_bridge_pass": true,
+    "start_prompt_generated": true,
+    "manual_gpt_prompt_submission_pass": true,
+    "save_full_output_files_created": true,
+    "raw_output_file_count": 4
+  },
+  "warnings": [
+    "Manual GPT login/session verification remains a human check.",
+    "ChatGPT webview output capture is currently based on manual prompt copy/paste plus SAVE FULL OUTPUT raw evidence.",
+    "RELOAD TASK alias patch may need separate runtime verification if not yet tested.",
+    "Official completion here records Stage 1 runtime pass, not final automated Source Factory completion."
+  ],
+  "required_record_files": [
+    "00_READ_ME_FIRST.md",
+    "ASSEMBLY_REPORT.md",
+    "ASSEMBLY_REPORT.json",
+    "ASSEMBLY_MANIFEST.json",
+    "FILE_HASHES.json",
+    "CHANGESET.json",
+    "PRE_STATE_INDEX.json",
+    "POST_STATE_INDEX.json",
+    "DIFF_SUMMARY.json",
+    "WORK_LOG.md",
+    "NEXT_COMMANDER_HANDOFF.md",
+    "NEXT_COMMANDER_PROMPT.txt"
+  ],
+  "copied_evidence": [
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\package.json",
+      "copy": "D:\\SOURCE FACTORY\\_ASSEMBLY_RECORDS\\2026-07-01\\STAGE1_BROWSER_V0_1_RUNTIME_PASS\\assembled_files\\assembled\\20260701_01_STAGE1_BROWSER\\package.json",
+      "relative_to_sf_root": "assembled/20260701_01_STAGE1_BROWSER/package.json",
+      "size_bytes": 345,
+      "sha256": "5b838e3036224817f0a6342fdb88055ff0c963bce7c797940634b1a40437c894"
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\src\\main\\main.js",
+      "copy": "D:\\SOURCE FACTORY\\_ASSEMBLY_RECORDS\\2026-07-01\\STAGE1_BROWSER_V0_1_RUNTIME_PASS\\assembled_files\\assembled\\20260701_01_STAGE1_BROWSER\\src\\main\\main.js",
+      "relative_to_sf_root": "assembled/20260701_01_STAGE1_BROWSER/src/main/main.js",
+      "size_bytes": 8154,
+      "sha256": "390c38bfb1c3d6d7a238d45c468ac2c2235866292a6935d7316ec76698ed8a8e"
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\src\\main\\windowManager.js",
+      "copy": "D:\\SOURCE FACTORY\\_ASSEMBLY_RECORDS\\2026-07-01\\STAGE1_BROWSER_V0_1_RUNTIME_PASS\\assembled_files\\assembled\\20260701_01_STAGE1_BROWSER\\src\\main\\windowManager.js",
+      "relative_to_sf_root": "assembled/20260701_01_STAGE1_BROWSER/src/main/windowManager.js",
+      "size_bytes": 5970,
+      "sha256": "1fac2afe8bd81ac61610e55dbe0702d15c548f974355145e873629adae4098bd"
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\src\\preload\\gptPreload.js",
+      "copy": "D:\\SOURCE FACTORY\\_ASSEMBLY_RECORDS\\2026-07-01\\STAGE1_BROWSER_V0_1_RUNTIME_PASS\\assembled_files\\assembled\\20260701_01_STAGE1_BROWSER\\src\\preload\\gptPreload.js",
+      "relative_to_sf_root": "assembled/20260701_01_STAGE1_BROWSER/src/preload/gptPreload.js",
+      "size_bytes": 1361,
+      "sha256": "ba5ea5af9c00223c3b014b6a5c99361302fc71218903cdd668f1be5663de4376"
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\src\\renderer\\index.html",
+      "copy": "D:\\SOURCE FACTORY\\_ASSEMBLY_RECORDS\\2026-07-01\\STAGE1_BROWSER_V0_1_RUNTIME_PASS\\assembled_files\\assembled\\20260701_01_STAGE1_BROWSER\\src\\renderer\\index.html",
+      "relative_to_sf_root": "assembled/20260701_01_STAGE1_BROWSER/src/renderer/index.html",
+      "size_bytes": 7118,
+      "sha256": "4ac31fe091a816dc876f12ce397a0a8ed28263e08653e1a5c69b6aeab7faf38d"
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\run\\RUN_STAGE1_DIAGNOSTIC.bat",
+      "copy": "D:\\SOURCE FACTORY\\_ASSEMBLY_RECORDS\\2026-07-01\\STAGE1_BROWSER_V0_1_RUNTIME_PASS\\assembled_files\\assembled\\20260701_01_STAGE1_BROWSER\\run\\RUN_STAGE1_DIAGNOSTIC.bat",
+      "relative_to_sf_root": "assembled/20260701_01_STAGE1_BROWSER/run/RUN_STAGE1_DIAGNOSTIC.bat",
+      "size_bytes": 1099,
+      "sha256": "3d07ea5055b87df89b9039d0d3508b828b410b8002b143f201d83fc02c1df470"
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\run\\RUN_SOURCE_FACTORY_BROWSER.bat",
+      "copy": "D:\\SOURCE FACTORY\\_ASSEMBLY_RECORDS\\2026-07-01\\STAGE1_BROWSER_V0_1_RUNTIME_PASS\\assembled_files\\assembled\\20260701_01_STAGE1_BROWSER\\run\\RUN_SOURCE_FACTORY_BROWSER.bat",
+      "relative_to_sf_root": "assembled/20260701_01_STAGE1_BROWSER/run/RUN_SOURCE_FACTORY_BROWSER.bat",
+      "size_bytes": 1414,
+      "sha256": "eebfde50854798d4f2711dbabc305a290a6bc18c2ebabc2e07e55e604c0ed9a3"
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\README_STAGE1_SOURCE_FACTORY_BROWSER.md",
+      "copy": "D:\\SOURCE FACTORY\\_ASSEMBLY_RECORDS\\2026-07-01\\STAGE1_BROWSER_V0_1_RUNTIME_PASS\\assembled_files\\assembled\\20260701_01_STAGE1_BROWSER\\README_STAGE1_SOURCE_FACTORY_BROWSER.md",
+      "relative_to_sf_root": "assembled/20260701_01_STAGE1_BROWSER/README_STAGE1_SOURCE_FACTORY_BROWSER.md",
+      "size_bytes": 9252,
+      "sha256": "44c7071f0325d24b283329bd333e176bea25af0f02472efcfcecc66b6778da87"
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\STAGE1_INTEGRATION_CHECKLIST.md",
+      "copy": "D:\\SOURCE FACTORY\\_ASSEMBLY_RECORDS\\2026-07-01\\STAGE1_BROWSER_V0_1_RUNTIME_PASS\\assembled_files\\assembled\\20260701_01_STAGE1_BROWSER\\STAGE1_INTEGRATION_CHECKLIST.md",
+      "relative_to_sf_root": "assembled/20260701_01_STAGE1_BROWSER/STAGE1_INTEGRATION_CHECKLIST.md",
+      "size_bytes": 11442,
+      "sha256": "2e231c971a5096207ca8bf118b6afd2b53093c0c46f8eedde9815368ce64ffd3"
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
+      "copy": "D:\\SOURCE FACTORY\\_ASSEMBLY_RECORDS\\2026-07-01\\STAGE1_BROWSER_V0_1_RUNTIME_PASS\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
+      "relative_to_sf_root": "assembled/20260701_01_STAGE1_BROWSER/browsers/WORKER_01/raw_outputs/WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
+      "size_bytes": 1179,
+      "sha256": "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590"
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.txt",
+      "copy": "D:\\SOURCE FACTORY\\_ASSEMBLY_RECORDS\\2026-07-01\\STAGE1_BROWSER_V0_1_RUNTIME_PASS\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.txt",
+      "relative_to_sf_root": "assembled/20260701_01_STAGE1_BROWSER/browsers/WORKER_01/raw_outputs/WORKER_01__FULL_OUTPUT__20260701_034610_267.txt",
+      "size_bytes": 189,
+      "sha256": "df73ddea75cb2106d27d568b6da7f63a67bda0fe33ad6bde7ec92731ea98043c"
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
+      "copy": "D:\\SOURCE FACTORY\\_ASSEMBLY_RECORDS\\2026-07-01\\STAGE1_BROWSER_V0_1_RUNTIME_PASS\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
+      "relative_to_sf_root": "assembled/20260701_01_STAGE1_BROWSER/browsers/WORKER_01/raw_outputs/WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
+      "size_bytes": 1179,
+      "sha256": "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0"
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.txt",
+      "copy": "D:\\SOURCE FACTORY\\_ASSEMBLY_RECORDS\\2026-07-01\\STAGE1_BROWSER_V0_1_RUNTIME_PASS\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.txt",
+      "relative_to_sf_root": "assembled/20260701_01_STAGE1_BROWSER/browsers/WORKER_01/raw_outputs/WORKER_01__FULL_OUTPUT__20260701_034620_549.txt",
+      "size_bytes": 189,
+      "sha256": "e597c41a3833ed99276e343fed12cde91df307cb5d8794e50f04dfe936e1163e"
+    }
+  ],
+  "raw_outputs": [
+    {
+      "name": "WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
+      "path": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
+      "relative_to_sf_root": "assembled/20260701_01_STAGE1_BROWSER/browsers/WORKER_01/raw_outputs/WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
+      "size_bytes": 1179,
+      "sha256": "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590"
+    },
+    {
+      "name": "WORKER_01__FULL_OUTPUT__20260701_034610_267.txt",
+      "path": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.txt",
+      "relative_to_sf_root": "assembled/20260701_01_STAGE1_BROWSER/browsers/WORKER_01/raw_outputs/WORKER_01__FULL_OUTPUT__20260701_034610_267.txt",
+      "size_bytes": 189,
+      "sha256": "df73ddea75cb2106d27d568b6da7f63a67bda0fe33ad6bde7ec92731ea98043c"
+    },
+    {
+      "name": "WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
+      "path": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
+      "relative_to_sf_root": "assembled/20260701_01_STAGE1_BROWSER/browsers/WORKER_01/raw_outputs/WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
+      "size_bytes": 1179,
+      "sha256": "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0"
+    },
+    {
+      "name": "WORKER_01__FULL_OUTPUT__20260701_034620_549.txt",
+      "path": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.txt",
+      "relative_to_sf_root": "assembled/20260701_01_STAGE1_BROWSER/browsers/WORKER_01/raw_outputs/WORKER_01__FULL_OUTPUT__20260701_034620_549.txt",
+      "size_bytes": 189,
+      "sha256": "e597c41a3833ed99276e343fed12cde91df307cb5d8794e50f04dfe936e1163e"
+    }
+  ]
+}
