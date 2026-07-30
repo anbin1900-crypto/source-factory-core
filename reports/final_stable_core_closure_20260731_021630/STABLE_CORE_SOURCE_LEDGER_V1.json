@@ -1,0 +1,112 @@
+﻿[
+    {
+        "kind":  "stable_runtime_source",
+        "group":  "queue",
+        "role":  "daily_queue_reader",
+        "language":  "javascript",
+        "relative_path":  "src/queue/dailyQueueReader.js",
+        "exists":  true,
+        "sha256":  "76737a6582c93ba4330a8e0e8f4fcc4dc7380585cc265d8f2675c9e20c7c0620",
+        "size_bytes":  1349
+    },
+    {
+        "kind":  "stable_runtime_source",
+        "group":  "queue",
+        "role":  "python_process_runner",
+        "language":  "javascript",
+        "relative_path":  "src/queue/pythonProcessRunner.js",
+        "exists":  true,
+        "sha256":  "ab40b61eecaf9731dd8708c5e3e4f090f79b68242901c445610b718f4e53aab0",
+        "size_bytes":  4440
+    },
+    {
+        "kind":  "stable_runtime_source",
+        "group":  "gpt_browser_bridge",
+        "role":  "button_handlers",
+        "language":  "javascript",
+        "relative_path":  "src/gpt_browser_bridge/buttonHandlers.js",
+        "exists":  true,
+        "sha256":  "d69be4e9afcc5864af7e1b38529b98c57064a2aa96b23883dea32e112c03343b",
+        "size_bytes":  11707
+    },
+    {
+        "kind":  "stable_runtime_source",
+        "group":  "gpt_browser_bridge",
+        "role":  "diagnostics",
+        "language":  "javascript",
+        "relative_path":  "src/gpt_browser_bridge/diagnostics.js",
+        "exists":  true,
+        "sha256":  "8aff7147a926623668d25bae5c8f9081a5c7552c8dc0d64eea8b15ce8b20d89e",
+        "size_bytes":  11124
+    },
+    {
+        "kind":  "stable_runtime_source",
+        "group":  "gpt_browser_bridge",
+        "role":  "file_name_safe",
+        "language":  "javascript",
+        "relative_path":  "src/gpt_browser_bridge/fileNameSafe.js",
+        "exists":  true,
+        "sha256":  "e2e55ca1e08a8b96c62d77348b66dccbf3c570cce9a0fa2a78452098609431f5",
+        "size_bytes":  1074
+    },
+    {
+        "kind":  "stable_runtime_source",
+        "group":  "gpt_browser_bridge",
+        "role":  "stage1_self_check",
+        "language":  "javascript",
+        "relative_path":  "src/gpt_browser_bridge/stage1SelfCheck.js",
+        "exists":  true,
+        "sha256":  "dde37d7fa1ec956e4bee30d24e3eed1d968380eb905bd4ce4aec60f3ff41ebda",
+        "size_bytes":  11008
+    },
+    {
+        "kind":  "stable_runtime_source",
+        "group":  "pc_agent_routing",
+        "role":  "b2_w12_prefinal_validator",
+        "language":  "python",
+        "relative_path":  "src/pc_agent_routing/B2_W12_PREFINAL_VALIDATOR.py",
+        "exists":  true,
+        "sha256":  "371b0480110f4f5766202bdaabf2134617b5dcf1b03c3fa7a59501a14d033792",
+        "size_bytes":  10379
+    },
+    {
+        "kind":  "stable_runtime_source",
+        "group":  "pc_agent_routing",
+        "role":  "event_consumption_store",
+        "language":  "python",
+        "relative_path":  "src/pc_agent_routing/event_consumption_store.py",
+        "exists":  true,
+        "sha256":  "6ae1df3747b0bf3611fc0bbf904be1ea2033bef415a33e4ec0f4a4cd99207a73",
+        "size_bytes":  1051
+    },
+    {
+        "kind":  "stable_runtime_source",
+        "group":  "pc_agent_routing",
+        "role":  "resource_doctor",
+        "language":  "python",
+        "relative_path":  "src/pc_agent_routing/resource_doctor.py",
+        "exists":  true,
+        "sha256":  "91f4d5cee4fb08e34a2c75fbb3d41ff8a0b2a583dead63a511283a3b50b15d70",
+        "size_bytes":  1024
+    },
+    {
+        "kind":  "ops_reference",
+        "group":  "gpt_browser_bridge",
+        "role":  "stage1_diagnostic_runner",
+        "language":  "batch",
+        "relative_path":  "ops_import/p0_ops_import_20260731_013239/P0_GPT_BROWSER_BRIDGE/3d07ea5055b8_RUN_STAGE1_DIAGNOSTIC.bat",
+        "exists":  true,
+        "sha256":  "3d07ea5055b87df89b9039d0d3508b828b410b8002b143f201d83fc02c1df470",
+        "size_bytes":  1099
+    },
+    {
+        "kind":  "ops_reference",
+        "group":  "gpt_browser_bridge",
+        "role":  "hosted_windows_pc_agent_build",
+        "language":  "github_actions",
+        "relative_path":  "ops_import/p0_ops_import_20260731_013239/P0_GPT_BROWSER_BRIDGE/cb4b65aaf72f_a4-hosted-windows-pc-agent-build-v4.yml",
+        "exists":  true,
+        "sha256":  "cb4b65aaf72f33cb414bff7dc0d1f4788f5ccd2e47250bfdf318982dde3d064e",
+        "size_bytes":  10133
+    }
+]
