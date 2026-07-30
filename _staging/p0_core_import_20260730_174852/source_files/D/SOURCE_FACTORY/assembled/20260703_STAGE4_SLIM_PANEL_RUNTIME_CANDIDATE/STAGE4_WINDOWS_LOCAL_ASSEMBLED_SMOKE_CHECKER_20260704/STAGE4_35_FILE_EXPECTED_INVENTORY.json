@@ -1,0 +1,284 @@
+{
+  "files": [
+    {
+      "index": 1,
+      "path": "src/shared/stage4/panelInputClassifier.js",
+      "language": "javascript",
+      "expected_sha256": "7808a16ddd623c21c78a2320137e76cae06c891089f23d6509f1a2f1df0c5cf0",
+      "expected_size_bytes": 8700,
+      "expected_line_count": 315
+    },
+    {
+      "index": 2,
+      "path": "src/shared/stage4/panelCommandParser.js",
+      "language": "javascript",
+      "expected_sha256": "fc5c99b8c9e941a57db8f2bf89053e212f757f46ca6a439973392ffe6132928c",
+      "expected_size_bytes": 12045,
+      "expected_line_count": 433
+    },
+    {
+      "index": 3,
+      "path": "src/shared/stage4/sourceFileBlockExtractor.js",
+      "language": "javascript",
+      "expected_sha256": "69923f2d9f4ae597f55f28e09bed8ab02ff7398bc567b36516d4375d4645f621",
+      "expected_size_bytes": 9873,
+      "expected_line_count": 368
+    },
+    {
+      "index": 4,
+      "path": "src/shared/stage4/downloadResourceExtractor.js",
+      "language": "javascript",
+      "expected_sha256": "61ec8b10a1a9d429931e039b97a541733987acc769f2d6227c33b79dd2141cb4",
+      "expected_size_bytes": 11417,
+      "expected_line_count": 465
+    },
+    {
+      "index": 5,
+      "path": "src/shared/stage4/workerReportErrorExtractor.js",
+      "language": "javascript",
+      "expected_sha256": "241b990c8b10137b308a322a03562d138fe431f9a5e0d9b9235af6b4230b990b",
+      "expected_size_bytes": 15749,
+      "expected_line_count": 617
+    },
+    {
+      "index": 6,
+      "path": "src/shared/stage4/sourceFileFormatValidator.js",
+      "language": "javascript",
+      "expected_sha256": "7e027e2c97c5397a972ac4b99e54ca905f7e3f96dc790151f1466aa137b8a863",
+      "expected_size_bytes": 16938,
+      "expected_line_count": 533
+    },
+    {
+      "index": 7,
+      "path": "src/shared/stage4/placeholderOmissionDetector.js",
+      "language": "javascript",
+      "expected_sha256": "bd2b0737a2cf7fdc31a0b8040dd393aff8969e40614cc00b17dceee9ba79bed9",
+      "expected_size_bytes": 15456,
+      "expected_line_count": 484
+    },
+    {
+      "index": 8,
+      "path": "tools/stage4/checkStage4Syntax.js",
+      "language": "javascript",
+      "expected_sha256": "fefba2041d372d01acf6569ca87793c2d3949e140f4b3fb3d60b764d770c5dfe",
+      "expected_size_bytes": 14323,
+      "expected_line_count": 509
+    },
+    {
+      "index": 9,
+      "path": "src/shared/stage4/windowsRegexEscapeChecker.js",
+      "language": "javascript",
+      "expected_sha256": "3d79d752b213ea2d52af3e33f6c92624d01d8b71fcc58bef42dd68c8acf21768",
+      "expected_size_bytes": 15924,
+      "expected_line_count": 567
+    },
+    {
+      "index": 10,
+      "path": "src/shared/stage4/efficiencyGateStatus.js",
+      "language": "javascript",
+      "expected_sha256": "1569f551136c00a76c0adfd245fe484f0872b8b892d57dd9e1264769c7b6c00e",
+      "expected_size_bytes": 12701,
+      "expected_line_count": 379
+    },
+    {
+      "index": 11,
+      "path": "src/shared/stage4/duplicatePathConflictDetector.js",
+      "language": "javascript",
+      "expected_sha256": "c02f9ce10342370b85405264cddd04f0f2850f9fdc461a9a9e9c17825972c193",
+      "expected_size_bytes": 9212,
+      "expected_line_count": 343
+    },
+    {
+      "index": 12,
+      "path": "src/shared/stage4/workerFileOwnershipChecker.js",
+      "language": "javascript",
+      "expected_sha256": "08f1539e472820191c345f095bf17626bfbd622bf6195cef265bfb3d6023e33f",
+      "expected_size_bytes": 20269,
+      "expected_line_count": 753
+    },
+    {
+      "index": 13,
+      "path": "src/shared/stage4/apiIpcBindingConsistencyChecker.js",
+      "language": "javascript",
+      "expected_sha256": "36854ed2bb8da504caff5ac18a7504b651ea8cf53c56913b155edce8bb018997",
+      "expected_size_bytes": 19353,
+      "expected_line_count": 632
+    },
+    {
+      "index": 14,
+      "path": "src/shared/stage4/runtimePartialAssemblyClassifier.js",
+      "language": "javascript",
+      "expected_sha256": "002bd1b9a75d2be740c2181b2d2a63dd80f47f4e7eab74137783a5b0977e17ef",
+      "expected_size_bytes": 20780,
+      "expected_line_count": 709
+    },
+    {
+      "index": 15,
+      "path": "src/shared/stage4/patchRequestConflictSorter.js",
+      "language": "javascript",
+      "expected_sha256": "16e7ae3e2820fd56735d3389ec3ad1c286ae776784da11109e8191e36aa14b23",
+      "expected_size_bytes": 19181,
+      "expected_line_count": 721
+    },
+    {
+      "index": 16,
+      "path": "src/shared/stage4/stores/taeoRawOutputStore.js",
+      "language": "javascript",
+      "expected_sha256": "2f5c6dfdc0b944b24dde0b936f1bc2ab3cbccd96ee63f829947f183319073264",
+      "expected_size_bytes": 3232,
+      "expected_line_count": 125
+    },
+    {
+      "index": 17,
+      "path": "src/shared/stage4/stores/laoSourceUnitStore.js",
+      "language": "javascript",
+      "expected_sha256": "fde5947302e4c5ba336619c715dd1bfded496e4ec2942d7c761bf2c2363362ff",
+      "expected_size_bytes": 13809,
+      "expected_line_count": 430
+    },
+    {
+      "index": 18,
+      "path": "src/shared/stage4/stores/taeraDownloadResourceStore.js",
+      "language": "javascript",
+      "expected_sha256": "3d8233f5ad0535a6b4bbe7be6bebfea5d1dac385c3a8510b0db6a07db4bdb571",
+      "expected_size_bytes": 8047,
+      "expected_line_count": 311
+    },
+    {
+      "index": 19,
+      "path": "src/shared/stage4/stores/workerOutputBatchStore.js",
+      "language": "javascript",
+      "expected_sha256": "65614ffbaff524de024ad08cc1eed9b2f985f237f376924645498762d9560fc5",
+      "expected_size_bytes": 12208,
+      "expected_line_count": 356
+    },
+    {
+      "index": 20,
+      "path": "src/shared/stage4/stores/panelRecordExecutionStore.js",
+      "language": "javascript",
+      "expected_sha256": "84df52fe37841fbc5cb20239f94b642a6d8b21bbd9744562a651ef216249b3df",
+      "expected_size_bytes": 10331,
+      "expected_line_count": 337
+    },
+    {
+      "index": 21,
+      "path": "tools/stage4/runCmdWrapper.js",
+      "language": "javascript",
+      "expected_sha256": "79fcdaa8c05532a7607bf97bacb76601969aca895230230d2fd6edbeed343b2f",
+      "expected_size_bytes": 5044,
+      "expected_line_count": 234
+    },
+    {
+      "index": 22,
+      "path": "tools/stage4/runPythonWrapper.js",
+      "language": "javascript",
+      "expected_sha256": "ae3481638963a10edc5ab4b9f9f2b77a87d0b08e5752c02b1e8cc98d63659898",
+      "expected_size_bytes": 7050,
+      "expected_line_count": 302
+    },
+    {
+      "index": 23,
+      "path": "tools/stage4/runNodeCheckWrapper.js",
+      "language": "javascript",
+      "expected_sha256": "20749a389324567f322cc604524f43ba1d06a885da9f656ccfb59ea43ec21b93",
+      "expected_size_bytes": 7832,
+      "expected_line_count": 325
+    },
+    {
+      "index": 24,
+      "path": "src/shared/stage4/executionResultCollector.js",
+      "language": "javascript",
+      "expected_sha256": "57aa37ea3d3b08a6161ff568b28b66c45e8f2562c81e413b91351c78a1d6b371",
+      "expected_size_bytes": 7310,
+      "expected_line_count": 271
+    },
+    {
+      "index": 25,
+      "path": "src/shared/stage4/executionErrorReporter.js",
+      "language": "javascript",
+      "expected_sha256": "13ae6111fe1b8452074024e4287cfc2290ac3c9db12c51ea8375295b4a699d50",
+      "expected_size_bytes": 10768,
+      "expected_line_count": 361
+    },
+    {
+      "index": 26,
+      "path": "src/shared/stage4/promptQueueManager.js",
+      "language": "javascript",
+      "expected_sha256": "453ae326ddcc28872e89b658bab66ec80f7ecbcfb57ccad4e4fe631f479eacf1",
+      "expected_size_bytes": 15330,
+      "expected_line_count": 519
+    },
+    {
+      "index": 27,
+      "path": "src/shared/stage4/sequentialPromptSender.js",
+      "language": "javascript",
+      "expected_sha256": "8c42437485813ddbbb835870e0fbd19006ff6e5879bc8f80f08336116481feec",
+      "expected_size_bytes": 9558,
+      "expected_line_count": 319
+    },
+    {
+      "index": 28,
+      "path": "src/shared/stage4/fileBatchDispatcher.js",
+      "language": "javascript",
+      "expected_sha256": "5a601620c7d5b26bbd8eae1d7bc0ae8c75c423dfb7c0ffb0d14570117a87c365",
+      "expected_size_bytes": 11181,
+      "expected_line_count": 386
+    },
+    {
+      "index": 29,
+      "path": "src/shared/stage4/downloadResourceManager.js",
+      "language": "javascript",
+      "expected_sha256": "15358a7f0ba99931c6d3f22d39208cceb6d6cd473cf04d01ad72ecbbab625fc8",
+      "expected_size_bytes": 20726,
+      "expected_line_count": 624
+    },
+    {
+      "index": 30,
+      "path": "src/shared/stage4/promptPackageVersionManager.js",
+      "language": "javascript",
+      "expected_sha256": "d9afbca9005a143923aa170f482af3dc200c5cd71198e3a82c5cd477c26e3643",
+      "expected_size_bytes": 14529,
+      "expected_line_count": 522
+    },
+    {
+      "index": 31,
+      "path": "src/shared/stage4/greenOutputAssemblyQueue.js",
+      "language": "javascript",
+      "expected_sha256": "5869b5f127038e8e21becabd9c61faaf5fc630595a73bb26a8092b7df318477e",
+      "expected_size_bytes": 15146,
+      "expected_line_count": 609
+    },
+    {
+      "index": 32,
+      "path": "src/shared/stage4/redFixRequestGenerator.js",
+      "language": "javascript",
+      "expected_sha256": "1bf5484217c820ebb236bc8f3850b49b0e8368d254e636f3903f6294600411ba",
+      "expected_size_bytes": 11166,
+      "expected_line_count": 463
+    },
+    {
+      "index": 33,
+      "path": "prompts/stage4/DONE_LIGHT_REPORT_GENERATOR_PROMPT.txt",
+      "language": "text",
+      "expected_sha256": "eded8f96bf9b182a637a70306554d53a2ee5725a700db589a429304855745b91",
+      "expected_size_bytes": 4104,
+      "expected_line_count": 116
+    },
+    {
+      "index": 34,
+      "path": "prompts/stage4/NEXT_COMMANDER_HANDOFF_GENERATOR_PROMPT.txt",
+      "language": "text",
+      "expected_sha256": "db46dbb6a2e7c2ff3501aa6cde85f3c951ab370a5356918e5d12e6f7841223c1",
+      "expected_size_bytes": 4586,
+      "expected_line_count": 115
+    },
+    {
+      "index": 35,
+      "path": "src/renderer/stage4/SlimProjectPanelControlView.js",
+      "language": "javascript",
+      "expected_sha256": "09cec44e1e5504e7d6755f2be41c70defad2ea99f88de54e33d46480cc51c647",
+      "expected_size_bytes": 18219,
+      "expected_line_count": 644
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+===== W02_NETWORK_MRI_PACKAGING_CORRECTION_PROMPT_START =====
+
+너는 “욜라 사이트 스캐너 V1” 프로젝트의 2번 워커다.
+
+이번 작업은 네트워크 MRI 소스 교정이 아니라 W04 upstream gate 호환을 위한 패키징 교정이다.
+
+기준 ZIP:
+
+W02_SITE_SCANNER_NETWORK_MRI_SOURCE.zip
+
+기대 SHA-256:
+
+b5259aed110c6ccd90574260695e914fc2644eb7b17f53bbcbb68ca30e3119b4
+
+SHA가 다르면 SOURCE_SHA_MISMATCH로 종료한다.
+
+기존 47/47 시험과 네트워크 구현은 변경하지 않는다.
+
+────────────────────────────────
+I. 추가 파일
+────────────────────────────────
+
+ZIP 루트에 추가:
+
+1. MODULE_MANIFEST.json
+2. TEST_REPORT.json
+3. MANIFEST_SHA256.json
+
+MODULE_MANIFEST:
+
+```json
+{
+  "module_id": "network_mri",
+  "module_name": "YOLLA Site Scanner Network MRI",
+  "module_version": "1.0.0",
+  "contract_version": "1.0.0",
+  "api_methods": [
+    "registerModule",
+    "start",
+    "pause",
+    "resume",
+    "stop",
+    "getStatus",
+    "validate",
+    "exportReport",
+    "dispose"
+  ],
+  "test_status": "PASS"
+}
+```
+
+실제 `modules/network_mri/index.js`의 export와 대조한다.
+
+TEST_REPORT.json:
+
+```json
+{
+  "status": "PASS",
+  "tests": 47,
+  "passed": 47,
+  "failed": 0,
+  "cancelled": 0,
+  "skipped": 0,
+  "node_check": "PASS",
+  "zip_integrity": "PASS"
+}
+```
+
+재시험 실제값을 사용한다.
+
+MANIFEST_SHA256.json:
+
+- contract_version 1.0.0
+- files 배열
+- ZIP 내부 모든 일반파일의 정확한 path·sha256·size_bytes
+- manifest 자체는 제외 가능
+
+기존 RESULT_SHA256SUMS.txt와 TEST_REPORT.md는 보존한다.
+
+────────────────────────────────
+II. 검증
+────────────────────────────────
+
+- 47/47 시험 재통과
+- node --check 재통과
+- ZIP 무결성
+- manifest 자체 검증
+- W04 upstream verifier에서 W2 PASS
+
+소스의 fetch/XHR/GraphQL/WebSocket 동작을 변경하지 않는다.
+
+────────────────────────────────
+III. 산출물
+────────────────────────────────
+
+- W02_SITE_SCANNER_NETWORK_MRI_CORRECTED.zip
+- W02_CORRECTION_REPORT.md
+- W02_RESULT_SHA256.txt
+
+최종 보고에는 W04 verifier W2 결과와 새 RESULT_SHA를 포함한다.
+
+===== W02_NETWORK_MRI_PACKAGING_CORRECTION_PROMPT_END =====

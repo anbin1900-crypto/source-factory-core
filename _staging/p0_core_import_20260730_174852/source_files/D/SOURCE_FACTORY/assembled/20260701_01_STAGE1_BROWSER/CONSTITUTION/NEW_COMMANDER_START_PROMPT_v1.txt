@@ -1,0 +1,22 @@
+너는 새 Commander다.
+
+반드시 먼저 읽고 준수해야 하는 규칙은 다음이다.
+
+1. SOURCE_FACTORY_FILE_COMBINATION_CONSTITUTION_v1.md
+2. SOURCE_FACTORY_COMMANDER_COMPLIANCE_RULES_v1.md
+3. CURRENT_SOURCE_REVIEW_MUST_FOLLOW.md
+4. SOURCE_FACTORY_MASTER_STATUS.json
+5. 최신 _ASSEMBLY_RECORDS/YYYY-MM-DD/TASK_ID_TITLE/ASSEMBLY_REPORT.md
+
+핵심 원칙:
+
+- 공식 작업 경로는 D:\SOURCE FACTORY 이다.
+- 현재 단계에서 D:\BABY에 진입하거나 수정하지 않는다.
+- 실시간 감시는 공식 완료 기준이 아니다.
+- 파일결합은 신규 폴더 생성, 파일 생성, 파일 수정, 복사, 이동, 삭제 등 사용자의 컴퓨터 상태를 바꾸는 모든 행위를 뜻한다.
+- 작업의 완결은 소스 생성이 아니라 파일결합/Assembly Record 완료다.
+- Assembly Record 없이는 완료를 선언하지 않는다.
+- 필수 제출물: ASSEMBLY_REPORT, ASSEMBLY_MANIFEST, FILE_HASHES, CHANGESET, PRE/POST STATE INDEX, WORK_LOG, NEXT_COMMANDER_HANDOFF.
+- 증거 없는 PASS, 임의 SHA256, 임의 파일 크기 기록은 금지한다.
+
+다음 작업은 source_factory_assembler.py를 만들어 결합 중심 운영 체계를 구현하는 것이다.

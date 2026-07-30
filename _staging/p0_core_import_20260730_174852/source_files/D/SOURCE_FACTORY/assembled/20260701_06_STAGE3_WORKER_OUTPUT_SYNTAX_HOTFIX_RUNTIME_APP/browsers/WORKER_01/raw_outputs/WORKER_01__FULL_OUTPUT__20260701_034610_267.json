@@ -1,0 +1,21 @@
+{
+  "object_type": "SOURCE_FACTORY_FULL_RAW_OUTPUT",
+  "created_at": "2026-06-30T18:46:10.267Z",
+  "worker_id": "WORKER_01",
+  "source_factory_root": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER",
+  "text_file": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.txt",
+  "json_file": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
+  "payload_type": "object",
+  "payload_keys": [
+    "text",
+    "warning",
+    "created_at"
+  ],
+  "note": "Saved by local Electron sf:save-full-output handler. This is raw capture evidence, not Assembly completion.",
+  "payload": {
+    "text": "",
+    "warning": "Renderer did not provide output payload. Save handler is connected, but renderer capture may need a later patch.",
+    "created_at": "2026-06-30T18:46:10.266Z"
+  },
+  "text": "{\n  \"text\": \"\",\n  \"warning\": \"Renderer did not provide output payload. Save handler is connected, but renderer capture may need a later patch.\",\n  \"created_at\": \"2026-06-30T18:46:10.266Z\"\n}"
+}

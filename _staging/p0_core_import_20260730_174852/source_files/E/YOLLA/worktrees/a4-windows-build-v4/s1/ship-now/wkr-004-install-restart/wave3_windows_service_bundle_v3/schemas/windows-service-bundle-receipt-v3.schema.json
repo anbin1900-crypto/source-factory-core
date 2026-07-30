@@ -1,0 +1,21 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"urn:yolla:wkr004:windows-service-bundle-receipt:v3",
+  "title":"WKR-004 Windows Service Bundle Receipt V3",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema_version","stage","status","service_name","computer_name","started_at","finished_at","data","production_side_effect_count","self_merge"],
+  "properties":{
+    "schema_version":{"const":"3.0.0"},
+    "stage":{"enum":["build","install","start","health-15","health-120","stop","restart","status","uninstall","rollback"]},
+    "status":{"enum":["PASS","FAIL","BLOCKED","IDEMPOTENT_NO_DELTA"]},
+    "service_name":{"const":"YOLLA-PC-AGENT"},
+    "computer_name":{"type":"string","minLength":1},
+    "started_at":{"type":"string","format":"date-time"},
+    "finished_at":{"type":"string","format":"date-time"},
+    "error_code":{"type":["string","null"]},
+    "data":{"type":"object"},
+    "production_side_effect_count":{"const":0},
+    "self_merge":{"const":false}
+  }
+}
