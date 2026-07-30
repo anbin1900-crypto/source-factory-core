@@ -1,0 +1,40 @@
+{
+  "schema_version": "SOURCE_FACTORY_TERMINAL_RECEIPT_STORE_V1",
+  "receipts": [
+    {
+      "schema_version": "SOURCE_FACTORY_TERMINAL_WORKER_RECEIPT_V1",
+      "status": "DRY_RUN_WORKER_COMPLETED",
+      "worker_id": "SOURCE_FACTORY_LOCAL_LIFECYCLE_WORKER_001",
+      "task_id": "PORTAL_PHASE_1_OPINET_DATA_REPROCESSING",
+      "assignment_id": "DRYRUN-LIFECYCLE-2edbe940f88d894f",
+      "claim_key": "CLAIM-c8ccf648346e0e7cbd3ec5e4",
+      "queue_id": "GAS_STATION_PORTAL_016_PIPELINE_SMOKE_QUEUE_EXAMPLE",
+      "project_code": "GAS_STATION_PORTAL",
+      "outputs": [
+        {
+          "kind": "dry_run_lifecycle_output",
+          "path": null,
+          "description": "Local worker lifecycle dry-run completed without external effects."
+        }
+      ],
+      "verification": {
+        "dry_run_only": true,
+        "queue_intake_status": "PASS_QUEUE_INTAKE",
+        "claim_status": "ACCEPTED_FIRST_CLAIM",
+        "forbidden_effect_counters_zero": true
+      },
+      "blockers": [],
+      "forbidden_effect_counters": {
+        "prompt_send_count": 0,
+        "browser_launch_count": 0,
+        "pc_agent_service_start_count": 0,
+        "external_api_call_count": 0,
+        "middleware_transmission_count": 0,
+        "production_deploy_count": 0
+      },
+      "created_at": "2026-07-31T03:44:14",
+      "dedupe_key": "GAS_STATION_PORTAL_016_PIPELINE_SMOKE_QUEUE_EXAMPLE|DRYRUN-LIFECYCLE-2edbe940f88d894f|SOURCE_FACTORY_LOCAL_LIFECYCLE_WORKER_001|CLAIM-c8ccf648346e0e7cbd3ec5e4",
+      "stored_at": "2026-07-31T03:44:14"
+    }
+  ]
+}

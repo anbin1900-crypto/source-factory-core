@@ -1,0 +1,30 @@
+{
+  "worker_id": "SOURCE_FACTORY_024B_ONEFLOW_LOCAL_WORKER_LIFECYCLE_VERIFY_V2_WORKER",
+  "task_id": "024B_ONEFLOW_LOCAL_WORKER_LIFECYCLE_VERIFY_V2",
+  "status": "PASS_ONEFLOW_LOCAL_WORKER_LIFECYCLE_VERIFY_READY_FOR_025",
+  "generated_at": "2026-07-31T03:44:14",
+  "repository_root": "E:\\YOLLA\\source-factory-core",
+  "latest_023_decision_path": "reports\\oneflow_terminal_receipt_store_verify_20260731_033918\\ONEFLOW_TERMINAL_RECEIPT_STORE_VERIFY_DECISION.json",
+  "latest_023_status": "PASS_ONEFLOW_TERMINAL_RECEIPT_STORE_VERIFY_READY_FOR_024",
+  "queue_project_code": "GAS_STATION_PORTAL",
+  "queue_mode": "PROMPT_QUEUE_EXAMPLE_ONLY",
+  "json_read_encoding": "utf-8-sig",
+  "compile_statuses": {
+    "local_claim_store": "PASS_PY_COMPILE",
+    "terminal_receipt_store": "PASS_PY_COMPILE",
+    "local_worker_lifecycle": "PASS_PY_COMPILE"
+  },
+  "import_status": "PASS_IMPORT_LIFECYCLE_MODULES",
+  "lifecycle_status": "PASS_LOCAL_WORKER_LIFECYCLE_DRY_RUN",
+  "claim_attempt_status": "ACCEPTED_FIRST_CLAIM",
+  "receipt_save_status": "ACCEPTED_TERMINAL_RECEIPT",
+  "duplicate_claim_status": "REJECTED_DUPLICATE_CLAIM",
+  "duplicate_receipt_status": "REJECTED_DUPLICATE_TERMINAL_RECEIPT",
+  "claim_store_count": 1,
+  "terminal_receipt_store_count": 1,
+  "missing_required_files": [],
+  "static_check_failures": [],
+  "production_overwrite_count": 0,
+  "external_side_effect_count": 0,
+  "report_dir": "reports\\oneflow_local_worker_lifecycle_verify_v2_20260731_034414"
+}
