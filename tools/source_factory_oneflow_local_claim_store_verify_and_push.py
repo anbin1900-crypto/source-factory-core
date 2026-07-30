@@ -24,7 +24,7 @@ import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Tuple
+from typing import Any, Dict, Iterable, List
 
 STATUS_PASS = "PASS_ONEFLOW_LOCAL_CLAIM_STORE_VERIFY_READY_FOR_023"
 TASK_ID = "022_ONEFLOW_LOCAL_CLAIM_STORE_VERIFY"
@@ -76,11 +76,18 @@ def find_latest_report_dir(root: Path, prefix: str) -> Path:
 
 
 def import_claim_store_module(module_path: Path):
-    spec = importlib.util.spec_from_file_location("source_factory_local_claim_store", module_path)
+    module_name = "source_factory_local_claim_store"
+    spec = importlib.util.spec_from_file_location(module_name, module_path)
     if spec is None or spec.loader is None:
         raise RuntimeError(f"Unable to load module spec: {module_path}")
     module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)  # type: ignore[union-attr]
+    # Required for Python 3.13 dataclass processing when dynamically importing.
+    sys.modules[module_name] = module
+    try:
+        spec.loader.exec_module(module)  # type: ignore[union-attr]
+    except Exception:
+        sys.modules.pop(module_name, None)
+        raise
     return module
 
 
