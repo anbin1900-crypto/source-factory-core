@@ -1,0 +1,82 @@
+{
+  "schema_version": "SOURCE_FACTORY_RUNTIME_DRY_RUN_RECEIPT_V2_PYTHON_ONEFLOW",
+  "generated_at": "2026-07-31T02:34:04.088345+09:00",
+  "mode": "DRY_RUN_ONLY_NO_EXTERNAL_EFFECTS",
+  "repository_root": "E:\\YOLLA\\source-factory-core",
+  "queue_path": "E:\\YOLLA\\source-factory-core\\examples\\gas_station_portal_pipeline\\GAS_STATION_PORTAL_QUEUE_EXAMPLE.json",
+  "contract_status": "PASS_RUNTIME_PIPELINE_CONTRACT_READY_FOR_017",
+  "queue_project_code": "GAS_STATION_PORTAL",
+  "queue_id": "GAS_STATION_PORTAL_016_PIPELINE_SMOKE_QUEUE_EXAMPLE",
+  "queue_mode": "PROMPT_QUEUE_EXAMPLE_ONLY",
+  "target_stage": "PORTAL_PHASE_1_OPINET_DATA_REPROCESSING",
+  "runtime_source_count": 9,
+  "missing_runtime_source_count": 0,
+  "execution_flow": [
+    {
+      "step": 1,
+      "name": "daily_queue_intake",
+      "input": "daily_queue/YYYY-MM-DD/*.json or *.md",
+      "core_group": "queue",
+      "side_effect": "read_only"
+    },
+    {
+      "step": 2,
+      "name": "worker_prompt_dispatch_plan",
+      "input": "queue item",
+      "core_group": "queue",
+      "side_effect": "plan_only"
+    },
+    {
+      "step": 3,
+      "name": "gpt_browser_bridge_check",
+      "input": "browser/session target",
+      "core_group": "gpt_browser_bridge",
+      "side_effect": "diagnostic_only"
+    },
+    {
+      "step": 4,
+      "name": "pc_agent_receipt_gate",
+      "input": "worker receipt / runtime artifact",
+      "core_group": "pc_agent_routing",
+      "side_effect": "receipt_validation_only"
+    },
+    {
+      "step": 5,
+      "name": "commander_gate_decision",
+      "input": "validated receipt",
+      "core_group": "queue + pc_agent_routing",
+      "side_effect": "report_only"
+    }
+  ],
+  "planned_steps": [
+    {
+      "step": "daily_queue_intake",
+      "status": "DRY_RUN_PASS",
+      "effect": "read_queue_example_only"
+    },
+    {
+      "step": "worker_prompt_dispatch_plan",
+      "status": "DRY_RUN_PASS",
+      "effect": "plan_only_no_prompt_send"
+    },
+    {
+      "step": "gpt_browser_bridge_check",
+      "status": "DRY_RUN_PASS",
+      "effect": "no_browser_launch_no_gpt_call"
+    },
+    {
+      "step": "pc_agent_receipt_gate",
+      "status": "DRY_RUN_PASS",
+      "effect": "no_pc_agent_service_start"
+    },
+    {
+      "step": "commander_gate_decision",
+      "status": "DRY_RUN_READY",
+      "effect": "receipt_only"
+    }
+  ],
+  "missing_runtime_sources": [],
+  "production_overwrite_count": 0,
+  "external_side_effect_count": 0,
+  "status": "PASS_RUNTIME_PIPELINE_DRY_RUN_READY_FOR_019"
+}
