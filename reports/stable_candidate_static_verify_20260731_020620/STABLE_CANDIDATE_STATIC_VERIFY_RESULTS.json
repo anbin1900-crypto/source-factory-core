@@ -1,0 +1,25 @@
+{
+  "schema_version": "SOURCE_FACTORY_STABLE_CANDIDATE_STATIC_VERIFY_V1",
+  "generated_at": "2026-07-31T02:06:20.5636916+09:00",
+  "stable_candidate_dir": "E:\\YOLLA\\source-factory-core\\src\\integration_candidates\\p0_stable_candidate_20260731_015516",
+  "ops_candidate_dir": "E:\\YOLLA\\source-factory-core\\ops_integration_candidates\\p0_ops_candidate_20260731_015516",
+  "status": "PASS_STABLE_CANDIDATE_STATIC_VERIFY_READY_FOR_013",
+  "runtime_files": 9,
+  "runtime_pass": 9,
+  "runtime_fail": 0,
+  "runtime_skip": 0,
+  "js_files": 6,
+  "py_files": 3,
+  "ops_reference_files": 2,
+  "results": [
+    {"kind":"runtime","file_name":"buttonHandlers.js","relative_path":"gpt_browser_bridge/buttonHandlers.js","extension":".js","sha256":"d69be4e9afcc5864af7e1b38529b98c57064a2aa96b23883dea32e112c03343b","status":"PASS_NODE_CHECK","exit_code":0,"message":""},
+    {"kind":"runtime","file_name":"diagnostics.js","relative_path":"gpt_browser_bridge/diagnostics.js","extension":".js","sha256":"8aff7147a926623668d25bae5c8f9081a5c7552c8dc0d64eea8b15ce8b20d89e","status":"PASS_NODE_CHECK","exit_code":0,"message":""},
+    {"kind":"runtime","file_name":"fileNameSafe.js","relative_path":"gpt_browser_bridge/fileNameSafe.js","extension":".js","sha256":"e2e55ca1e08a8b96c62d77348b66dccbf3c570cce9a0fa2a78452098609431f5","status":"PASS_NODE_CHECK","exit_code":0,"message":""},
+    {"kind":"runtime","file_name":"stage1SelfCheck.js","relative_path":"gpt_browser_bridge/stage1SelfCheck.js","extension":".js","sha256":"dde37d7fa1ec956e4bee30d24e3eed1d968380eb905bd4ce4aec60f3ff41ebda","status":"PASS_NODE_CHECK","exit_code":0,"message":""},
+    {"kind":"runtime","file_name":"B2_W12_PREFINAL_VALIDATOR.py","relative_path":"pc_agent/B2_W12_PREFINAL_VALIDATOR.py","extension":".py","sha256":"371b0480110f4f5766202bdaabf2134617b5dcf1b03c3fa7a59501a14d033792","status":"PASS_PY_COMPILE","exit_code":0,"message":""},
+    {"kind":"runtime","file_name":"event_consumption_store.py","relative_path":"pc_agent/event_consumption_store.py","extension":".py","sha256":"6ae1df3747b0bf3611fc0bbf904be1ea2033bef415a33e4ec0f4a4cd99207a73","status":"PASS_PY_COMPILE","exit_code":0,"message":""},
+    {"kind":"runtime","file_name":"resource_doctor.py","relative_path":"pc_agent/resource_doctor.py","extension":".py","sha256":"91f4d5cee4fb08e34a2c75fbb3d41ff8a0b2a583dead63a511283a3b50b15d70","status":"PASS_PY_COMPILE","exit_code":0,"message":""},
+    {"kind":"runtime","file_name":"dailyQueueReader.js","relative_path":"queue/dailyQueueReader.js","extension":".js","sha256":"76737a6582c93ba4330a8e0e8f4fcc4dc7380585cc265d8f2675c9e20c7c0620","status":"PASS_NODE_CHECK","exit_code":0,"message":""},
+    {"kind":"runtime","file_name":"pythonProcessRunner.js","relative_path":"queue/pythonProcessRunner.js","extension":".js","sha256":"ab40b61eecaf9731dd8708c5e3e4f090f79b68242901c445610b718f4e53aab0","status":"PASS_NODE_CHECK","exit_code":0,"message":""}
+  ]
+}
