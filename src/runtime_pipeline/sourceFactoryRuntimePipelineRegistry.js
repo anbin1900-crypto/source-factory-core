@@ -1,6 +1,6 @@
-﻿"use strict";
+"use strict";
 
-const path = require("path");
+import path from "path";
 
 const runtimePipelineContract = Object.freeze({
   schemaVersion: "SOURCE_FACTORY_RUNTIME_PIPELINE_CONTRACT_V1",
@@ -60,8 +60,10 @@ function listRuntimeSourcePaths() {
   ];
 }
 
-module.exports = {
+export {
   getRuntimePipelineContract,
   listRuntimeSourcePaths,
   resolveRuntimePath,
 };
+
+export default runtimePipelineContract;
