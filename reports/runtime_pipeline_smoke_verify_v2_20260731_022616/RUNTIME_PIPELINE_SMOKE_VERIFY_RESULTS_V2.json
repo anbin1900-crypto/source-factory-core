@@ -1,0 +1,25 @@
+﻿{
+    "worker_id":  "SOURCE_FACTORY_017B_RUNTIME_PIPELINE_SMOKE_VERIFY_WORKER",
+    "task_id":  "017B_RUNTIME_PIPELINE_SMOKE_VERIFY_ESM",
+    "status":  "PASS_RUNTIME_PIPELINE_SMOKE_VERIFY_READY_FOR_018",
+    "generated_at":  "2026-07-31T02:26:17.1185610+09:00",
+    "repository_root":  "E:\\YOLLA\\source-factory-core",
+    "stable_runtime_sources_checked":  9,
+    "missing_count":  0,
+    "missing":  [
+
+                ],
+    "json_parse_status":  "PASS_JSON_PARSE",
+    "contract_status":  "PASS_CONTRACT_STATUS",
+    "queue_example_status":  "PASS_QUEUE_EXAMPLE",
+    "registry_syntax_status":  "PASS_NODE_CHECK",
+    "registry_import_status":  "PASS_IMPORT_ESM",
+    "registry_list_status":  "PASS_LIST_RUNTIME_SOURCE_PATHS",
+    "registry_path_resolve_status":  "PASS_RESOLVE_RUNTIME_PATH",
+    "node_exit_code":  0,
+    "node_output":  "PASS_REGISTRY_ESM_SMOKE paths=9",
+    "node_error":  "",
+    "production_overwrite_count":  0,
+    "external_side_effect_count":  0,
+    "report_dir":  "reports/runtime_pipeline_smoke_verify_v2_20260731_022616"
+}
