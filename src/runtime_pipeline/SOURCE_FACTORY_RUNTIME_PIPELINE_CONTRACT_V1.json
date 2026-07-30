@@ -1,0 +1,179 @@
+﻿{
+    "schema_version":  "SOURCE_FACTORY_RUNTIME_PIPELINE_CONTRACT_V1",
+    "generated_at":  "2026-07-31T02:20:27.3099007+09:00",
+    "status":  "PASS_RUNTIME_PIPELINE_CONTRACT_READY_FOR_017",
+    "closure_basis":  {
+                          "stable_core_closure_status":  "PASS_STABLE_CORE_P0_CLOSURE",
+                          "final_stable_src_static_verify_status":  "PASS_FINAL_STABLE_SRC_STATIC_VERIFY_READY_FOR_015",
+                          "stable_runtime_source_files":  9,
+                          "production_overwrite_count":  0,
+                          "conflict_count":  0,
+                          "external_side_effect_count":  0
+                      },
+    "runtime_groups":  {
+                           "queue":  {
+                                         "description":  "Daily queue reading and local process execution bridge.",
+                                         "files":  [
+                                                       "src/queue/dailyQueueReader.js",
+                                                       "src/queue/pythonProcessRunner.js"
+                                                   ]
+                                     },
+                           "gpt_browser_bridge":  {
+                                                      "description":  "GPT browser bridge helpers for diagnostics, button handling, filename safety, and stage 1 self-check.",
+                                                      "files":  [
+                                                                    "src/gpt_browser_bridge/buttonHandlers.js",
+                                                                    "src/gpt_browser_bridge/diagnostics.js",
+                                                                    "src/gpt_browser_bridge/fileNameSafe.js",
+                                                                    "src/gpt_browser_bridge/stage1SelfCheck.js"
+                                                                ]
+                                                  },
+                           "pc_agent_routing":  {
+                                                    "description":  "PC agent receipt and routing helpers.",
+                                                    "files":  [
+                                                                  "src/pc_agent_routing/B2_W12_PREFINAL_VALIDATOR.py",
+                                                                  "src/pc_agent_routing/event_consumption_store.py",
+                                                                  "src/pc_agent_routing/resource_doctor.py"
+                                                              ]
+                                                }
+                       },
+    "execution_flow":  [
+                           {
+                               "step":  1,
+                               "name":  "daily_queue_intake",
+                               "input":  "daily_queue/YYYY-MM-DD/*.json or *.md",
+                               "core_group":  "queue",
+                               "side_effect":  "read_only"
+                           },
+                           {
+                               "step":  2,
+                               "name":  "worker_prompt_dispatch_plan",
+                               "input":  "queue item",
+                               "core_group":  "queue",
+                               "side_effect":  "plan_only"
+                           },
+                           {
+                               "step":  3,
+                               "name":  "gpt_browser_bridge_check",
+                               "input":  "browser/session target",
+                               "core_group":  "gpt_browser_bridge",
+                               "side_effect":  "diagnostic_only"
+                           },
+                           {
+                               "step":  4,
+                               "name":  "pc_agent_receipt_gate",
+                               "input":  "worker receipt / runtime artifact",
+                               "core_group":  "pc_agent_routing",
+                               "side_effect":  "receipt_validation_only"
+                           },
+                           {
+                               "step":  5,
+                               "name":  "commander_gate_decision",
+                               "input":  "validated receipt",
+                               "core_group":  "queue + pc_agent_routing",
+                               "side_effect":  "report_only"
+                           }
+                       ],
+    "gas_station_portal_binding":  {
+                                       "example_queue_file":  "examples/gas_station_portal_pipeline/GAS_STATION_PORTAL_QUEUE_EXAMPLE.json",
+                                       "project_code":  "GAS_STATION_PORTAL",
+                                       "first_phase_policy":  "Opinet data reprocessing and analysis pages first; AI counselor/community/reporting modules deferred until explicit stage gate.",
+                                       "allowed_initial_tasks":  [
+                                                                     "opinet_data_collection_design",
+                                                                     "opinet_analysis_page_generation",
+                                                                     "gas_station_portal_prompt_queue_test",
+                                                                     "pc_agent_receipt_validation_test"
+                                                                 ]
+                                   },
+    "source_ledger":  [
+                          {
+                              "kind":  "stable_runtime_source",
+                              "group":  "queue",
+                              "role":  "daily_queue_reader",
+                              "path":  "src/queue/dailyQueueReader.js",
+                              "language":  "javascript",
+                              "exists":  true,
+                              "sha256":  "76737a6582c93ba4330a8e0e8f4fcc4dc7380585cc265d8f2675c9e20c7c0620",
+                              "size_bytes":  1349
+                          },
+                          {
+                              "kind":  "stable_runtime_source",
+                              "group":  "queue",
+                              "role":  "python_process_runner",
+                              "path":  "src/queue/pythonProcessRunner.js",
+                              "language":  "javascript",
+                              "exists":  true,
+                              "sha256":  "ab40b61eecaf9731dd8708c5e3e4f090f79b68242901c445610b718f4e53aab0",
+                              "size_bytes":  4440
+                          },
+                          {
+                              "kind":  "stable_runtime_source",
+                              "group":  "gpt_browser_bridge",
+                              "role":  "button_handlers",
+                              "path":  "src/gpt_browser_bridge/buttonHandlers.js",
+                              "language":  "javascript",
+                              "exists":  true,
+                              "sha256":  "d69be4e9afcc5864af7e1b38529b98c57064a2aa96b23883dea32e112c03343b",
+                              "size_bytes":  11707
+                          },
+                          {
+                              "kind":  "stable_runtime_source",
+                              "group":  "gpt_browser_bridge",
+                              "role":  "diagnostics",
+                              "path":  "src/gpt_browser_bridge/diagnostics.js",
+                              "language":  "javascript",
+                              "exists":  true,
+                              "sha256":  "8aff7147a926623668d25bae5c8f9081a5c7552c8dc0d64eea8b15ce8b20d89e",
+                              "size_bytes":  11124
+                          },
+                          {
+                              "kind":  "stable_runtime_source",
+                              "group":  "gpt_browser_bridge",
+                              "role":  "file_name_safe",
+                              "path":  "src/gpt_browser_bridge/fileNameSafe.js",
+                              "language":  "javascript",
+                              "exists":  true,
+                              "sha256":  "e2e55ca1e08a8b96c62d77348b66dccbf3c570cce9a0fa2a78452098609431f5",
+                              "size_bytes":  1074
+                          },
+                          {
+                              "kind":  "stable_runtime_source",
+                              "group":  "gpt_browser_bridge",
+                              "role":  "stage1_self_check",
+                              "path":  "src/gpt_browser_bridge/stage1SelfCheck.js",
+                              "language":  "javascript",
+                              "exists":  true,
+                              "sha256":  "dde37d7fa1ec956e4bee30d24e3eed1d968380eb905bd4ce4aec60f3ff41ebda",
+                              "size_bytes":  11008
+                          },
+                          {
+                              "kind":  "stable_runtime_source",
+                              "group":  "pc_agent_routing",
+                              "role":  "b2_w12_prefinal_validator",
+                              "path":  "src/pc_agent_routing/B2_W12_PREFINAL_VALIDATOR.py",
+                              "language":  "python",
+                              "exists":  true,
+                              "sha256":  "371b0480110f4f5766202bdaabf2134617b5dcf1b03c3fa7a59501a14d033792",
+                              "size_bytes":  10379
+                          },
+                          {
+                              "kind":  "stable_runtime_source",
+                              "group":  "pc_agent_routing",
+                              "role":  "event_consumption_store",
+                              "path":  "src/pc_agent_routing/event_consumption_store.py",
+                              "language":  "python",
+                              "exists":  true,
+                              "sha256":  "6ae1df3747b0bf3611fc0bbf904be1ea2033bef415a33e4ec0f4a4cd99207a73",
+                              "size_bytes":  1051
+                          },
+                          {
+                              "kind":  "stable_runtime_source",
+                              "group":  "pc_agent_routing",
+                              "role":  "resource_doctor",
+                              "path":  "src/pc_agent_routing/resource_doctor.py",
+                              "language":  "python",
+                              "exists":  true,
+                              "sha256":  "91f4d5cee4fb08e34a2c75fbb3d41ff8a0b2a583dead63a511283a3b50b15d70",
+                              "size_bytes":  1024
+                          }
+                      ]
+}
