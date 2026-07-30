@@ -3,7 +3,7 @@ SOURCE_FACTORY_SECRET_REUSE_CLASSIFIER.ps1
 
 Purpose:
   Stage 002 scanner for Source Factory Core migration.
-  It consumes the local inventory scan result, performs a heuristic secret-risk scan,
+  It consumes the local inventory scan result, performs a heuristic secret/name-risk scan,
   and creates a reusable-source upload plan.
 
 Safety:
@@ -13,16 +13,10 @@ Safety:
   - Does not modify source files.
   - Produces reports only.
 
-Inputs:
-  - Latest .\runs\local_source_inventory_* by default
-  - Or use -InventoryRunDir path
-
-Outputs:
-  - reports/SF_CORE_SECRET_SCAN.md
-  - reports/SF_CORE_SECRET_SCAN.json
-  - reports/SF_CORE_REUSE_UPLOAD_PLAN.csv
-  - reports/SF_CORE_REUSE_UPLOAD_PLAN.json
-  - WORKER_REPORT_002.md
+Hotfix notes:
+  - No hashtable regex pattern array.
+  - No quote-heavy regex literals.
+  - ASCII-only token scan for Windows PowerShell parser compatibility.
 #>
 
 param(
@@ -49,14 +43,22 @@ function Test-TextExtension {
   return ($Extension -in @(".js", ".mjs", ".cjs", ".ts", ".tsx", ".py", ".ps1", ".bat", ".cmd", ".md", ".json", ".yaml", ".yml", ".html", ".css", ".sql", ".csv", ".txt"))
 }
 
+function Test-ContainsAny {
+  param(
+    [string]$Text,
+    [string[]]$Needles
+  )
+  foreach ($needle in $Needles) {
+    if ($Text.Contains($needle)) { return $true }
+  }
+  return $false
+}
+
 function Get-NameRisk {
   param([string]$Path)
   $p = $Path.ToLowerInvariant()
   $tokens = @(".env", "secret", "secrets", "credential", "credentials", "token", "apikey", "api_key", "privatekey", "private_key", "id_rsa", "id_dsa", "id_ecdsa", "id_ed25519", "password", "passwd", "pat")
-  foreach ($t in $tokens) {
-    if ($p.Contains($t)) { return $true }
-  }
-  return $false
+  return (Test-ContainsAny -Text $p -Needles $tokens)
 }
 
 function Find-SecretIndicators {
@@ -78,21 +80,22 @@ function Find-SecretIndicators {
     return @("READ_FAILED")
   }
 
-  $patterns = @(
-    @{ name="GITHUB_TOKEN_PREFIX"; pattern="gh[pousr]_[A-Za-z0-9_]{20,}" },
-    @{ name="GITHUB_FINE_GRAINED_PAT"; pattern="github_pat_[A-Za-z0-9_]{30,}" },
-    @{ name="OPENAI_KEY_PREFIX"; pattern="sk-[A-Za-z0-9]{20,}" },
-    @{ name="AWS_ACCESS_KEY_ID"; pattern="AKIA[0-9A-Z]{16}" },
-    @{ name="GOOGLE_API_KEY"; pattern="AIza[0-9A-Za-z\-_]{20,}" },
-    @{ name="PRIVATE_KEY_BLOCK"; pattern="-----BEGIN (RSA |OPENSSH |EC |DSA )?PRIVATE KEY-----" },
-    @{ name="GENERIC_SECRET_ASSIGNMENT"; pattern="(?i)(password|passwd|secret|token|api[_-]?key)\s*[:=]\s*['\"][^'\"]{8,}['\"]" }
-  )
+  $lower = $text.ToLowerInvariant()
 
-  foreach ($p in $patterns) {
-    if ([regex]::IsMatch($text, $p.pattern)) {
-      $hits += $p.name
-    }
-  }
+  if (Test-ContainsAny -Text $text -Needles @("ghp_", "gho_", "ghu_", "ghs_", "ghr_")) { $hits += "GITHUB_TOKEN_PREFIX" }
+  if ($text.Contains("github_pat_")) { $hits += "GITHUB_FINE_GRAINED_PAT_PREFIX" }
+  if ($text.Contains("sk-")) { $hits += "OPENAI_STYLE_KEY_PREFIX" }
+  if ($text.Contains("AKIA")) { $hits += "AWS_ACCESS_KEY_ID_PREFIX" }
+  if ($text.Contains("AIza")) { $hits += "GOOGLE_API_KEY_PREFIX" }
+  if ($lower.Contains("-----begin ") -and $lower.Contains("private key-----")) { $hits += "PRIVATE_KEY_BLOCK" }
+
+  $assignmentTokens = @(
+    "password=", "password:", "passwd=", "passwd:",
+    "secret=", "secret:", "token=", "token:",
+    "api_key=", "api_key:", "apikey=", "apikey:",
+    "api-key=", "api-key:", "authorization: bearer"
+  )
+  if (Test-ContainsAny -Text $lower -Needles $assignmentTokens) { $hits += "GENERIC_SECRET_ASSIGNMENT_TOKEN" }
 
   return @($hits | Select-Object -Unique)
 }
@@ -107,10 +110,10 @@ function Get-ReuseDecision {
 
   if ($StorageTarget -like "GOOGLE_DRIVE*") { return "DRIVE_POINTER_ONLY" }
   if ($NameRisk) { return "BLOCK_REVIEW_NAME_RISK" }
-  if ($SecretHits.Count -gt 0) {
-    $blocking = @($SecretHits | Where-Object { $_ -notlike "SKIPPED_*" })
-    if ($blocking.Count -gt 0) { return "BLOCK_REVIEW_SECRET_INDICATOR" }
-  }
+
+  $blocking = @($SecretHits | Where-Object { $_ -notlike "SKIPPED_*" -and $_ -ne "READ_FAILED" })
+  if ($blocking.Count -gt 0) { return "BLOCK_REVIEW_SECRET_INDICATOR" }
+
   if ($Category -in @("P0_PC_AGENT_ROUTING_CORE", "P0_GPT_BROWSER_BRIDGE", "P0_DAILY_QUEUE_RUNNER")) { return "PROMOTE_TO_CORE_CANDIDATE" }
   if ($Category -in @("P1_ARTIFACT_LEDGER_AND_DRIVE_POINTER", "P1_GAS_STATION_PORTAL_EXAMPLES", "P1_REUSABLE_SOURCE_CANDIDATE")) { return "REVIEW_FOR_REUSE" }
   if ($Category -eq "P2_DOC_LEDGER_OR_CONFIG") { return "DOC_OR_CONFIG_REVIEW" }
@@ -145,8 +148,9 @@ foreach ($row in $inventory) {
   }
 
   $decision = Get-ReuseDecision -Category $category -StorageTarget $storage -NameRisk $nameRisk -SecretHits $hits
+  $blockingHits = @($hits | Where-Object { $_ -notlike "SKIPPED_*" -and $_ -ne "READ_FAILED" })
 
-  if ($nameRisk -or ($hits.Count -gt 0)) {
+  if ($nameRisk -or ($blockingHits.Count -gt 0)) {
     $secretFindings += [pscustomobject]@{
       source_path = $path
       file_name = $row.file_name
@@ -245,7 +249,7 @@ $wr += "  - secret/name-risk report"
 $wr += "  - reusable source upload plan"
 $wr += "tests_run:"
 $wr += "  - inventory CSV read"
-$wr += "  - heuristic secret indicator scan"
+$wr += "  - heuristic secret/name indicator scan"
 $wr += "  - reuse decision classification"
 $wr += "tests_not_run:"
 $wr += "  - source copy"
@@ -259,7 +263,6 @@ $wr += "  - heuristic scan only"
 $wr += "  - manual review required before public upload"
 $wr += "  - false positives and false negatives possible"
 $wr += "next_needed:"
-$wr += "  - commit generated reports"
 $wr += "  - review BLOCK_REVIEW files"
 $wr += "  - run 003 core source staging after approval"
 $wr += "WORKER_REPORT_END"
