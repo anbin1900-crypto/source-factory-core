@@ -1,0 +1,20 @@
+{
+  "worker_id": "SOURCE_FACTORY_022_ONEFLOW_LOCAL_CLAIM_STORE_VERIFY_WORKER",
+  "task_id": "022_ONEFLOW_LOCAL_CLAIM_STORE_VERIFY",
+  "status": "PASS_ONEFLOW_LOCAL_CLAIM_STORE_VERIFY_READY_FOR_023",
+  "generated_at": "2026-07-31T03:32:34",
+  "repository_root": "E:\\YOLLA\\source-factory-core",
+  "latest_021b_decision_path": "reports\\oneflow_local_exactly_once_simulator_v2_20260731_032647\\ONEFLOW_LOCAL_EXACTLY_ONCE_SIMULATOR_DECISION_V2.json",
+  "latest_021b_status": "PASS_ONEFLOW_LOCAL_EXACTLY_ONCE_SIMULATOR_READY_FOR_022",
+  "local_claim_store_module": "src\\queue\\local_claim_store.py",
+  "compile_status": "PASS_PY_COMPILE",
+  "import_status": "PASS_IMPORT_LOCAL_CLAIM_STORE",
+  "first_claim_attempt": "ACCEPTED_FIRST_CLAIM",
+  "second_claim_attempt": "REJECTED_DUPLICATE_CLAIM",
+  "store_claim_count": 1,
+  "duplicate_policy_status": "PASS_DUPLICATE_REJECTED",
+  "missing_required_files": [],
+  "production_overwrite_count": 0,
+  "external_side_effect_count": 0,
+  "report_dir": "reports\\oneflow_local_claim_store_verify_20260731_033234"
+}
