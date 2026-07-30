@@ -1,0 +1,30 @@
+{
+  "schema_version": "SOURCE_FACTORY_LOCAL_EXACTLY_ONCE_SIMULATION_V2",
+  "status": "PASS_LOCAL_EXACTLY_ONCE_SIMULATION",
+  "dedupe_basis": [
+    "queue_id",
+    "assignment_id",
+    "worker_id"
+  ],
+  "dedupe_key": "GAS_STATION_PORTAL_016_PIPELINE_SMOKE_QUEUE_EXAMPLE|DRYRUN-c0f6a24baf539e56|SOURCE_FACTORY_DRY_RUN_WORKER_001",
+  "attempts": [
+    {
+      "attempt_order": 1,
+      "dedupe_key": "GAS_STATION_PORTAL_016_PIPELINE_SMOKE_QUEUE_EXAMPLE|DRYRUN-c0f6a24baf539e56|SOURCE_FACTORY_DRY_RUN_WORKER_001",
+      "result": "ACCEPTED_FIRST_CLAIM",
+      "accepted": true,
+      "reason": "dedupe_key_was_empty"
+    },
+    {
+      "attempt_order": 2,
+      "dedupe_key": "GAS_STATION_PORTAL_016_PIPELINE_SMOKE_QUEUE_EXAMPLE|DRYRUN-c0f6a24baf539e56|SOURCE_FACTORY_DRY_RUN_WORKER_001",
+      "result": "REJECTED_DUPLICATE_CLAIM",
+      "accepted": false,
+      "reason": "dedupe_key_already_claimed"
+    }
+  ],
+  "local_store_size": 1,
+  "remote_queue_claim": false,
+  "local_file_lock": false,
+  "external_side_effect_count": 0
+}
