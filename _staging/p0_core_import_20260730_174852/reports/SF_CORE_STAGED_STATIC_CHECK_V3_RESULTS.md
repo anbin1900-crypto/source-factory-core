@@ -1,6 +1,6 @@
 ﻿# Source Factory Staged P0 Core Static Check V3
 
-generated_at: 2026-07-30T18:15:22.4126102+09:00
+generated_at: 2026-07-31T00:48:44.8133630+09:00
 staging_dir: .\_staging\p0_core_import_20260730_174852
 
 ## Summary
@@ -8,15 +8,16 @@ staging_dir: .\_staging\p0_core_import_20260730_174852
 | Item | Count |
 |---|---:|
 | Total checked | 240 |
-| Promotion candidates | 239 |
-| Blocked or review required |  |
+| Promotion candidates | 137 |
+| Blocked or review required | 103 |
 
 ## Promotion Decision Counts
 
 | Decision | Count |
 |---|---:|
+| BLOCKED_SHA_MISMATCH | 102 |
 | BLOCKED_STATIC_CHECK | 1 |
-| PROMOTION_CANDIDATE | 239 |
+| PROMOTION_CANDIDATE | 137 |
 
 ## Static Status Counts
 

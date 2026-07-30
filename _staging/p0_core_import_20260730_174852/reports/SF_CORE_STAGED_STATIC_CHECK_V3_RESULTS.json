@@ -1,15 +1,19 @@
 ﻿{
-    "generated_at":  "2026-07-30T18:15:22.3924210+09:00",
+    "generated_at":  "2026-07-31T00:48:44.7740750+09:00",
     "staging_dir":  ".\\_staging\\p0_core_import_20260730_174852",
     "total_checked":  240,
     "promotion_decision_counts":  [
+                                      {
+                                          "decision":  "BLOCKED_SHA_MISMATCH",
+                                          "count":  102
+                                      },
                                       {
                                           "decision":  "BLOCKED_STATIC_CHECK",
                                           "count":  1
                                       },
                                       {
                                           "decision":  "PROMOTION_CANDIDATE",
-                                          "count":  239
+                                          "count":  137
                                       }
                                   ],
     "static_status_counts":  [
@@ -43,12 +47,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\PROMPT_QUEUE\\stage4-run-prompt-queue__20260703_023057_729.txt",
@@ -58,12 +62,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\PROMPT_QUEUE\\stage4-run-prompt-queue__20260703_023103_697.txt",
@@ -73,12 +77,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\PROMPT_QUEUE\\stage4-run-prompt-queue__20260703_023104_826.txt",
@@ -88,12 +92,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\PROMPT_QUEUE\\stage4-run-prompt-queue__20260703_023231_537.txt",
@@ -103,12 +107,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\PROMPT_QUEUE\\stage4-run-prompt-queue__20260703_023232_317.txt",
@@ -118,12 +122,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\PROMPT_QUEUE\\stage4-run-prompt-queue__20260703_023233_305.txt",
@@ -133,12 +137,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\PROMPT_QUEUE\\stage4-run-prompt-queue__20260703_023234_129.txt",
@@ -148,12 +152,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\PROMPT_QUEUE\\stage4-run-prompt-queue__20260703_023234_662.txt",
@@ -163,12 +167,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\PROMPT_QUEUE\\stage4-run-prompt-queue__20260703_023235_196.txt",
@@ -178,12 +182,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\PROMPT_QUEUE\\stage4-run-prompt-queue__20260703_023235_791.txt",
@@ -193,12 +197,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\PROMPT_QUEUE\\stage4-run-prompt-queue__20260703_023236_517.txt",
@@ -208,12 +212,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\PROMPT_QUEUE\\stage4-run-prompt-queue__20260703_023237_208.txt",
@@ -223,12 +227,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\PROMPT_QUEUE\\stage4-run-prompt-queue__20260703_023237_882.txt",
@@ -238,12 +242,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\PROMPT_QUEUE\\stage4-run-prompt-queue__20260703_023238_661.txt",
@@ -253,12 +257,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\PROMPT_QUEUE\\stage4-run-prompt-queue__20260703_023239_378.txt",
@@ -268,12 +272,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\PROMPT_QUEUE\\stage4-run-prompt-queue__20260703_024728_450.txt",
@@ -283,12 +287,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\PROMPT_QUEUE\\stage4-run-prompt-queue__20260703_040013_017.txt",
@@ -298,12 +302,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "actual_sha256":  "f06a01a7ddc3d2bbc1a3b6ce04bb43f5bb73cbb06977c6fc8adfacd957a1afb6",
-                        "sha_match":  true,
-                        "size_bytes":  30,
+                        "actual_sha256":  "5c54e05440b27e660bf0bf6d8a20be04faadda2444cf0e016a85ce40b6f0f397",
+                        "sha_match":  false,
+                        "size_bytes":  32,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_02_STAGE2\\src\\core\\pythonProcessRunner.js",
@@ -493,12 +497,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".md",
                         "expected_sha256":  "f2916bea4366343f7509d2e0f2ae944c47e4c0d7d20e169d817f6f1300f436be",
-                        "actual_sha256":  "f2916bea4366343f7509d2e0f2ae944c47e4c0d7d20e169d817f6f1300f436be",
-                        "sha_match":  true,
-                        "size_bytes":  19491,
+                        "actual_sha256":  "76b4740b3e588a1f6b25292aa754508af3e46308d82e9a1c9ed0245bbdcffe6b",
+                        "sha_match":  false,
+                        "size_bytes":  19962,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\prompts\\stage4\\DONE_LIGHT_REPORT_GENERATOR_PROMPT.txt",
@@ -508,12 +512,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "eded8f96bf9b182a637a70306554d53a2ee5725a700db589a429304855745b91",
-                        "actual_sha256":  "eded8f96bf9b182a637a70306554d53a2ee5725a700db589a429304855745b91",
-                        "sha_match":  true,
-                        "size_bytes":  4104,
+                        "actual_sha256":  "8df0f51284f4c92ff4a60fcbba4f12e79b27163197e466c2c14d22c516015c39",
+                        "sha_match":  false,
+                        "size_bytes":  4219,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\panelControl\\stage4LaoValidationQueueModel.js",
@@ -523,12 +527,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "c3bf743554bb895fc9731c836e174c993a979d8fe8449d4d464472d6056df211",
-                        "actual_sha256":  "c3bf743554bb895fc9731c836e174c993a979d8fe8449d4d464472d6056df211",
-                        "sha_match":  true,
-                        "size_bytes":  17058,
+                        "actual_sha256":  "0289524b265530039b6343c068d95dfd34ea165e9bf3d16dadf9848b35ba35e7",
+                        "sha_match":  false,
+                        "size_bytes":  17168,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\panelControl\\stage4TaeraResourceQueue.js",
@@ -538,12 +542,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "fdc93ccb2b9c762d67fa22ca55399a1df7f7c60049f2a9c663e8cd5fe12c8b21",
-                        "actual_sha256":  "fdc93ccb2b9c762d67fa22ca55399a1df7f7c60049f2a9c663e8cd5fe12c8b21",
-                        "sha_match":  true,
-                        "size_bytes":  31199,
+                        "actual_sha256":  "e6ebef83335036a3dd9a3f95038a87ccf7413d8e2a4d46c349207bb162a98249",
+                        "sha_match":  false,
+                        "size_bytes":  32044,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\promptAutomation\\stage4InstructionFileSeparator.js",
@@ -553,12 +557,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "b5cbbcf73f101d00e044f68f6f1352aa87a9911b76257d5317da0348b6c1cc94",
-                        "actual_sha256":  "b5cbbcf73f101d00e044f68f6f1352aa87a9911b76257d5317da0348b6c1cc94",
-                        "sha_match":  true,
-                        "size_bytes":  20484,
+                        "actual_sha256":  "04f26bd21b3f65854aad8455b19ea5f6136cc003845668d436f7892383a48c0f",
+                        "sha_match":  false,
+                        "size_bytes":  20552,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\promptAutomation\\stage4PromptCompletionDetector.js",
@@ -568,12 +572,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "9332e61e5cdbc3cc467d46c84ddb95e317935c3e5f1c7298066ac7634b158ddd",
-                        "actual_sha256":  "9332e61e5cdbc3cc467d46c84ddb95e317935c3e5f1c7298066ac7634b158ddd",
-                        "sha_match":  true,
-                        "size_bytes":  18815,
+                        "actual_sha256":  "ac2b3b6a0ba50e7c72ff792eeaf1c63d6817afbbcd39f22429d67f7a8b445f84",
+                        "sha_match":  false,
+                        "size_bytes":  19356,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\promptAutomation\\stage4PromptLibraryModel.js",
@@ -583,12 +587,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "adeddca649d97ceebfa675c1760a95893e3a234779a2a4989306a7aaeae15531",
-                        "actual_sha256":  "adeddca649d97ceebfa675c1760a95893e3a234779a2a4989306a7aaeae15531",
-                        "sha_match":  true,
-                        "size_bytes":  10950,
+                        "actual_sha256":  "7c9ee913fa002b668e369c0dfd13c42d2f0be26f6dab10801a637a6551c52b4e",
+                        "sha_match":  false,
+                        "size_bytes":  11363,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\promptAutomation\\stage4PromptPackageModel.js",
@@ -598,12 +602,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "0b8c62236d1fc45e9c24bbd9a36d777f9d7125ac7d18b4e59a23382918f29628",
-                        "actual_sha256":  "0b8c62236d1fc45e9c24bbd9a36d777f9d7125ac7d18b4e59a23382918f29628",
-                        "sha_match":  true,
-                        "size_bytes":  13412,
+                        "actual_sha256":  "567f78aab6ecacd3e13940c22b72676085010bb13d8e7bf2fb14d076a00a5bf1",
+                        "sha_match":  false,
+                        "size_bytes":  13901,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\promptAutomation\\stage4PromptPauseResumeController.js",
@@ -613,12 +617,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "aab263b475e65d99e1531866073f9712fc2f940c1fbfbff31a66e17d091af3cd",
-                        "actual_sha256":  "aab263b475e65d99e1531866073f9712fc2f940c1fbfbff31a66e17d091af3cd",
-                        "sha_match":  true,
-                        "size_bytes":  24456,
+                        "actual_sha256":  "8ca293400094c1aa05d365ba0695cd130d9cb0a4da52d58e255e590055f9f016",
+                        "sha_match":  false,
+                        "size_bytes":  25200,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\promptAutomation\\stage4PromptQueueModel.js",
@@ -628,12 +632,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "f9a4dc48f76298716d3ff96cf4af07fb8f8f294752de5ea4493b3b3832fd5def",
-                        "actual_sha256":  "f9a4dc48f76298716d3ff96cf4af07fb8f8f294752de5ea4493b3b3832fd5def",
-                        "sha_match":  true,
-                        "size_bytes":  20561,
+                        "actual_sha256":  "7d7e205b999def75aa4862b8b82ebcc3466d7bba58076f8c0db703ab6d525576",
+                        "sha_match":  false,
+                        "size_bytes":  21164,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\promptAutomation\\stage4PromptRetryPolicy.js",
@@ -643,12 +647,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "0036cc79ecb21b57989ad1c5118a451554ea0f56c0f77c30d473ef3baa1a643b",
-                        "actual_sha256":  "0036cc79ecb21b57989ad1c5118a451554ea0f56c0f77c30d473ef3baa1a643b",
-                        "sha_match":  true,
-                        "size_bytes":  17660,
+                        "actual_sha256":  "9ca9c89e5f836a97a9cc9a884d1b569c501ad55076272df9d3314891d7f91d98",
+                        "sha_match":  false,
+                        "size_bytes":  18194,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\promptAutomation\\stage4PromptRunStateModel.js",
@@ -658,12 +662,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "02b5c1f927f1abfcc81c734857250881b6329c22e0544ff57f8463ddd328f878",
-                        "actual_sha256":  "02b5c1f927f1abfcc81c734857250881b6329c22e0544ff57f8463ddd328f878",
-                        "sha_match":  true,
-                        "size_bytes":  17315,
+                        "actual_sha256":  "ffca56c98df8baf72c3f72e1f8d0db0e0872611bd2e4552cec69fc054ad93572",
+                        "sha_match":  false,
+                        "size_bytes":  17826,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\promptAutomation\\stage4SequentialPromptSender.js",
@@ -673,12 +677,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "d424f8edf02041a1cf5a1128d183634861f20624ab9e965beb4676ab94c65918",
-                        "actual_sha256":  "d424f8edf02041a1cf5a1128d183634861f20624ab9e965beb4676ab94c65918",
-                        "sha_match":  true,
-                        "size_bytes":  28442,
+                        "actual_sha256":  "8ddff9f95e071f278fab763ff5de2bf14cfed6e3f759e4f17d2d85f353e9e178",
+                        "sha_match":  false,
+                        "size_bytes":  29155,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\promptAutomation\\stage4TaeoAutosaveController.js",
@@ -688,12 +692,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "f133effbdb21a2f938cc69df317c35b60fc88dec2b466d05daf39639c095e87c",
-                        "actual_sha256":  "f133effbdb21a2f938cc69df317c35b60fc88dec2b466d05daf39639c095e87c",
-                        "sha_match":  true,
-                        "size_bytes":  17318,
+                        "actual_sha256":  "d646c5bbef613b8b4fcab279b15409723ac5a3c9c234a87dffa459713416b131",
+                        "sha_match":  false,
+                        "size_bytes":  17809,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\promptAutomation\\stage4TaeoRawOutputStore.js",
@@ -703,12 +707,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "d23ecbbd6768ccb9a9ca8c8b32eb12479575f1821544be1dca755f19c6e359a4",
-                        "actual_sha256":  "d23ecbbd6768ccb9a9ca8c8b32eb12479575f1821544be1dca755f19c6e359a4",
-                        "sha_match":  true,
-                        "size_bytes":  11099,
+                        "actual_sha256":  "d4447379d2eecd7a374d535746a7dd26c6ceeed4220113c43f6c5c7350812295",
+                        "sha_match":  false,
+                        "size_bytes":  11458,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\promptAutomation\\stage4TaeoResponseStabilityDetector.js",
@@ -718,12 +722,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "e7ef0343250dde3bc33473f02156a51f2f54b321406424451213012d7c63007b",
-                        "actual_sha256":  "e7ef0343250dde3bc33473f02156a51f2f54b321406424451213012d7c63007b",
-                        "sha_match":  true,
-                        "size_bytes":  10310,
+                        "actual_sha256":  "03caaf19357f234258af95bd09476315bae85da3554cc0addc549a559cb2e40d",
+                        "sha_match":  false,
+                        "size_bytes":  10621,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\promptBuilder.js",
@@ -748,12 +752,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "5e59814d42b711db4c41f17fcaca4accca47a51865d094135f614fbdedc1b25b",
-                        "actual_sha256":  "5e59814d42b711db4c41f17fcaca4accca47a51865d094135f614fbdedc1b25b",
-                        "sha_match":  true,
-                        "size_bytes":  11445,
+                        "actual_sha256":  "9792dac85042dbebdb7eb5ef844e0f253efcef3396419e5680860a30d9925fc9",
+                        "sha_match":  false,
+                        "size_bytes":  11678,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\panelAutomation\\stage4PromptQueueViewModel.js",
@@ -763,12 +767,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "bde60c126cca1e402dfe84bfe2ba6fb243e2c1f91872e4ca794b68c13db9e7e1",
-                        "actual_sha256":  "bde60c126cca1e402dfe84bfe2ba6fb243e2c1f91872e4ca794b68c13db9e7e1",
-                        "sha_match":  true,
-                        "size_bytes":  23071,
+                        "actual_sha256":  "fe1a265da1bc038daeb3a7962eff00504229d3d2a9968a2a6ab6d1a7022d716a",
+                        "sha_match":  false,
+                        "size_bytes":  23680,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\shared\\stage4\\greenOutputAssemblyQueue.js",
@@ -778,12 +782,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "5869b5f127038e8e21becabd9c61faaf5fc630595a73bb26a8092b7df318477e",
-                        "actual_sha256":  "5869b5f127038e8e21becabd9c61faaf5fc630595a73bb26a8092b7df318477e",
-                        "sha_match":  true,
-                        "size_bytes":  15146,
+                        "actual_sha256":  "eabfb6177b9e8419617e44d42329145803e8f74047ed5c6e0b706bc2d26ff26b",
+                        "sha_match":  false,
+                        "size_bytes":  15754,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\shared\\stage4\\promptPackageVersionManager.js",
@@ -793,12 +797,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "d9afbca9005a143923aa170f482af3dc200c5cd71198e3a82c5cd477c26e3643",
-                        "actual_sha256":  "d9afbca9005a143923aa170f482af3dc200c5cd71198e3a82c5cd477c26e3643",
-                        "sha_match":  true,
-                        "size_bytes":  14529,
+                        "actual_sha256":  "8dddcf9f3b1e31c9a4bd171278708faba1c21b4ddc984520b3fbf660a9abdaa7",
+                        "sha_match":  false,
+                        "size_bytes":  15050,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\shared\\stage4\\promptQueueManager.js",
@@ -808,12 +812,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "453ae326ddcc28872e89b658bab66ec80f7ecbcfb57ccad4e4fe631f479eacf1",
-                        "actual_sha256":  "453ae326ddcc28872e89b658bab66ec80f7ecbcfb57ccad4e4fe631f479eacf1",
-                        "sha_match":  true,
-                        "size_bytes":  15330,
+                        "actual_sha256":  "8f162161e6a9276d656092b189c7ce1d683067a73608fee41e70ed69c5320b18",
+                        "sha_match":  false,
+                        "size_bytes":  15848,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\STAGE4_35_GREEN_CREATE_READY_ASSEMBLED_ROOT_SANDBOX\\prompts\\stage4\\DONE_LIGHT_REPORT_GENERATOR_PROMPT.txt",
@@ -823,12 +827,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "eded8f96bf9b182a637a70306554d53a2ee5725a700db589a429304855745b91",
-                        "actual_sha256":  "eded8f96bf9b182a637a70306554d53a2ee5725a700db589a429304855745b91",
-                        "sha_match":  true,
-                        "size_bytes":  4104,
+                        "actual_sha256":  "8df0f51284f4c92ff4a60fcbba4f12e79b27163197e466c2c14d22c516015c39",
+                        "sha_match":  false,
+                        "size_bytes":  4219,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\STAGE4_35_GREEN_CREATE_READY_ASSEMBLED_ROOT_SANDBOX\\src\\shared\\stage4\\greenOutputAssemblyQueue.js",
@@ -838,12 +842,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "5869b5f127038e8e21becabd9c61faaf5fc630595a73bb26a8092b7df318477e",
-                        "actual_sha256":  "5869b5f127038e8e21becabd9c61faaf5fc630595a73bb26a8092b7df318477e",
-                        "sha_match":  true,
-                        "size_bytes":  15146,
+                        "actual_sha256":  "eabfb6177b9e8419617e44d42329145803e8f74047ed5c6e0b706bc2d26ff26b",
+                        "sha_match":  false,
+                        "size_bytes":  15754,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\STAGE4_35_GREEN_CREATE_READY_ASSEMBLED_ROOT_SANDBOX\\src\\shared\\stage4\\promptPackageVersionManager.js",
@@ -853,12 +857,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "d9afbca9005a143923aa170f482af3dc200c5cd71198e3a82c5cd477c26e3643",
-                        "actual_sha256":  "d9afbca9005a143923aa170f482af3dc200c5cd71198e3a82c5cd477c26e3643",
-                        "sha_match":  true,
-                        "size_bytes":  14529,
+                        "actual_sha256":  "8dddcf9f3b1e31c9a4bd171278708faba1c21b4ddc984520b3fbf660a9abdaa7",
+                        "sha_match":  false,
+                        "size_bytes":  15050,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\STAGE4_35_GREEN_CREATE_READY_ASSEMBLED_ROOT_SANDBOX\\src\\shared\\stage4\\promptQueueManager.js",
@@ -868,12 +872,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "453ae326ddcc28872e89b658bab66ec80f7ecbcfb57ccad4e4fe631f479eacf1",
-                        "actual_sha256":  "453ae326ddcc28872e89b658bab66ec80f7ecbcfb57ccad4e4fe631f479eacf1",
-                        "sha_match":  true,
-                        "size_bytes":  15330,
+                        "actual_sha256":  "8f162161e6a9276d656092b189c7ce1d683067a73608fee41e70ed69c5320b18",
+                        "sha_match":  false,
+                        "size_bytes":  15848,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\generated\\20260702182627_MANUAL_STAGE4_GATE_EXTRACTED\\PROJECT_FILES\\src\\core\\promptAutomation\\stage4PromptLibraryModel.js",
@@ -883,12 +887,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "adeddca649d97ceebfa675c1760a95893e3a234779a2a4989306a7aaeae15531",
-                        "actual_sha256":  "adeddca649d97ceebfa675c1760a95893e3a234779a2a4989306a7aaeae15531",
-                        "sha_match":  true,
-                        "size_bytes":  10950,
+                        "actual_sha256":  "7c9ee913fa002b668e369c0dfd13c42d2f0be26f6dab10801a637a6551c52b4e",
+                        "sha_match":  false,
+                        "size_bytes":  11363,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\generated\\20260702182627_MANUAL_STAGE4_GATE_EXTRACTED\\PROJECT_FILES\\src\\core\\promptAutomation\\stage4PromptPackageModel.js",
@@ -898,12 +902,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "0b8c62236d1fc45e9c24bbd9a36d777f9d7125ac7d18b4e59a23382918f29628",
-                        "actual_sha256":  "0b8c62236d1fc45e9c24bbd9a36d777f9d7125ac7d18b4e59a23382918f29628",
-                        "sha_match":  true,
-                        "size_bytes":  13412,
+                        "actual_sha256":  "567f78aab6ecacd3e13940c22b72676085010bb13d8e7bf2fb14d076a00a5bf1",
+                        "sha_match":  false,
+                        "size_bytes":  13901,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\generated\\20260703_040451_037_STAGE4_PANEL_GATE_EXTRACTED\\PROJECT_FILES\\src\\core\\promptAutomation\\stage4PromptLibraryModel.js",
@@ -913,12 +917,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "adeddca649d97ceebfa675c1760a95893e3a234779a2a4989306a7aaeae15531",
-                        "actual_sha256":  "adeddca649d97ceebfa675c1760a95893e3a234779a2a4989306a7aaeae15531",
-                        "sha_match":  true,
-                        "size_bytes":  10950,
+                        "actual_sha256":  "7c9ee913fa002b668e369c0dfd13c42d2f0be26f6dab10801a637a6551c52b4e",
+                        "sha_match":  false,
+                        "size_bytes":  11363,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\generated\\20260703_040451_037_STAGE4_PANEL_GATE_EXTRACTED\\PROJECT_FILES\\src\\core\\promptAutomation\\stage4PromptPackageModel.js",
@@ -928,12 +932,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "0b8c62236d1fc45e9c24bbd9a36d777f9d7125ac7d18b4e59a23382918f29628",
-                        "actual_sha256":  "0b8c62236d1fc45e9c24bbd9a36d777f9d7125ac7d18b4e59a23382918f29628",
-                        "sha_match":  true,
-                        "size_bytes":  13412,
+                        "actual_sha256":  "567f78aab6ecacd3e13940c22b72676085010bb13d8e7bf2fb14d076a00a5bf1",
+                        "sha_match":  false,
+                        "size_bytes":  13901,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\prompts\\stage4\\DONE_LIGHT_REPORT_GENERATOR_PROMPT.txt",
@@ -943,12 +947,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".txt",
                         "expected_sha256":  "eded8f96bf9b182a637a70306554d53a2ee5725a700db589a429304855745b91",
-                        "actual_sha256":  "eded8f96bf9b182a637a70306554d53a2ee5725a700db589a429304855745b91",
-                        "sha_match":  true,
-                        "size_bytes":  4104,
+                        "actual_sha256":  "8df0f51284f4c92ff4a60fcbba4f12e79b27163197e466c2c14d22c516015c39",
+                        "sha_match":  false,
+                        "size_bytes":  4219,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\src\\shared\\stage4\\greenOutputAssemblyQueue.js",
@@ -958,12 +962,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "5869b5f127038e8e21becabd9c61faaf5fc630595a73bb26a8092b7df318477e",
-                        "actual_sha256":  "5869b5f127038e8e21becabd9c61faaf5fc630595a73bb26a8092b7df318477e",
-                        "sha_match":  true,
-                        "size_bytes":  15146,
+                        "actual_sha256":  "eabfb6177b9e8419617e44d42329145803e8f74047ed5c6e0b706bc2d26ff26b",
+                        "sha_match":  false,
+                        "size_bytes":  15754,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\src\\shared\\stage4\\promptPackageVersionManager.js",
@@ -973,12 +977,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "d69651c71d2b9f5da7391653a8687120123738dfa15ccb42eb410aace8a30354",
-                        "actual_sha256":  "d69651c71d2b9f5da7391653a8687120123738dfa15ccb42eb410aace8a30354",
-                        "sha_match":  true,
-                        "size_bytes":  19520,
+                        "actual_sha256":  "10824fc6d5a21624f3bd74e943d270397ec46ddbda79f1788394adbda31299d1",
+                        "sha_match":  false,
+                        "size_bytes":  20152,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\src\\shared\\stage4\\promptQueueManager.js",
@@ -988,12 +992,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "5b5a5fd7d4c6121effe4433eeecff2c0973d5a26bee6cb00e2e3a164905d9bd9",
-                        "actual_sha256":  "5b5a5fd7d4c6121effe4433eeecff2c0973d5a26bee6cb00e2e3a164905d9bd9",
-                        "sha_match":  true,
-                        "size_bytes":  19405,
+                        "actual_sha256":  "1d7703e5b2dc4ab290873e9c585444edbb6c0c0355d3e552d111c0ee767b21bf",
+                        "sha_match":  false,
+                        "size_bytes":  20037,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\src\\shared\\stage4\\sequentialPromptSender.js",
@@ -1003,12 +1007,12 @@
                         "category":  "P0_DAILY_QUEUE_RUNNER",
                         "extension":  ".js",
                         "expected_sha256":  "a4839486e52721743f837230caf97645e4456953931578cb428dc2f8a09dcb28",
-                        "actual_sha256":  "a4839486e52721743f837230caf97645e4456953931578cb428dc2f8a09dcb28",
-                        "sha_match":  true,
-                        "size_bytes":  23606,
+                        "actual_sha256":  "619a5db556cad6dfb572c8c6b398997fdb568e77b79a64bb5aa88e6b94b0e622",
+                        "sha_match":  false,
+                        "size_bytes":  24282,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "E:\\YOLLA\\repository\\out\\W04_VERIFIER_FIX_AND_FINAL_INTEGRATION_THIRD_PASS_PROMPT.txt",
@@ -1288,12 +1292,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_ASSEMBLY_RECORDS\\2026-07-01\\STAGE1_BROWSER_V0_1_RUNTIME_PASS\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -1303,12 +1307,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_COMMANDER_REPORTS\\COMMANDER_REPORT_PACKAGE_20260701_035338\\02_LATEST_ASSEMBLY_RECORD\\assembled_files\\assembled_files\\assembled\\20260701_01_STAGE1_BROWSER\\run\\RUN_STAGE1_DIAGNOSTIC.bat",
@@ -1468,12 +1472,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -1483,12 +1487,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\CONSTITUTION\\NEW_COMMANDER_START_PROMPT_v1.txt",
@@ -1498,12 +1502,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".txt",
                         "expected_sha256":  "002daeb0ac13b8dc0fef25c1b358ed7f3a427910afdf241826970c504ef0d268",
-                        "actual_sha256":  "002daeb0ac13b8dc0fef25c1b358ed7f3a427910afdf241826970c504ef0d268",
-                        "sha_match":  true,
-                        "size_bytes":  1199,
+                        "actual_sha256":  "e185aeca6cfd07efd29dc6d5ca4f938e2d87a690ba815c3555b6f3f8b372df6d",
+                        "sha_match":  false,
+                        "size_bytes":  1221,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\CONSTITUTION\\README_CONSTITUTION_PACKAGE.md",
@@ -1513,12 +1517,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".md",
                         "expected_sha256":  "04602df50bd1c0d9b7a55ef6b7629f21d6f59adbcd78989e91371917148b7f6c",
-                        "actual_sha256":  "04602df50bd1c0d9b7a55ef6b7629f21d6f59adbcd78989e91371917148b7f6c",
-                        "sha_match":  true,
-                        "size_bytes":  1084,
+                        "actual_sha256":  "ddced26e70ea6670d9b40bf5d3956061ba3a7f8a740c782ac9e9021d4c1d81b2",
+                        "sha_match":  false,
+                        "size_bytes":  1119,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\CONSTITUTION\\WORKER_DATE_FOLDER_RULE_PROMPT_SNIPPET_v1.txt",
@@ -1528,12 +1532,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".txt",
                         "expected_sha256":  "2afae17c7af22e38d004e5d786f5fac2f1699513851df9288990452858886c79",
-                        "actual_sha256":  "2afae17c7af22e38d004e5d786f5fac2f1699513851df9288990452858886c79",
-                        "sha_match":  true,
-                        "size_bytes":  1225,
+                        "actual_sha256":  "754ec43bdaf89af7aa915a775721aaeacf8c6839ee3b6a6b8b22a53a9e304e66",
+                        "sha_match":  false,
+                        "size_bytes":  1264,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\run\\RUN_STAGE1_DIAGNOSTIC.bat",
@@ -1648,12 +1652,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_03_STAGE2_INTEGRATED_backup_before_recreate_20260701_061007\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -1663,12 +1667,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_03_STAGE2_INTEGRATED\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
@@ -1678,12 +1682,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_03_STAGE2_INTEGRATED\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -1693,12 +1697,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_05_STAGE2_RUNTIME_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
@@ -1708,12 +1712,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_05_STAGE2_RUNTIME_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -1723,12 +1727,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_06_STAGE3_WORKER_OUTPUT_SYNTAX_HOTFIX_RUNTIME_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
@@ -1738,12 +1742,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_06_STAGE3_WORKER_OUTPUT_SYNTAX_HOTFIX_RUNTIME_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -1753,12 +1757,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_07_STAGE3_RUNTIME_VALIDATED_INTEGRATED_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
@@ -1768,12 +1772,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_07_STAGE3_RUNTIME_VALIDATED_INTEGRATED_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -1783,12 +1787,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_08_STAGE3_IPC_ORDER_FIX_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
@@ -1798,12 +1802,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_08_STAGE3_IPC_ORDER_FIX_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -1813,12 +1817,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_10_STAGE3_WORKER_INBOX_RETURN_FIX_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
@@ -1828,12 +1832,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_10_STAGE3_WORKER_INBOX_RETURN_FIX_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -1843,12 +1847,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_11_STAGE3_WORKER_INSTRUCTION_DISPLAY_FIX_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
@@ -1858,12 +1862,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_11_STAGE3_WORKER_INSTRUCTION_DISPLAY_FIX_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -1873,12 +1877,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_12_STAGE3_WORKER_RETURN_INPUT_FIX_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
@@ -1888,12 +1892,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_12_STAGE3_WORKER_RETURN_INPUT_FIX_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -1903,12 +1907,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_13_STAGE3_COMMANDER_RETURN_INBOX_REFRESH_FIX_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
@@ -1918,12 +1922,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_13_STAGE3_COMMANDER_RETURN_INBOX_REFRESH_FIX_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -1933,12 +1937,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_14_STAGE3_COMMANDER_RETURN_MESSAGE_VIEW_FIX_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
@@ -1948,12 +1952,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_14_STAGE3_COMMANDER_RETURN_MESSAGE_VIEW_FIX_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -1963,12 +1967,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_15_STAGE3_WORKER_RETURN_SEND_RESTORE_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
@@ -1978,12 +1982,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_15_STAGE3_WORKER_RETURN_SEND_RESTORE_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -1993,12 +1997,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_STAGE3_5_UI_MENU_ROUTING_FIX_RUNTIME_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
@@ -2008,12 +2012,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_STAGE3_5_UI_MENU_ROUTING_FIX_RUNTIME_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -2023,12 +2027,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_STAGE3_5_UI_OPERATOR_READY_RUNTIME_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
@@ -2038,12 +2042,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_STAGE3_5_UI_OPERATOR_READY_RUNTIME_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -2053,12 +2057,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_STAGE3_TWO_WAY_MESSAGE_FLOW_FINAL_RUNTIME_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
@@ -2068,12 +2072,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_STAGE3_TWO_WAY_MESSAGE_FLOW_FINAL_RUNTIME_APP\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -2083,12 +2087,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\_FORCE_SFAPI_BRIDGE_BACKUP_20260701_033231\\src\\main\\stage4HardWindowControl.js",
@@ -2098,12 +2102,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".js",
                         "expected_sha256":  "f64bc1c7d3d97ab1a344cb65743dcf72efe619ec9d06e72f27ef23f0248f2c7d",
-                        "actual_sha256":  "f64bc1c7d3d97ab1a344cb65743dcf72efe619ec9d06e72f27ef23f0248f2c7d",
-                        "sha_match":  true,
-                        "size_bytes":  10089,
+                        "actual_sha256":  "f7777d0f8a29722bbbc3ea54c2f00f8ddd90fbfd9ccb79be8e87a698d66315ca",
+                        "sha_match":  false,
+                        "size_bytes":  10446,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\_FORCE_SFAPI_BRIDGE_BACKUP_20260701_033308\\src\\main\\stage4HardWindowControl.js",
@@ -2113,12 +2117,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".js",
                         "expected_sha256":  "f64bc1c7d3d97ab1a344cb65743dcf72efe619ec9d06e72f27ef23f0248f2c7d",
-                        "actual_sha256":  "f64bc1c7d3d97ab1a344cb65743dcf72efe619ec9d06e72f27ef23f0248f2c7d",
-                        "sha_match":  true,
-                        "size_bytes":  10089,
+                        "actual_sha256":  "f7777d0f8a29722bbbc3ea54c2f00f8ddd90fbfd9ccb79be8e87a698d66315ca",
+                        "sha_match":  false,
+                        "size_bytes":  10446,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034610_267.json",
@@ -2128,12 +2132,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "actual_sha256":  "4b0dbccabdc59f58671bcd802e8599d4b4eb2b292fcf14ce9e8265e353d83590",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "091d86e4ac6def703e53f32fc6b74256877d45983109380b3957c04980f9d36e",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\browsers\\WORKER_01\\raw_outputs\\WORKER_01__FULL_OUTPUT__20260701_034620_549.json",
@@ -2143,12 +2147,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "actual_sha256":  "97154e6ee12dd9ee21c21c85b6d6bc6df4202aa900474eee1d843661133eafa0",
-                        "sha_match":  true,
-                        "size_bytes":  1179,
+                        "actual_sha256":  "318e2be9f2985134b42d3c057595c6c4fcc5548205d3e09e1873127d296b6472",
+                        "sha_match":  false,
+                        "size_bytes":  1199,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\main\\stage4HardWindowControl.js",
@@ -2158,12 +2162,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".js",
                         "expected_sha256":  "bb8303c060cabfda2fa851e2f5ace7967040ae2e89334d2d3a8e4f5c518ea2ff",
-                        "actual_sha256":  "bb8303c060cabfda2fa851e2f5ace7967040ae2e89334d2d3a8e4f5c518ea2ff",
-                        "sha_match":  true,
-                        "size_bytes":  10090,
+                        "actual_sha256":  "54b65fbaea667a91b984c814f28a63f6f167ca3c839d60ed39b5701246a639a4",
+                        "sha_match":  false,
+                        "size_bytes":  10447,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\main\\windowManager.js",
@@ -2173,12 +2177,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".js",
                         "expected_sha256":  "b30706181d3f3d5a26a1103a2bd5f9845294c257ceb83553170f96b52386fd56",
-                        "actual_sha256":  "b30706181d3f3d5a26a1103a2bd5f9845294c257ceb83553170f96b52386fd56",
-                        "sha_match":  true,
-                        "size_bytes":  10980,
+                        "actual_sha256":  "dada42c3a07ab6e63df531cefafca0e0375cbfa81484448bc9da540792f9646e",
+                        "sha_match":  false,
+                        "size_bytes":  11120,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\STAGE4_WINDOWS_LOCAL_ASSEMBLED_SMOKE_CHECKER_20260704\\STAGE4_35_FILE_EXPECTED_INVENTORY.json",
@@ -2188,12 +2192,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".json",
                         "expected_sha256":  "9de0059f032d497ce7993a11e00c680b5b1a3f9080adae5c2842a78fb2d75dc7",
-                        "actual_sha256":  "9de0059f032d497ce7993a11e00c680b5b1a3f9080adae5c2842a78fb2d75dc7",
-                        "sha_match":  true,
-                        "size_bytes":  10103,
+                        "actual_sha256":  "519dbf52548ac6b1a31723a523e7da7985f2132cb4203bc0d4bbe950bc815a2d",
+                        "sha_match":  false,
+                        "size_bytes":  10386,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\stage4_apply_packages\\_tmp_node_check\\W60_R13F_I_RENDERER_IDENTITY_SUMMARY_SELECTOR_HOTFIX\\self_apply.js",
@@ -2203,12 +2207,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".js",
                         "expected_sha256":  "82193d98511ad1cc55679b1fcbb1cc0e8b2b5b6082b4a2abd78cb728bb0f4b0c",
-                        "actual_sha256":  "82193d98511ad1cc55679b1fcbb1cc0e8b2b5b6082b4a2abd78cb728bb0f4b0c",
-                        "sha_match":  true,
-                        "size_bytes":  11433,
+                        "actual_sha256":  "b3a3a7c6eb2c5940e8a44584cc2a701d27df8b06107662c8aa12cd29594321c1",
+                        "sha_match":  false,
+                        "size_bytes":  11651,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\stage4_apply_packages\\W60_R13F_I_RENDERER_IDENTITY_SUMMARY_SELECTOR_HOTFIX_APPLY.js",
@@ -2218,12 +2222,12 @@
                         "category":  "P0_GPT_BROWSER_BRIDGE",
                         "extension":  ".js",
                         "expected_sha256":  "82193d98511ad1cc55679b1fcbb1cc0e8b2b5b6082b4a2abd78cb728bb0f4b0c",
-                        "actual_sha256":  "82193d98511ad1cc55679b1fcbb1cc0e8b2b5b6082b4a2abd78cb728bb0f4b0c",
-                        "sha_match":  true,
-                        "size_bytes":  11433,
+                        "actual_sha256":  "b3a3a7c6eb2c5940e8a44584cc2a701d27df8b06107662c8aa12cd29594321c1",
+                        "sha_match":  false,
+                        "size_bytes":  11651,
                         "static_status":  "PASS_NODE_CHECK",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "E:\\YOLLA\\worktrees\\a4-windows-build-v4\\.github\\workflows\\a4-hosted-windows-pc-agent-build-v4.yml",
@@ -3163,12 +3167,12 @@
                         "category":  "P0_PC_AGENT_ROUTING_CORE",
                         "extension":  ".json",
                         "expected_sha256":  "2fd5146a94a4b2fd0a8e4e702e6128a66f11397872a9e51eed45f7bad901da94",
-                        "actual_sha256":  "2fd5146a94a4b2fd0a8e4e702e6128a66f11397872a9e51eed45f7bad901da94",
-                        "sha_match":  true,
-                        "size_bytes":  1062,
+                        "actual_sha256":  "160825f13f8eccbfc2aab699cc1f447b43afebc4bc997f09a01306af37413d15",
+                        "sha_match":  false,
+                        "size_bytes":  1094,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_HANDOFF_PACKAGES\\PRE_STAGE3_PREVIOUS_COMMANDER_CLARIFICATION_PACKAGE_20260701_100643\\01_REQUESTED_STAGE2_RECORD_AND_STATUS\\_COMMANDER_REPORTS\\COMMANDER_REPORT_PACKAGE_20260701_005729\\05_STRUCTURE\\FILE_INDEX.json",
@@ -3253,12 +3257,12 @@
                         "category":  "P0_PC_AGENT_ROUTING_CORE",
                         "extension":  ".json",
                         "expected_sha256":  "2fd5146a94a4b2fd0a8e4e702e6128a66f11397872a9e51eed45f7bad901da94",
-                        "actual_sha256":  "2fd5146a94a4b2fd0a8e4e702e6128a66f11397872a9e51eed45f7bad901da94",
-                        "sha_match":  true,
-                        "size_bytes":  1062,
+                        "actual_sha256":  "160825f13f8eccbfc2aab699cc1f447b43afebc4bc997f09a01306af37413d15",
+                        "sha_match":  false,
+                        "size_bytes":  1094,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\_PROJECTS\\STAGE4_DEFAULT_PROJECT\\WORKER_OUTPUTS\\stage4-collect-worker-output__20260703_024721_686.json",
@@ -3268,12 +3272,12 @@
                         "category":  "P0_PC_AGENT_ROUTING_CORE",
                         "extension":  ".json",
                         "expected_sha256":  "ce90d897f4ce3b874b7972053b2febcca1758e326fee33c3679f4edca379464c",
-                        "actual_sha256":  "ce90d897f4ce3b874b7972053b2febcca1758e326fee33c3679f4edca379464c",
-                        "sha_match":  true,
-                        "size_bytes":  1046,
+                        "actual_sha256":  "13923f817210be11b2e3ee1ba2d859b37e2dd1fee7de09c954d30d15f9bbaea7",
+                        "sha_match":  false,
+                        "size_bytes":  1059,
                         "static_status":  "PASS_JSON_PARSE",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\assembled\\20260701_06_STAGE3_WORKER_OUTPUT_SYNTAX_HOTFIX_RUNTIME_APP\\_ASSEMBLY_REPORTS\\SOURCE_EXTRACTION_REPORT.md",
@@ -3463,12 +3467,12 @@
                         "category":  "P0_PC_AGENT_ROUTING_CORE",
                         "extension":  ".md",
                         "expected_sha256":  "9f3db0adf8f7a8e1321d906b914b765658f9521f7589b46663f0bc924ac6e6a9",
-                        "actual_sha256":  "9f3db0adf8f7a8e1321d906b914b765658f9521f7589b46663f0bc924ac6e6a9",
-                        "sha_match":  true,
-                        "size_bytes":  10250,
+                        "actual_sha256":  "fb20e8c67e9c63e5ef2aabdf1caf02d723090a0031279ca117430004d2a0d88d",
+                        "sha_match":  false,
+                        "size_bytes":  10557,
                         "static_status":  "PASS_NO_COMPILE_CHECK_REQUIRED",
                         "static_detail":  "",
-                        "promotion_decision":  "PROMOTION_CANDIDATE"
+                        "promotion_decision":  "BLOCKED_SHA_MISMATCH"
                     },
                     {
                         "source_path":  "D:\\SOURCE FACTORY\\generated\\20260701_01\\WORKER_03__src_core_promptBuilder.js",
