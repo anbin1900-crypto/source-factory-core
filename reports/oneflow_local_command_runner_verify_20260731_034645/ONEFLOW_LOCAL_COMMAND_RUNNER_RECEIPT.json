@@ -1,0 +1,29 @@
+{
+  "schema_version": "SOURCE_FACTORY_LOCAL_COMMAND_RUNNER_RECEIPT_V1",
+  "status": "PASS_LOCAL_COMMAND_RUNNER_RECEIPT",
+  "generated_at": "2026-07-31T03:46:45",
+  "latest_024b_status": "PASS_ONEFLOW_LOCAL_WORKER_LIFECYCLE_VERIFY_READY_FOR_025",
+  "command_result": {
+    "status": "PASS_LOCAL_COMMAND_EXECUTION",
+    "command_id": "LOCAL_PYTHON_VERSION_CHECK",
+    "argv": [
+      "C:\\Users\\76kor\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "Python 3.13.14",
+    "stderr": "",
+    "duration_ms": 12,
+    "timeout_seconds": 15,
+    "forbidden_effect_counters": {
+      "prompt_send_count": 0,
+      "browser_launch_count": 0,
+      "pc_agent_service_start_count": 0,
+      "external_api_call_count": 0,
+      "middleware_transmission_count": 0,
+      "production_deploy_count": 0
+    }
+  },
+  "production_overwrite_count": 0,
+  "external_side_effect_count": 0
+}
