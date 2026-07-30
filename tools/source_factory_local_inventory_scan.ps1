@@ -22,6 +22,10 @@ Safety:
   - No source modification
   - No delete/move/copy of source files
   - No production execution
+
+Hotfix notes:
+  - Classification uses ASCII-only Contains() checks instead of regex.
+  - This avoids Windows PowerShell locale/encoding regex failures.
 #>
 
 param(
@@ -31,6 +35,17 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+
+function Test-ContainsAny {
+  param(
+    [string]$Text,
+    [string[]]$Needles
+  )
+  foreach ($needle in $Needles) {
+    if ($Text.Contains($needle)) { return $true }
+  }
+  return $false
+}
 
 function Get-FileSha256 {
   param([string]$Path)
@@ -44,18 +59,36 @@ function Get-FileSha256 {
 function Get-Category {
   param([string]$Path, [string]$Extension)
   $p = $Path.ToLowerInvariant()
-  switch -Regex ($p) {
-    "gpt|browser|window|preload|inject|selector|chatgpt" { return "P0_GPT_BROWSER_BRIDGE" }
-    "commander|worker|receipt|lineage|wal|executor|dispatch|claim|agent" { return "P0_PC_AGENT_ROUTING_CORE" }
-    "queue|daily|prompt|sender|runner" { return "P0_DAILY_QUEUE_RUNNER" }
-    "sha|manifest|zip|verify|artifact|drive" { return "P1_ARTIFACT_LEDGER_AND_DRIVE_POINTER" }
-    "opinet|gas|station|주유소|유가|petro|kpetro" { return "P1_GAS_STATION_PORTAL_EXAMPLES" }
-    default {
-      if ($Extension -in @(".js", ".ts", ".mjs", ".cjs", ".py", ".ps1", ".bat", ".cmd")) { return "P1_REUSABLE_SOURCE_CANDIDATE" }
-      if ($Extension -in @(".md", ".json", ".yaml", ".yml", ".csv")) { return "P2_DOC_LEDGER_OR_CONFIG" }
-      return "P3_ARCHIVE_OR_REVIEW_ONLY"
-    }
+
+  if (Test-ContainsAny -Text $p -Needles @("gpt", "browser", "window", "preload", "inject", "selector", "chatgpt")) {
+    return "P0_GPT_BROWSER_BRIDGE"
   }
+
+  if (Test-ContainsAny -Text $p -Needles @("commander", "worker", "receipt", "lineage", "wal", "executor", "dispatch", "claim", "agent")) {
+    return "P0_PC_AGENT_ROUTING_CORE"
+  }
+
+  if (Test-ContainsAny -Text $p -Needles @("queue", "daily", "prompt", "sender", "runner")) {
+    return "P0_DAILY_QUEUE_RUNNER"
+  }
+
+  if (Test-ContainsAny -Text $p -Needles @("sha", "manifest", "zip", "verify", "artifact", "drive")) {
+    return "P1_ARTIFACT_LEDGER_AND_DRIVE_POINTER"
+  }
+
+  if (Test-ContainsAny -Text $p -Needles @("opinet", "gas", "station", "petro", "kpetro", "oil", "fuel")) {
+    return "P1_GAS_STATION_PORTAL_EXAMPLES"
+  }
+
+  if ($Extension -in @(".js", ".ts", ".mjs", ".cjs", ".py", ".ps1", ".bat", ".cmd")) {
+    return "P1_REUSABLE_SOURCE_CANDIDATE"
+  }
+
+  if ($Extension -in @(".md", ".json", ".yaml", ".yml", ".csv")) {
+    return "P2_DOC_LEDGER_OR_CONFIG"
+  }
+
+  return "P3_ARCHIVE_OR_REVIEW_ONLY"
 }
 
 function Get-StorageTarget {
@@ -77,7 +110,7 @@ $includeExtensions = @(
   ".zip", ".7z", ".gz", ".db", ".sqlite", ".dump", ".bak"
 )
 
-$excludeDirPatterns = @("\\node_modules\\", "\\.git\\", "\\dist\\", "\\build\\", "\\coverage\\", "\\.next\\")
+$excludeDirTokens = @("\node_modules\", "\.git\", "\dist\", "\build\", "\coverage\", "\.next\")
 
 $items = New-Object System.Collections.Generic.List[object]
 $missingRoots = New-Object System.Collections.Generic.List[string]
@@ -87,18 +120,22 @@ foreach ($root in $Roots) {
     $missingRoots.Add($root)
     continue
   }
+
   Get-ChildItem -LiteralPath $root -Recurse -File -Force -ErrorAction SilentlyContinue | ForEach-Object {
     $full = $_.FullName
-    foreach ($pat in $excludeDirPatterns) {
-      if ($full.ToLowerInvariant() -match $pat) { return }
+    $fullLower = $full.ToLowerInvariant()
+
+    foreach ($token in $excludeDirTokens) {
+      if ($fullLower.Contains($token)) { return }
     }
+
     $ext = $_.Extension.ToLowerInvariant()
     if ($includeExtensions -notcontains $ext) { return }
+
     $sha = Get-FileSha256 -Path $full
     $category = Get-Category -Path $full -Extension $ext
     $storage = Get-StorageTarget -Size $_.Length -Extension $ext
-    $rel = $full
-    try { $rel = Resolve-Path -LiteralPath $full | ForEach-Object { $_.Path } } catch {}
+
     $items.Add([pscustomobject]@{
       source_path = $full
       file_name = $_.Name
