@@ -1,0 +1,53 @@
+{
+  "schema_version": "SOURCE_FACTORY_QUEUE_DISPATCH_DRY_RUN_RECEIPT_V1",
+  "status": "PASS_QUEUE_DISPATCH_DRY_RUN_RECEIPT",
+  "generated_at": "2026-07-31T02:48:15+09:00",
+  "repository_root": "E:\\YOLLA\\source-factory-core",
+  "queue_path": "E:\\YOLLA\\source-factory-core\\examples\\gas_station_portal_pipeline\\GAS_STATION_PORTAL_QUEUE_EXAMPLE.json",
+  "project_code": "GAS_STATION_PORTAL",
+  "queue_id": "GAS_STATION_PORTAL_016_PIPELINE_SMOKE_QUEUE_EXAMPLE",
+  "queue_mode": "PROMPT_QUEUE_EXAMPLE_ONLY",
+  "assignment_id": "DRYRUN-c0f6a24baf539e56",
+  "worker_id": "SOURCE_FACTORY_DRY_RUN_WORKER_001",
+  "planned_steps": [
+    {
+      "step_order": 1,
+      "step": "queue_intake",
+      "status": "DRY_RUN_PASS",
+      "effect": "read_queue_json_only"
+    },
+    {
+      "step_order": 2,
+      "step": "worker_assignment_create",
+      "status": "DRY_RUN_PASS",
+      "effect": "assignment_json_only"
+    },
+    {
+      "step_order": 3,
+      "step": "prompt_dispatch_plan",
+      "status": "DRY_RUN_PASS",
+      "effect": "no_prompt_send"
+    },
+    {
+      "step_order": 4,
+      "step": "gpt_browser_bridge_gate",
+      "status": "DRY_RUN_PASS",
+      "effect": "no_browser_launch_no_gpt_call"
+    },
+    {
+      "step_order": 5,
+      "step": "pc_agent_receipt_gate",
+      "status": "DRY_RUN_PASS",
+      "effect": "no_pc_agent_service_start"
+    },
+    {
+      "step_order": 6,
+      "step": "commander_gate_decision",
+      "status": "DRY_RUN_READY",
+      "effect": "receipt_only"
+    }
+  ],
+  "missing_required_files": [],
+  "production_overwrite_count": 0,
+  "external_side_effect_count": 0
+}
