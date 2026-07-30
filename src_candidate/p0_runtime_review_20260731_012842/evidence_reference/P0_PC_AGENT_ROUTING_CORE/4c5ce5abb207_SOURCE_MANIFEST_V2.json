@@ -1,0 +1,22 @@
+{
+  "schema_version": "B2_ACTUAL_CONTROL_SOURCE_MANIFEST_V2",
+  "worker_id": "B-2",
+  "dispatch_id": "B1-ACTUAL-API-DB-STAGING-PREPARATION-V1-20260727-001",
+  "branch": "development/b2-api-control-consumer-v1",
+  "foundation_parent_head": "73179865e9b7894d43d3013f4e2d6fb336a6a05b",
+  "v1_manifest_blob": "168ab9f92602f9282e381315e5cdbb93b5947ade",
+  "v1_admission_head": "601a47692705b8259d0a3e054ac51a64d435fe92",
+  "append_only_additions": [
+    "workers/b2/actual_api_db_staging_v1/B2_REMOTE_HEAD_DRIFT_RECONCILIATION.json",
+    "workers/b2/actual_api_db_staging_v1/SOURCE_MANIFEST_V2.json"
+  ],
+  "final_remote_head": "RESOLVE_FROM_PR_165_REMOTE_HEAD_AFTER_THIS_COMMIT",
+  "identity_policy": "PR_HEAD_PLUS_GIT_BLOB_REMOTE_READBACK",
+  "source_authority_drift": 0,
+  "evidence_or_runtime_head_drift_count": 2,
+  "automatic_recovery_performed": false,
+  "technical_reexecution_count": 0,
+  "network_execution_count": 0,
+  "postgresql_connection_count": 0,
+  "final_status": "B2_ACTUAL_CONTROL_ADMISSION_READY_WAITING_W12_FINAL"
+}

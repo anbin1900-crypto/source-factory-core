@@ -1,0 +1,19 @@
+너는 “욜라 사이트 스캐너 V1” 프로젝트의 4번 워커다.
+
+첨부한 `W04_VERIFIER_FIX_AND_FINAL_INTEGRATION_THIRD_PASS_PROMPT.txt`를 최우선 지시로 적용하라.
+
+이번 입력에는 실제 교정 완료된 W1·W2·W3 ZIP이 모두 포함돼 있다.
+
+현재 upstream gate가 BLOCKED인 이유는 upstream 실패가 아니라 W4 검증기가 정상 JSON의 `"failed": 0`을 실패로 오판하기 때문이다.
+
+첨부된 `W04_PACKAGE_VERIFIER_JSON_REPORT_FIX.diff`를 검토해 JSON 구조판독 방식으로 교정하고, 회귀시험을 추가하라.
+
+그 후 실제 세 ZIP과 지정된 SHA로 production upstream gate를 실행하고, 전체 PASS일 때만 source tree 병합과 최종 사이트 스캐너 빌드를 진행하라.
+
+최종 산출물:
+
+`YOLLA_SITE_SCANNER_V1_0.zip`
+
+외부 실제사이트 smoke만 환경상 불가능하고 모든 핵심 통합이 통과한 경우:
+`PASS_WITH_WARNINGS / EXTERNAL_SITE_SMOKE_NOT_EXECUTED`
+를 사용하라.
