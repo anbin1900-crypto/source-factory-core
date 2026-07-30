@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import {
   getRuntimePipelineContract,
   listRuntimeSourcePaths,
@@ -22,6 +23,13 @@ function getArgValue(argv, name, fallback) {
   const idx = argv.indexOf(name);
   if (idx >= 0 && idx + 1 < argv.length) return argv[idx + 1];
   return fallback;
+}
+
+function isDirectCliExecution() {
+  if (!process.argv[1]) return false;
+  const currentFile = path.resolve(fileURLToPath(import.meta.url));
+  const invokedFile = path.resolve(process.argv[1]);
+  return currentFile.toLowerCase() === invokedFile.toLowerCase();
 }
 
 export function buildRuntimePipelineDryRunReceipt(options = {}) {
@@ -109,7 +117,7 @@ export function runRuntimePipelineDryRun(options = {}) {
   return receipt;
 }
 
-if (import.meta.url === `file://${process.argv[1].replace(/\\/g, "/")}`) {
+if (isDirectCliExecution()) {
   const repositoryRoot = getArgValue(process.argv, "--repository-root", process.cwd());
   const queuePath = getArgValue(process.argv, "--queue", null);
   const receipt = runRuntimePipelineDryRun({ repositoryRoot, queuePath });
