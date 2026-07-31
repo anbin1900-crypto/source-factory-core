@@ -1,0 +1,183 @@
+{
+  "schema_version": "SF_027_PC_AGENT_AUTOMATION_SOURCE_EXTRACTION_LEDGER_V1",
+  "task_id": "SF_027_PC_AGENT_SOURCE_EXTRACTION_FOR_COMMANDER_AUTOMATION",
+  "purpose": "Extract reusable Source Factory assets needed for PC Agent commander-intake automation",
+  "created_at_kst": "2026-08-01T05:37:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "branch": "main",
+  "observed_main_head": "eba3cae98e6878cf9e74c179762153994d14d8eb",
+  "batch_commit": "7b00c1b6d1b00f4c0df3614984a7da0622db0872",
+  "current_gate": "026_HOLD",
+  "commander_authorization": "NOT_GRANTED",
+  "mode": "READ_ONLY_EXTRACTION",
+  "historical_inventory_context": {
+    "total_inventory_approx": 5903,
+    "github_candidates_approx": 5707,
+    "drive_pointers_approx": 196,
+    "promote_candidates_approx": 2940,
+    "p0_staging_selected_approx": 240,
+    "runtime_src_import_candidates_approx": 65,
+    "note": "Historical context only; workers must independently resolve exact current evidence."
+  },
+  "categories": {
+    "queue_claim_receipt": [
+      {
+        "source_id": "PCAGENT-AUTO-SRC-000001",
+        "path": "src/queue/local_claim_store.py",
+        "source_type": "src",
+        "reuse_role": "local exactly-once claim and duplicate-claim guard",
+        "current_status": "stable_core",
+        "last_known_commit": "eba3cae98e6878cf9e74c179762153994d14d8eb",
+        "last_known_blob": "015183bb0ec26b926ec6ddf16cc143d5b7decdd7",
+        "risk_flags": [
+          "snapshot_commit_not_exact_last_change_commit",
+          "single_process_json_read_check_write",
+          "inter_process_atomicity_required_before_service_or_concurrent_use"
+        ],
+        "dependencies": [],
+        "recommended_owner_slot": "SLOT_01",
+        "next_action": "wrap"
+      },
+      {
+        "source_id": "PCAGENT-AUTO-SRC-000002",
+        "path": "src/queue/terminal_receipt_store.py",
+        "source_type": "src",
+        "reuse_role": "terminal receipt validation, persistence and duplicate rejection",
+        "current_status": "stable_core",
+        "last_known_commit": "7a51cdd3965b6b215922e9f6f334eea97ae2825a",
+        "last_known_blob": "68d0323ef97ab597ed2d8f7efd96416fd07d5063",
+        "risk_flags": [
+          "local_file_store"
+        ],
+        "dependencies": [],
+        "recommended_owner_slot": "SLOT_01",
+        "next_action": "reuse_as_is"
+      },
+      {
+        "source_id": "PCAGENT-AUTO-SRC-000003",
+        "path": "src/queue/local_worker_lifecycle.py",
+        "source_type": "src",
+        "reuse_role": "local worker claim-command-receipt lifecycle reference",
+        "current_status": "stable_core",
+        "last_known_commit": "eba3cae98e6878cf9e74c179762153994d14d8eb",
+        "last_known_blob": "0db7b99ce1c82a6aa54df4fbb358d1e4acf41845",
+        "risk_flags": [
+          "snapshot_commit_not_exact_last_change_commit",
+          "source_factory_identity_contract_review_required"
+        ],
+        "dependencies": [
+          "src/queue/local_claim_store.py",
+          "src/queue/terminal_receipt_store.py"
+        ],
+        "recommended_owner_slot": "SLOT_01",
+        "next_action": "inspect"
+      }
+    ],
+    "pc_agent_command_runner": [
+      {
+        "source_id": "PCAGENT-AUTO-SRC-000004",
+        "path": "src/pc_agent/local_command_runner.py",
+        "source_type": "src",
+        "reuse_role": "canonical allowlisted local command execution with structured results",
+        "current_status": "stable_core",
+        "last_known_commit": "2207b9b4fc547afc673c0f3229b23f18b65a5be9",
+        "last_known_blob": "9174cdf54f08cf9e5fbc861f9bf4511fae64c420",
+        "risk_flags": [
+          "canonical_registry_currently_contains_narrow_command_set",
+          "sys_executable_environment_binding"
+        ],
+        "dependencies": [],
+        "recommended_owner_slot": "SLOT_02",
+        "next_action": "wrap"
+      },
+      {
+        "source_id": "PCAGENT-AUTO-SRC-000005",
+        "path": "src/pc_agent/local_pc_agent_mvp.py",
+        "source_type": "src",
+        "reuse_role": "reference integration of claim, command runner and terminal receipt",
+        "current_status": "stable_core",
+        "last_known_commit": "a465b16ebbbd50763dcbfd63e23d826e2010c8f4",
+        "last_known_blob": "b223dc1a5c0a78221477dd0097126f3ba064bcb2",
+        "risk_flags": [
+          "source_factory_specific_identity_shape",
+          "026_execution_still_held",
+          "reference_implementation_not_service_ready"
+        ],
+        "dependencies": [
+          "src/queue/local_claim_store.py",
+          "src/queue/terminal_receipt_store.py",
+          "src/pc_agent/local_command_runner.py"
+        ],
+        "recommended_owner_slot": "SLOT_02",
+        "next_action": "wrap"
+      }
+    ],
+    "github_intake": [],
+    "worker_report_parser": [],
+    "dependency_gate": [],
+    "stale_report_detector": [],
+    "prompt_template_engine": [],
+    "candidate_ledger_builder": [],
+    "guard_rule_library": [],
+    "dispatch_publish": [],
+    "ops_runbook": [],
+    "evidence_receipt": [],
+    "runtime_pipeline": [
+      {
+        "source_id": "PCAGENT-AUTO-SRC-000006",
+        "path": "src/runtime_pipeline/sourceFactoryRuntimePipelineRegistry.js",
+        "source_type": "src",
+        "reuse_role": "runtime pipeline registry and contract binding candidate",
+        "current_status": "stable_core",
+        "last_known_commit": "eba3cae98e6878cf9e74c179762153994d14d8eb",
+        "last_known_blob": "79ed1915bd34e7bed075f1359250be3ecb60fdd6",
+        "risk_flags": [
+          "snapshot_commit_not_exact_last_change_commit",
+          "javascript_runtime_dependency_review_required"
+        ],
+        "dependencies": [
+          "src/runtime_pipeline/SOURCE_FACTORY_RUNTIME_PIPELINE_CONTRACT_V1.json"
+        ],
+        "recommended_owner_slot": "SLOT_06",
+        "next_action": "inspect"
+      },
+      {
+        "source_id": "PCAGENT-AUTO-SRC-000007",
+        "path": "src/runtime_pipeline/SOURCE_FACTORY_RUNTIME_PIPELINE_CONTRACT_V1.json",
+        "source_type": "src",
+        "reuse_role": "runtime pipeline contract and acceptance metadata candidate",
+        "current_status": "stable_core",
+        "last_known_commit": "eba3cae98e6878cf9e74c179762153994d14d8eb",
+        "last_known_blob": "7436c6d1550c68be870ff3a68f379a68bbdbe6f6",
+        "risk_flags": [
+          "snapshot_commit_not_exact_last_change_commit",
+          "source_factory_specific_contract_terms"
+        ],
+        "dependencies": [],
+        "recommended_owner_slot": "SLOT_06",
+        "next_action": "wrap"
+      }
+    ],
+    "blocked_or_needs_sanitize": [],
+    "drive_pointer": []
+  },
+  "worker_state": {
+    "SLOT_01": "DISPATCHED",
+    "SLOT_02": "DISPATCHED",
+    "SLOT_03": "DISPATCHED",
+    "SLOT_04": "DISPATCHED",
+    "SLOT_05": "DISPATCHED",
+    "SLOT_06": "WAITING_SLOT_01_TO_SLOT_05_RESULTS"
+  },
+  "forbidden_operations": {
+    "026_oneflow_verifier": "NOT_RUN",
+    "pc_agent_service": "NOT_STARTED",
+    "gpt_prompt_execution": "NOT_RUN",
+    "browser_automation": "NOT_RUN",
+    "external_api_call": "NOT_RUN",
+    "middleware_transmission": "NOT_RUN",
+    "production_deploy": "NOT_RUN",
+    "ready_or_merge": "NOT_RUN"
+  },
+  "next_needed": "WORKER_EXTRACTION_RESULTS"
+}
