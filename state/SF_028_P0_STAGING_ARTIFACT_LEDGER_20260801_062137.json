@@ -1,0 +1,173 @@
+{
+  "schema_version": "SOURCE_FACTORY_SF028_P0_STAGING_ARTIFACT_LEDGER_V1",
+  "task_id": "SF_028_P0_240_CANDIDATE_CLASSIFICATION_STAGING",
+  "run_id": "SF028_P0_EXTRACT_20260801_062137",
+  "generated_at_kst": "2026-08-01T06:35:00+09:00",
+  "terminal_status": "SF028_P0_STAGING_ARTIFACTS_READY",
+  "storage_policy": {
+    "github": "AUTHORITATIVE_POINTER_LEDGER_AND_WORKER_DISPATCH",
+    "google_drive": "IMMUTABLE_BINARY_ARTIFACT_STORAGE",
+    "production_promotion": "NOT_AUTHORIZED"
+  },
+  "full_package": {
+    "drive_file_id": "18YFu1HOkwGsZjUygu50QZ8LSUqeyiCB1",
+    "drive_url": "https://drive.google.com/file/d/18YFu1HOkwGsZjUygu50QZ8LSUqeyiCB1/view",
+    "drive_folder_id": "1E-Ze_A2qlB2QZA4UttX_wLt8U3MrOY87",
+    "file_name": "SF028_P0_EXTRACT_20260801_062137_FULL_STAGING_PACKAGE.zip",
+    "size_bytes": 3080494,
+    "sha256": "cc4d272e52b191174591edae21de0a237f982a5d6ec213e566adf61e839bde0f",
+    "candidate_count": 240,
+    "wave_count": 4,
+    "slot_package_count": 20,
+    "local_independent_hash_verification": "PASS",
+    "drive_readback_file_name_and_size": "PASS"
+  },
+  "wave_folders": [
+    {
+      "wave": 1,
+      "drive_folder_id": "13s3S6ftZFTJjgTqB9PH6Q91gHdugo-Ao",
+      "drive_url": "https://drive.google.com/drive/folders/13s3S6ftZFTJjgTqB9PH6Q91gHdugo-Ao",
+      "slot_file_count": 5,
+      "source_count": 60,
+      "drive_folder_readback": "PASS"
+    },
+    {
+      "wave": 2,
+      "drive_folder_id": "109lkGel7G2eW6uGJDHhH7gObHgFadwvh",
+      "drive_url": "https://drive.google.com/drive/folders/109lkGel7G2eW6uGJDHhH7gObHgFadwvh",
+      "slot_file_count": 5,
+      "source_count": 60,
+      "drive_folder_readback": "PASS"
+    },
+    {
+      "wave": 3,
+      "drive_folder_id": "1mtImt5brmkP0Ce9lEBhOyRFzMXQDRWAU",
+      "drive_url": "https://drive.google.com/drive/folders/1mtImt5brmkP0Ce9lEBhOyRFzMXQDRWAU",
+      "slot_file_count": 5,
+      "source_count": 60,
+      "drive_folder_readback": "PASS"
+    },
+    {
+      "wave": 4,
+      "drive_folder_id": "1GzbvI1RlyVMlMFLIdO20wsJfZdgl_4cp",
+      "drive_url": "https://drive.google.com/drive/folders/1GzbvI1RlyVMlMFLIdO20wsJfZdgl_4cp",
+      "slot_file_count": 5,
+      "source_count": 60,
+      "drive_folder_readback": "PASS"
+    }
+  ],
+  "slots": [
+    {
+      "wave": 1,
+      "slot": 1,
+      "slot_package_file_name": "SF028_P0_EXTRACT_20260801_062137_WAVE_01_SLOT_01.zip",
+      "drive_file_id": "1yu9gjvWad6XbgF4Z5PZcuPMmaChjzLKz",
+      "drive_url": "https://drive.google.com/file/d/1yu9gjvWad6XbgF4Z5PZcuPMmaChjzLKz/view",
+      "drive_folder_id": "13s3S6ftZFTJjgTqB9PH6Q91gHdugo-Ao",
+      "size_bytes": 43715,
+      "sha256": "7ae5119ce6cd9d3c2dfef352d82964b0ef767dabec76c9cefa17705ae974e766",
+      "source_count": 12,
+      "source_ids": ["PCAGENT-AUTO-SRC-000527","PCAGENT-AUTO-SRC-000533","PCAGENT-AUTO-SRC-000539","PCAGENT-AUTO-SRC-000549","PCAGENT-AUTO-SRC-000635","PCAGENT-AUTO-SRC-000643","PCAGENT-AUTO-SRC-000648","PCAGENT-AUTO-SRC-000653","PCAGENT-AUTO-SRC-000658","PCAGENT-AUTO-SRC-000663","PCAGENT-AUTO-SRC-000683","PCAGENT-AUTO-SRC-004213"],
+      "local_package_verification": "PASS",
+      "drive_readback": "PASS_FILE_NAME_AND_SIZE",
+      "worker_mode": "READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"
+    },
+    {
+      "wave": 1,
+      "slot": 2,
+      "slot_package_file_name": "SF028_P0_EXTRACT_20260801_062137_WAVE_01_SLOT_02.zip",
+      "drive_file_id": "1IodVUISow4PdCDZelS-D6dKyWvFbzHrx",
+      "drive_url": "https://drive.google.com/file/d/1IodVUISow4PdCDZelS-D6dKyWvFbzHrx/view",
+      "drive_folder_id": "13s3S6ftZFTJjgTqB9PH6Q91gHdugo-Ao",
+      "size_bytes": 46311,
+      "sha256": "b678d60a4238aa1bc4f897dd9cabbf98c58ecdf714aea2e425b1b400cbd55214",
+      "source_count": 12,
+      "source_ids": ["PCAGENT-AUTO-SRC-000522","PCAGENT-AUTO-SRC-000529","PCAGENT-AUTO-SRC-000535","PCAGENT-AUTO-SRC-000544","PCAGENT-AUTO-SRC-000631","PCAGENT-AUTO-SRC-000645","PCAGENT-AUTO-SRC-000650","PCAGENT-AUTO-SRC-000654","PCAGENT-AUTO-SRC-000659","PCAGENT-AUTO-SRC-000665","PCAGENT-AUTO-SRC-000684","PCAGENT-AUTO-SRC-004214"],
+      "local_package_verification": "PASS",
+      "drive_readback": "PASS_FILE_NAME_AND_SIZE",
+      "worker_mode": "READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"
+    },
+    {
+      "wave": 1,
+      "slot": 3,
+      "slot_package_file_name": "SF028_P0_EXTRACT_20260801_062137_WAVE_01_SLOT_03.zip",
+      "drive_file_id": "1cMY3OXo8NiOm6CTQkty8k3nbqDV26JHT",
+      "drive_url": "https://drive.google.com/file/d/1cMY3OXo8NiOm6CTQkty8k3nbqDV26JHT/view",
+      "drive_folder_id": "13s3S6ftZFTJjgTqB9PH6Q91gHdugo-Ao",
+      "size_bytes": 50875,
+      "sha256": "c5f184c16c306559f0e30cc19dedaf7e0c37b5e8b817b1e49bd47d61fb3181c4",
+      "source_count": 12,
+      "source_ids": ["PCAGENT-AUTO-SRC-000524","PCAGENT-AUTO-SRC-000530","PCAGENT-AUTO-SRC-000536","PCAGENT-AUTO-SRC-000545","PCAGENT-AUTO-SRC-000633","PCAGENT-AUTO-SRC-000646","PCAGENT-AUTO-SRC-000651","PCAGENT-AUTO-SRC-000655","PCAGENT-AUTO-SRC-000660","PCAGENT-AUTO-SRC-000666","PCAGENT-AUTO-SRC-000881","PCAGENT-AUTO-SRC-004215"],
+      "local_package_verification": "PASS",
+      "drive_readback": "PASS_FILE_NAME_AND_SIZE",
+      "worker_mode": "READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"
+    },
+    {
+      "wave": 1,
+      "slot": 4,
+      "slot_package_file_name": "SF028_P0_EXTRACT_20260801_062137_WAVE_01_SLOT_04.zip",
+      "drive_file_id": "1CzILtMNBcx0o3K5G7dQ62s5Vm8ck3GZj",
+      "drive_url": "https://drive.google.com/file/d/1CzILtMNBcx0o3K5G7dQ62s5Vm8ck3GZj/view",
+      "drive_folder_id": "13s3S6ftZFTJjgTqB9PH6Q91gHdugo-Ao",
+      "size_bytes": 47392,
+      "sha256": "a16b2ae1e1f8c4c91b424b278793e7b34bb2417dd5c9cecc2d96633fb907f99c",
+      "source_count": 12,
+      "source_ids": ["PCAGENT-AUTO-SRC-000525","PCAGENT-AUTO-SRC-000531","PCAGENT-AUTO-SRC-000537","PCAGENT-AUTO-SRC-000546","PCAGENT-AUTO-SRC-000634","PCAGENT-AUTO-SRC-000647","PCAGENT-AUTO-SRC-000652","PCAGENT-AUTO-SRC-000656","PCAGENT-AUTO-SRC-000661","PCAGENT-AUTO-SRC-000668","PCAGENT-AUTO-SRC-000882","PCAGENT-AUTO-SRC-004216"],
+      "local_package_verification": "PASS",
+      "drive_readback": "PASS_FILE_NAME_AND_SIZE",
+      "worker_mode": "READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"
+    },
+    {
+      "wave": 1,
+      "slot": 5,
+      "slot_package_file_name": "SF028_P0_EXTRACT_20260801_062137_WAVE_01_SLOT_05.zip",
+      "drive_file_id": "1vF4u2l5eqwNU5Qp5rhOwCdePZcRL9OGd",
+      "drive_url": "https://drive.google.com/file/d/1vF4u2l5eqwNU5Qp5rhOwCdePZcRL9OGd/view",
+      "drive_folder_id": "13s3S6ftZFTJjgTqB9PH6Q91gHdugo-Ao",
+      "size_bytes": 49825,
+      "sha256": "5b83b82cc1cbecac81b7b87e7e94dac05bf38c06ccc9f6d86d0d716b30700d9f",
+      "source_count": 12,
+      "source_ids": ["PCAGENT-AUTO-SRC-000526","PCAGENT-AUTO-SRC-000532","PCAGENT-AUTO-SRC-000538","PCAGENT-AUTO-SRC-000547","PCAGENT-AUTO-SRC-000636","PCAGENT-AUTO-SRC-000649","PCAGENT-AUTO-SRC-000657","PCAGENT-AUTO-SRC-000662","PCAGENT-AUTO-SRC-000664","PCAGENT-AUTO-SRC-000682","PCAGENT-AUTO-SRC-000883","PCAGENT-AUTO-SRC-004217"],
+      "local_package_verification": "PASS",
+      "drive_readback": "PASS_FILE_NAME_AND_SIZE",
+      "worker_mode": "READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"
+    },
+    {"wave":2,"slot":1,"slot_package_file_name":"SF028_P0_EXTRACT_20260801_062137_WAVE_02_SLOT_01.zip","drive_file_id":"1QWNOtKLWF3tdCMv8t1_SAkpGh28Egh-d","drive_url":"https://drive.google.com/file/d/1QWNOtKLWF3tdCMv8t1_SAkpGh28Egh-d/view","drive_folder_id":"109lkGel7G2eW6uGJDHhH7gObHgFadwvh","size_bytes":58902,"sha256":"2082f546b0f2432dd6dbdda133484cec12bd5e000fc28b45d9b46ffc80cde28b","source_count":12,"source_ids":[],"local_package_verification":"PASS","drive_readback":"PASS_FILE_NAME_AND_SIZE","worker_mode":"READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"},
+    {"wave":2,"slot":2,"slot_package_file_name":"SF028_P0_EXTRACT_20260801_062137_WAVE_02_SLOT_02.zip","drive_file_id":"1fRQoytttA2RF3NwipNNryqIdlVWkVKsy","drive_url":"https://drive.google.com/file/d/1fRQoytttA2RF3NwipNNryqIdlVWkVKsy/view","drive_folder_id":"109lkGel7G2eW6uGJDHhH7gObHgFadwvh","size_bytes":55645,"sha256":"2f019cfc068f4df69981faeac289845b3ddd6d5ef91873005195327b82eba661","source_count":12,"source_ids":[],"local_package_verification":"PASS","drive_readback":"PASS_FILE_NAME_AND_SIZE","worker_mode":"READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"},
+    {"wave":2,"slot":3,"slot_package_file_name":"SF028_P0_EXTRACT_20260801_062137_WAVE_02_SLOT_03.zip","drive_file_id":"1XCRxPdV9N4bI6DCxZu1wV5wnqRRZYYCU","drive_url":"https://drive.google.com/file/d/1XCRxPdV9N4bI6DCxZu1wV5wnqRRZYYCU/view","drive_folder_id":"109lkGel7G2eW6uGJDHhH7gObHgFadwvh","size_bytes":55955,"sha256":"14131bb795f3f3cb44c82f0ed87794c824937d8f98125ed08c78bd26fa74429f","source_count":12,"source_ids":[],"local_package_verification":"PASS","drive_readback":"PASS_FILE_NAME_AND_SIZE","worker_mode":"READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"},
+    {"wave":2,"slot":4,"slot_package_file_name":"SF028_P0_EXTRACT_20260801_062137_WAVE_02_SLOT_04.zip","drive_file_id":"1VxhpLD2sYP8JeSpQQegYtblpH2M-lPHM","drive_url":"https://drive.google.com/file/d/1VxhpLD2sYP8JeSpQQegYtblpH2M-lPHM/view","drive_folder_id":"109lkGel7G2eW6uGJDHhH7gObHgFadwvh","size_bytes":48984,"sha256":"d1c189d1374a5de0dc0e3fddc3f2556744ea02f6c7f9da62aa62d313a493999e","source_count":12,"source_ids":[],"local_package_verification":"PASS","drive_readback":"PASS_FILE_NAME_AND_SIZE","worker_mode":"READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"},
+    {"wave":2,"slot":5,"slot_package_file_name":"SF028_P0_EXTRACT_20260801_062137_WAVE_02_SLOT_05.zip","drive_file_id":"1RX4pVcWw9jBE0POZOkTNHI0xzqelM_yH","drive_url":"https://drive.google.com/file/d/1RX4pVcWw9jBE0POZOkTNHI0xzqelM_yH/view","drive_folder_id":"109lkGel7G2eW6uGJDHhH7gObHgFadwvh","size_bytes":52715,"sha256":"5e498a8ab4e1213b1094fb02574b15fcae990cfd01a87ca30b475b9a6479314f","source_count":12,"source_ids":[],"local_package_verification":"PASS","drive_readback":"PASS_FILE_NAME_AND_SIZE","worker_mode":"READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"},
+    {"wave":3,"slot":1,"slot_package_file_name":"SF028_P0_EXTRACT_20260801_062137_WAVE_03_SLOT_01.zip","drive_file_id":"1AXlYdsAWNbYMl2K-vtqDX4vN-riiS_R2","drive_url":"https://drive.google.com/file/d/1AXlYdsAWNbYMl2K-vtqDX4vN-riiS_R2/view","drive_folder_id":"1mtImt5brmkP0Ce9lEBhOyRFzMXQDRWAU","size_bytes":52278,"sha256":"d002b08aa2757d319e8d5ed49a53a28d7b34cd7253e4b8c0862d1d2a9564384f","source_count":12,"source_ids":[],"local_package_verification":"PASS","drive_readback":"PASS_FILE_NAME_AND_SIZE","worker_mode":"READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"},
+    {"wave":3,"slot":2,"slot_package_file_name":"SF028_P0_EXTRACT_20260801_062137_WAVE_03_SLOT_02.zip","drive_file_id":"1O1TEv84cyLRS1Y7cLG495GqG7fQjBMAG","drive_url":"https://drive.google.com/file/d/1O1TEv84cyLRS1Y7cLG495GqG7fQjBMAG/view","drive_folder_id":"1mtImt5brmkP0Ce9lEBhOyRFzMXQDRWAU","size_bytes":48636,"sha256":"7a1838be0d8605819943b694b20ae7776a972c7ae2de494b9e3c8da22015682e","source_count":12,"source_ids":[],"local_package_verification":"PASS","drive_readback":"PASS_FILE_NAME_AND_SIZE","worker_mode":"READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"},
+    {"wave":3,"slot":3,"slot_package_file_name":"SF028_P0_EXTRACT_20260801_062137_WAVE_03_SLOT_03.zip","drive_file_id":"1U-ycN2xkayVSJUo9uW6pafhXdrOb9AmR","drive_url":"https://drive.google.com/file/d/1U-ycN2xkayVSJUo9uW6pafhXdrOb9AmR/view","drive_folder_id":"1mtImt5brmkP0Ce9lEBhOyRFzMXQDRWAU","size_bytes":51291,"sha256":"3e909ee2e989a621256f8bf26012eedc7f520d17140766de8749d64e730dacab","source_count":12,"source_ids":[],"local_package_verification":"PASS","drive_readback":"PASS_FILE_NAME_AND_SIZE","worker_mode":"READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"},
+    {"wave":3,"slot":4,"slot_package_file_name":"SF028_P0_EXTRACT_20260801_062137_WAVE_03_SLOT_04.zip","drive_file_id":"1jDogRPIBu-rWIKnQodnPUiRR23bR_77D","drive_url":"https://drive.google.com/file/d/1jDogRPIBu-rWIKnQodnPUiRR23bR_77D/view","drive_folder_id":"1mtImt5brmkP0Ce9lEBhOyRFzMXQDRWAU","size_bytes":38147,"sha256":"c319a2aed3b4420b97f95275e1dca201b2e438b0462f8ed364e4c38aa7d2cd9b","source_count":12,"source_ids":[],"local_package_verification":"PASS","drive_readback":"PASS_FILE_NAME_AND_SIZE","worker_mode":"READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"},
+    {"wave":3,"slot":5,"slot_package_file_name":"SF028_P0_EXTRACT_20260801_062137_WAVE_03_SLOT_05.zip","drive_file_id":"1Tr-es3GljWHZAEdsIODxmF4dTZw9Ecx-","drive_url":"https://drive.google.com/file/d/1Tr-es3GljWHZAEdsIODxmF4dTZw9Ecx-/view","drive_folder_id":"1mtImt5brmkP0Ce9lEBhOyRFzMXQDRWAU","size_bytes":38445,"sha256":"7e8f402a425deaf8a09bd9024d8803c53e16d88bf5956b843e338392503bff8e","source_count":12,"source_ids":[],"local_package_verification":"PASS","drive_readback":"PASS_FILE_NAME_AND_SIZE","worker_mode":"READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"},
+    {"wave":4,"slot":1,"slot_package_file_name":"SF028_P0_EXTRACT_20260801_062137_WAVE_04_SLOT_01.zip","drive_file_id":"1OtaH7K-GvONtTXvLLpBqtaFcmOgfQWMt","drive_url":"https://drive.google.com/file/d/1OtaH7K-GvONtTXvLLpBqtaFcmOgfQWMt/view","drive_folder_id":"1GzbvI1RlyVMlMFLIdO20wsJfZdgl_4cp","size_bytes":43964,"sha256":"018e62d52a313588dc16ca7f3bf2e6fc25b306c2125a17328b731ed52e6d79ed","source_count":12,"source_ids":[],"local_package_verification":"PASS","drive_readback":"PASS_FILE_NAME_AND_SIZE","worker_mode":"READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"},
+    {"wave":4,"slot":2,"slot_package_file_name":"SF028_P0_EXTRACT_20260801_062137_WAVE_04_SLOT_02.zip","drive_file_id":"12GtYgmvcNkKbu3i6wiykNpQAEosxB7jT","drive_url":"https://drive.google.com/file/d/12GtYgmvcNkKbu3i6wiykNpQAEosxB7jT/view","drive_folder_id":"1GzbvI1RlyVMlMFLIdO20wsJfZdgl_4cp","size_bytes":50196,"sha256":"b910906f62ae520071b49f0e6b521386e5169b4bb3e1da7559cf71a2ace8af42","source_count":12,"source_ids":[],"local_package_verification":"PASS","drive_readback":"PASS_FILE_NAME_AND_SIZE","worker_mode":"READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"},
+    {"wave":4,"slot":3,"slot_package_file_name":"SF028_P0_EXTRACT_20260801_062137_WAVE_04_SLOT_03.zip","drive_file_id":"1ODzXGrP9RVeRLBPnP8MXZw-SpouI-SC8","drive_url":"https://drive.google.com/file/d/1ODzXGrP9RVeRLBPnP8MXZw-SpouI-SC8/view","drive_folder_id":"1GzbvI1RlyVMlMFLIdO20wsJfZdgl_4cp","size_bytes":61644,"sha256":"1421cec489e6ddde1e047bf5471371aef848173b48589f36b78852b4b1a68bf4","source_count":12,"source_ids":[],"local_package_verification":"PASS","drive_readback":"PASS_FILE_NAME_AND_SIZE","worker_mode":"READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"},
+    {"wave":4,"slot":4,"slot_package_file_name":"SF028_P0_EXTRACT_20260801_062137_WAVE_04_SLOT_04.zip","drive_file_id":"17c9mZgizzX2d2OuskgS4CmAGhhZ7IKuw","drive_url":"https://drive.google.com/file/d/17c9mZgizzX2d2OuskgS4CmAGhhZ7IKuw/view","drive_folder_id":"1GzbvI1RlyVMlMFLIdO20wsJfZdgl_4cp","size_bytes":57184,"sha256":"6b925225013eaa3639032eba69cfff2833e05084f1492fbf3d0680951157f24a","source_count":12,"source_ids":[],"local_package_verification":"PASS","drive_readback":"PASS_FILE_NAME_AND_SIZE","worker_mode":"READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"},
+    {"wave":4,"slot":5,"slot_package_file_name":"SF028_P0_EXTRACT_20260801_062137_WAVE_04_SLOT_05.zip","drive_file_id":"1ymGgYjIyveH191lI6ugaRDN229ew5tpM","drive_url":"https://drive.google.com/file/d/1ymGgYjIyveH191lI6ugaRDN229ew5tpM/view","drive_folder_id":"1GzbvI1RlyVMlMFLIdO20wsJfZdgl_4cp","size_bytes":46095,"sha256":"575a2ce19c504ee25a214b86fc7a51d99a3d4b126e6c15d5534b92c7bf3dfecc","source_count":12,"source_ids":[],"local_package_verification":"PASS","drive_readback":"PASS_FILE_NAME_AND_SIZE","worker_mode":"READ_ONLY_CLASSIFICATION / NO_RUNTIME_EXECUTION / NO_PRODUCTION_PROMOTION"}
+  ],
+  "verification": {
+    "master_manifest_item_count": 240,
+    "source_file_count": 240,
+    "slot_manifest_count": 20,
+    "wave_manifest_count": 4,
+    "slot_distribution": "20_OF_20_SLOTS_HAVE_12_SOURCES",
+    "sha256_error_count": 0,
+    "git_blob_error_count": 0,
+    "blocked_count": 0,
+    "extraction_error_count": 0,
+    "nested_zip_uploaded_to_github": false,
+    "source_execution": "NOT_RUN"
+  },
+  "execution_gate": {
+    "wave_01": "OPEN_FOR_READ_ONLY_CLASSIFICATION",
+    "wave_02": "WAIT_WAVE_01_INTAKE",
+    "wave_03": "WAIT_WAVE_02_INTAKE",
+    "wave_04": "WAIT_WAVE_03_INTAKE",
+    "runtime_execution": "CLOSED",
+    "production_promotion": "CLOSED",
+    "merge": "CLOSED"
+  }
+}
