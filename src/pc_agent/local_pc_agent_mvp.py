@@ -77,6 +77,34 @@ def run_local_pc_agent_mvp(*, queue_item: Dict[str, Any], assignment: Dict[str, 
         assignment_id=assignment["assignment_id"],
         worker_id=assignment["worker_id"],
     )
+    claim_status = getattr(claim_attempt, "status", "UNKNOWN_CLAIM_STATUS")
+    if claim_status != "ACCEPTED_FIRST_CLAIM":
+        claim_store_count = len(claim_store.list_claims())
+        terminal_receipt_store_count = len(receipt_store.list_receipts())
+        return {
+            "schema_version": "SOURCE_FACTORY_LOCAL_PC_AGENT_MVP_DRY_RUN_V1",
+            "status": "REJECTED_LOCAL_PC_AGENT_MVP_CLAIM",
+            "queue_id": queue_item["queue_id"],
+            "project_code": queue_item["project_code"],
+            "assignment_id": assignment["assignment_id"],
+            "worker_id": assignment["worker_id"],
+            "claim_attempt_status": claim_status,
+            "second_claim_attempt_status": "NOT_RUN_CLAIM_REJECTED",
+            "command_status": "NOT_RUN_CLAIM_REJECTED",
+            "command_invocation_count": 0,
+            "command_exit_code": None,
+            "command_stdout": "",
+            "command_stderr": "",
+            "receipt_save_status": "NOT_RUN_CLAIM_REJECTED",
+            "first_receipt_save_status": "NOT_RUN_CLAIM_REJECTED",
+            "second_receipt_save_status": "NOT_RUN_CLAIM_REJECTED",
+            "claim_store_count": claim_store_count,
+            "terminal_receipt_store_count": terminal_receipt_store_count,
+            "terminal_receipt": None,
+            "production_overwrite_count": 0,
+            "external_side_effect_count": 0,
+        }
+
     command_result = command_runner.execute(command_spec)
     terminal_receipt = build_terminal_receipt(
         queue_item=queue_item,
@@ -114,9 +142,11 @@ def run_local_pc_agent_mvp(*, queue_item: Dict[str, Any], assignment: Dict[str, 
         "claim_attempt_status": getattr(claim_attempt, "status", "UNKNOWN_CLAIM_STATUS"),
         "second_claim_attempt_status": getattr(second_claim_attempt, "status", "UNKNOWN_CLAIM_STATUS"),
         "command_status": command_payload.get("status"),
+        "command_invocation_count": 1,
         "command_exit_code": command_payload.get("exit_code"),
         "command_stdout": command_payload.get("stdout", ""),
         "command_stderr": command_payload.get("stderr", ""),
+        "receipt_save_status": first_receipt_save.get("status"),
         "first_receipt_save_status": first_receipt_save.get("status"),
         "second_receipt_save_status": second_receipt_save.get("status"),
         "claim_store_count": len(claim_store.list_claims()),
