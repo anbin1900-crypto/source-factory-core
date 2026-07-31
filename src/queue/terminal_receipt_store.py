@@ -11,7 +11,33 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
-REQUIRED_TERMINAL_FIELDS = ["status", "worker_id", "task_id", "outputs", "verification", "blockers"]
+REQUIRED_TERMINAL_FIELDS = [
+    "schema_version",
+    "status",
+    "worker_id",
+    "task_id",
+    "queue_id",
+    "assignment_id",
+    "claim_key",
+    "project_code",
+    "outputs",
+    "verification",
+    "blockers",
+    "forbidden_effect_counters",
+]
+IDENTITY_FIELDS = [
+    "worker_id",
+    "task_id",
+    "queue_id",
+    "assignment_id",
+    "claim_key",
+    "project_code",
+]
+EXPECTED_FIELD_TYPES = {
+    "outputs": list,
+    "verification": dict,
+    "blockers": list,
+}
 FORBIDDEN_COUNTER_FIELDS = [
     "prompt_send_count",
     "browser_launch_count",
@@ -31,12 +57,43 @@ def _now_iso() -> str:
 
 
 def validate_terminal_receipt(receipt: Dict[str, Any]) -> Tuple[bool, List[str]]:
-    missing = [field for field in REQUIRED_TERMINAL_FIELDS if field not in receipt]
-    counters = receipt.get("forbidden_effect_counters", {})
-    for field in FORBIDDEN_COUNTER_FIELDS:
-        if int(counters.get(field, 0) or 0) != 0:
-            missing.append(f"NON_ZERO_FORBIDDEN_COUNTER:{field}")
-    return (len(missing) == 0, missing)
+    problems: List[str] = []
+    if not isinstance(receipt, dict):
+        return False, ["INVALID_RECEIPT_TYPE:expected_dict"]
+
+    for field in REQUIRED_TERMINAL_FIELDS:
+        if field not in receipt:
+            problems.append(f"MISSING_REQUIRED_FIELD:{field}")
+
+    for field in IDENTITY_FIELDS:
+        if field in receipt and (not isinstance(receipt[field], str) or not receipt[field].strip()):
+            problems.append(f"INVALID_OR_BLANK_IDENTITY:{field}")
+
+    if "schema_version" in receipt and (
+        not isinstance(receipt["schema_version"], str) or not receipt["schema_version"].strip()
+    ):
+        problems.append("INVALID_OR_BLANK_SCHEMA_VERSION")
+
+    for field, expected_type in EXPECTED_FIELD_TYPES.items():
+        if field in receipt and not isinstance(receipt[field], expected_type):
+            problems.append(f"INVALID_FIELD_TYPE:{field}:expected_{expected_type.__name__}")
+
+    if "forbidden_effect_counters" in receipt:
+        counters = receipt["forbidden_effect_counters"]
+        if not isinstance(counters, dict):
+            problems.append("INVALID_FIELD_TYPE:forbidden_effect_counters:expected_dict")
+        else:
+            for field in FORBIDDEN_COUNTER_FIELDS:
+                if field not in counters:
+                    problems.append(f"MISSING_FORBIDDEN_COUNTER:{field}")
+                    continue
+                value = counters[field]
+                if not isinstance(value, int) or isinstance(value, bool):
+                    problems.append(f"INVALID_FORBIDDEN_COUNTER_TYPE:{field}:expected_int")
+                elif value != 0:
+                    problems.append(f"NON_ZERO_FORBIDDEN_COUNTER:{field}")
+
+    return (len(problems) == 0, problems)
 
 
 def receipt_dedupe_key(receipt: Dict[str, Any]) -> str:
@@ -67,7 +124,7 @@ class TerminalReceiptStore:
     def save_terminal_receipt(self, receipt: Dict[str, Any]) -> Dict[str, Any]:
         valid, problems = validate_terminal_receipt(receipt)
         if not valid:
-            return {"status": "REJECTED_INVALID_TERMINAL_RECEIPT", "problems": problems, "dedupe_key": receipt_dedupe_key(receipt)}
+            return {"status": "REJECTED_INVALID_TERMINAL_RECEIPT", "problems": problems}
 
         data = self._read()
         receipts = data.setdefault("receipts", [])
