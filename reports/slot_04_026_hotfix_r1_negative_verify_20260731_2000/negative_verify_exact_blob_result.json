@@ -1,0 +1,131 @@
+{
+  "schema_version": "SOURCE_FACTORY_026_HOTFIX_R1_NEGATIVE_VERIFY_EXACT_BLOB_EXECUTION_V1",
+  "status": "PASS_EXACT_BLOB_NEGATIVE_VERIFY",
+  "upstream_commits": {
+    "slot_01": "42b1f29b276f603cd793f930b79346700bbbe551",
+    "slot_02": "2207b9b4fc547afc673c0f3229b23f18b65a5be9",
+    "slot_03": "7a51cdd3965b6b215922e9f6f334eea97ae2825a"
+  },
+  "exact_blob_sha_verification": {
+    "src/pc_agent/local_pc_agent_mvp.py": {
+      "actual": "b4e61ab9bac04094f0f9d9a05c55c12546755e8d",
+      "expected": "b4e61ab9bac04094f0f9d9a05c55c12546755e8d",
+      "match": true,
+      "bytes": 7292
+    },
+    "src/pc_agent/local_command_runner.py": {
+      "actual": "9174cdf54f08cf9e5fbc861f9bf4511fae64c420",
+      "expected": "9174cdf54f08cf9e5fbc861f9bf4511fae64c420",
+      "match": true,
+      "bytes": 7977
+    },
+    "src/queue/terminal_receipt_store.py": {
+      "actual": "68d0323ef97ab597ed2d8f7efd96416fd07d5063",
+      "expected": "68d0323ef97ab597ed2d8f7efd96416fd07d5063",
+      "match": true,
+      "bytes": 4990
+    },
+    "src/queue/local_claim_store.py": {
+      "actual": "015183bb0ec26b926ec6ddf16cc143d5b7decdd7",
+      "expected": "015183bb0ec26b926ec6ddf16cc143d5b7decdd7",
+      "match": true,
+      "bytes": 3445
+    }
+  },
+  "syntax_compile": {
+    "status": "PASS",
+    "compiled_count": 5
+  },
+  "cases": [
+    {
+      "name": "preseeded_duplicate_claim_no_command_no_receipt",
+      "status": "PASS",
+      "detail": {
+        "result_status": "REJECTED_LOCAL_PC_AGENT_MVP_CLAIM",
+        "claim_attempt_status": "REJECTED_DUPLICATE_CLAIM",
+        "command_status": "NOT_RUN_CLAIM_REJECTED",
+        "spy_command_invocations": 0,
+        "receipt_save_invocations": 0,
+        "claim_store_count_before": 1,
+        "claim_store_count_after": 1,
+        "receipt_store_count_before": 0,
+        "receipt_store_count_after": 0
+      }
+    },
+    {
+      "name": "canonical_mismatch_and_unknown_no_subprocess",
+      "status": "PASS",
+      "detail": {
+        "mismatch_status": "REJECTED_COMMAND_SPEC_MISMATCH",
+        "unknown_status": "REJECTED_COMMAND_NOT_ALLOWLISTED",
+        "subprocess_invocation_count": 0
+      }
+    },
+    {
+      "name": "command_launch_failures_structured",
+      "status": "PASS",
+      "detail": {
+        "file_not_found": {
+          "status": "FAIL_LOCAL_COMMAND_FILE_NOT_FOUND",
+          "exit_code": -1,
+          "stderr": "FileNotFoundError: fixture executable not found"
+        },
+        "os_error": {
+          "status": "FAIL_LOCAL_COMMAND_OS_ERROR",
+          "exit_code": -1,
+          "stderr": "OSError: fixture launch denied"
+        }
+      }
+    },
+    {
+      "name": "terminal_receipt_validation_and_dedupe",
+      "status": "PASS",
+      "detail": {
+        "missing_queue_id": {
+          "status": "REJECTED_INVALID_TERMINAL_RECEIPT",
+          "problems": ["MISSING_REQUIRED_FIELD:queue_id"],
+          "stored_delta": 0
+        },
+        "blank_assignment_id": {
+          "status": "REJECTED_INVALID_TERMINAL_RECEIPT",
+          "problems": ["INVALID_OR_BLANK_IDENTITY:assignment_id"],
+          "stored_delta": 0
+        },
+        "blank_claim_key": {
+          "status": "REJECTED_INVALID_TERMINAL_RECEIPT",
+          "problems": ["INVALID_OR_BLANK_IDENTITY:claim_key"],
+          "stored_delta": 0
+        },
+        "missing_forbidden_counter": {
+          "status": "REJECTED_INVALID_TERMINAL_RECEIPT",
+          "problems": ["MISSING_FORBIDDEN_COUNTER:external_api_call_count"],
+          "stored_delta": 0
+        },
+        "nonzero_forbidden_counter": {
+          "status": "REJECTED_INVALID_TERMINAL_RECEIPT",
+          "problems": ["NON_ZERO_FORBIDDEN_COUNTER:external_api_call_count"],
+          "stored_delta": 0
+        },
+        "valid_first_duplicate_second": {
+          "first_status": "ACCEPTED_TERMINAL_RECEIPT",
+          "second_status": "REJECTED_DUPLICATE_TERMINAL_RECEIPT",
+          "stored_count": 1
+        }
+      }
+    }
+  ],
+  "unexpected_mutation_observation": {
+    "created": [],
+    "deleted": [],
+    "modified": []
+  },
+  "unexpected_mutation_count": 0,
+  "oneflow_026_invocation_count": 0,
+  "remote_queue_mutation_count": 0,
+  "external_side_effect_count": 0,
+  "notes": [
+    "Executed helper suite against connector-fetched exact Git blob contents.",
+    "Commit ancestry was verified separately through GitHub compare_commits.",
+    "The packaged CLI ancestry gate was not executed in this container because no live repository checkout was available."
+  ]
+}
