@@ -1,0 +1,49 @@
+{
+  "schema_version": "SOURCE_FACTORY_SF028_P0_STAGING_ARTIFACT_LEDGER_CORRECTION_V2",
+  "task_id": "SF_028_P0_240_CANDIDATE_CLASSIFICATION_STAGING",
+  "run_id": "SF028_P0_EXTRACT_20260801_062137",
+  "terminal_status": "SF028_P0_STAGING_ARTIFACT_LEDGER_V2_AUTHORITATIVE",
+  "supersedes": {
+    "path": "state/SF_028_P0_STAGING_ARTIFACT_LEDGER_20260801_062137.json",
+    "commit": "5d79a7faf125f33f9497f3e7f3037340449a2b74",
+    "reason": "V1 source_ids fields included manual transcription omissions or mismatches. V1 Drive file IDs, file names, sizes, SHA-256 values and storage gates remain valid. V1 source_ids fields are non-authoritative and must not be used."
+  },
+  "authoritative_source_identity": {
+    "primary": "Each slot ZIP embedded SLOT_MANIFEST.json",
+    "binding": "drive_file_id + slot_zip_sha256 + embedded source_id + packaged file sha256",
+    "wave_01_dispatch": {
+      "path": "daily_queue/2026-08-01/SF_028_P0_WAVE_01_DISPATCH_READY_20260801_062137.md",
+      "commit": "fcf596b10b4e002767e885c522435a32781d3998",
+      "source_ids": "AUTHORITATIVE_FOR_WAVE_01"
+    },
+    "wave_02_to_04": "Source IDs remain closed and will be copied from embedded SLOT_MANIFEST.json when each wave opens."
+  },
+  "full_package": {
+    "drive_file_id": "18YFu1HOkwGsZjUygu50QZ8LSUqeyiCB1",
+    "drive_folder_id": "1E-Ze_A2qlB2QZA4UttX_wLt8U3MrOY87",
+    "file_name": "SF028_P0_EXTRACT_20260801_062137_FULL_STAGING_PACKAGE.zip",
+    "size_bytes": 3080494,
+    "sha256": "cc4d272e52b191174591edae21de0a237f982a5d6ec213e566adf61e839bde0f"
+  },
+  "verification": {
+    "candidate_count": 240,
+    "slot_zip_count": 20,
+    "slot_source_count": 12,
+    "wave_count": 4,
+    "duplicate_source_id_count_across_embedded_manifests": 0,
+    "sha256_error_count": 0,
+    "git_blob_error_count": 0,
+    "blocked_count": 0,
+    "error_count": 0,
+    "drive_folder_readback": "4_WAVES_X_5_SLOT_FILES_PASS"
+  },
+  "gate": {
+    "wave_01": "OPEN_READ_ONLY_CLASSIFICATION",
+    "wave_02": "CLOSED_PENDING_WAVE_01_INTAKE",
+    "wave_03": "CLOSED_PENDING_WAVE_02_INTAKE",
+    "wave_04": "CLOSED_PENDING_WAVE_03_INTAKE",
+    "runtime": "CLOSED",
+    "production_promotion": "CLOSED",
+    "merge": "CLOSED"
+  }
+}
