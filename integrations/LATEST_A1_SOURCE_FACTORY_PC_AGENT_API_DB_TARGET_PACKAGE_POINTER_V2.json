@@ -1,0 +1,57 @@
+{
+  "schema_version": "YOLLA_A1_SOURCE_FACTORY_PC_AGENT_API_DB_TARGET_PACKAGE_POINTER_V2",
+  "package_id": "A1-SOURCE-FACTORY-PC-AGENT-API-DB-INTEGRATION-V2-20260801-001",
+  "status": "TARGET_PC_EXECUTION_PACKAGE_READY",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 3,
+  "branch": "integration/source-factory-pc-agent-api-db-v1",
+  "source_head": "84671ac2c51f0c51940a89eac35fc33f8c923b29",
+  "decision_commit": "45cda64ca650610f221b4abbc7d2f0b498073107",
+  "ci": {
+    "run_id": 30697753481,
+    "job_id": 91363401938,
+    "conclusion": "success"
+  },
+  "target_package": {
+    "filename": "SOURCE_FACTORY_PC_AGENT_API_DB_INTEGRATION_V2.zip",
+    "sha256": "a95008e27822150d025122e2a7aa12418f87b506994ed6b694610bb7508a6670",
+    "size_bytes": 44753,
+    "file_count": 24
+  },
+  "target_runner": {
+    "filename": "RUN_T1A1_SOURCE_FACTORY_PC_AGENT_API_DB_INTEGRATION_V2.ps1",
+    "sha256": "69c7b47ff0c3e898975329348f7af1c39404c88cb15895e436db7e508d177b68",
+    "size_bytes": 16614,
+    "windows_powershell": "5.1",
+    "administrator_required": true
+  },
+  "bound_authorities": {
+    "source_factory_support_head": "15fcc6e252b064a22fb5b5a9288810093dcec075",
+    "api_w01_contract_source": "1d34f80ce96c29de6698798ed36c5c685d438841",
+    "d1_control_head": "8fd389bffd1f3fe98c18fcbce0a1c88cf68583c8",
+    "b1_control_head": "6a4d974165077f3e40ab3b43fdb72b598444234c",
+    "c1_control_head": "5d9ac6c653f9eb3b426f160198e4d47daeec0b10"
+  },
+  "execution_order": [
+    "PACKAGE_AND_FILE_SHA_VALIDATION",
+    "EXACT_GIT_AUTHORITY_MATERIALIZATION",
+    "API_W01_AUTHORITY_PASS",
+    "D1_OFFICIAL_FIXTURE_PASS",
+    "B1_RUNTIME_SUPPORT_SMOKE_PASS",
+    "C1_INDEPENDENT_HARNESS_PASS",
+    "ISOLATED_WORKING_COPY_APPLY_PASS",
+    "ACTIVE_CORE_APPLY_PASS",
+    "MINIMUM_VERTICAL_E2E_PASS"
+  ],
+  "superseded": {
+    "v1_zip_sha256": "79b9bc4601e3d57adccdffb2d1bd8dd1d93784b1076eab05932746148acc6629",
+    "v1_runner_sha256": "7cafb38c175f02368eaddbde22141da8f500eb11c5ac976cd2cdd4e12a3eabfb",
+    "status": "DO_NOT_RUN"
+  },
+  "target_pc_execution": "PENDING",
+  "real_api_call": false,
+  "actual_postgresql_apply": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
