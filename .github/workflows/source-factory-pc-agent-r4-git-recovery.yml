@@ -15,10 +15,18 @@ jobs:
     runs-on: windows-latest
     timeout-minutes: 10
     steps:
+      - name: Enable Windows long paths
+        shell: powershell
+        run: git config --system core.longpaths true
+
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
           fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            integrations/pc_agent_v1/runners/R4_GIT_FETCH_RECOVERY_MODULE.ps1
+            .github/workflows/source-factory-pc-agent-r4-git-recovery.yml
 
       - name: Parse PowerShell 5.1-compatible module
         shell: powershell
