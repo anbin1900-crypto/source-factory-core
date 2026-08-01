@@ -1,0 +1,48 @@
+{
+  "task_id": "SF_028_MIGRATION_GATE_AND_OLD_ROOT_DELETE_READINESS",
+  "worker_id": "SLOT_06_SF028_MIGRATION_GATE_AND_OLD_ROOT_DELETE_READINESS_WORKER",
+  "observed_main_head_before_report": "238149e2f0955036d1870c94719db627f500aff8",
+  "old_root": "D:\\SOURCE FACTORY\\source-factory-core (candidate_unverified)",
+  "new_root": "D:\\SOURCE FACTORY\\source-factory-active-core (candidate_unverified)",
+  "old_root_size_bytes": 0,
+  "new_root_size_bytes": 0,
+  "size_reduction_estimate_bytes": 0,
+  "size_values_status": "UNKNOWN_REQUIRED_AUDIT_MISSING",
+  "required_inputs_present": false,
+  "missing_required_inputs": [
+    "state/SF_028_SIZE_AUDIT.json",
+    "state/SF_028_DELETE_CANDIDATE_SIZE_AUDIT.json",
+    "state/SF_028_RUNTIME_REACHABILITY_GRAPH.json",
+    "state/SF_028_ACTIVE_RUNTIME_CORE_MANIFEST.json",
+    "state/SF_028_VERIFY_ONLY_SOURCE_MANIFEST.json",
+    "state/SF_028_PENDING_INTEGRATION_SOURCE_LEDGER.json",
+    "state/SF_028_ARCHIVE_BACKLOG_POINTER.json",
+    "state/SF_028_ACTIVE_CORE_COPY_REPORT.json",
+    "state/SF_028_COMPACT_CONSTITUTION_COPY_REPORT.json",
+    "reports/sf028_active_core_verify_<timestamp>/VERIFY_ACTIVE_CORE_REPORT.md",
+    "reports/sf028_active_core_verify_<timestamp>/VERIFY_ACTIVE_CORE_REPORT.json"
+  ],
+  "slot_status": {
+    "SLOT_01": "MISSING",
+    "SLOT_02": "MISSING",
+    "SLOT_03": "MISSING",
+    "SLOT_04": "MISSING",
+    "SLOT_05": "MISSING"
+  },
+  "blocking_issues": [
+    "required SF_028 state ledgers absent on Remote",
+    "SLOT_05 standalone active-core verification report absent",
+    "OLD_ROOT and NEW_ROOT authoritative identity and sizes unresolved",
+    "required file, hash, parse, compile, syntax and forbidden-copy checks not verifiable"
+  ],
+  "non_blocking_warnings": [
+    "D-drive roots are batch candidates and remain unverified",
+    "alternate E-drive candidates remain unresolved"
+  ],
+  "delete_old_root_ready": false,
+  "old_root_deleted": false,
+  "old_root_delete_action": "NOT_RUN",
+  "old_root_delete_requires": "COMMANDER_AND_USER_CONFIRMATION",
+  "external_effect_count": 0,
+  "terminal_status": "SF_028_ACTIVE_CORE_MIGRATION_GATE_YELLOW_REVIEW_NEEDED"
+}
