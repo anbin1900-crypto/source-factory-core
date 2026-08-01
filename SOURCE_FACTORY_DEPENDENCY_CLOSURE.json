@@ -1,0 +1,64 @@
+{
+  "object_type": "SOURCE_FACTORY_DEPENDENCY_CLOSURE",
+  "version": "2026-08-01.dependency-closure.v1",
+  "status": "CLOSED_FOR_E_ONLY_RUNTIME",
+  "runtime_root": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038",
+  "package_json": {
+    "path": "releases/SF_REUSABLE_CORE_20260801_175708/package.json",
+    "git_blob_sha": "19841fabfc4e16868cfb603bdb0c1572f14758f9",
+    "electron_version_spec": "^31.0.0",
+    "node_version_requirement": ">=18.0.0",
+    "package_main": "src/main/main.js",
+    "runtime_note": "E-only launcher executes safe_panel_v10/safe_panel_main.js directly, so package main is reference metadata, not the launch authority."
+  },
+  "package_lock": {
+    "path": "releases/SF_REUSABLE_CORE_20260801_175708/package-lock.json",
+    "git_blob_sha": "f3cd94365d0062afdfce04edfb2f543f5b9a12d7",
+    "sha_kind": "GIT_BLOB_SHA_FROM_GITHUB_CONTENTS_API",
+    "sha256": "NOT_REMEASURED_IN_THIS_CLOSURE"
+  },
+  "dependency_install_command": {
+    "fresh_install": "npm install",
+    "existing_runtime_mode": "E active-core already contains node_modules and was observed running from E-local Electron binary",
+    "do_not_commit": [
+      "large historical runtime folders",
+      "old backup/log folders",
+      "temporary execution outputs"
+    ]
+  },
+  "electron": {
+    "version_spec": "^31.0.0",
+    "actual_binary_observed": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038\\node_modules\\electron\\dist\\electron.exe",
+    "actual_version_printed": "NOT_PRINTED_IN_CURRENT_TRANSCRIPT",
+    "runtime_dependency_status": "E_LOCAL_BINARY_OBSERVED"
+  },
+  "node": {
+    "version_requirement": ">=18.0.0",
+    "actual_node_version_printed": "NOT_PRINTED_IN_CURRENT_TRANSCRIPT",
+    "node_check_status": "safe_panel_main.js node --check returned without visible error before direct Electron launch"
+  },
+  "runtime_references": {
+    "d_source_dependency_count": 0,
+    "d_electron_dependency_count": 0,
+    "e_source_dependency_count": 1,
+    "e_electron_dependency_count": 1,
+    "unresolved_runtime_reference_count": 0,
+    "unresolved_runtime_reference_scope": "current E-only process command line",
+    "historical_d_reference_note": "Earlier Active Core manifest recorded D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE as electron_home_reference during transition. That is superseded by E-only process proof."
+  },
+  "git_and_snapshot": {
+    "latest_snapshot_branch": "publish/reusable-core-20260801",
+    "latest_snapshot_path": "releases/SF_REUSABLE_CORE_20260801_175708",
+    "main_branch_contains_latest_snapshot": false,
+    "main_branch_status": "STALE_UNTIL_PR_2_MERGED"
+  },
+  "final_judgment": {
+    "source_and_architecture_posted_sufficiently": true,
+    "integrator_can_start_implementation": true,
+    "more_historical_source_collection_required": false,
+    "more_architecture_audit_required": false,
+    "github_canonical_state_closure_required": false,
+    "required_closure_size": "COMPLETED_POINTER_AND_RECEIPT_FILES_POSTED",
+    "remaining_first_defect": "PC_AGENT_ADAPTER_NOT_INSERTED"
+  }
+}
