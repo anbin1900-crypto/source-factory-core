@@ -25,7 +25,8 @@ E:\SOURCE FACTORY\source-factory-reusable-core\SF_REUSABLE_CORE_20260801_175708
 4. _USAGE_NOTES/stage4StationBindingHandlers.usage.md
 5. _USAGE_NOTES/PC_AGENT_BINDING_ADAPTER.usage.md
 6. _USAGE_NOTES/PROJECT_PANEL_IDENTITY.usage.md
-7. REUSABLE_CORE_MANIFEST.json
+7. ANNOTATION_CHANGELOG.md
+8. REUSABLE_CORE_MANIFEST.json
 ```
 
 문서별 역할:
@@ -33,10 +34,11 @@ E:\SOURCE FACTORY\source-factory-reusable-core\SF_REUSABLE_CORE_20260801_175708
 | 파일 | 목적 |
 |---|---|
 | `USER_START_HERE.md` | 처음 사용자용 읽기 순서와 빠른 사용법 |
-| `SOURCE_USAGE_INDEX.md` | 핵심 파일별 역할 요약표 |
+| `SOURCE_USAGE_INDEX.md` | 핵심 파일별 역할 요약표와 상세 주석 링크 |
 | `CORE_ASSET_ANNOTATION_GUIDE.md` | 핵심 자산별 상세 주석/재사용법/주의사항 |
 | `_USAGE_NOTES/PC_AGENT_BINDING_ADAPTER.usage.md` | PC Agent 결속 지점과 adapter 설계 주석 |
 | `_USAGE_NOTES/PROJECT_PANEL_IDENTITY.usage.md` | Project Panel Identity 모델 주석 |
+| `ANNOTATION_CHANGELOG.md` | 상세 주석 추가 이력 |
 
 ## 포함된 핵심 그룹
 
@@ -92,4 +94,5 @@ E:\SOURCE FACTORY\source-factory-reusable-core\SF_REUSABLE_CORE_20260801_175708
 5. Project Panel Identity에는 fake/default 값을 넣지 않는다.
 6. SF_COMMAND 후보는 detect/queue 대상으로만 취급하고 자동 실행하지 않는다.
 7. PC Agent는 기존 dispatch/run check 흐름에 adapter로 붙인다.
+8. Worker/Commander count를 6/7로 고정하지 않는다.
 ```
