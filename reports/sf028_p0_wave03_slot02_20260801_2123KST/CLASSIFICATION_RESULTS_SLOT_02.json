@@ -1,0 +1,685 @@
+{
+  "schema_version": "SF_028_P0_WAVE_03_CLASSIFICATION_RESULTS_V1",
+  "task_id": "SF_028_P0_WAVE_03_SLOT_02_CLASSIFICATION",
+  "worker_id": "SLOT_02_SF028_P0_WAVE3_CLASSIFICATION_WORKER",
+  "generated_at_kst": "2026-08-01T21:23:00+09:00",
+  "observed_repository_head_before_publish": "61a01df401e357b013cb4fc18d141dc370ac4c85",
+  "authority": {
+    "wave_02_open_terminal_commit": "61a01df401e357b013cb4fc18d141dc370ac4c85",
+    "wave_03_batch_commit": "e162e6018a709bbae470604fef9b431673764e8a",
+    "slot_prompt_commit": "c61556219c2029b3805bc189a0362c123c4fe9c9",
+    "drive_file_id": "1O1TEv84cyLRS1Y7cLG495GqG7fQjBMAG",
+    "zip_file_name": "SF028_P0_EXTRACT_20260801_062137_WAVE_03_SLOT_02.zip",
+    "zip_size_bytes": 48636,
+    "zip_sha256": "7a1838be0d8605819943b694b20ae7776a972c7ae2de494b9e3c8da22015682e",
+    "source_identity_authority": "embedded SLOT_MANIFEST.json"
+  },
+  "package_verification": {
+    "manifest_status": "READY",
+    "expected_item_count": 12,
+    "packaged_item_count": 12,
+    "unique_source_id_count": 12,
+    "unexpected_source_id_count": 0,
+    "missing_source_id_count": 0,
+    "unsafe_zip_member_count": 0,
+    "file_hash_mismatch_count": 0,
+    "syntax_only_parse_pass_count": 12,
+    "syntax_only_parse_fail_count": 0,
+    "source_execution_count": 0,
+    "source_modification_count": 0,
+    "dependency_installation_count": 0,
+    "runtime_or_service_start_count": 0,
+    "external_effect_count": 0,
+    "promotion_count": 0
+  },
+  "classification_summary": {
+    "ADAPTER_REQUIRED": 3,
+    "DIRECT_REUSE": 2,
+    "PROJECT_BOUND": 6,
+    "SUPERSEDED": 1
+  },
+  "decisions": [
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000562",
+      "primary_classification": "DIRECT_REUSE",
+      "actual_function": "Provides Korean labels and BLUE/ORANGE/RED mappings for Source Factory status codes, buttons, sections, and roles through lookup helpers.",
+      "inputs": [
+        "status code or color",
+        "button/section/role label key"
+      ],
+      "outputs": [
+        "Korean label",
+        "status color",
+        "status-color help text"
+      ],
+      "principal_functions_or_classes": [
+        "getStatusLabel",
+        "getStatusColor",
+        "getStatusColorLabel",
+        "getStatusColorHelp",
+        "getButtonLabel",
+        "getSectionLabel",
+        "getRoleLabel"
+      ],
+      "dependencies": [
+        "JavaScript built-ins"
+      ],
+      "external_effects": [
+        "NONE in lookup functions",
+        "GLOBAL_NAMESPACE_ATTACHMENT if evaluated"
+      ],
+      "project_coupling": "MEDIUM: vocabulary includes legacy Stage 2/GPT/Commander menu terms and a fixed three-color status scheme.",
+      "duplicate_or_replacement_relation": "Manifest records 78 corpus copies; no byte-identical counterpart exists inside this slot and no canonical replacement was proven.",
+      "risks": [
+        "status vocabulary is legacy and incomplete for compact v2.1.2 states",
+        "global namespace attachment can collide",
+        "unknown status codes fall back to raw code or BLUE"
+      ],
+      "next_action": "Retain as a pure localization table; namespace/version the contract and add V2 fixtures for unknown and newly introduced statuses.",
+      "assignment_id": "SF028-W03-S02-I01",
+      "file_name": "koreanLabels.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_09_STAGE3_DISPATCH_WRITE_FIX_APP/src/renderer/koreanLabels.js",
+      "sha256": "c34007feaf0e4f222ef0131add1e9e4e2d10ab9be27e0efc46fe1fa0e041b8b5",
+      "git_blob_sha1": "7b560b6df22caee097fe77189b08e5c707a455ef",
+      "size_bytes": 6146,
+      "verification_level": "V1_STATIC",
+      "evidence": [
+        "Drive file ID, ZIP name, size and SHA-256 matched the Wave 3 prompt",
+        "embedded SLOT_MANIFEST.json identity and assigned Source ID matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ]
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000570",
+      "primary_classification": "PROJECT_BOUND",
+      "actual_function": "Builds and auto-mounts the Stage 3 Worker Return browser panel, gathers task/prompt/output/source/result/report text from fixed selectors, and calls sfApi to send Worker output to Commander or list the return queue.",
+      "inputs": [
+        "browser DOM and injected Source Factory window context",
+        "fixed task/output selectors",
+        "optional view options",
+        "sfApi send/list methods"
+      ],
+      "outputs": [
+        "Worker return payload and metadata preview",
+        "mounted panel",
+        "backend call result or queue view"
+      ],
+      "principal_functions_or_classes": [
+        "buildReturnPayload",
+        "mountStage3WorkerReturnPanel",
+        "handleSend",
+        "handleListQueue",
+        "normalizeApiResult"
+      ],
+      "dependencies": [
+        "browser DOM",
+        "window.SourceFactoryRenderer",
+        "window.sfApi.sendWorkerOutputToCommander",
+        "window.sfApi.listWorkerReturnQueue"
+      ],
+      "external_effects": [
+        "DOM_MUTATION",
+        "CUSTOM_EVENT_DISPATCH",
+        "TIMER_AUTO_MOUNT",
+        "POTENTIAL_BACKEND_SEND_AND_QUEUE_READ"
+      ],
+      "project_coupling": "VERY_HIGH: fixed Stage 3 panel IDs, selectors, Worker identity rules, Source Factory renderer globals, API names, and return-payload vocabulary.",
+      "duplicate_or_replacement_relation": "Manifest records 18 corpus copies; no exact in-slot duplicate or canonical successor was proven.",
+      "risks": [
+        "auto-mounts after a timer",
+        "collects raw/full output text into a return payload",
+        "backend APIs are implicit globals",
+        "fixed selectors and Worker_01..06 model",
+        "UI and transport orchestration are mixed"
+      ],
+      "next_action": "Do not promote as generic core; preserve as Stage 3 UI reference or rebuild behind injected selectors, dynamic slots, redaction limits, and a durable receipt adapter.",
+      "assignment_id": "SF028-W03-S02-I02",
+      "file_name": "stage3WorkerReturnPanel.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_09_STAGE3_DISPATCH_WRITE_FIX_APP/src/renderer/stage3WorkerReturnPanel.js",
+      "sha256": "a917478e2a8376bd67b13620ba048565a873d8242718d356f93418794ee21ba0",
+      "git_blob_sha1": "a19202be6caabf318bd5996218f746b12a636c33",
+      "size_bytes": 26772,
+      "verification_level": "V1_STATIC",
+      "evidence": [
+        "Drive file ID, ZIP name, size and SHA-256 matched the Wave 3 prompt",
+        "embedded SLOT_MANIFEST.json identity and assigned Source ID matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ]
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000589",
+      "primary_classification": "PROJECT_BOUND",
+      "actual_function": "Auto-mounts a Worker dispatch inbox panel, reads the current Worker identity, fetches instructions through sfApi.listDispatchQueue, displays the newest instruction, and supports clipboard copy.",
+      "inputs": [
+        "browser DOM/window context",
+        "Worker ID",
+        "sfApi.listDispatchQueue result"
+      ],
+      "outputs": [
+        "mounted inbox panel",
+        "instruction text and raw result display",
+        "clipboard-copy status"
+      ],
+      "principal_functions_or_classes": [
+        "mountStage3WorkerDispatchInboxPanel",
+        "refresh",
+        "extractInstruction",
+        "copyInstruction"
+      ],
+      "dependencies": [
+        "browser DOM",
+        "navigator.clipboard",
+        "window.sfApi.listDispatchQueue"
+      ],
+      "external_effects": [
+        "DOM_MUTATION",
+        "BACKEND_QUEUE_READ",
+        "CLIPBOARD_WRITE"
+      ],
+      "project_coupling": "VERY_HIGH: fixed Stage 3 Worker inbox IDs, default WORKER_02, fixed sfApi method and ChatGPT-copy workflow.",
+      "duplicate_or_replacement_relation": "Manifest records 27 corpus copies; no exact in-slot duplicate or canonical successor was proven.",
+      "risks": [
+        "defaults silently to WORKER_02",
+        "auto-mounts into specific legacy panel placement",
+        "instruction shape is coupled to Stage 3 records",
+        "clipboard behavior is browser-permission dependent"
+      ],
+      "next_action": "Keep as project UI reference; any reuse requires dynamic identity, injected inbox adapter, explicit mount ownership, and clipboard fallback fixtures.",
+      "assignment_id": "SF028-W03-S02-I03",
+      "file_name": "stage3WorkerDispatchInboxPanel.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_11_STAGE3_WORKER_INSTRUCTION_DISPLAY_FIX_APP/src/renderer/stage3WorkerDispatchInboxPanel.js",
+      "sha256": "b6e2c4bed37c6bd73b63eeadedc1ea45efd56583bdefb50b6aa4a11db9fc61c7",
+      "git_blob_sha1": "d31c1302e254f3a5bcc01a4d6eb6d37dd7d8a690",
+      "size_bytes": 10228,
+      "verification_level": "V1_STATIC",
+      "evidence": [
+        "Drive file ID, ZIP name, size and SHA-256 matched the Wave 3 prompt",
+        "embedded SLOT_MANIFEST.json identity and assigned Source ID matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ]
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000675",
+      "primary_classification": "DIRECT_REUSE",
+      "actual_function": "Creates, validates, summarizes, enqueues, dequeues, and transitions an in-memory prompt queue with per-prompt status and terminal metadata.",
+      "inputs": [
+        "queue context and prompt items",
+        "new prompt item",
+        "prompt ID, next status and patch"
+      ],
+      "outputs": [
+        "normalized queue",
+        "validation errors/warnings",
+        "queue summary",
+        "next prompt and transitioned queue"
+      ],
+      "principal_functions_or_classes": [
+        "createPromptQueue",
+        "enqueuePrompt",
+        "dequeueNextPrompt",
+        "markPromptStatus",
+        "validatePromptItem",
+        "summarizeQueue"
+      ],
+      "dependencies": [
+        "JavaScript built-ins"
+      ],
+      "external_effects": [
+        "NONE"
+      ],
+      "project_coupling": "MEDIUM: default target stage, prompt-package names and PANEL/COMMANDER/WORKER terminal vocabulary are Source Factory specific.",
+      "duplicate_or_replacement_relation": "Manifest records 6 corpus copies; no exact in-slot duplicate or canonical successor was proven.",
+      "risks": [
+        "FNV-style 32-bit identifiers are collision-prone",
+        "timestamps are generated internally",
+        "cloning is shallow",
+        "status transition legality is not modeled as a strict state machine",
+        "queue persistence and exactly-once delivery are outside the module"
+      ],
+      "next_action": "Retain the pure queue model and add deterministic-ID/time injection plus V2 fixtures for invalid transitions, duplicate IDs, retry limits and multiple-ready invariants.",
+      "assignment_id": "SF028-W03-S02-I04",
+      "file_name": "promptQueueManager.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/promptQueueManager.js",
+      "sha256": "453ae326ddcc28872e89b658bab66ec80f7ecbcfb57ccad4e4fe631f479eacf1",
+      "git_blob_sha1": "9ce66df0e2177b274510b1dcb875acc0c8b669a0",
+      "size_bytes": 15330,
+      "verification_level": "V1_STATIC",
+      "evidence": [
+        "Drive file ID, ZIP name, size and SHA-256 matched the Wave 3 prompt",
+        "embedded SLOT_MANIFEST.json identity and assigned Source ID matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ]
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-005288",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "actual_function": "Launches a caller-selected Python command for script execution or py_compile checks with timeout handling and structured process results; also exposes a CLI wrapper.",
+      "inputs": [
+        "Python executable",
+        "script path",
+        "arguments",
+        "cwd",
+        "timeout",
+        "CLI arguments"
+      ],
+      "outputs": [
+        "structured PASS/FAIL/ERROR/TOOL_MISSING process result with stdout/stderr"
+      ],
+      "principal_functions_or_classes": [
+        "runPythonProcess",
+        "runPythonScript",
+        "runPythonCompileCheck",
+        "parseCliArgs",
+        "runCli"
+      ],
+      "dependencies": [
+        "child_process.spawn",
+        "process"
+      ],
+      "external_effects": [
+        "SUBPROCESS_EXECUTION",
+        "LOCAL_FILESYSTEM_ACCESS_BY_CHILD"
+      ],
+      "project_coupling": "LOW in functionality but unsafe for direct core reuse because executable, path, cwd and arguments are caller-controlled.",
+      "duplicate_or_replacement_relation": "Manifest records 9 corpus copies; no exact in-slot duplicate or canonical successor was proven.",
+      "risks": [
+        "no canonical command allowlist",
+        "caller controls executable and file path",
+        "stdout/stderr accumulation is unbounded",
+        "timeout sends SIGTERM only and does not prove process-tree termination",
+        "no effect classification or execution receipt binding"
+      ],
+      "next_action": "Bind to Canonical Command Registry, root/path policy, output limits, process-tree termination and structured immutable receipts before any execution use.",
+      "assignment_id": "SF028-W03-S02-I05",
+      "file_name": "runPythonWrapper.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/tools/stage4/runPythonWrapper.js",
+      "sha256": "ae3481638963a10edc5ab4b9f9f2b77a87d0b08e5752c02b1e8cc98d63659898",
+      "git_blob_sha1": "dbabaa911e7bf47c385dea88c3b221b66cced808",
+      "size_bytes": 7050,
+      "verification_level": "V1_STATIC",
+      "evidence": [
+        "Drive file ID, ZIP name, size and SHA-256 matched the Wave 3 prompt",
+        "embedded SLOT_MANIFEST.json identity and assigned Source ID matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ]
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003280",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "actual_function": "Normalizes Source Factory status objects and renders top status, status messages, logs, and Commander/Worker status-board rows into browser DOM elements.",
+      "inputs": [
+        "raw status object or collection",
+        "DOM targets",
+        "Worker/task/role rendering options"
+      ],
+      "outputs": [
+        "normalized status",
+        "updated DOM status components and Commander board"
+      ],
+      "principal_functions_or_classes": [
+        "normalizeState",
+        "applyStatusColor",
+        "renderTopStatus",
+        "renderStatusMessage",
+        "appendLog",
+        "renderCommanderBoard"
+      ],
+      "dependencies": [
+        "browser DOM"
+      ],
+      "external_effects": [
+        "DOM_MUTATION"
+      ],
+      "project_coupling": "HIGH: fixed COMMANDER/WORKER_01..06 list, GPT/browser lifecycle codes, three-color policy and Source Factory element conventions.",
+      "duplicate_or_replacement_relation": "Manifest records 6 corpus copies; no exact in-slot duplicate or canonical successor was proven.",
+      "risks": [
+        "unknown state codes are normalized into a legacy vocabulary",
+        "fixed Worker inventory conflicts with dynamic slots",
+        "normalization and DOM rendering are coupled",
+        "direct global document dependency complicates fixture isolation"
+      ],
+      "next_action": "Extract the pure normalization/color map, inject slot and status registries, and wrap DOM rendering behind a tested view adapter.",
+      "assignment_id": "SF028-W03-S02-I06",
+      "file_name": "statusView.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_01_STAGE1_BROWSER/src/renderer/statusView.js",
+      "sha256": "aa6cf1ba6dddd70a6cca0d57bfaa8360f36b7de068875460e1501b73a002d24d",
+      "git_blob_sha1": "ed1f5b1804a6b06414e6219b3d96678f51f65093",
+      "size_bytes": 9986,
+      "verification_level": "V1_STATIC",
+      "evidence": [
+        "Drive file ID, ZIP name, size and SHA-256 matched the Wave 3 prompt",
+        "embedded SLOT_MANIFEST.json identity and assigned Source ID matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ]
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003448",
+      "primary_classification": "PROJECT_BOUND",
+      "actual_function": "Builds a Commander Stage 3 dispatch panel for selecting Workers, entering instructions, viewing collected files, and invoking dispatch/list/distribute sfApi methods.",
+      "inputs": [
+        "Commander browser role/context",
+        "collected-file list",
+        "instruction and Worker selection",
+        "sfApi dispatch methods"
+      ],
+      "outputs": [
+        "mounted dispatch panel",
+        "dispatch/distribution/list request payloads",
+        "status display"
+      ],
+      "principal_functions_or_classes": [
+        "mountStage3CommanderPanel",
+        "payload",
+        "callApi",
+        "renderFiles"
+      ],
+      "dependencies": [
+        "browser DOM",
+        "window.sfApi.dispatchToWorkers",
+        "window.sfApi.listDispatchQueue",
+        "window.sfApi.distributeCollectedFiles"
+      ],
+      "external_effects": [
+        "DOM_MUTATION",
+        "POTENTIAL_BACKEND_DISPATCH_AND_FILE_DISTRIBUTION"
+      ],
+      "project_coupling": "VERY_HIGH: hard-coded D:\\SOURCE FACTORY baselines, Stage 2 record/runtime paths, Stage 3 action vocabulary and fixed Worker_01..06 roster.",
+      "duplicate_or_replacement_relation": "Manifest records 9 corpus copies; no exact in-slot duplicate or canonical successor was proven.",
+      "risks": [
+        "legacy absolute paths are embedded",
+        "UI calls effectful backend methods directly",
+        "fixed Worker roster",
+        "no durable claim/receipt or rollback boundary",
+        "Stage 2 and Stage 3 concerns are mixed"
+      ],
+      "next_action": "Do not promote as generic core; retain as legacy UI reference or rebuild on dynamic slot registry, relative roots, command receipts and explicit effect authorization.",
+      "assignment_id": "SF028-W03-S02-I07",
+      "file_name": "stage3CommanderPanel.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_06_STAGE3_WORKER_OUTPUT_SYNTAX_HOTFIX_RUNTIME_APP/src/renderer/stage3CommanderPanel.js",
+      "sha256": "ed7d7cb8b5bf14616012943b922e9fd834b75076049f2a8d307e215218de0aad",
+      "git_blob_sha1": "aa257832d1b61ac412894b9efbeeae199963f692",
+      "size_bytes": 12430,
+      "verification_level": "V1_STATIC",
+      "evidence": [
+        "Drive file ID, ZIP name, size and SHA-256 matched the Wave 3 prompt",
+        "embedded SLOT_MANIFEST.json identity and assigned Source ID matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ]
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003788",
+      "primary_classification": "PROJECT_BOUND",
+      "actual_function": "Auto-mounts a Commander return-inbox panel, lists Worker return records through sfApi, extracts a clean message or preview, and offers clipboard copying.",
+      "inputs": [
+        "Commander browser context",
+        "selected fixed Worker",
+        "sfApi.listWorkerReturnQueue result"
+      ],
+      "outputs": [
+        "mounted return inbox",
+        "message text and raw result display",
+        "clipboard-copy status"
+      ],
+      "principal_functions_or_classes": [
+        "mountStage3CommanderReturnInboxPanel",
+        "refresh",
+        "extractCleanMessage",
+        "copyMessage"
+      ],
+      "dependencies": [
+        "browser DOM",
+        "navigator.clipboard",
+        "window.sfApi.listWorkerReturnQueue"
+      ],
+      "external_effects": [
+        "DOM_MUTATION",
+        "BACKEND_QUEUE_READ",
+        "CLIPBOARD_WRITE"
+      ],
+      "project_coupling": "VERY_HIGH: fixed Stage 3 panel placement, return-record schema, Commander role and Worker_01..06 roster.",
+      "duplicate_or_replacement_relation": "Manifest records 18 corpus copies; no exact in-slot duplicate or canonical successor was proven.",
+      "risks": [
+        "fixed legacy return-record fields",
+        "auto-mount and fixed sibling placement",
+        "clipboard permission dependency",
+        "no pagination or payload-size control"
+      ],
+      "next_action": "Keep as Stage 3 project reference; reuse requires an injected return-store adapter, dynamic slots, pagination/redaction and explicit mount ownership.",
+      "assignment_id": "SF028-W03-S02-I08",
+      "file_name": "stage3CommanderReturnInboxPanel.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_14_STAGE3_COMMANDER_RETURN_MESSAGE_VIEW_FIX_APP/src/renderer/stage3CommanderReturnInboxPanel.js",
+      "sha256": "1d358731d1047d82688dc954262e93da9a9ebf0ae74b9cc210afb044699dfca4",
+      "git_blob_sha1": "08a53914825c0d60248849c274c874196616ede1",
+      "size_bytes": 11238,
+      "verification_level": "V1_STATIC",
+      "evidence": [
+        "Drive file ID, ZIP name, size and SHA-256 matched the Wave 3 prompt",
+        "embedded SLOT_MANIFEST.json identity and assigned Source ID matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ]
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003886",
+      "primary_classification": "PROJECT_BOUND",
+      "actual_function": "Creates a compact Stage 3.5 browser header, maps Worker/status/signal displays, collapses legacy detail panels, updates document title, and publishes/consumes Stage 3 custom events.",
+      "inputs": [
+        "browser DOM",
+        "Worker/role/status/signal options",
+        "Stage 3 custom events"
+      ],
+      "outputs": [
+        "compact header DOM",
+        "public header state",
+        "document title",
+        "popup/status custom events"
+      ],
+      "principal_functions_or_classes": [
+        "mountStage35CompactHeader",
+        "renderHeader",
+        "collapseLegacyDetails",
+        "setLatestSignal",
+        "setStatus",
+        "updateStage35DocumentTitle"
+      ],
+      "dependencies": [
+        "browser DOM",
+        "CustomEvent"
+      ],
+      "external_effects": [
+        "DOM_MUTATION",
+        "DOCUMENT_TITLE_UPDATE",
+        "CUSTOM_EVENT_DISPATCH_AND_SUBSCRIPTION"
+      ],
+      "project_coupling": "VERY_HIGH: personal brand text, fixed Worker_01..05 roster, Stage 3/3.5 event names, legacy selectors and UI text markers.",
+      "duplicate_or_replacement_relation": "Manifest records 6 corpus copies; no exact in-slot duplicate or canonical successor was proven.",
+      "risks": [
+        "fixed five-Worker model",
+        "text-marker collapse can hide unrelated UI",
+        "global listeners and globals are installed",
+        "brand and event protocol are hard-coded"
+      ],
+      "next_action": "Do not promote as generic core; preserve as UI reference or split display normalization from an injected branding, slot, selector and event adapter.",
+      "assignment_id": "SF028-W03-S02-I09",
+      "file_name": "stage35CompactHeader.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_STAGE3_5_UI_MENU_ROUTING_FIX_RUNTIME_APP/src/renderer/stage35CompactHeader.js",
+      "sha256": "a52c7e6b607fb363b015e4bfb22ecef4705ebfc5582092ddc0f37ac4b728367d",
+      "git_blob_sha1": "5a6ab90e2312425b096c72ffecfabc6767a04a12",
+      "size_bytes": 17373,
+      "verification_level": "V1_STATIC",
+      "evidence": [
+        "Drive file ID, ZIP name, size and SHA-256 matched the Wave 3 prompt",
+        "embedded SLOT_MANIFEST.json identity and assigned Source ID matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ]
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003892",
+      "primary_classification": "SUPERSEDED",
+      "actual_function": "Provides the earlier Stage 3.5 popup-template registry for menu commands, simple help/message views and context-triggered DB action buttons.",
+      "inputs": [
+        "command ID",
+        "payload",
+        "document/context callbacks"
+      ],
+      "outputs": [
+        "popup DOM content",
+        "command title and DB-action metadata"
+      ],
+      "principal_functions_or_classes": [
+        "renderPopupContent",
+        "renderDbAction",
+        "renderMessageBox",
+        "renderHelp",
+        "getPopupTitle"
+      ],
+      "dependencies": [
+        "browser DOM",
+        "optional global message poller",
+        "context.runDbAction"
+      ],
+      "external_effects": [
+        "DOM_MUTATION",
+        "CALLBACK_INVOCATION"
+      ],
+      "project_coupling": "HIGH: fixed Stage 3.5 menu command list, five-Worker window commands and legacy Assembly/MASTER_STATUS actions.",
+      "duplicate_or_replacement_relation": "Superseded by in-slot PCAGENT-AUTO-SRC-003956, a later Operator-Ready file with the same module/global name and expanded status, form, raw-JSON, instruction, reply and DB rendering surfaces.",
+      "risks": [
+        "legacy hotfix stage text is embedded",
+        "broad command table mixes unrelated flows",
+        "callback availability is not strongly validated",
+        "older implementation lacks the later form/status rendering contract"
+      ],
+      "next_action": "Do not promote or copy; preserve only for lineage comparison against PCAGENT-AUTO-SRC-003956.",
+      "assignment_id": "SF028-W03-S02-I10",
+      "file_name": "stage35PopupTemplates.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_STAGE3_5_UI_MENU_ROUTING_FIX_RUNTIME_APP/src/renderer/stage35PopupTemplates.js",
+      "sha256": "b844b0c0bc9cc9baa15bc45fb69c5bf8ce63d6dbe77c7077f756888ec435a9b6",
+      "git_blob_sha1": "6b6c345cf5e88a2cef4dd5d68c5f057fe9d826f3",
+      "size_bytes": 8535,
+      "verification_level": "V1_STATIC",
+      "evidence": [
+        "Drive file ID, ZIP name, size and SHA-256 matched the Wave 3 prompt",
+        "embedded SLOT_MANIFEST.json identity and assigned Source ID matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ]
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003940",
+      "primary_classification": "PROJECT_BOUND",
+      "actual_function": "Builds an Electron Stage 3.5 application-menu template and sends selected menu commands to the focused or visible BrowserWindow through webContents.",
+      "inputs": [
+        "Stage 3.5 menu-command registry",
+        "command ID and optional accelerator/extra payload",
+        "current Electron windows"
+      ],
+      "outputs": [
+        "Electron menu template",
+        "required-action classification",
+        "IPC command sent to a renderer"
+      ],
+      "principal_functions_or_classes": [
+        "createStage35ApplicationMenuTemplate",
+        "sendStage35MenuCommand",
+        "resolveRequiredAction",
+        "createMenuItem"
+      ],
+      "dependencies": [
+        "electron.BrowserWindow",
+        "../shared/stage35MenuCommands"
+      ],
+      "external_effects": [
+        "ELECTRON_WINDOW_ENUMERATION",
+        "RENDERER_IPC_SEND"
+      ],
+      "project_coupling": "VERY_HIGH: missing Stage 3.5 menu-command dependency, fixed menu categories, legacy DB flows and Worker_01..05 window commands.",
+      "duplicate_or_replacement_relation": "Manifest records 3 corpus copies; no exact in-slot duplicate or canonical successor was proven.",
+      "risks": [
+        "required local dependency is absent from the slot",
+        "sends to whichever window is focused or first visible",
+        "fixed Worker and menu vocabulary",
+        "renderer authorization is delegated to downstream code"
+      ],
+      "next_action": "Keep as Stage 3.5 project reference; rebuild behind an injected command registry, target-window identity check, dynamic slots and IPC authorization/receipt adapter.",
+      "assignment_id": "SF028-W03-S02-I11",
+      "file_name": "stage35ApplicationMenu.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_STAGE3_5_UI_OPERATOR_READY_RUNTIME_APP/src/main/stage35ApplicationMenu.js",
+      "sha256": "95fbd923eca5b7d7a525ca1c792aa43a1bec9c45cd6b535c1692f7e3792e310a",
+      "git_blob_sha1": "af406ed027c15b1d06155370697107a0d1ae9790",
+      "size_bytes": 4964,
+      "verification_level": "V1_STATIC",
+      "evidence": [
+        "Drive file ID, ZIP name, size and SHA-256 matched the Wave 3 prompt",
+        "embedded SLOT_MANIFEST.json identity and assigned Source ID matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ]
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003956",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "actual_function": "Provides the later Operator-Ready Stage 3.5 popup renderer for status/window information, instructions, raw JSON, file-send and reply forms, and legacy DB action selection.",
+      "inputs": [
+        "command ID",
+        "payload",
+        "document/context",
+        "form submission and DB-action callbacks"
+      ],
+      "outputs": [
+        "popup DOM content",
+        "form-value payloads",
+        "popup title and DB-action metadata"
+      ],
+      "principal_functions_or_classes": [
+        "renderPopupContent",
+        "renderStatusDetail",
+        "renderWindowInfo",
+        "renderRawJson",
+        "renderInstruction",
+        "renderFileSend",
+        "renderReplyCompose",
+        "renderRecordsDb"
+      ],
+      "dependencies": [
+        "browser DOM",
+        "context callbacks"
+      ],
+      "external_effects": [
+        "DOM_MUTATION",
+        "CALLBACK_INVOCATION"
+      ],
+      "project_coupling": "HIGH: Stage 3.5 command IDs, Source Factory statuses, default COMMANDER/WORKER_01..05 choices and legacy CREATE/VALIDATE/ASSEMBLE/FINALIZE actions.",
+      "duplicate_or_replacement_relation": "Later in-slot successor to PCAGENT-AUTO-SRC-003892 for the same Stage35PopupTemplates global/module role; not byte-identical.",
+      "risks": [
+        "fixed Worker defaults omit dynamic slots",
+        "form data is passed to callbacks without schema validation",
+        "legacy Assembly/Finalize actions conflict with compact policy unless adapted",
+        "global namespace attachment and direct DOM dependency"
+      ],
+      "next_action": "Use only through an adapter that injects current command/status/slot registries, validates form payloads, removes obsolete mandatory-finalize assumptions and adds DOM fixtures.",
+      "assignment_id": "SF028-W03-S02-I12",
+      "file_name": "stage35PopupTemplates.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_STAGE3_5_UI_OPERATOR_READY_RUNTIME_APP/src/renderer/stage35PopupTemplates.js",
+      "sha256": "92d654a51ac3acaf6cc5b11f3c45e54939af8d30d181cdecb27e79999c8c3563",
+      "git_blob_sha1": "d7c87b2d442f4caef1ef3738340dfb02ca6176e9",
+      "size_bytes": 21947,
+      "verification_level": "V1_STATIC",
+      "evidence": [
+        "Drive file ID, ZIP name, size and SHA-256 matched the Wave 3 prompt",
+        "embedded SLOT_MANIFEST.json identity and assigned Source ID matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ]
+    }
+  ],
+  "terminal_status": "SF_028_P0_WAVE03_SLOT02_CLASSIFICATION_PASS"
+}
