@@ -1,0 +1,18 @@
+{
+  "directive_id": "A1-SF-PCAGENT-R11-ACTIVE-RUNTIME-BOOT-RESTART-RECOVERY-V1-20260802-001",
+  "merge": false,
+  "next_action": "RUN_R11_PACKAGE_ON_TARGET_PC_AND_POST_COMPLETE_OUTPUT",
+  "postgresql_apply_count": 0,
+  "production": false,
+  "ready": false,
+  "real_api_call_count": 0,
+  "report": {
+    "blob": "aff6d276a284d50f100ed577994a58c7c24ef938",
+    "commit": "d01da319953f2fe8bf797f04b71d9461572003d5",
+    "path": "integrations/runtime_acceptance_v1/R11_TARGET_PC_EXECUTION_READY_V1.json"
+  },
+  "schema_version": "YOLLA_A1_R11_TARGET_PC_EXECUTION_READY_POINTER_V1",
+  "status": "R11_TARGET_PC_EXECUTION_READY",
+  "target_pc_r11_execution_count": 0,
+  "terminal_expected": "A1_R11_ACTIVE_RUNTIME_BOOT_RESTART_RECOVERY_PASS"
+}
