@@ -1,9 +1,10 @@
-name: Source Factory PC Agent Integration V1
+name: Source Factory PC Agent API DB Integration V1
 
 on:
   pull_request:
     paths:
       - 'integrations/pc_agent_v1/**'
+      - 'integrations/api_db_v1/**'
       - 'releases/SF_REUSABLE_CORE_20260801_175708/src/shared/stage4/pcAgentBridgeAdapter.js'
       - 'releases/SF_REUSABLE_CORE_20260801_175708/tools/stage4/applyPcAgentBridgePatch.js'
       - 'releases/SF_REUSABLE_CORE_20260801_175708/tools/stage4/testPcAgentBridgeE2E.js'
@@ -14,7 +15,7 @@ permissions:
   contents: read
 
 jobs:
-  validate-source-factory-pc-agent-bridge:
+  validate-source-factory-pc-agent-api-db:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -27,8 +28,10 @@ jobs:
         shell: bash
         run: |
           printf '%s\n' \
-            'MODE=STATIC_AND_LOCAL_MOCK_E2E' \
-            'TARGET_PC_APPLY_COUNT=0' \
+            'MODE=STATIC_AND_LOCAL_MINIMUM_VERTICAL_E2E' \
+            'TARGET_PC_ACTIVE_CORE_APPLY_COUNT=0' \
+            'REAL_API_CALL_COUNT=0' \
+            'POSTGRESQL_APPLY_COUNT=0' \
             'PRODUCTION_CONNECTION_COUNT=0' \
             'PRODUCTION_DEPLOY_COUNT=0' \
             'READY_TRANSITION_COUNT=0' \
@@ -41,14 +44,20 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-          for path in Path('integrations/pc_agent_v1').rglob('*.json'):
-              json.loads(path.read_text(encoding='utf-8-sig'))
-          print('JSON_PARSE=PASS')
+          files=[]
+          for root in (Path('integrations/pc_agent_v1'), Path('integrations/api_db_v1')):
+              for path in root.rglob('*.json'):
+                  json.loads(path.read_text(encoding='utf-8-sig'))
+                  files.append(path)
+          print(f'JSON_PARSE=PASS_{len(files)}')
           PY
           python -m py_compile \
             integrations/pc_agent_v1/pc_agent_bridge_worker.py \
-            integrations/pc_agent_v1/validate_source_factory_pc_agent_integration.py
-          echo PYTHON_COMPILE=PASS
+            integrations/pc_agent_v1/validate_source_factory_pc_agent_integration.py \
+            integrations/api_db_v1/run_api_db_fixture.py \
+            integrations/api_db_v1/run_minimum_yolla_integration_e2e.py \
+            integrations/api_db_v1/validate_api_db_integration.py
+          echo PYTHON_COMPILE=PASS_5_OF_5
 
       - name: Node syntax
         shell: bash
@@ -59,15 +68,24 @@ jobs:
           node --check releases/SF_REUSABLE_CORE_20260801_175708/tools/stage4/testPcAgentBridgeE2E.js
           echo NODE_CHECK=PASS_3_OF_3
 
-      - name: Validate package
+      - name: Validate Source Factory PC Agent package
         shell: bash
         run: |
           set -euo pipefail
-          python integrations/pc_agent_v1/validate_source_factory_pc_agent_integration.py . --output /tmp/validation.json
-          cat /tmp/validation.json
+          python integrations/pc_agent_v1/validate_source_factory_pc_agent_integration.py . --output /tmp/bridge-validation.json
+          cat /tmp/bridge-validation.json
 
-      - name: Run mock E2E
+      - name: Validate API and DB package
         shell: bash
+        run: |
+          set -euo pipefail
+          python integrations/api_db_v1/validate_api_db_integration.py . --output /tmp/api-db-validation.json
+          cat /tmp/api-db-validation.json
+
+      - name: Run bridge mock E2E
+        shell: bash
+        env:
+          PYTHON_EXE: python
         run: |
           set -euo pipefail
           node releases/SF_REUSABLE_CORE_20260801_175708/tools/stage4/testPcAgentBridgeE2E.js | tee /tmp/mock-e2e.json
@@ -75,8 +93,41 @@ jobs:
           import json
           result=json.loads(open('/tmp/mock-e2e.json', encoding='utf-8').read().strip().splitlines()[-1])
           assert result['status']=='PASS'
+          assert result['structured_result_propagation']=='PASS'
+          assert result['database_receipt_propagation']=='PASS'
           assert result['production'] is False
-          print('MOCK_E2E=PASS')
+          print('BRIDGE_MOCK_E2E=PASS')
+          PY
+
+      - name: Run minimum vertical E2E
+        shell: bash
+        env:
+          PYTHON_EXE: python
+        run: |
+          set -euo pipefail
+          python integrations/api_db_v1/run_minimum_yolla_integration_e2e.py \
+            --package-root . \
+            --output /tmp/minimum-e2e.json
+          cat /tmp/minimum-e2e.json
+          python - <<'PY'
+          import json
+          result=json.load(open('/tmp/minimum-e2e.json', encoding='utf-8'))
+          checks=result['checks']
+          assert result['status']=='PASS'
+          assert checks['GITHUB_DIRECTIVE_READ'] is True
+          assert checks['SOURCE_FACTORY_DISPATCH'] is True
+          assert checks['PC_AGENT_EXECUTION'] is True
+          assert checks['EXIT_CODE']==0
+          assert checks['API_FIXTURE_RECEIVED'] is True
+          assert checks['CANONICAL_NORMALIZATION_PASS'] is True
+          assert checks['DB_FIXTURE_WRITE_PASS'] is True
+          assert checks['DB_READBACK_PASS'] is True
+          assert checks['DB_ROLLBACK_PASS'] is True
+          assert checks['WORK_RESULT_CREATED'] is True
+          assert checks['SOURCE_FACTORY_COMPLETION_RECOGNIZED'] is True
+          assert checks['USER_MANUAL_RELAY_COUNT']==0
+          assert result['production'] is False
+          print('MINIMUM_VERTICAL_E2E=PASS')
           PY
 
       - name: Parse PowerShell apply script
