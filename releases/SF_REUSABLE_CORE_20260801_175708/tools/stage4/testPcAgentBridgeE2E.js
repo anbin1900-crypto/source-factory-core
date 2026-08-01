@@ -33,7 +33,7 @@ function main() {
     work_type: 'LOCAL_COMMAND',
     command_spec: {
       executable: pythonExecutable(),
-      args: ['-c', 'import json; print(json.dumps({"bridge":"PASS","value":7}))'],
+      args: ['-c', 'import json; print("YOLLA_RESULT_JSON="+json.dumps({"bridge":"PASS","value":7,"outputs":[{"kind":"fixture"}],"artifacts":[],"database_receipt":{"status":"PASS","production":False},"production":False}))'],
       cwd: root,
       timeout_seconds: 30,
       env: {}
@@ -71,6 +71,8 @@ function main() {
   assert.strictEqual(observed.available, true);
   assert.strictEqual(observed.result.final_status, 'PASS');
   assert.strictEqual(observed.result.exit_code, 0);
+  assert.strictEqual(observed.result.database_receipt.status, 'PASS');
+  assert.strictEqual(observed.result.structured_result.bridge, 'PASS');
   assert.ok(observed.result.stdout.includes('"bridge": "PASS"') || observed.result.stdout.includes('"bridge":"PASS"'));
 
   const collector = adapter.toCollectorPayload(observed.result, input);
@@ -112,6 +114,8 @@ function main() {
     work_id: dispatched.work_id,
     duplicate_suppression: 'PASS',
     worker_execution: 'PASS',
+    structured_result_propagation: 'PASS',
+    database_receipt_propagation: 'PASS',
     result_collection: 'PASS',
     storage_mapping: 'PASS',
     fallback_disabled: 'PASS',
