@@ -1,0 +1,53 @@
+[CmdletBinding()]
+param(
+    [string]$PythonExe = 'python'
+)
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = 'Stop'
+
+$env:PYTHONUTF8 = '1'
+$env:PYTHONIOENCODING = 'utf-8'
+$env:PYTHONLEGACYWINDOWSSTDIO = '0'
+
+$probe = @(
+    & $PythonExe -X utf8 -c "import json,locale,sys; print(json.dumps({'utf8_mode':sys.flags.utf8_mode,'preferred_encoding':locale.getpreferredencoding(False),'stdout':sys.stdout.encoding},sort_keys=True))" 2>&1
+)
+if ($LASTEXITCODE -ne 0 -or $probe.Count -eq 0) {
+    throw ('R6_UTF8_PROBE_FAILED:' + ($probe -join [Environment]::NewLine))
+}
+$state = ([string]$probe[-1]) | ConvertFrom-Json
+if ([int]$state.utf8_mode -ne 1) {
+    throw ('R6_UTF8_MODE_NOT_ACTIVE:' + ($state | ConvertTo-Json -Compress))
+}
+if (([string]$state.preferred_encoding).ToLowerInvariant() -notmatch '^utf-?8$') {
+    throw ('R6_PREFERRED_ENCODING_NOT_UTF8:' + ($state | ConvertTo-Json -Compress))
+}
+
+$root = Join-Path $env:TEMP ('yolla-r6-utf8-' + [guid]::NewGuid().ToString('N'))
+New-Item -ItemType Directory -Path $root -Force | Out-Null
+try {
+    $sqlPath = Join-Path $root 'STAGING_INSERT_SCRIPT.sql'
+    $utf8 = New-Object System.Text.UTF8Encoding($false)
+    [IO.File]::WriteAllText(
+        $sqlPath,
+        "-- 위험물 지식객체 적재 검증`nINSERT INTO staging_fixture VALUES ('위험물');`n",
+        $utf8
+    )
+
+    $result = @(
+        & $PythonExe -X utf8 -c "from pathlib import Path; p=Path(r'$sqlPath'); s=p.read_text(); assert '위험물' in s; print('KOREAN_UTF8_SQL_READ=PASS')" 2>&1
+    )
+    if ($LASTEXITCODE -ne 0 -or $result[-1] -ne 'KOREAN_UTF8_SQL_READ=PASS') {
+        throw ('R6_KOREAN_UTF8_SQL_READ_FAILED:' + ($result -join [Environment]::NewLine))
+    }
+
+    'PYTHON_UTF8_MODE=PASS'
+    'KOREAN_UTF8_SQL_READ=PASS'
+    'R6_PYTHON_UTF8_POLICY=PASS'
+    'PRODUCTION=false'
+    'READY=false'
+    'MERGE=false'
+} finally {
+    Remove-Item -LiteralPath $root -Recurse -Force -ErrorAction SilentlyContinue
+}
