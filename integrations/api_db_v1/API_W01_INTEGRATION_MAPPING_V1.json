@@ -1,0 +1,34 @@
+{
+  "schema_version": "YOLLA_API_W01_INTEGRATION_MAPPING_V1",
+  "status": "FROZEN_CONTRACT_BOUND_LOCAL_FIXTURE_READY",
+  "authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "frozen_package_commit": "1d34f80ce96c29de6698798ed36c5c685d438841",
+    "embedded_authority_head": "c651a36a6bbaeca8a5a769342c21d2539a15b730",
+    "handoff_blob": "54fe46238ff4bc35027947f5eed4bc4a513e43fe",
+    "source_manifest_blob": "16c341a649b085fdf2cca3cdebc29e35df6665d6",
+    "contract_version": "1.0.0"
+  },
+  "canonical_identifiers": [
+    "source_system_id",
+    "request_id",
+    "artifact_id",
+    "dataset_id"
+  ],
+  "ingress_aliases": {
+    "provider_id": "source_system_id",
+    "call_id": "request_id",
+    "asset_id": "artifact_id",
+    "target_dataset_id": "dataset_id"
+  },
+  "rules": {
+    "ingress_only": true,
+    "emit_canonical_only": true,
+    "equal_alias_and_canonical_collapse": true,
+    "conflicting_values_error": "ALIAS_VALUE_CONFLICT",
+    "provider_code_is_metadata_not_alias": true,
+    "source_run_type": "API",
+    "trigger_axis_separate": true
+  },
+  "production_api_connection": false
+}
