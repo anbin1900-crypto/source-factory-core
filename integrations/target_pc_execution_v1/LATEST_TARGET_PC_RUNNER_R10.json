@@ -1,0 +1,70 @@
+{
+  "schema_version": "YOLLA_A1_TARGET_PC_RUNNER_POINTER_R10",
+  "status": "R10_TARGET_PC_EXECUTION_READY",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 3,
+  "branch": "integration/source-factory-pc-agent-api-db-v1",
+  "package": {
+    "file_name": "SOURCE_FACTORY_PC_AGENT_API_DB_INTEGRATION_V2_R10.zip",
+    "sha256": "fbbd469f87ae226a84c84c76eb6e309c7c3e6a15a68855aa1a63327941d6489e",
+    "size_bytes": 50565,
+    "entry_count": 27,
+    "manifest_file_count": 26,
+    "package_id": "A1-SOURCE-FACTORY-PC-AGENT-API-DB-INTEGRATION-V2-R10-20260802-001",
+    "source_head": "8ad0ee12b1e9132bc7fb33b8801382f1c8bc6d49"
+  },
+  "runner": {
+    "file_name": "RUN_T1A1_SOURCE_FACTORY_PC_AGENT_API_DB_INTEGRATION_V2_R10.ps1",
+    "sha256": "d401810fc596be0c9c150946a8a88aab7d5cc5e8eed8e071baf32c52ae36190f",
+    "size_bytes": 31563
+  },
+  "source_authority": {
+    "target_handler_helper_commit": "4c03a9ae579db018e932218fb0f51440a7cceb36",
+    "target_handler_helper_blob": "046e2fa38a9c3744a0d5e22ad90ff0142535cead",
+    "validator_commit": "20472a74d959f4a1077d47247f3c39e7f74383f4",
+    "validator_blob": "62a1ccb43af1061a925d68862e5cb37613840d56",
+    "windows_gate_commit": "8ad0ee12b1e9132bc7fb33b8801382f1c8bc6d49",
+    "windows_gate_blob": "1c10fb896c6dd5a8e182b669f440531245f4294f"
+  },
+  "ci": {
+    "integration_run_id": 30709667964,
+    "integration_job_id": 91394789225,
+    "integration_conclusion": "success",
+    "windows_stderr_run_id": 30709667970,
+    "windows_stderr_job_id": 91394789322,
+    "windows_stderr_conclusion": "success",
+    "windows_powershell_51_parse": "PASS",
+    "nonfatal_electron_warning_with_pass_receipt": "PASS",
+    "actual_target_stage4_handler_e2e": "PASS",
+    "minimum_vertical_e2e": "PASS"
+  },
+  "target_handler_stderr_contract": {
+    "execution_method": "START_PROCESS_WITH_SEPARATE_REDIRECTS",
+    "stdout_evidence_required": true,
+    "stderr_evidence_required": true,
+    "exit_code_zero_required": true,
+    "valid_pass_receipt_required": true,
+    "stderr_nonfatal_only_when_exit_and_receipt_pass": true
+  },
+  "safe_fail_ledger": {
+    "path": "integrations/target_pc_execution_v1/R9_TARGET_PC_SAFE_FAIL_HANDLER_STDERR_V1.json",
+    "commit": "608ece9f3eac2a36c218f8254fc0dd6754466639",
+    "blob": "70e0149a534cb04746ab16742d4b37cc24a6829e"
+  },
+  "superseded": {
+    "r9_zip_sha256": "afcb13d1a7f6f50b5312161055b32b219c540fd7475ff61d37ed2a63a8ad5992",
+    "r9_runner_sha256": "3f35657c7e1daf71726f8db31dcb43dcabce56868a235d17b115e8d1236d6465",
+    "status": "DO_NOT_RUN"
+  },
+  "target_pc_state": {
+    "working_copy_applied_in_r9": true,
+    "working_copy_only": true,
+    "active_core_mutated": false,
+    "active_core_promotion_attempted": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "next_action": "RUN_R10_PACKAGE_AND_RUNNER_ON_TARGET_PC",
+  "published_at": "2026-08-02T02:20:00+09:00"
+}
