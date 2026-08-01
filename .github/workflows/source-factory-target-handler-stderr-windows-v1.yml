@@ -20,6 +20,9 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            integrations/pc_agent_v1/Invoke-TargetStage4HandlerE2E.ps1
 
       - name: Parse helper with Windows PowerShell 5.1
         shell: powershell
