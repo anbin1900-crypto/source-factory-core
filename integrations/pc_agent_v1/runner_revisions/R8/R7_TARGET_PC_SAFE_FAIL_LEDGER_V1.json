@@ -1,0 +1,39 @@
+{
+  "schema_version": "YOLLA_A1_R7_TARGET_PC_SAFE_FAIL_LEDGER_V1",
+  "failure_signature": "POWERSHELL_BARE_BOOLEAN_LITERAL_INTERPRETED_AS_COMMAND",
+  "failure_stage": "B1_OPTIONAL_SUPPORT_SMOKE_NONBLOCKING_RECEIPT",
+  "observed_output_before_failure": [
+    "D1_OFFICIAL_FIXTURE_VALIDATION=PASS",
+    "B1_ARCHIVE_IDENTITY=PASS",
+    "B1_MATERIALIZED_FILE_COUNT=12",
+    "B1_RUNTIME_SUPPORT_MATERIALIZATION=PASS"
+  ],
+  "root_cause": {
+    "line_1": "a1_support_blocking = false",
+    "line_2": "b1_support_blocking = false",
+    "required_power_shell_form": "$false"
+  },
+  "safety": {
+    "working_copy_apply_count": 0,
+    "active_core_mutation_count": 0,
+    "pc_agent_execution_count": 0,
+    "api_fixture_execution_count": 0,
+    "database_fixture_write_count": 0,
+    "production_connection_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  },
+  "recovery": {
+    "runner": "RUN_T1A1_SOURCE_FACTORY_PC_AGENT_API_DB_INTEGRATION_V2_R8.ps1",
+    "runner_sha256": "7a3dddf9ef9015de1a1f649880b77b14943c29bd1420f8c2dba7f1fc0dd8b4c9",
+    "fixes": [
+      "Replace both bare false literals with $false",
+      "Add pre-mutation bare Boolean semantic guard",
+      "Preserve B1 archive identity and 12-file materialization as blocking",
+      "Preserve B1 optional smoke as nonblocking"
+    ]
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
