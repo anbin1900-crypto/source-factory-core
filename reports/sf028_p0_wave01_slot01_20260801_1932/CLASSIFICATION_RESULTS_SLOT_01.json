@@ -1,0 +1,710 @@
+{
+  "assignment_id": "SF028-P0-W01-S01-20260801-1920KST",
+  "task_id": "SF_028_P0_WAVE_01_SLOT_01_CLASSIFICATION",
+  "worker_id": "SLOT_01_SF028_P0_WAVE1_CLASSIFICATION_WORKER",
+  "wave": 1,
+  "slot": 1,
+  "authority": {
+    "commander_order_commit": "75d816984ef29bdc7fc9c2bd9e29899c485b9642",
+    "slot_prompt_commit": "f36a4123d0cf57cd798d0b987163e947cd0b7f53",
+    "wave_dispatch_commit": "fcf596b10b4e002767e885c522435a32781d3998",
+    "staging_v2_commit": "49d348af6d8adb0f7ca6d7b529752ee73ab099c2",
+    "drive_file_id": "1yu9gjvWad6XbgF4Z5PZcuPMmaChjzLKz",
+    "zip_file_name": "SF028_P0_EXTRACT_20260801_062137_WAVE_01_SLOT_01.zip",
+    "zip_size_bytes": 43715,
+    "zip_sha256": "7ae5119ce6cd9d3c2dfef352d82964b0ef767dabec76c9cefa17705ae974e766"
+  },
+  "package_verification": {
+    "zip_name": "PASS",
+    "zip_size": "PASS",
+    "zip_sha256": "PASS",
+    "manifest_json_parse": "PASS",
+    "manifest_expected_item_count": 12,
+    "manifest_packaged_item_count": 12,
+    "unique_source_id_count": 12,
+    "source_hash_match_count": 12,
+    "source_hash_error_count": 0,
+    "static_syntax_pass_count": 11,
+    "static_syntax_fail_count": 1,
+    "source_execution_count": 0
+  },
+  "terminal_status": "SF_028_P0_WAVE01_SLOT01_CLASSIFICATION_PASS",
+  "classification_summary": {
+    "DIRECT_REUSE": 1,
+    "ADAPTER_REQUIRED": 8,
+    "REFERENCE_ONLY": 0,
+    "PROJECT_BOUND": 0,
+    "EXACT_DUPLICATE": 0,
+    "SUPERSEDED": 2,
+    "SANITIZE_REQUIRED": 1,
+    "REJECTED": 0,
+    "REINSPECTION_REQUIRED": 0
+  },
+  "candidates": [
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000683",
+      "file_name": "stage4PromptLibraryModel.js",
+      "sha256": "adeddca649d97ceebfa675c1760a95893e3a234779a2a4989306a7aaeae15531",
+      "size_bytes": 10950,
+      "duplicate_copy_count": 9,
+      "actual_function": "Creates and validates Stage 4 prompt-library items, filters items, clones prompts with a patch-version increment, and serializes a prompt library.",
+      "principal_symbols": [
+        "createPromptLibraryItem(input, options) -> prompt item",
+        "validatePromptLibraryItem(item) -> {ok, errors}",
+        "filterPromptLibrary(library, criteria) -> item[]",
+        "clonePromptWithVersion(item, changes) -> versioned item",
+        "serializePromptLibrary(library, options) -> object|string"
+      ],
+      "imports_dependencies": [],
+      "inputs": [
+        "prompt item-like objects",
+        "library item arrays",
+        "filter criteria",
+        "clone overrides"
+      ],
+      "outputs": [
+        "normalized prompt-library records",
+        "validation errors",
+        "filtered arrays",
+        "serialized JSON"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "notes": "In-memory only; reads current time for default timestamps."
+      },
+      "source_factory_coupling": [
+        "Stage 4 prompt types",
+        "worker/commander source types",
+        "stage4_prompt_library schema"
+      ],
+      "duplicate_superseded_evidence": "Manifest duplicate_copy_count=9. No second packaged copy exists in this slot, so exact duplicate is not asserted at V1.",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS",
+      "evidence": [
+        "Pure CommonJS model with no I/O",
+        "Current compact contract requires prompt_package_id/version, target_stage, worker/commander function classes and API/IPC contract fields; this model only preserves generic metadata"
+      ],
+      "risks_restrictions": [
+        "Does not validate all v2.1.2 prompt-package contract fields",
+        "Stable ID helper is not a cryptographic identity binding",
+        "Timestamp defaults make implicit IDs time-dependent"
+      ],
+      "next_action": "Add a thin v2.1.2 prompt-package contract adapter and run V2 fixture tests; do not promote the raw model alone."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004213",
+      "file_name": "stage4SourceFileBlockParser.js",
+      "sha256": "479e3fed16b3fae9a844d0e760ba61b70d21862e03618a1e2a6bb9fed2394de7",
+      "size_bytes": 11077,
+      "duplicate_copy_count": 9,
+      "actual_function": "Parses SOURCE_FILE blocks, validates required metadata and full-content markers, builds parse errors, and summarizes parsed files.",
+      "principal_symbols": [
+        "parseSourceFileBlocks(text, options)",
+        "parseSourceFileMetadata(metadataInput, options)",
+        "extractSourceFileContent(lines, markerIndexes, options)",
+        "buildSourceFileParseError(code, message, details)",
+        "summarizeSourceFileParseResult(result)"
+      ],
+      "imports_dependencies": [],
+      "inputs": [
+        "raw SOURCE_FILE text",
+        "metadata lines",
+        "parser options"
+      ],
+      "outputs": [
+        "parsed block records",
+        "error records",
+        "parse summary"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "notes": "Intended pure parser."
+      },
+      "source_factory_coupling": [
+        "SOURCE_FILE block protocol",
+        "required metadata path/language/purpose/operation/owner_worker/target_stage"
+      ],
+      "duplicate_superseded_evidence": "Manifest duplicate_copy_count=9. No exact duplicate was packaged in this slot.",
+      "primary_classification": "SANITIZE_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "FAIL",
+      "evidence": [
+        "node --check fails before module load",
+        "Line 20 regex contains unescaped /*, *, and */ alternatives",
+        "Line 37 contains invalid /^+|_+$/ regular expression"
+      ],
+      "risks_restrictions": [
+        "Module cannot be loaded in its packaged form",
+        "Parser correctness cannot reach fixture verification until syntax is repaired"
+      ],
+      "next_action": "Escape comment-marker alternatives and correct the leading/trailing underscore regex, then run node --check and V2 SOURCE_FILE positive/negative fixtures."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000527",
+      "file_name": "constitutionLoader.js",
+      "sha256": "9f5128870e49530fdeb0555177cb6f9fbc3d78539d310ef29e8e3cb0bdf23b86",
+      "size_bytes": 6016,
+      "duplicate_copy_count": 57,
+      "actual_function": "Searches fixed constitution directories for legacy v1 constitution files, reads them synchronously, and concatenates them into one text payload.",
+      "principal_symbols": [
+        "getSourceFactoryRoot()",
+        "getConstitutionSearchPlan(root)",
+        "findConstitutionFile(root, fileName)",
+        "loadConstitutionFiles(options)",
+        "loadConstitutionText(options)",
+        "buildConstitutionText(sourceFiles)"
+      ],
+      "imports_dependencies": [
+        "fs",
+        "path",
+        "process.env.SOURCE_FACTORY_ROOT"
+      ],
+      "inputs": [
+        "optional root",
+        "legacy constitution candidate names"
+      ],
+      "outputs": [
+        "search plan",
+        "loaded file records",
+        "combined constitution text",
+        "state records"
+      ],
+      "external_effects": {
+        "file": true,
+        "process": false,
+        "network": false,
+        "database": false,
+        "notes": "Synchronous stat/read operations; reads process environment."
+      },
+      "source_factory_coupling": [
+        "hard-coded D:\\SOURCE FACTORY default",
+        "CONSTITUTION and _CONSTITUTION folders",
+        "legacy v1 constitution filenames"
+      ],
+      "duplicate_superseded_evidence": "Manifest duplicate_copy_count=57. The current authority is _CONSTITUTION_V2_COMPACT v2.1.2; the hard-coded legacy v1 file list is no longer the initial-load contract.",
+      "primary_classification": "SUPERSEDED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS",
+      "evidence": [
+        "Loads SOURCE_FACTORY_FILE_COMBINATION_CONSTITUTION_v1 and other legacy files",
+        "Default Windows path literal uses unescaped backslashes",
+        "v2.1.2 compact boot/schema are the current authority"
+      ],
+      "risks_restrictions": [
+        "May resolve an unintended Windows path",
+        "Can load obsolete rules that current compact constitution explicitly supersedes"
+      ],
+      "next_action": "Do not migrate as active code; retain only as historical reference and use a compact-v2.1.2-aware loader."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000533",
+      "file_name": "logStore.js",
+      "sha256": "22d871d8ab4a3ec38e03da916d9aadd98c8b977d5e43adc03f3239b1543e8c59",
+      "size_bytes": 5341,
+      "duplicate_copy_count": 57,
+      "actual_function": "Writes per-worker JSON-line and text logs, lists log files, and reads the latest log lines.",
+      "principal_symbols": [
+        "appendWorkerLog(workerId, entry)",
+        "logDebug/logInfo/logWarning/logError(workerId, ...)",
+        "listLogFiles(workerId)",
+        "readLatestLogLines(workerId, limit)",
+        "saveTextLog(workerId, label, text)"
+      ],
+      "imports_dependencies": [
+        "fs",
+        "path",
+        "./sourceFactoryPaths",
+        "./workerFolderManager",
+        "./fileNameSafe"
+      ],
+      "inputs": [
+        "worker ID",
+        "log entry/error/text",
+        "line limit"
+      ],
+      "outputs": [
+        "written log record/path",
+        "log file metadata",
+        "parsed latest records"
+      ],
+      "external_effects": {
+        "file": true,
+        "process": false,
+        "network": false,
+        "database": false,
+        "notes": "Creates/appends/writes local files synchronously."
+      },
+      "source_factory_coupling": [
+        "known worker IDs",
+        "worker folder layout",
+        "path allowlist helper",
+        "Source Factory filename rules"
+      ],
+      "duplicate_superseded_evidence": "Manifest duplicate_copy_count=57. Exact canonical duplicate was not proven from this slot package.",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS",
+      "evidence": [
+        "Core logging operations are reusable",
+        "Three required local modules are absent from the slot package",
+        "Storage path and worker identity contracts are project-specific"
+      ],
+      "risks_restrictions": [
+        "Direct copy will fail without sourceFactoryPaths, workerFolderManager and fileNameSafe",
+        "Synchronous writes can block an Electron main process"
+      ],
+      "next_action": "Bind to Active Core path/worker contracts, preserve append-only behavior, and run V2 temp-directory fixtures."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000539",
+      "file_name": "stage1SelfCheck.js",
+      "sha256": "dde37d7fa1ec956e4bee30d24e3eed1d968380eb905bd4ce4aec60f3ff41ebda",
+      "size_bytes": 11008,
+      "duplicate_copy_count": 54,
+      "actual_function": "Checks old Stage 1 browser README/checklist policy text, runs startup initialization and diagnostics, prints criteria, and exits with a CLI status.",
+      "principal_symbols": [
+        "buildPolicyCriteria(root)",
+        "buildManualVerificationCriteria()",
+        "runStage1SelfCheck(options)",
+        "printStage1SelfCheck(result)"
+      ],
+      "imports_dependencies": [
+        "fs",
+        "path",
+        "./startupInitializer",
+        "./diagnostics"
+      ],
+      "inputs": [
+        "Source Factory root",
+        "Stage 1 README/checklist"
+      ],
+      "outputs": [
+        "criteria array",
+        "diagnostic summary",
+        "console report",
+        "process exit code when run as main"
+      ],
+      "external_effects": {
+        "file": true,
+        "process": true,
+        "network": false,
+        "database": false,
+        "notes": "Reads files; calls startup initializer; prints to console; process.exit in CLI mode."
+      },
+      "source_factory_coupling": [
+        "Stage 1 browser documents",
+        "seven-window shared session",
+        "START/STOP/SAVE FULL OUTPUT checks",
+        "legacy restricted-root policy"
+      ],
+      "duplicate_superseded_evidence": "Manifest duplicate_copy_count=54. A current canonical copy exists at src/gpt_browser_bridge/stage1SelfCheck.js; the candidate is an assembled-path copy and is not the canonical path.",
+      "primary_classification": "SUPERSEDED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS",
+      "evidence": [
+        "Current repository exposes the same Stage 1 self-check flow at a canonical gpt_browser_bridge path",
+        "Candidate tests legacy policy text and old phase assumptions"
+      ],
+      "risks_restrictions": [
+        "Running it may initialize folders and exit the process",
+        "Legacy policy criteria conflict with current compact operating rules if treated as a general gate"
+      ],
+      "next_action": "Do not promote this duplicate candidate; retain the current canonical path only and re-scope its legacy checks separately if Stage 1 support remains required."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000549",
+      "file_name": "stateStore.js",
+      "sha256": "d53add9f73b5c7026c2695c6785b9f73df5901fabe43aeab57d2878c57b5fc26",
+      "size_bytes": 5787,
+      "duplicate_copy_count": 57,
+      "actual_function": "Normalizes per-worker state, atomically writes current JSON state, appends JSONL history, reads states, and marks workers ready/login-required/failed.",
+      "principal_symbols": [
+        "normalizeWorkerState(workerId, state)",
+        "writeJsonAtomic(filePath, data)",
+        "appendJsonLine(filePath, data)",
+        "saveWorkerState/readWorkerState",
+        "updateWorkerState",
+        "markWorkerReady/markWorkerLoginRequired/markWorkerFailed"
+      ],
+      "imports_dependencies": [
+        "fs",
+        "path",
+        "./sourceFactoryPaths",
+        "./workerFolderManager"
+      ],
+      "inputs": [
+        "worker ID",
+        "state/patch/error"
+      ],
+      "outputs": [
+        "normalized state",
+        "state JSON file",
+        "history JSONL",
+        "all-worker state map"
+      ],
+      "external_effects": {
+        "file": true,
+        "process": false,
+        "network": false,
+        "database": false,
+        "notes": "mkdir/write/rename/append/read local files synchronously."
+      },
+      "source_factory_coupling": [
+        "WORKER_IDS and status constants",
+        "worker state directory layout",
+        "path allowlist helper"
+      ],
+      "duplicate_superseded_evidence": "Manifest duplicate_copy_count=57. No exact duplicate is asserted from the package alone.",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS",
+      "evidence": [
+        "Atomic temp-write plus rename and append-only history are reusable patterns",
+        "Required path/status modules are package-external and project-specific"
+      ],
+      "risks_restrictions": [
+        "Direct copy cannot resolve internal dependencies",
+        "No inter-process lock around state/history writes",
+        "Synchronous disk I/O"
+      ],
+      "next_action": "Adapt to Active Core state schema and paths, add locking/serialization policy, then run V2 temp-directory and concurrent-write fixtures."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000635",
+      "file_name": "stage4CommanderDispatchQueue.js",
+      "sha256": "79ab994cb0afe6b4f31cd0444b10434296d0f6e8c7d67784d0a4960e353496eb",
+      "size_bytes": 20393,
+      "duplicate_copy_count": 3,
+      "actual_function": "Builds an immutable Commander dispatch queue, normalizes/enqueues packets, selects ready packets, and marks delivery or review-required states.",
+      "principal_symbols": [
+        "createCommanderDispatchQueue(input)",
+        "enqueueDispatchPackets(queue, packets)",
+        "getNextDispatchPackets(queue, options)",
+        "markDispatchDelivered(queue, packetId, result)",
+        "markDispatchReviewRequired(queue, packetId, reason)"
+      ],
+      "imports_dependencies": [],
+      "inputs": [
+        "queue-like object",
+        "dispatch packets",
+        "selection policy/options",
+        "delivery/review result"
+      ],
+      "outputs": [
+        "frozen normalized queue records",
+        "selected packet array",
+        "counters and warnings"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "notes": "Pure in-memory model; current time is used for IDs/events."
+      },
+      "source_factory_coupling": [
+        "Commander dispatch packets",
+        "worker slot IDs",
+        "prompt text",
+        "project/instruction IDs"
+      ],
+      "duplicate_superseded_evidence": "Manifest duplicate_copy_count=3. No exact duplicate exists inside this slot.",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS",
+      "evidence": [
+        "Queue state machine is self-contained and syntax-valid",
+        "No persistence or sequential-send adapter is included",
+        "Default max batch size is 1 and must be deliberately mapped to the current six-slot authoring/sequential-send contract"
+      ],
+      "risks_restrictions": [
+        "Implicit timestamps affect deterministic reproduction",
+        "Transport reservation and persistence are outside the model"
+      ],
+      "next_action": "Wrap with durable queue persistence and current batch/package contract mapping; run V2 queue transition fixtures."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000643",
+      "file_name": "stage4PromptPauseResumeController.js",
+      "sha256": "aab263b475e65d99e1531866073f9712fc2f940c1fbfbff31a66e17d091af3cd",
+      "size_bytes": 24456,
+      "duplicate_copy_count": 3,
+      "actual_function": "Purely transforms prompt-run and queue state for pause, resume and stop requests and builds a view-state summary.",
+      "principal_symbols": [
+        "createPauseRequest(input)",
+        "applyPauseToRun(run, requestInput)",
+        "applyResumeToRun(run, requestInput)",
+        "applyStopToRun(run, requestInput)",
+        "buildPauseResumeViewState(run, queue)"
+      ],
+      "imports_dependencies": [],
+      "inputs": [
+        "run state",
+        "queue state",
+        "pause/resume/stop request"
+      ],
+      "outputs": [
+        "new immutable-like run/queue result",
+        "event history",
+        "view-state summary"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "notes": "File explicitly declares no I/O, IPC, renderer binding, timers, or command execution."
+      },
+      "source_factory_coupling": [
+        "Stage 4 prompt run/queue/status schemas"
+      ],
+      "duplicate_superseded_evidence": "Manifest duplicate_copy_count=3. No exact duplicate is packaged in the slot.",
+      "primary_classification": "DIRECT_REUSE",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS",
+      "evidence": [
+        "Self-contained pure controller",
+        "No package-external imports",
+        "Explicitly excludes runtime side effects"
+      ],
+      "risks_restrictions": [
+        "Schema compatibility with the final queue model still needs fixtures",
+        "Uses generated timestamps/IDs when not supplied"
+      ],
+      "next_action": "Promote only after V2 state-transition fixtures cover pause, resume, stop, held items and idempotent reapplication."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000648",
+      "file_name": "stage4TaeoAutosaveController.js",
+      "sha256": "f133effbdb21a2f938cc69df317c35b60fc88dec2b466d05daf39639c095e87c",
+      "size_bytes": 17318,
+      "duplicate_copy_count": 3,
+      "actual_function": "Decides whether a Taeo prompt/response should be saved, detects duplicates via content hashes, builds an autosave request, and determines whether the next prompt should be blocked.",
+      "principal_symbols": [
+        "buildAutosaveDecision(context, policy)",
+        "buildAutosaveRequest(decision)",
+        "shouldBlockNextPrompt(decision)",
+        "summarizeAutosaveState(records)",
+        "createTaeoAutosaveController(policy)"
+      ],
+      "imports_dependencies": [
+        "crypto"
+      ],
+      "inputs": [
+        "prompt log",
+        "response log",
+        "capture result",
+        "existing records",
+        "stability state",
+        "autosave policy"
+      ],
+      "outputs": [
+        "autosave decision",
+        "save request",
+        "block-next boolean",
+        "state summary",
+        "controller facade"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "notes": "Decision layer only; hashes content and returns requests but does not save."
+      },
+      "source_factory_coupling": [
+        "Taeo autosave",
+        "project/slot/prompt/output identities",
+        "{PROJECT_DATA}/records/taeo/raw_outputs target convention"
+      ],
+      "duplicate_superseded_evidence": "Manifest duplicate_copy_count=3. No exact duplicate is asserted.",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS",
+      "evidence": [
+        "Syntax-valid decision logic with explicit policies and duplicate detection",
+        "No capture source, filesystem store, queue hold, or Commander integration is included"
+      ],
+      "risks_restrictions": [
+        "A READY request is not proof that data was durably written",
+        "Default target is a symbolic path requiring resolution",
+        "Policy integration can accidentally block or release the next prompt"
+      ],
+      "next_action": "Connect to a durable raw-output store and queue hold/release adapter, then run V2 duplicate/error/stability fixtures."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000653",
+      "file_name": "stage4TaeoRawOutputStore.js",
+      "sha256": "d23ecbbd6768ccb9a9ca8c8b32eb12479575f1821544be1dca755f19c6e359a4",
+      "size_bytes": 11099,
+      "duplicate_copy_count": 3,
+      "actual_function": "Provides a normalized in-memory Taeo raw-output record store with append, update, lookup, filtered listing and summary functions.",
+      "principal_symbols": [
+        "createTaeoRawOutputStore(initialRecords)",
+        "appendRawOutput(store, record)",
+        "updateRawOutput(store, taeoOutputId, patch)",
+        "findRawOutputById(store, id)",
+        "listRawOutputsBySlot/Prompt/Project",
+        "summarizeRawOutputStore(store)"
+      ],
+      "imports_dependencies": [],
+      "inputs": [
+        "initial records",
+        "raw output record",
+        "record patch",
+        "slot/prompt/project IDs"
+      ],
+      "outputs": [
+        "new store objects",
+        "normalized records",
+        "filtered arrays",
+        "summary counters"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "notes": "In-memory only; no durable write."
+      },
+      "source_factory_coupling": [
+        "Stage 4 Taeo raw-output schemas and identities"
+      ],
+      "duplicate_superseded_evidence": "Manifest duplicate_copy_count=3. No exact duplicate in the package.",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS",
+      "evidence": [
+        "Pure record normalization/query logic",
+        "Store does not persist across process restart despite its storage-oriented name"
+      ],
+      "risks_restrictions": [
+        "Data loss on restart unless wrapped by persistence",
+        "No inter-process consistency or durable uniqueness enforcement"
+      ],
+      "next_action": "Use as the domain model behind a file/database adapter and run V2 append/update/duplicate/persistence round-trip fixtures."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000658",
+      "file_name": "stage4WorkerInboxModel.js",
+      "sha256": "12c71d66cd1ca9f92b40c4c50a0e7159830516e43cf99594d0783e1e7ccda1fc",
+      "size_bytes": 9822,
+      "duplicate_copy_count": 3,
+      "actual_function": "Creates normalized worker inbox items from prompt deliveries or dispatch packets, marks items delivered, and summarizes inbox state by status and slot.",
+      "principal_symbols": [
+        "createWorkerInboxItem(input)",
+        "createInboxFromPromptDelivery(request)",
+        "createInboxFromDispatchPacket(packet)",
+        "markInboxItemDelivered(item, at)",
+        "summarizeWorkerInbox(items)"
+      ],
+      "imports_dependencies": [],
+      "inputs": [
+        "inbox item-like data",
+        "prompt delivery request",
+        "dispatch packet",
+        "delivery timestamp"
+      ],
+      "outputs": [
+        "normalized inbox item",
+        "delivered item",
+        "status/slot/source summary"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "notes": "In-memory model; module-level sequence and current time are used for defaults."
+      },
+      "source_factory_coupling": [
+        "worker slot IDs",
+        "prompt delivery/dispatch packet shapes",
+        "Stage 4 inbox statuses"
+      ],
+      "duplicate_superseded_evidence": "Manifest duplicate_copy_count=3. No exact duplicate is packaged.",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS",
+      "evidence": [
+        "Self-contained normalization model",
+        "No durable inbox, claim, acknowledgement or transport binding is included"
+      ],
+      "risks_restrictions": [
+        "Module sequence resets across process restarts",
+        "Generated IDs can collide across multiple processes if callers omit stable IDs"
+      ],
+      "next_action": "Require caller-supplied durable IDs and bind to queue/receipt persistence; run V2 restart and duplicate-delivery fixtures."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000663",
+      "file_name": "stage4WorkerSlotSender.js",
+      "sha256": "b3e35bbfd79caea520e24846bdac80c3ec24ed1d5d226f3307bf68d62e1d6759",
+      "size_bytes": 15721,
+      "duplicate_copy_count": 3,
+      "actual_function": "Creates normalized worker send requests/results/errors, models manual-paste fallback, and summarizes send outcomes; it does not perform transport.",
+      "principal_symbols": [
+        "createWorkerSendRequest(packet, slot)",
+        "createWorkerSendResult(request, result)",
+        "createWorkerSendError(request, error)",
+        "buildManualPasteRequired(request, reason)",
+        "summarizeWorkerSendResults(results)"
+      ],
+      "imports_dependencies": [],
+      "inputs": [
+        "dispatch/delivery packet",
+        "slot descriptor",
+        "adapter result/error"
+      ],
+      "outputs": [
+        "send request",
+        "send result/error",
+        "manual paste record",
+        "send summary"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "notes": "DEFAULT_ADAPTER_KIND is CONTRACT_ONLY; no actual send call exists."
+      },
+      "source_factory_coupling": [
+        "worker slot IDs",
+        "prompt delivery/dispatch packet IDs",
+        "manual paste and adapter-unavailable statuses"
+      ],
+      "duplicate_superseded_evidence": "Manifest duplicate_copy_count=3. No exact duplicate in the package.",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS",
+      "evidence": [
+        "Useful request/result contracts",
+        "No browser, IPC, panel, or sequential sender transport implementation is present"
+      ],
+      "risks_restrictions": [
+        "Name can be mistaken for a working sender",
+        "Module-level request/result sequences reset on restart",
+        "No exactly-once transport guarantee"
+      ],
+      "next_action": "Bind to the approved Sequential Sender transport and persistent delivery receipts, then run V2 adapter success/failure/manual-fallback fixtures."
+    }
+  ],
+  "boundaries": {
+    "source_execution": "NOT_RUN",
+    "source_modification": "NONE",
+    "dependency_install": "NOT_RUN",
+    "runtime_service_start": "NOT_RUN",
+    "external_api_browser_middleware": "NOT_RUN",
+    "promotion_ready_merge": "NOT_RUN",
+    "old_root_delete": "NOT_RUN",
+    "external_effect_count": 0
+  }
+}
