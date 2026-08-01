@@ -19,6 +19,10 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 1
+          sparse-checkout: |
+            integrations/pc_agent_v1/runner_revisions/R8
+            .github/workflows/target-pc-runner-r8-validation.yml
+          sparse-checkout-cone-mode: false
 
       - name: Parse JSON contract
         shell: powershell
