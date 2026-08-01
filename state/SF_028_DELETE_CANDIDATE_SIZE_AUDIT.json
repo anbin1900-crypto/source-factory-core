@@ -1,0 +1,40 @@
+{
+  "task_id": "SF_028_SIZE_AUDIT_AND_OLD_ROOT_MAP",
+  "worker_id": "SLOT_01_SF028_SIZE_AUDIT_AND_OLD_ROOT_MAP_WORKER",
+  "terminal_status": "SF_028_SLOT_01_SIZE_AUDIT_YELLOW",
+  "hard_delete_allowed": false,
+  "measurement_complete": false,
+  "measurement_blocker": "D:\\SOURCE FACTORY is not mounted in the connected worker runtime.",
+  "delete_candidate_dirs": [
+    {"path": ".git", "size_bytes": null, "action": "EXCLUDE_FROM_ACTIVE_CORE", "delete_now": false},
+    {"path": "node_modules", "size_bytes": null, "action": "REINSTALLABLE_DEPENDENCY_TREE_AUDIT", "delete_now": false},
+    {"path": "reports", "size_bytes": null, "action": "RETAIN_LEDGER_OR_ARCHIVE_SELECTED_ONLY", "delete_now": false},
+    {"path": "daily_queue", "size_bytes": null, "action": "RETAIN_LEDGER_OR_ARCHIVE_SELECTED_ONLY", "delete_now": false},
+    {"path": "staging", "size_bytes": null, "action": "CLASSIFY_THEN_ARCHIVE_OR_REMOVE_AFTER_APPROVAL", "delete_now": false},
+    {"path": "extracted", "size_bytes": null, "action": "CLASSIFY_THEN_ARCHIVE_OR_REMOVE_AFTER_APPROVAL", "delete_now": false},
+    {"path": "candidate", "size_bytes": null, "action": "DO_NOT_COPY_WHOLE_25000_FILE_POOL", "delete_now": false},
+    {"path": "backlog", "size_bytes": null, "action": "CLASSIFY_THEN_ARCHIVE_OR_REMOVE_AFTER_APPROVAL", "delete_now": false},
+    {"path": "dist", "size_bytes": null, "action": "REBUILDABLE_OUTPUT_AUDIT", "delete_now": false},
+    {"path": "build", "size_bytes": null, "action": "REBUILDABLE_OUTPUT_AUDIT", "delete_now": false},
+    {"path": "cache", "size_bytes": null, "action": "CACHE_AUDIT", "delete_now": false},
+    {"path": "temp", "size_bytes": null, "action": "TEMP_AUDIT", "delete_now": false}
+  ],
+  "delete_candidate_files": [
+    {"pattern": "*.zip", "size_bytes": null, "action": "ARCHIVE_INVENTORY_REQUIRED", "delete_now": false},
+    {"pattern": "*.7z", "size_bytes": null, "action": "ARCHIVE_INVENTORY_REQUIRED", "delete_now": false},
+    {"pattern": "*.tar", "size_bytes": null, "action": "ARCHIVE_INVENTORY_REQUIRED", "delete_now": false},
+    {"pattern": "*.gz", "size_bytes": null, "action": "ARCHIVE_INVENTORY_REQUIRED", "delete_now": false}
+  ],
+  "archive_first_required": true,
+  "commander_approval_required": true,
+  "local_measurement_required_before_delete_decision": true,
+  "old_root_deleted": false,
+  "file_move_performed": false,
+  "file_copy_performed": false,
+  "production_source_modified": false,
+  "notes": [
+    "This file classifies candidate categories only; it does not assert existence or size.",
+    "No candidate may be deleted based on this incomplete remote audit.",
+    "SLOT 06 delete-readiness must remain blocked until a local read-only size audit and Active Core standalone verification are available."
+  ]
+}
