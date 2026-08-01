@@ -1,0 +1,827 @@
+{
+  "schema_version": "SOURCE_FACTORY_SF028_P0_WAVE03_SLOT01_CLASSIFICATION_V1",
+  "generated_at_kst": "2026-08-01T21:23:30+09:00",
+  "assignment_id": "SF028-P0-W03-S01-20260801-2110KST",
+  "task_id": "SF_028_P0_WAVE_03_SLOT_01_CLASSIFICATION",
+  "worker_id": "SLOT_01_SF028_P0_WAVE3_CLASSIFICATION_WORKER",
+  "wave": 3,
+  "slot": 1,
+  "authority": {
+    "wave_02_close_open_wave_03_commit": "61a01df401e357b013cb4fc18d141dc370ac4c85",
+    "slot_prompt_commit": "007dbb410f890c99478579192221622af57f8c72",
+    "batch_commit": "e162e6018a709bbae470604fef9b431673764e8a",
+    "drive_file_id": "1AXlYdsAWNbYMl2K-vtqDX4vN-riiS_R2",
+    "zip_file_name": "SF028_P0_EXTRACT_20260801_062137_WAVE_03_SLOT_01.zip",
+    "zip_size_bytes": 52278,
+    "zip_sha256": "d002b08aa2757d319e8d5ed49a53a28d7b34cd7253e4b8c0862d1d2a9564384f"
+  },
+  "package_verification": {
+    "zip_name": "PASS",
+    "zip_size": "PASS",
+    "zip_sha256": "PASS",
+    "manifest_json_parse": "PASS",
+    "manifest_expected_item_count": 12,
+    "manifest_packaged_item_count": 12,
+    "assigned_source_id_match": "PASS_12_OF_12",
+    "unique_source_id_count": 12,
+    "source_hash_match_count": 12,
+    "source_hash_error_count": 0,
+    "javascript_syntax_pass_count": 12,
+    "javascript_syntax_fail_count": 0,
+    "source_execution_count": 0,
+    "dependency_installation_count": 0
+  },
+  "terminal_status": "SF_028_P0_WAVE03_SLOT01_CLASSIFICATION_PASS",
+  "classification_summary": {
+    "DIRECT_REUSE": 2,
+    "ADAPTER_REQUIRED": 2,
+    "REFERENCE_ONLY": 0,
+    "PROJECT_BOUND": 5,
+    "EXACT_DUPLICATE": 0,
+    "SUPERSEDED": 3,
+    "SANITIZE_REQUIRED": 0,
+    "REJECTED": 0,
+    "REINSPECTION_REQUIRED": 0
+  },
+  "candidate_count": 12,
+  "candidates": [
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000560",
+      "assignment_id": "SF028-W03-S01-I01",
+      "file_name": "buttonHandlers.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_09_STAGE3_DISPATCH_WRITE_FIX_APP/src/renderer/buttonHandlers.js",
+      "sha256": "cee1e4b9145a2849a05a062ad48e30cbe64358853403cce932c35c66f4047c18",
+      "git_blob_sha1": "648cc38d172f16c51167e87551d68e6fbbf2596b",
+      "size_bytes": 30220,
+      "duplicate_copy_count": 51,
+      "actual_function": "Binds legacy Stage 2/3 renderer buttons to window.sfApi operations, normalizes task/state results, updates DOM status, copies/saves output, and includes an inline restored Stage 2 button binder with fixed local paths.",
+      "principal_symbols": [
+        "setupButtonHandlers(options)",
+        "handleStart(options)",
+        "handleStop(options)",
+        "handleSaveFullOutput(options)",
+        "handleReloadTask(options)",
+        "handleStage2CreateFiles(options)",
+        "handleStage2ValidateGenerated(options)",
+        "handleStage2AssembleGenerated(options)",
+        "handleStage2FinalizeAssembly(options)",
+        "handleStage2MakeCommanderReport(options)",
+        "handleStage2OpenLatestRecord(options)"
+      ],
+      "inputs": [
+        "DOM elements with fixed IDs",
+        "window.sfApi methods",
+        "worker/task context",
+        "generated and assembled paths",
+        "button click events"
+      ],
+      "outputs": [
+        "DOM status/result updates",
+        "state patches",
+        "clipboard writes when available",
+        "sfApi invocation results"
+      ],
+      "imports_dependencies": [
+        "window.sfApi",
+        "window.SourceFactoryStage2ResultView",
+        "DOM",
+        "Clipboard API"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": true,
+        "ipc_or_api": true,
+        "notes": "When executed it binds DOM events, invokes preload APIs, may write clipboard data, and uses timers."
+      },
+      "source_factory_coupling": [
+        "legacy STAGE2-W02 task",
+        "fixed Stage 2 button IDs",
+        "D:\\SOURCE FACTORY generated/assembled paths",
+        "COMMANDER/WORKER_01..06 era renderer contract"
+      ],
+      "duplicate_superseded_relation": "Later Stage3 dispatch-write-fix renderer handler; statically overlaps the earlier PCAGENT-AUTO-SRC-003322 handler but remains a legacy assembled UI artifact.",
+      "primary_classification": "PROJECT_BOUND",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "Auto-binds renderer buttons and appends an inline Stage2 restore IIFE",
+        "Hard-codes Stage2 IDs and D-drive paths",
+        "Depends on legacy sfApi and DOM contracts rather than a portable model API"
+      ],
+      "risks_restrictions": [
+        "Executing it can trigger file-generation/assembly IPC through sfApi",
+        "Duplicate event binding defenses are local to legacy attributes",
+        "Fixed paths and legacy task IDs conflict with Active Core portability"
+      ],
+      "next_action": "Keep as UI lineage reference only; extract narrowly reusable result-normalization helpers into a new adapter rather than copying this renderer bundle.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000568",
+      "assignment_id": "SF028-W03-S01-I02",
+      "file_name": "stage3PanelAttach.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_09_STAGE3_DISPATCH_WRITE_FIX_APP/src/renderer/stage3PanelAttach.js",
+      "sha256": "750a5da8776827582de06b9424d78ad446572a8e352ca7410c9b17e086df7614",
+      "git_blob_sha1": "4033d5f954a5f455e3e77b781cd734c693e5ffaf",
+      "size_bytes": 1556,
+      "duplicate_copy_count": 9,
+      "actual_function": "Detects COMMANDER versus worker renderer role and mounts the matching Stage 3 panel through global mount functions after DOM readiness.",
+      "principal_symbols": [
+        "ready(callback)",
+        "queryValue(name)",
+        "detectRole()",
+        "mountPanels()"
+      ],
+      "inputs": [
+        "window.sfWindowContext.role",
+        "body data-role/data-window-role",
+        "role query parameter",
+        "global panel mount functions"
+      ],
+      "outputs": [
+        "Commander panel mount call or worker return panel mount call"
+      ],
+      "imports_dependencies": [
+        "DOM",
+        "global mountStage3CommanderPanel",
+        "global mountStage3WorkerReturnPanel"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": true,
+        "ipc_or_api": false,
+        "notes": "DOM-ready listener and panel mounting when executed."
+      },
+      "source_factory_coupling": [
+        "legacy Stage 3 renderer role model",
+        "COMMANDER literal",
+        "specific global panel functions"
+      ],
+      "duplicate_superseded_relation": "Thin attach script from the Stage3 dispatch-write-fix assembled application; no standalone model surface.",
+      "primary_classification": "PROJECT_BOUND",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "IIFE executes automatically in a renderer",
+        "Only purpose is wiring legacy Stage3 globals",
+        "No exported adapter contract or configurable panel registry"
+      ],
+      "risks_restrictions": [
+        "Mounts the wrong UI when role metadata is absent or stale",
+        "Treats every non-COMMANDER context as worker",
+        "Cannot be reused outside the legacy DOM/global layout"
+      ],
+      "next_action": "Do not migrate directly; replace with current panel registry/slot identity binding if this behavior is still required.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000583",
+      "assignment_id": "SF028-W03-S01-I03",
+      "file_name": "stage3WorkerDispatchInboxPanel.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_10_STAGE3_WORKER_INBOX_RETURN_FIX_APP/src/renderer/stage3WorkerDispatchInboxPanel.js",
+      "sha256": "f928ba6f5fbbd862562523e2f9d42bfb3d9f3654277182c2b42d130277b54042",
+      "git_blob_sha1": "430a9e6771b97783a885ec3c8237bbd10e13f910",
+      "size_bytes": 6181,
+      "duplicate_copy_count": 3,
+      "actual_function": "Creates and mounts a Worker Stage 3 dispatch inbox panel, resolves worker identity, calls sfApi.listDispatchQueue, and renders status/results.",
+      "principal_symbols": [
+        "detectWorkerId(options)",
+        "refresh()",
+        "buildPanel(workerId)",
+        "mountStage3WorkerDispatchInboxPanel(options)"
+      ],
+      "inputs": [
+        "worker ID from options/context/body/query",
+        "DOM",
+        "sfApi.listDispatchQueue response"
+      ],
+      "outputs": [
+        "mounted inbox panel",
+        "status text",
+        "read-only dispatch result textarea",
+        "mount result object"
+      ],
+      "imports_dependencies": [
+        "DOM",
+        "root.sfApi.listDispatchQueue"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": true,
+        "ipc_or_api": true,
+        "notes": "Creates DOM nodes and invokes renderer API when refreshed."
+      },
+      "source_factory_coupling": [
+        "Stage3 worker dispatch queue",
+        "default WORKER_02",
+        "legacy panel IDs and placement before stage3WorkerReturnPanel"
+      ],
+      "duplicate_superseded_relation": "Stage3 worker-inbox return-fix UI component; not a queue/claim core implementation despite scanner category.",
+      "primary_classification": "PROJECT_BOUND",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "Default worker identity is WORKER_02",
+        "Depends on listDispatchQueue preload API and fixed panel IDs",
+        "UI-only component with legacy Stage3 placement rules"
+      ],
+      "risks_restrictions": [
+        "Fixed fallback worker can show another slot's data",
+        "Result rendering stringifies backend payload without schema enforcement",
+        "Cannot provide queue atomicity or receipt semantics"
+      ],
+      "next_action": "Retain only as UX reference; rebuild against current dynamic slot identity and typed queue API.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000674",
+      "assignment_id": "SF028-W03-S01-I04",
+      "file_name": "promptPackageVersionManager.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/promptPackageVersionManager.js",
+      "sha256": "d9afbca9005a143923aa170f482af3dc200c5cd71198e3a82c5cd477c26e3643",
+      "git_blob_sha1": "c6f7d9ee42ab2908470f0857e50a33cc0de8f3e6",
+      "size_bytes": 14529,
+      "duplicate_copy_count": 6,
+      "actual_function": "Normalizes prompt-package version records, validates required fields, detects cross-record version mismatch, groups by batch, and summarizes status and next action.",
+      "principal_symbols": [
+        "createPromptPackageVersionRecord(input, defaults)",
+        "validatePromptPackageVersionRecord(record)",
+        "detectBatchPromptVersionMismatch(records)",
+        "summarizePromptPackageVersions(input)"
+      ],
+      "inputs": [
+        "prompt package records",
+        "defaults",
+        "record arrays or batch objects"
+      ],
+      "outputs": [
+        "normalized version records",
+        "validation results",
+        "mismatch findings",
+        "batch summaries"
+      ],
+      "imports_dependencies": [],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": false,
+        "ipc_or_api": false,
+        "notes": "Pure in-memory CommonJS helper."
+      },
+      "source_factory_coupling": [
+        "prompt_package_id/version",
+        "target_stage",
+        "commander_function_class",
+        "worker_function_class",
+        "api_ipc_button_contract_id",
+        "constitution version"
+      ],
+      "duplicate_superseded_relation": "Stage4 slim-panel candidate model; no exact canonical duplicate proven in this package.",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "Pure reusable data model with current-style prompt-package fields",
+        "Default constitution is v2.1.0-COMPACT, not current v2.1.2-COMPACT",
+        "Default target stage and status vocabulary remain legacy-specific"
+      ],
+      "risks_restrictions": [
+        "Implicit defaults can make incomplete packages appear normalized",
+        "Version comparison is not a cryptographic package/content binding",
+        "Current compact contract fields and six-slot dependency semantics are not fully enforced"
+      ],
+      "next_action": "Add a v2.1.2 schema adapter, remove permissive legacy defaults, and run V2 mismatch/missing-field fixtures.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-005287",
+      "assignment_id": "SF028-W03-S01-I05",
+      "file_name": "runNodeCheckWrapper.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/tools/stage4/runNodeCheckWrapper.js",
+      "sha256": "20749a389324567f322cc604524f43ba1d06a885da9f656ccfb59ea43ec21b93",
+      "git_blob_sha1": "11cea8808fa56841c6cdad5c845a55d1f6f4bc47",
+      "size_bytes": 7832,
+      "duplicate_copy_count": 9,
+      "actual_function": "Runs node --check for one or many JavaScript files with timeout, captures stdout/stderr/exit state, normalizes results, and provides a CLI argument parser.",
+      "principal_symbols": [
+        "runNodeCheck(input)",
+        "runNodeCheckBatch(input)",
+        "buildNodeCheckResult(input)",
+        "parseCliArgs(argv)",
+        "runCli()"
+      ],
+      "inputs": [
+        "file path(s)",
+        "Node command",
+        "working directory",
+        "timeout",
+        "CLI arguments"
+      ],
+      "outputs": [
+        "structured syntax-check result",
+        "batch summary",
+        "JSON CLI output"
+      ],
+      "imports_dependencies": [
+        "child_process.spawn",
+        "process.execPath"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": true,
+        "network": false,
+        "database": false,
+        "browser": false,
+        "ipc_or_api": false,
+        "notes": "Spawns Node with --check only; captures process output and may set process.exitCode in CLI mode."
+      },
+      "source_factory_coupling": [
+        "Stage4 verification naming only; implementation is generic"
+      ],
+      "duplicate_superseded_relation": "Generic tool under tools/stage4; duplicate_copy_count=9 but no exact canonical duplicate proven here.",
+      "primary_classification": "DIRECT_REUSE",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "Uses spawn without shell and passes only --check plus target file",
+        "Structured timeout and batch aggregation",
+        "No Source Factory path, runtime, or UI dependency in core functions"
+      ],
+      "risks_restrictions": [
+        "Caller controls nodeCommand and cwd",
+        "No file allowlist or path-boundary validation",
+        "A hung child relies on kill/timeout behavior across platforms"
+      ],
+      "next_action": "Queue for V2 fixtures covering valid/invalid files, timeout, missing Node binary, path quoting, and batch partial failure; keep NOT_PROMOTED.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003279",
+      "assignment_id": "SF028-W03-S01-I06",
+      "file_name": "renderer.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_01_STAGE1_BROWSER/src/renderer/renderer.js",
+      "sha256": "b06317876b55d476273db9c4e9cfc99d44afc2ab02db9fb34bf62ea2a842e61d",
+      "git_blob_sha1": "5405f38c8093625a5de6f397ee92d392dde4b13b",
+      "size_bytes": 16132,
+      "duplicate_copy_count": 6,
+      "actual_function": "Initializes a legacy Stage 1 Electron renderer with one Commander and six Workers, configures a ChatGPT webview, loads task/state data, binds buttons, and starts refresh timers.",
+      "principal_symbols": [
+        "resolveContext()",
+        "configureGptWebview()",
+        "loadTaskInstruction(reason)",
+        "refreshWorkerState()",
+        "refreshCommanderBoard()",
+        "setupButtons()",
+        "startRefreshTimers()",
+        "initialize()"
+      ],
+      "inputs": [
+        "fixed renderer DOM",
+        "window.sfApi",
+        "query/injected context",
+        "legacy status/button globals"
+      ],
+      "outputs": [
+        "DOM updates",
+        "ChatGPT webview configuration",
+        "worker state refresh",
+        "Commander board rendering"
+      ],
+      "imports_dependencies": [
+        "Electron webview DOM",
+        "window.sfApi",
+        "SourceFactoryStatusView",
+        "SourceFactoryButtonHandlers"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": true,
+        "database": false,
+        "browser": true,
+        "ipc_or_api": true,
+        "notes": "Loads chatgpt.com, starts timers, and invokes preload APIs when executed."
+      },
+      "source_factory_coupling": [
+        "Stage1 browser",
+        "COMMANDER plus WORKER_01..06",
+        "S1-W02 default",
+        "persist:source-factory-gpt partition",
+        "legacy fixed DOM"
+      ],
+      "duplicate_superseded_relation": "Earliest Stage1 browser renderer; superseded by later Stage2/Stage3 renderer generations and current gpt_browser_bridge/SAFE Panel runtime.",
+      "primary_classification": "SUPERSEDED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "Original path is 20260701_01_STAGE1_BROWSER",
+        "Hard-coded Stage1 task and fixed seven-window topology",
+        "Later renderer/button/preload generations are present in the same extraction program"
+      ],
+      "risks_restrictions": [
+        "Executing opens network-backed browser content and timers",
+        "Legacy identity model conflicts with dynamic execution slots",
+        "Direct copy would regress current panel/preload contracts"
+      ],
+      "next_action": "Do not promote or copy; retain as historical UI lineage only.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003322",
+      "assignment_id": "SF028-W03-S01-I07",
+      "file_name": "buttonHandlers.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_03_STAGE2_INTEGRATED/src/renderer/buttonHandlers.js",
+      "sha256": "e2874cabbfdf2d5a39a8c8977eb4110b848917460f5fd6aa8a89f42ec182e39d",
+      "git_blob_sha1": "0d8b18517823784cd1b8738b3b04746e514423ec",
+      "size_bytes": 38932,
+      "duplicate_copy_count": 3,
+      "actual_function": "Legacy Stage 2 renderer button handler bundle for start/stop/save/task reload plus create/validate/assemble/finalize/report/open-record actions and an appended click-fix binder.",
+      "principal_symbols": [
+        "setupButtonHandlers(options)",
+        "handleStart(options)",
+        "handleStop(options)",
+        "handleSaveFullOutput(options)",
+        "handleReloadTask(options)",
+        "runStage2Action(actionName, options)",
+        "bind()"
+      ],
+      "inputs": [
+        "legacy DOM/buttons",
+        "window.sfApi",
+        "worker/task context",
+        "generated/assembled paths"
+      ],
+      "outputs": [
+        "DOM status/log/result updates",
+        "sfApi calls",
+        "state transitions"
+      ],
+      "imports_dependencies": [
+        "window.sfApi",
+        "DOM",
+        "Clipboard API",
+        "Stage2 result view globals"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": true,
+        "ipc_or_api": true,
+        "notes": "Auto-binds click handlers, invokes preload APIs, and schedules rebinding timers when executed."
+      },
+      "source_factory_coupling": [
+        "20260701_03_STAGE2_INTEGRATED layout",
+        "fixed Stage2 button IDs and methods",
+        "D-drive fallback paths"
+      ],
+      "duplicate_superseded_relation": "Earlier Stage2 handler lineage statically overlapped by the later PCAGENT-AUTO-SRC-000560 Stage3 dispatch-write-fix handler (same basename and substantial shared code).",
+      "primary_classification": "SUPERSEDED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "Original path predates the later Stage3 dispatch-write-fix handler",
+        "Large shared handler surface with later candidate",
+        "Appended legacy click-fix binder and Stage2-only paths"
+      ],
+      "risks_restrictions": [
+        "Duplicate handler inclusion can double-bind actions",
+        "Legacy actions can trigger file/process work through IPC",
+        "Maintaining both versions creates ambiguous canonical ownership"
+      ],
+      "next_action": "Do not copy; use only for lineage comparison while any reusable helper is extracted from the later canonical source.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003739",
+      "assignment_id": "SF028-W03-S01-I08",
+      "file_name": "stage3CommanderReturnInboxPanel.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_13_STAGE3_COMMANDER_RETURN_INBOX_REFRESH_FIX_APP/src/renderer/stage3CommanderReturnInboxPanel.js",
+      "sha256": "788c431e937ec9929f9a7aa4aeff0ed2cb7a610d8c944333aea60339c472b041",
+      "git_blob_sha1": "ab1f2fbbc7136898fbab7e28d35a183c650eaa6c",
+      "size_bytes": 8485,
+      "duplicate_copy_count": 3,
+      "actual_function": "Mounts a Commander Stage 3 worker-return inbox panel, filters by a fixed worker list, calls sfApi.listWorkerReturnQueue, and renders returned queue data.",
+      "principal_symbols": [
+        "isCommander()",
+        "selectedWorker()",
+        "refresh()",
+        "buildPanel()",
+        "mountStage3CommanderReturnInboxPanel()"
+      ],
+      "inputs": [
+        "COMMANDER role metadata",
+        "fixed worker selection",
+        "DOM",
+        "sfApi.listWorkerReturnQueue"
+      ],
+      "outputs": [
+        "Commander inbox panel",
+        "status/result display",
+        "mount result"
+      ],
+      "imports_dependencies": [
+        "DOM",
+        "root.sfApi.listWorkerReturnQueue"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": true,
+        "ipc_or_api": true,
+        "notes": "Auto-mounts DOM and invokes renderer API on refresh."
+      },
+      "source_factory_coupling": [
+        "Stage3 commander return queue",
+        "fixed ALL/WORKER_01..06 selector",
+        "legacy commander panel placement"
+      ],
+      "duplicate_superseded_relation": "Stage3 Commander return-inbox refresh-fix UI artifact; no generic queue model exported.",
+      "primary_classification": "PROJECT_BOUND",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "Fixed six-worker selector",
+        "Auto-mounts only in legacy COMMANDER window",
+        "Depends on specific panel IDs and preload method"
+      ],
+      "risks_restrictions": [
+        "Cannot represent dynamic slots or assignment epochs",
+        "String-rendered payload is not schema-bound",
+        "Direct reuse would import obsolete UI hierarchy"
+      ],
+      "next_action": "Retain as interaction reference; rebuild with dynamic slot registry and typed receipt/return records.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003878",
+      "assignment_id": "SF028-W03-S01-I09",
+      "file_name": "gptPreload.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_STAGE3_5_UI_MENU_ROUTING_FIX_RUNTIME_APP/src/preload/gptPreload.js",
+      "sha256": "680db6a4138adca04ede2bcf98fcd8a3af0fd67b1e08423027a16788b6407c02",
+      "git_blob_sha1": "c5614a8f22eca77412c2eb340fc97fff9035c195",
+      "size_bytes": 5051,
+      "duplicate_copy_count": 6,
+      "actual_function": "Exposes a broad Electron contextBridge API over fixed IPC channels for task/state, worker start/stop, output collection, Stage2 assembly, Stage3 dispatch/return/file operations, and Stage3.5 menu events.",
+      "principal_symbols": [
+        "invoke(channel,args)",
+        "subscribeStage35MenuCommand(callback)",
+        "removeStage35MenuCommandListener(callback)",
+        "sfApi methods"
+      ],
+      "inputs": [
+        "renderer method arguments",
+        "IPC event callbacks"
+      ],
+      "outputs": [
+        "ipcRenderer.invoke promises",
+        "menu-command subscription cleanup",
+        "window.sfApi/sourceFactoryApi"
+      ],
+      "imports_dependencies": [
+        "electron.contextBridge",
+        "electron.ipcRenderer"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": true,
+        "ipc_or_api": true,
+        "notes": "Exposes and invokes privileged main-process channels when executed."
+      },
+      "source_factory_coupling": [
+        "fixed sf:* channel names",
+        "legacy Stage1/2/3/3.5 API surface",
+        "two global API aliases"
+      ],
+      "duplicate_superseded_relation": "Stage3.5 menu-routing preload; current compact policy requires exact API/IPC/button contract preconfirmation before reuse.",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "Context isolation bridge pattern is reusable",
+        "Channel list mixes obsolete and current operations",
+        "No per-method payload schema, capability partition, or current contract ID binding"
+      ],
+      "risks_restrictions": [
+        "Broad renderer API can invoke file/process-affecting main handlers",
+        "Channel drift can silently break buttons",
+        "Duplicate global aliases enlarge compatibility surface"
+      ],
+      "next_action": "Generate an exact current channel allowlist from the API/IPC/button contract, split privileged actions, and run V2 binding fixtures.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003891",
+      "assignment_id": "SF028-W03-S01-I10",
+      "file_name": "stage35PopupManager.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_STAGE3_5_UI_MENU_ROUTING_FIX_RUNTIME_APP/src/renderer/stage35PopupManager.js",
+      "sha256": "2c7fce007f98a461cc333c67e3d4390d614a4f7166367e1e22d679394008a020",
+      "git_blob_sha1": "c93102a1857674a17ba9b442d993ab72daa1aafd",
+      "size_bytes": 14896,
+      "duplicate_copy_count": 3,
+      "actual_function": "Earlier Stage3.5 popup manager that normalizes menu commands, renders popup templates, calls candidate sfApi database/actions, and auto-attaches DOM/event listeners.",
+      "principal_symbols": [
+        "normalizeCommandId(commandId)",
+        "openPopup(commandId,payload)",
+        "closePopup()",
+        "renderPopupContent(commandId,payload)",
+        "runDbAction(action,payload)",
+        "attachListeners()",
+        "boot()"
+      ],
+      "inputs": [
+        "Stage3.5 menu/custom events",
+        "DOM trigger attributes",
+        "popup payloads",
+        "sfApi candidates"
+      ],
+      "outputs": [
+        "popup DOM",
+        "status/result rendering",
+        "sfApi action results"
+      ],
+      "imports_dependencies": [
+        "DOM",
+        "Stage35PopupTemplates",
+        "sfApi"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": true,
+        "ipc_or_api": true,
+        "notes": "Auto-boots, attaches global listeners, and may call privileged sfApi actions."
+      },
+      "source_factory_coupling": [
+        "Stage3.5 menu command aliases",
+        "legacy popup template registry",
+        "Stage2 DB action names"
+      ],
+      "duplicate_superseded_relation": "Superseded within this slot by PCAGENT-AUTO-SRC-003955 from the later UI_OPERATOR_READY_RUNTIME_APP, which expands file-send/reply signal workflows and replaces this earlier menu-routing version.",
+      "primary_classification": "SUPERSEDED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "Same basename and Stage3.5 subsystem",
+        "Original path is MENU_ROUTING_FIX_RUNTIME_APP while later candidate is UI_OPERATOR_READY_RUNTIME_APP",
+        "Later version exposes additional operator-ready submitFileSend/submitReply behavior"
+      ],
+      "risks_restrictions": [
+        "Including both versions would overwrite global.Stage35PopupManager",
+        "Auto-boot listeners can duplicate event handling",
+        "Earlier command alias surface diverges from later operator-ready behavior"
+      ],
+      "next_action": "Do not promote; preserve only for lineage/diff evidence.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003904",
+      "assignment_id": "SF028-W03-S01-I11",
+      "file_name": "stage35SignalProtocol.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_STAGE3_5_UI_MENU_ROUTING_FIX_RUNTIME_APP/src/shared/stage35SignalProtocol.js",
+      "sha256": "7dae4e785b076fab952fe2209782dd96d79c7898b639e70d7b391269b4b58942",
+      "git_blob_sha1": "82850420838914ec9f21c5313f3d4f4b59166b5f",
+      "size_bytes": 15989,
+      "duplicate_copy_count": 6,
+      "actual_function": "Defines a pure Stage3.5 signal protocol with typed signals, colors/icons/actions/directions, normalization, validation, acknowledgement, current-state updates, visual specs, and action-required checks.",
+      "principal_symbols": [
+        "createSignal(options)",
+        "normalizeSignal(input)",
+        "validateSignal(signal)",
+        "acknowledgeSignal(signal,options)",
+        "updateCurrentSignalState(currentState,signal)",
+        "getSignalVisualSpec(signal)",
+        "isActionRequired(signal)"
+      ],
+      "inputs": [
+        "signal-like objects",
+        "acknowledgement options",
+        "current signal state"
+      ],
+      "outputs": [
+        "normalized signal/result objects",
+        "validation errors/warnings",
+        "acknowledged signals",
+        "visual specifications"
+      ],
+      "imports_dependencies": [],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": false,
+        "ipc_or_api": false,
+        "notes": "Pure in-memory CommonJS protocol; uses time/random defaults for IDs."
+      },
+      "source_factory_coupling": [
+        "Worker/Commander directions",
+        "file/prompt/return/review/error signal vocabulary",
+        "Stage3.5 object types and UI actions"
+      ],
+      "duplicate_superseded_relation": "Standalone shared protocol from Stage3.5; no exact duplicate in the assigned package.",
+      "primary_classification": "DIRECT_REUSE",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "No imports or side effects",
+        "Exports complete create/validate/ack/state API",
+        "Separates machine signal data from visual/action mapping"
+      ],
+      "risks_restrictions": [
+        "Signal IDs use time/random rather than durable identity binding",
+        "Vocabulary is Stage3.5-specific and needs fixture confirmation against current slot/assignment identity",
+        "UI action names can drift from current button contracts"
+      ],
+      "next_action": "Queue for V2 fixtures covering every signal type, missing targets, invalid paths, acknowledgement, and current-state transitions; keep NOT_PROMOTED.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003955",
+      "assignment_id": "SF028-W03-S01-I12",
+      "file_name": "stage35PopupManager.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_STAGE3_5_UI_OPERATOR_READY_RUNTIME_APP/src/renderer/stage35PopupManager.js",
+      "sha256": "f55a66aa09ff82afb6bcc2fa9bedc900ed8c13bdc182619bb4e90978c9e626c7",
+      "git_blob_sha1": "4f91331cb92f7c47aee6ef898ba28306c77e6154",
+      "size_bytes": 17119,
+      "duplicate_copy_count": 3,
+      "actual_function": "Later Stage3.5 operator-ready popup manager that renders popup templates, calls dynamic sfApi methods, creates FILE_REQUEST and RETURN_READY signals, dispatches custom events, and auto-binds popup triggers.",
+      "principal_symbols": [
+        "openPopup(commandId,payload)",
+        "closePopup()",
+        "renderPopupContent(commandId,payload)",
+        "runDbAction(action,payload)",
+        "submitFileSend(payload)",
+        "submitReply(payload)",
+        "attachListeners()",
+        "boot()"
+      ],
+      "inputs": [
+        "DOM events/attributes",
+        "popup payloads",
+        "Stage35PopupTemplates",
+        "sfApi candidate methods"
+      ],
+      "outputs": [
+        "popup DOM",
+        "custom signal events",
+        "sfApi invocation results",
+        "operator status/result messages"
+      ],
+      "imports_dependencies": [
+        "DOM",
+        "Stage35PopupTemplates",
+        "sfApi"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": true,
+        "ipc_or_api": true,
+        "notes": "Auto-boots and may invoke dispatch/file/reply APIs when operators submit actions."
+      },
+      "source_factory_coupling": [
+        "Stage3.5 event names",
+        "FILE_REQUEST/RETURN_READY signal shapes",
+        "legacy popup template and sfApi method candidates"
+      ],
+      "duplicate_superseded_relation": "Later operator-ready successor to PCAGENT-AUTO-SRC-003891, but still a renderer-specific Stage3.5 implementation.",
+      "primary_classification": "PROJECT_BOUND",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "Auto-attaches to document/global custom events",
+        "Depends on popup template globals and dynamic legacy sfApi method names",
+        "Builds Stage3.5-specific signals and Korean operator messages"
+      ],
+      "risks_restrictions": [
+        "Dynamic method-candidate selection can hide API drift",
+        "Auto-boot can conflict with current panel lifecycle",
+        "UI-generated signals are not bound to current assignment/claim identity"
+      ],
+      "next_action": "Do not copy directly; use as UX reference and rebuild against current panel lifecycle, exact preload API, and typed signal/assignment contracts.",
+      "promotion_status": "NOT_PROMOTED"
+    }
+  ]
+}
