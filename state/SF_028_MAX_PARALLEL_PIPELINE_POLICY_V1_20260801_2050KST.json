@@ -1,0 +1,40 @@
+{
+  "schema_version": "SF_028_MAX_PARALLEL_PIPELINE_POLICY_V1",
+  "effective_from_kst": "2026-08-01T20:50:00+09:00",
+  "scope": "SF_028_P0_WAVE_CLASSIFICATION_AND_INTEGRATION",
+  "terminal_status": "SF_028_MAX_PARALLEL_PIPELINE_POLICY_ACTIVE",
+  "principle": "Never leave SLOT_01 through SLOT_05 idle while SLOT_06 integrates the preceding wave, when the next wave source packages and prompts already exist.",
+  "pipeline_rule": {
+    "SLOT_01_TO_05": "CLASSIFY_WAVE_N_PLUS_1_IN_PARALLEL",
+    "SLOT_06": "INTEGRATE_AND_GATE_WAVE_N",
+    "classification_dependency_on_prior_wave_gate": false,
+    "promotion_or_closure_dependency_on_prior_wave_gate": true,
+    "batch_first_prompt_preparation": true,
+    "sequential_sender_is_not_prompt_delay_reason": true
+  },
+  "allowed_overlap": [
+    "Wave N SLOT 06 integration may run concurrently with Wave N+1 SLOT 01-05 read-only classification.",
+    "Wave N+1 worker results may be published before Wave N closure.",
+    "Wave N+1 promotion, canonical selection, integrated closure, Ready, Merge, or runtime authority must wait for the applicable gate."
+  ],
+  "forbidden": [
+    "source execution",
+    "source modification",
+    "dependency installation",
+    "runtime or service start",
+    "official reusable-source promotion before integration gate",
+    "Ready or Merge",
+    "OLD_ROOT deletion"
+  ],
+  "handoff_rule": {
+    "when_slot06_starts_wave_n": "SLOT_01_TO_05_START_WAVE_N_PLUS_1",
+    "when_slot01_to_05_finish_wave_n_plus_1": "PUBLISH_RESULTS_AND_WAIT_ONLY_FOR_SLOT06_INTAKE_ASSIGNMENT",
+    "when_slot06_finishes_wave_n": "DO_NOT_RESTART_IDLE_WORKERS; preserve ongoing Wave N+1 work",
+    "when_wave_n_plus_1_results_complete": "SLOT_06_INTEGRATES_WAVE_N_PLUS_1_WHILE_SLOT_01_TO_05_START_WAVE_N_PLUS_2"
+  },
+  "target_utilization": {
+    "active_slots_during_normal_pipeline": 6,
+    "idle_slots_expected": 0,
+    "exception": "A slot may be idle only when its next package is unavailable, a safety gate specifically blocks read-only classification, or a material blocker is evidenced."
+  }
+}
