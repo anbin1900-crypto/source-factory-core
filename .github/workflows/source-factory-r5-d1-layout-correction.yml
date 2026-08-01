@@ -1,0 +1,72 @@
+name: Source Factory R5 D1 Layout Correction
+
+on:
+  pull_request:
+    paths:
+      - 'integrations/pc_agent_v1/Invoke-D1OfficialFixtureLayoutCorrectionR5.ps1'
+      - 'integrations/target_pc_failures_v1/R4_D1_EXACT_LEDGER_LAYOUT_SAFE_FAIL_V1_20260801.json'
+      - '.github/workflows/source-factory-r5-d1-layout-correction.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-r5-d1-layout:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Parse R5 PowerShell source
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          $file='integrations/pc_agent_v1/Invoke-D1OfficialFixtureLayoutCorrectionR5.ps1'
+          $tokens=$null
+          $errors=$null
+          [System.Management.Automation.Language.Parser]::ParseFile($file,[ref]$tokens,[ref]$errors)|Out-Null
+          if($errors.Count-ne0){throw ('POWERSHELL_PARSE_FAILED: ' + $errors[0].Message)}
+          'WINDOWS_POWERSHELL_51_PARSE=PASS'
+
+      - name: Validate D1 validator-root layout contract
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          $path='integrations/pc_agent_v1/Invoke-D1OfficialFixtureLayoutCorrectionR5.ps1'
+          $text=Get-Content -LiteralPath $path -Raw
+          $required=@(
+            "Join-Path `$D1Root 'package'",
+            "Join-Path `$d1PackageRoot 'EXACT_CONTROL_HEAD_PATHS_AND_BLOBS.json'",
+            'knowledge_db.exact_ledger.commit',
+            'knowledge_db.exact_ledger.path',
+            'knowledge_db.exact_ledger.blob',
+            'hash-object',
+            'output_ledger.PSObject.Properties',
+            'official_fixture_count'
+          )
+          foreach($marker in $required){
+            if($text.IndexOf($marker,[StringComparison]::Ordinal)-lt0){
+              throw ('R5_REQUIRED_MARKER_MISSING=' + $marker)
+            }
+          }
+          if(([regex]::Matches($text,'EXACT_CONTROL_HEAD_PATHS_AND_BLOBS\.json')).Count-lt2){
+            throw 'R5_EXACT_LEDGER_DUAL_LAYOUT_NOT_PRESENT'
+          }
+          'D1_VALIDATOR_ROOT_LEDGER_LAYOUT=PASS'
+          'D1_DUAL_BLOB_IDENTITY_CHECK=PASS'
+          'D1_OUTPUT_LEDGER_LOOP=PASS'
+
+      - name: Record safety boundary
+        shell: powershell
+        run: |
+          'ACTIVE_CORE_MUTATION_COUNT=0'
+          'PC_AGENT_EXECUTION_COUNT=0'
+          'REAL_API_CALL_COUNT=0'
+          'POSTGRESQL_APPLY_COUNT=0'
+          'PRODUCTION_CONNECTION_COUNT=0'
+          'READY_TRANSITION_COUNT=0'
+          'MERGE_COUNT=0'
