@@ -51,6 +51,11 @@ def validate(root: Path) -> dict:
         "handleStage4AppendStationRecords",
         "PC_AGENT_DISPATCH_ADAPTER_ERROR",
         "PC_AGENT_RESULT_STORAGE_FAILED",
+        "path.dirname(output)",
+        ".sf-pc-agent-patch-",
+        "written_sha256",
+        "write_strategy",
+        "PATCHED_OUTPUT_SHA256_MISMATCH",
     ]
     for marker in required_patcher_markers:
         if marker not in patcher:
@@ -68,7 +73,7 @@ def validate(root: Path) -> dict:
     forbidden_patterns = {
         "adapter": [r"child_process\.exec\(", r"shell\s*:\s*true", r"production\s*:\s*true"],
         "worker": [r"shell\s*=\s*True", r"requests\.(get|post|put|delete)", r"production[\"']?\s*:\s*True"],
-        "patcher": [r"package\.json", r"safe_panel_preload", r"IPC.*rename"],
+        "patcher": [r"package\.json", r"safe_panel_preload", r"IPC.*rename", r"path\.join\(os\.tmpdir"],
     }
     sources = {"adapter": adapter, "worker": worker, "patcher": patcher}
     for name, patterns in forbidden_patterns.items():
