@@ -1,5 +1,5 @@
 {
-  "schema_version": "YOLLA_A1_TARGET_PC_INTEGRATION_RUNNER_POINTER_V1",
+  "schema_version": "YOLLA_A1_TARGET_PC_INTEGRATION_RUNNER_POINTER_V2",
   "pointer_id": "LATEST-A1-TARGET-PC-INTEGRATION-RUNNER-V1",
   "repository": "anbin1900-crypto/source-factory-core",
   "pull_request": 3,
@@ -21,6 +21,24 @@
     "status": "READY_FOR_TARGET_PC_EXECUTION",
     "correction": "ISOLATE_NATIVE_GIT_STDERR_AND_FETCH_MISSING_EXACT_COMMITS_BEFORE_BLOB_MATERIALIZATION"
   },
+  "correction_source_authority": {
+    "path": "integrations/pc_agent_v1/runners/R4_GIT_FETCH_RECOVERY_MODULE.ps1",
+    "commit": "952674952992e83c49a2630fe721f4a7557dfc9c",
+    "blob": "015a1631a9925d8591ec3060cac21a0a8aa1298d",
+    "windows_powershell_51_parse": "PASS",
+    "recovery_contract": "PASS"
+  },
+  "ci": {
+    "workflow": "Source Factory PC Agent R4 Git Recovery",
+    "workflow_commit": "4987248a7a21e7b5b06f509675be74890c197aa5",
+    "run_id": 30698874340,
+    "job_id": 91366246147,
+    "conclusion": "success",
+    "checkout": "PASS_SPARSE_LONG_PATH_SAFE",
+    "windows_powershell_51_parse": "PASS",
+    "marker_validation": "PASS",
+    "safety_counters": "ALL_ZERO"
+  },
   "superseded_runner": {
     "file": "RUN_T1A1_SOURCE_FACTORY_PC_AGENT_API_DB_INTEGRATION_V2_R3.ps1",
     "sha256": "f8379506c9f5afb312782f5d659fa54fd40048942591c648ec294b31f929a101",
@@ -30,5 +48,5 @@
   "production": false,
   "ready": false,
   "merge": false,
-  "status": "R4_READY_R3_SUPERSEDED"
+  "status": "R4_REMOTE_SOURCE_AND_CI_PASS_READY_FOR_TARGET_PC"
 }
