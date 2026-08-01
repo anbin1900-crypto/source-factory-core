@@ -1,0 +1,55 @@
+{
+  "schema_version": "YOLLA_A1_TARGET_PC_SAFE_FAIL_LEDGER_V1",
+  "ledger_id": "A1-SOURCE-FACTORY-PC-AGENT-API-DB-R5-UTF8-SAFE-FAIL-20260801-001",
+  "recorded_at": "2026-08-01T21:27:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 3,
+  "branch": "integration/source-factory-pc-agent-api-db-v1",
+  "failed_runner": {
+    "version": "R5",
+    "sha256": "10ca363c7c86653f7a72d30059ae2aa5e3d6c0b7d5e04a75b49216bc62ac9030",
+    "status": "SUPERSEDED_DO_NOT_RUN"
+  },
+  "failure": {
+    "stage": "D1_OFFICIAL_FIXTURE_VALIDATION",
+    "signature": "WINDOWS_KOREAN_LOCALE_PYTHON_DEFAULT_ENCODING_CP949",
+    "message": "'cp949' codec can't decode byte 0xec in position 1873: illegal multibyte sequence",
+    "root_cause": "D-1 exact validator reads STAGING_INSERT_SCRIPT.sql with Path.read_text() without an explicit encoding; Windows Korean locale selected cp949 for the default text encoding.",
+    "d1_validator_blob": "fc39733cf6af737c50e3c65bfcf313db4e191e23",
+    "d1_validator_source_mutated": false
+  },
+  "passed_gates_before_failure": [
+    "PACKAGE_ZIP_IDENTITY",
+    "PACKAGE_FILE_IDENTITY",
+    "TARGET_HANDLER_E2E_HELPER_LOADED",
+    "EXTERNAL_AUTHORITY_MANIFEST",
+    "EXTERNAL_GIT_FETCH_RECOVERY_NOT_REQUIRED",
+    "EXTERNAL_GIT_COMMITS",
+    "API_W01_EXACT_AUTHORITY",
+    "D1_EXACT_LEDGER_LAYOUT"
+  ],
+  "safety": {
+    "working_copy_apply_count": 0,
+    "active_core_mutation_count": 0,
+    "pc_agent_execution_count": 0,
+    "api_fixture_execution_count": 0,
+    "database_fixture_write_count": 0,
+    "production_connection_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  },
+  "correction": {
+    "successor_runner": "R6",
+    "policy": [
+      "PYTHONUTF8=1",
+      "PYTHONIOENCODING=utf-8",
+      "PYTHONLEGACYWINDOWSSTDIO=0",
+      "all_direct_python_calls_use_-X_utf8",
+      "python_utf8_mode_preflight_required"
+    ],
+    "zip_reused": "SOURCE_FACTORY_PC_AGENT_API_DB_INTEGRATION_V2_R3.zip",
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
