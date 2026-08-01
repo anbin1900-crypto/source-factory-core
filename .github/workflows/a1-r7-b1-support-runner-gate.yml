@@ -20,6 +20,11 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 1
+          sparse-checkout: |
+            integrations/pc_agent_v1/R7_B1_RUNTIME_SUPPORT_EXECUTION_SOURCE.ps1
+            integrations/pc_agent_v1/attempt_ledgers/A1_R6_TARGET_PC_SAFE_FAIL_B1_NATIVE_STDERR_V1_20260801.json
+            .github/workflows/a1-r7-b1-support-runner-gate.yml
+          sparse-checkout-cone-mode: false
 
       - name: Parse R7 PowerShell source
         shell: powershell
