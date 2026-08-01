@@ -1,0 +1,111 @@
+{
+  "schema_version": "YOLLA_A1_EXTERNAL_AUTHORITY_BINDINGS_V1",
+  "binding_id": "A1-SOURCE-FACTORY-PC-AGENT-API-DB-EXTERNAL-AUTHORITY-V1-20260801-001",
+  "decision_commit": "45cda64ca650610f221b4abbc7d2f0b498073107",
+  "source_factory": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "support_pr": 2,
+    "support_head": "15fcc6e252b064a22fb5b5a9288810093dcec075",
+    "support_package_path": "releases/SF_REUSABLE_CORE_20260801_175708/integration/pc_agent_adapter_support_v1",
+    "bundle_sha256": "bced15e549be52e243e1c08b0449c9029fed3463fb4ab8d4e71b00976d7d5958",
+    "terminal": "SOURCE_FACTORY_PC_AGENT_ADAPTER_SUPPORT_READY",
+    "consumption_role": "DI_CONTRACT_PRESERVATION_AND_MOCK_ORACLE"
+  },
+  "api_w01": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 151,
+    "evidence_head": "a8673bb89a216ffa0c463ae4ed983490b80e5d63",
+    "contract_source_commit": "1d34f80ce96c29de6698798ed36c5c685d438841",
+    "contract_source_head": "c651a36a6bbaeca8a5a769342c21d2539a15b730",
+    "contract_version": "1.0.0",
+    "files": [
+      {"path": "06_government_api_manager/workers/api-w01/HANDOFF.md", "blob": "54fe46238ff4bc35027947f5eed4bc4a513e43fe"},
+      {"path": "06_government_api_manager/workers/api-w01/SOURCE_MANIFEST.yaml", "blob": "16c341a649b085fdf2cca3cdebc29e35df6665d6"}
+    ],
+    "canonical_identifiers": ["source_system_id", "request_id", "artifact_id", "dataset_id"],
+    "ingress_aliases": {
+      "provider_id": "source_system_id",
+      "call_id": "request_id",
+      "asset_id": "artifact_id",
+      "target_dataset_id": "dataset_id"
+    }
+  },
+  "knowledge_db": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "control_head": "8fd389bffd1f3fe98c18fcbce0a1c88cf68583c8",
+    "terminal": "D1_KNOWLEDGE_DB_MINIMUM_MAPPING_FIXTURE_READY",
+    "pointer": {
+      "path": "DOMAIN_PACKS/KNOWLEDGE_OPERATING_BASE/INTEGRATION/V1/S2_SUPPORT_CYCLE_001/LATEST_D1_KNOWLEDGE_DB_MINIMUM_MAPPING_FIXTURE_POINTER.json",
+      "commit": "8fd389bffd1f3fe98c18fcbce0a1c88cf68583c8",
+      "blob": "c21d7abeb9315be9fa79fd8582bdab920797a7f1"
+    },
+    "exact_ledger": {
+      "path": "DOMAIN_PACKS/KNOWLEDGE_OPERATING_BASE/INTEGRATION/V1/S2_SUPPORT_CYCLE_001/API_RESULT_TO_KNOWLEDGE_OBJECT_STAGING_FIXTURE_V1/EXACT_CONTROL_HEAD_PATHS_AND_BLOBS.json",
+      "commit": "7099145ffbeeef85f6d3fcd489954af42730e1db",
+      "blob": "08116870ea3a97ab18b7d56859bb35880c22d7bd"
+    },
+    "package_root": "DOMAIN_PACKS/KNOWLEDGE_OPERATING_BASE/INTEGRATION/V1/S2_SUPPORT_CYCLE_001/API_RESULT_TO_KNOWLEDGE_OBJECT_STAGING_FIXTURE_V1",
+    "validator_relative_path": "validate_minimum_fixture.py",
+    "external_api_call_count": 0,
+    "postgresql_connection_count": 0
+  },
+  "b_group": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 164,
+    "control_head": "6a4d974165077f3e40ab3b43fdb72b598444234c",
+    "terminal": "B1_A1_FRONTLINE_RUNTIME_SUPPORT_PACKAGE_READY",
+    "pointer": {
+      "path": "s1/pc-agent/wkr-007-release-candidate/s2_support_cycle_001_runtime_support_v1/LATEST_B1_A1_FRONTLINE_RUNTIME_SUPPORT_POINTER_V1.json",
+      "commit": "6a4d974165077f3e40ab3b43fdb72b598444234c",
+      "blob": "7005d32f7fea1791d675784862dd2e2630d969c7"
+    },
+    "package": {
+      "path": "s1/pc-agent/wkr-007-release-candidate/s2_support_cycle_001_runtime_support_v1/B1_A1_FRONTLINE_RUNTIME_SUPPORT_PACKAGE_V1.json",
+      "commit": "c11fa344f51833d19ebde2eda3e6f4a595e8f578",
+      "blob": "2736d6df0bec8fd22b5ae64b7ff70248f1bcde22"
+    },
+    "materializer": {
+      "path": "s1/pc-agent/wkr-007-release-candidate/s2_support_cycle_001_runtime_support_v1/MATERIALIZE_B1_A1_FRONTLINE_RUNTIME_SUPPORT_V1.py",
+      "commit": "a64bc411cb66074fc8ed35ec8bec2e587266f60e",
+      "blob": "cb52652a25f8573a128b3d9fca4c9caebf037e2a",
+      "sha256": "28a62979c18478238edeea0454767db113b71c8a8c96e655e948bd23debbc1c1"
+    },
+    "archive": {
+      "path": "s1/pc-agent/wkr-007-release-candidate/s2_support_cycle_001_runtime_support_v1/B1_A1_FRONTLINE_RUNTIME_SUPPORT_ARCHIVE_V1.b64",
+      "commit": "9cbacb3762f4993c2c586d9b4314404b7312946e",
+      "blob": "32e1d22ec2f5e690bc0310ae3e0cd721953e5e5f",
+      "decoded_sha256": "adec25b27bc88bf6685cd9a2e9356fc48df22dd7248a48e7f73839c5b412f1d0",
+      "decoded_size_bytes": 12778
+    }
+  },
+  "c_group": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 175,
+    "control_head": "5d9ac6c653f9eb3b426f160198e4d47daeec0b10",
+    "terminal": "C1_A1_MINIMUM_INTEGRATION_FIXTURE_HARNESS_READY",
+    "pointer_path": "workers/c1/s2_support_cycle_001_v11_6_minimum_integration_harness_v1/LATEST_C1_A1_MINIMUM_INTEGRATION_FIXTURE_HARNESS_POINTER_V1.json",
+    "pointer_blob": "ad0cd1a2465c2c36cb2ff22705861bb655ae217f",
+    "artifacts": {
+      "authority": {"commit": "fe6f727cc863c34c32a5f8f0de199a543fe9342f", "blob": "6979449a36da26737910b15c08a96e7b6e16b956", "path": "workers/c1/s2_support_cycle_001_v11_6_minimum_integration_harness_v1/C1_MINIMUM_INTEGRATION_FIXTURE_HARNESS_AUTHORITY_V1.json"},
+      "expected_result": {"commit": "4698be2cdb3b6f715d1f4a7471906b126dcebe3b", "blob": "bff114d34473043fbf479441ae883f5b5c712a15", "path": "workers/c1/s2_support_cycle_001_v11_6_minimum_integration_harness_v1/C1_MINIMUM_INTEGRATION_FIXTURE_HARNESS_EXPECTED_RESULT_V1.json"},
+      "test_result": {"commit": "040047f067059f2d5f30feef22d3986ab4ded8ed", "blob": "e4d2957d5639dbb67cd5dbd0b8ac5f35a23c0f2e", "path": "workers/c1/s2_support_cycle_001_v11_6_minimum_integration_harness_v1/C1_MINIMUM_INTEGRATION_FIXTURE_HARNESS_TEST_RESULT_V1.json"},
+      "harness_source": {"commit": "b6da99eeb7b6a491e9e333b328779e57dd2d3f10", "blob": "c59c77027d847244f17dcde66d6056662f541a2c", "path": "workers/c1/s2_support_cycle_001_v11_6_minimum_integration_harness_v1/C1_MINIMUM_INTEGRATION_FIXTURE_HARNESS_V1.js"},
+      "local_manifest": {"commit": "0c126df0090ce3f4a3aa9f08673676adb222d2dc", "blob": "8129ff4c221ca1ba872b3ea27face1a84fa72394", "path": "workers/c1/s2_support_cycle_001_v11_6_minimum_integration_harness_v1/C1_MINIMUM_INTEGRATION_FIXTURE_HARNESS_LOCAL_MANIFEST_V1.json"},
+      "final_report": {"commit": "8282aee9563c84bf0a97c55808adfc6c059a691a", "blob": "4f29f587fe42ef5489bb45bec36c5d9b1dc90ba9", "path": "workers/c1/s2_support_cycle_001_v11_6_minimum_integration_harness_v1/C1_MINIMUM_INTEGRATION_FIXTURE_HARNESS_FINAL_REPORT_V1.json"}
+    },
+    "command": "node C1_MINIMUM_INTEGRATION_FIXTURE_HARNESS_V1.js",
+    "expected_result_sha256": "93827804703cd0c87dd58f2362cf289f0117f5609550c76aff189dc4f542e208",
+    "expected_summary_sha256": "3d07c4d1eb66adc63bd4b9ea4457a6066bd238e170b66ea153007ed309b0e5fa"
+  },
+  "boundaries": {
+    "real_api_call": false,
+    "external_ai_call": false,
+    "actual_postgresql_apply": false,
+    "production_connection": false,
+    "production_credential_use": false,
+    "production_deploy": false,
+    "ready": false,
+    "merge": false
+  }
+}
