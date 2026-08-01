@@ -1,0 +1,42 @@
+{
+  "schema_version": "YOLLA_A1_TARGET_PC_SAFE_FAILURE_V1",
+  "failure_id": "A1-SOURCE-FACTORY-PC-AGENT-API-DB-R4-D1-LEDGER-LAYOUT-SAFE-FAIL-20260801-001",
+  "observed_at": "2026-08-01T21:10:00+09:00",
+  "runner": "RUN_T1A1_SOURCE_FACTORY_PC_AGENT_API_DB_INTEGRATION_V2_R4.ps1",
+  "package": "SOURCE_FACTORY_PC_AGENT_API_DB_INTEGRATION_V2_R3.zip",
+  "completed_gates": {
+    "external_authority_manifest": "PASS",
+    "external_git_fetch_recovery": "PASS",
+    "external_git_commits": "PASS",
+    "api_w01_exact_authority": "PASS"
+  },
+  "first_failure": {
+    "code": "SFPADB2_D1_VALIDATOR_FAILED",
+    "message": "missing EXACT_CONTROL_HEAD_PATHS_AND_BLOBS.json",
+    "stage": "D1_OFFICIAL_FIXTURE_VALIDATION",
+    "classification": "VALIDATOR_WORKING_DIRECTORY_LAYOUT_DEFECT",
+    "root_cause": "The exact D-1 ledger was materialized at the authority root, while validate_minimum_fixture.py resolves the ledger from the D-1 package working directory."
+  },
+  "safety": {
+    "working_copy_apply_count": 0,
+    "active_core_mutation_count": 0,
+    "pc_agent_execution_count": 0,
+    "api_fixture_execution_count": 0,
+    "database_fixture_write_count": 0,
+    "real_api_call_count": 0,
+    "postgresql_apply_count": 0,
+    "production_connection_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  },
+  "correction": {
+    "successor": "R5",
+    "method": "Materialize the exact ledger again inside the validator package root, verify both Git blob identities, then materialize the ten official D-1 fixture files and execute the validator.",
+    "same_failure_method_repeated": false,
+    "package_zip_reused": true
+  },
+  "status": "SAFE_FAIL_ACTIVE_CORE_UNCHANGED",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
