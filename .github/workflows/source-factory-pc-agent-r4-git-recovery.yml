@@ -1,0 +1,61 @@
+name: Source Factory PC Agent R4 Git Recovery
+
+on:
+  pull_request:
+    paths:
+      - 'integrations/pc_agent_v1/runners/R4_GIT_FETCH_RECOVERY_MODULE.ps1'
+      - '.github/workflows/source-factory-pc-agent-r4-git-recovery.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-r4-git-recovery:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Parse PowerShell 5.1-compatible module
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          $file='integrations/pc_agent_v1/runners/R4_GIT_FETCH_RECOVERY_MODULE.ps1'
+          $tokens=$null
+          $errors=$null
+          [System.Management.Automation.Language.Parser]::ParseFile($file,[ref]$tokens,[ref]$errors)|Out-Null
+          if($errors.Count-ne0){throw ("POWERSHELL_PARSE_FAILED: " + $errors[0].Message)}
+          'WINDOWS_POWERSHELL_51_PARSE=PASS'
+
+      - name: Verify recovery contract markers
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          $text=Get-Content -LiteralPath 'integrations/pc_agent_v1/runners/R4_GIT_FETCH_RECOVERY_MODULE.ps1' -Raw
+          $required=@(
+            'Invoke-GitProcess',
+            'RedirectStandardError',
+            'GIT_BRANCH_FETCH',
+            'GIT_EXACT_COMMIT_FETCH',
+            'GIT_DEEPEN_FETCH',
+            'EXTERNAL_GIT_FETCH_RECOVERY=PASS',
+            'SFPADB2_COMMIT_MISSING_AFTER_FETCH_RECOVERY'
+          )
+          foreach($marker in $required){if($text.IndexOf($marker,[StringComparison]::Ordinal)-lt0){throw "MISSING_MARKER=$marker"}}
+          if($text.IndexOf('git.exe -C $Repository cat-file -e',[StringComparison]::Ordinal)-ge0){throw 'UNSAFE_DIRECT_NATIVE_GIT_CALL_PRESENT'}
+          'R4_GIT_RECOVERY_CONTRACT=PASS'
+
+      - name: Record safety boundary
+        shell: powershell
+        run: |
+          'ACTIVE_CORE_MUTATION_COUNT=0'
+          'PC_AGENT_EXECUTION_COUNT=0'
+          'REAL_API_CALL_COUNT=0'
+          'POSTGRESQL_APPLY_COUNT=0'
+          'PRODUCTION_CONNECTION_COUNT=0'
+          'READY_TRANSITION_COUNT=0'
+          'MERGE_COUNT=0'
