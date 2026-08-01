@@ -1,0 +1,48 @@
+{
+  "object_type": "SF028_STRICT_VERIFY_ACTIVE_CORE_REPORT",
+  "schema_version": "3.0.0-STRICT",
+  "run_id": "SF028_STRICT_20260801_153614",
+  "generated_at": "2026-08-01T06:36:25+00:00",
+  "old_root": "D:\\SOURCE FACTORY",
+  "new_root": "E:\\SOURCE FACTORY\\source-factory-active-core",
+  "old_root_deleted": false,
+  "required_files_present": true,
+  "required_files_missing": [],
+  "json_parse": {
+    "pass": true,
+    "checked": 2,
+    "failures": []
+  },
+  "python_compile": {
+    "pass": true,
+    "checked": 0,
+    "failures": []
+  },
+  "js_syntax": {
+    "pass": true,
+    "checked": 46,
+    "node_found": true,
+    "failures": []
+  },
+  "manifest_hash": {
+    "pass": true,
+    "checked": 70
+  },
+  "strict_unapproved_files": [],
+  "unresolved_explicit_local_references": [
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "spec": "/DONE_LIGHT_REPORT_GENERATOR_PROMPT.txt",
+      "kind": "explicit_file_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "spec": "/NEXT_COMMANDER_HANDOFF_GENERATOR_PROMPT.txt",
+      "kind": "explicit_file_literal"
+    }
+  ],
+  "source_seed_ready": true,
+  "new_root_ready": true,
+  "runtime_launch_ready": false,
+  "runtime_dependency_state": "INSTALL_REQUIRED_NODE_MODULES_NOT_COPIED"
+}
