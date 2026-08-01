@@ -1,0 +1,806 @@
+{
+  "schema_version": "SF_028_P0_WAVE_03_CLASSIFICATION_RESULTS_V1",
+  "task_id": "SF_028_P0_WAVE_03_SLOT_04_CLASSIFICATION",
+  "worker_id": "SLOT_04_SF028_P0_WAVE3_CLASSIFICATION_WORKER",
+  "batch_id": "SF_028_P0_WAVE03_SLOT01_TO_SLOT05_IMMEDIATE_EXECUTION_BATCH_V1_20260801_2110KST",
+  "generated_at_kst": "2026-08-01T21:23:00+09:00",
+  "observed_repository_head_before_publish": "61a01df401e357b013cb4fc18d141dc370ac4c85",
+  "authority": {
+    "wave_02_gate_open_commit": "61a01df401e357b013cb4fc18d141dc370ac4c85",
+    "wave_03_batch_commit": "e162e6018a709bbae470604fef9b431673764e8a",
+    "slot_prompt_commit": "79940d4732f507b7e7d323ff04b0a17d92d783ef",
+    "staging_v2_authority_commit": "49d348af6d8adb0f7ca6d7b529752ee73ab099c2",
+    "drive_file_id": "1jDogRPIBu-rWIKnQodnPUiRR23bR_77D",
+    "zip_file_name": "SF028_P0_EXTRACT_20260801_062137_WAVE_03_SLOT_04.zip",
+    "zip_size_bytes": 38147,
+    "zip_sha256": "c319a2aed3b4420b97f95275e1dca201b2e438b0462f8ed364e4c38aa7d2cd9b",
+    "source_identity_authority": "embedded SLOT_MANIFEST.json"
+  },
+  "package_verification": {
+    "expected_item_count": 12,
+    "packaged_item_count": 12,
+    "unique_source_id_count": 12,
+    "unexpected_source_id_count": 0,
+    "missing_source_id_count": 0,
+    "zip_sha256_match": true,
+    "file_hash_mismatch_count": 0,
+    "git_blob_sha1_mismatch_count": 0,
+    "node_static_parse_pass_count": 11,
+    "node_static_parse_fail_count": 1,
+    "node_static_parse_fail_source_ids": [
+      "PCAGENT-AUTO-SRC-005275"
+    ],
+    "source_execution_count": 0,
+    "source_modification_count": 0,
+    "dependency_installation_count": 0,
+    "external_effect_count": 0,
+    "promotion_count": 0
+  },
+  "classification_summary": {
+    "ADAPTER_REQUIRED": 4,
+    "DIRECT_REUSE": 1,
+    "PROJECT_BOUND": 2,
+    "REJECTED": 1,
+    "SUPERSEDED": 4
+  },
+  "material_findings": [
+    {
+      "source_id": "PCAGENT-AUTO-SRC-005275",
+      "classification": "REJECTED",
+      "finding": "327-byte source ends inside the CONTENT_END string; node --check fails and no executable contract is recoverable."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004089",
+      "classification": "PROJECT_BOUND",
+      "finding": "Require-time Electron listeners and interval run before install(); install then monkeypatches BrowserWindow and creates another permanent interval."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003290",
+      "classification": "SUPERSEDED",
+      "finding": "Legacy 996-line Stage 2 renderer controller is replaced in Active Core by the narrower current src/gpt_browser_bridge/buttonHandlers.js surface."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003952",
+      "classification": "ADAPTER_REQUIRED",
+      "finding": "Later Stage 3.5 operator-ready menu variant removes alias normalization and explicit unknown-command routing while retaining fixed five-worker and legacy DB actions."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000577",
+      "classification": "DIRECT_REUSE",
+      "finding": "Pure immutable status/color vocabulary with no external effects; remains V1 only pending deterministic-clock and lifecycle fixtures."
+    }
+  ],
+  "decisions": [
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000565",
+      "file_name": "stage2ResultView.js",
+      "sha256": "95a4e613aca3bd6443c44a070a302378b938e09ae646ee7810ed95028b61fdef",
+      "primary_classification": "PROJECT_BOUND",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Normalizes legacy Stage 2 create/validate/assemble/finalize results and renders fixed result fields, path inputs, status colors, and an 80-entry DOM history panel.",
+      "inputs": [
+        "raw Stage 2 action result or report path",
+        "fixed Stage 2 DOM element IDs",
+        "action name and render options"
+      ],
+      "outputs": [
+        "normalized result object",
+        "mutated Stage 2 result panel/path inputs/history",
+        "window.SourceFactoryStage2ResultView API"
+      ],
+      "principal_functions_or_classes": [
+        "normalizeResult",
+        "ensureResultPanel",
+        "renderActionResult",
+        "appendHistory",
+        "getGeneratedPath",
+        "getAssembledPath"
+      ],
+      "dependencies": [
+        "browser DOM",
+        "Date",
+        "JSON"
+      ],
+      "external_effects": [
+        "DOM_MUTATION",
+        "GLOBAL_WINDOW_API_REGISTRATION"
+      ],
+      "project_coupling": "VERY_HIGH: fixed Stage 2 fields, action names, element IDs, BLUE/ORANGE/RED colors, and generated/assembled/report path controls.",
+      "duplicate_or_replacement_relation": "78 corpus copies; no exact current Active Core canonical match established; current Active Core no longer treats this legacy Stage 2 panel as a core runtime surface.",
+      "evidence": [
+        "ZIP/manifest/file SHA-256 PASS",
+        "Git blob SHA-1 PASS",
+        "node --check PASS",
+        "static DOM/action-schema review"
+      ],
+      "risks": [
+        "direct DOM creation and fixed IDs prevent headless reuse",
+        "legacy Stage 2 action vocabulary",
+        "global runtime state and implicit timestamps",
+        "status normalization can hide unknown fields"
+      ],
+      "restrictions": [
+        "NO_ACTIVE_CORE_PROMOTION",
+        "LEGACY_STAGE2_UI_ONLY",
+        "V2_FIXTURE_REQUIRED_BEFORE_EXTRACTION"
+      ],
+      "next_action": "Keep project-bound; extract the pure result normalizer only if a current panel adapter and DOM fixtures are approved.",
+      "assignment_id": "SF028-W03-S04-I01",
+      "slot_item_index": 1,
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_09_STAGE3_DISPATCH_WRITE_FIX_APP/src/renderer/stage2ResultView.js",
+      "expected_git_blob_sha1": "046fb9326ef1b919d128632f05fa57b28b2b34f7",
+      "duplicate_copy_count": 78
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000577",
+      "file_name": "statusCodes.js",
+      "sha256": "de5f3b38a7fcc54fbcfdb2bb40da4333668eb5f321ae7fcb44cb4674d4a02445",
+      "primary_classification": "DIRECT_REUSE",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Defines immutable browser-worker status codes, BLUE/ORANGE/RED color mapping, validators, and a timestamped state-snapshot constructor.",
+      "inputs": [
+        "status code",
+        "optional message"
+      ],
+      "outputs": [
+        "status/color constants",
+        "validated status color",
+        "state snapshot with updated_at"
+      ],
+      "principal_functions_or_classes": [
+        "isValidStatusColor",
+        "isValidStatusCode",
+        "getColorForState",
+        "createStateSnapshot"
+      ],
+      "dependencies": [
+        "JavaScript built-ins",
+        "Date"
+      ],
+      "external_effects": [
+        "NONE"
+      ],
+      "project_coupling": "LOW_TO_MEDIUM: status names reflect the GPT browser worker lifecycle but the module is a pure shared state vocabulary.",
+      "duplicate_or_replacement_relation": "57 corpus copies; no exact current Active Core canonical file located.",
+      "evidence": [
+        "ZIP/manifest/file SHA-256 PASS",
+        "Git blob SHA-1 PASS",
+        "node --check PASS",
+        "pure-module static review"
+      ],
+      "risks": [
+        "UI color semantics are legacy BLUE/ORANGE/RED rather than gate terminal semantics",
+        "implicit clock reduces deterministic tests",
+        "new compact lifecycle states are absent"
+      ],
+      "restrictions": [
+        "V1_STATIC_ONLY",
+        "NOT_PROMOTED",
+        "V2_FIXTURE_REQUIRED"
+      ],
+      "next_action": "Queue pure V2 fixtures for all status/color paths and inject a clock before canonical promotion.",
+      "assignment_id": "SF028-W03-S04-I02",
+      "slot_item_index": 2,
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_09_STAGE3_DISPATCH_WRITE_FIX_APP/src/shared/statusCodes.js",
+      "expected_git_blob_sha1": "04138ff99eaecf442dd18683a087db0c033a6e7b",
+      "duplicate_copy_count": 57
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000668",
+      "file_name": "stage4PromptAutomationDashboard.js",
+      "sha256": "5e59814d42b711db4c41f17fcaca4accca47a51865d094135f614fbdedc1b25b",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Builds a report-only Stage 4 prompt-automation dashboard view model with cards, progress counters, warnings, and non-executing panel actions.",
+      "inputs": [
+        "prompt library/queue/run context",
+        "packages",
+        "autosave state",
+        "validation summary"
+      ],
+      "outputs": [
+        "dashboard summary",
+        "cards",
+        "progress",
+        "non-executing actions",
+        "warnings and view contract"
+      ],
+      "principal_functions_or_classes": [
+        "collectPromptItems",
+        "buildPromptRunProgress",
+        "buildPromptAutomationCards",
+        "buildPromptAutomationActions",
+        "buildPromptAutomationDashboard"
+      ],
+      "dependencies": [
+        "JavaScript built-ins",
+        "Map",
+        "JSON"
+      ],
+      "external_effects": [
+        "NONE"
+      ],
+      "project_coupling": "HIGH: hard-coded 70-prompt expectation, Stage 4 route vocabulary, panel-owned action model, and specific sfApi expectations.",
+      "duplicate_or_replacement_relation": "3 corpus copies; no exact current Active Core canonical match established.",
+      "evidence": [
+        "ZIP/manifest/file SHA-256 PASS",
+        "Git blob SHA-1 PASS",
+        "node --check PASS",
+        "static dashboard/action contract review"
+      ],
+      "risks": [
+        "DEFAULT_TOTAL_PROMPTS=70 is not a dynamic compact batch contract",
+        "missing package version/function-class/dependency fields",
+        "status strings are permissive",
+        "JSON cloning drops non-JSON values",
+        "panel ownership and expected APIs require current contract review"
+      ],
+      "restrictions": [
+        "NOT_PROMOTED",
+        "ADAPTER_BEFORE_V2",
+        "NO_DISPATCH_AUTHORITY"
+      ],
+      "next_action": "Adapt to compact v2.1.2 dynamic slot/package/dependency contracts, then run progress/action boundary fixtures.",
+      "assignment_id": "SF028-W03-S04-I03",
+      "slot_item_index": 3,
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/panelAutomation/stage4PromptAutomationDashboard.js",
+      "expected_git_blob_sha1": "3ad70d68edc4a62b21ecce88073014effda91300",
+      "duplicate_copy_count": 3
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-005275",
+      "file_name": "stage4AutoMaterializeAndValidate.js",
+      "sha256": "c0dffd48a8b5d891a7d5b8bee152e1abfbb97f7f63e60fc78c27a7992e29c034",
+      "primary_classification": "REJECTED",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Only a 327-byte truncated beginning of a Node materialize/validate CLI remains; the CONTENT_END string and the rest of the program are missing.",
+      "inputs": [
+        "unknown; truncated before executable contract is defined"
+      ],
+      "outputs": [
+        "none; module cannot parse"
+      ],
+      "principal_functions_or_classes": [
+        "none recoverable",
+        "partial MARKERS constant only"
+      ],
+      "dependencies": [
+        "fs",
+        "path",
+        "child_process"
+      ],
+      "external_effects": [
+        "POTENTIAL_FILESYSTEM_AND_SUBPROCESS_EFFECTS_IF_COMPLETE",
+        "NONE_EXECUTED_DURING_REVIEW"
+      ],
+      "project_coupling": "UNKNOWN_HIGH: partial Stage 4 auto-pipeline spine identifier and process dependencies.",
+      "duplicate_or_replacement_relation": "3 corpus copies; this packaged identity is incomplete and cannot establish a reusable implementation.",
+      "evidence": [
+        "ZIP/manifest/file SHA-256 PASS",
+        "Git blob SHA-1 PASS",
+        "node --check FAIL at unterminated CONTENT_END string",
+        "file ends after 327 bytes"
+      ],
+      "risks": [
+        "syntactically invalid",
+        "source is truncated",
+        "unknown write/process behavior",
+        "no function or output contract can be verified"
+      ],
+      "restrictions": [
+        "NO_LOAD",
+        "NO_EXECUTION",
+        "NO_PROMOTION",
+        "COMPLETE_SOURCE_RECOVERY_REQUIRED"
+      ],
+      "next_action": "Reject this artifact; recover a complete authoritative copy and restart V1 classification from its embedded identity.",
+      "assignment_id": "SF028-W03-S04-I04",
+      "slot_item_index": 4,
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/generated/current_line_extract_current_line_20260703_171822/PROJECT_FILES/tools/stage4_auto_pipeline/stage4AutoMaterializeAndValidate.js",
+      "expected_git_blob_sha1": "373665867115c5ae42bccc8afbfd812342f916d5",
+      "duplicate_copy_count": 3
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000824",
+      "file_name": "gptPreload.js",
+      "sha256": "ba5ea5af9c00223c3b014b6a5c99361302fc71218903cdd668f1be5663de4376",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Exposes a fixed Electron contextBridge API for task loading, prompt building, worker state, start/stop, output saving/collection, and renderer-ready notification.",
+      "inputs": [
+        "worker ID",
+        "state or output payload",
+        "renderer calls"
+      ],
+      "outputs": [
+        "Promises from fixed ipcRenderer.invoke channels",
+        "renderer-ready ipcRenderer.send notification",
+        "window.sfApi/sourceFactoryApi surface"
+      ],
+      "principal_functions_or_classes": [
+        "invoke",
+        "send",
+        "sfApi.loadTaskInstruction",
+        "sfApi.buildPrompt",
+        "sfApi.startWorker",
+        "sfApi.saveFullOutput"
+      ],
+      "dependencies": [
+        "electron.contextBridge",
+        "electron.ipcRenderer"
+      ],
+      "external_effects": [
+        "IPC_INVOKE",
+        "IPC_SEND",
+        "GLOBAL_WINDOW_API_EXPOSURE"
+      ],
+      "project_coupling": "HIGH: fixed legacy sf:* channel contract and worker-state/browser-output lifecycle.",
+      "duplicate_or_replacement_relation": "72 corpus copies; no exact current Active Core canonical preload file located; current button handler API overlaps but channel authority is not proven.",
+      "evidence": [
+        "ZIP/manifest/file SHA-256 PASS",
+        "Git blob SHA-1 PASS",
+        "node --check PASS",
+        "static contextBridge/channel allowlist review"
+      ],
+      "risks": [
+        "no payload/worker-ID validation in preload",
+        "setWorkerState exposes broad state mutation",
+        "collectFullOutput channel may map to a legacy placeholder",
+        "no API schema/version handshake"
+      ],
+      "restrictions": [
+        "NO_CURRENT_IPC_BINDING",
+        "NOT_PROMOTED",
+        "ADAPTER_AND_CHANNEL_FIXTURES_REQUIRED"
+      ],
+      "next_action": "Bind to the current versioned IPC contract, validate arguments, remove unsupported channels, and fixture every exposed method.",
+      "assignment_id": "SF028-W03-S04-I05",
+      "slot_item_index": 5,
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/_COMMANDER_REPORTS/COMMANDER_REPORT_PACKAGE_20260701_035338/02_LATEST_ASSEMBLY_RECORD/assembled_files/assembled_files/assembled/20260701_01_STAGE1_BROWSER/src/preload/gptPreload.js",
+      "expected_git_blob_sha1": "61c8fa449d5c4247d14504e939115b73765ad16c",
+      "duplicate_copy_count": 72
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003290",
+      "file_name": "buttonHandlers.js",
+      "sha256": "74816f3630b86c3074c430777ddb7298b864d0c1e0f6e03aa2a932a32aa7ac9e",
+      "primary_classification": "SUPERSEDED",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Large renderer controller that wires legacy worker controls plus Commander-only Stage 2 create/validate/assemble/finalize/report/open-record controls to window.sfApi and the Stage 2 result view.",
+      "inputs": [
+        "DOM buttons and inputs",
+        "window.sfApi",
+        "worker/Commander context",
+        "Stage 2 action results"
+      ],
+      "outputs": [
+        "IPC-triggering UI actions",
+        "DOM control panels",
+        "state/log callbacks",
+        "clipboard writes"
+      ],
+      "principal_functions_or_classes": [
+        "setupButtonHandlers",
+        "ensureStage2Controls",
+        "runStage2Action",
+        "handleStart",
+        "handleSaveFullOutput",
+        "handleStage2AssembleGenerated"
+      ],
+      "dependencies": [
+        "browser DOM",
+        "navigator.clipboard",
+        "window.sfApi",
+        "window.SourceFactoryStage2ResultView"
+      ],
+      "external_effects": [
+        "DOM_MUTATION",
+        "CLIPBOARD_WRITE",
+        "IPC_VIA_PRELOAD",
+        "GLOBAL_WINDOW_API_REGISTRATION"
+      ],
+      "project_coupling": "VERY_HIGH: STAGE2-W02, fixed Stage 2 controls, Commander-only flow, and legacy sfApi actions.",
+      "duplicate_or_replacement_relation": "30 corpus copies; superseded in the active repository by the narrower current src/gpt_browser_bridge/buttonHandlers.js (different Git blob, no Stage 2 control surface).",
+      "evidence": [
+        "ZIP/manifest/file SHA-256 PASS",
+        "Git blob SHA-1 PASS",
+        "node --check PASS",
+        "current Active Core buttonHandlers readback shows a smaller current surface",
+        "static Stage 2 UI review"
+      ],
+      "risks": [
+        "large mixed-responsibility controller",
+        "direct clipboard and DOM effects",
+        "legacy Stage 2 APIs may not exist",
+        "automatic dynamic panel insertion",
+        "fallback states can mask contract drift"
+      ],
+      "restrictions": [
+        "NO_COPY_OVER_CANONICAL",
+        "HISTORICAL_REFERENCE_ONLY",
+        "NO_PROMOTION"
+      ],
+      "next_action": "Use the current Active Core buttonHandlers; extract isolated helpers only through a reviewed adapter if still needed.",
+      "assignment_id": "SF028-W03-S04-I06",
+      "slot_item_index": 6,
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_02_STAGE2/src/renderer/buttonHandlers.js",
+      "expected_git_blob_sha1": "37cb334fb3d98b6a2584d284192156e6a7b55285",
+      "duplicate_copy_count": 30
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003593",
+      "file_name": "stage3PanelAttach.js",
+      "sha256": "cd9409d2251e50755148f90b61ceef10c35788c24ca3561cba0e5b48a3bc5b9c",
+      "primary_classification": "SUPERSEDED",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Detects Commander versus Worker role at DOM-ready time and auto-mounts legacy Stage 3 Commander, dispatch-inbox, and worker-return panels from global functions.",
+      "inputs": [
+        "window/document context",
+        "query-string role",
+        "body role attributes",
+        "global mount functions"
+      ],
+      "outputs": [
+        "automatic legacy Stage 3 panel mounts"
+      ],
+      "principal_functions_or_classes": [
+        "detectRole",
+        "mountPanels"
+      ],
+      "dependencies": [
+        "browser DOM",
+        "URLSearchParams",
+        "global Stage 3 panel functions"
+      ],
+      "external_effects": [
+        "DOM_READY_LISTENER",
+        "DOM_PANEL_MOUNT_VIA_GLOBALS"
+      ],
+      "project_coupling": "VERY_HIGH: legacy Stage 3 Commander/worker dispatch and return panels.",
+      "duplicate_or_replacement_relation": "30 corpus copies; superseded by current queue/claim/receipt and Stage 4 panel flows.",
+      "evidence": [
+        "ZIP/manifest/file SHA-256 PASS",
+        "Git blob SHA-1 PASS",
+        "node --check PASS",
+        "static role/mount review",
+        "current pipeline contract comparison"
+      ],
+      "risks": [
+        "unknown or blank role is treated as Worker",
+        "mounts on import/DOMContentLoaded",
+        "depends on undeclared globals",
+        "no slot assignment epoch validation"
+      ],
+      "restrictions": [
+        "NO_ACTIVE_CORE_COPY",
+        "LEGACY_STAGE3_UI_ONLY",
+        "NO_PROMOTION"
+      ],
+      "next_action": "Retain only as historical UI wiring reference; do not attach it to the current panel runtime.",
+      "assignment_id": "SF028-W03-S04-I07",
+      "slot_item_index": 7,
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_10_STAGE3_WORKER_INBOX_RETURN_FIX_APP/src/renderer/stage3PanelAttach.js",
+      "expected_git_blob_sha1": "61c5f3049451a0bd3c0cf1c3ef83abf481ec26d5",
+      "duplicate_copy_count": 30
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003874",
+      "file_name": "main.js",
+      "sha256": "21144bca3c7b0ad079bd9efbd38aeed7fa1e98ebe521b56f825ebc907e004707",
+      "primary_classification": "SUPERSEDED",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Bootstraps a legacy Electron Source Factory runtime, registers worker/Stage 2/Stage 3 IPC and Stage 3.5 menus, manages windows, and writes raw worker output under a D-drive browser layout.",
+      "inputs": [
+        "Electron app lifecycle",
+        "IPC worker IDs/payloads",
+        "SOURCE_FACTORY_ROOT environment/default"
+      ],
+      "outputs": [
+        "Electron windows and menus",
+        "IPC handlers",
+        "worker state",
+        "raw output text/JSON files"
+      ],
+      "principal_functions_or_classes": [
+        "registerIpcHandlers",
+        "saveFullOutputToDisk",
+        "registerStage35ApplicationMenu",
+        "bootApplication",
+        "setupAppLifecycle"
+      ],
+      "dependencies": [
+        "electron",
+        "fs",
+        "path",
+        "windowManager",
+        "taskInstructionManager",
+        "promptBuilder",
+        "stage2IpcHandlers",
+        "stage3IpcHandlers",
+        "stage35ApplicationMenu"
+      ],
+      "external_effects": [
+        "ELECTRON_APP_LIFECYCLE",
+        "IPC_REGISTRATION",
+        "FILESYSTEM_READ",
+        "FILESYSTEM_WRITE",
+        "APPLICATION_MENU_MUTATION"
+      ],
+      "project_coupling": "VERY_HIGH: legacy D:\\SOURCE FACTORY browsers layout, fixed Stage 2/3 modules, and Stage 3.5 menu runtime.",
+      "duplicate_or_replacement_relation": "6 corpus copies; later than early Stage 3 variants but superseded by the current Active Core queue/runtime/bridge split.",
+      "evidence": [
+        "ZIP/manifest/file SHA-256 PASS",
+        "Git blob SHA-1 PASS",
+        "node --check PASS",
+        "static require/app-lifecycle/write-path review"
+      ],
+      "risks": [
+        "app lifecycle starts at module load",
+        "hard-coded D-drive fallback",
+        "collectFullOutput returns an empty placeholder",
+        "broad coupled IPC surface",
+        "raw output write path lacks current receipt contract"
+      ],
+      "restrictions": [
+        "NO_RUNTIME_START",
+        "NO_ACTIVE_CORE_COPY",
+        "HISTORICAL_REFERENCE_ONLY"
+      ],
+      "next_action": "Do not promote; preserve only for historical IPC/menu lineage.",
+      "assignment_id": "SF028-W03-S04-I08",
+      "slot_item_index": 8,
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_STAGE3_5_UI_MENU_ROUTING_FIX_RUNTIME_APP/src/main/main.js",
+      "expected_git_blob_sha1": "1de5a5b78f834eb613cf9658b8b486c27b88be4e",
+      "duplicate_copy_count": 6
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003888",
+      "file_name": "stage35MenuCommands.js",
+      "sha256": "e959f1e401c3bfd3b1b31acd8f9e4137406f6280127661e03bc026d0c7c0b686",
+      "primary_classification": "SUPERSEDED",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Defines a UMD Stage 3.5 canonical menu-command registry with aliases, route metadata, an UNKNOWN_COMMAND_ORANGE fallback, and payload construction.",
+      "inputs": [
+        "menu command ID or alias",
+        "target/worker/meta payload"
+      ],
+      "outputs": [
+        "canonical command record",
+        "validated/normalized command ID",
+        "menu-command payload"
+      ],
+      "principal_functions_or_classes": [
+        "normalizeCommandId",
+        "getMenuCommandById",
+        "validateMenuCommandId",
+        "buildMenuCommandPayload"
+      ],
+      "dependencies": [
+        "JavaScript built-ins",
+        "Date"
+      ],
+      "external_effects": [
+        "GLOBAL_NAMESPACE_REGISTRATION_ONLY"
+      ],
+      "project_coupling": "HIGH: fixed Stage 3.5 menu categories, five worker IDs, legacy DB actions, and popup route IDs.",
+      "duplicate_or_replacement_relation": "6 corpus copies; an operator-ready sibling in this same slot (PCAGENT-AUTO-SRC-003952) is the later lineage, while current compact command authority is separate.",
+      "evidence": [
+        "ZIP/manifest/file SHA-256 PASS",
+        "Git blob SHA-1 PASS",
+        "node --check PASS",
+        "cross-variant static comparison"
+      ],
+      "risks": [
+        "fixed Worker 01-05 inventory conflicts with six-slot execution",
+        "legacy Stage 2 DB commands",
+        "unknown-command fallback uses UI color semantics",
+        "implicit timestamps",
+        "global UMD registration"
+      ],
+      "restrictions": [
+        "NO_PROMOTION",
+        "LEGACY_STAGE35_REFERENCE",
+        "DO_NOT_SELECT_AS_CANONICAL"
+      ],
+      "next_action": "Use only as lineage/reference; any reusable registry should be rebuilt from the compact canonical command contract.",
+      "assignment_id": "SF028-W03-S04-I09",
+      "slot_item_index": 9,
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_STAGE3_5_UI_MENU_ROUTING_FIX_RUNTIME_APP/src/renderer/stage35MenuCommands.js",
+      "expected_git_blob_sha1": "f6d2bfa23f713ee10041a39cbf3e3e131eda9c71",
+      "duplicate_copy_count": 6
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003895",
+      "file_name": "stage35SignalSlot.js",
+      "sha256": "b2c0753e75c2866a64afc4263803fc4cc9f4424a8ff89688c8f9306ede965b32",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Auto-mounts a Stage 3.5 signal button, normalizes signal records, renders icon/label/badge state, and dispatches/consumes custom DOM events for inbox and message refresh flows.",
+      "inputs": [
+        "signal payloads",
+        "role/worker context",
+        "custom DOM events",
+        "unread count"
+      ],
+      "outputs": [
+        "mounted signal-slot DOM",
+        "normalized signal state",
+        "custom open-inbox/refresh/rendered events",
+        "global stage35SignalSlot API"
+      ],
+      "principal_functions_or_classes": [
+        "buildSignal",
+        "mount",
+        "render",
+        "updateBadge",
+        "openInbox",
+        "bindEvents",
+        "getState"
+      ],
+      "dependencies": [
+        "browser DOM",
+        "CustomEvent",
+        "Date",
+        "window global"
+      ],
+      "external_effects": [
+        "DOM_MUTATION",
+        "CUSTOM_EVENT_DISPATCH",
+        "EVENT_LISTENER_REGISTRATION",
+        "AUTO_MOUNT",
+        "GLOBAL_WINDOW_API_REGISTRATION"
+      ],
+      "project_coupling": "HIGH: Stage 3.5 signal vocabulary, icons, event names, and global message-inbox flow.",
+      "duplicate_or_replacement_relation": "6 corpus copies; no exact current Active Core canonical match established.",
+      "evidence": [
+        "ZIP/manifest/file SHA-256 PASS",
+        "Git blob SHA-1 PASS",
+        "node --check PASS",
+        "static event/DOM lifecycle review"
+      ],
+      "risks": [
+        "auto-mount and global listener effects occur on load",
+        "Date-generated IDs",
+        "unknown signals silently become IDLE",
+        "signal color/icon vocabulary is legacy",
+        "global singleton prevents multi-instance isolation"
+      ],
+      "restrictions": [
+        "NOT_PROMOTED",
+        "ADAPTER_BEFORE_V2",
+        "NO_AUTO_MOUNT_IN_CANONICAL_CORE"
+      ],
+      "next_action": "Separate pure signal normalization from DOM mounting, inject identity/clock/event bus, and add multi-panel isolation fixtures.",
+      "assignment_id": "SF028-W03-S04-I10",
+      "slot_item_index": 10,
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_STAGE3_5_UI_MENU_ROUTING_FIX_RUNTIME_APP/src/renderer/stage35SignalSlot.js",
+      "expected_git_blob_sha1": "d1c91fddff0da21eb0cce8e8f5d159bf200ec8ed",
+      "duplicate_copy_count": 6
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003952",
+      "file_name": "stage35MenuCommands.js",
+      "sha256": "99eb5be77e80e9faae4ead2d42023347f10e2b65f8fc2f3a4f594f7aa4a0a584",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Defines the later operator-ready Stage 3.5 menu registry and builds simplified menu-command payloads.",
+      "inputs": [
+        "exact command ID",
+        "target/worker/meta payload"
+      ],
+      "outputs": [
+        "command inventory/lookups",
+        "menu-command payload with signal metadata"
+      ],
+      "principal_functions_or_classes": [
+        "getMenuCommandById",
+        "getAllMenuCommands",
+        "validateMenuCommandId",
+        "buildMenuCommandPayload"
+      ],
+      "dependencies": [
+        "JavaScript built-ins",
+        "Date"
+      ],
+      "external_effects": [
+        "GLOBAL_NAMESPACE_REGISTRATION_ONLY"
+      ],
+      "project_coupling": "HIGH: fixed Stage 3.5 menus, five worker windows, legacy DB actions and popup flow.",
+      "duplicate_or_replacement_relation": "6 corpus copies; later operator-ready variant of PCAGENT-AUTO-SRC-003888 but removes alias normalization, explicit unknown routing, and richer route/action metadata.",
+      "evidence": [
+        "ZIP/manifest/file SHA-256 PASS",
+        "Git blob SHA-1 PASS",
+        "node --check PASS",
+        "cross-variant static comparison"
+      ],
+      "risks": [
+        "fixed Worker 01-05 inventory",
+        "legacy Stage 2 DB commands",
+        "unknown IDs still generate actionable-looking payloads",
+        "missing route/action contract metadata",
+        "implicit timestamps"
+      ],
+      "restrictions": [
+        "NOT_PROMOTED",
+        "COMPACT_COMMAND_ADAPTER_REQUIRED",
+        "NO_DIRECT_MENU_BINDING"
+      ],
+      "next_action": "Adapt to the compact canonical command registry, six-slot identity, strict unknown rejection, and versioned route/action schema.",
+      "assignment_id": "SF028-W03-S04-I11",
+      "slot_item_index": 11,
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_STAGE3_5_UI_OPERATOR_READY_RUNTIME_APP/src/renderer/stage35MenuCommands.js",
+      "expected_git_blob_sha1": "f7ba7238792f7dda213abbc1bca683529810b683",
+      "duplicate_copy_count": 6
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004089",
+      "file_name": "stage4HardWindowControl.js",
+      "sha256": "bb8303c060cabfda2fa851e2f5ace7967040ae2e89334d2d3a8e4f5c518ea2ff",
+      "primary_classification": "PROJECT_BOUND",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Applies hard Electron window/menu/layout policy, globally patches BrowserWindow construction, assigns Commander/worker monitor bounds and titles, and repeatedly enforces menu/title state.",
+      "inputs": [
+        "Electron app/Menu/BrowserWindow/screen",
+        "window creation options",
+        "display topology"
+      ],
+      "outputs": [
+        "mutated Electron application menu",
+        "patched electron.BrowserWindow",
+        "window bounds/titles/menu policy",
+        "recurring keep-alive enforcement"
+      ],
+      "principal_functions_or_classes": [
+        "sf4HideNativeMenus",
+        "install",
+        "boundsForMeta",
+        "registerWindow",
+        "patchBrowserWindow",
+        "applyApplicationMenuPolicy",
+        "keepAlivePolicy"
+      ],
+      "dependencies": [
+        "electron",
+        "global",
+        "setInterval",
+        "setTimeout"
+      ],
+      "external_effects": [
+        "REQUIRE_TIME_APP_LISTENERS",
+        "REQUIRE_TIME_INTERVAL",
+        "GLOBAL_BROWSERWINDOW_MONKEYPATCH",
+        "APPLICATION_MENU_MUTATION",
+        "WINDOW_BOUNDS_AND_TITLE_MUTATION",
+        "RECURRING_INTERVAL"
+      ],
+      "project_coupling": "VERY_HIGH: Source Factory Commander/worker naming, fixed layout policy, hard Stage 4 workspace behavior.",
+      "duplicate_or_replacement_relation": "3 corpus copies; no safe current Active Core canonical match established.",
+      "evidence": [
+        "ZIP/manifest/file SHA-256 PASS",
+        "Git blob SHA-1 PASS",
+        "node --check PASS",
+        "static require-time and BrowserWindow patch review"
+      ],
+      "risks": [
+        "side effects begin before install through the leading menu-policy block",
+        "two persistent intervals are never cleared",
+        "global BrowserWindow monkeypatch",
+        "swallowed exceptions hide failure",
+        "worker sequencing is inferred from creation order",
+        "layout assumes fixed monitor patterns"
+      ],
+      "restrictions": [
+        "NO_ACTIVE_CORE_PROMOTION",
+        "PROJECT_RUNTIME_ONLY",
+        "NO_IMPORT_IN_TEST_OR_LIBRARY_CONTEXT"
+      ],
+      "next_action": "Keep project-bound; replace with an explicit lifecycle-owned window manager using disposable timers, stable slot identities, and fixtures.",
+      "assignment_id": "SF028-W03-S04-I12",
+      "slot_item_index": 12,
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4HardWindowControl.js",
+      "expected_git_blob_sha1": "02f6ffc98d8cdb339893b9785cf3150029647c21",
+      "duplicate_copy_count": 3
+    }
+  ],
+  "terminal_status": "SF_028_P0_WAVE03_SLOT04_CLASSIFICATION_PASS"
+}
