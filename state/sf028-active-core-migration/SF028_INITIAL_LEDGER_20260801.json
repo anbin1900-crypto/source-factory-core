@@ -1,0 +1,47 @@
+{
+  "object_type": "SF028_ACTIVE_CORE_MIGRATION_INITIAL_LEDGER",
+  "schema_version": "2.0.0",
+  "task_id": "SF_028_SOURCE_FACTORY_ACTIVE_CORE_MIGRATION",
+  "worker_id": "SF_028_ACTIVE_CORE_MIGRATION_WORKER_01",
+  "created_at": "2026-08-01T05:05:00Z",
+  "status": "IMPLEMENTATION_READY_LOCAL_EXECUTION_PENDING",
+  "paths": {
+    "old_root": "D:\\SOURCE FACTORY",
+    "runtime_entry": "D:\\SOURCE FACTORY\\RUN_SF4_SAFE_PANEL_ONLY.bat",
+    "new_root": "E:\\SOURCE FACTORY\\source-factory-active-core"
+  },
+  "github": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "branch": "agent/sf-028-active-core-migration",
+    "report_path_pattern": "state/sf028-active-core-migration/<run_id>/",
+    "latest_pointer": "state/sf028-active-core-migration/LATEST.json"
+  },
+  "previous_attempt_observation": {
+    "files_copied_count": 0,
+    "worker_report_present": true,
+    "verify_report_present": false,
+    "cause": "PowerShell implementation failed before copy and validation; replacement Python implementation prepared",
+    "old_root_deleted": false
+  },
+  "python_worker": {
+    "local_artifact_name": "sf028_active_core_migrate.py",
+    "version": "2.0.0",
+    "sha256": "84c6106c675afffa3d327ea7e4b0d8bbedb839f203ddc4960145fa86167f014d",
+    "synthetic_validation": {
+      "required_files_present": true,
+      "json_parse": true,
+      "python_compile": true,
+      "js_syntax": true,
+      "manifest_hash": true,
+      "forbidden_dirs_copied": 0,
+      "old_root_deleted": false
+    }
+  },
+  "gate": {
+    "runtime_execution": "NOT_RUN",
+    "pc_agent_service": "NOT_STARTED",
+    "026_oneflow_verifier": "NOT_RUN",
+    "old_root_delete": "NOT_AUTHORIZED",
+    "local_real_migration": "PENDING_USER_EXECUTION"
+  }
+}
