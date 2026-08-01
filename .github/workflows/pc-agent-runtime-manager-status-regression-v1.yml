@@ -1,0 +1,60 @@
+name: PC Agent Runtime Manager Status Regression V1
+
+on:
+  pull_request:
+    paths:
+      - 'runtime/pc_agent_runtime_v1/Manage-PcAgentRuntime.ps1'
+      - 'runtime/pc_agent_runtime_v1/Test-ManagePcAgentRuntimeOptionalProperties.ps1'
+      - '.github/workflows/pc-agent-runtime-manager-status-regression-v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-manager-status-optional-properties:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          sparse-checkout: |
+            runtime/pc_agent_runtime_v1/Manage-PcAgentRuntime.ps1
+            runtime/pc_agent_runtime_v1/Test-ManagePcAgentRuntimeOptionalProperties.ps1
+            .github/workflows/pc-agent-runtime-manager-status-regression-v1.yml
+          sparse-checkout-cone-mode: false
+
+      - name: Parse Manager and regression test with Windows PowerShell 5.1
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          if($PSVersionTable.PSEdition-ne'Desktop'-or$PSVersionTable.PSVersion.Major-ne5-or$PSVersionTable.PSVersion.Minor-ne1){
+            throw ('WINDOWS_POWERSHELL_51_REQUIRED actual='+$PSVersionTable.PSVersion)
+          }
+          $files=@(
+            'runtime/pc_agent_runtime_v1/Manage-PcAgentRuntime.ps1',
+            'runtime/pc_agent_runtime_v1/Test-ManagePcAgentRuntimeOptionalProperties.ps1'
+          )
+          foreach($file in $files){
+            $tokens=$null;$errors=$null
+            [System.Management.Automation.Language.Parser]::ParseFile($file,[ref]$tokens,[ref]$errors)|Out-Null
+            if($errors.Count-ne0){throw ('POWERSHELL_PARSE_FAILED file='+$file+' error='+$errors[0].Message)}
+          }
+          'WINDOWS_POWERSHELL_51_PARSE=PASS_2_OF_2'
+
+      - name: Run partial status and updated_at fallback regression
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          & powershell.exe -NoProfile -ExecutionPolicy Bypass -File `
+            runtime/pc_agent_runtime_v1/Test-ManagePcAgentRuntimeOptionalProperties.ps1 `
+            -ManagerPath runtime/pc_agent_runtime_v1/Manage-PcAgentRuntime.ps1
+          if($LASTEXITCODE-ne0){throw ('MANAGER_STATUS_REGRESSION_FAILED exit='+$LASTEXITCODE)}
+          'TARGET_PC_MUTATION_COUNT=0'
+          'REAL_API_CALL_COUNT=0'
+          'POSTGRESQL_APPLY_COUNT=0'
+          'PRODUCTION=false'
+          'READY=false'
+          'MERGE=false'
