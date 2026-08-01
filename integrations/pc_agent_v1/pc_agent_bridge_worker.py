@@ -5,14 +5,17 @@ import argparse
 import hashlib
 import json
 import os
+import socket
 import subprocess
+import sys
 import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, BinaryIO
 
 SCHEMA_VERSION = "YOLLA_SOURCE_FACTORY_PC_AGENT_BRIDGE_V1"
+RUNTIME_SCHEMA_VERSION = "YOLLA_PC_AGENT_BRIDGE_RUNTIME_V1"
 DEFAULT_BRIDGE_ROOT = Path(os.environ.get(
     "YOLLA_PC_AGENT_BRIDGE_ROOT",
     r"E:\YOLLA\agent\state\source-factory-bridge-v1",
@@ -58,6 +61,9 @@ class BridgePaths:
     results: Path
     failed: Path
     attempts: Path
+    control: Path
+    runtime: Path
+    recovery: Path
 
 
 def bridge_paths(root: Path) -> BridgePaths:
@@ -70,10 +76,167 @@ def bridge_paths(root: Path) -> BridgePaths:
         results=resolved / "results",
         failed=resolved / "failed",
         attempts=resolved / "attempts",
+        control=resolved / "control",
+        runtime=resolved / "runtime",
+        recovery=resolved / "recovery",
     )
-    for item in (values.requests, values.processing, values.processed, values.results, values.failed, values.attempts):
+    for item in (
+        values.requests, values.processing, values.processed, values.results,
+        values.failed, values.attempts, values.control, values.runtime, values.recovery,
+    ):
         item.mkdir(parents=True, exist_ok=True)
     return values
+
+
+class SingletonFileLock:
+    def __init__(self, path: Path) -> None:
+        self.path = path
+        self.handle: BinaryIO | None = None
+        self.locked = False
+
+    def acquire(self) -> bool:
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        handle = self.path.open("a+b")
+        handle.seek(0, os.SEEK_END)
+        if handle.tell() == 0:
+            handle.write(b"0")
+            handle.flush()
+            os.fsync(handle.fileno())
+        handle.seek(0)
+        try:
+            if os.name == "nt":
+                import msvcrt
+                msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
+            else:
+                import fcntl
+                fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except (OSError, BlockingIOError):
+            handle.close()
+            return False
+        self.handle = handle
+        self.locked = True
+        metadata = {
+            "schema_version": RUNTIME_SCHEMA_VERSION,
+            "object_type": "WORKER_LOCK_OWNER",
+            "pid": os.getpid(),
+            "host": socket.gethostname(),
+            "acquired_at": now_iso(),
+            "production": False,
+        }
+        payload = json.dumps(metadata, ensure_ascii=False, sort_keys=True).encode("utf-8")
+        handle.seek(1)
+        handle.truncate()
+        handle.write(payload)
+        handle.flush()
+        os.fsync(handle.fileno())
+        return True
+
+    def release(self) -> None:
+        if not self.handle:
+            return
+        try:
+            self.handle.seek(0)
+            if os.name == "nt":
+                import msvcrt
+                msvcrt.locking(self.handle.fileno(), msvcrt.LK_UNLCK, 1)
+            else:
+                import fcntl
+                fcntl.flock(self.handle.fileno(), fcntl.LOCK_UN)
+        finally:
+            self.handle.close()
+            self.handle = None
+            self.locked = False
+
+    def __enter__(self) -> "SingletonFileLock":
+        if not self.acquire():
+            raise RuntimeError("DUPLICATE_WORKER_INSTANCE")
+        return self
+
+    def __exit__(self, exc_type: Any, exc: Any, traceback: Any) -> None:
+        self.release()
+
+
+def unique_destination(directory: Path, name: str, suffix: str) -> Path:
+    candidate = directory / name
+    if not candidate.exists():
+        return candidate
+    stem = Path(name).stem
+    extension = Path(name).suffix
+    return directory / f"{stem}.{suffix}-{time.time_ns()}{extension}"
+
+
+def recover_processing(paths: BridgePaths) -> dict[str, Any]:
+    actions: list[dict[str, Any]] = []
+    for request_path in sorted(paths.processing.glob("*.json")):
+        try:
+            request = json.loads(request_path.read_text(encoding="utf-8"))
+            work_id = str(request.get("work_id", request_path.stem))
+        except Exception as error:
+            destination = unique_destination(paths.failed, request_path.name, "recovery-invalid")
+            os.replace(request_path, destination)
+            actions.append({
+                "status": "INVALID_PROCESSING_REQUEST_QUARANTINED",
+                "source": str(request_path),
+                "destination": str(destination),
+                "error": f"{type(error).__name__}:{error}",
+            })
+            continue
+
+        result_path = paths.results / f"{work_id}.json"
+        if result_path.exists():
+            destination = unique_destination(paths.processed, request_path.name, "recovery-result-exists")
+            os.replace(request_path, destination)
+            actions.append({
+                "status": "RESULT_EXISTS_ARCHIVED",
+                "work_id": work_id,
+                "source": str(request_path),
+                "destination": str(destination),
+                "result_path": str(result_path),
+            })
+            continue
+
+        queued_path = paths.requests / request_path.name
+        if queued_path.exists():
+            queued_hash = sha256_bytes(queued_path.read_bytes())
+            processing_hash = sha256_bytes(request_path.read_bytes())
+            destination = unique_destination(paths.processed, request_path.name, "recovery-queue-duplicate")
+            os.replace(request_path, destination)
+            actions.append({
+                "status": "QUEUE_COPY_ALREADY_EXISTS_ARCHIVED",
+                "work_id": work_id,
+                "source": str(request_path),
+                "destination": str(destination),
+                "queued_path": str(queued_path),
+                "hash_equal": queued_hash == processing_hash,
+            })
+            continue
+
+        os.replace(request_path, queued_path)
+        actions.append({
+            "status": "REQUEUED_FROM_PROCESSING",
+            "work_id": work_id,
+            "source": str(request_path),
+            "destination": str(queued_path),
+        })
+
+    receipt = {
+        "schema_version": RUNTIME_SCHEMA_VERSION,
+        "object_type": "STARTUP_RECOVERY_RECEIPT",
+        "worker_pid": os.getpid(),
+        "host": socket.gethostname(),
+        "action_count": len(actions),
+        "requeued_count": sum(item["status"] == "REQUEUED_FROM_PROCESSING" for item in actions),
+        "result_exists_archived_count": sum(item["status"] == "RESULT_EXISTS_ARCHIVED" for item in actions),
+        "queue_duplicate_archived_count": sum(item["status"] == "QUEUE_COPY_ALREADY_EXISTS_ARCHIVED" for item in actions),
+        "invalid_quarantined_count": sum(item["status"] == "INVALID_PROCESSING_REQUEST_QUARANTINED" for item in actions),
+        "actions": actions,
+        "completed_at": now_iso(),
+        "production": False,
+    }
+    receipt_name = f"RECOVERY-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')}-{os.getpid()}.json"
+    write_json_atomic(paths.recovery / receipt_name, receipt)
+    write_json_atomic(paths.runtime / "last_recovery.json", receipt)
+    return receipt
 
 
 def validate_request(request: Any) -> list[str]:
@@ -129,6 +292,8 @@ def scrub_environment(env_input: dict[str, Any]) -> dict[str, str]:
         env[name] = str(value)
     env["YOLLA_PC_AGENT_BRIDGE_EXECUTION"] = "1"
     env["YOLLA_PRODUCTION"] = "0"
+    env["PYTHONUTF8"] = "1"
+    env["PYTHONIOENCODING"] = "utf-8"
     return env
 
 
@@ -277,15 +442,31 @@ def process_request_file(request_path: Path, paths: BridgePaths) -> dict[str, An
             "status": "DUPLICATE_RESULT_ALREADY_EXISTS",
             "work_id": work_id,
             "result_path": str(result_path),
+            "production": False,
         }
-        archive = paths.processed / request_path.name
+        archive = unique_destination(paths.processed, request_path.name, "duplicate-result")
         os.replace(request_path, archive)
+        duplicate["request_archive"] = str(archive)
+        write_json_atomic(
+            paths.attempts / f"{work_id}-{request.get('attempt_id', 'attempt')}-duplicate-{time.time_ns()}.json",
+            {
+                "schema_version": RUNTIME_SCHEMA_VERSION,
+                "object_type": "DUPLICATE_SUPPRESSION_RECEIPT",
+                "work_id": work_id,
+                "attempt_id": request.get("attempt_id"),
+                "result_path": str(result_path),
+                "request_archive": str(archive),
+                "status": "DUPLICATE_RESULT_ALREADY_EXISTS",
+                "completed_at": now_iso(),
+                "production": False,
+            },
+        )
         return duplicate
 
     result = execute_request(request)
     result_receipt = write_json_atomic(result_path, result)
     archive_dir = paths.processed if result["final_status"] == "PASS" else paths.failed
-    archive_path = archive_dir / request_path.name
+    archive_path = unique_destination(archive_dir, request_path.name, "attempt")
     os.replace(request_path, archive_path)
     attempt_receipt = {
         "schema_version": SCHEMA_VERSION,
@@ -307,6 +488,7 @@ def process_request_file(request_path: Path, paths: BridgePaths) -> dict[str, An
         "work_id": work_id,
         "result_path": str(result_path),
         "exit_code": result["exit_code"],
+        "production": False,
     }
 
 
@@ -323,24 +505,148 @@ def claim_next(paths: BridgePaths) -> Path | None:
     return None
 
 
+def heartbeat(paths: BridgePaths, state: str, processed_count: int, recovery: dict[str, Any]) -> None:
+    write_json_atomic(
+        paths.runtime / "heartbeat.json",
+        {
+            "schema_version": RUNTIME_SCHEMA_VERSION,
+            "object_type": "WORKER_HEARTBEAT",
+            "state": state,
+            "pid": os.getpid(),
+            "host": socket.gethostname(),
+            "processed_count": processed_count,
+            "recovery_action_count": recovery.get("action_count", 0),
+            "updated_at": now_iso(),
+            "production": False,
+        },
+    )
+
+
+def stop_requested(paths: BridgePaths) -> bool:
+    stop_path = paths.control / "stop.request"
+    if not stop_path.exists():
+        return False
+    request_text = ""
+    try:
+        request_text = stop_path.read_text(encoding="utf-8")
+    except Exception:
+        request_text = ""
+    ack = {
+        "schema_version": RUNTIME_SCHEMA_VERSION,
+        "object_type": "WORKER_STOP_ACK",
+        "pid": os.getpid(),
+        "host": socket.gethostname(),
+        "request_text": request_text,
+        "acknowledged_at": now_iso(),
+        "production": False,
+    }
+    write_json_atomic(paths.control / "stop.ack.json", ack)
+    stop_path.unlink(missing_ok=True)
+    return True
+
+
 def run_loop(root: Path, once: bool, poll_seconds: float, max_jobs: int) -> int:
     paths = bridge_paths(root)
+    lock = SingletonFileLock(paths.runtime / "worker.lock")
+    if not lock.acquire():
+        print(json.dumps({
+            "schema_version": RUNTIME_SCHEMA_VERSION,
+            "status": "BLOCKED",
+            "code": "DUPLICATE_WORKER_INSTANCE",
+            "bridge_root": str(paths.root),
+            "pid": os.getpid(),
+            "production": False,
+        }, ensure_ascii=False, sort_keys=True))
+        return 73
+
+    started_at = now_iso()
     processed_count = 0
-    while True:
-        request = claim_next(paths)
-        if request is None:
-            if once:
+    exit_reason = "NORMAL"
+    recovery: dict[str, Any] = {}
+    identity_path = paths.runtime / "worker.json"
+    try:
+        recovery = recover_processing(paths)
+        identity = {
+            "schema_version": RUNTIME_SCHEMA_VERSION,
+            "object_type": "WORKER_RUNTIME_IDENTITY",
+            "status": "RUNNING",
+            "pid": os.getpid(),
+            "host": socket.gethostname(),
+            "bridge_root": str(paths.root),
+            "python_executable": sys.executable,
+            "argv": sys.argv,
+            "started_at": started_at,
+            "singleton_lock": str(paths.runtime / "worker.lock"),
+            "production": False,
+        }
+        write_json_atomic(identity_path, identity)
+        heartbeat(paths, "RUNNING", processed_count, recovery)
+        print(json.dumps({
+            "schema_version": RUNTIME_SCHEMA_VERSION,
+            "status": "STARTED",
+            "pid": os.getpid(),
+            "bridge_root": str(paths.root),
+            "recovery_action_count": recovery.get("action_count", 0),
+            "production": False,
+        }, ensure_ascii=False, sort_keys=True))
+
+        last_heartbeat = 0.0
+        while True:
+            if stop_requested(paths):
+                exit_reason = "STOP_REQUEST"
                 break
-            time.sleep(max(0.05, poll_seconds))
-            continue
-        result = process_request_file(request, paths)
-        print(json.dumps(result, ensure_ascii=False, sort_keys=True))
-        processed_count += 1
-        if max_jobs > 0 and processed_count >= max_jobs:
-            break
-        if once:
-            break
-    return 0
+
+            now_monotonic = time.monotonic()
+            if now_monotonic - last_heartbeat >= 1.0:
+                heartbeat(paths, "RUNNING", processed_count, recovery)
+                last_heartbeat = now_monotonic
+
+            request = claim_next(paths)
+            if request is None:
+                if once:
+                    exit_reason = "ONCE_NO_REQUEST"
+                    break
+                time.sleep(max(0.05, poll_seconds))
+                continue
+
+            heartbeat(paths, "PROCESSING", processed_count, recovery)
+            result = process_request_file(request, paths)
+            print(json.dumps(result, ensure_ascii=False, sort_keys=True))
+            processed_count += 1
+            heartbeat(paths, "RUNNING", processed_count, recovery)
+
+            if max_jobs > 0 and processed_count >= max_jobs:
+                exit_reason = "MAX_JOBS"
+                break
+            if once:
+                exit_reason = "ONCE_COMPLETE"
+                break
+
+        return 0
+    except KeyboardInterrupt:
+        exit_reason = "KEYBOARD_INTERRUPT"
+        return 0
+    finally:
+        shutdown = {
+            "schema_version": RUNTIME_SCHEMA_VERSION,
+            "object_type": "WORKER_SHUTDOWN_RECEIPT",
+            "status": "STOPPED",
+            "pid": os.getpid(),
+            "host": socket.gethostname(),
+            "bridge_root": str(paths.root),
+            "started_at": started_at,
+            "stopped_at": now_iso(),
+            "processed_count": processed_count,
+            "exit_reason": exit_reason,
+            "production": False,
+        }
+        try:
+            write_json_atomic(paths.runtime / "last_shutdown.json", shutdown)
+            heartbeat(paths, "STOPPED", processed_count, recovery)
+            identity_path.unlink(missing_ok=True)
+        finally:
+            lock.release()
+        print(json.dumps(shutdown, ensure_ascii=False, sort_keys=True))
 
 
 def parse_args() -> argparse.Namespace:
