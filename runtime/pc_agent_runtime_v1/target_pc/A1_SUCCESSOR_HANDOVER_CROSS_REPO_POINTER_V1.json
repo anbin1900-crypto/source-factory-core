@@ -1,0 +1,39 @@
+{
+  "schema_version": "YOLLA_A1_SUCCESSOR_HANDOVER_CROSS_REPO_POINTER_V1",
+  "status": "PASS",
+  "terminal": "A1_SUCCESSOR_HANDOVER_READY_FOR_ACCEPTANCE",
+  "control_repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+  "control_pull_request": 142,
+  "control_branch": "command/production-transition-validation-v1",
+  "handover_document": {
+    "path": "COMMAND_CENTER/REPORTS/PRODUCTION_TRANSITION_VALIDATION/A1_SUCCESSOR_HANDOVER_V1/A1_SUCCESSOR_HANDOVER_AND_OPERATING_PLAYBOOK_V1.md",
+    "commit": "81d964825a46d259a9fa96a0f7e78972292e6d58",
+    "blob": "aad1d879f9a0ee2e7689ecc0a33f47016158eae1"
+  },
+  "handover_authority": {
+    "path": "COMMAND_CENTER/REPORTS/PRODUCTION_TRANSITION_VALIDATION/A1_SUCCESSOR_HANDOVER_V1/A1_SUCCESSOR_HANDOVER_AUTHORITY_V1.json",
+    "commit": "b5ff64d9ff57ea62eaaeed546a9355c55bd61197",
+    "blob": "074891c7367ee587d827f08d24f3c4fe3d51caf1"
+  },
+  "latest_pointer": {
+    "path": "COMMAND_CENTER/REPORTS/PRODUCTION_TRANSITION_VALIDATION/A1_SUCCESSOR_HANDOVER_V1/LATEST_A1_SUCCESSOR_HANDOVER_POINTER.json",
+    "commit": "71754790cb598e5ab9d6f38ed51049952b0775c2",
+    "blob": "fd374551fad97ad669c181535a8142a59495cd9a"
+  },
+  "successor_acceptance_template": {
+    "path": "COMMAND_CENTER/REPORTS/PRODUCTION_TRANSITION_VALIDATION/A1_SUCCESSOR_HANDOVER_V1/A1_SUCCESSOR_ACCEPTANCE_TEMPLATE_V1.json",
+    "commit": "1791a5fc6b94ff39807d020602ae385c056c52ab",
+    "blob": "23bfe503485b5f5fc4ce923b23644b4127c0a34f"
+  },
+  "source_factory_pull_request": 3,
+  "source_factory_branch": "integration/source-factory-pc-agent-api-db-v1",
+  "observed_source_factory_head_before_cross_pointer": "a5527fd670d9d6c46f1f56e29910d394984b003e",
+  "pc_agent_runtime_terminal": "A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED",
+  "incoming_a1_must_refetch_current_source_factory_head": true,
+  "incoming_a1_must_preserve_pr_open_draft_unmerged": true,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "next_state": "WAIT_FOR_NEW_A1_ACCEPTANCE_AND_CURRENT_REMOTE_CONFLICT_CHECK",
+  "recorded_at": "2026-08-02T04:55:00+09:00"
+}
