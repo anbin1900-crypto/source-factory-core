@@ -10,6 +10,8 @@ from typing import Any
 REQUIRED_FILES = {
     "contract": "integrations/runtime_acceptance_v1/R11_ACTIVE_RUNTIME_ACCEPTANCE_CONTRACT_V1.json",
     "runner": "integrations/runtime_acceptance_v1/Invoke-R11ActiveRuntimeAcceptance.ps1",
+    "runner_common": "integrations/runtime_acceptance_v1/R11RuntimeCommon.ps1",
+    "runner_tests": "integrations/runtime_acceptance_v1/R11RuntimeTests.ps1",
     "live_test": "integrations/runtime_acceptance_v1/testLiveActiveCoreStage4HandlerBridgeV1.js",
     "ci_test": "integrations/runtime_acceptance_v1/test_r11_runtime_acceptance.py",
     "worker": "integrations/pc_agent_v1/pc_agent_bridge_worker.py",
@@ -33,6 +35,8 @@ def validate(package_root: Path) -> dict[str, Any]:
 
     contract = json.loads(paths["contract"].read_text(encoding="utf-8"))
     runner = paths["runner"].read_text(encoding="utf-8")
+    runner_common = paths["runner_common"].read_text(encoding="utf-8")
+    runner_tests = paths["runner_tests"].read_text(encoding="utf-8")
     live_test = paths["live_test"].read_text(encoding="utf-8")
     ci_test = paths["ci_test"].read_text(encoding="utf-8")
     worker = paths["worker"].read_text(encoding="utf-8")
@@ -103,25 +107,40 @@ def validate(package_root: Path) -> dict[str, Any]:
         if marker not in worker:
             findings.append({"code": "WORKER_MARKER_MISSING", "path": marker})
 
-    runner_markers = [
-        "Assert-NoExistingRuntime",
-        "Start-Runtime",
-        "Stop-Runtime",
-        "Invoke-LiveHandlerRuntime",
-        "Test-DuplicateSuppression",
-        "Test-RestartRecovery",
-        "Test-SingletonLock",
-        "Test-ApplyBackupAuthority",
-        "R11_ACTIVE_RUNTIME_BOOT_RESTART_RECOVERY=PASS",
-        "REAL_API_CALL_COUNT=0",
-        "POSTGRESQL_APPLY_COUNT=0",
-        "PRODUCTION=false",
-        "READY=false",
-        "MERGE=false",
-    ]
-    for marker in runner_markers:
-        if marker not in runner:
-            findings.append({"code": "RUNNER_MARKER_MISSING", "path": marker})
+    runner_markers = {
+        "runner_common": [
+            "Assert-NoExistingRuntime",
+            "Start-Runtime",
+            "Stop-Runtime",
+            "Invoke-CapturedProcess",
+        ],
+        "runner_tests": [
+            "Invoke-LiveHandlerRuntime",
+            "Test-DuplicateSuppression",
+            "Test-RestartRecovery",
+            "Test-SingletonLock",
+            "Test-ApplyBackupAuthority",
+        ],
+        "runner": [
+            "R11RuntimeCommon.ps1",
+            "R11RuntimeTests.ps1",
+            "R11_ACTIVE_RUNTIME_BOOT_RESTART_RECOVERY=PASS",
+            "REAL_API_CALL_COUNT=0",
+            "POSTGRESQL_APPLY_COUNT=0",
+            "PRODUCTION=false",
+            "READY=false",
+            "MERGE=false",
+        ],
+    }
+    runner_sources = {
+        "runner_common": runner_common,
+        "runner_tests": runner_tests,
+        "runner": runner,
+    }
+    for source_name, markers in runner_markers.items():
+        for marker in markers:
+            if marker not in runner_sources[source_name]:
+                findings.append({"code": "RUNNER_MARKER_MISSING", "path": f"{source_name}:{marker}"})
 
     live_markers = [
         "handleStage4DispatchNextPrompt",
@@ -174,7 +193,11 @@ def validate(package_root: Path) -> dict[str, Any]:
             r"childProcess\.exec\(",
         ],
     }
-    sources = {"worker": worker, "runner": runner, "live_test": live_test}
+    sources = {
+        "worker": worker,
+        "runner": runner + runner_common + runner_tests,
+        "live_test": live_test,
+    }
     for source_name, patterns in forbidden.items():
         for pattern in patterns:
             if re.search(pattern, sources[source_name], re.I):
