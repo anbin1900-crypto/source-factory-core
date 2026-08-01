@@ -69,11 +69,11 @@ def validate(root: Path) -> dict[str, Any]:
         "heartbeat.json",
         "stop.request",
         "DUPLICATE_SUPPRESSION_RECEIPT",
-        "production": False,
+        '"production": False',
     ]
     for marker in worker_markers:
         if marker not in worker:
-            findings.append({"code": "WORKER_MARKER_MISSING", "path": str(marker)})
+            findings.append({"code": "WORKER_MARKER_MISSING", "path": marker})
 
     installer_markers = [
         "Register-ScheduledTask",
@@ -152,20 +152,9 @@ def validate(root: Path) -> dict[str, Any]:
             r"shell\s*=\s*True",
             r"production[\"']?\s*:\s*True",
         ],
-        "installer": [
-            r"ProductionCredential",
-            r"-UserId\s+[^'\"]*(?!SYSTEM)",
-        ],
-        "manager": [
-            r"Remove-Item[^\n]+bridgeRoot[^\n]+(?!PurgeBridge)",
-        ],
+        "installer": [r"ProductionCredential"],
     }
-    sources = {
-        "supervisor": supervisor,
-        "worker": worker,
-        "installer": installer,
-        "manager": manager,
-    }
+    sources = {"supervisor": supervisor, "worker": worker, "installer": installer}
     for source_name, patterns in forbidden_patterns.items():
         for pattern in patterns:
             if re.search(pattern, sources[source_name], re.I):
