@@ -20,6 +20,11 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            integrations/pc_agent_v1/Invoke-D1OfficialFixtureLayoutCorrectionR5.ps1
+            integrations/target_pc_failures_v1/R4_D1_EXACT_LEDGER_LAYOUT_SAFE_FAIL_V1_20260801.json
+            .github/workflows/source-factory-r5-d1-layout-correction.yml
 
       - name: Parse R5 PowerShell source
         shell: powershell
