@@ -1,0 +1,54 @@
+{
+  "object_type": "SF028_VERIFY_ACTIVE_CORE_REPORT",
+  "schema_version": "2.0.0",
+  "run_id": "SF028_ACTIVE_CORE_20260801_142027",
+  "generated_at": "2026-08-01T05:20:40+00:00",
+  "old_root": "D:\\SOURCE FACTORY",
+  "new_root": "E:\\SOURCE FACTORY\\source-factory-active-core",
+  "old_root_deleted": false,
+  "required_files_present": false,
+  "required_files_missing": [
+    "rules/powershell51",
+    "src/pc_agent/local_command_runner.py",
+    "src/pc_agent/local_pc_agent_mvp.py",
+    "src/queue/dailyQueueReader.js",
+    "src/queue/local_claim_store.py",
+    "src/queue/local_worker_lifecycle.py",
+    "src/queue/terminal_receipt_store.py",
+    "src/runtime_pipeline/SOURCE_FACTORY_RUNTIME_PIPELINE_CONTRACT_V1.json",
+    "src/runtime_pipeline/sourceFactoryRuntimePipelineRegistry.js"
+  ],
+  "json_parse": {
+    "pass": true,
+    "checked": 9,
+    "failures": []
+  },
+  "python_compile": {
+    "pass": true,
+    "checked": 3,
+    "failures": []
+  },
+  "js_syntax": {
+    "pass": true,
+    "checked": 75,
+    "node_found": true,
+    "failures_or_not_run": []
+  },
+  "manifest_hash": {
+    "pass": true,
+    "checked": 143,
+    "mismatches": []
+  },
+  "forbidden_copied_dirs_count": 0,
+  "forbidden_copied_paths": [],
+  "copy_failures": [],
+  "package_seed_present": true,
+  "package_seed_paths": [
+    "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package.json"
+  ],
+  "node_modules_copied": false,
+  "runtime_dependency_state": "INSTALL_REQUIRED",
+  "runtime_launch_ready": false,
+  "source_seed_ready": false,
+  "new_root_ready": false
+}
