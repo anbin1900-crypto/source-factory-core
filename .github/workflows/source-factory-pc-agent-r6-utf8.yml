@@ -1,0 +1,71 @@
+name: Source Factory PC Agent R6 UTF8 Gate
+
+on:
+  pull_request:
+    paths:
+      - 'integrations/target_pc_runners/r6/**'
+      - '.github/workflows/source-factory-pc-agent-r6-utf8.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-r6-python-utf8:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Validate R6 contract
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          $path='integrations/target_pc_runners/r6/R6_PYTHON_UTF8_EXECUTION_CONTRACT_V1.json'
+          $contract=Get-Content -LiteralPath $path -Raw -Encoding UTF8 | ConvertFrom-Json
+          if($contract.runner_version -ne 'R6'){throw 'R6_RUNNER_VERSION_INVALID'}
+          if($contract.runner_sha256 -ne '652cef2a4c9f81aeecedcb211827dc2141b167e02e6b0695de2ce9c09bd6fd72'){throw 'R6_RUNNER_SHA_INVALID'}
+          if($contract.required_environment.PYTHONUTF8 -ne '1'){throw 'R6_PYTHONUTF8_INVALID'}
+          if($contract.required_environment.PYTHONIOENCODING -ne 'utf-8'){throw 'R6_PYTHONIOENCODING_INVALID'}
+          if([int]$contract.required_invocation.direct_python_call_count -ne 7){throw 'R6_DIRECT_CALL_COUNT_INVALID'}
+          if($contract.failure_corrected.d1_source_mutated -ne $false){throw 'R6_D1_SOURCE_MUTATION_FORBIDDEN'}
+          if($contract.boundary.production -ne $false -or $contract.boundary.ready -ne $false -or $contract.boundary.merge -ne $false){throw 'R6_BOUNDARY_INVALID'}
+          'R6_CONTRACT=PASS'
+
+      - name: Windows PowerShell 5.1 parse
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          if($PSVersionTable.PSEdition -ne 'Desktop' -or $PSVersionTable.PSVersion.Major -ne 5){throw 'WINDOWS_POWERSHELL_51_REQUIRED'}
+          $file='integrations/target_pc_runners/r6/Test-R6PythonUtf8Policy.ps1'
+          $tokens=$null
+          $errors=$null
+          [System.Management.Automation.Language.Parser]::ParseFile($file,[ref]$tokens,[ref]$errors)|Out-Null
+          if($errors.Count-ne0){throw ('POWERSHELL_PARSE_FAILED:' + $errors[0].Message)}
+          'WINDOWS_POWERSHELL_51_PARSE=PASS'
+
+      - name: Run R6 Python UTF8 policy
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          & powershell.exe -NoProfile -ExecutionPolicy Bypass -File integrations/target_pc_runners/r6/Test-R6PythonUtf8Policy.ps1 -PythonExe python
+          if($LASTEXITCODE -ne 0){throw ('R6_UTF8_POLICY_EXIT=' + $LASTEXITCODE)}
+
+      - name: Record safety boundary
+        shell: powershell
+        run: |
+          'WORKING_COPY_APPLY_COUNT=0'
+          'ACTIVE_CORE_MUTATION_COUNT=0'
+          'PC_AGENT_EXECUTION_COUNT=0'
+          'API_FIXTURE_EXECUTION_COUNT=0'
+          'DATABASE_FIXTURE_WRITE_COUNT=0'
+          'PRODUCTION=false'
+          'READY=false'
+          'MERGE=false'
