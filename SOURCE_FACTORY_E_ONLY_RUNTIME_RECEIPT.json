@@ -1,0 +1,79 @@
+{
+  "object_type": "SOURCE_FACTORY_E_ONLY_RUNTIME_RECEIPT",
+  "version": "2026-08-01.receipt.v1",
+  "status": "PASS_E_ONLY_RUNTIME",
+  "execution_time": {
+    "process_start_time_local": "2026-08-01T17:24:02+09:00",
+    "source": "Windows process StartTime output provided by user"
+  },
+  "launcher": {
+    "path": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038\\RUN_E_SF4_SAFE_PANEL_E_ONLY.bat",
+    "status": "E_ONLY_LAUNCHER_CREATED_AND_USED"
+  },
+  "electron_binary": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038\\node_modules\\electron\\dist\\electron.exe",
+  "main_entry": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038\\safe_panel_v10\\safe_panel_main.js",
+  "renderer_app_path": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038\\safe_panel_v10",
+  "processes_observed": [
+    {
+      "process_id": 12976,
+      "role": "main",
+      "command_line_contains": [
+        "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038\\node_modules\\electron\\dist\\electron.exe",
+        "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038\\safe_panel_v10\\safe_panel_main.js"
+      ]
+    },
+    {
+      "process_id": 34996,
+      "role": "renderer",
+      "command_line_contains": [
+        "--app-path=E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038\\safe_panel_v10"
+      ]
+    },
+    {
+      "process_id": 44056,
+      "role": "gpu-process",
+      "command_line_contains": [
+        "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038\\node_modules\\electron\\dist\\electron.exe"
+      ]
+    },
+    {
+      "process_id": 28540,
+      "role": "network-service",
+      "command_line_contains": [
+        "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038\\node_modules\\electron\\dist\\electron.exe"
+      ]
+    }
+  ],
+  "health": {
+    "panel_visible_by_user_report": true,
+    "electron_process_running_from_E": true,
+    "main_entry_from_E": true,
+    "renderer_app_path_from_E": true,
+    "exit_status": "RUNNING_AT_OBSERVATION_TIME",
+    "final_health_status": "PASS_E_ONLY_RUNTIME"
+  },
+  "dependency_counts": {
+    "d_source_dependency_count": 0,
+    "d_electron_dependency_count": 0,
+    "e_source_dependency_count": 1,
+    "e_electron_dependency_count": 1,
+    "note": "C:\\Users\\76kor\\AppData\\Roaming\\Electron is Electron user data, not source or binary dependency."
+  },
+  "project_panel_result": {
+    "safe_panel_visible": true,
+    "project_panel_identity_source_code_present_in_snapshot": true,
+    "getProjectPanelIdentity_present": true,
+    "runtime_event_registry_present": true,
+    "source_partial_present": true,
+    "new_click_runtime_probe_in_this_receipt": false,
+    "note": "This receipt closes E-only process authority. Project Panel UI lifecycle proof was previously recorded; this receipt does not create a new audit."
+  },
+  "stage4_binding_result": {
+    "binding_controller": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038\\safe_panel_v10\\ipc\\stage4StationBindingHandlers.js",
+    "dispatch_function": "handleStage4DispatchNextPrompt",
+    "execution_function": "handleStage4RunCheck",
+    "storage_function": "handleStage4AppendStationRecords",
+    "status": "BINDING_PATHS_IDENTIFIED_PC_AGENT_ADAPTER_PENDING"
+  },
+  "final_status": "PASS_E_ONLY_RUNTIME_PC_AGENT_PENDING"
+}
