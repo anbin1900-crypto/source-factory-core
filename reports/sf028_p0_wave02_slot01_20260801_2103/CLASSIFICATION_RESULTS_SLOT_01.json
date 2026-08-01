@@ -1,0 +1,789 @@
+{
+  "schema_version": "SOURCE_FACTORY_SF028_P0_WAVE02_SLOT01_CLASSIFICATION_V1",
+  "generated_at_kst": "2026-08-01T21:03:05+09:00",
+  "assignment_id": "SF028-P0-W02-S01-IMMEDIATE-20260801-2055KST",
+  "task_id": "SF_028_P0_WAVE_02_SLOT_01_CLASSIFICATION",
+  "worker_id": "SLOT_01_SF028_P0_WAVE2_CLASSIFICATION_WORKER",
+  "wave": 2,
+  "slot": 1,
+  "authority": {
+    "wave_01_close_open_wave_02_commit": "7381089ec627267f9155bc7e5c39784734651097",
+    "immediate_prompt_commit": "da37b054d4d26e033ab7a6f05690c6200866f8bd",
+    "batch_commit": "d2b6d94cd94c64e906816e70681a0393f2d7d218",
+    "superseded_hold_prompt_commit": "fd30b73ac43afab764863738f095064e4a474942",
+    "drive_file_id": "1QWNOtKLWF3tdCMv8t1_SAkpGh28Egh-d",
+    "zip_file_name": "SF028_P0_EXTRACT_20260801_062137_WAVE_02_SLOT_01.zip",
+    "zip_size_bytes": 58902,
+    "zip_sha256": "2082f546b0f2432dd6dbdda133484cec12bd5e000fc28b45d9b46ffc80cde28b"
+  },
+  "package_verification": {
+    "zip_name": "PASS",
+    "zip_size": "PASS",
+    "zip_sha256": "PASS",
+    "manifest_json_parse": "PASS",
+    "manifest_expected_item_count": 12,
+    "manifest_packaged_item_count": 12,
+    "assigned_source_id_match": "PASS_12_OF_12",
+    "unique_source_id_count": 12,
+    "source_hash_match_count": 12,
+    "source_hash_error_count": 0,
+    "javascript_syntax_pass_count": 11,
+    "javascript_syntax_fail_count": 0,
+    "powershell_parser_status": "NOT_AVAILABLE_IN_WORKER_RUNTIME",
+    "source_execution_count": 0,
+    "dependency_installation_count": 0
+  },
+  "terminal_status": "SF_028_P0_WAVE02_SLOT01_CLASSIFICATION_PASS",
+  "classification_summary": {
+    "DIRECT_REUSE": 6,
+    "PROJECT_BOUND": 2,
+    "ADAPTER_REQUIRED": 2,
+    "SUPERSEDED": 1,
+    "REFERENCE_ONLY": 1,
+    "EXACT_DUPLICATE": 0,
+    "REINSPECTION_REQUIRED": 0,
+    "REJECTED": 0,
+    "SANITIZE_REQUIRED": 0
+  },
+  "candidate_count": 12,
+  "candidates": [
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000690",
+      "assignment_id": "SF028-W02-S01-I01",
+      "file_name": "promptQueueManager.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/src/shared/stage4/promptQueueManager.js",
+      "sha256": "5b5a5fd7d4c6121effe4433eeecff2c0973d5a26bee6cb00e2e3a164905d9bd9",
+      "git_blob_sha1": "8c365f5f7dbda6f4cd0629b4d12fb75804ab8aee",
+      "size_bytes": 19405,
+      "duplicate_copy_count": 3,
+      "actual_function": "Maintains an in-memory prompt queue with normalized package/worker metadata, stable send order, deduplication, dequeue-to-output-waiting transition, status updates, retry/error metadata, and queue summaries.",
+      "principal_symbols": [
+        "createPromptQueue(input)",
+        "enqueuePrompt(queue, promptInput)",
+        "dequeueNextPrompt(queue)",
+        "markPromptStatus(queue, promptId, nextStatus, patchInput)",
+        "makePromptDedupeKey(input)",
+        "preventDuplicatePromptQueueItem(items, candidate)"
+      ],
+      "inputs": [
+        "prompt package context",
+        "prompt item arrays",
+        "status transitions",
+        "output/gate/error patches"
+      ],
+      "outputs": [
+        "normalized queue object",
+        "next prompt",
+        "queue summary",
+        "validation errors/warnings"
+      ],
+      "imports_dependencies": [],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": false,
+        "notes": "Pure in-memory operations; uses current time for IDs/timestamps."
+      },
+      "source_factory_coupling": [
+        "Stage 4 prompt package IDs/versions",
+        "worker slot/ID/function class",
+        "target_stage",
+        "PANEL/COMMANDER/WORKER terminal types"
+      ],
+      "duplicate_superseded_relation": "Manifest duplicate_copy_count=3. No second packaged copy or current-repository exact hash match was proven in this assignment.",
+      "primary_classification": "DIRECT_REUSE",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "CommonJS module has no imports or I/O",
+        "Implements prompt_package_id/version, worker_slot, worker_function_class, target_stage, dedupe_key and ordered send lifecycle",
+        "Matches the compact Prompt Queue / Sequential Sender separation without sending prompts itself"
+      ],
+      "risks_restrictions": [
+        "Stable hash is non-cryptographic and collision handling is not explicit",
+        "Queue is in-memory and does not provide persistence or multi-process locking",
+        "Default target stage is legacy-specific but overrideable"
+      ],
+      "next_action": "Place in the V2 fixture queue for dedupe, send-order, retry, and six-slot package cases; keep promotion_status NOT_PROMOTED.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000838",
+      "assignment_id": "SF028-W02-S01-I02",
+      "file_name": "renderer.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/_COMMANDER_REPORTS/COMMANDER_REPORT_PACKAGE_20260701_235518/02_LATEST_ASSEMBLY_RECORD/rollback/rollback/src/renderer/renderer.js",
+      "sha256": "d71df77902ef30d11da29c1256dbb7c7a368d11b84f532d78ac4694e6648d84e",
+      "git_blob_sha1": "fbb55265eff7d17fa6825580dac634a728fab44f",
+      "size_bytes": 18722,
+      "duplicate_copy_count": 93,
+      "actual_function": "Initializes a legacy Electron renderer for one Commander plus six Worker windows, embeds a ChatGPT webview, loads task instructions and worker state through window.sfApi, binds UI helpers/buttons, renders a Commander board, and starts refresh timers.",
+      "principal_symbols": [
+        "resolveContext()",
+        "configureGptWebview()",
+        "loadTaskInstruction(reason)",
+        "refreshWorkerState()",
+        "refreshCommanderBoard()",
+        "setupButtons()",
+        "initialize()"
+      ],
+      "inputs": [
+        "DOM with fixed element IDs",
+        "query/injected worker context",
+        "window.sfApi",
+        "SourceFactoryStatusView/ButtonHandlers/Stage2ResultView globals"
+      ],
+      "outputs": [
+        "DOM status/task updates",
+        "webview configuration",
+        "periodic state refresh",
+        "Commander board rendering"
+      ],
+      "imports_dependencies": [
+        "Electron webview DOM",
+        "window.sfApi",
+        "window.SourceFactoryStatusView",
+        "window.SourceFactoryButtonHandlers",
+        "window.SourceFactoryStage2ResultView"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": true,
+        "database": false,
+        "browser": true,
+        "notes": "Loads chatgpt.com in an Electron webview, loads local scripts, calls renderer APIs, and starts timers when executed."
+      },
+      "source_factory_coupling": [
+        "Fixed COMMANDER + WORKER_01..06 identity model",
+        "legacy STAGE2-W02 defaults",
+        "specific HTML element IDs",
+        "persist:source-factory-gpt session partition",
+        "legacy seven-window renderer layout"
+      ],
+      "duplicate_superseded_relation": "Original path is a nested rollback/assembly renderer and manifest duplicate_copy_count=93. Exact canonical replacement hash was not established, so it is not labeled EXACT_DUPLICATE.",
+      "primary_classification": "PROJECT_BOUND",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "Immediately initializes on DOM ready",
+        "Hard-codes legacy worker IDs and Stage 2 task defaults",
+        "Requires a specific Electron/DOM/preload contract rather than a reusable model API"
+      ],
+      "risks_restrictions": [
+        "Direct reuse would couple Active Core to obsolete DOM and preload names",
+        "Browser/network activity occurs if executed",
+        "Fixed worker numbering conflicts with execution-slot semantics unless adapted"
+      ],
+      "next_action": "Keep only as project-layout reference; redesign renderer binding against current SAFE Panel, slot identity, and current preload API before any reuse.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003317",
+      "assignment_id": "SF028-W02-S01-I03",
+      "file_name": "validationGate.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_03_STAGE2_INTEGRATED/src/core/validationGate.js",
+      "sha256": "90ad1a88611fd205d0f5a9ffd923b7a86a0638f5b215b1adae10ebcc0797775b",
+      "git_blob_sha1": "7f11ce7a1b1ddf6dc9ae8b722b0983420f12424d",
+      "size_bytes": 44231,
+      "duplicate_copy_count": 3,
+      "actual_function": "Validates a legacy Stage 2 generated extraction batch by checking required metadata files, paths, hashes, rejected/conflict folders, placeholder text, forbidden-root access, and manifest metrics, then applies two inline runtime/path-fix wrappers to validation results.",
+      "principal_symbols": [
+        "validateGenerated(generatedPath)",
+        "validateGeneratedPathString(generatedPath)",
+        "validateOriginalPath(...) ",
+        "validateFileHashes(...) ",
+        "scanContentFiles(...) ",
+        "finalizeValidation(...)"
+      ],
+      "inputs": [
+        "generated/YYYYMMDD_NN directory",
+        "ORIGINAL_PATH_MAP.json",
+        "GENERATION_MANIFEST.json",
+        "FILE_HASHES.json",
+        "EXTRACTION_REPORT.json"
+      ],
+      "outputs": [
+        "BLUE/ORANGE/RED validation result with checks, path/hash/content findings, and summary metrics"
+      ],
+      "imports_dependencies": [
+        "fs",
+        "path",
+        "crypto",
+        "./fileOutputRuleChecker",
+        "process.env.SOURCE_FACTORY_ROOT"
+      ],
+      "external_effects": {
+        "file": true,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": false,
+        "notes": "Recursively reads files and computes hashes; no production writes were identified."
+      },
+      "source_factory_coupling": [
+        "D:\\SOURCE FACTORY default",
+        "legacy generated/YYYYMMDD_NN layout",
+        "Stage 2 metadata filenames and status-color rules",
+        "inline STAGE2 runtime-fix wrappers"
+      ],
+      "duplicate_superseded_relation": "Manifest duplicate_copy_count=3. The candidate is an assembled Stage 2 gate with accumulated inline patches; no exact current canonical duplicate was proven.",
+      "primary_classification": "PROJECT_BOUND",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "Requires fileOutputRuleChecker not packaged in this slot",
+        "Contains legacy Stage 2 runtime and path-fix IIFEs that replace module.exports.validateGenerated",
+        "Validation policy is bound to an old extraction folder contract"
+      ],
+      "risks_restrictions": [
+        "Direct reuse may silently downgrade path findings through legacy patch logic",
+        "Hard-coded layout and root assumptions do not match compact Active Core migration",
+        "Large synchronous recursive scans can block a main process"
+      ],
+      "next_action": "Retain as Stage 2 evidence/reference for gate design; extract only independently reviewed checks into a new compact-contract validator.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004050",
+      "assignment_id": "SF028-W02-S01-I04",
+      "file_name": "stage4GlobalProjectSnapshot.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/panelControl/stage4GlobalProjectSnapshot.js",
+      "sha256": "6ba509206ef098edaae4b8d4898c5da48801b21825ee14136ceec808ac79e728",
+      "git_blob_sha1": "888c57124b3048c4bb8df3ca148c61a1f3d0240e",
+      "size_bytes": 7550,
+      "duplicate_copy_count": 3,
+      "actual_function": "Creates a JSON-safe, read-only global project snapshot summarizing prompt progress, worker progress, Lao/Taera observations, pending approvals, batch counts, project/panel identity, and handoff metadata.",
+      "principal_symbols": [
+        "createGlobalProjectSnapshot(state, options)",
+        "summarizePromptProgress(state)",
+        "summarizeWorkerProgress(state)",
+        "summarizeLaoTaeraState(state)",
+        "summarizePendingApprovals(state)"
+      ],
+      "inputs": [
+        "project runtime state",
+        "snapshot options"
+      ],
+      "outputs": [
+        "stage4.global_project_snapshot.v1 object with read-only integrity flags and summaries"
+      ],
+      "imports_dependencies": [],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": false,
+        "notes": "Pure in-memory transformation; reads current time for created_at."
+      },
+      "source_factory_coupling": [
+        "Project/panel identity",
+        "Stage 4 prompt/worker batches",
+        "Lao/Taera state",
+        "read-only handoff snapshot"
+      ],
+      "duplicate_superseded_relation": "Manifest duplicate_copy_count=3; no exact duplicate is present in the package.",
+      "primary_classification": "DIRECT_REUSE",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "No imports or I/O",
+        "Explicit project_state_read_only=true and project_state_modified=false",
+        "Accepts generic state/options and tolerates missing fields"
+      ],
+      "risks_restrictions": [
+        "Snapshot schema still includes legacy pending-approval summaries",
+        "Field names should be checked against the current Project Panel lifecycle registry",
+        "Timestamp-based fallback snapshot IDs are not stable identities"
+      ],
+      "next_action": "Queue V2 fixtures using current Project Panel identity/lifecycle states and verify Lao is treated as a Worker/Commander auxiliary source, not a Project Panel child.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004055",
+      "assignment_id": "SF028-W02-S01-I05",
+      "file_name": "stage4LaoSourceExtractor.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/panelControl/stage4LaoSourceExtractor.js",
+      "sha256": "c2f02c163883a9359975f26297040585372cfae4fd88918592003e31c9a084cf",
+      "git_blob_sha1": "e899950f2521c6edafbc11ec519d3a9a057f7afe",
+      "size_bytes": 10446,
+      "duplicate_copy_count": 3,
+      "actual_function": "Extracts SOURCE_FILE candidates from Lao raw output, delegates block parsing and source-unit creation, skips invalid blocks, records warnings/errors, detects duplicate paths, and produces an extraction summary.",
+      "principal_symbols": [
+        "extractLaoSourceCandidates(rawOutput, context)",
+        "createSourceUnitsFromParseResult(parseResult, context)",
+        "buildLaoExtractionResult(...) ",
+        "summarizeLaoExtractionResult(result)",
+        "filterExtractableSourceBlocks(rawText)"
+      ],
+      "inputs": [
+        "Lao raw output or parser result",
+        "project/slot/worker context"
+      ],
+      "outputs": [
+        "LAO_SOURCE_EXTRACTION_RESULT",
+        "source-unit array",
+        "errors/warnings and summary"
+      ],
+      "imports_dependencies": [
+        "./stage4SourceFileBlockParser",
+        "./stage4SourceUnitModel"
+      ],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": false,
+        "notes": "Pure orchestration after dependencies are supplied."
+      },
+      "source_factory_coupling": [
+        "SOURCE_FILE envelope",
+        "Lao auxiliary source-recognition flow",
+        "project_id/slot_id/worker_id trace fields"
+      ],
+      "duplicate_superseded_relation": "Manifest duplicate_copy_count=3; dependencies and an exact canonical relation were not included in this package.",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "No direct I/O",
+        "Requires two sibling modules absent from the slot ZIP",
+        "Defers duplicate-path conflict judgment to later validation"
+      ],
+      "risks_restrictions": [
+        "Cannot load without parser/model adapters",
+        "Marker handling must be reconciled with the current SOURCE_FILE contract and prior parser syntax findings",
+        "Context should bind Lao to Worker/Commander windows rather than Project Panel containment"
+      ],
+      "next_action": "Bind to a sanitized current SOURCE_FILE parser and current source-unit schema, then run V2 positive/negative/duplicate-path fixtures.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004061",
+      "assignment_id": "SF028-W02-S01-I06",
+      "file_name": "stage4TaeraCommandReadinessGuard.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/panelControl/stage4TaeraCommandReadinessGuard.js",
+      "sha256": "a40306cd36dbf7becc5be6bc140d6ec6939ee12e1a7ee4f13fb28b0b3f97c77a",
+      "git_blob_sha1": "9b88a7483cc793b7b794b70b470df08fe760fe82",
+      "size_bytes": 25328,
+      "duplicate_copy_count": 3,
+      "actual_function": "Classifies Taera resource candidates as download/run/installer/panel-command approval cases, builds readiness and approval reports, and records approval/rejection decisions without performing the action.",
+      "principal_symbols": [
+        "classifyTaeraApprovalNeed(resourceOrBatch)",
+        "buildTaeraApprovalGuardReport(items)",
+        "markApprovalDecision(item, decision)",
+        "detectExecutionRiskFromFilename(filename)"
+      ],
+      "inputs": [
+        "Taera resource candidate or batch",
+        "approval decision"
+      ],
+      "outputs": [
+        "approval classifications",
+        "download/run/install requests",
+        "TAERA_APPROVAL_GUARD_REPORT"
+      ],
+      "imports_dependencies": [],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": false,
+        "notes": "Pure classification; reports actual_run_performed=false."
+      },
+      "source_factory_coupling": [
+        "Taera resource candidates",
+        "legacy approval/readiness statuses",
+        "panel command approval model"
+      ],
+      "duplicate_superseded_relation": "Manifest duplicate_copy_count=3. Superseded status is based on policy/function mismatch, not an exact hash duplicate.",
+      "primary_classification": "SUPERSEDED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "Core output is an approval gate with RUN_APPROVAL_REQUIRED, INSTALLER_APPROVAL_REQUIRED and APPROVED_FOR_PANEL_COMMAND states",
+        "Current compact constitution removes broad security/approval gates and defines Taera primarily as downloadable/file resource display",
+        "No action is executed, but the workflow model still adds obsolete approval ceremony"
+      ],
+      "risks_restrictions": [
+        "Reintroduces non-current approval gates and delays",
+        "May misclassify ordinary downloadable resources as execution-approval tasks",
+        "Could conflict with the current efficiency-first operating contract"
+      ],
+      "next_action": "Do not promote this approval model. Reuse only isolated filename/resource-type detection logic through a new lightweight readiness adapter if needed.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004079",
+      "assignment_id": "SF028-W02-S01-I07",
+      "file_name": "stage4SourceFileEnvelopeParser.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage4Validation/stage4SourceFileEnvelopeParser.js",
+      "sha256": "a0fd2d204aa71dd085d1298026dd972a80be4ce5838418d6b0324b7bd64f0dce",
+      "git_blob_sha1": "b2243b08d3f443ce690ebe660057c0b62e916d1d",
+      "size_bytes": 14700,
+      "duplicate_copy_count": 3,
+      "actual_function": "Parses integrated Worker output into Worker sections and complete SOURCE_FILE blocks, validates required headers, detects owner mismatch and placeholder-only content, and produces a parse summary and next-action hint without materializing files.",
+      "principal_symbols": [
+        "parseWorkerOutputEnvelope(rawText)",
+        "extractWorkerSections(rawText)",
+        "extractSourceFilesFromWorkerSection(section)",
+        "detectPlaceholderOnlySection(section)",
+        "summarizeWorkerEnvelopeParse(result)"
+      ],
+      "inputs": [
+        "raw integrated Worker output text"
+      ],
+      "outputs": [
+        "worker sections",
+        "SOURCE_FILE_BLOCK records",
+        "issues",
+        "parse summary"
+      ],
+      "imports_dependencies": [],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": false,
+        "notes": "String parsing only; materialize_performed=false."
+      },
+      "source_factory_coupling": [
+        "Worker output envelopes",
+        "SOURCE_FILE markers and required headers",
+        "owner_worker matching",
+        "efficiency-gate handoff"
+      ],
+      "duplicate_superseded_relation": "Manifest duplicate_copy_count=3; no exact duplicate was packaged.",
+      "primary_classification": "DIRECT_REUSE",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "No imports or I/O",
+        "Uses the current SOURCE_FILE_START/CONTENT_START/CONTENT_END/SOURCE_FILE_END markers",
+        "Explicitly prevents materialization and reports missing headers/placeholders"
+      ],
+      "risks_restrictions": [
+        "Worker section marker patterns need V2 fixtures for all current SLOT/Worker naming variants",
+        "Regex-based placeholder detection may overmatch prose",
+        "Does not persist or enforce downstream path policy"
+      ],
+      "next_action": "Queue V2 fixtures for multi-worker outputs, malformed markers, owner mismatch, placeholder content and no-code-outside-envelope cases.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004219",
+      "assignment_id": "SF028-W02-S01-I08",
+      "file_name": "apiIpcBindingConsistencyChecker.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/src/shared/stage4/apiIpcBindingConsistencyChecker.js",
+      "sha256": "36854ed2bb8da504caff5ac18a7504b651ea8cf53c56913b155edce8bb018997",
+      "git_blob_sha1": "6660660e03102a0f6c760190c355e1e9a4235146",
+      "size_bytes": 19353,
+      "duplicate_copy_count": 9,
+      "actual_function": "Statically scans source units for window.sfApi calls/exposures, ipcRenderer.invoke/ipcMain.handle channels, DOM button bindings, blank/dynamic names, and missing API/IPC pairs, then recommends GREEN/YELLOW/RED consistency status.",
+      "principal_symbols": [
+        "checkApiIpcBindingConsistency(sourceUnits, options)",
+        "scanWindowSfApiCalls(unit, blankNames)",
+        "scanSfApiExposures(unit, blankNames)",
+        "scanIpcRendererInvokes(unit, blankNames)",
+        "scanIpcMainHandlers(unit, blankNames)",
+        "scanButtonBindings(unit, blankNames)"
+      ],
+      "inputs": [
+        "source-unit array with content/path metadata",
+        "optional known binding names/path rules"
+      ],
+      "outputs": [
+        "API/IPC/button records",
+        "missingPairs",
+        "blankNames",
+        "recommendedStatus and summary"
+      ],
+      "imports_dependencies": [],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": false,
+        "notes": "Pure static text analysis; strings such as ipcRenderer are scanned, not invoked."
+      },
+      "source_factory_coupling": [
+        "window.sfApi preload surface",
+        "Electron IPC channels",
+        "button-to-handler binding preconfirmation"
+      ],
+      "duplicate_superseded_relation": "Manifest duplicate_copy_count=9; no exact duplicate was proven in the active repository.",
+      "primary_classification": "DIRECT_REUSE",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "No imports or I/O",
+        "Directly implements the compact API/IPC/button binding preconfirm priority",
+        "Returns review-required status for dynamic/blank/missing bindings"
+      ],
+      "risks_restrictions": [
+        "Regex scanner can miss aliased/destructured/minified bindings and can produce false positives",
+        "Comment stripping is heuristic",
+        "Must not be treated as runtime proof"
+      ],
+      "next_action": "Queue V2 fixtures with known preload/main/renderer/button pairs, aliases and dynamic-name negatives; preserve as static preflight only.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004226",
+      "assignment_id": "SF028-W02-S01-I09",
+      "file_name": "patchRequestConflictSorter.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/src/shared/stage4/patchRequestConflictSorter.js",
+      "sha256": "16e7ae3e2820fd56735d3389ec3ad1c286ae776784da11109e8191e36aa14b23",
+      "git_blob_sha1": "1b995ab1c6b8fa3799834430b3dba9eb4b932a11",
+      "size_bytes": 19181,
+      "duplicate_copy_count": 9,
+      "actual_function": "Finds patch_request source units, parses target/purpose/anchor/add/preserve/dependency labels, groups requests by target and anchor, detects ordering conflicts, and produces a deterministic suggested Commander integration order.",
+      "principal_symbols": [
+        "sortPatchRequestConflicts(sourceUnits, options)",
+        "buildPatchRequestRecord(unit, options)",
+        "groupPatchRequestsByTargetFile(patchRequests)",
+        "detectPatchOrderConflicts(groupedByTargetFile)",
+        "buildSuggestedOrder(groupedByTargetFile, options)"
+      ],
+      "inputs": [
+        "SOURCE_FILE/source-unit records",
+        "path normalization and ordering options"
+      ],
+      "outputs": [
+        "normalized patch requests",
+        "groups",
+        "conflicts",
+        "suggested order",
+        "recommendedStatus"
+      ],
+      "imports_dependencies": [],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": false,
+        "notes": "Pure in-memory sorter."
+      },
+      "source_factory_coupling": [
+        "operation=patch_request",
+        "shared-core patch-first rule",
+        "Commander final integration ordering"
+      ],
+      "duplicate_superseded_relation": "Manifest duplicate_copy_count=9; no exact duplicate was proven in the package or current repo.",
+      "primary_classification": "DIRECT_REUSE",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "No imports or I/O",
+        "Handles missing target files as RED and anchor/dependency conflicts as review needs",
+        "Matches current patch-request-first and Commander-last integration policy"
+      ],
+      "risks_restrictions": [
+        "Natural-language dependency detection is heuristic",
+        "Label aliasing may misparse unusual report formats",
+        "Suggested order is not an authorization to modify files"
+      ],
+      "next_action": "Queue V2 fixtures for shared-core conflicts, exact-anchor collisions, dependency chains and missing target paths.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004231",
+      "assignment_id": "SF028-W02-S01-I10",
+      "file_name": "sourceFileBlockExtractor.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/src/shared/stage4/sourceFileBlockExtractor.js",
+      "sha256": "69923f2d9f4ae597f55f28e09bed8ab02ff7398bc567b36516d4375d4645f621",
+      "git_blob_sha1": "639e996748ea160c3b323136192d4f8151f8c7ce",
+      "size_bytes": 9873,
+      "duplicate_copy_count": 9,
+      "actual_function": "Extracts complete SOURCE_FILE blocks from Lao/worker text, parses required headers and operations, separates malformed/missing/nested-marker blocks, and returns marker counts and parse warnings without writing files.",
+      "principal_symbols": [
+        "extractSourceFileBlocks(rawText, options)",
+        "parseHeader(headerText)",
+        "buildInvalidBlock(...) ",
+        "findNextMarkerPosition(text, fromIndex)"
+      ],
+      "inputs": [
+        "raw text or JSON-like value",
+        "terminalRole option"
+      ],
+      "outputs": [
+        "valid blocks",
+        "invalidBlocks",
+        "marker summary",
+        "allowed operations"
+      ],
+      "imports_dependencies": [],
+      "external_effects": {
+        "file": false,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": false,
+        "notes": "Pure parser; the require statement in its usage comment is not executed."
+      },
+      "source_factory_coupling": [
+        "exact SOURCE_FILE envelope",
+        "current required headers",
+        "Lao/Worker source-recognition flow"
+      ],
+      "duplicate_superseded_relation": "Manifest duplicate_copy_count=9. It overlaps functionally with richer envelope parsers but is not an exact duplicate.",
+      "primary_classification": "DIRECT_REUSE",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "No runtime imports",
+        "Current operation allowlist includes create/modify/replace/patch_request/report_only",
+        "Explicitly does not assemble, write or execute code"
+      ],
+      "risks_restrictions": [
+        "Functional overlap with stage4SourceFileEnvelopeParser and other parser candidates needs API consolidation",
+        "Nested-marker handling is heuristic",
+        "Default terminalRole=LAO should not imply Lao belongs inside Project Panel"
+      ],
+      "next_action": "Run shared V2 parser fixtures and choose one canonical parser API; retain this module as the low-level block extractor if behavior is complementary.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004236",
+      "assignment_id": "SF028-W02-S01-I11",
+      "file_name": "taeraDownloadResourceStore.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/src/shared/stage4/stores/taeraDownloadResourceStore.js",
+      "sha256": "3d8233f5ad0535a6b4bbe7be6bebfea5d1dac385c3a8510b0db6a07db4bdb571",
+      "git_blob_sha1": "3e1fcd1302300cd5caa39e1858dcd4026d3a57c1",
+      "size_bytes": 8047,
+      "duplicate_copy_count": 9,
+      "actual_function": "Creates normalized Taera resource records, appends them to JSONL, reads/re-writes JSONL records, and updates resource status/history.",
+      "principal_symbols": [
+        "createTaeraResourceRecord(input)",
+        "appendTaeraResourceRecord(filePath, input)",
+        "updateTaeraResourceStatus(filePath, recordId, nextStatus, options)"
+      ],
+      "inputs": [
+        "resource metadata",
+        "JSONL file path",
+        "record ID/status update"
+      ],
+      "outputs": [
+        "resource record",
+        "append result",
+        "updated record/status result"
+      ],
+      "imports_dependencies": [
+        "fs",
+        "path",
+        "crypto"
+      ],
+      "external_effects": {
+        "file": true,
+        "process": false,
+        "network": false,
+        "database": false,
+        "browser": false,
+        "notes": "Creates parent directories, appends JSONL, and rewrites the complete JSONL file during updates."
+      },
+      "source_factory_coupling": [
+        "Taera download/file resource records",
+        "panel_command_summary",
+        "resource classification/status history"
+      ],
+      "duplicate_superseded_relation": "Manifest duplicate_copy_count=9; no exact canonical duplicate was proven.",
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "PASS_NODE_CHECK",
+      "evidence": [
+        "Reusable record normalization and status history",
+        "Direct file paths are caller supplied and no Active Core root/path allowlist is enforced",
+        "Update path rewrites the full JSONL file"
+      ],
+      "risks_restrictions": [
+        "No atomic write/locking for concurrent updates",
+        "Caller-controlled path can escape intended storage root",
+        "Status model needs alignment with current Taera display and download lifecycle"
+      ],
+      "next_action": "Add Active Core path binding, atomic update/locking and schema validation, then run V2 temp-directory and duplicate/concurrency fixtures.",
+      "promotion_status": "NOT_PROMOTED"
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000883",
+      "assignment_id": "SF028-W02-S01-I12",
+      "file_name": "ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "sha256": "34d96e9f843623ab4917dae75de8e6a13ae00864f4ee09910f918b40242373d1",
+      "git_blob_sha1": "127c8297c24511193d37e6344dc616fe58a9c9d9",
+      "size_bytes": 17398,
+      "duplicate_copy_count": 3,
+      "actual_function": "Historical W47 local baseline-freeze verification package that checks required paths, runs Node syntax/export smoke commands, reads Git status, hashes baseline files, writes JSON/Markdown/hash reports, and consumes manual runtime-smoke status.",
+      "principal_symbols": [
+        "Add-Check",
+        "Test-RequiredPath",
+        "Invoke-NodeCheck",
+        "Invoke-RequireExportSmoke",
+        "Get-GitStatusForPath"
+      ],
+      "inputs": [
+        "D:\\SOURCE FACTORY root",
+        "W47 runtime smoke status/summary",
+        "JsonOnly switch"
+      ],
+      "outputs": [
+        "W47 verify JSON",
+        "Markdown report",
+        "hash manifest",
+        "console JSON/status"
+      ],
+      "imports_dependencies": [
+        "PowerShell 5.1+ cmdlets",
+        "node",
+        "git",
+        "local Stage 4 W47 file layout"
+      ],
+      "external_effects": {
+        "file": true,
+        "process": true,
+        "network": false,
+        "database": false,
+        "browser": false,
+        "notes": "Creates report/temp files, runs node/git child processes, removes a temp file, and may exit 1 on failure."
+      },
+      "source_factory_coupling": [
+        "specific W47 baseline name and required paths",
+        "_STAGE4_LOGS\\baseline_freeze_verify",
+        "legacy Stage 4 freeze workflow",
+        "hard-coded D:\\SOURCE FACTORY default"
+      ],
+      "duplicate_superseded_relation": "Manifest duplicate_copy_count=3. Classification is historical reference, not exact duplicate.",
+      "primary_classification": "REFERENCE_ONLY",
+      "verification_level": "V1_STATIC",
+      "syntax_check": "NOT_RUN_POWERSHELL_PARSER_UNAVAILABLE",
+      "evidence": [
+        "One-off task/worker IDs and W47 baseline string",
+        "Performs local process/file effects and expects old folder layout",
+        "Current assignment cannot PowerShell-parse it because pwsh/powershell is absent; source was reviewed textually only"
+      ],
+      "risks_restrictions": [
+        "Should not run in Active Core or current migration context",
+        "Legacy paths and baseline requirements are stale",
+        "Contains a likely Markdown newline bug using literal rn rather than PowerShell CRLF escape at line 441"
+      ],
+      "next_action": "Retain as historical verification blueprint only; do not copy to Active Core. Rebuild any needed baseline verifier from current compact manifest and local-PC contracts.",
+      "promotion_status": "NOT_PROMOTED"
+    }
+  ],
+  "boundaries": {
+    "source_execution_count": 0,
+    "source_modification_count": 0,
+    "dependency_installation_count": 0,
+    "runtime_service_start_count": 0,
+    "external_api_browser_middleware_count": 0,
+    "promotion_count": 0,
+    "ready_merge_count": 0,
+    "old_root_delete_count": 0
+  }
+}
