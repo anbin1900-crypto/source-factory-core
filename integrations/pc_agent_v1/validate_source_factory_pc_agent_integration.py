@@ -12,6 +12,7 @@ REQUIRED_FILES = {
     "patcher": "releases/SF_REUSABLE_CORE_20260801_175708/tools/stage4/applyPcAgentBridgePatch.js",
     "test": "releases/SF_REUSABLE_CORE_20260801_175708/tools/stage4/testPcAgentBridgeE2E.js",
     "worker": "integrations/pc_agent_v1/pc_agent_bridge_worker.py",
+    "target_handler_helper": "integrations/pc_agent_v1/Invoke-TargetStage4HandlerE2E.ps1",
     "request_fixture": "integrations/pc_agent_v1/fixtures/WORK_REQUEST_FIXTURE_V1.json",
     "result_fixture": "integrations/pc_agent_v1/fixtures/WORK_RESULT_FIXTURE_V1.json",
 }
@@ -33,6 +34,7 @@ def validate(root: Path) -> dict:
     patcher = paths["patcher"].read_text(encoding="utf-8")
     test = paths["test"].read_text(encoding="utf-8")
     worker = paths["worker"].read_text(encoding="utf-8")
+    target_handler_helper = paths["target_handler_helper"].read_text(encoding="utf-8")
 
     required_adapter_markers = [
         "WORK_REQUEST", "WORK_RESULT",
@@ -55,11 +57,27 @@ def validate(root: Path) -> dict:
         ".sf-pc-agent-patch-",
         "written_sha256",
         "write_strategy",
+        "SAME_DIRECTORY_ATOMIC_RENAME",
+        "VERIFIED_COPY_FALLBACK_",
         "PATCHED_OUTPUT_SHA256_MISMATCH",
+        "PATCHED_OUTPUT_NODE_CHECK_FAILED",
     ]
     for marker in required_patcher_markers:
         if marker not in patcher:
             findings.append({"code": "PATCHER_MARKER_MISSING", "path": marker})
+
+    required_helper_markers = [
+        "Start-Process",
+        "RedirectStandardOutput",
+        "RedirectStandardError",
+        "TARGET_HANDLER_E2E_STDERR_NONFATAL",
+        "helper_stderr_nonfatal",
+        "SFPADB2_TARGET_HANDLER_E2E_FAILED",
+        "SFPADB2_TARGET_HANDLER_E2E_RECEIPT_MISSING",
+    ]
+    for marker in required_helper_markers:
+        if marker not in target_handler_helper:
+            findings.append({"code": "TARGET_HANDLER_HELPER_MARKER_MISSING", "path": marker})
 
     required_worker_markers = [
         "ALLOWED_BASENAMES", "subprocess.run", "shell=False",
@@ -74,8 +92,14 @@ def validate(root: Path) -> dict:
         "adapter": [r"child_process\.exec\(", r"shell\s*:\s*true", r"production\s*:\s*true"],
         "worker": [r"shell\s*=\s*True", r"requests\.(get|post|put|delete)", r"production[\"']?\s*:\s*True"],
         "patcher": [r"package\.json", r"safe_panel_preload", r"IPC.*rename", r"path\.join\(os\.tmpdir"],
+        "target_handler_helper": [r"&\s*\$nodeExe[\s\S]{0,500}2>&1"],
     }
-    sources = {"adapter": adapter, "worker": worker, "patcher": patcher}
+    sources = {
+        "adapter": adapter,
+        "worker": worker,
+        "patcher": patcher,
+        "target_handler_helper": target_handler_helper,
+    }
     for name, patterns in forbidden_patterns.items():
         for pattern in patterns:
             if re.search(pattern, sources[name], re.I):
@@ -124,6 +148,7 @@ def validate(root: Path) -> dict:
         "findings": findings,
         "required_file_count": len(REQUIRED_FILES),
         "identity_field_count": len(expected_identity),
+        "target_handler_stderr_capture_required": True,
         "production_execution_claimed": False,
         "target_pc_apply_claimed": False,
     }
