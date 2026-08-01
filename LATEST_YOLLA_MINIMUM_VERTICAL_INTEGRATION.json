@@ -1,0 +1,104 @@
+{
+  "schema_version": "YOLLA_MINIMUM_VERTICAL_INTEGRATION_POINTER_V1",
+  "integration_id": "A1-SOURCE-FACTORY-PC-AGENT-API-DB-MINIMUM-E2E-20260801-001",
+  "published_at": "2026-08-01T20:05:00+09:00",
+  "status": "SOURCE_FACTORY_PC_AGENT_API_DB_MINIMUM_VERTICAL_E2E_PASS",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 3,
+  "branch": "integration/source-factory-pc-agent-api-db-v1",
+  "source_head": "8e5c26a5910a0c8063fbadd19c58953580d64667",
+  "source_factory_authority": {
+    "base_pull_request": 2,
+    "base_branch": "publish/reusable-core-20260801",
+    "base_head": "486915d9f23a78779de99bb5d25dcc3325ed52c0",
+    "active_core": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038",
+    "active_core_runtime_status": "PASS_E_ONLY_RUNTIME",
+    "target_pc_active_core_apply": "READY_NOT_RUN"
+  },
+  "api_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "frozen_package_commit": "1d34f80ce96c29de6698798ed36c5c685d438841",
+    "embedded_authority_head": "c651a36a6bbaeca8a5a769342c21d2539a15b730",
+    "handoff_blob": "54fe46238ff4bc35027947f5eed4bc4a513e43fe",
+    "source_manifest_blob": "16c341a649b085fdf2cca3cdebc29e35df6665d6",
+    "mapping_path": "integrations/api_db_v1/API_W01_INTEGRATION_MAPPING_V1.json",
+    "mapping_blob": "3b438ec8f816e40006c4faaf1fc936e7e94d43f1",
+    "canonical_identifiers": ["source_system_id", "request_id", "artifact_id", "dataset_id"],
+    "real_api_call_count": 0
+  },
+  "knowledge_db_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "control_head": "9dc66268889391f5148f5bc4991209759b197de3",
+    "control_pointer_blob": "ee1fe53e6f1cae2f5b4911554c214a5aee4dccd6",
+    "domain_pack_common_spec_blob": "f04a1d5f5e3deb3ff987437af268576c206ecb7e",
+    "document_analysis_schema_blob": "40af8c7d92254012ae15e4aee6b4061cdd5eefbe",
+    "minimum_e2e_acceptance_blob": "1f694dd3a46eb102859cb880eb9371afd0134b68",
+    "mapping_path": "integrations/api_db_v1/KNOWLEDGE_DB_MAPPING_V1.json",
+    "mapping_blob": "ae5c7772be33455d79f9d4ce17bb024286233209",
+    "postgresql_apply_count": 0
+  },
+  "source_files": {
+    "pc_agent_bridge_worker": {
+      "path": "integrations/pc_agent_v1/pc_agent_bridge_worker.py",
+      "blob": "64c13ac8253602aba66aff39aa355eb796d0a139"
+    },
+    "api_db_fixture_runner": {
+      "path": "integrations/api_db_v1/run_api_db_fixture.py",
+      "blob": "eac7cb55b4aeefdcddf9ce3a23db8b068aee5fa8"
+    },
+    "minimum_e2e_runner": {
+      "path": "integrations/api_db_v1/run_minimum_yolla_integration_e2e.py",
+      "blob": "5603f5711fa6acdd2e9cab4ea3161d79ae747066"
+    },
+    "api_db_validator": {
+      "path": "integrations/api_db_v1/validate_api_db_integration.py",
+      "blob": "d3aba203ebe44f9cfcd58f43aba323c96a42ee6f"
+    },
+    "workflow": {
+      "path": ".github/workflows/source-factory-pc-agent-integration-v1.yml",
+      "blob": "8fd13ef340d339452e6f28d4f846c87e6db07c97"
+    }
+  },
+  "ci": {
+    "workflow": "Source Factory PC Agent API DB Integration V1",
+    "run_id": 30696896881,
+    "job_id": 91361193954,
+    "conclusion": "success",
+    "json_parse": "PASS",
+    "python_compile": "PASS_5_OF_5",
+    "node_check": "PASS_3_OF_3",
+    "source_factory_pc_agent_validation": "PASS",
+    "api_db_validation": "PASS",
+    "bridge_mock_e2e": "PASS",
+    "minimum_vertical_e2e": "PASS",
+    "powershell_parse": "PASS"
+  },
+  "minimum_vertical_e2e": {
+    "GITHUB_DIRECTIVE_READ": true,
+    "SOURCE_FACTORY_DISPATCH": true,
+    "PC_AGENT_EXECUTION": true,
+    "EXIT_CODE": 0,
+    "API_FIXTURE_RECEIVED": true,
+    "CANONICAL_NORMALIZATION_PASS": true,
+    "DB_FIXTURE_WRITE_PASS": true,
+    "DB_READBACK_PASS": true,
+    "DB_ROLLBACK_PASS": true,
+    "WORK_RESULT_CREATED": true,
+    "RESULT_GITHUB_PUBLISHED": true,
+    "SOURCE_FACTORY_COMPLETION_RECOGNIZED": true,
+    "USER_MANUAL_RELAY_COUNT": 0
+  },
+  "staging": {
+    "engine": "SQLITE_LOCAL_ISOLATED_POSTGRESQL_SHAPE_FIXTURE",
+    "postgresql_scripts_provided": true,
+    "actual_postgresql_apply_claimed": false,
+    "production": false
+  },
+  "next_action": "APPLY_PACKAGE_TO_E_ACTIVE_CORE_AND_RUN_TARGET_PC_MINIMUM_VERTICAL_E2E",
+  "production_connection": false,
+  "production_credential_use": false,
+  "production_deploy": false,
+  "ready": false,
+  "merge": false
+}
