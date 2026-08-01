@@ -1,0 +1,33 @@
+{
+  "schema_version": "YOLLA_PC_AGENT_WINDOWS_RUNTIME_TARGET_PC_ACCEPTANCE_POINTER_V1",
+  "status": "PASS",
+  "terminal": "A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED",
+  "runtime_id": "YOLLA-PC-AGENT-RUNTIME-V1",
+  "runtime_version_installed": "1.0.0-20260802",
+  "manager_hotfix_version": "1.0.1-manager-status",
+  "report": {
+    "path": "runtime/pc_agent_runtime_v1/target_pc/PC_AGENT_RUNTIME_V1_TARGET_PC_FINAL_ACCEPTANCE_V1.json",
+    "commit": "1d795f41ac982ce8d2615b0a1fc16333bed3d350",
+    "blob": "f61b5f01e62cabde61e25de81937fc0d3bdcf8c9"
+  },
+  "target_pc_acceptance_run_id": "PCAR-20260801T191841746Z-d81c8a2f6778",
+  "manager_sha256": "dce6a21c9e27f3c0d5997799abfc8a2ffcd31752edb72ca9ece61c437c99d168",
+  "task_registered": true,
+  "supervisor_process_count": 1,
+  "worker_process_count": 1,
+  "controlled_request": "PASS",
+  "duplicate_suppression": "PASS",
+  "duplicate_execution_count": 0,
+  "worker_crash_recovery": "PASS",
+  "full_runtime_restart": "PASS",
+  "result_persistence": "PASS",
+  "log_and_heartbeat_evidence": "PASS",
+  "manager_regression_ci": "PASS",
+  "runtime_ci": "PASS",
+  "real_api_call_count": 0,
+  "postgresql_apply_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "next_state": "PC_AGENT_RUNTIME_ACCEPTED_AVAILABLE_FOR_SOURCE_FACTORY_AND_R12_STAGING_WORKFLOWS"
+}
