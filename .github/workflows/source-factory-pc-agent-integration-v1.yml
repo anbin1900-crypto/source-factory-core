@@ -183,13 +183,18 @@ jobs:
           print('MINIMUM_VERTICAL_E2E=PASS')
           PY
 
-      - name: Parse PowerShell apply script
+      - name: Parse PowerShell integration scripts
         shell: pwsh
         run: |
           $ErrorActionPreference='Stop'
-          $file='integrations/pc_agent_v1/Apply-SourceFactoryPcAgentIntegrationV1.ps1'
-          $tokens=$null
-          $errors=$null
-          [System.Management.Automation.Language.Parser]::ParseFile($file,[ref]$tokens,[ref]$errors)|Out-Null
-          if($errors.Count-ne0){throw ("POWERSHELL_PARSE_FAILED: " + $errors[0].Message)}
-          'POWERSHELL_PARSE=PASS'
+          $files=@(
+            'integrations/pc_agent_v1/Apply-SourceFactoryPcAgentIntegrationV1.ps1',
+            'integrations/pc_agent_v1/Invoke-TargetStage4HandlerE2E.ps1'
+          )
+          foreach($file in $files){
+            $tokens=$null
+            $errors=$null
+            [System.Management.Automation.Language.Parser]::ParseFile($file,[ref]$tokens,[ref]$errors)|Out-Null
+            if($errors.Count-ne0){throw ("POWERSHELL_PARSE_FAILED file=" + $file + " error=" + $errors[0].Message)}
+          }
+          'POWERSHELL_PARSE=PASS_2_OF_2'
