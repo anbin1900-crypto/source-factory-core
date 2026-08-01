@@ -10,6 +10,9 @@ param(
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
+$env:PYTHONUTF8 = '1'
+$env:PYTHONIOENCODING = 'utf-8'
+$env:PYTHONLEGACYWINDOWSSTDIO = '0'
 
 function Fail([string]$Code, [string]$Message) {
     throw ('{0}:{1}' -f $Code, $Message)
@@ -84,7 +87,7 @@ $rollbackError = $null
 $patchReceipt = $null
 $mockOutput = $null
 try {
-    & $PythonExe $sourceValidator $PackageRoot --output (Join-Path $receiptRoot 'PACKAGE_VALIDATION.json')
+    & $PythonExe -X utf8 $sourceValidator $PackageRoot --output (Join-Path $receiptRoot 'PACKAGE_VALIDATION.json')
     if ($LASTEXITCODE -ne 0) { Fail 'SFPC006_PACKAGE_VALIDATION_FAILED' (Join-Path $receiptRoot 'PACKAGE_VALIDATION.json') }
 
     New-Item -ItemType Directory -Path (Split-Path -Parent $targetAdapter), (Split-Path -Parent $targetWorker) -Force | Out-Null
@@ -94,13 +97,33 @@ try {
     $patchOutput = & $nodeExe $sourcePatcher --target $targetHandler 2>&1
     if ($LASTEXITCODE -ne 0) { Fail 'SFPC007_HANDLER_PATCH_FAILED' ($patchOutput -join [Environment]::NewLine) }
     $patchReceipt = ($patchOutput | Select-Object -Last 1) | ConvertFrom-Json
+    $expectedTempParent = Split-Path -Parent $targetHandler
+    $allowedWriteStrategies = @(
+        'SAME_DIRECTORY_ATOMIC_RENAME',
+        'VERIFIED_COPY_FALLBACK_EXDEV',
+        'VERIFIED_COPY_FALLBACK_EPERM',
+        'VERIFIED_COPY_FALLBACK_EACCES',
+        'VERIFIED_COPY_FALLBACK_EEXIST'
+    )
+    if ([string]$patchReceipt.temp_parent -ne $expectedTempParent) {
+        Fail 'SFPC007A_PATCH_TEMP_PARENT_MISMATCH' ('expected={0} observed={1}' -f $expectedTempParent,$patchReceipt.temp_parent)
+    }
+    if ([string]$patchReceipt.written_sha256 -ne [string]$patchReceipt.patched_sha256) {
+        Fail 'SFPC007B_PATCH_WRITE_SHA_MISMATCH' ('patched={0} written={1}' -f $patchReceipt.patched_sha256,$patchReceipt.written_sha256)
+    }
+    if ($allowedWriteStrategies -notcontains [string]$patchReceipt.write_strategy) {
+        Fail 'SFPC007C_PATCH_WRITE_STRATEGY_INVALID' ([string]$patchReceipt.write_strategy)
+    }
     Write-JsonNoBom (Join-Path $receiptRoot 'PATCH_RECEIPT.json') $patchReceipt
+    Write-Host ('PATCH_WRITE_STRATEGY=' + [string]$patchReceipt.write_strategy)
+    Write-Host 'PATCH_TEMP_PARENT_SAME_VOLUME=PASS'
+    Write-Host 'PATCH_WRITTEN_SHA256=PASS'
 
     & $nodeExe --check $targetHandler
     if ($LASTEXITCODE -ne 0) { Fail 'SFPC008_HANDLER_NODE_CHECK_FAILED' $targetHandler }
     & $nodeExe --check $targetAdapter
     if ($LASTEXITCODE -ne 0) { Fail 'SFPC009_ADAPTER_NODE_CHECK_FAILED' $targetAdapter }
-    & $PythonExe -m py_compile $targetWorker
+    & $PythonExe -X utf8 -m py_compile $targetWorker
     if ($LASTEXITCODE -ne 0) { Fail 'SFPC010_WORKER_PY_COMPILE_FAILED' $targetWorker }
 
     $launcherLines = @(
