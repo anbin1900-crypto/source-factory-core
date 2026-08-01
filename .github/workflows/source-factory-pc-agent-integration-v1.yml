@@ -1,0 +1,91 @@
+name: Source Factory PC Agent Integration V1
+
+on:
+  pull_request:
+    paths:
+      - 'integrations/pc_agent_v1/**'
+      - 'releases/SF_REUSABLE_CORE_20260801_175708/src/shared/stage4/pcAgentBridgeAdapter.js'
+      - 'releases/SF_REUSABLE_CORE_20260801_175708/tools/stage4/applyPcAgentBridgePatch.js'
+      - 'releases/SF_REUSABLE_CORE_20260801_175708/tools/stage4/testPcAgentBridgeE2E.js'
+      - '.github/workflows/source-factory-pc-agent-integration-v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-source-factory-pc-agent-bridge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Record safety boundary
+        shell: bash
+        run: |
+          printf '%s\n' \
+            'MODE=STATIC_AND_LOCAL_MOCK_E2E' \
+            'TARGET_PC_APPLY_COUNT=0' \
+            'PRODUCTION_CONNECTION_COUNT=0' \
+            'PRODUCTION_DEPLOY_COUNT=0' \
+            'READY_TRANSITION_COUNT=0' \
+            'MERGE_COUNT=0'
+
+      - name: Parse JSON and compile Python
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for path in Path('integrations/pc_agent_v1').rglob('*.json'):
+              json.loads(path.read_text(encoding='utf-8-sig'))
+          print('JSON_PARSE=PASS')
+          PY
+          python -m py_compile \
+            integrations/pc_agent_v1/pc_agent_bridge_worker.py \
+            integrations/pc_agent_v1/validate_source_factory_pc_agent_integration.py
+          echo PYTHON_COMPILE=PASS
+
+      - name: Node syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check releases/SF_REUSABLE_CORE_20260801_175708/src/shared/stage4/pcAgentBridgeAdapter.js
+          node --check releases/SF_REUSABLE_CORE_20260801_175708/tools/stage4/applyPcAgentBridgePatch.js
+          node --check releases/SF_REUSABLE_CORE_20260801_175708/tools/stage4/testPcAgentBridgeE2E.js
+          echo NODE_CHECK=PASS_3_OF_3
+
+      - name: Validate package
+        shell: bash
+        run: |
+          set -euo pipefail
+          python integrations/pc_agent_v1/validate_source_factory_pc_agent_integration.py . --output /tmp/validation.json
+          cat /tmp/validation.json
+
+      - name: Run mock E2E
+        shell: bash
+        run: |
+          set -euo pipefail
+          node releases/SF_REUSABLE_CORE_20260801_175708/tools/stage4/testPcAgentBridgeE2E.js | tee /tmp/mock-e2e.json
+          python - <<'PY'
+          import json
+          result=json.loads(open('/tmp/mock-e2e.json', encoding='utf-8').read().strip().splitlines()[-1])
+          assert result['status']=='PASS'
+          assert result['production'] is False
+          print('MOCK_E2E=PASS')
+          PY
+
+      - name: Parse PowerShell apply script
+        shell: pwsh
+        run: |
+          $ErrorActionPreference='Stop'
+          $file='integrations/pc_agent_v1/Apply-SourceFactoryPcAgentIntegrationV1.ps1'
+          $tokens=$null
+          $errors=$null
+          [System.Management.Automation.Language.Parser]::ParseFile($file,[ref]$tokens,[ref]$errors)|Out-Null
+          if($errors.Count-ne0){throw ("POWERSHELL_PARSE_FAILED: " + $errors[0].Message)}
+          'POWERSHELL_PARSE=PASS'
