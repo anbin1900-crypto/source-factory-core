@@ -1,0 +1,34 @@
+{
+  "object_type": "EXACT_SOURCE_HEAD_PATHS_AND_BLOBS",
+  "schema_version": "1.0.0",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "branch": "publish/reusable-core-20260801",
+  "observed_pr_head_at_intake": "486915d9f23a78779de99bb5d25dcc3325ed52c0",
+  "sources": [
+    {
+      "role": "current_authority",
+      "path": "LATEST_SOURCE_FACTORY_AUTHORITY.json",
+      "blob_sha": "e17ee407e22f30d72492dc75a2e9aa9f634f0e6e"
+    },
+    {
+      "role": "target_handler",
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "blob_sha": "236d0b9134faaf9e484007e8ce2a4c546e623cd1"
+    },
+    {
+      "role": "sequential_prompt_fallback",
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/src/shared/stage4/sequentialPromptSender.js",
+      "blob_sha": "4001772fa2b2475171cd8595d5294cbcebe8cfde"
+    },
+    {
+      "role": "execution_result_fallback",
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/src/shared/stage4/executionResultCollector.js",
+      "blob_sha": "164228ea352c4b52dda8a1e65f3ba66efdc4aa46"
+    },
+    {
+      "role": "package_contract_preserved",
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/package.json",
+      "blob_sha": "19841fabfc4e16868cfb603bdb0c1572f14758f9"
+    }
+  ]
+}
