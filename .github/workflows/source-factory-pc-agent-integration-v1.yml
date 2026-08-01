@@ -5,6 +5,8 @@ on:
     paths:
       - 'integrations/pc_agent_v1/**'
       - 'integrations/api_db_v1/**'
+      - 'integrations/external_authorities_v1/**'
+      - 'integrations/COMMANDER_SUPPORT_CONSUMPTION_DECISION_V1.json'
       - 'releases/SF_REUSABLE_CORE_20260801_175708/src/shared/stage4/pcAgentBridgeAdapter.js'
       - 'releases/SF_REUSABLE_CORE_20260801_175708/tools/stage4/applyPcAgentBridgePatch.js'
       - 'releases/SF_REUSABLE_CORE_20260801_175708/tools/stage4/testPcAgentBridgeE2E.js'
@@ -29,6 +31,7 @@ jobs:
         run: |
           printf '%s\n' \
             'MODE=STATIC_AND_LOCAL_MINIMUM_VERTICAL_E2E' \
+            'EXTERNAL_AUTHORITY_COUNT=5' \
             'TARGET_PC_ACTIVE_CORE_APPLY_COUNT=0' \
             'REAL_API_CALL_COUNT=0' \
             'POSTGRESQL_APPLY_COUNT=0' \
@@ -45,10 +48,17 @@ jobs:
           import json
           from pathlib import Path
           files=[]
-          for root in (Path('integrations/pc_agent_v1'), Path('integrations/api_db_v1')):
+          roots=(
+              Path('integrations/pc_agent_v1'),
+              Path('integrations/api_db_v1'),
+              Path('integrations/external_authorities_v1'),
+          )
+          for root in roots:
               for path in root.rglob('*.json'):
                   json.loads(path.read_text(encoding='utf-8-sig'))
                   files.append(path)
+          json.loads(Path('integrations/COMMANDER_SUPPORT_CONSUMPTION_DECISION_V1.json').read_text(encoding='utf-8-sig'))
+          files.append(Path('integrations/COMMANDER_SUPPORT_CONSUMPTION_DECISION_V1.json'))
           print(f'JSON_PARSE=PASS_{len(files)}')
           PY
           python -m py_compile \
@@ -56,8 +66,9 @@ jobs:
             integrations/pc_agent_v1/validate_source_factory_pc_agent_integration.py \
             integrations/api_db_v1/run_api_db_fixture.py \
             integrations/api_db_v1/run_minimum_yolla_integration_e2e.py \
-            integrations/api_db_v1/validate_api_db_integration.py
-          echo PYTHON_COMPILE=PASS_5_OF_5
+            integrations/api_db_v1/validate_api_db_integration.py \
+            integrations/external_authorities_v1/validate_external_authority_bindings.py
+          echo PYTHON_COMPILE=PASS_6_OF_6
 
       - name: Node syntax
         shell: bash
@@ -67,6 +78,15 @@ jobs:
           node --check releases/SF_REUSABLE_CORE_20260801_175708/tools/stage4/applyPcAgentBridgePatch.js
           node --check releases/SF_REUSABLE_CORE_20260801_175708/tools/stage4/testPcAgentBridgeE2E.js
           echo NODE_CHECK=PASS_3_OF_3
+
+      - name: Validate external commander authorities
+        shell: bash
+        run: |
+          set -euo pipefail
+          python integrations/external_authorities_v1/validate_external_authority_bindings.py \
+            integrations/external_authorities_v1/EXTERNAL_AUTHORITY_BINDINGS_V1.json \
+            --output /tmp/external-authorities.json
+          cat /tmp/external-authorities.json
 
       - name: Validate Source Factory PC Agent package
         shell: bash
