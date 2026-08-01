@@ -21,6 +21,19 @@ function Read-Json([string]$Path) {
     return Get-Content -LiteralPath $Path -Raw | ConvertFrom-Json
 }
 
+function Get-OptionalProperty(
+    [object]$Object,
+    [string[]]$Names,
+    [object]$Default = $null
+) {
+    if ($null -eq $Object) { return $Default }
+    foreach ($name in $Names) {
+        $property = $Object.PSObject.Properties[$name]
+        if ($null -ne $property) { return $property.Value }
+    }
+    return $Default
+}
+
 function Write-JsonNoBom([string]$Path, [object]$Value) {
     $parent = Split-Path -Parent $Path
     if ($parent) { New-Item -ItemType Directory -Path $parent -Force | Out-Null }
@@ -74,7 +87,7 @@ function Find-RuntimeProcesses([object]$Authority) {
 function Get-HeartbeatAge([string]$Path) {
     $value = Read-Json $Path
     if ($null -eq $value) { return $null }
-    $text = [string]$value.timestamp
+    $text = [string](Get-OptionalProperty $value @('timestamp','updated_at') $null)
     if (-not $text) { return $null }
     try {
         $timestamp = [DateTimeOffset]::Parse($text)
@@ -112,8 +125,12 @@ function Get-RuntimeStatus([object]$Authority) {
         worker_pids = @($processes.workers | ForEach-Object { [int]$_.ProcessId })
         supervisor_heartbeat_age_seconds = Get-HeartbeatAge (Join-Path $stateRoot 'runtime\supervisor-heartbeat.json')
         worker_heartbeat_age_seconds = Get-HeartbeatAge (Join-Path $bridgeRoot 'runtime\heartbeat.json')
-        runtime_state = if ($runtimeStatus) { [string]$runtimeStatus.state } else { 'NOT_STARTED' }
-        worker_restart_count = if ($runtimeStatus) { $runtimeStatus.worker_restart_count } else { 0 }
+        runtime_state = if ($runtimeStatus) {
+            [string](Get-OptionalProperty $runtimeStatus @('state') 'UNKNOWN')
+        } else { 'NOT_STARTED' }
+        worker_restart_count = if ($runtimeStatus) {
+            [int](Get-OptionalProperty $runtimeStatus @('worker_restart_count') 0)
+        } else { 0 }
         queue = [ordered]@{
             requests = Get-QueueCount $bridgeRoot 'requests'
             processing = Get-QueueCount $bridgeRoot 'processing'
