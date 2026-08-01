@@ -1,0 +1,98 @@
+{
+  "schema_version": "YOLLA_SOURCE_FACTORY_PC_AGENT_INTEGRATION_CONTRACT_V1",
+  "integration_id": "SOURCE-FACTORY-PC-AGENT-FILE-BRIDGE-V1-20260801",
+  "status": "IMPLEMENTED_STATIC_AND_MOCK_E2E_PASS_TARGET_PC_APPLY_PENDING",
+  "source_factory_authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "pull_request": 2,
+    "branch": "publish/reusable-core-20260801",
+    "head": "486915d9f23a78779de99bb5d25dcc3325ed52c0",
+    "release_path": "releases/SF_REUSABLE_CORE_20260801_175708",
+    "local_active_core": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038",
+    "runtime_status": "PASS_E_ONLY_RUNTIME",
+    "first_defect": "PC_AGENT_ADAPTER_NOT_INSERTED"
+  },
+  "pc_agent_boundary": {
+    "transport": "LOCAL_DURABLE_FILE_QUEUE_V1",
+    "bridge_root": "E:\\YOLLA\\agent\\state\\source-factory-bridge-v1",
+    "requests": "requests/<work_id>.json",
+    "processing": "processing/<work_id>.json",
+    "results": "results/<work_id>.json",
+    "attempts": "attempts/<work_id>-<attempt_id>.json",
+    "processed": "processed/<work_id>.json",
+    "failed": "failed/<work_id>.json",
+    "production": false
+  },
+  "common_objects": [
+    "WORK_REQUEST",
+    "WORK_ATTEMPT",
+    "WORK_RESULT",
+    "NEXT_ACTION"
+  ],
+  "required_identity": [
+    "work_id",
+    "project_id",
+    "cycle_id",
+    "worker_slot_uid",
+    "assignment_id",
+    "directive_id",
+    "execution_id",
+    "attempt_id",
+    "source_github_ref"
+  ],
+  "source_factory_binding": {
+    "target_file": "safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+    "dispatch_function": "handleStage4DispatchNextPrompt",
+    "result_function": "handleStage4RunCheck",
+    "storage_function": "handleStage4AppendStationRecords",
+    "adapter_module": "src/shared/stage4/pcAgentBridgeAdapter.js",
+    "patch_tool": "tools/stage4/applyPcAgentBridgePatch.js",
+    "existing_dispatch_fallback_preserved": true,
+    "existing_result_collector_preserved": true,
+    "existing_storage_path_preserved": true
+  },
+  "execution_policy": {
+    "allowed_executable_basenames": [
+      "python", "python.exe", "python3", "python3.exe",
+      "node", "node.exe", "powershell", "powershell.exe",
+      "pwsh", "pwsh.exe", "cmd", "cmd.exe"
+    ],
+    "shell": false,
+    "timeout_min_seconds": 1,
+    "timeout_max_seconds": 3600,
+    "inline_secret_environment_keys_forbidden": true,
+    "production_must_be_false": true,
+    "duplicate_result_execution_forbidden": true
+  },
+  "preservation": {
+    "sequentialPromptSender_deleted": false,
+    "executionResultCollector_deleted": false,
+    "preload_api_renamed": false,
+    "ipc_channel_renamed": false,
+    "project_panel_identity_deleted": false,
+    "source_not_found_fallback_deleted": false,
+    "package_json_modified": false,
+    "lao_detect_queue_modified": false
+  },
+  "acceptance": {
+    "node_check_adapter": "PASS",
+    "python_compile_worker": "PASS",
+    "dispatch_request_created": "PASS",
+    "duplicate_suppression": "PASS",
+    "worker_process_execution": "PASS",
+    "work_result_created": "PASS",
+    "collector_mapping": "PASS",
+    "storage_mapping": "PASS",
+    "disabled_fallback": "PASS",
+    "handler_patch_generation": "PASS",
+    "patched_handler_node_check": "PASS",
+    "target_pc_active_core_apply": "PENDING"
+  },
+  "prohibitions": {
+    "production_connection": false,
+    "production_credential_use": false,
+    "production_deploy": false,
+    "ready_transition": false,
+    "merge": false
+  }
+}

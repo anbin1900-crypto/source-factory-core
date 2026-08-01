@@ -1,0 +1,96 @@
+{
+  "schema_version": "YOLLA_A1_TARGET_PC_FINAL_PASS_V1",
+  "status": "PASS",
+  "terminal": "A1_SOURCE_FACTORY_PC_AGENT_API_DB_MINIMUM_VERTICAL_E2E_PASS",
+  "execution_version": "R10",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 3,
+  "branch": "integration/source-factory-pc-agent-api-db-v1",
+  "observed_pr_head_before_report": "00c672610429cbcd540b9c59c729b09110d53e02",
+  "target_pc": {
+    "attempt_id": "SFPADB2-20260801T171639716Z-6904d6b21a45",
+    "completed_at_utc": "2026-08-01T17:18:29.182459Z",
+    "completed_at_kst": "2026-08-02T02:18:29.182459+09:00",
+    "active_core_root": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038",
+    "launcher": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038\\RUN_E_SF4_SAFE_PANEL_E_ONLY_WITH_PC_AGENT_BRIDGE.bat",
+    "final_receipt": "E:\\YOLLA\\source-factory-pc-agent-api-db-integration-v2\\attempts\\SFPADB2-20260801T171639716Z-6904d6b21a45\\evidence\\TARGET_PC_INTEGRATION_FINAL_RECEIPT_V2.json"
+  },
+  "package": {
+    "file_name": "SOURCE_FACTORY_PC_AGENT_API_DB_INTEGRATION_V2_R10.zip",
+    "sha256": "fbbd469f87ae226a84c84c76eb6e309c7c3e6a15a68855aa1a63327941d6489e",
+    "file_count": 26
+  },
+  "runner": {
+    "file_name": "RUN_T1A1_SOURCE_FACTORY_PC_AGENT_API_DB_INTEGRATION_V2_R10.ps1",
+    "sha256": "d401810fc596be0c9c150946a8a88aab7d5cc5e8eed8e071baf32c52ae36190f"
+  },
+  "authority_gates": {
+    "external_authority_manifest": "PASS",
+    "external_git_commits": "PASS",
+    "api_w01_exact_authority": "PASS",
+    "d1_official_fixture_validation": "PASS",
+    "b1_archive_identity": "PASS",
+    "b1_materialized_file_count": 12,
+    "b1_runtime_support_materialization": "PASS",
+    "b1_runtime_support_smoke": "NONBLOCKING_FAIL",
+    "b1_support_blocking": false,
+    "c1_independent_harness": "PASS",
+    "a1_local_package_validation": "PASS"
+  },
+  "source_factory_binding": {
+    "isolated_working_copy_apply": "PASS",
+    "isolated_target_stage4_handler_e2e": "PASS",
+    "target_pc_active_core_binding": "PASS",
+    "active_core_target_stage4_handler_e2e": "PASS",
+    "patch_write_strategy_working_copy": "SAME_DIRECTORY_ATOMIC_RENAME",
+    "patch_write_strategy_active_core": "SAME_DIRECTORY_ATOMIC_RENAME",
+    "patch_temp_parent_same_volume": "PASS",
+    "patch_written_sha256": "PASS",
+    "sequential_prompt_sender_preserved": true,
+    "execution_result_collector_preserved": true
+  },
+  "target_handler_e2e": {
+    "working_copy_exit_code": 0,
+    "working_copy_stderr_nonfatal": true,
+    "working_copy_stderr_line_count": 8,
+    "active_core_exit_code": 0,
+    "active_core_stderr_nonfatal": false,
+    "active_core_stderr_line_count": 0,
+    "status": "PASS"
+  },
+  "minimum_vertical_e2e": {
+    "status": "PASS",
+    "github_directive_read": true,
+    "source_factory_dispatch": true,
+    "pc_agent_execution": true,
+    "exit_code": 0,
+    "api_fixture_received": true,
+    "canonical_normalization_pass": true,
+    "db_fixture_write_pass": true,
+    "db_readback_pass": true,
+    "db_rollback_pass": true,
+    "work_result_created": true,
+    "source_factory_completion_recognized": true,
+    "user_manual_relay_count": 0
+  },
+  "database_receipt": {
+    "engine": "SQLITE_LOCAL_ISOLATED_POSTGRESQL_SHAPE_FIXTURE",
+    "status": "PASS",
+    "write_pass": true,
+    "readback_pass": true,
+    "rollback_pass": true,
+    "foreign_key_pass": true,
+    "postgresql_apply_claimed": false,
+    "production": false
+  },
+  "safety_boundary": {
+    "real_api_call_count": 0,
+    "postgresql_apply_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "result_github_publish_ready": true,
+  "source_evidence": "USER_SUPPLIED_TARGET_PC_R10_EXECUTION_LOG",
+  "recorded_at": "2026-08-02T02:20:00+09:00"
+}

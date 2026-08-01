@@ -1,0 +1,185 @@
+name: A1 R11 Target Package
+
+on:
+  pull_request:
+    paths:
+      - 'integrations/pc_agent_v1/pc_agent_bridge_worker.py'
+      - 'integrations/runtime_acceptance_v1/**'
+      - 'releases/SF_REUSABLE_CORE_20260801_175708/src/shared/stage4/pcAgentBridgeAdapter.js'
+      - '.github/workflows/a1-r11-target-package.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-r11-target-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          sparse-checkout: |
+            integrations/pc_agent_v1/pc_agent_bridge_worker.py
+            integrations/runtime_acceptance_v1
+            releases/SF_REUSABLE_CORE_20260801_175708/src/shared/stage4/pcAgentBridgeAdapter.js
+          sparse-checkout-cone-mode: false
+
+      - name: Build deterministic R11 ZIP and SHA-bound wrapper
+        shell: bash
+        env:
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          python - <<'PY'
+          from __future__ import annotations
+          import hashlib, json, os, re, zipfile
+          from pathlib import Path
+
+          package_name='A1_SOURCE_FACTORY_PC_AGENT_R11_ACTIVE_RUNTIME_V1'
+          zip_name=package_name+'.zip'
+          root=Path('.').resolve()
+          dist=root/'dist'
+          files=[
+            'integrations/pc_agent_v1/pc_agent_bridge_worker.py',
+            'integrations/runtime_acceptance_v1/R11_ACTIVE_RUNTIME_ACCEPTANCE_CONTRACT_V1.json',
+            'integrations/runtime_acceptance_v1/R11RuntimeCommon.ps1',
+            'integrations/runtime_acceptance_v1/R11RuntimeTests.ps1',
+            'integrations/runtime_acceptance_v1/Invoke-R11ActiveRuntimeAcceptance.ps1',
+            'integrations/runtime_acceptance_v1/testLiveActiveCoreStage4HandlerBridgeV1.js',
+            'integrations/runtime_acceptance_v1/test_r11_runtime_acceptance.py',
+            'integrations/runtime_acceptance_v1/validate_r11_runtime_acceptance.py',
+            'releases/SF_REUSABLE_CORE_20260801_175708/src/shared/stage4/pcAgentBridgeAdapter.js',
+          ]
+          for rel in files:
+            if not (root/rel).is_file(): raise SystemExit('MISSING:'+rel)
+          def sha(path:Path)->str:
+            return hashlib.sha256(path.read_bytes()).hexdigest()
+          records=[{'path':rel,'sha256':sha(root/rel),'size_bytes':(root/rel).stat().st_size} for rel in files]
+          manifest={
+            'schema_version':'YOLLA_A1_R11_TARGET_PACKAGE_MANIFEST_V1',
+            'package_id':'A1-SOURCE-FACTORY-PC-AGENT-R11-ACTIVE-RUNTIME-V1-20260802-001',
+            'repository':'anbin1900-crypto/source-factory-core',
+            'pull_request':3,
+            'branch':'integration/source-factory-pc-agent-api-db-v1',
+            'source_head':os.environ['PR_HEAD_SHA'],
+            'directive_id':'A1-SF-PCAGENT-R11-ACTIVE-RUNTIME-BOOT-RESTART-RECOVERY-V1-20260802-001',
+            'runtime_ci':{
+              'run_id':30711251130,
+              'linux_job_id':91399005084,
+              'windows_job_id':91399005125,
+              'linux_conclusion':'success',
+              'windows_conclusion':'success',
+            },
+            'target_pc_execution_claimed':False,
+            'safety_boundary':{
+              'real_api_call_count':0,'postgresql_apply_count':0,
+              'production':False,'ready':False,'merge':False,
+            },
+            'files':records,
+          }
+          manifest_bytes=(json.dumps(manifest,ensure_ascii=False,indent=2,sort_keys=True)+'\n').encode('utf-8')
+          zip_path=dist/zip_name
+          with zipfile.ZipFile(zip_path,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+            for rel in sorted(files):
+              info=zipfile.ZipInfo(package_name+'/'+rel)
+              info.date_time=(2026,8,2,2,30,0)
+              info.compress_type=zipfile.ZIP_DEFLATED
+              info.external_attr=0o644<<16
+              z.writestr(info,(root/rel).read_bytes())
+            info=zipfile.ZipInfo(package_name+'/PACKAGE_MANIFEST.json')
+            info.date_time=(2026,8,2,2,30,0)
+            info.compress_type=zipfile.ZIP_DEFLATED
+            info.external_attr=0o644<<16
+            z.writestr(info,manifest_bytes)
+          zip_sha=sha(zip_path)
+          (dist/(zip_name+'.sha256.txt')).write_text(f'{zip_sha}  {zip_name}\n',encoding='utf-8')
+          runner_name='RUN_T1A1_SOURCE_FACTORY_PC_AGENT_R11_ACTIVE_RUNTIME_V1.ps1'
+          runner=f'''[CmdletBinding()]
+          param(
+              [string]$ZipPath = 'E:\\YOLLA\\temp\\{zip_name}',
+              [string]$WorkRoot = 'E:\\YOLLA\\source-factory-pc-agent-runtime-r11'
+          )
+          Set-StrictMode -Version Latest
+          $ErrorActionPreference = 'Stop'
+          $ExpectedZipSha256 = '{zip_sha}'
+          $PackageDirectoryName = '{package_name}'
+          function Fail([string]$Code,[string]$Message) {{ throw ('{{0}}:{{1}}' -f $Code,$Message) }}
+          if($PSVersionTable.PSEdition-ne'Desktop'-or$PSVersionTable.PSVersion.Major-ne5-or$PSVersionTable.PSVersion.Minor-ne1){{Fail 'R11PKG001_WINDOWS_POWERSHELL_51_REQUIRED' ([string]$PSVersionTable.PSVersion)}}
+          $identity=[Security.Principal.WindowsIdentity]::GetCurrent()
+          $principal=New-Object Security.Principal.WindowsPrincipal($identity)
+          if(-not$principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)){{Fail 'R11PKG002_ADMINISTRATOR_REQUIRED' 'Run elevated Windows PowerShell 5.1.'}}
+          if(-not(Test-Path -LiteralPath $ZipPath -PathType Leaf)){{Fail 'R11PKG003_ZIP_MISSING' $ZipPath}}
+          $actual=(Get-FileHash -LiteralPath $ZipPath -Algorithm SHA256).Hash.ToLowerInvariant()
+          if($actual-ne$ExpectedZipSha256){{Fail 'R11PKG004_ZIP_SHA_MISMATCH' ('expected={{0}} actual={{1}}'-f$ExpectedZipSha256,$actual)}}
+          $packageBase=Join-Path $WorkRoot 'packages'
+          $extractRoot=Join-Path $packageBase ('{zip_sha}' .Substring(0,16))
+          $packageRoot=Join-Path $extractRoot $PackageDirectoryName
+          Remove-Item -LiteralPath $extractRoot -Recurse -Force -ErrorAction SilentlyContinue
+          New-Item -ItemType Directory -Path $extractRoot -Force|Out-Null
+          Expand-Archive -LiteralPath $ZipPath -DestinationPath $extractRoot -Force
+          $manifestPath=Join-Path $packageRoot 'PACKAGE_MANIFEST.json'
+          if(-not(Test-Path -LiteralPath $manifestPath -PathType Leaf)){{Fail 'R11PKG005_MANIFEST_MISSING' $manifestPath}}
+          $manifest=Get-Content -LiteralPath $manifestPath -Raw|ConvertFrom-Json
+          if($manifest.package_id-ne'A1-SOURCE-FACTORY-PC-AGENT-R11-ACTIVE-RUNTIME-V1-20260802-001'){{Fail 'R11PKG006_PACKAGE_ID_INVALID' ([string]$manifest.package_id)}}
+          foreach($file in $manifest.files){{
+            $path=Join-Path $packageRoot ([string]$file.path)
+            if(-not(Test-Path -LiteralPath $path -PathType Leaf)){{Fail 'R11PKG007_FILE_MISSING' $path}}
+            $observed=(Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant()
+            if($observed-ne[string]$file.sha256){{Fail 'R11PKG008_FILE_SHA_MISMATCH' ('path={{0}} expected={{1}} actual={{2}}'-f$path,$file.sha256,$observed)}}
+          }}
+          Write-Host ('R11_PACKAGE_ZIP_SHA256='+$actual)
+          Write-Host ('R11_PACKAGE_FILE_COUNT='+$manifest.files.Count)
+          Write-Host 'R11_PACKAGE_VALIDATION=PASS'
+          $main=Join-Path $packageRoot 'integrations\\runtime_acceptance_v1\\Invoke-R11ActiveRuntimeAcceptance.ps1'
+          & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $main -PackageRoot $packageRoot -WorkRoot $WorkRoot
+          if($LASTEXITCODE-ne0){{Fail 'R11PKG009_TARGET_RUNNER_FAILED' ('exit='+$LASTEXITCODE)}}
+          '''
+          runner='\n'.join(line[10:] if line.startswith('          ') else line for line in runner.splitlines())+'\n'
+          runner_path=dist/runner_name
+          runner_path.write_text(runner,encoding='utf-8',newline='\n')
+          runner_sha=sha(runner_path)
+          (dist/(runner_name+'.sha256.txt')).write_text(f'{runner_sha}  {runner_name}\n',encoding='utf-8')
+          metadata={
+            'schema_version':'YOLLA_A1_R11_TARGET_PACKAGE_BUILD_RECEIPT_V1',
+            'package_file':zip_name,'package_sha256':zip_sha,'package_size_bytes':zip_path.stat().st_size,
+            'package_entry_count':len(files)+1,'manifest_file_count':len(files),
+            'runner_file':runner_name,'runner_sha256':runner_sha,'runner_size_bytes':runner_path.stat().st_size,
+            'source_head':os.environ['PR_HEAD_SHA'],'production':False,'ready':False,'merge':False,
+          }
+          (dist/'R11_TARGET_PACKAGE_BUILD_RECEIPT.json').write_text(json.dumps(metadata,indent=2,sort_keys=True)+'\n',encoding='utf-8')
+          print(json.dumps(metadata,sort_keys=True))
+          PY
+          sha256sum dist/A1_SOURCE_FACTORY_PC_AGENT_R11_ACTIVE_RUNTIME_V1.zip
+          sha256sum dist/RUN_T1A1_SOURCE_FACTORY_PC_AGENT_R11_ACTIVE_RUNTIME_V1.ps1
+
+      - name: Validate generated package and wrapper
+        shell: pwsh
+        run: |
+          $ErrorActionPreference='Stop'
+          $receipt=Get-Content -LiteralPath dist/R11_TARGET_PACKAGE_BUILD_RECEIPT.json -Raw|ConvertFrom-Json
+          if($receipt.production-ne$false-or$receipt.ready-ne$false-or$receipt.merge-ne$false){throw 'SAFETY_BOUNDARY_INVALID'}
+          if($receipt.manifest_file_count-ne9){throw 'MANIFEST_FILE_COUNT_INVALID'}
+          $tokens=$null;$errors=$null
+          [System.Management.Automation.Language.Parser]::ParseFile(
+            'dist/RUN_T1A1_SOURCE_FACTORY_PC_AGENT_R11_ACTIVE_RUNTIME_V1.ps1',
+            [ref]$tokens,[ref]$errors
+          )|Out-Null
+          if($errors.Count-ne0){throw ('WRAPPER_PARSE_FAILED:'+ $errors[0].Message)}
+          'R11_PACKAGE_BUILD=PASS'
+          'R11_WRAPPER_PARSE=PASS'
+          'TARGET_PC_R11_EXECUTION_COUNT=0'
+          'PRODUCTION=false'
+          'READY=false'
+          'MERGE=false'
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: a1-r11-target-package
+          path: dist/*
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 30

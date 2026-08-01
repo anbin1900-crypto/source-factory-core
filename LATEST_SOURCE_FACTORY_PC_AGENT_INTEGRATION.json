@@ -1,0 +1,73 @@
+{
+  "schema_version": "YOLLA_SOURCE_FACTORY_PC_AGENT_INTEGRATION_POINTER_V1",
+  "integration_id": "SOURCE-FACTORY-PC-AGENT-FILE-BRIDGE-V1-20260801",
+  "published_at": "2026-08-01T19:47:00+09:00",
+  "status": "SOURCE_FACTORY_PC_AGENT_STATIC_AND_MOCK_E2E_PASS_TARGET_PC_APPLY_READY",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 3,
+  "branch": "integration/source-factory-pc-agent-api-db-v1",
+  "source_authority": {
+    "base_pull_request": 2,
+    "base_branch": "publish/reusable-core-20260801",
+    "base_head": "486915d9f23a78779de99bb5d25dcc3325ed52c0",
+    "integration_source_head": "2844ec76fb6eabaf11a4c7d388370ebb6720d982",
+    "active_core": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038"
+  },
+  "files": {
+    "contract": {
+      "path": "integrations/pc_agent_v1/SOURCE_FACTORY_PC_AGENT_INTEGRATION_CONTRACT_V1.json",
+      "blob": "78c5207a75f2d891358f8edfd9530b0f1eae9887"
+    },
+    "adapter": {
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/src/shared/stage4/pcAgentBridgeAdapter.js",
+      "blob": "af0d9ef934d88c1d4019f8330e30ee1bcb9b6f8f"
+    },
+    "worker": {
+      "path": "integrations/pc_agent_v1/pc_agent_bridge_worker.py",
+      "blob": "aadd6049cbbc8cc76513dc8a694eef744480093b"
+    },
+    "patcher": {
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/tools/stage4/applyPcAgentBridgePatch.js",
+      "blob": "6766bd0e79567957cde299c7d9c7274a6f3358f5"
+    },
+    "target_pc_apply": {
+      "path": "integrations/pc_agent_v1/Apply-SourceFactoryPcAgentIntegrationV1.ps1",
+      "blob": "af9d5547904ffdf6b546790bb232cc8bba905f5f"
+    },
+    "validator": {
+      "path": "integrations/pc_agent_v1/validate_source_factory_pc_agent_integration.py",
+      "blob": "34ea954e0b80e5f051edb1e49cabc546845c2919"
+    }
+  },
+  "ci": {
+    "workflow": "Source Factory PC Agent Integration V1",
+    "run_id": 30696297552,
+    "job_id": 91359679750,
+    "conclusion": "success",
+    "json_parse": "PASS",
+    "python_compile": "PASS",
+    "node_check": "PASS_3_OF_3",
+    "package_validation": "PASS_FINDING_COUNT_0",
+    "mock_e2e": "PASS",
+    "powershell_parse": "PASS"
+  },
+  "flow": [
+    "handleStage4DispatchNextPrompt",
+    "sequentialPromptSender_preserved",
+    "PC_AGENT_DISPATCH_ADAPTER",
+    "WORK_REQUEST",
+    "pc_agent_bridge_worker.py",
+    "WORK_RESULT",
+    "PC_AGENT_RESULT_ADAPTER",
+    "handleStage4RunCheck",
+    "executionResultCollector_preserved",
+    "handleStage4AppendStationRecords"
+  ],
+  "target_pc": {
+    "apply_status": "READY_NOT_RUN",
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "next_action": "APPLY_TO_E_ACTIVE_CORE_AND_RUN_TARGET_PC_BRIDGE_THEN_BIND_API_W01_AND_D1_FIXTURES"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "YOLLA_A1_R11_TARGET_PC_FINAL_PASS_POINTER_V1",
+  "status": "PASS",
+  "terminal": "A1_R11_ACTIVE_RUNTIME_BOOT_RESTART_RECOVERY_PASS",
+  "report": {
+    "path": "integrations/runtime_acceptance_v1/R11_TARGET_PC_FINAL_PASS_V1.json",
+    "commit": "e83ef56226bff4e380304ba18808551803cad421",
+    "blob": "507f449ec6512def6cf23d6d8be6392b55b9ef8a"
+  },
+  "target_pc_attempt_id": "R11-20260801T180542901Z-4d618e3bd4a3",
+  "cold_boot": "PASS",
+  "live_active_core_handler": "PASS",
+  "live_pc_agent_execution": "PASS",
+  "live_collector_storage": "PASS",
+  "duplicate_suppression": "PASS",
+  "duplicate_execution_count": 0,
+  "singleton_lock": "PASS",
+  "duplicate_sidecar_count": 0,
+  "pending_request_resume": "PASS",
+  "restart_recovery": "PASS",
+  "state_persistence": "PASS",
+  "backup_authority": "PASS",
+  "destructive_rollback_executed": false,
+  "clean_shutdown": "PASS",
+  "orphan_worker_count": 0,
+  "orphan_electron_count": 0,
+  "real_api_call_count": 0,
+  "postgresql_apply_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "next_state": "R11_ACCEPTED_BEGIN_R12_STAGING_POSTGRESQL_AUTHORITY_AND_COMPATIBILITY_CLOSURE"
+}

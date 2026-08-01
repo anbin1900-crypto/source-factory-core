@@ -1,0 +1,318 @@
+name: PC Agent Windows Runtime V1
+
+on:
+  pull_request:
+    paths:
+      - 'runtime/pc_agent_runtime_v1/**'
+      - 'integrations/pc_agent_v1/pc_agent_bridge_worker.py'
+      - '.github/workflows/pc-agent-runtime-v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-runtime-linux:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          sparse-checkout: |
+            runtime/pc_agent_runtime_v1
+            integrations/pc_agent_v1/pc_agent_bridge_worker.py
+          sparse-checkout-cone-mode: false
+
+      - name: Compile runtime sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            runtime/pc_agent_runtime_v1/pc_agent_runtime_supervisor.py \
+            runtime/pc_agent_runtime_v1/validate_pc_agent_runtime.py \
+            runtime/pc_agent_runtime_v1/test_pc_agent_runtime.py \
+            integrations/pc_agent_v1/pc_agent_bridge_worker.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          json.loads(Path('runtime/pc_agent_runtime_v1/PC_AGENT_RUNTIME_CONTRACT_V1.json').read_text(encoding='utf-8'))
+          print('RUNTIME_JSON_PARSE=PASS')
+          PY
+          echo RUNTIME_PYTHON_COMPILE=PASS_4_OF_4
+
+      - name: Run supervisor lifecycle tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python runtime/pc_agent_runtime_v1/test_pc_agent_runtime.py \
+            --source-root . \
+            --output /tmp/runtime-test-result.json
+          cat /tmp/runtime-test-result.json
+
+      - name: Validate installable package source
+        shell: bash
+        run: |
+          set -euo pipefail
+          package=/tmp/pc-agent-runtime-package
+          rm -rf "$package"
+          mkdir -p "$package"
+          cp runtime/pc_agent_runtime_v1/PC_AGENT_RUNTIME_CONTRACT_V1.json "$package/"
+          cp runtime/pc_agent_runtime_v1/pc_agent_runtime_supervisor.py "$package/"
+          cp runtime/pc_agent_runtime_v1/Install-PcAgentRuntime.ps1 "$package/"
+          cp runtime/pc_agent_runtime_v1/Manage-PcAgentRuntime.ps1 "$package/"
+          cp runtime/pc_agent_runtime_v1/validate_pc_agent_runtime.py "$package/"
+          cp integrations/pc_agent_v1/pc_agent_bridge_worker.py "$package/"
+          python runtime/pc_agent_runtime_v1/validate_pc_agent_runtime.py --package-root "$package"
+          echo RUNTIME_PACKAGE_SOURCE_VALIDATION=PASS
+
+      - name: Record Linux safety boundary
+        shell: bash
+        run: |
+          printf '%s\n' \
+            'REAL_API_CALL_COUNT=0' \
+            'POSTGRESQL_APPLY_COUNT=0' \
+            'PRODUCTION=false' \
+            'READY=false' \
+            'MERGE=false'
+
+  validate-runtime-windows-powershell-51:
+    runs-on: windows-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          sparse-checkout: |
+            runtime/pc_agent_runtime_v1
+            integrations/pc_agent_v1/pc_agent_bridge_worker.py
+          sparse-checkout-cone-mode: false
+
+      - name: Parse Windows PowerShell runtime scripts
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          if($PSVersionTable.PSEdition-ne'Desktop'-or$PSVersionTable.PSVersion.Major-ne5-or$PSVersionTable.PSVersion.Minor-ne1){
+            throw ('WINDOWS_POWERSHELL_51_REQUIRED actual=' + $PSVersionTable.PSVersion)
+          }
+          $files=@(
+            'runtime/pc_agent_runtime_v1/Install-PcAgentRuntime.ps1',
+            'runtime/pc_agent_runtime_v1/Manage-PcAgentRuntime.ps1'
+          )
+          foreach($file in $files){
+            $tokens=$null;$errors=$null
+            [System.Management.Automation.Language.Parser]::ParseFile($file,[ref]$tokens,[ref]$errors)|Out-Null
+            if($errors.Count-ne0){throw ('POWERSHELL_PARSE_FAILED file='+$file+' error='+$errors[0].Message)}
+          }
+          'WINDOWS_POWERSHELL_51_PARSE=PASS_2_OF_2'
+
+      - name: Run runtime lifecycle tests on Windows
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          python -m py_compile `
+            runtime/pc_agent_runtime_v1/pc_agent_runtime_supervisor.py `
+            runtime/pc_agent_runtime_v1/validate_pc_agent_runtime.py `
+            runtime/pc_agent_runtime_v1/test_pc_agent_runtime.py `
+            integrations/pc_agent_v1/pc_agent_bridge_worker.py
+          if($LASTEXITCODE-ne0){throw 'WINDOWS_PYTHON_COMPILE_FAILED'}
+          python runtime/pc_agent_runtime_v1/test_pc_agent_runtime.py --source-root . --output "$env:RUNNER_TEMP\runtime-test-result.json"
+          if($LASTEXITCODE-ne0){throw 'WINDOWS_RUNTIME_TEST_FAILED'}
+          Get-Content -LiteralPath "$env:RUNNER_TEMP\runtime-test-result.json" -Raw
+          'WINDOWS_RUNTIME_LIFECYCLE_TEST=PASS'
+          'REAL_API_CALL_COUNT=0'
+          'POSTGRESQL_APPLY_COUNT=0'
+          'PRODUCTION=false'
+          'READY=false'
+          'MERGE=false'
+
+  build-runtime-package:
+    needs:
+      - validate-runtime-linux
+      - validate-runtime-windows-powershell-51
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          sparse-checkout: |
+            runtime/pc_agent_runtime_v1
+            integrations/pc_agent_v1/pc_agent_bridge_worker.py
+          sparse-checkout-cone-mode: false
+
+      - name: Build deterministic runtime ZIP and installer wrapper
+        shell: bash
+        env:
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+          RUNTIME_CI_RUN_ID: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          python - <<'PY'
+          from __future__ import annotations
+          import hashlib, json, os, shutil, zipfile
+          from pathlib import Path
+
+          root=Path('.').resolve()
+          dist=root/'dist'
+          package_name='YOLLA_PC_AGENT_WINDOWS_RUNTIME_V1'
+          version='1.0.0-20260802'
+          staging=Path('/tmp')/package_name
+          if staging.exists(): shutil.rmtree(staging)
+          staging.mkdir(parents=True)
+          mapping={
+            'runtime/pc_agent_runtime_v1/PC_AGENT_RUNTIME_CONTRACT_V1.json':'PC_AGENT_RUNTIME_CONTRACT_V1.json',
+            'runtime/pc_agent_runtime_v1/pc_agent_runtime_supervisor.py':'pc_agent_runtime_supervisor.py',
+            'runtime/pc_agent_runtime_v1/Install-PcAgentRuntime.ps1':'Install-PcAgentRuntime.ps1',
+            'runtime/pc_agent_runtime_v1/Manage-PcAgentRuntime.ps1':'Manage-PcAgentRuntime.ps1',
+            'runtime/pc_agent_runtime_v1/validate_pc_agent_runtime.py':'validate_pc_agent_runtime.py',
+            'runtime/pc_agent_runtime_v1/README.md':'README.md',
+            'integrations/pc_agent_v1/pc_agent_bridge_worker.py':'pc_agent_bridge_worker.py',
+          }
+          def sha(path:Path)->str:
+            return hashlib.sha256(path.read_bytes()).hexdigest()
+          records=[]
+          for source, target in mapping.items():
+            src=root/source
+            if not src.is_file(): raise SystemExit('MISSING:'+source)
+            dst=staging/target
+            shutil.copyfile(src,dst)
+            records.append({'path':target,'sha256':sha(dst),'size_bytes':dst.stat().st_size})
+          records.sort(key=lambda item:item['path'])
+          manifest={
+            'schema_version':'YOLLA_PC_AGENT_WINDOWS_RUNTIME_PACKAGE_MANIFEST_V1',
+            'runtime_id':'YOLLA-PC-AGENT-RUNTIME-V1',
+            'version':version,
+            'package_id':'A1-PC-AGENT-WINDOWS-RUNTIME-V1-20260802-001',
+            'repository':'anbin1900-crypto/source-factory-core',
+            'pull_request':3,
+            'branch':'integration/source-factory-pc-agent-api-db-v1',
+            'source_head':os.environ['PR_HEAD_SHA'],
+            'runtime_ci_run_id':int(os.environ['RUNTIME_CI_RUN_ID']),
+            'task_name':'YOLLA-PC-Agent-Runtime-V1',
+            'task_account':'SYSTEM',
+            'target_pc_install_claimed':False,
+            'production':False,
+            'ready':False,
+            'merge':False,
+            'files':records,
+          }
+          (staging/'PC_AGENT_RUNTIME_PACKAGE_MANIFEST.json').write_text(
+            json.dumps(manifest,ensure_ascii=False,indent=2,sort_keys=True)+'\n',encoding='utf-8'
+          )
+          zip_name=package_name+'.zip'
+          zip_path=dist/zip_name
+          with zipfile.ZipFile(zip_path,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
+            for path in sorted(staging.iterdir()):
+              info=zipfile.ZipInfo(package_name+'/'+path.name)
+              info.date_time=(2026,8,2,3,40,0)
+              info.compress_type=zipfile.ZIP_DEFLATED
+              info.external_attr=0o644<<16
+              archive.writestr(info,path.read_bytes())
+          zip_sha=sha(zip_path)
+          (dist/(zip_name+'.sha256.txt')).write_text(f'{zip_sha}  {zip_name}\n',encoding='utf-8')
+
+          wrapper_name='INSTALL_YOLLA_PC_AGENT_WINDOWS_RUNTIME_V1.ps1'
+          wrapper=f'''[CmdletBinding()]
+          param(
+              [string]$ZipPath = 'E:\\YOLLA\\temp\\{zip_name}',
+              [string]$ExtractRoot = 'E:\\YOLLA\\temp\\pc-agent-runtime-v1-package',
+              [switch]$DoNotStart
+          )
+          Set-StrictMode -Version Latest
+          $ErrorActionPreference='Stop'
+          $ExpectedZipSha256='{zip_sha}'
+          function Fail([string]$Code,[string]$Message){{throw ('{{0}}:{{1}}'-f$Code,$Message)}}
+          if($PSVersionTable.PSEdition-ne'Desktop'-or$PSVersionTable.PSVersion.Major-ne5-or$PSVersionTable.PSVersion.Minor-ne1){{Fail 'PCRW001_WINDOWS_POWERSHELL_51_REQUIRED' ([string]$PSVersionTable.PSVersion)}}
+          $identity=[Security.Principal.WindowsIdentity]::GetCurrent()
+          $principal=New-Object Security.Principal.WindowsPrincipal($identity)
+          if(-not$principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)){{Fail 'PCRW002_ADMINISTRATOR_REQUIRED' 'Run elevated Windows PowerShell 5.1.'}}
+          if(-not(Test-Path -LiteralPath $ZipPath -PathType Leaf)){{Fail 'PCRW003_ZIP_MISSING' $ZipPath}}
+          $actual=(Get-FileHash -LiteralPath $ZipPath -Algorithm SHA256).Hash.ToLowerInvariant()
+          if($actual-ne$ExpectedZipSha256){{Fail 'PCRW004_ZIP_SHA_MISMATCH' ('expected={{0}} actual={{1}}'-f$ExpectedZipSha256,$actual)}}
+          $versionRoot=Join-Path $ExtractRoot $actual.Substring(0,16)
+          Remove-Item -LiteralPath $versionRoot -Recurse -Force -ErrorAction SilentlyContinue
+          New-Item -ItemType Directory -Path $versionRoot -Force|Out-Null
+          Expand-Archive -LiteralPath $ZipPath -DestinationPath $versionRoot -Force
+          $packageRoot=Join-Path $versionRoot '{package_name}'
+          $manifestPath=Join-Path $packageRoot 'PC_AGENT_RUNTIME_PACKAGE_MANIFEST.json'
+          if(-not(Test-Path -LiteralPath $manifestPath -PathType Leaf)){{Fail 'PCRW005_MANIFEST_MISSING' $manifestPath}}
+          $manifest=Get-Content -LiteralPath $manifestPath -Raw|ConvertFrom-Json
+          if($manifest.package_id-ne'A1-PC-AGENT-WINDOWS-RUNTIME-V1-20260802-001'){{Fail 'PCRW006_PACKAGE_ID_INVALID' ([string]$manifest.package_id)}}
+          foreach($file in $manifest.files){{
+            $path=Join-Path $packageRoot ([string]$file.path)
+            if(-not(Test-Path -LiteralPath $path -PathType Leaf)){{Fail 'PCRW007_FILE_MISSING' $path}}
+            $observed=(Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant()
+            if($observed-ne[string]$file.sha256){{Fail 'PCRW008_FILE_SHA_MISMATCH' ('path={{0}} expected={{1}} actual={{2}}'-f$path,$file.sha256,$observed)}}
+          }}
+          $installer=Join-Path $packageRoot 'Install-PcAgentRuntime.ps1'
+          $arguments=@('-NoProfile','-ExecutionPolicy','Bypass','-File',$installer,'-PackageRoot',$packageRoot)
+          if(-not$DoNotStart){{$arguments+='-StartNow'}}
+          & powershell.exe @arguments
+          if($LASTEXITCODE-ne0){{Fail 'PCRW009_INSTALL_FAILED' ('exit='+$LASTEXITCODE)}}
+          Write-Host 'PC_AGENT_WINDOWS_RUNTIME_PACKAGE_INSTALL=PASS'
+          Write-Host ('PACKAGE_SHA256='+$actual)
+          Write-Host ('STARTED='+(-not[bool]$DoNotStart).ToString().ToLowerInvariant())
+          Write-Host 'PRODUCTION=false'
+          Write-Host 'READY=false'
+          Write-Host 'MERGE=false'
+          '''
+          wrapper='\n'.join(line[10:] if line.startswith('          ') else line for line in wrapper.splitlines())+'\n'
+          wrapper_path=dist/wrapper_name
+          wrapper_path.write_text(wrapper,encoding='utf-8',newline='\n')
+          wrapper_sha=sha(wrapper_path)
+          (dist/(wrapper_name+'.sha256.txt')).write_text(f'{wrapper_sha}  {wrapper_name}\n',encoding='utf-8')
+          receipt={
+            'schema_version':'YOLLA_PC_AGENT_WINDOWS_RUNTIME_PACKAGE_BUILD_RECEIPT_V1',
+            'status':'PASS',
+            'package_file':zip_name,
+            'package_sha256':zip_sha,
+            'package_size_bytes':zip_path.stat().st_size,
+            'package_entry_count':len(list(staging.iterdir())),
+            'manifest_file_count':len(records),
+            'wrapper_file':wrapper_name,
+            'wrapper_sha256':wrapper_sha,
+            'wrapper_size_bytes':wrapper_path.stat().st_size,
+            'source_head':os.environ['PR_HEAD_SHA'],
+            'runtime_ci_run_id':int(os.environ['RUNTIME_CI_RUN_ID']),
+            'target_pc_install_claimed':False,
+            'production':False,'ready':False,'merge':False,
+          }
+          (dist/'PC_AGENT_RUNTIME_PACKAGE_BUILD_RECEIPT.json').write_text(
+            json.dumps(receipt,indent=2,sort_keys=True)+'\n',encoding='utf-8'
+          )
+          print(json.dumps(receipt,sort_keys=True))
+          PY
+
+      - name: Validate generated package and wrapper
+        shell: pwsh
+        run: |
+          $ErrorActionPreference='Stop'
+          $receipt=Get-Content -LiteralPath dist/PC_AGENT_RUNTIME_PACKAGE_BUILD_RECEIPT.json -Raw|ConvertFrom-Json
+          if($receipt.status-ne'PASS'){throw 'BUILD_RECEIPT_NOT_PASS'}
+          if($receipt.production-ne$false-or$receipt.ready-ne$false-or$receipt.merge-ne$false){throw 'SAFETY_BOUNDARY_INVALID'}
+          if($receipt.manifest_file_count-ne7){throw 'MANIFEST_FILE_COUNT_INVALID'}
+          $tokens=$null;$errors=$null
+          [System.Management.Automation.Language.Parser]::ParseFile(
+            'dist/INSTALL_YOLLA_PC_AGENT_WINDOWS_RUNTIME_V1.ps1',
+            [ref]$tokens,[ref]$errors
+          )|Out-Null
+          if($errors.Count-ne0){throw ('WRAPPER_PARSE_FAILED:'+ $errors[0].Message)}
+          'PC_AGENT_RUNTIME_PACKAGE_BUILD=PASS'
+          'PC_AGENT_RUNTIME_WRAPPER_PARSE=PASS'
+          'TARGET_PC_INSTALL_COUNT=0'
+          'PRODUCTION=false'
+          'READY=false'
+          'MERGE=false'
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: yolla-pc-agent-windows-runtime-v1
+          path: dist/*
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 30

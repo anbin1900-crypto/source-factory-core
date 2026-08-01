@@ -1,0 +1,92 @@
+{
+  "schema_version": "YOLLA_A1_COMMANDER_SUPPORT_CONSUMPTION_DECISION_V1",
+  "decision_id": "A1-COMMANDER-SUPPORT-CONSUMPTION-DECISION-V1-20260801-001",
+  "decision_owner": "A-1",
+  "decision_basis": "EFFICIENCY_RATIONALITY_SPEED_FIRST",
+  "status": "ACTIVE",
+  "source_factory": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "support_pr": 2,
+    "support_head": "15fcc6e252b064a22fb5b5a9288810093dcec075",
+    "support_package_path": "releases/SF_REUSABLE_CORE_20260801_175708/integration/pc_agent_adapter_support_v1",
+    "support_terminal": "SOURCE_FACTORY_PC_AGENT_ADAPTER_SUPPORT_READY",
+    "bundle_sha256": "bced15e549be52e243e1c08b0449c9029fed3463fb4ab8d4e71b00976d7d5958",
+    "acceptance": "ACCEPTED_AS_DI_CONTRACT_PRESERVATION_AND_MOCK_ORACLE",
+    "not_accepted_as": [
+      "TARGET_PC_RUNTIME_AUTHORITY",
+      "DURABLE_TRANSPORT_IMPLEMENTATION",
+      "ACTIVE_E_CORE_APPLY_RECEIPT"
+    ]
+  },
+  "a1_execution_authority": {
+    "pull_request": 3,
+    "branch": "integration/source-factory-pc-agent-api-db-v1",
+    "head_before_decision": "c7a5233d612836112e45525cfa5f52e56872d56c",
+    "role": "SINGLE_RUNTIME_IMPLEMENTATION_AND_TARGET_PC_EXECUTION_AUTHORITY",
+    "components": [
+      "DURABLE_FILE_QUEUE",
+      "PC_AGENT_SIDECAR_WORKER",
+      "ACTIVE_CORE_PATCH_AND_ROLLBACK",
+      "MINIMUM_VERTICAL_E2E"
+    ]
+  },
+  "api": {
+    "control_pr": 151,
+    "current_evidence_head": "a8673bb89a216ffa0c463ae4ed983490b80e5d63",
+    "frozen_contract_source_commit": "1d34f80ce96c29de6698798ed36c5c685d438841",
+    "contract_source_head": "c651a36a6bbaeca8a5a769342c21d2539a15b730",
+    "support_wave": "API-S2-MINIMUM-MAPPING-FIXTURE-V1-20260801-001",
+    "support_dispatch": "10_OF_10",
+    "decision": "CONSUME_W01_FROZEN_CONTRACT_NOW_AND_ABSORB_WORKER_TERMINALS_NONBLOCKING",
+    "runtime_claim_allowed": false
+  },
+  "knowledge_db": {
+    "control_pr": 188,
+    "control_head": "8fd389bffd1f3fe98c18fcbce0a1c88cf68583c8",
+    "terminal": "D1_KNOWLEDGE_DB_MINIMUM_MAPPING_FIXTURE_READY",
+    "pointer_commit": "8fd389bffd1f3fe98c18fcbce0a1c88cf68583c8",
+    "pointer_blob": "c21d7abeb9315be9fa79fd8582bdab920797a7f1",
+    "package_root": "DOMAIN_PACKS/KNOWLEDGE_OPERATING_BASE/INTEGRATION/V1/S2_SUPPORT_CYCLE_001/API_RESULT_TO_KNOWLEDGE_OBJECT_STAGING_FIXTURE_V1",
+    "decision": "D1_OFFICIAL_PACKAGE_SUPERSEDES_A1_PROVISIONAL_DB_MAPPING"
+  },
+  "b_group": {
+    "control_pr": 164,
+    "control_head": "6a4d974165077f3e40ab3b43fdb72b598444234c",
+    "terminal": "B1_A1_FRONTLINE_RUNTIME_SUPPORT_PACKAGE_READY",
+    "pointer_blob": "7005d32f7fea1791d675784862dd2e2630d969c7",
+    "decision": "ACCEPT_AS_TARGET_PC_MATERIALIZATION_RETRY_RESUME_AND_ROLLBACK_SUPPORT"
+  },
+  "c_group": {
+    "control_pr": 175,
+    "control_head": "5d9ac6c653f9eb3b426f160198e4d47daeec0b10",
+    "terminal": "C1_A1_MINIMUM_INTEGRATION_FIXTURE_HARNESS_READY",
+    "terminal_blob": "5294fef32d88ac73eed990a60269e5dd5724ce7e",
+    "harness_source_blob": "c59c77027d847244f17dcde66d6056662f541a2c",
+    "decision": "ACCEPT_AS_INDEPENDENT_FAILURE_REPRODUCTION_AND_E2E_ORACLE"
+  },
+  "package_control": {
+    "previous_zip_sha256": "79b9bc4601e3d57adccdffb2d1bd8dd1d93784b1076eab05932746148acc6629",
+    "previous_runner_sha256": "7cafb38c175f02368eaddbde22141da8f500eb11c5ac976cd2cdd4e12a3eabfb",
+    "previous_package_status": "SUPERSEDED_DO_NOT_RUN",
+    "reason": "CREATED_BEFORE_LATEST_COMMANDER_SUPPORT_TERMINALS_AND_SOURCE_FACTORY_SUPPORT_HEAD",
+    "next_package_requirement": [
+      "SOURCE_FACTORY_SUPPORT_CONTRACT_BINDING",
+      "D1_OFFICIAL_FIXTURE_BINDING",
+      "B1_RUNTIME_WRAPPER_BINDING",
+      "C1_HARNESS_ORACLE_BINDING",
+      "API_W01_FROZEN_SOURCE_BINDING"
+    ]
+  },
+  "execution_order": [
+    "UPDATE_A1_PR3_SUPPORT_BINDINGS",
+    "RUN_COMBINED_STATIC_AND_MOCK_CI",
+    "GENERATE_NEW_TARGET_PC_PACKAGE",
+    "APPLY_TO_ISOLATED_ACTIVE_CORE_WORKING_COPY",
+    "RUN_SOURCE_FACTORY_PC_AGENT_LOCAL_E2E",
+    "RUN_API_DB_FIXTURE_E2E",
+    "PROMOTE_TO_ACTIVE_CORE_ONLY_AFTER_PASS"
+  ],
+  "production": false,
+  "ready": false,
+  "merge": false
+}

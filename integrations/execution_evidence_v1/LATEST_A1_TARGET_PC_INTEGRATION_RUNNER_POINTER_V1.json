@@ -1,0 +1,52 @@
+{
+  "schema_version": "YOLLA_A1_TARGET_PC_INTEGRATION_RUNNER_POINTER_V2",
+  "pointer_id": "LATEST-A1-TARGET-PC-INTEGRATION-RUNNER-V1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 3,
+  "branch": "integration/source-factory-pc-agent-api-db-v1",
+  "safe_fail": {
+    "path": "integrations/execution_evidence_v1/A1_TARGET_PC_R3_GIT_OBJECT_FETCH_SAFE_FAIL_V1_20260801_2052_KST.json",
+    "commit": "eb63abbd906b690d8d2e76355bf7be571d9543b0",
+    "blob": "679f3be3f3271f3f4a28a3df3c4efc11c137680f",
+    "status": "SAFE_FAIL_NO_ACTIVE_CORE_MUTATION"
+  },
+  "active_package": {
+    "file": "SOURCE_FACTORY_PC_AGENT_API_DB_INTEGRATION_V2_R3.zip",
+    "sha256": "30eb7b7a543b1427832271d8bee337eaf409a33aa27ae7012fa483f57003977f",
+    "status": "REUSED_VALID"
+  },
+  "active_runner": {
+    "file": "RUN_T1A1_SOURCE_FACTORY_PC_AGENT_API_DB_INTEGRATION_V2_R4.ps1",
+    "sha256": "4a988c6daa12f743cf15512a47c944e76b42c2decea5c3520957ad975472825f",
+    "status": "READY_FOR_TARGET_PC_EXECUTION",
+    "correction": "ISOLATE_NATIVE_GIT_STDERR_AND_FETCH_MISSING_EXACT_COMMITS_BEFORE_BLOB_MATERIALIZATION"
+  },
+  "correction_source_authority": {
+    "path": "integrations/pc_agent_v1/runners/R4_GIT_FETCH_RECOVERY_MODULE.ps1",
+    "commit": "952674952992e83c49a2630fe721f4a7557dfc9c",
+    "blob": "015a1631a9925d8591ec3060cac21a0a8aa1298d",
+    "windows_powershell_51_parse": "PASS",
+    "recovery_contract": "PASS"
+  },
+  "ci": {
+    "workflow": "Source Factory PC Agent R4 Git Recovery",
+    "workflow_commit": "4987248a7a21e7b5b06f509675be74890c197aa5",
+    "run_id": 30698874340,
+    "job_id": 91366246147,
+    "conclusion": "success",
+    "checkout": "PASS_SPARSE_LONG_PATH_SAFE",
+    "windows_powershell_51_parse": "PASS",
+    "marker_validation": "PASS",
+    "safety_counters": "ALL_ZERO"
+  },
+  "superseded_runner": {
+    "file": "RUN_T1A1_SOURCE_FACTORY_PC_AGENT_API_DB_INTEGRATION_V2_R3.ps1",
+    "sha256": "f8379506c9f5afb312782f5d659fa54fd40048942591c648ec294b31f929a101",
+    "status": "DO_NOT_RUN"
+  },
+  "expected_next_gate": "EXTERNAL_GIT_FETCH_RECOVERY_PASS_THEN_EXACT_BLOB_MATERIALIZATION",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "R4_REMOTE_SOURCE_AND_CI_PASS_READY_FOR_TARGET_PC"
+}

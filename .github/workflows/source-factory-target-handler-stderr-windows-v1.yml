@@ -1,0 +1,91 @@
+name: Source Factory Target Handler Stderr Windows V1
+
+on:
+  pull_request:
+    paths:
+      - 'integrations/pc_agent_v1/Invoke-TargetStage4HandlerE2E.ps1'
+      - 'integrations/pc_agent_v1/validate_source_factory_pc_agent_integration.py'
+      - '.github/workflows/source-factory-target-handler-stderr-windows-v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-target-handler-stderr-on-windows-powershell-51:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            integrations/pc_agent_v1/Invoke-TargetStage4HandlerE2E.ps1
+
+      - name: Parse helper with Windows PowerShell 5.1
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          if($PSVersionTable.PSEdition-ne'Desktop'-or$PSVersionTable.PSVersion.Major-ne5-or$PSVersionTable.PSVersion.Minor-ne1){
+            throw ('WINDOWS_POWERSHELL_51_REQUIRED actual=' + $PSVersionTable.PSVersion)
+          }
+          $tokens=$null
+          $errors=$null
+          [System.Management.Automation.Language.Parser]::ParseFile(
+            'integrations/pc_agent_v1/Invoke-TargetStage4HandlerE2E.ps1',
+            [ref]$tokens,
+            [ref]$errors
+          )|Out-Null
+          if($errors.Count-ne0){throw ('POWERSHELL_PARSE_FAILED: ' + $errors[0].Message)}
+          'WINDOWS_POWERSHELL_51_PARSE=PASS'
+
+      - name: Accept nonfatal Node stderr with valid PASS receipt
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          $root=Join-Path $env:RUNNER_TEMP 'target-handler-stderr-fixture'
+          $scriptDir=Join-Path $root 'releases\SF_REUSABLE_CORE_20260801_175708\tools\stage4'
+          New-Item -ItemType Directory -Path $scriptDir -Force|Out-Null
+          $fakeScript=Join-Path $scriptDir 'testTargetStage4HandlerPcAgentBridgeE2E.js'
+          @'
+          'use strict';
+          console.warn("[W57] Project Panel Identity IPC bridge registration skipped: Cannot find module 'electron'");
+          process.stdout.write(JSON.stringify({
+            schema_version:'YOLLA_TARGET_STAGE4_HANDLER_PC_AGENT_E2E_V1',
+            status:'PASS',
+            target_handler_loaded:true,
+            pc_agent_execution:'PASS',
+            exit_code:0,
+            storage:'PASS',
+            production:false
+          })+'\n');
+          '@ | Set-Content -LiteralPath $fakeScript -Encoding UTF8
+
+          function Fail([string]$Code,[string]$Message){throw ('{0}:{1}' -f $Code,$Message)}
+          $packageRoot=$root
+          $nodeExe=(Get-Command node.exe -ErrorAction Stop).Source
+          $PythonExe=(Get-Command python.exe -ErrorAction Stop).Source
+          . '.\integrations\pc_agent_v1\Invoke-TargetStage4HandlerE2E.ps1'
+
+          $evidence=Join-Path $root 'evidence\TARGET_HANDLER_E2E.txt'
+          $result=Invoke-TargetStage4HandlerE2E `
+            -CoreRoot (Join-Path $root 'active') `
+            -TestBridgeRoot (Join-Path $root 'bridge') `
+            -EvidencePath $evidence
+
+          if($result.status-ne'PASS'){throw 'PASS_RECEIPT_NOT_RETURNED'}
+          if($result.helper_exit_code-ne0){throw 'HELPER_EXIT_CODE_NOT_ZERO'}
+          if($result.helper_stderr_nonfatal-ne$true){throw 'STDERR_WAS_NOT_CLASSIFIED_NONFATAL'}
+          if([int]$result.helper_stderr_line_count-lt1){throw 'STDERR_LINE_COUNT_NOT_RECORDED'}
+          if(-not(Test-Path -LiteralPath $evidence -PathType Leaf)){throw 'COMBINED_EVIDENCE_MISSING'}
+          if(-not(Test-Path -LiteralPath ($evidence+'.stderr.txt') -PathType Leaf)){throw 'STDERR_EVIDENCE_MISSING'}
+          $stderr=[IO.File]::ReadAllText(($evidence+'.stderr.txt'),[Text.Encoding]::UTF8)
+          if($stderr-notmatch'Cannot find module.*electron'){throw 'EXPECTED_ELECTRON_WARNING_NOT_CAPTURED'}
+          'TARGET_HANDLER_STDERR_NONFATAL_GATE=PASS'
+          'TARGET_HANDLER_PASS_RECEIPT=PASS'
+          'ACTIVE_CORE_MUTATION_COUNT=0'
+          'PRODUCTION=false'
+          'READY=false'
+          'MERGE=false'

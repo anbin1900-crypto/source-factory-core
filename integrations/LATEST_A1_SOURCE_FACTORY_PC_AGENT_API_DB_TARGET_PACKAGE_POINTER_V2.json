@@ -1,0 +1,75 @@
+{
+  "schema_version": "YOLLA_A1_SOURCE_FACTORY_PC_AGENT_API_DB_TARGET_PACKAGE_POINTER_V2_R3",
+  "package_id": "A1-SOURCE-FACTORY-PC-AGENT-API-DB-INTEGRATION-V2-R3-20260801-001",
+  "status": "TARGET_PC_EXECUTION_PACKAGE_READY_FINAL_REVISION",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 3,
+  "branch": "integration/source-factory-pc-agent-api-db-v1",
+  "source_head": "c847a6f5d4ba22789310a35b6b7dbce2644f2194",
+  "decision_commit": "45cda64ca650610f221b4abbc7d2f0b498073107",
+  "ci": {
+    "run_id": 30698314146,
+    "job_id": 91364827879,
+    "conclusion": "success",
+    "external_authority_bindings": "PASS_5_OF_5",
+    "actual_target_stage4_handler_e2e": "PASS",
+    "minimum_vertical_e2e": "PASS",
+    "powershell_parse": "PASS_2_OF_2"
+  },
+  "target_package": {
+    "filename": "SOURCE_FACTORY_PC_AGENT_API_DB_INTEGRATION_V2_R3.zip",
+    "sha256": "30eb7b7a543b1427832271d8bee337eaf409a33aa27ae7012fa483f57003977f",
+    "size_bytes": 48524,
+    "source_file_count": 26,
+    "zip_entry_count": 27
+  },
+  "target_runner": {
+    "filename": "RUN_T1A1_SOURCE_FACTORY_PC_AGENT_API_DB_INTEGRATION_V2_R3.ps1",
+    "sha256": "f8379506c9f5afb312782f5d659fa54fd40048942591c648ec294b31f929a101",
+    "size_bytes": 17609,
+    "windows_powershell": "5.1",
+    "administrator_required": true,
+    "lexical_balance": "PASS",
+    "ci_parsed_helper_blob": "d3a5c653f33a4a5de137a2b083d0f68540769162"
+  },
+  "actual_target_handler_test": {
+    "path": "releases/SF_REUSABLE_CORE_20260801_175708/tools/stage4/testTargetStage4HandlerPcAgentBridgeE2E.js",
+    "blob": "dac7612609794f19682c013d0472b97627d9ef22",
+    "ci_result": "PASS"
+  },
+  "bound_authorities": {
+    "source_factory_support_head": "15fcc6e252b064a22fb5b5a9288810093dcec075",
+    "api_w01_contract_source": "1d34f80ce96c29de6698798ed36c5c685d438841",
+    "d1_control_head": "8fd389bffd1f3fe98c18fcbce0a1c88cf68583c8",
+    "b1_control_head": "6a4d974165077f3e40ab3b43fdb72b598444234c",
+    "c1_control_head": "5d9ac6c653f9eb3b426f160198e4d47daeec0b10"
+  },
+  "execution_order": [
+    "PACKAGE_AND_FILE_SHA_VALIDATION",
+    "EXACT_GIT_AUTHORITY_MATERIALIZATION",
+    "API_W01_AUTHORITY_PASS",
+    "D1_OFFICIAL_FIXTURE_PASS",
+    "B1_RUNTIME_SUPPORT_SMOKE_PASS",
+    "C1_INDEPENDENT_HARNESS_PASS",
+    "ISOLATED_WORKING_COPY_APPLY_PASS",
+    "ISOLATED_TARGET_STAGE4_HANDLER_E2E_PASS",
+    "ACTIVE_CORE_APPLY_PASS",
+    "ACTIVE_CORE_TARGET_STAGE4_HANDLER_E2E_PASS",
+    "MINIMUM_VERTICAL_E2E_PASS"
+  ],
+  "superseded": {
+    "v1_zip_sha256": "79b9bc4601e3d57adccdffb2d1bd8dd1d93784b1076eab05932746148acc6629",
+    "v1_runner_sha256": "7cafb38c175f02368eaddbde22141da8f500eb11c5ac976cd2cdd4e12a3eabfb",
+    "v2_zip_sha256": "a95008e27822150d025122e2a7aa12418f87b506994ed6b694610bb7508a6670",
+    "v2_runner_sha256": "69c7b47ff0c3e898975329348f7af1c39404c88cb15895e436db7e508d177b68",
+    "v2_r2_zip_sha256": "d81869adf197e42d6f4a57562030386901f57c9ece08f75da65864d25bca7d9c",
+    "v2_r2_runner_sha256": "3f4d33827723d7dc3346b4ab489d0264d93a8fc3c313815ddc13aeb2533eb673",
+    "status": "DO_NOT_RUN"
+  },
+  "target_pc_execution": "PENDING",
+  "real_api_call": false,
+  "actual_postgresql_apply": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

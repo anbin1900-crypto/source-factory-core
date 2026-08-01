@@ -1,0 +1,109 @@
+name: Source Factory PC Agent R6 UTF8 Gate
+
+on:
+  pull_request:
+    paths:
+      - 'integrations/target_pc_runners/r6/**'
+      - '.github/workflows/source-factory-pc-agent-r6-utf8.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-r6-python-utf8:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - name: Download exact R6 files without checkout
+        shell: powershell
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference='Stop'
+          $repo='${{ github.repository }}'
+          $targetSha='${{ github.event.pull_request.head.sha }}'
+          if([string]::IsNullOrWhiteSpace($targetSha)){$targetSha='${{ github.sha }}'}
+          $root=Join-Path $env:RUNNER_TEMP 'r6'
+          New-Item -ItemType Directory -Path $root -Force | Out-Null
+          $headers=@{
+            Authorization=('Bearer ' + $env:GH_TOKEN)
+            Accept='application/vnd.github.raw+json'
+            'X-GitHub-Api-Version'='2022-11-28'
+          }
+          $files=@(
+            'integrations/target_pc_runners/r6/R6_PYTHON_UTF8_EXECUTION_CONTRACT_V1.json',
+            'integrations/target_pc_runners/r6/Test-R6PythonUtf8Policy.ps1',
+            'integrations/target_pc_runners/r6/R5_TARGET_PC_UTF8_SAFE_FAIL_LEDGER_V1.json'
+          )
+          foreach($path in $files){
+            $name=Split-Path $path -Leaf
+            $url=('https://api.github.com/repos/{0}/contents/{1}?ref={2}' -f $repo,$path,$targetSha)
+            Invoke-WebRequest -UseBasicParsing -Uri $url -Headers $headers -OutFile (Join-Path $root $name)
+          }
+          Add-Content -LiteralPath $env:GITHUB_ENV -Value ('R6_ROOT=' + $root)
+          Add-Content -LiteralPath $env:GITHUB_ENV -Value ('R6_TARGET_SHA=' + $targetSha)
+          'CHECKOUT_FREE_MATERIALIZATION=PASS'
+
+      - name: Resolve Python
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          $python=(Get-Command python.exe -ErrorAction Stop).Source
+          Add-Content -LiteralPath $env:GITHUB_ENV -Value ('R6_PYTHON=' + $python)
+          & $python --version
+          if($LASTEXITCODE -ne 0){throw 'PYTHON_RESOLUTION_FAILED'}
+          'PYTHON_RESOLUTION=PASS'
+
+      - name: Validate R6 contract and safe-fail ledger
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          $contractPath=Join-Path $env:R6_ROOT 'R6_PYTHON_UTF8_EXECUTION_CONTRACT_V1.json'
+          $ledgerPath=Join-Path $env:R6_ROOT 'R5_TARGET_PC_UTF8_SAFE_FAIL_LEDGER_V1.json'
+          $contract=Get-Content -LiteralPath $contractPath -Raw -Encoding UTF8 | ConvertFrom-Json
+          $ledger=Get-Content -LiteralPath $ledgerPath -Raw -Encoding UTF8 | ConvertFrom-Json
+          if($contract.runner_version -ne 'R6'){throw 'R6_RUNNER_VERSION_INVALID'}
+          if($contract.runner_sha256 -ne '652cef2a4c9f81aeecedcb211827dc2141b167e02e6b0695de2ce9c09bd6fd72'){throw 'R6_RUNNER_SHA_INVALID'}
+          if($contract.required_environment.PYTHONUTF8 -ne '1'){throw 'R6_PYTHONUTF8_INVALID'}
+          if($contract.required_environment.PYTHONIOENCODING -ne 'utf-8'){throw 'R6_PYTHONIOENCODING_INVALID'}
+          if([int]$contract.required_invocation.direct_python_call_count -ne 7){throw 'R6_DIRECT_CALL_COUNT_INVALID'}
+          if($contract.failure_corrected.d1_source_mutated -ne $false){throw 'R6_D1_SOURCE_MUTATION_FORBIDDEN'}
+          if($ledger.failure.signature -ne 'WINDOWS_KOREAN_LOCALE_PYTHON_DEFAULT_ENCODING_CP949'){throw 'R5_FAILURE_SIGNATURE_INVALID'}
+          if([int]$ledger.safety.active_core_mutation_count -ne 0){throw 'R5_ACTIVE_CORE_MUTATION_NOT_ZERO'}
+          if($contract.boundary.production -ne $false -or $contract.boundary.ready -ne $false -or $contract.boundary.merge -ne $false){throw 'R6_BOUNDARY_INVALID'}
+          'R6_CONTRACT=PASS'
+          'R5_SAFE_FAIL_LEDGER=PASS'
+
+      - name: Windows PowerShell 5.1 parse
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          if($PSVersionTable.PSEdition -ne 'Desktop' -or $PSVersionTable.PSVersion.Major -ne 5){throw 'WINDOWS_POWERSHELL_51_REQUIRED'}
+          $file=Join-Path $env:R6_ROOT 'Test-R6PythonUtf8Policy.ps1'
+          $tokens=$null
+          $errors=$null
+          [System.Management.Automation.Language.Parser]::ParseFile($file,[ref]$tokens,[ref]$errors)|Out-Null
+          if($errors.Count-ne0){throw ('POWERSHELL_PARSE_FAILED:' + $errors[0].Message)}
+          'WINDOWS_POWERSHELL_51_PARSE=PASS'
+
+      - name: Run R6 Python UTF8 policy
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          $file=Join-Path $env:R6_ROOT 'Test-R6PythonUtf8Policy.ps1'
+          & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $file -PythonExe $env:R6_PYTHON
+          if($LASTEXITCODE -ne 0){throw ('R6_UTF8_POLICY_EXIT=' + $LASTEXITCODE)}
+
+      - name: Record safety boundary
+        shell: powershell
+        run: |
+          'TARGET_SHA=' + $env:R6_TARGET_SHA
+          'WORKING_COPY_APPLY_COUNT=0'
+          'ACTIVE_CORE_MUTATION_COUNT=0'
+          'PC_AGENT_EXECUTION_COUNT=0'
+          'API_FIXTURE_EXECUTION_COUNT=0'
+          'DATABASE_FIXTURE_WRITE_COUNT=0'
+          'PRODUCTION=false'
+          'READY=false'
+          'MERGE=false'
