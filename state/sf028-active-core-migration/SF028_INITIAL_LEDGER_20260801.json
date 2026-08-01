@@ -13,8 +13,10 @@
   "github": {
     "repository": "anbin1900-crypto/source-factory-core",
     "branch": "agent/sf-028-active-core-migration",
+    "pull_request": 1,
     "report_path_pattern": "state/sf028-active-core-migration/<run_id>/",
-    "latest_pointer": "state/sf028-active-core-migration/LATEST.json"
+    "latest_pointer": "state/sf028-active-core-migration/LATEST.json",
+    "worker_source_path_after_real_run": "tools/sf028_active_core_migrate.py"
   },
   "previous_attempt_observation": {
     "files_copied_count": 0,
@@ -26,8 +28,11 @@
   "python_worker": {
     "local_artifact_name": "sf028_active_core_migrate.py",
     "version": "2.0.0",
-    "sha256": "84c6106c675afffa3d327ea7e4b0d8bbedb839f203ddc4960145fa86167f014d",
+    "sha256": "11e6e405432753f93a7298153bc2f66b35b906d23ace5aee2e7b29efd8b4d181",
+    "package_sha256": "4c5f66256da78a6f9c1c60a774db912cfad17d0640bfb22106ce419f6507fa9b",
     "synthetic_validation": {
+      "selected_files": 31,
+      "dependency_edges": 8,
       "required_files_present": true,
       "json_parse": true,
       "python_compile": true,
