@@ -1,0 +1,658 @@
+{
+  "schema_version": "SF_028_P0_WAVE_02_CLASSIFICATION_RESULTS_V1",
+  "task_id": "SF_028_P0_WAVE_02_SLOT_02_CLASSIFICATION",
+  "worker_id": "SLOT_02_SF028_P0_WAVE2_CLASSIFICATION_WORKER",
+  "generated_at_kst": "2026-08-01T20:57:00+09:00",
+  "authority": {
+    "wave_01_open_terminal_commit": "7381089ec627267f9155bc7e5c39784734651097",
+    "wave_02_batch_commit": "d2b6d94cd94c64e906816e70681a0393f2d7d218",
+    "immediate_execution_prompt_commit": "f35716daa10bfb04118341ddd0a692374ee263ec",
+    "superseded_hold_prompt_commit": "f360c045a9fbff1c11aa8b320e16e44ecdae664e",
+    "drive_file_id": "1fRQoytttA2RF3NwipNNryqIdlVWkVKsy",
+    "zip_file_name": "SF028_P0_EXTRACT_20260801_062137_WAVE_02_SLOT_02.zip",
+    "zip_size_bytes": 55645,
+    "zip_sha256": "2f019cfc068f4df69981faeac289845b3ddd6d5ef91873005195327b82eba661",
+    "source_identity_authority": "embedded SLOT_MANIFEST.json"
+  },
+  "package_verification": {
+    "manifest_status": "READY",
+    "expected_item_count": 12,
+    "packaged_item_count": 12,
+    "unique_source_id_count": 12,
+    "unexpected_source_id_count": 0,
+    "missing_source_id_count": 0,
+    "unsafe_zip_member_count": 0,
+    "file_hash_mismatch_count": 0,
+    "syntax_only_parse_pass_count": 12,
+    "syntax_only_parse_fail_count": 0,
+    "source_execution_count": 0,
+    "source_modification_count": 0,
+    "dependency_installation_count": 0,
+    "runtime_or_service_start_count": 0,
+    "external_effect_count": 0,
+    "promotion_count": 0
+  },
+  "classification_summary": {
+    "ADAPTER_REQUIRED": 4,
+    "DIRECT_REUSE": 7,
+    "PROJECT_BOUND": 1
+  },
+  "decisions": [
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000691",
+      "assignment_id": "SF028-W02-S02-I01",
+      "file_name": "sequentialPromptSender.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/src/shared/stage4/sequentialPromptSender.js",
+      "sha256": "a4839486e52721743f837230caf97645e4456953931578cb428dc2f8a09dcb28",
+      "git_blob_sha1": "4001772fa2b2475171cd8595d5294cbcebe8cfde",
+      "size_bytes": 23606,
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Normalizes Stage 4 prompt queue items, prevents duplicate sends, selects the next sendable prompt and builds a dry-run sequential dispatch payload while attaching optional Project Panel namespace metadata.",
+      "inputs": [
+        "queue item or queue object",
+        "sent-item history",
+        "dispatch options and optional Project Panel identity"
+      ],
+      "outputs": [
+        "selected prompt",
+        "dry-run dispatch payload",
+        "duplicate-block result",
+        "marked-sent immutable record"
+      ],
+      "principal_functions_or_classes": [
+        "buildSequentialPromptDispatch",
+        "getNextDispatchPayload",
+        "selectNextPrompt",
+        "markPromptSent",
+        "preventDuplicateSend"
+      ],
+      "dependencies": [
+        "JavaScript built-ins",
+        "optional ./projectPanelIdentityHelper"
+      ],
+      "external_effects": [
+        "NONE: planning/model only; actualSendPerformed=false"
+      ],
+      "project_coupling": "HIGH: accumulated Stage 4 W33/W48/W54 patches, PANEL/WORKER_INBOX route vocabulary and Project Panel metadata wrapper.",
+      "duplicate_or_replacement_relation": "Manifest records 3 corpus copies; no byte-identical counterpart was present inside this 12-file slot and no canonical replacement was established by this assignment.",
+      "risks": [
+        "optional helper is absent from the slot package",
+        "duplicate workerSlot/createdByCommander assignments indicate patch accumulation",
+        "non-cryptographic FNV-style IDs",
+        "actual transport and durable exactly-once receipt are not implemented"
+      ],
+      "evidence": [
+        "Drive file ID, ZIP size and ZIP SHA-256 matched the execution prompt",
+        "embedded SLOT_MANIFEST.json identity matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ],
+      "next_action": "Extract the pure selector/dedupe core, bind it to compact v2.1.2 dispatch contracts and Project Panel identity adapter, then add V2 duplicate-send fixtures."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-000882",
+      "assignment_id": "SF028-W02-S02-I02",
+      "file_name": "efficiencyGateStatus.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/src/shared/stage4/efficiencyGateStatus.js",
+      "sha256": "1569f551136c00a76c0adfd245fe484f0872b8b892d57dd9e1264769c7b6c00e",
+      "git_blob_sha1": "48eeafc5d67a042820025662258c65b959e6cceb",
+      "size_bytes": 12701,
+      "primary_classification": "DIRECT_REUSE",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Converts validator tokens, errors, warnings and explicit instruction-violation flags into GREEN/YELLOW/RED/BLACK efficiency-gate results for one item or a batch.",
+      "inputs": [
+        "validator result object",
+        "optional gate policy options",
+        "batch of result objects"
+      ],
+      "outputs": [
+        "gate result with color, reasons, blockers, warnings and next action",
+        "batch counts and aggregate gate"
+      ],
+      "principal_functions_or_classes": [
+        "decideEfficiencyGateStatus",
+        "batchDecideEfficiencyGateStatus"
+      ],
+      "dependencies": [
+        "JavaScript built-ins"
+      ],
+      "external_effects": [
+        "NONE"
+      ],
+      "project_coupling": "LOW: pure status-decision utility; terminology is Source Factory specific but inputs are generic result objects.",
+      "duplicate_or_replacement_relation": "Manifest records 9 corpus copies; no byte-identical counterpart was present inside this 12-file slot and no canonical replacement was established by this assignment.",
+      "risks": [
+        "token matching is string-based and may classify unfamiliar statuses as GREEN by absence",
+        "BLACK depends on an explicit boolean flag rather than independently proven policy violation",
+        "nextAction text embeds a small-hotfix workflow assumption"
+      ],
+      "evidence": [
+        "Drive file ID, ZIP size and ZIP SHA-256 matched the execution prompt",
+        "embedded SLOT_MANIFEST.json identity matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ],
+      "next_action": "Retain as a pure reusable gate helper and add V2 fixtures for unknown tokens, conflicting signals, empty batches and explicit BLACK boundaries."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-003577",
+      "assignment_id": "SF028-W02-S02-I03",
+      "file_name": "stage3ReturnController.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_10_STAGE3_WORKER_INBOX_RETURN_FIX_APP/src/core/stage3ReturnController.js",
+      "sha256": "10f8a31a5652a5b68f409296d4712347dfae89c4dfc28a762d6fed9d289143d7",
+      "git_blob_sha1": "109db27ce84276cc6879b52433ba2fba11b7be3a",
+      "size_bytes": 8628,
+      "primary_classification": "PROJECT_BOUND",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Writes a Stage 3 worker return package and mirror records into fixed Commander/Worker inbox folders under a Source Factory root, including manifests, source-block indexes and file hashes.",
+      "inputs": [
+        "worker ID",
+        "worker output text",
+        "source-file blocks and metadata",
+        "dry-run option"
+      ],
+      "outputs": [
+        "return plan or written Commander inbox package",
+        "worker mirror records",
+        "file hashes",
+        "structured failure"
+      ],
+      "principal_functions_or_classes": [
+        "sendWorkerOutputToCommander",
+        "listWorkerReturnQueue"
+      ],
+      "dependencies": [
+        "fs",
+        "path",
+        "crypto",
+        "../shared/stage3DispatchManifest"
+      ],
+      "external_effects": [
+        "LOCAL_FILESYSTEM_READ",
+        "LOCAL_FILESYSTEM_CREATE_AND_WRITE"
+      ],
+      "project_coupling": "VERY_HIGH: defaults to D:\\SOURCE FACTORY, fixed _COMMANDER_INBOX/_WORKER_INBOX layout, fixed Stage 3 manifest protocol and worker-ID registry.",
+      "duplicate_or_replacement_relation": "Manifest records 9 corpus copies; no byte-identical counterpart was present inside this 12-file slot and no canonical replacement was established by this assignment.",
+      "risks": [
+        "default dryRun is false",
+        "required stage3DispatchManifest dependency is absent from the slot",
+        "exclusive wx writes can leave partial multi-file packages",
+        "no transaction or rollback across Commander and mirror writes",
+        "legacy five/specific-worker protocol coupling"
+      ],
+      "evidence": [
+        "Drive file ID, ZIP size and ZIP SHA-256 matched the execution prompt",
+        "embedded SLOT_MANIFEST.json identity matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ],
+      "next_action": "Do not promote as generic core. Preserve as Stage 3 reference or rebuild behind injected root, dynamic slot registry, atomic receipt store and rollback-capable adapter."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004051",
+      "assignment_id": "SF028-W02-S02-I04",
+      "file_name": "stage4LaoAutosaveFromTaeo.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/panelControl/stage4LaoAutosaveFromTaeo.js",
+      "sha256": "7f6269d768da3bf893ea694e883b0743a29ebe2de9ec950c8312e6ee152809e6",
+      "git_blob_sha1": "d3573ac2e63d69f145b12758878d31a6fa3c6848",
+      "size_bytes": 12764,
+      "primary_classification": "DIRECT_REUSE",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Builds idempotent LAO extraction requests from Taeo autosave records by detecting complete or partial SOURCE_FILE marker blocks and tracking queued/completed/failed transitions.",
+      "inputs": [
+        "Taeo autosave/output record",
+        "existing extraction requests",
+        "manual-confirmation options",
+        "extraction result"
+      ],
+      "outputs": [
+        "LAO extraction request",
+        "extract/skip decision",
+        "transitioned request",
+        "summary"
+      ],
+      "principal_functions_or_classes": [
+        "createLaoExtractionRequestFromTaeoAutosave",
+        "shouldCreateLaoExtractionRequest",
+        "markLaoExtractionRequestQueued",
+        "markLaoExtractionRequestCompleted",
+        "summarizeLaoAutosaveExtraction"
+      ],
+      "dependencies": [
+        "crypto",
+        "JavaScript built-ins"
+      ],
+      "external_effects": [
+        "NONE: request and state model only"
+      ],
+      "project_coupling": "MEDIUM: Stage 4 Taeo/LAO route names and SOURCE_FILE marker contract.",
+      "duplicate_or_replacement_relation": "Manifest records 3 corpus copies; no byte-identical counterpart was present inside this 12-file slot and no canonical replacement was established by this assignment.",
+      "risks": [
+        "raw output text is embedded in payload without size/redaction limit",
+        "timestamps are generated internally",
+        "idempotency is only as strong as caller-supplied existing request set",
+        "marker counting is structural rather than a full parser"
+      ],
+      "evidence": [
+        "Drive file ID, ZIP size and ZIP SHA-256 matched the execution prompt",
+        "embedded SLOT_MANIFEST.json identity matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ],
+      "next_action": "Retain as a pure reusable model; add redaction/size limits and V2 fixtures for duplicate, partial-marker, empty-output and malformed-block cases."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004056",
+      "assignment_id": "SF028-W02-S02-I05",
+      "file_name": "stage4LaoValidationQueueModel.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/panelControl/stage4LaoValidationQueueModel.js",
+      "sha256": "c3bf743554bb895fc9731c836e174c993a979d8fe8449d4d464472d6056df211",
+      "git_blob_sha1": "ede0a5f5ec648115939fdcd40ca2a5c6c9e896e6",
+      "size_bytes": 17058,
+      "primary_classification": "DIRECT_REUSE",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Creates and summarizes LAO validation queue items for SOURCE_UNIT collections or record batches, including readiness blockers, duplicate policy and review-result transitions.",
+      "inputs": [
+        "SOURCE_UNIT list or LAO record batch",
+        "queue options and existing items",
+        "validation review result"
+      ],
+      "outputs": [
+        "validation queue item",
+        "duplicate-skipped item",
+        "reviewed/passed/warning/failed state",
+        "queue summary"
+      ],
+      "principal_functions_or_classes": [
+        "createLaoValidationQueueItem",
+        "queueSourceUnitsForValidation",
+        "queueLaoRecordBatchForValidation",
+        "markValidationQueueItemReviewed",
+        "summarizeLaoValidationQueue"
+      ],
+      "dependencies": [
+        "crypto",
+        "JavaScript built-ins"
+      ],
+      "external_effects": [
+        "NONE"
+      ],
+      "project_coupling": "MEDIUM: Stage 4 LAO validation object names, routes and worker-06 gate wording.",
+      "duplicate_or_replacement_relation": "Manifest records 3 corpus copies; no byte-identical counterpart was present inside this 12-file slot and no canonical replacement was established by this assignment.",
+      "risks": [
+        "queue ID includes random bytes and is not deterministic",
+        "duplicate prevention relies on caller-provided existing items",
+        "JSON cloning drops unsupported values",
+        "readiness checks cover only a narrow field set"
+      ],
+      "evidence": [
+        "Drive file ID, ZIP size and ZIP SHA-256 matched the execution prompt",
+        "embedded SLOT_MANIFEST.json identity matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ],
+      "next_action": "Retain the pure queue model and add deterministic-ID injection plus V2 fixtures for duplicate IDs/paths, missing targets and review-state mappings."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004063",
+      "assignment_id": "SF028-W02-S02-I06",
+      "file_name": "stage4TaeraResourceQueue.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/panelControl/stage4TaeraResourceQueue.js",
+      "sha256": "fdc93ccb2b9c762d67fa22ca55399a1df7f7c60049f2a9c663e8cd5fe12c8b21",
+      "git_blob_sha1": "58ba0d083ceeb250577aaefcc7b1372053265162",
+      "size_bytes": 31199,
+      "primary_classification": "DIRECT_REUSE",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Maintains a JSON-serializable Taera resource queue for DOWNLOAD_RESOURCE and FILE_BATCH candidates, computes readiness/approval states and produces Panel next-action guidance without downloading or running anything.",
+      "inputs": [
+        "queue context",
+        "download-resource candidates",
+        "file batch",
+        "approval-required transition"
+      ],
+      "outputs": [
+        "Taera queue",
+        "queue items and status history",
+        "panel-command waiting list",
+        "queue summary and next action"
+      ],
+      "principal_functions_or_classes": [
+        "createTaeraResourceQueue",
+        "enqueueDownloadResources",
+        "enqueueFileBatch",
+        "markTaeraQueueItemApprovalRequired",
+        "summarizeTaeraQueue"
+      ],
+      "dependencies": [
+        "JavaScript built-ins"
+      ],
+      "external_effects": [
+        "NONE: explicitly sets actual_download_performed, actual_run_performed and actual_file_access_performed to false"
+      ],
+      "project_coupling": "MEDIUM: Stage 4 Taera/Panel route and action vocabulary.",
+      "duplicate_or_replacement_relation": "Manifest records 3 corpus copies; no byte-identical counterpart was present inside this 12-file slot and no canonical replacement was established by this assignment.",
+      "risks": [
+        "846-line model mixes normalization, policy and presentation guidance",
+        "non-cryptographic IDs and Date-based timestamps",
+        "execution-like resource types are inferred from labels",
+        "JSON-safe cloning converts circular references to a marker string"
+      ],
+      "evidence": [
+        "Drive file ID, ZIP size and ZIP SHA-256 matched the execution prompt",
+        "embedded SLOT_MANIFEST.json identity matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ],
+      "next_action": "Retain as a no-effect queue model, split policy from serialization if maintained, and add V2 fixtures for installer/script approval, dedupe and queue-priority transitions."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-005220",
+      "assignment_id": "SF028-W02-S02-I07",
+      "file_name": "stage35SignalStore.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/assembled/20260701_STAGE3_5_UI_MENU_ROUTING_FIX_RUNTIME_APP/src/core/stage35SignalStore.js",
+      "sha256": "45819b848b3030d8d34688c1bee68147416c638b4384a2d4fa558959ec49f60d",
+      "git_blob_sha1": "71165f8ea8e3ddc8730c35f28f77c99bfea1b5bf",
+      "size_bytes": 10569,
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Builds safe relative-path plans for a file-based Stage 3.5 signal bus, current-state records and acknowledgement writes without directly writing files.",
+      "inputs": [
+        "signal or acknowledgement",
+        "current signal state",
+        "worker/date/path-plan options"
+      ],
+      "outputs": [
+        "normalized signal/ack records",
+        "relative signal and ack paths",
+        "no-direct-write write plans",
+        "file-based bus directory plan"
+      ],
+      "principal_functions_or_classes": [
+        "getSignalBusPathPlan",
+        "createSignalWritePlan",
+        "createAckWritePlan",
+        "acknowledgeSignal",
+        "createFileBasedSignalBusPlan"
+      ],
+      "dependencies": [
+        "../shared/stage35SignalProtocol"
+      ],
+      "external_effects": [
+        "NONE: emits write plans with no_direct_write=true"
+      ],
+      "project_coupling": "HIGH: fixed _SIGNALS layout, Stage 3.5 protocol dependency and default WORKER_01..05 + COMMANDER inventory.",
+      "duplicate_or_replacement_relation": "Manifest records 6 corpus copies; no byte-identical counterpart was present inside this 12-file slot and no canonical replacement was established by this assignment.",
+      "risks": [
+        "required stage35SignalProtocol is absent from this slot",
+        "fixed worker inventory conflicts with dynamic execution slots",
+        "safeSegment removes rather than reports some characters",
+        "actual persistence, atomicity and readback are delegated but unspecified"
+      ],
+      "evidence": [
+        "Drive file ID, ZIP size and ZIP SHA-256 matched the execution prompt",
+        "embedded SLOT_MANIFEST.json identity matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ],
+      "next_action": "Provide the exact protocol dependency, inject dynamic slot/path contracts and connect write plans to the canonical local receipt store before V2 testing."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004221",
+      "assignment_id": "SF028-W02-S02-I08",
+      "file_name": "downloadResourceManager.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/src/shared/stage4/downloadResourceManager.js",
+      "sha256": "15358a7f0ba99931c6d3f22d39208cceb6d6cd473cf04d01ad72ecbbab625fc8",
+      "git_blob_sha1": "e95fa9fb58c35d554bb3d3c92964ff0a35f10c90",
+      "size_bytes": 20726,
+      "primary_classification": "DIRECT_REUSE",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Normalizes download-resource candidates, manages an in-memory download queue and builds explicit non-executing Taera download dispatch plans.",
+      "inputs": [
+        "resource candidates or queue",
+        "queue context",
+        "status patches",
+        "dispatch options"
+      ],
+      "outputs": [
+        "download-resource queue",
+        "resource status transition",
+        "summary",
+        "dispatch payload with downloadExecutionAllowed=false"
+      ],
+      "principal_functions_or_classes": [
+        "createDownloadResourceQueue",
+        "enqueueDownloadResource",
+        "markDownloadResourceStatus",
+        "buildDownloadDispatchPayload"
+      ],
+      "dependencies": [
+        "JavaScript built-ins"
+      ],
+      "external_effects": [
+        "NONE: actualDownloadPerformed=false and downloadExecutionAllowed=false"
+      ],
+      "project_coupling": "MEDIUM: Taera/Commander route labels and Stage 4 target-stage defaults.",
+      "duplicate_or_replacement_relation": "Manifest records 9 corpus copies; no byte-identical counterpart was present inside this 12-file slot and no canonical replacement was established by this assignment.",
+      "risks": [
+        "status names can imply DOWNLOADED without receipt proof",
+        "Date.now participates in queue IDs",
+        "URL/file-path validation does not establish safety or trust",
+        "actual downloader and hash verification are outside the module"
+      ],
+      "evidence": [
+        "Drive file ID, ZIP size and ZIP SHA-256 matched the execution prompt",
+        "embedded SLOT_MANIFEST.json identity matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ],
+      "next_action": "Retain as a planning model; add URL/path trust, immutable receipt binding and V2 fixtures before connecting any download executor."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004227",
+      "assignment_id": "SF028-W02-S02-I09",
+      "file_name": "placeholderOmissionDetector.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/src/shared/stage4/placeholderOmissionDetector.js",
+      "sha256": "bd2b0737a2cf7fdc31a0b8040dd393aff8969e40614cc00b17dceee9ba79bed9",
+      "git_blob_sha1": "129900d708185882e534534125846d39d86beb69",
+      "size_bytes": 15456,
+      "primary_classification": "DIRECT_REUSE",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Statically detects omitted-content phrases, TODO/stub code and placeholder-only source units, returning GREEN/YELLOW/RED recommendations for individual units or batches.",
+      "inputs": [
+        "source text or source-unit object",
+        "metadata",
+        "batch of source units"
+      ],
+      "outputs": [
+        "omission matches",
+        "severity and recommended status",
+        "batch counts and warnings"
+      ],
+      "principal_functions_or_classes": [
+        "detectPlaceholderOmissions",
+        "detectOmissionBatch"
+      ],
+      "dependencies": [
+        "JavaScript built-ins"
+      ],
+      "external_effects": [
+        "NONE"
+      ],
+      "project_coupling": "LOW: pure bilingual omission detector with Source Factory status terminology.",
+      "duplicate_or_replacement_relation": "Manifest records 9 corpus copies; no byte-identical counterpart was present inside this 12-file slot and no canonical replacement was established by this assignment.",
+      "risks": [
+        "regex rules can produce false positives or miss paraphrases",
+        "context skipping is heuristic",
+        "rule definitions inside source text require careful self-scan exclusion",
+        "does not prove semantic completeness"
+      ],
+      "evidence": [
+        "Drive file ID, ZIP size and ZIP SHA-256 matched the execution prompt",
+        "embedded SLOT_MANIFEST.json identity matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ],
+      "next_action": "Retain as a pure detector and add multilingual positive/negative fixtures, especially comments, rule definitions and legitimate TODO references."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004232",
+      "assignment_id": "SF028-W02-S02-I10",
+      "file_name": "sourceFileFormatValidator.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/src/shared/stage4/sourceFileFormatValidator.js",
+      "sha256": "7e027e2c97c5397a972ac4b99e54ca905f7e3f96dc790151f1466aa137b8a863",
+      "git_blob_sha1": "71c29fb2f31128daf22494e0280d9e1197de6153",
+      "size_bytes": 16938,
+      "primary_classification": "DIRECT_REUSE",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Validates SOURCE_FILE unit fields, marker order/count, allowed operations and optional batch consistency, producing GREEN/YELLOW/RED format results.",
+      "inputs": [
+        "SOURCE_FILE unit object or raw marker block",
+        "known-language options",
+        "batch of source units"
+      ],
+      "outputs": [
+        "per-unit format result",
+        "issues/warnings",
+        "batch counts and aggregate status"
+      ],
+      "principal_functions_or_classes": [
+        "validateSourceFileUnit",
+        "validateSourceFileBatch"
+      ],
+      "dependencies": [
+        "JavaScript built-ins"
+      ],
+      "external_effects": [
+        "NONE"
+      ],
+      "project_coupling": "MEDIUM: exact SOURCE_FILE markers, required fields and operation vocabulary are Source Factory contracts.",
+      "duplicate_or_replacement_relation": "Manifest records 9 corpus copies; no byte-identical counterpart was present inside this 12-file slot and no canonical replacement was established by this assignment.",
+      "risks": [
+        "allowed operations are a legacy fixed list",
+        "validation is structural and does not parse the embedded language",
+        "known-language list may lag new source types",
+        "path checks are warnings rather than containment proof"
+      ],
+      "evidence": [
+        "Drive file ID, ZIP size and ZIP SHA-256 matched the execution prompt",
+        "embedded SLOT_MANIFEST.json identity matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ],
+      "next_action": "Retain as the V1 structural validator, then add compact v2.1.2 contract fields and fixtures without changing historical marker semantics."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004237",
+      "assignment_id": "SF028-W02-S02-I11",
+      "file_name": "workerOutputBatchStore.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/src/shared/stage4/workerOutputBatchStore.js",
+      "sha256": "38263bcd25b538f30d0fa161b5ccb08411377d7b834e689d321a7162a4f03ba6",
+      "git_blob_sha1": "f74c8a7d04a390fa36713146067e806aafaf62a7",
+      "size_bytes": 18235,
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Creates worker-output batch/record objects, appends them as JSON Lines, reads and summarizes batches, and wraps selected exports with optional Project Panel namespace metadata.",
+      "inputs": [
+        "arbitrary JSONL file path",
+        "batch metadata",
+        "worker output/report/source candidates",
+        "batch ID"
+      ],
+      "outputs": [
+        "appended worker-output record",
+        "pending-output list",
+        "batch summary",
+        "Project Panel metadata envelope"
+      ],
+      "principal_functions_or_classes": [
+        "createWorkerOutputBatch",
+        "addWorkerOutputToBatch",
+        "summarizeWorkerOutputBatch",
+        "listPendingWorkerOutputs"
+      ],
+      "dependencies": [
+        "fs",
+        "path",
+        "crypto",
+        "optional ../projectPanelIdentityHelper"
+      ],
+      "external_effects": [
+        "LOCAL_FILESYSTEM_READ",
+        "LOCAL_FILESYSTEM_CREATE_AND_APPEND"
+      ],
+      "project_coupling": "HIGH: fixed LAO terminal default, Worker 07/Commander Gate recommendation and W54 Project Panel hotfix wrapper.",
+      "duplicate_or_replacement_relation": "Manifest records 3 corpus copies; no byte-identical counterpart was present inside this 12-file slot and no canonical replacement was established by this assignment.",
+      "risks": [
+        "caller-controlled file path has no root containment",
+        "append is non-atomic and lacks locking/readback hash",
+        "optional identity helper is absent from the slot",
+        "rawText can persist unbounded or sensitive output",
+        "wrapper candidate export names do not fully match actual exports"
+      ],
+      "evidence": [
+        "Drive file ID, ZIP size and ZIP SHA-256 matched the execution prompt",
+        "embedded SLOT_MANIFEST.json identity matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ],
+      "next_action": "Separate pure record normalization from persistence; bind persistence to an allowlisted root, locking/atomic receipt store, redaction limits and exact Project Panel identity adapter."
+    },
+    {
+      "source_id": "PCAGENT-AUTO-SRC-004243",
+      "assignment_id": "SF028-W02-S02-I12",
+      "file_name": "checkStage4Syntax.js",
+      "original_relative_path": "SOURCE_FACTORY_UPLOAD_V1/src/shared/stage4/checkStage4Syntax.js",
+      "sha256": "fefba2041d372d01acf6569ca87793c2d3949e140f4b3fb3d60b764d770c5dfe",
+      "git_blob_sha1": "e5fc96f48929ea721d50cf040366dfb1a301adf2",
+      "size_bytes": 14323,
+      "primary_classification": "ADAPTER_REQUIRED",
+      "verification_level": "V1_STATIC",
+      "actual_function": "Recursively collects JavaScript/JSON/Python files and runs syntax checks using node --check, JSON.parse or Python py_compile, returning structured per-file and aggregate results.",
+      "inputs": [
+        "file or directory paths",
+        "ignored-directory list",
+        "optional Python executable",
+        "CLI arguments"
+      ],
+      "outputs": [
+        "syntax result per file",
+        "aggregate PASS/FAIL/SKIP/TOOL_MISSING report",
+        "CLI exit code"
+      ],
+      "principal_functions_or_classes": [
+        "checkFileSyntax",
+        "checkStage4Syntax",
+        "parseArgs",
+        "main"
+      ],
+      "dependencies": [
+        "fs",
+        "path",
+        "child_process",
+        "Node and Python executables"
+      ],
+      "external_effects": [
+        "LOCAL_FILESYSTEM_READ",
+        "SUBPROCESS_EXECUTION"
+      ],
+      "project_coupling": "MEDIUM: generic syntax tool but named and defaulted for Stage 4.",
+      "duplicate_or_replacement_relation": "Manifest records 9 corpus copies; no byte-identical counterpart was present inside this 12-file slot and no canonical replacement was established by this assignment.",
+      "risks": [
+        "caller-controlled paths and Python executable",
+        "inherits process environment",
+        "no allowlisted root or canonical executable registry",
+        "recursive traversal may inspect unintended trees",
+        "py_compile can create bytecode unless environment is correctly preserved"
+      ],
+      "evidence": [
+        "Drive file ID, ZIP size and ZIP SHA-256 matched the execution prompt",
+        "embedded SLOT_MANIFEST.json identity matched",
+        "independent packaged-file SHA-256 matched",
+        "node --check syntax-only parse PASS; module was not evaluated"
+      ],
+      "next_action": "Route all process launches through the canonical command registry, enforce root containment and bounded traversal, and add V2 fixtures for missing tools, unsafe paths and mixed-language batches."
+    }
+  ],
+  "terminal_status": "SF_028_P0_WAVE02_SLOT02_CLASSIFICATION_PASS"
+}
