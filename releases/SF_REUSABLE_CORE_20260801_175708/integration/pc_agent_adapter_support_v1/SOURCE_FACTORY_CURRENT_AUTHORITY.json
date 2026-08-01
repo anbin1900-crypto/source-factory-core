@@ -1,0 +1,21 @@
+{
+  "object_type": "SOURCE_FACTORY_CURRENT_AUTHORITY",
+  "schema_version": "1.0.0",
+  "support_cycle_id": "S2-SUPPORT-CYCLE-001-20260801",
+  "directive_comment_id": 5151013934,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 2,
+  "branch": "publish/reusable-core-20260801",
+  "observed_pr_head_at_intake": "486915d9f23a78779de99bb5d25dcc3325ed52c0",
+  "authority_path": "LATEST_SOURCE_FACTORY_AUTHORITY.json",
+  "authority_blob": "e17ee407e22f30d72492dc75a2e9aa9f634f0e6e",
+  "release_path": "releases/SF_REUSABLE_CORE_20260801_175708",
+  "active_core": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038",
+  "current_first_defect": "PC_AGENT_ADAPTER_NOT_INSERTED",
+  "delivery_mode": "PATCH_REQUEST_OR_REUSABLE_PACKAGE_FIRST",
+  "active_e_core_mutation_authorized": false,
+  "source_authority_note": "PR #2 is the reusable source snapshot; local E: remains executable runtime authority.",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
