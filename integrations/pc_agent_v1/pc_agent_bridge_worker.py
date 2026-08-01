@@ -132,6 +132,19 @@ def scrub_environment(env_input: dict[str, Any]) -> dict[str, str]:
     return env
 
 
+def extract_structured_result(stdout: str) -> dict[str, Any] | None:
+    prefix = "YOLLA_RESULT_JSON="
+    for line in reversed(stdout.splitlines()):
+        if line.startswith(prefix):
+            value = json.loads(line[len(prefix):])
+            if not isinstance(value, dict):
+                raise ValueError("YOLLA_RESULT_JSON_NOT_OBJECT")
+            if value.get("production") is not False:
+                raise ValueError("STRUCTURED_RESULT_PRODUCTION_MUST_BE_FALSE")
+            return value
+    return None
+
+
 def build_result(
     request: dict[str, Any],
     *,
@@ -143,7 +156,9 @@ def build_result(
     completed_at: str,
     external_blocker: dict[str, Any] | None = None,
     execution_error: str | None = None,
+    structured_result: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    structured = structured_result or {}
     return {
         "schema_version": SCHEMA_VERSION,
         "object_type": "WORK_RESULT",
@@ -160,11 +175,12 @@ def build_result(
         "exit_code": int(exit_code),
         "stdout": stdout,
         "stderr": stderr,
-        "outputs": [],
-        "artifacts": [],
-        "database_receipt": None,
-        "github_commit": None,
-        "github_comment": None,
+        "outputs": structured.get("outputs", []),
+        "artifacts": structured.get("artifacts", []),
+        "database_receipt": structured.get("database_receipt"),
+        "github_commit": structured.get("github_commit"),
+        "github_comment": structured.get("github_comment"),
+        "structured_result": structured,
         "external_blocker": external_blocker,
         "execution_error": execution_error,
         "started_at": started_at,
@@ -208,6 +224,7 @@ def execute_request(request: dict[str, Any]) -> dict[str, Any]:
             check=False,
         )
         final_status = "PASS" if completed.returncode == 0 else "FAIL"
+        structured_result = extract_structured_result(completed.stdout) if completed.returncode == 0 else None
         return build_result(
             request,
             final_status=final_status,
@@ -216,6 +233,7 @@ def execute_request(request: dict[str, Any]) -> dict[str, Any]:
             stderr=completed.stderr,
             started_at=started_at,
             completed_at=now_iso(),
+            structured_result=structured_result,
         )
     except subprocess.TimeoutExpired as error:
         return build_result(
