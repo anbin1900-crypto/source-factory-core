@@ -10,9 +10,18 @@ $env:PYTHONUTF8 = '1'
 $env:PYTHONIOENCODING = 'utf-8'
 $env:PYTHONLEGACYWINDOWSSTDIO = '0'
 
-$probe = @(
-    & $PythonExe -X utf8 -c "import json,locale,sys; print(json.dumps({'utf8_mode':sys.flags.utf8_mode,'preferred_encoding':locale.getpreferredencoding(False),'stdout':sys.stdout.encoding},sort_keys=True))" 2>&1
-)
+$probeCode = @'
+import json
+import locale
+import sys
+print(json.dumps({
+    "utf8_mode": sys.flags.utf8_mode,
+    "preferred_encoding": locale.getpreferredencoding(False),
+    "stdout": sys.stdout.encoding,
+}, sort_keys=True))
+'@
+
+$probe = @(& $PythonExe -X utf8 -c $probeCode 2>&1)
 if ($LASTEXITCODE -ne 0 -or $probe.Count -eq 0) {
     throw ('R6_UTF8_PROBE_FAILED:' + ($probe -join [Environment]::NewLine))
 }
@@ -28,17 +37,20 @@ $root = Join-Path $env:TEMP ('yolla-r6-utf8-' + [guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $root -Force | Out-Null
 try {
     $sqlPath = Join-Path $root 'STAGING_INSERT_SCRIPT.sql'
-    $utf8 = New-Object System.Text.UTF8Encoding($false)
-    [IO.File]::WriteAllText(
-        $sqlPath,
-        "-- 위험물 지식객체 적재 검증`nINSERT INTO staging_fixture VALUES ('위험물');`n",
-        $utf8
-    )
+    $sqlPathForPython = $sqlPath.Replace('\', '\\')
+    $readCode = @"
+from pathlib import Path
+p = Path(r'$sqlPathForPython')
+needle = '\uc704\ud5d8\ubb3c'
+text = "-- " + needle + " knowledge fixture\nINSERT INTO staging_fixture VALUES ('" + needle + "');\n"
+p.write_text(text, encoding='utf-8')
+observed = p.read_text()
+assert needle in observed
+print('KOREAN_UTF8_SQL_READ=PASS')
+"@
 
-    $result = @(
-        & $PythonExe -X utf8 -c "from pathlib import Path; p=Path(r'$sqlPath'); s=p.read_text(); assert '위험물' in s; print('KOREAN_UTF8_SQL_READ=PASS')" 2>&1
-    )
-    if ($LASTEXITCODE -ne 0 -or $result[-1] -ne 'KOREAN_UTF8_SQL_READ=PASS') {
+    $result = @(& $PythonExe -X utf8 -c $readCode 2>&1)
+    if ($LASTEXITCODE -ne 0 -or $result.Count -eq 0 -or $result[-1] -ne 'KOREAN_UTF8_SQL_READ=PASS') {
         throw ('R6_KOREAN_UTF8_SQL_READ_FAILED:' + ($result -join [Environment]::NewLine))
     }
 
