@@ -1,0 +1,32 @@
+{
+  "schema_version": "YOLLA_PC_AGENT_RUNTIME_TARGET_PC_SAFE_FAIL_V1",
+  "status": "SAFE_FAIL_BEFORE_POST_INSTALL_ACCEPTANCE",
+  "runtime_version": "1.0.0-20260802",
+  "failure_stage": "MANAGER_STATUS_READ_ONLY_COMMAND",
+  "failure_code": "PROPERTY_NOT_FOUND_STRICT_TIMESTAMP",
+  "manager_path": "E:\\YOLLA\\agent\\runtime\\pc-agent-v1\\Manage-PcAgentRuntime.ps1",
+  "manager_original_sha256": "bb76b1ab47b395f03ff0e5652cbef48313d9ed125ca5311ac5153323939ecf1e",
+  "root_cause": "Manage-PcAgentRuntime.ps1 directly accessed optional JSON properties under Set-StrictMode, including timestamp, state, and worker_restart_count.",
+  "installation": "PASS_PRESERVED",
+  "scheduled_task_registration": "PASS_PRESERVED",
+  "start_request": "PASS_PRESERVED",
+  "controlled_request_submitted": false,
+  "duplicate_suppression_test_executed": false,
+  "worker_crash_test_executed": false,
+  "runtime_restart_test_executed": false,
+  "bridge_queue_mutation_count": 0,
+  "runtime_process_mutation_count": 0,
+  "real_api_call_count": 0,
+  "postgresql_apply_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "correction": {
+    "hotfix_id": "PC_AGENT_RUNTIME_MANAGER_STATUS_OPTIONAL_PROPERTY_HOTFIX_V1",
+    "hotfix_runner_sha256": "1ed08fb15c868dd31a72d10b717b92a799194f92c92e1655b2778e6de0b0e5a1",
+    "expected_patched_manager_sha256": "dce6a21c9e27f3c0d5997799abfc8a2ffcd31752edb72ca9ece61c437c99d168",
+    "strategy": "OPTIONAL_PROPERTY_SAFE_READ_WITH_TIMESTAMP_UPDATED_AT_FALLBACK"
+  },
+  "next_action": "APPLY_MANAGER_HOTFIX_THEN_RERUN_POST_INSTALL_ACCEPTANCE",
+  "recorded_at": "2026-08-02T03:58:00+09:00"
+}
