@@ -1,0 +1,63 @@
+name: Target PC Runner R8 Validation
+
+on:
+  pull_request:
+    paths:
+      - 'integrations/pc_agent_v1/runner_revisions/R8/**'
+      - '.github/workflows/target-pc-runner-r8-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-r8:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Parse JSON contract
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $path = 'integrations/pc_agent_v1/runner_revisions/R8/R8_VALIDATION_CONTRACT_V1.json'
+          $contract = Get-Content -LiteralPath $path -Raw | ConvertFrom-Json
+          if ($contract.runner_sha256 -ne '7a3dddf9ef9015de1a1f649880b77b14943c29bd1420f8c2dba7f1fc0dd8b4c9') { throw 'RUNNER_SHA_CONTRACT_MISMATCH' }
+          if ($contract.corrections.bare_boolean_assignment_count -ne 0) { throw 'BARE_BOOLEAN_COUNT_CONTRACT_INVALID' }
+          if ($contract.corrections.a1_support_blocking -ne '$false') { throw 'A1_BOOLEAN_CONTRACT_INVALID' }
+          if ($contract.corrections.b1_support_blocking -ne '$false') { throw 'B1_BOOLEAN_CONTRACT_INVALID' }
+          if ($contract.corrections.b1_optional_smoke_blocking -ne $false) { throw 'B1_SMOKE_BLOCKING_CONTRACT_INVALID' }
+          'R8_JSON_CONTRACT=PASS'
+
+      - name: Windows PowerShell 5.1 parse
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $file = 'integrations/pc_agent_v1/runner_revisions/R8/R8_BARE_BOOLEAN_CORRECTION_V1.ps1'
+          $tokens = $null
+          $errors = $null
+          [System.Management.Automation.Language.Parser]::ParseFile($file,[ref]$tokens,[ref]$errors) | Out-Null
+          if ($errors.Count -ne 0) { throw ('POWERSHELL_PARSE_FAILED:' + $errors[0].Message) }
+          'WINDOWS_POWERSHELL_51_PARSE=PASS'
+
+      - name: Execute Boolean semantic guard
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          & powershell.exe -NoProfile -ExecutionPolicy Bypass -File 'integrations/pc_agent_v1/runner_revisions/R8/R8_BARE_BOOLEAN_CORRECTION_V1.ps1'
+          if ($LASTEXITCODE -ne 0) { throw "R8_CORRECTION_SOURCE_FAILED=$LASTEXITCODE" }
+
+      - name: Verify R7 safe-fail boundary
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $path = 'integrations/pc_agent_v1/runner_revisions/R8/R7_TARGET_PC_SAFE_FAIL_LEDGER_V1.json'
+          $ledger = Get-Content -LiteralPath $path -Raw | ConvertFrom-Json
+          if ($ledger.safety.active_core_mutation_count -ne 0) { throw 'ACTIVE_CORE_MUTATION_COUNT_NOT_ZERO' }
+          if ($ledger.safety.working_copy_apply_count -ne 0) { throw 'WORKING_COPY_APPLY_COUNT_NOT_ZERO' }
+          if ($ledger.production -ne $false -or $ledger.ready -ne $false -or $ledger.merge -ne $false) { throw 'SAFETY_BOUNDARY_INVALID' }
+          'R7_SAFE_FAIL_BOUNDARY=PASS'
