@@ -4,7 +4,6 @@
 const childProcess = require('child_process');
 const crypto = require('crypto');
 const fs = require('fs');
-const os = require('os');
 const path = require('path');
 
 const PATCH_START = '/* YOLLA_PC_AGENT_STAGE4_BRIDGE_V1_START */';
@@ -181,35 +180,73 @@ function main() {
     return;
   }
 
-  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'sf-pc-agent-patch-'));
+  const outputDir = path.dirname(output);
+  fs.mkdirSync(outputDir, { recursive: true });
+
+  // Keep the replacement file on the same volume as the destination. Using
+  // os.tmpdir() caused EXDEV on Windows when TEMP was on C: and Source Factory
+  // was on E:. The target-directory staging file also preserves atomic rename
+  // where Windows permits replacing the destination.
+  const tempDir = fs.mkdtempSync(path.join(outputDir, '.sf-pc-agent-patch-'));
   const tempFile = path.join(tempDir, path.basename(output));
-  fs.writeFileSync(tempFile, patchedBytes);
-  const checked = childProcess.spawnSync(process.execPath, ['--check', tempFile], {
-    encoding: 'utf8', shell: false
-  });
-  if (checked.status !== 0) {
-    throw new Error('PATCHED_NODE_CHECK_FAILED:' + (checked.stderr || checked.stdout || 'unknown'));
-  }
+  let writeStrategy = 'NOT_WRITTEN';
+  try {
+    fs.writeFileSync(tempFile, patchedBytes, { flag: 'wx' });
+    const checked = childProcess.spawnSync(process.execPath, ['--check', tempFile], {
+      encoding: 'utf8', shell: false
+    });
+    if (checked.status !== 0) {
+      throw new Error('PATCHED_NODE_CHECK_FAILED:' + (checked.stderr || checked.stdout || 'unknown'));
+    }
 
-  fs.mkdirSync(path.dirname(output), { recursive: true });
-  let backupPath = null;
-  if (output === target && result.changed) {
-    backupPath = target + '.pre-pc-agent-bridge.' + Date.now() + '.bak';
-    fs.copyFileSync(target, backupPath, fs.constants.COPYFILE_EXCL);
-  }
-  fs.renameSync(tempFile, output);
-  fs.rmSync(tempDir, { recursive: true, force: true });
+    let backupPath = null;
+    if (output === target && result.changed) {
+      backupPath = target + '.pre-pc-agent-bridge.' + Date.now() + '.bak';
+      fs.copyFileSync(target, backupPath, fs.constants.COPYFILE_EXCL);
+    }
 
-  process.stdout.write(JSON.stringify({
-    status: result.status,
-    changed: result.changed,
-    target,
-    original_sha256: originalSha256,
-    patched_sha256: patchedSha256,
-    output,
-    backup_path: backupPath,
-    node_check: 'PASS'
-  }) + '\n');
+    try {
+      fs.renameSync(tempFile, output);
+      writeStrategy = 'SAME_DIRECTORY_ATOMIC_RENAME';
+    } catch (error) {
+      const fallbackCodes = new Set(['EXDEV', 'EPERM', 'EACCES', 'EEXIST']);
+      if (!fallbackCodes.has(error && error.code)) throw error;
+      fs.copyFileSync(tempFile, output);
+      fs.rmSync(tempFile, { force: true });
+      writeStrategy = 'VERIFIED_COPY_FALLBACK_' + error.code;
+    }
+
+    const writtenBytes = fs.readFileSync(output);
+    const writtenSha256 = sha256(writtenBytes);
+    if (writtenSha256 !== patchedSha256) {
+      const error = new Error('PATCHED_OUTPUT_SHA256_MISMATCH expected=' + patchedSha256 + ' actual=' + writtenSha256);
+      error.code = 'PATCHED_OUTPUT_SHA256_MISMATCH';
+      throw error;
+    }
+    const outputCheck = childProcess.spawnSync(process.execPath, ['--check', output], {
+      encoding: 'utf8', shell: false
+    });
+    if (outputCheck.status !== 0) {
+      throw new Error('PATCHED_OUTPUT_NODE_CHECK_FAILED:' + (outputCheck.stderr || outputCheck.stdout || 'unknown'));
+    }
+
+    process.stdout.write(JSON.stringify({
+      status: result.status,
+      changed: result.changed,
+      target,
+      original_sha256: originalSha256,
+      patched_sha256: patchedSha256,
+      written_sha256: writtenSha256,
+      output,
+      backup_path: backupPath,
+      temp_parent: outputDir,
+      write_strategy: writeStrategy,
+      node_check: 'PASS',
+      output_node_check: 'PASS'
+    }) + '\n');
+  } finally {
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  }
 }
 
 if (require.main === module) {
