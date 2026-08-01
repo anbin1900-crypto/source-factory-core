@@ -1,0 +1,49 @@
+{
+  "task_id": "SF_028_COMPACT_CONSTITUTION_AND_RULES_MIGRATION",
+  "worker_id": "SLOT_04_SF028_COMPACT_CONSTITUTION_AND_RULES_MIGRATION_WORKER",
+  "prompt_commit": "0b1f3ee32779484ce7b0f65fda69b109f1c1d57f",
+  "batch_commit": "a8e0c105e2cbf1d7b06530e86d43f368599a0a38",
+  "generated_at_kst": "2026-08-01T19:18:00+09:00",
+  "execution_environment": "CHATGPT_SANDBOX_PREFLIGHT_ONLY",
+  "resolved_user_pc_paths": {
+    "old_repo_root": "D:\\SOURCE FACTORY\\source-factory-core",
+    "compact_source_root": "D:\\SOURCE FACTORY\\_CONSTITUTION_V2_COMPACT",
+    "new_root": "D:\\SOURCE FACTORY\\source-factory-active-core"
+  },
+  "migration_script": {
+    "repository_path": "tools/SF_028_MIGRATE_COMPACT_CONSTITUTION_AND_RULES.ps1",
+    "commit": "6789d116dedcc347bbd9ca78362cdd5eeb564c46",
+    "static_checks": {
+      "powershell51_review": "PASS_STATIC",
+      "balanced_braces": "PASS",
+      "balanced_parentheses": "PASS",
+      "old_root_delete_absent": "PASS",
+      "oneflow_execution_absent": "PASS",
+      "exact_required_file_allowlist": "PASS_7_FILES",
+      "rules_scope": "rules/powershell51 only",
+      "dual_copy_report_generation": "PASS"
+    }
+  },
+  "compact_files": [
+    {"file":"00_AI_SUPER_BOOT_v2_1_2_COMPACT.md","size_bytes":16953,"sha256":"82cb0c491066a0675264efe4da7e8c8581c0fdf6cddd3a82955e4cb7b8a9a7ea","manifest_match":true},
+    {"file":"01_COMPACT_RULE_SCHEMA_v2_1_2.json","size_bytes":10952,"sha256":"b7eee286c60458f348b81c426942432b09d856c0c56e8fd0abb040ce219c58a0","manifest_match":true},
+    {"file":"02_WORKER_COMMANDER_CONTRACTS_COMPACT_v2_1_2.md","size_bytes":7664,"sha256":"df5a72259e169b9c5b76011983492f88756cee37dac0462dc1f08159bfaa55e7","manifest_match":true},
+    {"file":"03_STAGE4_AUTOMATION_CONTRACT_COMPACT_v2_1_2.md","size_bytes":6493,"sha256":"1ec20d6fc338dcceb18c65cbbc2f6322f09ef82a67d0054de0115d5eb128f59c","manifest_match":true},
+    {"file":"04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json","size_bytes":1928,"sha256":"bdec7f0c76706f598c15d28bbfdb86e9548bc75c145a52121c12d16d715e0142","manifest_match":true},
+    {"file":"FINAL_COMPACT_MANIFEST_v2_1_2.json","size_bytes":1924,"sha256":"fffac7ac0567e38b4de2e1f3045c03ad370dd7c9541b881637fd2c5709bdeecd","manifest_match":"NOT_SELF_LISTED"},
+    {"file":"V2_1_2_COMPACT_UPDATE_REPORT.md","size_bytes":1846,"sha256":"957d4b6e11e0d633b61ef106bc576711babbc6dbedce906cde706ddafda99439","manifest_match":true}
+  ],
+  "json_parse": {
+    "FINAL_COMPACT_MANIFEST_v2_1_2.json": "PASS",
+    "01_COMPACT_RULE_SCHEMA_v2_1_2.json": "PASS",
+    "04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json": "PASS"
+  },
+  "manifest_hash_status": "PASS_6_OF_6",
+  "initial_read_order_preserved": true,
+  "reference_only_files_preserved": true,
+  "old_full_archive_copied": false,
+  "windows_d_drive_copy_executed": false,
+  "reason_not_executed": "The active runtime cannot access the user Windows D: filesystem. The repository migration script is ready for immediate local execution.",
+  "external_effect_count": 0,
+  "terminal_status": "SF_028_SLOT_04_COMPACT_CONSTITUTION_COPY_YELLOW"
+}
