@@ -1,0 +1,49 @@
+{
+  "task_id": "SF_028_SIZE_AUDIT_AND_OLD_ROOT_MAP",
+  "worker_id": "SLOT_01_SF028_SIZE_AUDIT_AND_OLD_ROOT_MAP_WORKER",
+  "terminal_status": "SF_028_SLOT_01_SIZE_AUDIT_YELLOW",
+  "measurement_complete": false,
+  "access_status": "LOCAL_WINDOWS_DRIVES_NOT_MOUNTED_IN_CONNECTED_WORKER_RUNTIME",
+  "old_root": "D:\\SOURCE FACTORY",
+  "old_root_selection_basis": "Current project authority and uploaded SF_028 runbooks identify D:\\SOURCE FACTORY as the active Source Factory root. Existence and byte size could not be probed from the connected Linux container.",
+  "secondary_old_root": "",
+  "current_head": "238149e2f0955036d1870c94719db627f500aff8",
+  "current_branch": "main",
+  "worktree_dirty": null,
+  "total_size_bytes": null,
+  "top_level_dirs": [
+    {"path": ".git", "exists": null, "size_bytes": null, "measurement_status": "NOT_MEASURED"},
+    {"path": "node_modules", "exists": null, "size_bytes": null, "measurement_status": "NOT_MEASURED"},
+    {"path": "reports", "exists": null, "size_bytes": null, "measurement_status": "NOT_MEASURED"},
+    {"path": "daily_queue", "exists": null, "size_bytes": null, "measurement_status": "NOT_MEASURED"},
+    {"path": "staging", "exists": null, "size_bytes": null, "measurement_status": "NOT_MEASURED"},
+    {"path": "extracted", "exists": null, "size_bytes": null, "measurement_status": "NOT_MEASURED"},
+    {"path": "candidate", "exists": null, "size_bytes": null, "measurement_status": "NOT_MEASURED"},
+    {"path": "backlog", "exists": null, "size_bytes": null, "measurement_status": "NOT_MEASURED"},
+    {"path": "dist", "exists": null, "size_bytes": null, "measurement_status": "NOT_MEASURED"},
+    {"path": "build", "exists": null, "size_bytes": null, "measurement_status": "NOT_MEASURED"},
+    {"path": "cache", "exists": null, "size_bytes": null, "measurement_status": "NOT_MEASURED"},
+    {"path": "temp", "exists": null, "size_bytes": null, "measurement_status": "NOT_MEASURED"}
+  ],
+  "extension_summary": [],
+  "large_files_50mb_plus": [],
+  "large_file_scan_status": "NOT_RUN_LOCAL_DRIVE_UNAVAILABLE",
+  "suspected_size_drivers": [
+    {"category": "dependency_tree", "patterns": ["node_modules/"], "size_bytes": null, "classification": "AUDIT_REQUIRED_NOT_ACTIVE_CORE_BY_DEFAULT"},
+    {"category": "git_history", "patterns": [".git/"], "size_bytes": null, "classification": "AUDIT_REQUIRED_EXCLUDE_FROM_ACTIVE_CORE"},
+    {"category": "historical_reports_and_queues", "patterns": ["reports/", "daily_queue/", "staging/", "extracted/", "candidate/", "backlog/"], "size_bytes": null, "classification": "AUDIT_REQUIRED_DO_NOT_COPY_WHOLE_TREE"},
+    {"category": "build_cache_temp", "patterns": ["dist/", "build/", "cache/", "temp/"], "size_bytes": null, "classification": "DELETE_OR_REBUILD_CANDIDATE_AFTER_LOCAL_MEASUREMENT"},
+    {"category": "archives", "patterns": ["*.zip", "*.7z", "*.tar", "*.gz"], "size_bytes": null, "classification": "ARCHIVE_FIRST_OR_EXTERNAL_STORAGE_CANDIDATE"}
+  ],
+  "runtime_mount_probe": {
+    "checked_paths": ["/mnt/d", "/mnt/e", "/d", "/e", "/media/d", "/media/e"],
+    "mounted_paths_found": [],
+    "result": "NO_WINDOWS_DRIVE_MOUNT_FOUND"
+  },
+  "notes": [
+    "No size, file-count, extension, or large-file figure is asserted because the connected worker runtime cannot access the user's D: or E: drives.",
+    "The approximately 4.7GB figure appears only as the commander/user goal and is not treated as a measured result.",
+    "OLD_ROOT was not deleted, moved, copied, or modified.",
+    "A local read-only PowerShell audit against D:\\SOURCE FACTORY is required to replace null measurements and close this YELLOW result."
+  ]
+}
