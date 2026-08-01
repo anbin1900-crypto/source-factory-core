@@ -1,0 +1,90 @@
+{
+  "schema_version": "YOLLA_PC_AGENT_WINDOWS_RUNTIME_PACKAGE_READY_V1",
+  "status": "PASS",
+  "terminal": "A1_PC_AGENT_WINDOWS_RUNTIME_V1_PACKAGE_READY",
+  "runtime_id": "YOLLA-PC-AGENT-RUNTIME-V1",
+  "version": "1.0.0-20260802",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 3,
+  "branch": "integration/source-factory-pc-agent-api-db-v1",
+  "source_head": "72f6ebf8a8de858c35b02d3f872fc2ba4d9eb7ce",
+  "issue": 5,
+  "runtime_model": {
+    "install_root": "E:\\YOLLA\\agent\\runtime\\pc-agent-v1",
+    "state_root": "E:\\YOLLA\\agent\\state\\pc-agent-runtime-v1",
+    "bridge_root": "E:\\YOLLA\\agent\\state\\source-factory-bridge-v1",
+    "python_exe": "E:\\YOLLA\\tools\\python-3.13.5-embed-amd64\\python.exe",
+    "task_name": "YOLLA-PC-Agent-Runtime-V1",
+    "task_account": "SYSTEM",
+    "task_trigger": "AT_STARTUP"
+  },
+  "features": {
+    "supervisor_singleton": "PASS",
+    "worker_singleton": "PASS",
+    "worker_heartbeat_watchdog": "PASS",
+    "worker_restart_after_exit": "PASS",
+    "worker_restart_after_stale_heartbeat": "BOUND",
+    "restart_bounded_backoff": "PASS",
+    "startup_processing_recovery": "PASS",
+    "duplicate_suppression": "PASS",
+    "duplicate_execution_count": 0,
+    "graceful_stop": "PASS",
+    "shutdown_receipt": "PASS",
+    "versioned_release_model": "PASS",
+    "atomic_current_pointer": "PASS",
+    "scheduled_task_auto_start": "PASS",
+    "status_command": "PASS",
+    "state_preserving_uninstall": "PASS"
+  },
+  "ci": {
+    "run_id": 30712968623,
+    "linux_job_id": 91403645122,
+    "windows_job_id": 91403645108,
+    "package_job_id": 91403678512,
+    "linux_conclusion": "success",
+    "windows_conclusion": "success",
+    "package_conclusion": "success",
+    "windows_powershell_51_parse": "PASS_2_OF_2",
+    "linux_runtime_lifecycle": "PASS",
+    "windows_runtime_lifecycle": "PASS",
+    "package_build": "PASS",
+    "installer_wrapper_parse": "PASS"
+  },
+  "artifact": {
+    "artifact_id": 8822463384,
+    "artifact_name": "yolla-pc-agent-windows-runtime-v1",
+    "artifact_sha256": "d94431d748b3e2ff7f6501ac3db49b289d252ec23067d77e1e0e7b126a98538e",
+    "expired": false
+  },
+  "package": {
+    "file_name": "YOLLA_PC_AGENT_WINDOWS_RUNTIME_V1.zip",
+    "sha256": "318c38327d1e3026660e07ea200f5c14d44afa9791fd9493d2045a248879aa91",
+    "size_bytes": 23640,
+    "entry_count": 8,
+    "manifest_file_count": 7,
+    "zip_crc": "PASS",
+    "manifest_validation": "PASS_FINDING_COUNT_0"
+  },
+  "installer": {
+    "file_name": "INSTALL_YOLLA_PC_AGENT_WINDOWS_RUNTIME_V1.ps1",
+    "sha256": "e457ef9304c3fa3c5d08afec5eb4f8e7910fc9c0d3e92581c56ca5d4ba36a584",
+    "size_bytes": 2955,
+    "default_action": "INSTALL_AND_START",
+    "do_not_start_switch": "-DoNotStart"
+  },
+  "target_pc": {
+    "install_count": 0,
+    "installed": false,
+    "next_action": "RUN_INSTALLER_ON_TARGET_PC"
+  },
+  "safety_boundary": {
+    "real_api_call_count": 0,
+    "postgresql_apply_count": 0,
+    "production_connection_count": 0,
+    "production_credential_use": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "recorded_at": "2026-08-02T03:39:00+09:00"
+}
