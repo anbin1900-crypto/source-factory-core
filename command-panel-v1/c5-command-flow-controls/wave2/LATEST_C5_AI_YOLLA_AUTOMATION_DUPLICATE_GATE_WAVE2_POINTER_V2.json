@@ -1,0 +1,79 @@
+{
+  "schema_version": "LATEST_C5_AI_YOLLA_AUTOMATION_DUPLICATE_GATE_WAVE2_POINTER_V2",
+  "worker": "C-5",
+  "worker_uid": "WKR-017",
+  "directive_id": "C1-TO-C5-AI-YOLLA-AUTOMATION-DUPLICATE-GATE-WAVE2-V1-20260802-001",
+  "directive_comment": 5156768032,
+  "wave_id": "WAVE_2",
+  "directive_registered_at_kst": "2026-08-02 18:03 KST",
+  "result_prepared_at_kst": "2026-08-02 18:37 KST",
+  "authority_pr": 169,
+  "implementation_repository": "anbin1900-crypto/source-factory-core",
+  "implementation_pr": 13,
+  "branch": "command-panel/c5-command-flow-controls-v1",
+  "start_head": "fac34ff85e81053756f62fd8b5c3cb624d1f3e1b",
+  "content_head_before_pointer_v1": "846bf6204b7fd7ac491cf407f829b02ff9aae870",
+  "pointer_v1": {
+    "commit": "23c0f309d9e0c03f6455f6a9842510f3fc8d0a2c",
+    "blob": "ba51bcf4935eb45c5e63a3178f40383ea4f22e5f"
+  },
+  "remote_publication_correction": {
+    "commit": "e2d621d5be4c785563cd4d4a919104e221db9808",
+    "blob": "fc86d2f8ba8068d05f8cc3e0b63242cd7284cd2c",
+    "corrected_source_blob": "82e4ec69d8d9fe1cb6c5ccd2dc8ea5b454c5096c",
+    "status": "PASS_CORRECTED_BEFORE_TERMINAL"
+  },
+  "content_head_before_pointer_v2": "e2d621d5be4c785563cd4d4a919104e221db9808",
+  "owned_root": "command-panel-v1/c5-command-flow-controls/wave2/**",
+  "wave1_execution_gate": {
+    "directive_comment": 5156760681,
+    "closure_receipt_comment": 5156846454,
+    "terminal": "C5_WAVE1_CLOSURE_RECEIPT_PASS",
+    "duplicate_prompt_key": "aea4ff861c94b6c948fe57bcc5ec1d735c80003044dd20692c9dcfe3cf8da88e"
+  },
+  "wave2_authority_duplicate_prompt_key": "a3d37b27a6f6af60032d45104ab68481504949e0cd90703562e89a211e6cbb70",
+  "final_delta_expected": {
+    "commits": 14,
+    "files_added": 13,
+    "out_of_scope_files": 0
+  },
+  "objects": {
+    "contract_blob": "b1bdc6736bde7f40974c06a5d1d503a9d8cdfe65",
+    "facade_blob": "2aacb6e1f52340b98f0d90e8db44f56559814021",
+    "core_blob": "82e4ec69d8d9fe1cb6c5ccd2dc8ea5b454c5096c",
+    "policy_blob": "ce46eeb879c63805ab3a23bbbe8a39e372c257af",
+    "three_service_fixture_blob": "6a6c237a6a6d0249b04a1cbcc781674478b29d55",
+    "tests_blob": "37a669f6fe28f16b4a92dcda415e9e7a4c509975",
+    "test_output_blob": "d815eb8b07533fd85c67d3ee2033d816087a4db8",
+    "test_result_blob": "1c1e809288105a667bf5557ab37665eead9a1fdc",
+    "final_report_blob": "4e4638e9fd7d1313f06290375a07821c33860fea",
+    "readme_blob": "6fafd5bc21f2dba53a39ef853bb7e47c17c495ae",
+    "correction_receipt_blob": "fc86d2f8ba8068d05f8cc3e0b63242cd7284cd2c"
+  },
+  "validation": {
+    "node_syntax": "PASS_4_OF_4",
+    "unit_tests": "PASS_22_OF_22",
+    "remote_git_blob_parity": "PASS_12_OF_12_BEFORE_POINTER_V2",
+    "duplicate_prompt_reject": "PASS",
+    "already_accepted_replay_reject": "PASS",
+    "stale_wave_reject": "PASS",
+    "missing_time_reject": "PASS",
+    "missing_wave_reject": "PASS",
+    "supersession_required": "PASS",
+    "three_service_payload_preservation": "PASS",
+    "authoritative_wave1_key_match": "PASS",
+    "authoritative_wave2_key_match": "PASS",
+    "user_manual_prompt_composition_count": 0,
+    "actual_dispatch_count": 0,
+    "auto_next_wave_count": 0
+  },
+  "terminal": "C5_AI_YOLLA_AUTOMATION_DUPLICATE_GATE_WAVE2_PASS",
+  "terminal_class": "PASS",
+  "github_status_check_count": 0,
+  "ci_classification": "NOT_RUN_NOT_CLAIMED_PASS",
+  "final_remote_head_resolution": "COMMIT_CONTAINING_THIS_POINTER_V2",
+  "production": false,
+  "ready_transition": false,
+  "merge": false,
+  "force_push": false
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": "C5_AI_YOLLA_RUNTIME_ADMISSION_FIXTURES_WAVE3_V1",
+  "now_kst": "2026-08-02 19:20 KST",
+  "runtime_authority": {
+    "a1_control_pr": 142,
+    "target_pc_accepted_comment": 5153045063,
+    "target_pc_terminal": "A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED",
+    "resident_monitoring_comment": 5155863538,
+    "canonical_runtime_root": "D:\\YOLLA_PC_BRIDGE",
+    "runtime_version": "1.0.0-20260802",
+    "target_pc_accepted": true,
+    "runtime_health_status": "HEALTHY",
+    "monitoring_status": "A1_PC_AGENT_12_18_21_SOURCE_AND_STATIC_VALIDATION_PASS_TARGET_PC_EXECUTION_READY"
+  },
+  "fresh_context": {
+    "snapshot_id": "ctx-c5-wave3-20260802-1918",
+    "captured_at_kst": "2026-08-02 19:18 KST",
+    "valid_until_kst": "2026-08-02 19:28 KST",
+    "freshness": "FRESH",
+    "runtime_version": "1.0.0-20260802",
+    "runtime_health_status": "HEALTHY",
+    "role_id": "C-5",
+    "wave_id": "WAVE_3",
+    "platform_id": "AI_YOLLA",
+    "service_id": "AUTOMATION",
+    "domain_pack_id": "COMMAND_PANEL_CORE"
+  },
+  "stale_context": {
+    "snapshot_id": "ctx-c5-wave3-stale",
+    "captured_at_kst": "2026-08-02 18:00 KST",
+    "valid_until_kst": "2026-08-02 18:10 KST",
+    "freshness": "STALE",
+    "runtime_version": "1.0.0-20260802",
+    "runtime_health_status": "HEALTHY",
+    "role_id": "C-5",
+    "wave_id": "WAVE_3",
+    "platform_id": "AI_YOLLA",
+    "service_id": "AUTOMATION",
+    "domain_pack_id": "COMMAND_PANEL_CORE"
+  },
+  "prompt": {
+    "role_id": "C-5",
+    "directive_id": "C1-TO-C5-AI-YOLLA-RUNTIME-ADMISSION-GATE-WAVE3-V1-20260802-001",
+    "wave_id": "WAVE_3",
+    "directive_registered_at_kst": "2026-08-02 19:06 KST",
+    "duplicate_prompt_key": "dfe6d39b2be8fd80b5908a28e8a00402fb1e6cc28e02a0a871d2dae46f40545e",
+    "platform_id": "AI_YOLLA",
+    "service_id": "AUTOMATION",
+    "domain_pack_id": "COMMAND_PANEL_CORE",
+    "payload": {
+      "job_type": "RUNTIME_ADMISSION_PLAN",
+      "plan_only": true,
+      "production": false
+    }
+  },
+  "ledger": [
+    {
+      "role_id": "C-5",
+      "directive_id": "C1-TO-C5-AI-YOLLA-AUTOMATION-DUPLICATE-GATE-WAVE2-V1-20260802-001",
+      "wave_id": "WAVE_2",
+      "duplicate_prompt_key": "a3d37b27a6f6af60032d45104ab68481504949e0cd90703562e89a211e6cbb70",
+      "result_accepted": true,
+      "result_comment": 5156914530
+    }
+  ],
+  "authority_pointer_finding": {
+    "c1_declared_accepted_result_comment": 5156846454,
+    "observed_wave2_terminal_comment": 5156914530,
+    "classification": "SOURCE_AUTHORITY_POINTER_MISMATCH_NON_BLOCKING_FOR_STATIC_GATE_IMPLEMENTATION",
+    "reason": "THE_C1_WAVE3_DIRECTIVE_ITSELF_IS_THE_ACTIVE_EXECUTION_AUTHORITY_AND_THE_ACCEPTED_REMOTE_HEAD_AND_TERMINAL_ARE_EXPLICIT"
+  }
+}

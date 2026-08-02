@@ -1,0 +1,60 @@
+{
+  "schema_version": "C5_AI_YOLLA_RUNTIME_ADMISSION_GATE_WAVE3_TEST_RESULT_V1",
+  "directive_id": "C1-TO-C5-AI-YOLLA-RUNTIME-ADMISSION-GATE-WAVE3-V1-20260802-001",
+  "directive_comment": 5157103871,
+  "wave_id": "WAVE_3",
+  "directive_registered_at_kst": "2026-08-02 19:06 KST",
+  "duplicate_prompt_key": "dfe6d39b2be8fd80b5908a28e8a00402fb1e6cc28e02a0a871d2dae46f40545e",
+  "a1_runtime_authority": {
+    "target_pc_accepted_comment": 5153045063,
+    "target_pc_terminal": "A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED",
+    "resident_monitoring_comment": 5155863538,
+    "canonical_runtime_root": "D:\\YOLLA_PC_BRIDGE",
+    "runtime_version": "1.0.0-20260802"
+  },
+  "validation": {
+    "node_syntax": "PASS_5_OF_5",
+    "unit_tests": "PASS_28_OF_28",
+    "json_parse": "PASS_2_OF_2",
+    "a1_runtime_authority_binding": "PASS",
+    "fresh_context_admit": "PASS",
+    "stale_context_reject": "PASS",
+    "runtime_mismatch_reject": "PASS",
+    "duplicate_reject": "PASS",
+    "stale_wave_reject": "PASS",
+    "accepted_replay_reject": "PASS",
+    "runtime_health_reject": "PASS",
+    "sensitive_payload_reject": "PASS",
+    "role_service_wave_match": "PASS",
+    "existing_transport_only": "PASS",
+    "user_manual_prompt_composition_count": 0,
+    "actual_pc_dispatch_count": 0,
+    "new_transport_count": 0
+  },
+  "authority_pointer_finding": {
+    "c1_declared_accepted_result_comment": 5156846454,
+    "observed_wave2_terminal_comment": 5156914530,
+    "classification": "SOURCE_AUTHORITY_POINTER_MISMATCH_NON_BLOCKING_FOR_STATIC_GATE_IMPLEMENTATION",
+    "basis": "C1_WAVE3_DIRECTIVE_COMMENT_5157103871_IS_ACTIVE_EXECUTION_AUTHORITY_AND_EXPLICITLY_BINDS_ACCEPTED_TERMINAL_AND_REMOTE_HEAD"
+  },
+  "failure_analysis_and_retry": [
+    {
+      "attempt": 1,
+      "finding": "STALE_WAVE_TEST_WAS_PREEMPTED_BY_CONTEXT_WAVE_MISMATCH",
+      "root_cause": "TEST_CONTEXT_REMAINED_WAVE_3_WHILE_PROMPT_WAS_CHANGED_TO_WAVE_1",
+      "correction": "ALIGN_CONTEXT_WAVE_WITH_PROMPT_TO_REACH_STALE_WAVE_POLICY_BRANCH",
+      "retry_result": "PASS_28_OF_28"
+    }
+  ],
+  "source_sha256": {
+    "RUNTIME_ENVIRONMENT_ADMISSION_CONTRACT.json": "c3a297f2eeaa7939fd82360d7bb31218e687e52928297afb45e1da1d576cd1c5",
+    "runtimeEnvironmentAdmissionGate.js": "d131cc785ad8a41dce59aabfdd9b750b44e123d7c93de24477ed44ffd7aee993",
+    "lib/constants.js": "2cf44d16b8cffa3a57882b097b2c82f7f28fd0410a964d090771c065d07642ad",
+    "lib/core.js": "6c7e84983e31268d36cf5f85aacaf1f2eaf3f42ef2a20cdd88fa38c4bd9e7c0e",
+    "lib/policy.js": "7c87840b0f48e8a9a16ff44fa8288814c08de70e97836f391ff6bf3170a1aec5",
+    "fixtures/RUNTIME_ADMISSION_FIXTURES.json": "ce78d6e4e377b073b7e4a1061d14e676ca92f332fb99c94f896ffffd861302af",
+    "tests/testRuntimeEnvironmentAdmissionGate.js": "93a195401ebbc638798d7fb82ba5354c6fb8708cc804b009945b2b8474ee6cea",
+    "test-output.txt": "a477a33e4c6a0737c7e66c4f4e0dcb2dda028dda8ba70f9e5b1ed5fcbcc58f96",
+    "README.md": "501c8e6fdbfbfb6cd903f80750c64c6d52fd4ea3ab15067f92090a6ac0aba8a5"
+  }
+}

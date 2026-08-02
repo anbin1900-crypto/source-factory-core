@@ -1,0 +1,27 @@
+PASS admits exact directive package
+PASS displays exact identity
+PASS rejects cancelled directive
+PASS rejects ambiguous directive
+PASS rejects cycle mismatch
+PASS rejects missing package
+PASS builds plan READ_AND_EXECUTE
+PASS builds plan RUN_SELECTED_ROLE
+PASS builds plan REQUEST_STOP
+PASS builds plan OPEN_RESULT
+PASS builds plan POST_PC_STATUS
+PASS builds plan BACKUP_NOW
+PASS read and execute has exact read step
+PASS rejects missing api binding
+PASS suppresses duplicate click
+PASS group dispatch admits exact packages in parallel
+PASS group dispatch partially rejects cycle mismatch
+PASS group dispatch rejects all invalid
+PASS happy path state flow
+PASS blocked flow can retry
+PASS failed flow can retry
+PASS invalid state transition fails closed
+PASS retry requires failed or blocked predecessor
+PASS retry plan accepted after blocked predecessor
+PASS open result rejects missing result ref
+PASS plans never contain prompt text body
+PASS_26_OF_26

@@ -1,0 +1,90 @@
+{
+  "schema_version": "C5_AI_YOLLA_AUTOMATION_DUPLICATE_GATE_WAVE2_FINAL_REPORT_V1",
+  "worker": "C-5",
+  "worker_uid": "WKR-017",
+  "directive_id": "C1-TO-C5-AI-YOLLA-AUTOMATION-DUPLICATE-GATE-WAVE2-V1-20260802-001",
+  "directive_comment": 5156768032,
+  "wave_id": "WAVE_2",
+  "directive_registered_at_kst": "2026-08-02 18:03 KST",
+  "authority_pr": 169,
+  "implementation_repository": "anbin1900-crypto/source-factory-core",
+  "implementation_pr": 13,
+  "branch": "command-panel/c5-command-flow-controls-v1",
+  "start_head": "fac34ff85e81053756f62fd8b5c3cb624d1f3e1b",
+  "owned_root": "command-panel-v1/c5-command-flow-controls/wave2/**",
+  "wave1_execution_gate": {
+    "directive_comment": 5156760681,
+    "closure_receipt_comment": 5156846454,
+    "terminal": "C5_WAVE1_CLOSURE_RECEIPT_PASS",
+    "duplicate_prompt_key": "aea4ff861c94b6c948fe57bcc5ec1d735c80003044dd20692c9dcfe3cf8da88e"
+  },
+  "wave2_authority_duplicate_prompt_key": "a3d37b27a6f6af60032d45104ab68481504949e0cd90703562e89a211e6cbb70",
+  "implementation": {
+    "duplicate_key_fields": [
+      "role_id",
+      "directive_id",
+      "wave_id",
+      "directive_registered_at_kst"
+    ],
+    "decisions": [
+      "REJECT_DUPLICATE",
+      "REJECT_ALREADY_ACCEPTED",
+      "REJECT_STALE_WAVE",
+      "REQUIRE_SUPERSESSION_POINTER",
+      "FAIL_CLOSED",
+      "REJECT_PREVIOUS_WAVE_RESULT_REQUIRED",
+      "ACCEPT"
+    ],
+    "three_service_payload_identity_preserved": [
+      "platform_id",
+      "service_id",
+      "domain_pack_id"
+    ],
+    "c1_acceptance_required_before_next_wave": true,
+    "auto_next_wave_created": false,
+    "new_prompt_transport_created": false,
+    "actual_dispatch_performed": false,
+    "manual_prompt_composition_count": 0,
+    "module_split_count": 3
+  },
+  "validation": {
+    "node_syntax": "PASS_4_OF_4",
+    "unit_tests": "PASS_22_OF_22",
+    "duplicate_prompt_reject": "PASS",
+    "already_accepted_replay_reject": "PASS",
+    "stale_wave_reject": "PASS",
+    "missing_time_reject": "PASS",
+    "missing_wave_reject": "PASS",
+    "supersession_required": "PASS",
+    "three_service_payload_preservation": "PASS",
+    "authoritative_wave1_key_match": "PASS",
+    "authoritative_wave2_key_match": "PASS",
+    "user_manual_prompt_composition_count": 0,
+    "actual_dispatch_count": 0,
+    "auto_next_wave_count": 0
+  },
+  "failure_analysis_and_retry": [
+    {
+      "attempt": 1,
+      "finding": "COMPUTED_DUPLICATE_KEY_DID_NOT_MATCH_DIRECTIVE_AUTHORITY_KEY",
+      "observed_key": "181083b8d89615148168eb96ca2aff7dbb18f23821ee20439a31c07f51185e47",
+      "expected_key": "a3d37b27a6f6af60032d45104ab68481504949e0cd90703562e89a211e6cbb70",
+      "root_cause": "JSON_CANONICAL_HASH_USED_INSTEAD_OF_EXACT_PIPE_JOIN_INPUT_ORDER",
+      "correction": "SHA256(role_id|directive_id|wave_id|directive_registered_at_kst)",
+      "retry_result": "PASS_22_OF_22"
+    },
+    {
+      "attempt": 2,
+      "finding": "SINGLE_SOURCE_FILE_ABOVE_SAFE_CONNECTOR_PUBLICATION_SIZE",
+      "root_cause": "MONOLITHIC_IMPLEMENTATION",
+      "correction": "SPLIT_INTO_FACADE_PLUS_CORE_AND_POLICY_MODULES",
+      "retry_result": "PASS_22_OF_22"
+    }
+  ],
+  "terminal": "C5_AI_YOLLA_AUTOMATION_DUPLICATE_GATE_WAVE2_PASS",
+  "terminal_decision": "PASS",
+  "production": false,
+  "ready_transition": false,
+  "merge": false,
+  "force_push": false
+}

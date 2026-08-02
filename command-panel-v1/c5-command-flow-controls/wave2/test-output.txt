@@ -1,0 +1,23 @@
+PASS wave parser accepts WAVE_2
+PASS KST minute parser accepts canonical time
+PASS duplicate key is deterministic
+PASS wave1 duplicate key matches authority
+PASS wave2 duplicate key matches authority
+PASS wave2 accepted with wave1 result comment
+PASS duplicate prompt rejected
+PASS already accepted directive replay rejected
+PASS stale wave rejected
+PASS same wave different time requires supersession
+PASS same wave different time accepts exact supersession pointer
+PASS wrong supersession pointer rejected
+PASS missing time fails closed
+PASS invalid time fails closed
+PASS missing wave fails closed
+PASS next wave without previous result rejected
+PASS next wave with explicit rework authority accepted
+PASS three specialist payload identities preserved
+PASS accepted plan never auto creates next wave
+PASS accepted plan composes no prompt manually
+PASS gate performs no actual dispatch
+PASS payload identity is returned exactly
+PASS_22_OF_22

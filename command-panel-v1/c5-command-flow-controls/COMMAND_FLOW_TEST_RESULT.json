@@ -1,0 +1,38 @@
+{
+  "schema_version": "C5_COMMAND_FLOW_TEST_RESULT_V1",
+  "directive_id": "C1-TO-C5-COMMAND-BUTTON-GROUP-FLOW-V2-20260802-001",
+  "directive_comment": 5155843439,
+  "previous_directive_comment": 5154888509,
+  "execution_mode": "FIXTURE_FIRST_STATIC_CONTROLLER_NO_ACTUAL_DISPATCH",
+  "node_syntax_check": "PASS_5_OF_5",
+  "unit_tests": "PASS_26_OF_26",
+  "json_parse": "PASS_4_OF_4",
+  "required_buttons": "PASS_8_OF_8",
+  "admission_rejections": {
+    "cancelled": "PASS",
+    "ambiguous": "PASS",
+    "cycle_mismatch": "PASS",
+    "missing_package": "PASS"
+  },
+  "duplicate_click_suppression": "PASS",
+  "parallel_group_partial_admission": "PASS",
+  "state_machine_happy_path": "PASS",
+  "blocked_failed_retry": "PASS",
+  "invalid_transition_fail_closed": "PASS",
+  "manual_prompt_composition_count": 0,
+  "actual_dispatch_count": 0,
+  "new_transport_runtime_count": 0,
+  "source_sha256": {
+    "COMMAND_BUTTON_CONTRACT.json": "1da32fc47e50f2943b6d047930f733429b76a5ceded92cf297bf57a66e6424e8",
+    "GROUP_EXECUTION_ADMISSION_CONTRACT.json": "7ba82b69a101e704a6e231ce82e5d672ec7eb180e38a7935428af068e52fe9be",
+    "COMMAND_FLOW_STATE_MACHINE.json": "2e6fe9352af2ff5b6963e9651f233259511f8bc51625e1878a4552f434b936ab",
+    "commandFlowController.js": "4b6e6f24d46145c43a21fd1ad8119c84759c4068e9916f516a2a67fab3c2da3c",
+    "lib/constants.js": "be28a0a90f64cae32146d1785addb82b1a831ca4dae352547194eef9cd84a090",
+    "lib/directiveAdmission.js": "a85cd4845d8612176543b4abd1ed58c72f538ac5ba5981fb77e5f19fe8e97694",
+    "lib/actionPlanner.js": "da64a3ebd0f8cfc28ca4a2954a233a38b4353852764e36835bc0f66e8e055c34",
+    "fixtures/COMMAND_FLOW_FIXTURES.json": "ac0b43caf3987e7003d1eb3f0925938be5ebc97fe6717a7f6e8e1f6127ba1471",
+    "tests/testCommandFlowController.js": "841829512ce19937741bf34396e63c8b1207e06eed6e3b7f6c9e397a68b18a9d",
+    "README.md": "847e6fccf99d6fd5f921d779caa800f7ab2809213a2d94761391a01326422cef",
+    "test-output.txt": "eb3d5083550a99cc1f47a7c05fb4c21f54cbc7f970245a257959aee19ef8fca2"
+  }
+}

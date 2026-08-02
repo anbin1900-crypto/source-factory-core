@@ -1,0 +1,15 @@
+'use strict';
+const crypto=require('crypto');
+function obj(v){return v!==null&&typeof v==='object'&&!Array.isArray(v)}
+function text(v){return typeof v==='string'&&v.trim()?v.trim():''}
+function canonical(v){if(Array.isArray(v))return v.map(canonical);if(!obj(v))return v;const o={};Object.keys(v).sort().forEach(k=>o[k]=canonical(v[k]));return o}
+function canonicalJson(v){return JSON.stringify(canonical(v))}
+function sha256(v){return crypto.createHash('sha256').update(Buffer.from(String(v),'utf8')).digest('hex')}
+function normalizeDirective(input){const s=obj(input)?input:{};const p=obj(s.directivePackage)?s.directivePackage:{};return{repository:text(s.repository),pr:Number(s.pr),commentId:Number(s.commentId),directiveId:text(s.directiveId),roleId:text(s.roleId),cycleId:text(s.cycleId),status:text(s.status||'ACTIVE').toUpperCase(),ambiguous:s.ambiguous===true,directivePackage:{packageId:text(p.packageId),version:text(p.version),promptRef:text(p.promptRef),promptSha256:text(p.promptSha256),authorityHead:text(p.authorityHead)},resultRef:obj(s.resultRef)?{...s.resultRef}:null,metadata:obj(s.metadata)?{...s.metadata}:{}}}
+function identity(d){return{repository:d.repository,pr:d.pr,commentId:d.commentId,directiveId:d.directiveId,roleId:d.roleId,cycleId:d.cycleId}}
+function findings(d,context){const f=[];if(!d.repository)f.push('REPOSITORY_MISSING');if(!Number.isInteger(d.pr)||d.pr<=0)f.push('PR_INVALID');if(!Number.isInteger(d.commentId)||d.commentId<=0)f.push('COMMENT_ID_INVALID');if(!d.directiveId)f.push('DIRECTIVE_ID_MISSING');if(!d.roleId)f.push('ROLE_ID_MISSING');if(!d.cycleId)f.push('CYCLE_ID_MISSING');if(['CANCELLED','SUPERSEDED'].includes(d.status))f.push('DIRECTIVE_NOT_ACTIVE');if(d.ambiguous)f.push('DIRECTIVE_AMBIGUOUS');if(text(context.cycleId)&&d.cycleId!==context.cycleId)f.push('CYCLE_MISMATCH');const p=d.directivePackage;if(!p.packageId)f.push('DIRECTIVE_PACKAGE_ID_MISSING');if(!p.version)f.push('DIRECTIVE_PACKAGE_VERSION_MISSING');if(!p.promptRef)f.push('DIRECTIVE_PROMPT_REF_MISSING');if(!/^[a-f0-9]{64}$/.test(p.promptSha256))f.push('DIRECTIVE_PROMPT_SHA256_INVALID');if(!/^[a-f0-9]{40}$/.test(p.authorityHead))f.push('DIRECTIVE_AUTHORITY_HEAD_INVALID');return f}
+function admitDirective(input,contextInput){const d=normalizeDirective(input);const c=obj(contextInput)?contextInput:{};const f=findings(d,c);return{admitted:f.length===0,directive:d,findings:f,displayedIdentity:identity(d)}}
+function directiveKey(d){return[d.repository,d.pr,d.commentId,d.directiveId,d.roleId,d.cycleId].join('|')}
+function idempotencyKey(action,d,attempt){return sha256(canonicalJson({action,directiveKey:directiveKey(d),attempt})).slice(0,40)}
+function duplicateFinding(key,ledger){const x=(Array.isArray(ledger)?ledger:[]).find(e=>obj(e)&&e.idempotencyKey===key&&!['BLOCKED','FAILED','CANCELLED'].includes(text(e.status).toUpperCase()));return x?'DUPLICATE_DIRECTIVE_CLICK_SUPPRESSED':null}
+module.exports={obj,text,canonicalJson,sha256,normalizeDirective,admitDirective,directiveKey,idempotencyKey,duplicateFinding};

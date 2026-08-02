@@ -1,0 +1,26 @@
+{
+  "schema_version": "C5_GROUP_EXECUTION_ADMISSION_CONTRACT_V1",
+  "admission_requires": [
+    "ACTIVE_DIRECTIVE",
+    "EXACT_REPOSITORY_PR_COMMENT_DIRECTIVE_ROLE_CYCLE_IDENTITY",
+    "EXACT_DIRECTIVE_PACKAGE_ID_VERSION_PROMPT_REF_PROMPT_SHA256_AUTHORITY_HEAD",
+    "CURRENT_CYCLE_MATCH",
+    "NO_AMBIGUITY",
+    "NO_DUPLICATE_IN_FLIGHT_IDEMPOTENCY_KEY",
+    "EXISTING_A_GROUP_API_BINDING"
+  ],
+  "reject_codes": [
+    "DIRECTIVE_NOT_ACTIVE",
+    "DIRECTIVE_AMBIGUOUS",
+    "CYCLE_MISMATCH",
+    "DIRECTIVE_PACKAGE_ID_MISSING",
+    "DIRECTIVE_PROMPT_REF_MISSING",
+    "DUPLICATE_DIRECTIVE_CLICK_SUPPRESSED"
+  ],
+  "group_dispatch": {
+    "parallel": true,
+    "dispatch_only_admitted_roles": true,
+    "partial_admission_allowed": true,
+    "rejected_roles_reported_with_exact_findings": true
+  }
+}

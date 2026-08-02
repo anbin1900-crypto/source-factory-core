@@ -1,0 +1,21 @@
+{
+  "schema_version": "C5_COMMAND_BUTTON_CONTRACT_V1",
+  "directive_id": "C1-TO-C5-COMMAND-BUTTON-GROUP-FLOW-V2-20260802-001",
+  "buttons": [
+    {"label":"게시물 읽고 작업 실행","action":"READ_AND_EXECUTE","capability":"PROMPT_DISPATCH"},
+    {"label":"선택 역할 실행","action":"RUN_SELECTED_ROLE","capability":"PROMPT_DISPATCH"},
+    {"label":"그룹 전체 실행","action":"RUN_GROUP","capability":"PROMPT_DISPATCH"},
+    {"label":"중지 요청","action":"REQUEST_STOP","capability":"JOB_CONTROL"},
+    {"label":"재시도","action":"RETRY","capability":"JOB_CONTROL"},
+    {"label":"결과 열기","action":"OPEN_RESULT","capability":"RESULT_OPEN"},
+    {"label":"지금 PC 상태 게시","action":"POST_PC_STATUS","capability":"PC_STATUS_POST"},
+    {"label":"지금 백업","action":"BACKUP_NOW","capability":"BACKUP_CREATE"}
+  ],
+  "identity_display_required": ["repository","pr","commentId","directiveId","roleId","cycleId"],
+  "execution_boundary": {
+    "existing_api_contract_only": true,
+    "new_transport_runtime": false,
+    "manual_prompt_body_generation": false,
+    "actual_dispatch_in_controller": false
+  }
+}

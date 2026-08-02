@@ -1,0 +1,20 @@
+{
+  "schema_version": "C5_AI_YOLLA_AUTOMATION_DUPLICATE_GATE_REMOTE_PUBLICATION_CORRECTION_RECEIPT_V1",
+  "directive_id": "C1-TO-C5-AI-YOLLA-AUTOMATION-DUPLICATE-GATE-WAVE2-V1-20260802-001",
+  "path": "command-panel-v1/c5-command-flow-controls/wave2/lib/core.js",
+  "finding": "REMOTE_CORE_SOURCE_TRANSCRIPTION_DIVERGED_FROM_LOCALLY_VALIDATED_SOURCE",
+  "initial_publication_commit": "6f0b2de2772a5f76aeb331d752d9cd9afca5913b",
+  "initial_remote_blob": "72887a4dd5666f2a2a7e9aa83531dea227bc702a",
+  "expected_validated_blob": "82e4ec69d8d9fe1cb6c5ccd2dc8ea5b454c5096c",
+  "failure_analysis": "THE_WAVE_PARSER_REGULAR_EXPRESSION_WAS_MANUALLY_TRANSCRIBED_DIFFERENTLY_DURING_CONNECTOR_PUBLICATION",
+  "correction": "REPLACE_REMOTE_FILE_WITH_EXACT_LOCALLY_VALIDATED_BYTES",
+  "correction_commit": "534ca21da7977785786525b22dc1873bc5b3b34f",
+  "corrected_remote_blob": "82e4ec69d8d9fe1cb6c5ccd2dc8ea5b454c5096c",
+  "corrected_remote_sha256": "38a479f5054d0a694e874b762229a40ad24726a47f6501c8557b22bf5186b5fe",
+  "post_correction_unit_tests": "PASS_22_OF_22",
+  "post_correction_remote_git_blob_parity": "PASS_10_OF_10",
+  "terminal_impact": "NONE_CORRECTED_BEFORE_TERMINAL",
+  "production": false,
+  "ready_transition": false,
+  "merge": false
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "C5_AI_YOLLA_AUTOMATION_DUPLICATE_GATE_CONTRACT_V1",
+  "directive_id": "C1-TO-C5-AI-YOLLA-AUTOMATION-DUPLICATE-GATE-WAVE2-V1-20260802-001",
+  "wave_id": "WAVE_2",
+  "directive_registered_at_kst": "2026-08-02 18:03 KST",
+  "duplicate_key_fields": [
+    "role_id",
+    "directive_id",
+    "wave_id",
+    "directive_registered_at_kst"
+  ],
+  "decisions": {
+    "exact_duplicate": "REJECT_DUPLICATE",
+    "accepted_result_replay": "REJECT_ALREADY_ACCEPTED",
+    "older_than_latest_wave": "REJECT_STALE_WAVE",
+    "same_wave_different_time": "REQUIRE_SUPERSESSION_POINTER",
+    "missing_wave_or_time": "FAIL_CLOSED",
+    "next_wave_without_prior_result_or_rework": "REJECT_PREVIOUS_WAVE_RESULT_REQUIRED"
+  },
+  "payload_identity_required": [
+    "platform_id",
+    "service_id",
+    "domain_pack_id"
+  ],
+  "automation_boundary": {
+    "c1_acceptance_required_before_auto_next_wave": true,
+    "auto_next_wave_creation": false,
+    "manual_prompt_composition": false,
+    "new_prompt_transport": false,
+    "actual_dispatch_in_gate": false
+  }
+}

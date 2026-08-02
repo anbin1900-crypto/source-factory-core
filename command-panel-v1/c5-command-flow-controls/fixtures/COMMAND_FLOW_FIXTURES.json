@@ -1,0 +1,33 @@
+{
+  "cycle_id": "COMMAND_PANEL_CYCLE_2",
+  "api_bindings": {
+    "PROMPT_DISPATCH": {"authority":"sequentialPromptSender.js@4001772fa2b2475171cd8595d5294cbcebe8cfde","method":"getNextDispatchPayload","mode":"EXISTING_CONTRACT_ONLY"},
+    "JOB_CONTROL": {"authority":"pcAgentBridgeAdapter.js@af0d9ef934d88c1d4019f8330e30ee1bcb9b6f8f","method":"normalizeWorkRequest","mode":"EXISTING_CONTRACT_ONLY"},
+    "RESULT_OPEN": {"authority":"safe_panel_preload.js@bd42f34df35edee59c8e38ac681ae77d61ad365b","method":"sfSafePanel.openLatestSafePanelGenerated","mode":"EXISTING_CONTRACT_ONLY"},
+    "PC_STATUS_POST": {"authority":"safe_panel_preload.js@bd42f34df35edee59c8e38ac681ae77d61ad365b","method":"sfSafePanel.refreshSafePanelStatus","mode":"EXISTING_CONTRACT_ONLY"},
+    "BACKUP_CREATE": {"authority":"pcAgentBridgeAdapter.js@af0d9ef934d88c1d4019f8330e30ee1bcb9b6f8f","method":"normalizeWorkRequest","mode":"EXISTING_CONTRACT_ONLY"}
+  },
+  "directives": [
+    {
+      "repository":"anbin1900-crypto/yolla-real-estate-data-engine",
+      "pr":169,
+      "commentId":5155843439,
+      "directiveId":"C1-TO-C5-COMMAND-BUTTON-GROUP-FLOW-V2-20260802-001",
+      "roleId":"C-5",
+      "cycleId":"COMMAND_PANEL_CYCLE_2",
+      "status":"ACTIVE",
+      "directivePackage":{"packageId":"C5_COMMAND_FLOW_V2","version":"2.0.0","promptRef":"github://pr/169/comment/5155843439","promptSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","authorityHead":"69311de6c51e609df3080d8f316d98e4f381adc6"},
+      "resultRef":{"repository":"anbin1900-crypto/yolla-real-estate-data-engine","pr":169}
+    },
+    {
+      "repository":"anbin1900-crypto/yolla-real-estate-data-engine",
+      "pr":168,
+      "commentId":5154884001,
+      "directiveId":"C1-TO-C2-COMMAND-PANEL-V2",
+      "roleId":"C-2",
+      "cycleId":"COMMAND_PANEL_CYCLE_2",
+      "status":"ACTIVE",
+      "directivePackage":{"packageId":"C2_COMMAND_PANEL_V2","version":"2.0.0","promptRef":"github://pr/168/comment/5154884001","promptSha256":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb","authorityHead":"69311de6c51e609df3080d8f316d98e4f381adc6"}
+    }
+  ]
+}
