@@ -1,0 +1,29 @@
+PASS A1 runtime authority exact binding passes
+PASS wave3 duplicate key matches directive authority
+PASS fresh context admits runtime dispatch plan
+PASS missing A1 authority rejects runtime unverified
+PASS A1 target PC false rejects runtime unverified
+PASS stale context rejects
+PASS missing context rejects
+PASS future captured context rejects
+PASS runtime version mismatch rejects
+PASS role mismatch rejects
+PASS service mismatch rejects
+PASS wave mismatch rejects
+PASS invalid duplicate prompt key rejects
+PASS duplicate prompt in ledger rejects
+PASS accepted result replay rejects
+PASS older wave rejects
+PASS authority runtime health blocked rejects
+PASS context runtime health offline rejects
+PASS sensitive token key rejects
+PASS bearer credential value rejects
+PASS private key material rejects
+PASS missing wave fails closed
+PASS missing registered time fails closed
+PASS missing service identity fails closed
+PASS admitted result binds existing transport only
+PASS admitted result manual prompt composition is zero
+PASS admitted result preserves exact service identity
+PASS authority pointer mismatch is recorded in fixture
+PASS_28_OF_28
