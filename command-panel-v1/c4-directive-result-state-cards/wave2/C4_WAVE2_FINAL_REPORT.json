@@ -1,0 +1,95 @@
+{
+  "schema_version": "C4_AI_YOLLA_PANEL_WAVE_TIME_CARDS_WAVE2_FINAL_REPORT_V1",
+  "directive_id": "C1-TO-C4-AI-YOLLA-PANEL-WAVE-TIME-CARDS-WAVE2-V1-20260802-001",
+  "directive_comment_id": 5156766669,
+  "wave_id": "WAVE_2",
+  "directive_registered_at_kst": "2026-08-02 18:03 KST",
+  "result_published_at_kst": "2026-08-02 18:20 KST",
+  "duplicate_prompt_key": "c92e436459bdb82ecaadddabfad1ef9dd23fb787e094598e8739846031245f89",
+  "worker": "C-4",
+  "authority_pr": 178,
+  "implementation_repository": "anbin1900-crypto/source-factory-core",
+  "implementation_pr": 9,
+  "branch": "command-panel/c4-directive-result-state-cards-v1",
+  "start_head": "9b82e7a1ba853f7581d258996614b0d46107821f",
+  "owned_root": "command-panel-v1/c4-directive-result-state-cards/wave2/",
+  "wave1_gate": {
+    "directive_id": "C1-TO-C4-WAVE1-CLOSURE-RECEIPT-V1-20260802-001",
+    "terminal": "C4_WAVE1_CLOSURE_RECEIPT_PASS",
+    "comment_id": 5156826967,
+    "source_change_count": 0,
+    "test_rerun_count": 0
+  },
+  "required_outputs": {
+    "AI_YOLLA_WAVE_TIME_CARD_CONTRACT_V1.json": "PASS_LOCAL",
+    "AI_YOLLA_PRODUCT_ARCHITECTURE_ACCEPTANCE_V1.json": "PASS_LOCAL",
+    "aiYollaWaveTimeCards.js": "PASS_LOCAL",
+    "AI_YOLLA_WAVE_TIME_CARD_FIXTURE_V1.json": "PASS_LOCAL",
+    "AI_YOLLA_WAVE_TIME_CARD_TEST_RESULT_V1.json": "PASS_LOCAL",
+    "C4_TO_C6_AI_YOLLA_WAVE_TIME_CARD_HANDOFF_V1.json": "PASS_LOCAL",
+    "C4_WAVE2_FINAL_REPORT.json": "THIS_FILE"
+  },
+  "validation": {
+    "node_syntax": "PASS",
+    "node_tests": "20_OF_20_PASS",
+    "json_parse": "PASS",
+    "json_schema": "PASS_6_OF_6_CARD_INSTANCES",
+    "directive_registered_time_display": "PASS",
+    "result_published_time_display": "PASS",
+    "wave_badge": "PASS",
+    "duplicate_blocked_badge": "PASS",
+    "stale_wave_badge": "PASS",
+    "authority_conflict_badge": "PASS",
+    "three_service_name_display": "PASS",
+    "canonical_component_name_display": "PASS",
+    "unsupported_pass_display_count": 0,
+    "html_escape": "PASS",
+    "out_of_scope_files": 0
+  },
+  "state_matrix": {
+    "EXECUTABLE": "PASS",
+    "DUPLICATE_BLOCKED": "PASS",
+    "STALE_WAVE_BLOCKED": "PASS",
+    "AUTHORITY_CONFLICT": "PASS",
+    "COMPLETED": "PASS"
+  },
+  "attempt_log": [
+    {"attempt": 1, "result": "PASS_20_OF_20_NODE_TESTS"},
+    {"attempt": 2, "result": "FAIL_SCHEMA_INSTANCE", "cause": "source_digest omitted from contract additionalProperties=false"},
+    {"attempt": 3, "result": "PASS_SCHEMA_6_OF_6_AND_RETEST_20_OF_20", "correction": "added source_digest sha256 contract field"}
+  ],
+  "architecture": {
+    "policy_authority": "AI_YOLLA_CANONICAL_PRODUCT_ARCHITECTURE_V1.json",
+    "official_service_names": [
+      "욜라 부동산 전문 AI",
+      "욜라 주유소 전문 AI",
+      "욜라 위험물 전문 AI"
+    ],
+    "official_component_names": [
+      "AI욜라 Runtime",
+      "AI욜라 Data Base",
+      "선택된 전문 AI 서비스"
+    ],
+    "default_runtime_label": "AI욜라 Runtime 상태",
+    "pc_agent_default_label_used": false
+  },
+  "boundaries": {
+    "actual_pc_execution_count": 0,
+    "new_browser_runtime_count": 0,
+    "new_ipc_handler_count": 0,
+    "new_prompt_transport_count": 0,
+    "drive_write_count": 0,
+    "production_connection_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  },
+  "blockers": [],
+  "remote": {
+    "publication_status": "PENDING",
+    "head": "PENDING",
+    "changed_files": "PENDING",
+    "required_blob_readback": "PENDING"
+  },
+  "final_status": "C4_AI_YOLLA_PANEL_WAVE_TIME_CARDS_WAVE2_PASS_PENDING_REMOTE_READBACK",
+  "terminal": "C4_AI_YOLLA_PANEL_WAVE_TIME_CARDS_WAVE2_PASS_PENDING_REMOTE_READBACK"
+}
