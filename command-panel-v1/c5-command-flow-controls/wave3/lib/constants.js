@@ -1,0 +1,38 @@
+'use strict';
+
+const DECISIONS = Object.freeze({
+  ADMIT_RUNTIME_DISPATCH: 'ADMIT_RUNTIME_DISPATCH',
+  REJECT_RUNTIME_UNVERIFIED: 'REJECT_RUNTIME_UNVERIFIED',
+  REJECT_STALE_PC_CONTEXT: 'REJECT_STALE_PC_CONTEXT',
+  REJECT_RUNTIME_VERSION_MISMATCH: 'REJECT_RUNTIME_VERSION_MISMATCH',
+  REJECT_DUPLICATE: 'REJECT_DUPLICATE',
+  REJECT_STALE_WAVE: 'REJECT_STALE_WAVE',
+  REJECT_ALREADY_ACCEPTED: 'REJECT_ALREADY_ACCEPTED',
+  REJECT_SENSITIVE_PAYLOAD: 'REJECT_SENSITIVE_PAYLOAD',
+  REJECT_ROLE_SERVICE_WAVE_MISMATCH: 'REJECT_ROLE_SERVICE_WAVE_MISMATCH',
+  REJECT_RUNTIME_HEALTH_BLOCKED: 'REJECT_RUNTIME_HEALTH_BLOCKED',
+  FAIL_CLOSED: 'FAIL_CLOSED'
+});
+
+const REQUIRED_AUTHORITY = Object.freeze({
+  a1_control_pr: 142,
+  target_pc_accepted_comment: 5153045063,
+  target_pc_terminal: 'A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED',
+  resident_monitoring_comment: 5155863538,
+  canonical_runtime_root: 'D:\\YOLLA_PC_BRIDGE',
+  runtime_version: '1.0.0-20260802'
+});
+
+const SENSITIVE_KEY_PATTERN = /(?:password|passwd|secret|token|api[_-]?key|private[_-]?key|credential|authorization|cookie|session[_-]?secret)/i;
+const SENSITIVE_VALUE_PATTERNS = [
+  /-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/,
+  /\bBearer\s+[A-Za-z0-9._~+\/-]+=*/i,
+  /\b(?:ghp|github_pat|sk-[A-Za-z0-9]|AKIA)[A-Za-z0-9_\-]{8,}/
+];
+
+module.exports = {
+  DECISIONS,
+  REQUIRED_AUTHORITY,
+  SENSITIVE_KEY_PATTERN,
+  SENSITIVE_VALUE_PATTERNS
+};
