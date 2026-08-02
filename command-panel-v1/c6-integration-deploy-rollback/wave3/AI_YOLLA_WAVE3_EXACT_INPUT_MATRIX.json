@@ -1,0 +1,63 @@
+{
+  "schema_version": "C6_AI_YOLLA_WAVE3_EXACT_INPUT_MATRIX_V1",
+  "event_id": "C1-C6-AI-YOLLA-WAVE3-FINAL-E2E-GATE-OPEN-V1-20260802-001",
+  "gate_open_comment": 5157855710,
+  "recovery_comment": 5157907046,
+  "wave_id": "WAVE_3",
+  "directive_id": "C1-TO-C6-AI-YOLLA-PC-ENVIRONMENT-E2E-WAVE3-V1-20260802-001",
+  "directive_registered_at_kst": "2026-08-02 19:06 KST",
+  "duplicate_prompt_key": "f2787ffbf3ecf677e0f1c4fd32c1c25c6104e0fa03aca39914ea899884b0989c",
+  "start_head": "ea56a824db366088638a59b40e54f7f4d941a29c",
+  "inputs": {
+    "C-2": {
+      "result_comment": 5157236815,
+      "head": "156389b9b4ed2d3309b3212ee688cc7b31ee6612",
+      "terminal": "C2_AI_YOLLA_RUNTIME_ENVIRONMENT_REGISTRY_WAVE3_PASS",
+      "authority_blobs": {
+        "a1_binding": "418fe06dc66b98096f9a34e23211c4a5c54cb483",
+        "environment_contract": "84179a225d29cd9271704984c50271f6e7944c09",
+        "environment": "1689ebd85cf2e0610637949565c1cd858d136873",
+        "three_service_handoff": "31fde37bda642a94e3a3dffb5980193c01b4526d"
+      }
+    },
+    "C-3": {
+      "result_pointer_comment": 5157291782,
+      "head": "b0aa5aa15564a9871bab9a834fa5a94386f7f92b",
+      "terminal": "C3_AI_YOLLA_WORKSPACE_PC_CONTEXT_WAVE3_PASS",
+      "authority_blobs": {
+        "final_report": "8b0f7a4c3bb51c049a2fc140856f3d572b6df771",
+        "binding_contract": "24dfcaa99b812cea752ee80bcb7281065160d175",
+        "context_fixture": "6b8de26785f52b2f1f7c8f012ac2001585af5b51",
+        "pointer": "42e43890ed5f56f5f02bfbc892634494b8858592"
+      }
+    },
+    "C-4": {
+      "result_comment": 5157233839,
+      "head": "19b6b3023fd73af10b0c82defc61c20037f6a578",
+      "terminal": "C4_AI_YOLLA_PANEL_PC_ENVIRONMENT_CARD_WAVE3_PASS",
+      "authority_blobs": {
+        "final_report": "9cedf248b11f547f1345e7f34c38a104e9f7ff07"
+      },
+      "safe_display": {
+        "runtime_state": "TARGET_PC_ACCEPTED",
+        "context_state": "RUNTIME_UNVERIFIED",
+        "overall_state": "RUNTIME_UNVERIFIED",
+        "reason": "LATEST_CONTEXT_PUBLISHED_AT_KST_NOT_SUPPORTED_BY_REFERENCED_A1_AUTHORITY"
+      }
+    },
+    "C-5": {
+      "result_comment": 5157255049,
+      "head": "57d452af914f44762f05b2cb9e998004734394e8",
+      "terminal": "C5_AI_YOLLA_RUNTIME_ADMISSION_GATE_WAVE3_PASS",
+      "authority_blobs": {
+        "final_report": "d0afd58681c3997bd0705fe1c87b8f0b4a07c400",
+        "admission_contract": "fe3fbd1901ca707a922a724c4139db0b595601b1",
+        "fixtures": "453e7f82ec7bd46e257ee8cee9b7161817a28442"
+      }
+    }
+  },
+  "accepted_input_count": 4,
+  "required_input_count": 4,
+  "historical_blocker": "C3_NOT_PUBLISHED_SUPERSEDED",
+  "execution_gate": "OPEN"
+}
