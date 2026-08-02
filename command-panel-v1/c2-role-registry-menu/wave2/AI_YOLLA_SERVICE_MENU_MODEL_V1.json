@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "platform_id": "AI_YOLLA",
+  "component_id": "AI_YOLLA_PANEL",
+  "menu_id": "AI_YOLLA_PANEL_SERVICE_MENU_WAVE2",
+  "items": [
+    {"role_id": "AI-YOLLA-SERVICE-REAL-ESTATE", "service_id": "YOLLA_REAL_ESTATE_PRO_AI", "domain_pack_id": "REAL_ESTATE", "label": "욜라 부동산 전문 AI", "route": "/ai-yolla/services/real-estate", "status": "ACTIVE"},
+    {"role_id": "AI-YOLLA-SERVICE-GAS-STATION", "service_id": "YOLLA_GAS_STATION_PRO_AI", "domain_pack_id": "GAS_STATION_PETROLEUM", "label": "욜라 주유소 전문 AI", "route": "/ai-yolla/services/gas-station", "status": "ACTIVE"},
+    {"role_id": "AI-YOLLA-SERVICE-HAZARDOUS-MATERIALS", "service_id": "YOLLA_HAZARDOUS_MATERIALS_PRO_AI", "domain_pack_id": "HAZARDOUS_MATERIALS_FIRE_SAFETY", "label": "욜라 위험물 전문 AI", "route": "/ai-yolla/services/hazardous-materials", "status": "ACTIVE"}
+  ],
+  "dynamic_append": true
+}
