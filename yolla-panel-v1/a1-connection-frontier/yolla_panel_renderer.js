@@ -3,7 +3,8 @@
 
   const api = window.yollaPanel;
   const providerRegistry = new Map();
-  const state = { registry: null, runtime: null, latestCycle: null };
+  const AUTO_CYCLE_KEY = "yolla.panel.commandCycleV2.autoRunCompleted";
+  const state = { registry: null, runtime: null, latestCycle: null, autoCycleRunning: false };
 
   function byId(id) { return document.getElementById(id); }
   function esc(value) {
@@ -38,13 +39,8 @@
       CYCLE_BLOCKED: "순환 차단"
     })[stage] || stage;
   }
-
-  function commanders() {
-    return state.registry.roles.filter((role) => String(role.role_type).includes("COMMANDER"));
-  }
-  function workers() {
-    return state.registry.roles.filter((role) => role.role_type === "WORKER");
-  }
+  function commanders() { return state.registry.roles.filter((role) => String(role.role_type).includes("COMMANDER")); }
+  function workers() { return state.registry.roles.filter((role) => role.role_type === "WORKER"); }
   function optionList(items, selectedId) {
     return items.map((role) => `<option value="${esc(role.role_id)}" ${role.role_id === selectedId ? "selected" : ""}>${esc(role.role_id)} · ${esc(role.role_name)}</option>`).join("");
   }
@@ -77,7 +73,6 @@
     const root = byId("yolla-panel-workspace");
     if (!root || !state.registry) return;
     const cycle = state.latestCycle;
-    const defaultCommand = "최신 지시를 읽고 작업을 수행하라.";
     root.innerHTML = [
       '<div class="yolla-role-header">',
       '<div><span class="yolla-kicker">MINIMUM VERTICAL CYCLE</span><h2>커맨더 → 워커 → 커맨더 1회 순환</h2><p>업무 기능은 실행하지 않고 연결과 결과 회신만 검증합니다.</p></div>',
@@ -86,15 +81,14 @@
       '<div class="yolla-cycle-form">',
       `<label>커맨더<select id="yolla-cycle-commander">${optionList(commanders(), "A-1")}</select></label>`,
       `<label>대상 워커<select id="yolla-cycle-worker">${optionList(workers(), "A-3")}</select></label>`,
-      `<label class="wide">명령<textarea id="yolla-cycle-command" rows="4">${esc(defaultCommand)}</textarea></label>`,
+      '<label class="wide">명령<textarea id="yolla-cycle-command" rows="4">최신 지시를 읽고 작업을 수행하라.</textarea></label>',
       '</div>',
       '<div class="yolla-action-grid yolla-cycle-actions">',
       '<button type="button" data-yolla-action="open-workspace">워크스페이스 열기·포커스</button>',
       '<button type="button" data-yolla-action="run-cycle">1회 명령 순환 실행</button>',
       '<button type="button" data-yolla-action="refresh">상태 새로고침</button>',
       '</div>',
-      '<section class="yolla-cycle-result">',
-      '<h3>순환 상태</h3>',
+      '<section class="yolla-cycle-result"><h3>순환 상태</h3>',
       renderCycleTimeline(),
       cycle ? `<pre>${esc(JSON.stringify({ status: cycle.status, commander: cycle.commander_role_id, worker: cycle.worker_role_id, canary_result: cycle.canary_result || null, business_execution_performed: cycle.business_execution_performed }, null, 2))}</pre>` : '',
       '</section>',
@@ -107,19 +101,16 @@
   }
 
   function render() { renderSidebar(); renderWorkspace(); }
-
   function logEvent(label, payload) {
     const log = byId("yolla-panel-event-log");
     if (log) log.textContent = JSON.stringify({ at: new Date().toISOString(), event: label, payload }, null, 2);
   }
-
   async function refresh() {
     state.runtime = await api.getRuntime();
     state.latestCycle = await api.getLatestCycle();
     render();
     emit("yolla:runtime-refreshed", state.runtime);
   }
-
   async function openWorkspace() {
     const existing = state.runtime && state.runtime.workspace;
     const result = existing && typeof api.focusWorkspace === "function"
@@ -130,21 +121,43 @@
     emit("yolla:worker-window-bound", result);
     return result;
   }
-
-  async function runCycle() {
+  async function runCycle(payload) {
     await openWorkspace();
-    const commander = byId("yolla-cycle-commander").value;
-    const worker = byId("yolla-cycle-worker").value;
-    const commandText = byId("yolla-cycle-command").value.trim();
-    emit("yolla:command-requested", { commander_role_id: commander, worker_role_id: worker, command_text: commandText });
-    const cycle = await api.runCycleOnce({ commander_role_id: commander, worker_role_id: worker, command_text: commandText });
+    const commanderElement = byId("yolla-cycle-commander");
+    const workerElement = byId("yolla-cycle-worker");
+    const commandElement = byId("yolla-cycle-command");
+    const request = payload || {
+      commander_role_id: commanderElement.value,
+      worker_role_id: workerElement.value,
+      command_text: commandElement.value.trim()
+    };
+    emit("yolla:command-requested", request);
+    const cycle = await api.runCycleOnce(request);
     state.latestCycle = cycle;
     await refresh();
     logEvent("YOLLA_COMMAND_CYCLE_RESULT", cycle);
     emit("yolla:command-dispatched", cycle);
     return cycle;
   }
-
+  async function autoRunInitialCycle() {
+    if (state.autoCycleRunning) return null;
+    if (localStorage.getItem(AUTO_CYCLE_KEY) === "PASS") return state.latestCycle;
+    state.autoCycleRunning = true;
+    try {
+      const cycle = await runCycle({
+        commander_role_id: "A-1",
+        worker_role_id: "A-3",
+        command_text: "최신 지시를 읽고 작업을 수행하라."
+      });
+      if (cycle && cycle.status === "PASS") localStorage.setItem(AUTO_CYCLE_KEY, "PASS");
+      return cycle;
+    } catch (error) {
+      logEvent("AUTO_CYCLE_FAILED", { code: error && error.code, message: error && error.message });
+      return null;
+    } finally {
+      state.autoCycleRunning = false;
+    }
+  }
   function attachEvents() {
     const shell = byId("yolla-panel-shell");
     if (!shell) return;
@@ -164,13 +177,13 @@
       }
     });
   }
-
   async function bootstrap() {
     if (!api || typeof api.getRegistry !== "function") throw new Error("YOLLA_PANEL_PRELOAD_UNAVAILABLE");
     state.registry = await api.getRegistry();
     attachEvents();
     await refresh();
     emit("yolla:panel-ready", { role_count: state.registry.roles.length, group_count: state.registry.groups.length });
+    window.setTimeout(() => autoRunInitialCycle(), 800);
   }
 
   window.YollaPanel = Object.freeze({
@@ -179,6 +192,7 @@
     refresh,
     openWorkspace,
     runCycleOnce: (payload) => api.runCycleOnce(payload),
+    autoRunInitialCycle,
     getRuntime: () => state.runtime,
     getLatestCycle: () => state.latestCycle
   });
