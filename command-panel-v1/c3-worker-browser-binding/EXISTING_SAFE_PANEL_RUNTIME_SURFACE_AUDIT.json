@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "worker": "C-3",
+  "assignment_pointer_comment": 5155840914,
+  "c1_cycle_review_comment": 5155853359,
+  "parent_directive_id": "MASTER-TO-C1-EXISTING-SOURCE-FACTORY-WORKER-BROWSER-COMMAND-PANEL-V1-20260802-001",
+  "parent_directive_comment": 5154763830,
+  "source_repository": "anbin1900-crypto/source-factory-core",
+  "source_branch": "command-panel/c3-worker-browser-binding-v1",
+  "base_branch": "integration/source-factory-pc-agent-api-db-v1",
+  "base_head": "69311de6c51e609df3080d8f316d98e4f381adc6",
+  "observed_sources": [
+    {
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10/safe_panel_main.js",
+      "blob": "5f0be26ed160b17002ca48ecc06d58183343cbc8",
+      "facts": [
+        "terminalWindows Map owns existing BrowserWindow instances",
+        "getTerminalKey(role, slot) selects an existing terminal identity",
+        "createTerminal reuses a live window before creating a BrowserWindow",
+        "worker partitions use persist:sf4-safe-panel-{role}-{slot}",
+        "aliveTerminals exposes id, role, slot, title and url",
+        "sf-safe-panel-status, launch, close, arrange and terminal control IPC already exist"
+      ]
+    },
+    {
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10/safe_panel_preload.js",
+      "blob": "bd42f34df35edee59c8e38ac681ae77d61ad365b",
+      "facts": [
+        "sfSafePanel preload API invokes existing panel IPC",
+        "no new BrowserWindow runtime or transport is required"
+      ]
+    }
+  ],
+  "integration_decision": "PURE_DEPENDENCY_INJECTION_ADAPTER_NO_EXISTING_RUNTIME_MUTATION",
+  "existing_source_mutation_count": 0
+}
