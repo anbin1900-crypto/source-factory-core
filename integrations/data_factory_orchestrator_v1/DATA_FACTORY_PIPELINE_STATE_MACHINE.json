@@ -1,0 +1,69 @@
+{
+  "schema_version": "YOLLA_DATA_FACTORY_PIPELINE_STATE_MACHINE_V1",
+  "pipeline_id": "A6-DATA-FACTORY-ORCHESTRATOR-CYCLE1-20260802",
+  "source_directive": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "pull_request": 142,
+    "comment_id": 5153438193,
+    "batch_id": "MASTER-A-GROUP-SHORT-TERM-DATA-FACTORY-CYCLE1-V1-20260802-001"
+  },
+  "transport": {
+    "authority": "LOCAL_DURABLE_FILE_QUEUE_V1",
+    "existing_contract": "YOLLA_SOURCE_FACTORY_PC_AGENT_BRIDGE_V1",
+    "competing_runtime_created": false,
+    "competing_transport_created": false
+  },
+  "shared_identity": [
+    "idempotency_key",
+    "project_id",
+    "source_id",
+    "execution_id",
+    "artifact_pointer"
+  ],
+  "states": [
+    "RECEIVED",
+    "HASHING",
+    "DUPLICATE_EXCLUDED",
+    "ARCHIVED",
+    "SPLIT_QUEUED",
+    "SPLIT_COMPLETE",
+    "GPT_STRUCTURING",
+    "SCHEMA_VALIDATED",
+    "COMBINE_QUEUED",
+    "COMBINED",
+    "SEARCH_READBACK_PASS"
+  ],
+  "transitions": [
+    {"from": "RECEIVED", "to": "HASHING"},
+    {"from": "HASHING", "to": "DUPLICATE_EXCLUDED", "condition": "project_scoped_sha256_already_registered"},
+    {"from": "HASHING", "to": "ARCHIVED", "condition": "new_project_scoped_sha256"},
+    {"from": "ARCHIVED", "to": "SPLIT_QUEUED"},
+    {"from": "SPLIT_QUEUED", "to": "SPLIT_COMPLETE", "condition": "bridge_result_pass"},
+    {"from": "SPLIT_COMPLETE", "to": "GPT_STRUCTURING"},
+    {"from": "GPT_STRUCTURING", "to": "SCHEMA_VALIDATED", "condition": "bridge_result_pass_and_schema_valid"},
+    {"from": "SCHEMA_VALIDATED", "to": "COMBINE_QUEUED"},
+    {"from": "COMBINE_QUEUED", "to": "COMBINED", "condition": "bridge_result_pass"},
+    {"from": "COMBINED", "to": "SEARCH_READBACK_PASS", "condition": "project_source_hash_search_key_readback"}
+  ],
+  "recovery": {
+    "event_log": "append_only_per_execution",
+    "state_snapshot": "atomic_replace",
+    "queued_request_recreation": "deterministic_work_id",
+    "result_replay": "idempotent",
+    "restart_resume": true
+  },
+  "isolation": {
+    "scope": "project_id",
+    "project_separated_event_roots": true,
+    "project_scoped_idempotency": true,
+    "cross_project_result_rejected_and_quarantined": true
+  },
+  "fixture_policy": {
+    "allowed_until_real_group_event_arrives": true,
+    "fixture_objects_are_explicitly_marked": true,
+    "rebind_without_state_machine_change": true
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

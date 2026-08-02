@@ -1,0 +1,78 @@
+{
+  "attempt_log": [
+    {
+      "attempt": 1,
+      "failure": "queued request missing after restart was not recreated",
+      "result": "FAIL_3_PASS_1_FAIL"
+    },
+    {
+      "attempt": 2,
+      "failure": "full request canonical comparison included regenerated created_at",
+      "result": "FAIL_4_ERRORS"
+    },
+    {
+      "attempt": 3,
+      "correction": "validate stable request identity fields and recreate deterministic work_id",
+      "result": "PASS_4_OF_4"
+    }
+  ],
+  "base_branch": "integration/source-factory-pc-agent-api-db-v1",
+  "boundaries": {
+    "merge": false,
+    "production_connection": false,
+    "production_credentials": false,
+    "production_deploy": false,
+    "ready_transition": false
+  },
+  "competing_runtime_created": false,
+  "competing_transport_created": false,
+  "directive": {
+    "batch_id": "MASTER-A-GROUP-SHORT-TERM-DATA-FACTORY-CYCLE1-V1-20260802-001",
+    "comment_id": 5153438193,
+    "pull_request": 142,
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine"
+  },
+  "existing_runtime_reused": true,
+  "existing_transport_reused": "LOCAL_DURABLE_FILE_QUEUE_V1",
+  "files": [
+    "integrations/data_factory_orchestrator_v1/DATA_FACTORY_PIPELINE_STATE_MACHINE.json",
+    "integrations/data_factory_orchestrator_v1/event_router_and_queue_adapter.py",
+    "integrations/data_factory_orchestrator_v1/fixture_stage_worker.py",
+    "integrations/data_factory_orchestrator_v1/tests/test_resume_and_recovery.py",
+    "integrations/data_factory_orchestrator_v1/tests/test_cross_project_isolation.py",
+    "integrations/data_factory_orchestrator_v1/RESUME_AND_RECOVERY_TESTS.json",
+    "integrations/data_factory_orchestrator_v1/CROSS_PROJECT_ISOLATION_TESTS.json",
+    "integrations/data_factory_orchestrator_v1/README.md",
+    ".github/workflows/a6-data-factory-orchestrator-v1.yml"
+  ],
+  "final_status": "A6_DATA_FACTORY_ORCHESTRATOR_CYCLE1_PASS",
+  "fixture_adapter_used": true,
+  "fixture_rebind_ready": true,
+  "implementation_repository": "anbin1900-crypto/source-factory-core",
+  "merge": false,
+  "mission": "DATA_FACTORY_PROCESS_EVENT_QUEUE_BINDING",
+  "production": false,
+  "ready": false,
+  "schema_version": "YOLLA_A6_DATA_FACTORY_ORCHESTRATOR_FINAL_REPORT_V1",
+  "shared_identity": [
+    "idempotency_key",
+    "project_id",
+    "source_id",
+    "execution_id",
+    "artifact_pointer"
+  ],
+  "state_machine_terminal": "SEARCH_READBACK_PASS",
+  "validation": {
+    "event_count": 10,
+    "python_compile": "PASS",
+    "stage_results": [
+      "SPLIT",
+      "GPT_STRUCTURING",
+      "COMBINE"
+    ],
+    "state_machine_json_parse": "PASS",
+    "unit_tests": "PASS_4_OF_4",
+    "vertical_fixture_e2e": "PASS_SEARCH_READBACK_PASS"
+  },
+  "worker": "A-6"
+}
