@@ -1,0 +1,29 @@
+{
+  "schema_version": "ROLE_TO_CARD_BINDING_MATRIX_V2",
+  "producer": "C-2",
+  "c4_consumer_head": "af6e56ec11104f70e03891812e9237f5937a0fc9",
+  "bindings": [
+    {"context_field": "role_id", "source": "role.role_id", "c4_target": "directive.role_id", "required": true},
+    {"context_field": "group_id", "source": "role.group_id", "c4_target": null, "required": true},
+    {"context_field": "role_type", "source": "role.role_type", "c4_target": null, "required": true},
+    {"context_field": "status", "source": "role.current_status", "c4_target": "directive.status", "required": true},
+    {"context_field": "repository", "source": "role.latest_directive_pointer.repository", "c4_target": "directive.repository,result.repository", "required": true},
+    {"context_field": "pr_number", "source": "role.latest_directive_pointer.pr_number", "c4_target": "directive.pr_number,result.pr_number", "required": true},
+    {"context_field": "comment_id", "source": "role.latest_directive_pointer.comment_id", "c4_target": "directive.comment_id", "required": true},
+    {"context_field": "directive_id", "source": "role.latest_directive_pointer.directive_id", "c4_target": "directive.directive_id,result.result_for_directive_id", "required": true},
+    {"context_field": "cycle_id", "source": "role.latest_directive_pointer.cycle_id", "c4_target": "directive.cycle_id", "required": true},
+    {"context_field": "result_comment_id", "source": "matched_result_evidence.result_comment_id", "c4_target": "result.result_comment_id", "required": false},
+    {"context_field": "remote_head", "source": "matched_result_evidence.remote_head", "c4_target": "result.remote_head", "required": false},
+    {"context_field": "output_pointer", "source": "matched_result_evidence.output_pointer", "c4_target": "result.output_pointer", "required": false},
+    {"context_field": "blocker", "source": "matched_result_evidence.blocker", "c4_target": "result.blocker", "required": false}
+  ],
+  "fail_closed_rules": {
+    "unknown_role": "REJECT",
+    "missing_directive_pointer": "REJECT",
+    "cross_role_result": "REJECT",
+    "cross_directive_result": "REJECT",
+    "result_authority_mismatch": "REJECT",
+    "pass_with_blocker": "REJECT",
+    "missing_current_result": "RETURN_NULL_RESULT_PACKAGE"
+  }
+}
