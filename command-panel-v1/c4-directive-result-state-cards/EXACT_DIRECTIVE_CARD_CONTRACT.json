@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yolla:command-panel:c4:exact-directive-card:v1",
+  "title": "Exact Directive Card Contract V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "card_type", "badge", "role_id", "repository",
+    "pr_number", "comment_id", "directive_id", "cycle_id", "assignment_id",
+    "status", "reason", "source_time", "selection_reason",
+    "source_package_sha256", "open_post_label", "open_post_url"
+  ],
+  "properties": {
+    "schema_version": {"const": "EXACT_DIRECTIVE_CARD_V1"},
+    "card_type": {"const": "DIRECTIVE"},
+    "badge": {"enum": ["LIVE", "FIXTURE"]},
+    "role_id": {"type": "string", "minLength": 1},
+    "repository": {"type": "string", "pattern": "^[^/\\s]+/[^/\\s]+$"},
+    "pr_number": {"type": "integer", "minimum": 1},
+    "comment_id": {"type": "integer", "minimum": 1},
+    "directive_id": {"type": "string", "minLength": 1},
+    "cycle_id": {"type": "string", "minLength": 1},
+    "assignment_id": {"type": "string", "minLength": 1},
+    "status": {"type": "string", "minLength": 1},
+    "reason": {"type": ["string", "null"]},
+    "source_time": {"type": "string", "format": "date-time"},
+    "selection_reason": {"type": "string", "minLength": 1},
+    "source_package_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "open_post_label": {"const": "게시물 열기"},
+    "open_post_url": {"type": "string", "pattern": "^https://github\\.com/.+/pull/[0-9]+#issuecomment-[0-9]+$"}
+  }
+}
