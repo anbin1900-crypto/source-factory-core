@@ -1,0 +1,23 @@
+{
+  "schema_version": "AI_YOLLA_THREE_SPECIALIST_SERVICE_PAYLOAD_FIXTURE_V1",
+  "services": [
+    {
+      "platform_id": "AI_YOLLA",
+      "service_id": "REAL_ESTATE_SPECIALIST_AI",
+      "domain_pack_id": "DOMAIN_PACK_REAL_ESTATE_V1",
+      "request_id": "fixture-real-estate-001"
+    },
+    {
+      "platform_id": "AI_YOLLA",
+      "service_id": "HAZARDOUS_MATERIALS_SPECIALIST_AI",
+      "domain_pack_id": "DOMAIN_PACK_HAZARDOUS_MATERIALS_V1",
+      "request_id": "fixture-hazmat-001"
+    },
+    {
+      "platform_id": "AI_YOLLA",
+      "service_id": "GAS_STATION_SPECIALIST_AI",
+      "domain_pack_id": "DOMAIN_PACK_GAS_STATION_V1",
+      "request_id": "fixture-gas-station-001"
+    }
+  ]
+}
