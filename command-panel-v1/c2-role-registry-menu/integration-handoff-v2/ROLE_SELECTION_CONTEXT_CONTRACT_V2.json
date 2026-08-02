@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yolla:command-panel:c2:role-selection-context:v2",
+  "title": "YOLLA Role Selection Context V2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "role_id", "group_id", "role_type", "status",
+    "repository", "pr_number", "comment_id", "directive_id", "cycle_id",
+    "assignment_id", "source_time", "selection_reason",
+    "result_comment_id", "remote_head", "output_pointer", "blocker"
+  ],
+  "properties": {
+    "schema_version": {"const": "ROLE_SELECTION_CONTEXT_V2"},
+    "role_id": {"type": "string", "minLength": 1},
+    "group_id": {"type": "string", "minLength": 1},
+    "role_type": {"enum": ["SUPREME_COMMANDER", "GROUP_COMMANDER", "WORKER", "GROUP"]},
+    "status": {"type": "string", "minLength": 1},
+    "repository": {"type": "string", "pattern": "^[^/\\s]+/[^/\\s]+$"},
+    "pr_number": {"type": "integer", "minimum": 1},
+    "comment_id": {"type": "integer", "minimum": 1},
+    "directive_id": {"type": "string", "minLength": 1},
+    "cycle_id": {"type": "string", "minLength": 1},
+    "assignment_id": {"type": "string", "minLength": 1},
+    "source_time": {"type": "string", "format": "date-time"},
+    "selection_reason": {"type": "string", "minLength": 1},
+    "result_comment_id": {"type": ["integer", "null"], "minimum": 1},
+    "remote_head": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
+    "output_pointer": {"type": ["string", "null"]},
+    "blocker": {"type": ["string", "null"]}
+  }
+}
