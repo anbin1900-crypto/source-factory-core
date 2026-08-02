@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "directive_id": "C1-TO-C3-AI-YOLLA-WORKSPACE-SERVICE-SESSION-WAVE2-V1-20260802-001",
+  "wave_id": "WAVE_2",
+  "member_count": 10,
+  "members": [
+    {
+      "path": "AI_YOLLA_WORKSPACE_SERVICE_REGISTRY.json",
+      "sha256": "c5cd88b679a898202fbc6d56eaf3bd41c2ccdf0d336510aa11e007920fbb1810",
+      "size_bytes": 629
+    },
+    {
+      "path": "AI_YOLLA_WORKSPACE_SERVICE_SESSION_CONTRACT.json",
+      "sha256": "3a7af1c38624b8d11a7d969c649a8afe1beaededc8072eb269fee039e3f0e3e8",
+      "size_bytes": 1148
+    },
+    {
+      "path": "C3_WAVE2_FINAL_REPORT.json",
+      "sha256": "d988d93ea5f605fba309e85c3863ca17059089b92fbc5809adafbf29d28a5ffd",
+      "size_bytes": 2006
+    },
+    {
+      "path": "README.md",
+      "sha256": "71da60b89332c268fb4e46858ab9301151a857ea0d42efee999e31eb6914953a",
+      "size_bytes": 709
+    },
+    {
+      "path": "THREE_SERVICE_CONTEXT_FIXTURE.json",
+      "sha256": "b119f1f481cb45b28981263a4c8d15b87718d5282643e52d5c08ebf080c85f7e",
+      "size_bytes": 1143
+    },
+    {
+      "path": "WAVE2_TEST_OUTPUT.txt",
+      "sha256": "a9ac993e38c69d64c6d8b431d81a6cc56f209254b1a2b481bc5bdb5ed73594ab",
+      "size_bytes": 1101
+    },
+    {
+      "path": "WAVE2_TEST_RESULTS.json",
+      "sha256": "13c4605a3e51bff1aa2de89b0b3eda7a7f20192c91eacc1c15e269e358a95dc6",
+      "size_bytes": 885
+    },
+    {
+      "path": "aiYollaWorkspaceServiceSessionAdapter.js",
+      "sha256": "742d6e30e0ced85718eae9e4b9bc2dca6ca20f2b599293b363ca55417858db31",
+      "size_bytes": 14625
+    },
+    {
+      "path": "events/C3_AI_YOLLA_WORKSPACE_SERVICE_SESSION_WAVE2_PASS.json",
+      "sha256": "d48f41378e49bee37d28be0516c71f4656813de709209d2fa10643d92e47faa7",
+      "size_bytes": 710
+    },
+    {
+      "path": "tests/testAiYollaWorkspaceServiceSessionAdapter.js",
+      "sha256": "f4bc107420df4f9b549f42a75607165854d704d6ff7bbf174a2c4fb91740edb9",
+      "size_bytes": 13583
+    }
+  ]
+}

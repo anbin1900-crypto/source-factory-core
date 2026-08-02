@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "contract_id": "C3_AI_YOLLA_WORKSPACE_SERVICE_SESSION_WAVE2_CONTRACT_V1",
+  "platform_id": "AI_YOLLA",
+  "component_id": "AI_YOLLA_WORKSPACE",
+  "runtime_boundary_component_id": "AI_YOLLA_RUNTIME",
+  "binding_chain": [
+    "role_id",
+    "workspace_window_id",
+    "browser_session_id",
+    "workspace_service_session_id",
+    "service_id",
+    "domain_pack_id"
+  ],
+  "directive_fields": [
+    "wave_id",
+    "directive_id",
+    "directive_registered_at_kst",
+    "duplicate_prompt_key"
+  ],
+  "duplicate_key_input": "role_id|directive_id|wave_id|directive_registered_at_kst",
+  "duplicate_key_algorithm": "SHA-256 UTF-8 lowercase hex",
+  "rules": {
+    "exact_service_count": 3,
+    "reuse_existing_workspace_runtime": true,
+    "reuse_electron_browser_session_per_role": true,
+    "logical_service_session_isolation": true,
+    "cross_service_payload_storage": false,
+    "result_receipt_hash_only": true,
+    "stale_wave": "REJECT_STALE_WAVE",
+    "duplicate_prompt": "REJECT_DUPLICATE",
+    "missing_wave": "FAIL_CLOSED",
+    "missing_registered_at_kst": "FAIL_CLOSED",
+    "execution_authorized": false
+  }
+}

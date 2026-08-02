@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "worker": "C-3",
+  "directive_id": "C1-TO-C3-AI-YOLLA-WORKSPACE-SERVICE-SESSION-WAVE2-V1-20260802-001",
+  "wave_id": "WAVE_2",
+  "attempts": [
+    {
+      "attempt": 1,
+      "result": "PASS_20_OF_20"
+    },
+    {
+      "attempt": 2,
+      "result": "PASS_22_OF_22",
+      "change": "ADD_CROSS_ROLE_SESSION_AND_NEWER_WAVE_TESTS"
+    }
+  ],
+  "total_tests": "PASS_22_OF_22",
+  "node_syntax": "PASS_2_OF_2",
+  "required_validation": {
+    "THREE_SERVICE_CONTEXT_BINDING": "PASS",
+    "ROLE_SESSION_ISOLATION": "PASS",
+    "CROSS_SERVICE_SESSION_LEAK": 0,
+    "CROSS_DOMAIN_RESULT_LEAK": 0,
+    "STALE_WAVE_REJECT": "PASS",
+    "DUPLICATE_PROMPT_REJECT": "PASS",
+    "MISSING_WAVE_FAIL_CLOSED": "PASS",
+    "MISSING_TIME_FAIL_CLOSED": "PASS",
+    "EXISTING_RUNTIME_MUTATION_COUNT": 0,
+    "NEW_BROWSER_RUNTIME_COUNT": 0,
+    "OUT_OF_SCOPE_FILES": 0
+  }
+}

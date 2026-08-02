@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "platform_id": "AI_YOLLA",
+  "component_id": "AI_YOLLA_WORKSPACE",
+  "services": [
+    {
+      "service_id": "YOLLA_REAL_ESTATE_SPECIALIST_AI",
+      "service_name": "욜라 부동산 전문 AI",
+      "domain_pack_id": "YOLLA_REAL_ESTATE"
+    },
+    {
+      "service_id": "YOLLA_GAS_STATION_SPECIALIST_AI",
+      "service_name": "욜라 주유소 전문 AI",
+      "domain_pack_id": "YOLLA_GAS_STATION"
+    },
+    {
+      "service_id": "YOLLA_HAZARDOUS_MATERIALS_SPECIALIST_AI",
+      "service_name": "욜라 위험물 전문 AI",
+      "domain_pack_id": "YOLLA_HAZARDOUS_MATERIALS"
+    }
+  ]
+}
