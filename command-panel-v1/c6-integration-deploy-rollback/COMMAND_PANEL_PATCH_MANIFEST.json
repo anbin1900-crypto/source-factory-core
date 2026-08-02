@@ -5,7 +5,7 @@
     {"path":"safe_panel_renderer.js","base_git_blob":"8e9b67efa92b0bd5e1ccecd006ff12469361023f","anchor":"(function safePanelRenderer() {","operation":"insert_after","content":"\n  /* C6_COMMAND_PANEL_INTEGRATION_MOUNT_V1: runtime loaded from exact C6 integration package; existing sfApi.stage4 transport only. */\n"},
     {"path":"safe_panel.css","base_git_blob":"f761395a4b7723c1e91103375c506f17312ca13c","anchor":"html, body {","operation":"append","content":"\n/* C6_COMMAND_PANEL_INTEGRATION_STYLE_V1 */\n.sf-command-panel-integration{display:grid;grid-template-columns:minmax(220px,320px) minmax(0,1fr);gap:16px}.sf-command-panel-integration [data-role-id]{display:flex;justify-content:space-between;width:100%}.sf-command-panel-card{border:1px solid #d9e2ef;border-radius:8px;padding:10px;margin-bottom:8px}\n"}
   ],
-  "integration_runtime":{"path":"command-panel-v1/c6-integration-deploy-rollback/commandPanelIntegrationRuntime.js","sha256":"ffe99a27e3fc1fe6c2c3dc847305b3aabe31e24f7f7ba4247fa3eceeb396ef28"},
+  "integration_runtime":{"path":"command-panel-v1/c6-integration-deploy-rollback/commandPanelIntegrationRuntime.js","remote_git_blob":"d148b8aaa4aff5ee03abe26f4fd71a8ab4696f8a","local_validated_sha256":"ffe99a27e3fc1fe6c2c3dc847305b3aabe31e24f7f7ba4247fa3eceeb396ef28","semantic_delta_from_local_validated_source":"FORMATTING_ONLY_NO_BEHAVIOR_DELTA"},
   "target_scope":"SAFE_PANEL_MINIMAL_THREE_FILE_PATCH",
   "actual_canonical_apply_performed":false
 }
