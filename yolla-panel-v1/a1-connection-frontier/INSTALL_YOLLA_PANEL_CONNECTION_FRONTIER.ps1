@@ -80,7 +80,7 @@ New-Item -ItemType Directory -Path $BackupRoot -Force | Out-Null
 New-Item -ItemType Directory -Path $RuntimeRoot -Force | Out-Null
 
 $TargetFiles = @('safe_panel_main.js','safe_panel_preload.js','safe_panel.html','safe_panel.css')
-$InstalledFiles = @('yolla_panel_main_bridge.js','yolla_panel_renderer.js','yolla_panel.css','yolla_panel_role_registry.json')
+$InstalledFiles = @('yolla_panel_main_bridge.cjs','yolla_panel_renderer.js','yolla_panel.css','yolla_panel_role_registry.json')
 
 if ($Rollback) {
     if (-not (Test-Path -LiteralPath $LatestBackupPointer -PathType Leaf)) { throw 'LATEST_BACKUP_POINTER_MISSING' }
@@ -111,7 +111,7 @@ if ($Rollback) {
 foreach ($name in $TargetFiles) {
     if (-not (Test-Path -LiteralPath (Join-Path $SafePanel $name) -PathType Leaf)) { throw "REQUIRED_TARGET_MISSING:$name" }
 }
-foreach ($name in @('yolla_panel_main_bridge.js','yolla_panel_renderer.js','yolla_panel.css','YOLLA_PANEL_ROLE_REGISTRY_V1.json')) {
+foreach ($name in @('yolla_panel_main_bridge.cjs','yolla_panel_renderer.js','yolla_panel.css','YOLLA_PANEL_ROLE_REGISTRY_V1.json')) {
     if (-not (Test-Path -LiteralPath (Join-Path $PackageRoot $name) -PathType Leaf)) { throw "PACKAGE_FILE_MISSING:$name" }
 }
 
@@ -121,7 +121,7 @@ New-Item -ItemType Directory -Path $backup -Force | Out-Null
 foreach ($name in $TargetFiles) { Copy-Item -LiteralPath (Join-Path $SafePanel $name) -Destination (Join-Path $backup $name) -Force }
 Set-Content -LiteralPath $LatestBackupPointer -Value $backup -Encoding UTF8
 
-Copy-Item -LiteralPath (Join-Path $PackageRoot 'yolla_panel_main_bridge.js') -Destination (Join-Path $SafePanel 'yolla_panel_main_bridge.js') -Force
+Copy-Item -LiteralPath (Join-Path $PackageRoot 'yolla_panel_main_bridge.cjs') -Destination (Join-Path $SafePanel 'yolla_panel_main_bridge.cjs') -Force
 Copy-Item -LiteralPath (Join-Path $PackageRoot 'yolla_panel_renderer.js') -Destination (Join-Path $SafePanel 'yolla_panel_renderer.js') -Force
 Copy-Item -LiteralPath (Join-Path $PackageRoot 'yolla_panel.css') -Destination (Join-Path $SafePanel 'yolla_panel.css') -Force
 Copy-Item -LiteralPath (Join-Path $PackageRoot 'YOLLA_PANEL_ROLE_REGISTRY_V1.json') -Destination (Join-Path $SafePanel 'yolla_panel_role_registry.json') -Force
@@ -130,7 +130,7 @@ $mainPath = Join-Path $SafePanel 'safe_panel_main.js'
 $main = Read-Utf8 $mainPath
 $mainRequire = @'
 /* YOLLA_PANEL_MAIN_BRIDGE_REQUIRE_V1 */
-const { registerYollaPanelBridge } = require("./yolla_panel_main_bridge");
+const { registerYollaPanelBridge } = require("./yolla_panel_main_bridge.cjs");
 '@
 $main = Add-AfterAnchor $main 'const path = require("path");' $mainRequire 'YOLLA_PANEL_MAIN_BRIDGE_REQUIRE_V1'
 $mainRegister = @'
@@ -192,7 +192,7 @@ Invoke-NodeCheck @(
     (Join-Path $SafePanel 'safe_panel_main.js'),
     (Join-Path $SafePanel 'safe_panel_preload.js'),
     (Join-Path $SafePanel 'safe_panel_renderer.js'),
-    (Join-Path $SafePanel 'yolla_panel_main_bridge.js'),
+    (Join-Path $SafePanel 'yolla_panel_main_bridge.cjs'),
     (Join-Path $SafePanel 'yolla_panel_renderer.js')
 )
 
