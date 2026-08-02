@@ -1,0 +1,17 @@
+{
+  "schema_version": "C6_AI_YOLLA_WAVE2_EXACT_INPUT_MATRIX_V1",
+  "directive_id": "C1-TO-C6-AI-YOLLA-WAVE2-INTEGRATION-E2E-V1-20260802-001",
+  "gate_event_comment": 5157106077,
+  "wave_id": "WAVE_2",
+  "directive_registered_at_kst": "2026-08-02 18:03 KST",
+  "inputs": {
+    "C-2": {"result_comment":5156841802,"terminal":"C2_AI_YOLLA_PANEL_SERVICE_REGISTRY_WAVE2_PASS","head":"131f3a985e86d3b87b1283bca4c7976f187f1e70","final_report_blob":"f348f3042af1165631bae49a324da23cc40858b5","handoff_blob":"02cb1a77f0f6ace0d2079db5d3d53e39b5c74f70"},
+    "C-3": {"result_comment":5156839379,"pointer_comment":5156920309,"terminal":"C3_AI_YOLLA_WORKSPACE_SERVICE_SESSION_WAVE2_PASS","head":"d9753af304fc79a9b14614584c541e95da4a710c","final_report_blob":"e6395552aa12d4b0425d4a9d25bbe7dd37d54c37","contract_blob":"c647d64357114df78dfa1c5e07133eddfc35d01f"},
+    "C-4": {"result_comment":5156876243,"terminal":"C4_AI_YOLLA_PANEL_WAVE_TIME_CARDS_WAVE2_PASS","head":"ee00ec93768da18edeadeeac5677d85a02db75fc","final_report_blob":"7908b7df4c1ba4c999d5c52e84814d42edbd2de7","handoff_blob":"79e3f2db234592eeca98fa927928675c394feae8"},
+    "C-5": {"result_comment":5156846454,"terminal":"C5_AI_YOLLA_AUTOMATION_DUPLICATE_GATE_WAVE2_PASS","head":"193f40aef0ccaf819b27e032c5d43aaae2e219e7","final_report_blob":"4e4638e9fd7d1313f06290375a07821c33860fea","contract_blob":"b1bdc6736bde7f40974c06a5d1d503a9d8cdfe65"}
+  },
+  "a1_pc_runtime_authority": {"control_pr":142,"accepted_comment":5153045063,"terminal":"A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED","runtime_version":"1.0.0-20260802","resident_monitoring_comment":5155863538,"consumption_mode":"READ_ONLY_NO_PC_DISPATCH"},
+  "accepted_inputs": 4,
+  "required_inputs": 4,
+  "virtual_pass_count": 0
+}
