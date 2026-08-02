@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "worker": "C-3",
+  "directive_id": "C1-TO-C3-AI-YOLLA-PC-CONTEXT-WORKSPACE-WAVE3-V1-20260802-001",
+  "directive_comment": 5157100228,
+  "authority_pr": 163,
+  "wave_id": "WAVE_3",
+  "directive_registered_at_kst": "2026-08-02 19:06 KST",
+  "result_published_at_kst": "2026-08-02 19:35 KST",
+  "duplicate_prompt_key": "fbb98d3e99c71968c7caa539c9e2956ce8dfe543dfe34412fba19a50c4eb102f",
+  "wave3_start_comment": 5157211769,
+  "implementation_repository": "anbin1900-crypto/source-factory-core",
+  "implementation_pr": 11,
+  "branch": "command-panel/c3-worker-browser-binding-v1",
+  "start_head": "d9753af304fc79a9b14614584c541e95da4a710c",
+  "owned_root": "command-panel-v1/c3-worker-browser-binding/wave3/**",
+  "a1_authority": {
+    "target_pc_accepted_comment": 5153045063,
+    "resident_monitoring_comment": 5155863538,
+    "runtime_acceptance_run": "PCAR-20260801T191841746Z-d81c8a2f6778",
+    "runtime_version": "1.0.0-20260802",
+    "machine_id": "YOLLA-A1-PC01",
+    "environment_snapshot_id": "20260802100335Z",
+    "environment_generated_kst": "2026-08-02 19:03:35 KST",
+    "environment_sha256": "b1af97e3941c87f893c0c337d08725554bb1725d45b75ba7ebd51f0a0d41c8c5",
+    "environment_pointer_blob": "64e8d9a6ac3d087a2a7d3d9e356850b428892096",
+    "environment_file_blob": "e30c886585948425c46d4206483602f7998945bb"
+  },
+  "implemented": [
+    "read_only_a1_pc_context_binding",
+    "same_snapshot_all_three_services",
+    "role_and_service_context_isolation",
+    "context_freshness_validation",
+    "runtime_acceptance_validation",
+    "stale_and_future_context_rejection",
+    "same_wave_snapshot_mix_rejection",
+    "sensitive_value_recursive_rejection",
+    "hash_only_result_receipts",
+    "non_executing_ai_yolla_runtime_request"
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "result": "PASS_LOCAL_26_OF_26"
+    },
+    {
+      "attempt": 2,
+      "result": "FAIL_REMOTE_SOURCE_PARITY",
+      "failure": "INITIAL_REMOTE_SOURCE_OMITTED_TWO_VERIFIED_METHODS",
+      "correction": "EXACT_SOURCE_REPLACEMENT"
+    },
+    {
+      "attempt": 3,
+      "result": "PASS_REMOTE_SOURCE_PARITY"
+    }
+  ],
+  "validation": {
+    "A1_PC_CONTEXT_BINDING": "PASS",
+    "ROLE_SERVICE_CONTEXT_ISOLATION": "PASS",
+    "CROSS_CONTEXT_LEAK": 0,
+    "STALE_CONTEXT_REJECT": "PASS",
+    "MISSING_RUNTIME_ACCEPTANCE_REJECT": "PASS",
+    "SENSITIVE_VALUE_REJECT": "PASS",
+    "TOTAL_TESTS": "PASS_26_OF_26",
+    "NODE_SYNTAX": "PASS_2_OF_2",
+    "EXISTING_BROWSER_RUNTIME_MUTATION_COUNT": 0,
+    "NEW_BROWSER_RUNTIME_COUNT": 0,
+    "NEW_IPC_COUNT": 0,
+    "NEW_PROMPT_TRANSPORT_COUNT": 0,
+    "OUT_OF_SCOPE_FILES": 0
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "ci_status": "NOT_RUN_NOT_CLAIMED_PASS",
+  "exact_external_blocker": null,
+  "final_status": "C3_AI_YOLLA_WORKSPACE_PC_CONTEXT_WAVE3_PASS"
+}
