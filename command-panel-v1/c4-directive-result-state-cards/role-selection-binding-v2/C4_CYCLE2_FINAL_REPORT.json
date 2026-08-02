@@ -1,5 +1,5 @@
 {
-  "schema_version": "C4_CYCLE2_FINAL_REPORT_V2",
+  "schema_version": "C4_CYCLE2_FINAL_REPORT_V3",
   "directive_id": "C1-TO-C4-ROLE-SELECTED-CARD-BINDING-V2-20260802-001",
   "directive_comment_id": 5155842227,
   "prior_result_comment": 5154981201,
@@ -11,7 +11,8 @@
   "branch": "command-panel/c4-directive-result-state-cards-v1",
   "start_head": "af6e56ec11104f70e03891812e9237f5937a0fc9",
   "head_before_terminal_finalize": "a712c181780fcd6515ad94b4e1814e188b53991a",
-  "final_remote_head": "138188cd078a0630160ce8df43c2066720cd285a",
+  "head_before_report_head_binding_update": "138188cd078a0630160ce8df43c2066720cd285a",
+  "actual_terminal_head_source": "PR9_METADATA_AND_PR178_RESULT_COMMENT",
   "owned_root": "command-panel-v1/c4-directive-result-state-cards/role-selection-binding-v2/",
   "c2_authority": {
     "c2_pr": 10,
@@ -59,7 +60,8 @@
     {"attempt": 1, "action": "READ_LATEST_AUTHORITY_COMMENTS", "result": "FOUND_UNEXECUTED_CYCLE2_DIRECTIVE"},
     {"attempt": 2, "action": "READ_C2_PR10_EXACT_HEAD_BLOBS_AND_CONTRACT", "result": "PASS"},
     {"attempt": 3, "action": "IMPLEMENT_AND_RUN_LOCAL_TESTS", "result": "PASS_19_OF_19"},
-    {"attempt": 4, "action": "REMOTE_PUBLICATION_AND_READBACK", "result": "PASS_6_OF_6"}
+    {"attempt": 4, "action": "REMOTE_PUBLICATION_AND_READBACK", "result": "PASS_6_OF_6"},
+    {"attempt": 5, "action": "REMOVE_SELF_REFERENTIAL_FINAL_HEAD_FIELD", "result": "CORRECTED"}
   ],
   "remote": {
     "comparison_from_start": "AHEAD_BY_8_BEHIND_BY_0_BEFORE_TERMINAL_FINALIZE",
