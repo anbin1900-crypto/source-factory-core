@@ -1,0 +1,46 @@
+{
+  "schema_version": "C4_TO_C6_CARD_MOUNT_HANDOFF_V2",
+  "directive_id": "C1-TO-C4-ROLE-SELECTED-CARD-BINDING-V2-20260802-001",
+  "producer": "C-4",
+  "consumer": "C-6",
+  "owned_root": "command-panel-v1/c4-directive-result-state-cards/role-selection-binding-v2/",
+  "entrypoint": "roleSelectedCardBindingAdapter.js",
+  "exports": [
+    "validateC2Acceptance",
+    "bindRoleSelectedCards",
+    "createRoleSelectionController",
+    "mountRoleSelectedCards"
+  ],
+  "mount_sequence": [
+    "C2_ROLE_MENU_EMITS_SELECTED_ROLE_ID",
+    "C6_LOADS_C2_ROLE_SELECTION_CONTEXT",
+    "C4_BINDER_VALIDATES_C2_EXACT_HEAD_AND_BLOBS",
+    "C4_BINDER_SELECTS_ONLY_MATCHING_ROLE_PACKAGE",
+    "C4_BINDER_RETURNS_CARD_MODEL_AND_HTML",
+    "C6_REPLACES_PREVIOUS_ROLE_CARD_MOUNT"
+  ],
+  "fail_closed": [
+    "SELECTED_ROLE_NOT_FOUND",
+    "CROSS_ROLE_PACKAGE_REJECTED",
+    "DIRECTIVE_POINTER_PACKAGE_MISMATCH",
+    "RESULT_POINTER_PACKAGE_MISMATCH",
+    "CROSS_ROLE_RESULT_LEAK_DETECTED",
+    "C2_HEAD_OR_BLOB_MISMATCH"
+  ],
+  "authority": {
+    "c2_pr": 10,
+    "c2_head": "4327e06343cebd28273168cfaffdb2eda7d98222",
+    "c4_parent_head": "af6e56ec11104f70e03891812e9237f5937a0fc9",
+    "parent_renderer_blob": "82a14c89f0d4f0ce2db55ea6da35cb00d23f846a"
+  },
+  "runtime_boundary": {
+    "new_browser_runtime": false,
+    "new_ipc_handler": false,
+    "new_prompt_transport": false,
+    "actual_pc_execution": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "handoff_status": "READY_FOR_C6_STATIC_INTEGRATION"
+}
