@@ -1,0 +1,82 @@
+{
+  "schema_version": "C6_COMMAND_PANEL_CONSUMPTION_CONTRACT_V2",
+  "directive_id": "C1-TO-C6-COMMAND-PANEL-PARTIAL-INTEGRATION-PREFLIGHT-V2-20260802-001",
+  "consumer": "C-6",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "branch": "command-panel/c6-integration-deploy-rollback-v1",
+  "accepted_now": {
+    "C-2": {
+      "head": "4327e06343cebd28273168cfaffdb2eda7d98222",
+      "terminal": "C2_ROLE_REGISTRY_LEFT_MENU_PASS",
+      "required_blobs": {
+        "ROLE_REGISTRY_SCHEMA.json": "7b399e25b7d1f56315044b1628ebd219a4bced79",
+        "ROLE_REGISTRY_FIXTURE.json": "ef50d074fba002d9be6434fc4c2619045ef52715",
+        "roleRegistry.js": "ce4ba836fea040dcdc9d603110372cd5c5519e8c",
+        "leftRoleMenuGenerator.js": "de529aa6f22a183e6230af92af376638b7518936",
+        "ROLE_MENU_TEST_RESULT.json": "b98b3f80edf455c345c337720cf4ffe65adb0566"
+      }
+    },
+    "C-4": {
+      "head": "af6e56ec11104f70e03891812e9237f5937a0fc9",
+      "terminal": "C4_DIRECTIVE_RESULT_PC_STATE_CARDS_PASS",
+      "required_blobs": {
+        "EXACT_DIRECTIVE_CARD_CONTRACT.json": "1b5dd1337b737b03b18fd18914337a57a5303a",
+        "EXACT_RESULT_CARD_CONTRACT.json": "104d4817878db5eb932652e4cde872ad300231d1",
+        "PC_AGENT_BACKUP_STATUS_CARD_CONTRACT.json": "cab7222f48245bfe034854d59da23b0a13e67855",
+        "directiveResultStateCards.js": "82a14c89f0d4f0ce2db55ea6da35cb00d23f846a",
+        "CARD_RENDER_TEST_RESULT.json": "2cf2dc6cb15cae74fe8ee39c099849110524a001"
+      }
+    }
+  },
+  "pending_lanes": {
+    "C-3": {
+      "expected_branch": "command-panel/c3-worker-browser-binding-v1",
+      "required_terminal_class": ["PASS", "BLOCKED", "FAIL"],
+      "required_fields": [
+        "authority_pr", "terminal_comment_id", "remote_head",
+        "browser_binding_contract_path", "browser_binding_contract_blob",
+        "test_result_path", "test_result_blob", "final_report_path",
+        "final_report_blob", "forbidden_counters"
+      ],
+      "pass_admission": [
+        "REMOTE_HEAD_IS_40_HEX",
+        "ALL_REQUIRED_BLOBS_READ_BACK_AT_REMOTE_HEAD",
+        "EXISTING_BROWSER_WINDOW_REUSED",
+        "NEW_BROWSER_RUNTIME_COUNT_ZERO",
+        "OUT_OF_SCOPE_FILES_ZERO"
+      ]
+    },
+    "C-5": {
+      "expected_branch": "command-panel/c5-command-flow-controls-v1",
+      "required_terminal_class": ["PASS", "BLOCKED", "FAIL"],
+      "required_fields": [
+        "authority_pr", "terminal_comment_id", "remote_head",
+        "command_flow_contract_path", "command_flow_contract_blob",
+        "test_result_path", "test_result_blob", "final_report_path",
+        "final_report_blob", "forbidden_counters"
+      ],
+      "pass_admission": [
+        "REMOTE_HEAD_IS_40_HEX",
+        "ALL_REQUIRED_BLOBS_READ_BACK_AT_REMOTE_HEAD",
+        "EXISTING_PROMPT_TRANSPORT_REUSED",
+        "NEW_PROMPT_TRANSPORT_COUNT_ZERO",
+        "OUT_OF_SCOPE_FILES_ZERO"
+      ]
+    }
+  },
+  "binding_rules": [
+    "CONSUME_BY_EXACT_HEAD_PATH_BLOB_ONLY",
+    "NO_CROSS_WORKER_SOURCE_COPY",
+    "NO_TERMINAL_INFERENCE",
+    "BLOCKED_OR_FAIL_REMAINS_BLOCKED_OR_FAIL",
+    "REQUIRE_CURRENT_ROLE_DIRECTIVE_RESULT_IDENTITY_MATCH",
+    "REQUIRE_PREPATCH_TARGET_BLOB_MATCH",
+    "APPEND_ONLY_EVIDENCE"
+  ],
+  "final_gate": {
+    "required_lanes": 4,
+    "currently_accepted": 2,
+    "currently_missing": 2,
+    "final_apply_authorized": false
+  }
+}
