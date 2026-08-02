@@ -1,0 +1,81 @@
+{
+  "schema_version": "C4_CYCLE2_FINAL_REPORT_V1",
+  "directive_id": "C1-TO-C4-ROLE-SELECTED-CARD-BINDING-V2-20260802-001",
+  "directive_comment_id": 5155842227,
+  "prior_result_comment": 5154981201,
+  "prior_result": "C4_DIRECTIVE_RESULT_PC_STATE_CARDS_PASS",
+  "worker": "C-4",
+  "report_authority_pr": 178,
+  "implementation_repository": "anbin1900-crypto/source-factory-core",
+  "branch": "command-panel/c4-directive-result-state-cards-v1",
+  "start_head": "af6e56ec11104f70e03891812e9237f5937a0fc9",
+  "owned_root": "command-panel-v1/c4-directive-result-state-cards/role-selection-binding-v2/",
+  "c2_authority": {
+    "c2_pr": 10,
+    "c2_head": "4327e06343cebd28273168cfaffdb2eda7d98222",
+    "c2_role_registry_fixture_blob": "ef50d074fba002d9be6434fc4c2619045ef52715",
+    "c2_role_registry_source_blob": "ce4ba836fea040dcdc9d603110372cd5c5519e8c",
+    "c2_final_report_blob": "d03f80bfd5913e87da47aa07ba693e69d1cc32ff",
+    "c4_parent_renderer_blob": "82a14c89f0d4f0ce2db55ea6da35cb00d23f846a"
+  },
+  "required_outputs": {
+    "C2_ROLE_SELECTION_ACCEPTANCE_V2.json": "PASS_LOCAL",
+    "roleSelectedCardBindingAdapter.js": "PASS_LOCAL",
+    "ROLE_SELECTED_CARD_FIXTURE_V2.json": "PASS_LOCAL",
+    "ROLE_SELECTED_CARD_TEST_RESULT_V2.json": "PASS_LOCAL",
+    "C4_TO_C6_CARD_MOUNT_HANDOFF_V2.json": "PASS_LOCAL",
+    "C4_CYCLE2_FINAL_REPORT.json": "THIS_FILE"
+  },
+  "implementation": {
+    "selected_role_only_binding": true,
+    "a2_b1_c1_fixture_switch": true,
+    "cross_role_result_fail_closed": true,
+    "c2_source_copy": false,
+    "exact_head_blob_adapter": true,
+    "c6_mount_contract_published": true,
+    "parent_cycle1_renderer_reused": true
+  },
+  "validation": {
+    "node_syntax": "PASS",
+    "node_tests": "19_OF_19_PASS",
+    "a2_role_card": "PASS",
+    "b1_role_card": "PASS",
+    "c1_role_card": "PASS",
+    "role_switch_sequence": "PASS_A2_B1_C1_A2",
+    "cross_role_result_leak": 0,
+    "cross_role_package_rejection": "PASS",
+    "cross_role_pc_state_rejection": "PASS",
+    "pointer_package_mismatch_rejection": "PASS",
+    "c2_head_drift_rejection": "PASS",
+    "fixture_badge": "PASS",
+    "unsupported_pass_display_count": 0,
+    "c6_mount_contract": "PASS",
+    "out_of_scope_files": 0
+  },
+  "attempt_log": [
+    {"attempt": 1, "action": "READ_LATEST_AUTHORITY_COMMENTS", "result": "FOUND_UNEXECUTED_CYCLE2_DIRECTIVE"},
+    {"attempt": 2, "action": "READ_C2_PR10_EXACT_HEAD_BLOBS_AND_CONTRACT", "result": "PASS"},
+    {"attempt": 3, "action": "IMPLEMENT_AND_RUN_LOCAL_TESTS", "result": "PASS_19_OF_19"}
+  ],
+  "boundaries": {
+    "c2_source_copy_count": 0,
+    "new_browser_runtime_count": 0,
+    "new_ipc_handler_count": 0,
+    "new_prompt_transport_count": 0,
+    "actual_pc_execution_count": 0,
+    "service_action_count": 0,
+    "drive_write_count": 0,
+    "production_connection_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  },
+  "blockers": [],
+  "remote": {
+    "publication_status": "PENDING",
+    "head": "PENDING",
+    "changed_files": "PENDING",
+    "required_blob_readback": "PENDING"
+  },
+  "final_status": "C4_ROLE_SELECTED_DIRECTIVE_RESULT_CARDS_PASS_PENDING_REMOTE_READBACK",
+  "terminal": "C4_ROLE_SELECTED_DIRECTIVE_RESULT_CARDS_PASS_PENDING_REMOTE_READBACK"
+}
