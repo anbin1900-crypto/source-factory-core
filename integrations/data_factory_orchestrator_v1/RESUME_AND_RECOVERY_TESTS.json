@@ -1,0 +1,34 @@
+{
+  "base_branch": "integration/source-factory-pc-agent-api-db-v1",
+  "directive": {
+    "batch_id": "MASTER-A-GROUP-SHORT-TERM-DATA-FACTORY-CYCLE1-V1-20260802-001",
+    "comment_id": 5153438193,
+    "pull_request": 142,
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine"
+  },
+  "implementation_repository": "anbin1900-crypto/source-factory-core",
+  "merge": false,
+  "production": false,
+  "ready": false,
+  "schema_version": "YOLLA_A6_RESUME_AND_RECOVERY_TESTS_V1",
+  "status": "PASS",
+  "test_file": "integrations/data_factory_orchestrator_v1/tests/test_resume_and_recovery.py",
+  "test_file_sha256": "6cc86bf82e0ede52ded2de9d67dbf766e327bafba7321535402b2a9c47544f19",
+  "tests": [
+    {
+      "expected": "SEARCH_READBACK_PASS",
+      "name": "resume_after_split_complete",
+      "status": "PASS"
+    },
+    {
+      "expected": "DUPLICATE_EXCLUDED",
+      "name": "same_project_sha256_duplicate_exclusion",
+      "status": "PASS"
+    },
+    {
+      "expected": "same_work_id",
+      "name": "deterministic_request_recreation_after_request_loss",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+name: A6 Data Factory Orchestrator V1
+
+on:
+  pull_request:
+    branches:
+      - integration/source-factory-pc-agent-api-db-v1
+    paths:
+      - 'integrations/data_factory_orchestrator_v1/**'
+      - '.github/workflows/a6-data-factory-orchestrator-v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile
+        run: python -m compileall -q integrations/data_factory_orchestrator_v1
+      - name: Parse state machine
+        run: python -m json.tool integrations/data_factory_orchestrator_v1/DATA_FACTORY_PIPELINE_STATE_MACHINE.json > /dev/null
+      - name: Resume and isolation tests
+        run: python -m unittest discover -s integrations/data_factory_orchestrator_v1/tests -p 'test_*.py' -v
