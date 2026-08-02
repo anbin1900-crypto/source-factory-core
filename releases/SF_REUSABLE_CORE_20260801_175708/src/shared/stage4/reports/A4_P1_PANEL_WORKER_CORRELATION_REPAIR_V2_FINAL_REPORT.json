@@ -1,0 +1,115 @@
+{
+  "schema_version": "yolla.a4.p1_panel_worker_correlation_repair_v2.final_report.v1",
+  "worker": "A-4",
+  "directive_id": "A2-TO-A4-P1-PANEL-WORKER-CORRELATION-REPAIR-V2-20260802-001",
+  "directive_comment": 5158005258,
+  "directive_registered_at_kst": "2026-08-02T21:48:00+09:00",
+  "work_started_at_kst": "2026-08-02T22:31:00+09:00",
+  "result_published_at_kst": "2026-08-02T22:55:13+09:00",
+  "cycle_id": "A2-P1-PANEL-WORKER-COMMAND-CYCLE6-V1-20260802-001",
+  "wave_id": "Wave2",
+  "duplicate_prompt_key": "A2-CYCLE6|2026-08-02T21:48:00+09:00|Wave2|A4",
+  "terminal": "A4_P1_EXISTING_PANEL_WORKER_WINDOW_STATUS_BINDING_PASS",
+  "decision": "PASS",
+  "prior_cycle5": {
+    "directive_comment": 5157760418,
+    "result": "NOT_EXECUTED",
+    "non_execution_reason_comment": 5158243165,
+    "disposition": "SUPERSEDED_BY_CYCLE6_CORRELATION_REPAIR_V2"
+  },
+  "a1_latest_post_read": {
+    "control_pr": 142,
+    "comment": 5158025828,
+    "title": "A-1 Actual GPT Worker Cycle PASS",
+    "cycle_id": "YOLLA-ACTUAL-GPT-A-1-A-3-20260802124211944",
+    "route": "A-1->A-3->A-1",
+    "relevance_to_a4": "CONTEXT_ONLY_NOT_A4_DIRECTIVE"
+  },
+  "input_authority": {
+    "a3_finding_head": "3a7fb09c578a17bd68eafe3d097dc253eafa0d5e",
+    "a3_validation_result_blob": "54f8b37498986c404cf91ce85d9e4a1c37b67bc8",
+    "a3_findings": [
+      "COLLECTOR_COMMANDER_GATE_HANDOFF_CORRELATION_FIELDS_LOST",
+      "DUPLICATE_TERMINAL_STATUS_NOT_NORMALIZED",
+      "TAEO_RAW_OUTPUT_STORE_CORRELATION_FIELDS_LOST",
+      "WORKER_OUTPUT_BATCH_STORE_CORRELATION_FIELDS_LOST"
+    ],
+    "a5_contract_pr": 310,
+    "a5_contract_head": "5a81596fec87b8b51cf87f4876f2e3c8c8516405",
+    "a5_contract_blob": "445418583d6f443c5ca1e7007bfa431c6ab6dd8c",
+    "source_repository": "anbin1900-crypto/source-factory-core",
+    "source_base_branch": "publish/reusable-core-20260801",
+    "source_base_head": "15fcc6e252b064a22fb5b5a9288810093dcec075",
+    "output_pr": 16,
+    "output_branch": "worker/a4-p1-panel-worker-correlation-repair-v2"
+  },
+  "preserved_fields": [
+    "command_id",
+    "worker_slot_uid",
+    "cycle_id",
+    "wave_id",
+    "directive_registered_at_kst",
+    "result_published_at_kst",
+    "terminal_status",
+    "duplicate_prompt_key",
+    "remote_pointer"
+  ],
+  "implementation": {
+    "strategy": "EXACT_BASE_BLOB_PRESERVATION_PLUS_THIN_COMPATIBILITY_WRAPPER",
+    "storage_locations": [
+      "TOP_LEVEL_RECORD",
+      "command_correlation",
+      "TAEO_JSONL",
+      "WORKER_OUTPUT_BATCH_JSONL",
+      "BATCH_RESTORE_SUMMARY",
+      "COLLECTOR_HANDOFF_SOURCE",
+      "COLLECTOR_HANDOFF_GATE_INPUTS",
+      "NEXT_COMMANDER_ACTION"
+    ],
+    "a5_idempotency_key": "SHA256(JSON_ARRAY_COMPACT(command_id,worker_slot_uid,cycle_id,wave_id))",
+    "duplicate_terminal": "DUPLICATE_PROMPT_SUPPRESSED",
+    "duplicate_second_execution_performed": false,
+    "duplicate_execution_delta": 0
+  },
+  "original_blob_preservation": {
+    "sequentialPromptSender.base.js": "4001772fa2b2475171cd8595d5294cbcebe8cfde",
+    "taeoRawOutputStore.base.js": "27cf94af81448ac31f9d99c18bca8241e53f1c04",
+    "workerOutputBatchStore.base.js": "3212b45d77a2025c9cc1ac898bd8ae35b78e36f7",
+    "collectorCommanderGateHandoffAdapter.base.js": "9174d3518a4d27211a5415993924ddf61ff55ffd",
+    "remote_readback": "PASS_4_OF_4"
+  },
+  "repair_source_blobs": {
+    "p1CommandCorrelationContract.js": "601238093e06f562650888256822f82fcd1c2793",
+    "sequentialPromptSender.js": "7040aef658e21b3983f7f633473331ed0e8914cc",
+    "taeoRawOutputStore.js": "4bad304edcf228e21287c003f04497cc2dfe57e5",
+    "workerOutputBatchStore.js": "fa22394a4443083d54375f99345288f1e4db0ded",
+    "collectorCommanderGateHandoffAdapter.js": "f95388aa00bcbd879ed3e6d0eb07824860bdd497",
+    "p1CommandCorrelationRepairV2.test.js": "a75413621beea577a8170508fac59ea4cc4855b4"
+  },
+  "validation": {
+    "local_node_check": "PASS_6_OF_6",
+    "local_first_test_run": "PASS_9_FAIL_5",
+    "first_failure": "LEGACY_TERMINAL_VALUE_PRECEDED_EXPLICIT_TERMINAL_STATUS",
+    "correction": "EXPLICIT_CORRELATION_SOURCE_PRIORITY_OVER_LEGACY_RECORD_FIELDS",
+    "local_second_test_run": "PASS_14_OF_14",
+    "github_actions_run_id": 30750940039,
+    "github_actions_job_id": 91504753441,
+    "github_actions_conclusion": "SUCCESS",
+    "exact_source_syntax_check": "PASS_6_OF_6",
+    "exact_source_tests": "PASS_14_OF_14",
+    "a3_four_findings_resolved": "PASS_4_OF_4",
+    "out_of_scope_file_count": 0
+  },
+  "boundaries": {
+    "new_runtime": false,
+    "new_transport": false,
+    "new_browser_engine": false,
+    "direct_github_write_from_panel": false,
+    "target_pc_execution": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  },
+  "next_owner": "A-2/A-1_P1_COMMAND_FLOW_INTEGRATION"
+}
