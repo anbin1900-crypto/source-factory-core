@@ -1,0 +1,72 @@
+{
+  "report_id": "C2_CYCLE2_ROLE_SELECTION_CARD_HANDOFF_FINAL_V2_20260802",
+  "worker": "C-2",
+  "directive": {
+    "id": "C1-TO-C2-ROLE-SELECTION-CARD-HANDOFF-V2-20260802-001",
+    "authority_pr": 168,
+    "authority_comment": 5155839489,
+    "parent_pr": 175,
+    "prior_result_comment": 5155037327
+  },
+  "implementation": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "branch": "command-panel/c2-role-registry-menu-v1",
+    "start_head": "4327e06343cebd28273168cfaffdb2eda7d98222",
+    "owned_root": "command-panel-v1/c2-role-registry-menu/integration-handoff-v2/**"
+  },
+  "required_deliverables": {
+    "ROLE_SELECTION_CONTEXT_CONTRACT_V2.json": "PASS",
+    "ROLE_TO_CARD_BINDING_MATRIX_V2.json": "PASS",
+    "C4_CARD_CONTRACT_ACCEPTANCE_V2.json": "PASS",
+    "C2_TO_C6_ROLE_MENU_HANDOFF_V2.json": "PASS",
+    "ROLE_SELECTION_HANDOFF_TEST_RESULT_V2.json": "PASS_CORRECTED",
+    "C2_CYCLE2_FINAL_REPORT.json": "PASS"
+  },
+  "validation": {
+    "ROLE_SELECTION_CONTEXT": "PASS",
+    "C4_EXACT_HEAD_BINDING": "PASS",
+    "UNKNOWN_ROLE_REJECT": "PASS",
+    "MISSING_DIRECTIVE_POINTER_REJECT": "PASS",
+    "CROSS_ROLE_RESULT_LEAK": 0,
+    "CROSS_DIRECTIVE_RESULT_LEAK": 0,
+    "PASS_WITH_BLOCKER_REJECT": "PASS",
+    "C4_SOURCE_COPIED": false,
+    "OUT_OF_SCOPE_FILES": 0,
+    "NODE_TESTS": "11/11 PASS",
+    "JSON_SCHEMA": "PASS",
+    "NODE_SYNTAX": "PASS"
+  },
+  "c4_exact_authority": {
+    "pr": 9,
+    "head": "af6e56ec11104f70e03891812e9237f5937a0fc9",
+    "directive_contract_blob": "1b5dd1337b737b03bdb18fd18914337a57a5303a",
+    "result_contract_blob": "104d4817878db5eb932652e4cde872ad300231d1",
+    "renderer_blob": "82a14c89f0d4f0ce2db55ea6da35cb00d23f846a",
+    "final_report_blob": "8dbf72687b236cf858a36dbc11e7ce734c590ba2"
+  },
+  "attempt_log": [
+    {
+      "attempt": 1,
+      "result": "PASS_FUNCTIONAL_BUT_EVIDENCE_HASH_TABLE_INCORRECT",
+      "cause": "test receipt contained non-matching SHA-256 values",
+      "correction": "recomputed exact bytes, replaced the receipt, and scheduled Remote Blob parity readback"
+    },
+    {
+      "attempt": 2,
+      "result": "PASS",
+      "tests": "11/11",
+      "schema": "PASS"
+    }
+  ],
+  "safety": {
+    "c4_source_copied": false,
+    "existing_runtime_modified": false,
+    "new_browser_runtime_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "blockers": [],
+  "final_status": "C2_ROLE_SELECTION_CARD_HANDOFF_PASS",
+  "final_remote_head": "REPORTED_AFTER_PUBLICATION"
+}
