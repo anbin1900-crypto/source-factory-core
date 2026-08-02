@@ -17,28 +17,13 @@
     "existing_stage4_transport_reused": true
   },
   "patch_targets": [
-    {
-      "path": "safe_panel_main.js",
-      "markers": [
-        "YOLLA_PANEL_MAIN_BRIDGE_REQUIRE_V1",
-        "YOLLA_PANEL_MAIN_BRIDGE_REGISTER_V1"
-      ]
-    },
-    {
-      "path": "safe_panel_preload.js",
-      "markers": ["YOLLA_PANEL_PRELOAD_BRIDGE_V1"]
-    },
-    {
-      "path": "safe_panel.html",
-      "markers": ["YOLLA_PANEL_SHELL_V1", "YOLLA_PANEL_RENDERER_SCRIPT_V1"]
-    },
-    {
-      "path": "safe_panel.css",
-      "operation": "PRESERVE_EXISTING_FILE"
-    }
+    {"path":"safe_panel_main.js","markers":["YOLLA_PANEL_MAIN_BRIDGE_REQUIRE_V1","YOLLA_PANEL_MAIN_BRIDGE_REGISTER_V1"]},
+    {"path":"safe_panel_preload.js","markers":["YOLLA_PANEL_PRELOAD_BRIDGE_V1"]},
+    {"path":"safe_panel.html","markers":["YOLLA_PANEL_SHELL_V1","YOLLA_PANEL_RENDERER_SCRIPT_V1"]},
+    {"path":"safe_panel.css","operation":"PRESERVE_EXISTING_FILE"}
   ],
   "installed_files": [
-    "yolla_panel_main_bridge.js",
+    "yolla_panel_main_bridge.cjs",
     "yolla_panel_renderer.js",
     "yolla_panel.css",
     "yolla_panel_role_registry.json"
@@ -55,12 +40,7 @@
     "existing_stage4_dispatch": true,
     "custom_event_bus": true
   },
-  "not_implemented_here": [
-    "directive_fetcher",
-    "result_fetcher",
-    "worker_business_features",
-    "production_deployment"
-  ],
+  "not_implemented_here": ["directive_fetcher","result_fetcher","worker_business_features","production_deployment"],
   "forbidden_counters": {
     "new_electron_runtime_count": 0,
     "new_browser_runtime_count": 0,
