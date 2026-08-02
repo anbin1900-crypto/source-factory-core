@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "worker": "C-3",
+  "assignment_pointer_comment": 5155840914,
+  "previous_cycle_response_missing": true,
+  "attempts": [
+    {
+      "attempt": 1,
+      "result": "FAIL_14_OF_15",
+      "failure": "DUPLICATE_RUNTIME_SESSION_WAS_SKIPPED_AND_NEW_WINDOW_CREATED",
+      "correction": "scan the complete live runtime window surface before selection"
+    },
+    {
+      "attempt": 2,
+      "result": "FAIL_14_OF_15",
+      "failure": "TEST_ASSERTED_LATE_FAILURE_AFTER_FAIL_CLOSED_BOUNDARY_MOVED_EARLIER",
+      "correction": "assert the earliest fail-closed boundary"
+    },
+    {"attempt": 3, "result": "PASS_15_OF_15", "scope": "adapter unit tests"},
+    {"attempt": 4, "result": "PASS_10_OF_10", "scope": "Safe Panel runtime bridge integration tests"}
+  ],
+  "adapter_tests": "PASS_15_OF_15",
+  "runtime_bridge_tests": "PASS_10_OF_10",
+  "total_tests": "PASS_25_OF_25",
+  "node_syntax": "PASS_4_OF_4",
+  "existing_runtime_blob_readback": "PASS_2_OF_2",
+  "existing_source_mutation_count": 0,
+  "new_browser_runtime_count": 0,
+  "new_ipc_transport_count": 0,
+  "ci_status": "NOT_RUN_NOT_CLAIMED_PASS",
+  "terminal_event": "C3_EXISTING_WORKER_BROWSER_BINDING_PASS"
+}
