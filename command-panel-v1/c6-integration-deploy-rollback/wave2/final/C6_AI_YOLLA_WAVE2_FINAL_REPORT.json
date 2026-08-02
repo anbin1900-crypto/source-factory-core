@@ -1,0 +1,30 @@
+{
+  "schema_version":"C6_AI_YOLLA_WAVE2_FINAL_REPORT_V1",
+  "worker":"C-6",
+  "directive_id":"C1-TO-C6-AI-YOLLA-WAVE2-INTEGRATION-E2E-V1-20260802-001",
+  "directive_comment_id":5156769632,
+  "final_convergence_event_comment_id":5157106077,
+  "wave_id":"WAVE_2",
+  "directive_registered_at_kst":"2026-08-02 18:03 KST",
+  "result_published_at_kst":"2026-08-02 19:25 KST",
+  "implementation_repository":"anbin1900-crypto/source-factory-core",
+  "implementation_pr":12,
+  "branch":"command-panel/c6-integration-deploy-rollback-v1",
+  "preflight_head":"e8b613f325dcee35a47778296883a92c0320f933",
+  "owned_root":"command-panel-v1/c6-integration-deploy-rollback/wave2/final/**",
+  "supersedes_preflight_comment":5156872508,
+  "inputs":{
+    "C-2":{"head":"131f3a985e86d3b87b1283bca4c7976f187f1e70","terminal":"C2_AI_YOLLA_PANEL_SERVICE_REGISTRY_WAVE2_PASS","result_comment":5156841802},
+    "C-3":{"head":"d9753af304fc79a9b14614584c541e95da4a710c","terminal":"C3_AI_YOLLA_WORKSPACE_SERVICE_SESSION_WAVE2_PASS","result_comment":5156839379,"pointer_comment":5156920309},
+    "C-4":{"head":"ee00ec93768da18edeadeeac5677d85a02db75fc","terminal":"C4_AI_YOLLA_PANEL_WAVE_TIME_CARDS_WAVE2_PASS","result_comment":5156876243},
+    "C-5":{"head":"193f40aef0ccaf819b27e032c5d43aaae2e219e7","terminal":"C5_AI_YOLLA_AUTOMATION_DUPLICATE_GATE_WAVE2_PASS","result_comment":5156846454}
+  },
+  "a1_pc_runtime_authority":{"control_pr":142,"accepted_comment":5153045063,"terminal":"A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED","runtime_version":"1.0.0-20260802","resident_monitoring_comment":5155863538,"binding":"READ_ONLY"},
+  "validation":{"exact_input_matrix":"PASS_4_OF_4","python_compile":"PASS_3_OF_3","unit_tests":"PASS_16_OF_16","json_parse":"PASS_6_OF_6","three_service_e2e":"PASS_3_OF_3","runtime_dispatch_contract_calls":3,"failure_injection":"PASS_7_OF_7","workspace_session_isolation":"PASS","cross_service_result_leak_count":0,"panel_restart_recovery":"PASS","rollback_blob_parity":"PASS"},
+  "scope":"EXACT_CONTRACT_FIXTURE_INTEGRATION_ONLY",
+  "safety":{"common_core_count":1,"common_core_source_clone_count":0,"service_browser_runtime_clone_count":0,"service_prompt_transport_clone_count":0,"actual_pc_dispatch_count":0,"actual_panel_apply_count":0,"actual_electron_launch_count":0,"production_connection_count":0,"ready_transition_count":0,"merge_count":0,"self_merge_count":0},
+  "blockers":[],
+  "decision":"PASS",
+  "terminal":"C6_AI_YOLLA_WAVE2_INTEGRATION_E2E_PASS",
+  "wave3_status":"QUEUED_NOT_EXECUTABLE_UNTIL_C2_C3_C4_C5_WAVE3_TERMINALS_ACCEPTED"
+}
