@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0.0",
+  "report_id": "C2_AI_YOLLA_RUNTIME_ENVIRONMENT_REGISTRY_WAVE3_FINAL_V1_20260802",
+  "worker": "C-2",
+  "wave_id": "WAVE_3",
+  "directive": {
+    "id": "C1-TO-C2-AI-YOLLA-PC-ENVIRONMENT-REGISTRY-WAVE3-V1-20260802-001",
+    "comment_id": 5157098370,
+    "registered_at_kst": "2026-08-02 19:06 KST",
+    "duplicate_prompt_key": "12dada416d1bf9a969bce71795e8c9727d9e5a76e9fb782d5c11353ca325ab83",
+    "accepted_wave2_terminal": "C2_AI_YOLLA_PANEL_SERVICE_REGISTRY_WAVE2_PASS",
+    "accepted_wave2_head": "131f3a985e86d3b87b1283bca4c7976f187f1e70"
+  },
+  "implementation": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "pull_request": 10,
+    "branch": "command-panel/c2-role-registry-menu-v1",
+    "start_head": "131f3a985e86d3b87b1283bca4c7976f187f1e70",
+    "owned_root": "command-panel-v1/c2-role-registry-menu/wave3/**",
+    "final_remote_head": "REPORTED_IN_TERMINAL_COMMENT"
+  },
+  "runtime_environment": {
+    "environment_id": "AI_YOLLA_RUNTIME_ENVIRONMENT",
+    "platform_id": "AI_YOLLA",
+    "component_id": "AI_YOLLA_RUNTIME",
+    "runtime_version": "1.0.0-20260802",
+    "manager_hotfix_version": "1.0.1-manager-status",
+    "canonical_runtime_root": "D:\\YOLLA_PC_BRIDGE",
+    "target_pc_terminal": "A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED",
+    "resident_monitoring_state": "SOURCE_AND_STATIC_VALIDATION_PASS_TARGET_PC_EXECUTION_READY",
+    "resident_monitoring_actual_execution": "NOT_ASSERTED_BY_THIS_REGISTRY"
+  },
+  "a1_exact_authority": {
+    "control_pr": 142,
+    "target_pc_accepted_comment": 5153045063,
+    "target_pc_comment_published_at": "2026-08-02T04:28:16+09:00",
+    "resident_monitoring_comment": 5155863538,
+    "resident_monitoring_comment_published_at": "2026-08-02T15:14:17+09:00",
+    "report_commit": "1d795f41ac982ce8d2615b0a1fc16333bed3d350",
+    "report_blob": "f61b5f01e62cabde61e25de81937fc0d3bdcf8c9",
+    "pointer_commit": "a5527fd670d9d6c46f1f56e29910d394984b003e",
+    "manager_source_commit": "ea71478e1642c67b15750f78b828357db314d2b3"
+  },
+  "freshness": {
+    "source_kind": "GITHUB_AUTHORITY_COMMENT_NOT_PC_FILE_READBACK",
+    "authority_published_at": "2026-08-02T15:14:17+09:00",
+    "evaluated_at": "2026-08-02T19:06:00+09:00",
+    "age_minutes": 231,
+    "maximum_age_minutes": 480,
+    "status": "FRESH_AT_WAVE3_DISPATCH",
+    "policy_origin": "C2_WAVE3_CONTRACT_NOT_A1_SOURCE_FACT"
+  },
+  "three_service_handoff": {
+    "status": "PASS",
+    "environment_id": "AI_YOLLA_RUNTIME_ENVIRONMENT",
+    "shared_runtime": true,
+    "service_count": 3,
+    "services": [
+      "YOLLA_REAL_ESTATE_PRO_AI",
+      "YOLLA_GAS_STATION_PRO_AI",
+      "YOLLA_HAZARDOUS_MATERIALS_PRO_AI"
+    ],
+    "source_clone_count": 0,
+    "separate_runtime_count": 0
+  },
+  "validation": {
+    "A1_TARGET_PC_AUTHORITY_BINDING": "PASS",
+    "RUNTIME_ENVIRONMENT_SCHEMA": "PASS",
+    "SENSITIVE_FIELD_REJECT": "PASS",
+    "MISSING_ACCEPTED_TERMINAL_REJECT": "PASS",
+    "STALE_CONTEXT_REJECT": "PASS",
+    "THREE_SERVICE_ENVIRONMENT_HANDOFF": "PASS",
+    "NODE_TESTS": "PASS_14_OF_14",
+    "JSON_SCHEMA": "PASS",
+    "PYTHON_COMPILE": "PASS",
+    "REMOTE_SOURCE_READBACK": "PASS_8_OF_8",
+    "OUT_OF_SCOPE_FILES": 0
+  },
+  "evidence": {
+    "test_result_path": "AI_YOLLA_RUNTIME_ENVIRONMENT_TEST_RESULT_V1.json",
+    "test_result_blob": "23a55cca75582994939d37cc20e989c2efe5c227",
+    "environment_contract_blob": "84179a225d29cd9271704984c50271f6e7944c09",
+    "environment_registry_blob": "1689ebd85cf2e0610637949565c1cd858d136873",
+    "authority_binding_blob": "418fe06dc66b98096f9a34e23211c4a5c54cb483",
+    "three_service_handoff_blob": "31fde37bda642a94e3a3dffb5980193c01b4526d"
+  },
+  "operational_correction": {
+    "accidental_issue": "source-factory-core#15",
+    "state": "CLOSED_NOT_PLANNED",
+    "source_effect": false,
+    "branch_effect": false
+  },
+  "safety": {
+    "actual_pc_command_count": 0,
+    "actual_pc_file_read_count": 0,
+    "sensitive_value_count": 0,
+    "new_runtime_count": 0,
+    "new_ipc_count": 0,
+    "new_prompt_transport_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "blockers": [],
+  "result_published_at_kst": "2026-08-02 19:35 KST",
+  "final_status": "C2_AI_YOLLA_RUNTIME_ENVIRONMENT_REGISTRY_WAVE3_PASS"
+}
