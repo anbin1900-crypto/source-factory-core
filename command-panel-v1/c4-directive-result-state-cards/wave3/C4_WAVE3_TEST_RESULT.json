@@ -1,0 +1,64 @@
+{
+  "schema_version": "C4_AI_YOLLA_PC_ENVIRONMENT_CARD_WAVE3_TEST_RESULT_V1",
+  "directive_id": "C1-TO-C4-AI-YOLLA-PC-ENVIRONMENT-CARD-WAVE3-V1-20260802-001",
+  "directive_comment_id": 5157101861,
+  "wave_id": "WAVE_3",
+  "worker": "C-4",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "branch": "command-panel/c4-directive-result-state-cards-v1",
+  "start_head": "ee00ec93768da18edeadeeac5677d85a02db75fc",
+  "owned_root": "command-panel-v1/c4-directive-result-state-cards/wave3/",
+  "authority": {
+    "a1_control_pr": 142,
+    "target_pc_accepted_comment": 5153045063,
+    "resident_monitoring_comment": 5155863538,
+    "target_pc_terminal": "A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED",
+    "runtime_version": "1.0.0-20260802",
+    "manager_hotfix_version": "1.0.1-manager-status"
+  },
+  "results": {
+    "node_syntax": "PASS",
+    "self_tests": "PASS_20_OF_20",
+    "local_extended_tests": "PASS_22_OF_22",
+    "a1_environment_card": "PASS",
+    "runtime_acceptance_display": "PASS",
+    "context_freshness_display": "PASS",
+    "d_drive_summary_display": "PASS_SAFE_SUMMARY_ONLY",
+    "project_root_summary_display": "PASS_SAFE_SUMMARY_ONLY",
+    "sensitive_value_display_count": 0,
+    "unsupported_pass_display_count": 0,
+    "html_escape": "PASS",
+    "open_a1_authority_link": "PASS_2_OF_2",
+    "out_of_scope_files": 0
+  },
+  "actual_authority_decision": {
+    "runtime_state": "TARGET_PC_ACCEPTED",
+    "context_state": "RUNTIME_UNVERIFIED",
+    "overall_state": "RUNTIME_UNVERIFIED",
+    "reason": "REFERENCED_A1_AUTHORITY_DOES_NOT_SUPPLY_LATEST_CONTEXT_PUBLISHED_AT_KST"
+  },
+  "state_matrix": {
+    "TARGET_PC_ACCEPTED": "PASS",
+    "CONTEXT_FRESH": "PASS",
+    "CONTEXT_STALE": "PASS",
+    "RUNTIME_UNVERIFIED": "PASS",
+    "RUNTIME_BLOCKED": "PASS",
+    "FIXTURE_ONLY": "PASS"
+  },
+  "failure_injection": {
+    "credential_field": "REJECTED",
+    "environment_variable_values": "REJECTED",
+    "future_context": "REJECTED",
+    "wrong_target_pc_comment": "REJECTED",
+    "wrong_monitoring_comment": "REJECTED",
+    "missing_context_time": "DOWNGRADED_RUNTIME_UNVERIFIED"
+  },
+  "runtime_counters": {
+    "actual_pc_command_count": 0,
+    "drive_write_count": 0,
+    "production_connection_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  },
+  "test_status": "PASS"
+}
