@@ -1,0 +1,43 @@
+{
+  "schema_version": "yolla.latest_worker_pointer.v1",
+  "worker": "A-4",
+  "directive_id": "A2-TO-A4-P1-PANEL-WORKER-CORRELATION-REPAIR-V2-20260802-001",
+  "directive_registered_at_kst": "2026-08-02T21:48:00+09:00",
+  "result_published_at_kst": "2026-08-02T22:55:13+09:00",
+  "cycle_id": "A2-P1-PANEL-WORKER-COMMAND-CYCLE6-V1-20260802-001",
+  "wave_id": "Wave2",
+  "duplicate_prompt_key": "A2-CYCLE6|2026-08-02T21:48:00+09:00|Wave2|A4",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "branch": "worker/a4-p1-panel-worker-correlation-repair-v2",
+  "output_pr": 16,
+  "terminal": "A4_P1_EXISTING_PANEL_WORKER_WINDOW_STATUS_BINDING_PASS",
+  "decision": "PASS",
+  "source_commit": "96c635077ee99935c36a86bcb34ead26358fea4c",
+  "final_report": {
+    "path": "releases/SF_REUSABLE_CORE_20260801_175708/src/shared/stage4/reports/A4_P1_PANEL_WORKER_CORRELATION_REPAIR_V2_FINAL_REPORT.json",
+    "commit": "96c635077ee99935c36a86bcb34ead26358fea4c",
+    "blob": "9d73444ee870afdf4b83512064c5308443f0b438"
+  },
+  "validation": {
+    "workflow_run": 30750940039,
+    "workflow_job": 91504753441,
+    "conclusion": "SUCCESS",
+    "node_check": "PASS_6_OF_6",
+    "exact_source_tests": "PASS_14_OF_14",
+    "a3_findings_resolved": "PASS_4_OF_4",
+    "original_base_blob_readback": "PASS_4_OF_4"
+  },
+  "duplicate_guard": {
+    "terminal_status": "DUPLICATE_PROMPT_SUPPRESSED",
+    "second_execution_performed": false,
+    "execution_delta": 0
+  },
+  "new_runtime": false,
+  "new_transport": false,
+  "new_browser_engine": false,
+  "direct_github_write_from_panel": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
