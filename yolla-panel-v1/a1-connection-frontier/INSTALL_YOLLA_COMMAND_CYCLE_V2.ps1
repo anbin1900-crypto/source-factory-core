@@ -14,32 +14,11 @@ $ErrorActionPreference = 'Stop'
 $PackageRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $Utf8NoBom = New-Object System.Text.UTF8Encoding($false)
 
-function Read-Utf8([string]$Path) {
-    return [System.IO.File]::ReadAllText($Path, [System.Text.Encoding]::UTF8)
-}
-function Write-Utf8NoBom([string]$Path, [string]$Content) {
-    [System.IO.File]::WriteAllText($Path, $Content, $Utf8NoBom)
-}
-function Resolve-SafePanelDirectory {
-    if (-not [string]::IsNullOrWhiteSpace($SafePanelDirectory)) {
-        $explicit = [System.IO.Path]::GetFullPath($SafePanelDirectory)
-        if (-not (Test-Path -LiteralPath (Join-Path $explicit 'safe_panel_main.js') -PathType Leaf)) {
-            throw "SAFE_PANEL_MAIN_NOT_FOUND:$explicit"
-        }
-        return $explicit
-    }
-    $activeRoot = Join-Path $WorkspaceRoot 'source-factory-active-core'
-    $candidates = New-Object System.Collections.Generic.List[object]
-    if (Test-Path -LiteralPath $activeRoot -PathType Container) {
-        foreach ($candidate in @(Get-ChildItem -LiteralPath $activeRoot -Directory -Recurse -Depth 3 -ErrorAction SilentlyContinue)) {
-            if ((Split-Path -Leaf $candidate.FullName) -eq 'safe_panel_v10' -and (Test-Path -LiteralPath (Join-Path $candidate.FullName 'safe_panel_main.js') -PathType Leaf)) {
-                $candidates.Add($candidate)
-            }
-        }
-    }
-    $selected = $candidates | Sort-Object LastWriteTimeUtc -Descending | Select-Object -First 1
-    if (-not $selected) { throw "SAFE_PANEL_DIRECTORY_NOT_FOUND_UNDER:$WorkspaceRoot" }
-    return $selected.FullName
+function Read-Utf8([string]$Path) { return [System.IO.File]::ReadAllText($Path, [System.Text.Encoding]::UTF8) }
+function Write-Utf8NoBom([string]$Path, [string]$Content) { [System.IO.File]::WriteAllText($Path, $Content, $Utf8NoBom) }
+function Replace-Required([string]$Text, [string]$Old, [string]$New, [string]$Code) {
+    if (-not $Text.Contains($Old)) { throw "${Code}:ANCHOR_NOT_FOUND" }
+    return $Text.Replace($Old, $New)
 }
 function Invoke-NodeCheck([string[]]$Paths) {
     foreach ($item in $Paths) {
@@ -47,9 +26,22 @@ function Invoke-NodeCheck([string[]]$Paths) {
         if ($LASTEXITCODE -ne 0) { throw "NODE_CHECK_FAILED:$item" }
     }
 }
-function Replace-Required([string]$Text, [string]$Old, [string]$New, [string]$Code) {
-    if (-not $Text.Contains($Old)) { throw "${Code}:ANCHOR_NOT_FOUND" }
-    return $Text.Replace($Old, $New)
+function Resolve-SafePanelDirectory {
+    if (-not [string]::IsNullOrWhiteSpace($SafePanelDirectory)) {
+        $explicit = [System.IO.Path]::GetFullPath($SafePanelDirectory)
+        if (-not (Test-Path -LiteralPath (Join-Path $explicit 'safe_panel_main.js') -PathType Leaf)) { throw "SAFE_PANEL_MAIN_NOT_FOUND:$explicit" }
+        return $explicit
+    }
+    $activeRoot = Join-Path $WorkspaceRoot 'source-factory-active-core'
+    $candidates = @()
+    if (Test-Path -LiteralPath $activeRoot -PathType Container) {
+        $candidates = @(Get-ChildItem -LiteralPath $activeRoot -Directory -Recurse -Depth 3 -ErrorAction SilentlyContinue | Where-Object {
+            $_.Name -eq 'safe_panel_v10' -and (Test-Path -LiteralPath (Join-Path $_.FullName 'safe_panel_main.js') -PathType Leaf)
+        })
+    }
+    $selected = $candidates | Sort-Object LastWriteTimeUtc -Descending | Select-Object -First 1
+    if (-not $selected) { throw "SAFE_PANEL_DIRECTORY_NOT_FOUND_UNDER:$WorkspaceRoot" }
+    return $selected.FullName
 }
 
 $SafePanel = Resolve-SafePanelDirectory
@@ -62,14 +54,8 @@ New-Item -ItemType Directory -Path $RuntimeRoot -Force | Out-Null
 
 $TargetFiles = @('safe_panel_main.js','safe_panel_preload.js','safe_panel.html','safe_panel.css')
 $InstalledFiles = @(
-    'yolla_panel_main_bridge.cjs',
-    'yolla_panel_renderer.js',
-    'yolla_panel.css',
-    'yolla_panel_role_registry.json',
-    'yolla_worker_preload.js',
-    'yolla_worker_shell.html',
-    'yolla_worker_shell.css',
-    'yolla_worker_shell.js'
+    'yolla_panel_main_bridge.cjs','yolla_panel_renderer.js','yolla_panel.css','yolla_panel_role_registry.json',
+    'yolla_worker_preload.js','yolla_worker_shell.html','yolla_worker_shell.css','yolla_worker_shell.js'
 )
 
 if ($Rollback) {
@@ -84,11 +70,8 @@ if ($Rollback) {
     foreach ($name in $InstalledFiles) {
         $backupInstalled = Join-Path $backup $name
         $targetInstalled = Join-Path $SafePanel $name
-        if (Test-Path -LiteralPath $backupInstalled -PathType Leaf) {
-            Copy-Item -LiteralPath $backupInstalled -Destination $targetInstalled -Force
-        } else {
-            Remove-Item -LiteralPath $targetInstalled -Force -ErrorAction SilentlyContinue
-        }
+        if (Test-Path -LiteralPath $backupInstalled -PathType Leaf) { Copy-Item -LiteralPath $backupInstalled -Destination $targetInstalled -Force }
+        else { Remove-Item -LiteralPath $targetInstalled -Force -ErrorAction SilentlyContinue }
     }
     Invoke-NodeCheck @((Join-Path $SafePanel 'safe_panel_main.js'), (Join-Path $SafePanel 'safe_panel_preload.js'))
     $receipt = [ordered]@{
@@ -109,10 +92,11 @@ if ($Rollback) {
 foreach ($name in $TargetFiles) {
     if (-not (Test-Path -LiteralPath (Join-Path $SafePanel $name) -PathType Leaf)) { throw "REQUIRED_TARGET_MISSING:$name" }
 }
-foreach ($name in @(
+$PackageFiles = @(
     'yolla_panel_main_bridge.cjs','yolla_panel_renderer.js','yolla_panel.css','YOLLA_PANEL_ROLE_REGISTRY_V1.json',
     'yolla_worker_preload.js','yolla_worker_shell.html','yolla_worker_shell.css','yolla_worker_shell.js'
-)) {
+)
+foreach ($name in $PackageFiles) {
     if (-not (Test-Path -LiteralPath (Join-Path $PackageRoot $name) -PathType Leaf)) { throw "PACKAGE_FILE_MISSING:$name" }
 }
 
@@ -137,7 +121,12 @@ foreach ($name in @('yolla_worker_preload.js','yolla_worker_shell.html','yolla_w
 $mainPath = Join-Path $SafePanel 'safe_panel_main.js'
 $main = Read-Utf8 $mainPath
 if (-not $main.Contains('YOLLA_PANEL_MAIN_BRIDGE_REQUIRE_V1')) {
-    $main = Replace-Required $main 'const path = require("path");' "const path = require(\"path\");`r`n/* YOLLA_PANEL_MAIN_BRIDGE_REQUIRE_V1 */`r`nconst { registerYollaPanelBridge } = require(\"./yolla_panel_main_bridge.cjs\");" 'MAIN_REQUIRE'
+    $requireReplacement = @'
+const path = require("path");
+/* YOLLA_PANEL_MAIN_BRIDGE_REQUIRE_V1 */
+const { registerYollaPanelBridge } = require("./yolla_panel_main_bridge.cjs");
+'@
+    $main = Replace-Required $main 'const path = require("path");' $requireReplacement.TrimEnd() 'MAIN_REQUIRE'
 }
 
 $registerV2 = @'
@@ -158,27 +147,27 @@ if ($main.Contains('YOLLA_PANEL_MAIN_BRIDGE_REGISTER_V1')) {
     $main = [regex]::Replace($main, $pattern, "`r`n" + $registerV2.TrimEnd(), 1)
 } elseif (-not $main.Contains('YOLLA_PANEL_MAIN_BRIDGE_REGISTER_V2')) {
     $anchor = '  ipcMain.handle("sf-terminal-control", (event, command) => terminalControl(getTerminalFromSender(event), command || {}));'
-    $main = Replace-Required $main $anchor ($anchor + "`r`n" + $registerV2) 'MAIN_REGISTER'
+    $main = Replace-Required $main $anchor ($anchor + "`r`n" + $registerV2.TrimEnd()) 'MAIN_REGISTER'
 }
 
 if (-not $main.Contains('YOLLA_WORKSPACE_CONSTANTS_V2')) {
-    $constantAnchor = 'const DEFAULT_TAEO_TOP = 34;'
     $constants = @'
 const DEFAULT_TAEO_TOP = 34;
 /* YOLLA_WORKSPACE_CONSTANTS_V2 */
 const YOLLA_WORKER_SIDEBAR_WIDTH = 410;
 const YOLLA_WORKER_HEADER_HEIGHT = 56;
 '@
-    $main = Replace-Required $main $constantAnchor $constants.TrimEnd() 'WORKSPACE_CONSTANTS'
+    $main = Replace-Required $main 'const DEFAULT_TAEO_TOP = 34;' $constants.TrimEnd() 'WORKSPACE_CONSTANTS'
 }
 
 if (-not $main.Contains('YOLLA_WORKSPACE_BOUNDS_V2')) {
-    $main = Replace-Required $main '  const top = getTaeoTopOffset(win);' @'
+    $boundsState = @'
   /* YOLLA_WORKSPACE_BOUNDS_V2 */
   const isYollaWorkspace = Boolean(win.__yollaWorkspaceWindow);
   const left = isYollaWorkspace ? YOLLA_WORKER_SIDEBAR_WIDTH : 0;
   const top = isYollaWorkspace ? YOLLA_WORKER_HEADER_HEIGHT : getTaeoTopOffset(win);
-'@.TrimEnd() 'WORKSPACE_BOUNDS_STATE'
+'@
+    $main = Replace-Required $main '  const top = getTaeoTopOffset(win);' $boundsState.TrimEnd() 'WORKSPACE_BOUNDS_STATE'
     $oldBounds = @'
       view.setBounds({
         x: 0,
@@ -199,8 +188,12 @@ if (-not $main.Contains('YOLLA_WORKSPACE_BOUNDS_V2')) {
 }
 
 if (-not $main.Contains('YOLLA_WORKSPACE_TERMINAL_V2')) {
-    $main = Replace-Required $main '  const isCommander = role === "commander";' "  const isCommander = role === \"commander\";`r`n  /* YOLLA_WORKSPACE_TERMINAL_V2 */`r`n  const isYollaWorkspace = role === \"worker\" -and slot === 1;" 'WORKSPACE_CREATE_FLAG'
-    $main = $main.Replace('  const isYollaWorkspace = role === "worker" -and slot === 1;', '  const isYollaWorkspace = role === "worker" && slot === 1;')
+    $createFlag = @'
+  const isCommander = role === "commander";
+  /* YOLLA_WORKSPACE_TERMINAL_V2 */
+  const isYollaWorkspace = role === "worker" && slot === 1;
+'@
+    $main = Replace-Required $main '  const isCommander = role === "commander";' $createFlag.TrimEnd() 'WORKSPACE_CREATE_FLAG'
     $main = Replace-Required $main '    width: isCommander ? 1280 : 980,' '    width: isYollaWorkspace ? 1560 : (isCommander ? 1280 : 980),' 'WORKSPACE_WIDTH'
     $main = Replace-Required $main '    height: isCommander ? 900 : 420,' '    height: isYollaWorkspace ? 920 : (isCommander ? 900 : 420),' 'WORKSPACE_HEIGHT'
     $main = Replace-Required $main '      preload: path.join(__dirname, "safe_terminal_preload.js"),' '      preload: path.join(__dirname, isYollaWorkspace ? "yolla_worker_preload.js" : "safe_terminal_preload.js"),' 'WORKSPACE_PRELOAD'
@@ -250,10 +243,11 @@ Invoke-NodeCheck @(
 
 $registry = Get-Content -LiteralPath (Join-Path $SafePanel 'yolla_panel_role_registry.json') -Raw -Encoding UTF8 | ConvertFrom-Json
 if (@($registry.roles).Count -ne 39) { throw "REGISTRY_ROLE_COUNT_MISMATCH:$(@($registry.roles).Count)" }
+$mainReadback = Read-Utf8 $mainPath
 foreach ($marker in @('YOLLA_PANEL_MAIN_BRIDGE_REGISTER_V2','YOLLA_WORKSPACE_CONSTANTS_V2','YOLLA_WORKSPACE_BOUNDS_V2','YOLLA_WORKSPACE_TERMINAL_V2')) {
-    if ((Read-Utf8 $mainPath) -notmatch $marker) { throw "MAIN_MARKER_MISSING:$marker" }
+    if (-not $mainReadback.Contains($marker)) { throw "MAIN_MARKER_MISSING:$marker" }
 }
-if ((Read-Utf8 $preloadPath) -notmatch 'YOLLA_PANEL_PRELOAD_BRIDGE_V2') { throw 'PANEL_PRELOAD_V2_MISSING' }
+if (-not (Read-Utf8 $preloadPath).Contains('YOLLA_PANEL_PRELOAD_BRIDGE_V2')) { throw 'PANEL_PRELOAD_V2_MISSING' }
 
 $receipt = [ordered]@{
     schema_version = 'YOLLA_COMMAND_CYCLE_INSTALL_RECEIPT_V2'
