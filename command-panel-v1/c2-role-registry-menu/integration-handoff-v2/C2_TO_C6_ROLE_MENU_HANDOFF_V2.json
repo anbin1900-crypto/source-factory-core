@@ -1,0 +1,45 @@
+{
+  "schema_version": "C2_TO_C6_ROLE_MENU_HANDOFF_V2",
+  "producer": "C-2",
+  "consumer": "C-6",
+  "source_repository": "anbin1900-crypto/source-factory-core",
+  "source_branch": "command-panel/c2-role-registry-menu-v1",
+  "source_head_before_cycle2_publication": "4327e06343cebd28273168cfaffdb2eda7d98222",
+  "owned_root": "command-panel-v1/c2-role-registry-menu/integration-handoff-v2/**",
+  "c2_cycle1_authority": {
+    "role_registry_blob": "ef50d074fba002d9be6434fc4c2619045ef52715",
+    "role_registry_logic_blob": "ce4ba836fea040dcdc9d603110372cd5c5519e8c",
+    "left_menu_generator_blob": "de529aa6f22a183e6230af92af376638b7518936",
+    "cycle1_final_report_blob": "d03f80bfd5913e87da47aa07ba693e69d1cc32ff"
+  },
+  "c4_authority": {
+    "pr_number": 9,
+    "head": "af6e56ec11104f70e03891812e9237f5937a0fc9",
+    "directive_contract_blob": "1b5dd1337b737b03bdb18fd18914337a57a5303a",
+    "result_contract_blob": "104d4817878db5eb932652e4cde872ad300231d1",
+    "renderer_blob": "82a14c89f0d4f0ce2db55ea6da35cb00d23f846a"
+  },
+  "consume": [
+    "ROLE_SELECTION_CONTEXT_CONTRACT_V2.json",
+    "roleSelectionCardHandoffV2.js",
+    "ROLE_TO_CARD_BINDING_MATRIX_V2.json",
+    "C4_CARD_CONTRACT_ACCEPTANCE_V2.json",
+    "ROLE_SELECTION_HANDOFF_TEST_RESULT_V2.json"
+  ],
+  "integration_sequence": [
+    "LOAD_C2_ROLE_REGISTRY",
+    "SELECT_EXACT_ROLE_ID",
+    "BUILD_FAIL_CLOSED_SELECTION_CONTEXT",
+    "BUILD_C4_DIRECTIVE_INPUT",
+    "BUILD_C4_RESULT_INPUT_ONLY_IF_MATCHED_CURRENT_RESULT_EXISTS",
+    "ACTIVATE_EXISTING_C4_CARD_RENDERER_BY_EXACT_HEAD_REFERENCE"
+  ],
+  "forbidden": [
+    "COPY_C4_SOURCE",
+    "INFER_UNKNOWN_ROLE",
+    "DISPLAY_RESULT_FROM_OTHER_ROLE",
+    "DISPLAY_RESULT_FROM_OTHER_DIRECTIVE",
+    "SYNTHESIZE_PASS_WITHOUT_EVIDENCE",
+    "CREATE_NEW_BROWSER_RUNTIME"
+  ]
+}
