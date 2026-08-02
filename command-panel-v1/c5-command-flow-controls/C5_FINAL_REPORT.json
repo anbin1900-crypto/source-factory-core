@@ -1,0 +1,64 @@
+{
+  "schema_version": "C5_COMMAND_FLOW_FINAL_REPORT_V1",
+  "worker": "C-5",
+  "worker_uid": "WKR-017",
+  "directive_id": "C1-TO-C5-COMMAND-BUTTON-GROUP-FLOW-V2-20260802-001",
+  "directive_comment": 5155843439,
+  "previous_directive_comment": 5154888509,
+  "previous_cycle_response_missing_ack": true,
+  "previous_non_execution_reason": "PREVIOUS_CYCLE_DIRECTIVE_WAS_NOT_EXECUTED_OR_REPORTED; BRANCH_REMAINED_IDENTICAL_TO_BASE",
+  "implementation_repo": "anbin1900-crypto/source-factory-core",
+  "branch": "command-panel/c5-command-flow-controls-v1",
+  "start_head": "69311de6c51e609df3080d8f316d98e4f381adc6",
+  "owned_root": "command-panel-v1/c5-command-flow-controls/**",
+  "deliverables": [
+    "COMMAND_BUTTON_CONTRACT.json",
+    "GROUP_EXECUTION_ADMISSION_CONTRACT.json",
+    "COMMAND_FLOW_STATE_MACHINE.json",
+    "commandFlowController.js",
+    "COMMAND_FLOW_TEST_RESULT.json",
+    "C5_FINAL_REPORT.json"
+  ],
+  "reuse_authorities": {
+    "safe_panel_preload.js": "bd42f34df35edee59c8e38ac681ae77d61ad365b",
+    "sequentialPromptSender.js": "4001772fa2b2475171cd8595d5294cbcebe8cfde",
+    "pcAgentBridgeAdapter.js": "af0d9ef934d88c1d4019f8330e30ee1bcb9b6f8f"
+  },
+  "implementation": {
+    "buttons_implemented": 8,
+    "exact_directive_package_admission": true,
+    "cancelled_ambiguous_cycle_mismatch_rejected": true,
+    "duplicate_directive_click_suppressed": true,
+    "group_parallel_dispatch_plan_only_admitted_roles": true,
+    "new_transport_runtime_created": false,
+    "manual_prompt_body_generated": false,
+    "actual_dispatch_performed": false,
+    "controller_module_split_count": 3
+  },
+  "state_flow": "IDLE->DIRECTIVE_READY->DISPATCHING->RUNNING->RESULT_WAITING->COMPLETED/BLOCKED/FAILED",
+  "failure_analysis_and_retry": [
+    {
+      "attempt": 1,
+      "finding": "FIXTURE_BOUND_V2_DIRECTIVE_ID_TO_SUPERSEDED_V1_COMMENT_ID",
+      "correction": "REBIND_TO_EXACT_V2_COMMENT_5155843439",
+      "retry_result": "PASS_26_OF_26"
+    },
+    {
+      "attempt": 2,
+      "finding": "REMOTE_LARGE_SINGLE_SOURCE_BLOB_TRUNCATED_BEFORE_BRANCH_BINDING",
+      "correction": "SPLIT_CONTROLLER_INTO_THREE_SMALL_INTERNAL_MODULES_AND_KEEP_REQUIRED_FACADE",
+      "retry_result": "PASS_26_OF_26"
+    }
+  ],
+  "validation": {
+    "node_syntax_check": "PASS_5_OF_5",
+    "unit_tests": "PASS_26_OF_26",
+    "json_parse": "PASS_ALL"
+  },
+  "terminal": "C5_COMMAND_BUTTON_GROUP_FLOW_PASS",
+  "terminal_decision": "PASS",
+  "production": false,
+  "ready_transition": false,
+  "merge": false,
+  "force_push": false
+}
