@@ -1,0 +1,45 @@
+{
+  "schema_version": "C6_C3_C5_MISSING_LANE_BLOCKER_MATRIX_V2",
+  "directive_id": "C1-TO-C6-COMMAND-PANEL-PARTIAL-INTEGRATION-PREFLIGHT-V2-20260802-001",
+  "cutoff": {
+    "implementation_repository": "anbin1900-crypto/source-factory-core",
+    "integration_branch": "command-panel/c6-integration-deploy-rollback-v1",
+    "start_head": "69311de6c51e609df3080d8f316d98e4f381adc6"
+  },
+  "lanes": {
+    "C-3": {
+      "expected_branch": "command-panel/c3-worker-browser-binding-v1",
+      "status": "PREVIOUS_RESPONSE_MISSING_BRANCH_IDENTICAL_TO_BASE",
+      "accepted_head": null,
+      "terminal": null,
+      "virtual_pass": false,
+      "consumable_now": false,
+      "required_next_input": [
+        "EXACT_REMOTE_HEAD",
+        "TERMINAL_COMMENT_ID",
+        "FINAL_REPORT_PATH_AND_BLOB",
+        "WORKER_BROWSER_BINDING_CONTRACT_PATH_AND_BLOB",
+        "ZERO_FORBIDDEN_COUNTERS"
+      ]
+    },
+    "C-5": {
+      "expected_branch": "command-panel/c5-command-flow-controls-v1",
+      "status": "PREVIOUS_RESPONSE_MISSING_BRANCH_IDENTICAL_TO_BASE",
+      "accepted_head": null,
+      "terminal": null,
+      "virtual_pass": false,
+      "consumable_now": false,
+      "required_next_input": [
+        "EXACT_REMOTE_HEAD",
+        "TERMINAL_COMMENT_ID",
+        "FINAL_REPORT_PATH_AND_BLOB",
+        "COMMAND_FLOW_CONTROL_CONTRACT_PATH_AND_BLOB",
+        "ZERO_FORBIDDEN_COUNTERS"
+      ]
+    }
+  },
+  "partial_preflight_allowed": true,
+  "final_integration_allowed": false,
+  "direct_panel_source_patch_allowed": false,
+  "terminal": "C6_COMMAND_PANEL_PARTIAL_PREFLIGHT_READY_WAITING_C3_C5"
+}
