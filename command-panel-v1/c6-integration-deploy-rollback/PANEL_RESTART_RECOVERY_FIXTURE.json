@@ -1,0 +1,8 @@
+{
+  "schema_version":"C6_PANEL_RESTART_RECOVERY_FIXTURE_V1",
+  "selected_role":"C-1",
+  "pre_restart":{"state":"RESULT_WAITING","worker_window_id":"worker-browser::C-1","browser_session_id":"persist:yolla-worker-c1","sequence":1},
+  "post_restart":{"role_recovered":true,"window_pointer_match":true,"session_pointer_match":true,"state_recovered":"RESULT_WAITING"},
+  "negative_case":{"mutated_session_id":"changed","expected":"SESSION_POINTER_MISMATCH","result":"PASS_FAIL_CLOSED"},
+  "test":"PASS_2_OF_2"
+}
