@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0.0",
+  "report_id": "C6_AI_YOLLA_PC_ENVIRONMENT_E2E_WAVE3_FINAL_V1_20260802",
+  "worker": "C-6",
+  "wave_id": "WAVE_3",
+  "directive": {
+    "id": "C1-TO-C6-AI-YOLLA-PC-ENVIRONMENT-E2E-WAVE3-V1-20260802-001",
+    "registered_at_kst": "2026-08-02 19:06 KST",
+    "duplicate_prompt_key": "f2787ffbf3ecf677e0f1c4fd32c1c25c6104e0fa03aca39914ea899884b0989c",
+    "gate_open_comment": 5157855710,
+    "recovery_comment": 5157907046,
+    "new_directive_created": false,
+    "new_duplicate_prompt_key_created": false
+  },
+  "implementation": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "pull_request": 12,
+    "branch": "command-panel/c6-integration-deploy-rollback-v1",
+    "wave2_start_head": "ea56a824db366088638a59b40e54f7f4d941a29c",
+    "validation_receipt_head": "0c971f70e2356a5f7d3c9aafffa195c38837195d",
+    "owned_root": "command-panel-v1/c6-integration-deploy-rollback/wave3/final/**",
+    "final_remote_head": "LATEST_POINTER_COMMIT_THIS_OR_LATER"
+  },
+  "exact_inputs": {
+    "accepted": "PASS_4_OF_4",
+    "virtual_pass_count": 0,
+    "C-2": {
+      "head": "156389b9b4ed2d3309b3212ee688cc7b31ee6612",
+      "terminal": "C2_AI_YOLLA_RUNTIME_ENVIRONMENT_REGISTRY_WAVE3_PASS"
+    },
+    "C-3": {
+      "head": "b0aa5aa15564a9871bab9a834fa5a94386f7f92b",
+      "terminal": "C3_AI_YOLLA_WORKSPACE_PC_CONTEXT_WAVE3_PASS"
+    },
+    "C-4": {
+      "head": "19b6b3023fd73af10b0c82defc61c20037f6a578",
+      "terminal": "C4_AI_YOLLA_PANEL_PC_ENVIRONMENT_CARD_WAVE3_PASS"
+    },
+    "C-5": {
+      "head": "57d452af914f44762f05b2cb9e998004734394e8",
+      "terminal": "C5_AI_YOLLA_RUNTIME_ADMISSION_GATE_WAVE3_PASS"
+    }
+  },
+  "integration_resolution": {
+    "c3_context_iso": "2026-08-02T19:03:35.129045+09:00",
+    "c4_card_canonical_kst": "2026-08-02 19:03 KST",
+    "context_age_minutes_at_observation": 209,
+    "freshness_policy_maximum_minutes": 480,
+    "integrated_card_runtime_state": "TARGET_PC_ACCEPTED",
+    "integrated_card_context_state": "CONTEXT_FRESH",
+    "integrated_card_overall_state": "TARGET_PC_ACCEPTED",
+    "isolated_c4_runtime_unverified_snapshot_preserved": true,
+    "resolution": "NORMALIZE_C3_EXACT_ISO_AUTHORITY_TO_C4_SUPPORTED_KST_MINUTE_FORMAT_WITHOUT_MODIFYING_UPSTREAM_ARTIFACTS"
+  },
+  "validation": {
+    "PYTHON_COMPILE": "PASS",
+    "UNIT_TESTS": "PASS_21_OF_21",
+    "E2E_CHECKS": "PASS_14_OF_14",
+    "EXACT_INPUT_MATRIX": "PASS_4_OF_4",
+    "A1_TARGET_PC_AUTHORITY": "PASS_READ_ONLY",
+    "CONTEXT_TIME_NORMALIZATION": "PASS",
+    "CONTEXT_FRESHNESS": "PASS",
+    "RUNTIME_ADMISSION": "PASS_PLAN_ONLY",
+    "THREE_SERVICE_E2E": "PASS_3_OF_3",
+    "WORKSPACE_SESSION_ISOLATION": "PASS_3_OF_3",
+    "CROSS_SERVICE_RESULT_LEAK_COUNT": 0,
+    "PANEL_RESTART_RECOVERY": "PASS",
+    "ROLLBACK_BLOB_PARITY": "PASS",
+    "PRIVACY_BOUNDARY": "PASS",
+    "SENSITIVE_VALUE_DISPLAY_COUNT": 0,
+    "OUT_OF_SCOPE_FILES": 0
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "result": "FAIL_5_OF_21_FALSE_POSITIVE",
+      "finding": "SAFETY_DECLARATION_FIELD_NAMES_SUCH_AS_CREDENTIALS_COLLECTED_FALSE_MATCHED_SENSITIVE_KEY_SCANNER",
+      "actual_sensitive_value_found": false,
+      "correction": "VALIDATE_PRIVACY_DECLARATION_BOOLEAN_VALUES_SEPARATELY_AND_SCAN_NON_DECLARATION_PAYLOADS"
+    },
+    {
+      "attempt": 2,
+      "result": "PASS_21_OF_21_AND_E2E_14_OF_14"
+    }
+  ],
+  "remote_readback": {
+    "status": "PASS_6_OF_6",
+    "files": {
+      "AI_YOLLA_WAVE3_EXACT_INPUT_MATRIX.json": "3d8df7ecd5347893c20b1d173a7ab490ca76b0c1",
+      "fixtures/AI_YOLLA_WAVE3_PC_ENVIRONMENT_E2E_FIXTURE.json": "3b644c6c34353ebfca1154edffb1a84fb29baae4",
+      "ai_yolla_wave3_integration.py": "09df97abd5c4ef5cd48fdbfaf969a0beb4a213d9",
+      "tests/test_wave3_final.py": "2cab32a449b89e8123b1bb01fd1efc3b3cee4ce4",
+      "RUN_WAVE3_E2E.py": "88713f89813c574a80cd19cf5123ecee1fea3c66",
+      "VALIDATION_RECEIPT.json": "2f7f20a182ed7ebc407c389c91eff5e8d936d515"
+    }
+  },
+  "safety": {
+    "actual_pc_dispatch_count": 0,
+    "actual_panel_apply_count": 0,
+    "new_runtime_count": 0,
+    "new_transport_count": 0,
+    "new_browser_engine_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  },
+  "result_published_at_kst": "2026-08-02 22:48 KST",
+  "terminal": "C6_AI_YOLLA_PC_ENVIRONMENT_E2E_WAVE3_PASS",
+  "final_status": "C6_AI_YOLLA_PC_ENVIRONMENT_E2E_WAVE3_PASS"
+}
