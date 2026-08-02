@@ -68,7 +68,7 @@ function makeRuntime(options = {}) {
   function equal(actual, expected, message) { assert.equal(actual, expected, message); tests += 1; }
 
   equal(normalizeRoleId("a-1"), "A-1");
-  assert.throws(() => normalizeRoleId("bad role"), /INVALID_ROLE_ID/); tests += 1;
+  assert.throws(() => normalizeRoleId("bad role"), (error) => error.code === "INVALID_ROLE_ID"); tests += 1;
 
   const registry = JSON.parse(fs.readFileSync(path.join(__dirname, "YOLLA_PANEL_ROLE_REGISTRY_V1.json"), "utf8"));
   equal(registry.schema_version, "YOLLA_PANEL_ROLE_REGISTRY_V1");
@@ -129,9 +129,9 @@ function makeRuntime(options = {}) {
   equal(blocked.status, "BLOCKED");
   equal(blocked.events[blocked.events.length - 1].stage, "CYCLE_BLOCKED");
 
-  assert.throws(() => env.runtime.selectRole({ role_id: "UNKNOWN" }), /ROLE_NOT_FOUND/); tests += 1;
-  await assert.rejects(() => env.runtime.runCycleOnce({ commander_role_id: "A-3", worker_role_id: "A-4", command_text: "x" }), /COMMANDER_ROLE_REQUIRED/); tests += 1;
-  await assert.rejects(() => env.runtime.runCycleOnce({ commander_role_id: "A-1", worker_role_id: "A-2", command_text: "x" }), /WORKER_ROLE_REQUIRED/); tests += 1;
+  assert.throws(() => env.runtime.selectRole({ role_id: "UNKNOWN" }), (error) => error.code === "ROLE_NOT_FOUND"); tests += 1;
+  await assert.rejects(() => env.runtime.runCycleOnce({ commander_role_id: "A-3", worker_role_id: "A-4", command_text: "x" }), (error) => error.code === "COMMANDER_ROLE_REQUIRED"); tests += 1;
+  await assert.rejects(() => env.runtime.runCycleOnce({ commander_role_id: "A-1", worker_role_id: "A-2", command_text: "x" }), (error) => error.code === "WORKER_ROLE_REQUIRED"); tests += 1;
 
   const renderer = fs.readFileSync(path.join(__dirname, "yolla_panel_renderer.js"), "utf8");
   for (const contract of ["커맨더 → 워커 → 커맨더 1회 순환", "openWorkspace", "runCycleOnce", "1회 명령 순환 실행", "window.YollaPanel"]) {
