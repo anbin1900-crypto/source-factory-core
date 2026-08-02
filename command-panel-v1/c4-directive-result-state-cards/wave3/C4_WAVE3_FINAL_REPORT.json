@@ -1,5 +1,5 @@
 {
-  "schema_version": "C4_AI_YOLLA_PANEL_PC_ENVIRONMENT_CARD_WAVE3_FINAL_REPORT_V1",
+  "schema_version": "C4_AI_YOLLA_PANEL_PC_ENVIRONMENT_CARD_WAVE3_FINAL_REPORT_V2",
   "directive_id": "C1-TO-C4-AI-YOLLA-PC-ENVIRONMENT-CARD-WAVE3-V1-20260802-001",
   "directive_comment_id": 5157101861,
   "wave_id": "WAVE_3",
@@ -12,6 +12,8 @@
   "implementation_pr": 9,
   "branch": "command-panel/c4-directive-result-state-cards-v1",
   "start_head": "ee00ec93768da18edeadeeac5677d85a02db75fc",
+  "head_before_terminal_finalize": "3abc42765ef88ef2d5bf2b875d2da1cd712088a9",
+  "actual_terminal_head_source": "SOURCE_FACTORY_PR9_METADATA_AND_AUTHORITY_PR178_RESULT_COMMENT",
   "owned_root": "command-panel-v1/c4-directive-result-state-cards/wave3/",
   "a1_authority": {
     "control_pr": 142,
@@ -33,7 +35,7 @@
   "published_outputs": {
     "aiYollaPcEnvironmentCardWave3.js": "61eacec2815b70816143c90cf0884aa8fd0ec295",
     "C4_WAVE3_TEST_RESULT.json": "7cee522722a8f50572a949abf94fcc8b2cd47f06",
-    "C4_WAVE3_FINAL_REPORT.json": "THIS_BLOB"
+    "C4_WAVE3_FINAL_REPORT_V1.json": "02e9c5f9bf621984eeff4b50e0e924d0ed2866d4"
   },
   "validation": {
     "node_syntax": "PASS",
@@ -68,7 +70,7 @@
     },
     {
       "attempt": 3,
-      "result": "COMPACT_SINGLE_COMMIT_PUBLICATION_PREPARED"
+      "result": "PASS_SINGLE_COMMIT_REMOTE_PUBLICATION_AND_BLOB_READBACK_3_OF_3"
     }
   ],
   "boundaries": {
@@ -80,11 +82,12 @@
   },
   "blockers": [],
   "remote": {
-    "publication_status": "PENDING_COMMIT_TREE_BINDING",
-    "head": "PENDING",
-    "changed_files": 3,
-    "required_blob_readback": "PENDING"
+    "comparison_from_start_before_terminal_finalize": "AHEAD_BY_1_BEHIND_BY_0",
+    "changed_file_count": 3,
+    "all_changed_files_under_owned_root": true,
+    "required_blob_readback": "PASS_3_OF_3",
+    "publication_status": "PASS"
   },
-  "final_status": "C4_AI_YOLLA_PANEL_PC_ENVIRONMENT_CARD_WAVE3_PASS_PENDING_REMOTE_READBACK",
-  "terminal": "C4_AI_YOLLA_PANEL_PC_ENVIRONMENT_CARD_WAVE3_PASS_PENDING_REMOTE_READBACK"
+  "final_status": "PASS",
+  "terminal": "C4_AI_YOLLA_PANEL_PC_ENVIRONMENT_CARD_WAVE3_PASS"
 }
