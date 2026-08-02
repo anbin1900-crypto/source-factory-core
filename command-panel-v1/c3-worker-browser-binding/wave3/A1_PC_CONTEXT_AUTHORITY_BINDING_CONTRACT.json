@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "contract_id": "C3_AI_YOLLA_WORKSPACE_PC_CONTEXT_WAVE3_CONTRACT_V1",
+  "platform_id": "AI_YOLLA",
+  "component_id": "AI_YOLLA_WORKSPACE",
+  "runtime_boundary_component_id": "AI_YOLLA_RUNTIME",
+  "binding_chain": [
+    "role_id",
+    "workspace_window_id",
+    "browser_session_id",
+    "workspace_service_session_id",
+    "service_id",
+    "domain_pack_id",
+    "context_snapshot_id"
+  ],
+  "read_only_context_fields": [
+    "runtime_environment_authority",
+    "runtime_acceptance_run",
+    "runtime_version",
+    "context_snapshot_id",
+    "context_published_at_kst",
+    "context_freshness",
+    "project_root_summary",
+    "repository_state_summary",
+    "entrypoint_summary",
+    "tool_availability_summary"
+  ],
+  "authority": {
+    "a1_control_pr": 142,
+    "target_pc_accepted_comment": 5153045063,
+    "resident_monitoring_comment": 5155863538,
+    "runtime_acceptance_terminal": "A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED",
+    "runtime_acceptance_run": "PCAR-20260801T191841746Z-d81c8a2f6778",
+    "runtime_version": "1.0.0-20260802",
+    "machine_id": "YOLLA-A1-PC01",
+    "environment_branch": "pc-ledger/a1-resident-monitoring-v1",
+    "environment_snapshot_id": "20260802100335Z",
+    "environment_sha256": "b1af97e3941c87f893c0c337d08725554bb1725d45b75ba7ebd51f0a0d41c8c5",
+    "environment_pointer_blob": "64e8d9a6ac3d087a2a7d3d9e356850b428892096",
+    "environment_file_blob": "e30c886585948425c46d4206483602f7998945bb"
+  },
+  "rules": {
+    "same_snapshot_for_all_role_services": true,
+    "context_read_only": true,
+    "max_context_age_minutes": 30,
+    "future_clock_skew_minutes": 5,
+    "older_wave": "REJECT_STALE_WAVE",
+    "same_wave_different_snapshot": "REJECT_CONTEXT_SNAPSHOT_MIX",
+    "missing_runtime_acceptance": "MISSING_RUNTIME_ACCEPTANCE_REJECT",
+    "sensitive_value": "SENSITIVE_VALUE_REJECT",
+    "execution_authorized": false
+  },
+  "sensitive_values_forbidden": [
+    "credentials",
+    "tokens",
+    "general_environment_variable_values",
+    "browser_data",
+    "ssh_private_keys",
+    "source_file_contents",
+    "original_personal_file_contents"
+  ]
+}
