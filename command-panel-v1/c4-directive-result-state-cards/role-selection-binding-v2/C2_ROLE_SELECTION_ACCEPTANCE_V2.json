@@ -1,0 +1,35 @@
+{
+  "schema_version": "C2_ROLE_SELECTION_ACCEPTANCE_V2",
+  "directive_id": "C1-TO-C4-ROLE-SELECTED-CARD-BINDING-V2-20260802-001",
+  "accepted": true,
+  "c2_authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "pull_request": 10,
+    "branch": "command-panel/c2-role-registry-menu-v1",
+    "head": "4327e06343cebd28273168cfaffdb2eda7d98222",
+    "role_registry_fixture": {
+      "path": "command-panel-v1/c2-role-registry-menu/ROLE_REGISTRY_FIXTURE.json",
+      "blob": "ef50d074fba002d9be6434fc4c2619045ef52715"
+    },
+    "role_registry_source": {
+      "path": "command-panel-v1/c2-role-registry-menu/roleRegistry.js",
+      "blob": "ce4ba836fea040dcdc9d603110372cd5c5519e8c"
+    },
+    "final_report": {
+      "path": "command-panel-v1/c2-role-registry-menu/C2_FINAL_REPORT.json",
+      "blob": "d03f80bfd5913e87da47aa07ba693e69d1cc32ff",
+      "final_status": "C2_ROLE_REGISTRY_LEFT_MENU_PASS"
+    }
+  },
+  "c4_parent_card_authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "branch": "command-panel/c4-directive-result-state-cards-v1",
+    "head": "af6e56ec11104f70e03891812e9237f5937a0fc9",
+    "renderer_path": "command-panel-v1/c4-directive-result-state-cards/directiveResultStateCards.js",
+    "renderer_blob": "82a14c89f0d4f0ce2db55ea6da35cb00d23f846a",
+    "terminal": "C4_DIRECTIVE_RESULT_PC_STATE_CARDS_PASS"
+  },
+  "consumption_mode": "EXACT_HEAD_BLOB_ADAPTER_NO_C2_SOURCE_COPY",
+  "required_role_ids": ["A-2", "B-1", "C-1"],
+  "accepted_at": "2026-08-02T15:00:00+09:00"
+}
