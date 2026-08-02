@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "C6_AI_YOLLA_WAVE3_PC_ENVIRONMENT_E2E_FIXTURE_V1",
+  "platform_id": "AI_YOLLA",
+  "runtime_environment_id": "AI_YOLLA_RUNTIME_ENVIRONMENT",
+  "runtime_authority": {
+    "a1_control_pr": 142,
+    "target_pc_accepted_comment": 5153045063,
+    "target_pc_terminal": "A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED",
+    "resident_monitoring_comment": 5155863538,
+    "canonical_runtime_root": "D:\\YOLLA_PC_BRIDGE",
+    "runtime_version": "1.0.0-20260802",
+    "manager_hotfix_version": "1.0.1-manager-status",
+    "acceptance_run": "PCAR-20260801T191841746Z-d81c8a2f6778",
+    "target_pc_accepted": true,
+    "runtime_health_status": "HEALTHY",
+    "task_registered": true,
+    "supervisor_process_count": 1,
+    "worker_process_count": 1,
+    "controlled_request": "PASS",
+    "duplicate_execution_count": 0,
+    "worker_crash_recovery": "PASS",
+    "full_runtime_restart": "PASS",
+    "result_persistence": "PASS"
+  },
+  "pc_context": {
+    "machine_id": "YOLLA-A1-PC01",
+    "snapshot_id": "20260802100335Z",
+    "captured_at_iso": "2026-08-02T19:03:35.129045+09:00",
+    "freshness": "FRESH",
+    "maximum_age_minutes": 480,
+    "runtime_version": "1.0.0-20260802",
+    "runtime_health_status": "HEALTHY",
+    "environment_sha256": "b1af97e3941c87f893c0c337d08725554bb1725d45b75ba7ebd51f0a0d41c8c5",
+    "environment_pointer_blob": "64e8d9a6ac3d087a2a7d3d9e356850b428892096",
+    "privacy_boundary": {
+      "credentials_collected": false,
+      "tokens_collected": false,
+      "browser_data_collected": false,
+      "ssh_private_keys_collected": false,
+      "environment_variable_values_collected": false,
+      "secret_values_published": false
+    }
+  },
+  "observed_at_kst": "2026-08-02 22:33 KST",
+  "services": [
+    {
+      "service_id": "YOLLA_REAL_ESTATE_PRO_AI",
+      "domain_pack_id": "REAL_ESTATE",
+      "official_name_ko": "욜라 부동산 전문 AI",
+      "workspace_window_id": "workspace-real-estate",
+      "browser_session_id": "persist:ai-yolla-real-estate"
+    },
+    {
+      "service_id": "YOLLA_GAS_STATION_PRO_AI",
+      "domain_pack_id": "GAS_STATION_PETROLEUM",
+      "official_name_ko": "욜라 주유소 전문 AI",
+      "workspace_window_id": "workspace-gas-station",
+      "browser_session_id": "persist:ai-yolla-gas-station"
+    },
+    {
+      "service_id": "YOLLA_HAZARDOUS_MATERIALS_PRO_AI",
+      "domain_pack_id": "HAZARDOUS_MATERIALS_FIRE_SAFETY",
+      "official_name_ko": "욜라 위험물 전문 AI",
+      "workspace_window_id": "workspace-hazmat",
+      "browser_session_id": "persist:ai-yolla-hazmat"
+    }
+  ],
+  "admission_prompt": {
+    "role_id": "C-6",
+    "directive_id": "C1-TO-C6-AI-YOLLA-PC-ENVIRONMENT-E2E-WAVE3-V1-20260802-001",
+    "wave_id": "WAVE_3",
+    "directive_registered_at_kst": "2026-08-02 19:06 KST",
+    "duplicate_prompt_key": "f2787ffbf3ecf677e0f1c4fd32c1c25c6104e0fa03aca39914ea899884b0989c",
+    "platform_id": "AI_YOLLA",
+    "service_id": "AUTOMATION",
+    "domain_pack_id": "COMMAND_PANEL_CORE",
+    "payload": {
+      "job_type": "PC_ENVIRONMENT_E2E_PLAN",
+      "plan_only": true,
+      "actual_pc_dispatch": false,
+      "actual_panel_apply": false,
+      "production": false
+    }
+  },
+  "ledger": [
+    {
+      "role_id": "C-6",
+      "directive_id": "C1-TO-C6-AI-YOLLA-WAVE2-INTEGRATION-E2E-V1-20260802-001",
+      "wave_id": "WAVE_2",
+      "duplicate_prompt_key": "8c98081910f1bdb5a1017e3e9797a3084ac4aef06ffe3f27c11e4e9ea64a929b",
+      "result_accepted": true,
+      "result_comment": 5157237882
+    }
+  ]
+}
