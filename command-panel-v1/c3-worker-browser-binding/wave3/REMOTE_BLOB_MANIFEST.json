@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "C3_AI_YOLLA_WORKSPACE_PC_CONTEXT_WAVE3_REMOTE_BLOBS",
+  "directive_id": "C1-TO-C3-AI-YOLLA-PC-CONTEXT-WORKSPACE-WAVE3-V1-20260802-001",
+  "wave_id": "WAVE_3",
+  "member_count": 7,
+  "members": [
+    {
+      "path": "aiYollaWorkspacePcContextAdapter.js",
+      "git_blob_sha": "76252b1c83cd4beadd4ca86066acb6443f23c66d"
+    },
+    {
+      "path": "tests/testAiYollaWorkspacePcContextAdapter.js",
+      "git_blob_sha": "d4d296448fbe371c8feb267e56fa534ee8056172"
+    },
+    {
+      "path": "A1_PC_CONTEXT_AUTHORITY_BINDING_CONTRACT.json",
+      "git_blob_sha": "24dfcaa99b812cea752ee80bcb7281065160d175"
+    },
+    {
+      "path": "A1_PC_CONTEXT_FIXTURE.json",
+      "git_blob_sha": "6b8de26785f52b2f1f7c8f012ac2001585af5b51"
+    },
+    {
+      "path": "WAVE3_TEST_RESULTS.json",
+      "git_blob_sha": "2fbd27ca9a4b39d6a23b6f823032c98969aa57de"
+    },
+    {
+      "path": "C3_WAVE3_FINAL_REPORT.json",
+      "git_blob_sha": "8b0f7a4c3bb51c049a2fc140856f3d572b6df771"
+    },
+    {
+      "path": "events/C3_AI_YOLLA_WORKSPACE_PC_CONTEXT_WAVE3_PASS.json",
+      "git_blob_sha": "a148c048a841787b57cf9a960af5efbd2ba050d3"
+    }
+  ],
+  "a1_authority": {
+    "environment_pointer_blob": "64e8d9a6ac3d087a2a7d3d9e356850b428892096",
+    "environment_file_blob": "e30c886585948425c46d4206483602f7998945bb",
+    "environment_sha256": "b1af97e3941c87f893c0c337d08725554bb1725d45b75ba7ebd51f0a0d41c8c5"
+  }
+}

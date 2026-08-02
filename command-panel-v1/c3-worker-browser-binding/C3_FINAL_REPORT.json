@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "worker": "C-3",
+  "assignment_pointer_comment": 5155840914,
+  "c1_cycle_review_comment": 5155853359,
+  "parent_directive_id": "MASTER-TO-C1-EXISTING-SOURCE-FACTORY-WORKER-BROWSER-COMMAND-PANEL-V1-20260802-001",
+  "parent_directive_comment": 5154763830,
+  "previous_cycle_response_missing": true,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "branch": "command-panel/c3-worker-browser-binding-v1",
+  "base_branch": "integration/source-factory-pc-agent-api-db-v1",
+  "base_head": "69311de6c51e609df3080d8f316d98e4f381adc6",
+  "implemented": [
+    "role_id_to_worker_window_id_to_browser_session_id_binding",
+    "reuse_existing_role_binding",
+    "reuse_unbound_existing_window",
+    "call_existing_runtime_factory_when_window_missing",
+    "distinct_window_and_session_role_switch",
+    "cross_role_context_sanitization",
+    "destroyed_window_fail_closed_rebind",
+    "collision_detection_for_window_and_session"
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "result": "FAIL_14_OF_15",
+      "failure": "DUPLICATE_RUNTIME_SESSION_WAS_SKIPPED_AND_NEW_WINDOW_CREATED",
+      "correction": "scan all live runtime windows and fail closed on duplicate window or session identity"
+    },
+    {
+      "attempt": 2,
+      "result": "FAIL_14_OF_15",
+      "failure": "NEGATIVE_TEST_EXPECTED_LATE_FAILURE_AFTER_FAIL_CLOSED_BOUNDARY_MOVED_EARLIER",
+      "correction": "assert the earliest fail-closed boundary"
+    },
+    {"attempt": 3, "result": "PASS_15_OF_15", "scope": "adapter unit tests"},
+    {"attempt": 4, "result": "PASS_10_OF_10", "scope": "Safe Panel runtime bridge integration tests"}
+  ],
+  "validation": {
+    "adapter_tests": "PASS_15_OF_15",
+    "runtime_bridge_tests": "PASS_10_OF_10",
+    "total_tests": "PASS_25_OF_25",
+    "node_syntax": "PASS_4_OF_4",
+    "json_parse": "PASS",
+    "existing_runtime_blob_readback": "PASS_2_OF_2",
+    "existing_source_mutation_count": 0,
+    "new_browser_runtime_count": 0,
+    "new_ipc_transport_count": 0
+  },
+  "existing_runtime_mutation": false,
+  "new_browser_runtime": false,
+  "new_ipc_transport": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "ci_status": "NOT_RUN_NOT_CLAIMED_PASS",
+  "exact_external_blocker": null,
+  "final_status": "C3_EXISTING_WORKER_BROWSER_BINDING_PASS",
+  "recorded_at": "2026-08-02T15:30:00+09:00"
+}

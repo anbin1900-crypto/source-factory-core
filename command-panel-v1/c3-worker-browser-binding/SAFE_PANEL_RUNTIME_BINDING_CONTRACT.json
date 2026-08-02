@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "contract_id": "C3_SAFE_PANEL_WORKER_BROWSER_BINDING_CONTRACT_V1",
+  "binding_chain": ["role_id", "worker_window_id", "browser_session_id"],
+  "existing_runtime_dependencies": [
+    "terminalWindows Map",
+    "getTerminalKey(role, slot)",
+    "createTerminal(role, slot, url, projectHomeUrl)",
+    "BrowserWindow.id",
+    "__sfSafeRole",
+    "__sfSafeSlot",
+    "__sfSafePartition",
+    "BrowserWindow.focus()",
+    "BrowserWindow.moveTop()"
+  ],
+  "selection_order": [
+    "reuse live exact role binding",
+    "reuse unbound existing worker window",
+    "call existing createTerminal factory"
+  ],
+  "isolation_rules": [
+    "one role per worker_window_id",
+    "one role per browser_session_id",
+    "role switch activates the target role's distinct window and session",
+    "input/result/prompt/message/cookie/token/secret fields are not attached across roles",
+    "duplicate runtime window or session identity fails closed"
+  ],
+  "new_browser_runtime": false,
+  "new_ipc_transport": false,
+  "existing_source_mutation": false,
+  "integration_owner": "C-6_OR_C-1_FINAL_INTEGRATOR"
+}

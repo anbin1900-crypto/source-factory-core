@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "worker": "C-3",
+  "attempt": "independent_git_clone_and_remote_test_rerun",
+  "result": "BLOCKED_NON_TERMINAL",
+  "failure_signature": "COULD_NOT_RESOLVE_HOST_GITHUB_COM",
+  "impact": "no impact on GitHub Connector readback or task completion",
+  "fallback": "GitHub Connector exact branch head, file blob and compare readback",
+  "ci_pass_claimed": false,
+  "terminal_blocker": false
+}

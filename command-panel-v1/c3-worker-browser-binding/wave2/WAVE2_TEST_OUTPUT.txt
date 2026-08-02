@@ -1,0 +1,23 @@
+PASS directive duplicate key matches published key
+PASS exact three service registry
+PASS configures all services on one existing workspace
+PASS all contexts include canonical platform component and directive
+PASS logical service sessions are unique while electron session is reused
+PASS switch service reuses window but isolates logical session and domain
+PASS cross domain result lookup does not leak
+PASS result receipt rejects mismatched domain
+PASS duplicate prompt is rejected
+PASS stale wave is rejected after wave two
+PASS missing wave fails closed
+PASS missing registration time fails closed
+PASS mismatched duplicate hash fails closed
+PASS unknown service fails closed
+PASS payload keys are rejected from directive envelope
+PASS payload keys are rejected from result receipt
+PASS runtime request targets AI YOLLA runtime without authorizing execution
+PASS exactly three services required
+PASS duplicate service id rejected
+PASS active context changes only for selected role
+PASS role sessions remain isolated across two roles
+PASS newer wave replaces latest wave authority
+RESULT 22/22 PASS

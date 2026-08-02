@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "directive_id": "C1-TO-C3-AI-YOLLA-PC-CONTEXT-WORKSPACE-WAVE3-V1-20260802-001",
+  "wave_id": "WAVE_3",
+  "directive_registered_at_kst": "2026-08-02 19:06 KST",
+  "duplicate_prompt_key": "fbb98d3e99c71968c7caa539c9e2956ce8dfe543dfe34412fba19a50c4eb102f",
+  "runtime_acceptance": {
+    "terminal": "A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED",
+    "acceptance_run": "PCAR-20260801T191841746Z-d81c8a2f6778",
+    "runtime_version": "1.0.0-20260802",
+    "manager_hotfix_version": "1.0.1-manager-status",
+    "machine_id": "YOLLA-A1-PC01"
+  },
+  "pc_context": {
+    "runtime_environment_authority": "A1_PC_DEVELOPMENT_ENVIRONMENT_AUTHORITY",
+    "environment_status": "A1_PC_DEVELOPMENT_ENVIRONMENT_PUBLISHED",
+    "machine_id": "YOLLA-A1-PC01",
+    "context_snapshot_id": "20260802100335Z",
+    "context_published_at_kst": "2026-08-02T19:03:35.129045+09:00",
+    "context_age_seconds_at_directive": 144.870955,
+    "context_freshness": "FRESH",
+    "environment_sha256": "b1af97e3941c87f893c0c337d08725554bb1725d45b75ba7ebd51f0a0d41c8c5",
+    "environment_pointer_blob": "64e8d9a6ac3d087a2a7d3d9e356850b428892096",
+    "source_branch": "pc-ledger/a1-resident-monitoring-v1",
+    "canonical_runtime_root_class": "A1_PC_AGENT_RUNTIME_ROOT",
+    "project_root_summary": {
+      "workspace_root_class": "SOURCE_FACTORY_WORKSPACE",
+      "source_root_count": 22,
+      "active_core_root_count": 2,
+      "reusable_core_root_count": 2,
+      "safe_panel_runtime_root_count": 3
+    },
+    "repository_state_summary": {
+      "repository_count": 2,
+      "clean_repository_count": 2,
+      "dirty_repository_count": 0,
+      "heads": [
+        "6db6667989e2c882ffdc7da416283828e6b4f619",
+        "6a0984114d43d73524e4cf2bc1929ac78295939a"
+      ]
+    },
+    "entrypoint_summary": {
+      "a1_pc_agent_executable_accepted": true,
+      "source_factory_safe_panel_runtime_count": 3,
+      "resident_monitor_interval_minutes": 30,
+      "scheduled_task_count": 7
+    },
+    "tool_availability_summary": {
+      "git": "2.54.0.windows.1",
+      "github_cli": "2.96.0",
+      "node": "24.18.0",
+      "npm": "11.16.0",
+      "docker": "29.6.2",
+      "rclone": "1.75.0",
+      "dotnet": "8.0.423",
+      "vscode": "1.131.0",
+      "java": "NOT_FOUND",
+      "python": "3.13.14",
+      "powershell_core": "7.6.4",
+      "windows_powershell": "5.1.26100.8875"
+    },
+    "privacy_boundary": {
+      "credentials_collected": false,
+      "tokens_collected": false,
+      "browser_data_collected": false,
+      "ssh_private_keys_collected": false,
+      "general_environment_variable_values_collected": false,
+      "source_file_contents_collected": false,
+      "secret_values_published": false
+    }
+  }
+}

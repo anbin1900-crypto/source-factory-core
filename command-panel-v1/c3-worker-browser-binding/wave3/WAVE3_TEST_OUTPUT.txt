@@ -1,0 +1,27 @@
+PASS published duplicate key matches canonical input
+PASS binds one A1 snapshot to all three service sessions
+PASS context is fresh at directive registration
+PASS read-only summaries are attached
+PASS runtime acceptance terminal is required
+PASS runtime acceptance run is required
+PASS runtime version is required
+PASS runtime and snapshot machine must match
+PASS unpublished context is rejected
+PASS secret publication flag is rejected
+PASS credential value is rejected
+PASS environment variable values are rejected
+PASS browser data is rejected
+PASS stale context older than thirty minutes is rejected
+PASS future context beyond clock skew is rejected
+PASS missing context time is rejected
+PASS duplicate prompt is rejected
+PASS duplicate key mismatch is rejected
+PASS same wave cannot mix another snapshot
+PASS older wave is rejected after Wave 3
+PASS newer wave may bind a newer snapshot
+PASS cross-role contexts remain isolated
+PASS result receipt rejects another context snapshot
+PASS result receipts do not leak across services
+PASS runtime boundary request is read only and non executing
+PASS workspace output contains summaries but no sensitive payload values
+RESULT 26/26 PASS
