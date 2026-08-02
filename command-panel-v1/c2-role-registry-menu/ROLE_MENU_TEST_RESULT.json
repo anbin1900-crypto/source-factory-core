@@ -1,0 +1,56 @@
+{
+  "test_result_id": "C2_ROLE_MENU_TEST_RESULT_V1_20260802",
+  "directive_id": "C1-TO-C2-ROLE-REGISTRY-LEFT-MENU-V1-20260802-001",
+  "status": "PASS",
+  "checks": {
+    "ROLE_REGISTRY_SCHEMA": "PASS",
+    "LEFT_ROLE_MENU": "PASS",
+    "DYNAMIC_ROLE_APPEND": "PASS",
+    "GROUP_COLLAPSE_EXPAND": "PASS",
+    "STATUS_BADGE": "PASS",
+    "CURRENT_ROLE_INDICATOR": "PASS",
+    "NEW_BROWSER_RUNTIME_COUNT": 0,
+    "NEW_IPC_HANDLER_COUNT": 0,
+    "NEW_PROMPT_TRANSPORT_COUNT": 0,
+    "OUT_OF_SCOPE_FILES": 0
+  },
+  "schema_validation": {
+    "status": "PASS",
+    "schema": "ROLE_REGISTRY_SCHEMA.json",
+    "fixture": "ROLE_REGISTRY_FIXTURE.json",
+    "group_count": 6,
+    "role_count": 22
+  },
+  "node_tests": {
+    "tests": 9,
+    "pass": 9,
+    "fail": 0
+  },
+  "registered_groups": 6,
+  "registered_roles": 22,
+  "dynamic_append_role": "D-1",
+  "source_sha256": {
+    "ROLE_REGISTRY_SCHEMA.json": "7c6454b770ca3cf98553855772e63efb32c3e03afe4d4b43a1f17d91bef2a040",
+    "ROLE_REGISTRY_FIXTURE.json": "0112edc38dabd3facd0da057172c50787723760576f90fdbd625c47bf1c30b75",
+    "roleRegistry.js": "97615ea40123d4a2fe4ae532d350e497084cd7a03f34b07931062631363ce3bc",
+    "leftRoleMenuGenerator.js": "c74b1caec330f91fc7b98841f04670f5ff7df60b1ed20973ac7df2637f8a3780",
+    "testRoleRegistryMenu.js": "5c127e3d91ebef56d37d5116a281dd0782541662a9e196c05d4c5487e807afa6",
+    "validateRoleRegistrySchema.py": "ef51c4f95988e71236053c6e50f916816cc6c3d08f4566608c73a77ce3e23f8d",
+    "README.md": "5450bcf154b0351314d6240ed5afa1d851ab640dac39c2f8f8228deb98990b44"
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "result": "FAIL_5_OF_10",
+      "cause": "active fixture roles lacked exact evidence pointers",
+      "correction": "added exact known pointers or reclassified unknown live states to IDLE"
+    },
+    {
+      "attempt": 2,
+      "result": "PASS_9_OF_9"
+    }
+  ],
+  "production": false,
+  "ready": false,
+  "merge": false
+}

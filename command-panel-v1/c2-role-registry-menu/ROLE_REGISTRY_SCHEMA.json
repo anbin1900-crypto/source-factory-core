@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "yolla://command-panel/role-registry/v1",
+  "title": "YOLLA Command Panel Role Registry V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "registry_id",
+    "contract_binding",
+    "groups",
+    "roles"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "registry_id": {"type": "string", "minLength": 1},
+    "contract_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authority", "source_comment", "minimum_fields", "status_values"],
+      "properties": {
+        "authority": {"const": "A2_ROLE_CONTRACT_COMPATIBLE"},
+        "source_comment": {"type": "integer", "minimum": 1},
+        "minimum_fields": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 14,
+          "uniqueItems": true
+        },
+        "status_values": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/status"},
+          "minItems": 11,
+          "uniqueItems": true
+        }
+      }
+    },
+    "groups": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/group"}
+    },
+    "roles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/role"}
+    }
+  },
+  "$defs": {
+    "status": {
+      "enum": [
+        "IDLE",
+        "DIRECTIVE_LOOKUP",
+        "DIRECTIVE_READY",
+        "DISPATCHING",
+        "RUNNING",
+        "RESULT_WAITING",
+        "COMPLETED",
+        "BLOCKED",
+        "FAILED",
+        "RETRYING",
+        "OFFLINE"
+      ]
+    },
+    "pointer": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "pr_number",
+        "comment_id",
+        "directive_id",
+        "cycle_id",
+        "assignment_id",
+        "source_time",
+        "selection_reason"
+      ],
+      "properties": {
+        "repository": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+        "pr_number": {"type": "integer", "minimum": 1},
+        "comment_id": {"type": ["integer", "null"], "minimum": 1},
+        "directive_id": {"type": ["string", "null"]},
+        "cycle_id": {"type": ["string", "null"]},
+        "assignment_id": {"type": ["string", "null"]},
+        "source_time": {"type": "string", "format": "date-time"},
+        "selection_reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["group_id", "group_name", "order", "collapsible", "default_expanded"],
+      "properties": {
+        "group_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*$"},
+        "group_name": {"type": "string", "minLength": 1},
+        "order": {"type": "integer", "minimum": 0},
+        "collapsible": {"type": "boolean"},
+        "default_expanded": {"type": "boolean"}
+      }
+    },
+    "role": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role_id",
+        "role_name",
+        "group_id",
+        "role_type",
+        "commander_id",
+        "worker_window_id",
+        "browser_session_id",
+        "authority_repository",
+        "authority_pr",
+        "current_cycle_id",
+        "current_assignment_id",
+        "current_status",
+        "latest_directive_pointer",
+        "latest_result_pointer",
+        "last_event_at",
+        "order"
+      ],
+      "properties": {
+        "role_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_-]*$"},
+        "role_name": {"type": "string", "minLength": 1},
+        "group_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*$"},
+        "role_type": {
+          "enum": ["SUPREME_COMMANDER", "GROUP_COMMANDER", "WORKER", "GROUP"]
+        },
+        "commander_id": {"type": ["string", "null"]},
+        "worker_window_id": {"type": "string", "minLength": 1},
+        "browser_session_id": {"type": ["string", "null"]},
+        "authority_repository": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+        "authority_pr": {"type": "integer", "minimum": 1},
+        "current_cycle_id": {"type": ["string", "null"]},
+        "current_assignment_id": {"type": ["string", "null"]},
+        "current_status": {"$ref": "#/$defs/status"},
+        "latest_directive_pointer": {"$ref": "#/$defs/pointer"},
+        "latest_result_pointer": {"$ref": "#/$defs/pointer"},
+        "last_event_at": {"type": "string", "format": "date-time"},
+        "order": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}
