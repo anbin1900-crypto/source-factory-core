@@ -1,0 +1,22 @@
+{
+  "actual_panel_apply_count": 0,
+  "actual_pc_dispatch_count": 0,
+  "common_core_source_clone_count": 0,
+  "cross_service_result_leak_count": 0,
+  "input_matrix": {"checks":{"a1_runtime_read_only":true,"accepted_inputs_4":true,"all_heads_sha40":true,"all_terminals_pass":true,"virtual_pass_zero":true,"workers_4_of_4":true},"pass":true},
+  "panel_restart_recovery": "PASS",
+  "production_connection_count": 0,
+  "rollback_blob_parity": "PASS",
+  "runtime_dispatch_contract_calls": 3,
+  "schema_version": "C6_AI_YOLLA_WAVE2_E2E_RECEIPT_V1",
+  "service_browser_runtime_clone_count": 0,
+  "service_prompt_transport_clone_count": 0,
+  "service_results": [
+    {"decision":"ACCEPT","dispatched":true,"service_id":"YOLLA_REAL_ESTATE_PRO_AI","result":{"domain_pack_id":"REAL_ESTATE","result_digest":"8c73d27e03d3210e4cd9dad30fa521417e15330a6175364dea2bf822397e7cf0","result_published_at_kst":"2026-08-02 19:25 KST","runtime_receipt":{"dispatch_index":1,"dispatch_mode":"EXACT_CONTRACT_FIXTURE_ONLY","request_digest":"bf9cb5a6680b17e4b39da7f8184c5968bdf14ddf9f75d5cc26a677ba76c235da","runtime_version":"1.0.0-20260802","status":"COMPLETED_FIXTURE"},"service_id":"YOLLA_REAL_ESTATE_PRO_AI","wave_id":"WAVE_2","workspace_service_session_id":"browser-session-role-1::YOLLA_REAL_ESTATE_PRO_AI::WAVE_2"}},
+    {"decision":"ACCEPT","dispatched":true,"service_id":"YOLLA_GAS_STATION_PRO_AI","result":{"domain_pack_id":"GAS_STATION_PETROLEUM","result_digest":"6bdef4fb00061d1e219684d2874f691166e2b00854e6b8ccc085601d3ecd4064","result_published_at_kst":"2026-08-02 19:25 KST","runtime_receipt":{"dispatch_index":2,"dispatch_mode":"EXACT_CONTRACT_FIXTURE_ONLY","request_digest":"24cf84060ed91dd539cfe378b592bd1494609b289371515504b8b8ee50f93f19","runtime_version":"1.0.0-20260802","status":"COMPLETED_FIXTURE"},"service_id":"YOLLA_GAS_STATION_PRO_AI","wave_id":"WAVE_2","workspace_service_session_id":"browser-session-role-2::YOLLA_GAS_STATION_PRO_AI::WAVE_2"}},
+    {"decision":"ACCEPT","dispatched":true,"service_id":"YOLLA_HAZARDOUS_MATERIALS_PRO_AI","result":{"domain_pack_id":"HAZARDOUS_MATERIALS_FIRE_SAFETY","result_digest":"1a6322efe456cdcd1c99a6c3c1fc2d9d904bd9072dbcdece94e2c576a0da0d10","result_published_at_kst":"2026-08-02 19:25 KST","runtime_receipt":{"dispatch_index":3,"dispatch_mode":"EXACT_CONTRACT_FIXTURE_ONLY","request_digest":"b79fc52ba314504849241dc91845ad78d24f816e224b267204759c6a0824da6b","runtime_version":"1.0.0-20260802","status":"COMPLETED_FIXTURE"},"service_id":"YOLLA_HAZARDOUS_MATERIALS_PRO_AI","wave_id":"WAVE_2","workspace_service_session_id":"browser-session-role-3::YOLLA_HAZARDOUS_MATERIALS_PRO_AI::WAVE_2"}}
+  ],
+  "terminal": "C6_AI_YOLLA_WAVE2_INTEGRATION_E2E_PASS",
+  "three_service_e2e": "PASS_3_OF_3",
+  "workspace_session_isolation": "PASS"
+}
