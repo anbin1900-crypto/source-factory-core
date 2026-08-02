@@ -1,0 +1,78 @@
+{
+  "schema_version": "C6_COMMAND_PANEL_INTEGRATION_ORDER_V2",
+  "directive_id": "C1-TO-C6-COMMAND-PANEL-PARTIAL-INTEGRATION-PREFLIGHT-V2-20260802-001",
+  "mode": "PLAN_ONLY_NO_EXISTING_PANEL_SOURCE_MUTATION",
+  "base_authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "head": "69311de6c51e609df3080d8f316d98e4f381adc6",
+    "panel_root": "releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10",
+    "files": {
+      "safe_panel_main.js": "5f0be26ed160b17002ca48ecc06d58183343cbc8",
+      "safe_panel_preload.js": "bd42f34df35edee59c8e38ac681ae77d61ad365b",
+      "safe_panel_renderer.js": "8e9b67efa92b0bd5e1ccecd006ff12469361023f",
+      "safe_panel.html": "ef6cea6e5b5418729935cf3ec32dae3e8383a9b9",
+      "safe_panel.css": "f761395a4b7723c1e91103375c506f17312ca13c"
+    }
+  },
+  "mount_points": [
+    {
+      "order": 1,
+      "target": "releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10/safe_panel.html",
+      "target_blob": "ef6cea6e5b5418729935cf3ec32dae3e8383a9b9",
+      "mount_id": "sf-command-panel-role-menu",
+      "location_rule": "INSIDE_MAIN_LAYOUT_BEFORE_EXISTING_LAUNCH_CARD",
+      "input": "C2 leftRoleMenuGenerator output",
+      "apply_now": false
+    },
+    {
+      "order": 2,
+      "target": "releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10/safe_panel_renderer.js",
+      "target_blob": "8e9b67efa92b0bd5e1ccecd006ff12469361023f",
+      "mount_id": "sf-command-panel-role-selection-adapter",
+      "location_rule": "AFTER_EXISTING_SAFE_PANEL_API_BINDING_AND_BEFORE_EVENT_LISTENER_REGISTRATION",
+      "input": "C2 roleRegistry + exact role selection context",
+      "apply_now": false
+    },
+    {
+      "order": 3,
+      "target": "releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10/safe_panel_renderer.js",
+      "target_blob": "8e9b67efa92b0bd5e1ccecd006ff12469361023f",
+      "mount_id": "sf-command-panel-directive-result-cards",
+      "location_rule": "AFTER_ROLE_SELECTION_ADAPTER",
+      "input": "C4 directiveResultStateCards renderer",
+      "apply_now": false
+    },
+    {
+      "order": 4,
+      "target": "releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10/safe_panel.css",
+      "target_blob": "f761395a4b7723c1e91103375c506f17312ca13c",
+      "mount_id": "sf-command-panel-style-boundary",
+      "location_rule": "APPEND_NAMESPACED_COMMAND_PANEL_CLASSES_ONLY",
+      "input": "C2 menu + C4 card classes",
+      "apply_now": false
+    }
+  ],
+  "integration_sequence": [
+    "VERIFY_EXACT_BASE_HEAD_AND_PANEL_BLOBS",
+    "CREATE_BYTE_EXACT_BACKUP_SET",
+    "MATERIALIZE_C2_ROLE_REGISTRY_AND_MENU_AS_ADAPTER_INPUT",
+    "MATERIALIZE_C3_BROWSER_BINDING_ONLY_AFTER_EXACT_TERMINAL",
+    "BIND_C2_SELECTION_CONTEXT_TO_C4_CARD_INPUT",
+    "MATERIALIZE_C5_FLOW_CONTROLS_ONLY_AFTER_EXACT_TERMINAL",
+    "GENERATE_PATCH_WITH_TARGET_BLOB_PRECONDITIONS",
+    "NODE_SYNTAX_AND_STATIC_CONTRACT_VALIDATION",
+    "ISOLATED_PANEL_LAUNCH_AND_UI_FIXTURE_CHECK",
+    "PANEL_RESTART_STATE_POINTER_RECOVERY",
+    "ROLLBACK_TO_BYTE_EXACT_BACKUP",
+    "VERIFY_ROLLBACK_BLOB_PARITY"
+  ],
+  "role_e2e_scenarios": [
+    "A-2_MENU_TO_EXISTING_BROWSER_WINDOW_TO_EXACT_DIRECTIVE_TO_DISPATCH_TO_RESULT_CARD",
+    "B-1_MENU_TO_EXISTING_BROWSER_WINDOW_TO_EXACT_DIRECTIVE_TO_DISPATCH_TO_RESULT_CARD",
+    "C-1_MENU_TO_EXISTING_BROWSER_WINDOW_TO_EXACT_DIRECTIVE_TO_DISPATCH_TO_RESULT_CARD"
+  ],
+  "new_electron_app": false,
+  "new_browser_runtime": false,
+  "new_prompt_transport": false,
+  "existing_panel_source_modified_this_cycle": false
+}
