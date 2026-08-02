@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yolla:panel:service-registry:wave2:v1",
+  "title": "AI YOLLA Panel Service Registry Wave 2 V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "registry_id",
+    "platform",
+    "wave_metadata",
+    "policies",
+    "components",
+    "services"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "registry_id": {"const": "AI_YOLLA_PANEL_SERVICE_REGISTRY_WAVE2_V1"},
+    "platform": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["platform_id", "official_name_ko", "common_core_id", "source_clone_per_service"],
+      "properties": {
+        "platform_id": {"const": "AI_YOLLA"},
+        "official_name_ko": {"const": "AI욜라"},
+        "common_core_id": {"const": "AI_YOLLA_COMMON_CORE"},
+        "source_clone_per_service": {"const": false}
+      }
+    },
+    "wave_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["wave_id", "directive_id", "directive_registered_at_kst", "duplicate_prompt_key", "authority_pr", "authority_comment", "execution_gate"],
+      "properties": {
+        "wave_id": {"const": "WAVE_2"},
+        "directive_id": {"const": "C1-TO-C2-AI-YOLLA-PANEL-SERVICE-REGISTRY-WAVE2-V1-20260802-001"},
+        "directive_registered_at_kst": {"const": "2026-08-02 18:03 KST"},
+        "duplicate_prompt_key": {"const": "970a9e2b3903e55d15ba5dbd8f06fa33758b4d294e72e835c86f0fe74c5b68de"},
+        "authority_pr": {"const": 168},
+        "authority_comment": {"const": 5156763807},
+        "execution_gate": {"const": "C2_WAVE1_CLOSURE_RECEIPT_PASS"}
+      }
+    },
+    "policies": {"type": "object"},
+    "components": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {"$ref": "#/$defs/component"}
+    },
+    "services": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"$ref": "#/$defs/service"}
+    }
+  },
+  "$defs": {
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["component_id", "official_name_ko", "component_type", "description", "source_clone"],
+      "properties": {
+        "component_id": {"type": "string", "pattern": "^AI_YOLLA_[A-Z_]+$"},
+        "official_name_ko": {"type": "string", "minLength": 1},
+        "component_type": {"enum": ["RUNTIME", "PANEL", "WORKSPACE", "DATABASE", "AUTOMATION"]},
+        "description": {"type": "string", "minLength": 1},
+        "source_clone": {"const": false}
+      }
+    },
+    "service": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "platform_id", "component_id", "service_id", "domain_pack_id", "role_id",
+        "official_name_ko", "menu_route", "wave_id", "directive_id",
+        "directive_registered_at_kst", "duplicate_prompt_key", "shared_core_id",
+        "separate_runtime", "source_clone", "status"
+      ],
+      "properties": {
+        "platform_id": {"const": "AI_YOLLA"},
+        "component_id": {"const": "AI_YOLLA_PANEL"},
+        "service_id": {"type": "string", "pattern": "^YOLLA_[A-Z_]+_PRO_AI$"},
+        "domain_pack_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]+$"},
+        "role_id": {"type": "string", "pattern": "^AI-YOLLA-SERVICE-[A-Z-]+$"},
+        "official_name_ko": {"type": "string", "pattern": "^욜라 .+ 전문 AI$"},
+        "menu_route": {"type": "string", "pattern": "^/ai-yolla/services/[a-z-]+$"},
+        "wave_id": {"const": "WAVE_2"},
+        "directive_id": {"const": "C1-TO-C2-AI-YOLLA-PANEL-SERVICE-REGISTRY-WAVE2-V1-20260802-001"},
+        "directive_registered_at_kst": {"const": "2026-08-02 18:03 KST"},
+        "duplicate_prompt_key": {"const": "970a9e2b3903e55d15ba5dbd8f06fa33758b4d294e72e835c86f0fe74c5b68de"},
+        "shared_core_id": {"const": "AI_YOLLA_COMMON_CORE"},
+        "separate_runtime": {"const": false},
+        "source_clone": {"const": false},
+        "status": {"enum": ["ACTIVE", "INACTIVE", "PLANNED"]}
+      }
+    }
+  }
+}
