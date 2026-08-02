@@ -25,11 +25,11 @@ jobs:
           node-version: "22"
       - name: JavaScript syntax
         run: |
-          node --check yolla_panel_main_bridge.js
+          node --check yolla_panel_main_bridge.cjs
           node --check yolla_panel_renderer.js
-          node --check test_yolla_panel_connection_frontier.js
+          node --check test_yolla_panel_connection_frontier.cjs
       - name: Connection contract tests
-        run: node test_yolla_panel_connection_frontier.js
+        run: node test_yolla_panel_connection_frontier.cjs
       - name: JSON contract validation
         run: |
           python -m json.tool YOLLA_PANEL_ROLE_REGISTRY_V1.json >/dev/null
@@ -82,7 +82,7 @@ jobs:
         run: |
           & 'yolla-panel-v1/a1-connection-frontier/INSTALL_YOLLA_PANEL_CONNECTION_FRONTIER.ps1' -SafePanelDirectory $env:SAFE_PANEL_FIXTURE -FixtureMode
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          foreach ($name in @('yolla_panel_main_bridge.js','yolla_panel_renderer.js','yolla_panel.css','yolla_panel_role_registry.json')) {
+          foreach ($name in @('yolla_panel_main_bridge.cjs','yolla_panel_renderer.js','yolla_panel.css','yolla_panel_role_registry.json')) {
             if (-not (Test-Path (Join-Path $env:SAFE_PANEL_FIXTURE $name))) { throw "Installed file missing: $name" }
           }
           $html = Get-Content (Join-Path $env:SAFE_PANEL_FIXTURE 'safe_panel.html') -Raw
@@ -94,7 +94,7 @@ jobs:
       - name: Node syntax after apply
         shell: pwsh
         run: |
-          foreach ($name in @('safe_panel_main.js','safe_panel_preload.js','safe_panel_renderer.js','yolla_panel_main_bridge.js','yolla_panel_renderer.js')) {
+          foreach ($name in @('safe_panel_main.js','safe_panel_preload.js','safe_panel_renderer.js','yolla_panel_main_bridge.cjs','yolla_panel_renderer.js')) {
             node --check (Join-Path $env:SAFE_PANEL_FIXTURE $name)
             if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           }
@@ -108,7 +108,7 @@ jobs:
             $actual = (Get-FileHash (Join-Path $env:SAFE_PANEL_FIXTURE $name) -Algorithm SHA256).Hash.ToLowerInvariant()
             if ($actual -ne $expected.$name) { throw "Rollback parity failed: $name" }
           }
-          foreach ($name in @('yolla_panel_main_bridge.js','yolla_panel_renderer.js','yolla_panel.css','yolla_panel_role_registry.json')) {
+          foreach ($name in @('yolla_panel_main_bridge.cjs','yolla_panel_renderer.js','yolla_panel.css','yolla_panel_role_registry.json')) {
             if (Test-Path (Join-Path $env:SAFE_PANEL_FIXTURE $name)) { throw "Rollback did not remove: $name" }
           }
           Write-Host 'YOLLA_PANEL_APPLY_ROLLBACK_PARITY=PASS'
@@ -131,7 +131,7 @@ jobs:
             'YOLLA_PANEL_ROLE_REGISTRY_V1.json',
             'YOLLA_PANEL_CONNECTION_CONTRACT_V1.json',
             'YOLLA_PANEL_PATCH_MANIFEST_V1.json',
-            'yolla_panel_main_bridge.js',
+            'yolla_panel_main_bridge.cjs',
             'yolla_panel_renderer.js',
             'yolla_panel.css',
             'INSTALL_YOLLA_PANEL_CONNECTION_FRONTIER.ps1',
