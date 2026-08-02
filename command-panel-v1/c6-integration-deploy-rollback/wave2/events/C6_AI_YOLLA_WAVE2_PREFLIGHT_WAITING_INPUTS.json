@@ -1,0 +1,20 @@
+{
+  "schema_version": "C6_AI_YOLLA_WAVE2_TERMINAL_EVENT_V1",
+  "event": "C6_AI_YOLLA_WAVE2_PREFLIGHT_WAITING_INPUTS",
+  "decision": "BLOCKED",
+  "worker": "C-6",
+  "wave_id": "WAVE_2",
+  "directive_id": "C1-TO-C6-AI-YOLLA-WAVE2-INTEGRATION-E2E-V1-20260802-001",
+  "directive_comment_id": 5156769632,
+  "result_published_at_kst": "2026-08-02 18:29 KST",
+  "input_terminal_count": "0_OF_4",
+  "exact_blocker": "C2_C3_C4_C5_WAVE2_TERMINALS_NOT_PUBLISHED_0_OF_4",
+  "final_report_blob": "d57a92e1ada223fc279314aa9a3bf524be0354e5",
+  "source_change_count": 0,
+  "runtime_dispatch_count": 0,
+  "actual_e2e_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
