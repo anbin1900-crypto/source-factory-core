@@ -1,0 +1,51 @@
+{
+  "schema_version": "C4_TO_C6_AI_YOLLA_WAVE_TIME_CARD_HANDOFF_V1",
+  "directive_id": "C1-TO-C4-AI-YOLLA-PANEL-WAVE-TIME-CARDS-WAVE2-V1-20260802-001",
+  "producer": "C-4",
+  "consumer": "C-6",
+  "entrypoint": "aiYollaWaveTimeCards.js",
+  "exports": [
+    "classifyWaveDirective",
+    "buildWaveTimeCard",
+    "renderWaveTimeCardHtml",
+    "buildAndRenderWaveTimeCard"
+  ],
+  "mount_contract": {
+    "input": ["directive", "ledger", "result"],
+    "output": ["card", "html", "unsupported_pass_display_count"],
+    "replace_existing_wave_card": true,
+    "preserve_cycle1_and_cycle2_role_card_mounts": true
+  },
+  "official_service_names": [
+    "욜라 부동산 전문 AI",
+    "욜라 주유소 전문 AI",
+    "욜라 위험물 전문 AI"
+  ],
+  "display_contract": [
+    "Wave 번호",
+    "지시 등록시간 KST",
+    "결과 게시시간 KST",
+    "Directive ID",
+    "Duplicate Prompt Key 앞 12자리",
+    "현재 상태",
+    "선택 서비스명",
+    "AI욜라 구성요소명"
+  ],
+  "fail_closed": [
+    "DUPLICATE_BLOCKED",
+    "STALE_WAVE_BLOCKED",
+    "AUTHORITY_CONFLICT",
+    "UNSUPPORTED_PASS_TO_UNVERIFIED"
+  ],
+  "runtime_boundary": {
+    "actual_pc_execution_count": 0,
+    "new_browser_runtime_count": 0,
+    "new_ipc_handler_count": 0,
+    "new_prompt_transport_count": 0,
+    "drive_write_count": 0,
+    "production_connection_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  },
+  "handoff_status": "READY_FOR_C6_STATIC_INTEGRATION"
+}
