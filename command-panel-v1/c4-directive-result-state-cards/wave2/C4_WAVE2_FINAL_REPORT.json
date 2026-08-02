@@ -1,5 +1,5 @@
 {
-  "schema_version": "C4_AI_YOLLA_PANEL_WAVE_TIME_CARDS_WAVE2_FINAL_REPORT_V1",
+  "schema_version": "C4_AI_YOLLA_PANEL_WAVE_TIME_CARDS_WAVE2_FINAL_REPORT_V2",
   "directive_id": "C1-TO-C4-AI-YOLLA-PANEL-WAVE-TIME-CARDS-WAVE2-V1-20260802-001",
   "directive_comment_id": 5156766669,
   "wave_id": "WAVE_2",
@@ -12,6 +12,8 @@
   "implementation_pr": 9,
   "branch": "command-panel/c4-directive-result-state-cards-v1",
   "start_head": "9b82e7a1ba853f7581d258996614b0d46107821f",
+  "head_before_terminal_finalize": "3fe3957f7c554c25bdb14a5758b21fae8edca78d",
+  "actual_terminal_head_source": "PR9_METADATA_AND_PR178_RESULT_COMMENT",
   "owned_root": "command-panel-v1/c4-directive-result-state-cards/wave2/",
   "wave1_gate": {
     "directive_id": "C1-TO-C4-WAVE1-CLOSURE-RECEIPT-V1-20260802-001",
@@ -21,13 +23,13 @@
     "test_rerun_count": 0
   },
   "required_outputs": {
-    "AI_YOLLA_WAVE_TIME_CARD_CONTRACT_V1.json": "PASS_LOCAL",
-    "AI_YOLLA_PRODUCT_ARCHITECTURE_ACCEPTANCE_V1.json": "PASS_LOCAL",
-    "aiYollaWaveTimeCards.js": "PASS_LOCAL",
-    "AI_YOLLA_WAVE_TIME_CARD_FIXTURE_V1.json": "PASS_LOCAL",
-    "AI_YOLLA_WAVE_TIME_CARD_TEST_RESULT_V1.json": "PASS_LOCAL",
-    "C4_TO_C6_AI_YOLLA_WAVE_TIME_CARD_HANDOFF_V1.json": "PASS_LOCAL",
-    "C4_WAVE2_FINAL_REPORT.json": "THIS_FILE"
+    "AI_YOLLA_WAVE_TIME_CARD_CONTRACT_V1.json": "PASS_REMOTE",
+    "AI_YOLLA_PRODUCT_ARCHITECTURE_ACCEPTANCE_V1.json": "PASS_REMOTE",
+    "aiYollaWaveTimeCards.js": "PASS_REMOTE",
+    "AI_YOLLA_WAVE_TIME_CARD_FIXTURE_V1.json": "PASS_REMOTE",
+    "AI_YOLLA_WAVE_TIME_CARD_TEST_RESULT_V1.json": "PASS_REMOTE",
+    "C4_TO_C6_AI_YOLLA_WAVE_TIME_CARD_HANDOFF_V1.json": "PASS_REMOTE",
+    "C4_WAVE2_FINAL_REPORT.json": "PASS_REMOTE_INITIAL_AND_TERMINAL_SELF_READBACK_EXTERNAL"
   },
   "validation": {
     "node_syntax": "PASS",
@@ -56,7 +58,8 @@
   "attempt_log": [
     {"attempt": 1, "result": "PASS_20_OF_20_NODE_TESTS"},
     {"attempt": 2, "result": "FAIL_SCHEMA_INSTANCE", "cause": "source_digest omitted from contract additionalProperties=false"},
-    {"attempt": 3, "result": "PASS_SCHEMA_6_OF_6_AND_RETEST_20_OF_20", "correction": "added source_digest sha256 contract field"}
+    {"attempt": 3, "result": "PASS_SCHEMA_6_OF_6_AND_RETEST_20_OF_20", "correction": "added source_digest sha256 contract field"},
+    {"attempt": 4, "result": "PASS_REMOTE_PUBLICATION_AND_READBACK"}
   ],
   "architecture": {
     "policy_authority": "AI_YOLLA_CANONICAL_PRODUCT_ARCHITECTURE_V1.json",
@@ -73,6 +76,22 @@
     "default_runtime_label": "AI욜라 Runtime 상태",
     "pc_agent_default_label_used": false
   },
+  "remote": {
+    "comparison_from_start": "AHEAD_BY_9_BEHIND_BY_0_BEFORE_TERMINAL_FINALIZE",
+    "changed_file_count": 9,
+    "all_changed_files_under_owned_root": true,
+    "required_blob_readback": "PASS_6_OF_6",
+    "required_blobs": {
+      "AI_YOLLA_WAVE_TIME_CARD_CONTRACT_V1.json": "099eaf0f0794646d985ae6a1d466000c51b63bcd",
+      "AI_YOLLA_PRODUCT_ARCHITECTURE_ACCEPTANCE_V1.json": "1c8657606231ce3c3a48b8e9e6441e611b0244df",
+      "aiYollaWaveTimeCards.js": "98b88e3f0e6900d831c40a86e86e7542763d182a",
+      "AI_YOLLA_WAVE_TIME_CARD_FIXTURE_V1.json": "b0cfe25c956745f56c57fcca19aa74789b1e3799",
+      "AI_YOLLA_WAVE_TIME_CARD_TEST_RESULT_V1.json": "e09747675b14c34b08d88e6ce03ef5d961a3e0cb",
+      "C4_TO_C6_AI_YOLLA_WAVE_TIME_CARD_HANDOFF_V1.json": "79e3f2db234592eeca98fa927928675c394feae8"
+    },
+    "initial_final_report_blob": "30a683a698be37d52c975ca54115bfe102e52d38",
+    "publication_status": "PASS"
+  },
   "boundaries": {
     "actual_pc_execution_count": 0,
     "new_browser_runtime_count": 0,
@@ -84,12 +103,6 @@
     "merge_count": 0
   },
   "blockers": [],
-  "remote": {
-    "publication_status": "PENDING",
-    "head": "PENDING",
-    "changed_files": "PENDING",
-    "required_blob_readback": "PENDING"
-  },
-  "final_status": "C4_AI_YOLLA_PANEL_WAVE_TIME_CARDS_WAVE2_PASS_PENDING_REMOTE_READBACK",
-  "terminal": "C4_AI_YOLLA_PANEL_WAVE_TIME_CARDS_WAVE2_PASS_PENDING_REMOTE_READBACK"
+  "final_status": "PASS",
+  "terminal": "C4_AI_YOLLA_PANEL_WAVE_TIME_CARDS_WAVE2_PASS"
 }
