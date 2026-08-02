@@ -57,6 +57,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          sparse-checkout: |
+            yolla-panel-v1/a1-connection-frontier
+            releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10
+          sparse-checkout-cone-mode: false
       - name: Parse PowerShell installer
         shell: pwsh
         run: |
@@ -120,6 +124,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          sparse-checkout: |
+            yolla-panel-v1/a1-connection-frontier
+          sparse-checkout-cone-mode: false
       - name: Assemble installation package
         shell: pwsh
         run: |
