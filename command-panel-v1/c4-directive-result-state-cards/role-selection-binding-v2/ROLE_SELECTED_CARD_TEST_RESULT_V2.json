@@ -1,0 +1,83 @@
+{
+  "schema_version": "ROLE_SELECTED_CARD_TEST_RESULT_V2",
+  "directive_id": "C1-TO-C4-ROLE-SELECTED-CARD-BINDING-V2-20260802-001",
+  "worker": "C-4",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "branch": "command-panel/c4-directive-result-state-cards-v1",
+  "start_head": "af6e56ec11104f70e03891812e9237f5937a0fc9",
+  "owned_root": "command-panel-v1/c4-directive-result-state-cards/role-selection-binding-v2/",
+  "authority_binding": {
+    "c2_pr": 10,
+    "c2_head": "4327e06343cebd28273168cfaffdb2eda7d98222",
+    "c2_role_registry_fixture_blob": "ef50d074fba002d9be6434fc4c2619045ef52715",
+    "c2_role_registry_source_blob": "ce4ba836fea040dcdc9d603110372cd5c5519e8c",
+    "c2_final_report_blob": "d03f80bfd5913e87da47aa07ba693e69d1cc32ff",
+    "c4_parent_renderer_blob": "82a14c89f0d4f0ce2db55ea6da35cb00d23f846a"
+  },
+  "results": {
+    "node_syntax": "PASS",
+    "node_tests": "19_OF_19_PASS",
+    "a2_role_card": "PASS",
+    "b1_role_card": "PASS",
+    "c1_role_card": "PASS",
+    "role_switch_sequence": "PASS_A2_B1_C1_A2",
+    "cross_role_result_leak": 0,
+    "cross_role_package_rejection": "PASS",
+    "cross_role_pc_state_rejection": "PASS",
+    "pointer_package_mismatch_rejection": "PASS",
+    "c2_head_drift_rejection": "PASS",
+    "fixture_badge": "PASS",
+    "unsupported_pass_display_count": 0,
+    "c6_mount_contract": "PASS",
+    "out_of_scope_files": 0
+  },
+  "failure_injection": {
+    "wrong_c2_head": "REJECTED",
+    "cross_role_package": "REJECTED",
+    "cross_role_pc_state": "REJECTED",
+    "directive_without_c2_pointer": "REJECTED",
+    "result_pointer_mismatch": "REJECTED",
+    "unknown_role": "REJECTED",
+    "incomplete_renderer_contract": "REJECTED",
+    "unsupported_pass": "DOWNGRADED_TO_UNVERIFIED"
+  },
+  "source_files": {
+    "C2_ROLE_SELECTION_ACCEPTANCE_V2.json": {
+      "sha256": "14613a46d722076499e65aa3d98938b6936307ded41454e0b49cc2d6997f1ea1",
+      "size_bytes": 1550
+    },
+    "roleSelectedCardBindingAdapter.js": {
+      "sha256": "01c473583b10f439474f4df96e9d8d66b075e5c06a8a4e813d8f2d4b4d8f2125",
+      "size_bytes": 10624
+    },
+    "ROLE_SELECTED_CARD_FIXTURE_V2.json": {
+      "sha256": "a3287016475ce870ffc58729d9a8fb4d3b2e2d0642b45b052d3d405e6dc16737",
+      "size_bytes": 5910
+    },
+    "C4_TO_C6_CARD_MOUNT_HANDOFF_V2.json": {
+      "sha256": "9625ad890afd56f5907ccd17b54d6ae70f820e23d0a4a65b6a4bcecc07533ccf",
+      "size_bytes": 1523
+    },
+    "tests/roleSelectedCardBindingAdapter.test.js": {
+      "sha256": "ffec3200c44ea9aadccee184f3ce9a59efd8cc58180b101e5ff641c809363bdb",
+      "size_bytes": 7701
+    },
+    "README.md": {
+      "sha256": "b8fb7f3fd6ba6a3f3f5f0eb14b24946e7e42e66c055a71329dc577706d9e3b60",
+      "size_bytes": 727
+    }
+  },
+  "runtime_counters": {
+    "c2_source_copy_count": 0,
+    "new_browser_runtime_count": 0,
+    "new_ipc_handler_count": 0,
+    "new_prompt_transport_count": 0,
+    "actual_pc_execution_count": 0,
+    "service_action_count": 0,
+    "drive_write_count": 0,
+    "production_connection_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  },
+  "test_status": "PASS"
+}
