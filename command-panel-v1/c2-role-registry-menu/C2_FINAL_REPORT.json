@@ -1,0 +1,109 @@
+{
+  "report_id": "C2_ROLE_REGISTRY_LEFT_MENU_FINAL_V1_20260802",
+  "worker": "C-2",
+  "directive": {
+    "directive_id": "C1-TO-C2-ROLE-REGISTRY-LEFT-MENU-V1-20260802-001",
+    "authority_repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "authority_pr": 168,
+    "authority_comment": 5154884427,
+    "parent_pr": 175,
+    "parent_comment": 5154763830,
+    "master_index_pr": 242,
+    "master_index_comment": 5154764858
+  },
+  "implementation": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "branch": "command-panel/c2-role-registry-menu-v1",
+    "base_branch": "integration/source-factory-pc-agent-api-db-v1",
+    "base_head": "69311de6c51e609df3080d8f316d98e4f381adc6",
+    "implementation_commit": "8b408310d98731dd046271f1d63127a570a9ac0c",
+    "draft_pr": 10,
+    "owned_root": "command-panel-v1/c2-role-registry-menu/**"
+  },
+  "required_deliverables": {
+    "ROLE_REGISTRY_SCHEMA.json": "PASS",
+    "ROLE_REGISTRY_FIXTURE.json": "PASS",
+    "roleRegistry.js": "PASS",
+    "leftRoleMenuGenerator.js": "PASS",
+    "ROLE_MENU_TEST_RESULT.json": "PASS",
+    "C2_FINAL_REPORT.json": "PASS"
+  },
+  "registry": {
+    "contract_binding": "A2_ROLE_CONTRACT_COMPATIBLE",
+    "group_count": 6,
+    "role_count": 22,
+    "groups": ["MASTER", "A_GROUP", "B_GROUP", "C_GROUP", "D_GROUP", "API_GROUP"],
+    "status_values": [
+      "IDLE",
+      "DIRECTIVE_LOOKUP",
+      "DIRECTIVE_READY",
+      "DISPATCHING",
+      "RUNNING",
+      "RESULT_WAITING",
+      "COMPLETED",
+      "BLOCKED",
+      "FAILED",
+      "RETRYING",
+      "OFFLINE"
+    ],
+    "evidence_policy": "NON_IDLE_NON_OFFLINE_STATUS_REQUIRES_EXACT_DIRECTIVE_OR_RESULT_POINTER"
+  },
+  "validation": {
+    "ROLE_REGISTRY_SCHEMA": "PASS",
+    "LEFT_ROLE_MENU": "PASS",
+    "DYNAMIC_ROLE_APPEND": "PASS",
+    "GROUP_COLLAPSE_EXPAND": "PASS",
+    "STATUS_BADGE": "PASS",
+    "CURRENT_ROLE_INDICATOR": "PASS",
+    "NODE_TESTS": "9/9 PASS",
+    "JSON_SCHEMA": "PASS",
+    "REMOTE_BLOB_READBACK": "PASS",
+    "REMOTE_CHANGED_FILES_BEFORE_FINAL_REPORT": 8,
+    "OUT_OF_SCOPE_FILES": 0
+  },
+  "remote_blob_parity": {
+    "ROLE_REGISTRY_SCHEMA.json": "7b399e25b7d1f56315044b1628ebd219a4bced79",
+    "ROLE_REGISTRY_FIXTURE.json": "ef50d074fba002d9be6434fc4c2619045ef52715",
+    "roleRegistry.js": "ce4ba836fea040dcdc9d603110372cd5c5519e8c",
+    "leftRoleMenuGenerator.js": "de529aa6f22a183e6230af92af376638b7518936",
+    "ROLE_MENU_TEST_RESULT.json": "b98b3f80edf455c345c337720cf4ffe65adb0566"
+  },
+  "attempt_log": [
+    {
+      "attempt": 1,
+      "result": "FAIL_5_OF_10",
+      "cause": "active fixture roles lacked exact evidence pointers",
+      "correction": "bound exact known directive/result pointers and reclassified unproven live states to IDLE"
+    },
+    {
+      "attempt": 2,
+      "result": "PASS_9_OF_9",
+      "schema_validation": "PASS"
+    },
+    {
+      "attempt": 3,
+      "result": "REMOTE_METADATA_UPDATE_REJECTED_NO_SOURCE_EFFECT",
+      "cause": "maintainer_can_modify is invalid for same-repository pull requests",
+      "correction": "removed the invalid metadata path and fast-forwarded the dedicated branch ref directly"
+    },
+    {
+      "attempt": 4,
+      "result": "REMOTE_PUBLICATION_PASS",
+      "branch_ref": "8b408310d98731dd046271f1d63127a570a9ac0c",
+      "draft_pr": 10
+    }
+  ],
+  "safety": {
+    "new_browser_runtime_count": 0,
+    "new_ipc_handler_count": 0,
+    "new_prompt_transport_count": 0,
+    "production_connections": 0,
+    "database_writes": 0,
+    "ready_transitions": 0,
+    "merges": 0,
+    "force_pushes": 0
+  },
+  "blockers": [],
+  "final_status": "C2_ROLE_REGISTRY_LEFT_MENU_PASS",
+  "final_remote_head": "REPORTED_IN_AUTHORITY_PR_COMMENT_AFTER_FINAL_REPORT_PUBLICATION"
+}

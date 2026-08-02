@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "handoff_id": "AI_YOLLA_THREE_SERVICE_EXACT_HANDOFF_WAVE2_V1",
+  "producer": "C-2",
+  "platform_id": "AI_YOLLA",
+  "component_id": "AI_YOLLA_PANEL",
+  "wave_id": "WAVE_2",
+  "directive_id": "C1-TO-C2-AI-YOLLA-PANEL-SERVICE-REGISTRY-WAVE2-V1-20260802-001",
+  "directive_registered_at_kst": "2026-08-02 18:03 KST",
+  "duplicate_prompt_key": "970a9e2b3903e55d15ba5dbd8f06fa33758b4d294e72e835c86f0fe74c5b68de",
+  "services": [
+    {"service_id": "YOLLA_REAL_ESTATE_PRO_AI", "official_name_ko": "욜라 부동산 전문 AI", "domain_pack_id": "REAL_ESTATE", "role_id": "AI-YOLLA-SERVICE-REAL-ESTATE", "menu_route": "/ai-yolla/services/real-estate", "shared_core_id": "AI_YOLLA_COMMON_CORE"},
+    {"service_id": "YOLLA_GAS_STATION_PRO_AI", "official_name_ko": "욜라 주유소 전문 AI", "domain_pack_id": "GAS_STATION_PETROLEUM", "role_id": "AI-YOLLA-SERVICE-GAS-STATION", "menu_route": "/ai-yolla/services/gas-station", "shared_core_id": "AI_YOLLA_COMMON_CORE"},
+    {"service_id": "YOLLA_HAZARDOUS_MATERIALS_PRO_AI", "official_name_ko": "욜라 위험물 전문 AI", "domain_pack_id": "HAZARDOUS_MATERIALS_FIRE_SAFETY", "role_id": "AI-YOLLA-SERVICE-HAZARDOUS-MATERIALS", "menu_route": "/ai-yolla/services/hazardous-materials", "shared_core_id": "AI_YOLLA_COMMON_CORE"}
+  ],
+  "consumers": [
+    {"role_id": "C-3", "directive_comment": 5156765258, "consume": "service_id/domain_pack_id → AI욜라 Workspace·Browser Session 결속"},
+    {"role_id": "C-4", "directive_comment": 5156766669, "consume": "공식 서비스명·Wave·등록시간 → Panel 상태카드"},
+    {"role_id": "C-5", "directive_comment": 5156768032, "consume": "platform_id/service_id/domain_pack_id → Automation Payload·중복 Gate"},
+    {"role_id": "C-6", "directive_comment": 5156769632, "consume": "공통 AI욜라 코어에서 세 서비스 설정 전환·Source 복제 0 E2E"}
+  ],
+  "source_clone_count": 0,
+  "new_runtime_count": 0,
+  "new_ipc_count": 0,
+  "new_prompt_transport_count": 0
+}

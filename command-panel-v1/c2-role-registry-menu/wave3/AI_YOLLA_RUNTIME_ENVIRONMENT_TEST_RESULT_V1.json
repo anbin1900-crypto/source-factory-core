@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "result_id": "C2_AI_YOLLA_RUNTIME_ENVIRONMENT_WAVE3_TEST_RESULT_V1",
+  "worker": "C-2",
+  "wave_id": "WAVE_3",
+  "directive_id": "C1-TO-C2-AI-YOLLA-PC-ENVIRONMENT-REGISTRY-WAVE3-V1-20260802-001",
+  "directive_registered_at_kst": "2026-08-02 19:06 KST",
+  "result_evidence_published_at_kst": "2026-08-02 19:34 KST",
+  "duplicate_prompt_key": "12dada416d1bf9a969bce71795e8c9727d9e5a76e9fb782d5c11353ca325ab83",
+  "status": "PASS",
+  "checks": {
+    "A1_TARGET_PC_AUTHORITY_BINDING": "PASS",
+    "RUNTIME_ENVIRONMENT_SCHEMA": "PASS",
+    "SENSITIVE_FIELD_REJECT": "PASS",
+    "MISSING_ACCEPTED_TERMINAL_REJECT": "PASS",
+    "STALE_CONTEXT_REJECT": "PASS",
+    "THREE_SERVICE_ENVIRONMENT_HANDOFF": "PASS",
+    "ACTUAL_PC_COMMAND_COUNT": 0,
+    "ACTUAL_PC_FILE_READ_COUNT": 0,
+    "SENSITIVE_VALUE_COUNT": 0,
+    "OUT_OF_SCOPE_FILES": 0
+  },
+  "tests": {
+    "node_syntax": "PASS_2_OF_2",
+    "node_tests": "PASS_14_OF_14",
+    "json_schema": "PASS",
+    "python_compile": "PASS"
+  },
+  "authority": {
+    "a1_control_pr": 142,
+    "target_pc_accepted_comment": 5153045063,
+    "target_pc_comment_published_at": "2026-08-02T04:28:16+09:00",
+    "target_pc_terminal": "A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED",
+    "resident_monitoring_comment": 5155863538,
+    "resident_monitoring_comment_published_at": "2026-08-02T15:14:17+09:00",
+    "resident_monitoring_status": "A1_PC_AGENT_12_18_21_SOURCE_AND_STATIC_VALIDATION_PASS_TARGET_PC_EXECUTION_READY"
+  },
+  "freshness": {
+    "source_kind": "GITHUB_AUTHORITY_COMMENT_NOT_PC_FILE_READBACK",
+    "age_minutes_at_wave3_dispatch": 231,
+    "maximum_age_minutes": 480,
+    "status": "FRESH_AT_WAVE3_DISPATCH",
+    "policy_owner": "C2_WAVE3_CONTRACT"
+  },
+  "remote_blob_readback": {
+    "AI_YOLLA_RUNTIME_ENVIRONMENT_CONTRACT_V1.json": "84179a225d29cd9271704984c50271f6e7944c09",
+    "AI_YOLLA_RUNTIME_ENVIRONMENT_V1.json": "1689ebd85cf2e0610637949565c1cd858d136873",
+    "A1_TARGET_PC_AUTHORITY_BINDING_V1.json": "418fe06dc66b98096f9a34e23211c4a5c54cb483",
+    "AI_YOLLA_THREE_SERVICE_RUNTIME_ENVIRONMENT_HANDOFF_V1.json": "31fde37bda642a94e3a3dffb5980193c01b4526d",
+    "aiYollaRuntimeEnvironmentRegistry.js": "fc64905d4e001a6053c4c9527790fa953dd6180b",
+    "testAiYollaRuntimeEnvironmentRegistry.js": "7105aa97f9454ca18cea083d17c597268accadae",
+    "validateAiYollaRuntimeEnvironment.py": "89d4f3d9b14035154eababd43d9c9bae22ca1818"
+  },
+  "attempt_log": [
+    {
+      "attempt": 1,
+      "result": "PASS_14_OF_14",
+      "schema": "PASS",
+      "python_compile": "PASS"
+    },
+    {
+      "attempt": 2,
+      "result": "CONNECTOR_METADATA_MISROUTE_CORRECTED_NO_SOURCE_EFFECT",
+      "cause": "a no-op GitHub issue was accidentally created while selecting the file-publication action",
+      "correction": "source-factory-core issue #15 was immediately closed as not_planned before continuing file publication"
+    },
+    {
+      "attempt": 3,
+      "result": "REMOTE_SOURCE_READBACK_PASS_7_OF_7"
+    }
+  ],
+  "terminal": "C2_AI_YOLLA_RUNTIME_ENVIRONMENT_REGISTRY_WAVE3_PASS",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

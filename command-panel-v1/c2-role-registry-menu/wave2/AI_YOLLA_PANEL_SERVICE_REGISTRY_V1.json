@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "AI_YOLLA_PANEL_SERVICE_REGISTRY_WAVE2_V1",
+  "platform": {
+    "platform_id": "AI_YOLLA",
+    "official_name_ko": "AI욜라",
+    "common_core_id": "AI_YOLLA_COMMON_CORE",
+    "source_clone_per_service": false
+  },
+  "wave_metadata": {
+    "wave_id": "WAVE_2",
+    "directive_id": "C1-TO-C2-AI-YOLLA-PANEL-SERVICE-REGISTRY-WAVE2-V1-20260802-001",
+    "directive_registered_at_kst": "2026-08-02 18:03 KST",
+    "duplicate_prompt_key": "970a9e2b3903e55d15ba5dbd8f06fa33758b4d294e72e835c86f0fe74c5b68de",
+    "authority_pr": 168,
+    "authority_comment": 5156763807,
+    "execution_gate": "C2_WAVE1_CLOSURE_RECEIPT_PASS"
+  },
+  "policies": {
+    "wave": {
+      "path": "workers/c1/master_abc_command_panel_v1/AI_YOLLA_WAVE_TIME_DUPLICATE_PROMPT_POLICY_V1.json",
+      "blob": "ef5748e7a204997966547baf9c7782da43007cc1"
+    },
+    "naming": {
+      "path": "workers/c1/master_abc_command_panel_v1/AI_YOLLA_SERVICE_NAMING_POLICY_V1.json",
+      "blob": "9c98b2e46e9272e5ed3f6fe45469ee897d584600"
+    }
+  },
+  "components": [
+    {"component_id": "AI_YOLLA_RUNTIME", "official_name_ko": "AI욜라 Runtime", "component_type": "RUNTIME", "description": "사용자 PC 실제 실행기", "source_clone": false},
+    {"component_id": "AI_YOLLA_PANEL", "official_name_ko": "AI욜라 Panel", "component_type": "PANEL", "description": "프로젝트·AI·DB·사이트·API·서버 관리화면", "source_clone": false},
+    {"component_id": "AI_YOLLA_WORKSPACE", "official_name_ko": "AI욜라 Workspace", "component_type": "WORKSPACE", "description": "서비스별 작업공간과 세션 선택 계층", "source_clone": false},
+    {"component_id": "AI_YOLLA_DATABASE", "official_name_ko": "AI욜라 Data Base", "component_type": "DATABASE", "description": "공통 데이터와 Domain Pack 결속 계층", "source_clone": false},
+    {"component_id": "AI_YOLLA_AUTOMATION", "official_name_ko": "AI욜라 Automation", "component_type": "AUTOMATION", "description": "Wave·중복 Prompt·자동실행 제어 계층", "source_clone": false}
+  ],
+  "services": [
+    {
+      "platform_id": "AI_YOLLA", "component_id": "AI_YOLLA_PANEL", "service_id": "YOLLA_REAL_ESTATE_PRO_AI", "domain_pack_id": "REAL_ESTATE", "role_id": "AI-YOLLA-SERVICE-REAL-ESTATE", "official_name_ko": "욜라 부동산 전문 AI", "menu_route": "/ai-yolla/services/real-estate", "wave_id": "WAVE_2", "directive_id": "C1-TO-C2-AI-YOLLA-PANEL-SERVICE-REGISTRY-WAVE2-V1-20260802-001", "directive_registered_at_kst": "2026-08-02 18:03 KST", "duplicate_prompt_key": "970a9e2b3903e55d15ba5dbd8f06fa33758b4d294e72e835c86f0fe74c5b68de", "shared_core_id": "AI_YOLLA_COMMON_CORE", "separate_runtime": false, "source_clone": false, "status": "ACTIVE"
+    },
+    {
+      "platform_id": "AI_YOLLA", "component_id": "AI_YOLLA_PANEL", "service_id": "YOLLA_GAS_STATION_PRO_AI", "domain_pack_id": "GAS_STATION_PETROLEUM", "role_id": "AI-YOLLA-SERVICE-GAS-STATION", "official_name_ko": "욜라 주유소 전문 AI", "menu_route": "/ai-yolla/services/gas-station", "wave_id": "WAVE_2", "directive_id": "C1-TO-C2-AI-YOLLA-PANEL-SERVICE-REGISTRY-WAVE2-V1-20260802-001", "directive_registered_at_kst": "2026-08-02 18:03 KST", "duplicate_prompt_key": "970a9e2b3903e55d15ba5dbd8f06fa33758b4d294e72e835c86f0fe74c5b68de", "shared_core_id": "AI_YOLLA_COMMON_CORE", "separate_runtime": false, "source_clone": false, "status": "ACTIVE"
+    },
+    {
+      "platform_id": "AI_YOLLA", "component_id": "AI_YOLLA_PANEL", "service_id": "YOLLA_HAZARDOUS_MATERIALS_PRO_AI", "domain_pack_id": "HAZARDOUS_MATERIALS_FIRE_SAFETY", "role_id": "AI-YOLLA-SERVICE-HAZARDOUS-MATERIALS", "official_name_ko": "욜라 위험물 전문 AI", "menu_route": "/ai-yolla/services/hazardous-materials", "wave_id": "WAVE_2", "directive_id": "C1-TO-C2-AI-YOLLA-PANEL-SERVICE-REGISTRY-WAVE2-V1-20260802-001", "directive_registered_at_kst": "2026-08-02 18:03 KST", "duplicate_prompt_key": "970a9e2b3903e55d15ba5dbd8f06fa33758b4d294e72e835c86f0fe74c5b68de", "shared_core_id": "AI_YOLLA_COMMON_CORE", "separate_runtime": false, "source_clone": false, "status": "ACTIVE"
+    }
+  ]
+}

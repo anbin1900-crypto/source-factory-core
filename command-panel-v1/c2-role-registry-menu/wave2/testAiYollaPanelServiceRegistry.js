@@ -1,0 +1,20 @@
+'use strict';
+const test=require('node:test'); const assert=require('node:assert/strict');
+const registry=require('./AI_YOLLA_PANEL_SERVICE_REGISTRY_V1.json');
+const {RegistryError,duplicatePromptKey,validateRegistry,getService,appendService,createServiceSelectionContext,buildMenuModel,DIRECTIVE,DUPLICATE_KEY}=require('./aiYollaPanelServiceRegistry');
+function expectCode(fn,code){assert.throws(fn,e=>e instanceof RegistryError&&e.code===code);}
+test('THREE_SERVICE_REGISTRY=PASS',()=>{const r=validateRegistry(registry);assert.equal(r.canonical_service_count,3);assert.equal(r.service_count,3);});
+test('COMPONENT_REGISTRY=PASS',()=>{const r=validateRegistry(registry);assert.equal(r.component_count,5);});
+test('WAVE_METADATA=PASS',()=>{assert.equal(registry.wave_metadata.wave_id,'WAVE_2');assert.equal(registry.wave_metadata.directive_registered_at_kst,'2026-08-02 18:03 KST');});
+test('DUPLICATE_KEY_PRESERVED=PASS',()=>{assert.equal(registry.wave_metadata.duplicate_prompt_key,DUPLICATE_KEY);assert.equal(duplicatePromptKey('C-2',DIRECTIVE,'WAVE_2','2026-08-02 18:03 KST'),DUPLICATE_KEY);});
+test('canonical names and domain packs exact',()=>{assert.equal(getService(registry,'YOLLA_REAL_ESTATE_PRO_AI').official_name_ko,'욜라 부동산 전문 AI');assert.equal(getService(registry,'YOLLA_GAS_STATION_PRO_AI').domain_pack_id,'GAS_STATION_PETROLEUM');assert.equal(getService(registry,'YOLLA_HAZARDOUS_MATERIALS_PRO_AI').domain_pack_id,'HAZARDOUS_MATERIALS_FIRE_SAFETY');});
+test('service selection context preserves exact fields',()=>{const c=createServiceSelectionContext(registry,'YOLLA_REAL_ESTATE_PRO_AI');assert.equal(c.platform_id,'AI_YOLLA');assert.equal(c.component_id,'AI_YOLLA_PANEL');assert.equal(c.directive_id,DIRECTIVE);});
+test('UNKNOWN_SERVICE_REJECT=PASS',()=>expectCode(()=>getService(registry,'UNKNOWN'),'UNKNOWN_SERVICE'));
+test('DYNAMIC_SERVICE_APPEND=PASS',()=>{const seed={...registry.services[0],service_id:'YOLLA_BUILDING_LAW_PRO_AI',domain_pack_id:'BUILDING_LAW',role_id:'AI-YOLLA-SERVICE-BUILDING-LAW',official_name_ko:'욜라 건축법 전문 AI',menu_route:'/ai-yolla/services/building-law'};const next=appendService(registry,seed);assert.equal(next.services.length,4);assert.equal(getService(next,seed.service_id).official_name_ko,seed.official_name_ko);});
+test('duplicate service id rejected',()=>expectCode(()=>appendService(registry,registry.services[0]),'DUPLICATE_SERVICE_ID'));
+test('wrong wave rejected',()=>{const x=structuredClone(registry);x.services[0].wave_id='WAVE_3';expectCode(()=>validateRegistry(x),'WRONG_WAVE');});
+test('wrong duplicate key rejected',()=>{const x=structuredClone(registry);x.services[0].duplicate_prompt_key='0'.repeat(64);expectCode(()=>validateRegistry(x),'DUPLICATE_PROMPT_KEY_MISMATCH');});
+test('source clone rejected',()=>{const x=structuredClone(registry);x.services[0].source_clone=true;expectCode(()=>validateRegistry(x),'SOURCE_CLONE_FORBIDDEN');});
+test('separate runtime rejected',()=>{const x=structuredClone(registry);x.services[0].separate_runtime=true;expectCode(()=>validateRegistry(x),'SEPARATE_RUNTIME_FORBIDDEN');});
+test('duplicate menu route rejected',()=>{const x=structuredClone(registry);x.services[1].menu_route=x.services[0].menu_route;expectCode(()=>validateRegistry(x),'DUPLICATE_ROUTE');});
+test('menu model is configuration-derived',()=>{const m=buildMenuModel(registry);assert.equal(m.items.length,3);assert.deepEqual(m.items.map(x=>x.label),['욜라 부동산 전문 AI','욜라 주유소 전문 AI','욜라 위험물 전문 AI']);});

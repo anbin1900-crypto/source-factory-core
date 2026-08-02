@@ -1,0 +1,25 @@
+{
+  "schema_version": "C4_CARD_CONTRACT_ACCEPTANCE_V2",
+  "status": "PASS",
+  "source_copied": false,
+  "accepted_authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "pr_number": 9,
+    "head": "af6e56ec11104f70e03891812e9237f5937a0fc9",
+    "terminal": "C4_DIRECTIVE_RESULT_PC_STATE_CARDS_PASS"
+  },
+  "exact_blobs": {
+    "EXACT_DIRECTIVE_CARD_CONTRACT.json": "1b5dd1337b737b03bdb18fd18914337a57a5303a",
+    "EXACT_RESULT_CARD_CONTRACT.json": "104d4817878db5eb932652e4cde872ad300231d1",
+    "directiveResultStateCards.js": "82a14c89f0d4f0ce2db55ea6da35cb00d23f846a",
+    "C4_FINAL_REPORT.json": "8dbf72687b236cf858a36dbc11e7ce734c590ba2"
+  },
+  "adapter_acceptance": {
+    "directive_required_fields_preserved": true,
+    "result_required_fields_preserved_when_current_result_exists": true,
+    "unsupported_pass_not_created": true,
+    "cross_role_result_rejected": true,
+    "cross_directive_result_rejected": true,
+    "missing_result_returns_null_package": true
+  }
+}

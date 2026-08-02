@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "result_id": "C2_AI_YOLLA_PANEL_SERVICE_REGISTRY_WAVE2_TEST_RESULT_V1",
+  "worker": "C-2",
+  "wave_id": "WAVE_2",
+  "directive_id": "C1-TO-C2-AI-YOLLA-PANEL-SERVICE-REGISTRY-WAVE2-V1-20260802-001",
+  "directive_registered_at_kst": "2026-08-02 18:03 KST",
+  "duplicate_prompt_key": "970a9e2b3903e55d15ba5dbd8f06fa33758b4d294e72e835c86f0fe74c5b68de",
+  "wave1_closure_receipt_comment": 5156841802,
+  "status": "PASS",
+  "checks": {
+    "THREE_SERVICE_REGISTRY": "PASS",
+    "COMPONENT_REGISTRY": "PASS",
+    "DYNAMIC_SERVICE_APPEND": "PASS",
+    "WAVE_METADATA": "PASS",
+    "DUPLICATE_KEY_PRESERVED": "PASS",
+    "UNKNOWN_SERVICE_REJECT": "PASS",
+    "CANONICAL_SERVICE_NAMES": "PASS_3_OF_3",
+    "CANONICAL_DOMAIN_PACKS": "PASS_3_OF_3",
+    "SOURCE_CLONE_COUNT": 0,
+    "SEPARATE_RUNTIME_COUNT": 0,
+    "OUT_OF_SCOPE_FILES": 0
+  },
+  "tests": {
+    "node_syntax": "PASS_2_OF_2",
+    "node_tests": "PASS_15_OF_15",
+    "json_schema": "PASS",
+    "component_count": 5,
+    "canonical_service_count": 3
+  },
+  "remote_blob_readback": {
+    "AI_YOLLA_PANEL_SERVICE_REGISTRY_CONTRACT_V1.json": "96a143df377b7aec667adbe034e1aa67f50dbd5b",
+    "AI_YOLLA_PANEL_SERVICE_REGISTRY_V1.json": "acc053721cdc08dd36522ed547c423d367d60f9c",
+    "AI_YOLLA_SERVICE_MENU_MODEL_V1.json": "841bcdbb4fb9be6e54ebe694d339dbc35bd8e4d5",
+    "AI_YOLLA_THREE_SERVICE_EXACT_HANDOFF_V1.json": "02cb1a77f0f6ace0d2079db5d3d53e39b5c74f70",
+    "aiYollaPanelServiceRegistry.js": "b83eb3c1e19c815d672c983e744b865e19d3e500",
+    "testAiYollaPanelServiceRegistry.js": "c4af7cad12755a71d452faaf02fa9b85202fb1e0",
+    "validateAiYollaPanelServiceRegistry.py": "e688ff5fb133f11ef3fcb15c1ce1a5b997c07708"
+  },
+  "attempt_log": [
+    {
+      "attempt": 1,
+      "result": "REJECTED_BEFORE_REMOTE",
+      "cause": "initial local draft modeled worker-lane services instead of the exact AI욜라 component hierarchy and three canonical professional-AI services",
+      "correction": "re-read directive and canonical architecture/naming policy, then rebuilt the platform/component/service/domain-pack registry"
+    },
+    {
+      "attempt": 2,
+      "result": "FAIL_NODE_SYNTAX",
+      "cause": "local generation script left one leading backslash byte in two JavaScript files",
+      "correction": "removed the generation artifact and reran syntax, tests and schema validation"
+    },
+    {
+      "attempt": 3,
+      "result": "PASS_15_OF_15",
+      "schema": "PASS",
+      "remote_readback": "PASS_7_OF_7"
+    }
+  ],
+  "terminal": "C2_AI_YOLLA_PANEL_SERVICE_REGISTRY_WAVE2_PASS",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

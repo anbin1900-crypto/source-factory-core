@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "binding_id": "C2_A1_TARGET_PC_RUNTIME_AUTHORITY_BINDING_WAVE3_V1",
+  "status": "PASS",
+  "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+  "control_pr": 142,
+  "target_pc_acceptance": {
+    "comment_id": 5153045063,
+    "published_at": "2026-08-02T04:28:16+09:00",
+    "terminal": "A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED",
+    "runtime_version": "1.0.0-20260802",
+    "manager_hotfix_version": "1.0.1-manager-status",
+    "report_commit": "1d795f41ac982ce8d2615b0a1fc16333bed3d350",
+    "report_blob": "f61b5f01e62cabde61e25de81937fc0d3bdcf8c9",
+    "pointer_commit": "a5527fd670d9d6c46f1f56e29910d394984b003e"
+  },
+  "resident_monitoring": {
+    "comment_id": 5155863538,
+    "published_at": "2026-08-02T15:14:17+09:00",
+    "status": "A1_PC_AGENT_12_18_21_SOURCE_AND_STATIC_VALIDATION_PASS_TARGET_PC_EXECUTION_READY",
+    "control_head": "02d20fdcbe564a719fb2915299044b6b9802460d",
+    "implementation_pr": 275,
+    "implementation_head": "fa9b1c4ab521635baeaeee469927ffa8e11be3dc",
+    "execution_owner": "PC_AGENT"
+  },
+  "claim_boundary": {
+    "target_pc_runtime_acceptance": "ACCEPTED_FROM_A1_EXACT_AUTHORITY",
+    "resident_monitoring_actual_execution": "NOT_ASSERTED",
+    "pc_file_content_read": false,
+    "credential_or_secret_read": false
+  }
+}
