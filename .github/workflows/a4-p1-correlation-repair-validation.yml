@@ -1,0 +1,33 @@
+name: A4 P1 Correlation Repair Validation
+
+on:
+  pull_request:
+    paths:
+      - 'releases/SF_REUSABLE_CORE_20260801_175708/src/shared/stage4/**'
+      - '.github/workflows/a4-p1-correlation-repair-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Syntax check repair sources
+        run: |
+          ROOT='releases/SF_REUSABLE_CORE_20260801_175708/src/shared/stage4'
+          node --check "$ROOT/p1CommandCorrelationContract.js"
+          node --check "$ROOT/sequentialPromptSender.js"
+          node --check "$ROOT/stores/taeoRawOutputStore.js"
+          node --check "$ROOT/stores/workerOutputBatchStore.js"
+          node --check "$ROOT/collectorCommanderGateHandoffAdapter.js"
+          node --check "$ROOT/tests/p1CommandCorrelationRepairV2.test.js"
+      - name: Run exact-source correlation tests
+        run: |
+          node --test releases/SF_REUSABLE_CORE_20260801_175708/src/shared/stage4/tests/p1CommandCorrelationRepairV2.test.js
