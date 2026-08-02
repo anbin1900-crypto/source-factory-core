@@ -1,0 +1,12 @@
+{
+  "schema_version":"C6_COMMAND_PANEL_INTEGRATION_PLAN_V1",
+  "base_head":"69311de6c51e609df3080d8f316d98e4f381adc6",
+  "mode":"EXACT_BLOB_STATIC_INTEGRATION_WITH_ISOLATED_APPLY_ROLLBACK",
+  "existing_authorities":{"safe_panel_main.js":"5f0be26ed160b17002ca48ecc06d58183343cbc8","safe_panel_preload.js":"bd42f34df35edee59c8e38ac681ae77d61ad365b","safe_panel_renderer.js":"8e9b67efa92b0bd5e1ccecd006ff12469361023f","safe_panel.html":"ef6cea6e5b5418729935cf3ec32dae3e8383a9b9","safe_panel.css":"f761395a4b7723c1e91103375c506f17312ca13c","sequentialPromptSender.js":"4001772fa2b2475171cd8595d5294cbcebe8cfde","executionResultCollector.js":"164228ea352c4b52dda8a1e65f3ba66efdc4aa46","pcAgentBridgeAdapter.js":"af0d9ef934d88c1d4019f8330e30ee1bcb9b6f8f"},
+  "mounts":[{"target":"safe_panel.html","mount":"sf-command-panel-integration","change":"single namespaced section"},{"target":"safe_panel_renderer.js","mount":"C6 command-panel adapter","change":"existing sfApi.stage4 dispatch only"},{"target":"safe_panel.css","mount":"namespaced command-panel styles","change":"append-only"}],
+  "runtime_module":"commandPanelIntegrationRuntime.js",
+  "e2e_roles":["A-2","B-1","C-1"],
+  "restart_recovery":"localStorage state pointer + exact role/window/session parity",
+  "apply_runner":"BACKUP_APPLY_ROLLBACK_RUNNER.py",
+  "scope":"NO_NEW_ELECTRON_NO_NEW_BROWSER_NO_NEW_PROMPT_TRANSPORT"
+}

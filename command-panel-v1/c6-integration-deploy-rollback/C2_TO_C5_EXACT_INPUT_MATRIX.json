@@ -1,0 +1,18 @@
+{
+  "schema_version": "C6_C2_TO_C5_EXACT_INPUT_MATRIX_V1",
+  "directive_id": "C1-TO-C6-COMMAND-PANEL-INTEGRATION-DEPLOY-ROLLBACK-V1-20260802-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "integration_branch": "command-panel/c6-integration-deploy-rollback-v1",
+  "base_head": "69311de6c51e609df3080d8f316d98e4f381adc6",
+  "input_count": 4,
+  "accepted_count": 4,
+  "inputs": {
+    "C-2": {"pr":10,"head":"4327e06343cebd28273168cfaffdb2eda7d98222","terminal":"C2_ROLE_REGISTRY_LEFT_MENU_PASS","report_blob":"d03f80bfd5913e87da47aa07ba693e69d1cc32ff","blobs":{"roleRegistry.js":"ce4ba836fea040dcdc9d603110372cd5c5519e8c","leftRoleMenuGenerator.js":"de529aa6f22a183e6230af92af376638b7518936","ROLE_REGISTRY_FIXTURE.json":"ef50d074fba002d9be6434fc4c2619045ef52715"}},
+    "C-3": {"pr":11,"head":"abdc7a92405ac0a59724b87f91d54fcc4e5f1d25","terminal":"C3_EXISTING_WORKER_BROWSER_BINDING_PASS","report_blob":"a7f6ec35f67667dbf8a4ab4da6d36ae223352bb1","blobs":{"workerBrowserBindingAdapter.js":"df6df5c168c52ab4417d6202f5b5923dc565b535","safePanelWorkerBrowserRuntimeBridge.js":"26aa25f69d75e3b5b052407b6c6aa0c88f774584","SAFE_PANEL_RUNTIME_BINDING_CONTRACT.json":"6abcf3c1ea1907ceec8b84659c8d4d663e0246a6"}},
+    "C-4": {"pr":9,"head":"af6e56ec11104f70e03891812e9237f5937a0fc9","terminal":"C4_DIRECTIVE_RESULT_PC_STATE_CARDS_PASS","report_blob":"8dbf72687b236cf858a36dbc11e7ce734c590ba2","blobs":{"directiveResultStateCards.js":"82a14c89f0d4f0ce2db55ea6da35cb00d23f846a","EXACT_DIRECTIVE_CARD_CONTRACT.json":"1b5dd1337b737b03b18fd18914337a57a5303a","EXACT_RESULT_CARD_CONTRACT.json":"104d4817878db5eb932652e4cde872ad300231d1"}},
+    "C-5": {"pr":null,"head":"5de179ba3045bab14ce0ece600595fedb1c841a0","terminal":"C5_COMMAND_BUTTON_GROUP_FLOW_PASS","report_blob":"0dd37110fff10a38af183c876d83568424743738","blobs":{"commandFlowController.js":"8772b4656cd8fa59e27cbc71e95d7dfca68fbacc","constants.js":"1fb264f5ff9a97f293149cd64cd9f6b5aeb1e7b5","directiveAdmission.js":"d57e1ce94a17a5c08111908c3633b762c1a660cf","actionPlanner.js":"c104f98e3d25ba9f35ea18012308db915aff834b"}}
+  },
+  "collision_audit": {"exact_path_collision_count":0,"owned_root_collision_count":0,"public_symbol_collision_count":0,"ipc_transport_collision_count":0,"prompt_transport_collision_count":0,"shared_semantic_boundaries":["ROLE_SELECTION_TO_BROWSER_BINDING","ROLE_SELECTION_TO_CARD_RENDERING","DIRECTIVE_ADMISSION_TO_EXISTING_STAGE4_DISPATCH"],"decision":"PASS_DETERMINISTIC_ADAPTER_ORDER"},
+  "integration_order": ["C2_ROLE_REGISTRY_MENU","C3_EXISTING_BROWSER_BINDING","C4_DIRECTIVE_RESULT_STATE_CARDS","C5_COMMAND_FLOW_CONTROLLER","C6_EXISTING_STAGE4_TRANSPORT_ADAPTER"],
+  "all_forbidden_counters_zero": true
+}

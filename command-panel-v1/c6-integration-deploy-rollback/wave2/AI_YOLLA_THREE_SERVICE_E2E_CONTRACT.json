@@ -1,0 +1,18 @@
+{
+  "schema_version": "C6_AI_YOLLA_THREE_SERVICE_E2E_CONTRACT_V1",
+  "common_core_count": 1,
+  "service_count": 3,
+  "service_definitions": [
+    {"service_id":"REAL_ESTATE_AI","name":"욜라 부동산 전문 AI","domain_pack_pointer_required":true},
+    {"service_id":"GAS_STATION_AI","name":"욜라 주유소 전문 AI","domain_pack_pointer_required":true},
+    {"service_id":"HAZMAT_AI","name":"욜라 위험물 전문 AI","domain_pack_pointer_required":true}
+  ],
+  "invariants": {
+    "common_core_source_clone_count": 0,
+    "service_browser_runtime_clone_count": 0,
+    "service_prompt_transport_clone_count": 0,
+    "workspace_session_isolation_required": true,
+    "selected_service_restart_recovery_required": true,
+    "domain_pack_pointer_restart_recovery_required": true
+  }
+}

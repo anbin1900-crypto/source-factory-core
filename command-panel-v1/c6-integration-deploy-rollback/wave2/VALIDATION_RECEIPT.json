@@ -1,0 +1,21 @@
+{
+  "blocker": "WAVE2_TERMINALS_NOT_PUBLISHED:C-2,C-3,C-4,C-5",
+  "check_count": 17,
+  "check_pass_count": 17,
+  "decision": "BLOCKED",
+  "published_terminal_count": 0,
+  "required_terminal_count": 4,
+  "runtime_dispatch_authorized": false,
+  "source_change_authorized": false,
+  "terminal": "C6_AI_YOLLA_WAVE2_PREFLIGHT_WAITING_INPUTS",
+  "virtual_pass_rejected": true,
+  "python_compile": "PASS_2_OF_2",
+  "unit_tests": "PASS_10_OF_10",
+  "json_parse": "PASS_6_OF_6",
+  "validated_inputs": {
+    "C-2": {"directive_comment_id":5156763807,"start_head":"9983fb43e5f635307c6ca29ac111a8c2d2255e56","terminal":"NOT_PUBLISHED"},
+    "C-3": {"directive_comment_id":5156765258,"start_head":"abdc7a92405ac0a59724b87f91d54fcc4e5f1d25","terminal":"NOT_PUBLISHED"},
+    "C-4": {"directive_comment_id":5156766669,"start_head":"9b82e7a1ba853f7581d258996614b0d46107821f","terminal":"NOT_PUBLISHED"},
+    "C-5": {"directive_comment_id":5156768032,"start_head":"fac34ff85e81053756f62fd8b5c3cb624d1f3e1b","terminal":"NOT_PUBLISHED"}
+  }
+}

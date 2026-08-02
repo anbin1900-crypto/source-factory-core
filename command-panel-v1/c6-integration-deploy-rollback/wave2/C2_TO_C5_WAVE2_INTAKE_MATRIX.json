@@ -1,0 +1,17 @@
+{
+  "schema_version": "C6_AI_YOLLA_WAVE2_INTAKE_MATRIX_V1",
+  "directive_id": "C1-TO-C6-AI-YOLLA-WAVE2-INTEGRATION-E2E-V1-20260802-001",
+  "directive_comment_id": 5156769632,
+  "wave_id": "WAVE_2",
+  "directive_registered_at_kst": "2026-08-02 18:03 KST",
+  "c6_start_head": "30b8e5add47452845c16fff86c9b708c8236537e",
+  "inputs": {
+    "C-2": {"authority_pr":168,"directive_comment_id":5156763807,"directive_id":"C1-TO-C2-AI-YOLLA-PANEL-SERVICE-REGISTRY-WAVE2-V1-20260802-001","expected_terminal":"C2_AI_YOLLA_PANEL_SERVICE_REGISTRY_WAVE2_PASS","work_branch":"command-panel/c2-role-registry-menu-v1","start_head":"9983fb43e5f635307c6ca29ac111a8c2d2255e56","terminal_status":"NOT_PUBLISHED","result_comment_id":null,"remote_head":null},
+    "C-3": {"authority_pr":163,"directive_comment_id":5156765258,"directive_id":"C1-TO-C3-AI-YOLLA-WORKSPACE-SERVICE-SESSION-WAVE2-V1-20260802-001","expected_terminal":"C3_AI_YOLLA_WORKSPACE_SERVICE_SESSION_WAVE2_PASS","work_branch":"command-panel/c3-worker-browser-binding-v1","start_head":"abdc7a92405ac0a59724b87f91d54fcc4e5f1d25","terminal_status":"NOT_PUBLISHED","result_comment_id":null,"remote_head":null},
+    "C-4": {"authority_pr":178,"directive_comment_id":5156766669,"directive_id":"C1-TO-C4-AI-YOLLA-PANEL-WAVE-TIME-CARDS-WAVE2-V1-20260802-001","expected_terminal":"C4_AI_YOLLA_PANEL_WAVE_TIME_CARDS_WAVE2_PASS","work_branch":"command-panel/c4-directive-result-state-cards-v1","start_head":"9b82e7a1ba853f7581d258996614b0d46107821f","terminal_status":"NOT_PUBLISHED","result_comment_id":null,"remote_head":null},
+    "C-5": {"authority_pr":169,"directive_comment_id":5156768032,"directive_id":"C1-TO-C5-AI-YOLLA-AUTOMATION-DUPLICATE-GATE-WAVE2-V1-20260802-001","expected_terminal":"C5_AI_YOLLA_AUTOMATION_DUPLICATE_GATE_WAVE2_PASS","work_branch":"command-panel/c5-command-flow-controls-v1","start_head":"fac34ff85e81053756f62fd8b5c3cb624d1f3e1b","terminal_status":"NOT_PUBLISHED","result_comment_id":null,"remote_head":null}
+  },
+  "required_terminal_count": 4,
+  "published_terminal_count": 0,
+  "virtual_pass_count": 0
+}

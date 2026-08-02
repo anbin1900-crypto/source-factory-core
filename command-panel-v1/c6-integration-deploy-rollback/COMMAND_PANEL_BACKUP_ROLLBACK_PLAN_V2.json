@@ -1,0 +1,72 @@
+{
+  "schema_version": "C6_COMMAND_PANEL_BACKUP_ROLLBACK_PLAN_V2",
+  "directive_id": "C1-TO-C6-COMMAND-PANEL-PARTIAL-INTEGRATION-PREFLIGHT-V2-20260802-001",
+  "execution_status": "PLANNED_NOT_EXECUTED",
+  "base_head": "69311de6c51e609df3080d8f316d98e4f381adc6",
+  "backup_set": [
+    {
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10/safe_panel_main.js",
+      "blob": "5f0be26ed160b17002ca48ecc06d58183343cbc8",
+      "backup_name": "safe_panel_main.js.pre-command-panel-v2.bak"
+    },
+    {
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10/safe_panel_preload.js",
+      "blob": "bd42f34df35edee59c8e38ac681ae77d61ad365b",
+      "backup_name": "safe_panel_preload.js.pre-command-panel-v2.bak"
+    },
+    {
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10/safe_panel_renderer.js",
+      "blob": "8e9b67efa92b0bd5e1ccecd006ff12469361023f",
+      "backup_name": "safe_panel_renderer.js.pre-command-panel-v2.bak"
+    },
+    {
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10/safe_panel.html",
+      "blob": "ef6cea6e5b5418729935cf3ec32dae3e8383a9b9",
+      "backup_name": "safe_panel.html.pre-command-panel-v2.bak"
+    },
+    {
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10/safe_panel.css",
+      "blob": "f761395a4b7723c1e91103375c506f17312ca13c",
+      "backup_name": "safe_panel.css.pre-command-panel-v2.bak"
+    }
+  ],
+  "preconditions": [
+    "CURRENT_HEAD_EQUALS_START_HEAD_OR_EXPLICIT_REBASE_RECEIPT",
+    "EACH_TARGET_BLOB_EQUALS_RECORDED_BASE_BLOB",
+    "C2_AND_C4_INPUT_BLOBS_EXACT",
+    "C3_AND_C5_TERMINALS_PRESENT_BEFORE_FINAL_APPLY",
+    "ISOLATED_TEST_ROOT_ONLY",
+    "NO_PRODUCTION_CONNECTION"
+  ],
+  "apply_phases": [
+    "COPY_TARGETS_TO_VERSIONED_BACKUP_DIRECTORY",
+    "HASH_AND_RECORD_BACKUP_BLOBS",
+    "WRITE_PATCH_TO_TEMPORARY_CANDIDATE_TREE",
+    "NODE_CHECK_CANDIDATE_FILES",
+    "LAUNCH_ISOLATED_SAFE_PANEL",
+    "RUN_UI_FIXTURE_CHECKS",
+    "RESTART_PANEL_AND_VALIDATE_STATE_POINTER",
+    "PROMOTE_CANDIDATE_ONLY_AFTER_ALL_CHECKS"
+  ],
+  "rollback_phases": [
+    "STOP_ISOLATED_PANEL_PROCESS",
+    "RESTORE_ALL_TARGETS_FROM_VERSIONED_BACKUP",
+    "VERIFY_RESTORED_BLOB_PARITY_5_OF_5",
+    "RELAUNCH_ISOLATED_PANEL",
+    "VERIFY_BASELINE_STATUS_AND_NO_COMMAND_EXECUTION",
+    "PUBLISH_ROLLBACK_RECEIPT"
+  ],
+  "fail_closed_conditions": [
+    "HEAD_DRIFT",
+    "TARGET_BLOB_DRIFT",
+    "MISSING_C3_OR_C5_FINAL_INPUT",
+    "NODE_SYNTAX_FAILURE",
+    "UI_FIXTURE_FAILURE",
+    "RESTART_POINTER_RECOVERY_FAILURE",
+    "BACKUP_HASH_MISMATCH",
+    "ROLLBACK_PARITY_MISMATCH"
+  ],
+  "actual_backup_count": 0,
+  "actual_apply_count": 0,
+  "actual_rollback_count": 0
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "C6_AI_YOLLA_WAVE3_ROLLBACK_BLOB_RECEIPT_V1",
+  "prechange_blobs": {
+    "safe_panel.html": "ef6cea6e5b5418729935cf3ec32dae3e8383a9b9",
+    "safe_panel_renderer.js": "8e9b67efa92b0bd5e1ccecd006ff12469361023f",
+    "safe_panel.css": "f761395a4b7723c1e91103375c506f17312ca13c"
+  },
+  "restored_blobs": {
+    "safe_panel.html": "ef6cea6e5b5418729935cf3ec32dae3e8383a9b9",
+    "safe_panel_renderer.js": "8e9b67efa92b0bd5e1ccecd006ff12469361023f",
+    "safe_panel.css": "f761395a4b7723c1e91103375c506f17312ca13c"
+  },
+  "path_count": 3,
+  "rollback_blob_parity": "PASS_3_OF_3",
+  "canonical_source_apply_performed": false,
+  "actual_rollback_execution_scope": "ISOLATED_FIXTURE_ONLY",
+  "status": "PASS"
+}

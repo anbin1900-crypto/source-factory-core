@@ -1,0 +1,56 @@
+{
+  "schema_version": "C6_AI_YOLLA_PC_ENVIRONMENT_WAVE3_E2E_RECEIPT_V1",
+  "event_id": "C1-C6-AI-YOLLA-WAVE3-FINAL-E2E-GATE-OPEN-V1-20260802-001",
+  "recovery_event_id": "C1-C6-AI-YOLLA-WAVE3-FINAL-E2E-EXECUTION-RECOVERY-V1-20260802-001",
+  "wave_id": "WAVE_3",
+  "directive_id": "C1-TO-C6-AI-YOLLA-PC-ENVIRONMENT-E2E-WAVE3-V1-20260802-001",
+  "result_published_at_kst": "2026-08-02 22:34 KST",
+  "exact_input_matrix": "PASS_4_OF_4",
+  "three_service_e2e": "PASS_3_OF_3",
+  "role_service_context_isolation": "PASS",
+  "cross_service_result_leak_count": 0,
+  "context_snapshot_id": "20260802100335Z",
+  "context_freshness_basis": "ORIGINAL_WAVE3_DIRECTIVE_TIME_2026-08-02_19:06_KST",
+  "c4_safe_display_preserved": {
+    "overall_state": "RUNTIME_UNVERIFIED",
+    "reason": "LATEST_CONTEXT_PUBLISHED_AT_KST_NOT_SUPPORTED_BY_REFERENCED_A1_AUTHORITY",
+    "c6_reconciliation": "C3_EXACT_CONTEXT_ACCEPTED_BY_C1_GATE_WITHOUT_MUTATING_C4_CARD"
+  },
+  "service_receipts": [
+    {
+      "actual_pc_dispatch_count": 0,
+      "context_snapshot_id": "20260802100335Z",
+      "domain_pack_id": "GAS_STATION_PETROLEUM",
+      "result_comment_posted": false,
+      "result_hash": "109d05949635d08013dae1f10f1385caa6eab20ae6b0efa7f0a2d93d891f7c42",
+      "service_id": "YOLLA_GAS_STATION_PRO_AI",
+      "workspace_service_session_id": "ws-81419ae263b6cd550acc"
+    },
+    {
+      "actual_pc_dispatch_count": 0,
+      "context_snapshot_id": "20260802100335Z",
+      "domain_pack_id": "HAZARDOUS_MATERIALS_FIRE_SAFETY",
+      "result_comment_posted": false,
+      "result_hash": "f1a140c10634322865b34bb10dcc37471539cc83a93446ba36d47f5d8b1054c2",
+      "service_id": "YOLLA_HAZARDOUS_MATERIALS_PRO_AI",
+      "workspace_service_session_id": "ws-a198d2dcfca4a55a2cb9"
+    },
+    {
+      "actual_pc_dispatch_count": 0,
+      "context_snapshot_id": "20260802100335Z",
+      "domain_pack_id": "REAL_ESTATE",
+      "result_comment_posted": false,
+      "result_hash": "39c6947b2ab0f02f5ebaf0385fd4a6d4f76fbace8c8fdb7370d0edfafdbb5276",
+      "service_id": "YOLLA_REAL_ESTATE_PRO_AI",
+      "workspace_service_session_id": "ws-d6f74d1db923fda369e2"
+    }
+  ],
+  "runtime_boundary": {
+    "actual_pc_dispatch_count": 0,
+    "actual_panel_apply_count": 0,
+    "existing_transport": "sfApi.stage4.dispatchNextPrompt",
+    "new_transport_count": 0,
+    "contract_fixture_only": true
+  },
+  "terminal": "C6_AI_YOLLA_PC_ENVIRONMENT_E2E_WAVE3_PASS"
+}

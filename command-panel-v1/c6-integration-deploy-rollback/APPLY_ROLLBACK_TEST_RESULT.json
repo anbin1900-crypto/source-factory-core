@@ -1,0 +1,9 @@
+{
+  "schema_version":"C6_APPLY_ROLLBACK_TEST_RESULT_V1",
+  "scope":"ISOLATED_PANEL_FIXTURE",
+  "runner_python_compile":"PASS",
+  "apply":{"status":"PASS","files":3,"node_syntax":"PASS","mount_markers":"PASS_3_OF_3","receipt_sha256":"e9721adc9826470a26c812d5dbe94e26f9dc9b61c36295f48e9f7985ccddc41b"},
+  "rollback":{"status":"PASS","files":3,"base_blob_parity":"PASS_3_OF_3","receipt_sha256":"63f0bce4c1acb3a08d4862caba7513ecb7ad0b0b61aec4ee919430ab2f9df83a"},
+  "canonical_source_apply_count":0,
+  "production_deploy_count":0
+}

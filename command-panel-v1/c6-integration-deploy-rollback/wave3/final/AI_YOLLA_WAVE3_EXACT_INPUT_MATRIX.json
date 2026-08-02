@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "matrix_id": "C6_AI_YOLLA_WAVE3_EXACT_INPUT_MATRIX_V1",
+  "wave_id": "WAVE_3",
+  "directive_id": "C1-TO-C6-AI-YOLLA-PC-ENVIRONMENT-E2E-WAVE3-V1-20260802-001",
+  "directive_registered_at_kst": "2026-08-02 19:06 KST",
+  "duplicate_prompt_key": "f2787ffbf3ecf677e0f1c4fd32c1c25c6104e0fa03aca39914ea899884b0989c",
+  "gate_open_comment": 5157855710,
+  "recovery_comment": 5157907046,
+  "accepted_inputs": 4,
+  "virtual_pass_count": 0,
+  "inputs": {
+    "C-2": {
+      "head": "156389b9b4ed2d3309b3212ee688cc7b31ee6612",
+      "terminal": "C2_AI_YOLLA_RUNTIME_ENVIRONMENT_REGISTRY_WAVE3_PASS",
+      "result_comment": 5157236815,
+      "final_report_blob": "6e5bc5a6fbf08f4339d21cf475f33a36146231ef",
+      "three_service_handoff_blob": "31fde37bda642a94e3a3dffb5980193c01b4526d"
+    },
+    "C-3": {
+      "head": "b0aa5aa15564a9871bab9a834fa5a94386f7f92b",
+      "terminal": "C3_AI_YOLLA_WORKSPACE_PC_CONTEXT_WAVE3_PASS",
+      "result_pointer_comment": 5157291782,
+      "final_report_blob": "8b0f7a4c3bb51c049a2fc140856f3d572b6df771",
+      "pointer_blob": "42e43890ed5f56f5f02bfbc892634494b8858592",
+      "context_fixture_blob": "6b8de26785f52b2f1f7c8f012ac2001585af5b51"
+    },
+    "C-4": {
+      "head": "19b6b3023fd73af10b0c82defc61c20037f6a578",
+      "terminal": "C4_AI_YOLLA_PANEL_PC_ENVIRONMENT_CARD_WAVE3_PASS",
+      "result_comment": 5157233839,
+      "final_report_blob": "9cedf248b11f547f1345e7f34c38a104e9f7ff07",
+      "renderer_blob": "61eacec2815b70816143c90cf0884aa8fd0ec295",
+      "test_result_blob": "7cee522722a8f50572a949abf94fcc8b2cd47f06"
+    },
+    "C-5": {
+      "head": "57d452af914f44762f05b2cb9e998004734394e8",
+      "terminal": "C5_AI_YOLLA_RUNTIME_ADMISSION_GATE_WAVE3_PASS",
+      "result_comment": 5157255049,
+      "final_report_blob": "d0afd58681c3997bd0705fe1c87b8f0b4a07c400",
+      "gate_blob": "fa39988db5dac55b8ea0ba70e712252043038b72",
+      "core_blob": "1339cffd5f9436e0379d1fb9ccfc1e62b2a0cfda",
+      "policy_blob": "6306c672cf1631885c67b7dd56d1e9f65dc7e02d",
+      "constants_blob": "64343d43e85a059a330db0bb4c5491f660beb3f8",
+      "fixture_blob": "453e7f82ec7bd46e257ee8cee9b7161817a28442"
+    }
+  },
+  "a1_pc_runtime_authority": {
+    "control_pr": 142,
+    "target_pc_accepted_comment": 5153045063,
+    "resident_monitoring_comment": 5155863538,
+    "terminal": "A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED",
+    "runtime_version": "1.0.0-20260802",
+    "manager_hotfix_version": "1.0.1-manager-status",
+    "canonical_runtime_root": "D:\\YOLLA_PC_BRIDGE",
+    "consumption_mode": "READ_ONLY_NO_PC_DISPATCH"
+  }
+}

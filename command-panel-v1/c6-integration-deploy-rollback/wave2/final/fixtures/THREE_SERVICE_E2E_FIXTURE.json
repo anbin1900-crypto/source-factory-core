@@ -1,0 +1,12 @@
+{
+  "platform_id":"AI_YOLLA",
+  "common_core_id":"AI_YOLLA_COMMON_CORE",
+  "runtime_version":"1.0.0-20260802",
+  "wave_id":"WAVE_2",
+  "directive_registered_at_kst":"2026-08-02 18:03 KST",
+  "services":[
+    {"service_id":"YOLLA_REAL_ESTATE_PRO_AI","official_name_ko":"욜라 부동산 전문 AI","domain_pack_id":"REAL_ESTATE","role_id":"AI-YOLLA-SERVICE-REAL-ESTATE","workspace_window_id":"workspace-window-1","browser_session_id":"browser-session-role-1","directive_id":"C6-WAVE2-REAL-ESTATE-E2E"},
+    {"service_id":"YOLLA_GAS_STATION_PRO_AI","official_name_ko":"욜라 주유소 전문 AI","domain_pack_id":"GAS_STATION_PETROLEUM","role_id":"AI-YOLLA-SERVICE-GAS-STATION","workspace_window_id":"workspace-window-2","browser_session_id":"browser-session-role-2","directive_id":"C6-WAVE2-GAS-STATION-E2E"},
+    {"service_id":"YOLLA_HAZARDOUS_MATERIALS_PRO_AI","official_name_ko":"욜라 위험물 전문 AI","domain_pack_id":"HAZARDOUS_MATERIALS_FIRE_SAFETY","role_id":"AI-YOLLA-SERVICE-HAZARDOUS-MATERIALS","workspace_window_id":"workspace-window-3","browser_session_id":"browser-session-role-3","directive_id":"C6-WAVE2-HAZMAT-E2E"}
+  ]
+}

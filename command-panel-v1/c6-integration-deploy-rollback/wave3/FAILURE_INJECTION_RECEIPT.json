@@ -1,0 +1,23 @@
+{
+  "schema_version": "C6_AI_YOLLA_WAVE3_FAILURE_INJECTION_RECEIPT_V1",
+  "case_count": 13,
+  "pass_count": 13,
+  "status": "PASS_13_OF_13_FAIL_CLOSED",
+  "cases": [
+    {"case":"CROSS_SERVICE_RESULT_LEAK","expected":"CROSS_SERVICE_RESULT_REJECT","result":"PASS"},
+    {"case":"CROSS_CONTEXT_RESULT_LEAK","expected":"CROSS_CONTEXT_RESULT_REJECT","result":"PASS"},
+    {"case":"STALE_CONTEXT","expected":"REJECT_STALE_PC_CONTEXT","result":"PASS"},
+    {"case":"MISSING_RUNTIME_ACCEPTANCE","expected":"REJECT_RUNTIME_UNVERIFIED","result":"PASS"},
+    {"case":"RUNTIME_VERSION_MISMATCH","expected":"REJECT_RUNTIME_VERSION_MISMATCH","result":"PASS"},
+    {"case":"STALE_WAVE","expected":"REJECT_STALE_WAVE","result":"PASS"},
+    {"case":"SENSITIVE_VALUE","expected":"SENSITIVE_VALUE_REJECT","result":"PASS"},
+    {"case":"RUNTIME_HEALTH_BLOCKED","expected":"REJECT_RUNTIME_HEALTH_BLOCKED","result":"PASS"},
+    {"case":"INVALID_DUPLICATE_PROMPT_KEY","expected":"DUPLICATE_PROMPT_KEY_MISMATCH","result":"PASS"},
+    {"case":"DUPLICATE_PROMPT_REPLAY","expected":"REJECT_DUPLICATE","result":"PASS"},
+    {"case":"ACCEPTED_RESULT_REPLAY","expected":"REJECT_ALREADY_ACCEPTED","result":"PASS"},
+    {"case":"INPUT_HEAD_DRIFT","expected":"HEAD_INVALID","result":"PASS"},
+    {"case":"TERMINAL_DRIFT","expected":"TERMINAL_MISMATCH","result":"PASS"}
+  ],
+  "virtual_pass_count": 0,
+  "unsafe_admission_count": 0
+}

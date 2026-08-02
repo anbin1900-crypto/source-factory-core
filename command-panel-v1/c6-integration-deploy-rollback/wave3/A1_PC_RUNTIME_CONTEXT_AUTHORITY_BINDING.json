@@ -1,0 +1,35 @@
+{
+  "schema_version": "C6_AI_YOLLA_WAVE3_A1_AUTHORITY_BINDING_V1",
+  "a1_control_pr": 142,
+  "target_pc_accepted_comment": 5153045063,
+  "target_pc_terminal": "A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED",
+  "resident_monitoring_comment": 5155863538,
+  "resident_monitoring_status": "A1_PC_AGENT_12_18_21_SOURCE_AND_STATIC_VALIDATION_PASS_TARGET_PC_EXECUTION_READY",
+  "runtime_version": "1.0.0-20260802",
+  "manager_hotfix_version": "1.0.1-manager-status",
+  "acceptance_run": "PCAR-20260801T191841746Z-d81c8a2f6778",
+  "machine_id": "YOLLA-A1-PC01",
+  "canonical_runtime_root": "D:\\YOLLA_PC_BRIDGE",
+  "context_snapshot_id": "20260802100335Z",
+  "context_published_at_kst": "2026-08-02T19:03:35.129045+09:00",
+  "context_evaluated_at_kst": "2026-08-02T19:06:00+09:00",
+  "context_age_seconds_at_directive": 144.870955,
+  "context_max_age_seconds": 1800,
+  "context_freshness": "FRESH_AT_ORIGINAL_WAVE3_DIRECTIVE",
+  "environment_sha256": "b1af97e3941c87f893c0c337d08725554bb1725d45b75ba7ebd51f0a0d41c8c5",
+  "environment_pointer_blob": "64e8d9a6ac3d087a2a7d3d9e356850b428892096",
+  "privacy_boundary": {
+    "pc_file_read": false,
+    "credential_read": false,
+    "token_read": false,
+    "browser_data_read": false,
+    "source_file_content_read": false,
+    "sensitive_value_count": 0
+  },
+  "claim_boundary": {
+    "target_pc_runtime_acceptance": "ACCEPTED_FROM_A1_EXACT_AUTHORITY",
+    "actual_resident_monitoring_execution": "NOT_ASSERTED",
+    "actual_pc_dispatch": false,
+    "actual_panel_apply": false
+  }
+}
