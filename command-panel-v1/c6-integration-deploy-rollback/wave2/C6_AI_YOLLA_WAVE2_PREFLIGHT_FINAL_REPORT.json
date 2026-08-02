@@ -1,0 +1,61 @@
+{
+  "schema_version": "C6_AI_YOLLA_WAVE2_PREFLIGHT_FINAL_REPORT_V1",
+  "worker": "C-6",
+  "directive_id": "C1-TO-C6-AI-YOLLA-WAVE2-INTEGRATION-E2E-V1-20260802-001",
+  "directive_comment_id": 5156769632,
+  "wave_id": "WAVE_2",
+  "directive_registered_at_kst": "2026-08-02 18:03 KST",
+  "result_published_at_kst": "2026-08-02 18:29 KST",
+  "implementation_repository": "anbin1900-crypto/source-factory-core",
+  "implementation_pr": 12,
+  "branch": "command-panel/c6-integration-deploy-rollback-v1",
+  "start_head": "30b8e5add47452845c16fff86c9b708c8236537e",
+  "pre_terminal_head": "9457246310a5fa0ccd04d274d086dfa4204ed8c7",
+  "owned_root": "command-panel-v1/c6-integration-deploy-rollback/wave2/**",
+  "input_gate": {
+    "required": 4,
+    "published": 0,
+    "status": "WAITING_INPUTS_0_OF_4",
+    "missing": ["C-2", "C-3", "C-4", "C-5"],
+    "virtual_pass_count": 0
+  },
+  "validation": {
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_10_OF_10",
+    "json_parse": "PASS_6_OF_6",
+    "deterministic_checks": "PASS_17_OF_17",
+    "remote_blob_readback": "PASS_8_OF_8",
+    "three_service_contract": "PASS_PLAN_ONLY",
+    "failure_injection_matrix": "PASS_7_CASES_PLAN_ONLY",
+    "restart_rollback_plan": "PASS_PLAN_ONLY_NOT_EXECUTED_GATE_CLOSED"
+  },
+  "remote_blobs": {
+    "intake_matrix": "c8ad0ca1067a1f12a57db4c9a78d4954a2a9e645",
+    "preflight_plan": "6035e24aa27cc2533af0d816a6a798da9848b57f",
+    "three_service_contract": "7162c28b223480f7d326d5d57f38aa27c4e6348a",
+    "failure_injection_matrix": "35e52086a1534ee92f7ec5bf8915fd6a5bfb467e",
+    "restart_rollback_plan": "d8c2dbc2a93255cba1b832cc22f1d68275b03621",
+    "validator": "b49c11ce63c7788fff5319ca9c150197ec75b76e",
+    "validator_tests": "40cd11b14aae336fdd6b24943a7c715bd1c23a00",
+    "validation_receipt": "f42fa7d0cfbc0672355b21a668c12ebcdefbef52"
+  },
+  "safety": {
+    "existing_panel_source_mutation_count": 0,
+    "runtime_dispatch_count": 0,
+    "actual_panel_launch_count": 0,
+    "actual_service_e2e_count": 0,
+    "actual_restart_count": 0,
+    "actual_rollback_count": 0,
+    "common_core_source_clone_count": 0,
+    "service_browser_runtime_clone_count": 0,
+    "service_prompt_transport_clone_count": 0,
+    "production_connection_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0,
+    "self_merge_count": 0
+  },
+  "exact_blocker": "C2_C3_C4_C5_WAVE2_TERMINALS_NOT_PUBLISHED_0_OF_4",
+  "required_next_event": "C2_C3_C4_C5_WAVE2_PASS_TERMINALS_WITH_EXACT_REMOTE_HEADS_AND_RESULT_COMMENTS",
+  "decision": "BLOCKED",
+  "terminal": "C6_AI_YOLLA_WAVE2_PREFLIGHT_WAITING_INPUTS"
+}
