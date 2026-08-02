@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yolla:command-panel:c4:ai-yolla-wave-time-card:v1",
+  "title": "AI Yolla Wave Time Card Contract V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "wave_id",
+    "wave_number",
+    "directive_registered_at_kst",
+    "result_published_at_kst",
+    "directive_id",
+    "duplicate_prompt_key_prefix",
+    "state_code",
+    "state_label",
+    "selected_service_name",
+    "ai_yolla_component_name",
+    "service_catalog",
+    "decision_display",
+    "unsupported_pass_suppressed",
+    "badge",
+    "source_digest"
+  ],
+  "properties": {
+    "schema_version": {"const": "AI_YOLLA_WAVE_TIME_CARD_V1"},
+    "wave_id": {"type": "string", "pattern": "^WAVE_[1-9][0-9]*$"},
+    "wave_number": {"type": "integer", "minimum": 1},
+    "directive_registered_at_kst": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2} KST$"},
+    "result_published_at_kst": {"type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2} KST$"},
+    "directive_id": {"type": "string", "minLength": 1},
+    "duplicate_prompt_key_prefix": {"type": "string", "pattern": "^[0-9a-f]{12}$"},
+    "state_code": {"enum": ["EXECUTABLE", "DUPLICATE_BLOCKED", "STALE_WAVE_BLOCKED", "AUTHORITY_CONFLICT", "COMPLETED"]},
+    "state_label": {"enum": ["실행가능", "중복 Prompt 차단", "구버전 Wave 차단", "권위 충돌", "완료"]},
+    "selected_service_name": {"enum": ["욜라 부동산 전문 AI", "욜라 주유소 전문 AI", "욜라 위험물 전문 AI"]},
+    "ai_yolla_component_name": {"enum": ["AI욜라 Runtime", "AI욜라 Data Base", "선택된 전문 AI 서비스"]},
+    "service_catalog": {"type": "array", "const": ["욜라 부동산 전문 AI", "욜라 주유소 전문 AI", "욜라 위험물 전문 AI"]},
+    "decision_display": {"enum": ["PASS", "BLOCKED", "FAIL", "NOT_RUN", "UNKNOWN", "UNVERIFIED"]},
+    "unsupported_pass_suppressed": {"type": "boolean"},
+    "badge": {"enum": ["WAVE", "DUPLICATE", "STALE", "CONFLICT", "COMPLETED"]},
+    "source_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
