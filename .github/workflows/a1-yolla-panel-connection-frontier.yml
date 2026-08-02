@@ -1,0 +1,160 @@
+name: A1 YOLLA Panel Connection Frontier
+
+on:
+  pull_request:
+    paths:
+      - "yolla-panel-v1/a1-connection-frontier/**"
+      - ".github/workflows/a1-yolla-panel-connection-frontier.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  node-contract-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: yolla-panel-v1/a1-connection-frontier
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: JavaScript syntax
+        run: |
+          node --check yolla_panel_main_bridge.js
+          node --check yolla_panel_renderer.js
+          node --check test_yolla_panel_connection_frontier.js
+      - name: Connection contract tests
+        run: node test_yolla_panel_connection_frontier.js
+      - name: JSON contract validation
+        run: |
+          python -m json.tool YOLLA_PANEL_ROLE_REGISTRY_V1.json >/dev/null
+          python -m json.tool YOLLA_PANEL_CONNECTION_CONTRACT_V1.json >/dev/null
+          python -m json.tool YOLLA_PANEL_PATCH_MANIFEST_V1.json >/dev/null
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('.')
+          registry = json.loads((root/'YOLLA_PANEL_ROLE_REGISTRY_V1.json').read_text())
+          assert registry['schema_version'] == 'YOLLA_PANEL_ROLE_REGISTRY_V1'
+          assert len(registry['groups']) == 6
+          assert len(registry['roles']) == 39
+          assert len({r['role_id'] for r in registry['roles']}) == 39
+          assert registry['provider_slots'] == ['directive','result','pcState','commandPayload']
+          manifest = json.loads((root/'YOLLA_PANEL_PATCH_MANIFEST_V1.json').read_text())
+          assert all(v == 0 for v in manifest['forbidden_counters'].values())
+          print('YOLLA_PANEL_JSON_CONTRACT=PASS')
+          PY
+
+  windows-apply-rollback-fixture:
+    needs: node-contract-tests
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Parse PowerShell installer
+        shell: pwsh
+        run: |
+          $script = 'yolla-panel-v1/a1-connection-frontier/INSTALL_YOLLA_PANEL_CONNECTION_FRONTIER.ps1'
+          $tokens = $null
+          $errors = $null
+          [System.Management.Automation.Language.Parser]::ParseFile((Resolve-Path $script), [ref]$tokens, [ref]$errors) | Out-Null
+          if ($errors.Count -gt 0) { throw (($errors | ForEach-Object Message) -join "`n") }
+      - name: Prepare SAFE Panel fixture
+        shell: pwsh
+        run: |
+          $source = 'releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10'
+          $target = Join-Path $env:RUNNER_TEMP 'safe-panel-v10-fixture'
+          Copy-Item -LiteralPath $source -Destination $target -Recurse -Force
+          $hashes = [ordered]@{}
+          foreach ($name in @('safe_panel_main.js','safe_panel_preload.js','safe_panel.html','safe_panel.css')) {
+            $hashes[$name] = (Get-FileHash (Join-Path $target $name) -Algorithm SHA256).Hash.ToLowerInvariant()
+          }
+          $hashes | ConvertTo-Json | Set-Content (Join-Path $env:RUNNER_TEMP 'original-hashes.json') -Encoding utf8
+          "SAFE_PANEL_FIXTURE=$target" | Out-File -FilePath $env:GITHUB_ENV -Append
+      - name: Apply connection frontier
+        shell: pwsh
+        run: |
+          & 'yolla-panel-v1/a1-connection-frontier/INSTALL_YOLLA_PANEL_CONNECTION_FRONTIER.ps1' -SafePanelDirectory $env:SAFE_PANEL_FIXTURE -FixtureMode
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          foreach ($name in @('yolla_panel_main_bridge.js','yolla_panel_renderer.js','yolla_panel.css','yolla_panel_role_registry.json')) {
+            if (-not (Test-Path (Join-Path $env:SAFE_PANEL_FIXTURE $name))) { throw "Installed file missing: $name" }
+          }
+          $html = Get-Content (Join-Path $env:SAFE_PANEL_FIXTURE 'safe_panel.html') -Raw
+          $main = Get-Content (Join-Path $env:SAFE_PANEL_FIXTURE 'safe_panel_main.js') -Raw
+          $preload = Get-Content (Join-Path $env:SAFE_PANEL_FIXTURE 'safe_panel_preload.js') -Raw
+          foreach ($marker in @('YOLLA_PANEL_SHELL_V1','YOLLA_PANEL_RENDERER_SCRIPT_V1')) { if ($html -notmatch $marker) { throw "HTML marker missing: $marker" } }
+          foreach ($marker in @('YOLLA_PANEL_MAIN_BRIDGE_REQUIRE_V1','YOLLA_PANEL_MAIN_BRIDGE_REGISTER_V1')) { if ($main -notmatch $marker) { throw "Main marker missing: $marker" } }
+          if ($preload -notmatch 'YOLLA_PANEL_PRELOAD_BRIDGE_V1') { throw 'Preload marker missing' }
+      - name: Node syntax after apply
+        shell: pwsh
+        run: |
+          foreach ($name in @('safe_panel_main.js','safe_panel_preload.js','safe_panel_renderer.js','yolla_panel_main_bridge.js','yolla_panel_renderer.js')) {
+            node --check (Join-Path $env:SAFE_PANEL_FIXTURE $name)
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+      - name: Rollback and byte parity
+        shell: pwsh
+        run: |
+          & 'yolla-panel-v1/a1-connection-frontier/INSTALL_YOLLA_PANEL_CONNECTION_FRONTIER.ps1' -SafePanelDirectory $env:SAFE_PANEL_FIXTURE -FixtureMode -Rollback
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $expected = Get-Content (Join-Path $env:RUNNER_TEMP 'original-hashes.json') -Raw | ConvertFrom-Json
+          foreach ($name in @('safe_panel_main.js','safe_panel_preload.js','safe_panel.html','safe_panel.css')) {
+            $actual = (Get-FileHash (Join-Path $env:SAFE_PANEL_FIXTURE $name) -Algorithm SHA256).Hash.ToLowerInvariant()
+            if ($actual -ne $expected.$name) { throw "Rollback parity failed: $name" }
+          }
+          foreach ($name in @('yolla_panel_main_bridge.js','yolla_panel_renderer.js','yolla_panel.css','yolla_panel_role_registry.json')) {
+            if (Test-Path (Join-Path $env:SAFE_PANEL_FIXTURE $name)) { throw "Rollback did not remove: $name" }
+          }
+          Write-Host 'YOLLA_PANEL_APPLY_ROLLBACK_PARITY=PASS'
+
+  package:
+    needs: [node-contract-tests, windows-apply-rollback-fixture]
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Assemble installation package
+        shell: pwsh
+        run: |
+          $source = 'yolla-panel-v1/a1-connection-frontier'
+          $out = Join-Path $env:RUNNER_TEMP 'A1_YOLLA_PANEL_CONNECTION_FRONTIER_V1'
+          New-Item -ItemType Directory -Path $out -Force | Out-Null
+          foreach ($name in @(
+            'README.md',
+            'YOLLA_PANEL_ROLE_REGISTRY_V1.json',
+            'YOLLA_PANEL_CONNECTION_CONTRACT_V1.json',
+            'YOLLA_PANEL_PATCH_MANIFEST_V1.json',
+            'yolla_panel_main_bridge.js',
+            'yolla_panel_renderer.js',
+            'yolla_panel.css',
+            'INSTALL_YOLLA_PANEL_CONNECTION_FRONTIER.ps1',
+            'RUN_YOLLA_PANEL_CONNECTION_FRONTIER.cmd',
+            'ROLLBACK_YOLLA_PANEL_CONNECTION_FRONTIER.cmd'
+          )) { Copy-Item (Join-Path $source $name) (Join-Path $out $name) -Force }
+          $zip = Join-Path $env:RUNNER_TEMP 'A1_YOLLA_PANEL_CONNECTION_FRONTIER_V1.zip'
+          Compress-Archive -Path "$out/*" -DestinationPath $zip -Force
+          [ordered]@{
+            schema_version = 'A1_YOLLA_PANEL_CONNECTION_FRONTIER_BUILD_RECEIPT_V1'
+            package_sha256 = (Get-FileHash $zip -Algorithm SHA256).Hash.ToLowerInvariant()
+            role_count = 39
+            group_count = 6
+            provider_slots = @('directive','result','pcState','commandPayload')
+            new_electron_runtime_count = 0
+            new_browser_runtime_count = 0
+            new_prompt_transport_count = 0
+          } | ConvertTo-Json -Depth 10 | Set-Content (Join-Path $env:RUNNER_TEMP 'A1_YOLLA_PANEL_CONNECTION_FRONTIER_BUILD_RECEIPT.json') -Encoding utf8
+      - uses: actions/upload-artifact@v4
+        with:
+          name: A1-YOLLA-Panel-Connection-Frontier-V1
+          path: |
+            ${{ runner.temp }}/A1_YOLLA_PANEL_CONNECTION_FRONTIER_V1.zip
+            ${{ runner.temp }}/A1_YOLLA_PANEL_CONNECTION_FRONTIER_BUILD_RECEIPT.json
+          if-no-files-found: error
+          retention-days: 30
