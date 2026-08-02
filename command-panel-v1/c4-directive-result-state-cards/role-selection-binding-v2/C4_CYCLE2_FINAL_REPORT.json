@@ -11,6 +11,7 @@
   "branch": "command-panel/c4-directive-result-state-cards-v1",
   "start_head": "af6e56ec11104f70e03891812e9237f5937a0fc9",
   "head_before_terminal_finalize": "a712c181780fcd6515ad94b4e1814e188b53991a",
+  "final_remote_head": "138188cd078a0630160ce8df43c2066720cd285a",
   "owned_root": "command-panel-v1/c4-directive-result-state-cards/role-selection-binding-v2/",
   "c2_authority": {
     "c2_pr": 10,
@@ -26,7 +27,7 @@
     "ROLE_SELECTED_CARD_FIXTURE_V2.json": "PASS_REMOTE",
     "ROLE_SELECTED_CARD_TEST_RESULT_V2.json": "PASS_REMOTE",
     "C4_TO_C6_CARD_MOUNT_HANDOFF_V2.json": "PASS_REMOTE",
-    "C4_CYCLE2_FINAL_REPORT.json": "PASS_REMOTE_INITIAL_AND_TERMINAL_UPDATE"
+    "C4_CYCLE2_FINAL_REPORT.json": "PASS_REMOTE"
   },
   "implementation": {
     "selected_role_only_binding": true,
