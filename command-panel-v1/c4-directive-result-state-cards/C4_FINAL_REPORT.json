@@ -1,6 +1,7 @@
 {
-  "schema_version": "C4_DIRECTIVE_RESULT_PC_STATE_CARDS_FINAL_REPORT_V1",
+  "schema_version": "C4_DIRECTIVE_RESULT_PC_STATE_CARDS_FINAL_REPORT_V2",
   "directive_id": "C1-TO-C4-DIRECTIVE-RESULT-PC-STATE-CARDS-V1-20260802-001",
+  "directive_comment_id": 5154887090,
   "parent_directive": "MASTER-TO-C1-EXISTING-SOURCE-FACTORY-WORKER-BROWSER-COMMAND-PANEL-V1-20260802-001",
   "parent_comment": 5154763830,
   "master_batch": "MASTER-ABC-PC-AGENT-STATE-BACKUP-AND-COMMAND-PANEL-V1-20260802-001",
@@ -10,6 +11,7 @@
   "implementation_repository": "anbin1900-crypto/source-factory-core",
   "branch": "command-panel/c4-directive-result-state-cards-v1",
   "base_head": "69311de6c51e609df3080d8f316d98e4f381adc6",
+  "remote_head_before_terminal_finalize": "3622c6f20980a913bc698d9b7fe710561b32eed6",
   "owned_root": "command-panel-v1/c4-directive-result-state-cards/",
   "required_outputs": {
     "EXACT_DIRECTIVE_CARD_CONTRACT": "EXACT_DIRECTIVE_CARD_CONTRACT.json",
@@ -38,10 +40,17 @@
     "html_escape": true
   },
   "validation": {
+    "node_syntax": "PASS",
     "node_tests": "19_OF_19_PASS",
     "contract_schemas": "3_OF_3_PASS",
+    "exact_directive_card": "PASS",
+    "exact_result_card": "PASS",
+    "pc_agent_backup_status_card": "PASS",
+    "fixture_badge_required": "PASS",
     "unsupported_pass_display_count": 0,
     "open_post_link": "PASS",
+    "open_result_post_link": "PASS",
+    "html_escape": "PASS",
     "out_of_scope_files": 0
   },
   "attempt_log": {
@@ -54,6 +63,22 @@
     "test_runs": 1,
     "same_failure_signature_repeats": 0
   },
+  "remote": {
+    "comparison": "AHEAD_BY_12_BEHIND_BY_0_BEFORE_TERMINAL_FINALIZE",
+    "changed_file_count": 12,
+    "all_changed_files_under_owned_root": true,
+    "existing_source_factory_file_mutation_count": 0,
+    "required_blob_readback": "PASS_6_OF_6",
+    "required_blobs": {
+      "EXACT_DIRECTIVE_CARD_CONTRACT.json": "1b5dd1337b737b03bdb18fd18914337a57a5303a",
+      "EXACT_RESULT_CARD_CONTRACT.json": "104d4817878db5eb932652e4cde872ad300231d1",
+      "PC_AGENT_BACKUP_STATUS_CARD_CONTRACT.json": "cab7222f48245bfe034854d59da23b0a13e67855",
+      "directiveResultStateCards.js": "82a14c89f0d4f0ce2db55ea6da35cb00d23f846a",
+      "CARD_RENDER_TEST_RESULT.json": "2cf2dc6cb15cae74fe8ee39c099849110524a001",
+      "C4_FINAL_REPORT_V1.json": "496aaa3bac79f1e0ac70e49ae42347ad0ae8a495"
+    },
+    "publication_status": "PASS"
+  },
   "boundaries": {
     "actual_pc_execution": false,
     "service_action": false,
@@ -64,10 +89,6 @@
     "source_factory_existing_source_modified": false
   },
   "blockers": [],
-  "remote": {
-    "publication_status": "PENDING",
-    "head": "PENDING",
-    "required_blob_readback": "PENDING"
-  },
-  "terminal": "C4_DIRECTIVE_RESULT_PC_STATE_CARDS_PASS_PENDING_REMOTE_READBACK"
+  "final_status": "PASS",
+  "terminal": "C4_DIRECTIVE_RESULT_PC_STATE_CARDS_PASS"
 }
