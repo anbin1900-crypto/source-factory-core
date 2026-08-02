@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self';">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YOLLA Command Workspace</title>
+  <link rel="stylesheet" href="./yolla_worker_shell.css">
+</head>
+<body>
+  <header class="yw-header">
+    <div class="yw-header-title">
+      <strong>YOLLA COMMAND WORKSPACE</strong>
+      <span id="yw-selected-role">A-1</span>
+    </div>
+    <div class="yw-header-cycle">
+      <span>명령 순환</span>
+      <strong id="yw-cycle-status">대기</strong>
+    </div>
+  </header>
+
+  <aside class="yw-sidebar" aria-label="커맨더와 워커 그룹">
+    <div class="yw-brand">
+      <span>욜라 학습 DB</span>
+      <strong>커맨더·워커 그룹</strong>
+      <small>왼쪽에서 역할을 선택하고 오른쪽 ChatGPT를 사용합니다.</small>
+    </div>
+    <nav id="yw-role-groups" class="yw-role-groups" aria-label="역할 그룹"></nav>
+    <section class="yw-cycle-card" aria-live="polite">
+      <div class="yw-cycle-card-title">
+        <strong>최근 1회 순환</strong>
+        <span id="yw-cycle-id">없음</span>
+      </div>
+      <ol id="yw-cycle-events" class="yw-cycle-events">
+        <li>패널에서 명령을 실행하면 여기에 순환 단계가 표시됩니다.</li>
+      </ol>
+    </section>
+  </aside>
+
+  <main class="yw-browser-placeholder" aria-hidden="true">
+    <span>ChatGPT BrowserView 연결 영역</span>
+  </main>
+
+  <script src="./yolla_worker_shell.js"></script>
+</body>
+</html>
