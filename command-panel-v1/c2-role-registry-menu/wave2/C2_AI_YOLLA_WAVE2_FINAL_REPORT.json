@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "report_id": "C2_AI_YOLLA_PANEL_SERVICE_REGISTRY_WAVE2_FINAL_V1_20260802",
+  "worker": "C-2",
+  "wave_id": "WAVE_2",
+  "directive": {
+    "id": "C1-TO-C2-AI-YOLLA-PANEL-SERVICE-REGISTRY-WAVE2-V1-20260802-001",
+    "comment_id": 5156763807,
+    "registered_at_kst": "2026-08-02 18:03 KST",
+    "duplicate_prompt_key": "970a9e2b3903e55d15ba5dbd8f06fa33758b4d294e72e835c86f0fe74c5b68de",
+    "execution_gate": "C2_WAVE1_CLOSURE_RECEIPT_PASS",
+    "wave1_receipt_comment": 5156841802
+  },
+  "implementation": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "pull_request": 10,
+    "branch": "command-panel/c2-role-registry-menu-v1",
+    "start_head": "9983fb43e5f635307c6ca29ac111a8c2d2255e56",
+    "owned_root": "command-panel-v1/c2-role-registry-menu/wave2/**",
+    "final_remote_head": "REPORTED_IN_TERMINAL_COMMENT"
+  },
+  "architecture": {
+    "platform_id": "AI_YOLLA",
+    "platform_name": "AI욜라",
+    "common_core_id": "AI_YOLLA_COMMON_CORE",
+    "component_ids": [
+      "AI_YOLLA_RUNTIME",
+      "AI_YOLLA_PANEL",
+      "AI_YOLLA_WORKSPACE",
+      "AI_YOLLA_DATABASE",
+      "AI_YOLLA_AUTOMATION"
+    ],
+    "canonical_services": [
+      {"service_id": "YOLLA_REAL_ESTATE_PRO_AI", "official_name_ko": "욜라 부동산 전문 AI", "domain_pack_id": "REAL_ESTATE"},
+      {"service_id": "YOLLA_GAS_STATION_PRO_AI", "official_name_ko": "욜라 주유소 전문 AI", "domain_pack_id": "GAS_STATION_PETROLEUM"},
+      {"service_id": "YOLLA_HAZARDOUS_MATERIALS_PRO_AI", "official_name_ko": "욜라 위험물 전문 AI", "domain_pack_id": "HAZARDOUS_MATERIALS_FIRE_SAFETY"}
+    ]
+  },
+  "required_fields": [
+    "platform_id",
+    "component_id",
+    "service_id",
+    "domain_pack_id",
+    "role_id",
+    "wave_id",
+    "directive_id",
+    "directive_registered_at_kst",
+    "duplicate_prompt_key"
+  ],
+  "validation": {
+    "THREE_SERVICE_REGISTRY": "PASS",
+    "COMPONENT_REGISTRY": "PASS",
+    "DYNAMIC_SERVICE_APPEND": "PASS",
+    "WAVE_METADATA": "PASS",
+    "DUPLICATE_KEY_PRESERVED": "PASS",
+    "UNKNOWN_SERVICE_REJECT": "PASS",
+    "NODE_TESTS": "PASS_15_OF_15",
+    "JSON_SCHEMA": "PASS",
+    "REMOTE_BLOB_READBACK": "PASS_8_OF_8",
+    "OUT_OF_SCOPE_FILES": 0
+  },
+  "handoff": {
+    "path": "AI_YOLLA_THREE_SERVICE_EXACT_HANDOFF_V1.json",
+    "blob": "02cb1a77f0f6ace0d2079db5d3d53e39b5c74f70",
+    "consumers": ["C-3", "C-4", "C-5", "C-6"]
+  },
+  "evidence": {
+    "test_result_path": "AI_YOLLA_PANEL_SERVICE_REGISTRY_TEST_RESULT_V1.json",
+    "test_result_blob": "a7d47028284e6b2d61c90050aadc2acac53356df"
+  },
+  "policies": {
+    "wave_policy_blob": "ef5748e7a204997966547baf9c7782da43007cc1",
+    "naming_policy_blob": "9c98b2e46e9272e5ed3f6fe45469ee897d584600"
+  },
+  "safety": {
+    "new_runtime_count": 0,
+    "new_ipc_count": 0,
+    "new_prompt_transport_count": 0,
+    "source_clone_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "blockers": [],
+  "final_status": "C2_AI_YOLLA_PANEL_SERVICE_REGISTRY_WAVE2_PASS"
+}
