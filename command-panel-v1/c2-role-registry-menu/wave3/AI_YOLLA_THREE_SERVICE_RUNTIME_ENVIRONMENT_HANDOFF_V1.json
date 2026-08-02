@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "handoff_id": "AI_YOLLA_THREE_SERVICE_RUNTIME_ENVIRONMENT_HANDOFF_WAVE3_V1",
+  "producer": "C-2",
+  "wave_id": "WAVE_3",
+  "directive_id": "C1-TO-C2-AI-YOLLA-PC-ENVIRONMENT-REGISTRY-WAVE3-V1-20260802-001",
+  "environment_id": "AI_YOLLA_RUNTIME_ENVIRONMENT",
+  "environment_status": "TARGET_PC_ACCEPTED_MONITORING_SOURCE_READY",
+  "shared_runtime": true,
+  "source_clone_count": 0,
+  "services": [
+    {
+      "service_id": "YOLLA_REAL_ESTATE_PRO_AI",
+      "official_name_ko": "욜라 부동산 전문 AI",
+      "domain_pack_id": "REAL_ESTATE",
+      "runtime_environment_id": "AI_YOLLA_RUNTIME_ENVIRONMENT",
+      "separate_runtime": false
+    },
+    {
+      "service_id": "YOLLA_GAS_STATION_PRO_AI",
+      "official_name_ko": "욜라 주유소 전문 AI",
+      "domain_pack_id": "GAS_STATION_PETROLEUM",
+      "runtime_environment_id": "AI_YOLLA_RUNTIME_ENVIRONMENT",
+      "separate_runtime": false
+    },
+    {
+      "service_id": "YOLLA_HAZARDOUS_MATERIALS_PRO_AI",
+      "official_name_ko": "욜라 위험물 전문 AI",
+      "domain_pack_id": "HAZARDOUS_MATERIALS_FIRE_SAFETY",
+      "runtime_environment_id": "AI_YOLLA_RUNTIME_ENVIRONMENT",
+      "separate_runtime": false
+    }
+  ],
+  "consumers": ["C-3", "C-4", "C-5", "C-6"],
+  "safety": {
+    "actual_pc_command_count": 0,
+    "actual_pc_file_read_count": 0,
+    "sensitive_value_count": 0
+  }
+}
