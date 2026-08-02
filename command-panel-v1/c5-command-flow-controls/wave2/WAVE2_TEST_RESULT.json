@@ -1,0 +1,56 @@
+{
+  "schema_version": "C5_AI_YOLLA_AUTOMATION_DUPLICATE_GATE_TEST_RESULT_V1",
+  "directive_id": "C1-TO-C5-AI-YOLLA-AUTOMATION-DUPLICATE-GATE-WAVE2-V1-20260802-001",
+  "directive_comment": 5156768032,
+  "wave_id": "WAVE_2",
+  "directive_registered_at_kst": "2026-08-02 18:03 KST",
+  "execution_gate": {
+    "terminal": "C5_WAVE1_CLOSURE_RECEIPT_PASS",
+    "comment": 5156846454,
+    "decision": "PASS"
+  },
+  "validation": {
+    "node_syntax": "PASS_4_OF_4",
+    "unit_tests": "PASS_22_OF_22",
+    "duplicate_prompt_reject": "PASS",
+    "already_accepted_replay_reject": "PASS",
+    "stale_wave_reject": "PASS",
+    "missing_time_reject": "PASS",
+    "missing_wave_reject": "PASS",
+    "supersession_required": "PASS",
+    "three_service_payload_preservation": "PASS",
+    "authoritative_wave1_key_match": "PASS",
+    "authoritative_wave2_key_match": "PASS",
+    "user_manual_prompt_composition_count": 0,
+    "actual_dispatch_count": 0,
+    "auto_next_wave_count": 0
+  },
+  "failure_analysis_and_retry": [
+    {
+      "attempt": 1,
+      "finding": "COMPUTED_DUPLICATE_KEY_DID_NOT_MATCH_DIRECTIVE_AUTHORITY_KEY",
+      "observed_key": "181083b8d89615148168eb96ca2aff7dbb18f23821ee20439a31c07f51185e47",
+      "expected_key": "a3d37b27a6f6af60032d45104ab68481504949e0cd90703562e89a211e6cbb70",
+      "root_cause": "JSON_CANONICAL_HASH_USED_INSTEAD_OF_EXACT_PIPE_JOIN_INPUT_ORDER",
+      "correction": "SHA256(role_id|directive_id|wave_id|directive_registered_at_kst)",
+      "retry_result": "PASS_22_OF_22"
+    },
+    {
+      "attempt": 2,
+      "finding": "SINGLE_SOURCE_FILE_ABOVE_SAFE_CONNECTOR_PUBLICATION_SIZE",
+      "root_cause": "MONOLITHIC_IMPLEMENTATION",
+      "correction": "SPLIT_INTO_FACADE_PLUS_CORE_AND_POLICY_MODULES",
+      "retry_result": "PASS_22_OF_22"
+    }
+  ],
+  "source_sha256": {
+    "AUTOMATION_DUPLICATE_GATE_CONTRACT.json": "a0ad6d47a1dbc8b133d1afc63426010ff2f9a42ff104d8a75e3e1e7cdea25607",
+    "automationDuplicatePromptGate.js": "b37028281a54190d4eafcd602a9dc77b898edc50347ae72b0b289ff9fadc223f",
+    "lib/core.js": "38a479f5054d0a694e874b762229a40ad24726a47f6501c8557b22bf5186b5fe",
+    "lib/policy.js": "5befc7f41b3b82c264b5e22f7619a784b4f1a7fda17ac19179beafe19b5376a8",
+    "fixtures/THREE_SPECIALIST_SERVICE_PAYLOADS.json": "fe3d941dce253ff53edeeedd76d16316db52961197a3d0f0d67e7f6ccfd3db9a",
+    "tests/testAutomationDuplicatePromptGate.js": "408b672d800ed72c5105d84657dcdc3c285fc4ce945390adbdb486faca878bf2",
+    "test-output.txt": "99c49a98ff854163ac3b21851e9490d838ce2aef13c1e7d5712c9f189110ecda",
+    "README.md": "11fb06870778ae17f45d69a7409585a2ece159cb5c3f60b1a3f5798490076735"
+  }
+}
