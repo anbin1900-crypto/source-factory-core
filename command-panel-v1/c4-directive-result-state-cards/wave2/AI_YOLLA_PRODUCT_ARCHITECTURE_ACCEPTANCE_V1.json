@@ -1,0 +1,23 @@
+{
+  "schema_version": "AI_YOLLA_PRODUCT_ARCHITECTURE_ACCEPTANCE_V1",
+  "directive_id": "C1-TO-C4-AI-YOLLA-PANEL-WAVE-TIME-CARDS-WAVE2-V1-20260802-001",
+  "source_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "pull_request": 178,
+    "policy_name": "AI_YOLLA_CANONICAL_PRODUCT_ARCHITECTURE_V1.json",
+    "directive_comment_id": 5156766669
+  },
+  "official_service_names": [
+    "욜라 부동산 전문 AI",
+    "욜라 주유소 전문 AI",
+    "욜라 위험물 전문 AI"
+  ],
+  "official_component_names": [
+    "AI욜라 Runtime",
+    "AI욜라 Data Base",
+    "선택된 전문 AI 서비스"
+  ],
+  "default_user_runtime_label": "AI욜라 Runtime 상태",
+  "forbidden_default_label": "PC Agent 상태",
+  "accepted": true
+}

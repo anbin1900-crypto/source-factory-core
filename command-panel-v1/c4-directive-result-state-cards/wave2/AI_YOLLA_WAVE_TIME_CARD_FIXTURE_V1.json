@@ -1,0 +1,115 @@
+{
+  "schema_version": "AI_YOLLA_WAVE_TIME_CARD_FIXTURE_V1",
+  "fixture": true,
+  "directive_id": "C1-TO-C4-AI-YOLLA-PANEL-WAVE-TIME-CARDS-WAVE2-V1-20260802-001",
+  "wave1_closure_receipt": {
+    "comment_id": 5156826967,
+    "registered_at_kst": "2026-08-02 18:03 KST",
+    "published_at_kst": "2026-08-02 18:20 KST",
+    "terminal": "C4_WAVE1_CLOSURE_RECEIPT_PASS",
+    "remote_head": "9b82e7a1ba853f7581d258996614b0d46107821f"
+  },
+  "ledger": {
+    "current_wave_number": 2,
+    "processed_prompt_keys": [
+      "d46390c660cadf0f889062d13a1d99323e3938956132fb3e7435ee75b524daed"
+    ],
+    "authoritative_directives": [
+      {
+        "directive_id": "C1-TO-C4-AI-YOLLA-PANEL-WAVE-TIME-CARDS-WAVE2-V1-20260802-001",
+        "wave_id": "WAVE_2",
+        "registered_at_kst": "2026-08-02 18:03 KST",
+        "duplicate_prompt_key": "c92e436459bdb82ecaadddabfad1ef9dd23fb787e094598e8739846031245f89",
+        "selected_service_name": "욜라 위험물 전문 AI",
+        "ai_yolla_component_name": "선택된 전문 AI 서비스",
+        "supersedes_directive_id": null
+      }
+    ]
+  },
+  "cases": {
+    "executable": {
+      "directive": {
+        "directive_id": "C1-TO-C4-AI-YOLLA-PANEL-WAVE-TIME-CARDS-WAVE2-V1-20260802-001",
+        "wave_id": "WAVE_2",
+        "registered_at_kst": "2026-08-02 18:03 KST",
+        "duplicate_prompt_key": "c92e436459bdb82ecaadddabfad1ef9dd23fb787e094598e8739846031245f89",
+        "selected_service_name": "욜라 위험물 전문 AI",
+        "ai_yolla_component_name": "선택된 전문 AI 서비스",
+        "supersedes_directive_id": null
+      },
+      "result": null
+    },
+    "duplicate": {
+      "directive": {
+        "directive_id": "C1-TO-C4-WAVE1-CLOSURE-RECEIPT-V1-20260802-001-REPLAY",
+        "wave_id": "WAVE_2",
+        "registered_at_kst": "2026-08-02 18:04 KST",
+        "duplicate_prompt_key": "d46390c660cadf0f889062d13a1d99323e3938956132fb3e7435ee75b524daed",
+        "selected_service_name": "욜라 부동산 전문 AI",
+        "ai_yolla_component_name": "AI욜라 Runtime",
+        "supersedes_directive_id": null
+      },
+      "result": null
+    },
+    "stale": {
+      "directive": {
+        "directive_id": "LEGACY-WAVE-ONE-DIRECTIVE",
+        "wave_id": "WAVE_1",
+        "registered_at_kst": "2026-08-02 17:55 KST",
+        "duplicate_prompt_key": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "selected_service_name": "욜라 주유소 전문 AI",
+        "ai_yolla_component_name": "AI욜라 Data Base",
+        "supersedes_directive_id": null
+      },
+      "result": null
+    },
+    "conflict": {
+      "directive": {
+        "directive_id": "C1-TO-C4-AI-YOLLA-PANEL-WAVE-TIME-CARDS-WAVE2-CONFLICT",
+        "wave_id": "WAVE_2",
+        "registered_at_kst": "2026-08-02 18:05 KST",
+        "duplicate_prompt_key": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "selected_service_name": "욜라 부동산 전문 AI",
+        "ai_yolla_component_name": "AI욜라 Runtime",
+        "supersedes_directive_id": null
+      },
+      "result": null
+    },
+    "completed": {
+      "directive": {
+        "directive_id": "C1-TO-C4-AI-YOLLA-PANEL-WAVE-TIME-CARDS-WAVE2-V1-20260802-001",
+        "wave_id": "WAVE_2",
+        "registered_at_kst": "2026-08-02 18:03 KST",
+        "duplicate_prompt_key": "c92e436459bdb82ecaadddabfad1ef9dd23fb787e094598e8739846031245f89",
+        "selected_service_name": "욜라 위험물 전문 AI",
+        "ai_yolla_component_name": "선택된 전문 AI 서비스",
+        "supersedes_directive_id": null
+      },
+      "result": {
+        "decision": "PASS",
+        "terminal": "C4_AI_YOLLA_PANEL_WAVE_TIME_CARDS_WAVE2_PASS",
+        "remote_head": "9999999999999999999999999999999999999999",
+        "result_comment_id": 9999999999,
+        "published_at_kst": "2026-08-02 18:20 KST"
+      }
+    },
+    "unsupported_pass": {
+      "directive": {
+        "directive_id": "C1-TO-C4-AI-YOLLA-PANEL-WAVE-TIME-CARDS-WAVE2-V1-20260802-001",
+        "wave_id": "WAVE_2",
+        "registered_at_kst": "2026-08-02 18:03 KST",
+        "duplicate_prompt_key": "c92e436459bdb82ecaadddabfad1ef9dd23fb787e094598e8739846031245f89",
+        "selected_service_name": "욜라 위험물 전문 AI",
+        "ai_yolla_component_name": "선택된 전문 AI 서비스",
+        "supersedes_directive_id": null
+      },
+      "result": {
+        "decision": "PASS",
+        "terminal": null,
+        "remote_head": null,
+        "result_comment_id": null,
+        "published_at_kst": "2026-08-02 18:20 KST"
+      }
+    }
+  }
+}

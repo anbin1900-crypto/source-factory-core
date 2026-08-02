@@ -1,0 +1,93 @@
+{
+  "schema_version": "C4_AI_YOLLA_PANEL_PC_ENVIRONMENT_CARD_WAVE3_FINAL_REPORT_V2",
+  "directive_id": "C1-TO-C4-AI-YOLLA-PC-ENVIRONMENT-CARD-WAVE3-V1-20260802-001",
+  "directive_comment_id": 5157101861,
+  "wave_id": "WAVE_3",
+  "directive_registered_at_kst": "2026-08-02 19:06 KST",
+  "result_published_at_kst": "2026-08-02 19:25 KST",
+  "duplicate_prompt_key": "cc9d06035d6144fb5c333be4ebc2374e9753f14fb581ad3b17c03d03047138ce",
+  "worker": "C-4",
+  "authority_pr": 178,
+  "implementation_repository": "anbin1900-crypto/source-factory-core",
+  "implementation_pr": 9,
+  "branch": "command-panel/c4-directive-result-state-cards-v1",
+  "start_head": "ee00ec93768da18edeadeeac5677d85a02db75fc",
+  "head_before_terminal_finalize": "3abc42765ef88ef2d5bf2b875d2da1cd712088a9",
+  "actual_terminal_head_source": "SOURCE_FACTORY_PR9_METADATA_AND_AUTHORITY_PR178_RESULT_COMMENT",
+  "owned_root": "command-panel-v1/c4-directive-result-state-cards/wave3/",
+  "a1_authority": {
+    "control_pr": 142,
+    "target_pc_accepted_comment": 5153045063,
+    "resident_monitoring_comment": 5155863538,
+    "target_pc_terminal": "A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED",
+    "runtime_version": "1.0.0-20260802",
+    "manager_hotfix_version": "1.0.1-manager-status",
+    "acceptance_run": "PCAR-20260801T191841746Z-d81c8a2f6778",
+    "task_registered": true,
+    "supervisor_process_count": 1,
+    "worker_process_count": 1,
+    "controlled_request": "PASS",
+    "duplicate_execution_count": 0,
+    "worker_crash_recovery": "PASS",
+    "full_runtime_restart": "PASS",
+    "result_persistence": "PASS"
+  },
+  "published_outputs": {
+    "aiYollaPcEnvironmentCardWave3.js": "61eacec2815b70816143c90cf0884aa8fd0ec295",
+    "C4_WAVE3_TEST_RESULT.json": "7cee522722a8f50572a949abf94fcc8b2cd47f06",
+    "C4_WAVE3_FINAL_REPORT_V1.json": "02e9c5f9bf621984eeff4b50e0e924d0ed2866d4"
+  },
+  "validation": {
+    "node_syntax": "PASS",
+    "self_tests": "PASS_20_OF_20",
+    "local_extended_tests": "PASS_22_OF_22",
+    "a1_environment_card": "PASS",
+    "runtime_acceptance_display": "PASS",
+    "context_freshness_display": "PASS",
+    "sensitive_value_display_count": 0,
+    "unsupported_pass_display_count": 0,
+    "html_escape": "PASS",
+    "open_a1_authority_link": "PASS_2_OF_2",
+    "out_of_scope_files": 0
+  },
+  "actual_display_decision": {
+    "runtime_state": "TARGET_PC_ACCEPTED",
+    "context_state": "RUNTIME_UNVERIFIED",
+    "overall_state": "RUNTIME_UNVERIFIED",
+    "reason": "LATEST_CONTEXT_PUBLISHED_AT_KST_NOT_SUPPORTED_BY_REFERENCED_A1_AUTHORITY",
+    "d_drive_summary": "SAFE_SUMMARY_COLLECTION_CONFIGURED_CONTEXT_TIME_UNVERIFIED",
+    "project_root_summary": "SAFE_SUMMARY_COLLECTION_CONFIGURED_CONTEXT_TIME_UNVERIFIED"
+  },
+  "attempt_log": [
+    {
+      "attempt": 1,
+      "result": "COMMENT_REACTION_LOOKUP_403",
+      "correction": "DROPPED_NONESSENTIAL_REACTION_PATH_AND_USED_PR_COMMENT_AUTHORITY"
+    },
+    {
+      "attempt": 2,
+      "result": "PASS_22_OF_22_LOCAL_TESTS"
+    },
+    {
+      "attempt": 3,
+      "result": "PASS_SINGLE_COMMIT_REMOTE_PUBLICATION_AND_BLOB_READBACK_3_OF_3"
+    }
+  ],
+  "boundaries": {
+    "actual_pc_command_count": 0,
+    "drive_write_count": 0,
+    "production_connection_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  },
+  "blockers": [],
+  "remote": {
+    "comparison_from_start_before_terminal_finalize": "AHEAD_BY_1_BEHIND_BY_0",
+    "changed_file_count": 3,
+    "all_changed_files_under_owned_root": true,
+    "required_blob_readback": "PASS_3_OF_3",
+    "publication_status": "PASS"
+  },
+  "final_status": "PASS",
+  "terminal": "C4_AI_YOLLA_PANEL_PC_ENVIRONMENT_CARD_WAVE3_PASS"
+}

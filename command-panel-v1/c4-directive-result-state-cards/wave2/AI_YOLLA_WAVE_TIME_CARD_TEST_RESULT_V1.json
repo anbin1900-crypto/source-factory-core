@@ -1,0 +1,80 @@
+{
+  "schema_version": "AI_YOLLA_WAVE_TIME_CARD_TEST_RESULT_V1",
+  "directive_id": "C1-TO-C4-AI-YOLLA-PANEL-WAVE-TIME-CARDS-WAVE2-V1-20260802-001",
+  "directive_comment_id": 5156766669,
+  "wave_id": "WAVE_2",
+  "worker": "C-4",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "branch": "command-panel/c4-directive-result-state-cards-v1",
+  "start_head": "9b82e7a1ba853f7581d258996614b0d46107821f",
+  "owned_root": "command-panel-v1/c4-directive-result-state-cards/wave2/",
+  "execution_gate": {
+    "terminal": "C4_WAVE1_CLOSURE_RECEIPT_PASS",
+    "comment_id": 5156826967,
+    "published_at_kst": "2026-08-02 18:20 KST"
+  },
+  "results": {
+    "node_syntax": "PASS",
+    "node_tests": "20_OF_20_PASS",
+    "json_parse": "PASS",
+    "json_schema": "PASS_6_OF_6_CARD_INSTANCES",
+    "directive_registered_time_display": "PASS",
+    "result_published_time_display": "PASS",
+    "wave_badge": "PASS",
+    "duplicate_blocked_badge": "PASS",
+    "stale_wave_badge": "PASS",
+    "authority_conflict_badge": "PASS",
+    "three_service_name_display": "PASS",
+    "canonical_component_name_display": "PASS",
+    "unsupported_pass_display_count": 0,
+    "html_escape": "PASS",
+    "out_of_scope_files": 0
+  },
+  "state_matrix": {
+    "EXECUTABLE": "PASS",
+    "DUPLICATE_BLOCKED": "PASS",
+    "STALE_WAVE_BLOCKED": "PASS",
+    "AUTHORITY_CONFLICT": "PASS",
+    "COMPLETED": "PASS"
+  },
+  "failure_injection": {
+    "duplicate_prompt_key": "REJECT_DUPLICATE",
+    "stale_wave": "REJECT_STALE",
+    "same_wave_newer_without_supersession": "AUTHORITY_CONFLICT",
+    "unsupported_pass": "DOWNGRADED_TO_UNVERIFIED",
+    "unknown_service": "REJECTED",
+    "pc_agent_default_component_label": "REJECTED",
+    "invalid_kst_format": "REJECTED",
+    "invalid_duplicate_key": "REJECTED",
+    "schema_missing_source_digest": "CORRECTED_AND_RETESTED"
+  },
+  "official_service_names": [
+    "욜라 부동산 전문 AI",
+    "욜라 주유소 전문 AI",
+    "욜라 위험물 전문 AI"
+  ],
+  "official_component_names": [
+    "AI욜라 Runtime",
+    "AI욜라 Data Base",
+    "선택된 전문 AI 서비스"
+  ],
+  "source_files": {
+    "AI_YOLLA_WAVE_TIME_CARD_CONTRACT_V1.json": {"sha256": "9b21eb1a8557849f2f08dcfa987c6c89d9396c95455850f0b615ec8313a1ddee", "size_bytes": 2738},
+    "AI_YOLLA_PRODUCT_ARCHITECTURE_ACCEPTANCE_V1.json": {"sha256": "096401f172a74392d3222ffe78c6a2a213d5dd05c1add7b65bb39c1ce838e68d", "size_bytes": 770},
+    "aiYollaWaveTimeCards.js": {"sha256": "ca1e58a894f01fbe6ed6beacc1b8510b916c33d4edc124ec6b48beb7c2301a1d", "size_bytes": 10869},
+    "AI_YOLLA_WAVE_TIME_CARD_FIXTURE_V1.json": {"sha256": "72a5f52db9f07ab7b4c49edecbf4703c6f8811831d6784982f59c5842d8784d0", "size_bytes": 4573},
+    "tests/aiYollaWaveTimeCards.test.js": {"sha256": "de4c0d9ceebb71521216a7d89d9c2378716384cda69f31049e89e2876543f969", "size_bytes": 6863},
+    "README.md": {"sha256": "0b635962f669c6a611e49e7f8d27d194dac1d85cccacd9fd5862429c68d8558b", "size_bytes": 775}
+  },
+  "runtime_counters": {
+    "actual_pc_execution_count": 0,
+    "new_browser_runtime_count": 0,
+    "new_ipc_handler_count": 0,
+    "new_prompt_transport_count": 0,
+    "drive_write_count": 0,
+    "production_connection_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  },
+  "test_status": "PASS"
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "C4_CARD_RENDER_TEST_RESULT_V1",
+  "directive_id": "C1-TO-C4-DIRECTIVE-RESULT-PC-STATE-CARDS-V1-20260802-001",
+  "worker": "C-4",
+  "implementation_repository": "anbin1900-crypto/source-factory-core",
+  "branch": "command-panel/c4-directive-result-state-cards-v1",
+  "base_head": "69311de6c51e609df3080d8f316d98e4f381adc6",
+  "owned_root": "command-panel-v1/c4-directive-result-state-cards/",
+  "execution_mode": "LOCAL_STATIC_FIXTURE_FIRST",
+  "commands": [
+    "node --check directiveResultStateCards.js",
+    "node --test tests/directiveResultStateCards.test.js",
+    "Draft202012Validator.check_schema + instance validation"
+  ],
+  "results": {
+    "node_syntax": "PASS",
+    "node_tests": "19_OF_19_PASS",
+    "contract_schema_validation": "PASS_3_OF_3",
+    "exact_directive_card": "PASS",
+    "exact_result_card": "PASS",
+    "pc_agent_backup_status_card": "PASS",
+    "fixture_badge_required": "PASS",
+    "unsupported_pass_display_count": 0,
+    "open_post_link": "PASS",
+    "open_result_post_link": "PASS",
+    "html_escape": "PASS",
+    "rendered_html_bytes": 3384,
+    "out_of_scope_files": 0
+  },
+  "failure_injection": {
+    "pass_missing_remote_evidence": "SUPPRESSED_UNVERIFIED",
+    "pass_with_blocker": "SUPPRESSED_CONTRADICTORY",
+    "backup_pass_missing_sha256": "SUPPRESSED_CONTRADICTORY"
+  },
+  "source_files": {
+    "EXACT_DIRECTIVE_CARD_CONTRACT.json": {"sha256": "dfee7e523ef6a184d5829bed0c8ef1239cbc8f31cb10b3ac8c78571a8cc4a316", "size_bytes": 1537},
+    "EXACT_RESULT_CARD_CONTRACT.json": {"sha256": "9587f9bd98bea97664ad7a7935105a4c7b705ed4a4907b2b0c829031f5b4f502", "size_bytes": 1914},
+    "PC_AGENT_BACKUP_STATUS_CARD_CONTRACT.json": {"sha256": "e631988355f32b21afd3564b8d48a7fb57d8fa665fe6690a6aaa564d2d3697ec", "size_bytes": 1750},
+    "directiveResultStateCards.js": {"sha256": "ff157259c6f2f747cf98b75c66f06f41ede3146958417da536fc7bd8a97a1d30", "size_bytes": 12042},
+    "fixtures/LATEST_VALID_DIRECTIVE_FIXTURE.json": {"sha256": "1f15daefcbf963ffb2f8b461606164305b7af44f79800e04e320b991249b8470", "size_bytes": 537},
+    "fixtures/WORK_RESULT_FIXTURE.json": {"sha256": "027fd4df45b2622f75d5982d20014362572ae18a7af8e5e01d7b887fa5ae8ec5", "size_bytes": 508},
+    "fixtures/PC_STATE_SNAPSHOT_FIXTURE.json": {"sha256": "9d86434b53f35bf5901cc4611421ccd1bc5f98d25057470c1c4242f73f2c3ae6", "size_bytes": 287},
+    "fixtures/BACKUP_RECEIPT_FIXTURE.json": {"sha256": "a9be6e36de1bb5a3d3ce350d5af86cf1f7f632dfdf2a5cc8bcbd8a16e9e0b2a3", "size_bytes": 365},
+    "tests/directiveResultStateCards.test.js": {"sha256": "8091373d7e90cf266db89560358204d5d203b5217d6d4ea7f1e297746cc6defd", "size_bytes": 5905},
+    "README.md": {"sha256": "f606f2b5b79cd8702379ccc4e4823bb4faadc7f6cab887a81e93507f29b49717", "size_bytes": 731}
+  },
+  "runtime_counters": {
+    "github_network_calls_from_module": 0,
+    "drive_calls_from_module": 0,
+    "pc_agent_commands": 0,
+    "service_actions": 0,
+    "filesystem_actions_outside_test_root": 0,
+    "production_connections": 0,
+    "ready_transitions": 0,
+    "merges": 0
+  },
+  "test_status": "PASS"
+}

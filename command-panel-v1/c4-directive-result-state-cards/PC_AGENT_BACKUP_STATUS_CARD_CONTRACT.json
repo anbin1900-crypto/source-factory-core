@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yolla:command-panel:c4:pc-agent-backup-status-card:v1",
+  "title": "PC Agent Backup Status Card Contract V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "card_type", "badge", "pc_id", "agent_status",
+    "observed_at", "github_commit", "retry_count", "backup_receipt",
+    "backup_evidence_status", "unsupported_pass_suppressed"
+  ],
+  "properties": {
+    "schema_version": {"const": "PC_AGENT_BACKUP_STATUS_CARD_V1"},
+    "card_type": {"const": "PC_AGENT_BACKUP_STATUS"},
+    "badge": {"enum": ["LIVE", "FIXTURE"]},
+    "pc_id": {"type": "string", "minLength": 1},
+    "agent_status": {"type": "string", "minLength": 1},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "github_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "retry_count": {"type": "integer", "minimum": 0},
+    "backup_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["drive_file_id", "sha256", "size_bytes", "mime", "version", "readback_status", "completed_at"],
+      "properties": {
+        "drive_file_id": {"type": ["string", "null"]},
+        "sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+        "size_bytes": {"type": ["integer", "null"], "minimum": 0},
+        "mime": {"type": ["string", "null"]},
+        "version": {"type": ["string", "null"]},
+        "readback_status": {"type": "string", "minLength": 1},
+        "completed_at": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "backup_evidence_status": {"enum": ["SUPPORTED", "INCOMPLETE", "CONTRADICTORY"]},
+    "unsupported_pass_suppressed": {"type": "boolean"}
+  }
+}
