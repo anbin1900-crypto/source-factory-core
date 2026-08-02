@@ -1,0 +1,44 @@
+{
+  "schema_version": "C5_AI_YOLLA_RUNTIME_ENVIRONMENT_ADMISSION_CONTRACT_WAVE3_V1",
+  "directive_id": "C1-TO-C5-AI-YOLLA-RUNTIME-ADMISSION-GATE-WAVE3-V1-20260802-001",
+  "directive_comment": 5157103871,
+  "wave_id": "WAVE_3",
+  "directive_registered_at_kst": "2026-08-02 19:06 KST",
+  "duplicate_prompt_key": "dfe6d39b2be8fd80b5908a28e8a00402fb1e6cc28e02a0a871d2dae46f40545e",
+  "a1_runtime_authority": {
+    "a1_control_pr": 142,
+    "target_pc_accepted_comment": 5153045063,
+    "target_pc_terminal": "A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED",
+    "resident_monitoring_comment": 5155863538,
+    "canonical_runtime_root": "D:\\YOLLA_PC_BRIDGE",
+    "runtime_version": "1.0.0-20260802"
+  },
+  "required_admission_conditions": [
+    "A1_TARGET_PC_ACCEPTED",
+    "RUNTIME_VERSION_BOUND",
+    "CONTEXT_SNAPSHOT_PRESENT",
+    "CONTEXT_FRESHNESS_FRESH",
+    "ROLE_SERVICE_WAVE_MATCH",
+    "DUPLICATE_PROMPT_KEY_VALID",
+    "ACCEPTED_RESULT_REPLAY_FALSE",
+    "RUNTIME_HEALTH_NOT_BLOCKED",
+    "SENSITIVE_PAYLOAD_ABSENT"
+  ],
+  "fail_closed_decisions": {
+    "missing_a1_authority": "REJECT_RUNTIME_UNVERIFIED",
+    "stale_context": "REJECT_STALE_PC_CONTEXT",
+    "runtime_version_mismatch": "REJECT_RUNTIME_VERSION_MISMATCH",
+    "duplicate_key": "REJECT_DUPLICATE",
+    "older_wave": "REJECT_STALE_WAVE",
+    "accepted_result_replay": "REJECT_ALREADY_ACCEPTED",
+    "sensitive_value_in_payload": "REJECT_SENSITIVE_PAYLOAD",
+    "role_service_wave_mismatch": "REJECT_ROLE_SERVICE_WAVE_MISMATCH",
+    "runtime_health_blocked": "REJECT_RUNTIME_HEALTH_BLOCKED"
+  },
+  "transport_boundary": {
+    "existing_transport": "sfApi.stage4.dispatchNextPrompt",
+    "new_transport_created": false,
+    "actual_pc_dispatch_performed": false,
+    "contract_fixture_test_only": true
+  }
+}
