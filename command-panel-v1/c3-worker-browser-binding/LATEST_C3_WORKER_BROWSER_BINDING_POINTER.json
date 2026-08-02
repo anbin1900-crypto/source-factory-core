@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "pointer_id": "LATEST_C3_WORKER_BROWSER_BINDING_POINTER",
+  "worker": "C-3",
+  "assignment_pointer_comment": 5155840914,
+  "c1_cycle_review_comment": 5155853359,
+  "parent_directive_id": "MASTER-TO-C1-EXISTING-SOURCE-FACTORY-WORKER-BROWSER-COMMAND-PANEL-V1-20260802-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "branch": "command-panel/c3-worker-browser-binding-v1",
+  "base_branch": "integration/source-factory-pc-agent-api-db-v1",
+  "base_head": "69311de6c51e609df3080d8f316d98e4f381adc6",
+  "final_head_status": "THIS_COMMIT",
+  "terminal_event": "C3_EXISTING_WORKER_BROWSER_BINDING_PASS",
+  "tests": "PASS_25_OF_25",
+  "existing_runtime_mutation_count": 0,
+  "new_browser_runtime_count": 0,
+  "new_ipc_transport_count": 0,
+  "ci_status": "NOT_RUN_NOT_CLAIMED_PASS",
+  "exact_external_blocker": null,
+  "final_status": "C3_EXISTING_WORKER_BROWSER_BINDING_PASS"
+}
