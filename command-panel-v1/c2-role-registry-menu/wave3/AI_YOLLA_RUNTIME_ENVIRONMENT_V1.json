@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "environment_id": "AI_YOLLA_RUNTIME_ENVIRONMENT",
+  "platform_id": "AI_YOLLA",
+  "component_id": "AI_YOLLA_RUNTIME",
+  "wave_metadata": {
+    "wave_id": "WAVE_3",
+    "directive_id": "C1-TO-C2-AI-YOLLA-PC-ENVIRONMENT-REGISTRY-WAVE3-V1-20260802-001",
+    "directive_registered_at_kst": "2026-08-02 19:06 KST",
+    "duplicate_prompt_key": "12dada416d1bf9a969bce71795e8c9727d9e5a76e9fb782d5c11353ca325ab83",
+    "authority_pr": 168,
+    "authority_comment": 5157098370,
+    "start_head": "131f3a985e86d3b87b1283bca4c7976f187f1e70"
+  },
+  "authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "a1_control_pr": 142,
+    "target_pc_accepted_comment": 5153045063,
+    "target_pc_comment_published_at": "2026-08-02T04:28:16+09:00",
+    "target_pc_terminal": "A1_PC_AGENT_WINDOWS_RUNTIME_V1_TARGET_PC_ACCEPTED",
+    "resident_monitoring_comment": 5155863538,
+    "resident_monitoring_comment_published_at": "2026-08-02T15:14:17+09:00",
+    "resident_monitoring_status": "A1_PC_AGENT_12_18_21_SOURCE_AND_STATIC_VALIDATION_PASS_TARGET_PC_EXECUTION_READY",
+    "report_commit": "1d795f41ac982ce8d2615b0a1fc16333bed3d350",
+    "report_blob": "f61b5f01e62cabde61e25de81937fc0d3bdcf8c9",
+    "pointer_commit": "a5527fd670d9d6c46f1f56e29910d394984b003e",
+    "manager_source_commit": "ea71478e1642c67b15750f78b828357db314d2b3"
+  },
+  "runtime": {
+    "runtime_version": "1.0.0-20260802",
+    "manager_hotfix_version": "1.0.1-manager-status",
+    "acceptance_run": "PCAR-20260801T191841746Z-d81c8a2f6778",
+    "canonical_runtime_root": "D:\\YOLLA_PC_BRIDGE",
+    "context_file_names": [
+      "LATEST_GPT_DEVELOPMENT_CONTEXT.json",
+      "LATEST_GPT_DEVELOPMENT_CONTEXT.md"
+    ]
+  },
+  "target_pc_acceptance": {
+    "task_registered": true,
+    "supervisor_process_count": 1,
+    "worker_process_count": 1,
+    "controlled_request": "PASS",
+    "duplicate_execution_count": 0,
+    "worker_crash_recovery": "PASS",
+    "full_runtime_restart": "PASS",
+    "result_persistence": "PASS"
+  },
+  "resident_monitoring": {
+    "authority_state": "SOURCE_AND_STATIC_VALIDATION_PASS_TARGET_PC_EXECUTION_READY",
+    "attempt_times_kst": ["12:00", "18:00", "21:00"],
+    "scheduled_task_count": 3,
+    "task_scheduler_restart_enabled": false,
+    "failure_restart_count": 0,
+    "same_day_success_target": 1,
+    "same_day_failure_policy": "END_DAY_WITHOUT_CARRYOVER",
+    "next_day_policy": "RETRY_FROM_NEXT_DAY_12_00",
+    "actual_target_pc_monitoring_execution": "NOT_ASSERTED_BY_THIS_REGISTRY"
+  },
+  "context_freshness": {
+    "source_kind": "GITHUB_AUTHORITY_COMMENT_NOT_PC_FILE_READBACK",
+    "authority_comment": 5155863538,
+    "published_at": "2026-08-02T15:14:17+09:00",
+    "evaluated_at": "2026-08-02T19:06:00+09:00",
+    "age_minutes": 231,
+    "maximum_age_minutes": 480,
+    "status": "FRESH_AT_WAVE3_DISPATCH",
+    "policy_owner": "C2_WAVE3_CONTRACT"
+  },
+  "safety": {
+    "actual_pc_command_count": 0,
+    "actual_pc_file_read_count": 0,
+    "sensitive_value_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
