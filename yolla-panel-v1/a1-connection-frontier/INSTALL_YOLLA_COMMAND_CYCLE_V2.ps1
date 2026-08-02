@@ -197,7 +197,11 @@ if (-not $main.Contains('YOLLA_WORKSPACE_TERMINAL_V2')) {
     $main = Replace-Required $main '    width: isCommander ? 1280 : 980,' '    width: isYollaWorkspace ? 1560 : (isCommander ? 1280 : 980),' 'WORKSPACE_WIDTH'
     $main = Replace-Required $main '    height: isCommander ? 900 : 420,' '    height: isYollaWorkspace ? 920 : (isCommander ? 900 : 420),' 'WORKSPACE_HEIGHT'
     $main = Replace-Required $main '      preload: path.join(__dirname, "safe_terminal_preload.js"),' '      preload: path.join(__dirname, isYollaWorkspace ? "yolla_worker_preload.js" : "safe_terminal_preload.js"),' 'WORKSPACE_PRELOAD'
-    $main = Replace-Required $main '  win.__sfActiveTab = "taeo";' "  win.__sfActiveTab = \"taeo\";`r`n  win.__yollaWorkspaceWindow = isYollaWorkspace;" 'WORKSPACE_FLAG'
+    $workspaceFlag = @'
+  win.__sfActiveTab = "taeo";
+  win.__yollaWorkspaceWindow = isYollaWorkspace;
+'@
+    $main = Replace-Required $main '  win.__sfActiveTab = "taeo";' $workspaceFlag.TrimEnd() 'WORKSPACE_FLAG'
     $main = Replace-Required $main '    win.setMinimumSize(isCommander ? LAYOUT_FORCE_MIN_COMMANDER_WIDTH : LAYOUT_FORCE_MIN_WORKER_WIDTH, isCommander ? LAYOUT_FORCE_MIN_COMMANDER_HEIGHT : LAYOUT_FORCE_MIN_WORKER_HEIGHT);' '    win.setMinimumSize(isYollaWorkspace ? 1180 : (isCommander ? LAYOUT_FORCE_MIN_COMMANDER_WIDTH : LAYOUT_FORCE_MIN_WORKER_WIDTH), isYollaWorkspace ? 700 : (isCommander ? LAYOUT_FORCE_MIN_COMMANDER_HEIGHT : LAYOUT_FORCE_MIN_WORKER_HEIGHT));' 'WORKSPACE_MIN_SIZE'
     $main = Replace-Required $main '  win.loadFile(path.join(__dirname, "safe_terminal.html"));' '  win.loadFile(path.join(__dirname, isYollaWorkspace ? "yolla_worker_shell.html" : "safe_terminal.html"));' 'WORKSPACE_HTML'
 }
