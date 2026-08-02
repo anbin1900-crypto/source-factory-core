@@ -1,0 +1,12 @@
+{
+  "schema_version": "C6_AI_YOLLA_WAVE2_PREFLIGHT_PLAN_V1",
+  "platform": "AI욜라",
+  "services": ["욜라 부동산 전문 AI", "욜라 주유소 전문 AI", "욜라 위험물 전문 AI"],
+  "shared_components": ["AI욜라 Panel", "AI욜라 Workspace", "AI욜라 Data Base", "AI욜라 Automation"],
+  "flow": ["PANEL_SERVICE_SELECT","WORKSPACE_ROLE_SERVICE_SESSION_ACTIVATE","DISPLAY_WAVE_REGISTERED_TIME_DUPLICATE_KEY","AUTOMATION_DUPLICATE_GATE","EXISTING_AI_YOLLA_RUNTIME_DISPATCH_CONTRACT","DISPLAY_RESULT_TIME_AND_WAVE","PANEL_RESTART_STATE_RECOVERY","PRECHANGE_BLOB_ROLLBACK"],
+  "entry_gate": "C2_C3_C4_C5_WAVE2_TERMINALS_ACCEPTED",
+  "current_gate": "WAITING_INPUTS_0_OF_4",
+  "source_mutation_authorized": false,
+  "runtime_dispatch_authorized": false,
+  "final_e2e_authorized": false
+}
