@@ -1,0 +1,37 @@
+{
+  "schema_version": "C6_AI_YOLLA_WAVE3_SOURCE_MANIFEST_V1",
+  "owned_root": "command-panel-v1/c6-integration-deploy-rollback/wave3/**",
+  "source_files": [
+    {"path":"A1_PC_RUNTIME_CONTEXT_AUTHORITY_BINDING.json","sha256":"5f9ab5d8c8fcdf983795fb42e805e3d1e2565515d63dfb87aa83d0c3700bbe42","size_bytes":1527},
+    {"path":"AI_YOLLA_WAVE3_EXACT_INPUT_MATRIX.json","sha256":"a8b27f9808a8385dcd11f15e1c69e1c11ed0ed66322e1f29e51eb55d1e9a5dfd","size_bytes":2658},
+    {"path":"fixtures/THREE_SERVICE_PC_ENVIRONMENT_E2E_FIXTURE.json","sha256":"f996dc9f07c65b56ddd83cec78a67e489d58b816e04309275293ba0120a86f2e","size_bytes":3516},
+    {"path":"ai_yolla_pc_environment_wave3_e2e.py","sha256":"76f6464412652505de2468c929b35471900de86cae57a132e69c9d4ff63e5d0d","size_bytes":12194},
+    {"path":"RUN_WAVE3_E2E.py","sha256":"423379a13ba6c2d82e4154bb2989e33a2051ba4337446ab1c5c5e26f0ab6a8f8","size_bytes":1700},
+    {"path":"tests/test_wave3_e2e.py","sha256":"a341543f0e3efec25d71b68d9fcb7db1eebf0a6a1c991510545df697c4ad89de","size_bytes":6329},
+    {"path":"AI_YOLLA_PC_ENVIRONMENT_WAVE3_E2E_RECEIPT.json","sha256":"e5026447df476e33867a173311dd76f2aacf56cdc3c7481b5f84bcf246d62fc4","size_bytes":2421},
+    {"path":"FAILURE_INJECTION_RECEIPT.json","sha256":"0a601729940ca4da9b64938a9d953eca84a247e170aa380ec3301214d02981be","size_bytes":1778},
+    {"path":"PANEL_RESTART_RECOVERY_RECEIPT.json","sha256":"59d1c0a21b6d69ecde55b246aa685e50ea95e3511f984f440629753e6a10e6a1","size_bytes":380},
+    {"path":"ROLLBACK_BLOB_PARITY_RECEIPT.json","sha256":"b7d7fefb6a7db33d6588c7bc7d2c93c9ea30eabbc8d658b91913476aac3b9586","size_bytes":723},
+    {"path":"VALIDATION_RECEIPT.json","sha256":"b7bef3f7847571e730787f3db838e3625b69a438e0ca2a83e6583ec8c6b7efab","size_bytes":841}
+  ],
+  "input_authority_heads": {
+    "C-2":"156389b9b4ed2d3309b3212ee688cc7b31ee6612",
+    "C-3":"b0aa5aa15564a9871bab9a834fa5a94386f7f92b",
+    "C-4":"19b6b3023fd73af10b0c82defc61c20037f6a578",
+    "C-5":"57d452af914f44762f05b2cb9e998004734394e8"
+  },
+  "input_authority_blobs": {
+    "C2_A1_BINDING":"418fe06dc66b98096f9a34e23211c4a5c54cb483",
+    "C2_ENVIRONMENT_CONTRACT":"84179a225d29cd9271704984c50271f6e7944c09",
+    "C2_ENVIRONMENT":"1689ebd85cf2e0610637949565c1cd858d136873",
+    "C2_THREE_SERVICE_HANDOFF":"31fde37bda642a94e3a3dffb5980193c01b4526d",
+    "C3_FINAL_REPORT":"8b0f7a4c3bb51c049a2fc140856f3d572b6df771",
+    "C3_BINDING_CONTRACT":"24dfcaa99b812cea752ee80bcb7281065160d175",
+    "C3_CONTEXT_FIXTURE":"6b8de26785f52b2f1f7c8f012ac2001585af5b51",
+    "C4_FINAL_REPORT":"9cedf248b11f547f1345e7f34c38a104e9f7ff07",
+    "C5_FINAL_REPORT":"d0afd58681c3997bd0705fe1c87b8f0b4a07c400",
+    "C5_ADMISSION_CONTRACT":"fe3fbd1901ca707a922a724c4139db0b595601b1",
+    "C5_ADMISSION_FIXTURES":"453e7f82ec7bd46e257ee8cee9b7161817a28442"
+  },
+  "out_of_scope_files": 0
+}
