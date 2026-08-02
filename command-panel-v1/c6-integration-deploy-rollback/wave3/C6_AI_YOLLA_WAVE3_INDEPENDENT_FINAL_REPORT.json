@@ -1,0 +1,93 @@
+{
+  "schema_version": "C6_AI_YOLLA_WAVE3_INDEPENDENT_FINAL_REPORT_V1",
+  "worker": "C-6",
+  "wave_id": "WAVE_3",
+  "directive_id": "C1-TO-C6-AI-YOLLA-PC-ENVIRONMENT-E2E-WAVE3-V1-20260802-001",
+  "directive_registered_at_kst": "2026-08-02 19:06 KST",
+  "gate_open_comment": 5157855710,
+  "execution_recovery_comment": 5157907046,
+  "result_published_at_kst": "2026-08-02 22:53 KST",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 12,
+  "branch": "command-panel/c6-integration-deploy-rollback-v1",
+  "start_head": "ea56a824db366088638a59b40e54f7f4d941a29c",
+  "pre_report_remote_head": "700f164976a6bbb91900ff771a945c5bc30ae0e4",
+  "owned_root": "command-panel-v1/c6-integration-deploy-rollback/wave3/**",
+  "exact_inputs": {
+    "status": "PASS_4_OF_4",
+    "C-2": {"result_comment":5157236815,"head":"156389b9b4ed2d3309b3212ee688cc7b31ee6612","terminal":"C2_AI_YOLLA_RUNTIME_ENVIRONMENT_REGISTRY_WAVE3_PASS"},
+    "C-3": {"result_pointer_comment":5157291782,"head":"b0aa5aa15564a9871bab9a834fa5a94386f7f92b","terminal":"C3_AI_YOLLA_WORKSPACE_PC_CONTEXT_WAVE3_PASS"},
+    "C-4": {"result_comment":5157233839,"head":"19b6b3023fd73af10b0c82defc61c20037f6a578","terminal":"C4_AI_YOLLA_PANEL_PC_ENVIRONMENT_CARD_WAVE3_PASS"},
+    "C-5": {"result_comment":5157255049,"head":"57d452af914f44762f05b2cb9e998004734394e8","terminal":"C5_AI_YOLLA_RUNTIME_ADMISSION_GATE_WAVE3_PASS"}
+  },
+  "context_authority_resolution": {
+    "snapshot_id": "20260802100335Z",
+    "snapshot_published_at_kst": "2026-08-02T19:03:35.129045+09:00",
+    "freshness_evaluated_at": "ORIGINAL_WAVE3_DIRECTIVE_TIME_2026-08-02_19:06_KST",
+    "age_seconds_at_directive": 144.870955,
+    "maximum_age_seconds": 1800,
+    "status": "PASS_FRESH_AT_ORIGINAL_DIRECTIVE",
+    "c4_safe_display_preserved": "RUNTIME_UNVERIFIED",
+    "c4_safe_display_mutated": false,
+    "c6_reconciliation_source": "C1_GATE_ACCEPTED_C3_EXACT_SNAPSHOT"
+  },
+  "validation": {
+    "python_compile": "PASS_3_OF_3",
+    "unit_tests": "PASS_27_OF_27",
+    "json_parse": "PASS_9_OF_9",
+    "exact_input_matrix": "PASS_4_OF_4",
+    "three_service_e2e": "PASS_3_OF_3",
+    "failure_injection": "PASS_13_OF_13_FAIL_CLOSED",
+    "role_service_context_isolation": "PASS",
+    "cross_service_result_leak_count": 0,
+    "stale_context_reject": "PASS",
+    "missing_runtime_acceptance_reject": "PASS",
+    "duplicate_prompt_reject": "PASS",
+    "sensitive_value_reject": "PASS",
+    "panel_restart_recovery": "PASS",
+    "rollback_blob_parity": "PASS_3_OF_3"
+  },
+  "remote_readback": {
+    "status": "PASS_11_OF_11",
+    "files": {
+      "AI_YOLLA_WAVE3_EXACT_INPUT_MATRIX.json": "5128de45238e33857ac03ded308ac18fef83ef22",
+      "A1_PC_RUNTIME_CONTEXT_AUTHORITY_BINDING.json": "ba47e70aea2a10c63a80522963d82bc438ae875a",
+      "fixtures/THREE_SERVICE_PC_ENVIRONMENT_E2E_FIXTURE.json": "ee8d20983f20e8f69b64ad103cdc241c381357a0",
+      "ai_yolla_pc_environment_wave3_e2e.py": "c0b1ef3929e45ff3c35cffe21348d2323fa25e3d",
+      "tests/test_wave3_e2e.py": "b429ed5112b2191e1c12254ff79afc1aa5b3f026",
+      "AI_YOLLA_PC_ENVIRONMENT_WAVE3_E2E_RECEIPT.json": "e2a510ef62b121720209ebccf81163a27178bb49",
+      "FAILURE_INJECTION_RECEIPT.json": "ec9fb5a3c71a09deadee81c04d6928216baf0593",
+      "PANEL_RESTART_RECOVERY_RECEIPT.json": "1e5b6c662798e8bd50b2a728e8ac6d9fe5ab610b",
+      "ROLLBACK_BLOB_PARITY_RECEIPT.json": "34cfe30454505a522ffb49f02a80e2f707f6f9da",
+      "VALIDATION_RECEIPT.json": "66d2981ab601f82d9e87a8d09ea0a44176bff92f",
+      "SOURCE_MANIFEST.json": "9308d690d037efe5aaad91674642b5f5d8eb81f1"
+    }
+  },
+  "parallel_package_audit": {
+    "observed_root": "command-panel-v1/c6-integration-deploy-rollback/wave3/final/**",
+    "authority_result_comment": 5158329564,
+    "final_report_blob": "c45389ef234e8ff35a901cbba0b32a709caa9f9d",
+    "validation_blob": "2f7f20a182ed7ebc407c389c91eff5e8d936d515",
+    "finding": "CONTEXT_FRESHNESS_POLICY_INTERPRETATION_DIFFERS",
+    "parallel_fixture_maximum_age_minutes": 480,
+    "c3_exact_contract_maximum_age_minutes": 30,
+    "independent_resolution": "DO_NOT_USE_CURRENT_OBSERVATION_TO_ASSERT_LIVE_FRESHNESS;VALIDATE_IMMUTABLE_SNAPSHOT_AT_ORIGINAL_DIRECTIVE_TIME_AND_PRESERVE_C4_RUNTIME_UNVERIFIED_CARD",
+    "classification": "NON_BLOCKING_AFTER_STRICTER_INDEPENDENT_REVALIDATION"
+  },
+  "safety": {
+    "common_core_source_clone_count": 0,
+    "service_browser_runtime_clone_count": 0,
+    "service_prompt_transport_clone_count": 0,
+    "actual_pc_dispatch_count": 0,
+    "actual_panel_apply_count": 0,
+    "actual_pc_command_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false,
+    "ci_status": "NOT_RUN_NOT_CLAIMED_PASS"
+  },
+  "decision": "PASS",
+  "terminal": "C6_AI_YOLLA_PC_ENVIRONMENT_E2E_WAVE3_PASS",
+  "final_status": "C6_AI_YOLLA_PC_ENVIRONMENT_E2E_WAVE3_PASS_INDEPENDENTLY_CONFIRMED"
+}
