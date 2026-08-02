@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "worker": "C-3",
+  "directive_id": "C1-TO-C3-AI-YOLLA-PC-CONTEXT-WORKSPACE-WAVE3-V1-20260802-001",
+  "wave_id": "WAVE_3",
+  "attempts": [
+    {
+      "attempt": 1,
+      "result": "PASS_26_OF_26"
+    },
+    {
+      "attempt": 2,
+      "result": "FAIL_REMOTE_SOURCE_PARITY",
+      "failure": "INITIAL_REMOTE_SOURCE_OMITTED_VALIDATE_ISOLATION_AND_RUNTIME_BOUNDARY_METHODS",
+      "correction": "REPLACE_WITH_EXACT_VERIFIED_LOCAL_SOURCE"
+    },
+    {
+      "attempt": 3,
+      "result": "PASS_REMOTE_SOURCE_PARITY"
+    }
+  ],
+  "total_tests": "PASS_26_OF_26",
+  "node_syntax": "PASS_2_OF_2",
+  "json_parse": "PASS",
+  "validation": {
+    "A1_PC_CONTEXT_BINDING": "PASS",
+    "ROLE_SERVICE_CONTEXT_ISOLATION": "PASS",
+    "CROSS_CONTEXT_LEAK": 0,
+    "STALE_CONTEXT_REJECT": "PASS",
+    "MISSING_RUNTIME_ACCEPTANCE_REJECT": "PASS",
+    "SENSITIVE_VALUE_REJECT": "PASS",
+    "DUPLICATE_PROMPT_REJECT": "PASS",
+    "SAME_WAVE_SNAPSHOT_MIX_REJECT": "PASS",
+    "FUTURE_CONTEXT_REJECT": "PASS",
+    "EXISTING_BROWSER_RUNTIME_MUTATION_COUNT": 0,
+    "NEW_BROWSER_RUNTIME_COUNT": 0,
+    "NEW_IPC_COUNT": 0,
+    "NEW_PROMPT_TRANSPORT_COUNT": 0,
+    "OUT_OF_SCOPE_FILES": 0
+  }
+}
