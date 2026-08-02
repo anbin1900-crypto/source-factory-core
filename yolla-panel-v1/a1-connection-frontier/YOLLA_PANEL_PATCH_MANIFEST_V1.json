@@ -1,0 +1,72 @@
+{
+  "schema_version": "YOLLA_PANEL_PATCH_MANIFEST_V1",
+  "owner": "A-1",
+  "mission": "Configure the YOLLA panel and worker-window connection frontier before feature implementation.",
+  "base_authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "base_branch": "command-panel/c6-integration-deploy-rollback-v1",
+    "base_head": "30b8e5add47452845c16fff86c9b708c8236537e",
+    "c6_runtime_blob": "d148b8aaa4aff5ee03abe26f4fd71a8ab4696f8a"
+  },
+  "target_runtime": {
+    "workspace_root": "E:\\SOURCE FACTORY",
+    "active_core_discovery_root": "E:\\SOURCE FACTORY\\source-factory-active-core",
+    "safe_panel_directory_name": "safe_panel_v10",
+    "existing_electron_runtime_reused": true,
+    "existing_browser_window_factory_reused": true,
+    "existing_stage4_transport_reused": true
+  },
+  "patch_targets": [
+    {
+      "path": "safe_panel_main.js",
+      "markers": [
+        "YOLLA_PANEL_MAIN_BRIDGE_REQUIRE_V1",
+        "YOLLA_PANEL_MAIN_BRIDGE_REGISTER_V1"
+      ]
+    },
+    {
+      "path": "safe_panel_preload.js",
+      "markers": ["YOLLA_PANEL_PRELOAD_BRIDGE_V1"]
+    },
+    {
+      "path": "safe_panel.html",
+      "markers": ["YOLLA_PANEL_SHELL_V1", "YOLLA_PANEL_RENDERER_SCRIPT_V1"]
+    },
+    {
+      "path": "safe_panel.css",
+      "operation": "PRESERVE_EXISTING_FILE"
+    }
+  ],
+  "installed_files": [
+    "yolla_panel_main_bridge.js",
+    "yolla_panel_renderer.js",
+    "yolla_panel.css",
+    "yolla_panel_role_registry.json"
+  ],
+  "connection_points": {
+    "role_registry": true,
+    "role_selection_event": true,
+    "worker_window_open_focus": true,
+    "role_window_session_binding": true,
+    "directive_provider_slot": true,
+    "result_provider_slot": true,
+    "pc_state_provider_slot": true,
+    "command_payload_provider_slot": true,
+    "existing_stage4_dispatch": true,
+    "custom_event_bus": true
+  },
+  "not_implemented_here": [
+    "directive_fetcher",
+    "result_fetcher",
+    "worker_business_features",
+    "production_deployment"
+  ],
+  "forbidden_counters": {
+    "new_electron_runtime_count": 0,
+    "new_browser_runtime_count": 0,
+    "new_prompt_transport_count": 0,
+    "production_connection_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  }
+}
