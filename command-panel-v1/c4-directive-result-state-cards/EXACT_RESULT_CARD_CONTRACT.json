@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yolla:command-panel:c4:exact-result-card:v1",
+  "title": "Exact Result Card Contract V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "card_type", "badge", "repository", "pr_number",
+    "result_for_directive_id", "terminal", "decision", "display_decision",
+    "remote_head", "result_comment_id", "output_pointer", "blocker",
+    "completed_at", "evidence_status", "unsupported_pass_suppressed",
+    "source_package_sha256", "open_result_post_label", "open_result_post_url"
+  ],
+  "properties": {
+    "schema_version": {"const": "EXACT_RESULT_CARD_V1"},
+    "card_type": {"const": "RESULT"},
+    "badge": {"enum": ["LIVE", "FIXTURE"]},
+    "repository": {"type": "string", "pattern": "^[^/\\s]+/[^/\\s]+$"},
+    "pr_number": {"type": "integer", "minimum": 1},
+    "result_for_directive_id": {"type": "string", "minLength": 1},
+    "terminal": {"type": "string", "minLength": 1},
+    "decision": {"enum": ["PASS", "BLOCKED", "FAIL", "NOT_RUN", "UNKNOWN"]},
+    "display_decision": {"enum": ["PASS", "BLOCKED", "FAIL", "NOT_RUN", "UNKNOWN", "UNVERIFIED"]},
+    "remote_head": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
+    "result_comment_id": {"type": ["integer", "null"], "minimum": 1},
+    "output_pointer": {"type": ["string", "null"]},
+    "blocker": {"type": ["string", "null"]},
+    "completed_at": {"type": ["string", "null"], "format": "date-time"},
+    "evidence_status": {"enum": ["SUPPORTED", "INCOMPLETE", "CONTRADICTORY"]},
+    "unsupported_pass_suppressed": {"type": "boolean"},
+    "source_package_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "open_result_post_label": {"const": "결과 게시물 열기"},
+    "open_result_post_url": {"type": ["string", "null"], "pattern": "^https://github\\.com/.+/pull/[0-9]+#issuecomment-[0-9]+$"}
+  }
+}
