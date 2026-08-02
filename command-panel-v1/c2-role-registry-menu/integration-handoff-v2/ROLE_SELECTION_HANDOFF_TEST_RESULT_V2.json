@@ -1,0 +1,35 @@
+{
+  "schema_version": "ROLE_SELECTION_HANDOFF_TEST_RESULT_V2",
+  "directive_id": "C1-TO-C2-ROLE-SELECTION-CARD-HANDOFF-V2-20260802-001",
+  "status": "PASS",
+  "checks": {
+    "ROLE_SELECTION_CONTEXT": "PASS",
+    "C4_EXACT_HEAD_BINDING": "PASS",
+    "UNKNOWN_ROLE_REJECT": "PASS",
+    "MISSING_DIRECTIVE_POINTER_REJECT": "PASS",
+    "CROSS_ROLE_RESULT_LEAK": 0,
+    "CROSS_DIRECTIVE_RESULT_LEAK": 0,
+    "PASS_WITH_BLOCKER_REJECT": "PASS",
+    "C4_SOURCE_COPIED": false,
+    "OUT_OF_SCOPE_FILES": 0
+  },
+  "node_tests": {"pass": 11, "fail": 0},
+  "json_schema_validation": "PASS",
+  "node_syntax": "PASS",
+  "c4_authority": {
+    "pr": 9,
+    "head": "af6e56ec11104f70e03891812e9237f5937a0fc9",
+    "directive_contract_blob": "1b5dd1337b737b03bdb18fd18914337a57a5303a",
+    "result_contract_blob": "104d4817878db5eb932652e4cde872ad300231d1",
+    "renderer_blob": "82a14c89f0d4f0ce2db55ea6da35cb00d23f846a"
+  },
+  "sha256": {
+    "ROLE_SELECTION_CONTEXT_CONTRACT_V2.json": "3c014fae9c9ddb75102df3cc18ad7184d47edccf8b5bbd55b2de62a73621c8f9",
+    "ROLE_TO_CARD_BINDING_MATRIX_V2.json": "d52d373ea620d2e3791439655b5f4400d6866b95554d02455ca7c08a370e6380",
+    "C4_CARD_CONTRACT_ACCEPTANCE_V2.json": "562ae3f49c0426a8d2c41c176161747253fb279b57deac21618725db4046c513",
+    "C2_TO_C6_ROLE_MENU_HANDOFF_V2.json": "8fd68f788b3bb199d6daf27302f99cc58948d7a968c3667e365e4d3a7a221bb1",
+    "roleSelectionCardHandoffV2.js": "7df54e2872b0c9cf80c05bd75e807c18f2bb67e41fc4e3b752b18690a281f878",
+    "testRoleSelectionCardHandoffV2.js": "a05e79775740629c495d98ed01abcc19a46ed27009235ec6b6f29de60c6105eb",
+    "validateRoleSelectionContextV2.py": "39c620b87784fce5e0ea890f777d537ae7f7c317a9cdca9cbfb1fe63c6dcaa65"
+  }
+}
