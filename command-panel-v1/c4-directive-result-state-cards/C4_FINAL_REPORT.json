@@ -1,0 +1,73 @@
+{
+  "schema_version": "C4_DIRECTIVE_RESULT_PC_STATE_CARDS_FINAL_REPORT_V1",
+  "directive_id": "C1-TO-C4-DIRECTIVE-RESULT-PC-STATE-CARDS-V1-20260802-001",
+  "parent_directive": "MASTER-TO-C1-EXISTING-SOURCE-FACTORY-WORKER-BROWSER-COMMAND-PANEL-V1-20260802-001",
+  "parent_comment": 5154763830,
+  "master_batch": "MASTER-ABC-PC-AGENT-STATE-BACKUP-AND-COMMAND-PANEL-V1-20260802-001",
+  "master_index_comment": 5154764858,
+  "worker": "C-4",
+  "report_authority_pr": 178,
+  "implementation_repository": "anbin1900-crypto/source-factory-core",
+  "branch": "command-panel/c4-directive-result-state-cards-v1",
+  "base_head": "69311de6c51e609df3080d8f316d98e4f381adc6",
+  "owned_root": "command-panel-v1/c4-directive-result-state-cards/",
+  "required_outputs": {
+    "EXACT_DIRECTIVE_CARD_CONTRACT": "EXACT_DIRECTIVE_CARD_CONTRACT.json",
+    "EXACT_RESULT_CARD_CONTRACT": "EXACT_RESULT_CARD_CONTRACT.json",
+    "PC_AGENT_BACKUP_STATUS_CARD_CONTRACT": "PC_AGENT_BACKUP_STATUS_CARD_CONTRACT.json",
+    "renderer": "directiveResultStateCards.js",
+    "test_result": "CARD_RENDER_TEST_RESULT.json",
+    "final_report": "C4_FINAL_REPORT.json"
+  },
+  "fixtures": [
+    "fixtures/LATEST_VALID_DIRECTIVE_FIXTURE.json",
+    "fixtures/WORK_RESULT_FIXTURE.json",
+    "fixtures/PC_STATE_SNAPSHOT_FIXTURE.json",
+    "fixtures/BACKUP_RECEIPT_FIXTURE.json"
+  ],
+  "implementation": {
+    "directive_package_exact_field_preservation": true,
+    "directive_open_post_link": true,
+    "result_terminal_remote_head_pointer_blocker_completed_at": true,
+    "result_open_post_link": true,
+    "pc_agent_daily_status_commit_retry_summary": true,
+    "drive_backup_receipt_summary": true,
+    "fixture_badge": true,
+    "unsupported_pass_fail_closed": true,
+    "dom_independent_html_renderer": true,
+    "html_escape": true
+  },
+  "validation": {
+    "node_tests": "19_OF_19_PASS",
+    "contract_schemas": "3_OF_3_PASS",
+    "unsupported_pass_display_count": 0,
+    "open_post_link": "PASS",
+    "out_of_scope_files": 0
+  },
+  "attempt_log": {
+    "github_cli_attempt": "FAILED_TOOL_NOT_INSTALLED",
+    "https_clone_attempt": "FAILED_CONTAINER_DNS_UNAVAILABLE",
+    "correction": "SWITCHED_TO_GITHUB_CONNECTOR_AUTHORITY",
+    "branch_creation_attempt": "REFERENCE_ALREADY_EXISTS",
+    "branch_state_after_check": "IDENTICAL_TO_BASE_NO_WORK_PERFORMED",
+    "implementation_attempts": 1,
+    "test_runs": 1,
+    "same_failure_signature_repeats": 0
+  },
+  "boundaries": {
+    "actual_pc_execution": false,
+    "service_action": false,
+    "drive_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "source_factory_existing_source_modified": false
+  },
+  "blockers": [],
+  "remote": {
+    "publication_status": "PENDING",
+    "head": "PENDING",
+    "required_blob_readback": "PENDING"
+  },
+  "terminal": "C4_DIRECTIVE_RESULT_PC_STATE_CARDS_PASS_PENDING_REMOTE_READBACK"
+}
