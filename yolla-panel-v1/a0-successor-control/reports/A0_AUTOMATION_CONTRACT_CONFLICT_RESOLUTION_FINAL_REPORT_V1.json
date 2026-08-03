@@ -1,0 +1,107 @@
+{
+  "schema_version": "A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_FINAL_REPORT_V1",
+  "report_type": "FINAL",
+  "role": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+  "directive_id": "USER-TO-A0-RESOLVE-AUTOMATION-CONTRACT-CONFLICTS-V1-20260804-001",
+  "cycle_id": "A0-CONTRACT-RESOLUTION-20260804-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "base_commit": "b15a2500be8812837d8bafa1b0e9c409437ab3ac",
+  "observed_remote_head_before": "b15a2500be8812837d8bafa1b0e9c409437ab3ac",
+  "observed_remote_head_after": "a9cd0abc2694e7e722edf52fb22fe370b5b12854",
+  "owned_paths": [
+    "yolla-panel-v1/a0-successor-control/A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_V1.json",
+    "yolla-panel-v1/a0-successor-control/WORKER_JOB_SCHEDULE_CONTRACT_V1.json",
+    "yolla-panel-v1/a0-successor-control/A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V2.json",
+    "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_CONTRACT_POINTER.json",
+    "yolla-panel-v1/a0-successor-control/reports/A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_FINAL_REPORT_V1.json"
+  ],
+  "status": "PASS",
+  "progress_percent": 100,
+  "terminal": "A0_AUTOMATION_CONTRACT_CONFLICTS_RESOLVED_SOURCE_PASS",
+  "resolved_conflicts": [
+    "SEAT_CODE_VS_DISPLAY_ROLE",
+    "100_PLANNED_JOBS_VS_ONE_ACTIVE_DIRECTIVE",
+    "GITHUB_AUTHORITY_VS_LOCAL_RUNTIME_CURSOR",
+    "WORKER_COMMAND_VS_DATA_FACTORY_IDEMPOTENCY",
+    "GLOBAL_SINGLE_JOB_VS_TYPED_CONCURRENCY",
+    "PER_JOB_REPORTING_VS_CYCLE_REPORTING",
+    "A1_PLAN_AUTHORITY_VS_A0_EXECUTION_AUTHORITY",
+    "V52_V57_V58_POINTER_SPLIT"
+  ],
+  "artifacts": [
+    {
+      "path": "yolla-panel-v1/a0-successor-control/A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_V1.json",
+      "commit": "d207d73f57a6e0deda0bd4287619999e2ac991f8",
+      "remote_readback": "PASS"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/WORKER_JOB_SCHEDULE_CONTRACT_V1.json",
+      "commit": "9512df3cdbb8c1efc341ecec9025c91ca5ceecfe",
+      "remote_readback": "PASS"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V2.json",
+      "commit": "467b4550515f11dcaeffaee7840480eb3e983e25",
+      "remote_readback": "PASS"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_CONTRACT_POINTER.json",
+      "commit": "a9cd0abc2694e7e722edf52fb22fe370b5b12854",
+      "remote_readback": "PASS"
+    }
+  ],
+  "tests": {
+    "remote_file_readback": "PASS_4_OF_4",
+    "json_structure": "PASS_BY_CONSTRUCTION_AND_REMOTE_READBACK",
+    "precedence_defined": true,
+    "seat_identity_resolved": true,
+    "active_directive_limit_resolved": true,
+    "authority_split_resolved": true,
+    "idempotency_namespace_split_resolved": true,
+    "typed_concurrency_resolved": true,
+    "reporting_granularity_resolved": true,
+    "command_authority_resolved": true
+  },
+  "target_pc_observation": {
+    "contract_source_commit": "PASS",
+    "target_pc_execution": false,
+    "actual_schedule_loop": false,
+    "target_pc_pass_claimed": false
+  },
+  "blockers": [],
+  "forbidden_counters": {
+    "browser_profile_deleted": 0,
+    "workspace_state_reset": 0,
+    "stable_v5_deleted": 0,
+    "legacy_v3_hotfix_reused": 0,
+    "target_pc_pass_claimed_without_evidence": 0,
+    "production_connection": 0,
+    "ready_transition": 0,
+    "merge": 0
+  },
+  "acceptance_matrix": {
+    "contract_conflicts_resolved": "PASS",
+    "worker_schedule_contract_active": "PASS",
+    "current_queue_v2_active": "PASS",
+    "single_automation_pointer_active": "PASS",
+    "schedule_runner_implemented": "NOT_YET",
+    "github_result_watcher_implemented": "NOT_YET",
+    "target_pc_actual_loop": "NOT_YET"
+  },
+  "remote_commit": "a9cd0abc2694e7e722edf52fb22fe370b5b12854",
+  "remote_file_paths": [
+    "yolla-panel-v1/a0-successor-control/A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_V1.json",
+    "yolla-panel-v1/a0-successor-control/WORKER_JOB_SCHEDULE_CONTRACT_V1.json",
+    "yolla-panel-v1/a0-successor-control/A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V2.json",
+    "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_CONTRACT_POINTER.json"
+  ],
+  "target_pc_final_state": "NOT_EXECUTED_CONTRACT_ONLY",
+  "handoff_to": "A-0_WORKER_SCHEDULE_RUNNER_IMPLEMENTATION",
+  "next_gate": "IMPLEMENT_WORKER_SCHEDULE_RUNNER_AND_GITHUB_RESULT_WATCHER_THEN_RUN_TWO_WORKERS_THREE_JOBS_EACH",
+  "next_action": "Implement P0 orders 2 and 3 in A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V2.json.",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at": "2026-08-04T03:49:00+09:00"
+}
