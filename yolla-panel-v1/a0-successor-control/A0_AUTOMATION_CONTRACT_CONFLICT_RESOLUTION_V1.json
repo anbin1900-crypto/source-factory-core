@@ -1,0 +1,138 @@
+{
+  "schema_version": "A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_V1",
+  "status": "ACTIVE_SUPERSEDING_CONFLICT_RESOLUTION",
+  "resolution_id": "A0-AUTOMATION-CONTRACT-CONFLICT-RESOLUTION-V1-20260804-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "purpose": "Resolve automation contract conflicts before implementing the worker schedule loop.",
+  "precedence": [
+    "USER_LATEST_EXPLICIT_DIRECTIVE",
+    "A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_V1",
+    "WORKER_JOB_SCHEDULE_CONTRACT_V1",
+    "LATEST_A0_AUTOMATION_CONTRACT_POINTER_V1",
+    "A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V1",
+    "A0_REPORTING_AND_HANDOFF_CONTRACT_V1",
+    "GROUP_ROLE_ASSIGNMENT_LEDGER_V1",
+    "OTHER_PRIOR_AUTOMATION_CONTRACTS"
+  ],
+  "resolved_conflicts": {
+    "seat_identity": {
+      "decision": "SEAT_CODE_IS_IMMUTABLE_TRANSPORT_ID_NOT_SEMANTIC_ROLE",
+      "immutable_fields": ["seat_code", "worker_slot_uid"],
+      "mutable_fields": ["display_name", "project_role", "project_url", "context_url", "status"],
+      "required_schedule_binding": ["role_profile_id", "authority_contract_ref"],
+      "baseline_role_ledger_rule": "GROUP_ROLE_ASSIGNMENT_LEDGER_V1 provides baseline capability profiles only and does not override an explicit schedule-bound role profile.",
+      "v58_display_aliases": {
+        "B-1": "부동산 홈페이지 제작 커맨더",
+        "B-2": "워커1",
+        "B-3": "워커2",
+        "B-4": "워커3",
+        "B-5": "워커4",
+        "B-6": "워커5"
+      }
+    },
+    "schedule_vs_directive": {
+      "decision": "MANY_PLANNED_JOBS_ONE_ACTIVE_DIRECTIVE_PER_SEAT",
+      "maximum_planned_jobs_per_seat": 100,
+      "maximum_active_directives_per_seat": 1,
+      "planned_job_is_not_directive": true,
+      "promotion_flow": ["PLANNED", "READY", "ACTIVE_DIRECTIVE", "RESULT_WAITING", "TERMINAL"],
+      "next_job_rule": "Only after the current job reaches an accepted terminal may the next eligible planned job be promoted."
+    },
+    "authority_split": {
+      "decision": "GITHUB_PLAN_AND_RESULTS_LOCAL_RUNTIME_CURSOR",
+      "github_authority": [
+        "immutable schedule plan",
+        "schedule revisions",
+        "directive source",
+        "terminal result pointer",
+        "cycle checkpoint and final reports"
+      ],
+      "local_runtime_authority": [
+        "current cursor",
+        "in-flight attempt",
+        "heartbeat",
+        "temporary retry timer",
+        "browser and process state"
+      ],
+      "local_runtime_status": "DURABLE_OPERATIONAL_STATE_NOT_OFFICIAL_PROJECT_AUTHORITY",
+      "rebuild_rule": "The local cursor must be rebuildable from the GitHub plan plus accepted terminal result pointers.",
+      "checkpoint_rule": "Commit a checkpoint on cycle terminal, schedule completion, replan, or external blocker; do not commit every heartbeat."
+    },
+    "idempotency_namespaces": {
+      "decision": "SEPARATE_WORKER_COMMAND_AND_DATA_FACTORY_KEYS",
+      "WORKER_COMMAND": {
+        "key_fields": ["schedule_id", "job_id", "seat_code", "directive_generation", "payload_sha256"],
+        "same_key_same_payload": "RETURN_EXISTING_EXECUTION_AND_RECEIPT",
+        "same_key_different_payload": "REJECT_IDEMPOTENCY_CONFLICT"
+      },
+      "DATA_FACTORY": {
+        "key_fields": ["project", "job_type", "target", "sorted_source_token_set"],
+        "authority": "PR276_PR278_RUNTIME_PROVIDER_CONTRACT_V1"
+      },
+      "cross_namespace_deduplication": false
+    },
+    "concurrency": {
+      "decision": "TYPED_CONCURRENCY_LIMITS",
+      "exclusive_pc_runtime_jobs": 1,
+      "gpt_worker_jobs": 5,
+      "browser_analysis_jobs": 2,
+      "rule": "The prior maximum_parallel_runtime_jobs=1 applies only to exclusive shared-PC runtime mutations, not to independent GPT worker seats.",
+      "source_collision_rule": "Jobs editing the same owned path or requiring the same exclusive resource must not run concurrently."
+    },
+    "reporting": {
+      "decision": "JOB_AND_CYCLE_REPORTING_ARE_SEPARATE",
+      "job_reporting": "Attempt log plus terminal result pointer; no mandatory START/PROGRESS/TEST/FINAL set per job.",
+      "cycle_reporting": "START, TEST, BLOCKER when applicable, and FINAL or checkpoint reports.",
+      "no_value_reporting": "MUST_NOT_DELAY_EXECUTION"
+    },
+    "command_authority": {
+      "decision": "A1_PLANS_A0_EXECUTES",
+      "A-1": [
+        "define goal and completion criteria",
+        "create, revise, append, cancel or reorder schedules",
+        "decide unplanned strategic branches"
+      ],
+      "A-0": [
+        "store and validate schedules",
+        "promote the next eligible job",
+        "dispatch commands",
+        "watch GitHub results",
+        "retry within policy",
+        "resume after restart",
+        "raise REPLAN_REQUEST"
+      ],
+      "replan_triggers": [
+        "retry_limit_reached",
+        "same_failure_signature_repeated_twice",
+        "directive_missing_or_superseded",
+        "dependency_cycle_or_conflict",
+        "schedule_exhausted",
+        "unexpected_terminal",
+        "user_priority_changed"
+      ]
+    },
+    "pointer_unification": {
+      "decision": "ONE_CURRENT_AUTOMATION_POINTER",
+      "current_ui": "V5.8",
+      "runtime_provider": "V5.7_PR276_PR278",
+      "historical_v52_report_pointer": "SUPERSEDED_AS_CURRENT_AUTOMATION_STATE_BUT_RETAINED_AS_HISTORY",
+      "required_pointer": "LATEST_A0_AUTOMATION_CONTRACT_POINTER.json"
+    }
+  },
+  "target_pc_boundary": {
+    "source_contract_resolution": "PASS",
+    "target_pc_execution_observed": false,
+    "target_pc_visual_acceptance_claimed": false,
+    "actual_schedule_loop_observed": false
+  },
+  "forbidden": {
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "target_pc_pass_without_evidence": false
+  },
+  "next_gate": "IMPLEMENT_WORKER_SCHEDULE_RUNNER_AND_PASS_TWO_WORKERS_THREE_JOBS_EACH_ON_TARGET_PC",
+  "effective_at": "2026-08-04T03:49:00+09:00"
+}
