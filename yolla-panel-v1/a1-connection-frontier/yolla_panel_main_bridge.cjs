@@ -1,47 +1,41 @@
 /* eslint-env node */
 "use strict";
 
+const crypto = require("node:crypto");
 const fs = require("node:fs");
 const os = require("node:os");
 const path = require("node:path");
-const childProcess = require("node:child_process");
+const zlib = require("node:zlib");
 
-const ZIP_NAME = "YOLLA_CHROME_GROUP_TABS_DYNAMIC_WORKERS_SOURCE_V1.zip";
+const SOURCE_NAME = "yolla_panel_main_bridge.cjs.gz.b64";
 const candidates = [
-  process.env.YOLLA_UI_V53_SOURCE_ZIP,
-  path.resolve(__dirname, "../a0-successor-control/ui-v53", ZIP_NAME),
-  path.join("E:\\SOURCE FACTORY\\source-factory-core", "yolla-panel-v1", "a0-successor-control", "ui-v53", ZIP_NAME)
+  process.env.YOLLA_UI_V53_BACKEND_SOURCE,
+  path.resolve(__dirname, "../a0-successor-control/ui-v53", SOURCE_NAME),
+  path.join("E:\\SOURCE FACTORY\\source-factory-core", "yolla-panel-v1", "a0-successor-control", "ui-v53", SOURCE_NAME)
 ].filter(Boolean);
-const zipPath = candidates.find((candidate) => fs.existsSync(candidate));
-if (!zipPath) {
-  const error = new Error(`YOLLA_UI_V53_SOURCE_ZIP_NOT_FOUND:${candidates.join("|")}`);
-  error.code = "YOLLA_UI_V53_SOURCE_ZIP_NOT_FOUND";
+const sourcePath = candidates.find((candidate) => fs.existsSync(candidate));
+if (!sourcePath) {
+  const error = new Error(`YOLLA_UI_V53_BACKEND_SOURCE_NOT_FOUND:${candidates.join("|")}`);
+  error.code = "YOLLA_UI_V53_BACKEND_SOURCE_NOT_FOUND";
   throw error;
 }
 
-const stat = fs.statSync(zipPath);
-const cacheKey = `${Math.trunc(stat.mtimeMs)}-${stat.size}`;
-const cacheRoot = path.join(process.env.LOCALAPPDATA || os.tmpdir(), ".yolla", "yolla-ui-v53-source", cacheKey);
-const implementationPath = path.join(cacheRoot, "yolla_panel_main_bridge.cjs");
-if (!fs.existsSync(implementationPath)) {
-  fs.rmSync(cacheRoot, { recursive: true, force: true });
-  fs.mkdirSync(cacheRoot, { recursive: true });
-  if (process.platform === "win32") {
-    childProcess.execFileSync("powershell.exe", [
-      "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command",
-      "Expand-Archive -LiteralPath $env:YOLLA_UI_V53_ZIP -DestinationPath $env:YOLLA_UI_V53_CACHE -Force"
-    ], {
-      env: { ...process.env, YOLLA_UI_V53_ZIP: zipPath, YOLLA_UI_V53_CACHE: cacheRoot },
-      windowsHide: true,
-      stdio: "ignore"
-    });
-  } else {
-    childProcess.execFileSync("unzip", ["-oq", zipPath, "-d", cacheRoot], { stdio: "ignore" });
-  }
-}
-if (!fs.existsSync(implementationPath)) {
-  const error = new Error(`YOLLA_UI_V53_IMPLEMENTATION_NOT_EXTRACTED:${implementationPath}`);
-  error.code = "YOLLA_UI_V53_IMPLEMENTATION_NOT_EXTRACTED";
+const encoded = fs.readFileSync(sourcePath, "utf8").replace(/\s+/g, "");
+const compressed = Buffer.from(encoded, "base64");
+const implementation = zlib.gunzipSync(compressed);
+const digest = crypto.createHash("sha256").update(implementation).digest("hex");
+if (digest !== "83c986e13256139fa02de66bc8e51cc110b8375404791c43f38dd00229574fdb") {
+  const error = new Error(`YOLLA_UI_V53_BACKEND_SHA256_MISMATCH:${digest}`);
+  error.code = "YOLLA_UI_V53_BACKEND_SHA256_MISMATCH";
   throw error;
+}
+
+const cacheRoot = path.join(process.env.LOCALAPPDATA || os.tmpdir(), ".yolla", "yolla-ui-v53-source", digest.slice(0, 16));
+const implementationPath = path.join(cacheRoot, "yolla_panel_main_bridge.cjs");
+if (!fs.existsSync(implementationPath) || !fs.readFileSync(implementationPath).equals(implementation)) {
+  fs.mkdirSync(cacheRoot, { recursive: true });
+  const temporary = `${implementationPath}.tmp-${process.pid}`;
+  fs.writeFileSync(temporary, implementation);
+  fs.renameSync(temporary, implementationPath);
 }
 module.exports = require(implementationPath);
