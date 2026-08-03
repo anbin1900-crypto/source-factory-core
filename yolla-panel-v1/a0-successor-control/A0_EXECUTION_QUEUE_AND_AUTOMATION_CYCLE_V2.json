@@ -1,0 +1,172 @@
+{
+  "schema_version": "A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V2",
+  "status": "ACTIVE_CONFLICT_RESOLVED_QUEUE",
+  "owner": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+  "plan_owner": "A-1_YOLLA_WORKSPACE_SUPERVISING_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "supersedes_for_current_automation": "A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V1",
+  "resolution_authority": {
+    "pointer": "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_CONTRACT_POINTER.json",
+    "pointer_commit": "ed3e33bdfe5e90c8b70f5780cfc1ad85b9da6ef4",
+    "conflict_resolution": "yolla-panel-v1/a0-successor-control/A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_V1.json",
+    "worker_schedule_contract": "yolla-panel-v1/a0-successor-control/WORKER_JOB_SCHEDULE_CONTRACT_V1.json"
+  },
+  "execution_policy": {
+    "mode": "SCHEDULE_NORMAL_PATH_COMMANDER_EXCEPTION_PATH",
+    "one_owner_end_to_end": true,
+    "failure_first": true,
+    "remote_head_authority": true,
+    "target_pc_evidence_required": true,
+    "stable_runtime_fallback_preserved": true,
+    "concurrency": {
+      "exclusive_pc_runtime_jobs": 1,
+      "gpt_worker_jobs": 5,
+      "browser_analysis_jobs": 2,
+      "same_owned_path_parallelism": false
+    },
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "p0_immediate_queue": [
+    {
+      "order": 1,
+      "task_id": "A0-P0-CONTRACT-CONFLICT-RESOLUTION",
+      "status": "PASS",
+      "goal": "Resolve seat identity, planned job versus active directive, authority, idempotency, concurrency, reporting and A-1/A-0 ownership conflicts.",
+      "terminal": "A0_AUTOMATION_CONTRACT_CONFLICTS_RESOLVED"
+    },
+    {
+      "order": 2,
+      "task_id": "A0-P0-WORKER-SCHEDULE-RUNNER",
+      "status": "PENDING",
+      "goal": "Import and persist up to 100 planned jobs per seat while promoting at most one active directive per seat.",
+      "required_checks": [
+        "schedule_json_validation",
+        "seat_code_role_profile_binding",
+        "one_active_directive_per_seat",
+        "dependency_resolution",
+        "current_and_next_job_panel_display",
+        "local_durable_cursor",
+        "restart_cursor_recovery"
+      ],
+      "pass_gate": "WORKER_SCHEDULE_RUNNER_SOURCE_PASS"
+    },
+    {
+      "order": 3,
+      "task_id": "A0-P0-GITHUB-RESULT-WATCHER-NEXT-DISPATCH",
+      "status": "PENDING",
+      "goal": "Accept only correlated GitHub terminal results and automatically dispatch the next eligible job.",
+      "required_checks": [
+        "schedule_job_seat_worker_directive_match",
+        "result_pointer_and_commit_required",
+        "natural_language_only_result_rejected",
+        "pass_promotes_next_job",
+        "blocked_external_waits",
+        "retryable_failure_retries_same_job",
+        "replan_trigger_calls_a1"
+      ],
+      "pass_gate": "GITHUB_RESULT_WATCH_AND_NEXT_JOB_DISPATCH_PASS"
+    },
+    {
+      "order": 4,
+      "task_id": "A0-P0-V58-V57-TARGET-PC-MATERIALIZATION",
+      "status": "PENDING_EXTERNAL_CHANNEL",
+      "goal": "Materialize the current V5.8 UI with the V5.7 PR276/PR278 runtime provider on the Target PC without deleting the fixed browser profile or stable fallback.",
+      "required_checks": [
+        "v58_ui_visible",
+        "b1_to_b6_reachable",
+        "v57_runtime_provider_loaded",
+        "fixed_login_profile_preserved",
+        "workspace_state_backup_and_rollback",
+        "target_pc_receipts_ingested"
+      ],
+      "pass_gate": "V58_V57_TARGET_PC_ACCEPTANCE_PASS"
+    },
+    {
+      "order": 5,
+      "task_id": "A0-P0-TWO-WORKERS-THREE-JOBS-ACTUAL-LOOP",
+      "status": "PENDING",
+      "goal": "Run two worker seats with three jobs each without user relay, including one restart and one retry scenario.",
+      "required_checks": [
+        "actual_chatgpt_dispatch_6",
+        "github_result_detected_6",
+        "next_job_auto_dispatched_6",
+        "manual_relay_count_0",
+        "duplicate_execution_count_0",
+        "restart_resume_pass",
+        "one_worker_failure_does_not_stop_other"
+      ],
+      "pass_gate": "A0_WORKER_SCHEDULE_AUTOMATION_LOOP_V1_PASS"
+    },
+    {
+      "order": 6,
+      "task_id": "A0-P0-SCALE-SCHEDULE-TO-100-JOBS-PER-SEAT",
+      "status": "WAIT_PREVIOUS_GATE",
+      "goal": "After the minimum actual loop passes, support commander-generated schedules of up to 100 planned jobs per seat.",
+      "required_checks": [
+        "schedule_append_revision",
+        "cancel_and_supersede",
+        "checkpoint_and_rebuild",
+        "dependency_cycle_rejection",
+        "commander_replan_request"
+      ],
+      "pass_gate": "A0_100_JOB_SCHEDULE_SCALE_PASS"
+    },
+    {
+      "order": 7,
+      "task_id": "A0-P0-PR278-ACTUAL-PC-AGENT-RESULT",
+      "status": "WAIT_TARGET_PC",
+      "goal": "Observe one real PR278 data-factory result from the Target PC while retaining the separate DATA_FACTORY idempotency namespace.",
+      "pass_gate": "ACTUAL_PR278_RESULT_OBSERVED"
+    }
+  ],
+  "worker_schedule_cycle": {
+    "states": [
+      "PLANNED",
+      "READY",
+      "ACTIVE_DIRECTIVE",
+      "DISPATCHING",
+      "RUNNING",
+      "RESULT_WAITING",
+      "PASS",
+      "RETRY_READY",
+      "WAIT_DEPENDENCY",
+      "BLOCKED_EXTERNAL",
+      "NEEDS_REPLAN",
+      "CANCELLED",
+      "SUPERSEDED"
+    ],
+    "normal_flow": [
+      "LOAD_GITHUB_SCHEDULE_PLAN",
+      "REBUILD_OR_LOAD_LOCAL_CURSOR",
+      "SELECT_ELIGIBLE_JOB_PER_SEAT",
+      "PROMOTE_ONE_ACTIVE_DIRECTIVE_PER_SEAT",
+      "DISPATCH_TO_EXISTING_WORKER_SESSION",
+      "WATCH_GITHUB_TERMINAL_RESULT",
+      "ACCEPT_CORRELATED_RESULT",
+      "PROMOTE_NEXT_ELIGIBLE_JOB",
+      "CHECKPOINT_ON_MEANINGFUL_TRANSITION"
+    ],
+    "exception_flow": [
+      "RETRY_WITHIN_POLICY",
+      "WAIT_EXTERNAL_EVENT",
+      "CREATE_REPLAN_REQUEST_FOR_A1"
+    ]
+  },
+  "reporting_policy": {
+    "job": "LOCAL_ATTEMPT_LOG_PLUS_GITHUB_TERMINAL_RESULT_POINTER",
+    "cycle": "START_TEST_BLOCKER_IF_APPLICABLE_FINAL_OR_CHECKPOINT",
+    "heartbeat_commit": false,
+    "reporting_must_not_delay_execution": true
+  },
+  "current_ui_version": "5.8.0",
+  "current_runtime_provider_version": "5.7.0",
+  "target_pc_execution_observed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-04T03:49:00+09:00"
+}
