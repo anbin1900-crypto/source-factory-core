@@ -1,0 +1,49 @@
+{
+  "schema_version": "A3_TRACE_LATE_BINDING_V1",
+  "worker": "A-4",
+  "bound_at_kst": "2026-08-04T05:36:00+09:00",
+  "reason": "A-3 fixture trace authority was published after A-4 START and before A-4 official terminal publication.",
+  "a3_authority": {
+    "pr": 22,
+    "branch": "worker/a3-network-observation-v1",
+    "head": "a5632d6dbdddd956d478b593ffe144ff8a6241cf",
+    "final_report_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_FINAL_REPORT_V1.json",
+    "final_report_blob": "38db5f8afb78f25fa36554d33246a2f1ab34f2d9",
+    "terminal": "A3_NETWORK_ENDPOINT_OBSERVATION_READY",
+    "fixture_trace_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/FIXTURE_TRACE_BUNDLE_V1.json",
+    "fixture_trace_blob": "cd29511601f27a128ff88e2e3f265c116d99e4a0",
+    "fixture_event_count": 15,
+    "a3_to_a6_handoff_blob": "8fe991a225275ece977944f157b72509cd3345f7",
+    "a3_latest_pointer_status": "STARTED_STALE_RELATIVE_TO_FINAL_REPORT",
+    "consumption_rule": "BIND_EXACT_HEAD_FINAL_REPORT_AND_TRACE_BLOB_WITHOUT_PROMOTING_STALE_POINTER"
+  },
+  "event_to_navigation_mapping": [
+    {"event_id": "EVT-001", "a3_type": "PAGE_ENTRY", "a4_page_types": ["HOME", "REGION"], "evidence_pointer": "FIXTURE_TRACE_BUNDLE_V1.json#/events/0"},
+    {"event_id": "EVT-003", "a3_type": "SEARCH", "a4_page_types": ["SEARCH"], "evidence_pointer": "FIXTURE_TRACE_BUNDLE_V1.json#/events/2"},
+    {"event_id": "EVT-005", "a3_type": "LIST", "a4_page_types": ["LIST"], "evidence_pointer": "FIXTURE_TRACE_BUNDLE_V1.json#/events/4"},
+    {"event_id": "EVT-006", "a3_type": "PAGINATION", "a4_page_types": ["PAGINATION"], "evidence_pointer": "FIXTURE_TRACE_BUNDLE_V1.json#/events/5"},
+    {"event_id": "EVT-007", "a3_type": "DETAIL", "a4_page_types": ["DETAIL"], "evidence_pointer": "FIXTURE_TRACE_BUNDLE_V1.json#/events/6"},
+    {"event_id": "EVT-008", "a3_type": "DETAIL", "a4_page_types": ["DETAIL"], "evidence_pointer": "FIXTURE_TRACE_BUNDLE_V1.json#/events/7"},
+    {"event_id": "EVT-009", "a3_type": "MAP_MOVE", "a4_page_types": ["MAP"], "evidence_pointer": "FIXTURE_TRACE_BUNDLE_V1.json#/events/8"},
+    {"event_id": "EVT-010", "a3_type": "AUTH_SESSION", "a4_page_types": ["LOGIN_REQUIRED"], "evidence_pointer": "FIXTURE_TRACE_BUNDLE_V1.json#/events/9"},
+    {"event_id": "EVT-014", "a3_type": "PAGINATION", "a4_page_types": ["PAGINATION", "ERROR"], "evidence_pointer": "FIXTURE_TRACE_BUNDLE_V1.json#/events/13", "observation": "HTTP_429_RETRY_POLICY_REMAINS_A5_A6_DOWNSTREAM_AUTHORITY"},
+    {"event_id": "EVT-015", "a3_type": "UNKNOWN", "a4_page_types": ["UNKNOWN"], "evidence_pointer": "FIXTURE_TRACE_BUNDLE_V1.json#/events/14"}
+  ],
+  "binding_checks": {
+    "required_navigation_categories_covered": "PASS_10_MAPPINGS",
+    "raw_secret_value_count": 0,
+    "live_site_call_count": 0,
+    "unknown_event_preserved": true,
+    "a4_fixture_replay_digest_changed": false,
+    "a4_graph_topology_changed": false,
+    "a4_page_snapshot_authority_changed": false
+  },
+  "boundary": {
+    "a3_observation_evidence_only": true,
+    "a5_endpoint_request_response_authority_preserved": true,
+    "a6_adapter_implementation_authority_preserved": true,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
