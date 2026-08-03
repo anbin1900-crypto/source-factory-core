@@ -1,0 +1,27 @@
+{
+  "schema_version": "LATEST_A1_PHASE0_START_GATE_POINTER_V1",
+  "status": "PHASE0_START_GATE_BLOCKED_8_OF_10",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "report_path": "yolla-panel-v1/a0-successor-control/reports/A1_PHASE0_START_GATE_RECONCILIATION_V2.json",
+  "report_commit": "208f3e80c9638e1ecd71ad5dc55e8ecf04879716",
+  "report_blob": "4149d8af16f3e2a98e7a485c60ecacddaf089bb0",
+  "accepted_start_ledgers": 8,
+  "required_start_ledgers": 10,
+  "progress_percent": 80,
+  "missing_roles": [
+    "A-2",
+    "A-7"
+  ],
+  "required_next_event": "A2_AND_A7_FORMAL_START_REPORTS_COMMITTED",
+  "a2_wave4_control_comment": 5171701061,
+  "a7_wave4_reactivation_comment": 5171697188,
+  "duplicate_directive_count": 0,
+  "phase0_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "updated_at_kst": "2026-08-04T05:59:00+09:00"
+}
