@@ -1,0 +1,48 @@
+{
+  "schema_version": "C1_TRANSFORMATION_RESULT_POINTER_V1",
+  "pointer_id": "C1-D-ALIGNED-TRANSFORMATION-RESULT-POINTER-20260804-001",
+  "registered_at_kst": "2026-08-04 04:44 KST",
+  "directive_accepted": true,
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "existing_directive_superseded": false,
+  "result": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/reports/C1_D_ALIGNED_TRANSFORMER_RESULT_V1.json",
+    "commit": "2a0e16be1b57c0bb7b6cbd5dbe4d56604a5a4c08",
+    "blob": "1b9e24bc619d2e33225137dae663b22d373541e3",
+    "terminal": "C1_D_ALIGNED_TRANSFORMER_READY_OR_EXACT_BLOCKER",
+    "terminal_decision": "EXACT_BLOCKER",
+    "first_blocker": "D1_REQUIRED_SCHEMA_MAPPING_VALIDATION_CONTRACT_SET_NOT_PUBLISHED"
+  },
+  "prepared_contracts": {
+    "lineage_and_rejection": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/contracts/D_ALIGNED_LINEAGE_AND_REJECTION_CONTRACT_V1.json",
+      "commit": "6ade58adc96bdcb009cdd5df3b4c94b1cb33d881",
+      "blob": "a6d4ba534f354a364e22875750d8282cbbe8ad86"
+    },
+    "d_schema_consumer_and_mapping_validator": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/contracts/D_SCHEMA_CONSUMER_AND_MAPPING_VALIDATOR_CONTRACT_V1.json",
+      "commit": "f32d25208f5613e2e938e2ba6b9e0d6a9a7d8de5",
+      "blob": "30ec2b98f7eb892b8b509f314002101d0f8303ba"
+    }
+  },
+  "required_output_state": {
+    "D_ALIGNED_TRANSFORMATION_PACKAGE_V1": "BLOCKED_NOT_GENERATED",
+    "FIELD_MAPPING_REPORT_V1": "BLOCKED_NOT_GENERATED",
+    "REJECTED_RECORD_BUNDLE_V1": "CONTRACT_READY_NO_SOURCE_RECORDS",
+    "KNOWLEDGE_CANDIDATE_BUNDLE_V1": "BLOCKED_NOT_GENERATED"
+  },
+  "input_state": {
+    "B1_NORMALIZED_DATASET_V1": "NOT_PUBLISHED",
+    "B1_RAW_ARTIFACT_MANIFEST_V1": "NOT_PUBLISHED",
+    "D1_D_CANONICAL_SCHEMA_PROFILE_V1": "NOT_PUBLISHED",
+    "D1_D_INBOUND_FIELD_MAPPING_CONTRACT_V1": "NOT_PUBLISHED",
+    "D1_D_INTAKE_VALIDATION_RULESET_V1": "NOT_PUBLISHED"
+  },
+  "silent_drop_count": 0,
+  "d_canonical_schema_mutation_count": 0,
+  "d_canonical_db_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "C1_D_ALIGNED_TRANSFORMATION_EXACT_BLOCKER_PUBLISHED"
+}
