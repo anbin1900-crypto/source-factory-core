@@ -1,128 +1,79 @@
-name: Apply YOLLA Chrome Group Tabs V5.3
+name: Validate YOLLA Chrome Group Tabs V5.3
 
 on:
   push:
     branches:
       - integration/a0-yolla-workspace-automation-successor-v1
     paths:
-      - 'yolla-panel-v1/a0-successor-control/ui-v53/YOLLA_CHROME_GROUP_TABS_DYNAMIC_WORKERS_SOURCE_V1.zip'
+      - 'yolla-panel-v1/a0-successor-control/ui-v53/yolla_panel_main_bridge.cjs.gz.b64'
       - 'yolla-panel-v1/a1-connection-frontier/yolla_panel_main_bridge.cjs'
       - 'yolla-panel-v1/a1-connection-frontier/yolla_worker_preload.js'
       - 'yolla-panel-v1/a1-connection-frontier/yolla_worker_shell.html'
       - 'yolla-panel-v1/a1-connection-frontier/yolla_worker_shell.css'
       - 'yolla-panel-v1/a1-connection-frontier/yolla_worker_shell.js'
       - 'yolla-panel-v1/a1-connection-frontier/test_yolla_panel_connection_frontier.cjs'
+      - 'yolla-panel-v1/a1-connection-frontier/test_yolla_chrome_group_management_v1.cjs'
       - '.github/workflows/a0-apply-yolla-chrome-group-tabs-v53.yml'
   pull_request:
     branches:
       - integration/a1-yolla-panel-connection-frontier-v1
     paths:
-      - 'yolla-panel-v1/a0-successor-control/ui-v53/YOLLA_CHROME_GROUP_TABS_DYNAMIC_WORKERS_SOURCE_V1.zip'
-      - 'yolla-panel-v1/a1-connection-frontier/yolla_panel_main_bridge.cjs'
-      - 'yolla-panel-v1/a1-connection-frontier/yolla_worker_preload.js'
-      - 'yolla-panel-v1/a1-connection-frontier/yolla_worker_shell.html'
-      - 'yolla-panel-v1/a1-connection-frontier/yolla_worker_shell.css'
-      - 'yolla-panel-v1/a1-connection-frontier/yolla_worker_shell.js'
-      - 'yolla-panel-v1/a1-connection-frontier/test_yolla_panel_connection_frontier.cjs'
+      - 'yolla-panel-v1/a0-successor-control/ui-v53/yolla_panel_main_bridge.cjs.gz.b64'
+      - 'yolla-panel-v1/a1-connection-frontier/**'
       - '.github/workflows/a0-apply-yolla-chrome-group-tabs-v53.yml'
   workflow_dispatch:
 
 permissions:
-  contents: write
-
-concurrency:
-  group: a0-yolla-chrome-group-tabs-v53
-  cancel-in-progress: false
+  contents: read
 
 jobs:
-  apply-test-commit:
-    if: ${{ !contains(github.event.head_commit.message || '', '[skip-ui-v53-apply]') }}
+  validate-ui-v53:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: yolla-panel-v1/a1-connection-frontier
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: integration/a0-yolla-workspace-automation-successor-v1
-          fetch-depth: 0
-          persist-credentials: true
-
-      - name: Extract source package
+          persist-credentials: false
+          sparse-checkout: |
+            yolla-panel-v1/a1-connection-frontier
+            yolla-panel-v1/a0-successor-control/ui-v53/yolla_panel_main_bridge.cjs.gz.b64
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: JavaScript syntax
         shell: bash
         run: |
           set -euo pipefail
-          package='yolla-panel-v1/a0-successor-control/ui-v53/YOLLA_CHROME_GROUP_TABS_DYNAMIC_WORKERS_SOURCE_V1.zip'
-          stage="$RUNNER_TEMP/yolla-ui-v53"
-          rm -rf "$stage"
-          mkdir -p "$stage"
-          unzip -q "$package" -d "$stage"
-          test -f "$stage/yolla_panel_main_bridge.cjs"
-          test -f "$stage/yolla_worker_preload.js"
-          test -f "$stage/yolla_worker_shell.html"
-          test -f "$stage/yolla_worker_shell.css"
-          test -f "$stage/yolla_worker_shell.js"
-          test -f "$stage/test_yolla_panel_connection_frontier.cjs"
-
-      - name: Validate staged source
+          node --check yolla_panel_main_bridge.cjs
+          node --check yolla_worker_preload.js
+          node --check yolla_worker_shell.js
+          node --check test_yolla_panel_connection_frontier.cjs
+          node --check test_yolla_chrome_group_management_v1.cjs
+      - name: Validate compressed backend authority
         shell: bash
         run: |
           set -euo pipefail
-          stage="$RUNNER_TEMP/yolla-ui-v53"
-          node --check "$stage/yolla_panel_main_bridge.cjs"
-          node --check "$stage/yolla_worker_preload.js"
-          node --check "$stage/yolla_worker_shell.js"
-          (cd "$stage" && node test_yolla_panel_connection_frontier.cjs)
-          (cd "$stage" && node test_yolla_chrome_group_management_v1.cjs)
-
-      - name: Apply source files
+          node - <<'NODE'
+          const crypto=require('node:crypto');
+          const fs=require('node:fs');
+          const zlib=require('node:zlib');
+          const source='../a0-successor-control/ui-v53/yolla_panel_main_bridge.cjs.gz.b64';
+          const body=zlib.gunzipSync(Buffer.from(fs.readFileSync(source,'utf8').replace(/\s+/g,''),'base64'));
+          const sha=crypto.createHash('sha256').update(body).digest('hex');
+          if(sha!=='83c986e13256139fa02de66bc8e51cc110b8375404791c43f38dd00229574fdb') throw new Error('BACKEND_SHA256_MISMATCH:'+sha);
+          console.log('UI_V53_BACKEND_SHA256=PASS');
+          NODE
+      - name: Run command-cycle regression
         shell: bash
-        run: |
-          set -euo pipefail
-          stage="$RUNNER_TEMP/yolla-ui-v53"
-          target='yolla-panel-v1/a1-connection-frontier'
-          install -m 0644 "$stage/yolla_panel_main_bridge.cjs" "$target/yolla_panel_main_bridge.cjs"
-          install -m 0644 "$stage/yolla_worker_preload.js" "$target/yolla_worker_preload.js"
-          install -m 0644 "$stage/yolla_worker_shell.html" "$target/yolla_worker_shell.html"
-          install -m 0644 "$stage/yolla_worker_shell.css" "$target/yolla_worker_shell.css"
-          install -m 0644 "$stage/yolla_worker_shell.js" "$target/yolla_worker_shell.js"
-          install -m 0644 "$stage/test_yolla_panel_connection_frontier.cjs" "$target/test_yolla_panel_connection_frontier.cjs"
-          mkdir -p 'yolla-panel-v1/a0-successor-control/ui-v53'
-          install -m 0644 "$stage/test_yolla_chrome_group_management_v1.cjs" 'yolla-panel-v1/a0-successor-control/ui-v53/test_yolla_chrome_group_management_v1.cjs'
-
-      - name: Validate applied source
+        run: node test_yolla_panel_connection_frontier.cjs
+      - name: Run group management tests
         shell: bash
-        run: |
-          set -euo pipefail
-          target='yolla-panel-v1/a1-connection-frontier'
-          node --check "$target/yolla_panel_main_bridge.cjs"
-          node --check "$target/yolla_worker_preload.js"
-          node --check "$target/yolla_worker_shell.js"
-          (cd "$target" && node test_yolla_panel_connection_frontier.cjs)
-          cp 'yolla-panel-v1/a0-successor-control/ui-v53/test_yolla_chrome_group_management_v1.cjs' "$target/test_yolla_chrome_group_management_v1.cjs"
-          (cd "$target" && node test_yolla_chrome_group_management_v1.cjs)
-          rm "$target/test_yolla_chrome_group_management_v1.cjs"
-
-      - name: Commit applied source
-        shell: bash
-        run: |
-          set -euo pipefail
-          if git diff --quiet --exit-code; then
-            echo 'UI_V53_SOURCE_ALREADY_APPLIED=true'
-            exit 0
-          fi
-          git config user.name 'yolla-a0-automation'
-          git config user.email 'actions@users.noreply.github.com'
-          git add \
-            yolla-panel-v1/a1-connection-frontier/yolla_panel_main_bridge.cjs \
-            yolla-panel-v1/a1-connection-frontier/yolla_worker_preload.js \
-            yolla-panel-v1/a1-connection-frontier/yolla_worker_shell.html \
-            yolla-panel-v1/a1-connection-frontier/yolla_worker_shell.css \
-            yolla-panel-v1/a1-connection-frontier/yolla_worker_shell.js \
-            yolla-panel-v1/a1-connection-frontier/test_yolla_panel_connection_frontier.cjs \
-            yolla-panel-v1/a0-successor-control/ui-v53/test_yolla_chrome_group_management_v1.cjs
-          git commit -m 'feat(yolla): apply chrome group tabs and dynamic workers [skip-ui-v53-apply]'
-          git push origin HEAD:integration/a0-yolla-workspace-automation-successor-v1
-
-      - name: Record safety boundary
+        run: node test_yolla_chrome_group_management_v1.cjs
+      - name: Record feature and safety boundary
         shell: bash
         run: |
           printf '%s\n' \
@@ -130,6 +81,7 @@ jobs:
             'GROUP_RENAME=true' \
             'GROUP_COLOR=true' \
             'DYNAMIC_WORKER_ADD=true' \
+            'CUSTOMIZATION_PERSISTENCE=true' \
             'NEW_ELECTRON_RUNTIME_COUNT=0' \
             'NEW_BROWSER_RUNTIME_COUNT=0' \
             'NEW_PROMPT_TRANSPORT_COUNT=0' \
