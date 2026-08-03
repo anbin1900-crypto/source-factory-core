@@ -1,0 +1,22 @@
+{
+  "schema_version": "NAVIGATION_LOOP_STOP_POLICY_V1",
+  "policy_id": "A4-NAVIGATION-LOOP-STOP-POLICY-V1",
+  "visited_key": "canonical_url + pagination_token + scope_fingerprint",
+  "guards": [
+    {"guard": "REPEATED_CANONICAL_URL", "action": "STOP_BEFORE_VISIT"},
+    {"guard": "REPEATED_CURSOR", "action": "STOP_BEFORE_REQUEST"},
+    {"guard": "NO_NEW_RECORD_IDS", "action": "STOP_AFTER_PAGE_PARSE"},
+    {"guard": "EMPTY_RESULT", "action": "STOP_AFTER_PAGE_PARSE"},
+    {"guard": "LAST_PAGE_FLAG", "action": "STOP_AFTER_PAGE_PARSE"},
+    {"guard": "MAXIMUM_PAGE_COUNT", "action": "STOP_BEFORE_REQUEST"},
+    {"guard": "OUT_OF_SCOPE_PAGE_TYPE", "action": "BLOCK_BEFORE_ENQUEUE"},
+    {"guard": "POST_STOP_ENQUEUE", "action": "BLOCK"}
+  ],
+  "allowed_revisit": "DETAIL_RETURN_TO_CURRENT_LIST_ONLY",
+  "post_stop_behavior": {
+    "new_page_enqueue": false,
+    "duplicate_page_visit_after_stop": false,
+    "terminal_is_immutable": true
+  },
+  "unbounded_loop_count_expected": 0
+}
