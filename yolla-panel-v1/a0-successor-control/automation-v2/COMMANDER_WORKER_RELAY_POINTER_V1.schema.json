@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yolla:commander-next-directive-pointer:v1",
+  "title": "YOLLA Commander Next Directive Pointer V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "commander_id",
+    "worker_id",
+    "source_cycle_id",
+    "source_worker_result_pointer",
+    "no_next_directive"
+  ],
+  "properties": {
+    "schema_version": {"const": "YOLLA_COMMANDER_NEXT_DIRECTIVE_POINTER_V1"},
+    "commander_id": {"type": "string", "minLength": 1},
+    "worker_id": {"type": "string", "minLength": 1},
+    "source_cycle_id": {"type": "string", "minLength": 1},
+    "source_worker_result_pointer": {"type": "string", "minLength": 1},
+    "no_next_directive": {"type": "boolean"},
+    "repository": {"type": ["string", "null"], "pattern": "^[^/\\s]+/[^/\\s]+$"},
+    "pr": {"type": ["integer", "null"], "minimum": 1},
+    "comment_id": {"type": ["integer", "null"], "minimum": 1},
+    "url": {"type": ["string", "null"]}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"no_next_directive": {"const": false}}},
+      "then": {"required": ["repository", "pr", "comment_id", "url"]}
+    }
+  ]
+}
