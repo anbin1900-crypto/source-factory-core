@@ -1,0 +1,45 @@
+{
+  "schema_version": "LATEST_A0_V54_STANDALONE_INSTALLER_POINTER_V1",
+  "status": "AI_YOLLA_PANEL_WORKSPACE_V54_VERTICAL_DYNAMIC_GROUPS_BUILD_PASS_TARGET_PC_RUN_PENDING",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "product_identity": "AI_YOLLA_PANEL_WORKSPACE_RUNTIME",
+  "supersedes": {
+    "pointer": "yolla-panel-v1/a0-successor-control/ui-v53/LATEST_A0_V53_STANDALONE_INSTALLER_POINTER.json",
+    "reason": "USER_CORRECTED_LAYOUT_TO_VERTICAL_GROUPS_AND_REMOVED_FIXED_50_AND_RESERVE_SEATS",
+    "v53_installer_status": "SUPERSEDED_DO_NOT_RUN"
+  },
+  "project_goal_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "pr": 242,
+    "pointer": "COMMAND_CENTER/GOVERNANCE/AI_YOLLA_V2/LATEST_AI_YOLLA_ACTIVE_AUTHORITY_POINTER_V2.json",
+    "first_vertical_product": "YOLLA_REAL_ESTATE_MINIMUM_USABLE_SERVICE"
+  },
+  "build_report_path": "yolla-panel-v1/a0-successor-control/reports/A0_V54_VERTICAL_DYNAMIC_GROUPS_STANDALONE_INSTALLER_BUILD_REPORT_V1.json",
+  "build_report_commit": "b39d38af3a92d3f6646675194146462c250006c8",
+  "installer_file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V54_VERTICAL_GROUPS_UNLIMITED.bat",
+  "installer_sha256": "49fa94eeb72e44bbad4c00ff8507b2d14811f9728de7b08d7f006da6c5f72bb1",
+  "installer_size_bytes": 69292,
+  "embedded_payload_sha256": "e2e7d6c485aadeebd9b97425cf3bc23c9dd334f21a76427e0975c9e95e32af34",
+  "ui_model": {
+    "vertical_group_stack": true,
+    "horizontal_group_tabs": false,
+    "dynamic_groups": true,
+    "dynamic_workers": true,
+    "fixed_50_worker_label": false,
+    "reserve_seats": false
+  },
+  "target_pc": {
+    "git_checkout_required": false,
+    "preferred_active_core": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038",
+    "runtime_target": "<ACTIVE_CORE>\\yolla_workspace_v5_2",
+    "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_4.bat"
+  },
+  "next_action": "RUN_V54_STANDALONE_INSTALLER_AS_ADMINISTRATOR_AND_RETURN_SCREENSHOT_OR_V54_INSTALL_RECEIPT",
+  "target_pc_execution_observed": false,
+  "target_pc_visual_acceptance_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-03T23:20:00+09:00"
+}
