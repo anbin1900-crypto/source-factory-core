@@ -1,0 +1,50 @@
+{
+  "schema_version": "A4_PROGRESS_OR_BLOCKER_REPORT_V1",
+  "worker": "A-4",
+  "status": "PROGRESS_PASS",
+  "directive_id": "A2-TO-A4-NAVIGATION-PAGINATION-EXECUTION-V3-20260804-001",
+  "registered_at_kst": "2026-08-04T05:11:00+09:00",
+  "started_at_kst": "2026-08-04T05:17:00+09:00",
+  "progress_at_kst": "2026-08-04T05:24:00+09:00",
+  "input_status": {
+    "a3_trace_handoff": "NOT_PUBLISHED_AT_START",
+    "fixture_mode": "REPOSITORY_LOCAL_FIXTURE_ONLY",
+    "live_site_call_count": 0
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "result": "FAIL",
+      "failure_code": "DUPLICATE_AFTER_STOP",
+      "root_cause": "DETAIL_RESULT_IDS_WERE_INCLUDED_IN_LIST_PAGINATION_DUPLICATE_STATE"
+    },
+    {
+      "attempt": 2,
+      "result": "PASS",
+      "correction": "APPLY_DUPLICATE_ID_STOP_ONLY_TO_NON_REVISIT_LIST_OR_PAGINATION_PAGES"
+    }
+  ],
+  "checks": {
+    "navigation_graph_schema": "PASS",
+    "page_type_count": 10,
+    "pagination_type_count": 8,
+    "fixture_replay_count": 2,
+    "deterministic_navigation_replay": "PASS",
+    "unbounded_loop_count": 0,
+    "duplicate_page_visit_after_stop_count": 0,
+    "guard_case_pass_count": 4,
+    "guard_case_total": 4,
+    "live_site_call_count": 0
+  },
+  "validation": {
+    "python_compile": "PASS_2_OF_2",
+    "builder_execution": "PASS",
+    "unit_tests": "PASS_15_OF_15"
+  },
+  "failures_remaining": [],
+  "actual_bulk_collection": false,
+  "panel_shell_direct_edit": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
