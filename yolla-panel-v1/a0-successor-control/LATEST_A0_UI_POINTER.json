@@ -1,34 +1,43 @@
 {
   "schema_version": "LATEST_A0_UI_POINTER_V1",
-  "status": "AI_YOLLA_PANEL_WORKSPACE_V59_WORKER_SCHEDULE_AUTOMATION_CURRENT",
+  "status": "AI_YOLLA_PANEL_WORKSPACE_V511_PREVIOUS_WORKER_LIST_LIVE_STATUS_CURRENT",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "current_ui_version": "5.9.0",
-  "current_pointer_path": "yolla-panel-v1/a0-successor-control/automation-v1/runtime-v59/LATEST_A0_AUTOMATION_RUNTIME_V59_POINTER.json",
-  "current_pointer_commit": "3d10fef823c8c759afd6fd5aa8afcae6d3ebf3c8",
+  "current_ui_version": "5.11.0",
+  "current_pointer_path": "yolla-panel-v1/a0-successor-control/automation-v1/runtime-v511/LATEST_A0_V511_WORKER_STATUS_POPUP_POINTER.json",
+  "current_pointer_commit": "980d8be5af2c1f6215d07d32f98cb60b61bfa6c1",
   "default_group_count": 1,
   "default_group_id": "B_GROUP",
   "default_group_name": "부동산 홈페이지 제작",
   "default_base_roles": ["B-1", "B-2", "B-3", "B-4", "B-5", "B-6"],
-  "layout": "SINGLE_REAL_ESTATE_GROUP_WITH_SCHEDULE_AUTOMATION_PANEL",
+  "layout": "PREVIOUS_COMPACT_LEFT_WORKER_LIST_WITH_MENU_POPUP",
+  "previous_worker_list_restored": true,
+  "inline_schedule_panel": false,
   "outer_group_scroll": true,
   "nested_worker_scroll": false,
   "all_workers_reachable": true,
   "b6_reachable": true,
   "dynamic_group_add": true,
   "dynamic_worker_add": true,
-  "schedule_panel": {
-    "import_and_save": true,
+  "worker_menu_popup": {
+    "automation_file_and_schedule": true,
     "current_job": true,
     "next_job": true,
     "start_pause_tick": true,
-    "github_result_watcher_status": true
+    "open_schedule_folder": true
+  },
+  "live_worker_status": {
+    "labels": ["작업중", "대기중", "오류"],
+    "top_counts": ["전체 작업워커", "작업중", "쉬는중", "오류"],
+    "actual_schedule_runtime_derived": true,
+    "manual_status_override_removed": true
   },
   "automation_runtime": {
     "worker_schedule_runner": "BOUND_SOURCE_BUILD_PASS",
     "github_result_watcher": "BOUND_SOURCE_BUILD_PASS",
     "next_job_dispatcher": "BOUND_SOURCE_BUILD_PASS",
-    "commander_replan_gate": "BOUND_SOURCE_BUILD_PASS",
+    "commander_worker_relay": "BOUND_SOURCE_BUILD_PASS",
+    "epic_schedule": "BOUND_SOURCE_BUILD_PASS",
     "existing_browser_session_reused": true,
     "new_browser_runtime": false,
     "new_transport": false
@@ -37,9 +46,9 @@
   "pr278_runtime_provider_bound": true,
   "exactly_once_bound": true,
   "superseded_ui_versions": [
-    {"version":"5.8.0","reason":"SUPERSEDED_BY_WORKER_SCHEDULE_AUTOMATION_PANEL","installer_status":"DO_NOT_RUN"},
-    {"version":"5.7.0","reason":"DEFAULT_MULTI_GROUP_LIST_AND_NO_WORKER_SCHEDULE_RUNNER","installer_status":"DO_NOT_RUN"},
-    {"version":"5.6.1","reason":"SUPERSEDED_BY_SINGLE_REAL_ESTATE_GROUP_AND_AUTOMATION_RUNTIME","installer_status":"DO_NOT_RUN"}
+    {"version":"5.10.0","reason":"LEFT_LIST_AUTOMATION_AREA_REJECTED_REPLACED_BY_WORKER_MENU_POPUP","installer_status":"DO_NOT_RUN"},
+    {"version":"5.9.0","reason":"INLINE_SCHEDULE_PANEL_REPLACED_BY_PREVIOUS_LIST_AND_POPUP","installer_status":"DO_NOT_RUN"},
+    {"version":"5.8.0","reason":"AUTOMATION_RUNTIME_NOT_BOUND","installer_status":"DO_NOT_RUN"}
   ],
   "target_pc_execution_observed": false,
   "target_pc_visual_acceptance_claimed": false,
@@ -47,5 +56,5 @@
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at": "2026-08-04T03:38:00+09:00"
+  "updated_at": "2026-08-04T06:10:00+09:00"
 }
