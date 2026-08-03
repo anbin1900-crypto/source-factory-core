@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "audit_id": "B1-WORKER-RESULT-AUDIT-AND-NEXT-ACTION-V1-20260804-001",
+  "registered_at_kst": "2026-08-04T05:22:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 19,
+  "parent_batch_id": "B1-EXTRACTOR-EXECUTION-BATCH-V1-20260804-001",
+  "existing_directives_superseded": false,
+  "new_directive_count": 0,
+  "audit_summary": {
+    "workers_checked": 5,
+    "implementation_terminal_received": 0,
+    "implementation_head_advanced_after_task_assignment": 0,
+    "task_assignment_only": 5,
+    "result_or_blocker_publication_required": true
+  },
+  "workers": {
+    "B-2": {
+      "pr": 38,
+      "observed_head": "34a536c91fbd537643bf40eb19c598ad177f880e",
+      "commit_count": 2,
+      "last_task_comment": 5171246365,
+      "task_id": "B1-B2-EXECUTION-TASK-V1-20260804-001",
+      "terminal_found": false,
+      "state": "TASK_ASSIGNED_IMPLEMENTATION_NOT_STARTED",
+      "next_action": "EXECUTE_EXISTING_TASK_AND_POST_START_IMPLEMENTATION_TEST_FINAL_POINTER_OR_EXACT_BLOCKER"
+    },
+    "B-3": {
+      "pr": 39,
+      "observed_head": "8c31cec83f1b81ba80511bed8a61b15536da3b48",
+      "commit_count": 2,
+      "last_task_comment": 5171248663,
+      "task_id": "B1-B3-EXECUTION-TASK-V1-20260804-001",
+      "terminal_found": false,
+      "state": "TASK_ASSIGNED_IMPLEMENTATION_NOT_STARTED",
+      "next_action": "EXECUTE_EXISTING_TASK_AND_POST_START_IMPLEMENTATION_TEST_FINAL_POINTER_OR_EXACT_BLOCKER"
+    },
+    "B-4": {
+      "pr": 40,
+      "observed_head": "f1c327882bfd73d9670afa661e11c6acc8a8cccb",
+      "commit_count": 2,
+      "last_task_comment": 5171250796,
+      "task_id": "B1-B4-EXECUTION-TASK-V1-20260804-001",
+      "terminal_found": false,
+      "state": "TASK_ASSIGNED_IMPLEMENTATION_NOT_STARTED",
+      "next_action": "EXECUTE_EXISTING_TASK_AND_POST_START_IMPLEMENTATION_TEST_FINAL_POINTER_OR_EXACT_BLOCKER"
+    },
+    "B-5": {
+      "pr": 41,
+      "observed_head": "dfd99f6188d263fd7e7ded72396f72006680fee8",
+      "commit_count": 2,
+      "last_task_comment": 5171252831,
+      "task_id": "B1-B5-EXECUTION-TASK-V1-20260804-001",
+      "terminal_found": false,
+      "state": "TASK_ASSIGNED_IMPLEMENTATION_NOT_STARTED",
+      "next_action": "EXECUTE_EXISTING_TASK_AND_POST_START_IMPLEMENTATION_TEST_FINAL_POINTER_OR_EXACT_BLOCKER"
+    },
+    "B-6": {
+      "pr": 42,
+      "observed_head": "6ccf2fea6cc4d05db2704ac08c50eb8ff43015b1",
+      "commit_count": 2,
+      "last_task_comment": 5171255582,
+      "task_id": "B1-B6-EXECUTION-TASK-V1-20260804-001",
+      "terminal_found": false,
+      "state": "EVENT_WAIT_START_REPORT_NOT_PUBLISHED",
+      "entry_condition_met": false,
+      "next_action": "POST_B6_START_REPORT_AND_EVENT_WAIT_POINTER_NOW_THEN_WAIT_FOR_B2_TO_B5_4_OF_4"
+    }
+  },
+  "next_publication_policy": {
+    "reuse_existing_task_ids": true,
+    "duplicate_directive_reexecution": false,
+    "post_terminal_or_exact_blocker": true,
+    "b2_to_b5_parallel": true,
+    "b6_event_wait_then_independent_acceptance": true
+  },
+  "boundaries": {
+    "actual_site_extraction": false,
+    "actual_bulk_collection": false,
+    "unverified_adapter_use": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
