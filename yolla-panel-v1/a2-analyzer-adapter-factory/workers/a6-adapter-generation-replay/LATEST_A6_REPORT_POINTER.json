@@ -1,15 +1,1 @@
-{
-  "build_receipt": "ADAPTER_BUILD_RECEIPT_V1.json",
-  "current_stage": "TERMINAL",
-  "current_status": "BLOCKED_EXACT_HANDOFF_POINTERS",
-  "directive_id": "A2-TO-A6-VERIFIED-ADAPTER-PACKAGE-BUILD-V3-20260804-001",
-  "first_blocker": "A3_A4_A5_HANDOFF_POINTERS_NOT_PUBLISHED",
-  "latest_report": "A6_TERMINAL_REPORT_V1.json",
-  "progress_report": "ANALYSIS_PROGRESS_EVENT_V1.json",
-  "replay_receipt": "REPLAY_TEST_RECEIPT_V1.json",
-  "schema_version": "YOLLA_LATEST_A6_REPORT_POINTER_V1",
-  "terminal": "A6_VERIFIED_ADAPTER_PACKAGE_EXACT_BLOCKER",
-  "updated_at_kst": "2026-08-04T05:24:00+09:00",
-  "upstream_pointer_count": 0,
-  "worker": "A-6"
-}
+{"accepted_upstream_pointer_count":2,"build_receipt":"ADAPTER_BUILD_RECEIPT_V2.json","current_stage":"TERMINAL_REBOUND","current_status":"BLOCKED_A5_EXECUTION_CONTRACT_HANDOFF","directive_id":"A2-TO-A6-VERIFIED-ADAPTER-PACKAGE-BUILD-V3-20260804-001","first_blocker":"A5_TO_A6_EXECUTION_CONTRACT_HANDOFF_V1_NOT_PUBLISHED","latest_report":"A6_TERMINAL_REPORT_V2.json","progress_report":"ANALYSIS_PROGRESS_EVENT_V2.json","replay_receipt":"REPLAY_TEST_RECEIPT_V2.json","schema_version":"YOLLA_LATEST_A6_REPORT_POINTER_V2","terminal":"A6_VERIFIED_ADAPTER_PACKAGE_EXACT_BLOCKER","updated_at_kst":"2026-08-04T05:34:00+09:00","worker":"A-6"}
