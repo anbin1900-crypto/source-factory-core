@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "pointer_id": "LATEST-B1-COLLECTOR-DB-MATERIALIZATION-REPORT-V1",
-  "updated_at_kst": "2026-08-04T04:44:00+09:00",
+  "updated_at_kst": "2026-08-04T05:11:00+09:00",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 19,
   "branch": "integration/b1-collector-db-materialization-v1",
   "current_report": {
-    "type": "WORKER_ASSIGNMENT",
-    "path": "yolla-panel-v1/b1-collector-materialization/B1_WORKER_ASSIGNMENT_POINTER.json",
-    "commit": "d2f1fd6c58b7e4bd8a3096b648ef65970d82ade5",
-    "blob": "f39933e5ba9962d513e41fa4d8b2f043d181820d",
-    "status": "B2_TO_B6_PARALLEL_DISPATCH_ACTIVE"
+    "type": "WORKER_EXECUTION_ASSIGNMENT",
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave2/LATEST_B1_WORKER_EXECUTION_POINTER.json",
+    "commit": "3672f1a169be70e907c8e88b063fb321bab438b5",
+    "blob": "ae95031d4765326a122360ac57a52c0523ea7077",
+    "status": "B2_TO_B5_EXECUTE_NOW_B6_EVENT_WAIT"
   },
   "directive_id": "A0-TO-B1-GENERIC-COLLECTOR-MATERIALIZATION-SHELL-V1-20260803-001",
   "addendum_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
@@ -19,16 +19,26 @@
     "path": "yolla-panel-v1/b1-collector-materialization/B1_WORKER_ASSIGNMENT_POINTER.json",
     "blob": "f39933e5ba9962d513e41fa4d8b2f043d181820d"
   },
-  "worker_assignment_publication_receipt": {
-    "path": "yolla-panel-v1/b1-collector-materialization/B1_WORKER_ASSIGNMENT_PUBLICATION_RECEIPT.json",
-    "commit": "6dd2ff962a06279d1faab65780498b282e19f806",
-    "blob": "0e3c167cd026473e965db4f8dd038070468300e5",
+  "worker_execution_pointer": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave2/LATEST_B1_WORKER_EXECUTION_POINTER.json",
+    "commit": "3672f1a169be70e907c8e88b063fb321bab438b5",
+    "blob": "ae95031d4765326a122360ac57a52c0523ea7077"
+  },
+  "worker_execution_assignment_matrix": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave2/B1_WORKER_EXECUTION_ASSIGNMENT_MATRIX_V1.json",
+    "commit": "f83906eefb81337931fd2c1ca391b4d75fabc470",
+    "blob": "9ddf76aff594e324a66918978ac3c30e25a90835"
+  },
+  "worker_execution_publication_receipt": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave2/B1_WORKER_EXECUTION_ASSIGNMENT_PUBLICATION_RECEIPT_V1.json",
+    "commit": "007d4ee44dc9776746c9e045a2780164783db500",
+    "blob": "35063f6cba6620149e312f0e3287ae4c43ccf6ba",
     "result": "PASS_5_OF_5"
   },
   "extraction_result_pointer": {
     "path": "yolla-panel-v1/b1-collector-materialization/B1_EXTRACTION_RESULT_POINTER.json",
     "blob": "3918f6d513a1abdf641fc86c0b91371720a9535e",
-    "status": "WAITING_B2_TO_B6_TERMINALS"
+    "status": "WAITING_WORKER_TERMINALS"
   },
   "c1_handoff_pointer": {
     "path": "yolla-panel-v1/b1-collector-materialization/B1_TO_C1_HANDOFF_POINTER.json",
@@ -36,17 +46,18 @@
     "status": "WAITING_B6_INDEPENDENT_ACCEPTANCE"
   },
   "worker_controls": {
-    "B-2": {"pr": 38, "comment": 5171036066},
-    "B-3": {"pr": 39, "comment": 5171038055},
-    "B-4": {"pr": 40, "comment": 5171040545},
-    "B-5": {"pr": 41, "comment": 5171042948},
-    "B-6": {"pr": 42, "comment": 5171045051}
+    "B-2": {"pr": 38, "head": "34a536c91fbd537643bf40eb19c598ad177f880e", "comment": 5171246365, "status": "EXECUTE_NOW"},
+    "B-3": {"pr": 39, "head": "8c31cec83f1b81ba80511bed8a61b15536da3b48", "comment": 5171248663, "status": "EXECUTE_NOW"},
+    "B-4": {"pr": 40, "head": "f1c327882bfd73d9670afa661e11c6acc8a8cccb", "comment": 5171250796, "status": "EXECUTE_NOW"},
+    "B-5": {"pr": 41, "head": "dfd99f6188d263fd7e7ded72396f72006680fee8", "comment": 5171252831, "status": "EXECUTE_NOW"},
+    "B-6": {"pr": 42, "head": "6ccf2fea6cc4d05db2704ac08c50eb8ff43015b1", "comment": 5171255582, "status": "EVENT_WAIT_THEN_EXECUTE"}
   },
   "a2_verified_adapter_package_v1_published": false,
   "actual_site_extraction": false,
   "required_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
   "current_terminal": null,
-  "current_status": "WORKERS_DISPATCHED_WAITING_TERMINALS",
+  "current_status": "B2_TO_B5_IMPLEMENTATION_ACTIVE_B6_EVENT_WAIT",
+  "next_gate": "B2_TO_B5_START_REPORTS_AND_FIRST_IMPLEMENTATION_COMMITS",
   "production": false,
   "ready": false,
   "merge": false
