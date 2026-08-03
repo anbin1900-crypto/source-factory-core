@@ -19,6 +19,12 @@
     "path": "yolla-panel-v1/b1-collector-materialization/B1_WORKER_ASSIGNMENT_POINTER.json",
     "blob": "f39933e5ba9962d513e41fa4d8b2f043d181820d"
   },
+  "worker_assignment_publication_receipt": {
+    "path": "yolla-panel-v1/b1-collector-materialization/B1_WORKER_ASSIGNMENT_PUBLICATION_RECEIPT.json",
+    "commit": "6dd2ff962a06279d1faab65780498b282e19f806",
+    "blob": "0e3c167cd026473e965db4f8dd038070468300e5",
+    "result": "PASS_5_OF_5"
+  },
   "extraction_result_pointer": {
     "path": "yolla-panel-v1/b1-collector-materialization/B1_EXTRACTION_RESULT_POINTER.json",
     "blob": "3918f6d513a1abdf641fc86c0b91371720a9535e",
@@ -30,15 +36,17 @@
     "status": "WAITING_B6_INDEPENDENT_ACCEPTANCE"
   },
   "worker_controls": {
-    "B-2": 38,
-    "B-3": 39,
-    "B-4": 40,
-    "B-5": 41,
-    "B-6": 42
+    "B-2": {"pr": 38, "comment": 5171036066},
+    "B-3": {"pr": 39, "comment": 5171038055},
+    "B-4": {"pr": 40, "comment": 5171040545},
+    "B-5": {"pr": 41, "comment": 5171042948},
+    "B-6": {"pr": 42, "comment": 5171045051}
   },
   "a2_verified_adapter_package_v1_published": false,
   "actual_site_extraction": false,
   "required_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
+  "current_terminal": null,
+  "current_status": "WORKERS_DISPATCHED_WAITING_TERMINALS",
   "production": false,
   "ready": false,
   "merge": false
