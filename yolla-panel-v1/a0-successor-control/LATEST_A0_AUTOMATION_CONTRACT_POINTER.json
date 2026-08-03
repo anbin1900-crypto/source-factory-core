@@ -12,6 +12,11 @@
     "path": "yolla-panel-v1/a0-successor-control/WORKER_JOB_SCHEDULE_CONTRACT_V1.json",
     "commit": "9512df3cdbb8c1efc341ecec9025c91ca5ceecfe"
   },
+  "execution_queue": {
+    "path": "yolla-panel-v1/a0-successor-control/A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V2.json",
+    "commit": "467b4550515f11dcaeffaee7840480eb3e983e25",
+    "supersedes_for_current_automation": "A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V1"
+  },
   "current_ui": {
     "version": "5.8.0",
     "pointer_path": "yolla-panel-v1/a0-successor-control/LATEST_A0_UI_POINTER.json",
