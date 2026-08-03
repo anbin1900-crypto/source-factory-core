@@ -1,0 +1,116 @@
+{
+  "schema_version": "A1_PHASE0_DISPATCH_RECEIPT_V1",
+  "report_type": "DISPATCH_RECEIPT",
+  "status": "PASS",
+  "terminal": "A1_PHASE0_SUCCESSOR_AND_A_GROUP_BATCH_DISPATCH_PASS_9_OF_9",
+  "directive_id": "A1-TO-A0-A2-D1-A3-A7-PHASE0-CLOSURE-BATCH-V1-20260803-001",
+  "cycle_id": "A1-SUCCESSOR-ACTIVATION-20260803-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "successor_acceptance_commit": "9fa975c18e510034f2f468b352e3d316ecb1fd8b",
+  "batch_directive_commit": "46fa759c7b5f57b477de6701ffa539a5bab80750",
+  "a1_pointer_commit_before_receipt": "511fea3edc11b2816b5f06f7e09b864b9554f263",
+  "dispatch_count": 9,
+  "dispatch_pass_count": 9,
+  "dispatch_fail_count": 0,
+  "dispatches": [
+    {
+      "purpose": "A1_SUCCESSOR_CONTROL_ACCEPTANCE_AND_PHASE0_STATUS",
+      "target_pr": 17,
+      "comment_id": 5165561358,
+      "result": "PASS"
+    },
+    {
+      "purpose": "UPPER_BASELINE_SUCCESSOR_POINTER_UPDATE",
+      "target_pr": 14,
+      "comment_id": 5165563009,
+      "result": "PASS"
+    },
+    {
+      "purpose": "A2_COMMANDER_START_AND_FIXTURE_PROVIDER_ACTIVATION",
+      "target_pr": 18,
+      "observed_head": "9fc006d7a2f252eb487ead74dd1608bfa9ff7f8e",
+      "comment_id": 5165565792,
+      "result": "PASS"
+    },
+    {
+      "purpose": "D1_COMMANDER_START_AND_INTAKE_RELEASE_ACTIVATION",
+      "target_pr": 21,
+      "observed_head": "65bf71a0b6b766dea914fcd2decfad4f9218e8a7",
+      "comment_id": 5165568044,
+      "result": "PASS"
+    },
+    {
+      "purpose": "A3_NETWORK_OBSERVATION_LANE_ACTIVATION",
+      "target_pr": 22,
+      "observed_head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+      "comment_id": 5165570048,
+      "result": "PASS"
+    },
+    {
+      "purpose": "A4_NAVIGATION_PAGINATION_LANE_ACTIVATION",
+      "target_pr": 23,
+      "observed_head": "31e9c7678d95c62b80fddc27d042fe5291d72b46",
+      "comment_id": 5165573215,
+      "result": "PASS"
+    },
+    {
+      "purpose": "A5_REQUEST_RESPONSE_SCHEMA_LANE_ACTIVATION",
+      "target_pr": 24,
+      "observed_head": "e111860285fb4a4ef177e7d7a20586c994a5e8c6",
+      "comment_id": 5165576893,
+      "result": "PASS"
+    },
+    {
+      "purpose": "A6_ADAPTER_GENERATION_REPLAY_LANE_ACTIVATION",
+      "target_pr": 25,
+      "observed_head": "f020f2d5e9100a0a1bc3a0461b2c383362d9f7f8",
+      "comment_id": 5165579296,
+      "result": "PASS"
+    },
+    {
+      "purpose": "A7_ACCEPTANCE_AUDIT_LANE_ACTIVATION",
+      "target_pr": 26,
+      "observed_head": "fc15bb69be25d9d8d2e51d7e69a1865697e2afa2",
+      "comment_id": 5165581971,
+      "result": "PASS"
+    }
+  ],
+  "dispatch_policy": {
+    "new_duplicate_worker_directive_created": false,
+    "existing_directives_preserved": true,
+    "comments_are_authoritative": false,
+    "comments_role": "POINTER_AND_NON_AUTHORITATIVE_SUMMARY",
+    "official_authority": "COMMITTED_BATCH_DIRECTIVE_AND_THIS_RECEIPT"
+  },
+  "required_next_reports": [
+    "A2_START_REPORT_V1.json",
+    "D1_INTEGRATION_START_REPORT_V1.json",
+    "A3_START_REPORT_V1.json",
+    "A4_START_REPORT_V1.json",
+    "A5_START_REPORT_V1.json",
+    "A6_START_REPORT_V1.json",
+    "A7_START_REPORT_V1.json"
+  ],
+  "next_gate": "A2_D1_AND_A3_TO_A7_START_REPORTS_COMMITTED",
+  "target_pc_execution_performed": false,
+  "target_pc_pass_claimed": false,
+  "forbidden_counters": {
+    "duplicate_runtime_created": 0,
+    "duplicate_transport_created": 0,
+    "cross_group_owned_path_mutation": 0,
+    "live_bulk_collection": 0,
+    "authentication_or_access_control_bypass": 0,
+    "raw_secret_commit": 0,
+    "target_pc_pass_claimed_without_evidence": 0,
+    "production_connection": 0,
+    "ready_transition": 0,
+    "merge": 0
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "dispatched_at": "2026-08-03T20:11:56+09:00",
+  "reported_at": "2026-08-03T20:11:56+09:00"
+}
