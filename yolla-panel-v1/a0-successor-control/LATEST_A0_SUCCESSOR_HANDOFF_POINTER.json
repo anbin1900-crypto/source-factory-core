@@ -1,13 +1,27 @@
 {
   "schema_version": "LATEST_A0_SUCCESSOR_HANDOFF_POINTER_V1",
-  "status": "A0_SUCCESSOR_CONTROL_READY",
-  "terminal": "A0_SUCCESSOR_HANDOFF_PACKAGE_COMPLETE",
+  "status": "A0_SUCCESSOR_CONTROL_AND_FUTURE_COMMAND_PLAN_READY",
+  "terminal": "A0_SUCCESSOR_HANDOFF_AND_FUTURE_COMMAND_PACKAGE_COMPLETE",
   "repository": "anbin1900-crypto/source-factory-core",
   "upper_control_pr": 14,
   "successor_control_pr": 17,
   "upper_branch": "integration/a1-yolla-panel-connection-frontier-v1",
   "successor_branch": "integration/a0-yolla-workspace-automation-successor-v1",
   "successor_base_commit": "124367a50a72505516666b4f427bfeda325ba3d3",
+  "primary_pointers": [
+    {
+      "path": "yolla-panel-v1/a0-successor-control/LATEST_FUTURE_COMMAND_PLAN_POINTER.json",
+      "commit": "71dde085593d3e55c99de4ba248474d29d3d5a20"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/LATEST_GROUP_ROLE_ASSIGNMENT_POINTER.json",
+      "commit": "f9caebb7a95a8976d9c83ed6d7eb0baf1263305d"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_SUCCESSOR_REPORT_POINTER.json",
+      "commit": "424a4429fbbdaefe33e4a38cab5bfcc31dd42ebd"
+    }
+  ],
   "documents": [
     {
       "path": "yolla-panel-v1/a0-successor-control/A0_SUCCESSOR_ROLE_CHARTER_V1.md",
@@ -30,17 +44,31 @@
       "commit": "75530c1dc22cecc926ea4a9cee3ec40e1eebccec"
     },
     {
-      "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_SUCCESSOR_REPORT_POINTER.json",
-      "commit": "424a4429fbbdaefe33e4a38cab5bfcc31dd42ebd"
+      "path": "yolla-panel-v1/a0-successor-control/FUTURE_COMMAND_AND_AUTOMATION_MASTER_PLAN_V1.md",
+      "commit": "26cb0c88e868d97004649f6d908bdfad98e7e709"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/COMMAND_PHASE_GATE_ROADMAP_V1.json",
+      "commit": "d322caf446c0406db4a5b048219c7fdef606a75a"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/COMMANDER_CONTEXT_FAILOVER_AND_SUCCESSION_POLICY_V1.json",
+      "commit": "b56162f7b404153d7ea06474f3f3263aece96124"
     }
   ],
   "read_order": [
     "LATEST_A0_SUCCESSOR_HANDOFF_POINTER.json",
+    "LATEST_FUTURE_COMMAND_PLAN_POINTER.json",
+    "FUTURE_COMMAND_AND_AUTOMATION_MASTER_PLAN_V1.md",
+    "COMMAND_PHASE_GATE_ROADMAP_V1.json",
+    "COMMANDER_CONTEXT_FAILOVER_AND_SUCCESSION_POLICY_V1.json",
+    "LATEST_GROUP_ROLE_ASSIGNMENT_POINTER.json",
     "A0_SUCCESSOR_ROLE_CHARTER_V1.md",
     "A0_CURRENT_OPERATIONAL_HANDOFF_V1.json",
     "A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V1.json",
     "A0_REPORTING_AND_HANDOFF_CONTRACT_V1.json",
-    "LATEST_A0_SUCCESSOR_REPORT_POINTER.json"
+    "LATEST_A0_SUCCESSOR_REPORT_POINTER.json",
+    "EACH_COMMANDER_LATEST_REPORT_POINTER"
   ],
   "runtime_baseline": "YOLLA_WORKSPACE_V5_CLEAN_RUNTIME",
   "target_pc_confirmed": {
@@ -55,13 +83,21 @@
     "V51_ACTUAL_COMMAND_CYCLE_COMPLETION",
     "V52_FIXED_LOGIN_PROFILE",
     "V52_DUAL_BROWSER_VIEW",
-    "V52_ANALYZER_ARTIFACT"
+    "V52_ANALYZER_ARTIFACT",
+    "FULL_MULTI_LANE_E2E"
   ],
-  "next_task": "A0-P0-V52-TARGET-PC-ACCEPTANCE",
-  "next_required_report": "A0_START_REPORT_V1.json",
+  "current_phase": 0,
+  "next_task": "A0_AND_GROUP_COMMANDER_START_REPORTS_THEN_V52_TARGET_PC_STABILITY",
+  "next_required_reports": [
+    "A0_START_REPORT_V1.json",
+    "A2_START_REPORT_V1.json",
+    "B1_START_REPORT_V1.json",
+    "C1_START_REPORT_V1.json",
+    "D1_INTEGRATION_START_REPORT_V1.json"
+  ],
   "bootstrap_prompt": "yolla-panel-v1/a0-successor-control/A0_BOOTSTRAP_PROMPT_V1.md",
   "production": false,
   "ready": false,
   "merge": false,
-  "prepared_at": "2026-08-03T18:50:00+09:00"
+  "prepared_at": "2026-08-03T19:33:00+09:00"
 }
