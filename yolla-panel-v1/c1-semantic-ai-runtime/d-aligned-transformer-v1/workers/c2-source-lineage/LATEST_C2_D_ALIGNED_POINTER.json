@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "pointer_id": "LATEST_C2_D_ALIGNED_POINTER",
+  "worker": "C-2_DOCUMENT_DECOMPOSITION",
+  "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
+  "directive_id": "C1-TO-C2-D-ALIGNED-SOURCE-LINEAGE-V1-20260804-001",
+  "directive_comment": 5171210387,
+  "start_comment": 5171317390,
+  "published_at_kst": "2026-08-04 05:32 KST",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "start_head": "817549449944bda00c6dd305b175377510eb0cd7",
+  "observed_branch_head_before_pointer": "c274f65d0e425923169cd457823fd305e77fd2b5",
+  "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c2-source-lineage/**",
+  "artifacts": {
+    "contract": {
+      "path": "SOURCE_RECORD_LINEAGE_CONTRACT_V1.json",
+      "blob": "87a6818598748f1bb01a1a9dd33c8fce606e1778"
+    },
+    "fixture": {
+      "path": "SOURCE_RECORD_LINEAGE_FIXTURE_V1.json",
+      "blob": "78ed35331ddd63c8329e070cb05e3c59ca0a7bca"
+    },
+    "validator": {
+      "path": "validate_source_record_lineage.py",
+      "blob": "2b6dc7ec55479c08ff97168bb66871ed5ce3c3a8"
+    },
+    "tests": {
+      "path": "test_source_record_lineage.py",
+      "blob": "556d0b8e50aa2d04ebfa52ca9ed8c23fadac8fd1"
+    },
+    "test_result": {
+      "path": "C2_D_ALIGNED_LINEAGE_TEST_RESULT_V1.json",
+      "blob": "9e234c2770ed433fa668e3faea2ba5a056ace607"
+    },
+    "final_report": {
+      "path": "C2_D_ALIGNED_FINAL_REPORT_V1.json",
+      "blob": "b00094ab84c237b53cba3016891dbb82128bb59b"
+    }
+  },
+  "validation": {
+    "python_compile": "PASS_2_OF_2",
+    "contract_shape_validation": "PASS",
+    "semantic_validator": "PASS",
+    "unit_tests": "PASS_18_OF_18",
+    "source_field_lineage": "PASS_6_OF_6",
+    "silent_drop_count": 0,
+    "source_value_mutation_count": 0,
+    "remote_blob_readback": "PASS_6_OF_6"
+  },
+  "actual_binding": {
+    "actual_b_input_used": false,
+    "status": "BLOCKED_EXTERNAL_INPUT_NOT_PUBLISHED",
+    "first_blocker": "B1_NORMALIZED_DATASET_OR_RAW_ARTIFACT_MANIFEST_NOT_PUBLISHED"
+  },
+  "technical_status": "FIXTURE_CONTRACT_VALIDATOR_READY",
+  "terminal": "C2_D_ALIGNED_SOURCE_LINEAGE_READY_OR_EXACT_BLOCKER",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
