@@ -1,0 +1,41 @@
+{
+  "schema_version": "LATEST_C1_ACTIVE_WORK_POINTER_V1",
+  "pointer_id": "LATEST-C1-SEMANTIC-AI-ACTIVE-WORK-20260803-001",
+  "registered_at_kst": "2026-08-03 19:36 KST",
+  "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "directive_id": "A0-TO-C1-SEMANTIC-KNOWLEDGE-DOMAIN-AI-SHELL-V1-20260803-001",
+  "start_report": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/reports/C1_START_REPORT_V1.json",
+    "commit": "a85544665e1c546fcbd82ac8640173af6429579c",
+    "blob": "dc5f0ffac21b84e718d87865485711bff71d4768"
+  },
+  "worker_lane_matrix": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/directives/C1_WORKER_LANE_ASSIGNMENT_MATRIX_V1.json",
+    "commit": "8e2b023a73e38e7e183cdf12a6a7d54d97fd4617",
+    "blob": "8d9001787b44eeafd2585fc5252ccc1c50fdaf6e"
+  },
+  "active_wave": "C1_SEMANTIC_AI_WAVE_1",
+  "worker_count": 5,
+  "acceptance_gates": {
+    "completed": 0,
+    "total": 11,
+    "progress_percent": 0
+  },
+  "dependency_state": {
+    "B_VERIFIED_INPUT": "NOT_REQUIRED_FOR_FIXTURE_FIRST_START",
+    "D_ACCEPTED_KNOWLEDGE_RELEASE": "NOT_YET_AVAILABLE_FIXTURE_RELEASE_ONLY",
+    "A0_PROVIDER_CONSUMPTION": "WAITING_C1_PROVIDER_AND_RECEIPT"
+  },
+  "next_action": "C2_TO_C6_EXECUTE_ASSIGNED_OWNED_ROOTS_AND_PUBLISH_TERMINALS",
+  "safety": {
+    "actual_pc_execution": false,
+    "direct_d_canonical_db_write": false,
+    "panel_shell_direct_edit": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "C1_START_GATE_PASS_WORKER_WAVE1_ACTIVE"
+}
