@@ -1,0 +1,43 @@
+{
+  "schema_version": "LATEST_A0_AUTOMATION_CONTRACT_POINTER_V1",
+  "status": "A0_AUTOMATION_CONTRACT_CONFLICTS_RESOLVED_SOURCE_ACTIVE",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "conflict_resolution": {
+    "path": "yolla-panel-v1/a0-successor-control/A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_V1.json",
+    "commit": "d207d73f57a6e0deda0bd4287619999e2ac991f8"
+  },
+  "worker_schedule_contract": {
+    "path": "yolla-panel-v1/a0-successor-control/WORKER_JOB_SCHEDULE_CONTRACT_V1.json",
+    "commit": "9512df3cdbb8c1efc341ecec9025c91ca5ceecfe"
+  },
+  "current_ui": {
+    "version": "5.8.0",
+    "pointer_path": "yolla-panel-v1/a0-successor-control/LATEST_A0_UI_POINTER.json",
+    "pointer_commit": "b15a2500be8812837d8bafa1b0e9c409437ab3ac"
+  },
+  "runtime_provider": {
+    "version": "5.7.0",
+    "pointer_path": "yolla-panel-v1/a0-successor-control/runtime-v57/LATEST_A0_PR276_PR278_RUNTIME_PROVIDER_POINTER.json",
+    "pointer_commit": "ddf966fc4f034c2a1b30bca739508a277a3d5f8d"
+  },
+  "resolved_decisions": [
+    "SEAT_CODE_IS_IMMUTABLE_TRANSPORT_ID",
+    "DISPLAY_NAME_AND_PROJECT_ROLE_ARE_MUTABLE_BINDINGS",
+    "MAX_100_PLANNED_JOBS_AND_ONE_ACTIVE_DIRECTIVE_PER_SEAT",
+    "GITHUB_PLAN_AND_TERMINAL_RESULTS_LOCAL_RUNTIME_CURSOR",
+    "SEPARATE_WORKER_COMMAND_AND_DATA_FACTORY_IDEMPOTENCY_NAMESPACES",
+    "EXCLUSIVE_PC_RUNTIME_1_GPT_WORKERS_5_BROWSER_ANALYSIS_2",
+    "JOB_LOGS_SEPARATE_FROM_CYCLE_REPORTS",
+    "A1_PLANS_A0_EXECUTES"
+  ],
+  "current_gate": "IMPLEMENT_WORKER_SCHEDULE_RUNNER_AND_GITHUB_RESULT_WATCHER",
+  "acceptance_gate": "A0_WORKER_SCHEDULE_AUTOMATION_LOOP_V1_PASS",
+  "target_pc_execution_observed": false,
+  "actual_schedule_loop_observed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-04T03:49:00+09:00"
+}
