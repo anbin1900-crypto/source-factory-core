@@ -1,0 +1,72 @@
+{
+  "schema_version": "A0_AUTOMATION_RUNTIME_V59_BUILD_TEST_REPORT_V1",
+  "owner": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+  "control_pr": 17,
+  "source_base_head": "dd28bc46111a2536c8af3b837bc01483dc69f41a",
+  "status": "BUILD_AND_SOURCE_INTEGRATION_PASS_TARGET_PC_PENDING",
+  "terminal": "A0_WORKER_SCHEDULE_AUTOMATION_V59_BUILD_PASS_TARGET_PC_PENDING",
+  "implemented": [
+    "WORKER_JOB_SCHEDULE_V1_IMPORT_AND_ATOMIC_SAVE",
+    "CURRENT_AND_NEXT_JOB_PANEL",
+    "EXISTING_CHATGPT_BROWSERVIEW_FIRE_AND_FORGET_DISPATCH",
+    "GITHUB_PR_COMMENT_RESULT_WATCHER",
+    "PASS_TO_NEXT_JOB_AUTO_DISPATCH",
+    "BLOCKED_EXTERNAL_WAIT",
+    "FAIL_RETRY_AND_NEEDS_REPLAN",
+    "RESTART_SCHEDULE_AND_LEDGER_RECOVERY",
+    "EXACTLY_ONCE_DISPATCH_LEDGER",
+    "B2_B3_B4_THREE_JOB_SAMPLE_SCHEDULE"
+  ],
+  "reused_authorities": {
+    "pr9": "DIRECTIVE_RESULT_PC_STATE_CARDS",
+    "pr10": "ROLE_REGISTRY",
+    "pr11": "EXISTING_WORKER_BROWSER_SESSION_BINDING",
+    "pr13": "COMMAND_FLOW_STATE_MACHINE_AND_DUPLICATE_SUPPRESSION",
+    "pr16": "PANEL_WORKER_CORRELATION",
+    "pr310": "SINGLE_COMMAND_QUEUE_EXACTLY_ONCE",
+    "pr311": "CANONICAL_CORRELATION_FIELDS_11"
+  },
+  "tests": {
+    "node_syntax": "PASS",
+    "worker_job_schedule_json_schema": "PASS",
+    "legacy_data_factory_provider": "PASS_31",
+    "pr276_workspace_mount": "PASS_25",
+    "legacy_command_cycle": "PASS",
+    "worker_reachability_regression": "PASS_22",
+    "state_runtime_regression": "PASS_20",
+    "single_real_estate_group_regression": "PASS_16",
+    "automation_core_fixture": "PASS_17",
+    "schedule_runtime_integration": "PASS_15",
+    "schedule_panel_mount": "PASS_20",
+    "main_preload_binding": "PASS_20",
+    "self_extract_readback": "PASS_43_ENTRIES",
+    "duplicate_execution_count": 0,
+    "user_manual_relay_count": 0
+  },
+  "source_manifest_commit": "614026f6981efa6b5ece704a86b68cccb20c189f",
+  "source_artifact": {
+    "drive_file_id": "1M7a7ArE3VtLp7wKDqztQbOUbmSq39p3B",
+    "sha256": "13f4c475f32523937d990888905a40a256d0742ddb6515d70f3c0cfd15a3af4d",
+    "size_bytes": 89656
+  },
+  "installer_artifact": {
+    "drive_file_id": "1A4B9QKO23C4TFiIsV8Gd4mmrmepcViHx",
+    "sha256": "197b008b23ed396d9784d8e881a6db224579f34e5d75d60db997c3f78dc0b2bc",
+    "size_bytes": 131131
+  },
+  "target_pc": {
+    "v59_installed": false,
+    "schedule_import_observed": false,
+    "actual_worker_dispatch_count": 0,
+    "actual_github_result_count": 0,
+    "b2_b3_three_job_loop": "NOT_RUN",
+    "restart_resume": "NOT_RUN"
+  },
+  "official_terminal_claimed": false,
+  "required_official_terminal": "A0_WORKER_SCHEDULE_AUTOMATION_LOOP_V1_PASS",
+  "next_gate": "INSTALL_V59_ON_TARGET_PC_BIND_CONTEXT_URLS_RUN_B2_B3_THREE_JOBS_AND_OBSERVE_GITHUB_RESULTS",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "completed_at": "2026-08-04T03:38:00+09:00"
+}
