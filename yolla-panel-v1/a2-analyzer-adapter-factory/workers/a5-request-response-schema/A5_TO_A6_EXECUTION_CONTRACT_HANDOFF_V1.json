@@ -1,46 +1,50 @@
 {
-  "a6_handoff_ready": true,
-  "adapter_code_owned_by_a6": true,
-  "authority_files": {
-    "A5_EXECUTION_CONTRACT_VALIDATION_RECEIPT_V1.json": "376c735b239ca1afcf0db0a2a368034d29e9c440e01e8692648fb2c53b0c7448",
-    "ENDPOINT_CATALOG_V1.json": "99cbfe1fe1f1994f3e0e19805322aea49acdc1bce66db38b226ec0f52864b19b",
-    "FIXTURE_REQUEST_RESPONSE_REPLAY_V1.json": "ed14a4565f1fd826d7e76e5dce36bda852df215e6403d37b48b06b1cb2c73840",
-    "IDENTIFIER_RELATIONSHIP_MAP_V1.json": "87e7aa8d9cde77c60cd55813ddcfe1548f92f93c13037ed2d174ed16ae04a5d9",
-    "PAGINATION_CONTRACT_REFERENCE_V1.json": "75a99501fcd69b4122802a67c98ed46646f8f6722adc754c9a78fe95652277a6",
-    "PARAMETER_DICTIONARY_V1.json": "64b5ac4c5664395c1dd8b1f2daf376e1ed5a75324f9f21c22712baf7a4709b5a",
-    "REQUEST_TEMPLATE_CATALOG_V1.json": "bf400ca2a5c12d9c255f330cdbf3451a1a4de885ee3a05708c6a7574e7a67af2",
-    "RESPONSE_SCHEMA_CATALOG_V1.json": "4cee9569e58fe4264c507173747af2089179463059a817b5e38a126999d4f0cc",
-    "RETRY_RATE_LIMIT_POLICY_V1.json": "c0f61a631252d73c7f31384c8f20a691e80cfdb565807f627b1f33b5c62abe39",
-    "SESSION_HEADER_CONTRACT_V1.json": "cb597b0dd7f14714e96acfafae5ea2456ef23efdabf2a6d9b4e3787c946bb56e"
-  },
-  "consumer": "A-6",
-  "contract_mode": "FIXTURE_FIRST_FAIL_CLOSED",
-  "directive_id": "A2-TO-A5-REQUEST-RESPONSE-EXECUTION-CONTRACT-V3-20260804-001",
-  "merge": false,
-  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/",
+  "schema_version": "YOLLA_A5_TO_A6_EXECUTION_CONTRACT_HANDOFF_V1",
   "producer": "A-5",
-  "producer_branch": "worker/a5-request-response-schema-v1",
+  "consumer": "A-6",
+  "directive_id": "A2-TO-A5-REQUEST-RESPONSE-EXECUTION-CONTRACT-V3-20260804-001",
   "producer_pr": 24,
-  "production": false,
-  "raw_secret_value_count": 0,
-  "ready": false,
+  "producer_branch": "worker/a5-request-response-schema-v1",
+  "contract_mode": "LATE_BOUND_FAIL_CLOSED",
+  "a6_handoff_ready": false,
+  "adapter_code_owned_by_a6": true,
+  "previous_fixture_package": {
+    "package_commit": "457b51e2d74161e1ec89697ae5de582485077df4",
+    "status": "NON_LIVE_TEST_FIXTURE_ONLY_NOT_FINAL_AUTHORITY"
+  },
+  "upstream_binding": {
+    "a3": {
+      "status": "A3_TO_A5_OBSERVATION_HANDOFF_READY",
+      "pr": 22,
+      "final_head": "b04a2cac2e506e8ca746b35d4e41e68322a4b7c1",
+      "handoff_blob": "1b72cf730d997102d115f71a6cf0bc98f50c8e50",
+      "endpoint_profile_blob": "3341c655cc8d84bbea70607c5a216c89a2d505a6",
+      "parameter_evidence_blob": "1cabef820c2dee1d4038a76c3eafef8e1dc46218",
+      "retry_observation_blob": "3790f049be587f4c2c7ad374f7e0a97573e74ec6"
+    },
+    "a4": {
+      "status": "READY",
+      "pr": 23,
+      "final_head": "6567f380e4249dc7cd9b55693fa85856a37b91e6",
+      "handoff_blob": "988d34dc259a4c93280680f9ee252eeeadc110df"
+    },
+    "live_authority_allowed": false
+  },
+  "blocker": {
+    "terminal": "A5_REQUEST_RESPONSE_EXECUTION_CONTRACT_EXACT_BLOCKER",
+    "first_blocker": "A3_OBSERVED_ENDPOINT_AND_PARAMETER_AUTHORITY_CONFLICTS_WITH_PLACEHOLDER_CONTRACT_AND_RESPONSE_BODY_FIELD_EVIDENCE_IS_ABSENT",
+    "assessment_blob": "e7033724790f60c13d3dbdabf14dc3086a18dcaf",
+    "validation_blob": "84e35f4240f18868d6fac4398ee15a77922dd04b"
+  },
   "required_a6_behavior": [
-    "consume catalog IDs without rename",
-    "generate adapter only under A-6 owned root",
-    "run fixture replay twice and compare receipt",
-    "reject upstream pointer conflict",
+    "do not generate or promote adapter from the superseded A-5 fixture catalog",
+    "preserve A-3 and A-4 evidence pointers without rename",
+    "wait for corrected A-5 endpoint/request/response/identifier authority",
     "never persist raw credential values"
   ],
-  "schema_version": "YOLLA_A5_TO_A6_EXECUTION_CONTRACT_HANDOFF_V1",
-  "upstream_binding": {
-    "a3_directive_comment": 5171205788,
-    "a3_pr": 22,
-    "a3_status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
-    "a4_directive_comment": 5171208197,
-    "a4_pr": 23,
-    "a4_status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
-    "live_authority_allowed": false,
-    "replacement_required_before_live_adapter": true
-  },
-  "validation_terminal": "PASS"
+  "raw_secret_value_count": 0,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false
 }
