@@ -1,0 +1,22 @@
+{
+  "schema_version": "A4_TO_A6_NAVIGATION_HANDOFF_V1",
+  "handoff_id": "A4-TO-A6-NAVIGATION-20260804-001",
+  "status": "READY",
+  "navigation_graph_ref": "SITE_NAVIGATION_GRAPH_V1.json",
+  "page_type_catalog_ref": "PAGE_TYPE_CATALOG_V1.json",
+  "pagination_contract_ref": "PAGINATION_SCOPE_CONTRACT_V1.json",
+  "fixture_ref": "fixtures/NAVER_REAL_ESTATE_NAVIGATION_FIXTURE_V1.json",
+  "replay_ref": "FIXTURE_NAVIGATION_REPLAY_V1.json",
+  "root_node_id": "home-001",
+  "allowed_page_types": ["DETAIL", "ERROR", "HOME", "LIST", "LOGIN_REQUIRED", "MAP", "PAGINATION", "REGION", "SEARCH"],
+  "blocked_page_types": ["UNKNOWN"],
+  "adapter_operation_mapping": {
+    "detectSite": "fixture scheme + host",
+    "discoverScope": "COLLECTION_SCOPE_BOUNDARY_V1",
+    "getNextCursor": "PAGINATION_SCOPE_CONTRACT_V1 termination rules",
+    "buildDetailRequest": "DETAIL edge target only; endpoint authority remains A-5"
+  },
+  "expected_replay_digest": "5efffc455deb166bb00afedc918c17f0bf3d0b2be6ca0d266acc680f62ca6bb9",
+  "adapter_implementation_authority": "A-6",
+  "ready": true
+}
