@@ -2,20 +2,45 @@
   "schema_version": "LATEST_A4_REPORT_POINTER_V1",
   "worker": "A-4",
   "directive_id": "A2-TO-A4-NAVIGATION-PAGINATION-EXECUTION-V3-20260804-001",
-  "status": "STARTED",
-  "updated_at_kst": "2026-08-04T05:17:00+09:00",
+  "status": "PASS",
+  "updated_at_kst": "2026-08-04T05:35:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pr": 23,
   "branch": "worker/a4-navigation-pagination-v1",
-  "latest_report": {
-    "report_type": "START",
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A4_START_REPORT_V1.json",
+  "published_head_before_pointer": "bba9a9b89148f814f9448c214337b8c7c24777b8",
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER",
+  "start_report": {
     "commit": "3228d0c68be60f7adeb676c660f97096b4d39eee",
     "blob": "4b56304004630f7e46f5ac66600d7af53d2116e9"
   },
-  "terminal": null,
-  "actual_bulk_collection": false,
+  "progress_report": {
+    "commit": "c09b68ea6e20b2f90f296029d6363b807b7143df",
+    "blob": "5330a1c00e094705381d0b1721116957b1536c45"
+  },
+  "terminal_report": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A4_TERMINAL_REPORT_V1.json",
+    "commit": "422cc539f74367a83d7a136e8f6583e881a6200a",
+    "blob": "0242d9bf08f64fb12f9538c929587a0a82058b19"
+  },
+  "final_report": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A4_FINAL_REPORT_V1.json",
+    "commit": "bba9a9b89148f814f9448c214337b8c7c24777b8",
+    "blob": "e43754b25f48c123153dbf2cf6200d28ae289e9f"
+  },
+  "terminal": "A4_NAVIGATION_PAGINATION_CONTRACT_READY",
+  "fixture_replay_count": 2,
+  "deterministic_navigation_replay": "PASS",
+  "replay_digest": "5efffc455deb166bb00afedc918c17f0bf3d0b2be6ca0d266acc680f62ca6bb9",
+  "unbounded_loop_count": 0,
+  "duplicate_page_visit_after_stop_count": 0,
   "live_site_call_count": 0,
+  "out_of_owned_root_change_count": 0,
+  "a5_handoff_ready": true,
+  "a6_handoff_ready": true,
+  "actual_bulk_collection": false,
   "panel_shell_direct_edit": false,
   "production": false,
   "ready": false,
-  "merge": false
+  "merge": false,
+  "self_merge": false
 }
