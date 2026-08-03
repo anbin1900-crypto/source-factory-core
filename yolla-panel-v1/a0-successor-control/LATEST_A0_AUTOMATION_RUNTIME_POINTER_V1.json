@@ -1,1 +1,60 @@
-{"schema_version":"LATEST_A0_AUTOMATION_RUNTIME_POINTER_V1","status":"A0_AUTOMATION_RUNTIME_V1_SOURCE_CORE_FIXTURE_PASS_PANEL_BINDING_PENDING","control_pr":17,"branch":"integration/a0-yolla-workspace-automation-successor-v1","current_ui_version":"5.8.0","runtime_provider_version":"5.7.0","schedule_runner_version":"1.0.0-source-fixture-pass","source_base_head":"b15a2500be8812837d8bafa1b0e9c409437ab3ac","current_schedule_id":"REAL-ESTATE-CYCLE-001","worker_states":{"B-2":"PENDING","B-3":"PENDING","B-4":"PENDING"},"schedule_contract":"automation-v1/WORKER_JOB_SCHEDULE_V1.schema.json","sample_schedule":"automation-v1/schedules/REAL_ESTATE_CYCLE_001.json","source_manifest":"automation-v1/AUTOMATION_RUNTIME_SOURCE_MANIFEST_V1.json","latest_report":"reports/A0_AUTOMATION_RUNTIME_START_AND_FIXTURE_TEST_REPORT_V1.json","result_watcher_status":"SOURCE_CORE_FIXTURE_PASS_ACTUAL_GITHUB_BINDING_PENDING","next_dispatcher_status":"SOURCE_CORE_FIXTURE_PASS_EXISTING_BROWSER_TRANSPORT_BINDING_PENDING","target_pc_status":{"v58_install_execution":"NOT_OBSERVED","visual_acceptance":"NOT_OBSERVED","actual_pr278_result":"NOT_OBSERVED","schedule_loop":"NOT_RUN"},"source_artifact":{"drive_file_id":"18aPjNbd1uEo8U_292hzUCDw5dAyEMOHg","sha256":"fb1a344f7396d6ffc30f74a2cb07e2b22ea060afb37134b96e8d14980439b0dd","size_bytes":17238},"next_gate":"PANEL_SCHEDULE_IMPORT_SAVE_AND_CURRENT_NEXT_JOB_UI_THEN_EXISTING_BROWSER_DISPATCH_BINDING","official_terminal_required":"A0_WORKER_SCHEDULE_AUTOMATION_LOOP_V1_PASS","target_pc_execution_observed":false,"production":false,"ready":false,"merge":false,"updated_at":"2026-08-04T03:10:00+09:00"}
+{
+  "schema_version": "LATEST_A0_AUTOMATION_RUNTIME_POINTER_V1",
+  "status": "A0_WORKER_SCHEDULE_AUTOMATION_V59_BUILD_PASS_TARGET_PC_PENDING",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "current_ui_version": "5.9.0",
+  "runtime_provider_version": "5.7.0",
+  "schedule_runner_version": "1.0.0-panel-bound-build-pass",
+  "source_base_head": "dd28bc46111a2536c8af3b837bc01483dc69f41a",
+  "current_schedule_id": "REAL-ESTATE-CYCLE-001",
+  "worker_states": {
+    "B-2": "PENDING",
+    "B-3": "PENDING",
+    "B-4": "PENDING"
+  },
+  "schedule_contract": "automation-v1/WORKER_JOB_SCHEDULE_V1.schema.json",
+  "sample_schedule": "automation-v1/schedules/REAL_ESTATE_CYCLE_001.json",
+  "runtime_v59_pointer": "automation-v1/runtime-v59/LATEST_A0_AUTOMATION_RUNTIME_V59_POINTER.json",
+  "runtime_v59_pointer_commit": "3d10fef823c8c759afd6fd5aa8afcae6d3ebf3c8",
+  "latest_report": "reports/A0_AUTOMATION_RUNTIME_V59_BUILD_TEST_REPORT_V1.json",
+  "latest_report_commit": "dc290012d12435bdba94545f2fd8d97ea9cd12ea",
+  "panel_binding": {
+    "schedule_import_save": "PASS_SOURCE",
+    "current_next_job_view": "PASS_SOURCE",
+    "start_pause_tick": "PASS_SOURCE",
+    "existing_browser_dispatch": "PASS_SOURCE",
+    "github_result_watcher": "PASS_SOURCE",
+    "pass_to_next_dispatch": "PASS_SOURCE",
+    "restart_restore_hook": "PASS_SOURCE"
+  },
+  "result_watcher_status": "GITHUB_PR_COMMENT_PROVIDER_BOUND_TARGET_PC_PENDING",
+  "next_dispatcher_status": "EXISTING_CHATGPT_BROWSERVIEW_BOUND_TARGET_PC_PENDING",
+  "target_pc_status": {
+    "v59_install_execution": "NOT_OBSERVED",
+    "visual_acceptance": "NOT_OBSERVED",
+    "actual_worker_dispatch_count": 0,
+    "actual_github_result_count": 0,
+    "b2_b3_three_job_loop": "NOT_RUN",
+    "restart_resume": "NOT_RUN"
+  },
+  "source_artifact": {
+    "drive_file_id": "1M7a7ArE3VtLp7wKDqztQbOUbmSq39p3B",
+    "sha256": "13f4c475f32523937d990888905a40a256d0742ddb6515d70f3c0cfd15a3af4d",
+    "size_bytes": 89656
+  },
+  "installer_artifact": {
+    "drive_file_id": "1A4B9QKO23C4TFiIsV8Gd4mmrmepcViHx",
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V59_WORKER_SCHEDULE_AUTOMATION.bat",
+    "sha256": "197b008b23ed396d9784d8e881a6db224579f34e5d75d60db997c3f78dc0b2bc",
+    "size_bytes": 131131
+  },
+  "next_gate": "INSTALL_V59_ON_TARGET_PC_BIND_B2_B3_CONTEXTS_AND_RUN_THREE_JOBS_EACH",
+  "official_terminal_required": "A0_WORKER_SCHEDULE_AUTOMATION_LOOP_V1_PASS",
+  "official_terminal_claimed": false,
+  "target_pc_execution_observed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-04T03:38:00+09:00"
+}
