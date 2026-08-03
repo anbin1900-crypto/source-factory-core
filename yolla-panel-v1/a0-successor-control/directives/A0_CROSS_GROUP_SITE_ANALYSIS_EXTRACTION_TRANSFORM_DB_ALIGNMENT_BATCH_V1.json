@@ -1,0 +1,186 @@
+{
+  "schema_version": "A0_CROSS_GROUP_SITE_ANALYSIS_EXTRACTION_TRANSFORM_DB_ALIGNMENT_BATCH_V1",
+  "directive_type": "NON_SUPERSEDING_COORDINATION_ADDENDUM",
+  "status": "ACTIVE_PARALLEL_FIXTURE_FIRST",
+  "directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "issued_at": "2026-08-04T04:10:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "purpose": "Complete a non-conflicting cross-group fixture-first pipeline from site analysis through extraction and transformation to D-authority DB schema alignment.",
+  "supersedes_existing_directives": false,
+  "existing_directives_remain_active": true,
+  "ownership": {
+    "A-2": {
+      "control_pr": 18,
+      "existing_directive": "A0-TO-A2-GENERIC-ANALYZER-ADAPTER-FACTORY-SHELL-V1-20260803-001",
+      "owns": [
+        "GENERIC_SITE_ANALYZER",
+        "SITE_STRUCTURE_PROFILE",
+        "NETWORK_ENDPOINT_PARAMETER_PAGINATION_SESSION_ANALYSIS",
+        "VERIFIED_ADAPTER_PACKAGE",
+        "ADAPTER_REPLAY_ACCEPTANCE"
+      ],
+      "must_not_own": [
+        "BULK_COLLECTION",
+        "DATA_NORMALIZATION",
+        "CANONICAL_DB_SCHEMA",
+        "DB_WRITE"
+      ],
+      "required_outputs": [
+        "SITE_STRUCTURE_PROFILE_V1",
+        "VERIFIED_ADAPTER_PACKAGE_V1",
+        "ADAPTER_BUILD_RECEIPT_V1",
+        "ANALYSIS_PROGRESS_EVENT_V1"
+      ],
+      "required_terminal": "A2_SITE_ANALYZER_VERIFIED_ADAPTER_READY_OR_EXACT_BLOCKER"
+    },
+    "B-1": {
+      "control_pr": 19,
+      "existing_directive": "A0-TO-B1-GENERIC-COLLECTOR-MATERIALIZATION-SHELL-V1-20260803-001",
+      "owns": [
+        "VERIFIED_ADAPTER_CONSUMPTION",
+        "SITE_DATA_EXTRACTION",
+        "PAGINATION_RETRY_RESUME",
+        "RAW_ARTIFACT_PROVENANCE",
+        "NORMALIZED_DATASET",
+        "EXTRACTION_RECEIPT"
+      ],
+      "must_not_own": [
+        "SITE_ANALYZER_LOGIC",
+        "UNVERIFIED_ADAPTER_GENERATION",
+        "CANONICAL_DB_SCHEMA",
+        "DIRECT_D_CANONICAL_DB_WRITE"
+      ],
+      "required_inputs": [
+        "VERIFIED_ADAPTER_PACKAGE_V1"
+      ],
+      "required_outputs": [
+        "RAW_ARTIFACT_MANIFEST_V1",
+        "SOURCE_RECORD_ENVELOPE_V1",
+        "NORMALIZED_DATASET_V1",
+        "EXTRACTION_RECEIPT_V1"
+      ],
+      "required_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER"
+    },
+    "C-1": {
+      "control_pr": 20,
+      "existing_directive": "A0-TO-C1-SEMANTIC-KNOWLEDGE-DOMAIN-AI-SHELL-V1-20260803-001",
+      "owns": [
+        "DOCUMENT_AND_RECORD_DECOMPOSITION",
+        "FIELD_AND_SEMANTIC_TRANSFORMATION",
+        "D_SCHEMA_TARGET_MAPPING_CONSUMER",
+        "EVIDENCE_BINDING",
+        "KNOWLEDGE_CANDIDATE_BUNDLE"
+      ],
+      "must_not_own": [
+        "SITE_ANALYZER",
+        "SITE_COLLECTION_RUNTIME",
+        "CANONICAL_DB_SCHEMA_AUTHORITY",
+        "DIRECT_D_CANONICAL_DB_WRITE"
+      ],
+      "required_inputs": [
+        "NORMALIZED_DATASET_V1_OR_RAW_ARTIFACT_MANIFEST_V1",
+        "D_CANONICAL_SCHEMA_PROFILE_V1",
+        "D_INBOUND_FIELD_MAPPING_CONTRACT_V1"
+      ],
+      "required_outputs": [
+        "D_ALIGNED_TRANSFORMATION_PACKAGE_V1",
+        "FIELD_MAPPING_REPORT_V1",
+        "REJECTED_RECORD_BUNDLE_V1",
+        "KNOWLEDGE_CANDIDATE_BUNDLE_V1"
+      ],
+      "required_terminal": "C1_D_ALIGNED_TRANSFORMER_READY_OR_EXACT_BLOCKER"
+    },
+    "D-1": {
+      "control_pr": 21,
+      "actual_db_authority": {
+        "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+        "control_pr": 188
+      },
+      "existing_directive": "A0-TO-D1-KNOWLEDGE-DB-INTAKE-CONTRACT-V1-20260803-001",
+      "owns": [
+        "CANONICAL_DB_SCHEMA_PROFILE",
+        "ENTITY_FIELD_TYPE_KEY_CONSTRAINTS",
+        "PROVENANCE_EVIDENCE_VERSIONING_RULES",
+        "INBOUND_FIELD_MAPPING_CONTRACT",
+        "INTAKE_ACCEPTANCE_AND_REJECTION",
+        "KNOWLEDGE_RELEASE_QUERY_CITATION_CONTRACTS"
+      ],
+      "must_not_own": [
+        "SITE_ANALYZER",
+        "SITE_EXTRACTION_RUNTIME",
+        "C_TRANSFORMER_IMPLEMENTATION"
+      ],
+      "required_outputs": [
+        "D_CANONICAL_SCHEMA_PROFILE_V1",
+        "D_INBOUND_FIELD_MAPPING_CONTRACT_V1",
+        "D_INTAKE_VALIDATION_RULESET_V1",
+        "KNOWLEDGE_ACCEPTANCE_RECEIPT_V1"
+      ],
+      "required_terminal": "D1_CANONICAL_SCHEMA_INTAKE_ALIGNMENT_READY_OR_EXACT_BLOCKER"
+    }
+  },
+  "execution_waves": [
+    {
+      "wave": 1,
+      "parallel": true,
+      "tasks": [
+        "A2_COMPLETE_ANALYZER_AND_VERIFIED_ADAPTER_CONTRACT",
+        "D1_PUBLISH_CANONICAL_SCHEMA_PROFILE_AND_INBOUND_MAPPING_CONTRACT",
+        "B1_COMPLETE_FIXTURE_EXTRACTOR_SHELL_WITHOUT_UNVERIFIED_ADAPTER_USE",
+        "C1_COMPLETE_FIXTURE_TRANSFORMER_SHELL_AGAINST_D_CONTRACT"
+      ]
+    },
+    {
+      "wave": 2,
+      "parallel": true,
+      "entry_conditions": [
+        "A2_VERIFIED_ADAPTER_PACKAGE_AVAILABLE",
+        "D1_SCHEMA_AND_MAPPING_CONTRACT_AVAILABLE"
+      ],
+      "tasks": [
+        "B1_RUN_FIXTURE_EXTRACTION_WITH_VERIFIED_ADAPTER",
+        "C1_VALIDATE_TRANSFORMER_AGAINST_D_SCHEMA_FIXTURES"
+      ]
+    },
+    {
+      "wave": 3,
+      "parallel": false,
+      "entry_conditions": [
+        "B1_NORMALIZED_DATASET_AVAILABLE",
+        "C1_D_ALIGNED_TRANSFORMATION_PACKAGE_AVAILABLE"
+      ],
+      "tasks": [
+        "D1_VALIDATE_FIXTURE_INTAKE_AND_RETURN_ACCEPTANCE_RECEIPT",
+        "A0_VERIFY_END_TO_END_RECEIPT_CHAIN"
+      ]
+    }
+  ],
+  "handoff_chain": [
+    "A2_VERIFIED_ADAPTER_PACKAGE_V1",
+    "B1_RAW_ARTIFACT_MANIFEST_AND_NORMALIZED_DATASET_V1",
+    "C1_D_ALIGNED_TRANSFORMATION_PACKAGE_AND_KNOWLEDGE_CANDIDATE_BUNDLE_V1",
+    "D1_KNOWLEDGE_ACCEPTANCE_RECEIPT_V1"
+  ],
+  "common_acceptance": [
+    "NO_OWNERSHIP_OVERLAP",
+    "SOURCE_PROVENANCE_PRESERVED_END_TO_END",
+    "FIELD_MAPPING_TRACEABLE_FROM_SOURCE_TO_D_TARGET",
+    "INVALID_OR_UNMAPPED_RECORDS_REJECTED_NOT_SILENTLY_DROPPED",
+    "FIXTURE_E2E_RECEIPT_CHAIN_COMPLETE",
+    "NO_DIRECT_D_CANONICAL_DB_WRITE_BY_B_OR_C"
+  ],
+  "prohibitions": {
+    "access_control_bypass": true,
+    "unapproved_bulk_collection": true,
+    "production_postgresql_connection": true,
+    "migration_apply": true,
+    "panel_shell_direct_edit_by_child_groups": true,
+    "production": true,
+    "ready": true,
+    "merge": true
+  },
+  "result_publication_required": true,
+  "next_gate": "A2_B1_C1_D1_PUBLISH_NON_CONFLICTING_CONTRACT_OUTPUTS_AND_FIXTURE_TERMINALS"
+}
