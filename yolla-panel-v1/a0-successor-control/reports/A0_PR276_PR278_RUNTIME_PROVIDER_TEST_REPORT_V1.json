@@ -1,0 +1,63 @@
+{
+  "schema_version": "A0_PR276_PR278_RUNTIME_PROVIDER_TEST_REPORT_V1",
+  "report_type": "SOURCE_INTEGRATION_AND_TEST",
+  "owner": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+  "control_pr": 17,
+  "status": "PASS_SOURCE_INTEGRATION_TARGET_PC_PENDING",
+  "terminal": "A0_PR276_UI_PR278_RUNTIME_PROVIDER_SOURCE_INTEGRATION_PASS",
+  "source_authorities": {
+    "pr276": {
+      "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "pr": 276,
+      "head": "b599e738169ca463fe4241e82c2e21ff2c1e6d67",
+      "terminal": "A4_AGENT_PANEL_DATA_FACTORY_UI_PASS"
+    },
+    "pr278": {
+      "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "pr": 278,
+      "head": "65996c1fcdaaad1b615c907a1575346feb094cbd",
+      "terminal": "A6_DATA_FACTORY_ORCHESTRATOR_RETRY_RECOVERY_PASS"
+    }
+  },
+  "integration": {
+    "workspace_version": "5.7.0",
+    "mount_location": "SITE_ANALYSIS_AND_EXTRACTION_WORKSPACE",
+    "runtime_provider": "PR278_FILE_QUEUE_RUNTIME_PROVIDER",
+    "work_type": "DATA_FACTORY_ORCHESTRATE",
+    "exactly_once_ledger": "YOLLA_DATA_FACTORY_EXACTLY_ONCE_LEDGER_V1",
+    "duplicate_receipt": "DUPLICATE_SUPPRESSED",
+    "raw_local_paths_exposed_to_renderer": false,
+    "new_runtime_created": false,
+    "new_transport_created": false
+  },
+  "source_artifact": {
+    "storage": "GOOGLE_DRIVE_RAW_BYTE_ARTIFACT",
+    "file_id": "15H3CBLIYJOY2nTsJoHmPoinEaedpzZVk",
+    "file_name": "AI_YOLLA_RUNTIME_V57_PR276_PR278_SOURCE.zip",
+    "sha256": "cdc744c1361de90e16994d235243668095a365090d8c81ecb1754d468a9ce596",
+    "size_bytes": 58186,
+    "mime_type": "application/zip",
+    "upload_result": "PASS"
+  },
+  "tests": {
+    "node_syntax": "PASS_9_OF_9",
+    "pr276_workspace_mount": "PASS_25_ASSERTIONS",
+    "pr278_runtime_provider_exactly_once": "PASS_31_ASSERTIONS",
+    "legacy_command_cycle": "PASS",
+    "v56_reachability_regression": "PASS_22",
+    "v561_state_runtime_regression": "PASS_20",
+    "same_key_request_file_count": 1,
+    "same_key_additional_execution_count": 0,
+    "restart_duplicate_suppression": "PASS",
+    "result_ingestion_to_completed": "PASS"
+  },
+  "target_pc": {
+    "source_installed": false,
+    "pc_agent_orchestrator_result_observed": false,
+    "visual_acceptance_claimed": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "completed_at": "2026-08-04T01:03:00+09:00"
+}
