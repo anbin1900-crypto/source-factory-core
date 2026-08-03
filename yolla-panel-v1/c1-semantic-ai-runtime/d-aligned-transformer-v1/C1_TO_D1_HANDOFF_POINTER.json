@@ -1,0 +1,47 @@
+{
+  "schema_version": "C1_TO_D1_HANDOFF_POINTER_V1",
+  "pointer_id": "C1-TO-D1-D-ALIGNED-TRANSFORMER-HANDOFF-POINTER-20260804-001",
+  "registered_at_kst": "2026-08-04 04:44 KST",
+  "producer": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "consumer": "D-1_KNOWLEDGE_DB_AUTHORITY_COMMANDER",
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "source_authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "control_pr": 20,
+    "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1"
+  },
+  "target_authority": {
+    "source_factory_control_pr": 21,
+    "source_factory_branch": "integration/d1-knowledge-db-intake-authority-v1",
+    "source_factory_observed_head": "65bf71a0b6b766dea914fcd2decfad4f9218e8a7",
+    "knowledge_db_repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "knowledge_db_control_pr": 188
+  },
+  "worker_assignment_pointer": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_WORKER_ASSIGNMENT_POINTER.json",
+  "transformation_result_pointer": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_TRANSFORMATION_RESULT_POINTER.json",
+  "handoff_packages": {
+    "D_ALIGNED_TRANSFORMATION_PACKAGE_V1": "NOT_AVAILABLE",
+    "FIELD_MAPPING_REPORT_V1": "NOT_AVAILABLE",
+    "REJECTED_RECORD_BUNDLE_V1": "CONTRACT_ONLY_NO_RECORD_BUNDLE",
+    "KNOWLEDGE_CANDIDATE_BUNDLE_V1": "NOT_AVAILABLE"
+  },
+  "handoff_decision": "BLOCKED_NOT_SENT",
+  "first_blocker": "D1_REQUIRED_SCHEMA_MAPPING_VALIDATION_CONTRACT_SET_NOT_PUBLISHED",
+  "additional_blocker": "B1_NORMALIZED_DATASET_OR_RAW_ARTIFACT_MANIFEST_NOT_PUBLISHED",
+  "reason": "C-1 cannot bind target entities, fields, types or D validation outcomes without D authoritative contracts, and cannot transform records without B authoritative source input.",
+  "resume_requires": [
+    "D_CANONICAL_SCHEMA_PROFILE_V1 exact path, commit and blob",
+    "D_INBOUND_FIELD_MAPPING_CONTRACT_V1 exact path, commit and blob",
+    "D_INTAKE_VALIDATION_RULESET_V1 exact path, commit and blob",
+    "NORMALIZED_DATASET_V1 or RAW_ARTIFACT_MANIFEST_V1 exact path, commit and blob"
+  ],
+  "fixture_or_contract_sent_as_d_data": false,
+  "d_acceptance_claimed": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "terminal": "C1_D_ALIGNED_TRANSFORMER_READY_OR_EXACT_BLOCKER",
+  "terminal_decision": "EXACT_BLOCKER",
+  "status": "C1_TO_D1_HANDOFF_BLOCKED_WAITING_AUTHORITATIVE_INPUTS"
+}
