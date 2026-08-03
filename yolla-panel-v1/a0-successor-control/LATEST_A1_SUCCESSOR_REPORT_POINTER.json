@@ -1,11 +1,10 @@
 {
-  "schema_version": "LATEST_A1_SUCCESSOR_REPORT_POINTER_V1",
-  "status": "A1_SUCCESSOR_CONTROL_ACTIVE_PHASE0_DISPATCH_RECEIPT_COMMITTED",
-  "terminal": "A1_SUCCESSOR_ACCEPTANCE_AND_PHASE0_BATCH_DISPATCH_PASS_9_OF_9",
+  "schema_version": "LATEST_A1_SUCCESSOR_REPORT_POINTER_V2",
+  "status": "A1_SUCCESSOR_CONTROL_ACTIVE_PHASE0_START_GATE_RECONCILED",
+  "terminal": "A1_PHASE0_START_GATE_BLOCKED_WAITING_A2_A7_FORMAL_START_LEDGERS",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "accepted_observed_remote_head": "f0f85e9d47d4678305db8afc12c1a73d722cdb31",
   "successor_acceptance_report": {
     "path": "yolla-panel-v1/a0-successor-control/reports/A1_SUCCESSOR_ACCEPTANCE_REPORT_V1.json",
     "commit": "9fa975c18e510034f2f468b352e3d316ecb1fd8b"
@@ -19,68 +18,53 @@
   "dispatch_receipt": {
     "path": "yolla-panel-v1/a0-successor-control/reports/A1_PHASE0_DISPATCH_RECEIPT_V1.json",
     "commit": "ca7f193ec8df700f2ed310a9a3225c26f5132975",
-    "result": "PASS_9_OF_9",
-    "target_prs": [
-      17,
-      14,
-      18,
-      21,
-      22,
-      23,
-      24,
-      25,
-      26
-    ]
+    "result": "PASS_9_OF_9"
   },
-  "future_command_plan_pointer": {
-    "path": "yolla-panel-v1/a0-successor-control/LATEST_FUTURE_COMMAND_PLAN_POINTER.json",
-    "commit": "71dde085593d3e55c99de4ba248474d29d3d5a20"
+  "phase0_reconciliation": {
+    "report_path": "yolla-panel-v1/a0-successor-control/reports/A1_PHASE0_START_GATE_RECONCILIATION_V2.json",
+    "report_commit": "208f3e80c9638e1ecd71ad5dc55e8ecf04879716",
+    "report_blob": "4149d8af16f3e2a98e7a485c60ecacddaf089bb0",
+    "pointer_path": "yolla-panel-v1/a0-successor-control/LATEST_A1_PHASE0_START_GATE_POINTER.json",
+    "pointer_commit": "e9a17ed6ed372daa5e997e5456b7ceefa7df9936",
+    "commander_start_gate": "PASS_4_OF_5",
+    "commander_start_missing": [
+      "A-2"
+    ],
+    "a_group_worker_start_gate": "PASS_4_OF_5",
+    "a_group_worker_start_missing": [
+      "A-7"
+    ],
+    "combined_start_gate": "PASS_8_OF_10_BLOCKED_2",
+    "progress_percent": 80,
+    "phase0_pass_claimed": false
   },
   "a0_runtime_execution_pointer": {
     "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_SUCCESSOR_REPORT_POINTER.json",
-    "observed_commit": "f0f85e9d47d4678305db8afc12c1a73d722cdb31",
-    "status": "A0_V52_EXACT_INSTALLER_EXECUTION_PACKAGE_READY_TARGET_PC_CHANNEL_PENDING",
-    "progress_percent": 70,
+    "status": "A0_TWO_MODE_AUTOMATION_SOURCE_CORE_PASS_PANEL_RUNTIME_BINDING_PENDING",
+    "latest_report_commit": "8e99ab780bbf93c4b40d83a76df0dc4a290c0d7f",
     "target_pc_execution_performed": false,
     "target_pc_pass_claimed": false
   },
-  "phase_status": {
-    "current_phase": 0,
-    "current_phase_name": "SUCCESSION_AND_GROUP_CONTROL_ACTIVATION",
-    "commander_start_gate": "PASS_3_OF_5",
-    "commander_start_missing": [
-      "A-2",
-      "D-1"
-    ],
-    "a_group_worker_start_gate": "PASS_0_OF_5",
-    "a_group_worker_start_missing": [
-      "A-3",
-      "A-4",
-      "A-5",
-      "A-6",
-      "A-7"
-    ],
-    "dispatch_gate": "PASS_9_OF_9",
-    "next_gate": "A2_D1_AND_A3_TO_A7_START_REPORTS_COMMITTED",
-    "subsequent_gate": "V52_TARGET_PC_STABILITY_AFTER_TARGET_PC_CHANNEL_EVENT"
+  "active_downstream_control": {
+    "a2_wave4_control_comment": 5171701061,
+    "a7_wave4_reactivation_comment": 5171697188,
+    "duplicate_wave4_directive_count": 0,
+    "current_first_blocker": "A3_OBSERVED_ENDPOINT_AND_PARAMETER_AUTHORITY_CONFLICTS_WITH_PLACEHOLDER_CONTRACT_AND_RESPONSE_BODY_FIELD_EVIDENCE_IS_ABSENT"
   },
-  "active_external_blockers": [
-    "TARGET_PC_INSTALLER_BYTE_MATERIALIZATION_CHANNEL_NOT_CONNECTED",
-    "TARGET_PC_LOCAL_FILE_QUEUE_NOT_CONNECTED",
-    "TARGET_PC_UI_SESSION_EVIDENCE_NOT_RECEIVED"
-  ],
   "required_next_reports": [
-    "A2_START_REPORT_V1.json",
-    "D1_INTEGRATION_START_REPORT_V1.json",
-    "A3_START_REPORT_V1.json",
-    "A4_START_REPORT_V1.json",
-    "A5_START_REPORT_V1.json",
-    "A6_START_REPORT_V1.json",
-    "A7_START_REPORT_V1.json"
+    "yolla-panel-v1/a2-analyzer-adapter-factory/A2_START_REPORT_V1.json",
+    "yolla-panel-v1/a2-analyzer-adapter-factory/LATEST_A2_REPORT_POINTER.json",
+    "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_START_REPORT_V1.json",
+    "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/LATEST_A7_REPORT_POINTER.json"
   ],
+  "next_gate": "A2_AND_A7_FORMAL_START_REPORTS_COMMITTED",
+  "subsequent_gate": "CONTINUE_EXISTING_A2_WAVE4_BLOCKER_CLOSURE_WITHOUT_DUPLICATE_DIRECTIVES",
   "authority_precedence": "EXACT_GITHUB_REMOTE_HEAD_COMMITTED_LEDGER",
+  "target_pc_execution_count": 0,
+  "live_site_call_count": 0,
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at": "2026-08-03T20:11:56+09:00"
+  "self_merge": false,
+  "updated_at": "2026-08-04T05:59:00+09:00"
 }
