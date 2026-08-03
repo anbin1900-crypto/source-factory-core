@@ -7,6 +7,12 @@ on:
     paths:
       - 'yolla-panel-v1/a0-successor-control/ui-v53/YOLLA_CHROME_GROUP_TABS_DYNAMIC_WORKERS_SOURCE_V1.zip'
       - '.github/workflows/a0-apply-yolla-chrome-group-tabs-v53.yml'
+  pull_request:
+    branches:
+      - integration/a1-yolla-panel-connection-frontier-v1
+    paths:
+      - 'yolla-panel-v1/a0-successor-control/ui-v53/YOLLA_CHROME_GROUP_TABS_DYNAMIC_WORKERS_SOURCE_V1.zip'
+      - '.github/workflows/a0-apply-yolla-chrome-group-tabs-v53.yml'
   workflow_dispatch:
 
 permissions:
