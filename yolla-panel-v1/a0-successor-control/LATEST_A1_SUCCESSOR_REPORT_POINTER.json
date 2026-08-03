@@ -1,0 +1,69 @@
+{
+  "schema_version": "LATEST_A1_SUCCESSOR_REPORT_POINTER_V1",
+  "status": "A1_SUCCESSOR_CONTROL_ACTIVE_PHASE0_CLOSURE_BATCH_PUBLISHED",
+  "terminal": "A1_SUCCESSOR_ACCEPTANCE_COMMITTED_AND_UNBLOCKED_PHASE0_WORK_DISPATCHED",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "accepted_observed_remote_head": "f0f85e9d47d4678305db8afc12c1a73d722cdb31",
+  "successor_acceptance_report": {
+    "path": "yolla-panel-v1/a0-successor-control/reports/A1_SUCCESSOR_ACCEPTANCE_REPORT_V1.json",
+    "commit": "9fa975c18e510034f2f468b352e3d316ecb1fd8b"
+  },
+  "active_batch_directive": {
+    "path": "yolla-panel-v1/a0-successor-control/directives/A1_PHASE0_CLOSURE_BATCH_V1.json",
+    "commit": "46fa759c7b5f57b477de6701ffa539a5bab80750",
+    "directive_id": "A1-TO-A0-A2-D1-A3-A7-PHASE0-CLOSURE-BATCH-V1-20260803-001",
+    "cycle_id": "A1-SUCCESSOR-ACTIVATION-20260803-001"
+  },
+  "future_command_plan_pointer": {
+    "path": "yolla-panel-v1/a0-successor-control/LATEST_FUTURE_COMMAND_PLAN_POINTER.json",
+    "commit": "71dde085593d3e55c99de4ba248474d29d3d5a20"
+  },
+  "a0_runtime_execution_pointer": {
+    "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_SUCCESSOR_REPORT_POINTER.json",
+    "observed_commit": "f0f85e9d47d4678305db8afc12c1a73d722cdb31",
+    "status": "A0_V52_EXACT_INSTALLER_EXECUTION_PACKAGE_READY_TARGET_PC_CHANNEL_PENDING",
+    "progress_percent": 70,
+    "target_pc_execution_performed": false,
+    "target_pc_pass_claimed": false
+  },
+  "phase_status": {
+    "current_phase": 0,
+    "current_phase_name": "SUCCESSION_AND_GROUP_CONTROL_ACTIVATION",
+    "commander_start_gate": "PASS_3_OF_5",
+    "commander_start_missing": [
+      "A-2",
+      "D-1"
+    ],
+    "a_group_worker_start_gate": "PASS_0_OF_5",
+    "a_group_worker_start_missing": [
+      "A-3",
+      "A-4",
+      "A-5",
+      "A-6",
+      "A-7"
+    ],
+    "next_gate": "A2_D1_AND_A3_TO_A7_START_REPORTS_COMMITTED",
+    "subsequent_gate": "V52_TARGET_PC_STABILITY_AFTER_TARGET_PC_CHANNEL_EVENT"
+  },
+  "active_external_blockers": [
+    "TARGET_PC_INSTALLER_BYTE_MATERIALIZATION_CHANNEL_NOT_CONNECTED",
+    "TARGET_PC_LOCAL_FILE_QUEUE_NOT_CONNECTED",
+    "TARGET_PC_UI_SESSION_EVIDENCE_NOT_RECEIVED"
+  ],
+  "required_next_reports": [
+    "A2_START_REPORT_V1.json",
+    "D1_INTEGRATION_START_REPORT_V1.json",
+    "A3_START_REPORT_V1.json",
+    "A4_START_REPORT_V1.json",
+    "A5_START_REPORT_V1.json",
+    "A6_START_REPORT_V1.json",
+    "A7_START_REPORT_V1.json"
+  ],
+  "authority_precedence": "EXACT_GITHUB_REMOTE_HEAD_COMMITTED_LEDGER",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-03T20:06:34+09:00"
+}
