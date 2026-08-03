@@ -1,0 +1,48 @@
+{
+  "schema_version": "B1_EXECUTION_READINESS_MATRIX_V1",
+  "directive_id": "A2-TO-A7-VERIFIED-ADAPTER-INDEPENDENT-ACCEPTANCE-V3-20260804-001",
+  "evaluated_at_kst": "2026-08-04T06:16:26+09:00",
+  "b1_reanalysis_required_by_contract": false,
+  "b1_execution_ready": false,
+  "b1_dispatch_authorized": false,
+  "matrix": {
+    "entrypoint": "PRESENT_FIXTURE_ONLY",
+    "input_schema": "PRESENT",
+    "output_schema": "PRESENT",
+    "pagination_stop_contract": "PASS",
+    "retry_error_contract": "PARTIAL_FIXTURE_PASS",
+    "endpoint_catalog_authority": "BLOCKED",
+    "parameter_dictionary_authority": "BLOCKED",
+    "response_schema_authority": "BLOCKED",
+    "identifier_map_authority": "BLOCKED",
+    "session_header_authority": "BLOCKED",
+    "verified_package_promotion": "BLOCKED",
+    "deterministic_fixture_replay": "PASS",
+    "secret_redaction": "PASS",
+    "live_site_call_count": 0
+  },
+  "first_blocker": "EXACT_RESPONSE_BODY_FIXTURES_FOR_A3_JSON_ENDPOINT_PROFILES_ARE_NOT_PRESENT_IN_SEARCHED_REPOSITORY_FIXTURES",
+  "missing_profiles": ["EP-001","EP-002","EP-003","EP-004","EP-005","EP-010","EP-011","EP-012"],
+  "corrective_owner_chain": [
+    {
+      "owner": "A-3",
+      "required_action": "Publish exact endpoint-bound immutable response body fixtures or snapshots, or preserve exact blocker."
+    },
+    {
+      "owner": "A-5",
+      "required_action": "Rebind Endpoint, Request, Parameter, Session/Header, Response Schema, Identifier and Retry authorities; publish handoff ready=true only if exact evidence is complete."
+    },
+    {
+      "owner": "A-6",
+      "required_action": "Rebuild the 9-component Verified Adapter Package from corrected A-5 authority and publish acceptance_ready=true with build and replay receipts."
+    },
+    {
+      "owner": "A-7",
+      "required_action": "Perform incremental re-audit and publish PASS only after exact corrected pointers arrive."
+    }
+  ],
+  "next_gate": "A3_EXACT_RESPONSE_BODY_EVIDENCE_THEN_A5_AUTHORITY_REBIND_THEN_A6_VERIFIED_REBUILD",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
