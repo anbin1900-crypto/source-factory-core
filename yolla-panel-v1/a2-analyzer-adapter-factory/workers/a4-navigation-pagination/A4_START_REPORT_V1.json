@@ -1,0 +1,63 @@
+{
+  "schema_version": "A4_START_REPORT_V1",
+  "worker": "A-4",
+  "role": "NAVIGATION_PAGE_PAGINATION_STRUCTURE_WORKER",
+  "status": "STARTED",
+  "started_at_kst": "2026-08-04T05:17:00+09:00",
+  "directive": {
+    "active_directive_id": "A2-TO-A4-NAVIGATION-PAGINATION-EXECUTION-V3-20260804-001",
+    "active_comment": 5171208197,
+    "registered_at_kst": "2026-08-04T05:11:00+09:00",
+    "preserved_directives": [
+      "A2-TO-A4-NAVIGATION-PAGINATION-CONTRACT-V1-20260803-001",
+      "A2-TO-A4-NAVIGATION-PAGE-PAGINATION-PROFILE-V2-20260804-001"
+    ],
+    "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001"
+  },
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pr": 23,
+  "branch": "worker/a4-navigation-pagination-v1",
+  "start_head": "31e9c7678d95c62b80fddc27d042fe5291d72b46",
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/**",
+  "input_authority": {
+    "a2_role_charter_blob": "5445002aca7d51c6f230e7f65c1f1d57ae9e8e63",
+    "a2_assignment_ledger_blob": "d6c3a1cf88193a0444637d85fc256dce5d33de92",
+    "a3_pr": 22,
+    "a3_observed_head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+    "a3_trace_handoff_status": "NOT_PUBLISHED_AT_START",
+    "fixture_basis": "A2_CHARTER_FIXTURE_ONLY_NAVER_REAL_ESTATE_ADAPTER_CANDIDATE",
+    "live_site_calls_allowed": false
+  },
+  "execution_plan": [
+    "freeze repository-local fixture URLs and page snapshots",
+    "build directed site navigation graph",
+    "classify page types and evidence pointers",
+    "contract pagination start increment cursor and stop conditions",
+    "define collection scope and loop-stop policy",
+    "run identical fixture navigation replay twice",
+    "publish A-5 pagination handoff and A-6 navigation handoff",
+    "publish terminal report and latest pointer"
+  ],
+  "required_outputs": [
+    "SITE_NAVIGATION_GRAPH_V1.json",
+    "PAGE_TYPE_CATALOG_V1.json",
+    "PAGINATION_SCOPE_CONTRACT_V1.json",
+    "FIXTURE_NAVIGATION_REPLAY_V1.json",
+    "COLLECTION_SCOPE_BOUNDARY_V1.json",
+    "NAVIGATION_LOOP_STOP_POLICY_V1.json",
+    "A4_TO_A5_PAGINATION_HANDOFF_V1.json",
+    "A4_TO_A6_NAVIGATION_HANDOFF_V1.json",
+    "A4_TERMINAL_REPORT_V1.json",
+    "LATEST_A4_REPORT_POINTER.json"
+  ],
+  "boundaries": {
+    "actual_bulk_collection": false,
+    "live_site_call_count": 0,
+    "panel_shell_direct_edit": false,
+    "endpoint_request_authority_owned_by_a5": true,
+    "adapter_implementation_owned_by_a6": true,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
