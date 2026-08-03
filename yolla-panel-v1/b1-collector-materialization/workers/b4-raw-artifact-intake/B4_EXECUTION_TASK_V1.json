@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "B1-B4-EXECUTION-TASK-V1-20260804-001",
+  "registered_at_kst": "2026-08-04T05:11:00+09:00",
+  "worker": "B-4",
+  "control_pr": 40,
+  "parent_directive": "B1-TO-B4-RAW-ARTIFACT-SOURCE-ENVELOPE-V1-20260804-001",
+  "parent_directive_superseded": false,
+  "mode": "FIXTURE_FIRST_IMMUTABLE_IMPLEMENTATION",
+  "objective": "Implement immutable raw-response storage, exact-byte SHA-256 manifests and source-record envelopes while preserving source evidence and avoiding semantic transformation.",
+  "implementation_order": [
+    "COMMIT_B4_START_REPORT_AND_LATEST_POINTER",
+    "FREEZE_RAW_ARTIFACT_MANIFEST_AND_SOURCE_ENVELOPE_CONTRACTS",
+    "ADD_TWO_PAGE_FIXTURE_RESPONSE_BYTES",
+    "IMPLEMENT_IMMUTABLE_RAW_ARTIFACT_STORE",
+    "IMPLEMENT_EXACT_BYTE_SHA256_AND_READBACK",
+    "IMPLEMENT_SOURCE_RECORD_ENVELOPE_BUILDER",
+    "VERIFY_SOURCE_URL_TIME_REQUEST_SUMMARY_RECORD_COUNT_METADATA",
+    "RUN_OVERWRITE_SECRET_AND_PARITY_FAILURE_TESTS",
+    "COMMIT_B4_FINAL_REPORT_AND_LATEST_POINTER",
+    "POST_TERMINAL_TO_PR40_AND_PR19"
+  ],
+  "required_paths": [
+    "contracts/RAW_ARTIFACT_MANIFEST_V1.json",
+    "contracts/SOURCE_RECORD_ENVELOPE_V1.json",
+    "contracts/REQUEST_SUMMARY_V1.json",
+    "fixture_responses/page_001.json",
+    "fixture_responses/page_002.json",
+    "src/raw_artifact_store.py",
+    "src/source_record_envelope.py",
+    "tests/test_raw_artifact_source_envelope.py",
+    "B4_START_REPORT_V1.json",
+    "B4_READBACK_RECEIPT_V1.json",
+    "B4_TEST_RESULTS_V1.json",
+    "B4_FINAL_REPORT_V1.json",
+    "LATEST_B4_REPORT_POINTER.json"
+  ],
+  "minimum_test_cases": 18,
+  "required_test_categories": [
+    "EXACT_BYTES_SHA256_MATCH",
+    "ONE_BYTE_MUTATION_SHA_MISMATCH",
+    "RAW_ARTIFACT_OVERWRITE_REJECTED",
+    "SOURCE_URL_PRESERVED",
+    "COLLECTED_AT_PRESERVED",
+    "REQUEST_PARAMETER_SUMMARY_PRESERVED_WITHOUT_SECRET",
+    "RECORD_COUNT_PARITY",
+    "METADATA_PARITY",
+    "SOURCE_RECORD_LINEAGE_TO_RAW_ARTIFACT",
+    "SECRET_VALUE_REJECTED",
+    "SEMANTIC_TRANSFORMATION_COUNT_ZERO",
+    "ZERO_NETWORK_CALLS"
+  ],
+  "inputs": {
+    "immediate": "FIXTURE_RESPONSES_AND_B1_REQUIRED_OUTPUT_CONTRACTS",
+    "later_rebind": "B2_LOADER_OUTPUT_AND_B3_COLLECTION_PAGE_RESULTS"
+  },
+  "handoff_to": ["B-5", "B-6", "C-1_VIA_B6", "B-1"],
+  "terminal": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY_OR_EXACT_BLOCKER",
+  "boundaries": {
+    "raw_overwrite": false,
+    "secret_storage": false,
+    "semantic_transformation": false,
+    "d_canonical_db_write": false,
+    "actual_site_call": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
