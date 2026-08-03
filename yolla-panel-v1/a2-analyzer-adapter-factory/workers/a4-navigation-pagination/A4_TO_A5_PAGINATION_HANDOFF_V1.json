@@ -1,0 +1,21 @@
+{
+  "schema_version": "A4_TO_A5_PAGINATION_HANDOFF_V1",
+  "handoff_id": "A4-TO-A5-PAGINATION-20260804-001",
+  "status": "READY",
+  "pagination_contract_ref": "PAGINATION_SCOPE_CONTRACT_V1.json",
+  "page_catalog_ref": "PAGE_TYPE_CATALOG_V1.json",
+  "semantic_request_fields": ["page", "offset", "limit", "cursor", "next_url", "region", "sort", "bbox", "zoom"],
+  "primary_mode": "PAGE_NUMBER",
+  "start_value": 1,
+  "increment_rule": "+1",
+  "termination_rules": [
+    "EMPTY_RESULT", "LAST_PAGE_FLAG", "REPEATED_CURSOR", "REPEATED_CANONICAL_URL",
+    "NO_NEW_RECORD_IDS", "MAXIMUM_PAGE_COUNT", "LOGIN_REQUIRED", "ERROR_PAGE",
+    "OUT_OF_SCOPE_PAGE_TYPE"
+  ],
+  "canonical_url_rule": "LOWERCASE_SCHEME_HOST_SORT_QUERY_REMOVE_FRAGMENT",
+  "request_endpoint_authority": "A-5",
+  "response_schema_authority": "A-5",
+  "fixture_replay_digest": "5efffc455deb166bb00afedc918c17f0bf3d0b2be6ca0d266acc680f62ca6bb9",
+  "ready": true
+}
