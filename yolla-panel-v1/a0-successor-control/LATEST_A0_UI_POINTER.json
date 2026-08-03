@@ -1,0 +1,28 @@
+{
+  "schema_version": "LATEST_A0_UI_POINTER_V1",
+  "status": "AI_YOLLA_PANEL_WORKSPACE_V54_VERTICAL_DYNAMIC_GROUPS_CURRENT",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "current_ui_version": "5.4.0",
+  "current_pointer_path": "yolla-panel-v1/a0-successor-control/ui-v54/LATEST_A0_V54_STANDALONE_INSTALLER_POINTER.json",
+  "current_pointer_commit": "eb126a3e6c8bea5092aabfa13a9b8d3b4658a96f",
+  "layout": "VERTICAL_STACKED_GROUPS",
+  "dynamic_group_add": true,
+  "dynamic_worker_add": true,
+  "fixed_worker_count": false,
+  "fixed_group_count": false,
+  "reserve_seats": false,
+  "superseded_ui_versions": [
+    {
+      "version": "5.3.0",
+      "reason": "HORIZONTAL_GROUP_TAB_INTERPRETATION_REJECTED_BY_USER",
+      "installer_status": "DO_NOT_RUN"
+    }
+  ],
+  "target_pc_execution_observed": false,
+  "target_pc_visual_acceptance_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-03T23:20:00+09:00"
+}
