@@ -1,0 +1,147 @@
+{
+  "schema_version": "C1_D_ALIGNED_TRANSFORMER_WORKER_ASSIGNMENT_V1",
+  "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
+  "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "parent_directive_comment": 5170768957,
+  "existing_directive": "A0-TO-C1-SEMANTIC-KNOWLEDGE-DOMAIN-AI-SHELL-V1-20260803-001",
+  "existing_directive_superseded": false,
+  "wave_id": "C1_D_ALIGNED_TRANSFORMER_WAVE_1",
+  "registered_at_kst": "2026-08-04 04:44 KST",
+  "authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "control_pr": 20,
+    "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+    "start_head": "3d96f653c6d560b6b61c323146a3051239eee8de"
+  },
+  "new_root": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/",
+  "existing_owned_root_mutation_count": 0,
+  "required_inputs": {
+    "B-1": [
+      "NORMALIZED_DATASET_V1",
+      "RAW_ARTIFACT_MANIFEST_V1"
+    ],
+    "D-1": [
+      "D_CANONICAL_SCHEMA_PROFILE_V1",
+      "D_INBOUND_FIELD_MAPPING_CONTRACT_V1",
+      "D_INTAKE_VALIDATION_RULESET_V1"
+    ]
+  },
+  "required_lineage_fields": [
+    "SOURCE_RECORD_ID",
+    "SOURCE_FIELD",
+    "SOURCE_VALUE",
+    "TRANSFORMATION_RULE_ID",
+    "TARGET_ENTITY",
+    "TARGET_FIELD",
+    "TARGET_TYPE",
+    "TRANSFORMED_VALUE",
+    "PROVENANCE_REF",
+    "EVIDENCE_REF",
+    "VALIDATION_STATUS",
+    "REJECTION_REASON"
+  ],
+  "assignments": {
+    "C-2": {
+      "directive_id": "C1-TO-C2-D-ALIGNED-SOURCE-LINEAGE-V1-20260804-001",
+      "duplicate_prompt_key": "9b0d40bd3fe9df62dad8c6a31e4d8f6d2ac9aafa29070b97299306b532c3107f",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c2-source-lineage/**",
+      "mission": "Consume fixture or verified B records and create per-record/per-field source lineage envelopes without changing source values or deleting unmapped fields.",
+      "required_outputs": [
+        "SOURCE_RECORD_LINEAGE_CONTRACT_V1.json",
+        "SOURCE_RECORD_LINEAGE_FIXTURE_V1.json",
+        "C2_D_ALIGNED_LINEAGE_TEST_RESULT_V1.json",
+        "C2_D_ALIGNED_FINAL_REPORT_V1.json",
+        "LATEST_C2_D_ALIGNED_POINTER.json"
+      ],
+      "entry_gate": "IMMEDIATE_FIXTURE_CONTRACT_REAL_BINDING_AFTER_B1_INPUT",
+      "expected_terminal": "C2_D_ALIGNED_SOURCE_LINEAGE_READY_OR_EXACT_BLOCKER"
+    },
+    "C-3": {
+      "directive_id": "C1-TO-C3-D-ALIGNED-FIELD-MAPPING-TRANSFORM-RULES-V1-20260804-001",
+      "duplicate_prompt_key": "ed293d3858fa97ae0eb9ed8739f633b9166b46121c5495970e7f6d304ae6f50b",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c3-field-mapping-rules/**",
+      "mission": "Define reproducible mapping-versioned transformation rules for format, unit, code, identifier, relation and type conversions, consuming D contracts read-only.",
+      "required_outputs": [
+        "TRANSFORMATION_RULE_CATALOG_V1.json",
+        "FIELD_MAPPING_CONTRACT_CONSUMER_V1.json",
+        "FIELD_MAPPING_FIXTURE_V1.json",
+        "C3_D_ALIGNED_MAPPING_TEST_RESULT_V1.json",
+        "C3_D_ALIGNED_FINAL_REPORT_V1.json",
+        "LATEST_C3_D_ALIGNED_POINTER.json"
+      ],
+      "entry_gate": "IMMEDIATE_FIXTURE_CONTRACT_REAL_BINDING_AFTER_D1_INPUT",
+      "expected_terminal": "C3_D_ALIGNED_FIELD_MAPPING_READY_OR_EXACT_BLOCKER"
+    },
+    "C-4": {
+      "directive_id": "C1-TO-C4-D-ALIGNED-PACKAGE-KNOWLEDGE-CANDIDATE-V1-20260804-001",
+      "duplicate_prompt_key": "291a3b7aac297b0bbc744cb1c57a017d895cf9b35204db511ecaec54aacf8b97",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c4-package-knowledge-candidate/**",
+      "mission": "Assemble D_ALIGNED_TRANSFORMATION_PACKAGE_V1, FIELD_MAPPING_REPORT_V1 and KNOWLEDGE_CANDIDATE_BUNDLE_V1 with provenance/evidence bindings; do not claim D acceptance.",
+      "required_outputs": [
+        "D_ALIGNED_TRANSFORMATION_PACKAGE_CONTRACT_V1.json",
+        "FIELD_MAPPING_REPORT_CONTRACT_V1.json",
+        "KNOWLEDGE_CANDIDATE_BUNDLE_D_ALIGNED_CONTRACT_V1.json",
+        "C4_D_ALIGNED_PACKAGE_FIXTURE_V1.json",
+        "C4_D_ALIGNED_FINAL_REPORT_V1.json",
+        "LATEST_C4_D_ALIGNED_POINTER.json"
+      ],
+      "entry_gate": "CONTRACT_IMMEDIATE_FINAL_BINDING_AFTER_C2_C3",
+      "expected_terminal": "C4_D_ALIGNED_PACKAGE_READY_OR_EXACT_BLOCKER"
+    },
+    "C-5": {
+      "directive_id": "C1-TO-C5-D-SCHEMA-CONSUMER-VALIDATION-REJECTION-V1-20260804-001",
+      "duplicate_prompt_key": "8615080f268afb2f55132b60012332d679ce8c5df66bdb60055369681b70b4de",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c5-schema-validation-rejection/**",
+      "mission": "Build read-only D schema consumer, inbound mapping validator and rejected-record classifier. Missing required values, type/range errors and unmappable values must be emitted to REJECTED_RECORD_BUNDLE_V1.",
+      "required_outputs": [
+        "D_SCHEMA_PROFILE_CONSUMER_V1.json",
+        "D_INTAKE_VALIDATION_RULESET_CONSUMER_V1.json",
+        "REJECTED_RECORD_BUNDLE_CONTRACT_V1.json",
+        "REJECTION_CLASSIFICATION_FIXTURE_V1.json",
+        "C5_D_ALIGNED_VALIDATION_TEST_RESULT_V1.json",
+        "C5_D_ALIGNED_FINAL_REPORT_V1.json",
+        "LATEST_C5_D_ALIGNED_POINTER.json"
+      ],
+      "entry_gate": "IMMEDIATE_FIXTURE_VALIDATOR_REAL_BINDING_AFTER_D1_INPUT",
+      "expected_terminal": "C5_D_SCHEMA_VALIDATOR_REJECTION_READY_OR_EXACT_BLOCKER"
+    },
+    "C-6": {
+      "directive_id": "C1-TO-C6-D-ALIGNED-TRANSFORMER-E2E-AUDIT-V1-20260804-001",
+      "duplicate_prompt_key": "1edd009166e3df99f8245d9577b60342ccbd715358ba3d948382a289d02d71a9",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c6-transformer-e2e-audit/**",
+      "mission": "Audit no-silent-drop, source-to-target lineage completeness, rejected-record coverage, evidence/provenance retention, mapping-version reproducibility and C1-to-D1 handoff integrity.",
+      "required_outputs": [
+        "D_ALIGNED_E2E_ACCEPTANCE_CONTRACT_V1.json",
+        "NO_SILENT_DROP_AUDIT_MATRIX_V1.json",
+        "LINEAGE_COMPLETENESS_TEST_V1.json",
+        "C1_TO_D1_HANDOFF_VALIDATION_V1.json",
+        "C6_D_ALIGNED_E2E_REPORT_V1.json",
+        "C6_D_ALIGNED_FINAL_REPORT_V1.json",
+        "LATEST_C6_D_ALIGNED_POINTER.json"
+      ],
+      "entry_gate": "CONTRACT_IMMEDIATE_FINAL_E2E_AFTER_C2_C3_C4_C5",
+      "expected_terminal": "C6_D_ALIGNED_TRANSFORMER_E2E_PASS_OR_EXACT_BLOCKER"
+    }
+  },
+  "final_integration_owner": "C-1",
+  "required_final_outputs": [
+    "D_ALIGNED_TRANSFORMATION_PACKAGE_V1",
+    "FIELD_MAPPING_REPORT_V1",
+    "REJECTED_RECORD_BUNDLE_V1",
+    "KNOWLEDGE_CANDIDATE_BUNDLE_V1"
+  ],
+  "forbidden": {
+    "site_analyzer_ownership": true,
+    "site_extraction_runtime_ownership": true,
+    "d_canonical_schema_mutation": true,
+    "d_canonical_db_direct_write": true,
+    "fixture_claimed_as_d_accepted_data": true,
+    "panel_shell_direct_edit": true,
+    "silent_drop": true,
+    "production": true,
+    "ready": true,
+    "merge": true
+  },
+  "status": "C1_D_ALIGNED_TRANSFORMER_WORKERS_ASSIGNED"
+}
