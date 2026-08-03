@@ -1,51 +1,50 @@
 {
   "schema_version": "LATEST_A0_SUCCESSOR_REPORT_POINTER_V2",
-  "status": "A0_TWO_MODE_AUTOMATION_SOURCE_CORE_PASS_PANEL_RUNTIME_BINDING_PENDING",
+  "status": "A0_V511_PREVIOUS_WORKER_LIST_LIVE_STATUS_POPUP_BUILD_PASS_TARGET_PC_PENDING",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "latest_report_path": "yolla-panel-v1/a0-successor-control/reports/A0_TWO_MODE_AUTOMATION_SOURCE_CORE_REPORT_V1.json",
-  "latest_report_commit": "8e99ab780bbf93c4b40d83a76df0dc4a290c0d7f",
-  "latest_report_type": "TWO_MODE_AUTOMATION_SOURCE_CORE",
-  "latest_report_status": "PASS_PANEL_RUNTIME_BINDING_PENDING",
-  "progress_percent": 40,
-  "latest_common_rules_pointer": {
-    "path": "yolla-panel-v1/a0-successor-control/automation-v1/LATEST_COMMON_AUTOMATION_RULES_POINTER_V2.json",
-    "policy_id": "YOLLA_AUTOMATION_COMMON_RULES_V2"
-  },
+  "latest_report_path": "yolla-panel-v1/a0-successor-control/reports/A0_V511_PREVIOUS_WORKER_LIST_LIVE_STATUS_POPUP_BUILD_REPORT_V1.json",
+  "latest_report_commit": "4e41bf10188c81957fe15a6ef8f0873923c6508b",
+  "latest_report_type": "V511_UI_AND_LIVE_STATUS_BUILD",
+  "latest_report_status": "PASS_TARGET_PC_PENDING",
+  "progress_percent": 75,
   "latest_automation_runtime_pointer_path": "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_RUNTIME_POINTER_V1.json",
-  "latest_automation_runtime_pointer_commit": "3ed5e1279bd1f3f3dae1534aaaf214016f5ee0b5",
-  "current_ui_version": "5.9.0",
+  "latest_automation_runtime_pointer_commit": "4321660b6e000f07d97420dec5d4400cc6d77d79",
+  "latest_ui_pointer_path": "yolla-panel-v1/a0-successor-control/LATEST_A0_UI_POINTER.json",
+  "latest_ui_pointer_commit": "9721d7b1db87b31ce5bed4d192346ff086840a75",
+  "v511_pointer": {
+    "path": "yolla-panel-v1/a0-successor-control/automation-v1/runtime-v511/LATEST_A0_V511_WORKER_STATUS_POPUP_POINTER.json",
+    "commit": "980d8be5af2c1f6215d07d32f98cb60b61bfa6c1"
+  },
+  "current_ui_version": "5.11.0",
   "runtime_provider_version": "5.7.0",
   "schedule_runner_version": "1.0.0-panel-bound-build-pass",
-  "two_mode_automation_version": "1.0.0-source-core-pass",
-  "automation_modes": {
-    "COMMANDER_WORKER_RELAY": "SOURCE_CORE_PASS_PANEL_BINDING_PENDING",
-    "EPIC_SCHEDULE": "SOURCE_CORE_PASS_PANEL_BINDING_PENDING"
-  },
+  "two_mode_automation_version": "1.0.0-panel-bound-build-pass",
   "implemented": {
-    "worker_result_to_commander_dispatch": "PASS_SOURCE_FIXTURE",
-    "commander_pointer_to_worker_dispatch": "PASS_SOURCE_FIXTURE",
-    "epic_schema_validation": "PASS_SOURCE_FIXTURE",
-    "epic_to_existing_schedule_transform": "PASS_SOURCE_FIXTURE",
-    "pc_agent_db_projection": "PASS_SOURCE_FIXTURE",
-    "epic_result_validation": "PASS_SOURCE_FIXTURE",
+    "previous_worker_list_restored": "PASS_SOURCE",
+    "worker_menu_automation_popup": "PASS_SOURCE",
+    "actual_worker_status_badges": "PASS_SOURCE",
+    "top_live_worker_counts": "PASS_SOURCE",
+    "schedule_and_epic_import": "PASS_SOURCE",
     "duplicate_execution_count": 0,
     "user_manual_relay_count": 0
   },
-  "source_artifact": {
-    "drive_file_id": "1pBPO87PiipoMFYhw9jX-FUG2DWiVbCMP",
-    "sha256": "88e85f8f8ca479897b2f0fd4e9d4e3304eac59a114259a5fac989865ae0cfd66",
-    "size_bytes": 106759
+  "installer_artifact": {
+    "drive_file_id": "1Adxs4Ty713h4xYDC7I_MFEucArlO00TR",
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V511_PREVIOUS_WORKER_LIST_LIVE_STATUS_POPUP.bat",
+    "sha256": "02d500f8167c48241c95e1d509fb91ecbe3798bbb57e6a5777609ace650cf244",
+    "size_bytes": 153484
   },
-  "required_next_task": "BIND_TWO_MODES_TO_V59_PANEL_AND_EXISTING_BROWSER_SCHEDULE_RUNTIME_THEN_RUN_ONE_RELAY_CYCLE_AND_ONE_EPIC_PACKAGE",
+  "required_next_task": "INSTALL_V511_ON_TARGET_PC_AND_OBSERVE_FILE_POPUP_IMPORT_WORKER_STATUS_AND_TOP_COUNTER_TRANSITIONS",
   "required_official_terminal": "A0_TWO_MODE_AUTOMATION_RUNTIME_V1_PASS",
   "target_pc_execution_performed": false,
-  "actual_relay_cycle_observed": false,
-  "actual_epic_package_observed": false,
+  "target_pc_visual_acceptance": "NOT_OBSERVED",
+  "actual_worker_status_transition_observed": false,
+  "actual_top_counter_transition_observed": false,
   "target_pc_pass_claimed": false,
   "official_terminal_claimed": false,
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at": "2026-08-04T04:52:00+09:00"
+  "updated_at": "2026-08-04T06:10:00+09:00"
 }
