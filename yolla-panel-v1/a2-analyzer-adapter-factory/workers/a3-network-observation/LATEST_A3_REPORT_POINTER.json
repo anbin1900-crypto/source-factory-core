@@ -1,46 +1,59 @@
 {
   "schema_version": "LATEST_A3_REPORT_POINTER_V1",
   "worker": "A-3",
-  "directive_id": "A2-TO-A3-SITE-OBSERVATION-EVIDENCE-EXECUTION-V3-20260804-001",
-  "directive_comment_id": 5171205788,
-  "status": "PASS",
-  "terminal": "A3_NETWORK_ENDPOINT_OBSERVATION_READY",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE4-BLOCKER-CLOSURE-V1-20260804-001",
+  "directive_id": "A2-TO-A3-RESPONSE-BODY-FIELD-EVIDENCE-CLOSURE-V4-20260804-001",
+  "directive_comment_id": 5171684658,
+  "status": "BLOCKED",
+  "terminal": "A3_RESPONSE_BODY_FIELD_EVIDENCE_EXACT_BLOCKER",
   "branch": "worker/a3-network-observation-v1",
-  "start_head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
-  "start_commit": "dce303ae3b2c662306ad26ef1507f4bdaa6ad139",
-  "terminal_report": {
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_TERMINAL_REPORT_V1.json",
-    "commit": "a5632d6dbdddd956d478b593ffe144ff8a6241cf",
-    "blob": "5c4d511ed15427917218440b0f838b44de84c5e2"
-  },
-  "final_report": {
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_FINAL_REPORT_V1.json",
-    "commit": "a5632d6dbdddd956d478b593ffe144ff8a6241cf",
-    "blob": "38db5f8afb78f25fa36554d33246a2f1ab34f2d9"
-  },
-  "handoffs": {
-    "a5": {
-      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_TO_A5_OBSERVATION_HANDOFF_V1.json",
-      "blob": "1b72cf730d997102d115f71a6cf0bc98f50c8e50",
-      "ready": true
+  "start_head": "b04a2cac2e506e8ca746b35d4e41e68322a4b7c1",
+  "start_comment_id": 5171765934,
+  "first_blocker": "EXACT_RESPONSE_BODY_FIXTURES_FOR_A3_JSON_ENDPOINT_PROFILES_ARE_NOT_PRESENT_IN_SEARCHED_REPOSITORY_FIXTURES",
+  "artifacts": {
+    "evidence_ledger": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/RESPONSE_BODY_FIELD_EVIDENCE_LEDGER_V1.json",
+      "commit": "7343261c6ee5ac5f80262ba68aaf163ed95db95a",
+      "blob": "ded2909408540f77ab764f09fd0b802c3affd6f3"
     },
-    "a6": {
-      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_TO_A6_FIXTURE_TRACE_HANDOFF_V1.json",
-      "blob": "8fe991a225275ece977944f157b72509cd3345f7",
-      "ready": true
+    "schema_observation": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/RESPONSE_BODY_SCHEMA_OBSERVATION_V1.json",
+      "commit": "8039a15a6bf5eeb5b4b6198c275566bb8236f763",
+      "blob": "46ff8e06c7a2a172e620fba3cf11e32e9bea73f1"
+    },
+    "a5_handoff": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_TO_A5_RESPONSE_FIELD_EVIDENCE_HANDOFF_V1.json",
+      "commit": "b1bb32ba50cd9697db6d2c0fe05b2588a5834682",
+      "blob": "ac6d7ce3ca21d8f3f4fb5cc7dd64caa2efc53075",
+      "ready": false
+    },
+    "validation_receipt": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_WAVE4_VALIDATION_RECEIPT_V1.json",
+      "commit": "fd79c997c7d9364f667747192160fafb388f6fa0",
+      "blob": "2da688296e23272b0b3ffb6729584b9d9278acc8"
+    },
+    "terminal_report": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_WAVE4_TERMINAL_REPORT_V1.json",
+      "commit": "e5d8d1b20e08f7de77f3779d917c9787d57ab3b7",
+      "blob": "a110398c956e9901748e871e2562507d1c5739de"
     }
   },
   "validation": {
-    "fixture_event_count": 15,
-    "fixture_replay_count": 2,
-    "deterministic_replay": "PASS",
-    "canonical_projection_sha256": "5fec9024924220872d0757200ad50cfdac2e3247de9ff123e0aa88c5973b55f4",
+    "required_json_endpoint_count": 8,
+    "exact_body_fixture_binding_count": 0,
+    "missing_profiles": ["EP-001","EP-002","EP-003","EP-004","EP-005","EP-010","EP-011","EP-012"],
     "raw_secret_value_count": 0,
     "live_site_call_count": 0,
     "out_of_owned_root_change_count": 0
   },
+  "prior_wave3": {
+    "terminal": "A3_NETWORK_ENDPOINT_OBSERVATION_READY",
+    "head": "b04a2cac2e506e8ca746b35d4e41e68322a4b7c1",
+    "pointer_blob": "4bc15f7271e4703ed647fa5ec304836ff151d875"
+  },
+  "required_next_input": "EXACT_ENDPOINT_BOUND_STATIC_RESPONSE_BODY_FIXTURE_OR_IMMUTABLE_SNAPSHOT_FOR_EP_001_EP_002_EP_003_EP_004_EP_005_EP_010_EP_011_EP_012",
   "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
-  "updated_at_kst": "2026-08-04T05:35:00+09:00",
+  "updated_at_kst": "2026-08-04T06:16:00+09:00",
   "production": false,
   "ready": false,
   "merge": false
