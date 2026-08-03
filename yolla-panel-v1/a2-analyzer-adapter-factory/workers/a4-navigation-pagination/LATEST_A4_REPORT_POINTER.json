@@ -1,0 +1,21 @@
+{
+  "schema_version": "LATEST_A4_REPORT_POINTER_V1",
+  "worker": "A-4",
+  "directive_id": "A2-TO-A4-NAVIGATION-PAGINATION-EXECUTION-V3-20260804-001",
+  "status": "STARTED",
+  "updated_at_kst": "2026-08-04T05:17:00+09:00",
+  "branch": "worker/a4-navigation-pagination-v1",
+  "latest_report": {
+    "report_type": "START",
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A4_START_REPORT_V1.json",
+    "commit": "3228d0c68be60f7adeb676c660f97096b4d39eee",
+    "blob": "4b56304004630f7e46f5ac66600d7af53d2116e9"
+  },
+  "terminal": null,
+  "actual_bulk_collection": false,
+  "live_site_call_count": 0,
+  "panel_shell_direct_edit": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
