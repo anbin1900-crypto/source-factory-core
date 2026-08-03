@@ -1,0 +1,39 @@
+{
+  "schema_version": "PROGRESS_MONOTONICITY_AUDIT_V1",
+  "directive_id": "A2-TO-A7-VERIFIED-ADAPTER-INDEPENDENT-ACCEPTANCE-V3-20260804-001",
+  "evaluated_at_kst": "2026-08-04T06:16:26+09:00",
+  "worker_transitions": {
+    "A-3": [
+      "WAVE3_ENDPOINT_PARAMETER_OBSERVATION_PASS",
+      "WAVE4_RESPONSE_BODY_FIELD_EVIDENCE_EXACT_BLOCKER"
+    ],
+    "A-4": [
+      "NAVIGATION_PAGINATION_CONTRACT_READY",
+      "PASS_PRESERVED"
+    ],
+    "A-5": [
+      "FIXTURE_PLACEHOLDER_CONTRACT",
+      "UPSTREAM_LATE_BINDING_RECHECK",
+      "REQUEST_RESPONSE_EXECUTION_CONTRACT_EXACT_BLOCKER"
+    ],
+    "A-6": [
+      "FIXTURE_PACKAGE_REPLAY_PASS",
+      "SUPERSEDED_NON_AUTHORITY_FIXTURE_ONLY",
+      "VERIFIED_ADAPTER_PACKAGE_EXACT_BLOCKER"
+    ]
+  },
+  "evidence_accumulation_monotonic": true,
+  "false_ready_transition_count": 0,
+  "false_pass_promotion_count": 0,
+  "superseded_fixture_isolation": "PASS",
+  "blocker_propagation": "PASS_A3_TO_A5_TO_A6",
+  "pointer_freshness_findings": [
+    "A3_WAVE3_LATEST_POINTER_REMAINS_PASS_WHILE_WAVE4_TERMINAL_REPORT_IS_BLOCKED; CONSUMERS_MUST_BIND_WAVE4_TERMINAL_DIRECTLY UNTIL POINTER_REFRESH",
+    "A5_LATEST_POINTER_CORRECTLY_FAILS_CLOSED",
+    "A6_LATEST_POINTER_CORRECTLY_FAILS_CLOSED"
+  ],
+  "decision": "PASS_WITH_EXACT_POINTER_FRESHNESS_FINDING",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
