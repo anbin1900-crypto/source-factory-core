@@ -1,9 +1,9 @@
 {
   "schema_version": "LATEST_YOLLA_GROUP_ROLE_ASSIGNMENT_POINTER_V1",
-  "status": "GROUP_COMMAND_STRUCTURE_ASSIGNED",
-  "terminal": "YOLLA_GROUP_ROLE_ASSIGNMENT_COMPLETE",
-  "control_pr": 17,
-  "control_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "status": "GROUP_COMMANDERS_AND_CHILD_CONTROLS_ACTIVE",
+  "terminal": "YOLLA_GROUP_ROLE_ASSIGNMENT_AND_CONTROL_PRS_COMPLETE",
+  "upper_control_pr": 17,
+  "upper_control_branch": "integration/a0-yolla-workspace-automation-successor-v1",
   "documents": [
     {
       "path": "yolla-panel-v1/a0-successor-control/GROUP_COMMAND_STRUCTURE_V1.md",
@@ -16,16 +16,58 @@
     {
       "path": "yolla-panel-v1/a0-successor-control/GROUP_HANDOFF_CONTRACT_MATRIX_V1.json",
       "commit": "7c2f7b1bd1018893d3d46f899ce13b215fdbed70"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/GROUP_BOOTSTRAP_PROMPTS_V1.md",
+      "commit": "951f7f44bf557c7773bd7f310c8079ae7f4947c1"
     }
   ],
-  "commanders": {
-    "A-0": "AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
-    "A-2": "GENERIC_SITE_ANALYZER_ADAPTER_FACTORY_COMMANDER",
-    "B-1": "COLLECTION_DB_MATERIALIZATION_COMMANDER",
-    "C-1": "SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
-    "D-1": "KNOWLEDGE_DB_AUTHORITY_COMMANDER"
+  "controls": {
+    "A-0": {
+      "role": "AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+      "pr": 17,
+      "branch": "integration/a0-yolla-workspace-automation-successor-v1"
+    },
+    "A-2": {
+      "role": "GENERIC_SITE_ANALYZER_ADAPTER_FACTORY_COMMANDER",
+      "pr": 18,
+      "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+      "head": "66e43a914929949d1c8d106014fe08bca00d8eaa"
+    },
+    "B-1": {
+      "role": "COLLECTION_DB_MATERIALIZATION_COMMANDER",
+      "pr": 19,
+      "branch": "integration/b1-collector-db-materialization-v1",
+      "head": "2ea38ddeff0ca7c19b3338a57c42167050d8a293"
+    },
+    "C-1": {
+      "role": "SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+      "pr": 20,
+      "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+      "head": "7deea8d5e873b9d629c4f6fa11ba2084ccfad4a1"
+    },
+    "D-1": {
+      "role": "KNOWLEDGE_DB_AUTHORITY_COMMANDER",
+      "source_factory_pr": 21,
+      "source_factory_branch": "integration/d1-knowledge-db-intake-authority-v1",
+      "source_factory_head": "65bf71a0b6b766dea914fcd2decfad4f9218e8a7",
+      "knowledge_db_repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "knowledge_db_control_pr": 188
+    }
   },
-  "next_action": "CREATE_CHILD_CONTROL_BRANCHES_AND_DRAFT_PRS",
+  "first_directives": {
+    "A-2": "A0-TO-A2-GENERIC-ANALYZER-ADAPTER-FACTORY-SHELL-V1-20260803-001",
+    "B-1": "A0-TO-B1-GENERIC-COLLECTOR-MATERIALIZATION-SHELL-V1-20260803-001",
+    "C-1": "A0-TO-C1-SEMANTIC-KNOWLEDGE-DOMAIN-AI-SHELL-V1-20260803-001",
+    "D-1": "A0-TO-D1-KNOWLEDGE-DB-INTAKE-CONTRACT-V1-20260803-001"
+  },
+  "next_action": "START_GROUP_COMMANDER_CONVERSATIONS_AND_REQUIRE_START_REPORTS",
+  "required_start_reports": [
+    "A2_START_REPORT_V1.json",
+    "B1_START_REPORT_V1.json",
+    "C1_START_REPORT_V1.json",
+    "D1_INTEGRATION_START_REPORT_V1.json"
+  ],
   "production": false,
   "ready": false,
   "merge": false,
