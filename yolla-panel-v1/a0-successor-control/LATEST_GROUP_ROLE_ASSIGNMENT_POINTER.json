@@ -1,0 +1,33 @@
+{
+  "schema_version": "LATEST_YOLLA_GROUP_ROLE_ASSIGNMENT_POINTER_V1",
+  "status": "GROUP_COMMAND_STRUCTURE_ASSIGNED",
+  "terminal": "YOLLA_GROUP_ROLE_ASSIGNMENT_COMPLETE",
+  "control_pr": 17,
+  "control_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "documents": [
+    {
+      "path": "yolla-panel-v1/a0-successor-control/GROUP_COMMAND_STRUCTURE_V1.md",
+      "commit": "fc0581403cc773737d0acbf1ff28373f5df64eb5"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/GROUP_ROLE_ASSIGNMENT_LEDGER_V1.json",
+      "commit": "1419f28b5098d1e61a810a6b84f2bb11e0d0196e"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/GROUP_HANDOFF_CONTRACT_MATRIX_V1.json",
+      "commit": "7c2f7b1bd1018893d3d46f899ce13b215fdbed70"
+    }
+  ],
+  "commanders": {
+    "A-0": "AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+    "A-2": "GENERIC_SITE_ANALYZER_ADAPTER_FACTORY_COMMANDER",
+    "B-1": "COLLECTION_DB_MATERIALIZATION_COMMANDER",
+    "C-1": "SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+    "D-1": "KNOWLEDGE_DB_AUTHORITY_COMMANDER"
+  },
+  "next_action": "CREATE_CHILD_CONTROL_BRANCHES_AND_DRAFT_PRS",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "assigned_at": "2026-08-03T19:09:00+09:00"
+}
