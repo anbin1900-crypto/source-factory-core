@@ -1,0 +1,25 @@
+{
+  "schema_version": "LATEST_A0_CROSS_GROUP_DATA_PIPELINE_DIRECTIVE_POINTER_V1",
+  "status": "ACTIVE_NON_SUPERSEDING_CROSS_GROUP_COORDINATION",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "directive_path": "yolla-panel-v1/a0-successor-control/directives/A0_CROSS_GROUP_SITE_ANALYSIS_EXTRACTION_TRANSFORM_DB_ALIGNMENT_BATCH_V1.json",
+  "directive_commit": "8e37264f1e865d3e15e452ec095a49f7d2c03134",
+  "ownership_chain": {
+    "A-2": "GENERIC_SITE_ANALYZER_AND_VERIFIED_ADAPTER",
+    "B-1": "VERIFIED_ADAPTER_DATA_EXTRACTION_AND_NORMALIZATION",
+    "C-1": "D_ALIGNED_TRANSFORMATION_AND_KNOWLEDGE_CANDIDATE",
+    "D-1": "CANONICAL_DB_SCHEMA_MAPPING_AND_ACCEPTANCE"
+  },
+  "existing_directives_superseded": false,
+  "fixture_first": true,
+  "actual_bulk_collection_authorized": false,
+  "production_db_write_authorized": false,
+  "current_gate": "A2_B1_C1_D1_PUBLISH_NON_CONFLICTING_CONTRACT_OUTPUTS_AND_FIXTURE_TERMINALS",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-04T04:10:00+09:00"
+}
