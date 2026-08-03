@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "B1-B3-EXECUTION-TASK-V1-20260804-001",
+  "registered_at_kst": "2026-08-04T05:11:00+09:00",
+  "worker": "B-3",
+  "control_pr": 39,
+  "parent_directive": "B1-TO-B3-EXTRACTOR-RETRY-RESUME-INCREMENTAL-V1-20260804-001",
+  "parent_directive_superseded": false,
+  "mode": "FIXTURE_FIRST_IMPLEMENTATION",
+  "objective": "Implement pagination, retry classification, crash-safe resume, incremental cursor and monotonic collection progress without actual site calls.",
+  "implementation_order": [
+    "COMMIT_B3_START_REPORT_AND_LATEST_POINTER",
+    "FREEZE_PAGINATION_AND_RESUME_STATE_CONTRACTS",
+    "IMPLEMENT_FIXTURE_PAGINATION_LOOP",
+    "IMPLEMENT_RETRYABLE_NONRETRYABLE_CLASSIFIER",
+    "IMPLEMENT_APPEND_ONLY_RESUME_LEDGER",
+    "IMPLEMENT_INCREMENTAL_CURSOR_AND_DEDUP_KEY",
+    "IMPLEMENT_MONOTONIC_COLLECTION_PROGRESS_EVENT",
+    "RUN_CRASH_RESUME_AND_DUPLICATE_SUPPRESSION_TESTS",
+    "COMMIT_B3_FINAL_REPORT_AND_LATEST_POINTER",
+    "POST_TERMINAL_TO_PR39_AND_PR19"
+  ],
+  "required_paths": [
+    "contracts/PAGINATION_STATE_V1.json",
+    "contracts/RETRY_POLICY_STATE_V1.json",
+    "contracts/RESUME_LEDGER_V1.json",
+    "contracts/INCREMENTAL_CURSOR_V1.json",
+    "contracts/COLLECTION_PROGRESS_EVENT_V1.json",
+    "src/pagination_loop.py",
+    "src/retry_resume_engine.py",
+    "src/incremental_cursor.py",
+    "tests/test_extractor_retry_resume.py",
+    "B3_START_REPORT_V1.json",
+    "B3_TEST_RESULTS_V1.json",
+    "B3_FINAL_REPORT_V1.json",
+    "LATEST_B3_REPORT_POINTER.json"
+  ],
+  "minimum_test_cases": 20,
+  "required_test_categories": [
+    "MULTI_PAGE_FIXTURE_COMPLETE",
+    "LAST_PAGE_TERMINATES",
+    "DUPLICATE_PAGE_SUPPRESSED",
+    "RETRYABLE_ERROR_RETRIED",
+    "NONRETRYABLE_ERROR_FAILS_CLOSED",
+    "RETRY_EXHAUSTION_RECORDED",
+    "CRASH_AFTER_PAGE_RESUMES_FROM_LAST_COMMITTED_CURSOR",
+    "CURSOR_REGRESSION_REJECTED",
+    "INCREMENTAL_SECOND_RUN_ONLY_NEW_RECORDS",
+    "PROGRESS_NEVER_DECREASES",
+    "IDENTICAL_REQUEST_SECOND_EXECUTION_DELTA_ZERO",
+    "ZERO_NETWORK_CALLS"
+  ],
+  "inputs": {
+    "immediate": "FIXTURE_ADAPTER_PACKAGE_AND_FIXTURE_RESPONSES",
+    "later_rebind": "B2_VERIFIED_ADAPTER_PACKAGE_CONSUMER_CONTRACT_AND_A2_VERIFIED_ADAPTER_PACKAGE_V1"
+  },
+  "handoff_to": ["B-4", "B-5", "B-6", "B-1"],
+  "terminal": "B3_EXTRACTOR_RETRY_RESUME_READY_OR_EXACT_BLOCKER",
+  "boundaries": {
+    "unverified_adapter_actual_use": false,
+    "actual_site_call": false,
+    "actual_bulk_collection": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
