@@ -1,0 +1,32 @@
+{
+  "schema_version": "LATEST_A0_V53_STANDALONE_INSTALLER_POINTER_V1",
+  "status": "AI_YOLLA_PANEL_WORKSPACE_V53_STANDALONE_INSTALLER_BUILD_PASS_TARGET_PC_RUN_PENDING",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "product_identity": "AI_YOLLA_PANEL_WORKSPACE_RUNTIME",
+  "project_goal_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "pr": 242,
+    "pointer": "COMMAND_CENTER/GOVERNANCE/AI_YOLLA_V2/LATEST_AI_YOLLA_ACTIVE_AUTHORITY_POINTER_V2.json",
+    "first_vertical_product": "YOLLA_REAL_ESTATE_MINIMUM_USABLE_SERVICE"
+  },
+  "build_report_path": "yolla-panel-v1/a0-successor-control/reports/A0_V53_STANDALONE_INSTALLER_BUILD_REPORT_V1.json",
+  "build_report_commit": "2676ff8f59e7815a7341a42b606b34c19fa8d2c0",
+  "installer_file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V53_CHROME_GROUPS_DYNAMIC_WORKERS.bat",
+  "installer_sha256": "a048ae87f69b17d986781aeaa5e992c9d7b587a62bb1e63af91a1d875b218f66",
+  "installer_size_bytes": 66851,
+  "embedded_payload_sha256": "cf6c1c7a2160e220149a9e3c2a07f67068f02db20d1d39f7dcd0f4b91e275566",
+  "target_pc": {
+    "git_checkout_required": false,
+    "preferred_active_core": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038",
+    "runtime_target": "<ACTIVE_CORE>\\yolla_workspace_v5_2",
+    "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_3.bat"
+  },
+  "next_action": "RUN_STANDALONE_INSTALLER_AS_ADMINISTRATOR_AND_RETURN_SCREENSHOT_OR_V53_INSTALL_RECEIPT",
+  "target_pc_execution_observed": false,
+  "target_pc_visual_acceptance_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-03T22:44:00+09:00"
+}
