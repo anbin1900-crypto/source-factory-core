@@ -1,0 +1,50 @@
+{
+  "schema_version": "A0_V56_ALL_WORKERS_REACHABLE_BUILD_REPORT_V1",
+  "report_type": "BUILD_AND_STATIC_TEST",
+  "owner": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+  "product_identity": "AI_YOLLA_PANEL_WORKSPACE_RUNTIME",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "source_parent_head": "ffd42e41f9cd7e9c495fdab6728b915ef7a64717",
+  "user_reported_defect": "B-6_AND_LOWER_WORKERS_NOT_REACHABLE_THEREFORE_COMMAND_CANNOT_BE_DISPATCHED",
+  "root_cause": "NESTED_MAX_HEIGHT_AND_NESTED_OVERFLOW_CLIPPED_WORKER_LIST",
+  "correction": {
+    "single_outer_vertical_scroll": true,
+    "nested_worker_scroll_removed": true,
+    "group_body_max_height_removed": true,
+    "worker_list_max_height_removed": true,
+    "visible_scrollbar": true,
+    "selected_worker_scroll_into_view": true,
+    "expanded_group_scroll_into_view": true,
+    "worker_menu_operational": true
+  },
+  "installer": {
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V56_ALL_WORKERS_VISIBLE.bat",
+    "size_bytes": 72365,
+    "sha256": "e04f275447e3dd9daa35c7e17580647cb4b849d047a3df3f96b82b7840be7f58",
+    "embedded_payload_sha256": "045a4540ce18ae91aadd53a7f41eed30a6bf292c440371d2edb6a8180484e08c",
+    "standalone": true,
+    "git_required": false,
+    "launcher_after_install": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_6.bat"
+  },
+  "tests": {
+    "command_cycle_contract": "PASS",
+    "v56_reachability_contract": "PASS_20",
+    "b6_present": true,
+    "all_workers_reachable_by_single_outer_scroll": true,
+    "nested_clipping_removed": true,
+    "dynamic_group_worker_state_model": "PASS_18",
+    "target_pc_execution": "NOT_YET_RUN",
+    "target_pc_visual_acceptance": "NOT_YET_OBSERVED"
+  },
+  "supersession": {
+    "v55_installer_status": "SUPERSEDED_DO_NOT_RUN",
+    "reason": "B6_AND_LOWER_WORKERS_NOT_REACHABLE"
+  },
+  "status": "BUILD_PASS_TARGET_PC_EXECUTION_PENDING",
+  "terminal": "A0_V56_ALL_WORKERS_REACHABLE_BUILD_PASS",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "built_at": "2026-08-03T23:43:00+09:00"
+}
