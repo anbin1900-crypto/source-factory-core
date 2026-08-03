@@ -1,16 +1,17 @@
 {
   "schema_version": "LATEST_A0_SUCCESSOR_REPORT_POINTER_V1",
-  "status": "AWAITING_A0_FIRST_START_REPORT",
+  "status": "A0_V52_TARGET_PC_ACCEPTANCE_STARTED",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "latest_report_path": null,
-  "latest_report_commit": null,
-  "latest_report_type": null,
-  "latest_report_status": null,
-  "required_next_report": "yolla-panel-v1/a0-successor-control/reports/A0_START_REPORT_V1.json",
+  "latest_report_path": "yolla-panel-v1/a0-successor-control/reports/A0_START_REPORT_V1.json",
+  "latest_report_commit": "401ceb79f231baa898b1be2d1f1cdd245d0e598c",
+  "latest_report_type": "START",
+  "latest_report_status": "STARTED",
+  "required_next_report": "yolla-panel-v1/a0-successor-control/reports/A0_PROGRESS_REPORT_V1.json",
   "required_next_task": "A0-P0-V52-TARGET-PC-ACCEPTANCE",
+  "cycle_id": "A0-V52-TARGET-PC-ACCEPTANCE-20260803-001",
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at": "2026-08-03T18:50:00+09:00"
+  "updated_at": "2026-08-03T19:11:10+09:00"
 }
