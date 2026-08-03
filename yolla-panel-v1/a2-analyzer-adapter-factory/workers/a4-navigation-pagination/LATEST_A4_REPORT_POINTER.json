@@ -3,11 +3,11 @@
   "worker": "A-4",
   "directive_id": "A2-TO-A4-NAVIGATION-PAGINATION-EXECUTION-V3-20260804-001",
   "status": "PASS",
-  "updated_at_kst": "2026-08-04T05:35:00+09:00",
+  "updated_at_kst": "2026-08-04T05:37:00+09:00",
   "repository": "anbin1900-crypto/source-factory-core",
   "pr": 23,
   "branch": "worker/a4-navigation-pagination-v1",
-  "published_head_before_pointer": "bba9a9b89148f814f9448c214337b8c7c24777b8",
+  "published_head_before_pointer": "3a881660336375895a69e3776243f7761ba1b1d9",
   "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER",
   "start_report": {
     "commit": "3228d0c68be60f7adeb676c660f97096b4d39eee",
@@ -19,13 +19,20 @@
   },
   "terminal_report": {
     "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A4_TERMINAL_REPORT_V1.json",
-    "commit": "422cc539f74367a83d7a136e8f6583e881a6200a",
-    "blob": "0242d9bf08f64fb12f9538c929587a0a82058b19"
+    "commit": "5530cba8f0dc7b6496308aba98e9f91155438e04",
+    "blob": "bf67758703708ec28497b8b3fa626051baaa2147"
   },
   "final_report": {
     "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A4_FINAL_REPORT_V1.json",
-    "commit": "bba9a9b89148f814f9448c214337b8c7c24777b8",
-    "blob": "e43754b25f48c123153dbf2cf6200d28ae289e9f"
+    "commit": "3a881660336375895a69e3776243f7761ba1b1d9",
+    "blob": "c30644dc558a5348fceaae514801161eea81fa8f"
+  },
+  "a3_late_binding": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A3_TRACE_LATE_BINDING_V1.json",
+    "commit": "428c2000aa7241db5eeffe361451fd5cdedb8e23",
+    "blob": "371ef6d890083f7283c77010d0d6d2d841066a41",
+    "a3_head": "a5632d6dbdddd956d478b593ffe144ff8a6241cf",
+    "a3_fixture_trace_blob": "cd29511601f27a128ff88e2e3f265c116d99e4a0"
   },
   "terminal": "A4_NAVIGATION_PAGINATION_CONTRACT_READY",
   "fixture_replay_count": 2,
