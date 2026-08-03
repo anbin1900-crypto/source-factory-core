@@ -1,0 +1,123 @@
+{
+  "schema_version": "SITE_NAVIGATION_GRAPH_V1",
+  "graph_id": "A4-FIXTURE-NAVER-NAVIGATION-GRAPH-V1",
+  "fixture_id": "A4-NAVER-REAL-ESTATE-NAVIGATION-20260804-001",
+  "directed": true,
+  "root_node_id": "home-001",
+  "nodes": [
+    {
+      "node_id": "home-001",
+      "canonical_url": "fixture://naver-real-estate/home",
+      "page_type": "HOME",
+      "content_role": "HOME",
+      "evidence_pointer": "fixtures/NAVER_REAL_ESTATE_NAVIGATION_FIXTURE_V1.json#/snapshots/home-001",
+      "required_state": {"fixture_id": "A4-NAVER-REAL-ESTATE-NAVIGATION-20260804-001", "live_site_call_count": 0}
+    },
+    {
+      "node_id": "search-001",
+      "canonical_url": "fixture://naver-real-estate/search?query=seoul",
+      "page_type": "SEARCH",
+      "content_role": "SEARCH",
+      "evidence_pointer": "fixtures/NAVER_REAL_ESTATE_NAVIGATION_FIXTURE_V1.json#/snapshots/search-001",
+      "required_state": {"fixture_id": "A4-NAVER-REAL-ESTATE-NAVIGATION-20260804-001", "live_site_call_count": 0}
+    },
+    {
+      "node_id": "region-001",
+      "canonical_url": "fixture://naver-real-estate/region?code=seoul",
+      "page_type": "REGION",
+      "content_role": "REGION",
+      "evidence_pointer": "fixtures/NAVER_REAL_ESTATE_NAVIGATION_FIXTURE_V1.json#/snapshots/region-001",
+      "required_state": {"fixture_id": "A4-NAVER-REAL-ESTATE-NAVIGATION-20260804-001", "live_site_call_count": 0}
+    },
+    {
+      "node_id": "map-001",
+      "canonical_url": "fixture://naver-real-estate/map?bbox=126.90%2C37.50%2C127.10%2C37.60&zoom=14",
+      "page_type": "MAP",
+      "content_role": "MAP",
+      "evidence_pointer": "fixtures/NAVER_REAL_ESTATE_NAVIGATION_FIXTURE_V1.json#/snapshots/map-001",
+      "required_state": {"fixture_id": "A4-NAVER-REAL-ESTATE-NAVIGATION-20260804-001", "live_site_call_count": 0}
+    },
+    {
+      "node_id": "list-page-1",
+      "canonical_url": "fixture://naver-real-estate/list?page=1&region=seoul&sort=recent",
+      "page_type": "LIST",
+      "content_role": "LIST",
+      "evidence_pointer": "fixtures/NAVER_REAL_ESTATE_NAVIGATION_FIXTURE_V1.json#/snapshots/list-page-1",
+      "required_state": {"fixture_id": "A4-NAVER-REAL-ESTATE-NAVIGATION-20260804-001", "live_site_call_count": 0}
+    },
+    {
+      "node_id": "detail-1001",
+      "canonical_url": "fixture://naver-real-estate/detail?id=listing-1001",
+      "page_type": "DETAIL",
+      "content_role": "DETAIL",
+      "evidence_pointer": "fixtures/NAVER_REAL_ESTATE_NAVIGATION_FIXTURE_V1.json#/snapshots/detail-1001",
+      "required_state": {"fixture_id": "A4-NAVER-REAL-ESTATE-NAVIGATION-20260804-001", "live_site_call_count": 0}
+    },
+    {
+      "node_id": "list-page-2",
+      "canonical_url": "fixture://naver-real-estate/list?page=2&region=seoul&sort=recent",
+      "page_type": "PAGINATION",
+      "content_role": "LIST",
+      "evidence_pointer": "fixtures/NAVER_REAL_ESTATE_NAVIGATION_FIXTURE_V1.json#/snapshots/list-page-2",
+      "required_state": {"fixture_id": "A4-NAVER-REAL-ESTATE-NAVIGATION-20260804-001", "live_site_call_count": 0}
+    },
+    {
+      "node_id": "detail-1003",
+      "canonical_url": "fixture://naver-real-estate/detail?id=listing-1003",
+      "page_type": "DETAIL",
+      "content_role": "DETAIL",
+      "evidence_pointer": "fixtures/NAVER_REAL_ESTATE_NAVIGATION_FIXTURE_V1.json#/snapshots/detail-1003",
+      "required_state": {"fixture_id": "A4-NAVER-REAL-ESTATE-NAVIGATION-20260804-001", "live_site_call_count": 0}
+    },
+    {
+      "node_id": "list-page-3-empty",
+      "canonical_url": "fixture://naver-real-estate/list?page=3&region=seoul&sort=recent",
+      "page_type": "PAGINATION",
+      "content_role": "LIST",
+      "evidence_pointer": "fixtures/NAVER_REAL_ESTATE_NAVIGATION_FIXTURE_V1.json#/snapshots/list-page-3-empty",
+      "required_state": {"fixture_id": "A4-NAVER-REAL-ESTATE-NAVIGATION-20260804-001", "live_site_call_count": 0}
+    },
+    {
+      "node_id": "login-required-001",
+      "canonical_url": "fixture://naver-real-estate/login-required",
+      "page_type": "LOGIN_REQUIRED",
+      "content_role": "LOGIN_REQUIRED",
+      "evidence_pointer": "fixtures/NAVER_REAL_ESTATE_NAVIGATION_FIXTURE_V1.json#/snapshots/login-required-001",
+      "required_state": {"fixture_id": "A4-NAVER-REAL-ESTATE-NAVIGATION-20260804-001", "live_site_call_count": 0}
+    },
+    {
+      "node_id": "error-001",
+      "canonical_url": "fixture://naver-real-estate/error?code=FIXTURE_RATE_LIMIT",
+      "page_type": "ERROR",
+      "content_role": "ERROR",
+      "evidence_pointer": "fixtures/NAVER_REAL_ESTATE_NAVIGATION_FIXTURE_V1.json#/snapshots/error-001",
+      "required_state": {"fixture_id": "A4-NAVER-REAL-ESTATE-NAVIGATION-20260804-001", "live_site_call_count": 0}
+    },
+    {
+      "node_id": "unknown-001",
+      "canonical_url": "fixture://naver-real-estate/unsupported",
+      "page_type": "UNKNOWN",
+      "content_role": "UNKNOWN",
+      "evidence_pointer": "fixtures/NAVER_REAL_ESTATE_NAVIGATION_FIXTURE_V1.json#/snapshots/unknown-001",
+      "required_state": {"fixture_id": "A4-NAVER-REAL-ESTATE-NAVIGATION-20260804-001", "live_site_call_count": 0}
+    }
+  ],
+  "edges": [
+    {"edge_id": "home-001->search-001:SUBMIT_SEARCH", "from": "home-001", "to": "search-001", "trigger": "SUBMIT_SEARCH", "allow_revisit": false, "scope_effect": "ADVANCE_OR_TRANSITION"},
+    {"edge_id": "search-001->region-001:SELECT_REGION", "from": "search-001", "to": "region-001", "trigger": "SELECT_REGION", "allow_revisit": false, "scope_effect": "ADVANCE_OR_TRANSITION"},
+    {"edge_id": "region-001->map-001:OPEN_MAP", "from": "region-001", "to": "map-001", "trigger": "OPEN_MAP", "allow_revisit": false, "scope_effect": "ADVANCE_OR_TRANSITION"},
+    {"edge_id": "map-001->list-page-1:OPEN_LIST", "from": "map-001", "to": "list-page-1", "trigger": "OPEN_LIST", "allow_revisit": false, "scope_effect": "ADVANCE_OR_TRANSITION"},
+    {"edge_id": "list-page-1->detail-1001:OPEN_DETAIL", "from": "list-page-1", "to": "detail-1001", "trigger": "OPEN_DETAIL", "allow_revisit": false, "scope_effect": "ADVANCE_OR_TRANSITION"},
+    {"edge_id": "detail-1001->list-page-1:BACK_TO_LIST", "from": "detail-1001", "to": "list-page-1", "trigger": "BACK_TO_LIST", "allow_revisit": true, "scope_effect": "DETAIL_TRANSIENT"},
+    {"edge_id": "list-page-1->list-page-2:NEXT_PAGE", "from": "list-page-1", "to": "list-page-2", "trigger": "NEXT_PAGE", "allow_revisit": false, "scope_effect": "ADVANCE_OR_TRANSITION"},
+    {"edge_id": "list-page-2->detail-1003:OPEN_DETAIL", "from": "list-page-2", "to": "detail-1003", "trigger": "OPEN_DETAIL", "allow_revisit": false, "scope_effect": "ADVANCE_OR_TRANSITION"},
+    {"edge_id": "detail-1003->list-page-2:BACK_TO_LIST", "from": "detail-1003", "to": "list-page-2", "trigger": "BACK_TO_LIST", "allow_revisit": true, "scope_effect": "DETAIL_TRANSIENT"},
+    {"edge_id": "list-page-2->list-page-3-empty:NEXT_PAGE", "from": "list-page-2", "to": "list-page-3-empty", "trigger": "NEXT_PAGE", "allow_revisit": false, "scope_effect": "ADVANCE_OR_TRANSITION"},
+    {"edge_id": "home-001->login-required-001:SESSION_MISSING", "from": "home-001", "to": "login-required-001", "trigger": "SESSION_MISSING", "allow_revisit": false, "scope_effect": "STOP_AUTH_REQUIRED"},
+    {"edge_id": "search-001->error-001:FIXTURE_ERROR", "from": "search-001", "to": "error-001", "trigger": "FIXTURE_ERROR", "allow_revisit": false, "scope_effect": "STOP_ERROR"},
+    {"edge_id": "search-001->unknown-001:UNSUPPORTED_SURFACE", "from": "search-001", "to": "unknown-001", "trigger": "UNSUPPORTED_SURFACE", "allow_revisit": false, "scope_effect": "BLOCK_OUT_OF_SCOPE"}
+  ],
+  "allowed_page_types": ["DETAIL", "ERROR", "HOME", "LIST", "LOGIN_REQUIRED", "MAP", "PAGINATION", "REGION", "SEARCH"],
+  "blocked_page_types": ["UNKNOWN"],
+  "live_site_call_count": 0
+}
