@@ -1,0 +1,67 @@
+{
+  "schema_version": "LATEST_A0_SUCCESSOR_HANDOFF_POINTER_V1",
+  "status": "A0_SUCCESSOR_CONTROL_READY",
+  "terminal": "A0_SUCCESSOR_HANDOFF_PACKAGE_COMPLETE",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "upper_control_pr": 14,
+  "successor_control_pr": 17,
+  "upper_branch": "integration/a1-yolla-panel-connection-frontier-v1",
+  "successor_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "successor_base_commit": "124367a50a72505516666b4f427bfeda325ba3d3",
+  "documents": [
+    {
+      "path": "yolla-panel-v1/a0-successor-control/A0_SUCCESSOR_ROLE_CHARTER_V1.md",
+      "commit": "689436932385ef321312df6523045e2af3b042d2"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/A0_CURRENT_OPERATIONAL_HANDOFF_V1.json",
+      "commit": "0d5ac5fcc4e241b2ff606b5a03f17d3ef28c6ebb"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V1.json",
+      "commit": "ae815d171013407a446d6aff0aaa83b1a0831278"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/A0_REPORTING_AND_HANDOFF_CONTRACT_V1.json",
+      "commit": "62f4ac229ccc6e4e55da6fc548d40eb62d0866d0"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/A0_BOOTSTRAP_PROMPT_V1.md",
+      "commit": "75530c1dc22cecc926ea4a9cee3ec40e1eebccec"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_SUCCESSOR_REPORT_POINTER.json",
+      "commit": "424a4429fbbdaefe33e4a38cab5bfcc31dd42ebd"
+    }
+  ],
+  "read_order": [
+    "LATEST_A0_SUCCESSOR_HANDOFF_POINTER.json",
+    "A0_SUCCESSOR_ROLE_CHARTER_V1.md",
+    "A0_CURRENT_OPERATIONAL_HANDOFF_V1.json",
+    "A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V1.json",
+    "A0_REPORTING_AND_HANDOFF_CONTRACT_V1.json",
+    "LATEST_A0_SUCCESSOR_REPORT_POINTER.json"
+  ],
+  "runtime_baseline": "YOLLA_WORKSPACE_V5_CLEAN_RUNTIME",
+  "target_pc_confirmed": {
+    "v5_visual_acceptance": "PASS",
+    "seat_count": 50,
+    "group_count": 7,
+    "chatgpt_browser_view": "PASS",
+    "project_context_binding": "PASS",
+    "white_screen_regression": "RESOLVED"
+  },
+  "not_yet_confirmed": [
+    "V51_ACTUAL_COMMAND_CYCLE_COMPLETION",
+    "V52_FIXED_LOGIN_PROFILE",
+    "V52_DUAL_BROWSER_VIEW",
+    "V52_ANALYZER_ARTIFACT"
+  ],
+  "next_task": "A0-P0-V52-TARGET-PC-ACCEPTANCE",
+  "next_required_report": "A0_START_REPORT_V1.json",
+  "bootstrap_prompt": "yolla-panel-v1/a0-successor-control/A0_BOOTSTRAP_PROMPT_V1.md",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "prepared_at": "2026-08-03T18:50:00+09:00"
+}
