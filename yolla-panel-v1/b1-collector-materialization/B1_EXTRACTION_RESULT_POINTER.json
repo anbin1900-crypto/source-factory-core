@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "pointer_id": "B1-EXTRACTION-RESULT-POINTER-V1",
+  "updated_at_kst": "2026-08-04T04:44:00+09:00",
+  "control_pr": 19,
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "required_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
+  "status": "WAITING_B2_TO_B5_AND_B6_TERMINALS",
+  "worker_assignment_pointer": "yolla-panel-v1/b1-collector-materialization/B1_WORKER_ASSIGNMENT_POINTER.json",
+  "required_outputs": {
+    "RAW_ARTIFACT_MANIFEST_V1": null,
+    "SOURCE_RECORD_ENVELOPE_V1": null,
+    "NORMALIZED_DATASET_V1": null,
+    "EXTRACTION_RECEIPT_V1": null
+  },
+  "worker_terminals_received": 0,
+  "worker_terminals_required": 5,
+  "a2_verified_adapter_package_v1_published": false,
+  "execution_scope": "FIXTURE_FIRST_ONLY",
+  "actual_site_extraction": false,
+  "exact_blocker": "A2_VERIFIED_ADAPTER_PACKAGE_V1_NOT_YET_PUBLISHED_FOR_ACTUAL_SITE_EXTRACTION",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
