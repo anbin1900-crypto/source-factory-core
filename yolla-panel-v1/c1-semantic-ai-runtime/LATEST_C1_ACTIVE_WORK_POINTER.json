@@ -1,41 +1,89 @@
 {
-  "schema_version": "LATEST_C1_ACTIVE_WORK_POINTER_V1",
-  "pointer_id": "LATEST-C1-SEMANTIC-AI-ACTIVE-WORK-20260803-001",
-  "registered_at_kst": "2026-08-03 19:36 KST",
+  "schema_version": "LATEST_C1_ACTIVE_WORK_POINTER_V2",
+  "pointer_id": "LATEST-C1-SEMANTIC-AI-ACTIVE-WORK-20260804-001",
+  "registered_at_kst": "2026-08-04 04:44 KST",
   "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
   "control_pr": 20,
   "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
-  "directive_id": "A0-TO-C1-SEMANTIC-KNOWLEDGE-DOMAIN-AI-SHELL-V1-20260803-001",
-  "start_report": {
-    "path": "yolla-panel-v1/c1-semantic-ai-runtime/reports/C1_START_REPORT_V1.json",
-    "commit": "a85544665e1c546fcbd82ac8640173af6429579c",
-    "blob": "dc5f0ffac21b84e718d87865485711bff71d4768"
+  "active_directives": [
+    {
+      "directive_id": "A0-TO-C1-SEMANTIC-KNOWLEDGE-DOMAIN-AI-SHELL-V1-20260803-001",
+      "superseded": false,
+      "mode": "FIXTURE_FIRST_KNOWLEDGE_CANDIDATE_AND_AI_SEAT",
+      "status": "ACTIVE"
+    },
+    {
+      "directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+      "directive_comment": 5170768957,
+      "supersedes_existing_directive": false,
+      "mode": "D_ALIGNED_TRANSFORMER_ADDENDUM",
+      "status": "EXACT_BLOCKER_WAITING_AUTHORITATIVE_INPUTS"
+    }
+  ],
+  "semantic_ai_mission": {
+    "start_report": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/reports/C1_START_REPORT_V1.json",
+      "commit": "a85544665e1c546fcbd82ac8640173af6429579c",
+      "blob": "dc5f0ffac21b84e718d87865485711bff71d4768"
+    },
+    "worker_lane_matrix": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/directives/C1_WORKER_LANE_ASSIGNMENT_MATRIX_V1.json",
+      "commit": "8e2b023a73e38e7e183cdf12a6a7d54d97fd4617",
+      "blob": "8d9001787b44eeafd2585fc5252ccc1c50fdaf6e"
+    },
+    "active_wave": "C1_SEMANTIC_AI_WAVE_1",
+    "acceptance_gates": {
+      "completed": 0,
+      "total": 11,
+      "progress_percent": 0
+    }
   },
-  "worker_lane_matrix": {
-    "path": "yolla-panel-v1/c1-semantic-ai-runtime/directives/C1_WORKER_LANE_ASSIGNMENT_MATRIX_V1.json",
-    "commit": "8e2b023a73e38e7e183cdf12a6a7d54d97fd4617",
-    "blob": "8d9001787b44eeafd2585fc5252ccc1c50fdaf6e"
-  },
-  "active_wave": "C1_SEMANTIC_AI_WAVE_1",
-  "worker_count": 5,
-  "acceptance_gates": {
-    "completed": 0,
-    "total": 11,
-    "progress_percent": 0
+  "d_aligned_transformer": {
+    "worker_assignment_pointer": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_WORKER_ASSIGNMENT_POINTER.json",
+      "commit": "5099e2e300426686ff2717c6994aed3776d3fed0",
+      "blob": "34a0fdb7b3acb90ba086a8c1a8e460426e2128a6"
+    },
+    "transformation_result_pointer": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_TRANSFORMATION_RESULT_POINTER.json",
+      "commit": "989d6b4dc6895520281cc1e27621c0b84e92805d",
+      "blob": "c4887575dc259e7bd7ea4f70a6ab9a6a93fff3ec"
+    },
+    "c1_to_d1_handoff_pointer": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_TO_D1_HANDOFF_POINTER.json",
+      "commit": "cf8a80e293dd0c91b0b84793f379a48d9239fca2",
+      "blob": "4bfef9e17497f91a239816f8ee17ab704629b84a"
+    },
+    "worker_count": 5,
+    "owned_root_collision_count": 0,
+    "contract_preparation": "PASS",
+    "actual_transformation": "BLOCKED",
+    "terminal": "C1_D_ALIGNED_TRANSFORMER_READY_OR_EXACT_BLOCKER",
+    "terminal_decision": "EXACT_BLOCKER",
+    "first_blocker": "D1_REQUIRED_SCHEMA_MAPPING_VALIDATION_CONTRACT_SET_NOT_PUBLISHED",
+    "additional_blocker": "B1_NORMALIZED_DATASET_OR_RAW_ARTIFACT_MANIFEST_NOT_PUBLISHED"
   },
   "dependency_state": {
-    "B_VERIFIED_INPUT": "NOT_REQUIRED_FOR_FIXTURE_FIRST_START",
+    "B1_NORMALIZED_DATASET_V1": "NOT_PUBLISHED",
+    "B1_RAW_ARTIFACT_MANIFEST_V1": "NOT_PUBLISHED",
+    "D1_D_CANONICAL_SCHEMA_PROFILE_V1": "NOT_PUBLISHED",
+    "D1_D_INBOUND_FIELD_MAPPING_CONTRACT_V1": "NOT_PUBLISHED",
+    "D1_D_INTAKE_VALIDATION_RULESET_V1": "NOT_PUBLISHED",
     "D_ACCEPTED_KNOWLEDGE_RELEASE": "NOT_YET_AVAILABLE_FIXTURE_RELEASE_ONLY",
     "A0_PROVIDER_CONSUMPTION": "WAITING_C1_PROVIDER_AND_RECEIPT"
   },
-  "next_action": "C2_TO_C6_EXECUTE_ASSIGNED_OWNED_ROOTS_AND_PUBLISH_TERMINALS",
+  "next_action": "REUSE_EXISTING_ASSIGNMENTS_AFTER_B1_D1_AUTHORITATIVE_INPUTS_OR_CONTINUE_NON_CONFLICTING_FIXTURE_CONTRACT_WORK",
   "safety": {
     "actual_pc_execution": false,
+    "site_analyzer_ownership": false,
+    "site_extraction_runtime_ownership": false,
+    "direct_d_canonical_schema_change": false,
     "direct_d_canonical_db_write": false,
+    "fixture_claimed_as_d_accepted_data": false,
     "panel_shell_direct_edit": false,
     "production": false,
     "ready": false,
     "merge": false
   },
-  "status": "C1_START_GATE_PASS_WORKER_WAVE1_ACTIVE"
+  "status": "C1_EXISTING_MISSION_ACTIVE_D_ALIGNED_ADDENDUM_EXACT_BLOCKER_PUBLISHED"
 }
