@@ -1,0 +1,49 @@
+{
+  "actual_db_authority": {
+    "branch": "command/d-group-domain-knowledge-db-foundation-v1",
+    "head_sha": "c1286680a5391bfd4714ca62b8e8a8cfeda2fe15",
+    "merge": false,
+    "production_authorized": false,
+    "pull_request": 188,
+    "ready": false,
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "state": "OPEN_DRAFT_UNMERGED"
+  },
+  "authority_boundaries": {
+    "b1_direct_canonical_db_write": false,
+    "c1_direct_canonical_db_write": false,
+    "fixture_is_production_acceptance": false,
+    "merge": false,
+    "migration_apply": false,
+    "postgresql_connection": false,
+    "production": false,
+    "ready": false
+  },
+  "branch": "integration/d1-knowledge-db-intake-authority-v1",
+  "control_pr": 21,
+  "directive_comment": 5170770902,
+  "existing_directive": "A0-TO-D1-KNOWLEDGE-DB-INTAKE-CONTRACT-V1-20260803-001",
+  "existing_directive_superseded": false,
+  "mode": "CROSS_REPOSITORY_LOGICAL_CONTRACT_AND_FIXTURE_FIRST_VALIDATION",
+  "observed_start_head": "65bf71a0b6b766dea914fcd2decfad4f9218e8a7",
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "planned_outputs": [
+    "D_CANONICAL_SCHEMA_PROFILE_V1",
+    "D_INBOUND_FIELD_MAPPING_CONTRACT_V1",
+    "D_INTAKE_VALIDATION_RULESET_V1",
+    "KNOWLEDGE_ACCEPTANCE_RECEIPT_V1",
+    "KNOWLEDGE_RELEASE_V1",
+    "QUERY_CONTRACT_V1",
+    "CITATION_CONTRACT_V1",
+    "EXACT_CROSS_REPOSITORY_POINTER_TO_PR188",
+    "D1_SCHEMA_ALIGNMENT_POINTER",
+    "D1_PR188_CROSS_REPOSITORY_POINTER",
+    "D1_INTAKE_CONTRACT_RESULT_POINTER"
+  ],
+  "report_id": "D1-INTEGRATION-START-20260804-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "role": "D-1_KNOWLEDGE_DB_INTEGRATION_COMMANDER",
+  "schema_version": "D1_INTEGRATION_START_REPORT_V1",
+  "started_at_kst": "2026-08-04T05:03:12+09:00",
+  "status": "STARTED"
+}
