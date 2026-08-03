@@ -1,0 +1,50 @@
+{
+  "schema_version": "A3_WAVE4_TERMINAL_REPORT_V1",
+  "worker": "A-3",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE4-BLOCKER-CLOSURE-V1-20260804-001",
+  "directive_id": "A2-TO-A3-RESPONSE-BODY-FIELD-EVIDENCE-CLOSURE-V4-20260804-001",
+  "directive_comment_id": 5171684658,
+  "registered_at_kst": "2026-08-04T05:58:00+09:00",
+  "completed_at_kst": "2026-08-04T06:15:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "start_head": "b04a2cac2e506e8ca746b35d4e41e68322a4b7c1",
+  "start_comment_id": 5171765934,
+  "status": "BLOCKED",
+  "terminal": "A3_RESPONSE_BODY_FIELD_EVIDENCE_EXACT_BLOCKER",
+  "first_blocker": "EXACT_RESPONSE_BODY_FIXTURES_FOR_A3_JSON_ENDPOINT_PROFILES_ARE_NOT_PRESENT_IN_SEARCHED_REPOSITORY_FIXTURES",
+  "attempted_actions": [
+    "searched A-3 static network trace for embedded response bodies",
+    "searched A-5 placeholder request-response fixture and response schema candidate",
+    "searched A-6 fixture adapter package and replay fixtures",
+    "compared fixture URL and identity domains against A-3 endpoint profiles",
+    "preserved unbound fixture fields as non-authoritative candidates only",
+    "enumerated all missing JSON endpoint profiles",
+    "published fail-closed A-5 handoff"
+  ],
+  "validation": {
+    "required_json_endpoint_count": 8,
+    "exact_body_fixture_binding_count": 0,
+    "missing_profile_count": 8,
+    "missing_profiles": ["EP-001","EP-002","EP-003","EP-004","EP-005","EP-010","EP-011","EP-012"],
+    "field_inference_from_body_format_or_size": false,
+    "raw_secret_value_count": 0,
+    "live_site_call_count": 0,
+    "out_of_owned_root_change_count": 0
+  },
+  "outputs": [
+    "RESPONSE_BODY_FIELD_EVIDENCE_LEDGER_V1.json",
+    "RESPONSE_BODY_SCHEMA_OBSERVATION_V1.json",
+    "A3_TO_A5_RESPONSE_FIELD_EVIDENCE_HANDOFF_V1.json",
+    "A3_WAVE4_VALIDATION_RECEIPT_V1.json",
+    "A3_WAVE4_TERMINAL_REPORT_V1.json",
+    "LATEST_A3_REPORT_POINTER.json"
+  ],
+  "unfinished_outputs": [],
+  "required_next_input": "EXACT_ENDPOINT_BOUND_STATIC_RESPONSE_BODY_FIXTURE_OR_IMMUTABLE_SNAPSHOT_FOR_EP_001_EP_002_EP_003_EP_004_EP_005_EP_010_EP_011_EP_012",
+  "authority_boundary": "A3_EVIDENCE_ONLY_A5_FINAL_RESPONSE_SCHEMA_AND_IDENTIFIER_AUTHORITY",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
