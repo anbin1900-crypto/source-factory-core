@@ -1,0 +1,57 @@
+{
+  "schema_version": "LATEST_A2_WAVE1_WORKER_ASSIGNMENT_POINTER_V1",
+  "status": "A2_WAVE1_WORKERS_ASSIGNED",
+  "terminal": "A2_WAVE1_A3_TO_A7_DIRECTIVES_PUBLISHED",
+  "commander_pr": 18,
+  "commander_branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+  "assignment_ledger": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_WAVE1_WORKER_ASSIGNMENT_LEDGER_V1.json",
+    "commit": "4e7c4b3f51dd01ad1586191e6113128b88e0f595"
+  },
+  "bootstrap_prompts": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_WORKER_BOOTSTRAP_PROMPTS_V1.md",
+    "commit": "cb651cfbe8ae80f27d15c38c82e7db8f161f7275"
+  },
+  "workers": {
+    "A-3": {
+      "pr": 22,
+      "branch": "worker/a3-network-observation-v1",
+      "head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+      "directive": "A2-TO-A3-NETWORK-OBSERVATION-CONTRACT-V1-20260803-001",
+      "next_report": "A3_START_REPORT_V1.json"
+    },
+    "A-4": {
+      "pr": 23,
+      "branch": "worker/a4-navigation-pagination-v1",
+      "head": "31e9c7678d95c62b80fddc27d042fe5291d72b46",
+      "directive": "A2-TO-A4-NAVIGATION-PAGINATION-CONTRACT-V1-20260803-001",
+      "next_report": "A4_START_REPORT_V1.json"
+    },
+    "A-5": {
+      "pr": 24,
+      "branch": "worker/a5-request-response-schema-v1",
+      "head": "e111860285fb4a4ef177e7d7a20586c994a5e8c6",
+      "directive": "A2-TO-A5-REQUEST-RESPONSE-SCHEMA-CONTRACT-V1-20260803-001",
+      "next_report": "A5_START_REPORT_V1.json"
+    },
+    "A-6": {
+      "pr": 25,
+      "branch": "worker/a6-adapter-generation-replay-v1",
+      "head": "f020f2d5e9100a0a1bc3a0461b2c383362d9f7f8",
+      "directive": "A2-TO-A6-ADAPTER-GENERATION-REPLAY-V1-20260803-001",
+      "next_report": "A6_START_REPORT_V1.json"
+    },
+    "A-7": {
+      "pr": 26,
+      "branch": "worker/a7-analyzer-acceptance-audit-v1",
+      "head": "fc15bb69be25d9d8d2e51d7e69a1865697e2afa2",
+      "directive": "A2-TO-A7-ANALYZER-ACCEPTANCE-AUDIT-V1-20260803-001",
+      "next_report": "A7_START_REPORT_V1.json"
+    }
+  },
+  "next_gate": "A3_TO_A7_START_REPORTS_COMMITTED",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "published_at": "2026-08-03T19:50:00+09:00"
+}
