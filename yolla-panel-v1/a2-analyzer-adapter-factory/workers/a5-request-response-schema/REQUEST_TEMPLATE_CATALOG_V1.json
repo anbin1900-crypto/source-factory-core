@@ -1,0 +1,73 @@
+{
+  "authority": {
+    "a3_observation": {
+      "directive_comment": 5171205788,
+      "observed_head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+      "pr": 22,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM"
+    },
+    "a4_pagination": {
+      "directive_comment": 5171208197,
+      "observed_head": "31e9c7678d95c62b80fddc27d042fe5291d72b46",
+      "pr": 23,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM"
+    },
+    "directive_comment": 5171210803,
+    "directive_id": "A2-TO-A5-REQUEST-RESPONSE-EXECUTION-CONTRACT-V3-20260804-001",
+    "registered_at_kst": "2026-08-04T05:11:00+09:00"
+  },
+  "raw_secret_value_count": 0,
+  "schema_version": "YOLLA_REQUEST_TEMPLATE_CATALOG_V1",
+  "templates": [
+    {
+      "body": null,
+      "credential_reference": "credential_ref://fixture/anonymous",
+      "encoding": "RFC3986_QUERY_UTF8",
+      "endpoint_id": "EP_FIXTURE_ITEM_SEARCH_V1",
+      "evidence": {
+        "comment": 5171205788,
+        "head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+        "kind": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+        "pr": 22
+      },
+      "header_contract_id": "SESSION_HEADER_FIXTURE_ANONYMOUS_V1",
+      "method": "GET",
+      "pagination_parameter_ids": [
+        "PARAM_SEARCH_PAGE",
+        "PARAM_SEARCH_PAGE_SIZE"
+      ],
+      "path_parameter_ids": [],
+      "path_template": "/api/v1/items",
+      "query_parameter_ids": [
+        "PARAM_SEARCH_Q",
+        "PARAM_SEARCH_PAGE",
+        "PARAM_SEARCH_PAGE_SIZE",
+        "PARAM_SEARCH_SORT"
+      ],
+      "request_template_id": "REQ_FIXTURE_ITEM_SEARCH_V1"
+    },
+    {
+      "body": null,
+      "credential_reference": "credential_ref://fixture/anonymous",
+      "encoding": "RFC3986_PATH_AND_QUERY_UTF8",
+      "endpoint_id": "EP_FIXTURE_ITEM_DETAIL_V1",
+      "evidence": {
+        "comment": 5171205788,
+        "head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+        "kind": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+        "pr": 22
+      },
+      "header_contract_id": "SESSION_HEADER_FIXTURE_ANONYMOUS_V1",
+      "method": "GET",
+      "pagination_parameter_ids": [],
+      "path_parameter_ids": [
+        "PARAM_DETAIL_ITEM_ID"
+      ],
+      "path_template": "/api/v1/items/{item_id}",
+      "query_parameter_ids": [
+        "PARAM_DETAIL_INCLUDE_LOCALE"
+      ],
+      "request_template_id": "REQ_FIXTURE_ITEM_DETAIL_V1"
+    }
+  ]
+}

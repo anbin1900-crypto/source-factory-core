@@ -1,0 +1,67 @@
+{
+  "authority": {
+    "a3_observation": {
+      "directive_comment": 5171205788,
+      "observed_head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+      "pr": 22,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM"
+    },
+    "a4_pagination": {
+      "directive_comment": 5171208197,
+      "observed_head": "31e9c7678d95c62b80fddc27d042fe5291d72b46",
+      "pr": 23,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM"
+    },
+    "directive_comment": 5171210803,
+    "directive_id": "A2-TO-A5-REQUEST-RESPONSE-EXECUTION-CONTRACT-V3-20260804-001",
+    "registered_at_kst": "2026-08-04T05:11:00+09:00"
+  },
+  "policies": [
+    {
+      "backoff": {
+        "algorithm": "EXPONENTIAL",
+        "base_ms": 500,
+        "cap_ms": 8000,
+        "jitter": "DISABLED_FOR_DETERMINISTIC_FIXTURE",
+        "multiplier": 2.0
+      },
+      "fail_closed_conditions": [
+        "AUTHENTICATION_CHALLENGE_WITHOUT_APPROVED_CREDENTIAL_REFERENCE",
+        "SECRET_LIKE_VALUE_IN_REQUEST",
+        "UPSTREAM_EVIDENCE_CONFLICT",
+        "SCHEMA_VERSION_UNKNOWN",
+        "IDENTIFIER_COLLISION"
+      ],
+      "max_attempts": 4,
+      "non_retryable_statuses": [
+        400,
+        401,
+        403,
+        404,
+        409,
+        422
+      ],
+      "observed_rate_limit_evidence": {
+        "comment": 5171205788,
+        "head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+        "kind": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+        "pr": 22
+      },
+      "rate_limit_floor_ms": 250,
+      "rate_limit_observation_state": "UNOBSERVED_FIXTURE_POLICY_ONLY",
+      "retry_after_precedence": "RETRY_AFTER_HEADER_IF_VALID_ELSE_BACKOFF",
+      "retry_policy_id": "RETRY_STANDARD_READ_V1",
+      "retryable_statuses": [
+        408,
+        425,
+        429,
+        500,
+        502,
+        503,
+        504
+      ],
+      "timeout_ms": 10000
+    }
+  ],
+  "schema_version": "YOLLA_RETRY_RATE_LIMIT_POLICY_V1"
+}

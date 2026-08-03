@@ -1,0 +1,46 @@
+{
+  "a6_handoff_ready": true,
+  "adapter_code_owned_by_a6": true,
+  "authority_files": {
+    "A5_EXECUTION_CONTRACT_VALIDATION_RECEIPT_V1.json": "376c735b239ca1afcf0db0a2a368034d29e9c440e01e8692648fb2c53b0c7448",
+    "ENDPOINT_CATALOG_V1.json": "99cbfe1fe1f1994f3e0e19805322aea49acdc1bce66db38b226ec0f52864b19b",
+    "FIXTURE_REQUEST_RESPONSE_REPLAY_V1.json": "ed14a4565f1fd826d7e76e5dce36bda852df215e6403d37b48b06b1cb2c73840",
+    "IDENTIFIER_RELATIONSHIP_MAP_V1.json": "87e7aa8d9cde77c60cd55813ddcfe1548f92f93c13037ed2d174ed16ae04a5d9",
+    "PAGINATION_CONTRACT_REFERENCE_V1.json": "75a99501fcd69b4122802a67c98ed46646f8f6722adc754c9a78fe95652277a6",
+    "PARAMETER_DICTIONARY_V1.json": "64b5ac4c5664395c1dd8b1f2daf376e1ed5a75324f9f21c22712baf7a4709b5a",
+    "REQUEST_TEMPLATE_CATALOG_V1.json": "bf400ca2a5c12d9c255f330cdbf3451a1a4de885ee3a05708c6a7574e7a67af2",
+    "RESPONSE_SCHEMA_CATALOG_V1.json": "4cee9569e58fe4264c507173747af2089179463059a817b5e38a126999d4f0cc",
+    "RETRY_RATE_LIMIT_POLICY_V1.json": "c0f61a631252d73c7f31384c8f20a691e80cfdb565807f627b1f33b5c62abe39",
+    "SESSION_HEADER_CONTRACT_V1.json": "cb597b0dd7f14714e96acfafae5ea2456ef23efdabf2a6d9b4e3787c946bb56e"
+  },
+  "consumer": "A-6",
+  "contract_mode": "FIXTURE_FIRST_FAIL_CLOSED",
+  "directive_id": "A2-TO-A5-REQUEST-RESPONSE-EXECUTION-CONTRACT-V3-20260804-001",
+  "merge": false,
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/",
+  "producer": "A-5",
+  "producer_branch": "worker/a5-request-response-schema-v1",
+  "producer_pr": 24,
+  "production": false,
+  "raw_secret_value_count": 0,
+  "ready": false,
+  "required_a6_behavior": [
+    "consume catalog IDs without rename",
+    "generate adapter only under A-6 owned root",
+    "run fixture replay twice and compare receipt",
+    "reject upstream pointer conflict",
+    "never persist raw credential values"
+  ],
+  "schema_version": "YOLLA_A5_TO_A6_EXECUTION_CONTRACT_HANDOFF_V1",
+  "upstream_binding": {
+    "a3_directive_comment": 5171205788,
+    "a3_pr": 22,
+    "a3_status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+    "a4_directive_comment": 5171208197,
+    "a4_pr": 23,
+    "a4_status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+    "live_authority_allowed": false,
+    "replacement_required_before_live_adapter": true
+  },
+  "validation_terminal": "PASS"
+}

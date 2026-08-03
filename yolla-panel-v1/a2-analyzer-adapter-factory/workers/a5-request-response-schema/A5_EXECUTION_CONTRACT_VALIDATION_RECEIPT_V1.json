@@ -1,0 +1,33 @@
+{
+  "actual_bulk_collection": false,
+  "checks": {
+    "endpoint_count": 2,
+    "fixture_replay_digest": "d7fb282def721a4ffb6d55788d564af843bfdc277edd40729687d9ac53522a3d",
+    "fixture_replay_twice_same": true,
+    "identifier_collision_reject_supported": true,
+    "identifier_type_count": 5,
+    "json_parse": "PASS_9_OF_9",
+    "parameter_count": 6,
+    "raw_secret_value_count": 0,
+    "request_template_count": 2,
+    "required_field_reject_supported": true,
+    "response_schema_count": 2,
+    "secret_reject_supported": true,
+    "upstream_conflict_fail_closed_supported": true
+  },
+  "findings": [],
+  "identifier_collision_test": "PASS",
+  "merge": false,
+  "panel_shell_direct_edit": false,
+  "production": false,
+  "python_compile": "PASS_2_OF_2",
+  "raw_secret_value_count": 0,
+  "ready": false,
+  "required_field_reject": "PASS",
+  "schema_validation": "PASS",
+  "schema_version": "YOLLA_A5_EXECUTION_CONTRACT_VALIDATION_RESULT_V1",
+  "secret_reject": "PASS",
+  "status": "PASS",
+  "unit_tests": "PASS_12_OF_12",
+  "upstream_conflict_injection": "FAIL_CLOSED_PASS"
+}

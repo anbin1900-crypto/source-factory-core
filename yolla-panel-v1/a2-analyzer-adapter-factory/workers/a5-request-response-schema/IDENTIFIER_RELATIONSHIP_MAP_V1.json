@@ -1,0 +1,119 @@
+{
+  "authority": {
+    "a3_observation": {
+      "directive_comment": 5171205788,
+      "observed_head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+      "pr": 22,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM"
+    },
+    "a4_pagination": {
+      "directive_comment": 5171208197,
+      "observed_head": "31e9c7678d95c62b80fddc27d042fe5291d72b46",
+      "pr": 23,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM"
+    },
+    "directive_comment": 5171210803,
+    "directive_id": "A2-TO-A5-REQUEST-RESPONSE-EXECUTION-CONTRACT-V3-20260804-001",
+    "registered_at_kst": "2026-08-04T05:11:00+09:00"
+  },
+  "collision_rules": [
+    {
+      "action": "FAIL_CLOSED_IDENTIFIER_COLLISION",
+      "condition": "same source_object_id and different canonical payload_sha256"
+    },
+    {
+      "action": "FAIL_CLOSED_DOCUMENT_ID_COLLISION",
+      "condition": "same document_id and different source_object_id"
+    }
+  ],
+  "identifiers": [
+    {
+      "identifier_type": "request_id",
+      "normalization": "trim",
+      "nullable": false,
+      "scope": "response",
+      "source_paths": [
+        "$.request_id"
+      ],
+      "uniqueness": "per_request"
+    },
+    {
+      "identifier_type": "page_id",
+      "normalization": "sha256_canonical_tuple",
+      "nullable": false,
+      "scope": "page",
+      "source_paths": [
+        "request.endpoint_id",
+        "request.canonical_query",
+        "response.page"
+      ],
+      "uniqueness": "per_endpoint_query_page"
+    },
+    {
+      "identifier_type": "source_object_id",
+      "normalization": "trim_preserve_case",
+      "nullable": false,
+      "scope": "source",
+      "source_paths": [
+        "$.items[].source_object_id",
+        "$.item.source_object_id"
+      ],
+      "uniqueness": "global_within_site_profile"
+    },
+    {
+      "identifier_type": "document_id",
+      "normalization": "sha256(site_profile_id + source_object_id)",
+      "nullable": false,
+      "scope": "normalized_document",
+      "source_paths": [
+        "source_object_id"
+      ],
+      "uniqueness": "global_within_site_profile"
+    },
+    {
+      "identifier_type": "parent_source_object_id",
+      "normalization": "trim_preserve_case",
+      "nullable": true,
+      "scope": "source_relation",
+      "source_paths": [
+        "$.items[].parent_source_object_id",
+        "$.item.parent_source_object_id"
+      ],
+      "uniqueness": "not_applicable"
+    }
+  ],
+  "orphan_rules": [
+    {
+      "action": "FAIL_CLOSED_ORPHAN_PARENT",
+      "condition": "non-null parent absent from current fixture and no external_reference flag",
+      "identifier": "parent_source_object_id"
+    }
+  ],
+  "relationships": [
+    {
+      "cardinality": "one_to_zero_or_many",
+      "child": "page_id",
+      "parent": "request_id",
+      "relationship": "request_contains_page"
+    },
+    {
+      "cardinality": "one_to_zero_or_many",
+      "child": "source_object_id",
+      "parent": "page_id",
+      "relationship": "page_contains_source_object"
+    },
+    {
+      "cardinality": "one_to_one",
+      "child": "document_id",
+      "parent": "source_object_id",
+      "relationship": "source_object_materializes_document"
+    },
+    {
+      "cardinality": "zero_or_one_to_many",
+      "child": "source_object_id",
+      "parent": "parent_source_object_id",
+      "relationship": "source_object_parent_child"
+    }
+  ],
+  "schema_version": "YOLLA_IDENTIFIER_RELATIONSHIP_MAP_V1"
+}

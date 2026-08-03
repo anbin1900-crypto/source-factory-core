@@ -1,0 +1,138 @@
+{
+  "authority": {
+    "a3_observation": {
+      "directive_comment": 5171205788,
+      "observed_head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+      "pr": 22,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM"
+    },
+    "a4_pagination": {
+      "directive_comment": 5171208197,
+      "observed_head": "31e9c7678d95c62b80fddc27d042fe5291d72b46",
+      "pr": 23,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM"
+    },
+    "directive_comment": 5171210803,
+    "directive_id": "A2-TO-A5-REQUEST-RESPONSE-EXECUTION-CONTRACT-V3-20260804-001",
+    "registered_at_kst": "2026-08-04T05:11:00+09:00"
+  },
+  "location_enum": [
+    "query",
+    "path",
+    "body",
+    "header"
+  ],
+  "parameters": [
+    {
+      "allowed_values": null,
+      "default": null,
+      "encoding": "percent-encoded UTF-8",
+      "evidence": {
+        "comment": 5171205788,
+        "head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+        "kind": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+        "pr": 22
+      },
+      "location": "query",
+      "name": "q",
+      "parameter_id": "PARAM_SEARCH_Q",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "allowed_values": {
+        "minimum": 1
+      },
+      "default": 1,
+      "encoding": "base10",
+      "evidence": {
+        "comment": 5171208197,
+        "head": "31e9c7678d95c62b80fddc27d042fe5291d72b46",
+        "kind": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+        "pr": 23
+      },
+      "location": "query",
+      "name": "page",
+      "parameter_id": "PARAM_SEARCH_PAGE",
+      "required": true,
+      "type": "integer"
+    },
+    {
+      "allowed_values": {
+        "maximum": 100,
+        "minimum": 1
+      },
+      "default": 20,
+      "encoding": "base10",
+      "evidence": {
+        "comment": 5171208197,
+        "head": "31e9c7678d95c62b80fddc27d042fe5291d72b46",
+        "kind": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+        "pr": 23
+      },
+      "location": "query",
+      "name": "page_size",
+      "parameter_id": "PARAM_SEARCH_PAGE_SIZE",
+      "required": true,
+      "type": "integer"
+    },
+    {
+      "allowed_values": [
+        "updated_desc",
+        "updated_asc"
+      ],
+      "default": "updated_desc",
+      "encoding": "lowercase_token",
+      "evidence": {
+        "comment": 5171205788,
+        "head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+        "kind": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+        "pr": 22
+      },
+      "location": "query",
+      "name": "sort",
+      "parameter_id": "PARAM_SEARCH_SORT",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "allowed_values": {
+        "pattern": "^[A-Za-z0-9._:-]{1,128}$"
+      },
+      "default": null,
+      "encoding": "percent-encoded UTF-8 path segment",
+      "evidence": {
+        "comment": 5171205788,
+        "head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+        "kind": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+        "pr": 22
+      },
+      "location": "path",
+      "name": "item_id",
+      "parameter_id": "PARAM_DETAIL_ITEM_ID",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "allowed_values": [
+        true,
+        false
+      ],
+      "default": false,
+      "encoding": "lowercase boolean",
+      "evidence": {
+        "comment": 5171205788,
+        "head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+        "kind": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+        "pr": 22
+      },
+      "location": "query",
+      "name": "include_locale",
+      "parameter_id": "PARAM_DETAIL_INCLUDE_LOCALE",
+      "required": false,
+      "type": "boolean"
+    }
+  ],
+  "raw_secret_value_count": 0,
+  "schema_version": "YOLLA_PARAMETER_DICTIONARY_V1"
+}

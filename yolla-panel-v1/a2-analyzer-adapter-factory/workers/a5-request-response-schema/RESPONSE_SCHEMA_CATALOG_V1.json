@@ -1,0 +1,217 @@
+{
+  "authority": {
+    "a3_observation": {
+      "directive_comment": 5171205788,
+      "observed_head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+      "pr": 22,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM"
+    },
+    "a4_pagination": {
+      "directive_comment": 5171208197,
+      "observed_head": "31e9c7678d95c62b80fddc27d042fe5291d72b46",
+      "pr": 23,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM"
+    },
+    "directive_comment": 5171210803,
+    "directive_id": "A2-TO-A5-REQUEST-RESPONSE-EXECUTION-CONTRACT-V3-20260804-001",
+    "registered_at_kst": "2026-08-04T05:11:00+09:00"
+  },
+  "fail_closed_on_unknown_schema_version": true,
+  "schema_version": "YOLLA_RESPONSE_SCHEMA_CATALOG_V1",
+  "schemas": [
+    {
+      "endpoint_id": "EP_FIXTURE_ITEM_SEARCH_V1",
+      "error_responses": [
+        {
+          "schema": {
+            "code": "string",
+            "message": "string",
+            "request_id": "string"
+          },
+          "status": 400
+        },
+        {
+          "schema": {
+            "code": "string",
+            "message": "string",
+            "request_id": "string",
+            "retry_after_seconds": "integer|null"
+          },
+          "status": 429
+        },
+        {
+          "schema": {
+            "code": "string",
+            "message": "string",
+            "request_id": "string"
+          },
+          "status": 500
+        }
+      ],
+      "evidence": {
+        "comment": 5171205788,
+        "head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+        "kind": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+        "pr": 22
+      },
+      "fields": [
+        {
+          "cardinality": "one",
+          "nullable": false,
+          "path": "$.request_id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "cardinality": "one",
+          "nullable": false,
+          "path": "$.page",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "cardinality": "one",
+          "nullable": false,
+          "path": "$.page_size",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "cardinality": "one",
+          "nullable": false,
+          "path": "$.total_pages",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "cardinality": "many",
+          "nullable": false,
+          "path": "$.items",
+          "required": true,
+          "type": "array"
+        },
+        {
+          "cardinality": "one_per_item",
+          "nullable": false,
+          "path": "$.items[].source_object_id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "cardinality": "zero_or_one_per_item",
+          "nullable": true,
+          "path": "$.items[].parent_source_object_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "cardinality": "one_per_item",
+          "nullable": false,
+          "path": "$.items[].title",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "cardinality": "one_per_item",
+          "nullable": false,
+          "path": "$.items[].updated_at",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "response_schema_id": "RESP_FIXTURE_ITEM_SEARCH_V1",
+      "root_type": "object",
+      "schema_version": "1.0.0"
+    },
+    {
+      "endpoint_id": "EP_FIXTURE_ITEM_DETAIL_V1",
+      "error_responses": [
+        {
+          "schema": {
+            "code": "string",
+            "message": "string",
+            "request_id": "string"
+          },
+          "status": 404
+        },
+        {
+          "schema": {
+            "code": "string",
+            "message": "string",
+            "request_id": "string",
+            "retry_after_seconds": "integer|null"
+          },
+          "status": 429
+        },
+        {
+          "schema": {
+            "code": "string",
+            "message": "string",
+            "request_id": "string"
+          },
+          "status": 500
+        }
+      ],
+      "evidence": {
+        "comment": 5171205788,
+        "head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+        "kind": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+        "pr": 22
+      },
+      "fields": [
+        {
+          "cardinality": "one",
+          "nullable": false,
+          "path": "$.request_id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "cardinality": "one",
+          "nullable": false,
+          "path": "$.item",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "cardinality": "one",
+          "nullable": false,
+          "path": "$.item.source_object_id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "cardinality": "zero_or_one",
+          "nullable": true,
+          "path": "$.item.parent_source_object_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "cardinality": "one",
+          "nullable": false,
+          "path": "$.item.title",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "cardinality": "one",
+          "nullable": false,
+          "path": "$.item.attributes",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "cardinality": "one",
+          "nullable": false,
+          "path": "$.item.updated_at",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "response_schema_id": "RESP_FIXTURE_ITEM_DETAIL_V1",
+      "root_type": "object",
+      "schema_version": "1.0.0"
+    }
+  ]
+}

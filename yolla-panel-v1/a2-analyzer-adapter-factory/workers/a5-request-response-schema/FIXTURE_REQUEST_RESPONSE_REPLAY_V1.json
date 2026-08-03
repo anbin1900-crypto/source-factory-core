@@ -1,0 +1,82 @@
+{
+  "authority_state": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+  "cases": {
+    "detail_request_v1": {
+      "body": null,
+      "credential_reference": "credential_ref://fixture/anonymous",
+      "endpoint_id": "EP_FIXTURE_ITEM_DETAIL_V1",
+      "headers": {
+        "Accept": "application/json",
+        "User-Agent": "yolla-fixture-adapter/1.0",
+        "X-Request-Id": "fixture-detail-001"
+      },
+      "method": "GET",
+      "url": "https://fixture.invalid/api/v1/items/item-002?include_locale=false"
+    },
+    "detail_response_v1": {
+      "body": {
+        "item": {
+          "attributes": {
+            "kind": "fixture",
+            "rank": 2
+          },
+          "parent_source_object_id": "item-001",
+          "source_object_id": "item-002",
+          "title": "Beta",
+          "updated_at": "2026-08-04T00:01:00Z"
+        },
+        "request_id": "fixture-detail-001"
+      },
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "status": 200
+    },
+    "search_request_v1": {
+      "body": null,
+      "credential_reference": "credential_ref://fixture/anonymous",
+      "endpoint_id": "EP_FIXTURE_ITEM_SEARCH_V1",
+      "headers": {
+        "Accept": "application/json",
+        "User-Agent": "yolla-fixture-adapter/1.0",
+        "X-Request-Id": "fixture-search-001"
+      },
+      "method": "GET",
+      "url": "https://fixture.invalid/api/v1/items?q=alpha&page=1&page_size=2&sort=updated_desc"
+    },
+    "search_response_v1": {
+      "body": {
+        "items": [
+          {
+            "parent_source_object_id": null,
+            "source_object_id": "item-001",
+            "title": "Alpha",
+            "updated_at": "2026-08-04T00:00:00Z"
+          },
+          {
+            "parent_source_object_id": "item-001",
+            "source_object_id": "item-002",
+            "title": "Beta",
+            "updated_at": "2026-08-04T00:01:00Z"
+          }
+        ],
+        "page": 1,
+        "page_size": 2,
+        "request_id": "fixture-search-001",
+        "total_pages": 1
+      },
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "status": 200
+    }
+  },
+  "live_site_call_count": 0,
+  "replay_order": [
+    "search_request_v1",
+    "search_response_v1",
+    "detail_request_v1",
+    "detail_response_v1"
+  ],
+  "schema_version": "YOLLA_FIXTURE_REQUEST_RESPONSE_REPLAY_V1"
+}

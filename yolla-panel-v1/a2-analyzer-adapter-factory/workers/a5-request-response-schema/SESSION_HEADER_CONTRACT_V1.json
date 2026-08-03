@@ -1,0 +1,86 @@
+{
+  "authority": {
+    "a3_observation": {
+      "directive_comment": 5171205788,
+      "observed_head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+      "pr": 22,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM"
+    },
+    "a4_pagination": {
+      "directive_comment": 5171208197,
+      "observed_head": "31e9c7678d95c62b80fddc27d042fe5291d72b46",
+      "pr": 23,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM"
+    },
+    "directive_comment": 5171210803,
+    "directive_id": "A2-TO-A5-REQUEST-RESPONSE-EXECUTION-CONTRACT-V3-20260804-001",
+    "registered_at_kst": "2026-08-04T05:11:00+09:00"
+  },
+  "contracts": [
+    {
+      "authentication_mode": "NONE_FIXTURE_ONLY",
+      "credential_reference": "credential_ref://fixture/anonymous",
+      "evidence": {
+        "comment": 5171205788,
+        "head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+        "kind": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+        "pr": 22
+      },
+      "optional_headers": [
+        {
+          "acquisition_method": "REQUEST_CONTEXT",
+          "name": "Accept-Language",
+          "refresh_condition": "PER_REQUEST",
+          "value_semantics": "BCP47 locale preference"
+        },
+        {
+          "acquisition_method": "RUNTIME_GENERATED",
+          "name": "X-Request-Id",
+          "refresh_condition": "PER_REQUEST",
+          "value_semantics": "non-secret execution correlation id"
+        }
+      ],
+      "raw_header_value_storage": false,
+      "redacted_headers": [
+        {
+          "credential_reference_required": true,
+          "name": "Authorization",
+          "storage": "NAME_ONLY"
+        },
+        {
+          "credential_reference_required": true,
+          "name": "Cookie",
+          "storage": "NAME_ONLY"
+        },
+        {
+          "credential_reference_required": true,
+          "name": "Proxy-Authorization",
+          "storage": "NAME_ONLY"
+        },
+        {
+          "credential_reference_required": true,
+          "name": "X-CSRF-Token",
+          "storage": "NAME_ONLY"
+        }
+      ],
+      "required_headers": [
+        {
+          "acquisition_method": "STATIC_NON_SECRET",
+          "name": "Accept",
+          "refresh_condition": "NEVER",
+          "value_semantics": "application/json"
+        },
+        {
+          "acquisition_method": "RUNTIME_GENERATED_NON_SECRET",
+          "name": "User-Agent",
+          "refresh_condition": "ON_ADAPTER_VERSION_CHANGE",
+          "value_semantics": "adapter runtime version identifier"
+        }
+      ],
+      "session_header_contract_id": "SESSION_HEADER_FIXTURE_ANONYMOUS_V1"
+    }
+  ],
+  "raw_secret_value_count": 0,
+  "schema_version": "YOLLA_SESSION_HEADER_CONTRACT_V1",
+  "secret_handling": "FAIL_CLOSED_ON_SECRET_LIKE_VALUE"
+}
