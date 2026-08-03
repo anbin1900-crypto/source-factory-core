@@ -1,45 +1,41 @@
 {
   "schema_version": "LATEST_A0_SUCCESSOR_REPORT_POINTER_V1",
-  "status": "A0_V52_EXACT_INSTALLER_EXECUTION_PACKAGE_READY_TARGET_PC_CHANNEL_PENDING",
+  "status": "A0_AUTOMATION_RUNTIME_V1_SOURCE_CORE_FIXTURE_PASS_PANEL_BINDING_PENDING",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "latest_report_path": "yolla-panel-v1/a0-successor-control/reports/A0_PROGRESS_REPORT_V2.json",
-  "latest_report_commit": "2a8ab2e8a6c68cb38f3895071138d74d5a63a061",
-  "latest_report_type": "PROGRESS",
-  "latest_report_status": "PARTIAL_PASS",
-  "progress_percent": 70,
-  "test_report_path": "yolla-panel-v1/a0-successor-control/reports/A0_TEST_REPORT_V2.json",
-  "test_report_commit": "b0502760c7eaf3018e1d5cd2e5592c77d0a2a2cf",
-  "test_workflow_run_id": 30807035470,
-  "test_workflow_status": "PASS_2_OF_2",
-  "exact_installer_authority_path": "yolla-panel-v1/a0-successor-control/target-pc-v52/A0_V52_EXACT_INSTALLER_AUTHORITY_RESOLUTION_V1.json",
-  "exact_installer_authority_commit": "530e226b10e562acaba7addcf79cb6ddafaec3fd",
-  "exact_installer_file_name": "INSTALL_YOLLA_WORKSPACE_V52_SESSION_ANALYZER.bat",
-  "exact_installer_file_library_id": "file_000000007b3c81fba7d531a98fcc5112",
-  "documented_expected_sha256": "96731d281a138048d96d8f2a99900805d2ee15711666a2f3f4d33d994ac8d544",
-  "execution_runner_path": "yolla-panel-v1/a0-successor-control/target-pc-v52/Invoke-A0V52ExactInstallerExecution.ps1",
-  "execution_runner_commit": "1773b6abf0d3e45eac446bdaffbdd064aa2c238e",
-  "work_request_path": "yolla-panel-v1/a0-successor-control/target-pc-v52/A0_V52_EXACT_INSTALLER_WORK_REQUEST_V2.json",
-  "work_request_commit": "6a2dd98c7a91fb011d19a54d3e4597d542baa0c4",
-  "prior_blocker_supersession": {
-    "v52_exact_package_location_unresolved": "RESOLVED",
-    "remaining_blocker": "TARGET_PC_MATERIALIZATION_AND_LOCAL_EXECUTION_CHANNEL_NOT_CONNECTED"
+  "latest_report_path": "yolla-panel-v1/a0-successor-control/reports/A0_AUTOMATION_RUNTIME_START_AND_FIXTURE_TEST_REPORT_V1.json",
+  "latest_report_commit": "2aae86198e7f14c67518128076e22e70312e1350",
+  "latest_report_type": "START_AND_SOURCE_FIXTURE_TEST",
+  "latest_report_status": "SOURCE_CORE_AND_FIXTURE_PASS_PANEL_RUNTIME_BINDING_NEXT",
+  "progress_percent": 20,
+  "latest_automation_runtime_pointer_path": "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_RUNTIME_POINTER_V1.json",
+  "latest_automation_runtime_pointer_commit": "c47eea0a3067fdee5f1cb06d16d27ed363c30db0",
+  "current_ui_version": "5.8.0",
+  "runtime_provider_version": "5.7.0",
+  "schedule_runner_version": "1.0.0-source-fixture-pass",
+  "current_schedule_id": "REAL-ESTATE-CYCLE-001",
+  "worker_states": {
+    "B-2": "PENDING",
+    "B-3": "PENDING",
+    "B-4": "PENDING"
   },
-  "group_start_status": {
-    "A2": "START_REPORT_REISSUED_WAITING_PUBLICATION",
-    "B1": "START_REPORT_ACCEPTED",
-    "C1": "START_REPORT_ACCEPTED",
-    "D1": "START_REPORT_REISSUED_WAITING_PUBLICATION"
+  "source_artifact": {
+    "drive_file_id": "18aPjNbd1uEo8U_292hzUCDw5dAyEMOHg",
+    "sha256": "fb1a344f7396d6ffc30f74a2cb07e2b22ea060afb37134b96e8d14980439b0dd",
+    "size_bytes": 17238
   },
-  "required_next_report": "yolla-panel-v1/a0-successor-control/reports/A0_TEST_REPORT_V3.json",
-  "required_next_task": "A0-P0-V52-MATERIALIZE-SHA256-EXECUTE-AND-INGEST-TARGET-PC-RECEIPTS",
-  "resume_condition": "TARGET_PC_FILE_MATERIALIZATION_OR_LOCAL_QUEUE_ACCESS_OR_TARGET_PC_GENERATED_RECEIPT",
-  "cycle_id": "A0-V52-TARGET-PC-ACCEPTANCE-20260803-001",
-  "retry_allowed": true,
+  "prior_pointer": {
+    "status": "A0_V52_EXACT_INSTALLER_EXECUTION_PACKAGE_READY_TARGET_PC_CHANNEL_PENDING",
+    "latest_report_commit": "2a8ab2e8a6c68cb38f3895071138d74d5a63a061",
+    "preserved_as_historical_evidence": true,
+    "active_priority": false
+  },
+  "required_next_task": "PANEL_SCHEDULE_IMPORT_SAVE_CURRENT_NEXT_JOB_UI_AND_EXISTING_BROWSER_DISPATCH_BINDING",
+  "official_terminal_required": "A0_WORKER_SCHEDULE_AUTOMATION_LOOP_V1_PASS",
   "target_pc_execution_performed": false,
   "target_pc_pass_claimed": false,
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at": "2026-08-03T19:52:00+09:00"
+  "updated_at": "2026-08-04T03:12:00+09:00"
 }
