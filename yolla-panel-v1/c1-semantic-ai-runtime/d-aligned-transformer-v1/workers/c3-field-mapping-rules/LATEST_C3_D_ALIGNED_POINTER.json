@@ -1,0 +1,81 @@
+{
+  "schema_version": "LATEST_C3_D_ALIGNED_POINTER_V1",
+  "pointer_id": "LATEST_C3_D_ALIGNED_FIELD_MAPPING_POINTER",
+  "worker": "C-3_SEMANTIC_CLASSIFICATION",
+  "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
+  "directive_id": "C1-TO-C3-D-ALIGNED-FIELD-MAPPING-TRANSFORM-RULES-V1-20260804-001",
+  "directive_comment": 5171213455,
+  "start_comment": 5171316318,
+  "published_at_kst": "2026-08-04 05:39 KST",
+  "authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "control_pr": 20,
+    "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+    "directive_start_head": "817549449944bda00c6dd305b175377510eb0cd7",
+    "c3_last_source_commit": "31481fc0abd265bb7aef4590c45b1eb3390e67a4",
+    "observed_shared_control_head_before_pointer": "1df4add92fb3b450bf9894b132b5c0020e4fdc1e",
+    "pointer_commit_status": "THIS_COMMIT"
+  },
+  "d_authority": {
+    "integration_pr": 21,
+    "head": "36848d3e641077e4905eccc17856369f0c494579",
+    "profile_blob": "93788d2685d25afae2d8e61c6b59e9615c51d22a",
+    "mapping_blob": "c2a3ae441ae0e2b44fb1bb9f95670cf0887bd8ed",
+    "ruleset_blob": "d21291ac77f44f84fffac6d935187f3ee4690dcd",
+    "binding_mode": "READ_ONLY_EXACT_HEAD_AND_BLOBS"
+  },
+  "required_outputs": {
+    "TRANSFORMATION_RULE_CATALOG_V1.json": "eb189c19857befaf5563b0ca23410c9f7cd6d823",
+    "FIELD_MAPPING_CONTRACT_CONSUMER_V1.json": "4b913d978965ba24b9dcb69e76b5a03a7f162bc9",
+    "FIELD_MAPPING_FIXTURE_V1.json": "d8b20a9eb904309b77e1a22f24ffd3461948611e",
+    "C3_D_ALIGNED_MAPPING_TEST_RESULT_V1.json": "b2780b82eb28ef68c3fca927d0a0e5ec48c4652c",
+    "C3_D_ALIGNED_FINAL_REPORT_V1.json": "6e241c4b035d77bcc748d87045d49ac7aae2184f",
+    "LATEST_C3_D_ALIGNED_POINTER.json": "THIS_BLOB"
+  },
+  "implementation_blobs": {
+    "validator": "490601329b7a01aa137f3a256215c629f8614ba8",
+    "test_source": "57a4bc9fa2055c873a6cf8cd0b99fc09d55cc60b",
+    "event": "4bc65368ddab91dd7266ebcf9d7b2e62a03e871c"
+  },
+  "catalog": {
+    "mapping_version": "1.0.0",
+    "rule_count": 69,
+    "b_rule_count": 31,
+    "c_rule_count": 38,
+    "shard_count": 7,
+    "trace_fields": [
+      "SOURCE_FIELD",
+      "TRANSFORMATION_RULE_ID",
+      "TARGET_ENTITY",
+      "TARGET_FIELD",
+      "TARGET_TYPE",
+      "FORMAT_CONVERSION",
+      "UNIT_CONVERSION",
+      "CODE_NORMALIZATION",
+      "IDENTIFIER_NORMALIZATION",
+      "RELATION_MAPPING",
+      "MAPPING_VERSION"
+    ]
+  },
+  "validation": {
+    "tests": "PASS_29_OF_29",
+    "python_compile": "PASS_2_OF_2",
+    "json_parse": "PASS",
+    "d_exact_input_blobs": "PASS_3_OF_3",
+    "mapping_rules": "PASS_69_OF_69",
+    "fixture_cases": "PASS_20_OF_20",
+    "no_silent_drop": "PASS",
+    "silent_drop_count": 0,
+    "d_schema_mutation_count": 0,
+    "d_canonical_db_write_count": 0,
+    "ci_status": "NOT_RUN_NOT_CLAIMED_PASS"
+  },
+  "decision": "C3_D_ALIGNED_FIELD_MAPPING_READY",
+  "terminal": "C3_D_ALIGNED_FIELD_MAPPING_READY_OR_EXACT_BLOCKER",
+  "exact_blocker": null,
+  "next_dependency": "B1_NORMALIZED_DATASET_V1_OR_RAW_ARTIFACT_MANIFEST_V1_NOT_PUBLISHED",
+  "actual_b_record_transformation_executed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
