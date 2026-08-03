@@ -6,20 +6,22 @@
   "directive_comment": 5171208197,
   "registered_at_kst": "2026-08-04T05:11:00+09:00",
   "started_at_kst": "2026-08-04T05:17:00+09:00",
-  "completed_at_kst": "2026-08-04T05:33:00+09:00",
+  "completed_at_kst": "2026-08-04T05:37:00+09:00",
   "terminal": "A4_NAVIGATION_PAGINATION_CONTRACT_READY",
   "decision": "PASS",
   "repository": "anbin1900-crypto/source-factory-core",
   "pr": 23,
   "branch": "worker/a4-navigation-pagination-v1",
-  "source_head_before_terminal": "7c0429a014b7b0705393928983537e48b477509f",
   "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/**",
   "input_authority": {
     "a2_role_charter_blob": "5445002aca7d51c6f230e7f65c1f1d57ae9e8e63",
     "a2_assignment_ledger_blob": "d6c3a1cf88193a0444637d85fc256dce5d33de92",
-    "a3_pr": 22,
-    "a3_observed_head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
-    "a3_trace_handoff_status": "NOT_PUBLISHED_AT_START",
+    "a3_status_at_start": "NOT_PUBLISHED",
+    "a3_late_bound_head": "a5632d6dbdddd956d478b593ffe144ff8a6241cf",
+    "a3_final_report_blob": "38db5f8afb78f25fa36554d33246a2f1ab34f2d9",
+    "a3_fixture_trace_blob": "cd29511601f27a128ff88e2e3f265c116d99e4a0",
+    "a3_trace_event_count": 15,
+    "a3_latest_pointer_note": "STARTED_STALE_RELATIVE_TO_FINAL_REPORT",
     "fixture_mode": "REPOSITORY_LOCAL_FIXTURE_ONLY"
   },
   "artifacts": {
@@ -30,8 +32,9 @@
     "collection_scope": {"path": "COLLECTION_SCOPE_BOUNDARY_V1.json", "blob": "604e4a40c37ff0778db1b4089f7b001f0c321da1"},
     "loop_stop_policy": {"path": "NAVIGATION_LOOP_STOP_POLICY_V1.json", "blob": "58caa28c5b26db944a77e8108979f67b7ad5861e"},
     "fixture_replay": {"path": "FIXTURE_NAVIGATION_REPLAY_V1.json", "blob": "cc70e4f967b6c92fa5ddf86a6c31babad4b80983", "digest": "5efffc455deb166bb00afedc918c17f0bf3d0b2be6ca0d266acc680f62ca6bb9"},
-    "a5_handoff": {"path": "A4_TO_A5_PAGINATION_HANDOFF_V1.json", "blob": "948cfe03510ee91a018a4ecfb75823594cc306cb", "ready": true},
-    "a6_handoff": {"path": "A4_TO_A6_NAVIGATION_HANDOFF_V1.json", "blob": "c849ec1f287120fe0fd78b7465aad58436251d98", "ready": true},
+    "a3_trace_late_binding": {"path": "A3_TRACE_LATE_BINDING_V1.json", "blob": "371ef6d890083f7283c77010d0d6d2d841066a41", "mapping_count": 10},
+    "a5_handoff": {"path": "A4_TO_A5_PAGINATION_HANDOFF_V1.json", "blob": "988d34dc259a4c93280680f9ee252eeeadc110df", "ready": true},
+    "a6_handoff": {"path": "A4_TO_A6_NAVIGATION_HANDOFF_V1.json", "blob": "39dc506fad6e8f23b6a8ab334a6ab2418342277d", "ready": true},
     "progress_report": {"path": "A4_PROGRESS_OR_BLOCKER_REPORT_V1.json", "blob": "5330a1c00e094705381d0b1721116957b1536c45"},
     "validation_result": {"path": "A4_NAVIGATION_VALIDATION_RESULT_V1.json", "blob": "9c4fad4765f971f9380ce139e471e5fe90850caf"}
   },
@@ -47,8 +50,10 @@
     "duplicate_page_visit_after_stop_count": 0,
     "guard_cases": "PASS_4_OF_4",
     "canonical_url_query_order_normalization": "PASS",
+    "a3_trace_category_binding": "PASS_10_MAPPINGS",
+    "a3_unknown_event_preserved": true,
     "out_of_owned_root_change_count": 0,
-    "remote_readback": "PASS_11_OF_11"
+    "remote_readback": "PASS_12_OF_12"
   },
   "handoff_authority": {
     "endpoint_request_response_schema": "A-5",
