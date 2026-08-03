@@ -1,11 +1,11 @@
 {
   "schema_version": "LATEST_A0_UI_POINTER_V1",
-  "status": "AI_YOLLA_PANEL_WORKSPACE_V56_ALL_WORKERS_REACHABLE_CURRENT",
+  "status": "AI_YOLLA_PANEL_WORKSPACE_V561_STATE_TEST_HOTFIX_CURRENT",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "current_ui_version": "5.6.0",
-  "current_pointer_path": "yolla-panel-v1/a0-successor-control/ui-v56/LATEST_A0_V56_STANDALONE_INSTALLER_POINTER.json",
-  "current_pointer_commit": "85e4cd2c2091b209d8454b00c3bc09d00919b5f3",
+  "current_ui_version": "5.6.1",
+  "current_pointer_path": "yolla-panel-v1/a0-successor-control/ui-v561/LATEST_A0_V561_STANDALONE_INSTALLER_POINTER.json",
+  "current_pointer_commit": "29fc5efa6d11e6babdd076eaf6d7b27854b14cd2",
   "layout": "COMPACT_VERTICAL_GROUPS_SINGLE_OUTER_SCROLL",
   "outer_group_scroll": true,
   "nested_worker_scroll": false,
@@ -19,7 +19,11 @@
   "fixed_worker_count": false,
   "fixed_group_count": false,
   "reserve_seats": false,
+  "install_test_live_state_isolation": true,
+  "install_test_baseline_count_derived": true,
+  "existing_custom_groups_workers_preserved": true,
   "superseded_ui_versions": [
+    {"version":"5.6.0","reason":"INSTALL_TEST_READ_LIVE_CUSTOM_STATE_AND_EXPECTED_FIXED_39_ROLES","installer_status":"DO_NOT_RUN"},
     {"version":"5.5.0","reason":"B6_AND_LOWER_WORKERS_NOT_REACHABLE","installer_status":"DO_NOT_RUN"},
     {"version":"5.4.0","reason":"GROUP_CARDS_TOO_TALL_WORKERS_CLIPPED_WORKER_MENU_NOT_OPERATIONAL","installer_status":"DO_NOT_RUN"},
     {"version":"5.3.0","reason":"HORIZONTAL_GROUP_TAB_INTERPRETATION_REJECTED_BY_USER","installer_status":"DO_NOT_RUN"}
@@ -29,5 +33,5 @@
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at": "2026-08-03T23:43:00+09:00"
+  "updated_at": "2026-08-04T01:02:00+09:00"
 }
