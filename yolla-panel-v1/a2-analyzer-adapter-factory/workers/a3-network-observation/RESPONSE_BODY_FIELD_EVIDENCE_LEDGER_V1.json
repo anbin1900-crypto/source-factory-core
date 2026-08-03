@@ -1,0 +1,60 @@
+{
+  "schema_version": "RESPONSE_BODY_FIELD_EVIDENCE_LEDGER_V1",
+  "directive_id": "A2-TO-A3-RESPONSE-BODY-FIELD-EVIDENCE-CLOSURE-V4-20260804-001",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE4-BLOCKER-CLOSURE-V1-20260804-001",
+  "searched_at_kst": "2026-08-04T06:12:00+09:00",
+  "decision": "BLOCKED_EXACT_ENDPOINT_BODY_FIXTURES_ABSENT",
+  "search_sources": [
+    {
+      "source": "A3_NETWORK_TRACE",
+      "repository": "anbin1900-crypto/source-factory-core",
+      "head": "b04a2cac2e506e8ca746b35d4e41e68322a4b7c1",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/FIXTURE_TRACE_BUNDLE_V1.json",
+      "blob": "cd29511601f27a128ff88e2e3f265c116d99e4a0",
+      "result": "STATUS_CONTENT_TYPE_BODY_FORMAT_SIZE_ONLY_NO_RESPONSE_BODY"
+    },
+    {
+      "source": "A5_PLACEHOLDER_REQUEST_RESPONSE_FIXTURE",
+      "repository": "anbin1900-crypto/source-factory-core",
+      "head": "38ee3e4f935c5507d5fb5db22704bfcf078f3f02",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/FIXTURE_REQUEST_RESPONSE_REPLAY_V1.json",
+      "blob": "e372ecdb8cbaad343dbe49b23340a2436c149c52",
+      "authority_state": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+      "fixture_url_patterns": [
+        "https://fixture.invalid/api/v1/items",
+        "https://fixture.invalid/api/v1/items/{item_id}"
+      ],
+      "result": "BODY_FIELDS_PRESENT_BUT_NOT_EXACT_BOUND_TO_A3_ENDPOINTS"
+    },
+    {
+      "source": "A6_SUPERSEDED_FIXTURE_CANDIDATE",
+      "repository": "anbin1900-crypto/source-factory-core",
+      "head": "3c047097db807f83c0558961425e0578400ef797",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/VERIFIED_ADAPTER_PACKAGE_V1/fixture_bundle.json",
+      "blob": "31a6ae2709b881f5570a29862ae3ae7cb7b6d73d",
+      "fixture_identity": "cortarNo_listingId_candidate",
+      "result": "BODY_FIELDS_PRESENT_BUT_NO_EXACT_A3_ENDPOINT_OR_EVIDENCE_POINTER_BINDING"
+    }
+  ],
+  "required_json_endpoint_profiles": [
+    {"profile_id":"EP-001","method":"GET","url_pattern":"https://fixture.invalid/api/listings/map","resource_type":"FETCH"},
+    {"profile_id":"EP-002","method":"GET","url_pattern":"https://fixture.invalid/api/listings/{listing_id}","resource_type":"FETCH"},
+    {"profile_id":"EP-003","method":"GET","url_pattern":"https://fixture.invalid/api/listings/{listing_id}","resource_type":"XHR"},
+    {"profile_id":"EP-004","method":"GET","url_pattern":"https://fixture.invalid/api/listings","resource_type":"XHR"},
+    {"profile_id":"EP-005","method":"GET","url_pattern":"https://fixture.invalid/api/regions","resource_type":"FETCH"},
+    {"profile_id":"EP-010","method":"POST","url_pattern":"https://fixture.invalid/api/listings/search","resource_type":"XHR"},
+    {"profile_id":"EP-011","method":"POST","url_pattern":"https://fixture.invalid/api/session/refresh","resource_type":"FETCH"},
+    {"profile_id":"EP-012","method":"POST","url_pattern":"https://fixture.invalid/graphql","resource_type":"GRAPHQL"}
+  ],
+  "exact_body_fixture_bindings": [],
+  "missing_exact_body_fixture_profiles": ["EP-001","EP-002","EP-003","EP-004","EP-005","EP-010","EP-011","EP-012"],
+  "exact_body_fixture_binding_count": 0,
+  "required_json_endpoint_count": 8,
+  "unbound_candidate_fixture_count": 2,
+  "field_inference_from_body_format_or_size": false,
+  "raw_secret_value_count": 0,
+  "live_site_call_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
