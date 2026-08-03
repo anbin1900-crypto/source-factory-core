@@ -1,0 +1,118 @@
+{
+  "schema_version": "C1_START_REPORT_V1",
+  "report_id": "C1-SEMANTIC-KNOWLEDGE-DOMAIN-AI-START-20260803-001",
+  "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "directive_id": "A0-TO-C1-SEMANTIC-KNOWLEDGE-DOMAIN-AI-SHELL-V1-20260803-001",
+  "priority": "P0",
+  "mode": "FIXTURE_FIRST_KNOWLEDGE_CANDIDATE_AND_AI_SEAT",
+  "registered_at_kst": "2026-08-03 19:36 KST",
+  "authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "control_pr": 20,
+    "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+    "start_head": "7deea8d5e873b9d629c4f6fa11ba2084ccfad4a1",
+    "role_charter_path": "yolla-panel-v1/c1-semantic-ai-runtime/C1_ROLE_CHARTER_AND_FIRST_DIRECTIVE_V1.md",
+    "role_charter_blob": "5fcfdcd67e6b29b626f09dc477721864f8dee62a",
+    "upper_control_pr": 17,
+    "upper_control_head": "b56162f7b404153d7ea06474f3f3263aece96124"
+  },
+  "dependency_snapshot": {
+    "B-1": {
+      "control_pr": 19,
+      "head": "d83153b789913b4a77accd6aca2a2f1d753967d0",
+      "expected_input": "RAW_ARTIFACT_OR_NORMALIZED_DATASET",
+      "current_consumption_mode": "FIXTURE_OR_READ_ONLY_CONTRACT_UNTIL_VERIFIED_PACKAGE"
+    },
+    "D-1": {
+      "source_factory_control_pr": 21,
+      "source_factory_head": "65bf71a0b6b766dea914fcd2decfad4f9218e8a7",
+      "knowledge_db_repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "knowledge_db_control_pr": 188,
+      "knowledge_authority": true,
+      "expected_output_to_c1": "KNOWLEDGE_RELEASE_V1",
+      "current_consumption_mode": "FIXTURE_RELEASE_ONLY_UNTIL_D_ACCEPTANCE"
+    },
+    "A-0": {
+      "control_pr": 17,
+      "head": "b56162f7b404153d7ea06474f3f3263aece96124",
+      "expected_output_from_c1": "AI_RUNTIME_RECEIPT_V1"
+    }
+  },
+  "handoff_contracts": {
+    "outputs_to_d1": [
+      "DOCUMENT_UNIT_BUNDLE_V1",
+      "KNOWLEDGE_CANDIDATE_BUNDLE_V1"
+    ],
+    "input_from_d1": "KNOWLEDGE_RELEASE_V1",
+    "output_to_a0": "AI_RUNTIME_RECEIPT_V1",
+    "progress_output": "PIPELINE_PROGRESS_EVENT_V1"
+  },
+  "worker_lanes": {
+    "C-2": {
+      "role": "DOCUMENT_DECOMPOSITION",
+      "mission": "Define DocumentUnitBundle V1, source spans, evidence references and fixture decomposition for statute article, case holding, manual section, table and form item.",
+      "expected_terminal": "C2_DOCUMENT_UNIT_BUNDLE_FIXTURE_PIPELINE_PASS"
+    },
+    "C-3": {
+      "role": "SEMANTIC_CLASSIFICATION",
+      "mission": "Define concept, relation, applicability, condition and target classification over accepted C-2 document units.",
+      "expected_terminal": "C3_SEMANTIC_CLASSIFICATION_FIXTURE_PIPELINE_PASS"
+    },
+    "C-4": {
+      "role": "EVIDENCE_AND_KNOWLEDGE_CANDIDATE",
+      "mission": "Bind evidence and produce KnowledgeCandidateBundle V1 plus EvidenceBindingReport without asserting D acceptance.",
+      "expected_terminal": "C4_KNOWLEDGE_CANDIDATE_EVIDENCE_BINDING_PASS"
+    },
+    "C-5": {
+      "role": "DOMAIN_AI_SEAT_AND_TOOL_RUNTIME",
+      "mission": "Build logical domain AI seat provider, prompt/tool runtime and D Query/Citation consumption interfaces using fixture KnowledgeRelease V1.",
+      "expected_terminal": "C5_DOMAIN_AI_SEAT_QUERY_CITATION_RUNTIME_PASS"
+    },
+    "C-6": {
+      "role": "AI_QUALITY_AND_E2E_VALIDATION",
+      "mission": "Validate retrieval to evidence to citation to answer, knowledge-version binding, citation integrity and AiRuntimeReceipt V1 across fixture domains.",
+      "expected_terminal": "C6_DOMAIN_AI_QUALITY_CITATION_E2E_PASS"
+    }
+  },
+  "execution_order": [
+    "C2_DOCUMENT_DECOMPOSITION_CONTRACT_AND_FIXTURE",
+    "C3_SEMANTIC_CLASSIFICATION_CONTRACT_AND_FIXTURE",
+    "C4_EVIDENCE_BINDING_AND_KNOWLEDGE_CANDIDATE",
+    "D1_FIXTURE_KNOWLEDGE_RELEASE_CONSUMPTION_CONTRACT",
+    "C5_DOMAIN_AI_SEAT_QUERY_CITATION_RUNTIME",
+    "C6_AI_QUALITY_CITATION_E2E",
+    "C1_FINAL_ACCEPTANCE_AND_A0_HANDOFF"
+  ],
+  "acceptance_gates": [
+    "G1_DOCUMENT_UNIT_BUNDLE_CONTRACT",
+    "G2_DOCUMENT_DECOMPOSITION_FIXTURE",
+    "G3_SEMANTIC_CLASSIFICATION_CONTRACT",
+    "G4_KNOWLEDGE_CANDIDATE_BUNDLE",
+    "G5_EVIDENCE_BINDING_REPORT",
+    "G6_D_QUERY_CITATION_CONSUMPTION_CONTRACT",
+    "G7_DOMAIN_AI_SEAT_PACKAGE",
+    "G8_AI_RUNTIME_RECEIPT",
+    "G9_AI_EVALUATION_REPORT",
+    "G10_MINIMUM_SEARCH_EVIDENCE_CITATION_ANSWER_E2E",
+    "G11_SEMANTIC_AI_PROVIDER_AND_VIEW_MODEL"
+  ],
+  "progress": {
+    "completed_gates": 0,
+    "total_gates": 11,
+    "progress_percent": 0,
+    "status": "STARTED"
+  },
+  "boundaries": {
+    "adapter_ownership": false,
+    "collector_ownership": false,
+    "direct_d_canonical_db_write": false,
+    "unvalidated_knowledge_authority_claim": false,
+    "production_ai_claim_without_d_release": false,
+    "panel_shell_direct_edit": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "next_action": "COMMIT_WORKER_LANE_ASSIGNMENT_MATRIX_AND_BEGIN_FIXTURE_FIRST_CONTRACT_IMPLEMENTATION",
+  "status": "C1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_MISSION_STARTED"
+}
