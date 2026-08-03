@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "pointer_id": "B1-TO-C1-HANDOFF-POINTER-V1",
+  "updated_at_kst": "2026-08-04T04:44:00+09:00",
+  "control_pr": 19,
+  "target_control_pr": 20,
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "status": "WAITING_B6_INDEPENDENT_ACCEPTANCE",
+  "handoff_contract": "SOURCE_RECORD_ENVELOPE_V1_PLUS_EXTRACTION_RECEIPT_V1",
+  "semantic_transformation_performed_by_b": false,
+  "required_inputs": {
+    "SOURCE_RECORD_ENVELOPE_V1": null,
+    "NORMALIZED_DATASET_V1": null,
+    "EXTRACTION_RECEIPT_V1": null,
+    "B6_EXTRACTION_ACCEPTANCE_REPORT_V1": null
+  },
+  "target_rules": {
+    "source_evidence_and_lineage_preserved": true,
+    "c1_owns_semantic_transformation": true,
+    "b1_does_not_define_d_canonical_schema": true,
+    "b1_does_not_write_d_canonical_db": true
+  },
+  "handoff_published": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
