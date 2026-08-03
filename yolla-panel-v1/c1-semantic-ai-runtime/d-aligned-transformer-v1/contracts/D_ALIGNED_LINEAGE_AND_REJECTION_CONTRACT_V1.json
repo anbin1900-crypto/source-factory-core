@@ -1,0 +1,120 @@
+{
+  "schema_version": "D_ALIGNED_LINEAGE_AND_REJECTION_CONTRACT_V1",
+  "contract_id": "C1-D-ALIGNED-LINEAGE-REJECTION-V1",
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "authority_boundary": {
+    "d1_is_canonical_schema_authority": true,
+    "c1_may_change_d_schema": false,
+    "c1_may_write_d_canonical_db": false,
+    "fixture_is_d_accepted_data": false
+  },
+  "required_input_contracts": [
+    "NORMALIZED_DATASET_V1_OR_RAW_ARTIFACT_MANIFEST_V1",
+    "D_CANONICAL_SCHEMA_PROFILE_V1",
+    "D_INBOUND_FIELD_MAPPING_CONTRACT_V1",
+    "D_INTAKE_VALIDATION_RULESET_V1"
+  ],
+  "lineage_record_required_fields": [
+    "SOURCE_RECORD_ID",
+    "SOURCE_FIELD",
+    "SOURCE_VALUE",
+    "TRANSFORMATION_RULE_ID",
+    "TARGET_ENTITY",
+    "TARGET_FIELD",
+    "TARGET_TYPE",
+    "TRANSFORMED_VALUE",
+    "PROVENANCE_REF",
+    "EVIDENCE_REF",
+    "VALIDATION_STATUS",
+    "REJECTION_REASON"
+  ],
+  "validation_status_values": [
+    "VALID",
+    "REJECTED",
+    "PENDING_D_CONTRACT",
+    "PENDING_B_INPUT"
+  ],
+  "rejection_reason_values": [
+    "MISSING_REQUIRED_VALUE",
+    "TYPE_ERROR",
+    "RANGE_ERROR",
+    "UNMAPPED_FIELD",
+    "INVALID_CODE",
+    "FORMAT_ERROR",
+    "UNIT_CONVERSION_ERROR",
+    "IDENTIFIER_NORMALIZATION_ERROR",
+    "RELATION_TARGET_MISSING",
+    "PROVENANCE_REF_MISSING",
+    "EVIDENCE_REF_MISSING",
+    "SCHEMA_VERSION_MISMATCH",
+    "MAPPING_VERSION_MISMATCH",
+    "TRANSFORMATION_RULE_NOT_FOUND"
+  ],
+  "processing_rules": {
+    "one_lineage_entry_per_source_field_attempt": true,
+    "source_value_preserved": true,
+    "transformation_rule_id_required_for_transformed_value": true,
+    "target_field_must_come_from_d_mapping_contract": true,
+    "target_type_must_come_from_d_schema_profile": true,
+    "validation_must_use_d_intake_ruleset": true,
+    "rejected_value_must_be_emitted": true,
+    "silent_drop_allowed": false,
+    "mapping_version_required": true,
+    "schema_version_required": true,
+    "deterministic_replay_required": true
+  },
+  "required_packages": {
+    "D_ALIGNED_TRANSFORMATION_PACKAGE_V1": {
+      "required_sections": [
+        "package_id",
+        "source_package_refs",
+        "d_schema_profile_ref",
+        "d_mapping_contract_ref",
+        "d_validation_ruleset_ref",
+        "mapping_version",
+        "schema_version",
+        "transformed_records",
+        "lineage_entries",
+        "rejected_record_bundle_ref",
+        "validation_summary",
+        "package_sha256"
+      ]
+    },
+    "FIELD_MAPPING_REPORT_V1": {
+      "required_sections": [
+        "mapping_version",
+        "source_field_count",
+        "mapped_field_count",
+        "rejected_field_count",
+        "transformation_rule_usage",
+        "target_entity_field_matrix",
+        "unmapped_field_summary",
+        "lineage_completeness"
+      ]
+    },
+    "REJECTED_RECORD_BUNDLE_V1": {
+      "required_sections": [
+        "bundle_id",
+        "source_package_refs",
+        "rejected_records",
+        "rejection_reason_counts",
+        "retryable_count",
+        "non_retryable_count",
+        "bundle_sha256"
+      ]
+    },
+    "KNOWLEDGE_CANDIDATE_BUNDLE_V1": {
+      "required_sections": [
+        "candidate_bundle_id",
+        "domain_scope",
+        "knowledge_objects",
+        "evidence_refs",
+        "relationship_edges",
+        "classification_version",
+        "validation_summary"
+      ],
+      "d_acceptance_claim_allowed": false
+    }
+  },
+  "status": "CONTRACT_PREPARED_WAITING_B1_AND_D1_AUTHORITATIVE_INPUTS"
+}
