@@ -1,27 +1,44 @@
 {
   "schema_version": "1.0.0",
   "pointer_id": "LATEST-B1-COLLECTOR-DB-MATERIALIZATION-REPORT-V1",
-  "updated_at_kst": "2026-08-03T19:35:00+09:00",
+  "updated_at_kst": "2026-08-04T04:44:00+09:00",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 19,
   "branch": "integration/b1-collector-db-materialization-v1",
-  "accepted_authority_head": "2ea38ddeff0ca7c19b3338a57c42167050d8a293",
   "current_report": {
-    "type": "START",
-    "path": "yolla-panel-v1/b1-collector-materialization/B1_START_REPORT_V1.json",
-    "commit": "d83153b789913b4a77accd6aca2a2f1d753967d0",
-    "blob": "9f2a2ca953eaf638c4a5f1dd7236be3a90f5ab24",
-    "terminal": "B1_COLLECTOR_DB_MATERIALIZATION_START_ACCEPTED"
+    "type": "WORKER_ASSIGNMENT",
+    "path": "yolla-panel-v1/b1-collector-materialization/B1_WORKER_ASSIGNMENT_POINTER.json",
+    "commit": "d2f1fd6c58b7e4bd8a3096b648ef65970d82ade5",
+    "blob": "f39933e5ba9962d513e41fa4d8b2f043d181820d",
+    "status": "B2_TO_B6_PARALLEL_DISPATCH_ACTIVE"
   },
   "directive_id": "A0-TO-B1-GENERIC-COLLECTOR-MATERIALIZATION-SHELL-V1-20260803-001",
-  "status": "ACTIVE_FIXTURE_FIRST_SHELL",
-  "dependency": {
-    "a2_pr": 18,
-    "a2_head": "66e43a914929949d1c8d106014fe08bca00d8eaa",
-    "verified_adapter_package_v1_published": false,
-    "classification": "NON_BLOCKING_FOR_FIXTURE_FIRST_SHELL"
+  "addendum_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "existing_directive_superseded": false,
+  "worker_assignment_pointer": {
+    "path": "yolla-panel-v1/b1-collector-materialization/B1_WORKER_ASSIGNMENT_POINTER.json",
+    "blob": "f39933e5ba9962d513e41fa4d8b2f043d181820d"
   },
-  "next_required_event": "B1_FIXTURE_FIRST_CONTRACT_PACKAGE_PUBLISHED_OR_EXACT_BLOCKER",
+  "extraction_result_pointer": {
+    "path": "yolla-panel-v1/b1-collector-materialization/B1_EXTRACTION_RESULT_POINTER.json",
+    "blob": "3918f6d513a1abdf641fc86c0b91371720a9535e",
+    "status": "WAITING_B2_TO_B6_TERMINALS"
+  },
+  "c1_handoff_pointer": {
+    "path": "yolla-panel-v1/b1-collector-materialization/B1_TO_C1_HANDOFF_POINTER.json",
+    "blob": "3c51e55ec25828ece1a2e60d69893c7ff9a65bc5",
+    "status": "WAITING_B6_INDEPENDENT_ACCEPTANCE"
+  },
+  "worker_controls": {
+    "B-2": 38,
+    "B-3": 39,
+    "B-4": 40,
+    "B-5": 41,
+    "B-6": 42
+  },
+  "a2_verified_adapter_package_v1_published": false,
+  "actual_site_extraction": false,
+  "required_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
   "production": false,
   "ready": false,
   "merge": false
