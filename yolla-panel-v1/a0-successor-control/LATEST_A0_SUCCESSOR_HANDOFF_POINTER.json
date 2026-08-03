@@ -1,7 +1,7 @@
 {
-  "schema_version": "LATEST_A0_SUCCESSOR_HANDOFF_POINTER_V1",
-  "status": "A0_SUCCESSOR_CONTROL_AND_FUTURE_COMMAND_PLAN_READY",
-  "terminal": "A0_SUCCESSOR_HANDOFF_AND_FUTURE_COMMAND_PACKAGE_COMPLETE",
+  "schema_version": "LATEST_A0_SUCCESSOR_HANDOFF_POINTER_V2",
+  "status": "A0_V59_CONTRACT_RESOLUTION_AND_SOURCE_BUILD_READY_TARGET_PC_PENDING",
+  "terminal": "A0_AUTOMATION_CONTRACT_CONFLICTS_RESOLVED_V59_ALIGNED_SOURCE_PASS",
   "repository": "anbin1900-crypto/source-factory-core",
   "upper_control_pr": 14,
   "successor_control_pr": 17,
@@ -10,94 +10,107 @@
   "successor_base_commit": "124367a50a72505516666b4f427bfeda325ba3d3",
   "primary_pointers": [
     {
+      "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_CONTRACT_POINTER.json",
+      "commit": "59f98477a0e8055df8eb4830aadfb142048063eb"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_RUNTIME_POINTER_V1.json",
+      "commit": "1b3ba76632ca13d427d04484062e607a9600b850"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_UI_POINTER.json",
+      "current_version": "5.9.0"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_SUCCESSOR_REPORT_POINTER.json",
+      "commit": "c2d34abf1305a4097756f17bab01e294ac146529"
+    },
+    {
       "path": "yolla-panel-v1/a0-successor-control/LATEST_FUTURE_COMMAND_PLAN_POINTER.json",
       "commit": "71dde085593d3e55c99de4ba248474d29d3d5a20"
     },
     {
       "path": "yolla-panel-v1/a0-successor-control/LATEST_GROUP_ROLE_ASSIGNMENT_POINTER.json",
       "commit": "f9caebb7a95a8976d9c83ed6d7eb0baf1263305d"
-    },
-    {
-      "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_SUCCESSOR_REPORT_POINTER.json",
-      "commit": "424a4429fbbdaefe33e4a38cab5bfcc31dd42ebd"
     }
   ],
-  "documents": [
+  "current_authority_documents": [
     {
-      "path": "yolla-panel-v1/a0-successor-control/A0_SUCCESSOR_ROLE_CHARTER_V1.md",
-      "commit": "689436932385ef321312df6523045e2af3b042d2"
+      "path": "yolla-panel-v1/a0-successor-control/A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_V1.json",
+      "commit": "a03e0cb83ecf612599d3814a37ecb73ba831018a"
     },
     {
-      "path": "yolla-panel-v1/a0-successor-control/A0_CURRENT_OPERATIONAL_HANDOFF_V1.json",
-      "commit": "0d5ac5fcc4e241b2ff606b5a03f17d3ef28c6ebb"
+      "path": "yolla-panel-v1/a0-successor-control/WORKER_JOB_SCHEDULE_CONTRACT_V1.json",
+      "commit": "ac435baa55d85c1b65737ce51a8d8e07c5320476"
     },
     {
-      "path": "yolla-panel-v1/a0-successor-control/A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V1.json",
-      "commit": "ae815d171013407a446d6aff0aaa83b1a0831278"
+      "path": "yolla-panel-v1/a0-successor-control/automation-v1/WORKER_JOB_SCHEDULE_V1.schema.json",
+      "blob_sha": "860f350f056595c46c22a8cad851ddc9fb71a4fd"
     },
     {
-      "path": "yolla-panel-v1/a0-successor-control/A0_REPORTING_AND_HANDOFF_CONTRACT_V1.json",
-      "commit": "62f4ac229ccc6e4e55da6fc548d40eb62d0866d0"
+      "path": "yolla-panel-v1/a0-successor-control/A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V2.json",
+      "commit": "4ee6c4373ab46eb5ecd08115cec06662429d23fb"
     },
     {
-      "path": "yolla-panel-v1/a0-successor-control/A0_BOOTSTRAP_PROMPT_V1.md",
-      "commit": "75530c1dc22cecc926ea4a9cee3ec40e1eebccec"
+      "path": "yolla-panel-v1/a0-successor-control/reports/A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_FINAL_REPORT_V1.json",
+      "commit": "628bbcf916b80b5a798f322a4c53e06a0105d7a7"
     },
     {
-      "path": "yolla-panel-v1/a0-successor-control/FUTURE_COMMAND_AND_AUTOMATION_MASTER_PLAN_V1.md",
-      "commit": "26cb0c88e868d97004649f6d908bdfad98e7e709"
-    },
-    {
-      "path": "yolla-panel-v1/a0-successor-control/COMMAND_PHASE_GATE_ROADMAP_V1.json",
-      "commit": "d322caf446c0406db4a5b048219c7fdef606a75a"
-    },
-    {
-      "path": "yolla-panel-v1/a0-successor-control/COMMANDER_CONTEXT_FAILOVER_AND_SUCCESSION_POLICY_V1.json",
-      "commit": "b56162f7b404153d7ea06474f3f3263aece96124"
+      "path": "yolla-panel-v1/a0-successor-control/reports/A0_AUTOMATION_RUNTIME_V59_BUILD_TEST_REPORT_V1.json",
+      "commit": "dc290012d12435bdba94545f2fd8d97ea9cd12ea"
     }
+  ],
+  "historical_documents_retained": [
+    "A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V1.json",
+    "A0_PROGRESS_REPORT_V2.json",
+    "V5.2 installation acceptance package"
   ],
   "read_order": [
     "LATEST_A0_SUCCESSOR_HANDOFF_POINTER.json",
+    "LATEST_A0_AUTOMATION_CONTRACT_POINTER.json",
+    "A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_V1.json",
+    "WORKER_JOB_SCHEDULE_CONTRACT_V1.json",
+    "automation-v1/WORKER_JOB_SCHEDULE_V1.schema.json",
+    "LATEST_A0_AUTOMATION_RUNTIME_POINTER_V1.json",
+    "LATEST_A0_UI_POINTER.json",
+    "A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V2.json",
+    "LATEST_A0_SUCCESSOR_REPORT_POINTER.json",
+    "latest referenced report",
     "LATEST_FUTURE_COMMAND_PLAN_POINTER.json",
-    "FUTURE_COMMAND_AND_AUTOMATION_MASTER_PLAN_V1.md",
-    "COMMAND_PHASE_GATE_ROADMAP_V1.json",
-    "COMMANDER_CONTEXT_FAILOVER_AND_SUCCESSION_POLICY_V1.json",
     "LATEST_GROUP_ROLE_ASSIGNMENT_POINTER.json",
     "A0_SUCCESSOR_ROLE_CHARTER_V1.md",
-    "A0_CURRENT_OPERATIONAL_HANDOFF_V1.json",
-    "A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V1.json",
-    "A0_REPORTING_AND_HANDOFF_CONTRACT_V1.json",
-    "LATEST_A0_SUCCESSOR_REPORT_POINTER.json",
-    "EACH_COMMANDER_LATEST_REPORT_POINTER"
+    "A0_REPORTING_AND_HANDOFF_CONTRACT_V1.json"
   ],
-  "runtime_baseline": "YOLLA_WORKSPACE_V5_CLEAN_RUNTIME",
-  "target_pc_confirmed": {
-    "v5_visual_acceptance": "PASS",
-    "seat_count": 50,
-    "group_count": 7,
-    "chatgpt_browser_view": "PASS",
-    "project_context_binding": "PASS",
-    "white_screen_regression": "RESOLVED"
+  "current_runtime": {
+    "ui_version": "5.9.0",
+    "runtime_provider_version": "5.7.0",
+    "schedule_runner_version": "1.0.0-panel-bound-build-pass",
+    "current_schedule_id": "REAL-ESTATE-CYCLE-001",
+    "source_build": "PASS",
+    "target_pc_execution": "NOT_OBSERVED"
   },
+  "resolved_contract_rules": [
+    "seat code is transport identity; display and project roles are bindings",
+    "up to 100 planned jobs; at most one derived active directive per seat",
+    "GitHub owns plans and terminal results; local runtime owns rebuildable cursor",
+    "worker command and data factory idempotency namespaces are separate",
+    "exclusive PC runtime concurrency is 1; GPT worker concurrency is 5; browser analysis concurrency is 2",
+    "job attempt logs and cycle official reports are separate",
+    "A-1 owns upper planning; project commander authors jobs; A-0 executes"
+  ],
   "not_yet_confirmed": [
-    "V51_ACTUAL_COMMAND_CYCLE_COMPLETION",
-    "V52_FIXED_LOGIN_PROFILE",
-    "V52_DUAL_BROWSER_VIEW",
-    "V52_ANALYZER_ARTIFACT",
-    "FULL_MULTI_LANE_E2E"
+    "V59_TARGET_PC_INSTALLATION",
+    "B2_B3_CONTEXT_BINDING",
+    "ACTUAL_SIX_JOB_DISPATCH",
+    "ACTUAL_GITHUB_RESULT_INGESTION",
+    "RESTART_RESUME_ON_TARGET_PC",
+    "A0_WORKER_SCHEDULE_AUTOMATION_LOOP_V1_PASS"
   ],
-  "current_phase": 0,
-  "next_task": "A0_AND_GROUP_COMMANDER_START_REPORTS_THEN_V52_TARGET_PC_STABILITY",
-  "next_required_reports": [
-    "A0_START_REPORT_V1.json",
-    "A2_START_REPORT_V1.json",
-    "B1_START_REPORT_V1.json",
-    "C1_START_REPORT_V1.json",
-    "D1_INTEGRATION_START_REPORT_V1.json"
-  ],
-  "bootstrap_prompt": "yolla-panel-v1/a0-successor-control/A0_BOOTSTRAP_PROMPT_V1.md",
+  "current_phase": "V59_TARGET_PC_ACCEPTANCE",
+  "next_task": "INSTALL_V59_ON_TARGET_PC_BIND_B2_B3_CONTEXTS_RUN_THREE_JOBS_EACH_AND_OBSERVE_GITHUB_RESULTS",
+  "required_next_report": "A0_V59_TARGET_PC_ACTUAL_LOOP_TEST_REPORT_V1.json",
   "production": false,
   "ready": false,
   "merge": false,
-  "prepared_at": "2026-08-03T19:33:00+09:00"
+  "updated_at": "2026-08-04T04:02:00+09:00"
 }
