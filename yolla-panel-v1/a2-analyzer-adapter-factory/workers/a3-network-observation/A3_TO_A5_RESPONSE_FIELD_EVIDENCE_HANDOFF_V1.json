@@ -1,0 +1,37 @@
+{
+  "schema_version": "A3_TO_A5_RESPONSE_FIELD_EVIDENCE_HANDOFF_V1",
+  "directive_id": "A2-TO-A3-RESPONSE-BODY-FIELD-EVIDENCE-CLOSURE-V4-20260804-001",
+  "producer": "A-3",
+  "consumer": "A-5",
+  "handoff_status": "EXACT_BLOCKER",
+  "ready": false,
+  "first_blocker": "EXACT_RESPONSE_BODY_FIXTURES_FOR_A3_JSON_ENDPOINT_PROFILES_ARE_NOT_PRESENT_IN_SEARCHED_REPOSITORY_FIXTURES",
+  "evidence_ledger": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/RESPONSE_BODY_FIELD_EVIDENCE_LEDGER_V1.json",
+  "schema_observation": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/RESPONSE_BODY_SCHEMA_OBSERVATION_V1.json",
+  "missing_profiles": ["EP-001","EP-002","EP-003","EP-004","EP-005","EP-010","EP-011","EP-012"],
+  "exact_body_fixture_binding_count": 0,
+  "required_json_endpoint_count": 8,
+  "available_non_authoritative_sources": [
+    {
+      "name": "A5_FIXTURE_REQUEST_RESPONSE_REPLAY_V1",
+      "head": "38ee3e4f935c5507d5fb5db22704bfcf078f3f02",
+      "blob": "e372ecdb8cbaad343dbe49b23340a2436c149c52",
+      "reason_not_authoritative": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM_AND_URL_SET_MISMATCH"
+    },
+    {
+      "name": "A6_VERIFIED_ADAPTER_PACKAGE_FIXTURE_BUNDLE",
+      "head": "3c047097db807f83c0558961425e0578400ef797",
+      "blob": "31a6ae2709b881f5570a29862ae3ae7cb7b6d73d",
+      "reason_not_authoritative": "SUPERSEDED_CANDIDATE_WITHOUT_EXACT_A3_ENDPOINT_BINDING"
+    }
+  ],
+  "a5_required_action": "REMAIN_FAIL_CLOSED_UNTIL_EXACT_ENDPOINT_BOUND_RESPONSE_BODY_FIXTURES_OR_IMMUTABLE_SNAPSHOTS_ARE_PUBLISHED",
+  "final_endpoint_catalog_authority": "A-5",
+  "final_response_schema_authority": "A-5",
+  "final_identifier_relationship_authority": "A-5",
+  "raw_secret_value_count": 0,
+  "live_site_call_count": 0,
+  "production": false,
+  "ready_transition": false,
+  "merge": false
+}
