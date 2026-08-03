@@ -1,0 +1,63 @@
+{
+  "schema_version": "ANALYZER_ACCEPTANCE_CHECKLIST_V1",
+  "directive_id": "A2-TO-A7-VERIFIED-ADAPTER-INDEPENDENT-ACCEPTANCE-V3-20260804-001",
+  "evaluated_at_kst": "2026-08-04T06:16:26+09:00",
+  "worker_root_audit": {
+    "A-3": {
+      "pr": 22,
+      "current_head": "b1bb32ba50cd9697db6d2c0fe05b2588a5834682",
+      "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/**",
+      "changed_path_scope": "PASS",
+      "out_of_owned_root_change_count": 0
+    },
+    "A-4": {
+      "pr": 23,
+      "current_head": "6567f380e4249dc7cd9b55693fa85856a37b91e6",
+      "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/**",
+      "changed_path_scope": "PASS",
+      "out_of_owned_root_change_count": 0
+    },
+    "A-5": {
+      "pr": 24,
+      "current_head": "38ee3e4f935c5507d5fb5db22704bfcf078f3f02",
+      "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/**",
+      "changed_path_scope": "PASS",
+      "out_of_owned_root_change_count": 0
+    },
+    "A-6": {
+      "pr": 25,
+      "current_head": "3c047097db807f83c0558961425e0578400ef797",
+      "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/**",
+      "changed_path_scope": "PASS",
+      "out_of_owned_root_change_count": 0
+    }
+  },
+  "owned_root_overlap_count": 0,
+  "checks": {
+    "a3_wave3_endpoint_parameter_observation": "PASS",
+    "a3_redaction_raw_secret_value_count": 0,
+    "a3_fixture_replay_count": 2,
+    "a3_deterministic_replay": "PASS",
+    "a3_wave4_response_body_fixture_binding": "BLOCKED_0_OF_8",
+    "a4_navigation_pagination_contract": "PASS",
+    "a4_fixture_replay_count": 2,
+    "a4_deterministic_navigation_replay": "PASS",
+    "a4_unbounded_loop_count": 0,
+    "a5_final_authority_set": "BLOCKED",
+    "a5_handoff_ready": false,
+    "a6_fixture_replay": "PASS_16_OF_16",
+    "a6_deterministic_replay": "PASS",
+    "a6_verified_promotion": "BLOCKED",
+    "a6_acceptance_ready": false,
+    "live_site_call_count": 0,
+    "panel_shell_direct_edit_count": 0,
+    "implementation_file_direct_edit_by_a7": false,
+    "raw_secret_exposure_count": 0
+  },
+  "first_finding": "EXACT_RESPONSE_BODY_FIXTURES_FOR_A3_JSON_ENDPOINT_PROFILES_ARE_NOT_PRESENT_IN_SEARCHED_REPOSITORY_FIXTURES",
+  "affected_profiles": ["EP-001","EP-002","EP-003","EP-004","EP-005","EP-010","EP-011","EP-012"],
+  "decision": "EXACT_FINDINGS",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
