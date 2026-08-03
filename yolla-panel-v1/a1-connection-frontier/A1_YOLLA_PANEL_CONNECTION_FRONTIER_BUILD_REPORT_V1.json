@@ -1,0 +1,86 @@
+{
+  "schema_version": "A1_YOLLA_PANEL_CONNECTION_FRONTIER_BUILD_REPORT_V1",
+  "report_id": "A1-YOLLA-PANEL-CONNECTION-FRONTIER-BUILD-V1-20260802-001",
+  "generated_at": "2026-08-02T18:33:50+09:00",
+  "owner": "A-1",
+  "status": "A1_YOLLA_PANEL_CONNECTION_FRONTIER_PACKAGE_PASS",
+  "authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "pull_request": 14,
+    "branch": "integration/a1-yolla-panel-connection-frontier-v1",
+    "validated_head": "799848d7d486af68b351a89b4510251f44b3b494",
+    "base_pull_request": 12,
+    "base_branch": "command-panel/c6-integration-deploy-rollback-v1",
+    "base_head": "30b8e5add47452845c16fff86c9b708c8236537e"
+  },
+  "mission": {
+    "panel_feature_completion": false,
+    "connection_frontier_first": true,
+    "worker_business_features_supplied_by_other_groups": true
+  },
+  "implemented_connection_points": {
+    "role_registry": "PASS_39_ROLES_6_GROUPS",
+    "role_selection_event": "PASS",
+    "existing_worker_window_reuse": "PASS",
+    "existing_worker_window_creation_factory": "PASS",
+    "role_window_session_binding": "PASS",
+    "directive_provider_slot": "OPEN",
+    "result_provider_slot": "OPEN",
+    "pc_state_provider_slot": "OPEN",
+    "command_payload_provider_slot": "OPEN",
+    "existing_stage4_dispatch_connection": "PASS",
+    "custom_event_bus": "PASS",
+    "apply_rollback_tooling": "PASS"
+  },
+  "runtime_reuse": {
+    "existing_safe_panel_runtime_reused": true,
+    "existing_create_terminal_reused": true,
+    "existing_stage4_transport_reused": true,
+    "new_electron_runtime_count": 0,
+    "new_browser_runtime_count": 0,
+    "new_prompt_transport_count": 0
+  },
+  "validation": {
+    "workflow": "A1 YOLLA Panel Connection Frontier",
+    "run_id": 30741937121,
+    "run_number": 9,
+    "conclusion": "SUCCESS",
+    "node_contract_job": 91480782382,
+    "node_contract_tests": "PASS_28",
+    "javascript_syntax": "PASS",
+    "json_contract": "PASS",
+    "windows_apply_rollback_job": 91480811065,
+    "powershell_parse": "PASS",
+    "safe_panel_fixture_apply": "PASS",
+    "node_syntax_after_apply": "PASS",
+    "rollback_byte_parity": "PASS",
+    "package_job": 91480863055,
+    "package_build": "PASS"
+  },
+  "artifact": {
+    "artifact_id": 8831580823,
+    "artifact_name": "A1-YOLLA-Panel-Connection-Frontier-V1",
+    "artifact_size_bytes": 18417,
+    "artifact_digest": "sha256:88b47b9802ae7c701d6438a62f1b2b8c9c8edd98d2228ec9a77f0cb4824d26f4",
+    "inner_package_name": "A1_YOLLA_PANEL_CONNECTION_FRONTIER_V1.zip",
+    "inner_package_sha256": "c7fda87e6d940cd210e947a1480b7ff077d0662a9f096d473721dc717f13201b",
+    "expires_at": "2026-09-01T09:32:46Z"
+  },
+  "target_pc": {
+    "workspace_root": "E:\\SOURCE FACTORY",
+    "active_core_discovery_root": "E:\\SOURCE FACTORY\\source-factory-active-core",
+    "one_click_installer": "RUN_YOLLA_PANEL_CONNECTION_FRONTIER.cmd",
+    "rollback_launcher": "ROLLBACK_YOLLA_PANEL_CONNECTION_FRONTIER.cmd",
+    "actual_apply_observed": false,
+    "actual_panel_window_observed": false,
+    "actual_worker_window_observed": false
+  },
+  "scope_boundary": {
+    "directive_fetcher_implemented": false,
+    "result_fetcher_implemented": false,
+    "worker_business_features_implemented": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

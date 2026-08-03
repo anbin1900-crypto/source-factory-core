@@ -1,0 +1,68 @@
+{
+  "schema_version": "YOLLA_PANEL_CONNECTION_CONTRACT_V1",
+  "purpose": "Define stable connection points before feature implementation.",
+  "runtime_reuse": {
+    "electron_runtime": "EXISTING_SAFE_PANEL_RUNTIME",
+    "browser_window_factory": "EXISTING_CREATE_TERMINAL",
+    "prompt_transport": "EXISTING_SF_API_STAGE4_DISPATCH_NEXT_PROMPT",
+    "pc_agent_runtime": "E:\\SOURCE FACTORY\\.yolla\\a1-pc-agent",
+    "new_electron_runtime_count": 0,
+    "new_browser_runtime_count": 0,
+    "new_prompt_transport_count": 0
+  },
+  "ipc_channels": {
+    "runtime_snapshot": "yolla-panel:get-runtime",
+    "open_worker_window": "yolla-panel:open-worker",
+    "focus_worker_window": "yolla-panel:focus-worker",
+    "open_external_authority": "yolla-panel:open-external"
+  },
+  "renderer_provider_slots": {
+    "directive": {
+      "signature": "async ({ role, runtime }) => directivePackage",
+      "required_before_dispatch": true
+    },
+    "result": {
+      "signature": "async ({ role, runtime }) => resultPackage",
+      "required_before_result_card": true
+    },
+    "pcState": {
+      "signature": "async ({ runtime }) => pcStateSnapshot",
+      "required_before_extended_pc_card": false
+    },
+    "commandPayload": {
+      "signature": "async ({ role, directive, runtime }) => dispatchPayload",
+      "required_before_dispatch": true
+    }
+  },
+  "renderer_api": {
+    "register_provider": "window.YollaPanel.registerProvider(providerId, function)",
+    "select_role": "window.YollaPanel.selectRole(roleId)",
+    "refresh_runtime": "window.YollaPanel.refresh()",
+    "get_selected_role": "window.YollaPanel.getSelectedRole()"
+  },
+  "custom_events": [
+    "yolla:panel-ready",
+    "yolla:role-selected",
+    "yolla:worker-window-bound",
+    "yolla:runtime-refreshed",
+    "yolla:provider-registered",
+    "yolla:command-requested",
+    "yolla:command-dispatched",
+    "yolla:action-failed"
+  ],
+  "worker_binding": {
+    "role_to_window": "1_TO_1_WHILE_BOUND",
+    "role_to_browser_session": "1_TO_1_WHILE_BOUND",
+    "reuse_policy": "REUSE_ROLE_BINDING_THEN_UNBOUND_EXISTING_WINDOW_THEN_EXISTING_FACTORY_CREATE",
+    "cross_role_window_collision": "FAIL_CLOSED",
+    "cross_role_session_collision": "FAIL_CLOSED"
+  },
+  "scope_boundary": {
+    "directive_fetcher_implemented": false,
+    "result_fetcher_implemented": false,
+    "worker_business_features_implemented": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

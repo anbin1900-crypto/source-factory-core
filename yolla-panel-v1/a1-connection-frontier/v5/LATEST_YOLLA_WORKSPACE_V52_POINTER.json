@@ -1,0 +1,28 @@
+{
+  "schema_version": "LATEST_YOLLA_WORKSPACE_V52_POINTER",
+  "status": "ARCHITECTURE_AND_THREE_LANE_PLAN_RECORDED",
+  "terminal": "YOLLA_WORKSPACE_V52_GITHUB_STATE_UPDATED",
+  "control_pr": 14,
+  "branch": "integration/a1-yolla-panel-connection-frontier-v1",
+  "architecture_document": "yolla-panel-v1/a1-connection-frontier/v5/CURRENT_YOLLA_WORKSPACE_V52_ARCHITECTURE_AND_THREE_LANE_PLAN.md",
+  "architecture_document_commit": "9523dc0cdfd1a5f15e011dc7446ba5222dcbd62a",
+  "current_state_ledger": "yolla-panel-v1/a1-connection-frontier/v5/YOLLA_WORKSPACE_V52_CURRENT_STATE.json",
+  "current_state_commit": "814fb84a41df76679d92135078621fd18209b208",
+  "three_lane_contract": "yolla-panel-v1/a1-connection-frontier/v5/THREE_LANE_INTEGRATION_CONTRACT_V1.json",
+  "three_lane_contract_commit": "39c18cf7b79cd5dfd59e89dcd96b988e645d9a0b",
+  "readme_commit": "7b7d6cb69e205b319c1c29234f72c5ec2bcce2a9",
+  "runtime_baseline": "YOLLA_WORKSPACE_V5_CLEAN_RUNTIME",
+  "target_pc_visual_acceptance": "PASS",
+  "v52_target_pc_execution": "NOT_YET_OBSERVED",
+  "lane_count": 3,
+  "lanes": [
+    "AUTOMATION_INTEGRATION",
+    "ANALYZER",
+    "EXTRACTOR"
+  ],
+  "integration_model": "ONE_RUNTIME_THREE_OWNERSHIP_LANES",
+  "next_gate": "V52_TARGET_PC_AND_THREE_LANE_MINIMUM_E2E",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
