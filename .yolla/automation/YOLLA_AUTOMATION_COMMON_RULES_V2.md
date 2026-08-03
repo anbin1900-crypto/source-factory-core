@@ -9,6 +9,7 @@ OFFICIAL_TRANSPORT=LOCAL_DURABLE_FILE_QUEUE_V1
 COMMANDER_INPUT=YOLLA_COMMANDER_EPIC_SUBMISSION_V2
 RESULT_AUTHORITY=GITHUB_REMOTE_COMMITTED_RESULT_JSON
 PR_COMMENT_ROLE=POINTER_ONLY
+DISPATCH_PARALLELISM=EXISTING_RUNTIME_LIMIT_GOVERNED
 NEW_RUNTIME=false
 NEW_TRANSPORT=false
 PRODUCTION=false
@@ -83,7 +84,8 @@ EPIC.json 수신
 → Schema·의존성·식별자 검증
 → 기존 WORKER_JOB_SCHEDULE_V1로 결정론적 변환
 → 기존 Worker Route에 결속
-→ 워커 간 병렬·같은 워커 내부 순차 배포
+→ 워커별 독립 Queue 유지
+→ 기존 Runtime 동시성 한도 안에서 배포
 → GitHub Commit 결과 감시
 → PASS 후 다음 Epic 자동 배포
 → 재시작 후 Latest Committed State부터 재개
@@ -247,10 +249,13 @@ cycle_id=<PACKAGE_ID>
 wave_id=SEQ-<SEQUENCE_3_DIGITS>
 assignment_id=<EPIC_ID>
 source_github_ref=<REPOSITORY>@<EPIC_COMMIT_SHA>:<EPIC_FILE_PATH>
-duplicate_prompt_key=SHA256(command_id + worker_slot_uid + cycle_id + wave_id)
+duplicate_prompt_key=P1_COMMAND_CORRELATION_CONTRACT.buildIdempotencyKey(command_id, worker_slot_uid, cycle_id, wave_id)
 ```
 
 `work_id`, `execution_id`, `attempt_id`는 기존 Queue 계약에 따라 Runtime이 생성한다.
+
+`duplicate_prompt_key`의 실제 직렬화·접두어·SHA-256 방식은 기존
+`p1CommandCorrelationContract.js` 구현을 그대로 사용하며 본 V2가 새 공식을 정의하지 않는다.
 
 ## IX. 작업 선택과 배포
 
@@ -266,10 +271,15 @@ Worker Route가 활성 상태
 실행방식:
 
 ```text
-워커 간=병렬
+워커별 Queue=독립
+워커 간=병렬 실행 가능
+실제 동시 실행수=기존 Runtime maximum_parallel_runtime_jobs 이하
 같은 워커 내부=순차
 한 번의 Dispatch=Epic 1건
 ```
+
+따라서 기존 Runtime 한도가 `1`이면 물리 실행은 직렬이지만 워커별 Queue와
+다음 실행 가능 작업 계산은 독립적으로 유지한다. 동시성 확대는 별도 Runtime 변경권한으로만 수행한다.
 
 워커에게 “미완료 작업을 스스로 찾아라”라고 지시하지 않는다.
 PC Agent가 정확한 `EPIC_ID`를 지정한다.
