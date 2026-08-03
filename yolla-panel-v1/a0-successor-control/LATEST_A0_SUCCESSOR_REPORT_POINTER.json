@@ -1,57 +1,51 @@
 {
   "schema_version": "LATEST_A0_SUCCESSOR_REPORT_POINTER_V2",
-  "status": "A0_AUTOMATION_CONTRACT_CONFLICTS_RESOLVED_V59_ALIGNED_SOURCE_PASS",
+  "status": "A0_TWO_MODE_AUTOMATION_SOURCE_CORE_PASS_PANEL_RUNTIME_BINDING_PENDING",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "latest_report_path": "yolla-panel-v1/a0-successor-control/reports/A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_FINAL_REPORT_V1.json",
-  "latest_report_commit": "628bbcf916b80b5a798f322a4c53e06a0105d7a7",
-  "latest_report_type": "FINAL_CONTRACT_RESOLUTION_AND_V59_ALIGNMENT",
-  "latest_report_status": "PASS_TARGET_PC_PENDING",
-  "progress_percent": 100,
-  "latest_automation_contract_pointer": {
-    "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_CONTRACT_POINTER.json",
-    "commit": "59f98477a0e8055df8eb4830aadfb142048063eb"
+  "latest_report_path": "yolla-panel-v1/a0-successor-control/reports/A0_TWO_MODE_AUTOMATION_SOURCE_CORE_REPORT_V1.json",
+  "latest_report_commit": "8e99ab780bbf93c4b40d83a76df0dc4a290c0d7f",
+  "latest_report_type": "TWO_MODE_AUTOMATION_SOURCE_CORE",
+  "latest_report_status": "PASS_PANEL_RUNTIME_BINDING_PENDING",
+  "progress_percent": 40,
+  "latest_common_rules_pointer": {
+    "path": "yolla-panel-v1/a0-successor-control/automation-v1/LATEST_COMMON_AUTOMATION_RULES_POINTER_V2.json",
+    "policy_id": "YOLLA_AUTOMATION_COMMON_RULES_V2"
   },
   "latest_automation_runtime_pointer_path": "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_RUNTIME_POINTER_V1.json",
-  "latest_automation_runtime_pointer_commit": "1b3ba76632ca13d427d04484062e607a9600b850",
-  "runtime_v59_pointer_path": "yolla-panel-v1/a0-successor-control/automation-v1/runtime-v59/LATEST_A0_AUTOMATION_RUNTIME_V59_POINTER.json",
-  "runtime_v59_pointer_commit": "3d10fef823c8c759afd6fd5aa8afcae6d3ebf3c8",
-  "current_execution_queue": {
-    "path": "yolla-panel-v1/a0-successor-control/A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V2.json",
-    "commit": "4ee6c4373ab46eb5ecd08115cec06662429d23fb"
-  },
+  "latest_automation_runtime_pointer_commit": "3ed5e1279bd1f3f3dae1534aaaf214016f5ee0b5",
   "current_ui_version": "5.9.0",
   "runtime_provider_version": "5.7.0",
   "schedule_runner_version": "1.0.0-panel-bound-build-pass",
-  "current_schedule_id": "REAL-ESTATE-CYCLE-001",
-  "worker_states": {
-    "B-2": "PENDING",
-    "B-3": "PENDING",
-    "B-4": "PENDING"
+  "two_mode_automation_version": "1.0.0-source-core-pass",
+  "automation_modes": {
+    "COMMANDER_WORKER_RELAY": "SOURCE_CORE_PASS_PANEL_BINDING_PENDING",
+    "EPIC_SCHEDULE": "SOURCE_CORE_PASS_PANEL_BINDING_PENDING"
   },
   "implemented": {
-    "contract_conflict_resolution": "PASS",
-    "v59_schema_alignment": "PASS",
-    "schedule_import_save": "PASS_SOURCE",
-    "current_next_job_panel": "PASS_SOURCE",
-    "existing_browser_dispatch": "PASS_SOURCE",
-    "github_result_watcher": "PASS_SOURCE",
-    "next_job_auto_dispatch": "PASS_SOURCE",
-    "restart_recovery": "PASS_SOURCE_FIXTURE",
-    "duplicate_execution_count": 0
+    "worker_result_to_commander_dispatch": "PASS_SOURCE_FIXTURE",
+    "commander_pointer_to_worker_dispatch": "PASS_SOURCE_FIXTURE",
+    "epic_schema_validation": "PASS_SOURCE_FIXTURE",
+    "epic_to_existing_schedule_transform": "PASS_SOURCE_FIXTURE",
+    "pc_agent_db_projection": "PASS_SOURCE_FIXTURE",
+    "epic_result_validation": "PASS_SOURCE_FIXTURE",
+    "duplicate_execution_count": 0,
+    "user_manual_relay_count": 0
   },
-  "prior_v52_pointer": {
-    "preserved_as_historical_evidence": true,
-    "active_priority": false
+  "source_artifact": {
+    "drive_file_id": "1pBPO87PiipoMFYhw9jX-FUG2DWiVbCMP",
+    "sha256": "88e85f8f8ca479897b2f0fd4e9d4e3304eac59a114259a5fac989865ae0cfd66",
+    "size_bytes": 106759
   },
-  "required_next_task": "INSTALL_V59_ON_TARGET_PC_BIND_B2_B3_CONTEXTS_RUN_THREE_JOBS_EACH_AND_OBSERVE_GITHUB_RESULTS",
-  "required_official_terminal": "A0_WORKER_SCHEDULE_AUTOMATION_LOOP_V1_PASS",
+  "required_next_task": "BIND_TWO_MODES_TO_V59_PANEL_AND_EXISTING_BROWSER_SCHEDULE_RUNTIME_THEN_RUN_ONE_RELAY_CYCLE_AND_ONE_EPIC_PACKAGE",
+  "required_official_terminal": "A0_TWO_MODE_AUTOMATION_RUNTIME_V1_PASS",
   "target_pc_execution_performed": false,
-  "actual_schedule_loop_observed": false,
+  "actual_relay_cycle_observed": false,
+  "actual_epic_package_observed": false,
   "target_pc_pass_claimed": false,
   "official_terminal_claimed": false,
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at": "2026-08-04T04:02:00+09:00"
+  "updated_at": "2026-08-04T04:52:00+09:00"
 }
