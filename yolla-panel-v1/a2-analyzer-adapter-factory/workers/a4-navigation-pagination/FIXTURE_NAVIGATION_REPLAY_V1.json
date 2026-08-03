@@ -1,0 +1,51 @@
+{
+  "schema_version": "FIXTURE_NAVIGATION_REPLAY_V1",
+  "fixture_id": "A4-NAVER-REAL-ESTATE-NAVIGATION-20260804-001",
+  "fixture_replay_count": 2,
+  "run_1": {
+    "visited_order": [
+      "home-001", "search-001", "region-001", "map-001", "list-page-1",
+      "detail-1001", "list-page-1", "list-page-2", "detail-1003",
+      "list-page-2", "list-page-3-empty"
+    ],
+    "visited_count": 11,
+    "terminal_node": "list-page-3-empty",
+    "stop_reason": "EMPTY_RESULT",
+    "blocked_after_stop_count": 1,
+    "duplicate_page_visit_after_stop_count": 0,
+    "transition_failures": [],
+    "seen_record_ids": ["listing-1001", "listing-1002", "listing-1003"],
+    "guard_cases": [
+      {"case_id": "repeated-cursor", "expected_stop": "REPEATED_CURSOR", "actual_stop": "REPEATED_CURSOR", "status": "PASS"},
+      {"case_id": "repeated-next-url", "expected_stop": "REPEATED_CANONICAL_URL", "actual_stop": "REPEATED_CANONICAL_URL", "status": "PASS"},
+      {"case_id": "duplicate-only-page", "expected_stop": "NO_NEW_RECORD_IDS", "actual_stop": "NO_NEW_RECORD_IDS", "status": "PASS"},
+      {"case_id": "last-page-flag", "expected_stop": "LAST_PAGE_FLAG", "actual_stop": "LAST_PAGE_FLAG", "status": "PASS"}
+    ],
+    "unbounded_loop_count": 0
+  },
+  "run_2": {
+    "visited_order": [
+      "home-001", "search-001", "region-001", "map-001", "list-page-1",
+      "detail-1001", "list-page-1", "list-page-2", "detail-1003",
+      "list-page-2", "list-page-3-empty"
+    ],
+    "visited_count": 11,
+    "terminal_node": "list-page-3-empty",
+    "stop_reason": "EMPTY_RESULT",
+    "blocked_after_stop_count": 1,
+    "duplicate_page_visit_after_stop_count": 0,
+    "transition_failures": [],
+    "seen_record_ids": ["listing-1001", "listing-1002", "listing-1003"],
+    "guard_cases": [
+      {"case_id": "repeated-cursor", "expected_stop": "REPEATED_CURSOR", "actual_stop": "REPEATED_CURSOR", "status": "PASS"},
+      {"case_id": "repeated-next-url", "expected_stop": "REPEATED_CANONICAL_URL", "actual_stop": "REPEATED_CANONICAL_URL", "status": "PASS"},
+      {"case_id": "duplicate-only-page", "expected_stop": "NO_NEW_RECORD_IDS", "actual_stop": "NO_NEW_RECORD_IDS", "status": "PASS"},
+      {"case_id": "last-page-flag", "expected_stop": "LAST_PAGE_FLAG", "actual_stop": "LAST_PAGE_FLAG", "status": "PASS"}
+    ],
+    "unbounded_loop_count": 0
+  },
+  "run_results_identical": true,
+  "deterministic_digest": "5efffc455deb166bb00afedc918c17f0bf3d0b2be6ca0d266acc680f62ca6bb9",
+  "deterministic_navigation_replay": "PASS",
+  "live_site_call_count": 0
+}
