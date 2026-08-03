@@ -1,94 +1,145 @@
-# A-1 YOLLA Panel Command Cycle V2
+# YOLLA Workspace V5.x
 
-## 현재 목표
+## 현재 기준선
 
-모든 기능을 구현하지 않는다. 다음 최소 수직 흐름을 먼저 실제로 연다.
-
-```text
-패널 실행
-→ 커맨더·워커 그룹이 들어 있는 단일 워크스페이스 실행
-→ A-1 커맨더가 A-3 워커에게 명령 전송
-→ 기존 Stage4 전송소가 명령 수락
-→ 워커 수신
-→ Canary 결과 반환
-→ A-1 커맨더 결과 수신
-```
-
-## 워커창 구조
+현재 Forward Development 기준선은 누적 Hotfix 기반 `safe_panel_v10`이 아니라 독립 Electron 진입점을 사용하는 `YOLLA Workspace V5 Clean Runtime`이다.
 
 ```text
-단일 Electron Worker Workspace
-├─ 왼쪽: 최고 커맨더·A/B/C/D/API 그룹과 39개 역할
-├─ 오른쪽: 기존 ChatGPT BrowserView
-└─ 상단·왼쪽 하단: 현재 역할과 최근 명령 순환 상태
-```
-
-역할별 별도 BrowserWindow를 패널에서 배정하지 않는다. 하나의 워크스페이스 창 안에서 역할을 선택하고 기존 ChatGPT 세션을 사용한다.
-
-## 사용자 PC 적용
-
-V1 연결지점이 이미 설치된 PC에서는 다음을 실행한다.
-
-```text
-RUN_YOLLA_COMMAND_CYCLE_V2.cmd
-```
-
-V1이 없는 새 Runtime은 먼저 다음을 실행한 뒤 V2를 실행한다.
-
-```text
-RUN_YOLLA_PANEL_CONNECTION_FRONTIER.cmd
-RUN_YOLLA_COMMAND_CYCLE_V2.cmd
-```
-
-정확한 현재 Runtime:
-
-```text
-E:\SOURCE FACTORY\source-factory-active-core\SF_ACTIVE_CORE_20260801_172038\safe_panel_v10
-```
-
-## 자동 1회 Canary
-
-V2 패널은 최초 실행 때 다음 순환을 한 번 자동 실행한다.
-
-```text
-A-1 → A-3 → A-1
-```
-
-단계:
-
-```text
-COMMAND_CREATED
-EXISTING_STAGE4_DISPATCH_ACCEPTED
-WORKER_RECEIVED
-WORKER_ACKNOWLEDGED
-COMMANDER_RESULT_RECEIVED
-```
-
-성공 후 로컬 완료 마커를 남겨 재시작 시 자동 순환을 반복하지 않는다. 패널의 `1회 명령 순환 실행` 버튼으로 수동 재시험할 수 있다.
-
-## 경계
-
-```text
-CANARY_ONLY=true
-BUSINESS_EXECUTION_PERFORMED=false
-WORKER_AI_EXECUTION_PERFORMED=false
-EXISTING_SAFE_PANEL_RUNTIME_REUSED=true
-EXISTING_BROWSER_WINDOW_FACTORY_REUSED=true
-EXISTING_STAGE4_TRANSPORT_REUSED=true
-NEW_ELECTRON_RUNTIME_COUNT=0
-NEW_BROWSER_RUNTIME_COUNT=0
-NEW_PROMPT_TRANSPORT_COUNT=0
+RUNTIME_BASELINE=YOLLA_WORKSPACE_V5_CLEAN_RUNTIME
+SEAT_COUNT=50
+GROUP_COUNT=7
+LEGACY_SAFE_PANEL_V10=FALLBACK_ONLY
+V3_PATCH_CHAIN=RETIRED_FROM_FORWARD_DEVELOPMENT
 PRODUCTION=false
 READY=false
 MERGE=false
 ```
 
-실제 업무 기능, GPT 자동입력, 결과 해석, 다중 워커 병렬화는 다른 그룹이 이후 연결한다.
-
-## 복구
+Target PC에서 실제 확인된 사항:
 
 ```text
-ROLLBACK_YOLLA_COMMAND_CYCLE_V2.cmd
+V5_CLEAN_RUNTIME_LAUNCH=PASS
+WORKSPACE_VISUAL_ACCEPTANCE=PASS
+50_SEATS_RENDERED=PASS
+7_GROUPS_RENDERED=PASS
+CHATGPT_BROWSER_VIEW=PASS
+PROJECT_CONTEXT_BINDING_RESTORED=PASS
+WHITE_SCREEN_REGRESSION=RESOLVED
 ```
 
-V2 적용 직전 상태로 복구한다. V1까지 제거하려면 이후 `ROLLBACK_YOLLA_PANEL_CONNECTION_FRONTIER.cmd`를 실행한다.
+아직 Target PC에서 최종 확인되지 않은 사항:
+
+```text
+V51_ACTUAL_COMMAND_CYCLE_COMPLETION=NOT_YET_CONFIRMED
+V52_FIXED_LOGIN_PROFILE=NOT_YET_CONFIRMED
+V52_ANALYZER_BROWSER_VIEW=NOT_YET_CONFIRMED
+V52_ANALYSIS_ARTIFACT=NOT_YET_CONFIRMED
+```
+
+## 현재 창 구조
+
+```text
+YOLLA Control Panel V5.x
+└─ 상태·열기·집중·정렬·재시작·로그 진입
+
+YOLLA Automation Workspace V5.x
+├─ 워커 지휘
+│  ├─ ChatGPT 전용 주소창
+│  ├─ 50개 좌석·7개 그룹
+│  ├─ 프로젝트·현재 대화 Binding
+│  └─ 명령·Cycle·응답 자동화
+└─ 사이트 분석·추출
+   ├─ 분석 전용 주소창
+   ├─ 대상 사이트 탐색
+   ├─ 현재 페이지 등록
+   ├─ 어댑터 선택
+   └─ 분석·추출 진입점
+```
+
+선택한 모드의 주소창만 표시한다.
+
+## 브라우저 구조
+
+```text
+Worker BrowserView
+- ChatGPT 전용
+- 좌석별 프로젝트·대화 Binding
+- 고정 로그인 Profile 사용
+
+Analyzer BrowserView
+- 일반 사이트 탐색 전용
+- 현재 페이지를 분석 대상으로 사용
+- ChatGPT 현재 대화를 변경하지 않음
+```
+
+고정 로그인 Profile:
+
+```text
+E:\SOURCE FACTORY\.yolla\yolla-workspace-browser-profile
+```
+
+## 3개 작업그룹
+
+### 1. Automation·Integration
+
+패널, Workspace Shell, 좌석, 로그인 Profile, 프로젝트·대화 Binding, 실제 명령 전송, Cycle ID, 상태 전환, PC Agent, 통합·업데이트·Rollback을 소유한다.
+
+### 2. Analyzer
+
+분석 BrowserView, 사이트 탐색, 현재 페이지 선택, HTML·본문·링크·Metadata·스크린샷, 페이지 유형 판정, 어댑터 선택, 불변 Page Artifact 생성을 소유한다.
+
+### 3. Extractor
+
+Page Artifact를 입력으로 받아 필드 후보, 구조화 추출, 정규화, 중복 판정, Evidence 연결, Schema 검증, 추출 Receipt와 증분 재처리를 소유한다.
+
+기본 원칙:
+
+```text
+ONE_RUNTIME
+THREE_OWNERSHIP_LANES
+SHARED_VERSIONED_CONTRACTS
+IMMUTABLE_HANDOFF_ARTIFACTS
+SINGLE_INTEGRATION_OWNER
+EXTRACTOR_DEFAULT_INPUT=IMMUTABLE_PAGE_ARTIFACT
+```
+
+세 그룹을 세 개의 Electron 앱으로 만들지 않는다. 하나의 V5 런타임 안에서 소유 경로와 계약을 분리한다.
+
+## 현재 문서
+
+- `v5/CURRENT_YOLLA_WORKSPACE_V52_ARCHITECTURE_AND_THREE_LANE_PLAN.md`
+- `v5/YOLLA_WORKSPACE_V52_CURRENT_STATE.json`
+- `v5/THREE_LANE_INTEGRATION_CONTRACT_V1.json`
+- `v5/LATEST_YOLLA_WORKSPACE_V52_POINTER.json`
+
+## Package 계보
+
+```text
+V5.0 CLEAN REBUILD
+SHA256=23b173aeb0271a4284b104a0c50248ed9baf8e70e32ed34d27c0edf4a0b54a55
+TARGET_PC_VISUAL_ACCEPTANCE=PASS
+
+V5.1 COMMAND LIFECYCLE
+SHA256=726dbc9bc278d38f14047b1f9a3d729c41a9576eb0b9dd17bdb203aa50dd7318
+TARGET_PC_LAUNCH=OBSERVED
+ACTUAL_COMMAND_CYCLE_ACCEPTANCE=NOT_YET_CONFIRMED
+SESSION_REGRESSION=OBSERVED
+
+V5.2 SESSION + ANALYZER
+SHA256=96731d281a138048d96d8f2a99900805d2ee15711666a2f3f4d33d994ac8d544
+BUILD_VALIDATION=PASS
+TARGET_PC_EXECUTION=NOT_YET_OBSERVED
+```
+
+## 다음 E2E
+
+```text
+워커 지시
+→ 분석 대상 사이트 탐색
+→ Page Artifact 생성
+→ 구조화 추출
+→ Evidence·Receipt 저장
+→ 패널에서 상태와 결과 확인
+```
+
+PR #14는 Open·Draft·Unmerged로 유지한다.
