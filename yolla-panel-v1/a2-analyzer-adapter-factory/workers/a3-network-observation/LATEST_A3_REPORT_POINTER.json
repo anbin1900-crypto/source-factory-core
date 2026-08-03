@@ -2,12 +2,45 @@
   "schema_version": "LATEST_A3_REPORT_POINTER_V1",
   "worker": "A-3",
   "directive_id": "A2-TO-A3-SITE-OBSERVATION-EVIDENCE-EXECUTION-V3-20260804-001",
-  "status": "STARTED",
+  "directive_comment_id": 5171205788,
+  "status": "PASS",
+  "terminal": "A3_NETWORK_ENDPOINT_OBSERVATION_READY",
   "branch": "worker/a3-network-observation-v1",
   "start_head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
-  "report_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_START_REPORT_V1.json",
+  "start_commit": "dce303ae3b2c662306ad26ef1507f4bdaa6ad139",
+  "terminal_report": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_TERMINAL_REPORT_V1.json",
+    "commit": "a5632d6dbdddd956d478b593ffe144ff8a6241cf",
+    "blob": "5c4d511ed15427917218440b0f838b44de84c5e2"
+  },
+  "final_report": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_FINAL_REPORT_V1.json",
+    "commit": "a5632d6dbdddd956d478b593ffe144ff8a6241cf",
+    "blob": "38db5f8afb78f25fa36554d33246a2f1ab34f2d9"
+  },
+  "handoffs": {
+    "a5": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_TO_A5_OBSERVATION_HANDOFF_V1.json",
+      "blob": "1b72cf730d997102d115f71a6cf0bc98f50c8e50",
+      "ready": true
+    },
+    "a6": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_TO_A6_FIXTURE_TRACE_HANDOFF_V1.json",
+      "blob": "8fe991a225275ece977944f157b72509cd3345f7",
+      "ready": true
+    }
+  },
+  "validation": {
+    "fixture_event_count": 15,
+    "fixture_replay_count": 2,
+    "deterministic_replay": "PASS",
+    "canonical_projection_sha256": "5fec9024924220872d0757200ad50cfdac2e3247de9ff123e0aa88c5973b55f4",
+    "raw_secret_value_count": 0,
+    "live_site_call_count": 0,
+    "out_of_owned_root_change_count": 0
+  },
   "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
-  "updated_at_kst": "2026-08-04T05:20:00+09:00",
+  "updated_at_kst": "2026-08-04T05:35:00+09:00",
   "production": false,
   "ready": false,
   "merge": false
