@@ -1,0 +1,141 @@
+{
+  "bundle_id": "B1_COMMON_CONTRACT_BUNDLE_V1",
+  "contracts": {
+    "COLLECTION_PROGRESS_EVENT_V1": {
+      "contract_id": "COLLECTION_PROGRESS_EVENT_V1",
+      "invariants": [
+        "sequence_strictly_increases",
+        "completed_units_never_decrease",
+        "percent_never_decreases",
+        "percent_between_0_and_100"
+      ],
+      "required_fields": [
+        "run_id",
+        "sequence",
+        "stage",
+        "completed_units",
+        "total_units",
+        "percent",
+        "occurred_at"
+      ],
+      "schema_version": "1.0.0"
+    },
+    "D_INTAKE_REQUEST_V1": {
+      "contract_id": "D_INTAKE_REQUEST_V1",
+      "direct_d_canonical_db_write": false,
+      "requested_action": "D1_REVIEW_AND_CANONICAL_MAPPING",
+      "required_fields": [
+        "request_id",
+        "materialized_database_package",
+        "source_evidence",
+        "requested_action",
+        "authority_boundary"
+      ],
+      "schema_version": "1.0.0"
+    },
+    "EXTRACTION_RECEIPT_V1": {
+      "contract_id": "EXTRACTION_RECEIPT_V1",
+      "required_fields": [
+        "run_id",
+        "adapter_id",
+        "mode",
+        "raw_artifact_manifest_sha256",
+        "source_record_envelope_sha256",
+        "normalized_dataset_sha256",
+        "input_record_count",
+        "output_record_count",
+        "duplicate_count",
+        "network_call_count",
+        "status"
+      ],
+      "schema_version": "1.0.0"
+    },
+    "MATERIALIZED_DATABASE_PACKAGE_V1": {
+      "contract_id": "MATERIALIZED_DATABASE_PACKAGE_V1",
+      "d_canonical_schema": false,
+      "database_type": "SQLITE_FIXTURE",
+      "required_fields": [
+        "package_id",
+        "database_file",
+        "database_sha256",
+        "database_size_bytes",
+        "row_count",
+        "normalized_dataset_sha256",
+        "extraction_receipt_sha256"
+      ],
+      "schema_version": "1.0.0"
+    },
+    "NORMALIZED_DATASET_V1": {
+      "contract_id": "NORMALIZED_DATASET_V1",
+      "required_fields": [
+        "dataset_id",
+        "records",
+        "input_record_count",
+        "output_record_count",
+        "duplicate_count",
+        "source_field_loss_count",
+        "dedup_lineage"
+      ],
+      "schema_version": "1.0.0",
+      "source_field_loss_allowed": 0,
+      "unmapped_fields_policy": "PRESERVE_UNCHANGED"
+    },
+    "RAW_ARTIFACT_MANIFEST_V1": {
+      "contract_id": "RAW_ARTIFACT_MANIFEST_V1",
+      "immutability": "APPEND_ONLY_NO_OVERWRITE",
+      "required_entry_fields": [
+        "artifact_id",
+        "source_url",
+        "collected_at",
+        "sha256",
+        "size_bytes",
+        "record_count",
+        "metadata",
+        "request_summary"
+      ],
+      "schema_version": "1.0.0",
+      "sha256_basis": "EXACT_RAW_BYTES"
+    },
+    "SOURCE_RECORD_ENVELOPE_V1": {
+      "contract_id": "SOURCE_RECORD_ENVELOPE_V1",
+      "required_fields": [
+        "source_record_id",
+        "raw_artifact_id",
+        "source_url",
+        "collected_at",
+        "record_index",
+        "source_fields",
+        "source_sha256"
+      ],
+      "schema_version": "1.0.0",
+      "semantic_transformation": false,
+      "source_field_loss_allowed": 0
+    },
+    "VERIFIED_ADAPTER_PACKAGE_CONSUMER_CONTRACT_V1": {
+      "actual_mode_verification_status": "A2_VERIFIED",
+      "allowed_package_type": "VERIFIED_ADAPTER_PACKAGE_V1",
+      "contract_id": "VERIFIED_ADAPTER_PACKAGE_CONSUMER_CONTRACT_V1",
+      "fixture_mode_verification_status": "FIXTURE_ONLY",
+      "required_fields": [
+        "schema_version",
+        "package_type",
+        "adapter_id",
+        "verification_status",
+        "source_base_url",
+        "endpoint_template",
+        "method",
+        "parameters",
+        "pagination",
+        "response",
+        "field_mapping",
+        "retry_policy",
+        "rate_policy"
+      ],
+      "schema_version": "1.0.0",
+      "secret_policy": "CREDENTIAL_REFERENCE_ONLY",
+      "site_structure_reanalysis": false,
+      "unknown_critical_field_policy": "FAIL_CLOSED"
+    }
+  },
+  "schema_version": "1.0.0"
+}
