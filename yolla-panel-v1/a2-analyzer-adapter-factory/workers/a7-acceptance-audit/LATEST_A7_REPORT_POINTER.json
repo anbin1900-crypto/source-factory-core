@@ -3,11 +3,26 @@
   "pointer_type": "LATEST_A7_REPORT_POINTER",
   "worker": "A-7",
   "directive_id": "A2-TO-A7-VERIFIED-ADAPTER-INDEPENDENT-ACCEPTANCE-V3-20260804-001",
-  "status": "STARTED",
-  "report_commit": "15dcc1282a1dc5822a7f56d57cfd8dae166c6378",
-  "report_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_START_REPORT_V1.json",
-  "report_blob": "04f20ee4cbefcc322bb874691229aa1d9d67cc73",
-  "updated_at_kst": "2026-08-04T06:10:00+09:00",
+  "status": "TERMINAL_EXACT_FINDINGS",
+  "terminal": "A7_VERIFIED_ADAPTER_INDEPENDENT_ACCEPTANCE_EXACT_FINDINGS",
+  "terminal_report": {
+    "commit": "e7d715eb1752c477ef9cc08c70adf2d41d537477",
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_WAVE3_TERMINAL_REPORT_V1.json",
+    "blob": "aeae8d75ef8d775179906bc0ed6dd4bd2240df10"
+  },
+  "final_acceptance_pointer": {
+    "commit": "f5371f64c7e7a55e686ff6ef3cb60b80eecbbd6f",
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_TO_A2_FINAL_ACCEPTANCE_POINTER_V1.json",
+    "blob": "bd7ae6b87c5caac5a2b53f19354d9186be7dd614"
+  },
+  "first_finding": "EXACT_RESPONSE_BODY_FIXTURES_FOR_A3_JSON_ENDPOINT_PROFILES_ARE_NOT_PRESENT_IN_SEARCHED_REPOSITORY_FIXTURES",
+  "finding_owner_chain": ["A-3","A-5","A-6"],
+  "worker_pointer_readback": "PASS_4_OF_4",
+  "owned_root_overlap_count": 0,
+  "verified_package_required_components": "2_OF_9_AUTHORITATIVE",
+  "b1_execution_ready": false,
+  "remote_readback": "PASS",
+  "updated_at_kst": "2026-08-04T06:16:26+09:00",
   "production": false,
   "ready": false,
   "merge": false
