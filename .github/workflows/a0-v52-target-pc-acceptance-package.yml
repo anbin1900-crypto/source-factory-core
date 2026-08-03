@@ -21,12 +21,16 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          sparse-checkout: |
+            yolla-panel-v1/a0-successor-control/target-pc-v52
+          sparse-checkout-cone-mode: false
       - name: Parse JSON and compile Python
         shell: bash
         run: |
           set -euo pipefail
           python -m json.tool A0_V52_EXACT_INSTALLER_AUTHORITY_RESOLUTION_V1.json >/dev/null
           python -m json.tool A0_V52_OPERATOR_OBSERVATION_TEMPLATE_V1.json >/dev/null
+          python -m json.tool A0_V52_EXACT_INSTALLER_WORK_REQUEST_V2.json >/dev/null
           python -m py_compile \
             validate_a0_v52_exact_installer_execution.py \
             test_a0_v52_exact_installer_execution.py
@@ -59,6 +63,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          sparse-checkout: |
+            yolla-panel-v1/a0-successor-control/target-pc-v52/Invoke-A0V52ExactInstallerExecution.ps1
+          sparse-checkout-cone-mode: false
       - name: Parse exact installer execution runner
         shell: powershell
         run: |
