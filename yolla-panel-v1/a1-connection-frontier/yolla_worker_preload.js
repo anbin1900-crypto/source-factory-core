@@ -25,6 +25,11 @@ contextBridge.exposeInMainWorld("yollaWorker", Object.freeze({
   selectRole: (payload) => ipcRenderer.invoke("yolla-panel:select-role", payload || {}),
   runCycleOnce: (payload) => ipcRenderer.invoke("yolla-panel:run-cycle-once", payload || {}),
   getLatestCycle: () => ipcRenderer.invoke("yolla-panel:get-latest-cycle"),
+  updateGroup: (payload) => ipcRenderer.invoke("yolla-panel:update-group", payload || {}),
+  addWorker: (payload) => ipcRenderer.invoke("yolla-panel:add-worker", payload || {}),
+  updateRole: (payload) => ipcRenderer.invoke("yolla-panel:update-role", payload || {}),
+  deleteWorker: (payload) => ipcRenderer.invoke("yolla-panel:delete-worker", payload || {}),
   onCycleEvent: (callback) => subscribe("yolla-worker-cycle-event", callback),
-  onWorkspaceState: (callback) => subscribe("yolla-worker-workspace-state", callback)
+  onWorkspaceState: (callback) => subscribe("yolla-worker-workspace-state", callback),
+  onRegistryUpdated: (callback) => subscribe("yolla-worker-registry-updated", callback)
 }));
