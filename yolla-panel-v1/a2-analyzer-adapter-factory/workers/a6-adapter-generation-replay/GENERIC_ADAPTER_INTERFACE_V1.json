@@ -1,0 +1,67 @@
+{
+  "failure_mode": "FAIL_CLOSED",
+  "live_site_call_count": 0,
+  "methods": [
+    {
+      "input": "url",
+      "name": "detectSite",
+      "output": "site_match"
+    },
+    {
+      "input": "session_header_contract",
+      "name": "prepareSession",
+      "output": "redacted_session"
+    },
+    {
+      "input": "site_structure_profile",
+      "name": "discoverScope",
+      "output": "scope"
+    },
+    {
+      "input": "request_template+parameters+cursor",
+      "name": "buildListRequest",
+      "output": "request"
+    },
+    {
+      "input": "response",
+      "name": "parseListResponse",
+      "output": "records"
+    },
+    {
+      "input": "response",
+      "name": "getNextCursor",
+      "output": "cursor|null"
+    },
+    {
+      "input": "record_identity",
+      "name": "buildDetailRequest",
+      "output": "request"
+    },
+    {
+      "input": "response",
+      "name": "parseDetailResponse",
+      "output": "detail"
+    },
+    {
+      "input": "record",
+      "name": "getRecordIdentity",
+      "output": "stable_id"
+    },
+    {
+      "input": "list+detail",
+      "name": "normalizeRecord",
+      "output": "normalized_record"
+    },
+    {
+      "input": "status+failure_code",
+      "name": "shouldRetry",
+      "output": "boolean"
+    },
+    {
+      "input": "context",
+      "name": "getRateLimitPolicy",
+      "output": "policy"
+    }
+  ],
+  "schema_version": "GENERIC_ADAPTER_INTERFACE_V1"
+}

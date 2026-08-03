@@ -1,0 +1,60 @@
+{
+  "authority_status": "UNRESOLVED_INPUT",
+  "fixture_only_non_authoritative_profile": {
+    "endpoint_patterns": [
+      "fixture://list",
+      "fixture://detail/{listingId}"
+    ],
+    "navigation_edges": [
+      "LIST->LIST(next_cursor)",
+      "LIST->DETAIL(record_identity)"
+    ],
+    "notice": "Fixture-only scaffolding; not promoted to upstream authority.",
+    "page_types": [
+      "LIST",
+      "DETAIL"
+    ],
+    "pagination_stop": "nextCursor == null"
+  },
+  "live_site_call_count": 0,
+  "schema_version": "SITE_STRUCTURE_PROFILE_V1",
+  "site_id": "fixture-only-naver-real-estate-candidate",
+  "unresolved_inputs": [
+    "A3_TO_A6_FIXTURE_TRACE_HANDOFF_V1",
+    "A4_TO_A6_NAVIGATION_HANDOFF_V1",
+    "A5_TO_A6_EXECUTION_CONTRACT_HANDOFF_V1"
+  ],
+  "upstream_pointers": [
+    {
+      "latest_pointer_blob": "2dc1b2700b1a9171e5df140d8bae44e1a5a9053e",
+      "latest_pointer_status": "STARTED",
+      "latest_report_pointer": "LATEST_A3_REPORT_POINTER.json",
+      "observed_head": "dce303ae3b2c662306ad26ef1507f4bdaa6ad139",
+      "pr": 22,
+      "required_pointer": "A3_TO_A6_FIXTURE_TRACE_HANDOFF_V1",
+      "status": "START_POINTER_ONLY_HANDOFF_NOT_PUBLISHED",
+      "worker": "A-3"
+    },
+    {
+      "latest_pointer_blob": "cb0ae9b50483a5fdfbe1e60b5621ceb40a642374",
+      "latest_pointer_status": "STARTED",
+      "latest_report_pointer": "LATEST_A4_REPORT_POINTER.json",
+      "observed_head": "7b415d5a91bad8e1f798821517290d68ffa81cbd",
+      "pr": 23,
+      "required_pointer": "A4_TO_A6_NAVIGATION_HANDOFF_V1",
+      "status": "START_POINTER_ONLY_HANDOFF_NOT_PUBLISHED",
+      "worker": "A-4"
+    },
+    {
+      "latest_pointer_blob": "18e4c02a8dbead0dfa3c2987d011ba2628a02691",
+      "latest_pointer_status": "ACTIVE",
+      "latest_report_pointer": "LATEST_A5_REPORT_POINTER.json",
+      "observed_head": "2d6ba6f53e05b5258d7bb4c7cd80899452448f6a",
+      "pr": 24,
+      "required_pointer": "A5_TO_A6_EXECUTION_CONTRACT_HANDOFF_V1",
+      "status": "START_POINTER_ONLY_HANDOFF_NOT_PUBLISHED",
+      "worker": "A-5"
+    }
+  ],
+  "verification_status": "BLOCKED_UNRESOLVED_INPUTS"
+}

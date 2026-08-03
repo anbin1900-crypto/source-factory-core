@@ -1,0 +1,34 @@
+{
+  "directive_id": "A2-TO-A6-VERIFIED-ADAPTER-PACKAGE-BUILD-V3-20260804-001",
+  "generation_source_commit": "faf078f34b5c6ef4a1722b8a24452effbb9ec8ad",
+  "generator_validation": {
+    "deterministic": true,
+    "generation_count": 2,
+    "sha_1": "19f1f94f20ecb4ecc9e1a6a07062e90d25e5699e4cf4d75ffdd80851c8bfe511",
+    "sha_2": "19f1f94f20ecb4ecc9e1a6a07062e90d25e5699e4cf4d75ffdd80851c8bfe511",
+    "verification_status": "BLOCKED_UNRESOLVED_INPUTS"
+  },
+  "member_count": 3,
+  "members": [
+    {
+      "path": "VERIFIED_ADAPTER_PACKAGE_V1/entrypoint.py",
+      "sha256": "831d26e7e3489120bad4aaa587ba6279bf029c655c9c17dbdf875db619c0885c",
+      "size_bytes": 408
+    },
+    {
+      "path": "VERIFIED_ADAPTER_PACKAGE_V1/fixture_bundle.json",
+      "sha256": "f165f312676605b13751b543b9007222227a2518ce84664f86d9b3bb6a98231c",
+      "size_bytes": 1761
+    },
+    {
+      "path": "VERIFIED_ADAPTER_PACKAGE_V1/package.json",
+      "sha256": "2f1ea11a62cb52931ac80ea63157d5dc6537dc83edbc4433808d37e60584018d",
+      "size_bytes": 4428
+    }
+  ],
+  "out_of_owned_root_change_count": 0,
+  "package_aggregate_sha256": "aa6a5d7759dfa9a0fdffcfbc9790e2ba8ecc026517116d03cde4035e369c048b",
+  "package_status": "PARTIAL_BLOCKED_UNRESOLVED_INPUTS",
+  "schema_version": "ADAPTER_BUILD_RECEIPT_V1",
+  "upstream_pointer_count": 0
+}

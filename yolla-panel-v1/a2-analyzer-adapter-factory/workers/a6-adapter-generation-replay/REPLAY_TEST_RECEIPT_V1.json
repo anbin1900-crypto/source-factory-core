@@ -1,0 +1,25 @@
+{
+  "all_pass": true,
+  "live_site_call_count": 0,
+  "output_record_count": 2,
+  "pass_count": 13,
+  "replay_1_sha256": "5ac41349f2055f51e0a004a7831d12d8656ab5f0d59abb4e477430a72fe2e215",
+  "replay_2_sha256": "5ac41349f2055f51e0a004a7831d12d8656ab5f0d59abb4e477430a72fe2e215",
+  "schema_version": "REPLAY_TEST_RECEIPT_V1",
+  "test_count": 13,
+  "tests": {
+    "deterministic_json_order": true,
+    "deterministic_output_sha": true,
+    "identifier_missing_fail_closed": true,
+    "input_schema_validation": true,
+    "invalid_cursor_fail_closed": true,
+    "missing_required_parameter_fail_closed": true,
+    "non_retryable_error": true,
+    "output_schema_validation": true,
+    "pagination_stop": true,
+    "record_count": true,
+    "replay_count_2": true,
+    "retryable_error": true,
+    "schema_drift_fail_closed": true
+  }
+}

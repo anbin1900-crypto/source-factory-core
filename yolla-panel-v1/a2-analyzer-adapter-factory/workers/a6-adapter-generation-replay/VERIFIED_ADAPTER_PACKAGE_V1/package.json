@@ -1,0 +1,177 @@
+{
+  "b1_execution_ready": false,
+  "components": {
+    "endpoint_catalog": {
+      "fixture_patterns": [
+        "fixture://list",
+        "fixture://detail/{listingId}"
+      ],
+      "status": "UNRESOLVED_INPUT"
+    },
+    "identifier_map": {
+      "primary": "listingId",
+      "relationships": [
+        {
+          "cardinality": "1:1",
+          "from": "listingId",
+          "to": "detail.listingId"
+        }
+      ]
+    },
+    "pagination_contract": {
+      "cursor_field": "nextCursor",
+      "invalid_cursor": "FAIL_CLOSED",
+      "stop_condition": "nextCursor == null"
+    },
+    "parameter_dictionary": {
+      "cortarNo": {
+        "required": true,
+        "type": "string"
+      },
+      "cursor": {
+        "required": false,
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "page": {
+        "required": true,
+        "type": "integer"
+      },
+      "realEstateType": {
+        "required": true,
+        "type": "string"
+      }
+    },
+    "replay_test_receipt": "../REPLAY_TEST_RECEIPT_V1.json",
+    "request_template": {
+      "method": "GET_FIXTURE_ONLY",
+      "optional": [
+        "cursor"
+      ],
+      "required": [
+        "cortarNo",
+        "realEstateType",
+        "page"
+      ]
+    },
+    "response_schema": {
+      "required_detail_record": [
+        "listingId"
+      ],
+      "required_list_record": [
+        "listingId",
+        "complexNo",
+        "price",
+        "lat",
+        "lng"
+      ]
+    },
+    "retry_rate_limit_policy": {
+      "backoff": "fixture-only-exponential",
+      "max_attempts": 3,
+      "non_retryable_statuses": [
+        400,
+        401,
+        403,
+        404
+      ],
+      "retryable_statuses": [
+        429,
+        500,
+        502,
+        503,
+        504
+      ]
+    },
+    "session_header_contract": {
+      "fixture_headers": {
+        "Accept": "application/json"
+      },
+      "raw_secret_value_count": 0,
+      "status": "UNRESOLVED_INPUT"
+    }
+  },
+  "entrypoint": "entrypoint.py",
+  "failure_codes": [
+    "MISSING_REQUIRED_PARAMETER",
+    "INVALID_CURSOR",
+    "SCHEMA_DRIFT",
+    "IDENTIFIER_MISSING",
+    "IDENTIFIER_MISMATCH",
+    "LIST_RESPONSE_ERROR",
+    "DETAIL_RESPONSE_ERROR",
+    "UNRESOLVED_INPUT"
+  ],
+  "fixture_location": "fixture_bundle.json",
+  "input_schema": {
+    "required": [
+      "list_pages",
+      "details",
+      "error_fixtures"
+    ],
+    "type": "object"
+  },
+  "live_site_call_count": 0,
+  "output_schema": {
+    "properties": {
+      "pagination_stopped": {
+        "const": true
+      },
+      "record_count": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "records",
+      "record_count",
+      "pagination_stopped",
+      "output_sha256"
+    ],
+    "type": "object"
+  },
+  "source_pointers": {
+    "accepted_handoff_pointer_count": 0,
+    "observed_start_pointer_count": 3,
+    "required": [
+      {
+        "latest_pointer_blob": "2dc1b2700b1a9171e5df140d8bae44e1a5a9053e",
+        "latest_pointer_status": "STARTED",
+        "latest_report_pointer": "LATEST_A3_REPORT_POINTER.json",
+        "observed_head": "dce303ae3b2c662306ad26ef1507f4bdaa6ad139",
+        "pr": 22,
+        "required_pointer": "A3_TO_A6_FIXTURE_TRACE_HANDOFF_V1",
+        "status": "START_POINTER_ONLY_HANDOFF_NOT_PUBLISHED",
+        "worker": "A-3"
+      },
+      {
+        "latest_pointer_blob": "cb0ae9b50483a5fdfbe1e60b5621ceb40a642374",
+        "latest_pointer_status": "STARTED",
+        "latest_report_pointer": "LATEST_A4_REPORT_POINTER.json",
+        "observed_head": "7b415d5a91bad8e1f798821517290d68ffa81cbd",
+        "pr": 23,
+        "required_pointer": "A4_TO_A6_NAVIGATION_HANDOFF_V1",
+        "status": "START_POINTER_ONLY_HANDOFF_NOT_PUBLISHED",
+        "worker": "A-4"
+      },
+      {
+        "latest_pointer_blob": "18e4c02a8dbead0dfa3c2987d011ba2628a02691",
+        "latest_pointer_status": "ACTIVE",
+        "latest_report_pointer": "LATEST_A5_REPORT_POINTER.json",
+        "observed_head": "2d6ba6f53e05b5258d7bb4c7cd80899452448f6a",
+        "pr": 24,
+        "required_pointer": "A5_TO_A6_EXECUTION_CONTRACT_HANDOFF_V1",
+        "status": "START_POINTER_ONLY_HANDOFF_NOT_PUBLISHED",
+        "worker": "A-5"
+      }
+    ]
+  },
+  "unresolved_inputs": [
+    "A3_TO_A6_FIXTURE_TRACE_HANDOFF_V1",
+    "A4_TO_A6_NAVIGATION_HANDOFF_V1",
+    "A5_TO_A6_EXECUTION_CONTRACT_HANDOFF_V1"
+  ],
+  "verification_status": "BLOCKED_UNRESOLVED_INPUTS",
+  "version": "1.0"
+}
