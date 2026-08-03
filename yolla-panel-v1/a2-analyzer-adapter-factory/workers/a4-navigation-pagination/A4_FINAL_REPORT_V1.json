@@ -6,8 +6,8 @@
   "decision": "PASS",
   "terminal_report": {
     "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A4_TERMINAL_REPORT_V1.json",
-    "commit": "422cc539f74367a83d7a136e8f6583e881a6200a",
-    "blob": "0242d9bf08f64fb12f9538c929587a0a82058b19"
+    "commit": "5530cba8f0dc7b6496308aba98e9f91155438e04",
+    "blob": "bf67758703708ec28497b8b3fa626051baaa2147"
   },
   "summary": {
     "navigation_node_count": 12,
@@ -21,6 +21,8 @@
     "guard_cases": "PASS_4_OF_4",
     "unbounded_loop_count": 0,
     "duplicate_page_visit_after_stop_count": 0,
+    "a3_trace_event_count": 15,
+    "a3_trace_mapping_count": 10,
     "a5_handoff_ready": true,
     "a6_handoff_ready": true,
     "live_site_call_count": 0,
@@ -32,6 +34,20 @@
     "correction": "APPLY_DUPLICATE_ID_STOP_ONLY_TO_NON_REVISIT_LIST_OR_PAGINATION_PAGES",
     "final_test": "PASS_15_OF_15"
   },
+  "a3_late_binding": {
+    "status": "PASS",
+    "a3_head": "a5632d6dbdddd956d478b593ffe144ff8a6241cf",
+    "a3_terminal": "A3_NETWORK_ENDPOINT_OBSERVATION_READY",
+    "a3_final_report_blob": "38db5f8afb78f25fa36554d33246a2f1ab34f2d9",
+    "a3_fixture_trace_blob": "cd29511601f27a128ff88e2e3f265c116d99e4a0",
+    "a3_to_a6_handoff_blob": "8fe991a225275ece977944f157b72509cd3345f7",
+    "a3_pointer_status_note": "STARTED_STALE_RELATIVE_TO_FINAL_REPORT",
+    "binding_artifact_blob": "371ef6d890083f7283c77010d0d6d2d841066a41",
+    "mapped_event_ids": ["EVT-001", "EVT-003", "EVT-005", "EVT-006", "EVT-007", "EVT-008", "EVT-009", "EVT-010", "EVT-014", "EVT-015"],
+    "unknown_event_preserved": true,
+    "raw_secret_value_count": 0,
+    "live_site_call_count": 0
+  },
   "remote_blob_readback": {
     "fixture": "5cb6f21a5361be47f4c5dd458f8dc74b51be1b0e",
     "site_navigation_graph": "6f261e6e505cd3253b17744c3617dbbb883b0b65",
@@ -40,19 +56,19 @@
     "collection_scope_boundary": "604e4a40c37ff0778db1b4089f7b001f0c321da1",
     "navigation_loop_stop_policy": "58caa28c5b26db944a77e8108979f67b7ad5861e",
     "fixture_navigation_replay": "cc70e4f967b6c92fa5ddf86a6c31babad4b80983",
-    "a4_to_a5_handoff": "948cfe03510ee91a018a4ecfb75823594cc306cb",
-    "a4_to_a6_handoff": "c849ec1f287120fe0fd78b7465aad58436251d98",
+    "a3_trace_late_binding": "371ef6d890083f7283c77010d0d6d2d841066a41",
+    "a4_to_a5_handoff": "988d34dc259a4c93280680f9ee252eeeadc110df",
+    "a4_to_a6_handoff": "39dc506fad6e8f23b6a8ab334a6ab2418342277d",
     "progress_report": "5330a1c00e094705381d0b1721116957b1536c45",
     "validation_result": "9c4fad4765f971f9380ce139e471e5fe90850caf",
-    "terminal_report": "0242d9bf08f64fb12f9538c929587a0a82058b19",
-    "result": "PASS_12_OF_12"
+    "terminal_report": "bf67758703708ec28497b8b3fa626051baaa2147",
+    "result": "PASS_13_OF_13"
   },
   "handoff": {
-    "a5": "Consume semantic pagination fields and termination rules; retain endpoint/request/response authority.",
-    "a6": "Consume navigation graph, page catalog, fixture and deterministic replay digest; retain adapter implementation authority."
+    "a5": "Consume semantic pagination fields, A3 list/pagination parameter observations, HTTP 429 evidence and termination rules; retain endpoint/request/response/retry authority.",
+    "a6": "Consume navigation graph, page catalog, A3 trace authority, repository fixture and deterministic replay digest; retain adapter implementation authority."
   },
   "boundaries": {
-    "a3_trace_handoff_at_start": "NOT_PUBLISHED",
     "repository_local_fixture_only": true,
     "actual_bulk_collection": false,
     "panel_shell_direct_edit": false,
