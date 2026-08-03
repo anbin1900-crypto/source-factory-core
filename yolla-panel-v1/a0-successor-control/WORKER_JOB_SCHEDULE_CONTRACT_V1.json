@@ -1,0 +1,139 @@
+{
+  "schema_version": "WORKER_JOB_SCHEDULE_CONTRACT_V1",
+  "status": "ACTIVE",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "owner_model": {
+    "plan_owner": "A-1_YOLLA_WORKSPACE_SUPERVISING_COMMANDER",
+    "execution_owner": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER"
+  },
+  "schedule_rules": {
+    "maximum_jobs_per_seat": 100,
+    "maximum_active_directives_per_seat": 1,
+    "jobs_are_plans_until_promoted": true,
+    "schedule_revision_requires_github_commit": true,
+    "runtime_cursor_is_local_durable_state": true
+  },
+  "required_schedule_fields": [
+    "schema_version",
+    "schedule_id",
+    "project_id",
+    "plan_version",
+    "created_by",
+    "workers",
+    "production",
+    "ready",
+    "merge"
+  ],
+  "required_worker_fields": [
+    "seat_code",
+    "worker_slot_uid",
+    "display_name",
+    "role_profile_id",
+    "authority_contract_ref",
+    "enabled",
+    "current_order",
+    "jobs"
+  ],
+  "required_job_fields": [
+    "job_id",
+    "order",
+    "command",
+    "repository",
+    "pr",
+    "dependencies",
+    "expected_terminal",
+    "retry_policy",
+    "status"
+  ],
+  "optional_job_fields": [
+    "comment_id",
+    "directive_id",
+    "owned_paths",
+    "required_inputs",
+    "expected_artifacts",
+    "result_pointer",
+    "timeout_seconds"
+  ],
+  "job_states": [
+    "PLANNED",
+    "READY",
+    "ACTIVE_DIRECTIVE",
+    "DISPATCHING",
+    "RUNNING",
+    "RESULT_WAITING",
+    "PASS",
+    "RETRY_READY",
+    "WAIT_DEPENDENCY",
+    "BLOCKED_EXTERNAL",
+    "NEEDS_REPLAN",
+    "CANCELLED",
+    "SUPERSEDED"
+  ],
+  "terminal_states": ["PASS", "BLOCKED_EXTERNAL", "CANCELLED", "SUPERSEDED"],
+  "promotion_contract": {
+    "preconditions": [
+      "worker_enabled",
+      "no_other_active_directive_for_seat",
+      "all_dependencies_terminal_pass",
+      "authority_contract_resolved",
+      "no_owned_path_or_exclusive_resource_conflict"
+    ],
+    "action": "PROMOTE_ONE_READY_JOB_TO_ACTIVE_DIRECTIVE",
+    "after_pass": "PROMOTE_NEXT_ELIGIBLE_JOB",
+    "after_blocked_external": "WAIT_FOR_RESOLUTION_EVENT",
+    "after_retryable_failure": "RETRY_SAME_JOB_WITH_SAME_JOB_ID_AND_INCREMENTED_ATTEMPT",
+    "after_replan_trigger": "CREATE_REPLAN_REQUEST_FOR_A-1"
+  },
+  "github_result_acceptance": {
+    "required_matches": [
+      "schedule_id",
+      "job_id",
+      "seat_code",
+      "worker_slot_uid",
+      "directive_id_or_generation",
+      "expected_terminal"
+    ],
+    "required_evidence": ["result_pointer", "result_commit_or_remote_head", "status"],
+    "accepted_pass": "PASS",
+    "accepted_external_block": "BLOCKED_EXTERNAL",
+    "natural_language_only_result": "REJECT"
+  },
+  "idempotency": {
+    "namespace": "WORKER_COMMAND",
+    "key": "SHA256(schedule_id|job_id|seat_code|directive_generation|payload_sha256)",
+    "duplicate_same_payload": "RETURN_EXISTING_RECEIPT",
+    "duplicate_different_payload": "REJECT_IDEMPOTENCY_CONFLICT",
+    "restart_resume": "REUSE_EXISTING_EXECUTION_ID"
+  },
+  "concurrency": {
+    "exclusive_pc_runtime_jobs": 1,
+    "gpt_worker_jobs": 5,
+    "browser_analysis_jobs": 2,
+    "same_owned_path_parallelism": false
+  },
+  "reporting": {
+    "job": "ATTEMPT_LOG_AND_TERMINAL_RESULT_POINTER",
+    "cycle": "START_TEST_BLOCKER_IF_NEEDED_FINAL_OR_CHECKPOINT",
+    "github_checkpoint_triggers": [
+      "cycle_terminal",
+      "schedule_completed",
+      "replan",
+      "external_blocker"
+    ]
+  },
+  "minimum_acceptance_test": {
+    "workers": 2,
+    "jobs_per_worker": 3,
+    "manual_relay_count": 0,
+    "duplicate_execution_count": 0,
+    "restart_resume_required": true,
+    "one_worker_failure_must_not_stop_other": true,
+    "terminal": "A0_WORKER_SCHEDULE_AUTOMATION_LOOP_V1_PASS"
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "effective_at": "2026-08-04T03:49:00+09:00"
+}
