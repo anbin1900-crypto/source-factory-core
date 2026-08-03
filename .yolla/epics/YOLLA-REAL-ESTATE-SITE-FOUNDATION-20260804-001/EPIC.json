@@ -1,0 +1,304 @@
+{
+  "schema_version": "YOLLA_COMMANDER_EPIC_SUBMISSION_V2",
+  "package_id": "YOLLA-REAL-ESTATE-SITE-FOUNDATION-20260804-001",
+  "project_id": "YOLLA_AI_REAL_ESTATE_SERVICE",
+  "group_id": "REAL_ESTATE_SITE",
+  "commander_id": "REAL_ESTATE_SITE_COMMANDER",
+  "created_at": "2026-08-04T05:03:45+09:00",
+  "registration": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "pr_number": 17,
+    "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+    "epic_file_path": ".yolla/epics/YOLLA-REAL-ESTATE-SITE-FOUNDATION-20260804-001/EPIC.json"
+  },
+  "workers": [
+    {
+      "worker_id": "B-2",
+      "worker_slot_uid": "B-2-REAL-ESTATE-PLATFORM-CORE-SLOT",
+      "repository": "anbin1900-crypto/source-factory-core",
+      "control_pr": 17,
+      "enabled": true,
+      "epics": [
+        {
+          "sequence": 1,
+          "epic_id": "RE-W1-E01-CORE-REUSE-AUDIT",
+          "directive_id": "REAL-ESTATE-COMMANDER-TO-B2-CORE-REUSE-AUDIT-V1-20260804-001",
+          "title": "공통 플랫폼 코어와 기존 소스의 재사용 가능성 감사",
+          "instruction": "부동산 홈페이지 제작 워커1 역할로 수행하라. anbin1900-crypto/yolla-gas-station-portal의 main, Draft PR #4, Draft PR #5와 Issue #6·#7을 읽고 현재 main과 미병합 Draft를 명확히 구분하여 실제 경로 단위로 감사하라. apps/web, apps/api, database/init, services/data-pipeline, services/opinet-collector, tools, compose.yaml, .github/workflows를 REUSE_AS_IS, REUSE_WITH_REFACTOR, NEW_BUILD_REQUIRED, DOMAIN_SPECIFIC_KEEP, DO_NOT_COPY로 분류하라. 회원·게시판·댓글·자료실·파일·알림·감사로그가 실제 구현됐는지 이름만 보고 추정하지 마라. 결과를 yolla-panel-v1/real-estate-site-foundation/workers/b2-platform-core/ 아래 CORE_REUSE_AUDIT_V1.json, TARGET_ARCHITECTURE_CANDIDATE_V1.md, LATEST_B2_REAL_ESTATE_FOUNDATION_POINTER.json으로 Commit하라. 이 Epic에서는 yolla-gas-station-portal 소스와 기존 Draft PR을 수정하지 마라. 첫 실패에서 종료하지 말고 담당 범위의 경로·명령·도구를 교정하여 재검증한 후 Schema-valid RESULT.json과 PR #17 Pointer를 게시하라.",
+          "done_when": [
+            "현재 main, Draft PR #4, Draft PR #5가 분리된 경로별 재사용 매트릭스가 Remote Commit에 존재한다.",
+            "공통 코어 후보와 주유소 전용 유지대상이 최소 파일 또는 디렉터리 경로 단위로 열거되어 있다.",
+            "회원·게시판·댓글·자료실·파일·알림·감사로그의 실제 구현 여부가 확인 근거와 함께 판정되어 있다.",
+            "포털 소스 변경, Ready 전환, Merge, Production 작업 수가 모두 0이다.",
+            "B2_PLATFORM_CORE_REUSE_AUDIT_PASS 또는 정확한 외부 차단 근거가 RESULT.json에 기록된다."
+          ],
+          "depends_on": [],
+          "expected_terminal": [
+            "PASS",
+            "BLOCKED_EXTERNAL"
+          ],
+          "retry_limit": 3
+        },
+        {
+          "sequence": 2,
+          "epic_id": "RE-W1-E02-ARCHITECTURE-OWNERSHIP-INTEGRATION",
+          "directive_id": "REAL-ESTATE-COMMANDER-TO-B2-FOUNDATION-INTEGRATION-V1-20260804-002",
+          "title": "5개 워커 결과를 통합한 최종 구조·소유경로·Wave 2 백로그 확정",
+          "instruction": "RE-W1-E01-CORE-REUSE-AUDIT, RE-W2-E02-VWORLD-MAP-LIST-SYNC, RE-W3-E03-DOCUMENT-OUTREACH-CONTRACT, RE-W4-E02-PRIVATE-LISTING-SECURITY, RE-W5-E02-SOURCE-RIGHTS-INCREMENTAL-RANKING의 PASS RESULT와 Remote Commit을 Readback하라. 5개 결과를 서로 충돌 없이 통합하여 apps, packages, domains, services, docs의 최종 목표 트리와 의존 방향을 확정하라. 기존 주유소 기능을 깨지 않는 추가 방식, 공통 코어에서 도메인으로만 향하는 의존 규칙, 워커별 owned path, 공유 계약의 단일 소유자, Wave 2 구현 Epic 후보와 수용 Gate를 작성하라. 결과를 yolla-panel-v1/real-estate-site-foundation/integration/ 아래 REAL_ESTATE_SITE_FOUNDATION_INTEGRATED_ARCHITECTURE_V1.md, OWNED_PATH_MATRIX_V1.json, WAVE2_EPIC_BACKLOG_V1.json, LATEST_REAL_ESTATE_SITE_FOUNDATION_POINTER.json으로 Commit하라. 결과가 상충하면 근거를 비교해 한 안으로 종결하고 해결하지 못한 사항만 명시적 NEEDS_REPLAN 후보로 분리하라. 실제 애플리케이션 코드 변경, Production, Ready, Merge는 수행하지 마라.",
+          "done_when": [
+            "5개 선행 Epic의 Commit·Result Readback이 모두 PASS이며 입력 Pointer가 통합 문서에 기록되어 있다.",
+            "워커별 owned path 교집합이 0이고 공통 계약별 단일 소유자가 지정되어 있다.",
+            "최종 apps/packages/domains/services/docs 트리와 허용 의존 방향이 기계판독 가능한 매트릭스로 존재한다.",
+            "Wave 2 백로그의 각 항목에 담당 워커, 산출물, 의존성, 측정 가능한 done_when이 포함되어 있다.",
+            "REAL_ESTATE_SITE_FOUNDATION_INTEGRATION_PASS 또는 정확한 외부 차단 근거가 RESULT.json에 기록된다."
+          ],
+          "depends_on": [
+            "RE-W1-E01-CORE-REUSE-AUDIT",
+            "RE-W2-E02-VWORLD-MAP-LIST-SYNC",
+            "RE-W3-E03-DOCUMENT-OUTREACH-CONTRACT",
+            "RE-W4-E02-PRIVATE-LISTING-SECURITY",
+            "RE-W5-E02-SOURCE-RIGHTS-INCREMENTAL-RANKING"
+          ],
+          "expected_terminal": [
+            "PASS",
+            "BLOCKED_EXTERNAL"
+          ],
+          "retry_limit": 3
+        }
+      ]
+    },
+    {
+      "worker_id": "B-3",
+      "worker_slot_uid": "B-3-REAL-ESTATE-CONSUMER-SEARCH-MAP-SLOT",
+      "repository": "anbin1900-crypto/source-factory-core",
+      "control_pr": 17,
+      "enabled": true,
+      "epics": [
+        {
+          "sequence": 1,
+          "epic_id": "RE-W2-E01-CONSUMER-SEARCH-CONTRACT",
+          "directive_id": "REAL-ESTATE-COMMANDER-TO-B3-CONSUMER-SEARCH-CONTRACT-V1-20260804-001",
+          "title": "소비자용 검색·목록·상세·비교 UX와 SearchState 계약 설계",
+          "instruction": "부동산 홈페이지 제작 워커2 역할로 수행하라. anbin1900-crypto/yolla-gas-station-portal의 main, Draft PR #5의 게시판형 목록·상세 패턴, Issue #6·#8을 읽어라. 소비자가 욜라를 부동산 전문 검색도구로 인식하도록 홈, 구조화 조건검색, 게시판형 목록, 상세, 비교, 관심매물, 저장검색, 전문 중개업소 찾기의 메뉴·라우트·와이어프레임을 설계하라. 전문 AI가 없어도 지역, 거래유형, 보증금, 월세, 매매가, 면적, 방 수, 옵션, 입주일을 구조화 필터로 검색할 수 있어야 한다. 욜라 자체 매물과 외부 원문 연결 매물은 source_type, 출처, 최종확인시각, 원문이동 행동으로 명확히 구분하라. 결과를 yolla-panel-v1/real-estate-site-foundation/workers/b3-consumer-search-map/ 아래 CONSUMER_SEARCH_UX_CONTRACT_V1.md, SEARCH_STATE_CONTRACT_V1.json, LISTING_DISPLAY_CONTRACT_V1.json, LATEST_B3_REAL_ESTATE_FOUNDATION_POINTER.json으로 Commit하라. 실제 포털 코드는 수정하지 마라.",
+          "done_when": [
+            "소비자 메뉴·라우트와 핵심 6개 이상 화면의 텍스트 와이어프레임이 Remote Commit에 존재한다.",
+            "SearchState에 지역·거래유형·가격·면적·옵션·정렬·페이지·지도영역을 표현하는 필드와 직렬화 규칙이 포함되어 있다.",
+            "자체 매물과 외부 매물의 표시·상세·문의·원문이동 행동이 혼동 없이 구분되어 있다.",
+            "비공개 원본정보를 소비자 목록·상세에 포함하는 필드 수가 0이다.",
+            "B3_CONSUMER_SEARCH_CONTRACT_PASS 또는 정확한 외부 차단 근거가 RESULT.json에 기록된다."
+          ],
+          "depends_on": [],
+          "expected_terminal": [
+            "PASS",
+            "BLOCKED_EXTERNAL"
+          ],
+          "retry_limit": 3
+        },
+        {
+          "sequence": 2,
+          "epic_id": "RE-W2-E02-VWORLD-MAP-LIST-SYNC",
+          "directive_id": "REAL-ESTATE-COMMANDER-TO-B3-VWORLD-MAP-LIST-SYNC-V1-20260804-002",
+          "title": "VWorld 지도와 게시판 목록의 단일 상태 동기화 계약 확정",
+          "instruction": "RE-W2-E01-CONSUMER-SEARCH-CONTRACT, RE-W1-E01-CORE-REUSE-AUDIT, RE-W4-E02-PRIVATE-LISTING-SECURITY, RE-W5-E02-SOURCE-RIGHTS-INCREMENTAL-RANKING의 PASS 결과를 Readback하라. VWorld 배경지도·주소/좌표·행정구역·마커·군집·지도영역검색을 추상화한 Map Adapter 계약을 작성하고 게시판 목록과 지도에서 동일 SearchState, 선택 매물, 정렬, 페이지/영역 전환 규칙을 사용하도록 설계하라. 지도 이동 시 목록 재조회와 목록 선택 시 지도 포커스의 루프 방지 규칙을 포함하라. PUBLIC 매물만 공개 지도에 표시하고 외부 매물은 출처·확인시각·원문이동을 유지하며, CONDITION_MATCH_PRIVATE와 TOP_SECRET의 원본 좌표·주소가 지도 Payload에 포함되지 않도록 하라. 결과를 같은 owned root 아래 VWORLD_MAP_ADAPTER_CONTRACT_V1.json, MAP_LIST_SYNC_ACCEPTANCE_V1.json, CONSUMER_ROUTE_MATRIX_V1.json으로 Commit하라.",
+          "done_when": [
+            "VWorld 종속성을 Map Adapter 경계 뒤로 격리한 기계판독 계약이 존재한다.",
+            "목록과 지도가 동일 SearchState를 사용하며 양방향 선택·영역 변경·재조회 루프 방지 규칙이 정의되어 있다.",
+            "보안등급별 지도 노출 테스트에서 비공개 원본 주소·좌표 누출 건수가 0이다.",
+            "외부 매물의 출처·최종확인시각·원문 URL 행동이 지도와 목록 양쪽에서 보존된다.",
+            "B3_VWORLD_MAP_LIST_SYNC_CONTRACT_PASS 또는 정확한 외부 차단 근거가 RESULT.json에 기록된다."
+          ],
+          "depends_on": [
+            "RE-W2-E01-CONSUMER-SEARCH-CONTRACT",
+            "RE-W1-E01-CORE-REUSE-AUDIT",
+            "RE-W4-E02-PRIVATE-LISTING-SECURITY",
+            "RE-W5-E02-SOURCE-RIGHTS-INCREMENTAL-RANKING"
+          ],
+          "expected_terminal": [
+            "PASS",
+            "BLOCKED_EXTERNAL"
+          ],
+          "retry_limit": 3
+        }
+      ]
+    },
+    {
+      "worker_id": "B-4",
+      "worker_slot_uid": "B-4-REAL-ESTATE-BROKER-DESKTOP-SLOT",
+      "repository": "anbin1900-crypto/source-factory-core",
+      "control_pr": 17,
+      "enabled": true,
+      "epics": [
+        {
+          "sequence": 1,
+          "epic_id": "RE-W3-E01-BROKER-DESKTOP-PERFORMANCE",
+          "directive_id": "REAL-ESTATE-COMMANDER-TO-B4-BROKER-DESKTOP-PERFORMANCE-V1-20260804-001",
+          "title": "중개업소 업무 데스크톱과 가입 직후 내 실적 화면 계약 설계",
+          "instruction": "부동산 홈페이지 제작 워커3 역할로 수행하라. anbin1900-crypto/yolla-gas-station-portal의 main, Draft PR #5의 목록·상세 새창 패턴, Issue #6·#9를 읽어라. 중개업소가 매일 사용하는 LEFT_NAV, TOP_STATUS, MULTI_TAB_WORKSPACE, RIGHT_ASSISTANT_PANEL 구조와 업무 홈을 설계하라. 가입 직후 전국 중개업소 원장과 연결된 사업장의 전국·시도·시군구·전문분야 순위, 외부 부동산 사이트·블로그·카페·유튜브에서 발견된 매물·게시물 위치, 최신성·활동·문의 지표와 정정 흐름을 정의하라. 전문 AI가 없어도 표·필터·상태·작업큐 방식으로 동작해야 한다. 결과를 yolla-panel-v1/real-estate-site-foundation/workers/b4-broker-desktop/ 아래 BROKER_DESKTOP_INFORMATION_ARCHITECTURE_V1.md, BROKER_ROUTE_MATRIX_V1.json, BROKER_PERFORMANCE_DASHBOARD_CONTRACT_V1.json, LATEST_B4_REAL_ESTATE_FOUNDATION_POINTER.json으로 Commit하라.",
+          "done_when": [
+            "중개업소 메뉴·라우트와 DesktopShell·WorkTab·TaskQueue의 책임 경계가 Remote Commit에 존재한다.",
+            "가입 직후 사업장 연결부터 내 실적·순위·외부 게시물 위치 표시까지의 상태 흐름이 정의되어 있다.",
+            "종합순위와 지역·매물종류·거래유형·콘텐츠·최신성 순위가 근거기간·출처·갱신시각과 함께 표현된다.",
+            "소비자 화면과 중개업소 데스크톱의 라우트·권한·시각 경계가 구분되어 있다.",
+            "B4_BROKER_DESKTOP_PERFORMANCE_CONTRACT_PASS 또는 정확한 외부 차단 근거가 RESULT.json에 기록된다."
+          ],
+          "depends_on": [],
+          "expected_terminal": [
+            "PASS",
+            "BLOCKED_EXTERNAL"
+          ],
+          "retry_limit": 3
+        },
+        {
+          "sequence": 2,
+          "epic_id": "RE-W3-E02-CRM-WORKFLOW-CONTRACT",
+          "directive_id": "REAL-ESTATE-COMMANDER-TO-B4-CRM-WORKFLOW-V1-20260804-002",
+          "title": "고객·거래처·상담·일정·매칭 업무 객체와 상태머신 확정",
+          "instruction": "RE-W3-E01-BROKER-DESKTOP-PERFORMANCE와 RE-W5-E01-DGROUP-DATA-CONTRACTS의 PASS 결과를 Readback하라. 고객, 업무 거래처, 상담, 희망조건, 매물추천, 방문일정, 후속연락, 계약진행 객체를 정의하고 관계·상태전이·담당자·이력 규칙을 설계하라. 매수인·매도인·임대인·임차인과 법무사·세무사·변호사·공동중개업소 등 거래처를 구분하되 공통 관계관리 기반을 공유하라. 고객 희망조건과 공개 매물 또는 비식별 비공개 조건의 연결은 원본 보안정보를 복제하지 않도록 참조 계약으로만 표현하라. 결과를 같은 owned root 아래 CRM_OBJECT_CONTRACT_V1.json, BROKER_WORKFLOW_STATE_MACHINE_V1.json, CUSTOMER_LISTING_MATCHING_CONTRACT_V1.json으로 Commit하라.",
+          "done_when": [
+            "고객·거래처·상담·희망조건·추천·일정·계약진행 객체의 식별자와 관계가 기계판독 가능하다.",
+            "각 업무 객체에 허용 상태전이, 담당자, 변경이력, 다음 행동이 정의되어 있다.",
+            "고객 조건과 매물 연결에서 소유자 개인정보·비공개 원본주소를 복제하는 필드가 0이다.",
+            "Fixture 업무 흐름이 신규문의부터 방문·후속연락 또는 종료까지 모순 없이 재생된다.",
+            "B4_CRM_WORKFLOW_CONTRACT_PASS 또는 정확한 외부 차단 근거가 RESULT.json에 기록된다."
+          ],
+          "depends_on": [
+            "RE-W3-E01-BROKER-DESKTOP-PERFORMANCE",
+            "RE-W5-E01-DGROUP-DATA-CONTRACTS"
+          ],
+          "expected_terminal": [
+            "PASS",
+            "BLOCKED_EXTERNAL"
+          ],
+          "retry_limit": 3
+        },
+        {
+          "sequence": 3,
+          "epic_id": "RE-W3-E03-DOCUMENT-OUTREACH-CONTRACT",
+          "directive_id": "REAL-ESTATE-COMMANDER-TO-B4-DOCUMENT-OUTREACH-V1-20260804-003",
+          "title": "서식·표준계약서·전단지·외부 게시물 제작 계약 확정",
+          "instruction": "RE-W3-E02-CRM-WORKFLOW-CONTRACT, RE-W4-E02-PRIVATE-LISTING-SECURITY, RE-W5-E01-DGROUP-DATA-CONTRACTS의 PASS 결과를 Readback하라. 서식, 표준계약서, 특약, PDF·인쇄, 전단지, 블로그·카페·SNS·유튜브 게시물 템플릿의 객체·버전·시행일·공식출처·작성흐름을 설계하라. 고객·매물·계약·문서 간 참조관계를 정의하고, 매물 보안등급에 따라 자동입력·미리보기·출력·다운로드·외부전송을 Fail-closed로 제한하라. TOP_SECRET은 문서·전단지·외부 게시물 자동생성을 기본 금지하고, DESIGNATED_SHARE는 지정대상·만료·워터마크를 요구하라. 결과를 같은 owned root 아래 DOCUMENT_TEMPLATE_CONTRACT_V1.json, BROKER_OUTREACH_CONTENT_CONTRACT_V1.json, DOCUMENT_SECURITY_BINDING_V1.json으로 Commit하라.",
+          "done_when": [
+            "서식·계약서 템플릿에 버전·시행일·출처·필수입력·생성파일 해시 규칙이 포함되어 있다.",
+            "고객·매물·계약·문서 객체 연결이 참조키와 이력 규칙으로 정의되어 있다.",
+            "6개 매물 보안등급별 미리보기·출력·다운로드·외부전송 허용표가 존재한다.",
+            "TOP_SECRET 외부 콘텐츠 생성 허용 건수와 비공개 주소·소유자 누출 테스트 건수가 모두 0이다.",
+            "B4_DOCUMENT_OUTREACH_CONTRACT_PASS 또는 정확한 외부 차단 근거가 RESULT.json에 기록된다."
+          ],
+          "depends_on": [
+            "RE-W3-E02-CRM-WORKFLOW-CONTRACT",
+            "RE-W4-E02-PRIVATE-LISTING-SECURITY",
+            "RE-W5-E01-DGROUP-DATA-CONTRACTS"
+          ],
+          "expected_terminal": [
+            "PASS",
+            "BLOCKED_EXTERNAL"
+          ],
+          "retry_limit": 3
+        }
+      ]
+    },
+    {
+      "worker_id": "B-5",
+      "worker_slot_uid": "B-5-REAL-ESTATE-IDENTITY-SECURITY-SLOT",
+      "repository": "anbin1900-crypto/source-factory-core",
+      "control_pr": 17,
+      "enabled": true,
+      "epics": [
+        {
+          "sequence": 1,
+          "epic_id": "RE-W4-E01-IDENTITY-ORGANIZATION-RBAC",
+          "directive_id": "REAL-ESTATE-COMMANDER-TO-B5-IDENTITY-ORGANIZATION-RBAC-V1-20260804-001",
+          "title": "소비자·사업장·대표자·직원·관리자 신원과 권한 계약 설계",
+          "instruction": "부동산 홈페이지 제작 워커4 역할로 수행하라. anbin1900-crypto/yolla-gas-station-portal database/init/002_schema.sql의 membership_status·verification_status, Draft PR #5의 credential reference·redaction 방식, Issue #6·#10과 anbin1900-crypto/yolla-real-estate-data-engine의 06_government_api_manager 공통 비밀정보 검증계약을 읽어라. 개인 계정과 사업장 객체를 분리하고 소비자, 대표자, 공인중개사, 직원, 관리자 역할·권한을 정의하라. 전국 약 105,000개 중개업소 원장과 가입자의 자동매칭, 후보선택, 본인확인, 중복, 불일치, 분쟁, 정정 상태머신을 설계하라. 직원 초대·권한변경·퇴사·회수와 관리자 권한 분리를 포함하라. 결과를 yolla-panel-v1/real-estate-site-foundation/workers/b5-identity-security/ 아래 IDENTITY_ORGANIZATION_RBAC_CONTRACT_V1.json, LEDGER_LINK_STATE_MACHINE_V1.json, ROLE_PERMISSION_MATRIX_V1.json, LATEST_B5_REAL_ESTATE_FOUNDATION_POINTER.json으로 Commit하라.",
+          "done_when": [
+            "개인 계정, 사업장, 대표자, 공인중개사, 직원, 관리자 객체와 식별자가 분리되어 있다.",
+            "원장 연결 상태머신에 자동일치·후보·검증·중복·불일치·분쟁·정정·해제 상태가 포함되어 있다.",
+            "역할별 읽기·쓰기·승인·공유·권한관리 매트릭스와 관리자 권한 분리가 정의되어 있다.",
+            "퇴사·권한회수 Fixture에서 이전 직원의 보호자원 접근 허용 건수가 0이다.",
+            "B5_IDENTITY_ORGANIZATION_RBAC_CONTRACT_PASS 또는 정확한 외부 차단 근거가 RESULT.json에 기록된다."
+          ],
+          "depends_on": [],
+          "expected_terminal": [
+            "PASS",
+            "BLOCKED_EXTERNAL"
+          ],
+          "retry_limit": 3
+        },
+        {
+          "sequence": 2,
+          "epic_id": "RE-W4-E02-PRIVATE-LISTING-SECURITY",
+          "directive_id": "REAL-ESTATE-COMMANDER-TO-B5-PRIVATE-LISTING-SECURITY-V1-20260804-002",
+          "title": "비공개 매물 6등급·공유·감사·실패차단 정책 확정",
+          "instruction": "RE-W4-E01-IDENTITY-ORGANIZATION-RBAC의 PASS 결과를 Readback하라. PUBLIC, OFFICE_INTERNAL, OWNER_ONLY, CONDITION_MATCH_PRIVATE, DESIGNATED_SHARE, TOP_SECRET 각 등급에 대해 열람주체, 검색·지도·랭킹 노출, 규칙매칭 허용 필드, 다운로드, 인쇄, 전단지, 외부 게시물, 외부전송, 공유만료, 워터마크, 감사 이벤트를 확정하라. CONDITION_MATCH_PRIVATE는 지역범위·가격범위·용도 등 비식별 조건만 매칭하고 소비자에게 원본 주소·소유자·사진·정확가격을 노출하지 마라. TOP_SECRET은 검색·지도·랭킹·일반매칭·AI 학습·외부전송·자동문서 생성을 기본 금지하라. 열람·변경·출력·다운로드·공유·권한변경 이벤트와 최소 보안 테스트를 설계하라. 결과를 같은 owned root 아래 LISTING_SECURITY_POLICY_V1.json, AUDIT_EVENT_CATALOG_V1.json, SECURITY_TEST_MATRIX_V1.json으로 Commit하라.",
+          "done_when": [
+            "6개 보안등급 모두에 열람·검색·지도·랭킹·매칭·파일·출력·외부전송 정책값이 존재한다.",
+            "CONDITION_MATCH_PRIVATE 공개 Payload에 원본 주소·소유자·사진·정확가격 필드가 0이다.",
+            "TOP_SECRET의 검색·지도·랭킹·일반매칭·AI 학습·외부전송·자동문서 허용값이 모두 false이다.",
+            "권한우회·만료공유·퇴사직원·다운로드·인쇄 실패차단 테스트 목록과 기대결과가 정의되어 있다.",
+            "B5_PRIVATE_LISTING_SECURITY_POLICY_PASS 또는 정확한 외부 차단 근거가 RESULT.json에 기록된다."
+          ],
+          "depends_on": [
+            "RE-W4-E01-IDENTITY-ORGANIZATION-RBAC"
+          ],
+          "expected_terminal": [
+            "PASS",
+            "BLOCKED_EXTERNAL"
+          ],
+          "retry_limit": 3
+        }
+      ]
+    },
+    {
+      "worker_id": "B-6",
+      "worker_slot_uid": "B-6-REAL-ESTATE-DATA-DGROUP-SLOT",
+      "repository": "anbin1900-crypto/source-factory-core",
+      "control_pr": 17,
+      "enabled": true,
+      "epics": [
+        {
+          "sequence": 1,
+          "epic_id": "RE-W5-E01-DGROUP-DATA-CONTRACTS",
+          "directive_id": "REAL-ESTATE-COMMANDER-TO-B6-DGROUP-DATA-CONTRACTS-V1-20260804-001",
+          "title": "부동산 데이터 객체와 D그룹 요청·응답·Mock 계약 설계",
+          "instruction": "부동산 홈페이지 제작 워커5 역할로 수행하라. anbin1900-crypto/yolla-gas-station-portal의 database/init, services/data-pipeline, Draft PR #4·#5, Issue #6·#11과 anbin1900-crypto/yolla-real-estate-data-engine PR #188의 D그룹 권위 경계를 읽어라. 전국 중개업소 원장, 회원·사업장 연결, 욜라 자체 매물, 외부 매물 인덱스, 활동증거, 고객 희망조건, 전문분야·지역·거래유형 랭킹, 문의·저장·원문이동 이벤트의 최소 객체를 정의하라. 홈페이지가 D그룹 내부 테이블에 직접 결합되지 않도록 웹→D 요청과 D→웹 검색·목록·상세·랭킹 응답 계약을 작성하라. D DB 미완성 상태에서도 화면·API 개발이 가능한 결정론적 Mock Bundle을 포함하라. 매물 객체에는 source_type, source_id, source_url, last_verified_at, status를 필수화하라. 결과를 yolla-panel-v1/real-estate-site-foundation/workers/b6-data-dgroup/ 아래 REAL_ESTATE_DATA_OBJECT_CONTRACT_V1.json, D_GROUP_REQUEST_RESPONSE_CONTRACT_V1.json, MOCK_DATA_CONTRACT_V1.json, LATEST_B6_REAL_ESTATE_FOUNDATION_POINTER.json으로 Commit하라.",
+          "done_when": [
+            "중개업소·사업장연결·자체매물·외부매물·활동증거·고객조건·랭킹·전환이벤트 객체가 기계판독 가능하다.",
+            "매물 객체에 source_type, source_id, source_url, last_verified_at, status가 필수로 정의되어 있다.",
+            "웹과 D그룹 간 요청·응답 계약이 D 내부 테이블명을 외부 API 필수요소로 노출하지 않는다.",
+            "Mock Bundle이 동일 입력에서 동일 검색·목록·상세·랭킹 응답을 생성한다.",
+            "B6_DGROUP_DATA_CONTRACTS_PASS 또는 정확한 외부 차단 근거가 RESULT.json에 기록된다."
+          ],
+          "depends_on": [],
+          "expected_terminal": [
+            "PASS",
+            "BLOCKED_EXTERNAL"
+          ],
+          "retry_limit": 3
+        },
+        {
+          "sequence": 2,
+          "epic_id": "RE-W5-E02-SOURCE-RIGHTS-INCREMENTAL-RANKING",
+          "directive_id": "REAL-ESTATE-COMMANDER-TO-B6-SOURCE-RIGHTS-INCREMENTAL-RANKING-V1-20260804-002",
+          "title": "외부 출처권리·증분갱신·종료감지·중복·랭킹·아웃링크 계약 확정",
+          "instruction": "RE-W5-E01-DGROUP-DATA-CONTRACTS와 RE-W4-E02-PRIVATE-LISTING-SECURITY의 PASS 결과를 Readback하라. 외부 부동산 사이트, 네이버·다음 블로그·카페, 유튜브 등 출처별 공식 API·제휴·수집·저장·재표시·썸네일·아웃링크 허용상태를 UNKNOWN, ALLOWED, RESTRICTED, FORBIDDEN, REVIEW_REQUIRED 등 명시적 상태로 원장화하라. 원문 URL, 확인시각, Artifact ID, SHA-256, 변경·종료·삭제 상태, 재시도·재개·중복방지 규칙을 정의하라. 동일 매물 확정과 유사 매물 추정을 별도 confidence·evidence로 구분하고, 랭킹에 점수·기준기간·근거·출처·갱신시각을 필수화하라. 소비자의 원문 이동 이벤트는 매물·출처·중개업소·시각·요청 상관관계를 기록하되 외부 인증정보와 개인정보를 포함하지 마라. 결과를 같은 owned root 아래 SOURCE_RIGHTS_LEDGER_CONTRACT_V1.json, INCREMENTAL_UPDATE_DEDUP_RANKING_CONTRACT_V1.json, OUTLINK_EVENT_CONTRACT_V1.json으로 Commit하라.",
+          "done_when": [
+            "출처별 권리상태와 허용행동을 구분하는 Source Rights Ledger 계약이 존재한다.",
+            "변경·종료·삭제·재시도·재개·SHA 중복방지 상태와 idempotency 기준이 정의되어 있다.",
+            "동일 매물 확정과 유사 매물 추정이 confidence·evidence·판정상태로 분리되어 있다.",
+            "랭킹 출력에 점수·기준기간·근거·출처·갱신시각이 필수이며 비공개 원본은 공개 랭킹 입력에서 제외된다.",
+            "B6_SOURCE_RIGHTS_INCREMENTAL_RANKING_CONTRACT_PASS 또는 정확한 외부 차단 근거가 RESULT.json에 기록된다."
+          ],
+          "depends_on": [
+            "RE-W5-E01-DGROUP-DATA-CONTRACTS",
+            "RE-W4-E02-PRIVATE-LISTING-SECURITY"
+          ],
+          "expected_terminal": [
+            "PASS",
+            "BLOCKED_EXTERNAL"
+          ],
+          "retry_limit": 3
+        }
+      ]
+    }
+  ]
+}
