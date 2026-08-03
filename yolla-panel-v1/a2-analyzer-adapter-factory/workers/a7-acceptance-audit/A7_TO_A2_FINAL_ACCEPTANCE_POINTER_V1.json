@@ -1,0 +1,54 @@
+{
+  "schema_version": "A7_TO_A2_FINAL_ACCEPTANCE_POINTER_V1",
+  "worker": "A-7",
+  "directive_id": "A2-TO-A7-VERIFIED-ADAPTER-INDEPENDENT-ACCEPTANCE-V3-20260804-001",
+  "source_directive_comment": 5171217236,
+  "status": "TERMINAL_EXACT_FINDINGS",
+  "terminal": "A7_VERIFIED_ADAPTER_INDEPENDENT_ACCEPTANCE_EXACT_FINDINGS",
+  "completed_at_kst": "2026-08-04T06:16:26+09:00",
+  "reports": {
+    "checklist": {
+      "commit": "7da8cd8c101cea24556c1ae41dfe51c035082000",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/ANALYZER_ACCEPTANCE_CHECKLIST_V1.json",
+      "blob": "48ad78c94d8215d4607b383d5d0fd135bcd5b702"
+    },
+    "progress_monotonicity": {
+      "commit": "4ab09eb847553e1d22fd1bab229e8acd75b93524",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/PROGRESS_MONOTONICITY_AUDIT_V1.json",
+      "blob": "6de8186d125ae3935ffaf84d11238d5eea620d1e"
+    },
+    "package_acceptance": {
+      "commit": "fe9ddc1347de1f0bd9571aed2dab7705a5aea76c",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/VERIFIED_ADAPTER_PACKAGE_ACCEPTANCE_REPORT_V1.json",
+      "blob": "2d4b760aa7e33d189603dd4d291b668f35f270f6"
+    },
+    "b1_readiness": {
+      "commit": "2ad5fc905e1de90072b2858accfc242ba5b27a55",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/B1_EXECUTION_READINESS_MATRIX_V1.json",
+      "blob": "c397a2903a5b4072b638fd218a8619d412f97441"
+    },
+    "audit_receipt": {
+      "commit": "328c26abec85154e9c7fcce847d942477fe45c5d",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A2_WAVE3_INDEPENDENT_AUDIT_RECEIPT_V1.json",
+      "blob": "73f56d7f29433c4dd53d48aaaf7d587c162abff6"
+    },
+    "terminal_report": {
+      "commit": "e7d715eb1752c477ef9cc08c70adf2d41d537477",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_WAVE3_TERMINAL_REPORT_V1.json",
+      "blob": "aeae8d75ef8d775179906bc0ed6dd4bd2240df10"
+    }
+  },
+  "first_finding": "EXACT_RESPONSE_BODY_FIXTURES_FOR_A3_JSON_ENDPOINT_PROFILES_ARE_NOT_PRESENT_IN_SEARCHED_REPOSITORY_FIXTURES",
+  "finding_owner_chain": ["A-3","A-5","A-6"],
+  "worker_pointer_readback": "PASS_4_OF_4",
+  "owned_root_overlap_count": 0,
+  "verified_package_required_components": "2_OF_9_AUTHORITATIVE",
+  "deterministic_replay": "PASS_FIXTURE_ONLY",
+  "b1_execution_ready": false,
+  "remote_readback": "PENDING_AFTER_COMMIT",
+  "implementation_file_direct_edit": false,
+  "self_approval": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
