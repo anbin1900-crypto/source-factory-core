@@ -1,17 +1,18 @@
 {
   "schema_version": "A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V2",
-  "status": "ACTIVE_CONFLICT_RESOLVED_QUEUE",
+  "revision": 2,
+  "status": "ACTIVE_CONFLICT_RESOLVED_QUEUE_V59_ALIGNED",
   "owner": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
-  "plan_owner": "A-1_YOLLA_WORKSPACE_SUPERVISING_COMMANDER",
+  "upper_plan_authority": "A-1_YOLLA_WORKSPACE_SUPERVISING_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
   "supersedes_for_current_automation": "A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V1",
   "resolution_authority": {
     "pointer": "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_CONTRACT_POINTER.json",
-    "pointer_commit": "ed3e33bdfe5e90c8b70f5780cfc1ad85b9da6ef4",
     "conflict_resolution": "yolla-panel-v1/a0-successor-control/A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_V1.json",
-    "worker_schedule_contract": "yolla-panel-v1/a0-successor-control/WORKER_JOB_SCHEDULE_CONTRACT_V1.json"
+    "worker_schedule_contract": "yolla-panel-v1/a0-successor-control/WORKER_JOB_SCHEDULE_CONTRACT_V1.json",
+    "runtime_pointer": "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_RUNTIME_POINTER_V1.json"
   },
   "execution_policy": {
     "mode": "SCHEDULE_NORMAL_PATH_COMMANDER_EXCEPTION_PATH",
@@ -35,64 +36,59 @@
       "order": 1,
       "task_id": "A0-P0-CONTRACT-CONFLICT-RESOLUTION",
       "status": "PASS",
-      "goal": "Resolve seat identity, planned job versus active directive, authority, idempotency, concurrency, reporting and A-1/A-0 ownership conflicts.",
-      "terminal": "A0_AUTOMATION_CONTRACT_CONFLICTS_RESOLVED"
+      "terminal": "A0_AUTOMATION_CONTRACT_CONFLICTS_RESOLVED_SOURCE_PASS"
     },
     {
       "order": 2,
       "task_id": "A0-P0-WORKER-SCHEDULE-RUNNER",
-      "status": "PENDING",
-      "goal": "Import and persist up to 100 planned jobs per seat while promoting at most one active directive per seat.",
-      "required_checks": [
-        "schedule_json_validation",
-        "seat_code_role_profile_binding",
-        "one_active_directive_per_seat",
-        "dependency_resolution",
-        "current_and_next_job_panel_display",
+      "status": "PASS_SOURCE_TARGET_PC_PENDING",
+      "evidence": "A0_AUTOMATION_RUNTIME_V59_BUILD_TEST_REPORT_V1",
+      "implemented": [
+        "schedule_import_and_atomic_save",
+        "current_and_next_job_panel",
         "local_durable_cursor",
-        "restart_cursor_recovery"
+        "restart_schedule_and_ledger_recovery",
+        "exactly_once_dispatch_ledger"
       ],
       "pass_gate": "WORKER_SCHEDULE_RUNNER_SOURCE_PASS"
     },
     {
       "order": 3,
       "task_id": "A0-P0-GITHUB-RESULT-WATCHER-NEXT-DISPATCH",
-      "status": "PENDING",
-      "goal": "Accept only correlated GitHub terminal results and automatically dispatch the next eligible job.",
-      "required_checks": [
-        "schedule_job_seat_worker_directive_match",
-        "result_pointer_and_commit_required",
-        "natural_language_only_result_rejected",
-        "pass_promotes_next_job",
-        "blocked_external_waits",
-        "retryable_failure_retries_same_job",
-        "replan_trigger_calls_a1"
+      "status": "PASS_SOURCE_TARGET_PC_PENDING",
+      "evidence": "A0_AUTOMATION_RUNTIME_V59_BUILD_TEST_REPORT_V1",
+      "implemented": [
+        "github_pr_comment_result_watcher",
+        "correlated_result_acceptance",
+        "pass_to_next_job_auto_dispatch",
+        "blocked_external_wait",
+        "fail_retry_and_needs_replan"
       ],
-      "pass_gate": "GITHUB_RESULT_WATCH_AND_NEXT_JOB_DISPATCH_PASS"
+      "pass_gate": "GITHUB_RESULT_WATCH_AND_NEXT_JOB_DISPATCH_SOURCE_PASS"
     },
     {
       "order": 4,
-      "task_id": "A0-P0-V58-V57-TARGET-PC-MATERIALIZATION",
-      "status": "PENDING_EXTERNAL_CHANNEL",
-      "goal": "Materialize the current V5.8 UI with the V5.7 PR276/PR278 runtime provider on the Target PC without deleting the fixed browser profile or stable fallback.",
+      "task_id": "A0-P0-V59-TARGET-PC-MATERIALIZATION",
+      "status": "PENDING_TARGET_PC",
+      "goal": "Install V5.9 on the Target PC while preserving the fixed browser profile, workspace state and stable fallback.",
       "required_checks": [
-        "v58_ui_visible",
+        "v59_install_execution",
         "b1_to_b6_reachable",
-        "v57_runtime_provider_loaded",
+        "schedule_panel_visible",
         "fixed_login_profile_preserved",
         "workspace_state_backup_and_rollback",
         "target_pc_receipts_ingested"
       ],
-      "pass_gate": "V58_V57_TARGET_PC_ACCEPTANCE_PASS"
+      "pass_gate": "V59_TARGET_PC_ACCEPTANCE_PASS"
     },
     {
       "order": 5,
       "task_id": "A0-P0-TWO-WORKERS-THREE-JOBS-ACTUAL-LOOP",
-      "status": "PENDING",
-      "goal": "Run two worker seats with three jobs each without user relay, including one restart and one retry scenario.",
+      "status": "PENDING_TARGET_PC",
+      "goal": "Bind B-2 and B-3 contexts and run three jobs each without user relay, including restart and retry scenarios.",
       "required_checks": [
         "actual_chatgpt_dispatch_6",
-        "github_result_detected_6",
+        "actual_github_result_detected_6",
         "next_job_auto_dispatched_6",
         "manual_relay_count_0",
         "duplicate_execution_count_0",
@@ -104,9 +100,10 @@
     {
       "order": 6,
       "task_id": "A0-P0-SCALE-SCHEDULE-TO-100-JOBS-PER-SEAT",
-      "status": "WAIT_PREVIOUS_GATE",
-      "goal": "After the minimum actual loop passes, support commander-generated schedules of up to 100 planned jobs per seat.",
+      "status": "WAIT_ACTUAL_LOOP_GATE",
+      "goal": "After the actual two-worker loop passes, validate up to 100 planned jobs per seat and schedule revision operations.",
       "required_checks": [
+        "maximum_100_policy_enforced",
         "schedule_append_revision",
         "cancel_and_supersede",
         "checkpoint_and_rebuild",
@@ -119,42 +116,24 @@
       "order": 7,
       "task_id": "A0-P0-PR278-ACTUAL-PC-AGENT-RESULT",
       "status": "WAIT_TARGET_PC",
-      "goal": "Observe one real PR278 data-factory result from the Target PC while retaining the separate DATA_FACTORY idempotency namespace.",
+      "goal": "Observe one actual PR278 data-factory result while retaining the separate DATA_FACTORY idempotency namespace.",
       "pass_gate": "ACTUAL_PR278_RESULT_OBSERVED"
     }
   ],
   "worker_schedule_cycle": {
-    "states": [
-      "PLANNED",
-      "READY",
-      "ACTIVE_DIRECTIVE",
-      "DISPATCHING",
-      "RUNNING",
-      "RESULT_WAITING",
-      "PASS",
-      "RETRY_READY",
-      "WAIT_DEPENDENCY",
-      "BLOCKED_EXTERNAL",
-      "NEEDS_REPLAN",
-      "CANCELLED",
-      "SUPERSEDED"
-    ],
+    "schema_authority": "automation-v1/WORKER_JOB_SCHEDULE_V1.schema.json",
     "normal_flow": [
       "LOAD_GITHUB_SCHEDULE_PLAN",
       "REBUILD_OR_LOAD_LOCAL_CURSOR",
       "SELECT_ELIGIBLE_JOB_PER_SEAT",
-      "PROMOTE_ONE_ACTIVE_DIRECTIVE_PER_SEAT",
+      "ENSURE_AT_MOST_ONE_DERIVED_ACTIVE_DIRECTIVE_PER_SEAT",
       "DISPATCH_TO_EXISTING_WORKER_SESSION",
       "WATCH_GITHUB_TERMINAL_RESULT",
       "ACCEPT_CORRELATED_RESULT",
       "PROMOTE_NEXT_ELIGIBLE_JOB",
       "CHECKPOINT_ON_MEANINGFUL_TRANSITION"
     ],
-    "exception_flow": [
-      "RETRY_WITHIN_POLICY",
-      "WAIT_EXTERNAL_EVENT",
-      "CREATE_REPLAN_REQUEST_FOR_A1"
-    ]
+    "exception_flow": ["RETRY_WITHIN_POLICY", "WAIT_EXTERNAL_EVENT", "CREATE_REPLAN_REQUEST_FOR_UPPER_PLAN_AUTHORITY"]
   },
   "reporting_policy": {
     "job": "LOCAL_ATTEMPT_LOG_PLUS_GITHUB_TERMINAL_RESULT_POINTER",
@@ -162,11 +141,13 @@
     "heartbeat_commit": false,
     "reporting_must_not_delay_execution": true
   },
-  "current_ui_version": "5.8.0",
+  "current_ui_version": "5.9.0",
   "current_runtime_provider_version": "5.7.0",
+  "current_schedule_runner_version": "1.0.0-panel-bound-build-pass",
   "target_pc_execution_observed": false,
+  "official_terminal_claimed": false,
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at": "2026-08-04T03:49:00+09:00"
+  "updated_at": "2026-08-04T04:02:00+09:00"
 }
