@@ -1,18 +1,25 @@
 {
-  "schema_version": "LATEST_A0_SUCCESSOR_REPORT_POINTER_V1",
-  "status": "A0_WORKER_SCHEDULE_AUTOMATION_V59_BUILD_PASS_TARGET_PC_PENDING",
+  "schema_version": "LATEST_A0_SUCCESSOR_REPORT_POINTER_V2",
+  "status": "A0_AUTOMATION_CONTRACT_CONFLICTS_RESOLVED_V59_ALIGNED_SOURCE_PASS",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "latest_report_path": "yolla-panel-v1/a0-successor-control/reports/A0_AUTOMATION_RUNTIME_V59_BUILD_TEST_REPORT_V1.json",
-  "latest_report_commit": "dc290012d12435bdba94545f2fd8d97ea9cd12ea",
-  "latest_report_type": "BUILD_AND_SOURCE_INTEGRATION_TEST",
+  "latest_report_path": "yolla-panel-v1/a0-successor-control/reports/A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_FINAL_REPORT_V1.json",
+  "latest_report_commit": "628bbcf916b80b5a798f322a4c53e06a0105d7a7",
+  "latest_report_type": "FINAL_CONTRACT_RESOLUTION_AND_V59_ALIGNMENT",
   "latest_report_status": "PASS_TARGET_PC_PENDING",
-  "progress_percent": 55,
+  "progress_percent": 100,
+  "latest_automation_contract_pointer": {
+    "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_CONTRACT_POINTER.json",
+    "commit": "59f98477a0e8055df8eb4830aadfb142048063eb"
+  },
   "latest_automation_runtime_pointer_path": "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_RUNTIME_POINTER_V1.json",
   "latest_automation_runtime_pointer_commit": "1b3ba76632ca13d427d04484062e607a9600b850",
   "runtime_v59_pointer_path": "yolla-panel-v1/a0-successor-control/automation-v1/runtime-v59/LATEST_A0_AUTOMATION_RUNTIME_V59_POINTER.json",
   "runtime_v59_pointer_commit": "3d10fef823c8c759afd6fd5aa8afcae6d3ebf3c8",
-  "ui_pointer_commit": "5752e445713e69c5924907cbfda29cd90f0ec692",
+  "current_execution_queue": {
+    "path": "yolla-panel-v1/a0-successor-control/A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V2.json",
+    "commit": "4ee6c4373ab46eb5ecd08115cec06662429d23fb"
+  },
   "current_ui_version": "5.9.0",
   "runtime_provider_version": "5.7.0",
   "schedule_runner_version": "1.0.0-panel-bound-build-pass",
@@ -23,6 +30,8 @@
     "B-4": "PENDING"
   },
   "implemented": {
+    "contract_conflict_resolution": "PASS",
+    "v59_schema_alignment": "PASS",
     "schedule_import_save": "PASS_SOURCE",
     "current_next_job_panel": "PASS_SOURCE",
     "existing_browser_dispatch": "PASS_SOURCE",
@@ -31,17 +40,6 @@
     "restart_recovery": "PASS_SOURCE_FIXTURE",
     "duplicate_execution_count": 0
   },
-  "source_artifact": {
-    "drive_file_id": "1M7a7ArE3VtLp7wKDqztQbOUbmSq39p3B",
-    "sha256": "13f4c475f32523937d990888905a40a256d0742ddb6515d70f3c0cfd15a3af4d",
-    "size_bytes": 89656
-  },
-  "installer_artifact": {
-    "drive_file_id": "1A4B9QKO23C4TFiIsV8Gd4mmrmepcViHx",
-    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V59_WORKER_SCHEDULE_AUTOMATION.bat",
-    "sha256": "197b008b23ed396d9784d8e881a6db224579f34e5d75d60db997c3f78dc0b2bc",
-    "size_bytes": 131131
-  },
   "prior_v52_pointer": {
     "preserved_as_historical_evidence": true,
     "active_priority": false
@@ -49,10 +47,11 @@
   "required_next_task": "INSTALL_V59_ON_TARGET_PC_BIND_B2_B3_CONTEXTS_RUN_THREE_JOBS_EACH_AND_OBSERVE_GITHUB_RESULTS",
   "required_official_terminal": "A0_WORKER_SCHEDULE_AUTOMATION_LOOP_V1_PASS",
   "target_pc_execution_performed": false,
+  "actual_schedule_loop_observed": false,
   "target_pc_pass_claimed": false,
   "official_terminal_claimed": false,
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at": "2026-08-04T03:38:00+09:00"
+  "updated_at": "2026-08-04T04:02:00+09:00"
 }
