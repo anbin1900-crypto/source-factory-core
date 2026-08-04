@@ -1,0 +1,117 @@
+{
+  "schema_version": "C6_PR188_FINAL_E2E_PREFLIGHT_PLAN_V1",
+  "plan_id": "C6-PR188-FINAL-E2E-PREFLIGHT-20260805-001",
+  "worker": "C-6_AI_QUALITY_AND_E2E_VALIDATION",
+  "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
+  "directive_id": "C1-TO-C6-D-ALIGNED-TRANSFORMER-E2E-AUDIT-V1-20260804-001",
+  "prepared_at_kst": "2026-08-05 01:20 KST",
+  "authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "branch": "command/d-group-domain-knowledge-db-foundation-v1",
+    "head": "1bb475c440983aae761b897a3b58a8f4dab880cc",
+    "state": "OPEN_DRAFT_UNMERGED"
+  },
+  "exact_contracts": {
+    "D_CANONICAL_SCHEMA_PROFILE_V1": {
+      "blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+      "version": "D_CANONICAL_SCHEMA_PROFILE_V1",
+      "readback": "PASS"
+    },
+    "D_INBOUND_FIELD_MAPPING_CONTRACT_V1": {
+      "blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
+      "mapping_version": "1.0.0",
+      "required_lineage_fields": 12,
+      "silent_drop": false,
+      "readback": "PASS"
+    },
+    "D_INTAKE_VALIDATION_RULESET_V1": {
+      "blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
+      "ruleset_version": "1.0.0",
+      "fail_closed": true,
+      "silent_drop": false,
+      "readback": "PASS"
+    },
+    "KNOWLEDGE_ACCEPTANCE_RECEIPT_V1": {
+      "blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
+      "decision_authority": "D-1_ONLY",
+      "fixture_is_authoritative_acceptance": false,
+      "readback": "PASS"
+    }
+  },
+  "contract_readback": "PASS_4_OF_4",
+  "b1_fixture_authority_snapshot": {
+    "control_pr": 19,
+    "current_head": "2026443d51256f6c11295d3db9c652dc34b90bd4",
+    "input_classification": "REMOTE_COMMITTED_FIXTURE_NOT_YET_B6_ACCEPTED_HANDOFF",
+    "normalized_dataset_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+    "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+    "source_record_envelope_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+    "extraction_receipt_blob": "a4b4f7504c0a2b552fe165176f51833b78e0fd09",
+    "blob_readback": "PASS_4_OF_4",
+    "fixture_counts": {
+      "raw_record_count": 4,
+      "normalized_record_count": 3,
+      "duplicate_count": 1,
+      "source_field_loss_count": 0,
+      "semantic_transformation_count": 0,
+      "network_call_count": 0,
+      "actual_site_extraction": false
+    },
+    "official_handoff_status": "WAITING_B6_INDEPENDENT_ACCEPTANCE"
+  },
+  "gate_open_execution_checks": [
+    {
+      "check_id": "WORKER_TERMINAL_EXACTNESS",
+      "requirement": "C2_C3_C4_C5_UPDATED_WAVE2_TERMINALS_4_OF_4_WITH_EXACT_POINTERS"
+    },
+    {
+      "check_id": "VERSION_BINDING",
+      "requirement": "SCHEMA_MAPPING_RULESET_VERSIONS_AND_BLOBS_MATCH_PR188"
+    },
+    {
+      "check_id": "LINEAGE_COMPLETENESS",
+      "requirement": "ALL_12_LINEAGE_FIELDS_PRESENT_PER_SOURCE_FIELD_ATTEMPT"
+    },
+    {
+      "check_id": "NO_SILENT_DROP",
+      "requirement": "INPUT_FIELD_COUNT_EQUALS_TRANSFORMED_PLUS_REJECTED_PLUS_PENDING_ACCOUNTING"
+    },
+    {
+      "check_id": "SOURCE_VALUE_PRESERVATION",
+      "requirement": "UNMAPPED_MISSING_TYPE_EVIDENCE_FAILURE_VALUES_PRESERVED"
+    },
+    {
+      "check_id": "REJECTED_COVERAGE",
+      "requirement": "EVERY_REJECTED_FIELD_HAS_REASON_CODE_AND_RETRYABILITY"
+    },
+    {
+      "check_id": "PROVENANCE_EVIDENCE",
+      "requirement": "PROVENANCE_AND_EVIDENCE_REFERENCES_RECONSTRUCTABLE_OR_EXPLICITLY_REJECTED"
+    },
+    {
+      "check_id": "DETERMINISTIC_REPLAY",
+      "requirement": "IDENTICAL_INPUT_HEADS_BLOBS_VERSIONS_PRODUCE_IDENTICAL_PACKAGE_HASHES"
+    },
+    {
+      "check_id": "POINTER_BLOB_READBACK",
+      "requirement": "ALL_WORKER_AND_PACKAGE_POINTER_BLOBS_REMOTE_READBACK_MATCH"
+    },
+    {
+      "check_id": "HANDOFF_PACKAGE_COMPLETENESS",
+      "requirement": "C1_TO_D1_HANDOFF_CONTAINS_D_ALIGNED_TRANSFORMATION_FIELD_MAPPING_REJECTED_RECORD_AND_KNOWLEDGE_CANDIDATE_PACKAGES_WITH_EXACT_BLOBS"
+    }
+  ],
+  "prepared_check_count": 10,
+  "execution_authorized": false,
+  "entry_gate_open": false,
+  "final_v3_e2e_executed": false,
+  "d1_submission_pass_claimed": false,
+  "d_acceptance_claimed": false,
+  "d_canonical_schema_mutation": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "PR188_FINAL_E2E_PREFLIGHT_READY_WAITING_UPDATED_WORKER_TERMINALS"
+}
