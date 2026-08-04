@@ -1,7 +1,7 @@
 {
   "schema_version": "RESPONSE_CAPTURE_REDACTION_POLICY_V1",
-  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
-  "directive_id": "A2-TO-A3-WAVE5-FIXTURE-ACQUISITION-RESULT-RECOVERY-V1-20260804-001",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-PREAUTH-GAP-CLOSURE-V1-20260805-001",
+  "directive_id": "A2-TO-A3-ACQUISITION-PACKAGE-EXACT-REBIND-AND-RETENTION-BOUND-V5_1-20260805-001",
   "policy": "REDACT_BEFORE_PERSIST_AND_FAIL_CLOSED",
   "capture_execution_authorized": false,
   "redaction_before_persist": true,
@@ -22,7 +22,22 @@
     "raw_and_redacted_sha256_binding": true,
     "redacted_sha256_persisted": true
   },
-  "permitted_persistence": ["ALLOWLISTED_RESPONSE_BODY_AFTER_REDACTION","CONTENT_TYPE","HTTP_STATUS","SIZE_BYTES","ACQUIRED_AT","ENDPOINT_PROFILE_ID","RAW_ARTIFACT_SHA256","REDACTED_ARTIFACT_SHA256"],
+  "retention_disposal_policy": {
+    "raw_response_byte_persistence": false,
+    "transient_raw_byte_disposal_deadline_seconds": 30,
+    "transient_raw_byte_disposal_rule": "IMMEDIATELY_AFTER_HASH_AND_REDACTION_AND_BEFORE_NEXT_PROFILE_CAPTURE",
+    "disposal_deadline_exceeded_action": "ABORT_RUN_AND_PERSIST_NO_RESPONSE_BODY",
+    "redacted_derivative_retention_days": 30,
+    "retention_expiry_action": "DELETE_AND_REQUIRE_NEW_AUTHORIZATION_FOR_RECAPTURE"
+  },
+  "permitted_persistence": ["ALLOWLISTED_RESPONSE_BODY_AFTER_REDACTION","CONTENT_TYPE","HTTP_STATUS","SIZE_BYTES","ACQUIRED_AT","ENDPOINT_PROFILE_ID","RAW_ARTIFACT_SHA256","REDACTED_ARTIFACT_SHA256","TRANSIENT_RAW_BYTE_DISPOSAL_AT","RETENTION_EXPIRES_AT"],
+  "current_counters": {
+    "capture_execution_count": 0,
+    "live_site_call_count": 0,
+    "browser_automation_execution_count": 0,
+    "credential_use_count": 0,
+    "duplicate_execution_count": 0
+  },
   "production": false,
   "ready": false,
   "merge": false
