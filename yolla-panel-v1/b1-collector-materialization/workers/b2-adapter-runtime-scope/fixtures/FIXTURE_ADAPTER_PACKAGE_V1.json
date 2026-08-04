@@ -1,0 +1,51 @@
+{
+  "schema_version": "VERIFIED_ADAPTER_PACKAGE_V1",
+  "package_id": "fixture-real-estate-listing-v1",
+  "adapter_id": "fixture-adapter-real-estate-listing-v1",
+  "site_id": "fixture-real-estate-site",
+  "source_url": "https://fixture.invalid/real-estate/listings",
+  "verified": false,
+  "fixture": true,
+  "verification": {
+    "status": "FIXTURE_ONLY",
+    "verified_at": null,
+    "verifier": "B-2-FIXTURE",
+    "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "credential_reference": "secretref://fixture/no-secret-required",
+  "request_policy": {
+    "method": "GET",
+    "timeout_seconds": 15,
+    "pagination": {
+      "strategy": "page_number",
+      "page_parameter": "page",
+      "page_size_parameter": "size",
+      "page_size": 50,
+      "start_page": 1,
+      "stop_condition": "empty_page"
+    }
+  },
+  "scope": {
+    "resource_types": ["listing", "agency"],
+    "allowed_paths": ["/agencies", "/listings", "/listings/detail"],
+    "excluded_paths": ["/listings/private"],
+    "max_pages": 10,
+    "max_records": 500
+  },
+  "quota": {
+    "requests_per_minute": 30,
+    "requests_per_day": 1000,
+    "minimum_interval_seconds": 2,
+    "timezone": "Asia/Seoul"
+  },
+  "schedule": {
+    "cadence_minutes": 30,
+    "anchor_time": "00:00:00",
+    "jitter_seconds": 0
+  },
+  "metadata": {
+    "fixture_first": true,
+    "zero_network_calls": true,
+    "handoff_target": ["B-3", "B-4", "B-5", "B-6", "B-1"]
+  }
+}
