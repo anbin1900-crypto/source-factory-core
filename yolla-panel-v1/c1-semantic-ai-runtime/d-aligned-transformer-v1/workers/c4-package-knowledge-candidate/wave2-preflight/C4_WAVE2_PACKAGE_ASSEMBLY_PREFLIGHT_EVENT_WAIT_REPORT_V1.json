@@ -1,0 +1,111 @@
+{
+  "schema_version": "C4_WAVE2_PACKAGE_ASSEMBLY_PREFLIGHT_EVENT_WAIT_REPORT_V1",
+  "report_id": "C4-WAVE2-PACKAGE-ASSEMBLY-PREFLIGHT-EVENT-WAIT-20260805-001",
+  "observed_at_kst": "2026-08-05 01:19 KST",
+  "worker": "C-4_EVIDENCE_AND_KNOWLEDGE_CANDIDATE",
+  "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
+  "directive_id": "C1-TO-C4-D-ALIGNED-PACKAGE-KNOWLEDGE-CANDIDATE-V1-20260804-001",
+  "duplicate_prompt_key": "291a3b7aac297b0bbc744cb1c57a017d895cf9b35204db511ecaec54aacf8b97",
+  "wave2_event_id": "C4-B1-PR188-PACKAGE-ASSEMBLY-V2-20260804-001",
+  "wave2_directive_comment": 5174125762,
+  "recovery_comment": 5180360102,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c4-package-knowledge-candidate/**",
+  "execution_mode": "PREFLIGHT_AND_EVENT_WAIT",
+  "entry_gate": {
+    "name": "C2_V2_AND_C3_V2_TERMINALS",
+    "open": false,
+    "c2": {
+      "pointer_path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c2-source-lineage/LATEST_C2_D_ALIGNED_POINTER.json",
+      "pointer_blob": "8c29ac70b338fa21b41d2205bd2d846537a18314",
+      "published_at_kst": "2026-08-04 05:32 KST",
+      "actual_b_input_used": false,
+      "wave2_assignment_comment": 5174120343,
+      "wave2_terminal_published": false,
+      "gate_component": "NOT_SATISFIED"
+    },
+    "c3": {
+      "pointer_path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c3-field-mapping-rules/LATEST_C3_D_ALIGNED_POINTER.json",
+      "pointer_blob": "f46c5c64e3da5b6d4cbfc338a5d99b4e67335204",
+      "updated_at_kst": "2026-08-04 06:00 KST",
+      "current_terminal": "C3_D_ALIGNED_FIELD_MAPPING_READY_OR_EXACT_BLOCKER",
+      "current_exact_blocker": "B1_MATERIALIZED_DATABASE_PACKAGE_V1_MISSING_D_REQUIRED_SOURCE_PATHS_19",
+      "wave2_assignment_comment": 5174123016,
+      "wave2_terminal_published": false,
+      "gate_component": "NOT_SATISFIED"
+    },
+    "commander_audit": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/reports/C1_D_ALIGNED_WAVE2_RECOVERY_NO_TERMINAL_ESCALATION_V2.json",
+      "blob": "51d68158f679d05745415002775d09e68ebdc61d",
+      "registered_at_kst": "2026-08-05 00:15 KST",
+      "new_worker_terminal_count": 0,
+      "c4_decision": "NO_DUPLICATE_EXECUTION_KEEP_EVENT_WAIT"
+    }
+  },
+  "authority_preflight": {
+    "b1": {
+      "control_pr": 19,
+      "assignment_snapshot_head": "fb20d1df329150388889ad13ff0507b0fb3060be",
+      "current_head": "2026443d51256f6c11295d3db9c652dc34b90bd4",
+      "classification": "REMOTE_COMMITTED_FIXTURE_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "latest_pointer_path": "yolla-panel-v1/b1-collector-materialization/LATEST_B1_REPORT_POINTER.json",
+      "latest_pointer_blob": "7b765cf103edeef0fd652e7462389d61f464c6ce",
+      "current_status": "WAITING_B3_B4_B5_TERMINALS_AND_B6_EVENT_WAIT_LEDGER",
+      "blobs": {
+        "NORMALIZED_DATASET_V1": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "RAW_ARTIFACT_MANIFEST_V1": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+        "SOURCE_RECORD_ENVELOPE_V1": "0148a841344ce5a0df03e55df532871106dd7333",
+        "EXTRACTION_RECEIPT_V1": "a4b4f7504c0a2b552fe165176f51833b78e0fd09"
+      },
+      "blob_readback": "PASS_4_OF_4",
+      "record_count_parity": "PASS_RAW_4_INPUT_4_OUTPUT_3_DUPLICATE_1",
+      "source_field_loss_count": 0,
+      "actual_site_extraction": false
+    },
+    "d1": {
+      "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "control_pr": 188,
+      "head": "1bb475c440983aae761b897a3b58a8f4dab880cc",
+      "blobs": {
+        "D_CANONICAL_SCHEMA_PROFILE_V1": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+        "D_INBOUND_FIELD_MAPPING_CONTRACT_V1": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
+        "D_INTAKE_VALIDATION_RULESET_V1": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
+        "KNOWLEDGE_ACCEPTANCE_RECEIPT_V1": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410"
+      },
+      "blob_readback": "PASS_4_OF_4",
+      "decision_authority": "D-1_ONLY"
+    }
+  },
+  "preflight_validation": {
+    "authority_blob_readback": "PASS_8_OF_8",
+    "c2_pointer_readback": "PASS",
+    "c3_pointer_readback": "PASS",
+    "c2_wave2_fresh_terminal": "FAIL_NOT_PUBLISHED",
+    "c3_wave2_fresh_terminal": "FAIL_NOT_PUBLISHED",
+    "stale_pointer_final_assembly_reject": "PASS",
+    "final_package_assembly_executed": false,
+    "prior_c4_pointer_mutated": false,
+    "d_acceptance_claim": false,
+    "d_canonical_schema_mutation": false,
+    "d_canonical_db_write": false,
+    "silent_wait": false
+  },
+  "decision": "EVENT_WAIT_GATE_CLOSED_PREFLIGHT_PASS",
+  "first_blocker": "C2_V2_TERMINAL_NOT_PUBLISHED_AFTER_WAVE2_ASSIGNMENT",
+  "additional_blockers": [
+    "C3_V2_TERMINAL_NOT_PUBLISHED_AFTER_WAVE2_ASSIGNMENT",
+    "B1_TO_C1_HANDOFF_NOT_B6_ACCEPTED"
+  ],
+  "required_next_action": [
+    "C-2 publishes Wave 2 Terminal or exact blocker with updated pointer.",
+    "C-3 publishes Wave 2 PR188 Crosswalk Terminal or exact blocker with updated pointer.",
+    "C-4 re-queries both pointers and only then runs final package assembly."
+  ],
+  "terminal": "C4_D_ALIGNED_PACKAGE_READY_OR_EXACT_BLOCKER",
+  "terminal_decision": "EXACT_BLOCKER_EVENT_WAIT",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
