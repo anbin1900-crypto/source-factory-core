@@ -1,0 +1,62 @@
+{
+  "schema_version": "C1_D_ALIGNED_WAVE2_RECOVERY_NO_TERMINAL_ESCALATION_V2",
+  "audit_id": "C1-D-ALIGNED-WAVE2-NO-TERMINAL-ESCALATION-20260805-001",
+  "registered_at_kst": "2026-08-05 00:15 KST",
+  "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
+  "reviewed_head": "2abe82739872333ad391c71110bf28a9d938eca7",
+  "prior_recovery": {
+    "C-2_comment": 5180350028,
+    "C-3_comment": 5180356187,
+    "C-4_comment": 5180360102,
+    "C-5_comment": 5180365149,
+    "C-6_comment": 5180369398,
+    "publication_receipt_commit": "e919ebfef2d94817740b6a23ac168cf01e8ef620"
+  },
+  "result_review": {
+    "new_worker_terminal_count": 0,
+    "new_worker_commit_count": 0,
+    "pr20_head_advanced_after_recovery": false,
+    "C-2": "NO_WAVE2_RECOVERY_TERMINAL",
+    "C-3": "NO_WAVE2_RECOVERY_TERMINAL",
+    "C-4": "ENTRY_GATE_CLOSED_WAIT_C2_C3",
+    "C-5": "ENTRY_GATE_CLOSED_WAIT_C4",
+    "C-6": "ENTRY_GATE_CLOSED_WAIT_C2_TO_C5"
+  },
+  "authority_state": {
+    "B-1": {
+      "control_pr": 19,
+      "head": "4bbd542c9e0cb99acff8dc81443117297757c6a3",
+      "latest_report_pointer_blob": "81f6731c4615afedbfec3985aadf028819672b00",
+      "current_status": "WAITING_WORKER_SEED_BINDING_TERMINALS_OR_EXACT_BLOCKERS",
+      "handoff_pointer_status": "WAITING_B6_INDEPENDENT_ACCEPTANCE",
+      "new_duplicate_request_required": false
+    },
+    "D-1": {
+      "authority_repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "control_pr": 188,
+      "head": "1bb475c440983aae761b897a3b58a8f4dab880cc",
+      "schema_profile_blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+      "mapping_contract_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
+      "validation_ruleset_blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793"
+    }
+  },
+  "decision": {
+    "C-2": "TERMINAL_PUBLICATION_ENFORCEMENT_EXECUTE_NOW",
+    "C-3": "TERMINAL_PUBLICATION_ENFORCEMENT_EXECUTE_NOW",
+    "C-4": "NO_DUPLICATE_EXECUTION_KEEP_EVENT_WAIT",
+    "C-5": "NO_DUPLICATE_EXECUTION_KEEP_EVENT_WAIT",
+    "C-6": "NO_DUPLICATE_EXECUTION_KEEP_EVENT_WAIT"
+  },
+  "enforcement_rule": "C2_AND_C3_MUST_POST_ONE_OF_PASS_OR_EXACT_BLOCKER_WITH_REMOTE_HEAD_AND_POINTER;SILENT_WAIT_IS_NOT_TERMINAL",
+  "new_directive_count": 0,
+  "new_duplicate_prompt_key_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "C1_C2_C3_TERMINAL_PUBLICATION_ENFORCEMENT_REQUIRED"
+}
