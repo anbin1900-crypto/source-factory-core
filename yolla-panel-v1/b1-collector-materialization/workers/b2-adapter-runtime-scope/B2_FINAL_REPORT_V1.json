@@ -1,0 +1,53 @@
+{
+  "schema_version": "B2_FINAL_REPORT_V1",
+  "report_id": "B2-FINAL-20260804-001",
+  "reported_at_kst": "2026-08-04T12:19:00+09:00",
+  "worker_id": "B-2",
+  "job_id": "B2-JOB-001",
+  "schedule_id": "REAL-ESTATE-CYCLE-001",
+  "automation_directive_id": "A0-SCHEDULE-B2-JOB-001",
+  "task_id": "B1-B2-EXECUTION-TASK-V1-20260804-001",
+  "directive_id": "B1-TO-B2-ADAPTER-RUNTIME-SCOPE-PLANNER-V1-20260804-001",
+  "terminal_contract": "B2_ADAPTER_RUNTIME_SCOPE_READY_OR_EXACT_BLOCKER",
+  "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY",
+  "status": "PASS",
+  "implementation": {
+    "verified_adapter_consumer_contract": "PASS",
+    "fixture_adapter_package": "PASS",
+    "fail_closed_adapter_loader": "PASS",
+    "deterministic_scope_planner": "PASS",
+    "quota_safe_schedule_planner": "PASS",
+    "pagination_policy_handoff_to_b3": "PASS",
+    "zero_network_fixture_execution": "PASS"
+  },
+  "validation": {
+    "unit_tests": "PASS_24_OF_24",
+    "minimum_required_tests": 16,
+    "json_parse": "PASS_2_OF_2",
+    "python_compile": "PASS_5_OF_5",
+    "remote_blob_readback": "PASS_7_OF_7",
+    "ci_claimed": false
+  },
+  "implementation_commits": [
+    "673b3c29e73183ebab6af32e5f626413d6ef57fe",
+    "97107846d036787b9b6cf46c9301241b2d2f6089",
+    "f49d82011f53ffd4b7d26fa038f9c2258297afba",
+    "ebfd377f6052f6f22948e11022ab30b6c26eec5b",
+    "89dc8bd527a8f54b784cf0577474e82a12e2d8e2",
+    "e4b9a68eeab747ac02d3ddbbad1f26bbb6870a79",
+    "faea7d2e04c4cc2820b20d1020d7425c59193492",
+    "9c1425f08232c5dfc94f169e04ab874c63212b5b"
+  ],
+  "test_result_path": "yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/B2_TEST_RESULTS_V1.json",
+  "handoff_to": ["B-3", "B-4", "B-5", "B-6", "B-1"],
+  "blockers": [],
+  "boundaries": {
+    "site_structure_reanalysis": false,
+    "adapter_generation": false,
+    "actual_site_call": false,
+    "actual_bulk_collection": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
