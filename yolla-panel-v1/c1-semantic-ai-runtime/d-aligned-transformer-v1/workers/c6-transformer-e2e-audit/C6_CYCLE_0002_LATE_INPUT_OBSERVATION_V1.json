@@ -1,0 +1,39 @@
+{
+  "schema_version": "C6_CYCLE_0002_LATE_INPUT_OBSERVATION_V1",
+  "observation_id": "C6-CYCLE-0002-C3-LATE-INPUT-20260805-001",
+  "group_id": "GROUP-03",
+  "loop_id": "A-LOOP-GROUP-03",
+  "cycle_id": "A-LOOP-GROUP-03-GROUP03-W06-CYCLE-0002",
+  "worker_id": "GROUP03-W06",
+  "directive_id": "GROUP03-W01-TO-GROUP03-W06-C6V4-FINAL-E2E-CYCLE-0002",
+  "directive_comment_id": 5184578323,
+  "observed_at_kst": "2026-08-05 06:13 KST",
+  "late_input": {
+    "worker": "C-3_SEMANTIC_CLASSIFICATION",
+    "cycle_id": "A-LOOP-GROUP-03-GROUP03-W03-CYCLE-0002",
+    "directive_comment_id": 5184559676,
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c3-field-mapping-rules/C3_REQUIRED_PATH_RESOLUTION_CYCLE_0002_REVALIDATION_V1.json",
+    "blob": "d0a0a9f475e765c25db1fe524e4c2c584e4ad7fd",
+    "retest_checks": "PASS_15_OF_15",
+    "required_path_count": 22,
+    "resolved_path_count": 0,
+    "unresolved_path_count": 22,
+    "c4_rejection_input_coverage": "PASS_22_OF_22",
+    "b1_exact_blob_unchanged": "PASS_4_OF_4",
+    "d1_head_unchanged": true,
+    "silent_drop_count": 0,
+    "decision": "EXACT_BLOCKER_EXTERNAL_22_PATHS_NO_AUTHORITY_DELTA",
+    "terminal_status": "BLOCKED_EXTERNAL",
+    "source_code_change_performed": false,
+    "reason_no_source_change": "No B-1 package-shape change, no D-1 mapping change and no C-4 closure output were published; alias inference and source-value invention are prohibited."
+  },
+  "acceptance": {
+    "artifact_readback": "PASS",
+    "cycle_0002_pointer_published": false,
+    "cycle_0002_terminal_comment_published": false,
+    "accepted_as_terminal_input": false,
+    "gate_effect": "NO_CHANGE_PASS_2_OF_4"
+  },
+  "first_blocker": "C4_V2_PACKAGE_TERMINAL_NOT_PUBLISHED",
+  "decision": "OBSERVED_NO_GATE_CHANGE"
+}
