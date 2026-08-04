@@ -1,0 +1,55 @@
+{
+  "schema_version": "C1_TO_D1_HANDOFF_VALIDATION_V3",
+  "validation_id": "C1-TO-D1-HANDOFF-VALIDATION-V3-20260805-001",
+  "group_id": "GROUP-03",
+  "loop_id": "A-LOOP-GROUP-03",
+  "cycle_id": "A-LOOP-GROUP-03-GROUP03-W06-CYCLE-0002",
+  "worker_id": "GROUP03-W06",
+  "directive_id": "GROUP03-W01-TO-GROUP03-W06-C6V4-FINAL-E2E-CYCLE-0002",
+  "directive_comment_id": 5184578323,
+  "evaluated_at_kst": "2026-08-05 06:13 KST",
+  "active_d_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "head": "1bb475c440983aae761b897a3b58a8f4dab880cc",
+    "state": "OPEN_DRAFT_UNMERGED",
+    "schema_profile_blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+    "mapping_contract_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
+    "validation_ruleset_blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
+    "acceptance_receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
+    "readback": "PASS_4_OF_4"
+  },
+  "source_authority": {
+    "c2_lineage_pointer_blob": "a4bc27b8e24dbadf668db5da21cacda0a866284a",
+    "source_lineage_accounting": "PASS_50_OF_50",
+    "c3_required_path_pointer_blob": "e77cdc3f449d405b3144f8dd18ed21f269863748",
+    "required_path_accounting": "PASS_22_OF_22",
+    "c3_c4_rejection_input_blob": "73b49771eab3f00e27705aca5e124f02762e1c5f",
+    "rejection_input_coverage": "PASS_22_OF_22"
+  },
+  "current_c1_handoff_pointer": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_TO_D1_HANDOFF_POINTER.json",
+    "blob": "4bfef9e17497f91a239816f8ee17ab704629b84a",
+    "status": "BLOCKED_NOT_SENT",
+    "classification": "STALE_PRE_WAVE2_POINTER_NOT_VALID_AS_V4_SUBMISSION"
+  },
+  "required_handoff_packages": {
+    "D_ALIGNED_TRANSFORMATION_PACKAGE_V1": "NOT_PUBLISHED_C4_V2",
+    "FIELD_MAPPING_REPORT_V1": "NOT_PUBLISHED_C4_V2",
+    "REJECTED_RECORD_BUNDLE_V1": "NOT_PUBLISHED_C4_V2",
+    "KNOWLEDGE_CANDIDATE_BUNDLE_V1": "NOT_PUBLISHED_C4_V2"
+  },
+  "package_completeness": "FAIL_0_OF_4",
+  "c5_validation_decision": "NOT_AVAILABLE_WAITING_C4_V2_PACKAGE",
+  "c1_to_d1_handoff_integrity": "FAIL_C4_V2_PACKAGE_ABSENT",
+  "actual_d_handoff_performed": false,
+  "d1_submission_pass_claimed": false,
+  "d1_authority_acceptance_claimed": false,
+  "d_canonical_db_write": false,
+  "first_blocker": "C4_V2_PACKAGE_TERMINAL_NOT_PUBLISHED",
+  "additional_blockers": [
+    "C4_V2_REQUIRED_PACKAGE_OUTPUTS_NOT_PUBLISHED",
+    "C5_V2_VALIDATION_TERMINAL_WAITING_C4_V2_PACKAGE"
+  ],
+  "decision": "BLOCKED_EXTERNAL"
+}
