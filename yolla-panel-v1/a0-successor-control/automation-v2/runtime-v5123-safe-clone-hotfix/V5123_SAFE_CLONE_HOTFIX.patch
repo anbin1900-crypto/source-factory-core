@@ -1,0 +1,45 @@
+--- a/main.js
++++ b/main.js
+@@ -15,7 +15,7 @@
+ const path = require("path");
+ const crypto = require("crypto");
+ 
+-const APP_VERSION = "5.12.2";
++const APP_VERSION = "5.12.3";
+ const PROJECTS_HOME = "https://chatgpt.com/projects";
+ const ACTIVE_CORE = path.join(
+   "E:",
+@@ -178,6 +178,15 @@
+     .slice(0, maxLength);
+ }
+ 
++function safeClone(value, fallback = null) {
++  if (value === undefined) return fallback;
++  try {
++    return deepClone(value);
++  } catch (_error) {
++    return fallback;
++  }
++}
++
+ function normalizeUrl(value) {
+   const text = cleanText(value, 3000);
+   if (!text) return PROJECTS_HOME;
+@@ -1355,7 +1364,7 @@
+     height: 900,
+     minWidth: 380,
+     minHeight: 640,
+-    title: "AI YOLLA 작업 관제창 V5.12.2",
++    title: "AI YOLLA 작업 관제창 V5.12.3",
+     backgroundColor: "#0b1220",
+     autoHideMenuBar: true,
+     show: !IS_SMOKE_TEST,
+@@ -3306,7 +3315,7 @@
+   throw new Error("YOLLA_WORKSPACE_V5_REGISTRY_INVALID");
+ }
+ 
+-app.setName("AI YOLLA Panel Workspace V5.12.2 Operation Control Center");
++app.setName("AI YOLLA Panel Workspace V5.12.3 Operation Control Center");
+ 
+ if (!app.requestSingleInstanceLock()) {
+   app.quit();
