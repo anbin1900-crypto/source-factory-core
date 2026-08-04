@@ -1,0 +1,57 @@
+{
+  "schema_version": "A3_WAVE5_1_TERMINAL_REPORT_V1",
+  "worker": "A-3",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-PREAUTH-GAP-CLOSURE-V1-20260805-001",
+  "directive_id": "A2-TO-A3-ACQUISITION-PACKAGE-EXACT-REBIND-AND-RETENTION-BOUND-V5_1-20260805-001",
+  "directive_comment_id": 5181081197,
+  "parent_cycle": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "start_head": "4f79e986c9f9cc53c429d94d354bf2f287658e30",
+  "start_comment_id": 5181719034,
+  "progress_comment_id": 5181754116,
+  "completed_at_kst": "2026-08-05T01:21:00+09:00",
+  "status": "PASS",
+  "terminal": "A3_RESPONSE_FIXTURE_ACQUISITION_PACKAGE_REBOUND_READY_FOR_GOVERNANCE",
+  "a5_authority": {
+    "final_head": "19781a67eb24ee217b1d072869c407077cca72e1",
+    "pointer_blob": "59f9a82c6edd15e1aa23c11573657ecf25efb004",
+    "requirement_handoff_blob": "a9a5112e53992b6149ec954447fa413ffeca9978",
+    "terminal": "A5_RESPONSE_FIXTURE_REQUIREMENTS_READY_FOR_ACQUISITION",
+    "required_profile_count": 8,
+    "remote_readback": "PASS_EXACT"
+  },
+  "validation": {
+    "pass_count": 24,
+    "finding_count": 0,
+    "target_profiles": "PASS_8_OF_8",
+    "size_timeout_retention_disposal_missing_field_count": 0,
+    "raw_response_byte_persistence": false,
+    "raw_sha256_in_memory": true,
+    "transient_raw_byte_disposal_deadline_seconds": 30,
+    "redacted_derivative_retention_days": 30,
+    "capture_execution_count": 0,
+    "live_site_call_count": 0,
+    "browser_automation_execution_count": 0,
+    "credential_use_count": 0,
+    "duplicate_execution_count": 0,
+    "out_of_owned_root_change_count": 0
+  },
+  "remote_artifacts": {
+    "start_report": {"commit":"dee7c9d494d473b9b95dfe67a232698a41740d3b","blob":"027847ab2a4ffe006e3a006fd81b5f92db4e3d0b"},
+    "acquisition_plan": {"commit":"555fc574ebca165b08a542398bc43fa905c21f1e","blob":"07fa5394fd5119af2b741a1ba7e528793fdc7b45"},
+    "operator_package": {"commit":"11a57885b5059ab6a02d343bff90fd4bff1bd7e2","blob":"70b890f660bf784ccdcea9f1c6d1d0088371c877"},
+    "authorization_request": {"commit":"79941cde8d4889111c48f95616f61c6673c3dea1","blob":"6815485dec730a0859026d561a8b8bb786afe2a3"},
+    "redaction_policy": {"commit":"8e6dedd73418bb139111e02a21c3e24113aad651","blob":"996c9067411a3956a742b7e8c7bf4b66ab8d13b0"},
+    "validation_receipt": {"commit":"6f10f0bd19fbc778bfd04b1d8eb426123ef758d5","blob":"f5594a350f5a7719cba63041904a938c077c9f8a"}
+  },
+  "pending_preconditions": [
+    "A7_ACQUISITION_GOVERNANCE_AUDIT_PASS",
+    "EXPLICIT_A2_A0_A1_ONE_SHOT_CAPTURE_AUTHORIZATION"
+  ],
+  "capture_authorized": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
