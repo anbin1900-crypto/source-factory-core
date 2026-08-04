@@ -1,0 +1,86 @@
+{
+  "schema_version": "LATEST_A2_REPORT_POINTER_V1",
+  "pointer_id": "A2-GENERIC-SITE-ANALYZER-ADAPTER-FACTORY-LATEST-V1",
+  "updated_at_kst": "2026-08-04T11:55:00+09:00",
+  "role": "A-2_GENERIC_SITE_ANALYZER_ADAPTER_FACTORY_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 18,
+  "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+  "start_report": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_START_REPORT_V1.json",
+    "commit": "be51db9cad416274e0472e7de2f772f035e839c7",
+    "blob": "4f33604e3a86f61bdfa780370774700d242911c1",
+    "remote_readback": "PASS"
+  },
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "existing_directive": "A0-TO-A2-GENERIC-ANALYZER-ADAPTER-FACTORY-SHELL-V1-20260803-001",
+  "existing_directive_superseded": false,
+  "completed_wave": {
+    "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE4-BLOCKER-CLOSURE-V1-20260804-001",
+    "terminal": "A2_SITE_ANALYZER_VERIFIED_ADAPTER_EXACT_BLOCKER",
+    "first_blocker": "EXACT_RESPONSE_BODY_FIXTURES_FOR_A3_JSON_ENDPOINT_PROFILES_ARE_NOT_PRESENT_IN_SEARCHED_REPOSITORY_FIXTURES",
+    "required_json_endpoint_count": 8,
+    "exact_body_fixture_binding_count": 0,
+    "missing_profiles": ["EP-001","EP-002","EP-003","EP-004","EP-005","EP-010","EP-011","EP-012"]
+  },
+  "current_worker_authority": {
+    "A-3": {
+      "head": "78a83eea6d75b8f70451c7999a23f6cf09e86e8f",
+      "pointer_blob": "4aa2e404b56bed4c572890f43db479dced8aa75e",
+      "terminal": "A3_RESPONSE_BODY_FIELD_EVIDENCE_EXACT_BLOCKER"
+    },
+    "A-4": {
+      "head": "6567f380e4249dc7cd9b55693fa85856a37b91e6",
+      "pointer_blob": "da26c979685d28e28632ec594f695f04b7effb7d",
+      "terminal": "A4_NAVIGATION_PAGINATION_CONTRACT_READY"
+    },
+    "A-5": {
+      "head": "ba35bab8c36cdba70ebeab34286b4a14710b8b7c",
+      "pointer_blob": "42d6e91d6134ad243ce94a23dd8ebd207d4d35d1",
+      "terminal": "A5_FINAL_AUTHORITY_REBIND_EXACT_BLOCKER"
+    },
+    "A-6": {
+      "head": "3c047097db807f83c0558961425e0578400ef797",
+      "pointer_blob": "dc5d8601f1dc81abfe57c013ce74c5fd8c6cbec6",
+      "terminal": "A6_VERIFIED_ADAPTER_PACKAGE_EXACT_BLOCKER"
+    },
+    "A-7": {
+      "head": "5d320f9950593d3b482cb6d568af63f290eeb2ba",
+      "pointer_blob": "40555e87dadbc10d8699c822db3c24247b193467",
+      "terminal": "A7_VERIFIED_ADAPTER_INDEPENDENT_ACCEPTANCE_EXACT_FINDINGS"
+    }
+  },
+  "active_wave": {
+    "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-FIXTURE-ACQUISITION-PREPARATION-V1-20260804-001",
+    "goal": "PREPARE_EXACT_RESPONSE_FIXTURE_ACQUISITION_PACKAGE_WITHOUT_EXECUTING_CAPTURE",
+    "worker_comments": {
+      "A-3": 5174102718,
+      "A-4": 5174104557,
+      "A-5": 5174107148,
+      "A-6": 5174108843,
+      "A-7": 5174110910
+    },
+    "critical_path": [
+      "A5_RESPONSE_FIXTURE_REQUIREMENTS_READY_FOR_ACQUISITION",
+      "A3_RESPONSE_FIXTURE_ACQUISITION_PACKAGE_READY_AWAITING_AUTHORIZATION",
+      "A7_FIXTURE_ACQUISITION_GOVERNANCE_READY_FOR_A2_AUTHORIZATION_REQUEST",
+      "A2_TO_A0_A1_ONE_SHOT_CAPTURE_AUTHORIZATION_REQUEST",
+      "EXACT_FIXTURE_CAPTURE_AND_HASH_BINDING",
+      "A5_FINAL_AUTHORITY_REBIND",
+      "A4_PAGINATION_BINDING_AUDIT",
+      "A6_VERIFIED_PACKAGE_REBUILD",
+      "A7_FINAL_ACCEPTANCE",
+      "A2_TO_B1_HANDOFF"
+    ]
+  },
+  "capture_execution_authorized": false,
+  "live_site_call_authorized": false,
+  "actual_bulk_collection": false,
+  "verified_adapter_package_ready": false,
+  "b1_handoff_ready": false,
+  "current_terminal": "A2_SITE_ANALYZER_VERIFIED_ADAPTER_EXACT_BLOCKER_WAVE5_PREPARATION_ACTIVE",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
