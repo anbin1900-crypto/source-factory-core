@@ -1,0 +1,47 @@
+{
+  "schema_version": "FIXTURE_ACQUISITION_GOVERNANCE_CHECKLIST_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
+  "directive_id": "A2-TO-A7-WAVE5-FIXTURE-ACQUISITION-GOVERNANCE-RESULT-RECOVERY-V1-20260804-001",
+  "existing_wave5_directive": "A2-TO-A7-FIXTURE-ACQUISITION-GOVERNANCE-AUDIT-V5-20260804-001",
+  "evaluated_at_kst": "2026-08-04T23:13:00+09:00",
+  "target_profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-011", "EP-012"],
+  "target_profile_count": 8,
+  "controls": {
+    "max_capture_per_profile": 1,
+    "total_max_capture_count": 8,
+    "allowlist_only": true,
+    "request_method_and_url_pattern_from_existing_a3_evidence_only": true,
+    "auth_bypass": false,
+    "access_control_bypass": false,
+    "raw_credential_storage": false,
+    "redaction_before_persist": true,
+    "raw_and_redacted_sha256_binding": true,
+    "content_type_status_size_timestamp_binding": true,
+    "source_endpoint_profile_binding": true,
+    "local_absolute_path_publication": false,
+    "automatic_retry_authorization": false,
+    "live_capture_before_one_shot_authorization": false
+  },
+  "required_numeric_bounds": {
+    "response_size_max_bytes": null,
+    "timeout_seconds": null,
+    "status": "EXACT_VALUES_NOT_PUBLISHED"
+  },
+  "upstream_traceability": {
+    "a3_pr": 22,
+    "a3_observed_head": "78a83eea6d75b8f70451c7999a23f6cf09e86e8f",
+    "a3_wave5_result_commit_after_directive": false,
+    "a5_pr": 24,
+    "a5_observed_head": "ba35bab8c36cdba70ebeab34286b4a14710b8b7c",
+    "a5_wave5_result_commit_after_directive": false,
+    "a3_a5_requirement_traceability": "FINDING_UPSTREAM_PACKAGES_NOT_PUBLISHED"
+  },
+  "capture_execution_authorized": false,
+  "decision": "EXACT_FINDINGS",
+  "first_finding": "RESPONSE_SIZE_AND_TIMEOUT_UPPER_BOUNDS_AND_A3_A5_WAVE5_TRACE_PACKAGES_ARE_NOT_PUBLISHED",
+  "implementation_file_direct_edit": false,
+  "self_approval": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
