@@ -1,0 +1,35 @@
+test_01_consumer_pass (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_01_consumer_pass) ... ok
+test_02_fixture_pass (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_02_fixture_pass) ... ok
+test_03_bundle_pass (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_03_bundle_pass) ... ok
+test_04_validation_result_pass (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_04_validation_result_pass) ... ok
+test_05_candidate_pass (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_05_candidate_pass) ... ok
+test_06_all_pass (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_06_all_pass) ... ok
+test_07_rule_count (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_07_rule_count) ... ok
+test_08_unique_rules (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_08_unique_rules) ... ok
+test_09_request_count (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_09_request_count) ... ok
+test_10_request_coverage (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_10_request_coverage) ... ok
+test_11_package_reject_count (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_11_package_reject_count) ... ok
+test_12_partial_eligible_count (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_12_partial_eligible_count) ... ok
+test_13_preserve_source_all (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_13_preserve_source_all) ... ok
+test_14_missing_status_all (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_14_missing_status_all) ... ok
+test_15_bundle_preservation (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_15_bundle_preservation) ... ok
+test_16_no_source_invention (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_16_no_source_invention) ... ok
+test_17_silent_drop_zero (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_17_silent_drop_zero) ... ok
+test_18_c4_consumed (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_18_c4_consumed) ... ok
+test_19_package_rejected (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_19_package_rejected) ... ok
+test_20_exact_blocker (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_20_exact_blocker) ... ok
+test_21_pr188_blobs (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_21_pr188_blobs) ... ok
+test_22_non_authority_candidate (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_22_non_authority_candidate) ... ok
+test_23_runtime_counters_zero (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_23_runtime_counters_zero) ... ok
+test_24_final_terminal (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_24_final_terminal) ... ok
+test_25_tampered_c3_pointer_fails (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_25_tampered_c3_pointer_fails) ... ok
+test_26_closed_c4_gate_fails (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_26_closed_c4_gate_fails) ... ok
+test_27_missing_rejection_reason_fails (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_27_missing_rejection_reason_fails) ... ok
+test_28_source_invention_fails (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_28_source_invention_fails) ... ok
+test_29_false_d_receipt_claim_fails (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_29_false_d_receipt_claim_fails) ... ok
+test_30_invalid_decision_fails (test_c3_required_path_rejection_validator.TestC5Cycle0003.test_30_invalid_decision_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.002s
+
+OK
