@@ -1,47 +1,47 @@
 {
   "schema_version": "LATEST_A0_SUCCESSOR_REPORT_POINTER_V2",
-  "status": "A0_V51023_LOG_STATUS_WINDOW_RESTORE_BUILD_PASS_TARGET_PC_PENDING",
+  "status": "A0_V510232_NATIVE_LOG_DOWNLOAD_BUILD_PASS_TARGET_PC_PENDING",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "latest_report_path": "yolla-panel-v1/a0-successor-control/reports/A0_V51023_LOG_STATUS_WINDOW_RESTORE_BUILD_REPORT_V1.json",
-  "latest_report_commit": "f9ed7e55872281f10a79de89ce7c857217de9cdd",
-  "latest_report_type": "V51023_LOG_STATUS_WINDOW_RESTORE_BUILD",
+  "latest_report_path": "yolla-panel-v1/a0-successor-control/reports/A0_V510232_LOG_DOWNLOAD_BUILD_REPORT_V1.json",
+  "latest_report_commit": "377e1cd6422b59e23190a9a14aa953fc73b95476",
+  "latest_report_type": "V510232_NATIVE_LOG_DOWNLOAD_BUILD",
   "latest_report_status": "PASS_TARGET_PC_PENDING",
-  "progress_percent": 90,
+  "progress_percent": 91,
   "latest_automation_runtime_pointer_path": "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_RUNTIME_POINTER_V1.json",
-  "latest_automation_runtime_pointer_commit": "ab2476814450ac92910e797d3181313434602001",
+  "latest_automation_runtime_pointer_commit": "57ac64616a9f4ffefb9b81d8e85926319128cdb9",
   "latest_ui_pointer_path": "yolla-panel-v1/a0-successor-control/LATEST_A0_UI_POINTER.json",
-  "latest_ui_pointer_commit": "69d9f144b8e74a73eb7b7ac5be1862eadd92d8f2",
-  "v51023_pointer": {
-    "path": "yolla-panel-v1/a0-successor-control/automation-v2/v51023-log-status/LATEST_A0_V51023_LOG_STATUS_WINDOW_POINTER.json",
-    "commit": "d4b87c8561b4806eb919e6b49194f37607d0b185"
+  "latest_ui_pointer_commit": "86ce017d67f1112433e1e59f83c0ef2f7212f3db",
+  "v510232_pointer": {
+    "path": "yolla-panel-v1/a0-successor-control/automation-v2/v510232-log-download/LATEST_A0_V510232_LOG_DOWNLOAD_POINTER.json",
+    "commit": "b3d37727ebc9de74a17be44b76d96ddfba9586db"
   },
-  "current_ui_version": "5.10.2.3",
+  "current_ui_version": "5.10.2.3.2",
   "source_baseline_version": "5.10.2",
   "implemented": {
     "E_EPIC_schedule_mode": "PRESERVED_SOURCE_PASS",
     "A_commander_worker_continuous_loop": "PRESERVED_SOURCE_PASS",
-    "log_status_window_auto_open": "PASS_SOURCE",
-    "panel_reopen_log_window": "PASS_SOURCE",
-    "live_runtime_log_tail": "PASS_SOURCE",
-    "worker_count_summary": "PASS_SOURCE",
-    "floating_or_tiled_window_layout": "PASS_SOURCE",
+    "log_status_window": "PRESERVED_SOURCE_PASS",
+    "log_folder_navigation_removed": "PASS_SOURCE",
+    "native_log_download": "PASS_SOURCE",
+    "runtime_log_missing_fallback": "PASS_SOURCE",
+    "runtime_snapshot_and_state_artifacts": "PASS_SOURCE",
+    "secret_redaction": "PASS_SOURCE",
     "duplicate_execution_count": 0
   },
   "installer_artifact": {
-    "drive_file_id": "1cXDKTHntjsv66FPcyWiuU_Mm72avkRx-",
-    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V51023_LOG_STATUS_WINDOW_RESTORE.bat",
-    "sha256": "e0810b69b742d77cc8652d5bbde33b0f18db065e655efe34df6faae26e9c88e3",
-    "size_bytes": 201331
+    "drive_file_id": "1RGyL795i2hYB1iYpWBaiRcK17i0HQ-bV",
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510232_LOG_DOWNLOAD_FIX.bat",
+    "sha256": "c87b11fc3c9a3c817930e8ba6ecfaa7c7f910f564b53db29e667235dc7e4f333",
+    "size_bytes": 202251
   },
-  "required_next_task": "INSTALL_V51023_AND_VERIFY_PANEL_WORKSPACE_LOG_STATUS_THREE_WINDOW_STARTUP",
+  "required_next_task": "INSTALL_V510232_AND_DOWNLOAD_ONE_AI_YOLLA_LOG_EXPORT_JSON",
   "target_pc_execution_performed": false,
-  "log_status_window_visual_observed": false,
-  "actual_A_loop_observed": false,
+  "actual_log_download_observed": false,
   "target_pc_pass_claimed": false,
   "official_terminal_claimed": false,
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at": "2026-08-05T00:37:00+09:00"
+  "updated_at": "2026-08-05T01:09:00+09:00"
 }
