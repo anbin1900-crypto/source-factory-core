@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "pointer_id": "LATEST-B1-WORKER-WAVE5-RESULT-ACCEPTANCE-POINTER-V1",
+  "updated_at_kst": "2026-08-04T23:14:00+09:00",
+  "control_pr": 19,
+  "audit": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave5/B1_WORKER_WAVE5_RESULT_ACCEPTANCE_AND_NEXT_ACTION_V1.json",
+    "commit": "026c3f9f5c156773b40a0db36df29e65ae5414c6",
+    "blob": "5a9a9f1efd5a490d86d6b7602946fff93938fb75"
+  },
+  "accepted_workers": {
+    "B-2": {
+      "head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+      "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY",
+      "tests": "PASS_24_OF_24"
+    }
+  },
+  "pending_workers": ["B-3", "B-4", "B-5", "B-6"],
+  "accepted_inputs_for_b6": "1_OF_4",
+  "next_gate": "B3_B4_B5_TERMINALS_3_OF_3_THEN_B6_FINAL_ACCEPTANCE",
+  "actual_site_extraction": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
