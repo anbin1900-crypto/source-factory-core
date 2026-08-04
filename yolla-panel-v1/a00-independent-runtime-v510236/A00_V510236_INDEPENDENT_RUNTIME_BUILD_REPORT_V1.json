@@ -1,0 +1,59 @@
+{
+  "schema_version": "A00_V510236_INDEPENDENT_RUNTIME_BUILD_REPORT_V1",
+  "status": "SOURCE_PACKAGE_PASS_TARGET_PC_NOT_INSTALLED",
+  "terminal": "A00_V510236_INDEPENDENT_RUNTIME_PACKAGE_PASS",
+  "base": {
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510236_STALE_LANE_RECOVERY.bat",
+    "version": "5.10.2.3.6",
+    "handling": "READ_EMBEDDED_RELEASE_ONLY_DO_NOT_EXECUTE_OR_MODIFY"
+  },
+  "isolation": {
+    "install_root": "E:\\SOURCE FACTORY\\.yolla\\independent-runtimes\\A00-ISO-01",
+    "state_root": "...\\state",
+    "browser_profile": "...\\browser-profile",
+    "bridge_root": "...\\bridge",
+    "source_sandbox": "...\\source-sandbox",
+    "electron_runtime_copy": "COPY_TO_INDEPENDENT_PANEL_ROOT",
+    "registry": "UNBOUND_DISABLED_COMMANDER_AND_WORKER",
+    "bundled_schedule_and_epic_intake": "REMOVED",
+    "dispatch_default": "DISABLED",
+    "shared_pr_17_dispatch": "DENIED_BY_SCOPE_ACTIVATOR",
+    "existing_runtime_execute_count": 0,
+    "existing_runtime_write_count": 0,
+    "existing_process_stop_count": 0,
+    "shared_current_pointer_write_count": 0,
+    "windows_registry_write_count": 0,
+    "scheduled_task_write_count": 0
+  },
+  "validation": {
+    "embedded_payload_decode": "PASS",
+    "required_installer_files": "PASS_6_OF_6",
+    "v510_source_patch_anchors": "PASS_9_OF_9",
+    "independent_electron_and_write_isolation_static": "PASS",
+    "target_pc_install": "NOT_RUN"
+  },
+  "artifacts": {
+    "AI_YOLLA_V510236_INDEPENDENT_RUNTIME_PACKAGE.zip": {
+      "size_bytes": 22755,
+      "sha256": "c183c0dbcda467db8640c011f8d8730be74c47d9ca9795341e21270ddb6a36c6",
+      "drive_file_id": "1WxKWWhLwFef9bHiWYUECQrHwY7I7UWcd"
+    },
+    "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510236_INDEPENDENT_RUNTIME.bat": {
+      "size_bytes": 15120,
+      "sha256": "b3a5a8d8b0a156ba16ec43af7615ba8b7337a7dc7847e7455f8d8222e6d5d5b3",
+      "drive_file_id": "1jhn_Rq5Q5PvpT1RGkkZ38QUl2FmBzFhb"
+    },
+    "BUILD_MANIFEST.json": {
+      "size_bytes": 1417,
+      "sha256": "e8a14c86912d7a6eccd950e7d7d97c699002f7341ee92cd2b5672b18adf623cd"
+    },
+    "TEST_LOG.txt": {
+      "size_bytes": 91,
+      "sha256": "34361bf9f8a3c29b03916835d07747fc7f467b63824aa2b4187d0c3e749ae626"
+    }
+  },
+  "created_at": "2026-08-05T04:35:00+09:00",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
