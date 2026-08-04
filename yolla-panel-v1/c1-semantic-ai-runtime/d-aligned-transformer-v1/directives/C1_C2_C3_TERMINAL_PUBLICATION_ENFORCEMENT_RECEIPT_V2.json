@@ -1,0 +1,57 @@
+{
+  "schema_version": "C1_C2_C3_TERMINAL_PUBLICATION_ENFORCEMENT_RECEIPT_V2",
+  "receipt_id": "C1-C2-C3-TERMINAL-PUBLICATION-ENFORCEMENT-RECEIPT-20260805-001",
+  "registered_at_kst": "2026-08-05 00:15 KST",
+  "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "audit": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/reports/C1_D_ALIGNED_WAVE2_RECOVERY_NO_TERMINAL_ESCALATION_V2.json",
+    "commit": "d9c8c63b3593bd0e5ae5b0a06cba6dd254a80da7"
+  },
+  "enforcement": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/directives/C1_C2_C3_TERMINAL_PUBLICATION_ENFORCEMENT_V2.json",
+    "commit": "209b0e93169a0598bbc580bd4abfb21d9d29d9fb"
+  },
+  "worker_publications": {
+    "C-2": {
+      "comment_id": 5181054986,
+      "directive_reused": true,
+      "duplicate_prompt_key_reused": true,
+      "required_outcome": "PASS_OR_EXACT_BLOCKER",
+      "silent_wait_allowed": false
+    },
+    "C-3": {
+      "comment_id": 5181059789,
+      "directive_reused": true,
+      "duplicate_prompt_key_reused": true,
+      "required_outcome": "PASS_OR_EXACT_BLOCKER",
+      "silent_wait_allowed": false
+    }
+  },
+  "event_wait_workers": {
+    "C-4": "ENTRY_GATE_CLOSED_WAIT_C2_C3_UPDATED_TERMINALS",
+    "C-5": "ENTRY_GATE_CLOSED_WAIT_C4_V2_PACKAGE_TERMINAL",
+    "C-6": "ENTRY_GATE_CLOSED_WAIT_UPDATED_C2_TO_C5_TERMINALS_4_OF_4"
+  },
+  "publication_summary": {
+    "comments_published": 2,
+    "event_wait_workers_not_duplicated": 3,
+    "new_directive_count": 0,
+    "new_duplicate_prompt_key_count": 0,
+    "duplicate_external_request_count": 0,
+    "result": "PASS"
+  },
+  "boundaries": {
+    "actual_site_data_claim": false,
+    "fixture_claimed_as_d_accepted_data": false,
+    "d_acceptance_receipt_issued": false,
+    "d_canonical_db_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "terminal": "C1_C2_C3_TERMINAL_PUBLICATION_ENFORCEMENT_PUBLISHED",
+  "status": "WAITING_C2_C3_TERMINALS"
+}
