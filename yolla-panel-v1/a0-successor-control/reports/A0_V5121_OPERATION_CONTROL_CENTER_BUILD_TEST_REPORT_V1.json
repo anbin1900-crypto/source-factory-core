@@ -1,0 +1,57 @@
+{
+  "schema_version": "A0_V5121_OPERATION_CONTROL_CENTER_BUILD_TEST_REPORT_V1",
+  "status": "PASS_SOURCE_BUILD_AND_REGRESSION_TARGET_PC_VISUAL_ACCEPTANCE_PENDING",
+  "terminal": "A0_V5121_OPERATION_CONTROL_CENTER_SOURCE_PASS",
+  "version": "5.12.1",
+  "purpose": "Provide a separate natural-language control window that detects worker dispatch omissions, schedule gaps, repeated failures and panel/runtime anomalies, then applies only safe reversible repairs.",
+  "source": {
+    "baseline": "5.10.2-group-epic-relay-session-hotfix",
+    "monitor": "5.12.0-natural-language-operation-monitor",
+    "integrated_file_count": 69
+  },
+  "validation": {
+    "node_syntax": "PASS_40_OF_40",
+    "test_suites": "PASS_17_OF_17",
+    "activity_monitor_unit": "PASS",
+    "worker_parallel_gap_fixture": "PASS",
+    "monitor_integration": "PASS",
+    "group_epic_relay": "PASS",
+    "session_partition_compatibility": "PASS",
+    "worker_schedule_runtime": "PASS",
+    "duplicate_execution_count": 0
+  },
+  "detectors": [
+    "DISPATCHABLE_WORKERS_NOT_RUNNING",
+    "WORKER_STARVATION_DETECTED",
+    "SCHEDULE_JOB_ORDER_GAP",
+    "PREMATURE_BLOCKED_EXTERNAL",
+    "WORKER_RESULT_WAITING_TOO_LONG",
+    "COMMANDER_WORKER_RELAY_ERROR",
+    "COMMANDER_WORKER_RELAY_PAUSED",
+    "SCHEDULE_TICK_STALLED",
+    "REPEATED_ERROR",
+    "BROWSER_LOADING_TOO_LONG",
+    "PC_AGENT_ACTIVITY_STALE"
+  ],
+  "safe_repairs": [
+    "OPEN_WORKSPACE",
+    "RESTART_WORKSPACE",
+    "ENSURE_BROWSER_VIEWS",
+    "START_SCHEDULE",
+    "TICK_SCHEDULE",
+    "START_RELAY",
+    "TICK_RELAY",
+    "ENSURE_STATE_ROOT"
+  ],
+  "runtime_boundary": {
+    "target_pc_install_observed": false,
+    "target_pc_monitor_window_observed": false,
+    "actual_auto_repair_observed": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "new_runtime": false,
+  "new_transport": false,
+  "completed_at": "2026-08-04T12:47:00+09:00"
+}
