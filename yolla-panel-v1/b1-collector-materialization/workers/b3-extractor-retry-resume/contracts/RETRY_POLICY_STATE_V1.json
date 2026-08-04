@@ -1,0 +1,1 @@
+{"schema_version":"RETRY_POLICY_STATE_V1","max_attempts":3,"retryable_exceptions":["TimeoutError","ConnectionError"],"retryable_statuses":[408,409,425,429,"500-599"],"nonretryable_default":true,"retry_exhaustion_terminal":"RETRY_EXHAUSTED"}
