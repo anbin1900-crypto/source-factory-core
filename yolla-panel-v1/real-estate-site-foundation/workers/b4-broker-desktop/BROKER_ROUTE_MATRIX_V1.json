@@ -1,0 +1,83 @@
+{
+  "schema_version": "BROKER_ROUTE_MATRIX_V1",
+  "contract_id": "YOLLA_REAL_ESTATE_BROKER_ROUTE_MATRIX_V1",
+  "package_id": "YOLLA-REAL-ESTATE-SITE-FOUNDATION-20260804-001",
+  "project_id": "YOLLA_AI_REAL_ESTATE_SERVICE",
+  "worker_id": "B-4",
+  "epic_id": "RE-W3-E01-BROKER-DESKTOP-PERFORMANCE",
+  "published_at_kst": "2026-08-05T02:10:00+09:00",
+  "route_namespaces": {
+    "consumer": {
+      "prefix": "/real-estate",
+      "shell": "SearchShell",
+      "audiences": ["ANONYMOUS", "CONSUMER"],
+      "visual_density": "LOW_TO_MEDIUM",
+      "forbidden_surfaces": ["TaskQueue", "internal_customer_data", "office_internal_documents", "ranking_evidence_ledger", "staff_assignment"]
+    },
+    "broker": {
+      "prefix": "/broker",
+      "shell": "DesktopShell",
+      "audiences": ["ACTIVE_OFFICE_MEMBER", "AUTHORIZED_PLATFORM_ADMIN_CASE_SCOPE"],
+      "visual_density": "MEDIUM_TO_HIGH",
+      "server_guards": ["account_active", "office_link_active", "membership_active", "route_permission"],
+      "consumer_shell_embedding": false
+    }
+  },
+  "shell_components": {
+    "DesktopShell": {
+      "owns": ["global_layout", "office_context", "membership_context", "active_tabs", "tab_restore", "global_notifications", "session_expiry", "keyboard_shortcuts"],
+      "must_not_own": ["domain_persistence", "ranking_calculation", "crm_state_machine", "document_approval", "listing_authorization_decision"]
+    },
+    "WorkTab": {
+      "workspace_key": "object_type + ':' + object_id + ':' + view_mode",
+      "types": ["LIST", "DETAIL", "EDIT", "COMPARE", "DOCUMENT", "REPORT", "EXTERNAL_SOURCE"],
+      "rules": ["same_workspace_key_activates_existing_tab", "tab_state_isolated", "unsaved_changes_guard", "authorization_rechecked_on_activation"],
+      "detached_window": {"allowed": true, "modes": ["DETAIL", "COMPARE", "DOCUMENT", "REPORT"], "sensitive_values_in_url": false, "authorization_recheck": true}
+    },
+    "TaskQueue": {
+      "states": ["NEW", "READY", "IN_PROGRESS", "WAITING_EXTERNAL", "DONE", "CANCELLED"],
+      "sources": ["USER", "RULE_ENGINE", "DATA_UPDATE", "INQUIRY", "DOCUMENT_EXPIRY", "CORRECTION_REQUEST"],
+      "required_fields": ["task_id", "task_type", "title", "priority", "due_at", "assignee_id", "office_id", "related_object_refs", "status", "source", "created_at", "updated_at"],
+      "ai_required": false
+    },
+    "RightAssistantPanel": {
+      "modes": ["AI_ENABLED", "RULE_TEMPLATE_FALLBACK", "HELP_ONLY"],
+      "allowed": ["context_summary", "next_action_suggestions", "checklist", "template_recommendations"],
+      "forbidden": ["silent_save", "silent_send", "silent_classification_change", "contract_finalization", "TOP_SECRET_prompt_input"]
+    }
+  },
+  "routes": [
+    {"id":"BROKER_HOME","path":"/broker","menu":"업무 홈","permission":"BROKER_HOME_READ","shell":"DesktopShell","default_tab":"HOME","refresh":"EVENT_PLUS_MANUAL","primary_objects":["Task","Inquiry","Appointment","Listing","Document"],"consumer_equivalent":null},
+    {"id":"BROKER_PERFORMANCE","path":"/broker/performance","menu":"내 실적","permission":"PERFORMANCE_READ","shell":"DesktopShell","default_tab":"REPORT","refresh":"EVENT_PLUS_MANUAL","primary_objects":["PerformanceSnapshot","RankingRecord","MetricSeries"],"consumer_equivalent":"/real-estate/brokers/:officeId"},
+    {"id":"BROKER_LISTINGS","path":"/broker/listings","menu":"매물","permission":"LISTING_READ_SCOPE","shell":"DesktopShell","default_tab":"LIST","refresh":"EVENT_PLUS_MANUAL","primary_objects":["Listing"],"consumer_equivalent":"/real-estate/listings"},
+    {"id":"BROKER_LISTING_DETAIL","path":"/broker/listings/:listingId","menu":null,"permission":"LISTING_READ_OBJECT","shell":"DesktopShell","default_tab":"DETAIL","refresh":"EVENT_PLUS_MANUAL","primary_objects":["Listing"],"detach_allowed":true,"consumer_equivalent":"/real-estate/listings/:publicListingId"},
+    {"id":"BROKER_EXTERNAL_DISCOVERY","path":"/broker/external-discoveries","menu":"외부 발견","permission":"EXTERNAL_DISCOVERY_READ","shell":"DesktopShell","default_tab":"LIST","refresh":"POLLING_OR_EVENT","primary_objects":["ExternalDiscovery","CorrectionCase"],"consumer_equivalent":null},
+    {"id":"BROKER_INQUIRIES","path":"/broker/inquiries","menu":"문의·상담","permission":"INQUIRY_READ_SCOPE","shell":"DesktopShell","default_tab":"LIST","refresh":"POLLING_OR_EVENT","primary_objects":["Inquiry","Consultation","Task"],"consumer_equivalent":null},
+    {"id":"BROKER_CUSTOMERS","path":"/broker/customers","menu":"고객·거래처","permission":"CRM_READ_SCOPE","shell":"DesktopShell","default_tab":"LIST","refresh":"EVENT_PLUS_MANUAL","primary_objects":["Customer","Counterparty","RelationshipParty"],"consumer_equivalent":null},
+    {"id":"BROKER_CUSTOMER_DETAIL","path":"/broker/customers/:partyId","menu":null,"permission":"CRM_READ_OBJECT","shell":"DesktopShell","default_tab":"DETAIL","refresh":"EVENT_PLUS_MANUAL","primary_objects":["RelationshipParty","Inquiry","Requirement","Appointment"],"detach_allowed":true,"consumer_equivalent":null},
+    {"id":"BROKER_MATCHES","path":"/broker/matches","menu":"매칭","permission":"MATCH_READ_SCOPE","shell":"DesktopShell","default_tab":"LIST","refresh":"EVENT_PLUS_MANUAL","primary_objects":["CustomerRequirementMatch"],"consumer_equivalent":null},
+    {"id":"BROKER_CALENDAR","path":"/broker/calendar","menu":"일정","permission":"CALENDAR_READ_SCOPE","shell":"DesktopShell","default_tab":"LIST","refresh":"EVENT_PLUS_MANUAL","primary_objects":["Appointment","Task"],"consumer_equivalent":null},
+    {"id":"BROKER_DOCUMENTS","path":"/broker/documents","menu":"문서·계약","permission":"DOCUMENT_READ_SCOPE","shell":"DesktopShell","default_tab":"LIST","refresh":"EVENT_PLUS_MANUAL","primary_objects":["Document","Contract","Template"],"consumer_equivalent":null},
+    {"id":"BROKER_DOCUMENT_DETAIL","path":"/broker/documents/:documentId","menu":null,"permission":"DOCUMENT_READ_OBJECT","shell":"DesktopShell","default_tab":"DOCUMENT","refresh":"EVENT_PLUS_MANUAL","primary_objects":["Document","Contract"],"detach_allowed":true,"consumer_equivalent":null},
+    {"id":"BROKER_LEGAL","path":"/broker/legal","menu":"법률·자료","permission":"LEGAL_RESOURCE_READ","shell":"DesktopShell","default_tab":"LIST","refresh":"MANUAL","primary_objects":["LegalResource","EvidenceBookmark"],"consumer_equivalent":null},
+    {"id":"BROKER_MARKETING","path":"/broker/marketing","menu":"홍보 제작","permission":"MARKETING_READ_SCOPE","shell":"DesktopShell","default_tab":"LIST","refresh":"EVENT_PLUS_MANUAL","primary_objects":["MarketingAsset","Template","Listing"],"consumer_equivalent":null},
+    {"id":"BROKER_COLLABORATION","path":"/broker/collaboration","menu":"협업","permission":"COLLABORATION_READ_SCOPE","shell":"DesktopShell","default_tab":"LIST","refresh":"POLLING_OR_EVENT","primary_objects":["BoardPost","Comment","File","Notification"],"consumer_equivalent":null},
+    {"id":"BROKER_SETTINGS","path":"/broker/settings","menu":"설정","permission":"OFFICE_SETTINGS_READ","shell":"DesktopShell","default_tab":"DETAIL","refresh":"MANUAL","primary_objects":["Organization","OfficeLink","Membership","ChannelConnection"],"consumer_equivalent":null},
+    {"id":"BROKER_CORRECTION","path":"/broker/corrections/:caseId","menu":null,"permission":"CORRECTION_CASE_READ_OBJECT","shell":"DesktopShell","default_tab":"DETAIL","refresh":"EVENT_PLUS_MANUAL","primary_objects":["CorrectionCase","Task"],"detach_allowed":true,"consumer_equivalent":null}
+  ],
+  "navigation_rules": {
+    "list_to_detail": "OPEN_OR_ACTIVATE_WORKTAB",
+    "detail_to_detached": "EXPLICIT_USER_ACTION_ONLY",
+    "external_original": "OPEN_NEW_BROWSER_TAB_WITH_SOURCE_WARNING",
+    "consumer_to_broker": "FULL_ROUTE_TRANSITION_AND_AUTH_GUARD",
+    "broker_to_consumer_preview": "OPEN_SEPARATE_PREVIEW_WITH_PUBLIC_PROJECTION_ONLY"
+  },
+  "security": {
+    "listing_policy_ref": "yolla-panel-v1/real-estate-site-foundation/workers/b5-identity-security/LISTING_SECURITY_POLICY_V1.json",
+    "private_original_in_consumer_routes": 0,
+    "client_side_authorization_trusted": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
