@@ -1,112 +1,110 @@
 {
-  "schema_version": "LATEST_C3_D_ALIGNED_POINTER_V2",
+  "schema_version": "LATEST_C3_D_ALIGNED_POINTER_V3",
   "pointer_id": "LATEST_C3_D_ALIGNED_FIELD_MAPPING_POINTER",
   "worker": "C-3_SEMANTIC_CLASSIFICATION",
   "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
   "directive_id": "C1-TO-C3-D-ALIGNED-FIELD-MAPPING-TRANSFORM-RULES-V1-20260804-001",
-  "directive_comment": 5171213455,
-  "duplicate_prompt_key": "ed293d3858fa97ae0eb9ed8739f633b9166b46121c5495970e7f6d304ae6f50b",
-  "start_comment": 5171316318,
-  "prior_terminal_comment": 5171465080,
-  "updated_at_kst": "2026-08-04 06:00 KST",
+  "duplicate_prompt_key_reused": "ed293d3858fa97ae0eb9ed8739f633b9166b46121c5495970e7f6d304ae6f50b",
+  "wave2": {
+    "event_id": "C3-PR188-MAPPING-REBIND-CROSSWALK-V2-20260804-001",
+    "directive_comment": 5174123016,
+    "assignment_blob": "a904e8d6c4ee8684c70ee57203836432196ef175",
+    "start_comment": 5181877386,
+    "terminal_comment": 5182029836,
+    "evidence_head": "e719c65bb2745dfdfcd62c3a6b2a48a5998ea173",
+    "pointer_commit_status": "THIS_COMMIT",
+    "published_at_kst": "2026-08-05 01:44 KST"
+  },
   "authority": {
     "repository": "anbin1900-crypto/source-factory-core",
     "control_pr": 20,
     "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
-    "directive_start_head": "817549449944bda00c6dd305b175377510eb0cd7",
-    "catalog_source_commit": "31481fc0abd265bb7aef4590c45b1eb3390e67a4",
-    "prior_pointer_commit": "0d5befcf68ec946a08a973df8a6707d64ce9a1d4",
-    "continuation_binding_commit": "df54ed5a494e033bbd4edd252123430fa437e377",
-    "pointer_commit_status": "THIS_COMMIT"
+    "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c3-field-mapping-rules/**"
   },
-  "d_authority": {
-    "integration_pr": 21,
-    "head": "36848d3e641077e4905eccc17856369f0c494579",
-    "profile_blob": "93788d2685d25afae2d8e61c6b59e9615c51d22a",
-    "mapping_blob": "c2a3ae441ae0e2b44fb1bb9f95670cf0887bd8ed",
-    "ruleset_blob": "d21291ac77f44f84fffac6d935187f3ee4690dcd",
+  "active_d_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "head": "1bb475c440983aae761b897a3b58a8f4dab880cc",
+    "schema_profile_blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+    "mapping_contract_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
+    "validation_ruleset_blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
     "binding_mode": "READ_ONLY_EXACT_HEAD_AND_BLOBS"
   },
   "b1_authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
     "control_pr": 19,
     "head": "fb20d1df329150388889ad13ff0507b0fb3060be",
-    "normalized_dataset_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
-    "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
-    "source_record_envelope_blob": "0148a841344ce5a0df03e55df532871106dd7333",
-    "materialized_database_package_blob": "1561bdf34694fb2e692ae60c045c759a23383f41",
-    "c1_handoff_blob": "20dadfc3e58ac817031f14ef58ac64b691619b6f",
-    "d_intake_request_blob": "41573f73c03a30af6b9f5f1226fa09416a9f34b4",
-    "source_field_loss_count": 0,
-    "silent_drop_count": 0
-  },
-  "catalog_authority": {
-    "catalog_blob": "eb189c19857befaf5563b0ca23410c9f7cd6d823",
-    "consumer_blob": "4b913d978965ba24b9dcb69e76b5a03a7f162bc9",
-    "fixture_blob": "d8b20a9eb904309b77e1a22f24ffd3461948611e",
-    "test_result_blob": "b2780b82eb28ef68c3fca927d0a0e5ec48c4652c",
-    "final_report_blob": "6e241c4b035d77bcc748d87045d49ac7aae2184f",
-    "mapping_version": "1.0.0",
-    "rule_count": 69,
-    "b_rule_count": 31,
-    "c_rule_count": 38,
-    "decision": "C3_D_ALIGNED_FIELD_MAPPING_READY",
-    "tests": "PASS_29_OF_29"
-  },
-  "continuation_outputs": {
-    "binding_path": "b1-binding-continuation/B1_D_FIELD_MAPPING_BINDING_V1.json",
-    "binding_commit": "df54ed5a494e033bbd4edd252123430fa437e377",
-    "binding_canonical_sha256": "27f4b846019aa4272bf62d3d680417119f4c43f06ac22898ad10a8b874a9cf8e",
-    "test_result_path": "b1-binding-continuation/C3_D_ALIGNED_BINDING_CONTINUATION_TEST_RESULT_V1.json",
-    "test_result_blob": "55c251dc15c5405cc1bea6c23d4bdf5bf7db027d",
-    "report_path": "b1-binding-continuation/C3_D_ALIGNED_BINDING_CONTINUATION_REPORT_V1.json",
-    "report_blob": "ada5c6770572764905d7f69d1f52abfe1d2d2015",
-    "event_path": "b1-binding-continuation/events/C3_D_ALIGNED_B1_BINDING_EXACT_BLOCKER_EVENT.json",
-    "event_blob": "4db6994f89e1947baf124693888c46f4a1e6d63d"
-  },
-  "continuation_validation": {
-    "unit_tests": "PASS_34_OF_34",
-    "python_compile": "PASS_2_OF_2",
-    "json_parse": "PASS",
-    "b1_authority_file_blobs": "PASS_6_OF_6",
-    "b1_cross_hash_bindings": "PASS_5_OF_5",
-    "d_mapping_rule_catalog": "PASS_69_OF_69",
-    "b_rules_evaluated": "PASS_31_OF_31",
-    "exact_source_paths": "PASS_4_OF_31",
-    "missing_required_source_paths": 19,
-    "missing_optional_source_paths": 8,
-    "mapping_operations": 10,
-    "mapping_operations_pass": 8,
-    "d_generation_required": 2,
-    "mapping_operation_reject": 0,
-    "candidate_alias_applied_count": 0,
-    "source_field_loss_count": 0,
-    "silent_drop_count": 0,
-    "deterministic_replay": "PASS",
-    "repository_layout_replay": "PASS_AFTER_PATH_CORRECTION",
-    "ci_status": "NOT_RUN_NOT_CLAIMED_PASS"
-  },
-  "current_decision": {
-    "catalog_state": "C3_D_ALIGNED_FIELD_MAPPING_READY",
-    "actual_b_binding_state": "EXACT_BLOCKER_FOR_FULL_B1_TO_D_BINDING",
-    "terminal": "C3_D_ALIGNED_FIELD_MAPPING_READY_OR_EXACT_BLOCKER",
-    "exact_blocker": "B1_MATERIALIZED_DATABASE_PACKAGE_V1_MISSING_D_REQUIRED_SOURCE_PATHS_19",
-    "first_blocker": {
-      "reason_code": "B1_D_MAPPING_REQUIRED_SOURCE_PATH_MISSING",
-      "rule_id": "B001",
-      "required_source_path": "package.source_id",
-      "target": "SOURCE.source_id"
+    "classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+    "blobs": {
+      "NORMALIZED_DATASET_V1": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+      "RAW_ARTIFACT_MANIFEST_V1": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+      "SOURCE_RECORD_ENVELOPE_V1": "0148a841344ce5a0df03e55df532871106dd7333",
+      "EXTRACTION_RECEIPT_V1": "a4b4f7504c0a2b552fe165176f51833b78e0fd09",
+      "MATERIALIZED_DATABASE_PACKAGE_V1": "1561bdf34694fb2e692ae60c045c759a23383f41",
+      "B1_SOURCE_EVIDENCE_HANDOFF_V1": "20dadfc3e58ac817031f14ef58ac64b691619b6f"
     }
   },
-  "required_next_action": {
-    "owners": ["B-1", "D-1"],
-    "action": "Publish a versioned B package shape or D mapping addendum with exact source paths for the 19 missing required rules.",
-    "c3_behavior": "Do not infer aliases. Reuse this assignment, duplicate key and mapping version after exact authority update."
+  "historical_results": {
+    "source_factory_pr21_authority_status": "PRESERVED_AS_HISTORY_NOT_ACTIVE_D_AUTHORITY",
+    "initial_terminal_comment": 5171465080,
+    "b1_continuation_terminal_comment": 5171825967,
+    "prior_pointer_commit": "1417fd67e3cb55a82e1b34ff8d1fe9ddebacbcbe",
+    "prior_pointer_blob": "f46c5c64e3da5b6d4cbfc338a5d99b4e67335204"
   },
-  "d_schema_independent_definition": false,
-  "d_canonical_schema_mutation": false,
-  "d_canonical_db_write": false,
-  "fixture_claimed_as_d_authority": false,
-  "silent_drop": false,
+  "required_outputs": {
+    "PR188_B1_SOURCE_PATH_CROSSWALK_V2.json": "e6a9478142b1f379065a16b88a69869e0866cbe8",
+    "FIELD_MAPPING_REPORT_V1.json": "8e55bf106f04ceb49ee7c6da6a1cf7028f0ab700",
+    "C3_D_ALIGNED_MAPPING_TEST_RESULT_V2.json": "13316e7a80f80dd0f9029719862bedab59a329ba",
+    "C3_D_ALIGNED_FINAL_REPORT_V2.json": "123d9875b42b6485f7905ed186df95530ed02259",
+    "LATEST_C3_D_ALIGNED_POINTER.json": "THIS_BLOB"
+  },
+  "implementation_blobs": {
+    "validator": "d938616ee87d1ebd29d8d9a3a0b71e5ec0f6af1e",
+    "test_source": "a76029081f08863fba9ae2cec79e006c1d2302c6",
+    "terminal_event": "c7db45467faf43aab9737ba2f3a8c0344ce19a15",
+    "rule_shards": [
+      "7e5e55fe6e7924ed4d0cd4c10fcec88e3a30c460",
+      "23ee7a45bd980861a2e8b0edb3b3c5d8f81d3aae",
+      "82ea9a27f22ad25a1ec0bb7d714410eb02cea934",
+      "3c09ca034e4c3a0b7ab3d187f80f6426d704a451",
+      "56316cab323b6a67d1c34737ece5486405552b09",
+      "1d58e641a9a8250d197c8f2c648d1776b2cdb691"
+    ]
+  },
+  "mapping_result": {
+    "mapping_rule_count": 43,
+    "direct_match_count": 4,
+    "declared_rule_derivable_count": 13,
+    "missing_required_source_path_count": 22,
+    "optional_missing_count": 4,
+    "actual_b_value_count": 19,
+    "inferred_alias_count": 0,
+    "source_value_invention_count": 0,
+    "silent_drop_count": 0,
+    "d_schema_mutation_count": 0,
+    "d_canonical_db_write_count": 0
+  },
+  "validation": {
+    "tests": "PASS_60_OF_60",
+    "validator_checks": "PASS_48_OF_48",
+    "independent_assertions": "PASS_12_OF_12",
+    "python_compile": "PASS_2_OF_2",
+    "json_parse": "PASS_11_OF_11",
+    "pr188_exact_blobs": "PASS_3_OF_3",
+    "b1_exact_blobs": "PASS_6_OF_6",
+    "shard_sha256": "PASS_6_OF_6",
+    "ci_status": "NOT_RUN_NOT_CLAIMED_PASS"
+  },
+  "first_blocker": {
+    "reason_code": "B1_D_MAPPING_REQUIRED_SOURCE_PATH_MISSING",
+    "rule_id": "B001",
+    "source_path": "package.source_id",
+    "target": "SOURCE.source_id"
+  },
+  "decision": "EXACT_BLOCKER_FOR_FULL_PR188_SUBMISSION",
+  "terminal": "C3_D_ALIGNED_FIELD_MAPPING_READY_OR_EXACT_BLOCKER",
+  "next_gate": "B1_REQUIRED_PATHS_AND_C4_CANDIDATE_EVIDENCE_FIELDS_PUBLISHED",
+  "fixture_claimed_as_d_accepted_data": false,
   "production": false,
   "ready": false,
   "merge": false
