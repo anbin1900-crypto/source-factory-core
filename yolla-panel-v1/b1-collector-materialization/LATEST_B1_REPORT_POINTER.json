@@ -23,6 +23,12 @@
     "path": "yolla-panel-v1/b1-collector-materialization/execution-wave4/LATEST_B1_WORKER_ADDITIONAL_WORK_POINTER.json",
     "commit": "c1aac81c3dc9e8a7724011af507fba2adae5f7f8"
   },
+  "worker_additional_work_receipt": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave4/B1_WORKER_ADDITIONAL_WORK_PUBLICATION_RECEIPT_V1.json",
+    "commit": "dce3975c29f43b6a6444933613124eb0a45c160a",
+    "blob": "2710d7fd93220bf452a1c041fd765a9aa9f738c9",
+    "result": "PASS_5_OF_5"
+  },
   "b1_fixture_seed": {
     "seed_commit": "8b8f7888128e7472269b79385886ff48a421de1f",
     "input_record_count": 4,
@@ -37,11 +43,11 @@
     ]
   },
   "worker_controls": {
-    "B-2": {"pr": 38, "head": "34a536c91fbd537643bf40eb19c598ad177f880e", "task_id": "B1-B2-EXECUTION-TASK-V1-20260804-001", "status": "SEED_LATE_BIND_EXECUTE_NOW"},
-    "B-3": {"pr": 39, "head": "8c31cec83f1b81ba80511bed8a61b15536da3b48", "task_id": "B1-B3-EXECUTION-TASK-V1-20260804-001", "status": "SEED_REPRODUCTION_EXECUTE_NOW"},
-    "B-4": {"pr": 40, "head": "f1c327882bfd73d9670afa661e11c6acc8a8cccb", "task_id": "B1-B4-EXECUTION-TASK-V1-20260804-001", "status": "RAW_EVIDENCE_REBUILD_EXECUTE_NOW"},
-    "B-5": {"pr": 41, "head": "dfd99f6188d263fd7e7ded72396f72006680fee8", "task_id": "B1-B5-EXECUTION-TASK-V1-20260804-001", "status": "NORMALIZATION_AND_SQLITE_GAP_CLOSURE_EXECUTE_NOW"},
-    "B-6": {"pr": 42, "head": "6ccf2fea6cc4d05db2704ac08c50eb8ff43015b1", "task_id": "B1-B6-EXECUTION-TASK-V1-20260804-001", "status": "SEED_PREFLIGHT_NOW_EVENT_WAIT_FINAL"}
+    "B-2": {"pr": 38, "head": "34a536c91fbd537643bf40eb19c598ad177f880e", "task_id": "B1-B2-EXECUTION-TASK-V1-20260804-001", "comment": 5174096887, "status": "SEED_LATE_BIND_EXECUTE_NOW"},
+    "B-3": {"pr": 39, "head": "8c31cec83f1b81ba80511bed8a61b15536da3b48", "task_id": "B1-B3-EXECUTION-TASK-V1-20260804-001", "comment": 5174098021, "status": "SEED_REPRODUCTION_EXECUTE_NOW"},
+    "B-4": {"pr": 40, "head": "f1c327882bfd73d9670afa661e11c6acc8a8cccb", "task_id": "B1-B4-EXECUTION-TASK-V1-20260804-001", "comment": 5174099605, "status": "RAW_EVIDENCE_REBUILD_EXECUTE_NOW"},
+    "B-5": {"pr": 41, "head": "dfd99f6188d263fd7e7ded72396f72006680fee8", "task_id": "B1-B5-EXECUTION-TASK-V1-20260804-001", "comment": 5174101371, "status": "NORMALIZATION_AND_SQLITE_GAP_CLOSURE_EXECUTE_NOW"},
+    "B-6": {"pr": 42, "head": "6ccf2fea6cc4d05db2704ac08c50eb8ff43015b1", "task_id": "B1-B6-EXECUTION-TASK-V1-20260804-001", "comment": 5174102888, "status": "SEED_PREFLIGHT_NOW_EVENT_WAIT_FINAL"}
   },
   "a2_verified_adapter_package_v1_published": false,
   "actual_site_extraction": false,
