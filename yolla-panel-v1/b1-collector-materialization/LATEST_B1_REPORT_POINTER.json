@@ -1,27 +1,31 @@
 {
   "schema_version": "1.0.0",
   "pointer_id": "LATEST-B1-COLLECTOR-DB-MATERIALIZATION-REPORT-V1",
-  "updated_at_kst": "2026-08-04T23:14:00+09:00",
+  "updated_at_kst": "2026-08-05T00:15:00+09:00",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 19,
   "branch": "integration/b1-collector-db-materialization-v1",
   "current_report": {
-    "type": "WORKER_WAVE5_RESULT_ACCEPTANCE_AND_NEXT_ACTION",
-    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave5/LATEST_B1_WORKER_WAVE5_RESULT_ACCEPTANCE_POINTER.json",
-    "commit": "23bee4b4c4a69cb00e71a90987887a76846e09fa",
-    "status": "B2_ACCEPTED_PASS_B3_B4_B5_EXECUTE_B6_EVENT_WAIT_1_OF_4"
+    "type": "WORKER_WAVE6_TERMINAL_CLOSURE_RECOVERY",
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave6/LATEST_B1_WORKER_WAVE6_TERMINAL_CLOSURE_POINTER.json",
+    "commit": "789ad770b95da2dfca110a674fe37292f76dc288",
+    "status": "B2_ACCEPTED_FROZEN_B3_B4_B5_TERMINAL_CLOSURE_B6_EVENT_WAIT_LEDGER_REQUIRED"
   },
   "directive_id": "A0-TO-B1-GENERIC-COLLECTOR-MATERIALIZATION-SHELL-V1-20260803-001",
   "addendum_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
   "existing_directive_superseded": false,
-  "wave5_audit": {
-    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave5/B1_WORKER_WAVE5_RESULT_ACCEPTANCE_AND_NEXT_ACTION_V1.json",
-    "commit": "026c3f9f5c156773b40a0db36df29e65ae5414c6",
-    "blob": "5a9a9f1efd5a490d86d6b7602946fff93938fb75"
+  "wave6_recovery": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave6/B1_WORKER_WAVE6_TERMINAL_CLOSURE_RECOVERY_V1.json",
+    "commit": "1e611f26d4a96d302146118a1af8a534e6a791a8",
+    "blob": "88320828aae24925ade553bfa460117cad39d80b"
   },
-  "wave5_publication_receipt": {
-    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave5/B1_WORKER_WAVE5_ADDITIONAL_WORK_PUBLICATION_RECEIPT_V1.json",
-    "commit": "f63dc1e5eb33d01797313a2364dd75e2a47c83f0",
+  "wave6_pointer": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave6/LATEST_B1_WORKER_WAVE6_TERMINAL_CLOSURE_POINTER.json",
+    "commit": "789ad770b95da2dfca110a674fe37292f76dc288"
+  },
+  "wave6_publication_receipt": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave6/B1_WORKER_WAVE6_TERMINAL_CLOSURE_PUBLICATION_RECEIPT_V1.json",
+    "commit": "9b8c9c9b7326a0c9e957b90016341ae1eb358dcd",
     "result": "PASS_5_OF_5"
   },
   "accepted_workers": {
@@ -31,15 +35,15 @@
       "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY",
       "tests": "PASS_24_OF_24",
       "remote_blob_readback": "PASS_7_OF_7",
-      "comment": 5180362401,
-      "status": "ACCEPTED_PASS_HOLD"
+      "comment": 5181070002,
+      "status": "ACCEPTED_PASS_FROZEN"
     }
   },
   "pending_workers": {
-    "B-3": {"pr": 39, "head": "8c31cec83f1b81ba80511bed8a61b15536da3b48", "comment": 5180367746, "status": "EXECUTE_WITH_B2_CONTRACT_AND_B1_SEED"},
-    "B-4": {"pr": 40, "head": "f1c327882bfd73d9670afa661e11c6acc8a8cccb", "comment": 5180371498, "status": "EXACT_RAW_EVIDENCE_REBUILD"},
-    "B-5": {"pr": 41, "head": "dfd99f6188d263fd7e7ded72396f72006680fee8", "comment": 5180377287, "status": "SQLITE_BASE64_AND_READBACK_GAP_CLOSURE"},
-    "B-6": {"pr": 42, "head": "6ccf2fea6cc4d05db2704ac08c50eb8ff43015b1", "comment": 5180380943, "status": "EVENT_WAIT_ACCEPTED_INPUTS_1_OF_4"}
+    "B-3": {"pr": 39, "head": "8c31cec83f1b81ba80511bed8a61b15536da3b48", "comment": 5181076773, "status": "TERMINAL_OR_EXACT_BLOCKER_REQUIRED"},
+    "B-4": {"pr": 40, "head": "f1c327882bfd73d9670afa661e11c6acc8a8cccb", "comment": 5181080352, "status": "TERMINAL_OR_EXACT_BLOCKER_REQUIRED"},
+    "B-5": {"pr": 41, "head": "dfd99f6188d263fd7e7ded72396f72006680fee8", "comment": 5181085194, "status": "TERMINAL_OR_EXACT_BLOCKER_REQUIRED"},
+    "B-6": {"pr": 42, "head": "6ccf2fea6cc4d05db2704ac08c50eb8ff43015b1", "comment": 5181091367, "status": "START_EVENT_WAIT_POINTER_OR_EXACT_BLOCKER_REQUIRED_ACCEPTED_INPUTS_1_OF_4"}
   },
   "a2_dependency": {
     "head": "3c3f7077ab070cb0259c253268ab3a7b17ecb446",
@@ -48,7 +52,7 @@
   },
   "required_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
   "current_terminal": null,
-  "current_status": "WAITING_B3_B4_B5_TERMINALS_THEN_B6_FINAL_ACCEPTANCE",
+  "current_status": "WAITING_B3_B4_B5_TERMINALS_AND_B6_EVENT_WAIT_LEDGER",
   "next_gate": "B3_B4_B5_TERMINALS_3_OF_3_THEN_B6_FINAL_ACCEPTANCE",
   "production": false,
   "ready": false,
