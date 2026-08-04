@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "event": "C3_PR188_MAPPING_REBIND_EXACT_BLOCKER",
+  "event_id": "C3-PR188-MAPPING-REBIND-CROSSWALK-V2-20260804-001",
+  "worker": "C-3",
+  "published_at_kst": "2026-08-05 01:31 KST",
+  "d1_head": "1bb475c440983aae761b897a3b58a8f4dab880cc",
+  "b1_head": "fb20d1df329150388889ad13ff0507b0fb3060be",
+  "mapping_rule_count": 43,
+  "direct_match_count": 4,
+  "declared_rule_derivable_count": 13,
+  "missing_required_source_path_count": 22,
+  "optional_missing_count": 4,
+  "silent_drop_count": 0,
+  "tests": "PASS_60_OF_60",
+  "first_blocker": {"reason_code": "B1_D_MAPPING_REQUIRED_SOURCE_PATH_MISSING", "rule_id": "B001", "source_path": "package.source_id", "target": "SOURCE.source_id"},
+  "terminal": "C3_D_ALIGNED_FIELD_MAPPING_READY_OR_EXACT_BLOCKER",
+  "decision": "EXACT_BLOCKER_FOR_FULL_PR188_SUBMISSION",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
