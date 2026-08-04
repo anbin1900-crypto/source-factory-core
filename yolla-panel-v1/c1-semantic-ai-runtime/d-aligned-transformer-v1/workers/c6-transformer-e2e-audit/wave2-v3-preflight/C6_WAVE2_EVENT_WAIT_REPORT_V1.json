@@ -1,0 +1,100 @@
+{
+  "schema_version": "C6_WAVE2_EVENT_WAIT_REPORT_V1",
+  "report_id": "C6-D-ALIGNED-WAVE2-EVENT-WAIT-20260805-001",
+  "worker": "C-6_AI_QUALITY_AND_E2E_VALIDATION",
+  "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
+  "directive_id": "C1-TO-C6-D-ALIGNED-TRANSFORMER-E2E-AUDIT-V1-20260804-001",
+  "wave2_comment": 5174132443,
+  "recovery_comment": 5180369398,
+  "start_comment": 5181809309,
+  "evaluated_at_kst": "2026-08-05 01:30 KST",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "start_head": "79c016e35f6b18c58be0161f9b008fb9e71b74aa",
+  "observed_shared_head_before_report": "97a4840d6d78661b28971635b6ed85ec77898311",
+  "entry_gate": "UPDATED_C2_C3_C4_C5_TERMINALS_4_OF_4",
+  "entry_gate_open": false,
+  "updated_worker_terminal_count": 0,
+  "required_worker_terminal_count": 4,
+  "worker_state": {
+    "C-2": "TERMINAL_ENFORCEMENT_ACTIVE_COMMENT_5181054986_NO_UPDATED_WAVE2_TERMINAL",
+    "C-3": "TERMINAL_ENFORCEMENT_ACTIVE_COMMENT_5181059789_NO_UPDATED_WAVE2_TERMINAL",
+    "C-4": "EVENT_WAIT_C2_C3_UPDATED_TERMINALS",
+    "C-5": "EVENT_WAIT_C4_UPDATED_PACKAGE_TERMINAL",
+    "C-6": "FREEZE_AND_EVENT_WAIT"
+  },
+  "preflight_artifacts": {
+    "v2_freeze_receipt": {
+      "commit": "8876900f778fd834e862863354a0d240561d844b",
+      "blob": "9f59343de8a2146ca6961174ec152a3b549d2644"
+    },
+    "worker_pointer_preflight_matrix": {
+      "commit": "dae8522e2155ffbd56dc771dfedad6329f20f43a",
+      "blob": "35c304942e8a332e3b3cf8fcc737487a45257e47"
+    },
+    "pr188_final_e2e_preflight_plan": {
+      "commit": "6cbdecec4f6d0b81fd4b4a6eb8c2390284cf7e5e",
+      "blob": "f094751ae1619119cd5ac1b978e5910426d4af52"
+    }
+  },
+  "remote_preflight_blob_readback": "PASS_3_OF_3",
+  "v2_evidence_freeze": "PASS_READ_ONLY_4_OF_4",
+  "pr188_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "head": "1bb475c440983aae761b897a3b58a8f4dab880cc",
+    "state": "OPEN_DRAFT_UNMERGED",
+    "schema_profile_blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+    "mapping_contract_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
+    "validation_ruleset_blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
+    "acceptance_receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
+    "readback": "PASS_4_OF_4",
+    "silent_drop_allowed": false,
+    "decision_authority": "D-1_ONLY"
+  },
+  "b1_fixture_authority": {
+    "control_pr": 19,
+    "head": "2026443d51256f6c11295d3db9c652dc34b90bd4",
+    "normalized_dataset_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+    "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+    "source_record_envelope_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+    "extraction_receipt_blob": "a4b4f7504c0a2b552fe165176f51833b78e0fd09",
+    "readback": "PASS_4_OF_4",
+    "raw_records": 4,
+    "normalized_records": 3,
+    "duplicates": 1,
+    "source_field_loss_count": 0,
+    "network_call_count": 0,
+    "actual_site_extraction": false,
+    "classification": "REMOTE_COMMITTED_FIXTURE_NOT_YET_B6_ACCEPTED_HANDOFF",
+    "official_handoff_pointer_blob": "3c51e55ec25828ece1a2e60d69893c7ff9a65bc5",
+    "official_handoff_status": "WAITING_B6_INDEPENDENT_ACCEPTANCE",
+    "handoff_published": false,
+    "wave6_pointer_blob": "4c6cad43c6a83cd0b180fe49052a0516beac5177",
+    "accepted_worker_count": 1,
+    "required_worker_count": 4
+  },
+  "first_blocker": "C2_UPDATED_WAVE2_TERMINAL_NOT_PUBLISHED",
+  "additional_blockers": [
+    "C3_UPDATED_WAVE2_TERMINAL_NOT_PUBLISHED",
+    "C4_UPDATED_PACKAGE_TERMINAL_WAITING_C2_C3",
+    "C5_UPDATED_VALIDATION_TERMINAL_WAITING_C4",
+    "B1_TO_C1_HANDOFF_NOT_PUBLISHED_WAITING_B6_INDEPENDENT_ACCEPTANCE"
+  ],
+  "allowed_preflight_complete": true,
+  "final_v3_outputs_published": false,
+  "final_v3_e2e_executed": false,
+  "final_e2e_pass_claimed": false,
+  "d1_submission_pass_claimed": false,
+  "d_acceptance_claimed": false,
+  "d_canonical_schema_mutation": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "ci_status": "NOT_RUN_NOT_CLAIMED_PASS",
+  "decision": "PREFLIGHT_READY_EVENT_WAIT",
+  "terminal": "C6_D_ALIGNED_WAVE2_EVENT_WAIT_GATE_CLOSED",
+  "status": "C6_WAVE2_FREEZE_PREFLIGHT_READY_WAITING_UPDATED_C2_TO_C5_TERMINALS"
+}
