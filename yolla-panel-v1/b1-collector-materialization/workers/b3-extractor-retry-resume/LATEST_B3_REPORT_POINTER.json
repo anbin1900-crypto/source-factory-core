@@ -1,0 +1,16 @@
+{
+  "schema_version": "LATEST_B3_REPORT_POINTER_V1",
+  "worker_id": "B-3",
+  "group_worker_id": "GROUP02-W03",
+  "updated_at_kst": "2026-08-05T04:12:00+09:00",
+  "latest_report_type": "START",
+  "latest_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b3-extractor-retry-resume/B3_START_REPORT_V1.json",
+  "latest_report_commit_policy": "COMMIT_CONTAINING_THIS_POINTER_AND_START_REPORT",
+  "directive_id": "B1-TO-B3-EXTRACTOR-RETRY-RESUME-INCREMENTAL-V1-20260804-001",
+  "task_id": "B1-B3-EXECUTION-TASK-V1-20260804-001",
+  "status": "IN_PROGRESS",
+  "terminal": "IN_PROGRESS",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
