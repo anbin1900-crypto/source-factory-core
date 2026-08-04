@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "receipt_id": "B1-WORKER-WAVE5-ADDITIONAL-WORK-PUBLICATION-RECEIPT-V1-20260804-001",
+  "published_at_kst": "2026-08-04T23:14:00+09:00",
+  "control_pr": 19,
+  "audit": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave5/B1_WORKER_WAVE5_RESULT_ACCEPTANCE_AND_NEXT_ACTION_V1.json",
+    "commit": "026c3f9f5c156773b40a0db36df29e65ae5414c6",
+    "blob": "5a9a9f1efd5a490d86d6b7602946fff93938fb75"
+  },
+  "pointer": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave5/LATEST_B1_WORKER_WAVE5_RESULT_ACCEPTANCE_POINTER.json",
+    "commit": "23bee4b4c4a69cb00e71a90987887a76846e09fa"
+  },
+  "worker_publications": {
+    "B-2": {
+      "pr": 38,
+      "comment": 5180362401,
+      "action": "ACCEPTED_PASS_HOLD",
+      "head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+      "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY"
+    },
+    "B-3": {
+      "pr": 39,
+      "comment": 5180367746,
+      "action": "EXECUTE_WITH_B2_CONTRACT_AND_B1_SEED"
+    },
+    "B-4": {
+      "pr": 40,
+      "comment": 5180371498,
+      "action": "EXACT_RAW_EVIDENCE_REBUILD"
+    },
+    "B-5": {
+      "pr": 41,
+      "comment": 5180377287,
+      "action": "LOSSLESS_NORMALIZATION_SQLITE_GAP_CLOSURE"
+    },
+    "B-6": {
+      "pr": 42,
+      "comment": 5180380943,
+      "action": "EVENT_WAIT_UPDATE_1_OF_4_AND_B2_PREFLIGHT"
+    }
+  },
+  "publication_result": "PASS_5_OF_5",
+  "accepted_worker_count": 1,
+  "pending_worker_count": 4,
+  "new_directive_count": 0,
+  "existing_task_ids_reused": true,
+  "next_gate": "B3_B4_B5_TERMINALS_3_OF_3_THEN_B6_FINAL_ACCEPTANCE",
+  "actual_site_extraction": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
