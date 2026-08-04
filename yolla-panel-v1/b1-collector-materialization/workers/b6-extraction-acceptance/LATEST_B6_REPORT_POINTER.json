@@ -1,7 +1,7 @@
 {
   "schema_version": "LATEST_B6_REPORT_POINTER_V2",
   "pointer_id": "LATEST_B6_EXTRACTION_ACCEPTANCE_REPORT_POINTER",
-  "updated_at_kst": "2026-08-05T05:52:00+09:00",
+  "updated_at_kst": "2026-08-05T05:54:00+09:00",
   "group_id": "GROUP-02",
   "loop_id": "A-LOOP-GROUP-02",
   "cycle_id": "A-LOOP-GROUP-02-GROUP02-W06-CYCLE-0002",
@@ -41,7 +41,7 @@
     "b3_input_preflight": {
       "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_B3_INPUT_PREFLIGHT_V1.json",
       "commit": "b27357e1b112bcd2d0b912a73d88eda85849c267",
-      "blob_resolution": "COMMIT_CONTENT_READBACK_AFTER_POINTER_UPDATE",
+      "blob": "b1752bd1f7b98332fbdb05a5af9f6f7ed29bfb25",
       "decision": "PASS_ACCEPTED_B3_INPUT_FOR_B6_EVENT_WAIT"
     }
   },
