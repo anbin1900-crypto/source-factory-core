@@ -1,0 +1,52 @@
+{
+  "schema_version": "LATEST_A0_V51022_PATH_LAUNCHER_FIX_POINTER_V1",
+  "status": "BUILD_PASS_TARGET_PC_INSTALL_PENDING",
+  "version": "5.10.2.2",
+  "baseline": "EXACT_V5.10.2_E_A_UNIFIED",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "supersedes": {
+    "version": "5.10.2.1",
+    "reason": "INSTALLATION_PASS_BUT_WINDOWS_PATH_DIALOG_ON_LAUNCH",
+    "installer_status": "DO_NOT_RUN_AGAIN"
+  },
+  "fixes": {
+    "windows_absolute_drive_root": true,
+    "cmd_start_removed": true,
+    "powershell_process_start_info": true,
+    "e_mode_preserved": true,
+    "a_mode_preserved": true,
+    "durable_state_preserved": true,
+    "b4_context_recovery_preserved": true
+  },
+  "report": {
+    "path": "yolla-panel-v1/a0-successor-control/reports/A0_V51022_WINDOWS_PATH_LAUNCHER_FIX_BUILD_REPORT_V1.json",
+    "commit": "bdeb53737cbfa7557d37a40cf5abc0fc4274ccd1"
+  },
+  "installer": {
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V51022_PATH_LAUNCHER_FIX.bat",
+    "drive_file_id": "1f7aFoBjXWFr61XRg-ctkwFXuGoVbt4T2",
+    "size_bytes": 194527,
+    "sha256": "2df098b046950adea74a82df39fd2e939c1ee230ca3a73d3abef468111db0d18"
+  },
+  "validation": {
+    "self_extract": "PASS",
+    "node_syntax": "PASS_10_OF_10",
+    "regression_suites": "PASS_16_OF_16",
+    "drive_relative_path_remaining_count": 0,
+    "duplicate_execution_count": 0
+  },
+  "target_pc_observation": {
+    "installed": false,
+    "path_dialog_removed": "NOT_OBSERVED",
+    "launcher_success": "NOT_OBSERVED"
+  },
+  "new_runtime": false,
+  "new_queue": false,
+  "new_transport": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-05T00:35:00+09:00"
+}
