@@ -1,5 +1,5 @@
 {
-  "schema_version": "LATEST_C6_D_ALIGNED_POINTER_V4",
+  "schema_version": "LATEST_C6_D_ALIGNED_POINTER_V4_1",
   "pointer_id": "LATEST_C6_D_ALIGNED_POINTER",
   "group_id": "GROUP-03",
   "loop_id": "A-LOOP-GROUP-03",
@@ -8,17 +8,22 @@
   "directive_id": "GROUP03-W01-TO-GROUP03-W06-C6V4-FINAL-E2E-CYCLE-0002",
   "directive_comment_id": 5184578323,
   "start_comment_id": 5184734169,
+  "result_comment_id": 5184810627,
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
   "execution_control_pr": 20,
   "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
-  "published_at_kst": "2026-08-05 06:13 KST",
+  "published_at_kst": "2026-08-05 06:26 KST",
   "start_head": "ab43148dfc87720e90a32f958270fd291594ea43",
-  "observed_head_before_pointer": "7e36939d9d4d0a278b46968a8f7100488ca15ba2",
-  "prior_pointer": {
-    "schema_version": "LATEST_C6_D_ALIGNED_POINTER_V3",
-    "blob": "af382a6675c5bee1894275e308e9bd9fa7c01649",
-    "terminal": "C6_D_ALIGNED_TRANSFORMER_E2E_EXACT_BLOCKER"
+  "prior_pointer_blob": "ed6097756fd9858c2e08743fb520fa64ff111e7a",
+  "correction_scope": {
+    "append_only": true,
+    "superseded_findings": [
+      "C3_CYCLE_0002_TERMINAL_NOT_PUBLISHED",
+      "C3_CYCLE_0002_POINTER_NOT_UPDATED"
+    ],
+    "decision_changed": false,
+    "terminal_changed": false
   },
   "worker_terminal_gate": {
     "required": 4,
@@ -33,20 +38,24 @@
       "accepted": true
     },
     "C-3": {
-      "latest_pointer_blob": "e77cdc3f449d405b3144f8dd18ed21f269863748",
       "cycle_0002_directive_comment": 5184559676,
+      "cycle_0002_terminal_comment": 5184788795,
+      "final_pointer_comment": 5184797933,
+      "c1_mirror_comment": 5184801804,
+      "pointer_commit": "35e004190483b816ce0fa7bd46108adefd7fd023",
+      "pointer_blob": "344cd19f110c825ac3ac6cdc6c2b70571eae3a55",
       "cycle_0002_revalidation_blob": "d0a0a9f475e765c25db1fe524e4c2c584e4ad7fd",
       "cycle_0002_retest_checks": "PASS_15_OF_15",
-      "cycle_0002_terminal_published": false,
+      "cycle_0002_terminal_published": true,
+      "result": "EXACT_BLOCKER",
+      "terminal_status": "BLOCKED_EXTERNAL",
       "required_path_accounting": "PASS_22_OF_22",
       "resolved_path_count": 0,
       "unresolved_external_path_count": 22,
       "c4_rejection_input_blob": "73b49771eab3f00e27705aca5e124f02762e1c5f",
       "c4_rejection_coverage": "PASS_22_OF_22",
-      "tests": "PASS_37_OF_37",
       "silent_drop_count": 0,
-      "accounting_accepted": true,
-      "cycle_0002_revalidation_accepted_as_terminal": false
+      "accepted": true
     },
     "C-4": {
       "cycle_0002_directive_comment": 5184566722,
@@ -73,40 +82,20 @@
     "readback": "PASS_4_OF_4"
   },
   "v4_artifacts": {
-    "worker_terminal_matrix": {
-      "path": "C6_WORKER_TERMINAL_ACCEPTANCE_MATRIX_V4.json",
-      "commit": "056296fe2f4e44d88e0a3b494c31c5c5afe0d430",
-      "blob": "4b55a716b7e7cd76d7e05f9107787f84746fffbd"
-    },
-    "handoff_validation": {
-      "path": "C1_TO_D1_HANDOFF_VALIDATION_V3.json",
-      "commit": "6de73f925f3638ebf3b4cb29a0237aed278e8236",
-      "blob": "563b573a4159af73774314eb131d0d26aa2ab5fe"
-    },
-    "final_e2e_report": {
-      "path": "C6_D_ALIGNED_FINAL_E2E_REPORT_V4.json",
-      "commit": "d8ad1234f227a4dec1f9c7f0e999782005429050",
-      "blob": "de811fcddff83d9fbc6e2e9b2ef39f3e075ac351"
-    },
-    "final_report": {
-      "path": "C6_D_ALIGNED_FINAL_REPORT_V4.json",
-      "commit": "7e36939d9d4d0a278b46968a8f7100488ca15ba2",
-      "blob": "ccd1e323566f0ae2bbcea95dd35e65925d3a9227"
-    },
-    "late_input_observation": {
-      "path": "C6_CYCLE_0002_LATE_INPUT_OBSERVATION_V1.json",
-      "commit": "22982ceae91accf9cac90433db95e5caedb327aa",
-      "blob": "7d32edf171d14ae3fc287cd54c884be035a969a0"
-    }
+    "worker_terminal_matrix": {"commit": "056296fe2f4e44d88e0a3b494c31c5c5afe0d430", "blob": "4b55a716b7e7cd76d7e05f9107787f84746fffbd"},
+    "handoff_validation": {"commit": "6de73f925f3638ebf3b4cb29a0237aed278e8236", "blob": "563b573a4159af73774314eb131d0d26aa2ab5fe"},
+    "final_e2e_report": {"commit": "d8ad1234f227a4dec1f9c7f0e999782005429050", "blob": "de811fcddff83d9fbc6e2e9b2ef39f3e075ac351"},
+    "final_report": {"commit": "7e36939d9d4d0a278b46968a8f7100488ca15ba2", "blob": "ccd1e323566f0ae2bbcea95dd35e65925d3a9227"},
+    "late_input_observation": {"commit": "22982ceae91accf9cac90433db95e5caedb327aa", "blob": "7d32edf171d14ae3fc287cd54c884be035a969a0"},
+    "terminal_correction": {"commit": "a6e2d73fed653764ca47193972aeb0211072a6bd", "blob": "PENDING_REMOTE_READBACK"}
   },
   "validation": {
-    "json_parse": "PASS_6_OF_6",
-    "remote_blob_readback": "PASS_5_OF_5_PRE_POINTER",
     "source_lineage_accounting": "PASS_50_OF_50",
     "mapping_rule_accounting": "PASS_43_OF_43_UPSTREAM",
     "required_path_accounting": "PASS_22_OF_22",
     "c4_rejection_input_coverage": "PASS_22_OF_22",
     "c3_cycle_0002_revalidation": "PASS_15_OF_15_NO_AUTHORITY_DELTA",
+    "c3_cycle_0002_terminal_binding": "PASS",
     "pr188_exact_authority": "PASS_4_OF_4",
     "worker_gate": "PASS_2_OF_4",
     "virtual_pass_count": 0
@@ -122,8 +111,7 @@
   "first_blocker": "C4_V2_PACKAGE_TERMINAL_NOT_PUBLISHED",
   "additional_blockers": [
     "C4_V2_REQUIRED_PACKAGE_OUTPUTS_NOT_PUBLISHED",
-    "C5_V2_VALIDATION_TERMINAL_WAITING_C4_V2_PACKAGE",
-    "C3_CYCLE_0002_TERMINAL_NOT_PUBLISHED"
+    "C5_V2_VALIDATION_TERMINAL_WAITING_C4_V2_PACKAGE"
   ],
   "decision": "EXACT_EXTERNAL_BLOCKER",
   "terminal": "C6_D_ALIGNED_TRANSFORMER_E2E_EXACT_BLOCKER",
