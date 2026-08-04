@@ -1,0 +1,54 @@
+{
+  "schema_version": "LATEST_B6_REAL_ESTATE_FOUNDATION_POINTER_V1",
+  "package_id": "YOLLA-REAL-ESTATE-SITE-FOUNDATION-20260804-001",
+  "epic_id": "RE-W5-E01-DGROUP-DATA-CONTRACTS",
+  "worker_id": "B-6",
+  "directive_id": "REAL-ESTATE-COMMANDER-TO-B6-DGROUP-DATA-CONTRACTS-V1-20260804-001",
+  "terminal": "PASS",
+  "result_code": "B6_DGROUP_DATA_CONTRACTS_PASS",
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "published_at_kst": "2026-08-04T23:47:15+09:00",
+  "artifacts": [
+    {
+      "path": "yolla-panel-v1/real-estate-site-foundation/workers/b6-data-dgroup/REAL_ESTATE_DATA_OBJECT_CONTRACT_V1.json",
+      "commit": "865409cb066ecea2ee847b6f3b498d5eac528217"
+    },
+    {
+      "path": "yolla-panel-v1/real-estate-site-foundation/workers/b6-data-dgroup/D_GROUP_REQUEST_RESPONSE_CONTRACT_V1.json",
+      "commit": "7f0cf493d258c74c9d9f90c858ec86ad26db4b55"
+    },
+    {
+      "path": "yolla-panel-v1/real-estate-site-foundation/workers/b6-data-dgroup/MOCK_DATA_CONTRACT_V1.json",
+      "commit": "01558429b597a82033b804bd2f98195cf1c0a24a"
+    }
+  ],
+  "result_path": "yolla-panel-v1/real-estate-site-foundation/workers/b6-data-dgroup/RESULT.json",
+  "result_commit": null,
+  "source_authorities": [
+    "anbin1900-crypto/source-factory-core@a9b802b2221e4e2ed47a0e70a4daf9deebb90de9:.yolla/epics/YOLLA-REAL-ESTATE-SITE-FOUNDATION-20260804-001/EPIC.json",
+    "anbin1900-crypto/yolla-gas-station-portal PR #4@98d75399b83722f95d45e5808b472c81330c69db",
+    "anbin1900-crypto/yolla-gas-station-portal PR #5@458b485192a025d66da3b0dcc36ff949186fec9d",
+    "anbin1900-crypto/yolla-gas-station-portal Issue #6",
+    "anbin1900-crypto/yolla-gas-station-portal Issue #11",
+    "anbin1900-crypto/yolla-real-estate-data-engine PR #188@1bb475c440983aae761b897a3b58a8f4dab880cc"
+  ],
+  "validation": {
+    "machine_readable_required_object_count": 8,
+    "total_object_count": 10,
+    "listing_required_fields_missing_count": 0,
+    "external_api_internal_table_name_exposure_count": 0,
+    "request_response_operation_count": 9,
+    "deterministic_mock_golden_case_count": 4,
+    "deterministic_repeat_equality": true,
+    "public_search_private_listing_count": 0,
+    "json_parse": "PASS"
+  },
+  "forbidden_counters": {
+    "portal_source_mutation": 0,
+    "d_group_source_mutation": 0,
+    "production_action": 0,
+    "ready_transition": 0,
+    "merge_action": 0,
+    "secret_or_personal_data_committed": 0
+  }
+}
