@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0.0",
+  "assignment_id": "B1-WORKER-ADDITIONAL-WORK-AND-FIXTURE-SEED-BINDING-V1-20260804-001",
+  "registered_at_kst": "2026-08-04T11:56:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 19,
+  "control_branch": "integration/b1-collector-db-materialization-v1",
+  "parent_batch_id": "B1-EXTRACTOR-EXECUTION-BATCH-V1-20260804-001",
+  "existing_directives_superseded": false,
+  "new_directive_count": 0,
+  "worker_result_review": {
+    "workers_checked": 5,
+    "implementation_terminals_received": 0,
+    "worker_heads_advanced_after_wave2_task": 0,
+    "b2_to_b5_state": "TASK_FILE_ONLY_NO_IMPLEMENTATION_TERMINAL",
+    "b6_state": "TASK_FILE_ONLY_EVENT_WAIT_START_POINTER_NOT_CONFIRMED"
+  },
+  "b1_fixture_seed": {
+    "seed_commit": "8b8f7888128e7472269b79385886ff48a421de1f",
+    "package_manifest_path": "yolla-panel-v1/b1-collector-materialization/b1-owned/fixture-extractor-v1/B1_FIXTURE_EXTRACTOR_PACKAGE_MANIFEST_V1.json",
+    "fixture_terminal": "B1_FIXTURE_EXTRACTOR_SHELL_PASS",
+    "mode": "FIXTURE",
+    "network_call_count": 0,
+    "actual_site_extraction": false,
+    "input_record_count": 4,
+    "duplicate_count": 1,
+    "output_record_count": 3,
+    "raw_artifact_manifest_sha256": "9059a443c88103cf1472b50617e61097b29ad8e118825485c2a1d68ccf748a97",
+    "source_record_envelope_sha256": "9889c83d72f6ecca84714509493552b8a9bfa304917275cb779ddb0ecb3aa0ba",
+    "normalized_dataset_sha256": "add8698d36c9a87043409168ce6831cf3ab87ff5d77db98c2a81aa782591a112",
+    "sqlite_decoded_sha256": "f03e20844e805af3105791934352f8bc3dcbeb1a165ad5c80e5d6ae5739ea14d",
+    "sqlite_decoded_size_bytes": 12288,
+    "source_field_loss_count": 0,
+    "semantic_transformation_count": 0,
+    "d_canonical_schema_decision_count": 0,
+    "d_canonical_db_write_count": 0,
+    "remote_gaps": [
+      "fixture_materialized.sqlite.b64_NOT_PUBLISHED",
+      "B1_REMOTE_TEST_RESULT_RECEIPT_NOT_PUBLISHED"
+    ],
+    "seed_classification": "REFERENCE_SEED_NOT_WORKER_TERMINAL"
+  },
+  "additional_work": {
+    "B-2": {
+      "pr": 38,
+      "existing_task_id": "B1-B2-EXECUTION-TASK-V1-20260804-001",
+      "observed_head": "34a536c91fbd537643bf40eb19c598ad177f880e",
+      "action": "LATE_BIND_B1_FIXTURE_ADAPTER_AND_COMMON_CONTRACT_THEN_IMPLEMENT_OWNED_RUNTIME_SCOPE_QUOTA_SCHEDULE",
+      "required_checks": [
+        "FIXTURE_ADAPTER_PACKAGE_SCHEMA_PARITY",
+        "B1_COMMON_CONTRACT_CONSUMPTION",
+        "UNVERIFIED_ACTUAL_MODE_REJECT",
+        "ZERO_NETWORK_CALLS",
+        "START_TEST_FINAL_LATEST_POINTER_POSTED"
+      ],
+      "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY_OR_EXACT_BLOCKER"
+    },
+    "B-3": {
+      "pr": 39,
+      "existing_task_id": "B1-B3-EXECUTION-TASK-V1-20260804-001",
+      "observed_head": "8c31cec83f1b81ba80511bed8a61b15536da3b48",
+      "action": "REPRODUCE_B1_TWO_PAGE_FIXTURE_PAGINATION_RETRY_RESUME_INCREMENTAL_AND_DUPLICATE_SUPPRESSION",
+      "required_checks": [
+        "INPUT_4_OUTPUT_3_DUPLICATE_1_PARITY",
+        "CRASH_RESUME_DETERMINISTIC",
+        "SECOND_RUN_EXECUTION_DELTA_ZERO",
+        "PROGRESS_MONOTONIC",
+        "START_TEST_FINAL_LATEST_POINTER_POSTED"
+      ],
+      "terminal": "B3_EXTRACTOR_RETRY_RESUME_READY_OR_EXACT_BLOCKER"
+    },
+    "B-4": {
+      "pr": 40,
+      "existing_task_id": "B1-B4-EXECUTION-TASK-V1-20260804-001",
+      "observed_head": "f1c327882bfd73d9670afa661e11c6acc8a8cccb",
+      "action": "INDEPENDENTLY_REBUILD_RAW_ARTIFACT_MANIFEST_AND_SOURCE_RECORD_ENVELOPE_FROM_B1_FIXTURE_BYTES",
+      "required_checks": [
+        "PAGE1_SHA256_b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+        "PAGE2_SHA256_c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+        "TOTAL_RECORD_COUNT_4",
+        "SOURCE_URL_TIME_METADATA_PARITY",
+        "RAW_OVERWRITE_REJECT",
+        "START_TEST_FINAL_LATEST_POINTER_POSTED"
+      ],
+      "terminal": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY_OR_EXACT_BLOCKER"
+    },
+    "B-5": {
+      "pr": 41,
+      "existing_task_id": "B1-B5-EXECUTION-TASK-V1-20260804-001",
+      "observed_head": "dfd99f6188d263fd7e7ded72396f72006680fee8",
+      "action": "REPRODUCE_LOSSLESS_NORMALIZATION_AND_PUBLISH_MISSING_SQLITE_BASE64_TRANSPORT_WITH_READBACK",
+      "required_checks": [
+        "NORMALIZED_DATASET_SHA256_add8698d36c9a87043409168ce6831cf3ab87ff5d77db98c2a81aa782591a112",
+        "SOURCE_FIELD_LOSS_COUNT_ZERO",
+        "INPUT_4_OUTPUT_3_DUPLICATE_1_PARITY",
+        "SQLITE_ROW_COUNT_3",
+        "SQLITE_DECODED_SIZE_12288",
+        "SQLITE_DECODED_SHA256_f03e20844e805af3105791934352f8bc3dcbeb1a165ad5c80e5d6ae5739ea14d",
+        "fixture_materialized.sqlite.b64_PUBLISHED_AND_READBACK",
+        "START_TEST_FINAL_LATEST_POINTER_POSTED"
+      ],
+      "terminal": "B5_NORMALIZED_DATASET_EXTRACTION_RECEIPT_READY_OR_EXACT_BLOCKER"
+    },
+    "B-6": {
+      "pr": 42,
+      "existing_task_id": "B1-B6-EXECUTION-TASK-V1-20260804-001",
+      "observed_head": "6ccf2fea6cc4d05db2704ac08c50eb8ff43015b1",
+      "action": "POST_START_EVENT_WAIT_POINTER_AND_RUN_B1_FIXTURE_SEED_PREFLIGHT_NOW_THEN_LATE_BIND_B2_TO_B5_TERMINALS",
+      "required_checks_now": [
+        "B6_START_REPORT_PUBLISHED",
+        "B6_EVENT_WAIT_POINTER_PUBLISHED",
+        "B1_SEED_REQUIRED_OUTPUTS_PRESENT_4_OF_4",
+        "B1_SEED_REMOTE_GAPS_RECORDED_NOT_FALSE_PASS",
+        "PRELIMINARY_C1_SOURCE_EVIDENCE_BOUNDARY_PASS"
+      ],
+      "entry_condition_for_final": "B2_B3_B4_B5_TERMINALS_AND_LATEST_POINTERS_4_OF_4",
+      "terminal": "B6_EXTRACTION_ACCEPTANCE_C1_HANDOFF_READY_OR_EXACT_BLOCKER"
+    }
+  },
+  "b1_completion_condition": "B2_TO_B5_TERMINALS_4_OF_4_AND_B6_INDEPENDENT_TERMINAL_AND_B1_REMOTE_ACCEPTANCE",
+  "required_b1_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
+  "boundaries": {
+    "actual_site_extraction": false,
+    "actual_bulk_collection": false,
+    "unverified_adapter_use": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
