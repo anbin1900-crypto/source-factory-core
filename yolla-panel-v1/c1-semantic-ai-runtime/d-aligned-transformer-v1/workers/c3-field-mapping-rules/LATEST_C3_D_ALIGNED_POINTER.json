@@ -14,6 +14,8 @@
     "prior_pointer_blob": "e77cdc3f449d405b3144f8dd18ed21f269863748",
     "preterminal_pointer_commit": "c78e292d666afa70605cab60655f733476f15e87",
     "preterminal_pointer_blob": "db90658ed9e70c5e4afceef1d74886d2ff4f34e5",
+    "terminal_bound_pointer_commit": "35e004190483b816ce0fa7bd46108adefd7fd023",
+    "terminal_bound_pointer_blob": "64cdf3632837a9e867b32d82557640c9ff35453c",
     "pointer_commit_status": "THIS_COMMIT",
     "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c3-field-mapping-rules/**"
   },
@@ -54,6 +56,11 @@
     "source_mutation_count": 0,
     "work_not_performed_reason": "No B-1 package-shape change, no D-1 mapping change and no C-4 closure output were published after Cycle 0001. Reapplying aliases or inventing source values is prohibited."
   },
+  "publication": {
+    "final_pointer_comment_pr17": 5184797933,
+    "c1_mirror_comment_pr20": 5184801804,
+    "publication_status": "PUBLISHED"
+  },
   "authority_delta_revalidation": {
     "b1_previous_package_head": "fb20d1df329150388889ad13ff0507b0fb3060be",
     "b1_current_head": "2026443d51256f6c11295d3db9c652dc34b90bd4",
@@ -93,7 +100,6 @@
   "decision": "EXACT_BLOCKER_EXTERNAL_22_PATHS_NO_AUTHORITY_DELTA",
   "terminal_status": "BLOCKED_EXTERNAL",
   "failure_signature": "REQUIRED_SOURCE_PATHS_22_EXTERNAL_OWNERS",
-  "final_pointer_comment_status": "PENDING_PUBLICATION_AFTER_THIS_COMMIT",
   "ci_status": "NOT_RUN_NOT_CLAIMED_PASS",
   "production": false,
   "ready": false,
