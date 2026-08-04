@@ -1,0 +1,25 @@
+{
+  "schema_version": "A7_TO_A2_ACQUISITION_AUTHORIZATION_RECOMMENDATION_V1",
+  "directive_id": "A2-TO-A7-FIXTURE-ACQUISITION-GOVERNANCE-AUDIT-V5-20260804-001",
+  "recovery_directive_id": "A2-TO-A7-WAVE5-FIXTURE-ACQUISITION-GOVERNANCE-RESULT-RECOVERY-V1-20260804-001",
+  "evaluated_at_kst": "2026-08-04T23:13:00+09:00",
+  "canonical_recommendation_path": "A7_TO_A2_CAPTURE_AUTHORIZATION_RECOMMENDATION_V1.json",
+  "recommendation": "DO_NOT_REQUEST_AUTHORIZATION_YET",
+  "capture_execution_authorized": false,
+  "missing_inputs": [
+    "A3_WAVE5_ACQUISITION_PACKAGE",
+    "A5_WAVE5_FIXTURE_REQUIREMENT_AUTHORITY",
+    "RESPONSE_SIZE_MAX_BYTES",
+    "TIMEOUT_SECONDS",
+    "REDACTED_DERIVATIVE_RETENTION_PERIOD",
+    "TRANSIENT_RAW_BYTE_DISPOSAL_DEADLINE"
+  ],
+  "authorization_owner": "A-0/A-1_AFTER_A2_REQUEST",
+  "a7_authority": "AUDIT_AND_RECOMMENDATION_ONLY",
+  "implementation_file_direct_edit": false,
+  "self_approval": false,
+  "live_capture_execution_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
