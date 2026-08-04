@@ -1,27 +1,51 @@
 {
-  "schema_version": "LATEST_A1_PHASE0_START_GATE_POINTER_V1",
-  "status": "PHASE0_START_GATE_BLOCKED_8_OF_10",
+  "schema_version": "LATEST_A1_PHASE0_START_GATE_POINTER_V2",
+  "status": "PHASE0_START_GATE_PASS_10_OF_10",
+  "terminal": "A1_PHASE0_START_GATE_PASS_10_OF_10",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "report_path": "yolla-panel-v1/a0-successor-control/reports/A1_PHASE0_START_GATE_RECONCILIATION_V2.json",
-  "report_commit": "208f3e80c9638e1ecd71ad5dc55e8ecf04879716",
-  "report_blob": "4149d8af16f3e2a98e7a485c60ecacddaf089bb0",
-  "accepted_start_ledgers": 8,
+  "report_path": "yolla-panel-v1/a0-successor-control/reports/A1_PHASE0_START_GATE_CLOSURE_V3.json",
+  "report_commit": "aadf2b377ccb1a58bdf6817ef75bdc961726b8b8",
+  "report_blob": "92e070cc317866f22b8400fd6de4fe6256bf0f72",
+  "accepted_start_ledgers": 10,
   "required_start_ledgers": 10,
-  "progress_percent": 80,
-  "missing_roles": [
-    "A-2",
-    "A-7"
-  ],
-  "required_next_event": "A2_AND_A7_FORMAL_START_REPORTS_COMMITTED",
-  "a2_wave4_control_comment": 5171701061,
-  "a7_wave4_reactivation_comment": 5171697188,
-  "duplicate_directive_count": 0,
-  "phase0_pass_claimed": false,
+  "progress_percent": 100,
+  "missing_roles": [],
+  "newly_accepted": {
+    "A-2": {
+      "control_pr": 18,
+      "head": "3c3f7077ab070cb0259c253268ab3a7b17ecb446",
+      "start_report_commit": "be51db9cad416274e0472e7de2f772f035e839c7",
+      "start_report_blob": "4f33604e3a86f61bdfa780370774700d242911c1",
+      "latest_pointer_blob": "b81a70cd7a91fe9a10d8502c7837af6e16db52cb"
+    },
+    "A-7": {
+      "control_pr": 26,
+      "head": "b41978dc9840446293f5e4a6255e5d869604f16d",
+      "start_report_commit": "15dcc1282a1dc5822a7f56d57cfd8dae166c6378",
+      "start_report_blob": "04f20ee4cbefcc322bb874691229aa1d9d67cc73",
+      "start_pointer_commit": "e44d5b3969e56f06627a47f65dd832b1cdcc3f0f",
+      "start_pointer_blob": "f6a850c59dbe32bdb128d26b5a7ec4d66a5de238"
+    }
+  },
+  "active_downstream": {
+    "a2_terminal": "A2_WAVE5_WORKER_RESULTS_NOT_PUBLISHED_RESULT_RECOVERY_ACTIVE",
+    "a2_cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
+    "a2_result_count": "0_OF_5",
+    "a7_status": "EVENT_WAIT",
+    "a7_remaining_event": "A3_WAVE5_1_TERMINAL_VALIDATION_REBIND_RETENTION_RECEIPTS_AND_POINTER_REMOTE_READBACK",
+    "duplicate_directive_count": 0
+  },
+  "required_next_event": "A2_WAVE5_WORKER_RESULT_RECOVERY_5_OF_5_OR_EXACT_BLOCKERS",
+  "subsequent_event": "A2_AUTHORIZATION_REQUEST_GATE_REEVALUATION",
+  "phase0_pass_claimed": true,
+  "target_pc_execution_count": 0,
+  "capture_execution_count": 0,
+  "live_site_call_count": 0,
   "production": false,
   "ready": false,
   "merge": false,
   "self_merge": false,
-  "updated_at_kst": "2026-08-04T05:59:00+09:00"
+  "updated_at_kst": "2026-08-05T01:26:00+09:00"
 }
