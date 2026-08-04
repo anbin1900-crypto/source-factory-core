@@ -1,7 +1,7 @@
 {
-  "schema_version": "LATEST_A1_SUCCESSOR_REPORT_POINTER_V3",
-  "status": "A1_SUCCESSOR_CONTROL_PHASE0_CLOSED_WAVE5_RECOVERY_ACTIVE",
-  "terminal": "A1_PHASE0_START_GATE_PASS_10_OF_10",
+  "schema_version": "LATEST_A1_SUCCESSOR_REPORT_POINTER_V4",
+  "status": "A1_PHASE0_CLOSED_ONE_SHOT_CAPTURE_REQUEST_DENIED_FAIL_CLOSED",
+  "terminal": "A1_ONE_SHOT_CAPTURE_AUTHORIZATION_DENIED_STALE_NON_CURRENT_A7_AUTHORITY",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
@@ -16,27 +16,38 @@
     "pointer_path": "yolla-panel-v1/a0-successor-control/LATEST_A1_PHASE0_START_GATE_POINTER.json",
     "pointer_commit": "6422aab66db716ad54b9c370e9abf7a849e5362d",
     "pointer_blob": "10f44136b2ac4cd8426cdc86daa836c4a9ca8642",
-    "commander_start_gate": "PASS_5_OF_5",
-    "a_group_worker_start_gate": "PASS_5_OF_5",
     "combined_start_gate": "PASS_10_OF_10",
     "phase0_pass": true
+  },
+  "capture_authorization_decision": {
+    "request_id": "A2-TO-A0-A1-ONE-SHOT-EXACT-RESPONSE-FIXTURE-CAPTURE-AUTHORIZATION-REQUEST-V1-20260805-001",
+    "request_comment": 5184545017,
+    "decision_report_path": "yolla-panel-v1/a0-successor-control/reports/A1_ONE_SHOT_EXACT_RESPONSE_FIXTURE_CAPTURE_AUTHORIZATION_DECISION_V1.json",
+    "decision_report_commit": "9f22644945f60987e125ca597a0d54cd1c9515e2",
+    "decision_report_blob": "968bb0b2bb1a842c9ca812be72e58ad3ee76c47e",
+    "decision": "DENIED",
+    "authorized_profiles": [],
+    "authorized_max_total_capture": 0,
+    "authorized_by": "A-1",
+    "first_blocker": "REQUEST_REFERENCES_A7_HEAD_AND_RECOMMENDATION_NOT_PRESENT_AT_CURRENT_PR26_REMOTE_HEAD",
+    "request_a7_head": "f4ca318a6335bc15970a8bff5c94f112d64807f4",
+    "current_a7_head": "b41978dc9840446293f5e4a6255e5d869604f16d",
+    "request_a7_head_ahead_of_current_by_commits": 5,
+    "current_a7_pointer_blob": "480b692a3e71f646e847785315ad3a02bec2fbf0",
+    "current_a7_status": "EVENT_WAIT",
+    "current_authorization_request_ready": false,
+    "capture_execution_authorized": false,
+    "live_site_call_authorized": false,
+    "credential_use_authorized": false
   },
   "a2_active_control": {
     "control_pr": 18,
     "head": "3c3f7077ab070cb0259c253268ab3a7b17ecb446",
     "latest_pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/LATEST_A2_REPORT_POINTER.json",
     "latest_pointer_blob": "b81a70cd7a91fe9a10d8502c7837af6e16db52cb",
-    "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
-    "terminal": "A2_WAVE5_WORKER_RESULTS_NOT_PUBLISHED_RESULT_RECOVERY_ACTIVE",
-    "required_result_count": 5,
-    "received_result_count": 0,
-    "result_recovery_comments": {
-      "A-3": 5180069370,
-      "A-4": 5180074035,
-      "A-5": 5180080933,
-      "A-6": 5180087453,
-      "A-7": 5180092915
-    }
+    "current_terminal": "A2_ONE_SHOT_AUTHORIZATION_REQUEST_DENIED_REPUBLISH_CURRENT_AUTHORITY_REQUIRED",
+    "verified_adapter_package_ready": false,
+    "b1_handoff_ready": false
   },
   "a7_active_control": {
     "control_pr": 26,
@@ -44,8 +55,9 @@
     "latest_pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/LATEST_A7_REPORT_POINTER.json",
     "latest_pointer_blob": "480b692a3e71f646e847785315ad3a02bec2fbf0",
     "status": "EVENT_WAIT",
-    "remaining_event": "A3_WAVE5_1_TERMINAL_VALIDATION_REBIND_RETENTION_RECEIPTS_AND_POINTER_REMOTE_READBACK",
-    "authorization_request_ready": false
+    "authorization_recommendation": "EVENT_WAIT_DO_NOT_REQUEST_ONE_SHOT_AUTHORIZATION_YET",
+    "authorization_request_ready": false,
+    "remaining_event": "A3_WAVE5_1_TERMINAL_VALIDATION_REBIND_RETENTION_RECEIPTS_AND_POINTER_REMOTE_READBACK"
   },
   "a0_runtime_execution_pointer": {
     "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_SUCCESSOR_REPORT_POINTER.json",
@@ -55,17 +67,19 @@
     "target_pc_execution_performed": false,
     "target_pc_pass_claimed": false
   },
-  "next_gate": "A2_WAVE5_WORKER_RESULT_RECOVERY_5_OF_5_OR_EXACT_BLOCKERS",
-  "subsequent_gate": "A2_AUTHORIZATION_REQUEST_GATE_REEVALUATION",
+  "next_gate": "A7_CURRENT_REMOTE_HEAD_AUTHORIZATION_READY_TRUE_AND_A2_NEW_CURRENT_HEAD_REQUEST_OR_CONTINUE_FIXTURE_FIRST",
   "new_directive_required_now": false,
   "authority_precedence": "EXACT_GITHUB_REMOTE_HEAD_COMMITTED_LEDGER",
   "target_pc_execution_count": 0,
   "capture_execution_count": 0,
   "live_site_call_count": 0,
   "credential_use_count": 0,
+  "auth_bypass": false,
+  "access_control_bypass": false,
+  "actual_bulk_collection": false,
   "production": false,
   "ready": false,
   "merge": false,
   "self_merge": false,
-  "updated_at": "2026-08-05T01:26:00+09:00"
+  "updated_at": "2026-08-05T06:55:00+09:00"
 }
