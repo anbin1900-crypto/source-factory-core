@@ -1,0 +1,56 @@
+{
+  "schema_version": "A00_V510236_INDEPENDENT_RUNTIME_BUILD_REPORT_V2",
+  "status": "CORRECTED_PACKAGE_PASS_TARGET_PC_RETRY_REQUIRED",
+  "terminal": "A00_V510236_INDEPENDENT_RUNTIME_POWERSHELL51_COMPAT_FIX_PASS",
+  "root_cause": "Windows PowerShell 5.1 interpreted a BOM-less UTF-8 .ps1 as the active ANSI codepage. Three Korean registry labels became mojibake and broke quoted hash literals.",
+  "corrections": [
+    "Replaced all non-ASCII executable-script labels with ASCII-safe English labels",
+    "Guaranteed install_independent_runtime.ps1 is ASCII-only",
+    "Moved independentElectronModules initialization before StrictMode reference",
+    "Added explicit non-interference receipt fields",
+    "Rebuilt embedded payload and outer BAT installer",
+    "Added Windows PowerShell 5.1 lexical compatibility regression test"
+  ],
+  "non_interference": {
+    "existing_runtime_execute_count": 0,
+    "existing_runtime_write_count": 0,
+    "existing_process_stop_count": 0,
+    "shared_queue_import_count": 0,
+    "shared_pointer_write_count": 0,
+    "shared_launcher_overwrite_count": 0,
+    "default_dispatch_enabled": false
+  },
+  "validation": {
+    "payload_decode": "PASS",
+    "embedded_script_ascii_only": "PASS",
+    "powershell51_mojibake_regression": "PASS",
+    "quote_bracket_lexical_validation": "PASS",
+    "strictmode_initialization_order": "PASS",
+    "package_regression": "PASS",
+    "target_pc_install_retry": "NOT_RUN"
+  },
+  "artifacts": {
+    "installer": {
+      "drive_file_id": "18kbxIB2ZZKGBKXMhAT1vxXQ87AKhIZbS",
+      "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510236_INDEPENDENT_RUNTIME_FIXED.bat",
+      "size_bytes": 14163,
+      "sha256": "32901b9c61f7e839c48eddc91670138d672e603c1d7db3a10e221468c8a949e8",
+      "metadata_readback": "PASS"
+    },
+    "package": {
+      "drive_file_id": "1B57zhaG_WGzaMeEsHZAshaVMwncljH4O",
+      "file_name": "AI_YOLLA_V510236_INDEPENDENT_RUNTIME_PACKAGE_FIXED.zip",
+      "size_bytes": 33374,
+      "sha256": "afbb89f07b1e2ae9c99cfd43b77bacf02a3b03afff3de552c19a892ac59df49e",
+      "metadata_readback": "PASS"
+    },
+    "payload": {
+      "file_name": "independent_runtime_installer_payload.zip",
+      "size_bytes": 9713,
+      "sha256": "023bcee46f93fca72fef02e5557474f7c05bf5cda7a37b7b7c91219f00e39d7d"
+    }
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
