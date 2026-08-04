@@ -1,0 +1,39 @@
+{
+  "group_id": "GROUP-03",
+  "loop_id": "A-LOOP-GROUP-03",
+  "cycle_id": "A-LOOP-GROUP-03-GROUP03-W06-CYCLE-0001",
+  "worker_id": "GROUP03-W06",
+  "directive_id": "GROUP03-W01-TO-GROUP03-W06-C6V3-GATE-AND-TERMINAL-CLOSURE-CYCLE-0001",
+  "directive_comment_id": 5183596219,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "execution_branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "evaluated_at_kst": "2026-08-05 05:32 KST",
+  "schema_version": "C6_D_ALIGNED_FINAL_E2E_REPORT_V3",
+  "report_id": "C6-D-ALIGNED-FINAL-E2E-REPORT-V3-20260805-001",
+  "gate_summary": {
+    "c2": "ACCEPTED_PASS",
+    "c3": "ACCEPTED_EXACT_BLOCKER_TERMINAL",
+    "c4": "NOT_ACCEPTED_V2_PACKAGE_TERMINAL_NOT_PUBLISHED",
+    "c5": "NOT_ACCEPTED_WAITING_C4_V2_PACKAGE",
+    "worker_gate": "PASS_2_OF_4"
+  },
+  "planned_final_e2e_checks": {
+    "source_lineage": {"required": 50, "validated_upstream": 50, "final_package_validation": "NOT_EXECUTED"},
+    "mapping_rules": {"required": 43, "validated_upstream": 43, "final_package_validation": "NOT_EXECUTED"},
+    "required_missing_paths": {"required": 22, "preservation_validation": "NOT_EXECUTED_NO_C4_V2_PACKAGE"},
+    "optional_missing_paths": {"required": 4, "preservation_validation": "NOT_EXECUTED_NO_C4_V2_PACKAGE"},
+    "provenance_evidence_preservation": "NOT_EXECUTED_NO_C4_V2_PACKAGE",
+    "silent_drop_count": null,
+    "source_value_invention_count": null,
+    "alias_inference_count": null,
+    "deterministic_replay": "NOT_EXECUTED_NO_C4_V2_PACKAGE",
+    "handoff_package_completeness": "FAIL_0_OF_4"
+  },
+  "pr188_exact_authority_bound": "PASS_4_OF_4",
+  "final_v3_e2e_executed": false,
+  "reason_not_executed": "C4_V2_PACKAGE_AND_C5_V2_VALIDATION_TERMINALS_NOT_PUBLISHED",
+  "first_blocker": "C4_V2_PACKAGE_TERMINAL_NOT_PUBLISHED",
+  "terminal": "C6_D_ALIGNED_TRANSFORMER_E2E_EXACT_BLOCKER",
+  "decision": "EXACT_EXTERNAL_BLOCKER"
+}
