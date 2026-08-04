@@ -1,0 +1,66 @@
+--- a/payload/main.js
++++ b/payload/main.js
+@@ -15,7 +15,7 @@
+ const path = require("path");
+ const crypto = require("crypto");
+ 
+-const APP_VERSION = "5.10.1";
++const APP_VERSION = "5.10.2";
+ const PROJECTS_HOME = "https://chatgpt.com/projects";
+ const ACTIVE_CORE = path.join(
+   "E:",
+@@ -2071,6 +2071,18 @@
+   return path.join(STATE_ROOT, "automation-v1", "dispatch-receipts", `${safeJob}.json`);
+ }
+ 
++function currentWorkerBrowserPartition() {
++  if (!workerBrowserView || workerBrowserView.webContents.isDestroyed()) {
++    return WORKER_BROWSER_PARTITION;
++  }
++  const browserSession = workerBrowserView.webContents.session;
++  if (browserSession && typeof browserSession.getPartition === "function") {
++    const partition = browserSession.getPartition();
++    if (partition) return partition;
++  }
++  return WORKER_BROWSER_PARTITION;
++}
++
+ function actualWorkerSession(workerId) {
+   const merged = stateStore.getMergedRegistry();
+   const role = merged.roles.find(item => item.role_id === workerId);
+@@ -2078,7 +2090,7 @@
+   const profile = state.seat_profiles[workerId];
+   if (!role || !profile) return null;
+   const partition = workerBrowserView && !workerBrowserView.webContents.isDestroyed()
+-    ? workerBrowserView.webContents.session.getPartition()
++    ? currentWorkerBrowserPartition()
+     : WORKER_BROWSER_PARTITION;
+   return {
+     role_id: workerId,
+@@ -2141,7 +2153,7 @@
+       duplicate_prompt_key: request.correlation.duplicate_prompt_key,
+       payload_sha256: request.correlation.payload_sha256,
+       execution_id: request.correlation.execution_id,
+-      browser_session_id: workerBrowserView.webContents.session.getPartition(),
++      browser_session_id: currentWorkerBrowserPartition(),
+       worker_window_id: `worker-browser::${workerId}`,
+       context_url: profile.context_url,
+       result_authority: "GITHUB_WORK_RESULT_WATCHER_V1",
+@@ -2197,7 +2209,7 @@
+       schema_version: "PANEL_RELAY_DISPATCH_RECEIPT_V1", accepted: true,
+       role_id: roleId, kind: request.kind, correlation_key: request.correlation_key,
+       execution_id: `relay-exec-${crypto.randomBytes(8).toString("hex")}`,
+-      context_url: profile.context_url, browser_session_id: workerBrowserView.webContents.session.getPartition(),
++      context_url: profile.context_url, browser_session_id: currentWorkerBrowserPartition(),
+       prompt_sha256: crypto.createHash("sha256").update(prompt, "utf8").digest("hex"),
+       result_authority: "GITHUB_REMOTE_COMMITTED_RESULT_JSON", dispatched_at: nowIso(), production: false
+     };
+@@ -3025,7 +3037,7 @@
+   throw new Error("YOLLA_WORKSPACE_V5_REGISTRY_INVALID");
+ }
+ 
+-app.setName("AI YOLLA Panel Workspace V5.10.1 Group Epic Relay");
++app.setName("AI YOLLA Panel Workspace V5.10.2 Group Epic Relay Session Hotfix");
+ 
+ if (!app.requestSingleInstanceLock()) {
+   app.quit();
