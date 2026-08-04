@@ -1,0 +1,106 @@
+{
+  "schema_version": "B6_B3_INPUT_PREFLIGHT_V1",
+  "preflight_id": "B6-B3-INPUT-PREFLIGHT-20260805-001",
+  "performed_at_kst": "2026-08-05T05:50:00+09:00",
+  "group_id": "GROUP-02",
+  "loop_id": "A-LOOP-GROUP-02",
+  "cycle_id": "A-LOOP-GROUP-02-GROUP02-W06-CYCLE-0002",
+  "worker_id": "GROUP02-W06",
+  "directive_id": "B1-TO-B6-EXTRACTION-ACCEPTANCE-C1-HANDOFF-V1-20260804-001",
+  "directive_comment_id": 5184282804,
+  "followup_attempt": 0,
+  "dispatch_token_observation": {
+    "invocation_dispatch_token": "A-8c0a12b8dc7f75eb9ca0225b8b2e6e76f64e99f2",
+    "directive_embedded_dispatch_token": "A-01335a00e334b4974bb9d9faab1523c1d7ee2204",
+    "match": false,
+    "handling": "RECORDED_NON_BLOCKING_BECAUSE_GROUP_LOOP_CYCLE_WORKER_DIRECTIVE_AND_COMMENT_ID_MATCH_AND_USER_EXPLICITLY_INVOKED_THIS_CYCLE"
+  },
+  "task_id": "B1-B6-EXECUTION-TASK-V1-20260804-001",
+  "source": {
+    "worker": "B-3",
+    "repository": "anbin1900-crypto/source-factory-core",
+    "pull_request": 39,
+    "branch": "worker/b3-extractor-retry-resume-v1",
+    "head": "f8299be24108b84af06abfe53e939c8bf68ec9dd",
+    "state": "OPEN_DRAFT_UNMERGED",
+    "terminal": "B3_EXTRACTOR_RETRY_RESUME_READY"
+  },
+  "exact_readback": {
+    "latest_pointer": {
+      "blob": "fb81b02eac0fca4597f5a93e168a5889e0046df1",
+      "schema_version": "LATEST_B3_REPORT_POINTER_V1",
+      "status": "PASS_REMOTE_READBACK"
+    },
+    "final_report": {
+      "blob": "2938d4e49462b17e5494b298fa49aa7db7424cf5",
+      "schema_version": "B3_FINAL_REPORT_V1",
+      "status": "PASS"
+    },
+    "test_results": {
+      "blob": "706ee49f2342bdfd39e701aca14f2c7f1d7d01f6",
+      "schema_version": "B3_TEST_RESULTS_V1",
+      "status": "PASS_32_OF_32"
+    },
+    "remote_readback_receipt": {
+      "blob": "d82a813d10535e4c4fe505427e4300a6ac412c69",
+      "schema_version": "B3_REMOTE_READBACK_RECEIPT_V1",
+      "status": "PASS_5_OF_5_KEY_AUTHORITIES"
+    },
+    "key_authority_blobs": {
+      "pagination_source": "e447408ab0f09454ffd2b9781b8876d7840d3abd",
+      "test_results": "706ee49f2342bdfd39e701aca14f2c7f1d7d01f6",
+      "final_report": "2938d4e49462b17e5494b298fa49aa7db7424cf5",
+      "source_manifest": "f35239c507d276a537c668141021102d3c4a616e",
+      "terminal_event": "f04df08c085126ee2ec3ce89bdac0baad8cce6f6"
+    }
+  },
+  "validation": {
+    "head_match": "PASS",
+    "terminal_match": "PASS",
+    "remote_readback": "PASS_5_OF_5_KEY_AUTHORITIES",
+    "python_compile": "PASS",
+    "unit_tests": "PASS_32_OF_32",
+    "input_record_count": 4,
+    "duplicate_count": 1,
+    "output_record_count": 3,
+    "count_equation": "PASS_INPUT_4_EQUALS_OUTPUT_3_PLUS_DUPLICATE_1",
+    "crash_resume": "PASS",
+    "second_run_execution_delta": 0,
+    "second_run_ledger_delta": 0,
+    "progress_monotonic": "PASS",
+    "network_call_count": 0,
+    "actual_site_extraction": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "first_failure_correction_verified": {
+    "failure_signature": "LEDGER_MUTABLE_PAYLOAD_HASH_DRIFT",
+    "initial_result": "PASS_20_ERRORS_12",
+    "root_cause": "HASHED_LEDGER_PAYLOAD_RETAINED_MUTABLE_CURSOR_OUTPUT_REFERENCE",
+    "correction": "DEEP_COPY_PAYLOAD_AND_RECONSTRUCTED_ENTRIES_BEFORE_HASH_AND_STORAGE",
+    "rerun": "PASS_32_OF_32",
+    "final_regression": "PASS_32_OF_32"
+  },
+  "independent_preflight_decision": "PASS_ACCEPTED_B3_INPUT_FOR_B6_EVENT_WAIT",
+  "accepted_for_final_matrix": true,
+  "accepted_inputs_after_preflight": "2_OF_4",
+  "accepted_workers": ["B-2", "B-3"],
+  "waiting_for": ["B-4", "B-5"],
+  "entry_condition_met": false,
+  "status": "EVENT_WAIT_B4_B5",
+  "final_acceptance_started": false,
+  "final_acceptance_completed": false,
+  "c1_handoff_candidate_created": false,
+  "boundaries": {
+    "b3_implementation_modified": false,
+    "b2_to_b5_implementation_edit": false,
+    "unverified_adapter_use": false,
+    "actual_site_extraction": false,
+    "semantic_transformation": false,
+    "d_canonical_db_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
