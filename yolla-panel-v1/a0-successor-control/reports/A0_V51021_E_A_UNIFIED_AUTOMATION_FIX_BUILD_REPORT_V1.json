@@ -1,0 +1,124 @@
+{
+  "schema_version": "A0_V51021_E_A_UNIFIED_AUTOMATION_FIX_BUILD_REPORT_V1",
+  "owner": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "observed_remote_head_before_publication": "8b1f07843210decce282c7f4fc69df1af27c550a",
+  "status": "EXACT_V5102_BASELINE_E_A_UNIFIED_FULL_RELEASE_BUILD_PASS_TARGET_PC_PENDING",
+  "terminal": "A0_V51021_E_A_UNIFIED_AUTOMATION_FIX_BUILD_PASS",
+  "baseline": {
+    "required_version": "5.10.2",
+    "result_version": "5.10.2.1",
+    "v511_source_used": false,
+    "v512_source_used": false,
+    "authority_pointer": "yolla-panel-v1/a0-successor-control/automation-v2/v5102-group-loop/LATEST_A0_V5102_GROUP_COMMANDER_WORKER_LOOP_POINTER.json",
+    "authority_source_drive_file_id": "1a11agMxrQSB3G3B2WxYdp0xNsnC3LnAZ",
+    "authority_source_sha256": "a4113d2dfd4632976478450c5354534f7ec216f66cb1e808c4e7c54daba44a85"
+  },
+  "target_pc_diagnostic_basis": {
+    "observed_app_version": "5.12.4.1",
+    "actual_dispatch_receipt_workers": ["B-2", "B-3", "B-5", "B-6"],
+    "actual_dispatch_receipt_count": 4,
+    "remaining_dispatchable_worker": "B-4",
+    "remaining_failure_signature": "SCHEDULE_WORKER_CONTEXT_URL_REQUIRED:B-4",
+    "observed_active_worker_count": 4,
+    "observed_dispatchable_worker_count": 1,
+    "observed_utilization_percent": 80,
+    "panel_window_later_closed": true,
+    "monitor_window_later_closed": true,
+    "diagnostic_files": {
+      "diagnostic": {"file_name":"LATEST_DIAGNOSTIC_EXPORT(3).json","size_bytes":239426,"sha256":"38c552721a591280c65852ab71302e79f5cfffb1978db5a8fb5e7074b1bfcc58"},
+      "snapshot": {"file_name":"LATEST_ACTIVITY_MONITOR_SNAPSHOT(2).json","size_bytes":134699,"sha256":"00a7d9608f01da65fb297906133ae327ee35981612910d224c576b5245dd17cc"},
+      "events": {"file_name":"ACTIVITY_EVENTS(3).ndjson","size_bytes":1025448,"sha256":"318524fb8be46f9c7c5df702578a07c757099423495262584952dcf44020ed1f"}
+    }
+  },
+  "group_header_controls": ["E", "A", "EDIT", "ADD_WORKER"],
+  "e_mode": {
+    "name": "EPIC_SCHEDULE",
+    "purpose": "WORKER_JOB_SCHEDULE_V1_OR_EPIC_JSON_SEQUENTIAL_AUTOMATION",
+    "existing_schedule_runtime_reused": true,
+    "github_result_authority": "COMMITTED_RESULT_JSON"
+  },
+  "a_mode": {
+    "name": "COMMANDER_WORKER_CONTINUOUS_LOOP",
+    "lane_model": "ONE_INDEPENDENT_LANE_PER_WORKER",
+    "flow": ["COMMANDER_RESULT_AND_PENDING_REVIEW", "COMMANDER_NEXT_DIRECTIVE_GITHUB_POST", "EXACT_COMMENT_POINTER_WORKER_DISPATCH", "WORKER_END_TO_END_EXECUTION", "GITHUB_RESULT_WATCH", "RETURN_TO_COMMANDER"],
+    "worker_completion_condition": "NO_PENDING_DIRECTIVE=true",
+    "group_completion_condition": "ALL_ENABLED_WORKER_LANES_NO_PENDING_DIRECTIVE_TRUE",
+    "blocked_external_does_not_stop_other_lanes": true,
+    "failure_returns_to_commander_for_replan": true,
+    "controls": ["START", "PAUSE", "RESUME", "STOP", "TICK_NOW", "RETRY_SPECIFIC_WORKER"]
+  },
+  "mode_ownership": {
+    "E_AND_A_MUTUALLY_EXCLUSIVE_BROWSER_RUNTIME": true,
+    "E_START_PAUSES_A": true,
+    "A_START_PAUSES_E": true,
+    "new_runtime": false,
+    "new_queue": false,
+    "new_transport": false
+  },
+  "implemented_corrections": [
+    "B4_CONTEXT_URL_RECOVERY_FROM_LOCAL_ACTIVITY_EVIDENCE",
+    "WORKSPACE_STATE_CONTEXT_REPAIR_ON_INSTALL_AND_STARTUP",
+    "DISPATCH_RECEIPT_V2_REQUIRED_BEFORE_RESULT_WAITING",
+    "VALID_EXISTING_DISPATCH_RECEIPTS_PRESERVED",
+    "GHOST_ACTIVE_STATE_WITHOUT_PROOF_TO_RETRY_READY",
+    "EXACT_TARGET_CONVERSATION_KEY_VALIDATION_BEFORE_PROMPT_SEND",
+    "SEND_BUTTON_AND_FORM_SUBMIT_FALLBACKS",
+    "ERR_ABORTED_SUPERSEDED_NAVIGATION_DEDUPLICATION",
+    "ACTIVE_AUTOMATION_WINDOW_CLOSE_HIDES_INSTEAD_OF_DESTROYING_RUNTIME",
+    "SECOND_INSTANCE_RESTORES_PANEL_WORKSPACE_AND_MONITOR",
+    "PROOF_AWARE_TOP_WORKER_COUNTS_AND_ROW_STATUS",
+    "E_A_MODE_MUTUAL_EXCLUSION",
+    "RESTART_RESUME_AND_DUPLICATE_SUPPRESSION"
+  ],
+  "ui": {
+    "left_worker_list": "PREVIOUS_COMPACT_ONE_GROUP_WORKER_LIST",
+    "worker_menu_popup": "E_A_AUTOMATION_FILE_AND_STATUS",
+    "top_counts": ["TOTAL_WORKERS", "WORKING", "RESTING", "ERROR"],
+    "status_source": "ACTUAL_RUNTIME_AND_DISPATCH_PROOF",
+    "manual_status_override_removed": true
+  },
+  "validation": {
+    "self_extract_payload_readback": "PASS",
+    "payload_entry_count": 5,
+    "release_entry_count": 59,
+    "release_sha256_readback": "PASS",
+    "node_syntax": "PASS_8_OF_8",
+    "regression_suite_count": 15,
+    "all_regression_suites": "PASS",
+    "group_loop_core": "PASS_32_ASSERTIONS",
+    "group_loop_ui_runtime_binding": "PASS_24_ASSERTIONS",
+    "e_a_unified_binding": "PASS_28_ASSERTIONS",
+    "context_and_ghost_state_repair": "PASS_7_ASSERTIONS",
+    "worker_schedule_runtime": "PASS_15_ASSERTIONS",
+    "automation_runtime": "PASS_17_ASSERTIONS",
+    "two_mode_source_core": "PASS_33_ASSERTIONS",
+    "duplicate_execution_count": 0,
+    "manual_relay_count": 0
+  },
+  "installer_artifact": {
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V51021_E_A_UNIFIED_AUTOMATION_FIX.bat",
+    "size_bytes": 194079,
+    "sha256": "773f8e5fa096d7cd2ac9ca18e3a83ab114ba5c84848069a23beaca78fd407cfc",
+    "drive_file_id": "1SiWBUa6Bva906XfJP_9R1iYT5wqTm9mB",
+    "target_release": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\v5.10.2.1-e-a-unified-automation-fix",
+    "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_1.bat"
+  },
+  "embedded_payload": {"file_name":"AI_YOLLA_V51021_E_A_UNIFIED_INSTALLER_PAYLOAD.zip","size_bytes":140623,"sha256":"10140a51c3ac0db8586e3079f06776e9e3b99ac512d7d79e2c11103a1eae5b43"},
+  "embedded_release": {"file_name":"release.zip","size_bytes":139366,"sha256":"edbb14f1a46d167aa033a403e99e51b9b3b1fac3199c90456cb31a741d170ff5"},
+  "target_pc": {
+    "new_v51021_installed": false,
+    "new_state_repair_observed": false,
+    "a_button_visual_observed": false,
+    "actual_a_loop_observed": false,
+    "all_workers_no_pending_directive_observed": false
+  },
+  "next_gate": "INSTALL_V51021_THEN_VERIFY_B4_CONTEXT_RECOVERY_E_A_CONTROLS_AND_ONE_REAL_A_LANE_CYCLE",
+  "official_automation_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "completed_at": "2026-08-05T00:13:29+09:00"
+}
