@@ -1,9 +1,9 @@
 {
   "schema_version": "LATEST_A0_AUTOMATION_RUNTIME_POINTER_V1",
-  "status": "A0_V51023_LOG_STATUS_WINDOW_RESTORE_BUILD_PASS_TARGET_PC_PENDING",
+  "status": "A0_V510232_NATIVE_LOG_DOWNLOAD_BUILD_PASS_TARGET_PC_PENDING",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "current_ui_version": "5.10.2.3",
+  "current_ui_version": "5.10.2.3.2",
   "source_baseline_version": "5.10.2",
   "v511_or_v512_source_used_as_baseline": false,
   "runtime_provider_version": "5.7.0",
@@ -20,39 +20,46 @@
       "worker_completion_condition": "NO_PENDING_DIRECTIVE=true"
     }
   },
-  "log_status_window": {
-    "status": "RESTORED_BUILD_PASS_TARGET_PC_PENDING",
-    "auto_open": true,
-    "panel_reopen_button": true,
-    "live_runtime_log_tail": true,
-    "worker_counts": ["TOTAL", "WORKING", "RESTING", "ERROR"],
-    "schedule_and_a_loop_state": true,
-    "floating_or_tiled_layout": true
+  "log_delivery": {
+    "status": "NATIVE_LOG_DOWNLOAD_BUILD_PASS_TARGET_PC_PENDING",
+    "folder_navigation_removed": true,
+    "runtime_log_file_required": false,
+    "panel_download_button": true,
+    "log_status_window_download_button": true,
+    "default_destination": "USER_DOWNLOADS",
+    "output_schema": "YOLLA_LOG_DOWNLOAD_V1",
+    "in_memory_log_fallback": true,
+    "runtime_snapshot_and_state_artifacts": true,
+    "secret_redaction": true
   },
   "current_pointer": {
-    "path": "yolla-panel-v1/a0-successor-control/automation-v2/v51023-log-status/LATEST_A0_V51023_LOG_STATUS_WINDOW_POINTER.json",
-    "commit": "d4b87c8561b4806eb919e6b49194f37607d0b185"
+    "path": "yolla-panel-v1/a0-successor-control/automation-v2/v510232-log-download/LATEST_A0_V510232_LOG_DOWNLOAD_POINTER.json",
+    "commit": "b3d37727ebc9de74a17be44b76d96ddfba9586db"
   },
   "latest_report": {
-    "path": "yolla-panel-v1/a0-successor-control/reports/A0_V51023_LOG_STATUS_WINDOW_RESTORE_BUILD_REPORT_V1.json",
-    "commit": "f9ed7e55872281f10a79de89ce7c857217de9cdd"
+    "path": "yolla-panel-v1/a0-successor-control/reports/A0_V510232_LOG_DOWNLOAD_BUILD_REPORT_V1.json",
+    "commit": "377e1cd6422b59e23190a9a14aa953fc73b95476"
   },
   "installer_artifact": {
-    "drive_file_id": "1cXDKTHntjsv66FPcyWiuU_Mm72avkRx-",
-    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V51023_LOG_STATUS_WINDOW_RESTORE.bat",
-    "sha256": "e0810b69b742d77cc8652d5bbde33b0f18db065e655efe34df6faae26e9c88e3",
-    "size_bytes": 201331
+    "drive_file_id": "1RGyL795i2hYB1iYpWBaiRcK17i0HQ-bV",
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510232_LOG_DOWNLOAD_FIX.bat",
+    "sha256": "c87b11fc3c9a3c817930e8ba6ecfaa7c7f910f564b53db29e667235dc7e4f333",
+    "size_bytes": 202251
   },
   "tests": {
     "self_extract_readback": "PASS",
-    "node_syntax": "PASS_12_OF_12",
-    "regression_suites": "PASS_17_OF_17",
-    "log_status_window": "PASS_16_ASSERTIONS",
+    "node_syntax": "PASS_42_OF_42",
+    "regression_suites": "PASS_18_OF_18",
+    "log_download": "PASS_18_ASSERTIONS",
     "duplicate_execution_count": 0
   },
+  "superseded_builds": [
+    {"version":"5.10.2.3.1","reason":"LOG_FOLDER_PATH_NOT_RELIABLE_AND_RUNTIME_LOG_MISSING","installer_status":"DO_NOT_RUN"},
+    {"version":"5.10.2.3","reason":"NODE_REPL_INSTALLER_DEFECT","installer_status":"DO_NOT_RUN"}
+  ],
   "target_pc_status": {
-    "v51023_installed": false,
-    "log_status_window_visual_observed": false,
+    "v510232_installed": false,
+    "actual_log_download_observed": false,
     "actual_E_mode_observed": false,
     "actual_A_loop_observed": false
   },
@@ -60,5 +67,5 @@
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at": "2026-08-05T00:37:00+09:00"
+  "updated_at": "2026-08-05T01:09:00+09:00"
 }
