@@ -1,0 +1,27 @@
+{
+  "schema_version": "ENDPOINT_CAPTURE_ALLOWLIST_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
+  "directive_id": "A2-TO-A3-WAVE5-FIXTURE-ACQUISITION-RESULT-RECOVERY-V1-20260804-001",
+  "allowlist_mode": "EXACT_PROFILE_METHOD_URL_PATTERN_ONLY",
+  "capture_execution_authorized": false,
+  "profile_count": 8,
+  "source_evidence": {
+    "endpoint_profile_blob": "3341c655cc8d84bbea70607c5a216c89a2d505a6",
+    "parameter_ledger_blob": "1cabef820c2dee1d4038a76c3eafef8e1dc46218"
+  },
+  "entries": [
+    {"profile_id":"EP-001","method":"GET","url_pattern":"https://fixture.invalid/api/listings/map","parameters":["query:bbox","query:zoom"],"expected_content_type":"application/json","capture_limit":1,"credential_dependency":"NOT_OBSERVED"},
+    {"profile_id":"EP-002","method":"GET","url_pattern":"https://fixture.invalid/api/listings/{listing_id}","parameters":["path:listing_id","query:include"],"expected_content_type":"application/json","capture_limit":1,"credential_dependency":"NOT_OBSERVED"},
+    {"profile_id":"EP-003","method":"GET","url_pattern":"https://fixture.invalid/api/listings/{listing_id}","parameters":["path:listing_id"],"expected_content_type":"application/json","capture_limit":1,"credential_dependency":"NOT_OBSERVED"},
+    {"profile_id":"EP-004","method":"GET","url_pattern":"https://fixture.invalid/api/listings","parameters":["query:page","query:size"],"expected_content_type":"application/json","capture_limit":1,"credential_dependency":"NOT_OBSERVED"},
+    {"profile_id":"EP-005","method":"GET","url_pattern":"https://fixture.invalid/api/regions","parameters":["query:parent"],"expected_content_type":"application/json","capture_limit":1,"credential_dependency":"NOT_OBSERVED"},
+    {"profile_id":"EP-010","method":"POST","url_pattern":"https://fixture.invalid/api/listings/search","parameters":["body:district_code","body:property_type","body:min_price"],"expected_content_type":"application/json","capture_limit":1,"credential_dependency":"NOT_OBSERVED"},
+    {"profile_id":"EP-011","method":"POST","url_pattern":"https://fixture.invalid/api/session/refresh","parameters":[],"expected_content_type":"application/json","capture_limit":1,"credential_dependency":"PRESENT_REDACTED_IN_A3_TRACE","execution_rule":"SKIP_WITHOUT_SEPARATE_CREDENTIAL_REFERENCE_AUTHORIZATION"},
+    {"profile_id":"EP-012","method":"POST","url_pattern":"https://fixture.invalid/graphql","parameters":["body:operationName","body:variables.keyword"],"expected_content_type":"application/json","capture_limit":1,"credential_dependency":"NOT_OBSERVED"}
+  ],
+  "denied": ["ANY_PROFILE_NOT_LISTED","ANY_METHOD_OR_URL_PATTERN_VARIATION","DISCOVERY_REQUESTS","PAGINATION_BEYOND_SINGLE_CAPTURE","STATIC_OR_MEDIA_CAPTURE","WEBSOCKET_CAPTURE","CREDENTIAL_VALUE_CAPTURE","AUTHENTICATION_BYPASS","ACCESS_CONTROL_BYPASS"],
+  "live_site_call_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
