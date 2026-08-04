@@ -1,0 +1,74 @@
+{
+  "schema_version": "B6_B2_INPUT_PREFLIGHT_V1",
+  "preflight_id": "B6-B2-INPUT-PREFLIGHT-20260805-001",
+  "performed_at_kst": "2026-08-05T04:25:00+09:00",
+  "group_id": "GROUP-02",
+  "loop_id": "A-LOOP-GROUP-02",
+  "cycle_id": "A-LOOP-GROUP-02-GROUP02-W06-CYCLE-0001",
+  "worker_id": "GROUP02-W06",
+  "directive_id": "B1-TO-B6-EXTRACTION-ACCEPTANCE-C1-HANDOFF-V1-20260804-001",
+  "directive_comment_id": 5183211593,
+  "task_id": "B1-B6-EXECUTION-TASK-V1-20260804-001",
+  "source": {
+    "worker": "B-2",
+    "repository": "anbin1900-crypto/source-factory-core",
+    "pull_request": 38,
+    "branch": "worker/b2-adapter-runtime-scope-v1",
+    "head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+    "state": "OPEN_DRAFT_UNMERGED",
+    "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY"
+  },
+  "exact_readback": {
+    "latest_pointer": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/LATEST_B2_REPORT_POINTER.json",
+      "blob": "e62f5c5ad354d1480eee8f929be80d3cee26e59f",
+      "status": "PASS"
+    },
+    "final_report": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/B2_FINAL_REPORT_V1.json",
+      "blob": "1a61cf5ab5390b3df1261f4e7b1a1a255000eb56",
+      "status": "PASS"
+    },
+    "test_results": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/B2_TEST_RESULTS_V1.json",
+      "blob": "5343463eb962b3c963d926143fbf360c153ef83f",
+      "status": "PASS"
+    },
+    "b1_acceptance_audit": {
+      "blob": "5a9a9f1efd5a490d86d6b7602946fff93938fb75",
+      "status": "ACCEPTED_PASS"
+    }
+  },
+  "validation": {
+    "head_match": "PASS",
+    "terminal_match": "PASS",
+    "pointer_status": "PASS",
+    "unit_tests": "PASS_24_OF_24",
+    "json_parse": "PASS_2_OF_2",
+    "python_compile": "PASS_5_OF_5",
+    "remote_blob_readback": "PASS_7_OF_7",
+    "network_call_count": 0,
+    "raw_secret_exposure_count": 0,
+    "actual_site_extraction_count": 0,
+    "production_write_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  },
+  "independent_preflight_decision": "PASS_ACCEPTED_B2_INPUT_FOR_B6_EVENT_WAIT",
+  "accepted_for_final_matrix": true,
+  "accepted_inputs_after_preflight": "1_OF_4",
+  "entry_condition_met": false,
+  "waiting_for": ["B-3", "B-4", "B-5"],
+  "final_acceptance_started": false,
+  "c1_handoff_candidate_created": false,
+  "boundaries": {
+    "b2_implementation_modified": false,
+    "unverified_adapter_use": false,
+    "actual_site_extraction": false,
+    "semantic_transformation": false,
+    "d_canonical_db_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
