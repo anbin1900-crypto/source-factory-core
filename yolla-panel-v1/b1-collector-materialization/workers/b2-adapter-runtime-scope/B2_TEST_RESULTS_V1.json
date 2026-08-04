@@ -1,0 +1,54 @@
+{
+  "schema_version": "B2_TEST_RESULTS_V1",
+  "report_id": "B2-TEST-20260804-001",
+  "reported_at_kst": "2026-08-04T12:18:00+09:00",
+  "worker_id": "B-2",
+  "job_id": "B2-JOB-001",
+  "task_id": "B1-B2-EXECUTION-TASK-V1-20260804-001",
+  "test_command": "python -m unittest -v tests/test_adapter_runtime_scope.py",
+  "test_environment": "isolated local Python runtime; no network access",
+  "test_case_count": 24,
+  "passed": 24,
+  "failed": 0,
+  "errors": 0,
+  "json_parse": "PASS_2_OF_2",
+  "python_compile": "PASS_5_OF_5",
+  "required_categories": {
+    "VALID_PACKAGE_ACCEPTED": "PASS",
+    "MISSING_REQUIRED_FIELD_REJECTED": "PASS",
+    "UNKNOWN_CRITICAL_FIELD_REJECTED": "PASS",
+    "RAW_SECRET_REJECTED_CREDENTIAL_REFERENCE_ACCEPTED": "PASS",
+    "UNVERIFIED_PACKAGE_REJECTED_FOR_ACTUAL_MODE": "PASS",
+    "FIXTURE_PACKAGE_ACCEPTED_FOR_FIXTURE_MODE": "PASS",
+    "SCOPE_BOUNDARY_DETERMINISTIC": "PASS",
+    "QUOTA_LIMIT_NEVER_EXCEEDED": "PASS",
+    "SCHEDULE_NEXT_RUN_DETERMINISTIC": "PASS",
+    "PAGINATION_POLICY_EXPOSED_TO_B3": "PASS",
+    "ZERO_NETWORK_CALLS": "PASS"
+  },
+  "remote_blob_readback": {
+    "status": "PASS_7_OF_7",
+    "method": "GitHub fetch_file blob SHA compared with locally computed Git blob SHA",
+    "files": {
+      "contracts/VERIFIED_ADAPTER_PACKAGE_CONSUMER_CONTRACT_V1.json": "604c674651bddbc2cc04201f9cd259294cd9bb58",
+      "fixtures/FIXTURE_ADAPTER_PACKAGE_V1.json": "f4c8ab5d4d69932e0894bf1b03191c08f116747c",
+      "src/adapter_loader.py": "d638a3cfdab781b1b166a7041319767ace7d26de",
+      "src/scope_planner.py": "5637b96a5584e97058c4b8ca63bc588352bbb13b",
+      "src/quota_schedule_planner.py": "3cd84f94b76b58adbea63d8510bf217c2019c031",
+      "src/__init__.py": "ada9703bb5df390fd3343ad04841ee565e654638",
+      "tests/test_adapter_runtime_scope.py": "a4022cc4608034bacef4d0f6a35fb4d654cd9a0b"
+    }
+  },
+  "safety_counters": {
+    "network_call_count": 0,
+    "site_structure_reanalysis_count": 0,
+    "adapter_generation_count": 0,
+    "actual_site_extraction_count": 0,
+    "raw_secret_exposure_count": 0,
+    "production_write_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  },
+  "ci_claimed": false,
+  "result": "PASS"
+}
