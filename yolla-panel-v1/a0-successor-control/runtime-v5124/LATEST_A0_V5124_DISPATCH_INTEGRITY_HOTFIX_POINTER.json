@@ -1,0 +1,55 @@
+{
+  "schema_version": "LATEST_A0_V5124_DISPATCH_INTEGRITY_HOTFIX_POINTER_V1",
+  "status": "V5124_DISPATCH_INTEGRITY_HOTFIX_BUILD_PASS_TARGET_PC_PENDING",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "base_runtime_observed": "5.12.3",
+  "target_runtime_version": "5.12.4",
+  "target_release_name": "v5.12.4-dispatch-integrity-hotfix",
+  "release_strategy": "NON_DESTRUCTIVE_CLONE_AND_PATCH_CURRENT_RELEASE",
+  "latest_report": {
+    "path": "yolla-panel-v1/a0-successor-control/reports/A0_V5124_DISPATCH_INTEGRITY_HOTFIX_BUILD_REPORT_V1.json",
+    "commit": "e475a61f2557b5018593ccc38bb6114ff186386e"
+  },
+  "diagnostic_correction": {
+    "ghost_result_waiting_workers": ["B-2", "B-3", "B-4", "B-5", "B-6"],
+    "ghost_state_repair_target": "RETRY_READY",
+    "result_waiting_requires_dispatch_proof": true,
+    "browser_ready_before_dispatch": true,
+    "dispatch_failure_rollback": "RETRY_READY_OR_NEEDS_REPLAN",
+    "epic_schedule_auto_route": true,
+    "group_alias_mapping": ["B_GROUP", "REAL_ESTATE_SITE", "REAL_ESTATE_GROUP"],
+    "async_github_watcher": true,
+    "tick_deduplication": true
+  },
+  "installer_artifact": {
+    "drive_file_id": "1pMzoDNIPMNkjFqy0vG19wWWlPcQk274Q",
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V5124_DISPATCH_INTEGRITY_HOTFIX.bat",
+    "sha256": "6e534f40f8ec3c8b290fe0e7f71105d855c65fd884dd31f0d30829f18bd23da0",
+    "size_bytes": 30041
+  },
+  "launcher_path": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_12_4.bat",
+  "install_log_path": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2\\install-v5124-dispatch-integrity-hotfix.log",
+  "install_receipt_path": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2\\V5124_DISPATCH_INTEGRITY_HOTFIX_RECEIPT.json",
+  "state_repair_receipt_path": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2\\automation-v1\\V5124_STATE_REPAIR_RECEIPT.json",
+  "tests": {
+    "patch_simulation": "PASS",
+    "dispatch_integrity": "PASS_28_ASSERTIONS",
+    "state_repair_fixture": "PASS",
+    "self_extract_readback": "PASS_7_ENTRIES",
+    "duplicate_execution_count": 0
+  },
+  "target_pc_status": {
+    "installed": false,
+    "actual_dispatch_receipt_count_observed": 0,
+    "actual_github_result_count_observed": 0,
+    "actual_next_job_dispatch_observed": false
+  },
+  "next_gate": "INSTALL_AND_OBSERVE_ONE_REAL_DISPATCH_RECEIPT_ONE_VALID_RESULT_AND_ONE_NEXT_JOB_TRANSITION",
+  "official_terminal_required": "A0_TWO_MODE_AUTOMATION_RUNTIME_V1_PASS",
+  "official_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-04T22:55:00+09:00"
+}
