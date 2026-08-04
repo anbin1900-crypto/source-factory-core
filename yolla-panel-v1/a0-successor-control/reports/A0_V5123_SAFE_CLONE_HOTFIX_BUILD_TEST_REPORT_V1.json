@@ -1,0 +1,39 @@
+{
+  "schema_version": "A0_V5123_SAFE_CLONE_HOTFIX_BUILD_TEST_REPORT_V1",
+  "status": "PASS_SOURCE_BUILD_AND_REGRESSION_TARGET_PC_REINSTALL_PENDING",
+  "terminal": "A0_V5123_SAFE_CLONE_HOTFIX_SOURCE_PASS",
+  "version": "5.12.3",
+  "root_cause": {
+    "error": "ReferenceError: safeClone is not defined",
+    "trigger": "getRuntimeStatus called from notifyBrowserState after BrowserView load",
+    "affected_field": "group_epic_bootstrap",
+    "schedule_materialization_before_crash": true
+  },
+  "validation": {
+    "node_syntax": "PASS_43_OF_43",
+    "test_suites": "PASS_20_OF_20",
+    "safe_clone_runtime": "PASS",
+    "group_epic_bootstrap_v5122": "PASS",
+    "operation_control_center": "PASS",
+    "session_partition_compatibility": "PASS",
+    "duplicate_execution_count": 0
+  },
+  "expected_after_install": {
+    "app_version": "5.12.3",
+    "main_process_error": "RESOLVED",
+    "active_schedule_id": "YOLLA-REAL-ESTATE-SITE-FOUNDATION-20260804-001",
+    "worker_count": 5,
+    "epic_count": 11
+  },
+  "runtime_boundary": {
+    "target_pc_install_observed": false,
+    "main_process_recovery_observed": false,
+    "actual_five_worker_dispatch_observed": false
+  },
+  "new_runtime": false,
+  "new_transport": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "completed_at": "2026-08-04T13:35:00+09:00"
+}
