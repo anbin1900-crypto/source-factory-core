@@ -1,0 +1,29 @@
+{
+  "schema_version": "RESPONSE_CAPTURE_REDACTION_POLICY_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
+  "directive_id": "A2-TO-A3-WAVE5-FIXTURE-ACQUISITION-RESULT-RECOVERY-V1-20260804-001",
+  "policy": "REDACT_BEFORE_PERSIST_AND_FAIL_CLOSED",
+  "capture_execution_authorized": false,
+  "redaction_before_persist": true,
+  "raw_secret_value_count_required": 0,
+  "forbidden_raw_fields": ["cookie","set-cookie","authorization","proxy-authorization","x-api-key","x-auth-token","token","access_token","refresh_token","secret","password","email","phone","resident_id","personal_name","precise_address"],
+  "header_rules": {
+    "drop_always": ["cookie","set-cookie","authorization","proxy-authorization","x-api-key","x-auth-token"],
+    "persist_allowlist": ["content-type","content-length","retry-after","cache-control","etag","last-modified"]
+  },
+  "body_rules": {
+    "recursive_key_match": "(?i)(cookie|authorization|token|secret|password|email|phone|resident[_-]?id|personal[_-]?name|precise[_-]?address)",
+    "action": "REMOVE_FIELD_AND_RECORD_REDACTION_POINTER",
+    "on_detection_failure": "ABORT_WITHOUT_PERSISTENCE"
+  },
+  "hash_binding": {
+    "raw_body_persisted": false,
+    "raw_sha256_computed_in_memory_before_redaction": true,
+    "raw_and_redacted_sha256_binding": true,
+    "redacted_sha256_persisted": true
+  },
+  "permitted_persistence": ["ALLOWLISTED_RESPONSE_BODY_AFTER_REDACTION","CONTENT_TYPE","HTTP_STATUS","SIZE_BYTES","ACQUIRED_AT","ENDPOINT_PROFILE_ID","RAW_ARTIFACT_SHA256","REDACTED_ARTIFACT_SHA256"],
+  "production": false,
+  "ready": false,
+  "merge": false
+}
