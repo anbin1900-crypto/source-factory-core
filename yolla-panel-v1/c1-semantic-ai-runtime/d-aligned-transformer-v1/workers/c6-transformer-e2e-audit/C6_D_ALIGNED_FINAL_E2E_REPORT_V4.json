@@ -1,0 +1,59 @@
+{
+  "schema_version": "C6_D_ALIGNED_FINAL_E2E_REPORT_V4",
+  "report_id": "C6-D-ALIGNED-FINAL-E2E-REPORT-V4-20260805-001",
+  "group_id": "GROUP-03",
+  "loop_id": "A-LOOP-GROUP-03",
+  "cycle_id": "A-LOOP-GROUP-03-GROUP03-W06-CYCLE-0002",
+  "worker_id": "GROUP03-W06",
+  "directive_id": "GROUP03-W01-TO-GROUP03-W06-C6V4-FINAL-E2E-CYCLE-0002",
+  "directive_comment_id": 5184578323,
+  "evaluated_at_kst": "2026-08-05 06:13 KST",
+  "gate_summary": {
+    "C-2": "ACCEPTED_PASS",
+    "C-3": "REQUIRED_PATH_ACCOUNTING_PASS_22_OF_22_CYCLE_0002_TERMINAL_PENDING",
+    "C-4": "NOT_ACCEPTED_V2_PACKAGE_TERMINAL_NOT_PUBLISHED",
+    "C-5": "NOT_ACCEPTED_WAITING_C4_V2_PACKAGE",
+    "worker_gate": "PASS_2_OF_4"
+  },
+  "validated_upstream": {
+    "source_lineage_accounting": "PASS_50_OF_50",
+    "mapping_rule_accounting": "PASS_43_OF_43",
+    "required_path_accounting": "PASS_22_OF_22",
+    "c4_rejection_input_coverage": "PASS_22_OF_22",
+    "c3_required_path_tests": "PASS_37_OF_37",
+    "c3_deterministic_replay": "PASS",
+    "upstream_silent_drop_count": 0
+  },
+  "planned_final_e2e_checks": {
+    "source_lineage_to_package": "NOT_EXECUTED_NO_C4_V2_PACKAGE",
+    "mapping_rule_to_package": "NOT_EXECUTED_NO_C4_V2_PACKAGE",
+    "required_path_rejection_preservation": "NOT_EXECUTED_NO_C4_V2_PACKAGE",
+    "optional_path_preservation": "NOT_EXECUTED_NO_C4_V2_PACKAGE",
+    "provenance_evidence_preservation": "NOT_EXECUTED_NO_C4_V2_PACKAGE",
+    "source_value_preservation": "NOT_EXECUTED_NO_C4_V2_PACKAGE",
+    "silent_drop_count": null,
+    "deterministic_replay": "NOT_EXECUTED_NO_C4_V2_PACKAGE",
+    "c5_pr188_validation": "NOT_EXECUTED_NO_C4_V2_PACKAGE",
+    "handoff_package_completeness": "FAIL_0_OF_4"
+  },
+  "pr188_exact_authority": {
+    "head": "1bb475c440983aae761b897a3b58a8f4dab880cc",
+    "contract_readback": "PASS_4_OF_4"
+  },
+  "final_v4_e2e_authorized": false,
+  "final_v4_e2e_executed": false,
+  "reason_not_executed": "C4_V2_PACKAGE_AND_C5_V2_VALIDATION_TERMINALS_NOT_PUBLISHED",
+  "virtual_pass_count": 0,
+  "actual_d_handoff_performed": false,
+  "d1_submission_pass_claimed": false,
+  "d_acceptance_claimed": false,
+  "first_blocker": "C4_V2_PACKAGE_TERMINAL_NOT_PUBLISHED",
+  "additional_blockers": [
+    "C4_V2_REQUIRED_PACKAGE_OUTPUTS_NOT_PUBLISHED",
+    "C5_V2_VALIDATION_TERMINAL_WAITING_C4_V2_PACKAGE",
+    "C3_CYCLE_0002_TERMINAL_NOT_PUBLISHED"
+  ],
+  "terminal": "C6_D_ALIGNED_TRANSFORMER_E2E_EXACT_BLOCKER",
+  "terminal_status_for_loop": "BLOCKED_EXTERNAL",
+  "decision": "EXACT_EXTERNAL_BLOCKER"
+}
