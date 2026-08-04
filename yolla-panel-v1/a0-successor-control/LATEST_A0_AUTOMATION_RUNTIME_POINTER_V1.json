@@ -1,88 +1,74 @@
 {
   "schema_version": "LATEST_A0_AUTOMATION_RUNTIME_POINTER_V1",
-  "status": "A0_V511_PREVIOUS_WORKER_LIST_LIVE_STATUS_POPUP_BUILD_PASS_TARGET_PC_PENDING",
+  "status": "A0_V5124_DISPATCH_INTEGRITY_HOTFIX_BUILD_PASS_TARGET_PC_PENDING",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "current_ui_version": "5.11.0",
+  "current_ui_version": "5.12.4",
+  "base_runtime_observed": "5.12.3",
   "runtime_provider_version": "5.7.0",
-  "schedule_runner_version": "1.0.0-panel-bound-build-pass",
-  "two_mode_automation_version": "1.0.0-panel-bound-build-pass",
-  "source_base_head": "84bcb0d662edc1d1834e7032bd271d554d95ad04",
-  "common_rules": {
-    "policy_id": "YOLLA_AUTOMATION_COMMON_RULES_V2",
-    "pointer": "yolla-panel-v1/a0-successor-control/automation-v1/LATEST_COMMON_AUTOMATION_RULES_POINTER_V2.json",
-    "daily_directive_comment": 5170734131,
-    "db_mapping_comment": 5170615948,
-    "compatibility_comment": 5170441820
-  },
+  "schedule_runner_version": "1.0.1-dispatch-proof-hotfix-build-pass",
+  "two_mode_automation_version": "1.0.1-dispatch-integrity-hotfix-build-pass",
+  "source_base_head": "ecbd0e830b061d9503ca0c211d840870cbc23f4e",
   "automation_modes": {
     "COMMANDER_WORKER_RELAY": {
-      "status": "PANEL_BOUND_SOURCE_BUILD_PASS_TARGET_PC_PENDING",
-      "flow": [
-        "WORKER_DIRECTIVE_DISPATCH",
-        "GITHUB_COMMITTED_RESULT_WATCH",
-        "COMMANDER_REVIEW_AND_NEXT_POST_DISPATCH",
-        "COMMANDER_POINTER_WATCH",
-        "NEXT_POST_WORKER_DISPATCH"
-      ]
+      "status": "HOTFIX_BUILD_PASS_TARGET_PC_PENDING",
+      "result_authority": "GITHUB_COMMITTED_RESULT_JSON",
+      "actual_dispatch_proof_required": true
     },
     "EPIC_SCHEDULE": {
-      "status": "PANEL_BOUND_SOURCE_BUILD_PASS_TARGET_PC_PENDING",
+      "status": "HOTFIX_BUILD_PASS_TARGET_PC_PENDING",
       "input_schema": ".yolla/automation/COMMANDER_EPIC_SUBMISSION_V2.schema.json",
       "result_schema": ".yolla/automation/EPIC_RESULT_V2.schema.json",
       "runtime": "WORKER_JOB_SCHEDULE_V1",
-      "db_schema": ".yolla/automation/PC_AGENT_AUTOMATION_DB_V1.sql",
-      "db_mapping": ".yolla/automation/EPIC_TO_PC_AGENT_DB_MAPPING_V1.json"
+      "automatic_import_routing": true
     }
   },
-  "v511_pointer": {
-    "path": "yolla-panel-v1/a0-successor-control/automation-v1/runtime-v511/LATEST_A0_V511_WORKER_STATUS_POPUP_POINTER.json",
-    "commit": "980d8be5af2c1f6215d07d32f98cb60b61bfa6c1"
+  "v5124_pointer": {
+    "path": "yolla-panel-v1/a0-successor-control/runtime-v5124/LATEST_A0_V5124_DISPATCH_INTEGRITY_HOTFIX_POINTER.json",
+    "commit": "74d0e417bd4180b910d3987a693ea103cf325e86"
   },
   "latest_report": {
-    "path": "yolla-panel-v1/a0-successor-control/reports/A0_V511_PREVIOUS_WORKER_LIST_LIVE_STATUS_POPUP_BUILD_REPORT_V1.json",
-    "commit": "4e41bf10188c81957fe15a6ef8f0873923c6508b"
+    "path": "yolla-panel-v1/a0-successor-control/reports/A0_V5124_DISPATCH_INTEGRITY_HOTFIX_BUILD_REPORT_V1.json",
+    "commit": "e475a61f2557b5018593ccc38bb6114ff186386e"
   },
-  "panel_binding": {
-    "previous_worker_list_restored": "PASS_SOURCE",
-    "inline_schedule_panel_removed": "PASS_SOURCE",
-    "worker_menu_file_popup": "PASS_SOURCE",
-    "worker_status_badges": "PASS_SOURCE",
-    "top_worker_status_counts": "PASS_SOURCE",
-    "schedule_and_epic_import": "PASS_SOURCE",
-    "manual_status_override_removed": "PASS_SOURCE"
+  "diagnostic_corrections": {
+    "ghost_result_waiting_repair": "RETRY_READY",
+    "result_waiting_requires_dispatch_proof": true,
+    "browser_view_ready_before_dispatch": true,
+    "definitely_not_sent_rollback": "RETRY_READY",
+    "uncertain_dispatch_state": "NEEDS_REPLAN",
+    "epic_and_schedule_auto_routing": true,
+    "group_alias_mapping": true,
+    "async_github_result_watcher": true,
+    "repeated_tick_suppression": true,
+    "workspace_browser_view_preservation": true
   },
   "installer_artifact": {
-    "drive_file_id": "1Adxs4Ty713h4xYDC7I_MFEucArlO00TR",
-    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V511_PREVIOUS_WORKER_LIST_LIVE_STATUS_POPUP.bat",
-    "sha256": "02d500f8167c48241c95e1d509fb91ecbe3798bbb57e6a5777609ace650cf244",
-    "size_bytes": 153484
-  },
-  "source_artifact": {
-    "drive_file_id": "1tMl9byxeGqdUVmUpM8_MpEiCIj7_CFSu",
-    "sha256": "26ded63874cdc900fd14f482d651013f29d6d0c69824cc5dfe7d2c524425e5b2",
-    "size_bytes": 110447
+    "drive_file_id": "1pMzoDNIPMNkjFqy0vG19wWWlPcQk274Q",
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V5124_DISPATCH_INTEGRITY_HOTFIX.bat",
+    "sha256": "6e534f40f8ec3c8b290fe0e7f71105d855c65fd884dd31f0d30829f18bd23da0",
+    "size_bytes": 30041
   },
   "tests": {
-    "worker_status_popup_ui": "PASS_24",
-    "runtime_binding": "PASS_17",
-    "regression_suite": "PASS",
-    "duplicate_execution_count": 0,
-    "manual_relay_count": 0
+    "patch_simulation": "PASS",
+    "dispatch_integrity": "PASS_28_ASSERTIONS",
+    "state_repair_fixture": "PASS",
+    "self_extract_readback": "PASS_7_ENTRIES",
+    "duplicate_execution_count": 0
   },
   "target_pc_status": {
-    "v511_installed": false,
-    "visual_acceptance": "NOT_OBSERVED",
-    "actual_file_popup_import": "NOT_OBSERVED",
-    "actual_worker_state_transition": "NOT_OBSERVED",
-    "actual_top_counter_transition": "NOT_OBSERVED"
+    "v5124_installed": false,
+    "state_repair_observed": false,
+    "actual_dispatch_receipt_count": 0,
+    "actual_github_result_count": 0,
+    "actual_next_job_transition": "NOT_OBSERVED"
   },
-  "next_gate": "INSTALL_V511_ON_TARGET_PC_AND_OBSERVE_POPUP_IMPORT_AND_REAL_WORKER_STATUS_TRANSITIONS",
+  "next_gate": "INSTALL_V5124_AND_OBSERVE_FIRST_REAL_DISPATCH_RECEIPT_THEN_VALID_GITHUB_RESULT_AND_NEXT_JOB",
   "official_terminal_required": "A0_TWO_MODE_AUTOMATION_RUNTIME_V1_PASS",
   "official_terminal_claimed": false,
   "target_pc_execution_observed": false,
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at": "2026-08-04T06:10:00+09:00"
+  "updated_at": "2026-08-04T22:55:00+09:00"
 }
