@@ -1,0 +1,19 @@
+{
+  "schema_version":"B3_SOURCE_MANIFEST_V1",
+  "directive_id":"B1-TO-B3-EXTRACTOR-RETRY-RESUME-INCREMENTAL-V1-20260804-001",
+  "owned_root":"yolla-panel-v1/b1-collector-materialization/workers/b3-extractor-retry-resume/",
+  "commits":{"start":"2f4f141d0b1c71e9545ea33989bba1a28880dcfc","implementation":"9702c03485a3ea194b45824a223ff24063237a2b","test_evidence":"2d8c246212061cd9a40df61042425d2016de75e1"},
+  "source_paths":["src/__init__.py","src/incremental_cursor.py","src/retry_resume_engine.py","src/pagination_loop.py"],
+  "contract_paths":["contracts/PAGINATION_STATE_V1.json","contracts/RETRY_POLICY_STATE_V1.json","contracts/RESUME_LEDGER_V1.json","contracts/INCREMENTAL_CURSOR_V1.json","contracts/COLLECTION_PROGRESS_EVENT_V1.json"],
+  "fixture_paths":["fixtures/b2_fixture_adapter_package.json","fixtures/page_001.json","fixtures/page_002.json"],
+  "test_paths":["tests/test_extractor_retry_resume.py","B3_TEST_RESULTS_V1.json"],
+  "generated_paths":["generated/PAGINATION_EXECUTION_PLAN_V1.json","generated/RESUME_LEDGER_V1.json","generated/INCREMENTAL_EXTRACTION_STATE_V1.json","generated/COLLECTION_PROGRESS_EVENT_V1.json","generated/EXTRACTION_RUN_RECEIPT_V1.json","generated/SECOND_RUN_EXTRACTION_RECEIPT_V1.json","generated/CRASH_RESUME_VALIDATION_V1.json","generated/RETRY_CLASSIFICATION_VALIDATION_V1.json"],
+  "report_paths":["B3_START_REPORT_V1.json","B3_FINAL_REPORT_V1.json","LATEST_B3_REPORT_POINTER.json"],
+  "input_authority_lock":"INPUT_AUTHORITY_LOCK_V1.json",
+  "out_of_scope_path_count":0,
+  "network_call_count":0,
+  "actual_site_extraction":false,
+  "production":false,
+  "ready":false,
+  "merge":false
+}
