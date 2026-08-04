@@ -1,0 +1,67 @@
+{
+  "schema_version": "YOLLA_EPIC_RESULT_V2",
+  "package_id": "YOLLA-REAL-ESTATE-SITE-FOUNDATION-20260804-001",
+  "project_id": "YOLLA_AI_REAL_ESTATE_SERVICE",
+  "work_id": "RE-W5-E01-DGROUP-DATA-CONTRACTS",
+  "command_id": "CMD--YOLLA-REAL-ESTATE-SITE-FOUNDATION-20260804-001--RE-W5-E01-DGROUP-DATA-CONTRACTS",
+  "cycle_id": "YOLLA-REAL-ESTATE-SITE-FOUNDATION-20260804-001",
+  "wave_id": "SEQ-001",
+  "worker_id": "B-6",
+  "worker_slot_uid": "B-6-REAL-ESTATE-DATA-DGROUP-SLOT",
+  "assignment_id": "RE-W5-E01-DGROUP-DATA-CONTRACTS",
+  "directive_id": "REAL-ESTATE-COMMANDER-TO-B6-DGROUP-DATA-CONTRACTS-V1-20260804-001",
+  "execution_id": "schedule-c88485d9bd670e1fccecce62",
+  "attempt_id": "schedule-c88485d9bd670e1fccecce62-attempt-1",
+  "epic_id": "RE-W5-E01-DGROUP-DATA-CONTRACTS",
+  "source_github_ref": "anbin1900-crypto/source-factory-core@a9b802b2221e4e2ed47a0e70a4daf9deebb90de9:.yolla/epics/YOLLA-REAL-ESTATE-SITE-FOUNDATION-20260804-001/EPIC.json",
+  "directive_registered_at_kst": "2026-08-04T05:03:45+09:00",
+  "result_published_at_kst": "2026-08-04T23:49:00+09:00",
+  "terminal_status": "PASS",
+  "duplicate_prompt_key": "a5-p1-command-8c58b8d5730bc3462ddcdcfc8eb4cf4f1787351ae4e94c9e66be63ed4478c76e",
+  "source_commit": "0c2a2db7c7a4eb7543571a3d1838e1c7dc8b9160",
+  "remote_pointer": "yolla-panel-v1/real-estate-site-foundation/workers/b6-data-dgroup/LATEST_B6_REAL_ESTATE_FOUNDATION_POINTER.json",
+  "tests": [
+    {
+      "name": "terminal_result_code",
+      "status": "PASS",
+      "evidence": "B6_DGROUP_DATA_CONTRACTS_PASS"
+    },
+    {
+      "name": "required_object_contracts",
+      "status": "PASS",
+      "evidence": "10 machine-readable objects; required 8 scope objects present."
+    },
+    {
+      "name": "listing_source_fields",
+      "status": "PASS",
+      "evidence": "yolla_listing and external_listing_index require source_type, source_id, source_url, last_verified_at, status; missing_count=0."
+    },
+    {
+      "name": "d_group_anti_coupling",
+      "status": "PASS",
+      "evidence": "9 versioned operations; D internal table-name exposure count=0; no DSN, SQL, or credential fields."
+    },
+    {
+      "name": "deterministic_mock_bundle",
+      "status": "PASS",
+      "evidence": "4 golden cases; repeated normalized search expected_data_sha256=5f8685ba8f4d2f6bde7ba6fe9c5d3cb1c691c6bd557eb3d573e956db27ec9d1d."
+    },
+    {
+      "name": "private_listing_public_leak",
+      "status": "PASS",
+      "evidence": "PUBLIC_ONLY golden search returns private listing count=0."
+    },
+    {
+      "name": "json_parse_and_readback",
+      "status": "PASS",
+      "evidence": "All three artifact JSON files and pointer were parsed locally before publication; remote readback follows."
+    },
+    {
+      "name": "forbidden_actions",
+      "status": "PASS",
+      "evidence": "portal mutation=0; D-group mutation=0; production=0; ready=0; merge=0; secrets/personal data=0."
+    }
+  ],
+  "blocker": null,
+  "second_execution_performed": false
+}
