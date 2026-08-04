@@ -1,0 +1,31 @@
+{
+  "schema_version": "A7_TO_A2_ONE_SHOT_AUTHORIZATION_RECOMMENDATION_V1",
+  "worker": "A-7",
+  "cycle_id": "A2-SITE-ANYZER-ADAPTER-FACTORY-WAVE5-PREAUTH-GAP-CLOSURE-V1-20260805-001",
+  "directive_id": "A2-TO-A7-PREAUTH-GOVERNANCE-REAUDIT-V5_1-20260805-001",
+  "evaluated_at_kst": "2026-08-05T01:13:00+09:00",
+  "recommendation": "EVENT_WAIT_DO_NOT_REQUEST_ONE_SHOT_AUTHORIZATION_YET",
+  "reason": "A3 Wave5.1 control values and A5 exact binding are present, but A3 Wave5.1 terminal, validation receipt, retention/disposal policy receipt, exact rebind receipt and latest pointer promotion are not published.",
+  "controls_ready": {
+    "profile_traceability": "PASS_8_OF_8",
+    "max_response_size_bytes": 2097152,
+    "request_timeout_ms": 20000,
+    "total_execution_timeout_ms": 180000,
+    "transient_raw_byte_disposal_deadline_seconds": 30,
+    "redacted_derivative_retention_days": 30,
+    "raw_response_byte_persistence": false,
+    "capture_execution_count": 0,
+    "live_site_call_count": 0,
+    "credential_use_count": 0,
+    "package_install_count": 0
+  },
+  "remaining_event": "A3_WAVE5_1_TERMINAL_AND_LATEST_POINTER_REMOTE_READBACK",
+  "authorization_request_ready": false,
+  "capture_execution_authorized": false,
+  "a7_grants_authorization": false,
+  "implementation_file_direct_edit": false,
+  "self_approval": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
