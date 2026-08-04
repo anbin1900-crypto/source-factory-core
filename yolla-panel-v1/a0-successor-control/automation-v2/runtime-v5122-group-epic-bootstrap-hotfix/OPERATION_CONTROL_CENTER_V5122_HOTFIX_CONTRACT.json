@@ -1,0 +1,39 @@
+{
+  "schema_version": "YOLLA_OPERATION_CONTROL_CENTER_V5122_HOTFIX_CONTRACT_V1",
+  "version": "5.12.2",
+  "diagnostic_evidence": {
+    "overall_state": "ERROR",
+    "primary_root_cause": "GROUP_EPIC_BOOTSTRAP_SOURCE_FIELD_MISMATCH",
+    "observed_error": "source.commit_sha must be 40 hex",
+    "old_active_schedule": "REAL-ESTATE-CYCLE-001",
+    "old_worker_count": 3,
+    "required_epic_schedule": "YOLLA-REAL-ESTATE-SITE-FOUNDATION-20260804-001",
+    "required_worker_count": 5,
+    "required_epic_count": 11
+  },
+  "fixes": [
+    "MAP_EPIC_COMMIT_SHA_TO_SOURCE_COMMIT_SHA",
+    "MAP_EPIC_FILE_PATH_TO_SOURCE_EPIC_FILE_PATH",
+    "MAP_EPIC_SHA256_TO_SOURCE_EPIC_SHA256",
+    "REBUILD_STALE_GROUP_REGISTRY_FROM_AUTHORITY",
+    "REACTIVATE_REGISTERED_EPIC_SCHEDULE_POINTER",
+    "EXPOSE_GROUP_EPIC_BOOTSTRAP_STATUS_TO_MONITOR",
+    "DETECT_GROUP_EPIC_BOOTSTRAP_FAILED",
+    "DETECT_EPIC_SCHEDULE_NOT_ACTIVE"
+  ],
+  "preserved": [
+    "GROUP_EPIC_REGISTRATION",
+    "WORKER_RIGHT_MENU",
+    "COMMANDER_COMMENT_ID_DETECTION",
+    "AUTOMATIC_WORKER_REDISPATCH",
+    "SESSION_PARTITION_COMPATIBILITY",
+    "FIXED_BROWSER_PROFILE",
+    "WORKER_JOB_SCHEDULE_V1",
+    "LOCAL_DURABLE_FILE_QUEUE_V1"
+  ],
+  "new_runtime": false,
+  "new_transport": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
