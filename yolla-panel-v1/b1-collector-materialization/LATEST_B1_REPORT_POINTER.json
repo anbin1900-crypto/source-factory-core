@@ -1,48 +1,54 @@
 {
   "schema_version": "1.0.0",
   "pointer_id": "LATEST-B1-COLLECTOR-DB-MATERIALIZATION-REPORT-V1",
-  "updated_at_kst": "2026-08-04T05:22:00+09:00",
+  "updated_at_kst": "2026-08-04T11:56:00+09:00",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 19,
   "branch": "integration/b1-collector-db-materialization-v1",
   "current_report": {
-    "type": "WORKER_RESULT_AUDIT_AND_NEXT_ACTION",
-    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave3/LATEST_B1_WORKER_RESULT_AUDIT_POINTER.json",
-    "commit": "85c156a057239ceb26cbc892a80ca3bb7038488a",
-    "blob": "6c74a237a0fb7d137a2eefafa82695466ec9cd72",
-    "status": "B2_TO_B5_IMPLEMENTATION_NOT_STARTED_B6_START_EVENT_WAIT_NOT_PUBLISHED"
+    "type": "WORKER_ADDITIONAL_WORK_AND_FIXTURE_SEED_BINDING",
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave4/LATEST_B1_WORKER_ADDITIONAL_WORK_POINTER.json",
+    "commit": "c1aac81c3dc9e8a7724011af507fba2adae5f7f8",
+    "status": "B2_TO_B5_SEED_LATE_BIND_EXECUTE_NOW_B6_PREFLIGHT_NOW_EVENT_WAIT_FINAL"
   },
   "directive_id": "A0-TO-B1-GENERIC-COLLECTOR-MATERIALIZATION-SHELL-V1-20260803-001",
   "addendum_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
   "existing_directive_superseded": false,
-  "worker_execution_pointer": {
-    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave2/LATEST_B1_WORKER_EXECUTION_POINTER.json",
-    "commit": "3672f1a169be70e907c8e88b063fb321bab438b5",
-    "blob": "ae95031d4765326a122360ac57a52c0523ea7077"
+  "worker_additional_work": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave4/B1_WORKER_ADDITIONAL_WORK_AND_FIXTURE_SEED_BINDING_V1.json",
+    "commit": "1ebe108668bd1ffd7f176a75accaaf3fd3988eb9",
+    "blob": "2495c7d8eb244e40d2a1a291f5c49309a28cc505"
   },
-  "worker_result_audit": {
-    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave3/B1_WORKER_RESULT_AUDIT_AND_NEXT_ACTION_V1.json",
-    "commit": "80944c23587bb9472142f26a4a856bcce16c7944",
-    "blob": "081a1a598a4141a59f12b5d10d3e1e9d6f9f05ac"
+  "worker_additional_work_pointer": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave4/LATEST_B1_WORKER_ADDITIONAL_WORK_POINTER.json",
+    "commit": "c1aac81c3dc9e8a7724011af507fba2adae5f7f8"
   },
-  "worker_result_audit_pointer": {
-    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave3/LATEST_B1_WORKER_RESULT_AUDIT_POINTER.json",
-    "commit": "85c156a057239ceb26cbc892a80ca3bb7038488a",
-    "blob": "6c74a237a0fb7d137a2eefafa82695466ec9cd72"
+  "b1_fixture_seed": {
+    "seed_commit": "8b8f7888128e7472269b79385886ff48a421de1f",
+    "input_record_count": 4,
+    "duplicate_count": 1,
+    "output_record_count": 3,
+    "network_call_count": 0,
+    "actual_site_extraction": false,
+    "source_field_loss_count": 0,
+    "remote_gaps": [
+      "fixture_materialized.sqlite.b64_NOT_PUBLISHED",
+      "B1_REMOTE_TEST_RESULT_RECEIPT_NOT_PUBLISHED"
+    ]
   },
   "worker_controls": {
-    "B-2": {"pr": 38, "head": "34a536c91fbd537643bf40eb19c598ad177f880e", "task_id": "B1-B2-EXECUTION-TASK-V1-20260804-001", "status": "IMPLEMENTATION_NOT_STARTED"},
-    "B-3": {"pr": 39, "head": "8c31cec83f1b81ba80511bed8a61b15536da3b48", "task_id": "B1-B3-EXECUTION-TASK-V1-20260804-001", "status": "IMPLEMENTATION_NOT_STARTED"},
-    "B-4": {"pr": 40, "head": "f1c327882bfd73d9670afa661e11c6acc8a8cccb", "task_id": "B1-B4-EXECUTION-TASK-V1-20260804-001", "status": "IMPLEMENTATION_NOT_STARTED"},
-    "B-5": {"pr": 41, "head": "dfd99f6188d263fd7e7ded72396f72006680fee8", "task_id": "B1-B5-EXECUTION-TASK-V1-20260804-001", "status": "IMPLEMENTATION_NOT_STARTED"},
-    "B-6": {"pr": 42, "head": "6ccf2fea6cc4d05db2704ac08c50eb8ff43015b1", "task_id": "B1-B6-EXECUTION-TASK-V1-20260804-001", "status": "START_EVENT_WAIT_POINTER_NOT_PUBLISHED"}
+    "B-2": {"pr": 38, "head": "34a536c91fbd537643bf40eb19c598ad177f880e", "task_id": "B1-B2-EXECUTION-TASK-V1-20260804-001", "status": "SEED_LATE_BIND_EXECUTE_NOW"},
+    "B-3": {"pr": 39, "head": "8c31cec83f1b81ba80511bed8a61b15536da3b48", "task_id": "B1-B3-EXECUTION-TASK-V1-20260804-001", "status": "SEED_REPRODUCTION_EXECUTE_NOW"},
+    "B-4": {"pr": 40, "head": "f1c327882bfd73d9670afa661e11c6acc8a8cccb", "task_id": "B1-B4-EXECUTION-TASK-V1-20260804-001", "status": "RAW_EVIDENCE_REBUILD_EXECUTE_NOW"},
+    "B-5": {"pr": 41, "head": "dfd99f6188d263fd7e7ded72396f72006680fee8", "task_id": "B1-B5-EXECUTION-TASK-V1-20260804-001", "status": "NORMALIZATION_AND_SQLITE_GAP_CLOSURE_EXECUTE_NOW"},
+    "B-6": {"pr": 42, "head": "6ccf2fea6cc4d05db2704ac08c50eb8ff43015b1", "task_id": "B1-B6-EXECUTION-TASK-V1-20260804-001", "status": "SEED_PREFLIGHT_NOW_EVENT_WAIT_FINAL"}
   },
   "a2_verified_adapter_package_v1_published": false,
   "actual_site_extraction": false,
   "required_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
   "current_terminal": null,
-  "current_status": "WAITING_WORKER_START_IMPLEMENTATION_OR_EXACT_BLOCKER",
-  "next_gate": "B2_TO_B5_START_AND_IMPLEMENTATION_COMMITS_PLUS_B6_EVENT_WAIT_POINTER",
+  "current_status": "WAITING_WORKER_SEED_BINDING_TERMINALS_OR_EXACT_BLOCKERS",
+  "next_gate": "B2_TO_B5_TERMINALS_4_OF_4_THEN_B6_FINAL_ACCEPTANCE",
   "production": false,
   "ready": false,
   "merge": false
