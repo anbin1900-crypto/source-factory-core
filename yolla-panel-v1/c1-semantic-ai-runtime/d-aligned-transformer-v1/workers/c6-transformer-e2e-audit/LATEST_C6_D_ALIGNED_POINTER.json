@@ -35,14 +35,18 @@
     "C-3": {
       "latest_pointer_blob": "e77cdc3f449d405b3144f8dd18ed21f269863748",
       "cycle_0002_directive_comment": 5184559676,
+      "cycle_0002_revalidation_blob": "d0a0a9f475e765c25db1fe524e4c2c584e4ad7fd",
+      "cycle_0002_retest_checks": "PASS_15_OF_15",
       "cycle_0002_terminal_published": false,
       "required_path_accounting": "PASS_22_OF_22",
+      "resolved_path_count": 0,
       "unresolved_external_path_count": 22,
       "c4_rejection_input_blob": "73b49771eab3f00e27705aca5e124f02762e1c5f",
       "c4_rejection_coverage": "PASS_22_OF_22",
       "tests": "PASS_37_OF_37",
       "silent_drop_count": 0,
-      "accounting_accepted": true
+      "accounting_accepted": true,
+      "cycle_0002_revalidation_accepted_as_terminal": false
     },
     "C-4": {
       "cycle_0002_directive_comment": 5184566722,
@@ -88,15 +92,21 @@
       "path": "C6_D_ALIGNED_FINAL_REPORT_V4.json",
       "commit": "7e36939d9d4d0a278b46968a8f7100488ca15ba2",
       "blob": "ccd1e323566f0ae2bbcea95dd35e65925d3a9227"
+    },
+    "late_input_observation": {
+      "path": "C6_CYCLE_0002_LATE_INPUT_OBSERVATION_V1.json",
+      "commit": "22982ceae91accf9cac90433db95e5caedb327aa",
+      "blob": "7d32edf171d14ae3fc287cd54c884be035a969a0"
     }
   },
   "validation": {
-    "json_parse": "PASS_5_OF_5",
-    "remote_blob_readback": "PASS_4_OF_4_PRE_POINTER",
+    "json_parse": "PASS_6_OF_6",
+    "remote_blob_readback": "PASS_5_OF_5_PRE_POINTER",
     "source_lineage_accounting": "PASS_50_OF_50",
     "mapping_rule_accounting": "PASS_43_OF_43_UPSTREAM",
     "required_path_accounting": "PASS_22_OF_22",
     "c4_rejection_input_coverage": "PASS_22_OF_22",
+    "c3_cycle_0002_revalidation": "PASS_15_OF_15_NO_AUTHORITY_DELTA",
     "pr188_exact_authority": "PASS_4_OF_4",
     "worker_gate": "PASS_2_OF_4",
     "virtual_pass_count": 0
