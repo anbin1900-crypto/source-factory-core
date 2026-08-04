@@ -1,0 +1,53 @@
+{
+  "schema_version": "ONE_SHOT_AUTHORIZATION_ACCEPTANCE_MATRIX_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
+  "directive_id": "A2-TO-A7-WAVE5-FIXTURE-ACQUISITION-GOVERNANCE-RESULT-RECOVERY-V1-20260804-001",
+  "evaluated_at_kst": "2026-08-04T23:13:00+09:00",
+  "roles": {
+    "A-3": "Prepare exact endpoint-bound acquisition package; do not execute capture without authorization.",
+    "A-5": "Publish field and identifier requirement authority with UNKNOWN_REQUIRES_CAPTURE where unsupported.",
+    "A-7": "Audit governance and recommend only; cannot approve capture.",
+    "A-2": "Request one-shot authorization only after all acceptance conditions pass.",
+    "A-0/A-1": "Separate one-shot authorization authority.",
+    "operator": "Execute only the exact authorized package once and publish receipts."
+  },
+  "acceptance_conditions": {
+    "target_profile_allowlist_exactly_8": "PASS",
+    "max_capture_per_profile_1": "PASS",
+    "total_capture_count_max_8": "PASS",
+    "request_method_url_from_a3_evidence": "CONDITIONAL_A3_PACKAGE_PENDING",
+    "response_size_upper_bound": "FAIL_NOT_PUBLISHED",
+    "timeout_upper_bound": "FAIL_NOT_PUBLISHED",
+    "auth_bypass_false": "PASS",
+    "access_control_bypass_false": "PASS",
+    "raw_credential_storage_false": "PASS",
+    "redaction_before_persist": "PASS_POLICY",
+    "raw_redacted_sha256_binding": "PASS_POLICY",
+    "retention_and_transient_disposal_limits": "FAIL_NOT_PUBLISHED",
+    "capture_failure_auto_retry_false": "PASS",
+    "a3_a5_requirement_traceability": "FAIL_PACKAGES_NOT_PUBLISHED",
+    "live_capture_before_authorization_false": "PASS"
+  },
+  "current_gate": {
+    "authorization_request_ready": false,
+    "capture_execution_authorized": false,
+    "failed_condition_count": 4,
+    "failed_conditions": [
+      "RESPONSE_SIZE_UPPER_BOUND",
+      "TIMEOUT_UPPER_BOUND",
+      "RETENTION_AND_TRANSIENT_DISPOSAL_LIMITS",
+      "A3_A5_REQUIREMENT_TRACEABILITY"
+    ]
+  },
+  "retry_policy": {
+    "automatic_retry": false,
+    "failed_capture_consumes_authorization": true,
+    "new_attempt_requires_new_one_shot_authorization": true
+  },
+  "decision": "NOT_READY_FOR_ONE_SHOT_AUTHORIZATION_REQUEST",
+  "implementation_file_direct_edit": false,
+  "self_approval": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
