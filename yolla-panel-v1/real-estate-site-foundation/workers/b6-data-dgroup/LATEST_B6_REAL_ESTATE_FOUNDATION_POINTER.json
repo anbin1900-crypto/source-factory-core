@@ -7,7 +7,7 @@
   "terminal": "PASS",
   "result_code": "B6_DGROUP_DATA_CONTRACTS_PASS",
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "published_at_kst": "2026-08-04T23:47:15+09:00",
+  "published_at_kst": "2026-08-04T23:49:00+09:00",
   "artifacts": [
     {
       "path": "yolla-panel-v1/real-estate-site-foundation/workers/b6-data-dgroup/REAL_ESTATE_DATA_OBJECT_CONTRACT_V1.json",
@@ -23,7 +23,7 @@
     }
   ],
   "result_path": "yolla-panel-v1/real-estate-site-foundation/workers/b6-data-dgroup/RESULT.json",
-  "result_commit": null,
+  "result_commit": "17840430e36a4f797f64d4827c68362fe942101d",
   "source_authorities": [
     "anbin1900-crypto/source-factory-core@a9b802b2221e4e2ed47a0e70a4daf9deebb90de9:.yolla/epics/YOLLA-REAL-ESTATE-SITE-FOUNDATION-20260804-001/EPIC.json",
     "anbin1900-crypto/yolla-gas-station-portal PR #4@98d75399b83722f95d45e5808b472c81330c69db",
@@ -41,7 +41,8 @@
     "deterministic_mock_golden_case_count": 4,
     "deterministic_repeat_equality": true,
     "public_search_private_listing_count": 0,
-    "json_parse": "PASS"
+    "json_parse": "PASS",
+    "epic_result_v2_schema": "PASS"
   },
   "forbidden_counters": {
     "portal_source_mutation": 0,
