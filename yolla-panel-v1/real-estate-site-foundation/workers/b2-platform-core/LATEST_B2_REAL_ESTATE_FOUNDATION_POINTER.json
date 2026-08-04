@@ -1,0 +1,54 @@
+{
+  "schema_version": "LATEST_B2_REAL_ESTATE_FOUNDATION_POINTER_V1",
+  "project_id": "YOLLA_AI_REAL_ESTATE_SERVICE",
+  "worker_id": "B-2",
+  "schedule_id": "REAL-ESTATE-CYCLE-001",
+  "current_job_id": "B2-JOB-002",
+  "current_directive_id": "A0-SCHEDULE-B2-JOB-002",
+  "source_epic_directive_id": "REAL-ESTATE-COMMANDER-TO-B2-CORE-REUSE-AUDIT-V1-20260804-001",
+  "current_epic_id": "RE-W1-E01-CORE-REUSE-AUDIT",
+  "status": "PASS",
+  "terminal": "PASS",
+  "result_code": "B2_PLATFORM_CORE_REUSE_AUDIT_PASS",
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "current_result_path": "yolla-panel-v1/real-estate-site-foundation/workers/b2-platform-core/RESULT.json",
+  "current_result_commit": "57de732899becece5f6ea51603794ef858195598",
+  "artifacts": {
+    "reuse_audit_path": "yolla-panel-v1/real-estate-site-foundation/workers/b2-platform-core/CORE_REUSE_AUDIT_V1.json",
+    "reuse_audit_commit": "6d47d0d90da714afbbab83fb1af130a800efa758",
+    "architecture_path": "yolla-panel-v1/real-estate-site-foundation/workers/b2-platform-core/TARGET_ARCHITECTURE_CANDIDATE_V1.md",
+    "architecture_commit": "6aff4cde26080f97bdca701c5352a9bbe16dc0a1"
+  },
+  "source_readback": {
+    "main_commit": "40c78809926f827c283085f7867497ce01075411",
+    "draft_pr_4_head": "98d75399b83722f95d45e5808b472c81330c69db",
+    "draft_pr_5_head": "458b485192a025d66da3b0dcc36ff949186fec9d",
+    "current_main_and_drafts_separated": true
+  },
+  "previous_completed": {
+    "job_id": "B2-JOB-001",
+    "terminal": "PASS",
+    "result_commit": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+    "result_scope": "B1_ADAPTER_RUNTIME_SCOPE_PLANNER",
+    "satisfied_current_real_estate_epic": false
+  },
+  "validation": {
+    "remote_artifact_count": 3,
+    "json_artifact_count": 2,
+    "json_parse": "PASS",
+    "feature_check_count": 8,
+    "portal_source_mutation_count": 0,
+    "draft_pr_mutation_count": 0,
+    "production_action_count": 0,
+    "ready_transition_count": 0,
+    "merge_action_count": 0
+  },
+  "next_epic": {
+    "epic_id": "RE-W1-E02-ARCHITECTURE-OWNERSHIP-INTEGRATION",
+    "state": "WAITING_FOR_ALL_DECLARED_DEPENDENCIES"
+  },
+  "updated_at": "2026-08-04T12:42:00+09:00",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
