@@ -1,0 +1,21 @@
+{
+  "schema_version": "LATEST_A0_V510235_COMMANDER_SAFE_QUEUE_POINTER_V1",
+  "version": "5.10.2.3.5",
+  "status": "BUILD_PASS_TARGET_PC_PENDING",
+  "report_path": "yolla-panel-v1/a0-successor-control/reports/A0_V510235_COMMANDER_SAFE_QUEUE_BUILD_REPORT_V1.json",
+  "installer": {
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510235_COMMANDER_SAFE_QUEUE.bat",
+    "size_bytes": 212520,
+    "sha256": "8f88a782781e7e4ea981b10a261edd65a37d9f1f0e8b709887653e1d491da9de",
+    "drive_file_id": "1gLsVhgidKa9MTNLjygIFjVk-JwJy82uz"
+  },
+  "features": {
+    "user_commander_selection": true,
+    "explicit_single_commander_required": true,
+    "commander_change_blocked_while_active": true,
+    "previous_response_settlement_guard": true,
+    "strong_new_user_message_proof": true,
+    "durable_active_turn_ledger": true
+  },
+  "next_gate": "INSTALL_AND_VERIFY_USER_SELECTED_COMMANDER_THEN_RUN_ONE_A_GROUP_WITHOUT_CANCELLATION"
+}
