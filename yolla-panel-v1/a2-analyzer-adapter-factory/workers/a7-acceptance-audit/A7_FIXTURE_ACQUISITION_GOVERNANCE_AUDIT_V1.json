@@ -1,0 +1,20 @@
+{
+  "schema_version": "A7_FIXTURE_ACQUISITION_GOVERNANCE_AUDIT_V1",
+  "directive_id": "A2-TO-A7-FIXTURE-ACQUISITION-GOVERNANCE-AUDIT-V5-20260804-001",
+  "recovery_directive_id": "A2-TO-A7-WAVE5-FIXTURE-ACQUISITION-GOVERNANCE-RESULT-RECOVERY-V1-20260804-001",
+  "evaluated_at_kst": "2026-08-04T23:13:00+09:00",
+  "governance_checklist_path": "FIXTURE_ACQUISITION_GOVERNANCE_CHECKLIST_V1.json",
+  "target_profile_count": 8,
+  "max_capture_per_profile": 1,
+  "total_max_capture_count": 8,
+  "allowlist_only": true,
+  "capture_execution_authorized": false,
+  "a3_a5_requirement_traceability": "EXACT_FINDING_PACKAGES_NOT_PUBLISHED",
+  "numeric_bound_status": "EXACT_FINDING_RESPONSE_SIZE_AND_TIMEOUT_NOT_PUBLISHED",
+  "decision": "A7_FIXTURE_ACQUISITION_GOVERNANCE_EXACT_FINDINGS",
+  "implementation_file_direct_edit": false,
+  "self_approval": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
