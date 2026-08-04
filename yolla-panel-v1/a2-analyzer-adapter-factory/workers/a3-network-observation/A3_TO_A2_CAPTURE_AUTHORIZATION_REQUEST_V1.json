@@ -1,13 +1,24 @@
 {
   "schema_version": "A3_TO_A2_CAPTURE_AUTHORIZATION_REQUEST_V1",
-  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
-  "directive_id": "A2-TO-A3-WAVE5-FIXTURE-ACQUISITION-RESULT-RECOVERY-V1-20260804-001",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-PREAUTH-GAP-CLOSURE-V1-20260805-001",
+  "directive_id": "A2-TO-A3-ACQUISITION-PACKAGE-EXACT-REBIND-AND-RETENTION-BOUND-V5_1-20260805-001",
+  "parent_cycle": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
   "producer": "A-3",
   "consumer": "A-2",
   "requested_authorization": "ONE_SHOT_MAX_8_RESPONSE_FIXTURE_CAPTURE",
   "authorization_granted": false,
-  "request_status": "PREPARED_AWAITING_A5_AND_A7_PRECONDITIONS",
+  "request_status": "REBOUND_READY_AWAITING_A7_GOVERNANCE_AND_EXPLICIT_AUTHORIZATION",
   "requested_profiles": ["EP-001","EP-002","EP-003","EP-004","EP-005","EP-010","EP-011","EP-012"],
+  "exact_a5_authority": {
+    "status": "PASS_BOUND",
+    "final_head": "19781a67eb24ee217b1d072869c407077cca72e1",
+    "pointer_blob": "59f9a82c6edd15e1aa23c11573657ecf25efb004",
+    "requirement_handoff_blob": "a9a5112e53992b6149ec954447fa413ffeca9978",
+    "terminal": "A5_RESPONSE_FIXTURE_REQUIREMENTS_READY_FOR_ACQUISITION",
+    "required_profile_count": 8,
+    "profile_ids": ["EP-001","EP-002","EP-003","EP-004","EP-005","EP-010","EP-011","EP-012"],
+    "handoff_authorizes_live_call": false
+  },
   "requested_limits": {
     "max_capture_per_profile": 1,
     "total_max_response_capture_count": 8,
@@ -15,8 +26,16 @@
     "request_timeout_ms": 20000,
     "total_execution_timeout_ms": 180000
   },
+  "retention_disposal_policy": {
+    "raw_response_byte_persistence": false,
+    "raw_sha256_in_memory": true,
+    "transient_raw_byte_disposal_deadline_seconds": 30,
+    "transient_raw_byte_disposal_rule": "IMMEDIATELY_AFTER_HASH_AND_REDACTION_AND_BEFORE_NEXT_PROFILE_CAPTURE",
+    "redacted_derivative_retention_days": 30,
+    "retention_expiry_action": "DELETE_AND_REQUIRE_NEW_AUTHORIZATION_FOR_RECAPTURE"
+  },
   "required_preconditions": [
-    {"name":"A5_RESPONSE_FIXTURE_REQUIREMENT_HANDOFF","required_terminal":"A5_RESPONSE_FIXTURE_REQUIREMENTS_READY","required_exact_binding":true,"status":"PENDING"},
+    {"name":"A5_RESPONSE_FIXTURE_REQUIREMENT_HANDOFF","required_terminal":"A5_RESPONSE_FIXTURE_REQUIREMENTS_READY_FOR_ACQUISITION","required_exact_binding":true,"status":"PASS_BOUND","head":"19781a67eb24ee217b1d072869c407077cca72e1","pointer_blob":"59f9a82c6edd15e1aa23c11573657ecf25efb004","handoff_blob":"a9a5112e53992b6149ec954447fa413ffeca9978"},
     {"name":"A7_ACQUISITION_GOVERNANCE_AUDIT","required_terminal":"A7_RESPONSE_FIXTURE_ACQUISITION_GOVERNANCE_PASS_OR_EXACT_FINDINGS","status":"PENDING"},
     {"name":"EXPLICIT_A2_TO_A0_A1_AUTHORIZATION","required_scope":"ONE_SHOT_MAX_8_RESPONSE_FIXTURE_CAPTURE","status":"NOT_GRANTED"}
   ],
@@ -25,6 +44,9 @@
     "live_site_call_count": 0,
     "browser_automation_execution_count": 0,
     "credential_use_count": 0,
+    "package_install_count": 0,
+    "duplicate_execution_count": 0,
+    "raw_response_byte_persistence": false,
     "raw_credential_storage": false,
     "redaction_before_persist": true,
     "authentication_bypass": false,
