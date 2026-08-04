@@ -24,7 +24,7 @@ RESULT = load("C5_PR188_PACKAGE_VALIDATION_RESULT_V2.json")
 CANDIDATE = load("KNOWLEDGE_ACCEPTANCE_RECEIPT_CANDIDATE_V1.json")
 FINAL = load("C5_D_ALIGNED_FINAL_REPORT_V2.json")
 
-class TestC5Cycle0002(unittest.TestCase):
+class TestC5Cycle0003(unittest.TestCase):
     def test_01_consumer_pass(self):
         self.assertEqual(validate_consumer(CONSUMER)["decision"], "PASS")
     def test_02_fixture_pass(self):
