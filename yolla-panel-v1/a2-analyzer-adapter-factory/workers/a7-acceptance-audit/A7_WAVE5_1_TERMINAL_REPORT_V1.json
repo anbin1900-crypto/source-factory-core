@@ -1,0 +1,78 @@
+{
+  "schema_version": "A7_WAVE5_1_TERMINAL_REPORT_V1",
+  "worker": "A-7",
+  "group_id": "GROUP-01",
+  "loop_id": "A-LOOP-GROUP-01",
+  "cycle_id": "A-LOOP-GROUP-01-GROUP01-W06-CYCLE-0001",
+  "worker_id": "GROUP01-W06",
+  "directive_id": "GROUP01-W01-TO-GROUP01-W06-A7-PREAUTH-GOVERNANCE-FINAL-REAUDIT-V1-20260805-001",
+  "directive_comment_id": 5182356469,
+  "started_at_kst": "2026-08-05T02:19:00+09:00",
+  "completed_at_kst": "2026-08-05T02:22:00+09:00",
+  "terminal": "A7_FIXTURE_ACQUISITION_GOVERNANCE_READY_FOR_A2_AUTHORIZATION_REQUEST",
+  "decision": "PASS_GOVERNANCE_READY_AUTHORIZATION_NOT_GRANTED",
+  "authorization_request_ready": true,
+  "capture_execution_authorized": false,
+  "self_approval": false,
+  "remote_authorities": {
+    "a3_head": "6735d9335dd5e5137d09c494b3c6921989bb3252",
+    "a3_pointer_blob": "e9d9b5a86c08e7862c6d68099e860e33567ca987",
+    "a3_acquisition_plan_blob": "07fa5394fd5119af2b741a1ba7e528793fdc7b45",
+    "a3_redaction_policy_blob": "996c9067411a3956a742b7e8c7bf4b66ab8d13b0",
+    "a3_validation_receipt_blob": "f5594a350f5a7719cba63041904a938c077c9f8a",
+    "a5_head": "19781a67eb24ee217b1d072869c407077cca72e1",
+    "a5_pointer_blob": "59f9a82c6edd15e1aa23c11573657ecf25efb004",
+    "a5_requirement_handoff_blob": "a9a5112e53992b6149ec954447fa413ffeca9978",
+    "a5_requirement_authority_blob": "c61756db9d680d4816c3064dc009a1f27a7137ac",
+    "a5_response_field_acceptance_schema_blob": "54f3ad4c763eaacb67cb7f654faf5c6c8788bb19",
+    "a5_identifier_evidence_requirement_blob": "b6d782a80c0fb03f5e44fd487f2e7b980bd3d11d"
+  },
+  "acceptance": {
+    "a3_final_head_pointer_exact": "PASS",
+    "a3_a5_exact_binding": "PASS_EXACT_BOUND",
+    "profile_traceability": "PASS_8_OF_8",
+    "a5_requirements_and_acceptance_schema": "PASS",
+    "ep004_429_retry_after_requirement": "PASS",
+    "one_shot_scope": "PASS",
+    "allowlist_only": true,
+    "max_capture_per_profile": 1,
+    "total_max_response_capture_count": 8,
+    "max_response_size_bytes": 2097152,
+    "request_timeout_ms": 20000,
+    "total_execution_timeout_ms": 180000,
+    "transient_raw_byte_disposal_deadline_seconds": 30,
+    "redacted_derivative_retention_days": 30,
+    "raw_response_byte_persistence": false,
+    "redaction_before_persist": true,
+    "authentication_bypass": false,
+    "access_control_bypass": false,
+    "bulk_collection_authorized": false,
+    "a3_validation": "PASS_24_FINDING_0"
+  },
+  "counters": {
+    "capture_execution_count": 0,
+    "live_site_call_count": 0,
+    "browser_automation_execution_count": 0,
+    "credential_use_count": 0,
+    "package_install_count": 0,
+    "duplicate_execution_count": 0
+  },
+  "outputs": {
+    "reaudit_report": {
+      "commit": "1d4a3a826c787bcd5d7b479db2b8927b0042e9eb",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_WAVE5_1_PREAUTH_GOVERNANCE_REAUDIT_V1.json",
+      "blob": "b525b6fb007d5307de57a94b8dce585b0d0fe60e"
+    },
+    "recommendation": {
+      "commit": "3c38aae48bc833b64247607a3312c2647178cd78",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_TO_A2_ONE_SHOT_AUTHORIZATION_RECOMMENDATION_V1.json",
+      "blob": "ab65dceb268d7296b941e78c69aea3304348d52c"
+    }
+  },
+  "required_next_event": "A2_REQUESTS_EXPLICIT_A0_A1_ONE_SHOT_AUTHORIZATION",
+  "implementation_file_direct_edit": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
