@@ -1,0 +1,33 @@
+{
+  "schema_version": "A3_WAVE5_TERMINAL_REPORT_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
+  "directive_id": "A2-TO-A3-WAVE5-FIXTURE-ACQUISITION-RESULT-RECOVERY-V1-20260804-001",
+  "existing_wave5_directive": "A2-TO-A3-RESPONSE-FIXTURE-ACQUISITION-PACKAGE-V5-20260804-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "start_head": "78a83eea6d75b8f70451c7999a23f6cf09e86e8f",
+  "start_comment_id": 5180334965,
+  "completed_at_kst": "2026-08-04T23:19:00+09:00",
+  "status": "PASS",
+  "terminal": "A3_RESPONSE_FIXTURE_ACQUISITION_PACKAGE_READY_AWAITING_AUTHORIZATION",
+  "validation": "PASS_PACKAGE_PREPARATION",
+  "package_scope": {
+    "target_profile_count": 8,
+    "max_capture_per_profile": 1,
+    "total_max_response_capture_count": 8,
+    "capture_execution_authorized": false
+  },
+  "a5_requirement_handoff": {"status":"NOT_PUBLISHED","required_before_execution":true,"fields_invented":false},
+  "a7_governance_audit": {"status":"PENDING","required_before_execution":true},
+  "authorization": {"requested":true,"granted":false},
+  "capture_execution_count": 0,
+  "live_site_call_count": 0,
+  "browser_automation_execution_count": 0,
+  "credential_use_count": 0,
+  "package_install_count": 0,
+  "out_of_owned_root_change_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
