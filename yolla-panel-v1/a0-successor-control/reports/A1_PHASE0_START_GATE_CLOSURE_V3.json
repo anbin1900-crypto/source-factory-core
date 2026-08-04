@@ -1,0 +1,102 @@
+{
+  "schema_version": "A1_PHASE0_START_GATE_CLOSURE_V3",
+  "report_id": "A1-PHASE0-START-GATE-CLOSURE-V3-20260805-001",
+  "closed_at_kst": "2026-08-05T01:26:00+09:00",
+  "role": "A-1_YOLLA_WORKSPACE_SUPERVISING_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "authority": {
+    "directive_id": "A1-TO-A0-A2-D1-A3-A7-PHASE0-CLOSURE-BATCH-V1-20260803-001",
+    "cycle_id": "A1-SUCCESSOR-ACTIVATION-20260803-001",
+    "batch_commit": "46fa759c7b5f57b477de6701ffa539a5bab80750",
+    "prior_reconciliation_report_path": "yolla-panel-v1/a0-successor-control/reports/A1_PHASE0_START_GATE_RECONCILIATION_V2.json",
+    "prior_reconciliation_report_commit": "208f3e80c9638e1ecd71ad5dc55e8ecf04879716",
+    "prior_reconciliation_report_blob": "4149d8af16f3e2a98e7a485c60ecacddaf089bb0",
+    "prior_gate": "PASS_8_OF_10_BLOCKED_2",
+    "authority_precedence": "EXACT_GITHUB_REMOTE_HEAD_COMMITTED_LEDGER"
+  },
+  "newly_satisfied_start_ledgers": {
+    "A-2": {
+      "control_pr": 18,
+      "remote_head": "3c3f7077ab070cb0259c253268ab3a7b17ecb446",
+      "start_report_path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_START_REPORT_V1.json",
+      "start_report_commit": "be51db9cad416274e0472e7de2f772f035e839c7",
+      "start_report_blob": "4f33604e3a86f61bdfa780370774700d242911c1",
+      "latest_pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/LATEST_A2_REPORT_POINTER.json",
+      "latest_pointer_blob": "b81a70cd7a91fe9a10d8502c7837af6e16db52cb",
+      "remote_readback": "PASS",
+      "formalization": "LATE_NON_RETROACTIVE"
+    },
+    "A-7": {
+      "control_pr": 26,
+      "remote_head": "b41978dc9840446293f5e4a6255e5d869604f16d",
+      "start_report_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_START_REPORT_V1.json",
+      "start_report_commit": "15dcc1282a1dc5822a7f56d57cfd8dae166c6378",
+      "start_report_blob": "04f20ee4cbefcc322bb874691229aa1d9d67cc73",
+      "start_pointer_commit": "e44d5b3969e56f06627a47f65dd832b1cdcc3f0f",
+      "start_pointer_blob": "f6a850c59dbe32bdb128d26b5a7ec4d66a5de238",
+      "latest_pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/LATEST_A7_REPORT_POINTER.json",
+      "latest_pointer_blob": "480b692a3e71f646e847785315ad3a02bec2fbf0",
+      "remote_readback": "PASS"
+    }
+  },
+  "phase0_start_gate": {
+    "commander_start_gate": "PASS_5_OF_5",
+    "a_group_worker_start_gate": "PASS_5_OF_5",
+    "combined_start_gate": "PASS_10_OF_10",
+    "accepted_start_ledgers": 10,
+    "required_start_ledgers": 10,
+    "missing_roles": [],
+    "progress_percent": 100,
+    "phase0_pass": true,
+    "terminal": "A1_PHASE0_START_GATE_PASS_10_OF_10"
+  },
+  "active_downstream_control": {
+    "a2_current_head": "3c3f7077ab070cb0259c253268ab3a7b17ecb446",
+    "a2_current_terminal": "A2_WAVE5_WORKER_RESULTS_NOT_PUBLISHED_RESULT_RECOVERY_ACTIVE",
+    "a2_active_cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
+    "a2_required_result_count": 5,
+    "a2_received_result_count": 0,
+    "a2_worker_result_recovery_comments": {
+      "A-3": 5180069370,
+      "A-4": 5180074035,
+      "A-5": 5180080933,
+      "A-6": 5180087453,
+      "A-7": 5180092915
+    },
+    "a7_current_head": "b41978dc9840446293f5e4a6255e5d869604f16d",
+    "a7_current_status": "EVENT_WAIT",
+    "a7_current_cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-PREAUTH-GAP-CLOSURE-V1-20260805-001",
+    "a7_remaining_event": "A3_WAVE5_1_TERMINAL_VALIDATION_REBIND_RETENTION_RECEIPTS_AND_POINTER_REMOTE_READBACK",
+    "authorization_request_ready": false,
+    "capture_execution_authorized": false,
+    "live_site_call_authorized": false,
+    "duplicate_directive_published_by_a1": false
+  },
+  "a0_runtime_observation": {
+    "latest_pointer_path": "yolla-panel-v1/a0-successor-control/LATEST_A0_SUCCESSOR_REPORT_POINTER.json",
+    "status": "A0_V510232_NATIVE_LOG_DOWNLOAD_BUILD_PASS_TARGET_PC_PENDING",
+    "current_ui_version": "5.10.2.3.2",
+    "latest_report_commit": "377e1cd6422b59e23190a9a14aa953fc73b95476",
+    "target_pc_execution_performed": false,
+    "target_pc_pass_claimed": false
+  },
+  "next_gate": {
+    "primary": "A2_WAVE5_WORKER_RESULT_RECOVERY_5_OF_5_OR_EXACT_BLOCKERS",
+    "secondary": "A7_EVENT_WAIT_UNTIL_A3_WAVE5_1_TERMINAL_AND_POINTER_REMOTE_READBACK",
+    "after_results": "A2_AUTHORIZATION_REQUEST_GATE_REEVALUATION",
+    "new_directive_required_now": false
+  },
+  "safety": {
+    "target_pc_execution_count": 0,
+    "capture_execution_count": 0,
+    "live_site_call_count": 0,
+    "credential_use_count": 0,
+    "actual_bulk_collection": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  }
+}
