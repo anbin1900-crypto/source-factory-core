@@ -1,0 +1,33 @@
+{
+  "schema_version": "AI_YOLLA_V510236_INDEPENDENT_RUNTIME_CONTRACT_V1",
+  "runtime_id": "A00-ISO-01",
+  "base_version": "5.10.2.3.6",
+  "base_source": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510236_STALE_LANE_RECOVERY.bat",
+  "purpose": "Create a fully isolated derivative runtime without executing or modifying the existing installation.",
+  "isolation": {
+    "separate_install_root": true,
+    "separate_release_root": true,
+    "separate_state_root": true,
+    "separate_browser_profile": true,
+    "separate_electron_single_instance_scope": true,
+    "separate_worker_partition": true,
+    "separate_analysis_partition": true,
+    "separate_bridge_root": true,
+    "separate_source_sandbox": true,
+    "separate_logs_and_receipts": true,
+    "shared_schedule_import": false,
+    "shared_epic_bootstrap": false,
+    "shared_runtime_state_migration": false,
+    "default_dispatch_enabled": false,
+    "shared_launcher_overwrite": false,
+    "shared_current_pointer_write": false,
+    "shared_process_stop": false,
+    "windows_registry_write": false,
+    "scheduled_task_write": false
+  },
+  "default_mode": "READ_ONLY_ISOLATED_SANDBOX",
+  "activation_requirement": "Explicit independent scope configuration and dispatch-enabled launch",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
