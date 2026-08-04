@@ -1,0 +1,53 @@
+{
+  "schema_version": "B6_START_REPORT_V1",
+  "report_id": "B6-START-EVENT-WAIT-20260805-001",
+  "reported_at_kst": "2026-08-05T04:24:00+09:00",
+  "group_id": "GROUP-02",
+  "loop_id": "A-LOOP-GROUP-02",
+  "cycle_id": "A-LOOP-GROUP-02-GROUP02-W06-CYCLE-0001",
+  "worker_id": "GROUP02-W06",
+  "source_worker": "B-6",
+  "directive_id": "B1-TO-B6-EXTRACTION-ACCEPTANCE-C1-HANDOFF-V1-20260804-001",
+  "directive_comment_id": 5183211593,
+  "task_id": "B1-B6-EXECUTION-TASK-V1-20260804-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 42,
+  "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+  "start_head": "6ccf2fea6cc4d05db2704ac08c50eb8ff43015b1",
+  "owned_root": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/**",
+  "mode": "EVENT_WAIT_B2_TO_B5_THEN_INDEPENDENT_ACCEPTANCE",
+  "entry_condition": "B2_B3_B4_B5_TERMINALS_AND_POINTERS_4_OF_4",
+  "entry_condition_met": false,
+  "accepted_inputs": {
+    "count": "1_OF_4",
+    "accepted_workers": ["B-2"],
+    "waiting_workers": ["B-3", "B-4", "B-5"]
+  },
+  "current_scope": [
+    "COMMIT_START_AUTHORITY",
+    "INDEPENDENTLY_REQUERY_B2_EXACT_HEAD_POINTER_FINAL_TEST_AND_B1_ACCEPTANCE",
+    "COMMIT_EVENT_WAIT_POINTER"
+  ],
+  "deferred_until_entry_condition": [
+    "B6_EXACT_HEAD_BLOB_MATRIX_V1",
+    "B6_REQUIRED_OUTPUT_ACCEPTANCE_MATRIX_V1",
+    "B6_EXTRACTION_ACCEPTANCE_REPORT_V1",
+    "B6_C1_HANDOFF_AUDIT_RECEIPT_V1",
+    "B1_TO_C1_HANDOFF_CANDIDATE_V1",
+    "FINAL_ACCEPTANCE_TEST_SUITE",
+    "B6_FINAL_REPORT_V1"
+  ],
+  "status": "STARTED_EVENT_WAIT_B3_B4_B5",
+  "final_acceptance_started": false,
+  "c1_handoff_pass_claimed": false,
+  "boundaries": {
+    "b2_to_b5_implementation_edit": false,
+    "unverified_adapter_use": false,
+    "actual_site_extraction": false,
+    "semantic_transformation": false,
+    "d_canonical_db_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
