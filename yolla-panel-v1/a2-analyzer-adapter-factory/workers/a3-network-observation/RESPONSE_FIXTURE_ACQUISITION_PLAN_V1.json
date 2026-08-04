@@ -1,0 +1,41 @@
+{
+  "schema_version": "RESPONSE_FIXTURE_ACQUISITION_PLAN_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
+  "directive_id": "A2-TO-A3-WAVE5-FIXTURE-ACQUISITION-RESULT-RECOVERY-V1-20260804-001",
+  "existing_wave5_directive": "A2-TO-A3-RESPONSE-FIXTURE-ACQUISITION-PACKAGE-V5-20260804-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/",
+  "purpose": "Prepare one-shot acquisition of exact endpoint-bound response body fixtures after explicit authorization.",
+  "authorization": {"authorized": false, "capture_execution_count": 0},
+  "a5_requirement_binding": {
+    "status": "NOT_PUBLISHED_AT_PREPARATION_TIME",
+    "required_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/A5_TO_A3_RESPONSE_FIXTURE_REQUIREMENT_HANDOFF_V1.json",
+    "execution_precondition": "EXACT_HEAD_AND_BLOB_BINDING_REQUIRED",
+    "field_requirements_invented": false
+  },
+  "limits": {
+    "max_capture_per_profile": 1,
+    "total_max_response_capture_count": 8,
+    "max_response_size_bytes_per_capture": 2097152,
+    "request_timeout_ms": 20000,
+    "total_execution_timeout_ms": 180000
+  },
+  "capture_sequence": ["EP-001","EP-002","EP-003","EP-004","EP-005","EP-010","EP-012","EP-011"],
+  "target_profiles": [
+    {"profile_id":"EP-001","method":"GET","url_pattern":"https://fixture.invalid/api/listings/map","resource_type":"FETCH","classification":"MAP_MOVE","parameters":["query:bbox","query:zoom"],"expected_response":{"format":"JSON","content_type":"application/json"},"credential_dependency":"NOT_OBSERVED"},
+    {"profile_id":"EP-002","method":"GET","url_pattern":"https://fixture.invalid/api/listings/{listing_id}","resource_type":"FETCH","classification":"DETAIL","parameters":["path:listing_id","query:include"],"expected_response":{"format":"JSON","content_type":"application/json"},"credential_dependency":"NOT_OBSERVED"},
+    {"profile_id":"EP-003","method":"GET","url_pattern":"https://fixture.invalid/api/listings/{listing_id}","resource_type":"XHR","classification":"DETAIL","parameters":["path:listing_id"],"expected_response":{"format":"JSON","content_type":"application/json"},"credential_dependency":"NOT_OBSERVED"},
+    {"profile_id":"EP-004","method":"GET","url_pattern":"https://fixture.invalid/api/listings","resource_type":"XHR","classification":"LIST_OR_PAGINATION","parameters":["query:page","query:size"],"expected_response":{"format":"JSON","content_type":"application/json"},"credential_dependency":"NOT_OBSERVED"},
+    {"profile_id":"EP-005","method":"GET","url_pattern":"https://fixture.invalid/api/regions","resource_type":"FETCH","classification":"REGION_DISCOVERY","parameters":["query:parent"],"expected_response":{"format":"JSON","content_type":"application/json"},"credential_dependency":"NOT_OBSERVED"},
+    {"profile_id":"EP-010","method":"POST","url_pattern":"https://fixture.invalid/api/listings/search","resource_type":"XHR","classification":"FILTER","parameters":["body:district_code","body:property_type","body:min_price"],"expected_response":{"format":"JSON","content_type":"application/json"},"credential_dependency":"NOT_OBSERVED"},
+    {"profile_id":"EP-011","method":"POST","url_pattern":"https://fixture.invalid/api/session/refresh","resource_type":"FETCH","classification":"AUTH_SESSION","parameters":[],"expected_response":{"format":"JSON","content_type":"application/json"},"credential_dependency":"PRESENT_REDACTED_IN_A3_TRACE","execution_rule":"SKIP_UNLESS_SEPARATE_CREDENTIAL_REFERENCE_AUTHORIZATION_IS_GRANTED"},
+    {"profile_id":"EP-012","method":"POST","url_pattern":"https://fixture.invalid/graphql","resource_type":"GRAPHQL","classification":"SEARCH","parameters":["body:operationName","body:variables.keyword"],"expected_response":{"format":"JSON","content_type":"application/json"},"credential_dependency":"NOT_OBSERVED"}
+  ],
+  "artifact_requirements": ["raw_artifact_sha256","redacted_artifact_sha256","size_bytes","mime_type","acquired_at","endpoint_profile_id","method","url_pattern","http_status"],
+  "stop_conditions": ["EXPLICIT_AUTHORIZATION_MISSING","A5_REQUIREMENT_HANDOFF_MISSING_OR_HASH_MISMATCH","A7_GOVERNANCE_ACCEPTANCE_NOT_PASS","PROFILE_NOT_IN_ALLOWLIST","REDIRECT_OUTSIDE_AUTHORIZED_ORIGIN","UNEXPECTED_CONTENT_TYPE","RESPONSE_SIZE_LIMIT_EXCEEDED","TIMEOUT","RAW_SECRET_OR_PERSONAL_DATA_DETECTED_BEFORE_PERSIST","AUTHENTICATION_OR_ACCESS_CONTROL_BYPASS_REQUIRED","TOTAL_CAPTURE_LIMIT_REACHED"],
+  "production": false,
+  "ready": false,
+  "merge": false
+}
