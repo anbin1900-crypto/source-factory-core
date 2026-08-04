@@ -1,11 +1,13 @@
 {
   "schema_version": "LATEST_B2_REPORT_POINTER_V1",
   "worker_id": "B-2",
-  "updated_at_kst": "2026-08-04T12:14:20+09:00",
-  "latest_report_type": "START",
-  "latest_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/B2_START_REPORT_V1.json",
-  "latest_report_commit": "f3f71f1aaecf96d940e2a926b4dc0e0df21c1510",
-  "terminal": "IN_PROGRESS",
+  "updated_at_kst": "2026-08-04T12:20:00+09:00",
+  "latest_report_type": "FINAL",
+  "latest_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/B2_FINAL_REPORT_V1.json",
+  "latest_report_commit": "ad7a6d7a39d36907269ffcaff052bfb778b271f5",
+  "test_result_path": "yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/B2_TEST_RESULTS_V1.json",
+  "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY",
+  "status": "PASS",
   "production": false,
   "ready": false,
   "merge": false
