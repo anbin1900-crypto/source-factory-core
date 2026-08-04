@@ -1,1 +1,75 @@
-{"schema_version":"LATEST_C6_D_ALIGNED_POINTER_V2","pointer_id":"LATEST_C6_D_ALIGNED_POINTER","worker":"C-6_AI_QUALITY_AND_E2E_VALIDATION","assignment_id":"C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001","directive_id":"C1-TO-C6-D-ALIGNED-TRANSFORMER-E2E-AUDIT-V1-20260804-001","directive_comment":5171225017,"original_start_comment":5171322765,"original_terminal_comment":5171440017,"post_terminal_revalidation_start_comment":5171722750,"published_at_kst":"2026-08-04 06:00 KST","repository":"anbin1900-crypto/source-factory-core","control_pr":20,"branch":"integration/c1-semantic-knowledge-domain-ai-runtime-v1","start_head":"817549449944bda00c6dd305b175377510eb0cd7","observed_branch_head_before_pointer":"b2bf2577df17dfb6c1a2318bee84caef5559c27b","owned_root":"yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c6-transformer-e2e-audit/**","v1_artifacts":{"acceptance_contract_blob":"7919c23f675b3ca807aed6335a04ab832272b4ff","no_silent_drop_audit_blob":"e9a1d746fa237e8dca6ba1f46bdad6a7ba1a9eb2","lineage_completeness_blob":"10d9c4acc171461f3412d7569516656db17bbfa3","handoff_validation_blob":"0ea91094ab082c0c2d38cfa27662454370a3096a","e2e_report_v1_blob":"490dd8d2bd7f3a72686d5866096bdd60d6a87bdb","final_report_v1_blob":"5865ac3335605c99539c7610a6fb0a163f5104c6"},"v2_artifacts":{"worker_terminal_matrix":{"path":"C6_WORKER_TERMINAL_ACCEPTANCE_MATRIX_V2.json","commit":"b74cbf234cfaa6e24d994d38948c918cf964937b","blob":"d111ad5291ab91c897f2b0fdfb430fb0740b9e9c"},"post_terminal_e2e_report":{"path":"C6_D_ALIGNED_POST_TERMINAL_E2E_REPORT_V2.json","commit":"dae5bdac408335ce348a5a8b967216c8cf82f30c","blob":"870d972f8690766e2c606d2f3ad379b50e4bd471"},"final_report":{"path":"C6_D_ALIGNED_FINAL_REPORT_V2.json","commit":"b2bf2577df17dfb6c1a2318bee84caef5559c27b","blob":"280c4470f3f5b46fe5a9df41bdbc0082dbd6913b"}},"worker_terminal_gate":{"status":"PASS_4_OF_4","C-2":{"comment":5171397378,"pointer_blob":"8c29ac70b338fa21b41d2205bd2d846537a18314"},"C-3":{"comment":5171465080,"pointer_blob":"a1aee60fa73702e303bb53ed6c92ba82435fb285"},"C-4":{"comment":5171604846,"pointer_blob":"489f4511852fe7c6410152a2cc26e21233ffe15b"},"C-5":{"comment":5171489904,"pointer_blob":"038d4cdae9e0d793d66f99091d7526a5cdaaef23"}},"d1_contract_gate":{"status":"PASS_3_OF_3_READ_ONLY","source_factory_pr":21,"current_observed_head":"4f251262b6ee67c9d41aae6216bf752c9eaf52ee","schema_profile_blob":"93788d2685d25afae2d8e61c6b59e9615c51d22a","mapping_contract_blob":"c2a3ae441ae0e2b44fb1bb9f95670cf0887bd8ed","validation_ruleset_blob":"d21291ac77f44f84fffac6d935187f3ee4690dcd","schema_version":"1.0.0","mapping_version":"1.0.0","ruleset_version":"1.0.0"},"validation":{"combined_worker_tests":"PASS_106_OF_106","c6_fixture_unit_tests":"PASS_22_OF_22","c6_contract_checks":"PASS_8_OF_8","c6_audit_matrix":"PASS_14_OF_14","c6_lineage_completeness":"PASS_10_OF_10","source_field_accounting":"PASS_6_OF_6","rejection_preservation":"PASS_3_OF_3","mapping_rules":"PASS_69_OF_69","rejection_taxonomy":"PASS_11_OF_11","provenance_ref_omission_count":0,"evidence_ref_omission_count":0,"knowledge_object_invention_count":0,"relationship_invention_count":0,"aggregate_silent_drop_count":0,"virtual_pass_count":0,"v2_remote_blob_readback":"PASS_3_OF_3"},"authoritative_source_gate":{"status":"BLOCKED","normalized_dataset_v1":"NOT_PUBLISHED","raw_artifact_manifest_v1":"NOT_PUBLISHED","extraction_receipt_v1":"NOT_PUBLISHED","first_blocker":"B1_NORMALIZED_DATASET_OR_RAW_ARTIFACT_MANIFEST_NOT_PUBLISHED"},"actual_transformation_executed":false,"actual_d_handoff_performed":false,"d_acceptance_claimed":false,"d_canonical_schema_mutation":false,"d_canonical_db_write":false,"fixture_claimed_as_d_accepted_data":false,"production":false,"ready":false,"merge":false,"decision":"EXACT_BLOCKER","terminal":"C6_D_ALIGNED_TRANSFORMER_E2E_EXACT_BLOCKER","expected_terminal_contract":"C6_D_ALIGNED_TRANSFORMER_E2E_PASS_OR_EXACT_BLOCKER","status":"C6_WORKER_AND_D1_GATES_PASS_WAITING_B1_AUTHORITATIVE_SOURCE_PACKAGE"}
+{
+  "schema_version": "LATEST_C6_D_ALIGNED_POINTER_V3",
+  "pointer_id": "LATEST_C6_D_ALIGNED_POINTER",
+  "group_id": "GROUP-03",
+  "loop_id": "A-LOOP-GROUP-03",
+  "cycle_id": "A-LOOP-GROUP-03-GROUP03-W06-CYCLE-0001",
+  "worker_id": "GROUP03-W06",
+  "directive_id": "GROUP03-W01-TO-GROUP03-W06-C6V3-GATE-AND-TERMINAL-CLOSURE-CYCLE-0001",
+  "directive_comment_id": 5183596219,
+  "prior_directive_comment_id": 5183194866,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "execution_control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "published_at_kst": "2026-08-05 05:32 KST",
+  "prior_pointer": {
+    "schema_version": "LATEST_C6_D_ALIGNED_POINTER_V2",
+    "blob": "91ca4d06c2d12bc3271d1cd2e0f9bbe1cb5de64e",
+    "stale_findings_replaced": [
+      "B1_NORMALIZED_DATASET_OR_RAW_ARTIFACT_MANIFEST_NOT_PUBLISHED",
+      "SOURCE_FACTORY_PR21_AS_ACTIVE_D_AUTHORITY"
+    ]
+  },
+  "worker_terminal_gate": {
+    "required": 4,
+    "accepted": 2,
+    "status": "PASS_2_OF_4",
+    "c2": {"result_comment": 5181940916, "pointer_blob": "a4bc27b8e24dbadf668db5da21cacda0a866284a", "lineage_attempt_count": 50, "tests": "PASS_34_OF_34", "accepted": true},
+    "c3": {"result_comment": 5182029836, "pointer_comment": 5182046563, "pointer_blob": "4dd95a48d1094badabc0e0988ed652a1789ac020", "mapping_rule_count": 43, "missing_required_source_path_count": 22, "optional_missing_count": 4, "tests": "PASS_60_OF_60", "accepted": true},
+    "c4": {"pointer_blob": "489f4511852fe7c6410152a2cc26e21233ffe15b", "v2_package_terminal_published": false, "accepted": false},
+    "c5": {"pointer_blob": "266cda2df7e055c5bf5f63a24f181bf7d5283073", "v2_validation_terminal_published": false, "accepted": false}
+  },
+  "active_d_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "head": "1bb475c440983aae761b897a3b58a8f4dab880cc",
+    "schema_profile_blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+    "mapping_contract_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
+    "validation_ruleset_blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
+    "acceptance_receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
+    "readback": "PASS_4_OF_4"
+  },
+  "historical_authority": {"source_factory_pr21_contracts": "HISTORICAL_NOT_ACTIVE_D_AUTHORITY"},
+  "v3_artifacts": {
+    "worker_terminal_matrix": {"path": "C6_WORKER_TERMINAL_ACCEPTANCE_MATRIX_V3.json", "commit": "177c8c165e5b0d1688922014ee7d24e152ef5b17", "blob": "45dd968d8862afa07784bb52eeb60d8787ffabb5"},
+    "handoff_validation": {"path": "C1_TO_D1_HANDOFF_VALIDATION_V2.json", "commit": "e45d0ded013c94ec29e8ecf8e5b9b28d6a1dc2e1", "blob": "8626f58b318148b7e4d8e91ba3063fb156369b3c"},
+    "final_e2e_report": {"path": "C6_D_ALIGNED_FINAL_E2E_REPORT_V3.json", "commit": "4c7d58c7557c290b9b9aedf5fd21d167f0d87d4c", "blob": "b73b72d072b4eb9a31115f09ba8e805e3b06c56c"},
+    "final_report": {"path": "C6_D_ALIGNED_FINAL_REPORT_V3.json", "commit": "524c1e3d99fc6ec4a9559bdef768a63cd9fdfc07", "blob": "e0d532f2ce602e384e8ec73385ab76c81874bfd0"}
+  },
+  "validation": {
+    "json_parse": "PASS_5_OF_5",
+    "remote_blob_readback": "PASS_4_OF_4_PRE_POINTER",
+    "c2_pointer_binding": "PASS",
+    "c3_pointer_binding": "PASS",
+    "pr188_exact_authority": "PASS_4_OF_4",
+    "virtual_pass_count": 0,
+    "first_failure_corrected": "STALE_C6_V2_AUTHORITY_BASELINE_REBOUND_AND_RERUN"
+  },
+  "handoff_package_completeness": "FAIL_0_OF_4_EXTERNAL",
+  "final_v3_e2e_executed": false,
+  "actual_d_handoff_performed": false,
+  "d1_submission_pass_claimed": false,
+  "d_acceptance_claimed": false,
+  "d_canonical_schema_mutation": false,
+  "d_canonical_db_write": false,
+  "first_blocker": "C4_V2_PACKAGE_TERMINAL_NOT_PUBLISHED",
+  "additional_blocker": "C5_V2_VALIDATION_TERMINAL_WAITING_C4_V2_PACKAGE",
+  "decision": "EXACT_EXTERNAL_BLOCKER",
+  "terminal": "C6_D_ALIGNED_TRANSFORMER_E2E_EXACT_BLOCKER",
+  "terminal_status_for_loop": "BLOCKED_EXTERNAL",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "ci_status": "NOT_RUN_NOT_CLAIMED_PASS"
+}
