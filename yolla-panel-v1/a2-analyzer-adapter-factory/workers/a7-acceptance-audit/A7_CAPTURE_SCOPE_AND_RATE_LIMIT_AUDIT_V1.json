@@ -1,0 +1,22 @@
+{
+  "schema_version": "A7_CAPTURE_SCOPE_AND_RATE_LIMIT_AUDIT_V1",
+  "directive_id": "A2-TO-A7-FIXTURE-ACQUISITION-GOVERNANCE-AUDIT-V5-20260804-001",
+  "recovery_directive_id": "A2-TO-A7-WAVE5-FIXTURE-ACQUISITION-GOVERNANCE-RESULT-RECOVERY-V1-20260804-001",
+  "evaluated_at_kst": "2026-08-04T23:13:00+09:00",
+  "source_audit_path": "CAPTURE_SCOPE_SECURITY_AUDIT_V1.json",
+  "target_profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-011", "EP-012"],
+  "max_capture_per_profile": 1,
+  "total_max_capture_count": 8,
+  "request_count_bound": "PASS",
+  "response_size_bound": "FINDING_NOT_PUBLISHED",
+  "timeout_bound": "FINDING_NOT_PUBLISHED",
+  "automatic_retry_authorization": false,
+  "auth_bypass": false,
+  "access_control_bypass": false,
+  "live_capture_execution_count": 0,
+  "decision": "EXACT_FINDINGS",
+  "capture_execution_authorized": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
