@@ -1,0 +1,78 @@
+{
+  "schema_version": "C1_D_ALIGNED_WAVE2_PUBLICATION_RECEIPT_V1",
+  "receipt_id": "C1-D-ALIGNED-WAVE2-PUBLICATION-20260804-001",
+  "registered_at_kst": "2026-08-04 11:56 KST",
+  "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "event_id": "C1-D-ALIGNED-AUTHORITY-REBIND-CLOSURE-WAVE2-20260804-001",
+  "audit": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/reports/C1_D_ALIGNED_WORKER_RESULT_AUDIT_V1.json",
+    "commit": "29d755e62d28c074f0587b6d5bb84ec193a2fbb3",
+    "blob": "73eb97b2ebe7fe35e5409f176347eb38613e8dfa"
+  },
+  "assignment": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/directives/C1_D_ALIGNED_TRANSFORMER_WAVE2_REBIND_ASSIGNMENT_V1.json",
+    "commit": "00b26e424077aa85caf993e2569da9b916911818",
+    "blob": "a904e8d6c4ee8684c70ee57203836432196ef175"
+  },
+  "worker_publications": {
+    "C-2": {
+      "comment_id": 5174120343,
+      "continuation_event": "C2-B1-FIXTURE-LINEAGE-REBIND-V2-20260804-001",
+      "existing_directive_reused": true,
+      "status": "PUBLISHED_IMMEDIATE"
+    },
+    "C-3": {
+      "comment_id": 5174123016,
+      "continuation_event": "C3-PR188-MAPPING-REBIND-CROSSWALK-V2-20260804-001",
+      "existing_directive_reused": true,
+      "status": "PUBLISHED_IMMEDIATE"
+    },
+    "C-4": {
+      "comment_id": 5174125762,
+      "continuation_event": "C4-B1-PR188-PACKAGE-ASSEMBLY-V2-20260804-001",
+      "existing_directive_reused": true,
+      "status": "PUBLISHED_WAIT_C2_C3"
+    },
+    "C-5": {
+      "comment_id": 5174129167,
+      "continuation_event": "C5-PR188-C4-PACKAGE-VALIDATION-V2-20260804-001",
+      "existing_directive_reused": true,
+      "status": "PUBLISHED_WAIT_C4"
+    },
+    "C-6": {
+      "comment_id": 5174132443,
+      "continuation_event": "C6-D-ALIGNED-FINAL-E2E-PR188-V3-20260804-001",
+      "existing_directive_reused": true,
+      "status": "PUBLISHED_WAIT_C2_TO_C5"
+    }
+  },
+  "external_dependency_request": {
+    "target": "B-1_COLLECTION_DB_MATERIALIZATION_COMMANDER",
+    "control_pr": 19,
+    "comment_id": 5174135393,
+    "request": "FIXTURE_HANDOFF_POINTER_CORRECTION_OR_EXACT_BLOCKER",
+    "new_b_worker_directive": false
+  },
+  "publication_summary": {
+    "c_worker_followups_published": 5,
+    "external_dependency_requests_published": 1,
+    "new_directive_count": 0,
+    "new_duplicate_prompt_key_count": 0,
+    "owned_root_collision_count": 0,
+    "execution_order": "C2_C3_PARALLEL_THEN_C4_THEN_C5_THEN_C6"
+  },
+  "boundaries": {
+    "actual_site_data_claim": false,
+    "fixture_claimed_as_d_accepted_data": false,
+    "d_acceptance_receipt_issued": false,
+    "d_canonical_db_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "terminal": "C1_D_ALIGNED_WAVE2_REBIND_TASKS_PUBLISHED",
+  "status": "PASS_5_OF_5_PLUS_B1_POINTER_CORRECTION_REQUEST"
+}
