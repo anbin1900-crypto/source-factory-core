@@ -1,0 +1,36 @@
+{
+  "schema_version": "A3_TO_A2_CAPTURE_AUTHORIZATION_REQUEST_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
+  "directive_id": "A2-TO-A3-WAVE5-FIXTURE-ACQUISITION-RESULT-RECOVERY-V1-20260804-001",
+  "producer": "A-3",
+  "consumer": "A-2",
+  "requested_authorization": "ONE_SHOT_MAX_8_RESPONSE_FIXTURE_CAPTURE",
+  "authorization_granted": false,
+  "request_status": "PREPARED_AWAITING_A5_AND_A7_PRECONDITIONS",
+  "requested_profiles": ["EP-001","EP-002","EP-003","EP-004","EP-005","EP-010","EP-011","EP-012"],
+  "requested_limits": {
+    "max_capture_per_profile": 1,
+    "total_max_response_capture_count": 8,
+    "max_response_size_bytes_per_capture": 2097152,
+    "request_timeout_ms": 20000,
+    "total_execution_timeout_ms": 180000
+  },
+  "required_preconditions": [
+    {"name":"A5_RESPONSE_FIXTURE_REQUIREMENT_HANDOFF","required_terminal":"A5_RESPONSE_FIXTURE_REQUIREMENTS_READY","required_exact_binding":true,"status":"PENDING"},
+    {"name":"A7_ACQUISITION_GOVERNANCE_AUDIT","required_terminal":"A7_RESPONSE_FIXTURE_ACQUISITION_GOVERNANCE_PASS_OR_EXACT_FINDINGS","status":"PENDING"},
+    {"name":"EXPLICIT_A2_TO_A0_A1_AUTHORIZATION","required_scope":"ONE_SHOT_MAX_8_RESPONSE_FIXTURE_CAPTURE","status":"NOT_GRANTED"}
+  ],
+  "safety_assertions": {
+    "capture_execution_count": 0,
+    "live_site_call_count": 0,
+    "browser_automation_execution_count": 0,
+    "credential_use_count": 0,
+    "raw_credential_storage": false,
+    "redaction_before_persist": true,
+    "authentication_bypass": false,
+    "access_control_bypass": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
