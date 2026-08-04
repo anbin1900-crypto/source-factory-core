@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "receipt_id": "B1-WORKER-ADDITIONAL-WORK-PUBLICATION-RECEIPT-V1-20260804-001",
+  "published_at_kst": "2026-08-04T11:56:00+09:00",
+  "control_pr": 19,
+  "assignment": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave4/B1_WORKER_ADDITIONAL_WORK_AND_FIXTURE_SEED_BINDING_V1.json",
+    "commit": "1ebe108668bd1ffd7f176a75accaaf3fd3988eb9",
+    "blob": "2495c7d8eb244e40d2a1a291f5c49309a28cc505"
+  },
+  "pointer": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave4/LATEST_B1_WORKER_ADDITIONAL_WORK_POINTER.json",
+    "commit": "c1aac81c3dc9e8a7724011af507fba2adae5f7f8"
+  },
+  "comments": {
+    "B-2": {"pr": 38, "comment": 5174096887},
+    "B-3": {"pr": 39, "comment": 5174098021},
+    "B-4": {"pr": 40, "comment": 5174099605},
+    "B-5": {"pr": 41, "comment": 5174101371},
+    "B-6": {"pr": 42, "comment": 5174102888}
+  },
+  "publication_result": "PASS_5_OF_5",
+  "existing_task_ids_reused": true,
+  "new_directive_count": 0,
+  "worker_terminals_received": 0,
+  "next_gate": "B2_TO_B5_TERMINALS_4_OF_4_THEN_B6_FINAL_ACCEPTANCE",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
