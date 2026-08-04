@@ -19,6 +19,11 @@
     "commit": "026c3f9f5c156773b40a0db36df29e65ae5414c6",
     "blob": "5a9a9f1efd5a490d86d6b7602946fff93938fb75"
   },
+  "wave5_publication_receipt": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave5/B1_WORKER_WAVE5_ADDITIONAL_WORK_PUBLICATION_RECEIPT_V1.json",
+    "commit": "f63dc1e5eb33d01797313a2364dd75e2a47c83f0",
+    "result": "PASS_5_OF_5"
+  },
   "accepted_workers": {
     "B-2": {
       "pr": 38,
@@ -26,14 +31,15 @@
       "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY",
       "tests": "PASS_24_OF_24",
       "remote_blob_readback": "PASS_7_OF_7",
-      "status": "ACCEPTED_PASS"
+      "comment": 5180362401,
+      "status": "ACCEPTED_PASS_HOLD"
     }
   },
   "pending_workers": {
-    "B-3": {"pr": 39, "head": "8c31cec83f1b81ba80511bed8a61b15536da3b48", "status": "EXECUTE_WITH_B2_CONTRACT_AND_B1_SEED"},
-    "B-4": {"pr": 40, "head": "f1c327882bfd73d9670afa661e11c6acc8a8cccb", "status": "EXECUTE_WITH_B2_CONTRACT_AND_B1_SEED"},
-    "B-5": {"pr": 41, "head": "dfd99f6188d263fd7e7ded72396f72006680fee8", "status": "EXECUTE_SQLITE_BASE64_AND_READBACK_GAP_CLOSURE"},
-    "B-6": {"pr": 42, "head": "6ccf2fea6cc4d05db2704ac08c50eb8ff43015b1", "status": "EVENT_WAIT_ACCEPTED_INPUTS_1_OF_4"}
+    "B-3": {"pr": 39, "head": "8c31cec83f1b81ba80511bed8a61b15536da3b48", "comment": 5180367746, "status": "EXECUTE_WITH_B2_CONTRACT_AND_B1_SEED"},
+    "B-4": {"pr": 40, "head": "f1c327882bfd73d9670afa661e11c6acc8a8cccb", "comment": 5180371498, "status": "EXACT_RAW_EVIDENCE_REBUILD"},
+    "B-5": {"pr": 41, "head": "dfd99f6188d263fd7e7ded72396f72006680fee8", "comment": 5180377287, "status": "SQLITE_BASE64_AND_READBACK_GAP_CLOSURE"},
+    "B-6": {"pr": 42, "head": "6ccf2fea6cc4d05db2704ac08c50eb8ff43015b1", "comment": 5180380943, "status": "EVENT_WAIT_ACCEPTED_INPUTS_1_OF_4"}
   },
   "a2_dependency": {
     "head": "3c3f7077ab070cb0259c253268ab3a7b17ecb446",
