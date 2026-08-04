@@ -1,34 +1,62 @@
 {
-  "schema_version": "LATEST_C6_D_ALIGNED_POINTER_V3",
+  "schema_version": "LATEST_C6_D_ALIGNED_POINTER_V4",
   "pointer_id": "LATEST_C6_D_ALIGNED_POINTER",
   "group_id": "GROUP-03",
   "loop_id": "A-LOOP-GROUP-03",
-  "cycle_id": "A-LOOP-GROUP-03-GROUP03-W06-CYCLE-0001",
+  "cycle_id": "A-LOOP-GROUP-03-GROUP03-W06-CYCLE-0002",
   "worker_id": "GROUP03-W06",
-  "directive_id": "GROUP03-W01-TO-GROUP03-W06-C6V3-GATE-AND-TERMINAL-CLOSURE-CYCLE-0001",
-  "directive_comment_id": 5183596219,
-  "prior_directive_comment_id": 5183194866,
+  "directive_id": "GROUP03-W01-TO-GROUP03-W06-C6V4-FINAL-E2E-CYCLE-0002",
+  "directive_comment_id": 5184578323,
+  "start_comment_id": 5184734169,
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
   "execution_control_pr": 20,
   "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
-  "published_at_kst": "2026-08-05 05:32 KST",
+  "published_at_kst": "2026-08-05 06:13 KST",
+  "start_head": "ab43148dfc87720e90a32f958270fd291594ea43",
+  "observed_head_before_pointer": "7e36939d9d4d0a278b46968a8f7100488ca15ba2",
   "prior_pointer": {
-    "schema_version": "LATEST_C6_D_ALIGNED_POINTER_V2",
-    "blob": "91ca4d06c2d12bc3271d1cd2e0f9bbe1cb5de64e",
-    "stale_findings_replaced": [
-      "B1_NORMALIZED_DATASET_OR_RAW_ARTIFACT_MANIFEST_NOT_PUBLISHED",
-      "SOURCE_FACTORY_PR21_AS_ACTIVE_D_AUTHORITY"
-    ]
+    "schema_version": "LATEST_C6_D_ALIGNED_POINTER_V3",
+    "blob": "af382a6675c5bee1894275e308e9bd9fa7c01649",
+    "terminal": "C6_D_ALIGNED_TRANSFORMER_E2E_EXACT_BLOCKER"
   },
   "worker_terminal_gate": {
     "required": 4,
     "accepted": 2,
     "status": "PASS_2_OF_4",
-    "c2": {"result_comment": 5181940916, "pointer_blob": "a4bc27b8e24dbadf668db5da21cacda0a866284a", "lineage_attempt_count": 50, "tests": "PASS_34_OF_34", "accepted": true},
-    "c3": {"result_comment": 5182029836, "pointer_comment": 5182046563, "pointer_blob": "4dd95a48d1094badabc0e0988ed652a1789ac020", "mapping_rule_count": 43, "missing_required_source_path_count": 22, "optional_missing_count": 4, "tests": "PASS_60_OF_60", "accepted": true},
-    "c4": {"pointer_blob": "489f4511852fe7c6410152a2cc26e21233ffe15b", "v2_package_terminal_published": false, "accepted": false},
-    "c5": {"pointer_blob": "266cda2df7e055c5bf5f63a24f181bf7d5283073", "v2_validation_terminal_published": false, "accepted": false}
+    "C-2": {
+      "result_comment": 5181940916,
+      "pointer_blob": "a4bc27b8e24dbadf668db5da21cacda0a866284a",
+      "lineage_attempt_count": 50,
+      "tests": "PASS_34_OF_34",
+      "silent_drop_count": 0,
+      "accepted": true
+    },
+    "C-3": {
+      "latest_pointer_blob": "e77cdc3f449d405b3144f8dd18ed21f269863748",
+      "cycle_0002_directive_comment": 5184559676,
+      "cycle_0002_terminal_published": false,
+      "required_path_accounting": "PASS_22_OF_22",
+      "unresolved_external_path_count": 22,
+      "c4_rejection_input_blob": "73b49771eab3f00e27705aca5e124f02762e1c5f",
+      "c4_rejection_coverage": "PASS_22_OF_22",
+      "tests": "PASS_37_OF_37",
+      "silent_drop_count": 0,
+      "accounting_accepted": true
+    },
+    "C-4": {
+      "cycle_0002_directive_comment": 5184566722,
+      "pointer_blob": "489f4511852fe7c6410152a2cc26e21233ffe15b",
+      "v2_package_terminal_published": false,
+      "accepted": false
+    },
+    "C-5": {
+      "cycle_0002_directive_comment": 5184572293,
+      "pointer_blob": "266cda2df7e055c5bf5f63a24f181bf7d5283073",
+      "entry_gate_open": false,
+      "v2_validation_terminal_published": false,
+      "accepted": false
+    }
   },
   "active_d_authority": {
     "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
@@ -40,31 +68,53 @@
     "acceptance_receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
     "readback": "PASS_4_OF_4"
   },
-  "historical_authority": {"source_factory_pr21_contracts": "HISTORICAL_NOT_ACTIVE_D_AUTHORITY"},
-  "v3_artifacts": {
-    "worker_terminal_matrix": {"path": "C6_WORKER_TERMINAL_ACCEPTANCE_MATRIX_V3.json", "commit": "177c8c165e5b0d1688922014ee7d24e152ef5b17", "blob": "45dd968d8862afa07784bb52eeb60d8787ffabb5"},
-    "handoff_validation": {"path": "C1_TO_D1_HANDOFF_VALIDATION_V2.json", "commit": "e45d0ded013c94ec29e8ecf8e5b9b28d6a1dc2e1", "blob": "8626f58b318148b7e4d8e91ba3063fb156369b3c"},
-    "final_e2e_report": {"path": "C6_D_ALIGNED_FINAL_E2E_REPORT_V3.json", "commit": "4c7d58c7557c290b9b9aedf5fd21d167f0d87d4c", "blob": "b73b72d072b4eb9a31115f09ba8e805e3b06c56c"},
-    "final_report": {"path": "C6_D_ALIGNED_FINAL_REPORT_V3.json", "commit": "524c1e3d99fc6ec4a9559bdef768a63cd9fdfc07", "blob": "e0d532f2ce602e384e8ec73385ab76c81874bfd0"}
+  "v4_artifacts": {
+    "worker_terminal_matrix": {
+      "path": "C6_WORKER_TERMINAL_ACCEPTANCE_MATRIX_V4.json",
+      "commit": "056296fe2f4e44d88e0a3b494c31c5c5afe0d430",
+      "blob": "4b55a716b7e7cd76d7e05f9107787f84746fffbd"
+    },
+    "handoff_validation": {
+      "path": "C1_TO_D1_HANDOFF_VALIDATION_V3.json",
+      "commit": "6de73f925f3638ebf3b4cb29a0237aed278e8236",
+      "blob": "563b573a4159af73774314eb131d0d26aa2ab5fe"
+    },
+    "final_e2e_report": {
+      "path": "C6_D_ALIGNED_FINAL_E2E_REPORT_V4.json",
+      "commit": "d8ad1234f227a4dec1f9c7f0e999782005429050",
+      "blob": "de811fcddff83d9fbc6e2e9b2ef39f3e075ac351"
+    },
+    "final_report": {
+      "path": "C6_D_ALIGNED_FINAL_REPORT_V4.json",
+      "commit": "7e36939d9d4d0a278b46968a8f7100488ca15ba2",
+      "blob": "ccd1e323566f0ae2bbcea95dd35e65925d3a9227"
+    }
   },
   "validation": {
     "json_parse": "PASS_5_OF_5",
     "remote_blob_readback": "PASS_4_OF_4_PRE_POINTER",
-    "c2_pointer_binding": "PASS",
-    "c3_pointer_binding": "PASS",
+    "source_lineage_accounting": "PASS_50_OF_50",
+    "mapping_rule_accounting": "PASS_43_OF_43_UPSTREAM",
+    "required_path_accounting": "PASS_22_OF_22",
+    "c4_rejection_input_coverage": "PASS_22_OF_22",
     "pr188_exact_authority": "PASS_4_OF_4",
-    "virtual_pass_count": 0,
-    "first_failure_corrected": "STALE_C6_V2_AUTHORITY_BASELINE_REBOUND_AND_RERUN"
+    "worker_gate": "PASS_2_OF_4",
+    "virtual_pass_count": 0
   },
   "handoff_package_completeness": "FAIL_0_OF_4_EXTERNAL",
-  "final_v3_e2e_executed": false,
+  "final_v4_e2e_authorized": false,
+  "final_v4_e2e_executed": false,
   "actual_d_handoff_performed": false,
   "d1_submission_pass_claimed": false,
   "d_acceptance_claimed": false,
   "d_canonical_schema_mutation": false,
   "d_canonical_db_write": false,
   "first_blocker": "C4_V2_PACKAGE_TERMINAL_NOT_PUBLISHED",
-  "additional_blocker": "C5_V2_VALIDATION_TERMINAL_WAITING_C4_V2_PACKAGE",
+  "additional_blockers": [
+    "C4_V2_REQUIRED_PACKAGE_OUTPUTS_NOT_PUBLISHED",
+    "C5_V2_VALIDATION_TERMINAL_WAITING_C4_V2_PACKAGE",
+    "C3_CYCLE_0002_TERMINAL_NOT_PUBLISHED"
+  ],
   "decision": "EXACT_EXTERNAL_BLOCKER",
   "terminal": "C6_D_ALIGNED_TRANSFORMER_E2E_EXACT_BLOCKER",
   "terminal_status_for_loop": "BLOCKED_EXTERNAL",
