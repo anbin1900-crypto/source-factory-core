@@ -1,0 +1,75 @@
+{
+  "schema_version": "V1_C_MODE_WAVE1_REVIEW_V3",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave": "WAVE-1",
+  "reviewed_worker_prs": [59, 60, 61, 62, 63, 64],
+  "summary": {
+    "pass": 3,
+    "blocked_external": 2,
+    "exact_blocker": 1,
+    "missing_committed_result_file": 1,
+    "current_progress_percent": 60
+  },
+  "workers": {
+    "AUTOMATION-C-W1": {
+      "pr": 59,
+      "head": "c70184a6eb52743139210cf42165677f59e7e30e",
+      "status": "PASS",
+      "tests": "12_OF_12",
+      "finding": "MODEL_AND_TEST_FILES_WERE_MISSING_AND_WERE_ADDED",
+      "acceptance_boundary": "DETERMINISTIC_MODEL_ORACLE_ONLY_NOT_DIRECT_REPLACEMENT_OF_FULL_RELEASE_RUNTIME"
+    },
+    "AUTOMATION-C-W2": {
+      "pr": 60,
+      "head": "b287588efbf62ece3374fc56f8b64166d64627bb",
+      "status": "PASS",
+      "tests": "12_OF_12",
+      "finding": "STRICT_ROLE_WAVE_COMMAND_STATUS_CORRELATION_IMPLEMENTED",
+      "next_risk": "C_REPORT_AND_REPEAT_REPORT_REQUIRE_DIFFERENT_CORRELATION_SCHEMAS"
+    },
+    "AUTOMATION-C-W3": {
+      "pr": 61,
+      "head": "1eb709151406af35fdf885ba3f7ed2c884df4adb",
+      "status": "BLOCKED_EXTERNAL",
+      "offline_tests": "20_OF_20_PLUS_59_OF_59",
+      "blocker": "TARGET_PC_VISUAL_EVIDENCE_NOT_AVAILABLE"
+    },
+    "AUTOMATION-C-W4": {
+      "pr": 62,
+      "head": "2b338e5a45d316418a726ce6f1787bac114c16f6",
+      "status": "PASS",
+      "tests": "18_ASSERTIONS",
+      "finding": "REPEAT_RUNTIME_IMPLEMENTED",
+      "next_risk": "CURRENT_STATE_IS_COMMAND_LEVEL_NOT_INDEPENDENT_PER_TARGET_SLOT"
+    },
+    "AUTOMATION-C-W5": {
+      "pr": 63,
+      "head": "c02e6ef3e35bb60a979d5fbb45a953cad9f04900",
+      "status": "EXACT_BLOCKER",
+      "blocker": "AUTHORITY_VALIDATION_ZIP_OMITTED_ACTUAL_BACKGROUND_INSTALL_ROLLBACK_SURFACES",
+      "resolution": "WAVE2_SOURCE_SUPPLEMENT_V3_PUBLISHED"
+    },
+    "AUTOMATION-C-W6": {
+      "pr": 64,
+      "head": "a92d111600c14c7fb06efbe3b73ef5daee149060",
+      "status": "EXACT_BLOCKER",
+      "blocker": "TARGET_PC_E2E_AND_FAILURE_INJECTION_NOT_EXECUTABLE",
+      "report_compliance": "COMMENT_POSTED_BUT_RESULT_JSON_NOT_COMMITTED"
+    }
+  },
+  "cross_worker_findings": [
+    "Worker PANEL lines are not yet schema-consistent: several omit WAVE, COMMAND_ID or DISPATCH_ID.",
+    "The W1 model must be used as a test oracle and compared with the full 5.10.2.4.1 runtime before promotion.",
+    "Repeat-command completion must be independent per target slot rather than global per command.",
+    "Target-PC visual, install, restart and six-worker three-round evidence remain pending."
+  ],
+  "source_supplement": {
+    "drive_file_id": "1EaHhHablINACVR-syzy4o6r4wEnbK8z_",
+    "file_name": "V1_C_MODE_WAVE2_SOURCE_SUPPLEMENT_V3.zip",
+    "size_bytes": 105656,
+    "sha256": "fd60e47b6134ee06bd568941da66e45d158bc660557f624540f2a61589f7d7ea"
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
