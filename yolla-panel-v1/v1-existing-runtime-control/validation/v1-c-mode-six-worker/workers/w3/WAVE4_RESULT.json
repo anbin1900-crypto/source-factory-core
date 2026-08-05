@@ -1,0 +1,36 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE4_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-004",
+  "command_id": "C6W-W4-W3-REPORT-TRUTH-UI-PROJECTION",
+  "worker_id": "AUTOMATION-C-W3",
+  "status": "PASS_OFFLINE_TARGET_PC_PENDING",
+  "terminal": "C6W_W4_W3_REPORT_TRUTH_UI_PROJECTION_OFFLINE_PASS_TARGET_PC_EXECUTION_PENDING",
+  "head_commit": "cb466ca33050857ce3fa147bb28a42d045ec180b",
+  "tests": [
+    {"name":"report truth UI fixture","status":"PASS","assertions":17},
+    {"name":"fixture JSON parse","status":"PASS"},
+    {"name":"collector extension review","status":"PASS"}
+  ],
+  "verified": {
+    "reported_pass": "완료",
+    "reported_blocked": "차단",
+    "report_missing": "보고 누락",
+    "report_missing_excluded_from": ["완료","작업 중","오류"],
+    "directive_pending": "지시 대기",
+    "c_active": "C 실행",
+    "repeat_active": "명령 실행",
+    "awaiting": "완료대기",
+    "end": "END",
+    "idle": "쉬는 중",
+    "legacy_a_e_status_excluded": true
+  },
+  "collector_added": ["post_ids","commit_ids","counter_label_assertions","screenshot_sha256","restart_readback","report_truth_fixture"],
+  "target_pc_execution": "PENDING",
+  "live_pass_claimed": false,
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-05T21:56:00+09:00"
+}
