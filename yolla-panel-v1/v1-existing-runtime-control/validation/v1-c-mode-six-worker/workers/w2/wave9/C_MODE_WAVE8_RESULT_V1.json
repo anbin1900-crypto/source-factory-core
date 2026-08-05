@@ -1,0 +1,20 @@
+{
+  "schema": "C_MODE_WAVE_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "source_wave_id": "V1-C-MODE-6W-WAVE-008",
+  "registry_comment": 5193883787,
+  "reported": 6,
+  "missing": 0,
+  "duplicate": 0,
+  "results": [
+    {"role":"AUTOMATION-C-W1","result_key":"519385230900","result_comment":5194273797,"outcome":"PASS","result_commit":"ac15ba87733445d0006953c060e73e488ab49913"},
+    {"role":"AUTOMATION-C-W2","result_key":"519385708300","result_comment":5193959441,"outcome":"PASS","result_commit":"d1e12289eb25282601894946f902238306c7b677"},
+    {"role":"AUTOMATION-C-W3","result_key":"519386239100","result_comment":5194248288,"outcome":"PASS","result_commit":"3b3f8c792e9eaba9aa495e3e229d3c6019b149db"},
+    {"role":"AUTOMATION-C-W4","result_key":"519386645000","result_comment":5194272466,"outcome":"PASS","result_commit":"c104760dc53e8ba07c509b8ef5a472f38bd1d9b3"},
+    {"role":"AUTOMATION-C-W5","result_key":"519387122700","result_comment":5193944215,"outcome":"BLOCKED","result_commit":"d3881f439bb393498c69b53d4c5558d4e9869420"},
+    {"role":"AUTOMATION-C-W6","result_key":"519387627700","result_comment":5193935894,"outcome":"BLOCKED","result_commit":"3b384eca85f1f2bed6b9fd039ab8d3c76cc1f165"}
+  ],
+  "reported_outcomes": ["PASS","BLOCKED","FAIL","NO_WORK"],
+  "missing_definition": "RESULT_COMMENT_ABSENT_ONLY",
+  "commander_suffix": "작업완료 결과수집 완료. 위 결과게시물을 검토하고 다음 WAVE의 워커별 지시를 게시하라."
+}
