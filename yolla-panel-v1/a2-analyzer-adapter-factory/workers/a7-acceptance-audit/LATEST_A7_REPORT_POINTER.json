@@ -5,6 +5,7 @@
   "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
   "task_id": "A7_D_INTEGRATION_READINESS_REVIEW",
   "directive_comment_id": 5196017240,
+  "terminal_comment_id": 5196189584,
   "mode": "ADVISORY_NON_BLOCKING",
   "status": "TERMINAL_FINDINGS",
   "terminal": "A7_D_INTEGRATION_READINESS_REVIEW_EXACT_FINDINGS",
@@ -61,8 +62,12 @@
   "re_review_scope_after_event": "DELTA_ONLY_FOUR_HANDOFF_ARTIFACTS",
   "implementation_edit": false,
   "self_approval": false,
-  "remote_readback": "PENDING",
-  "updated_at_kst": "2026-08-06T04:12:00+09:00",
+  "remote_readback": "PASS",
+  "remote_readback_evidence": {
+    "pre_terminal_pointer_commit": "d1b1e91c8a2f19880297f96b6de3f4245cc135be",
+    "pre_terminal_pointer_blob": "d9523ec753858915162ee375739871fb0e991d60"
+  },
+  "updated_at_kst": "2026-08-06T04:15:00+09:00",
   "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
   "production": false,
   "ready": false,
