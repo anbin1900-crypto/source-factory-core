@@ -1,0 +1,98 @@
+{
+  "schema_version": "CONCRETE_SOURCE_TARGET_OBSERVATION_RECEIPT_V1",
+  "observation_id": "OBS-NAVER-FIN-LAND-PUBLIC-READONLY-20260805-001",
+  "observed_at_kst": "2026-08-05T17:39:09+09:00",
+  "observer": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "observation_scope": "PUBLIC_NON_LOGIN_READ_ONLY_SINGLE_SESSION",
+  "target_site": {
+    "site_id": "NAVER_FIN_LAND_PUBLIC_WEB_V1",
+    "site_name": "네이버페이 부동산",
+    "origin": "https://fin.land.naver.com",
+    "user_authorized_public_start_url": "https://fin.land.naver.com/map?layer=NobwRAlgJmBcYAsD2BbApmANGAzmghgE4DGCACkfijnCAL50C6QA&center=3zhc4G-2ALg18&zoom=15&tradeTypes=A1-B1-B2-B3&realEstateTypes=A01-A04-B01-A05-A06-A07-C02-A02-B02-C01-C03-C04-F01-D05-D02-E03-D01-E04-E02-D03-D04-E01-Z00",
+    "start_url_sha256": "0569e08e4c5c2f7413a47e86ca241528d72e825f2a1b3302b96ed01ee46570b8"
+  },
+  "observation_result": {
+    "session_count": 1,
+    "login_used": false,
+    "credential_used": false,
+    "cookie_injection": false,
+    "write_action_count_to_target": 0,
+    "bulk_collection_count": 0,
+    "authentication_bypass": false,
+    "access_control_bypass": false,
+    "direct_navigation_attempt": {
+      "result": "TOOL_FETCH_TIMEOUT_OR_CACHE_MISS",
+      "site_http_failure_claimed": false,
+      "used_as_negative_site_evidence": false
+    },
+    "successful_public_surface_observation": {
+      "mode": "PUBLIC_INDEXED_OFFICIAL_PAGE_READBACK",
+      "official_home_url": "https://fin.land.naver.com/home",
+      "official_article_detail_url_1": "https://fin.land.naver.com/articles/2529241670",
+      "official_article_detail_url_2": "https://fin.land.naver.com/articles/2529760923",
+      "observed_capabilities": [
+        "PUBLIC_HOME_SURFACE",
+        "PUBLIC_MAP_ENTRY",
+        "PUBLIC_REGION_OR_COMPLEX_SEARCH_ENTRY",
+        "PUBLIC_ARTICLE_DETAIL_DOCUMENT"
+      ]
+    }
+  },
+  "authority_policy": {
+    "user_provided_start_url_is_authoritative": true,
+    "public_document_routes_only": true,
+    "internal_api_endpoint_inference_allowed": false,
+    "unobserved_post_graphql_or_xhr_route_promotion_allowed": false,
+    "fixture_invalid_promotion_allowed": false,
+    "capture_authorization_granted": false
+  },
+  "evidence_sources": [
+    {
+      "evidence_id": "EVIDENCE-USER-TARGET-URL-001",
+      "kind": "USER_EXPLICIT_SOURCE_TARGET",
+      "url": "https://fin.land.naver.com/map?layer=NobwRAlgJmBcYAsD2BbApmANGAzmghgE4DGCACkfijnCAL50C6QA&center=3zhc4G-2ALg18&zoom=15&tradeTypes=A1-B1-B2-B3&realEstateTypes=A01-A04-B01-A05-A06-A07-C02-A02-B02-C01-C03-C04-F01-D05-D02-E03-D01-E04-E02-D03-D04-E01-Z00",
+      "supports": [
+        "ORIGIN",
+        "PUBLIC_START_ROUTE",
+        "MAP_QUERY_VALUES"
+      ]
+    },
+    {
+      "evidence_id": "EVIDENCE-OFFICIAL-HOME-001",
+      "kind": "OFFICIAL_PUBLIC_INDEXED_PAGE",
+      "url": "https://fin.land.naver.com/home",
+      "supports": [
+        "PUBLIC_HOME_ROUTE",
+        "MAP_ENTRY",
+        "REGION_OR_COMPLEX_SEARCH_ENTRY"
+      ]
+    },
+    {
+      "evidence_id": "EVIDENCE-OFFICIAL-ARTICLE-001",
+      "kind": "OFFICIAL_PUBLIC_INDEXED_PAGE",
+      "url": "https://fin.land.naver.com/articles/2529241670",
+      "supports": [
+        "PUBLIC_ARTICLE_DETAIL_ROUTE",
+        "REPRESENTATIVE_ARTICLE_NUMBER"
+      ]
+    },
+    {
+      "evidence_id": "EVIDENCE-OFFICIAL-ARTICLE-002",
+      "kind": "OFFICIAL_PUBLIC_INDEXED_PAGE",
+      "url": "https://fin.land.naver.com/articles/2529760923",
+      "supports": [
+        "PUBLIC_ARTICLE_DETAIL_ROUTE",
+        "ALTERNATE_REPRESENTATIVE_ARTICLE_NUMBER"
+      ]
+    }
+  ],
+  "boundaries": {
+    "max_target_observation_session": 1,
+    "actual_bulk_collection": false,
+    "automated_pagination": false,
+    "login_required_scope": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
