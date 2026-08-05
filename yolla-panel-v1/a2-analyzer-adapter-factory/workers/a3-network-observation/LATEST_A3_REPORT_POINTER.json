@@ -1,115 +1,84 @@
 {
-  "schema_version": "LATEST_A3_REPORT_POINTER_V2",
+  "schema_version": "LATEST_A3_REPORT_POINTER_V3",
   "worker": "A-3",
-  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_4-A3-PUBLIC-ROUTE-PACKAGE-REBUILD-V1-20260805-001",
-  "directive_id": "A2-TO-A3-PUBLIC-DOCUMENT-ROUTE-NONEXECUTING-PACKAGE-REBUILD-V6_4-20260805-001",
-  "directive_comment": 5191847571,
-  "status": "PASS",
-  "terminal": "A3_PUBLIC_DOCUMENT_ROUTE_OPERATOR_PACKAGE_READY_FOR_GOVERNANCE",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_7-A3-APPROVED-ONE-SHOT-EXECUTION-V1-20260805-001",
+  "run_id": "A3-WAVE6-7-NAVER-PUBLIC-GET-20260805-001",
+  "authorization_id": "V2-AUTH-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-20260805-001",
+  "authorization_decision_comment": 5192765975,
+  "execution_event_comment": 5192799338,
+  "directive_comment": 5193106309,
+  "status": "BLOCKED",
+  "terminal": "A3_NAVER_PUBLIC_DOCUMENT_GET_ONE_SHOT_CAPTURE_DNS_EXACT_BLOCKER",
+  "expected_terminal_contract": "A3_NAVER_PUBLIC_DOCUMENT_GET_ONE_SHOT_CAPTURE_TERMINAL_OR_EXACT_BLOCKER",
+  "first_blocker": "EP-001_DNS_NAME_RESOLUTION_TEMPORARY_FAILURE",
   "branch": "worker/a3-network-observation-v1",
-  "start_head": "c0a75f7bfeb53aec2ffa561dfca3dd190ee47daa",
-  "start_comment_id": 5191932458,
-  "progress_comment_id": 5191964703,
-  "terminal_comment_id": 5191997680,
-  "previous_pointer_blob": "a32fe02629658e114e252c981554ab79f15dd338",
-  "authority": {
-    "authority_id": "CONCRETE-SOURCE-TARGET-NAVER-FIN-LAND-20260805-002",
-    "comment": "#17/5189632712",
-    "commit": "545425a10d48bf59746d8db98ff2f56b79360cc0",
-    "blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
-    "pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5",
-    "remote_readback": "PASS_EXACT"
-  },
-  "a5_rebind": {
-    "restart_event_comment": 5189989430,
-    "terminal_comment": 5189970139,
-    "final_pointer_comment": 5189986641,
-    "head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
-    "pointer_blob": "40a282ccb4573ae00a12645f40bf39b6faea1abc",
-    "handoff_blob": "515b72792199f971b0a754bcb9dbc796b06fe26f",
-    "validation_blob": "20abdd912d7b64f245f9a8252a90bec3c819f2c9",
-    "terminal": "A5_PUBLIC_DOCUMENT_ROUTE_REBIND_READY",
-    "remote_readback": "PASS_EXACT"
+  "required_head": "8e2c06d6e33ae23e0bf408cb5e2bd7513a72d7a9",
+  "start_comment_id": 5193171143,
+  "progress_comment_id": 5193191142,
+  "terminal_comment_id": 5193262768,
+  "previous_pointer_blob": "aa2c564c52ac1bd0f0a6dd4973f8b16dd53a2030",
+  "exact_authority": {
+    "pointer_blob": "aa2c564c52ac1bd0f0a6dd4973f8b16dd53a2030",
+    "operator_package_blob": "f742b7a1e83ec9199258f9b7d7df9b8947f321d7",
+    "allowlist_blob": "47aa9c3a02fcd8e8168c8d272d33a88733094cec",
+    "request_binding_blob": "74aa2232a274b77fb51adadb60e66ea7ae6a7fe9",
+    "authorization_request_package_blob": "007df2b81bf4f7009aa548e26e86cce4fcacda3b",
+    "source_authority_blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
+    "source_authority_pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5",
+    "a5_handoff_blob": "515b72792199f971b0a754bcb9dbc796b06fe26f",
+    "a7_recommendation_blob": "eb3dd7186e8b88bfbdd6d464cecaa44448ba93e1"
   },
   "artifacts": {
-    "start_report": {
-      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_WAVE6_4_START_REPORT_V1.json",
-      "commit": "9eb57304ac261542529d5ea03f4f6498d3acf712",
-      "blob": "f419658089057e6a260468212a0cc50829099b67"
-    },
-    "allowlist": {
-      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/PUBLIC_DOCUMENT_ROUTE_CAPTURE_ALLOWLIST_V1.json",
-      "commit": "021e3b2303cb3fe3072529451f5370e7b9f149a9",
-      "blob": "47aa9c3a02fcd8e8168c8d272d33a88733094cec"
-    },
-    "request_binding": {
-      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/PUBLIC_DOCUMENT_ROUTE_REQUEST_BINDING_V1.json",
-      "commit": "eca3c1314bd6d322e777d4b5ff100f6bad472548",
-      "blob": "74aa2232a274b77fb51adadb60e66ea7ae6a7fe9"
-    },
-    "operator_package": {
-      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/CORRECTED_ONE_SHOT_OPERATOR_PACKAGE_V2.json",
-      "commit": "af25d9e018bdca9676e35ae9371315af171bb063",
-      "blob": "f742b7a1e83ec9199258f9b7d7df9b8947f321d7"
-    },
-    "a7_governance_handoff": {
-      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_TO_A7_PUBLIC_ROUTE_GOVERNANCE_HANDOFF_V1.json",
-      "commit": "d830517980c44f60a8d55c781ccdfd27e6afdf60",
-      "blob": "6ff1fc01bb6a6f589622d33bb0d3879e400f76cd"
-    },
-    "a2_second_authorization_request_package": {
-      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_TO_A2_SECOND_AUTHORIZATION_REQUEST_PACKAGE_V1.json",
-      "commit": "010b59c68149374270a39922aeb5554c4ec6877a",
-      "blob": "007df2b81bf4f7009aa548e26e86cce4fcacda3b"
-    },
-    "validation_receipt": {
-      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_WAVE6_4_VALIDATION_RECEIPT_V1.json",
-      "commit": "44dd68fd7ed6aa19f9e40338d36cd199df2340f8",
-      "blob": "6be5ea4409dc44e360013f563f21ec1d94101506"
-    },
-    "terminal_report": {
-      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_WAVE6_4_TERMINAL_REPORT_V1.json",
-      "commit": "d7fecb00e5aec6e7363fbc254d17d102265726d7",
-      "blob": "26cb0647ecdce2a1561f181c2aa56b686a7dc213"
-    }
+    "start_report": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_WAVE6_7_START_REPORT_V1.json","commit":"75072db5eb4fb475ec8978df5d5ea9a69a1e2dfe","blob":"66c65105a32f1599d577552a4d2c2eb898df5b52"},
+    "run_summary": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_WAVE6_7_RUN_SUMMARY_V1.json","commit":"3c76368485232fd23fdcdb52b4e66694318c1faf","blob":"fab57ddec4c23636195fa4161fcf3bb17a073074"},
+    "terminal_report": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_WAVE6_7_TERMINAL_REPORT_V1.json","commit":"312049548917de4fd247d69c505bbc5b4f263e52","blob":"62d3aca0485e915dfa9cb7f9a7e01278d6d1d4cb"},
+    "raw_byte_disposal_receipt": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/capture-runs/A3-WAVE6-7-NAVER-PUBLIC-GET-20260805-001/TRANSIENT_RAW_BYTE_DISPOSAL_RECEIPT_V1.json","commit":"4fe7d714479f3b9f98939643b4dced7825bb857d","blob":"5effd82f39714f29b465211374afff1867b4e1fc"}
   },
-  "package": {
-    "active_profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-012"],
-    "active_profile_count": 7,
+  "profile_receipts": {
+    "EP-001": {"commit":"f9cbb4d92171782a58960ee752d148bf5bd8a94a","blob":"c6654ada993bb4abd814863538ffe919f4c49633","status":"BLOCKED"},
+    "EP-002": {"commit":"e101db0538f87239705a3b570ce9856ed9094687","blob":"4810f9cec00596a5c1febfa895f5cddbb709418d","status":"BLOCKED_NOT_ATTEMPTED"},
+    "EP-003": {"commit":"9b295d4865d54e4b15f71bb8ee34b6c37fa3e282","blob":"6c83fcf908dcaf6aa5590b942a03cf706376b522","status":"BLOCKED_NOT_ATTEMPTED"},
+    "EP-004": {"commit":"088265ab3fb24b00916882a92bb595a098a1b034","blob":"b10e919a6639c11c6ef99d895e7b4fa8205936c2","status":"BLOCKED_NOT_ATTEMPTED"},
+    "EP-005": {"commit":"19bf73f4de335b752e5b773dddf11f0d297c5e8e","blob":"f7a0163ae5139d544550d2406c024745763d6667","status":"BLOCKED_NOT_ATTEMPTED"},
+    "EP-010": {"commit":"93ad6a78602e1199de2cb3ad664a716b213bcf16","blob":"9ee1457978ea61a3656ec034605e511dd2259453","status":"BLOCKED_NOT_ATTEMPTED"},
+    "EP-012": {"commit":"dca00032bab6e5798ef36a1b04a28907d271010d","blob":"299cbc8f4ec89b5541c2c994401c755343324394","status":"BLOCKED_NOT_ATTEMPTED"}
+  },
+  "execution": {
+    "authorized_profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-012"],
     "excluded_profiles": ["EP-011"],
-    "origin": "https://fin.land.naver.com",
-    "method": "GET",
-    "expected_response_format": "text/html",
-    "public_route_binding": "PASS_7_OF_7",
-    "get_method": "PASS_7_OF_7",
-    "text_html": "PASS_7_OF_7",
-    "fixture_invalid_promotion_count": 0,
-    "internal_api_inference_count": 0,
-    "xhr_promotion_count": 0,
-    "post_promotion_count": 0,
-    "graphql_promotion_count": 0,
-    "automated_pagination_count": 0,
-    "capture_execution_authorized": false,
-    "request_execution_authorized": false,
-    "second_attempt_authorized": false
+    "batch_execution_count_authorized": 1,
+    "batch_execution_count_used": 1,
+    "auto_retry": false,
+    "second_batch_authorized": false,
+    "request_execution_attempt_count": 1,
+    "live_site_call_attempt_count": 1,
+    "http_request_sent_count": 0,
+    "remote_server_contact_count": 0,
+    "capture_attempt_count": 1,
+    "captured_profile_count": 0,
+    "blocked_profile_count": 1,
+    "skipped_profile_count": 6,
+    "raw_persisted_count": 0,
+    "disposal_receipt_count": 1,
+    "redacted_fixture_count": 0,
+    "stopped_at_first_fail_closed_condition": true
   },
-  "validation": {
-    "pass_count": 29,
-    "finding_count": 0,
-    "out_of_owned_root_change_count": 0
-  },
-  "counters": {
-    "capture_attempt_count": 0,
-    "live_site_call_count": 0,
-    "browser_automation_execution_count": 0,
-    "automated_pagination_count": 0,
+  "safety": {
+    "raw_response_byte_persistence": false,
     "credential_use_count": 0,
     "raw_secret_value_count": 0,
-    "actual_bulk_collection_count": 0
+    "cookie_value_persisted_count": 0,
+    "token_value_persisted_count": 0,
+    "pii_value_persisted_count": 0,
+    "authentication_bypass": false,
+    "access_control_bypass": false,
+    "automated_pagination_count": 0,
+    "actual_bulk_collection": false,
+    "out_of_owned_root_change_count": 0
   },
-  "required_next_event": "A7_PUBLIC_DOCUMENT_ROUTE_OPERATOR_PACKAGE_GOVERNANCE_PASS_THEN_NEW_EXPLICIT_A0_A1_ONE_SHOT_PUBLIC_DOCUMENT_GET_CAPTURE_AUTHORIZATION",
+  "required_next_authority": "NEW_EXPLICIT_AUTHORIZATION_REQUIRED_FOR_ANY_RETRY_OR_SECOND_BATCH_AFTER_NETWORK_ENVIRONMENT_DNS_BLOCKER_IS_RESOLVED",
   "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
-  "updated_at_kst": "2026-08-05T22:05:00+09:00",
+  "updated_at_kst": "2026-08-05T23:44:00+09:00",
   "production": false,
   "ready": false,
   "merge": false
