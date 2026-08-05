@@ -76,8 +76,12 @@
   "second_attempt_authorized": false,
   "self_approval": false,
   "implementation_file_direct_edit": false,
-  "remote_readback": "PENDING",
-  "updated_at_kst": "2026-08-05T22:18:00+09:00",
+  "remote_readback": "PASS",
+  "remote_readback_evidence": {
+    "pointer_commit": "7af1e3a9bb5f177d0b1a9b0c2d31e5f5e12aa37e",
+    "pointer_blob": "3330349f845fdadcc8e4c490cdaef0d9182ad98a"
+  },
+  "updated_at_kst": "2026-08-05T22:19:00+09:00",
   "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
   "production": false,
   "ready": false,
