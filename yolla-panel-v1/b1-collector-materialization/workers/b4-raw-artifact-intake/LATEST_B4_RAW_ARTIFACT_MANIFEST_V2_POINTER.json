@@ -1,53 +1,59 @@
 {
-  "schema_version": "LATEST_B4_RAW_ARTIFACT_MANIFEST_V2_POINTER_V1",
+  "schema_version": "LATEST_B4_RAW_ARTIFACT_MANIFEST_V2_POINTER_V2",
   "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
   "task_id": "RAW_ARTIFACT_MANIFEST_V2",
-  "worker": "B-4",
+  "directive_comment": 5196652743,
+  "worker": "B-4_RAW_ARTIFACT_INTAKE_WORKER",
   "worker_pr": 40,
   "branch": "worker/b4-raw-artifact-source-envelope-v1",
   "updated_at_kst": "2026-08-06T05:03:00+09:00",
   "status": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY",
   "terminal_contract": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY_OR_EXACT_BLOCKER",
   "terminal_result": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY",
-  "objects": {
-    "manifest_v2": {
-      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V2.json",
-      "blob": "24784bdd025d03968245bd5be83f47ac7ed5b750"
-    },
+  "required_artifacts": {
     "schema": {
-      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/contracts/RAW_ARTIFACT_MANIFEST_V2.schema.json",
-      "blob": "ae37701bde15ef5f299706de51baa38d369b003f"
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V2.schema.json",
+      "blob": "38e72bb43c5f630e9b3f94c3796ef72ae092c85e"
     },
-    "validator": {
-      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/src/raw_artifact_manifest_v2.py",
-      "blob": "35ac3a00319c499d35b7bc944cc229aba60f1473"
+    "manifest": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V2.json",
+      "blob": "d900e06bcc73908e3af589581d67b599bfb84d65"
     },
-    "tests": {
-      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/tests/test_raw_artifact_manifest_v2.py",
-      "blob": "bfc4d297b0d20f139981407fb6242cf046cfdc72",
-      "result": "PASS_35_OF_35"
+    "fixture": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_RAW_ARTIFACT_MANIFEST_V2_FIXTURE_V1.json",
+      "blob": "12938d5e9d15cf73d69e4b38f6cc960cbf868ebc"
     },
-    "test_results": {
-      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_RAW_ARTIFACT_MANIFEST_V2_TEST_RESULTS.json",
-      "blob": "ee522ff08d70ed95019e03f8fc53b97a08c289a3"
-    },
-    "readback_receipt": {
-      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_RAW_ARTIFACT_MANIFEST_V2_READBACK_RECEIPT.json",
-      "blob": "608a9151ce0670ec0e4af5e955860d9817532b54",
-      "result": "PASS_7_OF_7"
+    "test_result": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_RAW_ARTIFACT_MANIFEST_V2_TEST_RESULT_V1.json",
+      "blob": "5bf5800391174c946eeaf7acedd293eb3ced6ece",
+      "result": "PASS_46_OF_46"
     },
     "final_report": {
-      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_RAW_ARTIFACT_MANIFEST_V2_FINAL_REPORT.json",
-      "commit": "e7bb8e12a44ffc88b073682198483fdf02290600",
-      "blob": "bc2810e62138b7b2fb50c3741722c1be2c0d5730"
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_RAW_ARTIFACT_MANIFEST_V2_FINAL_REPORT_V1.json",
+      "commit": "3e0e3964b1513c854b3ecd21f51b76ff3e513027",
+      "blob": "d9b2c7210aedd01a4dc77f67a9809e44733ef10b"
     }
   },
-  "artifact_count": 2,
-  "total_record_count": 4,
-  "actual_site_mime_sha_observation": "NOT_OBSERVED",
-  "raw_overwrite": false,
-  "secret_storage": false,
-  "personal_data_promotion": false,
+  "supporting_evidence": {
+    "validator_blob": "43bbff1ab2c86af54ea51d1031da437eeb9decff",
+    "test_source_blob": "84975a579a6482bb4c802130d5bcf7e2c0d37e67",
+    "remote_readback_receipt_blob": "d4f3632074c667755a23d034146dc30945a38be6",
+    "remote_readback": "PASS_10_OF_10",
+    "custom_validator": "PASS"
+  },
+  "validation_counters": {
+    "RAW_OVERWRITE_COUNT": 0,
+    "HASH_MISMATCH_COUNT": 0,
+    "SIZE_MISMATCH_COUNT": 0,
+    "SECRET_VALUE_STORAGE_COUNT": 0,
+    "UNAUTHORIZED_PERSONAL_DATA_COUNT": 0,
+    "INVENTED_METADATA_COUNT": 0,
+    "SOURCE_FIELD_LOSS_COUNT": 0
+  },
+  "source_key": "PENDING_AUTHORITY",
+  "official_source_url": "PENDING_AUTHORITY",
+  "expected_mime_type": "application/json",
+  "observed_mime_type": "NOT_OBSERVED",
   "actual_site_extraction": false,
   "d_canonical_db_write": false,
   "production": false,
