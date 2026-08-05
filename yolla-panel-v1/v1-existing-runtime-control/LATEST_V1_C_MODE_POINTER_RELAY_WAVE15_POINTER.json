@@ -1,0 +1,75 @@
+{
+  "schema_version": "LATEST_V1_C_MODE_POINTER_RELAY_WAVE15_POINTER_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-015",
+  "registry_sequence": 15,
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "review_and_directive": {
+    "md_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave15/C_MODE_WAVE14_REVIEW_AND_WAVE15_DIRECTIVE_V1.md",
+    "md_commit": "02b34af1785e5505b1dd977502881b395fea4ab2",
+    "json_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave15/C_MODE_WAVE14_REVIEW_AND_WAVE15_DIRECTIVE_V1.json",
+    "json_commit": "c5183fbfe1d34473da70ced2b0b95dd6d75aabfb"
+  },
+  "publication_receipt": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave15/C_MODE_WAVE15_PUBLICATION_RECEIPT_V1.json",
+    "commit": "e281438df7c3f77292d2bd61b780708d87761266"
+  },
+  "wave14_review": {
+    "reported": 6,
+    "missing": 0,
+    "duplicate_result": 0,
+    "results": {
+      "AUTOMATION-C-W1": {"result_comment": 5196728251, "outcome": "BLOCKED", "decision": "MAP_REUSABLE_BLOCKER_NOT_FINAL"},
+      "AUTOMATION-C-W2": {"result_comment": 5196647746, "outcome": "PASS_GATE"},
+      "AUTOMATION-C-W3": {"result_comment": 5196694708, "outcome": "PASS_OFFLINE_TARGET_PC_PENDING"},
+      "AUTOMATION-C-W4": {"result_comment": 5196612369, "outcome": "BLOCKED_RC6_INPUT_PENDING"},
+      "AUTOMATION-C-W5": {"result_comment": 5196617821, "outcome": "BLOCKED", "decision": "RAW_DNS_BLOCKER_REJECTED_USE_GITHUB_BLOB_API"},
+      "AUTOMATION-C-W6": {"result_comment": 5196614410, "outcome": "FAIL_RC5_AUDIT", "decision": "VALID_NEGATIVE_AUDIT"}
+    }
+  },
+  "method_correction": {
+    "github_blob_api_available": true,
+    "verified_blob_sha": "2db157e02008f64ef8fba22f58047b80953ab26d",
+    "raw_github_dns_required": false,
+    "mounted_checkout_required": false,
+    "launcher_byte_readback_at_install_time": true,
+    "base_release_explicit_parameter_allowed": true,
+    "base_release_exactly_one_discovery_allowed": true
+  },
+  "wave15_registry": {
+    "comment_id": 5197012959,
+    "previous_registry_comment": 5196538398,
+    "worker_count": 6,
+    "all_rows_valid_before_any_dispatch": true,
+    "partial_dispatch": false,
+    "same_sequence_duplicate": "FAIL_CLOSED"
+  },
+  "worker_bindings": {
+    "AUTOMATION-C-W1": {"pr": 59, "directive_comment": 5196981655, "result_key": "519698165500", "command_id": "C6W-W15-W1-TARGET-PC-RUNTIME-LOCATOR-BASELINE-RESOLVER"},
+    "AUTOMATION-C-W2": {"pr": 60, "directive_comment": 5196983918, "result_key": "519698391800", "command_id": "C6W-W15-W2-EXACT-BLOB-PACKAGE-POSITIVE-GATE"},
+    "AUTOMATION-C-W3": {"pr": 61, "directive_comment": 5196986395, "result_key": "519698639500", "command_id": "C6W-W15-W3-EXACT-UI-BLOB-BUNDLE-HOOK-RECEIPT"},
+    "AUTOMATION-C-W4": {"pr": 62, "directive_comment": 5196989097, "result_key": "519698909700", "command_id": "C6W-W15-W4-BLOB-FED-RC6-OFFLINE-ACCEPTANCE"},
+    "AUTOMATION-C-W5": {"pr": 63, "directive_comment": 5196992640, "result_key": "519699264000", "command_id": "C6W-W15-W5-EXACT-17-BLOB-SELF-CONTAINED-RC6", "integration_owner": true},
+    "AUTOMATION-C-W6": {"pr": 64, "directive_comment": 5196995122, "result_key": "519699512200", "command_id": "C6W-W15-W6-INDEPENDENT-RC6-AUDIT", "implementation_direct_edit": false}
+  },
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc6",
+  "current_progress_percent": 96,
+  "progress_increase_withheld_reason": "EXACT_RC6_PACKAGE_NOT_YET_BUILT",
+  "next_gate": "SIX_WAVE15_RESULTS_THEN_RC6_OFFLINE_ACCEPTANCE_AND_TARGET_PC_INSTALL",
+  "target_pc_pass": "PENDING",
+  "six_workers_three_waves": "PENDING_TARGET_PC",
+  "restart_resume": "PENDING_TARGET_PC",
+  "log_loss_zero": "PENDING_TARGET_PC",
+  "login_profile_preserved": "PENDING_TARGET_PC_READBACK",
+  "a_e_reintroduction_count": 0,
+  "auto_test_write_count": 0,
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
