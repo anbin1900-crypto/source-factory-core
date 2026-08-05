@@ -1,50 +1,60 @@
 {
-  "schema_version": "LATEST_A2_REPORT_POINTER_V12",
-  "pointer_id": "A2-GENERIC-SITE-ANALYZER-ADAPTER-FACTORY-LATEST-V12",
-  "updated_at_kst": "2026-08-06T01:34:00+09:00",
+  "schema_version": "LATEST_A2_REPORT_POINTER_V13",
+  "pointer_id": "A2-GENERIC-SITE-ANALYZER-ADAPTER-FACTORY-LATEST-V13",
+  "updated_at_kst": "2026-08-06T02:30:00+09:00",
   "role": "A-2_GENERIC_SITE_ANALYZER_ADAPTER_FACTORY_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 18,
   "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
-  "previous_pointer_blob": "442c6116facf99170a7c1f13f33c5bbc4c4788a7",
+  "previous_pointer_blob": "d23c80167cb25025933a10a7994f75aaf8efff45",
   "active_report": {
-    "type": "A6_PASS_A7_FINAL_ACCEPTANCE_ACTIVE",
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_WAVE6_12_A6_PASS_A7_FINAL_ACCEPTANCE_ACTIVE_V1.json",
-    "commit": "f45fc14110e5598a272299022084b5d4e6c4145c",
-    "blob": "95553441bc5349f4100f0a3a229b269fffd33247",
+    "type": "ALL_WORKERS_CHECK_A6_INTEGRITY_CORRECTION_ACTIVE",
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_WAVE6_13_ALL_WORKERS_CHECK_A6_INTEGRITY_CORRECTION_ACTIVE_V1.json",
+    "commit": "0305e5b6ae4c8f50732ceb1fad44447d61826f23",
+    "blob": "3180c500894f11eae02d6a41838a4ba923a9bcda",
     "remote_readback": "PASS"
   },
-  "a6_result": {
-    "head": "6fab17d37c1db2feb955fd2c447b498088b99d4a",
-    "terminal": "A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_READY",
-    "pointer_blob": "22ead89ed6ad08bb38089ee922d9734f432d41d2",
-    "handoff_blob": "0e9fd96b1ff8c13594cc4d42c23da223847040a6",
-    "package_sha256": "3500125a7c0d1629d793110516d6a3b6084afbc191f5bc55e6131921441f94f9",
-    "final_build_count": 1,
-    "replay_count": 2,
-    "deterministic_replay": "PASS_2_OF_2",
-    "acceptance_ready": true,
-    "status": "PASS_ACCEPTED_FROZEN"
-  },
-  "a7_execution": {
-    "head_before_execution": "690445a0b7815dcfaea209af67efe9dfbf30dcc8",
-    "directive_comment": 5194563911,
-    "required_check_count": 7,
-    "status": "FINAL_ACCEPTANCE_ACTIVE"
-  },
-  "worker_comments": {
-    "A-6_FREEZE": 5194567120,
-    "A-7_ACTIVE": 5194563911
+  "worker_states": {
+    "A-3": {
+      "head": "6a91c9ccedf96aa538fbbf34e4bf91553778297d",
+      "terminal": "A3_TARGET_PC_CAPTURE_HANDOFF_READY",
+      "status": "PASS_FROZEN_NONBLOCKING"
+    },
+    "A-4": {
+      "head": "032c609396db198db6bd14c96436f07bc429cae8",
+      "terminal": "A4_NO_AUTOMATED_PAGINATION_MVP_BINDING_READY",
+      "status": "PASS_FROZEN"
+    },
+    "A-5": {
+      "head": "85bb7c7c6b07a0a58cdc74ea7d74a6de2ed81adb",
+      "terminal": "A5_GENERIC_HTML_DOCUMENT_RESPONSE_CONTRACT_READY",
+      "status": "PASS_FROZEN"
+    },
+    "A-6": {
+      "head": "6fab17d37c1db2feb955fd2c447b498088b99d4a",
+      "directive_comment": 5195137047,
+      "status": "INTEGRITY_METADATA_CORRECTION_ACTIVE"
+    },
+    "A-7": {
+      "head": "79cfdcddafc72b7d80cd237c72a773086b19a136",
+      "terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_EXACT_FINDINGS",
+      "pointer_blob": "ec17a4c97f6225e5e9e5fc4fdcdade74e606d1a6",
+      "finding_count": 3,
+      "delta_wait_comment": 5195141948,
+      "status": "WAITING_A6_CORRECTION"
+    }
   },
   "critical_path": [
-    "A7_ONE_FINAL_ACCEPTANCE",
-    "A2_TO_B1_HANDOFF"
+    "A6_REMOTE_BYTE_SHA_SIZE_INTEGRITY_CORRECTION",
+    "A7_TWO_CHECK_DELTA_REACCEPTANCE",
+    "A2_TO_B1_FORMAL_HANDOFF"
   ],
-  "active_owner": "A-7",
-  "current_terminal": "A2_A6_PASS_A7_FINAL_ACCEPTANCE_ACTIVE",
-  "current_status": "WAITING_A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_TERMINAL",
-  "next_action": "PROCESS_A7_FINAL_POINTER_AND_PUBLISH_A2_TO_B1_HANDOFF_ON_PASS",
-  "verified_adapter_package_ready": true,
+  "active_owner": "A-6",
+  "current_terminal": "A2_A7_FINDINGS_A6_INTEGRITY_CORRECTION_ACTIVE",
+  "current_status": "WAITING_A6_INTEGRITY_CORRECTION_TERMINAL",
+  "next_action": "PROCESS_A6_CORRECTED_POINTER_AND_TRIGGER_A7_DELTA_REACCEPTANCE",
+  "verified_adapter_semantics_ready": true,
+  "verified_adapter_integrity_ready": false,
   "b1_handoff_ready": false,
   "request_execution_authorized": false,
   "capture_execution_authorized": false,
