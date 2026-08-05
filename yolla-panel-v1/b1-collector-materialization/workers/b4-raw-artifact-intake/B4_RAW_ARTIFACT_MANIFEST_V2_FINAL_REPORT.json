@@ -1,0 +1,88 @@
+{
+  "schema_version": "B4_RAW_ARTIFACT_MANIFEST_V2_FINAL_REPORT_V1",
+  "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "task_id": "RAW_ARTIFACT_MANIFEST_V2",
+  "directive_comment_id": 5196652743,
+  "prior_directive_comment_id": 5196024447,
+  "worker": "B-4",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 40,
+  "branch": "worker/b4-raw-artifact-source-envelope-v1",
+  "completed_at_kst": "2026-08-06T05:03:00+09:00",
+  "status": "PASS_D_READY_FIXTURE_MANIFEST_V2",
+  "terminal_contract": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY_OR_EXACT_BLOCKER",
+  "terminal_result": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY",
+  "artifacts": {
+    "start_report": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_RAW_ARTIFACT_MANIFEST_V2_START_REPORT.json",
+      "commit": "aa24a0eb54cfe5d553d9e0c9080286d4983322ba"
+    },
+    "manifest_v2": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V2.json",
+      "commit": "67465cca088d87de107224fca66bcd0b8e93f808",
+      "blob": "24784bdd025d03968245bd5be83f47ac7ed5b750"
+    },
+    "schema": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/contracts/RAW_ARTIFACT_MANIFEST_V2.schema.json",
+      "commit": "b5a5bc463481d53b8325f4b60637b7ab24f5f911",
+      "blob": "ae37701bde15ef5f299706de51baa38d369b003f"
+    },
+    "validator": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/src/raw_artifact_manifest_v2.py",
+      "commit": "899f69a4e8813b0d41d10f26267ca1963bd2db52",
+      "blob": "35ac3a00319c499d35b7bc944cc229aba60f1473"
+    },
+    "tests": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/tests/test_raw_artifact_manifest_v2.py",
+      "commit": "5f1961a619f3e52ad1d88c1a4e36eb6625195195",
+      "blob": "bfc4d297b0d20f139981407fb6242cf046cfdc72"
+    },
+    "test_results": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_RAW_ARTIFACT_MANIFEST_V2_TEST_RESULTS.json",
+      "commit": "85442178bf916914eb1a365955f150528fad354c",
+      "blob": "ee522ff08d70ed95019e03f8fc53b97a08c289a3"
+    },
+    "readback_receipt": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_RAW_ARTIFACT_MANIFEST_V2_READBACK_RECEIPT.json",
+      "commit": "1bc6034a1adae71f6ae5b225af4183be8f51cdf5",
+      "blob": "608a9151ce0670ec0e4af5e955860d9817532b54"
+    }
+  },
+  "v1_and_raw_authority_preserved": {
+    "v1_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+    "raw_page_001_blob": "9d34c7e31534906f6d067214f7ddf31f8262c398",
+    "raw_page_002_blob": "9b51ca590b05383ccf891e6ddb7c18cf56160d36",
+    "raw_bytes_modified": false
+  },
+  "validation": {
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_35_OF_35",
+    "custom_validator": "PASS",
+    "remote_readback": "PASS_7_OF_7",
+    "artifact_count": 2,
+    "total_record_count": 4,
+    "page1_size_bytes": 254,
+    "page1_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+    "page2_size_bytes": 246,
+    "page2_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+    "mime_type": "application/json",
+    "actual_site_mime_sha_observation": "NOT_OBSERVED",
+    "pii_classification": "ALLOW_FIXTURE_NO_NATURAL_PERSON_IDENTIFIER",
+    "redaction_status": "NOT_REQUIRED_FIXTURE_NO_PERSONAL_DATA",
+    "raw_overwrite_reject": "PASS",
+    "secret_storage_reject": "PASS",
+    "personal_data_promotion_reject": "PASS",
+    "github_actions_ci_pass_claimed": false
+  },
+  "next_event": "B5_RESUME_AFTER_B2_AND_B4",
+  "raw_overwrite": false,
+  "secret_storage": false,
+  "personal_data_promotion": false,
+  "actual_site_extraction": false,
+  "semantic_transformation_count": 0,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_UPDATED_LATEST_B4_RAW_ARTIFACT_MANIFEST_V2_POINTER"
+}
