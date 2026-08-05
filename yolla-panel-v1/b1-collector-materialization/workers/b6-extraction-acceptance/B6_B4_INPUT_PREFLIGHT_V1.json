@@ -1,0 +1,43 @@
+{
+  "schema_version": "B6_B4_INPUT_PREFLIGHT_V1",
+  "audit_id": "B6-B4-INPUT-PREFLIGHT-20260805-001",
+  "audited_at_kst": "2026-08-05T17:00:00+09:00",
+  "worker": "B-6",
+  "producer": "B-4",
+  "producer_pr": 40,
+  "producer_branch": "worker/b4-raw-artifact-source-envelope-v1",
+  "authority": {
+    "head": "6dfe697363a69f83797775aa549f34614aa3748a",
+    "latest_pointer_blob": "cc83b028c725e34861e8737bbf4c6932da48315a",
+    "final_report_blob": "574d5ba78fb669bf37e53b444f20d8217a7a0794",
+    "test_results_blob": "2bcd82a99f46b5d90accbbeecf47bc71f0b46ff9",
+    "readback_receipt_blob": "f4fdab98c6e20d94be90027893e8a63ab1618e03",
+    "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+    "source_record_envelope_blob": "0148a841344ce5a0df03e55df532871106dd7333"
+  },
+  "terminal": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY_OR_EXACT_BLOCKER",
+  "terminal_result": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY",
+  "validation": {
+    "pointer_remote_readback": "PASS",
+    "final_report_remote_readback": "PASS",
+    "readback_receipt_remote_readback": "PASS",
+    "raw_artifact_count": 2,
+    "total_record_count": 4,
+    "page_001_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+    "page_002_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+    "exact_byte_sha256_parity": "PASS_2_OF_2",
+    "source_url_time_metadata_parity": "PASS",
+    "raw_overwrite_reject": "PASS",
+    "worker_unit_tests": "PASS_24_OF_24",
+    "secret_value_exposure_count": 0,
+    "semantic_transformation_count": 0,
+    "network_call_count": 0,
+    "d_canonical_db_write_count": 0
+  },
+  "decision": "PASS_ACCEPTED_B4_INPUT",
+  "accepted_for": "B6_FIXTURE_FIRST_FINAL_ACCEPTANCE",
+  "actual_site_extraction": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
