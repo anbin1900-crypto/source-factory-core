@@ -1,0 +1,101 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE17_W3_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-017",
+  "registry_sequence": 17,
+  "command_id": "C6W-W17-W3-RC8-EXACT-UI-HOOK-BUNDLE-V2",
+  "worker_id": "AUTOMATION-C-W3",
+  "directive_comment": 5198511606,
+  "result_key": "519851160600",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc8",
+  "status": "PASS_OFFLINE_BUNDLE_VERIFIER",
+  "terminal": "C6W_W17_W3_RC8_EXACT_UI_HOOK_ROLLBACK_BUNDLE_V2_PASS",
+  "artifact_commit": "f023ce7ab94d5522eaf2c790a172478ea268e184",
+  "artifacts": [
+    {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave17/RC8_EXACT_UI_HOOK_ROLLBACK_BUNDLE_V2.json",
+      "blob": "984e42bab53a62bdaa61df2e41009c4e3bea0fda",
+      "size_bytes": 5636
+    },
+    {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave17/RC7_SIMPLIFIED_UI_HOOK_ROLLBACK_NEGATIVE_FIXTURE.json",
+      "blob": "f2b240d694a6f4a16f3317170082d10ec3dd5ad6",
+      "size_bytes": 1058
+    },
+    {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave17/validate_rc8_exact_ui_hook_bundle_v2.cjs",
+      "blob": "7000f9fb6ea2d9150e90e7e33fccb662fee07fdb",
+      "size_bytes": 10303
+    },
+    {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave17/test_rc8_exact_ui_hook_bundle_v2.cjs",
+      "blob": "6877259004e230e5adefb0c314414fa587ee813e",
+      "size_bytes": 1509
+    },
+    {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave17/RC8_EXACT_UI_HOOK_ROLLBACK_OFFLINE_RECEIPT_V2.json",
+      "blob": "19e399dd30bb66e60b88dc77fbfba3dc90fb0416",
+      "size_bytes": 956
+    }
+  ],
+  "exact_source": {
+    "truth_bridge": {
+      "commit": "edcb83ef2cd96aa042ab0656c66f290d542d20f0",
+      "blob": "27267b1b0b1d057e2ca40e3fcc864fd4609a1520",
+      "sha256": "8086f56f1f0b5731cb9ad4be5339fc211d1468f4195fcf249b7a300cc3b830e8",
+      "size_bytes": 4012
+    },
+    "css_overlay": {
+      "commit": "52aea6e17ce2561ed07058e304c3744eec3b166a",
+      "blob": "ff1bf6c84fb9806328bb3e5d8616a85cce943473",
+      "sha256": "43b6a3721c250e76b2562c45d931fd17d87ae219fec70aa3ef3206af9cd8b0fe",
+      "size_bytes": 1504
+    },
+    "js_overlay": {
+      "commit": "250b05096ba70fcbe65aed3276cebaa07bd63de5",
+      "blob": "82862f1b4c8c2599c4035c78023ffea850909b4c",
+      "sha256": "5fdd1719e110ce80ad4b3efb911fd20a86ccbfeb27182645e8d2170287114b54",
+      "size_bytes": 7858
+    },
+    "load_hook": {
+      "commit": "ca9343722856c333ae1d7d9208642d21480130a2",
+      "blob": "1e6e54914737b1878a3f3ba1e88adbba57eab190",
+      "sha256": "188dcc15f0f88ac41e5179272ccc0ee11b9ee48001ee986d1732f6414d88f462",
+      "size_bytes": 6304
+    },
+    "rollback": {
+      "commit": "1076f509e85463546cbf6dc6107715c401a9b17e",
+      "blob": "1b3df39a0ffa6c80ffa0b99e44422d6a26110f11",
+      "sha256": "7a86437b703b50a6b7bbe575802bdf6d82a228919d5dc48bd8169046baf9253b",
+      "size_bytes": 2873
+    }
+  },
+  "tests": {
+    "node_syntax": "PASS",
+    "assertion_count": 21,
+    "manifest": "PASS",
+    "static_source": "PASS",
+    "rc7_negative_fixture": "REJECTED_AS_REQUIRED",
+    "patch_first_run_changed": true,
+    "patch_second_run_changed": false,
+    "rollback_run_count": 2,
+    "hook_cardinality": 1,
+    "truth_bridge_immediately_after_single_use_strict": true,
+    "global_truth_bridge_binding": true,
+    "css_after_base_css": true,
+    "js_after_base_js": true,
+    "exact_pre_overlay_byte_restore": true,
+    "base_ui_preserved": true,
+    "fixed_browser_profile_preserved": true
+  },
+  "scope": {
+    "w5_wait_required": false,
+    "target_pc_live_pass_claimed": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "lts_terminal_claimed": false
+  },
+  "reported_at_kst": "2026-08-06T08:34:00+09:00"
+}
