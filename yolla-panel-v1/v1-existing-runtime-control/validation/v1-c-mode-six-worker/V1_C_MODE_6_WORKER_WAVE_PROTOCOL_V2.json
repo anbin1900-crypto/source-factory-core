@@ -1,0 +1,19 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE_PROTOCOL_V2",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "waves": [
+    {"wave": 0, "name": "READBACK_START", "all_workers_dispatched_together": true, "required_reports": 6},
+    {"wave": 1, "name": "INDEPENDENT_EXPERIMENT_FIX", "all_workers_dispatched_together": true, "required_reports": 6},
+    {"wave": 2, "name": "INTEGRATED_REGRESSION", "integration_owner": "V-1", "worker_6_review_non_blocking": true},
+    {"wave": 3, "name": "TARGET_PC_6_WORKER_3_ROUND", "round_count": 3, "restart_resume_required": true}
+  ],
+  "reporting": {
+    "start": "PANEL | ROLE={ROLE} | STATUS=START",
+    "worker_result": "PANEL | ROLE={ROLE} | WAVE={WAVE_POST_ID} | STATUS={REPORTED|END}",
+    "repeat_result": "PANEL | ROLE={ROLE} | COMMAND_ID={COMMAND_ID} | STATUS={REPORTED|END}"
+  },
+  "progress": {
+    "commander_required_every_wave": true,
+    "completed_increase_requires_progress_increase": true
+  }
+}
