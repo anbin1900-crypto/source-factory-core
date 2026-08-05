@@ -1,0 +1,104 @@
+{
+  "schema_version": "A5_GENERIC_HTML_FINAL_TERMINAL_REPORT_V1",
+  "worker": "A-5",
+  "directive_id": "A2-TO-A5-GENERIC-HTML-DOCUMENT-RESPONSE-CONTRACT-FINAL-V1-20260806-001",
+  "directive_comment": 5193798083,
+  "parent_cycle": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_10-GENERIC-HTML-MVP-FAST-CLOSURE-V1-20260806-001",
+  "published_at_kst": "2026-08-06T00:44:00+09:00",
+  "package_head": "ae7d6e64527edcd4909396fbdf630a612897f12e",
+  "terminal": "A5_GENERIC_HTML_DOCUMENT_RESPONSE_CONTRACT_READY",
+  "decision": "PASS_FINAL_GENERIC_GET_TEXT_HTML_RESPONSE_CONTRACT",
+  "authority": {
+    "source_authority_comment": "#17/5189632712",
+    "source_authority_commit": "545425a10d48bf59746d8db98ff2f56b79360cc0",
+    "source_authority_blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
+    "source_authority_pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5",
+    "origin_mapping_v2_blob": "45dc6154e884cb7c234a0605e86f5a208583dd9e",
+    "request_binding_v2_blob": "e613036257babe24f7bb03ef6bcdc81a68d6a013",
+    "prep_receipt_blob": "fd8753556ca53bc8e471b840b6d2692145c82c0b"
+  },
+  "artifacts": {
+    "response_schema": {
+      "path": "GENERIC_HTML_DOCUMENT_RESPONSE_SCHEMA_V1.json",
+      "blob": "162a9dc2ee524227412ed7a3b06e02482be0bb42"
+    },
+    "execution_contract": {
+      "path": "PUBLIC_DOCUMENT_GET_EXECUTION_CONTRACT_V1.json",
+      "blob": "bd974465423f49f9c438d6f750b8622e9f580641"
+    },
+    "identifier_map": {
+      "path": "GENERIC_HTML_DOCUMENT_IDENTIFIER_MAP_V1.json",
+      "blob": "ab2a5d82f8431a21fe1dfa56fd2dabaff45f3826"
+    },
+    "a5_to_a6_handoff": {
+      "path": "A5_TO_A6_GENERIC_HTML_EXECUTION_HANDOFF_V1.json",
+      "blob": "0f4e31bfd5ebfcf77872c52369322c67930330f2"
+    },
+    "validation_receipt": {
+      "path": "A5_GENERIC_HTML_FINAL_VALIDATION_RECEIPT_V1.json",
+      "blob": "465ed0f7c2d68c613394bb4738e00a5ce2d9c91a"
+    }
+  },
+  "result": {
+    "generic_html_document_response_contract_complete": true,
+    "site_specific_response_schema_complete": false,
+    "live_capture_required": false,
+    "active_profile_binding": "PASS_7_OF_7",
+    "active_profiles": [
+      "EP-001",
+      "EP-002",
+      "EP-003",
+      "EP-004",
+      "EP-005",
+      "EP-010",
+      "EP-012"
+    ],
+    "excluded_profiles": [
+      "EP-011"
+    ],
+    "method": "GET",
+    "response_format": "text/html",
+    "minimum_required_schema_fields": "PASS_12_OF_12",
+    "html_document_text_contract": "FINAL_GENERIC_OUTPUT",
+    "outbound_links_contract": "FINAL_GENERIC_OUTPUT",
+    "a6_handoff_consumable": true,
+    "a6_offline_adapter_rebuild_ready": true
+  },
+  "validation": {
+    "json_schema_parse": "PASS",
+    "json_schema_meta_validation": "PASS",
+    "required_field_presence": "PASS_12_OF_12",
+    "required_field_removal_reject": "PASS_12_OF_12",
+    "secret_like_reject": "PASS_9_OF_9",
+    "same_local_html_fixture_two_run_raw_sha": "PASS",
+    "same_local_html_fixture_two_run_redacted_sha": "PASS",
+    "deterministic_replay": "PASS_2_OF_2",
+    "local_fixture_raw_sha256": "41fa6cd94026752f89081f177aabfde557e4b1e2684074338641908f1b72465b",
+    "local_fixture_redacted_sha256": "dfab00635c66f5f01fa6df90f3d5c42020e003034e7350b778e8e85148799d9f"
+  },
+  "safety": {
+    "site_specific_field_claim_count": 0,
+    "site_specific_dom_selector_claim_count": 0,
+    "internal_api_structure_claim_count": 0,
+    "automated_pagination": false,
+    "credential_value_count": 0,
+    "raw_secret_value_count": 0,
+    "live_site_call_count": 0,
+    "browser_automation_execution_count": 0,
+    "capture_execution_count": 0,
+    "independent_audit_count": 0,
+    "additional_authorization_request_count": 0,
+    "out_of_owned_root_change_count": 0,
+    "actual_bulk_collection": false
+  },
+  "authorization_boundary": {
+    "a6_offline_build_authorized": true,
+    "local_fixture_replay_authorized": true,
+    "live_execution_authorized": false,
+    "capture_execution_authorized": false,
+    "credential_use_authorized": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
