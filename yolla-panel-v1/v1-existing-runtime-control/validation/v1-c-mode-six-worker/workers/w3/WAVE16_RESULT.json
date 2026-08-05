@@ -1,0 +1,82 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE16_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-016",
+  "registry_sequence": 16,
+  "command_id": "C6W-W16-W3-RC7-UI-HOOK-PACKAGE-BINDING",
+  "worker_id": "AUTOMATION-C-W3",
+  "directive_comment": 5198283954,
+  "result_key": "519828395400",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc7",
+  "status": "BLOCKED_W5_RC7_PACKAGE_RESULT_PENDING",
+  "terminal": "C6W_W16_W3_RC7_UI_HOOK_PACKAGE_BINDING_NONDEPENDENT_PASS_W5_PACKAGE_PENDING",
+  "inputs": {
+    "w3_result_commit": "69a933c257b949340b75211b6b078a462ac2b03b",
+    "w3_bundle_commit": "a8dda9eba23c05e8c28ecb41176fd274566568db",
+    "w3_load_hook_patch_commit": "ca9343722856c333ae1d7d9208642d21480130a2",
+    "w3_rollback_commit": "1076f509e85463546cbf6dc6107715c401a9b17e"
+  },
+  "artifacts": {
+    "binding_contract": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave16/RC7_UI_PACKAGE_BINDING.json",
+      "commit": "2c19033a6747c6b7a974b29b4d9a33c7a50281f0",
+      "blob": "d502b36f6fdd04f54de4dad336286be1d7608120"
+    },
+    "verifier": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave16/validate_rc7_ui_binding.cjs",
+      "commit": "5c43b71c88d849bab55fdfedf5a435ee910506bd",
+      "blob": "5eb4153e6c641c287c2251629743d596a4c8ad45"
+    },
+    "offline_receipt": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave16/RC7_UI_PACKAGE_BINDING_OFFLINE_RECEIPT.json",
+      "commit": "7c89ebeed58c44dea19b575931eb415ad4e2129e",
+      "blob": "9c9457a4c98f20ead6d8005b569fac3e4f3ee22c"
+    },
+    "target_pc_visual_schema": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave16/RC7_UI_TARGET_PC_VISUAL_ACCEPTANCE_RECEIPT_V1.schema.json",
+      "commit": "d7594929fce1916e1d6f462eb31b390e1b9d229b",
+      "blob": "65a7ed6ab17da8555a72315781e9c5756c6b7184"
+    }
+  },
+  "nondependent_work": {
+    "exact_existing_bytes_reused": true,
+    "exact_reused_member_count": 5,
+    "verifier_node_syntax": "PASS",
+    "verifier_synthetic_reference_package_self_test": "PASS",
+    "synthetic_hook_counts": {"bridge": 1, "css": 1, "js": 1},
+    "synthetic_patch_two_run_idempotent": true,
+    "synthetic_rollback_two_run_idempotent": true,
+    "synthetic_exact_preimage_restore": true,
+    "wave15_blob_api_readback": "PASS_5_OF_5",
+    "wave14_membership": "PASS_7_OF_7",
+    "wave14_ui_smoke_assertions": 20,
+    "base_ui_css_js_bytes_unchanged": true,
+    "fixed_browser_profile_unchanged": true,
+    "c_and_command_disabled_working_count": 0,
+    "result_comment_priority": true,
+    "current_and_historical_registry_separated": true
+  },
+  "w5_rc7_dependency": {
+    "pr": 63,
+    "directive_comment": 5198285668,
+    "result_key": "519828566800",
+    "result_comment": null,
+    "result_commit": null,
+    "package_manifest": null,
+    "status": "DIRECTIVE_BOUND_PACKAGE_RESULT_PENDING",
+    "same_assignment_revalidation_required": true
+  },
+  "blocker": {
+    "code": "W5_RC7_PACKAGE_RESULT_NOT_POSTED_FOR_ACTUAL_BINDING_REVALIDATION",
+    "internal_fix_remaining": false,
+    "actual_package_binding_verified": false,
+    "release_condition": "W5 PR #63 posts RESULT_KEY 519828566800 with rc7 package root and manifest; run validate_rc7_ui_binding.cjs with --w5-manifest in this assignment."
+  },
+  "target_pc_install_authorized": false,
+  "target_pc_live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-06T07:49:00+09:00"
+}
