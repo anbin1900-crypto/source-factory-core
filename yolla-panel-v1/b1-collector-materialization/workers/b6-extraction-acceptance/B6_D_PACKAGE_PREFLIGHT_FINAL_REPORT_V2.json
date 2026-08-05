@@ -8,14 +8,12 @@
   "worker_pr": 42,
   "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
   "start_head": "05feff1062f0cc0c61bd252564b1626df5eccde8",
-  "content_head_before_final_report": "2d88df1f5c508514009c54eebc0d1bd7ec1defd8",
-  "completed_at_kst": "2026-08-06T06:22:00+09:00",
+  "content_head_before_final_report": "add3dcba2521bdb09441e683cbcffea793c92b9d",
+  "completed_at_kst": "2026-08-06T06:43:00+09:00",
   "entry_gate": {
-    "required": 2,
-    "satisfied": 2,
     "result": "PASS_2_OF_2",
-    "B5_terminal": "B5_D_READY_PACKAGE_V2_EXACT_BLOCKER",
-    "D1_tree_binding": "D1_SCHEMA_ALIGNMENT_TREE_BINDING_READY"
+    "B5_terminal_event": "B5_D_READY_PACKAGE_V2_EXACT_BLOCKER",
+    "D1_tree_binding_event": "D1_SCHEMA_ALIGNMENT_TREE_BINDING_READY"
   },
   "result_summary": {
     "B_input_objects": "PASS_4_OF_4",
@@ -24,23 +22,34 @@
     "manifest_declared_paths": "PASS_10_OF_10",
     "PR188_required_paths": "PASS_18_OF_18_FULL_ACCOUNTING",
     "lane_separation": "PASS",
+    "tests": "PASS_86_OF_86",
     "candidate_promotable": false,
     "decision": "EXACT_BLOCKER"
   },
   "accepted_inputs": {
-    "B-2": {"head":"771da102a0202dc21d9226d9c534275df345582e","pointer_blob":"6ba3df93d41d3b00f58d598ca6867db376c9f30c","terminal":"B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_READY"},
-    "B-3": {"head":"86d789a136ce5070d79eab7e6d0205eb23da11d7","pointer_blob":"01cfe1644b828687c4dce4ceab32345c728283e7","terminal":"B3_D_COLLECTION_RUN_LEDGER_READY"},
-    "B-4": {"head":"f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3","pointer_blob":"b0158bbb27dfb0efab012ec1a97c3c31f2266e7c","terminal":"B4_RAW_ARTIFACT_MANIFEST_V2_D_READY"},
-    "D-1": {"head":"17e920e0643dd89c059f1d99fda7c0c0383f1a18","control_pointer_blob":"d65285f969294c19c0d9e2d1bbc2adf8165f8819","tree_manifest_blob":"dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd"}
+    "B2": {"head":"771da102a0202dc21d9226d9c534275df345582e","pointer_blob":"6ba3df93d41d3b00f58d598ca6867db376c9f30c","terminal":"B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_READY"},
+    "B3": {"head":"86d789a136ce5070d79eab7e6d0205eb23da11d7","pointer_blob":"dedbad43c8c23df18e2af2560af5d5f48ca1fa00","terminal":"B3_D_COLLECTION_RUN_LEDGER_READY"},
+    "B4": {"head":"f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3","pointer_blob":"b0158bbb27dfb0efab012ec1a97c3c31f2266e7c","terminal":"B4_RAW_ARTIFACT_MANIFEST_V2_D_READY"},
+    "D1": {"head":"17e920e0643dd89c059f1d99fda7c0c0383f1a18","control_pointer_blob":"d65285f969294c19c0d9e2d1bbc2adf8165f8819","tree_manifest_blob":"dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd","authority_type":"OFFICIAL_SECONDARY"}
   },
   "blocked_input": {
     "worker": "B-5",
-    "head": "ecda54115e8bcac427344cddd4578b8a748042fc",
-    "pointer_blob": "760abe95ff6a07e7f3642e14628b8427217f2f16",
+    "head": "110095bd7aab7eb058ff6e923f7bccb78a3ee506",
+    "pointer_blob": "434159a91210741d8196862ce27933e95066d526",
+    "final_report_blob": "87a91257d37db8c1def4d23679273b2c501a3eef",
+    "package_blob": "f65c54194609d8bc709033c0d36abf916c60debe",
+    "test_report_blob": "bd825009b4fa9ac56ed3cb0f5897eb8e8522f618",
     "terminal": "B5_D_READY_PACKAGE_V2_EXACT_BLOCKER",
-    "first_blocker": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1_AND_B4_RAW_ARTIFACT_MANIFEST_V2_NOT_PUBLISHED",
-    "reconciliation": "B5 terminal at 04:45 KST predates B4 READY at 05:03 and B2 READY at 05:28",
-    "required_action": "B5 reruns MATERIALIZED_DATABASE_PACKAGE_V2 using current B2, B3, B4 and D1 heads and publishes READY terminal, exact package blob, test result and remote readback"
+    "reported_blocker": "D1_AUTHORITY_TYPE_FINAL_DECISION_NOT_PUBLISHED",
+    "actual_blocker": "B5_D_READY_PACKAGE_V2_CURRENT_D1_AUTHORITY_BINDING_MISSING",
+    "bound_D_head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+    "bound_D_pointer_blob": "95e6983a79b80867dd7de196a21e1aefc4c3dcb1",
+    "bound_authority_type": null,
+    "current_D_head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "current_D_pointer_blob": "d65285f969294c19c0d9e2d1bbc2adf8165f8819",
+    "current_D_authority_decision_blob": "6bf779b937bf2bea761780315b22692ccca07ad9",
+    "current_D_authority_type": "OFFICIAL_SECONDARY",
+    "required_action": "B5 rebuilds the V2 package using current D1 authority, alias, mapping addendum and B receipt procedure, then publishes READY terminal, package blob, tests and remote readback"
   },
   "D_authority_validation": {
     "root": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/",
@@ -56,19 +65,19 @@
   "lane_validation": {
     "B_lane": "B_TO_D_SOURCE_DOCUMENT",
     "C_lane": "C_TO_D_KNOWLEDGE_CANDIDATE",
-    "B_and_C_combined_receipt": false,
+    "combined_receipt": false,
     "separate_transactions": true,
     "D1_only_receipt_issuer": true,
     "result": "PASS"
   },
   "outputs": {
-    "preflight": {"path":"yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_D_PACKAGE_PREFLIGHT_V2.json","blob":"3428b627aae5e3839910bf4b9dfccfebdae572da"},
+    "preflight": {"path":"yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_D_PACKAGE_PREFLIGHT_V2.json","blob":"d9dda133dde461bddca0a0fc39fbd2735f6fd8f0"},
     "path_matrix": {"path":"yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_PR188_REQUIRED_PATH_MATRIX_V2.json","blob":"111e3532ed3002d41cf0cc7d26b4b99d687e6f7a"},
-    "candidate": {"path":"yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B1_TO_D1_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_V2.json","blob":"8b2ce6609f60ba6dcac5600d6d52e887d8e26e1d"},
-    "test_result": {"path":"yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_D_PACKAGE_PREFLIGHT_TEST_RESULT_V2.json","blob":"7eefdfc6589b513cf5513fb5a44471a535f604b1","result":"PASS_68_OF_68"}
+    "candidate": {"path":"yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B1_TO_D1_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_V2.json","blob":"3bc7402934e9d91dc94431a82c113c98147ea390"},
+    "test_result": {"path":"yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_D_PACKAGE_PREFLIGHT_TEST_RESULT_V2.json","blob":"d04ed691ea16007ce7e3a010e0bebdda6ee37aca","result":"PASS_86_OF_86"}
   },
-  "first_blocker": "B5_D_READY_PACKAGE_V2_NOT_RERUN_AFTER_B2_B4_READY",
-  "resume_condition": "B5_D_READY_PACKAGE_V2_READY_AT_CURRENT_B2_B3_B4_D1_HEADS",
+  "first_blocker": "B5_D_READY_PACKAGE_V2_CURRENT_D1_AUTHORITY_BINDING_MISSING",
+  "resume_condition": "B5_D_READY_PACKAGE_V2_READY_BOUND_TO_D1_HEAD_17e920e0643dd89c059f1d99fda7c0c0383f1a18",
   "required_terminal": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_READY_OR_EXACT_BLOCKER",
   "terminal_result": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_EXACT_BLOCKER",
   "D_acceptance_receipt_issued": false,
