@@ -1,0 +1,25 @@
+{
+  "schema_version": "C_MODE_WAVE_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-008",
+  "role": "AUTOMATION-C-W4",
+  "command_id": "C6W-W8-W4-ACTUAL-BRIDGE-SOAK",
+  "result_key": "519386645000",
+  "outcome": "PASS",
+  "virtual_trigger_cycles": 1200,
+  "slots": 6,
+  "repeat_receipts": 7000,
+  "c_mode_items": 12,
+  "restart_cycle": 600,
+  "counters": {
+    "DUPLICATE": 0,
+    "C_REPEAT_CROSS_CANCEL": 0,
+    "END_REDISPATCH": 0,
+    "RECEIPT_LOSS": 0,
+    "QUEUE_GROWTH": 0
+  },
+  "local_equivalent_source_test": "PASS",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
