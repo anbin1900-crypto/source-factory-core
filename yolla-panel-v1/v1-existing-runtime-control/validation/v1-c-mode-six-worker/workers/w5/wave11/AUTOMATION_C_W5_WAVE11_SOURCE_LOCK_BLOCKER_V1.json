@@ -1,0 +1,57 @@
+{
+  "schema_version": "AUTOMATION_C_W5_WAVE11_SOURCE_LOCK_BLOCKER_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-011",
+  "registry_sequence": 11,
+  "command_id": "C6W-W11-W5-ACTUAL-INSTALLABLE-RUNTIME-RC4",
+  "role": "AUTOMATION-C-W5",
+  "result_key": "519484402600",
+  "target_version": "5.10.2.4.2-rc4",
+  "baseline": "5.10.2.4.0",
+  "outcome": "BLOCKED",
+  "status": "END",
+  "blocker": {
+    "code": "W1_SUBSTANTIVE_RUNTIME_SOURCE_LOCK_NOT_YET_PUBLISHED",
+    "w1_directive_comment": 5194835355,
+    "required_contract": "SUBSTANTIVE_RUNTIME_SOURCE_LOCK_V4",
+    "required_components": [
+      "C_STATE_MACHINE",
+      "POINTER_RELAY_REGISTRY_PARSER",
+      "RESULT_KEY_WATCHER_AND_CARRYOVER",
+      "UI_TRUTH_AND_COMMANDER_RESULT_VIEW",
+      "REPEAT_COMMAND_RUNTIME_AND_C_REPEAT_BRIDGE",
+      "BACKGROUND_BROWSER_DISPATCH_AND_WORK_CONTROL_LOG",
+      "INSTALLER_LAUNCHER_SMOKE_ROLLBACK"
+    ],
+    "required_exact_fields": [
+      "commit",
+      "path",
+      "blob_sha1",
+      "sha256",
+      "size",
+      "install_destination",
+      "load_order"
+    ],
+    "result_or_manifest_only_payload_rejected": true,
+    "fail_closed": true
+  },
+  "completed_now": {
+    "wave10_negative_fixture_retained": true,
+    "rc4_install_effect_contract_locked": true,
+    "profile_preservation_required": true,
+    "runtime_log_preservation_required": true,
+    "work_control_jsonl_preservation_required": true,
+    "dispatch_receipt_preservation_required": true,
+    "c_repeat_state_preservation_required": true,
+    "legacy_a_e_reintroduction_count": 0,
+    "launcher_switch_after_smoke_only": true,
+    "rollback_to_baseline_required": true
+  },
+  "not_claimed": [
+    "actual_rc4_runtime_artifact_complete",
+    "source_byte_manifest_complete",
+    "isolated_smoke_test_pass",
+    "target_pc_pass"
+  ],
+  "resume_condition": "W1 publishes SUBSTANTIVE_RUNTIME_SOURCE_LOCK_V4 result commit and terminal with at least one executable source file for every required component"
+}
