@@ -1,0 +1,60 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE17_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-017",
+  "registry_sequence": 17,
+  "command_id": "C6W-W17-W2-RC8-ACTUAL-ARTIFACT-GATE-V2",
+  "role": "AUTOMATION-C-W2",
+  "directive_comment": 5198509366,
+  "result_key": "519850936600",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc8",
+  "outcome": "PASS",
+  "test": "PASS_41_OF_41",
+  "implementation_commit": "e3bb9f5d8ade0905f7dba05559c5595d1a742960",
+  "test_commit": "cb5ef078ed7575046a5440ccbdeba74aff7256c4",
+  "export_commit": "f22de232744d02cadf4b0ef8b076bfae35cabc50",
+  "input_rc7": {
+    "result_comment": 5198366530,
+    "result_commit": "6862d0fbbd82d17f708330aa1f71cd49565ecad4",
+    "artifact_head": "854c3d928e17a30a124b2aab294ff5a9d781a252",
+    "tree_sha": "c57436e030e0bba85b54547ea2d572418feddcd1",
+    "reported_outcome": "PASS"
+  },
+  "rc7_gate": {
+    "REPORTED": true,
+    "OFFLINE_ARTIFACT_ACCEPTED": false,
+    "INSTALLABLE_RUNTIME": false,
+    "TARGET_PC_PENDING": false,
+    "TARGET_PC_ACCEPTED": false,
+    "EFFECTIVE_OUTCOME": "BLOCKED",
+    "PASS_DOES_NOT_OVERRIDE_TECHNICAL_GATE": true
+  },
+  "required_rejections_verified": {
+    "SIMPLIFIED_RESOLVER_SUBSTITUTION": true,
+    "SIMPLIFIED_UI_HOOK_OR_ROLLBACK_SUBSTITUTION": true,
+    "SELF_GENERATED_MANIFEST_WITHOUT_EXPECTED_MANIFEST_COMPARISON": true,
+    "SHALLOW_COMPONENT_SMOKE": true,
+    "WRONG_PRESERVATION_PATHS": true,
+    "PREMATURE_TARGET_PC_PASS": true,
+    "MUTABLE_BRANCH_ONLY_ARCHIVE_AUTHORITY": true
+  },
+  "rc8_status": {
+    "directive_comment": 5198514990,
+    "result_key": "519851499000",
+    "actual_result_found": false,
+    "state": "AWAITING_ACTUAL_RC8_RESULT_AND_IMMUTABLE_BYTE_AUTHORITY"
+  },
+  "regression": {
+    "result_key": "PASS",
+    "pagination": "PASS",
+    "retry_5": "PASS",
+    "restart": "PASS",
+    "duplicate_fail_closed": "PASS",
+    "commander_builder": "PASS"
+  },
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
