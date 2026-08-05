@@ -1,0 +1,235 @@
+{
+  "schema_version": "A5_FINAL_RESPONSE_SCHEMA_BINDER_VALIDATOR_PREP_RECEIPT_V1",
+  "worker": "A-5",
+  "directive_id": "A2-TO-A5-FINAL-RESPONSE-SCHEMA-BINDER-PARALLEL-PREP-V1-20260805-001",
+  "directive_comment": 5193428704,
+  "parent_cycle": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_9-EFFICIENCY-FIRST-DNS-RECOVERY-PARALLEL-CLOSURE-V1-20260805-001",
+  "mode": "OFFLINE_PREP_NO_FINAL_SCHEMA_CLAIM",
+  "prepared_at_kst": "2026-08-06T00:08:00+09:00",
+  "starting_head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+  "authority_bindings": {
+    "latest_a5_pointer_blob": "40a282ccb4573ae00a12645f40bf39b6faea1abc",
+    "public_route_origin_mapping_v2_blob": "45dc6154e884cb7c234a0605e86f5a208583dd9e",
+    "profile_request_value_binding_v2_blob": "e613036257babe24f7bb03ef6bcdc81a68d6a013",
+    "endpoint_catalog_v2_blob": "7e56b41ad64699dcd4abf58f81374801bb7739f2",
+    "request_template_catalog_v2_blob": "60ab4648c3b4f44469d0c94fc2766ff46b7d06f0",
+    "response_schema_catalog_v2_blob": "58a2241ca4514b5fd5e53622d2ccee1a82803385",
+    "a5_to_a3_public_route_handoff_v2_blob": "515b72792199f971b0a754bcb9dbc796b06fe26f",
+    "source_target_authority_blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
+    "source_target_authority_pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5"
+  },
+  "profile_scope": {
+    "required_profile_ids": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-012"],
+    "required_profile_count": 7,
+    "excluded_profile_ids": ["EP-011"],
+    "expected_method": "GET",
+    "expected_response_format": "text/html",
+    "expected_fixture_count": 7,
+    "exactly_one_fixture_per_profile": true
+  },
+  "fixture_input_slot_contract": {
+    "slot_key": "profile_id",
+    "required_fields": [
+      "profile_id",
+      "fixture_id",
+      "request_method",
+      "request_url",
+      "request_value_binding",
+      "response_body_sha256",
+      "response_size_bytes",
+      "response_mime_type",
+      "acquired_at",
+      "source_authority_pointer",
+      "html_metadata",
+      "dom_field_candidates",
+      "identifier_candidates",
+      "security_scan_receipt"
+    ],
+    "html_metadata_schema": {
+      "required": ["document_title", "document_language", "canonical_url_candidate", "content_type", "charset"],
+      "optional": ["meta_description", "robots", "og_type", "og_title", "og_url", "structured_data_types"],
+      "raw_html_allowed_in_receipt": false
+    },
+    "dom_field_candidate_schema": {
+      "required": [
+        "candidate_id",
+        "selector_or_jsonld_path",
+        "semantic_name",
+        "observed_value_type",
+        "occurrence_count",
+        "empty_count",
+        "evidence_fragment_sha256"
+      ],
+      "optional": [
+        "container_candidate_id",
+        "attribute_name",
+        "normalized_example_redacted",
+        "source_identifier_role_candidate"
+      ]
+    },
+    "identifier_candidate_schema": {
+      "required": [
+        "candidate_id",
+        "semantic_role",
+        "source_location",
+        "value_type",
+        "normalized_value_sha256",
+        "parent_candidate_id",
+        "evidence_fragment_sha256"
+      ],
+      "optional": ["format_pattern", "collision_domain", "relationship_candidate"]
+    },
+    "security_scan_receipt_schema": {
+      "required": [
+        "raw_secret_finding_count",
+        "cookie_finding_count",
+        "token_finding_count",
+        "pii_finding_count",
+        "redaction_applied_count",
+        "scan_policy_version"
+      ],
+      "pass_condition": "ALL_FINDING_COUNTS_EQUAL_ZERO_AFTER_REDACTION"
+    }
+  },
+  "binder_rules": {
+    "required": {
+      "rule": "REQUIRED_ONLY_WITH_EXPLICIT_DOM_OR_METADATA_SEMANTIC_EVIDENCE_AND_NONEMPTY_PRESENCE_IN_ALL_ACCEPTED_FIXTURES_FOR_PROFILE",
+      "single_fixture_default": "OPTIONAL_UNLESS_EXPLICIT_REQUIRED_EVIDENCE"
+    },
+    "optional": {
+      "rule": "DEFAULT_WHEN_REQUIRED_RULE_IS_NOT_PROVEN_OR_FIELD_IS_CONDITIONAL_OR_ABSENT"
+    },
+    "repeated": {
+      "rule": "TRUE_WHEN_SELECTOR_OR_STRUCTURED_DATA_PATH_RETURNS_MULTIPLE_SEMANTICALLY_HOMOGENEOUS_VALUES_OR_EXPLICIT_ARRAY_CONTAINER_IS_OBSERVED"
+    },
+    "nullability": {
+      "nullable_true_when": [
+        "FIELD_ABSENT_IN_ANY_ACCEPTED_FIXTURE_FOR_PROFILE",
+        "EXPLICIT_NULL_SENTINEL_OBSERVED",
+        "EMPTY_VALUE_ALLOWED_BY_DOCUMENT_SEMANTICS"
+      ],
+      "nullable_false_when": "EXPLICIT_REQUIRED_EVIDENCE_AND_NONEMPTY_VALUE_IN_ALL_ACCEPTED_FIXTURES_FOR_PROFILE"
+    },
+    "identifier": {
+      "primary_rule": "UNIQUE_STABLE_SOURCE_IDENTIFIER_WITH_NONEMPTY_VALUE_AND_ZERO_COLLISIONS_WITHIN_PROFILE_SCOPE",
+      "parent_child_rule": "PARENT_REFERENCE_MUST_RESOLVE_TO_ACCEPTED_IDENTIFIER_CANDIDATE_OR_FAIL_CLOSED",
+      "collision_rule": "DUPLICATE_NORMALIZED_IDENTIFIER_IN_SAME_COLLISION_DOMAIN_FAILS_CLOSED_UNLESS_EXPLICIT_ONE_TO_MANY_RELATIONSHIP_IS_EVIDENCED"
+    },
+    "evidence": {
+      "every_field_requires": [
+        "profile_id",
+        "fixture_body_sha256",
+        "evidence_fragment_sha256",
+        "selector_or_jsonld_path",
+        "classification_rule_id"
+      ],
+      "unbound_field_policy": "REJECT"
+    }
+  },
+  "validator_contract": {
+    "validation_order": [
+      "AUTHORITY_BINDING",
+      "PROFILE_COVERAGE",
+      "DUPLICATE_DETECTION",
+      "HASH_AND_SIZE_BINDING",
+      "METHOD_URL_MIME_BINDING",
+      "SECURITY_REJECTION",
+      "DOM_AND_METADATA_SHAPE",
+      "IDENTIFIER_COLLISION_AND_ORPHAN",
+      "SCHEMA_CLASSIFICATION",
+      "HANDOFF_GENERATION"
+    ],
+    "fail_closed_conditions": {
+      "missing_profile": "A5_BINDER_MISSING_REQUIRED_PROFILE",
+      "duplicate_profile": "A5_BINDER_DUPLICATE_PROFILE",
+      "duplicate_fixture_id": "A5_BINDER_DUPLICATE_FIXTURE_ID",
+      "duplicate_body_hash_across_profiles": "A5_BINDER_DUPLICATE_BODY_HASH_REQUIRES_EXPLICIT_OVERRIDE_AUTHORITY",
+      "invalid_sha256": "A5_BINDER_INVALID_SHA256",
+      "hash_readback_mismatch": "A5_BINDER_HASH_READBACK_MISMATCH",
+      "size_mismatch": "A5_BINDER_SIZE_MISMATCH",
+      "method_mismatch": "A5_BINDER_METHOD_MISMATCH",
+      "url_authority_mismatch": "A5_BINDER_URL_AUTHORITY_MISMATCH",
+      "mime_mismatch": "A5_BINDER_MIME_MISMATCH",
+      "secret_cookie_token_pii": "A5_BINDER_SECURITY_REJECT",
+      "identifier_collision": "A5_BINDER_IDENTIFIER_COLLISION",
+      "identifier_orphan": "A5_BINDER_IDENTIFIER_ORPHAN",
+      "unbound_field": "A5_BINDER_UNBOUND_FIELD_EVIDENCE"
+    },
+    "success_condition": "EXACT_7_PROFILE_FIXTURES_VALIDATED_AND_ALL_FIELD_IDENTIFIER_EVIDENCE_BOUND",
+    "final_schema_output_allowed_before_success": false
+  },
+  "security_reject_policy": {
+    "reject_raw_headers": ["Authorization", "Cookie", "Set-Cookie", "Proxy-Authorization"],
+    "reject_value_classes": [
+      "BEARER_TOKEN",
+      "SESSION_TOKEN",
+      "API_KEY",
+      "PASSWORD_OR_SECRET",
+      "RAW_COOKIE",
+      "EMAIL_ADDRESS",
+      "PHONE_NUMBER",
+      "RESIDENT_REGISTRATION_NUMBER",
+      "UNREDACTED_PERSON_NAME_WHEN_NOT_REQUIRED_FOR_SCHEMA"
+    ],
+    "storage_policy": "ONLY_REDACTED_EXAMPLES_AND_HASHED_EVIDENCE_FRAGMENTS_MAY_ENTER_A5_ARTIFACTS",
+    "raw_response_body_commit_allowed": false
+  },
+  "handoff_generator_contracts": {
+    "a5_to_a4": {
+      "generator_id": "A5_TO_A4_FINAL_HTML_SCHEMA_PAGINATION_AUDIT_HANDOFF_GENERATOR_V1",
+      "output_status_before_fixture": "NOT_GENERATED_WAITING_CAPTURE_FIXTURES",
+      "required_output_fields": [
+        "source_fixture_pointer",
+        "final_schema_pointer",
+        "profile_route_bindings",
+        "pagination_dom_candidates",
+        "next_link_candidates",
+        "page_size_observed",
+        "hash_bindings",
+        "validation_receipt_pointer"
+      ],
+      "boundary": "NO_PAGINATION_CLAIM_WITHOUT_CAPTURE_EVIDENCE"
+    },
+    "a5_to_a6": {
+      "generator_id": "A5_TO_A6_FINAL_RESPONSE_SCHEMA_EXECUTION_HANDOFF_GENERATOR_V1",
+      "output_status_before_fixture": "NOT_GENERATED_WAITING_CAPTURE_FIXTURES",
+      "required_output_fields": [
+        "source_fixture_pointer",
+        "final_response_schema_pointer",
+        "final_identifier_map_pointer",
+        "route_contract_pointer",
+        "field_evidence_bindings",
+        "required_optional_repeated_nullability_contract",
+        "security_validation_receipt_pointer",
+        "failure_code_catalog",
+        "deterministic_readback_contract"
+      ],
+      "boundary": "NO_ADAPTER_REBUILD_AUTHORITY_GRANTED_BY_PREP_RECEIPT"
+    }
+  },
+  "prepared_outputs": {
+    "binder_spec_ready": true,
+    "validator_spec_ready": true,
+    "a5_to_a4_generator_spec_ready": true,
+    "a5_to_a6_generator_spec_ready": true,
+    "final_response_schema_generated": false,
+    "final_identifier_map_generated": false,
+    "final_handoff_generated": false
+  },
+  "next_event": "A3_SUCCESSFUL_CAPTURE_RESULT_POINTER",
+  "final_response_schema_complete": false,
+  "capture_fixture_required": true,
+  "route_contract_modified": false,
+  "latest_a5_pointer_modified": false,
+  "live_site_call_count": 0,
+  "browser_automation_execution_count": 0,
+  "capture_execution_count": 0,
+  "mid_process_audit_count": 0,
+  "raw_secret_value_count": 0,
+  "credential_use_count": 0,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "decision": "A5_FINAL_RESPONSE_SCHEMA_BINDER_VALIDATOR_PARALLEL_PREP_READY_WAITING_CAPTURE_FIXTURES"
+}
