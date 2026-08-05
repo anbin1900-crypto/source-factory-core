@@ -1,0 +1,49 @@
+{
+  "schema_version": "C6W_WAVE11_EXECUTABLE_PAYLOAD_LOCK_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-011",
+  "registry_sequence": 11,
+  "command_id": "C6W-W11-W1-EXECUTABLE-PAYLOAD-LOCK",
+  "role": "AUTOMATION-C-W1",
+  "directive_comment": 5194835355,
+  "result_key": "519483535500",
+  "outcome": "BLOCKED",
+  "status": "END",
+  "payload_lock": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/WAVE11_EXECUTABLE_PAYLOAD_LOCK_V1.json",
+    "commit": "9682cf3dd9aa2bd90d8a765417c02d05edfa0612"
+  },
+  "source_fetch_map": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/WAVE11_ALLOWLIST_SOURCE_FETCH_MAP_V1.json",
+    "commit": "78c879e544cf822302960eb6d2fee4d00d6e6e78"
+  },
+  "verified": {
+    "executable_only_policy": true,
+    "results_reports_pointers_manifests_evidence_excluded": true,
+    "exact_executable_entries": 5,
+    "c_state_machine_count": 1,
+    "result_watcher_count": 1,
+    "ui_count": 1,
+    "repeat_count": 1,
+    "background_count": 0,
+    "installer_count": 1,
+    "rollback_count": 0,
+    "w3_carryover_completion_counted": false,
+    "existing_lock_parser_reused": true,
+    "implementation_rewritten": false
+  },
+  "exact_blockers": [
+    "BACKGROUND_EXECUTABLE_BYTE_NOT_AVAILABLE_WITH_EXACT_PATH_COMMIT_BLOB_SHA256_SIZE",
+    "ROLLBACK_EXECUTABLE_BYTE_NOT_AVAILABLE_WITH_EXACT_PATH_COMMIT_BLOB_SHA256_SIZE"
+  ],
+  "resume_conditions": [
+    "Publish the actual Background executable byte at an immutable repository path and commit with Git blob SHA-1, SHA-256 and size.",
+    "Publish the actual Rollback executable byte at an immutable repository path and commit with Git blob SHA-1, SHA-256 and size.",
+    "Re-run the seven-component executable lock and require every component count to be at least one."
+  ],
+  "core_ready": false,
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
