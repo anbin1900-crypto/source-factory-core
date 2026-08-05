@@ -1,7 +1,7 @@
 {
-  "schema_version": "ABC_VERTICAL_INTEGRATION_PREPARATION_V1",
+  "schema_version": "ABC_VERTICAL_INTEGRATION_PREPARATION_V2",
   "preparation_id": "V2-ABC-VERTICAL-INTEGRATION-PREPARATION-20260805-001",
-  "prepared_at_kst": "2026-08-05T22:24:39+09:00",
+  "prepared_at_kst": "2026-08-05T22:30:00+09:00",
   "commander": "V-2_YOLLA_AI_SUPREME_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
@@ -11,26 +11,34 @@
   "authority_freeze": {
     "A": {
       "control_pr": 18,
-      "head": "9dd6f19d5b5e35006833adadadbc940dfefde02f",
-      "latest_pointer_blob": "a554de2249543c09eca72a4b3e47273de5d132ba",
+      "head": "71adba33aa727f251f59cba70e22ac9453579d6c",
+      "latest_pointer_blob": "1c3466fe5e05ff9442484bcce8ec9bf7e04985d9",
       "integration_report_blob": "3270a0e11d2b4be40652a32a727ad60249448f43",
-      "state": "PUBLIC_ROUTE_GOVERNANCE_PASS_SECOND_AUTHORIZATION_REQUEST_READY",
+      "state": "SECOND_EXPLICIT_AUTHORIZATION_REQUEST_POSTED_AWAITING_DECISION",
       "output_contract": "VERIFIED_ADAPTER_PACKAGE_V1",
-      "output_ready": false
+      "output_ready": false,
+      "authorization_request": {
+        "request_id": "A2-TO-A0-A1-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-CAPTURE-AUTHORIZATION-REQUEST-V1-20260805-001",
+        "comment_id": 5192321213,
+        "status": "AWAITING_EXPLICIT_DECISION",
+        "max_capture_per_profile": 1,
+        "max_total_capture": 7,
+        "max_batch_execution_count": 1
+      }
     },
     "B": {
       "control_pr": 19,
-      "head": "5c7c9cddcc6ca9f19ffe7e77bdd300480c17c8b3",
-      "latest_pointer_blob": "7aa5344ffd5bd5023cada1b6f2798e1b904ad842",
+      "head": "41217df04fcbcc56ef8e35e3b811fee2b5c74b8c",
+      "latest_pointer_blob": "67dcfbda0675c7cbd3d4994e2417e2327055b466",
       "integration_report_blob": "d6ab9267b49c61ada474157958eb6f5dab5cc1f0",
-      "state": "FIXTURE_BASELINE_FROZEN_ACTUAL_PUBLIC_RUN_STANDBY",
+      "state": "FIXTURE_BASELINE_FROZEN_WAITING_A0_A1_AUTHORIZATION_DECISION",
       "fixture_worker_gate": "PASS_5_OF_5",
       "actual_public_run_ready": false
     },
     "C": {
       "control_pr": 20,
-      "head": "5bae4d6015e8d52646ee4432f6272fa7b6d72a27",
-      "latest_pointer_blob": "4fe02a2ef24a7960de3db930b686cdac835f10a0",
+      "head": "67fb5888ef408998ca70f06621b716ed87ad09a8",
+      "latest_pointer_blob": "fb520b13001f684cb15dd14ae5d6589b33f0c766",
       "integration_report_blob": "abd110f944709dc50114c415db89d631d8fdfeb0",
       "state": "FIXTURE_SEMANTIC_BASELINE_FROZEN_WAITING_CONTENT_DELTA_AND_REQUIRED_PATH_RESOLUTION",
       "fixture_worker_gate": "PASS_4_OF_4",
@@ -57,8 +65,8 @@
   "lane_state": {
     "A_TO_B": {
       "contract": "VERIFIED_ADAPTER_PACKAGE_V1",
-      "status": "BLOCKED_EXECUTION_GATE",
-      "reason": "New explicit one-shot authorization and final adapter acceptance have not occurred."
+      "status": "BLOCKED_AWAITING_AUTHORIZATION_DECISION",
+      "reason": "A-2 submitted a new exact one-shot authorization request; no approval or execution authority exists yet."
     },
     "B_TO_C": {
       "contract": "B1_TO_C1_SOURCE_EVIDENCE_HANDOFF_CANDIDATE_V1",
@@ -76,7 +84,7 @@
     }
   },
   "integration_entry_gate": {
-    "status": "CLOSED",
+    "status": "CLOSED_AWAITING_EXPLICIT_A0_A1_DECISION",
     "opens_only_when": [
       "NEW_EXPLICIT_A0_A1_ONE_SHOT_AUTHORIZATION_GRANTED",
       "A3_SECOND_PUBLIC_DOCUMENT_CAPTURE_TERMINAL_PUBLISHED",
@@ -105,10 +113,10 @@
     "contract_readiness": "PASS",
     "pointer_readiness": "PASS",
     "fixture_baseline_readiness": "PASS",
-    "actual_public_vertical_execution_readiness": "BLOCKED_WAITING_A_FINAL_ADAPTER",
-    "overall": "ABC_INTEGRATION_PREPARED_EXECUTION_GATE_CLOSED"
+    "actual_public_vertical_execution_readiness": "BLOCKED_AWAITING_AUTHORIZATION_DECISION_AND_A_FINAL_ADAPTER",
+    "overall": "ABC_INTEGRATION_PREPARED_AUTHORIZATION_DECISION_GATE_ACTIVE"
   },
-  "next_action": "A2_SUBMIT_SECOND_ONE_SHOT_AUTHORIZATION_REQUEST; B1_AND_C1_HOLD_FROZEN_BASELINES",
+  "next_action": "A0_A1_DECIDE_EXACT_A2_REQUEST; B1_AND_C1_HOLD_FROZEN_BASELINES",
   "capture_execution_authorized": false,
   "actual_site_extraction": false,
   "actual_bulk_collection": false,
