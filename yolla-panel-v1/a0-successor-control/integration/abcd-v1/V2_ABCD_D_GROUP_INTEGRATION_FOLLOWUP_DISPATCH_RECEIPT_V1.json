@@ -1,0 +1,56 @@
+{
+  "schema_version": "V2_ABCD_D_GROUP_INTEGRATION_FOLLOWUP_DISPATCH_RECEIPT_V1",
+  "receipt_id": "V2-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-DISPATCH-20260806-001",
+  "published_at_kst": "2026-08-06T04:52:15+09:00",
+  "review": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_INTEGRATION_RESULT_REVIEW_V1.json",
+    "commit": "0b0c55fcf0114cd24174759a812c53b4c94b5882"
+  },
+  "followup_batch": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_INTEGRATION_FOLLOWUP_BATCH_V1.json",
+    "commit": "b076241eeee80f204a893eb07b6d28094048c331"
+  },
+  "comments": {
+    "control_pr17": 5196645320,
+    "A6_immediate": 5196648256,
+    "B2_immediate": 5196650361,
+    "B4_immediate": 5196652743,
+    "C1_immediate": 5196655145,
+    "D1_PR188_immediate": 5196658981,
+    "A7_event": 5196662863,
+    "B5_event": 5196664899,
+    "D1_PR21_event": 5196667059,
+    "B6_event": 5196668910,
+    "A2_event": 5196670627,
+    "B1_event": 5196672770,
+    "D6_event": 5196674604
+  },
+  "dispatch_accounting": {
+    "comment_count": 13,
+    "immediate_owner_count": 5,
+    "event_owner_count": 7,
+    "control_comment_count": 1,
+    "missing_comment_count": 0
+  },
+  "immediate_active_owners": ["A-6", "B-2", "B-4", "C-1", "D-1_PR188"],
+  "event_chain": [
+    "A6_TO_A7_TO_A2",
+    "B2_AND_B4_TO_B5_TO_B6_TO_B1",
+    "D1_PR188_TO_PR21",
+    "B_AND_C_RECEIPTS_TO_D6"
+  ],
+  "completed_event_wait": ["A-3", "A-4", "A-5", "B-3", "C-2", "C-3", "C-4", "C-5", "C-6", "D-2", "D-3", "D-4", "D-5"],
+  "safety": {
+    "new_external_request": false,
+    "actual_site_extraction": false,
+    "actual_bulk_collection": false,
+    "actual_d_package_acceptance": false,
+    "postgresql_connection": false,
+    "migration_apply": false,
+    "canonical_db_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "FOLLOWUP_DISPATCH_COMPLETE"
+}
