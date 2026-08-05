@@ -1,0 +1,91 @@
+{
+  "schema_version": "B1_TO_C1_SOURCE_EVIDENCE_HANDOFF_CANDIDATE_V1",
+  "handoff_id": "B1-TO-C1-SOURCE-EVIDENCE-HANDOFF-CANDIDATE-20260805-001",
+  "created_at_kst": "2026-08-05T17:03:00+09:00",
+  "producer_group": "B-1_COLLECTION_DB_MATERIALIZATION",
+  "independent_acceptor": "B-6_EXTRACTION_ACCEPTANCE",
+  "consumer_group": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME",
+  "source_repository": "anbin1900-crypto/source-factory-core",
+  "source_control_pr": 19,
+  "consumer_control_pr": 20,
+  "classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE",
+  "worker_gate": {
+    "required": 4,
+    "accepted": 4,
+    "status": "PASS_4_OF_4",
+    "matrix_path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_WORKER_INPUT_ACCEPTANCE_MATRIX_V1.json"
+  },
+  "authoritative_inputs": {
+    "adapter_runtime_scope": {
+      "producer": "B-2",
+      "head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+      "pointer_blob": "e62f5c5ad354d1480eee8f929be80d3cee26e59f",
+      "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY"
+    },
+    "extractor_retry_resume": {
+      "producer": "B-3",
+      "head": "f8299be24108b84af06abfe53e939c8bf68ec9dd",
+      "pointer_blob": "fb81b02eac0fca4597f5a93e168a5889e0046df1",
+      "terminal": "B3_EXTRACTOR_RETRY_RESUME_READY"
+    },
+    "raw_artifact_manifest": {
+      "producer": "B-4",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V1.json",
+      "blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+      "sha256": "9059a443c88103cf1472b50617e61097b29ad8e118825485c2a1d68ccf748a97"
+    },
+    "source_record_envelope": {
+      "producer": "B-4",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/SOURCE_RECORD_ENVELOPE_V1.json",
+      "blob": "0148a841344ce5a0df03e55df532871106dd7333",
+      "sha256": "9889c83d72f6ecca84714509493552b8a9bfa304917275cb779ddb0ecb3aa0ba"
+    },
+    "normalized_dataset": {
+      "producer": "B-5",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/generated/NORMALIZED_DATASET_V1.json",
+      "blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+      "sha256": "add8698d36c9a87043409168ce6831cf3ab87ff5d77db98c2a81aa782591a112"
+    },
+    "extraction_receipt": {
+      "producer": "B-5",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/generated/EXTRACTION_RECEIPT_V1.json",
+      "blob": "a4b4f7504c0a2b552fe165176f51833b78e0fd09",
+      "sha256": "ca8d871353740ccb5ea753467d5e3d183ded1e958688f92d019ca1756930711c"
+    },
+    "sqlite_fixture": {
+      "producer": "B-5",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/generated/fixture_materialized.sqlite.b64",
+      "blob": "951a53ddb336e8a1cfd56b3dac94088d78bb57da",
+      "decoded_size_bytes": 12288,
+      "decoded_sha256": "f03e20844e805af3105791934352f8bc3dcbeb1a165ad5c80e5d6ae5739ea14d",
+      "row_count": 3
+    }
+  },
+  "record_accounting": {
+    "raw_record_count": 4,
+    "duplicate_count": 1,
+    "normalized_record_count": 3,
+    "source_field_loss_count": 0,
+    "silent_drop_count": 0
+  },
+  "consumer_rules": {
+    "preserve_fixture_classification": true,
+    "preserve_source_url_artifact_sha_and_lineage": true,
+    "do_not_claim_actual_site_data": true,
+    "c1_owns_semantic_transformation": true,
+    "c1_must_preserve_unmapped_fields_or_reject_explicitly": true,
+    "d_canonical_schema_decision_by_b": false,
+    "d_canonical_db_write_by_b": false
+  },
+  "a2_dependency": {
+    "verified_adapter_package_ready": false,
+    "actual_site_extraction_authorized": false,
+    "current_terminal": "A2_CAPTURE_INPUT_AUTHORITY_EXACT_BLOCKER"
+  },
+  "handoff_decision": "READY_FOR_B1_COMMANDER_POINTER_PROMOTION",
+  "actual_site_extraction": false,
+  "network_call_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
