@@ -1,0 +1,75 @@
+{
+  "schema_version": "C_MODE_WAVE12_REVIEW_AND_WAVE13_DIRECTIVE_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "previous_wave": "V1-C-MODE-6W-WAVE-012",
+  "wave_id": "V1-C-MODE-6W-WAVE-013",
+  "registry_sequence": 13,
+  "owner": "V-1",
+  "mode": "SELF_CONTAINED_RC5_PACKAGE_AND_ACTUAL_RUNTIME_PATH_CLOSURE",
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc5",
+  "wave12_review": {
+    "assigned": 6,
+    "reported": 6,
+    "missing": 0,
+    "duplicate_result": 0,
+    "results": {
+      "AUTOMATION-C-W1": {"result_comment": 5195797122, "result_commit": "7492abf88c6f6bb84ec50084948ca9e635069f2e", "outcome": "PASS", "technical_scope": "SOURCE_INVENTORY_LOCK_PASS"},
+      "AUTOMATION-C-W2": {"result_comment": 5195703416, "result_commit": "35da3fbbabe6d12b5aa18e4e3206459f907366ec", "outcome": "PASS", "technical_scope": "TECHNICAL_ACCEPTANCE_GATE_PASS"},
+      "AUTOMATION-C-W3": {"result_comment": 5195394714, "result_commit": "40023163e8faf0f918e1fa55d1dae4741a3bb7e7", "outcome": "PASS", "technical_scope": "UI_PAYLOAD_OFFLINE_PASS_TARGET_PC_PENDING"},
+      "AUTOMATION-C-W4": {"result_comment": 5195674360, "result_commit": "f15c83ecbfb5f737d0283246c88d5ea861632acb", "outcome": "BLOCKED", "technical_scope": "CONNECTOR_BYTE_PREPARATION_PASS_POSITIVE_PACKAGE_PENDING"},
+      "AUTOMATION-C-W5": {"result_comment": 5195686133, "result_commit": "d21c152985fd98b010b4e2c95b20faad42789a6d", "outcome": "BLOCKED", "technical_scope": "EXECUTABLE_SOURCE_IMPLEMENTED_PACKAGE_ASSEMBLY_INCOMPLETE"},
+      "AUTOMATION-C-W6": {"result_comment": 5195668736, "result_commit": "8459971d75a7a267afd89cd794d45c855af2ce00", "outcome": "BLOCKED", "technical_scope": "NONBLOCKING_AUDIT_PREPARED_W5_POST_RESULT_REAUDIT_REQUIRED"}
+    }
+  },
+  "observed_existing_runtime": {
+    "state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2",
+    "release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases",
+    "browser_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "worker_partition": "persist:sf4-safe-panel-worker-1",
+    "analysis_partition": "persist:yolla-analysis-browser-v1"
+  },
+  "commander_findings": [
+    "INSTALLER_EXPECTS_ADJACENT_RC4_PACKAGE_DIRECTORY_BUT_DIRECTORY_BYTES_ARE_NOT_COMMITTED",
+    "UI_PACKAGE_PATHS_IN_W1_LOCK_DO_NOT_MATCH_W5_INSTALLER_REQUIRED_PATH",
+    "INSTALLER_USES_LOCALAPPDATA_PATHS_INSTEAD_OF_EXISTING_RUNTIME_ROOTS",
+    "BACKGROUND_DISPATCH_OPENS_TEMPORARY_PROFILE_WITHOUT_FIXED_LOGIN_PROFILE_BINDING_PROOF",
+    "SMOKE_DOES_NOT_LOAD_ALL_REQUIRED_RUNTIME_COMPONENTS",
+    "ROLLBACK_RETURNS_PRESERVED_LABELS_WITHOUT_PRE_POST_HASH_OR_EXISTENCE_VERIFICATION",
+    "W2_GATE_AND_W6_AUDIT_PRECEDED_THE_FINAL_W5_WAVE12_RESULT"
+  ],
+  "wave13_assignments": {
+    "AUTOMATION-C-W1": {"command_id": "C6W-W13-W1-ACTUAL-RUNTIME-ROOT-SELF-CONTAINED-ASSEMBLY-MAP", "task": "LOCK_ACTUAL_ROOTS_LAUNCHER_DESTINATIONS_AND_RC5_ASSEMBLY_MAP"},
+    "AUTOMATION-C-W2": {"command_id": "C6W-W13-W2-RC5-PACKAGE-TECHNICAL-ACCEPTANCE-GATE", "task": "REJECT_MISSING_PACKAGE_ROOT_PROFILE_UI_SMOKE_ROLLBACK_CONTRACTS"},
+    "AUTOMATION-C-W3": {"command_id": "C6W-W13-W3-INSTALLER-READY-UI-PROFILE-BINDING", "task": "ALIGN_UI_PACKAGE_PATHS_LOAD_HOOKS_AND_FIXED_PROFILE_CONTRACT"},
+    "AUTOMATION-C-W4": {"command_id": "C6W-W13-W4-SELF-CONTAINED-PACKAGE-OFFLINE-ACCEPTANCE", "task": "CONNECTOR_BYTE_VALIDATOR_NEGATIVE_RC4_AND_RC5_RUNNER"},
+    "AUTOMATION-C-W5": {"command_id": "C6W-W13-W5-SELF-CONTAINED-RC5-INSTALLER-BUILD", "task": "BUILD_ACTUAL_DOWNLOADABLE_SELF_CONTAINED_RC5_PACKAGE", "integration_owner": true},
+    "AUTOMATION-C-W6": {"command_id": "C6W-W13-W6-INDEPENDENT-RC4-NEGATIVE-RC5-MATRIX", "task": "INDEPENDENT_NEGATIVE_AUDIT_AND_RC5_ACCEPTANCE_MATRIX", "implementation_direct_edit": false}
+  },
+  "required_rc5_properties": {
+    "install_time_network_dependency": false,
+    "existing_release_root_required": true,
+    "existing_state_root_preserved": true,
+    "fixed_login_profile_preserved": true,
+    "full_component_smoke": true,
+    "launcher_switch_after_pass_only": true,
+    "rollback_exact_preinstall_target": true,
+    "preservation_pre_post_readback": true,
+    "legacy_a_e_reintroduction_count": 0
+  },
+  "registry_plan": {
+    "worker_count": 6,
+    "all_rows_valid_before_any_dispatch": true,
+    "partial_dispatch": false,
+    "same_sequence_duplicate": "FAIL_CLOSED",
+    "result_key_rule": "DIRECTIVE_COMMENT_STRING_PLUS_ASCII_00"
+  },
+  "current_progress_percent": 96,
+  "progress_increase_withheld_reason": "INSTALLABLE_SELF_CONTAINED_PACKAGE_AND_TARGET_PC_RECEIPTS_NOT_YET_PROVEN",
+  "target_pc_pass": "PENDING",
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
