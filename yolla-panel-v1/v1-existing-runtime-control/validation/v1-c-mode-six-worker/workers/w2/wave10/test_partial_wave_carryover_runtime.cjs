@@ -1,0 +1,11 @@
+'use strict';
+const assert = require('assert');
+const { collectPartialWave } = require('./partial_wave_carryover_runtime.cjs');
+const rows = [1,2,4,5,6].map((n) => ({ role:`AUTOMATION-C-W${n}`, resultKey:`K${n}` }));
+const comments = rows.map((r,i) => ({ role:r.role, resultKey:r.resultKey, id:100+i, outcome:i===3?'BLOCKED':'PASS' }));
+let out = collectPartialWave({ currentRows:rows, currentComments:comments, carryover:{role:'AUTOMATION-C-W3',wave:'009',resultKey:'519440526200'}, carryoverComments:[] });
+assert.equal(out.summary.reported,5); assert.equal(out.summary.missing,0); assert.equal(out.commanderFooter,'작업완료 결과수집 완료'); assert.equal(out.carryover.status,'ACTIVE_CARRYOVER');
+out = collectPartialWave({ currentRows:rows, currentComments:comments.slice(0,4), carryover:{role:'AUTOMATION-C-W3',wave:'009',resultKey:'519440526200'}, carryoverComments:[{role:'AUTOMATION-C-W3',resultKey:'519440526200',id:999,outcome:'PASS'}] });
+assert.equal(out.summary.missing,1); assert.equal(out.commanderFooter,null); assert.equal(out.carryover.status,'REPORTED'); assert.equal(out.carryover.resultComment,999);
+assert.throws(() => collectPartialWave({ currentRows:rows, currentComments:[comments[0],comments[0]], carryover:{role:'AUTOMATION-C-W3',resultKey:'519440526200'}, carryoverComments:[] }), /DUPLICATE_RESULT/);
+console.log('PASS_12_OF_12');
