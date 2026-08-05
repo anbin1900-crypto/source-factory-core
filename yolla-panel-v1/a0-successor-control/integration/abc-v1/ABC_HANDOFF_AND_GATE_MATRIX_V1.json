@@ -1,20 +1,26 @@
 {
-  "schema_version": "ABC_HANDOFF_AND_GATE_MATRIX_V2",
+  "schema_version": "ABC_HANDOFF_AND_GATE_MATRIX_V3",
   "matrix_id": "V2-ABC-HANDOFF-GATE-MATRIX-20260805-001",
-  "prepared_at_kst": "2026-08-05T22:30:00+09:00",
+  "prepared_at_kst": "2026-08-05T23:12:00+09:00",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
+  "authorization_transition": {
+    "decision_comment": 5192765975,
+    "authorization_id": "V2-AUTH-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-20260805-001",
+    "decision": "APPROVED",
+    "a3_execution_event_comment": 5192799338
+  },
   "contracts": [
     {
       "lane": "A2_TO_B1",
       "contract": "VERIFIED_ADAPTER_PACKAGE_V1",
       "producer": "A-2",
       "consumer": "B-1",
-      "producer_state": "SECOND_EXPLICIT_AUTHORIZATION_REQUEST_POSTED_AWAITING_DECISION",
+      "producer_state": "A3_ONE_SHOT_AUTHORIZED_EXECUTION_EVENT_POSTED",
       "current_artifact_state": "NOT_YET_ISSUED",
-      "entry_gate": "A0_A1_EXPLICIT_DECISION_THEN_CAPTURE_SCHEMA_PAGINATION_ADAPTER_FINAL_ACCEPTANCE",
+      "entry_gate": "A3_CAPTURE_TERMINAL_THEN_A5_SCHEMA_A4_PAGINATION_A6_REBUILD_A7_ACCEPTANCE",
       "consumer_action": "HOLD_NO_ACTUAL_SITE_EXTRACTION",
-      "status": "BLOCKED_AWAITING_DECISION"
+      "status": "BLOCKED_WAITING_FINAL_VERIFIED_ADAPTER"
     },
     {
       "lane": "B1_TO_C1",
@@ -71,13 +77,18 @@
     "NO_OWNERSHIP_OVERLAP",
     "SOURCE_PROVENANCE_PRESERVED",
     "UNMAPPED_VALUES_REJECTED_NOT_SILENTLY_DROPPED",
-    "NO_BRANCH_MERGE_REQUIRED_FOR_PREPARATION",
-    "NO_ACTUAL_REQUEST_WITHOUT_NEW_AUTHORIZATION",
+    "NO_BRANCH_MERGE_REQUIRED_FOR_INTEGRATION_EXECUTION",
+    "A3_EXECUTION_EXACT_AUTHORIZED_SCOPE_ONLY",
+    "NO_AUTO_RETRY_OR_SECOND_BATCH",
     "NO_B_ACTUAL_COLLECTION_WITHOUT_VERIFIED_ADAPTER",
     "NO_C_REEXECUTION_WITHOUT_CONTENT_OR_D_AUTHORITY_DELTA",
     "NO_D_CANONICAL_DB_WRITE_BY_A_B_OR_C"
   ],
-  "overall_status": "CONTRACT_MATRIX_READY_AUTHORIZATION_DECISION_GATE_ACTIVE",
+  "current_active_lane": "A3_PUBLIC_DOCUMENT_GET_ONE_SHOT_CAPTURE",
+  "overall_status": "CONTRACT_MATRIX_READY_A3_EXECUTION_GATE_ACTIVE",
+  "request_execution_authorized": true,
+  "capture_execution_authorized": true,
+  "actual_site_extraction": false,
   "production": false,
   "ready": false,
   "merge": false
