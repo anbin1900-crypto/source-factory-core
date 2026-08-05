@@ -1,52 +1,62 @@
 {
-  "schema_version": "LATEST_A2_REPORT_POINTER_V9",
-  "pointer_id": "A2-GENERIC-SITE-ANALYZER-ADAPTER-FACTORY-LATEST-V9",
-  "updated_at_kst": "2026-08-06T00:25:00+09:00",
+  "schema_version": "LATEST_A2_REPORT_POINTER_V10",
+  "pointer_id": "A2-GENERIC-SITE-ANALYZER-ADAPTER-FACTORY-LATEST-V10",
+  "updated_at_kst": "2026-08-06T00:52:00+09:00",
   "role": "A-2_GENERIC_SITE_ANALYZER_ADAPTER_FACTORY_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 18,
   "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
-  "previous_pointer_blob": "7b0098f622bbdf84568919cf5cd17d19b5fc7c19",
+  "previous_pointer_blob": "126e60b79a67fdd7c7b32221db9cc2df93f3c77b",
   "active_report": {
-    "type": "GENERIC_HTML_MVP_FAST_CLOSURE",
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_WAVE6_10_GENERIC_HTML_MVP_FAST_CLOSURE_V1.json",
-    "commit": "1363e9fb20da6413db808cfa576c8de5b05dc8e1",
-    "blob": "5a6a6c0df9c917773e6d9be1778ac3f11445f620",
+    "type": "A5_A4_PASS_A6_FINAL_BUILD_ACTIVE",
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_WAVE6_11_A5_A4_PASS_A6_FINAL_BUILD_ACTIVE_V1.json",
+    "commit": "ce4281c97544896422bb73f6d98c14a02c6a4240",
+    "blob": "2288341674f88cc29cc477524092468442612854",
     "remote_readback": "PASS"
   },
-  "policy": {
-    "policy_id": "YOLLA_EFFICIENCY_RATIONALITY_SPEED_FIRST_OPERATING_POLICY_V1",
-    "live_capture_required_for_mvp": false,
-    "mid_process_audit_count": 0,
-    "final_acceptance_count": 1
-  },
-  "a3_result": {
+  "a3_state": {
     "head": "30ef339d303debeaa2098c4f5f5d2ca44f087c67",
     "terminal": "DNS_EXECUTION_ENVIRONMENT_EXACT_EXTERNAL_BLOCKER",
     "mvp_blocking": false,
-    "target_pc_handoff_directive_comment": 5193792814
+    "mode": "TARGET_PC_ENHANCEMENT_EVENT_WAIT"
+  },
+  "a5_result": {
+    "head": "85bb7c7c6b07a0a58cdc74ea7d74a6de2ed81adb",
+    "terminal": "A5_GENERIC_HTML_DOCUMENT_RESPONSE_CONTRACT_READY",
+    "pointer_blob": "d5ec690e342a699639d21a0da0c4139b4333337f",
+    "handoff_blob": "0f4e31bfd5ebfcf77872c52369322c67930330f2",
+    "status": "PASS_ACCEPTED_FROZEN"
+  },
+  "a4_result": {
+    "head": "032c609396db198db6bd14c96436f07bc429cae8",
+    "terminal": "A4_NO_AUTOMATED_PAGINATION_MVP_BINDING_READY",
+    "pointer_blob": "9ac48216663f3390214e5dca4cb7b030b64f0535",
+    "handoff_blob": "894fc02cc1cdf72708d1ccb1660f56b302f80aa3",
+    "status": "PASS_ACCEPTED_FROZEN"
+  },
+  "a6_execution": {
+    "head_before_execution": "153c71faf5462c6e12d4390987d67be0dd4efa60",
+    "directive_comment": 5194059963,
+    "final_build_target": 1,
+    "replay_count": 2,
+    "status": "FINAL_BUILD_ACTIVE"
   },
   "worker_comments": {
-    "A-5": 5193798083,
-    "A-4": 5193802731,
-    "A-6": 5193808362,
-    "A-7": 5193812113,
-    "A-3": 5193792814
-  },
-  "control_comments": {
-    "PR18": 5193787876,
-    "PR17": 5193816719
+    "A-3": 5194065483,
+    "A-4": 5194069424,
+    "A-5": 5194073335,
+    "A-6": 5194059963,
+    "A-7": 5194076583
   },
   "critical_path": [
-    "A5_GENERIC_HTML_RESPONSE_CONTRACT_FINAL_AND_A4_NO_PAGINATION_BINDING_IN_PARALLEL",
     "A6_SINGLE_VERIFIED_ADAPTER_BUILD_AND_2X_REPLAY",
     "A7_ONE_FINAL_ACCEPTANCE",
     "A2_TO_B1_HANDOFF"
   ],
-  "active_owners": ["A-5", "A-4"],
-  "current_terminal": "A2_GENERIC_HTML_MVP_FAST_CLOSURE_ACTIVE",
-  "current_status": "A5_A4_PARALLEL_FINALIZATION",
-  "next_action": "PROCESS_A5_A4_FINAL_POINTERS_AND_TRIGGER_A6_SINGLE_BUILD",
+  "active_owner": "A-6",
+  "current_terminal": "A2_A5_A4_PASS_A6_FINAL_BUILD_ACTIVE",
+  "current_status": "WAITING_A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_TERMINAL",
+  "next_action": "PROCESS_A6_TERMINAL_AND_TRIGGER_A7_FINAL_ACCEPTANCE_ON_PASS",
   "request_execution_authorized": false,
   "capture_execution_authorized": false,
   "verified_adapter_package_ready": false,
