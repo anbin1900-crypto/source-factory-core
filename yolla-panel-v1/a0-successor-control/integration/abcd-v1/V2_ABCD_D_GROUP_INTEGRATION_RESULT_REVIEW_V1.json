@@ -1,0 +1,169 @@
+{
+  "schema_version": "V2_ABCD_D_GROUP_INTEGRATION_RESULT_REVIEW_V1",
+  "review_id": "V2-ABCD-D-GROUP-INTEGRATION-RESULT-REVIEW-20260806-001",
+  "reviewed_at_kst": "2026-08-06T04:52:15+09:00",
+  "reviewer": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "parent_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "result_accounting": {
+    "assigned_worker_count": 20,
+    "terminal_or_exact_blocker_count": 17,
+    "no_terminal_count": 3,
+    "pass_or_ready_count": 12,
+    "contract_ready_expected_external_blocker_count": 2,
+    "actionable_dependency_blocker_count": 3,
+    "missing_terminal_workers": ["A-6", "B-2", "B-4"]
+  },
+  "A_group": {
+    "control_pr": 18,
+    "control_head": "536715fcfb2ac2e4c589b952b3bb191135af6eb7",
+    "workers": {
+      "A-3": {
+        "pr": 22,
+        "head": "f1a32cdaeafb2ef8cc7442bc3ef8351d689e02c3",
+        "terminal": "A3_D_SOURCE_PROVENANCE_HANDOFF_READY",
+        "terminal_comment": 5196348191,
+        "handoff_blob": "7b06de0089917dc41069da4950675f22b1f4d5e6",
+        "decision": "PASS"
+      },
+      "A-4": {
+        "pr": 23,
+        "head": "2efc3866b292cd8c43a6fdc75a43479c0bbf2fad",
+        "terminal": "A4_D_LOCATOR_PAGINATION_HANDOFF_READY",
+        "terminal_comment": 5196232109,
+        "handoff_blob": "ccdb978a08fe94bf61df3477b1eef71f904c7ce4",
+        "decision": "PASS"
+      },
+      "A-5": {
+        "pr": 24,
+        "head": "ba04d2dbae45a5ed51e86d6715565d15b8428464",
+        "terminal": "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF_READY",
+        "terminal_comment": 5196186184,
+        "handoff_blob": "0fac8fac5069a013717ea74202d6d1741adfd966",
+        "decision": "PASS"
+      },
+      "A-6": {
+        "pr": 25,
+        "head": "a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793",
+        "required_terminal": "A6_VERIFIED_ADAPTER_D_COMPATIBILITY_READY_OR_EXACT_BLOCKER",
+        "decision": "NO_TERMINAL_NO_HEAD_ADVANCE"
+      },
+      "A-7": {
+        "pr": 26,
+        "head": "888ef342e230006afd4a8eb51aa99c97f16ec041",
+        "terminal": "A7_D_INTEGRATION_READINESS_REVIEW_EXACT_FINDINGS",
+        "terminal_comment": 5196189584,
+        "decision": "ACTIONABLE_DEPENDENCY_WAIT_A6_THEN_DELTA_REVIEW"
+      }
+    },
+    "group_decision": "PARTIAL_3_PASS_A6_MISSING_A7_DELTA_REVIEW_PENDING",
+    "next_owner": "A-6"
+  },
+  "B_group": {
+    "control_pr": 19,
+    "control_head": "fded2aa3f24bd7e6eaa8aedeafa7d2e6a4e2dc04",
+    "workers": {
+      "B-2": {
+        "pr": 38,
+        "head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+        "required_terminal": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_READY_OR_EXACT_BLOCKER",
+        "decision": "NO_TERMINAL_NO_HEAD_ADVANCE"
+      },
+      "B-3": {
+        "pr": 39,
+        "head": "86d789a136ce5070d79eab7e6d0205eb23da11d7",
+        "terminal": "B3_D_COLLECTION_RUN_LEDGER_READY",
+        "decision": "PASS"
+      },
+      "B-4": {
+        "pr": 40,
+        "head": "6dfe697363a69f83797775aa549f34614aa3748a",
+        "required_terminal": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY_OR_EXACT_BLOCKER",
+        "decision": "NO_TERMINAL_NO_HEAD_ADVANCE"
+      },
+      "B-5": {
+        "pr": 41,
+        "head": "ecda54115e8bcac427344cddd4578b8a748042fc",
+        "terminal": "B5_D_READY_PACKAGE_V2_EXACT_BLOCKER",
+        "terminal_comment": 5196374879,
+        "tests": "PASS_37_OF_37",
+        "first_blocker": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1_AND_B4_RAW_ARTIFACT_MANIFEST_V2_NOT_PUBLISHED",
+        "decision": "ACTIONABLE_DEPENDENCY_BLOCKER"
+      },
+      "B-6": {
+        "pr": 42,
+        "head": "05feff1062f0cc0c61bd252564b1626df5eccde8",
+        "terminal": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_EXACT_BLOCKER",
+        "terminal_comment": 5196390739,
+        "first_blocker": "B2_B4_B5_D_READY_TERMINALS_AND_PR188_TREE_BINDING_MISSING",
+        "decision": "ACTIONABLE_DEPENDENCY_BLOCKER"
+      }
+    },
+    "group_decision": "BLOCKED_BY_B2_B4_THEN_B5_THEN_B6",
+    "parallel_next_owners": ["B-2", "B-4"]
+  },
+  "C_group": {
+    "control_pr": 20,
+    "control_head": "156402dfef15a5c4fb4bafca0e70e77f088ccd10",
+    "workers": {
+      "C-2": {"terminal": "C2_D_FRAGMENT_LOCATOR_CONTRACT_READY", "result_comment": 5196253050, "tests": "PASS_23_OF_23", "decision": "PASS"},
+      "C-3": {"terminal": "C3_PR188_D_INTEGRATION_PATH_CLOSURE_READY", "terminal_comment": 5196315738, "matrix_blob": "9283857227aebb59679e11bfc4ddb736ac55e188", "tests": "PASS_40_OF_40", "decision": "PASS_MATRIX_AND_D1_ADDENDUM_REQUEST"},
+      "C-4": {"terminal": "KNOWLEDGE_CANDIDATE_BUNDLE_V2_READY", "terminal_comment": 5196373015, "candidate_count": 0, "rejected_record_count": 15, "tests": "PASS_42_OF_42", "decision": "PASS_FAIL_CLOSED_ZERO_CANDIDATE"},
+      "C-5": {"terminal": "C5_D_RELEASE_QUERY_CITATION_CONSUMER_READY_OR_EXACT_BLOCKER", "terminal_comment": 5196275860, "first_blocker": "D1_ACTUAL_RECEIPT_AND_KNOWLEDGE_RELEASE_NOT_PUBLISHED", "decision": "CONTRACT_READY_EXPECTED_EXTERNAL_BLOCKER"},
+      "C-6": {"terminal": "C6_D_DUAL_RECEIPT_E2E_VALIDATOR_READY_OR_EXACT_BLOCKER", "terminal_comment": 5196361268, "first_blocker": "D1_ACTUAL_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_NOT_PUBLISHED", "tests": "PASS_26_OF_26", "decision": "VALIDATOR_READY_EXPECTED_EXTERNAL_BLOCKER"}
+    },
+    "group_decision": "WORKER_SET_READY_COMMANDER_INTEGRATION_POINTER_MISSING",
+    "next_owner": "C-1"
+  },
+  "D_group": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "control_head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+    "workers": {
+      "D-2": {"pr": 189, "head": "32ceff40e31c5af0079ade8c51de40794a91224a", "terminal": "D2_NAVER_SOURCE_AUTHORITY_RECOMMENDATION_READY", "terminal_comment": 5196266991, "decision": "PASS_RECOMMENDATION_D1_DECISION_PENDING"},
+      "D-3": {"pr": 190, "head": "f45f7181d071b96b86d61529cdd2ba1959b26c33", "terminal": "D3_PUBLIC_HTML_STRUCTURE_COMPATIBILITY_READY", "terminal_comment": 5196267264, "tests": "PASS_54_OF_54", "decision": "PASS"},
+      "D-4": {"pr": 191, "head": "9f1e17dc4291152b99d5e8596e39dede10db4618", "terminal": "D4_C_KNOWLEDGE_EVIDENCE_PREFLIGHT_READY", "terminal_comment": 5196305728, "validation": "PASS_19_OF_19", "decision": "PASS"},
+      "D-5": {"pr": 192, "head": "55e35ec02b75304d33a2a159606c14fa2a5158f4", "terminal": "D5_ABCD_LOGICAL_STAGING_MAPPING_READY", "terminal_comment": 5196375721, "validation": "PASS_66_OF_66", "decision": "PASS_LOGICAL_ONLY"},
+      "D-6": {"pr": 193, "head": "94daf55630518932111edbac913d864743772aa1", "terminal": "D6_ABCD_CROSS_REPOSITORY_ACCEPTANCE_MATRIX_PREPARED_INPUT_PENDING", "terminal_comment": 5196225728, "decision": "PASS_PREPARATION_INPUT_PENDING"}
+    },
+    "D1_control_result": "NOT_PUBLISHED_CONTROL_HEAD_UNCHANGED",
+    "required_D1_outputs": [
+      "D_PUBLIC_REAL_ESTATE_SOURCE_AUTHORITY_DECISION_V1",
+      "D_INBOUND_FIELD_MAPPING_CONTRACT_V1_1_ADDENDUM",
+      "D1_B_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_PROCEDURE_V1",
+      "D1_C_KNOWLEDGE_CANDIDATE_ACCEPTANCE_RECEIPT_PROCEDURE_V1",
+      "D1_SCHEMA_ALIGNMENT_TREE_BINDING_MANIFEST_V1",
+      "LATEST_D_GROUP_CONTROL_POINTER_NEW_VERSION"
+    ],
+    "next_owner": "D-1_PR188"
+  },
+  "bridge": {
+    "source_factory_pr": 21,
+    "head": "4f251262b6ee67c9d41aae6216bf752c9eaf52ee",
+    "decision": "NO_TERMINAL_NO_HEAD_ADVANCE",
+    "next_gate": "D1_PR188_TERMINAL_THEN_REFRESH_CROSS_REPOSITORY_POINTER_V2"
+  },
+  "critical_path": [
+    "A6_THEN_A7_DELTA_REVIEW_THEN_A2_INTEGRATE",
+    "B2_AND_B4_THEN_B5_RESUME_THEN_B6_REPREFLIGHT_THEN_B1_INTEGRATE",
+    "C1_INTEGRATE_WORKER_SET_AND_HOLD_FOR_B_OR_D_DELTA",
+    "D1_PR188_PUBLISH_AUTHORITY_ADDENDUM_RECEIPT_PROCEDURES_TREE_BINDING",
+    "PR21_REFRESH_AFTER_D1_TERMINAL",
+    "D6_REOPEN_AFTER_B_AND_C_RECEIPTS"
+  ],
+  "safety": {
+    "new_external_request": false,
+    "actual_site_extraction": false,
+    "actual_bulk_collection": false,
+    "actual_d_package_acceptance": false,
+    "postgresql_connection": false,
+    "migration_apply": false,
+    "canonical_db_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  },
+  "status": "RESULT_REVIEW_COMPLETE_FOLLOWUP_REQUIRED"
+}
