@@ -1,0 +1,21 @@
+{
+  "schema_version": "W3_RC4_UI_MEMBERSHIP_RECEIPT_V1",
+  "target_version": "5.10.2.4.2-rc4",
+  "manifest_commit": "4def942235a6781c5692221324c2574e299341b8",
+  "manifest_blob": "520c04ae8730dbef1166b2f7e063b0783db5414a",
+  "manifest_sha256": "37a7fac81a9c0619fdf3bd148f8d9aa9fe2f59f16c0ea026a63bc8e567d35dd4",
+  "member_count": 7,
+  "runtime_member_count": 3,
+  "evidence_member_count": 4,
+  "members": [
+    {"logical_role":"TRUTH_BRIDGE","package_path":"runtime-files/automation-c-v1/workspace_ui_truth_bridge.cjs","install_destination":"automation-c-v1/workspace_ui_truth_bridge.cjs","size_bytes":4012,"sha256":"8086f56f1f0b5731cb9ad4be5339fc211d1468f4195fcf249b7a300cc3b830e8","status":"PASS"},
+    {"logical_role":"CSS_RUNTIME","package_path":"runtime-files/workspace_c_mode_rc4_truth.css","install_destination":"workspace_c_mode_rc4_truth.css","size_bytes":1504,"sha256":"43b6a3721c250e76b2562c45d931fd17d87ae219fec70aa3ef3206af9cd8b0fe","status":"PASS"},
+    {"logical_role":"UI_RUNTIME","package_path":"runtime-files/workspace_c_mode_rc4_truth.js","install_destination":"workspace_c_mode_rc4_truth.js","size_bytes":7858,"sha256":"5fdd1719e110ce80ad4b3efb911fd20a86ccbfeb27182645e8d2170287114b54","status":"PASS"},
+    {"logical_role":"MEMBERSHIP_VALIDATOR","package_path":"test-evidence/w3/validate_w3_rc4_ui_membership.cjs","install_destination":null,"size_bytes":3359,"sha256":"47bb2565d2210faede1d3af27288edf19a5825560210789bebcb41c574134f25","status":"PASS"},
+    {"logical_role":"SMOKE_ASSERTION","package_path":"test-evidence/w3/test_w3_rc4_ui_smoke.cjs","install_destination":null,"size_bytes":3848,"sha256":"f44e2183c60dab4a5ad700205c8f8d20c7f4c9c9d7c08a64e475b0a52ad6d214","status":"PASS"},
+    {"logical_role":"TARGET_PC_SCHEMA","package_path":"test-evidence/w3/W3_RC4_TARGET_PC_UI_EVIDENCE_V1.schema.json","install_destination":null,"size_bytes":1615,"sha256":"0ded52d65a2d7cdaaeefca858bff90401180a15fb817ffdc0f4a62ee322a73a5","status":"PASS"},
+    {"logical_role":"TARGET_PC_COLLECTOR","package_path":"test-evidence/w3/Collect-W3Rc4TargetPcEvidence.ps1","install_destination":null,"size_bytes":4142,"sha256":"ba32df600afa9cfdf9200cfd8a40aba84229c9e922a653fd860284877d61a4b2","status":"PASS"}
+  ],
+  "status": "PASS",
+  "live_pass_claimed": false
+}
