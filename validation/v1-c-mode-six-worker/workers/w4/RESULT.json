@@ -1,0 +1,42 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_RESULT_V2",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "worker_id": "AUTOMATION-C-W4",
+  "status": "PASS",
+  "terminal": "C6W4_REPEAT_COMMAND_RUNTIME_PASS",
+  "head_commit": "0f39483412866b19ea604ec731428f099a38dd7a",
+  "tested_at_kst": "2026-08-05T17:42:00+09:00",
+  "scope": [
+    "Repeat Command Runtime",
+    "EVERY_X_MINUTES trigger",
+    "AFTER_COMPLETION trigger",
+    "ROLE+COMMAND_ID+DISPATCH_ID completion correlation",
+    "durable persistence and restart recovery",
+    "pause, resume, delete and STATUS=END auto-stop",
+    "work control log and dispatch receipts"
+  ],
+  "tests": [
+    {"name": "node --check automation-c-v1/repeat_command_runtime.cjs", "status": "PASS"},
+    {"name": "node --check automation-c-v1/tests/test_repeat_command_runtime.cjs", "status": "PASS"},
+    {"name": "node automation-c-v1/tests/test_repeat_command_runtime.cjs", "status": "PASS", "assertion_count": 18}
+  ],
+  "evidence": {
+    "runtime_path": "automation-c-v1/repeat_command_runtime.cjs",
+    "test_path": "automation-c-v1/tests/test_repeat_command_runtime.cjs",
+    "test_output": {"status": "PASS", "tests": 18, "dispatch_receipts": 4, "work_control_log_entries": 12},
+    "prompt_byte_preserved": true,
+    "target_group_slot_preserved": true,
+    "active_command_duplicate_blocked": true,
+    "foreign_role_completion_rejected": true,
+    "wrong_dispatch_completion_rejected": true,
+    "status_end_auto_stop": true,
+    "restart_state_and_dispatch_count_restored": true,
+    "work_control_log_preserved": true
+  },
+  "auto_test_write_count": 0,
+  "target_pc_execution_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "panel_terminal": "PANEL | ROLE=AUTOMATION-C-W4 | STATUS=END"
+}
