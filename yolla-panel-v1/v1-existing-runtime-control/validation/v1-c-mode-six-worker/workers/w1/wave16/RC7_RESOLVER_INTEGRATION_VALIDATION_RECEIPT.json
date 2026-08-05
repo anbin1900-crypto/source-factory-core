@@ -1,0 +1,157 @@
+{
+  "schema_version": "RC7_RESOLVER_INTEGRATION_VALIDATION_RECEIPT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-016",
+  "registry_sequence": 16,
+  "command_id": "C6W-W16-W1-RC7-RESOLVER-INTEGRATION-GATE",
+  "role": "AUTOMATION-C-W1",
+  "directive_comment": 5198279097,
+  "result_key": "519827909700",
+  "status": "PASS_FIXTURES_RC7_PENDING",
+  "execution": {
+    "command": "node validate_rc7_resolver_integration.cjs --contract RC7_RESOLVER_INTEGRATION_CONTRACT.json --legacy-installer <W5_RC6_INSTALLER> --receipt RC7_RESOLVER_INTEGRATION_VALIDATION_RECEIPT.json",
+    "assertion_count": 159,
+    "failure_count": 0,
+    "offline_fixture_gate_pass": true
+  },
+  "input_readback": {
+    "resolver": {
+      "commit": "ed8bde5eb66f0d65de64ad1dfae4fde038e6012c",
+      "blob_sha1": "92e3e7f027f716fb49373bc66e9d62aff61b73ae",
+      "sha256": "a6eaeef66a2dfc59b646fb63ab62d6bff12361b79f13d97bb4022eaa01255ea6",
+      "size_bytes": 10563
+    },
+    "handoff": {
+      "commit": "001f2b23f743b204565f91bd058094330fbaa11a",
+      "blob_sha1": "d70529d94bdae7e89daf4ba5cb69ec2cefe8bb80",
+      "sha256": "f509146b475a19a1de04297b33c04ac6145ae73fd147e559bc7bb3836e96a637",
+      "size_bytes": 4958
+    },
+    "rc6_installer": {
+      "commit": "ceb5ae6591c223be7a8b093d55c869170cb505f2",
+      "blob_sha1": "f23fc09387caf638494ea47d7b52d0f006a40065",
+      "sha256": "af108e03dc5192dbd8f5f483d9592b05b3fe2aaafd6eb109b3aa69c0e56ea467",
+      "size_bytes": 5992
+    }
+  },
+  "contract_validation": {
+    "pass": true,
+    "failures": [],
+    "assertion_count": 11
+  },
+  "fixtures": [
+    {
+      "id": "POSITIVE_RESOLVER_ONLY_RC7",
+      "expected_outcome": "PASS",
+      "actual_outcome": "PASS",
+      "pass": true,
+      "finding_count": 0,
+      "findings": []
+    },
+    {
+      "id": "NEGATIVE_INLINE_BASELINE_RESOLUTION",
+      "expected_outcome": "FAIL_CLOSED",
+      "actual_outcome": "FAIL_CLOSED",
+      "pass": true,
+      "finding_count": 22,
+      "findings": [
+        "RESOLVER_SOURCE_NOT_REFERENCED",
+        "RESOLVER_INVOCATION_MISSING",
+        "RESOLVER_EXIT_NOT_CHECKED",
+        "RESOLVER_ARGUMENT_MISSING:-ReleaseRoot",
+        "RESOLVER_ARGUMENT_MISSING:-BaselineVersion",
+        "RESOLVER_ARGUMENT_MISSING:-TargetVersion",
+        "RESOLVER_ARGUMENT_MISSING:-CandidateReleasePath",
+        "RESOLVER_ARGUMENT_MISSING:-LauncherPath",
+        "RESOLVER_ARGUMENT_MISSING:-ReceiptPath",
+        "EXPLICIT_BASE_RELEASE_PATH_NOT_FORWARDED",
+        "RESOLVER_RECEIPT_NOT_PARSED",
+        "RESOLVED_BASE_PATH_NOT_USED",
+        "RESOLVED_CANDIDATE_PATH_NOT_USED",
+        "BASELINE_TREE_SHA_NOT_CONSUMED",
+        "LAUNCHER_SHA_NOT_CONSUMED",
+        "LAUNCHER_BACKUP_NOT_CONSUMED",
+        "GUESSED_PATH_ZERO_NOT_ASSERTED",
+        "CLONE_PERFORMED_NOT_ASSERTED",
+        "INLINE_BASELINE_DISCOVERY_FORBIDDEN",
+        "INLINE_BASELINE_CLONE_FORBIDDEN",
+        "MANUAL_BASELINE_ASSIGNMENT_FORBIDDEN",
+        "MANUAL_CANDIDATE_ASSIGNMENT_FORBIDDEN"
+      ]
+    },
+    {
+      "id": "NEGATIVE_RESOLVER_OUTPUT_IGNORED",
+      "expected_outcome": "FAIL_CLOSED",
+      "actual_outcome": "FAIL_CLOSED",
+      "pass": true,
+      "finding_count": 8,
+      "findings": [
+        "RESOLVED_BASE_PATH_NOT_USED",
+        "RESOLVED_CANDIDATE_PATH_NOT_USED",
+        "BASELINE_TREE_SHA_NOT_CONSUMED",
+        "LAUNCHER_SHA_NOT_CONSUMED",
+        "LAUNCHER_BACKUP_NOT_CONSUMED",
+        "GUESSED_PATH_ZERO_NOT_ASSERTED",
+        "CLONE_PERFORMED_NOT_ASSERTED",
+        "MANUAL_CANDIDATE_ASSIGNMENT_FORBIDDEN"
+      ]
+    },
+    {
+      "id": "NEGATIVE_CANDIDATE_PREDELETE",
+      "expected_outcome": "FAIL_CLOSED",
+      "actual_outcome": "FAIL_CLOSED",
+      "pass": true,
+      "finding_count": 1,
+      "findings": [
+        "CANDIDATE_PREDELETE_FORBIDDEN"
+      ]
+    }
+  ],
+  "rc6_real_negative": {
+    "outcome": "FAIL_CLOSED",
+    "pass": true,
+    "finding_count": 24,
+    "findings": [
+      "TARGET_VERSION_MISMATCH",
+      "RESOLVER_SOURCE_NOT_REFERENCED",
+      "RESOLVER_INVOCATION_MISSING",
+      "RESOLVER_ARGUMENT_MISSING:-ReleaseRoot",
+      "RESOLVER_ARGUMENT_MISSING:-BaselineVersion",
+      "RESOLVER_ARGUMENT_MISSING:-TargetVersion",
+      "RESOLVER_ARGUMENT_MISSING:-CandidateReleasePath",
+      "RESOLVER_ARGUMENT_MISSING:-LauncherPath",
+      "RESOLVER_ARGUMENT_MISSING:-ReceiptPath",
+      "EXPLICIT_BASE_RELEASE_PATH_NOT_FORWARDED",
+      "RESOLVER_RECEIPT_NOT_PARSED",
+      "RESOLVED_BASE_PATH_NOT_USED",
+      "RESOLVED_CANDIDATE_PATH_NOT_USED",
+      "BASELINE_TREE_SHA_NOT_CONSUMED",
+      "LAUNCHER_SHA_NOT_CONSUMED",
+      "LAUNCHER_BACKUP_NOT_CONSUMED",
+      "GUESSED_PATH_ZERO_NOT_ASSERTED",
+      "CLONE_PERFORMED_NOT_ASSERTED",
+      "INLINE_BASELINE_DISCOVERY_FORBIDDEN",
+      "INLINE_BASELINE_CLONE_FORBIDDEN",
+      "INLINE_LAUNCHER_BACKUP_FORBIDDEN",
+      "CANDIDATE_PREDELETE_FORBIDDEN",
+      "MANUAL_BASELINE_ASSIGNMENT_FORBIDDEN",
+      "MANUAL_CANDIDATE_ASSIGNMENT_FORBIDDEN"
+    ]
+  },
+  "actual_rc7": {
+    "state": "PENDING_W5_WAVE16_DIRECTIVE_AND_RESULT",
+    "installer_provided": false,
+    "same_assignment_revalidation_required": true
+  },
+  "scope_truth": {
+    "fixture_and_gate_pass": true,
+    "actual_rc7_installer_pass_claimed": false,
+    "target_pc_execution_performed": false,
+    "target_pc_pass_claimed": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "target_pc_install_authorized": false,
+  "validated_at_kst": "2026-08-06T07:57:00+09:00"
+}
