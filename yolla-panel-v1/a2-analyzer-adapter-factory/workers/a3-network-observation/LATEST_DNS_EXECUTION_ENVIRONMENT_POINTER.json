@@ -1,0 +1,67 @@
+{
+  "schema_version": "LATEST_DNS_EXECUTION_ENVIRONMENT_POINTER_V1",
+  "worker": "A-3",
+  "directive_id": "A2-TO-A3-DNS-EXECUTION-ENVIRONMENT-RECOVERY-END-TO-END-V1-20260805-001",
+  "directive_comment": 5193425888,
+  "parent_cycle": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_9-EFFICIENCY-FIRST-DNS-RECOVERY-PARALLEL-CLOSURE-V1-20260805-001",
+  "status": "BLOCKED",
+  "terminal": "DNS_EXECUTION_ENVIRONMENT_EXACT_EXTERNAL_BLOCKER",
+  "first_blocker": "CURRENT_RUNTIME_NETWORK_NAMESPACE_BLOCKS_ALL_DNS_EGRESS_AND_NO_CONNECTED_ALTERNATIVE_CAPTURE_RUNTIME_IS_AVAILABLE",
+  "branch": "worker/a3-network-observation-v1",
+  "start_head": "8516f862bf467e52dab0deb1b20d03e910ebf486",
+  "start_comment_id": 5193648732,
+  "progress_comment_id": 5193707610,
+  "terminal_comment_id": 5193712437,
+  "artifacts": {
+    "environment_profile": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/DNS_EXECUTION_ENVIRONMENT_PROFILE_V1.json",
+      "commit": "b774e51d4d03aa10db5b813fd98293bf181bf216",
+      "blob": "f4b7fae2af334bc48b19bb7d5ba8e7842b0e56e1"
+    },
+    "readiness_receipt": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/DNS_RESOLUTION_READINESS_RECEIPT_V1.json",
+      "commit": "ff16328f6af8b02b95ab062d38d755a38c97f763",
+      "blob": "fdfedfcb8d7330f5fbdfece400acb9a5e3ea3779"
+    },
+    "reexecution_handoff": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_REEXECUTION_ENVIRONMENT_HANDOFF_V1.json",
+      "commit": "d58f0b36d6a87a8c9d056983eaaec4faf65f7a16",
+      "blob": "b08e499a0a8bada10419df27e533a535b5bfa691"
+    },
+    "python_probe": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/dns-runtime/dns_readiness_probe.py",
+      "commit": "4a2d5ba6fedef6c30e459805fad8a7ee1831ee1f",
+      "blob": "10a19c82106d062870b4feafc59414b017ba82a7"
+    },
+    "windows_probe": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/dns-runtime/Invoke-DnsReadinessProbe.ps1",
+      "commit": "b4cd5cce6985fbd799e49f32ebc6586ebe7a3009",
+      "blob": "54c48f977ec0de2dd36d1cdc360d6f6f64dacdf8"
+    }
+  },
+  "readiness": {
+    "target_host": "fin.land.naver.com",
+    "required_consecutive_passes": 2,
+    "observed_consecutive_passes": 0,
+    "attempt_count": 15,
+    "pass_count": 0,
+    "ip_addresses": [],
+    "current_runtime_dns_ready": false,
+    "alternative_runtime_dns_ready": false,
+    "target_pc_session_connected": false
+  },
+  "required_next_event": "EXTERNAL_RUNTIME_DNS_READINESS_RECEIPT_WITH_2_CONSECUTIVE_PASS_AND_IP_LIST",
+  "after_next_event": "DNS_EXECUTION_ENVIRONMENT_READY_FOR_NEW_A2_AUTHORIZATION_REQUEST",
+  "request_execution_authorized": false,
+  "capture_execution_authorized": false,
+  "auto_retry_capture": false,
+  "http_request_sent_count": 0,
+  "remote_server_http_contact_count": 0,
+  "capture_execution_count": 0,
+  "browser_automation_count": 0,
+  "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
+  "updated_at_kst": "2026-08-06T00:20:00+09:00",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
