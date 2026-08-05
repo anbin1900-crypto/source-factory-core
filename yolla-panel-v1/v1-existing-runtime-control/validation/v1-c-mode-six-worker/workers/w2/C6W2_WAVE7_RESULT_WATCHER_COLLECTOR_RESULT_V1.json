@@ -1,0 +1,30 @@
+{
+  "schema": "C_MODE_WAVE_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-007",
+  "command_id": "C6W-W7-W2-RESULT-WATCHER-COLLECTOR",
+  "role": "AUTOMATION-C-W2",
+  "result_key": "519362886900",
+  "outcome": "PASS",
+  "test": "PASS_10_OF_10",
+  "wave6_report": "MISSING",
+  "wave6_missing_audit_comment": 5193742374,
+  "rules": {
+    "incremental_after_authoritative_directive": true,
+    "zero": "MISSING",
+    "one": "REPORTED",
+    "two_or_more": "DUPLICATE",
+    "superseded": "HISTORICAL_NOT_CURRENT",
+    "pagination": true,
+    "retry_max": 5,
+    "restart_state_export": true
+  },
+  "artifacts": [
+    "automation-c-v1/report_parser/result_watcher_collector.cjs",
+    "automation-c-v1/tests/test_result_watcher_collector.cjs",
+    "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w2/WAVE7_RESULT_WATCHER_EXPORT_MANIFEST_V1.json"
+  ],
+  "production": false,
+  "ready": false,
+  "merge": false
+}
