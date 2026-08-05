@@ -1,53 +1,56 @@
 {
-  "schema_version": "LATEST_ABC_VERTICAL_INTEGRATION_PREPARATION_POINTER_V1",
-  "pointer_id": "LATEST-V2-ABC-VERTICAL-INTEGRATION-PREPARATION-20260805-001",
-  "updated_at_kst": "2026-08-05T22:24:39+09:00",
+  "schema_version": "LATEST_ABC_VERTICAL_INTEGRATION_PREPARATION_POINTER_V2",
+  "pointer_id": "LATEST-V2-ABC-VERTICAL-INTEGRATION-PREPARATION-20260805-002",
+  "updated_at_kst": "2026-08-05T22:30:00+09:00",
   "commander": "V-2_YOLLA_AI_SUPREME_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "previous_pointer_blob": "5aa5a4394dc31a6064fac7b41b34d04592e21732",
   "preparation": {
     "path": "yolla-panel-v1/a0-successor-control/integration/abc-v1/ABC_VERTICAL_INTEGRATION_PREPARATION_V1.json",
-    "commit": "e1979463ff076786e03435eb8c34612dcdd65777",
-    "blob": "b26d2ce7bfef01e2b27bcfa5b33259dd5c53332d",
+    "commit": "7f7f07b82b797fbf9fbb45b3a87779614561572d",
+    "blob": "66affb7681a5df298c6e50d82d3c7bbaddaf029d",
     "remote_readback": "PASS"
   },
   "gate_matrix": {
     "path": "yolla-panel-v1/a0-successor-control/integration/abc-v1/ABC_HANDOFF_AND_GATE_MATRIX_V1.json",
-    "commit": "6f022de819f61fc28c2ee0bad51d1e204b190ac6",
-    "blob": "f3ffd8b31e549aa594d27ce0583309189d7586b8",
+    "commit": "2eb046147212103eb230462710857f5229e45544",
+    "blob": "9a65ee71dcfecb97bfd01970a89f0afeebd4f847",
     "remote_readback": "PASS"
   },
   "execution_sequence": {
     "path": "yolla-panel-v1/a0-successor-control/integration/abc-v1/ABC_VERTICAL_INTEGRATION_EXECUTION_SEQUENCE_V1.json",
-    "commit": "f12a859b0a1d7fb7202fcb2c07796890d6b74907",
-    "blob": "1db568912f7d2f96992ebd9da7881c3427d31616",
+    "commit": "60766f3c5776dcd3826419c7c9e3ad27ddf66f5c",
+    "blob": "3480a5d5fb9ae73cb59763a6762c6a62768aed0e",
     "remote_readback": "PASS"
   },
   "group_authority": {
     "A": {
       "control_pr": 18,
-      "head": "9dd6f19d5b5e35006833adadadbc940dfefde02f",
-      "latest_pointer_blob": "a554de2249543c09eca72a4b3e47273de5d132ba",
-      "state": "SECOND_AUTHORIZATION_REQUEST_READY_EXECUTION_NOT_AUTHORIZED"
+      "head": "71adba33aa727f251f59cba70e22ac9453579d6c",
+      "latest_pointer_blob": "1c3466fe5e05ff9442484bcce8ec9bf7e04985d9",
+      "authorization_request_id": "A2-TO-A0-A1-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-CAPTURE-AUTHORIZATION-REQUEST-V1-20260805-001",
+      "authorization_request_comment": 5192321213,
+      "state": "SECOND_AUTHORIZATION_REQUEST_POSTED_AWAITING_EXPLICIT_DECISION"
     },
     "B": {
       "control_pr": 19,
-      "head": "5c7c9cddcc6ca9f19ffe7e77bdd300480c17c8b3",
-      "latest_pointer_blob": "7aa5344ffd5bd5023cada1b6f2798e1b904ad842",
-      "state": "FIXTURE_BASELINE_PASS_ACTUAL_PUBLIC_RUN_STANDBY"
+      "head": "41217df04fcbcc56ef8e35e3b811fee2b5c74b8c",
+      "latest_pointer_blob": "67dcfbda0675c7cbd3d4994e2417e2327055b466",
+      "state": "FIXTURE_BASELINE_PASS_WAITING_A_AUTHORIZATION_AND_VERIFIED_ADAPTER"
     },
     "C": {
       "control_pr": 20,
-      "head": "5bae4d6015e8d52646ee4432f6272fa7b6d72a27",
-      "latest_pointer_blob": "4fe02a2ef24a7960de3db930b686cdac835f10a0",
+      "head": "67fb5888ef408998ca70f06621b716ed87ad09a8",
+      "latest_pointer_blob": "fb520b13001f684cb15dd14ae5d6589b33f0c766",
       "state": "SEMANTIC_BASELINE_FROZEN_REQUIRED_PATHS_22_BLOCKER"
     }
   },
   "current_phase": 1,
-  "current_owner": "A-2",
-  "current_gate": "NEW_EXPLICIT_SECOND_ONE_SHOT_AUTHORIZATION",
-  "overall_status": "ABC_INTEGRATION_PREPARED_EXECUTION_GATE_CLOSED",
+  "current_owner": "A0_A1_AUTHORIZATION_DECISION",
+  "current_gate": "EXPLICIT_DECISION_FOR_A2_SECOND_ONE_SHOT_REQUEST",
+  "overall_status": "ABC_INTEGRATION_PREPARED_AUTHORIZATION_DECISION_GATE_ACTIVE",
   "capture_execution_authorized": false,
   "actual_site_extraction": false,
   "actual_bulk_collection": false,
