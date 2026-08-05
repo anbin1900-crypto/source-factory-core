@@ -1,0 +1,135 @@
+{
+  "schema_version": "NO_AUTOMATED_PAGINATION_MVP_BINDING_V1",
+  "directive_id": "A2-TO-A4-NO-AUTOMATED-PAGINATION-MVP-BINDING-FINAL-V1-20260806-001",
+  "parent_cycle": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_10-GENERIC-HTML-MVP-FAST-CLOSURE-V1-20260806-001",
+  "created_at_kst": "2026-08-06T00:34:00+09:00",
+  "worker": "A-4",
+  "mode": "MVP_SINGLE_PUBLIC_GET_DOCUMENT_PER_PROFILE",
+  "authority": {
+    "navigation_authority_head": "6567f380e4249dc7cd9b55693fa85856a37b91e6",
+    "navigation_pointer_blob": "da26c979685d28e28632ec594f695f04b7effb7d",
+    "navigation_authority_frozen": true,
+    "a5_final_head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+    "a5_pointer_blob": "40a282ccb4573ae00a12645f40bf39b6faea1abc",
+    "a5_endpoint_catalog_blob": "7e56b41ad64699dcd4abf58f81374801bb7739f2",
+    "a5_terminal": "A5_PUBLIC_DOCUMENT_ROUTE_REBIND_READY"
+  },
+  "route_bindings": [
+    {
+      "profile_id": "EP-001",
+      "method": "GET",
+      "route": "/map",
+      "response_format": "text/html",
+      "automated_pagination": false,
+      "next_link_follow": false,
+      "cursor_loop": false,
+      "page_increment": false,
+      "max_documents_per_profile": 1
+    },
+    {
+      "profile_id": "EP-002",
+      "method": "GET",
+      "route": "/articles/{articleNo}",
+      "response_format": "text/html",
+      "automated_pagination": false,
+      "next_link_follow": false,
+      "cursor_loop": false,
+      "page_increment": false,
+      "max_documents_per_profile": 1
+    },
+    {
+      "profile_id": "EP-003",
+      "method": "GET",
+      "route": "/articles/{articleNo}",
+      "response_format": "text/html",
+      "automated_pagination": false,
+      "next_link_follow": false,
+      "cursor_loop": false,
+      "page_increment": false,
+      "max_documents_per_profile": 1
+    },
+    {
+      "profile_id": "EP-004",
+      "method": "GET",
+      "route": "/map",
+      "response_format": "text/html",
+      "automated_pagination": false,
+      "next_link_follow": false,
+      "cursor_loop": false,
+      "page_increment": false,
+      "max_documents_per_profile": 1
+    },
+    {
+      "profile_id": "EP-005",
+      "method": "GET",
+      "route": "/map",
+      "response_format": "text/html",
+      "automated_pagination": false,
+      "next_link_follow": false,
+      "cursor_loop": false,
+      "page_increment": false,
+      "max_documents_per_profile": 1
+    },
+    {
+      "profile_id": "EP-010",
+      "method": "GET",
+      "route": "/map",
+      "response_format": "text/html",
+      "automated_pagination": false,
+      "next_link_follow": false,
+      "cursor_loop": false,
+      "page_increment": false,
+      "max_documents_per_profile": 1
+    },
+    {
+      "profile_id": "EP-012",
+      "method": "GET",
+      "route": "/search",
+      "response_format": "text/html",
+      "automated_pagination": false,
+      "next_link_follow": false,
+      "cursor_loop": false,
+      "page_increment": false,
+      "max_documents_per_profile": 1
+    }
+  ],
+  "excluded_profiles": [
+    {
+      "profile_id": "EP-011",
+      "reason": "EXCLUDED_NO_CREDENTIAL_REFERENCE"
+    }
+  ],
+  "mvp_binding": {
+    "active_profile_count": 7,
+    "excluded_profile_count": 1,
+    "automated_pagination": false,
+    "next_link_follow": false,
+    "cursor_loop": false,
+    "page_increment": false,
+    "max_documents_per_profile": 1,
+    "full_navigation_replay": false,
+    "full_authority_reaudit": false
+  },
+  "validation": {
+    "json_parse": "PASS",
+    "route_binding": "PASS_7_OF_7",
+    "method_binding": "PASS_GET_7_OF_7",
+    "response_format_binding": "PASS_TEXT_HTML_7_OF_7",
+    "duplicate_profile_id_count": 0,
+    "missing_profile_count": 0,
+    "invented_pagination_parameter_count": 0,
+    "finding_count": 0
+  },
+  "safety": {
+    "live_site_call_count": 0,
+    "capture_execution_count": 0,
+    "automated_pagination_count": 0,
+    "browser_automation_execution_count": 0,
+    "actual_bulk_collection": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  },
+  "terminal": "A4_NO_AUTOMATED_PAGINATION_MVP_BINDING_READY"
+}
