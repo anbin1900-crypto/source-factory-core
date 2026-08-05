@@ -45,16 +45,17 @@
     },
     "harness_report": {
       "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode/V1_C_MODE_VALIDATION_HARNESS_BUILD_REPORT_V1.json",
-      "commit": "c60ac60bb41545b1094749ca985f00ad7b750bff",
-      "size_bytes": 1163,
-      "sha256": "4e540740bc6b817268f90a495a4da4ade84a7a9631e289a910e3d4e1901cfa62"
+      "commit": "6893c5a96fdb1516bd75790861442d07c32fded1",
+      "size_bytes": 1275,
+      "sha256": "46c8166d5d833239b8af8e7b0d3096518b2fec84346b4cc1d07dedf0a66da8ff"
     }
   },
   "package": {
     "drive_file_id": "1Z7EVpKPFuerw6-CduUUwEXy7phj-gr74",
     "file_name": "V1_C_MODE_VALIDATION_SYSTEM_V1.zip",
-    "size_bytes": 175980,
-    "sha256": "b0fbd8612c09d115d4eed92b0df80cd3a78c3c8dc0cce8dae554f839ea2ce50f"
+    "size_bytes": 180011,
+    "sha256": "689b66ca0c7f008202fa18211f9982da57203b74b9bb33706a2f7762ef9baf84",
+    "metadata_readback": "PASS"
   },
   "offline_validation": {
     "status": "PASS",
@@ -93,5 +94,5 @@
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at": "2026-08-05T16:18:00+09:00"
+  "updated_at": "2026-08-05T16:21:00+09:00"
 }
