@@ -1,11 +1,11 @@
 {
-  "schema_version": "LATEST_C1_ACTIVE_WORK_POINTER_V9",
-  "pointer_id": "LATEST-C1-SEMANTIC-AI-ACTIVE-WORK-20260805-004",
-  "registered_at_kst": "2026-08-05T22:24:39+09:00",
+  "schema_version": "LATEST_C1_ACTIVE_WORK_POINTER_V10",
+  "pointer_id": "LATEST-C1-SEMANTIC-AI-ACTIVE-WORK-20260805-005",
+  "registered_at_kst": "2026-08-05T22:30:00+09:00",
   "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
   "control_pr": 20,
   "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
-  "previous_pointer_blob": "f567fecfb8f1db428f79b4d30d47042d1d13efe8",
+  "previous_pointer_blob": "4fe02a2ef24a7960de3db930b686cdac835f10a0",
   "integration_preparation_report": {
     "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_ABC_INTEGRATION_READINESS_PREPARATION_V1.json",
     "commit": "a5e5d24e4302399737e0520ecf0866a19a3bfabd",
@@ -14,12 +14,20 @@
   },
   "b1_accepted_fixture_authority": {
     "control_pr": 19,
-    "head": "5c7c9cddcc6ca9f19ffe7e77bdd300480c17c8b3",
-    "latest_pointer_blob": "7aa5344ffd5bd5023cada1b6f2798e1b904ad842",
+    "head": "41217df04fcbcc56ef8e35e3b811fee2b5c74b8c",
+    "latest_pointer_blob": "67dcfbda0675c7cbd3d4994e2417e2327055b466",
     "handoff_pointer_blob": "932904cede5bcfb239a62952173f82147b0b0f26",
     "classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE",
     "status": "ACKNOWLEDGED_AND_CONSUMED",
-    "content_blob_delta": false
+    "content_blob_delta": false,
+    "authority_pointer_delta_only": true
+  },
+  "upstream_a_gate": {
+    "control_pr": 18,
+    "head": "71adba33aa727f251f59cba70e22ac9453579d6c",
+    "latest_pointer_blob": "1c3466fe5e05ff9442484bcce8ec9bf7e04985d9",
+    "status": "SECOND_EXPLICIT_AUTHORIZATION_REQUEST_POSTED_AWAITING_DECISION",
+    "effect_on_c_now": "NONE_UNTIL_B_CONTENT_DELTA"
   },
   "semantic_baseline": {
     "worker_gate": "PASS_4_OF_4",
@@ -35,12 +43,6 @@
     "unresolved_path_count": 22
   },
   "integration_state": {
-    "input_contracts": [
-      "RAW_ARTIFACT_MANIFEST_V1",
-      "SOURCE_RECORD_ENVELOPE_V1",
-      "NORMALIZED_DATASET_V1",
-      "EXTRACTION_RECEIPT_V1"
-    ],
     "status": "FIXTURE_SEMANTIC_BASELINE_FROZEN_WAITING_CONTENT_DELTA_AND_REQUIRED_PATH_RESOLUTION",
     "duplicate_reexecution_required_now": false,
     "incremental_reexecution_conditions": [
