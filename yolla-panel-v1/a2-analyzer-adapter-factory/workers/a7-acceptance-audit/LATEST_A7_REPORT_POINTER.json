@@ -1,54 +1,60 @@
 {
-  "schema_version": "LATEST_A7_REPORT_POINTER_V3",
+  "schema_version": "LATEST_A7_REPORT_POINTER_V4",
   "pointer_type": "LATEST_A7_REPORT_POINTER",
   "worker": "A-7",
-  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_10-GENERIC-HTML-FINAL-ACCEPTANCE-V1-20260806-001",
-  "directive_id": "A2-TO-A7-GENERIC-HTML-ADAPTER-ONE-FINAL-ACCEPTANCE-V1-20260806-001",
-  "directive_comment_id": 5193812113,
-  "terminal_comment_id": 5193922339,
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_10-GENERIC-HTML-FINAL-ACCEPTANCE-V2-20260806-001",
+  "directive_id": "A2-TO-A7-GENERIC-HTML-VERIFIED-ADAPTER-FINAL-ACCEPTANCE-V1-20260806-001",
+  "directive_comment_id": 5194563911,
+  "terminal_comment_id": 5194842802,
+  "active_owner": "A-7",
   "status": "TERMINAL_FINDINGS",
   "terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_EXACT_FINDINGS",
-  "previous_pointer_blob": "38ed77e59a296d39e7986bfa361643bb5d81811e",
+  "previous_pointer_blob": "e60b135062a59fd114daec74d59e810609a045e9",
   "final_acceptance_count": 1,
   "mid_process_audit_count": 0,
-  "intermediate_comment_count": 0,
   "artifacts": {
-    "final_acceptance": {
-      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_V1.json",
-      "commit": "bc76335d471f5050f098f4af81196da469336762",
-      "blob": "05291c49ceac39e55551d94c523f545bccc300bc"
+    "final_acceptance_report": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_GENERIC_HTML_FINAL_ACCEPTANCE_REPORT_V1.json",
+      "commit": "f422acf2839a05c8db28ad501b64ca83c67baf94",
+      "blob": "e66ba97803991de4982ddf4ebd756df4cde584b1"
     },
-    "a2_final_pointer": {
-      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_TO_A2_GENERIC_HTML_FINAL_POINTER_V1.json",
-      "commit": "b86d22bdfbae8b751df74ee417c61f1288c2efc7",
-      "blob": "7515f9417d41f8ced749786cf7346365bae50aef"
+    "b1_execution_readiness_handoff": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_B1_EXECUTION_READINESS_HANDOFF_V1.json",
+      "commit": "fc17d39eab10c1d5b4d90c5de2d33f03782e02ad",
+      "blob": "6e7e19b6389567b94653ba01f9f80a5db92d77c7"
     }
   },
-  "a6_observed": {
-    "head": "153c71faf5462c6e12d4390987d67be0dd4efa60",
-    "pointer_blob": "c12f88618de03229a379861e63a41c348691289d",
-    "status": "PASS_PREBUILD_READY_WAITING_FINAL_INPUTS",
-    "terminal": "A6_SINGLE_REBUILD_PRESTAGE_READY",
-    "current_trigger_ready": false,
-    "package_rebuild_execution_count": 0,
-    "replay_execution_count": 0
+  "a6_authority": {
+    "final_head": "6fab17d37c1db2feb955fd2c447b498088b99d4a",
+    "terminal": "A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_READY",
+    "pointer_blob": "22ead89ed6ad08bb38089ee922d9734f432d41d2",
+    "handoff_blob": "0e9fd96b1ff8c13594cc4d42c23da223847040a6",
+    "package_blob": "cc52e85881602fc0fd18ca231842a6401aad92c9"
   },
-  "finding_count": 1,
-  "first_blocker": "A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_READY_TERMINAL_AND_FINAL_POINTER_NOT_PUBLISHED",
-  "package_schema_parse": "NOT_EVALUATED_FINAL_AUTHORITY_NOT_PUBLISHED",
-  "required_member_existence": "NOT_EVALUATED_FINAL_AUTHORITY_NOT_PUBLISHED",
-  "replay_sha_match": "FAIL_FINAL_TWO_REPLAY_RECEIPTS_NOT_PUBLISHED",
-  "generic_html_output_contract": "NOT_EVALUATED_FINAL_AUTHORITY_NOT_PUBLISHED",
-  "secret_or_pii_raw_value_count": "NOT_EVALUATED_FINAL_PACKAGE_NOT_PUBLISHED",
-  "b1_execution_handoff_fields_complete": "FAIL_FINAL_A6_TO_A7_AND_B1_HANDOFF_NOT_PUBLISHED",
+  "checks": {
+    "package_member_sha256_binding": "FAIL",
+    "exact_a5_a4_authority_binding": "PASS",
+    "generic_html_required_output_schema": "PASS_12_OF_12",
+    "replay_digest_equality": "PASS_2_OF_2",
+    "secret_cookie_token_pii_and_local_path_finding_count_0": "PASS",
+    "automated_pagination_false_and_ep011_excluded": "PASS",
+    "a6_owned_root_and_b1_consumable_handoff": "FAIL_B1_BLOCKED_BY_INTEGRITY"
+  },
+  "finding_count": 3,
+  "first_blocker": "PACKAGE_AND_MEMBER_SHA256_BINDING_MISMATCH",
+  "package_sha256_expected": "3500125a7c0d1629d793110516d6a3b6084afbc191f5bc55e6131921441f94f9",
+  "package_sha256_actual": "573623d9c6d66a9d21f5905fdd6bf086ad36375e4e01a6244f5de24e4b440106",
+  "package_member_binding": "PASS_2_OF_6_FAIL_4_OF_6",
+  "build_receipt_sha256_exact": false,
+  "replay_receipt_sha256_exact": false,
+  "b1_execution_ready": false,
+  "b1_reanalysis_required": false,
+  "required_owner": "A-6",
+  "required_correction": "RECOMPUTE_EXACT_REMOTE_BYTE_SHA256_AND_SIZE_AND_REPUBLISH_FINAL_POINTER_AND_A7_HANDOFF",
   "implementation_file_direct_edit": false,
   "self_approval": false,
-  "remote_readback": "PASS",
-  "remote_readback_evidence": {
-    "pre_terminal_pointer_commit": "5bd1d9fc34fb93ec3904a08f7ecdc5d6b8536e65",
-    "pre_terminal_pointer_blob": "41871d857a2bccc2ae8b7d0bd314c0d9b229c4f6"
-  },
-  "updated_at_kst": "2026-08-06T00:36:00+09:00",
+  "remote_readback": "PENDING",
+  "updated_at_kst": "2026-08-06T01:52:00+09:00",
   "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
   "production": false,
   "ready": false,
