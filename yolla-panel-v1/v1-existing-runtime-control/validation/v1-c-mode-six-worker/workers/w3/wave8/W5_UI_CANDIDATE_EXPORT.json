@@ -1,0 +1,36 @@
+{
+  "schema_version": "W3_WAVE8_W5_UI_CANDIDATE_EXPORT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-008",
+  "command_id": "C6W-W8-W3-ACTUAL-UI-CANDIDATE",
+  "result_key": "519386239100",
+  "input_head": "1a3e6fbc08cb2613e70a16915367ac03a5aa38d8",
+  "files": [
+    {
+      "path": "wave8/candidate_ui_truth_bridge.cjs",
+      "purpose": "actual candidate registry/report truth bridge",
+      "apply_order": 1
+    },
+    {
+      "path": "wave8/test_wave8_candidate_ui.cjs",
+      "purpose": "deterministic DOM/render projection gate",
+      "apply_order": 2
+    },
+    {
+      "path": "wave8/Collect-W3Wave8TargetPcEvidence.ps1",
+      "purpose": "target-PC evidence collector",
+      "apply_order": 3
+    }
+  ],
+  "truth_contract": {
+    "states": ["CURRENT_REGISTRY_RESULT","HISTORICAL_REGISTRY_RESULT","AWAITING","REPORT_MISSING","DUPLICATE_REPORT","ERROR","END","IDLE","C_ACTIVE","REPEAT_ACTIVE"],
+    "result_comment_precedes_result_key": true,
+    "disabled_c_and_command_working_zero": true,
+    "legacy_a_e_excluded": true
+  },
+  "integration_mode": "NON_DESTRUCTIVE_ADAPTER",
+  "target_pc_live_pass": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
