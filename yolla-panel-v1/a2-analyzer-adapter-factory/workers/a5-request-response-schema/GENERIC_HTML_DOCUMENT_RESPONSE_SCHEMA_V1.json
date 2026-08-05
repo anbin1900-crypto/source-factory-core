@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yolla.invalid/schemas/generic-html-document-response-v1.json",
+  "title": "Generic HTML Document Response Envelope V1",
+  "description": "Generic GET text/html response contract. No site-specific DOM, listing, XHR, API, GraphQL, or pagination claims.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_profile_id",
+    "requested_url",
+    "final_url",
+    "http_status",
+    "content_type",
+    "fetched_at",
+    "response_size_bytes",
+    "raw_sha256",
+    "redacted_sha256",
+    "html_document_text",
+    "outbound_links",
+    "source_authority_pointer"
+  ],
+  "properties": {
+    "request_profile_id": {
+      "type": "string",
+      "enum": [
+        "EP-001",
+        "EP-002",
+        "EP-003",
+        "EP-004",
+        "EP-005",
+        "EP-010",
+        "EP-012"
+      ]
+    },
+    "requested_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "final_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "http_status": {
+      "type": "integer",
+      "minimum": 100,
+      "maximum": 599
+    },
+    "content_type": {
+      "type": "string",
+      "pattern": "^text/html(?:\\s*;.*)?$"
+    },
+    "fetched_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "response_size_bytes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "raw_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "redacted_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "html_document_text": {
+      "type": "string"
+    },
+    "outbound_links": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "uri",
+        "pattern": "^https?://"
+      }
+    },
+    "source_authority_pointer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authority_comment",
+        "authority_commit",
+        "authority_blob",
+        "authority_pointer_blob",
+        "route_binding_blob"
+      ],
+      "properties": {
+        "authority_comment": {
+          "type": "string",
+          "const": "#17/5189632712"
+        },
+        "authority_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "authority_blob": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "authority_pointer_blob": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "route_binding_blob": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        }
+      }
+    }
+  },
+  "x-yolla-contract": {
+    "active_profile_count": 7,
+    "excluded_profiles": [
+      "EP-011"
+    ],
+    "method": "GET",
+    "response_format": "text/html",
+    "site_specific_field_claim_count": 0,
+    "automated_pagination": false,
+    "credential_value_count": 0,
+    "raw_response_persistence_policy": "EXTERNAL_ARTIFACT_ONLY_NOT_IN_SCHEMA_CONTRACT",
+    "hash_semantics": {
+      "raw_sha256": "SHA-256 of exact received response bytes before redaction",
+      "redacted_sha256": "SHA-256 of canonical UTF-8 JSON containing html_document_text and outbound_links after redaction and normalization"
+    }
+  }
+}
