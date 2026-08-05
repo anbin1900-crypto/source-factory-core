@@ -1,0 +1,80 @@
+{
+  "schema_version": "A7_D_INTEGRATION_READINESS_FINAL_REPORT_V1",
+  "worker": "A-7",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "A7_D_INTEGRATION_READINESS_REVIEW",
+  "directive_comment": 5196017240,
+  "mode": "ADVISORY_NON_BLOCKING",
+  "completed_at_kst": "2026-08-06T04:11:00+09:00",
+  "terminal": "A7_D_INTEGRATION_READINESS_REVIEW_EXACT_FINDINGS",
+  "status": "TERMINAL_FINDINGS",
+  "decision": "EXACT_FINDINGS",
+  "blocking_gate": false,
+  "audit": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_D_INTEGRATION_READINESS_AUDIT_V1.json",
+    "commit": "74ecbd8aaac397bc765eeac5a010a982b5eab549",
+    "blob": "2ab28e12f5e172227224f4691549b3f330194c24"
+  },
+  "review_result": {
+    "worker_head_matches_observed_head": "PASS_4_OF_4",
+    "required_handoff_published": "FAIL_0_OF_4",
+    "traceability_review_complete": false,
+    "hash_review_complete": false,
+    "new_handoff_secret_pii_review_complete": false,
+    "source_id_authority_type_boundary_review_complete": false,
+    "new_external_request_evidence_count_after_directives": 0,
+    "existing_secret_pii_counter_finding_count": 0,
+    "source_id_authority_type_intrusion_observed_count": 0,
+    "finding_count": 4,
+    "integration_readiness": false
+  },
+  "owner_findings": [
+    {
+      "owner": "A-3",
+      "pr": 22,
+      "finding_id": "A7-D-INT-001",
+      "required_artifact": "A3_D_SOURCE_PROVENANCE_HANDOFF_V1.json",
+      "expected_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_D_SOURCE_PROVENANCE_HANDOFF_V1.json",
+      "expected_terminal": "A3_D_SOURCE_PROVENANCE_HANDOFF_READY_OR_EXACT_BLOCKER",
+      "actual": "NOT_PUBLISHED_AT_HEAD_6a91c9ccedf96aa538fbbf34e4bf91553778297d",
+      "required_correction": "PUBLISH_HANDOFF_FINAL_REPORT_AND_LATEST_POINTER_USING_EXISTING_CAPTURE_FIXTURE_RECEIPT_ONLY"
+    },
+    {
+      "owner": "A-4",
+      "pr": 23,
+      "finding_id": "A7-D-INT-002",
+      "required_artifact": "A4_D_LOCATOR_PAGINATION_HANDOFF_V1.json",
+      "expected_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A4_D_LOCATOR_PAGINATION_HANDOFF_V1.json",
+      "expected_terminal": "A4_D_LOCATOR_PAGINATION_HANDOFF_READY_OR_EXACT_BLOCKER",
+      "actual": "NOT_PUBLISHED_AT_HEAD_032c609396db198db6bd14c96436f07bc429cae8",
+      "required_correction": "PUBLISH_D_FRAGMENT_LOCATOR_WITH_PAGE_SIZE_NOT_OBSERVED_AUTOMATED_PAGINATION_FALSE_AND_INVENTED_PAGE_SIZE_COUNT_0"
+    },
+    {
+      "owner": "A-5",
+      "pr": 24,
+      "finding_id": "A7-D-INT-003",
+      "required_artifact": "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF_V1.json",
+      "expected_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF_V1.json",
+      "expected_terminal": "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF_READY_OR_EXACT_BLOCKER",
+      "actual": "NOT_PUBLISHED_AT_HEAD_85bb7c7c6b07a0a58cdc74ea7d74a6de2ed81adb",
+      "required_correction": "PUBLISH_SOURCE_ENDPOINT_HANDOFF_WITH_D_AUTHORITY_TYPE_DECISION_FALSE_AND_D_CANONICAL_ID_GENERATION_FALSE"
+    },
+    {
+      "owner": "A-6",
+      "pr": 25,
+      "finding_id": "A7-D-INT-004",
+      "required_artifact": "A6_VERIFIED_ADAPTER_D_INTAKE_COMPATIBILITY_V1.json",
+      "expected_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/A6_VERIFIED_ADAPTER_D_INTAKE_COMPATIBILITY_V1.json",
+      "expected_terminal": "A6_VERIFIED_ADAPTER_D_COMPATIBILITY_READY_OR_EXACT_BLOCKER",
+      "actual": "NOT_PUBLISHED_AT_HEAD_a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793",
+      "required_correction": "PUBLISH_COMPATIBILITY_ENVELOPE_WITH_ACCEPTED_PACKAGE_BYTE_MUTATION_FALSE_AND_EXISTING_PACKAGE_HASH_FAD18A1E0571DFAC26305D8BD3D845A639E225C51FF1A03DFE45C49D7D441854"
+    }
+  ],
+  "next_event": "A3_A4_A5_A6_D_HANDOFF_TERMINALS_AND_LATEST_POINTERS_PUBLISHED",
+  "re_review_scope_after_event": "DELTA_ONLY_FOUR_HANDOFF_ARTIFACTS",
+  "implementation_edit": false,
+  "self_approval": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
