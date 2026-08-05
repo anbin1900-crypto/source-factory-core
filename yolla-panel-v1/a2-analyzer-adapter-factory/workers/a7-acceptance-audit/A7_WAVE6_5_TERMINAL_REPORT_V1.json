@@ -1,0 +1,100 @@
+{
+  "schema_version": "A7_WAVE6_5_TERMINAL_REPORT_V1",
+  "worker": "A-7",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_5-PUBLIC-ROUTE-GOVERNANCE-REAUDIT-V1-20260805-001",
+  "directive_id": "A2-TO-A7-PUBLIC-DOCUMENT-ROUTE-GOVERNANCE-REAUDIT-V6_5-20260805-001",
+  "directive_comment": 5192071024,
+  "start_comment": 5192195123,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 26,
+  "branch": "worker/a7-analyzer-acceptance-audit-v1",
+  "start_head": "f4ca318a6335bc15970a8bff5c94f112d64807f4",
+  "completed_at_kst": "2026-08-05T22:17:00+09:00",
+  "status": "PASS",
+  "terminal": "A7_PUBLIC_ROUTE_GOVERNANCE_READY_FOR_A2_SECOND_AUTHORIZATION_REQUEST",
+  "terminal_alias_disposition": {
+    "a1_alias_comment": 5192074571,
+    "alias_is_authoritative": false,
+    "effective_a2_pass": "A7_PUBLIC_ROUTE_GOVERNANCE_READY_FOR_A2_SECOND_AUTHORIZATION_REQUEST",
+    "effective_a2_findings": "A7_PUBLIC_ROUTE_GOVERNANCE_EXACT_FINDINGS"
+  },
+  "authority": {
+    "comment": "#17/5189632712",
+    "commit": "545425a10d48bf59746d8db98ff2f56b79360cc0",
+    "blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
+    "pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5",
+    "status": "PASS_EXACT"
+  },
+  "a5_rebind": {
+    "final_head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+    "pointer_blob": "40a282ccb4573ae00a12645f40bf39b6faea1abc",
+    "handoff_blob": "515b72792199f971b0a754bcb9dbc796b06fe26f",
+    "validation_blob": "20abdd912d7b64f245f9a8252a90bec3c819f2c9",
+    "terminal": "A5_PUBLIC_DOCUMENT_ROUTE_REBIND_READY",
+    "status": "PASS_EXACT"
+  },
+  "a3_package": {
+    "final_head": "8e2c06d6e33ae23e0bf408cb5e2bd7513a72d7a9",
+    "pointer_blob": "aa2c564c52ac1bd0f0a6dd4973f8b16dd53a2030",
+    "governance_handoff_blob": "6ff1fc01bb6a6f589622d33bb0d3879e400f76cd",
+    "second_authorization_request_package_blob": "007df2b81bf4f7009aa548e26e86cce4fcacda3b",
+    "terminal": "A3_PUBLIC_DOCUMENT_ROUTE_OPERATOR_PACKAGE_READY_FOR_GOVERNANCE",
+    "status": "PASS_EXACT"
+  },
+  "artifacts": {
+    "governance_reaudit": {
+      "path": "A7_PUBLIC_ROUTE_GOVERNANCE_REAUDIT_V1.json",
+      "commit": "c89ed0965688bcf2b93697278125057b907bbd1e",
+      "blob": "e2ed308c90612dcd16b4568064539eee8e6df87e"
+    },
+    "authorization_recommendation": {
+      "path": "A7_TO_A2_SECOND_ONE_SHOT_AUTHORIZATION_RECOMMENDATION_V2.json",
+      "commit": "25761e9cf25f66e00876d5f367a9442aa2a87387",
+      "blob": "eb3dd7186e8b88bfbdd6d464cecaa44448ba93e1"
+    },
+    "validation_receipt": {
+      "path": "A7_WAVE6_5_VALIDATION_RECEIPT_V1.json",
+      "commit": "256f645c8275b5c09281491653ecbcb072c0ea6f",
+      "blob": "7aae731fe2887dd38bedc06e90d6c44d0dd84a0c"
+    }
+  },
+  "validation": {
+    "pass_count": 50,
+    "finding_count": 0,
+    "public_route_binding": "PASS_7_OF_7",
+    "get_method": "PASS_7_OF_7",
+    "text_html": "PASS_7_OF_7",
+    "ep011_excluded": true,
+    "fixture_invalid_promotion_count": 0,
+    "internal_api_inference_count": 0,
+    "xhr_promotion_count": 0,
+    "post_promotion_count": 0,
+    "graphql_promotion_count": 0,
+    "ep004_page_invention_count": 0,
+    "ep004_size_invention_count": 0,
+    "automated_pagination_count": 0,
+    "raw_secret_cookie_token_pii_count": 0,
+    "capture_attempt_count": 0,
+    "live_site_call_count": 0,
+    "browser_automation_execution_count": 0,
+    "credential_use_count": 0,
+    "actual_bulk_collection": false,
+    "out_of_owned_root_change_count": 0
+  },
+  "recommendation": "A2_MAY_REQUEST_NEW_EXPLICIT_A0_A1_ONE_SHOT_PUBLIC_DOCUMENT_GET_CAPTURE_AUTHORIZATION_FOR_7_PROFILES",
+  "authorization_request_ready": true,
+  "new_authorization_granted": false,
+  "capture_execution_authorized": false,
+  "request_execution_authorized": false,
+  "second_attempt_authorized": false,
+  "self_approval": false,
+  "implementation_file_direct_edit": false,
+  "live_site_call_count": 0,
+  "browser_automation_execution_count": 0,
+  "automated_pagination_count": 0,
+  "credential_use_count": 0,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
