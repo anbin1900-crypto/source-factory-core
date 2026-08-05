@@ -1,47 +1,117 @@
 {
-  "schema_version": "C1_TO_D1_HANDOFF_POINTER_V1",
-  "pointer_id": "C1-TO-D1-D-ALIGNED-TRANSFORMER-HANDOFF-POINTER-20260804-001",
-  "registered_at_kst": "2026-08-04 04:44 KST",
+  "schema_version": "C1_TO_D1_HANDOFF_POINTER_V2",
+  "pointer_id": "C1-TO-D1-D-ALIGNED-TRANSFORMER-HANDOFF-POINTER-20260805-002",
+  "registered_at_kst": "2026-08-05 16:45 KST",
   "producer": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
   "consumer": "D-1_KNOWLEDGE_DB_AUTHORITY_COMMANDER",
   "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
   "source_authority": {
     "repository": "anbin1900-crypto/source-factory-core",
     "control_pr": 20,
-    "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1"
+    "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+    "observed_head_before_handoff_pointer_update": "b3a85ebd7e476e9a17aa48c26b56fb54643c3e8f"
   },
   "target_authority": {
-    "source_factory_control_pr": 21,
-    "source_factory_branch": "integration/d1-knowledge-db-intake-authority-v1",
-    "source_factory_observed_head": "65bf71a0b6b766dea914fcd2decfad4f9218e8a7",
-    "knowledge_db_repository": "anbin1900-crypto/yolla-real-estate-data-engine",
-    "knowledge_db_control_pr": 188
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "head": "1bb475c440983aae761b897a3b58a8f4dab880cc",
+    "schema_profile_blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+    "mapping_contract_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
+    "validation_ruleset_blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
+    "acceptance_receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
+    "readback": "PASS_4_OF_4"
   },
-  "worker_assignment_pointer": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_WORKER_ASSIGNMENT_POINTER.json",
-  "transformation_result_pointer": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_TRANSFORMATION_RESULT_POINTER.json",
+  "historical_authority": {
+    "source_factory_control_pr_21": "PRESERVED_AS_HISTORY_NOT_ACTIVE_D_AUTHORITY"
+  },
+  "commander_closure_report": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/reports/C1_D_ALIGNED_TRANSFORMER_COMMANDER_CLOSURE_REPORT_V2.json",
+    "commit": "a6c6efbbc5ab39a2bfd5c6cbc5b2dd427f635f99",
+    "blob": "6db0e3c591b8008b9ec2553f9981cfce158f3c19"
+  },
+  "transformation_result_pointer": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_TRANSFORMATION_RESULT_POINTER.json",
+    "commit": "b3a85ebd7e476e9a17aa48c26b56fb54643c3e8f",
+    "blob": "c8675a82b45fc1291fed0f3f754026fe94dabc14"
+  },
+  "worker_gate": {
+    "status": "PASS_4_OF_4",
+    "C-2_POINTER_BLOB": "a4bc27b8e24dbadf668db5da21cacda0a866284a",
+    "C-3_POINTER_BLOB": "344cd19f110c825ac3ac6cdc6c2b70571eae3a55",
+    "C-4_POINTER_BLOB": "1779b1f6fbfcba913859850fec0c69f533154da3",
+    "C-5_POINTER_BLOB": "c86cf94f2ad858602ef06c88a4f29f4813814c41",
+    "C-6_POINTER_BLOB": "77039ddf47c4e640335e0464b477f260eb84b94f"
+  },
   "handoff_packages": {
-    "D_ALIGNED_TRANSFORMATION_PACKAGE_V1": "NOT_AVAILABLE",
-    "FIELD_MAPPING_REPORT_V1": "NOT_AVAILABLE",
-    "REJECTED_RECORD_BUNDLE_V1": "CONTRACT_ONLY_NO_RECORD_BUNDLE",
-    "KNOWLEDGE_CANDIDATE_BUNDLE_V1": "NOT_AVAILABLE"
+    "D_ALIGNED_TRANSFORMATION_PACKAGE_V1": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c4-package-knowledge-candidate/D_ALIGNED_TRANSFORMATION_PACKAGE_V1.json",
+      "blob": "b763db81fee8a4b43566f1e13e9c23b72659458a"
+    },
+    "FIELD_MAPPING_REPORT_V1": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c4-package-knowledge-candidate/FIELD_MAPPING_REPORT_V1.json",
+      "blob": "d6e8eb45532ba6b4e290593b35924c3fb3e06aa1"
+    },
+    "REJECTED_RECORD_BUNDLE_V1": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c4-package-knowledge-candidate/REJECTED_RECORD_BUNDLE_V1.json",
+      "blob": "c17f85fd86deb6812ec327da2d89e6b129dfae69"
+    },
+    "KNOWLEDGE_CANDIDATE_BUNDLE_V1": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c4-package-knowledge-candidate/KNOWLEDGE_CANDIDATE_BUNDLE_V1.json",
+      "blob": "9a6fd20c6228fc641167fbd7667e77abf2b53ecf",
+      "candidate_count": 0
+    },
+    "C5_PR188_PACKAGE_VALIDATION_RESULT_V2": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c5-schema-validation-rejection/C5_PR188_PACKAGE_VALIDATION_RESULT_V2.json",
+      "blob": "b472a3816161d7322b739f20eb18876643d96195"
+    },
+    "REJECTED_RECORD_BUNDLE_V2": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c5-schema-validation-rejection/REJECTED_RECORD_BUNDLE_V2.json",
+      "blob": "9056ea53e9d4e66e3a37c308da79223bcfa06c0f"
+    },
+    "KNOWLEDGE_ACCEPTANCE_RECEIPT_CANDIDATE_V1": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c5-schema-validation-rejection/KNOWLEDGE_ACCEPTANCE_RECEIPT_CANDIDATE_V1.json",
+      "blob": "8084d33b4dc98d1537a5e431e0de99ec944b62d1",
+      "authority_receipt_issued": false
+    }
   },
-  "handoff_decision": "BLOCKED_NOT_SENT",
-  "first_blocker": "D1_REQUIRED_SCHEMA_MAPPING_VALIDATION_CONTRACT_SET_NOT_PUBLISHED",
-  "additional_blocker": "B1_NORMALIZED_DATASET_OR_RAW_ARTIFACT_MANIFEST_NOT_PUBLISHED",
-  "reason": "C-1 cannot bind target entities, fields, types or D validation outcomes without D authoritative contracts, and cannot transform records without B authoritative source input.",
+  "package_result": {
+    "package_id": "C4-WAVE2-D-ALIGNED-PACKAGE-20260805-001",
+    "package_sha256": "1e37df56f7300f427c3027f5e83bfe332aa98f37464dc82a6fe374c4982ea8fb",
+    "package_decision": "REJECTED",
+    "accepted_count": 0,
+    "rejected_count": 28,
+    "pending_count": 44,
+    "candidate_count": 0
+  },
+  "handoff_decision": "BLOCKED_NOT_SENT_FAIL_CLOSED",
+  "first_blocker": "PR188_REQUIRED_SOURCE_PATHS_MISSING_22",
+  "first_blocker_detail": {
+    "rule_id": "B001",
+    "source_path": "package.source_id",
+    "target": "SOURCE.source_id",
+    "resolution_owner": "B-1_COLLECTION_DB_MATERIALIZATION_COMMANDER",
+    "failure_signature": "B1_PACKAGE_SOURCE_ID_NOT_PUBLISHED"
+  },
+  "superseded_blockers": [
+    "D1_REQUIRED_SCHEMA_MAPPING_VALIDATION_CONTRACT_SET_NOT_PUBLISHED",
+    "B1_NORMALIZED_DATASET_OR_RAW_ARTIFACT_MANIFEST_NOT_PUBLISHED"
+  ],
+  "reason": "D contracts and B fixture inputs are available and consumed. The assembled package was validated and rejected fail-closed because 22 PR188 required source paths remain unresolved; therefore no D submission or D authority receipt was issued.",
   "resume_requires": [
-    "D_CANONICAL_SCHEMA_PROFILE_V1 exact path, commit and blob",
-    "D_INBOUND_FIELD_MAPPING_CONTRACT_V1 exact path, commit and blob",
-    "D_INTAKE_VALIDATION_RULESET_V1 exact path, commit and blob",
-    "NORMALIZED_DATASET_V1 or RAW_ARTIFACT_MANIFEST_V1 exact path, commit and blob"
+    "B1_OR_D1_AUTHORITY_DELTA_RESOLVES_REQUIRED_SOURCE_PATHS_22",
+    "C3_INCREMENTAL_CROSSWALK_REVALIDATION",
+    "C4_INCREMENTAL_PACKAGE_REASSEMBLY",
+    "C5_PR188_INCREMENTAL_REVALIDATION",
+    "C6_FINAL_E2E_INCREMENTAL_REVALIDATION"
   ],
   "fixture_or_contract_sent_as_d_data": false,
+  "actual_d_handoff_performed": false,
   "d_acceptance_claimed": false,
   "d_canonical_db_write": false,
   "production": false,
   "ready": false,
   "merge": false,
   "terminal": "C1_D_ALIGNED_TRANSFORMER_READY_OR_EXACT_BLOCKER",
-  "terminal_decision": "EXACT_BLOCKER",
-  "status": "C1_TO_D1_HANDOFF_BLOCKED_WAITING_AUTHORITATIVE_INPUTS"
+  "terminal_decision": "EXACT_EXTERNAL_BLOCKER",
+  "status": "C1_TO_D1_HANDOFF_BLOCKED_REQUIRED_SOURCE_PATHS_22"
 }
