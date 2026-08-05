@@ -1,0 +1,87 @@
+{
+  "schema_version": "DNS_EXECUTION_ENVIRONMENT_PROFILE_V1",
+  "worker": "A-3",
+  "directive_id": "A2-TO-A3-DNS-EXECUTION-ENVIRONMENT-RECOVERY-END-TO-END-V1-20260805-001",
+  "directive_comment": 5193425888,
+  "parent_cycle": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_9-EFFICIENCY-FIRST-DNS-RECOVERY-PARALLEL-CLOSURE-V1-20260805-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "start_head": "8516f862bf467e52dab0deb1b20d03e910ebf486",
+  "mode": "DNS_ONLY_NO_HTTP_NO_CAPTURE",
+  "target_host": "fin.land.naver.com",
+  "current_runtime": {
+    "runtime_id": "CAAS-f7b88e122b7c-LINUX-X86_64-PYTHON_3_13_5-NETNS_4026531833",
+    "hostname": "f7b88e122b7c",
+    "operating_system": "Linux 6.18.35 x86_64",
+    "python_version": "3.13.5",
+    "network_namespace": "net:[4026531833]",
+    "resolver": {
+      "source": "/etc/resolv.conf",
+      "nameservers": ["168.63.129.16"],
+      "nsswitch_hosts": "files dns"
+    },
+    "network": {
+      "interface": "eth0",
+      "address": "172.26.36.29/22",
+      "default_gateway": "172.26.36.1"
+    },
+    "resolver_mutation_performed": false,
+    "network_namespace_mutation_performed": false
+  },
+  "runtime_candidates": [
+    {
+      "runtime_id": "CAAS_CONTAINER_EXEC",
+      "network_namespace": "net:[4026531833]",
+      "independent_network_path": false,
+      "tested": true,
+      "result": "DNS_EGRESS_BLOCKED"
+    },
+    {
+      "runtime_id": "JUPYTER_PYTHON_RUNTIME",
+      "hostname": "f7b88e122b7c",
+      "network_namespace": "net:[4026531833]",
+      "resolver_nameservers": ["168.63.129.16"],
+      "independent_network_path": false,
+      "tested": true,
+      "result": "SAME_RUNTIME_DNS_EGRESS_BLOCKED"
+    },
+    {
+      "runtime_id": "GITHUB_HOSTED_WINDOWS_LATEST_WORKFLOW",
+      "workflow_name": "PC Agent Windows Runtime V1",
+      "workflow_id": 325205337,
+      "workflow_dispatch_present": true,
+      "a3_dns_probe_input_contract_present": false,
+      "current_a3_branch_workflow_run_present": false,
+      "direct_dispatch_action_available_to_a3": false,
+      "tested": false,
+      "result": "NOT_CONSUMABLE_AS_A3_DNS_EXECUTION_RUNTIME"
+    },
+    {
+      "runtime_id": "TARGET_PC_WINDOWS_RUNTIME",
+      "session_connected": false,
+      "dns_probe_execution_receipt_available": false,
+      "tested": false,
+      "result": "EXTERNAL_RUNTIME_SESSION_REQUIRED"
+    }
+  ],
+  "prepared_probe_artifacts": {
+    "python": {
+      "path": "dns-runtime/dns_readiness_probe.py",
+      "commit": "4a2d5ba6fedef6c30e459805fad8a7ee1831ee1f",
+      "blob": "10a19c82106d062870b4feafc59414b017ba82a7"
+    },
+    "windows_powershell_5_1": {
+      "path": "dns-runtime/Invoke-DnsReadinessProbe.ps1",
+      "commit": "b4cd5cce6985fbd799e49f32ebc6586ebe7a3009",
+      "blob": "54c48f977ec0de2dd36d1cdc360d6f6f64dacdf8"
+    }
+  },
+  "http_request_sent_count": 0,
+  "remote_server_http_contact_count": 0,
+  "capture_execution_count": 0,
+  "browser_automation_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
