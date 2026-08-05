@@ -1,92 +1,82 @@
 {
-  "schema_version": "LATEST_B6_REPORT_POINTER_V2",
+  "schema_version": "LATEST_B6_REPORT_POINTER_V3",
   "pointer_id": "LATEST_B6_EXTRACTION_ACCEPTANCE_REPORT_POINTER",
-  "updated_at_kst": "2026-08-05T05:54:00+09:00",
+  "updated_at_kst": "2026-08-05T17:04:00+09:00",
   "group_id": "GROUP-02",
   "loop_id": "A-LOOP-GROUP-02",
-  "cycle_id": "A-LOOP-GROUP-02-GROUP02-W06-CYCLE-0002",
+  "cycle_id": "V2-TO-B6-FINAL-ACCEPTANCE-ACTIVATION-V1-20260805-001",
   "worker_id": "GROUP02-W06",
   "directive_id": "B1-TO-B6-EXTRACTION-ACCEPTANCE-C1-HANDOFF-V1-20260804-001",
-  "directive_comment_id": 5184282804,
-  "followup_attempt": 0,
-  "dispatch_token_observation": {
-    "invocation_dispatch_token": "A-8c0a12b8dc7f75eb9ca0225b8b2e6e76f64e99f2",
-    "directive_embedded_dispatch_token": "A-01335a00e334b4974bb9d9faab1523c1d7ee2204",
-    "match": false,
-    "handling": "RECORDED_NON_BLOCKING_USER_EXPLICIT_CYCLE_INVOCATION"
-  },
+  "activation_comment_id": 5189154915,
   "task_id": "B1-B6-EXECUTION-TASK-V1-20260804-001",
   "repository": "anbin1900-crypto/source-factory-core",
   "worker_pr": 42,
   "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
   "owned_root": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/**",
-  "status": "EVENT_WAIT_B4_B5",
+  "previous_pointer_blob": "f627f03207947fcf00c07094882856f258ea8e19",
+  "status": "B6_EXTRACTION_ACCEPTANCE_C1_HANDOFF_READY",
   "entry_condition": "B2_B3_B4_B5_TERMINALS_AND_POINTERS_4_OF_4",
-  "entry_condition_met": false,
-  "accepted_inputs": "2_OF_4",
-  "accepted_workers": ["B-2", "B-3"],
-  "waiting_workers": ["B-4", "B-5"],
-  "current_objects": {
-    "start_report": {
-      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_START_REPORT_V1.json",
-      "commit": "3257669a4d9616a88ee097a3448f5406fec54116",
-      "blob": "9a2f3c45760cee746f5f4a93d5cfe9644599964e"
-    },
+  "entry_condition_met": true,
+  "accepted_inputs": "4_OF_4",
+  "accepted_workers": [
+    "B-2",
+    "B-3",
+    "B-4",
+    "B-5"
+  ],
+  "objects": {
     "b2_input_preflight": {
-      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_B2_INPUT_PREFLIGHT_V1.json",
-      "commit": "88cd242c5432929a471a37346e1d2c71e5fb697a",
       "blob": "aaaa5d335d4068f4533a1ca2454f4a1fd6f6c8b4",
-      "decision": "PASS_ACCEPTED_B2_INPUT_FOR_B6_EVENT_WAIT"
+      "decision": "PASS_ACCEPTED"
     },
     "b3_input_preflight": {
-      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_B3_INPUT_PREFLIGHT_V1.json",
-      "commit": "b27357e1b112bcd2d0b912a73d88eda85849c267",
       "blob": "b1752bd1f7b98332fbdb05a5af9f6f7ed29bfb25",
-      "decision": "PASS_ACCEPTED_B3_INPUT_FOR_B6_EVENT_WAIT"
+      "decision": "PASS_ACCEPTED"
+    },
+    "b4_input_preflight": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_B4_INPUT_PREFLIGHT_V1.json",
+      "commit": "b70d4db54e03f1e372d7f2b28899df5e7f7a7b7b",
+      "blob": "de572c98ed0768f19a6da7e2a23a3a6797270d5f",
+      "decision": "PASS_ACCEPTED"
+    },
+    "b5_input_preflight": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_B5_INPUT_PREFLIGHT_V1.json",
+      "commit": "5b1637238c61034eb0afe4532e78e154d6f55b97",
+      "blob": "908fa5a52c5445befdca48fb10055e6e651b85a7",
+      "decision": "PASS_ACCEPTED"
+    },
+    "worker_input_acceptance_matrix": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_WORKER_INPUT_ACCEPTANCE_MATRIX_V1.json",
+      "commit": "4259cde674c16db7c25dd444cde6af27604403c9",
+      "blob": "eff2d5143c93510683dda8695cd3b715efab9a41",
+      "status": "PASS_4_OF_4"
+    },
+    "c1_handoff_candidate": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B1_TO_C1_SOURCE_EVIDENCE_HANDOFF_CANDIDATE_V1.json",
+      "commit": "ba4f97b120565054b0056f40e4a04014e5958286",
+      "blob": "01c4c2175b30314538494ed5694668005769635a",
+      "classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE"
+    },
+    "final_report": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_FINAL_REPORT_V1.json",
+      "commit": "ff6d44a040b6567ed22be99333dbb2b1abd7fada",
+      "blob": "d81716e1626b96ca120b8b08892d85210da337f3"
     }
   },
-  "accepted_b2_authority": {
-    "head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
-    "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY",
-    "latest_pointer_blob": "e62f5c5ad354d1480eee8f929be80d3cee26e59f",
-    "final_report_blob": "1a61cf5ab5390b3df1261f4e7b1a1a255000eb56",
-    "test_result_blob": "5343463eb962b3c963d926143fbf360c153ef83f",
-    "b1_acceptance_audit_blob": "5a9a9f1efd5a490d86d6b7602946fff93938fb75",
-    "unit_tests": "PASS_24_OF_24",
-    "remote_blob_readback": "PASS_7_OF_7"
-  },
-  "accepted_b3_authority": {
-    "head": "f8299be24108b84af06abfe53e939c8bf68ec9dd",
-    "terminal": "B3_EXTRACTOR_RETRY_RESUME_READY",
-    "latest_pointer_blob": "fb81b02eac0fca4597f5a93e168a5889e0046df1",
-    "final_report_blob": "2938d4e49462b17e5494b298fa49aa7db7424cf5",
-    "test_result_blob": "706ee49f2342bdfd39e701aca14f2c7f1d7d01f6",
-    "remote_readback_receipt_blob": "d82a813d10535e4c4fe505427e4300a6ac412c69",
-    "remote_blob_readback": "PASS_5_OF_5_KEY_AUTHORITIES",
-    "unit_tests": "PASS_32_OF_32",
-    "input_record_count": 4,
-    "duplicate_count": 1,
-    "output_record_count": 3,
-    "crash_resume": "PASS",
-    "second_run_execution_delta": 0,
-    "network_call_count": 0
-  },
-  "final_acceptance_started": false,
-  "final_acceptance_completed": false,
-  "c1_handoff_candidate_created": false,
-  "c1_handoff_pass_claimed": false,
-  "next_gate": "B4_B5_TERMINALS_AND_POINTERS_2_OF_2_THEN_B6_FINAL_ACCEPTANCE",
+  "decision": "PASS_FIXTURE_FIRST_PIPELINE_INDEPENDENTLY_ACCEPTED",
   "terminal_contract": "B6_EXTRACTION_ACCEPTANCE_C1_HANDOFF_READY_OR_EXACT_BLOCKER",
-  "current_cycle_terminal": "B6_B3_INPUT_PREFLIGHT_EVENT_WAIT_2_OF_4_READY_OR_EXACT_BLOCKER",
-  "current_cycle_result": "PASS_B3_INPUT_PREFLIGHT_EVENT_WAIT_2_OF_4",
-  "boundaries": {
-    "b2_to_b5_implementation_edit": false,
-    "unverified_adapter_use": false,
-    "actual_site_extraction": false,
-    "semantic_transformation": false,
-    "d_canonical_db_write": false,
-    "production": false,
-    "ready": false,
-    "merge": false
-  }
+  "terminal_result": "B6_EXTRACTION_ACCEPTANCE_C1_HANDOFF_READY",
+  "final_acceptance_started": true,
+  "final_acceptance_completed": true,
+  "c1_handoff_candidate_created": true,
+  "c1_handoff_pass_claimed": true,
+  "a2_verified_adapter_package_ready": false,
+  "actual_site_extraction": false,
+  "actual_bulk_collection": false,
+  "semantic_transformation": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
 }
