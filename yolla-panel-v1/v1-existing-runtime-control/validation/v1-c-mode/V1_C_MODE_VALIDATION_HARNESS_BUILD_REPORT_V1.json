@@ -1,0 +1,40 @@
+{
+  "schema_version": "V1_C_MODE_VALIDATION_HARNESS_BUILD_REPORT_V1",
+  "status": "OFFLINE_HARNESS_PASS_TARGET_PC_WORKERS_PENDING",
+  "cycle_id": "V1-C-MODE-VALIDATION-CYCLE-001",
+  "runtime_baseline": "5.10.2.4.1",
+  "baseline_log": {
+    "app_version": "5.10.2.4.0",
+    "c_enabled": false,
+    "repeat_command_count": 0,
+    "working": 0,
+    "resting": 5,
+    "idle_truth": "PASS"
+  },
+  "offline_validation": {
+    "status": "PASS",
+    "result_count": 10,
+    "failure_count": 0,
+    "node_syntax_checks": 6,
+    "existing_runtime_assertions": 59,
+    "extended_simulation_assertions": 15,
+    "static_contract_assertions": 20,
+    "uploaded_log_baseline": "PASS"
+  },
+  "package": {
+    "file_name": "V1_C_MODE_VALIDATION_SYSTEM_V1.zip",
+    "size_bytes": 175980,
+    "sha256": "b0fbd8612c09d115d4eed92b0df80cd3a78c3c8dc0cce8dae554f839ea2ce50f",
+    "drive_file_id": "1Z7EVpKPFuerw6-CduUUwEXy7phj-gr74"
+  },
+  "target_pc": {
+    "install": "PENDING",
+    "three_worker_three_round": "PENDING",
+    "restart_resume": "PENDING",
+    "lts_terminal_claimed": false
+  },
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
