@@ -1,0 +1,123 @@
+{
+  "schema_version": "B5_D_READY_PACKAGE_V2_FINAL_REPORT_V1",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "B5_D_READY_PACKAGE_V2",
+  "directive_comment_id": 5196026867,
+  "worker": "B-5",
+  "role_in_batch": "B_PACKAGE_V2_SINGLE_INTEGRATION_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 41,
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "completed_at_kst": "2026-08-06T04:34:00+09:00",
+  "terminal_contract": "B5_D_READY_PACKAGE_V2_READY_OR_EXACT_BLOCKER",
+  "terminal_result": "B5_D_READY_PACKAGE_V2_EXACT_BLOCKER_UPSTREAM_V2_INPUTS_NOT_PUBLISHED",
+  "decision": "EXACT_BLOCKER_AFTER_IMPLEMENTATION_PREPARATION_PASS",
+  "implementation": {
+    "materialized_database_package_v2_schema": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/contracts/MATERIALIZED_DATABASE_PACKAGE_V2.schema.json",
+      "blob": "9ad9bdecf4bc6795c458819175f9c24ce10a1919"
+    },
+    "normalized_dataset_v2_schema": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/contracts/NORMALIZED_DATASET_V2.schema.json",
+      "blob": "cfdaf522cff8fc73a69ab25b5473cd9a226a0140"
+    },
+    "d_intake_request_v1_schema": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/contracts/D_INTAKE_REQUEST_V1.schema.json",
+      "blob": "60698c0f97030136a87d7bbe73713831391e6206"
+    },
+    "fixture_package": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/B5_D_READY_FIXTURE_PACKAGE_V2.json",
+      "blob": "a1b735190cfc3ccfb7eeba5ae5d0e02561d970a5",
+      "package_sha256": "03c88df464ae28cebcdcc393ec8a069ab9cc848ceda88295c24f20a10a383d10"
+    },
+    "input_authority_lock": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/B5_D_READY_PACKAGE_V2_INPUT_AUTHORITY_LOCK.json",
+      "blob": "ef8105e9cd90f4c28b1ac252a4f64cc11c7ede0e"
+    },
+    "late_binding_matrix": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/B5_D_READY_PACKAGE_V2_LATE_BINDING_MATRIX.json",
+      "blob": "4b8a901bdd9c50805105584d1986ba7b2df94ef0",
+      "status": "BOUND_1_OF_3"
+    },
+    "test_report": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/B5_D_READY_PACKAGE_V2_TEST_REPORT_V1.json",
+      "blob": "d062f1d338bb45865625efc1bed698794318b332",
+      "result": "PASS_32_OF_32"
+    },
+    "test_results": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/B5_D_READY_PACKAGE_V2_TEST_RESULTS.json",
+      "blob": "862a6b37d391389d961c09114aa09db0251dee0e",
+      "result": "PASS_IMPLEMENTATION_PREPARATION_WITH_EXACT_UPSTREAM_BLOCKER"
+    }
+  },
+  "d_contract_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+    "schema_profile_blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+    "mapping_contract_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
+    "validation_ruleset_blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
+    "acceptance_receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
+    "d_canonical_id_generation_by_b5": false,
+    "d_acceptance_decision_generated_by_b5": false
+  },
+  "late_binding": {
+    "required": 3,
+    "bound": 1,
+    "status": "BOUND_1_OF_3",
+    "B-2": {
+      "head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+      "expected_artifact": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1.json",
+      "remote_readback": "NOT_FOUND_404",
+      "terminal_found": false
+    },
+    "B-3": {
+      "head": "86d789a136ce5070d79eab7e6d0205eb23da11d7",
+      "pointer_blob": "dedbad43c8c23df18e2af2560af5d5f48ca1fa00",
+      "ledger_blob": "776a3c012db5aaee7204f1ec374c21bbca6abda3",
+      "test_results_blob": "eab65a61e7b6791880daeab8a4ad8c067abfa2a8",
+      "tests": "PASS_32_OF_32",
+      "terminal": "B3_D_COLLECTION_RUN_LEDGER_READY",
+      "decision": "PASS_BOUND"
+    },
+    "B-4": {
+      "head": "6dfe697363a69f83797775aa549f34614aa3748a",
+      "expected_artifact": "RAW_ARTIFACT_MANIFEST_V2.json",
+      "remote_readback": "NOT_FOUND_404",
+      "terminal_found": false
+    }
+  },
+  "validation": {
+    "committed_fixture_tests": "PASS_32_OF_32",
+    "source_field_loss_count": 0,
+    "silent_drop_count": 0,
+    "input_record_count": 4,
+    "output_record_count": 3,
+    "duplicate_count": 1,
+    "sqlite_row_count": 3,
+    "sqlite_decoded_size_bytes": 12288,
+    "sqlite_decoded_sha256": "f03e20844e805af3105791934352f8bc3dcbeb1a165ad5c80e5d6ae5739ea14d",
+    "github_actions_ci_pass_claimed": false,
+    "additional_48_test_source_classification": "NOT_RUN_NOT_CLAIMED_PASS_EXPECTED_FIXTURE_PATH_MISSING"
+  },
+  "blocker": {
+    "first_blocker": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1_NOT_PUBLISHED",
+    "additional_blocker": "B4_RAW_ARTIFACT_MANIFEST_V2_NOT_PUBLISHED",
+    "required_external_inputs": [
+      "B-2 exact V2 contract path, blob, Terminal result and Remote Head",
+      "B-4 exact RAW_ARTIFACT_MANIFEST_V2 path, blob, Terminal result and Remote Head"
+    ],
+    "resume_condition": "After both missing V2 artifacts are published, B-5 late-binds them with the already accepted B-3 V2 ledger, reruns fixture validation, updates the single MATERIALIZED_DATABASE_PACKAGE_V2 and publishes READY without creating D canonical IDs, D acceptance, or D DB writes."
+  },
+  "actual_site_extraction": false,
+  "actual_bulk_collection": false,
+  "d_canonical_id_generation": false,
+  "d_acceptance_decision_generation": false,
+  "d_canonical_db_write": false,
+  "postgresql_connection_count": 0,
+  "migration_apply_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_UPDATED_LATEST_B5_D_READY_PACKAGE_V2_POINTER"
+}
