@@ -1,0 +1,82 @@
+{
+  "schema_version": "LATEST_V1_C_MODE_VALIDATION_SYSTEM_POINTER_V1",
+  "control_id": "V1-C-MODE-VALIDATION-CYCLE-001",
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "runtime_baseline": "5.10.2.4.1",
+  "documents": {
+    "control": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode/V1_C_MODE_3_WORKER_VALIDATION_CONTROL_V1.md",
+      "commit": "b0c15e761f022cbb6d21e517f900d4af806c3cef",
+      "size_bytes": 3404,
+      "sha256": "5ab2d8d2944c8cfa1c1591b74f30ae650670c855f0549d244cedfc9bb50a773b"
+    },
+    "contract": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode/V1_C_MODE_EXPERIMENT_VALIDATION_CONTRACT_V1.json",
+      "commit": "9504b3554bed1349bd83a48c6cc5e6a5cdfb9579",
+      "size_bytes": 1793,
+      "sha256": "13ceea103280c906f6e38cda4cbabc6a760ca041a75a20ccc599b7c686472a2d"
+    },
+    "assignment_matrix": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode/V1_C_MODE_WORKER_ASSIGNMENT_MATRIX_V1.json",
+      "commit": "6fafc901d5b911158b4c8c1bee9732403dd2677e",
+      "size_bytes": 1800,
+      "sha256": "492935b2bd7174cf8714de23d006b9f58fdcbb97815aa8200e33071005b1d21b"
+    },
+    "test_matrix": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode/V1_C_MODE_TEST_MATRIX_V1.json",
+      "commit": "189c75cf707e7e91a285090dee997eb65f536654",
+      "size_bytes": 2981,
+      "sha256": "64e99cae946d497431bd30087d68040b12e531955da1beee8d23159e7241cedb"
+    },
+    "result_schema": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode/V1_C_MODE_RESULT_SCHEMA_V1.json",
+      "commit": "a5417e3f3070ef720d2c7f21b45cc7a949d3bfba",
+      "size_bytes": 969,
+      "sha256": "4083ea4eb0c447d8adc308069f52d83adb307ce1d09cb331f456d0cb971f0416"
+    },
+    "worker_prompts": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode/V1_C_MODE_WORKER_CHAT_PROMPTS_V1.md",
+      "commit": "5fd1d3ec98e3584148ed75c1512eb1fabadb6335",
+      "size_bytes": 900,
+      "sha256": "0fa24f0ef4a5449f0d8c79e7aa43eafb75ed264eff87adeaaa62615916029691"
+    },
+    "harness_report": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode/V1_C_MODE_VALIDATION_HARNESS_BUILD_REPORT_V1.json",
+      "commit": "c60ac60bb41545b1094749ca985f00ad7b750bff",
+      "size_bytes": 1163,
+      "sha256": "4e540740bc6b817268f90a495a4da4ade84a7a9631e289a910e3d4e1901cfa62"
+    }
+  },
+  "package": {
+    "drive_file_id": "1Z7EVpKPFuerw6-CduUUwEXy7phj-gr74",
+    "file_name": "V1_C_MODE_VALIDATION_SYSTEM_V1.zip",
+    "size_bytes": 175980,
+    "sha256": "b0fbd8612c09d115d4eed92b0df80cd3a78c3c8dc0cce8dae554f839ea2ce50f"
+  },
+  "offline_validation": {
+    "status": "PASS",
+    "result_count": 10,
+    "failure_count": 0,
+    "runtime_assertions": 59,
+    "extended_assertions": 15,
+    "static_assertions": 20
+  },
+  "worker_status": {
+    "V1-CV-1": "WAITING_ASSIGNMENT",
+    "V1-CV-2": "WAITING_ASSIGNMENT",
+    "V1-CV-3": "WAITING_ASSIGNMENT"
+  },
+  "target_pc": {
+    "live_test": "PENDING",
+    "three_worker_three_round": "PENDING",
+    "restart_resume": "PENDING"
+  },
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-05T16:15:00+09:00"
+}
