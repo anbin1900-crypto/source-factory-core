@@ -1,0 +1,61 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_RESULT_V2",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "worker_id": "AUTOMATION-C-W5",
+  "status": "EXACT_BLOCKER",
+  "terminal": "C6W5_BACKGROUND_DISPATCH_INSTALL_LOG_PASS_OR_EXACT_BLOCKER",
+  "directive_comment": 5189071386,
+  "authority_pointer_commit": "21979a901fc8fd444543093e3c20b57767b431a7",
+  "package": {
+    "file_name": "V1_C_MODE_6_WORKER_VALIDATION_SYSTEM_V2.zip",
+    "drive_file_id": "1frliEMAl7nxVVLvVyikDHbenYwdBKys0",
+    "expected_sha256": "e51240768eb35bd2e0b6c2e1c03b8060847eedee7518d2759292bf2406b36686",
+    "observed_sha256": "e51240768eb35bd2e0b6c2e1c03b8060847eedee7518d2759292bf2406b36686",
+    "sha256_readback": "PASS"
+  },
+  "tests": [
+    {
+      "name": "OFFLINE_HARNESS_REPLAY",
+      "status": "PASS",
+      "result_count": 12,
+      "failure_count": 0,
+      "generated_result": "results/20260805T083904Z/SUMMARY.json"
+    },
+    {
+      "name": "W5_REQUIRED_SOURCE_PRESENCE",
+      "status": "FAIL",
+      "missing": [
+        "source-under-test/automation-c-v1/background_dispatch_runtime.cjs",
+        "source-under-test/install_v51024*.ps1",
+        "source-under-test/workspace_main_bridge.cjs"
+      ]
+    },
+    {
+      "name": "G6_EXECUTABLE_ASSERTION_COVERAGE",
+      "status": "FAIL",
+      "required_assertions": [
+        "EXACTLY_ONCE",
+        "30S_5_ATTEMPTS",
+        "BACKGROUND_RELEASE",
+        "PROFILE_PRESERVED",
+        "LOG_PRESERVED",
+        "ROLLBACK"
+      ],
+      "executed_assertion_count": 0
+    }
+  ],
+  "finding_count": 2,
+  "fix_count": 0,
+  "work_control_log_preserved": true,
+  "auto_test_write_count": 0,
+  "target_pc_evidence": null,
+  "exact_blocker": {
+    "code": "W5_SOURCE_AND_G6_TEST_ASSETS_ABSENT_FROM_AUTHORITY_PACKAGE",
+    "description": "The authority ZIP passes its generic 12-result harness, but omits every W5-owned executable source and contains no runnable G6 assertions. Exactly-once dispatch, 30-second five-attempt retry, background resource release, browser profile preservation, install rollback, and work-control log download therefore cannot be truthfully validated or repaired from the supplied authority bytes.",
+    "resume_condition": "Publish immutable bytes or repository paths for background_dispatch_runtime.cjs, install_v51024*.ps1, and workspace_main_bridge.cjs, plus an executable G6 test covering all six required assertions; then rerun W5 on the same control_id."
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at": "2026-08-05T17:36:00+09:00"
+}
