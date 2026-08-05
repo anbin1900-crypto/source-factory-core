@@ -5,6 +5,7 @@
   "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_10-GENERIC-HTML-FINAL-ACCEPTANCE-V1-20260806-001",
   "directive_id": "A2-TO-A7-GENERIC-HTML-ADAPTER-ONE-FINAL-ACCEPTANCE-V1-20260806-001",
   "directive_comment_id": 5193812113,
+  "terminal_comment_id": 5193922339,
   "status": "TERMINAL_FINDINGS",
   "terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_EXACT_FINDINGS",
   "previous_pointer_blob": "38ed77e59a296d39e7986bfa361643bb5d81811e",
@@ -42,8 +43,12 @@
   "b1_execution_handoff_fields_complete": "FAIL_FINAL_A6_TO_A7_AND_B1_HANDOFF_NOT_PUBLISHED",
   "implementation_file_direct_edit": false,
   "self_approval": false,
-  "remote_readback": "PENDING",
-  "updated_at_kst": "2026-08-06T00:35:00+09:00",
+  "remote_readback": "PASS",
+  "remote_readback_evidence": {
+    "pre_terminal_pointer_commit": "5bd1d9fc34fb93ec3904a08f7ecdc5d6b8536e65",
+    "pre_terminal_pointer_blob": "41871d857a2bccc2ae8b7d0bd314c0d9b229c4f6"
+  },
+  "updated_at_kst": "2026-08-06T00:36:00+09:00",
   "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
   "production": false,
   "ready": false,
