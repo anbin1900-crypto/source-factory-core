@@ -1,0 +1,120 @@
+{
+  "schema_version": "ABC_VERTICAL_INTEGRATION_PREPARATION_V1",
+  "preparation_id": "V2-ABC-VERTICAL-INTEGRATION-PREPARATION-20260805-001",
+  "prepared_at_kst": "2026-08-05T22:24:39+09:00",
+  "commander": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "mode": "PREPARE_ONLY_CONTRACT_POINTER_AND_GATE_BINDING",
+  "purpose": "Prepare A-2 analyzer, B-1 collection/materialization, and C-1 semantic AI runtime for one controlled vertical integration without opening execution, production, ready, merge, or D canonical write gates.",
+  "authority_freeze": {
+    "A": {
+      "control_pr": 18,
+      "head": "9dd6f19d5b5e35006833adadadbc940dfefde02f",
+      "latest_pointer_blob": "a554de2249543c09eca72a4b3e47273de5d132ba",
+      "integration_report_blob": "3270a0e11d2b4be40652a32a727ad60249448f43",
+      "state": "PUBLIC_ROUTE_GOVERNANCE_PASS_SECOND_AUTHORIZATION_REQUEST_READY",
+      "output_contract": "VERIFIED_ADAPTER_PACKAGE_V1",
+      "output_ready": false
+    },
+    "B": {
+      "control_pr": 19,
+      "head": "5c7c9cddcc6ca9f19ffe7e77bdd300480c17c8b3",
+      "latest_pointer_blob": "7aa5344ffd5bd5023cada1b6f2798e1b904ad842",
+      "integration_report_blob": "d6ab9267b49c61ada474157958eb6f5dab5cc1f0",
+      "state": "FIXTURE_BASELINE_FROZEN_ACTUAL_PUBLIC_RUN_STANDBY",
+      "fixture_worker_gate": "PASS_5_OF_5",
+      "actual_public_run_ready": false
+    },
+    "C": {
+      "control_pr": 20,
+      "head": "5bae4d6015e8d52646ee4432f6272fa7b6d72a27",
+      "latest_pointer_blob": "4fe02a2ef24a7960de3db930b686cdac835f10a0",
+      "integration_report_blob": "abd110f944709dc50114c415db89d631d8fdfeb0",
+      "state": "FIXTURE_SEMANTIC_BASELINE_FROZEN_WAITING_CONTENT_DELTA_AND_REQUIRED_PATH_RESOLUTION",
+      "fixture_worker_gate": "PASS_4_OF_4",
+      "d_submission_eligible": false
+    }
+  },
+  "target": {
+    "site_id": "NAVER_FIN_LAND_PUBLIC_WEB_V1",
+    "origin": "https://fin.land.naver.com",
+    "active_profiles": [
+      "EP-001",
+      "EP-002",
+      "EP-003",
+      "EP-004",
+      "EP-005",
+      "EP-010",
+      "EP-012"
+    ],
+    "excluded_profiles": [
+      "EP-011"
+    ],
+    "scope": "PUBLIC_NON_LOGIN_READ_ONLY_MINIMUM_VERTICAL_E2E"
+  },
+  "lane_state": {
+    "A_TO_B": {
+      "contract": "VERIFIED_ADAPTER_PACKAGE_V1",
+      "status": "BLOCKED_EXECUTION_GATE",
+      "reason": "New explicit one-shot authorization and final adapter acceptance have not occurred."
+    },
+    "B_TO_C": {
+      "contract": "B1_TO_C1_SOURCE_EVIDENCE_HANDOFF_CANDIDATE_V1",
+      "status": "PASS_FIXTURE_ONLY",
+      "classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE",
+      "actual_site_data": false
+    },
+    "C_TO_D": {
+      "contracts": [
+        "D_ALIGNED_TRANSFORMATION_PACKAGE_V1",
+        "KNOWLEDGE_CANDIDATE_BUNDLE_V1"
+      ],
+      "status": "BLOCKED_FAIL_CLOSED",
+      "reason": "PR188_REQUIRED_SOURCE_PATHS_MISSING_22"
+    }
+  },
+  "integration_entry_gate": {
+    "status": "CLOSED",
+    "opens_only_when": [
+      "NEW_EXPLICIT_A0_A1_ONE_SHOT_AUTHORIZATION_GRANTED",
+      "A3_SECOND_PUBLIC_DOCUMENT_CAPTURE_TERMINAL_PUBLISHED",
+      "A5_FINAL_RESPONSE_SCHEMA_REBIND_PASS",
+      "A4_PUBLIC_ROUTE_PAGINATION_AUDIT_PASS",
+      "A6_VERIFIED_ADAPTER_PACKAGE_REMOTE_READBACK_PASS",
+      "A7_FINAL_ADAPTER_ACCEPTANCE_PASS"
+    ]
+  },
+  "integration_strategy": {
+    "branch_merge_required_now": false,
+    "binding_method": "EXACT_HEAD_POINTER_BLOB_AND_HANDOFF_CONTRACT",
+    "execution_owner_sequence": [
+      "A-2",
+      "B-1",
+      "C-1",
+      "D-1",
+      "C-1",
+      "A-0"
+    ],
+    "single_owner_per_active_gate": true,
+    "duplicate_reexecution_without_content_delta": false,
+    "fail_closed_on_head_or_blob_drift": true
+  },
+  "readiness": {
+    "contract_readiness": "PASS",
+    "pointer_readiness": "PASS",
+    "fixture_baseline_readiness": "PASS",
+    "actual_public_vertical_execution_readiness": "BLOCKED_WAITING_A_FINAL_ADAPTER",
+    "overall": "ABC_INTEGRATION_PREPARED_EXECUTION_GATE_CLOSED"
+  },
+  "next_action": "A2_SUBMIT_SECOND_ONE_SHOT_AUTHORIZATION_REQUEST; B1_AND_C1_HOLD_FROZEN_BASELINES",
+  "capture_execution_authorized": false,
+  "actual_site_extraction": false,
+  "actual_bulk_collection": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
