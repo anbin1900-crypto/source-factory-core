@@ -1,23 +1,23 @@
 {
-  "schema_version": "LATEST_C1_ACTIVE_WORK_POINTER_V6",
-  "pointer_id": "LATEST-C1-SEMANTIC-AI-ACTIVE-WORK-20260805-001",
-  "registered_at_kst": "2026-08-05 00:15 KST",
+  "schema_version": "LATEST_C1_ACTIVE_WORK_POINTER_V7",
+  "pointer_id": "LATEST-C1-SEMANTIC-AI-ACTIVE-WORK-20260805-002",
+  "registered_at_kst": "2026-08-05 16:45 KST",
   "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
   "control_pr": 20,
   "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "observed_head_before_pointer_update": "f2daf8e367c097b256172640d4871bf6c8b57534",
   "active_directives": [
     {
       "directive_id": "A0-TO-C1-SEMANTIC-KNOWLEDGE-DOMAIN-AI-SHELL-V1-20260803-001",
       "superseded": false,
       "mode": "FIXTURE_FIRST_KNOWLEDGE_CANDIDATE_AND_AI_SEAT",
-      "status": "ACTIVE"
+      "status": "ACTIVE_NOT_SUPERSEDED"
     },
     {
       "directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
-      "directive_comment": 5170768957,
       "supersedes_existing_directive": false,
       "mode": "D_ALIGNED_TRANSFORMER_ADDENDUM",
-      "status": "C2_C3_TERMINAL_PUBLICATION_ENFORCEMENT_ACTIVE"
+      "status": "WORKER_WAVE_COMPLETE_EXTERNAL_BLOCKER_REQUIRED_PATHS_22"
     }
   ],
   "semantic_ai_mission": {
@@ -31,52 +31,69 @@
       "commit": "8e2b023a73e38e7e183cdf12a6a7d54d97fd4617",
       "blob": "8d9001787b44eeafd2585fc5252ccc1c50fdaf6e"
     },
-    "active_wave": "C1_SEMANTIC_AI_WAVE_1",
-    "acceptance_gates": {
-      "completed": 0,
-      "total": 11,
-      "progress_percent": 0
-    }
+    "current_wave": "C1_D_ALIGNED_TRANSFORMER_WAVE_COMPLETE_EXTERNAL_BLOCKER"
+  },
+  "commander_closure_report": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/reports/C1_D_ALIGNED_TRANSFORMER_COMMANDER_CLOSURE_REPORT_V2.json",
+    "commit": "a6c6efbbc5ab39a2bfd5c6cbc5b2dd427f635f99",
+    "blob": "6db0e3c591b8008b9ec2553f9981cfce158f3c19"
+  },
+  "transformation_result_pointer": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_TRANSFORMATION_RESULT_POINTER.json",
+    "commit": "b3a85ebd7e476e9a17aa48c26b56fb54643c3e8f",
+    "blob": "c8675a82b45fc1291fed0f3f754026fe94dabc14"
+  },
+  "d1_handoff_pointer": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_TO_D1_HANDOFF_POINTER.json",
+    "commit": "f2daf8e367c097b256172640d4871bf6c8b57534",
+    "blob": "2889520691894a790cf9713d669fc6e3fb386dcc"
   },
   "d_aligned_transformer": {
     "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
     "last_confirmed_worker_terminals": {
-      "C-2": {"comment": 5171397378, "pointer_blob": "8c29ac70b338fa21b41d2205bd2d846537a18314", "state": "STALE_BEFORE_B1_REBIND"},
-      "C-3": {"comment": 5171465080, "pointer_blob": "f46c5c64e3da5b6d4cbfc338a5d99b4e67335204", "state": "STALE_BEFORE_PR188_REBIND"},
-      "C-4": {"comment": 5171604846, "pointer_blob": "489f4511852fe7c6410152a2cc26e21233ffe15b", "state": "EVENT_WAIT_C2_C3"},
-      "C-5": {"comment": 5171489904, "pointer_blob": "91d2b2c7fe41490962864c086409850ce98a87ce", "state": "EVENT_WAIT_C4"},
-      "C-6": {"comment": 5171440017, "pointer_blob": "91ca4d06c2d12bc3271d1cd2e0f9bbe1cb5de64e", "state": "EVENT_WAIT_C2_TO_C5"}
+      "C-2": {
+        "comment": 5181940916,
+        "pointer_blob": "a4bc27b8e24dbadf668db5da21cacda0a866284a",
+        "state": "PASS_LINEAGE_READY"
+      },
+      "C-3": {
+        "comment": 5184788795,
+        "pointer_blob": "344cd19f110c825ac3ac6cdc6c2b70571eae3a55",
+        "state": "EXACT_BLOCKER_EXTERNAL_22_PATHS_ACCOUNTED"
+      },
+      "C-4": {
+        "comment": 5188153884,
+        "pointer_blob": "1779b1f6fbfcba913859850fec0c69f533154da3",
+        "state": "PACKAGE_ASSEMBLED_EXACT_BLOCKER"
+      },
+      "C-5": {
+        "comment": 5185172972,
+        "pointer_blob": "c86cf94f2ad858602ef06c88a4f29f4813814c41",
+        "state": "PR188_VALIDATION_REJECTED_EXACT_BLOCKER"
+      },
+      "C-6": {
+        "comment": 5188240227,
+        "pointer_blob": "77039ddf47c4e640335e0464b477f260eb84b94f",
+        "state": "FINAL_E2E_EXECUTED_EXACT_EXTERNAL_BLOCKER"
+      }
     },
-    "no_terminal_escalation": {
-      "audit": {
-        "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/reports/C1_D_ALIGNED_WAVE2_RECOVERY_NO_TERMINAL_ESCALATION_V2.json",
-        "commit": "d9c8c63b3593bd0e5ae5b0a06cba6dd254a80da7"
-      },
-      "enforcement": {
-        "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/directives/C1_C2_C3_TERMINAL_PUBLICATION_ENFORCEMENT_V2.json",
-        "commit": "209b0e93169a0598bbc580bd4abfb21d9d29d9fb"
-      },
-      "publication_receipt": {
-        "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/directives/C1_C2_C3_TERMINAL_PUBLICATION_ENFORCEMENT_RECEIPT_V2.json",
-        "commit": "4c5d3128d01f866d8c2d4eddbfb6b70cb0c50ea2"
-      },
-      "worker_comments": {
-        "C-2": 5181054986,
-        "C-3": 5181059789
-      },
-      "required_outcome": "PASS_OR_EXACT_BLOCKER",
-      "silent_wait_allowed": false
-    },
-    "event_wait_workers": {
-      "C-4": "WAIT_C2_C3_UPDATED_TERMINALS",
-      "C-5": "WAIT_C4_V2_PACKAGE_TERMINAL",
-      "C-6": "WAIT_UPDATED_C2_TO_C5_TERMINALS_4_OF_4"
+    "worker_gate": "PASS_4_OF_4",
+    "package_completeness": "PASS_4_OF_4",
+    "final_e2e_authorized": true,
+    "final_e2e_executed": true,
+    "package_result": {
+      "package_id": "C4-WAVE2-D-ALIGNED-PACKAGE-20260805-001",
+      "package_sha256": "1e37df56f7300f427c3027f5e83bfe332aa98f37464dc82a6fe374c4982ea8fb",
+      "package_decision": "REJECTED",
+      "accepted_count": 0,
+      "rejected_count": 28,
+      "pending_count": 44,
+      "candidate_count": 0
     },
     "authority_state": {
-      "B1_HEAD": "4bbd542c9e0cb99acff8dc81443117297757c6a3",
-      "B1_LATEST_REPORT_POINTER_BLOB": "81f6731c4615afedbfec3985aadf028819672b00",
-      "B1_STATUS": "WAITING_WORKER_SEED_BINDING_TERMINALS_OR_EXACT_BLOCKERS",
-      "B1_HANDOFF_POINTER": "WAITING_B6_INDEPENDENT_ACCEPTANCE",
+      "B1_FIXTURE_INPUT": "AVAILABLE_AND_CONSUMED",
+      "B1_NORMALIZED_DATASET_BLOB": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+      "B1_RAW_ARTIFACT_MANIFEST_BLOB": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
       "D1_PR188_HEAD": "1bb475c440983aae761b897a3b58a8f4dab880cc",
       "D1_SCHEMA_PROFILE_BLOB": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
       "D1_MAPPING_CONTRACT_BLOB": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
@@ -84,30 +101,44 @@
       "D1_ACCEPTANCE_RECEIPT_CONTRACT_BLOB": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
       "ACTUAL_D_ACCEPTANCE_RECEIPT": "NOT_ISSUED"
     },
-    "execution_order": [
-      "C2_AND_C3_PUBLISH_PASS_OR_EXACT_BLOCKER",
-      "C4_PACKAGE_ASSEMBLY_AFTER_C2_C3",
-      "C5_PR188_VALIDATION_AFTER_C4",
-      "C6_FINAL_E2E_AFTER_C2_TO_C5",
-      "C1_RESULT_AND_D1_HANDOFF_POINTER_UPDATE"
+    "c1_to_d1_handoff_integrity": "PASS_FAIL_CLOSED_REJECTED_NOT_SUBMITTED",
+    "d1_submission_eligible": false,
+    "actual_d_handoff_performed": false,
+    "superseded_blockers": [
+      "D1_REQUIRED_SCHEMA_MAPPING_VALIDATION_CONTRACT_SET_NOT_PUBLISHED",
+      "B1_NORMALIZED_DATASET_OR_RAW_ARTIFACT_MANIFEST_NOT_PUBLISHED"
     ],
-    "current_gate": "C2_C3_TERMINAL_PUBLICATION",
-    "status": "WAITING_C2_C3_TERMINALS"
+    "current_first_blocker": "PR188_REQUIRED_SOURCE_PATHS_MISSING_22",
+    "current_first_blocker_detail": {
+      "rule_id": "B001",
+      "source_path": "package.source_id",
+      "target": "SOURCE.source_id",
+      "resolution_owner": "B-1_COLLECTION_DB_MATERIALIZATION_COMMANDER",
+      "failure_signature": "B1_PACKAGE_SOURCE_ID_NOT_PUBLISHED"
+    },
+    "current_gate": "EXTERNAL_REQUIRED_SOURCE_PATHS_22_RESOLUTION",
+    "status": "E2E_COMPLETE_EXTERNAL_BLOCKER_REQUIRED_PATHS_22"
+  },
+  "cycle_0005_freeze_comments": {
+    "C-2": 5188313400,
+    "C-3": 5188317255,
+    "C-4": 5188321773,
+    "C-5": 5188325716,
+    "C-6": 5188329642,
+    "status": "NO_PENDING_DIRECTIVE_ALL_WORKERS"
   },
   "dependency_state": {
-    "B1_NORMALIZED_DATASET_V1": "COMMITTED_FIXTURE_AVAILABLE",
-    "B1_RAW_ARTIFACT_MANIFEST_V1": "COMMITTED_FIXTURE_AVAILABLE",
-    "B1_SOURCE_RECORD_ENVELOPE_V1": "COMMITTED_FIXTURE_AVAILABLE",
-    "B1_EXTRACTION_RECEIPT_V1": "COMMITTED_FIXTURE_AVAILABLE",
-    "B1_HANDOFF_AUTHORITY": "WAITING_B1_WORKER_TERMINALS_AND_B6",
-    "D1_D_CANONICAL_SCHEMA_PROFILE_V1": "PR188_AUTHORITY_AVAILABLE",
-    "D1_D_INBOUND_FIELD_MAPPING_CONTRACT_V1": "PR188_AUTHORITY_AVAILABLE",
-    "D1_D_INTAKE_VALIDATION_RULESET_V1": "PR188_AUTHORITY_AVAILABLE",
-    "D1_KNOWLEDGE_ACCEPTANCE_RECEIPT_V1": "PR188_CONTRACT_AVAILABLE",
+    "B1_NORMALIZED_DATASET_V1": "COMMITTED_FIXTURE_AVAILABLE_AND_CONSUMED",
+    "B1_RAW_ARTIFACT_MANIFEST_V1": "COMMITTED_FIXTURE_AVAILABLE_AND_CONSUMED",
+    "D1_D_CANONICAL_SCHEMA_PROFILE_V1": "PR188_AUTHORITY_AVAILABLE_AND_CONSUMED",
+    "D1_D_INBOUND_FIELD_MAPPING_CONTRACT_V1": "PR188_AUTHORITY_AVAILABLE_AND_CONSUMED",
+    "D1_D_INTAKE_VALIDATION_RULESET_V1": "PR188_AUTHORITY_AVAILABLE_AND_CONSUMED",
+    "D1_KNOWLEDGE_ACCEPTANCE_RECEIPT_CONTRACT": "PR188_AUTHORITY_AVAILABLE_AND_CONSUMED",
+    "PR188_REQUIRED_SOURCE_PATHS": "MISSING_22_EXTERNAL_AUTHORITY_DELTA_REQUIRED",
     "D_ACCEPTED_KNOWLEDGE_RELEASE": "NOT_AVAILABLE",
-    "A0_PROVIDER_CONSUMPTION": "WAITING_C1_PROVIDER_AND_RECEIPT"
+    "A0_PROVIDER_CONSUMPTION": "BLOCKED_BY_REQUIRED_SOURCE_PATHS_22"
   },
-  "next_action": "RECEIVE_C2_C3_PASS_OR_EXACT_BLOCKER_TERMINALS_THEN_OPEN_C4_GATE",
+  "next_action": "WAIT_B1_OR_D1_AUTHORITY_DELTA_RESOLVING_REQUIRED_SOURCE_PATHS_22_THEN_RUN_INCREMENTAL_C3_C4_C5_C6_REVALIDATION",
   "safety": {
     "actual_pc_execution": false,
     "actual_site_data_claim": false,
@@ -120,6 +151,7 @@
     "ready": false,
     "merge": false
   },
-  "terminal": "C1_C2_C3_TERMINAL_PUBLICATION_ENFORCEMENT_PUBLISHED",
-  "status": "C1_WAITING_C2_C3_TERMINALS"
+  "terminal": "C1_D_ALIGNED_TRANSFORMER_READY_OR_EXACT_BLOCKER",
+  "terminal_decision": "EXACT_EXTERNAL_BLOCKER",
+  "status": "C1_D_ALIGNED_TRANSFORMER_E2E_COMPLETE_EXTERNAL_BLOCKER_REQUIRED_PATHS_22"
 }
