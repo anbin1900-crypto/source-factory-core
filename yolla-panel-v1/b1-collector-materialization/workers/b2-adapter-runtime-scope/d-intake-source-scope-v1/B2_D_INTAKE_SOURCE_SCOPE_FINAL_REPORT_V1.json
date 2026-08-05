@@ -1,0 +1,98 @@
+{
+  "schema_version": "B2_D_INTAKE_SOURCE_SCOPE_FINAL_REPORT_V1",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "task_id": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT",
+  "directive_comment": 5196650361,
+  "prior_directive_comment": 5196020144,
+  "worker": "B-2",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 38,
+  "branch": "worker/b2-adapter-runtime-scope-v1",
+  "completed_at_kst": "2026-08-06T05:10:00+09:00",
+  "status": "PASS",
+  "terminal": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_READY",
+  "required_terminal": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_READY_OR_EXACT_BLOCKER",
+  "source_metadata": {
+    "source_key": "NAVER_FIN_LAND_PUBLIC_WEB_V1",
+    "source_name": "네이버페이 부동산",
+    "official_source_url": "https://fin.land.naver.com",
+    "method": "GET",
+    "response_format": "HTML",
+    "authorized_scope": "PUBLIC_NON_LOGIN_READ_ONLY"
+  },
+  "authority_boundary": {
+    "authority_type": null,
+    "authority_type_status": "PENDING_D1_DECISION",
+    "d_decision_owner": "D-1_ONLY",
+    "d_decision_pointer_blob": "95e6983a79b80867dd7de196a21e1aefc4c3dcb1",
+    "d_canonical_source_id": null,
+    "d_canonical_id_generation_count": 0
+  },
+  "d_contract_refs": {
+    "schema_blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+    "mapping_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
+    "ruleset_blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
+    "receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410"
+  },
+  "artifacts": {
+    "start_report": {
+      "commit": "b0d02c58f4d177dbf7860fa88d93c4dea5da5f2e",
+      "path": "d-intake-source-scope-v1/B2_D_INTAKE_SOURCE_SCOPE_START_REPORT_V1.json"
+    },
+    "contract": {
+      "commit": "7d8bfab7e1d3387721d8d8f413e33bad8ca959a7",
+      "blob": "94994407fa47049172eb668e4d306f21fe3f796a",
+      "path": "d-intake-source-scope-v1/contracts/B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1.json",
+      "canonical_sha256": "844b02af73b17c9dc049be8cc97ac2b6874ed2869d1ac03d65f51c3ae801369f"
+    },
+    "schema": {
+      "commit": "599fa00ea788de7eab0b9ac5a13e9bd8c8bd088f",
+      "blob": "6e2b763117ddda0cc49f3025c6e4f0d2a09ee39b",
+      "path": "d-intake-source-scope-v1/contracts/B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1.schema.json"
+    },
+    "fixture": {
+      "commit": "47b1b094e9d3be6f2d66bc58bebf8479f834bab4",
+      "blob": "09a9fe9b8003f97837292d293d9d8c011580e99e",
+      "path": "d-intake-source-scope-v1/fixtures/B2_D_INTAKE_SOURCE_SCOPE_FIXTURE_V1.json"
+    },
+    "validator": {
+      "commit": "02b8970172fe478861adb02f58d9791864dc39a9",
+      "blob": "e059a7f7fd2c2f8504657d95bd5161be8a2a52b5",
+      "path": "d-intake-source-scope-v1/src/d_intake_source_scope_validator.py"
+    },
+    "tests": {
+      "commit": "ca4193ca81dcb9be6cc6dc97b2a74516a91dc5b2",
+      "blob": "1c9a07d674608963095164228467442e6e79dc7d",
+      "path": "d-intake-source-scope-v1/tests/test_d_intake_source_scope.py"
+    },
+    "test_report": {
+      "commit": "cf5e4121b6e0e6ef916802c969eef19812d7fcae",
+      "blob": "ede116a49f37b8f3e98f5d3cd17df6aeb80dc617",
+      "path": "d-intake-source-scope-v1/B2_D_INTAKE_SOURCE_SCOPE_TEST_REPORT_V1.json"
+    }
+  },
+  "validation": {
+    "json_schema_draft": "2020-12",
+    "schema_error_count": 0,
+    "test_count": 30,
+    "pass_count": 30,
+    "fail_count": 0,
+    "remote_readback": "PASS_5_OF_5",
+    "first_failure_corrected": true
+  },
+  "handoff": {
+    "consumer": "B-5",
+    "consumer_pr": 41,
+    "event": "B5_RESUME_AFTER_B2_AND_B4",
+    "contract_ready": true,
+    "b4_still_required": true
+  },
+  "actual_site_extraction": false,
+  "network_call_count": 0,
+  "d_canonical_db_write_count": 0,
+  "postgresql_connection_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
