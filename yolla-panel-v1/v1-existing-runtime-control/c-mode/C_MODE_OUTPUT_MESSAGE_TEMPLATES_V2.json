@@ -1,0 +1,82 @@
+{
+  "schema_version": "YOLLA_V1_C_MODE_MESSAGE_TEMPLATES_V2",
+  "template_set_id": "YOLLA-V1-C-MODE-MESSAGE-TEMPLATES-V2-20260805-001",
+  "owner": "V-1",
+  "target_runtime": "YOLLA_WORKSPACE_EXISTING_RUNTIME",
+  "status": "PUBLISHED_FOR_IMPLEMENTATION",
+  "supersedes": {
+    "rule_id": "YOLLA-V1-C-MODE-OUTPUT-RULE-V1-20260805-001",
+    "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode/YOLLA_V1_C_MODE_OUTPUT_RULE_V1.json",
+    "preserve_history": true
+  },
+  "principles": {
+    "chat_semantic_reading": false,
+    "github_status_authority": true,
+    "same_wave_batch_dispatch": true,
+    "sequential_completion_gated_dispatch": false,
+    "instruction_max_sentences": 2,
+    "user_command_passthrough": true,
+    "active_command_per_worker": 1
+  },
+  "instruction_templates": {
+    "start": {
+      "target": "COMMANDER_AND_ALL_ACTIVE_WORKERS",
+      "message": "C 모드 규칙에 따라 작업을 시작하고 GitHub에 START를 게시하라."
+    },
+    "commander_full_wave": {
+      "target": "COMMANDER",
+      "message": "모든 워커의 보고를 검토해 다음 WAVE의 워커별 작업과 현재 공정률을 하나의 GitHub 게시물에 일괄 게시하라. 전체 작업이 끝났으면 END를 게시하라."
+    },
+    "commander_partial_wave": {
+      "target": "COMMANDER",
+      "message": "완료된 워커의 보고를 검토해 미보고 워커를 제외한 다음 WAVE의 작업과 현재 공정률을 하나의 GitHub 게시물에 일괄 게시하라."
+    },
+    "worker_cycle": {
+      "target": "ACTIVE_WORKER",
+      "message": "이전 배정의 결과 또는 미수행 사유가 게시되지 않았다면 먼저 게시하라. 이어 현재 WAVE에 배정된 미완료 작업을 수행해 반드시 게시하고, 남은 작업이 없으면 END를 게시하라."
+    },
+    "worker_report_only": {
+      "target": "MISSING_REPORT_WORKER",
+      "message": "기존 작업을 계속하고 결과 또는 미수행 사유를 GitHub에 게시하라."
+    },
+    "worker_replacement": {
+      "target": "NEW_PRIMARY_WORKER",
+      "message": "이전 워커의 미완료 작업을 인계받아 수행하고 결과 또는 미수행 사유를 GitHub에 게시하라."
+    },
+    "rescue_worker": {
+      "target": "RESCUE_WORKER",
+      "message": "장기 미완료 작업을 독립적으로 수행하고 결과 또는 미수행 사유를 GitHub에 게시하라."
+    },
+    "progress_correction": {
+      "target": "COMMANDER",
+      "message": "완료 작업이 증가했지만 공정률이 상승하지 않았다. 계산 또는 작업계획 오류를 교정하고 공정률을 다시 게시하라."
+    }
+  },
+  "display_outputs": {
+    "worker_reported": "작업완료 | 결과게시물={RESULT_POST_ID}",
+    "worker_end": "END | 결과게시물={RESULT_POST_ID}",
+    "commander_wave": "검토확인 | 정상수행={NORMAL_COUNT}명 | 미보고={MISSING_COUNT}명 | 현재공정률={PROGRESS_PERCENT}% | 다음작업={NEXT_POST_ID}",
+    "commander_final": "검토확인 | 정상수행={NORMAL_COUNT}명 | 미보고=0명 | 현재공정률=100% | 다음작업=END",
+    "replacement": "반복미보고=[{ROLE_LIST}] | 신규워커배정=[{ROLE_LIST}]"
+  },
+  "github_report_lines": {
+    "start": "PANEL | ROLE={ROLE} | STATUS=START",
+    "worker": "PANEL | WAVE={WAVE_POST_ID} | STATUS={REPORTED|END}",
+    "commander": "PANEL | NORMAL={NORMAL_COUNT} | MISSING={MISSING_COUNT} | COMPLETED={TOTAL_COMPLETED_TASK_COUNT} | PROGRESS={PROGRESS_PERCENT} | END={0|1}",
+    "task": "TASK | WORKER={ROLE} | TASK_ID={TASK_ID} | TYPE={TYPE} | EXPECTED_MINUTES={MINUTES|UNKNOWN}"
+  },
+  "command_execution": {
+    "message": "{USER_COMMAND}",
+    "modes": [
+      "EVERY_X_MINUTES",
+      "AFTER_COMPLETION"
+    ],
+    "after_completion_authority": "NEW_GITHUB_RESULT_POST_AFTER_DISPATCH",
+    "if_active_command_exists": "SKIP_CURRENT_TRIGGER",
+    "duplicate_queue_allowed": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "generated_at": "2026-08-05"
+}
