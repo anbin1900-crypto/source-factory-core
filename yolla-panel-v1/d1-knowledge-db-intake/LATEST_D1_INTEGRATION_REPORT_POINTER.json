@@ -1,1 +1,71 @@
-{"schema_version":"LATEST_D1_INTEGRATION_REPORT_POINTER_V1","role":"D-1_KNOWLEDGE_DB_INTEGRATION_COMMANDER","repository":"anbin1900-crypto/source-factory-core","control_pr":21,"branch":"integration/d1-knowledge-db-intake-authority-v1","head_before_latest_pointer":"4b2be13db44716d8f5187742a774ffc1a68f210e","directive_comment":5170770902,"parent_directive_id":"A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001","existing_directive":"A0-TO-D1-KNOWLEDGE-DB-INTAKE-CONTRACT-V1-20260803-001","existing_directive_superseded":false,"status":"D1_CANONICAL_SCHEMA_INTAKE_ALIGNMENT_READY","terminal":{"path":"yolla-panel-v1/d1-knowledge-db-intake/reports/D1_CANONICAL_SCHEMA_INTAKE_ALIGNMENT_TERMINAL_V1.json","commit":"35c40f3323546ccbbbbe50e087bae4844508b003","blob_sha":"c79228484ee7c852046c042b405efdff7ebfd18c"},"pointers":{"D1_SCHEMA_ALIGNMENT_POINTER":{"path":"yolla-panel-v1/d1-knowledge-db-intake/D1_SCHEMA_ALIGNMENT_POINTER.json","blob_sha":"2a76416696b7357f6e76468553d236ab0703f64e"},"D1_PR188_CROSS_REPOSITORY_POINTER":{"path":"yolla-panel-v1/d1-knowledge-db-intake/D1_PR188_CROSS_REPOSITORY_POINTER.json","blob_sha":"4ff21ef9ea5883a660e3ce745d38e81349a53435"},"D1_INTAKE_CONTRACT_RESULT_POINTER":{"path":"yolla-panel-v1/d1-knowledge-db-intake/D1_INTAKE_CONTRACT_RESULT_POINTER.json","blob_sha":"0127b20494d71437d35cd01e7785c3515a5c4a2b"}},"actual_db_authority":{"repository":"anbin1900-crypto/yolla-real-estate-data-engine","pr":188,"head":"c1286680a5391bfd4714ca62b8e8a8cfeda2fe15"},"required_outputs":"PASS_8_OF_8","validation":"PASS_16_OF_16","fixture_receipt":"PARTIALLY_ACCEPTED_NOT_ACTUAL_DB_ACCEPTANCE","B-1_direct_write":false,"C-1_direct_write":false,"postgresql_connection_count":0,"migration_apply_count":0,"production":false,"ready":false,"merge":false,"remote_readback":"PASS_POINTERS_3_OF_3_AND_TERMINAL","updated_at_kst":"2026-08-04T05:32:37+09:00","pointer_sha256":"d1f7fc1251f2973813c09b69ef8b1784e8d85dbf3d474117142f633bbbe9bc1a"}
+{
+  "schema_version": "LATEST_D1_INTEGRATION_REPORT_POINTER_V2",
+  "role": "D-1_SOURCE_FACTORY_CROSS_REPOSITORY_BRIDGE",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 21,
+  "branch": "integration/d1-knowledge-db-intake-authority-v1",
+  "head_before_latest_pointer": "bb31c614625b9276e3cc8c235fa9071ead81a9b0",
+  "task": "D_AUTHORITY_MAPPING_RECEIPT_PROCEDURE_AND_TREE_BINDING",
+  "status": "D1_PR188_CROSS_REPOSITORY_POINTER_V2_READY",
+  "prior_pointer": {
+    "schema_version": "LATEST_D1_INTEGRATION_REPORT_POINTER_V1",
+    "blob": "5d57630736586e3db3b620c39f1435587802a73b",
+    "status": "D1_CANONICAL_SCHEMA_INTAKE_ALIGNMENT_READY",
+    "preserved": true
+  },
+  "current_terminal": {
+    "path": "yolla-panel-v1/d1-knowledge-db-intake/reports/D1_PR188_CROSS_REPOSITORY_BRIDGE_TERMINAL_V2.json",
+    "commit": "bb31c614625b9276e3cc8c235fa9071ead81a9b0",
+    "blob": "22c2c1b88d72307805861d2b71561cb25bac35ab",
+    "terminal": "PASS",
+    "final_status": "D1_PR188_CROSS_REPOSITORY_POINTER_V2_READY"
+  },
+  "current_pointer": {
+    "path": "yolla-panel-v1/d1-knowledge-db-intake/D1_PR188_CROSS_REPOSITORY_POINTER_V2.json",
+    "commit": "451e5e671fb2fbb5eb072257458557bdafa22346",
+    "blob": "4d18cfba43c603fd6427d983e5d8e5bf2ca956e8",
+    "remote_readback": "PASS"
+  },
+  "pr188_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "branch": "command/d-group-domain-knowledge-db-foundation-v1",
+    "authority_head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "terminal_comment_id": 5196986028,
+    "terminal": "D1_ABCD_INTEGRATION_AUTHORITY_AND_INTAKE_PROCEDURE_READY",
+    "control_pointer_path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/LATEST_D_GROUP_CONTROL_POINTER.json",
+    "control_pointer_blob": "d65285f969294c19c0d9e2d1bbc2adf8165f8819"
+  },
+  "bound_authority_artifact_count": 5,
+  "bound_authority_artifacts": {
+    "source_authority_decision_blob": "6bf779b937bf2bea761780315b22692ccca07ad9",
+    "mapping_addendum_blob": "118d6403dd5db47afafb982991f8fd9a51f35f28",
+    "B_receipt_procedure_blob": "2a8b7c1b04924728cce14dc21c225ad09598905f",
+    "C_receipt_procedure_blob": "5dc797523718f53bab67f48ed65029061e5ee45a",
+    "tree_binding_manifest_blob": "dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd"
+  },
+  "verification": {
+    "pr188_terminal_observed": "PASS",
+    "authority_head_match": "PASS",
+    "exact_path_commit_blob_binding": "PASS_5_OF_5",
+    "pointer_remote_readback": "PASS",
+    "terminal_remote_readback": "PASS",
+    "source_factory_projection_only": "PASS"
+  },
+  "execution_boundary": {
+    "d_schema_change_count": 0,
+    "d_acceptance_issuance_count": 0,
+    "postgresql_connection_count": 0,
+    "migration_apply_count": 0,
+    "canonical_db_write_count": 0,
+    "production_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0,
+    "self_merge_count": 0
+  },
+  "next_event": "EVENT_WAIT_EXACT_B_SOURCE_DOCUMENT_AND_C_KNOWLEDGE_CANDIDATE_PACKAGES",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at_kst": "2026-08-06T06:33:35+09:00"
+}
