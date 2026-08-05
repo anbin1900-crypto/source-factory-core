@@ -1,0 +1,93 @@
+{
+  "schema_version": "B5_D_READY_PACKAGE_V2_CONCURRENCY_RECONCILIATION_V1",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "B5_D_READY_PACKAGE_V2",
+  "directive_comment_id": 5196026867,
+  "worker": "B-5",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 41,
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "detected_condition": "CONCURRENT_COMPETING_V2_PUBLICATIONS_ON_SAME_WORKER_BRANCH",
+  "resolution": "SINGLE_AUTHORITY_RESTORED",
+  "authoritative_root": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/",
+  "authoritative_pointer": {
+    "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/LATEST_B5_D_READY_PACKAGE_V2_POINTER.json",
+    "blob_sha_before_reconciliation_link": "0ab6fda090e1ae977fd2613145bacdb9db544e37",
+    "status": "BLOCKED_EXTERNAL_WAITING_B2_B4_V2",
+    "terminal": "B5_D_READY_PACKAGE_V2_EXACT_BLOCKER"
+  },
+  "authoritative_final_report": {
+    "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/B5_D_READY_PACKAGE_V2_FINAL_REPORT_V1.json",
+    "blob_sha": "6944b0439c5aea2a727e963ef74d8ead8388a99b",
+    "commit": "060cfda9b194ff2b337a72d88c3246542621e63a"
+  },
+  "upstream_binding": {
+    "B-2": {
+      "pr": 38,
+      "head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+      "required_artifact": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1.json",
+      "status": "NOT_PUBLISHED_BLOCKER"
+    },
+    "B-3": {
+      "pr": 39,
+      "head": "86d789a136ce5070d79eab7e6d0205eb23da11d7",
+      "pointer_blob": "dedbad43c8c23df18e2af2560af5d5f48ca1fa00",
+      "fixture_result_blob": "e6266c5cc4af42bc3797d17a3640381fa6634c16",
+      "terminal": "B3_D_COLLECTION_RUN_LEDGER_READY",
+      "status": "PASS_EXACT"
+    },
+    "B-4": {
+      "pr": 40,
+      "head": "6dfe697363a69f83797775aa549f34614aa3748a",
+      "required_artifact": "RAW_ARTIFACT_MANIFEST_V2.json",
+      "status": "NOT_PUBLISHED_BLOCKER"
+    }
+  },
+  "removed_path_count": 14,
+  "removed_paths": [
+    "B5_D_READY_PACKAGE_V2_START_REPORT.json",
+    "B5_D_READY_PACKAGE_V2_INPUT_AUTHORITY_LOCK.json",
+    "contracts/MATERIALIZED_DATABASE_PACKAGE_V2.schema.json",
+    "contracts/NORMALIZED_DATASET_V2.schema.json",
+    "contracts/D_INTAKE_REQUEST_V1.schema.json",
+    "generated/NORMALIZED_DATASET_V2.json",
+    "generated/MATERIALIZED_DATABASE_PACKAGE_V2.json",
+    "generated/D_INTAKE_REQUEST_V1.json",
+    "generated/B5_D_READY_FIXTURE_PACKAGE_V2.json",
+    "src/d_ready_package_v2.py",
+    "tests/test_d_ready_package_v2.py",
+    "B5_D_READY_PACKAGE_V2_FINAL_REPORT.json",
+    "B5_D_READY_PACKAGE_V2_TEST_RESULTS.json",
+    "B5_D_READY_PACKAGE_V2_LATE_BINDING_MATRIX.json"
+  ],
+  "removal_commits": [
+    "f67402d6284a4ae2e176d2375ae5ebd07f9db36f",
+    "eeabaadd516b8dc8ec3cf0789d3292f4d15379fc",
+    "0fd31fbe5cc40c66c4f6ceef075e86cb729e6df7",
+    "927c2c4673df696141d8ce6392ba459167a8641a",
+    "53f3d989fcd6988d731712097e55bcf1bff527bb",
+    "6260c10bebf22c6b346247c101c2b38815ddfb1a",
+    "8c0b86418f87573f675b2c61b66a3bc1aacb13e5",
+    "71f13580c1abeb2691721913032e292883ea96e2",
+    "d2dfd883bca89495deafc6a655f0742c2e2e2077",
+    "ddeefae195915e8d25f350eceb1986fa7d0925bc",
+    "d023ba75462a5f4255dc29c14b6b865d76523a0c",
+    "c991d1022dbe8f0910d89e6be2180c1230bf1da1",
+    "fba2bc8b0ef1837c93bf1d8f40c22c63fe4ac287",
+    "750863e28613c91fe38b0de5f118292fab8531e0"
+  ],
+  "reason": "V1_ENRICHMENT_CANNOT_SUBSTITUTE_FOR_SEPARATELY_ASSIGNED_B2_AND_B4_V2_AUTHORITY_ARTIFACTS",
+  "local_implementation_status": "PASS_37_OF_37",
+  "source_field_loss_count": 0,
+  "silent_drop_count": 0,
+  "d_intake_submission_authorized": false,
+  "d_canonical_id_generation_count": 0,
+  "d_acceptance_receipt_issued": false,
+  "d_canonical_db_write_count": 0,
+  "postgresql_connection_count": 0,
+  "actual_site_extraction": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "verified_at_kst": "2026-08-06T04:44:00+09:00"
+}
