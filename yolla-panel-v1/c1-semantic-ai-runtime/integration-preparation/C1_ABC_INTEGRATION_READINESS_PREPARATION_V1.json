@@ -1,0 +1,57 @@
+{
+  "schema_version": "C1_ABC_INTEGRATION_READINESS_PREPARATION_V1",
+  "report_id": "C1-ABC-INTEGRATION-READINESS-20260805-001",
+  "prepared_at_kst": "2026-08-05T22:24:39+09:00",
+  "role": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "b1_fixture_handoff": {
+    "control_pr": 19,
+    "head": "5c7c9cddcc6ca9f19ffe7e77bdd300480c17c8b3",
+    "latest_pointer_blob": "7aa5344ffd5bd5023cada1b6f2798e1b904ad842",
+    "handoff_pointer_blob": "932904cede5bcfb239a62952173f82147b0b0f26",
+    "classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE",
+    "status": "ACKNOWLEDGED_AND_CONSUMED",
+    "content_blob_delta": false
+  },
+  "semantic_baseline": {
+    "worker_gate": "PASS_4_OF_4",
+    "final_e2e_executed": true,
+    "package_decision": "REJECTED",
+    "accepted_count": 0,
+    "rejected_count": 28,
+    "pending_count": 44,
+    "candidate_count": 0,
+    "first_blocker": "PR188_REQUIRED_SOURCE_PATHS_MISSING_22",
+    "resolved_path_count": 0,
+    "unresolved_path_count": 22
+  },
+  "integration_contract": {
+    "input_contracts": [
+      "RAW_ARTIFACT_MANIFEST_V1",
+      "SOURCE_RECORD_ENVELOPE_V1",
+      "NORMALIZED_DATASET_V1",
+      "EXTRACTION_RECEIPT_V1"
+    ],
+    "outputs": [
+      "D_ALIGNED_TRANSFORMATION_PACKAGE_V1",
+      "FIELD_MAPPING_REPORT_V1",
+      "REJECTED_RECORD_BUNDLE_V1",
+      "KNOWLEDGE_CANDIDATE_BUNDLE_V1"
+    ],
+    "current_status": "FIXTURE_SEMANTIC_BASELINE_FROZEN_WAITING_CONTENT_DELTA_AND_REQUIRED_PATH_RESOLUTION",
+    "incremental_reexecution_conditions": [
+      "B1_CONTENT_BLOB_DELTA",
+      "OR_D1_AUTHORITY_CONTENT_DELTA_RESOLVING_REQUIRED_SOURCE_PATHS_22"
+    ],
+    "duplicate_reexecution_required_now": false
+  },
+  "next_action": "WAIT_B1_OR_D1_CONTENT_DELTA_THEN_RUN_INCREMENTAL_C3_C4_C5_C6_REVALIDATION",
+  "actual_d_handoff_performed": false,
+  "d_acceptance_claimed": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
