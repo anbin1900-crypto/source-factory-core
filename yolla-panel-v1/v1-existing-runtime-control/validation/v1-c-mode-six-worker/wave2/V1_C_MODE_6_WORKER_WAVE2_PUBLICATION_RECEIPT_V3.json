@@ -1,0 +1,27 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE2_PUBLICATION_RECEIPT_V3",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-002",
+  "control_pr": 17,
+  "control_comment_id": 5189704060,
+  "worker_comments": {
+    "AUTOMATION-C-W1": {"pr": 59, "comment_id": 5189688748},
+    "AUTOMATION-C-W2": {"pr": 60, "comment_id": 5189691452},
+    "AUTOMATION-C-W3": {"pr": 61, "comment_id": 5189693654},
+    "AUTOMATION-C-W4": {"pr": 62, "comment_id": 5189696213},
+    "AUTOMATION-C-W5": {"pr": 63, "comment_id": 5189698995},
+    "AUTOMATION-C-W6": {"pr": 64, "comment_id": 5189701057}
+  },
+  "batch_dispatch": "PASS_6_OF_6",
+  "sequential_completion_gate": false,
+  "current_progress_percent": 60,
+  "source_supplement": {
+    "drive_file_id": "1EaHhHablINACVR-syzy4o6r4wEnbK8z_",
+    "size_bytes": 105656,
+    "sha256": "fd60e47b6134ee06bd568941da66e45d158bc660557f624540f2a61589f7d7ea"
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "published_at": "2026-08-05T18:10:00+09:00"
+}
