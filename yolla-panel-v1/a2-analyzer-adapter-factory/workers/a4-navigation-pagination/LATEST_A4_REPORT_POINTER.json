@@ -1,53 +1,75 @@
 {
-  "schema_version": "LATEST_A4_REPORT_POINTER_V1",
+  "schema_version": "LATEST_A4_REPORT_POINTER_V2",
   "worker": "A-4",
-  "directive_id": "A2-TO-A4-NAVIGATION-PAGINATION-EXECUTION-V3-20260804-001",
+  "directive_id": "A2-TO-A4-NO-AUTOMATED-PAGINATION-MVP-BINDING-FINAL-V1-20260806-001",
+  "parent_cycle": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_10-GENERIC-HTML-MVP-FAST-CLOSURE-V1-20260806-001",
   "status": "PASS",
-  "updated_at_kst": "2026-08-04T05:37:00+09:00",
+  "terminal": "A4_NO_AUTOMATED_PAGINATION_MVP_BINDING_READY",
+  "updated_at_kst": "2026-08-06T00:34:00+09:00",
   "repository": "anbin1900-crypto/source-factory-core",
   "pr": 23,
   "branch": "worker/a4-navigation-pagination-v1",
-  "published_head_before_pointer": "3a881660336375895a69e3776243f7761ba1b1d9",
+  "previous_pointer_blob": "da26c979685d28e28632ec594f695f04b7effb7d",
+  "published_head_before_pointer": "2d47bba9ba417e676d3a5ee17af409ae0c9f188c",
   "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER",
-  "start_report": {
-    "commit": "3228d0c68be60f7adeb676c660f97096b4d39eee",
-    "blob": "4b56304004630f7e46f5ac66600d7af53d2116e9"
+  "navigation_authority": {
+    "head": "6567f380e4249dc7cd9b55693fa85856a37b91e6",
+    "pointer_blob": "da26c979685d28e28632ec594f695f04b7effb7d",
+    "frozen": true,
+    "implementation_changed": false,
+    "full_navigation_replay": false,
+    "full_authority_reaudit": false
   },
-  "progress_report": {
-    "commit": "c09b68ea6e20b2f90f296029d6363b807b7143df",
-    "blob": "5330a1c00e094705381d0b1721116957b1536c45"
+  "artifacts": {
+    "no_pagination_binding": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/NO_AUTOMATED_PAGINATION_MVP_BINDING_V1.json",
+      "commit": "d8986b6f5d878fb181fc4efffdcbf53df3f0e3fa",
+      "blob": "e067f3711b022ea8f058de733e209aee3f67748e"
+    },
+    "a6_handoff": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A4_TO_A6_NO_PAGINATION_HANDOFF_V1.json",
+      "commit": "eb91728ea66aa1fb98d22170a8035d270910014c",
+      "blob": "894fc02cc1cdf72708d1ccb1660f56b302f80aa3"
+    },
+    "terminal_report": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A4_NO_PAGINATION_TERMINAL_REPORT_V1.json",
+      "commit": "2d47bba9ba417e676d3a5ee17af409ae0c9f188c",
+      "blob": "fe719ed9c87094308b01088a630b8f616a667441"
+    }
   },
-  "terminal_report": {
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A4_TERMINAL_REPORT_V1.json",
-    "commit": "5530cba8f0dc7b6496308aba98e9f91155438e04",
-    "blob": "bf67758703708ec28497b8b3fa626051baaa2147"
+  "source_contract": {
+    "a5_head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+    "a5_pointer_blob": "40a282ccb4573ae00a12645f40bf39b6faea1abc",
+    "a5_endpoint_catalog_blob": "7e56b41ad64699dcd4abf58f81374801bb7739f2",
+    "terminal": "A5_PUBLIC_DOCUMENT_ROUTE_REBIND_READY"
   },
-  "final_report": {
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A4_FINAL_REPORT_V1.json",
-    "commit": "3a881660336375895a69e3776243f7761ba1b1d9",
-    "blob": "c30644dc558a5348fceaae514801161eea81fa8f"
+  "result": {
+    "active_profile_count": 7,
+    "excluded_profiles": [
+      "EP-011"
+    ],
+    "route_binding": "PASS_7_OF_7",
+    "method": "GET",
+    "response_format": "text/html",
+    "max_documents_per_profile": 1,
+    "automated_pagination": false,
+    "next_link_follow": false,
+    "cursor_loop": false,
+    "page_increment": false,
+    "finding_count": 0
   },
-  "a3_late_binding": {
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A3_TRACE_LATE_BINDING_V1.json",
-    "commit": "428c2000aa7241db5eeffe361451fd5cdedb8e23",
-    "blob": "371ef6d890083f7283c77010d0d6d2d841066a41",
-    "a3_head": "a5632d6dbdddd956d478b593ffe144ff8a6241cf",
-    "a3_fixture_trace_blob": "cd29511601f27a128ff88e2e3f265c116d99e4a0"
+  "safety": {
+    "replay_rerun": false,
+    "live_site_call_count": 0,
+    "capture_execution_count": 0,
+    "automated_pagination_count": 0,
+    "out_of_owned_root_change_count": 0,
+    "actual_bulk_collection": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
   },
-  "terminal": "A4_NAVIGATION_PAGINATION_CONTRACT_READY",
-  "fixture_replay_count": 2,
-  "deterministic_navigation_replay": "PASS",
-  "replay_digest": "5efffc455deb166bb00afedc918c17f0bf3d0b2be6ca0d266acc680f62ca6bb9",
-  "unbounded_loop_count": 0,
-  "duplicate_page_visit_after_stop_count": 0,
-  "live_site_call_count": 0,
-  "out_of_owned_root_change_count": 0,
-  "a5_handoff_ready": true,
-  "a6_handoff_ready": true,
-  "actual_bulk_collection": false,
-  "panel_shell_direct_edit": false,
-  "production": false,
-  "ready": false,
-  "merge": false,
-  "self_merge": false
+  "next_owner": "A-6",
+  "next_event": "A6_BUILD_MVP_ADAPTER_FROM_A4_NO_PAGINATION_HANDOFF"
 }
