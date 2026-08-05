@@ -1,46 +1,84 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "LATEST_A7_REPORT_POINTER_V2",
   "pointer_type": "LATEST_A7_REPORT_POINTER",
   "worker": "A-7",
-  "group_id": "GROUP-01",
-  "loop_id": "A-LOOP-GROUP-01",
-  "cycle_id": "A-LOOP-GROUP-01-GROUP01-W06-CYCLE-0001",
-  "worker_id": "GROUP01-W06",
-  "directive_id": "GROUP01-W01-TO-GROUP01-W06-A7-PREAUTH-GOVERNANCE-FINAL-REAUDIT-V1-20260805-001",
-  "directive_comment_id": 5182356469,
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_5-PUBLIC-ROUTE-GOVERNANCE-REAUDIT-V1-20260805-001",
+  "directive_id": "A2-TO-A7-PUBLIC-DOCUMENT-ROUTE-GOVERNANCE-REAUDIT-V6_5-20260805-001",
+  "directive_comment_id": 5192071024,
+  "start_comment_id": 5192195123,
+  "progress_comment_id": 5192230135,
   "status": "TERMINAL_PASS",
-  "terminal": "A7_FIXTURE_ACQUISITION_GOVERNANCE_READY_FOR_A2_AUTHORIZATION_REQUEST",
-  "terminal_report": {
-    "commit": "ed289e5a250223e325d4d719aaf758da348366cf",
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_WAVE5_1_TERMINAL_REPORT_V1.json",
-    "blob": "1ef56d8da37f3d1d6154d3ae21364daed0b6a452"
+  "terminal": "A7_PUBLIC_ROUTE_GOVERNANCE_READY_FOR_A2_SECOND_AUTHORIZATION_REQUEST",
+  "previous_pointer_blob": "eb058aa9a827884da1ea2f142743795ff98522de",
+  "artifacts": {
+    "governance_reaudit": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_PUBLIC_ROUTE_GOVERNANCE_REAUDIT_V1.json",
+      "commit": "c89ed0965688bcf2b93697278125057b907bbd1e",
+      "blob": "e2ed308c90612dcd16b4568064539eee8e6df87e"
+    },
+    "authorization_recommendation": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_TO_A2_SECOND_ONE_SHOT_AUTHORIZATION_RECOMMENDATION_V2.json",
+      "commit": "25761e9cf25f66e00876d5f367a9442aa2a87387",
+      "blob": "eb3dd7186e8b88bfbdd6d464cecaa44448ba93e1",
+      "recommendation": "READY_FOR_A2_TO_REQUEST_NEW_EXPLICIT_A0_A1_ONE_SHOT_PUBLIC_DOCUMENT_GET_CAPTURE_AUTHORIZATION"
+    },
+    "validation_receipt": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_WAVE6_5_VALIDATION_RECEIPT_V1.json",
+      "commit": "256f645c8275b5c09281491653ecbcb072c0ea6f",
+      "blob": "7aae731fe2887dd38bedc06e90d6c44d0dd84a0c"
+    },
+    "terminal_report": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_WAVE6_5_TERMINAL_REPORT_V1.json",
+      "commit": "9105f9abc39b6b8ccb144de2dc62d8080adbfe1d",
+      "blob": "52f34e8b9bfb455b51ea9ffd98c681bec6ab1338"
+    }
   },
-  "reaudit_report": {
-    "commit": "1d4a3a826c787bcd5d7b479db2b8927b0042e9eb",
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_WAVE5_1_PREAUTH_GOVERNANCE_REAUDIT_V1.json",
-    "blob": "b525b6fb007d5307de57a94b8dce585b0d0fe60e"
+  "authority": {
+    "commit": "545425a10d48bf59746d8db98ff2f56b79360cc0",
+    "blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
+    "pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5"
   },
-  "authorization_recommendation": {
-    "commit": "3c38aae48bc833b64247607a3312c2647178cd78",
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_TO_A2_ONE_SHOT_AUTHORIZATION_RECOMMENDATION_V1.json",
-    "blob": "ab65dceb268d7296b941e78c69aea3304348d52c",
-    "recommendation": "READY_FOR_A2_TO_REQUEST_EXPLICIT_A0_A1_ONE_SHOT_AUTHORIZATION"
+  "a5_rebind": {
+    "final_head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+    "pointer_blob": "40a282ccb4573ae00a12645f40bf39b6faea1abc",
+    "handoff_blob": "515b72792199f971b0a754bcb9dbc796b06fe26f",
+    "validation_blob": "20abdd912d7b64f245f9a8252a90bec3c819f2c9",
+    "terminal": "A5_PUBLIC_DOCUMENT_ROUTE_REBIND_READY"
   },
-  "a3_final_head": "6735d9335dd5e5137d09c494b3c6921989bb3252",
-  "a3_pointer_blob": "e9d9b5a86c08e7862c6d68099e860e33567ca987",
-  "a5_final_head": "19781a67eb24ee217b1d072869c407077cca72e1",
-  "a5_pointer_blob": "59f9a82c6edd15e1aa23c11573657ecf25efb004",
-  "a5_handoff_blob": "a9a5112e53992b6149ec954447fa413ffeca9978",
-  "profile_traceability": "PASS_8_OF_8",
-  "a3_validation": "PASS_24_FINDING_0",
+  "a3_package": {
+    "final_head": "8e2c06d6e33ae23e0bf408cb5e2bd7513a72d7a9",
+    "pointer_blob": "aa2c564c52ac1bd0f0a6dd4973f8b16dd53a2030",
+    "governance_handoff_blob": "6ff1fc01bb6a6f589622d33bb0d3879e400f76cd",
+    "second_authorization_request_package_blob": "007df2b81bf4f7009aa548e26e86cce4fcacda3b",
+    "terminal": "A3_PUBLIC_DOCUMENT_ROUTE_OPERATOR_PACKAGE_READY_FOR_GOVERNANCE"
+  },
+  "validation": {
+    "pass_count": 50,
+    "finding_count": 0,
+    "public_route_binding": "PASS_7_OF_7",
+    "active_profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-012"],
+    "excluded_profiles": ["EP-011"],
+    "get_method": "PASS_7_OF_7",
+    "text_html": "PASS_7_OF_7",
+    "forbidden_promotion_count": 0,
+    "ep004_page_size_invention_count": 0,
+    "raw_secret_cookie_token_pii_count": 0,
+    "capture_attempt_count": 0,
+    "live_site_call_count": 0,
+    "browser_automation_execution_count": 0,
+    "automated_pagination_count": 0,
+    "actual_bulk_collection": false
+  },
   "authorization_request_ready": true,
+  "new_authorization_granted": false,
   "capture_execution_authorized": false,
+  "request_execution_authorized": false,
+  "second_attempt_authorized": false,
   "self_approval": false,
-  "capture_execution_count": 0,
-  "live_site_call_count": 0,
-  "remote_readback": "PASS",
-  "updated_at_kst": "2026-08-05T02:22:00+09:00",
   "implementation_file_direct_edit": false,
+  "remote_readback": "PENDING",
+  "updated_at_kst": "2026-08-05T22:18:00+09:00",
+  "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
   "production": false,
   "ready": false,
   "merge": false
