@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "worker": "B-4",
+  "task_id": "B1-B4-EXECUTION-TASK-V1-20260804-001",
+  "tested_at_kst": "2026-08-05T16:43:00+09:00",
+  "python_compile": "PASS_3_OF_3",
+  "unit_tests": "PASS_24_OF_24",
+  "minimum_test_count": 18,
+  "exact_byte_sha256_parity": "PASS_2_OF_2",
+  "raw_artifact_count": 2,
+  "total_record_count": 4,
+  "source_url_time_metadata_parity": "PASS",
+  "raw_overwrite_reject": "PASS",
+  "secret_value_exposure_count": 0,
+  "semantic_transformation_count": 0,
+  "d_canonical_db_write_count": 0,
+  "network_call_count": 0,
+  "actual_site_extraction": false,
+  "local_same_byte_reexecution": "PASS_24_OF_24",
+  "source_sha256": {
+    "raw_artifact_store.py": "95a4cf91d77f1ea9af1af2e5ddc631302c948acc4c50e11ad2240aaf189562aa",
+    "source_record_envelope.py": "c4efb53cb7214b2c645e4a3feeb76ed2b844f6570b05316bb43bccc744e2528d",
+    "test_raw_artifact_source_envelope.py": "4befa6c84fc2584c1bcdb0d9a14c4db90851c54ac2e3a29c1ccfe9a8d6a1f9e5"
+  },
+  "output_sha256": {
+    "RAW_ARTIFACT_MANIFEST_V1.json": "9059a443c88103cf1472b50617e61097b29ad8e118825485c2a1d68ccf748a97",
+    "SOURCE_RECORD_ENVELOPE_V1.json": "9889c83d72f6ecca84714509493552b8a9bfa304917275cb779ddb0ecb3aa0ba",
+    "REQUEST_SUMMARY_V1.json": "2fbbaf341dbf6f2737d4abd355a9bf45cbcbeb25cd13c3d69a524d87700d7e0d",
+    "B4_READBACK_RECEIPT_V1.json": "854f491cc50a5f54c9f80ba6162b3ee7e09b2908f14aee48c713cf08e53840aa"
+  },
+  "remote_git_blobs": {
+    "raw_page_001": "9d34c7e31534906f6d067214f7ddf31f8262c398",
+    "raw_page_002": "9b51ca590b05383ccf891e6ddb7c18cf56160d36",
+    "raw_artifact_store_source": "162d72d8cc76bf73956acedb445e307c10963a7a",
+    "source_record_envelope_source": "c2bcd4809c5cdec2f4602d5e4f8bb4ad7f1e8e86",
+    "test_source": "3937bbf161bb2eda15907d8c3045399ba6bed730",
+    "raw_artifact_manifest": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+    "source_record_envelope": "0148a841344ce5a0df03e55df532871106dd7333",
+    "request_summary": "50d0457a42a72e1b4e1c964ffc65f9e13f61b21d",
+    "readback_receipt": "f4fdab98c6e20d94be90027893e8a63ab1618e03"
+  },
+  "remote_readback": "PASS_9_OF_9",
+  "github_actions_ci_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "result": "PASS"
+}
