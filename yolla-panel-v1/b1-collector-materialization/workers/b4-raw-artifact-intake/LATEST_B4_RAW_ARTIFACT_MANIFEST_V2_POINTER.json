@@ -1,0 +1,58 @@
+{
+  "schema_version": "LATEST_B4_RAW_ARTIFACT_MANIFEST_V2_POINTER_V1",
+  "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "task_id": "RAW_ARTIFACT_MANIFEST_V2",
+  "worker": "B-4",
+  "worker_pr": 40,
+  "branch": "worker/b4-raw-artifact-source-envelope-v1",
+  "updated_at_kst": "2026-08-06T05:03:00+09:00",
+  "status": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY",
+  "terminal_contract": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY_OR_EXACT_BLOCKER",
+  "terminal_result": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY",
+  "objects": {
+    "manifest_v2": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V2.json",
+      "blob": "24784bdd025d03968245bd5be83f47ac7ed5b750"
+    },
+    "schema": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/contracts/RAW_ARTIFACT_MANIFEST_V2.schema.json",
+      "blob": "ae37701bde15ef5f299706de51baa38d369b003f"
+    },
+    "validator": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/src/raw_artifact_manifest_v2.py",
+      "blob": "35ac3a00319c499d35b7bc944cc229aba60f1473"
+    },
+    "tests": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/tests/test_raw_artifact_manifest_v2.py",
+      "blob": "bfc4d297b0d20f139981407fb6242cf046cfdc72",
+      "result": "PASS_35_OF_35"
+    },
+    "test_results": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_RAW_ARTIFACT_MANIFEST_V2_TEST_RESULTS.json",
+      "blob": "ee522ff08d70ed95019e03f8fc53b97a08c289a3"
+    },
+    "readback_receipt": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_RAW_ARTIFACT_MANIFEST_V2_READBACK_RECEIPT.json",
+      "blob": "608a9151ce0670ec0e4af5e955860d9817532b54",
+      "result": "PASS_7_OF_7"
+    },
+    "final_report": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_RAW_ARTIFACT_MANIFEST_V2_FINAL_REPORT.json",
+      "commit": "e7bb8e12a44ffc88b073682198483fdf02290600",
+      "blob": "bc2810e62138b7b2fb50c3741722c1be2c0d5730"
+    }
+  },
+  "artifact_count": 2,
+  "total_record_count": 4,
+  "actual_site_mime_sha_observation": "NOT_OBSERVED",
+  "raw_overwrite": false,
+  "secret_storage": false,
+  "personal_data_promotion": false,
+  "actual_site_extraction": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "next_event": "B5_RESUME_AFTER_B2_AND_B4",
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}
