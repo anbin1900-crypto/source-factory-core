@@ -1,52 +1,151 @@
 from __future__ import annotations
-import hashlib,json,re
+import hashlib
+import json
+import re
 from pathlib import Path
-SHA=re.compile(r"^[0-9a-f]{64}$"); BLOB=re.compile(r"^[0-9a-f]{40}$"); MIME=re.compile(r"^[a-z0-9.+-]+/[a-z0-9.+-]+$")
-class ManifestValidationError(ValueError): pass
-def req(ok,msg):
-    if not ok: raise ManifestValidationError(msg)
-def load(path): return json.loads(Path(path).read_text(encoding="utf-8"))
-def digest(data): return hashlib.sha256(data).hexdigest()
-def secret_keys(v):
-    out=[]
-    if isinstance(v,dict):
-        for k,x in v.items():
-            if re.search(r"(api.?key|token|password|credential|secret)",str(k),re.I) and k not in {"credential_reference","secret_storage"}: out.append(k)
-            out+=secret_keys(x)
-    elif isinstance(v,list):
-        for x in v: out+=secret_keys(x)
-    return out
-def validate_entry(e,root):
-    fields="artifact_native_key storage_pointer mime_type byte_size sha256 official_source_url captured_at locator redaction_status personal_data_status personal_data_review record_count immutability raw_overwrite secret_storage observation".split()
-    req(all(k in e for k in fields),"missing field")
-    req(e["mime_type"]=="application/json" and MIME.fullmatch(e["mime_type"]),"mime")
-    req(isinstance(e["byte_size"],int) and e["byte_size"]>0,"size"); req(SHA.fullmatch(e["sha256"]),"sha")
-    req(e["official_source_url"].startswith("https://"),"url"); req(e["immutability"]=="APPEND_ONLY_NO_OVERWRITE","immutable")
-    req(e["raw_overwrite"] is False and e["secret_storage"] is False,"write/secret")
-    req(e["personal_data_status"] in {"ALLOW","DENY","REVIEW"},"pii")
-    req(e["personal_data_review"]["classification"]==e["personal_data_status"] and e["personal_data_review"]["personal_data_promotion"] is False,"pii review")
-    o=e["observation"]; req(o["fixture_bytes_observed"] is True and o["actual_site_response_observed"] is False,"observation")
-    req(o["actual_site_mime_type"]=="NOT_OBSERVED" and o["actual_site_sha256"]=="NOT_OBSERVED","promotion")
-    loc=e["locator"]; req(BLOB.fullmatch(loc["blob_sha"]) and BLOB.fullmatch(loc["ref"]) and loc["byte_scope"]=="EXACT_GIT_BLOB_BYTES","locator")
-    req(o["evidence_pointer"]==loc,"evidence")
-    marker="yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/"
-    req(loc["path"].startswith(marker),"owned path"); p=root/loc["path"][len(marker):]
-    req(p.is_file(),"raw missing"); b=p.read_bytes(); req(len(b)==e["byte_size"] and digest(b)==e["sha256"],"byte parity")
-    obj=json.loads(b.decode()); req(len(obj.get("records",[]))==e["record_count"] and not secret_keys(obj),"record/secret")
-def validate_manifest(m,root):
-    req(m["schema_version"]=="RAW_ARTIFACT_MANIFEST_V2" and m["task_id"]=="RAW_ARTIFACT_MANIFEST_V2","identity")
-    req(m["directive_comment_id"]==5196652743,"directive")
-    a=m["source_v1_authority"]; req(a["head"]=="6dfe697363a69f83797775aa549f34614aa3748a" and a["manifest_blob"]=="bca1029b2587b4c78f6fdd78df6c9b95031addb1" and a["raw_bytes_modified"] is False,"v1 authority")
-    es=m["entries"]; req(m["artifact_count"]==len(es)==2 and len({x["artifact_native_key"] for x in es})==2,"artifact count")
-    for e in es: validate_entry(e,root)
-    req(m["total_record_count"]==sum(x["record_count"] for x in es)==4,"record count")
-    b=m["boundaries"]
-    for k in "raw_overwrite secret_storage personal_data_promotion actual_site_extraction d_canonical_db_write production ready merge".split(): req(b[k] is False,k)
-    req(b["semantic_transformation_count"]==0,"semantic")
-    return {"result":"PASS","artifact_count":2,"total_record_count":4}
-def validate_root(root):
-    root=Path(root); return validate_manifest(load(root/"RAW_ARTIFACT_MANIFEST_V2.json"),root)
-if __name__=="__main__":
+from typing import Any
+
+SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
+BLOB_RE = re.compile(r"^[0-9a-f]{40}$")
+FORBIDDEN_SECRET_KEYS = re.compile(r"(phone|telephone|mobile|person_name|account_id|cookie|token|password|api.?key|secret)", re.I)
+
+class ManifestValidationError(ValueError):
+    pass
+
+def require(condition: bool, message: str) -> None:
+    if not condition:
+        raise ManifestValidationError(message)
+
+def load_json(path: Path) -> dict[str, Any]:
+    value = json.loads(path.read_text(encoding="utf-8"))
+    require(isinstance(value, dict), f"{path}: object required")
+    return value
+
+def sha256_bytes(value: bytes) -> str:
+    return hashlib.sha256(value).hexdigest()
+
+def forbidden_key_paths(value: Any, path: str = "$") -> list[str]:
+    hits: list[str] = []
+    if isinstance(value, dict):
+        for key, child in value.items():
+            child_path = f"{path}.{key}"
+            if FORBIDDEN_SECRET_KEYS.search(str(key)):
+                hits.append(child_path)
+            hits.extend(forbidden_key_paths(child, child_path))
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            hits.extend(forbidden_key_paths(child, f"{path}[{index}]"))
+    return hits
+
+def validate_entry(entry: dict[str, Any], root: Path) -> None:
+    required = [
+        "artifact_native_key", "source_key", "official_source_url", "route_template",
+        "locator", "captured_at", "storage_pointer", "mime_type", "byte_size",
+        "sha256", "raw_or_redacted", "redaction_status", "personal_data_status",
+        "secret_status", "immutability_status", "source_receipt_pointer",
+    ]
+    require(all(field in entry for field in required), "required artifact field missing")
+    require(entry["source_key"] == "PENDING_AUTHORITY", "source_key must await authority")
+    require(entry["official_source_url"] == "PENDING_AUTHORITY", "official URL must await authority")
+    require(entry["route_template"] == "https://fixture.invalid/listings?page={page}", "route template")
+    require(entry["route_template_status"] == "FIXTURE_VERIFIED_FROM_REQUEST_SUMMARY", "route evidence")
+    require(entry["mime_type"] == "application/json", "fixture MIME")
+    require(entry["mime_type_scope"] == "FIXTURE_BYTE_VERIFIED", "MIME scope")
+    require(entry["expected_mime_type"] == "application/json", "expected MIME")
+    require(entry["observed_mime_type"] == "NOT_OBSERVED", "actual MIME not observed")
+    require(entry["raw_or_redacted"] == "RAW", "raw/redacted")
+    require(entry["redaction_status"] == "NOT_APPLICABLE", "redaction")
+    require(entry["personal_data_status"] == "NOT_APPLICABLE", "personal data")
+    require(entry["secret_status"] == "NOT_APPLICABLE", "secret status")
+    require(entry["immutability_status"] == "IMMUTABLE_GIT_BLOB_VERIFIED", "immutability")
+    require(entry["byte_size"] > 0, "byte size")
+    require(bool(SHA256_RE.fullmatch(entry["sha256"])), "SHA-256")
+    require(entry["storage_pointer"].startswith("github://"), "storage pointer")
+
+    locator = entry["locator"]
+    require(locator["repository"] == "anbin1900-crypto/source-factory-core", "locator repo")
+    require(locator["ref"] == "6dfe697363a69f83797775aa549f34614aa3748a", "locator ref")
+    require(bool(BLOB_RE.fullmatch(locator["blob_sha"])), "locator blob")
+    require(locator["byte_scope"] == "EXACT_GIT_BLOB_BYTES", "byte scope")
+
+    prefix = "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/"
+    require(locator["path"].startswith(prefix), "owned raw path")
+    raw_path = root / locator["path"][len(prefix):]
+    require(raw_path.is_file(), "raw byte file missing")
+    raw_bytes = raw_path.read_bytes()
+    require(len(raw_bytes) == entry["byte_size"], "byte size mismatch")
+    require(sha256_bytes(raw_bytes) == entry["sha256"], "hash mismatch")
+    payload = json.loads(raw_bytes.decode("utf-8"))
+    require(len(payload.get("records", [])) == entry["record_count"], "record count")
+    require(forbidden_key_paths(payload) == [], "unauthorized personal/secret metadata")
+
+    receipt = entry["source_receipt_pointer"]
+    require(receipt["blob_sha"] == "f4fdab98c6e20d94be90027893e8a63ab1618e03", "receipt blob")
+    require(receipt["request_summary_blob_sha"] == "50d0457a42a72e1b4e1c964ffc65f9e13f61b21d", "request summary blob")
+
+    metadata = entry["metadata_status"]
+    require(metadata == {
+        "source_key": "PENDING_AUTHORITY",
+        "official_source_url": "PENDING_AUTHORITY",
+        "observed_mime_type": "NOT_OBSERVED",
+        "invented_metadata": "FORBIDDEN",
+    }, "metadata status")
+
+def validate_manifest(manifest: dict[str, Any], root: Path) -> dict[str, Any]:
+    require(manifest["schema_version"] == "RAW_ARTIFACT_MANIFEST_V2", "schema version")
+    require(manifest["task_id"] == "RAW_ARTIFACT_MANIFEST_V2", "task id")
+    require(manifest["directive_comment"] == 5196652743, "directive comment")
+    require(manifest["current_remote_head_baseline"] == "6dfe697363a69f83797775aa549f34614aa3748a", "baseline")
+    require(manifest["manifest_mode"] == "FIXTURE_BYTE_VERIFIED_D_INTAKE_PREPARATION", "mode")
+    entries = manifest["entries"]
+    require(len(entries) == manifest["artifact_count"] == 2, "artifact count")
+    require(len({entry["artifact_native_key"] for entry in entries}) == 2, "duplicate artifact key")
+    for entry in entries:
+        validate_entry(entry, root)
+    require(sum(entry["record_count"] for entry in entries) == manifest["total_record_count"] == 4, "total records")
+
+    counters = manifest["validation_counters"]
+    required_counters = [
+        "RAW_OVERWRITE_COUNT", "HASH_MISMATCH_COUNT", "SIZE_MISMATCH_COUNT",
+        "SECRET_VALUE_STORAGE_COUNT", "UNAUTHORIZED_PERSONAL_DATA_COUNT",
+        "INVENTED_METADATA_COUNT", "SOURCE_FIELD_LOSS_COUNT",
+    ]
+    require(all(counters[name] == 0 for name in required_counters), "non-zero required counter")
+    boundaries = manifest["boundaries"]
+    require(all(boundaries[name] is False for name in boundaries), "boundary must be false")
+    return {
+        "result": "PASS",
+        "artifact_count": 2,
+        "total_record_count": 4,
+        **counters,
+    }
+
+def validate_fixture(fixture: dict[str, Any], manifest: dict[str, Any]) -> None:
+    require(fixture["schema_version"] == "B4_RAW_ARTIFACT_MANIFEST_V2_FIXTURE_V1", "fixture schema")
+    require(fixture["task_id"] == manifest["task_id"], "fixture task")
+    require(fixture["expected_terminal"] == "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY", "fixture terminal")
+    require(fixture["expected_validation_counters"] == manifest["validation_counters"], "fixture counters")
+    expected = fixture["fixture_byte_authority"]
+    require(len(expected) == 2, "fixture byte count")
+    by_key = {entry["artifact_native_key"]: entry for entry in manifest["entries"]}
+    for item in expected:
+        entry = by_key[item["artifact_native_key"]]
+        require(item["blob_sha"] == entry["locator"]["blob_sha"], "fixture blob")
+        require(item["byte_size"] == entry["byte_size"], "fixture size")
+        require(item["sha256"] == entry["sha256"], "fixture SHA")
+        require(item["record_count"] == entry["record_count"], "fixture records")
+
+def validate_root(root: Path) -> dict[str, Any]:
+    root = Path(root)
+    manifest = load_json(root / "RAW_ARTIFACT_MANIFEST_V2.json")
+    fixture = load_json(root / "B4_RAW_ARTIFACT_MANIFEST_V2_FIXTURE_V1.json")
+    result = validate_manifest(manifest, root)
+    validate_fixture(fixture, manifest)
+    return result
+
+if __name__ == "__main__":
     import argparse
-    p=argparse.ArgumentParser(); p.add_argument("--root",type=Path,default=Path(__file__).resolve().parents[1]); a=p.parse_args()
-    print(json.dumps(validate_root(a.root),sort_keys=True))
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
+    args = parser.parse_args()
+    print(json.dumps(validate_root(args.root), ensure_ascii=False, sort_keys=True))
