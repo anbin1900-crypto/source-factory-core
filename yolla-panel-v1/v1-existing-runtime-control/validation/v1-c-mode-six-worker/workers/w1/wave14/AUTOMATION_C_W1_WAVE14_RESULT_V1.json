@@ -1,0 +1,78 @@
+{
+  "schema_version": "AUTOMATION_C_W1_WAVE14_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-014",
+  "registry_sequence": 14,
+  "command_id": "C6W-W14-W1-AUTHORITY-CORRECT-BASELINE-OVERLAY-MAP-V2",
+  "role": "AUTOMATION-C-W1",
+  "directive_comment": 5196497295,
+  "result_key": "519649729500",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc6",
+  "outcome": "BLOCKED",
+  "terminal": "C6W_W14_W1_AUTHORITY_CORRECT_OVERLAY_MAP_BLOCKED_EXACT",
+  "exact_blocker": "BLOCKED_PENDING_LAUNCHER_READBACK_OR_EXPLICIT_VALIDATED_BASE_RELEASE_PARAMETER",
+  "reason": "The exact authority launcher path is known, but its bytes and resolved baseline release path were not available. The directive forbids guessing the BaseReleasePath and forbids PASS while this value is unresolved.",
+  "artifacts": {
+    "authority_correct_overlay_map": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave14/AUTHORITY_CORRECT_BASELINE_OVERLAY_MAP_V2.json",
+      "commit": "3b48578d67b3ab28aae16347b38cb9c9367d3847",
+      "sha256": "9d7cd8e25e75954a2a7e665afc0a14f605a84835d63137d9ff9ca3c867926b3f"
+    },
+    "base_release_and_renderer_load_hook_contract": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave14/BASE_RELEASE_AND_RENDERER_LOAD_HOOK_CONTRACT_V2.json",
+      "commit": "5b7fa852aac6ed4542927dec99b5a87d9631526d",
+      "sha256": "c2494bdf55a7c60b589a06ac67376a53068b5cfb49c5a6decddc2478ff302e77"
+    },
+    "validator": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave14/validate_wave14_authority_overlay_map.cjs",
+      "commit": "360913385c7325d78bad61925462019d09599d76",
+      "sha256": "fb3446aadae544c13207a570ca5f5a58b89ca1685b45b46f2ddceb47414ff055",
+      "execution": "PASS_258_ASSERTIONS"
+    }
+  },
+  "authority_readback": {
+    "state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2",
+    "release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases",
+    "browser_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "worker_partition": "persist:sf4-safe-panel-worker-1",
+    "analysis_partition": "persist:yolla-analysis-browser-v1",
+    "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_3_7.bat",
+    "candidate_release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc6"
+  },
+  "assertions": {
+    "exact_source_member_count": 17,
+    "commit_path_blob_sha256_size_complete": "17/17",
+    "base_release_clone_before_overlay": true,
+    "base_release_path_guessed": false,
+    "base_release_path_resolved": false,
+    "renderer_load_hook_count": 3,
+    "renderer_targets": ["workspace_preload.js", "workspace.html"],
+    "old_rc4_installer_execution_allowed": false,
+    "validator_assertion_count": 258
+  },
+  "handoff": {
+    "integration_owner": "AUTOMATION-C-W5",
+    "resume_condition": "Provide exact launcher byte readback or an explicit BaseReleasePath validated under E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases and matching baseline version 5.10.2.4.0.",
+    "required_sequence": [
+      "resolve base release without guessing",
+      "clone complete baseline release recursively",
+      "verify pre-overlay baseline members and tree receipt",
+      "overlay exact 17 locked source members",
+      "apply deterministic preload and renderer hooks",
+      "run exact hash and full component smoke",
+      "switch launcher only after PASS"
+    ]
+  },
+  "scope_truth": {
+    "map_contract_validation_pass": true,
+    "deployment_ready": false,
+    "candidate_build_pass_claimed": false,
+    "windows_install_executed": false,
+    "target_pc_pass_claimed": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-06T05:01:48+09:00"
+}
