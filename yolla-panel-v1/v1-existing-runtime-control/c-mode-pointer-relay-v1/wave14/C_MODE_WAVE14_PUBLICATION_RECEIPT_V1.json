@@ -1,0 +1,95 @@
+{
+  "schema_version": "C_MODE_WAVE14_PUBLICATION_RECEIPT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-014",
+  "registry_sequence": 14,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "directive": {
+    "md_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave14/C_MODE_WAVE13_REVIEW_AND_WAVE14_DIRECTIVE_V1.md",
+    "md_commit": "1791bcb33975e0feccac5d0d0b24171c1ad8594e",
+    "json_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave14/C_MODE_WAVE13_REVIEW_AND_WAVE14_DIRECTIVE_V1.json",
+    "json_commit": "0e6496014bf305be33140bd174aa2591e17eb533"
+  },
+  "registry_comment": 5196538398,
+  "worker_bindings": {
+    "AUTOMATION-C-W1": {
+      "pr": 59,
+      "directive_comment": 5196497295,
+      "result_key": "519649729500",
+      "command_id": "C6W-W14-W1-AUTHORITY-CORRECT-BASELINE-OVERLAY-MAP-V2"
+    },
+    "AUTOMATION-C-W2": {
+      "pr": 60,
+      "directive_comment": 5196501537,
+      "result_key": "519650153700",
+      "command_id": "C6W-W14-W2-RC5-FALSE-POSITIVE-RC6-ACCEPTANCE-GATE"
+    },
+    "AUTOMATION-C-W3": {
+      "pr": 61,
+      "directive_comment": 5196505437,
+      "result_key": "519650543700",
+      "command_id": "C6W-W14-W3-AUTHORITY-CORRECT-UI-LOAD-HOOK-OVERLAY"
+    },
+    "AUTOMATION-C-W4": {
+      "pr": 62,
+      "directive_comment": 5196509441,
+      "result_key": "519650944100",
+      "command_id": "C6W-W14-W4-RC5-REJECTION-RC6-OFFLINE-ACCEPTANCE"
+    },
+    "AUTOMATION-C-W5": {
+      "pr": 63,
+      "directive_comment": 5196513835,
+      "result_key": "519651383500",
+      "command_id": "C6W-W14-W5-EXACT-SOURCE-BASELINE-OVERLAY-RC6",
+      "integration_owner": true
+    }
+  },
+  "carryover": {
+    "role": "AUTOMATION-C-W6",
+    "pr": 64,
+    "wave_id": "V1-C-MODE-6W-WAVE-013",
+    "directive_comment": 5196068428,
+    "result_key": "519606842800",
+    "report_request_comment": 5196491929,
+    "report_request_count": 1,
+    "replacement_threshold": 4,
+    "new_wave14_directive": false
+  },
+  "wave13_results": {
+    "reported": 5,
+    "missing": 1,
+    "duplicate_result": 0,
+    "result_comments": {
+      "AUTOMATION-C-W1": 5196402486,
+      "AUTOMATION-C-W2": 5196298739,
+      "AUTOMATION-C-W3": 5196320722,
+      "AUTOMATION-C-W4": 5196270579,
+      "AUTOMATION-C-W5": 5196292106,
+      "AUTOMATION-C-W6": null
+    }
+  },
+  "critical_findings": {
+    "w1_authority_mismatch": true,
+    "w5_rc5_stub_payload_12_of_17": true,
+    "rc5_installable_runtime": false,
+    "target_pc_pass": "PENDING"
+  },
+  "authority": {
+    "state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2",
+    "release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases",
+    "browser_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "worker_partition": "persist:sf4-safe-panel-worker-1",
+    "analysis_partition": "persist:yolla-analysis-browser-v1",
+    "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_3_7.bat"
+  },
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc6",
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "current_progress_percent": 96,
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
