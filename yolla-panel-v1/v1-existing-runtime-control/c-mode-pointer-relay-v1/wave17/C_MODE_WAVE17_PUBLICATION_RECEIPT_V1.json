@@ -1,0 +1,48 @@
+{
+  "schema_version": "C_MODE_WAVE17_PUBLICATION_RECEIPT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-017",
+  "registry_sequence": 17,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "directive": {
+    "md_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave17/C_MODE_WAVE16_REVIEW_AND_WAVE17_DIRECTIVE_V1.md",
+    "md_commit": "c5890984ae6d9009848175b83495b276c441afea",
+    "json_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave17/C_MODE_WAVE16_REVIEW_AND_WAVE17_DIRECTIVE_V1.json",
+    "json_commit": "0e272762cf140b8e4907cd878a6af26c67b6659b"
+  },
+  "registry_comment": 5198530009,
+  "worker_bindings": {
+    "AUTOMATION-C-W1": {"pr": 59, "directive_comment": 5198507579, "result_key": "519850757900", "command_id": "C6W-W17-W1-RC8-EXACT-RESOLVER-INTEGRATION"},
+    "AUTOMATION-C-W2": {"pr": 60, "directive_comment": 5198509366, "result_key": "519850936600", "command_id": "C6W-W17-W2-RC8-ACTUAL-ARTIFACT-GATE-V2"},
+    "AUTOMATION-C-W3": {"pr": 61, "directive_comment": 5198511606, "result_key": "519851160600", "command_id": "C6W-W17-W3-RC8-EXACT-UI-HOOK-BUNDLE-V2"},
+    "AUTOMATION-C-W4": {"pr": 62, "directive_comment": 5198513106, "result_key": "519851310600", "command_id": "C6W-W17-W4-RC8-FULL-OFFLINE-ACCEPTANCE-RUNNER-V2"},
+    "AUTOMATION-C-W5": {"pr": 63, "directive_comment": 5198514990, "result_key": "519851499000", "command_id": "C6W-W17-W5-ACTUAL-INSTALLABLE-RC8", "integration_owner": true},
+    "AUTOMATION-C-W6": {"pr": 64, "directive_comment": 5198516800, "result_key": "519851680000", "command_id": "C6W-W17-W6-INDEPENDENT-RC8-AUDIT-PREPARATION", "implementation_direct_edit": false}
+  },
+  "wave16_review": {
+    "assigned": 6,
+    "authoritative_results": 5,
+    "missing_role": "AUTOMATION-C-W6",
+    "wave16_single_control_registry": null,
+    "rc7_result_commit": "6862d0fbbd82d17f708330aa1f71cd49565ecad4",
+    "rc7_artifact_head": "854c3d928e17a30a124b2aab294ff5a9d781a252",
+    "rc7_technical_acceptance": "HOLD"
+  },
+  "dispatch_contract": {
+    "mode": "CYCLE_BATCH_PARALLEL",
+    "worker_count": 6,
+    "all_rows_valid_before_any_dispatch": true,
+    "partial_dispatch": false,
+    "same_sequence_duplicate": "FAIL_CLOSED"
+  },
+  "target_version": "5.10.2.4.2-rc8",
+  "current_progress_percent": 96,
+  "target_pc_install_authorized": false,
+  "target_pc_pass": "PENDING",
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
