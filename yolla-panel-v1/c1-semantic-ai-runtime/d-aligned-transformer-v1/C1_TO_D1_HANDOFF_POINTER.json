@@ -1,121 +1,80 @@
 {
-  "schema_version": "C1_TO_D1_HANDOFF_POINTER_V3",
-  "pointer_id": "C1-TO-D1-D-ALIGNED-TRANSFORMER-HANDOFF-POINTER-20260805-003",
-  "registered_at_kst": "2026-08-05T17:09:00+09:00",
+  "schema_version": "C1_TO_D1_HANDOFF_POINTER_V4",
+  "pointer_id": "C1-TO-D1-D-INTEGRATION-CONTRACT-SET-HANDOFF-POINTER-20260806-001",
+  "registered_at_kst": "2026-08-06T05:03:00+09:00",
   "producer": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
   "consumer": "D-1_KNOWLEDGE_DB_AUTHORITY_COMMANDER",
-  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
-  "previous_pointer_blob": "2889520691894a790cf9713d669fc6e3fb386dcc",
+  "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "task": "C2_TO_C6_D_INTEGRATION_RESULT_INTEGRATION",
+  "directive_comment_id": 5196655145,
+  "previous_pointer_blob": "0265e2bd145c374277321b6d98bfda1a5d04bf02",
   "source_authority": {
     "repository": "anbin1900-crypto/source-factory-core",
     "control_pr": 20,
     "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1"
   },
-  "b1_accepted_handoff": {
-    "control_pr": 19,
-    "head": "b452cff27ff9088eb3754a8cc35c05af340339ec",
-    "latest_pointer_blob": "10e715ddef42b7843c0b49a9b35e2475fee6c42f",
-    "extraction_result_pointer_blob": "cbfcb28741ff3a8d1e4ff0f4006c7fc996d73c0f",
-    "handoff_pointer_blob": "932904cede5bcfb239a62952173f82147b0b0f26",
-    "b6_pointer_blob": "448fbfb07321f3cabae4a25649feee90e46ba106",
-    "handoff_candidate_blob": "01c4c2175b30314538494ed5694668005769635a",
-    "classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE",
-    "content_delta_from_prior_c1_input": false,
-    "status": "ACKNOWLEDGED_CONSUMED"
-  },
-  "b1_handoff_ack": {
-    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/reports/C1_B1_ACCEPTED_FIXTURE_HANDOFF_ACK_V1.json",
-    "commit": "c8ea192fa2d6f8e69b3a171a7777efb950fc36f6",
-    "blob": "b24f72ad6480280ac9a17480b0adb001452f8016"
-  },
   "target_authority": {
     "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
     "control_pr": 188,
-    "head": "1bb475c440983aae761b897a3b58a8f4dab880cc",
-    "schema_profile_blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+    "head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
     "mapping_contract_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
-    "validation_ruleset_blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
-    "acceptance_receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
-    "readback": "PASS_4_OF_4"
+    "mapping_version": "1.0.0",
+    "c002_to_c016_rule_coverage": "PASS_15_OF_15"
   },
-  "transformation_result_pointer": {
-    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_TRANSFORMATION_RESULT_POINTER.json",
-    "commit": "7eb88e792578f6d21f0f3473cf996e1ecb2a3176",
-    "blob": "2e5fca1afc7a6ee6148f76bd4b385866f8d3b3fa"
+  "commander_report": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D_INTEGRATION_CONTRACT_SET_REPORT_V1.json",
+    "commit": "ca9d716fcac296bcdb28ea2b8e2325248b90a5cc",
+    "blob": "059c573caa3bb8f42823612520d272861f842a53"
   },
-  "worker_gate": {
-    "status": "PASS_4_OF_4",
-    "C-2_POINTER_BLOB": "a4bc27b8e24dbadf668db5da21cacda0a866284a",
-    "C-3_POINTER_BLOB": "344cd19f110c825ac3ac6cdc6c2b70571eae3a55",
-    "C-4_POINTER_BLOB": "1779b1f6fbfcba913859850fec0c69f533154da3",
-    "C-5_POINTER_BLOB": "c86cf94f2ad858602ef06c88a4f29f4813814c41",
-    "C-6_POINTER_BLOB": "77039ddf47c4e640335e0464b477f260eb84b94f"
+  "latest_contract_set_pointer": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/LATEST_C1_D_INTEGRATION_CONTRACT_SET_POINTER.json",
+    "commit": "726a4dc605e8dd98714c5c9bb18d059f3957dc2f",
+    "blob": "8609a66b9ac1250458a4d49ad4229a16d5335874"
   },
-  "handoff_packages": {
-    "D_ALIGNED_TRANSFORMATION_PACKAGE_V1": {
-      "blob": "b763db81fee8a4b43566f1e13e9c23b72659458a"
-    },
-    "FIELD_MAPPING_REPORT_V1": {
-      "blob": "d6e8eb45532ba6b4e290593b35924c3fb3e06aa1"
-    },
-    "REJECTED_RECORD_BUNDLE_V1": {
-      "blob": "c17f85fd86deb6812ec327da2d89e6b129dfae69"
-    },
-    "KNOWLEDGE_CANDIDATE_BUNDLE_V1": {
-      "blob": "9a6fd20c6228fc641167fbd7667e77abf2b53ecf",
-      "candidate_count": 0
-    },
-    "C5_PR188_PACKAGE_VALIDATION_RESULT_V2": {
-      "blob": "b472a3816161d7322b739f20eb18876643d96195"
-    },
-    "REJECTED_RECORD_BUNDLE_V2": {
-      "blob": "9056ea53e9d4e66e3a37c308da79223bcfa06c0f"
-    },
-    "KNOWLEDGE_ACCEPTANCE_RECEIPT_CANDIDATE_V1": {
-      "blob": "8084d33b4dc98d1537a5e431e0de99ec944b62d1",
-      "authority_receipt_issued": false
-    }
+  "worker_result_gate": {
+    "status": "PASS_OR_EXPECTED_BLOCKER_5_OF_5",
+    "C-2_POINTER_BLOB": "61d0255327a2f507f50d0eee2c9b2d5814054748",
+    "C-3_POINTER_BLOB": "62516877339ec3b9ecab014bd4d6f8617a020c31",
+    "C-4_POINTER_BLOB": "a4229ecdb70876117141441a2d8e67895157471c",
+    "C-5_POINTER_BLOB": "750c315749ae03f9b7ef76f85b7100a1edee3d92",
+    "C-6_POINTER_BLOB": "91331b918a3d0be0d96f53a3861d148c604194ab"
   },
-  "package_result": {
-    "package_id": "C4-WAVE2-D-ALIGNED-PACKAGE-20260805-001",
-    "package_sha256": "1e37df56f7300f427c3027f5e83bfe332aa98f37464dc82a6fe374c4982ea8fb",
-    "package_decision": "REJECTED",
-    "accepted_count": 0,
-    "rejected_count": 28,
-    "pending_count": 44,
-    "candidate_count": 0
+  "integration_contract_set": {
+    "fragment_locator_contract_blob": "4e7a6569c700864f016d050f5ced7c514511b390",
+    "required_path_closure_matrix_v2_blob": "9283857227aebb59679e11bfc4ddb736ac55e188",
+    "d1_mapping_addendum_request_blob": "40c21a62fb2af9654e4d1ccb79a744ab68852edc",
+    "knowledge_candidate_bundle_v2_blob": "8c5ecfb8114330ca86ce9d0b50a971fd5b99037f",
+    "d_release_query_citation_consumer_contract_blob": "0c617b519b3202cd4f9d6e37adf200b19c7c2516",
+    "d_dual_receipt_e2e_contract_blob": "e3f9bcbe2078c91a3bf3e2e6e8967b3a3c6eb237",
+    "status": "READY"
   },
-  "handoff_decision": "BLOCKED_NOT_SENT_FAIL_CLOSED",
-  "first_blocker": "PR188_REQUIRED_SOURCE_PATHS_MISSING_22",
-  "first_blocker_detail": {
-    "rule_id": "B001",
-    "source_path": "package.source_id",
-    "target": "SOURCE.source_id",
-    "resolution_owner": "B-1_OR_D-1_AUTHORITY_DELTA",
-    "failure_signature": "B1_PACKAGE_SOURCE_ID_NOT_PUBLISHED"
+  "b_authority": {
+    "head": "fded2aa3f24bd7e6eaa8aedeafa7d2e6a4e2dc04",
+    "handoff_pointer_blob": "932904cede5bcfb239a62952173f82147b0b0f26",
+    "classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE",
+    "content_byte_delta": false
   },
-  "superseded_blockers": [
-    "D1_REQUIRED_SCHEMA_MAPPING_VALIDATION_CONTRACT_SET_NOT_PUBLISHED",
-    "B1_NORMALIZED_DATASET_OR_RAW_ARTIFACT_MANIFEST_NOT_PUBLISHED",
-    "B1_TO_C1_HANDOFF_NOT_PUBLISHED_WAITING_B6_INDEPENDENT_ACCEPTANCE"
+  "handoff_decision": "CONTRACT_SET_READY_NOT_SENT_WAITING_B_OR_D_DELTA",
+  "waiting_conditions": [
+    "B_CONTENT_BYTE_DELTA",
+    "D1_FRAGMENT_CONTRACT_RECONCILIATION_OR_CANONICAL_FRAGMENT_BINDING",
+    "D1_B001_SOURCE_KEY_TO_SOURCE_ID_MAPPING_ADDENDUM",
+    "D1_B014_SOURCE_SHA256_RECORD_HASH_EQUIVALENCE_ADDENDUM",
+    "D1_ACTUAL_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT",
+    "D1_ACTUAL_KNOWLEDGE_CANDIDATE_ACCEPTANCE_RECEIPT",
+    "D1_KNOWLEDGE_RELEASE_V1"
   ],
-  "reason": "B-1 fixture inputs are now independently accepted by B-6 and formally handed off to C-1 without any content-byte change. The existing C package remains rejected fail-closed because 22 PR188 required source paths are still absent, so no D submission or D authority receipt is issued.",
-  "resume_requires": [
-    "B1_OR_D1_AUTHORITY_CONTENT_DELTA_RESOLVES_REQUIRED_SOURCE_PATHS_22",
-    "C3_INCREMENTAL_CROSSWALK_REVALIDATION",
-    "C4_INCREMENTAL_PACKAGE_REASSEMBLY",
-    "C5_PR188_INCREMENTAL_REVALIDATION",
-    "C6_FINAL_E2E_INCREMENTAL_REVALIDATION"
-  ],
-  "c2_to_c6_reexecution_required_now": false,
-  "fixture_or_contract_sent_as_d_data": false,
+  "candidate_count": 0,
   "actual_d_handoff_performed": false,
+  "actual_d_acceptance_receipt_issued": false,
+  "knowledge_release_v1_published": false,
+  "semantic_duplicate_reexecution": false,
+  "decision": "READY_WAITING_B_OR_D_DELTA",
+  "terminal": "C1_D_INTEGRATION_CONTRACT_SET_READY_WAITING_B_OR_D_DELTA_OR_EXACT_BLOCKER",
   "d_acceptance_claimed": false,
   "d_canonical_db_write": false,
   "production": false,
   "ready": false,
   "merge": false,
-  "terminal": "C1_D_ALIGNED_TRANSFORMER_READY_OR_EXACT_BLOCKER",
-  "terminal_decision": "EXACT_EXTERNAL_BLOCKER",
-  "status": "C1_TO_D1_HANDOFF_BLOCKED_REQUIRED_SOURCE_PATHS_22_B1_HANDOFF_AUTHORITY_ACCEPTED"
+  "status": "C1_TO_D1_D_INTEGRATION_CONTRACT_SET_READY_WAITING_B_OR_D_DELTA"
 }
