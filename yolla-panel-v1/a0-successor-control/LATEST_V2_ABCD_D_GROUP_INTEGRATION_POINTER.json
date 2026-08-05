@@ -1,55 +1,69 @@
 {
-  "schema_version": "LATEST_V2_ABCD_D_GROUP_INTEGRATION_POINTER_V1",
-  "pointer_id": "LATEST-V2-ABCD-D-GROUP-INTEGRATION-20260806-001",
-  "updated_at_kst": "2026-08-06T03:59:22+09:00",
+  "schema_version": "LATEST_V2_ABCD_D_GROUP_INTEGRATION_POINTER_V2",
+  "pointer_id": "LATEST-V2-ABCD-D-GROUP-INTEGRATION-20260806-002",
+  "updated_at_kst": "2026-08-06T04:52:15+09:00",
   "commander": "V-2_YOLLA_AI_SUPREME_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "batch": {
+  "previous_pointer_blob": "9b0eaba561ebe9d4975c2fa682418965326c3d78",
+  "parent_batch": {
     "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_INTEGRATION_WORKER_BATCH_V1.json",
     "commit": "8226ea11e96434aeab350a949965cd4188d65471",
-    "blob": "4d7565521bf5b1b5723d30a1f8bdb9ab82bbd7d6",
-    "remote_readback": "PASS"
+    "blob": "4d7565521bf5b1b5723d30a1f8bdb9ab82bbd7d6"
   },
-  "dispatch_receipt": {
-    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_INTEGRATION_DISPATCH_RECEIPT_V1.json",
-    "commit": "8ca63852c410e95788b7e9bab58d942606d9f0ce",
-    "blob": "151b4ccc90b3254b56c9389a9fc75d8311b170cd",
-    "remote_readback": "PASS"
+  "result_review": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_INTEGRATION_RESULT_REVIEW_V1.json",
+    "commit": "0b0c55fcf0114cd24174759a812c53b4c94b5882",
+    "status": "PASS_REVIEW_COMPLETE"
   },
-  "dispatch_accounting": {
-    "commander_control_comments": "PASS_6_OF_6",
-    "worker_directives": "PASS_20_OF_20",
-    "A": "PASS_5_OF_5",
-    "B": "PASS_5_OF_5",
-    "C": "PASS_5_OF_5",
-    "D": "PASS_5_OF_5",
-    "missing": 0
+  "followup_batch": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_INTEGRATION_FOLLOWUP_BATCH_V1.json",
+    "commit": "b076241eeee80f204a893eb07b6d28094048c331",
+    "status": "ACTIVE"
   },
-  "integration_owners": {
-    "A_handoff": "A-2",
-    "B_package_v2": "B-5",
-    "C_contract_and_incremental_transform": "C-1",
-    "D_canonical_authority": "D-1_PR188",
-    "cross_repository_bridge": "D-1_PR21"
+  "followup_dispatch": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_INTEGRATION_FOLLOWUP_DISPATCH_RECEIPT_V1.json",
+    "commit": "da0d6c08f0fe3b1e48d3ad2a495c41126012496f",
+    "status": "PASS_13_OF_13_COMMENTS"
   },
-  "lane_state": {
-    "A_TO_D_PREPARATION": "PARALLEL_ACTIVE_EXISTING_EVIDENCE_ONLY",
-    "B_TO_D_SOURCE_DOCUMENT": "PARALLEL_ACTIVE_PACKAGE_V2_PREPARATION",
-    "C_TO_D_KNOWLEDGE": "PARALLEL_ACTIVE_SCHEMA_VALIDATOR_PREPARATION_NO_RERUN",
-    "D_AUTHORITY_AND_INTAKE": "PARALLEL_ACTIVE_CONTRACT_RECEIPT_STAGING_AUDIT_PREPARATION"
+  "result_accounting": {
+    "assigned": 20,
+    "terminal_or_exact_blocker": 17,
+    "no_terminal": 3,
+    "no_terminal_workers": ["A-6", "B-2", "B-4"]
   },
-  "next_gates": [
-    "A2_D_INTEGRATION_HANDOFF_SET_READY_OR_EXACT_BLOCKER",
-    "B1_D_SOURCE_DOCUMENT_PACKAGE_V2_READY_OR_EXACT_BLOCKER",
-    "C1_D_INTEGRATION_CONTRACT_SET_READY_WAITING_CONTENT_DELTA_OR_EXACT_BLOCKER",
-    "D1_ABCD_INTEGRATION_AUTHORITY_AND_INTAKE_PROCEDURE_READY_OR_EXACT_BLOCKER",
-    "V2_REVIEW_TERMINALS_AND_ISSUE_NEXT_EVENT_BATCH"
+  "group_state": {
+    "A": "A3_A4_A5_PASS_A6_ACTIVE_A7_EVENT_WAIT_A2_EVENT_WAIT",
+    "B": "B3_PASS_B2_B4_ACTIVE_B5_B6_B1_EVENT_CHAIN",
+    "C": "C2_TO_C6_RESULTS_READY_C1_ACTIVE_INTEGRATION",
+    "D": "D2_TO_D6_PREP_READY_D1_PR188_ACTIVE_PR21_EVENT_WAIT"
+  },
+  "immediate_active_owners": ["A-6", "B-2", "B-4", "C-1", "D-1_PR188"],
+  "event_chain": [
+    "A6_TO_A7_TO_A2",
+    "B2_AND_B4_TO_B5_TO_B6_TO_B1",
+    "D1_PR188_TO_PR21",
+    "B_AND_C_RECEIPTS_TO_D6"
   ],
-  "current_phase": "PARALLEL_PREPARATION_ACTIVE",
-  "current_status": "ABCD_D_GROUP_INTEGRATION_WORKER_BATCH_DISPATCHED_20_OF_20",
-  "actual_worker_terminal_count": 0,
+  "control_comments": {
+    "review_and_followup": 5196645320,
+    "A6": 5196648256,
+    "B2": 5196650361,
+    "B4": 5196652743,
+    "C1": 5196655145,
+    "D1_PR188": 5196658981,
+    "A7": 5196662863,
+    "B5": 5196664899,
+    "D1_PR21": 5196667059,
+    "B6": 5196668910,
+    "A2": 5196670627,
+    "B1": 5196672770,
+    "D6": 5196674604
+  },
+  "current_phase": "FOLLOWUP_WAVE_1_IMMEDIATE_PARALLEL_ACTIVE",
+  "current_status": "RESULTS_REVIEWED_FOLLOWUP_DISPATCH_COMPLETE",
+  "next_gate": "A6_B2_B4_C1_D1_TERMINALS_OR_EXACT_BLOCKERS",
   "worker_completion_claimed": false,
   "safety": {
     "new_external_request": false,
