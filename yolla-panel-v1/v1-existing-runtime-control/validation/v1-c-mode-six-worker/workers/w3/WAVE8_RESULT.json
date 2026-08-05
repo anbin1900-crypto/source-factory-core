@@ -1,0 +1,46 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE8_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-008",
+  "command_id": "C6W-W8-W3-ACTUAL-UI-CANDIDATE",
+  "worker_id": "AUTOMATION-C-W3",
+  "directive_comment": 5193862391,
+  "report_request_comment": 5194084415,
+  "result_key": "519386239100",
+  "status": "PASS_OFFLINE_TARGET_PC_PENDING",
+  "outcome": "PASS",
+  "artifacts": {
+    "bridge_commit": "119381ea8cc07016505a591cedeb053272cc2fda",
+    "harness_commit": "4e8f7da073daaa00e2700d2953418f1e105d8a5d",
+    "collector_commit": "8dcd238b78a2df1f10f2f14f4595742bfb022864",
+    "w5_export_commit": "8e94dc811e1abed249f8c1fe75900b1cd06e7310"
+  },
+  "tests": [
+    {
+      "name": "Wave 8 actual candidate UI truth bridge harness",
+      "status": "PASS",
+      "assertions": 13,
+      "command": "node wave8/test_wave8_candidate_ui.cjs"
+    }
+  ],
+  "verified": {
+    "current_registry_result": true,
+    "historical_registry_result": true,
+    "awaiting_result": true,
+    "report_missing": true,
+    "duplicate_report": true,
+    "error": true,
+    "end": true,
+    "idle": true,
+    "result_comment_preferred_over_result_key": true,
+    "disabled_c_and_command_working_zero": true,
+    "legacy_a_e_status_excluded": true,
+    "w5_export_committed": true
+  },
+  "target_pc_execution": "PENDING",
+  "live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-06T00:40:00+09:00"
+}
