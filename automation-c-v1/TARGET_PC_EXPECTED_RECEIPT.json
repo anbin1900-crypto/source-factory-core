@@ -1,0 +1,21 @@
+{
+  "schema_version": "TARGET_PC_SOAK_RESTART_RECEIPT_V1",
+  "status": "PASS",
+  "cycles": 1200,
+  "slots": 6,
+  "restart_cycle": 600,
+  "repeat_receipts": 7000,
+  "popup_messages": 7000,
+  "counters": {
+    "DUPLICATE": 0,
+    "C_REPEAT_CROSS_CANCEL": 0,
+    "END_REDISPATCH": 0,
+    "RECEIPT_LOSS": 0,
+    "QUEUE_GROWTH": 0
+  },
+  "state_files": [
+    "repeat-runtime.json",
+    "release.json",
+    "namespace.json"
+  ]
+}
