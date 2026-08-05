@@ -1,0 +1,59 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE15_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-015",
+  "registry_sequence": 15,
+  "command_id": "C6W-W15-W2-EXACT-BLOB-PACKAGE-POSITIVE-GATE",
+  "worker_id": "AUTOMATION-C-W2",
+  "directive_comment": 5196983918,
+  "report_request_comment": 5197562479,
+  "result_key": "519698391800",
+  "target_version": "5.10.2.4.2-rc6",
+  "outcome": "PASS",
+  "tests": "PASS_47_OF_47",
+  "implementation_commit": "62ed308cc5ff0d730191a896c34c5c49c2092017",
+  "test_commit": "0cf2e78579fc9fc91ba1d7be6a17d6ad2b7b1f67",
+  "export_commit": "c4633c3a087d11e2199d4b5b4201102e6cb38efb",
+  "required_gate_results": {
+    "IMMUTABLE_BLOB_SHA_17_OF_17": "PASS_POSITIVE_FIXTURE_AND_FAIL_CLOSED_NEGATIVE",
+    "EXACT_SOURCE_SHA256_AND_SIZE_17_OF_17": "PASS_POSITIVE_FIXTURE_AND_FAIL_CLOSED_NEGATIVE",
+    "BASELINE_RESOLVER_VALIDATED": "PASS",
+    "BASELINE_RECURSIVE_CLONE": "PASS",
+    "TARGET_TIME_LAUNCHER_BACKUP": "PASS",
+    "RUNTIME_AND_RENDERER_HOOKS_COMPLETE": "PASS",
+    "FULL_COMPONENT_SMOKE": "PASS",
+    "ROLLBACK_AND_PRESERVATION_READBACK": "PASS",
+    "STATE_SEPARATION": "REPORTED != TECHNICALLY_ACCEPTED != TARGET_PC_ACCEPTED"
+  },
+  "rc5_negative_preserved": {
+    "result_comment": 5196292106,
+    "package_commit": "ef8481aa504c8e622a4df4087951a3a639de32b0",
+    "reported": true,
+    "reported_outcome": "PASS",
+    "technically_accepted": false,
+    "installable_runtime": false,
+    "target_pc_accepted": false,
+    "effective_outcome": "BLOCKED"
+  },
+  "rc6_actual_candidate": {
+    "w5_directive_comment": 5196992640,
+    "w5_result_key": "519699264000",
+    "w5_report_request_comment": 5197569051,
+    "w5_result_comment": null,
+    "status_at_w2_terminal": "PENDING_W5_RESULT",
+    "technically_accepted_claimed": false,
+    "target_pc_accepted_claimed": false
+  },
+  "regression": {
+    "result_key": "PASS",
+    "pagination": "PASS",
+    "retry_5": "PASS",
+    "restart": "PASS",
+    "duplicate_fail_closed": "PASS",
+    "commander_result_comment_output": "PASS"
+  },
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
