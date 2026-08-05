@@ -1,0 +1,125 @@
+{
+  "schema_version": "B5_D_READY_PACKAGE_V2_FINAL_REPORT_V2",
+  "batch_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V2-20260806-001",
+  "task_id": "B5_D_READY_PACKAGE_V2_RESUME",
+  "directive_comment": 5198231975,
+  "worker": "B-5_NORMALIZATION_DB_PACKAGE_WORKER",
+  "worker_pr": 41,
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "baseline_head": "981104d415a97901c29cec6b12897a64f2806c6d",
+  "completed_at_kst": "2026-08-06T08:23:00+09:00",
+  "status": "D_READY_PACKAGE_V2_READY_FOR_B6_REPREFLIGHT",
+  "required_terminal": "B5_D_READY_PACKAGE_V2_READY_OR_EXACT_BLOCKER",
+  "terminal": "B5_D_READY_PACKAGE_V2_READY",
+  "next_event": "B6_D_PACKAGE_REPREFLIGHT",
+  "common_directive": {
+    "id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V2-20260806-001",
+    "commit": "6c4f3a06dc158c2c60421f41f346b14bd37fd51b",
+    "blob": "0f18e0e999ca1b65be0999e329000deff1831645",
+    "remote_readback": "PASS"
+  },
+  "latest_control_pointer": {
+    "commit": "47b5c6aee2659a8b69ac315f0ae713f4301097dc",
+    "blob": "c5bee6300675e1c66a3b1fead364851e45a277e4",
+    "remote_readback": "PASS"
+  },
+  "d1_authority_binding": {
+    "head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "control_pointer_blob": "d65285f969294c19c0d9e2d1bbc2adf8165f8819",
+    "source_authority_decision_blob": "6bf779b937bf2bea761780315b22692ccca07ad9",
+    "authority_type": "OFFICIAL_SECONDARY",
+    "authority_scope": "SECONDARY_COMMERCIAL_PLATFORM_OBSERVED_PRESENTATION",
+    "primary_fact_authority": false,
+    "preferred_inbound_source_key": "NAVER_FIN_LAND_PUBLIC_WEB_V1",
+    "official_source_url": "https://fin.land.naver.com/home",
+    "pii_policy_blob": "cca00826d9609190390868354d93d68f60a9f301",
+    "decision": "PASS_EXACT"
+  },
+  "mapping_addendum": {
+    "blob": "118d6403dd5db47afafb982991f8fd9a51f35f28",
+    "version": "1.1.0",
+    "rules": {
+      "B001": "SOURCE_KEY_LOOKUP_INPUT_D1_ONLY_CANONICAL_ID",
+      "B013": "LANGUAGE_CODE_REQUIRED_NO_SILENT_DEFAULT",
+      "B014": "RECORD_CONTENT_HASH_SEPARATE_FROM_RAW_ARTIFACT_HASH"
+    },
+    "decision": "PASS_B001_B013_B014"
+  },
+  "receipt_and_tree_binding": {
+    "b_receipt_procedure_blob": "2a8b7c1b04924728cce14dc21c225ad09598905f",
+    "lane": "B_TO_D_SOURCE_DOCUMENT",
+    "tree_binding_manifest_blob": "dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd",
+    "actual_receipt_issuance": false,
+    "decision": "PASS_EXACT"
+  },
+  "upstream_binding": {
+    "status": "PASS_3_OF_3",
+    "B-2": {
+      "head": "771da102a0202dc21d9226d9c534275df345582e",
+      "contract_blob": "f7b5faee6c3fce138bcd95f9edce734f2086eb6d",
+      "decision": "PASS_EXACT"
+    },
+    "B-3": {
+      "head": "86d789a136ce5070d79eab7e6d0205eb23da11d7",
+      "pointer_blob": "dedbad43c8c23df18e2af2560af5d5f48ca1fa00",
+      "ledger_blob": "776a3c012db5aaee7204f1ec374c21bbca6abda3",
+      "decision": "PASS_PRESERVED"
+    },
+    "B-4": {
+      "head": "f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3",
+      "manifest_blob": "d900e06bcc73908e3af589581d67b599bfb84d65",
+      "decision": "PASS_EXACT"
+    }
+  },
+  "preservation": {
+    "source_fields": "PASS_3_OF_3",
+    "unmapped_values": "PASS_6_OF_6",
+    "dedup_lineage": "PASS",
+    "input_record_count": 4,
+    "output_record_count": 3,
+    "duplicate_count": 1,
+    "source_field_loss_count": 0,
+    "silent_drop_count": 0,
+    "sqlite_row_count": 3
+  },
+  "validation": {
+    "result": "PASS_45_OF_45",
+    "prior_core_checks": "PASS_37_OF_37",
+    "d1_authority_delta_checks": "PASS_8_OF_8",
+    "compile": "PASS_2_OF_2",
+    "custom_validator": "PASS",
+    "deterministic_second_run": "PASS_45_OF_45",
+    "remote_blob_parity": "PASS_6_OF_6",
+    "github_actions_ci_pass_claimed": false,
+    "test_report_blob": "2e489b91da91cceabfbbeeb9f4b9fdfc760e2091"
+  },
+  "hashes": {
+    "package_sha256": "f97df341fedb2a81e681b1f00fb3f857b95b425de0fe5ce264bb28a5e18905aa",
+    "dataset_sha256": "5692223b88c966323e3080825f44f473020e4d027d3282449e938183d2af429b",
+    "request_sha256": "2e635bb21c3a83b9c477909a019f6cadc1c814327f74d5cc7a4f3db79690a7ad",
+    "bundle_sha256": "8ca8026fbfa81e066d0bad4b59aead8d22830b20a1ff2761aa59085f6830613b"
+  },
+  "artifacts": {
+    "materialized_schema_blob": "23b5c767f572a49de7bf410bf17d866daa920037",
+    "normalized_schema_blob": "b8b7f1e31a1170554a09ed7aef417845a01330c2",
+    "d_intake_schema_blob": "d0ea48f026f4510ac1e6a9e83539c9255ef10097",
+    "fixture_bundle_blob": "3a204094b4a81486646f863228b5059745fba758",
+    "validator_blob": "45929fff0e6cba7907baee4179b6b45c2a4d8755",
+    "test_source_blob": "4ec88d9dc7e1a30f3de8f2986dd3b41709d591ab",
+    "test_report_blob": "2e489b91da91cceabfbbeeb9f4b9fdfc760e2091"
+  },
+  "external_blocker_count": 0,
+  "d_canonical_id_generation": false,
+  "d_canonical_id_generation_count": 0,
+  "d_acceptance_claim": false,
+  "actual_receipt_issuance": false,
+  "actual_site_extraction": false,
+  "postgresql_connection": false,
+  "postgresql_connection_count": 0,
+  "d_canonical_db_write": false,
+  "d_canonical_db_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
