@@ -1,0 +1,33 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_RESULT_V2",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-004",
+  "worker_id": "AUTOMATION-C-W4",
+  "command_id": "C6W-W4-W4-SIX-SLOT-REPEAT-SOAK",
+  "status": "PASS",
+  "terminal": "C6W_W4_W4_SIX_SLOT_REPEAT_SOAK_PASS",
+  "implementation_commit": "bfc136cf98d7712f10c0b033210f878cce4f9816",
+  "test_commit": "2b70de42c48f81388d932fb466232c3dad8d6c56",
+  "soak_ledger_commit": "3c2c17c5147445e40677a7812999f6553bb65191",
+  "restart_snapshot_commit": "45a84f8e39e525dd572f65e96a19933e10e2ead0",
+  "virtual_trigger_cycles": 120,
+  "slot_count": 6,
+  "receipt_count": 317,
+  "final_counter": {
+    "SOAK-AFTER": {"1":18,"2":8,"3":18,"4":18,"5":18,"6":18},
+    "SOAK-EVERY": {"1":40,"2":40,"3":40,"4":40,"5":19,"6":40}
+  },
+  "conflict_counters": {
+    "duplicate_repeat_dispatch": 0,
+    "previous_c_cancelled": 0,
+    "c_repeat_cross_cancel": 0,
+    "end_slot_redispatch": 0,
+    "receipt_loss": 0,
+    "awaiting_queue_growth": 0
+  },
+  "target_pc_execution_count": 0,
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
