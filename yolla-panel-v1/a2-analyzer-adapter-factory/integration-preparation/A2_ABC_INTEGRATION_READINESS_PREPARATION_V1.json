@@ -1,0 +1,70 @@
+{
+  "schema_version": "A2_ABC_INTEGRATION_READINESS_PREPARATION_V1",
+  "report_id": "A2-ABC-INTEGRATION-READINESS-20260805-001",
+  "prepared_at_kst": "2026-08-05T22:24:39+09:00",
+  "role": "A-2_GENERIC_SITE_ANALYZER_ADAPTER_FACTORY_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 18,
+  "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+  "source_authority": {
+    "target_site_id": "NAVER_FIN_LAND_PUBLIC_WEB_V1",
+    "target_origin": "https://fin.land.naver.com",
+    "authority_blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
+    "authority_pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5"
+  },
+  "a5_public_route_rebind": {
+    "head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+    "pointer_blob": "40a282ccb4573ae00a12645f40bf39b6faea1abc",
+    "handoff_blob": "515b72792199f971b0a754bcb9dbc796b06fe26f",
+    "terminal": "A5_PUBLIC_DOCUMENT_ROUTE_REBIND_READY"
+  },
+  "a3_operator_package": {
+    "head": "8e2c06d6e33ae23e0bf408cb5e2bd7513a72d7a9",
+    "pointer_blob": "aa2c564c52ac1bd0f0a6dd4973f8b16dd53a2030",
+    "operator_package_blob": "f742b7a1e83ec9199258f9b7d7df9b8947f321d7",
+    "second_authorization_request_package_blob": "007df2b81bf4f7009aa548e26e86cce4fcacda3b",
+    "terminal": "A3_PUBLIC_DOCUMENT_ROUTE_OPERATOR_PACKAGE_READY_FOR_GOVERNANCE"
+  },
+  "a7_governance": {
+    "head": "2711ee7a7611cdd4b4ebfdb29f337b02354da604",
+    "pointer_blob": "38ed77e59a296d39e7986bfa361643bb5d81811e",
+    "terminal": "A7_PUBLIC_ROUTE_GOVERNANCE_READY_FOR_A2_SECOND_AUTHORIZATION_REQUEST",
+    "validation": "PASS_50_FINDING_0",
+    "authorization_request_ready": true,
+    "new_authorization_granted": false
+  },
+  "integration_contract": {
+    "output_contract": "VERIFIED_ADAPTER_PACKAGE_V1",
+    "consumer": "B-1_COLLECTION_DB_MATERIALIZATION_COMMANDER",
+    "current_status": "CONTRACT_AND_GOVERNANCE_READY_EXECUTION_GATE_CLOSED",
+    "handoff_ready": false,
+    "handoff_requires": [
+      "NEW_EXPLICIT_ONE_SHOT_AUTHORIZATION",
+      "A3_SECOND_ONE_SHOT_PUBLIC_DOCUMENT_CAPTURE_TERMINAL",
+      "A5_FINAL_RESPONSE_SCHEMA_REBIND",
+      "A4_PUBLIC_ROUTE_PAGINATION_AUDIT",
+      "A6_VERIFIED_ADAPTER_PACKAGE_REBUILD",
+      "A7_FINAL_ADAPTER_ACCEPTANCE"
+    ]
+  },
+  "active_profiles": [
+    "EP-001",
+    "EP-002",
+    "EP-003",
+    "EP-004",
+    "EP-005",
+    "EP-010",
+    "EP-012"
+  ],
+  "excluded_profiles": [
+    "EP-011"
+  ],
+  "next_action": "A2_SUBMIT_NEW_EXPLICIT_A0_A1_ONE_SHOT_AUTHORIZATION_REQUEST_OR_HOLD",
+  "capture_execution_authorized": false,
+  "second_attempt_authorized": false,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
