@@ -1,0 +1,78 @@
+{
+  "schema_version": "A4_TO_A6_NO_PAGINATION_HANDOFF_V1",
+  "handoff_id": "A4-TO-A6-NO-PAGINATION-MVP-20260806-001",
+  "directive_id": "A2-TO-A4-NO-AUTOMATED-PAGINATION-MVP-BINDING-FINAL-V1-20260806-001",
+  "created_at_kst": "2026-08-06T00:34:00+09:00",
+  "producer": {
+    "worker": "A-4",
+    "pr": 23,
+    "branch": "worker/a4-navigation-pagination-v1"
+  },
+  "consumer": {
+    "worker": "A-6",
+    "pr": 25
+  },
+  "status": "READY",
+  "binding": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/NO_AUTOMATED_PAGINATION_MVP_BINDING_V1.json",
+    "commit": "d8986b6f5d878fb181fc4efffdcbf53df3f0e3fa",
+    "blob": "e067f3711b022ea8f058de733e209aee3f67748e"
+  },
+  "authority": {
+    "navigation_authority_head": "6567f380e4249dc7cd9b55693fa85856a37b91e6",
+    "navigation_pointer_blob": "da26c979685d28e28632ec594f695f04b7effb7d",
+    "a5_final_head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+    "a5_pointer_blob": "40a282ccb4573ae00a12645f40bf39b6faea1abc",
+    "a5_endpoint_catalog_blob": "7e56b41ad64699dcd4abf58f81374801bb7739f2"
+  },
+  "adapter_constraints": {
+    "profile_execution_mode": "ONE_PUBLIC_GET_DOCUMENT_AT_MOST_ONCE",
+    "active_profiles": [
+      "EP-001",
+      "EP-002",
+      "EP-003",
+      "EP-004",
+      "EP-005",
+      "EP-010",
+      "EP-012"
+    ],
+    "excluded_profiles": [
+      "EP-011"
+    ],
+    "allowed_routes": [
+      "/map",
+      "/articles/{articleNo}",
+      "/search"
+    ],
+    "method": "GET",
+    "response_format": "text/html",
+    "max_documents_per_profile": 1,
+    "automated_pagination": false,
+    "next_link_follow": false,
+    "cursor_loop": false,
+    "page_increment": false,
+    "pagination_parameter_invention": false,
+    "stop_after_first_document": true,
+    "fail_closed_if_pagination_required": true
+  },
+  "validation": {
+    "json_parse": "PASS",
+    "active_profile_binding": "PASS_7_OF_7",
+    "excluded_profile_binding": "PASS_EP_011",
+    "no_automated_pagination": "PASS",
+    "finding_count": 0
+  },
+  "execution_boundaries": {
+    "full_navigation_replay": false,
+    "full_authority_reaudit": false,
+    "live_site_call_count": 0,
+    "capture_execution_count": 0,
+    "automated_pagination_count": 0,
+    "actual_bulk_collection": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  },
+  "consumer_terminal_after_build": "A6_MVP_NO_PAGINATION_ADAPTER_PACKAGE_READY_OR_EXACT_BLOCKER"
+}
