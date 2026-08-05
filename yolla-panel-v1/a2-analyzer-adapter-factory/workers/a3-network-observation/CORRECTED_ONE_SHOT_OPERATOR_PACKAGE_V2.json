@@ -1,0 +1,120 @@
+{
+  "schema_version": "CORRECTED_ONE_SHOT_OPERATOR_PACKAGE_V2",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_4-A3-PUBLIC-ROUTE-PACKAGE-REBUILD-V1-20260805-001",
+  "directive_id": "A2-TO-A3-PUBLIC-DOCUMENT-ROUTE-NONEXECUTING-PACKAGE-REBUILD-V6_4-20260805-001",
+  "operator_action": "ONE_SHOT_PUBLIC_DOCUMENT_ROUTE_CAPTURE_AFTER_NEW_EXPLICIT_AUTHORIZATION",
+  "package_status": "READY_FOR_GOVERNANCE_NOT_AUTHORIZED",
+  "execution_mode": "NON_EXECUTING_ONLY",
+  "authority": {
+    "authority_id": "CONCRETE-SOURCE-TARGET-NAVER-FIN-LAND-20260805-002",
+    "comment": "#17/5189632712",
+    "commit": "545425a10d48bf59746d8db98ff2f56b79360cc0",
+    "blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
+    "pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5"
+  },
+  "a5_exact_binding": {
+    "head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+    "pointer_blob": "40a282ccb4573ae00a12645f40bf39b6faea1abc",
+    "handoff_blob": "515b72792199f971b0a754bcb9dbc796b06fe26f",
+    "validation_blob": "20abdd912d7b64f245f9a8252a90bec3c819f2c9",
+    "terminal": "A5_PUBLIC_DOCUMENT_ROUTE_REBIND_READY",
+    "public_route_binding": "PASS_7_OF_7"
+  },
+  "inputs": [
+    "PUBLIC_DOCUMENT_ROUTE_CAPTURE_ALLOWLIST_V1.json",
+    "PUBLIC_DOCUMENT_ROUTE_REQUEST_BINDING_V1.json",
+    "A5_TO_A3_CONCRETE_CAPTURE_INPUT_HANDOFF_V2.json@754ab61f6823fe69591f0e13b9f865c29a5a3593#515b72792199f971b0a754bcb9dbc796b06fe26f",
+    "A3_TO_A7_PUBLIC_ROUTE_GOVERNANCE_HANDOFF_V1.json_AFTER_PUBLICATION",
+    "NEW_EXPLICIT_A0_A1_PUBLIC_DOCUMENT_CAPTURE_AUTHORIZATION"
+  ],
+  "active_profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-012"],
+  "excluded_profiles": [
+    {
+      "profile_id": "EP-011",
+      "reason": "EXCLUDED_NO_CREDENTIAL_REFERENCE"
+    }
+  ],
+  "future_preflight_after_authorization": [
+    "VERIFY_NEW_EXPLICIT_AUTHORIZATION_ID_AND_PROFILE_SCOPE",
+    "VERIFY_AUTHORITY_COMMIT_BLOB_AND_POINTER_EXACT",
+    "VERIFY_A5_HEAD_POINTER_HANDOFF_VALIDATION_EXACT",
+    "VERIFY_A7_PUBLIC_ROUTE_GOVERNANCE_PASS",
+    "VERIFY_7_PROFILE_ALLOWLIST_EXACT",
+    "VERIFY_ALL_METHODS_GET",
+    "VERIFY_ALL_EXPECTED_FORMATS_TEXT_HTML",
+    "VERIFY_EP011_EXCLUDED",
+    "VERIFY_NO_FIXTURE_INVALID_INTERNAL_API_POST_OR_GRAPHQL_PROMOTION",
+    "VERIFY_NO_CREDENTIAL_COOKIE_TOKEN_OR_PII_PERSISTENCE",
+    "VERIFY_OUTPUT_DIRECTORY_EMPTY_OR_NEW_IMMUTABLE_RUN_ID"
+  ],
+  "future_execution_steps_after_authorization": [
+    "LOAD_EXACT_PUBLIC_DOCUMENT_ALLOWLIST",
+    "FOR_EACH_AUTHORIZED_PROFILE_AT_MOST_ONCE",
+    "ISSUE_PUBLIC_NON_LOGIN_READ_ONLY_GET_REQUEST",
+    "REJECT_REDIRECT_OUTSIDE_FIN_LAND_NAVER_COM",
+    "CAPTURE_RESPONSE_BYTES_IN_MEMORY",
+    "ABORT_IF_RESPONSE_EXCEEDS_SIZE_LIMIT_OR_MIME_IS_NOT_TEXT_HTML",
+    "COMPUTE_RAW_SHA256_IN_MEMORY",
+    "REDACT_FORBIDDEN_VALUES_BEFORE_PERSIST",
+    "DISPOSE_TRANSIENT_RAW_BYTES_WITHIN_30_SECONDS_AND_BEFORE_NEXT_PROFILE",
+    "PERSIST_REDACTED_IMMUTABLE_FIXTURE_AND_RECEIPT",
+    "STOP_AT_AUTHORIZED_TOTAL_OR_FIRST_FAIL_CLOSED_CONDITION"
+  ],
+  "requested_limits_for_next_authorization": {
+    "max_capture_per_profile": 1,
+    "max_total_capture": 7,
+    "max_batch_execution_count": 1,
+    "max_response_size_bytes": 2097152,
+    "request_timeout_ms": 20000,
+    "total_execution_timeout_ms": 180000,
+    "failed_capture_auto_retry": false,
+    "second_attempt_authorized": false
+  },
+  "retention_disposal_policy": {
+    "raw_response_byte_persistence": false,
+    "raw_sha256_in_memory": true,
+    "transient_raw_byte_disposal_deadline_seconds": 30,
+    "transient_raw_byte_disposal_rule": "IMMEDIATELY_AFTER_HASH_AND_REDACTION_AND_BEFORE_NEXT_PROFILE_CAPTURE",
+    "redacted_derivative_retention_days": 30,
+    "retention_expiry_action": "DELETE_AND_REQUIRE_NEW_AUTHORIZATION_FOR_RECAPTURE"
+  },
+  "stop_conditions": [
+    "NEW_EXPLICIT_AUTHORIZATION_MISSING",
+    "A7_GOVERNANCE_PASS_MISSING_OR_HASH_MISMATCH",
+    "PROFILE_NOT_IN_7_PROFILE_ALLOWLIST",
+    "EP011_OR_CREDENTIAL_USE_REQUESTED",
+    "METHOD_NOT_GET",
+    "ORIGIN_NOT_FIN_LAND_NAVER_COM",
+    "REDIRECT_OUTSIDE_AUTHORIZED_ORIGIN",
+    "UNEXPECTED_CONTENT_TYPE",
+    "RESPONSE_SIZE_LIMIT_EXCEEDED",
+    "TIMEOUT",
+    "RAW_SECRET_COOKIE_TOKEN_OR_PII_DETECTED_BEFORE_PERSIST",
+    "AUTHENTICATION_OR_ACCESS_CONTROL_BYPASS_REQUIRED",
+    "AUTOMATED_PAGINATION_REQUIRED",
+    "TOTAL_CAPTURE_LIMIT_REACHED"
+  ],
+  "forbidden_promotions": {
+    "fixture_invalid": true,
+    "unobserved_internal_api": true,
+    "xhr": true,
+    "post": true,
+    "graphql": true
+  },
+  "current_counters": {
+    "package_rebuild_execution_count": 0,
+    "capture_attempt_count": 0,
+    "live_site_call_count": 0,
+    "browser_automation_execution_count": 0,
+    "automated_pagination_count": 0,
+    "credential_use_count": 0,
+    "raw_secret_value_count": 0,
+    "actual_bulk_collection_count": 0
+  },
+  "capture_execution_authorized": false,
+  "request_execution_authorized": false,
+  "second_attempt_authorized": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
