@@ -32,9 +32,9 @@ class TestDReadyPackageV2(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.bundle = load("generated/B5_D_READY_FIXTURE_PACKAGE_V2.json")
-        cls.dataset = cls.bundle["normalized_dataset"]
-        cls.package = cls.bundle["materialized_database_package"]
-        cls.request = cls.bundle["d_intake_request"]
+        cls.dataset = load("generated/NORMALIZED_DATASET_V2.json")
+        cls.package = load("generated/MATERIALIZED_DATABASE_PACKAGE_V2.json")
+        cls.request = load("generated/D_INTAKE_REQUEST_V1.json")
         cls.dataset_schema = load("contracts/NORMALIZED_DATASET_V2.schema.json")
         cls.package_schema = load("contracts/MATERIALIZED_DATABASE_PACKAGE_V2.schema.json")
         cls.request_schema = load("contracts/D_INTAKE_REQUEST_V1.schema.json")
@@ -188,7 +188,7 @@ class TestDReadyPackageV2(unittest.TestCase):
             self.assertFalse(boundaries[key])
 
     def test_43_full_custom_validation(self):
-        result = validate_bundle(self.bundle)
+        result = validate_bundle(self.bundle, ROOT)
         self.assertEqual(result["result"], "PASS")
 
     def test_44_bad_package_hash_rejected(self):
