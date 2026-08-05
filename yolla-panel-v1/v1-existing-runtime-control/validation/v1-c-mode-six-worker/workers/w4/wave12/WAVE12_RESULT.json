@@ -1,0 +1,50 @@
+{
+  "schema_version": "AUTOMATION_C_W4_WAVE12_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-012",
+  "registry_sequence": 12,
+  "command_id": "C6W-W12-W4-CONNECTOR-BYTE-PREFLIGHT-ACCEPTANCE",
+  "role": "AUTOMATION-C-W4",
+  "directive_comment": 5195175006,
+  "report_request": 5195596853,
+  "result_key": "519517500600",
+  "outcome": "BLOCKED",
+  "completed": {
+    "wave10_metadata_only_negative_fixture": "PASS_RETAINED",
+    "raw_github_dns_dependency": false,
+    "w3_payload_export_commit_readback": "PASS",
+    "w3_runtime_blob_membership_readback": "PASS_3_OF_3",
+    "connector_byte_validator_committed": true,
+    "portable_preflight_prepared": true,
+    "six_workers_x_three_rounds_fixture_prepared": true,
+    "restart_resume_fixture_prepared": true,
+    "c_repeat_namespace_noninterference_prepared": true,
+    "exactly_once_receipt_prepared": true
+  },
+  "w3_payload": {
+    "result_comment": 5195394714,
+    "export_commit": "4def942235a6781c5692221324c2574e299341b8",
+    "runtime_file_count": 3,
+    "blob_readback": [
+      "27267b1b0b1d057e2ca40e3fcc864fd4609a1520",
+      "ff1bf6c84fb9806328bb3e5d8616a85cce943473",
+      "82862f1b4c8c2599c4035c78023ffea850909b4c"
+    ]
+  },
+  "counters_from_last_executable_acceptance": {
+    "DUPLICATE": 0,
+    "C_REPEAT_CROSS_CANCEL": 0,
+    "END_REDISPATCH": 0,
+    "RECEIPT_LOSS": 0,
+    "QUEUE_GROWTH": 0
+  },
+  "blocker": {
+    "code": "W5_WAVE12_RC4_RESULT_AND_IMMUTABLE_BYTES_NOT_PUBLISHED",
+    "detail": "W5 Wave 12 has directive and carryover report request only; no terminal result, immutable rc4 artifact byte, manifest, installer, rollback, smoke, or GitHub byte-readback receipt is available for positive candidate validation."
+  },
+  "target_pc_execution": "PENDING_EXTERNAL",
+  "live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
