@@ -1,0 +1,154 @@
+{
+  "schema_version": "A0_A1_NAVER_PUBLIC_DOCUMENT_GET_SECOND_ONE_SHOT_AUTHORIZATION_DECISION_V1",
+  "decision_id": "V2-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-DECISION-20260805-001",
+  "decided_at_kst": "2026-08-05T23:02:00+09:00",
+  "role": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "authority_basis": {
+    "user_explicit_instruction": "V-2 decides and publishes the pending authorization so A group can continue",
+    "a0_a1_decision_gate_satisfied_by_superior_v2": true,
+    "authorized_by": "V-2",
+    "self_approval": false
+  },
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "request": {
+    "request_id": "A2-TO-A0-A1-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-CAPTURE-AUTHORIZATION-REQUEST-V1-20260805-001",
+    "request_comment": 5192321213,
+    "decision_reminder_comment": 5192575973,
+    "request_status_before_decision": "AWAITING_EXPLICIT_DECISION",
+    "prior_authorization_reusable": false
+  },
+  "authority_readback": {
+    "source_target_authority": {
+      "origin": "https://fin.land.naver.com",
+      "authority_commit": "545425a10d48bf59746d8db98ff2f56b79360cc0",
+      "authority_blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
+      "authority_pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5"
+    },
+    "A-2": {
+      "pr": 18,
+      "head": "2ee9d5581379a4e9b21afcff8f19487672e426f0",
+      "latest_pointer_blob": "0b41e2faa4ba20d66a62d29ec91fd20cf168d14d",
+      "status": "A2_SECOND_EXPLICIT_AUTHORIZATION_REQUEST_PENDING_WORKERS_HELD"
+    },
+    "A-3": {
+      "pr": 22,
+      "head": "8e2c06d6e33ae23e0bf408cb5e2bd7513a72d7a9",
+      "latest_pointer_blob": "aa2c564c52ac1bd0f0a6dd4973f8b16dd53a2030",
+      "operator_package_blob": "f742b7a1e83ec9199258f9b7d7df9b8947f321d7",
+      "authorization_request_package_blob": "007df2b81bf4f7009aa548e26e86cce4fcacda3b",
+      "terminal": "A3_PUBLIC_DOCUMENT_ROUTE_OPERATOR_PACKAGE_READY_FOR_GOVERNANCE"
+    },
+    "A-5": {
+      "pr": 24,
+      "head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+      "latest_pointer_blob": "40a282ccb4573ae00a12645f40bf39b6faea1abc",
+      "handoff_blob": "515b72792199f971b0a754bcb9dbc796b06fe26f",
+      "terminal": "A5_PUBLIC_DOCUMENT_ROUTE_REBIND_READY"
+    },
+    "A-7": {
+      "pr": 26,
+      "head": "2711ee7a7611cdd4b4ebfdb29f337b02354da604",
+      "latest_pointer_blob": "38ed77e59a296d39e7986bfa361643bb5d81811e",
+      "recommendation_blob": "eb3dd7186e8b88bfbdd6d464cecaa44448ba93e1",
+      "validation_blob": "7aae731fe2887dd38bedc06e90d6c44d0dd84a0c",
+      "terminal": "A7_PUBLIC_ROUTE_GOVERNANCE_READY_FOR_A2_SECOND_AUTHORIZATION_REQUEST",
+      "validation": "PASS_50_FINDING_0"
+    }
+  },
+  "decision": {
+    "format": "A0_A1_NAVER_PUBLIC_DOCUMENT_GET_SECOND_ONE_SHOT_AUTHORIZATION_DECISION_V1",
+    "decision": "APPROVED",
+    "terminal": "V2_NAVER_PUBLIC_DOCUMENT_GET_SECOND_ONE_SHOT_AUTHORIZATION_APPROVED",
+    "authorization_id": "V2-AUTH-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-20260805-001",
+    "execution_owner": "A-3",
+    "origin": "https://fin.land.naver.com",
+    "method": "GET",
+    "expected_response_format": "text/html",
+    "authorized_profiles": [
+      "EP-001",
+      "EP-002",
+      "EP-003",
+      "EP-004",
+      "EP-005",
+      "EP-010",
+      "EP-012"
+    ],
+    "excluded_profiles": [
+      {
+        "profile_id": "EP-011",
+        "reason": "EXCLUDED_NO_CREDENTIAL_REFERENCE"
+      }
+    ],
+    "authorized_max_capture_per_profile": 1,
+    "authorized_max_total_capture": 7,
+    "authorized_batch_execution_count": 1,
+    "authorized_live_site_call_count_max": 7,
+    "authorized_max_response_size_bytes": 2097152,
+    "authorized_request_timeout_ms": 20000,
+    "authorized_total_execution_timeout_ms": 180000,
+    "request_execution_authorized": true,
+    "capture_execution_authorized": true,
+    "new_distinct_one_shot_authorized": true,
+    "within_authorization_second_attempt_authorized": false,
+    "failed_capture_auto_retry": false,
+    "second_batch_execution_authorized": false,
+    "browser_automation_authorized": false,
+    "automated_pagination_authorized": false,
+    "credential_use_authorized": false,
+    "authentication_bypass_authorized": false,
+    "access_control_bypass_authorized": false,
+    "bulk_collection_authorized": false
+  },
+  "mandatory_execution_contract": {
+    "exact_operator_package_required": true,
+    "allowlist_only": true,
+    "get_only": true,
+    "public_non_login_read_only_only": true,
+    "route_discovery_outside_allowlist": false,
+    "internal_api_inference": false,
+    "post_or_graphql_promotion": false,
+    "ep011_execution": false,
+    "stop_at_first_fail_closed_condition": true,
+    "raw_response_byte_persistence": false,
+    "raw_sha256_in_memory_only": true,
+    "redaction_before_persist": true,
+    "transient_raw_byte_disposal_deadline_seconds": 30,
+    "dispose_raw_before_next_profile": true,
+    "redacted_derivative_retention_days": 30,
+    "authorization_invalidated_by_any_exact_head_pointer_handoff_or_package_drift": true,
+    "production_write": false,
+    "ready_transition": false,
+    "merge": false,
+    "self_merge": false
+  },
+  "required_outputs": [
+    "ONE_RECEIPT_PER_CAPTURED_SKIPPED_OR_BLOCKED_PROFILE",
+    "IMMUTABLE_REDACTED_DERIVATIVE_PER_SUCCESSFUL_PROFILE",
+    "RAW_AND_REDACTED_SHA256_BINDING",
+    "TRANSIENT_RAW_BYTE_DISPOSAL_RECEIPT",
+    "RUN_SUMMARY_WITH_PROFILE_COUNTS_AND_HASH_BINDINGS",
+    "A3_TERMINAL_AND_LATEST_POINTER_REMOTE_READBACK"
+  ],
+  "next_gate": {
+    "first": "A3_EXECUTE_EXACT_PUBLIC_DOCUMENT_GET_OPERATOR_PACKAGE_ONCE",
+    "then": "A5_FINAL_RESPONSE_SCHEMA_REBIND",
+    "then_2": "A4_PUBLIC_ROUTE_PAGINATION_AUDIT",
+    "then_3": "A6_VERIFIED_ADAPTER_PACKAGE_REBUILD_AND_REPLAY",
+    "then_4": "A7_FINAL_INDEPENDENT_ACCEPTANCE",
+    "then_5": "A2_TO_B1_VERIFIED_ADAPTER_HANDOFF"
+  },
+  "safety": {
+    "login": false,
+    "credential_use": false,
+    "authentication_bypass": false,
+    "access_control_bypass": false,
+    "automated_pagination": false,
+    "actual_bulk_collection": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  }
+}
