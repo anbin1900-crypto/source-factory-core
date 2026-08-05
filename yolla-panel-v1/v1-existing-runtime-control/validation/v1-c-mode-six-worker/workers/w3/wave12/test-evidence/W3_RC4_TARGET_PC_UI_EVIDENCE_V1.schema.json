@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "W3_RC4_TARGET_PC_UI_EVIDENCE_V1.schema.json",
+  "title": "W3 rc4 Target-PC UI Evidence Receipt",
+  "type": "object",
+  "required": ["schema_version","control_id","wave_id","result_key","target_version","target_pc","membership_receipt","smoke_receipt","screenshots","registry_snapshot","before_restart","after_restart","restart_readback","live_pass_claimed"],
+  "properties": {
+    "schema_version": {"const":"W3_RC4_TARGET_PC_UI_EVIDENCE_RECEIPT_V1"},
+    "control_id": {"const":"V1-C-MODE-6W-VALIDATION-CYCLE-002"},
+    "wave_id": {"const":"V1-C-MODE-6W-WAVE-012"},
+    "result_key": {"const":"519517264100"},
+    "target_version": {"const":"5.10.2.4.2-rc4"},
+    "target_pc": {"type":"object","required":["computer_name","os_version"]},
+    "membership_receipt": {"type":"object","required":["status","member_count"],"properties":{"status":{"const":"PASS"},"member_count":{"minimum":3}}},
+    "smoke_receipt": {"type":"object","required":["status","assertions"],"properties":{"status":{"const":"PASS"}}},
+    "screenshots": {"type":"array","minItems":4,"items":{"type":"object","required":["path","purpose","sha256"],"properties":{"sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}}}},
+    "registry_snapshot": {"type":"object"},
+    "before_restart": {"type":"object"},
+    "after_restart": {"type":"object"},
+    "restart_readback": {"type":"object","required":["runtime_status_present","c_state_present","repeat_state_present","registry_state_present"]},
+    "live_pass_claimed": {"const":false}
+  },
+  "additionalProperties": true
+}
