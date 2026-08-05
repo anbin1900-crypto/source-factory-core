@@ -1,0 +1,182 @@
+{
+  "schema_version": "A7_D_INTEGRATION_READINESS_AUDIT_V1",
+  "worker": "A-7",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "A7_D_INTEGRATION_READINESS_REVIEW",
+  "directive_comment": 5196017240,
+  "mode": "ADVISORY_NON_BLOCKING",
+  "reviewed_at_kst": "2026-08-06T04:09:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 26,
+  "branch": "worker/a7-analyzer-acceptance-audit-v1",
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/**",
+  "review_scope": [
+    "traceability",
+    "hash_binding",
+    "secret_pii_exclusion",
+    "source_id_authority_type_boundary",
+    "new_external_request_evidence"
+  ],
+  "handoff_review": [
+    {
+      "worker": "A-3",
+      "pr": 22,
+      "directive_comment": 5196003221,
+      "observed_head": "6a91c9ccedf96aa538fbbf34e4bf91553778297d",
+      "current_head": "6a91c9ccedf96aa538fbbf34e4bf91553778297d",
+      "expected_artifact": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_D_SOURCE_PROVENANCE_HANDOFF_V1.json",
+      "artifact_published": false,
+      "current_pointer_blob": "4e5424a1a9a097b13f53e08fdb3f58b535445d8f",
+      "current_terminal": "A3_NAVER_PUBLIC_DOCUMENT_GET_ONE_SHOT_CAPTURE_DNS_EXACT_BLOCKER",
+      "existing_evidence": {
+        "raw_byte_disposal_receipt_blob": "5effd82f39714f29b465211374afff1867b4e1fc",
+        "raw_secret_value_count": 0,
+        "cookie_value_persisted_count": 0,
+        "token_value_persisted_count": 0,
+        "pii_value_persisted_count": 0,
+        "http_request_sent_count": 0,
+        "remote_server_contact_count": 0,
+        "captured_profile_count": 0
+      },
+      "traceability": "NOT_REVIEWABLE_D_HANDOFF_NOT_PUBLISHED",
+      "hash_binding": "NOT_REVIEWABLE_D_HANDOFF_NOT_PUBLISHED",
+      "secret_pii_exclusion": "CURRENT_POINTER_COUNTERS_PASS_BUT_D_HANDOFF_NOT_REVIEWABLE",
+      "authority_boundary": "NOT_REVIEWABLE_D_HANDOFF_NOT_PUBLISHED",
+      "new_external_request_evidence_count_after_directive": 0,
+      "result": "EXACT_FINDING_ARTIFACT_NOT_PUBLISHED"
+    },
+    {
+      "worker": "A-4",
+      "pr": 23,
+      "directive_comment": 5196006114,
+      "observed_head": "032c609396db198db6bd14c96436f07bc429cae8",
+      "current_head": "032c609396db198db6bd14c96436f07bc429cae8",
+      "expected_artifact": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A4_D_LOCATOR_PAGINATION_HANDOFF_V1.json",
+      "artifact_published": false,
+      "current_pointer_blob": "9ac48216663f3390214e5dca4cb7b030b64f0535",
+      "current_terminal": "A4_NO_AUTOMATED_PAGINATION_MVP_BINDING_READY",
+      "existing_evidence": {
+        "route_binding": "PASS_7_OF_7",
+        "method": "GET",
+        "response_format": "text/html",
+        "automated_pagination": false,
+        "next_link_follow": false,
+        "cursor_loop": false,
+        "page_increment": false,
+        "finding_count": 0
+      },
+      "traceability": "NOT_REVIEWABLE_D_LOCATOR_HANDOFF_NOT_PUBLISHED",
+      "hash_binding": "NOT_REVIEWABLE_D_LOCATOR_HANDOFF_NOT_PUBLISHED",
+      "secret_pii_exclusion": "NO_NEW_D_ARTIFACT_TO_SCAN",
+      "authority_boundary": "NOT_REVIEWABLE_D_LOCATOR_HANDOFF_NOT_PUBLISHED",
+      "new_external_request_evidence_count_after_directive": 0,
+      "result": "EXACT_FINDING_ARTIFACT_NOT_PUBLISHED"
+    },
+    {
+      "worker": "A-5",
+      "pr": 24,
+      "directive_comment": 5196008982,
+      "observed_head": "85bb7c7c6b07a0a58cdc74ea7d74a6de2ed81adb",
+      "current_head": "85bb7c7c6b07a0a58cdc74ea7d74a6de2ed81adb",
+      "expected_artifact": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF_V1.json",
+      "artifact_published": false,
+      "current_pointer_blob": "d5ec690e342a699639d21a0da0c4139b4333337f",
+      "current_terminal": "A5_GENERIC_HTML_DOCUMENT_RESPONSE_CONTRACT_READY",
+      "existing_evidence": {
+        "active_profile_binding": "PASS_7_OF_7",
+        "method": "GET",
+        "response_format": "text/html",
+        "required_schema_fields": "PASS_12_OF_12",
+        "credential_value_count": 0,
+        "raw_secret_value_count": 0,
+        "additional_authorization_request_count": 0,
+        "site_specific_field_claim_count": 0
+      },
+      "traceability": "NOT_REVIEWABLE_D_SOURCE_ENDPOINT_HANDOFF_NOT_PUBLISHED",
+      "hash_binding": "NOT_REVIEWABLE_D_SOURCE_ENDPOINT_HANDOFF_NOT_PUBLISHED",
+      "secret_pii_exclusion": "CURRENT_POINTER_COUNTERS_PASS_BUT_D_HANDOFF_NOT_REVIEWABLE",
+      "source_id_authority_type_boundary": "NO_NEW_DECISION_OBSERVED_BUT_D_HANDOFF_NOT_REVIEWABLE",
+      "new_external_request_evidence_count_after_directive": 0,
+      "result": "EXACT_FINDING_ARTIFACT_NOT_PUBLISHED"
+    },
+    {
+      "worker": "A-6",
+      "pr": 25,
+      "directive_comment": 5196013898,
+      "observed_head": "a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793",
+      "current_head": "a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793",
+      "expected_artifact": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/A6_VERIFIED_ADAPTER_D_INTAKE_COMPATIBILITY_V1.json",
+      "artifact_published": false,
+      "current_pointer_blob": "30a7854ca46e7e6f477b1c17c5762e4651d53a82",
+      "current_terminal": "A6_GENERIC_HTML_PACKAGE_INTEGRITY_CORRECTED_READY_FOR_A7_DELTA_REACCEPTANCE",
+      "existing_evidence": {
+        "package_blob": "d758afef96e76b664f6d8b0383c5a7bc017c731a",
+        "package_sha256": "fad18a1e0571dfac26305d8bd3d845a639e225c51ff1a03dfe45c49d7d441854",
+        "package_size_bytes": 4238,
+        "member_integrity": "PASS_6_OF_6",
+        "deterministic_replay": "PASS_2_OF_2",
+        "implementation_code_change_count": 0,
+        "fixture_semantic_change_count": 0,
+        "live_site_call_count": 0
+      },
+      "traceability": "NOT_REVIEWABLE_D_COMPATIBILITY_ENVELOPE_NOT_PUBLISHED",
+      "hash_binding": "ACCEPTED_PACKAGE_HASH_PASS_BUT_D_ENVELOPE_NOT_REVIEWABLE",
+      "secret_pii_exclusion": "NO_NEW_D_ARTIFACT_TO_SCAN",
+      "authority_boundary": "NOT_REVIEWABLE_D_COMPATIBILITY_ENVELOPE_NOT_PUBLISHED",
+      "new_external_request_evidence_count_after_directive": 0,
+      "accepted_package_byte_mutation_evidence_count_after_directive": 0,
+      "result": "EXACT_FINDING_ARTIFACT_NOT_PUBLISHED"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "A7-D-INT-001",
+      "owner": "A-3",
+      "artifact": "A3_D_SOURCE_PROVENANCE_HANDOFF_V1.json",
+      "field": "artifact_presence",
+      "expected": "PUBLISHED_UNDER_A3_OWNED_ROOT_WITH_FINAL_POINTER",
+      "actual": "NOT_FOUND_AT_HEAD_6a91c9ccedf96aa538fbbf34e4bf91553778297d"
+    },
+    {
+      "finding_id": "A7-D-INT-002",
+      "owner": "A-4",
+      "artifact": "A4_D_LOCATOR_PAGINATION_HANDOFF_V1.json",
+      "field": "artifact_presence",
+      "expected": "PUBLISHED_UNDER_A4_OWNED_ROOT_WITH_PAGE_SIZE_NOT_OBSERVED_AND_AUTOMATED_PAGINATION_FALSE",
+      "actual": "NOT_FOUND_AT_HEAD_032c609396db198db6bd14c96436f07bc429cae8"
+    },
+    {
+      "finding_id": "A7-D-INT-003",
+      "owner": "A-5",
+      "artifact": "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF_V1.json",
+      "field": "artifact_presence",
+      "expected": "PUBLISHED_UNDER_A5_OWNED_ROOT_WITH_AUTHORITY_TYPE_AND_D_CANONICAL_ID_UNDECIDED",
+      "actual": "NOT_FOUND_AT_HEAD_85bb7c7c6b07a0a58cdc74ea7d74a6de2ed81adb"
+    },
+    {
+      "finding_id": "A7-D-INT-004",
+      "owner": "A-6",
+      "artifact": "A6_VERIFIED_ADAPTER_D_INTAKE_COMPATIBILITY_V1.json",
+      "field": "artifact_presence",
+      "expected": "PUBLISHED_UNDER_A6_OWNED_ROOT_WITH_ACCEPTED_PACKAGE_BYTES_UNCHANGED",
+      "actual": "NOT_FOUND_AT_HEAD_a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793"
+    }
+  ],
+  "summary": {
+    "worker_head_matches_observed_head": "PASS_4_OF_4",
+    "required_handoff_published": "FAIL_0_OF_4",
+    "existing_secret_pii_counter_finding_count": 0,
+    "new_external_request_evidence_count_after_directives": 0,
+    "source_id_authority_type_intrusion_observed_count": 0,
+    "finding_count": 4,
+    "decision": "EXACT_FINDINGS",
+    "integration_readiness": false,
+    "blocking_gate": false
+  },
+  "terminal": "A7_D_INTEGRATION_READINESS_REVIEW_EXACT_FINDINGS",
+  "implementation_edit": false,
+  "self_approval": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
