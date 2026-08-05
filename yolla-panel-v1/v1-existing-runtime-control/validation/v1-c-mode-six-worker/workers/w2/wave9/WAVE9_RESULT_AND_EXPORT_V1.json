@@ -1,0 +1,25 @@
+{
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-009",
+  "registry_sequence": 9,
+  "command_id": "C6W-W9-W2-WAVE8-COLLECTION-NEXT-TRIGGER",
+  "role": "AUTOMATION-C-W2",
+  "directive_comment": 5194400226,
+  "result_key": "519440022600",
+  "outcome": "PASS",
+  "test": "PASS_10_OF_10",
+  "failure_count": 0,
+  "source_wave_collection": {"reported":6,"missing":0,"duplicate":0,"pass":4,"blocked":2},
+  "adapter_commit": "0d845b07b5b98156717442d0db181a8be8eb1312",
+  "test_commit": "8b0b3a1a2836181f64ca5b6bdd0ff8ab9cd6ec7c",
+  "collection_commit": "420ae6aab67071ca45cde11f0cab57ace98d95c3",
+  "export_paths": [
+    "wave9/wave8_result_collection_runtime_adapter.cjs",
+    "wave9/test_wave8_result_collection_runtime_adapter.cjs",
+    "wave9/C_MODE_WAVE8_RESULT_V1.json"
+  ],
+  "commander_output_suffix": "작업완료 결과수집 완료. 위 결과게시물을 검토하고 다음 WAVE의 워커별 지시를 게시하라.",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
