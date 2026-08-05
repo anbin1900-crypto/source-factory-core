@@ -1,0 +1,26 @@
+{
+  "schema_version": "NON_AUTHORITY_W1_ALIGNMENT_TEST_FIXTURE",
+  "files": [
+    {
+      "component": "UI_TRUTH_BRIDGE",
+      "owner": "W3",
+      "package_path": "rc5-package/automation-c-v1/workspace_ui_truth_bridge.cjs",
+      "install_destination": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc5\\automation-c-v1\\workspace_ui_truth_bridge.cjs",
+      "load_order": 11
+    },
+    {
+      "component": "UI_TRUTH_CSS",
+      "owner": "W3",
+      "package_path": "rc5-package/workspace_c_mode_rc4_truth.css",
+      "install_destination": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc5\\workspace_c_mode_rc4_truth.css",
+      "load_order": 12
+    },
+    {
+      "component": "UI_TRUTH_RUNTIME",
+      "owner": "W3",
+      "package_path": "rc5-package/workspace_c_mode_rc4_truth.js",
+      "install_destination": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc5\\workspace_c_mode_rc4_truth.js",
+      "load_order": 13
+    }
+  ]
+}
