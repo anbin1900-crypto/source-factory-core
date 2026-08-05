@@ -1,0 +1,57 @@
+{
+  "schema_version": "LATEST_A3_D_SOURCE_PROVENANCE_POINTER_V1",
+  "worker": "A-3",
+  "task_id": "A3_D_SOURCE_PROVENANCE_HANDOFF_V1-20260806-001",
+  "directive_comment": 5196003221,
+  "status": "PASS",
+  "terminal": "A3_D_SOURCE_PROVENANCE_HANDOFF_READY",
+  "branch": "worker/a3-network-observation-v1",
+  "source_head": "6a91c9ccedf96aa538fbbf34e4bf91553778297d",
+  "start_comment_id": 5196261753,
+  "progress_comment_id": 5196266201,
+  "artifacts": {
+    "handoff": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_D_SOURCE_PROVENANCE_HANDOFF_V1.json",
+      "commit": "2b81d95010c541d624bad046d9a562a9476bfa2f",
+      "blob": "7b06de0089917dc41069da4950675f22b1f4d5e6"
+    },
+    "validation_receipt": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_D_SOURCE_PROVENANCE_VALIDATION_RECEIPT_V1.json",
+      "commit": "586cd58eefdb89b352f629a20b23c025a9806931",
+      "blob": "f0d87cc302ceeb992f2a606bb30106c5f4fa1ee4"
+    },
+    "final_report": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_D_SOURCE_PROVENANCE_FINAL_REPORT_V1.json",
+      "commit": "97c963edae0dc1fda551fb46050d8782ba937892",
+      "blob": "80442b61e4bd89ad70d042981a9311a59b6c1fde"
+    }
+  },
+  "result": {
+    "profile_coverage": "PASS_8_OF_8",
+    "active_profile_count": 7,
+    "excluded_profile": "EP-011",
+    "profile_receipt_binding": "PASS_7_OF_7",
+    "expected_mime_binding": "PASS_7_OF_7_TEXT_HTML",
+    "observed_response_metadata": "NOT_OBSERVED_NO_HTTP_RESPONSE",
+    "raw_redacted_sha_relationship": "NOT_OBSERVED_NO_HTTP_RESPONSE_BYTES",
+    "disposal_receipt_binding": "PASS",
+    "static_fixture_isolation": "PASS",
+    "validation": "PASS_35_OF_35",
+    "finding_count": 0
+  },
+  "counters": {
+    "external_request_count": 0,
+    "retry_count": 0,
+    "bulk_collection_count": 0,
+    "unsupported_value_invention_count": 0,
+    "raw_secret_value_count": 0,
+    "pii_value_persisted_count": 0,
+    "credential_use_count": 0,
+    "out_of_owned_root_change_count": 0
+  },
+  "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
+  "updated_at_kst": "2026-08-06T04:22:00+09:00",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
