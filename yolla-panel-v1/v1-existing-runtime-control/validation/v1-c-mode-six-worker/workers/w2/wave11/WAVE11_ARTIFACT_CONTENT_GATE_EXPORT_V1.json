@@ -1,0 +1,66 @@
+{
+  "schema": "C_MODE_ARTIFACT_CONTENT_GATE_EXPORT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-011",
+  "registry_sequence": 11,
+  "command_id": "C6W-W11-W2-ARTIFACT-CONTENT-COMPLETION-GATE",
+  "role": "AUTOMATION-C-W2",
+  "directive_comment": 5194838029,
+  "result_key": "519483802900",
+  "runtime_adapter": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w2/wave11/artifact_content_completion_gate.cjs",
+    "commit": "759ef6088298e835317bcc51118e76fd64aa1a9b",
+    "blob_sha1": "235247de0829ef49800c530abbb9c683c7057d82"
+  },
+  "test": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w2/wave11/test_artifact_content_completion_gate.cjs",
+    "commit": "cddbc53e81fae0a833c8f9db9c1eadf632584d34",
+    "blob_sha1": "269a7ef1cec91fe99e468e72e623a84acb9baf3e",
+    "result": "PASS_21_OF_21"
+  },
+  "audited_artifact": {
+    "source_role": "AUTOMATION-C-W5",
+    "source_wave": "V1-C-MODE-6W-WAVE-010",
+    "result_comment": 5194725335,
+    "reported_outcome": "PASS",
+    "result_commit": "155515e048efd7689eab7f13e00ac9b9f5d9978b",
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w5/wave10/YOLLA_C_MODE_5.10.2.4.2-rc3_INSTALL_AND_BUILD.bat",
+    "artifact_commit": "5b44c83a78e2a653cf1b721d546d3f5b7b53b61d",
+    "blob_sha1": "65941a205f2d95821bc96815e33a37855395608e",
+    "size_bytes": 2652,
+    "sha256": "21587622092a36b16c054569ee97463cfc9458b945a26018c486f0f83f5c6447"
+  },
+  "content_gate": {
+    "BYTE_EXISTS": true,
+    "METADATA_ONLY_ARCHIVE": true,
+    "EXECUTABLE_SOURCE_PRESENT": false,
+    "INSTALL_ACTION_PRESENT": false,
+    "SMOKE_AND_ROLLBACK_PRESENT": false,
+    "INSTALLABLE_RUNTIME": false,
+    "TARGET_PC_ACCEPTED": false,
+    "technical_state": "ARTIFACT_CONTENT_REJECTED",
+    "reported_outcome_preserved": "PASS",
+    "effective_outcome": "BLOCKED",
+    "worker_pass_cannot_override_gate": true
+  },
+  "wave_partition": {
+    "current_wave_worker_count": 5,
+    "carryover_role": "AUTOMATION-C-W3",
+    "carryover_wave": "V1-C-MODE-6W-WAVE-009",
+    "carryover_result_key": "519440526200",
+    "carryover_missing_in_wave11": false,
+    "late_result_attribution": "WAVE_009_ONLY"
+  },
+  "preserved_contracts": {
+    "result_key": true,
+    "carryover": true,
+    "pagination": true,
+    "retry_max": 5,
+    "restart": true,
+    "duplicate_fail_closed": true,
+    "commander_technical_acceptance": true
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
