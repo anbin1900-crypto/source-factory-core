@@ -1,0 +1,45 @@
+{
+  "schema_version": "C6W_WAVE7_REGISTRY_AUTHORITY_RESULT_V8",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-007",
+  "command_id": "C6W-W7-W1-REGISTRY-AUTHORITY-EXPORT",
+  "worker_id": "AUTOMATION-C-W1",
+  "result_key": "519362538800",
+  "status": "PASS",
+  "outcome": "PASS",
+  "input_result_commit": "b597692983120f1d5bbd8c2d1820150efa21b705",
+  "implementation": {
+    "path": "automation-c-v1/c_mode_registry_authority.cjs",
+    "commit": "4a86304057e2f936b113b66e7cc6a586139a5de2",
+    "blob_sha": "4dbebd97505c3f88df308e3afbcf768d45fb58de",
+    "sha256": "415af3221777f336d4aab73c0edc9feeff5928e012ee2af0061ccaba0ccf1069"
+  },
+  "test": {
+    "path": "automation-c-v1/tests/test_c_mode_registry_authority.cjs",
+    "commit": "d5e48e35e7d949b30e611729fe2fd1ce330dbb06",
+    "blob_sha": "f1e2ff7994e909a6c98b6d0ce0c86d78232bbdfb",
+    "sha256": "d36ba8282cb65970d8ae96996ef0ab1daa96ae979ee2571382537bedca5ed5c7",
+    "command": "node automation-c-v1/tests/test_c_mode_registry_authority.cjs",
+    "result": "PASS_15_OF_15",
+    "failure_count": 0
+  },
+  "source_export_manifest": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/WAVE7_REGISTRY_SOURCE_EXPORT_MANIFEST_V8.json",
+    "commit": "96a78d7c98f07d358da6e905dc8b3b60fbac9266"
+  },
+  "verified": {
+    "registry_sequence_required": true,
+    "duplicate_same_wave_sequence_ready_fail_closed": true,
+    "sequence_monotonic": true,
+    "supersedes_chain_exact": true,
+    "latest_registry_snapshot": true,
+    "restart_restore": true,
+    "restart_duplicate_prevention": true,
+    "source_export_path_commit_blob_sha256": true,
+    "pointer_relay_exactly_once_retained": true,
+    "legacy_20_90_4_progress_end_regression_retained": true
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
