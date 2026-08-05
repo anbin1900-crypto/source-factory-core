@@ -1,0 +1,23 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_PROMPT_PUBLICATION_RECEIPT_V2",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "status": "POSTED_6_OF_6",
+  "control_pr": 17,
+  "prompt_authority": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/V1_C_MODE_6_WORKER_CHAT_PROMPTS_V2.md",
+    "commit": "e5d946a0b085ded41f4aaf458ef57e7bf1530f97"
+  },
+  "workers": [
+    {"worker_id": "AUTOMATION-C-W1", "pr": 59, "comment_id": 5189064400, "directive_commit": "e5311ee772c10b90ebe32caacfd3a95bf324927e"},
+    {"worker_id": "AUTOMATION-C-W2", "pr": 60, "comment_id": 5189066486, "directive_commit": "2bbb5097c179d4744bc7764e22fc7237b8c410a4"},
+    {"worker_id": "AUTOMATION-C-W3", "pr": 61, "comment_id": 5189068319, "directive_commit": "9690f3455aaa2f353e336f29d7ce0902e7ec62c9"},
+    {"worker_id": "AUTOMATION-C-W4", "pr": 62, "comment_id": 5189069355, "directive_commit": "ef8a1c03b9232cb7437da92099ff96ac657778d2"},
+    {"worker_id": "AUTOMATION-C-W5", "pr": 63, "comment_id": 5189071386, "directive_commit": "e984c05dc87b1624155374a380319754478b3eb6"},
+    {"worker_id": "AUTOMATION-C-W6", "pr": 64, "comment_id": 5189072877, "directive_commit": "a92d111600c14c7fb06efbe3b73ef5daee149060"}
+  ],
+  "superseded_prs": [56, 57, 58],
+  "next_gate": "SIX_WORKER_START_REPORTS_AND_WAVE1_PARALLEL_EXECUTION",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
