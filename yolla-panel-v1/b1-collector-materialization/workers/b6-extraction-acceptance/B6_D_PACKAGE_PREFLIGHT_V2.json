@@ -2,7 +2,7 @@
   "schema_version": "B6_D_PACKAGE_PREFLIGHT_V2",
   "task_id": "B6_D_SOURCE_DOCUMENT_HANDOFF_REPREFLIGHT",
   "directive_comment_id": 5196668910,
-  "checked_at_kst": "2026-08-06T06:22:00+09:00",
+  "checked_at_kst": "2026-08-06T06:38:00+09:00",
   "authority": {
     "repository": "anbin1900-crypto/source-factory-core",
     "worker_pr": 42,
@@ -12,15 +12,13 @@
   "entry_events": {
     "B5_D_READY_PACKAGE_V2_TERMINAL": {
       "satisfied": true,
-      "head": "ecda54115e8bcac427344cddd4578b8a748042fc",
-      "pointer_blob": "760abe95ff6a07e7f3642e14628b8427217f2f16",
-      "terminal_result": "B5_D_READY_PACKAGE_V2_EXACT_BLOCKER"
+      "terminal_at_entry": "B5_D_READY_PACKAGE_V2_EXACT_BLOCKER",
+      "entry_head": "ecda54115e8bcac427344cddd4578b8a748042fc"
     },
     "D1_SCHEMA_ALIGNMENT_TREE_BINDING_MANIFEST_PUBLISHED": {
       "satisfied": true,
       "head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
-      "manifest_blob": "dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd",
-      "status": "D1_SCHEMA_ALIGNMENT_TREE_BINDING_READY"
+      "manifest_blob": "dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd"
     },
     "do_not_start_before_both_events_compliance": "PASS"
   },
@@ -41,10 +39,7 @@
       "B-3": {
         "pr": 39,
         "head": "86d789a136ce5070d79eab7e6d0205eb23da11d7",
-        "pointer_blob": "01cfe1644b828687c4dce4ceab32345c728283e7",
-        "final_report_blob": "687aeab229074e2935a126582f80c047841391df",
-        "test_results_blob": "eab65a61e7b6791880daeab8a4ad8c067abfa2a8",
-        "remote_readback_blob": "0cd956a4fcbf6a896de596bebc7bc8fc5b316f00",
+        "pointer_blob": "dedbad43c8c23df18e2af2560af5d5f48ca1fa00",
         "terminal": "B3_D_COLLECTION_RUN_LEDGER_READY",
         "tests": "PASS_32_OF_32",
         "remote_readback": "PASS_11_OF_11",
@@ -58,24 +53,21 @@
         "terminal": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY",
         "tests": "PASS_46_OF_46",
         "remote_readback": "PASS_10_OF_10",
-        "decision": "PASS_WITH_AUTHORITY_FIELDS_TO_BE_BOUND_BY_B5"
+        "decision": "PASS"
       },
       "B-5": {
         "pr": 41,
-        "head": "ecda54115e8bcac427344cddd4578b8a748042fc",
-        "pointer_blob": "760abe95ff6a07e7f3642e14628b8427217f2f16",
-        "final_report_blob": "6944b0439c5aea2a727e963ef74d8ead8388a99b",
-        "terminal": "B5_D_READY_PACKAGE_V2_EXACT_BLOCKER",
-        "first_blocker": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1_AND_B4_RAW_ARTIFACT_MANIFEST_V2_NOT_PUBLISHED",
-        "local_validation": "PASS_37_OF_37",
-        "decision": "FAIL_NOT_READY"
+        "current_head": "fc1ab4dba76dda49fa05dbbd476a128425029b8e",
+        "resume_package_blob": "f65c54194609d8bc709033c0d36abf916c60debe",
+        "resume_test_report_blob": "bd825009b4fa9ac56ed3cb0f5897eb8e8522f618",
+        "tests": "PASS_37_OF_37",
+        "terminal_recommendation": "B5_D_READY_PACKAGE_V2_EXACT_BLOCKER",
+        "decision": "FAIL_NOT_D_READY",
+        "package_bound_D_head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+        "package_bound_D_pointer_blob": "95e6983a79b80867dd7de196a21e1aefc4c3dcb1",
+        "package_authority_type": null,
+        "package_authority_type_status": "PENDING_D1_DECISION"
       }
-    },
-    "chronology": {
-      "B5_blocker_at_kst": "2026-08-06T04:45:00+09:00",
-      "B4_ready_at_kst": "2026-08-06T05:03:00+09:00",
-      "B2_ready_at_kst": "2026-08-06T05:28:00+09:00",
-      "conclusion": "B5_TERMINAL_PREDATES_B2_AND_B4_READY_AND_MUST_BE_RERUN"
     }
   },
   "D_tree_binding": {
@@ -83,14 +75,14 @@
     "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
     "pr": 188,
     "head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "control_pointer_blob": "d65285f969294c19c0d9e2d1bbc2adf8165f8819",
     "authoritative_root": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/",
-    "manifest_path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/D1_SCHEMA_ALIGNMENT_TREE_BINDING_MANIFEST_V1.json",
     "manifest_blob": "dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd",
     "manifest_declared_paths": "PASS_10_OF_10",
     "required_root_paths": "PASS_18_OF_18_FULL_ACCOUNTING",
     "old_governance_path_hardcoded": false
   },
-  "D_contracts": {
+  "D_contracts_and_decisions": {
     "schema_blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
     "mapping_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
     "ruleset_blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
@@ -99,6 +91,8 @@
     "B_receipt_procedure_blob": "2a8b7c1b04924728cce14dc21c225ad09598905f",
     "source_authority_decision_blob": "6bf779b937bf2bea761780315b22692ccca07ad9",
     "source_key_alias_decision_blob": "27683e5dc4a9448c3d0a9bd3200a0a62c84d158c",
+    "authority_type": "OFFICIAL_SECONDARY",
+    "preferred_inbound_source_key": "NAVER_FIN_LAND_PUBLIC_WEB_V1",
     "decision": "PASS"
   },
   "source_identity_alignment": {
@@ -106,9 +100,9 @@
     "D_preferred_inbound_source_key": "NAVER_FIN_LAND_PUBLIC_WEB_V1",
     "D_accepted_alias": "NAVER_FIN_LAND",
     "D_authority_type": "OFFICIAL_SECONDARY",
-    "B4_source_key_status": "PENDING_AUTHORITY",
-    "required_resolution_owner": "B5_CONSUMES_B2_AND_D1_DECISIONS_WITHOUT_SILENT_RENAME",
-    "status": "READY_FOR_B5_RERUN_NOT_YET_BOUND_IN_CURRENT_B5_TERMINAL"
+    "B5_current_package_alignment": "FAIL_STALE_D_AUTHORITY_BINDING",
+    "required_resolution_owner": "B-5",
+    "required_resolution": "REBUILD_PACKAGE_WITH_CURRENT_D1_HEAD_POINTER_AUTHORITY_ALIAS_MAPPING_AND_RECEIPT_PROCEDURE"
   },
   "lane_separation": {
     "decision": "PASS",
@@ -121,23 +115,23 @@
   },
   "defects": [
     {
-      "Field": "B5_D_READY_PACKAGE_V2_CURRENT_READY_TERMINAL",
-      "Expected": "B5 READY terminal produced after consuming current B2 head 771da102a0202dc21d9226d9c534275df345582e, B3 head 86d789a136ce5070d79eab7e6d0205eb23da11d7, and B4 head f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3",
-      "Evidence": "Current B5 pointer at head ecda54115e8bcac427344cddd4578b8a748042fc is EXACT_BLOCKER, updated 04:45 KST, before B4 READY at 05:03 and B2 READY at 05:28; it binds only B-3"
+      "Field": "B5_D_READY_PACKAGE_V2_CURRENT_D1_AUTHORITY_BINDING",
+      "Expected": "B5 package binds PR188 head 17e920e0643dd89c059f1d99fda7c0c0383f1a18, control pointer d65285f969294c19c0d9e2d1bbc2adf8165f8819, authority decision 6bf779b937bf2bea761780315b22692ccca07ad9, alias decision 27683e5dc4a9448c3d0a9bd3200a0a62c84d158c, mapping addendum 118d6403dd5db47afafb982991f8fd9a51f35f28 and B receipt procedure 2a8b7c1b04924728cce14dc21c225ad09598905f",
+      "Evidence": "B5 resume package blob f65c54194609d8bc709033c0d36abf916c60debe binds D head 327547fd74f615a4c709c6da8473b1bf63fd5d6a and pointer 95e6983a79b80867dd7de196a21e1aefc4c3dcb1 with authority_type null/PENDING_D1_DECISION"
     },
     {
-      "Field": "B5_SOURCE_AUTHORITY_AND_ALIAS_BINDING",
-      "Expected": "B5 V2 package binds B2 source_key NAVER_FIN_LAND_PUBLIC_WEB_V1, D authority OFFICIAL_SECONDARY, D alias decision, and B4 artifact lineage without silent rename",
-      "Evidence": "B2 and D decisions now exist, while B4 retains PENDING_AUTHORITY placeholders and the current B5 blocker package predates those inputs"
+      "Field": "B5_D_READY_PACKAGE_V2_READY_TERMINAL",
+      "Expected": "B5 READY terminal with current exact package blob, test result and remote readback after current D authority binding",
+      "Evidence": "Latest B5 test report blob bd825009b4fa9ac56ed3cb0f5897eb8e8522f618 recommends B5_D_READY_PACKAGE_V2_EXACT_BLOCKER; no current READY terminal or final pointer exists"
     },
     {
       "Field": "HANDOFF_CANDIDATE_PROMOTABILITY",
-      "Expected": "B worker READY terminals PASS_4_OF_4 plus D tree binding PASS and required path full accounting PASS",
-      "Evidence": "D tree binding and paths pass, but B worker READY terminals are only 3_OF_4 because B5 is EXACT_BLOCKER"
+      "Expected": "B worker READY terminals PASS_4_OF_4 plus D tree binding and path accounting PASS",
+      "Evidence": "D gates pass and B2/B3/B4 pass, but B5 remains blocked on stale D authority binding"
     }
   ],
   "decision": "EXACT_BLOCKER",
-  "first_blocker": "B5_D_READY_PACKAGE_V2_NOT_RERUN_AFTER_B2_B4_READY",
+  "first_blocker": "B5_D_READY_PACKAGE_V2_CURRENT_D1_AUTHORITY_BINDING_MISSING",
   "candidate_promotable": false,
   "required_terminal": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_READY_OR_EXACT_BLOCKER",
   "terminal_result": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_EXACT_BLOCKER",
