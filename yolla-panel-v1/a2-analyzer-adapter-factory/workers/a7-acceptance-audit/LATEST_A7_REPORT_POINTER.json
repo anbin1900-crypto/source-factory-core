@@ -5,6 +5,7 @@
   "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_12-INTEGRITY-DELTA-REACCEPTANCE-V1-20260806-001",
   "directive_id": "A2-TO-A7-GENERIC-HTML-INTEGRITY-DELTA-REACCEPTANCE-V2-20260806-001",
   "directive_comment_id": 5195141948,
+  "terminal_comment_id": 5195405907,
   "mode": "EVENT_ONLY_DELTA_REACCEPTANCE",
   "status": "TERMINAL_PASS",
   "terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_PASS",
@@ -51,8 +52,12 @@
   "b1_reanalysis_required": false,
   "implementation_file_direct_edit": false,
   "self_approval": false,
-  "remote_readback": "PENDING",
-  "updated_at_kst": "2026-08-06T03:01:00+09:00",
+  "remote_readback": "PASS",
+  "remote_readback_evidence": {
+    "pre_terminal_pointer_commit": "5d0eb55c5ba2a88438aabd9d892fb795b41876ab",
+    "pre_terminal_pointer_blob": "96ad689ea3729c390ad685438834a35c099e8214"
+  },
+  "updated_at_kst": "2026-08-06T03:03:00+09:00",
   "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
   "production": false,
   "ready": false,
