@@ -1,0 +1,78 @@
+{
+  "schema_version": "A2_WAVE6_11_A5_A4_PASS_A6_FINAL_BUILD_ACTIVE_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_11-A6-GENERIC-HTML-FINAL-BUILD-V1-20260806-001",
+  "updated_at_kst": "2026-08-06T00:52:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "a2_control_pr": 18,
+  "policy": {
+    "policy_id": "YOLLA_EFFICIENCY_RATIONALITY_SPEED_FIRST_OPERATING_POLICY_V1",
+    "owner_model": "ONE_OWNER_END_TO_END",
+    "mid_process_audit_count": 0,
+    "final_acceptance_count": 1
+  },
+  "a3_state": {
+    "pr": 22,
+    "head": "30ef339d303debeaa2098c4f5f5d2ca44f087c67",
+    "terminal": "DNS_EXECUTION_ENVIRONMENT_EXACT_EXTERNAL_BLOCKER",
+    "mvp_blocking": false,
+    "freeze_comment": 5194065483,
+    "mode": "TARGET_PC_ENHANCEMENT_EVENT_WAIT"
+  },
+  "a5_result": {
+    "pr": 24,
+    "final_head": "85bb7c7c6b07a0a58cdc74ea7d74a6de2ed81adb",
+    "terminal": "A5_GENERIC_HTML_DOCUMENT_RESPONSE_CONTRACT_READY",
+    "terminal_comment": 5193961682,
+    "final_pointer_comment": 5193978518,
+    "pointer_blob": "d5ec690e342a699639d21a0da0c4139b4333337f",
+    "handoff_blob": "0f4e31bfd5ebfcf77872c52369322c67930330f2",
+    "response_schema_blob": "162a9dc2ee524227412ed7a3b06e02482be0bb42",
+    "execution_contract_blob": "bd974465423f49f9c438d6f750b8622e9f580641",
+    "identifier_map_blob": "ab2a5d82f8431a21fe1dfa56fd2dabaff45f3826",
+    "status": "PASS_ACCEPTED_FROZEN",
+    "freeze_comment": 5194073335
+  },
+  "a4_result": {
+    "pr": 23,
+    "final_head": "032c609396db198db6bd14c96436f07bc429cae8",
+    "terminal": "A4_NO_AUTOMATED_PAGINATION_MVP_BINDING_READY",
+    "pointer_blob": "9ac48216663f3390214e5dca4cb7b030b64f0535",
+    "binding_blob": "e067f3711b022ea8f058de733e209aee3f67748e",
+    "handoff_blob": "894fc02cc1cdf72708d1ccb1660f56b302f80aa3",
+    "status": "PASS_ACCEPTED_FROZEN",
+    "freeze_comment": 5194069424
+  },
+  "a6_execution": {
+    "pr": 25,
+    "head_before_execution": "153c71faf5462c6e12d4390987d67be0dd4efa60",
+    "directive_comment": 5194059963,
+    "mode": "P0_ONE_OWNER_END_TO_END_FINAL_BUILD",
+    "final_build_target": 1,
+    "replay_count": 2,
+    "expected_terminal": "A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_READY_OR_EXACT_BLOCKER"
+  },
+  "a7_state": {
+    "pr": 26,
+    "wait_comment": 5194076583,
+    "mode": "FINAL_ACCEPTANCE_ONLY",
+    "waiting_event": "A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_READY"
+  },
+  "critical_path": [
+    "A6_SINGLE_VERIFIED_ADAPTER_BUILD_AND_2X_REPLAY",
+    "A7_ONE_FINAL_ACCEPTANCE",
+    "A2_TO_B1_HANDOFF"
+  ],
+  "active_owner": "A-6",
+  "current_terminal": "A2_A5_A4_PASS_A6_FINAL_BUILD_ACTIVE",
+  "current_status": "WAITING_A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_TERMINAL",
+  "next_action": "PROCESS_A6_TERMINAL_AND_TRIGGER_A7_FINAL_ACCEPTANCE_ON_PASS",
+  "request_execution_authorized": false,
+  "capture_execution_authorized": false,
+  "verified_adapter_package_ready": false,
+  "b1_handoff_ready": false,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
