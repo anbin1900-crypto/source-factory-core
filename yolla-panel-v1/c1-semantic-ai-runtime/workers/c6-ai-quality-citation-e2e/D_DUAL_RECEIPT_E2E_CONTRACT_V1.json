@@ -1,0 +1,43 @@
+{
+  "schema_version": "D_DUAL_RECEIPT_E2E_CONTRACT_V1",
+  "contract_id": "C6-D-DUAL-RECEIPT-E2E-CONTRACT-V1",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "C6_D_DUAL_RECEIPT_E2E_VALIDATOR",
+  "authority_boundary": {
+    "contract_owner": "C-6_AI_QUALITY_AND_E2E_VALIDATION",
+    "classification": "C_SIDE_FIXTURE_VALIDATOR_NOT_D_AUTHORITY",
+    "d_acceptance_claim": false,
+    "d_canonical_schema_mutation": false,
+    "d_canonical_db_write": false
+  },
+  "receipt_types": {
+    "source_document_receipt": {
+      "receipt_type": "D_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_V1",
+      "receipt_scope": "SOURCE_DOCUMENT",
+      "producer_group": "B",
+      "required_fields": ["receipt_id", "receipt_type", "receipt_scope", "issuer", "source_package_ref", "source_package_sha256", "decision", "accepted_record_count", "rejected_records", "authoritative_db_write_performed", "fixture_only"],
+      "forbidden_fields": ["knowledge_candidate_package_ref", "knowledge_release_id", "runtime_activation"]
+    },
+    "knowledge_candidate_receipt": {
+      "receipt_type": "D_KNOWLEDGE_CANDIDATE_ACCEPTANCE_RECEIPT_V1",
+      "receipt_scope": "KNOWLEDGE_CANDIDATE",
+      "producer_group": "C",
+      "required_fields": ["receipt_id", "receipt_type", "receipt_scope", "issuer", "source_receipt_ref", "knowledge_candidate_package_ref", "knowledge_candidate_package_sha256", "decision", "accepted_record_count", "rejected_records", "authoritative_db_write_performed", "fixture_only"],
+      "forbidden_fields": ["source_package_ref", "source_package_sha256", "runtime_activation"]
+    }
+  },
+  "rejected_record_required_fields": ["source_record_id", "source_field", "source_value", "reason_codes", "retryable", "source_value_preserved"],
+  "cross_receipt_rules": ["RECEIPT_IDS_MUST_BE_DISTINCT", "RECEIPT_TYPES_MUST_BE_DISTINCT", "SOURCE_RECEIPT_MUST_NOT_ACCEPT_KNOWLEDGE_PACKAGE", "KNOWLEDGE_RECEIPT_MUST_REFERENCE_SOURCE_RECEIPT", "REJECTED_SOURCE_VALUES_MUST_BE_PRESERVED", "AUTHORITATIVE_DB_WRITE_MUST_BE_FALSE"],
+  "knowledge_release_binding": {
+    "required_fields": ["knowledge_release_id", "issuer", "source_receipt_ref", "knowledge_receipt_ref", "knowledge_version", "query_contract_ref", "citation_contract_ref", "evidence_contract_ref", "release_status", "fixture_only"],
+    "runtime_activation_requires": ["issuer=D-1_DOMAIN_KNOWLEDGE_DATABASE_COMMANDER", "release_status=RELEASED", "fixture_only=false", "source_receipt_decision in ACCEPTED|PARTIALLY_ACCEPTED", "knowledge_receipt_decision in ACCEPTED|PARTIALLY_ACCEPTED", "knowledge_version present", "query_contract_ref present", "citation_contract_ref present", "evidence_contract_ref present"],
+    "fixture_behavior": "VALIDATE_CONTRACT_BUT_FORCE_RUNTIME_ACTIVATION_FALSE"
+  },
+  "no_rerun_rule": {
+    "duplicate_semantic_rerun": false,
+    "semantic_rerun_allowed_only_when": ["B_CONTENT_HASH_DELTA", "D_CONTRACT_VERSION_OR_BLOB_DELTA"]
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
