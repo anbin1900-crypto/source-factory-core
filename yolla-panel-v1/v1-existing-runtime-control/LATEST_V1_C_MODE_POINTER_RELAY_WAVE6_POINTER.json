@@ -1,0 +1,88 @@
+{
+  "schema_version": "LATEST_V1_C_MODE_POINTER_RELAY_WAVE6_POINTER_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-006",
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "documents": {
+    "contract": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/C_MODE_DIRECTIVE_RESULT_KEY_RELAY_CONTRACT_V1.md",
+      "commit": "96852cbdb40752a6e63eb00b45c7355ff7428f4d"
+    },
+    "directive": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/C_MODE_POINTER_RELAY_ADDITIVE_WAVE6_DIRECTIVE_V1.md",
+      "commit": "e5764ad523ba782ae66050062976702cd7c2fa00"
+    },
+    "registry": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/C_MODE_POINTER_RELAY_WAVE6_REGISTRY_V1.json",
+      "commit": "89c6287a9508307ae76f76a24dff1d2d09ae53b4"
+    },
+    "publication_receipt": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/C_MODE_POINTER_RELAY_WAVE6_PUBLICATION_RECEIPT_V1.json",
+      "commit": "b55faec7ec4e506f0f93eb414bb8998d76be4df2"
+    }
+  },
+  "control_registry_comment_id": 5193471047,
+  "worker_bindings": {
+    "AUTOMATION-C-W1": {
+      "pr": 59,
+      "directive_comment": 5193410427,
+      "result_key": "519341042700"
+    },
+    "AUTOMATION-C-W2": {
+      "pr": 60,
+      "directive_comment": 5193421124,
+      "result_key": "519342112400"
+    },
+    "AUTOMATION-C-W3": {
+      "pr": 61,
+      "directive_comment": 5193432735,
+      "result_key": "519343273500"
+    },
+    "AUTOMATION-C-W4": {
+      "pr": 62,
+      "directive_comment": 5193441544,
+      "result_key": "519344154400"
+    },
+    "AUTOMATION-C-W5": {
+      "pr": 63,
+      "directive_comment": 5193451478,
+      "result_key": "519345147800"
+    },
+    "AUTOMATION-C-W6": {
+      "pr": 64,
+      "directive_comment": 5193460631,
+      "result_key": "519346063100"
+    }
+  },
+  "authority": {
+    "normal_c_mode_path": "CONTROL_WAVE_REGISTRY_TO_EXACT_COMMENT_RELAY_TO_RESULT_KEY_WATCH_TO_ACTUAL_RESULT_COMMENT",
+    "existing_six_worker_validation_system": "PRESERVED_ACTIVE",
+    "validation_superseded": false,
+    "wave1_to_wave5_results": "PRESERVED_AS_INPUT",
+    "additive_scope": "POINTER_RELAY_RESULT_KEY_IMPLEMENTATION_AND_VALIDATION"
+  },
+  "acceptance": {
+    "valid_correlated_reports_required": 6,
+    "all_or_nothing_batch": "REQUIRED",
+    "actual_result_comment_capture": "REQUIRED",
+    "existing_validation_gates_preserved": "REQUIRED",
+    "target_pc_six_workers_three_rounds": "PENDING",
+    "restart_resume": "PENDING",
+    "log_loss_zero": "PENDING",
+    "login_profile_preserved": "PENDING_TARGET_PC_READBACK",
+    "a_e_reintroduction_count": 0,
+    "auto_test_write_count": 0
+  },
+  "status": "ADDITIVE_WAVE6_DISPATCHED_TO_6_OF_6",
+  "current_progress_percent": 88,
+  "next_gate": "SIX_RESULT_KEYS_TO_ACTUAL_RESULT_COMMENTS_PLUS_INTEGRATED_RUNTIME_AND_INDEPENDENT_ACCEPTANCE",
+  "target_runtime": "5.10.2.4.2-rc2",
+  "target_pc_pass": "PENDING",
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
