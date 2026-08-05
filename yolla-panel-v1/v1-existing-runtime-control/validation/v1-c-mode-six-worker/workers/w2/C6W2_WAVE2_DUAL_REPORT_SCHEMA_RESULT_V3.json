@@ -1,0 +1,38 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_RESULT_V3",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-002",
+  "worker_id": "AUTOMATION-C-W2",
+  "command_id": "C6W-W2-W2-DUAL-REPORT-SCHEMA",
+  "status": "PASS",
+  "terminal": "C6W2_WAVE2_DUAL_REPORT_SCHEMA_PASS",
+  "changes": {
+    "parser_commit": "f94d1f9e3eff61512fbaa208bde00f36144878fa",
+    "test_commit": "cb1ba6fec20dbecf7dfcae464144cec8f8eae801",
+    "matrix_commit": "b90861d5398295bb77e90e424d994bf1213ab255",
+    "template_commit": "c0f0f5144c62f43dd817ff83404ea50fd569369d"
+  },
+  "test": {
+    "command": "node automation-c-v1/tests/test_dual_report_schema.cjs",
+    "result": "PASS_16_OF_16",
+    "failure_count": 0
+  },
+  "wave1_fixture_comments": [5189564576,5189565149,5189564226,5189560973,5189560459,5189537363],
+  "contracts": {
+    "C_RESULT": "ROLE+WAVE+COMMAND_ID+STATUS",
+    "REPEAT_RESULT": "ROLE+COMMAND_ID+DISPATCH_ID+STATUS"
+  },
+  "fail_closed": {
+    "missing": true,
+    "stale": true,
+    "duplicate": true,
+    "order_reversal": true,
+    "wrong_schema": true,
+    "mixed_schema": true
+  },
+  "legacy": "READ_ONLY_CONTROL_SCOPED_NO_WAVE2_CREDIT",
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
