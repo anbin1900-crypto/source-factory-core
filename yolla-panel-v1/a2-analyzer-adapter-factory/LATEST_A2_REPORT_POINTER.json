@@ -1,32 +1,39 @@
 {
   "schema_version": "LATEST_A2_REPORT_POINTER_V1",
   "pointer_id": "A2-GENERIC-SITE-ANALYZER-ADAPTER-FACTORY-LATEST-V1",
-  "updated_at_kst": "2026-08-05T06:31:00+09:00",
+  "updated_at_kst": "2026-08-05T14:44:00+09:00",
   "role": "A-2_GENERIC_SITE_ANALYZER_ADAPTER_FACTORY_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 18,
   "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
-  "previous_pointer_blob": "b320231cc4238c7ee324101689e64598ea1b9e9f",
+  "previous_pointer_blob": "08c5d3589d45a66e3bab8adaf642e10508117608",
   "active_report": {
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_WAVE6_AUTHORIZATION_WAIT_REFRESH_V1.json",
-    "commit": "84af641eeb2d5f85d8fd82c862107f316b277a63",
-    "blob": "9ea202aeed926db4920ef85e6135cbd4aa1b8956",
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_WAVE6_1_CORRECTED_AUTHORIZATION_REQUEST_AND_WORKER_WAIT_V1.json",
+    "commit": "fd3e4dc2d3c08ffb74052c19bf839904626572a1",
+    "blob": "6e01c9e0be9c2aba514e4d9245cf3a3dd2a4cb19",
     "remote_readback": "PASS"
   },
-  "authorization_request": {
-    "request_id": "A2-TO-A0-A1-ONE-SHOT-EXACT-RESPONSE-FIXTURE-CAPTURE-AUTHORIZATION-REQUEST-V1-20260805-001",
+  "previous_authorization_decision": {
+    "request_comment_id": 5184545017,
+    "decision_comment_id": 5185107455,
+    "decision": "DENIED",
+    "first_blocker": "REQUEST_REFERENCES_A7_HEAD_AND_RECOMMENDATION_NOT_PRESENT_AT_CURRENT_PR26_REMOTE_HEAD",
+    "blocker_now_resolved": true
+  },
+  "corrected_authorization_request": {
+    "request_id": "A2-TO-A0-A1-ONE-SHOT-EXACT-RESPONSE-FIXTURE-CAPTURE-AUTHORIZATION-REQUEST-V2-20260805-001",
     "control_pr": 17,
-    "comment_id": 5184545017,
+    "comment_id": 5188055784,
     "decision": "NOT_PUBLISHED",
     "request_is_authorization": false,
     "capture_execution_authorized": false
   },
   "worker_comments": {
-    "A-3": 5184875937,
-    "A-4": 5184877652,
-    "A-5": 5184879644,
-    "A-6": 5184881802,
-    "A-7": 5184883435
+    "A-3": 5188057288,
+    "A-4": 5188058836,
+    "A-5": 5188060747,
+    "A-6": 5188062150,
+    "A-7": 5188063637
   },
   "worker_terminals": {
     "A-3": "A3_RESPONSE_FIXTURE_ACQUISITION_PACKAGE_REBOUND_READY_FOR_GOVERNANCE",
@@ -35,7 +42,7 @@
     "A-6": "A6_CORRECTED_AUTHORITY_REBUILD_TRIGGER_READY",
     "A-7": "A7_FIXTURE_ACQUISITION_GOVERNANCE_READY_FOR_A2_AUTHORIZATION_REQUEST"
   },
-  "current_terminal": "A2_ONE_SHOT_CAPTURE_AUTHORIZATION_REQUEST_POSTED_AWAITING_DECISION",
+  "current_terminal": "A2_CORRECTED_ONE_SHOT_CAPTURE_AUTHORIZATION_REQUEST_V2_POSTED_AWAITING_DECISION",
   "verified_adapter_package_ready": false,
   "b1_handoff_ready": false,
   "production": false,
