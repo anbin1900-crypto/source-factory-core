@@ -1,5 +1,5 @@
 {
-  "schema_version": "LATEST_A1_SUCCESSOR_REPORT_POINTER_V6",
+  "schema_version": "LATEST_A1_SUCCESSOR_REPORT_POINTER_V7",
   "status": "A1_ONE_SHOT_CAPTURE_TERMINAL_BLOCKED_REPLAN_REQUIRED",
   "terminal": "A1_ONE_SHOT_CAPTURE_TERMINAL_BLOCKED_ACCEPTED_REPLAN_REQUIRED",
   "repository": "anbin1900-crypto/source-factory-core",
@@ -31,6 +31,7 @@
     "report_path": "yolla-panel-v1/a0-successor-control/reports/A1_ONE_SHOT_CAPTURE_TERMINAL_ACCEPTANCE_V1.json",
     "report_commit": "7059cce3761664abef3a67010448f54cfda427d2",
     "report_blob": "bfb256ed79b41c4ff2749293c0fd1d0aa672d164",
+    "control_comment": 5188396198,
     "a3_final_head": "c0a75f7bfeb53aec2ffa561dfca3dd190ee47daa",
     "a3_final_pointer_blob": "a32fe02629658e114e252c981554ab79f15dd338",
     "a3_terminal_comment": 5188344425,
@@ -44,10 +45,11 @@
     "remote_readback": "PASS"
   },
   "active_replan": {
+    "directive_id": "A1-TO-A2-CAPTURE-INPUT-AUTHORITY-REPLAN-V1-20260805-001",
+    "directive_comment": 5188400007,
     "owner": "A-2",
     "control_pr": 18,
-    "observed_head_before_replan": "a442f5472e859139b703e280acd730af460427ca",
-    "observed_pointer_blob_before_replan": "ba1a1623209262c20001c07989f37c9ef0e0d973",
+    "observed_head_at_dispatch": "a442f5472e859139b703e280acd730af460427ca",
     "required_outputs": [
       "A2_CAPTURE_INPUT_AUTHORITY_REPLAN_V1.json",
       "CONCRETE_SOURCE_ORIGIN_MAPPING_V1.json",
@@ -95,5 +97,5 @@
   "ready": false,
   "merge": false,
   "self_merge": false,
-  "updated_at": "2026-08-05T15:32:00+09:00"
+  "updated_at": "2026-08-05T15:33:00+09:00"
 }
