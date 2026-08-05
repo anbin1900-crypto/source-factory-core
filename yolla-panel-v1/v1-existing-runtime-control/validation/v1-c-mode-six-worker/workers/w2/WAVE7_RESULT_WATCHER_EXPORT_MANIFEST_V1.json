@@ -1,0 +1,31 @@
+{
+  "schema": "C_MODE_WAVE_RESULT_EXPORT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-007",
+  "command_id": "C6W-W7-W2-RESULT-WATCHER-COLLECTOR",
+  "directive_comment": 5193628869,
+  "result_key": "519362886900",
+  "consumers": ["AUTOMATION-C-W1", "AUTOMATION-C-W5"],
+  "source": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "worker_pr": 60,
+    "branch": "worker/automation-c-w2-github-correlation-v2"
+  },
+  "collector": {
+    "path": "automation-c-v1/report_parser/result_watcher_collector.cjs",
+    "incremental_after_directive_only": true,
+    "pagination": true,
+    "retry_max": 5,
+    "restart_export": true
+  },
+  "classification": {
+    "0": "MISSING",
+    "1": "REPORTED",
+    "2_or_more": "DUPLICATE",
+    "superseded_registry": "HISTORICAL_NOT_CURRENT"
+  },
+  "wave6_missing_audit_comment": 5193742374,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
