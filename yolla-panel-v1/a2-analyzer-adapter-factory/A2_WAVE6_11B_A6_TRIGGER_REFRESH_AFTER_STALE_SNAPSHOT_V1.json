@@ -1,0 +1,45 @@
+{
+  "schema_version": "A2_WAVE6_11B_A6_TRIGGER_REFRESH_AFTER_STALE_SNAPSHOT_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_11B-A6-TRIGGER-REFRESH-V1-20260806-001",
+  "updated_at_kst": "2026-08-06T01:07:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "a2_control_pr": 18,
+  "stale_snapshot": {
+    "a5_head": "37605b27071d46b4c7d61d93b2f2a81295f115d8",
+    "a5_state": "OFFLINE_PREP_NO_FINAL_SCHEMA_CLAIM",
+    "a4_head": "d18192df1f672f7f1022eb428e521d720226a86b",
+    "a4_final_pointer_published": false,
+    "a6_trigger_ready": false,
+    "status": "SUPERSEDED_BY_LATER_REMOTE_FINAL_POINTERS"
+  },
+  "current_authority": {
+    "a5_final_head": "85bb7c7c6b07a0a58cdc74ea7d74a6de2ed81adb",
+    "a5_terminal": "A5_GENERIC_HTML_DOCUMENT_RESPONSE_CONTRACT_READY",
+    "a5_pointer_blob": "d5ec690e342a699639d21a0da0c4139b4333337f",
+    "a5_handoff_blob": "0f4e31bfd5ebfcf77872c52369322c67930330f2",
+    "a5_handoff_consumable": true,
+    "a4_final_head": "032c609396db198db6bd14c96436f07bc429cae8",
+    "a4_terminal": "A4_NO_AUTOMATED_PAGINATION_MVP_BINDING_READY",
+    "a4_pointer_blob": "9ac48216663f3390214e5dca4cb7b030b64f0535",
+    "a4_handoff_blob": "894fc02cc1cdf72708d1ccb1660f56b302f80aa3",
+    "a4_handoff_status": "READY"
+  },
+  "a6": {
+    "pr": 25,
+    "head_before_execution": "153c71faf5462c6e12d4390987d67be0dd4efa60",
+    "previous_directive_comment": 5194059963,
+    "trigger_refresh_comment": 5194260895,
+    "current_trigger_ready": true,
+    "final_build_target": 1,
+    "local_html_fixture_replay_count": 2,
+    "expected_terminal": "A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_READY_OR_EXACT_BLOCKER"
+  },
+  "active_owner": "A-6",
+  "current_terminal": "A2_A6_TRIGGER_REFRESHED_FROM_CURRENT_REMOTE_AUTHORITY",
+  "current_status": "WAITING_A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_TERMINAL",
+  "request_execution_authorized": false,
+  "capture_execution_authorized": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
