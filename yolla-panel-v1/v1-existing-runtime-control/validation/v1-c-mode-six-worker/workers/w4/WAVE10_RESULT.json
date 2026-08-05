@@ -1,0 +1,44 @@
+{
+  "schema_version": "AUTOMATION_C_W4_WAVE10_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-010",
+  "registry_sequence": 10,
+  "command_id": "C6W-W10-W4-PORTABLE-PREFLIGHT-3ROUND-FIXTURE",
+  "role": "AUTOMATION-C-W4",
+  "directive_comment": 5194585493,
+  "result_key": "519458549300",
+  "outcome": "BLOCKED",
+  "completed_artifacts": [
+    "automation-c-v1/portable_preflight.cjs",
+    "automation-c-v1/wave10_acceptance_fixture.cjs"
+  ],
+  "reused_inputs": {
+    "wave9_result_comment": 5194493989,
+    "w5_wave9_result_comment": 5194489948,
+    "target_pack_cycles": 1200,
+    "workers": 6,
+    "rounds": 3
+  },
+  "required_counters": {
+    "DUPLICATE": 0,
+    "C_REPEAT_CROSS_CANCEL": 0,
+    "END_REDISPATCH": 0,
+    "RECEIPT_LOSS": 0,
+    "QUEUE_GROWTH": 0
+  },
+  "ui_receipt_gate": {
+    "status": "CARRYOVER",
+    "owner": "AUTOMATION-C-W3"
+  },
+  "blocker": {
+    "code": "LOCAL_VALIDATION_INPUT_FETCH_DNS_FAILURE",
+    "detail": "The local execution environment could not resolve raw.githubusercontent.com, so the fixed W5 manifest/installer and W4 dependency files could not be downloaded for the required end-to-end rerun. No PASS is claimed.",
+    "retry_entrypoints": [
+      "node automation-c-v1/portable_preflight.cjs <manifest> <installer>",
+      "node automation-c-v1/wave10_acceptance_fixture.cjs"
+    ]
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
