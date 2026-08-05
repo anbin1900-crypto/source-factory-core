@@ -1,0 +1,46 @@
+{
+  "schema_version": "C_MODE_WAVE_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-009",
+  "registry_sequence": 9,
+  "role": "AUTOMATION-C-W4",
+  "command_id": "C6W-W9-W4-TARGET-PC-SOAK-RESTART-PACK",
+  "directive_comment": 5194413904,
+  "result_key": "519441390400",
+  "outcome": "PASS",
+  "input_head": "c104760dc53e8ba07c509b8ef5a472f38bd1d9b3",
+  "deliverables": {
+    "runner": "automation-c-v1/target_pc_soak_restart_runner.cjs",
+    "schema": "automation-c-v1/target_pc_soak_restart_schema.json",
+    "expected_receipt": "automation-c-v1/TARGET_PC_EXPECTED_RECEIPT.json",
+    "export_manifest": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w4/WAVE9_EXPORT_MANIFEST.json"
+  },
+  "reused_wave8_evidence": {
+    "virtual_trigger_cycles": 1200,
+    "slots": 6,
+    "repeat_receipts": 7000,
+    "restart_cycle": 600,
+    "counters": {
+      "DUPLICATE": 0,
+      "C_REPEAT_CROSS_CANCEL": 0,
+      "END_REDISPATCH": 0,
+      "RECEIPT_LOSS": 0,
+      "QUEUE_GROWTH": 0
+    }
+  },
+  "pack_validation": {
+    "one_click_command": "node automation-c-v1/target_pc_soak_restart_runner.cjs",
+    "receipt_schema": "TARGET_PC_SOAK_RESTART_RECEIPT_V1",
+    "runtime_state_files": ["repeat-runtime.json", "release.json", "namespace.json"],
+    "exactly_once_receipt_gate": true,
+    "end_auto_stop_gate": true,
+    "restart_resume_gate": true,
+    "namespace_noninterference_gate": true
+  },
+  "target_pc_execution_count": 0,
+  "target_pc_execution_owner": "AUTOMATION-C-W5_PACKAGE_OR_W6_ACCEPTANCE",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "END"
+}
