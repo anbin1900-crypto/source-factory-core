@@ -1,0 +1,92 @@
+{
+  "schema_version": "C1_D1_AUTHORITY_DELTA_FINAL_REPORT_V1",
+  "report_id": "C1-D1-AUTHORITY-DELTA-FINAL-REPORT-20260806-001",
+  "published_at_kst": "2026-08-06T08:23:00+09:00",
+  "role": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "common_directive_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V2-20260806-001",
+  "task_id": "C1_D1_AUTHORITY_DELTA_BINDING",
+  "task_directive_comment_id": 5198233686,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "current_remote_head_before_final_report": "408e24efb8ea2353244df4774e9c5cb2e0900c5d",
+  "inputs": {
+    "authority_delta_binding": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D1_AUTHORITY_DELTA_BINDING_V1.json",
+      "commit": "61b225c609dbc39579ba830697564ca1a41cb4a9",
+      "blob": "cdc5760ddbfc2cbdfe12bea69b1978393662972a",
+      "remote_readback": "PASS"
+    },
+    "mapping_addendum_consumption": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D1_MAPPING_ADDENDUM_CONSUMPTION_V1.json",
+      "commit": "c9fcd117c2e7d46c11379f2c0920cef3814a6478",
+      "blob": "e9018446393e386ce7e6c731538a14652cd8c307",
+      "remote_readback": "PASS"
+    },
+    "receipt_procedure_binding": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D1_RECEIPT_PROCEDURE_BINDING_V1.json",
+      "commit": "408e24efb8ea2353244df4774e9c5cb2e0900c5d",
+      "blob": "d6ff4669c474e64f9604a52a6f4ca3f01c9cbe1e",
+      "remote_readback": "PASS"
+    }
+  },
+  "authority_delta": {
+    "d1_head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "d1_control_pointer_blob": "d65285f969294c19c0d9e2d1bbc2adf8165f8819",
+    "source_authority_type": "OFFICIAL_SECONDARY",
+    "source_authority_decision_blob": "6bf779b937bf2bea761780315b22692ccca07ad9",
+    "mapping_addendum_blob": "118d6403dd5db47afafb982991f8fd9a51f35f28",
+    "b_receipt_procedure_blob": "2a8b7c1b04924728cce14dc21c225ad09598905f",
+    "c_receipt_procedure_blob": "5dc797523718f53bab67f48ed65029061e5ee45a",
+    "tree_binding_manifest_blob": "dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd"
+  },
+  "mapping_addendum_result": {
+    "B001": "RESOLVED_D1_ONLY_CANONICAL_LOOKUP_OR_GENERATION",
+    "B013": "RESOLVED_REQUIRED_WITH_VERSIONED_DERIVATION_OR_REJECTION",
+    "B014": "RESOLVED_RECORD_HASH_CONDITIONAL_EQUIVALENCE_NO_RAW_ARTIFACT_SUBSTITUTION",
+    "status": "PASS_3_OF_3",
+    "c3_request_consumed": true
+  },
+  "receipt_binding_result": {
+    "c5_consumer_pointer_blob": "750c315749ae03f9b7ef76f85b7100a1edee3d92",
+    "c6_validator_pointer_blob": "91331b918a3d0be0d96f53a3861d148c604194ab",
+    "b_and_c_separate_transactions": true,
+    "b_and_c_separate_receipts": true,
+    "actual_b_receipt_present": false,
+    "actual_c_receipt_present": false,
+    "knowledge_release_present": false,
+    "runtime_activation_state": "BLOCKED_FAIL_CLOSED"
+  },
+  "byte_preservation": {
+    "C2_FRAGMENT_CONTRACT_BLOB": "4e7a6569c700864f016d050f5ced7c514511b390",
+    "C4_CANDIDATE_BUNDLE_BLOB": "8c5ecfb8114330ca86ce9d0b50a971fd5b99037f",
+    "C2_FRAGMENT_BYTES_CHANGED": false,
+    "C4_CANDIDATE_BUNDLE_BYTES_CHANGED": false
+  },
+  "exact_state": {
+    "candidate_count": 0,
+    "assertion_count": 0,
+    "evidence_count": 0,
+    "rejected_record_count": 15,
+    "semantic_rerun_count": 0,
+    "runtime_activation": false,
+    "d1_actual_source_document_receipt": false,
+    "d1_actual_knowledge_receipt": false,
+    "d1_knowledge_release": false
+  },
+  "next_events": [
+    "B_CONTENT_BYTE_DELTA",
+    "D1_ACTUAL_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT",
+    "D1_ACTUAL_KNOWLEDGE_CANDIDATE_ACCEPTANCE_RECEIPT"
+  ],
+  "next_action": "WAIT_B_CONTENT_OR_SEPARATE_ACTUAL_D_RECEIPTS_THEN_RUN_INCREMENTAL_BINDING_ONLY",
+  "decision": "D1_AUTHORITY_DELTA_BOUND_WAITING_B_CONTENT_OR_ACTUAL_RECEIPTS",
+  "terminal": "C1_D1_AUTHORITY_DELTA_BOUND_WAITING_B_CONTENT_OR_ACTUAL_RECEIPTS_OR_EXACT_BLOCKER",
+  "terminal_result": "C1_D1_AUTHORITY_DELTA_BOUND_WAITING_B_CONTENT_OR_ACTUAL_RECEIPTS",
+  "d_acceptance_claim": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
