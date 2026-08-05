@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "TARGET_PC_SOAK_RESTART_RECEIPT_V1",
+  "type": "object",
+  "required": ["schema_version", "status", "cycles", "slots", "restart_cycle", "repeat_receipts", "popup_messages", "counters", "state_files"],
+  "properties": {
+    "schema_version": {"const": "TARGET_PC_SOAK_RESTART_RECEIPT_V1"},
+    "status": {"enum": ["PASS", "FAIL"]},
+    "cycles": {"type": "integer", "minimum": 1200},
+    "slots": {"const": 6},
+    "restart_cycle": {"type": "integer", "minimum": 1},
+    "repeat_receipts": {"type": "integer", "minimum": 1},
+    "popup_messages": {"type": "integer", "minimum": 1},
+    "counters": {
+      "type": "object",
+      "required": ["DUPLICATE", "C_REPEAT_CROSS_CANCEL", "END_REDISPATCH", "RECEIPT_LOSS", "QUEUE_GROWTH"],
+      "properties": {
+        "DUPLICATE": {"const": 0},
+        "C_REPEAT_CROSS_CANCEL": {"const": 0},
+        "END_REDISPATCH": {"const": 0},
+        "RECEIPT_LOSS": {"const": 0},
+        "QUEUE_GROWTH": {"const": 0}
+      },
+      "additionalProperties": false
+    },
+    "state_files": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
