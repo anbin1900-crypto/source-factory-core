@@ -1,0 +1,61 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE5_PUBLICATION_RECEIPT_V6",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-005",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "review_document": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave5/V1_C_MODE_WAVE4_REVIEW_V6.json",
+    "commit": "00d9977ae7a0c814e6763b1e23faf18147a9671a"
+  },
+  "directive_document": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave5/V1_C_MODE_6_WORKER_WAVE5_DIRECTIVE_V6.md",
+    "commit": "966eabbee2c7027e853e17a9196ba6e23f5692ad"
+  },
+  "worker_directives": {
+    "AUTOMATION-C-W1": {
+      "pr": 59,
+      "comment_id": 5192617480,
+      "command_id": "C6W-W5-W1-CANONICAL-CANDIDATE-MANIFEST"
+    },
+    "AUTOMATION-C-W2": {
+      "pr": 60,
+      "comment_id": 5192621172,
+      "command_id": "C6W-W5-W2-REPORT-WATCHER-RUNTIME-ADAPTER"
+    },
+    "AUTOMATION-C-W3": {
+      "pr": 61,
+      "comment_id": 5192623913,
+      "command_id": "C6W-W5-W3-ACTUAL-UI-TRUTH-PATCH"
+    },
+    "AUTOMATION-C-W4": {
+      "pr": 62,
+      "comment_id": 5192626427,
+      "command_id": "C6W-W5-W4-ACTUAL-REPEAT-RELEASE-ADAPTER"
+    },
+    "AUTOMATION-C-W5": {
+      "pr": 63,
+      "comment_id": 5192628935,
+      "command_id": "C6W-W5-W5-FINAL-CANDIDATE-BUILD-INSTALLER"
+    },
+    "AUTOMATION-C-W6": {
+      "pr": 64,
+      "comment_id": 5192631769,
+      "command_id": "C6W-W5-W6-FINAL-OFFLINE-INDEPENDENT-ACCEPTANCE"
+    }
+  },
+  "control_comment_id": 5192640903,
+  "wave4_valid_correlated_reports": 6,
+  "wave4_missing_reports": 0,
+  "replacement_required": [],
+  "current_progress_percent": 88,
+  "target_candidate_version": "5.10.2.4.2-rc1",
+  "integration_owner": "AUTOMATION-C-W5",
+  "target_pc_pass": "PENDING",
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "published_at_kst": "2026-08-05T22:55:00+09:00"
+}
