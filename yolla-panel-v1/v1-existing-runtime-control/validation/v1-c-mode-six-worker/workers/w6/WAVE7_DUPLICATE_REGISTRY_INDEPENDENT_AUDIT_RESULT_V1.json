@@ -1,0 +1,36 @@
+{
+  "schema_version": "C6W6_WAVE7_DUPLICATE_REGISTRY_INDEPENDENT_AUDIT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-007",
+  "command_id": "C6W-W7-W6-DUPLICATE-REGISTRY-AUDIT",
+  "worker_id": "AUTOMATION-C-W6",
+  "directive_comment": 5193638419,
+  "result_key": "519363841900",
+  "implementation_direct_edit": false,
+  "wave6_fixture": {
+    "result_comment": 5193508667,
+    "result_commit": "cc55a245305cf7d19bab33267fc2156c5fc30fd2",
+    "correlation": "HISTORICAL_SUPERSEDED_REGISTRY"
+  },
+  "failure_injection": {
+    "highest_sequence_only": "PASS_FAIL_CLOSED",
+    "same_sequence_duplicate": "PASS_FAIL_CLOSED",
+    "stale_registry_result": "PASS_FAIL_CLOSED",
+    "wrong_result_key": "PASS_FAIL_CLOSED",
+    "partial_dispatch": "PASS_FAIL_CLOSED",
+    "restart_roll_forward": "PASS_FAIL_CLOSED"
+  },
+  "w1_to_w5_wave7_result_audit": "PENDING_RESULTS",
+  "existing_validation_gates_preserved": true,
+  "external_blockers": {
+    "target_pc_receipt": false,
+    "six_workers_three_waves_receipt": false,
+    "restart_receipt": false,
+    "log_loss_zero_receipt": false
+  },
+  "outcome": "BLOCKED",
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
