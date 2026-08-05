@@ -1,0 +1,61 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE3_PUBLICATION_RECEIPT_V4",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-003",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "control_comment_id": 5191934771,
+  "review_document": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave3/V1_C_MODE_WAVE2_REVIEW_V4.json",
+    "commit": "d6b315b524ebab908f34a8ad9dbc31d55e7a9ae3"
+  },
+  "directive_document": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave3/V1_C_MODE_6_WORKER_WAVE3_DIRECTIVE_V4.md",
+    "commit": "aa2aaba37d7206d92e12b4641a09515cd210abe6"
+  },
+  "worker_publications": {
+    "AUTOMATION-C-W1": {
+      "pr": 59,
+      "comment_id": 5191917431,
+      "command_id": "C6W-W3-W1-UNIFIED-CANDIDATE"
+    },
+    "AUTOMATION-C-W2": {
+      "pr": 60,
+      "comment_id": 5191921150,
+      "command_id": "C6W-W3-W2-LIVE-LEDGER-DIRECTIVE-DISCOVERY"
+    },
+    "AUTOMATION-C-W3": {
+      "pr": 61,
+      "comment_id": 5191922857,
+      "command_id": "C6W-W3-W3-UI-PROJECTION-INTEGRATION"
+    },
+    "AUTOMATION-C-W4": {
+      "pr": 62,
+      "comment_id": 5191926137,
+      "command_id": "C6W-W3-W4-REPEAT-BRIDGE-ARBITRATION"
+    },
+    "AUTOMATION-C-W5": {
+      "pr": 63,
+      "comment_id": 5191928411,
+      "command_id": "C6W-W3-W5-TARGET-PC-ACCEPTANCE-BUNDLE"
+    },
+    "AUTOMATION-C-W6": {
+      "pr": 64,
+      "comment_id": 5191931432,
+      "command_id": "C6W-W3-W6-CARRYOVER-INDEPENDENT-AUDIT",
+      "carryover": true,
+      "missed_directive_comment": 5189701057,
+      "incorrect_no_pending_comment": 5189877834
+    }
+  },
+  "publication_status": "DISPATCHED_TO_6_OF_6",
+  "valid_wave2_reports": 5,
+  "missing_wave2_reports": 1,
+  "current_progress_percent": 72,
+  "target_pc_pass": "PENDING",
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "published_at": "2026-08-05T18:35:00+09:00"
+}
