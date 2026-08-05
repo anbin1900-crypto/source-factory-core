@@ -1,0 +1,62 @@
+{
+  "schema_version": "LATEST_V1_C_MODE_POINTER_RELAY_WAVE8_POINTER_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-008",
+  "registry_sequence": 8,
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "review_and_directive": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave8/C_MODE_WAVE7_REVIEW_AND_WAVE8_DIRECTIVE_V1.md",
+    "commit": "6bfac5cdd9be3511f5b58e3c6d79491e08ca7fce"
+  },
+  "wave7_review": {
+    "registry_comment": 5193659817,
+    "valid_correlated_reports": 6,
+    "missing_reports": 0,
+    "duplicate_results": 0,
+    "replacement_required": 0,
+    "results": {
+      "AUTOMATION-C-W1": {"result_comment": 5193766643, "head": "91872336931c3e5686bd973766737089d1860218", "outcome": "PASS"},
+      "AUTOMATION-C-W2": {"result_comment": 5193762256, "head": "0fdcbae0416cabd827e322bf70179bced1b4fe40", "outcome": "PASS"},
+      "AUTOMATION-C-W3": {"result_comment": 5193762357, "head": "1a3e6fbc08cb2613e70a16915367ac03a5aa38d8", "outcome": "PASS_OFFLINE_TARGET_PC_PENDING"},
+      "AUTOMATION-C-W4": {"result_comment": 5193766350, "head": "61fc6a20b2245c691ab3812d07ea321aa2944ea0", "outcome": "PASS"},
+      "AUTOMATION-C-W5": {"result_comment": 5193744236, "head": "46791b277705467dabf0e6edc43575e980e3aee5", "outcome": "BLOCKED_INPUTS_PENDING_NONDEPENDENT_PACKAGE_COMPLETE"},
+      "AUTOMATION-C-W6": {"result_comment": 5193735003, "head": "4b2eb6550770f646ab2611cc7c9154ff9f6c5f70", "outcome": "BLOCKED_FINAL_INPUTS_PENDING_FAILURE_INJECTION_PASS"}
+    },
+    "w5_w6_time_order_blockers_released": true
+  },
+  "wave8_registry": {
+    "comment_id": 5193883787,
+    "previous_registry_comment": 5193659817,
+    "same_wave_multiple_ready": "FAIL_CLOSED",
+    "highest_valid_registry_sequence_wins": true,
+    "all_rows_valid_before_any_dispatch": true
+  },
+  "worker_bindings": {
+    "AUTOMATION-C-W1": {"pr": 59, "directive_comment": 5193852309, "result_key": "519385230900", "command_id": "C6W-W8-W1-EXACT-INPUT-LOCK"},
+    "AUTOMATION-C-W2": {"pr": 60, "directive_comment": 5193857083, "result_key": "519385708300", "command_id": "C6W-W8-W2-ACTUAL-RESULT-COLLECTION"},
+    "AUTOMATION-C-W3": {"pr": 61, "directive_comment": 5193862391, "result_key": "519386239100", "command_id": "C6W-W8-W3-ACTUAL-UI-CANDIDATE"},
+    "AUTOMATION-C-W4": {"pr": 62, "directive_comment": 5193866450, "result_key": "519386645000", "command_id": "C6W-W8-W4-ACTUAL-BRIDGE-SOAK"},
+    "AUTOMATION-C-W5": {"pr": 63, "directive_comment": 5193871227, "result_key": "519387122700", "command_id": "C6W-W8-W5-RC3-INTEGRATION", "integration_owner": true},
+    "AUTOMATION-C-W6": {"pr": 64, "directive_comment": 5193876277, "result_key": "519387627700", "command_id": "C6W-W8-W6-INDEPENDENT-CONVERGENCE-AUDIT", "implementation_direct_edit": false}
+  },
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "target_candidate_version": "5.10.2.4.2-rc3",
+  "current_progress_percent": 93,
+  "status": "WAVE8_CONVERGENCE_DISPATCHED_6_OF_6",
+  "next_gate": "SIX_VALID_RESULTS_RC3_ARTIFACT_AND_INDEPENDENT_AUDIT_THEN_TARGET_PC_ACCEPTANCE",
+  "target_pc_pass": "PENDING",
+  "six_workers_three_waves": "PENDING_TARGET_PC",
+  "restart_resume": "PENDING_TARGET_PC",
+  "log_loss_zero": "PENDING_TARGET_PC",
+  "login_profile_preserved": "PENDING_TARGET_PC_READBACK",
+  "a_e_reintroduction_count": 0,
+  "auto_test_write_count": 0,
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at_kst": "2026-08-06T00:45:00+09:00"
+}
