@@ -1,0 +1,177 @@
+{
+  "schema_version": "A7_D_INTEGRATION_DELTA_REVIEW_V1",
+  "worker": "A-7",
+  "role": "A-7_INDEPENDENT_ANALYZER_ACCEPTANCE_WORKER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 26,
+  "branch": "worker/a7-analyzer-acceptance-audit-v1",
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/**",
+  "task_id": "A7_D_INTEGRATION_DELTA_REVIEW",
+  "directive_comment": 5196662863,
+  "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "mode": "DELTA_ONLY",
+  "reviewed_at_kst": "2026-08-06T06:22:00+09:00",
+  "entry_event": {
+    "required": "A6_VERIFIED_ADAPTER_D_COMPATIBILITY_READY_OR_EXACT_BLOCKER_TERMINAL_AND_FINAL_POINTER_PUBLISHED",
+    "satisfied": true,
+    "a6_terminal": "A6_VERIFIED_ADAPTER_D_COMPATIBILITY_READY",
+    "a6_final_head": "4d5acd815d52c2fdfca079447989f565f90857eb",
+    "a6_pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/LATEST_A6_D_INTAKE_COMPATIBILITY_POINTER.json",
+    "a6_pointer_blob": "f07bd6cd83c341f5c45e618c5a6dca3d848f4787"
+  },
+  "prior_findings": {
+    "a6_integrity_findings_3": "PASS_CLOSED",
+    "reopened": false,
+    "reexecuted": false,
+    "a6_prior_task_state": "PASS_CLOSED_NOT_REOPENED"
+  },
+  "review_inputs": {
+    "A3_D_SOURCE_PROVENANCE_HANDOFF": {
+      "final_head": "f1a32cdaeafb2ef8cc7442bc3ef8351d689e02c3",
+      "observed_baseline_head": "6a91c9ccedf96aa538fbbf34e4bf91553778297d",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_D_SOURCE_PROVENANCE_HANDOFF_V1.json",
+      "commit": "2b81d95010c541d624bad046d9a562a9476bfa2f",
+      "git_blob": "7b06de0089917dc41069da4950675f22b1f4d5e6",
+      "sha": {
+        "algorithm": "GIT_BLOB_SHA1",
+        "value": "7b06de0089917dc41069da4950675f22b1f4d5e6",
+        "remote_readback": "PASS"
+      },
+      "pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/LATEST_A3_D_SOURCE_PROVENANCE_POINTER.json",
+      "pointer_blob": "fb31a01923cf362331be72bc7fc357093c5771f2",
+      "terminal": "A3_D_SOURCE_PROVENANCE_HANDOFF_READY",
+      "checks": {
+        "exact_head_path_blob_sha": "PASS",
+        "expected_observed_separation": "PASS",
+        "observed_response_metadata": "NOT_OBSERVED_NO_HTTP_RESPONSE",
+        "raw_redacted_state": "NOT_OBSERVED_NO_HTTP_RESPONSE_BYTES",
+        "secret_pii_credential_value_count": 0,
+        "new_external_request_count": 0
+      }
+    },
+    "A4_D_LOCATOR_PAGINATION_HANDOFF": {
+      "final_head": "2efc3866b292cd8c43a6fdc75a43479c0bbf2fad",
+      "observed_baseline_head": "032c609396db198db6bd14c96436f07bc429cae8",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A4_D_LOCATOR_PAGINATION_HANDOFF_V1.json",
+      "commit": "10a54860c1907318bf0e9ee48163f5c836d4580a",
+      "git_blob": "ccdb978a08fe94bf61df3477b1eef71f904c7ce4",
+      "sha": {
+        "algorithm": "GIT_BLOB_SHA1",
+        "value": "ccdb978a08fe94bf61df3477b1eef71f904c7ce4",
+        "remote_readback": "PASS"
+      },
+      "pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/LATEST_A4_REPORT_POINTER.json",
+      "pointer_blob": "7cb42160835fbc7a724a2bce40f65b03a0545018",
+      "terminal": "A4_D_LOCATOR_PAGINATION_HANDOFF_READY",
+      "checks": {
+        "exact_head_path_blob_sha": "PASS",
+        "fragment_locator_mapping": "PASS_7_OF_7",
+        "page_observed": false,
+        "size_observed": false,
+        "automated_pagination": false,
+        "invented_page_size_count": 0,
+        "d_canonical_id_generation": false,
+        "new_external_request": false
+      }
+    },
+    "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF": {
+      "final_head": "ba04d2dbae45a5ed51e86d6715565d15b8428464",
+      "observed_baseline_head": "85bb7c7c6b07a0a58cdc74ea7d74a6de2ed81adb",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF_V1.json",
+      "commit": "ca6badefd93da4b9722c955ff66117bbdf7ae38d",
+      "git_blob": "0fac8fac5069a013717ea74202d6d1741adfd966",
+      "sha": {
+        "algorithm": "GIT_BLOB_SHA1",
+        "value": "0fac8fac5069a013717ea74202d6d1741adfd966",
+        "remote_readback": "PASS"
+      },
+      "pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/LATEST_A5_REPORT_POINTER.json",
+      "pointer_blob": "aa7c0c94cf4d6912dfb881ed63b0e10a392e92ca",
+      "terminal": "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF_READY",
+      "checks": {
+        "exact_head_path_blob_sha": "PASS",
+        "source_endpoint_profile_binding": "PASS_7_OF_7",
+        "method": "GET",
+        "response_format": "HTML",
+        "mime_type": "text/html",
+        "authority_type_value_provided": false,
+        "d_canonical_id_value_provided": false,
+        "credential_value_count": 0,
+        "raw_secret_value_count": 0,
+        "new_external_request": false
+      }
+    },
+    "A6_VERIFIED_ADAPTER_D_INTAKE_COMPATIBILITY": {
+      "final_head": "4d5acd815d52c2fdfca079447989f565f90857eb",
+      "baseline_head": "a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/A6_VERIFIED_ADAPTER_D_INTAKE_COMPATIBILITY_V1.json",
+      "git_blob": "8380c740d9f5f019c5146b553f983cce97ed5dbd",
+      "sha": {
+        "algorithm": "SHA256",
+        "value": "7d573f33b5d9b94c4ee1c7a94e238d6cd8bb3f3d00e9f7c795c157ddacc1094d",
+        "remote_readback": "PASS"
+      },
+      "pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/LATEST_A6_D_INTAKE_COMPATIBILITY_POINTER.json",
+      "pointer_blob": "f07bd6cd83c341f5c45e618c5a6dca3d848f4787",
+      "terminal": "A6_VERIFIED_ADAPTER_D_COMPATIBILITY_READY",
+      "checks": {
+        "exact_head_path_blob_sha": "PASS",
+        "canonical_identifier_generation_count": 0,
+        "authority_classification_decision_count": 0,
+        "new_external_request_count": 0,
+        "package_byte_mutation_count": 0,
+        "package_member_sha_unchanged": "PASS_6_OF_6",
+        "source_provenance_bound": "PASS_7_OF_7",
+        "locator_bound": "PASS_7_OF_7",
+        "source_endpoint_bound": "PASS_7_OF_7"
+      }
+    }
+  },
+  "adapter_package_immutability": {
+    "baseline_head": "a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793",
+    "final_head": "4d5acd815d52c2fdfca079447989f565f90857eb",
+    "compare_status": "AHEAD_BY_1",
+    "changed_file_count": 5,
+    "changed_files_all_d_compatibility_metadata": true,
+    "accepted_package_path": "VERIFIED_ADAPTER_PACKAGE_V1/package.json",
+    "accepted_package_blob": "d758afef96e76b664f6d8b0383c5a7bc017c731a",
+    "accepted_package_sha256": "fad18a1e0571dfac26305d8bd3d845a639e225c51ff1a03dfe45c49d7d441854",
+    "accepted_package_size_bytes": 4238,
+    "package_file_changed": false,
+    "member_file_changed_count": 0,
+    "package_member_sha_unchanged": "PASS_6_OF_6"
+  },
+  "state_separation": {
+    "raw_vs_redacted": "PASS_NO_RUNTIME_RESPONSE_BYTES_PROMOTED",
+    "observed_vs_expected": "PASS_CONTRACT_EXPECTED_VALUES_SEPARATED_FROM_NOT_OBSERVED_RUNTIME_VALUES",
+    "pagination_observed_vs_contract": "PASS_NOT_OBSERVED_PRESERVED_WITH_NULL_VALUES",
+    "expected_value_promoted_as_observed_count": 0
+  },
+  "safety_and_authority": {
+    "d_canonical_id_generated_by_a6": false,
+    "authority_type_decided_by_a6": false,
+    "secret_pii_credential_raw_value_finding_count": 0,
+    "new_external_request_count": 0,
+    "implementation_edit": false,
+    "self_approval": false,
+    "blocking_mid_process_gate": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "checks": {
+    "exact_head_path_blob_sha": "PASS_4_OF_4",
+    "adapter_package_member_byte_unchanged": "PASS",
+    "a6_no_d_canonical_id_generation": "PASS",
+    "a6_no_authority_type_decision": "PASS",
+    "secret_pii_credential_values_absent": "PASS",
+    "new_external_request_absent": "PASS",
+    "raw_redacted_observed_expected_not_mixed": "PASS",
+    "prior_finding_reopen": "PASS_FALSE",
+    "prior_finding_reexecution": "PASS_FALSE"
+  },
+  "finding_count": 0,
+  "decision": "PASS",
+  "terminal": "A7_D_INTEGRATION_DELTA_REVIEW_PASS",
+  "next_event": "A2_D_INTEGRATION_HANDOFF_SET"
+}
