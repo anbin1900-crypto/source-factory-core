@@ -1,0 +1,17 @@
+{
+  "schema":"RC3_PAYLOAD_LOCK_V1",
+  "control_id":"V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id":"V1-C-MODE-6W-WAVE-008",
+  "command_id":"C6W-W8-W5-RC3-INTEGRATION",
+  "target_version":"5.10.2.4.2-rc3",
+  "inputs":[
+    {"role":"W1","head":"91872336931c3e5686bd973766737089d1860218","result":"WAVE7_REGISTRY_AUTHORITY_RESULT_V8","status":"PASS"},
+    {"role":"W2","head":"0fdcbae0416cabd827e322bf70179bced1b4fe40","result":"C_MODE_WAVE_RESULT_V1","status":"PASS"},
+    {"role":"W3","head":"1a3e6fbc08cb2613e70a16915367ac03a5aa38d8","result":"V1_C_MODE_W3_WAVE7_RESULT_V1","status":"PASS_OFFLINE_TARGET_PC_PENDING"},
+    {"role":"W4","head":"61fc6a20b2245c691ab3812d07ea321aa2944ea0","result":"C6W_W7_W4_RESULT_V1","status":"PASS"}
+  ],
+  "preserve":{"login_profile":true,"runtime_log":true,"work_control_jsonl":true,"dispatch_receipt":true,"c_repeat_state":true},
+  "legacy_a_e_reintroduced":0,
+  "target_pc_pass":false,
+  "drive_upload":"PENDING"
+}
