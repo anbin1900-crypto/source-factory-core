@@ -1,0 +1,48 @@
+{
+  "schema_version": "B6_D_PACKAGE_PREFLIGHT_TEST_RESULT_V2",
+  "task_id": "B6_D_SOURCE_DOCUMENT_HANDOFF_REPREFLIGHT",
+  "directive_comment_id": 5196668910,
+  "executed_at_kst": "2026-08-06T06:22:00+09:00",
+  "execution_mode": "STATIC_EXACT_HEAD_PATH_BLOB_AND_CONTRACT_VALIDATION",
+  "categories": {
+    "entry_event_gate": {"executed":3,"passed":3,"failed":0,"result":"PASS_3_OF_3"},
+    "B_worker_input_binding": {"executed":13,"passed":13,"failed":0,"result":"PASS_13_OF_13","semantic_result":"INPUTS_RECEIVED_4_OF_4_READY_3_OF_4"},
+    "D_tree_binding": {"executed":16,"passed":16,"failed":0,"result":"PASS_16_OF_16","manifest_paths":"PASS_10_OF_10"},
+    "required_path_full_accounting": {"executed":4,"passed":4,"failed":0,"result":"PASS_4_OF_4","paths":"PASS_18_OF_18"},
+    "D_contracts_and_procedures": {"executed":6,"passed":6,"failed":0,"result":"PASS_6_OF_6"},
+    "source_identity_alignment": {"executed":5,"passed":5,"failed":0,"result":"PASS_5_OF_5","semantic_result":"READY_FOR_B5_RERUN"},
+    "lane_separation": {"executed":5,"passed":5,"failed":0,"result":"PASS_5_OF_5"},
+    "candidate_promotion_gate": {"executed":5,"passed":5,"failed":0,"result":"PASS_5_OF_5","semantic_result":"CORRECTLY_BLOCKED_ON_B5"},
+    "safety_boundaries": {"executed":8,"passed":8,"failed":0,"result":"PASS_8_OF_8"}
+  },
+  "deterministic": {
+    "executed": 65,
+    "passed": 65,
+    "failed": 0,
+    "result": "PASS_65_OF_65"
+  },
+  "fail_closed_mutations": {
+    "executed": 3,
+    "passed": 3,
+    "failed": 0,
+    "result": "PASS_3_OF_3",
+    "mutations": [
+      {"mutation":"candidate.promotable=true while B5 terminal is EXACT_BLOCKER","expected":"REJECT","actual":"REJECT","status":"PASS"},
+      {"mutation":"replace D1 authoritative root with COMMAND_CENTER/GOVERNANCE","expected":"REJECT","actual":"REJECT","status":"PASS"},
+      {"mutation":"combine B and C receipt lanes","expected":"REJECT","actual":"REJECT","status":"PASS"}
+    ]
+  },
+  "overall": "PASS_68_OF_68",
+  "preflight_decision": "EXACT_BLOCKER",
+  "first_blocker": "B5_D_READY_PACKAGE_V2_NOT_RERUN_AFTER_B2_B4_READY",
+  "expected_recovery": "B5_RERUN_CURRENT_B2_B3_B4_D1_HEADS_THEN_B6_REPREFLIGHT",
+  "network_call_scope": "GITHUB_READ_WRITE_ONLY",
+  "actual_site_call_count": 0,
+  "github_actions_ci_run_count": 0,
+  "github_actions_ci_pass_claimed": false,
+  "D_acceptance_claim": false,
+  "D_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
