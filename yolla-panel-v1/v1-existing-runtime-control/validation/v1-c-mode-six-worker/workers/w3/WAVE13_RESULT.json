@@ -1,0 +1,62 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE13_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-013",
+  "registry_sequence": 13,
+  "command_id": "C6W-W13-W3-INSTALLER-READY-UI-PROFILE-BINDING",
+  "worker_id": "AUTOMATION-C-W3",
+  "directive_comment": 5196057701,
+  "continue_comment": 5196195927,
+  "result_key": "519605770100",
+  "target_version": "5.10.2.4.2-rc5",
+  "status": "BLOCKED_W1_RC5_ASSEMBLY_MAP_PENDING",
+  "outcome": "BLOCKED",
+  "artifact_head": "946e4d79a430ddd14f649d90681f2d3d0df702f4",
+  "artifacts": [
+    "wave13/W3_RC5_INSTALLER_READY_UI_EXPORT.json",
+    "wave13/validate_w3_rc5_installer_ready_ui.cjs",
+    "wave13/test_w3_rc5_ui_smoke.cjs",
+    "wave13/NON_AUTHORITY_W1_ALIGNMENT_TEST_FIXTURE.json",
+    "wave13/W3_RC5_MEMBERSHIP_PENDING_RECEIPT.json"
+  ],
+  "completed_nondependent_work": {
+    "installer_ready_export": true,
+    "actual_release_root_bound": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc5",
+    "state_root_preserved": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2",
+    "fixed_login_profile_preserved": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "worker_partition_preserved": "persist:sf4-safe-panel-worker-1",
+    "analysis_partition_preserved": "persist:yolla-analysis-browser-v1",
+    "localappdata_destination_forbidden": true,
+    "css_js_load_hooks_defined": true,
+    "removal_only_rollback_defined": true,
+    "base_ui_preserved": true
+  },
+  "tests": [
+    {"name":"Node syntax: membership validator","status":"PASS"},
+    {"name":"Node syntax: UI smoke","status":"PASS"},
+    {"name":"Installer-ready UI smoke","status":"PASS","assertions":17},
+    {"name":"W1 alignment algorithm with explicitly non-authority fixture","status":"PASS"},
+    {"name":"Membership validation without W1 authority map","status":"BLOCKED","nondependent_checks":"PASS"}
+  ],
+  "required_truth_gates": {
+    "C_AND_REPEAT_DISABLED_WORKING_COUNT": 0,
+    "LEGACY_A_E_EXCLUDED": true,
+    "RESULT_COMMENT_PRIORITY": true,
+    "CURRENT_AND_HISTORICAL_REGISTRY_SEPARATED": true,
+    "MISSING_DUPLICATE_ERROR_END_RESTING_SEPARATED": true,
+    "FIXED_LOGIN_PROFILE_CONTRACT_PRESERVED": true
+  },
+  "blocker": {
+    "code": "W1_RC5_ASSEMBLY_MAP_NOT_YET_PUBLISHED",
+    "required_result_key": "519605250600",
+    "scope": "Final exact comparison of W3 package_path, install_destination, and load_order against the authoritative W1 rc5 Assembly Map",
+    "arbitrary_substitution_refused": true,
+    "target_pc_related": false
+  },
+  "target_pc_execution": "PENDING",
+  "live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-06T04:17:00+09:00"
+}
