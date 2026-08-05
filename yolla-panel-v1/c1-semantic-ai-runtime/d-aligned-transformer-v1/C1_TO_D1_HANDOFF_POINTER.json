@@ -1,13 +1,13 @@
 {
-  "schema_version": "C1_TO_D1_HANDOFF_POINTER_V4",
-  "pointer_id": "C1-TO-D1-D-INTEGRATION-CONTRACT-SET-HANDOFF-POINTER-20260806-001",
-  "registered_at_kst": "2026-08-06T05:03:00+09:00",
+  "schema_version": "C1_TO_D1_HANDOFF_POINTER_V5",
+  "pointer_id": "C1-TO-D1-D-INTEGRATION-RESULT-HANDOFF-POINTER-20260806-001",
+  "registered_at_kst": "2026-08-06T05:18:00+09:00",
   "producer": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
   "consumer": "D-1_KNOWLEDGE_DB_AUTHORITY_COMMANDER",
   "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
-  "task": "C2_TO_C6_D_INTEGRATION_RESULT_INTEGRATION",
+  "task_id": "C1_D_INTEGRATION_RESULT_INTEGRATION",
   "directive_comment_id": 5196655145,
-  "previous_pointer_blob": "0265e2bd145c374277321b6d98bfda1a5d04bf02",
+  "previous_pointer_blob": "db88bb169a1eea63b12500cc53bf14971bc3994d",
   "source_authority": {
     "repository": "anbin1900-crypto/source-factory-core",
     "control_pr": 20,
@@ -16,20 +16,32 @@
   "target_authority": {
     "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
     "control_pr": 188,
-    "head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+    "worker_execution_head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+    "current_head_observed": "fdba1b17588016f8754d8c335c01b65deb093708",
     "mapping_contract_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
-    "mapping_version": "1.0.0",
-    "c002_to_c016_rule_coverage": "PASS_15_OF_15"
+    "mapping_version": "1.0.0"
   },
-  "commander_report": {
-    "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D_INTEGRATION_CONTRACT_SET_REPORT_V1.json",
-    "commit": "ca9d716fcac296bcdb28ea2b8e2325248b90a5cc",
-    "blob": "059c573caa3bb8f42823612520d272861f842a53"
-  },
-  "latest_contract_set_pointer": {
-    "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/LATEST_C1_D_INTEGRATION_CONTRACT_SET_POINTER.json",
-    "commit": "726a4dc605e8dd98714c5c9bb18d059f3957dc2f",
-    "blob": "8609a66b9ac1250458a4d49ad4229a16d5335874"
+  "commander_artifacts": {
+    "contract_set": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D_INTEGRATION_CONTRACT_SET_V1.json",
+      "commit": "7276e29ede7a605c138dc55454d384518084a40d",
+      "blob": "8e6deaacb2350605faf1c0dc5e4214274c7da8b6"
+    },
+    "worker_result_matrix": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D_INTEGRATION_WORKER_RESULT_MATRIX_V1.json",
+      "commit": "782c312e2910473de1a871444a3c06842be42ae6",
+      "blob": "c99c7d5d7fa73887f25dabb5d6bac4b93660a04b"
+    },
+    "wait_gate": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D_INTEGRATION_WAIT_GATE_V1.json",
+      "commit": "b0536d8b6f74806195be1a757061b4fee3b5ef80",
+      "blob": "11db6a7dd2b699e7671a1657f8d7b005feb3e8db"
+    },
+    "final_report": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D_INTEGRATION_FINAL_REPORT_V1.json",
+      "commit": "3501a792b795413b105a8405f57435a159b62a56",
+      "blob": "c1e7ebf75cb3251b9e898b6518af49a0e9ad22e4"
+    }
   },
   "worker_result_gate": {
     "status": "PASS_OR_EXPECTED_BLOCKER_5_OF_5",
@@ -39,36 +51,29 @@
     "C-5_POINTER_BLOB": "750c315749ae03f9b7ef76f85b7100a1edee3d92",
     "C-6_POINTER_BLOB": "91331b918a3d0be0d96f53a3861d148c604194ab"
   },
-  "integration_contract_set": {
-    "fragment_locator_contract_blob": "4e7a6569c700864f016d050f5ced7c514511b390",
-    "required_path_closure_matrix_v2_blob": "9283857227aebb59679e11bfc4ddb736ac55e188",
-    "d1_mapping_addendum_request_blob": "40c21a62fb2af9654e4d1ccb79a744ab68852edc",
-    "knowledge_candidate_bundle_v2_blob": "8c5ecfb8114330ca86ce9d0b50a971fd5b99037f",
-    "d_release_query_citation_consumer_contract_blob": "0c617b519b3202cd4f9d6e37adf200b19c7c2516",
-    "d_dual_receipt_e2e_contract_blob": "e3f9bcbe2078c91a3bf3e2e6e8967b3a3c6eb237",
-    "status": "READY"
-  },
-  "b_authority": {
-    "head": "fded2aa3f24bd7e6eaa8aedeafa7d2e6a4e2dc04",
-    "handoff_pointer_blob": "932904cede5bcfb239a62952173f82147b0b0f26",
-    "classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE",
-    "content_byte_delta": false
+  "current_state": {
+    "contract_set_ready": true,
+    "candidate_count": 0,
+    "assertion_count": 0,
+    "evidence_count": 0,
+    "rejected_record_count": 15,
+    "d1_actual_source_document_receipt": false,
+    "d1_actual_knowledge_receipt": false,
+    "d1_knowledge_release": false,
+    "semantic_rerun_count": 0,
+    "runtime_activation": false,
+    "runtime_activation_state": "BLOCKED_FAIL_CLOSED"
   },
   "handoff_decision": "CONTRACT_SET_READY_NOT_SENT_WAITING_B_OR_D_DELTA",
+  "actual_d_handoff_performed": false,
   "waiting_conditions": [
     "B_CONTENT_BYTE_DELTA",
-    "D1_FRAGMENT_CONTRACT_RECONCILIATION_OR_CANONICAL_FRAGMENT_BINDING",
-    "D1_B001_SOURCE_KEY_TO_SOURCE_ID_MAPPING_ADDENDUM",
-    "D1_B014_SOURCE_SHA256_RECORD_HASH_EQUIVALENCE_ADDENDUM",
-    "D1_ACTUAL_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT",
-    "D1_ACTUAL_KNOWLEDGE_CANDIDATE_ACCEPTANCE_RECEIPT",
-    "D1_KNOWLEDGE_RELEASE_V1"
+    "D_AUTHORITY_FRAGMENT_CONTRACT_OR_CANONICAL_FRAGMENT_BINDING_DELTA",
+    "D_AUTHORITY_B001_OR_B014_MAPPING_ADDENDUM_DELTA",
+    "D_ACTUAL_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_DELTA",
+    "D_ACTUAL_KNOWLEDGE_ACCEPTANCE_RECEIPT_DELTA",
+    "D_KNOWLEDGE_RELEASE_V1_DELTA"
   ],
-  "candidate_count": 0,
-  "actual_d_handoff_performed": false,
-  "actual_d_acceptance_receipt_issued": false,
-  "knowledge_release_v1_published": false,
-  "semantic_duplicate_reexecution": false,
   "decision": "READY_WAITING_B_OR_D_DELTA",
   "terminal": "C1_D_INTEGRATION_CONTRACT_SET_READY_WAITING_B_OR_D_DELTA_OR_EXACT_BLOCKER",
   "d_acceptance_claimed": false,
@@ -76,5 +81,5 @@
   "production": false,
   "ready": false,
   "merge": false,
-  "status": "C1_TO_D1_D_INTEGRATION_CONTRACT_SET_READY_WAITING_B_OR_D_DELTA"
+  "status": "C1_TO_D1_D_INTEGRATION_RESULT_READY_WAITING_B_OR_D_DELTA"
 }
