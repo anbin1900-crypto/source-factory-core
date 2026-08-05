@@ -1,0 +1,42 @@
+{
+  "schema_version": "LATEST_V1_C_MODE_POINTER_RELAY_WAVE13_INTERIM_POINTER_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-013",
+  "registry_sequence": 13,
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "base_wave_pointer": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/LATEST_V1_C_MODE_POINTER_RELAY_WAVE13_POINTER.json",
+    "commit": "fb8cfa38e97817b447a2f15ee741dc22c5ec7dff",
+    "registry_comment": 5196092403
+  },
+  "interim_status": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave13/C_MODE_WAVE13_EARLY_STATUS_AND_CONTINUE_REQUEST_V1.json",
+    "commit": "ee0f9ed7b752e24c829f1bcfa0cd597bf254aaa3"
+  },
+  "worker_continue_comments": {
+    "AUTOMATION-C-W1": 5196192026,
+    "AUTOMATION-C-W2": 5196194041,
+    "AUTOMATION-C-W3": 5196195927,
+    "AUTOMATION-C-W4": 5196197860,
+    "AUTOMATION-C-W5": 5196200295,
+    "AUTOMATION-C-W6": 5196202446
+  },
+  "reported": 0,
+  "missing_result_marker": 6,
+  "manual_check_before_twenty_minute_gate": true,
+  "missing_report_counter_incremented": false,
+  "new_wave_posted": false,
+  "current_wave_remains_authoritative": true,
+  "replacement_required": [],
+  "next_gate": "WAVE13_RESULT_COLLECTION_OR_VALID_TIME_GATE",
+  "target_version": "5.10.2.4.2-rc5",
+  "current_progress_percent": 96,
+  "target_pc_pass": "PENDING",
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
