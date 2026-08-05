@@ -1,19 +1,28 @@
 {
-  "schema_version": "LATEST_V2_ABC_GITHUB_INCONSISTENCY_RECONCILIATION_POINTER_V1",
-  "pointer_id": "LATEST-V2-ABC-GITHUB-INCONSISTENCY-RECONCILIATION-20260805-001",
-  "updated_at_kst": "2026-08-05T17:12:00+09:00",
+  "schema_version": "LATEST_V2_ABC_GITHUB_INCONSISTENCY_RECONCILIATION_POINTER_V2",
+  "pointer_id": "LATEST-V2-ABC-GITHUB-INCONSISTENCY-RECONCILIATION-20260805-002",
+  "updated_at_kst": "2026-08-05T17:16:00+09:00",
   "commander": "V-2_YOLLA_AI_SUPREME_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
+  "previous_pointer_blob": "71ecef3b30c101fdb009a9faa4bb22148190bf79",
   "report": {
-    "path": "yolla-panel-v1/a0-successor-control/reports/V2_ABC_GITHUB_INCONSISTENCY_RECONCILIATION_V1.json",
-    "commit": "a34f67cef0e5fb974d0e063f22100935b4e5723d",
-    "blob": "34fc2b6ae824d425e16cf369cfb0919c5b0b3f99",
+    "path": "yolla-panel-v1/a0-successor-control/reports/V2_ABC_GITHUB_INCONSISTENCY_RECONCILIATION_V2.json",
+    "commit": "d074e9d74ec18d193b29b2d51b16ea3a57de3ef4",
+    "blob": "0b19f2b6ac09e039db21d252afa598d4822780f6",
     "remote_readback": "PASS"
   },
+  "correction": {
+    "prior_report_blob": "34fc2b6ae824d425e16cf369cfb0919c5b0b3f99",
+    "reason": "SUMMARY_COUNT_WAS_12_BUT_ENUMERATED_GROUP_COUNTS_TOTAL_14",
+    "substantive_group_state_changed": false
+  },
   "summary": {
-    "inconsistency_count_found": 12,
-    "inconsistency_count_resolved": 12,
+    "a_group_inconsistency_count": 4,
+    "b_group_inconsistency_count": 6,
+    "c_group_inconsistency_count": 4,
+    "inconsistency_count_found": 14,
+    "inconsistency_count_resolved": 14,
     "remaining_internal_pointer_inconsistency_count": 0,
     "remaining_external_blocker_count": 2
   },
