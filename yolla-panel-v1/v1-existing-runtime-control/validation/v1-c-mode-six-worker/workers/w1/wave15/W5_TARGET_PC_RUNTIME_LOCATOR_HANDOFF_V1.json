@@ -1,0 +1,126 @@
+{
+  "schema_version": "W5_TARGET_PC_RUNTIME_LOCATOR_HANDOFF_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-015",
+  "registry_sequence": 15,
+  "command_id": "C6W-W15-W1-TARGET-PC-RUNTIME-LOCATOR-BASELINE-RESOLVER",
+  "role": "AUTOMATION-C-W1",
+  "directive_comment": 5196981655,
+  "report_request_comment": 5197560491,
+  "result_key": "519698165500",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc6",
+  "authority": {
+    "release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases",
+    "state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2",
+    "browser_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_3_7.bat",
+    "candidate_release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc6"
+  },
+  "inputs": {
+    "wave14_overlay_map": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave14/AUTHORITY_CORRECT_BASELINE_OVERLAY_MAP_V2.json",
+      "commit": "3b48578d67b3ab28aae16347b38cb9c9367d3847",
+      "overlay_member_count": 17
+    },
+    "source_lock": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave12/W1_EXECUTABLE_SOURCE_INVENTORY_LOCK_V5.json",
+      "blob_sha1": "b3096ae462e26280a84b77ccf57be399e58fb773",
+      "exact_member_count": 17
+    }
+  },
+  "resolver": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave15/target_pc_runtime_locator.cjs",
+    "commit": "ed8bde5eb66f0d65de64ad1dfae4fde038e6012c",
+    "blob_sha1": "92e3e7f027f716fb49373bc66e9d62aff61b73ae",
+    "sha256": "a6eaeef66a2dfc59b646fb63ab62d6bff12361b79f13d97bb4022eaa01255ea6",
+    "size_bytes": 10563,
+    "runtime": "Node.js CommonJS",
+    "network_dependency": false
+  },
+  "tests": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave15/test_target_pc_runtime_locator.cjs",
+    "commit": "0a7f47207b2b542cefaff4a7f37dcc2d226f3daa",
+    "blob_sha1": "b50faa586f5af5937fb8bf70b9b14acd59518521",
+    "sha256": "c2cea25acf28e642c866c84d7ae34b13791b69c3d6a8478226ba733e0fcb5b9e",
+    "size_bytes": 7417,
+    "execution": "PASS_25_OF_25"
+  },
+  "w5_invocation": {
+    "explicit_parameter": [
+      "node",
+      "target_pc_runtime_locator.cjs",
+      "-BaseReleasePath",
+      "<ABSOLUTE_BASE_RELEASE_PATH>",
+      "-CandidateReleasePath",
+      "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc6",
+      "-ReceiptPath",
+      "<RECEIPT_PATH>"
+    ],
+    "exactly_one_discovery": [
+      "node",
+      "target_pc_runtime_locator.cjs",
+      "-CandidateReleasePath",
+      "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc6",
+      "-ReceiptPath",
+      "<RECEIPT_PATH>"
+    ],
+    "electron_as_node_allowed": "W5 may set ELECTRON_RUN_AS_NODE=1 and invoke the baseline Electron executable when a standalone node.exe is absent."
+  },
+  "required_semantics": {
+    "explicit_path_under_release_root": true,
+    "baseline_version_exact": true,
+    "required_files": [
+      "package.json",
+      "main.js",
+      "workspace.html"
+    ],
+    "package_main_entry_exists_and_stays_inside_release": true,
+    "no_parameter_exactly_one_discovery": true,
+    "zero_or_multiple_fail_closed": true,
+    "launcher_target_time_byte_readback": true,
+    "launcher_sha256_and_immutable_backup": true,
+    "complete_recursive_clone_before_overlay": true,
+    "pre_post_tree_hash_equality": true,
+    "candidate_overwrite_forbidden": true,
+    "guessed_path_count": 0
+  },
+  "primary_fail_closed_codes": [
+    "BASE_RELEASE_PATH_NOT_ABSOLUTE",
+    "PATH_OUTSIDE_RELEASE_ROOT",
+    "BASELINE_VERSION_MISMATCH",
+    "BASE_MAIN_JS_MISSING",
+    "BASE_WORKSPACE_HTML_MISSING",
+    "BASE_PACKAGE_JSON_MISSING",
+    "BASE_EXECUTABLE_ENTRY_UNDECLARED",
+    "BASE_EXECUTABLE_ENTRY_ESCAPES_RELEASE",
+    "BASE_EXECUTABLE_ENTRY_MISSING",
+    "BASELINE_CANDIDATE_COUNT_ZERO",
+    "BASELINE_CANDIDATE_COUNT_MULTIPLE",
+    "AUTHORITY_LAUNCHER_MISSING",
+    "LAUNCHER_BACKUP_BYTE_MISMATCH",
+    "CANDIDATE_OUTSIDE_RELEASE_ROOT",
+    "CANDIDATE_EQUALS_BASELINE",
+    "CANDIDATE_RELEASE_ALREADY_EXISTS",
+    "BASELINE_RECURSIVE_CLONE_MISMATCH"
+  ],
+  "w5_required_order": [
+    "materialize resolver and exact 17 blobs",
+    "resolve explicit or exactly-one baseline",
+    "read/hash/back up authority launcher",
+    "recursively clone complete baseline and compare tree receipt",
+    "overlay exact 17 members",
+    "apply renderer hooks",
+    "run full smoke",
+    "switch launcher only after PASS"
+  ],
+  "scope_truth": {
+    "resolver_source_pass": true,
+    "target_pc_execution_performed_by_w1": false,
+    "candidate_build_pass_claimed": false,
+    "target_pc_pass_claimed": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
