@@ -1,0 +1,74 @@
+{
+  "schema_version": "C1_D1_AUTHORITY_DELTA_BINDING_V1",
+  "binding_id": "C1-D1-AUTHORITY-DELTA-BINDING-20260806-001",
+  "published_at_kst": "2026-08-06T08:23:00+09:00",
+  "role": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "common_directive_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V2-20260806-001",
+  "task_id": "C1_D1_AUTHORITY_DELTA_BINDING",
+  "task_directive_comment_id": 5198233686,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "current_remote_head_baseline": "4f7370dc71bfe6abef2d2ff29b7dd3ebdcdc07d6",
+  "entry_event": "D1_AUTHORITY_CONTENT_DELTA",
+  "entry_event_satisfied": true,
+  "semantic_rerun_authorized": false,
+  "common_directive": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_NEXT_EVENT_BATCH_V2.json",
+    "commit": "6c4f3a06dc158c2c60421f41f346b14bd37fd51b",
+    "blob": "0f18e0e999ca1b65be0999e329000deff1831645",
+    "remote_readback": "PASS",
+    "mode": "ACTIVE_OWNER_THEN_EVENT_CHAIN_NO_DUPLICATE_REEXECUTION"
+  },
+  "latest_control_pointer": {
+    "path": "yolla-panel-v1/a0-successor-control/LATEST_V2_ABCD_D_GROUP_INTEGRATION_POINTER.json",
+    "commit": "47b5c6aee2659a8b69ac315f0ae713f4301097dc",
+    "blob": "c5bee6300675e1c66a3b1fead364851e45a277e4",
+    "remote_readback": "PASS"
+  },
+  "d1_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "control_pointer_path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/LATEST_D_GROUP_CONTROL_POINTER.json",
+    "control_pointer_blob": "d65285f969294c19c0d9e2d1bbc2adf8165f8819",
+    "source_authority_type": "OFFICIAL_SECONDARY",
+    "source_authority_decision_blob": "6bf779b937bf2bea761780315b22692ccca07ad9",
+    "mapping_addendum_blob": "118d6403dd5db47afafb982991f8fd9a51f35f28",
+    "b_receipt_procedure_blob": "2a8b7c1b04924728cce14dc21c225ad09598905f",
+    "c_receipt_procedure_blob": "5dc797523718f53bab67f48ed65029061e5ee45a",
+    "tree_binding_manifest_blob": "dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd",
+    "remote_readback": "PASS_6_OF_6"
+  },
+  "frozen_c_inputs": {
+    "C2_FRAGMENT_POINTER_BLOB": "61d0255327a2f507f50d0eee2c9b2d5814054748",
+    "C2_FRAGMENT_CONTRACT_BLOB": "4e7a6569c700864f016d050f5ced7c514511b390",
+    "C4_POINTER_BLOB": "a4229ecdb70876117141441a2d8e67895157471c",
+    "C4_CANDIDATE_BUNDLE_BLOB": "8c5ecfb8114330ca86ce9d0b50a971fd5b99037f",
+    "C2_FRAGMENT_BYTES_CHANGED": false,
+    "C4_CANDIDATE_BUNDLE_BYTES_CHANGED": false
+  },
+  "preserved_state": {
+    "candidate_count": 0,
+    "assertion_count": 0,
+    "evidence_count": 0,
+    "rejected_record_count": 15,
+    "semantic_rerun_count": 0,
+    "runtime_activation": false,
+    "runtime_activation_state": "BLOCKED_FAIL_CLOSED"
+  },
+  "acceptance_state": {
+    "d1_actual_source_document_receipt": false,
+    "d1_actual_knowledge_receipt": false,
+    "d1_knowledge_release": false,
+    "actual_d_acceptance_claim": false,
+    "actual_d_handoff_performed": false
+  },
+  "decision": "D1_AUTHORITY_DELTA_BOUND_CONTRACT_ONLY",
+  "next_action": "VALIDATE_MAPPING_ADDENDUM_AND_BIND_RECEIPT_PROCEDURES_WITHOUT_SEMANTIC_RERUN",
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
