@@ -1,0 +1,73 @@
+{
+  "schema_version": "A3_WAVE6_7_RUN_SUMMARY_V1",
+  "worker": "A-3",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_7-A3-APPROVED-ONE-SHOT-EXECUTION-V1-20260805-001",
+  "run_id": "A3-WAVE6-7-NAVER-PUBLIC-GET-20260805-001",
+  "authorization_id": "V2-AUTH-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-20260805-001",
+  "authorization_decision_comment": 5192765975,
+  "execution_event_comment": 5192799338,
+  "directive_comment": 5193106309,
+  "start_comment": 5193171143,
+  "progress_comment": 5193191142,
+  "status": "BLOCKED",
+  "first_blocker": "EP-001_DNS_NAME_RESOLUTION_TEMPORARY_FAILURE",
+  "blocker_detail": "Temporary failure in name resolution before an HTTP request was sent or a remote server was contacted.",
+  "execution": {
+    "authorized_profile_count": 7,
+    "batch_execution_count_authorized": 1,
+    "batch_execution_count_used": 1,
+    "auto_retry": false,
+    "second_batch_authorized": false,
+    "request_execution_attempt_count": 1,
+    "live_site_call_attempt_count": 1,
+    "http_request_sent_count": 0,
+    "remote_server_contact_count": 0,
+    "capture_attempt_count": 1,
+    "captured_count": 0,
+    "blocked_count": 1,
+    "blocked_not_attempted_count": 6,
+    "redacted_derivative_count": 0,
+    "raw_sha256_binding_count": 0,
+    "redacted_sha256_binding_count": 0,
+    "mime_binding_count": 0,
+    "size_binding_count": 0,
+    "acquired_at_binding_count": 0,
+    "stopped_at_first_fail_closed_condition": true
+  },
+  "profile_results": [
+    {"profile_id":"EP-001","status":"BLOCKED","receipt_commit":"f9cbb4d92171782a58960ee752d148bf5bd8a94a","receipt_blob":"c6654ada993bb4abd814863538ffe919f4c49633"},
+    {"profile_id":"EP-002","status":"BLOCKED_NOT_ATTEMPTED","receipt_commit":"e101db0538f87239705a3b570ce9856ed9094687","receipt_blob":"4810f9cec00596a5c1febfa895f5cddbb709418d"},
+    {"profile_id":"EP-003","status":"BLOCKED_NOT_ATTEMPTED","receipt_commit":"9b295d4865d54e4b15f71bb8ee34b6c37fa3e282","receipt_blob":"6c83fcf908dcaf6aa5590b942a03cf706376b522"},
+    {"profile_id":"EP-004","status":"BLOCKED_NOT_ATTEMPTED","receipt_commit":"088265ab3fb24b00916882a92bb595a098a1b034","receipt_blob":"b10e919a6639c11c6ef99d895e7b4fa8205936c2"},
+    {"profile_id":"EP-005","status":"BLOCKED_NOT_ATTEMPTED","receipt_commit":"19bf73f4de335b752e5b773dddf11f0d297c5e8e","receipt_blob":"f7a0163ae5139d544550d2406c024745763d6667"},
+    {"profile_id":"EP-010","status":"BLOCKED_NOT_ATTEMPTED","receipt_commit":"93ad6a78602e1199de2cb3ad664a716b213bcf16","receipt_blob":"9ee1457978ea61a3656ec034605e511dd2259453"},
+    {"profile_id":"EP-012","status":"BLOCKED_NOT_ATTEMPTED","receipt_commit":"dca00032bab6e5798ef36a1b04a28907d271010d","receipt_blob":"299cbc8f4ec89b5541c2c994401c755343324394"}
+  ],
+  "artifacts": {
+    "start_report": {"commit":"75072db5eb4fb475ec8978df5d5ea9a69a1e2dfe","blob":"66c65105a32f1599d577552a4d2c2eb898df5b52"},
+    "raw_byte_disposal_receipt": {"commit":"4fe7d714479f3b9f98939643b4dced7825bb857d","blob":"5effd82f39714f29b465211374afff1867b4e1fc"}
+  },
+  "raw_byte_disposal": {
+    "raw_response_bytes_acquired_count": 0,
+    "raw_response_total_bytes": 0,
+    "raw_response_byte_persistence": false,
+    "disposal_status": "NOT_APPLICABLE_NO_RAW_RESPONSE_BYTES_ACQUIRED",
+    "deadline_violation_count": 0
+  },
+  "safety": {
+    "credential_use_count": 0,
+    "raw_secret_value_count": 0,
+    "cookie_value_persisted_count": 0,
+    "token_value_persisted_count": 0,
+    "pii_value_persisted_count": 0,
+    "authentication_bypass": false,
+    "access_control_bypass": false,
+    "automated_pagination_count": 0,
+    "actual_bulk_collection": false,
+    "out_of_owned_root_change_count": 0
+  },
+  "completed_at_kst": "2026-08-05T23:38:16+09:00",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
