@@ -1,0 +1,71 @@
+{
+  "schema_version": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_V1",
+  "worker": "A-7",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_10-GENERIC-HTML-FINAL-ACCEPTANCE-V1-20260806-001",
+  "directive_id": "A2-TO-A7-GENERIC-HTML-ADAPTER-ONE-FINAL-ACCEPTANCE-V1-20260806-001",
+  "directive_comment": 5193812113,
+  "parent_cycle": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_10-GENERIC-HTML-MVP-FAST-CLOSURE-V1-20260806-001",
+  "mode": "FINAL_ACCEPTANCE_ONLY",
+  "accepted_at_kst": "2026-08-06T00:35:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 26,
+  "branch": "worker/a7-analyzer-acceptance-audit-v1",
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/**",
+  "final_acceptance_count": 1,
+  "mid_process_audit_count": 0,
+  "pre_capture_reaudit": false,
+  "post_capture_governance_reaudit": false,
+  "intermediate_comment_count": 0,
+  "expected_a6_trigger": "A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_READY",
+  "a6_remote_readback": {
+    "pull_request": 25,
+    "head": "153c71faf5462c6e12d4390987d67be0dd4efa60",
+    "pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/LATEST_A6_REPORT_POINTER.json",
+    "pointer_blob": "c12f88618de03229a379861e63a41c348691289d",
+    "status": "PASS_PREBUILD_READY_WAITING_FINAL_INPUTS",
+    "terminal": "A6_SINGLE_REBUILD_PRESTAGE_READY",
+    "current_trigger_ready": false,
+    "prebuild_ready": true,
+    "package_rebuild_execution_count": 0,
+    "replay_execution_count": 0,
+    "final_build_count_target": 1,
+    "final_replay_count_target": 2,
+    "next_event": "A5_FINAL_SCHEMA_PLUS_A4_DELTA_PASS"
+  },
+  "acceptance_scope": {
+    "package_schema_parse": "NOT_EVALUATED_FINAL_AUTHORITY_NOT_PUBLISHED",
+    "required_member_existence": "NOT_EVALUATED_FINAL_AUTHORITY_NOT_PUBLISHED",
+    "replay_sha_match": "FAIL_FINAL_TWO_REPLAY_RECEIPTS_NOT_PUBLISHED",
+    "generic_html_output_contract": "NOT_EVALUATED_FINAL_AUTHORITY_NOT_PUBLISHED",
+    "secret_or_pii_raw_value_count": "NOT_EVALUATED_FINAL_PACKAGE_NOT_PUBLISHED",
+    "b1_execution_handoff_fields_complete": "FAIL_FINAL_A6_TO_A7_AND_B1_HANDOFF_NOT_PUBLISHED"
+  },
+  "findings": [
+    {
+      "finding_id": "A7-GENERIC-HTML-FINAL-001",
+      "severity": "BLOCKING",
+      "owner": "A-6",
+      "title": "A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_READY_TERMINAL_AND_FINAL_POINTER_NOT_PUBLISHED",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/LATEST_A6_REPORT_POINTER.json",
+      "observed": "A6_SINGLE_REBUILD_PRESTAGE_READY / package_rebuild_execution_count=0 / replay_execution_count=0",
+      "required": "A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_READY / final build count=1 / replay count=2 / final Package, Build Receipt, two Replay Receipts and A7 Handoff",
+      "reproduction": [
+        "Read PR #25 Remote Head 153c71faf5462c6e12d4390987d67be0dd4efa60",
+        "Read LATEST_A6_REPORT_POINTER.json blob c12f88618de03229a379861e63a41c348691289d",
+        "Observe current_trigger_ready=false, package_rebuild_execution_count=0, replay_execution_count=0"
+      ]
+    }
+  ],
+  "finding_count": 1,
+  "decision": "EXACT_FINDINGS",
+  "terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_EXACT_FINDINGS",
+  "first_blocker": "A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_READY_TERMINAL_AND_FINAL_POINTER_NOT_PUBLISHED",
+  "live_capture_absence_is_finding": false,
+  "dns_blocker_is_mvp_finding": false,
+  "site_specific_dom_field_absence_is_finding": false,
+  "implementation_file_direct_edit": false,
+  "self_approval": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
