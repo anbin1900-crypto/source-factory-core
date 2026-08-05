@@ -1,0 +1,75 @@
+{
+  "schema_version": "LATEST_V1_C_MODE_6_WORKER_WAVE3_POINTER_V4",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-003",
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "previous_pointer": "yolla-panel-v1/v1-existing-runtime-control/LATEST_V1_C_MODE_6_WORKER_WAVE2_POINTER.json",
+  "documents": {
+    "wave2_review": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave3/V1_C_MODE_WAVE2_REVIEW_V4.json",
+      "commit": "d6b315b524ebab908f34a8ad9dbc31d55e7a9ae3"
+    },
+    "wave3_directive": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave3/V1_C_MODE_6_WORKER_WAVE3_DIRECTIVE_V4.md",
+      "commit": "aa2aaba37d7206d92e12b4641a09515cd210abe6"
+    },
+    "publication_receipt": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave3/V1_C_MODE_6_WORKER_WAVE3_PUBLICATION_RECEIPT_V4.json",
+      "commit": "521f3dfef4e767ceb57a38a2b018856fffbdd1c0"
+    }
+  },
+  "wave2_review": {
+    "valid_correlated_reports": 5,
+    "missing_or_invalid_reports": 1,
+    "resolved_blocker_worker": "AUTOMATION-C-W1",
+    "carryover_worker": "AUTOMATION-C-W6",
+    "directive_discovery_finding": "NEWER_DIRECTIVE_5189701057_MISSED_BEFORE_NO_PENDING_5189877834"
+  },
+  "worker_controls": {
+    "AUTOMATION-C-W1": {
+      "pr": 59,
+      "comment_id": 5191917431,
+      "command_id": "C6W-W3-W1-UNIFIED-CANDIDATE"
+    },
+    "AUTOMATION-C-W2": {
+      "pr": 60,
+      "comment_id": 5191921150,
+      "command_id": "C6W-W3-W2-LIVE-LEDGER-DIRECTIVE-DISCOVERY"
+    },
+    "AUTOMATION-C-W3": {
+      "pr": 61,
+      "comment_id": 5191922857,
+      "command_id": "C6W-W3-W3-UI-PROJECTION-INTEGRATION"
+    },
+    "AUTOMATION-C-W4": {
+      "pr": 62,
+      "comment_id": 5191926137,
+      "command_id": "C6W-W3-W4-REPEAT-BRIDGE-ARBITRATION"
+    },
+    "AUTOMATION-C-W5": {
+      "pr": 63,
+      "comment_id": 5191928411,
+      "command_id": "C6W-W3-W5-TARGET-PC-ACCEPTANCE-BUNDLE"
+    },
+    "AUTOMATION-C-W6": {
+      "pr": 64,
+      "comment_id": 5191931432,
+      "command_id": "C6W-W3-W6-CARRYOVER-INDEPENDENT-AUDIT",
+      "status": "CARRYOVER_CORRECTION_REQUIRED"
+    }
+  },
+  "control_comment_id": 5191934771,
+  "status": "WAVE3_DISPATCHED_TO_6_OF_6",
+  "current_progress_percent": 72,
+  "next_gate": "SIX_VALID_CORRELATED_TERMINALS_AND_UNIFIED_OFFLINE_CANDIDATE",
+  "target_pc_pass": "PENDING",
+  "lts_terminal_claimed": false,
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-05T18:36:00+09:00"
+}
