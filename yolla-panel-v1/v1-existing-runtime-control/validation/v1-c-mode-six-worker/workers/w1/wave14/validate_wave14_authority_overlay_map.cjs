@@ -1,0 +1,34 @@
+'use strict';
+const fs=require('fs'); const path=require('path');
+const root=__dirname;
+const map=JSON.parse(fs.readFileSync(path.join(root,'AUTHORITY_CORRECT_BASELINE_OVERLAY_MAP_V2.json'),'utf8'));
+const hook=JSON.parse(fs.readFileSync(path.join(root,'BASE_RELEASE_AND_RENDERER_LOAD_HOOK_CONTRACT_V2.json'),'utf8'));
+let n=0; const ok=(x,m)=>{n++;if(!x)throw new Error(m)};
+ok(map.target_version==='5.10.2.4.2-rc6','TARGET_VERSION');
+ok(map.baseline_version==='5.10.2.4.0','BASELINE_VERSION');
+ok(map.authority.release_root==='E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases','RELEASE_ROOT');
+ok(map.authority.state_root==='E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2','STATE_ROOT');
+ok(map.authority.browser_profile==='E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile','PROFILE');
+ok(map.authority.worker_partition==='persist:sf4-safe-panel-worker-1','WORKER_PARTITION');
+ok(map.authority.analysis_partition==='persist:yolla-analysis-browser-v1','ANALYSIS_PARTITION');
+ok(map.authority.launcher==='E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_3_7.bat','LAUNCHER');
+ok(map.base_release_path_guessed===false,'BASE_GUESSED');
+ok(map.base_release_path_value===null,'BASE_VALUE_MUST_REMAIN_NULL_WITHOUT_READBACK');
+ok(map.base_release_clone_before_overlay===true,'CLONE_FIRST');
+ok(map.members.length===17 && map.overlay_member_count===17,'MEMBER_COUNT');
+const seen=new Set();
+for(const [i,m] of map.members.entries()){
+  for(const k of ['source_commit','source_path','blob_sha1','sha256','size_bytes','package_path','install_destination','load_order']) ok(m[k]!==undefined&&m[k]!==null,`MISSING_${i+1}_${k}`);
+  ok(/^[0-9a-f]{40}$/.test(m.source_commit),`COMMIT_${i+1}`); ok(/^[0-9a-f]{40}$/.test(m.blob_sha1),`BLOB_${i+1}`); ok(/^[0-9a-f]{64}$/.test(m.sha256),`SHA256_${i+1}`);
+  ok(Number.isInteger(m.size_bytes)&&m.size_bytes>0,`SIZE_${i+1}`); ok(m.load_order===i+1,`ORDER_${i+1}`);
+  ok(!seen.has(m.source_path),`DUP_PATH_${i+1}`); seen.add(m.source_path);
+}
+ok(hook.base_release_resolution.mode==='FROM_EXISTING_LAUNCHER_OR_EXPLICIT_VALIDATED_PARAMETER','RESOLUTION_MODE');
+ok(hook.clone_contract.clone_complete_release_before_overlay===true,'HOOK_CLONE_FIRST');
+ok(hook.renderer_load_hook_map.length===3,'HOOK_COUNT');
+ok(hook.renderer_load_hook_map[0].target==='workspace_preload.js','PRELOAD_TARGET');
+ok(hook.renderer_load_hook_map[1].target==='workspace.html','CSS_TARGET');
+ok(hook.renderer_load_hook_map[2].target==='workspace.html','JS_TARGET');
+ok(hook.current_resolution_status.startsWith('BLOCKED_PENDING_'),'BLOCK_STATUS');
+ok(map.candidate_build_pass_claimed===false&&map.target_pc_pass_claimed===false,'FALSE_PASS');
+console.log(`PASS_${n}_ASSERTIONS`);
