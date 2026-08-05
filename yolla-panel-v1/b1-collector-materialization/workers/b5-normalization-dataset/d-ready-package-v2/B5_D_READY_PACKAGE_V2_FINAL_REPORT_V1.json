@@ -1,0 +1,110 @@
+{
+  "schema_version": "B5_D_READY_PACKAGE_V2_FINAL_REPORT_V1",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "B5_D_READY_PACKAGE_V2",
+  "directive_comment_id": 5196026867,
+  "worker": "B-5",
+  "role_in_batch": "B_PACKAGE_V2_SINGLE_INTEGRATION_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 41,
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "completed_at_kst": "2026-08-06T04:27:00+09:00",
+  "status": "BLOCKED_EXTERNAL_WAITING_B2_B4_V2",
+  "terminal": "B5_D_READY_PACKAGE_V2_EXACT_BLOCKER",
+  "first_blocker": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1_AND_B4_RAW_ARTIFACT_MANIFEST_V2_NOT_PUBLISHED",
+  "local_implementation": {
+    "status": "PASS",
+    "schema_draft": "JSON_SCHEMA_DRAFT_2020_12",
+    "schema_count": 3,
+    "fixture_package_count": 1,
+    "test_count": 37,
+    "pass_count": 37,
+    "fail_count": 0,
+    "package_sha256": "c8894a5c0624e70cf799bb862edf8406098c05d4f26107fb9a723d052c697fd5",
+    "source_field_loss_count": 0,
+    "silent_drop_count": 0,
+    "unmapped_preservation_group_count": 3,
+    "duplicate_preservation_count": 1,
+    "rejected_record_bundle_preserved": true
+  },
+  "artifacts": {
+    "materialized_schema": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/MATERIALIZED_DATABASE_PACKAGE_V2.schema.json",
+      "blob": "95e37878672b6be2928a1735359f4ae30550222d"
+    },
+    "normalized_schema": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/NORMALIZED_DATASET_V2.schema.json",
+      "blob": "08d9c43a8910671667445357e3f8c0b0d5760fe5"
+    },
+    "d_intake_schema": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/D_INTAKE_REQUEST_V1.schema.json",
+      "blob": "5163647bb4209115b581a8cab4b78b4f9cbaf258"
+    },
+    "fixture_package": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/B5_D_READY_FIXTURE_PACKAGE_V2.json",
+      "blob": "825475ebb32983b65930160a4dff524a035cbd5a"
+    },
+    "test_report": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/B5_D_READY_PACKAGE_V2_TEST_REPORT_V1.json",
+      "blob": "0c14055c898b444556adcfa94d2853bf1e73fbe6"
+    }
+  },
+  "upstream_consumption": {
+    "B-2": {
+      "pr": 38,
+      "directive_comment": 5196020144,
+      "observed_head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+      "v1_contract_blob": "604c674651bddbc2cc04201f9cd259294cd9bb58",
+      "v2_required_artifact": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1.json",
+      "v2_status": "NOT_PUBLISHED",
+      "binding_status": "PROVISIONAL_V1_FAIL_CLOSED"
+    },
+    "B-3": {
+      "pr": 39,
+      "directive_comment": 5196022442,
+      "observed_head": "86d789a136ce5070d79eab7e6d0205eb23da11d7",
+      "v2_pointer_blob": "dedbad43c8c23df18e2af2560af5d5f48ca1fa00",
+      "v2_fixture_result_blob": "e6266c5cc4af42bc3797d17a3640381fa6634c16",
+      "v2_terminal": "B3_D_COLLECTION_RUN_LEDGER_READY",
+      "binding_status": "PASS_EXACT"
+    },
+    "B-4": {
+      "pr": 40,
+      "directive_comment": 5196024447,
+      "observed_head": "6dfe697363a69f83797775aa549f34614aa3748a",
+      "v1_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+      "v2_required_artifact": "RAW_ARTIFACT_MANIFEST_V2",
+      "v2_status": "NOT_PUBLISHED",
+      "binding_status": "PROVISIONAL_V1_FAIL_CLOSED",
+      "pii_status": "PENDING_B4_V2_AUTHORITY"
+    }
+  },
+  "d_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+    "control_pointer_blob": "95e6983a79b80867dd7de196a21e1aefc4c3dcb1",
+    "schema_blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+    "mapping_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
+    "ruleset_blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
+    "receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
+    "authority_type": "USER_SUPPLIED_FIXTURE",
+    "fixture_decision": "PARTIALLY_ACCEPTED_FIXTURE_ONLY",
+    "canonical_id_generation_owner": "D-1_ONLY"
+  },
+  "required_resume_events": [
+    "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_READY",
+    "B4_RAW_ARTIFACT_MANIFEST_V2_READY"
+  ],
+  "resume_action": "REPLACE_PROVISIONAL_V1_BINDINGS_WITH_EXACT_V2_HEAD_BLOB_VALUES_REVALIDATE_AND_PUBLISH_READY_TERMINAL",
+  "d_intake_submission_authorized": false,
+  "d_canonical_id_generation_count": 0,
+  "d_acceptance_receipt_issued": false,
+  "d_canonical_db_write_count": 0,
+  "postgresql_connection_count": 0,
+  "actual_site_extraction": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
