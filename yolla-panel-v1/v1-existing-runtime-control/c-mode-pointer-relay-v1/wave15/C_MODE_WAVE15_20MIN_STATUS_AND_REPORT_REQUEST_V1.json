@@ -1,0 +1,108 @@
+{
+  "schema_version": "C_MODE_WAVE15_20MIN_STATUS_AND_REPORT_REQUEST_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-015",
+  "registry_sequence": 15,
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "registry_comment": 5197012959,
+  "observed_at_kst": "2026-08-06T06:26:24+09:00",
+  "time_gate": {
+    "twenty_minute_gate_elapsed": true,
+    "ninety_minute_gate_elapsed": false,
+    "all_workers_missing_at_check": true
+  },
+  "result_collection": {
+    "assigned": 6,
+    "reported": 0,
+    "missing": 6,
+    "duplicate_result": 0,
+    "current_wave_complete": false
+  },
+  "workers": {
+    "AUTOMATION-C-W1": {
+      "pr": 59,
+      "directive_comment": 5196981655,
+      "result_key": "519698165500",
+      "result_comment": null,
+      "head_sha": "9b20426bd8983462577c6763e87e945429ca8d71",
+      "report_request_comment": 5197560491,
+      "report_request_count": 1,
+      "replacement_threshold": 4
+    },
+    "AUTOMATION-C-W2": {
+      "pr": 60,
+      "directive_comment": 5196983918,
+      "result_key": "519698391800",
+      "result_comment": null,
+      "head_sha": "e98b86bfbfb41bf81b737a56056677fb8f9f575c",
+      "report_request_comment": 5197562479,
+      "report_request_count": 1,
+      "replacement_threshold": 4
+    },
+    "AUTOMATION-C-W3": {
+      "pr": 61,
+      "directive_comment": 5196986395,
+      "result_key": "519698639500",
+      "result_comment": null,
+      "head_sha": "4eee173f5ad5ab3613bea43cadd27cf2330cec4f",
+      "report_request_comment": 5197564863,
+      "report_request_count": 1,
+      "replacement_threshold": 4
+    },
+    "AUTOMATION-C-W4": {
+      "pr": 62,
+      "directive_comment": 5196989097,
+      "result_key": "519698909700",
+      "result_comment": null,
+      "head_sha": "661f900629e3f239cca6c5eea5b4f805e5672ea1",
+      "report_request_comment": 5197566991,
+      "report_request_count": 1,
+      "replacement_threshold": 4
+    },
+    "AUTOMATION-C-W5": {
+      "pr": 63,
+      "directive_comment": 5196992640,
+      "result_key": "519699264000",
+      "result_comment": null,
+      "head_sha": "4bfbe00403e832d9d9e2fe67121646ddfe9d3150",
+      "report_request_comment": 5197569051,
+      "report_request_count": 1,
+      "replacement_threshold": 4,
+      "integration_owner": true,
+      "method_correction_reiterated": "USE_GITHUB_BLOB_API_NOT_RAW_GITHUB_DNS"
+    },
+    "AUTOMATION-C-W6": {
+      "pr": 64,
+      "directive_comment": 5196995122,
+      "result_key": "519699512200",
+      "result_comment": null,
+      "head_sha": "3ba0a6f376fac8bb223f83b27dcadd94c93e3852",
+      "report_request_comment": 5197571534,
+      "report_request_count": 1,
+      "replacement_threshold": 4,
+      "implementation_direct_edit": false
+    }
+  },
+  "decision": {
+    "new_wave_posted": false,
+    "current_wave_remains_authoritative": true,
+    "new_directive_for_workers": false,
+    "continue_existing_assignments": true,
+    "replacement_required": [],
+    "rescue_workers_required_now": false,
+    "next_gate": "RESULT_COLLECTION_OR_NINETY_MINUTE_ESCALATION"
+  },
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "current_progress_percent": 96,
+  "progress_increase_authorized": false,
+  "progress_increase_withheld_reason": "NO_WAVE15_RESULT_MARKERS",
+  "target_version": "5.10.2.4.2-rc6",
+  "target_pc_pass": "PENDING",
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
