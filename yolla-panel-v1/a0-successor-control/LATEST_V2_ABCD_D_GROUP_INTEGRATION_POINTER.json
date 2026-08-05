@@ -1,12 +1,12 @@
 {
-  "schema_version": "LATEST_V2_ABCD_D_GROUP_INTEGRATION_POINTER_V3",
-  "pointer_id": "LATEST-V2-ABCD-D-GROUP-INTEGRATION-20260806-003",
+  "schema_version": "LATEST_V2_ABCD_D_GROUP_INTEGRATION_POINTER_V4",
+  "pointer_id": "LATEST-V2-ABCD-D-GROUP-INTEGRATION-20260806-004",
   "updated_at_kst": "2026-08-06T05:03:00+09:00",
   "commander": "V-2_YOLLA_AI_SUPREME_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "previous_pointer_blob": "84f8404b9143721cf5e162837afb2398a62628ae",
+  "previous_pointer_blob": "f0f9b66efce454152b9ba3c19625aeb3923e5ca9",
   "parent_batch": {
     "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_INTEGRATION_WORKER_BATCH_V1.json",
     "commit": "8226ea11e96434aeab350a949965cd4188d65471",
@@ -37,6 +37,12 @@
       "followup_directive_comment": 5196648256,
       "status": "ACTIVE_NEW_TASK_TERMINAL_PENDING"
     }
+  },
+  "a6_task_identity_correction_dispatch": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_A6_TASK_IDENTITY_CORRECTION_DISPATCH_RECEIPT_V1.json",
+    "commit": "e2d947aa45a18b1defd209f8bd24b5ed0dac6219",
+    "blob": "bbd2e42a0b2781e3f6922bdbde06d6df3ec2c55b",
+    "status": "PASS_4_OF_4_COMMENTS"
   },
   "followup_batch": {
     "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_INTEGRATION_FOLLOWUP_BATCH_V1.json",
@@ -81,7 +87,11 @@
     "B6": 5196668910,
     "A2": 5196670627,
     "B1": 5196672770,
-    "D6": 5196674604
+    "D6": 5196674604,
+    "A6_task_identity_control": 5196750734,
+    "A6_task_identity_worker": 5196753253,
+    "A7_scope_correction": 5196755707,
+    "A2_scope_correction": 5196757852
   },
   "current_phase": "FOLLOWUP_WAVE_1_IMMEDIATE_PARALLEL_ACTIVE",
   "current_status": "A6_TASK_IDENTITY_CORRECTED_PRIOR_TASK_CLOSED_CURRENT_DISTINCT_TASK_ACTIVE",
