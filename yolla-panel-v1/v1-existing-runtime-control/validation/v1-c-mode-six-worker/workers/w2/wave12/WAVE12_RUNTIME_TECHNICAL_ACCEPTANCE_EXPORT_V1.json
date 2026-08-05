@@ -1,0 +1,82 @@
+{
+  "schema": "C_MODE_RUNTIME_TECHNICAL_ACCEPTANCE_EXPORT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-012",
+  "registry_sequence": 12,
+  "command_id": "C6W-W12-W2-RUNTIME-TECHNICAL-ACCEPTANCE-GATE",
+  "role": "AUTOMATION-C-W2",
+  "directive_comment": 5195170358,
+  "report_request_comment": 5195594681,
+  "result_key": "519517035800",
+  "runtime_adapter": {
+    "path": "automation-c-v1/result_watcher/runtime_technical_acceptance_adapter.cjs",
+    "commit": "eee673ea0e3b01a9760eae78c1fb1bff92750f64"
+  },
+  "test": {
+    "path": "automation-c-v1/tests/test_runtime_technical_acceptance_adapter.cjs",
+    "commit": "8d53bc6867ffb2d58e35c3047e1f94114309a051",
+    "result": "PASS_24_OF_24"
+  },
+  "required_states": [
+    "REPORTED",
+    "TECHNICALLY_ACCEPTED",
+    "METADATA_ONLY_REJECTED",
+    "EXECUTABLE_SOURCE_MISSING",
+    "INSTALL_ACTION_MISSING",
+    "SMOKE_OR_ROLLBACK_MISSING",
+    "INSTALLABLE_RUNTIME",
+    "TARGET_PC_PENDING",
+    "TARGET_PC_ACCEPTED"
+  ],
+  "negative_fixture": {
+    "name": "W5_WAVE10_METADATA_ONLY_ARTIFACT",
+    "result_comment": 5194725335,
+    "reported_outcome": "PASS",
+    "artifact_commit": "5b44c83a78e2a653cf1b721d546d3f5b7b53b61d",
+    "artifact_blob": "65941a205f2d95821bc96815e33a37855395608e",
+    "size_bytes": 2652,
+    "sha256": "21587622092a36b16c054569ee97463cfc9458b945a26018c486f0f83f5c6447",
+    "payload_type": "RESULT_JSON_ONLY_ARCHIVE",
+    "technical_state": "METADATA_ONLY_REJECTED",
+    "installable_runtime": false,
+    "effective_outcome": "BLOCKED",
+    "pass_does_not_override_gate": true
+  },
+  "positive_partial_fixture": {
+    "name": "W3_WAVE12_RC4_UI_PAYLOAD",
+    "result_comment": 5195394714,
+    "result_commit": "40023163e8faf0f918e1fa55d1dae4741a3bb7e7",
+    "payload_export_commit": "4def942235a6781c5692221324c2574e299341b8",
+    "payload_export_blob": "520c04ae8730dbef1166b2f7e063b0783db5414a",
+    "runtime_file_count": 3,
+    "executable_source_present": true,
+    "smoke_present": true,
+    "rollback_contract_present": true,
+    "install_action_present": false,
+    "technical_state": "INSTALL_ACTION_MISSING",
+    "installable_runtime": false,
+    "target_pc": "PENDING"
+  },
+  "w5_positive_candidate": {
+    "result_key": "519517769300",
+    "state": "PENDING_RESULT_AT_EXPORT_TIME",
+    "required_for_installable_runtime": [
+      "EXECUTABLE_SOURCE_PRESENT",
+      "INSTALL_ACTION_PRESENT",
+      "SMOKE_AND_ROLLBACK_PRESENT",
+      "IMMUTABLE_BYTE_AND_HASH_READBACK"
+    ]
+  },
+  "preserved_contracts": {
+    "result_key_exact_match": true,
+    "pagination": true,
+    "retry_max": 5,
+    "restart_state": true,
+    "duplicate": "FAIL_CLOSED",
+    "commander_result_comment_output": true,
+    "worker_pass_is_report_state_only": true
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
