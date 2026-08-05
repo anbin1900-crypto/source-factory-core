@@ -26,7 +26,11 @@
     "source_staging_baseline": "5.10.2.4.1",
     "target_candidate_version": "5.10.2.4.2-rc1",
     "direct_upgrade_or_internal_auto_staging_required": true,
-    "manual_5_10_2_4_1_preinstall_required": false
+    "manual_5_10_2_4_1_preinstall_required": false,
+    "w1_addendum_comment_id": 5192689137,
+    "w5_addendum_comment_id": 5192691255,
+    "w6_addendum_comment_id": 5192694854,
+    "control_addendum_comment_id": 5192697361
   },
   "wave4_review": {
     "valid_correlated_reports": 6,
@@ -83,5 +87,5 @@
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at_kst": "2026-08-05T23:01:00+09:00"
+  "updated_at_kst": "2026-08-05T23:03:00+09:00"
 }
