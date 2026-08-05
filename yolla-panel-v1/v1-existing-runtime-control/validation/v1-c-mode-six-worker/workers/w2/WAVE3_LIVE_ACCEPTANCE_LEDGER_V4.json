@@ -1,0 +1,38 @@
+{
+  "schema_version": "C6W2_WAVE3_LIVE_ACCEPTANCE_LEDGER_V4",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-003",
+  "command_id": "C6W-W3-W2-LIVE-LEDGER-DIRECTIVE-DISCOVERY",
+  "source_wave": "V1-C-MODE-6W-WAVE-002",
+  "snapshot_scope": "actual directive and result comment post IDs captured for regression and acceptance calculation",
+  "records": [
+    {"worker":"AUTOMATION-C-W1","directive_post_id":5189688748,"classification":"missing","reason":"no matching Wave-2 result in captured acceptance fixture"},
+    {"worker":"AUTOMATION-C-W2","directive_post_id":5189691452,"result_post_id":5189897838,"classification":"accepted","command_id":"C6W-W2-W2-DUAL-REPORT-SCHEMA"},
+    {"worker":"AUTOMATION-C-W3","directive_post_id":5189693654,"classification":"blocked","reason":"target PC evidence remains an external gate in captured fixture"},
+    {"worker":"AUTOMATION-C-W4","directive_post_id":5189696213,"classification":"missing","reason":"no matching Wave-2 result in captured acceptance fixture"},
+    {"worker":"AUTOMATION-C-W5","directive_post_id":5189698995,"classification":"blocked","reason":"target PC package execution is not proven in captured fixture"},
+    {"worker":"AUTOMATION-C-W6","directive_post_id":5189701057,"result_post_id":5189877834,"classification":"rejected","reason":"NO_PENDING claim was emitted after a newer unmatched directive"}
+  ],
+  "regression": {
+    "hidden_directive_post_id": 5189701057,
+    "false_no_pending_post_id": 5189877834,
+    "older_terminal_post_id": 5189537363,
+    "expected": "PENDING_DIRECTIVE_DETECTED_FAIL_CLOSED",
+    "actual_after_fix": "PASS"
+  },
+  "classification_contract": {
+    "accepted": "matching newer terminal for exact COMMAND_ID and schema",
+    "blocked": "matching result explicitly records exact external blocker",
+    "rejected": "malformed, wrong schema, false NO_PENDING, stale or mismatched result",
+    "stale": "result post predates its directive or targets an older wave",
+    "duplicate": "only latest valid record for the same identity is authoritative",
+    "missing": "directive exists without a matching newer terminal"
+  },
+  "schemas": {
+    "C_RESULT": "ROLE+WAVE+COMMAND_ID+STATUS",
+    "REPEAT_RESULT": "ROLE+COMMAND_ID+DISPATCH_ID+STATUS"
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
