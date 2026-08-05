@@ -1,0 +1,33 @@
+{
+  "schema_version": "C6W2_WAVE4_REPORT_COMPLETENESS_GATE_RESULT_V5",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-004",
+  "command_id": "C6W-W4-W2-REPORT-COMPLETENESS-GATE",
+  "worker_id": "AUTOMATION-C-W2",
+  "status": "PASS",
+  "terminal": "C6W2_WAVE4_REPORT_COMPLETENESS_GATE_PASS",
+  "wave3_terminal_correction_post_id": 5192450954,
+  "test": {
+    "command": "node automation-c-v1/tests/test_report_completeness_gate.cjs",
+    "result": "PASS_12_OF_12",
+    "failure_count": 0,
+    "environment": "offline Node.js regression execution"
+  },
+  "implementation": {
+    "gate_commit": "d379719e5f4afc1d7b7fb9f5dc51fbc8a75a554d",
+    "test_commit": "bee3a09f66c31b51b32914a56dad3b52e45f50e7",
+    "ledger_commit": "f7e15408a6e7b8e7f8144e2144eb751c3f96ae04"
+  },
+  "assertions": {
+    "result_commit_only_is_report_missing": true,
+    "terminal_only_is_report_incomplete": true,
+    "exact_commit_and_terminal_is_reported": true,
+    "post_id_and_order_recorded": true,
+    "consecutive_missing_count_recorded": true,
+    "latest_directive_not_hidden": true,
+    "no_pending_fail_closed": true
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
