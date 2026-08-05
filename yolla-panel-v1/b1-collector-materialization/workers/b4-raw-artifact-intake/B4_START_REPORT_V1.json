@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "worker": "B-4",
+  "task_id": "B1-B4-EXECUTION-TASK-V1-20260804-001",
+  "directive_id": "B1-TO-B4-RAW-ARTIFACT-SOURCE-ENVELOPE-V1-20260804-001",
+  "started_at_kst": "2026-08-05T16:26:00+09:00",
+  "start_head": "f1c327882bfd73d9670afa661e11c6acc8a8cccb",
+  "b1_fixture_seed_head": "8b8f7888128e7472269b79385886ff48a421de1f",
+  "b2_accepted_head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+  "mode": "FIXTURE_FIRST_IMMUTABLE_IMPLEMENTATION",
+  "status": "STARTED",
+  "expected": {
+    "raw_artifact_count": 2,
+    "total_record_count": 4,
+    "page_001_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+    "page_002_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+    "minimum_test_count": 18
+  },
+  "boundaries": {
+    "network_call_count": 0,
+    "actual_site_extraction": false,
+    "raw_overwrite": false,
+    "secret_value_storage": false,
+    "semantic_transformation_count": 0,
+    "d_canonical_db_write_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
