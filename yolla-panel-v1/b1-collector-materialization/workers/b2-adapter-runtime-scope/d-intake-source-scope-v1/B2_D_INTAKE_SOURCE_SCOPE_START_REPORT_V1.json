@@ -1,0 +1,31 @@
+{
+  "schema_version": "B2_D_INTAKE_SOURCE_SCOPE_START_REPORT_V1",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "task_id": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT",
+  "directive_comment": 5196650361,
+  "prior_directive_comment": 5196020144,
+  "worker": "B-2",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 38,
+  "branch": "worker/b2-adapter-runtime-scope-v1",
+  "observed_head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+  "started_at_kst": "2026-08-06T05:02:00+09:00",
+  "owned_root": "yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/d-intake-source-scope-v1/",
+  "required_outputs": [
+    "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1.json",
+    "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1.schema.json",
+    "B2_D_INTAKE_SOURCE_SCOPE_FIXTURE_V1.json",
+    "d_intake_source_scope_validator.py",
+    "test_d_intake_source_scope.py",
+    "B2_D_INTAKE_SOURCE_SCOPE_TEST_REPORT_V1.json",
+    "B2_D_INTAKE_SOURCE_SCOPE_FINAL_REPORT_V1.json",
+    "LATEST_B2_D_INTAKE_SOURCE_SCOPE_POINTER.json"
+  ],
+  "authority_type_status": "PENDING_D1_DECISION",
+  "d_canonical_source_id": null,
+  "actual_site_extraction": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "STARTED"
+}
