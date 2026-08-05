@@ -1,0 +1,21 @@
+{
+  "schema": "C_MODE_WAVE_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-007",
+  "registry_comment": 5193659817,
+  "reported": 6,
+  "missing": 0,
+  "duplicate": 0,
+  "results": [
+    {"role":"AUTOMATION-C-W1","pr":59,"directive_comment":5193625388,"result_key":"519362538800","result_comment":5193766643,"outcome":"PASS","result_commit":"91872336931c3e5686bd973766737089d1860218","report_state":"REPORTED"},
+    {"role":"AUTOMATION-C-W2","pr":60,"directive_comment":5193628869,"result_key":"519362886900","result_comment":5193762256,"outcome":"PASS","result_commit":"0fdcbae0416cabd827e322bf70179bced1b4fe40","report_state":"REPORTED"},
+    {"role":"AUTOMATION-C-W3","pr":61,"directive_comment":5193631027,"result_key":"519363102700","result_comment":5193762357,"outcome":"PASS","result_commit":"1a3e6fbc08cb2613e70a16915367ac03a5aa38d8","report_state":"REPORTED"},
+    {"role":"AUTOMATION-C-W4","pr":62,"directive_comment":5193633568,"result_key":"519363356800","result_comment":5193766350,"outcome":"PASS","result_commit":"61fc6a20b2245c691ab3812d07ea321aa2944ea0","report_state":"REPORTED"},
+    {"role":"AUTOMATION-C-W5","pr":63,"directive_comment":5193635975,"result_key":"519363597500","result_comment":5193744236,"outcome":"BLOCKED","result_commit":"46791b277705467dabf0e6edc43575e980e3aee5","report_state":"REPORTED"},
+    {"role":"AUTOMATION-C-W6","pr":64,"directive_comment":5193638419,"result_key":"519363841900","result_comment":5193735003,"outcome":"BLOCKED","result_commit":"4b2eb6550770f646ab2611cc7c9154ff9f6c5f70","report_state":"REPORTED"}
+  ],
+  "blocked_is_reported": true,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
