@@ -1,0 +1,12 @@
+'use strict';
+const assert = require('node:assert/strict');
+const { collectWaveResults, exportRestartState } = require('../result_watcher/runtime_result_adapter.cjs');
+const registry = {schema:'C_MODE_WAVE_V2',control_id:'V1-C-MODE-6W-VALIDATION-CYCLE-002',wave_id:'V1-C-MODE-6W-WAVE-007',registry_comment:5193659817,workers:[1,2,3,4,5,6].map((n)=>({role:`AUTOMATION-C-W${n}`,pr:58+n,directive_comment:100+n,result_key:String(200+n)}))};
+const mk=(n,outcome='PASS')=>({id:300+n,pr:58+n,body:`C_RESULT|RESULT_KEY=${200+n}|ROLE=AUTOMATION-C-W${n}|OUTCOME=${outcome}|STATUS=END|RESULT_COMMIT=${'a'.repeat(40)}`});
+let result=collectWaveResults({registry,comments:[mk(1),mk(2),mk(3),mk(4),mk(5,'BLOCKED'),mk(6,'BLOCKED')]});
+assert.equal(result.reported,6); assert.equal(result.missing,0); assert.equal(result.duplicate,0);
+assert.equal(result.results[4].outcome,'BLOCKED'); assert.equal(result.results[4].report_state,'REPORTED');
+result=collectWaveResults({registry,comments:[mk(1),mk(1),mk(2),mk(3),mk(4),mk(5),mk(6)]}); assert.equal(result.duplicate,1);
+result=collectWaveResults({registry,comments:[mk(1),mk(2),mk(3),mk(4),mk(5)]}); assert.equal(result.missing,1);
+const state=exportRestartState(collectWaveResults({registry,comments:[mk(1),mk(2),mk(3),mk(4),mk(5),mk(6)]})); assert.equal(state.collected_comment_ids.length,6);
+console.log('PASS_10_OF_10');
