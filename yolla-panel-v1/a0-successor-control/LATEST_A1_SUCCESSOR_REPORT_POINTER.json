@@ -1,6 +1,6 @@
 {
-  "schema_version": "LATEST_A1_SUCCESSOR_REPORT_POINTER_V8",
-  "status": "A1_A2_REPLAN_A3_PACKAGE_PASS_A7_GOVERNANCE_ACTIVE",
+  "schema_version": "LATEST_A1_SUCCESSOR_REPORT_POINTER_V9",
+  "status": "A1_A2_REPLAN_A3_PACKAGE_PASS_A7_WAVE6_5_GOVERNANCE_ACTIVE",
   "last_terminal": "A1_ONE_SHOT_CAPTURE_TERMINAL_BLOCKED_ACCEPTED_REPLAN_REQUIRED",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
@@ -19,17 +19,27 @@
     "additional_batch_authorized": false,
     "second_attempt_authorized": false
   },
-  "active_reconciliation": {
-    "report_path": "yolla-panel-v1/a0-successor-control/reports/A1_A2_REPLAN_A3_PASS_A7_GOVERNANCE_ACTIVATION_V1.json",
-    "report_commit": "e7a839d4f15c76935dc468dd3b9266347070c0ee",
-    "report_blob": "87ea65cefcca6151928477f2b3f34313e4d2dd9b"
+  "reconciliation_reports": {
+    "a3_pass_a7_activation": {
+      "path": "yolla-panel-v1/a0-successor-control/reports/A1_A2_REPLAN_A3_PASS_A7_GOVERNANCE_ACTIVATION_V1.json",
+      "commit": "e7a839d4f15c76935dc468dd3b9266347070c0ee",
+      "blob": "87ea65cefcca6151928477f2b3f34313e4d2dd9b"
+    },
+    "terminal_name_alignment": {
+      "path": "yolla-panel-v1/a0-successor-control/reports/A1_A7_GOVERNANCE_TERMINAL_NAME_ALIGNMENT_V1.json",
+      "commit": "a2e4c5d8da0809cc36d341ce32444fbccac863e5",
+      "blob": "3356502d408dc43157e707e49d7a86f1f7266268"
+    }
   },
   "a2_control": {
     "pr": 18,
     "head": "90d8223d4f5f44916b3151ea5b59fbc18986adc9",
     "pointer_blob": "9b3c636584f4c78e60be9912abdf9aaef5e10a3a",
     "active_report_commit": "30826d827957d467fa68a8c9a2b48ce1003ff205",
-    "active_report_blob": "025704543a5f7a5fc6f095cc324776bfbf8303ac"
+    "active_report_blob": "025704543a5f7a5fc6f095cc324776bfbf8303ac",
+    "wave6_5_directive_comment": 5192071024,
+    "wave6_5_cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_5-PUBLIC-ROUTE-GOVERNANCE-REAUDIT-V1-20260805-001",
+    "wave6_5_directive_id": "A2-TO-A7-PUBLIC-DOCUMENT-ROUTE-GOVERNANCE-REAUDIT-V6_5-20260805-001"
   },
   "source_authority": {
     "comment": 5189632712,
@@ -67,15 +77,17 @@
   },
   "a7_active_governance": {
     "pr": 26,
-    "observed_head": "f4ca318a6335bc15970a8bff5c94f112d64807f4",
+    "observed_head_at_activation": "f4ca318a6335bc15970a8bff5c94f112d64807f4",
     "event_wait_comment": 5191860834,
     "a3_handoff_comment": 5192017387,
-    "activation_review_id": 4864588596,
-    "activation_pointer_review_id": 4864595093,
-    "directive_id": "A1-TO-A7-PUBLIC-DOCUMENT-ROUTE-GOVERNANCE-REAUDIT-V1-20260805-001",
+    "a2_wave6_5_directive_comment": 5192071024,
+    "a1_activation_comment": 5192074571,
+    "a1_activation_review_id": 4864588596,
+    "a1_activation_pointer_review_id": 4864595093,
     "status": "ACTIVE_WAITING_START_TERMINAL_FINAL_POINTER",
-    "pass_terminal": "A7_PUBLIC_DOCUMENT_ROUTE_GOVERNANCE_READY_FOR_REAUTHORIZATION",
-    "findings_terminal": "A7_PUBLIC_DOCUMENT_ROUTE_GOVERNANCE_EXACT_FINDINGS",
+    "effective_pass_terminal": "A7_PUBLIC_ROUTE_GOVERNANCE_READY_FOR_A2_SECOND_AUTHORIZATION_REQUEST",
+    "effective_findings_terminal": "A7_PUBLIC_ROUTE_GOVERNANCE_EXACT_FINDINGS",
+    "previous_a1_terminal_aliases_authoritative": false,
     "self_approval": false,
     "implementation_file_direct_edit": false
   },
@@ -84,7 +96,7 @@
   "request_execution_authorized": false,
   "second_attempt_authorized": false,
   "b1_handoff_authorized": false,
-  "next_gate": "A7_PUBLIC_DOCUMENT_ROUTE_GOVERNANCE_READY_FOR_REAUTHORIZATION_OR_EXACT_FINDINGS",
+  "next_gate": "A7_PUBLIC_ROUTE_GOVERNANCE_READY_FOR_A2_SECOND_AUTHORIZATION_REQUEST_OR_EXACT_FINDINGS",
   "subsequent_gates": [
     "A2_NEW_EXPLICIT_SECOND_AUTHORIZATION_REQUEST_IF_A7_PASS",
     "A0_A1_SEPARATE_AUTHORIZATION_DECISION",
@@ -109,5 +121,5 @@
   "ready": false,
   "merge": false,
   "self_merge": false,
-  "updated_at": "2026-08-05T22:10:00+09:00"
+  "updated_at": "2026-08-05T22:12:00+09:00"
 }
