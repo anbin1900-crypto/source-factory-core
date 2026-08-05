@@ -1,64 +1,57 @@
 {
-  "schema_version": "LATEST_A2_REPORT_POINTER_V13",
-  "pointer_id": "A2-GENERIC-SITE-ANALYZER-ADAPTER-FACTORY-LATEST-V13",
-  "updated_at_kst": "2026-08-06T02:30:00+09:00",
+  "schema_version": "LATEST_A2_REPORT_POINTER_V14",
+  "pointer_id": "A2-GENERIC-SITE-ANALYZER-ADAPTER-FACTORY-LATEST-V14",
+  "updated_at_kst": "2026-08-06T03:12:00+09:00",
   "role": "A-2_GENERIC_SITE_ANALYZER_ADAPTER_FACTORY_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 18,
   "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
-  "previous_pointer_blob": "d23c80167cb25025933a10a7994f75aaf8efff45",
+  "previous_pointer_blob": "5474115bb57bd41c02b3465576c35068d0450605",
   "active_report": {
-    "type": "ALL_WORKERS_CHECK_A6_INTEGRITY_CORRECTION_ACTIVE",
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_WAVE6_13_ALL_WORKERS_CHECK_A6_INTEGRITY_CORRECTION_ACTIVE_V1.json",
-    "commit": "0305e5b6ae4c8f50732ceb1fad44447d61826f23",
-    "blob": "3180c500894f11eae02d6a41838a4ba923a9bcda",
+    "type": "FINAL_ACCEPTANCE_PASS_B1_HANDOFF_READY",
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_WAVE6_14_FINAL_ACCEPTANCE_PASS_B1_HANDOFF_READY_V1.json",
+    "commit": "8d728c884688e453fbdbe5b8f496e643bb480c88",
+    "blob": "e20918f26857a232b6142e3ea38c66a0cb4b13d8",
     "remote_readback": "PASS"
   },
-  "worker_states": {
-    "A-3": {
-      "head": "6a91c9ccedf96aa538fbbf34e4bf91553778297d",
-      "terminal": "A3_TARGET_PC_CAPTURE_HANDOFF_READY",
-      "status": "PASS_FROZEN_NONBLOCKING"
-    },
-    "A-4": {
-      "head": "032c609396db198db6bd14c96436f07bc429cae8",
-      "terminal": "A4_NO_AUTOMATED_PAGINATION_MVP_BINDING_READY",
-      "status": "PASS_FROZEN"
-    },
-    "A-5": {
-      "head": "85bb7c7c6b07a0a58cdc74ea7d74a6de2ed81adb",
-      "terminal": "A5_GENERIC_HTML_DOCUMENT_RESPONSE_CONTRACT_READY",
-      "status": "PASS_FROZEN"
-    },
-    "A-6": {
-      "head": "6fab17d37c1db2feb955fd2c447b498088b99d4a",
-      "directive_comment": 5195137047,
-      "status": "INTEGRITY_METADATA_CORRECTION_ACTIVE"
-    },
-    "A-7": {
-      "head": "79cfdcddafc72b7d80cd237c72a773086b19a136",
-      "terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_EXACT_FINDINGS",
-      "pointer_blob": "ec17a4c97f6225e5e9e5fc4fdcdade74e606d1a6",
-      "finding_count": 3,
-      "delta_wait_comment": 5195141948,
-      "status": "WAITING_A6_CORRECTION"
-    }
+  "verified_adapter": {
+    "a6_head": "a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793",
+    "a6_pointer_blob": "30a7854ca46e7e6f477b1c17c5762e4651d53a82",
+    "package_blob": "d758afef96e76b664f6d8b0383c5a7bc017c731a",
+    "package_sha256": "fad18a1e0571dfac26305d8bd3d845a639e225c51ff1a03dfe45c49d7d441854",
+    "package_member_binding": "PASS_6_OF_6",
+    "build_receipt_blob": "64a21f86ed848c35f8f99c9160ae62325630ac3f",
+    "replay_receipt_blob": "262dbdb3742daba28a5b1ca787b2b043fccd1955",
+    "deterministic_replay": "PASS_2_OF_2"
   },
-  "critical_path": [
-    "A6_REMOTE_BYTE_SHA_SIZE_INTEGRITY_CORRECTION",
-    "A7_TWO_CHECK_DELTA_REACCEPTANCE",
-    "A2_TO_B1_FORMAL_HANDOFF"
-  ],
-  "active_owner": "A-6",
-  "current_terminal": "A2_A7_FINDINGS_A6_INTEGRITY_CORRECTION_ACTIVE",
-  "current_status": "WAITING_A6_INTEGRITY_CORRECTION_TERMINAL",
-  "next_action": "PROCESS_A6_CORRECTED_POINTER_AND_TRIGGER_A7_DELTA_REACCEPTANCE",
-  "verified_adapter_semantics_ready": true,
-  "verified_adapter_integrity_ready": false,
-  "b1_handoff_ready": false,
-  "request_execution_authorized": false,
-  "capture_execution_authorized": false,
+  "independent_acceptance": {
+    "a7_head": "96247ec90c19ae476735750a7dd0233ab237f0f0",
+    "terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_PASS",
+    "terminal_comment": 5195405907,
+    "pointer_blob": "806949a223115c26cdd6a264faf6e438003b5ed1",
+    "finding_count": 0,
+    "b1_execution_ready": true,
+    "b1_reanalysis_required": false
+  },
+  "b1_handoff": {
+    "target_pr": 19,
+    "directive_comment": 5195584095,
+    "handoff_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_B1_EXECUTION_READINESS_HANDOFF_V2.json",
+    "handoff_commit": "2104c9b4dff1d50987cf70487f5c486f3b32c660",
+    "handoff_blob": "34fd92322e8348e6aa16f4d7193f432621819db8",
+    "status": "FORMAL_HANDOFF_PUBLISHED_WAITING_B1_CONSUMPTION"
+  },
+  "active_owner": "B-1",
+  "current_terminal": "A2_GENERIC_HTML_VERIFIED_ADAPTER_ACCEPTED_AND_B1_HANDOFF_READY",
+  "current_status": "A2_TERMINAL_HANDOFF_TO_B1",
+  "next_action": "PROCESS_B1_A2_VERIFIED_ADAPTER_CONSUMPTION_TERMINAL",
+  "verified_adapter_package_ready": true,
+  "verified_adapter_integrity_ready": true,
+  "independent_acceptance_pass": true,
+  "b1_handoff_ready": true,
+  "actual_site_extraction": false,
   "actual_bulk_collection": false,
+  "d_canonical_db_write": false,
   "production": false,
   "ready": false,
   "merge": false,
