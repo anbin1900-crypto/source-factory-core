@@ -25,6 +25,12 @@
     "size_bytes": 1619,
     "sha256": "47a42bd8f55079d2c65fa5ff2513a8856543e9734e79e04efa5835d8f8bc03bd"
   },
+  "publication_receipt": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave2/V1_C_MODE_6_WORKER_WAVE2_PUBLICATION_RECEIPT_V3.json",
+    "commit": "85b027826d3b1c7d60e29285b54aa1c4aa81a178",
+    "control_comment_id": 5189704060,
+    "worker_comment_ids": [5189688748, 5189691452, 5189693654, 5189696213, 5189698995, 5189701057]
+  },
   "source_supplement": {
     "drive_file_id": "1EaHhHablINACVR-syzy4o6r4wEnbK8z_",
     "file_name": "V1_C_MODE_WAVE2_SOURCE_SUPPLEMENT_V3.zip",
@@ -45,11 +51,11 @@
     "AUTOMATION-C-W5": 63,
     "AUTOMATION-C-W6": 64
   },
-  "status": "WAVE2_READY_FOR_PARALLEL_EXECUTION",
+  "status": "WAVE2_DISPATCHED_TO_6_OF_6",
   "target_pc_pass": "PENDING",
   "auto_test_write_count": 0,
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at": "2026-08-05T18:00:00+09:00"
+  "updated_at": "2026-08-05T18:12:00+09:00"
 }
