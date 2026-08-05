@@ -1,11 +1,11 @@
 {
-  "schema_version": "LATEST_C1_ACTIVE_WORK_POINTER_V7",
-  "pointer_id": "LATEST-C1-SEMANTIC-AI-ACTIVE-WORK-20260805-002",
-  "registered_at_kst": "2026-08-05 16:45 KST",
+  "schema_version": "LATEST_C1_ACTIVE_WORK_POINTER_V8",
+  "pointer_id": "LATEST-C1-SEMANTIC-AI-ACTIVE-WORK-20260805-003",
+  "registered_at_kst": "2026-08-05T17:10:00+09:00",
   "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
   "control_pr": 20,
   "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
-  "observed_head_before_pointer_update": "f2daf8e367c097b256172640d4871bf6c8b57534",
+  "previous_pointer_blob": "d14c3f8e9b5d07b709cf150d6a2b525eb3ab741f",
   "active_directives": [
     {
       "directive_id": "A0-TO-C1-SEMANTIC-KNOWLEDGE-DOMAIN-AI-SHELL-V1-20260803-001",
@@ -17,62 +17,58 @@
       "directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
       "supersedes_existing_directive": false,
       "mode": "D_ALIGNED_TRANSFORMER_ADDENDUM",
-      "status": "WORKER_WAVE_COMPLETE_EXTERNAL_BLOCKER_REQUIRED_PATHS_22"
+      "status": "WORKER_WAVE_COMPLETE_B1_HANDOFF_ACCEPTED_EXTERNAL_BLOCKER_REQUIRED_PATHS_22"
     }
   ],
-  "semantic_ai_mission": {
-    "start_report": {
-      "path": "yolla-panel-v1/c1-semantic-ai-runtime/reports/C1_START_REPORT_V1.json",
-      "commit": "a85544665e1c546fcbd82ac8640173af6429579c",
-      "blob": "dc5f0ffac21b84e718d87865485711bff71d4768"
-    },
-    "worker_lane_matrix": {
-      "path": "yolla-panel-v1/c1-semantic-ai-runtime/directives/C1_WORKER_LANE_ASSIGNMENT_MATRIX_V1.json",
-      "commit": "8e2b023a73e38e7e183cdf12a6a7d54d97fd4617",
-      "blob": "8d9001787b44eeafd2585fc5252ccc1c50fdaf6e"
-    },
-    "current_wave": "C1_D_ALIGNED_TRANSFORMER_WAVE_COMPLETE_EXTERNAL_BLOCKER"
-  },
-  "commander_closure_report": {
-    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/reports/C1_D_ALIGNED_TRANSFORMER_COMMANDER_CLOSURE_REPORT_V2.json",
-    "commit": "a6c6efbbc5ab39a2bfd5c6cbc5b2dd427f635f99",
-    "blob": "6db0e3c591b8008b9ec2553f9981cfce158f3c19"
+  "b1_handoff_ack": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/reports/C1_B1_ACCEPTED_FIXTURE_HANDOFF_ACK_V1.json",
+    "commit": "c8ea192fa2d6f8e69b3a171a7777efb950fc36f6",
+    "blob": "b24f72ad6480280ac9a17480b0adb001452f8016",
+    "decision": "ACK_ACCEPTED_FIXTURE_HANDOFF_NO_CONTENT_DELTA_NO_REEXECUTION"
   },
   "transformation_result_pointer": {
     "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_TRANSFORMATION_RESULT_POINTER.json",
-    "commit": "b3a85ebd7e476e9a17aa48c26b56fb54643c3e8f",
-    "blob": "c8675a82b45fc1291fed0f3f754026fe94dabc14"
+    "commit": "7eb88e792578f6d21f0f3473cf996e1ecb2a3176",
+    "blob": "2e5fca1afc7a6ee6148f76bd4b385866f8d3b3fa"
   },
   "d1_handoff_pointer": {
     "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_TO_D1_HANDOFF_POINTER.json",
-    "commit": "f2daf8e367c097b256172640d4871bf6c8b57534",
-    "blob": "2889520691894a790cf9713d669fc6e3fb386dcc"
+    "commit": "4c3d7175e141c2487f2cff4317ef7896bd5ef7bd",
+    "blob": "0265e2bd145c374277321b6d98bfda1a5d04bf02"
+  },
+  "b1_accepted_fixture_authority": {
+    "control_pr": 19,
+    "head": "b452cff27ff9088eb3754a8cc35c05af340339ec",
+    "latest_pointer_blob": "10e715ddef42b7843c0b49a9b35e2475fee6c42f",
+    "extraction_result_pointer_blob": "cbfcb28741ff3a8d1e4ff0f4006c7fc996d73c0f",
+    "handoff_pointer_blob": "932904cede5bcfb239a62952173f82147b0b0f26",
+    "b6_head": "797930d24fc00edef4276b355b7ea7ff71109972",
+    "b6_pointer_blob": "448fbfb07321f3cabae4a25649feee90e46ba106",
+    "b6_final_report_blob": "d81716e1626b96ca120b8b08892d85210da337f3",
+    "handoff_candidate_blob": "01c4c2175b30314538494ed5694668005769635a",
+    "classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE",
+    "status": "ACKNOWLEDGED_AND_CONSUMED"
   },
   "d_aligned_transformer": {
     "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
     "last_confirmed_worker_terminals": {
       "C-2": {
-        "comment": 5181940916,
         "pointer_blob": "a4bc27b8e24dbadf668db5da21cacda0a866284a",
         "state": "PASS_LINEAGE_READY"
       },
       "C-3": {
-        "comment": 5184788795,
         "pointer_blob": "344cd19f110c825ac3ac6cdc6c2b70571eae3a55",
         "state": "EXACT_BLOCKER_EXTERNAL_22_PATHS_ACCOUNTED"
       },
       "C-4": {
-        "comment": 5188153884,
         "pointer_blob": "1779b1f6fbfcba913859850fec0c69f533154da3",
         "state": "PACKAGE_ASSEMBLED_EXACT_BLOCKER"
       },
       "C-5": {
-        "comment": 5185172972,
         "pointer_blob": "c86cf94f2ad858602ef06c88a4f29f4813814c41",
         "state": "PR188_VALIDATION_REJECTED_EXACT_BLOCKER"
       },
       "C-6": {
-        "comment": 5188240227,
         "pointer_blob": "77039ddf47c4e640335e0464b477f260eb84b94f",
         "state": "FINAL_E2E_EXECUTED_EXACT_EXTERNAL_BLOCKER"
       }
@@ -90,55 +86,44 @@
       "pending_count": 44,
       "candidate_count": 0
     },
-    "authority_state": {
-      "B1_FIXTURE_INPUT": "AVAILABLE_AND_CONSUMED",
-      "B1_NORMALIZED_DATASET_BLOB": "1429d3081c7323d058b6effd3129c83cfc3120b9",
-      "B1_RAW_ARTIFACT_MANIFEST_BLOB": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
-      "D1_PR188_HEAD": "1bb475c440983aae761b897a3b58a8f4dab880cc",
-      "D1_SCHEMA_PROFILE_BLOB": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
-      "D1_MAPPING_CONTRACT_BLOB": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
-      "D1_VALIDATION_RULESET_BLOB": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
-      "D1_ACCEPTANCE_RECEIPT_CONTRACT_BLOB": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
-      "ACTUAL_D_ACCEPTANCE_RECEIPT": "NOT_ISSUED"
+    "input_authority_delta": {
+      "content_blob_delta": false,
+      "authority_classification_delta": true,
+      "c2_to_c6_reexecution_required": false
     },
     "c1_to_d1_handoff_integrity": "PASS_FAIL_CLOSED_REJECTED_NOT_SUBMITTED",
     "d1_submission_eligible": false,
     "actual_d_handoff_performed": false,
-    "superseded_blockers": [
-      "D1_REQUIRED_SCHEMA_MAPPING_VALIDATION_CONTRACT_SET_NOT_PUBLISHED",
-      "B1_NORMALIZED_DATASET_OR_RAW_ARTIFACT_MANIFEST_NOT_PUBLISHED"
-    ],
     "current_first_blocker": "PR188_REQUIRED_SOURCE_PATHS_MISSING_22",
     "current_first_blocker_detail": {
       "rule_id": "B001",
       "source_path": "package.source_id",
       "target": "SOURCE.source_id",
-      "resolution_owner": "B-1_COLLECTION_DB_MATERIALIZATION_COMMANDER",
+      "resolution_owner": "B-1_OR_D-1_AUTHORITY_DELTA",
       "failure_signature": "B1_PACKAGE_SOURCE_ID_NOT_PUBLISHED"
     },
     "current_gate": "EXTERNAL_REQUIRED_SOURCE_PATHS_22_RESOLUTION",
-    "status": "E2E_COMPLETE_EXTERNAL_BLOCKER_REQUIRED_PATHS_22"
-  },
-  "cycle_0005_freeze_comments": {
-    "C-2": 5188313400,
-    "C-3": 5188317255,
-    "C-4": 5188321773,
-    "C-5": 5188325716,
-    "C-6": 5188329642,
-    "status": "NO_PENDING_DIRECTIVE_ALL_WORKERS"
+    "status": "E2E_COMPLETE_B1_HANDOFF_ACCEPTED_EXTERNAL_BLOCKER_REQUIRED_PATHS_22"
   },
   "dependency_state": {
-    "B1_NORMALIZED_DATASET_V1": "COMMITTED_FIXTURE_AVAILABLE_AND_CONSUMED",
-    "B1_RAW_ARTIFACT_MANIFEST_V1": "COMMITTED_FIXTURE_AVAILABLE_AND_CONSUMED",
+    "B1_HANDOFF_AUTHORITY": "B6_ACCEPTED_FIXTURE_HANDOFF_ACKNOWLEDGED",
+    "B1_CONTENT_DELTA": false,
+    "B1_NORMALIZED_DATASET_V1": "AVAILABLE_CONSUMED_UNCHANGED",
+    "B1_RAW_ARTIFACT_MANIFEST_V1": "AVAILABLE_CONSUMED_UNCHANGED",
+    "B1_SOURCE_RECORD_ENVELOPE_V1": "AVAILABLE_CONSUMED_UNCHANGED",
+    "B1_EXTRACTION_RECEIPT_V1": "AVAILABLE_CONSUMED_UNCHANGED",
     "D1_D_CANONICAL_SCHEMA_PROFILE_V1": "PR188_AUTHORITY_AVAILABLE_AND_CONSUMED",
     "D1_D_INBOUND_FIELD_MAPPING_CONTRACT_V1": "PR188_AUTHORITY_AVAILABLE_AND_CONSUMED",
     "D1_D_INTAKE_VALIDATION_RULESET_V1": "PR188_AUTHORITY_AVAILABLE_AND_CONSUMED",
-    "D1_KNOWLEDGE_ACCEPTANCE_RECEIPT_CONTRACT": "PR188_AUTHORITY_AVAILABLE_AND_CONSUMED",
     "PR188_REQUIRED_SOURCE_PATHS": "MISSING_22_EXTERNAL_AUTHORITY_DELTA_REQUIRED",
     "D_ACCEPTED_KNOWLEDGE_RELEASE": "NOT_AVAILABLE",
     "A0_PROVIDER_CONSUMPTION": "BLOCKED_BY_REQUIRED_SOURCE_PATHS_22"
   },
-  "next_action": "WAIT_B1_OR_D1_AUTHORITY_DELTA_RESOLVING_REQUIRED_SOURCE_PATHS_22_THEN_RUN_INCREMENTAL_C3_C4_C5_C6_REVALIDATION",
+  "superseded_inconsistencies": [
+    "C1_WAITING_C2_C3_TERMINALS",
+    "B1_TO_C1_HANDOFF_NOT_PUBLISHED_WAITING_B6_INDEPENDENT_ACCEPTANCE"
+  ],
+  "next_action": "WAIT_B1_OR_D1_AUTHORITY_CONTENT_DELTA_RESOLVING_REQUIRED_SOURCE_PATHS_22_THEN_RUN_INCREMENTAL_C3_C4_C5_C6_REVALIDATION",
   "safety": {
     "actual_pc_execution": false,
     "actual_site_data_claim": false,
@@ -153,5 +138,5 @@
   },
   "terminal": "C1_D_ALIGNED_TRANSFORMER_READY_OR_EXACT_BLOCKER",
   "terminal_decision": "EXACT_EXTERNAL_BLOCKER",
-  "status": "C1_D_ALIGNED_TRANSFORMER_E2E_COMPLETE_EXTERNAL_BLOCKER_REQUIRED_PATHS_22"
+  "status": "C1_D_ALIGNED_TRANSFORMER_E2E_COMPLETE_B1_HANDOFF_ACCEPTED_EXTERNAL_BLOCKER_REQUIRED_PATHS_22"
 }
