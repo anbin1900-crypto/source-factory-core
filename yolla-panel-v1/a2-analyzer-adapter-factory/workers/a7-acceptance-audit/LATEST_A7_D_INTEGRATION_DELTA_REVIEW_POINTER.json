@@ -3,6 +3,7 @@
   "worker": "A-7",
   "task_id": "A7_D_INTEGRATION_DELTA_REVIEW",
   "directive_comment": 5196662863,
+  "terminal_comment_id": 5197623755,
   "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
   "mode": "DELTA_ONLY",
   "status": "TERMINAL_PASS",
@@ -47,8 +48,12 @@
   "implementation_edit": false,
   "self_approval": false,
   "blocking_mid_process_gate": false,
-  "remote_readback": "PENDING",
-  "updated_at_kst": "2026-08-06T06:25:00+09:00",
+  "remote_readback": "PASS",
+  "remote_readback_evidence": {
+    "pre_terminal_pointer_commit": "19bbda51c6a0779aeca08ae5ef2fa63d1e8b112c",
+    "pre_terminal_pointer_blob": "e2b1f173afac14c79ceab4ed28d95c1b0b711a93"
+  },
+  "updated_at_kst": "2026-08-06T06:27:00+09:00",
   "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
   "production": false,
   "ready": false,
