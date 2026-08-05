@@ -1,26 +1,27 @@
 {
-  "schema_version": "LATEST_A2_REPORT_POINTER_V1",
-  "pointer_id": "A2-GENERIC-SITE-ANALYZER-ADAPTER-FACTORY-LATEST-V1",
-  "updated_at_kst": "2026-08-05T16:01:00+09:00",
+  "schema_version": "LATEST_A2_REPORT_POINTER_V2",
+  "pointer_id": "A2-GENERIC-SITE-ANALYZER-ADAPTER-FACTORY-LATEST-V2",
+  "updated_at_kst": "2026-08-05T16:52:00+09:00",
   "role": "A-2_GENERIC_SITE_ANALYZER_ADAPTER_FACTORY_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 18,
   "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
-  "previous_pointer_blob": "ba1a1623209262c20001c07989f37c9ef0e0d973",
+  "previous_pointer_blob": "6b37cdc3987115ddd4e253390723b07b9ee09cef",
   "active_report": {
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_WAVE6_2_CONCRETE_ORIGIN_BLOCKER_CLOSURE_DISPATCH_V1.json",
-    "commit": "0f3e2eccd44132e66fa06ca7127e29908c194fc2",
-    "blob": "9b7ed7c01a7e96949dbf672555dabee141676f13",
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_WAVE6_2_CONCRETE_ORIGIN_CLOSURE_TERMINAL_RECONCILIATION_V1.json",
+    "commit": "484b56c8e788b8b5c1587f8ba43a513fb50dd48e",
+    "blob": "da353c40c0493a4655e7bc4fc79c9f49e9671bc2",
     "remote_readback": "PASS"
   },
-  "authorization_result": {
+  "authorization_accounting": {
     "authorization_id": "A1-AUTH-ONE-SHOT-EXACT-RESPONSE-FIXTURE-20260805-001",
     "decision_comment_id": 5188164989,
     "authorized_batch_execution_count": 1,
-    "authorized_batch_execution_count_used": 1,
-    "capture_attempt_count": 0,
+    "operator_package_execution_count_used": 1,
+    "network_capture_attempt_count": 0,
     "successful_capture_count": 0,
-    "second_attempt_authorized": false
+    "second_attempt_authorized": false,
+    "status": "CONSUMED_CLOSED_FAIL_CLOSED_PREFLIGHT"
   },
   "a3_result": {
     "head": "c0a75f7bfeb53aec2ffa561dfca3dd190ee47daa",
@@ -28,16 +29,24 @@
     "terminal": "A3_ONE_SHOT_EXACT_RESPONSE_FIXTURE_CAPTURE_EXACT_BLOCKER",
     "first_blocker": "AUTHORIZED_ALLOWLIST_CONTAINS_ONLY_RESERVED_NON_ROUTABLE_FIXTURE_INVALID_PLACEHOLDER_URLS_WITHOUT_CONCRETE_SOURCE_ORIGIN_MAPPING"
   },
-  "worker_comments": {
-    "A-3": 5188647300,
-    "A-4": 5188652806,
-    "A-5": 5188644176,
-    "A-6": 5188654648,
-    "A-7": 5188650256
+  "a5_result": {
+    "head": "57359d2c0a83e1f09f6284df69e18f83c53e2113",
+    "pointer_blob": "0173635d3b8e111ad35665513248ca8860bfe3d9",
+    "terminal": "A5_CONCRETE_SOURCE_ORIGIN_MAPPING_EXACT_BLOCKER",
+    "terminal_comment": 5189062601,
+    "first_blocker": "NO_IMMUTABLE_AUTHORITY_PUBLISHES_ROUTABLE_CONCRETE_SOURCE_ORIGIN_AND_NONSECRET_REQUEST_VALUES_FOR_EP001_EP002_EP003_EP004_EP005_EP010_EP012",
+    "blocked_profile_count": 7,
+    "excluded_profiles": [
+      "EP-011"
+    ],
+    "a3_handoff_consumable": false
   },
-  "active_owner": "A-5",
-  "current_terminal": "A2_CONCRETE_SOURCE_ORIGIN_CLOSURE_ACTIVE",
+  "active_owner": "A2_OR_UPPER_SOURCE_TARGET_AUTHORITY",
+  "current_terminal": "A2_CAPTURE_INPUT_AUTHORITY_EXACT_BLOCKER",
+  "current_status": "WAITING_AUTHORITATIVE_CONCRETE_SOURCE_TARGET_INPUT",
+  "next_action": "PUBLISH_ROUTABLE_ORIGIN_AND_EXACT_NONSECRET_REQUEST_VALUE_AUTHORITY_FOR_EP001_EP002_EP003_EP004_EP005_EP010_EP012",
   "capture_execution_authorized": false,
+  "new_authorization_request_ready": false,
   "verified_adapter_package_ready": false,
   "b1_handoff_ready": false,
   "production": false,
