@@ -1,59 +1,72 @@
 {
-  "schema_version": "B1_EXTRACTION_RESULT_POINTER_V2",
-  "pointer_id": "B1-EXTRACTION-RESULT-POINTER-V2",
-  "updated_at_kst": "2026-08-05T16:53:00+09:00",
+  "schema_version": "B1_EXTRACTION_RESULT_POINTER_V3",
+  "pointer_id": "B1-EXTRACTION-RESULT-POINTER-V3",
+  "updated_at_kst": "2026-08-05T16:57:00+09:00",
   "control_pr": 19,
   "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
   "required_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
-  "previous_pointer_blob": "3918f6d513a1abdf641fc86c0b91371720a9535e",
+  "previous_pointer_blob": "c388bf7be47bed73ee3ac1b2e70826b294b598d1",
   "reconciliation_report": {
-    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave7/B1_CURRENT_STATE_RECONCILIATION_V1.json",
-    "commit": "f7b0c07209412ea7376f6acd72961a7eec1e9567",
-    "blob": "a05ab6fb09579c248ae295db95da6d4463810678"
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave7/B1_CURRENT_STATE_RECONCILIATION_V2.json",
+    "commit": "a29fed9f7f4eb70f7560967548828040ca613f35",
+    "blob": "b7711f1ce7f601c8209b02c89642c349101f839a"
   },
-  "status": "WORKER_TERMINALS_3_OF_5_B4_RAW_AUTHORITY_AVAILABLE_B5_B6_PENDING",
+  "status": "B2_TO_B5_TERMINAL_GATE_PASS_4_OF_4_WAITING_B6_FINAL_ACCEPTANCE",
   "required_outputs": {
     "RAW_ARTIFACT_MANIFEST_V1": {
       "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V1.json",
       "blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
-      "authority": "B4_TERMINAL_PASS_PENDING_B6_ACCEPTANCE"
+      "authority": "B4_TERMINAL_PASS_AVAILABLE_FOR_B6"
     },
     "SOURCE_RECORD_ENVELOPE_V1": {
       "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/SOURCE_RECORD_ENVELOPE_V1.json",
       "blob": "0148a841344ce5a0df03e55df532871106dd7333",
-      "authority": "B4_TERMINAL_PASS_PENDING_B6_ACCEPTANCE"
+      "authority": "B4_TERMINAL_PASS_AVAILABLE_FOR_B6"
     },
     "NORMALIZED_DATASET_V1": {
-      "path": null,
-      "blob": null,
-      "authority": "B5_IMPLEMENTATION_IN_PROGRESS"
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/generated/NORMALIZED_DATASET_V1.json",
+      "blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+      "sha256": "add8698d36c9a87043409168ce6831cf3ab87ff5d77db98c2a81aa782591a112",
+      "authority": "B5_TERMINAL_PASS_AVAILABLE_FOR_B6"
     },
     "EXTRACTION_RECEIPT_V1": {
-      "path": null,
-      "blob": null,
-      "authority": "B5_IMPLEMENTATION_IN_PROGRESS"
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/generated/EXTRACTION_RECEIPT_V1.json",
+      "blob": "a4b4f7504c0a2b552fe165176f51833b78e0fd09",
+      "sha256": "ca8d871353740ccb5ea753467d5e3d183ded1e958688f92d019ca1756930711c",
+      "authority": "B5_TERMINAL_PASS_AVAILABLE_FOR_B6"
     }
   },
   "worker_terminals": {
-    "received": 3,
+    "received": 4,
     "required": 5,
+    "b2_to_b5_gate": "PASS_4_OF_4",
     "received_workers": [
       "B-2",
       "B-3",
-      "B-4"
+      "B-4",
+      "B-5"
     ],
     "pending_workers": [
-      "B-5",
       "B-6_FINAL_ACCEPTANCE"
     ]
   },
+  "b5_materialization": {
+    "input_record_count": 4,
+    "duplicate_count": 1,
+    "output_record_count": 3,
+    "source_field_loss_count": 0,
+    "sqlite_row_count": 3,
+    "sqlite_decoded_size_bytes": 12288,
+    "sqlite_decoded_sha256": "f03e20844e805af3105791934352f8bc3dcbeb1a165ad5c80e5d6ae5739ea14d",
+    "test_result": "PASS_30_OF_30"
+  },
   "b6_acceptance": {
-    "current_pointer_blob": "f627f03207947fcf00c07094882856f258ea8e19",
-    "accepted_inputs": "2_OF_4",
-    "b4_terminal_available": true,
-    "b4_accepted": false,
-    "b5_terminal_available": false,
-    "final_acceptance_completed": false
+    "activation_comment": 5189154915,
+    "entry_condition": "B2_B3_B4_B5_TERMINALS_AND_POINTERS_4_OF_4",
+    "entry_condition_met": true,
+    "final_acceptance_completed": false,
+    "c1_handoff_candidate_created": false,
+    "status": "ACTIVE"
   },
   "a2_dependency": {
     "head": "25aaf4b568fbd6b97e7116c9160d5a0046298d34",
@@ -63,8 +76,7 @@
   "execution_scope": "FIXTURE_FIRST_ONLY",
   "actual_site_extraction": false,
   "current_blockers": [
-    "B5_TERMINAL_AND_LATEST_POINTER_NOT_YET_PUBLISHED",
-    "B6_HAS_NOT_YET_ACCEPTED_B4_OR_COMPLETED_FINAL_ACCEPTANCE",
+    "B6_FINAL_ACCEPTANCE_AND_C1_HANDOFF_POINTER_NOT_YET_PUBLISHED",
     "A2_VERIFIED_ADAPTER_PACKAGE_V1_NOT_PUBLISHED_FOR_ACTUAL_SITE_EXTRACTION"
   ],
   "production": false,
