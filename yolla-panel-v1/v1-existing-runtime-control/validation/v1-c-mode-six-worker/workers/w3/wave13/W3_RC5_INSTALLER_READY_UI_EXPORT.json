@@ -1,0 +1,122 @@
+{
+  "schema_version": "W3_RC5_INSTALLER_READY_UI_EXPORT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-013",
+  "registry_sequence": 13,
+  "command_id": "C6W-W13-W3-INSTALLER-READY-UI-PROFILE-BINDING",
+  "worker_id": "AUTOMATION-C-W3",
+  "directive_comment": 5196057701,
+  "continue_comment": 5196195927,
+  "result_key": "519605770100",
+  "target_version": "5.10.2.4.2-rc5",
+  "input_wave12_result_comment": 5195394714,
+  "input_wave12_result_commit": "40023163e8faf0f918e1fa55d1dae4741a3bb7e7",
+  "w1_rc5_assembly_map": {
+    "result_key": "519605250600",
+    "status": "PENDING_AT_W3_BUILD_TIME",
+    "alignment_required": true
+  },
+  "runtime_roots": {
+    "release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases",
+    "versioned_release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc5",
+    "state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2",
+    "fixed_login_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "worker_partition": "persist:sf4-safe-panel-worker-1",
+    "analysis_partition": "persist:yolla-analysis-browser-v1",
+    "localappdata_yolla_allowed": false
+  },
+  "runtime_files": [
+    {
+      "component": "UI_TRUTH_BRIDGE",
+      "owner": "W3",
+      "source_commit": "edcb83ef2cd96aa042ab0656c66f290d542d20f0",
+      "source_path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave12/rc4-runtime/automation-c-v1/workspace_ui_truth_bridge.cjs",
+      "source_blob": "27267b1b0b1d057e2ca40e3fcc864fd4609a1520",
+      "sha256": "8086f56f1f0b5731cb9ad4be5339fc211d1468f4195fcf249b7a300cc3b830e8",
+      "size_bytes": 4012,
+      "package_path": "rc5-package/automation-c-v1/workspace_ui_truth_bridge.cjs",
+      "install_destination": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc5\\automation-c-v1\\workspace_ui_truth_bridge.cjs",
+      "load_order": 11
+    },
+    {
+      "component": "UI_TRUTH_CSS",
+      "owner": "W3",
+      "source_commit": "52aea6e17ce2561ed07058e304c3744eec3b166a",
+      "source_path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave12/rc4-runtime/workspace_c_mode_rc4_truth.css",
+      "source_blob": "ff1bf6c84fb9806328bb3e5d8616a85cce943473",
+      "sha256": "43b6a3721c250e76b2562c45d931fd17d87ae219fec70aa3ef3206af9cd8b0fe",
+      "size_bytes": 1504,
+      "package_path": "rc5-package/workspace_c_mode_rc4_truth.css",
+      "install_destination": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc5\\workspace_c_mode_rc4_truth.css",
+      "load_order": 12
+    },
+    {
+      "component": "UI_TRUTH_RUNTIME",
+      "owner": "W3",
+      "source_commit": "250b05096ba70fcbe65aed3276cebaa07bd63de5",
+      "source_path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave12/rc4-runtime/workspace_c_mode_rc4_truth.js",
+      "source_blob": "82862f1b4c8c2599c4035c78023ffea850909b4c",
+      "sha256": "5fdd1719e110ce80ad4b3efb911fd20a86ccbfeb27182645e8d2170287114b54",
+      "size_bytes": 7858,
+      "package_path": "rc5-package/workspace_c_mode_rc4_truth.js",
+      "install_destination": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc5\\workspace_c_mode_rc4_truth.js",
+      "load_order": 13
+    }
+  ],
+  "load_hooks": {
+    "loader_discovery": {
+      "root": "VERSIONED_RELEASE_ROOT",
+      "match_glob": "**/*.html",
+      "required_match_count": 1,
+      "required_anchors": [
+        "<link rel=\"stylesheet\" href=\"workspace_c_mode.css\">",
+        "<script src=\"workspace_c_mode.js\"></script>"
+      ],
+      "fail_closed_on_zero_or_multiple": true
+    },
+    "css": {
+      "anchor": "<link rel=\"stylesheet\" href=\"workspace_c_mode.css\">",
+      "insert_after": "<link rel=\"stylesheet\" href=\"workspace_c_mode_rc4_truth.css\" data-yolla-overlay=\"w3-rc5\">"
+    },
+    "js": {
+      "anchor": "<script src=\"workspace_c_mode.js\"></script>",
+      "insert_after": "<script src=\"workspace_c_mode_rc4_truth.js\" data-yolla-overlay=\"w3-rc5\"></script>"
+    },
+    "bridge": {
+      "register_before": "C_MODE_SUMMARY_PUBLICATION",
+      "module": "automation-c-v1/workspace_ui_truth_bridge.cjs"
+    },
+    "idempotency_marker": "data-yolla-overlay=\"w3-rc5\""
+  },
+  "rollback": {
+    "mode": "REMOVAL_ONLY",
+    "remove_exact": [
+      "<link rel=\"stylesheet\" href=\"workspace_c_mode_rc4_truth.css\" data-yolla-overlay=\"w3-rc5\">",
+      "<script src=\"workspace_c_mode_rc4_truth.js\" data-yolla-overlay=\"w3-rc5\"></script>",
+      "automation-c-v1/workspace_ui_truth_bridge.cjs"
+    ],
+    "base_files_modified": false,
+    "profile_or_state_files_modified": false
+  },
+  "fixed_login_profile_contract": {
+    "preserved": true,
+    "profile_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "worker_partition": "persist:sf4-safe-panel-worker-1",
+    "analysis_partition": "persist:yolla-analysis-browser-v1",
+    "write_scope": "NONE",
+    "pre_post_path_equality_required": true
+  },
+  "required_truth_gates": {
+    "C_AND_REPEAT_DISABLED_WORKING_COUNT": 0,
+    "LEGACY_A_E_EXCLUDED": true,
+    "RESULT_COMMENT_PRIORITY": true,
+    "CURRENT_AND_HISTORICAL_REGISTRY_SEPARATED": true,
+    "MISSING_DUPLICATE_ERROR_END_RESTING_SEPARATED": true,
+    "FIXED_LOGIN_PROFILE_CONTRACT_PRESERVED": true
+  },
+  "target_pc_execution": "PENDING",
+  "live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
