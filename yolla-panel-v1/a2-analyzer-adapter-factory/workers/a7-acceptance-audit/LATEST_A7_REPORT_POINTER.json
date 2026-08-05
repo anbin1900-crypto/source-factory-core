@@ -53,8 +53,12 @@
   "required_correction": "RECOMPUTE_EXACT_REMOTE_BYTE_SHA256_AND_SIZE_AND_REPUBLISH_FINAL_POINTER_AND_A7_HANDOFF",
   "implementation_file_direct_edit": false,
   "self_approval": false,
-  "remote_readback": "PENDING",
-  "updated_at_kst": "2026-08-06T01:52:00+09:00",
+  "remote_readback": "PASS",
+  "remote_readback_evidence": {
+    "pointer_commit": "ff63dfd1715dc22e04c1a591ca81a99d175c0719",
+    "pointer_blob": "ec17a4c97f6225e5e9e5fc4fdcdade74e606d1a6"
+  },
+  "updated_at_kst": "2026-08-06T01:53:00+09:00",
   "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
   "production": false,
   "ready": false,
