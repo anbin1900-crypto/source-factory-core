@@ -86,8 +86,8 @@
       "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/resume-v2/B5_D_READY_PACKAGE_V2_RESUME_START_REPORT_V1.json"
     },
     "test_report_v2": {
-      "blob": "bd825009b4fa9ac56ed3cb0f5897eb8e8522f618",
-      "commit": "fc1ab4dba76dda49fa05dbbd476a128425029b8e",
+      "blob": "88311daf3a146cfdbb9d3dc1df1f9bdc5ede0650",
+      "commit": "24435e2a3eb8d7f07ad566098a93416b70fa1435",
       "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/resume-v2/B5_D_READY_PACKAGE_V2_TEST_REPORT_V2.json"
     },
     "test_source": {
@@ -124,6 +124,13 @@
     "input_record_count": 4,
     "output_record_count": 3,
     "package_sha256": "69dc71948d1ed5417ae027d2ae8e347cd24306d29447ff20246ff042b2b8196f",
+    "published_tree_replay": {
+      "compile_result": "PASS_2_OF_2",
+      "first_run": "PASS_37_OF_37",
+      "second_run": "PASS_37_OF_37",
+      "structure": "resume-v2 root schemas + fixture bundle + src + tests",
+      "validator": "PASS"
+    },
     "rejected_records_preserved": "PASS",
     "request_sha256": "7baa4e24323c739d4907f4c81e2aca7a5bfe8650f0c10854aa348f6d0a71e651",
     "silent_drop_count": 0,
