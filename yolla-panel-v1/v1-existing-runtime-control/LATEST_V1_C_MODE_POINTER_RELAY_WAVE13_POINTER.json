@@ -1,0 +1,81 @@
+{
+  "schema_version": "LATEST_V1_C_MODE_POINTER_RELAY_WAVE13_POINTER_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-013",
+  "registry_sequence": 13,
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "review_and_directive": {
+    "md_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave13/C_MODE_WAVE12_REVIEW_AND_WAVE13_DIRECTIVE_V1.md",
+    "md_commit": "25452ac50db45dc2856f388fa04d0033abf4fe66",
+    "json_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave13/C_MODE_WAVE12_REVIEW_AND_WAVE13_DIRECTIVE_V1.json",
+    "json_commit": "4336540194181ae886a3ce2f97095e2e75cc7ea5"
+  },
+  "publication_receipt": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave13/C_MODE_WAVE13_PUBLICATION_RECEIPT_V1.json",
+    "commit": "eacfab85cb27832c95204e33a65449eb20461dd0"
+  },
+  "wave12_review": {
+    "reported": 6,
+    "missing": 0,
+    "duplicate_result": 0,
+    "results": {
+      "AUTOMATION-C-W1": {"result_comment": 5195797122, "result_commit": "7492abf88c6f6bb84ec50084948ca9e635069f2e", "scope": "SOURCE_INVENTORY_LOCK_PASS"},
+      "AUTOMATION-C-W2": {"result_comment": 5195703416, "result_commit": "35da3fbbabe6d12b5aa18e4e3206459f907366ec", "scope": "TECHNICAL_ACCEPTANCE_GATE_PASS"},
+      "AUTOMATION-C-W3": {"result_comment": 5195394714, "result_commit": "40023163e8faf0f918e1fa55d1dae4741a3bb7e7", "scope": "UI_PAYLOAD_OFFLINE_PASS_TARGET_PC_PENDING"},
+      "AUTOMATION-C-W4": {"result_comment": 5195674360, "result_commit": "f15c83ecbfb5f737d0283246c88d5ea861632acb", "scope": "CONNECTOR_BYTE_PREPARATION_PASS_POSITIVE_PACKAGE_PENDING"},
+      "AUTOMATION-C-W5": {"result_comment": 5195686133, "result_commit": "d21c152985fd98b010b4e2c95b20faad42789a6d", "scope": "EXECUTABLE_SOURCE_IMPLEMENTED_PACKAGE_ASSEMBLY_INCOMPLETE"},
+      "AUTOMATION-C-W6": {"result_comment": 5195668736, "result_commit": "8459971d75a7a267afd89cd794d45c855af2ce00", "scope": "NONBLOCKING_AUDIT_PREPARED_W5_POST_RESULT_REAUDIT_REQUIRED"}
+    }
+  },
+  "commander_findings": [
+    "INSTALLER_EXPECTS_ADJACENT_RC4_PACKAGE_DIRECTORY_BUT_DIRECTORY_BYTES_ARE_NOT_COMMITTED",
+    "UI_PACKAGE_PATHS_IN_W1_LOCK_DO_NOT_MATCH_W5_INSTALLER_REQUIRED_PATH",
+    "INSTALLER_USES_LOCALAPPDATA_PATHS_INSTEAD_OF_EXISTING_RUNTIME_ROOTS",
+    "BACKGROUND_DISPATCH_OPENS_TEMPORARY_PROFILE_WITHOUT_FIXED_LOGIN_PROFILE_BINDING_PROOF",
+    "SMOKE_DOES_NOT_LOAD_ALL_REQUIRED_RUNTIME_COMPONENTS",
+    "ROLLBACK_RETURNS_PRESERVED_LABELS_WITHOUT_PRE_POST_HASH_OR_EXISTENCE_VERIFICATION",
+    "W2_GATE_AND_W6_AUDIT_PRECEDED_THE_FINAL_W5_WAVE12_RESULT"
+  ],
+  "wave13_registry": {
+    "comment_id": 5196092403,
+    "previous_registry_comment": 5195196731,
+    "worker_count": 6,
+    "all_rows_valid_before_any_dispatch": true,
+    "partial_dispatch": false,
+    "same_sequence_duplicate": "FAIL_CLOSED"
+  },
+  "worker_bindings": {
+    "AUTOMATION-C-W1": {"pr": 59, "directive_comment": 5196052506, "result_key": "519605250600", "command_id": "C6W-W13-W1-ACTUAL-RUNTIME-ROOT-SELF-CONTAINED-ASSEMBLY-MAP"},
+    "AUTOMATION-C-W2": {"pr": 60, "directive_comment": 5196054976, "result_key": "519605497600", "command_id": "C6W-W13-W2-RC5-PACKAGE-TECHNICAL-ACCEPTANCE-GATE"},
+    "AUTOMATION-C-W3": {"pr": 61, "directive_comment": 5196057701, "result_key": "519605770100", "command_id": "C6W-W13-W3-INSTALLER-READY-UI-PROFILE-BINDING"},
+    "AUTOMATION-C-W4": {"pr": 62, "directive_comment": 5196061603, "result_key": "519606160300", "command_id": "C6W-W13-W4-SELF-CONTAINED-PACKAGE-OFFLINE-ACCEPTANCE"},
+    "AUTOMATION-C-W5": {"pr": 63, "directive_comment": 5196065109, "result_key": "519606510900", "command_id": "C6W-W13-W5-SELF-CONTAINED-RC5-INSTALLER-BUILD", "integration_owner": true},
+    "AUTOMATION-C-W6": {"pr": 64, "directive_comment": 5196068428, "result_key": "519606842800", "command_id": "C6W-W13-W6-INDEPENDENT-RC4-NEGATIVE-RC5-MATRIX", "implementation_direct_edit": false}
+  },
+  "observed_existing_runtime": {
+    "state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2",
+    "release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases",
+    "browser_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "worker_partition": "persist:sf4-safe-panel-worker-1",
+    "analysis_partition": "persist:yolla-analysis-browser-v1"
+  },
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc5",
+  "current_progress_percent": 96,
+  "next_gate": "SIX_WAVE13_RESULTS_THEN_SELF_CONTAINED_RC5_OFFLINE_ACCEPTANCE_AND_TARGET_PC_INSTALL",
+  "target_pc_pass": "PENDING",
+  "six_workers_three_waves": "PENDING_TARGET_PC",
+  "restart_resume": "PENDING_TARGET_PC",
+  "log_loss_zero": "PENDING_TARGET_PC",
+  "login_profile_preserved": "PENDING_TARGET_PC_READBACK",
+  "a_e_reintroduction_count": 0,
+  "auto_test_write_count": 0,
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
