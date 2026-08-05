@@ -1,0 +1,30 @@
+{
+  "schema_version": "V1_C_MODE_WORKER_ASSIGNMENT_MATRIX_V1",
+  "cycle_id": "V1-C-MODE-VALIDATION-CYCLE-001",
+  "commander": "V-1",
+  "workers": {
+    "V1-CV-1": {
+      "mission": "Test and repair C-mode state machine, batch dispatch, report correlation, timing, rescue, replacement, progress integrity, and repeat-command correlation using deterministic virtual time.",
+      "must_run": ["UNIT", "SIMULATION", "RESTART_STATE", "STALE_REPORT", "DUPLICATE_REPORT", "20_MINUTE", "90_MINUTE", "FOUR_MISSING", "END_REACTIVATION"],
+      "terminal": "CV1_C_MODE_RUNTIME_LOGIC_PASS_OR_EXACT_BLOCKER"
+    },
+    "V1-CV-2": {
+      "mission": "Install on the target PC, verify idle status accuracy, group C button, top command popup, 3-worker 3-round live dispatch, time trigger, completion trigger, END stop, log preservation, and rollback.",
+      "must_run": ["INSTALL", "IDLE_ZERO", "C_UI", "COMMAND_UI", "3_WORKERS_3_ROUNDS", "TIME_REPEAT", "COMPLETION_REPEAT", "LOG_EXPORT", "ROLLBACK"],
+      "terminal": "CV2_TARGET_PC_C_COMMAND_UI_PASS_OR_EXACT_BLOCKER"
+    },
+    "V1-CV-3": {
+      "mission": "Inject browser, GitHub, malformed report, stale state, out-of-order result, duplicate result, restart, and missing-report failures; independently accept or reject the combined evidence.",
+      "must_run": ["BROWSER_ABORT", "GITHUB_ERROR", "MALFORMED_PANEL", "STALE_A_E", "OUT_OF_ORDER", "DUPLICATE", "RESTART_MID_WAVE", "RESCUE_RACE", "EXACTLY_ONCE"],
+      "terminal": "CV3_C_MODE_FAILURE_RECOVERY_ACCEPTANCE_PASS_OR_EXACT_BLOCKER"
+    }
+  },
+  "shared_rules": {
+    "start_report_required": true,
+    "terminal_report_required": true,
+    "result_or_nonperformance_reason_required": true,
+    "raw_logs_preserved": true,
+    "unverified_pass_forbidden": true,
+    "auto_test_write_count": 0
+  }
+}
