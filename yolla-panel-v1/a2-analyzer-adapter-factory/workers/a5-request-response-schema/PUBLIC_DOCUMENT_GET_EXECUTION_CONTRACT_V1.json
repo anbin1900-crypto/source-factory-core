@@ -1,0 +1,202 @@
+{
+  "schema_version": "PUBLIC_DOCUMENT_GET_EXECUTION_CONTRACT_V1",
+  "directive_id": "A2-TO-A5-GENERIC-HTML-DOCUMENT-RESPONSE-CONTRACT-FINAL-V1-20260806-001",
+  "parent_cycle": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_10-GENERIC-HTML-MVP-FAST-CLOSURE-V1-20260806-001",
+  "status": "FINAL_GENERIC_HTML_DOCUMENT_GET_CONTRACT",
+  "authority": {
+    "source_authority_comment": "#17/5189632712",
+    "source_authority_commit": "545425a10d48bf59746d8db98ff2f56b79360cc0",
+    "source_authority_blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
+    "source_authority_pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5",
+    "origin_mapping_v2_blob": "45dc6154e884cb7c234a0605e86f5a208583dd9e",
+    "request_binding_v2_blob": "e613036257babe24f7bb03ef6bcdc81a68d6a013",
+    "prep_receipt_blob": "fd8753556ca53bc8e471b840b6d2692145c82c0b"
+  },
+  "profile_bindings": [
+    {
+      "request_profile_id": "EP-001",
+      "method": "GET",
+      "url": "https://fin.land.naver.com/map?layer=NobwRAlgJmBcYAsD2BbApmANGAzmghgE4DGCACkfijnCAL50C6QA&center=3zhc4G-2ALg18&zoom=15",
+      "response_format": "text/html",
+      "evidence_id": "EVIDENCE-USER-TARGET-URL-001"
+    },
+    {
+      "request_profile_id": "EP-002",
+      "method": "GET",
+      "url": "https://fin.land.naver.com/articles/2528362542",
+      "response_format": "text/html",
+      "evidence_id": "EVIDENCE-OFFICIAL-ARTICLE-001"
+    },
+    {
+      "request_profile_id": "EP-003",
+      "method": "GET",
+      "url": "https://fin.land.naver.com/articles/2528927768",
+      "response_format": "text/html",
+      "evidence_id": "EVIDENCE-OFFICIAL-ARTICLE-002"
+    },
+    {
+      "request_profile_id": "EP-004",
+      "method": "GET",
+      "url": "https://fin.land.naver.com/map?layer=NobwRAlgJmBcYAsD2BbApmANGAzmghgE4DGCACkfijnCAL50C6QA&center=3zhc4G-2ALg18&zoom=15&tradeTypes=A1-B1-B2-B3&realEstateTypes=A01-A04-B01-A05-A06-A07-C02-A02-B02-C01-C03-C04-F01-D05-D02-E03-D01-E04-E02-D03-D04-E01-Z00",
+      "response_format": "text/html",
+      "evidence_id": "EVIDENCE-USER-TARGET-URL-001"
+    },
+    {
+      "request_profile_id": "EP-005",
+      "method": "GET",
+      "url": "https://fin.land.naver.com/map?center=3zhc4G-2ALg18&zoom=15&layer=NobwRAlgJmBcYAsD2BbApmANGAzmghgE4DGCACkfijnCAL50C6QA",
+      "response_format": "text/html",
+      "evidence_id": "EVIDENCE-USER-TARGET-URL-001"
+    },
+    {
+      "request_profile_id": "EP-010",
+      "method": "GET",
+      "url": "https://fin.land.naver.com/map?tradeTypes=A1-B1-B2-B3&realEstateTypes=A01-A04-B01-A05-A06-A07-C02-A02-B02-C01-C03-C04-F01-D05-D02-E03-D01-E04-E02-D03-D04-E01-Z00",
+      "response_format": "text/html",
+      "evidence_id": "EVIDENCE-USER-TARGET-URL-001"
+    },
+    {
+      "request_profile_id": "EP-012",
+      "method": "GET",
+      "url": "https://fin.land.naver.com/search",
+      "response_format": "text/html",
+      "evidence_id": "EVIDENCE-OFFICIAL-SEARCH-001",
+      "operator_input": {
+        "public_search_input": "단지, 지역, 지하철, 초등학교 검색"
+      }
+    }
+  ],
+  "excluded_profiles": [
+    {
+      "request_profile_id": "EP-011",
+      "reason": "EXCLUDED_NO_CREDENTIAL_REFERENCE"
+    }
+  ],
+  "request_contract": {
+    "method": "GET",
+    "allowed_response_content_type": "text/html",
+    "credential_mode": "NONE",
+    "raw_credential_value_count": 0,
+    "automated_pagination": false,
+    "redirect_policy": {
+      "follow_redirects": true,
+      "max_redirects": 5,
+      "final_url_required": true,
+      "cross_scheme_downgrade_allowed": false
+    },
+    "timeout_contract": {
+      "connect_timeout_ms": 10000,
+      "read_timeout_ms": 30000
+    },
+    "response_size_policy": {
+      "max_response_size_bytes": 10485760,
+      "oversize_failure_code": "A5_GENERIC_HTML_RESPONSE_TOO_LARGE"
+    }
+  },
+  "generic_adapter_pipeline": [
+    {
+      "step": 1,
+      "id": "CAPTURE_RESPONSE_METADATA",
+      "outputs": [
+        "requested_url",
+        "final_url",
+        "http_status",
+        "content_type",
+        "fetched_at",
+        "response_size_bytes"
+      ]
+    },
+    {
+      "step": 2,
+      "id": "HASH_RAW_BYTES",
+      "output": "raw_sha256",
+      "algorithm": "SHA-256"
+    },
+    {
+      "step": 3,
+      "id": "DECODE_HTML",
+      "rules": [
+        "HTTP_CHARSET_IF_VALID",
+        "HTML_META_CHARSET_IF_VALID",
+        "UTF_8_FALLBACK"
+      ]
+    },
+    {
+      "step": 4,
+      "id": "SECURITY_REDACTION",
+      "reject_classes": [
+        "Authorization",
+        "Cookie",
+        "Set-Cookie",
+        "Bearer token",
+        "API key",
+        "password/secret",
+        "email",
+        "phone",
+        "resident registration number"
+      ],
+      "raw_secret_output_allowed": false
+    },
+    {
+      "step": 5,
+      "id": "EXTRACT_GENERIC_DOCUMENT_TEXT",
+      "rules": [
+        "HTML5_PARSE",
+        "DROP_SCRIPT_STYLE_NOSCRIPT_TEMPLATE",
+        "DOCUMENT_ORDER_TEXT",
+        "HTML_ENTITY_DECODE",
+        "UNICODE_NFC",
+        "COLLAPSE_UNICODE_WHITESPACE",
+        "TRIM"
+      ]
+    },
+    {
+      "step": 6,
+      "id": "EXTRACT_GENERIC_OUTBOUND_LINKS",
+      "rules": [
+        "A_HREF_ONLY",
+        "RESOLVE_AGAINST_FINAL_URL",
+        "HTTP_HTTPS_ONLY",
+        "REMOVE_FRAGMENT",
+        "LOWERCASE_SCHEME_HOST",
+        "REMOVE_DEFAULT_PORT",
+        "DEDUPLICATE",
+        "LEXICOGRAPHIC_SORT"
+      ]
+    },
+    {
+      "step": 7,
+      "id": "HASH_REDACTED_GENERIC_PAYLOAD",
+      "output": "redacted_sha256",
+      "canonical_payload": {
+        "keys": [
+          "html_document_text",
+          "outbound_links"
+        ],
+        "serialization": "UTF-8 JSON SORTED_KEYS_NO_INSIGNIFICANT_WHITESPACE"
+      }
+    }
+  ],
+  "failure_codes": [
+    "A5_GENERIC_HTML_METHOD_NOT_GET",
+    "A5_GENERIC_HTML_CONTENT_TYPE_MISMATCH",
+    "A5_GENERIC_HTML_PROFILE_NOT_AUTHORIZED",
+    "A5_GENERIC_HTML_ROUTE_BINDING_MISMATCH",
+    "A5_GENERIC_HTML_RESPONSE_TOO_LARGE",
+    "A5_GENERIC_HTML_SECRET_LIKE_VALUE_REJECT",
+    "A5_GENERIC_HTML_SCHEMA_VALIDATION_FAILED",
+    "A5_GENERIC_HTML_DETERMINISM_MISMATCH"
+  ],
+  "boundaries": {
+    "live_site_call_count": 0,
+    "site_specific_dom_selector_claim_count": 0,
+    "site_specific_listing_field_claim_count": 0,
+    "internal_api_structure_claim_count": 0,
+    "browser_automation_execution_count": 0,
+    "automated_pagination": false,
+    "credential_value_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
