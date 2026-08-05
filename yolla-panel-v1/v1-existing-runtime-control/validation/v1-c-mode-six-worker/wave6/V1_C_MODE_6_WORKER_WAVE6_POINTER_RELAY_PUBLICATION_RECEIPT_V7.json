@@ -1,0 +1,80 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE6_POINTER_RELAY_PUBLICATION_RECEIPT_V7",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-006",
+  "objective": "POINTER_RELAY_RESULT_KEY_RUNTIME",
+  "objective_mode": "ADDITIVE_NOT_REPLACEMENT",
+  "previous_wave5_cancelled": false,
+  "existing_validation_system": "RETAINED_AND_EXTENDED",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "contract": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode/C_MODE_POINTER_RELAY_RESULT_KEY_CONTRACT_V1.md",
+    "commit": "971f92d9593240e00d10244630bc10f0273a0e9c"
+  },
+  "directive": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave6/V1_C_MODE_6_WORKER_WAVE6_ADDITIVE_DIRECTIVE_V7.md",
+    "commit": "c8c4b1173ece0f7f13bdc53aaadf51164d261e9a"
+  },
+  "control_wave_comment_id": 5193445434,
+  "result_key_rule": "ASCII_DECIMAL_COMMENT_STRING_PLUS_SUFFIX_00",
+  "arithmetic_plus_100": false,
+  "worker_directives": {
+    "AUTOMATION-C-W1": {
+      "pr": 59,
+      "directive_comment": 5193423147,
+      "result_key": "519342314700",
+      "command_id": "C6W-W6-W1-WAVE-POINTER-PARSER-STATE"
+    },
+    "AUTOMATION-C-W2": {
+      "pr": 60,
+      "directive_comment": 5193426330,
+      "result_key": "519342633000",
+      "command_id": "C6W-W6-W2-RESULT-KEY-WATCHER-COLLECTOR"
+    },
+    "AUTOMATION-C-W3": {
+      "pr": 61,
+      "directive_comment": 5193429263,
+      "result_key": "519342926300",
+      "command_id": "C6W-W6-W3-POINTER-RELAY-UI-TRUTH"
+    },
+    "AUTOMATION-C-W4": {
+      "pr": 62,
+      "directive_comment": 5193432471,
+      "result_key": "519343247100",
+      "command_id": "C6W-W6-W4-REPEAT-NAMESPACE-ISOLATION"
+    },
+    "AUTOMATION-C-W5": {
+      "pr": 63,
+      "directive_comment": 5193435662,
+      "result_key": "519343566200",
+      "command_id": "C6W-W6-W5-POINTER-RELAY-INTEGRATION-INSTALLER",
+      "integration_owner": true
+    },
+    "AUTOMATION-C-W6": {
+      "pr": 64,
+      "directive_comment": 5193440761,
+      "result_key": "519344076100",
+      "command_id": "C6W-W6-W6-POINTER-RELAY-INDEPENDENT-ACCEPTANCE",
+      "implementation_direct_edit": false
+    }
+  },
+  "panel_behavior": {
+    "fetch_all_before_dispatch": true,
+    "partial_dispatch": false,
+    "prompt_rewrite": false,
+    "natural_language_result_judgment": false,
+    "result_comment_capture": true,
+    "commander_result_list": true
+  },
+  "target_candidate_version": "5.10.2.4.2-rc2",
+  "target_pc_installed_baseline": "5.10.2.4.0",
+  "current_progress_percent": 88,
+  "target_pc_pass": "PENDING",
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "published_at_kst": "2026-08-05T23:20:00+09:00"
+}
