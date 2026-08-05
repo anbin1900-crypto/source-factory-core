@@ -1,0 +1,128 @@
+{
+  "schema_version": "V1_V510240_C_MODE_SOURCE_MANIFEST_V1",
+  "runtime_version": "5.10.2.4.0",
+  "source_files": [
+    {
+      "path": "src/apply_c_mode_patch.cjs",
+      "size_bytes": 36946,
+      "sha256": "31295979d389a10426ec8c55325b741e112d982054cf52457c27c1674f58c505"
+    },
+    {
+      "path": "src/automation-c-v1/c_mode_runtime.cjs",
+      "size_bytes": 48959,
+      "sha256": "91858277ea7c0a1722e6caec3080fc9f429ff8573ba0d31994fe7472bc65e860"
+    },
+    {
+      "path": "src/automation-c-v1/github_comment_client.cjs",
+      "size_bytes": 3010,
+      "sha256": "1b6e7dff885d300d5d8ccb148962ad7e59edd7869517642bc86e77480262ea55"
+    },
+    {
+      "path": "src/automation-c-v1/tests/test_c_mode_runtime.cjs",
+      "size_bytes": 12704,
+      "sha256": "53ac2cde1f9932edaa50d9834501010ec29d18d619ad931772a2eec4a44012bd"
+    },
+    {
+      "path": "src/test_v510240_c_mode_integration.cjs",
+      "size_bytes": 4762,
+      "sha256": "6d52bee1d9da83e829346e34cd1de94e243ce77d250a6ce1e68848b3fa24315d"
+    },
+    {
+      "path": "src/workspace_c_mode.css",
+      "size_bytes": 3662,
+      "sha256": "c1c977d0957d70417854d85419953ebe1594637b2dc364b2f138fae9579360e9"
+    },
+    {
+      "path": "src/workspace_c_mode.js",
+      "size_bytes": 8909,
+      "sha256": "afa73cbabc3e7d7645c6224637a4708076f5f48e7349cbb90b006cb5438a89ba"
+    },
+    {
+      "path": "package/PAYLOAD_MANIFEST.json",
+      "size_bytes": 2637,
+      "sha256": "62818f7461f57d19e1620a32d2ab3f7a0e2e4a123b356abdb49675e55889b3f8"
+    },
+    {
+      "path": "package/README.txt",
+      "size_bytes": 540,
+      "sha256": "4013909595f1927c4dfc723c7deecba965bb87202eb8b054b2ab97edbf0165e8"
+    },
+    {
+      "path": "package/ROLLBACK_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_4_0.ps1",
+      "size_bytes": 2732,
+      "sha256": "849907fb8b0155a67cb0ab357aedb545b66eac0db1ba89676cab4f9d67152a9a"
+    },
+    {
+      "path": "package/RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_4_0.bat",
+      "size_bytes": 323,
+      "sha256": "05ec3d96875d5e9ad3b29aa3bd0805f9cf10173f4b78133987146096fb2965bf"
+    },
+    {
+      "path": "package/RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_4_0.ps1",
+      "size_bytes": 1382,
+      "sha256": "c9a2ce508f66c34c9cbc1bcfa4adc022b06920c3bf1b5de9d2dd643ceaea9823"
+    },
+    {
+      "path": "package/apply_c_mode_patch.cjs",
+      "size_bytes": 36946,
+      "sha256": "31295979d389a10426ec8c55325b741e112d982054cf52457c27c1674f58c505"
+    },
+    {
+      "path": "package/install_v510240.ps1",
+      "size_bytes": 18809,
+      "sha256": "e43e9e951077cd3b3b43c88839a301cdad8a2c329644c5e9dc5048b845ea6a7c"
+    },
+    {
+      "path": "package/runtime-files/automation-c-v1/c_mode_runtime.cjs",
+      "size_bytes": 48959,
+      "sha256": "91858277ea7c0a1722e6caec3080fc9f429ff8573ba0d31994fe7472bc65e860"
+    },
+    {
+      "path": "package/runtime-files/automation-c-v1/github_comment_client.cjs",
+      "size_bytes": 3010,
+      "sha256": "1b6e7dff885d300d5d8ccb148962ad7e59edd7869517642bc86e77480262ea55"
+    },
+    {
+      "path": "package/runtime-files/automation-c-v1/tests/test_c_mode_runtime.cjs",
+      "size_bytes": 12704,
+      "sha256": "53ac2cde1f9932edaa50d9834501010ec29d18d619ad931772a2eec4a44012bd"
+    },
+    {
+      "path": "package/runtime-files/workspace_c_mode.css",
+      "size_bytes": 3662,
+      "sha256": "c1c977d0957d70417854d85419953ebe1594637b2dc364b2f138fae9579360e9"
+    },
+    {
+      "path": "package/runtime-files/workspace_c_mode.js",
+      "size_bytes": 8909,
+      "sha256": "afa73cbabc3e7d7645c6224637a4708076f5f48e7349cbb90b006cb5438a89ba"
+    },
+    {
+      "path": "package/test_v510240_c_mode_integration.cjs",
+      "size_bytes": 4762,
+      "sha256": "6d52bee1d9da83e829346e34cd1de94e243ce77d250a6ce1e68848b3fa24315d"
+    }
+  ],
+  "source_bundle": {
+    "file_name": "AI_YOLLA_V510240_C_MODE_REPEAT_COMMAND_SOURCE.zip",
+    "size_bytes": 79945,
+    "sha256": "ed5ff7d376e0a0f481431037c01bd06728f35dfd55be80332a9e11a1a3070e7d",
+    "drive_file_id": "17bsngsdCP3YGGQa-0LrGK7PxK1xe33qL",
+    "metadata_readback": "PASS"
+  },
+  "installer": {
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510240_C_MODE_REPEAT_COMMAND.bat",
+    "size_bytes": 59212,
+    "sha256": "782e959e1d829053cf6e30158c4d3c7cb6c0f2dd34c9610f1c50da4caae13d3e",
+    "drive_file_id": "14Zo9kuJDZXtLRs1HXYLbv-Zhk4q3LpRG",
+    "metadata_readback": "PASS"
+  },
+  "payload": {
+    "file_name": "AI_YOLLA_V510240_C_MODE_REPEAT_COMMAND_PAYLOAD.zip",
+    "size_bytes": 41748,
+    "sha256": "e930b49a90780a982a868dce147e3c21dc0936ce55654e59e8e26b6748f8e408"
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
