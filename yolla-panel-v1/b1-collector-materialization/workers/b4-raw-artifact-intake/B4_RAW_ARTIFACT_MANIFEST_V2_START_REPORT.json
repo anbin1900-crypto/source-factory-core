@@ -1,0 +1,38 @@
+{
+  "schema_version": "B4_RAW_ARTIFACT_MANIFEST_V2_START_REPORT_V1",
+  "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "task_id": "RAW_ARTIFACT_MANIFEST_V2",
+  "directive_comment_id": 5196652743,
+  "worker": "B-4",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 40,
+  "branch": "worker/b4-raw-artifact-source-envelope-v1",
+  "start_head": "6dfe697363a69f83797775aa549f34614aa3748a",
+  "started_at_kst": "2026-08-06T05:03:00+09:00",
+  "owned_root": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/**",
+  "required_outputs": [
+    "contracts/RAW_ARTIFACT_MANIFEST_V2.schema.json",
+    "RAW_ARTIFACT_MANIFEST_V2.json",
+    "src/raw_artifact_manifest_v2.py",
+    "tests/test_raw_artifact_manifest_v2.py",
+    "B4_RAW_ARTIFACT_MANIFEST_V2_TEST_RESULTS.json",
+    "B4_RAW_ARTIFACT_MANIFEST_V2_FINAL_REPORT.json",
+    "LATEST_B4_RAW_ARTIFACT_MANIFEST_V2_POINTER.json"
+  ],
+  "preserved_authority": {
+    "v1_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+    "page1_blob": "9d34c7e31534906f6d067214f7ddf31f8262c398",
+    "page2_blob": "9b51ca590b05383ccf891e6ddb7c18cf56160d36",
+    "raw_bytes_modified": false
+  },
+  "boundaries": {
+    "raw_overwrite": false,
+    "secret_storage": false,
+    "personal_data_promotion": false,
+    "actual_site_extraction": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "STARTED"
+}
