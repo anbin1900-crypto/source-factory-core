@@ -1,37 +1,41 @@
 {
-  "schema_version": "ABC_VERTICAL_INTEGRATION_PREPARATION_V2",
+  "schema_version": "ABC_VERTICAL_INTEGRATION_PREPARATION_V3",
   "preparation_id": "V2-ABC-VERTICAL-INTEGRATION-PREPARATION-20260805-001",
-  "prepared_at_kst": "2026-08-05T22:30:00+09:00",
+  "prepared_at_kst": "2026-08-05T23:11:00+09:00",
   "commander": "V-2_YOLLA_AI_SUPREME_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "mode": "PREPARE_ONLY_CONTRACT_POINTER_AND_GATE_BINDING",
-  "purpose": "Prepare A-2 analyzer, B-1 collection/materialization, and C-1 semantic AI runtime for one controlled vertical integration without opening execution, production, ready, merge, or D canonical write gates.",
+  "mode": "CONTRACT_POINTER_GATE_BINDING_WITH_AUTHORIZED_A3_EXECUTION",
+  "purpose": "Run one controlled public non-login read-only vertical integration while keeping production, ready, merge, bulk collection, and D canonical write gates closed.",
+  "authorization_transition": {
+    "request_id": "A2-TO-A0-A1-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-CAPTURE-AUTHORIZATION-REQUEST-V1-20260805-001",
+    "request_comment": 5192321213,
+    "decision_comment": 5192765975,
+    "decision": "APPROVED",
+    "authorized_by": "V-2",
+    "authorization_id": "V2-AUTH-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-20260805-001",
+    "decision_report_commit": "9629c8fa64404013a9e9b77d5083608d8728e8ba",
+    "decision_report_blob": "dde73406d83be9ceffab209ddbc86ce5acbc3534",
+    "authorization_pointer_blob": "4c0cf0f3b60c02da24883b9fcb60ead631e98074",
+    "latest_authorization_pointer_blob": "fdaf17c1a0a5e401d234ce32b8e3fe5fa349e6c3",
+    "a3_execution_event_comment": 5192799338
+  },
   "authority_freeze": {
     "A": {
       "control_pr": 18,
-      "head": "71adba33aa727f251f59cba70e22ac9453579d6c",
-      "latest_pointer_blob": "1c3466fe5e05ff9442484bcce8ec9bf7e04985d9",
-      "integration_report_blob": "3270a0e11d2b4be40652a32a727ad60249448f43",
-      "state": "SECOND_EXPLICIT_AUTHORIZATION_REQUEST_POSTED_AWAITING_DECISION",
+      "head": "eab3101f83c2f88acc5be8207d704ead9eb58721",
+      "latest_pointer_blob": "88598259e4ee68976774665d74c92185bbf01020",
+      "integration_report_blob": "11ccfafa560c78e28a49d31ef8d8af10244cff74",
+      "state": "AUTHORIZATION_APPROVED_A3_ONE_SHOT_EXECUTION_ACTIVE",
       "output_contract": "VERIFIED_ADAPTER_PACKAGE_V1",
-      "output_ready": false,
-      "authorization_request": {
-        "request_id": "A2-TO-A0-A1-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-CAPTURE-AUTHORIZATION-REQUEST-V1-20260805-001",
-        "comment_id": 5192321213,
-        "status": "AWAITING_EXPLICIT_DECISION",
-        "max_capture_per_profile": 1,
-        "max_total_capture": 7,
-        "max_batch_execution_count": 1
-      }
+      "output_ready": false
     },
     "B": {
       "control_pr": 19,
       "head": "41217df04fcbcc56ef8e35e3b811fee2b5c74b8c",
       "latest_pointer_blob": "67dcfbda0675c7cbd3d4994e2417e2327055b466",
-      "integration_report_blob": "d6ab9267b49c61ada474157958eb6f5dab5cc1f0",
-      "state": "FIXTURE_BASELINE_FROZEN_WAITING_A0_A1_AUTHORIZATION_DECISION",
+      "state": "FIXTURE_BASELINE_FROZEN_WAITING_A_FINAL_VERIFIED_ADAPTER",
       "fixture_worker_gate": "PASS_5_OF_5",
       "actual_public_run_ready": false
     },
@@ -39,7 +43,6 @@
       "control_pr": 20,
       "head": "67fb5888ef408998ca70f06621b716ed87ad09a8",
       "latest_pointer_blob": "fb520b13001f684cb15dd14ae5d6589b33f0c766",
-      "integration_report_blob": "abd110f944709dc50114c415db89d631d8fdfeb0",
       "state": "FIXTURE_SEMANTIC_BASELINE_FROZEN_WAITING_CONTENT_DELTA_AND_REQUIRED_PATH_RESOLUTION",
       "fixture_worker_gate": "PASS_4_OF_4",
       "d_submission_eligible": false
@@ -65,8 +68,8 @@
   "lane_state": {
     "A_TO_B": {
       "contract": "VERIFIED_ADAPTER_PACKAGE_V1",
-      "status": "BLOCKED_AWAITING_AUTHORIZATION_DECISION",
-      "reason": "A-2 submitted a new exact one-shot authorization request; no approval or execution authority exists yet."
+      "status": "BLOCKED_WAITING_A3_CAPTURE_AND_A_FINAL_ADAPTER",
+      "reason": "A-3 is authorized for one exact batch; A-5, A-4, A-6, and A-7 final steps remain."
     },
     "B_TO_C": {
       "contract": "B1_TO_C1_SOURCE_EVIDENCE_HANDOFF_CANDIDATE_V1",
@@ -84,9 +87,8 @@
     }
   },
   "integration_entry_gate": {
-    "status": "CLOSED_AWAITING_EXPLICIT_A0_A1_DECISION",
-    "opens_only_when": [
-      "NEW_EXPLICIT_A0_A1_ONE_SHOT_AUTHORIZATION_GRANTED",
+    "status": "PHASE1_OPEN_A3_ONE_SHOT_EXECUTION_ACTIVE",
+    "phase2_opens_only_when": [
       "A3_SECOND_PUBLIC_DOCUMENT_CAPTURE_TERMINAL_PUBLISHED",
       "A5_FINAL_RESPONSE_SCHEMA_REBIND_PASS",
       "A4_PUBLIC_ROUTE_PAGINATION_AUDIT_PASS",
@@ -98,6 +100,7 @@
     "branch_merge_required_now": false,
     "binding_method": "EXACT_HEAD_POINTER_BLOB_AND_HANDOFF_CONTRACT",
     "execution_owner_sequence": [
+      "A-3",
       "A-2",
       "B-1",
       "C-1",
@@ -113,11 +116,13 @@
     "contract_readiness": "PASS",
     "pointer_readiness": "PASS",
     "fixture_baseline_readiness": "PASS",
-    "actual_public_vertical_execution_readiness": "BLOCKED_AWAITING_AUTHORIZATION_DECISION_AND_A_FINAL_ADAPTER",
-    "overall": "ABC_INTEGRATION_PREPARED_AUTHORIZATION_DECISION_GATE_ACTIVE"
+    "actual_public_vertical_execution_readiness": "A3_ONE_SHOT_AUTHORIZED_FINAL_ADAPTER_PENDING",
+    "overall": "ABC_INTEGRATION_A3_EXECUTION_GATE_ACTIVE"
   },
-  "next_action": "A0_A1_DECIDE_EXACT_A2_REQUEST; B1_AND_C1_HOLD_FROZEN_BASELINES",
-  "capture_execution_authorized": false,
+  "next_action": "A3_EXECUTE_EXACT_ONE_SHOT_AND_PUBLISH_TERMINAL; B1_AND_C1_HOLD_FROZEN_BASELINES",
+  "request_execution_authorized": true,
+  "capture_execution_authorized": true,
+  "capture_execution_terminal_published": false,
   "actual_site_extraction": false,
   "actual_bulk_collection": false,
   "d_canonical_db_write": false,
