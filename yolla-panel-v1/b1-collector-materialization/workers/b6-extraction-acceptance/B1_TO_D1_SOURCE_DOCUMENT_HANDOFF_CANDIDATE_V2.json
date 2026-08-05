@@ -1,0 +1,101 @@
+{
+  "schema_version": "B1_TO_D1_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_V2",
+  "candidate_id": "B1-TO-D1-SOURCE-DOCUMENT-HANDOFF-CANDIDATE-V2-20260806-001",
+  "task_id": "B6_D_SOURCE_DOCUMENT_HANDOFF_REPREFLIGHT",
+  "directive_comment_id": 5196668910,
+  "created_at_kst": "2026-08-06T06:22:00+09:00",
+  "producer_lane": "B_TO_D_SOURCE_DOCUMENT",
+  "excluded_lane": "C_TO_D_KNOWLEDGE_CANDIDATE",
+  "target": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "pr": 188,
+    "head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "authority_root": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/"
+  },
+  "input_status": {
+    "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT": {
+      "status": "READY",
+      "head": "771da102a0202dc21d9226d9c534275df345582e",
+      "pointer_blob": "6ba3df93d41d3b00f58d598ca6867db376c9f30c",
+      "contract_blob": "f7b5faee6c3fce138bcd95f9edce734f2086eb6d"
+    },
+    "B3_D_COLLECTION_RUN_LEDGER": {
+      "status": "READY",
+      "head": "86d789a136ce5070d79eab7e6d0205eb23da11d7",
+      "pointer_blob": "01cfe1644b828687c4dce4ceab32345c728283e7"
+    },
+    "B4_RAW_ARTIFACT_MANIFEST_V2": {
+      "status": "D_READY",
+      "head": "f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3",
+      "pointer_blob": "b0158bbb27dfb0efab012ec1a97c3c31f2266e7c",
+      "manifest_blob": "d900e06bcc73908e3af589581d67b599bfb84d65"
+    },
+    "B5_D_READY_PACKAGE_V2": {
+      "status": "EXACT_BLOCKER",
+      "head": "ecda54115e8bcac427344cddd4578b8a748042fc",
+      "pointer_blob": "760abe95ff6a07e7f3642e14628b8427217f2f16",
+      "first_blocker": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1_AND_B4_RAW_ARTIFACT_MANIFEST_V2_NOT_PUBLISHED",
+      "rerun_required": true
+    },
+    "D1_SCHEMA_ALIGNMENT_TREE_BINDING_MANIFEST": {
+      "status": "READY",
+      "blob": "dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd"
+    },
+    "D1_MAPPING_ADDENDUM": {
+      "status": "READY",
+      "blob": "118d6403dd5db47afafb982991f8fd9a51f35f28"
+    },
+    "D1_B_RECEIPT_PROCEDURE": {
+      "status": "READY",
+      "blob": "2a8b7c1b04924728cce14dc21c225ad09598905f"
+    }
+  },
+  "preflight_summary": {
+    "B_input_objects": "PASS_4_OF_4",
+    "B_ready_terminals": "FAIL_3_OF_4",
+    "D_tree_binding": "PASS",
+    "manifest_declared_paths": "PASS_10_OF_10",
+    "PR188_required_paths": "PASS_18_OF_18_FULL_ACCOUNTING",
+    "lane_separation": "PASS",
+    "source_identity_alignment": "READY_FOR_B5_RERUN"
+  },
+  "promotion_gate": {
+    "required": [
+      "B2_READY",
+      "B3_READY",
+      "B4_READY",
+      "B5_READY_AFTER_CURRENT_UPSTREAM_BINDING",
+      "D_TREE_BINDING_PASS",
+      "REQUIRED_PATHS_FULL_ACCOUNTING_PASS",
+      "LANE_SEPARATION_PASS"
+    ],
+    "passed": [
+      "B2_READY",
+      "B3_READY",
+      "B4_READY",
+      "D_TREE_BINDING_PASS",
+      "REQUIRED_PATHS_FULL_ACCOUNTING_PASS",
+      "LANE_SEPARATION_PASS"
+    ],
+    "failed": [
+      "B5_READY_AFTER_CURRENT_UPSTREAM_BINDING"
+    ]
+  },
+  "defect_handoff_to_B5": {
+    "Field": "B5_D_READY_PACKAGE_V2_UPSTREAM_REBIND",
+    "Expected": "Rerun B5 package against B2@771da102a0202dc21d9226d9c534275df345582e, B3@86d789a136ce5070d79eab7e6d0205eb23da11d7, B4@f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3 and D1@17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "Evidence": "Current B5 terminal was issued before B2 and B4 READY events and remains EXACT_BLOCKER",
+    "Required_output": "B5_D_READY_PACKAGE_V2_READY terminal with exact package blob, test result, and remote readback"
+  },
+  "classification": "PREHANDOFF_EXACT_BLOCKER",
+  "promotable": false,
+  "first_blocker": "B5_D_READY_PACKAGE_V2_NOT_RERUN_AFTER_B2_B4_READY",
+  "D_acceptance_receipt_issued": false,
+  "D_acceptance_claim": false,
+  "D_canonical_id_generated_by_B": false,
+  "D_canonical_db_write": false,
+  "actual_package_submission": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
