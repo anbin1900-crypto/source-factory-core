@@ -1,0 +1,48 @@
+{
+  "schema_version": "LATEST_C1_D_INTEGRATION_CONTRACT_SET_POINTER_V1",
+  "pointer_id": "LATEST-C1-D-INTEGRATION-CONTRACT-SET-20260806-001",
+  "published_at_kst": "2026-08-06T05:03:00+09:00",
+  "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "task": "C2_TO_C6_D_INTEGRATION_RESULT_INTEGRATION",
+  "directive_comment_id": 5196655145,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "report": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D_INTEGRATION_CONTRACT_SET_REPORT_V1.json",
+    "commit": "ca9d716fcac296bcdb28ea2b8e2325248b90a5cc",
+    "blob": "059c573caa3bb8f42823612520d272861f842a53",
+    "remote_readback": "PASS"
+  },
+  "worker_result_gate": "PASS_OR_EXPECTED_BLOCKER_5_OF_5",
+  "worker_pointers": {
+    "C-2": "61d0255327a2f507f50d0eee2c9b2d5814054748",
+    "C-3": "62516877339ec3b9ecab014bd4d6f8617a020c31",
+    "C-4": "a4229ecdb70876117141441a2d8e67895157471c",
+    "C-5": "750c315749ae03f9b7ef76f85b7100a1edee3d92",
+    "C-6": "91331b918a3d0be0d96f53a3861d148c604194ab"
+  },
+  "integrated_contract_set": {
+    "fragment_locator_contract_blob": "4e7a6569c700864f016d050f5ced7c514511b390",
+    "required_path_closure_matrix_v2_blob": "9283857227aebb59679e11bfc4ddb736ac55e188",
+    "d1_mapping_addendum_request_blob": "40c21a62fb2af9654e4d1ccb79a744ab68852edc",
+    "knowledge_candidate_bundle_v2_blob": "8c5ecfb8114330ca86ce9d0b50a971fd5b99037f",
+    "d_release_query_citation_consumer_contract_blob": "0c617b519b3202cd4f9d6e37adf200b19c7c2516",
+    "d_dual_receipt_e2e_contract_blob": "e3f9bcbe2078c91a3bf3e2e6e8967b3a3c6eb237",
+    "status": "READY"
+  },
+  "d_authority_head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+  "b_content_byte_delta": false,
+  "candidate_count": 0,
+  "actual_d_receipt_published": false,
+  "knowledge_release_v1_published": false,
+  "semantic_duplicate_reexecution": false,
+  "decision": "READY_WAITING_B_OR_D_DELTA",
+  "next_action": "WAIT_B_CONTENT_OR_D_CONTRACT_RECEIPT_RELEASE_DELTA_THEN_RUN_INCREMENTAL_BINDING_ONLY",
+  "terminal": "C1_D_INTEGRATION_CONTRACT_SET_READY_WAITING_B_OR_D_DELTA_OR_EXACT_BLOCKER",
+  "d_acceptance_claim": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
