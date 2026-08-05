@@ -64,10 +64,25 @@
     "extended_assertions": 15,
     "static_assertions": 20
   },
-  "worker_status": {
-    "V1-CV-1": "WAITING_ASSIGNMENT",
-    "V1-CV-2": "WAITING_ASSIGNMENT",
-    "V1-CV-3": "WAITING_ASSIGNMENT"
+  "worker_controls": {
+    "V1-CV-1": {
+      "branch": "worker/v1-cv1-runtime-simulation-v1",
+      "pr": 56,
+      "directive_commit": "c96c46fe1f736132dda03a2050f3bf6af4110ffa",
+      "status": "READY_FOR_CHAT_ASSIGNMENT"
+    },
+    "V1-CV-2": {
+      "branch": "worker/v1-cv2-targetpc-ui-v1",
+      "pr": 57,
+      "directive_commit": "6738a61b5f98bb1037e42a221648479c925e37c1",
+      "status": "READY_FOR_CHAT_ASSIGNMENT"
+    },
+    "V1-CV-3": {
+      "branch": "worker/v1-cv3-failure-acceptance-v1",
+      "pr": 58,
+      "directive_commit": "1fb31385b15d109aea57d5664c368efc899ca2b2",
+      "status": "READY_FOR_CHAT_ASSIGNMENT"
+    }
   },
   "target_pc": {
     "live_test": "PENDING",
@@ -78,5 +93,5 @@
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at": "2026-08-05T16:15:00+09:00"
+  "updated_at": "2026-08-05T16:18:00+09:00"
 }
