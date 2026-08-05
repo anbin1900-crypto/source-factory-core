@@ -1,0 +1,115 @@
+{
+  "schema_version": "A1_ONE_SHOT_CAPTURE_TERMINAL_ACCEPTANCE_V1",
+  "report_id": "A1-ONE-SHOT-CAPTURE-TERMINAL-ACCEPTANCE-V1-20260805-001",
+  "accepted_at_kst": "2026-08-05T15:32:00+09:00",
+  "role": "A-1_YOLLA_WORKSPACE_SUPERVISING_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "authorization": {
+    "authorization_id": "A1-AUTH-ONE-SHOT-EXACT-RESPONSE-FIXTURE-20260805-001",
+    "request_id": "A2-TO-A0-A1-ONE-SHOT-EXACT-RESPONSE-FIXTURE-CAPTURE-AUTHORIZATION-REQUEST-V2-20260805-001",
+    "decision_comment": 5188164989,
+    "execution_event_comment": 5188170815,
+    "authorized_batch_execution_count": 1,
+    "authorized_batch_execution_count_used": 1,
+    "authorization_consumed": true,
+    "authorization_closed": true,
+    "second_attempt_authorized": false,
+    "failed_capture_auto_retry": false
+  },
+  "a3_terminal_readback": {
+    "pull_request": 22,
+    "final_head": "c0a75f7bfeb53aec2ffa561dfca3dd190ee47daa",
+    "start_comment": 5188316221,
+    "progress_comment": 5188333552,
+    "terminal_comment": 5188344425,
+    "final_pointer_comment": 5188355689,
+    "final_pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/LATEST_A3_REPORT_POINTER.json",
+    "final_pointer_blob": "a32fe02629658e114e252c981554ab79f15dd338",
+    "terminal": "A3_ONE_SHOT_EXACT_RESPONSE_FIXTURE_CAPTURE_EXACT_BLOCKER",
+    "first_blocker": "AUTHORIZED_ALLOWLIST_CONTAINS_ONLY_RESERVED_NON_ROUTABLE_FIXTURE_INVALID_PLACEHOLDER_URLS_WITHOUT_CONCRETE_SOURCE_ORIGIN_MAPPING",
+    "remote_readback": "PASS"
+  },
+  "a3_artifacts": {
+    "start_report": {
+      "commit": "e08d0484178c162530e43263f040f2128ca2f97d",
+      "blob": "87f6239524e37dc102bda95f85a5ab205b3e9c5b"
+    },
+    "preflight_receipt": {
+      "commit": "c90d6f94a75899dc2f2512f48e11c47269a63cba",
+      "blob": "2a42c55cfa56fac85d29c2d3b231d13d9a829ff8"
+    },
+    "result_ledger": {
+      "commit": "63ea8e5357e2b909daf63983635076ce7a305e1b",
+      "blob": "787417ce4a8ff13fa9880b6f0f28e35d6f29736c"
+    },
+    "terminal_report": {
+      "commit": "78711b1045cb40b64319a90e431ca8817fd918d0",
+      "blob": "a32804717e249e33304f3a5ccb354bec48d2d9cd"
+    }
+  },
+  "execution_result": {
+    "authorized_profile_count": 8,
+    "capture_attempt_count": 0,
+    "successful_capture_count": 0,
+    "not_attempted_blocked_profile_count": 8,
+    "fixture_sha256_count": 0,
+    "size_binding_count": 0,
+    "mime_binding_count": 0,
+    "acquired_at_binding_count": 0,
+    "stop_condition": "FIRST_FAIL_CLOSED_CONDITION_BEFORE_NETWORK_REQUEST",
+    "capture_pass_claimed": false
+  },
+  "missing_authority": {
+    "concrete_non_placeholder_source_origin_mapping": true,
+    "concrete_request_values_required_for_profiles": [
+      "EP-001",
+      "EP-002",
+      "EP-003",
+      "EP-004",
+      "EP-005",
+      "EP-010",
+      "EP-012"
+    ],
+    "ep011_decision_required": "EXCLUDE_EP011_OR_PROVIDE_SEPARATELY_APPROVED_OPAQUE_CREDENTIAL_REFERENCE",
+    "raw_credential_value_allowed": false,
+    "invented_request_value_allowed": false
+  },
+  "a1_terminal": {
+    "status": "CONSUMED_CLOSED_BLOCKED",
+    "terminal": "A1_ONE_SHOT_CAPTURE_TERMINAL_BLOCKED_ACCEPTED_REPLAN_REQUIRED",
+    "authorization_reuse_allowed": false,
+    "additional_batch_authorized": false,
+    "a1_proxy_execution_performed": false,
+    "b1_handoff_authorized": false,
+    "next_gate": "A2_CAPTURE_INPUT_AUTHORITY_REPLAN_AND_CURRENT_HEAD_GOVERNANCE_REAUDIT"
+  },
+  "required_replan": {
+    "owner": "A-2",
+    "required_outputs": [
+      "A2_CAPTURE_INPUT_AUTHORITY_REPLAN_V1.json",
+      "CONCRETE_SOURCE_ORIGIN_MAPPING_V1.json",
+      "CONCRETE_PROFILE_REQUEST_VALUE_BINDING_V1.json",
+      "EP011_INCLUSION_AND_CREDENTIAL_REFERENCE_DECISION_V1.json",
+      "A3_CORRECTED_OPERATOR_PACKAGE_PREFLIGHT_V2.json",
+      "A5_CORRECTED_REQUIREMENT_HANDOFF_V2.json",
+      "A7_CORRECTED_GOVERNANCE_REAUDIT_V2.json"
+    ],
+    "new_authorization_request_allowed_only_after": "CURRENT_EXACT_HEAD_AND_POINTER_READBACK_PASS_FOR_A3_A5_A7",
+    "capture_before_new_explicit_approval": false
+  },
+  "safety": {
+    "live_site_call_count": 0,
+    "browser_automation_execution_count": 0,
+    "credential_use_count": 0,
+    "raw_secret_value_count": 0,
+    "raw_response_byte_persistence": false,
+    "authentication_bypass": false,
+    "access_control_bypass": false,
+    "actual_bulk_collection": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  }
+}
