@@ -1,0 +1,42 @@
+{
+  "schema_version": "C5_D_RELEASE_QUERY_CITATION_TEST_RESULT_V2",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "C5_D_RELEASE_QUERY_CITATION_CONSUMER_V2",
+  "directive_comment_id": 5196037750,
+  "executed_at_kst": "2026-08-06T04:24:00+09:00",
+  "validation": {
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_32_OF_32",
+    "scenario_matrix": "PASS_20_OF_20",
+    "actual_authority_decision": "BLOCKED_FAIL_CLOSED",
+    "first_blocker": "D1_ACTUAL_ACCEPTANCE_RECEIPT_NOT_PUBLISHED",
+    "additional_blocker": "D1_KNOWLEDGE_RELEASE_V1_NOT_PUBLISHED",
+    "fixture_as_authority": false,
+    "actual_runtime_activation": false,
+    "silent_activation_count": 0
+  },
+  "authority_readback": {
+    "d1_current_head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+    "receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
+    "fixture_acceptance_pointer_blob": "3a912e745954a318b25ba4987c5a4ed9bfe26271",
+    "version_policy_blob": "318ba9eed622d7f9a0164662eb85c8bbd20d06f0",
+    "query_contract_blob": "536e0cd95df6613fcf6306413870b09658d76d35",
+    "citation_contract_blob": "615a3b25781851cc2502ceee6f5f6a356eea0675",
+    "evidence_contract_blob": "615a3b25781851cc2502ceee6f5f6a356eea0675",
+    "static_release_candidate_blob": "d3d10f20dd9be4a3a97ade6079e445206e228670",
+    "actual_acceptance_receipt_issued": false,
+    "knowledge_release_v1_published": false
+  },
+  "local_sha256": {
+    "D_RELEASE_QUERY_CITATION_CONSUMER_CONTRACT_V2.json": "602d7cfc22a22ad4d4d7662757b7993574eec27618918fea8cd518b6ed2e00ad",
+    "D_RELEASE_QUERY_CITATION_ACTIVATION_FIXTURE_V2.json": "e8554b56bda8e36727f81f4596799564f067fc4349f20916c3be094044a1e5a3",
+    "D_RELEASE_RUNTIME_ACTIVATION_DECISION_V2.json": "688d682f93f4aed98e877d4b773d067e1f2192b46f61637f307b3db14faee32e",
+    "d_release_query_citation_consumer_v2.py": "fcecd4ca200e22cff1b7defa0c28b793378f61ec24c260eced0485acab320af1",
+    "test_d_release_query_citation_consumer_v2.py": "69dbd43c4885e5b597a45556b1f0f1be9a25e746eb1ba6fd7460d120df4a0f78",
+    "test-output.txt": "fc0883f8b1e63f70c03c737289b885cb7ba9788ea7bca05441c8f82c00852392"
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "d_canonical_db_write": false
+}
