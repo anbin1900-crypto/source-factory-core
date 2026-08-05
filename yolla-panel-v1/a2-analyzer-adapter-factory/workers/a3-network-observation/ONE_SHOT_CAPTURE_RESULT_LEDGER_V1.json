@@ -1,0 +1,45 @@
+{
+  "schema_version": "ONE_SHOT_CAPTURE_RESULT_LEDGER_V1",
+  "worker": "A-3",
+  "cycle_id": "A3-ONE-SHOT-EXACT-RESPONSE-FIXTURE-CAPTURE-V1-20260805-001",
+  "authorization_id": "A1-AUTH-ONE-SHOT-EXACT-RESPONSE-FIXTURE-20260805-001",
+  "generated_at_kst": "2026-08-05T15:25:00+09:00",
+  "batch_execution": {
+    "authorized_count": 1,
+    "used_count": 1,
+    "second_attempt_authorized": false,
+    "stopped_at_first_fail_closed_condition": true
+  },
+  "summary": {
+    "authorized_profile_count": 8,
+    "capture_attempt_count": 0,
+    "successful_capture_count": 0,
+    "failed_network_capture_count": 0,
+    "not_attempted_blocked_profile_count": 8,
+    "fixture_sha256_count": 0,
+    "body_sha256_count": 0,
+    "size_binding_count": 0,
+    "mime_binding_count": 0,
+    "acquired_at_binding_count": 0
+  },
+  "results": [
+    {"profile_id":"EP-001","method":"GET","url_pattern":"https://fixture.invalid/api/listings/map","status":"NOT_ATTEMPTED_PREFLIGHT_BLOCKED","blocker":"NON_ROUTABLE_PLACEHOLDER_ORIGIN_AND_CONCRETE_BBOX_ZOOM_VALUES_ABSENT","fixture_sha256":null,"body_sha256":null,"size_bytes":null,"mime_type":null,"acquired_at":null},
+    {"profile_id":"EP-002","method":"GET","url_pattern":"https://fixture.invalid/api/listings/{listing_id}","status":"NOT_ATTEMPTED_PREFLIGHT_BLOCKED","blocker":"NON_ROUTABLE_PLACEHOLDER_ORIGIN_AND_CONCRETE_LISTING_ID_INCLUDE_VALUES_ABSENT","fixture_sha256":null,"body_sha256":null,"size_bytes":null,"mime_type":null,"acquired_at":null},
+    {"profile_id":"EP-003","method":"GET","url_pattern":"https://fixture.invalid/api/listings/{listing_id}","status":"NOT_ATTEMPTED_PREFLIGHT_BLOCKED","blocker":"NON_ROUTABLE_PLACEHOLDER_ORIGIN_AND_CONCRETE_LISTING_ID_VALUE_ABSENT","fixture_sha256":null,"body_sha256":null,"size_bytes":null,"mime_type":null,"acquired_at":null},
+    {"profile_id":"EP-004","method":"GET","url_pattern":"https://fixture.invalid/api/listings","status":"NOT_ATTEMPTED_PREFLIGHT_BLOCKED","blocker":"NON_ROUTABLE_PLACEHOLDER_ORIGIN_AND_CONCRETE_PAGE_SIZE_VALUES_ABSENT; REQUIRED_429_RETRY_AFTER_FIXTURE_CANNOT_BE_ACQUIRED","fixture_sha256":null,"body_sha256":null,"size_bytes":null,"mime_type":null,"acquired_at":null},
+    {"profile_id":"EP-005","method":"GET","url_pattern":"https://fixture.invalid/api/regions","status":"NOT_ATTEMPTED_PREFLIGHT_BLOCKED","blocker":"NON_ROUTABLE_PLACEHOLDER_ORIGIN_AND_CONCRETE_PARENT_VALUE_ABSENT","fixture_sha256":null,"body_sha256":null,"size_bytes":null,"mime_type":null,"acquired_at":null},
+    {"profile_id":"EP-010","method":"POST","url_pattern":"https://fixture.invalid/api/listings/search","status":"NOT_ATTEMPTED_PREFLIGHT_BLOCKED","blocker":"NON_ROUTABLE_PLACEHOLDER_ORIGIN_AND_CONCRETE_REQUEST_BODY_VALUES_ABSENT","fixture_sha256":null,"body_sha256":null,"size_bytes":null,"mime_type":null,"acquired_at":null},
+    {"profile_id":"EP-011","method":"POST","url_pattern":"https://fixture.invalid/api/session/refresh","status":"NOT_ATTEMPTED_PREFLIGHT_BLOCKED","blocker":"NON_ROUTABLE_PLACEHOLDER_ORIGIN_AND_APPROVED_CREDENTIAL_REFERENCE_ABSENT; PACKAGE_REQUIRES_SKIP","fixture_sha256":null,"body_sha256":null,"size_bytes":null,"mime_type":null,"acquired_at":null},
+    {"profile_id":"EP-012","method":"POST","url_pattern":"https://fixture.invalid/graphql","status":"NOT_ATTEMPTED_PREFLIGHT_BLOCKED","blocker":"NON_ROUTABLE_PLACEHOLDER_ORIGIN_AND_CONCRETE_GRAPHQL_OPERATION_AND_VARIABLE_VALUES_ABSENT","fixture_sha256":null,"body_sha256":null,"size_bytes":null,"mime_type":null,"acquired_at":null}
+  ],
+  "first_blocker": "AUTHORIZED_ALLOWLIST_CONTAINS_ONLY_RESERVED_NON_ROUTABLE_FIXTURE_INVALID_PLACEHOLDER_URLS_WITHOUT_CONCRETE_SOURCE_ORIGIN_MAPPING",
+  "live_site_call_count": 0,
+  "browser_automation_execution_count": 0,
+  "credential_use_count": 0,
+  "raw_secret_value_count": 0,
+  "raw_response_byte_persistence": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "BLOCKED"
+}
