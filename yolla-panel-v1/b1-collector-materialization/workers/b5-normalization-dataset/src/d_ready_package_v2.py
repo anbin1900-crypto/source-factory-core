@@ -227,22 +227,31 @@ def validate_intake_request(request: Dict[str, Any], package: Dict[str, Any]) ->
     verify_embedded_hash(request, "request_sha256")
 
 
-def validate_bundle(bundle: Dict[str, Any]) -> Dict[str, Any]:
-    _require(bundle, ["schema_version", "batch_id", "task_id", "upstream_authorities", "normalized_dataset", "materialized_database_package", "d_intake_request", "validation_summary", "bundle_sha256"], "bundle")
+def validate_bundle(bundle: Dict[str, Any], root: Path) -> Dict[str, Any]:
+    _require(bundle, ["schema_version", "batch_id", "task_id", "upstream_authorities", "normalized_dataset_ref", "materialized_database_package_ref", "d_intake_request_ref", "schema_refs", "validation_summary", "bundle_sha256"], "bundle")
     if bundle["schema_version"] != "B5_D_READY_FIXTURE_PACKAGE_V2":
         raise PackageValidationError("bundle: schema")
-    validate_dataset(bundle["normalized_dataset"])
-    validate_package(bundle["materialized_database_package"])
-    validate_intake_request(bundle["d_intake_request"], bundle["materialized_database_package"])
+    dataset = load_json(root / bundle["normalized_dataset_ref"]["path"])
+    package = load_json(root / bundle["materialized_database_package_ref"]["path"])
+    request = load_json(root / bundle["d_intake_request_ref"]["path"])
+    validate_dataset(dataset)
+    validate_package(package)
+    validate_intake_request(request, package)
+    if bundle["normalized_dataset_ref"]["content_sha256"] != hashlib.sha256((root / bundle["normalized_dataset_ref"]["path"]).read_bytes()).hexdigest():
+        raise PackageValidationError("bundle: dataset file hash")
+    if bundle["materialized_database_package_ref"]["content_sha256"] != hashlib.sha256((root / bundle["materialized_database_package_ref"]["path"]).read_bytes()).hexdigest():
+        raise PackageValidationError("bundle: package file hash")
+    if bundle["d_intake_request_ref"]["content_sha256"] != hashlib.sha256((root / bundle["d_intake_request_ref"]["path"]).read_bytes()).hexdigest():
+        raise PackageValidationError("bundle: request file hash")
     summary = bundle["validation_summary"]
     if summary["source_field_loss_count"] != 0 or summary["silent_drop_count"] != 0:
         raise PackageValidationError("bundle: summary field loss")
     verify_embedded_hash(bundle, "bundle_sha256")
     return {
         "result": "PASS",
-        "package_sha256": bundle["materialized_database_package"]["package_sha256"],
-        "dataset_sha256": bundle["normalized_dataset"]["dataset_sha256"],
-        "request_sha256": bundle["d_intake_request"]["request_sha256"],
+        "package_sha256": package["package_sha256"],
+        "dataset_sha256": dataset["dataset_sha256"],
+        "request_sha256": request["request_sha256"],
         "bundle_sha256": bundle["bundle_sha256"],
         "source_field_loss_count": 0,
         "silent_drop_count": 0,
@@ -251,7 +260,7 @@ def validate_bundle(bundle: Dict[str, Any]) -> Dict[str, Any]:
 
 def validate_root(root: Path) -> Dict[str, Any]:
     bundle = load_json(root / "generated" / "B5_D_READY_FIXTURE_PACKAGE_V2.json")
-    return validate_bundle(bundle)
+    return validate_bundle(bundle, root)
 
 
 if __name__ == "__main__":
