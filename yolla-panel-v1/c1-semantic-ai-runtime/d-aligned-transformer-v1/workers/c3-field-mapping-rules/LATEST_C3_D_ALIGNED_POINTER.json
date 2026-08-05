@@ -6,17 +6,22 @@
   "task_id": "C3_PR188_PATH_CLOSURE_V2",
   "directive_comment_id": 5196033083,
   "start_comment_id": 5196208403,
+  "terminal_comment_id": 5196315738,
   "authority": {
     "repository": "anbin1900-crypto/source-factory-core",
     "control_pr": 20,
     "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
     "directive_observed_head": "67fb5888ef408998ca70f06621b716ed87ad09a8",
     "shared_head_before_pointer": "1c3b239c75302fff723958bf14f2813a49cfc624",
+    "shared_head_at_terminal_readback": "51fc1713ff4ca7b60b2a286821fbc238aa1e1d45",
+    "preterminal_pointer_commit": "44708e55b8c6e597cddf53c1a792edaa5a261182",
+    "preterminal_pointer_blob": "ac35d923aa57f0245942511696dd0b9d0f1a9b5e",
     "previous_pointer_blob": "344cd19f110c825ac3ac6cdc6c2b70571eae3a55",
     "b1_head": "fded2aa3f24bd7e6eaa8aedeafa7d2e6a4e2dc04",
     "d1_pr188_head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
     "d1_mapping_contract_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
-    "d1_relevant_contract_delta": "NONE"
+    "d1_relevant_contract_delta": "NONE",
+    "pointer_commit_status": "THIS_COMMIT"
   },
   "artifacts": {
     "closure_matrix_v2": {"path": "PR188_REQUIRED_SOURCE_PATH_CLOSURE_MATRIX_V2.json", "blob": "9283857227aebb59679e11bfc4ddb736ac55e188"},
@@ -50,7 +55,7 @@
   "optional_non_blocker": "B013_ALIGNMENT_PENDING",
   "decision": "C3_PR188_PATH_CLOSURE_V2_READY_WITH_EXACT_EXTERNAL_DEPENDENCIES",
   "terminal": "C3_PR188_PATH_CLOSURE_V2_READY_OR_EXACT_BLOCKER",
-  "terminal_comment_status": "PENDING_PUBLICATION",
+  "terminal_comment_status": "PUBLISHED",
   "ci_status": "NOT_RUN_NOT_CLAIMED_PASS",
   "production": false,
   "ready": false,
