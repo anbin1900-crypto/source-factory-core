@@ -1,0 +1,90 @@
+{
+  "schema_version": "C6W_WAVE5_SOURCE_INVENTORY_V6",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-005",
+  "command_id": "C6W-W5-W1-CANONICAL-CANDIDATE-MANIFEST",
+  "target_version": "5.10.2.4.2-rc1",
+  "status": "SOURCE_IDENTITY_COMPLETE_SHA256_READBACK_REQUIRED",
+  "sources": [
+    {
+      "order": 10,
+      "owner": "W1",
+      "role": "deterministic_state_machine_oracle",
+      "path": "automation-c-v1/c_mode_runtime.cjs",
+      "commit": "c70184a6eb52743139210cf42165677f59e7e30e",
+      "blob_sha1": "2db157e02008f64ef8fba22f58047b80953ab26d",
+      "sha256": null,
+      "sha256_status": "W5_BYTE_READBACK_REQUIRED",
+      "apply_mode": "REFERENCE_ONLY_DO_NOT_OVERWRITE_RELEASE_RUNTIME"
+    },
+    {
+      "order": 20,
+      "owner": "W2",
+      "role": "report_completeness_gate",
+      "path": "automation-c-v1/report_parser/report_completeness_gate.cjs",
+      "commit": "d379719e5f4afc1d7b7fb9f5dc51fbc8a75a554d",
+      "authority_head": "1be5e02112cc16851b6d19e4fdf8a34b2ee9749f",
+      "blob_sha1": "ce1686f995995f043a7e9faa1e8dc3d8ae9e1407",
+      "sha256": null,
+      "sha256_status": "W5_BYTE_READBACK_REQUIRED",
+      "apply_mode": "ADD_OR_REPLACE_VALIDATION_ADAPTER"
+    },
+    {
+      "order": 30,
+      "owner": "W3",
+      "role": "target_pc_ui_truth_evidence_collector",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/Collect-W3TargetPcUiEvidence.ps1",
+      "commit": "cb466ca33050857ce3fa147bb28a42d045ec180b",
+      "authority_head": "4ffa247184900467774aa8c87c1f4f12053cfac2",
+      "blob_sha1": "e07f52c2f89725bf8488be32bbb1f2e02394c9cb",
+      "sha256": null,
+      "sha256_status": "W5_BYTE_READBACK_REQUIRED",
+      "apply_mode": "VALIDATION_EVIDENCE_COMPONENT"
+    },
+    {
+      "order": 40,
+      "owner": "W4",
+      "role": "per_target_repeat_runtime_and_bridge",
+      "path": "automation-c-v1/repeat_command_runtime.cjs",
+      "commit": "bfc136cf98d7712f10c0b033210f878cce4f9816",
+      "authority_head": "5b6f204145a1275ae9fcaab21e9be2725c8cb355",
+      "blob_sha1": "38a8cce6d4bf34307ae0fcee5e617d556ed71195",
+      "sha256": null,
+      "sha256_status": "W5_BYTE_READBACK_REQUIRED",
+      "apply_mode": "RELEASE_ADAPTER_INPUT"
+    },
+    {
+      "order": 50,
+      "owner": "W5",
+      "role": "target_pc_acceptance_runner_base",
+      "path": "validation/v1-c-mode-six-worker/workers/w5/Invoke-Wave4TargetPcAcceptance.ps1",
+      "commit": "77c5d465d2eaaff5a26ab62f7b31f06312fbe88f",
+      "blob_sha1": "2637a176468d7f7b5266bd73435af0f2b6e70c9f",
+      "sha256": null,
+      "sha256_status": "W5_BYTE_READBACK_REQUIRED",
+      "apply_mode": "UPDATE_FOR_RC1"
+    },
+    {
+      "order": 60,
+      "owner": "W5",
+      "role": "target_pc_acceptance_offline_test_base",
+      "path": "validation/v1-c-mode-six-worker/workers/w5/test_wave4_one_click_target_pc_package.ps1",
+      "commit": "77c5d465d2eaaff5a26ab62f7b31f06312fbe88f",
+      "blob_sha1": "7730c707f400de40bffc3c5cc5d7860a7db4a4d1",
+      "sha256": null,
+      "sha256_status": "W5_BYTE_READBACK_REQUIRED",
+      "apply_mode": "UPDATE_FOR_RC1"
+    }
+  ],
+  "authority_heads": {
+    "W2": "1be5e02112cc16851b6d19e4fdf8a34b2ee9749f",
+    "W3": "4ffa247184900467774aa8c87c1f4f12053cfac2",
+    "W4": "5b6f204145a1275ae9fcaab21e9be2725c8cb355",
+    "W5": "77c5d465d2eaaff5a26ab62f7b31f06312fbe88f"
+  },
+  "execution_owner": "AUTOMATION-C-W5",
+  "execution_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
