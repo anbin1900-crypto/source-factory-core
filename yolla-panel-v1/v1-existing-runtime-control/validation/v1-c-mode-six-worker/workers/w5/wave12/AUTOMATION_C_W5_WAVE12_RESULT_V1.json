@@ -1,0 +1,58 @@
+{
+  "schema_version": "AUTOMATION_C_W5_WAVE12_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-012",
+  "registry_sequence": 12,
+  "command_id": "C6W-W12-W5-EXECUTABLE-GAP-CLOSURE-RC4-BUILD",
+  "role": "AUTOMATION-C-W5",
+  "directive_comment": 5195177693,
+  "report_request_comment": 5195599429,
+  "result_key": "519517769300",
+  "target_version": "5.10.2.4.2-rc4",
+  "outcome": "BLOCKED",
+  "completed_executable_sources": [
+    {"path":"automation-c-v1/background_browser_dispatch.cjs","commit":"5c4b16fe901fb670464d1d6ef5df01cc13db9bea"},
+    {"path":"automation-c-v1/work_control_event_log.cjs","commit":"24e64cab6db562464149a5f94f570ecb5e1898d2"},
+    {"path":"automation-c-v1/rc4_launcher_switch.cjs","commit":"c51a9b514a1118de1d574ef1be0487cd3da36587"},
+    {"path":"automation-c-v1/rc4_rollback_runtime.cjs","commit":"7499ae576ca1056ce42ad6e2dfa4d138385954b1"},
+    {"path":"automation-c-v1/tests/rc4_isolated_smoke.cjs","commit":"ab10bf7086c2f689024e731f7ab409c46eb880b4"},
+    {"path":"yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w5/wave12/INSTALL_YOLLA_C_MODE_RC4.bat","commit":"295bb5ae24163a34e9633945cec0db8b66875b72"}
+  ],
+  "reused_runtime_sources": [
+    "automation-c-v1/c_mode_runtime.cjs",
+    "automation-c-v1/c_mode_wave_pointer.cjs",
+    "automation-c-v1/result_watcher/runtime_result_adapter.cjs",
+    "W3 UI Bridge/CSS/UI Overlay export commit 4def942235a6781c5692221324c2574e299341b8",
+    "automation-c-v1/actual_candidate_bridge_binding.cjs"
+  ],
+  "implemented_gaps": {
+    "background_browser_dispatch": true,
+    "work_control_event_logging": true,
+    "rollback_runtime": true,
+    "launcher_switch_after_smoke": true
+  },
+  "installation_contract": {
+    "create_release_directory": true,
+    "install_executable_runtime": true,
+    "run_isolated_smoke": true,
+    "switch_launcher_only_after_smoke_pass": true,
+    "rollback_on_failure": true,
+    "preserve_login_profile": true,
+    "preserve_runtime_log": true,
+    "preserve_work_control_jsonl": true,
+    "preserve_dispatch_receipts": true,
+    "preserve_c_and_repeat_state": true,
+    "legacy_a_e_reintroduction_count": 0
+  },
+  "static_readback": "PASS_GITHUB_HEAD_295bb5ae24163a34e9633945cec0db8b66875b72",
+  "tests": {
+    "positive_and_negative_test_source_committed": true,
+    "node_execution": "PENDING_EXTERNAL_EXECUTION_ENVIRONMENT",
+    "windows_installer_execution": "PENDING_TARGET_PC",
+    "target_pc_pass_claimed": false
+  },
+  "exact_external_blocker": "CURRENT_CONNECTOR_EXPOSES_REPOSITORY_READ_WRITE_BUT_NO_NODE_OR_WINDOWS_PROCESS_EXECUTION; EXECUTABLE_SOURCE_AND_INSTALLER_BYTES_ARE_COMMITTED, BUT SMOKE_AND_INSTALL_RECEIPTS_CANNOT_BE PRODUCED_IN_THIS_SESSION",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
