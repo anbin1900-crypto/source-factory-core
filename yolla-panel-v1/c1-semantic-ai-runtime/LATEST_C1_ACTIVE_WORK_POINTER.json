@@ -1,11 +1,11 @@
 {
-  "schema_version": "LATEST_C1_ACTIVE_WORK_POINTER_V11",
-  "pointer_id": "LATEST-C1-SEMANTIC-AI-ACTIVE-WORK-20260806-001",
+  "schema_version": "LATEST_C1_ACTIVE_WORK_POINTER_V12",
+  "pointer_id": "LATEST-C1-SEMANTIC-AI-ACTIVE-WORK-20260806-002",
   "registered_at_kst": "2026-08-06T05:03:00+09:00",
   "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
   "control_pr": 20,
   "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
-  "previous_pointer_blob": "fb520b13001f684cb15dd14ae5d6589b33f0c766",
+  "previous_pointer_blob": "d98ac14461da1456c6e3b3cf5db4f7864b507f8e",
   "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
   "task": "C2_TO_C6_D_INTEGRATION_RESULT_INTEGRATION",
   "directive_comment_id": 5196655145,
@@ -19,6 +19,12 @@
     "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/LATEST_C1_D_INTEGRATION_CONTRACT_SET_POINTER.json",
     "commit": "726a4dc605e8dd98714c5c9bb18d059f3957dc2f",
     "blob": "8609a66b9ac1250458a4d49ad4229a16d5335874",
+    "remote_readback": "PASS"
+  },
+  "d1_handoff_pointer": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_TO_D1_HANDOFF_POINTER.json",
+    "commit": "941ec1f758808c0f6b7fa8ad928e30db5a60bab4",
+    "blob": "db88bb169a1eea63b12500cc53bf14971bc3994d",
     "remote_readback": "PASS"
   },
   "worker_result_gate": {
