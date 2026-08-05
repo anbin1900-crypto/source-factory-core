@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "assertions": 21,
+  "manifest": "PASS",
+  "static_source": {
+    "patch_static": "PASS",
+    "rollback_static": "PASS"
+  },
+  "negative_fixture": "REJECTED_AS_REQUIRED",
+  "behavior": {
+    "status": "PASS",
+    "patch_first_changed": true,
+    "patch_second_changed": false,
+    "rollback_runs": 2,
+    "hook_cardinality": 1,
+    "exact_pre_overlay_byte_restore": true,
+    "base_ui_preserved": true,
+    "fixed_browser_profile_preserved": true
+  },
+  "local_exact_identity_roles": [
+    "TRUTH_BRIDGE",
+    "CSS_OVERLAY",
+    "JS_OVERLAY",
+    "EXACT_LOAD_HOOK"
+  ],
+  "exact_rollback_identity_authority": {
+    "blob_sha1": "1b3df39a0ffa6c80ffa0b99e44422d6a26110f11",
+    "sha256": "7a86437b703b50a6b7bbe575802bdf6d82a228919d5dc48bd8169046baf9253b",
+    "size_bytes": 2873,
+    "verification_mode": "GITHUB_IMMUTABLE_BLOB_CONTRACT"
+  },
+  "production_verifier_requires_exact_members": 5,
+  "target_pc_live_pass_claimed": false
+}
