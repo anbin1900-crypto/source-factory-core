@@ -1,0 +1,26 @@
+{
+  "contract": "REQUEST_SUMMARY_V1",
+  "forbidden_fields": [
+    "api_key",
+    "secret",
+    "token",
+    "password",
+    "authorization",
+    "cookie"
+  ],
+  "invariants": [
+    "network_call_count=0",
+    "secret_value_exposure_count=0"
+  ],
+  "required_fields": [
+    "artifact_id",
+    "source_url",
+    "collected_at",
+    "method",
+    "page",
+    "credential_reference",
+    "record_count",
+    "metadata"
+  ],
+  "schema_version": "1.0.0"
+}
