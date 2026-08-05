@@ -1,0 +1,58 @@
+{
+  "schema_version": "B5_D_READY_PACKAGE_V2_LATE_BINDING_MATRIX_V1",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "B5_D_READY_PACKAGE_V2",
+  "observed_at_kst": "2026-08-06T04:32:00+09:00",
+  "worker": "B-5",
+  "required_upstream_count": 3,
+  "bound_upstream_count": 1,
+  "binding_status": "BOUND_1_OF_3",
+  "upstream": {
+    "B-2": {
+      "worker_pr": 38,
+      "assignment_comment_id": 5196020144,
+      "task_id": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT",
+      "expected_path": "yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/d-intake-source-scope-v1/B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1.json",
+      "observed_head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+      "remote_readback": "NOT_FOUND_404",
+      "terminal_found": false,
+      "decision": "PENDING_NOT_PUBLISHED"
+    },
+    "B-3": {
+      "worker_pr": 39,
+      "assignment_comment_id": 5196022442,
+      "task_id": "B3_D_COLLECTION_RUN_LEDGER",
+      "head": "86d789a136ce5070d79eab7e6d0205eb23da11d7",
+      "content_head": "cc4601d912bbe77627cc420169c9d63368cc1d1c",
+      "pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b3-extractor-retry-resume/d-collection-run-ledger-v1/LATEST_B3_D_COLLECTION_RUN_POINTER_V1.json",
+      "pointer_blob": "dedbad43c8c23df18e2af2560af5d5f48ca1fa00",
+      "ledger_path": "yolla-panel-v1/b1-collector-materialization/workers/b3-extractor-retry-resume/d-collection-run-ledger-v1/B3_D_COLLECTION_RUN_RESUME_LEDGER_V1.json",
+      "ledger_blob": "776a3c012db5aaee7204f1ec374c21bbca6abda3",
+      "test_results_blob": "eab65a61e7b6791880daeab8a4ad8c067abfa2a8",
+      "tests": "PASS_32_OF_32",
+      "terminal": "B3_D_COLLECTION_RUN_LEDGER_READY",
+      "remote_readback": "PASS",
+      "decision": "PASS_BOUND"
+    },
+    "B-4": {
+      "worker_pr": 40,
+      "assignment_comment_id": 5196024447,
+      "task_id": "RAW_ARTIFACT_MANIFEST_V2",
+      "expected_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V2.json",
+      "observed_head": "6dfe697363a69f83797775aa549f34614aa3748a",
+      "remote_readback": "NOT_FOUND_404",
+      "terminal_found": false,
+      "decision": "PENDING_NOT_PUBLISHED"
+    }
+  },
+  "first_blocker": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1_NOT_PUBLISHED",
+  "additional_blocker": "B4_RAW_ARTIFACT_MANIFEST_V2_NOT_PUBLISHED",
+  "resume_condition": "B-2 and B-4 publish exact V2 artifact paths, blobs, terminal results and Remote Heads; B-5 then rebinds the package without regenerating D canonical IDs or D acceptance.",
+  "actual_site_extraction": false,
+  "d_canonical_id_generation": false,
+  "d_acceptance_decision_generation": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
