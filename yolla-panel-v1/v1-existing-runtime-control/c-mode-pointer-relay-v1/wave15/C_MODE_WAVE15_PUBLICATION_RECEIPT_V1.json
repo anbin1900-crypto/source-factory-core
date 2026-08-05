@@ -1,0 +1,47 @@
+{
+  "schema_version": "C_MODE_WAVE15_PUBLICATION_RECEIPT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-015",
+  "registry_sequence": 15,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "directive": {
+    "md_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave15/C_MODE_WAVE14_REVIEW_AND_WAVE15_DIRECTIVE_V1.md",
+    "md_commit": "02b34af1785e5505b1dd977502881b395fea4ab2",
+    "json_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave15/C_MODE_WAVE14_REVIEW_AND_WAVE15_DIRECTIVE_V1.json",
+    "json_commit": "c5183fbfe1d34473da70ced2b0b95dd6d75aabfb"
+  },
+  "registry_comment": 5197012959,
+  "worker_bindings": {
+    "AUTOMATION-C-W1": {"pr": 59, "directive_comment": 5196981655, "result_key": "519698165500", "command_id": "C6W-W15-W1-TARGET-PC-RUNTIME-LOCATOR-BASELINE-RESOLVER"},
+    "AUTOMATION-C-W2": {"pr": 60, "directive_comment": 5196983918, "result_key": "519698391800", "command_id": "C6W-W15-W2-EXACT-BLOB-PACKAGE-POSITIVE-GATE"},
+    "AUTOMATION-C-W3": {"pr": 61, "directive_comment": 5196986395, "result_key": "519698639500", "command_id": "C6W-W15-W3-EXACT-UI-BLOB-BUNDLE-HOOK-RECEIPT"},
+    "AUTOMATION-C-W4": {"pr": 62, "directive_comment": 5196989097, "result_key": "519698909700", "command_id": "C6W-W15-W4-BLOB-FED-RC6-OFFLINE-ACCEPTANCE"},
+    "AUTOMATION-C-W5": {"pr": 63, "directive_comment": 5196992640, "result_key": "519699264000", "command_id": "C6W-W15-W5-EXACT-17-BLOB-SELF-CONTAINED-RC6", "integration_owner": true},
+    "AUTOMATION-C-W6": {"pr": 64, "directive_comment": 5196995122, "result_key": "519699512200", "command_id": "C6W-W15-W6-INDEPENDENT-RC6-AUDIT", "implementation_direct_edit": false}
+  },
+  "wave14_results": {
+    "reported": 6,
+    "missing": 0,
+    "duplicate_result": 0,
+    "W1": 5196728251,
+    "W2": 5196647746,
+    "W3": 5196694708,
+    "W4": 5196612369,
+    "W5": 5196617821,
+    "W6": 5196614410
+  },
+  "method_correction": {
+    "github_blob_api_available": true,
+    "verified_blob_sha": "2db157e02008f64ef8fba22f58047b80953ab26d",
+    "raw_github_dns_required": false,
+    "launcher_readback_at_install_time": true,
+    "base_release_resolution": "EXPLICIT_VALIDATED_OR_EXACTLY_ONE_DISCOVERY"
+  },
+  "current_progress_percent": 96,
+  "target_pc_pass": "PENDING",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
