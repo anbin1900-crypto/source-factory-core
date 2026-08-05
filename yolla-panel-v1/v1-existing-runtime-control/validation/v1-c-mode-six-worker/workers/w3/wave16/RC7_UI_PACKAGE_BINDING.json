@@ -1,0 +1,145 @@
+{
+  "schema_version": "RC7_UI_PACKAGE_BINDING_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-016",
+  "registry_sequence": 16,
+  "command_id": "C6W-W16-W3-RC7-UI-HOOK-PACKAGE-BINDING",
+  "worker_id": "AUTOMATION-C-W3",
+  "directive_comment": 5198283954,
+  "result_key": "519828395400",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc7",
+  "authority": {
+    "release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases",
+    "candidate_release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc7",
+    "state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2",
+    "browser_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "worker_partition": "persist:sf4-safe-panel-worker-1",
+    "analysis_partition": "persist:yolla-analysis-browser-v1",
+    "browser_profile_write_scope": "NONE"
+  },
+  "reuse_inputs": {
+    "w3_result_commit": "69a933c257b949340b75211b6b078a462ac2b03b",
+    "w3_bundle_commit": "a8dda9eba23c05e8c28ecb41176fd274566568db",
+    "w3_load_hook_patch_commit": "ca9343722856c333ae1d7d9208642d21480130a2",
+    "w3_rollback_commit": "1076f509e85463546cbf6dc6107715c401a9b17e",
+    "existing_bytes_rewritten": false
+  },
+  "required_members": [
+    {
+      "logical_role": "TRUTH_BRIDGE",
+      "source_commit": "edcb83ef2cd96aa042ab0656c66f290d542d20f0",
+      "source_path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave12/rc4-runtime/automation-c-v1/workspace_ui_truth_bridge.cjs",
+      "source_blob": "27267b1b0b1d057e2ca40e3fcc864fd4609a1520",
+      "sha256": "8086f56f1f0b5731cb9ad4be5339fc211d1468f4195fcf249b7a300cc3b830e8",
+      "size_bytes": 4012,
+      "package_path": "rc7-package/runtime-files/automation-c-v1/workspace_ui_truth_bridge.cjs",
+      "install_relative": "automation-c-v1/workspace_ui_truth_bridge.cjs",
+      "install_destination": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc7\\automation-c-v1\\workspace_ui_truth_bridge.cjs",
+      "load_order": 11
+    },
+    {
+      "logical_role": "CSS_OVERLAY",
+      "source_commit": "52aea6e17ce2561ed07058e304c3744eec3b166a",
+      "source_path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave12/rc4-runtime/workspace_c_mode_rc4_truth.css",
+      "source_blob": "ff1bf6c84fb9806328bb3e5d8616a85cce943473",
+      "sha256": "43b6a3721c250e76b2562c45d931fd17d87ae219fec70aa3ef3206af9cd8b0fe",
+      "size_bytes": 1504,
+      "package_path": "rc7-package/runtime-files/workspace_c_mode_rc4_truth.css",
+      "install_relative": "workspace_c_mode_rc4_truth.css",
+      "install_destination": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc7\\workspace_c_mode_rc4_truth.css",
+      "load_order": 12
+    },
+    {
+      "logical_role": "JS_OVERLAY",
+      "source_commit": "250b05096ba70fcbe65aed3276cebaa07bd63de5",
+      "source_path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave12/rc4-runtime/workspace_c_mode_rc4_truth.js",
+      "source_blob": "82862f1b4c8c2599c4035c78023ffea850909b4c",
+      "sha256": "5fdd1719e110ce80ad4b3efb911fd20a86ccbfeb27182645e8d2170287114b54",
+      "size_bytes": 7858,
+      "package_path": "rc7-package/runtime-files/workspace_c_mode_rc4_truth.js",
+      "install_relative": "workspace_c_mode_rc4_truth.js",
+      "install_destination": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc7\\workspace_c_mode_rc4_truth.js",
+      "load_order": 13
+    },
+    {
+      "logical_role": "LOAD_HOOK_PATCH",
+      "source_commit": "ca9343722856c333ae1d7d9208642d21480130a2",
+      "source_path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave14/apply_w3_rc6_ui_overlay.cjs",
+      "source_blob": "1e6e54914737b1878a3f3ba1e88adbba57eab190",
+      "sha256": "188dcc15f0f88ac41e5179272ccc0ee11b9ee48001ee986d1732f6414d88f462",
+      "size_bytes": 6304,
+      "package_path": "rc7-package/tools/apply_w3_rc6_ui_overlay.cjs",
+      "install_relative": "tools/apply_w3_rc6_ui_overlay.cjs"
+    },
+    {
+      "logical_role": "ROLLBACK",
+      "source_commit": "1076f509e85463546cbf6dc6107715c401a9b17e",
+      "source_path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave14/rollback_w3_rc6_ui_overlay.cjs",
+      "source_blob": "1b3df39a0ffa6c80ffa0b99e44422d6a26110f11",
+      "sha256": "7a86437b703b50a6b7bbe575802bdf6d82a228919d5dc48bd8169046baf9253b",
+      "size_bytes": 2873,
+      "package_path": "rc7-package/tools/rollback_w3_rc6_ui_overlay.cjs",
+      "install_relative": "tools/rollback_w3_rc6_ui_overlay.cjs"
+    }
+  ],
+  "execution": {
+    "payload_root": "rc7-package",
+    "patch": {"package_path": "rc7-package/tools/apply_w3_rc6_ui_overlay.cjs", "runs": 2},
+    "rollback": {"package_path": "rc7-package/tools/rollback_w3_rc6_ui_overlay.cjs", "runs": 2}
+  },
+  "hook_contract": {
+    "bridge": {
+      "target_file": "main.js",
+      "begin_marker": "YOLLA_W3_RC6_UI_LOAD_HOOK_V1_BEGIN",
+      "module": "workspace_ui_truth_bridge.cjs",
+      "renderer_anchor": "createWorkspaceWindow",
+      "exact_count": 1,
+      "load_before_renderer": true
+    },
+    "css": {
+      "target_file": "workspace.html",
+      "anchor": "<link rel=\"stylesheet\" href=\"./workspace_c_mode.css\">",
+      "overlay": "<link rel=\"stylesheet\" href=\"./workspace_c_mode_rc4_truth.css\" data-yolla-overlay=\"w3-rc6\">",
+      "exact_count": 1,
+      "load_after_base": true
+    },
+    "js": {
+      "target_file": "workspace.html",
+      "anchor": "<script src=\"./workspace_c_mode.js\"></script>",
+      "overlay": "<script src=\"./workspace_c_mode_rc4_truth.js\" data-yolla-overlay=\"w3-rc6\"></script>",
+      "exact_count": 1,
+      "load_after_base": true
+    }
+  },
+  "rollback": {
+    "mode": "REMOVAL_ONLY_EXACT_PREIMAGE",
+    "overlay_install_relatives": [
+      "automation-c-v1/workspace_ui_truth_bridge.cjs",
+      "workspace_c_mode_rc4_truth.css",
+      "workspace_c_mode_rc4_truth.js"
+    ],
+    "base_files_preserved": ["main.js", "workspace.html", "workspace_c_mode.js", "workspace_c_mode.css"],
+    "fixed_browser_profile_unchanged": true
+  },
+  "required_assertions": {
+    "HOOK_EACH_EXACTLY_ONE": true,
+    "PATCH_TWO_RUN_IDEMPOTENT": true,
+    "ROLLBACK_TWO_RUN_IDEMPOTENT": true,
+    "ROLLBACK_EXACT_PRE_OVERLAY_BYTE_RESTORE": true,
+    "BASE_UI_CSS_JS_BYTES_UNCHANGED": true,
+    "FIXED_BROWSER_PROFILE_UNCHANGED": true,
+    "C_AND_COMMAND_DISABLED_WORKING_COUNT": 0,
+    "RESULT_COMMENT_PRIORITY": true,
+    "CURRENT_AND_HISTORICAL_REGISTRY_SEPARATED": true
+  },
+  "w5_package_binding": {
+    "status": "PENDING_W5_RC7_PACKAGE",
+    "manifest_required": true,
+    "same_assignment_revalidation_required": true
+  },
+  "target_pc_live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
