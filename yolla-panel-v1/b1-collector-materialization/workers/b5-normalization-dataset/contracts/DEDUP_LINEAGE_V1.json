@@ -1,0 +1,1 @@
+{"schema_version":"1.0.0","contract_id":"DEDUP_LINEAGE_V1","identity_key":"source_fields.id","duplicate_equivalence":"CANONICAL_SOURCE_FIELDS_BYTE_EQUAL","conflicting_duplicate_policy":"FAIL_CLOSED","required_lineage":"EVERY_SOURCE_RECORD_ID_REFERENCED_EXACTLY_ONCE","distinct_record_collapse":"PROHIBITED"}
