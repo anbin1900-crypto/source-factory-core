@@ -7,6 +7,8 @@ COMMANDER=V-1
 DISPATCH_MODE=PARALLEL_FINAL_INTEGRATION
 CURRENT_PROGRESS=88%
 TARGET_CANDIDATE_VERSION=5.10.2.4.2-rc1
+TARGET_PC_INSTALLED_BASELINE=5.10.2.4.0
+SOURCE_STAGING_BASELINE=5.10.2.4.1
 PRODUCTION=false
 READY=false
 MERGE=false
@@ -16,6 +18,8 @@ AUTO_TEST_WRITE_COUNT=0
 ## 공통 실행규칙
 
 각 워커는 자신의 PR에 게시된 최신 Wave 5 지시를 읽고 소유범위를 End-to-End로 수행한다. 첫 실패는 Terminal이 아니며 직접 교정·재시험한다. 결과 Commit과 정확히 상관된 Terminal 댓글을 모두 게시해야 보고완료다. Target-PC Live Receipt 없이 Live PASS·LTS·Ready·Merge를 주장하지 않는다.
+
+현재 대상 PC에 관측된 설치 버전은 `5.10.2.4.0`이다. `5.10.2.4.1`은 Source Staging 기준일 뿐 사용자에게 수동 선행설치를 요구하지 않는다. 최종 Installer는 `5.10.2.4.0 → 5.10.2.4.2-rc1` 직접 승격 또는 내부 자동 4.1 Staging을 제공하고, 둘 다 불가능하면 Fail-closed해야 한다.
 
 필수 Terminal 형식:
 
@@ -28,13 +32,15 @@ PANEL | ROLE={ROLE} | WAVE=V1-C-MODE-6W-WAVE-005 | COMMAND_ID={COMMAND_ID} | STA
 ```text
 WORKER_PR=#59
 COMMAND_ID=C6W-W5-W1-CANONICAL-CANDIDATE-MANIFEST
+TARGET_PC_INSTALLED_BASELINE=5.10.2.4.0
+SOURCE_STAGING_BASELINE=5.10.2.4.1
 INPUT_W2_HEAD=1be5e02112cc16851b6d19e4fdf8a34b2ee9749f
 INPUT_W3_HEAD=4ffa247184900467774aa8c87c1f4f12053cfac2
 INPUT_W4_HEAD=5b6f204145a1275ae9fcaab21e9be2725c8cb355
 INPUT_W5_HEAD=77c5d465d2eaaff5a26ab62f7b31f06312fbe88f
 ```
 
-Cross-head Node 실행 책임을 W5로 이동한다. W1은 실행 컨테이너 Mount를 다시 시도하지 말고, 정확한 파일 경로·Blob/Commit·SHA-256·대상 Release 경로·적용순서·충돌정책·Rollback 순서를 포함하는 `5.10.2.4.2-rc1` Canonical Candidate Manifest와 Source Inventory를 Commit하라. 기존 상태머신은 Oracle로 유지한다. Manifest는 W5 One-click Package가 기계적으로 소비할 수 있어야 하며 실행 PASS는 주장하지 않는다.
+Cross-head Node 실행 책임을 W5로 이동한다. W1은 실행 컨테이너 Mount를 다시 시도하지 말고, 정확한 파일 경로·Blob/Commit·SHA-256·대상 Release 경로·적용순서·충돌정책·Rollback 순서를 포함하는 `5.10.2.4.2-rc1` Canonical Candidate Manifest와 Source Inventory를 Commit하라. Manifest에는 `5.10.2.4.0` 설치본에서 직접 승격하는 경로와 `5.10.2.4.1` Source Staging을 내부적으로 사용하는 경로를 명확히 구분하고, 사용자 수동 4.1 선행설치를 요구하지 않는 계약을 포함한다. 기존 상태머신은 Oracle로 유지한다. Manifest는 W5 One-click Package가 기계적으로 소비할 수 있어야 하며 실행 PASS는 주장하지 않는다.
 
 Required Terminal:
 
@@ -96,9 +102,11 @@ PANEL | ROLE=AUTOMATION-C-W4 | WAVE=V1-C-MODE-6W-WAVE-005 | COMMAND_ID=C6W-W5-W4
 WORKER_PR=#63
 COMMAND_ID=C6W-W5-W5-FINAL-CANDIDATE-BUILD-INSTALLER
 TARGET_VERSION=5.10.2.4.2-rc1
+TARGET_PC_INSTALLED_BASELINE=5.10.2.4.0
+SOURCE_STAGING_BASELINE=5.10.2.4.1
 ```
 
-W5가 최종 통합 실행 Owner다. W1 Manifest, W2 Report Adapter, W3 UI Patch, W4 Repeat Adapter를 정확한 Head로 결속하고 기존 `5.10.2.4.1` Source Supplement 위에 비파괴 Candidate를 구성하라. 가능한 환경에서 Node·정적·Package Test를 직접 실행하고 실패는 수정·재시험한다. 설치 BAT, Source ZIP, Payload Manifest, Rollback, One-click Target-PC Acceptance Runner를 생성해 Google Drive에 업로드하고 File ID·크기·SHA-256·Readback을 Commit하라. 현재 로그인 Profile·Runtime Log·Work-Control JSONL을 보존하고 A/E 실행경로를 되살리지 않는다. Windows Live Receipt가 없으면 `PACKAGE_PASS_TARGET_PC_PENDING`으로 정확히 종결한다.
+W5가 최종 통합 실행 Owner다. W1 Manifest, W2 Report Adapter, W3 UI Patch, W4 Repeat Adapter를 정확한 Head로 결속하고 `5.10.2.4.1` Source Supplement를 내부 Staging 자료로 사용해 비파괴 Candidate를 구성하라. 실제 대상 PC는 `5.10.2.4.0`이므로 Installer는 4.0을 정확히 탐지해 4.2-rc1로 직접 승격하거나 내부 자동 4.1 Staging을 수행해야 하며, 사용자에게 4.1 수동 선행설치를 요구하면 안 된다. 가능한 환경에서 Node·정적·Package Test를 직접 실행하고 실패는 수정·재시험한다. 설치 BAT, Source ZIP, Payload Manifest, Rollback, One-click Target-PC Acceptance Runner를 생성해 Google Drive에 업로드하고 File ID·크기·SHA-256·Readback을 Commit하라. 현재 로그인 Profile·Runtime Log·Work-Control JSONL을 보존하고 A/E 실행경로를 되살리지 않는다. Windows Live Receipt가 없으면 `PACKAGE_PASS_TARGET_PC_PENDING`으로 정확히 종결한다.
 
 Required Terminal:
 
@@ -111,10 +119,11 @@ PANEL | ROLE=AUTOMATION-C-W5 | WAVE=V1-C-MODE-6W-WAVE-005 | COMMAND_ID=C6W-W5-W5
 ```text
 WORKER_PR=#64
 COMMAND_ID=C6W-W5-W6-FINAL-OFFLINE-INDEPENDENT-ACCEPTANCE
+TARGET_PC_INSTALLED_BASELINE=5.10.2.4.0
 WAVE4_FINAL_HEADS=W1:a13a4466f530ab7bace36bba5258974978d4293f,W2:1be5e02112cc16851b6d19e4fdf8a34b2ee9749f,W3:4ffa247184900467774aa8c87c1f4f12053cfac2,W4:5b6f204145a1275ae9fcaab21e9be2725c8cb355,W5:77c5d465d2eaaff5a26ab62f7b31f06312fbe88f
 ```
 
-먼저 Wave 4 최종 댓글이 모두 게시된 상태를 재감사해 `6/6 보고완료`, W2·W6 연속 미보고 Reset, 교체대상 0을 확정하라. 이어 W1~W5 Wave 5 산출물을 독립 검증한다. malformed·상관불일치·stale·duplicate·순서역전·Retry 소진·Restart·Log Loss Fixture를 검증하고, W5 Installer·Source Artifact의 SHA-256·Manifest·A/E 제거·로그·Profile 보존을 감사하라. 구현 Source 직접 수정은 금지한다. Target-PC·6워커×3라운드는 실제 Receipt 전까지 정확한 외부 차단으로 유지한다.
+먼저 Wave 4 최종 댓글이 모두 게시된 상태를 재감사해 `6/6 보고완료`, W2·W6 연속 미보고 Reset, 교체대상 0을 확정하라. 이어 W1~W5 Wave 5 산출물을 독립 검증한다. malformed·상관불일치·stale·duplicate·순서역전·Retry 소진·Restart·Log Loss Fixture를 검증하고, W5 Installer·Source Artifact의 SHA-256·Manifest·A/E 제거·로그·Profile 보존과 `5.10.2.4.0 → 5.10.2.4.2-rc1` 무수동 승격계약을 감사하라. 구현 Source 직접 수정은 금지한다. Target-PC·6워커×3라운드는 실제 Receipt 전까지 정확한 외부 차단으로 유지한다.
 
 Required Terminal:
 
@@ -130,6 +139,8 @@ CANONICAL_CANDIDATE_MANIFEST=PASS
 REPORT_WATCHER_RUNTIME_ADAPTER=PASS
 ACTUAL_UI_TRUTH_PATCH=PASS
 ACTUAL_REPEAT_RELEASE_ADAPTER=PASS
+DIRECT_5_10_2_4_0_UPGRADE_OR_INTERNAL_AUTO_STAGING=PASS
+USER_MANUAL_5_10_2_4_1_PREINSTALL_REQUIRED=false
 FINAL_INSTALLER_AND_SOURCE_ARTIFACT=PASS_OR_EXACT_EXTERNAL_BLOCKER
 INDEPENDENT_OFFLINE_ACCEPTANCE=PASS_OR_EXACT_TARGET_PC_BLOCKER
 DUPLICATE_DISPATCH_COUNT=0
