@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "RC7_UI_TARGET_PC_VISUAL_ACCEPTANCE_RECEIPT_V1.schema.json",
+  "title": "W3 rc7 Target-PC UI Visual Acceptance Receipt",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "control_id",
+    "wave_id",
+    "result_key",
+    "target_version",
+    "status",
+    "target_pc_live_execution",
+    "target_pc",
+    "w5_package",
+    "binding_receipt",
+    "screenshots",
+    "hook_assertions",
+    "byte_preservation",
+    "ui_truth_assertions",
+    "restart_readback",
+    "live_pass_claimed"
+  ],
+  "properties": {
+    "schema_version": {"const": "RC7_UI_TARGET_PC_VISUAL_ACCEPTANCE_RECEIPT_V1"},
+    "control_id": {"const": "V1-C-MODE-6W-VALIDATION-CYCLE-002"},
+    "wave_id": {"const": "V1-C-MODE-6W-WAVE-016"},
+    "result_key": {"const": "519828395400"},
+    "target_version": {"const": "5.10.2.4.2-rc7"},
+    "status": {"enum": ["PASS", "FAIL", "BLOCKED"]},
+    "target_pc_live_execution": {"type": "boolean"},
+    "captured_at_kst": {"type": "string", "minLength": 1},
+    "target_pc": {
+      "type": "object",
+      "required": ["computer_name", "os_version"],
+      "properties": {
+        "computer_name": {"type": "string", "minLength": 1},
+        "os_version": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "authority": {
+      "type": "object",
+      "required": ["release_root", "state_root", "browser_profile"],
+      "properties": {
+        "release_root": {"const": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases"},
+        "state_root": {"const": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2"},
+        "browser_profile": {"const": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile"}
+      }
+    },
+    "w5_package": {
+      "type": "object",
+      "required": ["result_commit", "package_sha256", "manifest_sha256", "exact_member_count"],
+      "properties": {
+        "result_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "package_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "exact_member_count": {"type": "integer", "minimum": 5}
+      }
+    },
+    "binding_receipt": {
+      "type": "object",
+      "required": ["status", "member_count", "w5_package_binding"],
+      "properties": {
+        "status": {"const": "PASS_W5_RC7_PACKAGE_BOUND"},
+        "member_count": {"const": 5},
+        "w5_package_binding": {
+          "type": "object",
+          "required": ["status", "matched_count"],
+          "properties": {
+            "status": {"const": "PASS"},
+            "matched_count": {"const": 5}
+          }
+        }
+      }
+    },
+    "screenshots": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["path", "purpose", "sha256"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "purpose": {
+            "enum": [
+              "IDLE_WORKING_ZERO",
+              "C_EXECUTION",
+              "COMMAND_EXECUTION",
+              "RESULT_COMMENT_PRIORITY",
+              "CURRENT_HISTORICAL_REGISTRY",
+              "ROLLBACK_RESTORE",
+              "RESTART_READBACK"
+            ]
+          },
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "hook_assertions": {
+      "type": "object",
+      "required": ["bridge_hook_count", "css_hook_count", "js_hook_count", "patch_two_run_idempotent", "rollback_two_run_idempotent"],
+      "properties": {
+        "bridge_hook_count": {"const": 1},
+        "css_hook_count": {"const": 1},
+        "js_hook_count": {"const": 1},
+        "patch_two_run_idempotent": {"const": true},
+        "rollback_two_run_idempotent": {"const": true}
+      }
+    },
+    "byte_preservation": {
+      "type": "object",
+      "required": ["base_main_restored", "base_workspace_html_restored", "base_ui_js_unchanged", "base_ui_css_unchanged", "browser_profile_unchanged"],
+      "properties": {
+        "base_main_restored": {"const": true},
+        "base_workspace_html_restored": {"const": true},
+        "base_ui_js_unchanged": {"const": true},
+        "base_ui_css_unchanged": {"const": true},
+        "browser_profile_unchanged": {"const": true}
+      }
+    },
+    "ui_truth_assertions": {
+      "type": "object",
+      "required": ["c_and_command_disabled_working_count", "result_comment_priority", "current_historical_registry_separated"],
+      "properties": {
+        "c_and_command_disabled_working_count": {"const": 0},
+        "result_comment_priority": {"const": true},
+        "current_historical_registry_separated": {"const": true}
+      }
+    },
+    "restart_readback": {
+      "type": "object",
+      "required": ["runtime_status_present", "c_state_present", "repeat_state_present", "registry_state_present"],
+      "properties": {
+        "runtime_status_present": {"type": "boolean"},
+        "c_state_present": {"type": "boolean"},
+        "repeat_state_present": {"type": "boolean"},
+        "registry_state_present": {"type": "boolean"}
+      }
+    },
+    "live_pass_claimed": {"type": "boolean"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"live_pass_claimed": {"const": true}}},
+      "then": {
+        "properties": {
+          "status": {"const": "PASS"},
+          "target_pc_live_execution": {"const": true},
+          "restart_readback": {
+            "properties": {
+              "runtime_status_present": {"const": true},
+              "c_state_present": {"const": true},
+              "repeat_state_present": {"const": true},
+              "registry_state_present": {"const": true}
+            }
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": true
+}
