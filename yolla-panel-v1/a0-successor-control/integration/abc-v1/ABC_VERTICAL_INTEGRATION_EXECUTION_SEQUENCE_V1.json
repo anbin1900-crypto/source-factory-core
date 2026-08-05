@@ -1,0 +1,120 @@
+{
+  "schema_version": "ABC_VERTICAL_INTEGRATION_EXECUTION_SEQUENCE_V1",
+  "sequence_id": "V2-ABC-VERTICAL-INTEGRATION-SEQUENCE-20260805-001",
+  "prepared_at_kst": "2026-08-05T22:24:39+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "execution_mode": "EVENT_DRIVEN_SINGLE_GATE_SINGLE_OWNER",
+  "phases": [
+    {
+      "phase": 0,
+      "name": "AUTHORITY_AND_BASELINE_FREEZE",
+      "owner": "V-2/A-0",
+      "status": "PASS",
+      "outputs": [
+        "A2_INTEGRATION_READINESS",
+        "B1_FIXTURE_BASELINE_FREEZE",
+        "C1_SEMANTIC_BASELINE_FREEZE",
+        "CENTRAL_GATE_MATRIX"
+      ]
+    },
+    {
+      "phase": 1,
+      "name": "A_SECOND_ONE_SHOT_AUTHORIZATION_AND_CAPTURE",
+      "owner": "A-2",
+      "status": "WAITING_NEW_EXPLICIT_AUTHORIZATION",
+      "steps": [
+        "SUBMIT_SECOND_AUTHORIZATION_REQUEST",
+        "A0_A1_DECISION",
+        "A3_EXECUTE_EXACTLY_ONE_BATCH_IF_APPROVED",
+        "PUBLISH_CAPTURE_RECEIPT_OR_EXACT_BLOCKER"
+      ],
+      "forbidden": [
+        "AUTO_RETRY",
+        "SECOND_BATCH",
+        "LOGIN",
+        "AUTH_BYPASS",
+        "ACCESS_CONTROL_BYPASS"
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "A_FINAL_VERIFIED_ADAPTER",
+      "owner": "A-2",
+      "status": "WAIT_PHASE_1",
+      "steps": [
+        "A5_FINAL_RESPONSE_SCHEMA_REBIND",
+        "A4_PAGINATION_AUDIT",
+        "A6_ADAPTER_REBUILD_AND_REPLAY",
+        "A7_FINAL_ACCEPTANCE",
+        "A2_TO_B1_VERIFIED_ADAPTER_HANDOFF"
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "B_MINIMUM_PUBLIC_COLLECTION",
+      "owner": "B-1",
+      "status": "WAIT_VERIFIED_ADAPTER",
+      "scope": "MINIMUM_PUBLIC_NON_LOGIN_READ_ONLY",
+      "steps": [
+        "ADAPTER_REMOTE_READBACK",
+        "SCOPE_FREEZE",
+        "SINGLE_MINIMUM_COLLECTION_RUN",
+        "RAW_ARTIFACT_IMMUTABLE_STORE",
+        "NORMALIZATION_DEDUP_MATERIALIZATION",
+        "B6_INDEPENDENT_ACCEPTANCE",
+        "B1_TO_C1_CONTENT_DELTA_HANDOFF"
+      ],
+      "bulk_collection": false
+    },
+    {
+      "phase": 4,
+      "name": "C_INCREMENTAL_SEMANTIC_TRANSFORMATION",
+      "owner": "C-1",
+      "status": "WAIT_B_CONTENT_DELTA_OR_D_AUTHORITY_DELTA",
+      "steps": [
+        "C3_INCREMENTAL_MAPPING",
+        "C4_PACKAGE_REASSEMBLY",
+        "C5_PR188_VALIDATION",
+        "C6_FINAL_E2E",
+        "C1_TO_D1_HANDOFF_IF_ELIGIBLE"
+      ]
+    },
+    {
+      "phase": 5,
+      "name": "D_ACCEPTANCE_AND_RELEASE",
+      "owner": "D-1",
+      "status": "WAIT_C_ELIGIBLE_HANDOFF",
+      "steps": [
+        "D_INTAKE_VALIDATION",
+        "ACCEPT_OR_REJECT_RECEIPT",
+        "KNOWLEDGE_RELEASE_IF_ACCEPTED"
+      ]
+    },
+    {
+      "phase": 6,
+      "name": "C_DOMAIN_AI_AND_A0_PROVIDER",
+      "owner": "C-1/A-0",
+      "status": "WAIT_D_KNOWLEDGE_RELEASE",
+      "steps": [
+        "C_QUERY_CITATION_RUNTIME",
+        "AI_RUNTIME_RECEIPT",
+        "A0_PANEL_PROVIDER_BINDING"
+      ]
+    }
+  ],
+  "failure_policy": {
+    "head_drift": "STOP_AND_REBIND",
+    "blob_readback_failure": "STOP_FAIL_CLOSED",
+    "missing_required_field": "REJECT_NOT_SILENT_DROP",
+    "unauthorized_external_effect": "STOP_AND_REPORT",
+    "retry_policy": "NO_AUTOMATIC_CROSS_PHASE_RETRY"
+  },
+  "current_phase": 1,
+  "current_owner": "A-2",
+  "current_gate": "NEW_EXPLICIT_SECOND_ONE_SHOT_AUTHORIZATION",
+  "execution_started": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
