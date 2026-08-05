@@ -1,63 +1,68 @@
 {
-  "schema_version": "LATEST_A7_REPORT_POINTER_V5",
+  "schema_version": "LATEST_A7_REPORT_POINTER_V6",
   "pointer_type": "LATEST_A7_REPORT_POINTER",
   "worker": "A-7",
-  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_12-INTEGRITY-DELTA-REACCEPTANCE-V1-20260806-001",
-  "directive_id": "A2-TO-A7-GENERIC-HTML-INTEGRITY-DELTA-REACCEPTANCE-V2-20260806-001",
-  "directive_comment_id": 5195141948,
-  "terminal_comment_id": 5195405907,
-  "mode": "EVENT_ONLY_DELTA_REACCEPTANCE",
-  "status": "TERMINAL_PASS",
-  "terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_PASS",
-  "previous_pointer_blob": "4c7f84432d32f3b4e40084b382a90e302bfe2d64",
-  "final_acceptance_count": 1,
-  "mid_process_audit_count": 0,
-  "delta_recheck_count": 2,
-  "full_reaudit": false,
-  "replay_rerun": false,
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "A7_D_INTEGRATION_READINESS_REVIEW",
+  "directive_comment_id": 5196017240,
+  "mode": "ADVISORY_NON_BLOCKING",
+  "status": "TERMINAL_FINDINGS",
+  "terminal": "A7_D_INTEGRATION_READINESS_REVIEW_EXACT_FINDINGS",
+  "previous_pointer_blob": "806949a223115c26cdd6a264faf6e438003b5ed1",
+  "blocking_gate": false,
   "artifacts": {
-    "delta_reacceptance": {
-      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_GENERIC_HTML_INTEGRITY_DELTA_REACCEPTANCE_V1.json",
-      "commit": "99923faddb7d31f5c7f8ba5a5a7ffa399b5e76c4",
-      "blob": "5f9078f1503d3ddcf42cd713748ba1bdeeb88f96",
-      "decision": "PASS",
-      "finding_count": 0
+    "audit": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_D_INTEGRATION_READINESS_AUDIT_V1.json",
+      "commit": "74ecbd8aaac397bc765eeac5a010a982b5eab549",
+      "blob": "2ab28e12f5e172227224f4691549b3f330194c24"
     },
-    "b1_execution_readiness_handoff": {
-      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_B1_EXECUTION_READINESS_HANDOFF_V2.json",
-      "commit": "2104c9b4dff1d50987cf70487f5c486f3b32c660",
-      "blob": "34fd92322e8348e6aa16f4d7193f432621819db8",
-      "status": "READY_FOR_B1_EXECUTION_HANDOFF"
+    "final_report": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_D_INTEGRATION_READINESS_FINAL_REPORT_V1.json",
+      "commit": "7631d3792be62eaa33e680b4761878ddfa7df800",
+      "blob": "a0921185cc6eb8b5386880b5b234fb4930f4db37"
     }
   },
-  "a6_correction_authority": {
-    "final_head": "a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793",
-    "terminal": "A6_GENERIC_HTML_PACKAGE_INTEGRITY_CORRECTED_READY_FOR_A7_DELTA_REACCEPTANCE",
-    "pointer_blob": "30a7854ca46e7e6f477b1c17c5762e4651d53a82",
-    "handoff_blob": "414832747d9f9fc840c53623858fcae5c1ad0eea",
-    "handoff_sha256": "aca7500dcf4a958cb047f0950c353195f1a631d6450589c308b978f6c83ebb04"
+  "worker_states": {
+    "A-3": {
+      "head": "6a91c9ccedf96aa538fbbf34e4bf91553778297d",
+      "pointer_blob": "4e5424a1a9a097b13f53e08fdb3f58b535445d8f",
+      "expected_handoff": "A3_D_SOURCE_PROVENANCE_HANDOFF_V1.json",
+      "published": false
+    },
+    "A-4": {
+      "head": "032c609396db198db6bd14c96436f07bc429cae8",
+      "pointer_blob": "9ac48216663f3390214e5dca4cb7b030b64f0535",
+      "expected_handoff": "A4_D_LOCATOR_PAGINATION_HANDOFF_V1.json",
+      "published": false
+    },
+    "A-5": {
+      "head": "85bb7c7c6b07a0a58cdc74ea7d74a6de2ed81adb",
+      "pointer_blob": "d5ec690e342a699639d21a0da0c4139b4333337f",
+      "expected_handoff": "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF_V1.json",
+      "published": false
+    },
+    "A-6": {
+      "head": "a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793",
+      "pointer_blob": "30a7854ca46e7e6f477b1c17c5762e4651d53a82",
+      "expected_handoff": "A6_VERIFIED_ADAPTER_D_INTAKE_COMPATIBILITY_V1.json",
+      "published": false
+    }
   },
-  "delta_checks": {
-    "package_member_sha256_binding": "PASS_6_OF_6",
-    "package_sha256": "PASS_FAD18A1E0571DFAC26305D8BD3D845A639E225C51FF1A03DFE45C49D7D441854",
-    "build_receipt_sha256": "PASS_E31454A30F13049A89A65A9489FF717B9E75B66957F4F7AA97CFE740CB7F57A8",
-    "replay_receipt_sha256": "PASS_A8C11E4EB59EA8A6003B466A4B3B6148EEAA1D834E020B824E2331385C27ECBA",
-    "a6_owned_root": "PASS_6_OF_6_DELTA_FILES",
-    "b1_consumable_handoff": "PASS",
-    "finding_resolution": "PASS_3_OF_3"
+  "review": {
+    "worker_head_matches_observed_head": "PASS_4_OF_4",
+    "required_handoff_published": "FAIL_0_OF_4",
+    "existing_secret_pii_counter_finding_count": 0,
+    "new_external_request_evidence_count_after_directives": 0,
+    "source_id_authority_type_intrusion_observed_count": 0,
+    "finding_count": 4,
+    "integration_readiness": false
   },
-  "inherited_parent_pass_checks_not_reaudited": true,
-  "finding_count": 0,
-  "b1_execution_ready": true,
-  "b1_reanalysis_required": false,
-  "implementation_file_direct_edit": false,
+  "next_event": "A3_A4_A5_A6_D_HANDOFF_TERMINALS_AND_LATEST_POINTERS_PUBLISHED",
+  "re_review_scope_after_event": "DELTA_ONLY_FOUR_HANDOFF_ARTIFACTS",
+  "implementation_edit": false,
   "self_approval": false,
-  "remote_readback": "PASS",
-  "remote_readback_evidence": {
-    "pre_terminal_pointer_commit": "5d0eb55c5ba2a88438aabd9d892fb795b41876ab",
-    "pre_terminal_pointer_blob": "96ad689ea3729c390ad685438834a35c099e8214"
-  },
-  "updated_at_kst": "2026-08-06T03:03:00+09:00",
+  "remote_readback": "PENDING",
+  "updated_at_kst": "2026-08-06T04:12:00+09:00",
   "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
   "production": false,
   "ready": false,
