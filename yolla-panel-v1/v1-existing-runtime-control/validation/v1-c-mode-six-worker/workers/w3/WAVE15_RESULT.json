@@ -1,0 +1,81 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE15_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-015",
+  "registry_sequence": 15,
+  "command_id": "C6W-W15-W3-EXACT-UI-BLOB-BUNDLE-HOOK-RECEIPT",
+  "worker_id": "AUTOMATION-C-W3",
+  "directive_comment": 5196986395,
+  "report_request_comment": 5197564863,
+  "report_request_count": 1,
+  "result_key": "519698639500",
+  "target_version": "5.10.2.4.2-rc6",
+  "status": "PASS_OFFLINE_TARGET_PC_PENDING",
+  "terminal": "C6W_W15_W3_EXACT_UI_BLOB_BUNDLE_HOOK_RECEIPT_OFFLINE_PASS_TARGET_PC_PENDING",
+  "artifacts": {
+    "bundle": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave15/W3_WAVE15_EXACT_UI_BLOB_BUNDLE.json",
+      "commit": "a8dda9eba23c05e8c28ecb41176fd274566568db",
+      "blob": "2472eec8fbda8e7f4056245ab2908b44c5f15909",
+      "size_bytes": 6221
+    },
+    "blob_fetcher": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave15/fetch_w3_wave15_ui_blobs.cjs",
+      "commit": "3640c6389cb78d684bb07cad05eb001f3628a390",
+      "blob": "4496af8a918e30b474bcf32152920b00d92a2236",
+      "size_bytes": 4152
+    },
+    "validator": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave15/validate_w3_wave15_ui_blob_bundle.cjs",
+      "commit": "d21ee3783df2e6f2626c506c3421790e70f6937a",
+      "blob": "0eca446e0e4c8e15859c4fe2923979f5a4b4d04a",
+      "size_bytes": 5063
+    },
+    "validation_receipt": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave15/W3_WAVE15_BUNDLE_VALIDATION_RECEIPT.json",
+      "commit": "db4b51bb4652287373ba58fc28429e0fb2357635",
+      "blob": "81268a66f796705f55364b97f53654ab81d89cef",
+      "size_bytes": 988
+    },
+    "hook_receipt": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave15/W3_WAVE15_HOOK_RECEIPT.json",
+      "commit": "976f076a6583df2ba06e8d3c7e6ac722488d33ae",
+      "blob": "4c60c9f258920bac1f14e329379bb93e29631a9b",
+      "size_bytes": 1549
+    }
+  },
+  "exact_source_members": [
+    {"logical_role":"TRUTH_BRIDGE","commit":"edcb83ef2cd96aa042ab0656c66f290d542d20f0","blob":"27267b1b0b1d057e2ca40e3fcc864fd4609a1520","sha256":"8086f56f1f0b5731cb9ad4be5339fc211d1468f4195fcf249b7a300cc3b830e8","size_bytes":4012},
+    {"logical_role":"CSS_OVERLAY","commit":"52aea6e17ce2561ed07058e304c3744eec3b166a","blob":"ff1bf6c84fb9806328bb3e5d8616a85cce943473","sha256":"43b6a3721c250e76b2562c45d931fd17d87ae219fec70aa3ef3206af9cd8b0fe","size_bytes":1504},
+    {"logical_role":"JS_OVERLAY","commit":"250b05096ba70fcbe65aed3276cebaa07bd63de5","blob":"82862f1b4c8c2599c4035c78023ffea850909b4c","sha256":"5fdd1719e110ce80ad4b3efb911fd20a86ccbfeb27182645e8d2170287114b54","size_bytes":7858},
+    {"logical_role":"LOAD_HOOK_PATCH","commit":"ca9343722856c333ae1d7d9208642d21480130a2","blob":"1e6e54914737b1878a3f3ba1e88adbba57eab190","sha256":"188dcc15f0f88ac41e5179272ccc0ee11b9ee48001ee986d1732f6414d88f462","size_bytes":6304},
+    {"logical_role":"REMOVAL_ONLY_ROLLBACK","commit":"1076f509e85463546cbf6dc6107715c401a9b17e","blob":"1b3df39a0ffa6c80ffa0b99e44422d6a26110f11","sha256":"7a86437b703b50a6b7bbe575802bdf6d82a228919d5dc48bd8169046baf9253b","size_bytes":2873}
+  ],
+  "tests": [
+    {"name":"GitHub Blob API immutable readback","status":"PASS","members":5},
+    {"name":"Blob bundle manifest validation","status":"PASS","members":5},
+    {"name":"Node syntax: blob fetcher","status":"PASS"},
+    {"name":"Node syntax: bundle validator","status":"PASS"},
+    {"name":"Wave14 authority UI membership","status":"PASS","members":7},
+    {"name":"Wave14 UI hook and rollback smoke","status":"PASS","assertions":20}
+  ],
+  "required_truth": {
+    "authority_release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases",
+    "fixed_browser_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "base_css_anchor_exactly_one": true,
+    "base_js_anchor_exactly_one": true,
+    "bridge_anchor_exactly_one": true,
+    "patch_idempotent": true,
+    "rollback_exact_pre_overlay_byte_restore": true,
+    "c_and_repeat_disabled_working_count": 0,
+    "raw_github_dns_used": false,
+    "mounted_checkout_used": false
+  },
+  "w5_consumable": true,
+  "target_pc_execution": "PENDING",
+  "live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-06T06:38:00+09:00"
+}
