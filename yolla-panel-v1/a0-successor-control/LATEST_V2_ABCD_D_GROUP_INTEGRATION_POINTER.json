@@ -1,0 +1,68 @@
+{
+  "schema_version": "LATEST_V2_ABCD_D_GROUP_INTEGRATION_POINTER_V1",
+  "pointer_id": "LATEST-V2-ABCD-D-GROUP-INTEGRATION-20260806-001",
+  "updated_at_kst": "2026-08-06T03:59:22+09:00",
+  "commander": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "batch": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_INTEGRATION_WORKER_BATCH_V1.json",
+    "commit": "8226ea11e96434aeab350a949965cd4188d65471",
+    "blob": "4d7565521bf5b1b5723d30a1f8bdb9ab82bbd7d6",
+    "remote_readback": "PASS"
+  },
+  "dispatch_receipt": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_INTEGRATION_DISPATCH_RECEIPT_V1.json",
+    "commit": "8ca63852c410e95788b7e9bab58d942606d9f0ce",
+    "blob": "151b4ccc90b3254b56c9389a9fc75d8311b170cd",
+    "remote_readback": "PASS"
+  },
+  "dispatch_accounting": {
+    "commander_control_comments": "PASS_6_OF_6",
+    "worker_directives": "PASS_20_OF_20",
+    "A": "PASS_5_OF_5",
+    "B": "PASS_5_OF_5",
+    "C": "PASS_5_OF_5",
+    "D": "PASS_5_OF_5",
+    "missing": 0
+  },
+  "integration_owners": {
+    "A_handoff": "A-2",
+    "B_package_v2": "B-5",
+    "C_contract_and_incremental_transform": "C-1",
+    "D_canonical_authority": "D-1_PR188",
+    "cross_repository_bridge": "D-1_PR21"
+  },
+  "lane_state": {
+    "A_TO_D_PREPARATION": "PARALLEL_ACTIVE_EXISTING_EVIDENCE_ONLY",
+    "B_TO_D_SOURCE_DOCUMENT": "PARALLEL_ACTIVE_PACKAGE_V2_PREPARATION",
+    "C_TO_D_KNOWLEDGE": "PARALLEL_ACTIVE_SCHEMA_VALIDATOR_PREPARATION_NO_RERUN",
+    "D_AUTHORITY_AND_INTAKE": "PARALLEL_ACTIVE_CONTRACT_RECEIPT_STAGING_AUDIT_PREPARATION"
+  },
+  "next_gates": [
+    "A2_D_INTEGRATION_HANDOFF_SET_READY_OR_EXACT_BLOCKER",
+    "B1_D_SOURCE_DOCUMENT_PACKAGE_V2_READY_OR_EXACT_BLOCKER",
+    "C1_D_INTEGRATION_CONTRACT_SET_READY_WAITING_CONTENT_DELTA_OR_EXACT_BLOCKER",
+    "D1_ABCD_INTEGRATION_AUTHORITY_AND_INTAKE_PROCEDURE_READY_OR_EXACT_BLOCKER",
+    "V2_REVIEW_TERMINALS_AND_ISSUE_NEXT_EVENT_BATCH"
+  ],
+  "current_phase": "PARALLEL_PREPARATION_ACTIVE",
+  "current_status": "ABCD_D_GROUP_INTEGRATION_WORKER_BATCH_DISPATCHED_20_OF_20",
+  "actual_worker_terminal_count": 0,
+  "worker_completion_claimed": false,
+  "safety": {
+    "new_external_request": false,
+    "actual_site_extraction": false,
+    "actual_bulk_collection": false,
+    "semantic_duplicate_reexecution": false,
+    "actual_d_package_acceptance": false,
+    "postgresql_connection": false,
+    "migration_apply": false,
+    "canonical_db_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  }
+}
