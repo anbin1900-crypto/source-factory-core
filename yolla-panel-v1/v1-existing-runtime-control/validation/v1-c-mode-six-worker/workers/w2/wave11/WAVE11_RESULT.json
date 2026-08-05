@@ -1,0 +1,54 @@
+{
+  "schema": "C_MODE_WAVE11_ARTIFACT_CONTENT_COMPLETION_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-011",
+  "registry_sequence": 11,
+  "command_id": "C6W-W11-W2-ARTIFACT-CONTENT-COMPLETION-GATE",
+  "role": "AUTOMATION-C-W2",
+  "directive_comment": 5194838029,
+  "result_key": "519483802900",
+  "outcome": "PASS",
+  "tests": "PASS_21_OF_21",
+  "implementation_commit": "759ef6088298e835317bcc51118e76fd64aa1a9b",
+  "test_commit": "cddbc53e81fae0a833c8f9db9c1eadf632584d34",
+  "export_commit": "d0e69d77709b44d72c206142e18bf3f6b9d069d3",
+  "artifact_audit": {
+    "worker": "AUTOMATION-C-W5",
+    "wave": "V1-C-MODE-6W-WAVE-010",
+    "result_comment": 5194725335,
+    "reported_outcome": "PASS",
+    "file_size_bytes": 2652,
+    "BYTE_EXISTS": true,
+    "METADATA_ONLY_ARCHIVE": true,
+    "EXECUTABLE_SOURCE_PRESENT": false,
+    "INSTALL_ACTION_PRESENT": false,
+    "SMOKE_AND_ROLLBACK_PRESENT": false,
+    "INSTALLABLE_RUNTIME": false,
+    "TARGET_PC_ACCEPTED": false,
+    "technical_state": "ARTIFACT_CONTENT_REJECTED",
+    "effective_outcome": "BLOCKED"
+  },
+  "current_wave": {
+    "worker_count": 5,
+    "completion_rule": "CURRENT_REGISTRY_5_OF_5",
+    "artifact_gate_cannot_be_overridden_by_reported_pass": true
+  },
+  "carryover": {
+    "role": "AUTOMATION-C-W3",
+    "source_wave": "V1-C-MODE-6W-WAVE-009",
+    "result_key": "519440526200",
+    "missing_in_wave11": false,
+    "late_result_attribution": "WAVE_009_ONLY"
+  },
+  "preserved": {
+    "result_key": true,
+    "pagination": true,
+    "retry_max": 5,
+    "restart": true,
+    "duplicate_fail_closed": true,
+    "commander_builder": true
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
