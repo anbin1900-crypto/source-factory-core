@@ -1,70 +1,77 @@
 {
   "schema_version": "LATEST_A3_REPORT_POINTER_V1",
   "worker": "A-3",
-  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-PREAUTH-GAP-CLOSURE-V1-20260805-001",
-  "directive_id": "A2-TO-A3-ACQUISITION-PACKAGE-EXACT-REBIND-AND-RETENTION-BOUND-V5_1-20260805-001",
-  "directive_comment_id": 5181081197,
-  "parent_cycle": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
-  "existing_wave5_superseded": false,
-  "status": "PASS",
-  "terminal": "A3_RESPONSE_FIXTURE_ACQUISITION_PACKAGE_REBOUND_READY_FOR_GOVERNANCE",
+  "cycle_id": "A3-ONE-SHOT-EXACT-RESPONSE-FIXTURE-CAPTURE-V1-20260805-001",
+  "authorization_id": "A1-AUTH-ONE-SHOT-EXACT-RESPONSE-FIXTURE-20260805-001",
+  "authorization_decision_comment": 5188164989,
+  "execution_event_comment": 5188170815,
+  "status": "BLOCKED",
+  "terminal": "A3_ONE_SHOT_EXACT_RESPONSE_FIXTURE_CAPTURE_EXACT_BLOCKER",
+  "first_blocker": "AUTHORIZED_ALLOWLIST_CONTAINS_ONLY_RESERVED_NON_ROUTABLE_FIXTURE_INVALID_PLACEHOLDER_URLS_WITHOUT_CONCRETE_SOURCE_ORIGIN_MAPPING",
   "branch": "worker/a3-network-observation-v1",
-  "start_head": "4f79e986c9f9cc53c429d94d354bf2f287658e30",
-  "start_comment_id": 5181719034,
-  "progress_comment_id": 5181754116,
-  "terminal_comment_id": 5181769261,
-  "exact_a5_authority": {
-    "final_head": "19781a67eb24ee217b1d072869c407077cca72e1",
-    "pointer_blob": "59f9a82c6edd15e1aa23c11573657ecf25efb004",
-    "requirement_handoff_blob": "a9a5112e53992b6149ec954447fa413ffeca9978",
-    "terminal": "A5_RESPONSE_FIXTURE_REQUIREMENTS_READY_FOR_ACQUISITION",
-    "required_profile_count": 8,
-    "status": "PASS_EXACT_BOUND"
+  "start_head": "6735d9335dd5e5137d09c494b3c6921989bb3252",
+  "start_comment_id": 5188316221,
+  "progress_comment_id": 5188333552,
+  "terminal_comment_id": 5188344425,
+  "exact_authority": {
+    "a3_pre_execution_head": "6735d9335dd5e5137d09c494b3c6921989bb3252",
+    "a3_pre_execution_pointer_blob": "e9d9b5a86c08e7862c6d68099e860e33567ca987",
+    "operator_package_blob": "70b890f660bf784ccdcea9f1c6d1d0088371c877",
+    "allowlist_blob": "80ac6691bfc9fb9c0335e8343975e1b892c22405",
+    "acquisition_plan_blob": "07fa5394fd5119af2b741a1ba7e528793fdc7b45"
   },
   "artifacts": {
-    "start_report": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_WAVE5_1_START_REPORT_V1.json","commit":"dee7c9d494d473b9b95dfe67a232698a41740d3b","blob":"027847ab2a4ffe006e3a006fd81b5f92db4e3d0b"},
-    "acquisition_plan": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/RESPONSE_FIXTURE_ACQUISITION_PLAN_V1.json","commit":"555fc574ebca165b08a542398bc43fa905c21f1e","blob":"07fa5394fd5119af2b741a1ba7e528793fdc7b45"},
-    "capture_allowlist": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ENDPOINT_CAPTURE_ALLOWLIST_V1.json","commit":"7d4142633f428d6050ed322e10febebeec155863","blob":"80ac6691bfc9fb9c0335e8343975e1b892c22405"},
-    "redaction_policy": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/RESPONSE_CAPTURE_REDACTION_POLICY_V1.json","commit":"8e6dedd73418bb139111e02a21c3e24113aad651","blob":"996c9067411a3956a742b7e8c7bf4b66ab8d13b0"},
-    "operator_package": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ONE_SHOT_CAPTURE_OPERATOR_PACKAGE_V1.json","commit":"11a57885b5059ab6a02d343bff90fd4bff1bd7e2","blob":"70b890f660bf784ccdcea9f1c6d1d0088371c877"},
-    "authorization_request": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_TO_A2_CAPTURE_AUTHORIZATION_REQUEST_V1.json","commit":"79941cde8d4889111c48f95616f61c6673c3dea1","blob":"6815485dec730a0859026d561a8b8bb786afe2a3"},
-    "validation_receipt": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_WAVE5_1_VALIDATION_RECEIPT_V1.json","commit":"6f10f0bd19fbc778bfd04b1d8eb426123ef758d5","blob":"f5594a350f5a7719cba63041904a938c077c9f8a"},
-    "terminal_report": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_WAVE5_1_TERMINAL_REPORT_V1.json","commit":"5ff0f0d0962cc04b6c33d0b446e810d43cb8b690","blob":"03aa6cba709f69505f6a10826e51f9295e5f0f4c"}
+    "start_report": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_ONE_SHOT_CAPTURE_START_REPORT_V1.json",
+      "commit": "e08d0484178c162530e43263f040f2128ca2f97d",
+      "blob": "87f6239524e37dc102bda95f85a5ab205b3e9c5b"
+    },
+    "preflight_receipt": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ONE_SHOT_CAPTURE_PREFLIGHT_RECEIPT_V1.json",
+      "commit": "c90d6f94a75899dc2f2512f48e11c47269a63cba",
+      "blob": "2a42c55cfa56fac85d29c2d3b231d13d9a829ff8"
+    },
+    "result_ledger": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ONE_SHOT_CAPTURE_RESULT_LEDGER_V1.json",
+      "commit": "63ea8e5357e2b909daf63983635076ce7a305e1b",
+      "blob": "787417ce4a8ff13fa9880b6f0f28e35d6f29736c"
+    },
+    "terminal_report": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_ONE_SHOT_CAPTURE_TERMINAL_REPORT_V1.json",
+      "commit": "78711b1045cb40b64319a90e431ca8817fd918d0",
+      "blob": "a32804717e249e33304f3a5ccb354bec48d2d9cd"
+    }
   },
-  "package": {
-    "target_profiles": ["EP-001","EP-002","EP-003","EP-004","EP-005","EP-010","EP-011","EP-012"],
-    "target_profile_count": 8,
+  "execution": {
+    "authorized_profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-011", "EP-012"],
+    "authorized_profile_count": 8,
+    "authorized_batch_execution_count": 1,
+    "authorized_batch_execution_count_used": 1,
+    "second_attempt_authorized": false,
     "max_capture_per_profile": 1,
-    "total_max_response_capture_count": 8,
-    "max_response_size_bytes": 2097152,
-    "request_timeout_ms": 20000,
-    "total_execution_timeout_ms": 180000,
-    "raw_response_byte_persistence": false,
-    "raw_sha256_in_memory": true,
-    "transient_raw_byte_disposal_deadline_seconds": 30,
-    "redacted_derivative_retention_days": 30,
-    "capture_execution_authorized": false,
-    "a5_requirement_handoff": "PASS_EXACT_BOUND",
-    "a7_governance_audit": "PENDING",
-    "explicit_authorization": "NOT_GRANTED"
+    "max_total_capture": 8,
+    "capture_attempt_count": 0,
+    "successful_capture_count": 0,
+    "not_attempted_blocked_profile_count": 8,
+    "fixture_sha256_count": 0,
+    "size_binding_count": 0,
+    "mime_binding_count": 0,
+    "acquired_at_binding_count": 0
   },
-  "validation": {
-    "pass_count": 24,
-    "finding_count": 0,
-    "size_timeout_retention_disposal_missing_field_count": 0,
-    "out_of_owned_root_change_count": 0
-  },
-  "counters": {
-    "capture_execution_count": 0,
+  "safety": {
     "live_site_call_count": 0,
     "browser_automation_execution_count": 0,
     "credential_use_count": 0,
-    "package_install_count": 0,
-    "duplicate_execution_count": 0
+    "raw_secret_value_count": 0,
+    "raw_response_byte_persistence": false,
+    "authentication_bypass": false,
+    "access_control_bypass": false,
+    "actual_bulk_collection": false,
+    "out_of_owned_root_change_count": 0
   },
-  "required_next_event": "A7_ACQUISITION_GOVERNANCE_AUDIT_PASS_THEN_EXPLICIT_A2_A0_A1_ONE_SHOT_CAPTURE_AUTHORIZATION",
+  "required_next_authority": "NEW_EXPLICIT_AUTHORIZATION_WITH_CONCRETE_NON_PLACEHOLDER_SOURCE_ORIGIN_MAPPING_REQUEST_VALUES_AND_EP011_CREDENTIAL_REFERENCE_IF_EP011_IS_REQUIRED",
   "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
-  "updated_at_kst": "2026-08-05T01:23:00+09:00",
+  "updated_at_kst": "2026-08-05T15:30:00+09:00",
   "production": false,
   "ready": false,
   "merge": false
