@@ -1,18 +1,55 @@
 {
-  "schema_version": "1.0.0",
-  "pointer_id": "B1-TO-C1-HANDOFF-POINTER-V1",
-  "updated_at_kst": "2026-08-04T04:44:00+09:00",
+  "schema_version": "B1_TO_C1_HANDOFF_POINTER_V2",
+  "pointer_id": "B1-TO-C1-HANDOFF-POINTER-V2",
+  "updated_at_kst": "2026-08-05T16:53:00+09:00",
   "control_pr": 19,
   "target_control_pr": 20,
   "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
-  "status": "WAITING_B6_INDEPENDENT_ACCEPTANCE",
-  "handoff_contract": "SOURCE_RECORD_ENVELOPE_V1_PLUS_EXTRACTION_RECEIPT_V1",
+  "previous_pointer_blob": "3c51e55ec25828ece1a2e60d69893c7ff9a65bc5",
+  "reconciliation_report": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave7/B1_CURRENT_STATE_RECONCILIATION_V1.json",
+    "commit": "f7b0c07209412ea7376f6acd72961a7eec1e9567",
+    "blob": "a05ab6fb09579c248ae295db95da6d4463810678"
+  },
+  "status": "B4_INPUT_AUTHORITY_BOUND_WAITING_B5_AND_B6_FINAL_ACCEPTANCE",
+  "handoff_contract": "SOURCE_RECORD_ENVELOPE_V1_PLUS_NORMALIZED_DATASET_V1_PLUS_EXTRACTION_RECEIPT_V1_PLUS_B6_ACCEPTANCE",
   "semantic_transformation_performed_by_b": false,
   "required_inputs": {
-    "SOURCE_RECORD_ENVELOPE_V1": null,
-    "NORMALIZED_DATASET_V1": null,
-    "EXTRACTION_RECEIPT_V1": null,
-    "B6_EXTRACTION_ACCEPTANCE_REPORT_V1": null
+    "RAW_ARTIFACT_MANIFEST_V1": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V1.json",
+      "blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+      "status": "AVAILABLE_B4_TERMINAL_PASS_PENDING_B6_ACCEPTANCE"
+    },
+    "SOURCE_RECORD_ENVELOPE_V1": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/SOURCE_RECORD_ENVELOPE_V1.json",
+      "blob": "0148a841344ce5a0df03e55df532871106dd7333",
+      "status": "AVAILABLE_B4_TERMINAL_PASS_PENDING_B6_ACCEPTANCE"
+    },
+    "NORMALIZED_DATASET_V1": {
+      "path": null,
+      "blob": null,
+      "status": "WAITING_B5_TERMINAL"
+    },
+    "EXTRACTION_RECEIPT_V1": {
+      "path": null,
+      "blob": null,
+      "status": "WAITING_B5_TERMINAL"
+    },
+    "B6_EXTRACTION_ACCEPTANCE_REPORT_V1": {
+      "path": null,
+      "blob": null,
+      "status": "WAITING_B4_PREFLIGHT_AND_B5_TERMINAL_THEN_FINAL_ACCEPTANCE"
+    }
+  },
+  "worker_acceptance_state": {
+    "accepted_by_b6": [
+      "B-2",
+      "B-3"
+    ],
+    "b4_terminal_available": true,
+    "b4_accepted_by_b6": false,
+    "b5_terminal_available": false,
+    "b6_final_acceptance_completed": false
   },
   "target_rules": {
     "source_evidence_and_lineage_preserved": true,
@@ -21,6 +58,8 @@
     "b1_does_not_write_d_canonical_db": true
   },
   "handoff_published": false,
+  "c1_consumption_classification": "FIXTURE_REMOTE_COMMITTED_PARTIAL_WORKER_AUTHORITY_NOT_YET_B6_ACCEPTED_HANDOFF",
+  "next_gate": "B6_ACCEPT_B4_THEN_B5_TERMINAL_THEN_B6_FINAL_ACCEPTANCE_AND_POINTER_PROMOTION",
   "production": false,
   "ready": false,
   "merge": false
