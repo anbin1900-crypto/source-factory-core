@@ -1,0 +1,59 @@
+{
+  "schema_version": "LATEST_ABC_VERTICAL_INTEGRATION_PREPARATION_POINTER_V1",
+  "pointer_id": "LATEST-V2-ABC-VERTICAL-INTEGRATION-PREPARATION-20260805-001",
+  "updated_at_kst": "2026-08-05T22:24:39+09:00",
+  "commander": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "preparation": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abc-v1/ABC_VERTICAL_INTEGRATION_PREPARATION_V1.json",
+    "commit": "e1979463ff076786e03435eb8c34612dcdd65777",
+    "blob": "b26d2ce7bfef01e2b27bcfa5b33259dd5c53332d",
+    "remote_readback": "PASS"
+  },
+  "gate_matrix": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abc-v1/ABC_HANDOFF_AND_GATE_MATRIX_V1.json",
+    "commit": "6f022de819f61fc28c2ee0bad51d1e204b190ac6",
+    "blob": "f3ffd8b31e549aa594d27ce0583309189d7586b8",
+    "remote_readback": "PASS"
+  },
+  "execution_sequence": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abc-v1/ABC_VERTICAL_INTEGRATION_EXECUTION_SEQUENCE_V1.json",
+    "commit": "f12a859b0a1d7fb7202fcb2c07796890d6b74907",
+    "blob": "1db568912f7d2f96992ebd9da7881c3427d31616",
+    "remote_readback": "PASS"
+  },
+  "group_authority": {
+    "A": {
+      "control_pr": 18,
+      "head": "9dd6f19d5b5e35006833adadadbc940dfefde02f",
+      "latest_pointer_blob": "a554de2249543c09eca72a4b3e47273de5d132ba",
+      "state": "SECOND_AUTHORIZATION_REQUEST_READY_EXECUTION_NOT_AUTHORIZED"
+    },
+    "B": {
+      "control_pr": 19,
+      "head": "5c7c9cddcc6ca9f19ffe7e77bdd300480c17c8b3",
+      "latest_pointer_blob": "7aa5344ffd5bd5023cada1b6f2798e1b904ad842",
+      "state": "FIXTURE_BASELINE_PASS_ACTUAL_PUBLIC_RUN_STANDBY"
+    },
+    "C": {
+      "control_pr": 20,
+      "head": "5bae4d6015e8d52646ee4432f6272fa7b6d72a27",
+      "latest_pointer_blob": "4fe02a2ef24a7960de3db930b686cdac835f10a0",
+      "state": "SEMANTIC_BASELINE_FROZEN_REQUIRED_PATHS_22_BLOCKER"
+    }
+  },
+  "current_phase": 1,
+  "current_owner": "A-2",
+  "current_gate": "NEW_EXPLICIT_SECOND_ONE_SHOT_AUTHORIZATION",
+  "overall_status": "ABC_INTEGRATION_PREPARED_EXECUTION_GATE_CLOSED",
+  "capture_execution_authorized": false,
+  "actual_site_extraction": false,
+  "actual_bulk_collection": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
