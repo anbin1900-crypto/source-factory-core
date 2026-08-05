@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "W3_TARGET_PC_UI_EVIDENCE_V1.schema.json",
+  "title": "AUTOMATION-C-W3 Target PC UI Evidence",
+  "type": "object",
+  "required": ["schema_version","control_id","command_id","captured_at_kst","target_pc","runtime","before_restart","after_restart","screenshots","live_pass_claimed"],
+  "properties": {
+    "schema_version": {"const":"W3_TARGET_PC_UI_EVIDENCE_V1"},
+    "control_id": {"const":"V1-C-MODE-6W-VALIDATION-CYCLE-002"},
+    "command_id": {"const":"C6W-W2-W3-UI-EVIDENCE-HARNESS"},
+    "captured_at_kst": {"type":"string"},
+    "target_pc": {"type":"object","required":["computer_name","os_version"],"properties":{"computer_name":{"type":"string"},"os_version":{"type":"string"}}},
+    "runtime": {"type":"object","required":["version","runtime_status","c_state","repeat_state"],"properties":{"version":{"type":"string"},"runtime_status":{},"c_state":{},"repeat_state":{}}},
+    "before_restart": {"type":"object"},
+    "after_restart": {"type":"object"},
+    "screenshots": {"type":"array","minItems":1,"items":{"type":"object","required":["path","sha256","purpose"],"properties":{"path":{"type":"string"},"sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"purpose":{"enum":["IDLE_TRUTH","GROUP_C_BUTTON","COMMAND_POPUP","COUNTERS_LABELS","RESTART_RESUME"]}}}},
+    "assertions": {"type":"object","properties":{"idle_working_zero":{"type":"boolean"},"group_c_button":{"type":"boolean"},"top_command_popup":{"type":"boolean"},"counter_label_separation":{"type":"boolean"},"restart_resume":{"type":"boolean"}}},
+    "live_pass_claimed": {"const":false}
+  },
+  "additionalProperties": true
+}
