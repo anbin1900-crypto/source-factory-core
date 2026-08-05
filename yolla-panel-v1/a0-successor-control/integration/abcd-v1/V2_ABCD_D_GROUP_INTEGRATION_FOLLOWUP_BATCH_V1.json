@@ -1,0 +1,137 @@
+{
+  "schema_version": "V2_ABCD_D_GROUP_INTEGRATION_FOLLOWUP_BATCH_V1",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "issued_at_kst": "2026-08-06T04:52:15+09:00",
+  "issuer": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "parent_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "review_report": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_INTEGRATION_RESULT_REVIEW_V1.json",
+    "commit": "0b0c55fcf0114cd24174759a812c53b4c94b5882",
+    "status": "REMOTE_COMMITTED"
+  },
+  "mode": "SINGLE_ACTIVE_OWNER_PER_GATE_EVENT_CHAIN",
+  "wave_1_immediate_parallel": [
+    {
+      "owner": "A-6",
+      "pr": 25,
+      "task": "PUBLISH_A6_VERIFIED_ADAPTER_D_INTAKE_COMPATIBILITY_V1",
+      "inputs": ["A3_D_SOURCE_PROVENANCE_HANDOFF", "A4_D_LOCATOR_PAGINATION_HANDOFF", "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF", "ACCEPTED_VERIFIED_ADAPTER_PACKAGE"],
+      "required_terminal": "A6_VERIFIED_ADAPTER_D_COMPATIBILITY_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "owner": "B-2",
+      "pr": 38,
+      "task": "PUBLISH_B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1",
+      "required_terminal": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "owner": "B-4",
+      "pr": 40,
+      "task": "PUBLISH_RAW_ARTIFACT_MANIFEST_V2_AND_PII_STATUS",
+      "required_terminal": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "owner": "C-1",
+      "pr": 20,
+      "task": "INTEGRATE_C2_C3_C4_C5_C6_D_CONTRACT_RESULTS_AND_PUBLISH_COMMANDER_POINTER",
+      "required_terminal": "C1_D_INTEGRATION_CONTRACT_SET_READY_WAITING_B_OR_D_DELTA_OR_EXACT_BLOCKER"
+    },
+    {
+      "owner": "D-1_PR188",
+      "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "pr": 188,
+      "task": "PUBLISH_D_AUTHORITY_MAPPING_RECEIPT_PROCEDURES_AND_TREE_BINDING",
+      "required_outputs": [
+        "D_PUBLIC_REAL_ESTATE_SOURCE_AUTHORITY_DECISION_V1",
+        "D_INBOUND_FIELD_MAPPING_CONTRACT_V1_1_ADDENDUM",
+        "D1_B_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_PROCEDURE_V1",
+        "D1_C_KNOWLEDGE_CANDIDATE_ACCEPTANCE_RECEIPT_PROCEDURE_V1",
+        "D1_SCHEMA_ALIGNMENT_TREE_BINDING_MANIFEST_V1",
+        "LATEST_D_GROUP_CONTROL_POINTER_NEW_VERSION"
+      ],
+      "required_terminal": "D1_ABCD_INTEGRATION_AUTHORITY_AND_INTAKE_PROCEDURE_READY_OR_EXACT_BLOCKER"
+    }
+  ],
+  "wave_2_event_driven": [
+    {
+      "owner": "A-7",
+      "pr": 26,
+      "entry_event": "A6_D_COMPATIBILITY_TERMINAL_PUBLISHED",
+      "task": "DELTA_REVIEW_A3_A4_A5_A6_FOUR_HANDOFFS",
+      "required_terminal": "A7_D_INTEGRATION_DELTA_REVIEW_PASS_OR_EXACT_FINDINGS"
+    },
+    {
+      "owner": "B-5",
+      "pr": 41,
+      "entry_event": "B2_AND_B4_V2_TERMINALS_PUBLISHED",
+      "task": "REPLACE_PROVISIONAL_INPUTS_RERUN_37_TESTS_AND_PUBLISH_D_READY_PACKAGE_V2",
+      "required_terminal": "B5_D_READY_PACKAGE_V2_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "owner": "D-1_BRIDGE_PR21",
+      "pr": 21,
+      "entry_event": "D1_PR188_TERMINAL_AND_NEW_CONTROL_HEAD_PUBLISHED",
+      "task": "PUBLISH_PR21_PR188_CROSS_REPOSITORY_POINTER_V2_WITH_EXACT_D_BLOBS",
+      "required_terminal": "D1_PR21_PR188_CROSS_REPOSITORY_POINTER_V2_READY_OR_EXACT_BLOCKER"
+    }
+  ],
+  "wave_3_event_driven": [
+    {
+      "owner": "A-2",
+      "pr": 18,
+      "entry_event": "A7_D_INTEGRATION_DELTA_REVIEW_TERMINAL",
+      "task": "PUBLISH_A2_D_INTEGRATION_HANDOFF_SET_AND_POINTER",
+      "required_terminal": "A2_D_INTEGRATION_HANDOFF_SET_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "owner": "B-6",
+      "pr": 42,
+      "entry_event": "B5_D_READY_PACKAGE_V2_TERMINAL_AND_D1_TREE_BINDING_MANIFEST",
+      "task": "REVALIDATE_PR188_PATHS_AND_PUBLISH_PROMOTABLE_OR_BLOCKED_HANDOFF_CANDIDATE",
+      "required_terminal": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_READY_OR_EXACT_BLOCKER"
+    }
+  ],
+  "wave_4_event_driven": [
+    {
+      "owner": "B-1",
+      "pr": 19,
+      "entry_event": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_TERMINAL",
+      "task": "PUBLISH_B1_D_SOURCE_DOCUMENT_PACKAGE_V2_COMMANDER_TERMINAL",
+      "required_terminal": "B1_D_SOURCE_DOCUMENT_PACKAGE_V2_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "owner": "D-6",
+      "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "pr": 193,
+      "entry_event": "B_SOURCE_DOCUMENT_RECEIPT_AND_C_KNOWLEDGE_RECEIPT_AVAILABLE",
+      "task": "REOPEN_EXISTING_MATRIX_DELTA_ONLY_AND_VALIDATE_PROVENANCE_CITATION_CHAIN",
+      "required_terminal": "D6_ABCD_CROSS_REPOSITORY_ACCEPTANCE_PASS_OR_EXACT_FINDINGS"
+    }
+  ],
+  "completed_workers_event_wait": ["A-3", "A-4", "A-5", "B-3", "C-2", "C-3", "C-4", "C-5", "C-6", "D-2", "D-3", "D-4", "D-5"],
+  "no_duplicate_reexecution": [
+    "NO_NEW_A3_A4_A5_EXTERNAL_OR_ANALYSIS_WORK",
+    "NO_C2_C6_SEMANTIC_RERUN_WITHOUT_B_OR_D_CONTENT_DELTA",
+    "NO_D2_D5_REBUILD_WITHOUT_D1_FINDING"
+  ],
+  "failure_policy": {
+    "first_local_failure": "OWNER_CORRECTS_AND_RETESTS",
+    "true_external_blocker": "PUBLISH_EXACT_FIELD_EXPECTED_EVIDENCE_RETRY_TRIGGER",
+    "missing_terminal": "DO_NOT_TREAT_AS_PASS",
+    "head_or_blob_drift": "STOP_REBIND_THEN_CONTINUE"
+  },
+  "forbidden": [
+    "NEW_EXTERNAL_REQUEST",
+    "ACTUAL_SITE_EXTRACTION",
+    "ACTUAL_BULK_COLLECTION",
+    "ACTUAL_D_PACKAGE_ACCEPTANCE",
+    "POSTGRESQL_CONNECTION",
+    "MIGRATION_APPLY",
+    "CANONICAL_DB_WRITE",
+    "PRODUCTION",
+    "READY",
+    "MERGE",
+    "SELF_MERGE"
+  ],
+  "status": "FOLLOWUP_DISPATCH_READY"
+}
