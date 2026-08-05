@@ -1,0 +1,102 @@
+{
+  "actual_site_extraction": false,
+  "authority": {
+    "authority_type": null,
+    "authority_type_status": "PENDING_D1_DECISION",
+    "d_acceptance_receipt_issued": false,
+    "d_canonical_id_generation_count": 0,
+    "d_control_pointer_blob": "95e6983a79b80867dd7de196a21e1aefc4c3dcb1",
+    "d_control_pointer_final_authority_type_decision_present": false
+  },
+  "checks": [
+    "MATERIALIZED_SCHEMA_DRAFT2020_VALID",
+    "NORMALIZED_SCHEMA_DRAFT2020_VALID",
+    "D_INTAKE_SCHEMA_DRAFT2020_VALID",
+    "MATERIALIZED_FIXTURE_SCHEMA_PASS",
+    "NORMALIZED_DATASET_SCHEMA_PASS",
+    "D_INTAKE_REQUEST_SCHEMA_PASS",
+    "SOURCE_KEY_B2_EXACT",
+    "SOURCE_NAME_B2_EXACT",
+    "OFFICIAL_SOURCE_URL_B2_EXACT",
+    "AUTHORITY_TYPE_PENDING_D1_POINTER_BOUND",
+    "D_CANONICAL_SOURCE_ID_NULL",
+    "B2_SCOPE_EXACT_HEAD_BLOB_TERMINAL_BOUND",
+    "B3_COLLECTION_RUN_EXACT_BOUND",
+    "B4_MANIFEST_EXACT_HEAD_BLOB_TERMINAL_BOUND",
+    "RAW_ARTIFACT_COUNT_2",
+    "RAW_MIME_PRESENT_2_OF_2",
+    "RAW_SIZE_PRESENT_2_OF_2",
+    "RAW_SHA256_VALID_2_OF_2",
+    "RAW_STORAGE_POINTER_PRESENT_2_OF_2",
+    "INPUT_RECORD_COUNT_4",
+    "OUTPUT_RECORD_COUNT_3",
+    "DUPLICATE_COUNT_1",
+    "SQLITE_ROW_COUNT_3",
+    "RECORD_TYPE_PRESENT_3_OF_3",
+    "LANGUAGE_CODE_PRESENT_3_OF_3",
+    "RECORD_HASH_VALID_3_OF_3",
+    "UNMAPPED_VALUE_PRESERVATION_PASS",
+    "REJECTED_RECORDS_PRESERVED",
+    "SOURCE_FIELD_LOSS_COUNT_0",
+    "SILENT_DROP_COUNT_0",
+    "D_WRITE_ACCEPTANCE_PRODUCTION_READY_MERGE_ALL_FALSE",
+    "RAW_PII_STATUS_B4_EXACT_2_OF_2",
+    "B3_V2_COLLECTION_RUN_POINTER_BOUND",
+    "B3_V2_PROCESSING_EVENT_LEDGER_BOUND",
+    "B2_V2_TERMINAL_REMOTE_READBACK_PASS",
+    "B4_V2_TERMINAL_REMOTE_READBACK_PASS",
+    "D_INTAKE_SUBMISSION_AUTHORIZED_FALSE_PENDING_AUTHORITY_TYPE"
+  ],
+  "compile_result": "PASS_2_OF_2",
+  "custom_validator": "PASS",
+  "d_canonical_db_write": false,
+  "deterministic_second_run": "PASS_37_OF_37",
+  "directive_comment": 5196664899,
+  "entry_events": {
+    "B2": {
+      "contract_blob": "f7b5faee6c3fce138bcd95f9edce734f2086eb6d",
+      "head": "771da102a0202dc21d9226d9c534275df345582e",
+      "pointer_blob": "6ba3df93d41d3b00f58d598ca6867db376c9f30c",
+      "result": "PASS_EXACT",
+      "terminal": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_READY"
+    },
+    "B4": {
+      "head": "f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3",
+      "manifest_blob": "d900e06bcc73908e3af589581d67b599bfb84d65",
+      "pointer_blob": "b0158bbb27dfb0efab012ec1a97c3c31f2266e7c",
+      "result": "PASS_EXACT",
+      "terminal": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY"
+    }
+  },
+  "exact_blocker": "D1_AUTHORITY_TYPE_FINAL_DECISION_NOT_PUBLISHED",
+  "fail_count": 0,
+  "first_failure_correction": {
+    "correction": "LOAD_SCHEMAS_FROM_contracts_DIRECTORY",
+    "failure": "TEST_HARNESS_SCHEMA_PATH_ROOT_LOOKUP",
+    "rerun_result": "PASS_37_OF_37"
+  },
+  "hashes": {
+    "bundle_sha256": "61076a92214b1fdfcc7887e666f5e1f528694c082a01cf40844be0a91c1bcab4",
+    "dataset_sha256": "2341352963108565dca27bf4476bfa91f67690cd86fc609d25bf9239ef65b36c",
+    "package_sha256": "69dc71948d1ed5417ae027d2ae8e347cd24306d29447ff20246ff042b2b8196f",
+    "request_sha256": "7baa4e24323c739d4907f4c81e2aca7a5bfe8650f0c10854aa348f6d0a71e651"
+  },
+  "merge": false,
+  "pass_count": 37,
+  "preservation": {
+    "duplicate_lineage_preservation": "PASS",
+    "rejected_records_preserved": "PASS",
+    "silent_drop_count": 0,
+    "source_field_loss_count": 0,
+    "unmapped_value_preservation": "PASS"
+  },
+  "production": false,
+  "ready": false,
+  "schema_version": "B5_D_READY_PACKAGE_V2_TEST_REPORT_V2",
+  "task_id": "B5_D_READY_PACKAGE_V2_RESUME",
+  "terminal_recommendation": "B5_D_READY_PACKAGE_V2_EXACT_BLOCKER",
+  "test_command": "python -m unittest -v tests/test_b5_d_ready_package_v2_resume.py",
+  "test_count": 37,
+  "test_result": "PASS_37_OF_37",
+  "tested_at_kst": "2026-08-06T06:22:00+09:00"
+}
