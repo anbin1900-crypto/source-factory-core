@@ -1,0 +1,150 @@
+{
+  "schema_version": "B6_D_PACKAGE_PREFLIGHT_V2",
+  "task_id": "B6_D_SOURCE_DOCUMENT_HANDOFF_REPREFLIGHT",
+  "directive_comment_id": 5196668910,
+  "checked_at_kst": "2026-08-06T06:22:00+09:00",
+  "authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "worker_pr": 42,
+    "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+    "start_head": "05feff1062f0cc0c61bd252564b1626df5eccde8"
+  },
+  "entry_events": {
+    "B5_D_READY_PACKAGE_V2_TERMINAL": {
+      "satisfied": true,
+      "head": "ecda54115e8bcac427344cddd4578b8a748042fc",
+      "pointer_blob": "760abe95ff6a07e7f3642e14628b8427217f2f16",
+      "terminal_result": "B5_D_READY_PACKAGE_V2_EXACT_BLOCKER"
+    },
+    "D1_SCHEMA_ALIGNMENT_TREE_BINDING_MANIFEST_PUBLISHED": {
+      "satisfied": true,
+      "head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+      "manifest_blob": "dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd",
+      "status": "D1_SCHEMA_ALIGNMENT_TREE_BINDING_READY"
+    },
+    "do_not_start_before_both_events_compliance": "PASS"
+  },
+  "B_worker_inputs": {
+    "input_objects_received": "PASS_4_OF_4",
+    "ready_terminals": "FAIL_3_OF_4",
+    "required": "PASS_4_OF_4_REQUIRED",
+    "workers": {
+      "B-2": {
+        "pr": 38,
+        "head": "771da102a0202dc21d9226d9c534275df345582e",
+        "pointer_blob": "6ba3df93d41d3b00f58d598ca6867db376c9f30c",
+        "contract_blob": "f7b5faee6c3fce138bcd95f9edce734f2086eb6d",
+        "terminal": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_READY",
+        "tests": "PASS_40_OF_40",
+        "decision": "PASS"
+      },
+      "B-3": {
+        "pr": 39,
+        "head": "86d789a136ce5070d79eab7e6d0205eb23da11d7",
+        "pointer_blob": "01cfe1644b828687c4dce4ceab32345c728283e7",
+        "final_report_blob": "687aeab229074e2935a126582f80c047841391df",
+        "test_results_blob": "eab65a61e7b6791880daeab8a4ad8c067abfa2a8",
+        "remote_readback_blob": "0cd956a4fcbf6a896de596bebc7bc8fc5b316f00",
+        "terminal": "B3_D_COLLECTION_RUN_LEDGER_READY",
+        "tests": "PASS_32_OF_32",
+        "remote_readback": "PASS_11_OF_11",
+        "decision": "PASS"
+      },
+      "B-4": {
+        "pr": 40,
+        "head": "f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3",
+        "pointer_blob": "b0158bbb27dfb0efab012ec1a97c3c31f2266e7c",
+        "manifest_blob": "d900e06bcc73908e3af589581d67b599bfb84d65",
+        "terminal": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY",
+        "tests": "PASS_46_OF_46",
+        "remote_readback": "PASS_10_OF_10",
+        "decision": "PASS_WITH_AUTHORITY_FIELDS_TO_BE_BOUND_BY_B5"
+      },
+      "B-5": {
+        "pr": 41,
+        "head": "ecda54115e8bcac427344cddd4578b8a748042fc",
+        "pointer_blob": "760abe95ff6a07e7f3642e14628b8427217f2f16",
+        "final_report_blob": "6944b0439c5aea2a727e963ef74d8ead8388a99b",
+        "terminal": "B5_D_READY_PACKAGE_V2_EXACT_BLOCKER",
+        "first_blocker": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1_AND_B4_RAW_ARTIFACT_MANIFEST_V2_NOT_PUBLISHED",
+        "local_validation": "PASS_37_OF_37",
+        "decision": "FAIL_NOT_READY"
+      }
+    },
+    "chronology": {
+      "B5_blocker_at_kst": "2026-08-06T04:45:00+09:00",
+      "B4_ready_at_kst": "2026-08-06T05:03:00+09:00",
+      "B2_ready_at_kst": "2026-08-06T05:28:00+09:00",
+      "conclusion": "B5_TERMINAL_PREDATES_B2_AND_B4_READY_AND_MUST_BE_RERUN"
+    }
+  },
+  "D_tree_binding": {
+    "decision": "PASS",
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "pr": 188,
+    "head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "authoritative_root": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/",
+    "manifest_path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/D1_SCHEMA_ALIGNMENT_TREE_BINDING_MANIFEST_V1.json",
+    "manifest_blob": "dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd",
+    "manifest_declared_paths": "PASS_10_OF_10",
+    "required_root_paths": "PASS_18_OF_18_FULL_ACCOUNTING",
+    "old_governance_path_hardcoded": false
+  },
+  "D_contracts": {
+    "schema_blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+    "mapping_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
+    "ruleset_blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
+    "receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
+    "mapping_addendum_blob": "118d6403dd5db47afafb982991f8fd9a51f35f28",
+    "B_receipt_procedure_blob": "2a8b7c1b04924728cce14dc21c225ad09598905f",
+    "source_authority_decision_blob": "6bf779b937bf2bea761780315b22692ccca07ad9",
+    "source_key_alias_decision_blob": "27683e5dc4a9448c3d0a9bd3200a0a62c84d158c",
+    "decision": "PASS"
+  },
+  "source_identity_alignment": {
+    "B2_source_key": "NAVER_FIN_LAND_PUBLIC_WEB_V1",
+    "D_preferred_inbound_source_key": "NAVER_FIN_LAND_PUBLIC_WEB_V1",
+    "D_accepted_alias": "NAVER_FIN_LAND",
+    "D_authority_type": "OFFICIAL_SECONDARY",
+    "B4_source_key_status": "PENDING_AUTHORITY",
+    "required_resolution_owner": "B5_CONSUMES_B2_AND_D1_DECISIONS_WITHOUT_SILENT_RENAME",
+    "status": "READY_FOR_B5_RERUN_NOT_YET_BOUND_IN_CURRENT_B5_TERMINAL"
+  },
+  "lane_separation": {
+    "decision": "PASS",
+    "B_lane": "B_TO_D_SOURCE_DOCUMENT",
+    "C_lane": "C_TO_D_KNOWLEDGE_CANDIDATE",
+    "combined_receipt": false,
+    "separate_transactions": true,
+    "D1_only_receipt_issuer": true,
+    "B_or_C_direct_D_receipt": false
+  },
+  "defects": [
+    {
+      "Field": "B5_D_READY_PACKAGE_V2_CURRENT_READY_TERMINAL",
+      "Expected": "B5 READY terminal produced after consuming current B2 head 771da102a0202dc21d9226d9c534275df345582e, B3 head 86d789a136ce5070d79eab7e6d0205eb23da11d7, and B4 head f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3",
+      "Evidence": "Current B5 pointer at head ecda54115e8bcac427344cddd4578b8a748042fc is EXACT_BLOCKER, updated 04:45 KST, before B4 READY at 05:03 and B2 READY at 05:28; it binds only B-3"
+    },
+    {
+      "Field": "B5_SOURCE_AUTHORITY_AND_ALIAS_BINDING",
+      "Expected": "B5 V2 package binds B2 source_key NAVER_FIN_LAND_PUBLIC_WEB_V1, D authority OFFICIAL_SECONDARY, D alias decision, and B4 artifact lineage without silent rename",
+      "Evidence": "B2 and D decisions now exist, while B4 retains PENDING_AUTHORITY placeholders and the current B5 blocker package predates those inputs"
+    },
+    {
+      "Field": "HANDOFF_CANDIDATE_PROMOTABILITY",
+      "Expected": "B worker READY terminals PASS_4_OF_4 plus D tree binding PASS and required path full accounting PASS",
+      "Evidence": "D tree binding and paths pass, but B worker READY terminals are only 3_OF_4 because B5 is EXACT_BLOCKER"
+    }
+  ],
+  "decision": "EXACT_BLOCKER",
+  "first_blocker": "B5_D_READY_PACKAGE_V2_NOT_RERUN_AFTER_B2_B4_READY",
+  "candidate_promotable": false,
+  "required_terminal": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_READY_OR_EXACT_BLOCKER",
+  "terminal_result": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_EXACT_BLOCKER",
+  "D_acceptance_claim": false,
+  "D_canonical_db_write": false,
+  "actual_site_extraction": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
