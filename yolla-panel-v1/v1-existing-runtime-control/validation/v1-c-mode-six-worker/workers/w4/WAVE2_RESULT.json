@@ -1,0 +1,34 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE2_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-002",
+  "worker_id": "AUTOMATION-C-W4",
+  "command_id": "C6W-W2-W4-PER-TARGET-REPEAT",
+  "status": "PASS",
+  "terminal": "C6W_W2_W4_PER_TARGET_REPEAT_PASS",
+  "implementation_commit": "03acdf1570949ac1467a4e52056301c1d4e043ee",
+  "test_commit": "ef5ed0bf65d4a034ecc35a6010d3a9065cc5dbfe",
+  "tests": [
+    "node --check automation-c-v1/repeat_command_runtime.cjs",
+    "node --check automation-c-v1/tests/test_repeat_command_runtime.cjs",
+    "node automation-c-v1/tests/test_repeat_command_runtime.cjs"
+  ],
+  "assertions": 25,
+  "validated": {
+    "per_target_state": true,
+    "three_slot_distinct_completion_times": true,
+    "partial_end_isolation": true,
+    "after_completion_per_target_redispatch": true,
+    "every_x_minutes_queue_non_growth": true,
+    "restart_recovery": true,
+    "role_command_dispatch_correlation": true,
+    "prompt_byte_preservation": true
+  },
+  "dispatch_receipts": 8,
+  "target_pc_execution_count": 0,
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "panel_terminal": "PANEL | ROLE=AUTOMATION-C-W4 | WAVE=V1-C-MODE-6W-WAVE-002 | COMMAND_ID=C6W-W2-W4-PER-TARGET-REPEAT | STATUS=END"
+}
