@@ -11,7 +11,13 @@
   },
   "directive_document": {
     "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave5/V1_C_MODE_6_WORKER_WAVE5_DIRECTIVE_V6.md",
-    "commit": "966eabbee2c7027e853e17a9196ba6e23f5692ad"
+    "commit": "8f087cfe979bc1ae1c79014518f8a976373be3bc"
+  },
+  "baseline_correction": {
+    "target_pc_installed_baseline": "5.10.2.4.0",
+    "source_staging_baseline": "5.10.2.4.1",
+    "target_candidate_version": "5.10.2.4.2-rc1",
+    "manual_5_10_2_4_1_preinstall_required": false
   },
   "worker_directives": {
     "AUTOMATION-C-W1": {
@@ -57,5 +63,6 @@
   "production": false,
   "ready": false,
   "merge": false,
-  "published_at_kst": "2026-08-05T22:55:00+09:00"
+  "published_at_kst": "2026-08-05T22:55:00+09:00",
+  "corrected_at_kst": "2026-08-05T23:00:00+09:00"
 }
