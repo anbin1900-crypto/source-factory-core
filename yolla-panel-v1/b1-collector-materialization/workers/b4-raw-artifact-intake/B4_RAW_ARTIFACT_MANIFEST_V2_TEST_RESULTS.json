@@ -1,0 +1,47 @@
+{
+  "schema_version": "B4_RAW_ARTIFACT_MANIFEST_V2_TEST_RESULTS_V1",
+  "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "task_id": "RAW_ARTIFACT_MANIFEST_V2",
+  "tested_at_kst": "2026-08-06T05:03:00+09:00",
+  "commands": [
+    "python -m py_compile src/raw_artifact_manifest_v2.py tests/test_raw_artifact_manifest_v2.py",
+    "python -m unittest discover -s tests -v",
+    "python src/raw_artifact_manifest_v2.py --root ."
+  ],
+  "python_compile": "PASS_2_OF_2",
+  "unit_tests": "PASS_35_OF_35",
+  "custom_validator": "PASS",
+  "validated_categories": {
+    "required_fields": "PASS_2_OF_2",
+    "exact_byte_sha256": "PASS_2_OF_2",
+    "byte_size": "PASS_2_OF_2",
+    "json_mime": "PASS_2_OF_2",
+    "immutable_storage_pointer": "PASS_2_OF_2",
+    "source_url_time_locator": "PASS_2_OF_2",
+    "actual_site_values_not_observed": "PASS_2_OF_2",
+    "pii_allow_deny_review_classification": "PASS_2_OF_2_ALLOW",
+    "redaction_status": "PASS_2_OF_2_NOT_REQUIRED",
+    "raw_overwrite_reject": "PASS",
+    "secret_storage_reject": "PASS",
+    "personal_data_promotion_reject": "PASS",
+    "tamper_hash_size_reject": "PASS",
+    "duplicate_artifact_key_reject": "PASS"
+  },
+  "fixture": {
+    "artifact_count": 2,
+    "total_record_count": 4,
+    "page1_size_bytes": 254,
+    "page1_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+    "page2_size_bytes": 246,
+    "page2_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2"
+  },
+  "github_actions_ci_pass_claimed": false,
+  "raw_overwrite": false,
+  "secret_storage": false,
+  "personal_data_promotion": false,
+  "actual_site_extraction": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "result": "PASS"
+}
