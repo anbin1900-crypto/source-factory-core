@@ -1,0 +1,49 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE6_W6_RESULT_V7",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-006",
+  "command_id": "C6W-W6-W6-POINTER-RELAY-INDEPENDENT-ACCEPTANCE",
+  "worker_id": "AUTOMATION-C-W6",
+  "directive_comment_id": 5193440761,
+  "result_key": "519344076100",
+  "objective_mode": "ADDITIVE_NOT_REPLACEMENT",
+  "previous_wave5_cancelled": false,
+  "implementation_direct_edit": false,
+  "pointer_relay_audit": {
+    "worker_count": 6,
+    "roles_unique": true,
+    "prs_unique": true,
+    "comments_unique": true,
+    "result_keys_unique": true,
+    "ascii_digits_only": true,
+    "result_key_equals_comment_string_plus_00": true,
+    "w6_role_pr_comment_match": true,
+    "w6_result_key_match": true
+  },
+  "fail_closed_cases": {
+    "malformed_wave": "REJECT",
+    "missing_end_wave": "REJECT",
+    "wrong_pr_or_role": "REJECT",
+    "duplicate_comment_or_result_key": "REJECT",
+    "full_width_digits": "REJECT",
+    "result_precedes_directive": "REJECT",
+    "example_key_inside_directive": "REJECT",
+    "duplicate_result_comment": "REJECT",
+    "directive_modified_after_ready": "REJECT",
+    "stale_wave": "REJECT",
+    "partial_fetch_failure": "REJECT",
+    "partial_dispatch_attempt": "REJECT"
+  },
+  "independent_acceptance": {
+    "pointer_relay_contract": "OFFLINE_ACCEPTED",
+    "wave5_artifact_acceptance": "RETAIN_PREVIOUS_EXACT_BLOCKER",
+    "target_pc_6_workers_x_3_waves": "BLOCKED_NO_RECEIPT",
+    "restart_recovery": "BLOCKED_NO_RECEIPT",
+    "log_loss_zero": "BLOCKED_NO_RECEIPT",
+    "overall_status": "POINTER_RELAY_OFFLINE_PASS_TARGET_PC_EXACT_BLOCKER"
+  },
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
