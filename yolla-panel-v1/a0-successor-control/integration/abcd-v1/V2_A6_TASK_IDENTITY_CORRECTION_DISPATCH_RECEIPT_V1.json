@@ -1,0 +1,36 @@
+{
+  "schema_version": "V2_A6_TASK_IDENTITY_CORRECTION_DISPATCH_RECEIPT_V1",
+  "receipt_id": "V2-A6-TASK-IDENTITY-CORRECTION-DISPATCH-20260806-001",
+  "published_at_kst": "2026-08-06T05:03:00+09:00",
+  "correction_report": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_A6_TASK_IDENTITY_DISAMBIGUATION_AND_REVIEW_CORRECTION_V1.json",
+    "commit": "6c16092506ee1efde42f1a6b71d31f777fb4924c",
+    "blob": "98068d963e5ed99fde82536e6d5f98bb7e49c0b3"
+  },
+  "comments": {
+    "control_pr17": 5196750734,
+    "a6_pr25": 5196753253,
+    "a7_pr26": 5196755707,
+    "a2_pr18": 5196757852
+  },
+  "accounting": {
+    "required_comment_count": 4,
+    "published_comment_count": 4,
+    "missing_comment_count": 0,
+    "status": "PASS_4_OF_4"
+  },
+  "task_state": {
+    "prior_integrity_task": "PASS_CLOSED_NOT_REOPENED",
+    "current_d_compatibility_task": "ACTIVE_TERMINAL_PENDING",
+    "current_followup_cancelled": false,
+    "prior_integrity_reexecution_required": false
+  },
+  "safety": {
+    "new_external_request": false,
+    "actual_site_extraction": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "CORRECTION_DISPATCH_COMPLETE"
+}
