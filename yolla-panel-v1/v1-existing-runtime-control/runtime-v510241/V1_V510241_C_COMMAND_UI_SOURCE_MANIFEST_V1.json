@@ -1,0 +1,81 @@
+{
+  "schema_version": "V1_V510241_C_COMMAND_UI_SOURCE_MANIFEST_V1",
+  "runtime_version": "5.10.2.4.1",
+  "base_version": "5.10.2.4.0",
+  "source_files": [
+    {
+      "path": "src/apply_c_command_ui_hotfix.cjs",
+      "size_bytes": 9873,
+      "sha256": "e3000e5d207949365e3927ff72c869ef3b2731f60300b9306382f5b1d8173e4a"
+    },
+    {
+      "path": "src/automation-c-v1/c_mode_runtime.cjs",
+      "size_bytes": 54691,
+      "sha256": "2f3dded91d69e5eb2eed504e068d6b7429bb30ae410c77b17ecc92ae9d6fff6c"
+    },
+    {
+      "path": "src/automation-c-v1/tests/test_c_mode_runtime.cjs",
+      "size_bytes": 13760,
+      "sha256": "dcedf2f951e304132bdd60c70f51081dc73cdb3adb12609d85982dd0f16ee3e3"
+    },
+    {
+      "path": "src/test_v510241_c_command_ui_integration.cjs",
+      "size_bytes": 7604,
+      "sha256": "2cb38e4f6e5dc34effa47cabb6c2e9668824f4455198da96a36bf8ba6827d648"
+    },
+    {
+      "path": "src/workspace_c_mode.css",
+      "size_bytes": 7545,
+      "sha256": "1a7a68f87efff0ee6a543ad5b43881119620702b0173c2d06782c3778e2befaf"
+    },
+    {
+      "path": "src/workspace_c_mode.js",
+      "size_bytes": 26098,
+      "sha256": "8bb1767870e6c56d20c7f32646671fa4f6f9d52fa83da7cc85076cf25a4fd7eb"
+    },
+    {
+      "path": "package-v510241/install_v510241.ps1",
+      "size_bytes": 17508,
+      "sha256": "aab9e88cba01de4c12395eb921a72df22592f36c5e1ab5539268e517859dcf6c"
+    },
+    {
+      "path": "test-evidence/test_v510241_installer_package.py",
+      "size_bytes": 4196,
+      "sha256": "c56cdda8c2f29708a322c5a1779061a05259f30751ea2584436e411afc923935"
+    }
+  ],
+  "artifacts": {
+    "installer": {
+      "drive_file_id": "1H9B3Sqy1Cl5BXbxvU-7JUz_Nup3Ir_Vw",
+      "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510241_C_COMMAND_UI_HOTFIX.bat",
+      "size_bytes": 59153,
+      "sha256": "d8a2ef37272d5d5931af56e1785fa36517b5d66de87f1f04103e5703f763f6b0",
+      "metadata_readback": "PASS"
+    },
+    "source_bundle": {
+      "drive_file_id": "1NAP-nH507TGrUzAvnHH8msHQnYqR26CT",
+      "file_name": "AI_YOLLA_V510241_C_COMMAND_UI_HOTFIX_SOURCE.zip",
+      "size_bytes": 139463,
+      "sha256": "362ab825b2c476f32336b227fa82ef8d8089ace76649edc1e3b0e6da99737355",
+      "metadata_readback": "PASS"
+    },
+    "payload": {
+      "file_name": "AI_YOLLA_V510241_C_COMMAND_UI_HOTFIX_PAYLOAD.zip",
+      "size_bytes": 41698,
+      "sha256": "69723ca93206e7a1c1c96c54ed111fda0acf7599e30ed9ed9d7f3a819ef8a0d2"
+    }
+  },
+  "validation": {
+    "node_syntax": "PASS",
+    "c_runtime_unit_assertions": 59,
+    "static_integration_assertions": 86,
+    "installer_package_assertions": 69,
+    "self_extract_readback": "PASS",
+    "idempotent_patch": "PASS",
+    "drive_byte_readback": "PASS"
+  },
+  "target_pc_install": "PENDING",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
