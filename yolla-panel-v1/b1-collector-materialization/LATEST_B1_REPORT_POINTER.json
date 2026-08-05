@@ -1,59 +1,74 @@
 {
-  "schema_version": "1.0.0",
-  "pointer_id": "LATEST-B1-COLLECTOR-DB-MATERIALIZATION-REPORT-V1",
-  "updated_at_kst": "2026-08-05T00:15:00+09:00",
+  "schema_version": "LATEST_B1_REPORT_POINTER_V2",
+  "pointer_id": "LATEST-B1-COLLECTOR-DB-MATERIALIZATION-REPORT-V2",
+  "updated_at_kst": "2026-08-05T16:53:00+09:00",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 19,
   "branch": "integration/b1-collector-db-materialization-v1",
+  "previous_pointer_blob": "7b765cf103edeef0fd652e7462389d61f464c6ce",
   "current_report": {
-    "type": "WORKER_WAVE6_TERMINAL_CLOSURE_RECOVERY",
-    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave6/LATEST_B1_WORKER_WAVE6_TERMINAL_CLOSURE_POINTER.json",
-    "commit": "789ad770b95da2dfca110a674fe37292f76dc288",
-    "status": "B2_ACCEPTED_FROZEN_B3_B4_B5_TERMINAL_CLOSURE_B6_EVENT_WAIT_LEDGER_REQUIRED"
-  },
-  "directive_id": "A0-TO-B1-GENERIC-COLLECTOR-MATERIALIZATION-SHELL-V1-20260803-001",
-  "addendum_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
-  "existing_directive_superseded": false,
-  "wave6_recovery": {
-    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave6/B1_WORKER_WAVE6_TERMINAL_CLOSURE_RECOVERY_V1.json",
-    "commit": "1e611f26d4a96d302146118a1af8a534e6a791a8",
-    "blob": "88320828aae24925ade553bfa460117cad39d80b"
-  },
-  "wave6_pointer": {
-    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave6/LATEST_B1_WORKER_WAVE6_TERMINAL_CLOSURE_POINTER.json",
-    "commit": "789ad770b95da2dfca110a674fe37292f76dc288"
-  },
-  "wave6_publication_receipt": {
-    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave6/B1_WORKER_WAVE6_TERMINAL_CLOSURE_PUBLICATION_RECEIPT_V1.json",
-    "commit": "9b8c9c9b7326a0c9e957b90016341ae1eb358dcd",
-    "result": "PASS_5_OF_5"
+    "type": "CURRENT_STATE_RECONCILIATION",
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave7/B1_CURRENT_STATE_RECONCILIATION_V1.json",
+    "commit": "f7b0c07209412ea7376f6acd72961a7eec1e9567",
+    "blob": "a05ab6fb09579c248ae295db95da6d4463810678",
+    "status": "B4_TERMINAL_AVAILABLE_B6_ACCEPTANCE_PENDING_B5_IMPLEMENTATION_IN_PROGRESS",
+    "remote_readback": "PASS"
   },
   "accepted_workers": {
     "B-2": {
       "pr": 38,
       "head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
       "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY",
-      "tests": "PASS_24_OF_24",
-      "remote_blob_readback": "PASS_7_OF_7",
-      "comment": 5181070002,
-      "status": "ACCEPTED_PASS_FROZEN"
+      "status": "ACCEPTED_BY_B6",
+      "tests": "PASS_24_OF_24"
+    },
+    "B-3": {
+      "pr": 39,
+      "head": "f8299be24108b84af06abfe53e939c8bf68ec9dd",
+      "pointer_blob": "fb81b02eac0fca4597f5a93e168a5889e0046df1",
+      "terminal": "B3_EXTRACTOR_RETRY_RESUME_READY",
+      "status": "ACCEPTED_BY_B6",
+      "tests": "PASS_32_OF_32"
     }
   },
-  "pending_workers": {
-    "B-3": {"pr": 39, "head": "8c31cec83f1b81ba80511bed8a61b15536da3b48", "comment": 5181076773, "status": "TERMINAL_OR_EXACT_BLOCKER_REQUIRED"},
-    "B-4": {"pr": 40, "head": "f1c327882bfd73d9670afa661e11c6acc8a8cccb", "comment": 5181080352, "status": "TERMINAL_OR_EXACT_BLOCKER_REQUIRED"},
-    "B-5": {"pr": 41, "head": "dfd99f6188d263fd7e7ded72396f72006680fee8", "comment": 5181085194, "status": "TERMINAL_OR_EXACT_BLOCKER_REQUIRED"},
-    "B-6": {"pr": 42, "head": "6ccf2fea6cc4d05db2704ac08c50eb8ff43015b1", "comment": 5181091367, "status": "START_EVENT_WAIT_POINTER_OR_EXACT_BLOCKER_REQUIRED_ACCEPTED_INPUTS_1_OF_4"}
+  "terminal_available_pending_acceptance": {
+    "B-4": {
+      "pr": 40,
+      "head": "6dfe697363a69f83797775aa549f34614aa3748a",
+      "pointer_blob": "cc83b028c725e34861e8737bbf4c6932da48315a",
+      "terminal": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY_OR_EXACT_BLOCKER",
+      "terminal_result": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY",
+      "tests": "PASS_24_OF_24",
+      "status": "PENDING_B6_PREFLIGHT"
+    }
+  },
+  "active_workers": {
+    "B-5": {
+      "pr": 41,
+      "head_observed": "cabd37b27f2a4892567486c03714920fa5f54ad4",
+      "pointer_blob": "b6a0aee500d9401c5a42391edec89101b17c5f32",
+      "status": "IMPLEMENTATION_IN_PROGRESS",
+      "terminal": null
+    },
+    "B-6": {
+      "pr": 42,
+      "head": "1cceefd06f651a57e8bb08ab81eac2c7e91fd2f6",
+      "pointer_blob": "f627f03207947fcf00c07094882856f258ea8e19",
+      "accepted_inputs": "2_OF_4",
+      "next_event": "CONSUME_B4_TERMINAL_THEN_WAIT_B5"
+    }
   },
   "a2_dependency": {
-    "head": "3c3f7077ab070cb0259c253268ab3a7b17ecb446",
+    "head": "25aaf4b568fbd6b97e7116c9160d5a0046298d34",
+    "terminal": "A2_CAPTURE_INPUT_AUTHORITY_EXACT_BLOCKER",
     "verified_adapter_package_v1_published": false,
     "actual_site_extraction": false
   },
-  "required_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
+  "worker_terminals_received": 3,
+  "worker_terminals_required": 5,
   "current_terminal": null,
-  "current_status": "WAITING_B3_B4_B5_TERMINALS_AND_B6_EVENT_WAIT_LEDGER",
-  "next_gate": "B3_B4_B5_TERMINALS_3_OF_3_THEN_B6_FINAL_ACCEPTANCE",
+  "current_status": "WAITING_B6_B4_PREFLIGHT_AND_B5_TERMINAL",
+  "next_gate": "B6_ACCEPT_B4_TO_3_OF_4_THEN_B5_TERMINAL_THEN_B6_FINAL_ACCEPTANCE",
   "production": false,
   "ready": false,
   "merge": false
