@@ -1,0 +1,55 @@
+{
+  "schema_version": "LATEST_CONCRETE_SOURCE_TARGET_AUTHORITY_POINTER_V1",
+  "pointer_id": "LATEST-CONCRETE-SOURCE-TARGET-NAVER-FIN-LAND-20260805-001",
+  "updated_at_kst": "2026-08-05T17:43:00+09:00",
+  "publisher": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "request_id": "A2-TO-A0-A1-CONCRETE-SOURCE-TARGET-AUTHORITY-REQUEST-V1-20260805-001",
+  "authority": {
+    "path": "yolla-panel-v1/a0-successor-control/authorities/naver-fin-land/CONCRETE_SOURCE_TARGET_AUTHORITY_V1.json",
+    "commit": "6416f9cee68af2529fcee649c57f5799aabc01a9",
+    "blob": "12594f998c39c937dc09ff42e5ca37ae460f9fcd",
+    "file_sha256": "104c3f2441d3a7418a4937105d28fbcc7b2f4e26fdca3f36c03474a0fd00e79b",
+    "remote_readback": "PASS",
+    "authority_status": "READY_FOR_A5_REBIND_PUBLIC_DOCUMENT_ROUTES_ONLY"
+  },
+  "observation_receipt": {
+    "path": "yolla-panel-v1/a0-successor-control/authorities/naver-fin-land/CONCRETE_SOURCE_TARGET_OBSERVATION_RECEIPT_V1.json",
+    "commit": "4f1066153b07b4faf9aa4fac8342936203fd0680",
+    "blob": "094d991647f8fbf1732dab6370490499f0483c07",
+    "file_sha256": "fda21ca68724565867d09015a93e6b0789d957c237198fe162daef2b6297dffc",
+    "remote_readback": "PASS",
+    "observation_scope": "PUBLIC_NON_LOGIN_READ_ONLY_SINGLE_SESSION"
+  },
+  "target": {
+    "site_id": "NAVER_FIN_LAND_PUBLIC_WEB_V1",
+    "site_name": "네이버페이 부동산",
+    "origin": "https://fin.land.naver.com",
+    "public_start_url_sha256": "d9e22a1f6bddd553a99e1c838909a42ac9eba113c6a7b04d03e2c0e8f535017c"
+  },
+  "profile_state": {
+    "active_profiles": [
+      "EP-001",
+      "EP-002",
+      "EP-003",
+      "EP-004",
+      "EP-005",
+      "EP-010",
+      "EP-012"
+    ],
+    "excluded_profiles": [
+      "EP-011"
+    ],
+    "public_route_binding_ready": "PASS_7_OF_7",
+    "ep011_decision": "EXCLUDED_NO_CREDENTIAL_REFERENCE",
+    "internal_api_inference_count": 0
+  },
+  "next_gate": "A5_REBIND_THEN_A3_NONEXECUTING_PACKAGE_REBUILD_THEN_A7_AUDIT_THEN_NEW_EXPLICIT_AUTHORIZATION",
+  "capture_execution_authorized": false,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
