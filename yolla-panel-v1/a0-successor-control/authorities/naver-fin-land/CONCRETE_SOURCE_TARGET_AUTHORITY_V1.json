@@ -1,7 +1,7 @@
 {
-  "schema_version": "CONCRETE_SOURCE_TARGET_AUTHORITY_V1",
-  "authority_id": "CONCRETE-SOURCE-TARGET-NAVER-FIN-LAND-20260805-001",
-  "published_at_kst": "2026-08-05T17:42:00+09:00",
+  "schema_version": "CONCRETE_SOURCE_TARGET_AUTHORITY_V2",
+  "authority_id": "CONCRETE-SOURCE-TARGET-NAVER-FIN-LAND-20260805-002",
+  "published_at_kst": "2026-08-05T17:50:00+09:00",
   "publisher": "V-2_YOLLA_AI_SUPREME_COMMANDER",
   "request_id": "A2-TO-A0-A1-CONCRETE-SOURCE-TARGET-AUTHORITY-REQUEST-V1-20260805-001",
   "request_comment": 5189150690,
@@ -14,19 +14,19 @@
   "authoritative_source_evidence": {
     "observation_receipt": {
       "path": "yolla-panel-v1/a0-successor-control/authorities/naver-fin-land/CONCRETE_SOURCE_TARGET_OBSERVATION_RECEIPT_V1.json",
-      "commit": "4f1066153b07b4faf9aa4fac8342936203fd0680",
-      "blob": "094d991647f8fbf1732dab6370490499f0483c07",
-      "file_sha256": "fda21ca68724565867d09015a93e6b0789d957c237198fe162daef2b6297dffc",
+      "commit": "bbbccde24120d8d2730dd07cf6e5c0cc704e0789",
+      "blob": "c7a0787beaefe64ab7f46ed1940c4a11a8113413",
+      "file_sha256": "ebd09a32ff7c28e9c1d31d3137616fb89c0e44eea78f05c160d896d74197e861",
       "remote_readback": "PASS"
     },
     "source_basis": [
       "USER_EXPLICIT_PUBLIC_START_URL",
-      "PUBLIC_INDEXED_OFFICIAL_HOME_PAGE",
+      "PUBLIC_INDEXED_OFFICIAL_SEARCH_PAGE",
       "PUBLIC_INDEXED_OFFICIAL_ARTICLE_DETAIL_PAGES"
     ],
     "evidence_limit": "PUBLIC_DOCUMENT_AND_NAVIGATION_ROUTES_ONLY_NO_INTERNAL_API_INFERENCE"
   },
-  "profile_binding_policy": {
+  "profile_binding": {
     "active_profiles": [
       "EP-001",
       "EP-002",
@@ -39,230 +39,139 @@
     "excluded_profiles": [
       "EP-011"
     ],
-    "profile_count": 8,
-    "active_profile_count": 7,
-    "excluded_profile_count": 1,
+    "public_route_binding_ready": "PASS_7_OF_7",
     "same_public_route_reuse_allowed": true,
-    "fixture_transport_is_not_live_authority": true,
-    "unobserved_internal_api_route_promotion_allowed": false
-  },
-  "profiles": [
-    {
-      "profile_id": "EP-001",
-      "semantic_role": "MAP_MOVE_PUBLIC_STATE",
-      "origin": "https://fin.land.naver.com",
-      "route_template": "/map",
-      "absolute_route_template": "https://fin.land.naver.com/map",
-      "method": "GET",
-      "representative_request_value": {
-        "query": {
+    "internal_api_inference_count": 0,
+    "profiles": [
+      {
+        "profile_id": "EP-001",
+        "semantic_role": "MAP_MOVE_PUBLIC_STATE",
+        "origin": "https://fin.land.naver.com",
+        "route_template": "/map",
+        "method": "GET",
+        "representative_request_value": {
           "layer": "NobwRAlgJmBcYAsD2BbApmANGAzmghgE4DGCACkfijnCAL50C6QA",
           "center": "3zhc4G-2ALg18",
           "zoom": "15"
-        }
+        },
+        "expected_response_format": "text/html",
+        "evidence_id": "EVIDENCE-USER-TARGET-URL-001",
+        "decision": "READY_PUBLIC_DOCUMENT_ROUTE"
       },
-      "expected_response_format": "text/html",
-      "evidence_pointer": {
-        "observation_receipt_path": "yolla-panel-v1/a0-successor-control/authorities/naver-fin-land/CONCRETE_SOURCE_TARGET_OBSERVATION_RECEIPT_V1.json",
-        "observation_receipt_commit": "4f1066153b07b4faf9aa4fac8342936203fd0680",
-        "observation_receipt_blob": "094d991647f8fbf1732dab6370490499f0483c07",
-        "evidence_id": "EVIDENCE-USER-TARGET-URL-001"
+      {
+        "profile_id": "EP-002",
+        "semantic_role": "LISTING_DETAIL_PUBLIC_DOCUMENT_PRIMARY",
+        "origin": "https://fin.land.naver.com",
+        "route_template": "/articles/{articleNo}",
+        "method": "GET",
+        "representative_request_value": {
+          "articleNo": "2528362542"
+        },
+        "representative_value_policy": "PUBLIC_INDEXED_EXAMPLE_NOT_CURRENT_LISTING_CLAIM",
+        "expected_response_format": "text/html",
+        "evidence_id": "EVIDENCE-OFFICIAL-ARTICLE-001",
+        "decision": "READY_PUBLIC_DOCUMENT_ROUTE"
       },
-      "route_binding_decision": "READY_PUBLIC_DOCUMENT_ROUTE",
-      "capture_eligible_after_rebind_and_new_authorization": true
-    },
-    {
-      "profile_id": "EP-002",
-      "semantic_role": "LISTING_DETAIL_PUBLIC_DOCUMENT_PRIMARY",
-      "origin": "https://fin.land.naver.com",
-      "route_template": "/articles/{articleNo}",
-      "absolute_route_template": "https://fin.land.naver.com/articles/{articleNo}",
-      "method": "GET",
-      "representative_request_value": {
-        "path_parameters": {
-          "articleNo": "2529241670"
-        }
+      {
+        "profile_id": "EP-003",
+        "semantic_role": "LISTING_DETAIL_PUBLIC_DOCUMENT_ALTERNATE",
+        "origin": "https://fin.land.naver.com",
+        "route_template": "/articles/{articleNo}",
+        "method": "GET",
+        "representative_request_value": {
+          "articleNo": "2528927768"
+        },
+        "representative_value_policy": "PUBLIC_INDEXED_EXAMPLE_NOT_CURRENT_LISTING_CLAIM",
+        "expected_response_format": "text/html",
+        "evidence_id": "EVIDENCE-OFFICIAL-ARTICLE-002",
+        "fixture_transport_superseded": "XHR_TO_PUBLIC_DOCUMENT_GET",
+        "decision": "READY_PUBLIC_DOCUMENT_ROUTE"
       },
-      "representative_identifier_policy": "PUBLIC_ROUTE_EXAMPLE_ONLY_NOT_ACTIVE_LISTING_CLAIM",
-      "expected_response_format": "text/html",
-      "evidence_pointer": {
-        "observation_receipt_path": "yolla-panel-v1/a0-successor-control/authorities/naver-fin-land/CONCRETE_SOURCE_TARGET_OBSERVATION_RECEIPT_V1.json",
-        "observation_receipt_commit": "4f1066153b07b4faf9aa4fac8342936203fd0680",
-        "observation_receipt_blob": "094d991647f8fbf1732dab6370490499f0483c07",
-        "evidence_id": "EVIDENCE-OFFICIAL-ARTICLE-001"
-      },
-      "route_binding_decision": "READY_PUBLIC_DOCUMENT_ROUTE",
-      "capture_eligible_after_rebind_and_new_authorization": true
-    },
-    {
-      "profile_id": "EP-003",
-      "semantic_role": "LISTING_DETAIL_PUBLIC_DOCUMENT_ALTERNATE",
-      "origin": "https://fin.land.naver.com",
-      "route_template": "/articles/{articleNo}",
-      "absolute_route_template": "https://fin.land.naver.com/articles/{articleNo}",
-      "method": "GET",
-      "representative_request_value": {
-        "path_parameters": {
-          "articleNo": "2529760923"
-        }
-      },
-      "representative_identifier_policy": "PUBLIC_ROUTE_EXAMPLE_ONLY_NOT_ACTIVE_LISTING_CLAIM",
-      "expected_response_format": "text/html",
-      "evidence_pointer": {
-        "observation_receipt_path": "yolla-panel-v1/a0-successor-control/authorities/naver-fin-land/CONCRETE_SOURCE_TARGET_OBSERVATION_RECEIPT_V1.json",
-        "observation_receipt_commit": "4f1066153b07b4faf9aa4fac8342936203fd0680",
-        "observation_receipt_blob": "094d991647f8fbf1732dab6370490499f0483c07",
-        "evidence_id": "EVIDENCE-OFFICIAL-ARTICLE-002"
-      },
-      "transport_rebinding": {
-        "fixture_resource_type": "XHR",
-        "actual_public_route_type": "DOCUMENT",
-        "unobserved_xhr_endpoint_claimed": false
-      },
-      "route_binding_decision": "READY_PUBLIC_DOCUMENT_ROUTE",
-      "capture_eligible_after_rebind_and_new_authorization": true
-    },
-    {
-      "profile_id": "EP-004",
-      "semantic_role": "LIST_SURFACE_PUBLIC_MAP_STATE",
-      "origin": "https://fin.land.naver.com",
-      "route_template": "/map",
-      "absolute_route_template": "https://fin.land.naver.com/map",
-      "method": "GET",
-      "representative_request_value": {
-        "query": {
+      {
+        "profile_id": "EP-004",
+        "semantic_role": "LIST_SURFACE_PUBLIC_MAP_STATE",
+        "origin": "https://fin.land.naver.com",
+        "route_template": "/map",
+        "method": "GET",
+        "representative_request_value": {
           "layer": "NobwRAlgJmBcYAsD2BbApmANGAzmghgE4DGCACkfijnCAL50C6QA",
           "center": "3zhc4G-2ALg18",
           "zoom": "15",
           "tradeTypes": "A1-B1-B2-B3",
           "realEstateTypes": "A01-A04-B01-A05-A06-A07-C02-A02-B02-C01-C03-C04-F01-D05-D02-E03-D01-E04-E02-D03-D04-E01-Z00"
-        }
+        },
+        "expected_response_format": "text/html",
+        "evidence_id": "EVIDENCE-USER-TARGET-URL-001",
+        "pagination": {
+          "page_observed": false,
+          "size_observed": false,
+          "automated_pagination_authorized": false
+        },
+        "fixture_transport_superseded": "XHR_JSON_TO_PUBLIC_DOCUMENT_GET",
+        "decision": "READY_PUBLIC_DOCUMENT_ROUTE"
       },
-      "expected_response_format": "text/html",
-      "pagination_authority": {
-        "page_parameter_observed": false,
-        "size_parameter_observed": false,
-        "automated_pagination_authorized": false,
-        "rule": "DO_NOT_INVENT_PAGE_OR_SIZE_FROM_FIXTURE"
-      },
-      "evidence_pointer": {
-        "observation_receipt_path": "yolla-panel-v1/a0-successor-control/authorities/naver-fin-land/CONCRETE_SOURCE_TARGET_OBSERVATION_RECEIPT_V1.json",
-        "observation_receipt_commit": "4f1066153b07b4faf9aa4fac8342936203fd0680",
-        "observation_receipt_blob": "094d991647f8fbf1732dab6370490499f0483c07",
-        "evidence_id": "EVIDENCE-USER-TARGET-URL-001"
-      },
-      "transport_rebinding": {
-        "fixture_resource_type": "XHR",
-        "actual_public_route_type": "DOCUMENT",
-        "unobserved_json_endpoint_claimed": false
-      },
-      "route_binding_decision": "READY_PUBLIC_DOCUMENT_ROUTE",
-      "capture_eligible_after_rebind_and_new_authorization": true
-    },
-    {
-      "profile_id": "EP-005",
-      "semantic_role": "REGION_DISCOVERY_PUBLIC_MAP_STATE",
-      "origin": "https://fin.land.naver.com",
-      "route_template": "/map",
-      "absolute_route_template": "https://fin.land.naver.com/map",
-      "method": "GET",
-      "representative_request_value": {
-        "query": {
+      {
+        "profile_id": "EP-005",
+        "semantic_role": "REGION_DISCOVERY_PUBLIC_MAP_STATE",
+        "origin": "https://fin.land.naver.com",
+        "route_template": "/map",
+        "method": "GET",
+        "representative_request_value": {
           "center": "3zhc4G-2ALg18",
           "zoom": "15",
           "layer": "NobwRAlgJmBcYAsD2BbApmANGAzmghgE4DGCACkfijnCAL50C6QA"
-        }
+        },
+        "expected_response_format": "text/html",
+        "evidence_id": "EVIDENCE-USER-TARGET-URL-001",
+        "unobserved_region_api_claimed": false,
+        "decision": "READY_PUBLIC_DOCUMENT_ROUTE"
       },
-      "expected_response_format": "text/html",
-      "evidence_pointer": {
-        "observation_receipt_path": "yolla-panel-v1/a0-successor-control/authorities/naver-fin-land/CONCRETE_SOURCE_TARGET_OBSERVATION_RECEIPT_V1.json",
-        "observation_receipt_commit": "4f1066153b07b4faf9aa4fac8342936203fd0680",
-        "observation_receipt_blob": "094d991647f8fbf1732dab6370490499f0483c07",
-        "evidence_id": "EVIDENCE-USER-TARGET-URL-001"
-      },
-      "transport_rebinding": {
-        "fixture_parameter_parent_observed": false,
-        "actual_public_state_parameters": [
-          "center",
-          "zoom",
-          "layer"
-        ],
-        "unobserved_region_api_claimed": false
-      },
-      "route_binding_decision": "READY_PUBLIC_DOCUMENT_ROUTE",
-      "capture_eligible_after_rebind_and_new_authorization": true
-    },
-    {
-      "profile_id": "EP-010",
-      "semantic_role": "FILTER_PUBLIC_MAP_STATE",
-      "origin": "https://fin.land.naver.com",
-      "route_template": "/map",
-      "absolute_route_template": "https://fin.land.naver.com/map",
-      "method": "GET",
-      "representative_request_value": {
-        "query": {
+      {
+        "profile_id": "EP-010",
+        "semantic_role": "FILTER_PUBLIC_MAP_STATE",
+        "origin": "https://fin.land.naver.com",
+        "route_template": "/map",
+        "method": "GET",
+        "representative_request_value": {
           "tradeTypes": "A1-B1-B2-B3",
           "realEstateTypes": "A01-A04-B01-A05-A06-A07-C02-A02-B02-C01-C03-C04-F01-D05-D02-E03-D01-E04-E02-D03-D04-E01-Z00"
-        }
+        },
+        "expected_response_format": "text/html",
+        "evidence_id": "EVIDENCE-USER-TARGET-URL-001",
+        "fixture_transport_superseded": "POST_TO_PUBLIC_DOCUMENT_GET",
+        "decision": "READY_PUBLIC_DOCUMENT_ROUTE"
       },
-      "expected_response_format": "text/html",
-      "evidence_pointer": {
-        "observation_receipt_path": "yolla-panel-v1/a0-successor-control/authorities/naver-fin-land/CONCRETE_SOURCE_TARGET_OBSERVATION_RECEIPT_V1.json",
-        "observation_receipt_commit": "4f1066153b07b4faf9aa4fac8342936203fd0680",
-        "observation_receipt_blob": "094d991647f8fbf1732dab6370490499f0483c07",
-        "evidence_id": "EVIDENCE-USER-TARGET-URL-001"
+      {
+        "profile_id": "EP-011",
+        "semantic_role": "AUTH_SESSION",
+        "decision": "EXCLUDED_NO_CREDENTIAL_REFERENCE",
+        "credential_reference": null,
+        "origin": null,
+        "route_template": null,
+        "method": null
       },
-      "transport_rebinding": {
-        "fixture_method": "POST",
-        "actual_public_method": "GET",
-        "unobserved_post_body_claimed": false
-      },
-      "route_binding_decision": "READY_PUBLIC_DOCUMENT_ROUTE",
-      "capture_eligible_after_rebind_and_new_authorization": true
-    },
-    {
-      "profile_id": "EP-011",
-      "semantic_role": "AUTH_SESSION",
-      "decision": "EXCLUDED_NO_CREDENTIAL_REFERENCE",
-      "credential_reference": null,
-      "origin": null,
-      "route_template": null,
-      "method": null,
-      "capture_eligible_after_rebind_and_new_authorization": false
-    },
-    {
-      "profile_id": "EP-012",
-      "semantic_role": "PUBLIC_SEARCH_ENTRY_DOCUMENT",
-      "origin": "https://fin.land.naver.com",
-      "route_template": "/home",
-      "absolute_route_template": "https://fin.land.naver.com/home",
-      "method": "GET",
-      "representative_request_value": {
-        "path": "/home",
-        "public_ui_entry": "단지·지역 검색"
-      },
-      "expected_response_format": "text/html",
-      "evidence_pointer": {
-        "observation_receipt_path": "yolla-panel-v1/a0-successor-control/authorities/naver-fin-land/CONCRETE_SOURCE_TARGET_OBSERVATION_RECEIPT_V1.json",
-        "observation_receipt_commit": "4f1066153b07b4faf9aa4fac8342936203fd0680",
-        "observation_receipt_blob": "094d991647f8fbf1732dab6370490499f0483c07",
-        "evidence_id": "EVIDENCE-OFFICIAL-HOME-001"
-      },
-      "transport_rebinding": {
-        "fixture_method": "POST",
-        "fixture_resource_type": "GRAPHQL",
-        "actual_public_method": "GET",
-        "actual_public_route_type": "DOCUMENT",
+      {
+        "profile_id": "EP-012",
+        "semantic_role": "PUBLIC_SEARCH_DOCUMENT",
+        "origin": "https://fin.land.naver.com",
+        "route_template": "/search",
+        "method": "GET",
+        "representative_request_value": {
+          "path": "/search",
+          "public_search_input": "단지, 지역, 지하철, 초등학교 검색"
+        },
+        "expected_response_format": "text/html",
+        "evidence_id": "EVIDENCE-OFFICIAL-SEARCH-001",
+        "fixture_transport_superseded": "GRAPHQL_POST_TO_PUBLIC_DOCUMENT_GET",
         "operationName_claimed": false,
-        "variables_keyword_claimed": false
-      },
-      "route_binding_decision": "READY_PUBLIC_DOCUMENT_ROUTE",
-      "capture_eligible_after_rebind_and_new_authorization": true
-    }
-  ],
+        "variables_keyword_claimed": false,
+        "decision": "READY_PUBLIC_DOCUMENT_ROUTE"
+      }
+    ]
+  },
   "rebind_requirements": [
-    "A5_REPLACE_FIXTURE_INVALID_ORIGINS_WITH_THIS_PUBLIC_ROUTE_AUTHORITY",
-    "A5_REBUILD_REQUEST_RESPONSE_EXPECTATIONS_FOR_TEXT_HTML_PUBLIC_DOCUMENTS",
+    "A5_REPLACE_FIXTURE_INVALID_ORIGINS_WITH_PUBLIC_ROUTE_AUTHORITY",
+    "A5_REBUILD_EXPECTATIONS_FOR_TEXT_HTML_PUBLIC_DOCUMENTS",
     "A3_REBUILD_OPERATOR_PACKAGE_WITHOUT_EXECUTION",
     "A7_INDEPENDENT_GOVERNANCE_REAUDIT",
     "NEW_EXPLICIT_CAPTURE_AUTHORIZATION_REQUIRED_BEFORE_ANY_REQUEST"
