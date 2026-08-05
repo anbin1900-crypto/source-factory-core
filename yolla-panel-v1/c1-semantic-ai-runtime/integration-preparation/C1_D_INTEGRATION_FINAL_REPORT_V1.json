@@ -1,0 +1,93 @@
+{
+  "schema_version": "C1_D_INTEGRATION_FINAL_REPORT_V1",
+  "report_id": "C1-D-INTEGRATION-FINAL-REPORT-20260806-001",
+  "published_at_kst": "2026-08-06T05:18:00+09:00",
+  "role": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "task_id": "C1_D_INTEGRATION_RESULT_INTEGRATION",
+  "directive_comment_id": 5196655145,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "current_remote_head_before_final_report": "b0536d8b6f74806195be1a757061b4fee3b5ef80",
+  "inputs": {
+    "worker_result_matrix": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D_INTEGRATION_WORKER_RESULT_MATRIX_V1.json",
+      "commit": "782c312e2910473de1a871444a3c06842be42ae6",
+      "blob": "c99c7d5d7fa73887f25dabb5d6bac4b93660a04b"
+    },
+    "contract_set": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D_INTEGRATION_CONTRACT_SET_V1.json",
+      "commit": "7276e29ede7a605c138dc55454d384518084a40d",
+      "blob": "8e6deaacb2350605faf1c0dc5e4214274c7da8b6"
+    },
+    "wait_gate": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D_INTEGRATION_WAIT_GATE_V1.json",
+      "commit": "b0536d8b6f74806195be1a757061b4fee3b5ef80",
+      "blob": "11db6a7dd2b699e7671a1657f8d7b005feb3e8db"
+    }
+  },
+  "worker_result_summary": {
+    "gate": "PASS_OR_EXPECTED_BLOCKER_5_OF_5",
+    "C-2": "D_FRAGMENT_LOCATOR_CONTRACT_READY",
+    "C-3": "PR188_REQUIRED_PATH_CLOSURE_MATRIX_V2_READY_EXTERNAL_DEPENDENCIES",
+    "C-4": "KNOWLEDGE_CANDIDATE_BUNDLE_V2_CONTRACT_READY_ZERO_CANDIDATES",
+    "C-5": "D_RECEIPT_KNOWLEDGE_RELEASE_CONSUMER_READY_BLOCKED_FAIL_CLOSED",
+    "C-6": "D_DUAL_RECEIPT_E2E_VALIDATOR_READY_ACTUAL_BINDING_BLOCKED"
+  },
+  "validation": {
+    "aggregate_unit_tests": "PASS_163_OF_163",
+    "c5_scenario_matrix": "PASS_20_OF_20",
+    "c6_fixture_matrix": "PASS_14_OF_14",
+    "c002_to_c016_mapping": "PASS_15_OF_15",
+    "required_path_accounting": "PASS_22_OF_22",
+    "candidate_count": 0,
+    "assertion_count": 0,
+    "evidence_count": 0,
+    "rejected_record_count": 15,
+    "rejected_record_preservation": "PASS_15_OF_15",
+    "semantic_rerun_count": 0,
+    "silent_drop_count": 0,
+    "fabricated_candidate_count": 0,
+    "assertion_without_evidence_count": 0,
+    "virtual_d_acceptance_count": 0
+  },
+  "d_authority_state": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "worker_execution_head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+    "current_head_observed": "fdba1b17588016f8754d8c335c01b65deb093708",
+    "actual_source_document_receipt": false,
+    "actual_knowledge_receipt": false,
+    "knowledge_release_v1": false,
+    "d_acceptance_claimed": false
+  },
+  "runtime_state": {
+    "contract_set_ready": true,
+    "candidate_binding": false,
+    "actual_e2e_binding": false,
+    "runtime_activation": false,
+    "runtime_activation_state": "BLOCKED_FAIL_CLOSED",
+    "semantic_duplicate_reexecution": false,
+    "incremental_revalidation_only": true
+  },
+  "wait_for": [
+    "B_CONTENT_BYTE_DELTA",
+    "D_AUTHORITY_FRAGMENT_CONTRACT_OR_CANONICAL_FRAGMENT_BINDING_DELTA",
+    "D_AUTHORITY_B001_SOURCE_KEY_TO_SOURCE_ID_ADDENDUM_DELTA",
+    "D_AUTHORITY_B014_SOURCE_SHA256_RECORD_HASH_EQUIVALENCE_ADDENDUM_DELTA",
+    "D_ACTUAL_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_DELTA",
+    "D_ACTUAL_KNOWLEDGE_ACCEPTANCE_RECEIPT_DELTA",
+    "D_KNOWLEDGE_RELEASE_V1_DELTA"
+  ],
+  "next_action": "WAIT_B_CONTENT_OR_D_AUTHORITY_RECEIPT_RELEASE_DELTA_THEN_RUN_INCREMENTAL_BINDING_ONLY",
+  "decision": "READY_WAITING_B_OR_D_DELTA",
+  "terminal": "C1_D_INTEGRATION_CONTRACT_SET_READY_WAITING_B_OR_D_DELTA_OR_EXACT_BLOCKER",
+  "terminal_result": "C1_D_INTEGRATION_CONTRACT_SET_READY_WAITING_B_OR_D_DELTA",
+  "actual_d_handoff_performed": false,
+  "d_canonical_schema_mutation": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
