@@ -1,0 +1,97 @@
+{
+  "schema_version": "LATEST_C5_D_RELEASE_QUERY_CITATION_POINTER_V2",
+  "pointer_id": "LATEST-C5-D-RELEASE-QUERY-CITATION-CONSUMER-V2",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "C5_D_RELEASE_QUERY_CITATION_CONSUMER_V2",
+  "directive_comment_id": 5196037750,
+  "start_comment_id": 5196166187,
+  "worker": "C-5_DOMAIN_AI_SEAT_AND_TOOL_RUNTIME",
+  "authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "control_pr": 20,
+    "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+    "observed_shared_head": "67fb5888ef408998ca70f06621b716ed87ad09a8",
+    "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c5-domain-ai-seat-runtime/**",
+    "pointer_commit_status": "THIS_COMMIT"
+  },
+  "d1_binding": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+    "receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
+    "fixture_acceptance_pointer_blob": "3a912e745954a318b25ba4987c5a4ed9bfe26271",
+    "version_policy_blob": "318ba9eed622d7f9a0164662eb85c8bbd20d06f0",
+    "query_contract_blob": "536e0cd95df6613fcf6306413870b09658d76d35",
+    "citation_contract_blob": "615a3b25781851cc2502ceee6f5f6a356eea0675",
+    "evidence_contract_blob": "615a3b25781851cc2502ceee6f5f6a356eea0675",
+    "static_release_candidate_blob": "d3d10f20dd9be4a3a97ade6079e445206e228670",
+    "actual_acceptance_receipt_issued": false,
+    "actual_package_received": false,
+    "knowledge_release_v1_published": false
+  },
+  "objects": {
+    "contract": {
+      "path": "D_RELEASE_QUERY_CITATION_CONSUMER_CONTRACT_V2.json",
+      "commit": "63fbf1fbf9e9afcb95e22b2e084b95a3f5694fd8",
+      "blob": "0c617b519b3202cd4f9d6e37adf200b19c7c2516"
+    },
+    "fixture": {
+      "path": "D_RELEASE_QUERY_CITATION_ACTIVATION_FIXTURE_V2.json",
+      "commit": "f16fa2c7b90595e896da49ffdb18ddf06dfb5c95",
+      "blob": "e1c01ec4f61f73409205af91add8fde1bff46bb4"
+    },
+    "decision": {
+      "path": "D_RELEASE_RUNTIME_ACTIVATION_DECISION_V2.json",
+      "commit": "a23e7ab87a8e713d894a612aa09f69a2d11c61de",
+      "blob": "6285e6ff03a41b359f9622a49ff7811527e87b1c"
+    },
+    "validator": {
+      "path": "d_release_query_citation_consumer_v2.py",
+      "commit": "4a2897499d5686cd4531189c2f0939d8fd72a53d",
+      "blob": "279d9540c63ce70640e2d10297ee8f723dcf92bc"
+    },
+    "test_source": {
+      "path": "test_d_release_query_citation_consumer_v2.py",
+      "commit": "6653f65129e54394ed48ed557cceba55e963ea59",
+      "blob": "0d29b01797643d301f44943c0697ce3379904822"
+    },
+    "test_output": {
+      "path": "c5-d-release-query-citation-test-output.txt",
+      "commit": "390ac4670e46384808f5cb75a7b236ae72fa8d3e",
+      "blob": "81b164d3b836d3cd8456d2a61599802dd5e4a783"
+    },
+    "test_result": {
+      "path": "C5_D_RELEASE_QUERY_CITATION_TEST_RESULT_V2.json",
+      "commit": "28c92c3b554ffdc6aaa6e04c19d7b270665ff9e9",
+      "blob": "b658d4479335ebb6420c926f07b9a7c31f259808"
+    },
+    "final_report": {
+      "path": "C5_D_RELEASE_QUERY_CITATION_FINAL_REPORT_V2.json",
+      "commit": "73c9608285861ca597404d20bdcb47047fb72fd6",
+      "blob": "0ebc8e54298a7192eba1657ca61be81041548d2b"
+    }
+  },
+  "validation": {
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_32_OF_32",
+    "scenario_matrix": "PASS_20_OF_20",
+    "remote_readback": "PASS_8_OF_8_BEFORE_POINTER",
+    "silent_activation_count": 0,
+    "fixture_as_authority": false,
+    "actual_runtime_activation": false
+  },
+  "result": {
+    "consumer_contract_status": "READY",
+    "activation_status": "BLOCKED_FAIL_CLOSED",
+    "first_blocker": "D1_ACTUAL_ACCEPTANCE_RECEIPT_NOT_PUBLISHED",
+    "additional_blockers": ["D1_KNOWLEDGE_RELEASE_V1_NOT_PUBLISHED"],
+    "next_gate": "D1_PUBLISH_ACTUAL_ACCEPTANCE_RECEIPT_AND_KNOWLEDGE_RELEASE_V1_WITH_EXACT_VERSION_QUERY_CITATION_EVIDENCE_REFS"
+  },
+  "terminal": "C5_D_RELEASE_QUERY_CITATION_CONSUMER_READY_OR_EXACT_BLOCKER",
+  "terminal_decision": "CONTRACT_READY_EXACT_BLOCKER_D1_ACTUAL_RECEIPT_AND_KNOWLEDGE_RELEASE_NOT_PUBLISHED",
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at_kst": "2026-08-06T04:32:00+09:00"
+}
