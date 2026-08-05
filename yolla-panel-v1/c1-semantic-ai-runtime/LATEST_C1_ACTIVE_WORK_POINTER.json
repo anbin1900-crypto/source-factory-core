@@ -1,90 +1,114 @@
 {
-  "schema_version": "LATEST_C1_ACTIVE_WORK_POINTER_V13",
-  "pointer_id": "LATEST-C1-D-INTEGRATION-RESULT-20260806-001",
-  "registered_at_kst": "2026-08-06T05:18:00+09:00",
+  "schema_version": "LATEST_C1_ACTIVE_WORK_POINTER_V14",
+  "pointer_id": "LATEST-C1-D1-AUTHORITY-DELTA-BINDING-20260806-001",
+  "registered_at_kst": "2026-08-06T08:23:00+09:00",
   "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 20,
   "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
-  "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
-  "task_id": "C1_D_INTEGRATION_RESULT_INTEGRATION",
-  "directive_comment_id": 5196655145,
-  "previous_pointer_blob": "d354418b95034214745a7b4fa6a01c9cebf5d76d",
-  "commander_artifacts": {
-    "C1_D_INTEGRATION_CONTRACT_SET_V1": {
-      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D_INTEGRATION_CONTRACT_SET_V1.json",
-      "commit": "7276e29ede7a605c138dc55454d384518084a40d",
-      "blob": "8e6deaacb2350605faf1c0dc5e4214274c7da8b6",
+  "common_directive_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V2-20260806-001",
+  "task_id": "C1_D1_AUTHORITY_DELTA_BINDING",
+  "directive_comment_id": 5198233686,
+  "previous_pointer_blob": "09e28050266480e97a64d907f6bf961fd47e96c7",
+  "entry_event": "D1_AUTHORITY_CONTENT_DELTA",
+  "entry_event_satisfied": true,
+  "semantic_rerun_authorized": false,
+  "control_authorities": {
+    "common_directive": {
+      "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_NEXT_EVENT_BATCH_V2.json",
+      "commit": "6c4f3a06dc158c2c60421f41f346b14bd37fd51b",
+      "blob": "0f18e0e999ca1b65be0999e329000deff1831645",
       "remote_readback": "PASS"
     },
-    "C1_D_INTEGRATION_WORKER_RESULT_MATRIX_V1": {
-      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D_INTEGRATION_WORKER_RESULT_MATRIX_V1.json",
-      "commit": "782c312e2910473de1a871444a3c06842be42ae6",
-      "blob": "c99c7d5d7fa73887f25dabb5d6bac4b93660a04b",
-      "remote_readback": "PASS"
-    },
-    "C1_D_INTEGRATION_WAIT_GATE_V1": {
-      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D_INTEGRATION_WAIT_GATE_V1.json",
-      "commit": "b0536d8b6f74806195be1a757061b4fee3b5ef80",
-      "blob": "11db6a7dd2b699e7671a1657f8d7b005feb3e8db",
-      "remote_readback": "PASS"
-    },
-    "C1_D_INTEGRATION_FINAL_REPORT_V1": {
-      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D_INTEGRATION_FINAL_REPORT_V1.json",
-      "commit": "3501a792b795413b105a8405f57435a159b62a56",
-      "blob": "c1e7ebf75cb3251b9e898b6518af49a0e9ad22e4",
-      "remote_readback": "PASS"
-    },
-    "C1_TO_D1_HANDOFF_POINTER": {
-      "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_TO_D1_HANDOFF_POINTER.json",
-      "commit": "4820b3b2a0d11293ad292f4179c4ac40318cf117",
-      "blob": "6c7c9ea43eeb77dfd342940cf4ecdef22f6284c3",
+    "latest_v2_control_pointer": {
+      "path": "yolla-panel-v1/a0-successor-control/LATEST_V2_ABCD_D_GROUP_INTEGRATION_POINTER.json",
+      "commit": "47b5c6aee2659a8b69ac315f0ae713f4301097dc",
+      "blob": "c5bee6300675e1c66a3b1fead364851e45a277e4",
       "remote_readback": "PASS"
     }
   },
-  "worker_result_gate": {
-    "required": 5,
-    "accepted": 5,
-    "status": "PASS_OR_EXPECTED_BLOCKER_5_OF_5",
-    "C-2": {"comment": 5196253050, "pointer_blob": "61d0255327a2f507f50d0eee2c9b2d5814054748", "tests": "PASS_23_OF_23"},
-    "C-3": {"comment": 5196315738, "pointer_blob": "62516877339ec3b9ecab014bd4d6f8617a020c31", "path_accounting": "PASS_22_OF_22", "tests": "PASS_40_OF_40"},
-    "C-4": {"comment": 5196373015, "pointer_blob": "a4229ecdb70876117141441a2d8e67895157471c", "c002_to_c016": "PASS_15_OF_15", "tests": "PASS_42_OF_42"},
-    "C-5": {"comment": 5196275860, "pointer_blob": "750c315749ae03f9b7ef76f85b7100a1edee3d92", "contract_ready": true, "activation_blocked": true},
-    "C-6": {"comment": 5196361268, "pointer_blob": "91331b918a3d0be0d96f53a3861d148c604194ab", "tests": "PASS_26_OF_26", "actual_d_acceptance": false}
+  "commander_artifacts": {
+    "C1_D1_AUTHORITY_DELTA_BINDING_V1": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D1_AUTHORITY_DELTA_BINDING_V1.json",
+      "commit": "61b225c609dbc39579ba830697564ca1a41cb4a9",
+      "blob": "cdc5760ddbfc2cbdfe12bea69b1978393662972a",
+      "remote_readback": "PASS"
+    },
+    "C1_D1_MAPPING_ADDENDUM_CONSUMPTION_V1": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D1_MAPPING_ADDENDUM_CONSUMPTION_V1.json",
+      "commit": "c9fcd117c2e7d46c11379f2c0920cef3814a6478",
+      "blob": "e9018446393e386ce7e6c731538a14652cd8c307",
+      "remote_readback": "PASS"
+    },
+    "C1_D1_RECEIPT_PROCEDURE_BINDING_V1": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D1_RECEIPT_PROCEDURE_BINDING_V1.json",
+      "commit": "408e24efb8ea2353244df4774e9c5cb2e0900c5d",
+      "blob": "d6ff4669c474e64f9604a52a6f4ca3f01c9cbe1e",
+      "remote_readback": "PASS"
+    },
+    "C1_D1_AUTHORITY_DELTA_FINAL_REPORT_V1": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D1_AUTHORITY_DELTA_FINAL_REPORT_V1.json",
+      "commit": "45e8e5f8bc634e32a8e671eb14ab3cf33f265491",
+      "blob": "daba60d154c089fde805960a5206cc1b22931afd",
+      "remote_readback": "PASS"
+    }
+  },
+  "d1_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "control_pointer_blob": "d65285f969294c19c0d9e2d1bbc2adf8165f8819",
+    "source_authority_type": "OFFICIAL_SECONDARY",
+    "source_authority_decision_blob": "6bf779b937bf2bea761780315b22692ccca07ad9",
+    "mapping_addendum_blob": "118d6403dd5db47afafb982991f8fd9a51f35f28",
+    "mapping_version": "1.1.0",
+    "b_receipt_procedure_blob": "2a8b7c1b04924728cce14dc21c225ad09598905f",
+    "c_receipt_procedure_blob": "5dc797523718f53bab67f48ed65029061e5ee45a",
+    "tree_binding_manifest_blob": "dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd"
+  },
+  "mapping_delta": {
+    "B001": "RESOLVED",
+    "B013": "RESOLVED",
+    "B014": "RESOLVED",
+    "status": "PASS_3_OF_3",
+    "c3_request_consumed": true
+  },
+  "receipt_procedure_binding": {
+    "c5_consumer_pointer_blob": "750c315749ae03f9b7ef76f85b7100a1edee3d92",
+    "c6_validator_pointer_blob": "91331b918a3d0be0d96f53a3861d148c604194ab",
+    "b_and_c_separate_transactions": true,
+    "b_and_c_separate_receipts": true,
+    "actual_b_receipt_present": false,
+    "actual_c_receipt_present": false,
+    "knowledge_release_present": false
+  },
+  "frozen_semantic_bytes": {
+    "C2_FRAGMENT_CONTRACT_BLOB": "4e7a6569c700864f016d050f5ced7c514511b390",
+    "C4_CANDIDATE_BUNDLE_BLOB": "8c5ecfb8114330ca86ce9d0b50a971fd5b99037f",
+    "C2_FRAGMENT_BYTES_CHANGED": false,
+    "C4_CANDIDATE_BUNDLE_BYTES_CHANGED": false
   },
   "exact_state": {
     "candidate_count": 0,
     "assertion_count": 0,
     "evidence_count": 0,
     "rejected_record_count": 15,
-    "d1_actual_source_document_receipt": false,
-    "d1_actual_knowledge_receipt": false,
-    "d1_knowledge_release": false,
     "semantic_rerun_count": 0,
     "runtime_activation": false,
-    "runtime_activation_state": "BLOCKED_FAIL_CLOSED"
+    "runtime_activation_state": "BLOCKED_FAIL_CLOSED",
+    "d1_actual_source_document_receipt": false,
+    "d1_actual_knowledge_receipt": false,
+    "d1_knowledge_release": false
   },
-  "authority_state": {
-    "directive_remote_head_baseline": "156402dfef15a5c4fb4bafca0e70e77f088ccd10",
-    "worker_execution_d_head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
-    "current_d_pr188_head_observed": "fdba1b17588016f8754d8c335c01b65deb093708",
-    "b_content_delta": false
-  },
-  "integration_state": {
-    "contract_set_ready": true,
-    "semantic_duplicate_reexecution": false,
-    "incremental_revalidation_only": true,
-    "status": "D_INTEGRATION_CONTRACT_SET_READY_WAITING_B_OR_D_DELTA"
-  },
-  "current_gate": "B_CONTENT_OR_D_AUTHORITY_RECEIPT_RELEASE_DELTA",
-  "next_action": "WAIT_B_CONTENT_OR_D_AUTHORITY_RECEIPT_RELEASE_DELTA_THEN_RUN_INCREMENTAL_BINDING_ONLY",
-  "terminal": "C1_D_INTEGRATION_CONTRACT_SET_READY_WAITING_B_OR_D_DELTA_OR_EXACT_BLOCKER",
-  "terminal_decision": "READY_WAITING_B_OR_D_DELTA",
-  "status": "C1_D_INTEGRATION_CONTRACT_SET_READY_WAITING_B_OR_D_DELTA",
-  "actual_d_handoff_performed": false,
+  "current_gate": "B_CONTENT_OR_SEPARATE_ACTUAL_D_RECEIPTS",
+  "next_action": "WAIT_B_CONTENT_OR_SEPARATE_ACTUAL_D_RECEIPTS_THEN_RUN_INCREMENTAL_BINDING_ONLY",
+  "terminal": "C1_D1_AUTHORITY_DELTA_BOUND_WAITING_B_CONTENT_OR_ACTUAL_RECEIPTS_OR_EXACT_BLOCKER",
+  "terminal_decision": "C1_D1_AUTHORITY_DELTA_BOUND_WAITING_B_CONTENT_OR_ACTUAL_RECEIPTS",
+  "status": "C1_D1_AUTHORITY_DELTA_BOUND_WAITING_B_CONTENT_OR_ACTUAL_RECEIPTS",
   "d_acceptance_claimed": false,
   "d_canonical_db_write": false,
   "production": false,
   "ready": false,
-  "merge": false
+  "merge": false,
+  "self_merge": false
 }
