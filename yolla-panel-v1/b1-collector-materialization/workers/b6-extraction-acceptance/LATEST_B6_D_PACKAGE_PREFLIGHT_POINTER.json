@@ -1,0 +1,30 @@
+{
+  "schema_version":"LATEST_B6_D_PACKAGE_PREFLIGHT_POINTER_V1",
+  "updated_at_kst":"2026-08-06T04:28:00+09:00",
+  "batch_id":"V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id":"B6_D_PACKAGE_PREFLIGHT",
+  "directive_comment_id":5196028913,
+  "repository":"anbin1900-crypto/source-factory-core",
+  "worker_pr":42,
+  "branch":"worker/b6-extraction-acceptance-c1-handoff-v1",
+  "objects":{
+    "required_path_matrix":{"path":"yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_D_REQUIRED_PATH_MATRIX_V1.json","blob":"acf13ac572ec64327512b13bd086de110ed01044","result":"BLOCKED_0_OF_18"},
+    "preflight":{"path":"yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_D_PACKAGE_PREFLIGHT_V1.json","blob":"d4a2f038313f74c8259f95cc1f9160d3e3adbbed","decision":"EXACT_BLOCKER"},
+    "handoff_candidate":{"path":"yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B1_TO_D1_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_V1.json","blob":"adf81832d1981304d07a8ef5cb0e287a91ab2a1a","classification":"PREHANDOFF_EXACT_BLOCKER","promotable":false},
+    "test_results":{"path":"yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_D_HANDOFF_PREFLIGHT_TEST_RESULTS_V1.json","blob":"b21abbc474bfccff74dcd896b897e8ab27b8dcc9","result":"PASS_37_OF_37"},
+    "accepted_b3":{"head":"86d789a136ce5070d79eab7e6d0205eb23da11d7","pointer_blob":"01cfe1644b828687c4dce4ceab32345c728283e7","final_report_blob":"687aeab229074e2935a126582f80c047841391df","test_results_blob":"eab65a61e7b6791880daeab8a4ad8c067abfa2a8","remote_readback_blob":"0cd956a4fcbf6a896de596bebc7bc8fc5b316f00"}
+  },
+  "worker_inputs":{"accepted":"1_OF_4","accepted_workers":["B-3"],"waiting_workers":["B-2","B-4","B-5"]},
+  "d_authority":{"repository":"anbin1900-crypto/yolla-real-estate-data-engine","pr":188,"head":"327547fd74f615a4c709c6da8473b1bf63fd5d6a","pointer_blob":"95e6983a79b80867dd7de196a21e1aefc4c3dcb1","required_paths":"0_OF_18","contract_objects":"4_OF_4_EXISTS_0_OF_4_TREE_BOUND"},
+  "prior_fixture_acceptance_preserved":true,
+  "terminal":"B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_READY_OR_EXACT_BLOCKER",
+  "terminal_result":"B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_EXACT_BLOCKER",
+  "advisory":true,
+  "blocking_mid_process_gate":false,
+  "d_acceptance_claim":false,
+  "d_canonical_db_write":false,
+  "production":false,
+  "ready":false,
+  "merge":false,
+  "final_head_resolution":"COMMIT_CONTAINING_THIS_POINTER"
+}
