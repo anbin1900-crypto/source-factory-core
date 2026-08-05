@@ -1,0 +1,88 @@
+{
+  "schema_version": "C1_D1_RECEIPT_PROCEDURE_BINDING_V1",
+  "binding_id": "C1-D1-RECEIPT-PROCEDURE-BINDING-20260806-001",
+  "published_at_kst": "2026-08-06T08:23:00+09:00",
+  "role": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "common_directive_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V2-20260806-001",
+  "task_id": "C1_D1_AUTHORITY_DELTA_BINDING",
+  "task_directive_comment_id": 5198233686,
+  "d1_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "control_pointer_blob": "d65285f969294c19c0d9e2d1bbc2adf8165f8819"
+  },
+  "procedures": {
+    "B_SOURCE_DOCUMENT": {
+      "path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/D1_B_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_PROCEDURE_V1.json",
+      "blob": "2a8b7c1b04924728cce14dc21c225ad09598905f",
+      "lane": "B_TO_D_SOURCE_DOCUMENT",
+      "receipt_authority": "D-1_ONLY",
+      "separate_from_c_transaction": true,
+      "separate_receipt_from_c": true,
+      "actual_package_received": false,
+      "authoritative_receipt_issued": false,
+      "remote_readback": "PASS"
+    },
+    "C_KNOWLEDGE_CANDIDATE": {
+      "path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/D1_C_KNOWLEDGE_CANDIDATE_ACCEPTANCE_RECEIPT_PROCEDURE_V1.json",
+      "blob": "5dc797523718f53bab67f48ed65029061e5ee45a",
+      "lane": "C_TO_D_KNOWLEDGE_CANDIDATE",
+      "receipt_authority": "D-1_ONLY",
+      "separate_from_b_transaction": true,
+      "separate_receipt_from_b": true,
+      "actual_package_received": false,
+      "authoritative_receipt_issued": false,
+      "knowledge_release_created": false,
+      "remote_readback": "PASS"
+    }
+  },
+  "c5_consumer_binding": {
+    "pointer_path": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c5-domain-ai-seat-runtime/LATEST_C5_D_RELEASE_QUERY_CITATION_POINTER.json",
+    "pointer_blob": "750c315749ae03f9b7ef76f85b7100a1edee3d92",
+    "consumer_contract_blob": "0c617b519b3202cd4f9d6e37adf200b19c7c2516",
+    "prior_activation_status": "BLOCKED_FAIL_CLOSED",
+    "bound_b_receipt_procedure_blob": "2a8b7c1b04924728cce14dc21c225ad09598905f",
+    "bound_c_receipt_procedure_blob": "5dc797523718f53bab67f48ed65029061e5ee45a",
+    "actual_receipt_present": false,
+    "knowledge_release_present": false,
+    "runtime_activation": false,
+    "result": "CONTRACT_POINTERS_BOUND_ACTIVATION_REMAINS_BLOCKED_FAIL_CLOSED"
+  },
+  "c6_validator_binding": {
+    "pointer_path": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c6-ai-quality-citation-e2e/LATEST_C6_D_DUAL_RECEIPT_POINTER.json",
+    "pointer_blob": "91331b918a3d0be0d96f53a3861d148c604194ab",
+    "dual_receipt_contract_blob": "e3f9bcbe2078c91a3bf3e2e6e8967b3a3c6eb237",
+    "dual_receipt_matrix_blob": "188cc40ae949200ffd5ede98fef4873fa1803224",
+    "bound_b_receipt_procedure_blob": "2a8b7c1b04924728cce14dc21c225ad09598905f",
+    "bound_c_receipt_procedure_blob": "5dc797523718f53bab67f48ed65029061e5ee45a",
+    "actual_b_receipt_present": false,
+    "actual_c_receipt_present": false,
+    "actual_e2e_binding_executed": false,
+    "result": "VALIDATOR_POINTERS_BOUND_WAITING_SEPARATE_ACTUAL_RECEIPTS"
+  },
+  "receipt_separation": {
+    "combined_receipt_allowed": false,
+    "separate_transactions": true,
+    "separate_receipts": true,
+    "d5_candidate_receipts_authoritative": false,
+    "d1_only_receipt_issuer": true
+  },
+  "preserved_state": {
+    "candidate_count": 0,
+    "assertion_count": 0,
+    "evidence_count": 0,
+    "rejected_record_count": 15,
+    "semantic_rerun_count": 0,
+    "runtime_activation": false,
+    "runtime_activation_state": "BLOCKED_FAIL_CLOSED"
+  },
+  "decision": "PASS_RECEIPT_PROCEDURES_BOUND_WAITING_ACTUAL_RECEIPTS",
+  "next_gate": "B_CONTENT_PACKAGE_OR_SEPARATE_D1_B_AND_C_ACTUAL_RECEIPTS",
+  "d_acceptance_claim": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
