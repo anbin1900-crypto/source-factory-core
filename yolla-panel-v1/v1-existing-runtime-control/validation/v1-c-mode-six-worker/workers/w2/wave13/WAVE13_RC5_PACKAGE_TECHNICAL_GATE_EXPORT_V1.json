@@ -1,0 +1,67 @@
+{
+  "schema": "C_MODE_RC5_PACKAGE_TECHNICAL_ACCEPTANCE_EXPORT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-013",
+  "registry_sequence": 13,
+  "command_id": "C6W-W13-W2-RC5-PACKAGE-TECHNICAL-ACCEPTANCE-GATE",
+  "role": "AUTOMATION-C-W2",
+  "directive_comment": 5196054976,
+  "continue_comment": 5196194041,
+  "result_key": "519605497600",
+  "target_version": "5.10.2.4.2-rc5",
+  "runtime_adapter": {
+    "path": "automation-c-v1/result_watcher/rc5_package_technical_acceptance_gate.cjs",
+    "commit": "e23eab909d0f649383e5903f46e48f1bedbe5faf"
+  },
+  "test": {
+    "path": "automation-c-v1/tests/test_rc5_package_technical_acceptance_gate.cjs",
+    "commit": "bcf2840940149e6a358a199c2f9c3113cc59054f",
+    "result": "PASS_45_OF_45"
+  },
+  "negative_fixture": {
+    "role": "AUTOMATION-C-W5",
+    "wave": "V1-C-MODE-6W-WAVE-012",
+    "result_comment": 5195686133,
+    "result_commit": "d21c152985fd98b010b4e2c95b20faad42789a6d",
+    "installer_path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w5/wave12/INSTALL_YOLLA_C_MODE_RC4.bat",
+    "installer_commit": "295bb5ae24163a34e9633945cec0db8b66875b72",
+    "installer_blob": "436e9f3677c815e7bf37d52b078282e2fcd808ab",
+    "worker_reported_outcome": "BLOCKED",
+    "reported": true,
+    "technically_accepted": false,
+    "installable_runtime": false,
+    "target_pc_accepted": false,
+    "rejection_reasons": [
+      "PACKAGE_DIRECTORY_MISSING",
+      "SELF_CONTAINED_PAYLOAD_MISSING",
+      "NETWORK_DEPENDENT_INSTALLER",
+      "ACTIVE_RUNTIME_ROOT_MISMATCH",
+      "FIXED_PROFILE_BINDING_MISSING",
+      "UI_PATH_OR_LOAD_ORDER_MISMATCH",
+      "REQUIRED_COMPONENT_NOT_LOADED_BY_SMOKE",
+      "ROLLBACK_PRESERVATION_NOT_VERIFIED"
+    ],
+    "evidence": {
+      "package_directory_committed": false,
+      "runtime_sources_distributed_across_commits": true,
+      "installer_assumes_relative_rc4_package": true,
+      "fixed_profile_binding_in_installer": false,
+      "ui_path_and_load_order_proved": false,
+      "smoke_required_component_membership_proved": false,
+      "rollback_preservation_receipt_present": false
+    }
+  },
+  "regression_contracts": {
+    "result_key_exact_match": true,
+    "pagination": true,
+    "retry_max": 5,
+    "restart_dedupe": true,
+    "duplicate_result_fail_closed": true,
+    "commander_result_comment_output": true,
+    "worker_pass_cannot_override_gate": true,
+    "early_manual_check_increments_missing_counter": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
