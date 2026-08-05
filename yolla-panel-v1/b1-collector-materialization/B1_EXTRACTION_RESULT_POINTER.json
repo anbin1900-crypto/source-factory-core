@@ -1,24 +1,72 @@
 {
-  "schema_version": "1.0.0",
-  "pointer_id": "B1-EXTRACTION-RESULT-POINTER-V1",
-  "updated_at_kst": "2026-08-04T04:44:00+09:00",
+  "schema_version": "B1_EXTRACTION_RESULT_POINTER_V2",
+  "pointer_id": "B1-EXTRACTION-RESULT-POINTER-V2",
+  "updated_at_kst": "2026-08-05T16:53:00+09:00",
   "control_pr": 19,
   "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
   "required_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
-  "status": "WAITING_B2_TO_B5_AND_B6_TERMINALS",
-  "worker_assignment_pointer": "yolla-panel-v1/b1-collector-materialization/B1_WORKER_ASSIGNMENT_POINTER.json",
-  "required_outputs": {
-    "RAW_ARTIFACT_MANIFEST_V1": null,
-    "SOURCE_RECORD_ENVELOPE_V1": null,
-    "NORMALIZED_DATASET_V1": null,
-    "EXTRACTION_RECEIPT_V1": null
+  "previous_pointer_blob": "3918f6d513a1abdf641fc86c0b91371720a9535e",
+  "reconciliation_report": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave7/B1_CURRENT_STATE_RECONCILIATION_V1.json",
+    "commit": "f7b0c07209412ea7376f6acd72961a7eec1e9567",
+    "blob": "a05ab6fb09579c248ae295db95da6d4463810678"
   },
-  "worker_terminals_received": 0,
-  "worker_terminals_required": 5,
-  "a2_verified_adapter_package_v1_published": false,
+  "status": "WORKER_TERMINALS_3_OF_5_B4_RAW_AUTHORITY_AVAILABLE_B5_B6_PENDING",
+  "required_outputs": {
+    "RAW_ARTIFACT_MANIFEST_V1": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V1.json",
+      "blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+      "authority": "B4_TERMINAL_PASS_PENDING_B6_ACCEPTANCE"
+    },
+    "SOURCE_RECORD_ENVELOPE_V1": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/SOURCE_RECORD_ENVELOPE_V1.json",
+      "blob": "0148a841344ce5a0df03e55df532871106dd7333",
+      "authority": "B4_TERMINAL_PASS_PENDING_B6_ACCEPTANCE"
+    },
+    "NORMALIZED_DATASET_V1": {
+      "path": null,
+      "blob": null,
+      "authority": "B5_IMPLEMENTATION_IN_PROGRESS"
+    },
+    "EXTRACTION_RECEIPT_V1": {
+      "path": null,
+      "blob": null,
+      "authority": "B5_IMPLEMENTATION_IN_PROGRESS"
+    }
+  },
+  "worker_terminals": {
+    "received": 3,
+    "required": 5,
+    "received_workers": [
+      "B-2",
+      "B-3",
+      "B-4"
+    ],
+    "pending_workers": [
+      "B-5",
+      "B-6_FINAL_ACCEPTANCE"
+    ]
+  },
+  "b6_acceptance": {
+    "current_pointer_blob": "f627f03207947fcf00c07094882856f258ea8e19",
+    "accepted_inputs": "2_OF_4",
+    "b4_terminal_available": true,
+    "b4_accepted": false,
+    "b5_terminal_available": false,
+    "final_acceptance_completed": false
+  },
+  "a2_dependency": {
+    "head": "25aaf4b568fbd6b97e7116c9160d5a0046298d34",
+    "terminal": "A2_CAPTURE_INPUT_AUTHORITY_EXACT_BLOCKER",
+    "verified_adapter_package_v1_published": false
+  },
   "execution_scope": "FIXTURE_FIRST_ONLY",
   "actual_site_extraction": false,
-  "exact_blocker": "A2_VERIFIED_ADAPTER_PACKAGE_V1_NOT_YET_PUBLISHED_FOR_ACTUAL_SITE_EXTRACTION",
+  "current_blockers": [
+    "B5_TERMINAL_AND_LATEST_POINTER_NOT_YET_PUBLISHED",
+    "B6_HAS_NOT_YET_ACCEPTED_B4_OR_COMPLETED_FINAL_ACCEPTANCE",
+    "A2_VERIFIED_ADAPTER_PACKAGE_V1_NOT_PUBLISHED_FOR_ACTUAL_SITE_EXTRACTION"
+  ],
   "production": false,
   "ready": false,
   "merge": false
