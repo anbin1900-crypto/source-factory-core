@@ -1,6 +1,6 @@
 {
-  "schema_version": "LATEST_A1_ONE_SHOT_CAPTURE_AUTHORIZATION_POINTER_V1",
-  "status": "ACTIVE_NOT_CONSUMED",
+  "schema_version": "LATEST_A1_ONE_SHOT_CAPTURE_AUTHORIZATION_POINTER_V2",
+  "status": "CONSUMED_SINGLE_BATCH_IN_PROGRESS_PREFLIGHT",
   "authorization_id": "A1-AUTH-ONE-SHOT-EXACT-RESPONSE-FIXTURE-20260805-001",
   "request_id": "A2-TO-A0-A1-ONE-SHOT-EXACT-RESPONSE-FIXTURE-CAPTURE-AUTHORIZATION-REQUEST-V2-20260805-001",
   "request_comment": 5188055784,
@@ -9,10 +9,15 @@
   "decision_report_path": "yolla-panel-v1/a0-successor-control/reports/A1_ONE_SHOT_EXACT_RESPONSE_FIXTURE_CAPTURE_AUTHORIZATION_DECISION_V2.json",
   "decision_report_commit": "46cfefbc4eff644d4379a9594820a94dab56ba01",
   "decision_report_blob": "162dd7b273bc85dedfb9cce9bd43d51f52e13596",
+  "start_acceptance_report": {
+    "path": "yolla-panel-v1/a0-successor-control/reports/A1_ONE_SHOT_CAPTURE_START_ACCEPTANCE_V1.json",
+    "commit": "0c910d7572cde362ecf8fd5714eee8b42607616d",
+    "blob": "f220e45a6eacb12bed763ef1272da7599bfd64ca"
+  },
   "execution_owner": "A-3",
-  "exact_authority": {
-    "a3_head": "6735d9335dd5e5137d09c494b3c6921989bb3252",
-    "a3_pointer_blob": "e9d9b5a86c08e7862c6d68099e860e33567ca987",
+  "source_authority": {
+    "authorized_a3_head": "6735d9335dd5e5137d09c494b3c6921989bb3252",
+    "a3_pre_authorization_pointer_blob": "e9d9b5a86c08e7862c6d68099e860e33567ca987",
     "a3_operator_package_blob": "70b890f660bf784ccdcea9f1c6d1d0088371c877",
     "a5_head": "19781a67eb24ee217b1d072869c407077cca72e1",
     "a5_pointer_blob": "59f9a82c6edd15e1aa23c11573657ecf25efb004",
@@ -21,10 +26,23 @@
     "a7_pointer_blob": "eb058aa9a827884da1ea2f142743795ff98522de",
     "a7_recommendation_blob": "ab65dceb268d7296b941e78c69aea3304348d52c"
   },
+  "execution_start": {
+    "a3_execution_head": "e08d0484178c162530e43263f040f2128ca2f97d",
+    "start_commit": "e08d0484178c162530e43263f040f2128ca2f97d",
+    "start_comment": 5188316221,
+    "start_report_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_ONE_SHOT_CAPTURE_START_REPORT_V1.json",
+    "start_report_blob": "87f6239524e37dc102bda95f85a5ab205b3e9c5b",
+    "start_status": "STARTED_PREFLIGHT",
+    "changed_file_count": 1,
+    "changed_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_ONE_SHOT_CAPTURE_START_REPORT_V1.json",
+    "operator_package_mutated": false,
+    "classification": "APPEND_ONLY_EXECUTION_LEDGER_ADVANCE_NOT_GOVERNED_PACKAGE_DRIFT"
+  },
   "authorized_profiles": ["EP-001","EP-002","EP-003","EP-004","EP-005","EP-010","EP-011","EP-012"],
   "max_capture_per_profile": 1,
   "max_total_capture": 8,
   "max_batch_execution_count": 1,
+  "authorized_batch_execution_count_used": 1,
   "max_response_size_bytes": 2097152,
   "request_timeout_ms": 20000,
   "total_execution_timeout_ms": 180000,
@@ -39,14 +57,16 @@
   "auth_bypass_authorized": false,
   "access_control_bypass_authorized": false,
   "bulk_collection_authorized": false,
-  "capture_execution_count": 0,
-  "live_site_call_count": 0,
-  "authorization_consumed": false,
-  "invalidated_by_exact_authority_drift": true,
+  "capture_attempt_count_observed": 0,
+  "capture_execution_count_observed": 0,
+  "live_site_call_count_observed": 0,
+  "authorization_consumed": true,
+  "additional_batch_authorized": false,
+  "capture_pass_claimed": false,
   "next_gate": "A3_ONE_SHOT_CAPTURE_TERMINAL_AND_RECEIPTS_REMOTE_READBACK",
   "production": false,
   "ready": false,
   "merge": false,
   "self_merge": false,
-  "updated_at_kst": "2026-08-05T14:56:00+09:00"
+  "updated_at_kst": "2026-08-05T15:24:00+09:00"
 }
