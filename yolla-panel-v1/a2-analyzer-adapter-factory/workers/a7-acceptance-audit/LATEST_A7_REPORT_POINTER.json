@@ -1,64 +1,58 @@
 {
-  "schema_version": "LATEST_A7_REPORT_POINTER_V4",
+  "schema_version": "LATEST_A7_REPORT_POINTER_V5",
   "pointer_type": "LATEST_A7_REPORT_POINTER",
   "worker": "A-7",
-  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_10-GENERIC-HTML-FINAL-ACCEPTANCE-V2-20260806-001",
-  "directive_id": "A2-TO-A7-GENERIC-HTML-VERIFIED-ADAPTER-FINAL-ACCEPTANCE-V1-20260806-001",
-  "directive_comment_id": 5194563911,
-  "terminal_comment_id": 5194842802,
-  "active_owner": "A-7",
-  "status": "TERMINAL_FINDINGS",
-  "terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_EXACT_FINDINGS",
-  "previous_pointer_blob": "e60b135062a59fd114daec74d59e810609a045e9",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_12-INTEGRITY-DELTA-REACCEPTANCE-V1-20260806-001",
+  "directive_id": "A2-TO-A7-GENERIC-HTML-INTEGRITY-DELTA-REACCEPTANCE-V2-20260806-001",
+  "directive_comment_id": 5195141948,
+  "mode": "EVENT_ONLY_DELTA_REACCEPTANCE",
+  "status": "TERMINAL_PASS",
+  "terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_PASS",
+  "previous_pointer_blob": "4c7f84432d32f3b4e40084b382a90e302bfe2d64",
   "final_acceptance_count": 1,
   "mid_process_audit_count": 0,
+  "delta_recheck_count": 2,
+  "full_reaudit": false,
+  "replay_rerun": false,
   "artifacts": {
-    "final_acceptance_report": {
-      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_GENERIC_HTML_FINAL_ACCEPTANCE_REPORT_V1.json",
-      "commit": "f422acf2839a05c8db28ad501b64ca83c67baf94",
-      "blob": "e66ba97803991de4982ddf4ebd756df4cde584b1"
+    "delta_reacceptance": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_GENERIC_HTML_INTEGRITY_DELTA_REACCEPTANCE_V1.json",
+      "commit": "99923faddb7d31f5c7f8ba5a5a7ffa399b5e76c4",
+      "blob": "5f9078f1503d3ddcf42cd713748ba1bdeeb88f96",
+      "decision": "PASS",
+      "finding_count": 0
     },
     "b1_execution_readiness_handoff": {
-      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_B1_EXECUTION_READINESS_HANDOFF_V1.json",
-      "commit": "fc17d39eab10c1d5b4d90c5de2d33f03782e02ad",
-      "blob": "6e7e19b6389567b94653ba01f9f80a5db92d77c7"
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_B1_EXECUTION_READINESS_HANDOFF_V2.json",
+      "commit": "2104c9b4dff1d50987cf70487f5c486f3b32c660",
+      "blob": "34fd92322e8348e6aa16f4d7193f432621819db8",
+      "status": "READY_FOR_B1_EXECUTION_HANDOFF"
     }
   },
-  "a6_authority": {
-    "final_head": "6fab17d37c1db2feb955fd2c447b498088b99d4a",
-    "terminal": "A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_READY",
-    "pointer_blob": "22ead89ed6ad08bb38089ee922d9734f432d41d2",
-    "handoff_blob": "0e9fd96b1ff8c13594cc4d42c23da223847040a6",
-    "package_blob": "cc52e85881602fc0fd18ca231842a6401aad92c9"
+  "a6_correction_authority": {
+    "final_head": "a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793",
+    "terminal": "A6_GENERIC_HTML_PACKAGE_INTEGRITY_CORRECTED_READY_FOR_A7_DELTA_REACCEPTANCE",
+    "pointer_blob": "30a7854ca46e7e6f477b1c17c5762e4651d53a82",
+    "handoff_blob": "414832747d9f9fc840c53623858fcae5c1ad0eea",
+    "handoff_sha256": "aca7500dcf4a958cb047f0950c353195f1a631d6450589c308b978f6c83ebb04"
   },
-  "checks": {
-    "package_member_sha256_binding": "FAIL",
-    "exact_a5_a4_authority_binding": "PASS",
-    "generic_html_required_output_schema": "PASS_12_OF_12",
-    "replay_digest_equality": "PASS_2_OF_2",
-    "secret_cookie_token_pii_and_local_path_finding_count_0": "PASS",
-    "automated_pagination_false_and_ep011_excluded": "PASS",
-    "a6_owned_root_and_b1_consumable_handoff": "FAIL_B1_BLOCKED_BY_INTEGRITY"
+  "delta_checks": {
+    "package_member_sha256_binding": "PASS_6_OF_6",
+    "package_sha256": "PASS_FAD18A1E0571DFAC26305D8BD3D845A639E225C51FF1A03DFE45C49D7D441854",
+    "build_receipt_sha256": "PASS_E31454A30F13049A89A65A9489FF717B9E75B66957F4F7AA97CFE740CB7F57A8",
+    "replay_receipt_sha256": "PASS_A8C11E4EB59EA8A6003B466A4B3B6148EEAA1D834E020B824E2331385C27ECBA",
+    "a6_owned_root": "PASS_6_OF_6_DELTA_FILES",
+    "b1_consumable_handoff": "PASS",
+    "finding_resolution": "PASS_3_OF_3"
   },
-  "finding_count": 3,
-  "first_blocker": "PACKAGE_AND_MEMBER_SHA256_BINDING_MISMATCH",
-  "package_sha256_expected": "3500125a7c0d1629d793110516d6a3b6084afbc191f5bc55e6131921441f94f9",
-  "package_sha256_actual": "573623d9c6d66a9d21f5905fdd6bf086ad36375e4e01a6244f5de24e4b440106",
-  "package_member_binding": "PASS_2_OF_6_FAIL_4_OF_6",
-  "build_receipt_sha256_exact": false,
-  "replay_receipt_sha256_exact": false,
-  "b1_execution_ready": false,
+  "inherited_parent_pass_checks_not_reaudited": true,
+  "finding_count": 0,
+  "b1_execution_ready": true,
   "b1_reanalysis_required": false,
-  "required_owner": "A-6",
-  "required_correction": "RECOMPUTE_EXACT_REMOTE_BYTE_SHA256_AND_SIZE_AND_REPUBLISH_FINAL_POINTER_AND_A7_HANDOFF",
   "implementation_file_direct_edit": false,
   "self_approval": false,
-  "remote_readback": "PASS",
-  "remote_readback_evidence": {
-    "pointer_commit": "ff63dfd1715dc22e04c1a591ca81a99d175c0719",
-    "pointer_blob": "ec17a4c97f6225e5e9e5fc4fdcdade74e606d1a6"
-  },
-  "updated_at_kst": "2026-08-06T01:53:00+09:00",
+  "remote_readback": "PENDING",
+  "updated_at_kst": "2026-08-06T03:01:00+09:00",
   "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
   "production": false,
   "ready": false,
