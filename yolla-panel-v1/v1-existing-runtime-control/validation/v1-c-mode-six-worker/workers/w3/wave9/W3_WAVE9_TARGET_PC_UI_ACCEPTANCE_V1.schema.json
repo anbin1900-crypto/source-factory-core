@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "W3_WAVE9_TARGET_PC_UI_ACCEPTANCE_V1.schema.json",
+  "title": "W3 Wave 9 Target-PC UI Acceptance Receipt",
+  "type": "object",
+  "required": ["schema_version","control_id","wave_id","registry_sequence","result_key","target_version","target_pc","inputs","screenshots","registry_snapshot","before_restart","after_restart","restart_readback","projection_receipt","live_pass_claimed"],
+  "properties": {
+    "schema_version": {"const":"W3_WAVE9_TARGET_PC_UI_ACCEPTANCE_RECEIPT_V1"},
+    "control_id": {"const":"V1-C-MODE-6W-VALIDATION-CYCLE-002"},
+    "wave_id": {"const":"V1-C-MODE-6W-WAVE-009"},
+    "registry_sequence": {"const":9},
+    "result_key": {"const":"519440526200"},
+    "target_version": {"const":"5.10.2.4.2-rc3"},
+    "target_pc": {"type":"object","required":["computer_name","os_version"],"properties":{"computer_name":{"type":"string","minLength":1},"os_version":{"type":"string","minLength":1}}},
+    "inputs": {"type":"object","required":["candidate_bridge_sha256","expected_receipt_sha256","schema_sha256","registry_snapshot_sha256"],"additionalProperties":{"type":"string","pattern":"^[0-9a-f]{64}$"}},
+    "screenshots": {"type":"array","minItems":4,"items":{"type":"object","required":["path","purpose","sha256"],"properties":{"path":{"type":"string","minLength":1},"purpose":{"enum":["IDLE_TRUTH","C_EXECUTION","COMMAND_EXECUTION","REGISTRY_RESULT_TRUTH","PENDING_MISSING_DUPLICATE_ERROR_END","RESTART_READBACK"]},"sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}}}},
+    "registry_snapshot": {"type":"object"},
+    "before_restart": {"type":"object"},
+    "after_restart": {"type":"object"},
+    "restart_readback": {"type":"object","required":["runtime_status_present","c_state_present","repeat_state_present","registry_state_present"],"additionalProperties":{"type":"boolean"}},
+    "projection_receipt": {"type":"object","required":["assertions_all_pass","scenarios"],"properties":{"assertions_all_pass":{"const":true},"scenarios":{"type":"array","minItems":2}}},
+    "live_pass_claimed": {"const":false}
+  },
+  "additionalProperties": true
+}
