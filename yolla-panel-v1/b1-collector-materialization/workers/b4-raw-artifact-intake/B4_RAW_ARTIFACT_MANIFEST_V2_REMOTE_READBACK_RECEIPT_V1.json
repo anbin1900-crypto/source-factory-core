@@ -1,0 +1,39 @@
+{
+  "schema_version": "B4_RAW_ARTIFACT_MANIFEST_V2_REMOTE_READBACK_RECEIPT_V1",
+  "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "task_id": "RAW_ARTIFACT_MANIFEST_V2",
+  "directive_comment": 5196652743,
+  "verified_at_kst": "2026-08-06T05:03:00+09:00",
+  "remote_blobs": {
+    "RAW_ARTIFACT_MANIFEST_V2.schema.json": "38e72bb43c5f630e9b3f94c3796ef72ae092c85e",
+    "RAW_ARTIFACT_MANIFEST_V2.json": "d900e06bcc73908e3af589581d67b599bfb84d65",
+    "B4_RAW_ARTIFACT_MANIFEST_V2_FIXTURE_V1.json": "12938d5e9d15cf73d69e4b38f6cc960cbf868ebc",
+    "src/raw_artifact_manifest_v2.py": "43bbff1ab2c86af54ea51d1031da437eeb9decff",
+    "tests/test_raw_artifact_manifest_v2.py": "84975a579a6482bb4c802130d5bcf7e2c0d37e67",
+    "B4_RAW_ARTIFACT_MANIFEST_V2_TEST_RESULT_V1.json": "5bf5800391174c946eeaf7acedd293eb3ced6ece",
+    "raw_page_001": "9d34c7e31534906f6d067214f7ddf31f8262c398",
+    "raw_page_002": "9b51ca590b05383ccf891e6ddb7c18cf56160d36",
+    "source_receipt": "f4fdab98c6e20d94be90027893e8a63ab1618e03",
+    "request_summary": "50d0457a42a72e1b4e1c964ffc65f9e13f61b21d"
+  },
+  "remote_readback": "PASS_10_OF_10",
+  "equivalent_repository_layout_reexecution": {
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_46_OF_46",
+    "custom_validator": "PASS"
+  },
+  "validation_counters": {
+    "RAW_OVERWRITE_COUNT": 0,
+    "HASH_MISMATCH_COUNT": 0,
+    "SIZE_MISMATCH_COUNT": 0,
+    "SECRET_VALUE_STORAGE_COUNT": 0,
+    "UNAUTHORIZED_PERSONAL_DATA_COUNT": 0,
+    "INVENTED_METADATA_COUNT": 0,
+    "SOURCE_FIELD_LOSS_COUNT": 0
+  },
+  "github_actions_ci_pass_claimed": false,
+  "actual_site_extraction": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
