@@ -1,0 +1,68 @@
+{
+  "schema_version": "C_MODE_WAVE8_INTERIM_STATUS_AND_REPORT_REQUEST_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-008",
+  "registry_sequence": 8,
+  "registry_comment": 5193883787,
+  "checked_at_kst": "2026-08-06T00:54:30+09:00",
+  "reported_count": 3,
+  "pending_count": 3,
+  "duplicate_result_count": 0,
+  "reported": {
+    "AUTOMATION-C-W2": {
+      "directive_comment": 5193857083,
+      "result_key": "519385708300",
+      "result_comment": 5193959441,
+      "result_commit": "d1e12289eb25282601894946f902238306c7b677",
+      "outcome": "PASS"
+    },
+    "AUTOMATION-C-W5": {
+      "directive_comment": 5193871227,
+      "result_key": "519387122700",
+      "result_comment": 5193944215,
+      "result_commit": "d3881f439bb393498c69b53d4c5558d4e9869420",
+      "outcome": "BLOCKED_SOURCE_ZIP_DRIVE_AND_TARGET_PC_RECEIPTS_PENDING"
+    },
+    "AUTOMATION-C-W6": {
+      "directive_comment": 5193876277,
+      "result_key": "519387627700",
+      "result_comment": 5193935894,
+      "result_commit": "3b384eca85f1f2bed6b9fd039ab8d3c76cc1f165",
+      "outcome": "BLOCKED_W5_RESULT_NOT_AVAILABLE_AT_AUDIT_TIME_AND_TARGET_PC_PENDING"
+    }
+  },
+  "pending": {
+    "AUTOMATION-C-W1": {
+      "directive_comment": 5193852309,
+      "result_key": "519385230900",
+      "report_request_comment": 5194081596,
+      "report_request_count": 1
+    },
+    "AUTOMATION-C-W3": {
+      "directive_comment": 5193862391,
+      "result_key": "519386239100",
+      "report_request_comment": 5194084415,
+      "report_request_count": 1
+    },
+    "AUTOMATION-C-W4": {
+      "directive_comment": 5193866450,
+      "result_key": "519386645000",
+      "report_request_comment": 5194087044,
+      "report_request_count": 1
+    }
+  },
+  "decision": {
+    "wave9_registry_posted": false,
+    "reason": "THREE_OF_SIX_RESULTS_PENDING_HOLD_FULL_NEXT_WAVE_AND_REQUEST_CURRENT_RESULTS",
+    "current_wave_remains_authoritative": true,
+    "new_directive_for_pending_workers": false,
+    "replacement_required": false,
+    "next_action": "COLLECT_W1_W3_W4_RESULTS_THEN_REVIEW_ALL_SIX_AND_POST_SINGLE_WAVE9_REGISTRY"
+  },
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "target_pc_pass": "PENDING",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "current_progress_percent": 93
+}
