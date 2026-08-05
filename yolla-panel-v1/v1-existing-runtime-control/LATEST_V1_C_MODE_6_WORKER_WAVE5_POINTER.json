@@ -14,12 +14,19 @@
     },
     "wave5_directive": {
       "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave5/V1_C_MODE_6_WORKER_WAVE5_DIRECTIVE_V6.md",
-      "commit": "966eabbee2c7027e853e17a9196ba6e23f5692ad"
+      "commit": "8f087cfe979bc1ae1c79014518f8a976373be3bc"
     },
     "publication_receipt": {
       "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave5/V1_C_MODE_6_WORKER_WAVE5_PUBLICATION_RECEIPT_V6.json",
-      "commit": "a1700dd9c9dc31089ca89daed659fe91ffe0a549"
+      "commit": "3b230b7784d2d823c1aae225c748f74701c50182"
     }
+  },
+  "baseline_correction": {
+    "target_pc_installed_baseline": "5.10.2.4.0",
+    "source_staging_baseline": "5.10.2.4.1",
+    "target_candidate_version": "5.10.2.4.2-rc1",
+    "direct_upgrade_or_internal_auto_staging_required": true,
+    "manual_5_10_2_4_1_preinstall_required": false
   },
   "wave4_review": {
     "valid_correlated_reports": 6,
@@ -66,7 +73,7 @@
     }
   },
   "control_comment_id": 5192640903,
-  "status": "WAVE5_DISPATCHED_TO_6_OF_6",
+  "status": "WAVE5_DISPATCHED_TO_6_OF_6_BASELINE_CORRECTED",
   "current_progress_percent": 88,
   "target_candidate_version": "5.10.2.4.2-rc1",
   "next_gate": "SIX_VALID_CORRELATED_TERMINALS_FINAL_INSTALLER_SOURCE_ARTIFACT_AND_OFFLINE_INDEPENDENT_ACCEPTANCE",
@@ -76,5 +83,5 @@
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at_kst": "2026-08-05T22:56:00+09:00"
+  "updated_at_kst": "2026-08-05T23:01:00+09:00"
 }
