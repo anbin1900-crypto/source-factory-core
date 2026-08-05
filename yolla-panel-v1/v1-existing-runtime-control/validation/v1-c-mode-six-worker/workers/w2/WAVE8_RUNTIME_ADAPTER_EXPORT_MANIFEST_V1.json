@@ -1,0 +1,24 @@
+{
+  "schema": "C_MODE_RUNTIME_ADAPTER_EXPORT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-008",
+  "command_id": "C6W-W8-W2-ACTUAL-RESULT-COLLECTION",
+  "result_key": "519385708300",
+  "inputs": {
+    "registry_comment": 5193659817,
+    "wave7_result_comments": [5193766643,5193762256,5193762357,5193766350,5193744236,5193735003]
+  },
+  "files": [
+    "automation-c-v1/result_watcher/runtime_result_adapter.cjs",
+    "automation-c-v1/tests/test_wave8_actual_result_runtime_adapter.cjs",
+    "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w2/WAVE8_ACTUAL_WAVE7_RESULT_COLLECTION_V1.json"
+  ],
+  "contracts": {
+    "pagination": true,
+    "max_retry": 5,
+    "restart_export": true,
+    "duplicate_fail_closed": true,
+    "blocked_counts_as_reported": true
+  },
+  "consumers": ["AUTOMATION-C-W1","AUTOMATION-C-W5","AUTOMATION-C-W6"]
+}
