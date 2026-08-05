@@ -3,7 +3,7 @@
   "candidate_id": "B1-TO-D1-SOURCE-DOCUMENT-HANDOFF-CANDIDATE-V2-20260806-001",
   "task_id": "B6_D_SOURCE_DOCUMENT_HANDOFF_REPREFLIGHT",
   "directive_comment_id": 5196668910,
-  "updated_at_kst": "2026-08-06T06:38:00+09:00",
+  "updated_at_kst": "2026-08-06T06:43:00+09:00",
   "producer_lane": "B_TO_D_SOURCE_DOCUMENT",
   "excluded_lane": "C_TO_D_KNOWLEDGE_CANDIDATE",
   "target": {
@@ -14,87 +14,44 @@
     "authority_root": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/"
   },
   "input_status": {
-    "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT": {
-      "status": "READY",
-      "head": "771da102a0202dc21d9226d9c534275df345582e",
-      "pointer_blob": "6ba3df93d41d3b00f58d598ca6867db376c9f30c",
-      "contract_blob": "f7b5faee6c3fce138bcd95f9edce734f2086eb6d"
-    },
-    "B3_D_COLLECTION_RUN_LEDGER": {
-      "status": "READY",
-      "head": "86d789a136ce5070d79eab7e6d0205eb23da11d7",
-      "pointer_blob": "dedbad43c8c23df18e2af2560af5d5f48ca1fa00"
-    },
-    "B4_RAW_ARTIFACT_MANIFEST_V2": {
-      "status": "D_READY",
-      "head": "f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3",
-      "pointer_blob": "b0158bbb27dfb0efab012ec1a97c3c31f2266e7c",
-      "manifest_blob": "d900e06bcc73908e3af589581d67b599bfb84d65"
-    },
-    "B5_D_READY_PACKAGE_V2": {
+    "B2": {"status":"READY","head":"771da102a0202dc21d9226d9c534275df345582e","pointer_blob":"6ba3df93d41d3b00f58d598ca6867db376c9f30c","contract_blob":"f7b5faee6c3fce138bcd95f9edce734f2086eb6d"},
+    "B3": {"status":"READY","head":"86d789a136ce5070d79eab7e6d0205eb23da11d7","pointer_blob":"dedbad43c8c23df18e2af2560af5d5f48ca1fa00"},
+    "B4": {"status":"D_READY","head":"f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3","pointer_blob":"b0158bbb27dfb0efab012ec1a97c3c31f2266e7c","manifest_blob":"d900e06bcc73908e3af589581d67b599bfb84d65"},
+    "B5": {
       "status": "EXACT_BLOCKER_CURRENT_D1_AUTHORITY_BINDING_MISSING",
-      "head": "fc1ab4dba76dda49fa05dbbd476a128425029b8e",
+      "head": "110095bd7aab7eb058ff6e923f7bccb78a3ee506",
+      "pointer_blob": "434159a91210741d8196862ce27933e95066d526",
+      "final_report_blob": "87a91257d37db8c1def4d23679273b2c501a3eef",
       "package_blob": "f65c54194609d8bc709033c0d36abf916c60debe",
       "test_report_blob": "bd825009b4fa9ac56ed3cb0f5897eb8e8522f618",
-      "tests": "PASS_37_OF_37",
-      "package_bound_D_head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
-      "package_bound_D_pointer_blob": "95e6983a79b80867dd7de196a21e1aefc4c3dcb1",
-      "authority_type": null,
-      "authority_type_status": "PENDING_D1_DECISION",
-      "rerun_required": true
+      "terminal": "B5_D_READY_PACKAGE_V2_EXACT_BLOCKER",
+      "bound_D_head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+      "bound_D_pointer_blob": "95e6983a79b80867dd7de196a21e1aefc4c3dcb1",
+      "authority_type": null
     },
-    "D1_SCHEMA_ALIGNMENT_TREE_BINDING_MANIFEST": {
-      "status": "READY",
-      "blob": "dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd"
-    },
-    "D1_MAPPING_ADDENDUM": {
-      "status": "READY",
-      "blob": "118d6403dd5db47afafb982991f8fd9a51f35f28"
-    },
-    "D1_B_RECEIPT_PROCEDURE": {
-      "status": "READY",
-      "blob": "2a8b7c1b04924728cce14dc21c225ad09598905f"
-    },
-    "D1_SOURCE_AUTHORITY_DECISION": {
-      "status": "READY",
-      "blob": "6bf779b937bf2bea761780315b22692ccca07ad9",
-      "authority_type": "OFFICIAL_SECONDARY"
-    },
-    "D1_SOURCE_KEY_ALIAS_DECISION": {
-      "status": "READY",
-      "blob": "27683e5dc4a9448c3d0a9bd3200a0a62c84d158c",
-      "preferred_inbound_source_key": "NAVER_FIN_LAND_PUBLIC_WEB_V1"
-    }
+    "D1_TREE_BINDING": {"status":"READY","blob":"dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd"},
+    "D1_MAPPING_ADDENDUM": {"status":"READY","blob":"118d6403dd5db47afafb982991f8fd9a51f35f28"},
+    "D1_B_RECEIPT_PROCEDURE": {"status":"READY","blob":"2a8b7c1b04924728cce14dc21c225ad09598905f"},
+    "D1_SOURCE_AUTHORITY_DECISION": {"status":"READY","blob":"6bf779b937bf2bea761780315b22692ccca07ad9","authority_type":"OFFICIAL_SECONDARY"},
+    "D1_SOURCE_KEY_ALIAS_DECISION": {"status":"READY","blob":"27683e5dc4a9448c3d0a9bd3200a0a62c84d158c","preferred_key":"NAVER_FIN_LAND_PUBLIC_WEB_V1"}
   },
   "preflight_summary": {
     "B_input_objects": "PASS_4_OF_4",
     "B_ready_terminals": "FAIL_3_OF_4",
     "D_tree_binding": "PASS",
-    "manifest_declared_paths": "PASS_10_OF_10",
+    "manifest_paths": "PASS_10_OF_10",
     "PR188_required_paths": "PASS_18_OF_18_FULL_ACCOUNTING",
-    "lane_separation": "PASS",
-    "source_identity_alignment": "FAIL_ONLY_IN_CURRENT_B5_PACKAGE"
+    "lane_separation": "PASS"
   },
   "promotion_gate": {
-    "passed": [
-      "B2_READY",
-      "B3_READY",
-      "B4_READY",
-      "D_TREE_BINDING_PASS",
-      "REQUIRED_PATHS_FULL_ACCOUNTING_PASS",
-      "LANE_SEPARATION_PASS",
-      "D1_AUTHORITY_DECISION_AVAILABLE"
-    ],
-    "failed": [
-      "B5_CURRENT_D1_AUTHORITY_BINDING",
-      "B5_READY_TERMINAL_WITH_REMOTE_READBACK"
-    ]
+    "passed": ["B2_READY","B3_READY","B4_READY","D_TREE_BINDING_PASS","REQUIRED_PATHS_PASS","LANE_SEPARATION_PASS","D1_AUTHORITY_DECISION_AVAILABLE"],
+    "failed": ["B5_CURRENT_D1_AUTHORITY_BINDING","B5_READY_TERMINAL"]
   },
   "defect_handoff_to_B5": {
     "Field": "B5_D_READY_PACKAGE_V2_CURRENT_D1_AUTHORITY_REBIND",
-    "Expected": "Rebuild B5 package using D1 head 17e920e0643dd89c059f1d99fda7c0c0383f1a18, control pointer d65285f969294c19c0d9e2d1bbc2adf8165f8819, authority OFFICIAL_SECONDARY, authority decision blob 6bf779b937bf2bea761780315b22692ccca07ad9, alias decision blob 27683e5dc4a9448c3d0a9bd3200a0a62c84d158c, mapping addendum blob 118d6403dd5db47afafb982991f8fd9a51f35f28 and B receipt procedure blob 2a8b7c1b04924728cce14dc21c225ad09598905f",
-    "Evidence": "Current B5 package blob f65c54194609d8bc709033c0d36abf916c60debe still binds old D head 327547fd74f615a4c709c6da8473b1bf63fd5d6a and old pointer 95e6983a79b80867dd7de196a21e1aefc4c3dcb1 with authority_type null",
-    "Required_output": "B5_D_READY_PACKAGE_V2_READY terminal, exact package blob, test report and remote readback"
+    "Expected": "Replace old D head/pointer and pending authority with current D head 17e920e0643dd89c059f1d99fda7c0c0383f1a18, pointer d65285f969294c19c0d9e2d1bbc2adf8165f8819 and OFFICIAL_SECONDARY decision",
+    "Evidence": "B5 pointer 434159a91210741d8196862ce27933e95066d526 and package f65c54194609d8bc709033c0d36abf916c60debe retain old D authority",
+    "Required_output": "B5_D_READY_PACKAGE_V2_READY terminal with exact package blob, tests and remote readback"
   },
   "classification": "PREHANDOFF_EXACT_BLOCKER",
   "promotable": false,
