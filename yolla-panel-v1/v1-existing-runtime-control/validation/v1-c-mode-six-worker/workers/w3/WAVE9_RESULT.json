@@ -1,0 +1,57 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE9_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-009",
+  "registry_sequence": 9,
+  "command_id": "C6W-W9-W3-TARGET-PC-UI-ACCEPTANCE-PACK",
+  "worker_id": "AUTOMATION-C-W3",
+  "directive_comment": 5194405262,
+  "report_request_comments": [5194576075, 5194832672],
+  "report_request_count": 2,
+  "result_key": "519440526200",
+  "status": "PASS_OFFLINE_TARGET_PC_PENDING",
+  "terminal": "C6W_W9_W3_TARGET_PC_UI_ACCEPTANCE_PACK_OFFLINE_PASS_TARGET_PC_EXECUTION_PENDING",
+  "input_head": "3b3f8c792e9eaba9aa495e3e229d3c6019b149db",
+  "export_commit": "f20435c80021822bb743e2a95391f4660fa75a4a",
+  "artifacts": [
+    "wave9/build_wave9_projection_receipt.cjs",
+    "wave9/W3_WAVE9_EXPECTED_RECEIPT.json",
+    "wave9/W3_WAVE9_TARGET_PC_UI_ACCEPTANCE_V1.schema.json",
+    "wave9/Collect-W3Wave9TargetPcUiAcceptance.ps1",
+    "wave9/test_wave9_acceptance_pack.cjs",
+    "wave9/W3_WAVE9_OFFLINE_PROJECTION_RECEIPT.json",
+    "wave9/W5_WAVE9_UI_ACCEPTANCE_EXPORT.json"
+  ],
+  "tests": [
+    {"name":"Node syntax: projection builder","status":"PASS"},
+    {"name":"Node syntax: acceptance pack regression","status":"PASS"},
+    {"name":"Wave 9 acceptance pack regression","status":"PASS","assertions":17},
+    {"name":"Projection receipt builder","status":"PASS","scenarios":2},
+    {"name":"JSON parse and Draft 2020-12 schema meta-validation","status":"PASS"}
+  ],
+  "truth_contract": {
+    "disabled_working_zero": "PASS",
+    "c_execution_separate": "PASS",
+    "command_execution_separate": "PASS",
+    "current_registry_separate": "PASS",
+    "historical_registry_separate": "PASS",
+    "awaiting_missing_duplicate_error_end_idle_separate": "PASS",
+    "result_comment_preferred_over_result_key": "PASS",
+    "legacy_a_e_excluded": "PASS"
+  },
+  "target_pc_pack": {
+    "screenshot_sha256": true,
+    "version": "5.10.2.4.2-rc3",
+    "registry_snapshot": true,
+    "before_restart": true,
+    "after_restart": true,
+    "expected_counters_and_labels": true,
+    "minimum_screenshot_count": 4
+  },
+  "target_pc_execution": "PENDING",
+  "live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-06T02:11:00+09:00"
+}
