@@ -1,0 +1,72 @@
+{
+  "schema_version": "A7_D_INTEGRATION_DELTA_REVIEW_FINAL_REPORT_V1",
+  "worker": "A-7",
+  "task_id": "A7_D_INTEGRATION_DELTA_REVIEW",
+  "directive_comment": 5196662863,
+  "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "mode": "DELTA_ONLY",
+  "completed_at_kst": "2026-08-06T06:24:00+09:00",
+  "status": "PASS",
+  "terminal": "A7_D_INTEGRATION_DELTA_REVIEW_PASS",
+  "review_artifact": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_D_INTEGRATION_DELTA_REVIEW_V1.json",
+    "commit": "4d5e67ea05bd894640a33b30bb381ff8178c6f26",
+    "blob": "b6aa887aea1e5557791b15588b9823f494fd1ba6"
+  },
+  "entry_event": {
+    "satisfied": true,
+    "a6_terminal": "A6_VERIFIED_ADAPTER_D_COMPATIBILITY_READY",
+    "a6_final_head": "4d5acd815d52c2fdfca079447989f565f90857eb",
+    "a6_pointer_blob": "f07bd6cd83c341f5c45e618c5a6dca3d848f4787"
+  },
+  "handoff_traceability": {
+    "A3": {
+      "head": "f1a32cdaeafb2ef8cc7442bc3ef8351d689e02c3",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_D_SOURCE_PROVENANCE_HANDOFF_V1.json",
+      "blob": "7b06de0089917dc41069da4950675f22b1f4d5e6",
+      "pointer_blob": "fb31a01923cf362331be72bc7fc357093c5771f2",
+      "result": "PASS"
+    },
+    "A4": {
+      "head": "2efc3866b292cd8c43a6fdc75a43479c0bbf2fad",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A4_D_LOCATOR_PAGINATION_HANDOFF_V1.json",
+      "blob": "ccdb978a08fe94bf61df3477b1eef71f904c7ce4",
+      "pointer_blob": "7cb42160835fbc7a724a2bce40f65b03a0545018",
+      "result": "PASS"
+    },
+    "A5": {
+      "head": "ba04d2dbae45a5ed51e86d6715565d15b8428464",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF_V1.json",
+      "blob": "0fac8fac5069a013717ea74202d6d1741adfd966",
+      "pointer_blob": "aa7c0c94cf4d6912dfb881ed63b0e10a392e92ca",
+      "result": "PASS"
+    },
+    "A6": {
+      "head": "4d5acd815d52c2fdfca079447989f565f90857eb",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/A6_VERIFIED_ADAPTER_D_INTAKE_COMPATIBILITY_V1.json",
+      "blob": "8380c740d9f5f019c5146b553f983cce97ed5dbd",
+      "sha256": "7d573f33b5d9b94c4ee1c7a94e238d6cd8bb3f3d00e9f7c795c157ddacc1094d",
+      "pointer_blob": "f07bd6cd83c341f5c45e618c5a6dca3d848f4787",
+      "result": "PASS"
+    }
+  },
+  "review_results": {
+    "exact_head_path_blob_sha": "PASS_4_OF_4",
+    "accepted_adapter_package_member_byte_unchanged": "PASS_6_OF_6",
+    "a6_d_canonical_id_generation": "PASS_FALSE",
+    "a6_authority_type_decision": "PASS_FALSE",
+    "secret_pii_credential_value_finding_count": 0,
+    "new_external_request_count": 0,
+    "raw_redacted_observed_expected_state_separation": "PASS",
+    "prior_a6_integrity_finding_reopened": false,
+    "prior_a6_integrity_finding_reexecuted": false,
+    "finding_count": 0
+  },
+  "next_event": "A2_D_INTEGRATION_HANDOFF_SET",
+  "implementation_edit": false,
+  "self_approval": false,
+  "blocking_mid_process_gate": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
