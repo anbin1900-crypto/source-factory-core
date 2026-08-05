@@ -1,44 +1,53 @@
 {
-  "schema_version": "LATEST_ABC_VERTICAL_INTEGRATION_PREPARATION_POINTER_V2",
-  "pointer_id": "LATEST-V2-ABC-VERTICAL-INTEGRATION-PREPARATION-20260805-002",
-  "updated_at_kst": "2026-08-05T22:30:00+09:00",
+  "schema_version": "LATEST_ABC_VERTICAL_INTEGRATION_PREPARATION_POINTER_V3",
+  "pointer_id": "LATEST-V2-ABC-VERTICAL-INTEGRATION-PREPARATION-20260805-003",
+  "updated_at_kst": "2026-08-05T23:14:00+09:00",
   "commander": "V-2_YOLLA_AI_SUPREME_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "previous_pointer_blob": "5aa5a4394dc31a6064fac7b41b34d04592e21732",
+  "previous_pointer_blob": "4504e15419000b41f67346c28c2c7bbd8697a81a",
+  "authorization": {
+    "request_id": "A2-TO-A0-A1-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-CAPTURE-AUTHORIZATION-REQUEST-V1-20260805-001",
+    "decision_comment": 5192765975,
+    "decision": "APPROVED",
+    "authorization_id": "V2-AUTH-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-20260805-001",
+    "authorized_by": "V-2",
+    "decision_report_commit": "9629c8fa64404013a9e9b77d5083608d8728e8ba",
+    "decision_report_blob": "dde73406d83be9ceffab209ddbc86ce5acbc3534",
+    "authorization_pointer_blob": "4c0cf0f3b60c02da24883b9fcb60ead631e98074",
+    "a3_execution_event_comment": 5192799338
+  },
   "preparation": {
     "path": "yolla-panel-v1/a0-successor-control/integration/abc-v1/ABC_VERTICAL_INTEGRATION_PREPARATION_V1.json",
-    "commit": "7f7f07b82b797fbf9fbb45b3a87779614561572d",
-    "blob": "66affb7681a5df298c6e50d82d3c7bbaddaf029d",
+    "commit": "81e8f0cde72486ba41049bbd598e8d66f9f8d62d",
+    "blob": "0c89963c49942f39bd6228754defede424b6ef25",
     "remote_readback": "PASS"
   },
   "gate_matrix": {
     "path": "yolla-panel-v1/a0-successor-control/integration/abc-v1/ABC_HANDOFF_AND_GATE_MATRIX_V1.json",
-    "commit": "2eb046147212103eb230462710857f5229e45544",
-    "blob": "9a65ee71dcfecb97bfd01970a89f0afeebd4f847",
+    "commit": "a6d776b5547549e5a1fa918cef2615f988889093",
+    "blob": "9923dd0fa74da77833dff4e73c3fb97258ebe5cc",
     "remote_readback": "PASS"
   },
   "execution_sequence": {
     "path": "yolla-panel-v1/a0-successor-control/integration/abc-v1/ABC_VERTICAL_INTEGRATION_EXECUTION_SEQUENCE_V1.json",
-    "commit": "60766f3c5776dcd3826419c7c9e3ad27ddf66f5c",
-    "blob": "3480a5d5fb9ae73cb59763a6762c6a62768aed0e",
+    "commit": "0943ac960a8d3b185144f0bf79163be16bbcd11d",
+    "blob": "2cc4693959650e546a26de8cb4364e1495c4d951",
     "remote_readback": "PASS"
   },
   "group_authority": {
     "A": {
       "control_pr": 18,
-      "head": "71adba33aa727f251f59cba70e22ac9453579d6c",
-      "latest_pointer_blob": "1c3466fe5e05ff9442484bcce8ec9bf7e04985d9",
-      "authorization_request_id": "A2-TO-A0-A1-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-CAPTURE-AUTHORIZATION-REQUEST-V1-20260805-001",
-      "authorization_request_comment": 5192321213,
-      "state": "SECOND_AUTHORIZATION_REQUEST_POSTED_AWAITING_EXPLICIT_DECISION"
+      "head": "eab3101f83c2f88acc5be8207d704ead9eb58721",
+      "latest_pointer_blob": "88598259e4ee68976774665d74c92185bbf01020",
+      "state": "AUTHORIZATION_APPROVED_A3_ONE_SHOT_EXECUTION_ACTIVE"
     },
     "B": {
       "control_pr": 19,
       "head": "41217df04fcbcc56ef8e35e3b811fee2b5c74b8c",
       "latest_pointer_blob": "67dcfbda0675c7cbd3d4994e2417e2327055b466",
-      "state": "FIXTURE_BASELINE_PASS_WAITING_A_AUTHORIZATION_AND_VERIFIED_ADAPTER"
+      "state": "FIXTURE_BASELINE_PASS_WAITING_A_FINAL_VERIFIED_ADAPTER"
     },
     "C": {
       "control_pr": 20,
@@ -48,10 +57,12 @@
     }
   },
   "current_phase": 1,
-  "current_owner": "A0_A1_AUTHORIZATION_DECISION",
-  "current_gate": "EXPLICIT_DECISION_FOR_A2_SECOND_ONE_SHOT_REQUEST",
-  "overall_status": "ABC_INTEGRATION_PREPARED_AUTHORIZATION_DECISION_GATE_ACTIVE",
-  "capture_execution_authorized": false,
+  "current_owner": "A-3",
+  "current_gate": "A3_EXACT_ONE_SHOT_CAPTURE_TERMINAL",
+  "overall_status": "ABC_INTEGRATION_AUTHORIZATION_APPROVED_A3_EXECUTION_ACTIVE",
+  "request_execution_authorized": true,
+  "capture_execution_authorized": true,
+  "capture_execution_terminal_published": false,
   "actual_site_extraction": false,
   "actual_bulk_collection": false,
   "d_canonical_db_write": false,
