@@ -1,0 +1,90 @@
+{
+  "schema_version": "B4_RAW_ARTIFACT_MANIFEST_V2_FINAL_REPORT_V1",
+  "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "task_id": "RAW_ARTIFACT_MANIFEST_V2",
+  "directive_comment": 5196652743,
+  "role": "B-4_RAW_ARTIFACT_INTAKE_WORKER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 40,
+  "branch": "worker/b4-raw-artifact-source-envelope-v1",
+  "baseline_head": "6dfe697363a69f83797775aa549f34614aa3748a",
+  "completed_at_kst": "2026-08-06T05:03:00+09:00",
+  "status": "PASS_D_READY_FIXTURE_BYTE_VERIFIED",
+  "terminal_contract": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY_OR_EXACT_BLOCKER",
+  "terminal_result": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY",
+  "required_artifacts": {
+    "RAW_ARTIFACT_MANIFEST_V2.schema.json": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V2.schema.json",
+      "blob": "38e72bb43c5f630e9b3f94c3796ef72ae092c85e"
+    },
+    "RAW_ARTIFACT_MANIFEST_V2.json": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V2.json",
+      "blob": "d900e06bcc73908e3af589581d67b599bfb84d65"
+    },
+    "B4_RAW_ARTIFACT_MANIFEST_V2_FIXTURE_V1.json": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_RAW_ARTIFACT_MANIFEST_V2_FIXTURE_V1.json",
+      "blob": "12938d5e9d15cf73d69e4b38f6cc960cbf868ebc"
+    },
+    "B4_RAW_ARTIFACT_MANIFEST_V2_TEST_RESULT_V1.json": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_RAW_ARTIFACT_MANIFEST_V2_TEST_RESULT_V1.json",
+      "blob": "5bf5800391174c946eeaf7acedd293eb3ced6ece"
+    }
+  },
+  "implementation_evidence": {
+    "validator_blob": "43bbff1ab2c86af54ea51d1031da437eeb9decff",
+    "test_source_blob": "84975a579a6482bb4c802130d5bcf7e2c0d37e67",
+    "remote_readback_receipt_blob": "d4f3632074c667755a23d034146dc30945a38be6",
+    "remote_readback": "PASS_10_OF_10",
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_46_OF_46",
+    "custom_validator": "PASS",
+    "github_actions_ci_pass_claimed": false
+  },
+  "observation_policy": {
+    "source_key": "PENDING_AUTHORITY",
+    "official_source_url": "PENDING_AUTHORITY",
+    "route_template": "FIXTURE_VERIFIED_FROM_REQUEST_SUMMARY",
+    "mime_type": "application/json",
+    "mime_type_scope": "FIXTURE_BYTE_VERIFIED",
+    "expected_mime_type": "application/json",
+    "observed_mime_type": "NOT_OBSERVED",
+    "invented_metadata": "FORBIDDEN"
+  },
+  "fixture_byte_authority": {
+    "page1_blob": "9d34c7e31534906f6d067214f7ddf31f8262c398",
+    "page1_size_bytes": 254,
+    "page1_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+    "page2_blob": "9b51ca590b05383ccf891e6ddb7c18cf56160d36",
+    "page2_size_bytes": 246,
+    "page2_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+    "raw_v1_modified": false,
+    "raw_bytes_modified": false
+  },
+  "validation_counters": {
+    "RAW_OVERWRITE_COUNT": 0,
+    "HASH_MISMATCH_COUNT": 0,
+    "SIZE_MISMATCH_COUNT": 0,
+    "SECRET_VALUE_STORAGE_COUNT": 0,
+    "UNAUTHORIZED_PERSONAL_DATA_COUNT": 0,
+    "INVENTED_METADATA_COUNT": 0,
+    "SOURCE_FIELD_LOSS_COUNT": 0
+  },
+  "privacy_and_secret_boundary": {
+    "phone_stored": false,
+    "personal_name_stored": false,
+    "account_identifier_stored": false,
+    "cookie_stored": false,
+    "token_stored": false,
+    "private_authenticated_value_stored": false,
+    "personal_data_status": "NOT_APPLICABLE",
+    "secret_status": "NOT_APPLICABLE",
+    "redaction_status": "NOT_APPLICABLE"
+  },
+  "next_event": "B5_RESUME_AFTER_B2_AND_B4",
+  "actual_site_extraction": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_UPDATED_LATEST_B4_RAW_ARTIFACT_MANIFEST_V2_POINTER"
+}
