@@ -1,82 +1,54 @@
 {
-  "schema_version": "LATEST_A2_REPORT_POINTER_V8",
-  "pointer_id": "A2-GENERIC-SITE-ANALYZER-ADAPTER-FACTORY-LATEST-V8",
-  "updated_at_kst": "2026-08-05T23:55:00+09:00",
+  "schema_version": "LATEST_A2_REPORT_POINTER_V9",
+  "pointer_id": "A2-GENERIC-SITE-ANALYZER-ADAPTER-FACTORY-LATEST-V9",
+  "updated_at_kst": "2026-08-06T00:25:00+09:00",
   "role": "A-2_GENERIC_SITE_ANALYZER_ADAPTER_FACTORY_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 18,
   "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
-  "previous_pointer_blob": "5b34ec575e3c91b4da885917348f0d4f83751183",
+  "previous_pointer_blob": "7b0098f622bbdf84568919cf5cd17d19b5fc7c19",
   "active_report": {
-    "type": "EFFICIENCY_FIRST_PARALLEL_FAST_PATH",
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_WAVE6_9_EFFICIENCY_FIRST_PARALLEL_FAST_PATH_V1.json",
-    "commit": "ffe0e02a6081d11092f9981c08074f1e8f930769",
-    "blob": "f80a592476cef2292419b69118504cc939c4c071",
+    "type": "GENERIC_HTML_MVP_FAST_CLOSURE",
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_WAVE6_10_GENERIC_HTML_MVP_FAST_CLOSURE_V1.json",
+    "commit": "1363e9fb20da6413db808cfa576c8de5b05dc8e1",
+    "blob": "5a6a6c0df9c917773e6d9be1778ac3f11445f620",
     "remote_readback": "PASS"
   },
   "policy": {
     "policy_id": "YOLLA_EFFICIENCY_RATIONALITY_SPEED_FIRST_OPERATING_POLICY_V1",
-    "owner_model": "ONE_OWNER_END_TO_END",
-    "cycle_batch_parallel": true,
+    "live_capture_required_for_mvp": false,
     "mid_process_audit_count": 0,
-    "reporting_minimum_required": true
-  },
-  "consumed_authorization": {
-    "authorization_id": "V2-AUTH-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-20260805-001",
-    "status": "CONSUMED_CLOSED_DNS_FAIL_CLOSED",
-    "reusable": false
+    "final_acceptance_count": 1
   },
   "a3_result": {
-    "head": "8516f862bf467e52dab0deb1b20d03e910ebf486",
-    "pointer_blob": "4e5424a1a9a097b13f53e08fdb3f58b535445d8f",
-    "terminal": "A3_NAVER_PUBLIC_DOCUMENT_GET_ONE_SHOT_CAPTURE_DNS_EXACT_BLOCKER",
-    "captured_profile_count": 0
+    "head": "30ef339d303debeaa2098c4f5f5d2ca44f087c67",
+    "terminal": "DNS_EXECUTION_ENVIRONMENT_EXACT_EXTERNAL_BLOCKER",
+    "mvp_blocking": false,
+    "target_pc_handoff_directive_comment": 5193792814
   },
   "worker_comments": {
-    "A-3": 5193425888,
-    "A-4": 5193432798,
-    "A-5": 5193428704,
-    "A-6": 5193436077,
-    "A-7": 5193439365
+    "A-5": 5193798083,
+    "A-4": 5193802731,
+    "A-6": 5193808362,
+    "A-7": 5193812113,
+    "A-3": 5193792814
   },
   "control_comments": {
-    "PR17": 5193421420,
-    "PR18": 5193442666
-  },
-  "parallel_modes": {
-    "A-3": "DNS_ONLY_ONE_OWNER_END_TO_END",
-    "A-5": "FINAL_RESPONSE_SCHEMA_BINDER_PREP",
-    "A-4": "PAGINATION_DELTA_ONLY_PREP",
-    "A-6": "SINGLE_REBUILD_PRESTAGE",
-    "A-7": "ONE_FINAL_ACCEPTANCE_ONLY"
-  },
-  "removed_gates": {
-    "pre_authorization_a7_reaudit": false,
-    "post_capture_governance_reaudit": false,
-    "full_a4_navigation_replay": false,
-    "multiple_a6_build_receipts": false,
-    "sequential_worker_activation": false,
-    "repeated_start_progress_comments": false
+    "PR18": 5193787876,
+    "PR17": 5193816719
   },
   "critical_path": [
-    "A3_DNS_READY",
-    "A2_NEW_AUTHORIZATION_REQUEST_AND_ONE_DECISION",
-    "A3_CAPTURE",
-    "A5_FINAL_SCHEMA_AND_A4_DELTA_IN_PARALLEL",
-    "A6_SINGLE_BUILD_AND_REPLAY",
+    "A5_GENERIC_HTML_RESPONSE_CONTRACT_FINAL_AND_A4_NO_PAGINATION_BINDING_IN_PARALLEL",
+    "A6_SINGLE_VERIFIED_ADAPTER_BUILD_AND_2X_REPLAY",
     "A7_ONE_FINAL_ACCEPTANCE",
     "A2_TO_B1_HANDOFF"
   ],
-  "active_owner": "A-3",
-  "current_terminal": "A2_EFFICIENCY_FIRST_DNS_RECOVERY_AND_PARALLEL_PREP_ACTIVE",
-  "current_status": "A3_DNS_RECOVERY_WITH_A4_A5_A6_PARALLEL_PREP",
-  "next_action": "A3_PUBLISH_DNS_READINESS_TERMINAL_AND_POINTER",
-  "new_authorization_request_ready": false,
+  "active_owners": ["A-5", "A-4"],
+  "current_terminal": "A2_GENERIC_HTML_MVP_FAST_CLOSURE_ACTIVE",
+  "current_status": "A5_A4_PARALLEL_FINALIZATION",
+  "next_action": "PROCESS_A5_A4_FINAL_POINTERS_AND_TRIGGER_A6_SINGLE_BUILD",
   "request_execution_authorized": false,
   "capture_execution_authorized": false,
-  "failed_capture_auto_retry": false,
-  "second_batch_execution_authorized": false,
-  "final_response_schema_complete": false,
   "verified_adapter_package_ready": false,
   "b1_handoff_ready": false,
   "actual_bulk_collection": false,
