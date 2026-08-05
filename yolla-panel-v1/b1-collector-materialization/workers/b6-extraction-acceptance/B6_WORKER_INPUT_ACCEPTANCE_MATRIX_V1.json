@@ -1,0 +1,64 @@
+{
+  "schema_version": "B6_WORKER_INPUT_ACCEPTANCE_MATRIX_V1",
+  "matrix_id": "B6-WORKER-INPUT-ACCEPTANCE-MATRIX-20260805-001",
+  "audited_at_kst": "2026-08-05T17:02:00+09:00",
+  "entry_condition": "B2_B3_B4_B5_TERMINALS_AND_POINTERS_4_OF_4",
+  "entry_condition_met": true,
+  "required": 4,
+  "accepted": 4,
+  "status": "PASS_4_OF_4",
+  "workers": {
+    "B-2": {
+      "head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+      "pointer_blob": "e62f5c5ad354d1480eee8f929be80d3cee26e59f",
+      "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY",
+      "tests": "PASS_24_OF_24",
+      "decision": "ACCEPTED"
+    },
+    "B-3": {
+      "head": "f8299be24108b84af06abfe53e939c8bf68ec9dd",
+      "pointer_blob": "fb81b02eac0fca4597f5a93e168a5889e0046df1",
+      "terminal": "B3_EXTRACTOR_RETRY_RESUME_READY",
+      "tests": "PASS_32_OF_32",
+      "decision": "ACCEPTED"
+    },
+    "B-4": {
+      "head": "6dfe697363a69f83797775aa549f34614aa3748a",
+      "pointer_blob": "cc83b028c725e34861e8737bbf4c6932da48315a",
+      "terminal_result": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY",
+      "preflight_path": "B6_B4_INPUT_PREFLIGHT_V1.json",
+      "decision": "ACCEPTED"
+    },
+    "B-5": {
+      "head": "3e6549581e954fac8deb6960a82aadb5c93de07c",
+      "pointer_blob": "121dea133bc054323e5689e9f0a3b6386c0f9bfb",
+      "terminal_result": "B5_NORMALIZED_DATASET_EXTRACTION_RECEIPT_READY",
+      "preflight_path": "B6_B5_INPUT_PREFLIGHT_V1.json",
+      "decision": "ACCEPTED"
+    }
+  },
+  "cross_pipeline_parity": {
+    "b4_total_record_count": 4,
+    "b5_input_record_count": 4,
+    "input_count_match": true,
+    "b3_duplicate_count": 1,
+    "b5_duplicate_count": 1,
+    "duplicate_count_match": true,
+    "b3_output_record_count": 3,
+    "b5_output_record_count": 3,
+    "output_count_match": true,
+    "raw_manifest_sha256_match": true,
+    "source_envelope_sha256_match": true,
+    "source_field_loss_count": 0,
+    "network_call_count_total": 0
+  },
+  "scope_classification": "FIXTURE_FIRST_REMOTE_COMMITTED_WORKER_AUTHORITY",
+  "actual_site_extraction": false,
+  "unverified_adapter_use": false,
+  "semantic_transformation": false,
+  "d_canonical_db_write": false,
+  "decision": "PASS_INPUT_GATE_OPEN_FOR_FINAL_ACCEPTANCE",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
