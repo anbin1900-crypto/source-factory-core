@@ -1,0 +1,96 @@
+{
+  "schema_version": "LATEST_V1_C_MODE_6_WORKER_VALIDATION_POINTER_V2",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "runtime_baseline": "5.10.2.4.1",
+  "supersedes": {
+    "control_id": "V1-C-MODE-VALIDATION-CYCLE-001",
+    "pointer": "yolla-panel-v1/v1-existing-runtime-control/LATEST_V1_C_MODE_VALIDATION_SYSTEM_POINTER.json",
+    "worker_prs_closed": [56, 57, 58],
+    "reason": "USER_CORRECTION_WORKER_COUNT_6"
+  },
+  "documents": {
+    "control": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/V1_C_MODE_6_WORKER_VALIDATION_CONTROL_V2.md",
+      "commit": "8accc08e48cb4e91ecddfb9f58fe918fb997a852",
+      "size_bytes": 2788,
+      "sha256": "250036060f938c5797af8adfb9c714907b4a72ea31d1f0f08432d75cb9097ca6"
+    },
+    "assignment_matrix": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/V1_C_MODE_6_WORKER_ASSIGNMENT_MATRIX_V2.json",
+      "commit": "643b5ea0438e89f1aeb261ec414a9f0599203a04",
+      "size_bytes": 3997,
+      "sha256": "671fa65e0c76cbbdff51708472062de9bbc303d9b38a50f853e62c1922aca549"
+    },
+    "test_matrix": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/V1_C_MODE_6_WORKER_TEST_MATRIX_V2.json",
+      "commit": "7cc4a89817104d91470c416bb953282da330efb4",
+      "size_bytes": 2500,
+      "sha256": "426fa49c50aa2d5c74e091fc7d5adb47bdc8e8a5bde2b2b044a7c9e05ae25a20"
+    },
+    "result_schema": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/V1_C_MODE_6_WORKER_RESULT_SCHEMA_V2.json",
+      "commit": "61018eec2a210921ad2ce10dcf545da6ca29e6f2",
+      "size_bytes": 1562,
+      "sha256": "6ffda212c632a8b18773f206bf8fbde58e17852a958e48158b706706189c3460"
+    },
+    "wave_protocol": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/V1_C_MODE_6_WORKER_WAVE_PROTOCOL_V2.json",
+      "commit": "63386be6a80c61494d5a62146f3797b32ec7dad9",
+      "size_bytes": 1078,
+      "sha256": "126bdb0566135aff128bc23f13fd581c8fc6346af0cf04e5a42921f6637443a8"
+    },
+    "worker_prompts": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/V1_C_MODE_6_WORKER_CHAT_PROMPTS_V2.md",
+      "commit": "e5d946a0b085ded41f4aaf458ef57e7bf1530f97",
+      "size_bytes": 2188,
+      "sha256": "d88a0e856547eb7313cca45a8240fa4eb4ee0cee95d6eaceabd3cd7d2b8faebb"
+    },
+    "harness_report": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/V1_C_MODE_6_WORKER_VALIDATION_HARNESS_BUILD_REPORT_V2.json",
+      "commit": "cc0ef84b033b26109ae086bf12fec1c6858c8edc",
+      "size_bytes": 953,
+      "sha256": "a7dcb8c43dc44184a4fa118d4178ce5ac21dcbb688153d73772ed8fc30054ee8"
+    }
+  },
+  "package": {
+    "drive_file_id": "1frliEMAl7nxVVLvVyikDHbenYwdBKys0",
+    "file_name": "V1_C_MODE_6_WORKER_VALIDATION_SYSTEM_V2.zip",
+    "size_bytes": 206388,
+    "sha256": "e51240768eb35bd2e0b6c2e1c03b8060847eedee7518d2759292bf2406b36686",
+    "metadata_readback": "PASS"
+  },
+  "worker_controls": {
+    "AUTOMATION-C-W1": {"branch": "worker/automation-c-w1-runtime-state-v2", "pr": 59, "directive_commit": "e5311ee772c10b90ebe32caacfd3a95bf324927e", "status": "READY_FOR_CHAT_ASSIGNMENT"},
+    "AUTOMATION-C-W2": {"branch": "worker/automation-c-w2-github-correlation-v2", "pr": 60, "directive_commit": "2bbb5097c179d4744bc7764e22fc7237b8c410a4", "status": "READY_FOR_CHAT_ASSIGNMENT"},
+    "AUTOMATION-C-W3": {"branch": "worker/automation-c-w3-ui-truth-v2", "pr": 61, "directive_commit": "9690f3455aaa2f353e336f29d7ce0902e7ec62c9", "status": "READY_FOR_CHAT_ASSIGNMENT"},
+    "AUTOMATION-C-W4": {"branch": "worker/automation-c-w4-repeat-command-v2", "pr": 62, "directive_commit": "ef8a1c03b9232cb7437da92099ff96ac657778d2", "status": "READY_FOR_CHAT_ASSIGNMENT"},
+    "AUTOMATION-C-W5": {"branch": "worker/automation-c-w5-background-install-log-v2", "pr": 63, "directive_commit": "e984c05dc87b1624155374a380319754478b3eb6", "status": "READY_FOR_CHAT_ASSIGNMENT"},
+    "AUTOMATION-C-W6": {"branch": "worker/automation-c-w6-failure-acceptance-v2", "pr": 64, "directive_commit": "a92d111600c14c7fb06efbe3b73ef5daee149060", "status": "READY_FOR_CHAT_ASSIGNMENT"}
+  },
+  "offline_validation": {
+    "status": "PASS",
+    "result_count": 12,
+    "failure_count": 0,
+    "existing_runtime_assertions": 59,
+    "extended_assertions": 15,
+    "static_assertions": 20,
+    "six_worker_assertions": 13,
+    "uploaded_log_idle_baseline": "PASS"
+  },
+  "target_pc": {
+    "live_test": "PENDING",
+    "six_worker_three_round": "PENDING",
+    "restart_resume": "PENDING",
+    "lts_terminal_claimed": false
+  },
+  "auto_test_write_count": 0,
+  "status": "READY_FOR_6_WORKER_CHAT_ASSIGNMENT",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-05T16:47:00+09:00"
+}
