@@ -1,7 +1,7 @@
 {
-  "schema_version": "CONCRETE_SOURCE_TARGET_OBSERVATION_RECEIPT_V1",
-  "observation_id": "OBS-NAVER-FIN-LAND-PUBLIC-READONLY-20260805-001",
-  "observed_at_kst": "2026-08-05T17:39:09+09:00",
+  "schema_version": "CONCRETE_SOURCE_TARGET_OBSERVATION_RECEIPT_V2",
+  "observation_id": "OBS-NAVER-FIN-LAND-PUBLIC-READONLY-20260805-002",
+  "observed_at_kst": "2026-08-05T17:49:00+09:00",
   "observer": "V-2_YOLLA_AI_SUPREME_COMMANDER",
   "observation_scope": "PUBLIC_NON_LOGIN_READ_ONLY_SINGLE_SESSION",
   "target_site": {
@@ -27,13 +27,13 @@
     },
     "successful_public_surface_observation": {
       "mode": "PUBLIC_INDEXED_OFFICIAL_PAGE_READBACK",
-      "official_home_url": "https://fin.land.naver.com/home",
-      "official_article_detail_url_1": "https://fin.land.naver.com/articles/2529241670",
-      "official_article_detail_url_2": "https://fin.land.naver.com/articles/2529760923",
+      "official_search_url": "https://fin.land.naver.com/search",
+      "official_article_detail_url_1": "https://fin.land.naver.com/articles/2528362542",
+      "official_article_detail_url_2": "https://fin.land.naver.com/articles/2528927768",
       "observed_capabilities": [
-        "PUBLIC_HOME_SURFACE",
-        "PUBLIC_MAP_ENTRY",
-        "PUBLIC_REGION_OR_COMPLEX_SEARCH_ENTRY",
+        "PUBLIC_MAP_ENTRY_FROM_USER_AUTHORIZED_URL",
+        "PUBLIC_SEARCH_DOCUMENT",
+        "PUBLIC_REGION_COMPLEX_SUBWAY_SCHOOL_SEARCH_INPUT",
         "PUBLIC_ARTICLE_DETAIL_DOCUMENT"
       ]
     }
@@ -58,19 +58,18 @@
       ]
     },
     {
-      "evidence_id": "EVIDENCE-OFFICIAL-HOME-001",
+      "evidence_id": "EVIDENCE-OFFICIAL-SEARCH-001",
       "kind": "OFFICIAL_PUBLIC_INDEXED_PAGE",
-      "url": "https://fin.land.naver.com/home",
+      "url": "https://fin.land.naver.com/search",
       "supports": [
-        "PUBLIC_HOME_ROUTE",
-        "MAP_ENTRY",
-        "REGION_OR_COMPLEX_SEARCH_ENTRY"
+        "PUBLIC_SEARCH_ROUTE",
+        "REGION_COMPLEX_SUBWAY_SCHOOL_SEARCH_ENTRY"
       ]
     },
     {
       "evidence_id": "EVIDENCE-OFFICIAL-ARTICLE-001",
       "kind": "OFFICIAL_PUBLIC_INDEXED_PAGE",
-      "url": "https://fin.land.naver.com/articles/2529241670",
+      "url": "https://fin.land.naver.com/articles/2528362542",
       "supports": [
         "PUBLIC_ARTICLE_DETAIL_ROUTE",
         "REPRESENTATIVE_ARTICLE_NUMBER"
@@ -79,7 +78,7 @@
     {
       "evidence_id": "EVIDENCE-OFFICIAL-ARTICLE-002",
       "kind": "OFFICIAL_PUBLIC_INDEXED_PAGE",
-      "url": "https://fin.land.naver.com/articles/2529760923",
+      "url": "https://fin.land.naver.com/articles/2528927768",
       "supports": [
         "PUBLIC_ARTICLE_DETAIL_ROUTE",
         "ALTERNATE_REPRESENTATIVE_ARTICLE_NUMBER"
