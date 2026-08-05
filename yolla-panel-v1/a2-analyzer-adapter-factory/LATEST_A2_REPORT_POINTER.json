@@ -1,62 +1,77 @@
 {
-  "schema_version": "LATEST_A2_REPORT_POINTER_V7",
-  "pointer_id": "A2-GENERIC-SITE-ANALYZER-ADAPTER-FACTORY-LATEST-V7",
-  "updated_at_kst": "2026-08-05T23:49:00+09:00",
+  "schema_version": "LATEST_A2_REPORT_POINTER_V8",
+  "pointer_id": "A2-GENERIC-SITE-ANALYZER-ADAPTER-FACTORY-LATEST-V8",
+  "updated_at_kst": "2026-08-05T23:55:00+09:00",
   "role": "A-2_GENERIC_SITE_ANALYZER_ADAPTER_FACTORY_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 18,
   "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
-  "previous_pointer_blob": "88598259e4ee68976774665d74c92185bbf01020",
+  "previous_pointer_blob": "5b34ec575e3c91b4da885917348f0d4f83751183",
   "active_report": {
-    "type": "DNS_EXECUTION_ENVIRONMENT_CLOSURE_ACTIVE",
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_WAVE6_8_DNS_EXECUTION_ENVIRONMENT_CLOSURE_ACTIVE_V1.json",
-    "commit": "147c188c0b7b07e724745af024d28e461f38290d",
-    "blob": "30493e777cc0ba0cdc019fbc1e2d5656cd6f7d7d",
+    "type": "EFFICIENCY_FIRST_PARALLEL_FAST_PATH",
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_WAVE6_9_EFFICIENCY_FIRST_PARALLEL_FAST_PATH_V1.json",
+    "commit": "ffe0e02a6081d11092f9981c08074f1e8f930769",
+    "blob": "f80a592476cef2292419b69118504cc939c4c071",
     "remote_readback": "PASS"
+  },
+  "policy": {
+    "policy_id": "YOLLA_EFFICIENCY_RATIONALITY_SPEED_FIRST_OPERATING_POLICY_V1",
+    "owner_model": "ONE_OWNER_END_TO_END",
+    "cycle_batch_parallel": true,
+    "mid_process_audit_count": 0,
+    "reporting_minimum_required": true
   },
   "consumed_authorization": {
     "authorization_id": "V2-AUTH-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-20260805-001",
-    "decision_comment": 5192765975,
-    "batch_execution_count_used": 1,
     "status": "CONSUMED_CLOSED_DNS_FAIL_CLOSED",
     "reusable": false
   },
   "a3_result": {
     "head": "8516f862bf467e52dab0deb1b20d03e910ebf486",
     "pointer_blob": "4e5424a1a9a097b13f53e08fdb3f58b535445d8f",
-    "terminal_report_blob": "62d3aca0485e915dfa9cb7f9a7e01278d6d1d4cb",
-    "run_summary_blob": "fab57ddec4c23636195fa4161fcf3bb17a073074",
     "terminal": "A3_NAVER_PUBLIC_DOCUMENT_GET_ONE_SHOT_CAPTURE_DNS_EXACT_BLOCKER",
-    "first_blocker": "EP-001_DNS_NAME_RESOLUTION_TEMPORARY_FAILURE",
-    "terminal_comment": 5193262768,
-    "final_pointer_comment": 5193283132,
-    "captured_profile_count": 0,
-    "blocked_profile_count": 1,
-    "skipped_profile_count": 6,
-    "http_request_sent_count": 0,
-    "remote_server_contact_count": 0,
-    "raw_persisted_count": 0,
-    "redacted_fixture_count": 0
-  },
-  "dns_environment_closure": {
-    "control_pr": 17,
-    "request_comment": 5193338108,
-    "status": "WAITING_DNS_EXECUTION_ENVIRONMENT_READINESS_RECEIPT",
-    "required_terminal": "DNS_EXECUTION_ENVIRONMENT_READY_FOR_NEW_A2_AUTHORIZATION_REQUEST_OR_EXACT_BLOCKER"
+    "captured_profile_count": 0
   },
   "worker_comments": {
-    "A-3": 5193341194,
-    "A-4": 5193346275,
-    "A-5": 5193344214,
-    "A-6": 5193348582,
-    "A-7": 5193350581
+    "A-3": 5193425888,
+    "A-4": 5193432798,
+    "A-5": 5193428704,
+    "A-6": 5193436077,
+    "A-7": 5193439365
   },
-  "active_owner": "A0_A1_V2_DNS_EXECUTION_ENVIRONMENT_AUTHORITY",
-  "current_terminal": "A2_A3_DNS_BLOCKER_CAPTURE_ZERO_DNS_ENVIRONMENT_CLOSURE_ACTIVE",
-  "current_status": "WAITING_DNS_EXECUTION_ENVIRONMENT_READINESS_RECEIPT",
-  "next_action": "PUBLISH_DNS_EXECUTION_ENVIRONMENT_READY_POINTER_THEN_SUBMIT_NEW_DISTINCT_CAPTURE_AUTHORIZATION_REQUEST",
+  "control_comments": {
+    "PR17": 5193421420,
+    "PR18": 5193442666
+  },
+  "parallel_modes": {
+    "A-3": "DNS_ONLY_ONE_OWNER_END_TO_END",
+    "A-5": "FINAL_RESPONSE_SCHEMA_BINDER_PREP",
+    "A-4": "PAGINATION_DELTA_ONLY_PREP",
+    "A-6": "SINGLE_REBUILD_PRESTAGE",
+    "A-7": "ONE_FINAL_ACCEPTANCE_ONLY"
+  },
+  "removed_gates": {
+    "pre_authorization_a7_reaudit": false,
+    "post_capture_governance_reaudit": false,
+    "full_a4_navigation_replay": false,
+    "multiple_a6_build_receipts": false,
+    "sequential_worker_activation": false,
+    "repeated_start_progress_comments": false
+  },
+  "critical_path": [
+    "A3_DNS_READY",
+    "A2_NEW_AUTHORIZATION_REQUEST_AND_ONE_DECISION",
+    "A3_CAPTURE",
+    "A5_FINAL_SCHEMA_AND_A4_DELTA_IN_PARALLEL",
+    "A6_SINGLE_BUILD_AND_REPLAY",
+    "A7_ONE_FINAL_ACCEPTANCE",
+    "A2_TO_B1_HANDOFF"
+  ],
+  "active_owner": "A-3",
+  "current_terminal": "A2_EFFICIENCY_FIRST_DNS_RECOVERY_AND_PARALLEL_PREP_ACTIVE",
+  "current_status": "A3_DNS_RECOVERY_WITH_A4_A5_A6_PARALLEL_PREP",
+  "next_action": "A3_PUBLISH_DNS_READINESS_TERMINAL_AND_POINTER",
   "new_authorization_request_ready": false,
-  "new_authorization_granted": false,
   "request_execution_authorized": false,
   "capture_execution_authorized": false,
   "failed_capture_auto_retry": false,
