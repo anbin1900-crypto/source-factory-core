@@ -1,17 +1,24 @@
 {
-  "schema_version": "LATEST_A2_REPORT_POINTER_V3",
-  "pointer_id": "A2-GENERIC-SITE-ANALYZER-ADAPTER-FACTORY-LATEST-V3",
-  "updated_at_kst": "2026-08-05T22:24:39+09:00",
+  "schema_version": "LATEST_A2_REPORT_POINTER_V4",
+  "pointer_id": "A2-GENERIC-SITE-ANALYZER-ADAPTER-FACTORY-LATEST-V4",
+  "updated_at_kst": "2026-08-05T22:26:00+09:00",
   "role": "A-2_GENERIC_SITE_ANALYZER_ADAPTER_FACTORY_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 18,
   "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
-  "previous_pointer_blob": "f2d60688161e06b9ef0ea86d4f5fce5e3026af20",
+  "previous_pointer_blob": "a554de2249543c09eca72a4b3e47273de5d132ba",
   "active_report": {
     "type": "ABC_INTEGRATION_READINESS_PREPARATION",
     "path": "yolla-panel-v1/a2-analyzer-adapter-factory/integration-preparation/A2_ABC_INTEGRATION_READINESS_PREPARATION_V1.json",
     "commit": "be54f663b2e16fd7383e78a87428212366a23e95",
     "blob": "3270a0e11d2b4be40652a32a727ad60249448f43",
+    "remote_readback": "PASS"
+  },
+  "latest_authorization_event": {
+    "type": "SECOND_EXPLICIT_AUTHORIZATION_REQUEST_POSTED",
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/A2_WAVE6_6_SECOND_AUTHORIZATION_REQUEST_POSTED_AND_WAIT_V1.json",
+    "commit": "75e09f5344b604c5338c1e0a2ec969b1bc62e4f4",
+    "blob": "2cb397181aa71575837d904132c5dfcbab1a79e7",
     "remote_readback": "PASS"
   },
   "source_authority": {
@@ -36,9 +43,24 @@
   "a7_result": {
     "head": "2711ee7a7611cdd4b4ebfdb29f337b02354da604",
     "pointer_blob": "38ed77e59a296d39e7986bfa361643bb5d81811e",
+    "recommendation_blob": "eb3dd7186e8b88bfbdd6d464cecaa44448ba93e1",
+    "validation_blob": "7aae731fe2887dd38bedc06e90d6c44d0dd84a0c",
     "terminal": "A7_PUBLIC_ROUTE_GOVERNANCE_READY_FOR_A2_SECOND_AUTHORIZATION_REQUEST",
     "validation": "PASS_50_FINDING_0",
     "authorization_request_ready": true
+  },
+  "authorization_request": {
+    "request_id": "A2-TO-A0-A1-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-CAPTURE-AUTHORIZATION-REQUEST-V1-20260805-001",
+    "control_pr": 17,
+    "comment_id": 5192321213,
+    "status": "AWAITING_EXPLICIT_DECISION",
+    "prior_authorization_reusable": false,
+    "request_is_authorization": false,
+    "profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-012"],
+    "excluded_profiles": ["EP-011"],
+    "max_capture_per_profile": 1,
+    "max_total_capture": 7,
+    "max_batch_execution_count": 1
   },
   "integration_state": {
     "output_contract": "VERIFIED_ADAPTER_PACKAGE_V1",
@@ -46,13 +68,18 @@
     "status": "CONTRACT_AND_GOVERNANCE_READY_EXECUTION_GATE_CLOSED",
     "handoff_ready": false
   },
-  "active_owner": "A-2",
-  "current_terminal": "A2_PUBLIC_ROUTE_GOVERNANCE_PASS_SECOND_AUTHORIZATION_REQUEST_READY",
-  "current_status": "WAITING_NEW_EXPLICIT_A0_A1_ONE_SHOT_AUTHORIZATION",
-  "next_action": "A2_SUBMIT_NEW_EXPLICIT_A0_A1_ONE_SHOT_AUTHORIZATION_REQUEST_OR_HOLD",
+  "worker_comments": {
+    "A-3": 5192325258,
+    "A-7": 5192329286
+  },
+  "active_owner": "A0_A1_AUTHORIZATION_DECISION",
+  "current_terminal": "A2_SECOND_EXPLICIT_AUTHORIZATION_REQUEST_POSTED_AWAITING_DECISION",
+  "current_status": "WAITING_NEW_EXPLICIT_AUTHORIZATION_DECISION",
+  "next_action": "PROCESS_APPROVED_OR_DENIED_DECISION_MATCHING_EXACT_REQUEST_ID",
   "new_authorization_request_ready": true,
   "new_authorization_granted": false,
   "capture_execution_authorized": false,
+  "request_execution_authorized": false,
   "second_attempt_authorized": false,
   "verified_adapter_package_ready": false,
   "b1_handoff_ready": false,
