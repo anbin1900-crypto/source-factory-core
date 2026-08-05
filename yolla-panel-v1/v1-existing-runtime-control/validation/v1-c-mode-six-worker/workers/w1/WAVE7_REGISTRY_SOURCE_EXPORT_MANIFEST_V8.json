@@ -1,0 +1,43 @@
+{
+  "schema_version": "C_MODE_REGISTRY_SOURCE_EXPORT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-007",
+  "command_id": "C6W-W7-W1-REGISTRY-AUTHORITY-EXPORT",
+  "result_key": "519362538800",
+  "registry_sequence": 1,
+  "registry_id": "V1-C-MODE-6W-WAVE-007:REGISTRY:1",
+  "supersedes": "V1-C-MODE-6W-WAVE-006:HISTORICAL_SUPERSEDED_REGISTRY",
+  "consumer_roles": ["AUTOMATION-C-W2", "AUTOMATION-C-W5"],
+  "files": [
+    {
+      "order": 1,
+      "path": "automation-c-v1/c_mode_registry_authority.cjs",
+      "commit": "4a86304057e2f936b113b66e7cc6a586139a5de2",
+      "blob_sha": "4dbebd97505c3f88df308e3afbcf768d45fb58de",
+      "sha256": "415af3221777f336d4aab73c0edc9feeff5928e012ee2af0061ccaba0ccf1069",
+      "apply": "ADD_AFTER automation-c-v1/c_mode_wave_pointer.cjs"
+    },
+    {
+      "order": 2,
+      "path": "automation-c-v1/tests/test_c_mode_registry_authority.cjs",
+      "commit": "d5e48e35e7d949b30e611729fe2fd1ce330dbb06",
+      "blob_sha": "f1e2ff7994e909a6c98b6d0ce0c86d78232bbdfb",
+      "sha256": "d36ba8282cb65970d8ae96996ef0ab1daa96ae979ee2571382537bedca5ed5c7",
+      "apply": "ADD_AFTER implementation"
+    }
+  ],
+  "dependency": {
+    "path": "automation-c-v1/c_mode_wave_pointer.cjs",
+    "commit": "31528c31ea3f4a10d2a7034491c2dacb75829e00",
+    "blob_sha": "4e651f02a3e0992e2f8379d89e6a15cbaa546956",
+    "policy": "REUSE_UNMODIFIED"
+  },
+  "verification": {
+    "command": "node automation-c-v1/tests/test_c_mode_registry_authority.cjs",
+    "result": "PASS_15_OF_15",
+    "failure_count": 0
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
