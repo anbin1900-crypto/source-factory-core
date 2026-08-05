@@ -1,0 +1,36 @@
+{
+  "schema_version": "WAVE4_REPORT_COMPLETENESS_LEDGER_V5",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-004",
+  "command_id": "C6W-W4-W2-REPORT-COMPLETENESS-GATE",
+  "generated_at": "2026-08-05T22:35:00+09:00",
+  "rules": {
+    "result_commit_only": "REPORT_MISSING",
+    "terminal_only": "REPORT_INCOMPLETE",
+    "exact_commit_and_correlated_terminal": "REPORTED",
+    "newer_directive_cannot_be_hidden_by_old_terminal": true,
+    "no_pending_cannot_override_pending_directive": true
+  },
+  "fixtures": [
+    {
+      "role": "AUTOMATION-C-W2",
+      "directive_post_id": 5191921150,
+      "result_commit": "e7fa30621f6d99d28f9c63e25833da6fc1e12619",
+      "original_terminal_post_id": 5192027002,
+      "correction_terminal_post_id": 5192450954,
+      "status": "REPORTED",
+      "consecutive_missing_count": 0
+    },
+    {
+      "role": "AUTOMATION-C-W6",
+      "directive_post_id": 5189701057,
+      "false_no_pending_post_id": 5189877834,
+      "status": "REPORT_MISSING",
+      "reason": "NEWER_DIRECTIVE_HIDDEN_BY_OLDER_TERMINAL",
+      "consecutive_missing_count": 1
+    }
+  ],
+  "production": false,
+  "ready": false,
+  "merge": false
+}
