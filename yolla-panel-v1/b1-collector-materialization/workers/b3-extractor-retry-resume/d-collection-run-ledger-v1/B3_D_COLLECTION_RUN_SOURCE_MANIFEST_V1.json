@@ -1,0 +1,62 @@
+{
+  "schema_version": "B3_D_COLLECTION_RUN_SOURCE_MANIFEST_V1",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "B3_D_COLLECTION_RUN_LEDGER",
+  "assignment_comment_id": 5196022442,
+  "owned_root": "yolla-panel-v1/b1-collector-materialization/workers/b3-extractor-retry-resume/d-collection-run-ledger-v1/",
+  "commits": {
+    "start": "917a56d1367c47d7359f73505fc178f3096e0580",
+    "source": "9f92f969e293fbb89dfdef67ba067a234629b2f8",
+    "fixture": "8b51e7c057ff6267da150479f659fbd8cf8af499",
+    "tests": "6351dd841c3a93ea8742613d898ff3850877f14e",
+    "contract": "8086b9c57e58239d65a6a8082536bf18ee31d976",
+    "generated_result": "ddf8e6ca792fa411212353c9c789e92863fe8c2b",
+    "test_evidence": "626205128c58b7bef7c6845b3745074f92204880"
+  },
+  "files": [
+    {
+      "path": "B3_D_COLLECTION_RUN_START_REPORT_V1.json",
+      "blob": "1a3339beea3375e840e45f11461c4cbd8fcbd283",
+      "role": "START_REPORT"
+    },
+    {
+      "path": "src/d_collection_run_ledger.py",
+      "blob": "b1fa38fe46f071a3093d188805f44caed9ddae5b",
+      "role": "IMPLEMENTATION"
+    },
+    {
+      "path": "fixtures/d_collection_run_fixture_v1.json",
+      "blob": "e3d0e41bf7c7b82cc9132fecd6c685ad748df4da",
+      "role": "FIXTURE"
+    },
+    {
+      "path": "tests/test_d_collection_run_ledger.py",
+      "blob": "98ea0cffd57c55987b161eb718ac67b500af2561",
+      "role": "TEST"
+    },
+    {
+      "path": "B3_D_COLLECTION_RUN_RESUME_LEDGER_V1.json",
+      "blob": "776a3c012db5aaee7204f1ec374c21bbca6abda3",
+      "role": "D_CONSUMER_CONTRACT"
+    },
+    {
+      "path": "generated/B3_D_COLLECTION_RUN_FIXTURE_RESULT_V1.json",
+      "blob": "e6266c5cc4af42bc3797d17a3640381fa6634c16",
+      "role": "FIXTURE_RESULT"
+    },
+    {
+      "path": "B3_D_COLLECTION_RUN_TEST_RESULTS_V1.json",
+      "role": "TEST_EVIDENCE"
+    }
+  ],
+  "consumer_objects": ["COLLECTION_RUN", "PROCESSING_EVENT"],
+  "preserved_previous_terminal": "B3_EXTRACTOR_RETRY_RESUME_READY",
+  "out_of_scope_path_count": 0,
+  "site_call_count": 0,
+  "automated_pagination": false,
+  "d_canonical_id_generation": false,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
