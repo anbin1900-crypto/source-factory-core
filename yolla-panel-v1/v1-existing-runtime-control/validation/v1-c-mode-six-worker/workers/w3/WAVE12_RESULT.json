@@ -1,0 +1,64 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE12_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-012",
+  "registry_sequence": 12,
+  "command_id": "C6W-W12-W3-UI-PAYLOAD-EVIDENCE-INTEGRATION",
+  "worker_id": "AUTOMATION-C-W3",
+  "directive_comment": 5195172641,
+  "result_key": "519517264100",
+  "input_carryover_result": 5194984232,
+  "target_version": "5.10.2.4.2-rc4",
+  "status": "PASS_OFFLINE_TARGET_PC_PENDING",
+  "terminal": "C6W_W12_W3_UI_PAYLOAD_EVIDENCE_INTEGRATION_OFFLINE_PASS_TARGET_PC_EXECUTION_PENDING",
+  "payload_export": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave12/W3_RC4_UI_PAYLOAD_EXPORT.json",
+    "commit": "4def942235a6781c5692221324c2574e299341b8",
+    "blob": "520c04ae8730dbef1166b2f7e063b0783db5414a",
+    "size_bytes": 5724,
+    "sha256": "37a7fac81a9c0619fdf3bd148f8d9aa9fe2f59f16c0ea026a63bc8e567d35dd4"
+  },
+  "runtime_files": [
+    {"logical_role":"TRUTH_BRIDGE","commit":"edcb83ef2cd96aa042ab0656c66f290d542d20f0","blob":"27267b1b0b1d057e2ca40e3fcc864fd4609a1520","size_bytes":4012,"sha256":"8086f56f1f0b5731cb9ad4be5339fc211d1468f4195fcf249b7a300cc3b830e8","install_destination":"automation-c-v1/workspace_ui_truth_bridge.cjs"},
+    {"logical_role":"CSS_RUNTIME","commit":"52aea6e17ce2561ed07058e304c3744eec3b166a","blob":"ff1bf6c84fb9806328bb3e5d8616a85cce943473","size_bytes":1504,"sha256":"43b6a3721c250e76b2562c45d931fd17d87ae219fec70aa3ef3206af9cd8b0fe","install_destination":"workspace_c_mode_rc4_truth.css"},
+    {"logical_role":"UI_RUNTIME","commit":"250b05096ba70fcbe65aed3276cebaa07bd63de5","blob":"82862f1b4c8c2599c4035c78023ffea850909b4c","size_bytes":7858,"sha256":"5fdd1719e110ce80ad4b3efb911fd20a86ccbfeb27182645e8d2170287114b54","install_destination":"workspace_c_mode_rc4_truth.js"}
+  ],
+  "evidence_files": [
+    {"logical_role":"MEMBERSHIP_VALIDATOR","commit":"21d008577a250202e5e83e467e9bbf905b92176a","blob":"d2a43875ab8e3c49b331ac2c8ee3455234dcd6ac","size_bytes":3359,"sha256":"47bb2565d2210faede1d3af27288edf19a5825560210789bebcb41c574134f25"},
+    {"logical_role":"SMOKE_ASSERTION","commit":"7c1e71711041cbcf08a1dc6bbb3089dc495d921b","blob":"edd6d1944896a98606b78370277c54f4dceea220","size_bytes":3848,"sha256":"f44e2183c60dab4a5ad700205c8f8d20c7f4c9c9d7c08a64e475b0a52ad6d214"},
+    {"logical_role":"TARGET_PC_SCHEMA","commit":"20a610190935a0321a21dd62c0aa1e5c3277dd51","blob":"5cc274f0bbeebc62c735b8720be949f036b6e7e5","size_bytes":1615,"sha256":"0ded52d65a2d7cdaaeefca858bff90401180a15fb817ffdc0f4a62ee322a73a5"},
+    {"logical_role":"TARGET_PC_COLLECTOR","commit":"77f060e48fdec8815deebf2d0ca5ecd5e450e247","blob":"0946cf2380500bfe9a38128bb594b0879524b1b5","size_bytes":4142,"sha256":"ba32df600afa9cfdf9200cfd8a40aba84229c9e922a653fd860284877d61a4b2"}
+  ],
+  "offline_receipts": {
+    "membership": {"commit":"cc081d46033c0028392e578782036483289b628c","member_count":7,"status":"PASS"},
+    "smoke": {"commit":"50a9d5b29cd37a6b14cb997ab4c6ee14fed75b9a","assertion_count":15,"status":"PASS"}
+  },
+  "tests": [
+    {"name":"JavaScript syntax for UI, bridge, membership validator and smoke test","status":"PASS"},
+    {"name":"rc4 UI package membership validation","status":"PASS","members":7,"runtime_members":3,"evidence_members":4},
+    {"name":"rc4 UI truth smoke assertion","status":"PASS","assertions":15},
+    {"name":"Export manifest JSON parse","status":"PASS"},
+    {"name":"Target-PC evidence schema JSON parse","status":"PASS"}
+  ],
+  "required_truth_gates": {
+    "C_AND_REPEAT_DISABLED_WORKING_COUNT": 0,
+    "LEGACY_A_E_EXCLUDED": true,
+    "RESULT_COMMENT_PRIORITY": true,
+    "CURRENT_AND_HISTORICAL_REGISTRY_SEPARATED": true,
+    "MISSING_DUPLICATE_ERROR_END_RESTING_SEPARATED": true
+  },
+  "installation": {
+    "base_runtime_preserved": true,
+    "overlay_runtime_count": 3,
+    "rollback_defined": true,
+    "package_membership_validator_provided": true,
+    "target_pc_collector_provided": true,
+    "target_pc_schema_provided": true
+  },
+  "target_pc_execution": "PENDING",
+  "live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-06T02:57:52+09:00"
+}
