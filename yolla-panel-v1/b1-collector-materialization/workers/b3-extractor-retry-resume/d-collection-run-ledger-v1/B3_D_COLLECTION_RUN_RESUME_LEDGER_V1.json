@@ -1,0 +1,120 @@
+{
+  "schema_version": "B3_D_COLLECTION_RUN_RESUME_LEDGER_V1",
+  "task_id": "B3_D_COLLECTION_RUN_LEDGER",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "assignment_comment_id": 5196022442,
+  "purpose": "Prepare producer-native COLLECTION_RUN and PROCESSING_EVENT facts for D intake without creating D canonical identifiers.",
+  "consumer_objects": [
+    "COLLECTION_RUN",
+    "PROCESSING_EVENT"
+  ],
+  "identity_authority": {
+    "native_run_identity": "B3_PRODUCER_NATIVE",
+    "required_fields": [
+      "source_key",
+      "native_run_key"
+    ],
+    "d_canonical_run_id": "MUST_BE_NULL",
+    "d_canonical_id_generation": false
+  },
+  "collection_run_required_fields": [
+    "native_run_identity",
+    "package_sha256",
+    "started_at",
+    "ended_at",
+    "status",
+    "retry_count",
+    "resume_count",
+    "processing_event_count"
+  ],
+  "processing_event_required_fields": [
+    "native_event_id",
+    "sequence",
+    "event_type",
+    "status_from",
+    "status_to",
+    "occurred_at",
+    "idempotency_key",
+    "retry_attempt",
+    "resume_from_event_id",
+    "details",
+    "payload_sha256",
+    "previous_event_hash",
+    "event_hash"
+  ],
+  "allowed_event_status_binding": {
+    "RUN_CREATED": "CREATED",
+    "RUN_STARTED": "RUNNING",
+    "RETRY_SCHEDULED": "RETRY_WAIT",
+    "RUN_INTERRUPTED": "INTERRUPTED",
+    "RUN_RESUMED": "RESUMED",
+    "RUN_COMPLETED": "COMPLETED",
+    "RUN_FAILED": "FAILED"
+  },
+  "allowed_status_transitions": {
+    "None": [
+      "CREATED"
+    ],
+    "CREATED": [
+      "FAILED",
+      "RUNNING"
+    ],
+    "RUNNING": [
+      "COMPLETED",
+      "FAILED",
+      "INTERRUPTED",
+      "RETRY_WAIT"
+    ],
+    "RETRY_WAIT": [
+      "FAILED",
+      "RUNNING"
+    ],
+    "INTERRUPTED": [
+      "FAILED",
+      "RESUMED"
+    ],
+    "RESUMED": [
+      "FAILED",
+      "RUNNING"
+    ],
+    "COMPLETED": [],
+    "FAILED": []
+  },
+  "terminal_statuses": [
+    "COMPLETED",
+    "FAILED"
+  ],
+  "retry_resume_lineage": {
+    "retry_attempt": "MONOTONIC_NON_DECREASING_AND_INCREMENTED_BY_RETRY_SCHEDULED",
+    "resume_from_event_id": "MUST_REFERENCE_PRIOR_RUN_INTERRUPTED_NATIVE_EVENT_ID"
+  },
+  "idempotency": {
+    "key_scope": "NATIVE_RUN",
+    "same_key_same_payload": "RETURN_EXISTING_EVENT_WITH_APPEND_DELTA_0",
+    "same_key_different_payload": "REJECT_IDEMPOTENCY_CONFLICT"
+  },
+  "integrity": {
+    "append_only": true,
+    "sequence": "CONTIGUOUS_FROM_1",
+    "hash_chain": "SHA256_CANONICAL_JSON",
+    "package_sha256": "LOWERCASE_64_HEX"
+  },
+  "fixture_validation": {
+    "fixture_path": "fixtures/d_collection_run_fixture_v1.json",
+    "generated_result_path": "generated/B3_D_COLLECTION_RUN_FIXTURE_RESULT_V1.json",
+    "expected_final_status": "COMPLETED",
+    "expected_retry_count": 1,
+    "expected_resume_count": 1,
+    "expected_processing_event_count": 8,
+    "idempotent_replay_delta": 0
+  },
+  "safety": {
+    "site_call_count": 0,
+    "automated_pagination": false,
+    "d_canonical_id_generation": false,
+    "actual_bulk_collection": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
