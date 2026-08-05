@@ -1,0 +1,109 @@
+{
+  "schema_version": "V1_C_MODE_WAVE3_REVIEW_V5",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "reviewed_wave_id": "V1-C-MODE-6W-WAVE-003",
+  "next_wave_id": "V1-C-MODE-6W-WAVE-004",
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "reviewed_at_kst": "2026-08-05T22:11:00+09:00",
+  "previous_progress_percent": 72,
+  "current_progress_percent": 82,
+  "report_contract": {
+    "completion_requires_result_commit": true,
+    "completion_requires_correlated_terminal_comment": true,
+    "commit_without_terminal_comment": "REPORT_MISSING",
+    "required_c_result_fields": ["ROLE", "WAVE", "COMMAND_ID", "STATUS"],
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "worker_results": {
+    "AUTOMATION-C-W1": {
+      "worker_pr": 59,
+      "directive_comment_id": 5191917431,
+      "result_comment_id": 5192017882,
+      "head": "181116481694483fb63c23229a3d75dbf6477773",
+      "status": "BLOCKED_EXACT_ENVIRONMENT_NETWORK_DNS",
+      "valid_correlated_terminal": true,
+      "accepted_work": ["EXACT_HEAD_BINDING", "NON_MERGED_CANDIDATE_MANIFEST"],
+      "unexecuted": "NODE_UNIFIED_REGRESSION",
+      "next_action": "RECONSTRUCT_WITH_CONNECTOR_BYTES_AND_RUN_OFFLINE_WITHOUT_GIT_CLONE"
+    },
+    "AUTOMATION-C-W2": {
+      "worker_pr": 60,
+      "directive_comment_id": 5191921150,
+      "incorrect_no_pending_comment_id": 5191978682,
+      "head": "e7fa30621f6d99d28f9c63e25833da6fc1e12619",
+      "result_commit": "e7fa30621f6d99d28f9c63e25833da6fc1e12619",
+      "status": "PASS_RESULT_COMMITTED_REPORT_MISSING",
+      "tests": "PASS_9_OF_9",
+      "valid_correlated_terminal": false,
+      "consecutive_missing_report_count": 1,
+      "next_action": "PUBLISH_WAVE3_TERMINAL_THEN_IMPLEMENT_REPORT_COMPLETENESS_GATE"
+    },
+    "AUTOMATION-C-W3": {
+      "worker_pr": 61,
+      "directive_comment_id": 5191922857,
+      "result_comment_id": 5191991970,
+      "head": "e08dbab7b050f8fb350c0f435f40807fa7fb3af3",
+      "status": "PASS_OFFLINE_TARGET_PC_PENDING",
+      "valid_correlated_terminal": true,
+      "accepted_work": ["UI_MIXED_STATE_PROJECTION", "TARGET_PC_UI_EVIDENCE_COLLECTOR"],
+      "target_pc_pass": "PENDING"
+    },
+    "AUTOMATION-C-W4": {
+      "worker_pr": 62,
+      "directive_comment_id": 5191926137,
+      "result_comment_id": 5192041374,
+      "head": "0a6d7fa97166f4991edda3b3c62cd33b1e8642d6",
+      "status": "PASS",
+      "valid_correlated_terminal": true,
+      "tests": "PASS_31_ASSERTIONS",
+      "duplicate_queue_count": 0,
+      "previous_c_command_cancel_count": 0
+    },
+    "AUTOMATION-C-W5": {
+      "worker_pr": 63,
+      "directive_comment_id": 5191928411,
+      "result_comment_id": 5192028118,
+      "head": "2000195cb9a73628a6f27261b481f760e05d42a4",
+      "status": "PASS_OFFLINE_TARGET_PC_PENDING",
+      "valid_correlated_terminal": true,
+      "tests": "PASS_18_ASSERTIONS",
+      "target_pc_pass": "PENDING"
+    },
+    "AUTOMATION-C-W6": {
+      "worker_pr": 64,
+      "directive_comment_id": 5191931432,
+      "incorrect_no_pending_comment_ids": [5189877834, 5191980076],
+      "head": "4860202c2bde55d425cf7d48452d3cb473a602c5",
+      "result_commit": "4860202c2bde55d425cf7d48452d3cb473a602c5",
+      "status": "PROVISIONAL_ACCEPTANCE_RESULT_COMMITTED_REPORT_MISSING",
+      "valid_correlated_terminal": false,
+      "consecutive_missing_report_count": 2,
+      "target_pc_pass": "BLOCKED_EXACT",
+      "next_action": "PUBLISH_WAVE3_TERMINAL_THEN_AUDIT_WAVE4"
+    }
+  },
+  "wave3_summary": {
+    "expected_worker_count": 6,
+    "valid_correlated_report_count": 4,
+    "missing_correlated_report_count": 2,
+    "pass_or_offline_pass_workers": ["AUTOMATION-C-W3", "AUTOMATION-C-W4", "AUTOMATION-C-W5"],
+    "exact_blocker_reported_workers": ["AUTOMATION-C-W1"],
+    "result_committed_report_missing_workers": ["AUTOMATION-C-W2", "AUTOMATION-C-W6"],
+    "replacement_required_workers": [],
+    "four_consecutive_missing_threshold_reached": false
+  },
+  "decision": {
+    "dispatch_mode": "SIX_WORKER_PARALLEL_WITH_REPORT_REPAIR_FIRST_FOR_W2_W6",
+    "advance_to_wave4": true,
+    "target_pc_pass": "PENDING",
+    "lts_terminal_claimed": false,
+    "auto_test_write_count": 0
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
