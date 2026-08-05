@@ -1,0 +1,98 @@
+{
+  "schema_version": "A3_TO_A2_SECOND_AUTHORIZATION_REQUEST_PACKAGE_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_4-A3-PUBLIC-ROUTE-PACKAGE-REBUILD-V1-20260805-001",
+  "directive_id": "A2-TO-A3-PUBLIC-DOCUMENT-ROUTE-NONEXECUTING-PACKAGE-REBUILD-V6_4-20260805-001",
+  "producer": "A-3",
+  "consumer": "A-2",
+  "requested_future_scope": "ONE_SHOT_PUBLIC_DOCUMENT_GET_CAPTURE_7_PROFILES",
+  "request_status": "PREPARED_AWAITING_A7_GOVERNANCE_PASS_AND_NEW_EXPLICIT_A0_A1_AUTHORIZATION",
+  "authorization_granted": false,
+  "prior_authorization_reusable": false,
+  "prior_authorization_id": "A1-AUTH-ONE-SHOT-EXACT-RESPONSE-FIXTURE-20260805-001",
+  "prior_authorization_disposition": "CONSUMED_BY_PRIOR_FAIL_CLOSED_PREFLIGHT_NOT_REUSABLE",
+  "authority": {
+    "authority_id": "CONCRETE-SOURCE-TARGET-NAVER-FIN-LAND-20260805-002",
+    "comment": "#17/5189632712",
+    "commit": "545425a10d48bf59746d8db98ff2f56b79360cc0",
+    "blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
+    "pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5"
+  },
+  "a5_exact_binding": {
+    "head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+    "pointer_blob": "40a282ccb4573ae00a12645f40bf39b6faea1abc",
+    "handoff_blob": "515b72792199f971b0a754bcb9dbc796b06fe26f",
+    "validation_blob": "20abdd912d7b64f245f9a8252a90bec3c819f2c9",
+    "terminal": "A5_PUBLIC_DOCUMENT_ROUTE_REBIND_READY"
+  },
+  "a3_package": {
+    "allowlist_commit": "021e3b2303cb3fe3072529451f5370e7b9f149a9",
+    "allowlist_blob": "47aa9c3a02fcd8e8168c8d272d33a88733094cec",
+    "request_binding_commit": "eca3c1314bd6d322e777d4b5ff100f6bad472548",
+    "request_binding_blob": "74aa2232a274b77fb51adadb60e66ea7ae6a7fe9",
+    "operator_package_commit": "af25d9e018bdca9676e35ae9371315af171bb063",
+    "operator_package_blob": "f742b7a1e83ec9199258f9b7d7df9b8947f321d7",
+    "a7_handoff_path": "A3_TO_A7_PUBLIC_ROUTE_GOVERNANCE_HANDOFF_V1.json"
+  },
+  "requested_profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-012"],
+  "excluded_profiles": [
+    {
+      "profile_id": "EP-011",
+      "reason": "EXCLUDED_NO_CREDENTIAL_REFERENCE"
+    }
+  ],
+  "requested_limits": {
+    "max_capture_per_profile": 1,
+    "max_total_capture": 7,
+    "max_batch_execution_count": 1,
+    "max_response_size_bytes": 2097152,
+    "request_timeout_ms": 20000,
+    "total_execution_timeout_ms": 180000,
+    "failed_capture_auto_retry": false,
+    "second_attempt_authorized": false
+  },
+  "required_preconditions": [
+    {
+      "name": "A5_PUBLIC_DOCUMENT_ROUTE_REBIND",
+      "status": "PASS_BOUND",
+      "required_terminal": "A5_PUBLIC_DOCUMENT_ROUTE_REBIND_READY"
+    },
+    {
+      "name": "A3_CORRECTED_OPERATOR_PACKAGE",
+      "status": "PASS_PREPARED_NON_EXECUTING",
+      "required_terminal": "A3_PUBLIC_DOCUMENT_ROUTE_OPERATOR_PACKAGE_READY_FOR_GOVERNANCE"
+    },
+    {
+      "name": "A7_PUBLIC_ROUTE_GOVERNANCE_REAUDIT",
+      "status": "PENDING",
+      "required_terminal": "A7_PUBLIC_DOCUMENT_ROUTE_OPERATOR_PACKAGE_GOVERNANCE_PASS"
+    },
+    {
+      "name": "NEW_EXPLICIT_A0_A1_AUTHORIZATION",
+      "status": "NOT_GRANTED",
+      "required_scope": "ONE_SHOT_PUBLIC_DOCUMENT_GET_CAPTURE_7_PROFILES"
+    }
+  ],
+  "safety_assertions": {
+    "all_methods_get": true,
+    "all_expected_formats_text_html": true,
+    "public_non_login_read_only_only": true,
+    "fixture_invalid_promotion_count": 0,
+    "internal_api_inference_count": 0,
+    "post_or_graphql_promotion_count": 0,
+    "automated_pagination_count": 0,
+    "credential_use_count": 0,
+    "raw_secret_value_count": 0,
+    "capture_attempt_count": 0,
+    "live_site_call_count": 0,
+    "browser_automation_execution_count": 0,
+    "authentication_bypass": false,
+    "access_control_bypass": false,
+    "actual_bulk_collection": false
+  },
+  "capture_execution_authorized": false,
+  "request_execution_authorized": false,
+  "second_attempt_authorized": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
