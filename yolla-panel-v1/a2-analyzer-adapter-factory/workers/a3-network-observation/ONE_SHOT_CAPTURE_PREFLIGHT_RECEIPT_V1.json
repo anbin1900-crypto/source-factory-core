@@ -1,0 +1,76 @@
+{
+  "schema_version": "ONE_SHOT_CAPTURE_PREFLIGHT_RECEIPT_V1",
+  "worker": "A-3",
+  "cycle_id": "A3-ONE-SHOT-EXACT-RESPONSE-FIXTURE-CAPTURE-V1-20260805-001",
+  "authorization_id": "A1-AUTH-ONE-SHOT-EXACT-RESPONSE-FIXTURE-20260805-001",
+  "validated_at_kst": "2026-08-05T15:24:00+09:00",
+  "authorization": {
+    "decision": "APPROVED",
+    "authorized_by": "A-1",
+    "decision_comment": 5188164989,
+    "execution_event_comment": 5188170815,
+    "authorized_profile_count": 8,
+    "max_capture_per_profile": 1,
+    "max_total_capture": 8,
+    "max_batch_execution_count": 1
+  },
+  "exact_authority": {
+    "a3_head": "6735d9335dd5e5137d09c494b3c6921989bb3252",
+    "a3_pointer_blob": "e9d9b5a86c08e7862c6d68099e860e33567ca987",
+    "operator_package_blob": "70b890f660bf784ccdcea9f1c6d1d0088371c877",
+    "endpoint_allowlist_blob": "80ac6691bfc9fb9c0335e8343975e1b892c22405",
+    "acquisition_plan_blob": "07fa5394fd5119af2b741a1ba7e528793fdc7b45"
+  },
+  "checks": {
+    "authorization_id_exact": "PASS",
+    "authorization_decision_approved": "PASS",
+    "authorized_profile_set_exact": "PASS_8_OF_8",
+    "operator_package_blob_exact": "PASS",
+    "max_capture_per_profile": "PASS_EQUALS_1",
+    "max_total_capture": "PASS_EQUALS_8",
+    "max_batch_execution_count": "PASS_EQUALS_1",
+    "raw_response_byte_persistence": "PASS_FALSE",
+    "raw_secret_storage_prohibited": "PASS",
+    "authentication_bypass_prohibited": "PASS",
+    "access_control_bypass_prohibited": "PASS",
+    "actual_bulk_collection_prohibited": "PASS",
+    "source_origin_routable_and_non_placeholder": "FAIL_CLOSED",
+    "concrete_request_values_available": "FAIL_CLOSED",
+    "approved_credential_reference_for_ep011": "FAIL_CLOSED"
+  },
+  "first_blocker": "AUTHORIZED_ALLOWLIST_CONTAINS_ONLY_RESERVED_NON_ROUTABLE_FIXTURE_INVALID_PLACEHOLDER_URLS_WITHOUT_CONCRETE_SOURCE_ORIGIN_MAPPING",
+  "findings": [
+    {
+      "code": "NON_ROUTABLE_PLACEHOLDER_ORIGIN",
+      "affected_profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-011", "EP-012"],
+      "evidence": "ENDPOINT_CAPTURE_ALLOWLIST_V1 binds every URL pattern to https://fixture.invalid/",
+      "effect": "No exact response bytes can be obtained from an authoritative source endpoint."
+    },
+    {
+      "code": "CONCRETE_REQUEST_VALUES_ABSENT",
+      "affected_profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-012"],
+      "evidence": "Only parameter names and template placeholders are present; no authorized concrete bbox, zoom, listing_id, include, page, size, parent, district_code, property_type, min_price, operationName, or variables.keyword values are bound.",
+      "effect": "Constructing request values would require invention outside the exact package."
+    },
+    {
+      "code": "EP011_CREDENTIAL_REFERENCE_NOT_AUTHORIZED",
+      "affected_profiles": ["EP-011"],
+      "evidence": "The acquisition plan requires SKIP_UNLESS_SEPARATE_CREDENTIAL_REFERENCE_AUTHORIZATION_IS_GRANTED and no approved credential reference is present.",
+      "effect": "EP-011 cannot be called without violating the credential boundary."
+    }
+  ],
+  "stop_condition": "FIRST_FAIL_CLOSED_CONDITION_BEFORE_NETWORK_REQUEST",
+  "authorized_batch_execution_count_used": 1,
+  "capture_attempt_count": 0,
+  "successful_capture_count": 0,
+  "blocked_profile_count": 8,
+  "live_site_call_count": 0,
+  "browser_automation_execution_count": 0,
+  "credential_use_count": 0,
+  "raw_secret_value_count": 0,
+  "second_attempt_authorized": false,
+  "status": "BLOCKED_PREFLIGHT_VALID",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
