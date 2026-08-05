@@ -1,0 +1,45 @@
+{
+  "schema_version": "AUTOMATION_C_W4_WAVE13_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-013",
+  "registry_sequence": 13,
+  "command_id": "C6W-W13-W4-SELF-CONTAINED-PACKAGE-OFFLINE-ACCEPTANCE",
+  "role": "AUTOMATION-C-W4",
+  "directive_comment": 5196061603,
+  "carryover_comment": 5196197860,
+  "result_key": "519606160300",
+  "target_version": "5.10.2.4.2-rc5",
+  "outcome": "BLOCKED",
+  "negative_fixture": {
+    "input_w5_wave12_result": 5195686133,
+    "input_commit": "d21c152985fd98b010b4e2c95b20faad42789a6d",
+    "missing_package_directory": "REPRODUCED",
+    "runtime_root_mismatch": "REPRODUCED",
+    "ui_path_mismatch": "REPRODUCED",
+    "fixed_profile_not_bound": "REPRODUCED",
+    "smoke_scope_insufficient": "REPRODUCED",
+    "rollback_readback_missing": "REPRODUCED"
+  },
+  "completed": {
+    "connector_byte_only": true,
+    "raw_github_dns_dependency": false,
+    "rc5_package_validator": true,
+    "portable_acceptance_runner": true,
+    "six_workers_x_three_rounds_fixture": true,
+    "restart_resume_gate": true,
+    "exactly_once_receipt_gate": true,
+    "c_repeat_namespace_noninterference_gate": true,
+    "rollback_pre_post_readback_gate": true
+  },
+  "counters": {
+    "DUPLICATE": 0,
+    "C_REPEAT_CROSS_CANCEL": 0,
+    "END_REDISPATCH": 0,
+    "RECEIPT_LOSS": 0,
+    "QUEUE_GROWTH": 0
+  },
+  "exact_blocker": "W5_WAVE13_SELF_CONTAINED_RC5_PACKAGE_BYTE_AND_MEMBER_MANIFEST_NOT_YET_PUBLISHED; POSITIVE PACKAGE MEMBERSHIP_HASH_RUNTIME_ROOT_UI_LOAD_ORDER_AND_ROLLBACK_READBACK_CANNOT_BE_EXECUTED",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
