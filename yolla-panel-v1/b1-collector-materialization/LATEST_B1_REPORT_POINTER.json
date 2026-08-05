@@ -1,74 +1,68 @@
 {
-  "schema_version": "LATEST_B1_REPORT_POINTER_V2",
-  "pointer_id": "LATEST-B1-COLLECTOR-DB-MATERIALIZATION-REPORT-V2",
-  "updated_at_kst": "2026-08-05T16:53:00+09:00",
+  "schema_version": "LATEST_B1_REPORT_POINTER_V3",
+  "pointer_id": "LATEST-B1-COLLECTOR-DB-MATERIALIZATION-REPORT-V3",
+  "updated_at_kst": "2026-08-05T16:57:00+09:00",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 19,
   "branch": "integration/b1-collector-db-materialization-v1",
-  "previous_pointer_blob": "7b765cf103edeef0fd652e7462389d61f464c6ce",
+  "previous_pointer_blob": "3826974395deda183b3196f0d5020f596c0d5550",
   "current_report": {
-    "type": "CURRENT_STATE_RECONCILIATION",
-    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave7/B1_CURRENT_STATE_RECONCILIATION_V1.json",
-    "commit": "f7b0c07209412ea7376f6acd72961a7eec1e9567",
-    "blob": "a05ab6fb09579c248ae295db95da6d4463810678",
-    "status": "B4_TERMINAL_AVAILABLE_B6_ACCEPTANCE_PENDING_B5_IMPLEMENTATION_IN_PROGRESS",
+    "type": "CURRENT_STATE_RECONCILIATION_V2",
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave7/B1_CURRENT_STATE_RECONCILIATION_V2.json",
+    "commit": "a29fed9f7f4eb70f7560967548828040ca613f35",
+    "blob": "b7711f1ce7f601c8209b02c89642c349101f839a",
+    "status": "B6_FINAL_ACCEPTANCE_ACTIVE_AFTER_B2_TO_B5_TERMINAL_GATE_PASS_4_OF_4",
     "remote_readback": "PASS"
   },
-  "accepted_workers": {
+  "completed_workers": {
     "B-2": {
-      "pr": 38,
       "head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
       "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY",
-      "status": "ACCEPTED_BY_B6",
-      "tests": "PASS_24_OF_24"
+      "status": "ACCEPTED_BY_B6"
     },
     "B-3": {
-      "pr": 39,
       "head": "f8299be24108b84af06abfe53e939c8bf68ec9dd",
       "pointer_blob": "fb81b02eac0fca4597f5a93e168a5889e0046df1",
       "terminal": "B3_EXTRACTOR_RETRY_RESUME_READY",
-      "status": "ACCEPTED_BY_B6",
-      "tests": "PASS_32_OF_32"
-    }
-  },
-  "terminal_available_pending_acceptance": {
+      "status": "ACCEPTED_BY_B6"
+    },
     "B-4": {
-      "pr": 40,
       "head": "6dfe697363a69f83797775aa549f34614aa3748a",
       "pointer_blob": "cc83b028c725e34861e8737bbf4c6932da48315a",
-      "terminal": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY_OR_EXACT_BLOCKER",
       "terminal_result": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY",
-      "tests": "PASS_24_OF_24",
-      "status": "PENDING_B6_PREFLIGHT"
+      "status": "TERMINAL_PASS_AVAILABLE_FOR_B6"
+    },
+    "B-5": {
+      "head": "3e6549581e954fac8deb6960a82aadb5c93de07c",
+      "pointer_blob": "121dea133bc054323e5689e9f0a3b6386c0f9bfb",
+      "terminal_result": "B5_NORMALIZED_DATASET_EXTRACTION_RECEIPT_READY",
+      "status": "TERMINAL_PASS_AVAILABLE_FOR_B6",
+      "tests": "PASS_30_OF_30",
+      "source_field_loss_count": 0,
+      "sqlite_row_count": 3
     }
   },
-  "active_workers": {
-    "B-5": {
-      "pr": 41,
-      "head_observed": "cabd37b27f2a4892567486c03714920fa5f54ad4",
-      "pointer_blob": "b6a0aee500d9401c5a42391edec89101b17c5f32",
-      "status": "IMPLEMENTATION_IN_PROGRESS",
-      "terminal": null
-    },
+  "active_worker": {
     "B-6": {
       "pr": 42,
-      "head": "1cceefd06f651a57e8bb08ab81eac2c7e91fd2f6",
-      "pointer_blob": "f627f03207947fcf00c07094882856f258ea8e19",
-      "accepted_inputs": "2_OF_4",
-      "next_event": "CONSUME_B4_TERMINAL_THEN_WAIT_B5"
+      "activation_comment": 5189154915,
+      "entry_condition": "B2_B3_B4_B5_TERMINALS_AND_POINTERS_4_OF_4",
+      "entry_condition_met": true,
+      "status": "FINAL_ACCEPTANCE_ACTIVE"
     }
   },
+  "worker_terminals_received": 4,
+  "worker_terminals_required": 5,
+  "b2_to_b5_terminal_gate": "PASS_4_OF_4",
+  "current_terminal": null,
+  "current_status": "WAITING_B6_FINAL_ACCEPTANCE_AND_C1_HANDOFF_POINTER",
+  "next_gate": "B6_FINAL_ACCEPTANCE_C1_HANDOFF_READY_OR_EXACT_BLOCKER",
   "a2_dependency": {
     "head": "25aaf4b568fbd6b97e7116c9160d5a0046298d34",
     "terminal": "A2_CAPTURE_INPUT_AUTHORITY_EXACT_BLOCKER",
     "verified_adapter_package_v1_published": false,
     "actual_site_extraction": false
   },
-  "worker_terminals_received": 3,
-  "worker_terminals_required": 5,
-  "current_terminal": null,
-  "current_status": "WAITING_B6_B4_PREFLIGHT_AND_B5_TERMINAL",
-  "next_gate": "B6_ACCEPT_B4_TO_3_OF_4_THEN_B5_TERMINAL_THEN_B6_FINAL_ACCEPTANCE",
   "production": false,
   "ready": false,
   "merge": false
