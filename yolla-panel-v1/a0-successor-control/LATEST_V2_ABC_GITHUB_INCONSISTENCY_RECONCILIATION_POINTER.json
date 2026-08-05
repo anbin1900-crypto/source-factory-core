@@ -1,0 +1,43 @@
+{
+  "schema_version": "LATEST_V2_ABC_GITHUB_INCONSISTENCY_RECONCILIATION_POINTER_V1",
+  "pointer_id": "LATEST-V2-ABC-GITHUB-INCONSISTENCY-RECONCILIATION-20260805-001",
+  "updated_at_kst": "2026-08-05T17:12:00+09:00",
+  "commander": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "report": {
+    "path": "yolla-panel-v1/a0-successor-control/reports/V2_ABC_GITHUB_INCONSISTENCY_RECONCILIATION_V1.json",
+    "commit": "a34f67cef0e5fb974d0e063f22100935b4e5723d",
+    "blob": "34fc2b6ae824d425e16cf369cfb0919c5b0b3f99",
+    "remote_readback": "PASS"
+  },
+  "summary": {
+    "inconsistency_count_found": 12,
+    "inconsistency_count_resolved": 12,
+    "remaining_internal_pointer_inconsistency_count": 0,
+    "remaining_external_blocker_count": 2
+  },
+  "group_state": {
+    "A": {
+      "head": "ffccd8e9fc2866388c46f3ec916fec321cc02fbb",
+      "pointer_blob": "7210c50b07a34044402caec3e49ddae4f44b79b5",
+      "status": "WAITING_AUTHORITATIVE_CONCRETE_SOURCE_TARGET_INPUT"
+    },
+    "B": {
+      "head": "b452cff27ff9088eb3754a8cc35c05af340339ec",
+      "pointer_blob": "10e715ddef42b7843c0b49a9b35e2475fee6c42f",
+      "handoff_pointer_blob": "932904cede5bcfb239a62952173f82147b0b0f26",
+      "status": "FIXTURE_PIPELINE_ACCEPTED_C1_HANDOFF_READY"
+    },
+    "C": {
+      "head": "c7483089c1d398d5af3f1118a3357bed6a8e629f",
+      "pointer_blob": "f567fecfb8f1db428f79b4d30d47042d1d13efe8",
+      "d1_handoff_pointer_blob": "0265e2bd145c374277321b6d98bfda1a5d04bf02",
+      "status": "E2E_COMPLETE_B1_HANDOFF_ACCEPTED_EXTERNAL_BLOCKER_REQUIRED_PATHS_22"
+    }
+  },
+  "final_decision": "ABC_INTERNAL_POINTER_AND_HANDOFF_INCONSISTENCIES_RESOLVED_EXTERNAL_INPUT_BLOCKERS_REMAIN",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
