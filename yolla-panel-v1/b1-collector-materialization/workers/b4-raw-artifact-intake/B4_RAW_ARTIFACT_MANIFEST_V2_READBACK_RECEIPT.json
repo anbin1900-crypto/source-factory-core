@@ -1,0 +1,32 @@
+{
+  "schema_version": "B4_RAW_ARTIFACT_MANIFEST_V2_READBACK_RECEIPT_V1",
+  "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "task_id": "RAW_ARTIFACT_MANIFEST_V2",
+  "verified_at_kst": "2026-08-06T05:03:00+09:00",
+  "content_head": "85442178bf916914eb1a365955f150528fad354c",
+  "remote_blobs": {
+    "raw_artifact_manifest_v2": "24784bdd025d03968245bd5be83f47ac7ed5b750",
+    "raw_artifact_manifest_v2_schema": "ae37701bde15ef5f299706de51baa38d369b003f",
+    "validator_source": "35ac3a00319c499d35b7bc944cc229aba60f1473",
+    "test_source": "bfc4d297b0d20f139981407fb6242cf046cfdc72",
+    "test_results": "ee522ff08d70ed95019e03f8fc53b97a08c289a3",
+    "raw_page_001": "9d34c7e31534906f6d067214f7ddf31f8262c398",
+    "raw_page_002": "9b51ca590b05383ccf891e6ddb7c18cf56160d36"
+  },
+  "same_byte_git_blob_match": "PASS_5_OF_5_V2_FILES",
+  "raw_source_blob_readback": "PASS_2_OF_2",
+  "remote_readback": "PASS_7_OF_7",
+  "exact_byte_sha256": "PASS_2_OF_2",
+  "page1_size_bytes": 254,
+  "page1_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+  "page2_size_bytes": 246,
+  "page2_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+  "actual_site_mime_sha_observation": "NOT_OBSERVED",
+  "raw_overwrite": false,
+  "secret_storage": false,
+  "personal_data_promotion": false,
+  "actual_site_extraction": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
