@@ -1,0 +1,219 @@
+{
+  "schema_version": "RC8_EXACT_RESOLVER_BUNDLE_VALIDATION_RECEIPT_V1",
+  "status": "PASS_EXACT_RESOLVER_BUNDLE",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-017",
+  "result_key": "519850757900",
+  "assertion_count": 92,
+  "failure_count": 0,
+  "exact_resolver_identity": {
+    "pass": true,
+    "actual": {
+      "size_bytes": 10563,
+      "sha256": "a6eaeef66a2dfc59b646fb63ab62d6bff12361b79f13d97bb4022eaa01255ea6"
+    },
+    "expected": {
+      "size_bytes": 10563,
+      "sha256": "a6eaeef66a2dfc59b646fb63ab62d6bff12361b79f13d97bb4022eaa01255ea6"
+    }
+  },
+  "handoff_identity": {
+    "pass": true,
+    "actual": {
+      "size_bytes": 4958,
+      "sha256": "f509146b475a19a1de04297b33c04ac6145ae73fd147e559bc7bb3836e96a637"
+    },
+    "expected": {
+      "size_bytes": 4958,
+      "sha256": "f509146b475a19a1de04297b33c04ac6145ae73fd147e559bc7bb3836e96a637"
+    }
+  },
+  "rc7_negative_identity": {
+    "pass": true,
+    "actual": {
+      "size_bytes": 2677,
+      "sha256": "860a736bb9237727a4d3d7b4765418eb43be588269ebbca3da212c60d747cb1d"
+    },
+    "expected": {
+      "size_bytes": 2677,
+      "sha256": "860a736bb9237727a4d3d7b4765418eb43be588269ebbca3da212c60d747cb1d"
+    }
+  },
+  "exact_semantics": {
+    "pass": true,
+    "checks": [
+      {
+        "id": "STRICT_CHILD",
+        "passed": true
+      },
+      {
+        "id": "PACKAGE_JSON",
+        "passed": true
+      },
+      {
+        "id": "VERSION",
+        "passed": true
+      },
+      {
+        "id": "PACKAGE_MAIN",
+        "passed": true
+      },
+      {
+        "id": "MAIN_JS",
+        "passed": true
+      },
+      {
+        "id": "WORKSPACE_HTML",
+        "passed": true
+      },
+      {
+        "id": "ENTRY",
+        "passed": true
+      },
+      {
+        "id": "EXACT_ONE",
+        "passed": true
+      },
+      {
+        "id": "IMMUTABLE_BACKUP",
+        "passed": true
+      },
+      {
+        "id": "TREE_HASH",
+        "passed": true
+      },
+      {
+        "id": "NO_OVERWRITE",
+        "passed": true
+      },
+      {
+        "id": "NO_GUESS",
+        "passed": true
+      },
+      {
+        "id": "EXPORTS",
+        "passed": true
+      }
+    ],
+    "findings": []
+  },
+  "rc7_missing_semantics": [
+    "STRICT_CHILD",
+    "PACKAGE_JSON",
+    "VERSION",
+    "PACKAGE_MAIN",
+    "MAIN_JS",
+    "WORKSPACE_HTML",
+    "ENTRY",
+    "EXACT_ONE",
+    "IMMUTABLE_BACKUP",
+    "TREE_HASH",
+    "NO_OVERWRITE",
+    "NO_GUESS",
+    "EXPORTS"
+  ],
+  "rc7_simplified_rejected": true,
+  "positive_installer_pass": true,
+  "negative_installer_rejected": true,
+  "negative_installer_findings": [
+    "SHA_BOUND",
+    "SIZE_BOUND",
+    "HASH_CHECK",
+    "SIZE_CHECK",
+    "INVOKE",
+    "EXIT",
+    "ARGS",
+    "BASE_FORWARD",
+    "NO_GUESS_ASSERT",
+    "CLONE_ASSERT",
+    "USE_BASE",
+    "USE_CANDIDATE",
+    "USE_TREE",
+    "USE_LAUNCHER_SHA",
+    "USE_BACKUP",
+    "NO_INLINE_DISCOVERY",
+    "NO_INLINE_CLONE",
+    "NO_INLINE_BACKUP"
+  ],
+  "behavior": {
+    "pass": true,
+    "checks": [
+      {
+        "id": "EXPLICIT",
+        "passed": true
+      },
+      {
+        "id": "OUTSIDE",
+        "passed": true
+      },
+      {
+        "id": "VERSION",
+        "passed": true
+      },
+      {
+        "id": "PACKAGE_MAIN",
+        "passed": true
+      },
+      {
+        "id": "MAIN_JS",
+        "passed": true
+      },
+      {
+        "id": "HTML",
+        "passed": true
+      },
+      {
+        "id": "ENTRY",
+        "passed": true
+      },
+      {
+        "id": "ONE",
+        "passed": true
+      },
+      {
+        "id": "ZERO",
+        "passed": true
+      },
+      {
+        "id": "MULTIPLE",
+        "passed": true
+      },
+      {
+        "id": "CLONE",
+        "passed": true
+      },
+      {
+        "id": "TREE",
+        "passed": true
+      },
+      {
+        "id": "NO_GUESS",
+        "passed": true
+      },
+      {
+        "id": "LAUNCHER_SHA",
+        "passed": true
+      },
+      {
+        "id": "BACKUP",
+        "passed": true
+      },
+      {
+        "id": "OVERWRITE",
+        "passed": true
+      },
+      {
+        "id": "BACKUP_MISMATCH",
+        "passed": true
+      }
+    ]
+  },
+  "resolver_rewritten": false,
+  "guessed_path_count": 0,
+  "candidate_overwrite_count": 0,
+  "rc8_candidate_accepted": false,
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

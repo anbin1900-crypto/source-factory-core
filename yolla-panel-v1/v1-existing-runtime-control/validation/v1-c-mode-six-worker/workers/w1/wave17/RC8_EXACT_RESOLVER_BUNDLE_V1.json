@@ -1,0 +1,89 @@
+{
+  "schema_version": "RC8_EXACT_RESOLVER_BUNDLE_V1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "worker_pr": 59,
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-017",
+  "registry_sequence": 17,
+  "command_id": "C6W-W17-W1-RC8-EXACT-RESOLVER-INTEGRATION",
+  "role": "AUTOMATION-C-W1",
+  "directive_comment": 5198507579,
+  "result_key": "519850757900",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc8",
+  "exact_resolver": {
+    "repository_path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave15/target_pc_runtime_locator.cjs",
+    "relative_checkout_path": "../wave15/target_pc_runtime_locator.cjs",
+    "commit": "ed8bde5eb66f0d65de64ad1dfae4fde038e6012c",
+    "blob_sha1": "92e3e7f027f716fb49373bc66e9d62aff61b73ae",
+    "sha256": "a6eaeef66a2dfc59b646fb63ab62d6bff12361b79f13d97bb4022eaa01255ea6",
+    "size_bytes": 10563,
+    "materialization": "IMMUTABLE_GITHUB_BLOB_OR_EXACT_REPOSITORY_CHECKOUT",
+    "rewrite_allowed": false
+  },
+  "handoff": {
+    "repository_path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave15/W5_TARGET_PC_RUNTIME_LOCATOR_HANDOFF_V1.json",
+    "relative_checkout_path": "../wave15/W5_TARGET_PC_RUNTIME_LOCATOR_HANDOFF_V1.json",
+    "commit": "001f2b23f743b204565f91bd058094330fbaa11a",
+    "blob_sha1": "d70529d94bdae7e89daf4ba5cb69ec2cefe8bb80",
+    "sha256": "f509146b475a19a1de04297b33c04ac6145ae73fd147e559bc7bb3836e96a637",
+    "size_bytes": 4958
+  },
+  "rc7_negative_fixture": {
+    "artifact_commit": "4cd923437d4671b720c106fb857742ac50e99cd0",
+    "repository_path": "YOLLA_C_MODE_5.10.2.4.2-rc7/tools/target_pc_runtime_locator.cjs",
+    "fixture_path": "fixtures/rc7_simplified_target_pc_runtime_locator.cjs",
+    "blob_sha1": "ea14fd39e66bd52a9e2e3db5e3a00885aa1e8dc3",
+    "sha256": "860a736bb9237727a4d3d7b4765418eb43be588269ebbca3da212c60d747cb1d",
+    "size_bytes": 2677,
+    "expected_outcome": "REJECT_SIMPLIFIED_RESOLVER"
+  },
+  "required_semantics": {
+    "explicit_base_release_absolute_strict_child": true,
+    "validate_package_json": true,
+    "validate_baseline_version": "5.10.2.4.0",
+    "validate_package_main": true,
+    "validate_main_js": true,
+    "validate_workspace_html": true,
+    "validate_executable_entry": true,
+    "exactly_one_fully_valid_baseline": true,
+    "zero_candidate_fail_closed": true,
+    "multiple_candidate_fail_closed": true,
+    "launcher_target_time_readback": true,
+    "launcher_sha256": true,
+    "launcher_immutable_backup": true,
+    "recursive_clone": true,
+    "pre_post_complete_tree_sha256_equal": true,
+    "guessed_path_count": 0,
+    "candidate_overwrite_count": 0
+  },
+  "installer_integration_requirements": {
+    "verify_exact_resolver_sha256_and_size_before_invocation": true,
+    "invoke_exact_resolver": true,
+    "check_resolver_exit_code": true,
+    "parse_resolver_receipt": true,
+    "consume_only_resolver_baseline_and_clone_paths": true,
+    "consume_tree_sha256": true,
+    "consume_launcher_sha256_and_backup_path": true,
+    "assert_guessed_path_count_zero": true,
+    "assert_baseline_clone_performed": true,
+    "inline_baseline_discovery_forbidden": true,
+    "inline_baseline_clone_forbidden": true,
+    "inline_launcher_backup_forbidden": true
+  },
+  "fixtures": {
+    "positive_installer": "fixtures/positive_rc8_resolver_integration.ps1",
+    "negative_installer": "fixtures/negative_rc8_resolver_bypass.ps1",
+    "negative_resolver": "fixtures/rc7_simplified_target_pc_runtime_locator.cjs"
+  },
+  "scope_truth": {
+    "resolver_rewritten": false,
+    "rc8_candidate_accepted": false,
+    "target_pc_execution_performed": false,
+    "target_pc_pass_claimed": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
