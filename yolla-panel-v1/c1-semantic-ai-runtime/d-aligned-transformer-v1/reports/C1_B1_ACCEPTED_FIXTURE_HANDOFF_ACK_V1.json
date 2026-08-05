@@ -1,0 +1,63 @@
+{
+  "schema_version": "C1_B1_ACCEPTED_FIXTURE_HANDOFF_ACK_V1",
+  "ack_id": "C1-B1-ACCEPTED-FIXTURE-HANDOFF-ACK-20260805-001",
+  "acknowledged_at_kst": "2026-08-05T17:08:00+09:00",
+  "consumer": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "producer": "B-1_COLLECTION_DB_MATERIALIZATION_COMMANDER",
+  "source_repository": "anbin1900-crypto/source-factory-core",
+  "source_control_pr": 19,
+  "consumer_control_pr": 20,
+  "b1_authority": {
+    "head": "b452cff27ff9088eb3754a8cc35c05af340339ec",
+    "latest_pointer_blob": "10e715ddef42b7843c0b49a9b35e2475fee6c42f",
+    "extraction_result_pointer_blob": "cbfcb28741ff3a8d1e4ff0f4006c7fc996d73c0f",
+    "handoff_pointer_blob": "932904cede5bcfb239a62952173f82147b0b0f26",
+    "commander_acceptance_report_blob": "978c2b9ffeeb9e3177b568e31c57f780e3131d36",
+    "status": "B1_TO_C1_FIXTURE_HANDOFF_READY"
+  },
+  "b6_authority": {
+    "head": "797930d24fc00edef4276b355b7ea7ff71109972",
+    "pointer_blob": "448fbfb07321f3cabae4a25649feee90e46ba106",
+    "final_report_blob": "d81716e1626b96ca120b8b08892d85210da337f3",
+    "handoff_candidate_blob": "01c4c2175b30314538494ed5694668005769635a",
+    "terminal_result": "B6_EXTRACTION_ACCEPTANCE_C1_HANDOFF_READY"
+  },
+  "input_content": {
+    "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+    "source_record_envelope_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+    "normalized_dataset_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+    "extraction_receipt_blob": "a4b4f7504c0a2b552fe165176f51833b78e0fd09"
+  },
+  "prior_c1_consumed_content": {
+    "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+    "source_record_envelope_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+    "normalized_dataset_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+    "extraction_receipt_blob": "a4b4f7504c0a2b552fe165176f51833b78e0fd09"
+  },
+  "delta_assessment": {
+    "content_blob_delta": false,
+    "authority_classification_delta": true,
+    "before": "REMOTE_COMMITTED_FIXTURE_NOT_YET_B6_ACCEPTED_HANDOFF",
+    "after": "B6_ACCEPTED_FIXTURE_HANDOFF_READY",
+    "c2_c3_c4_c5_c6_reexecution_required": false,
+    "reason": "The exact source bytes already consumed by C-1 are unchanged; only independent B-6 acceptance and B-1 handoff authority were promoted."
+  },
+  "existing_c1_result": {
+    "worker_gate": "PASS_4_OF_4",
+    "final_e2e_executed": true,
+    "package_decision": "REJECTED",
+    "first_blocker": "PR188_REQUIRED_SOURCE_PATHS_MISSING_22",
+    "resolved_path_count": 0,
+    "unresolved_path_count": 22,
+    "actual_d_handoff_performed": false
+  },
+  "decision": "ACK_ACCEPTED_FIXTURE_HANDOFF_NO_CONTENT_DELTA_NO_REEXECUTION",
+  "current_gate": "EXTERNAL_REQUIRED_SOURCE_PATHS_22_RESOLUTION",
+  "next_action": "WAIT_B1_OR_D1_AUTHORITY_CONTENT_DELTA_RESOLVING_REQUIRED_SOURCE_PATHS_22_THEN_RUN_INCREMENTAL_REVALIDATION",
+  "d_acceptance_claimed": false,
+  "d_canonical_schema_mutation": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
