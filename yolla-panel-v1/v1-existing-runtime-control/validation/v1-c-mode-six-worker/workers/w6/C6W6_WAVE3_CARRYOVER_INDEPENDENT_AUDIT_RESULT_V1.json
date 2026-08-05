@@ -1,0 +1,95 @@
+{
+  "schema_version": "C6W6_WAVE3_CARRYOVER_INDEPENDENT_AUDIT_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-003",
+  "command_id": "C6W-W3-W6-CARRYOVER-INDEPENDENT-AUDIT",
+  "worker_id": "AUTOMATION-C-W6",
+  "status": "PROVISIONAL_ACCEPTANCE_WITH_EXACT_TARGET_PC_BLOCKER",
+  "carryover": {
+    "missed_wave2_directive_comment": 5189701057,
+    "incorrect_no_pending_comment": 5189877834,
+    "second_incorrect_no_pending_comment": 5191980076,
+    "verdict": "NEWER_DIRECTIVE_MISSED",
+    "process_finding": "BLOCKING_DIRECTIVE_DISCOVERY_DEFECT"
+  },
+  "wave1_exact_blocker": {
+    "source_terminal_comment": 5189537363,
+    "terminal": "C6W6_FAILURE_RECOVERY_INDEPENDENT_ACCEPTANCE_EXACT_BLOCKER",
+    "target_pc_pass_claimed": false,
+    "independent_acceptance": "NOT_ACCEPTED"
+  },
+  "audited_heads": {
+    "W1": {
+      "head": "ea26b91c273f4da208420b5901f067d70dbb0c87",
+      "artifact": "C6W1_WAVE2_PARITY_INTEGRATION_BLOCKER_V3.json",
+      "verdict": "BLOCKED_EXACT",
+      "reason": "HEAD_RECORDS_MISSING_W2_W4_INPUTS_AT_TIME_OF_PUBLICATION"
+    },
+    "W2": {
+      "head": "028faddc8c314361f6703c9cbbb27865ed009edd",
+      "artifact": "C6W2_WAVE2_DUAL_REPORT_SCHEMA_RESULT_V3.json",
+      "verdict": "OFFLINE_ACCEPTED",
+      "assertions": "PASS_16_OF_16"
+    },
+    "W3": {
+      "head": "9f0d97291ab47592bd9e0136d8ca44723971f90e",
+      "artifact": "WAVE2_RESULT.json",
+      "verdict": "OFFLINE_ACCEPTED_TARGET_PC_PENDING",
+      "assertions": 17
+    },
+    "W4": {
+      "head": "42e5ff1857754aeb366849448f671f5144694d7d",
+      "artifact": "WAVE2_RESULT.json",
+      "verdict": "OFFLINE_ACCEPTED",
+      "assertions": 25,
+      "dispatch_receipts": 8
+    },
+    "W5": {
+      "head": "25c2cd59e096718cc2ee9bd6e3b3591682b01acd",
+      "artifact": "AUTOMATION_C_W5_WAVE2_RESULT_V1.json",
+      "verdict": "OFFLINE_ACCEPTED_TARGET_PC_PENDING",
+      "runtime_assertions": 59,
+      "worker_assertions": 12
+    }
+  },
+  "independent_failure_injection": {
+    "method": "FAIL_CLOSED_STATIC_FIXTURE_AND_RESULT_CONTRACT_AUDIT",
+    "malformed_panel": "REJECT_EXPECTED_PASS",
+    "role_mismatch": "REJECT_EXPECTED_PASS",
+    "wave_mismatch": "REJECT_EXPECTED_PASS",
+    "command_mismatch": "REJECT_EXPECTED_PASS",
+    "dispatch_mismatch": "REJECT_EXPECTED_PASS",
+    "stale": "REJECT_EXPECTED_PASS",
+    "duplicate": "REJECT_EXPECTED_PASS",
+    "order_reversal": "REJECT_EXPECTED_PASS",
+    "retry_exhaustion": "BLOCK_EXPECTED_PASS",
+    "restart_snapshot": "REQUIRE_PRE_POST_READBACK_EXPECTED_PASS",
+    "runtime_execution_performed": false,
+    "reason": "IMPLEMENTATION_SOURCE_DIRECT_EXECUTION_AND_TARGET_PC_ACCESS_NOT_AVAILABLE"
+  },
+  "provisional_acceptance_matrix": {
+    "W1": "BLOCKED",
+    "W2": "ACCEPTED_OFFLINE",
+    "W3": "ACCEPTED_OFFLINE_TARGET_PC_PENDING",
+    "W4": "ACCEPTED_OFFLINE",
+    "W5": "ACCEPTED_OFFLINE_TARGET_PC_PENDING",
+    "W6": "EXACT_TARGET_PC_BLOCKER",
+    "overall": "PROVISIONAL_NOT_RELEASE_ACCEPTED"
+  },
+  "blocking_findings": [
+    "DIRECTIVE_DISCOVERY_MUST_COMPARE_COMMENT_ORDER_AND_NOT_STOP_AT_OLDER_TERMINAL",
+    "W1_WAVE2_HEAD_IS_A_BLOCKER_ARTIFACT_NOT_AN_APPROVED_UNIFIED_CANDIDATE",
+    "TARGET_PC_LIVE_RECEIPTS_MISSING",
+    "SIX_WORKER_THREE_ROUND_RECEIPTS_MISSING",
+    "RESTART_PRE_POST_LOG_LOSS_ZERO_NOT_PROVEN"
+  ],
+  "implementation_source_modified": false,
+  "result_json_only": true,
+  "target_pc_pass_claimed": false,
+  "six_worker_three_round_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-05T21:55:00+09:00",
+  "panel_terminal": "PANEL | ROLE=AUTOMATION-C-W6 | WAVE=V1-C-MODE-6W-WAVE-003 | COMMAND_ID=C6W-W3-W6-CARRYOVER-INDEPENDENT-AUDIT | STATUS=END"
+}
