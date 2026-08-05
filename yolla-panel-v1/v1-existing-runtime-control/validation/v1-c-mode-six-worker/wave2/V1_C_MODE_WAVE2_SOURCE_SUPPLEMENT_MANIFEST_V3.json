@@ -1,0 +1,32 @@
+{
+  "schema_version": "V1_C_MODE_WAVE2_SOURCE_SUPPLEMENT_MANIFEST_V3",
+  "drive_file_id": "1EaHhHablINACVR-syzy4o6r4wEnbK8z_",
+  "file_name": "V1_C_MODE_WAVE2_SOURCE_SUPPLEMENT_V3.zip",
+  "size_bytes": 105656,
+  "sha256": "fd60e47b6134ee06bd568941da66e45d158bc660557f624540f2a61589f7d7ea",
+  "supplies": [
+    "baseline-v510241/src/apply_c_mode_patch.cjs",
+    "baseline-v510241/src/apply_c_command_ui_hotfix.cjs",
+    "baseline-v510241/src/automation-c-v1/c_mode_runtime.cjs",
+    "baseline-v510241/src/automation-c-v1/github_comment_client.cjs",
+    "baseline-v510241/src/automation-c-v1/tests/test_c_mode_runtime.cjs",
+    "baseline-v510241/src/workspace_c_mode.js",
+    "baseline-v510241/src/workspace_c_mode.css",
+    "baseline-v510241/src/test_v510240_c_mode_integration.cjs",
+    "baseline-v510241/src/test_v510241_c_command_ui_integration.cjs",
+    "installer-v510241/install_v510241.ps1",
+    "installer-v510241/ROLLBACK_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_4_1.ps1",
+    "installer-v510241/RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_4_1.ps1",
+    "installer-v510241/INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510241_C_COMMAND_UI_HOTFIX.bat"
+  ],
+  "important_mapping": {
+    "background_dispatch_surface": "baseline-v510241/src/apply_c_mode_patch.cjs",
+    "standalone_background_dispatch_runtime": "NOT_AUTHORITATIVE_NOT_PRESENT",
+    "full_release_runtime": "baseline-v510241/src/automation-c-v1/c_mode_runtime.cjs",
+    "installer": "installer-v510241/install_v510241.ps1",
+    "rollback": "installer-v510241/ROLLBACK_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_4_1.ps1"
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
