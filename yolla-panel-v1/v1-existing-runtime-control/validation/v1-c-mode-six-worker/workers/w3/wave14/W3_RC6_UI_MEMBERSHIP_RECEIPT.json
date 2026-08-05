@@ -1,0 +1,47 @@
+{
+  "schema_version": "W3_RC6_UI_MEMBERSHIP_RECEIPT_V1",
+  "status": "PASS",
+  "target_version": "5.10.2.4.2-rc6",
+  "member_count": 7,
+  "runtime_member_count": 3,
+  "authority_correct": true,
+  "exact_ui_source_bytes": true,
+  "results": [
+    {
+      "logical_role": "TRUTH_BRIDGE",
+      "package_path": "rc6-package/runtime-files/automation-c-v1/workspace_ui_truth_bridge.cjs",
+      "status": "PASS"
+    },
+    {
+      "logical_role": "CSS_OVERLAY",
+      "package_path": "rc6-package/runtime-files/workspace_c_mode_rc4_truth.css",
+      "status": "PASS"
+    },
+    {
+      "logical_role": "JS_OVERLAY",
+      "package_path": "rc6-package/runtime-files/workspace_c_mode_rc4_truth.js",
+      "status": "PASS"
+    },
+    {
+      "logical_role": "LOAD_HOOK_PATCH",
+      "package_path": "rc6-package/tools/apply_w3_rc6_ui_overlay.cjs",
+      "status": "PASS"
+    },
+    {
+      "logical_role": "REMOVAL_ONLY_ROLLBACK",
+      "package_path": "rc6-package/tools/rollback_w3_rc6_ui_overlay.cjs",
+      "status": "PASS"
+    },
+    {
+      "logical_role": "MEMBERSHIP_VALIDATOR",
+      "package_path": "rc6-package/tools/validate_w3_rc6_ui_package.cjs",
+      "status": "PASS"
+    },
+    {
+      "logical_role": "UI_SMOKE",
+      "package_path": "rc6-package/tools/test_w3_rc6_ui_smoke.cjs",
+      "status": "PASS"
+    }
+  ],
+  "live_pass_claimed": false
+}
