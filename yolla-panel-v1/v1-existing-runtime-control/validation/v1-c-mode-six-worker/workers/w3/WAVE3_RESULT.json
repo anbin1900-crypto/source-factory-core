@@ -1,0 +1,41 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE3_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-003",
+  "command_id": "C6W-W3-W3-UI-PROJECTION-INTEGRATION",
+  "worker_id": "AUTOMATION-C-W3",
+  "status": "PASS_OFFLINE_TARGET_PC_PENDING",
+  "terminal": "C6W_W3_W3_UI_PROJECTION_INTEGRATION_OFFLINE_PASS_TARGET_PC_EXECUTION_PENDING",
+  "head_commit": "1fa147e36a31974968f27e046c69e55329f71254",
+  "inputs": {
+    "w2_dual_report_states": ["C_RESULT_ACCEPTED","REPEAT_RESULT_REJECTED"],
+    "w4_per_target_repeat_states": ["RUNNING","AWAITING_COMPLETION","END","IDLE"]
+  },
+  "tests": [
+    {
+      "name": "all-idle and mixed six-slot deterministic UI projection",
+      "status": "PASS",
+      "assertions": 16,
+      "expected_mixed_counters": {"working":4,"c_active":1,"command_active":1,"awaiting":1,"error":1,"end":1,"idle":1}
+    },
+    {"name":"legacy A/E profile.status exclusion","status":"PASS"},
+    {"name":"target PC collector mixed fixture screenshot SHA and restart readback contract","status":"PASS_STATIC"}
+  ],
+  "artifacts": [
+    "WAVE3_UI_PROJECTION_FIXTURES.json",
+    "test_w3_wave3_ui_projection_integration.cjs",
+    "Collect-W3TargetPcUiEvidence.ps1"
+  ],
+  "source_changes": {
+    "workspace_c_mode_js": false,
+    "workspace_c_mode_css": false,
+    "reason": "No reproducible implementation defect; validation and evidence collector integration completed within worker path."
+  },
+  "target_pc_execution": "PENDING",
+  "live_pass_claimed": false,
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-05T21:53:00+09:00"
+}
