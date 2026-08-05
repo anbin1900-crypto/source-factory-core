@@ -1,1 +1,32 @@
-{"schema_version":"B2_D_INTAKE_SOURCE_SCOPE_FIXTURE_V1","fixture_id":"B2-D-INTAKE-SOURCE-SCOPE-FIXTURE-20260806-001","contract":{"schema_version":"B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1","contract_id":"B2-D-INTAKE-SOURCE-SCOPE-NAVER-FIN-LAND-PUBLIC-WEB-V1","batch_id":"V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001","task_id":"B2_D_INTAKE_SOURCE_SCOPE_CONTRACT","source_key":"NAVER_FIN_LAND_PUBLIC_WEB_V1","source_name":"네이버페이 부동산","official_source_url":"https://fin.land.naver.com","method":"GET","response_format":"HTML","authorized_scope":"PUBLIC_NON_LOGIN_READ_ONLY","authority_type":null,"authority_type_status":"PENDING_D1_DECISION","authority_type_decision_pointer":{"repository":"anbin1900-crypto/yolla-real-estate-data-engine","control_pr":188,"head":"327547fd74f615a4c709c6da8473b1bf63fd5d6a","pointer_blob":"95e6983a79b80867dd7de196a21e1aefc4c3dcb1","decision_owner":"D-1_ONLY"},"d_canonical_source_id":null,"d_canonical_id_generation_owner":"D-1_ONLY","d_contract_refs":{"repository":"anbin1900-crypto/yolla-real-estate-data-engine","control_pr":188,"head":"327547fd74f615a4c709c6da8473b1bf63fd5d6a","control_pointer_blob":"95e6983a79b80867dd7de196a21e1aefc4c3dcb1","schema_blob":"710f1de7860f62143f81f36bd3eb4fbe2b613ff1","mapping_blob":"fcd879221b8d2b2c8f988a76e4045877ced9336b","ruleset_blob":"7bc601dd16a84f44b95c7e5757a1a796cb5fd793","receipt_contract_blob":"c5b2d0087c52fb1af4b9c0a31f7181aedebfd410"},"scope_policy":{"allowed_origin":"https://fin.land.naver.com","allowed_methods":["GET"],"allowed_response_formats":["HTML"],"access_class":["PUBLIC","NON_LOGIN","READ_ONLY"],"credential_required":false,"browser_automation_authorized":false,"automated_pagination_authorized":false,"actual_site_extraction_authorized":false,"bulk_collection_authorized":false},"handoff":{"consumer":"B-5","next_event":"B5_RESUME_AFTER_B2_AND_B4","canonical_id_generation_requested_from":"D-1","producer_acceptance_claim":false,"producer_canonical_write_claim":false},"safety":{"actual_site_extraction":false,"d_canonical_id_generation_count":0,"d_canonical_db_write_count":0,"postgresql_connection_count":0,"contains_personal_data":false,"contains_secret_value":false,"production":false,"ready":false,"merge":false,"self_merge":false}},"expected_validation":{"decision":"PASS","finding_count":0,"terminal":"B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_READY","actual_site_extraction":false,"d_canonical_id_generation_count":0}}
+{
+  "schema_version": "B2_D_INTAKE_SOURCE_SCOPE_FIXTURE_V1",
+  "fixture_id": "B2-D-INTAKE-SOURCE-SCOPE-FIXTURE-20260806-002",
+  "contract_ref": "contracts/B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1.json",
+  "contract_blob": "f7b5faee6c3fce138bcd95f9edce734f2086eb6d",
+  "contract_canonical_sha256": "b373137fd0c92af16c0e404133a1ad5bf3b7e1f19bb6028d01ca47e03c23501e",
+  "input_evidence": {
+    "A2_VERIFIED_ADAPTER_PACKAGE": {
+      "control_head": "536715fcfb2ac2e4c589b952b3bb191135af6eb7",
+      "pointer_blob": "fb5528153b2c1b1c47f5780a8f16d72a6a696a95",
+      "package_blob": "d758afef96e76b664f6d8b0383c5a7bc017c731a",
+      "package_sha256": "fad18a1e0571dfac26305d8bd3d845a639e225c51ff1a03dfe45c49d7d441854"
+    },
+    "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF": {
+      "current_head": "ba04d2dbae45a5ed51e86d6715565d15b8428464",
+      "handoff_blob": "0fac8fac5069a013717ea74202d6d1741adfd966"
+    }
+  },
+  "expected_validation": {
+    "decision": "PASS",
+    "finding_count": 0,
+    "terminal": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_READY",
+    "PUBLIC_NON_LOGIN_SCOPE": "PASS",
+    "METHOD_GET_ONLY": "PASS",
+    "ACTIVE_PROFILE_BINDING": "PASS_7_OF_7",
+    "EP011_EXCLUDED": "PASS",
+    "D_CONTRACT_BLOB_BINDING": "PASS_4_OF_4",
+    "D_CANONICAL_ID_GENERATION_COUNT": 0,
+    "ACTUAL_SITE_CALL_COUNT": 0,
+    "SILENT_SOURCE_KEY_RENAME": false
+  }
+}
