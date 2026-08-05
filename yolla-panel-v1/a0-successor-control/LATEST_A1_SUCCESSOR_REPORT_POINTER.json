@@ -1,7 +1,7 @@
 {
-  "schema_version": "LATEST_A1_SUCCESSOR_REPORT_POINTER_V7",
-  "status": "A1_ONE_SHOT_CAPTURE_TERMINAL_BLOCKED_REPLAN_REQUIRED",
-  "terminal": "A1_ONE_SHOT_CAPTURE_TERMINAL_BLOCKED_ACCEPTED_REPLAN_REQUIRED",
+  "schema_version": "LATEST_A1_SUCCESSOR_REPORT_POINTER_V8",
+  "status": "A1_A2_REPLAN_A3_PACKAGE_PASS_A7_GOVERNANCE_ACTIVE",
+  "last_terminal": "A1_ONE_SHOT_CAPTURE_TERMINAL_BLOCKED_ACCEPTED_REPLAN_REQUIRED",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
@@ -12,84 +12,96 @@
     "combined_start_gate": "PASS_10_OF_10",
     "phase0_pass": true
   },
-  "closed_capture_authorization": {
+  "closed_prior_authorization": {
     "authorization_id": "A1-AUTH-ONE-SHOT-EXACT-RESPONSE-FIXTURE-20260805-001",
-    "request_id": "A2-TO-A0-A1-ONE-SHOT-EXACT-RESPONSE-FIXTURE-CAPTURE-AUTHORIZATION-REQUEST-V2-20260805-001",
-    "request_comment": 5188055784,
-    "decision_comment": 5188164989,
-    "execution_event_comment": 5188170815,
-    "authorization_pointer_path": "yolla-panel-v1/a0-successor-control/LATEST_A1_ONE_SHOT_CAPTURE_AUTHORIZATION_POINTER.json",
-    "authorization_pointer_commit": "99d2c84bd7018bc4940b168e28fb132061d0f932",
-    "authorization_pointer_blob": "e82933a90d3cd6f8a3f4e05ad35bd016a963af53",
     "status": "CONSUMED_CLOSED_BLOCKED",
-    "authorization_consumed": true,
     "authorization_reuse_allowed": false,
     "additional_batch_authorized": false,
     "second_attempt_authorized": false
   },
-  "terminal_acceptance": {
-    "report_path": "yolla-panel-v1/a0-successor-control/reports/A1_ONE_SHOT_CAPTURE_TERMINAL_ACCEPTANCE_V1.json",
-    "report_commit": "7059cce3761664abef3a67010448f54cfda427d2",
-    "report_blob": "bfb256ed79b41c4ff2749293c0fd1d0aa672d164",
-    "control_comment": 5188396198,
-    "a3_final_head": "c0a75f7bfeb53aec2ffa561dfca3dd190ee47daa",
-    "a3_final_pointer_blob": "a32fe02629658e114e252c981554ab79f15dd338",
-    "a3_terminal_comment": 5188344425,
-    "a3_final_pointer_comment": 5188355689,
-    "a3_terminal": "A3_ONE_SHOT_EXACT_RESPONSE_FIXTURE_CAPTURE_EXACT_BLOCKER",
-    "first_blocker": "AUTHORIZED_ALLOWLIST_CONTAINS_ONLY_RESERVED_NON_ROUTABLE_FIXTURE_INVALID_PLACEHOLDER_URLS_WITHOUT_CONCRETE_SOURCE_ORIGIN_MAPPING",
-    "capture_attempt_count": 0,
-    "successful_capture_count": 0,
-    "blocked_profile_count": 8,
-    "live_site_call_count": 0,
-    "remote_readback": "PASS"
+  "active_reconciliation": {
+    "report_path": "yolla-panel-v1/a0-successor-control/reports/A1_A2_REPLAN_A3_PASS_A7_GOVERNANCE_ACTIVATION_V1.json",
+    "report_commit": "e7a839d4f15c76935dc468dd3b9266347070c0ee",
+    "report_blob": "87ea65cefcca6151928477f2b3f34313e4d2dd9b"
   },
-  "active_replan": {
-    "directive_id": "A1-TO-A2-CAPTURE-INPUT-AUTHORITY-REPLAN-V1-20260805-001",
-    "directive_comment": 5188400007,
-    "owner": "A-2",
-    "control_pr": 18,
-    "observed_head_at_dispatch": "a442f5472e859139b703e280acd730af460427ca",
-    "required_outputs": [
-      "A2_CAPTURE_INPUT_AUTHORITY_REPLAN_V1.json",
-      "CONCRETE_SOURCE_ORIGIN_MAPPING_V1.json",
-      "CONCRETE_PROFILE_REQUEST_VALUE_BINDING_V1.json",
-      "EP011_INCLUSION_AND_CREDENTIAL_REFERENCE_DECISION_V1.json",
-      "A3_CORRECTED_OPERATOR_PACKAGE_PREFLIGHT_V2.json",
-      "A5_CORRECTED_REQUIREMENT_HANDOFF_V2.json",
-      "A7_CORRECTED_GOVERNANCE_REAUDIT_V2.json"
-    ],
-    "new_authorization_request_allowed_only_after": "CURRENT_EXACT_HEAD_AND_POINTER_READBACK_PASS_FOR_A3_A5_A7",
-    "capture_before_new_explicit_approval": false
+  "a2_control": {
+    "pr": 18,
+    "head": "90d8223d4f5f44916b3151ea5b59fbc18986adc9",
+    "pointer_blob": "9b3c636584f4c78e60be9912abdf9aaef5e10a3a",
+    "active_report_commit": "30826d827957d467fa68a8c9a2b48ce1003ff205",
+    "active_report_blob": "025704543a5f7a5fc6f095cc324776bfbf8303ac"
   },
-  "superseded_observation": {
-    "comment": 5188323678,
-    "reason": "A3_START_AND_TERMINAL_PUBLISHED_AFTER_PRE_WRITE_GATE_CHECK",
-    "authoritative_replacement": "A3_FINAL_POINTER_COMMENT_5188355689"
+  "source_authority": {
+    "comment": 5189632712,
+    "authority_id": "CONCRETE-SOURCE-TARGET-NAVER-FIN-LAND-20260805-002",
+    "commit": "545425a10d48bf59746d8db98ff2f56b79360cc0",
+    "blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
+    "pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5",
+    "origin": "https://fin.land.naver.com"
   },
-  "a0_runtime_execution_pointer": {
-    "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_SUCCESSOR_REPORT_POINTER.json",
-    "status": "A0_V510232_NATIVE_LOG_DOWNLOAD_BUILD_PASS_TARGET_PC_PENDING",
-    "current_ui_version": "5.10.2.3.2",
-    "latest_report_commit": "377e1cd6422b59e23190a9a14aa953fc73b95476",
-    "target_pc_execution_performed": false,
-    "target_pc_pass_claimed": false
+  "a5_exact_authority": {
+    "pr": 24,
+    "head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+    "pointer_blob": "40a282ccb4573ae00a12645f40bf39b6faea1abc",
+    "handoff_blob": "515b72792199f971b0a754bcb9dbc796b06fe26f",
+    "validation_blob": "20abdd912d7b64f245f9a8252a90bec3c819f2c9",
+    "terminal": "A5_PUBLIC_DOCUMENT_ROUTE_REBIND_READY"
   },
-  "next_gate": "A2_CAPTURE_INPUT_AUTHORITY_REPLAN_AND_CURRENT_HEAD_GOVERNANCE_REAUDIT",
-  "subsequent_gates": [
-    "NEW_EXPLICIT_AUTHORIZATION_REQUEST_IF_REPLAN_PASSES",
-    "A3_SINGLE_NEW_BATCH_ONLY_IF_NEW_APPROVAL",
-    "A5_FINAL_AUTHORITY_REBIND_AFTER_FIXTURES",
-    "A6_VERIFIED_ADAPTER_PACKAGE_REBUILD",
-    "A7_INDEPENDENT_ACCEPTANCE"
-  ],
+  "a3_public_route_package": {
+    "pr": 22,
+    "final_head": "8e2c06d6e33ae23e0bf408cb5e2bd7513a72d7a9",
+    "pointer_blob": "aa2c564c52ac1bd0f0a6dd4973f8b16dd53a2030",
+    "terminal": "A3_PUBLIC_DOCUMENT_ROUTE_OPERATOR_PACKAGE_READY_FOR_GOVERNANCE",
+    "terminal_comment": 5191997680,
+    "final_pointer_comment": 5192013168,
+    "handoff_comment": 5192017387,
+    "handoff_blob": "6ff1fc01bb6a6f589622d33bb0d3879e400f76cd",
+    "operator_package_blob": "f742b7a1e83ec9199258f9b7d7df9b8947f321d7",
+    "allowlist_blob": "47aa9c3a02fcd8e8168c8d272d33a88733094cec",
+    "request_binding_blob": "74aa2232a274b77fb51adadb60e66ea7ae6a7fe9",
+    "validation_blob": "6be5ea4409dc44e360013f563f21ec1d94101506",
+    "active_profile_count": 7,
+    "ep011_excluded": true,
+    "validation": "PASS_29_FINDING_0",
+    "capture_execution_authorized": false
+  },
+  "a7_active_governance": {
+    "pr": 26,
+    "observed_head": "f4ca318a6335bc15970a8bff5c94f112d64807f4",
+    "event_wait_comment": 5191860834,
+    "a3_handoff_comment": 5192017387,
+    "activation_review_id": 4864588596,
+    "activation_pointer_review_id": 4864595093,
+    "directive_id": "A1-TO-A7-PUBLIC-DOCUMENT-ROUTE-GOVERNANCE-REAUDIT-V1-20260805-001",
+    "status": "ACTIVE_WAITING_START_TERMINAL_FINAL_POINTER",
+    "pass_terminal": "A7_PUBLIC_DOCUMENT_ROUTE_GOVERNANCE_READY_FOR_REAUTHORIZATION",
+    "findings_terminal": "A7_PUBLIC_DOCUMENT_ROUTE_GOVERNANCE_EXACT_FINDINGS",
+    "self_approval": false,
+    "implementation_file_direct_edit": false
+  },
+  "new_authorization_granted": false,
+  "capture_execution_authorized": false,
+  "request_execution_authorized": false,
+  "second_attempt_authorized": false,
   "b1_handoff_authorized": false,
+  "next_gate": "A7_PUBLIC_DOCUMENT_ROUTE_GOVERNANCE_READY_FOR_REAUTHORIZATION_OR_EXACT_FINDINGS",
+  "subsequent_gates": [
+    "A2_NEW_EXPLICIT_SECOND_AUTHORIZATION_REQUEST_IF_A7_PASS",
+    "A0_A1_SEPARATE_AUTHORIZATION_DECISION",
+    "A3_SINGLE_PUBLIC_DOCUMENT_GET_BATCH_ONLY_IF_APPROVED",
+    "A5_FINAL_RESPONSE_SCHEMA_REBIND",
+    "A4_PUBLIC_ROUTE_PAGINATION_AUDIT",
+    "A6_VERIFIED_ADAPTER_PACKAGE_REBUILD",
+    "A7_FINAL_ACCEPTANCE",
+    "A2_TO_B1_HANDOFF"
+  ],
   "authority_precedence": "EXACT_GITHUB_REMOTE_HEAD_COMMITTED_LEDGER",
-  "target_pc_execution_count": 0,
   "capture_attempt_count": 0,
   "live_site_call_count": 0,
   "browser_automation_execution_count": 0,
+  "automated_pagination_count": 0,
   "credential_use_count": 0,
+  "raw_secret_value_count": 0,
   "auth_bypass": false,
   "access_control_bypass": false,
   "actual_bulk_collection": false,
@@ -97,5 +109,5 @@
   "ready": false,
   "merge": false,
   "self_merge": false,
-  "updated_at": "2026-08-05T15:33:00+09:00"
+  "updated_at": "2026-08-05T22:10:00+09:00"
 }
