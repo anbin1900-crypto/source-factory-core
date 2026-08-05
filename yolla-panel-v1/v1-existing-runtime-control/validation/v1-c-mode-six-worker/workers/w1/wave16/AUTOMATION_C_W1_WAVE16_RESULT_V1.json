@@ -1,0 +1,87 @@
+{
+  "schema_version": "AUTOMATION_C_W1_WAVE16_RESULT_V1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "worker_pr": 59,
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-016",
+  "registry_sequence": 16,
+  "command_id": "C6W-W16-W1-RC7-RESOLVER-INTEGRATION-GATE",
+  "role": "AUTOMATION-C-W1",
+  "directive_comment": 5198279097,
+  "result_key": "519827909700",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc7",
+  "outcome": "BLOCKED",
+  "terminal": "C6W_W16_W1_RC7_RESOLVER_INTEGRATION_GATE_BLOCKED_W5_RC7_PENDING",
+  "completed_non_dependent_scope": {
+    "integration_contract": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave16/RC7_RESOLVER_INTEGRATION_CONTRACT.json",
+      "commit": "36841667d7d239985de73ab76ba9b9d6273dd704"
+    },
+    "verifier": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave16/validate_rc7_resolver_integration.cjs",
+      "commit": "0dca18e117a1ecc857bd0b49e855a4e0b235e532"
+    },
+    "positive_fixture": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave16/fixtures/positive_rc7_installer.ps1",
+      "commit": "81e8013282fb6267632465bd38c684c4f4e73111"
+    },
+    "negative_fixtures": [
+      {
+        "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave16/fixtures/negative_inline_baseline_resolution.ps1",
+        "commit": "5a2651da6abe3b6d5875934ba5d0ec51307085dd"
+      },
+      {
+        "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave16/fixtures/negative_resolver_output_ignored.ps1",
+        "commit": "75d0f001dca976cf189fa7358f24b01e0e023117"
+      },
+      {
+        "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave16/fixtures/negative_candidate_overwrite.ps1",
+        "commit": "8a3f5eb30e84e81239e4ad87b0476d8545cfd6c4"
+      }
+    ],
+    "validation_receipt": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave16/RC7_RESOLVER_INTEGRATION_VALIDATION_RECEIPT.json",
+      "commit": "fd0517e783dedbbbf83fdb81959b34a4fc38ef68",
+      "status": "PASS_FIXTURES_RC7_PENDING",
+      "assertion_count": 159,
+      "failure_count": 0
+    }
+  },
+  "validation_summary": {
+    "contract_pass": true,
+    "positive_fixture_pass": true,
+    "negative_fixture_count": 3,
+    "negative_fixture_pass_count": 3,
+    "real_rc6_negative_pass": true,
+    "rc6_rejection_finding_count": 24,
+    "required_resolver_commit_reused": "ed8bde5eb66f0d65de64ad1dfae4fde038e6012c",
+    "resolver_rewritten": false,
+    "guessed_path_count": 0,
+    "candidate_overwrite_count": 0
+  },
+  "exact_blocker": {
+    "code": "W5_RC7_INSTALLER_NOT_YET_PUBLISHED",
+    "w5_directive_comment": 5198285668,
+    "w5_result_key": "519828566800",
+    "observed_w5_head": "414be4873edb9c7246e616e2d6097002b7ad93f1",
+    "observed_w5_head_scope": "WAVE15_RESULT_ONLY",
+    "rc7_installer_path": null,
+    "rc7_installer_commit": null,
+    "reason": "The W5 Wave 16 directive is bound, but PR #63 has not advanced to an rc7 installer or Terminal Result. The required same-assignment actual installer application cannot be performed without those immutable bytes.",
+    "resume_condition": "W5 publishes the rc7 installer Commit/path and correlated Terminal Result for RESULT_KEY 519828566800; rerun validate_rc7_resolver_integration.cjs with --rc7-installer against those bytes."
+  },
+  "scope_truth": {
+    "fixture_gate_pass": true,
+    "actual_rc7_installer_validated": false,
+    "actual_rc7_pass_claimed": false,
+    "target_pc_execution_performed": false,
+    "target_pc_pass_claimed": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "target_pc_install_authorized": false,
+  "reported_at_kst": "2026-08-06T08:02:00+09:00"
+}
