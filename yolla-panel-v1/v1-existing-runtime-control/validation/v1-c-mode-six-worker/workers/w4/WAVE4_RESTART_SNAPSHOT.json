@@ -1,0 +1,13 @@
+{
+  "schema_version": "V1_C_MODE_W4_WAVE4_RESTART_SNAPSHOT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-004",
+  "restart_at_virtual_cycle": 70,
+  "runtime_state_schema": "REPEAT_COMMAND_RUNTIME_STATE_V2",
+  "receipt_count_after_full_soak": 317,
+  "bridge_active_queue_rehydration": "PASS",
+  "c_mode_queue_preserved": 6,
+  "defect_fixed": "BRIDGE_ACTIVE_REPEAT_QUEUE_NOT_REHYDRATED_AFTER_RESTART",
+  "fix_commit": "bfc136cf98d7712f10c0b033210f878cce4f9816",
+  "status": "PASS"
+}
