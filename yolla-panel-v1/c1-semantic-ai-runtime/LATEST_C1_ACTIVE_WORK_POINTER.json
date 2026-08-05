@@ -1,142 +1,62 @@
 {
-  "schema_version": "LATEST_C1_ACTIVE_WORK_POINTER_V8",
-  "pointer_id": "LATEST-C1-SEMANTIC-AI-ACTIVE-WORK-20260805-003",
-  "registered_at_kst": "2026-08-05T17:10:00+09:00",
+  "schema_version": "LATEST_C1_ACTIVE_WORK_POINTER_V9",
+  "pointer_id": "LATEST-C1-SEMANTIC-AI-ACTIVE-WORK-20260805-004",
+  "registered_at_kst": "2026-08-05T22:24:39+09:00",
   "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
   "control_pr": 20,
   "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
-  "previous_pointer_blob": "d14c3f8e9b5d07b709cf150d6a2b525eb3ab741f",
-  "active_directives": [
-    {
-      "directive_id": "A0-TO-C1-SEMANTIC-KNOWLEDGE-DOMAIN-AI-SHELL-V1-20260803-001",
-      "superseded": false,
-      "mode": "FIXTURE_FIRST_KNOWLEDGE_CANDIDATE_AND_AI_SEAT",
-      "status": "ACTIVE_NOT_SUPERSEDED"
-    },
-    {
-      "directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
-      "supersedes_existing_directive": false,
-      "mode": "D_ALIGNED_TRANSFORMER_ADDENDUM",
-      "status": "WORKER_WAVE_COMPLETE_B1_HANDOFF_ACCEPTED_EXTERNAL_BLOCKER_REQUIRED_PATHS_22"
-    }
-  ],
-  "b1_handoff_ack": {
-    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/reports/C1_B1_ACCEPTED_FIXTURE_HANDOFF_ACK_V1.json",
-    "commit": "c8ea192fa2d6f8e69b3a171a7777efb950fc36f6",
-    "blob": "b24f72ad6480280ac9a17480b0adb001452f8016",
-    "decision": "ACK_ACCEPTED_FIXTURE_HANDOFF_NO_CONTENT_DELTA_NO_REEXECUTION"
-  },
-  "transformation_result_pointer": {
-    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_TRANSFORMATION_RESULT_POINTER.json",
-    "commit": "7eb88e792578f6d21f0f3473cf996e1ecb2a3176",
-    "blob": "2e5fca1afc7a6ee6148f76bd4b385866f8d3b3fa"
-  },
-  "d1_handoff_pointer": {
-    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/C1_TO_D1_HANDOFF_POINTER.json",
-    "commit": "4c3d7175e141c2487f2cff4317ef7896bd5ef7bd",
-    "blob": "0265e2bd145c374277321b6d98bfda1a5d04bf02"
+  "previous_pointer_blob": "f567fecfb8f1db428f79b4d30d47042d1d13efe8",
+  "integration_preparation_report": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_ABC_INTEGRATION_READINESS_PREPARATION_V1.json",
+    "commit": "a5e5d24e4302399737e0520ecf0866a19a3bfabd",
+    "blob": "abd110f944709dc50114c415db89d631d8fdfeb0",
+    "remote_readback": "PASS"
   },
   "b1_accepted_fixture_authority": {
     "control_pr": 19,
-    "head": "b452cff27ff9088eb3754a8cc35c05af340339ec",
-    "latest_pointer_blob": "10e715ddef42b7843c0b49a9b35e2475fee6c42f",
-    "extraction_result_pointer_blob": "cbfcb28741ff3a8d1e4ff0f4006c7fc996d73c0f",
+    "head": "5c7c9cddcc6ca9f19ffe7e77bdd300480c17c8b3",
+    "latest_pointer_blob": "7aa5344ffd5bd5023cada1b6f2798e1b904ad842",
     "handoff_pointer_blob": "932904cede5bcfb239a62952173f82147b0b0f26",
-    "b6_head": "797930d24fc00edef4276b355b7ea7ff71109972",
-    "b6_pointer_blob": "448fbfb07321f3cabae4a25649feee90e46ba106",
-    "b6_final_report_blob": "d81716e1626b96ca120b8b08892d85210da337f3",
-    "handoff_candidate_blob": "01c4c2175b30314538494ed5694668005769635a",
     "classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE",
-    "status": "ACKNOWLEDGED_AND_CONSUMED"
+    "status": "ACKNOWLEDGED_AND_CONSUMED",
+    "content_blob_delta": false
   },
-  "d_aligned_transformer": {
-    "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
-    "last_confirmed_worker_terminals": {
-      "C-2": {
-        "pointer_blob": "a4bc27b8e24dbadf668db5da21cacda0a866284a",
-        "state": "PASS_LINEAGE_READY"
-      },
-      "C-3": {
-        "pointer_blob": "344cd19f110c825ac3ac6cdc6c2b70571eae3a55",
-        "state": "EXACT_BLOCKER_EXTERNAL_22_PATHS_ACCOUNTED"
-      },
-      "C-4": {
-        "pointer_blob": "1779b1f6fbfcba913859850fec0c69f533154da3",
-        "state": "PACKAGE_ASSEMBLED_EXACT_BLOCKER"
-      },
-      "C-5": {
-        "pointer_blob": "c86cf94f2ad858602ef06c88a4f29f4813814c41",
-        "state": "PR188_VALIDATION_REJECTED_EXACT_BLOCKER"
-      },
-      "C-6": {
-        "pointer_blob": "77039ddf47c4e640335e0464b477f260eb84b94f",
-        "state": "FINAL_E2E_EXECUTED_EXACT_EXTERNAL_BLOCKER"
-      }
-    },
+  "semantic_baseline": {
     "worker_gate": "PASS_4_OF_4",
     "package_completeness": "PASS_4_OF_4",
-    "final_e2e_authorized": true,
     "final_e2e_executed": true,
-    "package_result": {
-      "package_id": "C4-WAVE2-D-ALIGNED-PACKAGE-20260805-001",
-      "package_sha256": "1e37df56f7300f427c3027f5e83bfe332aa98f37464dc82a6fe374c4982ea8fb",
-      "package_decision": "REJECTED",
-      "accepted_count": 0,
-      "rejected_count": 28,
-      "pending_count": 44,
-      "candidate_count": 0
-    },
-    "input_authority_delta": {
-      "content_blob_delta": false,
-      "authority_classification_delta": true,
-      "c2_to_c6_reexecution_required": false
-    },
-    "c1_to_d1_handoff_integrity": "PASS_FAIL_CLOSED_REJECTED_NOT_SUBMITTED",
-    "d1_submission_eligible": false,
-    "actual_d_handoff_performed": false,
-    "current_first_blocker": "PR188_REQUIRED_SOURCE_PATHS_MISSING_22",
-    "current_first_blocker_detail": {
-      "rule_id": "B001",
-      "source_path": "package.source_id",
-      "target": "SOURCE.source_id",
-      "resolution_owner": "B-1_OR_D-1_AUTHORITY_DELTA",
-      "failure_signature": "B1_PACKAGE_SOURCE_ID_NOT_PUBLISHED"
-    },
-    "current_gate": "EXTERNAL_REQUIRED_SOURCE_PATHS_22_RESOLUTION",
-    "status": "E2E_COMPLETE_B1_HANDOFF_ACCEPTED_EXTERNAL_BLOCKER_REQUIRED_PATHS_22"
+    "package_decision": "REJECTED",
+    "accepted_count": 0,
+    "rejected_count": 28,
+    "pending_count": 44,
+    "candidate_count": 0,
+    "first_blocker": "PR188_REQUIRED_SOURCE_PATHS_MISSING_22",
+    "resolved_path_count": 0,
+    "unresolved_path_count": 22
   },
-  "dependency_state": {
-    "B1_HANDOFF_AUTHORITY": "B6_ACCEPTED_FIXTURE_HANDOFF_ACKNOWLEDGED",
-    "B1_CONTENT_DELTA": false,
-    "B1_NORMALIZED_DATASET_V1": "AVAILABLE_CONSUMED_UNCHANGED",
-    "B1_RAW_ARTIFACT_MANIFEST_V1": "AVAILABLE_CONSUMED_UNCHANGED",
-    "B1_SOURCE_RECORD_ENVELOPE_V1": "AVAILABLE_CONSUMED_UNCHANGED",
-    "B1_EXTRACTION_RECEIPT_V1": "AVAILABLE_CONSUMED_UNCHANGED",
-    "D1_D_CANONICAL_SCHEMA_PROFILE_V1": "PR188_AUTHORITY_AVAILABLE_AND_CONSUMED",
-    "D1_D_INBOUND_FIELD_MAPPING_CONTRACT_V1": "PR188_AUTHORITY_AVAILABLE_AND_CONSUMED",
-    "D1_D_INTAKE_VALIDATION_RULESET_V1": "PR188_AUTHORITY_AVAILABLE_AND_CONSUMED",
-    "PR188_REQUIRED_SOURCE_PATHS": "MISSING_22_EXTERNAL_AUTHORITY_DELTA_REQUIRED",
-    "D_ACCEPTED_KNOWLEDGE_RELEASE": "NOT_AVAILABLE",
-    "A0_PROVIDER_CONSUMPTION": "BLOCKED_BY_REQUIRED_SOURCE_PATHS_22"
+  "integration_state": {
+    "input_contracts": [
+      "RAW_ARTIFACT_MANIFEST_V1",
+      "SOURCE_RECORD_ENVELOPE_V1",
+      "NORMALIZED_DATASET_V1",
+      "EXTRACTION_RECEIPT_V1"
+    ],
+    "status": "FIXTURE_SEMANTIC_BASELINE_FROZEN_WAITING_CONTENT_DELTA_AND_REQUIRED_PATH_RESOLUTION",
+    "duplicate_reexecution_required_now": false,
+    "incremental_reexecution_conditions": [
+      "B1_CONTENT_BLOB_DELTA",
+      "OR_D1_AUTHORITY_CONTENT_DELTA_RESOLVING_REQUIRED_SOURCE_PATHS_22"
+    ]
   },
-  "superseded_inconsistencies": [
-    "C1_WAITING_C2_C3_TERMINALS",
-    "B1_TO_C1_HANDOFF_NOT_PUBLISHED_WAITING_B6_INDEPENDENT_ACCEPTANCE"
-  ],
-  "next_action": "WAIT_B1_OR_D1_AUTHORITY_CONTENT_DELTA_RESOLVING_REQUIRED_SOURCE_PATHS_22_THEN_RUN_INCREMENTAL_C3_C4_C5_C6_REVALIDATION",
-  "safety": {
-    "actual_pc_execution": false,
-    "actual_site_data_claim": false,
-    "direct_d_canonical_schema_change": false,
-    "direct_d_canonical_db_write": false,
-    "fixture_claimed_as_d_accepted_data": false,
-    "d_acceptance_receipt_issued": false,
-    "panel_shell_direct_edit": false,
-    "production": false,
-    "ready": false,
-    "merge": false
-  },
+  "current_gate": "EXTERNAL_REQUIRED_SOURCE_PATHS_22_OR_NEW_B1_CONTENT_DELTA",
+  "next_action": "WAIT_B1_OR_D1_CONTENT_DELTA_THEN_RUN_INCREMENTAL_C3_C4_C5_C6_REVALIDATION",
   "terminal": "C1_D_ALIGNED_TRANSFORMER_READY_OR_EXACT_BLOCKER",
   "terminal_decision": "EXACT_EXTERNAL_BLOCKER",
-  "status": "C1_D_ALIGNED_TRANSFORMER_E2E_COMPLETE_B1_HANDOFF_ACCEPTED_EXTERNAL_BLOCKER_REQUIRED_PATHS_22"
+  "status": "ABC_INTEGRATION_STANDBY_SEMANTIC_BASELINE_FROZEN",
+  "actual_d_handoff_performed": false,
+  "d_acceptance_claimed": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false
 }
