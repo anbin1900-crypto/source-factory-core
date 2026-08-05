@@ -1,0 +1,48 @@
+{
+  "schema_version": "A2_WAVE6_15_B1_CONSUMPTION_PASS_EVENT_WAIT_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_15-B1-CONSUMPTION-PASS-V1-20260806-001",
+  "updated_at_kst": "2026-08-06T03:31:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "a2_control_pr": 18,
+  "a0_control_pr": 17,
+  "b1_control_pr": 19,
+  "source_directive": {
+    "id": "A2-TO-B1-CONSUME-VERIFIED-GENERIC-HTML-ADAPTER-PACKAGE-V1-20260806-001",
+    "comment": 5195584095
+  },
+  "b1_terminal": {
+    "comment": 5195706203,
+    "final_head": "fded2aa3f24bd7e6eaa8aedeafa7d2e6a4e2dc04",
+    "terminal": "B1_A2_VERIFIED_ADAPTER_CONSUMED_FIXTURE_PIPELINE_READY",
+    "consumption_receipt_blob": "e5994dbe33c44e9c6e94283c7332304086082b87",
+    "fixture_integration_blob": "dccce007b7b883f408b7d62aaa99207f40f76b1c",
+    "latest_pointer_blob": "ab5fad5a9d93292654058d0609d58cf2562eba89",
+    "official_fixture_consumption": "PASS_1_OF_1",
+    "member_sha_binding": "PASS_4_OF_4",
+    "output_exact_match": "PASS",
+    "output_sha256": "1aff69a94e54979af003f4a3949686b62b948c89914d5d7332490b94eafdc6cc",
+    "network_call_count": 0,
+    "full_b2_b6_reexecution": false,
+    "remote_readback": "PASS_3_OF_3"
+  },
+  "a2_result": {
+    "terminal": "A2_GENERIC_HTML_VERIFIED_ADAPTER_AND_B1_FIXTURE_CONSUMPTION_COMPLETE",
+    "status": "TERMINAL_EVENT_WAIT",
+    "verified_adapter_package_ready": true,
+    "verified_adapter_integrity_ready": true,
+    "independent_acceptance_pass": true,
+    "b1_handoff_ready": true,
+    "b1_consumption_pass": true,
+    "no_pending_directive": true,
+    "next_gate": "EXPLICIT_ACTUAL_EXTRACTION_AUTHORIZATION_OR_NEW_A2_AUTHORITY_DELTA"
+  },
+  "boundaries": {
+    "actual_site_extraction": false,
+    "actual_bulk_collection": false,
+    "d_canonical_db_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  }
+}
