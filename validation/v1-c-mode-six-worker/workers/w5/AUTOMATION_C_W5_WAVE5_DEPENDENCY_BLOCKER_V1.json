@@ -1,0 +1,67 @@
+{
+  "schema_version": "AUTOMATION_C_W5_WAVE5_DEPENDENCY_BLOCKER_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-005",
+  "command_id": "C6W-W5-W5-FINAL-CANDIDATE-BUILD-INSTALLER",
+  "worker_id": "AUTOMATION-C-W5",
+  "target_version": "5.10.2.4.2-rc1",
+  "status": "EXACT_DEPENDENCY_BLOCKER",
+  "baseline_contract": {
+    "target_pc_installed_baseline": "5.10.2.4.0",
+    "source_staging_baseline": "5.10.2.4.1",
+    "manual_5_10_2_4_1_preinstall_required": false,
+    "allowed_upgrade_paths": [
+      "5.10.2.4.0_DIRECT_TO_5.10.2.4.2-rc1",
+      "5.10.2.4.0_INTERNAL_AUTO_STAGE_5.10.2.4.1_THEN_5.10.2.4.2-rc1"
+    ],
+    "directive_commit": "8f087cfe979bc1ae1c79014518f8a976373be3bc"
+  },
+  "observed_dependencies": {
+    "w1": {
+      "pr": 59,
+      "observed_head": "a13a4466f530ab7bace36bba5258974978d4293f",
+      "required_artifacts": ["Canonical Candidate Manifest", "Source Inventory"],
+      "required_artifacts_present_in_pr_changed_files": false,
+      "verdict": "MISSING"
+    },
+    "w2": {
+      "pr": 60,
+      "observed_head": "1be5e02112cc16851b6d19e4fdf8a34b2ee9749f",
+      "wave5_input_head": "1be5e02112cc16851b6d19e4fdf8a34b2ee9749f",
+      "required_artifact": "Report Watcher Runtime Adapter",
+      "head_advanced_after_wave5_directive": false,
+      "verdict": "MISSING"
+    },
+    "w3": {
+      "pr": 61,
+      "observed_head": "4ffa247184900467774aa8c87c1f4f12053cfac2",
+      "wave5_input_head": "4ffa247184900467774aa8c87c1f4f12053cfac2",
+      "required_artifact": "Actual UI Truth Patch",
+      "head_advanced_after_wave5_directive": false,
+      "verdict": "MISSING"
+    },
+    "w4": {
+      "pr": 62,
+      "observed_head": "5b6f204145a1275ae9fcaab21e9be2725c8cb355",
+      "wave5_input_head": "5b6f204145a1275ae9fcaab21e9be2725c8cb355",
+      "required_artifact": "Actual Repeat Release Adapter",
+      "head_advanced_after_wave5_directive": false,
+      "verdict": "MISSING"
+    }
+  },
+  "blocked_outputs": [
+    "integrated candidate",
+    "installer BAT",
+    "source ZIP",
+    "payload manifest",
+    "rollback package",
+    "target-PC one-click acceptance runner",
+    "Google Drive upload and readback"
+  ],
+  "safety_decision": "DO_NOT_SUBSTITUTE_PRIOR_WAVE_OUTPUTS_OR_INVENT_CROSS_HEAD_BYTES",
+  "resume_condition": "W1 canonical manifest/source inventory and W2-W4 Wave5 result heads with correlated terminals are published",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "target_pc_pass_claimed": false
+}
