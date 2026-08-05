@@ -1,0 +1,122 @@
+{
+  "schema_version": "BASE_RELEASE_AND_RENDERER_LOAD_HOOK_CONTRACT_V2",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-014",
+  "target_version": "5.10.2.4.2-rc6",
+  "authority": {
+    "state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2",
+    "release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases",
+    "browser_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "worker_partition": "persist:sf4-safe-panel-worker-1",
+    "analysis_partition": "persist:yolla-analysis-browser-v1",
+    "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_3_7.bat"
+  },
+  "base_release_resolution": {
+    "mode": "FROM_EXISTING_LAUNCHER_OR_EXPLICIT_VALIDATED_PARAMETER",
+    "resolved_path": null,
+    "guessed_path_count": 0,
+    "launcher_readback_required_fields": [
+      "exact_bytes",
+      "sha256",
+      "encoding",
+      "line_endings",
+      "resolved_executable_path",
+      "resolved_release_directory",
+      "arguments"
+    ],
+    "explicit_parameter": {
+      "name": "BaseReleasePath",
+      "required_when_launcher_target_version_is_not_5.10.2.4.0": true,
+      "must_be_absolute": true,
+      "must_be_descendant_of_release_root": true,
+      "must_not_equal_candidate_root": true,
+      "expected_version": "5.10.2.4.0"
+    },
+    "required_baseline_members": [
+      "main.js",
+      "panel.css",
+      "panel.html",
+      "panel.js",
+      "panel_preload.js",
+      "registry.json",
+      "workspace.css",
+      "workspace.html",
+      "workspace.js",
+      "workspace_preload.js"
+    ],
+    "fail_closed_codes": [
+      "LAUNCHER_BYTES_NOT_READBACK",
+      "LAUNCHER_TARGET_UNRESOLVED",
+      "BASE_RELEASE_PARAMETER_MISSING",
+      "BASE_RELEASE_OUTSIDE_AUTHORITY_ROOT",
+      "BASE_RELEASE_VERSION_MISMATCH",
+      "BASE_RELEASE_REQUIRED_MEMBER_MISSING",
+      "BASE_RELEASE_EQUALS_CANDIDATE"
+    ]
+  },
+  "clone_contract": {
+    "clone_complete_release_before_overlay": true,
+    "sparse_release_creation_forbidden": true,
+    "destination": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc6",
+    "precondition_destination_absent_or_empty": true,
+    "recursive_byte_copy": true,
+    "preserve_relative_paths": true,
+    "preserve_timestamps_where_supported": true,
+    "pre_overlay_inventory_receipt_required": true,
+    "post_clone_pre_overlay_tree_hash_required": true
+  },
+  "renderer_load_hook_map": [
+    {
+      "order": 1,
+      "target": "workspace_preload.js",
+      "operation": "AST_PATCH_EXISTING_YOLLA_WORKSPACE_V5_API",
+      "semantic_anchor": "exactly one contextBridge exposure for yollaWorkspaceV5",
+      "required_effect": "load automation-c-v1/workspace_ui_truth_bridge.cjs and project getCModeState before renderer DOM scripts",
+      "marker": "YOLLA_C_MODE_RC6_PRELOAD_HOOK",
+      "zero_or_multiple_anchor": "FAIL_CLOSED",
+      "idempotent": true,
+      "rollback": "RESTORE_EXACT_PRE_OVERLAY_BYTES"
+    },
+    {
+      "order": 2,
+      "target": "workspace.html",
+      "operation": "DOM_INSERT_LINK_AFTER_BASE_CSS",
+      "semantic_anchor": "exactly one link whose normalized pathname is workspace.css",
+      "insert": "workspace_c_mode_rc4_truth.css",
+      "marker": "data-yolla-c-mode-overlay=rc6-css",
+      "zero_or_multiple_anchor": "FAIL_CLOSED",
+      "idempotent": true,
+      "rollback": "RESTORE_EXACT_PRE_OVERLAY_BYTES"
+    },
+    {
+      "order": 3,
+      "target": "workspace.html",
+      "operation": "DOM_INSERT_SCRIPT_AFTER_BASE_JS",
+      "semantic_anchor": "exactly one script whose normalized pathname is workspace.js",
+      "insert": "workspace_c_mode_rc4_truth.js",
+      "marker": "data-yolla-c-mode-overlay=rc6-js",
+      "zero_or_multiple_anchor": "FAIL_CLOSED",
+      "idempotent": true,
+      "rollback": "RESTORE_EXACT_PRE_OVERLAY_BYTES"
+    }
+  ],
+  "load_order_invariants": [
+    "BASE_PRELOAD_BEFORE_BRIDGE_PROJECTION",
+    "BRIDGE_PROJECTION_BEFORE_UI_OVERLAY",
+    "BASE_CSS_BEFORE_OVERLAY_CSS",
+    "BASE_JS_BEFORE_OVERLAY_JS",
+    "MARKER_COUNT_EXACTLY_ONE_PER_HOOK"
+  ],
+  "launcher_switch_contract": {
+    "switch_only_after_exact_17_hash_pass": true,
+    "switch_only_after_full_component_smoke_pass": true,
+    "preserve_original_launcher_exact_bytes": true,
+    "one_line_environment_only_launcher_forbidden": true,
+    "rewrite_strategy": "replace only validated base release path token with candidate root while preserving executable relative path, arguments, encoding and line endings",
+    "rollback": "restore exact launcher bytes and remove candidate release"
+  },
+  "current_resolution_status": "BLOCKED_PENDING_LAUNCHER_READBACK_OR_EXPLICIT_VALIDATED_BASE_RELEASE_PARAMETER",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
