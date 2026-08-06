@@ -3,41 +3,30 @@
   "version": "5.10.2.4.3",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
-  "implementation_branch": "agent/yolla-v510243-c-only-source-optimization",
   "implementation_pr": 75,
-  "source_root": "yolla-panel-v1/v1-existing-runtime-control/runtime-v510243-c-only",
-  "contract": "yolla-panel-v1/v1-existing-runtime-control/runtime-v510243-c-only/V1_V510243_C_ONLY_SOURCE_OPTIMIZATION_CONTRACT_V1.md",
-  "failure_report": "yolla-panel-v1/v1-existing-runtime-control/runtime-v510243-c-only/reports/V1_V510243_TARGET_PC_INSTALL_FAILURE_REPORT_V1.json",
-  "previous_offline_validation": "PASS_177_ASSERTION_EVENTS",
-  "target_pc_install": "FAIL_ROLLBACK_ATTEMPTED",
-  "active_runtime_after_failure": "5.10.2.3.7",
-  "failed_component": "apply_c_only_source_optimization.cjs",
-  "captured_error": "LINE_33_FAIL_HELPER_FULL_MESSAGE_NOT_CAPTURED",
-  "base_c_patch": "PASS",
-  "c_command_ui_hotfix": "PASS",
-  "c_only_optimizer": "FAIL",
+  "r1_status": "REJECTED_TARGET_PC_INSTALL_FAILED_ROLLBACK_PASS",
+  "r1_exact_error": "LEGACY_ACTION_CHANNEL_REMAINS_MAIN:v5:group-loop:start",
+  "active_runtime_after_r1_failure": "5.10.2.3.7",
   "workspace_state_preserved": true,
   "runtime_log_preserved": true,
   "historical_a_e_state_modified": false,
-  "ui_after_rollback": {
-    "e_visible": true,
-    "a_visible": true,
-    "c_button_visible": false
+  "diagnostic_source": {
+    "file_name": "YOLLA_V510243_FAILURE_SOURCE_20260807-012627.zip",
+    "size": 70970,
+    "sha256": "6941ac28faf75bd137ca06cd393c4200dd3b9f014f0ebfd39f1b7fb43c230915"
   },
-  "diagnostic_collector": {
-    "file_name": "YOLLA_V510243_FAILURE_SOURCE_COLLECTOR_V1.zip",
-    "drive_file_id": "14Dsj_NtkT_AwuNIPHIpZeToZkT1Vsgr_",
-    "size": 2904,
-    "sha256": "217d95a30bac64dbc3da1ab08122e66eb95ebbed3f3d077017745c5a15c0b37e",
-    "runtime_write": false,
-    "process_stop": false
+  "superseded_by": {
+    "target_version": "5.10.2.4.3-R2",
+    "pointer": "yolla-panel-v1/v1-existing-runtime-control/LATEST_V1_V510243_R2_C_ONLY_SOURCE_OPTIMIZATION_POINTER.json",
+    "installation_strategy": "EXACT_HASH_GATED_RELEASE_FILE_OVERLAY_NO_RUNTIME_REGEX_PATCH",
+    "status": "R2_EXACT_OVERLAY_READY_TARGET_PC_PENDING"
   },
-  "next_gate": "UPLOAD_FAILURE_SOURCE_COLLECTION_FOR_EXACT_REPRODUCTION_AND_R2_FIX",
-  "new_installer_authorized": false,
+  "r1_installer_authorized": false,
+  "r2_installer_authorized_for_target_pc_test": true,
   "target_pc_live_pass": false,
   "production": false,
   "ready": false,
   "merge": false,
-  "status": "TARGET_PC_INSTALL_FAILED_ROLLBACK_PRESERVED_DIAGNOSTIC_SOURCE_REQUIRED",
-  "updated_at": "2026-08-07T01:19:00+09:00"
+  "status": "R1_REJECTED_SUPERSEDED_BY_R2_TARGET_PC_PENDING",
+  "updated_at": "2026-08-07T01:50:00+09:00"
 }
