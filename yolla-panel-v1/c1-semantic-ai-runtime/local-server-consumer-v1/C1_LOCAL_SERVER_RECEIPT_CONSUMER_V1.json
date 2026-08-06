@@ -1,0 +1,90 @@
+{
+  "schema_version": "C1_LOCAL_SERVER_RECEIPT_CONSUMER_V1",
+  "contract_id": "C1-LOCAL-SERVER-RECEIPT-CONSUMER-20260806-001",
+  "published_at_kst": "2026-08-06T19:49:00+09:00",
+  "batch_id": "V2-TO-ABCD-LOCAL-SERVER-OPERATION-AND-FUTURE-MIGRATION-BATCH-V1-20260806-001",
+  "task_id": "C1_D_LOCAL_SERVER_QUERY_CITATION_CONSUMER_V1",
+  "task_comment_id": 5203035242,
+  "authority_bindings": {
+    "d1_repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "d1_control_pr": 188,
+    "d1_head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "d_acceptance_receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
+    "b_receipt_procedure_blob": "2a8b7c1b04924728cce14dc21c225ad09598905f",
+    "c_receipt_procedure_blob": "5dc797523718f53bab67f48ed65029061e5ee45a",
+    "existing_consumer_contract_blob": "0c617b519b3202cd4f9d6e37adf200b19c7c2516"
+  },
+  "endpoint_binding": {
+    "receipt": {
+      "logical_name": "D_LOCAL_SERVER_RECEIPT",
+      "endpoint_reference_env": "YOLLA_D_LOCAL_RECEIPT_ENDPOINT_REF",
+      "resolved_endpoint": null,
+      "resolution_authority": "D_LOCAL_SERVER_ENDPOINT_AUTHORITY_POINTER",
+      "status": "UNRESOLVED_WAITING_D_ENDPOINT_AUTHORITY"
+    }
+  },
+  "receipt_acceptance_rules": {
+    "issuer": "D-1_DOMAIN_KNOWLEDGE_DATABASE_COMMANDER",
+    "authority": "D-1_ONLY",
+    "fixture_only_allowed_as_runtime_authority": false,
+    "eligible_decisions": [
+      "ACCEPTED",
+      "PARTIALLY_ACCEPTED"
+    ],
+    "required_fields": [
+      "receipt_id",
+      "intake_request_id",
+      "package_id",
+      "package_sha256",
+      "decision",
+      "accepted_record_ids",
+      "rejected_records",
+      "validation_result_refs",
+      "actual_db_authority",
+      "fixture_only",
+      "issued_at"
+    ],
+    "receipt_sha256_verification_required": true,
+    "package_sha256_verification_required": true
+  },
+  "release_activation_rules": {
+    "required_release_type": "KNOWLEDGE_RELEASE_V1",
+    "required_issuer": "D-1_DOMAIN_KNOWLEDGE_DATABASE_COMMANDER",
+    "released_records_must_be_receipt_accepted_subset": true,
+    "rejected_records_in_release_prohibited": true,
+    "knowledge_version_required": true,
+    "source_snapshot_sha256_required": true
+  },
+  "current_authority_state": {
+    "actual_b_source_document_receipt_present": false,
+    "actual_c_knowledge_receipt_present": false,
+    "knowledge_release_present": false,
+    "runtime_activation": false,
+    "runtime_activation_state": "BLOCKED_FAIL_CLOSED"
+  },
+  "preserved_state": {
+    "candidate_count": 0,
+    "assertion_count": 0,
+    "evidence_count": 0,
+    "rejected_record_count": 15,
+    "semantic_rerun_count": 0
+  },
+  "fail_closed_reason_codes": [
+    "D_LOCAL_RECEIPT_ENDPOINT_NOT_BOUND",
+    "D1_ACTUAL_SOURCE_DOCUMENT_RECEIPT_NOT_PUBLISHED",
+    "D1_ACTUAL_KNOWLEDGE_RECEIPT_NOT_PUBLISHED",
+    "D1_KNOWLEDGE_RELEASE_V1_NOT_PUBLISHED",
+    "RECEIPT_ISSUER_NOT_D1",
+    "FIXTURE_RECEIPT_NOT_AUTHORITY",
+    "RECEIPT_SHA256_MISMATCH",
+    "PACKAGE_SHA256_MISMATCH",
+    "RELEASE_RECORD_NOT_ACCEPTED_BY_RECEIPT",
+    "REJECTED_RECORD_INCLUDED_IN_RELEASE"
+  ],
+  "decision": "RECEIPT_CONSUMER_CONTRACT_READY_WAITING_ENDPOINT_ACTUAL_RECEIPTS_AND_RELEASE",
+  "d_acceptance_claim": false,
+  "production": false,
+  "public_binding": false,
+  "ready": false,
+  "merge": false
+}
