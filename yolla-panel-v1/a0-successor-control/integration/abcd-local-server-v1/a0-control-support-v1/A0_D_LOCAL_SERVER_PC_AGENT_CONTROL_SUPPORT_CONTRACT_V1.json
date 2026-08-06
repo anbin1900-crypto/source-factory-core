@@ -1,0 +1,42 @@
+{
+  "schema_version": "A0_D_LOCAL_SERVER_PC_AGENT_CONTROL_SUPPORT_CONTRACT_V1",
+  "task_id": "A0_D_LOCAL_SERVER_PC_AGENT_CONTROL_AND_STATUS_V1",
+  "batch_id": "V2-TO-ABCD-LOCAL-SERVER-OPERATION-AND-FUTURE-MIGRATION-BATCH-V1-20260806-001",
+  "common_directive_commit": "bcc40274036282dc1065f3b6f139755d7dc0ecc9",
+  "task_comment": 5203030391,
+  "status": "SOURCE_AND_FIXTURE_PASS_TARGET_PC_QUEUE_EXECUTION_NOT_OBSERVED",
+  "terminal": "A0_D_LOCAL_SERVER_CONTROL_SUPPORT_READY",
+  "scope": {
+    "control_owner": "A0",
+    "install_and_operation_owner": "D_GROUP",
+    "new_pc_agent_runtime": false,
+    "new_transport": false,
+    "d_install_ownership": false,
+    "target_pc": "YOLLA-USER-PC01",
+    "target_root": "E:\\YOLLA",
+    "queue": "E:\\YOLLA\\agent\\state\\file-management\\action_queue",
+    "state_root": "E:\\YOLLA\\agent\\state\\local-server-control-support",
+    "receipt_root": "E:\\YOLLA\\receipts\\d-group-local-server"
+  },
+  "provided": [
+    "NINE_STANDARD_JOB_ENVELOPES",
+    "ATOMIC_QUEUE_WRITER",
+    "DETERMINISTIC_IDEMPOTENCY",
+    "RESTART_RECOVERY",
+    "MISSED_EVENT_RECONCILIATION",
+    "DUPLICATE_EVENT_SUPPRESSION",
+    "ROLLBACK_PLAN_PER_MUTATING_ACTION",
+    "SERVICE_STATUS_VIEWMODEL",
+    "LAST_RECEIPT_POINTER",
+    "CLI_WITHOUT_RESIDENT_RUNTIME"
+  ],
+  "runtime_boundary": {
+    "target_pc_queue_write_observed": false,
+    "actual_local_install_performed": false,
+    "actual_service_operation_performed": false,
+    "public_binding": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
