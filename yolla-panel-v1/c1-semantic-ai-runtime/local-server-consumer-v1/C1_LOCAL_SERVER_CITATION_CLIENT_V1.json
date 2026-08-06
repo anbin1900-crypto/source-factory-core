@@ -1,0 +1,84 @@
+{
+  "schema_version": "C1_LOCAL_SERVER_CITATION_CLIENT_V1",
+  "contract_id": "C1-LOCAL-SERVER-CITATION-CLIENT-20260806-001",
+  "published_at_kst": "2026-08-06T19:49:00+09:00",
+  "batch_id": "V2-TO-ABCD-LOCAL-SERVER-OPERATION-AND-FUTURE-MIGRATION-BATCH-V1-20260806-001",
+  "task_id": "C1_D_LOCAL_SERVER_QUERY_CITATION_CONSUMER_V1",
+  "task_comment_id": 5203035242,
+  "authority_bindings": {
+    "query_client_blob": "6d09a5727e2c9092ea8b473087750047fd62aeb5",
+    "d_citation_contract_blob": "615a3b25781851cc2502ceee6f5f6a356eea0675",
+    "d_evidence_contract_blob": "615a3b25781851cc2502ceee6f5f6a356eea0675"
+  },
+  "target_environment": {
+    "target_pc": "YOLLA-USER-PC01",
+    "bind_scope": "127.0.0.1_ONLY",
+    "public_binding": false
+  },
+  "endpoint_binding": {
+    "citation": {
+      "logical_name": "D_LOCAL_SERVER_CITATION",
+      "endpoint_reference_env": "YOLLA_D_LOCAL_CITATION_ENDPOINT_REF",
+      "resolved_endpoint": null,
+      "resolution_authority": "D_LOCAL_SERVER_ENDPOINT_AUTHORITY_POINTER",
+      "status": "UNRESOLVED_WAITING_D_ENDPOINT_AUTHORITY"
+    }
+  },
+  "request_contract": {
+    "required_fields": [
+      "request_id",
+      "query_request_id",
+      "result_id",
+      "citation_ref",
+      "requested_at"
+    ]
+  },
+  "response_validation": {
+    "required_fields": [
+      "citation_ref",
+      "assertion_id",
+      "fragment_id",
+      "quote",
+      "quote_hash",
+      "official_source_url",
+      "source_sha256",
+      "locator",
+      "document_version_ref"
+    ],
+    "quote_hash_match_required": true,
+    "fragment_match_required": true,
+    "document_version_match_required": true,
+    "source_sha256_match_required": true,
+    "unknown_reference_policy": "FAIL_CLOSED"
+  },
+  "activation_gate": {
+    "requires_local_endpoint_authority": true,
+    "requires_actual_d_knowledge_receipt": true,
+    "requires_d_knowledge_release": true,
+    "allowed_now": false
+  },
+  "fail_closed_reason_codes": [
+    "D_LOCAL_CITATION_ENDPOINT_NOT_BOUND",
+    "D1_ACTUAL_KNOWLEDGE_RECEIPT_NOT_PUBLISHED",
+    "D1_KNOWLEDGE_RELEASE_V1_NOT_PUBLISHED",
+    "QUOTE_HASH_MISMATCH",
+    "FRAGMENT_REFERENCE_UNKNOWN",
+    "DOCUMENT_VERSION_REFERENCE_MISMATCH",
+    "SOURCE_SHA256_MISMATCH",
+    "ASSERTION_WITHOUT_EVIDENCE"
+  ],
+  "current_state": {
+    "candidate_count": 0,
+    "assertion_count": 0,
+    "evidence_count": 0,
+    "rejected_record_count": 15,
+    "fabricated_assertion_count": 0,
+    "actual_local_citation_call_count": 0,
+    "runtime_activation": false
+  },
+  "decision": "CITATION_CLIENT_CONTRACT_READY_WAITING_D_ENDPOINT_RECEIPT_AND_RELEASE",
+  "production": false,
+  "public_binding": false,
+  "ready": false,
+  "merge": false
+}
