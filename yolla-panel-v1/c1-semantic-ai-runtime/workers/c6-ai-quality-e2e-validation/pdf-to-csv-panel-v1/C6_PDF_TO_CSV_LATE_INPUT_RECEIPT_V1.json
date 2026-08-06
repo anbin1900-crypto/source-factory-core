@@ -1,0 +1,30 @@
+{
+  "schema_version": "C6_PDF_TO_CSV_LATE_INPUT_RECEIPT_V1",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
+  "task_id": "C6_PDF_TO_CSV_VALIDATION_V1",
+  "observed_at_kst": "2026-08-07T03:11:00+09:00",
+  "final_report_blob": "f72b39c963d1ef82d5b435bea7de4dc9ca3a3036",
+  "late_inputs": {
+    "C2": {
+      "pointer_blob": "ba27ebb810d29b989a6677930b13b04cd7e23daf",
+      "terminal": "C2_PDF_FOLDER_INVENTORY_READY_OR_EXACT_BLOCKER",
+      "terminal_result": "C2_PDF_FOLDER_INVENTORY_READY",
+      "unit_tests": "PASS_23_OF_23",
+      "remote_readback": "PASS_4_OF_4",
+      "accepted": true
+    },
+    "C3": {"pointer": "NOT_PUBLISHED_AT_OBSERVATION", "accepted": false},
+    "C4": {"pointer": "NOT_PUBLISHED_AT_OBSERVATION", "accepted": false},
+    "C5": {"pointer": "NOT_PUBLISHED_AT_OBSERVATION", "accepted": false}
+  },
+  "actual_csv_artifact_validation_executed": false,
+  "actual_csv_artifact_pass_claimed": false,
+  "next_gate": "C4_CSV_OUTPUT_AND_C2_C3_C5_POINTERS_PUBLISHED",
+  "validator_readiness_changed": false,
+  "decision": "C2_LATE_INPUT_ACCEPTED_VALIDATOR_READY_WAITING_C3_C4_C5",
+  "semantic_validation": false,
+  "gpt_call": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
