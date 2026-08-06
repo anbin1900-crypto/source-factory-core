@@ -1,72 +1,83 @@
 {
-  "schema_version": "LATEST_C5_PDF_TO_CSV_POINTER_V1",
-  "pointer_id": "LATEST-C5-PDF-TO-CSV-OUTPUT-PATH-NAMING-20260807-001",
-  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
-  "task_id": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_V1",
-  "directive_comment_id": 5207637581,
-  "start_comment_id": 5208060699,
+  "schema_version": "LATEST_C5_PDF_TO_CSV_POINTER_V2",
+  "pointer_id": "LATEST-C5-STANDALONE-PANEL-CORRECTION-20260807-001",
+  "batch_id": "C1-PDF-PREPROCESS-CORRECTION-20260807-001",
+  "task_id": "C5_STANDALONE_PANEL_DIRECT_REPAIR",
+  "directive_comment_id": 5208882932,
+  "control_comment_id": 5208884860,
+  "start_comment_id": 5208922902,
+  "previous_pointer_blob": "22d7eacd826e732490f85151fd6f09de97f1fc20",
   "worker": "C-5_DOMAIN_AI_QUERY_CITATION_CONSUMER_WORKER",
   "authority": {
     "repository": "anbin1900-crypto/source-factory-core",
     "control_pr": 20,
     "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
-    "common_directive_commit": "ef02e3b59a2d389b571d5b5feaa20a8d24a21e4d",
-    "common_directive_blob": "2ce798647c86363a8fd2382a08013304f73bc1ef",
-    "observed_start_head": "0bd710217c9c7a0f62544e1f53b7e2f0167b22aa",
-    "pre_pointer_shared_head": "6c2384f629b8b9e0228d8a3cd3b99b9c1a96bf68",
     "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c5-domain-ai-seat-runtime/pdf-to-csv-panel-v1/**",
+    "pre_pointer_head": "2e4cfd220691251ba46024eb8a41f117aae911db",
     "pointer_commit_status": "THIS_COMMIT"
   },
+  "c4_binding": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c4-evidence-knowledge-candidate/pdf-to-csv-panel-v1/pdf_to_csv_pipeline_orchestrator.py",
+    "blob": "63b40f83b0425d241ad1859864625f4211c847d5",
+    "function": "run_pipeline",
+    "signature": "output_folder,source_folder|pdf_file,max_chars,progress",
+    "load_time": "ON_PANEL_REQUEST",
+    "separate_pipeline": false
+  },
   "objects": {
-    "source": {
-      "path": "output_path_policy.py",
-      "commit": "2fe0bb16a21a266fedca79f9a8c80750b07fadf9",
-      "blob": "1fe8684ff69c5d9481b79142495229bd036dff60",
-      "sha256": "4dade785c1754912546cd0dae75fdc855ee612174834598e9048522e68d25b3b"
-    },
-    "contract": {
-      "path": "PDF_TO_CSV_OUTPUT_NAMING_CONTRACT_V1.json",
-      "commit": "36f646fffa8a8b130f50c2ef42430ac2a09a619c",
-      "blob": "e94c465d9001be1eb4c3d555107ddc0c03e01656"
+    "panel": {
+      "path": "standalone_pdf_to_csv_panel.py",
+      "commit": "86e6dfc4b8f1647bdac419584ce572c5771d2b31",
+      "blob": "5c35e6485ae5879df051e5d8372b62dd31f385cb"
     },
     "test": {
-      "path": "test_output_path_policy.py",
-      "commit": "3465af159b58b1d2271d37e3194a8aff2cca180f",
-      "blob": "51cbb7b4adfa5d92b9ea875f3b905ace91e5d3d3",
-      "sha256": "60554f172323137879665072c63056699c6eb93448eebdeff4a92fd844e3df88"
+      "path": "test_standalone_pdf_to_csv_panel.py",
+      "commit": "8a0bf544dc9494f9b6a3c8f8409a028bedb61ecd",
+      "blob": "72c9261045c8afa7cdb0fdc0202fde2d5377c065"
+    },
+    "contract": {
+      "path": "STANDALONE_PDF_TO_CSV_PANEL_CONTRACT_V1.json",
+      "commit": "12c17e86a756750ae173619fbba7ac76b920f2d4",
+      "blob": "5834ac8dc2632ad7cbadcfae6da0f5316cb05cae"
     },
     "final_report": {
-      "path": "C5_OUTPUT_PATH_NAMING_FINAL_REPORT_V1.json",
-      "commit": "17f34c8469b296fb4a748aa22753027e7828c28f",
-      "blob": "ca4a6c5ab4fa435ac44ba6dca4125aaa741ddc5e"
+      "path": "C5_CYCLE2_FINAL_REPORT_V1.json",
+      "commit": "2e4cfd220691251ba46024eb8a41f117aae911db",
+      "blob": "9667fd0628bbc74fed3eae43a785ca2f7f93cfcb"
     }
+  },
+  "repair": {
+    "defects_found": 4,
+    "result": "C5_STANDALONE_PANEL_CORRECTED",
+    "folder_button": true,
+    "single_pdf_button": true,
+    "selected_pdf_path_visible": true,
+    "output_folder_button": true,
+    "chunk_size_control": true,
+    "background_thread": true,
+    "progress_bar": true,
+    "error_display": true,
+    "result_display": true,
+    "busy_controls_locked": true,
+    "thread_cleanup": true,
+    "single_c4_pipeline_call_per_start": true,
+    "non_selected_pdf_auto_include": false,
+    "concurrent_public_helpers_preserved": true
   },
   "validation": {
     "python_compile": "PASS_2_OF_2",
-    "initial_unit_test_run": "FAIL_54_OF_56",
-    "correction_count": 2,
-    "final_unit_tests": "PASS_56_OF_56",
-    "source_inventory_scale": "PASS_150_UNIQUE_DETERMINISTIC_OUTPUTS",
-    "chunk_sequence_scale": "PASS_1000_UNIQUE_LEXICOGRAPHIC_OUTPUTS",
+    "unit_tests": "PASS_34_OF_34",
     "remote_readback": "PASS_4_OF_4_BEFORE_POINTER",
-    "silent_collision_count": 0,
-    "silent_overwrite_count": 0,
-    "panel_shell_edit_count": 0,
-    "original_pdf_mutation_count": 0
+    "pyside6_gui_runtime_smoke": "NOT_RUN_VALIDATION_ENV_PYSIDE6_NOT_INSTALLED",
+    "pyside6_missing_behavior": "PASS_EXPLICIT_EXIT_2",
+    "ci": "NOT_RUN_NOT_CLAIMED_PASS"
   },
-  "result": {
-    "status": "READY",
-    "first_blocker": null,
-    "output_folder_rule": "SANITIZED_SOURCE_PARENT_HIERARCHY_PLUS_SOURCE_SEQUENCE_AND_FULL_SOURCE_PATH_SHA256",
-    "chunk_filename_rule": "SOURCE_SEQUENCE_CHUNK_SEQUENCE_PAGE_RANGE_SAFE_STEM_AND_SOURCE_DIGEST_PREFIX",
-    "source_relative_path_preserved": true,
-    "source_sequence_preserved": true,
-    "chunk_sequence_preserved": true,
-    "windows_safe": true,
-    "collision_fail_closed": true
-  },
-  "terminal": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_READY_OR_EXACT_BLOCKER",
-  "terminal_decision": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_READY",
+  "required_result": "C5_STANDALONE_PANEL_CORRECTED_OR_NO_DEFECT_FOUND",
+  "result": "C5_STANDALONE_PANEL_CORRECTED",
+  "first_blocker": null,
+  "semantic_analysis": false,
+  "gpt_call": false,
+  "database_write": false,
   "panel_shell_edit": false,
   "production": false,
   "ready": false,
