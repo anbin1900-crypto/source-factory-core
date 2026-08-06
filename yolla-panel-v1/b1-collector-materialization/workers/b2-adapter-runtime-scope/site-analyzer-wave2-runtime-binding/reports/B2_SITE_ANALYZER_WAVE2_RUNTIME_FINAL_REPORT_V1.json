@@ -1,0 +1,109 @@
+{
+  "schema_version": "B2_SITE_ANALYZER_WAVE2_RUNTIME_FINAL_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "authority_commit": "9ca851933fb329b1d965f4459d452c684a06f9cd",
+  "directive_comment": 5208244151,
+  "worker": "B-2",
+  "role": "LIVE_VISUAL_ANALYZER_BINDING_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 38,
+  "branch": "worker/b2-adapter-runtime-scope-v1",
+  "baseline_head": "99bb8ec27ee95088c7228c5fc6cb6399da7f0319",
+  "completed_at_kst": "2026-08-07T04:10:00+09:00",
+  "status": "PASS_LIVE_CHROMIUM_RUNTIME_ELECTRON_PRELOAD_COMPATIBLE",
+  "terminal": "B2_SITE_ANALYZER_WAVE2_LIVE_RUNTIME_BINDING_PASS",
+  "required_result": {
+    "HEAD_ADVANCE": "PASS",
+    "LIVE_BRIDGE": "PASS_MESSAGE_PORT_CHROMIUM_RUNTIME",
+    "ELEMENT_PICKER": "PASS",
+    "HIGHLIGHT": "PASS",
+    "WORKFLOW_EDITOR": "PASS",
+    "LIVE_PREVIEW": "PASS",
+    "STATIC_SAMPLE_TERMINAL": false
+  },
+  "implementation": {
+    "runtime_bridge": {
+      "commit": "4c81229ffe9061929b047f256a55848ec527a2a2",
+      "blob": "70733c6bdc4c3a4bd16d8138cfe8c67304118b0b",
+      "path": "src/runtime_bridge_client.js",
+      "transports": ["ELECTRON_RUNTIME_BRIDGE", "LEGACY_ANALYZER_BRIDGE", "MESSAGE_PORT", "BROADCAST_CHANNEL", "CUSTOM_EVENT"]
+    },
+    "live_workspace_model": {
+      "commit": "c0522d446a16c78fbc8c8a9c0a9bc32f0c2f0b4e",
+      "blob": "1e3a1b7b00782bf8635a2573111c4e3f2deb8694",
+      "path": "src/live_analyzer_workspace_model.js"
+    },
+    "live_app": {
+      "commit": "8df6819affd9aa637c989591af47f5543986773e",
+      "blob": "9e601f56e787eee3c5acffd41356984d0c3c7ea8",
+      "path": "src/live_visual_analyzer_app.js"
+    },
+    "runtime_entrypoint": {
+      "commit": "41c11f45a5829b64603a4bb5e0c4b5ec06d5cd28",
+      "blob": "a422a36141d28f46dfeaeea1e90621cbbd5d77b9",
+      "path": "ui/index.html"
+    },
+    "package": {
+      "commit": "6004672b66ccee64de71af6f3d0c09c62a6faedf",
+      "blob": "00d60f4a265d756b214cbac1c016c7404416aad8",
+      "path": "package.json"
+    }
+  },
+  "runtime_topic_binding": {
+    "inbound": [
+      "analyzer:runtime-hello",
+      "analyzer:browser-state",
+      "analyzer:a3-event",
+      "analyzer:a4-candidates",
+      "analyzer:a4-highlight",
+      "analyzer:a5-inference",
+      "analyzer:b3-workflow",
+      "analyzer:b5-preview",
+      "analyzer:element-selected"
+    ],
+    "outbound": [
+      "analyzer:b2-runtime-ready",
+      "analyzer:b2-element-selected",
+      "analyzer:b2-highlight-request",
+      "analyzer:b2-workflow-updated",
+      "analyzer:b2-preview-applied",
+      "analyzer:b2-browser-navigate",
+      "analyzer:b2-picker-toggle"
+    ]
+  },
+  "execution_result": {
+    "node_tests": "PASS_20_OF_20",
+    "chromium_message_port_runtime": "PASS",
+    "runtime_inbound_count": 7,
+    "a3_event_count": 1,
+    "highlight_counts": {"repeat": 3, "field": 6, "pagination": 1},
+    "workflow_step_count": 5,
+    "workflow_edit": "PASS",
+    "workflow_reorder": "PASS",
+    "workflow_remove": "PASS_UNIT",
+    "preview_row_count": 10,
+    "preview_column_count": 3,
+    "field_rename_apply": "PASS",
+    "mode": "HYBRID",
+    "element_selector": "a.listing-title",
+    "static_fixture_auto_loaded": false,
+    "test_result_commit": "41ec296e4b7dda5d6e50981e77bef91c7677f337",
+    "test_result_blob": "02dca50445b12f005f7c33f5283199282f2c73fc"
+  },
+  "integration_boundary": {
+    "electron_preload_bridge_compatible": true,
+    "message_port_actual_runtime_executed": true,
+    "chromium_cdp_runtime_executed": true,
+    "target_electron_single_launcher_executed": false,
+    "next_owner": "A-2_AND_B-1",
+    "next_event": "BIND_B2_WAVE2_ENTRYPOINT_TO_SHARED_ANALYZER_CORE_AND_SINGLE_LAUNCHER",
+    "entrypoint": "yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/site-analyzer-wave2-runtime-binding/ui/index.html"
+  },
+  "actual_external_site_call_count": 0,
+  "credential_use_count": 0,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
