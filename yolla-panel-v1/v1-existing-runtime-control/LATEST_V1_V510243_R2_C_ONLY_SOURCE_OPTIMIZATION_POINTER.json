@@ -1,0 +1,46 @@
+{
+  "schema_version": "LATEST_V1_V510243_R2_C_ONLY_SOURCE_OPTIMIZATION_POINTER_V1",
+  "target_version": "5.10.2.4.3-R2",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "implementation_pr": 75,
+  "implementation_branch": "agent/yolla-v510243-c-only-source-optimization",
+  "source_root": "yolla-panel-v1/v1-existing-runtime-control/runtime-v510243-r2-c-only",
+  "contract": "yolla-panel-v1/v1-existing-runtime-control/runtime-v510243-r2-c-only/V1_V510243_R2_C_ONLY_SOURCE_OPTIMIZATION_CONTRACT_V1.md",
+  "build_report": "yolla-panel-v1/v1-existing-runtime-control/runtime-v510243-r2-c-only/V1_V510243_R2_C_ONLY_BUILD_TEST_REPORT_V1.json",
+  "payload_manifest": "yolla-panel-v1/v1-existing-runtime-control/runtime-v510243-r2-c-only/V1_V510243_R2_C_ONLY_PAYLOAD_MANIFEST_V1.json",
+  "artifact_manifest": "yolla-panel-v1/v1-existing-runtime-control/runtime-v510243-r2-c-only/V1_V510243_R2_C_ONLY_ARTIFACT_MANIFEST_V1.json",
+  "r1": {
+    "status": "REJECTED_TARGET_PC_INSTALL_FAILED_ROLLBACK_PASS",
+    "exact_error": "LEGACY_ACTION_CHANNEL_REMAINS_MAIN:v5:group-loop:start"
+  },
+  "r2": {
+    "installation_strategy": "EXACT_HASH_GATED_RELEASE_FILE_OVERLAY_NO_RUNTIME_REGEX_PATCH",
+    "offline_status": "PASS",
+    "legacy_ui_marker_remaining": 0,
+    "legacy_action_ipc_remaining": 0,
+    "c_runtime_assertions": 59,
+    "target_pc_install": "PENDING",
+    "target_pc_live_pass": false
+  },
+  "one_click_installer": {
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510243_R2_C_ONLY_SOURCE_OPTIMIZATION.bat",
+    "drive_file_id": "1-B76yhC8tXVgdp36yeQXEKV-FU0jEYzc",
+    "size": 129056,
+    "sha256": "37dd8f5117f48bdbe69c221bbb93b3d118480f36617fd75642b7afa8eb917b4b",
+    "remote_readback": "PASS"
+  },
+  "source_package": {
+    "file_name": "AI_YOLLA_V510243_R2_C_ONLY_SOURCE_OPTIMIZATION_PACKAGE.zip",
+    "drive_file_id": "1J2jzc653gF19OJYjdSCd2dttw5OIYsDB",
+    "size": 93308,
+    "sha256": "bb7fe2ec92a2ffbb046b705c06a1a00864ce54f43f8a6b745499df123129bec8",
+    "remote_readback": "PASS"
+  },
+  "preserve": ["workspace_state.json", "browser_profile", "runtime.log", "log_panel", "rollback"],
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "R2_EXACT_OVERLAY_READY_TARGET_PC_PENDING",
+  "updated_at": "2026-08-07T01:49:00+09:00"
+}
