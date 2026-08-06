@@ -93,7 +93,7 @@ class SinglePdfT(unittest.TestCase):
     def test_32_non_selected_zero(self):
         p=self.pdf('chosen.pdf'); self.pdf('other.pdf'); self.pdf('nested/third.pdf'); self.assertEqual([x['file_name'] for x in a.adapt_pdf_file_selection(p,self.out)['inventory']['files']],['chosen.pdf'])
     def test_33_record_shape(self):
-        p=self.pdf('one.pdf',b'123'); item=a.adapt_pdf_file_selection(p,self.out)['inventory']['files'][0]; self.assertEqual(item,{'processing_order':1,'relative_path':'one.pdf','file_name':'one.pdf','size_bytes':3})
+        p=self.pdf('one.pdf',b'%PDF123'); item=a.adapt_pdf_file_selection(p,self.out)['inventory']['files'][0]; self.assertEqual(item,{'processing_order':1,'relative_path':'one.pdf','file_name':'one.pdf','size_bytes':7})
     def test_34_inventory_schema_same(self): self.assertEqual(a.adapt_pdf_file_selection(self.pdf('a.pdf'),self.out)['inventory']['schema_version'],'PDF_FOLDER_INVENTORY_V1')
     def test_35_case_insensitive_pdf(self): self.assertEqual(a.adapt_pdf_file_selection(self.pdf('a.PDF'),self.out)['pdf_count'],1)
     def test_36_non_pdf_rejected(self):
