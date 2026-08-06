@@ -1,0 +1,62 @@
+{
+  "schema_version": "A2_SITE_ANALYZER_WAVE2_PACKAGE_MANIFEST_V2",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment_id": 5208234675,
+  "root_path": "yolla-panel-v1/a2-analyzer-adapter-factory/site-analyzer-wave2",
+  "single_launcher": "RUN_SITE_ANALYZER_WAVE2.bat",
+  "entrypoints": {
+    "node": "src/launcher.mjs",
+    "electron": "src/electron-entry.mjs",
+    "tests": "tests/wave2.integration.test.mjs"
+  },
+  "runtime_package": {
+    "file_name": "A2_SITE_ANALYZER_WAVE2_RUNTIME_PACKAGE.zip",
+    "size_bytes": 14860,
+    "sha256": "ce584baef74fe0fac0b16b5317e20c2160fe59e9e58deb4c4d8a85796d823be4",
+    "git_blob": "654833d0aaeeb6005a47e2adf63dd33928099f61",
+    "entry_count": 16,
+    "contains_final_report": false,
+    "contains_package_manifest": false
+  },
+  "bootstrap": {
+    "path": "BOOTSTRAP_A2_SITE_ANALYZER_WAVE2.py",
+    "git_blob": "e19e78e8c1db6f173d19347c70841f3ab69fe313",
+    "sha_gate": "ce584baef74fe0fac0b16b5317e20c2160fe59e9e58deb4c4d8a85796d823be4",
+    "safe_path_traversal_gate": true,
+    "test_option": "--test",
+    "run_option": "--run"
+  },
+  "components": {
+    "analyzer_core": "src/analyzer-core.mjs",
+    "runtime_bridge": "src/runtime-bridge.mjs",
+    "local_http_fixture": "src/fixture-server.mjs",
+    "module_registry": "src/module-registry.mjs",
+    "preload": "src/preload.cjs",
+    "embedded_and_standalone_ui": "src/ui/index.html",
+    "single_launcher": "RUN_SITE_ANALYZER_WAVE2.bat"
+  },
+  "source_file_count": 16,
+  "runtime_contract": {
+    "fixture_host": "127.0.0.1",
+    "fixture_port": "dynamic",
+    "record_count": 10,
+    "shared_partition": "persist:yolla-site-analyzer-wave2",
+    "embedded_and_standalone_shared_core": true,
+    "ipc_handler_count": 6,
+    "ui_section_count": 7,
+    "worker_head_binding_count": 10
+  },
+  "validation": {
+    "test_result": "PASS_2_SUITES",
+    "smoke_result": "PASS",
+    "network_event_count": 8,
+    "recorded_action_count": 5,
+    "field_candidate_count": 6,
+    "extracted_record_count": 10,
+    "single_launch_path": "PASS"
+  },
+  "target_pc_electron_live_pass": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

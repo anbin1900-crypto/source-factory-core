@@ -1,0 +1,62 @@
+{
+  "schema_version": "A2_SITE_ANALYZER_WAVE2_FINAL_REPORT_V1",
+  "role": "LIVE_ANALYZER_CORE_PRODUCT_INTEGRATION_OWNER",
+  "worker_pr": 18,
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment_id": 5208234675,
+  "completed_at_kst": "2026-08-07T04:08:00+09:00",
+  "baseline_head": "7528715951ab6fd64b60181c6f9fa156ef7e8ef6",
+  "implementation": {
+    "analyzer_core": true,
+    "real_node_http_runtime_bridge": true,
+    "electron_runtime_bridge_source": true,
+    "embedded_workspace": true,
+    "standalone_window": true,
+    "single_launcher": "RUN_SITE_ANALYZER_WAVE2.bat",
+    "exact_worker_heads_consumed": 10,
+    "shared_partition": "persist:yolla-site-analyzer-wave2",
+    "shared_state": true,
+    "shared_adapter_registry": true,
+    "shared_run_history": true
+  },
+  "execution_result": {
+    "command": "node src/launcher.mjs --mode smoke",
+    "status": "PASS",
+    "network_event_count": 8,
+    "response_body_count": 8,
+    "dom_snapshot_count": 5,
+    "recorded_action_count": 5,
+    "field_candidate_count": 6,
+    "locator_count": 6,
+    "generated_adapter_count": 1,
+    "replay_success_count": 1,
+    "extracted_record_count": 10,
+    "data_preview_visible": true
+  },
+  "tests": {
+    "command": "node --test tests/*.test.mjs",
+    "suite_count": 2,
+    "pass_count": 2,
+    "fail_count": 0
+  },
+  "package": {
+    "file_name": "A2_SITE_ANALYZER_WAVE2_RUNTIME_PACKAGE.zip",
+    "size_bytes": 14860,
+    "sha256": "ce584baef74fe0fac0b16b5317e20c2160fe59e9e58deb4c4d8a85796d823be4",
+    "git_blob": "654833d0aaeeb6005a47e2adf63dd33928099f61",
+    "entry_count": 16,
+    "manifest_path": "reports/A2_SITE_ANALYZER_WAVE2_PACKAGE_MANIFEST_V1.json"
+  },
+  "live_boundary": {
+    "target_pc_electron_live_pass": false,
+    "actual_electron_cdp_event_count_claimed": 0,
+    "reason": "CURRENT_EXECUTION_ENVIRONMENT_HAS_NO_ELECTRON_PACKAGE_OR_TARGET_PC_SESSION",
+    "source_and_node_runtime_pass": true,
+    "false_live_pass_count": 0
+  },
+  "terminal": "A2_SITE_ANALYZER_WAVE2_RUNTIME_BRIDGE_SINGLE_LAUNCHER_SOURCE_PASS_TARGET_PC_ELECTRON_PENDING",
+  "status": "TERMINAL_SOURCE_AND_NODE_RUNTIME_PASS_EXTERNAL_ELECTRON_LIVE_PENDING",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

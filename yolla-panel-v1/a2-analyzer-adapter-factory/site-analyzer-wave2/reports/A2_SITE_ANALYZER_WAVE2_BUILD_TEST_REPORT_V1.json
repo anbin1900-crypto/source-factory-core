@@ -1,0 +1,50 @@
+{
+  "schema_version": "A2_SITE_ANALYZER_WAVE2_BUILD_TEST_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "tested_at_kst": "2026-08-07T04:05:00+09:00",
+  "runtime": {
+    "node": "v22.16.0",
+    "local_http": "REAL_NODE_HTTP",
+    "electron": "SOURCE_AND_FAKE_CONTRACT_PASS_TARGET_PC_LIVE_NOT_EXECUTED"
+  },
+  "tests": {
+    "command": "node --test tests/*.test.mjs",
+    "suite_count": 2,
+    "pass_count": 2,
+    "fail_count": 0
+  },
+  "smoke": {
+    "command": "node src/launcher.mjs --mode smoke",
+    "status": "PASS",
+    "network_event_count": 8,
+    "response_body_count": 8,
+    "dom_snapshot_count": 5,
+    "recorded_action_count": 5,
+    "field_candidate_count": 6,
+    "locator_count": 6,
+    "generated_adapter_count": 1,
+    "replay_success_count": 1,
+    "extracted_record_count": 10,
+    "data_preview_visible": true
+  },
+  "integration": {
+    "exact_module_head_count": 10,
+    "module_owner_count": 10,
+    "ipc_handler_count": 6,
+    "ui_section_count": 7,
+    "same_partition": "PASS",
+    "same_shared_state_id": "PASS",
+    "same_adapter_registry": "PASS",
+    "same_run_history": "PASS",
+    "single_launch_path": "PASS"
+  },
+  "external_live_boundary": {
+    "target_pc_electron_live_execution": false,
+    "actual_cdp_event_source": "A3_PENDING_WAVE2",
+    "false_live_pass_count": 0
+  },
+  "status": "SOURCE_NODE_RUNTIME_AND_ELECTRON_CONTRACT_PASS_TARGET_PC_LIVE_PENDING",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
