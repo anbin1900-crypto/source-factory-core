@@ -1,0 +1,25 @@
+{
+  "schema_version": "B3_REPLAY_TRACE_AND_REPAIR_V1",
+  "failure_terminal": {
+    "required_fields": ["status", "failed_step_id", "reason", "trace", "original_recipe_hash"]
+  },
+  "repair_policy": {
+    "eligible_failure": "locator_not_found_or_ambiguous",
+    "matching": "SEMANTIC_TARGET_SIGNATURE",
+    "replacement": "HIGHEST_PRIORITY_RESOLVABLE_LOCATOR",
+    "same_locator_rejected": true,
+    "unavailable_repair": "FAIL_CLOSED"
+  },
+  "pass_terminal": {
+    "required_fields": ["status", "step_count", "repair_count", "repairs", "trace", "repaired_recipe_hash"],
+    "all_steps_must_pass": true,
+    "deterministic_trace_required": true
+  },
+  "fixture_expectation": {
+    "initial_status": "FAILED",
+    "initial_failed_step_id": "step-0003",
+    "repair_count": 1,
+    "final_status": "PASS",
+    "recorded_action_count": 8
+  }
+}
