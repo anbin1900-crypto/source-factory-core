@@ -1,0 +1,90 @@
+{
+  "schema_version": "A3_CYCLE1_TARGET_PC_READBACK_PACKAGE_V1",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "directive_id": "C1-A3-TARGET-PC-RUNTIME-READBACK-HARNESS",
+  "worker": "A-3",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "owned_root": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a3-target-pc-readback/**",
+  "package_status": "RUNNABLE_TARGET_PC_PACKAGE_READY",
+  "built_at_kst": "2026-08-07T00:06:00+09:00",
+  "target": {
+    "operating_system": "Windows 10 or later",
+    "powershell_minimum": "5.1",
+    "administrator_required": false,
+    "network_required": false,
+    "target_pc_mutating_write_required": false
+  },
+  "artifacts": {
+    "script": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a3-target-pc-readback/Invoke-CModeCycle1TargetPcReadback.ps1",
+      "content_sha256": "942e4a3a0e7e99c21065e6f35855969f770178043be603757ace7a7d196fa541"
+    },
+    "receipt_schema": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a3-target-pc-readback/C_MODE_CYCLE1_TARGET_PC_READBACK_RECEIPT_V1.schema.json",
+      "content_sha256": "1fa35e1fa77195cbfc9b6276e280edce5e0125fd149958ac0aaddd6557326f9a"
+    }
+  },
+  "capture_scope": [
+    "launcher_path_and_file_identity",
+    "active_runtime_executable_path",
+    "redacted_process_command_line_and_raw_sha256",
+    "file_version_product_version_sha256_size_timestamp",
+    "browser_user_data_dir_and_profile_directory",
+    "state_root",
+    "release_root",
+    "process_tree",
+    "windows_os_and_hardware_runtime",
+    "powershell_runtime",
+    "YOLLA_environment_variable_names_hashes_and_lengths"
+  ],
+  "privacy_and_safety": {
+    "stdout_only": true,
+    "file_write_count": 0,
+    "registry_write_count": 0,
+    "process_start_count": 0,
+    "process_stop_count": 0,
+    "browser_profile_modification": false,
+    "workspace_state_reset": false,
+    "runtime_installation_change": false,
+    "raw_yolla_environment_values_persisted": false,
+    "command_line_secret_redaction": true,
+    "user_path_prefix_redaction": true
+  },
+  "invocation": {
+    "default_stdout_only": "powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\\Invoke-CModeCycle1TargetPcReadback.ps1",
+    "explicit_roots_stdout_only": "powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\\Invoke-CModeCycle1TargetPcReadback.ps1 -LauncherPath 'E:\\YOLLA\\Yolla.exe' -ReleaseRoot 'E:\\YOLLA\\releases\\5.10.2.3.7' -StateRoot 'E:\\YOLLA\\state' -BrowserProfileRoot \"$env:LOCALAPPDATA\\YOLLA\\BrowserProfile\"",
+    "controller_capture_rule": "Capture standard output in the invoking PC Agent or controller transport. Do not redirect to a target-PC file for the accepted zero-write run.",
+    "expected_output": "One JSON document conforming to C_MODE_CYCLE1_TARGET_PC_READBACK_RECEIPT_V1.schema.json"
+  },
+  "success_conditions": {
+    "script_exit": "JSON_RECEIPT_EMITTED_TO_STDOUT",
+    "non_destructive_read_only": "PASS",
+    "target_pc_write_count": 0,
+    "minimum_live_evidence": [
+      "processes",
+      "process_tree",
+      "launcher_candidates_or_exact_warning",
+      "release_roots_or_exact_warning",
+      "state_roots_or_exact_warning",
+      "browser_profiles_or_exact_warning"
+    ],
+    "live_pass_restriction": "Static validation or package readiness must not be promoted to a target-PC live PASS."
+  },
+  "current_execution_environment": {
+    "windows_target_pc_connected": false,
+    "windows_process_namespace_available": false,
+    "powershell_5_1_runtime_available": false,
+    "live_target_receipt_produced": false,
+    "external_blocker_code": "TARGET_PC_ACCESS_UNAVAILABLE_FROM_CURRENT_EXECUTION_ENVIRONMENT",
+    "external_blocker_detail": "The current isolated Linux execution environment has no connection to the user's Windows 10 target PC, its process namespace, launcher files, browser profile, state root, or release root.",
+    "required_external_action": "Execute the committed script on the target Windows PC through the YOLLA PC Agent/controller and return the captured stdout JSON receipt."
+  },
+  "guardrails": {
+    "site_analyzer_work": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
