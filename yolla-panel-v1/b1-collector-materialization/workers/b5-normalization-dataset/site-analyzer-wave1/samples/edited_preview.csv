@@ -1,0 +1,5 @@
+﻿listingId,listing_title,price,address.city,address.district,tags,extra.floor,extra.memo,__source_row_pointer,__source_element_pointers
+L-001,"Alpha, ""Seoul""",100,Seoul,Jongno,"[""featured"",""new""]",,,"{""artifactId"":""raw-page-1"",""pageUrl"":""https://fixture.invalid/listings?page=1"",""rowIndex"":0}","{""price"":{""nodeId"":102,""selector"":"".listing:nth-child(1) .price""},""title"":{""nodeId"":101,""selector"":"".listing:nth-child(1) .title""}}"
+L-002,"Beta
+Busan",250,Busan,Haeundae,"[""sale""]",,,"{""artifactId"":""raw-page-1"",""pageUrl"":""https://fixture.invalid/listings?page=1"",""rowIndex"":1}","{""price"":{""nodeId"":202,""selector"":"".listing:nth-child(2) .price""},""title"":{""nodeId"":201,""selector"":"".listing:nth-child(2) .title""}}"
+L-003,Gamma,300,Incheon,,[],3,preserve-me,"{""artifactId"":""raw-page-2"",""pageUrl"":""https://fixture.invalid/listings?page=2"",""rowIndex"":0}","{""price"":{""nodeId"":302,""selector"":"".listing:nth-child(1) .price""},""title"":{""nodeId"":301,""selector"":"".listing:nth-child(1) .title""}}"
