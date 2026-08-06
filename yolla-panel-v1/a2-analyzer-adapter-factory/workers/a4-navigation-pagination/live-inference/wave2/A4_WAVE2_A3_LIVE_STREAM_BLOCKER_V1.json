@@ -1,0 +1,64 @@
+{
+  "schema_version": "A4_WAVE2_A3_LIVE_STREAM_BLOCKER_V1",
+  "worker": "A-4",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "captured_at_kst": "2026-08-07T03:59:00+09:00",
+  "classification": "PROVEN_EXTERNAL_BLOCKER",
+  "blocker_code": "A3_WAVE2_LIVE_EVENT_STREAM_NOT_PUBLISHED",
+  "a3_dependency": {
+    "worker_pr": 22,
+    "directive_comment_id": 5208236237,
+    "required_terminal": "A3_SITE_ANALYZER_WAVE2_LIVE_CDP_EXECUTION_PASS_OR_PROVEN_EXTERNAL_BLOCKER",
+    "head_at_a3_directive": "e86dfcc2fc32ad366cd7fd8ba07392850419b853",
+    "head_at_a4_start": "e86dfcc2fc32ad366cd7fd8ba07392850419b853",
+    "head_at_a4_cutoff": "e86dfcc2fc32ad366cd7fd8ba07392850419b853",
+    "head_advanced_after_directive": false,
+    "wave2_terminal_published": false,
+    "live_event_stream_pointer_published": false,
+    "live_dom_snapshot_pointer_published": false
+  },
+  "a4_completed_scope": {
+    "head_advanced": true,
+    "start_commit": "86351d1bda373520e288a1c3aa9f985dd4400e84",
+    "live_event_binding_commit": "1601b78869da6f9766a261dabcdeae2e8095023e",
+    "runner_commit": "a22337ce5f39c6a12837d3771e5eb1660c155b24",
+    "test_commit": "3284975ee4a26b398701a28224eb7e2730f7786e",
+    "schema_commit": "0e8982b9bdb1ac9b3c0d9b4b381984005fd9c6bd",
+    "validation_commit": "5777b846af2e0b3916ec87d973df467ea336c5a4",
+    "tests": "PASS_11_OF_11",
+    "fixture_only_stream_rejected": true,
+    "nonzero_live_event_required": true,
+    "live_dom_snapshot_required": true,
+    "field_minimum": 5,
+    "locator_minimum": 5,
+    "pagination_decision_required": true,
+    "b2_highlight_required": true,
+    "duplicate_event_loop_suppression": true
+  },
+  "not_claimed": {
+    "actual_a3_event_consumed": false,
+    "actual_live_dom_snapshot_inferred": false,
+    "actual_live_field_count": 0,
+    "actual_live_locator_count": 0,
+    "actual_live_highlight_count": 0,
+    "false_live_pass_count": 0
+  },
+  "required_external_action": {
+    "owner": "A-3_LIVE_ELECTRON_CDP_FIXTURE_SITE_EXECUTION_OWNER",
+    "action": "Publish an advanced exact Remote Head containing the actual Electron or Chromium CDP Streaming Event artifact and pointer, including at least one live DOMSnapshot and the associated Navigation events.",
+    "required_stream_markers": [
+      "producer=A-3",
+      "live=true or source containing LIVE",
+      "DOMSnapshot event",
+      "Navigation events",
+      "exact source Head and stream ID"
+    ],
+    "a4_resume_action": "Run run_live_event_binding.cjs against the published event stream and commit the actual A4_WAVE2_LIVE_EVENT_STRUCTURE_HANDOFF_V1 result."
+  },
+  "finding_only_terminal": false,
+  "fixture_only_terminal": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "A4_BINDING_READY_WAITING_A3_ACTUAL_LIVE_STREAM"
+}
