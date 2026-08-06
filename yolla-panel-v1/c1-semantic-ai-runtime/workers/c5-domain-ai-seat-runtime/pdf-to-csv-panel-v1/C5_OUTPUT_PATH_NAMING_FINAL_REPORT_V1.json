@@ -1,0 +1,63 @@
+{
+  "schema_version": "C5_OUTPUT_PATH_NAMING_FINAL_REPORT_V1",
+  "report_id": "C5-PDF-TO-CSV-OUTPUT-NAMING-FINAL-20260807-001",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
+  "task_id": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_V1",
+  "directive_comment_id": 5207637581,
+  "start_comment_id": 5208060699,
+  "worker": "C-5_DOMAIN_AI_QUERY_CITATION_CONSUMER_WORKER",
+  "authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "control_pr": 20,
+    "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+    "common_directive_commit": "ef02e3b59a2d389b571d5b5feaa20a8d24a21e4d",
+    "common_directive_blob": "2ce798647c86363a8fd2382a08013304f73bc1ef",
+    "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c5-domain-ai-seat-runtime/pdf-to-csv-panel-v1/**"
+  },
+  "implemented": [
+    "NFC_AND_POSIX_CANONICAL_SOURCE_RELATIVE_PATH",
+    "WINDOWS_SAFE_HUMAN_READABLE_PARENT_AND_STEM_COMPONENTS",
+    "FULL_SHA256_SOURCE_PATH_DISAMBIGUATION",
+    "EIGHT_DIGIT_SOURCE_AND_CHUNK_SEQUENCE_TOKENS",
+    "PAGE_RANGE_PRESERVING_CSV_FILENAMES",
+    "WINDOWS_CASEFOLD_DUPLICATE_AND_COLLISION_DETECTION",
+    "FAIL_CLOSED_ABSOLUTE_TRAVERSAL_DUPLICATE_SEQUENCE_AND_PATH_BUDGET_RULES",
+    "BATCH_LEVEL_SOURCE_TO_CHUNK_BINDING_VALIDATION"
+  ],
+  "output_example": {
+    "source_relative_path": "법령/소방/위험물안전관리법.pdf",
+    "source_no": 12,
+    "output_relative_dir": "법령/소방/source-00000012--위험물안전관리법--src-a8c0d9cfbecf6e3a03740eff1cd7f3686b5fff933f32aaa1986db3acf2b37bb6",
+    "first_chunk_filename": "source-00000012--chunk-00000001--pages-00000001-00000002--위험물안전관리법--a8c0d9cfbecf6e3a.csv"
+  },
+  "validation": {
+    "python_compile": "PASS_2_OF_2",
+    "first_unit_test_run": "FAIL_54_OF_56_WITH_2_EXPECTATION_OR_ORDER_FINDINGS",
+    "correction": [
+      "NORMALIZE_WHITESPACE_BEFORE_WINDOWS_CONTROL_CHARACTER_REPLACEMENT",
+      "PRESERVE_EXPLICIT_UNDERSCORE_FOR_TRAILING_FORBIDDEN_ASTERISK"
+    ],
+    "final_unit_tests": "PASS_56_OF_56",
+    "source_inventory_scale_fixture": "PASS_150_UNIQUE_DETERMINISTIC_SOURCE_OUTPUTS",
+    "chunk_sequence_scale_fixture": "PASS_1000_UNIQUE_LEXICOGRAPHIC_CHUNK_OUTPUTS",
+    "silent_collision_count": 0,
+    "silent_overwrite_count": 0,
+    "original_pdf_mutation_count": 0,
+    "panel_shell_edit_count": 0,
+    "semantic_analysis_count": 0,
+    "gpt_call_count": 0,
+    "database_write_count": 0
+  },
+  "local_artifact_sha256": {
+    "output_path_policy.py": "4dade785c1754912546cd0dae75fdc855ee612174834598e9048522e68d25b3b",
+    "test_output_path_policy.py": "60554f172323137879665072c63056699c6eb93448eebdeff4a92fd844e3df88"
+  },
+  "result": "READY",
+  "first_blocker": null,
+  "terminal": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_READY_OR_EXACT_BLOCKER",
+  "terminal_decision": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_READY",
+  "panel_shell_edit": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
