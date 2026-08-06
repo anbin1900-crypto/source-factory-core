@@ -1,0 +1,45 @@
+{
+  "schema_version": "LATEST_V2_ABCD_LOCAL_SERVER_OPERATION_POINTER_V1",
+  "pointer_id": "LATEST-V2-ABCD-LOCAL-SERVER-OPERATION-20260806-001",
+  "updated_at_kst": "2026-08-06T18:45:00+09:00",
+  "owner": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "batch": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-local-server-v1/V2_ABCD_LOCAL_SERVER_OPERATION_AND_FUTURE_MIGRATION_BATCH_V1.json",
+    "commit": "bcc40274036282dc1065f3b6f139755d7dc0ecc9",
+    "status": "ACTIVE"
+  },
+  "dispatch_receipt": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-local-server-v1/V2_ABCD_LOCAL_SERVER_OPERATION_DISPATCH_RECEIPT_V1.json",
+    "commit": "ed893ce08ecb0d3286f9e383fb40bad4bb8d41fe",
+    "status": "PASS_13_OF_13"
+  },
+  "current_state": {
+    "B5": "PASS_EVENT_WAIT",
+    "B6": "IMMEDIATE_DELTA_ONLY_REPREFLIGHT",
+    "B1": "EVENT_WAIT_B6_THEN_LOCAL_SERVER_INGESTION",
+    "A0": "LOCAL_SERVER_PC_AGENT_CONTROL_SUPPORT_ACTIVE",
+    "A2": "LOCAL_SERVER_HANDOFF_PREPARATION_ACTIVE",
+    "C1": "LOCAL_SERVER_CONSUMER_PREPARATION_ACTIVE",
+    "D1": "LOCAL_SERVER_CONTROL_REALIGNMENT_ACTIVE",
+    "D2": "LOCAL_SERVER_ENVIRONMENT_DOCTOR_ACTIVE",
+    "D3": "LOCAL_SERVER_APPLICATION_PACKAGE_ACTIVE",
+    "D4": "LOCAL_SERVER_SECURITY_POLICY_ACTIVE",
+    "D5": "EVENT_WAIT_D1_D2_D3_D4_THEN_ACTUAL_INSTALL",
+    "D6": "EVENT_WAIT_D5_B1_C1_THEN_ACTUAL_E2E"
+  },
+  "target": {
+    "pc": "YOLLA-USER-PC01",
+    "install_root": "E:\\YOLLA",
+    "future_server_migration_ready": true,
+    "external_server_migration_now": false
+  },
+  "next_gate": "B6_TERMINAL_AND_D2_ENVIRONMENT_DOCTOR_TERMINAL",
+  "actual_local_install_authorized": true,
+  "actual_local_staging_write_authorized": true,
+  "public_binding": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
