@@ -1,0 +1,51 @@
+{
+  "schema_version": "RC8_FINAL_INTEGRATION_MANIFEST_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "command_id": "C6W-W18-W5-RC8-FINAL-INTEGRATION",
+  "directive_comment": 5200325058,
+  "result_key": "520032505800",
+  "target_version": "5.10.2.4.2-rc8",
+  "integration_owner": "AUTOMATION-C-W5",
+  "inputs": {
+    "w1_result_commit": "f55870053245177430c20a3f9ba0029f955df8f0",
+    "w1_exact_resolver": {
+      "commit": "ed8bde5eb66f0d65de64ad1dfae4fde038e6012c",
+      "blob_sha1": "92e3e7f027f716fb49373bc66e9d62aff61b73ae",
+      "sha256": "a6eaeef66a2dfc59b646fb63ab62d6bff12361b79f13d97bb4022eaa01255ea6",
+      "size_bytes": 10563
+    },
+    "w2_gate_commit": "d4adf24b4a5bb5381a2aec70531b56bc2f9f4a68",
+    "w3_result_commit": "7af7a51ee18e6b5ae6f64942cf02392f596e4678",
+    "w3_exact_sources": {
+      "truth_bridge_sha256": "8086f56f1f0b5731cb9ad4be5339fc211d1468f4195fcf249b7a300cc3b830e8",
+      "css_overlay_sha256": "43b6a3721c250e76b2562c45d931fd17d87ae219fec70aa3ef3206af9cd8b0fe",
+      "js_overlay_sha256": "5fdd1719e110ce80ad4b3efb911fd20a86ccbfeb27182645e8d2170287114b54",
+      "load_hook_sha256": "188dcc15f0f88ac41e5179272ccc0ee11b9ee48001ee986d1732f6414d88f462",
+      "rollback_sha256": "7a86437b703b50a6b7bbe575802bdf6d82a228919d5dc48bd8169046baf9253b"
+    },
+    "w4_runner_commit": "c068f213af2cf7cf0636ad23219cc64c157c247f",
+    "w6_audit_prep_commit": "e461d6be7bca1de7682649a2c25657c976120745"
+  },
+  "state_preservation": [
+    "%STATE_ROOT%/runtime.log",
+    "%STATE_ROOT%/automation-c-v1/C_MODE_STATE.json",
+    "%STATE_ROOT%/automation-c-v1/REPEAT_COMMANDS.json",
+    "%STATE_ROOT%/automation-c-v1/work_control_events.jsonl",
+    "%STATE_ROOT%/dispatch-receipts",
+    "E:/SOURCE FACTORY/.yolla/yolla-workspace-browser-profile",
+    "authority launcher original bytes"
+  ],
+  "liveness_feature": {
+    "runtime": "worker_liveness_30m.cjs",
+    "test": "test_worker_liveness_30m.cjs",
+    "statuses": ["대기", "작업중", "결과게시대기", "완료", "확인필요"],
+    "refresh_policy": "exactly once after 30 minutes only when not generating",
+    "github_completion_policy": "exact RESULT_KEY C_RESULT terminal only"
+  },
+  "install_time_network_dependency": false,
+  "target_pc_install_authorized": false,
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
