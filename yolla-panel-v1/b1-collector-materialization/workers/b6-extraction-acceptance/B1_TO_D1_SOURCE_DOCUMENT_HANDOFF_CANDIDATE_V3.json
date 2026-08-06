@@ -1,0 +1,83 @@
+{
+  "schema_version": "B1_TO_D1_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_V3",
+  "candidate_id": "B1-TO-D1-SOURCE-DOCUMENT-HANDOFF-CANDIDATE-V3-20260806-001",
+  "task_id": "B6_D_SOURCE_DOCUMENT_HANDOFF_REPREFLIGHT",
+  "common_directive_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V2-20260806-001",
+  "task_directive_comment_id": 5198235423,
+  "created_at_kst": "2026-08-06T08:53:00+09:00",
+  "producer_lane": "B_TO_D_SOURCE_DOCUMENT",
+  "excluded_lane": "C_TO_D_KNOWLEDGE_CANDIDATE",
+  "source_package": {
+    "producer": "B-5",
+    "head": "fcdf48eca8c4aa8709ec0040e3e0cbc2a4bf99a7",
+    "pointer_blob": "ae6001c683340f7280b74f5289918efedc1b3e7e",
+    "final_report_blob": "517e738166bdd8c2627bcfb46f20e1c4a9a35926",
+    "test_report_blob": "2e489b91da91cceabfbbeeb9f4b9fdfc760e2091",
+    "fixture_bundle_blob": "3a204094b4a81486646f863228b5059745fba758",
+    "terminal": "B5_D_READY_PACKAGE_V2_READY",
+    "package_type": "MATERIALIZED_DATABASE_PACKAGE_V2",
+    "package_sha256": "f97df341fedb2a81e681b1f00fb3f857b95b425de0fe5ce264bb28a5e18905aa",
+    "internal_validation": "PASS_45_OF_45",
+    "remote_blob_parity": "PASS_6_OF_6"
+  },
+  "target": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "pr": 188,
+    "head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "control_pointer_blob": "d65285f969294c19c0d9e2d1bbc2adf8165f8819",
+    "authority_root": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/",
+    "B_receipt_procedure_blob": "2a8b7c1b04924728cce14dc21c225ad09598905f"
+  },
+  "passed_gates": [
+    "B5_READY_ENTRY_EVENT",
+    "B2_B3_B4_EXACT_BINDING_PASS_3_OF_3",
+    "B5_CURRENT_D1_AUTHORITY_BINDING_PASS",
+    "B5_SOURCE_FIELD_LOSS_ZERO",
+    "B5_SILENT_DROP_ZERO",
+    "B5_UNMAPPED_VALUES_PASS_6_OF_6",
+    "B5_DEDUP_LINEAGE_PASS",
+    "D_TREE_BINDING_PASS",
+    "D_MANIFEST_PATHS_PASS_10_OF_10",
+    "PR188_REQUIRED_PATHS_PASS_18_OF_18",
+    "B_C_LANE_SEPARATION_PASS"
+  ],
+  "failed_gates": [
+    {
+      "gate": "D1_B_RECEIPT_ACCEPTED_PACKAGE_TYPE",
+      "expected": "Current D1 receipt procedure explicitly accepts MATERIALIZED_DATABASE_PACKAGE_V2 or publishes an exact compatibility alias",
+      "actual": "D1 accepted types are MATERIALIZED_DATABASE_PACKAGE_V1, NORMALIZED_DATASET_V1, RAW_ARTIFACT_MANIFEST_V1",
+      "reason_code": "SCHEMA_VERSION_MISMATCH"
+    },
+    {
+      "gate": "D1_B_RECEIPT_SUBMISSION_REQUIRED_FIELDS",
+      "expected": ["producer_head","package_blob_or_storage_pointer","record_count","submitted_at"],
+      "actual": ["producer_head_baseline","producer_head_resolution","package_blob_resolution","preservation","generated_at_kst outside request"],
+      "reason_code": "MISSING_REQUIRED_VALUE"
+    }
+  ],
+  "recovery_options": [
+    {
+      "owner": "D-1",
+      "action": "Publish an append-only B receipt procedure or compatibility addendum that explicitly accepts MATERIALIZED_DATABASE_PACKAGE_V2 and defines exact field compatibility for the four missing submission fields"
+    },
+    {
+      "owner": "B-5",
+      "action": "Publish a new package and D intake request conforming exactly to the currently authoritative V1 receipt procedure and exact submission_required_fields"
+    }
+  ],
+  "classification": "PREHANDOFF_EXACT_BLOCKER",
+  "promotable": false,
+  "first_blocker": "D1_B_RECEIPT_PROCEDURE_PACKAGE_TYPE_NOT_ACCEPTED_MATERIALIZED_DATABASE_PACKAGE_V2",
+  "secondary_blocker": "D1_B_RECEIPT_SUBMISSION_REQUIRED_FIELDS_MISSING_4",
+  "next_event": "B1_D_SOURCE_DOCUMENT_PACKAGE_V2_COMMANDER_TERMINAL",
+  "D_acceptance_receipt_issued": false,
+  "D_acceptance_claim": false,
+  "D_canonical_id_generated_by_B": false,
+  "D_canonical_db_write": false,
+  "actual_package_submission": false,
+  "postgresql_connection": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
