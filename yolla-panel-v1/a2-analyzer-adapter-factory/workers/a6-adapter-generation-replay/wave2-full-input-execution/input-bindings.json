@@ -1,0 +1,44 @@
+{
+  "schema_version": "A6_WAVE2_FULL_INPUT_BINDINGS_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "inputs": {
+    "A-3": {
+      "head": "e86dfcc2fc32ad366cd7fd8ba07392850419b853",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_SITE_ANALYZER_WAVE1_CDP_CONSUMER_CONTRACT_V1.json",
+      "blob": "3b1831709c1332fa8702389c6f2d56fb5dc69ca0",
+      "consumed": ["event_families.network", "event_families.action", "response_body_contract", "action_correlation_contract"]
+    },
+    "A-4": {
+      "head": "50c0555394f5fb3543f079ecfb60a0ed2eeab638",
+      "handoff_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/A4_SITE_ANALYZER_WAVE1_HANDOFF_V1.json",
+      "handoff_blob": "08658d71ee54c825cc5ad3a2ec12934b4d45626c",
+      "snapshot_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/fixtures/list_page_snapshot.json",
+      "snapshot_blob": "7fa4fa34e4c24d56b9e3a876f8f740ca7f01fe5e",
+      "consumed": ["locatorCandidates", "pagination", "listDetailRelation", "highlightPayload"]
+    },
+    "A-5": {
+      "head": "db1ce4af35b4724554d9d972766826d18ae9891b",
+      "handoff_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/A5_TO_A6_SITE_ANALYZER_GENERATOR_INPUT_HANDOFF_V1.json",
+      "handoff_blob": "769205f0c2444263919a980bc72edfa7611ed4c8",
+      "fixture_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/fixture_input.json",
+      "fixture_blob": "3bd9ab79b2b83883d3c83e09322c57217c24800e",
+      "consumed": ["HYBRID", "$.items", "listingId", "PAGE_NUMBER", "NO_NEW_RECORD_IDS"]
+    },
+    "B-3": {
+      "head": "d74c609241ba9c48cc432bf1fa3c7d7257354f8a",
+      "recipe_path": "yolla-panel-v1/b1-collector-materialization/workers/b3-extractor-retry-resume/action-recorder-codegen-recipe-v1/generated/EXTRACTION_RECIPE_V1.json",
+      "recipe_blob": "384d1383b501577a8b2a3e72d79003fcdc699e0c",
+      "step_count": 8,
+      "consumed": ["input", "select", "click", "scroll", "popup", "frame", "navigation"]
+    },
+    "B-4_COMMON_HARNESS": {
+      "head": "a204fec405cd861c966831f325dfc43ba4fe51b2",
+      "basis_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave1/fixtures/harness/inline_harness.html",
+      "use": "LOCAL_HTTP_COMMON_TEST_SITE_PATTERN"
+    }
+  },
+  "input_gap": {
+    "a3_nonzero_electron_cdp_wave2": "NOT_YET_PUBLISHED_AT_EXECUTION_TIME",
+    "handling": "Do not claim Electron CDP live pass; emit contract-compatible local HTTP network/action events from actual localhost requests."
+  }
+}
