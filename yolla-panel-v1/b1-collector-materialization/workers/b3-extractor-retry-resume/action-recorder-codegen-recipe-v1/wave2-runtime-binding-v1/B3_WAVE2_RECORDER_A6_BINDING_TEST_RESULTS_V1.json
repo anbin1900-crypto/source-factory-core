@@ -1,0 +1,38 @@
+{
+  "a6_handoff_status": "PASS",
+  "action_types": ["click", "input", "scroll"],
+  "actual_browser_actions": true,
+  "actual_chromium_runtime": true,
+  "assertions": {
+    "frame_status": "loaded",
+    "popup_opened": true,
+    "search_status": "searched:apartment"
+  },
+  "ci_pass_claimed": false,
+  "ci_status_context_count": 0,
+  "commands": [
+    "python tools/run_live_pipeline.py",
+    "python -m py_compile src/common_http_test_site.py src/live_recorder_pipeline.py tools/run_live_pipeline.py tests/test_live_pipeline.py",
+    "python -m unittest discover -s tests -v"
+  ],
+  "compiled_action_count": 5,
+  "consumer_pr": 25,
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "frame_context": true,
+  "http_transport": {
+    "attempt_count": 5,
+    "fallback": "ACTUAL_CHROMIUM_INLINE_DOCUMENT_RUNTIME",
+    "status": "PROVEN_ENVIRONMENT_BLOCKER"
+  },
+  "merge": false,
+  "popup_context": true,
+  "production": false,
+  "python_compile": "PASS",
+  "ready": false,
+  "recipe_hash": "22401b16caabd96e7cd59f4a617ed4ff14db9641e8dc17aa59c90bdca3c804d6",
+  "replay_status": "PASS",
+  "replay_step_count": 5,
+  "schema_version": "B3_WAVE2_RECORDER_A6_BINDING_TEST_RESULTS_V1",
+  "tested_at_kst": "2026-08-07T04:02:00+09:00",
+  "unit_tests": "PASS_16_OF_16"
+}
