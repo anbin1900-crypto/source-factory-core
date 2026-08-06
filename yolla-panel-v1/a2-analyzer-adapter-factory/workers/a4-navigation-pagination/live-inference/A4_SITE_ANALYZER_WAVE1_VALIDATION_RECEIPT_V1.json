@@ -1,0 +1,84 @@
+{
+  "schema_version": "A4_SITE_ANALYZER_WAVE1_VALIDATION_RECEIPT_V1",
+  "worker": "A-4",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "validated_at_kst": "2026-08-07T02:04:00+09:00",
+  "source": {
+    "dom_input_blob": "8507967a37940f6b3e39eef9a1e5fe86fbf196cb",
+    "engine_blob": "e10dafebd36b5c9c39a2b8cbd94fd72df899d486",
+    "cli_blob": "f2a6ed907db7b6508aa826199f7eedb91488733b",
+    "test_blob": "9511fa1b609a06365338aeb0e6c481c8d42cfc7c",
+    "remote_blob_parity": "PASS_4_OF_4"
+  },
+  "schemas": {
+    "a3_live_input_blob": "9b25394ae9ca2f124b1fb4bbe1972954ac83d029",
+    "a4_result_blob": "1b3e1678a544f408998adf077dbe7d970085343a",
+    "json_parse": "PASS_2_OF_2"
+  },
+  "fixtures": {
+    "list_page_blob": "7fa4fa34e4c24d56b9e3a876f8f740ca7f01fe5e",
+    "load_more_blob": "a78df2426f97d68502f353780d4ce414e34a3b11",
+    "detail_page_blob": "bd134a249b23713396c4b129561d3a31801c776b",
+    "fixture_count": 3
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "result": "FAIL_1_PASS_8_FAIL",
+      "failure": "Normalized nodes were passed to child-tree text traversal without children arrays.",
+      "correction": "Build one canonical tree and share its nodes with field, pagination and page-type inference."
+    },
+    {
+      "attempt": 2,
+      "result": "FAIL_8_PASS_1_FAIL",
+      "failure": "Detail-page sibling paragraphs were over-detected as a repeated region.",
+      "correction": "Require item semantics, structured descendants, or list/table parent evidence for repeated-region promotion."
+    },
+    {
+      "attempt": 3,
+      "result": "PASS_9_OF_9"
+    }
+  ],
+  "tests": {
+    "total": 9,
+    "passed": 9,
+    "failed": 0,
+    "covered": [
+      "PAGE_TYPE_CLASSIFICATION",
+      "REPEATED_CARD_DETECTION",
+      "AUTO_FIELD_CANDIDATES_MIN_5",
+      "PLAYWRIGHT_LOCATOR_CANDIDATES_MIN_5",
+      "LIST_DETAIL_RELATION",
+      "NEXT_PAGINATION",
+      "LOAD_MORE_PAGINATION",
+      "EXPLICIT_NONE_PAGINATION",
+      "HIGHLIGHT_PAYLOAD",
+      "RAW_CDP_DOMSNAPSHOT_UNPACK",
+      "DETERMINISTIC_RESULT_HASH"
+    ]
+  },
+  "representative_result": {
+    "page_type": "LIST",
+    "repeated_region_count": 1,
+    "repeated_item_count": 3,
+    "auto_field_candidate_count": 5,
+    "locator_candidate_count": 12,
+    "list_detail_candidate_count": 3,
+    "navigation_confirmed_count": 1,
+    "pagination": "NEXT",
+    "highlight_field_count": 5
+  },
+  "pass_min": {
+    "auto_field_candidate_count_gte_5": true,
+    "locator_candidate_count_gte_5": true,
+    "pagination_detected_or_explicit_none": true
+  },
+  "a3_live_capture_binding": "INPUT_CONTRACT_AND_RAW_CDP_ADAPTER_READY_WAITING_ACTUAL_A3_EVENT",
+  "false_live_capture_claim_count": 0,
+  "audit_only": false,
+  "validation_only": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "decision": "PASS"
+}
