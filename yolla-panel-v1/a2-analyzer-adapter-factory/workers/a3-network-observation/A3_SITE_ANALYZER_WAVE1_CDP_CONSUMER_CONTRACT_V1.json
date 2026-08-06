@@ -1,0 +1,82 @@
+{
+  "schema_version": "A3_SITE_ANALYZER_WAVE1_CDP_CONSUMER_CONTRACT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "producer": "A-3_LIVE_CDP_CAPTURE_OWNER",
+  "consumer_workers": ["A-2", "A-4", "A-5", "B-1", "B-2", "B-3"],
+  "module": {
+    "path": "live_cdp_capture_engine.cjs",
+    "exports": [
+      "AnalyzerEventStream",
+      "LiveCdpCaptureEngine",
+      "attachLiveCdpCapture",
+      "redactHeaders",
+      "redactUrl",
+      "sha256"
+    ]
+  },
+  "attach_contract": {
+    "input": "Electron WebContents with webContents.debugger",
+    "call": "await attachLiveCdpCapture(webContents, options)",
+    "required_options": [],
+    "optional_options": [
+      "analyzerSessionId",
+      "stream",
+      "bodyStore",
+      "protocolVersion",
+      "correlationWindowMs",
+      "maxInlineBodyBytes",
+      "clock",
+      "logger"
+    ],
+    "shared_debugger_behavior": "If another component already attached the Electron debugger, the engine reuses it and does not detach that shared attachment on close."
+  },
+  "action_correlation_contract": {
+    "call": "engine.recordAction({ action_type, locator, frame_id, user_step_id, metadata })",
+    "correlation_window_ms_default": 10000,
+    "output_binding": "Subsequent Network, Page, Runtime and DOM events include payload.correlation with the nearest action_id and delta_ms."
+  },
+  "stream_contract": {
+    "schema": "STREAMING_ANALYZER_EVENT_V1.schema.json",
+    "push_subscription": "engine.stream.subscribe(listener, { replayBuffered })",
+    "async_iteration": "engine.stream.asyncIterator({ fromSequence })",
+    "buffered_event_limit_default": 5000,
+    "ordering": "Strict per-stream sequence integer",
+    "consumer_ack_required": false
+  },
+  "event_families": {
+    "network": [
+      "network.requestWillBeSent",
+      "network.responseReceived",
+      "network.loadingFinished",
+      "network.loadingFailed",
+      "network.responseBody",
+      "network.responseBodyUnavailable"
+    ],
+    "page": ["page.frameNavigated", "page.lifecycleEvent"],
+    "runtime": ["runtime.consoleAPICalled"],
+    "dom": ["dom.snapshot"],
+    "lifecycle": ["cdp.attached", "cdp.detached", "cdp.closed", "cdp.error"],
+    "action": ["analyzer.action"]
+  },
+  "response_body_contract": {
+    "command": "Network.getResponseBody",
+    "inline_body_limit_bytes_default": 2097152,
+    "sha256": true,
+    "size_bytes": true,
+    "base64_encoded_flag": true,
+    "optional_body_store": "bodyStore.put(item) returns an implementation-defined storage pointer",
+    "unavailable_behavior": "Emit network.responseBodyUnavailable without terminating capture"
+  },
+  "privacy": {
+    "authorization_cookie_api_key_headers_redacted": true,
+    "sensitive_url_query_values_redacted": true,
+    "raw_secret_persistence_allowed": false
+  },
+  "consumer_mapping": {
+    "A-4": ["dom.snapshot", "page.frameNavigated", "page.lifecycleEvent", "analyzer.action"],
+    "A-5": ["network.requestWillBeSent", "network.responseReceived", "network.responseBody"],
+    "B-2": ["dom.snapshot", "page.frameNavigated", "analyzer.action"],
+    "B-3": ["analyzer.action", "network.requestWillBeSent", "page.frameNavigated"]
+  },
+  "shutdown_contract": "await engine.close() removes listeners and detaches only when this engine owns the debugger attachment."
+}
