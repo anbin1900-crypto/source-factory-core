@@ -1,62 +1,85 @@
 {
-  "schema_version": "LATEST_C1_PDF_TO_CSV_CYCLE_POINTER_V1",
-  "pointer_id": "LATEST-C1-PDF-TO-CSV-CYCLE1-20260807-001",
-  "published_at_kst": "2026-08-07T01:55:00+09:00",
+  "schema_version": "LATEST_C1_PDF_TO_CSV_CYCLE_POINTER_V2",
+  "pointer_id": "LATEST-C1-PDF-TO-CSV-CYCLE2-20260807-001",
+  "published_at_kst": "2026-08-07T03:31:00+09:00",
   "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 20,
   "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
-  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
+  "previous_pointer_blob": "a3d6cca883a39c9343416d9dd47100edc6c0f273",
+  "cycle1_closure": {
+    "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
+    "acceptance_path": "yolla-panel-v1/c1-semantic-ai-runtime/pdf-to-csv-panel-v1/reports/C1_PDF_TO_CSV_CYCLE1_ACCEPTANCE_MATRIX_V1.json",
+    "acceptance_commit": "7947161938162ba5b868e489bee8e27e1066e0bb",
+    "acceptance_blob": "b29aaac241a0802e4af95595bf4070f57ce066f0",
+    "component_acceptance": "PASS_5_OF_5",
+    "unit_tests": "PASS_140_OF_140",
+    "integrated_pipeline_execution": false,
+    "decision": "CYCLE1_COMPONENTS_ACCEPTED_READY_FOR_CYCLE2_INTEGRATION"
+  },
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE2-20260807-001",
   "common_directive": {
-    "path": "yolla-panel-v1/c1-semantic-ai-runtime/pdf-to-csv-panel-v1/directives/C1_PDF_TO_CSV_PANEL_CYCLE1_BATCH_V1.json",
-    "commit": "ef02e3b59a2d389b571d5b5feaa20a8d24a21e4d",
-    "blob": "2ce798647c86363a8fd2382a08013304f73bc1ef",
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/pdf-to-csv-panel-v1/directives/C1_PDF_TO_CSV_PANEL_CYCLE2_INTEGRATION_BATCH_V1.json",
+    "commit": "9484b996f10885a174fb0e1ef661ab357563f705",
+    "blob": "078dd6f439c612a092fbdbf467f7bffb3e6a1a2f",
     "remote_readback": "PASS"
   },
   "dispatch": {
     "C2": {
-      "task_id": "C2_PDF_FOLDER_INVENTORY_V1",
-      "comment_id": 5207631489,
-      "required_terminal": "C2_PDF_FOLDER_INVENTORY_READY_OR_EXACT_BLOCKER",
-      "status": "DISPATCHED"
+      "task_id": "C2_PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_V1",
+      "comment_id": 5208256239,
+      "entry_event": "IMMEDIATE",
+      "required_terminal": "C2_PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_READY_OR_EXACT_BLOCKER",
+      "status": "ACTIVE_DISPATCHED"
     },
     "C3": {
-      "task_id": "C3_PDF_TEXT_EXTRACTION_OCR_V1",
-      "comment_id": 5207633669,
-      "required_terminal": "C3_PDF_TEXT_EXTRACTION_OCR_READY_OR_EXACT_BLOCKER",
-      "status": "DISPATCHED"
+      "task_id": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_V1",
+      "comment_id": 5208257787,
+      "entry_event": "IMMEDIATE",
+      "required_terminal": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_READY_OR_EXACT_BLOCKER",
+      "status": "ACTIVE_DISPATCHED"
     },
     "C4": {
-      "task_id": "C4_TEXT_CHUNK_CSV_WRITER_V1",
-      "comment_id": 5207635653,
-      "required_terminal": "C4_TEXT_CHUNK_CSV_WRITER_READY_OR_EXACT_BLOCKER",
-      "status": "DISPATCHED"
+      "task_id": "C4_PDF_TO_CSV_PIPELINE_ORCHESTRATOR_V1",
+      "comment_id": 5208259504,
+      "entry_event": "C2_AND_C3_CYCLE2_TERMINALS",
+      "required_terminal": "C4_PDF_TO_CSV_PIPELINE_ORCHESTRATOR_READY_OR_EXACT_BLOCKER",
+      "status": "EVENT_WAIT_DISPATCHED"
     },
     "C5": {
-      "task_id": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_V1",
-      "comment_id": 5207637581,
-      "required_terminal": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_READY_OR_EXACT_BLOCKER",
-      "status": "DISPATCHED"
+      "task_id": "C5_STANDALONE_PDF_TO_CSV_PANEL_V1",
+      "comment_id": 5208261204,
+      "entry_event": "C4_CYCLE2_TERMINAL",
+      "required_terminal": "C5_STANDALONE_PDF_TO_CSV_PANEL_READY_OR_EXACT_BLOCKER",
+      "status": "EVENT_WAIT_DISPATCHED"
     },
     "C6": {
-      "task_id": "C6_PDF_TO_CSV_VALIDATION_V1",
-      "comment_id": 5207639329,
-      "required_terminal": "C6_PDF_TO_CSV_VALIDATOR_READY_OR_EXACT_BLOCKER",
-      "status": "DISPATCHED"
+      "task_id": "C6_PDF_TO_CSV_CYCLE2_INTEGRATED_E2E_V1",
+      "comment_id": 5208263020,
+      "entry_event": "C5_CYCLE2_TERMINAL",
+      "required_terminal": "C6_PDF_TO_CSV_CYCLE2_INTEGRATED_E2E_PASS_OR_EXACT_BLOCKER",
+      "status": "EVENT_WAIT_DISPATCHED"
     }
   },
-  "dispatch_summary": {
-    "worker_count": 5,
-    "task_count": 5,
-    "parallel_dispatch": true,
+  "cycle2_scope": {
+    "standalone_panel": true,
+    "source_folder_selection": true,
+    "output_folder_selection": true,
+    "pdf_discovery": true,
+    "direct_text_extraction": true,
+    "ocr_fallback": true,
+    "csv_chunk_output": true,
+    "progress_and_error_display": true,
+    "integrated_fixture_e2e": true,
+    "actual_150_pdf_run": false,
     "semantic_analysis": false,
+    "semantic_matching": false,
     "gpt_call": false,
-    "panel_integration_in_this_cycle": false,
-    "actual_150_pdf_run_in_this_cycle": false
+    "database_write": false
   },
-  "current_gate": "WAIT_C2_TO_C6_CYCLE1_TERMINALS",
-  "next_action": "COLLECT_FIVE_TERMINALS_AND_BUILD_PANEL_INTEGRATION_CYCLE2",
-  "status": "C1_PDF_TO_CSV_CYCLE1_ACTIVE",
+  "current_gate": "C2_AND_C3_CYCLE2_TERMINALS",
+  "next_action": "ACTIVATE_C4_AFTER_C2_AND_C3_THEN_C5_THEN_C6",
+  "status": "C1_PDF_TO_CSV_CYCLE2_ACTIVE",
   "production": false,
   "ready": false,
   "merge": false,
