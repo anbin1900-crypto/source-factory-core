@@ -1,0 +1,31 @@
+{
+  "schema_version": "LATEST_C_MODE_CYCLE1_A2_A7_DISPATCH_POINTER_V1",
+  "directive_id": "A0-TO-A2-A7-C-MODE-CYCLE1-RUNTIME-AUTHORITY-PERFORMANCE-BASELINE-V1-20260806-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "authority_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "assignment": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/cycles/cycle1/C_MODE_CYCLE1_A2_A7_WORKER_ASSIGNMENT_V1.json",
+    "commit": "3a66f45dcbd81818013247b1e50efb55df27ec69",
+    "blob": "bb5d64ee5c0b672d972cc981f04bc3acfb9d6491"
+  },
+  "dispatch_receipt": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/cycles/cycle1/C_MODE_CYCLE1_A2_A7_DISPATCH_RECEIPT_V1.json",
+    "commit": "227fa963c8490abce7bb10ade97d1b1ac23e4c51",
+    "blob": "8befd1d8cb8cf3eb7b66e116c6a8c5e07f3fd57b",
+    "remote_readback": "PASS"
+  },
+  "worker_count": 6,
+  "dispatch_count": 6,
+  "missing_worker_count": 0,
+  "duplicate_dispatch_count": 0,
+  "worker_prs": [18, 22, 23, 24, 25, 26],
+  "primary_goal": "C_MODE_COMPLETION",
+  "cycle": 1,
+  "next_gate": "A2_A6_START_REPORTS_THEN_A7_WAIT_FOR_TERMINALS",
+  "status": "ALL_A2_A7_CYCLE1_DIRECTIVES_PUBLISHED",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at_kst": "2026-08-06T23:25:00+09:00"
+}
