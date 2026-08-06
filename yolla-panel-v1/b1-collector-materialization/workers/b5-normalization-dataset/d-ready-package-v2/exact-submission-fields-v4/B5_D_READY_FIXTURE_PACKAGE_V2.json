@@ -1,0 +1,169 @@
+{
+  "batch_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V4-20260806-001",
+  "bundle_sha256": "660b0842c4381b41dd954a9e607ff642de5d398b008eb076158ec898f90e8b2c",
+  "common_directive": {
+    "blob": "1f230fc15179bc793bd23d391ebb238e4264b940",
+    "commit": "15e65360dea7c7e0f6b1595558d3f92ce25c1843",
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_NEXT_EVENT_BATCH_V4.json",
+    "remote_readback": "PASS"
+  },
+  "d1_compatibility": {
+    "compatibility_decision_blob": "fb1e8f7b82a4516a06fbe58c27da89b46a746431",
+    "head": "0bc38b41375fdef78172ed3cb4112b099ea28426",
+    "procedure_addendum_blob": "58408175b1683cf566e201b57bd17b5e19c459e8",
+    "terminal": "D1_B_RECEIPT_V2_COMPATIBILITY_READY",
+    "terminal_comment": 5200586374,
+    "tree_binding_v2_blob": "38692279e691ab1de4a97017246c2c85b4ee6d3e"
+  },
+  "d_intake_request": {
+    "actual_receipt_issuance_authorized": false,
+    "authority_scope": "SECONDARY_COMMERCIAL_PLATFORM_OBSERVED_PRESENTATION",
+    "authority_type": "OFFICIAL_SECONDARY",
+    "canonical_id_generation_requested_from": "D-1",
+    "external_blockers": [],
+    "intake_request_id": "B5-FIXTURE-D-INTAKE-REQUEST-EXACT-SUBMISSION-FIELDS-20260806-001",
+    "mapping_addendum_ref": {
+      "blob": "118d6403dd5db47afafb982991f8fd9a51f35f28",
+      "rules": [
+        "B001",
+        "B013",
+        "B014"
+      ]
+    },
+    "mapping_contract_ref": {
+      "blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b"
+    },
+    "next_event": "B6_D_SOURCE_DOCUMENT_HANDOFF_REPREFLIGHT",
+    "official_source_url": "https://fin.land.naver.com/home",
+    "package_blob_or_storage_pointer": "3a204094b4a81486646f863228b5059745fba758",
+    "package_compatibility_decision_ref": {
+      "blob": "fb1e8f7b82a4516a06fbe58c27da89b46a746431",
+      "decision": "PASS_CONTRACT_COMPATIBILITY_ONLY"
+    },
+    "package_id": "fixture-run-001-d-ready-materialized-database-package-v2",
+    "package_json_pointer": "/materialized_database_package",
+    "package_path_at_producer_head": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/authority-ready-v2/B5_D_READY_FIXTURE_PACKAGE_V2.json",
+    "package_sha256": "f97df341fedb2a81e681b1f00fb3f857b95b425de0fe5ce264bb28a5e18905aa",
+    "package_type": "MATERIALIZED_DATABASE_PACKAGE_V2",
+    "preservation": {
+      "dataset_sha256": "5692223b88c966323e3080825f44f473020e4d027d3282449e938183d2af429b",
+      "duplicate_count": 1,
+      "input_record_count": 4,
+      "record_count": 3,
+      "silent_drop_count": 0,
+      "source_field_loss_count": 0,
+      "sqlite_row_count": 3,
+      "unmapped_field_preservation_count": 6
+    },
+    "producer": "B-5",
+    "producer_acceptance_claim": false,
+    "producer_canonical_write_claim": false,
+    "producer_generated_canonical_id": false,
+    "producer_head": "59405edba453e2f8512dfddd969ba1ae899526ae",
+    "provenance_manifest_ref": {
+      "blob": "d900e06bcc73908e3af589581d67b599bfb84d65"
+    },
+    "receipt_procedure_ref": {
+      "base_blob": "2a8b7c1b04924728cce14dc21c225ad09598905f",
+      "v1_1_addendum_blob": "58408175b1683cf566e201b57bd17b5e19c459e8"
+    },
+    "record_count": 3,
+    "request_sha256": "6edfd33f0771e19a6a17381a7c40d3d238cfb66d80b102a255ed9c4e908ad9b9",
+    "requested_action": "B6_DELTA_ONLY_REPREFLIGHT",
+    "requested_decision": null,
+    "ruleset_ref": {
+      "blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793"
+    },
+    "safety": {
+      "actual_d_package_acceptance": false,
+      "actual_receipt_issuance": false,
+      "actual_site_extraction": false,
+      "canonical_db_write": false,
+      "merge": false,
+      "postgresql_connection": false,
+      "production": false,
+      "ready": false,
+      "self_merge": false
+    },
+    "schema_profile_ref": {
+      "blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1"
+    },
+    "schema_version": "D_INTAKE_REQUEST_V1",
+    "source_key": "NAVER_FIN_LAND_PUBLIC_WEB_V1",
+    "submission_authorized": false,
+    "submission_status": "READY_FOR_B6_DELTA_ONLY_REPREFLIGHT",
+    "submitted_at": "2026-08-06T18:09:00+09:00",
+    "tree_binding_manifest_ref": {
+      "v1_blob": "dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd",
+      "v2_blob": "38692279e691ab1de4a97017246c2c85b4ee6d3e"
+    }
+  },
+  "d_intake_request_ref": {
+    "blob": "4971b8b57cfd2f2a36b9146fa562579214a01a2a",
+    "commit": "23111e17dfc4cc81f117414dfccd8555477d9b59",
+    "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/exact-submission-fields-v4/D_INTAKE_REQUEST_V1.json",
+    "request_sha256": "6edfd33f0771e19a6a17381a7c40d3d238cfb66d80b102a255ed9c4e908ad9b9"
+  },
+  "d_intake_request_schema_ref": {
+    "blob": "955c873d10d41e8f5499d4f576530f16d3a286ca",
+    "commit": "f095359866ac1c8857e9a00d62d0d3d0e4910624",
+    "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/exact-submission-fields-v4/D_INTAKE_REQUEST_V1.schema.json"
+  },
+  "directive_comment": 5202449584,
+  "preservation": {
+    "dedup_lineage_changed": false,
+    "package_sha256_changed": false,
+    "silent_drop_count": 0,
+    "source_field_loss_count": 0,
+    "source_fields_changed": false,
+    "unmapped_values_changed": false
+  },
+  "producer_package_ref": {
+    "blob": "3a204094b4a81486646f863228b5059745fba758",
+    "dataset_sha256": "5692223b88c966323e3080825f44f473020e4d027d3282449e938183d2af429b",
+    "json_pointer": "/materialized_database_package",
+    "package_sha256": "f97df341fedb2a81e681b1f00fb3f857b95b425de0fe5ce264bb28a5e18905aa",
+    "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/authority-ready-v2/B5_D_READY_FIXTURE_PACKAGE_V2.json",
+    "producer_head": "59405edba453e2f8512dfddd969ba1ae899526ae",
+    "record_count": 3,
+    "remote_readback": "PASS",
+    "repository": "anbin1900-crypto/source-factory-core",
+    "request_commit_descendant_of_producer_head": "PASS",
+    "sqlite_row_count": 3
+  },
+  "safety": {
+    "actual_d_package_acceptance": false,
+    "actual_receipt_issuance": false,
+    "actual_site_extraction": false,
+    "canonical_db_write": false,
+    "d_acceptance_claim": false,
+    "d_canonical_id_generation_count": 0,
+    "merge": false,
+    "postgresql_connection": false,
+    "production": false,
+    "ready": false,
+    "self_merge": false
+  },
+  "schema_version": "B5_D_READY_FIXTURE_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_V4",
+  "submission_field_accounting": {
+    "fields": [
+      "producer_head",
+      "package_blob_or_storage_pointer",
+      "record_count",
+      "submitted_at"
+    ],
+    "present": 4,
+    "required": 4,
+    "result": "PASS_4_OF_4"
+  },
+  "task_id": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS",
+  "validation_summary": {
+    "next_event": "B6_D_SOURCE_DOCUMENT_HANDOFF_REPREFLIGHT",
+    "package_blob_sha256_parity": "PASS_PRIOR_VALIDATED_PACKAGE_AND_EXACT_BLOB_READBACK",
+    "producer_head_package_readback": "PASS",
+    "record_count_package_dataset_sqlite_parity": "PASS_3_3_3",
+    "schema_validation": "PASS",
+    "submitted_at_rfc3339_timezone": "PASS",
+    "terminal_recommendation": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_READY"
+  }
+}
