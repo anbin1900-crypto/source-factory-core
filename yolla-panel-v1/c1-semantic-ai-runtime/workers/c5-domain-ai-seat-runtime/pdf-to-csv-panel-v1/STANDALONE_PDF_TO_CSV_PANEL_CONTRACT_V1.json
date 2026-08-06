@@ -1,0 +1,60 @@
+{
+  "schema_version": "STANDALONE_PDF_TO_CSV_PANEL_CONTRACT_V1",
+  "contract_id": "C5-STANDALONE-PDF-TO-CSV-PANEL-V1",
+  "batch_id": "C1-PDF-PREPROCESS-CORRECTION-20260807-001",
+  "directive_comment_id": 5208882932,
+  "control_comment_id": 5208884860,
+  "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c5-domain-ai-seat-runtime/pdf-to-csv-panel-v1/**",
+  "ui": {
+    "single_window": true,
+    "input_buttons": ["폴더 선택", "PDF 파일 선택"],
+    "selected_path_visible": true,
+    "output_folder_button": "출력 폴더 선택",
+    "chunk_size_control": "QSpinBox",
+    "start_button": "시작",
+    "progress": "QProgressBar_PLUS_STAGE_STATUS",
+    "error_display": "DEDICATED_READ_ONLY_TEXT",
+    "result_display": "DEDICATED_READ_ONLY_TEXT"
+  },
+  "input_modes": {
+    "FOLDER": {
+      "pipeline_kwarg": "source_folder",
+      "recursive_scope_owned_by": "C2_C4_PIPELINE"
+    },
+    "PDF_FILE": {
+      "pipeline_kwarg": "pdf_file",
+      "exactly_one_selected_path_forwarded": true,
+      "non_selected_auto_include": false
+    }
+  },
+  "pipeline_binding": {
+    "only_pipeline": "C4_pdf_to_csv_pipeline_orchestrator.run_pipeline",
+    "pipeline_path": "workers/c4-evidence-knowledge-candidate/pdf-to-csv-panel-v1/pdf_to_csv_pipeline_orchestrator.py",
+    "call_count_per_start": 1,
+    "separate_processing_engine": false,
+    "load_time": "ON_START_REQUEST",
+    "progress_callback_forwarded": true,
+    "backward_compatible_public_helpers": ["build_pipeline_kwargs", "run_panel_request"]
+  },
+  "runtime_behavior": {
+    "background_thread": "QThread",
+    "ui_controls_locked_while_busy": true,
+    "thread_cleanup_explicit": true,
+    "input_validation_fail_closed": true,
+    "pipeline_non_pass_fail_closed": true,
+    "pyside6_missing_exit_code": 2
+  },
+  "forbidden": {
+    "semantic_analysis": false,
+    "semantic_classification": false,
+    "gpt_call": false,
+    "knowledge_candidate_generation": false,
+    "database_write": false,
+    "panel_shell_edit": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "source_sha256": "afeb9773edb4938ef3d48058881e3387eb6e3b396cdc855955411f18bdd3701f",
+  "test_sha256": "e25583a5d069397f562d72f8a61528b6cb2a990ff78c8bc598a3134cf51603a5"
+}
