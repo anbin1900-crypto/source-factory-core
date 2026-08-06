@@ -1,0 +1,49 @@
+{
+  "schema_version": "YOLLA_V510243_R2_C_ONLY_PAYLOAD_MANIFEST_V1",
+  "target_version": "5.10.2.4.3-R2",
+  "target_release": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\v5.10.2.4.3-r2-c-only-source-optimized",
+  "baseline_version": "5.10.2.3.7",
+  "baseline_hashes": {
+    "main.js": "e31ee5cbb9c46b0b5e6c22c6efd7cf63679828046ce230b80cd4f797e59a4934",
+    "workspace.js": "527893e252516a1fbe6e37c1cb9f0efa934fd0e5aeca1b198dc8c1d8f0e6eb12",
+    "workspace.html": "4328ef3973f64b0c194076a79463127fcc5a580dd846551504f90db65bcc4acb",
+    "workspace.css": "7f9a805e48e54f3fbf4144c731783982f7f4cc1aa90ed0c10cbd81dd666016d2",
+    "workspace_preload.js": "aa54293dc053537f8afbfd62413efb6001984a4193d3b19652d684fff9b816c3"
+  },
+  "remove_release_directories": ["automation-v1", "automation-v2"],
+  "preserve": [
+    "workspace_state.json",
+    "browser_profile",
+    "runtime.log",
+    "log_status_window",
+    "group_edit",
+    "group_add",
+    "project_context_binding"
+  ],
+  "files": {
+    "release-files/automation-c-v1/c_mode_runtime.cjs": {"size": 55766, "sha256": "164a7e571276e4290e1d35d3cafad4cd857b358f54a6e381071ca711e776b9b3"},
+    "release-files/automation-c-v1/github_comment_client.cjs": {"size": 3010, "sha256": "1b6e7dff885d300d5d8ccb148962ad7e59edd7869517642bc86e77480262ea55"},
+    "release-files/automation-c-v1/tests/test_c_mode_runtime.cjs": {"size": 13760, "sha256": "dcedf2f951e304132bdd60c70f51081dc73cdb3adb12609d85982dd0f16ee3e3"},
+    "release-files/log_status.css": {"size": 1807, "sha256": "d3dafe7c2ec7a2028d7e7031592349dadbe5fd60d1393654b4dff183319c9de4"},
+    "release-files/log_status.html": {"size": 1536, "sha256": "7e02c9eeda1dae987c4777a7a5cbba65e7d26cfc392cfeca0af570d3920848bd"},
+    "release-files/log_status.js": {"size": 2629, "sha256": "0b592e49ff81fcd28f7addc2e7336beb77c299cf7a55bc98c3e3f2e9308701cc"},
+    "release-files/log_status_preload.js": {"size": 656, "sha256": "dbfc3fe448f40ac99a346b0210db6fd57a4b81f21c1b5e842a402fde6d313b9f"},
+    "release-files/main.js": {"size": 127546, "sha256": "53b6583dc7a65d6c27baf51fd15e2e31ee9ea8de88850bfca14f200a26be2727"},
+    "release-files/package.json": {"size": 279, "sha256": "4e35355602dc18de2be38568141fd496172a9b2ac031b4e004a94a85eb1f7b68"},
+    "release-files/workspace.css": {"size": 30424, "sha256": "b31ab1debb5c8a5d8f0c1fa823effaec90ffe66953b23a4d55e9de8f1c0a8f79"},
+    "release-files/workspace.html": {"size": 8920, "sha256": "9ae5ccbc9863fcaf4f39cd5e4637722cb0c0ff2e46029ddb3ac32f921fc24f8a"},
+    "release-files/workspace.js": {"size": 48206, "sha256": "9dcd0d0eed9a246cb6608bd85f2b509cefec73d5c6d098dd946f79b62fc681bf"},
+    "release-files/workspace_c_mode.css": {"size": 7606, "sha256": "57e948298de1236ae74f0db903f96257aa6d92bc3c54c565856c6886747b7b4c"},
+    "release-files/workspace_c_mode.js": {"size": 28563, "sha256": "9c7fff8baf5a15a9b783c4785deea9c4b47417b56eb94718461abd428645022d"},
+    "release-files/workspace_preload.js": {"size": 5981, "sha256": "1cd3c6603e95394c68171f24ec883d16e637595c8304aec4622a2417867e7604"}
+  },
+  "source_authority": {
+    "diagnostic_zip": "YOLLA_V510243_FAILURE_SOURCE_20260807-012627.zip",
+    "diagnostic_zip_size": 70970,
+    "diagnostic_zip_sha256": "6941ac28faf75bd137ca06cd393c4200dd3b9f014f0ebfd39f1b7fb43c230915",
+    "active_runtime": "5.10.2.3.7",
+    "r1_failure_signature": "LEGACY_ACTION_CHANNEL_REMAINS_MAIN:v5:group-loop:start"
+  },
+  "installation_strategy": "EXACT_HASH_GATED_RELEASE_FILE_OVERLAY_NO_RUNTIME_REGEX_PATCH",
+  "generated_at": "2026-08-07T01:40:00+09:00"
+}
