@@ -1,0 +1,26 @@
+{
+  "assignment_comment_id": 5208245427,
+  "authority_commit": "9ca851933fb329b1d965f4459d452c684a06f9cd",
+  "branch": "worker/b3-extractor-retry-resume-v1",
+  "consumer_pr": 25,
+  "control_pr": 17,
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "merge": false,
+  "mode": "ACTUAL_CHROMIUM_ACTION_RECORDING_WITH_PROVEN_HTTP_TRANSPORT_BLOCKER",
+  "observed_head": "d74c609241ba9c48cc432bf1fa3c7d7257354f8a",
+  "production": false,
+  "ready": false,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "required": [
+    "HEAD_ADVANCE",
+    "RECORDED_ACTIONS_5",
+    "EDITABLE_WORKFLOW",
+    "RECIPE",
+    "A6_HANDOFF",
+    "REPLAY_PASS"
+  ],
+  "schema_version": "B3_WAVE2_RECORDER_A6_BINDING_START_REPORT_V1",
+  "started_at_kst": "2026-08-07T04:02:00+09:00",
+  "worker": "B-3",
+  "worker_pr": 39
+}
