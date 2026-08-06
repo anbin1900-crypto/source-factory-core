@@ -1,0 +1,14 @@
+{
+  "$id": "TARGET_PC_DETERMINISTIC_ACCEPTANCE_RECEIPT_V2",
+  "type": "object",
+  "required": ["status", "target_pc_evidence", "receipts", "counters", "evidence_sha256"],
+  "properties": {
+    "status": {"const": "PASS"},
+    "target_pc_evidence": {"const": true},
+    "receipts": {"const": 18},
+    "counters": {
+      "type": "object",
+      "required": ["DUPLICATE", "C_REPEAT_CROSS_CANCEL", "END_REDISPATCH", "RECEIPT_LOSS", "QUEUE_GROWTH"]
+    }
+  }
+}
