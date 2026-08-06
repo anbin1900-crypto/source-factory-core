@@ -1,0 +1,77 @@
+{
+  "schema_version": "B3_ACTION_RECORDER_CODEGEN_FINAL_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "assignment_comment_id": 5207571285,
+  "worker": "B-3",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 39,
+  "control_pr": 17,
+  "branch": "worker/b3-extractor-retry-resume-v1",
+  "started_from_head": "86d789a136ce5070d79eab7e6d0205eb23da11d7",
+  "content_head_before_final_report": "7584615e82a651a9d3c9526cfc2bd927ad9dd68c",
+  "completed_at_kst": "2026-08-07T02:18:00+09:00",
+  "terminal": "B3_ACTION_REPLAY_EXTRACTION_RECIPE_PASS",
+  "status": "PASS",
+  "implemented": {
+    "action_recorder": true,
+    "recorded_action_count": 8,
+    "recorded_action_types": ["click", "input", "select", "scroll", "popup", "frame", "navigation"],
+    "locator_generation": true,
+    "editable_workflow_steps": true,
+    "deterministic_extraction_recipe": true,
+    "playwright_typescript_codegen": true,
+    "failure_trace": true,
+    "stale_locator_auto_repair": true,
+    "deterministic_replay": true
+  },
+  "validation": {
+    "python_compile": "PASS",
+    "unit_tests": "PASS_45_OF_45",
+    "initial_replay_status": "FAILED_EXPECTED",
+    "initial_failed_step_id": "step-0003",
+    "locator_repair_count": 1,
+    "final_replay_status": "PASS",
+    "final_trace_step_count": 8,
+    "remote_key_blob_readback": "PASS_18_OF_18",
+    "ci_status_context_count": 0,
+    "ci_pass_claimed": false
+  },
+  "corrected_failures": [
+    {
+      "signature": "STALE_LOCATOR_SEMANTIC_MATCH_FAILED",
+      "root_cause": "TARGET_SIGNATURE_INCLUDED_VOLATILE_ID_AND_TEST_ID",
+      "correction": "SEMANTIC_SIGNATURE_EXCLUDES_VOLATILE_LOCATOR_FIELDS",
+      "rerun": "PASS"
+    },
+    {
+      "signature": "CODEGEN_USED_PRE_REPAIR_RECIPE",
+      "root_cause": "TYPESCRIPT_GENERATED_BEFORE_REPLAY_REPAIR",
+      "correction": "GENERATE_FROM_REPAIRED_RECIPE_AND_ADD_TEST",
+      "rerun": "PASS"
+    }
+  ],
+  "authority_paths": {
+    "recorded_workflow": "generated/RECORDED_USER_WORKFLOW_V1.json",
+    "extraction_recipe": "generated/EXTRACTION_RECIPE_V1.json",
+    "playwright_source": "generated/PLAYWRIGHT_RECIPE_V1.ts",
+    "failure_trace": "generated/REPLAY_FAILURE_TRACE_V1.json",
+    "repair_pass_trace": "generated/REPLAY_REPAIR_AND_PASS_TRACE_V1.json",
+    "test_results": "B3_ACTION_RECORDER_CODEGEN_TEST_RESULTS_V1.json",
+    "source_manifest": "B3_ACTION_RECORDER_CODEGEN_SOURCE_MANIFEST_V1.json"
+  },
+  "determinism": {
+    "original_recipe_hash": "adffe26f86a22ee98e8cc51a4e19ade4526a7707c4001e7d6a79a7bbb8494c3d",
+    "repaired_recipe_hash": "a036077ce3cd3d4d45e2cfc470a6116a59ce3ab30329c179bdda3821db096228"
+  },
+  "preserved_authority": {
+    "previous_terminal": "B3_D_COLLECTION_RUN_LEDGER_READY",
+    "previous_source_paths_modified": false
+  },
+  "forbidden_counters": {
+    "actual_site_execution_count": 0,
+    "actual_bulk_collection_count": 0,
+    "production_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  }
+}
