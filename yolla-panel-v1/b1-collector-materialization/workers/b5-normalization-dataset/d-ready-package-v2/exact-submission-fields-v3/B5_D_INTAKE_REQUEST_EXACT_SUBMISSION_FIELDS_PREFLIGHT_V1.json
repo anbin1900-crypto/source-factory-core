@@ -1,0 +1,100 @@
+{
+  "schema_version": "B5_D_INTAKE_REQUEST_EXACT_SUBMISSION_FIELDS_PREFLIGHT_V1",
+  "batch_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V3-20260806-001",
+  "batch_commit": "bd1aa99afb61e91392823f43753f15de24403321",
+  "task_id": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS",
+  "directive_comment": 5200275188,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 41,
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "baseline_head": "fcdf48eca8c4aa8709ec0040e3e0cbc2a4bf99a7",
+  "source_package": {
+    "terminal": "B5_D_READY_PACKAGE_V2_READY",
+    "latest_pointer_blob": "ae6001c683340f7280b74f5289918efedc1b3e7e",
+    "fixture_bundle_blob": "3a204094b4a81486646f863228b5059745fba758",
+    "package_sha256": "f97df341fedb2a81e681b1f00fb3f857b95b425de0fe5ce264bb28a5e18905aa",
+    "dataset_sha256": "5692223b88c966323e3080825f44f473020e4d027d3282449e938183d2af429b",
+    "request_sha256": "2e635bb21c3a83b9c477909a019f6cadc1c814327f74d5cc7a4f3db79690a7ad",
+    "record_count": 3,
+    "sqlite_row_count": 3
+  },
+  "current_request_observation": {
+    "required_exact_fields_present": 0,
+    "required_exact_fields_total": 4,
+    "missing_fields": [
+      "producer_head",
+      "package_blob_or_storage_pointer",
+      "record_count",
+      "submitted_at"
+    ],
+    "observed_non_equivalent_substitutes": [
+      "producer_head_baseline",
+      "producer_head_resolution",
+      "package_blob_resolution",
+      "preservation.out",
+      "generated_at_kst_outside_d_intake_request"
+    ],
+    "silent_alias_allowed": false
+  },
+  "field_resolution": {
+    "package_blob_or_storage_pointer": {
+      "status": "RESOLVABLE_EXACT",
+      "value": "github://anbin1900-crypto/source-factory-core@fcdf48eca8c4aa8709ec0040e3e0cbc2a4bf99a7/yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/authority-ready-v2/B5_D_READY_FIXTURE_PACKAGE_V2.json#/materialized_database_package",
+      "evidence_blob": "3a204094b4a81486646f863228b5059745fba758"
+    },
+    "record_count": {
+      "status": "RESOLVABLE_EXACT",
+      "value": 3,
+      "evidence": {
+        "normalized_output_record_count": 3,
+        "sqlite_row_count": 3,
+        "parity": "PASS"
+      }
+    },
+    "submitted_at": {
+      "status": "RESOLVABLE_EXACT_AT_REQUEST_CREATION",
+      "required_format": "RFC3339_WITH_TIMEZONE"
+    },
+    "producer_head": {
+      "status": "EXACT_BLOCKER_SELF_REFERENTIAL_COMMIT_IDENTITY",
+      "required_semantics": "COMMIT_WHERE_FINAL_PACKAGE_AND_FINAL_D_INTAKE_REQUEST_BYTES_COEXIST",
+      "reason": "THE_REQUEST_BYTES_CONTAIN producer_head; THE_GIT_COMMIT_SHA DEPENDS_ON THE TREE; THE_TREE DEPENDS_ON THE REQUEST_BLOB; THE_REQUEST_BLOB DEPENDS_ON producer_head. THIS REQUIRES A SHA-1 FIXED POINT AND CANNOT BE CONSTRUCTED BY ORDINARY GIT COMMITTING.",
+      "invalid_shortcuts": [
+        "USE_BASELINE_HEAD_BEFORE_CORRECTED_REQUEST_EXISTS",
+        "USE_POINTER_ONLY_COMMIT",
+        "USE_PARENT_CONTENT_COMMIT",
+        "USE_ALIAS_FIELD_OR_SYMBOLIC_REF",
+        "USE_PLACEHOLDER_THEN_AMEND"
+      ]
+    }
+  },
+  "d1_parallel_task": {
+    "task_id": "D1_B_RECEIPT_V2_COMPATIBILITY",
+    "pr": 188,
+    "head": "952d89329e96c80c2150ba006748a091d1233842",
+    "directive_comment": 5200273383,
+    "terminal_published": false,
+    "required_unblock": "D1_APPEND_ONLY_ADDENDUM_MUST_DEFINE_A_NON_SELF_REFERENTIAL producer_head BINDING OR MOVE producer_head TO_AN_EXTERNAL_SUBMISSION_ENVELOPE"
+  },
+  "preservation": {
+    "source_package_modified": false,
+    "package_sha256_changed": false,
+    "source_fields_changed": false,
+    "unmapped_values_changed": false,
+    "dedup_lineage_changed": false,
+    "source_field_loss_count": 0,
+    "silent_drop_count": 0
+  },
+  "decision": "EXACT_BLOCKER",
+  "first_blocker": "PRODUCER_HEAD_SELF_REFERENTIAL_CONTENT_COMMIT_SEMANTICS_UNRESOLVED",
+  "actual_site_extraction": false,
+  "d_canonical_id_generation": false,
+  "d_acceptance_claim": false,
+  "postgresql_connection": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "checked_at_kst": "2026-08-06T13:24:00+09:00"
+}
