@@ -1,0 +1,83 @@
+# C 모드 그룹 헤더 E/A 제거 교정 V2
+
+```text
+CORRECTION_ID=C-MODE-GROUP-HEADER-EA-REMOVAL-V2-20260806-001
+OBSERVED_AT_KST=2026-08-06T21:29:00+09:00
+IMPLEMENTATION_PR=#73
+SUPERSEDES_PACKAGE=AI_YOLLA_C_MODE_GROUP_BUTTON_PATCH_V1.zip
+RESULT=V1_REJECTED
+TARGET_PC_APPLIED=false
+PRODUCTION=false
+READY=false
+MERGE=false
+```
+
+## 1. 관측된 실제 결함
+
+사용자 Target PC 화면에서 각 그룹 헤더 우측에 폐기 대상 `E`, `A` 버튼이 계속 표시됐고 요청된 `C 모드 실행` 버튼은 표시되지 않았다.
+
+```text
+EXPECTED_E_BUTTON_COUNT=0
+EXPECTED_A_BUTTON_COUNT=0
+EXPECTED_C_MODE_BUTTON_COUNT=1_PER_GROUP
+ACTUAL_E_A_VISIBLE=true
+ACTUAL_C_MODE_BUTTON_VISIBLE=false
+V1_ACCEPTANCE=FAIL
+```
+
+## 2. 원인
+
+1. V1 Overlay가 C 모드 버튼 추가만 시도하고 기존 그룹 헤더의 E/A 제어를 제거하지 않았다.
+2. V1 설치기가 5.10.2.4.0 Release를 수정한 뒤 오래된 5.10.2.3.7 Launcher를 다시 열 수 있어, 수정되지 않은 E/A UI가 재실행될 수 있었다.
+3. 기존 E/A 버튼이 동적 DOM 재렌더링으로 다시 생성되는 상황을 지속적으로 제거하는 규칙이 없었다.
+
+## 3. V2 교정
+
+```text
+REMOVE_EXACT_E_CONTROL_IN_GROUP_HEADER=true
+REMOVE_EXACT_A_CONTROL_IN_GROUP_HEADER=true
+PRESERVE_EDIT_BUTTON=true
+PRESERVE_ADD_BUTTON=true
+C_MODE_BUTTON_ONLY=true
+MUTATION_OBSERVER_REAPPLY=true
+DIRECT_V510240_RELEASE_RESTART=true
+V1_TO_V2_UPGRADE_SUPPORTED=true
+```
+
+E/A 제거는 그룹 헤더 내부에서 텍스트가 정확히 `E` 또는 `A`인 버튼에만 적용한다. 다른 화면의 일반 문자나 입력값은 변경하지 않는다.
+
+V2는 DOM 변경을 감시하여 E/A 버튼이 재생성되면 즉시 다시 제거하고, `C 모드 실행` 버튼을 `편집` 버튼 앞에 배치한다.
+
+## 4. V2 적용 패키지
+
+```text
+FILE=AI_YOLLA_C_MODE_GROUP_BUTTON_PATCH_V2.zip
+SIZE_BYTES=23605
+SHA256=65d82251a5f7cb01bc0e34e32703d7a8d0820975d4bd011926e09767e05c33c3
+ENTRYPOINT=APPLY_C_MODE_GROUP_BUTTON_PATCH_V2.bat
+ROLLBACK=ROLLBACK_C_MODE_GROUP_BUTTON_PATCH_V2.bat
+DELIVERY=CHAT_ARTIFACT
+```
+
+## 5. 검증
+
+```text
+APPLY_FIXTURE=PASS_18_ASSERTIONS
+LEGACY_EA_REMOVAL=PASS_12_ASSERTIONS
+ACTUAL_V510240_RUNTIME=PASS_17_ASSERTIONS
+TARGET_FILE_GATE=PASS_14_CHECKS
+V1_TO_V2_UPGRADE=PASS
+```
+
+## 6. 적용 후 필수 화면 판정
+
+```text
+E_BUTTON=ABSENT
+A_BUTTON=ABSENT
+C_MODE_BUTTON=PRESENT
+IDLE=GRAY
+RUNNING=BLUE
+ERROR=RED
+```
+
+실제 Target PC에서 위 조건을 확인하기 전에는 `TARGET_PC_LIVE_PASS`를 주장하지 않는다.
