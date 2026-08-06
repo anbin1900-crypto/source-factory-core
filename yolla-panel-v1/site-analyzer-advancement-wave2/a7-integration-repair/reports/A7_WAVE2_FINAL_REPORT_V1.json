@@ -1,0 +1,64 @@
+{
+  "schema_version": "A7_SITE_ANALYZER_WAVE2_FINAL_REPORT_V1",
+  "generated_at_kst": "2026-08-07T04:23:58+09:00",
+  "worker": "A-7",
+  "worker_pr": 26,
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment_id": 5208241338,
+  "authority_commit": "9ca851933fb329b1d965f4459d452c684a06f9cd",
+  "source_commit": "be05acdbb02cff7a2a30d30bd2fcf829db343244",
+  "terminal": "A7_SITE_ANALYZER_WAVE2_INTEGRATION_REPAIR_PASS",
+  "status": "PASS",
+  "requirements": {
+    "head_advance": "PASS",
+    "cross_module_repair": "PASS",
+    "working_fixture_e2e": "PASS"
+  },
+  "direct_repairs": {
+    "event_bridge": "monotonic sequence, semantic fingerprint deduplication, one canonical stream",
+    "ipc": "stale Core handlers removed before replacement; idempotent disposal",
+    "selector": "safe normalization, uniqueness validation and attribute-based resolution",
+    "recipe": "five recorded actions with stable semantic-only compiler input",
+    "adapter": "executable Wave2 adapter with deterministic replay and exact 10-record cap",
+    "launcher": "one Product Launcher binds Core, Runtime Bridge, IPC, embedded workspace and standalone window",
+    "browser_reattach": "previous observer subscription removed before attaching a new browser"
+  },
+  "validation": {
+    "node_test": "PASS_4_OF_4",
+    "execution_mode": "ACTUAL_HEADLESS_CHROMIUM_CDP_DOCUMENT_INJECTION_FALLBACK",
+    "recovered_environment_blocker": "net::ERR_BLOCKED_BY_ADMINISTRATOR",
+    "live_network_request_count": 1,
+    "live_network_response_body_count": 1,
+    "live_dom_snapshot_count": 1,
+    "live_navigation_count": 3,
+    "bridged_event_count": 35,
+    "unique_event_fingerprint_count": 35,
+    "event_bridge_duplicate_count": 0,
+    "recorded_action_count": 5,
+    "field_candidate_count": 7,
+    "endpoint_group_count": 1,
+    "selector_status": "UNIQUE",
+    "selector_resolve_status": "UNIQUE",
+    "page_type": "LIST",
+    "pagination": "PAGINATION_DETECTED",
+    "extraction_mode": "HYBRID",
+    "extracted_record_count": 10,
+    "preview_record_count": 10,
+    "deterministic_replay": true,
+    "false_live_pass": false
+  },
+  "stable_hashes": {
+    "adapter_source_sha256": "3cfa6de8fb11bdfa7ab121c544fe6f2de3795c280f481a9905a1604b289d6449",
+    "adapter_recipe_sha256": "9a5b83fdab7c8d1e5dbafccbf7d15c73a8d518deb3ea10b0bae1c14afe2590cb",
+    "replay_sha256": "d12a1f21526bda00fc4f45e309b6a773d13775573f512adbd7db22f900ba6fb0"
+  },
+  "paths": {
+    "package_root": "yolla-panel-v1/site-analyzer-advancement-wave2/a7-integration-repair",
+    "validation_receipt": "yolla-panel-v1/site-analyzer-advancement-wave2/a7-integration-repair/reports/A7_WAVE2_LIVE_VALIDATION_RECEIPT_V1.json"
+  },
+  "repair_handoff": false,
+  "finding_only_terminal": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
