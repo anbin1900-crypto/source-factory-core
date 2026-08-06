@@ -1,94 +1,71 @@
 {
-  "schema_version": "LATEST_V2_ABCD_D_GROUP_INTEGRATION_POINTER_V7",
-  "pointer_id": "LATEST-V2-ABCD-D-GROUP-INTEGRATION-20260806-007",
-  "updated_at_kst": "2026-08-06T17:47:33+09:00",
+  "schema_version": "LATEST_V2_ABCD_D_GROUP_INTEGRATION_POINTER_V8",
+  "pointer_id": "LATEST-V2-ABCD-D-GROUP-INTEGRATION-20260806-008",
+  "updated_at_kst": "2026-08-06T18:45:00+09:00",
   "commander": "V-2_YOLLA_AI_SUPREME_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
   "branch": "integration/a0-yolla-workspace-automation-successor-v1",
-  "previous_pointer_blob": "5d2583401aadd24eaf26f94409d67f95d23f7da2",
-  "next_event_batch": {
-    "id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V4-20260806-001",
-    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_NEXT_EVENT_BATCH_V4.json",
-    "commit": "15e65360dea7c7e0f6b1595558d3f92ce25c1843",
-    "blob": "1f230fc15179bc793bd23d391ebb238e4264b940",
+  "previous_pointer_blob": "16246a4f345275779330a9be125f5aa5ba9b8747",
+  "local_server_transition": {
+    "batch_id": "V2-TO-ABCD-LOCAL-SERVER-OPERATION-AND-FUTURE-MIGRATION-BATCH-V1-20260806-001",
+    "batch_path": "yolla-panel-v1/a0-successor-control/integration/abcd-local-server-v1/V2_ABCD_LOCAL_SERVER_OPERATION_AND_FUTURE_MIGRATION_BATCH_V1.json",
+    "batch_commit": "bcc40274036282dc1065f3b6f139755d7dc0ecc9",
+    "dispatch_receipt_path": "yolla-panel-v1/a0-successor-control/integration/abcd-local-server-v1/V2_ABCD_LOCAL_SERVER_OPERATION_DISPATCH_RECEIPT_V1.json",
+    "dispatch_receipt_commit": "ed893ce08ecb0d3286f9e383fb40bad4bb8d41fe",
+    "dedicated_latest_pointer_path": "yolla-panel-v1/a0-successor-control/LATEST_V2_ABCD_LOCAL_SERVER_OPERATION_POINTER.json",
+    "dedicated_latest_pointer_commit": "f9c06b0f4f7781125f54bf479504325fba0be5bf",
     "status": "ACTIVE"
-  },
-  "dispatch_receipt": {
-    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_NEXT_EVENT_DISPATCH_RECEIPT_V4.json",
-    "commit": "eeb9cfcca95935e746c3d3867eed58a27ff294a2",
-    "blob": "aeb96b8c8e33c57edc7f623596c430cf6913eba7",
-    "status": "PASS_5_OF_5_COMMENTS"
   },
   "review_accounting": {
     "workers_reviewed": 20,
     "commander_and_bridge_checked": 5,
-    "missing_worker_terminal": 0,
-    "immediate_active_owner_count": 1
+    "missing_worker_terminal": 0
   },
-  "completed_lanes": {
-    "A": {
-      "status": "PASS_EVENT_WAIT",
-      "A2_head": "dad090f3d0baa01350f19b48bfbb0ae74060379e",
-      "terminal": "A2_D_INTEGRATION_HANDOFF_SET_READY"
-    },
-    "C": {
-      "status": "PASS_FAIL_CLOSED_EVENT_WAIT",
-      "C1_head": "a05cdc280ee28c1c0ffd7ef65e541a1be26f57bd",
-      "terminal": "C1_D1_AUTHORITY_DELTA_BOUND_WAITING_B_CONTENT_OR_ACTUAL_RECEIPTS"
-    },
-    "D1_contract": {
-      "status": "PASS_EVENT_WAIT",
-      "pr188_head": "0bc38b41375fdef78172ed3cb4112b099ea28426",
-      "terminal": "D1_B_RECEIPT_V2_COMPATIBILITY_READY"
-    },
-    "D1_bridge": {
-      "status": "PASS_EVENT_WAIT",
-      "pr21_head": "5187fda754acddbee7fde580740f030708404d7d",
-      "terminal": "D1_PR21_PR188_CROSS_REPOSITORY_POINTER_V3_READY"
-    }
-  },
-  "active_owner": {
+  "current_pipeline": {
     "B5": {
-      "pr": 41,
-      "head_at_dispatch": "4fde3e03f19a772c0d95047ca724ce44ad3a4be3",
-      "comment": 5202449584,
-      "task": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS",
-      "required_terminal": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_READY_OR_EXACT_BLOCKER"
-    }
-  },
-  "event_chain": {
+      "head": "40891f2f87eb9f58a369f71e46cadc43f4586157",
+      "terminal": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_READY",
+      "status": "PASS_EVENT_WAIT"
+    },
     "B6": {
       "pr": 42,
-      "comment": 5202452407,
-      "entry_event": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_READY"
+      "comment": 5203025369,
+      "status": "IMMEDIATE_DELTA_ONLY_REPREFLIGHT"
     },
     "B1": {
       "pr": 19,
-      "comment": 5202455091,
-      "entry_event": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_TERMINAL"
-    },
-    "D6": {
-      "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
-      "pr": 193,
-      "comment": 5202457107,
-      "entry_event": "SEPARATE_D1_B_AND_C_ACTUAL_RECEIPTS_AND_CURRENT_PR21_POINTER"
+      "comment": 5203028027,
+      "status": "EVENT_WAIT_B6"
     }
   },
-  "current_phase": "B5_SUBMISSION_FIELD_CLOSURE_ACTIVE",
-  "current_status": "ALL_WORKERS_REVIEWED_B5_ACTIVE_B6_B1_D6_EVENT_CHAIN",
-  "next_gate": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_TERMINAL",
+  "local_server_state": {
+    "target_pc": "YOLLA-USER-PC01",
+    "install_root": "E:\\YOLLA",
+    "A0": "PC_AGENT_CONTROL_SUPPORT_ACTIVE",
+    "A2": "LOCAL_SERVER_HANDOFF_PREPARATION_ACTIVE",
+    "C1": "LOCAL_SERVER_CONSUMER_PREPARATION_ACTIVE",
+    "D1": "LOCAL_SERVER_CONTROL_REALIGNMENT_ACTIVE",
+    "D2": "ENVIRONMENT_DOCTOR_ACTIVE",
+    "D3": "APPLICATION_PACKAGE_ACTIVE",
+    "D4": "SECURITY_POLICY_ACTIVE",
+    "D5": "EVENT_WAIT_D1_D2_D3_D4_THEN_ACTUAL_INSTALL",
+    "D6": "EVENT_WAIT_D5_B1_C1_THEN_ACTUAL_E2E"
+  },
+  "current_phase": "B6_PIPELINE_CLOSURE_AND_D_LOCAL_SERVER_PREPARATION_ACTIVE",
+  "current_status": "B5_PASS_B6_ACTIVE_D_GROUP_REALIGNED_TO_LOCAL_SERVER_OPERATION",
+  "next_gate": "B6_TERMINAL_AND_D2_ENVIRONMENT_DOCTOR_TERMINAL",
   "worker_completion_claimed": false,
-  "safety": {
-    "new_external_request": false,
-    "actual_site_extraction": false,
-    "actual_bulk_collection": false,
-    "actual_d_package_acceptance": false,
-    "actual_receipt_issuance": false,
-    "knowledge_release_creation": false,
-    "postgresql_connection": false,
-    "migration_apply": false,
-    "canonical_db_write": false,
+  "execution_authority": {
+    "actual_local_install": true,
+    "actual_local_service_start_stop": true,
+    "actual_local_staging_postgresql": true,
+    "actual_local_staging_migration_apply": true,
+    "actual_local_staging_db_write": true,
+    "actual_local_backup_restore": true,
+    "actual_local_snapshot": true,
+    "public_binding": false,
+    "external_server_migration_now": false,
     "production": false,
     "ready": false,
     "merge": false,
