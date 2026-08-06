@@ -1,0 +1,184 @@
+{
+  "schema_version": "V2_ABCD_D_GROUP_NEXT_EVENT_BATCH_V3",
+  "batch_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V3-20260806-001",
+  "issued_at_kst": "2026-08-06T13:07:06+09:00",
+  "issuer": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "parent_batch": {
+    "id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V2-20260806-001",
+    "commit": "6c4f3a06dc158c2c60421f41f346b14bd37fd51b",
+    "blob": "0f18e0e999ca1b65be0999e329000deff1831645"
+  },
+  "observed_remote_state": {
+    "A2": {
+      "pr": 18,
+      "head": "dad090f3d0baa01350f19b48bfbb0ae74060379e",
+      "terminal": "A2_D_INTEGRATION_HANDOFF_SET_READY",
+      "status": "PASS_EVENT_WAIT"
+    },
+    "C1": {
+      "pr": 20,
+      "head": "a05cdc280ee28c1c0ffd7ef65e541a1be26f57bd",
+      "terminal": "C1_D1_AUTHORITY_DELTA_BOUND_WAITING_B_CONTENT_OR_ACTUAL_RECEIPTS",
+      "status": "PASS_FAIL_CLOSED_EVENT_WAIT"
+    },
+    "B5": {
+      "pr": 41,
+      "head": "fcdf48eca8c4aa8709ec0040e3e0cbc2a4bf99a7",
+      "terminal": "B5_D_READY_PACKAGE_V2_READY",
+      "new_required_task": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS",
+      "missing_fields": [
+        "producer_head",
+        "package_blob_or_storage_pointer",
+        "record_count",
+        "submitted_at"
+      ],
+      "status": "ACTIVE_CORRECTION_REQUIRED"
+    },
+    "B6": {
+      "pr": 42,
+      "head": "a237ef43dfd380372df29923a7179ba5226c7fe2",
+      "terminal": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_EXACT_BLOCKER",
+      "pointer_blob": "d15f30f95b766f2478e723b4287cc6117d6684ae",
+      "blockers": [
+        "D1_B_RECEIPT_PROCEDURE_PACKAGE_TYPE_NOT_ACCEPTED_MATERIALIZED_DATABASE_PACKAGE_V2",
+        "D1_B_RECEIPT_SUBMISSION_REQUIRED_FIELDS_MISSING_4"
+      ],
+      "status": "EVENT_WAIT_D1_AND_B5"
+    },
+    "B1": {
+      "pr": 19,
+      "head": "fded2aa3f24bd7e6eaa8aedeafa7d2e6a4e2dc04",
+      "status": "EVENT_WAIT_B6_PROMOTABLE_CANDIDATE"
+    },
+    "D1": {
+      "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "pr": 188,
+      "head": "952d89329e96c80c2150ba006748a091d1233842",
+      "active_pointer_blob": "496efffdfb8da27fa58bbe19ff62110e0f7a70ac",
+      "task": "D1_B_RECEIPT_V2_COMPATIBILITY",
+      "status": "ACTIVE_TERMINAL_NOT_YET_PUBLISHED"
+    },
+    "D6": {
+      "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "pr": 193,
+      "head": "d9264ca3a8d55bc9430f0c3cfc03f81500c1067c",
+      "status": "READ_ONLY_EVENT_WAIT_ACTUAL_RECEIPTS"
+    }
+  },
+  "immediate_active_owners": [
+    {
+      "owner": "D-1",
+      "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "pr": 188,
+      "task_id": "D1_B_RECEIPT_V2_COMPATIBILITY",
+      "required_outputs": [
+        "D1_B_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_PROCEDURE_V1_1_ADDENDUM.json",
+        "D1_B_PACKAGE_V2_COMPATIBILITY_DECISION_V1.json",
+        "D1_SCHEMA_ALIGNMENT_TREE_BINDING_MANIFEST_V2.json",
+        "D1_B_RECEIPT_V2_COMPATIBILITY_FINAL_REPORT_V1.json",
+        "LATEST_D_GROUP_CONTROL_POINTER.json"
+      ],
+      "required_terminal": "D1_B_RECEIPT_V2_COMPATIBILITY_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "owner": "B-5",
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 41,
+      "task_id": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS",
+      "required_fields": [
+        "producer_head",
+        "package_blob_or_storage_pointer",
+        "record_count",
+        "submitted_at"
+      ],
+      "required_terminal": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_READY_OR_EXACT_BLOCKER"
+    }
+  ],
+  "event_chain": [
+    {
+      "owner": "B-6",
+      "pr": 42,
+      "entry_events": [
+        "D1_B_RECEIPT_V2_COMPATIBILITY_READY",
+        "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_READY"
+      ],
+      "task": "DELTA_ONLY_REPREFLIGHT_AND_HANDOFF_CANDIDATE_PROMOTION",
+      "required_terminal": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "owner": "B-1",
+      "pr": 19,
+      "entry_event": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_TERMINAL",
+      "task": "PUBLISH_B1_D_SOURCE_DOCUMENT_PACKAGE_V2_COMMANDER_TERMINAL",
+      "required_terminal": "B1_D_SOURCE_DOCUMENT_PACKAGE_V2_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "owner": "D-1_SOURCE_FACTORY_CROSS_REPOSITORY_BRIDGE",
+      "pr": 21,
+      "entry_event": "D1_B_RECEIPT_V2_COMPATIBILITY_TERMINAL_WITH_NEW_HEAD_OR_BLOB",
+      "task": "REFRESH_PR21_PR188_POINTER_WITH_COMPATIBILITY_ADDENDUM",
+      "required_terminal": "D1_PR21_PR188_CROSS_REPOSITORY_POINTER_V3_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "owner": "D-6",
+      "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "pr": 193,
+      "entry_events": [
+        "D1_B_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_AVAILABLE",
+        "D1_C_KNOWLEDGE_CANDIDATE_ACCEPTANCE_RECEIPT_AVAILABLE",
+        "PR21_PR188_CURRENT_POINTER_AVAILABLE"
+      ],
+      "task": "DELTA_ONLY_PROVENANCE_AND_CITATION_ACCEPTANCE",
+      "required_terminal": "D6_ABCD_CROSS_REPOSITORY_ACCEPTANCE_PASS_OR_EXACT_FINDINGS"
+    }
+  ],
+  "completed_event_wait": [
+    "A-2",
+    "A-3",
+    "A-4",
+    "A-5",
+    "A-6",
+    "A-7",
+    "B-2",
+    "B-3",
+    "B-4",
+    "C-1",
+    "C-2",
+    "C-3",
+    "C-4",
+    "C-5",
+    "C-6",
+    "D-2",
+    "D-3",
+    "D-4",
+    "D-5"
+  ],
+  "no_duplicate_reexecution": [
+    "NO_A_GROUP_REBUILD_WITHOUT_CONTENT_DELTA",
+    "NO_B2_B3_B4_REBUILD",
+    "NO_C_SEMANTIC_RERUN_WITHOUT_NEW_B_CONTENT",
+    "NO_D2_TO_D5_REBUILD",
+    "NO_B6_FULL_RERUN_BEFORE_BOTH_ENTRY_EVENTS"
+  ],
+  "actual_acceptance_boundary": {
+    "actual_package_acceptance_authorized": false,
+    "actual_receipt_issuance_authorized": false,
+    "knowledge_release_creation_authorized": false,
+    "reason": "THIS_BATCH_CLOSES_CONTRACT_COMPATIBILITY_AND_SUBMISSION_SHAPE_ONLY"
+  },
+  "forbidden": [
+    "NEW_EXTERNAL_REQUEST",
+    "ACTUAL_SITE_EXTRACTION",
+    "ACTUAL_BULK_COLLECTION",
+    "POSTGRESQL_CONNECTION",
+    "MIGRATION_APPLY",
+    "CANONICAL_DB_WRITE",
+    "PRODUCTION",
+    "READY",
+    "MERGE",
+    "SELF_MERGE"
+  ],
+  "status": "B_D_RECEIPT_COMPATIBILITY_CLOSURE_BATCH_ACTIVE"
+}
