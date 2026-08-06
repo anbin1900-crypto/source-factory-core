@@ -18,7 +18,7 @@ for path in (C2, C3, C5, HERE):
     if text not in sys.path:
         sys.path.insert(0, text)
 
-from panel_folder_inventory_adapter import adapt_selection
+from panel_folder_inventory_adapter import adapt_input_selection
 from pdf_extraction_runtime_adapter import run_inventory_extraction
 from text_chunk_csv_writer import chunk_pages, write_chunks
 from output_path_policy import build_source_output_plan, plan_chunk_outputs
@@ -26,6 +26,19 @@ from output_path_policy import build_source_output_plan, plan_chunk_outputs
 
 class PipelineError(RuntimeError):
     pass
+
+
+def _adapt_selection(
+    *,
+    output_folder: str,
+    source_folder: str | None,
+    pdf_file: str | None,
+) -> dict[str, Any]:
+    if bool(source_folder) == bool(pdf_file):
+        raise PipelineError("EXACTLY_ONE_SOURCE_MODE_REQUIRED")
+    if source_folder:
+        return adapt_input_selection("FOLDER", source_folder, output_folder)
+    return adapt_input_selection("PDF_FILE", pdf_file, output_folder)
 
 
 def run_pipeline(
@@ -41,8 +54,8 @@ def run_pipeline(
 
     emit = progress or (lambda event: None)
     emit({"stage": "SELECTION_START"})
-    selection = adapt_selection(
-        output_folder,
+    selection = _adapt_selection(
+        output_folder=output_folder,
         source_folder=source_folder,
         pdf_file=pdf_file,
     )
@@ -52,8 +65,12 @@ def run_pipeline(
     emit({"stage": "EXTRACTION_START", "pdf_count": selection["pdf_count"]})
     extraction = run_inventory_extraction(selection["inventory"])
     if extraction["failed_file_count"]:
+        first_error = next(
+            (item.get("error") for item in extraction["files"] if item["status"] == "ERROR"),
+            None,
+        )
         raise PipelineError(
-            f"EXTRACTION_FAILED:{extraction['failed_file_count']}"
+            f"EXTRACTION_FAILED:{extraction['failed_file_count']}:{first_error}"
         )
 
     output_root = Path(selection["output_folder"])
@@ -111,11 +128,11 @@ def run_pipeline(
         )
 
     result = {
-        "schema_version": "PDF_TO_CSV_PIPELINE_RESULT_V1",
+        "schema_version": "PDF_TO_CSV_PIPELINE_RESULT_V2",
         "status": "PASS",
-        "selection_mode": selection["selection_mode"],
+        "selection_mode": selection["input_mode"],
         "source_folder": selection["source_folder"],
-        "selected_pdf_file": selection.get("selected_pdf_file"),
+        "selected_pdf_file": selection.get("selected_pdf"),
         "output_folder": selection["output_folder"],
         "max_chars": max_chars,
         "pdf_count": len(source_results),
