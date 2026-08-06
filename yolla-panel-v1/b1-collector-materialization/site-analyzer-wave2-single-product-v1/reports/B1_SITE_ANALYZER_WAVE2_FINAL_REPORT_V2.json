@@ -1,0 +1,15 @@
+{
+  "schema_version":"B1_SITE_ANALYZER_WAVE2_FINAL_REPORT_V2",
+  "directive_id":"A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "assignment_comment":5208242890,
+  "role":"SITE_ANALYZER_PRODUCT_ASSEMBLY_AND_RELEASE_CANDIDATE_OWNER",
+  "start_head":"6dca87e976439134dc24fed8bd60bc2c9db05fa0",
+  "terminal":"B1_SITE_ANALYZER_WAVE2_SINGLE_PRODUCT_ASSEMBLY_PASS_WITH_PROVEN_ELECTRON_RUNTIME_BLOCKER",
+  "status":"PASS_RUNNABLE_NODE_CHROMIUM_PRODUCT_ELECTRON_SOURCE_PACKAGED",
+  "required":{"head_advance":"PASS","single_product_tree":"PASS","single_launcher":"PASS","runnable_package":"PASS"},
+  "direct_repairs":["B6_MINIMAL_RENDERER_REPLACED_WITH_B1_VISUAL_DASHBOARD","B2_COMPAT_ANALYZER_API_EXPOSED_THROUGH_ELECTRON_PRELOAD","SINGLE_ELECTRON_APP_PROCESS_WITH_SHARED_PERSISTENT_PARTITION","TARGET_WINDOW_AND_DASHBOARD_CONSOLIDATED_UNDER_ONE_LAUNCHER","CURRENT_EVIDENCE_HEAD_VS_PACKAGED_BYTE_LINEAGE_SEPARATED","STALE_UPSTREAM_BINDING_PROMOTION_BLOCKED","TRUNCATED_GITHUB_BINARY_COPY_REMOVED_AFTER_REMOTE_READBACK"],
+  "validation":{"node_version":"v22.16.0","source_syntax":"PASS_4_FILES","product_verify":"PASS_32_IMMUTABLE_MEMBERS","node_tests":"PASS_8_OF_8","actual_local_http":"PASS","actual_system_chromium":"PASS","network_event_count":28,"response_body_count":14,"dom_snapshot_count":2,"recorded_action_count":8,"mode":"HYBRID","adapter_replay":"PASS_DETERMINISTIC","exact_extracted_records":10,"json_csv_xlsx_parity":"PASS_10_10_10"},
+  "package":{"name":"B1_SITE_ANALYZER_WAVE2_SINGLE_PRODUCT_V1.zip","size_bytes":58272,"sha256":"6cc052b0693ca60a44ac2be640b41c4445612d2555dde4fe524302552a884317","entry_count":46,"canonical_launcher":"launcher.cjs","windows_launcher_shim":"RUN_SITE_ANALYZER_WAVE2.bat","byte_storage":"GOOGLE_DRIVE","drive_file_id":"1peeypCRTIzWjaIQzWOQrpv9dv8ZX8H7c","drive_download_readback":"PASS_SIZE_SHA256_ZIP_CRC","github_binary_copy":"REMOVED_CONNECTOR_TRUNCATION_DETECTED"},
+  "proven_runtime_blocker":{"electron_module_installed":false,"code":"ELECTRON_MODULE_NOT_INSTALLED_USE_NODE_CHROMIUM_MODE","impact":"Electron source is packaged and syntax-validated, but this execution environment cannot truthfully claim live Electron launch.","blocks_runnable_package":false,"node_chromium_fallback_actual_execution":"PASS"},
+  "boundaries":{"database_work":false,"production":false,"ready":false,"merge":false}
+}
