@@ -1,0 +1,58 @@
+{
+  "schema_version": "A2_SITE_ANALYZER_WAVE1_BUILD_TEST_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "tested_at_kst": "2026-08-07T02:05:00+09:00",
+  "runtime": {
+    "node": "v22.16.0",
+    "electron": "FAKE_API_CONTRACT_TEST_TARGET_PC_NOT_EXECUTED"
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "result": "FAIL",
+      "signature": "FUNCTION_IN_STRUCTURED_CLONE",
+      "repair": "Serialize module-output event and exclude executable function from cloned evidence"
+    },
+    {
+      "attempt": 2,
+      "result": "PASS"
+    }
+  ],
+  "tests": {
+    "command": "node --test tests/*.test.mjs",
+    "suite_count": 1,
+    "pass_count": 1,
+    "fail_count": 0,
+    "assertion_count": 48
+  },
+  "wave_pass": {
+    "live_network_event_count": 1,
+    "dom_snapshot_count": 1,
+    "recorded_user_action_count": 1,
+    "auto_field_candidate_count": 5,
+    "generated_executable_adapter_count": 1,
+    "replay_success_count": 1,
+    "sample_record_count": 1,
+    "data_preview_visible": true,
+    "embedded_analyzer_working": true,
+    "standalone_analyzer_working": true
+  },
+  "integration": {
+    "module_binding_count": 10,
+    "ipc_handler_count": 5,
+    "ui_section_count": 7,
+    "state_restore": "PASS",
+    "same_session_partition": "PASS",
+    "same_adapter_registry_reference": "PASS",
+    "same_run_history_reference": "PASS"
+  },
+  "boundaries": {
+    "deterministic_local_sample_e2e": true,
+    "external_live_site_call_count": 0,
+    "target_pc_electron_live_execution": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "OFFLINE_INTEGRATED_SOURCE_PASS_TARGET_PC_LIVE_NOT_CLAIMED"
+}
