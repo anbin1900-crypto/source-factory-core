@@ -27,11 +27,16 @@
     "C5_DETERMINISTIC_OUTPUT_NAMING",
     "C4_UTF8_SIG_CSV_WRITE"
   ],
-  "exact_bindings_observed": {
-    "c2_adapter_blob": "b3c3186ae13e4bc13484ad23c1eef9902506b2b0",
-    "c3_runtime_blob": "ba55b3685ec073c2108b3f1dae2478e2922eb3de",
+  "exact_bindings_at_terminal_preflight": {
+    "c2_adapter_blob": "f73ac4c21c25346db441f4260decfd73032aaefb",
+    "c2_adapter_schema": "PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_V3",
+    "c2_symbol": "adapt_input_selection",
+    "c3_runtime_blob": "f0135afd4e773421dc747d20da7a5b32b8110317",
+    "c3_result_schema": "PDF_EXTRACTION_RUNTIME_RESULT_V2",
+    "c3_symbol": "run_inventory_extraction",
     "c4_chunk_writer_blob": "5555e2c7622076d4be290c4d68e966c0ce34a547",
-    "c5_naming_blob": "1fe8684ff69c5d9481b79142495229bd036dff60"
+    "c5_naming_blob": "1fe8684ff69c5d9481b79142495229bd036dff60",
+    "current_api_compatibility": "PASS_STATIC_REMOTE_READBACK"
   },
   "defects": [
     {
@@ -74,8 +79,8 @@
     },
     "contract": {
       "path": "PDF_TO_CSV_PIPELINE_CONTRACT_V1.json",
-      "commit": "cbf978ff56dae8475e5af98983c36f81632ffce1",
-      "blob": "884a4839e1a2399abb259b65d3599a2c0090a1e3"
+      "commit": "be291ac69fea9b0d65ec83b987a308760aa29cc6",
+      "blob": "79391676ddf3839041b32a1d7b8f927043afff0d"
     },
     "test": {
       "path": "test_pdf_to_csv_pipeline_orchestrator.py",
@@ -99,7 +104,8 @@
     "utf8_sig_manifest_recheck": "PASS",
     "progress_events_persisted": "PASS",
     "fail_closed_error_event": "PASS",
-    "remote_readback_before_final_report": "PASS_3_OF_3"
+    "latest_c2_c3_api_remote_readback": "PASS_2_OF_2",
+    "remote_readback_before_final_report": "PASS_4_OF_4"
   },
   "result": "C4_ONE_COMMAND_PIPELINE_CORRECTED",
   "required_result": "C4_ONE_COMMAND_PIPELINE_CORRECTED_OR_NO_DEFECT_FOUND",
