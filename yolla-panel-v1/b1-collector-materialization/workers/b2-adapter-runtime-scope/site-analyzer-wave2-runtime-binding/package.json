@@ -1,0 +1,1 @@
+{"name":"b2-site-analyzer-wave2-runtime-binding","private":true,"type":"module","scripts":{"test":"node --test tests/runtime_bridge_client.test.mjs tests/runtime_bridge_model.test.mjs","smoke":"node tests/runtime_bridge_browser_smoke.mjs","verify":"npm test && npm run smoke"}}
