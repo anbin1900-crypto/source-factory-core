@@ -1,0 +1,83 @@
+{
+  "schema_version": "B6_D_SUBMISSION_FIELD_DELTA_MATRIX_V1",
+  "task_id": "B6_D_SOURCE_DOCUMENT_HANDOFF_DELTA_REPREFLIGHT_V4",
+  "checked_at_kst": "2026-08-06T19:48:00+09:00",
+  "B5_head": "40891f2f87eb9f58a369f71e46cadc43f4586157",
+  "request_blob": "4971b8b57cfd2f2a36b9146fa562579214a01a2a",
+  "D1_head": "0bc38b41375fdef78172ed3cb4112b099ea28426",
+  "D1_procedure_addendum_blob": "58408175b1683cf566e201b57bd17b5e19c459e8",
+  "required_field_accounting": {
+    "required": 4,
+    "passed": 4,
+    "failed": 0,
+    "result": "PASS_4_OF_4"
+  },
+  "fields": [
+    {
+      "field": "producer_head",
+      "expected": "EXACT_IMMUTABLE_GIT_COMMIT_CONTAINING_THE_FINAL_PACKAGE_BYTES_REFERENCED_BY_package_blob_or_storage_pointer",
+      "actual": "59405edba453e2f8512dfddd969ba1ae899526ae",
+      "evidence": {
+        "package_path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/authority-ready-v2/B5_D_READY_FIXTURE_PACKAGE_V2.json",
+        "package_blob_at_producer_head": "3a204094b4a81486646f863228b5059745fba758",
+        "request_publication_commit": "23111e17dfc4cc81f117414dfccd8555477d9b59",
+        "compare_status": "ahead",
+        "ahead_by": 11
+      },
+      "result": "PASS"
+    },
+    {
+      "field": "package_blob_or_storage_pointer",
+      "expected": "EXACT_GITHUB_BLOB_PATH_OR_APPROVED_IMMUTABLE_STORAGE_POINTER_WITH_SHA256_READBACK",
+      "actual": "3a204094b4a81486646f863228b5059745fba758",
+      "evidence": {
+        "request_package_sha256": "f97df341fedb2a81e681b1f00fb3f857b95b425de0fe5ce264bb28a5e18905aa",
+        "package_declared_sha256": "f97df341fedb2a81e681b1f00fb3f857b95b425de0fe5ce264bb28a5e18905aa",
+        "exact_blob_readback": "PASS",
+        "prior_package_tests": "PASS_45_OF_45"
+      },
+      "result": "PASS"
+    },
+    {
+      "field": "record_count",
+      "expected": "COUNT_OF_SOURCE_DOCUMENT_RECORDS_SUBMITTED_TO_D1_BEFORE_ANY_D_ACCEPTANCE_DECISION",
+      "actual": 3,
+      "evidence": {
+        "request_record_count": 3,
+        "normalized_dataset_output_record_count": 3,
+        "materialized_database_sqlite_row_count": 3
+      },
+      "result": "PASS_3_3_3"
+    },
+    {
+      "field": "submitted_at",
+      "expected": "RFC3339_WITH_TIMEZONE_TIMESTAMP_OF_SUBMISSION_ENVELOPE_CREATION",
+      "actual": "2026-08-06T18:09:00+09:00",
+      "evidence": {
+        "date": "2026-08-06",
+        "time": "18:09:00",
+        "timezone_offset": "+09:00"
+      },
+      "result": "PASS"
+    }
+  ],
+  "package_type_compatibility": {
+    "package_type": "MATERIALIZED_DATABASE_PACKAGE_V2",
+    "D1_decision": "COMPATIBLE_FOR_B_SOURCE_DOCUMENT_SUBMISSION_AND_D1_PREFLIGHT_ONLY",
+    "compatibility_decision_blob": "fb1e8f7b82a4516a06fbe58c27da89b46a746431",
+    "result": "PASS"
+  },
+  "preservation": {
+    "source_field_loss_count": 0,
+    "silent_drop_count": 0,
+    "unmapped_value_preservation": "PASS_6_OF_6",
+    "dedup_lineage_preservation": "PASS"
+  },
+  "result": "PASS",
+  "actual_D_package_acceptance": false,
+  "actual_receipt_issuance": false,
+  "postgresql_connection": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
