@@ -1,0 +1,30 @@
+{
+  "schema_version": "EXECUTABLE_ADAPTER_MANIFEST_V1",
+  "adapter_id": "jsonplaceholder-posts-hybrid-v1",
+  "mode": "HYBRID",
+  "entrypoint": "adapter.cjs",
+  "target": {
+    "name": "JSONPlaceholder Posts Public API",
+    "base_url": "https://api.jsonplaceholder.dev",
+    "source_document": "https://jsonplaceholder.dev/api/posts"
+  },
+  "capabilities": {
+    "observe": true,
+    "act": true,
+    "action_cache": true,
+    "failed_step_repair": true,
+    "replay": true,
+    "trace": true,
+    "pagination": true
+  },
+  "contracts": {
+    "selectors": "selectors.json",
+    "requests": "request-templates.json",
+    "input_schema": "input-schema.json",
+    "output_schema": "output-schema.json",
+    "pagination": "pagination.json",
+    "workflow": "workflow-recipe.json"
+  },
+  "generated_at": "2026-08-06T16:56:00.144Z",
+  "compiler_input_sha256": "05fb365276dc2795d4d4d41c074240e8b51551fe0de6707df0fd353851433e5d"
+}

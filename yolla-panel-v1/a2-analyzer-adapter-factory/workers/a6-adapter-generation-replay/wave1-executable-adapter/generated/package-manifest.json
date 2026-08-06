@@ -1,0 +1,46 @@
+{
+  "adapter_id": "jsonplaceholder-posts-hybrid-v1",
+  "mode": "HYBRID",
+  "files": [
+    {
+      "name": "adapter.cjs",
+      "size": 6701,
+      "sha256": "ea7a13f615559e11291b2844af7eb30bcf24adf2a355ae0107bb55509fd0e8a5"
+    },
+    {
+      "name": "adapter.json",
+      "size": 923,
+      "sha256": "6c45b19b6f421f2de46b1642e46980c7d5df396f72b497acd8ef3c8a3b855d45"
+    },
+    {
+      "name": "input-schema.json",
+      "size": 620,
+      "sha256": "197b98742f0904fecc20b2803d89d5469538420bb1b5c9b9c16c6e2881f7329b"
+    },
+    {
+      "name": "output-schema.json",
+      "size": 665,
+      "sha256": "1e98d8464f2c8e0f31eeca52ae66870b012ac4d13fbca9c56e417e8aacf1e3b2"
+    },
+    {
+      "name": "pagination.json",
+      "size": 354,
+      "sha256": "1be0473c4a8045e0ff5bfc065b28b595d535c556d99147f9d71f4a2a0ea37a4c"
+    },
+    {
+      "name": "request-templates.json",
+      "size": 758,
+      "sha256": "db78e2c943c1e8b7fb797f57614b44f6a35d12515f24c4be63a7bbdadf3ac767"
+    },
+    {
+      "name": "selectors.json",
+      "size": 639,
+      "sha256": "402797fa012e75ccd938327b6591eac566ce7b1467b6b09aa968e1e48fa94060"
+    },
+    {
+      "name": "workflow-recipe.json",
+      "size": 1031,
+      "sha256": "4afa6d12e15ca449b9419e312d494bab6b1a51bf07105e13c2eac6d4268b8b9b"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "EXECUTABLE_WORKFLOW_RECIPE_V1",
+  "adapter_id": "jsonplaceholder-posts-hybrid-v1",
+  "mode": "HYBRID",
+  "steps": [
+    {
+      "id": "observe-input",
+      "kind": "observe",
+      "cache_key": "input-observation-v1"
+    },
+    {
+      "id": "load-api-or-fixture",
+      "kind": "act",
+      "when": [
+        "API",
+        "HYBRID"
+      ],
+      "repair": "rediscover-json-items-path"
+    },
+    {
+      "id": "load-dom-or-fixture",
+      "kind": "act",
+      "when": [
+        "DOM",
+        "HYBRID"
+      ],
+      "repair": "fallback-record-and-field-patterns"
+    },
+    {
+      "id": "merge-hybrid",
+      "kind": "transform",
+      "when": [
+        "HYBRID"
+      ],
+      "strategy": "api-primary-dom-fill"
+    },
+    {
+      "id": "validate-output",
+      "kind": "validate",
+      "repair": "drop-invalid-record-and-continue"
+    },
+    {
+      "id": "paginate",
+      "kind": "loop",
+      "contract": "pagination.json"
+    },
+    {
+      "id": "emit-trace",
+      "kind": "trace"
+    }
+  ]
+}

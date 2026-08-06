@@ -1,0 +1,15 @@
+{
+  "schema_version": "EXECUTABLE_SELECTOR_CONTRACT_V1",
+  "record_pattern": "<article[^>]*data-post-id=\\\"(?<id>[^\\\"]+)\\\"[^>]*>(?<content>[\\s\\S]*?)</article>",
+  "field_patterns": {
+    "title": "<h2[^>]*>(?<value>[\\s\\S]*?)</h2>",
+    "body": "<p[^>]*>(?<value>[\\s\\S]*?)</p>",
+    "user_id": "data-user-id=\\\"(?<value>[^\\\"]+)\\\""
+  },
+  "fallback_patterns": {
+    "record_pattern": "<article[^>]*data-post-id=\"(?<id>[^\"]+)\"[^>]*>(?<content>[\\s\\S]*?)</article>",
+    "title": "<h2[^>]*>(?<value>[\\s\\S]*?)</h2>",
+    "body": "<p[^>]*>(?<value>[\\s\\S]*?)</p>",
+    "user_id": "data-user-id=\"(?<value>[^\"]+)\""
+  }
+}

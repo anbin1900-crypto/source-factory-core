@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Executable adapter run input",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "live": {
+      "type": "boolean"
+    },
+    "api_fixture": {
+      "type": "string"
+    },
+    "dom_fixture": {
+      "type": "string"
+    },
+    "max_records": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 20
+    },
+    "override_items_path": {
+      "type": "string"
+    },
+    "trace_path": {
+      "type": "string"
+    },
+    "cache_path": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "max_records"
+  ]
+}
