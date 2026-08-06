@@ -1,67 +1,45 @@
 {
-  "schema_version": "LATEST_C2_PDF_TO_CSV_POINTER_V3",
-  "pointer_id": "LATEST-C2-FOLDER-OR-SINGLE-PDF-SELECTION-20260807-001",
-  "published_at_kst": "2026-08-07T04:50:00+09:00",
-  "worker": "C-2_FOLDER_OR_SINGLE_PDF_SELECTION_ADAPTER_WORKER",
-  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE2-20260807-001",
-  "followup_task_id": "C2_FOLDER_OR_SINGLE_PDF_SELECTION_ADAPTER_V1",
+  "schema_version": "LATEST_C2_PDF_TO_CSV_POINTER_V4",
+  "pointer_id": "LATEST-C2-INPUT-SELECTION-DIRECT-REPAIR-20260807-001",
+  "published_at_kst": "2026-08-07T05:27:00+09:00",
+  "worker": "C-2_DOCUMENT_DECOMPOSITION_FRAGMENT_LOCATOR_WORKER",
+  "batch_id": "C1-PDF-PREPROCESS-CORRECTION-20260807-001",
+  "directive_comment": 5208879253,
+  "commander_control_comment": 5208884860,
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 20,
   "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
-  "directive_comment": 5208559987,
-  "start_comment": 5208698852,
-  "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c2-document-decomposition/pdf-to-csv-panel-v1/**",
-  "previous_pointer_blob": "b648fae1da2b31662861aef31ebd30e6daa5676e",
-  "control_head_before_pointer": "aae500b0e720169138e836c15075a6400d8c5ebf",
+  "previous_pointer_blob": "668cf994c338df81353c4f1c37d87d7c66e734be",
   "artifacts": {
-    "adapter_source": {"commit": "b269ef974116e278f4f4962e7b1aa783dd3c4b86", "blob": "b3c3186ae13e4bc13484ad23c1eef9902506b2b0"},
-    "contract": {"commit": "01506a25d3c566583b7c5958431b46d69b996659", "blob": "7b19c9d3e1f3266f42a84a663991e78b4dcb9e0c"},
-    "unit_test": {"commit": "02d3f1d50a9048921ee6c8b6819b74bc5e0ade41", "blob": "a0dd43bebcc8ed0ec36bae6fdc7f87800d111b19"},
-    "final_report": {"commit": "aae500b0e720169138e836c15075a6400d8c5ebf", "blob": "84ca7d747e76a5e27936e703cd16858a57b805e7"}
+    "adapter_source": {"commit":"d151de343883449d06ec3028a6f1645b88641867","blob":"f73ac4c21c25346db441f4260decfd73032aaefb"},
+    "contract": {"commit":"fdfa11648d89b29da049b0a6e576e49b53386ed5","blob":"8a277dbce7dbde3d13718b5e482e0853ac70fd69"},
+    "regression_test": {"commit":"bce798d6a8420803d93c22f68691473d7d0168a4","blob":"416fc16657e725b88ccfbd4f37ce055063092f31"},
+    "direct_repair_test": {"commit":"34e87e00aeef6bef5f1de9c35fbcf2774a68e416","blob":"ebe8b77860c46329e5777e8d9df18c1269a1f853"},
+    "final_report": {"commit":"7708fe6f30d4aed755a900c1ea82be5d0e8fd74e","blob":"e4290cd722a57b9522eb00b7bd844c776178eb1d"}
   },
-  "input_modes": ["FOLDER", "PDF_FILE"],
-  "folder_mode": {
-    "regression": "PASS_29_OF_29",
-    "recursive_inventory_preserved": true,
-    "legacy_cli_preserved": true
-  },
-  "pdf_file_mode": {
-    "single_pdf_exactly_one_record": "PASS",
-    "inventory_schema": "PDF_FOLDER_INVENTORY_V1",
-    "processing_order": 1,
-    "non_selected_pdf_included_count": 0,
-    "invalid_non_pdf_rejected": "PASS",
-    "deterministic_record_shape": "PASS",
-    "remote_pdf_file_one_record_inventory_available": true
+  "direct_repairs": {
+    "pdf_file_parent_output_collision": "PASS_REPAIRED",
+    "pdf_file_signature_validation": "PASS_REPAIRED",
+    "inventory_hash_parity": "PASS_REPAIRED",
+    "validation_error_precedence": "PASS_PRESERVED"
   },
   "validation": {
-    "python_compile": "PASS_2_OF_2",
-    "folder_mode_regression": "PASS_29_OF_29",
-    "single_pdf_additional": "PASS_15_OF_15",
-    "unit_test_status": "PASS_44_OF_44",
-    "failed_test_count": 0,
-    "remote_blob_readback": "PASS_5_OF_5"
+    "focused_direct_repair_tests": "PASS_12_OF_12",
+    "prior_regression_suite": "PRESERVED_44_TESTS_WITH_FIXTURE_CORRECTION",
+    "remote_blob_readback": "PENDING_FINAL_READBACK"
   },
-  "downstream_event": {
-    "consumer": "C-3_PDF_EXTRACTION_RUNTIME_ADAPTER_WORKER",
-    "entry_event": "C2_FOLDER_OR_SINGLE_PDF_SELECTION_ADAPTER_READY_AND_REMOTE_PDF_FILE_ONE_RECORD_INVENTORY_AVAILABLE",
-    "event_ready": true
-  },
+  "required_result": "C2_INPUT_SELECTION_CORRECTED_OR_NO_DEFECT_FOUND",
+  "terminal_result": "C2_INPUT_SELECTION_CORRECTED",
+  "defects_found_count": 3,
   "scope_counters": {
-    "separate_pipeline_created": 0,
-    "panel_ui_count": 0,
-    "pdf_text_extraction_count": 0,
-    "ocr_count": 0,
-    "text_chunking_count": 0,
-    "csv_generation_count": 0,
-    "semantic_analysis_count": 0,
-    "gpt_call_count": 0,
-    "database_write_count": 0
+    "semantic_analysis": 0,
+    "gpt_call": 0,
+    "database_write": 0,
+    "panel_ui": 0,
+    "pdf_text_extraction": 0,
+    "ocr": 0,
+    "csv_generation": 0
   },
-  "decision": "PASS",
-  "first_blocker": null,
-  "terminal": "C2_FOLDER_OR_SINGLE_PDF_SELECTION_ADAPTER_READY_OR_EXACT_BLOCKER",
-  "terminal_result": "C2_FOLDER_OR_SINGLE_PDF_SELECTION_ADAPTER_READY",
   "production": false,
   "ready": false,
   "merge": false
