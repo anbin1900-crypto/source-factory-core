@@ -1,0 +1,26 @@
+{
+  "schema_version": "LATEST_SITE_ANALYZER_ADVANCEMENT_WAVE1_AB_POINTER_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "authority_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "assignment": {
+    "path": "yolla-panel-v1/a0-successor-control/directives/site-analyzer-advancement-wave1/SITE_ANALYZER_ADVANCEMENT_WAVE1_AB_BUILD_ASSIGNMENT_V1.json",
+    "commit": "20b8a6401de124186037d44f9f17076c97142402",
+    "blob": "9fd38a7b21294f3b9a004b36c5902c93b50a836d"
+  },
+  "dispatch_receipt": {
+    "path": "yolla-panel-v1/a0-successor-control/directives/site-analyzer-advancement-wave1/SITE_ANALYZER_ADVANCEMENT_WAVE1_AB_DISPATCH_RECEIPT_V1.json",
+    "commit": "7822ef89871ff36a40d315d2ee6ca1167ba57079",
+    "blob": "afa679de97dd5f4ac699518c88dd826486327592"
+  },
+  "primary_goal": "ADVANCED_SITE_ANALYZER_PRODUCT",
+  "active_worker_count": 12,
+  "c_mode_runtime_worker_count": 0,
+  "audit_only_worker_count": 0,
+  "validation_only_worker_count": 0,
+  "dispatch_status": "A2_A7_B1_B6_ALL_DISPATCHED",
+  "next_gate": "WORKER_START_AND_FIRST_WORKING_SOURCE_COMMITS",
+  "status": "ACTIVE",
+  "updated_at": "2026-08-07T01:44:00+09:00"
+}
