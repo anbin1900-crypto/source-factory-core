@@ -1,0 +1,113 @@
+{
+  "generated_at": "2026-08-07T01:55:00+09:00",
+  "source_bindings": {
+    "directive_comment_id": 5207562721,
+    "common_authority_commit": "20b8a6401de124186037d44f9f17076c97142402",
+    "a3_pr": 22,
+    "a3_head_at_start": "57012279520de80260bd857c9b6a9edd7aa51cba",
+    "a3_event_contract": "NETWORK_OBSERVATION_EVENT_V1",
+    "a3_response_observation": "RESPONSE_BODY_SCHEMA_OBSERVATION_V1",
+    "a4_pr": 23,
+    "a4_head_at_start": "b54af2bb3272b613be5458a283e22e2eb5d90ade",
+    "a4_pagination_contract": "A4_TO_A5_PAGINATION_HANDOFF_V1"
+  },
+  "network_observations": [
+    {
+      "event_id": "EVT-001",
+      "request": {
+        "method": "GET",
+        "url": "https://fixture.invalid/api/listings?page=1&size=2",
+        "resource_type": "FETCH"
+      },
+      "response": {
+        "status": 200,
+        "content_type": "application/json",
+        "body_format": "JSON",
+        "body": {
+          "page": 1,
+          "size": 2,
+          "items": [
+            {"listingId": "L1", "regionId": "R1", "title": "Alpha", "price": 100},
+            {"listingId": "L2", "regionId": "R1", "title": "Beta", "price": 200}
+          ]
+        }
+      },
+      "evidence_pointer": "a3://fixture/evt-001"
+    },
+    {
+      "event_id": "EVT-002",
+      "request": {
+        "method": "GET",
+        "url": "https://fixture.invalid/api/listings?page=2&size=2",
+        "resource_type": "FETCH"
+      },
+      "response": {
+        "status": 200,
+        "content_type": "application/json",
+        "body_format": "JSON",
+        "body": {
+          "page": 2,
+          "size": 2,
+          "items": [
+            {"listingId": "L3", "regionId": "R2", "title": "Gamma", "price": 300},
+            {"listingId": "L4", "regionId": "R2", "title": "Delta", "price": 400}
+          ]
+        }
+      },
+      "evidence_pointer": "a3://fixture/evt-002"
+    },
+    {
+      "event_id": "EVT-003",
+      "request": {
+        "method": "GET",
+        "url": "https://fixture.invalid/api/listings/L1",
+        "resource_type": "XHR"
+      },
+      "response": {
+        "status": 200,
+        "content_type": "application/json",
+        "body_format": "JSON",
+        "body": {
+          "item": {"listingId": "L1", "regionId": "R1", "title": "Alpha", "description": "Detail"}
+        }
+      },
+      "evidence_pointer": "a3://fixture/evt-003"
+    },
+    {
+      "event_id": "EVT-004",
+      "request": {
+        "method": "GET",
+        "url": "https://fixture.invalid/listings",
+        "resource_type": "DOCUMENT"
+      },
+      "response": {
+        "status": 200,
+        "content_type": "text/html",
+        "body_format": "HTML",
+        "body": "<div class=\"listing-card\" data-id=\"L1\"></div><div class=\"listing-card\" data-id=\"L2\"></div>"
+      },
+      "evidence_pointer": "a3://fixture/evt-004"
+    }
+  ],
+  "dom_candidates": {
+    "repeated_regions": [
+      {"candidate_id": "RR-001", "locator": ".listing-card", "count": 2}
+    ],
+    "fields": [
+      {"name": "title", "locator": ".listing-card .title"},
+      {"name": "price", "locator": ".listing-card .price"},
+      {"name": "detail_url", "locator": ".listing-card a"},
+      {"name": "listing_id", "locator": ".listing-card", "attribute": "data-id"},
+      {"name": "region", "locator": ".listing-card .region"}
+    ],
+    "locators": [
+      {"candidate_id": "LOC-001", "selector": ".listing-card"}
+    ],
+    "pagination": {
+      "mode": "PAGE_NUMBER",
+      "page_parameter": "page",
+      "size_parameter": "size",
+      "termination_rules": ["EMPTY_RESULT", "NO_NEW_RECORD_IDS"]
+    }
+  }
+}
