@@ -22,6 +22,7 @@ export class AnalyzerRuntimeBridgeClient {
     this.sessionId = options.sessionId || `B2-${Date.now()}`;
     this.handlers = new Map();
     this.transports = [];
+    this.sentKeys = new Set();
     this.receivedKeys = new Set();
     this.sequence = 0;
     this.state = {
@@ -132,6 +133,116 @@ export class AnalyzerRuntimeBridgeClient {
     return false;
   }
 
+  _emitSynthesized(topic, payload, source = "ANALYZER_CORE") {
+    return this._receive({
+      topic,
+      payload,
+      sequence: ++this.syntheticSequence,
+      sessionId: `${this.sessionId}:core`,
+      source,
+      timestamp: new Date().toISOString(),
+    }, "ANALYZER_API");
+  }
+
+  _consumeAnalyzerState(state) {
+    if (!state || typeof state !== "object") return false;
+    this._emitSynthesized("analyzer:core-state", state);
+    const result = Array.isArray(state.runHistory) ? state.runHistory.at(-1) : null;
+    if (!result) return true;
+    this._emitSynthesized("analyzer:browser-state", {
+      url: result.site?.url || "about:blank",
+      title: result.site?.title || result.site?.id || "Analyzer Runtime",
+      html: result.capture?.domSnapshots?.[0]?.html,
+      connected: true,
+    });
+    for (const [index, event] of (result.capture?.networkEvents || []).entries()) {
+      this._emitSynthesized("analyzer:a3-event", {
+        event_id: event.requestId || `CORE-NET-${index + 1}`,
+        sequence: index + 1,
+        classification: { type: event.classification || event.type || "NETWORK", confidence: 1 },
+        request: {
+          method: event.method || "GET",
+          resource_type: event.resourceType || event.resource_type || "NETWORK",
+          url_pattern: event.url || "",
+        },
+        response: {
+          status: event.status ?? null,
+          content_type: event.mimeType || event.content_type || "",
+          size_bytes: event.encodedDataLength || event.size_bytes || 0,
+        },
+        source: "A-2_ANALYZER_CORE",
+      });
+    }
+    const structure = result.structure || {};
+    this._emitSynthesized("analyzer:a4-candidates", {
+      repeated_regions: (structure.repeatedRegions || []).map((item, index) => ({
+        id: item.id || `core-repeat-${index + 1}`,
+        selector: item.selector || item.locator,
+        confidence: item.confidence ?? 1,
+        count: item.count,
+      })).filter((item) => item.selector),
+      field_candidates: (structure.fields || []).map((item, index) => ({
+        id: item.id || `core-field-${index + 1}`,
+        name: item.name,
+        source_key: item.name,
+        selector: item.selector || item.locator,
+        confidence: item.confidence ?? 1,
+      })).filter((item) => item.selector),
+      locator_candidates: (structure.locators || []).flatMap((item, index) =>
+        (item.candidates || [item.locator]).filter(Boolean).map((selector, candidateIndex) => ({
+          id: `${item.fieldId || `core-locator-${index + 1}`}-${candidateIndex + 1}`,
+          selector,
+          confidence: 1,
+        }))),
+      pagination_candidates: structure.pagination && structure.pagination.mode !== "EXPLICIT_NONE"
+        ? [{ id: "core-pagination", ...structure.pagination }]
+        : [],
+      highlight_payload: structure.highlightPayload || [],
+    });
+    const endpoint = result.endpoint || {};
+    this._emitSynthesized("analyzer:a5-inference", {
+      mode_decision: endpoint.extractionMode || endpoint.mode || "DOM",
+      confidence: 1,
+      endpoint_groups: endpoint.endpointGroups || [],
+      schema_candidates: endpoint.responseSchemas || [],
+      identifier_relations: endpoint.identifierRelations || [],
+    });
+    const steps = result.adapter?.recipe?.actions || result.recipe?.steps || [];
+    if (Array.isArray(steps)) this._emitSynthesized("analyzer:b3-workflow", { steps });
+    const preview = result.preview || {};
+    if (Array.isArray(preview.records)) {
+      const columns = (preview.columns || Object.keys(preview.records[0] || {}))
+        .filter((name) => name !== "sourceElement")
+        .map((name, index) => ({ id: `core-preview-${index + 1}`, name, source_key: name }));
+      this._emitSynthesized("analyzer:b5-preview", { columns, records: preview.records });
+    }
+    return true;
+  }
+
+  _bindAnalyzerApi(api) {
+    if (!api || typeof api !== "object") return false;
+    let bound = false;
+    this.syntheticSequence = this.syntheticSequence || 0;
+    if (typeof api.onProgress === "function") {
+      api.onProgress((progress) => {
+        this._emitSynthesized("analyzer:core-progress", progress);
+        if (progress?.stage === "COMPLETED" && typeof api.getState === "function") {
+          Promise.resolve(api.getState()).then((state) => this._consumeAnalyzerState(state)).catch(() => {});
+        }
+      });
+      bound = true;
+    }
+    if (typeof api.getState === "function") {
+      Promise.resolve(api.getState()).then((state) => this._consumeAnalyzerState(state)).catch(() => {});
+      bound = true;
+    }
+    if (bound) {
+      this._registerTransport("ANALYZER_API", () => false);
+      this.state.hostConnected = true;
+    }
+    return bound;
+  }
+
   _bindPort(port) {
     if (!port) return false;
     port.onmessage = (event) => this._receive(event.data, "MESSAGE_PORT");
@@ -151,6 +262,7 @@ export class AnalyzerRuntimeBridgeClient {
   }
 
   connect() {
+    this._bindAnalyzerApi(this.window.analyzerAPI);
     this._bindPreloadBridge(this.window.analyzerRuntimeBridge, "ELECTRON_RUNTIME_BRIDGE");
     if (this.window.analyzerBridge !== this.window.analyzerRuntimeBridge) {
       this._bindPreloadBridge(this.window.analyzerBridge, "LEGACY_ANALYZER_BRIDGE");
