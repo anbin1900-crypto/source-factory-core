@@ -1,0 +1,58 @@
+{
+  "schema_version": "PDF_PAGE_TEXT_RECORD_CONTRACT_V1",
+  "contract_id": "C3-PDF-PAGE-TEXT-RECORD-CYCLE1-20260807-001",
+  "purpose": "PAGE_ORDERED_PDF_TEXT_EXTRACTION_DIRECT_TEXT_FIRST_OCR_FALLBACK",
+  "record_required_fields": [
+    "source_file",
+    "source_path",
+    "page_no",
+    "extraction_mode",
+    "text",
+    "char_count",
+    "alnum_ratio",
+    "direct_text_char_count",
+    "direct_text_alnum_ratio",
+    "ocr_applied",
+    "ocr_reason",
+    "status"
+  ],
+  "record_rules": {
+    "page_no": "ONE_BASED_STRICTLY_ASCENDING_WITHIN_SOURCE",
+    "extraction_mode_allowed": ["DIRECT_TEXT", "OCR_FALLBACK", "EMPTY_AFTER_OCR"],
+    "direct_text_priority": true,
+    "ocr_trigger": "DIRECT_TEXT_BELOW_CONFIGURED_MIN_CHARS_OR_ALNUM_RATIO",
+    "ocr_max_calls_per_page": 1,
+    "empty_text_silent_success": false,
+    "text_normalization": ["UNICODE_NFC", "CRLF_TO_LF", "COLLAPSE_INLINE_WHITESPACE", "TRIM_OUTER_WHITESPACE"],
+    "source_order_preserved": true,
+    "page_order_preserved": true,
+    "original_pdf_mutation": false
+  },
+  "default_config": {
+    "min_chars": 20,
+    "min_alnum_ratio": 0.15,
+    "ocr_dpi": 200,
+    "fail_on_empty_page": true,
+    "fail_on_empty_document": true
+  },
+  "backend_contract": {
+    "primary_document_backend": "PyMuPDF lazy import",
+    "ocr_backend": "Tesseract via pytesseract and Pillow lazy import",
+    "dependency_injection_supported": true,
+    "missing_pdf_backend_code": "PYMUPDF_NOT_INSTALLED",
+    "missing_ocr_backend_code": "OCR_BACKEND_REQUIRED",
+    "ocr_binding_missing_code": "TESSERACT_BINDING_NOT_INSTALLED",
+    "ocr_runtime_failure_code": "TESSERACT_EXECUTION_FAILED",
+    "empty_after_ocr_code": "EMPTY_TEXT_AFTER_OCR"
+  },
+  "boundaries": {
+    "semantic_analysis": false,
+    "legal_classification": false,
+    "knowledge_candidate_generation": false,
+    "gpt_call": false,
+    "database_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
