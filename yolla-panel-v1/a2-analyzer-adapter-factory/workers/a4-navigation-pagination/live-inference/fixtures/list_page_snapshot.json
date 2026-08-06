@@ -1,0 +1,37 @@
+{
+  "snapshotId": "fixture-list-001",
+  "url": "https://example.test/list?page=1",
+  "viewportHeight": 900,
+  "documentScrollHeight": 1800,
+  "nodes": [
+    {"id":"1","parentId":null,"tag":"html","text":""},
+    {"id":"2","parentId":"1","tag":"body","text":""},
+    {"id":"3","parentId":"2","tag":"h1","text":"Apartments"},
+    {"id":"10","parentId":"2","tag":"section","attributes":{"class":"results-grid"},"bounds":[0,100,1200,1200]},
+    {"id":"11","parentId":"10","tag":"article","attributes":{"class":"property-card"},"bounds":[0,100,380,350]},
+    {"id":"12","parentId":"11","tag":"a","text":"River View Apartment","attributes":{"href":"/detail/101"}},
+    {"id":"13","parentId":"11","tag":"img","attributes":{"src":"/img/101.jpg","alt":"River View Apartment"}},
+    {"id":"14","parentId":"11","tag":"span","text":"₩850,000,000","attributes":{"class":"price"}},
+    {"id":"15","parentId":"11","tag":"p","text":"서울시 마포구 월드컵로 10","attributes":{"class":"address"}},
+    {"id":"16","parentId":"11","tag":"span","text":"84㎡ · 3 rooms","attributes":{"class":"spec"}},
+    {"id":"21","parentId":"10","tag":"article","attributes":{"class":"property-card"},"bounds":[400,100,380,350]},
+    {"id":"22","parentId":"21","tag":"a","text":"Park Side Home","attributes":{"href":"/detail/102"}},
+    {"id":"23","parentId":"21","tag":"img","attributes":{"src":"/img/102.jpg","alt":"Park Side Home"}},
+    {"id":"24","parentId":"21","tag":"span","text":"₩920,000,000","attributes":{"class":"price"}},
+    {"id":"25","parentId":"21","tag":"p","text":"서울시 성동구 왕십리로 20","attributes":{"class":"address"}},
+    {"id":"26","parentId":"21","tag":"span","text":"92㎡ · 4 rooms","attributes":{"class":"spec"}},
+    {"id":"31","parentId":"10","tag":"article","attributes":{"class":"property-card"},"bounds":[800,100,380,350]},
+    {"id":"32","parentId":"31","tag":"a","text":"Station Studio","attributes":{"href":"/detail/103"}},
+    {"id":"33","parentId":"31","tag":"img","attributes":{"src":"/img/103.jpg","alt":"Station Studio"}},
+    {"id":"34","parentId":"31","tag":"span","text":"₩510,000,000","attributes":{"class":"price"}},
+    {"id":"35","parentId":"31","tag":"p","text":"서울시 강남구 테헤란로 30","attributes":{"class":"address"}},
+    {"id":"36","parentId":"31","tag":"span","text":"41㎡ · 1 room","attributes":{"class":"spec"}},
+    {"id":"40","parentId":"2","tag":"nav","attributes":{"aria-label":"Pagination"}},
+    {"id":"41","parentId":"40","tag":"a","text":"1","attributes":{"href":"?page=1"}},
+    {"id":"42","parentId":"40","tag":"a","text":"2","attributes":{"href":"?page=2"}},
+    {"id":"43","parentId":"40","tag":"a","text":"Next","attributes":{"href":"?page=2"}}
+  ],
+  "navigationEvents": [
+    {"type":"navigation","fromUrl":"https://example.test/list?page=1","toUrl":"https://example.test/detail/101"}
+  ]
+}
