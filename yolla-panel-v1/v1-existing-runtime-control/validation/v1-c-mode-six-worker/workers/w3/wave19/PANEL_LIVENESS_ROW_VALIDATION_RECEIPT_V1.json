@@ -1,0 +1,84 @@
+{
+  "schema_version": "PANEL_LIVENESS_ROW_VALIDATION_RECEIPT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-019",
+  "registry_sequence": 19,
+  "command_id": "C6W-W19-W3-PANEL-LIVENESS-ROW-UI",
+  "role": "AUTOMATION-C-W3",
+  "directive_comment": 5200546204,
+  "result_key": "520054620400",
+  "base_result_commit": "36613eabf8c5a185badec39b2c23febf8a6b6483",
+  "status": "PASS",
+  "implementation_owner": false,
+  "artifacts": [
+    {
+      "logical_role": "VIEW_MODEL_AND_DOM_RENDERER",
+      "path": "panel_liveness_row_view_model.cjs",
+      "size_bytes": 9527,
+      "sha256": "79255cdc4aa3f5e86a5c6696648f44ea6433bb684ee71d45f0db14f4833d9bfe"
+    },
+    {
+      "logical_role": "PANEL_STYLES",
+      "path": "panel_liveness_row.css",
+      "size_bytes": 2181,
+      "sha256": "e8300c76787bfa085da74d469bd34ae4402184bd6e069a0f897c2c8429c9f571"
+    },
+    {
+      "logical_role": "DETERMINISTIC_FIXTURE",
+      "path": "PANEL_LIVENESS_ROW_FIXTURE_V1.json",
+      "size_bytes": 2773,
+      "sha256": "e82d9e781eff36860bab13608dd18f761ad88e064c5f35b5c907bef9e1487843"
+    },
+    {
+      "logical_role": "DOM_HARNESS",
+      "path": "test_panel_liveness_row_dom_harness.cjs",
+      "size_bytes": 4947,
+      "sha256": "646c3ef329fd8ee669ae0cf36bf61a02e018833fa24bc09b5151e50e0565daf0"
+    }
+  ],
+  "test": {
+    "command": "node test_panel_liveness_row_dom_harness.cjs",
+    "status": "PASS",
+    "assertion_count": 42,
+    "current_row_count": 7,
+    "historical_row_count": 2,
+    "allowed_states": [
+      "WAITING",
+      "WORKING",
+      "RESULT_PENDING",
+      "COMPLETED",
+      "REVIEW_REQUIRED"
+    ]
+  },
+  "coverage": {
+    "columns_exact_order": true,
+    "working_bound_to_generation": true,
+    "missing_result_alone_not_review_required": true,
+    "result_comment_priority": true,
+    "result_key_fallback": true,
+    "current_wave_separated": true,
+    "historical_wave_separated": true,
+    "historical_result_does_not_complete_current_wave": true,
+    "legacy_a_e_not_rendered": true,
+    "chat_open_link": true,
+    "github_result_link": true,
+    "elapsed_time": true,
+    "last_check": true,
+    "deterministic_dom_mount": true
+  },
+  "w5_consumption": {
+    "files_ready": true,
+    "implementation_patch_required_by_w5": true,
+    "standalone_view_model": true,
+    "standalone_css": true,
+    "fixture_and_harness": true
+  },
+  "scope_truth": {
+    "localhost_panel_modified": false,
+    "target_pc_render_executed": false,
+    "live_pass_claimed": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
