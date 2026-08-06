@@ -1,0 +1,80 @@
+{
+  "schema_version": "C_MODE_CYCLE1_A2_A7_DISPATCH_RECEIPT_V1",
+  "directive_id": "A0-TO-A2-A7-C-MODE-CYCLE1-RUNTIME-AUTHORITY-PERFORMANCE-BASELINE-V1-20260806-001",
+  "dispatched_at_kst": "2026-08-06T23:25:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "authority_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "assignment": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/cycles/cycle1/C_MODE_CYCLE1_A2_A7_WORKER_ASSIGNMENT_V1.json",
+    "commit": "3a66f45dcbd81818013247b1e50efb55df27ec69",
+    "blob": "bb5d64ee5c0b672d972cc981f04bc3acfb9d6491"
+  },
+  "assignment_pointer": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/LATEST_C_MODE_CYCLE1_A2_A7_WORKER_ASSIGNMENT_POINTER.json",
+    "commit": "008ee26b192f5c186bd064f8382831ddfdf4a288"
+  },
+  "dispatches": [
+    {
+      "worker": "A-2",
+      "pr": 18,
+      "comment_id": 5206055628,
+      "task_id": "C1-A2-EXACT-RUNTIME-AUTHORITY-RESOLUTION",
+      "observed_head": "01e1321401211a53ae9237ca05d3a8f46822405f",
+      "status": "DISPATCHED"
+    },
+    {
+      "worker": "A-3",
+      "pr": 22,
+      "comment_id": 5206060577,
+      "task_id": "C1-A3-TARGET-PC-RUNTIME-READBACK-HARNESS",
+      "observed_head": "f1a32cdaeafb2ef8cc7442bc3ef8351d689e02c3",
+      "status": "DISPATCHED"
+    },
+    {
+      "worker": "A-4",
+      "pr": 23,
+      "comment_id": 5206065265,
+      "task_id": "C1-A4-IDLE-RESOURCE-BASELINE-HARNESS",
+      "observed_head": "2efc3866b292cd8c43a6fdc75a43479c0bbf2fad",
+      "status": "DISPATCHED"
+    },
+    {
+      "worker": "A-5",
+      "pr": 24,
+      "comment_id": 5206070859,
+      "task_id": "C1-A5-BROWSER-LIFECYCLE-POLLING-STATIC-AUDIT",
+      "observed_head": "ba04d2dbae45a5ed51e86d6715565d15b8428464",
+      "status": "DISPATCHED"
+    },
+    {
+      "worker": "A-6",
+      "pr": 25,
+      "comment_id": 5206075380,
+      "task_id": "C1-A6-WEBCONTENTS-LEAK-REPEAT-HARNESS",
+      "observed_head": "4d5acd815d52c2fdfca079447989f565f90857eb",
+      "status": "DISPATCHED"
+    },
+    {
+      "worker": "A-7",
+      "pr": 26,
+      "comment_id": 5206080258,
+      "task_id": "C1-A7-INDEPENDENT-BASELINE-ACCEPTANCE",
+      "observed_head": "4ff15507cebe8a185d92fcbcdd17f0aa547d37e7",
+      "status": "DISPATCHED_WAITING_A2_A6_TERMINALS"
+    }
+  ],
+  "worker_count": 6,
+  "dispatch_count": 6,
+  "missing_worker_count": 0,
+  "duplicate_dispatch_count": 0,
+  "next_gate": "A2_A6_START_REPORTS_THEN_A7_START_AND_WAIT",
+  "primary_goal": "C_MODE_COMPLETION",
+  "cycle": 1,
+  "site_analyzer_work": false,
+  "d_group_new_assignment": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "CYCLE1_ALL_A2_A7_WORKERS_DISPATCHED"
+}
