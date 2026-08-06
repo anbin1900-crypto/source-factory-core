@@ -1,0 +1,50 @@
+{
+  "schema_version": "LATEST_YOLLA_ACTIVE_SOURCE_OPTIMIZATION_POINTER_V1",
+  "pointer_id": "LATEST-YOLLA-ACTIVE-SOURCE-OPTIMIZATION-20260806-001",
+  "status": "BLOCKED_PENDING_ACTIVE_RUNTIME_SOURCE_READBACK",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "agent/yolla-active-source-optimization-audit-v1",
+  "base_head": "a73997a3ecca2fe7b506cefdb9feaa2130afc036",
+  "audit_path": "yolla-panel-v1/v1-existing-runtime-control/source-optimization-v1/YOLLA_ACTIVE_RUNTIME_SOURCE_AUDIT_V1.md",
+  "readback_package": {
+    "file_name": "YOLLA_ACTIVE_RUNTIME_SOURCE_READBACK_V1.zip",
+    "delivery": "CHAT_ARTIFACT",
+    "size_bytes": 5252,
+    "sha256": "33a9121fd20fc333302955e9d7c6a48c6f56c519ba3558d174a45e5a40f8203a",
+    "entrypoint": "COLLECT_ACTIVE_YOLLA_RUNTIME_SOURCE.bat",
+    "runtime_write": false,
+    "process_stop": false,
+    "profile_read": false,
+    "workspace_state_content_read": false
+  },
+  "observed_live_ui": {
+    "legacy_e_visible": true,
+    "legacy_a_visible": true,
+    "c_mode_button_visible": false
+  },
+  "optimization_policy": {
+    "css_hide_allowed": false,
+    "dom_only_delete_sufficient": false,
+    "delete_renderer_preload_main_state_launcher": true,
+    "preserve_shared_c_mode_dependencies": true,
+    "blind_patch_allowed": false
+  },
+  "remove": ["A_MODE", "E_MODE"],
+  "keep": [
+    "C_MODE",
+    "COMMANDER_DISPATCH",
+    "WORKER_DISPATCH",
+    "GROUP_EDIT",
+    "GROUP_ADD",
+    "PROJECT_CHAT_BINDING",
+    "STATE_LOG_RECEIPT",
+    "ROLLBACK"
+  ],
+  "exact_active_runtime_source_path": null,
+  "new_patch_authorized": false,
+  "target_pc_live_pass": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
