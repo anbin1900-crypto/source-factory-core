@@ -1,0 +1,156 @@
+{
+  "schema_version": "SITE_ANALYZER_ADVANCEMENT_WAVE1_AB_BUILD_ASSIGNMENT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "issued_at_kst": "2026-08-07T01:44:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "authority_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "parent_directive": "A0-SITE-ANALYZER-SINGLE-GOAL-AB-PARALLEL-V2-20260807-001",
+  "primary_goal": "ADVANCED_SITE_ANALYZER_PRODUCT",
+  "dispatch_mode": "CYCLE_BATCH_PARALLEL",
+  "active_workers": ["A-2", "A-3", "A-4", "A-5", "A-6", "A-7", "B-1", "B-2", "B-3", "B-4", "B-5", "B-6"],
+  "excluded_work": {
+    "c_mode_runtime": true,
+    "database_build": true,
+    "manual_audit_only": true,
+    "manual_validation_only": true,
+    "document_only_terminal": true,
+    "production": true,
+    "ready": true,
+    "merge": true
+  },
+  "operating_model": {
+    "one_owner_end_to_end": true,
+    "build_first_then_integrated_repair": true,
+    "worker_repairs_own_failures": true,
+    "finding_only_terminal_forbidden": true,
+    "same_failure_signature_repeat_limit": 2,
+    "alternative_method_after_repeat": true,
+    "mid_process_approval": false,
+    "sequential_worker_gate": false
+  },
+  "benchmark_implementation_references": [
+    "Electron webContents.debugger and Chrome DevTools Protocol for live browser observation",
+    "Chrome DevTools Recorder for user-flow recording and editable steps",
+    "Playwright Codegen, Locator and Trace Viewer for executable actions, resilient locators and replay diagnostics",
+    "Octoparse auto-detect, visual workflow and data preview interaction model",
+    "Crawlee PlaywrightCrawler and RequestQueue for execution, pagination, retry and resume",
+    "Stagehand observe, act, action cache and failed-step repair concepts",
+    "Browserbase session replay interaction model",
+    "Apify run, request queue, dataset and export interaction model"
+  ],
+  "product_flow": [
+    "register one site",
+    "open the real browser",
+    "capture network, response body, DOM, frame, navigation and console",
+    "record user click, input, select, scroll, popup and frame actions",
+    "infer page types, repeated regions, fields, locators and pagination",
+    "infer endpoints, request templates, response schemas and identifier relations",
+    "select DOM, API or hybrid extraction mode",
+    "generate executable adapter code and extraction recipe",
+    "replay with trace and repair failed steps",
+    "show editable data preview",
+    "extract 1 to 20 real sample records",
+    "run the same analyzer in embedded and standalone modes"
+  ],
+  "assignments": {
+    "A-2": {
+      "pr": 18,
+      "observed_head": "e29431309a17fc6d3f2f1eb3b422f5ff93866658",
+      "role": "ANALYZER_CORE_EMBEDDED_STANDALONE_INTEGRATION_OWNER",
+      "mission": "Build the shared AnalyzerCore, embedded analyzer workspace and standalone BrowserWindow, bind A and B modules, and directly repair all integration failures.",
+      "required_result": ["shared analyzer state", "embedded analyzer", "standalone analyzer", "same session and adapter registry", "working end-to-end shell"]
+    },
+    "A-3": {
+      "pr": 22,
+      "observed_head": "57012279520de80260bd857c9b6a9edd7aa51cba",
+      "role": "LIVE_CDP_CAPTURE_OWNER",
+      "mission": "Implement Electron CDP capture for Network, Page, Runtime and DOMSnapshot events, response bodies, frames, console, storage pointers and action correlation.",
+      "required_result": ["live network events", "response body capture", "DOM snapshots", "navigation and frame events", "streaming analyzer event API"]
+    },
+    "A-4": {
+      "pr": 23,
+      "observed_head": "b54af2bb3272b613be5458a283e22e2eb5d90ade",
+      "role": "DOM_STRUCTURE_FIELD_LOCATOR_PAGINATION_INFERENCE_OWNER",
+      "mission": "Turn live DOM and navigation events into page types, repeated-region candidates, field candidates, locator candidates, list-detail relations and pagination workflows.",
+      "required_result": ["automatic repeated-region detection", "at least five field candidates", "locator candidates", "pagination or explicit none decision", "visual highlight payload"]
+    },
+    "A-5": {
+      "pr": 24,
+      "observed_head": "9f83895589f48c765422624a3538d7d5e872fdc1",
+      "role": "ENDPOINT_SCHEMA_MODE_INFERENCE_OWNER",
+      "mission": "Group live endpoints, infer request parameters and response schemas, map identifiers and choose DOM, API or hybrid extraction mode with executable generator inputs.",
+      "required_result": ["endpoint groups", "request templates", "response schema inference", "identifier relations", "DOM_API_HYBRID decision"]
+    },
+    "A-6": {
+      "pr": 25,
+      "observed_head": "84ea9b34a7c9445a77214288556ff3230442d81e",
+      "role": "EXECUTABLE_ADAPTER_COMPILER_REPLAY_TRACE_OWNER",
+      "mission": "Replace manifest-only generation with executable Playwright and Crawlee adapter generation, replay, trace, action cache, failed-step repair and real sample execution.",
+      "required_result": ["generated adapter source", "generated extraction recipe", "successful replay", "trace artifacts", "1 to 20 real sample records"]
+    },
+    "A-7": {
+      "pr": 26,
+      "observed_head": "09ec824f7e245c93b4ca05d2ac098c16403c9ca5",
+      "role": "SITE_ANALYZER_END_TO_END_REPAIR_OWNER",
+      "mission": "Directly reproduce and repair broken analyzer integration, runtime, selectors, adapter generation and replay. Do not publish findings without repairing every repairable defect.",
+      "required_result": ["known gap repair", "cross-module failure reproduction", "source fixes", "retry until working", "no repair handoff"]
+    },
+    "B-1": {
+      "pr": 19,
+      "observed_head": "6dca87e976439134dc24fed8bd60bc2c9db05fa0",
+      "role": "SITE_ANALYZER_PRODUCT_ASSEMBLY_OWNER",
+      "mission": "Assemble the A and B implementation lanes into one working product, remove duplicated implementations, resolve interface conflicts directly and publish the runnable integration package.",
+      "required_result": ["single product contract", "module binding map", "runnable integration package", "conflict repairs", "next working build pointer"]
+    },
+    "B-2": {
+      "pr": 38,
+      "observed_head": "771da102a0202dc21d9226d9c534275df345582e",
+      "role": "VISUAL_ANALYZER_SMART_INSPECTOR_DATA_PREVIEW_OWNER",
+      "mission": "Build the Octoparse-style visual analyzer workspace: live browser, element selection, candidate highlights, smart inspector, field editing, workflow view and editable data preview.",
+      "required_result": ["visual analyzer UI", "element selection", "candidate highlighting", "smart inspector", "editable data preview"]
+    },
+    "B-3": {
+      "pr": 39,
+      "observed_head": "86d789a136ce5070d79eab7e6d0205eb23da11d7",
+      "role": "ACTION_RECORDER_CODEGEN_RECIPE_OWNER",
+      "mission": "Build Chrome Recorder and Playwright Codegen-style recording for click, input, select, scroll, popup, frame and navigation, and compile recorded actions into deterministic extraction recipes.",
+      "required_result": ["action recorder", "locator generation", "editable workflow steps", "deterministic replay", "extraction recipe output"]
+    },
+    "B-4": {
+      "pr": 40,
+      "observed_head": "f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3",
+      "role": "REAL_SITE_EXTRACTION_BROWSER_EDGE_CASE_OWNER",
+      "mission": "Implement actual sample extraction with popup, frame, download, load-more, infinite-scroll, pagination, retry and resume support using the generated recipe and adapter.",
+      "required_result": ["real extraction runner", "popup and frame handling", "download capture", "infinite-scroll and pagination", "resume after failure"]
+    },
+    "B-5": {
+      "pr": 41,
+      "observed_head": "40891f2f87eb9f58a369f71e46cadc43f4586157",
+      "role": "ANALYZER_RESULT_PREVIEW_EDITOR_EXPORT_OWNER",
+      "mission": "Build automatic table and record shaping, preview editing and JSON, CSV and Excel export for analyzer results. Keep work inside the analyzer product and do not expand into a separate document-processing pipeline.",
+      "required_result": ["record and table model", "preview editor", "field rename and removal", "JSON CSV Excel export", "source-row and source-element pointers"]
+    },
+    "B-6": {
+      "pr": 42,
+      "observed_head": "dde23c6a83ac3d4c263a12888e944b6d4c255614",
+      "role": "RUNNABLE_ANALYZER_PACKAGE_AND_REPAIR_OWNER",
+      "mission": "Package browser profile pointers, analysis profile, workflow recipe, adapter source, replay trace, result preview and sample output into one runnable package; directly repair packaging and execution defects.",
+      "required_result": ["runnable analyzer package", "single launcher or entrypoint", "package manifest", "sample scenario", "direct package repair"]
+    }
+  },
+  "wave_pass": {
+    "live_network_event_count_min": 1,
+    "dom_snapshot_count_min": 1,
+    "recorded_user_action_count_min": 1,
+    "auto_field_candidate_count_min": 5,
+    "generated_executable_adapter_count_min": 1,
+    "replay_success_count_min": 1,
+    "real_extracted_record_count_min": 1,
+    "real_extracted_record_count_max": 20,
+    "data_preview_visible": true,
+    "embedded_analyzer_working": true,
+    "standalone_analyzer_working": true
+  },
+  "status": "PUBLISHED_PENDING_WORKER_COMMENT_DISPATCH"
+}
