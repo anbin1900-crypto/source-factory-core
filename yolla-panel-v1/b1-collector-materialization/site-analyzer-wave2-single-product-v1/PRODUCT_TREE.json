@@ -1,0 +1,26 @@
+{
+  "schema_version": "B1_SITE_ANALYZER_WAVE2_PRODUCT_TREE_V1",
+  "single_runtime": true,
+  "single_canonical_launcher": "launcher.cjs",
+  "windows_launcher_shim": "RUN_SITE_ANALYZER_WAVE2.bat",
+  "electron_main": "electron/main.cjs",
+  "electron_preload": "electron/preload.cjs",
+  "visual_dashboard": "renderer/index.html",
+  "runtime": {
+    "fixture_site": "runtime/fixture-site.cjs",
+    "node_http_bridge": "runtime/node-http-bridge.cjs",
+    "chromium_cdp": "runtime/chromium-cdp.cjs",
+    "scenario_runner": "runtime/scenario-runner.cjs"
+  },
+  "pipeline": [
+    "LIVE_RUNTIME_EVENTS",
+    "FIELD_LOCATOR_PAGINATION_INFERENCE",
+    "ENDPOINT_SCHEMA_MODE_INFERENCE",
+    "RECORDED_ACTION_RECIPE",
+    "ADAPTER_REPLAY_TRACE",
+    "EXACT_10_EXTRACTION",
+    "PREVIEW_EDIT_EXPORT"
+  ],
+  "duplicate_shell_policy": "ONE_ELECTRON_APP_PROCESS; dashboard and target may be separate windows inside the same process",
+  "boundaries": {"database_work":false,"production":false,"ready":false,"merge":false}
+}
