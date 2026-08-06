@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yolla.local/schemas/A4_WAVE2_LIVE_EVENT_STRUCTURE_HANDOFF_V1.schema.json",
+  "title": "A4 Wave 2 Live Event Structure Handoff V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "directiveId",
+    "source",
+    "inference",
+    "workflow",
+    "b2HighlightPayload",
+    "pass",
+    "terminalReady",
+    "handoffSha256"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "A4_WAVE2_LIVE_EVENT_STRUCTURE_HANDOFF_V1" },
+    "directiveId": { "const": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001" },
+    "source": {
+      "type": "object",
+      "required": ["producer", "live", "liveEventCount", "duplicateEventCount", "eventCounts", "eventDigest"],
+      "properties": {
+        "producer": { "const": "A-3" },
+        "live": { "const": true },
+        "liveEventCount": { "type": "integer", "minimum": 1 },
+        "duplicateEventCount": { "type": "integer", "minimum": 0 },
+        "eventCounts": {
+          "type": "object",
+          "required": ["network", "responseBody", "domSnapshot", "navigation", "frame", "console"],
+          "properties": {
+            "network": { "type": "integer", "minimum": 0 },
+            "responseBody": { "type": "integer", "minimum": 0 },
+            "domSnapshot": { "type": "integer", "minimum": 1 },
+            "navigation": { "type": "integer", "minimum": 0 },
+            "frame": { "type": "integer", "minimum": 0 },
+            "console": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "eventDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "inference": { "type": "object" },
+    "workflow": {
+      "type": "object",
+      "required": ["pageType", "repeatedRegions", "fields", "locators", "listDetailRelation", "pagination"],
+      "properties": {
+        "pageType": { "type": "object" },
+        "repeatedRegions": { "type": "array" },
+        "fields": { "type": "array", "minItems": 5 },
+        "locators": { "type": "array", "minItems": 5 },
+        "listDetailRelation": { "type": "object" },
+        "pagination": { "type": "object" }
+      }
+    },
+    "b2HighlightPayload": {
+      "type": "object",
+      "required": ["highlights"],
+      "properties": {
+        "highlights": { "type": "array", "minItems": 1 }
+      }
+    },
+    "pass": {
+      "type": "object",
+      "required": ["fieldCount", "locatorCount", "highlightCount", "repeatedRegionCount"],
+      "properties": {
+        "fieldCount": { "type": "integer", "minimum": 5 },
+        "locatorCount": { "type": "integer", "minimum": 5 },
+        "highlightCount": { "type": "integer", "minimum": 1 },
+        "repeatedRegionCount": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "terminalReady": { "const": true },
+    "handoffSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  }
+}
