@@ -1,0 +1,122 @@
+{
+  "schema_version": "C_MODE_WAVE2_AB_PARALLEL_BUILD_ASSIGNMENT_V1",
+  "directive_id": "A0-TO-A-B-CMODE-WAVE2-PARALLEL-BUILD-V1-20260807-001",
+  "issued_at_kst": "2026-08-07T01:07:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "authority_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "baseline_head_before_publication": "90403b02872f6449f17bd62929fc4e2357325329",
+  "primary_goal": "C_MODE_COMPLETION_WITH_PARALLEL_SITE_ANALYZER_PRODUCTIZATION",
+  "dispatch_mode": "CYCLE_BATCH_PARALLEL",
+  "manual_validation_workers": 0,
+  "manual_audit_workers": 0,
+  "mid_process_approval_gate": false,
+  "owner_rule": "ONE_OWNER_END_TO_END_BUILD_FIX_RETRY_UNTIL_PASS_OR_PROVEN_EXTERNAL_BLOCKER",
+  "lanes": {
+    "A_GROUP": {
+      "purpose": "C mode runtime lightweighting and Cycle 1 repair",
+      "workers": {
+        "A-2": {
+          "pr": 18,
+          "observed_head": "e29431309a17fc6d3f2f1eb3b422f5ff93866658",
+          "task": "Integrate lightweight browser lifecycle policy, patch package, installer and rollback; directly fix integration conflicts.",
+          "terminal": "A2_C_MODE_WAVE2_LIGHTWEIGHTING_INTEGRATED_PACKAGE_PASS_OR_PROVEN_EXTERNAL_BLOCKER"
+        },
+        "A-3": {
+          "pr": 22,
+          "observed_head": "57012279520de80260bd857c9b6a9edd7aa51cba",
+          "task": "Implement lazy Browser/WebContents creation, browser pool and analyzer-browser deferred creation; directly repair duplicate creation and state binding defects.",
+          "terminal": "A3_C_MODE_WAVE2_LAZY_BROWSER_FACTORY_PASS_OR_PROVEN_EXTERNAL_BLOCKER"
+        },
+        "A-4": {
+          "pr": 23,
+          "observed_head": "b54af2bb3272b613be5458a283e22e2eb5d90ade",
+          "task": "Implement HOT/WARM/COLD browser lifecycle, real destroy, suspend and state restoration without resetting login profile.",
+          "terminal": "A4_C_MODE_WAVE2_BROWSER_LIFECYCLE_RESTORE_PASS_OR_PROVEN_EXTERNAL_BLOCKER"
+        },
+        "A-5": {
+          "pr": 24,
+          "observed_head": "9f83895589f48c765422624a3538d7d5e872fdc1",
+          "task": "Implement polling, render, observer, event-listener and log-growth lightweighting without deleting C mode functions.",
+          "terminal": "A5_C_MODE_WAVE2_POLLING_RENDER_LOG_LIGHTWEIGHTING_PASS_OR_PROVEN_EXTERNAL_BLOCKER"
+        },
+        "A-6": {
+          "pr": 25,
+          "observed_head": "84ea9b34a7c9445a77214288556ff3230442d81e",
+          "task": "Build and run repeat open-close-switch-restart harness, installer and rollback; directly fix leaks and package failures.",
+          "terminal": "A6_C_MODE_WAVE2_LIGHTWEIGHTING_REPEAT_E2E_PASS_OR_PROVEN_EXTERNAL_BLOCKER"
+        },
+        "A-7": {
+          "pr": 26,
+          "observed_head": "4ff15507cebe8a185d92fcbcdd17f0aa547d37e7",
+          "task": "Act as Cycle 1 end-to-end repair owner, not auditor: obtain or package runtime readback, resource baseline and leak harness, execute where possible, directly fix all repairable defects, and do not hand repair back to another worker.",
+          "terminal": "A7_C_MODE_WAVE2_CYCLE1_END_TO_END_REPAIR_PASS_OR_PROVEN_EXTERNAL_BLOCKER"
+        }
+      }
+    },
+    "B_GROUP": {
+      "purpose": "Actual site analyzer, user action replay, extraction, file intake, mechanical transformation and handoff package productization",
+      "workers": {
+        "B-1": {
+          "pr": 19,
+          "observed_head": "6dca87e976439134dc24fed8bd60bc2c9db05fa0",
+          "task": "Own the whole site-analysis production contract, parallel command, integration, result assembly and next-cycle design. Integrate code and directly fix conflicts; do not operate as a review gate.",
+          "terminal": "B1_WAVE2_SITE_ANALYZER_PIPELINE_INTEGRATED_PASS_OR_PROVEN_EXTERNAL_BLOCKER"
+        },
+        "B-2": {
+          "pr": 38,
+          "observed_head": "771da102a0202dc21d9226d9c534275df345582e",
+          "task": "Build the generic browser site analyzer using Electron CDP, Playwright and reusable DOM/network/navigation artifacts. Implement actual browser observation, element selection, page structure, endpoint discovery and data preview.",
+          "references": ["Chrome DevTools Protocol", "Electron webContents.debugger", "Playwright", "Crawl4AI concepts", "Octoparse UI patterns"],
+          "terminal": "B2_WAVE2_GENERIC_BROWSER_SITE_ANALYZER_PASS_OR_PROVEN_EXTERNAL_BLOCKER"
+        },
+        "B-3": {
+          "pr": 39,
+          "observed_head": "86d789a136ce5070d79eab7e6d0205eb23da11d7",
+          "task": "Build user-action recording, replay and extraction-recipe generation. Convert click/input/select/scroll/navigation into deterministic Playwright workflow and recipe code; directly repair replay failures.",
+          "references": ["Chrome Recorder", "Playwright Codegen", "Playwright Locator", "Stagehand action-cache concepts"],
+          "terminal": "B3_WAVE2_ACTION_REPLAY_EXTRACTION_RECIPE_PASS_OR_PROVEN_EXTERNAL_BLOCKER"
+        },
+        "B-4": {
+          "pr": 40,
+          "observed_head": "f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3",
+          "task": "Build real-site extraction and user file/folder intake. Support controlled sample extraction, download capture, local folder registration, immutable source artifact creation and resume. Directly fix extraction and intake failures.",
+          "references": ["Crawlee", "Playwright", "Scrapy concepts", "Firecrawl crawl/map patterns"],
+          "terminal": "B4_WAVE2_REAL_SITE_EXTRACTION_AND_FILE_FOLDER_INTAKE_PASS_OR_PROVEN_EXTERNAL_BLOCKER"
+        },
+        "B-5": {
+          "pr": 41,
+          "observed_head": "40891f2f87eb9f58a369f71e46cadc43f4586157",
+          "task": "Build Python mechanical conversion and decomposition for Excel, PDF, CSV, JSON and HTML. Split files into sheets/pages/tables/records/fragments while preserving exact source positions and lineage. Directly repair parser and conversion failures.",
+          "terminal": "B5_WAVE2_PYTHON_MECHANICAL_TRANSFORM_DECOMPOSITION_PASS_OR_PROVEN_EXTERNAL_BLOCKER"
+        },
+        "B-6": {
+          "pr": 42,
+          "observed_head": "dde23c6a83ac3d4c263a12888e944b6d4c255614",
+          "task": "Do not act as a quality inspector. Build and repair the transformed-result package, source-location lineage, resumable handoff manifest and D-group intake package. Fix package defects directly and do not wait for B-2 through B-5 approvals.",
+          "manual_validation_role": false,
+          "repair_owner": true,
+          "terminal": "B6_WAVE2_TRANSFORM_RESULT_REPAIR_AND_D_HANDOFF_PACKAGE_PASS_OR_PROVEN_EXTERNAL_BLOCKER"
+        }
+      }
+    }
+  },
+  "common_execution_rules": {
+    "build_all_then_integrated_repair": true,
+    "worker_fixes_own_failures": true,
+    "same_failure_signature_repeat_limit": 2,
+    "alternative_method_required_after_repeat": true,
+    "intermediate_failure_is_terminal": false,
+    "automated_tests_owned_by_implementer": true,
+    "separate_manual_validation": false,
+    "sequential_worker_wait": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "wave2_outputs": {
+    "A_GROUP": "LIGHTWEIGHT_C_MODE_RUNTIME_PACKAGE_WITH_ROLLBACK",
+    "B_GROUP": "WORKING_SITE_ANALYZER_TO_EXTRACTION_TO_TRANSFORM_TO_D_HANDOFF_VERTICAL_SLICE"
+  },
+  "status": "ASSIGNMENT_AUTHORITY_PUBLISHED_PENDING_COMMENT_DISPATCH"
+}
