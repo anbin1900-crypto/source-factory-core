@@ -1,6 +1,6 @@
 {
-  "schema_version": "LATEST_C6_PDF_TO_CSV_POINTER_V5",
-  "pointer_id": "LATEST-C6-PDF-PREPROCESS-INTEGRATED-CORRECTION-20260807-001",
+  "schema_version": "LATEST_C6_PDF_TO_CSV_POINTER_V6",
+  "pointer_id": "LATEST-C6-PDF-PREPROCESS-INTEGRATED-CORRECTION-20260807-002",
   "batch_id": "C1-PDF-PREPROCESS-CORRECTION-20260807-001",
   "task_id": "C6_INTEGRATED_DEFECT_DIRECT_REPAIR",
   "worker": "C-6_AI_QUALITY_E2E_VALIDATION",
@@ -9,30 +9,14 @@
   "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
   "directive_comment_id": 5208883940,
   "commander_control_comment_id": 5208884860,
-  "previous_pointer_blob": "4b2d89e9d5ef83fda4e21fd3218324e483a7c12a",
-  "observed_head_before_pointer": "f91a84c3a4e9c51e48f9f49749c907d5ac8c381b",
+  "terminal_comment_id": 5209009684,
+  "previous_pointer_blob": "31a8b5b70d0bb5b7ac2b746476ac95a79a23320a",
   "required_result": "C6_INTEGRATED_CORRECTION_COMPLETE_OR_NO_DEFECT_FOUND",
   "artifacts": {
-    "validator": {
-      "path": "validate_pdf_preprocess_correction_e2e.py",
-      "commit": "2087b78766a0434a0341f27b515b07fd9c83b1f9",
-      "blob": "da9c84541b38149851c07a1cc1c3f1d90ba60a05"
-    },
-    "test": {
-      "path": "test_validate_pdf_preprocess_correction_e2e.py",
-      "commit": "43ce3821973a08a2dbfc63b97bb51ce2e64c6164",
-      "blob": "13c8aefe76e699bd42ab6274979c29c5f9276495"
-    },
-    "e2e_result": {
-      "path": "C6_PDF_PREPROCESS_CORRECTION_E2E_RESULT_V1.json",
-      "commit": "4cb1777dd49f9c9d5f762dec7b577b3b5683f0f3",
-      "blob": "2b87baebe3526ed3bc5cdc74948e82f1e3ccae1a"
-    },
-    "final_report": {
-      "path": "C6_PDF_PREPROCESS_CORRECTION_FINAL_REPORT_V1.json",
-      "commit": "f91a84c3a4e9c51e48f9f49749c907d5ac8c381b",
-      "blob": "39931f4633932fbe9bde4dd5ad077bd628386f61"
-    }
+    "validator": {"path":"validate_pdf_preprocess_correction_e2e.py","commit":"2087b78766a0434a0341f27b515b07fd9c83b1f9","blob":"da9c84541b38149851c07a1cc1c3f1d90ba60a05"},
+    "test": {"path":"test_validate_pdf_preprocess_correction_e2e.py","commit":"43ce3821973a08a2dbfc63b97bb51ce2e64c6164","blob":"13c8aefe76e699bd42ab6274979c29c5f9276495"},
+    "e2e_result": {"path":"C6_PDF_PREPROCESS_CORRECTION_E2E_RESULT_V1.json","commit":"4cb1777dd49f9c9d5f762dec7b577b3b5683f0f3","blob":"2b87baebe3526ed3bc5cdc74948e82f1e3ccae1a"},
+    "final_report": {"path":"C6_PDF_PREPROCESS_CORRECTION_FINAL_REPORT_V1.json","commit":"f91a84c3a4e9c51e48f9f49749c907d5ac8c381b","blob":"39931f4633932fbe9bde4dd5ad077bd628386f61"}
   },
   "direct_repairs": {
     "defects_found": 3,
