@@ -1,0 +1,71 @@
+{
+  "schema_version": "B3_ACTION_RECORDER_CODEGEN_TEST_RESULTS_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "assignment_comment_id": 5207571285,
+  "tested_at_kst": "2026-08-07T02:12:00+09:00",
+  "commands": [
+    "python -m py_compile src/core.py src/recorder_codegen.py src/replay.py tests/test_action_recorder_codegen.py tests/test_codegen_repaired_recipe.py tools/build_fixture_outputs.py",
+    "python -m unittest discover -s tests -v",
+    "python tools/build_fixture_outputs.py"
+  ],
+  "python_compile": "PASS",
+  "unit_tests": "PASS_45_OF_45",
+  "recorded_action_count": 8,
+  "recorded_action_type_count": 7,
+  "recorded_action_types": ["click", "frame", "input", "navigation", "popup", "scroll", "select"],
+  "locator_priority": ["test_id", "role", "label", "placeholder", "id", "text", "css"],
+  "editable_workflow": "PASS_UPDATE_DISABLE_MOVE_REMOVE",
+  "initial_replay": {
+    "status": "FAILED",
+    "failed_step_id": "step-0003",
+    "reason": "locator_not_found_or_ambiguous",
+    "old_locator": "search-submit-old"
+  },
+  "direct_repair": {
+    "method": "SEMANTIC_TARGET_SIGNATURE_TO_HIGHEST_PRIORITY_RESOLVABLE_LOCATOR",
+    "new_locator": "search-submit-new",
+    "repair_count": 1,
+    "replay_status": "PASS",
+    "trace_step_count": 8
+  },
+  "second_failure_corrected": {
+    "signature": "CODEGEN_USED_PRE_REPAIR_RECIPE",
+    "root_cause": "PLAYWRIGHT_SOURCE_GENERATED_BEFORE_REPLAY_REPAIR",
+    "correction": "GENERATE_TYPESCRIPT_FROM_REPAIRED_RECIPE_AND_ADD_REGRESSION_TEST",
+    "validation": "GENERATED_SOURCE_CONTAINS_SEARCH_SUBMIT_NEW_AND_EXCLUDES_SEARCH_SUBMIT_OLD"
+  },
+  "determinism": {
+    "original_recipe_hash": "adffe26f86a22ee98e8cc51a4e19ade4526a7707c4001e7d6a79a7bbb8494c3d",
+    "repaired_recipe_hash": "a036077ce3cd3d4d45e2cfc470a6116a59ce3ab30329c179bdda3821db096228",
+    "repeat_trace_equal": true,
+    "repeat_recipe_hash_equal": true
+  },
+  "remote_key_blob_readback": {
+    "start_report": "19d30d46b5753515108a7f7bbd70f2fde043fda8",
+    "core_source": "7547f06dc35056c7759f2cabf317312d57dd7eef",
+    "recorder_codegen_source": "3c5470bda2a63a78d1e0a08438869066c7b94127",
+    "replay_source": "a22b96f4f62c253c155571c280fdff93592a90f3",
+    "main_tests": "a9a87b60f765fddee764dc8c92fb85f7c54c1b60",
+    "repair_codegen_test": "cdb4547e5be4047b509d7cf53700c645c6119fc5",
+    "fixture": "c46bcfd61f84e32a5a9818a8b9071b0b514090ad",
+    "action_contract": "d94320a65fc5e95b8a89ac35a3c48ac4220053e1",
+    "recipe_contract": "0ec568a6d74114de6461170491905ce227d8a576",
+    "replay_contract": "5b827f9c94a152d82c81ef7f03535942aaed9656",
+    "workflow": "d436c6eb5267377888bd74f5aa05a038b1af8491",
+    "repaired_recipe": "384d1383b501577a8b2a3e72d79003fcdc699e0c",
+    "playwright_source": "0c7fca702a33aace938e9ae700cda5f36b737322",
+    "failure_trace": "a7d0760964ca991994b1f9f5912bbfb1005e1dd1",
+    "pass_trace": "bc8171cdf5a369b7412ccc7facdb33545d53e437",
+    "output_builder": "25e978826f2c67e79848a4c190ea7e9bac00aea5",
+    "result": "PASS_16_OF_16"
+  },
+  "execution_boundary": {
+    "fixture_replay_execution": true,
+    "actual_site_execution": false,
+    "actual_bulk_collection": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "ci_pass_claimed": false
+  }
+}
