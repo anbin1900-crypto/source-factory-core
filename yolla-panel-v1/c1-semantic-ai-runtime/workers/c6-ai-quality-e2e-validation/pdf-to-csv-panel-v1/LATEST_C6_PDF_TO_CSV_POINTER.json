@@ -1,6 +1,6 @@
 {
-  "schema_version": "LATEST_C6_PDF_TO_CSV_POINTER_V1",
-  "pointer_id": "LATEST-C6-PDF-TO-CSV-VALIDATOR-CYCLE1-20260807-001",
+  "schema_version": "LATEST_C6_PDF_TO_CSV_POINTER_V2",
+  "pointer_id": "LATEST-C6-PDF-TO-CSV-VALIDATOR-CYCLE1-20260807-002",
   "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
   "task_id": "C6_PDF_TO_CSV_VALIDATION_V1",
   "worker": "C-6_AI_QUALITY_E2E_VALIDATION",
@@ -9,12 +9,14 @@
   "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
   "directive_comment_id": 5207639329,
   "start_comment_id": 5208068178,
+  "terminal_comment_id": 5208109110,
   "common_directive": {
     "commit": "ef02e3b59a2d389b571d5b5feaa20a8d24a21e4d",
     "blob": "2ce798647c86363a8fd2382a08013304f73bc1ef",
     "remote_readback": "PASS"
   },
-  "observed_head_before_pointer": "b56b6e19126f72b4a08d37098fe4d6f27c2a0f70",
+  "observed_head_before_pointer_v2": "fdc2ab81fb80f6a2d8da0f285b3d300e04e88ba2",
+  "prior_pointer_blob": "4024d335d129ad7ae86a4de571ccbd26ff97becd",
   "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c6-ai-quality-e2e-validation/pdf-to-csv-panel-v1/**",
   "artifacts": {
     "validator": {
@@ -37,10 +39,17 @@
       "commit": "5cd84286868a149b5e033155d6ee6d4385f7b614",
       "blob": "f72b39c963d1ef82d5b435bea7de4dc9ca3a3036"
     },
-    "late_input_receipt": {
+    "late_input_receipt_v1": {
       "path": "C6_PDF_TO_CSV_LATE_INPUT_RECEIPT_V1.json",
       "commit": "94cb53164e4aeaeb60e18e0b9677bb411c81bd6f",
-      "blob": "1b71c43b6714b6c0eaa27c89178e26f42bfa93d3"
+      "blob": "1b71c43b6714b6c0eaa27c89178e26f42bfa93d3",
+      "superseded": true
+    },
+    "late_input_receipt_v2": {
+      "path": "C6_PDF_TO_CSV_LATE_INPUT_RECEIPT_V2.json",
+      "commit": "a2d31f2e692f67cccd0f20eaf4e1b233521a7cf7",
+      "blob": "7e9fcaada0e02b6f08e8577198a5c7f85204e231",
+      "active": true
     }
   },
   "validation": {
@@ -55,24 +64,41 @@
     "nonempty_source_coverage": "PASS",
     "semantic_validation_count": 0,
     "gpt_call_count": 0,
-    "remote_blob_readback": "PASS_5_OF_5_PRE_POINTER"
+    "remote_blob_readback": "PASS_7_OF_7_PRE_POINTER_V2"
   },
   "upstream_cycle1_state": {
+    "gate": "PASS_3_OF_4_WAITING_C4",
     "C2": {
       "pointer_blob": "ba27ebb810d29b989a6677930b13b04cd7e23daf",
       "terminal_result": "C2_PDF_FOLDER_INVENTORY_READY",
       "tests": "PASS_23_OF_23",
       "accepted": true
     },
-    "C3": {"pointer": "NOT_PUBLISHED", "accepted": false},
-    "C4": {"pointer": "NOT_PUBLISHED", "accepted": false},
-    "C5": {"pointer": "NOT_PUBLISHED", "accepted": false}
+    "C3": {
+      "pointer_blob": "71522a0133095a704b809de5910524976117e818",
+      "decision": "C3_PDF_TEXT_EXTRACTION_OCR_READY_FIXTURE_AND_CONTRACT",
+      "tests": "PASS_22_OF_22",
+      "accepted": true
+    },
+    "C4": {
+      "source_blob": "5555e2c7622076d4be290c4d68e966c0ce34a547",
+      "source_published": true,
+      "final_report_published": false,
+      "pointer_published": false,
+      "accepted": false
+    },
+    "C5": {
+      "pointer_blob": "22d7eacd826e732490f85151fd6f09de97f1fc20",
+      "terminal_decision": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_READY",
+      "tests": "PASS_56_OF_56_AFTER_2_CORRECTIONS",
+      "accepted": true
+    }
   },
   "validator_ready": true,
   "actual_cycle1_csv_validation_executed": false,
   "actual_cycle1_csv_pass_claimed": false,
-  "next_gate": "C3_C4_C5_POINTERS_AND_C4_CSV_OUTPUT_PUBLISHED",
-  "decision": "C6_PDF_TO_CSV_VALIDATOR_READY_WAITING_UPSTREAM_OUTPUTS",
+  "next_gate": "C4_FINAL_REPORT_AND_LATEST_POINTER_PUBLISHED",
+  "decision": "C6_VALIDATOR_READY_LATE_INPUTS_BOUND_WAITING_C4",
   "terminal": "C6_PDF_TO_CSV_VALIDATOR_READY_OR_EXACT_BLOCKER",
   "first_blocker": null,
   "semantic_validation": false,
@@ -84,5 +110,5 @@
   "ready": false,
   "merge": false,
   "ci_status": "LOCAL_TESTS_RUN_GITHUB_CI_NOT_RUN_NOT_CLAIMED_PASS",
-  "published_at_kst": "2026-08-07T03:12:00+09:00"
+  "published_at_kst": "2026-08-07T03:16:00+09:00"
 }
