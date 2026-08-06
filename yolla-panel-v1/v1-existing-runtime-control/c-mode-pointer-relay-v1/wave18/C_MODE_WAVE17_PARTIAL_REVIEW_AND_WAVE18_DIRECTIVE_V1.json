@@ -1,0 +1,61 @@
+{
+  "schema_version": "C_MODE_WAVE17_PARTIAL_REVIEW_AND_WAVE18_DIRECTIVE_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "previous_wave": "V1-C-MODE-6W-WAVE-017",
+  "wave_id": "V1-C-MODE-6W-WAVE-018",
+  "registry_sequence": 18,
+  "mode": "RC8_PREINTEGRATION_AND_TARGET_PC_ACCEPTANCE_PREPARATION",
+  "target_version": "5.10.2.4.2-rc8",
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "wave17_review": {
+    "assigned": 6,
+    "reported": 5,
+    "missing": 1,
+    "duplicate_result": 0,
+    "complete": false,
+    "results": {
+      "AUTOMATION-C-W1": {"result_comment": 5198777211, "result_commit": "f55870053245177430c20a3f9ba0029f955df8f0", "outcome": "PASS_EXACT_RESOLVER_BUNDLE", "remote_head_match": true},
+      "AUTOMATION-C-W2": {"result_comment": 5198641540, "result_commit": "d4adf24b4a5bb5381a2aec70531b56bc2f9f4a68", "outcome": "PASS_ARTIFACT_GATE_V2", "remote_head_match": true},
+      "AUTOMATION-C-W3": {"result_comment": 5198723961, "result_commit": "7af7a51ee18e6b5ae6f64942cf02392f596e4678", "outcome": "PASS_EXACT_UI_HOOK_ROLLBACK_BUNDLE", "remote_head_match": true},
+      "AUTOMATION-C-W4": {"result_comment": 5198603151, "result_commit": "c068f213af2cf7cf0636ad23219cc64c157c247f", "outcome": "PASS_OFFLINE_ACCEPTANCE_RUNNER_V2", "remote_head_match": true},
+      "AUTOMATION-C-W5": {"directive_comment": 5198514990, "result_key": "519851499000", "result_comment": null, "head": "6862d0fbbd82d17f708330aa1f71cd49565ecad4", "carryover": true, "report_request_count": 1},
+      "AUTOMATION-C-W6": {"result_comment": 5198605692, "result_commit": "e461d6be7bca1de7682649a2c25657c976120745", "outcome": "PASS_INDEPENDENT_AUDIT_PREPARATION", "remote_head_match": true}
+    },
+    "twenty_minute_gate": "PASSED",
+    "ninety_minute_rescue_gate": "NOT_REACHED",
+    "replacement_required": false
+  },
+  "wave18_assignments": {
+    "AUTOMATION-C-W1": {"command_id": "C6W-W18-W1-RC8-EXPECTED-COMPONENT-MANIFEST-AUTHORITY", "task": "PUBLISH_EXACT_EXPECTED_COMPONENT_MANIFEST_AND_ASSEMBLY_LOCK"},
+    "AUTOMATION-C-W2": {"command_id": "C6W-W18-W2-RC8-PREINSTALL-AUTHORIZATION-AGGREGATOR", "task": "SEPARATE_REPORT_SCOPED_OFFLINE_INSTALLABLE_AUTHORIZED_LIVE_STATES"},
+    "AUTOMATION-C-W3": {"command_id": "C6W-W18-W3-TARGET-PC-UI-EVIDENCE-PACK-V2", "task": "BUILD_ONE_CLICK_UI_EVIDENCE_COLLECTOR_AND_SCHEMA"},
+    "AUTOMATION-C-W4": {"command_id": "C6W-W18-W4-TARGET-PC-DETERMINISTIC-ACCEPTANCE-PACK-V2", "task": "BUILD_FAIL_CLOSED_6X3_RESTART_EXACTLY_ONCE_RUNNER"},
+    "AUTOMATION-C-W6": {"command_id": "C6W-W18-W6-INDEPENDENT-PREINSTALL-ACCEPTANCE-V2", "task": "AUDIT_W1_W2_W3_W4_AND_PREPARE_FINAL_RC8_AUDIT_RUNNER", "implementation_direct_edit": false}
+  },
+  "carryover": {
+    "role": "AUTOMATION-C-W5",
+    "pr": 63,
+    "wave_id": "V1-C-MODE-6W-WAVE-017",
+    "directive_comment": 5198514990,
+    "result_key": "519851499000",
+    "report_request_count": 1,
+    "replacement_threshold": 4,
+    "ninety_minute_rescue_count": 2,
+    "new_directive": false
+  },
+  "registry_plan": {
+    "new_row_count": 5,
+    "carryover_count": 1,
+    "all_rows_valid_before_any_dispatch": true,
+    "partial_dispatch": false,
+    "result_key_rule": "DIRECTIVE_COMMENT_STRING_PLUS_ASCII_00"
+  },
+  "current_progress_percent": 97,
+  "progress_basis": "FIVE_WAVE17_SCOPED_OUTPUTS_REMOTE_VERIFIED",
+  "target_pc_install_authorized": false,
+  "target_pc_pass": "PENDING",
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
