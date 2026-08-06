@@ -1,0 +1,46 @@
+{
+  "schema_version": "LATEST_A0_D_LOCAL_SERVER_CONTROL_SUPPORT_POINTER_V1",
+  "status": "A0_D_LOCAL_SERVER_CONTROL_SUPPORT_READY",
+  "terminal": "A0_D_LOCAL_SERVER_CONTROL_SUPPORT_READY",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "batch": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-local-server-v1/V2_ABCD_LOCAL_SERVER_OPERATION_AND_FUTURE_MIGRATION_BATCH_V1.json",
+    "commit": "bcc40274036282dc1065f3b6f139755d7dc0ecc9"
+  },
+  "task_comment": 5203030391,
+  "source_root": "yolla-panel-v1/a0-successor-control/integration/abcd-local-server-v1/a0-control-support-v1",
+  "report": {
+    "path": "yolla-panel-v1/a0-successor-control/reports/A0_D_LOCAL_SERVER_CONTROL_SUPPORT_BUILD_TEST_REPORT_V1.json",
+    "commit": "f61e53a7b954d3420e8b047e9c043b92341def5c"
+  },
+  "capabilities": [
+    "NINE_STANDARD_LOCAL_SERVER_JOBS",
+    "EXISTING_PC_AGENT_QUEUE_REUSE",
+    "EXACTLY_ONCE_JOB_IDENTITY",
+    "RESTART_RECOVERY",
+    "MISSED_EVENT_RECOVERY",
+    "DUPLICATE_EVENT_SUPPRESSION",
+    "ROLLBACK_PLAN_FOR_REVERSIBLE_ACTIONS",
+    "SERVICE_STATUS_VIEWMODEL",
+    "LAST_RECEIPT_POINTER"
+  ],
+  "validation": {
+    "fixture_assertions": 66,
+    "duplicate_execution_count": 0,
+    "new_pc_agent_runtime": false,
+    "new_transport": false,
+    "d_install_ownership": false
+  },
+  "runtime_boundary": {
+    "target_pc_queue_write_observed": false,
+    "actual_local_server_operation_observed": false,
+    "public_binding": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "next_gate": "D2_ENVIRONMENT_DOCTOR_TERMINAL_AND_D_GROUP_STANDARD_JOB_INVOCATION",
+  "updated_at_kst": "2026-08-06T19:48:00+09:00"
+}
