@@ -1,77 +1,84 @@
 {
-  "schema_version": "LATEST_C6_PDF_TO_CSV_POINTER_V4",
-  "pointer_id": "LATEST-C6-PDF-TO-CSV-CYCLE2-BOTH-MODES-EVENT-WAIT-20260807-001",
-  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE2-20260807-001",
-  "task_id": "C6_FOLDER_AND_SINGLE_PDF_E2E_ACCEPTANCE_V1",
+  "schema_version": "LATEST_C6_PDF_TO_CSV_POINTER_V5",
+  "pointer_id": "LATEST-C6-PDF-PREPROCESS-INTEGRATED-CORRECTION-20260807-001",
+  "batch_id": "C1-PDF-PREPROCESS-CORRECTION-20260807-001",
+  "task_id": "C6_INTEGRATED_DEFECT_DIRECT_REPAIR",
   "worker": "C-6_AI_QUALITY_E2E_VALIDATION",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 20,
   "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
-  "directive_comment_id": 5208564222,
-  "event_wait_comment_id": 5208693312,
-  "previous_pointer_blob": "d6ed5cc4867c9856ad1fc56ef68a46f81a697ecc",
-  "cycle2_common_directive": {
-    "commit": "9484b996f10885a174fb0e1ef661ab357563f705",
-    "blob": "078dd6f439c612a092fbdbf467f7bffb3e6a1a2f",
-    "remote_readback": "PASS"
-  },
-  "acceptance_correction": {
-    "scope_expansion": false,
-    "input_modes": ["FOLDER", "PDF_FILE"],
-    "entry_event": "C5_SINGLE_PANEL_FOLDER_OR_PDF_SELECTION_TERMINAL",
-    "entry_event_satisfied": false,
-    "required_checks": [
-      "FOLDER_MODE_PASS",
-      "SINGLE_PDF_MODE_PASS",
-      "SINGLE_PDF_INPUT_COUNT=1",
-      "NON_SELECTED_PDF_PROCESSED_COUNT=0",
-      "UTF8_SIG=PASS",
-      "PAGE_ORDER=PASS",
-      "CHUNK_CONTINUITY=PASS",
-      "REQUIRED_COLUMNS=PASS",
-      "ERROR_DISPLAY=PASS"
-    ]
-  },
-  "upstream_snapshot": {
-    "C2": {
-      "latest_pointer_blob": "b648fae1da2b31662861aef31ebd30e6daa5676e",
-      "latest_task_id": "C2_PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_V1",
-      "prior_tests": "PASS_29_OF_29",
-      "followup_comment_id": 5208559987,
-      "followup_task_id": "C2_FOLDER_OR_SINGLE_PDF_SELECTION_ADAPTER_V1",
-      "followup_terminal_observed": false
+  "directive_comment_id": 5208883940,
+  "commander_control_comment_id": 5208884860,
+  "previous_pointer_blob": "4b2d89e9d5ef83fda4e21fd3218324e483a7c12a",
+  "observed_head_before_pointer": "f91a84c3a4e9c51e48f9f49749c907d5ac8c381b",
+  "required_result": "C6_INTEGRATED_CORRECTION_COMPLETE_OR_NO_DEFECT_FOUND",
+  "artifacts": {
+    "validator": {
+      "path": "validate_pdf_preprocess_correction_e2e.py",
+      "commit": "2087b78766a0434a0341f27b515b07fd9c83b1f9",
+      "blob": "da9c84541b38149851c07a1cc1c3f1d90ba60a05"
     },
-    "C3": {
-      "latest_pointer_blob": "3aa2d77df839ad5ee95a44965d4a99da088cf1ef",
-      "latest_task_id": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_V1",
-      "prior_tests": "PASS_35_OF_35",
-      "followup_comment_id": 5208561072,
-      "single_record_compatibility_followup_terminal_observed": false
+    "test": {
+      "path": "test_validate_pdf_preprocess_correction_e2e.py",
+      "commit": "43ce3821973a08a2dbfc63b97bb51ce2e64c6164",
+      "blob": "13c8aefe76e699bd42ab6274979c29c5f9276495"
     },
-    "C4": {
-      "latest_pointer_blob": "7845c8676a133f5e4b71d118d3d9eed1044e7b2b",
-      "latest_task_id": "C4_TEXT_CHUNK_CSV_WRITER_V1",
-      "followup_comment_id": 5208562189,
-      "cycle2_orchestrator_both_modes_terminal_observed": false
+    "e2e_result": {
+      "path": "C6_PDF_PREPROCESS_CORRECTION_E2E_RESULT_V1.json",
+      "commit": "4cb1777dd49f9c9d5f762dec7b577b3b5683f0f3",
+      "blob": "2b87baebe3526ed3bc5cdc74948e82f1e3ccae1a"
     },
-    "C5": {
-      "latest_pointer_blob": "22d7eacd826e732490f85151fd6f09de97f1fc20",
-      "latest_task_id": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_V1",
-      "followup_comment_id": 5208563259,
-      "single_panel_folder_or_pdf_terminal_observed": false
+    "final_report": {
+      "path": "C6_PDF_PREPROCESS_CORRECTION_FINAL_REPORT_V1.json",
+      "commit": "f91a84c3a4e9c51e48f9f49749c907d5ac8c381b",
+      "blob": "39931f4633932fbe9bde4dd5ad077bd628386f61"
     }
   },
-  "execution": {
-    "authorized": false,
-    "executed": false,
-    "folder_mode_e2e_executed": false,
-    "single_pdf_mode_e2e_executed": false,
-    "virtual_upstream_artifact_created": false,
-    "virtual_pass_claimed": false
+  "direct_repairs": {
+    "defects_found": 3,
+    "defects_repaired": 3,
+    "unrepaired": 0,
+    "reassigned": 0,
+    "C4_repair_commit": "a8761da05a4573af40d32e3c7e413222fc0b2dda",
+    "C5_repair_commit": "9a48bdb4106a80a9e65418bf9f5a01d9215ea9eb",
+    "parallel_worker_supersession_preserved_repairs": true
   },
-  "decision": "EVENT_WAIT_C5_SINGLE_PANEL_FOLDER_OR_PDF_SELECTION_TERMINAL",
-  "next_gate": "C5_SINGLE_PANEL_FOLDER_OR_PDF_SELECTION_READY_OR_EXACT_BLOCKER_AND_CYCLE2_POINTER",
-  "terminal": "C6_FOLDER_AND_SINGLE_PDF_E2E_PASS_OR_EXACT_BLOCKER",
+  "exact_remote_bindings": {
+    "reference_head": "ffba28b7cbefaf913552f1763958f8674230a9b0",
+    "C2_input_adapter_blob": "f73ac4c21c25346db441f4260decfd73032aaefb",
+    "C3_runtime_adapter_blob": "ba55b3685ec073c2108b3f1dae2478e2922eb3de",
+    "C4_pipeline_blob": "63b40f83b0425d241ad1859864625f4211c847d5",
+    "C5_panel_blob": "5c35e6485ae5879df051e5d8372b62dd31f385cb"
+  },
+  "execution": {
+    "folder_mode": "PASS_2_PDFS_6_CSV_CHUNKS",
+    "single_pdf_mode": "PASS_1_PDF_2_CSV_CHUNKS",
+    "single_pdf_input_count": 1,
+    "non_selected_pdf_processed_count": 0,
+    "direct_text": "PASS",
+    "ocr_fallback": "PASS",
+    "utf8_sig": "PASS",
+    "required_columns": "PASS",
+    "chunk_continuity_per_source": "PASS",
+    "page_order_per_source": "PASS",
+    "progress_events": "PASS",
+    "error_propagation": "PASS",
+    "panel_call_path_executed": true,
+    "gui_window_launch_executed": false,
+    "gui_window_launch_reason": "PYSIDE6_UNAVAILABLE_IN_C6_FIXTURE_RUNTIME"
+  },
+  "validation": {
+    "c6_python_compile": "PASS_2_OF_2",
+    "c6_unit_tests": "PASS_10_OF_10",
+    "integrated_fixture_e2e": "PASS",
+    "all_acceptance_checks": "PASS",
+    "c6_test_bug_fixed_and_rerun": "PASS",
+    "github_ci": "NOT_RUN_NOT_CLAIMED_PASS"
+  },
+  "decision": "C6_INTEGRATED_CORRECTION_COMPLETE",
+  "terminal": "C6_INTEGRATED_CORRECTION_COMPLETE",
+  "next_gate": "C1_FINAL_CORRECTION_REVIEW_AND_CLOSE",
+  "semantic_analysis": false,
   "semantic_validation": false,
   "gpt_call": false,
   "database_write": false,
@@ -79,7 +86,5 @@
   "production": false,
   "ready": false,
   "merge": false,
-  "ci_status": "NOT_RUN_NOT_CLAIMED_PASS",
-  "observed_remote_head": "19b361c9751d3264244760c483ed92a752f3c1c8",
-  "updated_at_kst": "2026-08-07T04:46:00+09:00"
+  "self_merge": false
 }
