@@ -4,43 +4,27 @@
   "task_id": "C3_PDF_TEXT_EXTRACTION_OCR_V1",
   "directive_comment_id": 5207633669,
   "start_comment_id": 5208067172,
+  "terminal_comment_id": 5208115783,
   "authority": {
     "repository": "anbin1900-crypto/source-factory-core",
     "control_pr": 20,
     "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
     "shared_head_before_pointer": "6c2384f629b8b9e0228d8a3cd3b99b9c1a96bf68",
+    "shared_head_at_terminal": "1990d9075033b8e5b1a1fa46fe429d64bd8885a9",
+    "preterminal_pointer_commit": "47336c970292c0cbe1301b885733854fe01767d5",
+    "preterminal_pointer_blob": "71522a0133095a704b809de5910524976117e818",
     "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c3-field-mapping-rules/pdf-to-csv-panel-v1/**"
   },
   "artifacts": {
-    "source": {
-      "path": "pdf_text_extractor.py",
-      "commit": "0f1b2f398e0e0554e8000056a2f3bb50eacb2c25",
-      "blob": "082ec9ada56b2d42c7e40c14b9d2f6491aeebfce",
-      "sha256": "29abdcbbe4f08d138a88a43a0923b2164ada6356b1130066a681a9d4716e7314"
-    },
-    "contract": {
-      "path": "PDF_PAGE_TEXT_RECORD_CONTRACT_V1.json",
-      "commit": "b56b6e19126f72b4a08d37098fe4d6f27c2a0f70",
-      "blob": "6416aea435725afa668488052a0e81ecf9f776a5",
-      "sha256": "fbf5c780e296b5189a2e77be3e041b0a9b60f780cd8a5d686e98ca1d7a311524"
-    },
-    "test": {
-      "path": "test_pdf_text_extractor.py",
-      "commit": "6ecf80384efe7337a4b7dd401487b85347ad27e3",
-      "blob": "7ed3f5761f431e87a1b86c68d7be671d49821600",
-      "sha256": "5e1093ef3aa2b4a4325342bbde6d63973d9781433acd02ebb234b62777f3fb81"
-    },
-    "final_report": {
-      "path": "C3_PDF_TEXT_EXTRACTION_FINAL_REPORT_V1.json",
-      "commit": "d89ecabd0fbe8e8b1c2c4f095a451f53326e7db8",
-      "blob": "d92b5c6f11079a817e4b79c2ae2c769f4264d1f9",
-      "sha256": "2d51af71d01b48f6ad102eda47dc18844cee94935d3b257855b0d19391072601"
-    }
+    "source": {"path": "pdf_text_extractor.py", "commit": "0f1b2f398e0e0554e8000056a2f3bb50eacb2c25", "blob": "082ec9ada56b2d42c7e40c14b9d2f6491aeebfce", "sha256": "29abdcbbe4f08d138a88a43a0923b2164ada6356b1130066a681a9d4716e7314"},
+    "contract": {"path": "PDF_PAGE_TEXT_RECORD_CONTRACT_V1.json", "commit": "b56b6e19126f72b4a08d37098fe4d6f27c2a0f70", "blob": "6416aea435725afa668488052a0e81ecf9f776a5", "sha256": "fbf5c780e296b5189a2e77be3e041b0a9b60f780cd8a5d686e98ca1d7a311524"},
+    "test": {"path": "test_pdf_text_extractor.py", "commit": "6ecf80384efe7337a4b7dd401487b85347ad27e3", "blob": "7ed3f5761f431e87a1b86c68d7be671d49821600", "sha256": "5e1093ef3aa2b4a4325342bbde6d63973d9781433acd02ebb234b62777f3fb81"},
+    "final_report": {"path": "C3_PDF_TEXT_EXTRACTION_FINAL_REPORT_V1.json", "commit": "d89ecabd0fbe8e8b1c2c4f095a451f53326e7db8", "blob": "d92b5c6f11079a817e4b79c2ae2c769f4264d1f9", "sha256": "2d51af71d01b48f6ad102eda47dc18844cee94935d3b257855b0d19391072601"}
   },
   "validation": {
     "unit_tests": "PASS_22_OF_22",
     "python_compile": "PASS_2_OF_2",
-    "remote_readback": "PASS_4_OF_4",
+    "remote_readback": "PASS_5_OF_5",
     "direct_text_first": true,
     "ocr_only_below_threshold": true,
     "page_order_preserved": true,
@@ -52,8 +36,8 @@
   "actual_pdf_batch_execution": false,
   "actual_ocr_binary_execution": false,
   "decision": "C3_PDF_TEXT_EXTRACTION_OCR_READY_FIXTURE_AND_CONTRACT",
-  "terminal": "C3_PDF_TEXT_EXTRACTION_OCR_READY_OR_EXACT_BLOCKER",
-  "terminal_comment_status": "PENDING_PUBLICATION",
+  "terminal": "C3_PDF_TEXT_EXTRACTION_OCR_READY",
+  "terminal_comment_status": "PUBLISHED",
   "ci_status": "NOT_RUN_NOT_CLAIMED_PASS",
   "production": false,
   "ready": false,
