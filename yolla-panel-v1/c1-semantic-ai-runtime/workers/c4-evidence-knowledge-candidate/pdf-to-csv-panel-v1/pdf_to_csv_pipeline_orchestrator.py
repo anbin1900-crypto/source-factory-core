@@ -25,20 +25,59 @@ from output_path_policy import build_source_output_plan, plan_chunk_outputs
 
 
 class PipelineError(RuntimeError):
-    pass
+    def __init__(self, code: str, stage: str, message: str | None = None, **details: Any):
+        self.code = code
+        self.stage = stage
+        self.details = details
+        super().__init__(message or code)
+
+    def to_record(self) -> dict[str, Any]:
+        return {
+            "error_code": self.code,
+            "error_stage": self.stage,
+            "message": str(self),
+            "details": self.details,
+        }
 
 
-def _adapt_selection(
-    *,
-    output_folder: str,
-    source_folder: str | None,
-    pdf_file: str | None,
-) -> dict[str, Any]:
+def _adapt_selection(*, output_folder: str, source_folder: str | None, pdf_file: str | None) -> dict[str, Any]:
     if bool(source_folder) == bool(pdf_file):
-        raise PipelineError("EXACTLY_ONE_SOURCE_MODE_REQUIRED")
+        raise PipelineError("EXACTLY_ONE_SOURCE_MODE_REQUIRED", "INPUT")
     if source_folder:
         return adapt_input_selection("FOLDER", source_folder, output_folder)
     return adapt_input_selection("PDF_FILE", pdf_file, output_folder)
+
+
+def _page_records(extraction: dict[str, Any], relative_path: str) -> list[dict[str, Any]]:
+    records = extraction.get("records")
+    if not isinstance(records, list) or not records:
+        raise PipelineError("EXTRACTION_RECORDS_MISSING", "CHUNK", relative_path)
+    pages: list[dict[str, Any]] = []
+    for expected, row in enumerate(records, start=1):
+        if not isinstance(row, dict):
+            raise PipelineError("PAGE_RECORD_INVALID", "CHUNK", relative_path, expected_page=expected)
+        page_no = row.get("page_no")
+        text = row.get("text")
+        if page_no != expected:
+            raise PipelineError(
+                "PAGE_ORDER_INVALID",
+                "CHUNK",
+                f"{relative_path}: expected page {expected}, got {page_no}",
+                expected_page=expected,
+                actual_page=page_no,
+            )
+        if not isinstance(text, str):
+            raise PipelineError("PAGE_TEXT_INVALID", "CHUNK", relative_path, page_no=page_no)
+        pages.append({"page_no": page_no, "text": text})
+    if extraction.get("page_count") != len(pages):
+        raise PipelineError(
+            "PAGE_COUNT_MISMATCH",
+            "CHUNK",
+            relative_path,
+            declared_page_count=extraction.get("page_count"),
+            actual_page_count=len(pages),
+        )
+    return pages
 
 
 def run_pipeline(
@@ -49,101 +88,177 @@ def run_pipeline(
     max_chars: int = 12000,
     progress: Callable[[dict[str, Any]], None] | None = None,
 ) -> dict[str, Any]:
-    if not isinstance(max_chars, int) or isinstance(max_chars, bool) or max_chars < 1:
-        raise PipelineError("MAX_CHARS_INVALID")
+    events: list[dict[str, Any]] = []
+    sequence = 0
 
-    emit = progress or (lambda event: None)
-    emit({"stage": "SELECTION_START"})
-    selection = _adapt_selection(
-        output_folder=output_folder,
-        source_folder=source_folder,
-        pdf_file=pdf_file,
-    )
-    if not selection["ready_for_processing"]:
-        raise PipelineError("NO_PDF_FILES")
+    def emit(stage: str, **payload: Any) -> None:
+        nonlocal sequence
+        sequence += 1
+        event = {"sequence": sequence, "stage": stage, **payload}
+        events.append(event)
+        if progress is not None:
+            progress(dict(event))
 
-    emit({"stage": "EXTRACTION_START", "pdf_count": selection["pdf_count"]})
-    extraction = run_inventory_extraction(selection["inventory"])
-    if extraction["failed_file_count"]:
-        first_error = next(
-            (item.get("error") for item in extraction["files"] if item["status"] == "ERROR"),
-            None,
-        )
-        raise PipelineError(
-            f"EXTRACTION_FAILED:{extraction['failed_file_count']}:{first_error}"
-        )
+    try:
+        if not isinstance(max_chars, int) or isinstance(max_chars, bool) or max_chars < 1:
+            raise PipelineError("MAX_CHARS_INVALID", "INPUT")
 
-    output_root = Path(selection["output_folder"])
-    source_results: list[dict[str, Any]] = []
-    total_chunks = 0
+        emit("SELECTION_START")
+        selection = _adapt_selection(
+            output_folder=output_folder,
+            source_folder=source_folder,
+            pdf_file=pdf_file,
+        )
+        if not isinstance(selection, dict):
+            raise PipelineError("SELECTION_RESULT_INVALID", "SELECTION")
+        if not selection.get("ready_for_processing"):
+            raise PipelineError("NO_PDF_FILES", "SELECTION")
+        inventory = selection.get("inventory")
+        if not isinstance(inventory, dict):
+            raise PipelineError("INVENTORY_MISSING", "SELECTION")
+        input_mode = selection.get("input_mode")
+        if input_mode not in {"FOLDER", "PDF_FILE"}:
+            raise PipelineError("SELECTION_MODE_INVALID", "SELECTION", actual_mode=input_mode)
+        emit("SELECTION_READY", input_mode=input_mode, pdf_count=selection.get("pdf_count", 0))
 
-    for file_result in extraction["files"]:
-        if file_result["status"] != "PASS" or not file_result["extraction"]:
-            raise PipelineError(f"SOURCE_NOT_EXTRACTED:{file_result['relative_path']}")
+        emit("EXTRACTION_START", pdf_count=selection.get("pdf_count", 0))
+        extraction = run_inventory_extraction(inventory)
+        if not isinstance(extraction, dict):
+            raise PipelineError("EXTRACTION_RESULT_INVALID", "EXTRACTION")
+        failed_count = extraction.get("failed_file_count")
+        if not isinstance(failed_count, int):
+            raise PipelineError("EXTRACTION_FAILED_COUNT_INVALID", "EXTRACTION")
+        if failed_count:
+            first_error = next(
+                (item.get("error") for item in extraction.get("files", []) if item.get("status") == "ERROR"),
+                None,
+            )
+            raise PipelineError(
+                "EXTRACTION_FAILED",
+                "EXTRACTION",
+                f"{failed_count} source file(s) failed extraction",
+                failed_file_count=failed_count,
+                first_error=first_error,
+            )
+        files = extraction.get("files")
+        if not isinstance(files, list) or not files:
+            raise PipelineError("EXTRACTION_FILES_EMPTY", "EXTRACTION")
+        emit("EXTRACTION_READY", passed_file_count=len(files))
 
-        source_no = int(file_result["processing_order"])
-        relative_path = str(file_result["relative_path"])
-        source_plan = build_source_output_plan(relative_path, source_no)
-        pages = [
-            {"page_no": row["page_no"], "text": row["text"]}
-            for row in file_result["extraction"]["records"]
-        ]
-        chunks = chunk_pages(
-            pages,
-            source_file=file_result["file_name"],
-            source_path=file_result["source_path"],
-            max_chars=max_chars,
+        output_root = Path(selection["output_folder"])
+        source_results: list[dict[str, Any]] = []
+        total_chunks = 0
+
+        for file_result in files:
+            if not isinstance(file_result, dict):
+                raise PipelineError("SOURCE_RESULT_INVALID", "SOURCE")
+            if file_result.get("status") != "PASS" or not isinstance(file_result.get("extraction"), dict):
+                raise PipelineError("SOURCE_NOT_EXTRACTED", "SOURCE", str(file_result.get("relative_path")))
+
+            source_no = file_result.get("processing_order")
+            if not isinstance(source_no, int) or isinstance(source_no, bool) or source_no < 1:
+                raise PipelineError("SOURCE_ORDER_INVALID", "SOURCE")
+            relative_path = str(file_result.get("relative_path") or "")
+            if not relative_path:
+                raise PipelineError("SOURCE_RELATIVE_PATH_MISSING", "SOURCE")
+            emit("SOURCE_START", processing_order=source_no, relative_path=relative_path)
+
+            source_plan = build_source_output_plan(relative_path, source_no)
+            pages = _page_records(file_result["extraction"], relative_path)
+            chunks = chunk_pages(
+                pages,
+                source_file=file_result["file_name"],
+                source_path=file_result["source_path"],
+                max_chars=max_chars,
+            )
+            if not chunks:
+                raise PipelineError("CHUNK_RESULT_EMPTY", "CHUNK", relative_path)
+            if any(len(chunk.text) > max_chars for chunk in chunks):
+                raise PipelineError("CHUNK_LIMIT_EXCEEDED", "CHUNK", relative_path)
+
+            chunk_plans = plan_chunk_outputs(
+                source_plan,
+                [(c.chunk_no, c.page_start, c.page_end) for c in chunks],
+            )
+            by_no = {plan.chunk_no: plan for plan in chunk_plans}
+            if len(by_no) != len(chunks):
+                raise PipelineError("CHUNK_NAMING_PLAN_MISMATCH", "OUTPUT", relative_path)
+            target_dir = output_root / Path(source_plan.output_relative_dir)
+            written = write_chunks(
+                chunks,
+                output_dir=target_dir,
+                filename_factory=lambda chunk, plans=by_no: plans[chunk.chunk_no].csv_filename,
+            )
+            if not isinstance(written, list) or len(written) != len(chunks):
+                raise PipelineError("CSV_WRITE_COUNT_MISMATCH", "OUTPUT", relative_path)
+            if any(item.get("encoding") != "UTF-8-SIG" for item in written):
+                raise PipelineError("CSV_ENCODING_MISMATCH", "OUTPUT", relative_path)
+
+            total_chunks += len(written)
+            source_results.append(
+                {
+                    "processing_order": source_no,
+                    "source_file": file_result["file_name"],
+                    "source_path": file_result["source_path"],
+                    "relative_path": relative_path,
+                    "page_count": file_result["extraction"]["page_count"],
+                    "chunk_count": len(written),
+                    "output_relative_dir": source_plan.output_relative_dir,
+                    "files": written,
+                }
+            )
+            emit(
+                "SOURCE_COMPLETE",
+                processing_order=source_no,
+                source_file=file_result["file_name"],
+                chunk_count=len(written),
+            )
+
+        emit("COMPLETE", pdf_count=len(source_results), chunk_count=total_chunks)
+        return {
+            "schema_version": "PDF_TO_CSV_PIPELINE_RESULT_V2",
+            "status": "PASS",
+            "input_mode": selection["input_mode"],
+            "selection_mode": selection["input_mode"],
+            "source_folder": selection["source_folder"],
+            "selected_pdf": selection.get("selected_pdf"),
+            "selected_pdf_file": selection.get("selected_pdf"),
+            "output_folder": selection["output_folder"],
+            "max_chars": max_chars,
+            "pdf_count": len(source_results),
+            "chunk_count": total_chunks,
+            "sources": source_results,
+            "events": events,
+            "semantic_analysis": False,
+            "gpt_call": False,
+            "database_write": False,
+        }
+    except PipelineError as exc:
+        emit(
+            "ERROR",
+            error_stage=exc.stage,
+            error_code=exc.code,
+            message=str(exc),
+            details=exc.details,
         )
-        chunk_plans = plan_chunk_outputs(
-            source_plan,
-            [(c.chunk_no, c.page_start, c.page_end) for c in chunks],
-        )
-        by_no = {plan.chunk_no: plan for plan in chunk_plans}
-        target_dir = output_root / Path(source_plan.output_relative_dir)
-        written = write_chunks(
-            chunks,
-            output_dir=target_dir,
-            filename_factory=lambda chunk, plans=by_no: plans[chunk.chunk_no].csv_filename,
-        )
-        total_chunks += len(written)
-        source_results.append(
-            {
-                "processing_order": source_no,
-                "source_file": file_result["file_name"],
-                "source_path": file_result["source_path"],
-                "relative_path": relative_path,
-                "page_count": file_result["extraction"]["page_count"],
-                "chunk_count": len(written),
-                "output_relative_dir": source_plan.output_relative_dir,
-                "files": written,
-            }
+        exc.details = {**exc.details, "events": list(events)}
+        raise
+    except Exception as exc:
+        wrapped = PipelineError(
+            "PIPELINE_UNEXPECTED_ERROR",
+            "PIPELINE",
+            str(exc),
+            exception_type=type(exc).__name__,
         )
         emit(
-            {
-                "stage": "SOURCE_COMPLETE",
-                "processing_order": source_no,
-                "source_file": file_result["file_name"],
-                "chunk_count": len(written),
-            }
+            "ERROR",
+            error_stage=wrapped.stage,
+            error_code=wrapped.code,
+            message=str(wrapped),
+            details=wrapped.details,
         )
-
-    result = {
-        "schema_version": "PDF_TO_CSV_PIPELINE_RESULT_V2",
-        "status": "PASS",
-        "selection_mode": selection["input_mode"],
-        "source_folder": selection["source_folder"],
-        "selected_pdf_file": selection.get("selected_pdf"),
-        "output_folder": selection["output_folder"],
-        "max_chars": max_chars,
-        "pdf_count": len(source_results),
-        "chunk_count": total_chunks,
-        "sources": source_results,
-        "semantic_analysis": False,
-        "gpt_call": False,
-        "database_write": False,
-    }
-    emit({"stage": "COMPLETE", "pdf_count": len(source_results), "chunk_count": total_chunks})
-    return result
+        wrapped.details = {**wrapped.details, "events": list(events)}
+        raise wrapped from exc
 
 
 def main(argv=None) -> int:
@@ -162,8 +277,13 @@ def main(argv=None) -> int:
             output_folder=args.output_folder,
             max_chars=args.max_chars,
         )
-    except Exception as exc:
-        print(json.dumps({"status": "ERROR", "error": str(exc)}, ensure_ascii=False), file=sys.stderr)
+    except PipelineError as exc:
+        payload = {
+            "status": "ERROR",
+            "error": exc.to_record(),
+            "events": exc.details.get("events", []),
+        }
+        print(json.dumps(payload, ensure_ascii=False, indent=None if args.compact else 2), file=sys.stderr)
         return 2
     print(json.dumps(result, ensure_ascii=False, indent=None if args.compact else 2))
     return 0
