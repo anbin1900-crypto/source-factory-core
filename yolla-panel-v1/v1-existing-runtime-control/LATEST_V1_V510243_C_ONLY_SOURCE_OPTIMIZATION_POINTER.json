@@ -1,0 +1,41 @@
+{
+  "schema_version": "LATEST_V1_V510243_C_ONLY_SOURCE_OPTIMIZATION_POINTER_V1",
+  "version": "5.10.2.4.3",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "source_authority_head": "cd4a1f52df9982b2a37444dbd650ccbadcd0f2e7",
+  "implementation_branch": "agent/yolla-v510243-c-only-source-optimization",
+  "implementation_pr": 75,
+  "source_root": "yolla-panel-v1/v1-existing-runtime-control/runtime-v510243-c-only",
+  "contract": "yolla-panel-v1/v1-existing-runtime-control/runtime-v510243-c-only/V1_V510243_C_ONLY_SOURCE_OPTIMIZATION_CONTRACT_V1.md",
+  "build_report": "yolla-panel-v1/v1-existing-runtime-control/runtime-v510243-c-only/V1_V510243_C_ONLY_SOURCE_OPTIMIZATION_BUILD_TEST_REPORT_V1.json",
+  "artifact_manifest": "yolla-panel-v1/v1-existing-runtime-control/runtime-v510243-c-only/V1_V510243_C_ONLY_SOURCE_OPTIMIZATION_ARTIFACT_MANIFEST_V1.json",
+  "source_file_index": "yolla-panel-v1/v1-existing-runtime-control/runtime-v510243-c-only/V1_V510243_C_ONLY_SOURCE_FILE_INDEX_V1.json",
+  "package": {
+    "file_name": "AI_YOLLA_V510243_C_ONLY_SOURCE_OPTIMIZATION_PACKAGE.zip",
+    "drive_file_id": "1UeD2949fXfQWPUFZoYevRr7LcMu1duCb",
+    "sha256": "85e4586b637a6a3030eb33c43c79ab4822a7a8a723af82787e8fd1c102715707",
+    "size": 62866,
+    "remote_readback": "PASS"
+  },
+  "one_click_installer": {
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510243_C_ONLY_SOURCE_OPTIMIZATION.bat",
+    "drive_file_id": "18zTbJ2v3fQNMAuBkILbBGWuIsjS_HVXk",
+    "sha256": "65a147d5edd3060bcf9ffee86ff0a87fa09c874afcccc796d82d8a9bc1374b7c",
+    "size": 86244,
+    "remote_readback": "PASS"
+  },
+  "offline_validation": "PASS_177_ASSERTION_EVENTS",
+  "target_pc_install": "PENDING",
+  "target_pc_live_pass": false,
+  "a_mode": "FUNCTION_REMOVED_IN_CANDIDATE_SOURCE",
+  "e_mode": "FUNCTION_REMOVED_IN_CANDIDATE_SOURCE",
+  "compatibility_get_state": "READ_ONLY_REMOVED_RESPONSE",
+  "log_panel": "PRESERVED",
+  "historical_a_e_state": "BACKUP_NOT_DELETE",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "SOURCE_AND_INSTALLER_READY_TARGET_PC_PENDING",
+  "updated_at": "2026-08-06T23:44:00+09:00"
+}
