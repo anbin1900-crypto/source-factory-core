@@ -1,47 +1,38 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "LATEST_B4_REPORT_POINTER_V2",
   "worker": "B-4",
-  "task_id": "B1-B4-EXECUTION-TASK-V1-20260804-001",
   "branch": "worker/b4-raw-artifact-source-envelope-v1",
-  "status": "TERMINAL_PASS",
-  "terminal": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY_OR_EXACT_BLOCKER",
-  "terminal_result": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY",
-  "start_report": {
-    "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_START_REPORT_V1.json",
-    "commit": "45e7ac5ae89ea30f9d8115f570ff318db02e69de"
+  "active_directive": {
+    "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+    "directive_comment_id": 5207572969,
+    "status": "TERMINAL_PROVEN_EXTERNAL_BLOCKER",
+    "terminal_contract": "B4_SITE_ANALYZER_WAVE1_REAL_EXTRACTION_PASS_OR_PROVEN_EXTERNAL_BLOCKER",
+    "terminal_result": "B4_SITE_ANALYZER_WAVE1_REAL_EXTRACTION_PROVEN_EXTERNAL_BLOCKER",
+    "start_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave1/reports/B4_SITE_ANALYZER_WAVE1_START_REPORT.json",
+    "test_results_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave1/reports/B4_SITE_ANALYZER_WAVE1_TEST_RESULTS.json",
+    "blocker_evidence_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave1/reports/B4_LIVE_BROWSER_NAVIGATION_BLOCKER_EVIDENCE.json",
+    "final_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave1/reports/B4_SITE_ANALYZER_WAVE1_FINAL_REPORT.json",
+    "latest_pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave1/reports/B4_SITE_ANALYZER_WAVE1_LATEST_POINTER.json",
+    "validation": {
+      "python_compile": "PASS_2_OF_2",
+      "tests": "PASS_34_OF_34",
+      "real_chromium_inline_harness": "PASS_8_OF_8",
+      "real_sample_record_count": 3,
+      "resume_after_failure": "PASS",
+      "external_blocker_signature": "ERR_BLOCKED_BY_ADMINISTRATOR"
+    }
   },
-  "test_results": {
-    "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_TEST_RESULTS_V1.json",
-    "commit": "66fd50bbcfd464651a08162549298898c1bbe41b",
-    "blob": "2bcd82a99f46b5d90accbbeecf47bc71f0b46ff9",
-    "result": "PASS_24_OF_24"
+  "previous_terminal": {
+    "task_id": "B1-B4-EXECUTION-TASK-V1-20260804-001",
+    "terminal_contract": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY_OR_EXACT_BLOCKER",
+    "terminal_result": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY",
+    "final_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_FINAL_REPORT_V1.json",
+    "raw_artifact_manifest_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V1.json",
+    "source_record_envelope_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/SOURCE_RECORD_ENVELOPE_V1.json"
   },
-  "final_report": {
-    "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_FINAL_REPORT_V1.json",
-    "commit": "16a26525a33b94bcf8c949b1d5be091a5ce7b309",
-    "blob": "574d5ba78fb669bf37e53b444f20d8217a7a0794"
-  },
-  "raw_artifact_manifest": {
-    "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V1.json",
-    "blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
-    "sha256": "9059a443c88103cf1472b50617e61097b29ad8e118825485c2a1d68ccf748a97"
-  },
-  "source_record_envelope": {
-    "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/SOURCE_RECORD_ENVELOPE_V1.json",
-    "blob": "0148a841344ce5a0df03e55df532871106dd7333",
-    "sha256": "9889c83d72f6ecca84714509493552b8a9bfa304917275cb779ddb0ecb3aa0ba"
-  },
-  "exact_byte_sha256_parity": "PASS_2_OF_2",
-  "remote_readback": "PASS_11_OF_11",
-  "raw_artifact_count": 2,
-  "total_record_count": 4,
-  "network_call_count": 0,
-  "semantic_transformation_count": 0,
-  "d_canonical_db_write_count": 0,
-  "actual_site_extraction": false,
-  "updated_at_kst": "2026-08-05T16:43:00+09:00",
   "production": false,
   "ready": false,
   "merge": false,
+  "updated_at_kst": "2026-08-07T02:08:33+09:00",
   "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
 }
