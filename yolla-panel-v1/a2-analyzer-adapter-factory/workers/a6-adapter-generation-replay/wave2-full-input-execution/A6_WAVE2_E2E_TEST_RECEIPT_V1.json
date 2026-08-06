@@ -1,0 +1,20 @@
+{
+  "schema_version": "A6_WAVE2_E2E_TEST_RECEIPT_V1",
+  "status": "PASS",
+  "actual_local_http_request_count": 5,
+  "actual_http": true,
+  "fixture_only_terminal": false,
+  "generated_executable_adapter_count": 1,
+  "replay_pass": true,
+  "trace_pass": true,
+  "extracted_records_exact": 10,
+  "unique_record_ids": 10,
+  "failed_step_partial_repair": "PASS_ENDPOINT_404_REPAIRED",
+  "transient_retry": "PASS_503_RETRIED",
+  "live_records_sha256": "42e857146375c20ef61f155fd8fd730a5263e29670e62d03e8089c99ad296f4e",
+  "replay_records_sha256": "42e857146375c20ef61f155fd8fd730a5263e29670e62d03e8089c99ad296f4e",
+  "false_electron_cdp_live_claim_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
