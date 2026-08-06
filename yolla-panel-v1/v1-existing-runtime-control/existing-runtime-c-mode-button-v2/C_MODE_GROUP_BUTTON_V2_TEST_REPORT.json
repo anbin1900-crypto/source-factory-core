@@ -1,0 +1,34 @@
+{
+  "schema_version": "C_MODE_GROUP_BUTTON_V2_TEST_REPORT",
+  "status": "PASS_OFFLINE_TARGET_PC_PENDING",
+  "root_cause": "V1_DID_NOT_REMOVE_LEGACY_E_A_GROUP_HEADER_CONTROLS_AND_COULD_RESTART_STALE_LAUNCHER",
+  "corrections": [
+    "REMOVE_E_A_IN_GROUP_HEADER_ONLY",
+    "PRESERVE_EDIT_AND_ADD",
+    "MUTATION_OBSERVER_CONTINUOUS_REMOVAL",
+    "V1_TO_V2_IDEMPOTENT_UPGRADE",
+    "DIRECT_RESTART_OF_RESOLVED_V510240_RELEASE"
+  ],
+  "tests": {
+    "apply_fixture": "PASS_18_ASSERTIONS",
+    "legacy_removal": "PASS_12_ASSERTIONS",
+    "actual_runtime": "PASS_17_ASSERTIONS",
+    "target_file_gate": "PASS_14_CHECKS",
+    "v1_to_v2_upgrade": "PASS"
+  },
+  "package": {
+    "file_name": "AI_YOLLA_C_MODE_GROUP_BUTTON_PATCH_V2.zip",
+    "size_bytes": 23605,
+    "sha256": "65d82251a5f7cb01bc0e34e32703d7a8d0820975d4bd011926e09767e05c33c3"
+  },
+  "expected_live_ui": {
+    "legacy_e_button_count": 0,
+    "legacy_a_button_count": 0,
+    "c_mode_button_count": "1_PER_GROUP"
+  },
+  "target_pc_execution": "NOT_RUN_IN_THIS_ENVIRONMENT",
+  "target_pc_live_pass": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
