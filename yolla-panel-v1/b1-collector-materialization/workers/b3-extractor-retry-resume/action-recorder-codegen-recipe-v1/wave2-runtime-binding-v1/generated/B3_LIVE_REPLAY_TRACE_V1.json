@@ -1,0 +1,36 @@
+{
+  "assertions": {
+    "frame_status": "loaded",
+    "popup_opened": true,
+    "search_status": "searched:apartment"
+  },
+  "status": "PASS",
+  "step_count": 5,
+  "trace": [
+    {
+      "action": "input",
+      "status": "PASS",
+      "step_id": "step-0001"
+    },
+    {
+      "action": "click",
+      "status": "PASS",
+      "step_id": "step-0002"
+    },
+    {
+      "action": "scroll",
+      "status": "PASS",
+      "step_id": "step-0003"
+    },
+    {
+      "action": "click",
+      "status": "PASS",
+      "step_id": "step-0004"
+    },
+    {
+      "action": "click",
+      "status": "PASS",
+      "step_id": "step-0005"
+    }
+  ]
+}
