@@ -1,0 +1,84 @@
+{
+  "schema_version": "C_MODE_WAVE18_20MIN_STATUS_AND_REPORT_REQUEST_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-018",
+  "registry_sequence": 18,
+  "observed_at_kst": "2026-08-06T09:40:48+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "status": "IN_PROGRESS",
+  "assigned_current_wave": 5,
+  "carryover_count": 1,
+  "reported_current_wave": 0,
+  "reported_carryover": 0,
+  "missing_total": 6,
+  "duplicate_result_count": 0,
+  "new_wave_posted": false,
+  "current_wave_remains_authoritative": true,
+  "replacement_required": 0,
+  "ninety_minute_rescue_required_now": false,
+  "workers": {
+    "AUTOMATION-C-W1": {
+      "pr": 59,
+      "directive_comment": 5198896117,
+      "result_key": "519889611700",
+      "result_comment": null,
+      "head": "f55870053245177430c20a3f9ba0029f955df8f0",
+      "report_request_comment": 5199077282,
+      "report_request_count": 1
+    },
+    "AUTOMATION-C-W2": {
+      "pr": 60,
+      "directive_comment": 5198898401,
+      "result_key": "519889840100",
+      "result_comment": null,
+      "head": "d4adf24b4a5bb5381a2aec70531b56bc2f9f4a68",
+      "report_request_comment": 5199078465,
+      "report_request_count": 1
+    },
+    "AUTOMATION-C-W3": {
+      "pr": 61,
+      "directive_comment": 5198901521,
+      "result_key": "519890152100",
+      "result_comment": null,
+      "head": "7af7a51ee18e6b5ae6f64942cf02392f596e4678",
+      "report_request_comment": 5199079738,
+      "report_request_count": 1
+    },
+    "AUTOMATION-C-W4": {
+      "pr": 62,
+      "directive_comment": 5198904250,
+      "result_key": "519890425000",
+      "result_comment": null,
+      "head": "c068f213af2cf7cf0636ad23219cc64c157c247f",
+      "report_request_comment": 5199080799,
+      "report_request_count": 1
+    },
+    "AUTOMATION-C-W5": {
+      "pr": 63,
+      "wave_id": "V1-C-MODE-6W-WAVE-017",
+      "directive_comment": 5198514990,
+      "result_key": "519851499000",
+      "result_comment": null,
+      "head": "6862d0fbbd82d17f708330aa1f71cd49565ecad4",
+      "report_request_comment": 5199082307,
+      "report_request_count": 2,
+      "carryover": true
+    },
+    "AUTOMATION-C-W6": {
+      "pr": 64,
+      "directive_comment": 5198906883,
+      "result_key": "519890688300",
+      "result_comment": null,
+      "head": "e461d6be7bca1de7682649a2c25657c976120745",
+      "report_request_comment": 5199083394,
+      "report_request_count": 1
+    }
+  },
+  "next_gate": "RESULT_COLLECTION_OR_W5_NINETY_MINUTE_RESCUE_GATE",
+  "current_progress_percent": 97,
+  "target_pc_install_authorized": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
