@@ -1,0 +1,98 @@
+{
+  "schema_version": "A6_C_MODE_CYCLE1_FINAL_REPORT_V1",
+  "worker": "A-6",
+  "role": "A-6_C_MODE_CYCLE1_LEAK_REPEAT_HARNESS_WORKER",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "directive_id": "C1-A6-WEBCONTENTS-LEAK-REPEAT-HARNESS",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "worker_pr": 25,
+  "branch": "worker/a6-adapter-generation-replay-v1",
+  "owned_root": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a6-leak-and-repeat-harness/",
+  "observed_head_before_start": "4d5acd815d52c2fdfca079447989f565f90857eb",
+  "start_commit": "2521dcf33bec6e0bffe9de24795206f4d5092385",
+  "package_head_before_final_report": "a6e3a5f616123b1e4b387e8200df7389e3528929",
+  "completed_at_kst": "2026-08-07T00:11:06+09:00",
+  "package_status": "PASS_RUNNABLE_HARNESS_READY",
+  "target_pc_execution": {
+    "status": "EXACT_EXTERNAL_BLOCKER",
+    "executed": false,
+    "blocker_code": "TARGET_PC_EXECUTION_CHANNEL_AND_INSTALLED_RUNTIME_ADAPTER_UNAVAILABLE",
+    "evidence": {
+      "available_execution_os": "Debian GNU/Linux 13 container",
+      "target_os_required": "Windows 10 target PC",
+      "powershell_available": false,
+      "target_pc_filesystem_mounted": false,
+      "electron_or_yolla_runtime_process_visible": false
+    },
+    "required_external_action": "On the target PC, bind a read-only adapter to the already-installed runtime lifecycle controls and execute the committed harness for at least 10 iterations. Do not modify runtime behavior in Cycle 1.",
+    "example_command": "node c_mode_cycle1_browser_repeat_harness.cjs --adapter target_pc_runtime_adapter.cjs --thresholds C_MODE_CYCLE1_LEAK_THRESHOLD_CONTRACT_V1.json --iterations 10 --settle-ms 1000 --target TARGET_PC_WINDOWS_10 --output A6_CYCLE1_TARGET_PC_BROWSER_REPEAT_RESULT_V1.json"
+  },
+  "artifacts": {
+    "harness": {
+      "path": "c_mode_cycle1_browser_repeat_harness.cjs",
+      "commit": "d1821fe4816835dc17821f0428131e7249ab3c00",
+      "blob": "0d1e4bbf2220212c2d85c39826b31abe01bd176c",
+      "sha256": "7cdd1926ebaeb44b1d04961218ef8af772acc29718ee6d5bbda82a7f48dc41af"
+    },
+    "result_schema": {
+      "path": "C_MODE_CYCLE1_BROWSER_REPEAT_RESULT_V1.schema.json",
+      "commit": "51436b7f15b53a60b68f0586a931287954d58c49",
+      "blob": "8526bddd204976d16b5928278d6441e926142aef",
+      "sha256": "f496f78fa123872eeb09c969666c604dbf7e132bd2135fc86d71c4c65cc99885"
+    },
+    "threshold_contract": {
+      "path": "C_MODE_CYCLE1_LEAK_THRESHOLD_CONTRACT_V1.json",
+      "commit": "a6e3a5f616123b1e4b387e8200df7389e3528929",
+      "blob": "26c30db46bc103ead553ac723469d099d714d900",
+      "sha256": "60bd822b1cec3b81db028136f411f8787e068ee583a0674c79ae88f96d4ba725"
+    }
+  },
+  "harness_self_test": {
+    "syntax_check": "PASS",
+    "normal_10_repeat": {
+      "status": "PASS",
+      "repeat_count": 10,
+      "operation_count": 70,
+      "phase_snapshot_count": 80,
+      "result_sha256": "436ca926e320e965b14d4e0694c5327a705306cf3367c410334043cd9e01b528"
+    },
+    "leak_injection": {
+      "status": "PASS_EXPECTED_EXACT_FINDING",
+      "process_renderer_webcontents_listener_timer_memory_background_findings": true,
+      "result_sha256": "6b3b59d74298e2a213eb9d71ac04ac002294b1e4d8748088af81da0f9ea4eefe"
+    },
+    "missing_metric_injection": {
+      "status": "PASS_EXPECTED_EXACT_BLOCKER",
+      "required_metric_missing_count": 8,
+      "result_sha256": "a106a644c1d2d14af8f78fcc05ab35196a4ccd4e1dd2e7be9313c71f36afda9e"
+    },
+    "minimum_repeat_gate": "PASS_REJECTED_9_WITH_EXIT_2"
+  },
+  "pass_criteria": {
+    "open_close_repeat_count_at_least_10_when_executed": "SELF_TEST_PASS_10_TARGET_PC_EXACT_BLOCKER",
+    "process_and_memory_delta_captured": true,
+    "residual_renderer_and_webcontents_captured": true,
+    "duplicate_listener_and_timer_signal_captured": true,
+    "log_growth_captured": true,
+    "closed_browser_background_activity_captured": true,
+    "unbounded_growth": "PASS_OR_EXACT_FINDING_IMPLEMENTED",
+    "functional_patch_count": 0
+  },
+  "remote_readback": {
+    "harness": "PASS",
+    "result_schema": "PASS",
+    "threshold_contract": "PASS"
+  },
+  "boundaries": {
+    "functional_patch_count": 0,
+    "site_analyzer_work": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "next_owner": "A-7",
+  "next_event": "A6_REMOTE_HEAD_AND_EXACT_TARGET_PC_BLOCKER_REVIEW",
+  "terminal": "A6_C_MODE_CYCLE1_LEAK_REPEAT_BASELINE_READY_OR_EXACT_BLOCKER",
+  "status": "TERMINAL_PACKAGE_READY_TARGET_PC_EXACT_EXTERNAL_BLOCKER"
+}
