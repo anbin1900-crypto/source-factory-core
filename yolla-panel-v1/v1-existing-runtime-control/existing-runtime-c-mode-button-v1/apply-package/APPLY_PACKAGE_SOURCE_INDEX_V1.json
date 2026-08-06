@@ -1,0 +1,30 @@
+{
+  "schema_version": "C_MODE_GROUP_BUTTON_APPLY_PACKAGE_SOURCE_INDEX_V1",
+  "package_file": "AI_YOLLA_C_MODE_GROUP_BUTTON_PATCH_V1.zip",
+  "package_sha256": "1a573bd5bc705aa56f314b379281d3ab98c74f705e8f422c52f16f308639d654",
+  "package_size_bytes": 21682,
+  "contained_files": [
+    "APPLY_C_MODE_GROUP_BUTTON_PATCH.bat",
+    "ROLLBACK_C_MODE_GROUP_BUTTON_PATCH.bat",
+    "Apply-CModeGroupButtonPatch.ps1",
+    "Rollback-CModeGroupButtonPatch.ps1",
+    "apply_existing_runtime_group_button_patch.cjs",
+    "validate_c_mode_group_button_target.cjs",
+    "test_apply_existing_runtime_group_button_patch.cjs",
+    "test_group_button_runtime_behavior.cjs",
+    "runtime-files/workspace_c_mode_group_button.js",
+    "runtime-files/workspace_c_mode_group_button.css",
+    "README_APPLY.txt",
+    "PAYLOAD_MANIFEST.json",
+    "C_MODE_GROUP_BUTTON_APPLY_PACKAGE_TEST_REPORT_V1.json"
+  ],
+  "source_delivery": "CHAT_ARTIFACT_ZIP",
+  "git_authority_files": [
+    "README_APPLY.txt",
+    "PAYLOAD_MANIFEST.json",
+    "C_MODE_GROUP_BUTTON_APPLY_PACKAGE_TEST_REPORT_V1.json",
+    "TARGET_PC_APPLY_CHECKLIST_V1.md",
+    "APPLY_PACKAGE_DELIVERY_V1.json"
+  ],
+  "target_pc_execution": "NOT_RUN"
+}
