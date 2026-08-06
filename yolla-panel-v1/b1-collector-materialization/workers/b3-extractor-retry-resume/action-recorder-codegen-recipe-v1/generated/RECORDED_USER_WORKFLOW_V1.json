@@ -1,0 +1,20 @@
+{
+  "actual_site_execution": false,
+  "editable_fields": ["enabled", "value", "url", "metadata", "locator", "locator_candidates"],
+  "fixture_only": true,
+  "recorded_action_count": 8,
+  "recorded_action_types": ["click", "frame", "input", "navigation", "popup", "scroll", "select"],
+  "schema_version": "B3_RECORDED_USER_WORKFLOW_V1",
+  "session_id": "fixture-session-001",
+  "start_url": "https://fixture.local/search",
+  "steps": [
+    {"action_type":"input","enabled":true,"frame_path":[],"locator":{"metadata":{},"score":100,"strategy":"test_id","value":"keyword-input"},"metadata":{},"page_alias":"page","sequence":1,"step_id":"step-0001","target_signature":"8ddd95ac3ddf184f82330aa529fd957279f701d09a0f6f03c070975f6590016a","url":null,"value":"apartment"},
+    {"action_type":"select","enabled":true,"frame_path":[],"locator":{"metadata":{},"score":100,"strategy":"test_id","value":"region-select"},"metadata":{},"page_alias":"page","sequence":2,"step_id":"step-0002","target_signature":"6efff854b72bb8d1ba02c3e57913cccb4f16a5abca33dbec10f07c0ff21bba38","url":null,"value":"seoul"},
+    {"action_type":"click","enabled":true,"frame_path":[],"locator":{"metadata":{},"score":100,"strategy":"test_id","value":"search-submit-old"},"metadata":{},"page_alias":"page","sequence":3,"step_id":"step-0003","target_signature":"e92d2c84358e0af56c48d57147ebb2f71e8b1aef5cb16e42a7d7da8dd921199a","url":null,"value":null},
+    {"action_type":"scroll","enabled":true,"frame_path":[],"locator":null,"metadata":{},"page_alias":"page","sequence":4,"step_id":"step-0004","target_signature":null,"url":null,"value":{"x":0,"y":850}},
+    {"action_type":"popup","enabled":true,"frame_path":[],"locator":{"metadata":{},"score":100,"strategy":"test_id","value":"details-link"},"metadata":{"popup_alias":"detailPage"},"page_alias":"page","sequence":5,"step_id":"step-0005","target_signature":"befeba99d50b16b3e44a2b33b5b5745c97698a4d979edc222b33996591c93bb2","url":null,"value":null},
+    {"action_type":"frame","enabled":true,"frame_path":[],"locator":{"metadata":{},"score":100,"strategy":"test_id","value":"result-frame"},"metadata":{"frame_alias":"resultFrame","operation":"enter"},"page_alias":"detailPage","sequence":6,"step_id":"step-0006","target_signature":"08a28458bbf0407e1770071b7836fa026309dd1b1d0bcd4fd19634dea906132c","url":null,"value":null},
+    {"action_type":"navigation","enabled":true,"frame_path":["resultFrame"],"locator":null,"metadata":{},"page_alias":"detailPage","sequence":7,"step_id":"step-0007","target_signature":null,"url":"https://fixture.local/details/1","value":null},
+    {"action_type":"frame","enabled":true,"frame_path":["resultFrame"],"locator":{"metadata":{},"score":100,"strategy":"test_id","value":"result-frame"},"metadata":{"frame_alias":"resultFrame","operation":"exit"},"page_alias":"detailPage","sequence":8,"step_id":"step-0008","target_signature":"08a28458bbf0407e1770071b7836fa026309dd1b1d0bcd4fd19634dea906132c","url":null,"value":null}
+  ]
+}
