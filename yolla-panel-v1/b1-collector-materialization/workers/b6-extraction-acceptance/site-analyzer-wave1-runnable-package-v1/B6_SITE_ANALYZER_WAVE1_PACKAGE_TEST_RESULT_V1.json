@@ -1,0 +1,85 @@
+{
+  "schema_version": "B6_SITE_ANALYZER_WAVE1_PACKAGE_TEST_RESULT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "task_comment": 5207576134,
+  "execution_mode": "ONE_OWNER_END_TO_END_PACKAGE_BUILD_REPAIR_AND_RETEST",
+  "package": {
+    "name": "B6_SITE_ANALYZER_WAVE1_RUNNABLE_PACKAGE_V1.zip",
+    "size_bytes": 18417,
+    "sha256": "d51654c036f2d70745f58a6f4d94af9734b56d3c0d9a89d7c5c5da1c873767ee",
+    "entry_count": 18,
+    "transport": "BASE64_7_PARTS_WITH_VERIFIED_BOOTSTRAP_REASSEMBLY",
+    "single_entrypoint": "launcher.py"
+  },
+  "commands": [
+    "python launcher.py verify",
+    "python launcher.py self-test",
+    "python -m unittest discover -s tests -v",
+    "python launcher.py run --fixture sample/sample_input.json",
+    "python bootstrap.py install",
+    "python bootstrap.py verify",
+    "python bootstrap.py self-test",
+    "python bootstrap.py run-sample",
+    "python bootstrap.py rollback"
+  ],
+  "results": {
+    "manifest_member_integrity": "PASS_17_OF_17",
+    "package_entry_count": "PASS_18_OF_18",
+    "self_test": "PASS_10_OF_10",
+    "unit_tests": "PASS_3_OF_3",
+    "bootstrap_sequence": "PASS_INSTALL_VERIFY_SELF_TEST_RUN_SAMPLE_ROLLBACK",
+    "deterministic_replay": "PASS",
+    "deterministic_output_sha256": "fa42aad51789a607bea5998a363592bbc881fffd5e0644ba33d04e077fe3a797",
+    "sample_record_count": 1,
+    "field_candidate_count": 7,
+    "json_export": "PASS",
+    "csv_export": "PASS",
+    "xlsx_export": "PASS_REAL_XLSX_BYTES_AND_BASE64_TRANSPORT",
+    "html_preview": "PASS",
+    "replay_trace": "PASS",
+    "rollback": "PASS_PACKAGE_LOCAL_ONLY",
+    "remote_envelope_readback": "PASS_10_OF_10"
+  },
+  "upstream_validation": {
+    "workers_accounted": 11,
+    "terminal_count": 9,
+    "implementation_evidence_count": 10,
+    "B3_source_and_tests": "PASS_45_OF_45_REMOTE_16_OF_16_TERMINAL_COMMENT_NOT_POSTED",
+    "B1_product_assembly_terminal": "NOT_POSTED_AT_CUTOFF",
+    "no_sequential_wait_applied": true
+  },
+  "fail_closed_mutations": {
+    "executed": 8,
+    "passed": 8,
+    "result": "PASS_8_OF_8",
+    "checks": [
+      "reject missing zip part",
+      "reject zip sha mismatch",
+      "reject manifest member mismatch",
+      "reject deterministic replay mismatch",
+      "reject record count above cap",
+      "reject false live-site claim",
+      "reject production or ready transition",
+      "reject database work"
+    ]
+  },
+  "aggregate": {
+    "deterministic_package_checks": 48,
+    "passed": 48,
+    "failed": 0,
+    "result": "PASS_48_OF_48_PACKAGE_AND_BINDING_CHECKS"
+  },
+  "live_runtime": {
+    "actual_electron_browserwindow_execution": false,
+    "actual_external_site_call_count": 0,
+    "actual_live_extracted_record_count": 0,
+    "blocker": "TARGET_PC_ELECTRON_WEBCONTENTS_AND_EXTERNAL_SITE_NAVIGATION_UNAVAILABLE_OR_POLICY_BLOCKED",
+    "evidence_workers": ["A-2","A-3","A-6","A-7","B-4"],
+    "false_live_pass_count": 0
+  },
+  "github_actions_ci_pass_claimed": false,
+  "database_work": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
