@@ -1,19 +1,22 @@
 {
-  "schema_version": "B2_SITE_ANALYZER_WAVE2_RUNTIME_TEST_RESULT_V1",
+  "schema_version": "B2_SITE_ANALYZER_WAVE2_RUNTIME_TEST_RESULT_V2",
   "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
   "directive_comment": 5208244151,
   "worker": "B-2",
-  "tested_at_kst": "2026-08-07T04:08:00+09:00",
-  "observed_remote_head": "0bb359d0bd4a93e2371c6a26d7501ea81e0b60a4",
-  "commands": {
+  "tested_at_kst": "2026-08-07T04:18:00+09:00",
+  "test_commands": {
     "node": "node --test tests/runtime_bridge_client.test.mjs tests/runtime_bridge_model.test.mjs",
     "chromium_runtime": "node tests/runtime_bridge_browser_smoke.mjs"
   },
   "node_test": {
     "status": "PASS",
-    "test_count": 20,
-    "pass_count": 20,
-    "fail_count": 0
+    "test_count": 22,
+    "pass_count": 22,
+    "fail_count": 0,
+    "added_repairs": [
+      "A2_ANALYZER_API_PROGRESS_BRIDGE",
+      "A2_ANALYZER_STATE_TO_A3_A4_A5_B3_B5_TOPIC_SYNTHESIS"
+    ]
   },
   "chromium_runtime_smoke": {
     "status": "PASS",
@@ -32,9 +35,25 @@
     "highlight_counts": {"repeat": 3, "field": 6, "pagination": 1},
     "static_fixture_auto_loaded": false
   },
+  "a2_existing_runtime_contract": {
+    "preload_path": "yolla-panel-v1/a2-analyzer-adapter-factory/site-analyzer-wave1/src/analyzer-preload.cjs",
+    "preload_blob": "875e3dde34b852adca554f3d5d670011b7c77e72",
+    "exposed_object": "window.analyzerAPI",
+    "bound_methods": ["getState", "onProgress"],
+    "progress_schema": "ANALYSIS_PROGRESS_EVENT_V1",
+    "compatibility": "PASS"
+  },
+  "synthesized_live_topics_from_analyzer_state": [
+    "analyzer:browser-state",
+    "analyzer:a3-event",
+    "analyzer:a4-candidates",
+    "analyzer:a5-inference",
+    "analyzer:b3-workflow",
+    "analyzer:b5-preview"
+  ],
   "required_validation": {
     "HEAD_ADVANCE": "PASS",
-    "LIVE_BRIDGE": "PASS_MESSAGE_PORT_RUNTIME",
+    "LIVE_BRIDGE": "PASS_ANALYZER_API_AND_MESSAGE_PORT_RUNTIME",
     "ELEMENT_PICKER": "PASS",
     "HIGHLIGHT": "PASS_REPEAT_FIELD_PAGINATION",
     "WORKFLOW_EDITOR": "PASS_EDIT_REORDER_REMOVE",
@@ -42,7 +61,8 @@
     "STATIC_SAMPLE_TERMINAL": false
   },
   "runtime_compatibility": {
-    "electron_preload_bridge": "PASS_UNIT_COMPATIBILITY",
+    "existing_a2_analyzer_api": "PASS_UNIT_AND_STATE_SYNTHESIS",
+    "electron_preload_generic_bridge": "PASS_UNIT_COMPATIBILITY",
     "message_port": "PASS_ACTUAL_CHROMIUM_RUNTIME",
     "broadcast_channel": "PASS_BOUND",
     "custom_event": "PASS_BOUND",
@@ -50,22 +70,14 @@
   },
   "remote_readback": {
     "package_blob": "00d60f4a265d756b214cbac1c016c7404416aad8",
-    "runtime_bridge_blob": "70733c6bdc4c3a4bd16d8138cfe8c67304118b0b",
+    "runtime_bridge_blob": "8777873e6d1a2ca3e67a84af3d2bec49229abfe7",
     "live_model_blob": "1e3a1b7b00782bf8635a2573111c4e3f2deb8694",
     "live_app_blob": "9e601f56e787eee3c5acffd41356984d0c3c7ea8",
     "ui_blob": "a422a36141d28f46dfeaeea1e90621cbbd5d77b9",
-    "client_test_blob": "3bdf69addcabf9ce05cfbedb57ba61c2d7271b08",
+    "client_test_blob": "8a24f43d61d71241a5e79a3da57d94212957f55d",
     "model_test_blob": "4da9b9098d062b2d5e0ec19ff1d1131b47631dbf",
     "browser_smoke_test_blob": "5f8823aa938784ac3ed07134344e06dd1b8a2f92",
     "status": "PASS_8_OF_8"
-  },
-  "upstream_head_observation": {
-    "A-2": "7528715951ab6fd64b60181c6f9fa156ef7e8ef6",
-    "A-3": "e86dfcc2fc32ad366cd7fd8ba07392850419b853",
-    "A-4": "50c0555394f5fb3543f079ecfb60a0ed2eeab638",
-    "A-5": "db1ce4af35b4724554d9d972766826d18ae9891b",
-    "B-3": "d74c609241ba9c48cc432bf1fa3c7d7257354f8a",
-    "B-5": "430f7599f04feb2a2863c95027efe66ff3eef698"
   },
   "actual_external_site_call_count": 0,
   "credential_use_count": 0,
