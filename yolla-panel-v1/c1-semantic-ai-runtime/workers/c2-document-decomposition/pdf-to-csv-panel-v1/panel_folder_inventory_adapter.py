@@ -3,10 +3,11 @@ from __future__ import annotations
 import argparse,hashlib,json,os,sys,tempfile
 from pathlib import Path
 from pdf_folder_inventory import InventoryError,build_inventory
-SCHEMA_VERSION='PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_V2'
+SCHEMA_VERSION='PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_V3'
 CYCLE1_POINTER_BLOB='ba27ebb810d29b989a6677930b13b04cd7e23daf'
 CYCLE1_INVENTORY_SCHEMA='PDF_FOLDER_INVENTORY_V1'
 INPUT_MODES=('FOLDER','PDF_FILE')
+PDF_MAGIC_PREFIX=b'%PDF'
 class FolderSelectionAdapterError(RuntimeError): pass
 
 def _validate_selected_directory(selected_path,*,role):
@@ -17,7 +18,8 @@ def _validate_selected_directory(selected_path,*,role):
     except OSError as e: raise FolderSelectionAdapterError(f'{role}_FOLDER_STAT_FAILED:{path}:{e}') from e
     if path.is_symlink(): raise FolderSelectionAdapterError(f'{role}_FOLDER_SYMLINK_FORBIDDEN:{path}')
     if not path.is_dir(): raise FolderSelectionAdapterError(f'{role}_FOLDER_NOT_DIRECTORY:{path}')
-    return path.resolve(strict=True)
+    try: return path.resolve(strict=True)
+    except OSError as e: raise FolderSelectionAdapterError(f'{role}_FOLDER_RESOLVE_FAILED:{path}:{e}') from e
 
 def _validate_selected_pdf(selected_path):
     if selected_path is None or not str(selected_path).strip(): raise FolderSelectionAdapterError('PDF_FILE_REQUIRED')
@@ -28,7 +30,15 @@ def _validate_selected_pdf(selected_path):
     if path.is_symlink(): raise FolderSelectionAdapterError(f'PDF_FILE_SYMLINK_FORBIDDEN:{path}')
     if not path.is_file(): raise FolderSelectionAdapterError(f'PDF_FILE_NOT_FILE:{path}')
     if path.suffix.casefold()!='.pdf': raise FolderSelectionAdapterError(f'PDF_FILE_EXTENSION_INVALID:{path}')
-    return path.resolve(strict=True)
+    try:
+        resolved=path.resolve(strict=True)
+        with resolved.open('rb') as stream:
+            magic=stream.read(len(PDF_MAGIC_PREFIX))
+    except OSError as e:
+        raise FolderSelectionAdapterError(f'PDF_FILE_READ_FAILED:{path}:{e}') from e
+    if magic!=PDF_MAGIC_PREFIX:
+        raise FolderSelectionAdapterError(f'PDF_FILE_SIGNATURE_INVALID:{path}')
+    return resolved
 
 def _verify_output_writable(output_folder):
     probe_path=None
@@ -62,6 +72,8 @@ def _validate_cycle1_inventory(inventory,source_folder,*,expected_count=None,exp
     if expected_count is not None and len(files)!=expected_count: raise FolderSelectionAdapterError('CYCLE1_INVENTORY_EXPECTED_COUNT_MISMATCH')
     digest=inventory.get('inventory_sha256')
     if not isinstance(digest,str) or len(digest)!=64 or any(c not in '0123456789abcdef' for c in digest): raise FolderSelectionAdapterError('CYCLE1_INVENTORY_HASH_INVALID')
+    calculated=_canonical_files_hash(files)
+    if digest!=calculated: raise FolderSelectionAdapterError('CYCLE1_INVENTORY_HASH_MISMATCH')
     for i,item in enumerate(files,1):
         if not isinstance(item,dict): raise FolderSelectionAdapterError('CYCLE1_INVENTORY_ENTRY_NOT_OBJECT')
         if item.get('processing_order')!=i: raise FolderSelectionAdapterError('CYCLE1_PROCESSING_ORDER_INVALID')
@@ -83,16 +95,19 @@ def adapt_input_selection(input_mode,input_path,output_folder,*,verify_output_wr
     output=_validate_output_folder(output_folder,verify_output_writable=verify_output_writable)
     if mode=='FOLDER':
         source=_validate_selected_directory(input_path,role='SOURCE')
-        if os.path.normcase(str(source))==os.path.normcase(str(output)): raise FolderSelectionAdapterError('SOURCE_OUTPUT_FOLDER_COLLISION')
+        selected_pdf=None
         try: inventory=build_inventory(source)
         except (InventoryError,FileNotFoundError,OSError) as e: raise FolderSelectionAdapterError(f'CYCLE1_INVENTORY_FAILED:{e}') from e
-        _validate_cycle1_inventory(inventory,source); selected_pdf=None
+        _validate_cycle1_inventory(inventory,source)
     else:
-        selected_pdf=_validate_selected_pdf(input_path); source=selected_pdf.parent.resolve(strict=True)
+        selected_pdf=_validate_selected_pdf(input_path)
+        source=selected_pdf.parent.resolve(strict=True)
         inventory=_build_single_pdf_inventory(selected_pdf)
         _validate_cycle1_inventory(inventory,source,expected_count=1,expected_relative_path=selected_pdf.name)
+    if os.path.normcase(str(source))==os.path.normcase(str(output)):
+        raise FolderSelectionAdapterError('SOURCE_OUTPUT_FOLDER_COLLISION')
     count=inventory['pdf_count']
-    return {'schema_version':SCHEMA_VERSION,'input_mode':mode,'input_path':str(source if mode=='FOLDER' else selected_pdf),'source_folder':str(source),'selected_pdf':str(selected_pdf) if selected_pdf else None,'output_folder':str(output),'source_output_distinct':os.path.normcase(str(source))!=os.path.normcase(str(output)) if mode=='FOLDER' else True,'output_write_probe':'PASS' if verify_output_writable else 'SKIPPED_BY_CALLER','cycle1_pointer_blob':CYCLE1_POINTER_BLOB,'inventory':inventory,'pdf_count':count,'selection_status':'READY' if count>0 else 'NO_PDF_FILES','ready_for_processing':count>0,'semantic_analysis_performed':False,'gpt_call_performed':False}
+    return {'schema_version':SCHEMA_VERSION,'input_mode':mode,'input_path':str(source if mode=='FOLDER' else selected_pdf),'source_folder':str(source),'selected_pdf':str(selected_pdf) if selected_pdf else None,'output_folder':str(output),'source_output_distinct':True,'output_write_probe':'PASS' if verify_output_writable else 'SKIPPED_BY_CALLER','cycle1_pointer_blob':CYCLE1_POINTER_BLOB,'inventory':inventory,'pdf_count':count,'selection_status':'READY' if count>0 else 'NO_PDF_FILES','ready_for_processing':count>0,'semantic_analysis_performed':False,'gpt_call_performed':False}
 
 def adapt_folder_selection(source_folder,output_folder,*,verify_output_writable=True): return adapt_input_selection('FOLDER',source_folder,output_folder,verify_output_writable=verify_output_writable)
 def adapt_pdf_file_selection(pdf_file,output_folder,*,verify_output_writable=True): return adapt_input_selection('PDF_FILE',pdf_file,output_folder,verify_output_writable=verify_output_writable)
