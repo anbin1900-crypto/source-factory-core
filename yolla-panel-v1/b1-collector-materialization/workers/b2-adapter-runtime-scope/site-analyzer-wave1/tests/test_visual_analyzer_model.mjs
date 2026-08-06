@@ -46,3 +46,4 @@ test("HTML exposes Live Browser Pane", () => { const html=fs.readFileSync(path.j
 test("HTML exposes Smart Inspector", () => { const html=fs.readFileSync(path.join(ROOT,"ui/index.html"),"utf8"); assert.match(html,/Smart Inspector/); });
 test("HTML exposes Workflow View", () => { const html=fs.readFileSync(path.join(ROOT,"ui/index.html"),"utf8"); assert.match(html,/Workflow View/); });
 test("HTML exposes Data Preview", () => { const html=fs.readFileSync(path.join(ROOT,"ui/index.html"),"utf8"); assert.match(html,/Data Preview/); });
+test("default browser URL resolves fixture from UI directory", () => { const html=fs.readFileSync(path.join(ROOT,"ui/index.html"),"utf8"); assert.match(html,/value="\.\.\/fixtures\/listing_page\.html"/); });
