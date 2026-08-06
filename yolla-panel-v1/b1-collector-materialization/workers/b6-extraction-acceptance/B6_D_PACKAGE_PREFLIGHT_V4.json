@@ -1,0 +1,120 @@
+{
+  "schema_version": "B6_D_PACKAGE_PREFLIGHT_V4",
+  "task_id": "B6_D_SOURCE_DOCUMENT_HANDOFF_DELTA_REPREFLIGHT_V4",
+  "common_directive_id": "V2-TO-ABCD-LOCAL-SERVER-OPERATION-AND-FUTURE-MIGRATION-BATCH-V1-20260806-001",
+  "common_directive_commit": "bcc40274036282dc1065f3b6f139755d7dc0ecc9",
+  "common_directive_blob": "c272b0d7b965cb8b3bac50061fff90b4e9a97263",
+  "task_directive_comment_id": 5203025369,
+  "checked_at_kst": "2026-08-06T19:48:00+09:00",
+  "mode": "DELTA_ONLY_AFTER_B5_EXACT_SUBMISSION_FIELDS_READY",
+  "baseline": {
+    "B6_head": "a237ef43dfd380372df29923a7179ba5226c7fe2",
+    "prior_pointer_blob": "d15f30f95b766f2478e723b4287cc6117d6684ae",
+    "prior_terminal": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_EXACT_BLOCKER",
+    "prior_V3_preserved": true,
+    "full_rerun_performed": false
+  },
+  "entry_event": {
+    "name": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_READY",
+    "satisfied": true,
+    "B5_head": "40891f2f87eb9f58a369f71e46cadc43f4586157",
+    "B5_pointer_blob": "c4f04fa4d295d98bf6a9b45b8a48c63d51af8cc9",
+    "B5_terminal": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_READY",
+    "B5_final_report_blob": "056634c01b0c98312872a20b2f15f693c454e1e0",
+    "B5_test_report_blob": "767edfa569fb66915e12f86c892ef952e98a1bd5",
+    "B5_request_blob": "4971b8b57cfd2f2a36b9146fa562579214a01a2a",
+    "B5_fixture_bundle_blob": "a9f6e8fcf015eddbe2303cb89862c6587cec559a"
+  },
+  "D1_compatibility": {
+    "result": "PASS",
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "pr": 188,
+    "head": "0bc38b41375fdef78172ed3cb4112b099ea28426",
+    "control_pointer_blob": "ed77c18b1d45c6b94c8d3b02dd589033fcec63cb",
+    "terminal": "D1_B_RECEIPT_V2_COMPATIBILITY_READY",
+    "procedure_addendum_blob": "58408175b1683cf566e201b57bd17b5e19c459e8",
+    "compatibility_decision_blob": "fb1e8f7b82a4516a06fbe58c27da89b46a746431",
+    "tree_binding_v2_blob": "38692279e691ab1de4a97017246c2c85b4ee6d3e",
+    "final_report_blob": "b3767e1db80be6623971160840f6b3a28ff4b57c",
+    "package_type": "MATERIALIZED_DATABASE_PACKAGE_V2",
+    "compatibility": "COMPATIBLE_FOR_B_SOURCE_DOCUMENT_SUBMISSION_AND_D1_PREFLIGHT_ONLY",
+    "actual_package_acceptance": false,
+    "actual_receipt_issuance": false
+  },
+  "submission_fields": {
+    "result": "PASS_4_OF_4",
+    "producer_head": "59405edba453e2f8512dfddd969ba1ae899526ae",
+    "package_blob_or_storage_pointer": "3a204094b4a81486646f863228b5059745fba758",
+    "record_count": 3,
+    "submitted_at": "2026-08-06T18:09:00+09:00"
+  },
+  "producer_head_package_readback": {
+    "result": "PASS",
+    "producer_head": "59405edba453e2f8512dfddd969ba1ae899526ae",
+    "package_path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/authority-ready-v2/B5_D_READY_FIXTURE_PACKAGE_V2.json",
+    "package_blob_at_head": "3a204094b4a81486646f863228b5059745fba758",
+    "request_publication_commit": "23111e17dfc4cc81f117414dfccd8555477d9b59",
+    "compare_status": "ahead",
+    "ahead_by": 11,
+    "request_commit_descendant_of_producer_head": true
+  },
+  "package_parity": {
+    "result": "PASS",
+    "request_package_sha256": "f97df341fedb2a81e681b1f00fb3f857b95b425de0fe5ce264bb28a5e18905aa",
+    "package_declared_sha256": "f97df341fedb2a81e681b1f00fb3f857b95b425de0fe5ce264bb28a5e18905aa",
+    "package_blob_readback": "PASS",
+    "prior_package_validation": "PASS_45_OF_45_UNCHANGED",
+    "B5_delta_validation": "PASS_24_OF_24"
+  },
+  "record_count_parity": {
+    "result": "PASS_3_3_3",
+    "request_record_count": 3,
+    "normalized_dataset_output_record_count": 3,
+    "sqlite_row_count": 3
+  },
+  "submitted_at_validation": {
+    "result": "PASS",
+    "value": "2026-08-06T18:09:00+09:00",
+    "format": "RFC3339_WITH_TIMEZONE"
+  },
+  "PR188_tree_binding": {
+    "result": "PASS",
+    "canonical_root": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/",
+    "base_manifest_blob": "dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd",
+    "tree_binding_v2_blob": "38692279e691ab1de4a97017246c2c85b4ee6d3e",
+    "canonical_contracts": "PASS_4_OF_4",
+    "abcd_contracts": "PASS_4_OF_4",
+    "v2_extension": "PASS_2_OF_2",
+    "legacy_governance_path_used": false
+  },
+  "preservation": {
+    "source_field_loss_count": 0,
+    "silent_drop_count": 0,
+    "unmapped_value_preservation": "PASS_6_OF_6",
+    "dedup_lineage_preservation": "PASS",
+    "semantic_transformation_count": 0
+  },
+  "lane_separation": {
+    "result": "PASS",
+    "B_lane": "B_TO_D_SOURCE_DOCUMENT",
+    "C_lane": "C_TO_D_KNOWLEDGE_CANDIDATE",
+    "separate_transactions": true,
+    "separate_receipts": true,
+    "combined_receipt": false,
+    "D1_only_receipt_issuer": true
+  },
+  "decision": "READY",
+  "candidate_promotable_to_B1": true,
+  "required_terminal": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_READY_OR_EXACT_BLOCKER",
+  "terminal_result": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_READY",
+  "next_event": "B1_D_SOURCE_DOCUMENT_PACKAGE_V2_COMMANDER_TERMINAL",
+  "actual_D_package_acceptance": false,
+  "D_acceptance_claim": false,
+  "D_acceptance_receipt_issued": false,
+  "postgresql_connection": false,
+  "D_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
