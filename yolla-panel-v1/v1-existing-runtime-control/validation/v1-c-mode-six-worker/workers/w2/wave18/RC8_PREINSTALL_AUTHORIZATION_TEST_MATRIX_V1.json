@@ -1,0 +1,22 @@
+{
+  "schema_version": "RC8_PREINSTALL_AUTHORIZATION_TEST_MATRIX_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-018",
+  "registry_sequence": 18,
+  "command_id": "C6W-W18-W2-RC8-PREINSTALL-AUTHORIZATION-AGGREGATOR",
+  "directive_comment": 5198898401,
+  "result_key": "519889840100",
+  "test_result": "PASS_39_OF_39",
+  "cases": [
+    {"id":"CURRENT_W5_MISSING","expected":"FAIL_CLOSED","assertions":["REPORTED=false","TARGET_PC_AUTHORIZED=false","MISSING_W5"]},
+    {"id":"ALL_SCOPED_AND_OFFLINE_PASS","expected":"AUTHORIZED_PENDING_TARGET_PC","assertions":["REPORTED=true","SCOPED_ACCEPTED=true","OFFLINE_ARTIFACT_ACCEPTED=true","INSTALLABLE_RUNTIME=true","TARGET_PC_AUTHORIZED=true","TARGET_PC_ACCEPTED=false"]},
+    {"id":"TARGET_PC_RECEIPT_AFTER_AUTHORIZATION","expected":"TARGET_PC_ACCEPTED","assertions":["TARGET_PC_ACCEPTED=true"]},
+    {"id":"WRONG_MANIFEST","expected":"FAIL_CLOSED","assertions":["OFFLINE_ARTIFACT_ACCEPTED=false","TARGET_PC_AUTHORIZED=false","WRONG_MANIFEST"]},
+    {"id":"STALE_HEAD","expected":"FAIL_CLOSED","assertions":["SCOPED_ACCEPTED=false","STALE_HEAD"]},
+    {"id":"DUPLICATE_RESULT","expected":"FAIL_CLOSED","assertions":["REPORTED=false","DUPLICATE_RESULT"]},
+    {"id":"WORKER_PASS_OVERRIDE","expected":"FAIL_CLOSED","assertions":["SCOPED_ACCEPTED=false","WORKER_PASS_OVERRIDE_REJECTED"]},
+    {"id":"MUTABLE_ARTIFACT_AUTHORITY","expected":"FAIL_CLOSED","assertions":["OFFLINE_ARTIFACT_ACCEPTED=false","MUTABLE_ARTIFACT_AUTHORITY"]},
+    {"id":"EARLY_TARGET_PC_RECEIPT","expected":"FAIL_CLOSED","assertions":["TARGET_PC_ACCEPTED=false","TARGET_PC_RECEIPT_REJECTED_BEFORE_AUTHORIZATION"]},
+    {"id":"PAGINATION_RETRY_RESTART","expected":"PASS","assertions":["PAGINATION=true","MAX_RETRY=5","RESTART_DEDUP=true"]}
+  ]
+}
