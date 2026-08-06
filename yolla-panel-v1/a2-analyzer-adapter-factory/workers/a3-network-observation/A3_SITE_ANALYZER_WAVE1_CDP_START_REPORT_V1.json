@@ -1,0 +1,38 @@
+{
+  "schema_version": "A3_SITE_ANALYZER_WAVE1_CDP_START_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "directive_comment": 5207559549,
+  "worker": "A-3",
+  "role": "LIVE_CDP_CAPTURE_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "observed_remote_head": "57012279520de80260bd857c9b6a9edd7aa51cba",
+  "common_authority_commit": "20b8a6401de124186037d44f9f17076c97142402",
+  "started_at_kst": "2026-08-07T01:52:00+09:00",
+  "mode": "ONE_OWNER_END_TO_END_BUILD_AND_REPAIR",
+  "implementation_scope": [
+    "Electron webContents.debugger attach and detach lifecycle",
+    "Network request response loading and response-body capture",
+    "Page frame navigation and lifecycle events",
+    "Runtime console events",
+    "DOMSnapshot capture",
+    "Action Network DOM temporal correlation",
+    "Streaming Analyzer Event API",
+    "consumer-ready handoff for A-4 A-5 B-2 B-3"
+  ],
+  "execution_environment": {
+    "electron_browser_available": false,
+    "live_browser_execution_possible": false,
+    "implementation_and_deterministic_protocol_test_possible": true
+  },
+  "guardrails": {
+    "c_mode_runtime_work": false,
+    "audit_only": false,
+    "validation_only": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "STARTED"
+}
