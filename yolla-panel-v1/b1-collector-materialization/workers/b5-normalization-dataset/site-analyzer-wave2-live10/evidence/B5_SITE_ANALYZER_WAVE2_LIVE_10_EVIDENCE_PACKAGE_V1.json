@@ -92,14 +92,14 @@
     "live_adapter_blob":"8fccbd3ba319d8e4a61551fb7eb81cbaa5ab91fa",
     "contract_blob":"5ffca95a494ca2ddcf33ded1b77bfc1932e1d548",
     "node_test_blob":"2a5efc9de5e7ca57d3fff0e892f2a7b2fea1bae6",
-    "python_test_blob_pending_update":true,
+    "python_test_blob":"e02044cbe4afe3d3acfe8cd91c7057f628a9987b",
     "json_blob":"44f9328263bfff1bfd57e05183eec232cec85b06",
     "csv_blob":"c001249682caf089659a4f788df937e52adbb5b7",
     "xlsx_blob":"24489ece10cb1fecf25cfea9d314594ec884e090"
   },
   "validation": {
     "node_tests":"PASS_20_OF_20",
-    "python_cross_format_tests":"PASS_15_OF_15",
+    "python_cross_format_tests":"PASS_15_OF_15_AFTER_REMOTE_SCHEMA_ALIGNMENT",
     "total_new_checks":"PASS_35_OF_35",
     "prior_wave1_tests":"PASS_41_OF_41",
     "aggregate_evidence":"PASS_76_OF_76",
@@ -107,6 +107,10 @@
     "external_blocker_count":0,
     "static_fixture_only_terminal":false
   },
+  "direct_repairs": [
+    "PYTHON_TESTCASE_RUN_NAME_SHADOW_COLLISION_FIXED",
+    "XLSX_MANIFEST_FIELD_ALIGNED_TO_binary_sha256"
+  ],
   "database_work":false,
   "production":false,
   "ready":false,
