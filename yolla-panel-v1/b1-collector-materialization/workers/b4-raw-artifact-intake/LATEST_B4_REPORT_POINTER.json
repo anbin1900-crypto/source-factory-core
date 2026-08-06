@@ -1,38 +1,42 @@
 {
-  "schema_version": "LATEST_B4_REPORT_POINTER_V2",
+  "schema_version": "LATEST_B4_REPORT_POINTER_V3",
   "worker": "B-4",
   "branch": "worker/b4-raw-artifact-source-envelope-v1",
   "active_directive": {
-    "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
-    "directive_comment_id": 5207572969,
-    "status": "TERMINAL_PROVEN_EXTERNAL_BLOCKER",
-    "terminal_contract": "B4_SITE_ANALYZER_WAVE1_REAL_EXTRACTION_PASS_OR_PROVEN_EXTERNAL_BLOCKER",
-    "terminal_result": "B4_SITE_ANALYZER_WAVE1_REAL_EXTRACTION_PROVEN_EXTERNAL_BLOCKER",
-    "start_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave1/reports/B4_SITE_ANALYZER_WAVE1_START_REPORT.json",
-    "test_results_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave1/reports/B4_SITE_ANALYZER_WAVE1_TEST_RESULTS.json",
-    "blocker_evidence_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave1/reports/B4_LIVE_BROWSER_NAVIGATION_BLOCKER_EVIDENCE.json",
-    "final_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave1/reports/B4_SITE_ANALYZER_WAVE1_FINAL_REPORT.json",
-    "latest_pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave1/reports/B4_SITE_ANALYZER_WAVE1_LATEST_POINTER.json",
+    "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+    "directive_comment_id": 5208247001,
+    "authority_commit": "9ca851933fb329b1d965f4459d452c684a06f9cd",
+    "status": "TERMINAL_PASS",
+    "terminal_contract": "B4_WAVE2_COMMON_HTTP_FIXTURE_EDGE_EXTRACTION_PASS_OR_PROVEN_EXTERNAL_BLOCKER",
+    "terminal_result": "B4_WAVE2_COMMON_HTTP_FIXTURE_EDGE_EXTRACTION_PASS",
+    "start_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave2/reports/B4_WAVE2_START_REPORT.json",
+    "test_results_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave2/reports/B4_WAVE2_TEST_RESULTS.json",
+    "final_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave2/reports/B4_WAVE2_FINAL_REPORT.json",
+    "latest_pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave2/reports/LATEST_B4_WAVE2_POINTER.json",
+    "launcher_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave2/fixture_site/launcher.py",
     "validation": {
-      "python_compile": "PASS_2_OF_2",
-      "tests": "PASS_34_OF_34",
-      "real_chromium_inline_harness": "PASS_8_OF_8",
-      "real_sample_record_count": 3,
+      "python_compile": "PASS",
+      "unit_tests": "PASS_14_OF_14",
+      "fixture_site_launch": "PASS_DYNAMIC_HTTP",
+      "all_edge_routes": "PASS_10_OF_10",
+      "extracted_record_count": 10,
       "resume_after_failure": "PASS",
-      "external_blocker_signature": "ERR_BLOCKED_BY_ADMINISTRATOR"
+      "network_event_count": 42,
+      "schema_drift_detected": true
     }
   },
   "previous_terminal": {
+    "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+    "terminal_result": "B4_SITE_ANALYZER_WAVE1_REAL_EXTRACTION_PROVEN_EXTERNAL_BLOCKER",
+    "final_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave1/reports/B4_SITE_ANALYZER_WAVE1_FINAL_REPORT.json"
+  },
+  "historical_terminal": {
     "task_id": "B1-B4-EXECUTION-TASK-V1-20260804-001",
-    "terminal_contract": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY_OR_EXACT_BLOCKER",
     "terminal_result": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY",
-    "final_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_FINAL_REPORT_V1.json",
-    "raw_artifact_manifest_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V1.json",
-    "source_record_envelope_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/SOURCE_RECORD_ENVELOPE_V1.json"
+    "final_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_FINAL_REPORT_V1.json"
   },
   "production": false,
   "ready": false,
   "merge": false,
-  "updated_at_kst": "2026-08-07T02:08:33+09:00",
   "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
 }
