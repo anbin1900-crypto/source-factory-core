@@ -1,0 +1,41 @@
+{
+  "schema_version": "LATEST_YOLLA_MINIMAL_V1_1_UI_LAYER_GROUP_DELETE_POINTER_V1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "implementation_pr": 76,
+  "branch": "agent/yolla-minimal-separate-runtime-v1",
+  "version": "1.1.0",
+  "base_release": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\yolla-minimal-v1",
+  "target_release": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\yolla-minimal-v1.1-ui-fix",
+  "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_MINIMAL_V1_1.bat",
+  "contract": "yolla-panel-v1/minimal-v1/runtime-v1.1/YOLLA_MINIMAL_V1_1_UI_LAYER_GROUP_DELETE_CONTRACT_V1.md",
+  "build_report": "yolla-panel-v1/minimal-v1/runtime-v1.1/YOLLA_MINIMAL_V1_1_UI_LAYER_GROUP_DELETE_BUILD_REPORT_V1.json",
+  "behavior": {
+    "drawer_open": "DETACH_NATIVE_BROWSERVIEW",
+    "drawer_close": "RESTORE_ACTIVE_BROWSERVIEW",
+    "group_plus": "ADD_ROLE",
+    "group_minus": "DELETE_GROUP_AND_SEATS_WITH_CONFIRMATION"
+  },
+  "one_click": {
+    "file_name": "APPLY_AI_YOLLA_MINIMAL_V1_1_UI_LAYER_GROUP_DELETE_FIX_ONE_CLICK.bat",
+    "drive_file_id": "1BIdjWqyJikxA3ydxrKZpA-H6VOiB5cK6",
+    "size": 34863,
+    "sha256": "aa94dd0211e5e9c9b5870f86e63c96adc8762666076370702cd817fd3123f2ba"
+  },
+  "package": {
+    "file_name": "AI_YOLLA_MINIMAL_V1_1_UI_LAYER_GROUP_DELETE_FIX_PACKAGE.zip",
+    "drive_file_id": "1dDTp9XMYth2cwr-subIlLq3RTO3hycY3",
+    "size": 25597,
+    "sha256": "7e2c8b4d23a56d368f8d47b6295fe696e76a5a63d61f1cd664fab35f305f014f"
+  },
+  "offline_validation": "PASS_25_ASSERTIONS_NODE_SYNTAX_AND_PACKAGE_INTEGRITY",
+  "target_pc_install": "PENDING",
+  "target_pc_live_pass": false,
+  "existing_legacy_runtime_modified": false,
+  "base_minimal_runtime_modified": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "V1_1_SOURCE_AND_INSTALLER_READY_TARGET_PC_PENDING",
+  "updated_at": "2026-08-07T04:00:00+09:00"
+}
