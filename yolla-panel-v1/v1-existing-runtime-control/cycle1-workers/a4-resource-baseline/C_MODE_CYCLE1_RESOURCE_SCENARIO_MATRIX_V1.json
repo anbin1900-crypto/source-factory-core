@@ -1,0 +1,93 @@
+{
+  "schema_version": "C_MODE_CYCLE1_RESOURCE_SCENARIO_MATRIX_V1",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "directive_id": "C1-A4-IDLE-RESOURCE-BASELINE-HARNESS",
+  "worker": "A-4",
+  "measurement_defaults": {
+    "sample_count": 30,
+    "sample_interval_ms": 1000,
+    "warmup_seconds": 3,
+    "minimum_samples_per_executed_scenario": 30,
+    "required_metrics": [
+      "cpu_percent",
+      "working_set_bytes",
+      "private_bytes",
+      "process_count",
+      "renderer_count",
+      "gpu_process_count",
+      "utility_process_count",
+      "load_elapsed_ms"
+    ]
+  },
+  "root_process_resolution": {
+    "preferred": "Explicit -RootProcessId from A-3 target-PC readback receipt",
+    "fallback": "Auto-detect only when exactly one top-level YOLLA/electron candidate exists",
+    "ambiguous_behavior": "FAIL_CLOSED"
+  },
+  "scenarios": [
+    {
+      "id": "PANEL_ONLY",
+      "precondition": "YOLLA panel is running and all ChatGPT browser seats are closed or inactive according to the current runtime UI.",
+      "action_adapter_required": false,
+      "measurement": "Capture at least 30 one-second process-tree samples.",
+      "pass_or_blocker": "MEASURED_OR_EXACT_TARGET_PC_ACCESS_BLOCKER"
+    },
+    {
+      "id": "ONE_BROWSER",
+      "precondition": "Panel is running with no active ChatGPT browser before the action.",
+      "action_adapter_required": true,
+      "action": "Use an existing runtime control action to open or activate exactly one ChatGPT browser; do not create a new browser engine.",
+      "measurement": "Record action elapsed time and at least 30 post-action samples.",
+      "pass_or_blocker": "MEASURED_OR_EXACT_TARGET_PC_ACCESS_BLOCKER"
+    },
+    {
+      "id": "INACTIVE_SEAT_TRANSITION",
+      "precondition": "One ChatGPT browser seat is active.",
+      "action_adapter_required": true,
+      "action": "Switch the active seat to inactive using existing runtime controls.",
+      "measurement": "Record transition elapsed time and at least 30 post-transition samples.",
+      "pass_or_blocker": "MEASURED_OR_EXACT_TARGET_PC_ACCESS_BLOCKER"
+    },
+    {
+      "id": "BROWSER_CLOSE",
+      "precondition": "Exactly one ChatGPT browser is active.",
+      "action_adapter_required": true,
+      "action": "Close the active browser through the existing runtime lifecycle path.",
+      "measurement": "Record close elapsed time and at least 30 post-close samples, including renderer/GPU/utility counts.",
+      "pass_or_blocker": "MEASURED_OR_EXACT_TARGET_PC_ACCESS_BLOCKER"
+    },
+    {
+      "id": "BROWSER_REOPEN",
+      "precondition": "The previously active ChatGPT browser is closed.",
+      "action_adapter_required": true,
+      "action": "Reopen the browser through the existing runtime lifecycle path.",
+      "measurement": "Record reopen elapsed time and at least 30 post-reopen samples.",
+      "pass_or_blocker": "MEASURED_OR_EXACT_TARGET_PC_ACCESS_BLOCKER"
+    },
+    {
+      "id": "CLOSE_REOPEN",
+      "precondition": "A BROWSER_CLOSE receipt and BROWSER_REOPEN receipt exist for the same target runtime authority and machine session.",
+      "action_adapter_required": false,
+      "measurement": "Treat the paired close/reopen receipts as the composite scenario; compare first/last memory and process deltas without promoting static results to live PASS.",
+      "pass_or_blocker": "BOTH_COMPONENT_RECEIPTS_MEASURED_OR_EXACT_TARGET_PC_ACCESS_BLOCKER"
+    }
+  ],
+  "execution_examples": [
+    "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\\Invoke-CModeCycle1ResourceBaseline.ps1 -Scenario PANEL_ONLY -RootProcessId <PID> -SampleCount 30",
+    "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\\Invoke-CModeCycle1ResourceBaseline.ps1 -Scenario ONE_BROWSER -RootProcessId <PID> -ActionScriptPath <existing-runtime-action.ps1> -SampleCount 30",
+    "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\\Invoke-CModeCycle1ResourceBaseline.ps1 -Scenario BROWSER_CLOSE -RootProcessId <PID> -ActionScriptPath <existing-runtime-action.ps1> -SampleCount 30",
+    "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\\Invoke-CModeCycle1ResourceBaseline.ps1 -Scenario BROWSER_REOPEN -RootProcessId <PID> -ActionScriptPath <existing-runtime-action.ps1> -SampleCount 30"
+  ],
+  "safety": {
+    "read_only_process_measurement": true,
+    "browser_profile_modification": false,
+    "workspace_state_reset": false,
+    "existing_runtime_deletion": false,
+    "new_runtime_creation": false,
+    "new_browser_engine_creation": false,
+    "optimization_source_change_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
