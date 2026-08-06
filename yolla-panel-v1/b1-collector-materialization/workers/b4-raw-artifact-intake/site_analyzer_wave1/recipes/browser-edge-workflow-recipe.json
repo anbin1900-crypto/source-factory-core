@@ -1,0 +1,19 @@
+{
+  "schema_version": "B4_BROWSER_EDGE_WORKFLOW_RECIPE_V1",
+  "recipe_id": "b4-browser-edge-all-capabilities-v1",
+  "source": "A6_EXECUTABLE_ADAPTER_AND_B3_RECIPE_COMPATIBLE",
+  "steps": [
+    {"type": "navigate", "url": "https://example.test/list"},
+    {"type": "popup", "selector": "[data-open-popup]"},
+    {"type": "new_tab", "selector": "[target=_blank]"},
+    {"type": "frame", "selector": "iframe[data-source-frame]"},
+    {"type": "download", "selector": "[data-download]"},
+    {"type": "load_more", "selector": "button.load-more", "item_selector": ".record", "fields": {"id": "[data-id]"}, "max_rounds": 20},
+    {"type": "infinite_scroll", "item_selector": ".record", "fields": {"id": "[data-id]"}, "max_rounds": 20, "stable_rounds": 2},
+    {"type": "page_pagination", "item_selector": ".record", "fields": {"id": "[data-id]"}, "next_selector": "a.next", "start_page": 1, "max_pages": 20},
+    {"type": "cursor_pagination", "initial_cursor": null, "max_pages": 20, "request_template_ref": "A6.request-templates.json"}
+  ],
+  "retry": {"max_retries": 2},
+  "resume": {"checkpoint_after": "EVERY_ACCEPTED_RECORD_OR_EDGE_EVENT", "atomic": true},
+  "record_limit": {"minimum": 1, "maximum": 20}
+}
