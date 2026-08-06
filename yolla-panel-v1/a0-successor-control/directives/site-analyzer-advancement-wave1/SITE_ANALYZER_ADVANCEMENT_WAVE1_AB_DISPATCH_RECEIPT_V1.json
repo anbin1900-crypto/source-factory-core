@@ -1,0 +1,31 @@
+{
+  "schema_version": "SITE_ANALYZER_ADVANCEMENT_WAVE1_AB_DISPATCH_RECEIPT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "dispatched_at_kst": "2026-08-07T01:44:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "authority_commit": "20b8a6401de124186037d44f9f17076c97142402",
+  "dispatches": [
+    {"worker":"A-2","pr":18,"comment_id":5207557632,"observed_head":"e29431309a17fc6d3f2f1eb3b422f5ff93866658"},
+    {"worker":"A-3","pr":22,"comment_id":5207559549,"observed_head":"57012279520de80260bd857c9b6a9edd7aa51cba"},
+    {"worker":"A-4","pr":23,"comment_id":5207561157,"observed_head":"b54af2bb3272b613be5458a283e22e2eb5d90ade"},
+    {"worker":"A-5","pr":24,"comment_id":5207562721,"observed_head":"9f83895589f48c765422624a3538d7d5e872fdc1"},
+    {"worker":"A-6","pr":25,"comment_id":5207564607,"observed_head":"84ea9b34a7c9445a77214288556ff3230442d81e"},
+    {"worker":"A-7","pr":26,"comment_id":5207566541,"observed_head":"09ec824f7e245c93b4ca05d2ac098c16403c9ca5"},
+    {"worker":"B-1","pr":19,"comment_id":5207568271,"observed_head":"6dca87e976439134dc24fed8bd60bc2c9db05fa0"},
+    {"worker":"B-2","pr":38,"comment_id":5207569754,"observed_head":"771da102a0202dc21d9226d9c534275df345582e"},
+    {"worker":"B-3","pr":39,"comment_id":5207571285,"observed_head":"86d789a136ce5070d79eab7e6d0205eb23da11d7"},
+    {"worker":"B-4","pr":40,"comment_id":5207572969,"observed_head":"f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3"},
+    {"worker":"B-5","pr":41,"comment_id":5207574580,"observed_head":"40891f2f87eb9f58a369f71e46cadc43f4586157"},
+    {"worker":"B-6","pr":42,"comment_id":5207576134,"observed_head":"dde23c6a83ac3d4c263a12888e944b6d4c255614"}
+  ],
+  "worker_count": 12,
+  "dispatch_count": 12,
+  "missing_worker_count": 0,
+  "duplicate_dispatch_count": 0,
+  "primary_goal": "ADVANCED_SITE_ANALYZER_PRODUCT",
+  "c_mode_runtime_worker_count": 0,
+  "audit_only_worker_count": 0,
+  "validation_only_worker_count": 0,
+  "status": "ALL_A_B_SITE_ANALYZER_WORKERS_DISPATCHED"
+}
