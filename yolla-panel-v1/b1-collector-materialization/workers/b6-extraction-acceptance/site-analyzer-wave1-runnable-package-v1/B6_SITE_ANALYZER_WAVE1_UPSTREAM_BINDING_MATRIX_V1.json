@@ -1,0 +1,129 @@
+{
+  "schema_version": "B6_SITE_ANALYZER_WAVE1_UPSTREAM_BINDING_MATRIX_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "task_comment": 5207576134,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 42,
+  "package_commit": "e86a20b3974b9dfe27768f6564432c514652da9c",
+  "binding_policy": "EXACT_REMOTE_HEAD_AND_POINTER_OR_TEST_BLOB_NO_SEQUENTIAL_WAIT",
+  "workers": {
+    "A-2": {
+      "pr": 18,
+      "head": "7528715951ab6fd64b60181c6f9fa156ef7e8ef6",
+      "terminal": "A2_SITE_ANALYZER_WAVE1_INTEGRATED_EMBEDDED_STANDALONE_PROVEN_EXTERNAL_BLOCKER",
+      "pointer_blob": "51057ef87b005580c5bf24b32ae102359a28a77e",
+      "implementation": "PASS",
+      "live_runtime": "PROVEN_EXTERNAL_BLOCKER_TARGET_PC_ELECTRON_AND_LIVE_SESSION_UNAVAILABLE"
+    },
+    "A-3": {
+      "pr": 22,
+      "head": "e86dfcc2fc32ad366cd7fd8ba07392850419b853",
+      "terminal": "A3_SITE_ANALYZER_WAVE1_LIVE_CDP_CAPTURE_PROVEN_EXTERNAL_BLOCKER_RUNTIME_IMPLEMENTATION_READY",
+      "pointer_blob": "9ef3f18dec74f1a47b7754581f1e7c4a0513fd2c",
+      "final_report_blob": "b1d41a6c1a4daac466ddb54e4dcaacfc0d80f375",
+      "implementation": "PASS",
+      "live_runtime": "PROVEN_EXTERNAL_BLOCKER_ELECTRON_WEBCONTENTS_UNAVAILABLE"
+    },
+    "A-4": {
+      "pr": 23,
+      "head": "50c0555394f5fb3543f079ecfb60a0ed2eeab638",
+      "terminal": "A4_SITE_ANALYZER_WAVE1_STRUCTURE_INFERENCE_PASS",
+      "pointer_blob": "da4dd382865b73b4723573a4fe92c9bb0ce516c8",
+      "final_report_blob": "97a639beddc8292adf5bbffac0fd1ab6a7e9e29b",
+      "tests": "PASS_9_OF_9"
+    },
+    "A-5": {
+      "pr": 24,
+      "head": "db1ce4af35b4724554d9d972766826d18ae9891b",
+      "terminal": "A5_SITE_ANALYZER_WAVE1_ENDPOINT_SCHEMA_MODE_INFERENCE_PASS",
+      "pointer_blob": "025f24db12885124c22cb85b916bda90d4c71d2d",
+      "tests": "PASS_50_OF_50_ASSERTIONS"
+    },
+    "A-6": {
+      "pr": 25,
+      "head": "91baa2fb09471ed2a840c2dea9e614bc430da906",
+      "terminal": "A6_SITE_ANALYZER_WAVE1_EXECUTABLE_ADAPTER_REPLAY_PASS_OR_PROVEN_EXTERNAL_BLOCKER",
+      "pointer_blob": "0b2641d2c837e989ff63433e1ce53397c04a6de1",
+      "adapter_manifest_blob": "46664fd7732507b5c59493d5203c42ebb61f5013",
+      "replay_receipt_blob": "2e57aaff723571d0fab8e98e2dd3f36854afb994",
+      "replay_trace_blob": "32d505d2cde49580d4b01c83230441cff3f7c0b1",
+      "fixture_replay": "PASS",
+      "live_runtime": "PROVEN_EXTERNAL_BLOCKER_DNS_EAI_AGAIN"
+    },
+    "A-7": {
+      "pr": 26,
+      "head": "e6c17fb27572340adac8ca73ff754f48e9598472",
+      "terminal": "A7_SITE_ANALYZER_WAVE1_END_TO_END_REPAIR_PROVEN_EXTERNAL_BLOCKER",
+      "pointer_blob": "9fad854ed9b64eb743f1af3e02a5a60659ce0a41",
+      "final_report_blob": "c4ec3edfe4f2730515d9bed12790d98514175c44",
+      "validation_receipt_blob": "f15ab449a6d1a9ac0bcb01a64c0908f75978587a",
+      "fixture_protocol_e2e": "PASS",
+      "live_runtime": "PROVEN_EXTERNAL_BLOCKER_LIVE_ELECTRON_BROWSER_UNAVAILABLE"
+    },
+    "B-1": {
+      "pr": 19,
+      "head": "6dca87e976439134dc24fed8bd60bc2c9db05fa0",
+      "terminal": null,
+      "status": "ACTIVE_PRODUCT_ASSEMBLY_NO_TERMINAL_AT_B6_CUTOFF"
+    },
+    "B-2": {
+      "pr": 38,
+      "head": "99bb8ec27ee95088c7228c5fc6cb6399da7f0319",
+      "terminal": "B2_SITE_ANALYZER_WAVE1_VISUAL_ANALYZER_PASS",
+      "pointer_blob": "59d878ea70637c7bdc94d2831dc6b57db1853aa0",
+      "detail_pointer_blob": "382c9d0efa2be8efc92d4ddf402dd275cc920615",
+      "tests": "PASS_31_OF_31",
+      "browser_smoke": "PASS"
+    },
+    "B-3": {
+      "pr": 39,
+      "head": "7584615e82a651a9d3c9526cfc2bd927ad9dd68c",
+      "terminal": null,
+      "implementation_evidence": "PASS_SOURCE_AND_TESTS_TERMINAL_COMMENT_NOT_POSTED",
+      "source_manifest_blob": "2040fdb30d7120d1c9fc37fa77da55ea82d7ed60",
+      "test_result_blob": "0bd717604885920070ed83ae8acda23e9c08681f",
+      "tests": "PASS_45_OF_45",
+      "remote_key_blob_readback": "PASS_16_OF_16",
+      "recorded_action_count": 8,
+      "replay": "PASS_AFTER_DIRECT_REPAIR"
+    },
+    "B-4": {
+      "pr": 40,
+      "head": "a204fec405cd861c966831f325dfc43ba4fe51b2",
+      "terminal": "B4_SITE_ANALYZER_WAVE1_REAL_EXTRACTION_PROVEN_EXTERNAL_BLOCKER",
+      "pointer_blob": "971abd3b5b9626484d927d631ffbc6aa46a253f2",
+      "tests": "PASS_34_OF_34",
+      "inline_chromium_edge_e2e": "PASS_8_OF_8",
+      "live_runtime": "PROVEN_EXTERNAL_BLOCKER_ERR_BLOCKED_BY_ADMINISTRATOR"
+    },
+    "B-5": {
+      "pr": 41,
+      "head": "430f7599f04feb2a2863c95027efe66ff3eef698",
+      "terminal": "B5_SITE_ANALYZER_WAVE1_PREVIEW_EDITOR_EXPORT_PASS",
+      "pointer_blob": "fb752ec13666d83e9c9da7e50dc09f9520537ba8",
+      "final_report_blob": "b9b507ee3b32bba003545617aa16c40bec1860fe",
+      "test_report_blob": "69c26c269dff3c651b02f1f9006ed7bb73a476fa",
+      "entrypoint_blob": "36961bf41a273864705b1e70eb6c8729b6c3c1f8",
+      "tests": "PASS_41_OF_41",
+      "export_parity": "PASS_3_OF_3"
+    }
+  },
+  "accounting": {
+    "worker_count": 11,
+    "terminal_count": 9,
+    "implementation_evidence_count": 10,
+    "active_without_terminal": ["B-1"],
+    "implementation_pass_without_terminal_comment": ["B-3"],
+    "result": "PASS_10_OF_11_IMPLEMENTATION_EVIDENCE_B1_ACTIVE_NO_SEQUENTIAL_WAIT"
+  },
+  "package_runtime": {
+    "self_contained_fixture_and_local_html": true,
+    "single_entrypoint": "launcher.py",
+    "zip_sha256": "d51654c036f2d70745f58a6f4d94af9734b56d3c0d9a89d7c5c5da1c873767ee",
+    "upstream_modules_vendored_into_zip": false,
+    "upstream_bindings_are_exact_remote_pointers": true
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
