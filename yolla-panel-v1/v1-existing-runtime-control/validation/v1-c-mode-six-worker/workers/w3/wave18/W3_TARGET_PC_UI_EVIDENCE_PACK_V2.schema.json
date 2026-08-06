@@ -1,0 +1,503 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "W3_TARGET_PC_UI_EVIDENCE_PACK_V2.schema.json",
+  "title": "W3 Target-PC UI Evidence Pack V2 Receipt",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "control_id",
+    "wave_id",
+    "registry_sequence",
+    "command_id",
+    "directive_comment",
+    "result_key",
+    "target_version",
+    "status",
+    "evidence_mode",
+    "target_pc_live_execution",
+    "target_pc_acceptance_claimed",
+    "live_pass_claimed",
+    "target_pc",
+    "authority",
+    "bundle_authority",
+    "app",
+    "runtime_status",
+    "screenshots",
+    "login_profile_preservation",
+    "ui_truth_assertions",
+    "mode_separation",
+    "restart_evidence",
+    "rollback_visual_evidence",
+    "fail_closed"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "W3_TARGET_PC_UI_EVIDENCE_PACK_V2_RECEIPT"
+    },
+    "control_id": {
+      "const": "V1-C-MODE-6W-VALIDATION-CYCLE-002"
+    },
+    "wave_id": {
+      "const": "V1-C-MODE-6W-WAVE-018"
+    },
+    "registry_sequence": {
+      "const": 18
+    },
+    "command_id": {
+      "const": "C6W-W18-W3-TARGET-PC-UI-EVIDENCE-PACK-V2"
+    },
+    "directive_comment": {
+      "const": 5198901521
+    },
+    "result_key": {
+      "const": "519890152100"
+    },
+    "target_version": {
+      "const": "5.10.2.4.2-rc8"
+    },
+    "status": {
+      "enum": [
+        "PASS_OFFLINE_FIXTURE",
+        "LIVE_EVIDENCE_COLLECTED_PENDING_INDEPENDENT_ACCEPTANCE",
+        "FAIL",
+        "BLOCKED"
+      ]
+    },
+    "evidence_mode": {
+      "enum": [
+        "OFFLINE_FIXTURE",
+        "LIVE_TARGET_PC"
+      ]
+    },
+    "target_pc_live_execution": {
+      "type": "boolean"
+    },
+    "target_pc_acceptance_claimed": {
+      "const": false
+    },
+    "live_pass_claimed": {
+      "const": false
+    },
+    "target_pc": {
+      "type": "object",
+      "required": [
+        "computer_name",
+        "os_version"
+      ],
+      "properties": {
+        "computer_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "os_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "release_root",
+        "state_root",
+        "browser_profile"
+      ],
+      "properties": {
+        "release_root": {
+          "const": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases"
+        },
+        "state_root": {
+          "const": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2"
+        },
+        "browser_profile": {
+          "const": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile"
+        }
+      },
+      "additionalProperties": false
+    },
+    "bundle_authority": {
+      "type": "object",
+      "required": [
+        "result_commit",
+        "artifact_commit",
+        "manifest_blob",
+        "exact_member_count"
+      ],
+      "properties": {
+        "result_commit": {
+          "const": "7af7a51ee18e6b5ae6f64942cf02392f596e4678"
+        },
+        "artifact_commit": {
+          "const": "f023ce7ab94d5522eaf2c790a172478ea268e184"
+        },
+        "manifest_blob": {
+          "const": "984e42bab53a62bdaa61df2e41009c4e3bea0fda"
+        },
+        "exact_member_count": {
+          "const": 5
+        }
+      },
+      "additionalProperties": true
+    },
+    "app": {
+      "type": "object",
+      "required": [
+        "version",
+        "version_source",
+        "version_source_sha256"
+      ],
+      "properties": {
+        "version": {
+          "const": "5.10.2.4.2-rc8"
+        },
+        "version_source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version_source_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "runtime_status": {
+      "type": "object",
+      "required": [
+        "source",
+        "sha256",
+        "status"
+      ],
+      "properties": {
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "screenshots": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {
+        "type": "object",
+        "required": [
+          "purpose",
+          "path",
+          "sha256",
+          "size_bytes",
+          "state_snapshot"
+        ],
+        "properties": {
+          "purpose": {
+            "enum": [
+              "APP_VERSION_RUNTIME_STATUS",
+              "IDLE_WORKING_ZERO",
+              "RESULT_COMMENT_PRIORITY",
+              "CURRENT_HISTORICAL_REGISTRY",
+              "C_MODE_SEPARATION",
+              "REPEAT_MODE_SEPARATION",
+              "RESTART_BEFORE",
+              "RESTART_AFTER",
+              "ROLLBACK_VISUAL_STATE"
+            ]
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "size_bytes": {
+            "type": "integer",
+            "minimum": 1024
+          },
+          "state_snapshot": {
+            "$ref": "#/$defs/stateSnapshot"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "login_profile_preservation": {
+      "type": "object",
+      "required": [
+        "path",
+        "before_sha256",
+        "after_sha256",
+        "unchanged",
+        "login_session_preserved"
+      ],
+      "properties": {
+        "path": {
+          "const": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile"
+        },
+        "before_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "after_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "unchanged": {
+          "const": true
+        },
+        "login_session_preserved": {
+          "const": true
+        }
+      }
+    },
+    "ui_truth_assertions": {
+      "type": "object",
+      "required": [
+        "idle_working_count",
+        "result_comment_priority",
+        "result_comment_id",
+        "current_registry_roles",
+        "historical_registry_roles",
+        "current_historical_registry_separated",
+        "legacy_a_e_current_count"
+      ],
+      "properties": {
+        "idle_working_count": {
+          "const": 0
+        },
+        "result_comment_priority": {
+          "const": true
+        },
+        "result_comment_id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "current_registry_roles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "historical_registry_roles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "current_historical_registry_separated": {
+          "const": true
+        },
+        "legacy_a_e_current_count": {
+          "const": 0
+        }
+      }
+    },
+    "mode_separation": {
+      "type": "object",
+      "required": [
+        "c_mode_state_sha256",
+        "repeat_state_sha256",
+        "c_repeat_mode_separated"
+      ],
+      "properties": {
+        "c_mode_state_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "repeat_state_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "c_repeat_mode_separated": {
+          "const": true
+        }
+      }
+    },
+    "restart_evidence": {
+      "type": "object",
+      "required": [
+        "executed",
+        "before",
+        "after",
+        "evidence_complete"
+      ],
+      "properties": {
+        "executed": {
+          "const": true
+        },
+        "before": {
+          "$ref": "#/$defs/stateSnapshot"
+        },
+        "after": {
+          "$ref": "#/$defs/stateSnapshot"
+        },
+        "evidence_complete": {
+          "const": true
+        }
+      }
+    },
+    "rollback_visual_evidence": {
+      "type": "object",
+      "required": [
+        "executed",
+        "screenshot_sha256",
+        "base_main_restored",
+        "base_workspace_html_restored",
+        "base_ui_js_unchanged",
+        "base_ui_css_unchanged",
+        "overlay_files_absent"
+      ],
+      "properties": {
+        "executed": {
+          "const": true
+        },
+        "screenshot_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "base_main_restored": {
+          "const": true
+        },
+        "base_workspace_html_restored": {
+          "const": true
+        },
+        "base_ui_js_unchanged": {
+          "const": true
+        },
+        "base_ui_css_unchanged": {
+          "const": true
+        },
+        "overlay_files_absent": {
+          "const": true
+        }
+      }
+    },
+    "fail_closed": {
+      "type": "object",
+      "required": [
+        "missing_evidence_rejected",
+        "duplicate_screenshot_hash_rejected",
+        "incomplete_restart_rejected",
+        "rollback_mismatch_rejected",
+        "live_pass_self_claim_forbidden"
+      ],
+      "properties": {
+        "missing_evidence_rejected": {
+          "const": true
+        },
+        "duplicate_screenshot_hash_rejected": {
+          "const": true
+        },
+        "incomplete_restart_rejected": {
+          "const": true
+        },
+        "rollback_mismatch_rejected": {
+          "const": true
+        },
+        "live_pass_self_claim_forbidden": {
+          "const": true
+        }
+      }
+    }
+  },
+  "$defs": {
+    "stateSnapshot": {
+      "type": "object",
+      "required": [
+        "phase",
+        "captured_at",
+        "runtime_status_sha256",
+        "ui_truth_sha256",
+        "registry_sha256",
+        "c_mode_state_sha256",
+        "repeat_state_sha256"
+      ],
+      "properties": {
+        "phase": {
+          "type": "string",
+          "minLength": 1
+        },
+        "captured_at": {
+          "type": "string",
+          "minLength": 1
+        },
+        "runtime_status_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "ui_truth_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "registry_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "c_mode_state_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "repeat_state_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "evidence_mode": {
+            "const": "OFFLINE_FIXTURE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "const": "PASS_OFFLINE_FIXTURE"
+          },
+          "target_pc_live_execution": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "evidence_mode": {
+            "const": "LIVE_TARGET_PC"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "const": "LIVE_EVIDENCE_COLLECTED_PENDING_INDEPENDENT_ACCEPTANCE"
+          },
+          "target_pc_live_execution": {
+            "const": true
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": true
+}

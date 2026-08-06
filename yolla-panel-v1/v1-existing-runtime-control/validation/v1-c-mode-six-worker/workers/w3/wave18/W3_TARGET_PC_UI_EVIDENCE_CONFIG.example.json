@@ -1,0 +1,50 @@
+{
+  "output_directory": "E:\\SOURCE FACTORY\\.yolla\\evidence\\w3-wave18",
+  "candidate_release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc8",
+  "state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2",
+  "browser_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+  "bundle_manifest_path": "C:\\PATH\\RC8_EXACT_UI_HOOK_ROLLBACK_BUNDLE_V2.json",
+  "app_version_path": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\5.10.2.4.2-rc8\\package.json",
+  "runtime_status_path": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2\\runtime_status.json",
+  "ui_truth_snapshot_path": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2\\automation-c-v1\\ui_truth_snapshot.json",
+  "registry_snapshot_path": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2\\automation-c-v1\\registry_snapshot.json",
+  "c_mode_state_path": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2\\automation-c-v1\\C_MODE_STATE.json",
+  "repeat_state_path": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2\\automation-c-v1\\REPEAT_COMMANDS.json",
+  "patch_receipt_path": "E:\\SOURCE FACTORY\\.yolla\\evidence\\w3-patch-receipt.json",
+  "restart_command_path": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_3_7.bat",
+  "restart_wait_seconds": 10,
+  "rollback_command_path": "C:\\PATH\\ROLLBACK_W3_RC8_UI.bat",
+  "rollback_wait_seconds": 3,
+  "capture_steps": [
+    {
+      "purpose": "APP_VERSION_RUNTIME_STATUS",
+      "prepare_command_path": "C:\\PATH\\show_version_status.bat",
+      "wait_seconds": 2
+    },
+    {
+      "purpose": "IDLE_WORKING_ZERO",
+      "prepare_command_path": "C:\\PATH\\show_idle.bat",
+      "wait_seconds": 2
+    },
+    {
+      "purpose": "RESULT_COMMENT_PRIORITY",
+      "prepare_command_path": "C:\\PATH\\show_result_comment.bat",
+      "wait_seconds": 2
+    },
+    {
+      "purpose": "CURRENT_HISTORICAL_REGISTRY",
+      "prepare_command_path": "C:\\PATH\\show_registry.bat",
+      "wait_seconds": 2
+    },
+    {
+      "purpose": "C_MODE_SEPARATION",
+      "prepare_command_path": "C:\\PATH\\show_c_mode.bat",
+      "wait_seconds": 2
+    },
+    {
+      "purpose": "REPEAT_MODE_SEPARATION",
+      "prepare_command_path": "C:\\PATH\\show_repeat_mode.bat",
+      "wait_seconds": 2
+    }
+  ]
+}
