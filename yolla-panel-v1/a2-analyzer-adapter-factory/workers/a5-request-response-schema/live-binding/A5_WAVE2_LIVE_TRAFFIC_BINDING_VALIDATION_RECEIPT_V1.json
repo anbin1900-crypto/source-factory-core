@@ -1,0 +1,55 @@
+{
+  "schema_version": "A5_WAVE2_LIVE_TRAFFIC_BINDING_VALIDATION_RECEIPT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment_id": 5208238898,
+  "worker": "A-5",
+  "validated_at_kst": "2026-08-07T04:02:00+09:00",
+  "implementation": {
+    "entrypoint": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/live_traffic_endpoint_schema_binding.cjs",
+    "entrypoint_commit": "630ff7c0dc84bcf8b1250fd3d18397eb7e5e2751",
+    "entrypoint_blob": "ca6f506970535ebf0d2654306b7c4a42640c295a",
+    "entrypoint_sha256": "79b923bacdee39cfc3fd5b25a51610c727ed170a535a4d2bf45afe2ec869f10a",
+    "test": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/test_live_traffic_endpoint_schema_binding.cjs",
+    "test_commit": "c4ba07afbc35bb3c4a33a276ca3537583e998a27",
+    "test_blob": "afdb494339bfc15b27e991a6fa72bf4b54be038f",
+    "test_sha256": "1e65c1595132d33e9add3a328a1a5c6ec2f07c9415cdb6e2ecf82111b82d96f0"
+  },
+  "validation": {
+    "node_syntax": "PASS_2_OF_2",
+    "regression_assertions": "PASS_25_OF_25",
+    "deterministic_replay": "PASS",
+    "remote_readback": "PASS_2_OF_2",
+    "positive_contract_mode": "HYBRID",
+    "positive_contract_binding_status": "LIVE_TRAFFIC_BOUND",
+    "fixture_as_live_rejection": "PASS",
+    "zero_event_rejection": "PASS",
+    "missing_response_body_rejection": "PASS",
+    "event_digest_mismatch_rejection": "PASS",
+    "a4_live_binding_rejection": "PASS",
+    "a3_a4_session_mismatch_rejection": "PASS",
+    "a3_a4_event_digest_mismatch_rejection": "PASS",
+    "raw_secret_rejection": "PASS",
+    "duplicate_sequence_rejection": "PASS",
+    "raw_secret_value_count": 0
+  },
+  "compatibility": {
+    "a3_contract": "STREAMING_ANALYZER_EVENT_V1",
+    "a3_contract_blob": "eaf7c5a8b65cba8467d0925c89c314fe45f85d01",
+    "a4_direct_result": "A4_STRUCTURE_INFERENCE_RESULT_V1",
+    "a4_wave2_handoff": "A4_WAVE2_LIVE_EVENT_STRUCTURE_HANDOFF_V1",
+    "a4_wave2_source_blob": "00352b6b4a2d8fa76a59b07e9f44f1f4da754794",
+    "exact_a3_event_digest_required_for_a4_handoff": true
+  },
+  "actual_live_execution": {
+    "a3_head": "e86dfcc2fc32ad366cd7fd8ba07392850419b853",
+    "a3_live_network_event_count": 0,
+    "a3_live_response_body_count": 0,
+    "a3_live_dom_snapshot_count": 0,
+    "a3_live_navigation_event_count": 0,
+    "a4_head": "a22337ce5f39c6a12837d3771e5eb1660c155b24",
+    "a4_actual_live_handoff_available": false,
+    "actual_generator_input_generated": false,
+    "status": "BLOCKED_BY_UPSTREAM_LIVE_EVENT_ZERO"
+  },
+  "status": "COMPONENT_PASS_LIVE_EXECUTION_BLOCKED"
+}
