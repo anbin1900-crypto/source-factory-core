@@ -1,7 +1,8 @@
 {
-  "schema_version": "PDF_PAGE_TEXT_RECORD_CONTRACT_V1",
-  "contract_id": "C3-PDF-PAGE-TEXT-RECORD-CYCLE1-20260807-001",
-  "purpose": "PAGE_ORDERED_PDF_TEXT_EXTRACTION_DIRECT_TEXT_FIRST_OCR_FALLBACK",
+  "schema_version": "PDF_PAGE_TEXT_RECORD_CONTRACT_V2",
+  "contract_id": "C3-PDF-PAGE-TEXT-RECORD-DIRECT-REPAIR-20260807-001",
+  "supersedes_behavior_of": "PDF_PAGE_TEXT_RECORD_CONTRACT_V1",
+  "purpose": "PAGE_ORDERED_PDF_TEXT_EXTRACTION_DIRECT_TEXT_FIRST_RASTER_AWARE_OCR_FALLBACK",
   "record_required_fields": [
     "source_file",
     "source_path",
@@ -12,18 +13,37 @@
     "alnum_ratio",
     "direct_text_char_count",
     "direct_text_alnum_ratio",
+    "page_has_raster_image",
     "ocr_applied",
     "ocr_reason",
     "status"
   ],
   "record_rules": {
     "page_no": "ONE_BASED_STRICTLY_ASCENDING_WITHIN_SOURCE",
-    "extraction_mode_allowed": ["DIRECT_TEXT", "OCR_FALLBACK", "EMPTY_AFTER_OCR"],
+    "extraction_mode_allowed": [
+      "DIRECT_TEXT",
+      "DIRECT_TEXT_LOW_VOLUME",
+      "DIRECT_TEXT_OCR_UNAVAILABLE",
+      "DIRECT_TEXT_AFTER_EMPTY_OCR",
+      "OCR_FALLBACK",
+      "EMPTY_PAGE",
+      "EMPTY_AFTER_OCR"
+    ],
     "direct_text_priority": true,
-    "ocr_trigger": "DIRECT_TEXT_BELOW_CONFIGURED_MIN_CHARS_OR_ALNUM_RATIO",
+    "ocr_trigger": "DIRECT_TEXT_BELOW_QUALITY_THRESHOLD_AND_RASTER_IMAGE_HINT",
+    "short_direct_text_without_raster_image": "PRESERVE_AS_DIRECT_TEXT_LOW_VOLUME",
+    "short_direct_text_when_ocr_unavailable": "PRESERVE_AS_DIRECT_TEXT_OCR_UNAVAILABLE",
+    "true_blank_page": "EXPLICIT_EMPTY_PAGE_RECORD_NOT_DOCUMENT_FAILURE_WHEN_OTHER_TEXT_EXISTS",
+    "image_page_without_direct_text_and_without_ocr": "FAIL_CLOSED_OCR_BACKEND_REQUIRED",
+    "ocr_empty_with_existing_direct_text": "PRESERVE_DIRECT_TEXT_WITH_WARNING",
     "ocr_max_calls_per_page": 1,
     "empty_text_silent_success": false,
-    "text_normalization": ["UNICODE_NFC", "CRLF_TO_LF", "COLLAPSE_INLINE_WHITESPACE", "TRIM_OUTER_WHITESPACE"],
+    "text_normalization": [
+      "UNICODE_NFC",
+      "CRLF_TO_LF",
+      "COLLAPSE_INLINE_WHITESPACE",
+      "TRIM_OUTER_WHITESPACE"
+    ],
     "source_order_preserved": true,
     "page_order_preserved": true,
     "original_pdf_mutation": false
@@ -38,10 +58,14 @@
   "backend_contract": {
     "primary_document_backend": "PyMuPDF lazy import",
     "ocr_backend": "Tesseract via pytesseract and Pillow lazy import",
-    "dependency_injection_supported": true,
+    "default_ocr_language": "kor+eng",
+    "tesseract_language_pack_validation": "REQUIRED_ON_FIRST_OCR_CALL",
     "missing_pdf_backend_code": "PYMUPDF_NOT_INSTALLED",
+    "pdf_open_failure_code": "PDF_OPEN_FAILED",
     "missing_ocr_backend_code": "OCR_BACKEND_REQUIRED",
     "ocr_binding_missing_code": "TESSERACT_BINDING_NOT_INSTALLED",
+    "ocr_language_probe_failure_code": "TESSERACT_LANGUAGE_PROBE_FAILED",
+    "ocr_language_missing_code": "TESSERACT_LANGUAGE_UNAVAILABLE",
     "ocr_runtime_failure_code": "TESSERACT_EXECUTION_FAILED",
     "empty_after_ocr_code": "EMPTY_TEXT_AFTER_OCR"
   },
