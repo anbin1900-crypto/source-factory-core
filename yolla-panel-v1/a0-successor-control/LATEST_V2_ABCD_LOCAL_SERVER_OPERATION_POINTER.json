@@ -1,7 +1,7 @@
 {
-  "schema_version": "LATEST_V2_ABCD_LOCAL_SERVER_OPERATION_POINTER_V1",
-  "pointer_id": "LATEST-V2-ABCD-LOCAL-SERVER-OPERATION-20260806-001",
-  "updated_at_kst": "2026-08-06T18:45:00+09:00",
+  "schema_version": "LATEST_V2_ABCD_LOCAL_SERVER_OPERATION_POINTER_V2",
+  "pointer_id": "LATEST-V2-ABCD-LOCAL-SERVER-OPERATION-20260806-002",
+  "updated_at_kst": "2026-08-06T19:48:00+09:00",
   "owner": "V-2_YOLLA_AI_SUPREME_COMMANDER",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
@@ -15,11 +15,20 @@
     "commit": "ed893ce08ecb0d3286f9e383fb40bad4bb8d41fe",
     "status": "PASS_13_OF_13"
   },
+  "A0_control_support": {
+    "status": "A0_D_LOCAL_SERVER_CONTROL_SUPPORT_READY",
+    "terminal": "A0_D_LOCAL_SERVER_CONTROL_SUPPORT_READY",
+    "pointer_path": "yolla-panel-v1/a0-successor-control/integration/abcd-local-server-v1/a0-control-support-v1/LATEST_A0_D_LOCAL_SERVER_CONTROL_SUPPORT_POINTER.json",
+    "pointer_commit": "949be2f047342ac258f7580542cd973925439c6d",
+    "report_path": "yolla-panel-v1/a0-successor-control/reports/A0_D_LOCAL_SERVER_CONTROL_SUPPORT_BUILD_TEST_REPORT_V1.json",
+    "report_commit": "f61e53a7b954d3420e8b047e9c043b92341def5c",
+    "target_pc_queue_execution_observed": false
+  },
   "current_state": {
     "B5": "PASS_EVENT_WAIT",
     "B6": "IMMEDIATE_DELTA_ONLY_REPREFLIGHT",
     "B1": "EVENT_WAIT_B6_THEN_LOCAL_SERVER_INGESTION",
-    "A0": "LOCAL_SERVER_PC_AGENT_CONTROL_SUPPORT_ACTIVE",
+    "A0": "LOCAL_SERVER_PC_AGENT_CONTROL_SUPPORT_READY_EVENT_WAIT",
     "A2": "LOCAL_SERVER_HANDOFF_PREPARATION_ACTIVE",
     "C1": "LOCAL_SERVER_CONSUMER_PREPARATION_ACTIVE",
     "D1": "LOCAL_SERVER_CONTROL_REALIGNMENT_ACTIVE",
