@@ -1,0 +1,129 @@
+{
+  "schema_version": "C1_LOCAL_SERVER_QUERY_CLIENT_V1",
+  "contract_id": "C1-LOCAL-SERVER-QUERY-CLIENT-20260806-001",
+  "published_at_kst": "2026-08-06T19:49:00+09:00",
+  "batch_id": "V2-TO-ABCD-LOCAL-SERVER-OPERATION-AND-FUTURE-MIGRATION-BATCH-V1-20260806-001",
+  "task_id": "C1_D_LOCAL_SERVER_QUERY_CITATION_CONSUMER_V1",
+  "task_comment_id": 5203035242,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "baseline_head": "a05cdc280ee28c1c0ffd7ef65e541a1be26f57bd",
+  "authority_bindings": {
+    "common_directive": {
+      "path": "yolla-panel-v1/a0-successor-control/integration/abcd-local-server-v1/V2_ABCD_LOCAL_SERVER_OPERATION_AND_FUTURE_MIGRATION_BATCH_V1.json",
+      "commit": "bcc40274036282dc1065f3b6f139755d7dc0ecc9",
+      "blob": "c272b0d7b965cb8b3bac50061fff90b4e9a97263",
+      "remote_readback": "PASS"
+    },
+    "existing_query_citation_consumer_contract": {
+      "path": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c5-domain-ai-seat-runtime/D_RELEASE_QUERY_CITATION_CONSUMER_CONTRACT_V2.json",
+      "blob": "0c617b519b3202cd4f9d6e37adf200b19c7c2516"
+    },
+    "d_query_contract_blob": "536e0cd95df6613fcf6306413870b09658d76d35",
+    "d_acceptance_receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410"
+  },
+  "target_environment": {
+    "target_pc": "YOLLA-USER-PC01",
+    "target_root": "E:\\YOLLA",
+    "environment_class": "PERSONAL_TRUSTED_LOCAL_NON_PUBLIC_NON_PRODUCTION",
+    "bind_scope": "127.0.0.1_ONLY",
+    "public_binding": false
+  },
+  "endpoint_binding": {
+    "health": {
+      "logical_name": "D_LOCAL_SERVER_HEALTH",
+      "endpoint_reference_env": "YOLLA_D_LOCAL_HEALTH_ENDPOINT_REF",
+      "resolved_endpoint": null,
+      "resolution_authority": "D_LOCAL_SERVER_ENDPOINT_AUTHORITY_POINTER",
+      "status": "UNRESOLVED_WAITING_D_ENDPOINT_AUTHORITY"
+    },
+    "query": {
+      "logical_name": "D_LOCAL_SERVER_QUERY",
+      "endpoint_reference_env": "YOLLA_D_LOCAL_QUERY_ENDPOINT_REF",
+      "resolved_endpoint": null,
+      "resolution_authority": "D_LOCAL_SERVER_ENDPOINT_AUTHORITY_POINTER",
+      "status": "UNRESOLVED_WAITING_D_ENDPOINT_AUTHORITY"
+    }
+  },
+  "request_contract": {
+    "required_fields": [
+      "request_id",
+      "query_text",
+      "query_mode",
+      "domain_scope",
+      "requested_at"
+    ],
+    "conditional_fields": [
+      "knowledge_version",
+      "receipt_ref",
+      "knowledge_release_ref",
+      "max_results",
+      "citation_required"
+    ],
+    "query_modes": [
+      "SOURCE_DOCUMENT_SMOKE",
+      "KNOWLEDGE_RELEASE_QUERY"
+    ],
+    "raw_secret_allowed": false
+  },
+  "response_contract": {
+    "required_fields": [
+      "request_id",
+      "status",
+      "results",
+      "served_at"
+    ],
+    "knowledge_mode_required_fields": [
+      "knowledge_version",
+      "receipt_ref",
+      "knowledge_release_ref",
+      "citation_refs"
+    ],
+    "unknown_field_policy": "PRESERVE_AND_REPORT_NO_SILENT_DROP"
+  },
+  "activation_gates": {
+    "source_document_query_smoke": {
+      "allowed_after": [
+        "D_LOCAL_SERVER_ENDPOINT_AUTHORITY_BOUND",
+        "D_LOCAL_SERVER_HEALTH_READY"
+      ],
+      "requires_knowledge_release": false,
+      "allowed_now": false
+    },
+    "knowledge_release_query": {
+      "allowed_after": [
+        "D1_ACTUAL_KNOWLEDGE_ACCEPTANCE_RECEIPT_PRESENT",
+        "D1_KNOWLEDGE_RELEASE_V1_PRESENT",
+        "D_LOCAL_SERVER_ENDPOINT_AUTHORITY_BOUND",
+        "D_LOCAL_SERVER_HEALTH_READY"
+      ],
+      "allowed_now": false
+    }
+  },
+  "fail_closed_reason_codes": [
+    "D_LOCAL_SERVER_ENDPOINT_AUTHORITY_NOT_BOUND",
+    "D_LOCAL_SERVER_HEALTH_NOT_READY",
+    "D1_ACTUAL_KNOWLEDGE_ACCEPTANCE_RECEIPT_NOT_PUBLISHED",
+    "D1_KNOWLEDGE_RELEASE_V1_NOT_PUBLISHED",
+    "FIXTURE_RECEIPT_NOT_AUTHORITY",
+    "FIXTURE_RELEASE_NOT_AUTHORITY",
+    "PUBLIC_BINDING_PROHIBITED",
+    "RAW_SECRET_REFERENCE_INVALID"
+  ],
+  "current_state": {
+    "candidate_count": 0,
+    "assertion_count": 0,
+    "evidence_count": 0,
+    "rejected_record_count": 15,
+    "semantic_rerun_count": 0,
+    "runtime_activation": false,
+    "runtime_activation_state": "BLOCKED_FAIL_CLOSED",
+    "actual_local_query_call_count": 0
+  },
+  "decision": "QUERY_CLIENT_CONTRACT_READY_WAITING_D_LOCAL_ENDPOINT_AND_KNOWLEDGE_RELEASE",
+  "production": false,
+  "public_binding": false,
+  "ready": false,
+  "merge": false
+}
