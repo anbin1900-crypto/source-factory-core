@@ -1,0 +1,55 @@
+{
+  "schema_version": "LATEST_YOLLA_MINIMAL_V1_2_OBSERVABILITY_POINTER_V1",
+  "version": "1.2.0",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "implementation_pr": 76,
+  "implementation_branch": "agent/yolla-minimal-separate-runtime-v1",
+  "contract": "yolla-panel-v1/minimal-v1/runtime-v1.2/YOLLA_MINIMAL_V1_2_OBSERVABILITY_AND_BINDING_CONTRACT_V1.md",
+  "build_report": "yolla-panel-v1/minimal-v1/runtime-v1.2/YOLLA_MINIMAL_V1_2_BUILD_TEST_REPORT_V1.json",
+  "target_release": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\yolla-minimal-v1.2-observability",
+  "state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-minimal-v1",
+  "profile_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile-minimal-v1",
+  "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_MINIMAL_V1_2.bat",
+  "receipt": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-minimal-v1\\MINIMAL_V1_2_INSTALL_RECEIPT.json",
+  "features": {
+    "top_menu": ["프로젝트", "로그 분석기", "대화", "워커 지정", "명령"],
+    "worker_assignment": "CURRENT_CHATGPT_CONVERSATION_URL_TO_SELECTED_GROUP_COMMANDER",
+    "command_triggers": ["INTERVAL", "AFTER_COMPLETION"],
+    "after_completion_label": "작업완료후",
+    "group_completed_count": true,
+    "log_analyzer": "C_MODE_CONFLICT_ERROR_OBSERVABILITY",
+    "diagnostic_zip_export": true,
+    "diagnostic_zip_excludes_browser_profile": true
+  },
+  "package": {
+    "file_name": "AI_YOLLA_MINIMAL_V1_2_OBSERVABILITY_PACKAGE.zip",
+    "drive_file_id": "1IgrrhyONEBfKS6UT6Ryndy0lLchpHsBb",
+    "size": 59043,
+    "sha256": "902ab7eaa08b71998169084f2a2efcdbaf06a2b2a8a6b3272636b6c954608d05",
+    "remote_readback": "PASS"
+  },
+  "one_click": {
+    "file_name": "INSTALL_AI_YOLLA_MINIMAL_V1_2_ONE_CLICK.bat",
+    "drive_file_id": "1Ee4-YDvMhDT0sEsrtbdXLbrSVMlMLBCn",
+    "size": 85929,
+    "sha256": "b1efd60068f302d7a2e501bcd3028076c6894b66db011f79de8c1c05331853bf",
+    "remote_readback": "PASS"
+  },
+  "validation": {
+    "feature_static_assertions": 25,
+    "completion_scheduler_assertions": 10,
+    "state_binding_assertions": 4,
+    "node_syntax_files": 10,
+    "zip_integrity": "PASS",
+    "self_extract_payload_match": "PASS"
+  },
+  "target_pc_install": "PENDING",
+  "target_pc_live_pass": false,
+  "legacy_runtime_modified": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "V1_2_SOURCE_AND_INSTALLER_READY_TARGET_PC_PENDING",
+  "updated_at": "2026-08-07T04:50:00+09:00"
+}
