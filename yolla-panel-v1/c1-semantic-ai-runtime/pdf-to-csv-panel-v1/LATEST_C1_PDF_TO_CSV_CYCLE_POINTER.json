@@ -1,0 +1,64 @@
+{
+  "schema_version": "LATEST_C1_PDF_TO_CSV_CYCLE_POINTER_V1",
+  "pointer_id": "LATEST-C1-PDF-TO-CSV-CYCLE1-20260807-001",
+  "published_at_kst": "2026-08-07T01:55:00+09:00",
+  "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
+  "common_directive": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/pdf-to-csv-panel-v1/directives/C1_PDF_TO_CSV_PANEL_CYCLE1_BATCH_V1.json",
+    "commit": "ef02e3b59a2d389b571d5b5feaa20a8d24a21e4d",
+    "blob": "2ce798647c86363a8fd2382a08013304f73bc1ef",
+    "remote_readback": "PASS"
+  },
+  "dispatch": {
+    "C2": {
+      "task_id": "C2_PDF_FOLDER_INVENTORY_V1",
+      "comment_id": 5207631489,
+      "required_terminal": "C2_PDF_FOLDER_INVENTORY_READY_OR_EXACT_BLOCKER",
+      "status": "DISPATCHED"
+    },
+    "C3": {
+      "task_id": "C3_PDF_TEXT_EXTRACTION_OCR_V1",
+      "comment_id": 5207633669,
+      "required_terminal": "C3_PDF_TEXT_EXTRACTION_OCR_READY_OR_EXACT_BLOCKER",
+      "status": "DISPATCHED"
+    },
+    "C4": {
+      "task_id": "C4_TEXT_CHUNK_CSV_WRITER_V1",
+      "comment_id": 5207635653,
+      "required_terminal": "C4_TEXT_CHUNK_CSV_WRITER_READY_OR_EXACT_BLOCKER",
+      "status": "DISPATCHED"
+    },
+    "C5": {
+      "task_id": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_V1",
+      "comment_id": 5207637581,
+      "required_terminal": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_READY_OR_EXACT_BLOCKER",
+      "status": "DISPATCHED"
+    },
+    "C6": {
+      "task_id": "C6_PDF_TO_CSV_VALIDATION_V1",
+      "comment_id": 5207639329,
+      "required_terminal": "C6_PDF_TO_CSV_VALIDATOR_READY_OR_EXACT_BLOCKER",
+      "status": "DISPATCHED"
+    }
+  },
+  "dispatch_summary": {
+    "worker_count": 5,
+    "task_count": 5,
+    "parallel_dispatch": true,
+    "semantic_analysis": false,
+    "gpt_call": false,
+    "panel_integration_in_this_cycle": false,
+    "actual_150_pdf_run_in_this_cycle": false
+  },
+  "current_gate": "WAIT_C2_TO_C6_CYCLE1_TERMINALS",
+  "next_action": "COLLECT_FIVE_TERMINALS_AND_BUILD_PANEL_INTEGRATION_CYCLE2",
+  "status": "C1_PDF_TO_CSV_CYCLE1_ACTIVE",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
