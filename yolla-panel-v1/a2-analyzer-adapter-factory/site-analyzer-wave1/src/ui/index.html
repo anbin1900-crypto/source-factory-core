@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>YOLLA Site Analyzer</title>
+  <link rel="stylesheet" href="./analyzer-ui.css">
+</head>
+<body>
+  <header><strong>YOLLA Site Analyzer</strong><span id="modeBadge">embedded</span><button id="runButton">샘플 분석 실행</button></header>
+  <main>
+    <section class="browser-pane" data-section="live-browser"><h2>Live Browser</h2><div id="browserSurface">사이트를 등록하고 관찰을 시작하십시오.</div></section>
+    <aside data-section="smart-inspector"><h2>Smart Inspector</h2><div id="fieldList"></div></aside>
+    <section data-section="timeline"><h2>Timeline</h2><ol id="timeline"></ol></section>
+    <section data-section="data-preview"><h2>Data Preview</h2><table id="preview"></table></section>
+    <section data-section="workflow"><h2>Workflow</h2><pre id="workflow"></pre></section>
+    <section data-section="code"><h2>Code</h2><pre id="code"></pre></section>
+    <section data-section="trace"><h2>Trace</h2><pre id="trace"></pre></section>
+  </main>
+  <script type="module" src="./analyzer-ui.js"></script>
+</body>
+</html>
