@@ -1,0 +1,68 @@
+{
+  "schema_version": "LIVENESS_STATE_ORACLE_FIXTURES_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-019",
+  "result_key": "520054321000",
+  "fixtures": [
+    {
+      "id": "WAITING_BEFORE_30_MINUTES",
+      "input": {"nowMs": 1700000000000, "referenceAtMs": 1699998500000, "expectedResultKey": "520054321000", "observedResultKeys": [], "generationActive": false, "workObserved": false, "refreshCount": 0},
+      "expected": {"state": "WAITING", "action": "NONE", "refreshRequested": false}
+    },
+    {
+      "id": "WORKING_BEFORE_30_MINUTES",
+      "input": {"nowMs": 1700000000000, "referenceAtMs": 1699998500000, "expectedResultKey": "520054321000", "observedResultKeys": [], "generationActive": false, "workObserved": true, "refreshCount": 0},
+      "expected": {"state": "WORKING", "action": "NONE", "refreshRequested": false}
+    },
+    {
+      "id": "GENERATION_ACTIVE_AFTER_30_MINUTES_NO_REFRESH",
+      "input": {"nowMs": 1700000000000, "referenceAtMs": 1699998100000, "expectedResultKey": "520054321000", "observedResultKeys": [], "generationActive": true, "workObserved": true, "refreshCount": 0},
+      "expected": {"state": "WORKING", "action": "NONE", "refreshRequested": false}
+    },
+    {
+      "id": "THRESHOLD_ELAPSED_REFRESH_EXACTLY_ONCE",
+      "input": {"nowMs": 1700000000000, "referenceAtMs": 1699998200000, "expectedResultKey": "520054321000", "observedResultKeys": [], "generationActive": false, "workObserved": true, "refreshCount": 0},
+      "expected": {"state": "RESULT_PENDING", "action": "REFRESH_ONCE", "refreshRequested": true}
+    },
+    {
+      "id": "NO_WORK_OBSERVED_THRESHOLD_REFRESH_ONCE",
+      "input": {"nowMs": 1700000000000, "referenceAtMs": 1699998200000, "expectedResultKey": "520054321000", "observedResultKeys": [], "generationActive": false, "workObserved": false, "refreshCount": 0},
+      "expected": {"state": "WAITING", "action": "REFRESH_ONCE", "refreshRequested": true}
+    },
+    {
+      "id": "WITHIN_30_SECONDS_AFTER_REFRESH",
+      "input": {"nowMs": 1700000000000, "referenceAtMs": 1699998000000, "expectedResultKey": "520054321000", "observedResultKeys": [], "generationActive": false, "workObserved": true, "refreshCount": 1, "refreshAtMs": 1699999985000},
+      "expected": {"state": "RESULT_PENDING", "action": "RECHECK_AFTER_30_SECONDS", "refreshRequested": false}
+    },
+    {
+      "id": "AFTER_30_SECONDS_NO_RESULT_REMAINS_PENDING",
+      "input": {"nowMs": 1700000000000, "referenceAtMs": 1699998000000, "expectedResultKey": "520054321000", "observedResultKeys": [], "generationActive": false, "workObserved": true, "refreshCount": 1, "refreshAtMs": 1699999960000},
+      "expected": {"state": "RESULT_PENDING", "action": "NONE", "refreshRequested": false}
+    },
+    {
+      "id": "WRONG_RESULT_KEY_DOES_NOT_COMPLETE",
+      "input": {"nowMs": 1700000000000, "referenceAtMs": 1699998000000, "expectedResultKey": "520054321000", "observedResultKeys": ["520054321001"], "generationActive": false, "workObserved": true, "refreshCount": 1, "refreshAtMs": 1699999960000},
+      "expected": {"state": "RESULT_PENDING", "action": "NONE", "refreshRequested": false}
+    },
+    {
+      "id": "EXACT_RESULT_KEY_COMPLETES",
+      "input": {"nowMs": 1700000000000, "referenceAtMs": 1699999990000, "expectedResultKey": "520054321000", "observedResultKeys": ["OTHER", "520054321000"], "generationActive": true, "workObserved": true, "refreshCount": 0},
+      "expected": {"state": "COMPLETED", "action": "NONE", "refreshRequested": false}
+    },
+    {
+      "id": "EXPLICIT_REVIEW_SIGNAL_ONLY",
+      "input": {"nowMs": 1700000000000, "referenceAtMs": 1699999990000, "expectedResultKey": "520054321000", "observedResultKeys": [], "generationActive": false, "workObserved": false, "refreshCount": 0, "explicitReviewReasons": ["DUPLICATE_RESULT"]},
+      "expected": {"state": "REVIEW_REQUIRED", "action": "NONE", "refreshRequested": false}
+    },
+    {
+      "id": "EXACT_RESULT_OVERRIDES_REVIEW_SIGNAL",
+      "input": {"nowMs": 1700000000000, "referenceAtMs": 1699999990000, "expectedResultKey": "520054321000", "observedResultKeys": ["520054321000"], "generationActive": false, "workObserved": false, "refreshCount": 0, "explicitReviewReasons": ["STALE_OBSERVATION"]},
+      "expected": {"state": "COMPLETED", "action": "NONE", "refreshRequested": false}
+    },
+    {
+      "id": "REFRESH_LATCH_PREVENTS_SECOND_REFRESH",
+      "input": {"nowMs": 1700001000000, "referenceAtMs": 1699998000000, "expectedResultKey": "520054321000", "observedResultKeys": [], "generationActive": false, "workObserved": false, "refreshCount": 2, "refreshAtMs": 1700000000000},
+      "expected": {"state": "RESULT_PENDING", "action": "NONE", "refreshRequested": false}
+    }
+  ]
+}
