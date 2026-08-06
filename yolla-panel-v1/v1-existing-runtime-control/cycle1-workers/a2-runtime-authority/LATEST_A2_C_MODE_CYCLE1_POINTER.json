@@ -1,0 +1,41 @@
+{
+  "schema_version": "LATEST_A2_C_MODE_CYCLE1_POINTER_V1",
+  "pointer_id": "A2-C-MODE-CYCLE1-RUNTIME-AUTHORITY-LATEST-V1",
+  "updated_at_kst": "2026-08-07T00:16:00+09:00",
+  "role": "A-2_C_MODE_CYCLE1_RUNTIME_AUTHORITY_WORKER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "worker_pr": 18,
+  "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "directive_id": "C1-A2-EXACT-RUNTIME-AUTHORITY-RESOLUTION",
+  "artifacts": {
+    "start": {"path":"yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a2-runtime-authority/A2_CYCLE1_START_REPORT_V1.json","commit":"4188ee3e1a1a697f7d5ed4ebaa383442ae6189ca","blob":"09c2700b346ae2b04f3cfa3f05746a7e2beda97c","remote_readback":"PASS"},
+    "matrix": {"path":"yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a2-runtime-authority/A2_CYCLE1_RUNTIME_AUTHORITY_MATRIX_V1.json","commit":"b4093a1f67ba5c6f556c675716bc1347d4fbb00f","blob":"79c834599298fca4eba1e837e2359d6d2dadb9af","remote_readback":"PASS"},
+    "next_target": {"path":"yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a2-runtime-authority/A2_CYCLE1_NEXT_INSTALL_AND_READBACK_TARGET_V1.json","commit":"a1b5d2bbf600634bd3478691ecae58cc3cd655ab","blob":"7dd10668fbf0d953f3c98a4a685d0d72ec2ab316","remote_readback":"PASS"},
+    "final_report": {"path":"yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a2-runtime-authority/A2_CYCLE1_FINAL_REPORT_V1.json","commit":"f71f6119134ee521415381dec81c46d3c3d0d236","blob":"21c570583fe9ca25e712258b362e9f5777120675","remote_readback":"PASS"}
+  },
+  "authority_result": {
+    "active_runtime": "5.10.2.3.7",
+    "next_install_and_readback_candidate": "5.10.2.4.3",
+    "selected_candidate_source_pr": 75,
+    "selected_candidate_source_head": "5f737c796500ade755532c6922f38448151f1d55",
+    "pr73_selected": false,
+    "conflict_count": 3,
+    "unresolved_conflict_count": 0,
+    "false_target_pc_pass_count": 0
+  },
+  "next_gate": {
+    "owner": "A-3_OR_AUTHORIZED_TARGET_PC_EXECUTOR",
+    "action": "NON_DESTRUCTIVE_PREINSTALL_READBACK_THEN_EXACT_INSTALLER_BYTE_GATE_AND_RECEIPT",
+    "activation_condition": "TARGET_PC_INSTALL_RECEIPT_AND_LIVE_PROCESS_READBACK_PASS"
+  },
+  "terminal": "A2_C_MODE_CYCLE1_RUNTIME_AUTHORITY_READY",
+  "status": "TERMINAL_PASS",
+  "site_analyzer_work": false,
+  "target_pc_applied": false,
+  "target_pc_live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
