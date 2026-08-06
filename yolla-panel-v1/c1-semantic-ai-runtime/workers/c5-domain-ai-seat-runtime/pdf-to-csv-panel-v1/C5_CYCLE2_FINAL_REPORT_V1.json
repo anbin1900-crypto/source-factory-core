@@ -9,7 +9,9 @@
   "observed_pr20_head_before_repair": "19735b29a82e260f0e1886dee2698492e95bc8e1",
   "observed_panel_blob_before_repair": "1ef01f6cb493e9271c000a2103f70fed3b9ae463",
   "observed_panel_blob_after_concurrent_change": "2ea1ebacaf102152b8e0067f65aa4586628c8602",
-  "observed_c4_pipeline_blob": "a75b2f9817df76266334fa282de8c26aaea31f33",
+  "observed_c4_pipeline_blob_before_repair": "a75b2f9817df76266334fa282de8c26aaea31f33",
+  "observed_c4_pipeline_blob_pre_pointer_readback": "63b40f83b0425d241ad1859864625f4211c847d5",
+  "c4_run_pipeline_signature_compatible": true,
   "defects_found": [
     "LATEST_SCOPE_REQUIRES_TWO_DEDICATED_INPUT_SELECTION_BUTTONS_BUT_EXISTING_UI_USES_RADIO_PLUS_SINGLE_FIND_BUTTON",
     "MODE_SWITCH_CAN_LEAVE_STALE_SOURCE_PATH",
