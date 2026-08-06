@@ -1,0 +1,158 @@
+{
+  "schema_version": "YOLLA_COMMANDER_TO_WORKER_DIRECTIVE_OUTPUT_FORMAT_POLICY_V1",
+  "policy_id": "YOLLA-COMMANDER-TO-WORKER-DIRECTIVE-OUTPUT-FORMAT-POLICY-V1-20260806-001",
+  "effective_at_kst": "2026-08-06T13:45:00+09:00",
+  "status": "ACTIVE_MANDATORY",
+  "owner": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "purpose": "워커 지시를 독립·최소·복사 가능한 블록으로 표준화하고 공통지시문 및 작업본문의 반복복사를 제거한다.",
+  "scope": [
+    "ALL_YOLLA_COMMANDERS",
+    "ALL_GROUP_COMMANDERS",
+    "ALL_SUCCESSOR_COMMANDERS",
+    "ALL_BATCH_AND_EVENT_DIRECTIVE_OUTPUTS"
+  ],
+  "rules": {
+    "R1_ONE_RECIPIENT_ONE_BLOCK": {
+      "required": true,
+      "title_template": "# 수신대상: <ROLE_OR_WORKER_NAME>",
+      "multiple_recipients_in_one_block": false
+    },
+    "R2_FIXED_FIELD_ORDER": {
+      "same_repo_with_common": [
+        "REPOSITORY",
+        "CONTROL_PR_OR_WORKER_PR",
+        "COMMON_DIRECTIVE_COMMIT",
+        "COMMON_DIRECTIVE_PATH",
+        "TASK_COMMENT",
+        "UNIFIED_COMMAND_SENTENCE"
+      ],
+      "cross_repo_with_common": [
+        "REPOSITORY",
+        "CONTROL_PR_OR_WORKER_PR",
+        "COMMON_DIRECTIVE_REPOSITORY",
+        "COMMON_DIRECTIVE_COMMIT",
+        "COMMON_DIRECTIVE_PATH",
+        "TASK_COMMENT",
+        "UNIFIED_COMMAND_SENTENCE"
+      ],
+      "without_common": [
+        "REPOSITORY",
+        "CONTROL_PR_OR_WORKER_PR",
+        "TASK_COMMENT",
+        "UNIFIED_COMMAND_SENTENCE"
+      ]
+    },
+    "R3_PR_FIELD": {
+      "commander_bridge_control_role": "CONTROL_PR",
+      "worker_role": "WORKER_PR"
+    },
+    "R4_NO_FULL_URL": {
+      "full_url_required": false,
+      "task_identity": "REPOSITORY + PR_NUMBER + TASK_COMMENT",
+      "common_directive_identity": "COMMON_DIRECTIVE_REPOSITORY_IF_CROSS_REPO + COMMON_DIRECTIVE_COMMIT + COMMON_DIRECTIVE_PATH",
+      "exception": "사람용 클릭 링크를 사용자가 명시적으로 요구한 경우 별도 보고영역에서만 허용"
+    },
+    "R5_UNIFIED_SENTENCE": {
+      "with_common": "게시물 공통지시문 <COMMON_DIRECTIVE_FILENAME>과 PR #<PR_NUMBER> 댓글 <TASK_COMMENT>을 읽고 작업을 수행하라.",
+      "without_common": "게시물 PR #<PR_NUMBER> 댓글 <TASK_COMMENT>을 읽고 작업을 수행하라.",
+      "other_task_sentence_allowed_inside_block": false
+    },
+    "R6_COMMON_DIRECTIVE_REFERENCE": {
+      "commit_and_path_required": true,
+      "same_repo_common_directive_repository_field_required": false,
+      "cross_repo_common_directive_repository_field_required": true
+    },
+    "R7_SELF_CONTAINED": {
+      "each_block_must_be_independently_copyable": true,
+      "implicit_dependency_on_neighbor_block": false
+    },
+    "R8_NO_BODY_DUPLICATION": {
+      "repeat_common_policy_body": false,
+      "repeat_task_body": false,
+      "github_pointer_only": true
+    },
+    "R9_FAIL_CLOSED": {
+      "required_identifiers": [
+        "REPOSITORY",
+        "CONTROL_PR_OR_WORKER_PR",
+        "TASK_COMMENT",
+        "COMMON_DIRECTIVE_COMMIT_IF_USED",
+        "COMMON_DIRECTIVE_PATH_IF_USED",
+        "COMMON_DIRECTIVE_REPOSITORY_IF_CROSS_REPO"
+      ],
+      "blocker": "COMMANDER_DIRECTIVE_OUTPUT_IDENTITY_INCOMPLETE"
+    }
+  },
+  "canonical_templates": {
+    "same_repo_with_common": [
+      "# 수신대상: <ROLE_OR_WORKER_NAME>",
+      "```text",
+      "REPOSITORY=<owner/repository>",
+      "<CONTROL_PR_OR_WORKER_PR>=#<PR_NUMBER>",
+      "",
+      "COMMON_DIRECTIVE_COMMIT=<40_HEX_COMMIT>",
+      "COMMON_DIRECTIVE_PATH=<path/COMMON_DIRECTIVE_FILENAME.json>",
+      "",
+      "TASK_COMMENT=<NUMERIC_COMMENT_ID>",
+      "",
+      "게시물 공통지시문 <COMMON_DIRECTIVE_FILENAME.json>과 PR #<PR_NUMBER> 댓글 <NUMERIC_COMMENT_ID>을 읽고 작업을 수행하라.",
+      "```"
+    ],
+    "cross_repo_with_common": [
+      "# 수신대상: <ROLE_OR_WORKER_NAME>",
+      "```text",
+      "REPOSITORY=<target-owner/target-repository>",
+      "<CONTROL_PR_OR_WORKER_PR>=#<PR_NUMBER>",
+      "",
+      "COMMON_DIRECTIVE_REPOSITORY=<common-owner/common-repository>",
+      "COMMON_DIRECTIVE_COMMIT=<40_HEX_COMMIT>",
+      "COMMON_DIRECTIVE_PATH=<path/COMMON_DIRECTIVE_FILENAME.json>",
+      "",
+      "TASK_COMMENT=<NUMERIC_COMMENT_ID>",
+      "",
+      "게시물 공통지시문 <COMMON_DIRECTIVE_FILENAME.json>과 PR #<PR_NUMBER> 댓글 <NUMERIC_COMMENT_ID>을 읽고 작업을 수행하라.",
+      "```"
+    ],
+    "without_common": [
+      "# 수신대상: <ROLE_OR_WORKER_NAME>",
+      "```text",
+      "REPOSITORY=<owner/repository>",
+      "<CONTROL_PR_OR_WORKER_PR>=#<PR_NUMBER>",
+      "",
+      "TASK_COMMENT=<NUMERIC_COMMENT_ID>",
+      "",
+      "게시물 PR #<PR_NUMBER> 댓글 <NUMERIC_COMMENT_ID>을 읽고 작업을 수행하라.",
+      "```"
+    ]
+  },
+  "validation": {
+    "recipient_count_per_block": 1,
+    "recipient_title_required": true,
+    "field_order_exact": true,
+    "common_directive_commit_40_hex": "REQUIRED_IF_USED",
+    "task_comment_numeric": true,
+    "full_url_count_inside_worker_block": 0,
+    "unified_command_sentence_count": 1,
+    "extra_explanation_inside_block_count": 0
+  },
+  "precedence": [
+    "LATEST_EXPLICIT_USER_INSTRUCTION",
+    "CURRENT_SUPERIOR_COMMANDER_BATCH_OR_EVENT_DIRECTIVE",
+    "THIS_POLICY",
+    "OLDER_FORMATS_AND_CHAT_EXAMPLES"
+  ],
+  "supersedes": [
+    "FULL_URL_REPEATED_PER_WORKER",
+    "COMMON_POLICY_BODY_COPIED_PER_WORKER",
+    "MULTIPLE_RECIPIENTS_IN_ONE_BLOCK",
+    "LONG_TASK_BODY_REPEATED_OUTSIDE_GITHUB",
+    "COMMENT_ID_WITHOUT_REPOSITORY_AND_PR"
+  ],
+  "authority_effect": {
+    "changes_task_scope": false,
+    "changes_execution_authority": false,
+    "authorizes_production": false,
+    "authorizes_ready": false,
+    "authorizes_merge": false
+  }
+}
