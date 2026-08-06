@@ -1,0 +1,450 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yolla.local/schemas/C_MODE_CYCLE1_TARGET_PC_READBACK_RECEIPT_V1.schema.json",
+  "title": "C Mode Cycle 1 Target PC Runtime Readback Receipt V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "receipt_id",
+    "captured_at_utc",
+    "status",
+    "target_pc_access",
+    "execution_mode",
+    "non_destructive_read_only",
+    "target_pc_write_count",
+    "browser_profile_modification",
+    "workspace_state_reset",
+    "runtime_installation_change",
+    "machine",
+    "launcher_candidates",
+    "release_roots",
+    "state_roots",
+    "browser_profiles",
+    "processes",
+    "process_tree",
+    "runtime_environment",
+    "evidence_counts",
+    "warnings",
+    "errors",
+    "guardrails"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "C_MODE_CYCLE1_TARGET_PC_READBACK_RECEIPT_V1"
+    },
+    "receipt_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "captured_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "enum": [
+        "PASS",
+        "PARTIAL",
+        "EXACT_ACCESS_BLOCKER"
+      ]
+    },
+    "target_pc_access": {
+      "type": "boolean"
+    },
+    "execution_mode": {
+      "type": "string",
+      "minLength": 1
+    },
+    "non_destructive_read_only": {
+      "const": "PASS"
+    },
+    "target_pc_write_count": {
+      "const": 0
+    },
+    "browser_profile_modification": {
+      "const": false
+    },
+    "workspace_state_reset": {
+      "const": false
+    },
+    "runtime_installation_change": {
+      "const": false
+    },
+    "machine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "os",
+        "computer",
+        "powershell"
+      ],
+      "properties": {
+        "os": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "computer": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "powershell": {
+          "type": "object"
+        }
+      }
+    },
+    "launcher_candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fileIdentity"
+      }
+    },
+    "release_roots": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/pathEvidence"
+      }
+    },
+    "state_roots": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/pathEvidence"
+      }
+    },
+    "browser_profiles": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/pathEvidence"
+      }
+    },
+    "processes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/processEvidence"
+      }
+    },
+    "process_tree": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/processTreeEvidence"
+      }
+    },
+    "runtime_environment": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/environmentEvidence"
+      }
+    },
+    "evidence_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "launcher_candidate_count",
+        "release_root_count",
+        "state_root_count",
+        "browser_profile_count",
+        "process_count",
+        "process_tree_edge_count",
+        "file_hash_count",
+        "file_version_count",
+        "command_line_count",
+        "raw_secret_value_count"
+      ],
+      "properties": {
+        "launcher_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "release_root_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "state_root_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "browser_profile_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "process_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "process_tree_edge_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "file_hash_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "file_version_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "command_line_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "raw_secret_value_count": {
+          "const": 0
+        }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "guardrails": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "registry_write_count",
+        "file_write_count",
+        "process_start_count",
+        "process_stop_count",
+        "profile_write_count",
+        "state_write_count",
+        "release_write_count"
+      ],
+      "properties": {
+        "registry_write_count": {
+          "const": 0
+        },
+        "file_write_count": {
+          "const": 0
+        },
+        "process_start_count": {
+          "const": 0
+        },
+        "process_stop_count": {
+          "const": 0
+        },
+        "profile_write_count": {
+          "const": 0
+        },
+        "state_write_count": {
+          "const": 0
+        },
+        "release_write_count": {
+          "const": 0
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nullableString": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "fileIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "path_sha256",
+        "exists",
+        "sha256",
+        "file_version",
+        "product_version",
+        "company_name",
+        "product_name",
+        "size_bytes",
+        "last_write_time_utc",
+        "read_error"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "path_sha256": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "exists": {
+          "type": "boolean"
+        },
+        "sha256": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "file_version": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "product_version": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "company_name": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "product_name": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "size_bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "last_write_time_utc": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "read_error": {
+          "$ref": "#/$defs/nullableString"
+        }
+      }
+    },
+    "pathEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "path_sha256",
+        "exists"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "path_sha256": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64
+        },
+        "exists": {
+          "type": "boolean"
+        }
+      }
+    },
+    "processEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "process_id",
+        "parent_process_id",
+        "name",
+        "role",
+        "executable",
+        "command_line_redacted",
+        "command_line_sha256",
+        "browser_user_data_dir",
+        "browser_user_data_dir_sha256",
+        "browser_profile_directory",
+        "creation_date",
+        "session_id"
+      ],
+      "properties": {
+        "process_id": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "parent_process_id": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "executable": {
+          "$ref": "#/$defs/fileIdentity"
+        },
+        "command_line_redacted": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "command_line_sha256": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "browser_user_data_dir": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "browser_user_data_dir_sha256": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "browser_profile_directory": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "creation_date": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "session_id": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "processTreeEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "process_id",
+        "parent_process_id",
+        "parent_in_receipt",
+        "parent_name",
+        "role"
+      ],
+      "properties": {
+        "process_id": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "parent_process_id": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "parent_in_receipt": {
+          "type": "boolean"
+        },
+        "parent_name": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "role": {
+          "type": "string"
+        }
+      }
+    },
+    "environmentEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "value_sha256",
+        "value_length",
+        "raw_value_persisted"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^YOLLA_"
+        },
+        "value_sha256": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64
+        },
+        "value_length": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "raw_value_persisted": {
+          "const": false
+        }
+      }
+    }
+  }
+}
