@@ -5,7 +5,7 @@ from pathlib import Path
 from unittest.mock import patch
 import panel_folder_inventory_adapter as a
 
-class T(unittest.TestCase):
+class RegressionT(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory(); self.root=Path(self.tmp.name); self.src=self.root/'src'; self.out=self.root/'out'; self.src.mkdir(); self.out.mkdir()
     def tearDown(self): self.tmp.cleanup()
@@ -13,15 +13,13 @@ class T(unittest.TestCase):
         f=self.src/p; f.parent.mkdir(parents=True,exist_ok=True); f.write_bytes(data); return f
     def bad(self,**kw):
         d={'schema_version':'PDF_FOLDER_INVENTORY_V1','selected_folder':str(self.src.resolve()),'pdf_count':0,'files':[],'inventory_sha256':'0'*64}; d.update(kw); return d
-
     def test_01_ready(self): self.pdf('a.pdf'); self.assertEqual(a.adapt_folder_selection(self.src,self.out)['selection_status'],'READY')
     def test_02_resolved_paths(self): self.pdf('a.pdf'); r=a.adapt_folder_selection(self.src,self.out); self.assertEqual((r['source_folder'],r['output_folder']),(str(self.src.resolve()),str(self.out.resolve())))
     def test_03_pointer(self): self.pdf('a.pdf'); self.assertEqual(a.adapt_folder_selection(self.src,self.out)['cycle1_pointer_blob'],a.CYCLE1_POINTER_BLOB)
     def test_04_schema(self): self.pdf('a.pdf'); self.assertEqual(a.adapt_folder_selection(self.src,self.out)['inventory']['schema_version'],'PDF_FOLDER_INVENTORY_V1')
     def test_05_recursive(self): self.pdf('x/b.pdf'); self.assertEqual(a.adapt_folder_selection(self.src,self.out)['inventory']['files'][0]['relative_path'],'x/b.pdf')
     def test_06_casefold_pdf(self): self.pdf('A.PDF'); self.assertEqual(a.adapt_folder_selection(self.src,self.out)['pdf_count'],1)
-    def test_07_deterministic(self):
-        [self.pdf(n) for n in ('z.pdf','A/1.pdf','a/2.pdf')]; self.assertEqual(a.adapt_folder_selection(self.src,self.out)['inventory'],a.adapt_folder_selection(self.src,self.out)['inventory'])
+    def test_07_deterministic(self): [self.pdf(n) for n in ('z.pdf','A/1.pdf','a/2.pdf')]; self.assertEqual(a.adapt_folder_selection(self.src,self.out)['inventory'],a.adapt_folder_selection(self.src,self.out)['inventory'])
     def test_08_probe_cleanup(self): self.pdf('a.pdf'); a.adapt_folder_selection(self.src,self.out); self.assertEqual(list(self.out.iterdir()),[])
     def test_09_probe_skip(self): self.assertEqual(a.adapt_folder_selection(self.src,self.out,verify_output_writable=False)['output_write_probe'],'SKIPPED_BY_CALLER')
     def test_10_empty_explicit(self): r=a.adapt_folder_selection(self.src,self.out); self.assertEqual(r['selection_status'],'NO_PDF_FILES'); self.assertFalse(r['ready_for_processing'])
@@ -82,5 +80,43 @@ class T(unittest.TestCase):
         self.pdf('a.pdf'); s=Path(__file__).with_name('panel_folder_inventory_adapter.py'); r=subprocess.run([sys.executable,str(s),str(self.src),str(self.out),'--compact'],capture_output=True,text=True); self.assertEqual(r.returncode,0,r.stderr); self.assertEqual(json.loads(r.stdout)['selection_status'],'READY')
     def test_29_cli_failure(self):
         s=Path(__file__).with_name('panel_folder_inventory_adapter.py'); r=subprocess.run([sys.executable,str(s),str(self.root/'missing'),str(self.out)],capture_output=True,text=True); self.assertEqual(r.returncode,2); self.assertIn('FOLDER_SELECTION_ADAPTER_ERROR',r.stderr)
+
+class SinglePdfT(unittest.TestCase):
+    def setUp(self):
+        self.tmp=tempfile.TemporaryDirectory(); self.root=Path(self.tmp.name); self.src=self.root/'src'; self.out=self.root/'out'; self.src.mkdir(); self.out.mkdir()
+    def tearDown(self): self.tmp.cleanup()
+    def pdf(self,p,data=b'%PDF'):
+        f=self.src/p; f.parent.mkdir(parents=True,exist_ok=True); f.write_bytes(data); return f
+    def test_30_mode_exact(self): self.assertEqual(a.adapt_pdf_file_selection(self.pdf('a.pdf'),self.out)['input_mode'],'PDF_FILE')
+    def test_31_exactly_one(self):
+        p=self.pdf('chosen.pdf'); self.pdf('other.pdf'); self.assertEqual(a.adapt_pdf_file_selection(p,self.out)['pdf_count'],1)
+    def test_32_non_selected_zero(self):
+        p=self.pdf('chosen.pdf'); self.pdf('other.pdf'); self.pdf('nested/third.pdf'); self.assertEqual([x['file_name'] for x in a.adapt_pdf_file_selection(p,self.out)['inventory']['files']],['chosen.pdf'])
+    def test_33_record_shape(self):
+        p=self.pdf('one.pdf',b'123'); item=a.adapt_pdf_file_selection(p,self.out)['inventory']['files'][0]; self.assertEqual(item,{'processing_order':1,'relative_path':'one.pdf','file_name':'one.pdf','size_bytes':3})
+    def test_34_inventory_schema_same(self): self.assertEqual(a.adapt_pdf_file_selection(self.pdf('a.pdf'),self.out)['inventory']['schema_version'],'PDF_FOLDER_INVENTORY_V1')
+    def test_35_case_insensitive_pdf(self): self.assertEqual(a.adapt_pdf_file_selection(self.pdf('a.PDF'),self.out)['pdf_count'],1)
+    def test_36_non_pdf_rejected(self):
+        p=self.src/'x.txt'; p.write_text('x')
+        with self.assertRaisesRegex(a.FolderSelectionAdapterError,'EXTENSION_INVALID'): a.adapt_pdf_file_selection(p,self.out)
+    def test_37_missing_rejected(self):
+        with self.assertRaisesRegex(a.FolderSelectionAdapterError,'PDF_FILE_NOT_FOUND'): a.adapt_pdf_file_selection(self.src/'missing.pdf',self.out)
+    def test_38_directory_rejected(self):
+        p=self.src/'fake.pdf'; p.mkdir()
+        with self.assertRaisesRegex(a.FolderSelectionAdapterError,'PDF_FILE_NOT_FILE'): a.adapt_pdf_file_selection(p,self.out)
+    def test_39_symlink_rejected(self):
+        p=self.pdf('real.pdf'); link=self.src/'link.pdf'
+        try: link.symlink_to(p)
+        except OSError: self.skipTest('symlink unavailable')
+        with self.assertRaisesRegex(a.FolderSelectionAdapterError,'PDF_FILE_SYMLINK'): a.adapt_pdf_file_selection(link,self.out)
+    def test_40_parent_binding(self):
+        p=self.pdf('nested/a.pdf'); r=a.adapt_pdf_file_selection(p,self.out); self.assertEqual(r['inventory']['selected_folder'],str(p.parent.resolve()))
+    def test_41_processing_order_one(self): self.assertEqual(a.adapt_pdf_file_selection(self.pdf('a.pdf'),self.out)['inventory']['files'][0]['processing_order'],1)
+    def test_42_deterministic_hash(self):
+        p=self.pdf('a.pdf'); self.assertEqual(a.adapt_pdf_file_selection(p,self.out)['inventory']['inventory_sha256'],a.adapt_pdf_file_selection(p,self.out)['inventory']['inventory_sha256'])
+    def test_43_cli_pdf_success(self):
+        p=self.pdf('a.pdf'); s=Path(__file__).with_name('panel_folder_inventory_adapter.py'); r=subprocess.run([sys.executable,str(s),'PDF_FILE',str(p),str(self.out),'--compact'],capture_output=True,text=True); self.assertEqual(r.returncode,0,r.stderr); self.assertEqual(json.loads(r.stdout)['pdf_count'],1)
+    def test_44_invalid_mode(self):
+        with self.assertRaisesRegex(a.FolderSelectionAdapterError,'INPUT_MODE_INVALID'): a.adapt_input_selection('AUTO',self.src,self.out)
 
 if __name__=='__main__': unittest.main(verbosity=2)
