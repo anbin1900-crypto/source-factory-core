@@ -1,0 +1,22 @@
+{
+  "schema_version": "LATEST_A6_C_MODE_CYCLE1_POINTER_V1",
+  "worker": "A-6",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "directive_id": "C1-A6-WEBCONTENTS-LEAK-REPEAT-HARNESS",
+  "worker_pr": 25,
+  "branch": "worker/a6-adapter-generation-replay-v1",
+  "final_report_path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a6-leak-and-repeat-harness/A6_CYCLE1_FINAL_REPORT_V1.json",
+  "final_report_commit": "a08c54a33acac153b82673811b5a3a680dc87bb1",
+  "harness_path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a6-leak-and-repeat-harness/c_mode_cycle1_browser_repeat_harness.cjs",
+  "result_schema_path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a6-leak-and-repeat-harness/C_MODE_CYCLE1_BROWSER_REPEAT_RESULT_V1.schema.json",
+  "threshold_contract_path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a6-leak-and-repeat-harness/C_MODE_CYCLE1_LEAK_THRESHOLD_CONTRACT_V1.json",
+  "package_status": "PASS_RUNNABLE_HARNESS_READY",
+  "target_pc_execution_status": "EXACT_EXTERNAL_BLOCKER",
+  "blocker_code": "TARGET_PC_EXECUTION_CHANNEL_AND_INSTALLED_RUNTIME_ADAPTER_UNAVAILABLE",
+  "terminal": "A6_C_MODE_CYCLE1_LEAK_REPEAT_BASELINE_READY_OR_EXACT_BLOCKER",
+  "status": "TERMINAL_PACKAGE_READY_TARGET_PC_EXACT_EXTERNAL_BLOCKER",
+  "updated_at_kst": "2026-08-07T00:11:06+09:00",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
