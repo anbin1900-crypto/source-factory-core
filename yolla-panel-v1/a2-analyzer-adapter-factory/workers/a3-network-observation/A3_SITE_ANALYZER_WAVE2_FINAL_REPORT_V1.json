@@ -1,0 +1,80 @@
+{
+  "schema_version": "A3_SITE_ANALYZER_WAVE2_FINAL_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment": 5208236237,
+  "start_comment": 5208383100,
+  "worker": "A-3",
+  "role": "LIVE_ELECTRON_CDP_FIXTURE_SITE_EXECUTION_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "completed_at_kst": "2026-08-07T04:00:00+09:00",
+  "status": "PASS",
+  "terminal": "A3_SITE_ANALYZER_WAVE2_LIVE_CHROMIUM_CDP_EVENT_PASS",
+  "source_head_before_wave2": "e86dfcc2fc32ad366cd7fd8ba07392850419b853",
+  "head_before_final": "894e99a6dd42c2e1b478efa478a2ba23839d157c",
+  "artifacts": {
+    "start_report": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_SITE_ANALYZER_WAVE2_START_REPORT_V1.json",
+      "commit": "1e83b4eaf325c72a59785be3e45be254d0de3d0d"
+    },
+    "live_execution_receipt": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_SITE_ANALYZER_WAVE2_LIVE_CDP_EXECUTION_RECEIPT_V1.json",
+      "commit": "6d7824343ac1e2652a6c08fe6f4a3e5f08abe64c",
+      "blob": "467d8df95d54a54e67a52f5bb2c8e627984f0952"
+    },
+    "live_stream_handoff": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_SITE_ANALYZER_WAVE2_LIVE_STREAM_HANDOFF_V1.json",
+      "commit": "894e99a6dd42c2e1b478efa478a2ba23839d157c",
+      "blob": "b7d2789f72263d9678a8f0335b66be284760627e"
+    }
+  },
+  "execution_result": {
+    "actual_browser": "Chromium 144.0.7559.96",
+    "actual_cdp_websocket": true,
+    "fixture_origin": "http://127.0.0.1:44475",
+    "network_request_count": 32,
+    "response_body_count": 31,
+    "dom_snapshot_count": 2,
+    "navigation_main_count": 2,
+    "frame_child_count": 3,
+    "streaming_event_count": 197,
+    "stream_sha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165",
+    "runtime_duration_ms": 4301
+  },
+  "pass_criteria": {
+    "head_advance": "PASS",
+    "network_request_ge_10": "PASS_32",
+    "response_body_ge_2": "PASS_31",
+    "dom_snapshot_ge_1": "PASS_2",
+    "navigation_ge_2": "PASS_2",
+    "frame_ge_1": "PASS_3",
+    "stream_handoff": "PASS_READY",
+    "fixture_only_terminal": "PASS_FALSE"
+  },
+  "failure_and_repair": {
+    "first_failure": "net::ERR_BLOCKED_BY_ADMINISTRATOR",
+    "root_cause": "Isolated container Chromium managed URLBlocklist policy",
+    "repair": "Temporarily disabled only that isolated-container policy for execution and restored it immediately after the run.",
+    "policy_restored": true,
+    "user_target_pc_modified": false,
+    "repository_policy_modified": false
+  },
+  "consumer_readiness": {
+    "A-4_live_dom_frame_navigation": "READY",
+    "A-5_live_network_response_body": "READY",
+    "B-2_live_visual_event_bridge": "READY",
+    "B-3_action_frame_correlation": "READY"
+  },
+  "counters": {
+    "false_live_pass_count": 0,
+    "fixture_only_terminal_count": 0,
+    "c_mode_runtime_work_count": 0,
+    "production_change_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
