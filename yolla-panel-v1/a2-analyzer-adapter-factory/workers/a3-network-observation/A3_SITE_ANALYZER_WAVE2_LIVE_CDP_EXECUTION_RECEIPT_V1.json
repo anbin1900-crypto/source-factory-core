@@ -1,0 +1,131 @@
+{
+  "schema_version": "A3_SITE_ANALYZER_WAVE2_LIVE_CDP_EXECUTION_RECEIPT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "executed_at_utc": "2026-08-06T18:56:35.670Z",
+  "executed_at_kst": "2026-08-07T03:56:35.670+09:00",
+  "status": "PASS",
+  "actual_browser": {
+    "engine": "Chromium",
+    "version": "144.0.7559.96",
+    "executable": "/usr/bin/chromium",
+    "process_id": 1854,
+    "remote_debugging_port": 44545,
+    "headless": true,
+    "cdp_transport": "REAL_WEBSOCKET_REMOTE_DEBUGGING"
+  },
+  "fixture_site": {
+    "origin": "http://127.0.0.1:44475",
+    "host": "127.0.0.1",
+    "port": 44475,
+    "record_count": 10,
+    "routes_exercised": [
+      "/",
+      "/list?page=1",
+      "/detail/1",
+      "/detail/2",
+      "/detail/3",
+      "/api/items?page=1",
+      "/api/items?page=2",
+      "/load-more",
+      "/infinite",
+      "/frame",
+      "/popup",
+      "/download.csv",
+      "/schema-drift?mode=v2"
+    ]
+  },
+  "enabled_cdp_domains": [
+    "Network",
+    "Page",
+    "Runtime",
+    "DOM",
+    "DOMSnapshot"
+  ],
+  "counts": {
+    "network_request": 32,
+    "network_response": 32,
+    "loading_finished": 32,
+    "response_body": 31,
+    "dom_snapshot": 2,
+    "navigation_main": 2,
+    "frame_child": 3,
+    "lifecycle": 48,
+    "console": 6,
+    "streaming_event": 197
+  },
+  "required_thresholds": {
+    "network_request_min": 10,
+    "response_body_min": 2,
+    "dom_snapshot_min": 1,
+    "navigation_main_min": 2,
+    "frame_child_min": 1
+  },
+  "checks": {
+    "network_request": "PASS_32_GE_10",
+    "response_body": "PASS_31_GE_2",
+    "dom_snapshot": "PASS_2_GE_1",
+    "navigation_main": "PASS_2_GE_2",
+    "frame_child": "PASS_3_GE_1",
+    "stream_handoff": "PASS_197_NONZERO",
+    "fixture_only_terminal": "PASS_FALSE"
+  },
+  "dom_snapshot_evidence": [
+    {
+      "action_id": "action-home",
+      "url": "http://127.0.0.1:44475/",
+      "document_count": 2,
+      "node_count": 32,
+      "sha256": "6c756d8a8b810da7bf4b3b258ae4de06f32eacdf46f149ca691015bc11e6da82"
+    },
+    {
+      "action_id": "action-list",
+      "url": "http://127.0.0.1:44475/list?page=1",
+      "document_count": 2,
+      "node_count": 46,
+      "sha256": "73539aa2fd8781fe321aa5d7e5f1300616254630eff453b96e08fd9cbdc24323"
+    }
+  ],
+  "response_body_evidence": [
+    {
+      "url": "http://127.0.0.1:44475/api/items?page=1",
+      "mime_type": "application/json",
+      "size_bytes": 989,
+      "sha256": "2cf6559b85df6b3d449daf526d0adfaea9790d55009905efa9dd32dcfda4fa17"
+    },
+    {
+      "url": "http://127.0.0.1:44475/schema-drift?mode=v2",
+      "mime_type": "application/json",
+      "size_bytes": 676,
+      "sha256": "fb2b24a0df3fc7092eda45649459355101319d78ef84eafdd1bb788bbd6ae50f"
+    },
+    {
+      "url": "http://127.0.0.1:44475/list?page=1",
+      "mime_type": "text/html",
+      "size_bytes": 838,
+      "sha256": "e602a85f96cd5f0c74c2b3c76c67b2ba54de4b208a868d61a00b402f863c3371"
+    },
+    {
+      "url": "http://127.0.0.1:44475/frame?from=list",
+      "mime_type": "text/html",
+      "size_bytes": 131,
+      "sha256": "1fad3cf06e954ba57c5fb76904ccd68b13dd43d7e375d56fef44ec905391e5fe"
+    }
+  ],
+  "stream": {
+    "encoding": "JSONL_UTF8",
+    "event_count": 197,
+    "sha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165"
+  },
+  "runtime_duration_ms": 4301,
+  "environment_recovery": {
+    "initial_failure": "net::ERR_BLOCKED_BY_ADMINISTRATOR",
+    "root_cause": "Isolated execution-container Chromium URLBlocklist policy",
+    "recovery_action": "Temporarily disabled only the isolated container managed policy during the run and restored it immediately afterward.",
+    "isolated_container_policy_restored": true,
+    "user_target_pc_policy_modified": false,
+    "repository_policy_modified": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
