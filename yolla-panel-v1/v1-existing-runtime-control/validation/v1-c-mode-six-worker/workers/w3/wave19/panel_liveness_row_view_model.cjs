@@ -208,7 +208,7 @@ function renderCurrentRowHtml(row) {
 function renderHistoricalRowHtml(row) {
   return `<tr class="worker-liveness-row historical state-${row.status.toLowerCase()}" data-role-id="${escapeHtml(row.role_id)}" data-liveness-state="${row.status}" data-wave-scope="historical" data-wave-id="${escapeHtml(row.wave_id)}">` +
     `<th scope="row">${escapeHtml(row.role_id)}</th>` +
-    `<td><span class="liveness-state">${escapeHtml(STATE_LABELS[status])}</span></td>` +
+    `<td><span class="liveness-state">${escapeHtml(STATE_LABELS[row.status])}</span></td>` +
     `<td class="liveness-elapsed">—</td>` +
     `<td class="liveness-last-check">${escapeHtml(row.published_at || '—')}</td>` +
     `<td><span class="liveness-empty">—</span></td>` +
