@@ -1,7 +1,7 @@
 {
-  "schema_version": "LATEST_C_MODE_EXISTING_RUNTIME_BUTTON_POINTER_V1",
-  "pointer_id": "LATEST-C-MODE-EXISTING-RUNTIME-BUTTON-20260806-001",
-  "status": "MINIMAL_PATCH_SOURCE_AND_TEST_READY_TARGET_PC_NOT_APPLIED",
+  "schema_version": "LATEST_C_MODE_EXISTING_RUNTIME_BUTTON_POINTER_V2",
+  "pointer_id": "LATEST-C-MODE-EXISTING-RUNTIME-BUTTON-20260806-002",
+  "status": "TARGET_PC_APPLY_PACKAGE_READY_NOT_EXECUTED",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
   "implementation_pr": 73,
@@ -14,14 +14,43 @@
     "runtime_patch": "yolla-panel-v1/v1-existing-runtime-control/existing-runtime-c-mode-button-v1/c_mode_group_button_patch.cjs",
     "css": "yolla-panel-v1/v1-existing-runtime-control/existing-runtime-c-mode-button-v1/c_mode_group_button.css",
     "test": "yolla-panel-v1/v1-existing-runtime-control/existing-runtime-c-mode-button-v1/test_c_mode_group_button_patch.cjs",
-    "test_report": "yolla-panel-v1/v1-existing-runtime-control/existing-runtime-c-mode-button-v1/C_MODE_GROUP_BUTTON_TEST_REPORT_V1.json"
+    "test_report": "yolla-panel-v1/v1-existing-runtime-control/existing-runtime-c-mode-button-v1/C_MODE_GROUP_BUTTON_TEST_REPORT_V1.json",
+    "apply_readme": "yolla-panel-v1/v1-existing-runtime-control/existing-runtime-c-mode-button-v1/apply-package/README_APPLY.txt",
+    "apply_manifest": "yolla-panel-v1/v1-existing-runtime-control/existing-runtime-c-mode-button-v1/apply-package/PAYLOAD_MANIFEST.json",
+    "apply_test_report": "yolla-panel-v1/v1-existing-runtime-control/existing-runtime-c-mode-button-v1/apply-package/C_MODE_GROUP_BUTTON_APPLY_PACKAGE_TEST_REPORT_V1.json"
   },
-  "validation": "PASS_33_ASSERTIONS",
+  "apply_package": {
+    "file_name": "AI_YOLLA_C_MODE_GROUP_BUTTON_PATCH_V1.zip",
+    "delivery": "CHAT_ARTIFACT",
+    "size_bytes": 21682,
+    "sha256": "1a573bd5bc705aa56f314b379281d3ab98c74f705e8f422c52f16f308639d654",
+    "entrypoint": "APPLY_C_MODE_GROUP_BUTTON_PATCH.bat",
+    "rollback_entrypoint": "ROLLBACK_C_MODE_GROUP_BUTTON_PATCH.bat",
+    "default_target_release": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\v5.10.2.4.0-c-mode-repeat-command"
+  },
+  "validation": {
+    "feature_module": "PASS_33_ASSERTIONS",
+    "apply_idempotency_and_hooks": "PASS_13_ASSERTIONS",
+    "actual_runtime_behavior": "PASS_17_ASSERTIONS",
+    "target_validation": "PASS_10_CHECKS",
+    "node_syntax_files": 4,
+    "powershell_static_balance_files": 2
+  },
+  "safety": {
+    "backup_before_write": true,
+    "automatic_rollback_on_failure": true,
+    "manual_rollback": true,
+    "login_browser_profile_unchanged": true,
+    "workspace_state_unchanged": true,
+    "new_runtime_created": false,
+    "new_browser_view_created": false,
+    "new_transport_created": false
+  },
   "worker_window_direct_dispatch_hook": true,
   "commander_window_start_hook": true,
-  "new_runtime_created": false,
-  "target_pc_apply_required": true,
+  "target_pc_apply_ready": true,
   "target_pc_applied": false,
+  "target_pc_live_pass": false,
   "production": false,
   "ready": false,
   "merge": false
