@@ -1,0 +1,20 @@
+{
+  "schema_version": "LATEST_A7_C_MODE_CYCLE1_POINTER_V1",
+  "updated_at_kst": "2026-08-07T01:12:05+09:00",
+  "worker": "A-7",
+  "worker_pr": 26,
+  "task_id": "W2-A7-REPAIR-CYCLE1-INCOMPLETE-BASELINE",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "status": "TERMINAL_EXACT_FINDINGS_REPAIR_READY",
+  "terminal": "A7_C_MODE_CYCLE1_EXACT_FINDINGS_END_TO_END_REPAIR_PACKAGE_READY",
+  "final_report_path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a7-independent-acceptance/A7_CYCLE1_FINAL_REPORT_V1.json",
+  "final_report_commit": "9f6b91d117367202efb311425fc9bd10ec63423b",
+  "matrix_path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a7-independent-acceptance/A7_CYCLE1_INDEPENDENT_ACCEPTANCE_MATRIX_V1.json",
+  "gate_path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a7-independent-acceptance/A7_CYCLE1_FINDINGS_AND_CYCLE2_ENTRY_GATE_V1.json",
+  "repair_entrypoint": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a7-independent-acceptance/Invoke-CModeCycle1EndToEndRepair.ps1",
+  "cycle2_entry": false,
+  "false_live_pass_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
