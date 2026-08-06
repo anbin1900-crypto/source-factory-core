@@ -1,0 +1,48 @@
+{
+  "schema_version": "C6_PDF_TO_CSV_LATE_INPUT_RECEIPT_V2",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
+  "task_id": "C6_PDF_TO_CSV_VALIDATION_V1",
+  "observed_at_kst": "2026-08-07T03:15:00+09:00",
+  "supersedes_receipt_blob": "1b71c43b6714b6c0eaa27c89178e26f42bfa93d3",
+  "late_inputs": {
+    "C2": {
+      "pointer_blob": "ba27ebb810d29b989a6677930b13b04cd7e23daf",
+      "terminal_result": "C2_PDF_FOLDER_INVENTORY_READY",
+      "tests": "PASS_23_OF_23",
+      "accepted": true
+    },
+    "C3": {
+      "pointer_blob": "71522a0133095a704b809de5910524976117e818",
+      "decision": "C3_PDF_TEXT_EXTRACTION_OCR_READY_FIXTURE_AND_CONTRACT",
+      "tests": "PASS_22_OF_22",
+      "page_order_preserved": true,
+      "terminal_comment_status": "PENDING_PUBLICATION_AT_OBSERVATION",
+      "accepted_as_committed_pointer": true
+    },
+    "C4": {
+      "source_blob": "5555e2c7622076d4be290c4d68e966c0ce34a547",
+      "source_published": true,
+      "final_report_published": false,
+      "latest_pointer_published": false,
+      "accepted": false,
+      "status": "SOURCE_ONLY_IN_PROGRESS"
+    },
+    "C5": {
+      "pointer_blob": "22d7eacd826e732490f85151fd6f09de97f1fc20",
+      "terminal_decision": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_READY",
+      "tests": "PASS_56_OF_56_AFTER_2_CORRECTIONS",
+      "accepted": true
+    }
+  },
+  "upstream_pointer_gate": "PASS_3_OF_4_WAITING_C4",
+  "actual_csv_artifact_validation_executed": false,
+  "actual_csv_artifact_pass_claimed": false,
+  "next_gate": "C4_FINAL_REPORT_AND_LATEST_POINTER_PUBLISHED",
+  "validator_readiness_changed": false,
+  "decision": "C2_C3_C5_LATE_INPUTS_ACCEPTED_C4_IN_PROGRESS_VALIDATOR_READY",
+  "semantic_validation": false,
+  "gpt_call": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
