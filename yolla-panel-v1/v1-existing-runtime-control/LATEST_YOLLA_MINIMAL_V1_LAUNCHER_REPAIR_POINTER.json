@@ -1,0 +1,32 @@
+{
+  "schema_version": "LATEST_YOLLA_MINIMAL_V1_LAUNCHER_REPAIR_POINTER_V1",
+  "implementation_pr": 76,
+  "implementation_branch": "agent/yolla-minimal-separate-runtime-v1",
+  "failure_report": "yolla-panel-v1/v1-existing-runtime-control/minimal-v1/reports/YOLLA_MINIMAL_V1_TARGET_PC_SMOKE_FAILURE_V1.json",
+  "repair_contract": "yolla-panel-v1/v1-existing-runtime-control/minimal-v1/YOLLA_MINIMAL_V1_LAUNCHER_QUOTING_REPAIR_V1.md",
+  "root_cause": "START_PROCESS_ARGUMENTLIST_DID_NOT_QUOTE_SPACE_CONTAINING_APP_PATH",
+  "existing_runtime_modified": false,
+  "minimal_runtime_source_installed": true,
+  "profile_clone_completed": true,
+  "repair_scope": "ROOT_LAUNCHER_BAT_PS1_ONLY",
+  "one_click_repair": {
+    "file_name": "REPAIR_AI_YOLLA_MINIMAL_V1_LAUNCHER_ONE_CLICK.bat",
+    "size": 6811,
+    "sha256": "17bb43c6d40ae42369c7209460606fe70ea3dda5c233ef4d38e2f1e6a503536e",
+    "drive_file_id": "1c4tKwZuVOG3GxcXhih04p_8wZ3nl8Eqb"
+  },
+  "source_zip": {
+    "file_name": "AI_YOLLA_MINIMAL_V1_LAUNCHER_REPAIR_V1.zip",
+    "size": 4345,
+    "sha256": "18c3d532b6fd1f926c6201ff10b70eec5348ab41c33ecefdda273a6c75591313",
+    "drive_file_id": "1-3eNQcR8IlWod5ai5QSsahHoAX_iIJaB"
+  },
+  "target_pc_repair": "PENDING",
+  "target_pc_smoke_pass": false,
+  "target_pc_live_pass": false,
+  "status": "LAUNCHER_REPAIR_READY_TARGET_PC_PENDING",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-07T03:48:00+09:00"
+}
