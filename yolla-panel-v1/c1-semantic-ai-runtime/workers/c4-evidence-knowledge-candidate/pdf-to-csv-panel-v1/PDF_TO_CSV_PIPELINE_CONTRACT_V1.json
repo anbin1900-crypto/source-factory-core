@@ -1,0 +1,101 @@
+{
+  "schema_version": "PDF_TO_CSV_PIPELINE_CONTRACT_V1",
+  "batch_id": "C1-PDF-PREPROCESS-CORRECTION-20260807-001",
+  "task_id": "C4_PDF_TO_CSV_PIPELINE_ORCHESTRATOR_V1",
+  "correction_directive_comment": 5208881816,
+  "purpose": "One Python command runs either one source folder or exactly one selected PDF through the same inventory, extraction/OCR, page-order, chunking, naming and UTF-8-SIG CSV pipeline.",
+  "single_pipeline_only": true,
+  "input_modes": {
+    "FOLDER": {
+      "cli": "--source-folder <folder>",
+      "inventory_cardinality": "N_RECORDS"
+    },
+    "PDF_FILE": {
+      "cli": "--pdf-file <file.pdf>",
+      "inventory_cardinality": "EXACTLY_1_RECORD"
+    },
+    "mutually_exclusive": true
+  },
+  "common_cli": {
+    "entrypoint": "pdf_to_csv_pipeline_orchestrator.py",
+    "required": ["--output-folder"],
+    "configurable": ["--max-chars"],
+    "one_command_completion": "SELECTION_TO_CSV_OUTPUT"
+  },
+  "bindings": {
+    "C2_INPUT_SELECTION": {
+      "path": "../../c2-document-decomposition/pdf-to-csv-panel-v1/panel_folder_inventory_adapter.py",
+      "symbol": "adapt_input_selection",
+      "blob": "b3c3186ae13e4bc13484ad23c1eef9902506b2b0"
+    },
+    "C3_EXTRACTION_RUNTIME": {
+      "path": "../../c3-field-mapping-rules/pdf-to-csv-panel-v1/pdf_extraction_runtime_adapter.py",
+      "symbol": "run_inventory_extraction",
+      "blob": "ba55b3685ec073c2108b3f1dae2478e2922eb3de"
+    },
+    "C4_CHUNK_WRITER": {
+      "path": "text_chunk_csv_writer.py",
+      "symbols": ["chunk_pages", "write_chunks"],
+      "blob": "5555e2c7622076d4be290c4d68e966c0ce34a547"
+    },
+    "C5_OUTPUT_NAMING": {
+      "path": "../../c5-domain-ai-seat-runtime/pdf-to-csv-panel-v1/output_path_policy.py",
+      "symbols": ["build_source_output_plan", "plan_chunk_outputs"],
+      "blob": "1fe8684ff69c5d9481b79142495229bd036dff60"
+    }
+  },
+  "processing_order": [
+    "INPUT_SELECTION",
+    "PDF_INVENTORY",
+    "DIRECT_TEXT_OR_OCR_EXTRACTION",
+    "PAGE_ORDER_VALIDATION",
+    "CONFIGURABLE_CHARACTER_CHUNKING",
+    "DETERMINISTIC_OUTPUT_NAMING",
+    "UTF8_SIG_CSV_WRITE"
+  ],
+  "invariants": {
+    "page_numbers": "ONE_BASED_CONTIGUOUS",
+    "page_order_preserved": true,
+    "chunk_max_chars": "POSITIVE_INTEGER_AND_RECHECKED",
+    "chunk_page_range_preserved": true,
+    "csv_encoding": "UTF-8-SIG",
+    "csv_write_count_matches_chunk_count": true,
+    "output_naming_collision_policy": "C5_FAIL_CLOSED",
+    "original_pdf_mutation": false
+  },
+  "progress_events": [
+    "SELECTION_START",
+    "SELECTION_READY",
+    "EXTRACTION_START",
+    "EXTRACTION_READY",
+    "SOURCE_START",
+    "SOURCE_COMPLETE",
+    "COMPLETE",
+    "ERROR"
+  ],
+  "error_contract": {
+    "fail_closed": true,
+    "record_fields": ["error_code", "error_stage", "message", "details"],
+    "cli_exit_code": 2,
+    "events_preserved_on_error": true,
+    "unexpected_exception_wrapped_as": "PIPELINE_UNEXPECTED_ERROR"
+  },
+  "result_contract": {
+    "schema_version": "PDF_TO_CSV_PIPELINE_RESULT_V2",
+    "mode_fields": ["input_mode", "selection_mode"],
+    "single_pdf_fields": ["selected_pdf", "selected_pdf_file"],
+    "required_counts": ["pdf_count", "chunk_count"],
+    "events_persisted": true
+  },
+  "boundaries": {
+    "semantic_analysis": false,
+    "gpt_call": false,
+    "knowledge_candidate_generation": false,
+    "database_write": false,
+    "server_integration": false,
+    "actual_150_pdf_acceptance_run": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
