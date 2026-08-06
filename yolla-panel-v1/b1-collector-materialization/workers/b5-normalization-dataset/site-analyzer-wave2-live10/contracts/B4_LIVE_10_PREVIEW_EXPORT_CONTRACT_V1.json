@@ -1,0 +1,46 @@
+{
+  "schema_version": "B4_LIVE_10_PREVIEW_EXPORT_CONTRACT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE2-INTEGRATION-V1-20260807-001",
+  "producer": {
+    "worker": "B-4",
+    "pr": 40,
+    "head": "47d29598259a4ed0529aaca8110ea65914f87bb5",
+    "fixture_server_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave2/fixture_site/server.py",
+    "fixture_server_blob": "671f05d903dcd8aecd7fd8160b493981f34a5b5a",
+    "endpoint": "/api/items",
+    "page_size": 5,
+    "total_records": 10,
+    "failure_injection": "PAGE_2_FIRST_REQUEST_HTTP_503",
+    "resume_rule": "RETRY_SAME_PAGE_WITH_SAME_RUN_ID"
+  },
+  "consumer": {
+    "worker": "B-5",
+    "pr": 41,
+    "entrypoint": "src/live10_preview_adapter.js",
+    "existing_preview_engine": "../site-analyzer-wave1/src",
+    "input": "B4_LOOPBACK_HTTP_JSON_PAGES",
+    "output": ["preview", "json", "csv", "xlsx", "export_manifest"]
+  },
+  "edit_plan": {
+    "rename": {"name": "item_name", "value": "edited_value"},
+    "remove": ["category"],
+    "order": ["id", "name", "value"],
+    "cell_edit": {"row_id": "row-5", "field_id": "value", "value": 5550}
+  },
+  "acceptance": {
+    "live_record_count": 10,
+    "preview_row_count": 10,
+    "json_row_count": 10,
+    "csv_row_count": 10,
+    "xlsx_row_count": 10,
+    "same_order": true,
+    "same_edited_value": true,
+    "source_row_pointer_count": 10,
+    "source_element_pointer_count": 40,
+    "source_input_mutation_count": 0
+  },
+  "database_work": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
