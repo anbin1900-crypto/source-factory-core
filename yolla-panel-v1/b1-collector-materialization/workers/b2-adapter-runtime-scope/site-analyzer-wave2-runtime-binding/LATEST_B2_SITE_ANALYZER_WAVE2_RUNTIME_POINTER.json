@@ -1,0 +1,61 @@
+{
+  "schema_version": "LATEST_B2_SITE_ANALYZER_WAVE2_RUNTIME_POINTER_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment": 5208244151,
+  "worker": "B-2",
+  "worker_pr": 38,
+  "branch": "worker/b2-adapter-runtime-scope-v1",
+  "updated_at_kst": "2026-08-07T04:11:00+09:00",
+  "status": "PASS_LIVE_CHROMIUM_RUNTIME_ELECTRON_PRELOAD_COMPATIBLE",
+  "terminal": "B2_SITE_ANALYZER_WAVE2_LIVE_RUNTIME_BINDING_PASS",
+  "final_report": {
+    "commit": "7ca64033eae06d2f8d1c88fdc69a2fca9d359d88",
+    "blob": "d735e1ebeab121473c76513c8da29559a81215bf",
+    "path": "reports/B2_SITE_ANALYZER_WAVE2_RUNTIME_FINAL_REPORT_V1.json"
+  },
+  "test_result": {
+    "commit": "41ec296e4b7dda5d6e50981e77bef91c7677f337",
+    "blob": "02dca50445b12f005f7c33f5283199282f2c73fc",
+    "path": "reports/B2_SITE_ANALYZER_WAVE2_RUNTIME_TEST_RESULT_V1.json",
+    "node_tests": "PASS_20_OF_20",
+    "chromium_message_port_runtime": "PASS"
+  },
+  "entrypoint": {
+    "path": "ui/index.html",
+    "commit": "41c11f45a5829b64603a4bb5e0c4b5ec06d5cd28",
+    "blob": "a422a36141d28f46dfeaeea1e90621cbbd5d77b9"
+  },
+  "implementation_blobs": {
+    "runtime_bridge": "70733c6bdc4c3a4bd16d8138cfe8c67304118b0b",
+    "live_model": "1e3a1b7b00782bf8635a2573111c4e3f2deb8694",
+    "live_app": "9e601f56e787eee3c5acffd41356984d0c3c7ea8",
+    "package": "00d60f4a265d756b214cbac1c016c7404416aad8"
+  },
+  "required": {
+    "head_advance": true,
+    "live_bridge": true,
+    "element_picker": true,
+    "highlight": true,
+    "workflow_editor": true,
+    "live_preview": true,
+    "static_sample_terminal": false
+  },
+  "execution": {
+    "message_port_actual_runtime_executed": true,
+    "chromium_cdp_runtime_executed": true,
+    "electron_preload_bridge_compatible": true,
+    "target_electron_single_launcher_executed": false,
+    "runtime_inbound_count": 7,
+    "preview_row_count": 10,
+    "workflow_step_count": 5,
+    "mode": "HYBRID"
+  },
+  "next_event": "BIND_B2_WAVE2_ENTRYPOINT_TO_SHARED_ANALYZER_CORE_AND_SINGLE_LAUNCHER",
+  "actual_external_site_call_count": 0,
+  "credential_use_count": 0,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
