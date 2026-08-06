@@ -1,0 +1,58 @@
+{
+  "schema_version": "A3_CYCLE1_STATIC_VALIDATION_RECEIPT_V1",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "directive_id": "C1-A3-TARGET-PC-RUNTIME-READBACK-HARNESS",
+  "validated_at_kst": "2026-08-07T00:06:00+09:00",
+  "status": "PASS_STATIC_PACKAGE_ONLY",
+  "environment": {
+    "os": "Linux isolated execution environment",
+    "windows_target_pc_connected": false,
+    "powershell_runtime_available": false
+  },
+  "artifacts": {
+    "script_content_sha256": "942e4a3a0e7e99c21065e6f35855969f770178043be603757ace7a7d196fa541",
+    "schema_content_sha256": "1fa35e1fa77195cbfc9b6276e280edce5e0125fd149958ac0aaddd6557326f9a"
+  },
+  "tests": {
+    "json_schema_parse": "PASS",
+    "draft_2020_12_sample_receipt_validation": "PASS_0_ERRORS",
+    "required_capture_token_checks": "PASS_10_OF_10",
+    "forbidden_mutating_cmdlet_scan": "PASS_0_FINDINGS",
+    "stdout_only_contract": "PASS",
+    "target_pc_write_count_contract": "PASS_EQUALS_0",
+    "raw_secret_value_contract": "PASS_EQUALS_0",
+    "live_target_execution": "NOT_EXECUTED_EXACT_ACCESS_BLOCKER"
+  },
+  "required_capture_tokens": [
+    "Win32_Process",
+    "Get-FileHash",
+    "VersionInfo",
+    "user-data-dir",
+    "state-root",
+    "release-root",
+    "process_tree",
+    "target_pc_write_count",
+    "ConvertTo-RedactedCommandLine",
+    "ConvertTo-Json"
+  ],
+  "forbidden_mutating_cmdlets_checked": [
+    "Set-Content",
+    "Add-Content",
+    "Out-File",
+    "Remove-Item",
+    "Move-Item",
+    "Copy-Item",
+    "Rename-Item",
+    "New-Item",
+    "Start-Process",
+    "Stop-Process",
+    "Restart-Computer",
+    "Set-ItemProperty",
+    "New-ItemProperty",
+    "reg add",
+    "reg delete"
+  ],
+  "finding_count": 0,
+  "false_live_pass_count": 0,
+  "external_blocker_code": "TARGET_PC_ACCESS_UNAVAILABLE_FROM_CURRENT_EXECUTION_ENVIRONMENT"
+}
