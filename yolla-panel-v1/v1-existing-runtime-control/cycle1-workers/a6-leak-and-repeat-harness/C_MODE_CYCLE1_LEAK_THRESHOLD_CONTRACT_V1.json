@@ -1,0 +1,17 @@
+{
+  "schema_version": "C_MODE_CYCLE1_LEAK_THRESHOLD_CONTRACT_V1",
+  "minimum_repeat_count": 10,
+  "comparison": "after_final_close minus same-iteration baseline",
+  "metrics": {
+    "process_count": {"max_close_delta": 0, "max_slope_per_cycle": 0},
+    "private_bytes": {"max_close_delta": 33554432, "max_slope_per_cycle": 2097152},
+    "renderer_count": {"max_close_delta": 0, "max_slope_per_cycle": 0},
+    "webcontents_count": {"max_close_delta": 0, "max_slope_per_cycle": 0},
+    "listener_count": {"max_close_delta": 0, "max_slope_per_cycle": 0},
+    "timer_count": {"max_close_delta": 0, "max_slope_per_cycle": 0},
+    "log_entries": {"max_close_delta": 200, "max_slope_per_cycle": 20},
+    "closed_background_active": {"max_close_delta": 0, "max_slope_per_cycle": 0}
+  },
+  "decision": {"missing_required_metric": "EXACT_BLOCKER", "threshold_exceeded": "EXACT_FINDING", "otherwise": "PASS"},
+  "functional_patch_count": 0
+}
