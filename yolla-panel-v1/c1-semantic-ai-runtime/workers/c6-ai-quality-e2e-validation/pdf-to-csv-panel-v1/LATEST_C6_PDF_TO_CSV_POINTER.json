@@ -1,114 +1,54 @@
 {
-  "schema_version": "LATEST_C6_PDF_TO_CSV_POINTER_V2",
-  "pointer_id": "LATEST-C6-PDF-TO-CSV-VALIDATOR-CYCLE1-20260807-002",
-  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
-  "task_id": "C6_PDF_TO_CSV_VALIDATION_V1",
+  "schema_version": "LATEST_C6_PDF_TO_CSV_POINTER_V3",
+  "pointer_id": "LATEST-C6-PDF-TO-CSV-CYCLE2-EVENT-WAIT-20260807-001",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE2-20260807-001",
+  "task_id": "C6_PDF_TO_CSV_CYCLE2_INTEGRATED_E2E_V1",
   "worker": "C-6_AI_QUALITY_E2E_VALIDATION",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 20,
   "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
-  "directive_comment_id": 5207639329,
-  "start_comment_id": 5208068178,
-  "terminal_comment_id": 5208109110,
+  "directive_comment_id": 5208263020,
+  "event_wait_comment_id": 5208366044,
   "common_directive": {
-    "commit": "ef02e3b59a2d389b571d5b5feaa20a8d24a21e4d",
-    "blob": "2ce798647c86363a8fd2382a08013304f73bc1ef",
+    "commit": "9484b996f10885a174fb0e1ef661ab357563f705",
+    "blob": "078dd6f439c612a092fbdbf467f7bffb3e6a1a2f",
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/pdf-to-csv-panel-v1/directives/C1_PDF_TO_CSV_PANEL_CYCLE2_INTEGRATION_BATCH_V1.json",
     "remote_readback": "PASS"
   },
-  "observed_head_before_pointer_v2": "fdc2ab81fb80f6a2d8da0f285b3d300e04e88ba2",
-  "prior_pointer_blob": "4024d335d129ad7ae86a4de571ccbd26ff97becd",
-  "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c6-ai-quality-e2e-validation/pdf-to-csv-panel-v1/**",
-  "artifacts": {
-    "validator": {
-      "path": "validate_pdf_to_csv_cycle1.py",
-      "commit": "9390e8aefa8d8156a8696e46ed48eae3a330342d",
-      "blob": "ec1c609f4f9972561fde455b1a08bcf7b716c00c"
-    },
-    "contract": {
-      "path": "PDF_TO_CSV_ACCEPTANCE_CONTRACT_V1.json",
-      "commit": "909573c27ff4f13bf6d93a03ba0c90b1d7d4184a",
-      "blob": "2870ef3607db122430e05b107b833febff473be4"
-    },
-    "test_source": {
-      "path": "test_validate_pdf_to_csv_cycle1.py",
-      "commit": "372d4cbb97e14e05d1dd6eaa514d447b8b65a86a",
-      "blob": "4035e021f8029af0c2ce13a2ccd5c44a72f7f48e"
-    },
-    "final_report": {
-      "path": "C6_PDF_TO_CSV_VALIDATION_FINAL_REPORT_V1.json",
-      "commit": "5cd84286868a149b5e033155d6ee6d4385f7b614",
-      "blob": "f72b39c963d1ef82d5b435bea7de4dc9ca3a3036"
-    },
-    "late_input_receipt_v1": {
-      "path": "C6_PDF_TO_CSV_LATE_INPUT_RECEIPT_V1.json",
-      "commit": "94cb53164e4aeaeb60e18e0b9677bb411c81bd6f",
-      "blob": "1b71c43b6714b6c0eaa27c89178e26f42bfa93d3",
-      "superseded": true
-    },
-    "late_input_receipt_v2": {
-      "path": "C6_PDF_TO_CSV_LATE_INPUT_RECEIPT_V2.json",
-      "commit": "a2d31f2e692f67cccd0f20eaf4e1b233521a7cf7",
-      "blob": "7e9fcaada0e02b6f08e8577198a5c7f85204e231",
-      "active": true
-    }
+  "cycle1_pointer_blob": "cf53524eb4149004638a913deddb507e08157a80",
+  "current_cycle1_component_pointers": {
+    "C2": "ba27ebb810d29b989a6677930b13b04cd7e23daf",
+    "C3": "1296e68317ca027e20aa812e6a2bb0f6f1a70004",
+    "C4": "7845c8676a133f5e4b71d118d3d9eed1044e7b2b",
+    "C5": "22d7eacd826e732490f85151fd6f09de97f1fc20"
   },
-  "validation": {
-    "python_compile": "PASS_2_OF_2",
-    "unit_tests": "PASS_24_OF_24",
-    "positive_fixture": "PASS",
-    "negative_fail_closed_cases": "PASS_18_OF_18",
-    "required_columns": "PASS_6_OF_6",
-    "utf8_sig_bom": "PASS",
-    "chunk_sequence": "PASS",
-    "page_order": "PASS",
-    "nonempty_source_coverage": "PASS",
-    "semantic_validation_count": 0,
-    "gpt_call_count": 0,
-    "remote_blob_readback": "PASS_7_OF_7_PRE_POINTER_V2"
+  "cycle2_entry_gate": {
+    "entry_event": "C5_CYCLE2_TERMINAL",
+    "satisfied": false,
+    "C2_cycle2_adapter_source_published": false,
+    "C3_cycle2_runtime_adapter_source_published": false,
+    "C4_cycle2_orchestrator_source_published": false,
+    "C5_cycle2_panel_source_published": false,
+    "C5_cycle2_terminal_published": false
   },
-  "upstream_cycle1_state": {
-    "gate": "PASS_3_OF_4_WAITING_C4",
-    "C2": {
-      "pointer_blob": "ba27ebb810d29b989a6677930b13b04cd7e23daf",
-      "terminal_result": "C2_PDF_FOLDER_INVENTORY_READY",
-      "tests": "PASS_23_OF_23",
-      "accepted": true
-    },
-    "C3": {
-      "pointer_blob": "71522a0133095a704b809de5910524976117e818",
-      "decision": "C3_PDF_TEXT_EXTRACTION_OCR_READY_FIXTURE_AND_CONTRACT",
-      "tests": "PASS_22_OF_22",
-      "accepted": true
-    },
-    "C4": {
-      "source_blob": "5555e2c7622076d4be290c4d68e966c0ce34a547",
-      "source_published": true,
-      "final_report_published": false,
-      "pointer_published": false,
-      "accepted": false
-    },
-    "C5": {
-      "pointer_blob": "22d7eacd826e732490f85151fd6f09de97f1fc20",
-      "terminal_decision": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_READY",
-      "tests": "PASS_56_OF_56_AFTER_2_CORRECTIONS",
-      "accepted": true
-    }
+  "execution": {
+    "authorized": false,
+    "executed": false,
+    "integrated_fixture_e2e_run": false,
+    "virtual_panel_or_pipeline_created": false,
+    "virtual_pass_claimed": false
   },
-  "validator_ready": true,
-  "actual_cycle1_csv_validation_executed": false,
-  "actual_cycle1_csv_pass_claimed": false,
-  "next_gate": "C4_FINAL_REPORT_AND_LATEST_POINTER_PUBLISHED",
-  "decision": "C6_VALIDATOR_READY_LATE_INPUTS_BOUND_WAITING_C4",
-  "terminal": "C6_PDF_TO_CSV_VALIDATOR_READY_OR_EXACT_BLOCKER",
-  "first_blocker": null,
-  "semantic_validation": false,
+  "decision": "EVENT_WAIT_C5_CYCLE2_TERMINAL",
+  "next_gate": "C5_STANDALONE_PDF_TO_CSV_PANEL_READY_OR_EXACT_BLOCKER_AND_CYCLE2_POINTER",
+  "terminal": "C6_PDF_TO_CSV_CYCLE2_INTEGRATED_E2E_PASS_OR_EXACT_BLOCKER",
   "semantic_analysis": false,
   "gpt_call": false,
   "database_write": false,
-  "original_pdf_mutation": false,
+  "actual_150_pdf_run": false,
   "production": false,
   "ready": false,
   "merge": false,
-  "ci_status": "LOCAL_TESTS_RUN_GITHUB_CI_NOT_RUN_NOT_CLAIMED_PASS",
-  "published_at_kst": "2026-08-07T03:16:00+09:00"
+  "ci_status": "NOT_RUN_NOT_CLAIMED_PASS",
+  "observed_remote_head": "b0344e9cdfe98b6e6bf71b81944a8f6e06000f3a",
+  "updated_at_kst": "2026-08-07T03:51:00+09:00"
 }
