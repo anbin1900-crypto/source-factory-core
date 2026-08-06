@@ -1,0 +1,64 @@
+{
+  "schema_version": "A5_SITE_ANALYZER_WAVE1_TERMINAL_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "directive_comment_id": 5207562721,
+  "worker": "A-5",
+  "role": "ENDPOINT_SCHEMA_MODE_INFERENCE_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 24,
+  "branch": "worker/a5-request-response-schema-v1",
+  "completed_at_kst": "2026-08-07T02:10:00+09:00",
+  "source_head_before_terminal": "c7ddeb5cfc76e809688f9aeee45148cf523e3879",
+  "terminal": "A5_SITE_ANALYZER_WAVE1_ENDPOINT_SCHEMA_MODE_INFERENCE_PASS",
+  "status": "TERMINAL_PASS",
+  "result": {
+    "live_inference_engine": "PASS_EXECUTABLE_NODE_CLI",
+    "endpoint_grouping_and_url_generalization": "PASS",
+    "request_method_parameter_inference": "PASS",
+    "json_html_schema_inference": "PASS",
+    "repeated_array_record_path_field_type_detection": "PASS",
+    "primary_key_parent_child_identifier_inference": "PASS",
+    "dom_html_json_api_hybrid_decision": "PASS",
+    "a6_generator_input_package": "READY",
+    "schema_drift_repair_policy": "PASS_BREAKING_FAIL_CLOSED",
+    "wrong_endpoint_cluster_repair": "PASS_ERROR_RESPONSE_DOMINANT_SUCCESS_BINDING",
+    "identifier_collision_repair": "PASS_DEMOTE_NON_UNIQUE_ID",
+    "manual_catalog_only": false,
+    "audit_only": false,
+    "validation_only": false
+  },
+  "validation": {
+    "node_syntax": "PASS_4_OF_4",
+    "regression_assertions": "PASS_50_OF_50",
+    "deterministic_replay": "PASS",
+    "remote_source_readback": "PASS_4_OF_4_CORE_SOURCE_AND_TEST",
+    "fixture_endpoint_groups": 3,
+    "fixture_response_schemas": 3,
+    "fixture_extraction_mode": "HYBRID",
+    "fixture_output_sha256": "2c18d5ed515fed1e0dec451ca53ede3bfd1bddd77ad1785bb3e6e785af33dc94",
+    "raw_secret_value_count": 0
+  },
+  "artifacts": {
+    "start_report": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/A5_SITE_ANALYZER_WAVE1_START_REPORT_V1.json",
+    "entrypoint": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/endpoint_schema_mode_inference.cjs",
+    "normalizer": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/lib/observation_normalizer.cjs",
+    "schema_identifier": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/lib/schema_identifier_inference.cjs",
+    "generator_input_schema": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/A5_SITE_ANALYZER_GENERATOR_INPUT_V1.schema.json",
+    "fixture_input": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/fixture_input.json",
+    "regression_test": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/test_endpoint_schema_mode_inference.cjs",
+    "validation_receipt": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/A5_SITE_ANALYZER_WAVE1_VALIDATION_RECEIPT_V1.json",
+    "a6_handoff": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/A5_TO_A6_SITE_ANALYZER_GENERATOR_INPUT_HANDOFF_V1.json"
+  },
+  "upstream_boundary": {
+    "a3_live_wave1_payload_at_start": "NOT_YET_PUBLISHED",
+    "a4_live_wave1_payload_at_start": "NOT_YET_PUBLISHED",
+    "implemented_contract_compatibility": "CURRENT_A3_A4_AND_FUTURE_LIVE_SHAPES",
+    "external_blocker": null
+  },
+  "boundaries": {
+    "c_mode_runtime_work": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
