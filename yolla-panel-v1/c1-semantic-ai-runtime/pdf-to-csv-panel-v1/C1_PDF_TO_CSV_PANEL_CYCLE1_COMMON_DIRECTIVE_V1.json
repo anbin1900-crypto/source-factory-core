@@ -1,0 +1,138 @@
+{
+  "schema_version": "C1_PDF_TO_CSV_PANEL_CYCLE1_COMMON_DIRECTIVE_V1",
+  "directive_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
+  "issued_at_kst": "2026-08-07T01:55:00+09:00",
+  "issuer": "C-1_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "execution_model": "CYCLE_BATCH_PARALLEL_ONE_OWNER_END_TO_END",
+  "active_workers": ["C-2", "C-3", "C-4", "C-5", "C-6"],
+  "phase_1_goal": [
+    "BUILD_STANDALONE_PANEL",
+    "SELECT_ONE_LOCAL_INPUT_FOLDER",
+    "DISCOVER_PDF_FILES_IN_SELECTED_FOLDER",
+    "EXTRACT_TEXT_DIRECTLY_OR_WITH_OCR",
+    "WRITE_SMALL_CHUNKED_CSV_FILES_TO_SELECTED_OUTPUT_FOLDER"
+  ],
+  "scope_lock": {
+    "semantic_analysis": false,
+    "semantic_matching": false,
+    "gpt_call": false,
+    "document_classification": false,
+    "knowledge_candidate": false,
+    "database_write": false,
+    "server_integration": false,
+    "pdf_page_bundle_output": false,
+    "output_format": "CSV_CHUNK_FILES_ONLY"
+  },
+  "input_assumption": {
+    "document_types": ["LAW", "PAPER", "CASE", "OTHER_CLEAN_PDF"],
+    "pdf_quality": "CLEAN_TEXT_OR_EASY_OCR",
+    "input_scope": "FILES_DIRECTLY_INSIDE_SELECTED_FOLDER",
+    "recursive_subfolder_scan": false
+  },
+  "shared_output_contract": {
+    "required_csv_columns": [
+      "source_file",
+      "source_path",
+      "source_page_start",
+      "source_page_end",
+      "chunk_index",
+      "text"
+    ],
+    "encoding": "UTF-8-SIG",
+    "text_order": "SOURCE_PAGE_ORDER",
+    "default_max_text_chars_per_csv": 50000,
+    "max_text_chars_configurable": true,
+    "empty_text_policy": "REPORT_AS_FAILED_FILE_NO_SILENT_DROP",
+    "source_file_mutation": false,
+    "source_file_deletion": false
+  },
+  "worker_assignments": {
+    "C-2": {
+      "task_id": "C2_CYCLE1_FOLDER_PDF_INVENTORY",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/pdf-to-csv-panel-v1/workers/c2-folder-inventory/**",
+      "deliverables": [
+        "selected-folder PDF scanner",
+        "deterministic PDF work-item list",
+        "source path and file size inventory",
+        "unsupported or unreadable file report",
+        "unit tests"
+      ],
+      "required_terminal": "C2_CYCLE1_FOLDER_PDF_INVENTORY_PASS_OR_EXACT_BLOCKER"
+    },
+    "C-3": {
+      "task_id": "C3_CYCLE1_PDF_TEXT_OCR_EXTRACTOR",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/pdf-to-csv-panel-v1/workers/c3-pdf-text-ocr/**",
+      "deliverables": [
+        "page-ordered direct PDF text extractor",
+        "OCR fallback for pages without usable text",
+        "page-number-preserving extraction records",
+        "internal-use tool dependency note",
+        "unit tests"
+      ],
+      "allowed_technology": ["PyMuPDF", "pdfplumber", "pypdf", "Tesseract", "OCRmyPDF"],
+      "required_terminal": "C3_CYCLE1_PDF_TEXT_OCR_EXTRACTOR_PASS_OR_EXACT_BLOCKER"
+    },
+    "C-4": {
+      "task_id": "C4_CYCLE1_TEXT_CHUNK_CSV_WRITER",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/pdf-to-csv-panel-v1/workers/c4-chunk-csv/**",
+      "deliverables": [
+        "page-order-preserving text chunker",
+        "configurable maximum text characters per CSV",
+        "UTF-8-SIG CSV writer",
+        "required six-column output",
+        "unit tests for no omission and no duplication"
+      ],
+      "required_terminal": "C4_CYCLE1_TEXT_CHUNK_CSV_WRITER_PASS_OR_EXACT_BLOCKER"
+    },
+    "C-5": {
+      "task_id": "C5_CYCLE1_STANDALONE_PANEL_SHELL",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/pdf-to-csv-panel-v1/workers/c5-standalone-panel/**",
+      "deliverables": [
+        "standalone Windows panel",
+        "input folder selector",
+        "output folder selector",
+        "maximum text characters setting",
+        "start button and visible progress/status",
+        "interfaces for C-2 inventory, C-3 extraction and C-4 CSV writing",
+        "smoke tests"
+      ],
+      "required_terminal": "C5_CYCLE1_STANDALONE_PANEL_SHELL_PASS_OR_EXACT_BLOCKER"
+    },
+    "C-6": {
+      "task_id": "C6_CYCLE1_PDF_TO_CSV_VALIDATION_HARNESS",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/pdf-to-csv-panel-v1/workers/c6-validation/**",
+      "deliverables": [
+        "synthetic clean PDF fixture set",
+        "text-PDF and OCR-fallback validation cases",
+        "CSV schema validator",
+        "page-order omission and duplication checks",
+        "cycle-1 acceptance report template"
+      ],
+      "required_terminal": "C6_CYCLE1_PDF_TO_CSV_VALIDATION_HARNESS_PASS_OR_EXACT_BLOCKER"
+    }
+  },
+  "common_acceptance": {
+    "folder_selector_contract_defined": true,
+    "pdf_to_text_or_ocr_contract_defined": true,
+    "csv_chunk_contract_defined": true,
+    "source_order_change_count": 0,
+    "silent_drop_count": 0,
+    "semantic_analysis_count": 0,
+    "gpt_call_count": 0,
+    "database_write_count": 0
+  },
+  "reporting": {
+    "intermediate_reports": "MINIMUM_ATTEMPT_LOG_ONLY",
+    "terminal": "PASS_OR_EXACT_EXTERNAL_BLOCKER",
+    "result_location": "SAME_CONTROL_PR_COMMENT_WITH_EXACT_COMMIT_PATH_AND_TEST_SUMMARY"
+  },
+  "previous_semantic_work": "FROZEN_REFERENCE_ONLY_NOT_DELETED",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "status": "CYCLE1_PARALLEL_DISPATCH_READY"
+}
