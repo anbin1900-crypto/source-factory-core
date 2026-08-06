@@ -1,0 +1,68 @@
+{
+  "schema_version": "LATEST_YOLLA_MINIMAL_SEPARATE_RUNTIME_POINTER_V1",
+  "runtime": "AI_YOLLA_MINIMAL_WORKSPACE_V1",
+  "version": "1.0.0",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "control_head_at_branch": "c7107e5d4b2d2fdd29fd3457d2d8e8af8efdfca8",
+  "implementation_pr": 76,
+  "implementation_branch": "agent/yolla-minimal-separate-runtime-v1",
+  "source_root": "yolla-panel-v1/minimal-separate-runtime-v1",
+  "contract": "yolla-panel-v1/minimal-separate-runtime-v1/MINIMAL_SEPARATE_RUNTIME_CONTRACT_V1.md",
+  "source_and_artifact_manifest": "yolla-panel-v1/minimal-separate-runtime-v1/SOURCE_AND_ARTIFACT_MANIFEST_V1.json",
+  "build_test_report": "yolla-panel-v1/minimal-separate-runtime-v1/BUILD_TEST_REPORT_V1.json",
+  "existing_runtime": {
+    "release": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\v5.10.2.3.7-dispatch-token-recovery",
+    "modified": false,
+    "stopped_by_installer": false,
+    "launcher_replaced": false
+  },
+  "new_runtime": {
+    "release": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\yolla-minimal-v1",
+    "state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-minimal-v1",
+    "profile_clone": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile-minimal-v1",
+    "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_MINIMAL_V1.bat"
+  },
+  "included_functions": [
+    "LEFT_GROUP_ROLE_MENU",
+    "SITE_ANALYZER_SHELL",
+    "DUAL_ADDRESS_BARS",
+    "COMMANDER_WORKER_ASSIGNMENT",
+    "C_MODE",
+    "INTERVAL_COMMAND",
+    "USE_END_COMMAND"
+  ],
+  "excluded_functions": [
+    "E_MODE",
+    "A_MODE",
+    "LEGACY_SCHEDULE_RUNTIME",
+    "LEGACY_GROUP_LOOP_RUNTIME",
+    "DATA_FACTORY",
+    "SITE_ANALYZER_ENGINE",
+    "LOG_STATUS_WINDOW",
+    "OLD_RUNTIME_PATCH"
+  ],
+  "package": {
+    "file_name": "AI_YOLLA_MINIMAL_V1_SEPARATE_RUNTIME_PACKAGE.zip",
+    "drive_file_id": "12DOVAiQkQ5ioG2_6AJo0Weu9rIjOBGN-",
+    "size_bytes": 49916,
+    "sha256": "06ed11cd571e5d9222487cc75b902dda526b8e7b7ca13f116ebb536576f7e0c6",
+    "remote_readback": "PASS"
+  },
+  "one_click_installer": {
+    "file_name": "INSTALL_AI_YOLLA_MINIMAL_V1_ONE_CLICK.bat",
+    "drive_file_id": "1G68UM_92eN8Pd5srC7Q1Wg8ZVb-xT58e",
+    "size_bytes": 69144,
+    "sha256": "2d39122dd23b0d41e638cec9263c8f39c85d033166f4ef1b05570b517f4e9e61",
+    "remote_readback": "PASS"
+  },
+  "offline_validation": "PASS_117_ASSERTIONS",
+  "target_pc_install": "PENDING",
+  "login_session_clone_live_pass": "PENDING",
+  "target_pc_live_pass": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "SEPARATE_RUNTIME_SOURCE_AND_INSTALLER_READY_TARGET_PC_PENDING",
+  "updated_at": "2026-08-07T03:31:00+09:00"
+}
