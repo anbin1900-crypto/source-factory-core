@@ -1,0 +1,24 @@
+{
+  "schema_version": "A7_C_MODE_CYCLE1_REPAIR_START_REPORT_V1",
+  "worker": "A-7",
+  "role": "A-7_POST_CYCLE_END_TO_END_REPAIR_WORKER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "worker_pr": 26,
+  "task_id": "W2-A7-REPAIR-CYCLE1-INCOMPLETE-BASELINE",
+  "repair_target_cycle": 1,
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "started_at_kst": "2026-08-07T01:12:05+09:00",
+  "audit_only": false,
+  "approval_role": false,
+  "mode": "ONE_OWNER_END_TO_END_REPAIR",
+  "objective": "Repair the incomplete Cycle 1 baseline by binding and orchestrating the exact A-3, A-4, and A-6 target-PC harness bytes, preserving A-2 active/candidate authority separation, and producing one fail-closed Cycle 2 entry decision.",
+  "boundaries": {
+    "runtime_source_patch": false,
+    "target_pc_execution_in_current_environment": false,
+    "static_or_fixture_promoted_to_live_pass": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
