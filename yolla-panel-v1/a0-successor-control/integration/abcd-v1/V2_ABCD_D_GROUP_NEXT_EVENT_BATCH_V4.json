@@ -1,0 +1,144 @@
+{
+  "schema_version": "V2_ABCD_D_GROUP_NEXT_EVENT_BATCH_V4",
+  "batch_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V4-20260806-001",
+  "issued_at_kst": "2026-08-06T17:47:33+09:00",
+  "issuer": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "parent_batch": {
+    "id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V3-20260806-001",
+    "commit": "bd1aa99afb61e91392823f43753f15de24403321",
+    "blob": "cc419bbba8bf9112f529672ea05626ac394b865a"
+  },
+  "review_scope": {
+    "worker_count": 20,
+    "commander_and_bridge_count": 5,
+    "missing_worker_terminal_count": 0
+  },
+  "worker_state": {
+    "A-3": {"pr": 22, "head": "f1a32cdaeafb2ef8cc7442bc3ef8351d689e02c3", "status": "PASS_EVENT_WAIT"},
+    "A-4": {"pr": 23, "head": "2efc3866b292cd8c43a6fdc75a43479c0bbf2fad", "status": "PASS_EVENT_WAIT"},
+    "A-5": {"pr": 24, "head": "ba04d2dbae45a5ed51e86d6715565d15b8428464", "status": "PASS_EVENT_WAIT"},
+    "A-6": {"pr": 25, "head": "4d5acd815d52c2fdfca079447989f565f90857eb", "status": "PASS_EVENT_WAIT"},
+    "A-7": {"pr": 26, "head": "4ff15507cebe8a185d92fcbcdd17f0aa547d37e7", "status": "PASS_EVENT_WAIT"},
+    "B-2": {"pr": 38, "head": "771da102a0202dc21d9226d9c534275df345582e", "status": "PASS_EVENT_WAIT"},
+    "B-3": {"pr": 39, "head": "86d789a136ce5070d79eab7e6d0205eb23da11d7", "status": "PASS_EVENT_WAIT"},
+    "B-4": {"pr": 40, "head": "f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3", "status": "PASS_EVENT_WAIT"},
+    "B-5": {
+      "pr": 41,
+      "head": "4fde3e03f19a772c0d95047ca724ce44ad3a4be3",
+      "terminal": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_EXACT_BLOCKER",
+      "prior_blocker": "PRODUCER_HEAD_SELF_REFERENTIAL_CONTENT_COMMIT_SEMANTICS_UNRESOLVED",
+      "blocker_resolution": "D1_B_RECEIPT_V2_COMPATIBILITY_READY",
+      "status": "IMMEDIATE_ACTIVE_RESUME_EXISTING_TASK"
+    },
+    "B-6": {
+      "pr": 42,
+      "head": "a237ef43dfd380372df29923a7179ba5226c7fe2",
+      "terminal": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_EXACT_BLOCKER",
+      "entry_events_satisfied": 1,
+      "entry_events_required": 2,
+      "status": "READ_ONLY_EVENT_WAIT_B5"
+    },
+    "C-2": {"pr": 20, "head": "a05cdc280ee28c1c0ffd7ef65e541a1be26f57bd", "status": "PASS_EVENT_WAIT"},
+    "C-3": {"pr": 20, "head": "a05cdc280ee28c1c0ffd7ef65e541a1be26f57bd", "status": "PASS_EVENT_WAIT"},
+    "C-4": {"pr": 20, "head": "a05cdc280ee28c1c0ffd7ef65e541a1be26f57bd", "status": "PASS_FAIL_CLOSED_EVENT_WAIT_CANDIDATE_COUNT_0"},
+    "C-5": {"pr": 20, "head": "a05cdc280ee28c1c0ffd7ef65e541a1be26f57bd", "status": "READY_EVENT_WAIT_KNOWLEDGE_RELEASE"},
+    "C-6": {"pr": 20, "head": "a05cdc280ee28c1c0ffd7ef65e541a1be26f57bd", "status": "READY_EVENT_WAIT_ACTUAL_RECEIPTS"},
+    "D-2": {"pr": 189, "head": "32ceff40e31c5af0079ade8c51de40794a91224a", "status": "PASS_EVENT_WAIT"},
+    "D-3": {"pr": 190, "head": "f45f7181d071b96b86d61529cdd2ba1959b26c33", "status": "PASS_EVENT_WAIT"},
+    "D-4": {"pr": 191, "head": "9f1e17dc4291152b99d5e8596e39dede10db4618", "status": "PASS_EVENT_WAIT"},
+    "D-5": {"pr": 192, "head": "55e35ec02b75304d33a2a159606c14fa2a5158f4", "status": "PASS_EVENT_WAIT"},
+    "D-6": {"pr": 193, "head": "c40d866b9288f01b3b26db1f87324c3b3bf6b678", "status": "READ_ONLY_EVENT_WAIT_ACTUAL_B_AND_C_RECEIPTS"}
+  },
+  "commander_and_bridge_state": {
+    "A-2": {"pr": 18, "head": "dad090f3d0baa01350f19b48bfbb0ae74060379e", "status": "PASS_EVENT_WAIT"},
+    "B-1": {"pr": 19, "head": "6dca87e976439134dc24fed8bd60bc2c9db05fa0", "status": "EVENT_WAIT_B6_PROMOTABLE_CANDIDATE"},
+    "C-1": {"pr": 20, "head": "a05cdc280ee28c1c0ffd7ef65e541a1be26f57bd", "status": "PASS_FAIL_CLOSED_EVENT_WAIT"},
+    "D-1": {
+      "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "pr": 188,
+      "head": "0bc38b41375fdef78172ed3cb4112b099ea28426",
+      "terminal": "D1_B_RECEIPT_V2_COMPATIBILITY_READY",
+      "status": "PASS_EVENT_WAIT"
+    },
+    "D-1_BRIDGE": {
+      "pr": 21,
+      "head": "5187fda754acddbee7fde580740f030708404d7d",
+      "terminal": "D1_PR21_PR188_CROSS_REPOSITORY_POINTER_V3_READY",
+      "status": "PASS_EVENT_WAIT"
+    }
+  },
+  "immediate_active_owner": {
+    "owner": "B-5",
+    "pr": 41,
+    "task_id": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS",
+    "mode": "RESUME_EXISTING_TASK_AFTER_D1_BLOCKER_RESOLUTION",
+    "required_exact_fields": [
+      "producer_head",
+      "package_blob_or_storage_pointer",
+      "record_count",
+      "submitted_at"
+    ],
+    "required_terminal": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_READY_OR_EXACT_BLOCKER"
+  },
+  "event_chain": [
+    {
+      "owner": "B-6",
+      "pr": 42,
+      "entry_event": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_READY",
+      "task": "DELTA_ONLY_REPREFLIGHT_AND_HANDOFF_CANDIDATE_PROMOTION",
+      "required_terminal": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "owner": "B-1",
+      "pr": 19,
+      "entry_event": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_TERMINAL",
+      "task": "PUBLISH_B1_D_SOURCE_DOCUMENT_PACKAGE_V2_COMMANDER_TERMINAL",
+      "required_terminal": "B1_D_SOURCE_DOCUMENT_PACKAGE_V2_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "owner": "D-1",
+      "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "pr": 188,
+      "entry_event": "B1_D_SOURCE_DOCUMENT_PACKAGE_V2_SUBMITTED_AND_SEPARATE_EXPLICIT_ACTUAL_INTAKE_DECISION",
+      "task": "ACTUAL_INTAKE_DECISION_NOT_AUTHORIZED_BY_THIS_BATCH"
+    },
+    {
+      "owner": "D-6",
+      "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "pr": 193,
+      "entry_events": [
+        "D1_B_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_AVAILABLE",
+        "D1_C_KNOWLEDGE_CANDIDATE_ACCEPTANCE_RECEIPT_AVAILABLE",
+        "PR21_PR188_CURRENT_POINTER_AVAILABLE"
+      ],
+      "task": "DELTA_ONLY_PROVENANCE_AND_CITATION_ACCEPTANCE"
+    }
+  ],
+  "completed_worker_reexecution_policy": {
+    "reexecute_without_content_delta": false,
+    "duplicate_terminal_publication": false,
+    "head_only_change_with_same_content": "NO_REEXECUTION",
+    "pointer_only_change_with_same_content": "NO_REEXECUTION"
+  },
+  "actual_acceptance_boundary": {
+    "actual_package_acceptance_authorized": false,
+    "actual_receipt_issuance_authorized": false,
+    "knowledge_release_creation_authorized": false
+  },
+  "forbidden": [
+    "NEW_EXTERNAL_REQUEST",
+    "ACTUAL_SITE_EXTRACTION",
+    "ACTUAL_BULK_COLLECTION",
+    "POSTGRESQL_CONNECTION",
+    "MIGRATION_APPLY",
+    "CANONICAL_DB_WRITE",
+    "PRODUCTION",
+    "READY",
+    "MERGE",
+    "SELF_MERGE"
+  ],
+  "current_phase": "B5_SUBMISSION_FIELD_CLOSURE_ACTIVE",
+  "current_status": "ALL_WORKERS_REVIEWED_B5_ACTIVE_B6_B1_D6_EVENT_CHAIN"
+}
