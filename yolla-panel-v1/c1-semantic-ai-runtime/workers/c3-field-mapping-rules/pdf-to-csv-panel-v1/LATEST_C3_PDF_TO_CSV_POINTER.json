@@ -4,13 +4,18 @@
   "task_id": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_V1",
   "directive_comment_id": 5208257787,
   "start_comment_id": 5208382584,
+  "terminal_comment_id": 5208429694,
   "authority": {
     "repository": "anbin1900-crypto/source-factory-core",
     "control_pr": 20,
     "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
     "common_directive_commit": "9484b996f10885a174fb0e1ef661ab357563f705",
     "shared_head_before_pointer": "b193776f4db1a55d1963092081aeca434551bda6",
+    "shared_head_at_terminal": "b6efd5256ec7351ca4a869180f720bd5cc27b41a",
+    "preterminal_pointer_commit": "b6efd5256ec7351ca4a869180f720bd5cc27b41a",
+    "preterminal_pointer_blob": "8a7e6d9d82c330069722785847b92d30b2465931",
     "previous_cycle1_pointer_blob": "1296e68317ca027e20aa812e6a2bb0f6f1a70004",
+    "pointer_commit_status": "THIS_COMMIT",
     "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c3-field-mapping-rules/pdf-to-csv-panel-v1/**"
   },
   "input_bindings": {
@@ -52,7 +57,7 @@
   "validation": {
     "unit_tests": "PASS_35_OF_35",
     "python_compile": "PASS_2_OF_2",
-    "remote_readback": "PASS_4_OF_4",
+    "remote_readback": "PASS_5_OF_5",
     "non_target_environment_doctor": "READY_DIRECT_TEXT_AND_OCR",
     "target_windows_pc_doctor_executed": false,
     "actual_pdf_document_extraction": false,
@@ -69,10 +74,10 @@
     "original_pdf_mutation_count": 0
   },
   "decision": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_READY_SOURCE_CONTRACT_AND_FIXTURE",
-  "terminal": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_READY_OR_EXACT_BLOCKER",
-  "terminal_result": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_READY",
-  "terminal_comment_status": "PENDING_PUBLICATION",
+  "terminal": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_READY",
+  "terminal_comment_status": "PUBLISHED",
   "handoff_to": "C4_PDF_TO_CSV_PIPELINE_ORCHESTRATOR_V1",
+  "c4_entry_side": "SATISFIED",
   "ci_status": "NOT_RUN_NOT_CLAIMED_PASS",
   "production": false,
   "ready": false,
