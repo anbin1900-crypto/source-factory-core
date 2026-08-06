@@ -1,0 +1,50 @@
+{
+  "schema_version": "V1_V510243_C_ONLY_SOURCE_OPTIMIZATION_BUILD_TEST_REPORT_V1",
+  "version": "5.10.2.4.3",
+  "status": "OFFLINE_PASS_TARGET_PC_PENDING",
+  "source_authority_head": "cd4a1f52df9982b2a37444dbd650ccbadcd0f2e7",
+  "baseline": "5.10.2.3.7",
+  "source_chain": [
+    "5.10.2.4.0-c-mode-repeat-command",
+    "5.10.2.4.1-c-command-ui-hotfix",
+    "5.10.2.4.3-c-only-source-optimized"
+  ],
+  "tests": {
+    "c_runtime_unit": {"status": "PASS", "assertions": 59},
+    "source_optimizer_fixture": {"status": "PASS", "assertions": 35},
+    "source_optimizer_idempotent": {"status": "PASS", "assertions": 35},
+    "package_static": {"status": "PASS", "assertions": 48},
+    "node_syntax": {"status": "PASS", "files": 6},
+    "total_assertion_events": 177,
+    "failure_count": 0
+  },
+  "postconditions": {
+    "a_e_renderer_controls": "REMOVE_REQUIRED",
+    "a_e_preload_actions": "REMOVE_REQUIRED",
+    "a_e_action_ipc": "REMOVE_REQUIRED",
+    "a_e_runtime_sources": "REMOVE_REQUIRED",
+    "compatibility_get_state": "READ_ONLY_REMOVED_RESPONSE",
+    "log_panel": "PRESERVE_C_ONLY_PROJECTION",
+    "workspace_state": "PRESERVE",
+    "browser_profile": "PRESERVE",
+    "historical_a_e_state": "BACKUP_NOT_DELETE"
+  },
+  "artifacts": {
+    "package_zip": {
+      "file_name": "AI_YOLLA_V510243_C_ONLY_SOURCE_OPTIMIZATION_PACKAGE.zip",
+      "size": 62866,
+      "sha256": "85e4586b637a6a3030eb33c43c79ab4822a7a8a723af82787e8fd1c102715707"
+    },
+    "one_click_installer": {
+      "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510243_C_ONLY_SOURCE_OPTIMIZATION.bat",
+      "size": 86920,
+      "sha256": "65a147d5edd3060bcf9ffee86ff0a87fa09c874afcccc796d82d8a9bc1374b7c"
+    }
+  },
+  "target_pc_install": "PENDING",
+  "target_pc_live_c_cycle": "PENDING",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "generated_at": "2026-08-06T23:37:00+09:00"
+}
