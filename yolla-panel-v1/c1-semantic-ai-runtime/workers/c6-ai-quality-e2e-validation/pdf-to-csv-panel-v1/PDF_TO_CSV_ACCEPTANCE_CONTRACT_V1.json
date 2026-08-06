@@ -1,0 +1,18 @@
+{
+  "schema_version": "PDF_TO_CSV_ACCEPTANCE_CONTRACT_V1",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
+  "task_id": "C6_PDF_TO_CSV_VALIDATION_V1",
+  "required_columns": ["source_file", "source_path", "chunk_no", "page_start", "page_end", "text"],
+  "encoding": {"name": "UTF-8-SIG", "bom_required": true, "decode_errors": "FAIL_CLOSED"},
+  "source_identity": {"key": ["source_file", "source_path"], "unknown_source": "REJECT", "missing_identity": "REJECT"},
+  "chunk_sequence": {"scope": "PER_SOURCE", "starts_at": 1, "contiguous": true, "duplicates_allowed": false},
+  "page_order": {"page_number_minimum": 1, "page_start_lte_page_end": true, "page_start_non_decreasing": true, "page_end_non_decreasing": true},
+  "text_coverage": {"nonempty_source_requires_nonempty_output": true, "empty_chunk_for_nonempty_source": "REJECT", "silent_empty_success": false},
+  "semantic_validation": false,
+  "gpt_call": false,
+  "original_pdf_mutation": false,
+  "database_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
