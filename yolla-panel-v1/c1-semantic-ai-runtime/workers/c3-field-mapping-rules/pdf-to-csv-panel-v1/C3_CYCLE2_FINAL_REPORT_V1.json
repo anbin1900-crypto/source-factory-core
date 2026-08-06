@@ -1,0 +1,86 @@
+{
+  "schema_version": "C3_CYCLE2_FINAL_REPORT_V1",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE2-20260807-001",
+  "task_id": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_V1",
+  "directive_comment_id": 5208257787,
+  "start_comment_id": 5208382584,
+  "common_directive_commit": "9484b996f10885a174fb0e1ef661ab357563f705",
+  "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c3-field-mapping-rules/pdf-to-csv-panel-v1/**",
+  "authority_bindings": {
+    "cycle1_c3_pointer_blob": "1296e68317ca027e20aa812e6a2bb0f6f1a70004",
+    "cycle1_extractor_blob": "082ec9ada56b2d42c7e40c14b9d2f6491aeebfce",
+    "c2_cycle1_inventory_contract_blob": "8efd027fd7b78b6f25eb62effe42fd6fd8d3fe71",
+    "c2_cycle2_panel_selection_contract_blob": "42661d29aa554ac08ffd100a0c1249085df70857"
+  },
+  "implementation": {
+    "inventory_record_exact_validation": true,
+    "panel_selection_envelope_validation": true,
+    "selected_folder_relative_path_binding": true,
+    "relative_path_escape_rejection": true,
+    "inventory_count_hash_and_size_validation": true,
+    "dependency_doctor": true,
+    "pymupdf_runtime_check": true,
+    "pillow_runtime_check": true,
+    "pytesseract_runtime_check": true,
+    "tesseract_executable_check": true,
+    "cycle1_direct_text_first_extractor_bound": true,
+    "ocr_fallback_runtime_bound": true,
+    "per_file_pass_or_error_receipt": true,
+    "monotonic_runtime_events": true,
+    "continue_on_file_error_configurable": true,
+    "fail_fast_configurable": true,
+    "no_pdf_files_explicit_status": true,
+    "source_order_preserved": true,
+    "original_pdf_mutation_count": 0,
+    "semantic_analysis_count": 0,
+    "gpt_call_count": 0,
+    "database_write_count": 0
+  },
+  "remote_artifacts": {
+    "source": {
+      "path": "pdf_extraction_runtime_adapter.py",
+      "commit": "84b0c05658499f6c7c5f7e9284e7cf7bfed160fa",
+      "blob": "ba55b3685ec073c2108b3f1dae2478e2922eb3de"
+    },
+    "contract": {
+      "path": "PDF_EXTRACTION_RUNTIME_ADAPTER_CONTRACT_V1.json",
+      "commit": "893f5a0e80c6a9f979011c1593bfccbe256b8ade",
+      "blob": "aea6c138bd79e84f2253fd759d7f004d59944cf5"
+    },
+    "test": {
+      "path": "test_pdf_extraction_runtime_adapter.py",
+      "commit": "608dd1cc65b611d6a170ca270e4623e451c6a91d",
+      "blob": "e2602d4788ea0f014805d802271978898bb445da"
+    }
+  },
+  "local_validation": {
+    "unit_tests": "PASS_35_OF_35",
+    "python_compile": "PASS_2_OF_2",
+    "test_framework": "unittest",
+    "fixture_only": true,
+    "non_target_environment_doctor": {
+      "classification": "NON_TARGET_EXECUTION_ENVIRONMENT_NOT_WINDOWS_PC_AUTHORITY",
+      "status": "READY_DIRECT_TEXT_AND_OCR",
+      "pymupdf_available": true,
+      "pillow_available": true,
+      "pytesseract_available": true,
+      "tesseract_executable_available": true,
+      "tesseract_executable_path": "/usr/bin/tesseract"
+    }
+  },
+  "execution_not_claimed": {
+    "target_windows_pc_dependency_doctor": false,
+    "actual_pdf_document_extraction": false,
+    "actual_ocr_document_execution": false,
+    "actual_150_pdf_acceptance_run": false,
+    "github_ci_pass": false
+  },
+  "decision": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_READY_SOURCE_CONTRACT_AND_FIXTURE",
+  "required_terminal": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_READY_OR_EXACT_BLOCKER",
+  "terminal_result": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_READY",
+  "handoff_to": "C4_PDF_TO_CSV_PIPELINE_ORCHESTRATOR_V1",
+  "ci_status": "NOT_RUN_NOT_CLAIMED_PASS",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
