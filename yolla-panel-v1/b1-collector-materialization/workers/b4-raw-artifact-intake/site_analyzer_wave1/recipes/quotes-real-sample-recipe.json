@@ -1,0 +1,21 @@
+{
+  "schema_version": "B4_REAL_SAMPLE_RECIPE_V1",
+  "recipe_id": "quotes-to-scrape-page-sample-v1",
+  "source_url": "https://quotes.toscrape.com/page/1/",
+  "max_records": 3,
+  "steps": [
+    {"type": "navigate", "url": "https://quotes.toscrape.com/page/1/"},
+    {
+      "type": "page_pagination",
+      "item_selector": ".quote",
+      "fields": {
+        "id": {"selector": ".text", "attribute": "data-id"},
+        "text": ".text",
+        "author": ".author"
+      },
+      "next_selector": ".next > a",
+      "start_page": 1,
+      "max_pages": 2
+    }
+  ]
+}
