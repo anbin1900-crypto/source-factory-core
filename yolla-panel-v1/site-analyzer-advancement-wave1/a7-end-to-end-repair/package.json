@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "type": "commonjs",
-  "scripts": { "test": "node --test test/*.test.cjs", "demo": "node test/wave1_e2e.test.cjs" },
-  "engines": { "node": ">=20" }
+  "scripts": {
+    "test": "node --test test/*.test.cjs",
+    "demo": "node test/wave1_e2e.test.cjs",
+    "validate": "node scripts/run_fixture_validation.cjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
 }
