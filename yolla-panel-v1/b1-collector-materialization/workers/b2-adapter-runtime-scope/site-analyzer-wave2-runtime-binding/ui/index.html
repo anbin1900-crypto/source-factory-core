@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YOLLA Live Visual Analyzer</title>
+<link rel="stylesheet" href="../../site-analyzer-wave1/ui/visual_analyzer.css">
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand">YOLLA Live Visual Analyzer</div>
+  <div class="url-box"><input id="browser-url" value="about:blank"><button id="open-url" class="button">열기</button></div>
+  <button id="picker-toggle" class="button">Element Picker</button>
+  <span id="runtime-status" class="mode-badge">WAITING</span>
+  <span id="mode-badge" class="mode-badge">DOM</span>
+</header>
+<main class="workspace">
+  <section class="browser-panel">
+    <div class="panel-title"><span>Live Browser Pane</span><span id="highlight-status" class="status-line"></span></div>
+    <iframe id="live-browser-frame" class="browser-frame" src="about:blank"></iframe>
+  </section>
+  <section class="side-panel">
+    <nav class="tabs"><button class="tab active" data-tab="inspector">Smart Inspector</button><button class="tab" data-tab="workflow">Workflow Editor</button></nav>
+    <section id="tab-inspector" class="tab-pane active">
+      <div id="selection-card" class="selection-card"><div class="empty">Runtime Event 대기 중</div></div>
+      <div id="candidate-list"></div><div id="field-editor"></div><button id="apply-fields" class="button primary">Apply</button>
+    </section>
+    <section id="tab-workflow" class="tab-pane"><div id="workflow-list"></div></section>
+    <div class="preview-wrap"><div class="preview-header"><strong>Live Data Preview</strong><span id="preview-status" class="status-line"></span></div><div id="preview-table"></div></div>
+  </section>
+</main>
+</div>
+<script type="module" src="../src/live_visual_analyzer_app.js"></script>
+</body>
+</html>
