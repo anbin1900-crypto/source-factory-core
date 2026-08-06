@@ -1,0 +1,47 @@
+{
+  "schema_version": "YOLLA_MINIMAL_V1_2_BUILD_TEST_REPORT_V1",
+  "version": "1.2.0",
+  "status": "OFFLINE_PASS_TARGET_PC_PENDING",
+  "tests": {
+    "feature_static": {"status": "PASS", "assertions": 25},
+    "completion_scheduler": {"status": "PASS", "assertions": 10},
+    "state_binding": {"status": "PASS", "assertions": 4},
+    "node_syntax": {"status": "PASS", "files": 10},
+    "zip_integrity": "PASS",
+    "self_extract_payload_match": "PASS",
+    "failure_count": 0
+  },
+  "features": {
+    "worker_assignment_from_current_url": "IMPLEMENTED",
+    "browser_navigation_does_not_rebind_role": "IMPLEMENTED",
+    "after_completion_trigger": "IMPLEMENTED",
+    "group_completed_count_row": "IMPLEMENTED",
+    "log_analyzer_window": "IMPLEMENTED",
+    "diagnostic_zip_export": "IMPLEMENTED",
+    "browser_profile_in_diagnostic_zip": false,
+    "cookies_or_login_tokens_in_diagnostic_zip": false
+  },
+  "artifact": {
+    "package": {
+      "file_name": "AI_YOLLA_MINIMAL_V1_2_OBSERVABILITY_PACKAGE.zip",
+      "drive_file_id": "1IgrrhyONEBfKS6UT6Ryndy0lLchpHsBb",
+      "size": 59043,
+      "sha256": "902ab7eaa08b71998169084f2a2efcdbaf06a2b2a8a6b3272636b6c954608d05",
+      "remote_readback": "PASS"
+    },
+    "one_click": {
+      "file_name": "INSTALL_AI_YOLLA_MINIMAL_V1_2_ONE_CLICK.bat",
+      "drive_file_id": "1Ee4-YDvMhDT0sEsrtbdXLbrSVMlMLBCn",
+      "size": 85929,
+      "sha256": "b1efd60068f302d7a2e501bcd3028076c6894b66db011f79de8c1c05331853bf",
+      "remote_readback": "PASS"
+    }
+  },
+  "target_pc_install": "PENDING",
+  "target_pc_live_pass": false,
+  "legacy_runtime_modified": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "generated_at": "2026-08-07T04:50:00+09:00"
+}
