@@ -1,0 +1,92 @@
+{
+  "schema_version": "A5_TO_A4_A6_STATIC_AUDIT_HANDOFF_V1",
+  "generated_at_kst": "2026-08-07T00:28:19+09:00",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "from": "A-5",
+  "to": [
+    "A-4",
+    "A-6",
+    "A-7"
+  ],
+  "status": "READY",
+  "source_report": "A5_CYCLE1_BROWSER_LIFECYCLE_POLLING_RENDER_STATIC_AUDIT_V1.json",
+  "priority_order": [
+    "A5-F01",
+    "A5-F02",
+    "A5-F03",
+    "A5-F04",
+    "A5-F05",
+    "A5-F06"
+  ],
+  "join_contract": {
+    "measurement_join_keys": [
+      "timestamp_kst",
+      "scenario_id",
+      "iteration",
+      "role_count",
+      "window_count",
+      "webcontents_count",
+      "process_count",
+      "cpu_percent",
+      "working_set_bytes",
+      "private_bytes",
+      "render_count",
+      "mutation_callback_count",
+      "refresh_count",
+      "poll_iteration_count",
+      "release_reason"
+    ],
+    "required_scenarios": [
+      {
+        "scenario_id": "A5-S01-IDLE",
+        "action": "Keep workspace visible and hidden for equal idle windows; capture 5-second UI refresh and C runtime timer activity."
+      },
+      {
+        "scenario_id": "A5-S02-ROLE-SCALE",
+        "action": "Create/dispatch 1, 5 and 10 role windows; measure incremental CPU/RAM/process/webContents."
+      },
+      {
+        "scenario_id": "A5-S03-RELEASE",
+        "action": "Trigger every releaseRole reason and sample immediately, 5 s, 30 s and 60 s after release."
+      },
+      {
+        "scenario_id": "A5-S04-REPEAT-OPEN-CLOSE",
+        "action": "Repeat same-role and distinct-role open/close/release cycles for at least three equal batches."
+      },
+      {
+        "scenario_id": "A5-S05-SLOW-LOAD",
+        "action": "Exercise normal, slow-load, missing-input and timeout dispatch; count executeJavaScript/reload/poll iterations."
+      },
+      {
+        "scenario_id": "A5-S06-RENDER-BURST",
+        "action": "Burst C-mode/repeat/workspace events and DOM mutations; count rAF renders, refreshes and observer callbacks."
+      },
+      {
+        "scenario_id": "A5-S07-RESTART-STOP-RACE",
+        "action": "Restore then stop within 1.5 seconds; verify no post-stop tick or timer remains."
+      },
+      {
+        "scenario_id": "A5-S08-WORKSPACE-REOPEN",
+        "action": "Close/reopen workspace and switch modes/groups; verify BrowserView/webContents/listener counts return to baseline."
+      }
+    ],
+    "acceptance_indicators": [
+      "After explicit release or close grace, live BrowserWindow/webContents/process counts return to the corresponding baseline.",
+      "Three equal repeat batches show no monotonic retained-process, listener, Map-entry or memory growth.",
+      "Exactly one renderer refresh interval, MutationObserver and subscription set exists per document lifetime.",
+      "No renderer polling continues after pagehide/unload or workspace destruction.",
+      "C runtime timer_active becomes false at idle/stop and no delayed restore tick mutates stopped state.",
+      "Measured polling cost is bounded by source limits and does not produce concurrent poll loops for the same role."
+    ]
+  },
+  "decision_rule": {
+    "static_risk_is_not_dynamic_failure": true,
+    "a6_must_confirm_or_reject_each_hypothesis": true,
+    "cycle2_entry_requires": [
+      "A4 baseline receipt available",
+      "A6 repeated lifecycle receipt available",
+      "No monotonic retained BrowserWindow/webContents/process/listener growth",
+      "Timer/observer/subscription teardown proven or exact remediation accepted"
+    ]
+  }
+}
