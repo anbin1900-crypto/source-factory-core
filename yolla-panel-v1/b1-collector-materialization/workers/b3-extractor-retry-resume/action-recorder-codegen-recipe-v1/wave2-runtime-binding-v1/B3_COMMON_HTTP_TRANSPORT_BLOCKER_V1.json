@@ -1,0 +1,12 @@
+{
+  "attempts": [
+    {"result": "ERR_BLOCKED_BY_ADMINISTRATOR", "url_kind": "127.0.0.1"},
+    {"result": "ERR_BLOCKED_BY_ADMINISTRATOR", "url_kind": "localhost"},
+    {"result": "ERR_BLOCKED_BY_ADMINISTRATOR", "url_kind": "host_alias_to_loopback"},
+    {"result": "ERR_BLOCKED_BY_ADMINISTRATOR", "url_kind": "external_https"},
+    {"result": "ERR_BLOCKED_BY_ADMINISTRATOR", "url_kind": "file_origin"}
+  ],
+  "fallback": "ACTUAL_CHROMIUM_INLINE_DOCUMENT_RUNTIME",
+  "required_transport": "COMMON_HTTP_TEST_SITE",
+  "status": "PROVEN_ENVIRONMENT_BLOCKER"
+}
