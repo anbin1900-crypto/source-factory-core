@@ -1,0 +1,46 @@
+{
+  "schema_version": "LATEST_A3_C_MODE_CYCLE1_POINTER_V1",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "directive_id": "C1-A3-TARGET-PC-RUNTIME-READBACK-HARNESS",
+  "worker": "A-3",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "updated_at_kst": "2026-08-07T00:12:00+09:00",
+  "status": "PASS_WITH_EXACT_EXTERNAL_BLOCKER",
+  "terminal": "A3_C_MODE_CYCLE1_TARGET_PC_READBACK_EXACT_ACCESS_BLOCKER_PACKAGE_READY",
+  "final_report": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a3-target-pc-readback/A3_CYCLE1_FINAL_REPORT_V1.json",
+    "commit": "107e4425154df73532f7a8f3bffe5fb96310d3aa",
+    "blob": "b76cf8976308abd3ee7ad047d6b3c428712011c0"
+  },
+  "readback_package": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a3-target-pc-readback/A3_CYCLE1_TARGET_PC_READBACK_PACKAGE_V1.json",
+    "commit": "39370a1579b0f400d418688ea029153b2ea03145",
+    "blob": "02b7266ac49b02d4f7a7c8fabb6a31452299bfed"
+  },
+  "readback_harness": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a3-target-pc-readback/Invoke-CModeCycle1TargetPcReadback.ps1",
+    "commit": "0f844b490c3d79ecb6f27458d66ea7b10f8c33ff",
+    "blob": "c79e102fa805054d2c2a07b62de2d616ce87454d",
+    "content_sha256": "942e4a3a0e7e99c21065e6f35855969f770178043be603757ace7a7d196fa541"
+  },
+  "receipt_schema": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a3-target-pc-readback/C_MODE_CYCLE1_TARGET_PC_READBACK_RECEIPT_V1.schema.json",
+    "commit": "60bb4465b504d139457d25a26930be0e255b559c",
+    "blob": "4bed3a97d31e2bf7499529da076c2a38c9ad4bdb",
+    "content_sha256": "1fa35e1fa77195cbfc9b6276e280edce5e0125fd149958ac0aaddd6557326f9a"
+  },
+  "target_pc_receipt": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a3-target-pc-readback/A3_CYCLE1_TARGET_PC_ACCESS_BLOCKER_RECEIPT_V1.json",
+    "commit": "d682cfa00dcf358993017085f8d47bff807571fa",
+    "blob": "f2834873b61f6709a38300cab7e8dd5cce783f07",
+    "status": "EXACT_ACCESS_BLOCKER"
+  },
+  "external_blocker_code": "TARGET_PC_ACCESS_UNAVAILABLE_FROM_CURRENT_EXECUTION_ENVIRONMENT",
+  "target_pc_live_pass": false,
+  "target_pc_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
