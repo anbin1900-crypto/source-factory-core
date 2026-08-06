@@ -1,0 +1,46 @@
+{
+  "schema_version": "YOLLA_MINIMAL_V1_1_UI_LAYER_GROUP_DELETE_BUILD_REPORT_V1",
+  "version": "1.1.0",
+  "status": "OFFLINE_PASS_TARGET_PC_PENDING",
+  "base_release": "yolla-minimal-v1",
+  "target_release": "yolla-minimal-v1.1-ui-fix",
+  "changes": {
+    "drawer_browser_policy": "DETACH_NATIVE_BROWSERVIEW_BEFORE_DRAWER_SHOW_RESTORE_AFTER_CLOSE",
+    "group_header_delete": "MINUS_BUTTON_WITH_CONFIRMATION",
+    "group_edit": "PRESERVED",
+    "add_role": "PRESERVED",
+    "c_mode": "PRESERVED",
+    "login_profile": "PRESERVED"
+  },
+  "tests": {
+    "static_assertions": 25,
+    "static_status": "PASS",
+    "node_syntax_files": 3,
+    "node_syntax_status": "PASS",
+    "overlay_file_count": 6,
+    "overlay_hash_status": "PASS",
+    "zip_integrity": "PASS",
+    "self_extract_payload_crc": "PASS",
+    "failure_count": 0
+  },
+  "artifacts": {
+    "one_click": {
+      "file_name": "APPLY_AI_YOLLA_MINIMAL_V1_1_UI_LAYER_GROUP_DELETE_FIX_ONE_CLICK.bat",
+      "size": 34863,
+      "sha256": "aa94dd0211e5e9c9b5870f86e63c96adc8762666076370702cd817fd3123f2ba",
+      "drive_file_id": "1BIdjWqyJikxA3ydxrKZpA-H6VOiB5cK6"
+    },
+    "package": {
+      "file_name": "AI_YOLLA_MINIMAL_V1_1_UI_LAYER_GROUP_DELETE_FIX_PACKAGE.zip",
+      "size": 25597,
+      "sha256": "7e2c8b4d23a56d368f8d47b6295fe696e76a5a63d61f1cd664fab35f305f014f",
+      "drive_file_id": "1dDTp9XMYth2cwr-subIlLq3RTO3hycY3"
+    }
+  },
+  "target_pc_install": "PENDING",
+  "target_pc_live_pass": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "generated_at": "2026-08-07T04:00:00+09:00"
+}
