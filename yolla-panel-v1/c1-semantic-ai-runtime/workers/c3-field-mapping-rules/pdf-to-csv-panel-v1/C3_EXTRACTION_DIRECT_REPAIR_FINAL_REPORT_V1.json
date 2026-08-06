@@ -1,0 +1,79 @@
+{
+  "schema_version": "C3_EXTRACTION_DIRECT_REPAIR_FINAL_REPORT_V1",
+  "batch_id": "C1-PDF-PREPROCESS-CORRECTION-20260807-001",
+  "directive_comment_id": 5208880453,
+  "control_comment_id": 5208884860,
+  "start_comment_id": 5208947794,
+  "result": "C3_EXTRACTION_CORRECTED",
+  "defect_count": 3,
+  "defects": [
+    {
+      "id": "C3-DEFECT-001",
+      "before": "SHORT_VALID_DIRECT_TEXT_BELOW_THRESHOLD_REQUIRED_OCR_AND_FAILED_WHEN_OCR_MISSING",
+      "after": "PRESERVE_DIRECT_TEXT_LOW_VOLUME_OR_DIRECT_TEXT_OCR_UNAVAILABLE"
+    },
+    {
+      "id": "C3-DEFECT-002",
+      "before": "TRUE_BLANK_PAGE_ENTERED_OCR_PATH_AND_COULD_FAIL_DOCUMENT",
+      "after": "NO_TEXT_NO_RASTER_IMAGE_EMITS_EXPLICIT_EMPTY_PAGE_RECORD"
+    },
+    {
+      "id": "C3-DEFECT-003",
+      "before": "DEPENDENCY_DOCTOR_DID_NOT_VALIDATE_KOR_ENG_TESSERACT_LANGUAGE_PACKS",
+      "after": "DOCTOR_V2_PROBES_REQUIRED_LANGUAGES_AND_TESSERACT_OCR_FAILS_WITH_EXACT_LANGUAGE_CODE"
+    }
+  ],
+  "remote_artifacts": {
+    "pdf_text_extractor.py": {
+      "commit": "adaf4b895457cb0681f2038e258bb411eb5817c5",
+      "blob": "e3d6ecf7f557c40edccdd4c025fc4832945efaa1"
+    },
+    "pdf_extraction_runtime_adapter.py": {
+      "commit": "07034757f7cf0d64eaee7cfd7965b724da1da3bd",
+      "blob": "f0135afd4e773421dc747d20da7a5b32b8110317"
+    },
+    "PDF_PAGE_TEXT_RECORD_CONTRACT_V1.json": {
+      "commit": "1858bdb3ce1ebe0269ce9884aaa98c083c0d80b9",
+      "blob": "06dc87319859b9ee4baf58f9bf5a84f5021c8159"
+    },
+    "PDF_EXTRACTION_RUNTIME_ADAPTER_CONTRACT_V1.json": {
+      "commit": "5b862e9c458496881af81f4b7a2211b5515a7171",
+      "blob": "974caa8653880e6885695779bb1c3704dbe7a679"
+    },
+    "test_pdf_extraction_direct_repair.py": {
+      "commit": "5331bb1e89d554e7a0db714878e09c5af329e8f8",
+      "blob": "b350110950b128b4d40692dab022faaa14b6bf96"
+    },
+    "C3_EXTRACTION_DIRECT_REPAIR_SMOKE_V1.json": {
+      "commit": "823b7a32b8d86a04667ba081fe391e998327b617",
+      "blob": "abe2e7851b4b2962d03ccd9d6e9dcd63f9fd3404"
+    }
+  },
+  "validation": {
+    "prior_accepted_cycle1_tests": "PASS_22_OF_22_BASELINE",
+    "prior_accepted_cycle2_tests": "PASS_35_OF_35_BASELINE",
+    "local_expanded_extractor_harness": "PASS_31_OF_31",
+    "local_expanded_runtime_harness": "PASS_43_OF_43",
+    "committed_direct_repair_regression": "PASS_12_OF_12",
+    "python_compile": "PASS_5_OF_5",
+    "actual_runtime_smoke": "PASS_4_OF_4",
+    "direct_text_first": "PASS",
+    "mixed_korean_english_ocr": "PASS_FUNCTIONAL_NONEMPTY_NO_ACCURACY_CLAIM",
+    "blank_page": "PASS_EXPLICIT",
+    "ocr_missing": "PASS_FAIL_CLOSED_SCANNED_AND_PRESERVE_DIRECT_TEXT",
+    "one_record_inventory": "PASS"
+  },
+  "execution_boundary": {
+    "actual_smoke_environment": "NON_TARGET_LINUX_RUNTIME",
+    "target_windows_pc_execution": false,
+    "actual_150_pdf_acceptance_run": false,
+    "semantic_analysis_count": 0,
+    "gpt_call_count": 0,
+    "database_write_count": 0,
+    "original_pdf_mutation_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "ci_status": "NOT_RUN_NOT_CLAIMED_PASS"
+}
