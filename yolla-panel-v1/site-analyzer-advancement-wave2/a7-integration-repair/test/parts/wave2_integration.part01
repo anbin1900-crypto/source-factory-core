@@ -1,0 +1,62 @@
+JECTION_FALLBACK:)/);
+
+    const uniqueSelector = await product.core.validateSelector('[data-action="next"]');
+    assert.equal(uniqueSelector.valid, true);
+    assert.equal(uniqueSelector.count, 1);
+    const resolved = await product.core.resolveSelector({ attributes: { 'data-action': 'popup' }, tag: 'a' });
+    assert.equal(resolved.status, 'UNIQUE');
+
+    await product.core.captureDomSnapshot('action-5');
+    const run = await product.core.analyze({ siteId: 'common-test-site' });
+    const events = product.core.eventBridge.snapshot();
+
+    assert.ok(events.filter(event => event.type === 'network.request').length > 0);
+    assert.ok(events.filter(event => event.type === 'network.response_body').length > 0);
+    assert.ok(events.filter(event => event.type === 'dom.snapshot').length > 0);
+    assert.ok(events.filter(event => event.type === 'page.frame_navigated').length > 0);
+    assert.deepEqual(events.map(event => event.bridge_sequence), events.map((_, index) => index + 1));
+    assert.equal(new Set(events.map(event => event.fingerprint)).size, events.length);
+    assert.equal(run.structure.page_type, 'LIST');
+    assert.ok(run.structure.field_candidates.length >= 6);
+    assert.equal(run.structure.pagination.decision, 'PAGINATION_DETECTED');
+    assert.equal(run.endpoint_inference.extraction_mode, 'HYBRID');
+    assert.equal(run.action_recipe.action_count, 5);
+    assert.equal(run.adapter_package.recipe.record_limit, 10);
+    assert.equal(run.replay.success, true);
+    assert.equal(run.replay.deterministic, true);
+    assert.equal(run.replay.record_count, 10);
+    assert.equal(product.core.getLatestPreview().rows.length, 10);
+    assert.equal(run.status, 'PASS');
+  } finally {
+    await product.dispose();
+    await chromium.close();
+    await site.close();
+  }
+});
+
+test('IPC replacement removes stale Core handlers and keeps one canonical launcher binding', async () => {
+  const handlers = new Map();
+  const ipcMain = {
+    handle(name, fn) {
+      if (handlers.has(name)) throw new Error(`DUPLICATE_HANDLER:${name}`);
+      handlers.set(name, fn);
+    },
+    removeHandler(name) { handlers.delete(name); }
+  };
+  const firstCore = new AnalyzerCore({ sessionKey: 'ipc-first' });
+  const first = registerAnalyzerIpc({ ipcMain, core: firstCore });
+  assert.equal(handlers.size, 9);
+  const secondCore = new AnalyzerCore({ sessionKey: 'ipc-second' });
+  const second = registerAnalyzerIpc({ ipcMain, core: secondCore });
+  assert.equal(handlers.size, 9);
+  assert.equal(second.sessionKey, 'ipc-second');
+  await handlers.get('site-analyzer:register-site')({}, { siteId: 'second', url: 'https://second.test' });
+  assert.equal((await handlers.get('site-analyzer:get-state')()).site_count, 1);
+  assert.equal(firstCore.getStateSnapshot().site_count, 0);
+  first.dispose();
+  assert.equal(handlers.size, 9);
+  second.dispose();
+  assert.equal(handlers.size, 0);
+});
+
+test('browser reattach removes the previous observer subscription and EventBridge deduplicates retransm

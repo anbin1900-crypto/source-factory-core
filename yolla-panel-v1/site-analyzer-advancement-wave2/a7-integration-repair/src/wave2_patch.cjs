@@ -1,0 +1,11 @@
+'use strict';
+const fs = require('node:fs');
+const path = require('node:path');
+const Module = require('node:module');
+const partDir = path.join(__dirname, 'parts');
+const source = Buffer.concat(fs.readdirSync(partDir).filter(name => /^wave2_patch\.part\d+$/.test(name)).sort().map(name => fs.readFileSync(path.join(partDir, name)))).toString('utf8');
+const compiled = new Module(__filename, module.parent);
+compiled.filename = __filename;
+compiled.paths = module.paths;
+compiled._compile(source, __filename);
+module.exports = compiled.exports;

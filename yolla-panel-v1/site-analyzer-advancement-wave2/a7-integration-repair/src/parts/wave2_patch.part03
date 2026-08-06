@@ -1,0 +1,42 @@
+Action(normalized); return normalized;
+  }
+  getRecipe(siteId = null) { return { schema_version: 'SITE_ANALYZER_USER_RECIPE_V2', session_key: this.sessionKey, site_id: siteId, record_limit: this.maxRecords, action_count: this.actions.length, actions: this.actions.slice() }; }
+  async validateSelector(selector) { if (!this.observer) throw new Error('BROWSER_NOT_ATTACHED'); return validateSelector(this.observer.debugger, selector); }
+  async resolveSelector(input) { if (!this.observer) throw new Error('BROWSER_NOT_ATTACHED'); return resolveSelector(this.observer.debugger, input); }
+  async captureDomSnapshot(actionId = null) {
+    if (!this.observer) throw new Error('BROWSER_NOT_ATTACHED');
+    const snapshot = await this.observer.debugger.sendCommand('DOMSnapshot.captureSnapshot', { computedStyles: [], includeDOMRects: true, includePaintOrder: true });
+    const evaluated = await this.observer.debugger.sendCommand('Runtime.evaluate', { expression: DOM_EXTRACT, returnByValue: true });
+    const extracted = evaluated?.result?.value || { records: [], pagination: [], chosen_selector: null };
+    this.lastSnapshot = { ...snapshot, records: extracted.records || [], pagination_controls: extracted.pagination || [], chosen_selector: extracted.chosen_selector || null };
+    return this.observer._publish('dom.snapshot', { action_id: actionId, snapshot: this.lastSnapshot });
+  }
+  async analyze({ siteId, snapshot = null, events = null } = {}) {
+    const site = this.state.sites.get(siteId); if (!site) throw new Error(`UNKNOWN_SITE:${siteId}`);
+    const stream = events || this.observer?.getEventStream() || [];
+    const domEvent = [...stream].reverse().find(event => event.type === 'dom.snapshot');
+    const structure = inferWave2Structure({ snapshot: snapshot || this.lastSnapshot || domEvent?.payload?.snapshot, url: site.url, networkEvents: stream });
+    const endpointInference = base.inferEndpoints(stream, structure);
+    const actionRecipe = this.getRecipe(siteId);
+    const adapterPackage = compileWave2Adapter({ structure, endpointInference, actionRecipe, adapterId: `${siteId}-adapter-v2`, recordLimit: this.maxRecords });
+    const apiBodies = stream.filter(event => event.type === 'network.response_body').map(event => event.payload.body);
+    const replay = await base.replayPackage(adapterPackage, { apiBodies, domRecords: structure.records });
+    const run = {
+      run_id: `run-${this.state.runs.length + 1}`, site_id: siteId, structure,
+      endpoint_inference: endpointInference, action_recipe: actionRecipe, adapter_package: adapterPackage,
+      replay, status: replay.success ? 'PASS' : 'FAILED', completed_at: new Date().toISOString()
+    };
+    this.state.adapters.set(adapterPackage.adapter_id, adapterPackage); this.state.runs.push(run);
+    this.state.previews.push({ run_id: run.run_id, columns: structure.field_candidates.map(field => field.name), rows: replay.records.slice(0, this.maxRecords) });
+    return run;
+  }
+  getLatestPreview() { return this.state.previews.at(-1) || null; }
+}
+
+const IPC_REGISTRY = Symbol.for('yolla.siteAnalyzer.wave2.ipc.registry');
+function registerAnalyzerIpc({ ipcMain, core, replaceExisting = true } = {}) {
+  if (!ipcMain || typeof ipcMain.handle !== 'function') throw new TypeError('ipcMain.handle is required');
+  if (!core) throw new TypeError('AnalyzerCore is required');
+  if (!ipcMain[IPC_REGISTRY]) ipcMain[IPC_REGISTRY] = { registration: null };
+  const registry = ipcMain[IPC_REGISTRY];
+  if (registry.regi

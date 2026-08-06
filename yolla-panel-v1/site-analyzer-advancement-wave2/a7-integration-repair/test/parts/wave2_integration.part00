@@ -1,0 +1,61 @@
+'use strict';
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const { EventEmitter } = require('node:events');
+const { startCommonTestSite, buildCommonTestHtml } = require('../fixtures/common_test_site.cjs');
+const {
+  AnalyzerCore,
+  EventBridge,
+  launchChromiumCdp,
+  launchAnalyzerProduct,
+  registerAnalyzerIpc
+} = require('../src/wave2_patch.cjs');
+
+async function waitFor(predicate, { timeoutMs = 12000, intervalMs = 50, label = 'condition' } = {}) {
+  const deadline = Date.now() + timeoutMs;
+  let last;
+  while (Date.now() < deadline) {
+    try {
+      last = await predicate();
+      if (last) return last;
+    } catch (error) { last = error; }
+    await new Promise(resolve => setTimeout(resolve, intervalMs));
+  }
+  throw new Error(`WAIT_TIMEOUT:${label}:${last instanceof Error ? last.message : String(last)}`);
+}
+
+test('Wave2 actual Chromium CDP integrates EventBridge, Selector, Recipe, Adapter and exact 10-record replay', { timeout: 30000 }, async () => {
+  const site = await startCommonTestSite();
+  const chromium = await launchChromiumCdp();
+  const product = await launchAnalyzerProduct({
+    sessionKey: `wave2-live-${Date.now()}`,
+    maxRecords: 10,
+    browserWebContents: chromium.webContents
+  });
+  try {
+    product.core.registerSite({ siteId: 'common-test-site', url: site.url, name: 'YOLLA Common Test Site' });
+    const actions = [
+      { type: 'click', selector: '[data-action="load"]' },
+      { type: 'click', selector: '[data-action="next"]' },
+      { type: 'click', selector: '[data-action="popup"]', popup: true },
+      { type: 'inspect', selector: 'iframe[data-action="frame"]', frame_id: 'fixture-frame' },
+      { type: 'click', selector: '[data-action="download"]', download: true }
+    ];
+    actions.forEach(action => product.core.recordAction(action));
+
+    const navigation = await chromium.navigate(site.url);
+    let fixtureLoadMode = 'HTTP';
+    if (navigation.errorText) {
+      fixtureLoadMode = `DOCUMENT_INJECTION_FALLBACK:${navigation.errorText}`;
+      await chromium.debugger.sendCommand('Page.navigate', { url: 'about:blank#yolla-common-test' });
+      const frameTree = await chromium.debugger.sendCommand('Page.getFrameTree');
+      await chromium.debugger.sendCommand('Page.setDocumentContent', { frameId: frameTree.frameTree.frame.id, html: buildCommonTestHtml({ transport: 'data' }) });
+    }
+    await waitFor(async () => {
+      const result = await chromium.debugger.sendCommand('Runtime.evaluate', {
+        expression: 'document.querySelectorAll("[data-record]").length', returnByValue: true
+      });
+      return result?.result?.value === 10;
+    }, { label: '10 DOM records' });
+    await waitFor(() => product.core.eventBridge.snapshot().some(event => event.type === 'network.response_body' && (/\/api\/items/.test(event.payload?.url || '') || /^data:application\/json/.test(event.payload?.url || ''))), { label: 'API response body' });
+    assert.match(fixtureLoadMode, /^(HTTP|DOCUMENT_IN

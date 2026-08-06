@@ -1,0 +1,43 @@
+h >= 2) { chosen = selector; nodes = found; break; } }
+  const records = nodes.map((node, index) => { const record = { __index: index, __record_selector: chosen };
+    for (const attr of Array.from(node.attributes || [])) if (attr.name.startsWith('data-')) record[attr.name.slice(5)] = attr.value;
+    const fields = Array.from(node.querySelectorAll('[data-field]')); for (const field of fields) record[field.getAttribute('data-field')] = (field.textContent || '').trim();
+    if (!fields.length) record.text = (node.textContent || '').trim(); return record; });
+  const pagination = Array.from(document.querySelectorAll('a,button')).map((node, index) => ({ index, text: (node.textContent || '').trim(), id: node.id || null, action: node.getAttribute('data-action'), rel: node.getAttribute('rel') }))
+    .filter(v => /^(next|more|다음|더보기|›|»|>)$/i.test(v.text) || /next|more/i.test(v.action || '') || v.rel === 'next');
+  return { chosen_selector: chosen, records, pagination };
+})()`;
+
+
+function inferWave2Structure({ snapshot, url = '', networkEvents = [] } = {}) {
+  const structure = base.inferStructure({ snapshot, url, networkEvents });
+  const controls = snapshot?.pagination_controls || [];
+  if (controls.length) {
+    const existing = structure.pagination?.signals || [];
+    const seen = new Set(existing.filter(signal => signal.key === 'dom_control').map(signal => digest(signal.value)));
+    const additions = controls.filter(control => !seen.has(digest(control))).map(control => ({ key: 'dom_control', value: control }));
+    structure.pagination = { decision: 'PAGINATION_DETECTED', signals: existing.concat(additions).slice(0, 20) };
+  }
+  const chosen = snapshot?.chosen_selector;
+  if (chosen && structure.repeated_regions?.[0]) {
+    structure.repeated_regions[0].locator_candidates = [chosen, ...(structure.repeated_regions[0].locator_candidates || [])]
+      .filter((value, index, values) => value && values.indexOf(value) === index);
+  }
+  return structure;
+}
+
+class Wave2AnalyzerCore extends base.AnalyzerCore {
+  constructor({ sessionKey = 'default', maxRecords = 10 } = {}) {
+    super({ sessionKey, maxRecords }); this.maxRecords = maxRecords; this.eventBridge = new EventBridge({ sessionKey }); this.actions = []; this._observerUnsubscribe = null; this.lastSnapshot = null;
+  }
+  async attachBrowser(webContents) {
+    if (this._observerUnsubscribe) { this._observerUnsubscribe(); this._observerUnsubscribe = null; }
+    if (this.observer?.stop) await this.observer.stop();
+    this.observer = new base.LiveCdpObserver({ webContents });
+    this._observerUnsubscribe = this.observer.subscribe(event => { const canonical = this.eventBridge.ingest(event); if (!canonical) return; this.state.events.push(canonical); this.emit('analyzer-event', canonical); });
+    await this.observer.start(); return this.observer;
+  }
+  async detachBrowser() { if (this._observerUnsubscribe) this._observerUnsubscribe(); this._observerUnsubscribe = null; if (this.observer?.stop) await this.observer.stop(); this.observer = null; }
+  recordAction(action = {}) {
+    const normalized = { action_id: action.action_id || `action-${this.actions.length + 1}`, type: action.type || 'unknown', selector: action.selector ? normalizeSelector(action.selector) : null, value: action.value == null ? null : String(action.value), frame_id: action.frame_id || 'main', popup: Boolean(action.popup), download: Boolean(action.download) };
+    this.actions.push(normalized); this.observer?.record

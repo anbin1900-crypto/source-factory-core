@@ -1,0 +1,22 @@
+is.pending.values()) pending.reject(new Error('CDP_WEBSOCKET_CLOSED')); this.pending.clear(); this.emit('detach', {}, 'websocket_closed'); }); return this; }
+  async sendCommand(method, params = {}, sessionId = null) { if (!this.attached) throw new Error('CDP_NOT_ATTACHED'); const id = this.nextId++; const payload = { id, method, params }; if (sessionId) payload.sessionId = sessionId; return new Promise((resolve, reject) => { this.pending.set(id, { resolve, reject }); this.socket.send(JSON.stringify(payload)); }); }
+  async close() { if (this.socket && this.socket.readyState < 2) this.socket.close(); this.attached = false; }
+}
+async function launchChromiumCdp({ chromiumPath = process.env.CHROMIUM_PATH || '/usr/bin/chromium' } = {}) {
+  if (!fs.existsSync(chromiumPath)) throw new Error(`CHROMIUM_NOT_FOUND:${chromiumPath}`);
+  const port = await freePort(); const userDataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'yolla-a7-chromium-'));
+  const child = spawn(chromiumPath, [`--remote-debugging-port=${port}`, `--user-data-dir=${userDataDir}`, '--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage', '--disable-background-networking', '--no-first-run', '--no-default-browser-check', '--headless=new', 'about:blank'], { stdio: ['ignore', 'ignore', 'pipe'] });
+  let stderr = ''; child.stderr.on('data', chunk => { stderr += String(chunk); }); await waitForJson(`http://127.0.0.1:${port}/json/version`);
+  const target = await fetch(`http://127.0.0.1:${port}/json/new?${encodeURIComponent('about:blank')}`, { method: 'PUT' }).then(r => r.ok ? r.json() : Promise.reject(new Error(`CDP_NEW_TARGET_FAILED:${r.status}`)));
+  const debuggerAdapter = await new RawCdpDebuggerAdapter(target.webSocketDebuggerUrl).connect();
+  return { port, process: child, userDataDir, stderr: () => stderr, debugger: debuggerAdapter, webContents: { debugger: debuggerAdapter }, navigate: url => debuggerAdapter.sendCommand('Page.navigate', { url }), async close() { await debuggerAdapter.close().catch(() => {}); if (!child.killed) child.kill('SIGTERM'); await new Promise(r => setTimeout(r, 100)); if (!child.killed) child.kill('SIGKILL'); fs.rmSync(userDataDir, { recursive: true, force: true }); } };
+}
+
+async function launchAnalyzerProduct({ sessionKey = `site-analyzer-${Date.now()}`, maxRecords = 10, ipcMain = null, BrowserWindow = null, embeddedWebContents = null, browserWebContents = null, standaloneHtml = null, preload = null, parent = null } = {}) {
+  const core = new Wave2AnalyzerCore({ sessionKey, maxRecords }); const resources = { ipc: null, embedded: null, standalone: null, browser: null };
+  if (ipcMain) resources.ipc = registerAnalyzerIpc({ ipcMain, core });
+  if (embeddedWebContents) resources.embedded = base.bindEmbeddedAnalyzer({ webContents: embeddedWebContents, core });
+  if (BrowserWindow) resources.standalone = base.createStandaloneAnalyzerWindow({ BrowserWindow, core, preload, html: standaloneHtml, parent });
+  if (browserWebContents) resources.browser = await core.attachBrowser(browserWebContents);
+  let disposed = false;
+  return { schema_version: 'YOLLA_SITE_ANALYZER_PRODUCT_LAUNCHER_V2', session_key: sessionKey, core, resources, product_tree: { analyzer_core: true, event_bridge: true, runtime_bridge: Boolean(browserWebContents), ipc: Boolean(ipcMain), embedded_workspace: Boolean(embeddedWebContents), standalone_window: Boolean(BrowserWindow), selector_engine: true, recipe_recorder: true, adapter_compiler: true }, async dispose() { if (disposed) return; disp

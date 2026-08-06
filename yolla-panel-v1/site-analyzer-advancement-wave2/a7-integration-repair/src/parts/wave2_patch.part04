@@ -1,0 +1,25 @@
+stration?.core === core) return registry.registration.publicApi;
+  if (registry.registration && !replaceExisting) throw new Error('IPC_ALREADY_BOUND_TO_DIFFERENT_CORE');
+  registry.registration?.dispose();
+  const handlers = {
+    'site-analyzer:register-site': (_event, input) => core.registerSite(input), 'site-analyzer:get-state': () => core.getStateSnapshot(),
+    'site-analyzer:record-action': (_event, input) => core.recordAction(input), 'site-analyzer:get-recipe': (_event, siteId) => core.getRecipe(siteId || null),
+    'site-analyzer:validate-selector': (_event, selector) => core.validateSelector(selector), 'site-analyzer:resolve-selector': (_event, input) => core.resolveSelector(input),
+    'site-analyzer:capture-dom': (_event, actionId) => core.captureDomSnapshot(actionId || null), 'site-analyzer:analyze': (_event, input) => core.analyze(input),
+    'site-analyzer:get-preview': () => core.getLatestPreview()
+  };
+  for (const [channel, handler] of Object.entries(handlers)) ipcMain.handle(channel, handler);
+  let disposed = false;
+  const registration = { core, dispose() { if (disposed) return; disposed = true; for (const channel of Object.keys(handlers)) ipcMain.removeHandler?.(channel); if (registry.registration === registration) registry.registration = null; } };
+  registration.publicApi = { channels: Object.keys(handlers), sessionKey: core.sessionKey, dispose: registration.dispose };
+  registry.registration = registration; return registration.publicApi;
+}
+
+async function freePort() { return new Promise((resolve, reject) => { const server = net.createServer(); server.once('error', reject); server.listen(0, '127.0.0.1', () => { const port = server.address().port; server.close(error => error ? reject(error) : resolve(port)); }); }); }
+async function waitForJson(url, timeoutMs = 10000) { const deadline = Date.now() + timeoutMs; let last; while (Date.now() < deadline) { try { const response = await fetch(url); if (response.ok) return response.json(); } catch (error) { last = error; } await new Promise(r => setTimeout(r, 100)); } throw new Error(`CDP_ENDPOINT_TIMEOUT:${last?.message || 'unknown'}`); }
+class RawCdpDebuggerAdapter extends EventEmitter {
+  constructor(webSocketUrl) { super(); this.webSocketUrl = webSocketUrl; this.socket = null; this.pending = new Map(); this.nextId = 1; this.attached = false; }
+  isAttached() { return this.attached; } attach() { if (!this.attached) throw new Error('CDP_SOCKET_NOT_CONNECTED'); }
+  async connect() { this.socket = new WebSocket(this.webSocketUrl); await new Promise((resolve, reject) => { const timer = setTimeout(() => reject(new Error('CDP_WEBSOCKET_TIMEOUT')), 10000); this.socket.addEventListener('open', () => { clearTimeout(timer); this.attached = true; resolve(); }, { once: true }); this.socket.addEventListener('error', e => { clearTimeout(timer); reject(e.error || new Error('CDP_WEBSOCKET_ERROR')); }, { once: true }); });
+    this.socket.addEventListener('message', event => { const message = JSON.parse(String(event.data)); if (message.id) { const pending = this.pending.get(message.id); if (!pending) return; this.pending.delete(message.id); message.error ? pending.reject(new Error(`${message.error.code}:${message.error.message}`)) : pending.resolve(message.result || {}); } else if (message.method) this.emit('message', {}, message.method, message.params || {}, message.sessionId || null); });
+    this.socket.addEventListener('close', () => { this.attached = false; for (const pending of th

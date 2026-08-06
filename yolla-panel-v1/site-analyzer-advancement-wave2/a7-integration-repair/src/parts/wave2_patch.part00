@@ -1,0 +1,41 @@
+'use strict';
+const crypto = require('node:crypto');
+const fs = require('node:fs');
+const os = require('node:os');
+const path = require('node:path');
+const net = require('node:net');
+const { spawn } = require('node:child_process');
+const { EventEmitter } = require('node:events');
+const base = require('../../../site-analyzer-advancement-wave1/a7-end-to-end-repair/src/index.cjs');
+
+function stable(value) {
+  if (Array.isArray(value)) return value.map(stable);
+  if (value && typeof value === 'object') return Object.keys(value).sort().reduce((out, key) => (out[key] = stable(value[key]), out), {});
+  return value;
+}
+function digest(value) { return crypto.createHash('sha256').update(JSON.stringify(stable(value))).digest('hex'); }
+
+function compileWave2Adapter({ structure, endpointInference, actionRecipe = null, adapterId = 'site-adapter-v2', recordLimit = 10 }) {
+  if (!Number.isInteger(recordLimit) || recordLimit < 1 || recordLimit > 1000) throw new Error('INVALID_RECORD_LIMIT');
+  const fields = (structure.field_candidates || []).slice(0, 20).map(field => ({ name: field.name, source_keys: field.source_keys }));
+  const mode = endpointInference.extraction_mode;
+  const semanticActions = (actionRecipe?.actions || []).map(action => ({
+    action_id: action.action_id, type: action.type, selector: action.selector, value: action.value,
+    frame_id: action.frame_id, popup: Boolean(action.popup), download: Boolean(action.download)
+  }));
+  const recipe = {
+    schema_version: 'EXECUTABLE_EXTRACTION_RECIPE_V2', adapter_id: adapterId, mode, record_limit: recordLimit,
+    fields, pagination: structure.pagination, actions: semanticActions,
+    endpoint_templates: endpointInference.endpoint_groups.map(group => ({
+      endpoint_id: group.endpoint_id, method: group.method, url_template: group.url_template,
+      record_path: group.record_paths[0]?.path || null
+    }))
+  };
+  const source = `'use strict';\nfunction arrays(v,p='$',o=[]){if(Array.isArray(v)){if(v.some(x=>x&&typeof x==='object'&&!Array.isArray(x)))o.push({path:p,records:v.filter(x=>x&&typeof x==='object'&&!Array.isArray(x))});v.forEach((x,i)=>arrays(x,p+'['+i+']',o));}else if(v&&typeof v==='object'){for(const [k,x] of Object.entries(v))arrays(x,p+'.'+k,o);}return o;}\nfunction shape(record,fields){const out={};for(const f of fields){let value;for(const k of f.source_keys||[]){if(record[k]!=null){value=record[k];break;}}if(value===undefined&&record[f.name]!=null)value=record[f.name];out[f.name]=value??null;}return out;}\nmodule.exports={adapter_id:${JSON.stringify(adapterId)},mode:${JSON.stringify(mode)},record_limit:${recordLimit},async extract(input={}){let records=[];if(this.mode!=='DOM'){for(const body of input.apiBodies||[]){let value=body;try{if(typeof body==='string')value=JSON.parse(body);}catch{}const found=arrays(value).sort((a,b)=>b.records.length-a.records.length)[0];if(found)records.push(...found.records);}}if((this.mode==='DOM'||this.mode==='HYBRID')&&records.length===0)records.push(...(input.domRecords||[]));return records.slice(0,this.record_limit).map(r=>shape(r,${JSON.stringify(fields)}));}};\n`;
+  return { schema_version: 'EXECUTABLE_ADAPTER_PACKAGE_V2', adapter_id: adapterId, mode, source, recipe, source_sha256: digest(source), recipe_sha256: digest(recipe) };
+}
+
+function eventFingerprint(event) { return digest({ type: event?.type || 'unknown', action_id: event?.action_id || null, payload: event?.payload || {} }); }
+
+class EventBridge extends EventEmitter {
+  constructor(

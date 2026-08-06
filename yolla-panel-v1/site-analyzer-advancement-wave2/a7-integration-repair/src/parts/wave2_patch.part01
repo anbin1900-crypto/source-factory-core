@@ -1,0 +1,54 @@
+{ sessionKey = 'default', maxFingerprints = 5000 } = {}) {
+    super(); this.sessionKey = sessionKey; this.maxFingerprints = maxFingerprints; this.sequence = 0; this.events = []; this.fingerprints = new Set();
+  }
+  ingest(event) {
+    if (!event || typeof event !== 'object') throw new TypeError('EVENT_OBJECT_REQUIRED');
+    const fingerprint = eventFingerprint(event);
+    if (this.fingerprints.has(fingerprint)) return null;
+    this.fingerprints.add(fingerprint);
+    if (this.fingerprints.size > this.maxFingerprints) this.fingerprints.delete(this.fingerprints.values().next().value);
+    const canonical = { ...event, schema_version: 'SITE_ANALYZER_EVENT_BRIDGE_V2', source_schema_version: event.schema_version || null, bridge_sequence: ++this.sequence, session_key: this.sessionKey, fingerprint };
+    this.events.push(canonical); this.emit('event', canonical); return canonical;
+  }
+  snapshot() { return this.events.slice(); }
+}
+
+function normalizeSelector(selector) {
+  if (typeof selector !== 'string' || !selector.trim()) throw new TypeError('SELECTOR_REQUIRED');
+  const value = selector.trim();
+  if (/^(javascript|data):/i.test(value)) throw new Error('UNSAFE_SELECTOR');
+  if (value.length > 1000) throw new Error('SELECTOR_TOO_LONG');
+  return value;
+}
+function selectorCandidates(input = {}) {
+  const candidates = [];
+  if (input.selector) candidates.push(input.selector);
+  const attrs = input.attributes || {};
+  if (attrs['data-testid']) candidates.push(`[data-testid="${String(attrs['data-testid']).replace(/"/g, '\\"')}"]`);
+  if (attrs['data-action']) candidates.push(`[data-action="${String(attrs['data-action']).replace(/"/g, '\\"')}"]`);
+  if (attrs.id) candidates.push(`#${String(attrs.id).replace(/[^a-zA-Z0-9_-]/g, '\\$&')}`);
+  if (attrs.name) candidates.push(`[name="${String(attrs.name).replace(/"/g, '\\"')}"]`);
+  if (input.tag && Array.isArray(input.classes) && input.classes.length) candidates.push(`${input.tag}.${input.classes.map(v => String(v).replace(/[^a-zA-Z0-9_-]/g, '\\$&')).join('.')}`);
+  if (input.text && input.tag) candidates.push(input.tag);
+  return [...new Set(candidates.map(normalizeSelector))];
+}
+async function validateSelector(debuggerApi, selector) {
+  const normalized = normalizeSelector(selector);
+  const expression = `(() => { try { return { count: document.querySelectorAll(${JSON.stringify(normalized)}).length }; } catch (error) { return { count: 0, error: error.message }; } })()`;
+  const result = await debuggerApi.sendCommand('Runtime.evaluate', { expression, returnByValue: true });
+  const value = result?.result?.value || { count: 0 };
+  return { selector: normalized, count: Number(value.count || 0), valid: !value.error, error: value.error || null };
+}
+async function resolveSelector(debuggerApi, input) {
+  const attempts = [];
+  for (const selector of selectorCandidates(input)) {
+    const result = await validateSelector(debuggerApi, selector); attempts.push(result);
+    if (result.valid && result.count === 1) return { status: 'UNIQUE', selector, attempts };
+  }
+  const firstExisting = attempts.find(v => v.valid && v.count > 0);
+  return firstExisting ? { status: 'MULTIPLE', selector: firstExisting.selector, attempts } : { status: 'NOT_FOUND', selector: null, attempts };
+}
+
+const DOM_EXTRACT = `(() => {
+  const pool = ['[data-record]', '.item', 'article', 'li']; let chosen = null; let nodes = [];
+  for (const selector of pool) { const found = Array.from(document.querySelectorAll(selector)); if (found.lengt
