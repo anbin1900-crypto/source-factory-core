@@ -1,0 +1,48 @@
+{
+  "schema_version": "A2_CYCLE1_FINAL_REPORT_V1",
+  "role": "A-2_C_MODE_CYCLE1_RUNTIME_AUTHORITY_WORKER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "worker_pr": 18,
+  "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "directive_id": "C1-A2-EXACT-RUNTIME-AUTHORITY-RESOLUTION",
+  "directive_comment_id": 5206055628,
+  "completed_at_kst": "2026-08-07T00:14:00+09:00",
+  "baseline_head": "01e1321401211a53ae9237ca05d3a8f46822405f",
+  "artifacts": {
+    "start": {"path":"yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a2-runtime-authority/A2_CYCLE1_START_REPORT_V1.json","commit":"4188ee3e1a1a697f7d5ed4ebaa383442ae6189ca","blob":"09c2700b346ae2b04f3cfa3f05746a7e2beda97c","remote_readback":"PASS"},
+    "runtime_authority_matrix": {"path":"yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a2-runtime-authority/A2_CYCLE1_RUNTIME_AUTHORITY_MATRIX_V1.json","commit":"b4093a1f67ba5c6f556c675716bc1347d4fbb00f","blob":"79c834599298fca4eba1e837e2359d6d2dadb9af","remote_readback":"PASS"},
+    "next_install_and_readback_target": {"path":"yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a2-runtime-authority/A2_CYCLE1_NEXT_INSTALL_AND_READBACK_TARGET_V1.json","commit":"a1b5d2bbf600634bd3478691ecae58cc3cd655ab","blob":"7dd10668fbf0d953f3c98a4a685d0d72ec2ab316","remote_readback":"PASS"}
+  },
+  "result": {
+    "active_runtime": {"version":"5.10.2.3.7","classification":"LAST_VERIFIED_ACTIVE_RUNTIME","current_process_identity":"PENDING_A3_NON_DESTRUCTIVE_TARGET_PC_READBACK"},
+    "candidate_classification": {"5.10.2.4.0":"BASE_CANDIDATE_NOT_ACTIVE","5.10.2.4.1":"VALIDATED_CHAIN_CANDIDATE_NOT_ACTIVE","PR73":"V1_REJECTED_V2_UNEXECUTED_NOT_SELECTED","5.10.2.4.3":"SELECTED_EXACT_NEXT_INSTALL_AND_READBACK_CANDIDATE_NOT_ACTIVE"},
+    "selected_target": {"version":"5.10.2.4.3","source_pr":75,"source_head":"5f737c796500ade755532c6922f38448151f1d55","installer_file_name":"INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510243_C_ONLY_SOURCE_OPTIMIZATION.bat","installer_size_bytes":86244,"installer_sha256":"65a147d5edd3060bcf9ffee86ff0a87fa09c874afcccc796d82d8a9bc1374b7c","installer_drive_file_id":"18zTbJ2v3fQNMAuBkILbBGWuIsjS_HVXk","package_sha256":"85e4586b637a6a3030eb33c43c79ab4822a7a8a723af82787e8fd1c102715707","expected_release":"E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\v5.10.2.4.3-c-only-source-optimized","expected_launcher":"E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_4_3.bat"},
+    "activation_rule": "TARGET_PC_INSTALL_RECEIPT_AND_LIVE_PROCESS_READBACK_REQUIRED_BEFORE_ACTIVE_CLASSIFICATION",
+    "fallback": "ROLLBACK_TO_5.10.2.3.7_ON_FAILURE"
+  },
+  "validation": {
+    "all_authority_pointers_read_back": "PASS",
+    "authority_input_count": 11,
+    "authority_input_readback_pass_count": 11,
+    "owned_artifact_readback": "PASS_3_OF_3_BEFORE_FINAL_REPORT",
+    "active_vs_candidate_classification": "EXACT",
+    "installer_launcher_release_paths": "RESOLVED",
+    "conflict_count": 3,
+    "resolved_conflict_count": 3,
+    "unresolved_conflict_count": 0,
+    "selected_candidate_offline_assertion_events": 177,
+    "selected_candidate_offline_failure_count": 0,
+    "false_target_pc_pass_count": 0
+  },
+  "handoff": {
+    "next_owner": "A-3_C_MODE_CYCLE1_TARGET_PC_READBACK_WORKER_OR_AUTHORIZED_INSTALL_EXECUTOR",
+    "required_action": "READ_SELECTED_TARGET_DOCUMENT_THEN_CAPTURE_PREINSTALL_PROCESS_AND_BYTE_GATE_BEFORE_ANY_INSTALL",
+    "required_post_install_receipt": "V510243_C_ONLY_INSTALL_RECEIPT.json",
+    "cycle2_not_authorized_by_a2": true
+  },
+  "terminal": "A2_C_MODE_CYCLE1_RUNTIME_AUTHORITY_READY",
+  "status": "TERMINAL_PASS",
+  "boundaries": {"site_analyzer_work":false,"target_pc_applied":false,"target_pc_live_pass_claimed":false,"production":false,"ready":false,"merge":false}
+}
