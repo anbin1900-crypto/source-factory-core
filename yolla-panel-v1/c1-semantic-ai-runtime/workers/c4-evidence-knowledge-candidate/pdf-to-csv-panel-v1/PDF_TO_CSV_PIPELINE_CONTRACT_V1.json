@@ -6,14 +6,8 @@
   "purpose": "One Python command runs either one source folder or exactly one selected PDF through the same inventory, extraction/OCR, page-order, chunking, naming and UTF-8-SIG CSV pipeline.",
   "single_pipeline_only": true,
   "input_modes": {
-    "FOLDER": {
-      "cli": "--source-folder <folder>",
-      "inventory_cardinality": "N_RECORDS"
-    },
-    "PDF_FILE": {
-      "cli": "--pdf-file <file.pdf>",
-      "inventory_cardinality": "EXACTLY_1_RECORD"
-    },
+    "FOLDER": {"cli": "--source-folder <folder>", "inventory_cardinality": "N_RECORDS"},
+    "PDF_FILE": {"cli": "--pdf-file <file.pdf>", "inventory_cardinality": "EXACTLY_1_RECORD"},
     "mutually_exclusive": true
   },
   "common_cli": {
@@ -26,12 +20,14 @@
     "C2_INPUT_SELECTION": {
       "path": "../../c2-document-decomposition/pdf-to-csv-panel-v1/panel_folder_inventory_adapter.py",
       "symbol": "adapt_input_selection",
-      "blob": "b3c3186ae13e4bc13484ad23c1eef9902506b2b0"
+      "blob": "f73ac4c21c25346db441f4260decfd73032aaefb",
+      "schema_version": "PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_V3"
     },
     "C3_EXTRACTION_RUNTIME": {
       "path": "../../c3-field-mapping-rules/pdf-to-csv-panel-v1/pdf_extraction_runtime_adapter.py",
       "symbol": "run_inventory_extraction",
-      "blob": "ba55b3685ec073c2108b3f1dae2478e2922eb3de"
+      "blob": "f0135afd4e773421dc747d20da7a5b32b8110317",
+      "result_schema_version": "PDF_EXTRACTION_RUNTIME_RESULT_V2"
     },
     "C4_CHUNK_WRITER": {
       "path": "text_chunk_csv_writer.py",
@@ -63,16 +59,7 @@
     "output_naming_collision_policy": "C5_FAIL_CLOSED",
     "original_pdf_mutation": false
   },
-  "progress_events": [
-    "SELECTION_START",
-    "SELECTION_READY",
-    "EXTRACTION_START",
-    "EXTRACTION_READY",
-    "SOURCE_START",
-    "SOURCE_COMPLETE",
-    "COMPLETE",
-    "ERROR"
-  ],
+  "progress_events": ["SELECTION_START", "SELECTION_READY", "EXTRACTION_START", "EXTRACTION_READY", "SOURCE_START", "SOURCE_COMPLETE", "COMPLETE", "ERROR"],
   "error_contract": {
     "fail_closed": true,
     "record_fields": ["error_code", "error_stage", "message", "details"],
