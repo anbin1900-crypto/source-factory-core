@@ -1,0 +1,75 @@
+{
+  "schema_version": "B5_D_READY_PACKAGE_V2_TEST_REPORT_V3",
+  "batch_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V3-20260806-001",
+  "task_id": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS",
+  "directive_comment": 5200275188,
+  "tested_at_kst": "2026-08-06T13:24:00+09:00",
+  "baseline_head": "fcdf48eca8c4aa8709ec0040e3e0cbc2a4bf99a7",
+  "prior_package_validation": {
+    "tests": "PASS_45_OF_45",
+    "package_sha256": "f97df341fedb2a81e681b1f00fb3f857b95b425de0fe5ce264bb28a5e18905aa",
+    "fixture_bundle_blob": "3a204094b4a81486646f863228b5059745fba758",
+    "source_field_loss_count": 0,
+    "silent_drop_count": 0,
+    "package_modified_in_this_task": false
+  },
+  "submission_field_tests": {
+    "test_count": 14,
+    "pass_count": 13,
+    "fail_count": 1,
+    "result": "PASS_13_OF_14_EXACT_BLOCKER",
+    "checks": [
+      {"id": 1, "name": "CURRENT_REQUEST_REMOTE_READBACK", "result": "PASS"},
+      {"id": 2, "name": "EXACT_FIELD_NAME_PRODUCER_HEAD_REQUIRED", "result": "PASS_REQUIREMENT_CONFIRMED"},
+      {"id": 3, "name": "EXACT_FIELD_NAME_PACKAGE_BLOB_OR_STORAGE_POINTER_REQUIRED", "result": "PASS_REQUIREMENT_CONFIRMED"},
+      {"id": 4, "name": "EXACT_FIELD_NAME_RECORD_COUNT_REQUIRED", "result": "PASS_REQUIREMENT_CONFIRMED"},
+      {"id": 5, "name": "EXACT_FIELD_NAME_SUBMITTED_AT_REQUIRED", "result": "PASS_REQUIREMENT_CONFIRMED"},
+      {"id": 6, "name": "PACKAGE_IMMUTABLE_POINTER_RESOLVED", "result": "PASS"},
+      {"id": 7, "name": "PACKAGE_BLOB_REMOTE_READBACK", "result": "PASS", "value": "3a204094b4a81486646f863228b5059745fba758"},
+      {"id": 8, "name": "RECORD_COUNT_NORMALIZED_OUTPUT", "result": "PASS", "value": 3},
+      {"id": 9, "name": "RECORD_COUNT_SQLITE_PARITY", "result": "PASS", "value": 3},
+      {"id": 10, "name": "SUBMITTED_AT_RFC3339_TIMEZONE_RULE", "result": "PASS"},
+      {"id": 11, "name": "SOURCE_PACKAGE_SHA_UNCHANGED", "result": "PASS"},
+      {"id": 12, "name": "SOURCE_UNMAPPED_DEDUP_PRESERVATION_UNCHANGED", "result": "PASS"},
+      {"id": 13, "name": "SILENT_ALIAS_AND_COERCION_DISABLED", "result": "PASS"},
+      {"id": 14, "name": "PRODUCER_HEAD_FINAL_REQUEST_BYTE_COMMIT_IDENTITY", "result": "FAIL_EXACT_BLOCKER", "reason": "SELF_REFERENTIAL_GIT_COMMIT_SHA_FIXED_POINT"}
+    ]
+  },
+  "field_accounting": {
+    "required": 4,
+    "exactly_resolvable": 3,
+    "blocked": 1,
+    "resolvable_fields": [
+      "package_blob_or_storage_pointer",
+      "record_count",
+      "submitted_at"
+    ],
+    "blocked_field": "producer_head"
+  },
+  "producer_head_analysis": {
+    "expected": "A_CONTENT_COMMIT_WHERE_FINAL_PACKAGE_AND_FINAL_REQUEST_BYTES_COEXIST",
+    "actual": "NO_NON_SELF_REFERENTIAL_VALUE_CAN_BE_COMMITTED_UNDER_THE_CURRENT_DEFINITION",
+    "reason_code": "SELF_REFERENTIAL_CONTENT_ADDRESS",
+    "evidence": "producer_head IS PART OF REQUEST_BYTES; REQUEST_BLOB_IS_PART_OF_TREE; TREE_IS_PART_OF_COMMIT_HASH",
+    "ordinary_git_resolution": false,
+    "safe_alias_available": false
+  },
+  "d1_compatibility_dependency": {
+    "task_id": "D1_B_RECEIPT_V2_COMPATIBILITY",
+    "terminal_required": "D1_B_RECEIPT_V2_COMPATIBILITY_READY_OR_EXACT_BLOCKER",
+    "terminal_observed": false,
+    "unblock_requirement": "NON_SELF_REFERENTIAL_PRODUCER_HEAD_SEMANTICS"
+  },
+  "terminal_recommendation": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_EXACT_BLOCKER",
+  "source_field_loss_count": 0,
+  "silent_drop_count": 0,
+  "d_canonical_id_generation": false,
+  "d_acceptance_claim": false,
+  "actual_site_extraction": false,
+  "postgresql_connection": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
