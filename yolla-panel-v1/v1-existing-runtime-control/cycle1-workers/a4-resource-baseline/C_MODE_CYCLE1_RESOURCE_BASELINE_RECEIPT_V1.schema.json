@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yolla.local/schemas/C_MODE_CYCLE1_RESOURCE_BASELINE_RECEIPT_V1.schema.json",
+  "title": "C Mode Cycle 1 Resource Baseline Receipt V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "worker",
+    "cycle_id",
+    "directive_id",
+    "scenario",
+    "captured_at_utc",
+    "captured_at_kst",
+    "target_pc_live_execution",
+    "machine_name",
+    "os_version",
+    "logical_processor_count",
+    "root_process",
+    "action",
+    "sample_count_requested",
+    "sample_count_actual",
+    "sample_interval_ms",
+    "warmup_seconds",
+    "metrics_summary",
+    "load_elapsed_ms",
+    "samples_file",
+    "samples_sha256",
+    "optimization_source_change_count",
+    "non_destructive_measurement",
+    "terminal"
+  ],
+  "properties": {
+    "schema_version": { "const": "C_MODE_CYCLE1_RESOURCE_BASELINE_RECEIPT_V1" },
+    "run_id": { "type": "string", "minLength": 1 },
+    "worker": { "const": "A-4" },
+    "cycle_id": { "const": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001" },
+    "directive_id": { "const": "C1-A4-IDLE-RESOURCE-BASELINE-HARNESS" },
+    "scenario": {
+      "enum": [
+        "PANEL_ONLY",
+        "ONE_BROWSER",
+        "INACTIVE_SEAT_TRANSITION",
+        "BROWSER_CLOSE",
+        "BROWSER_REOPEN",
+        "CLOSE_REOPEN"
+      ]
+    },
+    "captured_at_utc": { "type": "string", "format": "date-time" },
+    "captured_at_kst": { "type": "string", "minLength": 20 },
+    "target_pc_live_execution": { "const": true },
+    "machine_name": { "type": "string", "minLength": 1 },
+    "os_version": { "type": "string", "minLength": 1 },
+    "logical_processor_count": { "type": "integer", "minimum": 1 },
+    "root_process": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["process_id", "name"],
+      "properties": {
+        "process_id": { "type": "integer", "minimum": 1 },
+        "name": { "type": "string", "minLength": 1 }
+      }
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requested", "executed", "elapsed_ms", "exit_code", "status"],
+      "properties": {
+        "requested": { "type": "boolean" },
+        "executed": { "type": "boolean" },
+        "elapsed_ms": { "type": "number", "minimum": 0 },
+        "exit_code": { "type": ["integer", "null"] },
+        "status": { "enum": ["NOT_REQUESTED", "PASS"] }
+      }
+    },
+    "sample_count_requested": { "type": "integer", "minimum": 30 },
+    "sample_count_actual": { "type": "integer", "minimum": 30 },
+    "sample_interval_ms": { "type": "integer", "minimum": 250 },
+    "warmup_seconds": { "type": "integer", "minimum": 0 },
+    "metrics_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cpu_percent",
+        "working_set_bytes",
+        "private_bytes",
+        "process_count",
+        "renderer_count",
+        "gpu_process_count",
+        "utility_process_count"
+      ],
+      "properties": {
+        "cpu_percent": { "$ref": "#/$defs/metricSummary" },
+        "working_set_bytes": { "$ref": "#/$defs/metricSummary" },
+        "private_bytes": { "$ref": "#/$defs/metricSummary" },
+        "process_count": { "$ref": "#/$defs/metricSummary" },
+        "renderer_count": { "$ref": "#/$defs/metricSummary" },
+        "gpu_process_count": { "$ref": "#/$defs/metricSummary" },
+        "utility_process_count": { "$ref": "#/$defs/metricSummary" }
+      }
+    },
+    "load_elapsed_ms": { "type": "number", "minimum": 0 },
+    "samples_file": { "const": "samples.json" },
+    "samples_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "optimization_source_change_count": { "const": 0 },
+    "non_destructive_measurement": { "const": true },
+    "terminal": { "const": "MEASURED" }
+  },
+  "$defs": {
+    "metricSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["min", "avg", "max", "first", "last", "delta"],
+      "properties": {
+        "min": { "type": ["number", "null"] },
+        "avg": { "type": ["number", "null"] },
+        "max": { "type": ["number", "null"] },
+        "first": { "type": ["number", "null"] },
+        "last": { "type": ["number", "null"] },
+        "delta": { "type": ["number", "null"] }
+      }
+    }
+  }
+}
