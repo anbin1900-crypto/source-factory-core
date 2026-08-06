@@ -1,0 +1,87 @@
+{
+  "schema_version": "CSV_CHUNK_FILE_CONTRACT_V1",
+  "contract_id": "C4-TEXT-CHUNK-CSV-WRITER-V1",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
+  "task_id": "C4_TEXT_CHUNK_CSV_WRITER_V1",
+  "producer": "C-4_EVIDENCE_KNOWLEDGE_CANDIDATE_WORKER",
+  "purpose": "Split page-ordered extracted text into deterministic small chunks and write one UTF-8-SIG CSV file per chunk without semantic processing.",
+  "input_contract": {
+    "record_order": "STRICTLY_INCREASING_PAGE_NUMBER",
+    "page_number_fields": ["page_no", "page_number"],
+    "text_field": "text",
+    "page_number_minimum": 1,
+    "duplicate_page_numbers_allowed": false,
+    "unordered_pages_allowed": false,
+    "empty_record_list_allowed": false,
+    "all_empty_or_whitespace_text_allowed": false
+  },
+  "chunking_contract": {
+    "max_chars": "CONFIGURABLE_POSITIVE_INTEGER",
+    "counting_unit": "UNICODE_CODE_POINT",
+    "page_boundary_crossing": false,
+    "source_order_preserved": true,
+    "page_order_preserved": true,
+    "text_normalization": "NONE",
+    "text_trim": false,
+    "semantic_boundary_detection": false,
+    "chunk_numbering": "ONE_BASED_CONTIGUOUS",
+    "char_interval": "[char_start,char_end)",
+    "text_hash": "lowerhex(sha256(exact_chunk_text_utf8_bytes))"
+  },
+  "csv_contract": {
+    "layout": "ONE_HEADER_AND_ONE_CHUNK_ROW_PER_FILE",
+    "encoding": "UTF-8-SIG",
+    "bom_required": true,
+    "newline": "LF",
+    "minimum_columns": [
+      "source_file",
+      "source_path",
+      "chunk_no",
+      "page_start",
+      "page_end",
+      "text"
+    ],
+    "additional_columns": ["char_start", "char_end", "text_sha256"],
+    "column_order": [
+      "source_file",
+      "source_path",
+      "chunk_no",
+      "page_start",
+      "page_end",
+      "text",
+      "char_start",
+      "char_end",
+      "text_sha256"
+    ],
+    "default_filename": "chunk_{chunk_no:06d}.csv",
+    "filename_factory_injectable": true,
+    "directory_component_in_filename_allowed": false
+  },
+  "write_contract": {
+    "atomic_write": true,
+    "existing_identical_bytes": "REUSE",
+    "existing_different_bytes_default": "FAIL_CLOSED",
+    "explicit_overwrite_supported": true,
+    "preflight_filename_collision_check": true,
+    "original_pdf_mutation": false
+  },
+  "error_contract": {
+    "empty_text_silent_success": false,
+    "invalid_page_order": "ERROR",
+    "invalid_max_chars": "ERROR",
+    "duplicate_filename": "ERROR",
+    "conflicting_existing_output": "ERROR"
+  },
+  "boundaries": {
+    "semantic_analysis": false,
+    "semantic_matching": false,
+    "gpt_call": false,
+    "legal_classification": false,
+    "knowledge_candidate_generation": false,
+    "database_write": false,
+    "server_integration": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
