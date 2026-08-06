@@ -1,0 +1,54 @@
+{
+  "schema_version": "PANEL_FOLDER_SELECTION_INVENTORY_CONTRACT_V1",
+  "contract_id": "C2-PANEL-FOLDER-SELECTION-INVENTORY-ADAPTER-V1",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE2-20260807-001",
+  "task_id": "C2_PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_V1",
+  "directive_comment": 5208256239,
+  "producer": "C-2_PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_WORKER",
+  "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c2-document-decomposition/pdf-to-csv-panel-v1/**",
+  "cycle1_authority": {
+    "pointer_blob": "ba27ebb810d29b989a6677930b13b04cd7e23daf",
+    "inventory_source": "pdf_folder_inventory.py",
+    "inventory_schema": "PDF_FOLDER_INVENTORY_V1",
+    "binding_policy": "CALL_ACCEPTED_CYCLE1_BUILD_INVENTORY_WITHOUT_REIMPLEMENTING_DISCOVERY_IN_ADAPTER"
+  },
+  "input_contract": {
+    "source_folder": "existing_non_symlink_directory",
+    "output_folder": "existing_non_symlink_directory",
+    "source_output_distinct": true,
+    "output_writable_probe": "create_fsync_delete_private_empty_temp_file",
+    "output_probe_residue_allowed": false
+  },
+  "output_contract": {
+    "schema_version": "PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_V1",
+    "required_fields": ["source_folder", "output_folder", "source_output_distinct", "output_write_probe", "cycle1_pointer_blob", "inventory", "pdf_count", "selection_status", "ready_for_processing"],
+    "selection_status_values": ["READY", "NO_PDF_FILES"],
+    "empty_source_policy": "RETURN_EXPLICIT_NO_PDF_FILES_NOT_SILENT_READY",
+    "inventory_order_preserved": true,
+    "inventory_hash_preserved": true
+  },
+  "cycle1_inventory_validation": ["SCHEMA_VERSION_EXACT", "SELECTED_FOLDER_EXACT_RESOLVED_MATCH", "PDF_COUNT_EQUALS_FILES_LENGTH", "SHA256_LOWERCASE_64_HEX", "PROCESSING_ORDER_CONTIGUOUS_ONE_BASED", "RELATIVE_PATH_NON_ABSOLUTE_NO_PARENT_ESCAPE", "FILE_NAME_NONEMPTY", "SIZE_BYTES_NONNEGATIVE_INTEGER"],
+  "failure_codes": ["SOURCE_FOLDER_REQUIRED", "SOURCE_FOLDER_NOT_FOUND", "SOURCE_FOLDER_NOT_DIRECTORY", "SOURCE_FOLDER_SYMLINK_FORBIDDEN", "OUTPUT_FOLDER_REQUIRED", "OUTPUT_FOLDER_NOT_FOUND", "OUTPUT_FOLDER_NOT_DIRECTORY", "OUTPUT_FOLDER_SYMLINK_FORBIDDEN", "SOURCE_OUTPUT_FOLDER_COLLISION", "OUTPUT_FOLDER_NOT_WRITABLE", "CYCLE1_INVENTORY_FAILED", "CYCLE1_INVENTORY_SCHEMA_MISMATCH", "CYCLE1_INVENTORY_SOURCE_FOLDER_MISMATCH", "CYCLE1_INVENTORY_COUNT_MISMATCH", "CYCLE1_INVENTORY_HASH_INVALID", "CYCLE1_PROCESSING_ORDER_INVALID", "CYCLE1_RELATIVE_PATH_INVALID", "CYCLE1_FILE_NAME_INVALID", "CYCLE1_SIZE_BYTES_INVALID"],
+  "cli_contract": {
+    "command": "python panel_folder_inventory_adapter.py SOURCE_FOLDER OUTPUT_FOLDER [--skip-output-write-probe] [--compact]",
+    "success_exit_code": 0,
+    "failure_exit_code": 2,
+    "failure_stderr_prefix": "FOLDER_SELECTION_ADAPTER_ERROR:"
+  },
+  "explicit_exclusions": {
+    "panel_ui": false,
+    "pdf_text_extraction": false,
+    "ocr": false,
+    "text_chunking": false,
+    "csv_generation": false,
+    "semantic_analysis": false,
+    "gpt_call": false,
+    "database_write": false
+  },
+  "safety": {
+    "source_pdf_mutation": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
