@@ -1,0 +1,38 @@
+{
+  "schema_version": "LATEST_A4_SITE_ANALYZER_WAVE1_POINTER_V1",
+  "worker": "A-4",
+  "worker_pr": 23,
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "updated_at_kst": "2026-08-07T02:07:00+09:00",
+  "terminal": "A4_SITE_ANALYZER_WAVE1_STRUCTURE_INFERENCE_PASS",
+  "decision": "PASS",
+  "final_report": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/A4_SITE_ANALYZER_WAVE1_FINAL_REPORT_V1.json",
+    "commit": "89d80e550961cb560a0b6b2d63565804599813c4",
+    "blob": "97a639beddc8292adf5bbffac0fd1ab6a7e9e29b"
+  },
+  "validation_receipt": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/A4_SITE_ANALYZER_WAVE1_VALIDATION_RECEIPT_V1.json",
+    "commit": "649d3d13deb577bcb3f9c521bd225ceb24451245"
+  },
+  "handoff": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/A4_SITE_ANALYZER_WAVE1_HANDOFF_V1.json",
+    "commit": "b379f94942b5d44163e5e6aed7c0dc2e54548721"
+  },
+  "source_blobs": {
+    "dom_input": "8507967a37940f6b3e39eef9a1e5fe86fbf196cb",
+    "engine": "e10dafebd36b5c9c39a2b8cbd94fd72df899d486",
+    "cli": "f2a6ed907db7b6508aa826199f7eedb91488733b",
+    "tests": "9511fa1b609a06365338aeb0e6c481c8d42cfc7c"
+  },
+  "tests": "PASS_9_OF_9",
+  "auto_field_candidate_count": 5,
+  "locator_candidate_count": 12,
+  "pagination": "NEXT_AND_LOAD_MORE_AND_EXPLICIT_NONE_PASS; PAGE_NUMBER_CURSOR_INFINITE_SCROLL_IMPLEMENTED",
+  "a3_actual_live_event_binding": "PENDING_A3_PUBLICATION_EVENT",
+  "component_implementation_ready": true,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
