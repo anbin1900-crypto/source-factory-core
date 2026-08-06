@@ -1,84 +1,76 @@
 {
-  "schema_version": "LATEST_C3_PDF_TO_CSV_POINTER_V2",
-  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE2-20260807-001",
-  "task_id": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_V1",
-  "directive_comment_id": 5208257787,
-  "start_comment_id": 5208382584,
-  "terminal_comment_id": 5208429694,
+  "schema_version": "LATEST_C3_PDF_TO_CSV_POINTER_V3",
+  "batch_id": "C1-PDF-PREPROCESS-CORRECTION-20260807-001",
+  "task_id": "C3_EXTRACTION_DIRECT_REPAIR",
+  "directive_comment_id": 5208880453,
+  "control_comment_id": 5208884860,
+  "start_comment_id": 5208947794,
   "authority": {
     "repository": "anbin1900-crypto/source-factory-core",
     "control_pr": 20,
     "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
-    "common_directive_commit": "9484b996f10885a174fb0e1ef661ab357563f705",
-    "shared_head_before_pointer": "b193776f4db1a55d1963092081aeca434551bda6",
-    "shared_head_at_terminal": "b6efd5256ec7351ca4a869180f720bd5cc27b41a",
-    "preterminal_pointer_commit": "b6efd5256ec7351ca4a869180f720bd5cc27b41a",
-    "preterminal_pointer_blob": "8a7e6d9d82c330069722785847b92d30b2465931",
-    "previous_cycle1_pointer_blob": "1296e68317ca027e20aa812e6a2bb0f6f1a70004",
-    "pointer_commit_status": "THIS_COMMIT",
+    "shared_head_before_pointer": "0b985bb18d17d5a9f8a0b5e21e4c1b0205d75023",
+    "previous_pointer_blob": "3aa2d77df839ad5ee95a44965d4a99da088cf1ef",
     "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c3-field-mapping-rules/pdf-to-csv-panel-v1/**"
   },
-  "input_bindings": {
-    "cycle1_extractor": {
-      "path": "pdf_text_extractor.py",
-      "blob": "082ec9ada56b2d42c7e40c14b9d2f6491aeebfce"
-    },
-    "c2_cycle1_inventory_contract": {
-      "schema_version": "PDF_FOLDER_INVENTORY_CONTRACT_V1",
-      "blob": "8efd027fd7b78b6f25eb62effe42fd6fd8d3fe71"
-    },
-    "c2_cycle2_panel_selection_contract": {
-      "schema_version": "PANEL_FOLDER_SELECTION_INVENTORY_CONTRACT_V1",
-      "blob": "42661d29aa554ac08ffd100a0c1249085df70857"
-    }
-  },
   "artifacts": {
-    "source": {
+    "extractor": {
+      "path": "pdf_text_extractor.py",
+      "commit": "adaf4b895457cb0681f2038e258bb411eb5817c5",
+      "blob": "e3d6ecf7f557c40edccdd4c025fc4832945efaa1"
+    },
+    "runtime_adapter": {
       "path": "pdf_extraction_runtime_adapter.py",
-      "commit": "84b0c05658499f6c7c5f7e9284e7cf7bfed160fa",
-      "blob": "ba55b3685ec073c2108b3f1dae2478e2922eb3de"
+      "commit": "07034757f7cf0d64eaee7cfd7965b724da1da3bd",
+      "blob": "f0135afd4e773421dc747d20da7a5b32b8110317"
     },
-    "contract": {
+    "page_contract": {
+      "path": "PDF_PAGE_TEXT_RECORD_CONTRACT_V1.json",
+      "commit": "1858bdb3ce1ebe0269ce9884aaa98c083c0d80b9",
+      "blob": "06dc87319859b9ee4baf58f9bf5a84f5021c8159"
+    },
+    "runtime_contract": {
       "path": "PDF_EXTRACTION_RUNTIME_ADAPTER_CONTRACT_V1.json",
-      "commit": "893f5a0e80c6a9f979011c1593bfccbe256b8ade",
-      "blob": "aea6c138bd79e84f2253fd759d7f004d59944cf5"
+      "commit": "5b862e9c458496881af81f4b7a2211b5515a7171",
+      "blob": "974caa8653880e6885695779bb1c3704dbe7a679"
     },
-    "test": {
-      "path": "test_pdf_extraction_runtime_adapter.py",
-      "commit": "608dd1cc65b611d6a170ca270e4623e451c6a91d",
-      "blob": "e2602d4788ea0f014805d802271978898bb445da"
+    "repair_test": {
+      "path": "test_pdf_extraction_direct_repair.py",
+      "commit": "5331bb1e89d554e7a0db714878e09c5af329e8f8",
+      "blob": "b350110950b128b4d40692dab022faaa14b6bf96"
+    },
+    "actual_smoke": {
+      "path": "C3_EXTRACTION_DIRECT_REPAIR_SMOKE_V1.json",
+      "commit": "823b7a32b8d86a04667ba081fe391e998327b617",
+      "blob": "abe2e7851b4b2962d03ccd9d6e9dcd63f9fd3404"
     },
     "final_report": {
-      "path": "C3_CYCLE2_FINAL_REPORT_V1.json",
-      "commit": "b193776f4db1a55d1963092081aeca434551bda6",
-      "blob": "b70fbc2237c639e38a58448eab45787b21b3fc66"
+      "path": "C3_EXTRACTION_DIRECT_REPAIR_FINAL_REPORT_V1.json",
+      "commit": "0b985bb18d17d5a9f8a0b5e21e4c1b0205d75023",
+      "blob": "5d57c217dedc3f5416c8fd38c5f217db284d2962"
     }
   },
-  "validation": {
-    "unit_tests": "PASS_35_OF_35",
-    "python_compile": "PASS_2_OF_2",
-    "remote_readback": "PASS_5_OF_5",
-    "non_target_environment_doctor": "READY_DIRECT_TEXT_AND_OCR",
-    "target_windows_pc_doctor_executed": false,
-    "actual_pdf_document_extraction": false,
-    "actual_ocr_document_execution": false,
-    "inventory_record_binding": true,
-    "panel_selection_binding": true,
-    "direct_text_first": true,
-    "ocr_fallback_runtime_bound": true,
-    "source_order_preserved": true,
-    "silent_drop_count": 0,
-    "semantic_analysis_count": 0,
-    "gpt_call_count": 0,
-    "database_write_count": 0,
-    "original_pdf_mutation_count": 0
+  "correction": {
+    "defect_count": 3,
+    "short_direct_text_preserved": true,
+    "true_blank_page_explicit": true,
+    "kor_eng_language_pack_doctor": true,
+    "scanned_pdf_without_ocr_fail_closed": true,
+    "one_record_inventory_supported": true
   },
-  "decision": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_READY_SOURCE_CONTRACT_AND_FIXTURE",
-  "terminal": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_READY",
-  "terminal_comment_status": "PUBLISHED",
-  "handoff_to": "C4_PDF_TO_CSV_PIPELINE_ORCHESTRATOR_V1",
-  "c4_entry_side": "SATISFIED",
+  "validation": {
+    "local_expanded_extractor_harness": "PASS_31_OF_31",
+    "local_expanded_runtime_harness": "PASS_43_OF_43",
+    "committed_direct_repair_regression": "PASS_12_OF_12",
+    "actual_runtime_smoke": "PASS_4_OF_4",
+    "remote_readback": "PASS_7_OF_7"
+  },
+  "result": "C3_EXTRACTION_CORRECTED",
+  "terminal_comment_status": "PENDING_PUBLICATION",
   "ci_status": "NOT_RUN_NOT_CLAIMED_PASS",
+  "semantic_analysis": false,
+  "gpt_call": false,
+  "database_write": false,
   "production": false,
   "ready": false,
   "merge": false
