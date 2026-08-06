@@ -1,0 +1,29 @@
+{
+  "schema_version": "B4_COMMON_FIXTURE_EDGE_RECIPE_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "adapter_binding": "A6_EXECUTABLE_ADAPTER_CONSUMER_COMPATIBLE",
+  "recipe_binding": "B3_ACTION_RECIPE_CONSUMER_COMPATIBLE",
+  "base_url": "http://127.0.0.1:DYNAMIC_OR_43127",
+  "steps": [
+    {"id": "list-page-1", "action": "goto", "path": "/list?page=1"},
+    {"id": "extract-page-1", "action": "extract", "selector": "article.item", "stable_id": "data-record-id"},
+    {"id": "inject-interruption", "action": "fail_once", "checkpoint": "after-page-1"},
+    {"id": "resume-page-2", "action": "resume", "path": "/list?page=2"},
+    {"id": "detail", "action": "goto", "path": "/detail/3"},
+    {"id": "api-retry", "action": "fetch_with_retry", "path": "/api/items?page=2&fail_once=1"},
+    {"id": "load-more", "action": "click_until_disabled", "selector": "#load-more"},
+    {"id": "infinite-scroll", "action": "scroll_until", "selector": "#status", "value": "done"},
+    {"id": "frame", "action": "frame_extract", "selector": "#result-frame"},
+    {"id": "popup", "action": "popup_extract", "selector": "#open-popup"},
+    {"id": "download", "action": "download", "path": "/download.csv"},
+    {"id": "schema-drift", "action": "compare_schema", "paths": ["/schema-drift?mode=v1", "/schema-drift?mode=v2"]}
+  ],
+  "expected": {
+    "record_count": 10,
+    "resume_after_failure": "PASS",
+    "load_more_count": 10,
+    "infinite_scroll_count": 10,
+    "download_row_count": 10,
+    "schema_drift_detected": true
+  }
+}
