@@ -1,0 +1,68 @@
+{
+  "schema_version": "A0_D_LOCAL_SERVER_CONTROL_SUPPORT_BUILD_TEST_REPORT_V1",
+  "task_id": "A0_D_LOCAL_SERVER_PC_AGENT_CONTROL_AND_STATUS_V1",
+  "batch_id": "V2-TO-ABCD-LOCAL-SERVER-OPERATION-AND-FUTURE-MIGRATION-BATCH-V1-20260806-001",
+  "task_comment": 5203030391,
+  "status": "PASS_SOURCE_CONTRACT_AND_FIXTURE_TARGET_PC_QUEUE_EXECUTION_NOT_OBSERVED",
+  "terminal": "A0_D_LOCAL_SERVER_CONTROL_SUPPORT_READY",
+  "source_publication": {
+    "contract_commit": "99f43fcfbf75159348a0d0ecb5fd56729a153e6f",
+    "catalog_commit": "f818543ecf776b60f7dc2b0b4af0ab00fe4acc4c",
+    "job_schema_commit": "ae8323d2c6bef54e592ceb08695f99b9d6eece15",
+    "receipt_schema_commit": "002d6ae0df57a0b94f263a721696dcfd1ef6ad4d",
+    "viewmodel_schema_commit": "f087e10f8ab1bbbfd64033c86833e45043a954b9",
+    "adapter_commit": "3f53fa1d4872eea1e08300b973260db369ca9c3f",
+    "cli_commit": "ac41be8c409180ba034492f4aeac57efbdeea7ef",
+    "fixture_commit": "382b2c017f23b22da469d4e27f0f0786a95572d2",
+    "test_log_commit": "7e4f9e17f7d636627fcf5ae92da9bd9a14d49370"
+  },
+  "provided_standard_jobs": [
+    "LOCAL_SERVER_ENVIRONMENT_DOCTOR",
+    "LOCAL_SERVER_INSTALL_OR_UPDATE",
+    "LOCAL_SERVER_START",
+    "LOCAL_SERVER_STOP",
+    "LOCAL_SERVER_RESTART",
+    "LOCAL_SERVER_HEALTH",
+    "LOCAL_SERVER_BACKUP",
+    "LOCAL_SERVER_RESTORE_SMOKE",
+    "LOCAL_SERVER_LOG_BUNDLE"
+  ],
+  "contracts": {
+    "exactly_once_job_identity": "PASS_DETERMINISTIC_SHA256_IDENTITY",
+    "restart_recovery": "PASS_MISSING_QUEUE_FILE_REQUEUED_WITH_SAME_JOB_ID",
+    "missed_event_recovery": "PASS_RECEIPT_DIRECTORY_RECONCILIATION",
+    "duplicate_event_suppression": "PASS_RECEIPT_SHA256_SEEN_LEDGER",
+    "rollback_on_failed_reversible_action": "PASS_ACTION_SPECIFIC_D_GROUP_ROLLBACK_PLAN",
+    "service_status_and_last_receipt_pointer": "PASS_VIEWMODEL_AND_POINTER_ATOMIC_WRITE"
+  },
+  "validation": {
+    "node_syntax_adapter": "PASS",
+    "node_syntax_cli": "PASS",
+    "node_syntax_fixture": "PASS",
+    "json_contracts": "PASS_5_OF_5",
+    "fixture_assertions": 66,
+    "standard_job_count": 9,
+    "duplicate_execution_count": 0,
+    "new_pc_agent_runtime": false,
+    "new_transport": false,
+    "d_install_ownership": false,
+    "public_binding": false
+  },
+  "runtime_boundary": {
+    "target_pc": "YOLLA-USER-PC01",
+    "target_root": "E:\\YOLLA",
+    "existing_pc_agent_service": "YOLLA-PROJECT-AGENT",
+    "existing_action_queue": "E:\\YOLLA\\agent\\state\\file-management\\action_queue",
+    "test_queue_root": "TEMPORARY_FIXTURE_ONLY",
+    "actual_target_pc_queue_write": false,
+    "actual_local_server_install": false,
+    "actual_local_server_start_stop": false,
+    "actual_backup_restore": false,
+    "actual_receipt_observed": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "next_gate": "D2_ENVIRONMENT_DOCTOR_TERMINAL_THEN_D_GROUP_MAY_INVOKE_STANDARD_JOBS_THROUGH_EXISTING_PC_AGENT_QUEUE",
+  "created_at_kst": "2026-08-06T19:48:00+09:00"
+}
