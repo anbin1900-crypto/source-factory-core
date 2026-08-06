@@ -1,0 +1,41 @@
+{
+  "schema_version": "LATEST_A3_SITE_ANALYZER_WAVE2_POINTER_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "worker": "A-3",
+  "role": "LIVE_ELECTRON_CDP_FIXTURE_SITE_EXECUTION_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "updated_at_kst": "2026-08-07T04:01:00+09:00",
+  "status": "PASS",
+  "terminal": "A3_SITE_ANALYZER_WAVE2_LIVE_CHROMIUM_CDP_EVENT_PASS",
+  "final_report": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_SITE_ANALYZER_WAVE2_FINAL_REPORT_V1.json",
+    "commit": "6827b89dfea4f46537c2042bc59b31d17b5eba11",
+    "blob": "23cd00db9a380d2a0b8d5236a783d8d378f493b7"
+  },
+  "live_execution_receipt": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_SITE_ANALYZER_WAVE2_LIVE_CDP_EXECUTION_RECEIPT_V1.json",
+    "commit": "6d7824343ac1e2652a6c08fe6f4a3e5f08abe64c",
+    "blob": "467d8df95d54a54e67a52f5bb2c8e627984f0952"
+  },
+  "live_stream_handoff": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_SITE_ANALYZER_WAVE2_LIVE_STREAM_HANDOFF_V1.json",
+    "commit": "894e99a6dd42c2e1b478efa478a2ba23839d157c",
+    "blob": "b7d2789f72263d9678a8f0335b66be284760627e"
+  },
+  "live_counts": {
+    "network_request": 32,
+    "response_body": 31,
+    "dom_snapshot": 2,
+    "navigation_main": 2,
+    "frame_child": 3,
+    "streaming_event": 197
+  },
+  "stream_sha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165",
+  "fixture_only_terminal": false,
+  "c_mode_runtime_work": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
