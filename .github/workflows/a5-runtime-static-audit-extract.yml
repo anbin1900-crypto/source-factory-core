@@ -52,7 +52,8 @@ jobs:
           git show "${AUTHORITY_SHA}:yolla-panel-v1/a1-connection-frontier/yolla_worker_preload.js" \
             > "$ROOT/yolla_worker_preload.js"
 
-          sha256sum "$ROOT/yolla_panel_main_bridge.cjs" "$ROOT/source.zip" > "$ROOT/input-sha256.txt"
+          sha256sum "$ROOT/yolla_panel_main_bridge.cjs" "$ROOT/source.zip" "$ROOT/yolla_worker_shell.js" "$ROOT/yolla_worker_preload.js" \
+            > "$ROOT/input-sha256.txt"
 
       - name: Run A5 lifecycle polling render scanner
         shell: bash
@@ -76,5 +77,8 @@ jobs:
             /tmp/a5-runtime-static-audit/A5_RUNTIME_STATIC_AUDIT_RAW_SCAN_V1.json
             /tmp/a5-runtime-static-audit/input-sha256.txt
             /tmp/a5-runtime-static-audit/source-zip-file-list.txt
+            /tmp/a5-runtime-static-audit/yolla_panel_main_bridge.cjs
+            /tmp/a5-runtime-static-audit/yolla_worker_shell.js
+            /tmp/a5-runtime-static-audit/yolla_worker_preload.js
           if-no-files-found: error
           retention-days: 7
