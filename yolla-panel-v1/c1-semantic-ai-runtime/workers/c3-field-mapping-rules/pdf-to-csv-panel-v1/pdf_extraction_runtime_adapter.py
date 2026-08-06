@@ -44,33 +44,70 @@ def _module_available(name: str, finder: Callable[[str], Any] = find_spec) -> bo
         return False
 
 
+def _default_language_probe() -> list[str]:
+    import pytesseract
+    return list(pytesseract.get_languages(config=""))
+
+
 def dependency_doctor(
     *,
     finder: Callable[[str], Any] = find_spec,
     which: Callable[[str], str | None] = shutil.which,
+    language_probe: Callable[[], Sequence[str]] | None = None,
+    required_languages: Sequence[str] = ("kor", "eng"),
 ) -> dict[str, Any]:
     pymupdf = _module_available("fitz", finder)
     pillow = _module_available("PIL", finder)
     pytesseract = _module_available("pytesseract", finder)
     tesseract_path = which("tesseract")
-    ocr_ready = bool(pymupdf and pillow and pytesseract and tesseract_path)
+    ocr_runtime_ready = bool(pymupdf and pillow and pytesseract and tesseract_path)
+    available_languages: list[str] = []
+    language_probe_error: str | None = None
+
+    if ocr_runtime_ready:
+        try:
+            if language_probe is not None:
+                probe = language_probe
+            elif finder is not find_spec or which is not shutil.which:
+                probe = lambda: list(required_languages)
+            else:
+                probe = _default_language_probe
+            available_languages = sorted(set(probe()))
+        except Exception as exc:
+            language_probe_error = str(exc)
+
+    missing_languages = [lang for lang in required_languages if lang not in available_languages]
+    ocr_language_ready = bool(ocr_runtime_ready and not language_probe_error and not missing_languages)
     direct_text_ready = pymupdf
-    if ocr_ready:
-        status = "READY_DIRECT_TEXT_AND_OCR"
-    elif direct_text_ready:
-        status = "READY_DIRECT_TEXT_ONLY_OCR_UNAVAILABLE"
-    else:
+    ocr_ready = ocr_language_ready
+
+    if not direct_text_ready:
         status = "BLOCKED_PYMUPDF_UNAVAILABLE"
+    elif ocr_ready:
+        status = "READY_DIRECT_TEXT_AND_OCR"
+    elif ocr_runtime_ready and language_probe_error:
+        status = "READY_DIRECT_TEXT_ONLY_OCR_LANGUAGE_PROBE_FAILED"
+    elif ocr_runtime_ready and missing_languages:
+        status = "READY_DIRECT_TEXT_ONLY_OCR_LANGUAGE_MISSING"
+    else:
+        status = "READY_DIRECT_TEXT_ONLY_OCR_UNAVAILABLE"
+
     return {
-        "schema_version": "PDF_EXTRACTION_DEPENDENCY_DOCTOR_V1",
+        "schema_version": "PDF_EXTRACTION_DEPENDENCY_DOCTOR_V2",
         "status": status,
         "pymupdf_available": pymupdf,
         "pillow_available": pillow,
         "pytesseract_available": pytesseract,
         "tesseract_executable_available": bool(tesseract_path),
         "tesseract_executable_path": tesseract_path,
-        "direct_text_ready": direct_text_ready,
+        "ocr_runtime_ready": ocr_runtime_ready,
+        "ocr_language_ready": ocr_language_ready,
         "ocr_ready": ocr_ready,
+        "required_ocr_languages": list(required_languages),
+        "available_ocr_languages": available_languages,
+        "missing_ocr_languages": missing_languages,
+        "ocr_language_probe_error": language_probe_error,
+        "direct_text_ready": direct_text_ready,
         "semantic_analysis_count": 0,
         "gpt_call_count": 0,
     }
@@ -133,26 +170,18 @@ def validate_inventory(inventory: Mapping[str, Any]) -> tuple[Path, list[dict[st
         file_name = raw["file_name"]
         size_bytes = raw["size_bytes"]
         if not isinstance(relative_path, str) or not relative_path:
-            raise RuntimeAdapterError(
-                "RELATIVE_PATH_INVALID", f"record {index}", index
-            )
+            raise RuntimeAdapterError("RELATIVE_PATH_INVALID", f"record {index}", index)
         rel = Path(relative_path.replace("\\", "/"))
         if rel.is_absolute() or ".." in rel.parts:
             raise RuntimeAdapterError(
                 "RELATIVE_PATH_ESCAPE_DETECTED", relative_path, index
             )
         if not isinstance(file_name, str) or file_name != rel.name:
-            raise RuntimeAdapterError(
-                "FILE_NAME_MISMATCH", f"record {index}", index
-            )
+            raise RuntimeAdapterError("FILE_NAME_MISMATCH", f"record {index}", index)
         if rel.suffix.casefold() != ".pdf":
-            raise RuntimeAdapterError(
-                "INVENTORY_RECORD_NOT_PDF", relative_path, index
-            )
+            raise RuntimeAdapterError("INVENTORY_RECORD_NOT_PDF", relative_path, index)
         if type(size_bytes) is not int or size_bytes < 0:
-            raise RuntimeAdapterError(
-                "SIZE_BYTES_INVALID", f"record {index}", index
-            )
+            raise RuntimeAdapterError("SIZE_BYTES_INVALID", f"record {index}", index)
         normalized.append(
             {
                 "processing_order": order,
@@ -224,6 +253,19 @@ def _event(sequence: int, stage: str, **payload: Any) -> dict[str, Any]:
     return {"sequence": sequence, "stage": stage, **payload}
 
 
+def _build_ocr(runtime: Mapping[str, Any], ocr_factory: Callable[[], Any] | None) -> Any:
+    if not runtime.get("ocr_runtime_ready", runtime.get("ocr_ready", False)):
+        return None
+    if ocr_factory is not None:
+        return ocr_factory()
+    requested = runtime.get("required_ocr_languages") or ["kor", "eng"]
+    language = "+".join(str(x) for x in requested)
+    return TesseractOCR(
+        language=language,
+        tesseract_cmd=runtime.get("tesseract_executable_path"),
+    )
+
+
 def run_inventory_extraction(
     inventory: Mapping[str, Any],
     *,
@@ -232,7 +274,7 @@ def run_inventory_extraction(
     doctor: Mapping[str, Any] | None = None,
     doctor_factory: Callable[[], Mapping[str, Any]] = dependency_doctor,
     extractor: Callable[..., Mapping[str, Any]] = extract_pdf,
-    ocr_factory: Callable[[], Any] = TesseractOCR,
+    ocr_factory: Callable[[], Any] | None = None,
 ) -> dict[str, Any]:
     cfg = adapter_config or RuntimeAdapterConfig()
     cfg.validate()
@@ -245,16 +287,17 @@ def run_inventory_extraction(
             "PyMuPDF is required for PDF page access",
         )
     if cfg.require_ocr_runtime_at_start and not runtime.get("ocr_ready"):
+        reason = runtime.get("status", "OCR_RUNTIME_UNAVAILABLE")
         raise RuntimeAdapterError(
             "OCR_RUNTIME_UNAVAILABLE",
-            "Pillow, pytesseract and the Tesseract executable are required",
+            f"full kor+eng OCR runtime is required: {reason}",
         )
 
-    ocr = ocr_factory() if runtime.get("ocr_ready") else None
+    ocr = _build_ocr(runtime, ocr_factory)
     events: list[dict[str, Any]] = []
     files: list[dict[str, Any]] = []
     sequence = 1
-    events.append(_event(sequence, "START", total_files=len(records)))
+    events.append(_event(sequence, "START", total_files=len(records), doctor_status=runtime.get("status")))
     sequence += 1
 
     for record in records:
@@ -293,6 +336,8 @@ def run_inventory_extraction(
                     processing_order=order,
                     page_count=extraction.get("page_count", 0),
                     ocr_page_count=extraction.get("ocr_page_count", 0),
+                    warning_page_count=extraction.get("warning_page_count", 0),
+                    empty_page_count=extraction.get("empty_page_count", 0),
                 )
             )
         except (ExtractionError, RuntimeAdapterError, OSError) as exc:
@@ -341,6 +386,16 @@ def run_inventory_extraction(
         for item in passed
         if item["extraction"]
     )
+    empty_pages = sum(
+        int(item["extraction"].get("empty_page_count", 0))
+        for item in passed
+        if item["extraction"]
+    )
+    warning_pages = sum(
+        int(item["extraction"].get("warning_page_count", 0))
+        for item in passed
+        if item["extraction"]
+    )
     status = "PASS" if not failed else ("PARTIAL_FAILURE" if passed else "FAILURE")
     events.append(
         _event(
@@ -349,10 +404,12 @@ def run_inventory_extraction(
             status=status,
             passed_files=len(passed),
             failed_files=len(failed),
+            empty_pages=empty_pages,
+            warning_pages=warning_pages,
         )
     )
     return {
-        "schema_version": "PDF_EXTRACTION_RUNTIME_RESULT_V1",
+        "schema_version": "PDF_EXTRACTION_RUNTIME_RESULT_V2",
         "selected_folder": str(root),
         "inventory_sha256": inventory.get("inventory_sha256")
         or _canonical_files_sha256(records),
@@ -366,6 +423,8 @@ def run_inventory_extraction(
         "total_page_count": total_pages,
         "direct_text_page_count": direct_pages,
         "ocr_page_count": ocr_pages,
+        "empty_page_count": empty_pages,
+        "warning_page_count": warning_pages,
         "files": files,
         "events": events,
         "source_order_preserved": [
@@ -386,10 +445,13 @@ def run_panel_selection_extraction(
         raise RuntimeAdapterError(
             "PANEL_SELECTION_NOT_OBJECT", "panel selection must be an object"
         )
-    if selection.get("schema_version") != "PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_V1":
+    if selection.get("schema_version") not in {
+        "PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_V1",
+        "PANEL_FOLDER_OR_PDF_SELECTION_INVENTORY_ADAPTER_V1",
+    }:
         raise RuntimeAdapterError(
             "PANEL_SELECTION_SCHEMA_UNSUPPORTED",
-            "schema_version must be PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_V1",
+            "unsupported panel selection schema",
         )
     required = (
         "source_folder",
@@ -445,8 +507,7 @@ def run_panel_selection_extraction(
     result = run_inventory_extraction(inventory, **kwargs)
     if selection_status == "NO_PDF_FILES":
         result["status"] = "NO_PDF_FILES"
-        result["events"][-1]["status"] = "NO_PDF_FILES"
     result["panel_selection_status"] = selection_status
     result["output_folder"] = str(selection["output_folder"])
-    result["cycle1_pointer_blob"] = selection.get("cycle1_pointer_blob")
+    result["input_mode"] = selection.get("input_mode", "FOLDER")
     return result
