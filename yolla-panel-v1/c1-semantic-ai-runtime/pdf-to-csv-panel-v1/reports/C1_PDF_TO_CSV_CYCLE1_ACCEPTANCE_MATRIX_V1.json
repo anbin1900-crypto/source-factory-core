@@ -1,0 +1,89 @@
+{
+  "schema_version": "C1_PDF_TO_CSV_CYCLE1_ACCEPTANCE_MATRIX_V1",
+  "matrix_id": "C1-PDF-TO-CSV-CYCLE1-ACCEPTANCE-20260807-001",
+  "evaluated_at_kst": "2026-08-07T03:31:00+09:00",
+  "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "observed_head": "723e2cb4bd665c7f334e2b3ee2dfecdb5466e451",
+  "cycle1_batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
+  "component_results": {
+    "C2": {
+      "task_id": "C2_PDF_FOLDER_INVENTORY_V1",
+      "pointer_blob": "ba27ebb810d29b989a6677930b13b04cd7e23daf",
+      "terminal_result": "C2_PDF_FOLDER_INVENTORY_READY",
+      "tests": "PASS_23_OF_23",
+      "remote_readback": "PASS_4_OF_4",
+      "accepted": true
+    },
+    "C3": {
+      "task_id": "C3_PDF_TEXT_EXTRACTION_OCR_V1",
+      "pointer_blob": "1296e68317ca027e20aa812e6a2bb0f6f1a70004",
+      "terminal_result": "C3_PDF_TEXT_EXTRACTION_OCR_READY",
+      "tests": "PASS_22_OF_22",
+      "remote_readback": "PASS_5_OF_5",
+      "actual_pdf_batch_execution": false,
+      "actual_ocr_binary_execution": false,
+      "accepted": true
+    },
+    "C4": {
+      "task_id": "C4_TEXT_CHUNK_CSV_WRITER_V1",
+      "pointer_blob": "7845c8676a133f5e4b71d118d3d9eed1044e7b2b",
+      "terminal_result": "C4_TEXT_CHUNK_CSV_WRITER_READY",
+      "tests": "PASS_15_OF_15",
+      "remote_readback": "PASS_4_OF_4",
+      "accepted": true
+    },
+    "C5": {
+      "task_id": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_V1",
+      "pointer_blob": "22d7eacd826e732490f85151fd6f09de97f1fc20",
+      "terminal_result": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_READY",
+      "tests": "PASS_56_OF_56_AFTER_2_CORRECTIONS",
+      "scale_tests": [
+        "PASS_150_UNIQUE_DETERMINISTIC_OUTPUTS",
+        "PASS_1000_UNIQUE_LEXICOGRAPHIC_OUTPUTS"
+      ],
+      "accepted": true
+    },
+    "C6": {
+      "task_id": "C6_PDF_TO_CSV_VALIDATION_V1",
+      "pointer_blob": "cf53524eb4149004638a913deddb507e08157a80",
+      "terminal_result": "C6_PDF_TO_CSV_VALIDATOR_READY",
+      "tests": "PASS_24_OF_24",
+      "negative_fail_closed_cases": "PASS_18_OF_18",
+      "remote_readback": "PASS_7_OF_7_PRE_POINTER_V2",
+      "actual_integrated_csv_validation_executed": false,
+      "accepted": true
+    }
+  },
+  "acceptance_summary": {
+    "worker_terminal_count": 5,
+    "worker_terminal_required": 5,
+    "component_acceptance": "PASS_5_OF_5",
+    "python_compile_total": "PASS_10_OF_10",
+    "unit_test_total": 140,
+    "unit_test_failed_total": 0,
+    "semantic_analysis_count": 0,
+    "semantic_matching_count": 0,
+    "gpt_call_count": 0,
+    "database_write_count": 0,
+    "original_pdf_mutation_count": 0
+  },
+  "known_boundary": {
+    "standalone_panel_built": false,
+    "folder_selection_ui_built": false,
+    "components_integrated": false,
+    "actual_pdf_to_csv_pipeline_run": false,
+    "actual_ocr_binary_run": false,
+    "actual_150_pdf_batch_run": false,
+    "c6_pointer_contains_pre_c4_snapshot": true,
+    "current_c4_pointer_supersedes_pre_c4_snapshot": true
+  },
+  "cycle1_decision": "CYCLE1_COMPONENTS_ACCEPTED_READY_FOR_CYCLE2_INTEGRATION",
+  "next_gate": "CYCLE2_STANDALONE_PANEL_COMPONENT_INTEGRATION_AND_FIXTURE_E2E",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
