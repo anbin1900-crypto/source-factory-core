@@ -1,0 +1,46 @@
+{
+  "schema_version": "LATEST_A4_WAVE2_LIVE_EVENT_BINDING_POINTER_V1",
+  "worker": "A-4",
+  "worker_pr": 23,
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "updated_at_kst": "2026-08-07T04:02:00+09:00",
+  "terminal": "A4_SITE_ANALYZER_WAVE2_LIVE_EVENT_BINDING_EXACT_BLOCKER",
+  "decision": "EXACT_BLOCKER",
+  "status_detail": "BINDING_IMPLEMENTATION_PASS_WAITING_A3_ACTUAL_LIVE_STREAM",
+  "final_report": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave2/A4_WAVE2_LIVE_EVENT_BINDING_FINAL_REPORT_V1.json",
+    "commit": "0a9b95ca9f50df1456d1a989fd32a8c73be44bd8",
+    "blob": "6887ff2b0710c65f0c8d42ff13b45ab46ba69fd7"
+  },
+  "validation": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave2/A4_WAVE2_LIVE_EVENT_BINDING_VALIDATION_V1.json",
+    "commit": "5777b846af2e0b3916ec87d973df467ea336c5a4",
+    "blob": "044ba5c3608504ce884ed350e840c74306dea06f",
+    "tests": "PASS_11_OF_11"
+  },
+  "blocker": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave2/A4_WAVE2_A3_LIVE_STREAM_BLOCKER_V1.json",
+    "commit": "d8531b2268ad4dad6615bbfd1acb5cdc0b9407a7",
+    "blob": "99b91cf44bfb5e1cb95ce730e655d3151f7831cc",
+    "code": "A3_WAVE2_LIVE_EVENT_STREAM_NOT_PUBLISHED"
+  },
+  "source_blobs": {
+    "binding": "00352b6b4a2d8fa76a59b07e9f44f1f4da754794",
+    "runner": "f9b0768125024cb60ebbdd19543df3c88b256dbb",
+    "tests": "47888e33e7d0b467c619a18a1a725a855a60f2ff",
+    "schema": "206cdc73e34998c95b6e52d2f1b5f918a267d8d8"
+  },
+  "a3_dependency": {
+    "worker_pr": 22,
+    "cutoff_head": "e86dfcc2fc32ad366cd7fd8ba07392850419b853",
+    "head_advanced": false,
+    "actual_live_stream_consumed": false
+  },
+  "required_next_event": "A3_WAVE2_ADVANCED_HEAD_WITH_ACTUAL_LIVE_CDP_STREAM_POINTER",
+  "fixture_only_terminal": false,
+  "false_live_pass_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
