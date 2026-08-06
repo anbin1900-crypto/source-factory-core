@@ -1,0 +1,59 @@
+{
+  "schema_version": "SITE_ANALYZER_SINGLE_GOAL_AB_PARALLEL_ASSIGNMENT_V2",
+  "directive_id": "A0-SITE-ANALYZER-SINGLE-GOAL-AB-PARALLEL-V2-20260807-001",
+  "issued_at_kst": "2026-08-07T01:07:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "authority_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "supersedes": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/cycles/wave2/C_MODE_WAVE2_AB_PARALLEL_BUILD_ASSIGNMENT_V1.json",
+    "commit": "c4aff02c4efaac496eb1353c524944601f0d3439",
+    "reason": "USER_CORRECTION_ZERO_C_MODE_RUNTIME_STAFF_AND_SINGLE_GOAL_SITE_ANALYZER"
+  },
+  "primary_goal": "SITE_ANALYZER_PRODUCT_COMPLETION",
+  "c_mode_runtime_worker_count": 0,
+  "manual_validation_worker_count": 0,
+  "manual_audit_worker_count": 0,
+  "active_workers": ["A-2","A-3","A-4","A-5","A-6","A-7","B-1","B-2","B-3","B-4","B-5","B-6"],
+  "dispatch_mode": "CYCLE_BATCH_PARALLEL",
+  "completion_target": "Register one site, observe the real browser, discover DOM/network/navigation, record user actions, generate executable extraction recipe and adapter, extract real sample data, accept user files and folders, mechanically transform common file formats, preserve source positions, and create a reusable handoff package.",
+  "common_rules": {
+    "one_owner_end_to_end": true,
+    "build_first_then_integrated_repair": true,
+    "worker_repairs_own_failures": true,
+    "finding_only_terminal_forbidden": true,
+    "separate_approval_gate": false,
+    "same_failure_signature_repeat_limit": 2,
+    "alternative_method_after_repeat": true,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "assignments": {
+    "A-2": "Integrate analyzer core into embedded panel and standalone window; connect all A/B outputs; directly fix integration failures.",
+    "A-3": "Implement Electron CDP live capture for network, response body, DOM snapshot, navigation, console and session artifacts.",
+    "A-4": "Implement DOM/page/navigation/pagination analysis, repeated-region detection, field candidates and locator generation.",
+    "A-5": "Implement endpoint grouping, request/response schema inference, identifier relationships and adapter-generation inputs.",
+    "A-6": "Implement executable Playwright/Crawlee adapter compiler, replay, trace and real sample execution.",
+    "A-7": "Act as end-to-end repair owner for broken analyzer integration and runtime; directly modify and repair all repairable defects; never return repair to another worker.",
+    "B-1": "Own whole analyzer-production contract, parallel command, integration, result assembly and next-cycle design; directly fix conflicts.",
+    "B-2": "Build generic browser site analyzer workspace and visual analysis UI using CDP, Playwright and data preview.",
+    "B-3": "Build user-action recording, deterministic replay and extraction-recipe generation.",
+    "B-4": "Build real-site extraction, download capture and user file/folder intake with resume.",
+    "B-5": "Build Python mechanical conversion and decomposition for Excel, PDF, CSV, JSON and HTML while preserving lineage.",
+    "B-6": "Build and repair transformed-result package, source-location lineage and reusable handoff manifest; not a quality inspector."
+  },
+  "required_product_result": {
+    "site_count": 1,
+    "adapter_count": 1,
+    "real_sample_record_count_min": 1,
+    "real_sample_record_count_max": 20,
+    "embedded_panel": "PASS_REQUIRED",
+    "standalone_window": "PASS_REQUIRED",
+    "action_replay": "PASS_REQUIRED",
+    "file_folder_intake": "PASS_REQUIRED",
+    "mechanical_transform": "PASS_REQUIRED",
+    "source_position_lineage": "PASS_REQUIRED"
+  },
+  "status": "AUTHORITATIVE_CORRECTION_PUBLISHED_PENDING_COMMENT_DISPATCH"
+}
