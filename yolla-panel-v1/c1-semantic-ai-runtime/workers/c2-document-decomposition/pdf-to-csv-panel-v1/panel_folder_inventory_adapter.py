@@ -72,8 +72,6 @@ def _validate_cycle1_inventory(inventory,source_folder,*,expected_count=None,exp
     if expected_count is not None and len(files)!=expected_count: raise FolderSelectionAdapterError('CYCLE1_INVENTORY_EXPECTED_COUNT_MISMATCH')
     digest=inventory.get('inventory_sha256')
     if not isinstance(digest,str) or len(digest)!=64 or any(c not in '0123456789abcdef' for c in digest): raise FolderSelectionAdapterError('CYCLE1_INVENTORY_HASH_INVALID')
-    calculated=_canonical_files_hash(files)
-    if digest!=calculated: raise FolderSelectionAdapterError('CYCLE1_INVENTORY_HASH_MISMATCH')
     for i,item in enumerate(files,1):
         if not isinstance(item,dict): raise FolderSelectionAdapterError('CYCLE1_INVENTORY_ENTRY_NOT_OBJECT')
         if item.get('processing_order')!=i: raise FolderSelectionAdapterError('CYCLE1_PROCESSING_ORDER_INVALID')
@@ -83,6 +81,7 @@ def _validate_cycle1_inventory(inventory,source_folder,*,expected_count=None,exp
         size=item.get('size_bytes')
         if not isinstance(size,int) or isinstance(size,bool) or size<0: raise FolderSelectionAdapterError('CYCLE1_SIZE_BYTES_INVALID')
     if expected_relative_path is not None and (len(files)!=1 or files[0]['relative_path']!=expected_relative_path): raise FolderSelectionAdapterError('SINGLE_PDF_RECORD_PATH_MISMATCH')
+    if digest!=_canonical_files_hash(files): raise FolderSelectionAdapterError('CYCLE1_INVENTORY_HASH_MISMATCH')
 
 def _validate_output_folder(output_folder,*,verify_output_writable):
     out=_validate_selected_directory(output_folder,role='OUTPUT')
