@@ -33,9 +33,12 @@ async function main() {
   const receipt = {
     schema_version: 'A7_SITE_ANALYZER_WAVE1_E2E_VALIDATION_RECEIPT_V1',
     generated_at: new Date().toISOString(),
-    status: run.status,
+    status: run.status === 'PASS' ? 'PASS_FIXTURE_PROTOCOL_E2E' : 'FAILED',
+    execution_mode: 'MOCK_CDP_PROTOCOL_E2E',
+    live_electron_executed: false,
     counts: {
-      live_network_event_count: events.filter(e => e.type === 'network.request').length,
+      protocol_network_event_count: events.filter(e => e.type === 'network.request').length,
+      live_network_event_count: 0,
       response_body_count: events.filter(e => e.type === 'network.response_body').length,
       dom_snapshot_count: events.filter(e => e.type === 'dom.snapshot').length,
       navigation_event_count: events.filter(e => e.type === 'page.frame_navigated').length,
@@ -67,6 +70,6 @@ async function main() {
   const output = process.argv[2];
   if (output) fs.writeFileSync(output, JSON.stringify(receipt, null, 2) + '\n');
   console.log(JSON.stringify(receipt, null, 2));
-  if (receipt.status !== 'PASS') process.exitCode = 1;
+  if (!receipt.status.startsWith('PASS')) process.exitCode = 1;
 }
 main().catch(error => { console.error(error.stack || error.message); process.exitCode = 2; });
