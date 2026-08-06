@@ -1,0 +1,47 @@
+{
+  "schema_version": "A3_SITE_ANALYZER_WAVE1_CDP_LIVE_BLOCKER_RECEIPT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "worker": "A-3",
+  "role": "LIVE_CDP_CAPTURE_OWNER",
+  "observed_at_kst": "2026-08-07T02:03:00+09:00",
+  "status": "EXACT_EXTERNAL_BLOCKER",
+  "blocker_code": "ELECTRON_ANALYZER_BROWSER_UNAVAILABLE_FROM_CURRENT_EXECUTION_ENVIRONMENT",
+  "owner_boundary": "TARGET_PC_ELECTRON_ANALYZER_RUNTIME",
+  "evidence": {
+    "current_environment_has_running_yolla_electron": false,
+    "current_environment_has_live_analyzer_webcontents": false,
+    "current_environment_can_attach_webcontents_debugger": false,
+    "live_network_event_count": 0,
+    "live_response_body_count": 0,
+    "live_dom_snapshot_count": 0,
+    "live_navigation_event_count": 0,
+    "false_live_pass_count": 0
+  },
+  "implemented_retry_package": {
+    "engine": "live_cdp_capture_engine.cjs",
+    "test": "live_cdp_capture_engine.test.cjs",
+    "event_schema": "STREAMING_ANALYZER_EVENT_V1.schema.json",
+    "consumer_contract": "A3_SITE_ANALYZER_WAVE1_CDP_CONSUMER_CONTRACT_V1.json",
+    "runtime_package": "A3_SITE_ANALYZER_WAVE1_CDP_RUNTIME_PACKAGE_V1.json"
+  },
+  "deterministic_protocol_execution": {
+    "status": "PASS",
+    "event_count": 12,
+    "network_request_count": 1,
+    "network_response_count": 1,
+    "response_body_count": 1,
+    "dom_snapshot_count": 2,
+    "navigation_event_count": 2,
+    "console_event_count": 1,
+    "action_correlation_count": 8,
+    "raw_secret_finding_count": 0
+  },
+  "required_external_action": "A-2 or B-1 must import the committed engine into the running AnalyzerCore, pass the real analyzer WebContents to attachLiveCdpCapture, perform one real navigation or user action, and return emitted STREAMING_ANALYZER_EVENT_V1 evidence.",
+  "retry_ready": true,
+  "guardrails": {
+    "c_mode_runtime_work": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
