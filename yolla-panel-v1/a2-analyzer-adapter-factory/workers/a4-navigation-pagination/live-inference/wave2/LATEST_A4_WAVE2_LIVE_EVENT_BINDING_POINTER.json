@@ -1,44 +1,55 @@
 {
-  "schema_version": "LATEST_A4_WAVE2_LIVE_EVENT_BINDING_POINTER_V1",
+  "schema_version": "LATEST_A4_WAVE2_LIVE_EVENT_BINDING_POINTER_V2",
   "worker": "A-4",
   "worker_pr": 23,
   "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
-  "updated_at_kst": "2026-08-07T04:02:00+09:00",
-  "terminal": "A4_SITE_ANALYZER_WAVE2_LIVE_EVENT_BINDING_EXACT_BLOCKER",
-  "decision": "EXACT_BLOCKER",
-  "status_detail": "BINDING_IMPLEMENTATION_PASS_WAITING_A3_ACTUAL_LIVE_STREAM",
+  "updated_at_kst": "2026-08-07T04:54:00+09:00",
+  "terminal": "A4_SITE_ANALYZER_WAVE2_LIVE_EVENT_STRUCTURE_INFERENCE_PASS",
+  "decision": "PASS",
+  "status_detail": "A3_LIVE_STREAM_BOUND_ACTUAL_CHROMIUM_STRUCTURE_INFERENCE_PASS",
   "final_report": {
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave2/A4_WAVE2_LIVE_EVENT_BINDING_FINAL_REPORT_V1.json",
-    "commit": "0a9b95ca9f50df1456d1a989fd32a8c73be44bd8",
-    "blob": "6887ff2b0710c65f0c8d42ff13b45ab46ba69fd7"
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave2/A4_WAVE2_LIVE_EVENT_BINDING_FINAL_REPORT_V2.json",
+    "commit": "1169c2d8214784fdc0097d7a19e7281e1a2d476c",
+    "blob": "a5e0c58d8d02558269e0cb351cdbe01be64864c5"
   },
-  "validation": {
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave2/A4_WAVE2_LIVE_EVENT_BINDING_VALIDATION_V1.json",
-    "commit": "5777b846af2e0b3916ec87d973df467ea336c5a4",
-    "blob": "044ba5c3608504ce884ed350e840c74306dea06f",
-    "tests": "PASS_11_OF_11"
+  "actual_live_handoff": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave2/A4_WAVE2_ACTUAL_LIVE_STRUCTURE_HANDOFF_V2.json",
+    "commit": "b67a04c5661007b8b2a68bf7f0c83fdfde23c463",
+    "blob": "fae1b21205259afd7d44aad8db6bb52f6d570b75",
+    "result_sha256": "5e1c6e856bddddf4f3678cb9d0cc60191d8913e5854158a54b4762663fc9f4c1"
   },
-  "blocker": {
-    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave2/A4_WAVE2_A3_LIVE_STREAM_BLOCKER_V1.json",
-    "commit": "d8531b2268ad4dad6615bbfd1acb5cdc0b9407a7",
-    "blob": "99b91cf44bfb5e1cb95ce730e655d3151f7831cc",
-    "code": "A3_WAVE2_LIVE_EVENT_STREAM_NOT_PUBLISHED"
+  "actual_live_runtime_receipt": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave2/A4_WAVE2_ACTUAL_LIVE_RUNTIME_RECEIPT_V2.json",
+    "commit": "708a615d6c262b0ea62a703917d04236053ca1a8",
+    "blob": "7ade943b64f34071f908f22cec2bd07c798fd9c1"
   },
-  "source_blobs": {
-    "binding": "00352b6b4a2d8fa76a59b07e9f44f1f4da754794",
-    "runner": "f9b0768125024cb60ebbdd19543df3c88b256dbb",
-    "tests": "47888e33e7d0b467c619a18a1a725a855a60f2ff",
-    "schema": "206cdc73e34998c95b6e52d2f1b5f918a267d8d8"
+  "preserved_history": {
+    "prior_blocker_pointer_version": "LATEST_A4_WAVE2_LIVE_EVENT_BINDING_POINTER_V1",
+    "prior_blocker_receipt_blob": "99b91cf44bfb5e1cb95ce730e655d3151f7831cc",
+    "historical_blocker_deleted": false
   },
   "a3_dependency": {
     "worker_pr": 22,
-    "cutoff_head": "e86dfcc2fc32ad366cd7fd8ba07392850419b853",
-    "head_advanced": false,
-    "actual_live_stream_consumed": false
+    "head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+    "head_advanced": true,
+    "live_stream_handoff_blob": "b7d2789f72263d9678a8f0335b66be284760627e",
+    "stream_sha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165",
+    "actual_live_stream_consumed": true
   },
-  "required_next_event": "A3_WAVE2_ADVANCED_HEAD_WITH_ACTUAL_LIVE_CDP_STREAM_POINTER",
+  "results": {
+    "page_type": "LIST",
+    "repeated_card_count": 5,
+    "field_candidate_count": 5,
+    "locator_candidate_count": 10,
+    "list_detail_relation": "LIST_TO_DETAIL",
+    "pagination": "NEXT",
+    "highlight_count": 6,
+    "binding_tests": "PASS_11_OF_11",
+    "actual_runtime_validation": "PASS_8_OF_8",
+    "policy_restored": true,
+    "false_live_pass_count": 0
+  },
   "fixture_only_terminal": false,
-  "false_live_pass_count": 0,
   "production": false,
   "ready": false,
   "merge": false,
