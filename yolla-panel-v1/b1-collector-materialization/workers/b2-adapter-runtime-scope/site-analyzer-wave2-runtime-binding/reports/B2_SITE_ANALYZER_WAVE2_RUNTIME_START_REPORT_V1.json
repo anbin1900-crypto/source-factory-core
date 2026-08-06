@@ -1,0 +1,20 @@
+{
+  "schema_version": "B2_SITE_ANALYZER_WAVE2_RUNTIME_START_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment": 5208244151,
+  "worker": "B-2",
+  "role": "LIVE_VISUAL_ANALYZER_BINDING_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 38,
+  "branch": "worker/b2-adapter-runtime-scope-v1",
+  "observed_head": "99bb8ec27ee95088c7228c5fc6cb6399da7f0319",
+  "started_at_kst": "2026-08-07T03:50:00+09:00",
+  "implementation_root": "yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/site-analyzer-wave2-runtime-binding/",
+  "required": ["HEAD_ADVANCE","LIVE_BRIDGE","ELEMENT_PICKER","HIGHLIGHT","WORKFLOW_EDITOR","LIVE_PREVIEW"],
+  "transport_targets": ["ELECTRON_PRELOAD","MESSAGE_PORT","BROADCAST_CHANNEL","CUSTOM_EVENT"],
+  "static_sample_terminal": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "STARTED"
+}
