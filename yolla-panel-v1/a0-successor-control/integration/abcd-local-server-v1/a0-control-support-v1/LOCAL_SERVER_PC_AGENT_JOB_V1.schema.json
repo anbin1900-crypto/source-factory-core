@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "LOCAL_SERVER_PC_AGENT_JOB_V1.schema.json",
+  "title": "Local Server PC Agent Job V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version","support_contract","job_id","idempotency_key","action","target","transport","ownership","parameters","rollback_plan","receipt_contract","lifecycle","constraints"],
+  "properties": {
+    "schema_version": {"const":"LOCAL_SERVER_PC_AGENT_JOB_V1"},
+    "support_contract": {"const":"A0_D_LOCAL_SERVER_PC_AGENT_CONTROL_SUPPORT_V1"},
+    "job_id": {"type":"string","pattern":"^LSJ-[A-Z0-9_]+-[A-F0-9]{20}$"},
+    "idempotency_key": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "action": {"enum":["LOCAL_SERVER_ENVIRONMENT_DOCTOR","LOCAL_SERVER_INSTALL_OR_UPDATE","LOCAL_SERVER_START","LOCAL_SERVER_STOP","LOCAL_SERVER_RESTART","LOCAL_SERVER_HEALTH","LOCAL_SERVER_BACKUP","LOCAL_SERVER_RESTORE_SMOKE","LOCAL_SERVER_LOG_BUNDLE"]},
+    "target": {"type":"object","additionalProperties":false,"required":["pc","root","service_name","bind_scope"],"properties":{"pc":{"const":"YOLLA-USER-PC01"},"root":{"const":"E:\\YOLLA"},"service_name":{"type":"string","minLength":1},"bind_scope":{"const":"127.0.0.1_ONLY"}}},
+    "transport": {"type":"object","additionalProperties":false,"required":["type","queue_path","existing_pc_agent_service","new_runtime","new_transport"],"properties":{"type":{"const":"LOCAL_DURABLE_FILE_QUEUE_V1"},"queue_path":{"const":"E:\\YOLLA\\agent\\state\\file-management\\action_queue"},"existing_pc_agent_service":{"const":"YOLLA-PROJECT-AGENT"},"new_runtime":{"const":false},"new_transport":{"const":false}}},
+    "ownership": {"type":"object","additionalProperties":false,"required":["control_owner","install_and_operation_owner","a0_may_execute_install"],"properties":{"control_owner":{"const":"A0"},"install_and_operation_owner":{"const":"D_GROUP"},"a0_may_execute_install":{"const":false}}},
+    "parameters": {"type":"object"},
+    "rollback_plan": {"type":"object","required":["required_on_failure","strategy","executor_owner"],"properties":{"required_on_failure":{"type":"boolean"},"strategy":{"type":"string","minLength":1},"executor_owner":{"const":"D_GROUP"}}},
+    "receipt_contract": {"type":"object","required":["schema_version","required_job_id","required_idempotency_key","receipt_root"],"properties":{"schema_version":{"const":"LOCAL_SERVER_PC_AGENT_RECEIPT_V1"},"required_job_id":{"type":"string"},"required_idempotency_key":{"type":"string"},"receipt_root":{"const":"E:\\YOLLA\\receipts\\d-group-local-server"}}},
+    "lifecycle": {"type":"object","required":["state","attempt","created_at","prepared_at"],"properties":{"state":{"enum":["PREPARED","QUEUED","ACCEPTED","RUNNING","TERMINAL","CANCELLED"]},"attempt":{"type":"integer","minimum":1},"created_at":{"type":"string","format":"date-time"},"prepared_at":{"type":"string","format":"date-time"},"queued_at":{"type":"string","format":"date-time"}}},
+    "constraints": {"type":"object","required":["public_binding","production","ready","merge","raw_secret_in_job"],"properties":{"public_binding":{"const":false},"production":{"const":false},"ready":{"const":false},"merge":{"const":false},"raw_secret_in_job":{"const":false}}}
+  }
+}
