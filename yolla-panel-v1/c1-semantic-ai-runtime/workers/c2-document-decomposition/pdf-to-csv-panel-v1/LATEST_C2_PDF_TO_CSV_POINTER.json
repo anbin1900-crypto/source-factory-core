@@ -1,0 +1,87 @@
+{
+  "schema_version": "LATEST_C2_PDF_TO_CSV_POINTER_V1",
+  "pointer_id": "LATEST-C2-PDF-FOLDER-INVENTORY-CYCLE1-20260807-001",
+  "published_at_kst": "2026-08-07T03:10:00+09:00",
+  "worker": "C-2_PDF_FOLDER_INVENTORY_WORKER",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
+  "task_id": "C2_PDF_FOLDER_INVENTORY_V1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "directive_comment": 5207631489,
+  "start_comment": 5208057673,
+  "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c2-document-decomposition/pdf-to-csv-panel-v1/**",
+  "control_head_before_pointer": "1df4f15ee084656e1929eaa16336adb2a8d87fae",
+  "authority": {
+    "common_directive_path": "yolla-panel-v1/c1-semantic-ai-runtime/pdf-to-csv-panel-v1/directives/C1_PDF_TO_CSV_PANEL_CYCLE1_BATCH_V1.json",
+    "common_directive_commit": "ef02e3b59a2d389b571d5b5feaa20a8d24a21e4d",
+    "common_directive_blob": "2ce798647c86363a8fd2382a08013304f73bc1ef",
+    "common_directive_remote_readback": "PASS"
+  },
+  "artifacts": {
+    "source": {
+      "path": "pdf_folder_inventory.py",
+      "commit": "d8aec8692e86c89047d4499787fde0adb5e8db50",
+      "blob": "770217f4009b3b56d9a326c1588924297d006b83"
+    },
+    "contract": {
+      "path": "PDF_FOLDER_INVENTORY_CONTRACT_V1.json",
+      "commit": "844c2d1976e8c4341367d98f266ebd054795239b",
+      "blob": "8efd027fd7b78b6f25eb62effe42fd6fd8d3fe71"
+    },
+    "unit_test": {
+      "path": "test_pdf_folder_inventory.py",
+      "commit": "68745e5e98c0d0b0d28f65d3d82b19a003766e98",
+      "blob": "cdb04bfef691998d44809be35ebeb6cd8542c95f"
+    },
+    "final_report": {
+      "path": "C2_PDF_FOLDER_INVENTORY_FINAL_REPORT_V1.json",
+      "commit": "1df4f15ee084656e1929eaa16336adb2a8d87fae",
+      "blob": "22849068a8c6bc0addd8cc15347b739829ff3015"
+    }
+  },
+  "implementation": {
+    "recursive_pdf_discovery": true,
+    "case_insensitive_pdf_extension": true,
+    "relative_path_preserved": true,
+    "file_name_preserved": true,
+    "size_bytes_recorded": true,
+    "processing_order": "CONTIGUOUS_ONE_BASED",
+    "deterministic_sort": "NFC_CASEFOLD_RELATIVE_PATH_THEN_ORIGINAL_UTF8_BYTES",
+    "inventory_hash": "SHA256_CANONICAL_FILES_ARRAY",
+    "symlinks_followed": false,
+    "filesystem_error_policy": "FAIL_CLOSED_NO_SILENT_SKIP",
+    "original_pdf_mutation_count": 0
+  },
+  "validation": {
+    "python_compile": "PASS_2_OF_2",
+    "unit_test_status": "PASS_23_OF_23",
+    "unit_test_count": 23,
+    "failed_test_count": 0,
+    "deterministic_replay": "PASS",
+    "remote_blob_readback": "PASS_4_OF_4"
+  },
+  "scope_counters": {
+    "semantic_analysis_count": 0,
+    "semantic_matching_count": 0,
+    "gpt_call_count": 0,
+    "pdf_text_extraction_count": 0,
+    "ocr_count": 0,
+    "text_chunking_count": 0,
+    "csv_generation_count": 0,
+    "database_write_count": 0,
+    "panel_shell_edit_count": 0
+  },
+  "cycle1_boundary": {
+    "panel_integration_performed": false,
+    "actual_150_pdf_batch_performed": false,
+    "component_ready_for_c1_integration": true
+  },
+  "decision": "PASS",
+  "first_blocker": null,
+  "terminal": "C2_PDF_FOLDER_INVENTORY_READY_OR_EXACT_BLOCKER",
+  "terminal_result": "C2_PDF_FOLDER_INVENTORY_READY",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
