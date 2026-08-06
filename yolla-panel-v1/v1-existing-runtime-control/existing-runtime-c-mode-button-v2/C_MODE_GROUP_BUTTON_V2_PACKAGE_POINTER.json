@@ -1,0 +1,40 @@
+{
+  "schema_version": "C_MODE_GROUP_BUTTON_V2_PACKAGE_POINTER",
+  "status": "READY_FOR_USER_EXECUTION_TARGET_PC_NOT_APPLIED",
+  "implementation_pr": 73,
+  "branch": "agent/c-mode-existing-runtime-button-v1",
+  "supersedes": {
+    "file_name": "AI_YOLLA_C_MODE_GROUP_BUTTON_PATCH_V1.zip",
+    "acceptance": "REJECTED_BY_TARGET_PC_VISUAL_EVIDENCE"
+  },
+  "package": {
+    "file_name": "AI_YOLLA_C_MODE_GROUP_BUTTON_PATCH_V2.zip",
+    "delivery_channel": "CHAT_ARTIFACT",
+    "size_bytes": 23605,
+    "sha256": "65d82251a5f7cb01bc0e34e32703d7a8d0820975d4bd011926e09767e05c33c3",
+    "entrypoint": "APPLY_C_MODE_GROUP_BUTTON_PATCH_V2.bat",
+    "rollback_entrypoint": "ROLLBACK_C_MODE_GROUP_BUTTON_PATCH_V2.bat"
+  },
+  "expected_result": {
+    "legacy_e_button_count": 0,
+    "legacy_a_button_count": 0,
+    "c_mode_button_count": "1_PER_GROUP",
+    "button_label": "C 모드 실행",
+    "idle_color": "GRAY",
+    "running_color": "BLUE",
+    "error_color": "RED"
+  },
+  "safety": {
+    "backup_before_write": true,
+    "automatic_rollback_on_failure": true,
+    "manual_rollback": true,
+    "direct_v510240_release_restart": true,
+    "login_browser_profile_unchanged": true,
+    "workspace_state_unchanged": true
+  },
+  "target_pc_applied": false,
+  "target_pc_live_pass": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
