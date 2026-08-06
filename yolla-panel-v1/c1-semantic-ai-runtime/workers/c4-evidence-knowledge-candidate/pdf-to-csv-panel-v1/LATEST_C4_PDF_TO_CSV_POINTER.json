@@ -11,7 +11,7 @@
   "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c4-evidence-knowledge-candidate/pdf-to-csv-panel-v1/**",
   "directive_comment_id": 5208881816,
   "control_comment_id": 5208884860,
-  "previous_pointer_blob": "7845c8676a133f5e4b71d118d3d9eed1044e7b2b",
+  "previous_pointer_blob": "754621558eddbe6cc2c5be9c9d5e12c91a414de8",
   "updated_at_kst": "2026-08-07T05:24:00+09:00",
   "outputs": {
     "pdf_to_csv_pipeline_orchestrator.py": {
@@ -19,16 +19,16 @@
       "blob": "63b40f83b0425d241ad1859864625f4211c847d5"
     },
     "PDF_TO_CSV_PIPELINE_CONTRACT_V1.json": {
-      "commit": "cbf978ff56dae8475e5af98983c36f81632ffce1",
-      "blob": "884a4839e1a2399abb259b65d3599a2c0090a1e3"
+      "commit": "be291ac69fea9b0d65ec83b987a308760aa29cc6",
+      "blob": "79391676ddf3839041b32a1d7b8f927043afff0d"
     },
     "test_pdf_to_csv_pipeline_orchestrator.py": {
       "commit": "0b460c5f80e1bcf5ce474b1f5455b93e8a105e6b",
       "blob": "20677e0f43150227eb1d44fd6fcc1eaa14badf65"
     },
     "C4_CYCLE2_FINAL_REPORT_V1.json": {
-      "commit": "57c8488319ca7e865e305ed3e0945305b3b6e517",
-      "blob": "6bfe63e7076d481c8ed4a7748b2a728a2e5072d1"
+      "commit": "aa3d65631b58d9e93ac49f8c4fae7fba3ecb5b2c",
+      "blob": "21ff16a22ab71ed6e7992fdabbd83897e7ae51d1"
     },
     "text_chunk_csv_writer.py": {
       "blob": "5555e2c7622076d4be290c4d68e966c0ce34a547",
@@ -36,8 +36,8 @@
     }
   },
   "bindings": {
-    "c2_input_adapter_blob": "b3c3186ae13e4bc13484ad23c1eef9902506b2b0",
-    "c3_extraction_runtime_blob": "ba55b3685ec073c2108b3f1dae2478e2922eb3de",
+    "c2_input_adapter_blob": "f73ac4c21c25346db441f4260decfd73032aaefb",
+    "c3_extraction_runtime_blob": "f0135afd4e773421dc747d20da7a5b32b8110317",
     "c5_output_naming_blob": "1fe8684ff69c5d9481b79142495229bd036dff60"
   },
   "validation": {
@@ -49,7 +49,8 @@
     "chunk_limit_recheck": "PASS",
     "utf8_sig_recheck": "PASS",
     "progress_and_error_records": "PASS",
-    "remote_readback_before_pointer": "PASS_4_OF_4"
+    "latest_c2_c3_api_remote_readback": "PASS_2_OF_2",
+    "remote_readback_before_pointer": "PASS_5_OF_5"
   },
   "result": "C4_ONE_COMMAND_PIPELINE_CORRECTED",
   "cycle2_terminal": "C4_PDF_TO_CSV_PIPELINE_ORCHESTRATOR_READY",
