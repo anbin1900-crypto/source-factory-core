@@ -1,0 +1,24 @@
+{
+  "schema_version": "A6_WAVE2_WORKFLOW_RECIPE_V1",
+  "source_recipe": {
+    "producer": "B-3",
+    "recipe_id": "fixture-recipe-001",
+    "source_head": "d74c609241ba9c48cc432bf1fa3c7d7257354f8a",
+    "source_blob": "384d1383b501577a8b2a3e72d79003fcdc699e0c",
+    "recorded_step_count": 8
+  },
+  "steps": [
+    {"id":"step-1","type":"action","action":"input","test_id":"keyword-input","value":"apartment"},
+    {"id":"step-2","type":"action","action":"select","test_id":"region-select","value":"seoul"},
+    {"id":"step-3","type":"action","action":"click","test_id":"search-submit-new"},
+    {"id":"step-4","type":"action","action":"scroll","value":{"x":0,"y":850}},
+    {"id":"step-5","type":"observe","action":"GET_HTML","path":"/search"},
+    {"id":"step-6","type":"extract","action":"HYBRID_API_DOM","api":"/api/listing","repair_candidate":"/api/listings"},
+    {"id":"step-7","type":"paginate","mode":"PAGE_NUMBER","page_size":5,"stop_at":10},
+    {"id":"step-8","type":"verify","assert":"EXACTLY_10_UNIQUE_RECORDS"}
+  ],
+  "repair_policy": "REPLACE_FAILED_STEP_ONLY_AND_RESUME",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
