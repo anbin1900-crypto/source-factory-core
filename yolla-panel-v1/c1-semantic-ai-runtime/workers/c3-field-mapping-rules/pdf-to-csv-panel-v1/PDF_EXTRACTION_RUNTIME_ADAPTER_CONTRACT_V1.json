@@ -1,0 +1,66 @@
+{
+  "schema_version": "PDF_EXTRACTION_RUNTIME_ADAPTER_CONTRACT_V1",
+  "contract_id": "C3-PDF-EXTRACTION-RUNTIME-ADAPTER-CYCLE2-20260807-001",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE2-20260807-001",
+  "task_id": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_V1",
+  "directive_comment_id": 5208257787,
+  "bindings": {
+    "cycle1_c3_pointer_blob": "1296e68317ca027e20aa812e6a2bb0f6f1a70004",
+    "cycle1_extractor_blob": "082ec9ada56b2d42c7e40c14b9d2f6491aeebfce",
+    "c2_inventory_contract_blob": "8efd027fd7b78b6f25eb62effe42fd6fd8d3fe71",
+    "c2_inventory_schema": "PDF_FOLDER_INVENTORY_V1",
+    "c2_cycle2_panel_selection_contract_blob": "42661d29aa554ac08ffd100a0c1249085df70857",
+    "c2_cycle2_panel_selection_schema": "PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_V1"
+  },
+  "input_contract": {
+    "inventory_required_fields": ["schema_version", "selected_folder", "files"],
+    "inventory_optional_verified_fields": ["pdf_count", "inventory_sha256"],
+    "file_entry_required_fields": ["processing_order", "relative_path", "file_name", "size_bytes"],
+    "processing_order": "CONTIGUOUS_ONE_BASED",
+    "path_rule": "RELATIVE_PDF_PATH_WITHOUT_ESCAPE",
+    "source_path_resolution": "selected_folder/relative_path",
+    "file_name_rule": "MUST_EQUAL_RELATIVE_PATH_FINAL_COMPONENT",
+    "size_rule": "NONNEGATIVE_AND_OPTIONALLY_MATCH_FILESYSTEM_STAT",
+    "accepted_input_forms": ["PDF_FOLDER_INVENTORY_V1", "PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_V1.inventory"]
+  },
+  "dependency_doctor": {
+    "checks": ["fitz", "PIL", "pytesseract", "tesseract executable"],
+    "statuses": ["READY_DIRECT_TEXT_AND_OCR", "READY_DIRECT_TEXT_ONLY_OCR_UNAVAILABLE", "BLOCKED_PYMUPDF_UNAVAILABLE"],
+    "direct_text_gate": "fitz required",
+    "ocr_gate": "fitz+PIL+pytesseract+tesseract executable",
+    "target_pc_claim": "NOT_IMPLIED_BY_NON_TARGET_ENVIRONMENT_DOCTOR"
+  },
+  "execution_contract": {
+    "direct_text_first": true,
+    "ocr_fallback": "Cycle1 extractor applies OCR only below text-quality threshold",
+    "ocr_runtime_optional_at_start": true,
+    "strict_ocr_runtime_gate_configurable": true,
+    "file_error_policy": "PRESERVE_EXACT_ERROR_RECORD_AND_CONTINUE_BY_DEFAULT",
+    "fail_fast_configurable": true,
+    "source_order_preserved": true,
+    "page_order_owned_by_cycle1_extractor": true,
+    "original_pdf_mutation": false
+  },
+  "result_contract": {
+    "schema_version": "PDF_EXTRACTION_RUNTIME_RESULT_V1",
+    "required_fields": ["selected_folder", "inventory_sha256", "doctor", "status", "inventory_file_count", "attempted_file_count", "passed_file_count", "failed_file_count", "total_page_count", "direct_text_page_count", "ocr_page_count", "files", "events", "source_order_preserved"],
+    "status_values": ["PASS", "PARTIAL_FAILURE", "FAILURE", "NO_PDF_FILES"],
+    "file_status_values": ["PASS", "ERROR"],
+    "event_stages": ["START", "FILE_START", "FILE_PASS", "FILE_ERROR", "COMPLETE"],
+    "event_sequence": "CONTIGUOUS_ONE_BASED",
+    "silent_drop_allowed": false
+  },
+  "failure_codes": ["INVENTORY_NOT_OBJECT", "INVENTORY_SCHEMA_UNSUPPORTED", "SELECTED_FOLDER_INVALID", "INVENTORY_FILES_NOT_ARRAY", "INVENTORY_RECORD_NOT_OBJECT", "INVENTORY_RECORD_FIELD_MISSING", "PROCESSING_ORDER_NOT_CONTIGUOUS", "RELATIVE_PATH_INVALID", "RELATIVE_PATH_ESCAPE_DETECTED", "FILE_NAME_MISMATCH", "INVENTORY_RECORD_NOT_PDF", "SIZE_BYTES_INVALID", "PDF_COUNT_MISMATCH", "INVENTORY_SHA256_MISMATCH", "PYMUPDF_RUNTIME_UNAVAILABLE", "OCR_RUNTIME_UNAVAILABLE", "INVENTORY_SOURCE_FILE_NOT_FOUND", "INVENTORY_SOURCE_NOT_FILE", "INVENTORY_SIZE_MISMATCH", "PDF_EXTRACTION_RUNTIME_ERROR", "PANEL_SELECTION_NOT_OBJECT", "PANEL_SELECTION_SCHEMA_UNSUPPORTED", "PANEL_SELECTION_FIELD_MISSING", "PANEL_SELECTION_INVENTORY_INVALID", "PANEL_SELECTION_SOURCE_FOLDER_MISMATCH", "PANEL_SELECTION_PDF_COUNT_MISMATCH", "PANEL_SELECTION_NO_PDF_STATE_INVALID", "PANEL_SELECTION_NOT_READY", "PANEL_SELECTION_STATUS_UNSUPPORTED"],
+  "boundaries": {
+    "semantic_analysis": false,
+    "gpt_call": false,
+    "legal_classification": false,
+    "knowledge_candidate_generation": false,
+    "database_write": false,
+    "server_integration": false,
+    "actual_150_pdf_acceptance_run": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
