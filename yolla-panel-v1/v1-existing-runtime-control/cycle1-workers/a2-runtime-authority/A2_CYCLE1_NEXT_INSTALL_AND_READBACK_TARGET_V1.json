@@ -1,0 +1,90 @@
+{
+  "schema_version": "A2_CYCLE1_NEXT_INSTALL_AND_READBACK_TARGET_V1",
+  "role": "A-2_C_MODE_CYCLE1_RUNTIME_AUTHORITY_WORKER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "worker_pr": 18,
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "directive_id": "C1-A2-EXACT-RUNTIME-AUTHORITY-RESOLUTION",
+  "selected_at_kst": "2026-08-07T00:10:00+09:00",
+  "current_active_authority": {
+    "version": "5.10.2.3.7",
+    "classification": "LAST_VERIFIED_ACTIVE_RUNTIME",
+    "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_3_7.bat",
+    "release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\v5.10.2.3.7-dispatch-token-recovery",
+    "actual_live_process_identity": "PENDING_NON_DESTRUCTIVE_READBACK"
+  },
+  "selected_target": {
+    "selection": "SINGLE_EXACT_TARGET",
+    "version": "5.10.2.4.3",
+    "classification": "INSTALL_AND_READBACK_CANDIDATE_ONLY_NOT_ACTIVE",
+    "source_pr": 75,
+    "source_head": "5f737c796500ade755532c6922f38448151f1d55",
+    "pointer_path": "yolla-panel-v1/v1-existing-runtime-control/LATEST_V1_V510243_C_ONLY_SOURCE_OPTIMIZATION_POINTER.json",
+    "pointer_blob": "901b83d606c77a0bfd15bc22411fef6f32d36078",
+    "target_release": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\v5.10.2.4.3-c-only-source-optimized",
+    "expected_launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_4_3.bat",
+    "one_click_installer": {
+      "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510243_C_ONLY_SOURCE_OPTIMIZATION.bat",
+      "drive_file_id": "18zTbJ2v3fQNMAuBkILbBGWuIsjS_HVXk",
+      "size_bytes": 86244,
+      "sha256": "65a147d5edd3060bcf9ffee86ff0a87fa09c874afcccc796d82d8a9bc1374b7c",
+      "remote_metadata_readback": "PASS",
+      "fresh_download_hash_readback": "PASS"
+    },
+    "source_package": {
+      "file_name": "AI_YOLLA_V510243_C_ONLY_SOURCE_OPTIMIZATION_PACKAGE.zip",
+      "drive_file_id": "1UeD2949fXfQWPUFZoYevRr7LcMu1duCb",
+      "size_bytes": 62866,
+      "sha256": "85e4586b637a6a3030eb33c43c79ab4822a7a8a723af82787e8fd1c102715707",
+      "remote_metadata_readback": "PASS",
+      "fresh_download_hash_readback": "PASS"
+    },
+    "offline_validation": {
+      "status": "PASS",
+      "total_assertion_events": 177,
+      "failure_count": 0
+    }
+  },
+  "selection_rationale": [
+    "5.10.2.4.3 is a full versioned candidate that incorporates the 5.10.2.4.0 and 5.10.2.4.1 source chain.",
+    "Its source package and one-click installer have exact size, SHA-256 and fresh remote byte readback.",
+    "PR73 V1 failed and its V2 patch is unexecuted; it is not selected.",
+    "5.10.2.3.7 remains active authority until target-PC receipt proves a successful transition."
+  ],
+  "required_readback": {
+    "pre_install": [
+      "CURRENT_PROCESS_PID_EXECUTABLE_PATH_COMMAND_LINE",
+      "CURRENT_LAUNCHER_PATH_AND_SHA256",
+      "CURRENT_RELEASE_ROOT_AND_CORE_FILE_SHA256",
+      "BROWSER_PROFILE_PATH_UNCHANGED",
+      "WORKSPACE_STATE_PATH_UNCHANGED"
+    ],
+    "installer_gate": [
+      "DOWNLOADED_INSTALLER_SIZE_EQUALS_86244",
+      "DOWNLOADED_INSTALLER_SHA256_EQUALS_65a147d5edd3060bcf9ffee86ff0a87fa09c874afcccc796d82d8a9bc1374b7c"
+    ],
+    "post_install": [
+      "V510243_C_ONLY_INSTALL_RECEIPT.json",
+      "NEW_PROCESS_PID_EXECUTABLE_PATH_COMMAND_LINE",
+      "RELEASE_ROOT_EQUALS_V5_10_2_4_3_C_ONLY_SOURCE_OPTIMIZED",
+      "LAUNCHER_EQUALS_RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_4_3_BAT",
+      "A_MODE_FUNCTION_REMOVED",
+      "E_MODE_FUNCTION_REMOVED",
+      "C_MODE_BUTTON_PRESENT",
+      "LOG_PANEL_PRESERVED",
+      "BROWSER_PROFILE_UNCHANGED",
+      "WORKSPACE_STATE_UNCHANGED",
+      "ROLLBACK_ENTRYPOINT_PRESENT"
+    ]
+  },
+  "activation_rule": "DO_NOT_CLASSIFY_AS_ACTIVE_UNTIL_TARGET_PC_INSTALL_RECEIPT_AND_LIVE_PROCESS_READBACK_PASS",
+  "fallback": "ROLLBACK_TO_LAST_VERIFIED_5.10.2.3.7_ON_INSTALL_OR_SMOKE_FAILURE",
+  "target_pc_applied": false,
+  "target_pc_live_pass": false,
+  "false_target_pc_pass_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "EXACT_NEXT_INSTALL_AND_READBACK_TARGET_SELECTED"
+}
