@@ -1,0 +1,228 @@
+{
+  "schema_version": "C_MODE_CYCLE1_A2_A7_WORKER_ASSIGNMENT_V1",
+  "directive_id": "A0-TO-A2-A7-C-MODE-CYCLE1-RUNTIME-AUTHORITY-PERFORMANCE-BASELINE-V1-20260806-001",
+  "issued_at_kst": "2026-08-06T23:25:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "authority_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "baseline_head_before_publication": "cd4a1f52df9982b2a37444dbd650ccbadcd0f2e7",
+  "commander": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+  "active_workers": ["A-2", "A-3", "A-4", "A-5", "A-6", "A-7"],
+  "worker_numbering_authority": "USER_CORRECTION_2026-08-06T23:25:00+09:00",
+  "prior_worker_role_scope": "SUPERSEDED_FOR_THIS_C_MODE_CYCLE_ONLY",
+  "primary_goal": "C_MODE_COMPLETION",
+  "cycle": {
+    "number": 1,
+    "name": "AUTHORITY_RUNTIME_PERFORMANCE_BASELINE",
+    "purpose": "Resolve the exact active and candidate runtime authority, read back the target-PC launcher/process/profile/runtime state, and measure the idle browser resource baseline before any further C-mode feature expansion.",
+    "next_cycle": "CYCLE_2_BROWSER_LIFECYCLE_LIGHTWEIGHTING"
+  },
+  "authority_inputs": {
+    "handoff_document": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/handoffs/C_MODE_COMPLETION_SUCCESSOR_HANDOFF_AND_7_CYCLE_PLAN_V1.md",
+      "commit": "a8a7bdf0df931b8447691075c8f3f074522b7e04",
+      "blob": "e5383c10aeab844b1bcc104d9b0f26fbdfe19713"
+    },
+    "handoff_pointer": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/LATEST_C_MODE_COMPLETION_HANDOFF_POINTER.json",
+      "commit": "cd4a1f52df9982b2a37444dbd650ccbadcd0f2e7",
+      "blob": "adb4aca62ca419432689a387e75f15777730d1a8"
+    },
+    "runtime_source_pointer": "yolla-panel-v1/v1-existing-runtime-control/LATEST_C_MODE_ACTIVE_RUNTIME_SOURCE_AUTHORITY_POINTER.json",
+    "c_command_ui_pointer": "yolla-panel-v1/v1-existing-runtime-control/LATEST_V1_V510241_C_COMMAND_UI_POINTER.json",
+    "six_worker_validation_pointer": "yolla-panel-v1/v1-existing-runtime-control/LATEST_V1_C_MODE_6_WORKER_VALIDATION_POINTER.json",
+    "existing_runtime_button_candidate_pr": 73
+  },
+  "current_known_state": {
+    "last_verified_active_runtime": "5.10.2.3.7",
+    "candidate_chain": [
+      "5.10.2.4.0-c-mode-repeat-command",
+      "5.10.2.4.1-c-command-ui-hotfix"
+    ],
+    "pr73_candidate_head_observed": "e1d0353c3f993793787cb228efc3abef69957ad4",
+    "target_pc_install": "PENDING",
+    "live_process_readback": "PENDING",
+    "idle_resource_baseline": "NOT_MEASURED",
+    "final_lts_terminal_claimed": false
+  },
+  "common_rules": {
+    "one_owner_end_to_end": true,
+    "read_current_remote_head_before_work": true,
+    "append_only_evidence": true,
+    "target_pc_live_evidence_required_for_live_pass": true,
+    "static_or_fixture_pass_must_not_be_promoted_to_live_pass": true,
+    "do_not_modify_browser_profile": true,
+    "do_not_reset_workspace_state": true,
+    "do_not_delete_existing_runtime": true,
+    "do_not_create_new_runtime": true,
+    "do_not_create_new_browser_engine": true,
+    "do_not_assign_b_c_d_groups": true,
+    "site_analyzer_work": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "assignments": [
+    {
+      "worker": "A-2",
+      "worker_pr": 18,
+      "observed_head": "01e1321401211a53ae9237ca05d3a8f46822405f",
+      "owned_root": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a2-runtime-authority/**",
+      "task_id": "C1-A2-EXACT-RUNTIME-AUTHORITY-RESOLUTION",
+      "mission": "Resolve the exact precedence and byte identity of the active 5.10.2.3.7 runtime, 5.10.2.4.0 and 5.10.2.4.1 candidate chain, and PR 73 button candidates. Produce one authoritative runtime matrix and exact next install/readback target without claiming target-PC application.",
+      "required_outputs": [
+        "A2_CYCLE1_RUNTIME_AUTHORITY_MATRIX_V1.json",
+        "A2_CYCLE1_NEXT_INSTALL_AND_READBACK_TARGET_V1.json",
+        "A2_CYCLE1_FINAL_REPORT_V1.json",
+        "LATEST_A2_C_MODE_CYCLE1_POINTER.json"
+      ],
+      "pass_criteria": [
+        "ALL_AUTHORITY_POINTERS_READ_BACK",
+        "ACTIVE_VS_CANDIDATE_CLASSIFICATION_EXACT",
+        "INSTALLER_LAUNCHER_RELEASE_PATHS_RESOLVED_OR_EXACT_BLOCKER",
+        "CONFLICT_COUNT_ZERO_OR_ENUMERATED",
+        "FALSE_TARGET_PC_PASS_COUNT_ZERO"
+      ],
+      "terminal": "A2_C_MODE_CYCLE1_RUNTIME_AUTHORITY_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "worker": "A-3",
+      "worker_pr": 22,
+      "observed_head": "f1a32cdaeafb2ef8cc7442bc3ef8351d689e02c3",
+      "owned_root": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a3-target-pc-readback/**",
+      "task_id": "C1-A3-TARGET-PC-RUNTIME-READBACK-HARNESS",
+      "mission": "Build and, where target-PC access exists, execute a non-destructive Windows readback harness for launcher paths, executable paths, process command lines, file version and hashes, browser profile path, state root, release root, process tree, and runtime environment. If target-PC access is unavailable, publish the exact runnable package and blocker.",
+      "required_outputs": [
+        "Invoke-CModeCycle1TargetPcReadback.ps1",
+        "C_MODE_CYCLE1_TARGET_PC_READBACK_RECEIPT_V1.schema.json",
+        "A3_CYCLE1_TARGET_PC_READBACK_PACKAGE_V1.json",
+        "A3_CYCLE1_FINAL_REPORT_V1.json",
+        "LATEST_A3_C_MODE_CYCLE1_POINTER.json"
+      ],
+      "pass_criteria": [
+        "NON_DESTRUCTIVE_READ_ONLY",
+        "LAUNCHER_AND_PROCESS_PATH_CAPTURE",
+        "FILE_HASH_VERSION_COMMAND_LINE_CAPTURE",
+        "PROFILE_AND_STATE_PATH_CAPTURE",
+        "TARGET_PC_RECEIPT_PASS_OR_EXACT_ACCESS_BLOCKER",
+        "TARGET_PC_WRITE_COUNT_ZERO"
+      ],
+      "terminal": "A3_C_MODE_CYCLE1_TARGET_PC_READBACK_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "worker": "A-4",
+      "worker_pr": 23,
+      "observed_head": "2efc3866b292cd8c43a6fdc75a43479c0bbf2fad",
+      "owned_root": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a4-resource-baseline/**",
+      "task_id": "C1-A4-IDLE-RESOURCE-BASELINE-HARNESS",
+      "mission": "Create a reproducible target-PC performance measurement harness for panel-only, one active ChatGPT browser, inactive-seat transition, browser close, and reopen scenarios. Capture CPU, working set, private bytes, process count, renderer count, GPU and utility processes, and elapsed load time without changing functional behavior.",
+      "required_outputs": [
+        "Invoke-CModeCycle1ResourceBaseline.ps1",
+        "C_MODE_CYCLE1_RESOURCE_BASELINE_RECEIPT_V1.schema.json",
+        "C_MODE_CYCLE1_RESOURCE_SCENARIO_MATRIX_V1.json",
+        "A4_CYCLE1_FINAL_REPORT_V1.json",
+        "LATEST_A4_C_MODE_CYCLE1_POINTER.json"
+      ],
+      "pass_criteria": [
+        "SCENARIO_PANEL_ONLY_MEASURED_OR_EXACT_BLOCKER",
+        "SCENARIO_ONE_BROWSER_MEASURED_OR_EXACT_BLOCKER",
+        "SCENARIO_CLOSE_REOPEN_MEASURED_OR_EXACT_BLOCKER",
+        "CPU_MEMORY_PROCESS_METRICS_PRESENT",
+        "MEASUREMENT_SAMPLE_COUNT_AT_LEAST_30_PER_SCENARIO_WHEN_EXECUTED",
+        "NO_OPTIMIZATION_CHANGE_IN_CYCLE1"
+      ],
+      "terminal": "A4_C_MODE_CYCLE1_RESOURCE_BASELINE_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "worker": "A-5",
+      "worker_pr": 24,
+      "observed_head": "ba04d2dbae45a5ed51e86d6715565d15b8428464",
+      "owned_root": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a5-browser-lifecycle-audit/**",
+      "task_id": "C1-A5-BROWSER-LIFECYCLE-POLLING-STATIC-AUDIT",
+      "mission": "Audit the exact current runtime source for BrowserWindow, BrowserView or WebContentsView, webContents, session and partition creation, visibility and destruction paths, timers, polling loops, MutationObservers, log rendering, and group or seat rerender paths. Produce an evidence-bound hotspot map and Cycle 2 minimal patch plan; do not implement optimization in Cycle 1.",
+      "required_outputs": [
+        "A5_CYCLE1_BROWSER_LIFECYCLE_INVENTORY_V1.json",
+        "A5_CYCLE1_TIMER_POLLING_RENDER_HOTSPOT_MAP_V1.json",
+        "A5_CYCLE2_MINIMAL_LIGHTWEIGHTING_PATCH_PLAN_V1.md",
+        "A5_CYCLE1_FINAL_REPORT_V1.json",
+        "LATEST_A5_C_MODE_CYCLE1_POINTER.json"
+      ],
+      "pass_criteria": [
+        "EXACT_SOURCE_PATH_AND_LINE_BINDING",
+        "ALL_BROWSER_CREATION_AND_DESTRUCTION_PATHS_ENUMERATED",
+        "ALL_POLLING_INTERVALS_AND_OBSERVERS_ENUMERATED",
+        "POTENTIAL_LEAK_AND_IDLE_WORK_FINDINGS_PRIORITIZED",
+        "NO_RUNTIME_SOURCE_MODIFICATION"
+      ],
+      "terminal": "A5_C_MODE_CYCLE1_BROWSER_LIFECYCLE_AUDIT_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "worker": "A-6",
+      "worker_pr": 25,
+      "observed_head": "4d5acd815d52c2fdfca079447989f565f90857eb",
+      "owned_root": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a6-leak-and-repeat-harness/**",
+      "task_id": "C1-A6-WEBCONTENTS-LEAK-REPEAT-HARNESS",
+      "mission": "Build a deterministic repeat harness for open, activate, switch, hide, close and reopen operations. Measure process and memory deltas, renderer or WebContents residue, event-listener duplication, log growth, and whether a closed browser remains active. Execute against the target PC when accessible or publish an exact runnable package and blocker.",
+      "required_outputs": [
+        "c_mode_cycle1_browser_repeat_harness.cjs",
+        "C_MODE_CYCLE1_BROWSER_REPEAT_RESULT_V1.schema.json",
+        "C_MODE_CYCLE1_LEAK_THRESHOLD_CONTRACT_V1.json",
+        "A6_CYCLE1_FINAL_REPORT_V1.json",
+        "LATEST_A6_C_MODE_CYCLE1_POINTER.json"
+      ],
+      "pass_criteria": [
+        "OPEN_CLOSE_REPEAT_COUNT_AT_LEAST_10_WHEN_EXECUTED",
+        "PROCESS_AND_MEMORY_DELTA_CAPTURED",
+        "RESIDUAL_RENDERER_AND_WEBCONTENTS_CAPTURED",
+        "DUPLICATE_LISTENER_AND_TIMER_SIGNAL_CAPTURED",
+        "UNBOUNDED_GROWTH_PASS_OR_EXACT_FINDING",
+        "NO_FUNCTIONAL_PATCH_IN_CYCLE1"
+      ],
+      "terminal": "A6_C_MODE_CYCLE1_LEAK_REPEAT_BASELINE_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "worker": "A-7",
+      "worker_pr": 26,
+      "observed_head": "4ff15507cebe8a185d92fcbcdd17f0aa547d37e7",
+      "owned_root": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a7-independent-acceptance/**",
+      "task_id": "C1-A7-INDEPENDENT-BASELINE-ACCEPTANCE",
+      "mission": "Independently inspect A-2 through A-6 exact Remote Heads, artifacts, readback receipts, metrics, and blockers. Confirm that active runtime authority is not mixed with candidates, target-PC and resource claims are evidence-backed, and Cycle 2 has a precise lightweighting entry gate. Do not edit implementation files.",
+      "required_outputs": [
+        "A7_CYCLE1_INDEPENDENT_ACCEPTANCE_MATRIX_V1.json",
+        "A7_CYCLE1_FINDINGS_AND_CYCLE2_ENTRY_GATE_V1.json",
+        "A7_CYCLE1_FINAL_REPORT_V1.json",
+        "LATEST_A7_C_MODE_CYCLE1_POINTER.json"
+      ],
+      "pass_criteria": [
+        "A2_A6_TERMINALS_REVIEWED_5_OF_5",
+        "EXACT_HEAD_PATH_BLOB_BINDING_PASS_OR_FINDINGS",
+        "ACTIVE_RUNTIME_AUTHORITY_UNAMBIGUOUS",
+        "TARGET_PC_BASELINE_RECEIPT_PASS_OR_EXACT_BLOCKER_ACCEPTED",
+        "IDLE_RESOURCE_BASELINE_PASS_OR_EXACT_BLOCKER_ACCEPTED",
+        "FALSE_LIVE_PASS_COUNT_ZERO",
+        "CYCLE2_ENTRY_GATE_EXPLICIT"
+      ],
+      "terminal": "A7_C_MODE_CYCLE1_INDEPENDENT_ACCEPTANCE_PASS_OR_EXACT_FINDINGS"
+    }
+  ],
+  "global_cycle1_pass": {
+    "source_authority_readback": "PASS_REQUIRED",
+    "target_pc_baseline_receipt": "PASS_OR_EXACT_EXTERNAL_BLOCKER",
+    "idle_resource_baseline": "PASS_OR_EXACT_EXTERNAL_BLOCKER",
+    "browser_lifecycle_hotspot_map": "PASS_REQUIRED",
+    "repeat_leak_harness": "READY_AND_EXECUTED_OR_EXACT_EXTERNAL_BLOCKER",
+    "false_active_runtime_claim_count": 0,
+    "false_target_pc_pass_count": 0,
+    "cycle2_entry_gate": "EXPLICIT_REQUIRED"
+  },
+  "reporting": {
+    "start": "Commit START artifact in owned_root and post the exact commit and path to the worker PR.",
+    "progress": "Post only material progress or an exact blocker.",
+    "terminal": "Commit the final report and latest pointer, verify Remote readback, then post Terminal, exact Head, paths, test or measurement results, and blocker if any.",
+    "control_summary_target": "PR 17 after all six worker task comments are published"
+  },
+  "status": "CYCLE1_ASSIGNMENT_AUTHORITY_PUBLISHED_PENDING_WORKER_COMMENT_DISPATCH",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
