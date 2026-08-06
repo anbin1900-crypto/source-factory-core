@@ -1,0 +1,71 @@
+{
+  "schema_version": "B6_D_PACKAGE_PREFLIGHT_TEST_RESULT_V3",
+  "task_id": "B6_D_SOURCE_DOCUMENT_HANDOFF_REPREFLIGHT",
+  "common_directive_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V2-20260806-001",
+  "task_directive_comment_id": 5198235423,
+  "executed_at_kst": "2026-08-06T08:53:00+09:00",
+  "execution_mode": "DELTA_ONLY_STATIC_EXACT_HEAD_BLOB_CONTRACT_AND_FAIL_CLOSED_VALIDATION",
+  "prior_test_suite": {
+    "result": "PASS_88_OF_88",
+    "rerun": false,
+    "reason": "DO_NOT_REPEAT_88_TESTS_BEFORE_OR_OUTSIDE_RELEVANT_CONTENT_DELTA",
+    "content_delta": "B5_READY_PACKAGE_V2_NEW_HEAD_AND_BLOBS"
+  },
+  "categories": {
+    "entry_event_and_control_authority": {"executed":5,"passed":5,"failed":0,"result":"PASS_5_OF_5"},
+    "B5_pointer_final_test_package_identity": {"executed":10,"passed":10,"failed":0,"result":"PASS_10_OF_10"},
+    "B2_B3_B4_upstream_binding": {"executed":9,"passed":9,"failed":0,"result":"PASS_9_OF_9"},
+    "D1_authority_mapping_tree_and_receipts": {"executed":10,"passed":10,"failed":0,"result":"PASS_10_OF_10"},
+    "PR188_required_path_accounting": {"executed":18,"passed":18,"failed":0,"result":"PASS_18_OF_18"},
+    "B_C_lane_separation": {"executed":4,"passed":4,"failed":0,"result":"PASS_4_OF_4"},
+    "D_receipt_contract_incompatibility_detection": {"executed":4,"passed":4,"failed":0,"result":"PASS_4_OF_4","semantic_result":"V2_PACKAGE_TYPE_NOT_ACCEPTED_DETECTED"},
+    "D_submission_required_field_detection": {"executed":4,"passed":4,"failed":0,"result":"PASS_4_OF_4","semantic_result":"FOUR_EXACT_FIELDS_MISSING_DETECTED"},
+    "safety_boundaries": {"executed":3,"passed":3,"failed":0,"result":"PASS_3_OF_3"}
+  },
+  "deterministic_delta_checks": {
+    "executed": 67,
+    "passed": 67,
+    "failed": 0,
+    "result": "PASS_67_OF_67_DELTA_ONLY"
+  },
+  "fail_closed_mutations": {
+    "executed": 5,
+    "passed": 5,
+    "failed": 0,
+    "result": "PASS_5_OF_5",
+    "mutations": [
+      {"mutation":"promote candidate solely because B5 terminal is READY","expected":"REJECT_WHEN_D_RECEIPT_CONTRACT_MISMATCH_EXISTS","actual":"REJECT","status":"PASS"},
+      {"mutation":"treat MATERIALIZED_DATABASE_PACKAGE_V2 as accepted V1 without explicit alias","expected":"REJECT","actual":"REJECT","status":"PASS"},
+      {"mutation":"silently map producer_head_baseline to producer_head","expected":"REJECT","actual":"REJECT","status":"PASS"},
+      {"mutation":"silently map package_blob_resolution to package_blob_or_storage_pointer","expected":"REJECT","actual":"REJECT","status":"PASS"},
+      {"mutation":"combine B and C receipt lanes","expected":"REJECT","actual":"REJECT","status":"PASS"}
+    ]
+  },
+  "overall": "PASS_72_OF_72_DELTA_ONLY",
+  "preflight_decision": "EXACT_BLOCKER",
+  "first_blocker": "D1_B_RECEIPT_PROCEDURE_PACKAGE_TYPE_NOT_ACCEPTED_MATERIALIZED_DATABASE_PACKAGE_V2",
+  "secondary_blocker": "D1_B_RECEIPT_SUBMISSION_REQUIRED_FIELDS_MISSING_4",
+  "evidence": {
+    "B5_head": "fcdf48eca8c4aa8709ec0040e3e0cbc2a4bf99a7",
+    "B5_pointer_blob": "ae6001c683340f7280b74f5289918efedc1b3e7e",
+    "B5_fixture_bundle_blob": "3a204094b4a81486646f863228b5059745fba758",
+    "B5_request_package_type": "MATERIALIZED_DATABASE_PACKAGE_V2",
+    "B5_request_schema_blob": "d0ea48f026f4510ac1e6a9e83539c9255ef10097",
+    "D1_head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "D1_B_receipt_procedure_blob": "2a8b7c1b04924728cce14dc21c225ad09598905f",
+    "D1_mapping_addendum_blob": "118d6403dd5db47afafb982991f8fd9a51f35f28",
+    "D1_ruleset_blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793"
+  },
+  "local_git_clone_attempt": "FAILED_DNS_COULD_NOT_RESOLVE_GITHUB_COM",
+  "local_runtime_test_execution": false,
+  "github_actions_ci_run_count": 0,
+  "github_actions_ci_pass_claimed": false,
+  "D_acceptance_claim": false,
+  "D_acceptance_receipt_issued": false,
+  "D_canonical_db_write": false,
+  "postgresql_connection": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
