@@ -1,0 +1,49 @@
+{
+  "schema_version": "B6_SITE_ANALYZER_WAVE2_DRIVE_ARTIFACT_MANIFEST_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "authority_commit": "9ca851933fb329b1d965f4459d452c684a06f9cd",
+  "task_comment": 5208249616,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 42,
+  "artifact": {
+    "name": "B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1.zip",
+    "mime_type": "application/zip",
+    "size_bytes": 49490,
+    "sha256": "94bd0ef75e8ae2fe8385d298d53d4827b8208096230ee3e0a57a11a3c8586dcd",
+    "entry_count": 36,
+    "drive_file_id": "13LrXXmW_p69HP1kgMLPaDuSr2l2fEZnP",
+    "drive_parent_id": "0AB0ElFLasFsQUk9PVA",
+    "drive_created_time": "2026-08-06T19:28:57.838Z",
+    "drive_modified_time": "2026-08-06T19:28:57.838Z",
+    "drive_upload": "PASS",
+    "drive_raw_download_readback": "PASS",
+    "drive_readback_size_bytes": 49490,
+    "drive_readback_sha256": "94bd0ef75e8ae2fe8385d298d53d4827b8208096230ee3e0a57a11a3c8586dcd",
+    "zip_integrity": "PASS_NO_ERRORS"
+  },
+  "package_contract": {
+    "single_launcher": "launcher.cjs",
+    "electron_main": "electron/main.cjs",
+    "node_fallback": "runtime/node-http-bridge.cjs",
+    "system_chromium_cdp": "runtime/chromium-cdp.cjs",
+    "immutable_member_count": 22,
+    "members_tree_sha256": "7e64243fee0ce676c1aa22305efbbcc96bcc86070bf2e96f0f9afe12e3ca592b",
+    "mutable_runtime_paths": [
+      "outputs/**"
+    ]
+  },
+  "source_distribution": {
+    "drive_zip_contains_complete_source_tree": true,
+    "github_raw_binary_segment_transport_abandoned": true,
+    "reason": "FINAL_ZIP_BYTE_DELTA_MADE_STALE_TEXT_SEGMENTS_UNSAFE",
+    "orphan_blob_references_used": false
+  },
+  "boundaries": {
+    "database_work": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  },
+  "result": "PASS_IMMUTABLE_DRIVE_BYTE_ARTIFACT_AND_GITHUB_MANIFEST_READY"
+}
