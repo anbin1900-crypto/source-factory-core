@@ -5,12 +5,17 @@
   "directive_comment_id": 5208880453,
   "control_comment_id": 5208884860,
   "start_comment_id": 5208947794,
+  "terminal_comment_id": 5208982115,
   "authority": {
     "repository": "anbin1900-crypto/source-factory-core",
     "control_pr": 20,
     "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
     "shared_head_before_pointer": "0b985bb18d17d5a9f8a0b5e21e4c1b0205d75023",
+    "shared_head_at_terminal_readback": "ffba28b7cbefaf913552f1763958f8674230a9b0",
+    "preterminal_pointer_commit": "87b9e95ad5e2a083e1f656a25912d4b884e81876",
+    "preterminal_pointer_blob": "1c86d45356abb32c281612fd8d6d56b43c474bfa",
     "previous_pointer_blob": "3aa2d77df839ad5ee95a44965d4a99da088cf1ef",
+    "pointer_commit_status": "THIS_COMMIT",
     "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c3-field-mapping-rules/pdf-to-csv-panel-v1/**"
   },
   "artifacts": {
@@ -66,7 +71,7 @@
     "remote_readback": "PASS_7_OF_7"
   },
   "result": "C3_EXTRACTION_CORRECTED",
-  "terminal_comment_status": "PENDING_PUBLICATION",
+  "terminal_comment_status": "PUBLISHED",
   "ci_status": "NOT_RUN_NOT_CLAIMED_PASS",
   "semantic_analysis": false,
   "gpt_call": false,
