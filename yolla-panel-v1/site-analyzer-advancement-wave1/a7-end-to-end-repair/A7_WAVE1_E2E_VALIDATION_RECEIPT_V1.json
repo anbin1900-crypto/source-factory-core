@@ -1,0 +1,64 @@
+{
+  "schema_version": "A7_SITE_ANALYZER_WAVE1_E2E_VALIDATION_RECEIPT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "generated_at_utc": "2026-08-06T17:02:30.376Z",
+  "status": "PASS_FIXTURE_PROTOCOL_E2E",
+  "execution_mode": "MOCK_CDP_PROTOCOL_E2E",
+  "live_electron_executed": false,
+  "counts": {
+    "protocol_network_event_count": 1,
+    "live_network_event_count": 0,
+    "response_body_count": 1,
+    "dom_snapshot_count": 1,
+    "navigation_event_count": 1,
+    "recorded_user_action_count": 1,
+    "auto_field_candidate_count": 7,
+    "generated_executable_adapter_count": 1,
+    "replay_success_count": 1,
+    "extracted_record_count": 2
+  },
+  "decisions": {
+    "page_type": "LIST",
+    "pagination": "PAGINATION_DETECTED",
+    "extraction_mode": "HYBRID",
+    "deterministic_replay": true,
+    "embedded_and_standalone_shared_state": true,
+    "false_live_pass": false
+  },
+  "adapter": {
+    "adapter_id": "fixture-site-adapter-v1",
+    "source_sha256": "6797c831bd27f9b4bbcae91950e1c140c73d1b6c967dfd0aa41ba6d71169dffe",
+    "recipe_sha256": "a1acc4c350b9d86157c1d9d132e6887ea474af25f1f767fc78d271c465e714c9"
+  },
+  "replay": {
+    "first_sha256": "0c256b86819e6340413b9fd1dac4bafe6bcc5b38d3346b848bbcac7524626347",
+    "second_sha256": "0c256b86819e6340413b9fd1dac4bafe6bcc5b38d3346b848bbcac7524626347",
+    "records": [
+      {"address":"Seoul","date":"2026-08-07","description":"First","id":1,"next":null,"price":100,"title":"Alpha"},
+      {"address":"Busan","date":"2026-08-07","description":"Second","id":2,"next":null,"price":200,"title":"Beta"}
+    ]
+  },
+  "tests": {
+    "node_test": "PASS_4_OF_4",
+    "syntax_check": "PASS_8_OF_8_JS_FILES",
+    "package_dry_run": "PASS_11_FILES",
+    "remote_blob_matches_local_validated_bytes": true
+  },
+  "environment": {
+    "node": "v22.16.0",
+    "platform": "linux",
+    "electron_package_available": false,
+    "playwright_package_available": false,
+    "crawlee_package_available": false,
+    "live_browser_webcontents_available": false
+  },
+  "external_blocker": {
+    "code": "LIVE_ELECTRON_BROWSER_EXECUTION_ENVIRONMENT_UNAVAILABLE",
+    "scope": "LIVE_SITE_BROWSER_PASS_ONLY",
+    "source_repair_blocked": false,
+    "required_action": "Run npm test and npm run validate inside the YOLLA Electron workspace, then attach AnalyzerCore to a real BrowserWindow webContents and verify live Network, response body, DOM snapshot and navigation event counts above zero."
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
