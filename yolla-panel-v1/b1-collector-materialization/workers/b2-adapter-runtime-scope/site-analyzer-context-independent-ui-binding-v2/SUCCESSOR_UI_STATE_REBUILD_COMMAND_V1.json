@@ -1,0 +1,13 @@
+{
+  "schema_version": "SUCCESSOR_UI_STATE_REBUILD_COMMAND_V1",
+  "directive_id": "AI001-TO-B2-CONTEXT-INDEPENDENT-UI-VIEWMODEL-BINDING-V2-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "single_command": "node tools/rebuild_ui_state.mjs --binding CONTEXT_INDEPENDENT_UI_BINDING_V1.json --state SITE_ANALYZER_UI_STATE_V1.json --receipts fixtures/FIXTURE_RECEIPT_SET_V1.json",
+  "inputs": ["CONTEXT_INDEPENDENT_UI_BINDING_V1.json", "SITE_ANALYZER_UI_STATE_V1.json", "receipt-set-or-latest-pointer-resolver"],
+  "outputs": ["rebuilt-ui-state.json", "rebuild-receipt.json"],
+  "requirements": {"chat_context": false, "browser_rendering": false, "target_pc": false, "tunnel": false, "new_browser_engine": false},
+  "successor_sequence": ["read LATEST_B2_CONTEXT_INDEPENDENT_UI_BINDING_POINTER.json", "verify required output blobs", "resolve current A-3/A-4/A-5/A-6/B-1 pointers", "fetch declared receipts", "run single_command with resolved receipt set", "render control-plane UI from rebuilt state"],
+  "production": false,
+  "ready": false,
+  "merge": false
+}
