@@ -1,0 +1,10 @@
+{
+  "schema_version": "CYCLE7_REAL_SITE_CHECKPOINT_V1",
+  "command_id": "CYCLE7-SITE-001-REPRESENTATIVE",
+  "attempt_count": 1,
+  "completed_steps": ["COMMON_EVIDENCE", "DATA"],
+  "step_results": {
+    "COMMON_EVIDENCE": {"artifact_pointer_blob":"1111111111111111111111111111111111111111"},
+    "DATA": {"artifact_pointer_blob":"2222222222222222222222222222222222222222"}
+  }
+}

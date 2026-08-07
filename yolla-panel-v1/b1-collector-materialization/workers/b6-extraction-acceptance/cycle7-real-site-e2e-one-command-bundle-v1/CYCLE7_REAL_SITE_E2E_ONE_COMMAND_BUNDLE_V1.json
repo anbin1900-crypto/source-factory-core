@@ -1,0 +1,19 @@
+{
+  "schema_version": "CYCLE7_REAL_SITE_E2E_ONE_COMMAND_BUNDLE_V1",
+  "directive_id": "A0-TO-B6-CYCLE7-REAL-SITE-E2E-BUNDLE-V6-20260808-001",
+  "cycle_id": "A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001",
+  "extends": "../ai-blueprint-and-listing-binding-bundle-v1/AI_BLUEPRINT_AND_LISTING_BINDING_BUNDLE_V1.json",
+  "entrypoint": "node cycle7_real_site_e2e_one_command_runner_v1.mjs --target-url <url> --site-id <id> --scenario-set REPRESENTATIVE --analysis-modes DATA,PRODUCT,WRITE",
+  "required_inputs": ["target_url", "site_id", "scenario_set", "analysis_modes"],
+  "branch_order": ["COMMON_EVIDENCE", "DATA", "PRODUCT", "WRITE"],
+  "producer_binding": "A3_B4_EXACT_HEAD_PATH_BLOB_LATE_BINDING",
+  "resume": "SKIP_COMPLETED_RESUME_FIRST_INCOMPLETE",
+  "duplicate_execution_suppression": true,
+  "result_envelope": ["COMMAND_ID", "STATUS", "ATTEMPT_COUNT", "CHANGED_FILES", "ARTIFACT_POINTER", "BLOCKER", "RECOMMENDED_NEXT"],
+  "target_pc_execution": false,
+  "live_site_call": false,
+  "tunnel_change": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

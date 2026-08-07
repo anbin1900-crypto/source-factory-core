@@ -1,0 +1,24 @@
+{
+  "schema_version": "CYCLE7_A3_B4_PRODUCER_POINTER_CONTRACT_V1",
+  "resolution": "EXACT_HEAD_PATH_BLOB_LATE_BINDING",
+  "missing_pointer_decision": "PREBUILD_NON_BLOCKING",
+  "producers": [
+    {
+      "owner": "A-3",
+      "pr": 22,
+      "expected_terminal": "A3_CYCLE7_REAL_SITE_EVIDENCE_READY",
+      "outputs": ["COMMON_EVIDENCE", "NETWORK_DOM_RESPONSE_EVIDENCE"],
+      "fixture_path": "fixtures/producer-pointers/A3_CYCLE7_POINTER.json"
+    },
+    {
+      "owner": "B-4",
+      "pr": 40,
+      "expected_terminal": "B4_CYCLE7_REAL_SITE_ARTIFACT_READY",
+      "outputs": ["RAW_ARTIFACT_MANIFEST", "SOURCE_RECORD_ENVELOPE"],
+      "fixture_path": "fixtures/producer-pointers/B4_CYCLE7_POINTER.json"
+    }
+  ],
+  "pointer_validation": "OWNER_TERMINAL_HEAD_PATH_BLOB_REQUIRED",
+  "raw_secret_embed": false,
+  "sequential_approval_gate": false
+}
