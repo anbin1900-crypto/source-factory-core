@@ -1,0 +1,24 @@
+{
+  "schema_version": "A5_TO_A6_LIVE_EXECUTION_HANDOFF_V1",
+  "consumer": "A-6",
+  "source_result": "A5_REAL_SITE_LIVE_BINDING_RESULT_V1",
+  "lanes": ["PUBLIC_READ", "WRITE", "MY_LISTING", "EDIT"],
+  "direct_consume": {
+    "api_ui_state": "REAL_SITE_API_UI_STATE_BINDING_V1",
+    "data_entity": "REAL_SITE_DATA_ENTITY_BINDING_V1",
+    "form_field": "REAL_SITE_FORM_FIELD_BINDING_V1",
+    "unknown_and_waiting": "UNKNOWN_BUSINESS_RULE_INDEX_V1"
+  },
+  "execution_policy": {
+    "consume_ready_observed_edges": true,
+    "consume_inferred_candidates_as_authority": false,
+    "skip_waiting_input_edges": true,
+    "unknown_fail_closed": true,
+    "raw_secret_or_pii_allowed": false
+  },
+  "lane_status_values": ["READY", "PARTIAL_WAITING_INPUT"],
+  "late_bind_trigger": "New exact A-3 causal evidence pointer for a waiting edge.",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
