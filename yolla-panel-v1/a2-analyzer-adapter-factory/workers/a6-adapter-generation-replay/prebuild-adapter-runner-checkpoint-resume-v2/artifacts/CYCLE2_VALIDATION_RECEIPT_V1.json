@@ -1,5 +1,5 @@
 {
-  "schema_version":"A6_CYCLE2_FIXTURE_BUILD_RUN_RESUME_SMOKE_RECEIPT_V1",
+  "schema_version":"A6_CYCLE2_FIXTURE_BUILD_RUN_RESUME_SMOKE_RECEIPT_V2",
   "status":"PASS",
   "source_parse":"PASS_2_OF_2",
   "build_run_resume_smoke":"PASS",
@@ -19,9 +19,7 @@
   "full_recipe_regeneration":false,
   "cleanup_status":"PASS",
   "cleanup_exit_code":0,
-  "runner_sha256":"bf768a7f055c88597cee424f0dceed9d0ae5bf18cd4c80f1897aaa11df503800",
-  "checkpoint_module_sha256":"7e877cda2d8a8a0cc7eee4021ee04cc39a8703e60fae17600ff5adc0a84dd71a",
-  "generated_recipe_sha256":"cd5f7228a3b6cc3f8567a47d73731ce50a15aac9f4077c2da57917048ea0bc09",
-  "generated_adapter_sha256":"de7aa6942fe5daf2ebb5c99f93788608f908801a8b4b9df0980a6a0b89446978",
+  "remote_readback":{"request_blob":"389c9318a54d50ae075756aae90006cddfc5adb8","runner_blob":"d74fe1b9ea6c7f2e1d11ddf786bf33fc89c8cf86","checkpoint_module_blob":"e8392eb093c17cb25af3ddf52a90d8d59c64b13b","recipe_blob":"660caaaf3c77b074908cdaf99d1a7eae83745117","compiled_adapter_blob":"7d0ec5adc4da34b615a85d717c25c87ff57a947b","package_manifest_blob":"967d902c839ca8c109303eb5d364bc943d04edc6","build_run_receipt_blob":"6ba6770d4cc1bfca1bb3494160ca1ff606483460","checkpoint_artifact_blob":"d1d7a3c9c6aa0e0a6581bbb308314edb9d055808","partial_repair_receipt_blob":"b15df8b409b7c66311fbf73492f164294b0f459a"},
+  "semantic_digests":{"recipe_sha256":"88ed6e116a3a73853e8e36a80218a6b7fb569099ae831fd8a974e62e34157fd2","compiled_adapter_sha256":"de7aa6942fe5daf2ebb5c99f93788608f908801a8b4b9df0980a6a0b89446978"},
   "production":false,"ready":false,"merge":false
 }
