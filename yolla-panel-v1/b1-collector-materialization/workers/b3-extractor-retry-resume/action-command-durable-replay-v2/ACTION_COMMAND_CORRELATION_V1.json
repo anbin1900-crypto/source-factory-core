@@ -1,0 +1,11 @@
+{
+  "schema_version": "ACTION_COMMAND_CORRELATION_V1",
+  "binding": "AI001_COMMAND_TO_BROWSER_ACTION_TO_RESULTING_EVIDENCE",
+  "required_fields": ["mission_id", "session_id", "command_id", "page_id", "action_id", "sequence_no", "evidence"],
+  "evidence_fields": ["evidence_id", "evidence_type", "digest", "metadata"],
+  "idempotency_link": "ACTION_EVENT_V1.idempotency_key",
+  "ordering": "sequence_no ASC",
+  "secret_storage": false,
+  "multi_user_routing": false,
+  "multi_agent_routing": false
+}
