@@ -1,0 +1,17 @@
+{
+  "schema_version":"ADAPTER_BUILD_RUN_RECEIPT_V1",
+  "command_id":"A6-C2-SMOKE-002",
+  "checkpoint_id":"cp-a6-c2-smoke-002",
+  "status":"PASS",
+  "action":"resume",
+  "recipe_version":"1.0.0-cycle2",
+  "adapter_version":"1.0.0-cycle2",
+  "last_completed_step":"s03",
+  "resume_from_step":3,
+  "executed_step_count":2,
+  "skipped_completed_step_count":0,
+  "completed_idempotency_key_count":3,
+  "output_sha256":"9753a6e0d0dbd17e0f9ecb280e935db84bc03b625da6d1c5a5b60e0d70b126d5",
+  "checkpoint_sha256":"a7c0e00943689d62016d89e654148a0376cd891fd5e85f5e1266a1661b1a02aa",
+  "exit_code":0
+}
