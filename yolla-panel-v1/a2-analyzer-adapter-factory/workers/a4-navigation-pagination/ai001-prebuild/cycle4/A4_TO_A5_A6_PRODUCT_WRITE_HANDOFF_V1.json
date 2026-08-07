@@ -1,0 +1,14 @@
+{
+  "schema_version":"A4_TO_A5_A6_PRODUCT_WRITE_HANDOFF_V1",
+  "directive_id":"A0-TO-A4-PAGE-COMPONENT-FORM-ROLE-GRAPH-V4-20260808-001",
+  "cycle_id":"A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "consumers":{
+    "A-5":{"purpose":"PRODUCT_BINDING","inputs":["PAGE_ROLE_CATALOG_V1","PAGE_GRAPH_V1","COMPONENT_ROLE_GRAPH_V1","UI_STATE_REGION_V1"],"must_preserve":["page_role","evidence_status","confidence","fallback","source_provenance"]},
+    "A-6":{"purpose":"WRITE_ADAPTER","inputs":["FORM_FIELD_STRUCTURE_V1","PAGE_GRAPH_V1.edges","COMPONENT_ROLE_GRAPH_V1","UI_STATE_REGION_V1"],"must_preserve":["label","input_type","options","required","unit","validation","locator_candidates","write_action"]}
+  },
+  "graph_sha256":"1297f9d7b5dc1be47c450ba87d883e36884a48da10ff43a1eb4a4a8dddc04ec4",
+  "deterministic_output_sha256":"41357d8547813b11bbfada71b951c885abd517a86c7270bd1c4d003153fcf839",
+  "observed_inferred_unknown_separated":true,
+  "pixel_clone":false,
+  "target_pc_execution":false,"live_site_call":false,"tunnel_change":false,"production":false,"ready":false,"merge":false
+}
