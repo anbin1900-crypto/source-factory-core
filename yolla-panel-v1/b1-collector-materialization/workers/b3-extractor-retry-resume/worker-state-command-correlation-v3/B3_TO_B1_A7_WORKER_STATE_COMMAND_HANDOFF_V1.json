@@ -1,0 +1,14 @@
+{
+  "schema_version":"B3_TO_B1_A7_WORKER_STATE_COMMAND_HANDOFF_V1",
+  "producer":"B-3",
+  "consumers":["B-1","A-7"],
+  "correlation_key":"command_id",
+  "required_read_order":["LATEST_POINTER","WORKER_STATE_COMMAND_CORRELATION","WORKER_STATE_TRANSITION_RULE","DURABLE_WORKER_STATE_EVENT_LEDGER","WORKER_STATE_RESULT_RECEIPT_BINDING"],
+  "unknown_policy":"SIDE_STATE_ONLY_NEVER_PASS",
+  "result_receipt_precondition":"COMPLETE",
+  "restart_restore":"durable event replay",
+  "target_pc_execution_authorized":false,
+  "production":false,
+  "ready":false,
+  "merge":false
+}
