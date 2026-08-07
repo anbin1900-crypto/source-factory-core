@@ -1,0 +1,25 @@
+{
+  "schema_version": "B4_COMMAND_TRACE_ARTIFACT_CHECKPOINT_TEST_REPORT_V1",
+  "directive_id": "AI001-TO-B4-COMMAND-TRACE-ARTIFACT-CHECKPOINT-V2-20260807-001",
+  "status": "PASS",
+  "validation": {
+    "schema_parse": "PASS_4_OF_4",
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_6_OF_6",
+    "fixture_partial_artifact_resume_smoke": "PASS_1_OF_1"
+  },
+  "smoke": {
+    "command_id": "CMD-FIXTURE-001",
+    "completed_artifact_count": 2,
+    "partial_interruption_count": 1,
+    "duplicate_disposition": "DUPLICATE_IDENTICAL",
+    "resume_step_before_retry": "FETCH_PAGE_2",
+    "final_next_resumable_step": "DONE",
+    "a7_projection_artifact_count": 2,
+    "b5_dataset_checkpoint_pointer": "b5://dataset/checkpoint/10"
+  },
+  "secret_raw_storage_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
