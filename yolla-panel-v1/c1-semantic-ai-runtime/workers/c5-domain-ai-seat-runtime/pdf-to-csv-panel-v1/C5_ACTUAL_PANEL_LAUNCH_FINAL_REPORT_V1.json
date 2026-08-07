@@ -1,0 +1,60 @@
+{
+  "schema_version": "C5_ACTUAL_PANEL_LAUNCH_FINAL_REPORT_V1",
+  "batch_id": "C1-PDF-PREPROCESS-FINAL-PANEL-LAUNCH-20260807-001",
+  "directive_comment_id": 5212524440,
+  "control_comment_id": 5212526492,
+  "start_comment_id": 5212639070,
+  "observed_head_before_report": "e358ddb99a018056e28619776deca5b02d3de0fc",
+  "c4_scope_close_comment_id": 5212523100,
+  "c4_scope_status": "C4_SCOPE_CLOSED",
+  "direct_repair": {
+    "panel_path": "standalone_pdf_to_csv_panel.py",
+    "panel_commit": "e69e914cab00b67093e19f19f5e51e7bc528caaf",
+    "panel_blob": "af1cf6dce3a9dda8eabde1f33146b48b19ffa9c9",
+    "repair": "ACTIONABLE_PYSIDE6_DEPENDENCY_AND_GUI_LAUNCH_ERROR_MESSAGES",
+    "dependency_install_command_uses_current_python": true,
+    "dependency_relaunch_command_uses_current_python_and_script": true,
+    "generic_launch_exception_reports_relaunch_command": true,
+    "single_c4_pipeline_only": true,
+    "separate_processing_engine": false
+  },
+  "artifacts": {
+    "launch_test": {
+      "path": "test_actual_panel_launch_repair.py",
+      "commit": "e3fbc3a1872de8c648bd6e945bb7031b9bcaad6c",
+      "blob": "8a0ac3693ff4934a482f0a3e036f336bdef13327"
+    },
+    "launch_contract": {
+      "path": "C5_ACTUAL_PANEL_LAUNCH_CONTRACT_V1.json",
+      "commit": "0204d56348f44b8e4d080e7b99905b7bf606285d",
+      "blob": "de6c9407e21ea422e6634ecb883479a199175b34"
+    },
+    "launch_validation": {
+      "path": "C5_ACTUAL_PANEL_LAUNCH_VALIDATION_V1.json",
+      "commit": "e358ddb99a018056e28619776deca5b02d3de0fc",
+      "blob": "fd5490902140564e039335c972ba60d4022b6d56"
+    }
+  },
+  "validation": {
+    "runtime_pyside6_available": false,
+    "direct_import_probe_exit_code": 1,
+    "direct_import_probe_terminal_error": "ModuleNotFoundError: No module named 'PySide6'",
+    "actual_qapplication_created": false,
+    "actual_window_created": false,
+    "actual_gui_selection_flow_executed": false,
+    "dependency_message_logic": "PASS_7_OF_7",
+    "remote_panel_readback": "PASS",
+    "actual_window_launch_pass_claimed": false,
+    "ci": "NOT_YET_CHECKED"
+  },
+  "required_result": "C5_ACTUAL_PANEL_LAUNCH_CORRECTED_OR_ENVIRONMENT_EXACT_BLOCKER",
+  "result": "ENVIRONMENT_EXACT_BLOCKER_AFTER_DEPENDENCY_PATH_REPAIR",
+  "first_blocker": "PYSIDE6_NOT_INSTALLED_IN_VALIDATION_RUNTIME",
+  "next_runtime_action": "RUN_PANEL_IN_RUNTIME_WITH_PYSIDE6_INSTALLED_USING_THE_EXACT_COMMAND_PRINTED_BY_PANEL",
+  "semantic_analysis": false,
+  "gpt_call": false,
+  "database_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
