@@ -1,0 +1,22 @@
+{
+  "schema_version":"A7_MULTIMODE_RECOVERY_V4_FINAL_REPORT_V1",
+  "directive_id":"A0-TO-A7-MULTIMODE-CONTEXT-RECOVERY-V4-20260808-001",
+  "directive_comment_id":5219095102,
+  "cycle_id":"A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "terminal":"A7_MULTIMODE_CONTEXT_RECOVERY_READY",
+  "status":"PASS",
+  "source_commit":"3c242ba93a8e606a806a1c6adf7d51aca1fe5381",
+  "mission_pointer_blob":"6454d5b3384cd3bdcd6ebc3ca1782860d68a63e1",
+  "validation_receipt_blob":"f187003320289c1021bbc85dee9a9586c7ddfe49",
+  "required_outputs":{"MULTIMODE_ANALYSIS_RECOVERY_STATE_V1":"PASS","MODE_AWARE_CURRENT_COMMAND_V1":"PASS","EVIDENCE_POINTER_RECOVERY_MAP_V1":"PASS","PARTIAL_PRODUCT_BLUEPRINT_RECOVERY_V1":"PASS","WRITE_ADAPTER_RESUME_DECISION_V1":"PASS"},
+  "modes":["DATA","PRODUCT","WRITE","MY_LISTING","EDIT"],
+  "completed_stage_reexecution_count":0,
+  "duplicate_execution_suppression":"PASS",
+  "evidence_preservation":{"OBSERVED":"PASS","INFERRED":"PASS","UNKNOWN":"PASS","confidence":true,"evidence_pointer":true},
+  "fixture":{"interruption_mode":"PRODUCT","interruption_stage":"BLUEPRINT","decision":"RESUME_PARTIAL_PRODUCT_BLUEPRINT","pending_fields":["stock"],"data_mode_reexecution_count":0},
+  "self_recovery":{"decision":"ALREADY_DONE","next_mode":"PRODUCT","next_stage":"PREVIEW"},
+  "recovery_order":["Latest Pointer","Current Mission","Current Command","Latest Result","Next Action"],
+  "single_recovery_command":"node RECOVER_WORK_BOOTSTRAP_V1.cjs --pointer ./LATEST_AI001_MISSION_POINTER_V1.json",
+  "target_pc_execution":false,"live_site_call":false,"tunnel_change":false,
+  "production":false,"ready":false,"merge":false
+}
