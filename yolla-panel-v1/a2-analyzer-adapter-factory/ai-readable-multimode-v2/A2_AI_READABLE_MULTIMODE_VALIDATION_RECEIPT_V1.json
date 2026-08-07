@@ -1,0 +1,20 @@
+{
+  "schema_version": "A2_AI_READABLE_MULTIMODE_VALIDATION_RECEIPT_V1",
+  "directive_id": "A0-TO-A2-AI-READABLE-MULTIMODE-ANALYZER-CORE-V4-20260808-001",
+  "cycle_id": "A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "checks": {
+    "json_parse": "PASS_6_OF_6",
+    "analysis_modes": "PASS_EXACT_5",
+    "same_evidence_data_product_write": "PASS_EV-003",
+    "data_backward_compatibility": "PASS",
+    "a3_a7_exact_head_format": "PASS_5_OF_5",
+    "parallel_nonblocking_manifest": "PASS",
+    "critical_coverage_formula": "PASS",
+    "unknown_no_fabrication": "PASS",
+    "cycle3_regression": "PASS",
+    "target_pc_execution": false,
+    "live_site_call": false
+  },
+  "fixture_coverage_score": 82.45,
+  "result": "PASS"
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": "ANALYSIS_MODE_CATALOG_V1",
+  "modes": [
+    {"mode": "DATA", "goal": "existing extraction path"},
+    {"mode": "PRODUCT", "goal": "critical product structure for AI implementation", "pixel_clone_target": false},
+    {"mode": "WRITE", "goal": "prepare form fill", "user_confirm_required": true},
+    {"mode": "MY_LISTING", "goal": "read own listings into canonical candidates"},
+    {"mode": "EDIT", "goal": "prepare edit/expire", "user_confirm_required": true}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "A2_MULTIMODE_SHARED_EVIDENCE_FIXTURE_V1",
+  "site_id": "FIXTURE_REAL_ESTATE_SITE_001",
+  "shared_evidence": [
+    {"evidence_id":"EV-001","evidence_type":"DOM_FIELD","assertion_state":"OBSERVED","confidence":1.0,"evidence_pointer":"fixture://dom/price","consumer_modes":["DATA","PRODUCT","MY_LISTING"]},
+    {"evidence_id":"EV-002","evidence_type":"FORM_FIELD","assertion_state":"OBSERVED","confidence":0.98,"evidence_pointer":"fixture://form/price","consumer_modes":["PRODUCT","WRITE","EDIT"]},
+    {"evidence_id":"EV-003","evidence_type":"ACTION_NETWORK_BINDING","assertion_state":"OBSERVED","confidence":0.96,"evidence_pointer":"fixture://action/request","consumer_modes":["DATA","PRODUCT","WRITE"]},
+    {"evidence_id":"EV-004","evidence_type":"MY_LISTING_ROW","assertion_state":"OBSERVED","confidence":0.97,"evidence_pointer":"fixture://my-listing/1","consumer_modes":["PRODUCT","MY_LISTING"]},
+    {"evidence_id":"EV-005","evidence_type":"EDIT_FLOW","assertion_state":"INFERRED","confidence":0.8,"evidence_pointer":"fixture://edit/flow","consumer_modes":["PRODUCT","EDIT"]},
+    {"evidence_id":"EV-006","evidence_type":"BUSINESS_RULE","assertion_state":"UNKNOWN","confidence":0.0,"evidence_pointer":null,"consumer_modes":["WRITE","EDIT"]}
+  ],
+  "projections":{"DATA":["EV-001","EV-003"],"PRODUCT":["EV-001","EV-002","EV-003","EV-004","EV-005"],"WRITE":["EV-002","EV-003","EV-006"],"MY_LISTING":["EV-001","EV-004"],"EDIT":["EV-002","EV-005","EV-006"]},
+  "legacy_data_projection_unchanged": true,
+  "critical_structure_coverage_fixture":{"score":82.45}
+}
