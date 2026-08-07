@@ -1,0 +1,76 @@
+{
+  "schema_version": "LATEST_B6_SITE_ANALYZER_WAVE3_PACKAGE_RECOVERY_POINTER_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "parent_directive": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "task_comment": 5212053131,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 42,
+  "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+  "baseline_head": "75f2f5fb0d70f5243d4a5852ebdbb82d9e1a18ad",
+  "content_head_before_pointer": "1abb703fb18d2153ed043110e84ff9736556a106",
+  "package": {
+    "name": "B6_SITE_ANALYZER_WAVE3_PACKAGE_RECOVERY_V1.zip",
+    "size_bytes": 35005,
+    "sha256": "6f495a8796d30c9ac359ec56d8fe740dd4299ad545dec80b6c73d52c26d9267a",
+    "entry_count": 21,
+    "immutable_member_count": 20,
+    "members_tree_sha256": "dfae587d8a7991c8d01fcca568a7a0e4fc8e75daf45ce1f7bc3c6988f259fa86",
+    "drive_file_id": "1ituzJSHwoZmlW8QTffu2n-kgo0pRU0kD",
+    "drive_raw_readback": "PASS_SIZE_AND_SHA256",
+    "single_launcher": "launcher.cjs"
+  },
+  "objects": {
+    "drive_artifact_manifest": {
+      "blob": "7ffa7825d7519ba22d164435050f288454f240e1"
+    },
+    "install_restart_recovery_test_result": {
+      "blob": "4ea503ea2a8a7274727ffca1890f694adfaefef2",
+      "result": "PASS_PACKAGE_INTEGRITY_DEPENDENCY_SINGLE_LAUNCHER_RESTART_STATE_RECOVERY_WITH_PROVEN_ELECTRON_BLOCKER"
+    },
+    "a2_b1_consumption_handoff": {
+      "blob": "5d6363b786b51673fa74f0f048f68238acfe8917",
+      "status": "READY_FOR_A2_B1_CONSUMPTION_WITH_EXACT_PACKAGE_AND_COMMANDS"
+    },
+    "final_report": {
+      "commit": "1abb703fb18d2153ed043110e84ff9736556a106",
+      "blob": "dc8d71dd61a07d10b23e23ebfc3ecff390ec5e13",
+      "terminal_result": "B6_SITE_ANALYZER_WAVE3_PACKAGE_RECOVERY_PASS_WITH_PROVEN_ELECTRON_DEPENDENCY_BLOCKER"
+    }
+  },
+  "validation": {
+    "PACKAGE_INTEGRITY": "PASS_20_OF_20",
+    "DEPENDENCY_RESOLUTION": "PASS_NODE_CHROMIUM_ELECTRON_BLOCKER_PROVEN",
+    "SINGLE_LAUNCHER": "PASS_CWD_INDEPENDENT",
+    "UNIT_TESTS": "PASS_6_OF_6",
+    "SAMPLE_EXTRACTED_RECORDS": 10,
+    "CLOSE": "PASS",
+    "OUTPUT_LOSS_INJECTION": "PASS_APPLIED",
+    "RESTART": "PASS",
+    "STATE_RECOVERY": "PASS_GENERATION_1_TO_2",
+    "RECORD_PARITY": "PASS",
+    "ADAPTER_PARITY": "PASS",
+    "PREVIEW_PARITY": "PASS_10_10_10",
+    "FINAL_CLEAN_CLOSE": "PASS",
+    "RESIDUAL_LISTENER_COUNT": 0,
+    "A2_B1_CONSUMPTION": "HANDOFF_READY_NOT_CONSUMER_TERMINAL_CLAIM"
+  },
+  "electron_runtime": {
+    "executed": false,
+    "exit_code": 2,
+    "blocker": "ELECTRON_MODULE_NOT_INSTALLED_OR_DISCOVERABLE_USE_NODE_CHROMIUM_MODE",
+    "false_pass_count": 0
+  },
+  "required_terminal": "B6_SITE_ANALYZER_WAVE3_PACKAGE_RECOVERY_PASS_OR_PROVEN_EXTERNAL_BLOCKER",
+  "terminal_result": "B6_SITE_ANALYZER_WAVE3_PACKAGE_RECOVERY_PASS_WITH_PROVEN_ELECTRON_DEPENDENCY_BLOCKER",
+  "next_owners": ["A-2","B-1"],
+  "next_events": [
+    "A2_CONSUME_B6_WAVE3_PACKAGE_AND_RETRY_ELECTRON_INTEGRATED_FLOW",
+    "B1_CONSUME_B6_WAVE3_PACKAGE_AND_COMPLETE_RELEASE_CANDIDATE_RESTART_RESUME"
+  ],
+  "database_work": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}
