@@ -1,0 +1,17 @@
+{
+  "schema_version": "SUCCESSOR_ACTION_REPLAY_COMMAND_V1",
+  "operation": "REPLAY_FROM_CHECKPOINT",
+  "mission_id": "mission-fixture-001",
+  "session_id": "session-fixture-001",
+  "pointer_path": "LATEST_B3_ACTION_COMMAND_DURABLE_REPLAY_POINTER_V1.json",
+  "state_path": "generated/B3_DURABLE_ACTION_STATE_V2.json",
+  "resume_token": "130ebc95a9b2df6abc77937b54b1d98456a6c32c5de86833bb1a1aad55721ae0",
+  "resume_after_sequence_no": 3,
+  "resume_after_action_id": "act-be36eb048f6db3f37c9c",
+  "pending_action_ids": [
+    "act-dfdb8f3fab87369ba735",
+    "act-6a3fda333a06203664d7"
+  ],
+  "requires_chat_context": false,
+  "target_pc_execution_authorized": false
+}
