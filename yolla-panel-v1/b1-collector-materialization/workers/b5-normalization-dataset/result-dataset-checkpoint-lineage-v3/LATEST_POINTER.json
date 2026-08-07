@@ -1,0 +1,72 @@
+{
+  "schema_version": "LATEST_B5_RESULT_DATASET_CHECKPOINT_LINEAGE_POINTER_V1",
+  "directive_id": "AI001-TO-B5-RESULT-DATASET-CHECKPOINT-LINEAGE-V3-20260807-001",
+  "directive_comment": 5217769444,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "worker": "B-5",
+  "worker_pr": 41,
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "baseline_head": "d816119d95989b0f1aa656b31aceedc009635509",
+  "content_head_before_pointer": "e63b20e07741618172cc63fd0e3048722c14d239",
+  "parent": {
+    "terminal": "B5_DATASET_CHECKPOINT_RESUME_EXPORT_READY",
+    "pointer_blob": "ef0f950d726061bec435dcea83b17c85f70311aa"
+  },
+  "required_outputs": {
+    "RESULT_DATASET_LINEAGE_CHECKPOINT_V1": {
+      "path": "RESULT_DATASET_LINEAGE_CHECKPOINT_V1.json",
+      "blob": "773f7d8733c11baac9d6f2851d62880433da2087"
+    },
+    "COMPLETE_RESULT_STATE_V1": {
+      "path": "COMPLETE_RESULT_STATE_V1.json",
+      "blob": "d59cf1e1df143e6c710994a40b53542516d79964"
+    },
+    "RESULT_DATASET_POINTER_V1": {
+      "path": "RESULT_DATASET_POINTER_V1.json",
+      "blob": "b6087656d7e8c452322bbbc5eb643538a428bf25"
+    },
+    "RESULT_DATASET_EXPORT_RECEIPT_V1": {
+      "path": "RESULT_DATASET_EXPORT_RECEIPT_V1.json",
+      "blob": "0b86e613b153b9d5ca6320a04b05afc2e293089d"
+    }
+  },
+  "implementation": {
+    "engine_blob": "36dc045879e70540b0a5e3c2b18450e7585bbcb6",
+    "cli_blob": "d9c2f42ce6e6b89a2b0cb2b680f698a29abb2377",
+    "tests_blob": "923cc96ac91b89566b6dacbe24f8b74841b40984"
+  },
+  "evidence": {
+    "smoke_receipt_blob": "321ae0e86a92e45fe856854264d1a6dd357e229a",
+    "complete_before_result_blob": "117c8fe4d3fd3dd6842cf257e17bfa64393b68c6",
+    "result_arrival_blob": "a0781fd1586fc3e90ec38e09b897ced9ba70e2fe",
+    "restart_resume_blob": "2634a2f5c49b6d13ebed6f23820a3d46853697a3",
+    "test_report_blob": "e74a92d573e06dc1047848af020e0ea71501fed7",
+    "final_report_blob": "c35493b9e391080092f37cd6fab1aa74dd01ec71"
+  },
+  "validation": {
+    "compile": "PASS_3_OF_3",
+    "contract_required_const_enum": "PASS_4_OF_4",
+    "unit_tests": "PASS_35_OF_35",
+    "fixture_smokes": "PASS_3_OF_3",
+    "state_transition": "PASS_COMPLETE_RESULT_PENDING_TO_RESULT_AVAILABLE",
+    "checkpoint_seq": "PASS_1_2_3_4_MONOTONIC",
+    "contextless_lineage_recovery": "PASS",
+    "partial_complete_export_lineage_parity": "PASS",
+    "duplicate_materialization_count": 0,
+    "previous_checkpoint_overwrite_count": 0,
+    "existing_record_rewrite_count": 0,
+    "source_field_loss_count": 0
+  },
+  "status": "RESULT_DATASET_CHECKPOINT_LINEAGE_IMPLEMENTED_AND_SMOKE_TESTED",
+  "terminal": "B5_RESULT_DATASET_CHECKPOINT_LINEAGE_READY",
+  "next_event": "B1_B2_B6_CONSUME_RESULT_DATASET_POINTER_V1",
+  "target_pc_execution": false,
+  "tunnel_change": false,
+  "c_semantic_transformation": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "updated_at_kst": "2026-08-07T22:50:00+09:00"
+}
