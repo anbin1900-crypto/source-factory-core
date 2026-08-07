@@ -1,0 +1,62 @@
+{
+  "schema_version": "A5_REAL_SITE_API_UI_DATA_FORM_BINDING_VALIDATION_RECEIPT_V1",
+  "directive_id": "A0-TO-A5-REAL-SITE-API-UI-DATA-FORM-BINDING-V7-20260808-001",
+  "directive_comment_id": 5220793881,
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "worker": "A-5",
+  "validated_remote_head_before_receipt": "dd591fc0d6445d25967b36b18f5bc4f8aaa8855a",
+  "implementation": {
+    "entrypoint_commit": "4a3aaa914ccbbb8258a1ba8bb33242fa925bc325",
+    "entrypoint_blob": "ae1c7e3bddd333f94990584bda4dd913d465c873",
+    "test_commit": "f167be4fe4590a06b1448f8a587071b6be8f2f26",
+    "test_blob": "aa1fd537dfb434124f605728d78bfaf3bb0569ee",
+    "remote_source_readback": "PASS",
+    "remote_test_readback": "PASS"
+  },
+  "validation": {
+    "node_syntax": "PASS_2_OF_2",
+    "fixture_replay_count": 2,
+    "assertions": "PASS_24_OF_24",
+    "live_binding_digest_run1": "56d8fc5e6a00aa567d9d07a2cd68f59b939ca80194f09882a45391fd60150523",
+    "live_binding_digest_run2": "56d8fc5e6a00aa567d9d07a2cd68f59b939ca80194f09882a45391fd60150523",
+    "deterministic_digest": "PASS",
+    "lane_partition": "PASS_PUBLIC_READ_WRITE_MY_LISTING_EDIT",
+    "exact_evidence_pointer_preservation": "PASS",
+    "late_binding_waiting_input": "PASS_EDGE_ONLY",
+    "late_binding_fixture_wait_count": 6,
+    "unknown_business_rule_fail_closed": "PASS",
+    "raw_secret_reject": "PASS",
+    "raw_pii_reject": "PASS",
+    "raw_secret_value_count": 0,
+    "raw_pii_value_count": 0
+  },
+  "upstream_live_input_state": {
+    "a3_pr": 22,
+    "a3_observed_head": "1c17ca6cfb64ed0268a6ab81a08ac29881b4fa1b",
+    "cycle7_named_causal_artifact_found_at_execution": false,
+    "handling": "MISSING_CAUSAL_EDGE_ONLY_WAITING_INPUT;CONSUMER_TERMINAL_NOT_BLOCKED"
+  },
+  "attempt_log": [
+    {
+      "attempt": 1,
+      "result": "FAILED_PII_FALSE_POSITIVE_ON_GENERIC_APPLICATION_FIELD_NAME",
+      "repair": "REMOVED_GENERIC_NAME_KEY_FROM_PII_KEY_MATCH;RETAINED_EXPLICIT_PERSON_IDENTIFYING_KEYS"
+    },
+    {
+      "attempt": 2,
+      "result": "PASS_24_OF_24"
+    }
+  ],
+  "required_outputs": {
+    "REAL_SITE_API_UI_STATE_BINDING_V1": "PASS",
+    "REAL_SITE_DATA_ENTITY_BINDING_V1": "PASS",
+    "REAL_SITE_FORM_FIELD_BINDING_V1": "PASS",
+    "UNKNOWN_BUSINESS_RULE_INDEX_V1": "PASS",
+    "A5_TO_A6_LIVE_EXECUTION_HANDOFF_V1": "PASS",
+    "LATEST_POINTER": "PENDING_FINAL_POINTER_COMMIT"
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "PASS"
+}
