@@ -1,0 +1,16 @@
+{
+  "schema_version": "COMPOSITE_SELF_CHECK_CONTRACT_V3",
+  "checks": [
+    {"check_id":"NODE","required":true,"probe":"process.version"},
+    {"check_id":"NPM","required":true,"probe":"npm --version"},
+    {"check_id":"PLAYWRIGHT","required":true,"probe":"PATH or PLAYWRIGHT_EXECUTABLE reference; no install during self-check"},
+    {"check_id":"CHROME","required":true,"probe":"CHROME_EXECUTABLE or PATH candidates"},
+    {"check_id":"CDP_REACHABILITY_PARAMETER","required":true,"probe":"runtime parameter; fixture uses local mock CDP only"},
+    {"check_id":"REQUIRED_PATHS","required":true,"probe":"parent bundles + manifests + runtime"},
+    {"check_id":"TOKEN_FILE_EXISTENCE_REFERENCE","required":true,"probe":"reference path existence only; raw token never read into receipt"},
+    {"check_id":"CYCLE3_POINTER_FRESHNESS","required_for_apply":true,"probe":"all four latest pointers + required terminals"}
+  ],
+  "network_install_allowed": false,
+  "raw_token_read_allowed": false,
+  "raw_secret_embed_allowed": false
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "COMPOSITE_ONE_COMMAND_WORKER_STATE_RECOVERY_BUNDLE_MANIFEST_V3",
+  "directive_id": "AI001-TO-B6-COMPOSITE-ONE-COMMAND-WORKER-STATE-RECOVERY-BUNDLE-V3-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "parent_bundles": [
+    {"file":"parents/B6_ONE_COMMAND_BOOTSTRAP_RECOVERY_PREBUILD_V1.zip","sha256":"336a14fb6d366406597281b6262c4eaadddee4e948fa95e849fa9334fcdf8a6f","size_bytes":55985,"immutable":true},
+    {"file":"parents/B6_SUCCESSOR_ONE_COMMAND_RECOVERY_BUNDLE_V1.zip","sha256":"57c81a001ecd95341bbe92250b7e633e01a6cb3877cd39599699dfc012ba95f7","size_bytes":13609,"immutable":true}
+  ],
+  "cycle3_sources": ["A2_COMPOSITE_PIPELINE","A3_COMPLETION_OBSERVER","A7_WORKER_STATE_RECOVERY","B1_EVENT_AGGREGATOR"],
+  "required_contracts": ["CYCLE3_EXACT_POINTER_CONSUME_MANIFEST_V1","ONE_COMMAND_COMPOSITE_BOOTSTRAP_PLAN_V3","COMPOSITE_SELF_CHECK_CONTRACT_V3","WORKER_OBSERVER_AGGREGATOR_RECOVERY_SEQUENCE_V3","NON_DESTRUCTIVE_ROLLBACK_REMOVE_PLAN_V3","SUCCESSOR_COMPOSITE_RESULT_ENVELOPE_V1"],
+  "one_command_entrypoints": ["RUN_COMPOSITE_DRY_RUN.cmd","RUN_COMPOSITE_DRY_RUN.ps1","node runtime/COMPOSITE_BUNDLE_RUNNER_V3.cjs dry-run"],
+  "apply_gate": "ALL_CYCLE3_LATEST_POINTERS_RESOLVED_AND_TARGET_PC_AUTHORIZED",
+  "boundaries": {"target_pc_execution":false,"tunnel_change":false,"server_mutation":false,"raw_secret_embed":false,"new_browser_engine":false,"production":false,"ready":false,"merge":false}
+}
