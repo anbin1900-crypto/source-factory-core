@@ -1,0 +1,71 @@
+{
+  "schema_version": "B2_CONTEXT_INDEPENDENT_UI_VIEWMODEL_BINDING_FINAL_REPORT_V1",
+  "directive_id": "AI001-TO-B2-CONTEXT-INDEPENDENT-UI-VIEWMODEL-BINDING-V2-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "worker": "B-2",
+  "worker_pr": 38,
+  "role": "B-2_VISUAL_INSPECTOR_WORKFLOW_TRACE_UI_OWNER",
+  "baseline_head": "27e1fbd4e37f0a8fdffbda468a1e42c69e0bab7b",
+  "completed_at_kst": "2026-08-07T22:12:00+09:00",
+  "terminal": "B2_CONTEXT_INDEPENDENT_UI_VIEWMODEL_BINDING_READY",
+  "status": "PASS_CONTEXT_INDEPENDENT_RECEIPT_ONLY_VIEWMODEL_REBUILD",
+  "required_outputs": {
+    "SITE_ANALYZER_UI_STATE_V1": {"path":"SITE_ANALYZER_UI_STATE_V1.json","blob":"910561775b90df4dc684cf3ad7237beaa845bee1"},
+    "SITE_ANALYZER_UI_EVENT_V1": {"path":"SITE_ANALYZER_UI_EVENT_V1.json","blob":"e192a1fccd8f1fa330c91d1738b65a3b8ddea794"},
+    "CONTEXT_INDEPENDENT_UI_BINDING_V1": {"path":"CONTEXT_INDEPENDENT_UI_BINDING_V1.json","blob":"2caa9fcc9cc962ef3c31d834adb912370b5ef986"},
+    "SUCCESSOR_UI_STATE_REBUILD_COMMAND_V1": {"path":"SUCCESSOR_UI_STATE_REBUILD_COMMAND_V1.json","blob":"afdb67386cc460bc6306e99f7513bdc399f03117"}
+  },
+  "runtime_support": {
+    "rebuild_tool_blob": "2a0e3bd03611bd604aa7eec3a3f8132ae2e80c45",
+    "smoke_tool_blob": "c7beec237ce83af405c72830dd6df2cef9a7b519",
+    "fixture_blob": "05221b1d8eec5e2e8c0d8353c181f5a9fd6e5e05"
+  },
+  "latest_source_pointer_bindings": {
+    "A-3": "c5201b3c1620f30eb407ec09f8aa4ba8bdf0dd7e",
+    "A-4": "da55a8faf01789cc23771592bf9b61e642decabd",
+    "A-5": "8f7b0b385fb41619dd47284e25a9be998efde4e5",
+    "A-6": "16f14e5ad10eb108267303210182670ab529a38b",
+    "B-1": "03722c45f68c28bfe7cc3bbaa2dd05310f94dc85"
+  },
+  "viewmodel_closure": {
+    "common_correlation_keys": ["session_id","page_id","action_id","command_id"],
+    "workflow": true,
+    "live_session_identity": true,
+    "smart_inspector": true,
+    "data_preview": true,
+    "trace_error_drawer": true,
+    "late_binding_A3_A4_A5_A6_B1": true,
+    "latest_pointer_only_restore": true,
+    "chat_context_required": false
+  },
+  "truth_policy": {
+    "missing_receipt": "UNBOUND",
+    "running_without_receipt": false,
+    "blocked_without_receipt": false,
+    "complete_without_receipt": false,
+    "error_without_receipt": false,
+    "blocker_preserved_exactly": true
+  },
+  "validation": {
+    "test_result_commit": "308293cfc25861c28913d0d9ea5b36d312dd7370",
+    "test_result_blob": "625d8474b422270afd7a84237e6331ff5059bf7a",
+    "remote_readback": "PASS_7_OF_7",
+    "fixture_viewmodel_rebuild_smoke": "PASS",
+    "assertions": "PASS_12_OF_12",
+    "missing_receipt_no_inference": "PASS",
+    "classification_repair_rerun": "PASS"
+  },
+  "boundary": {
+    "tunnel_created": false,
+    "pc_agent_direct": false,
+    "target_pc_execution": false,
+    "new_browser_engine": false,
+    "actual_browser_rendering": false,
+    "audit_only": false
+  },
+  "next_event": "SUCCESSOR_OR_PANEL_CONSUMES_LATEST_POINTER_AND_REAL_RECEIPTS_TO_REBUILD_UI_STATE",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
