@@ -1,0 +1,7 @@
+{
+  "schema_version": "COMPOSITE_EVIDENCE_LINEAGE_INDEX_V1",
+  "modes": ["DATA", "PRODUCT", "WRITE", "MY_LISTING", "EDIT"],
+  "entity_types": ["NODE", "EDGE"],
+  "required": ["composite_id", "composite_entity_type", "mode", "producer_id", "producer_assertion", "semantic_evidence_pointers", "resolved_raw_evidence_pointers", "resolved_derived_evidence_pointers", "created_at", "assertion_sha256", "identity_sha256", "composite_pointer", "previous_composite_pointer"],
+  "invariants": ["APPEND_ONLY_NO_OVERWRITE", "PRODUCER_ASSERTION_PRESERVED_NO_B4_REINTERPRETATION", "SEMANTIC_POINTERS_REFERENCE_CYCLE5_INDEX", "RAW_POINTERS_RESOLVE_THROUGH_SEMANTIC_EVIDENCE_TO_CYCLE4_IMMUTABLE_EVIDENCE", "DERIVED_POINTERS_RESOLVE_THROUGH_SEMANTIC_EVIDENCE", "ALL_FIVE_MODES_EXPLICIT", "DUPLICATE_IDENTICAL_ASSERTION_SUPPRESSED", "RAW_ARTIFACT_MATERIALIZATION_COUNT_ZERO", "REVERSE_TRACE_COMPOSITE_TO_SEMANTIC_TO_RAW_OR_DERIVED_REQUIRED"]
+}
