@@ -1,0 +1,67 @@
+{
+  "schema_version": "D6_CYCLE2_PARTIAL_LIVE_INTEGRATION_RESULT_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE2-20260808-001",
+  "directive_comment_id": 5219662446,
+  "directive_id": "C2-W6-D2-D4-D5-PARTIAL-LIVE-INTEGRATION-V1-20260808-001",
+  "result_generated_at": "2026-08-07T16:40:00Z",
+  "exact_context_bound": false,
+  "observer_live_bound": false,
+  "d5_cycle2_live_ingestion_bound": false,
+  "dispatch_present": false,
+  "panel_field_count": 11,
+  "panel_fields_backed_by_latest_real_receipts": true,
+  "cycle2_receipt_count": 0,
+  "stale_but_latest_receipt_count": 3,
+  "latest_cycle2_receipts": {
+    "d2": "DIRECTIVE_ONLY_NO_RESULT",
+    "d4": "DIRECTIVE_ONLY_NO_RESULT",
+    "d5": "DIRECTIVE_ONLY_NO_RESULT"
+  },
+  "actual_latest_receipt_comments": {
+    "d2": 5218844105,
+    "d4": 5218697598,
+    "d5": 5218604257
+  },
+  "panel": {
+    "current_worker": "D-6_AUTOMATION_CONTROL_PANEL_AND_E2E_OWNER",
+    "context_name": null,
+    "context_id": null,
+    "current_command": "C2-W6-D2-D4-D5-PARTIAL-LIVE-INTEGRATION-V1-20260808-001",
+    "status": "BLOCKED_EXTERNAL",
+    "started_at": "2026-08-07T14:56:09.000Z",
+    "elapsed_ms": 1340000,
+    "recent_event": "D-2:ACTIVE_CONTEXT_IDENTIFICATION_LIVE_BLOCKED",
+    "error": "PC_EXECUTOR_V2_COMMAND_CLAIM_LOOP_STALLED|TARGET_PC_BROWSER_AGENT_ROUTE_UNAVAILABLE|D5_CYCLE2_LIVE_INGESTION_NOT_AVAILABLE|DISPATCH_MISSING",
+    "retry_count": 0,
+    "result_return_status": "PENDING"
+  },
+  "blockers": [
+    "PC_EXECUTOR_V2_COMMAND_CLAIM_LOOP_STALLED",
+    "TARGET_PC_BROWSER_AGENT_ROUTE_UNAVAILABLE",
+    "D5_CYCLE2_LIVE_INGESTION_NOT_AVAILABLE",
+    "DISPATCH_MISSING"
+  ],
+  "primary_external_blocker": "PC_EXECUTOR_V2_COMMAND_CLAIM_LOOP_STALLED",
+  "consolidated_target_pc_effects": [
+    "D2_CONTEXT_IDENTITY_NOT_AVAILABLE",
+    "D4_TARGET_PC_OBSERVER_LIVE_NOT_AVAILABLE"
+  ],
+  "remaining_e2e_gaps": [
+    "TARGET_PC_EXECUTION_BOUNDARY",
+    "D3_DISPATCH"
+  ],
+  "remaining_gap_count": 2,
+  "d5_cycle2_late_bind_pending": true,
+  "synthetic_completed_count": 0,
+  "new_panel_count": 0,
+  "new_executor_count": 0,
+  "new_tunnel_count": 0,
+  "d3_wait_count": 0,
+  "adapter_test": "PASS_12_ASSERTIONS",
+  "acceptance": "BLOCKED_EXTERNAL_CONFIRMED",
+  "expected_terminal": "D2_D4_D5_PARTIAL_LIVE_INTEGRATION_PASS_OR_BLOCKED_EXTERNAL_CONFIRMED",
+  "actual_terminal": "D2_D4_D5_PARTIAL_LIVE_INTEGRATION_BLOCKED_EXTERNAL_CONFIRMED",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
