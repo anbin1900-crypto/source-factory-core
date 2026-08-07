@@ -1,0 +1,15 @@
+{
+  "schema_version":"LATEST_A7_WORKER_STATE_RECOVERY_V3_POINTER_V1",
+  "directive_id":"AI001-TO-A7-WORKER-STATE-AWARE-CONTEXT-RECOVERY-V3-20260807-001",
+  "directive_comment_id":5217753811,
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "status":"PASS",
+  "terminal":"A7_WORKER_STATE_AWARE_CONTEXT_RECOVERY_READY",
+  "source_commit":"cbe6058705e8d739da17963d0b0db0927c9cb9ed",
+  "mission_pointer":{"path":"LATEST_AI001_MISSION_POINTER_V1.json","blob":"fa1a086528f7e969f7fff9169216f2fbe7a14870"},
+  "validation_receipt":{"path":"reports/A7_WORKER_STATE_RECOVERY_V3_VALIDATION_RECEIPT_V1.json","blob":"e5a3cbe852a2d95630a0b825760b1969b0feb3de"},
+  "final_report":{"path":"reports/A7_WORKER_STATE_RECOVERY_V3_FINAL_REPORT_V1.json","commit":"686001c46a3e02e7654f29b572df5d40379d8596","blob":"222619819613e2cebd638b456fe1b29c582474bc"},
+  "single_recovery_command":"node RECOVER_WORK_BOOTSTRAP_V1.cjs --pointer ./LATEST_AI001_MISSION_POINTER_V1.json",
+  "worker_state_decisions":{"GENERATING":"SAFE_TO_RESUME_NO_REISSUE","COMPLETE_UNREVIEWED":"REVIEW_REQUIRED_NOT_TASK_PASS","BLOCKED":"BLOCKED","UNKNOWN":"REFRESH_REQUIRED_NO_REISSUE"},
+  "production":false,"ready":false,"merge":false
+}
