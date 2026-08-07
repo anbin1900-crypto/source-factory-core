@@ -1,0 +1,7 @@
+{
+  "schema_version": "COMMAND_ARTIFACT_INDEX_V1",
+  "lookup_key": "command_id",
+  "projection_fields": ["artifact_id","attempt_no","step_id","sha256","previous_artifact_pointer","source_pointer","b5_dataset_checkpoint_pointer"],
+  "purpose": "Locate the durable command artifact chain without scanning raw bytes.",
+  "raw_secret_values": false
+}
