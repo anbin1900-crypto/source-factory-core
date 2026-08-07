@@ -1,0 +1,17 @@
+{
+  "baseline_head":"05993d7ea722a2110e7c40a5e71df568b8c087bc",
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "direct_repairs":[
+    {"failure":"UNITTEST_FILE_PATH_USED_AS_MODULE_NAME","repair":"SWITCH_TO_UNITTEST_DISCOVER","rerun":"PASS_30_OF_30"},
+    {"finding":"CONTEXTLESS_RESUME_REQUIRED_IDENTITY_REENTRY","repair":"ADD_CheckpointDataset.open_existing_AND_CLI_AUTOMATIC_IDENTITY_REHYDRATION","rerun":"PASS_33_OF_33"}
+  ],
+  "directive_comment":5217338181,
+  "directive_id":"AI001-TO-B5-DATASET-CHECKPOINT-RESUME-EXPORT-V2-20260807-001",
+  "github_actions_ci_pass_claimed":false,
+  "parent_pointer_blob":"4796c38d5d645e8d1a43b85c52a193164c46aedd",
+  "parent_result":"B5_DATASET_PREVIEW_CHECKPOINT_EXPORT_PREBUILD_READY",
+  "result":"PASS",
+  "schema_version":"B5_DATASET_CHECKPOINT_RESUME_EXPORT_TEST_REPORT_V1",
+  "smoke_sha256":{"checkpoint":"3433e90ad2d3d80be5fe58ae2f0a0cda1904e1ce738435915f040b6ca8e3e675","csv":"288446cfe0ebfced58cc059a817538250a7f06285bf65bde588384876b2fafd3","dataset":"b2a101cadd3392c4bb8c5f2dbf591307577229f4f35a8b699792e1a018e1a26c","json":"d2d2c1be87d8a1aad6af188e92aed4cda8128be51f368afa3291909ee71f0dd9","xlsx":"669994df83a12ba4ccbbb444cc3714073fd814ebd7bfcf40c153167d7c1dc707"},
+  "validation":{"actual_site_collection":false,"checkpoint_seq":"PASS_1_2_3_MONOTONIC","compile":"PASS_3_OF_3","contextless_identity_rehydration":"PASS_LATEST_CHECKPOINT","dataset_checkpoint_resume_export_a7_checkpoint_seq_parity":"PASS_3","dataset_checkpoint_resume_export_a7_dataset_sha_parity":"PASS","dataset_checkpoint_resume_export_a7_record_count_parity":"PASS_1205","existing_record_rewrite_count":0,"export_roundtrip_field_parity":"PASS_JSON_CSV_XLSX","export_roundtrip_record_count_parity":"PASS_1205_1205_1205","final_record_count":1205,"first_data_checkpoint_record_count":600,"fixture_checkpoint_resume_export_smoke":"PASS_1","fixture_record_count":1205,"preview_latest_checkpoint_reconstruction":"PASS","previous_checkpoint_overwrite_count":0,"schema_validation":"PASS_5_OF_5","source_field_loss_count":0,"target_pc_execution":false,"unit_tests":"PASS_33_OF_33","virtual_preview_materialized_rows":44}
+}
