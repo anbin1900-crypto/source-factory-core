@@ -1,0 +1,42 @@
+{
+  "schema_version": "RECIPE_DECISION_INPUT_V1",
+  "consumer": "A-6",
+  "producer": "A-5",
+  "required_sections": [
+    "provenance",
+    "endpoint_binding",
+    "request_binding",
+    "response_binding",
+    "schema_binding",
+    "session_binding",
+    "pagination_binding",
+    "mode_decision",
+    "a6_direct_consume",
+    "decision_digest"
+  ],
+  "provenance_contract": {
+    "command_id": "STRING_OR_UNKNOWN",
+    "page_id": "STRING_OR_UNKNOWN",
+    "action_id": "STRING_OR_STRING_ARRAY_OR_UNKNOWN",
+    "a3_run_id": "STRING_OR_UNKNOWN",
+    "a4_request_id": "STRING_OR_UNKNOWN",
+    "evidence_pointer": "EXACT_SOURCE_POINTERS"
+  },
+  "authority_policy": {
+    "observed": "May be consumed as evidence-backed input",
+    "unknown": "Must remain UNKNOWN and must not be promoted to authority",
+    "insufficient_evidence": "A-6 compile_allowed=false",
+    "secret_values": "PROHIBITED; credential references or redacted semantics only"
+  },
+  "mode_contract": {
+    "scores": ["DOM", "API", "HYBRID"],
+    "recommended_modes": ["DOM", "API", "HYBRID"],
+    "response_body_missing": "INSUFFICIENT_EVIDENCE_OR_CONFIDENCE_DEGRADED; API/HYBRID must not be promoted without body evidence"
+  },
+  "digest": {
+    "algorithm": "SHA-256",
+    "canonicalization": "recursive key sort before JSON serialization",
+    "deterministic_fixture_replay_required": 2
+  },
+  "raw_secret_value_count": 0
+}
