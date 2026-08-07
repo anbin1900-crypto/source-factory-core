@@ -1,0 +1,77 @@
+{
+  "schema_version": "D3_EXISTING_ASSET_REUSE_AND_BINDING_CONTRACT_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001",
+  "role": "D-3_MESSAGE_DISPATCH_AND_RESULT_RETURN_OWNER",
+  "new_system_build": false,
+  "existing_asset_reuse_required": true,
+  "one_owner_end_to_end": true,
+  "reused_assets": {
+    "stage4_handler": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 2,
+      "head": "15fcc6e252b064a22fb5b5a9288810093dcec075",
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "blob": "236d0b9134faaf9e484007e8ce2a4c546e623cd1",
+      "binding_points": ["handleStage4DispatchNextPrompt", "handleStage4RunCheck", "handleStage4AppendStationRecords"]
+    },
+    "sequential_prompt_sender": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 2,
+      "head": "15fcc6e252b064a22fb5b5a9288810093dcec075",
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/src/shared/stage4/sequentialPromptSender.js",
+      "blob": "4001772fa2b2475171cd8595d5294cbcebe8cfde"
+    },
+    "pc_agent_stage4_adapter": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 2,
+      "head": "15fcc6e252b064a22fb5b5a9288810093dcec075",
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/integration/pc_agent_adapter_support_v1/SOURCE_FACTORY_PC_AGENT_ADAPTER_PACKAGE.js",
+      "blob": "65faf83f4560c8074b5e3b51f02c5b5afc1e04d1"
+    },
+    "worker_window_dispatch": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 73,
+      "head": "e1d0353c3f993793787cb228efc3abef69957ad4",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/existing-runtime-c-mode-button-v1/c_mode_group_button_patch.cjs",
+      "blob": "378d03e49a96fe69985ec8323408de40a123c4f6",
+      "binding_signature": "sendToWorker(groupId,workerId,message,metadata)"
+    },
+    "context_loop_state_machine": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 80,
+      "head": "c90df307e7b829603a2b2aefb8a2813b2c568550",
+      "path": "yolla-panel-v1/d1-context-aware-message-loop/d6-control-panel-e2e/cycle1/context_aware_message_loop.cjs",
+      "blob": "372c05d4adbde2800074a10f6cf6024acd235e6f"
+    },
+    "pc_operation_command_bus": {
+      "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "branch": "command/d-group-domain-knowledge-db-foundation-v1",
+      "schema": "YOLLA_PC_OPERATION_COMMAND_V2",
+      "executor_version": "2.0.2",
+      "operation": "RUN_APPROVED_SCRIPT",
+      "new_executor": false
+    }
+  },
+  "d2_live_context_receipt": {
+    "source_factory_pr": 81,
+    "result_commit": "1c6d79c492ff78cce4b0074bf7f8958d60f4edea",
+    "result_comment_id": 5219897042,
+    "receipt_repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "receipt_path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/PC_OPERATION_COMMAND_BUS_V2/RECEIPTS/D2C2-RUN-UIA-CONTEXT-PROBE-V2-AFTER-MARKER-20260808-020300-001.json",
+    "receipt_blob": "e4b12628631f89b13bf0e0d05486e99d30333290",
+    "context_id": "6a72e288-7f24-83ee-b357-3e327cf6d877",
+    "page_id": "UIA-TAB-42.198100.4.0.0.5287",
+    "binding_state": "LIVE_EXACT_ROLE_AND_CYCLE_MARKER_BOUND_UIA"
+  },
+  "mandatory_guards": {
+    "message_sent_requires_visible_user_message_outside_composer": true,
+    "transport_acceptance_is_not_message_sent": true,
+    "reply_must_be_new_after_dispatch": true,
+    "reply_must_be_completed_and_stable": true,
+    "cross_context_or_cross_page": "FAIL_CLOSED",
+    "return_binding_fields": ["command_id", "context_id", "page_id", "assistant_reply_raw", "assistant_reply_sha256"]
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
