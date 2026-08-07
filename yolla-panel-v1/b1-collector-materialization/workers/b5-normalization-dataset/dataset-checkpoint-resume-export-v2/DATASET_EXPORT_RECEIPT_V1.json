@@ -1,0 +1,18 @@
+{
+  "checkpoint_path": "checkpoints/checkpoint-000003.json",
+  "checkpoint_seq": 3,
+  "checkpoint_sha256": "3433e90ad2d3d80be5fe58ae2f0a0cda1904e1ce738435915f040b6ca8e3e675",
+  "dataset_id": "b5-cycle2-smoke",
+  "dataset_sha256": "b2a101cadd3392c4bb8c5f2dbf591307577229f4f35a8b699792e1a018e1a26c",
+  "dataset_version": 3,
+  "field_order": ["group","id","name","value"],
+  "files": {
+    "csv": {"encoding":"UTF-8-BOM","line_ending":"CRLF","path":"exports/dataset.csv","sha256":"288446cfe0ebfced58cc059a817538250a7f06285bf65bde588384876b2fafd3"},
+    "json": {"encoding":"UTF-8","path":"exports/dataset.json","sha256":"d2d2c1be87d8a1aad6af188e92aed4cda8128be51f368afa3291909ee71f0dd9"},
+    "xlsx": {"encoding":"OPENXML","path":"exports/dataset.xlsx","sha256":"669994df83a12ba4ccbbb444cc3714073fd814ebd7bfcf40c153167d7c1dc707"}
+  },
+  "record_count": 1205,
+  "round_trip_field_parity": "PASS",
+  "round_trip_record_count_parity": "PASS",
+  "schema_version": "DATASET_EXPORT_RECEIPT_V1"
+}
