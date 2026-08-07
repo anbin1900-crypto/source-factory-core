@@ -1,0 +1,50 @@
+{
+  "action_command_index": {
+    "act-22943ec2b60cb7d983d8": "cmd-scroll",
+    "act-695bdec9cbdec7f57e51": "cmd-click-result",
+    "act-7dfd7d402a04d20a0e8c": "cmd-open-search",
+    "act-917135d5dbd97bc8a0fe": "cmd-query",
+    "act-d846dea7b65d755e3d10": "cmd-wait-detail"
+  },
+  "actions": [
+    {"action_id":"act-7dfd7d402a04d20a0e8c","action_type":"navigation","command_id":"cmd-open-search","fingerprint":"f7c2d7596616c7a9ad74495f5b05e0fe57e8f02261df75485c8e70f53899cc2c","page_id":"page-search","payload":{"url":"https://fixture.invalid/search"},"sequence":1,"status":"COMPLETED"},
+    {"action_id":"act-917135d5dbd97bc8a0fe","action_type":"input","command_id":"cmd-query","fingerprint":"0ab9810ad7b2bb0574f9c85d5ca6461850f856597b6c97f3e090cf707d1df183","page_id":"page-search","payload":{"locator":"[data-testid=keyword]","value":"apartment"},"sequence":2,"status":"COMPLETED"},
+    {"action_id":"act-22943ec2b60cb7d983d8","action_type":"scroll","command_id":"cmd-scroll","fingerprint":"69fe37f3538b69d4ed8cb9ec1fdf6565e78bc09b965dd35af271ce622d644d9b","page_id":"page-search","payload":{"x":0,"y":600},"sequence":3,"status":"COMPLETED"},
+    {"action_id":"act-695bdec9cbdec7f57e51","action_type":"click","command_id":"cmd-click-result","fingerprint":"02700f4cf04b6188b78bf18b266a26efec1b1b34dd129b9f7b26a90572a3ef41","page_id":"page-search","payload":{"locator":"[data-testid=result-1]"},"sequence":4,"status":"COMPLETED"},
+    {"action_id":"act-d846dea7b65d755e3d10","action_type":"wait","command_id":"cmd-wait-detail","fingerprint":"75d544b9c9b48b6b51e0ab7fd830e0c6c4d1d74863d336c893c3fd36ab7f148d","page_id":"page-detail","payload":{"condition":"domcontentloaded","timeout_ms":3000},"sequence":5,"status":"COMPLETED"}
+  ],
+  "cdp_evidence_index": {
+    "act-22943ec2b60cb7d983d8": [],
+    "act-695bdec9cbdec7f57e51": [{"cdp_method":"Runtime.consoleAPICalled","evidence_id":"cdp-003","summary":"click marker"}],
+    "act-7dfd7d402a04d20a0e8c": [{"cdp_method":"Page.frameNavigated","evidence_id":"cdp-001","summary":"search page"}],
+    "act-917135d5dbd97bc8a0fe": [{"cdp_method":"DOM.attributeModified","evidence_id":"cdp-002","summary":"input correlation"}],
+    "act-d846dea7b65d755e3d10": [{"cdp_method":"Page.lifecycleEvent","evidence_id":"cdp-004","summary":"detail loaded"}]
+  },
+  "command_action_index": {
+    "cmd-click-result": ["act-695bdec9cbdec7f57e51"],
+    "cmd-open-search": ["act-7dfd7d402a04d20a0e8c"],
+    "cmd-query": ["act-917135d5dbd97bc8a0fe"],
+    "cmd-scroll": ["act-22943ec2b60cb7d983d8"],
+    "cmd-wait-detail": ["act-d846dea7b65d755e3d10"]
+  },
+  "fingerprints": {
+    "02700f4cf04b6188b78bf18b266a26efec1b1b34dd129b9f7b26a90572a3ef41": "act-695bdec9cbdec7f57e51",
+    "0ab9810ad7b2bb0574f9c85d5ca6461850f856597b6c97f3e090cf707d1df183": "act-917135d5dbd97bc8a0fe",
+    "69fe37f3538b69d4ed8cb9ec1fdf6565e78bc09b965dd35af271ce622d644d9b": "act-22943ec2b60cb7d983d8",
+    "75d544b9c9b48b6b51e0ab7fd830e0c6c4d1d74863d336c893c3fd36ab7f148d": "act-d846dea7b65d755e3d10",
+    "f7c2d7596616c7a9ad74495f5b05e0fe57e8f02261df75485c8e70f53899cc2c": "act-7dfd7d402a04d20a0e8c"
+  },
+  "last_completed_action_id": "act-d846dea7b65d755e3d10",
+  "next_sequence": 6,
+  "pending_action_ids": [],
+  "replay_events": [
+    {"action_id":"act-7dfd7d402a04d20a0e8c","action_type":"navigation","kind":"navigation","page_id":"page-search","payload":{"url":"https://fixture.invalid/search"},"replay_event_id":"rr-0001","visible":true},
+    {"action_id":"act-917135d5dbd97bc8a0fe","action_type":"input","kind":"interaction","page_id":"page-search","payload":{"locator":"[data-testid=keyword]","value":"apartment"},"replay_event_id":"rr-0002","visible":true},
+    {"action_id":"act-22943ec2b60cb7d983d8","action_type":"scroll","kind":"viewport","page_id":"page-search","payload":{"x":0,"y":600},"replay_event_id":"rr-0003","visible":true},
+    {"action_id":"act-695bdec9cbdec7f57e51","action_type":"click","kind":"interaction","page_id":"page-search","payload":{"locator":"[data-testid=result-1]"},"replay_event_id":"rr-0004","visible":true},
+    {"action_id":"act-d846dea7b65d755e3d10","action_type":"wait","kind":"timing","page_id":"page-detail","payload":{"condition":"domcontentloaded","timeout_ms":3000},"replay_event_id":"rr-0005","visible":false}
+  ],
+  "resume_cursor": {"last_action_id":"act-d846dea7b65d755e3d10","last_completed_action_id":"act-d846dea7b65d755e3d10","last_sequence":5,"pending_action_ids":[],"state_digest":"55db5cfc60b50947e30e0ad5ded6bc70a77dacfb271af99f7686a66a0f855ae4"},
+  "schema_version": "B3_ACTION_RECORDER_SESSION_REPLAY_STATE_V1",
+  "session_id": "ai001-b3-smoke-session-001"
+}
