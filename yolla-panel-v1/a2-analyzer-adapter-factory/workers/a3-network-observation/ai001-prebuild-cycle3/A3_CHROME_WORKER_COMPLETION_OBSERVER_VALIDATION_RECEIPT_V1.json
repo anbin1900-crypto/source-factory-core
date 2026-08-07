@@ -1,0 +1,62 @@
+{
+  "schema_version": "A3_CHROME_WORKER_COMPLETION_OBSERVER_VALIDATION_RECEIPT_V1",
+  "directive_id": "AI001-TO-A3-CHROME-WORKER-COMPLETION-OBSERVER-V3-20260807-001",
+  "directive_comment": 5217742284,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "worker": "A-3",
+  "source_head": "fb7a448e6a16ae546d2b4038973b391d40b500c6",
+  "validated_remote_head_before_receipt": "b6013b02c3a2392cf23e9246926f84088e3d7fd3",
+  "node_version": "v22.16.0",
+  "validation": {
+    "node_syntax": "PASS_2_OF_2",
+    "fixture_browser_dom_smoke": "PASS_1_OF_1",
+    "worker_page_registry_pass": true,
+    "dispatched_to_generating_to_complete_pass": true,
+    "blocked_marker_pass": true,
+    "selector_miss_unknown_fail_safe_pass": true,
+    "likely_complete_not_promoted_pass": true,
+    "marker_parser_pass": true,
+    "mutation_observer_script_pass": true,
+    "cdp_runtime_adapter_pass": true,
+    "playwright_adapter_implemented": true,
+    "emitted_event_count": 8,
+    "explicit_complete_count": 1,
+    "blocked_count": 1,
+    "unknown_count": 2,
+    "technical_pass_claim_count": 0,
+    "raw_secret_storage_count": 0
+  },
+  "validated_source_sha256": {
+    "WORKER_COMPLETION_OBSERVER_V1.cjs": "9a06c7db9ffff3644da0f6a639816d845f0c2ac6e7c5c54268216d9c3a2b793c",
+    "mock_smoke_cycle3_v1.cjs": "41799c31665794cd39789c007c4a50580cc3fb72592f2097e2a1a081847eb2fc"
+  },
+  "remote_readback_blobs": {
+    "START": "22d94d1be755e3d78632fdc328b9363df53c9832",
+    "WORKER_COMPLETION_OBSERVER_V1": "65c055e91bde22fc2d1de06d652ce71654b36126",
+    "WORKER_BROWSER_STATE_EVENT_V1": "ebb33d2229f62591f0fc31757dfc2ab03727e649",
+    "WORKER_COMPLETION_OBSERVER_CONTRACT_V1": "7da03105f1c96ba4528bd5f3445cfb9bafc6cfe4",
+    "WORKER_PAGE_REGISTRY_FIXTURE_V1": "1d3bb76805679b19e232e1f47140375273c64e1f",
+    "MOCK_SMOKE_CYCLE3_V1": "c579b5986f768554a29bff67e48b3f3aea0c3b99"
+  },
+  "semantic_guardrails": {
+    "complete_requires_explicit_marker": true,
+    "blocked_requires_explicit_blocker_or_blocked_status": true,
+    "likely_complete_state": "UNKNOWN",
+    "likely_complete_is_technical_pass": false,
+    "selector_miss_state": "UNKNOWN",
+    "raw_assistant_message_persistence": false
+  },
+  "execution_counters": {
+    "target_pc_execution_count": 0,
+    "tunnel_change_count": 0,
+    "ocr_count": 0,
+    "screen_image_analysis_count": 0,
+    "new_browser_engine_count": 0,
+    "production_write_count": 0
+  },
+  "status": "PASS",
+  "terminal": "A3_CHROME_WORKER_COMPLETION_OBSERVER_READY",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
