@@ -1,0 +1,18 @@
+{
+  "schema_version":"LATEST_A7_MULTIMODE_RECOVERY_V4_POINTER_V1",
+  "directive_id":"A0-TO-A7-MULTIMODE-CONTEXT-RECOVERY-V4-20260808-001",
+  "directive_comment_id":5219095102,
+  "cycle_id":"A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "status":"PASS",
+  "terminal":"A7_MULTIMODE_CONTEXT_RECOVERY_READY",
+  "source_commit":"3c242ba93a8e606a806a1c6adf7d51aca1fe5381",
+  "mission_pointer":{"path":"LATEST_AI001_MISSION_POINTER_V1.json","blob":"6454d5b3384cd3bdcd6ebc3ca1782860d68a63e1"},
+  "validation_receipt":{"path":"reports/A7_MULTIMODE_RECOVERY_V4_VALIDATION_RECEIPT_V1.json","blob":"f187003320289c1021bbc85dee9a9586c7ddfe49"},
+  "final_report":{"path":"reports/A7_MULTIMODE_RECOVERY_V4_FINAL_REPORT_V1.json","commit":"ff212771a42f237d10a62645889f3653d2eb825a","blob":"70c7132893d1f970afb04f4197629704acda46e2"},
+  "modes":["DATA","PRODUCT","WRITE","MY_LISTING","EDIT"],
+  "completed_stage_reexecution_count":0,
+  "duplicate_execution_suppression":"PASS",
+  "evidence_state_preservation":"PASS_OBSERVED_INFERRED_UNKNOWN_CONFIDENCE_POINTER",
+  "single_recovery_command":"node RECOVER_WORK_BOOTSTRAP_V1.cjs --pointer ./LATEST_AI001_MISSION_POINTER_V1.json",
+  "production":false,"ready":false,"merge":false
+}
