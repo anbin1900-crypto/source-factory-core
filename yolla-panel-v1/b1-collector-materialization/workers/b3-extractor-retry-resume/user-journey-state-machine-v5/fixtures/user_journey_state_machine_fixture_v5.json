@@ -1,0 +1,23 @@
+{
+  "schema_version":"B3_USER_JOURNEY_STATE_MACHINE_FIXTURE_V5",
+  "mission_id":"mission-b3-v5-fixture",
+  "session_id":"session-b3-v5-fixture",
+  "actions":[
+    {"journey_id":"search-detail","feature":"Search","ui_state_before":"SEARCH_EMPTY","ui_state_after":"SEARCH_FILTERED","command_id":"cmd-search","page_id":"page-search","action_id":"act-search-filter-seoul","action_type":"input","timestamp":"2026-08-08T00:10:00+09:00","payload":{"filters":{"region":"seoul","type":"apartment"}},"page_role":"search","target_family":"filter-form","structure_signature":"search-filter-v1","status":"COMPLETED"},
+    {"journey_id":"search-detail","feature":"Search","ui_state_before":"SEARCH_FILTERED","ui_state_after":"LIST_VISIBLE","command_id":"cmd-search","page_id":"page-search","action_id":"act-search-submit","action_type":"click","timestamp":"2026-08-08T00:10:01+09:00","payload":{"target":"search-submit"},"page_role":"search","target_family":"submit","structure_signature":"search-submit-v1","status":"COMPLETED"},
+    {"journey_id":"search-detail","feature":"List","ui_state_before":"LIST_VISIBLE","ui_state_after":"DETAIL_VISIBLE","command_id":"cmd-detail","page_id":"page-list","action_id":"act-open-detail","action_type":"click","timestamp":"2026-08-08T00:10:02+09:00","payload":{"item_key":"fixture-001"},"page_role":"list","target_family":"result-item","structure_signature":"list-item-v1","status":"COMPLETED"},
+    {"journey_id":"create-edit","feature":"Create","ui_state_before":"CREATE_EMPTY","ui_state_after":"CREATE_FILLED","command_id":"cmd-create","page_id":"page-create","action_id":"act-create-fill","action_type":"input","timestamp":"2026-08-08T00:11:00+09:00","payload":{"fields":{"title":"fixture listing"}},"page_role":"create","target_family":"listing-form","structure_signature":"create-form-v1","status":"COMPLETED"},
+    {"journey_id":"create-edit","feature":"Create","ui_state_before":"CREATE_FILLED","ui_state_after":"MYLISTING_VISIBLE","command_id":"cmd-create","page_id":"page-create","action_id":"act-create-save","action_type":"click","timestamp":"2026-08-08T00:11:01+09:00","payload":{"target":"save-listing"},"page_role":"create","target_family":"submit","structure_signature":"create-submit-v1","status":"PENDING"},
+    {"journey_id":"create-edit","feature":"MyListing","ui_state_before":"MYLISTING_VISIBLE","ui_state_after":"EDIT_VISIBLE","command_id":"cmd-mylisting","page_id":"page-mylisting","action_id":"act-open-edit","action_type":"click","timestamp":"2026-08-08T00:11:02+09:00","payload":{"target":"edit-listing"},"page_role":"my-listing","target_family":"listing-item","structure_signature":"mylisting-item-v1","status":"PENDING"},
+    {"journey_id":"create-edit","feature":"Edit","ui_state_before":"EDIT_VISIBLE","ui_state_after":"EDIT_SAVED","command_id":"cmd-edit","page_id":"page-edit","action_id":"act-edit-save","action_type":"click","timestamp":"2026-08-08T00:11:03+09:00","payload":{"target":"save-edit"},"page_role":"edit","target_family":"submit","structure_signature":"edit-submit-v1","status":"PENDING"},
+    {"journey_id":"search-detail","feature":"Search","ui_state_before":"SEARCH_EMPTY","ui_state_after":"SEARCH_FILTERED","command_id":"cmd-search-2","page_id":"page-search","action_id":"act-search-filter-busan","action_type":"input","timestamp":"2026-08-08T00:12:00+09:00","payload":{"filters":{"region":"busan","type":"apartment"}},"page_role":"search","target_family":"filter-form","structure_signature":"search-filter-v1","status":"COMPLETED"}
+  ],
+  "worker_lifecycle":[
+    {"event_domain":"WORKER_LIFECYCLE","worker_id":"A-3","command_id":"cmd-search","state":"DISPATCHED"},
+    {"event_domain":"WORKER_LIFECYCLE","worker_id":"A-3","command_id":"cmd-search","state":"COMPLETE"}
+  ],
+  "unobserved_candidates":[
+    {"from_state":"DETAIL_VISIBLE","to_state":"CONTACT_VISIBLE","flow":"PUBLIC_READ"},
+    {"from_state":"EDIT_SAVED","to_state":"PUBLISHED","flow":"EDIT"}
+  ]
+}
