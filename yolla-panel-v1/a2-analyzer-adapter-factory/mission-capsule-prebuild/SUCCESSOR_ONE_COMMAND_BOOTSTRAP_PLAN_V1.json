@@ -1,0 +1,10 @@
+{
+  "schema_version":"SUCCESSOR_ONE_COMMAND_BOOTSTRAP_PLAN_V1",
+  "directive_id":"AI001-TO-A2-SITE-ANALYZER-MISSION-CAPSULE-AND-INTEGRATION-PREBUILD-V1-20260807-001",
+  "purpose":"Give the successor/PC Agent one declarative entrypoint to restore and boot the site analyzer from GitHub authority without chat context.",
+  "entry_contract":{"command_name":"YOLLA_PC_AGENT_EXECUTE_MISSION_CAPSULE","implementation_status":"PLAN_CONTRACT_ONLY_NOT_EXECUTED","arguments":{"repository":"anbin1900-crypto/source-factory-core","pointer_path":"yolla-panel-v1/a2-analyzer-adapter-factory/mission-capsule-prebuild/LATEST_A2_SITE_ANALYZER_MISSION_CAPSULE_POINTER.json","mode":"LOCAL_CHROME_CDP_PLAYWRIGHT"}},
+  "phases":["READ_POINTER_AND_VERIFY_EXACT_COMMIT","VERIFY_A3_A7_B1_B6_HEADS_AND_POINTERS","BOOT_OR_ATTACH_EXISTING_CHROME_CDP","CONNECT_PLAYWRIGHT_OVER_CDP","START_ANALYZER_CORE","BIND_A3_A6_PIPELINE_AND_A7_NONBLOCKING","BIND_B1_B6_PRODUCT_MODULES","START_LOCAL_SERVER_SESSION_REGISTRY","START_PANEL","OPTIONALLY_ATTACH_ELECTRON_SHELL","EMIT_BOOT_RECEIPT"],
+  "success_contract":["Chrome CDP attached","Playwright over CDP active","AnalyzerCore bridge active","shared session_id/page_id/action_id valid","panel bound to same session","A/B module references resolved"],
+  "rollback":["stop panel/server","detach Playwright/CDP","close only agent-owned Chrome instance","preserve GitHub artifacts"],
+  "prohibited":["tunnel create","successor direct call","target PC execution in this preparation task","new browser engine","Electron as mandatory browser authority","production","ready","merge"]
+}

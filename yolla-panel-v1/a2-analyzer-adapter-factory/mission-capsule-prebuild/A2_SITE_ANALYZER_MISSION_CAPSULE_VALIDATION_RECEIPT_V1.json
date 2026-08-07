@@ -1,0 +1,7 @@
+{
+  "schema_version":"A2_SITE_ANALYZER_MISSION_CAPSULE_VALIDATION_RECEIPT_V1",
+  "directive_id":"AI001-TO-A2-SITE-ANALYZER-MISSION-CAPSULE-AND-INTEGRATION-PREBUILD-V1-20260807-001",
+  "checks":{"json_source_parse":"PASS_3_OF_3","dependency_reference_check":"PASS","missing_references":[],"static_smoke_1":"PASS","graph_acyclic":true,"topological_node_count":20,"id_regex_samples":"PASS_3_OF_3","interface_method_count":7,"electron_optional_core_boot":true},
+  "execution":{"target_pc_execution":false,"tunnel_create":false,"successor_direct_call":false},
+  "terminal":"PASS"
+}

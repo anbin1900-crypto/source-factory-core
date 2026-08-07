@@ -1,0 +1,39 @@
+{
+  "schema_version": "SITE_ANALYZER_MISSION_CAPSULE_V1",
+  "directive_id": "AI001-TO-A2-SITE-ANALYZER-MISSION-CAPSULE-AND-INTEGRATION-PREBUILD-V1-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "role": "A-2_GENERIC_SITE_ANALYZER_INTEGRATION_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 18,
+  "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+  "architecture": "CHROME_CDP_PLAYWRIGHT_LOCAL_AGENT_SERVER_PANEL",
+  "communication_boundary": "AI001_TO_SUCCESSOR_ONE_TO_ONE_ONLY",
+  "mission": "Restore the existing site analyzer from GitHub authority without chat context.",
+  "recovery_rule": {"chat_context_required": false, "pointer_only_restore": true},
+  "runtime_separation": {"browser_runtime_authority":"LOCAL_CHROME_OR_CHROMIUM_CDP_SESSION","automation_transport":"PLAYWRIGHT_CONNECT_OVER_CDP","electron":"OPTIONAL_UI_SHELL_ONLY_NOT_BROWSER_RUNTIME_AUTHORITY","electron_required_for_core_boot":false,"new_browser_engine":false},
+  "id_contract": {"session_id":{"owner":"LOCAL_BROWSER_AGENT","format_regex":"^sa_[0-9]{8}T[0-9]{6}Z_[0-9a-f]{12}$"},"page_id":{"owner":"LOCAL_BROWSER_AGENT","format_regex":"^pg_[0-9a-f]{12}_[0-9]{4}$"},"action_id":{"owner":"SERVER_OR_PANEL_COMMAND_ORIGIN","format_regex":"^ac_[0-9a-f]{12}_[0-9]{6}$"}},
+  "local_browser_agent_analyzer_core_interface": {"transport":"LOCALHOST_ONLY_JSON_OR_LOCAL_IPC","methods":["browser.session.attach","browser.page.attach","browser.observe.start","browser.action.execute","browser.dom.snapshot","browser.response.body","browser.session.close"],"event_envelope":["event_type","session_id","page_id","sequence_no","observed_at_utc","payload_ref"],"security":["redact before persistence","no credential values","localhost default"]},
+  "component_contracts": {
+    "A-3":{"pr":22,"head":"3f317672d299ebafa46f268b8aad0760d819eccf","latest_pointer_blob":"4e5424a1a9a097b13f53e08fdb3f58b535445d8f","inputs":["Chrome CDP Network/Response/DOM event stream"],"outputs":["NETWORK_OBSERVATION_EVENT","TRAFFIC_CLASSIFICATION","RESPONSE_BODY_REF"]},
+    "A-4":{"pr":23,"head":"cd5c7a17f2f1aae02c2fbe4d988dea00e9763061","latest_pointer_blob":"7cb42160835fbc7a724a2bce40f65b03a0545018","inputs":["A-3 events","DOM snapshots"],"outputs":["REPEATING_REGION_CANDIDATES","FIELD_CANDIDATES","LOCATOR_SET","PAGINATION_CONTRACT"]},
+    "A-5":{"pr":24,"head":"ea5c6321204e9d2577924c14e01d658ebf46a443","latest_pointer_blob":"aa7c0c94cf4d6912dfb881ed63b0e10a392e92ca","inputs":["A-3 traffic","A-4 locator/pagination"],"outputs":["ENDPOINT_CATALOG","REQUEST_TEMPLATE","SESSION_HEADER_CONTRACT","RESPONSE_SCHEMA","MODE_DECISION"]},
+    "A-6":{"pr":25,"head":"6e8c05bfc78189d02b6c9ddf785d2c1b881f7265","latest_pointer_blob":"30a7854ca46e7e6f477b1c17c5762e4651d53a82","inputs":["A-4 locator/pagination","A-5 endpoint/schema"],"outputs":["VERIFIED_ADAPTER_PACKAGE_V1","ADAPTER_BUILD_RECEIPT","REPLAY_TEST_RECEIPT","TRACE"]},
+    "A-7":{"pr":26,"head":"7718170f6c616a99c99c4d366601a8dd6bb2b731","latest_pointer_blob":"86f44c705c16ef5c73d0080f2806a5fe674fb1a3","inputs":["A-3..A-6 heads/pointers/artifacts"],"outputs":["NON_BLOCKING_ACCEPTANCE_FINDINGS","HANDOFF_READINESS"]},
+    "B-1":{"pr":19,"head":"434f16240ace501d5884c0e7140ed8d38e3fde39","latest_pointer_blob":"ab5fad5a9d93292654058d0609d58cf2562eba89","inputs":["VERIFIED_ADAPTER_PACKAGE_V1"],"outputs":["MATERIALIZED_DATABASE_PACKAGE_V1","RAW_ARTIFACT_MANIFEST","SOURCE_RECORD_ENVELOPE","NORMALIZED_DATASET","EXTRACTION_RECEIPT"]},
+    "B-2":{"pr":38,"head":"e436e2de37b24327da03c31a2ff7c2d10c2635b5","latest_pointer_blob":"beb886edc38ce9e6d053c57c5ab6334d4345efb3","inputs":["AnalyzerCore state/progress","Chrome CDP DOM/Network"],"outputs":["VISUAL_INSPECTOR_STATE","ELEMENT_TO_FIELD_POINTER","LIVE_PREVIEW"]},
+    "B-3":{"pr":39,"head":"31162d67eb474e7958e9a5591d87dc26bf3c307a","latest_pointer_blob":"8b3862e75eb4a02b0a26cfe67e9fe7f9ef1c454f","inputs":["Chrome page actions","shared IDs"],"outputs":["ACTION_RECORDING","EXTRACTION_RECIPE","REPLAY_STEPS","RESUME_CURSOR"]},
+    "B-4":{"pr":40,"head":"908abcaf0a9281c636a3845c071192fd5b6b106b","latest_pointer_blob":"0a1c091d3dd7ea6a5d20fb6dfd3e335bf85ee595","inputs":["raw response refs","popup/frame/scroll/resume events"],"outputs":["SOURCE_RECORD_ENVELOPE_V1","RAW_ARTIFACT_METADATA","EDGE_REGRESSION_RECEIPT"]},
+    "B-5":{"pr":41,"head":"fe25d960020abc03b1ad528bcf0da0034c4788db","latest_pointer_blob":"121dea133bc054323e5689e9f0a3b6386c0f9bfb","inputs":["source records","extracted records","lineage"],"outputs":["NORMALIZED_DATASET_V1","EXTRACTION_RECEIPT_V1","SQLITE_FIXTURE_PACKAGE"]},
+    "B-6":{"pr":42,"head":"a120e0d66af2f7811275635f7d1525fc9e9fdc47","latest_pointer_blob":"dfdf618614327372926c19a6064b01ddf1b3301e","inputs":["B-2..B-5 terminals/pointers"],"outputs":["INDEPENDENT_EXTRACTION_ACCEPTANCE","C1_HANDOFF_CANDIDATE"]}
+  },
+  "external_asset_reuse_points": [
+    {"asset":"A2_WAVE3_INTEGRATED_E2E","pointer":"yolla-panel-v1/a2-analyzer-adapter-factory/site-analyzer-wave3/LATEST_A2_SITE_ANALYZER_WAVE3_POINTER.json","reuse":"10-record E2E and package structure","exclude":"Electron as mandatory dependency"},
+    {"asset":"A2_LOCAL_SERVER_HANDOFF","pointer":"yolla-panel-v1/a2-analyzer-adapter-factory/local-server/LATEST_A2_LOCAL_SERVER_HANDOFF_POINTER.json","reuse":"endpoint/health/capability/portability contracts"},
+    {"asset":"A6_VERIFIED_ADAPTER_PACKAGE","pointer_blob":"30a7854ca46e7e6f477b1c17c5762e4651d53a82","reuse":"verified package and replay receipts"},
+    {"asset":"B2_WAVE3_VISUAL_INSPECTOR","pointer_blob":"beb886edc38ce9e6d053c57c5ab6334d4345efb3","reuse":"actual Chromium CDP inspector and 10-row preview"},
+    {"asset":"B3_WAVE3_RECORDER","pointer_blob":"8b3862e75eb4a02b0a26cfe67e9fe7f9ef1c454f","reuse":"actual Chromium 10-action recorder/replay"},
+    {"asset":"B4_WAVE3_EDGE_REGRESSION","pointer_blob":"0a1c091d3dd7ea6a5d20fb6dfd3e335bf85ee595","reuse":"popup/frame/scroll/resume edge matrix"},
+    {"asset":"B1_A2_VERIFIED_ADAPTER_CONSUMPTION","pointer_blob":"ab5fad5a9d93292654058d0609d58cf2562eba89","reuse":"adapter consumer/materialization contract"}
+  ],
+  "boundaries":{"tunnel_create":false,"successor_direct_call":false,"target_pc_execution":false,"production":false,"ready":false,"merge":false}
+}
