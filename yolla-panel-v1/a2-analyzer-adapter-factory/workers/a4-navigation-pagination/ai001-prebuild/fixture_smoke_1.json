@@ -1,0 +1,15 @@
+{
+  "snapshotId":"fixture-smoke-1","url":"https://fixture.local/list?page=1",
+  "selectedElement":{"nodeId":"records","role":"list","text":"Records"},
+  "networkHints":[{"url":"https://fixture.local/api/items?page=2"}],
+  "runtimeHints":{"domMutationCount":3,"lazyLoaded":true,"renderedItemCount":3,"totalItemCount":30},
+  "nodes":[
+    {"id":"root","parentId":null,"tag":"html","text":"","visible":true},
+    {"id":"body","parentId":"root","tag":"body","text":"","visible":true},
+    {"id":"records","parentId":"body","tag":"main","attributes":{"id":"records"},"text":"","visible":true},
+    {"id":"c1","parentId":"records","tag":"article","attributes":{"class":"item"},"text":"","visible":true},{"id":"t1","parentId":"c1","tag":"h2","attributes":{"class":"name"},"text":"Listing 1","visible":true},{"id":"p1","parentId":"c1","tag":"span","attributes":{"class":"price"},"text":"1000만원","visible":true},{"id":"a1","parentId":"c1","tag":"span","attributes":{"class":"address"},"text":"서울시 강남구 역삼동 1","visible":true},{"id":"i1","parentId":"c1","tag":"img","attributes":{"src":"/1.jpg","alt":"Listing 1 image"},"text":"","visible":true},{"id":"l1","parentId":"c1","tag":"a","role":"link","attributes":{"href":"/detail/1","data-testid":"detail-link"},"text":"Detail","visible":true},
+    {"id":"c2","parentId":"records","tag":"article","attributes":{"class":"item"},"text":"","visible":true},{"id":"t2","parentId":"c2","tag":"h2","attributes":{"class":"name"},"text":"Listing 2","visible":true},{"id":"p2","parentId":"c2","tag":"span","attributes":{"class":"price"},"text":"2000만원","visible":true},{"id":"a2","parentId":"c2","tag":"span","attributes":{"class":"address"},"text":"서울시 강남구 역삼동 2","visible":true},{"id":"i2","parentId":"c2","tag":"img","attributes":{"src":"/2.jpg","alt":"Listing 2 image"},"text":"","visible":true},{"id":"l2","parentId":"c2","tag":"a","role":"link","attributes":{"href":"/detail/2","data-testid":"detail-link"},"text":"Detail","visible":true},
+    {"id":"c3","parentId":"records","tag":"article","attributes":{"class":"item"},"text":"","visible":true},{"id":"t3","parentId":"c3","tag":"h2","attributes":{"class":"name"},"text":"Listing 3","visible":true},{"id":"p3","parentId":"c3","tag":"span","attributes":{"class":"price"},"text":"3000만원","visible":true},{"id":"a3","parentId":"c3","tag":"span","attributes":{"class":"address"},"text":"서울시 강남구 역삼동 3","visible":true},{"id":"i3","parentId":"c3","tag":"img","attributes":{"src":"/3.jpg","alt":"Listing 3 image"},"text":"","visible":true},{"id":"l3","parentId":"c3","tag":"a","role":"link","attributes":{"href":"/detail/3","data-testid":"detail-link"},"text":"Detail","visible":true},
+    {"id":"next","parentId":"body","tag":"a","role":"link","attributes":{"id":"next-page","href":"/list?page=2"},"text":"Next","visible":true}
+  ]
+}
