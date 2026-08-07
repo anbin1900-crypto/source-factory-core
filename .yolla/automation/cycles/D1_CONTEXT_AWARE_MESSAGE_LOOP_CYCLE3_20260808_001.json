@@ -1,0 +1,124 @@
+{
+  "schema_version": "C_MODE_CYCLE3_COMPLETED_WORKERS_ONLY_V1",
+  "rule_id": "YOLLA_C_MODE_RULES_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE3-20260808-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "mode": "CYCLE_BATCH_PARALLEL",
+  "policy": "YOLLA_EFFICIENCY_RATIONALITY_SPEED_FIRST_OPERATING_POLICY_V1",
+  "selection_policy": "ONLY_CYCLE2_ACCEPTED_WORKERS_RECEIVE_NEXT_DIRECTIVE",
+  "active_workers": [
+    "AUTOMATION-C-W2",
+    "AUTOMATION-C-W5"
+  ],
+  "not_assigned": {
+    "AUTOMATION-C-W3": "EXCLUDED_BY_USER_NO_WAIT",
+    "AUTOMATION-C-W4": "CYCLE2_TERMINAL_RESULT_NOT_FOUND",
+    "AUTOMATION-C-W6": "CYCLE2_BLOCKED_RESULT_NOT_SUPERSEDED_BY_NEW_TERMINAL"
+  },
+  "accepted_inputs": {
+    "AUTOMATION-C-W2": {
+      "result_comment_id": 5219897042,
+      "result_commit": "1c6d79c492ff78cce4b0074bf7f8958d60f4edea",
+      "terminal": "ACTIVE_CONTEXT_IDENTIFICATION_LIVE_PASS",
+      "context_id": "6a72e288-7f24-83ee-b357-3e327cf6d877",
+      "page_id": "UIA-TAB-42.198100.4.0.0.5287"
+    },
+    "AUTOMATION-C-W5": {
+      "result_comment_id": 5219763164,
+      "result_commit": "bca5e3fd2e7d530f142197cc6a45938aa84bc736",
+      "terminal": "CYCLE2_REAL_RECEIPT_INGESTION_AND_BLOCKER_METRICS_PASS"
+    }
+  },
+  "common": {
+    "assignment_includes_execution_authority": true,
+    "one_owner_end_to_end": true,
+    "new_system_build": false,
+    "reuse_first": true,
+    "d3_dependency_gate": false,
+    "same_failure_signature_repeat_limit": 2,
+    "delivery_state_initial": "GITHUB_DIRECTIVE_POSTED",
+    "queue_item_id": null,
+    "claim_receipt_id": null
+  },
+  "assignments": [
+    {
+      "worker_id": "AUTOMATION-C-W2",
+      "role": "D-2_CONTEXT_REGISTRY_AND_ACTIVE_WORKER_OWNER",
+      "worker_pr": 81,
+      "directive_id": "C3-W2-LIVE-CONTEXT-HANDOFF-AND-FRESHNESS-GUARD-V1-20260808-001",
+      "priority": "P0",
+      "goal": "Cycle2에서 확정한 실제 ChatGPT UI Automation Context 결속을 D-4와 D-6이 직접 소비할 수 있는 최신 Handoff로 고정하고 새로고침·탭 재선택 뒤에도 오결속 없이 재확인한다.",
+      "scope": "PR81 Cycle2 Live Receipt와 기존 Context Registry·Windows UI Automation 경계만 재사용한다.",
+      "reuse_first": [
+        "PR81_RESULT@1c6d79c492ff78cce4b0074bf7f8958d60f4edea",
+        "PR81_RESULT_COMMENT@5219897042",
+        "CONTEXT_ID@6a72e288-7f24-83ee-b357-3e327cf6d877",
+        "PAGE_ID@UIA-TAB-42.198100.4.0.0.5287",
+        "EXISTING_WINDOWS_UI_AUTOMATION"
+      ],
+      "required_actions": [
+        "Cycle2 불변 Target-PC Receipt를 읽고 D-4 Observer와 D-6 Panel 소비용 최소 Handoff를 생성한다.",
+        "CONTEXT_ID, CONTEXT_NAME, PAGE_ID, ROLE_ID, COMMAND_ID, LAST_SEEN_AT, binding method와 stale 기준을 포함한다.",
+        "실제 ChatGPT 탭 새로고침 또는 탭 재선택 후 role marker와 cycle marker를 다시 읽어 동일 Context 또는 안전한 재결속을 증명한다.",
+        "오래된 PAGE_ID나 marker 불일치는 STALE 또는 MISMATCH로 fail-closed하고 다른 Context로 자동 전이하지 않는다.",
+        "신규 Executor·Tunnel·Transport 없이 검증하고 결과 Commit·Pointer·C모드 답장을 게시한다."
+      ],
+      "acceptance": [
+        "D-4와 D-6이 추가 Context 탐색 없이 소비할 수 있는 불변 Handoff",
+        "refresh 또는 tab reselect 이후 exact binding 재확인 PASS",
+        "stale·mismatch fail-closed PASS 및 misbinding 0",
+        "신규 Executor·Tunnel·Transport 0"
+      ],
+      "forbidden": [
+        "후보 Context 임의 선택",
+        "9222를 실제 ChatGPT Chrome으로 재가정",
+        "신규 실행기·터널·전송계층 구축",
+        "정적 Fixture만으로 Live PASS"
+      ],
+      "expected_terminal": "LIVE_CONTEXT_HANDOFF_AND_FRESHNESS_GUARD_PASS"
+    },
+    {
+      "worker_id": "AUTOMATION-C-W5",
+      "role": "D-5_AUTOMATION_EVENT_LOG_AND_IMPROVEMENT_OWNER",
+      "worker_pr": 40,
+      "directive_id": "C3-W5-D2-LIVE-RECOVERY-INGESTION-AND-METRIC-CLOSURE-V1-20260808-001",
+      "priority": "P0",
+      "goal": "D-2 Cycle2 Live PASS Receipt를 기존 append-only Event Store에 LIVE_RESUMED로 증분 수용하여 D-2 blocker를 닫고 실제 recovery latency와 최신 진행지표를 계산한다.",
+      "scope": "PR40 Cycle2 ingestion adapter와 기존 Event Store Blob을 보존하며 D-2 결과 댓글 5219897042만 새 실제 입력으로 추가한다.",
+      "reuse_first": [
+        "PR40_EVENT_STORE_BLOB@8ae79e40725447ff55ea8d166d2a4441587a8de4",
+        "D5_CYCLE2@bca5e3fd2e7d530f142197cc6a45938aa84bc736",
+        "D2_LIVE_RESULT_COMMENT@5219897042",
+        "D2_LIVE_RESULT_COMMIT@1c6d79c492ff78cce4b0074bf7f8958d60f4edea"
+      ],
+      "required_actions": [
+        "D-2 기존 CLAIM_STALLED Event와 최신 Live PASS Receipt를 동일 worker lineage에 결속한다.",
+        "최신 Receipt를 LIVE_RESUMED로 append하고 기존 차단 Event를 수정하거나 삭제하지 않는다.",
+        "D-2 blocker duration, recovery latency, retry-to-recovery와 recovered worker count를 실제 시각으로 계산한다.",
+        "D-4와 D-6은 새 PASS Receipt가 없으므로 기존 open 상태를 유지하며 추정 종료하지 않는다.",
+        "중복·순서역전·재시작·비차단 Writer를 재검증하고 결과 Commit·Pointer·C모드 답장을 게시한다."
+      ],
+      "acceptance": [
+        "D-2 actual LIVE_RESUMED Receipt ingestion PASS",
+        "D-2 open blocker가 recovered로 전환되고 recovery metrics가 null이 아님",
+        "기존 Event Store와 과거 Event 변경 0",
+        "D-4·D-6 상태 추정 변경 0",
+        "duplicate·order guard·restart·nonblocking PASS"
+      ],
+      "forbidden": [
+        "기존 Event 덮어쓰기",
+        "D-4·D-6 완료 추정",
+        "합성 시각 또는 합성 Receipt 사용",
+        "D-3 대기",
+        "로그 Writer로 실행 차단"
+      ],
+      "expected_terminal": "D2_LIVE_RECOVERY_INGESTION_AND_METRIC_CLOSURE_PASS"
+    }
+  ],
+  "reply_contract": "C_MODE_WORKER_REPLY",
+  "commander_verification_required": true,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
