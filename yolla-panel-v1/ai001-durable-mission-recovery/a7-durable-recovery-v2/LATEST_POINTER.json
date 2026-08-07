@@ -1,0 +1,18 @@
+{
+  "schema_version":"LATEST_A7_DURABLE_RECOVERY_V2_POINTER_V1",
+  "directive_id":"AI001-TO-A7-DURABLE-MISSION-RECOVERY-AND-RESUME-BOOTSTRAP-V2-20260807-001",
+  "directive_comment_id":5217321685,
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "status":"PASS",
+  "terminal":"A7_DURABLE_MISSION_RECOVERY_AND_RESUME_BOOTSTRAP_READY",
+  "source_commit":"b84689c7d6aeecddc34fd5fd1a1a47e2641b721e",
+  "mission_pointer":"LATEST_AI001_MISSION_POINTER_V1.json",
+  "validation_receipt":{"path":"reports/A7_DURABLE_RECOVERY_V2_VALIDATION_RECEIPT_V1.json","blob":"ded8d50839d36cd601a77f70ff2bbbb66faa6b63"},
+  "final_report":{"path":"reports/A7_DURABLE_RECOVERY_V2_FINAL_REPORT_V1.json","commit":"d871f9ab45e2f4575bfc7fd576fa06c750017dc4","blob":"a38fb402bebf57a6021ddcf407d3820247c3106d"},
+  "recovery_brief":"AI001_RECOVERY_BRIEF_V1.json",
+  "single_recovery_command":"node RECOVER_WORK_BOOTSTRAP_V1.cjs --pointer ./LATEST_AI001_MISSION_POINTER_V1.json",
+  "minimum_validation":"SYNTHETIC_CONTEXT_INTERRUPTION_AND_RECOVERY_SMOKE_1_PASS",
+  "interrupted_decisions":["ALREADY_DONE","SAFE_TO_RESUME","NEEDS_REPAIR","BLOCKED"],
+  "full_history_scan_default":false,
+  "production":false,"ready":false,"merge":false
+}
