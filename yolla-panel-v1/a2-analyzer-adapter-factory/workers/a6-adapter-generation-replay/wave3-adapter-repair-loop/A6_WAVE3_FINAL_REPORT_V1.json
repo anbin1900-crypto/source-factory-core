@@ -1,0 +1,118 @@
+{
+  "schema_version": "A6_SITE_ANALYZER_WAVE3_FINAL_REPORT_V1",
+  "worker": "A-6",
+  "role": "GENERATED_ADAPTER_E2E_REPLAY_REPAIR_OWNER",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment": 5212031674,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 25,
+  "branch": "worker/a6-adapter-generation-replay-v1",
+  "observed_head_before_start": "b6d2fef97d992f343ebfbc1443787b3c9bbd8f07",
+  "package_commit": "d11078c327cbbbef1b4f86ebe96d7d03a6f51d84",
+  "completed_at_kst": "2026-08-07T13:42:00+09:00",
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/wave3-adapter-repair-loop/",
+  "input_bindings": {
+    "A-4": {
+      "head": "efc3ca185dd5c124eb0f10a55018a25d60df55dc",
+      "actual_live_structure_handoff_blob": "fae1b21205259afd7d44aad8db6bb52f6d570b75",
+      "consumed": "actual Chromium repeated-region, field locator and pagination evidence"
+    },
+    "A-5": {
+      "head": "b7619f0ffacbb4937b4842eab2f6cff75504ebf8",
+      "ready_generator_handoff_blob": "769205f0c2444263919a980bc72edfa7611ed4c8",
+      "consumed": "HYBRID, $.items, listingId, PAGE_NUMBER generator input",
+      "wave2_live_handoff_status": "BLOCKED_WAITING_ACTUAL_LIVE_TRAFFIC_AND_A4_STRUCTURE",
+      "false_live_handoff_claim_count": 0
+    },
+    "B-3": {
+      "head": "b94ef16dd8a0e73e430c1e0678ce6c6f2e075350",
+      "live_recipe_handoff_blob": "4201ca631d487397a886ae19697f2aa8024b808d",
+      "live_recipe_blob": "23a04bf54a66e577bc9d52a4fe0ed8411d53a692",
+      "recorded_action_count": 5,
+      "runtime_bootstrap_mode": "INLINE_DOCUMENT",
+      "actual_chromium_runtime": true,
+      "actual_http_runtime": false
+    }
+  },
+  "generation": {
+    "status": "PASS",
+    "generated_adapter_count": 1,
+    "mode": "HYBRID",
+    "generated_adapter_blob": "b8f4cd52a2dbf7fcf92d963197787cb356f2dc5c",
+    "generation_receipt_blob": "212962a2f8abce515f03986b71ae56f45a31ea14",
+    "generated_adapter_sha256": "7ecb5cdfc27ce6ae49582f3e53461c88795a8718a7aeed17f2f0689ef1b0ec60"
+  },
+  "execution": {
+    "actual_local_http": true,
+    "external_live_site_call_count": 0,
+    "baseline_exact_record_count": 10,
+    "fault_injection_count": 4,
+    "all_fault_scenarios_exact_record_count": 10,
+    "canonical_records_sha256": "24a9e30af56e9f65be5f4ff6430e7a0a9794989e44fc5edc673f28e7c886211d",
+    "rerun_determinism": "PASS_2_OF_2_SHA_EQUAL"
+  },
+  "partial_repairs": {
+    "locator_drift": {
+      "status": "PASS",
+      "before": "article.item",
+      "after": "article.record-card",
+      "scope": "STEP_ONLY"
+    },
+    "schema_drift": {
+      "status": "PASS",
+      "before": "$.items",
+      "after": "$.records",
+      "scope": "CONTRACT_ONLY"
+    },
+    "pagination_failure": {
+      "status": "PASS",
+      "before": "page",
+      "after": "p",
+      "scope": "PAGINATION_ONLY"
+    },
+    "transient_response_failure": {
+      "status": "PASS",
+      "before": "single-attempt-observation",
+      "after": "retry-up-to-3",
+      "scope": "POLICY_ONLY"
+    },
+    "full_adapter_regeneration_during_repair_count": 0
+  },
+  "evidence": {
+    "repair_receipt_blob": "6f399f322d701741da4990073e4325111765a406",
+    "before_after_trace_blob": "8cdff55b75a883c06e3b7ce4556e348ed4a649dd",
+    "all_faults_have_before_after_trace": true,
+    "all_faults_pass": true,
+    "exact10_all": true,
+    "digest_all_equal": true
+  },
+  "attempt_log": {
+    "self_correction_count": 1,
+    "first_attempt_issue": "schema drift repair succeeded but failure event evidence was not emitted",
+    "correction": "emit step.failed before schema-record-path repair",
+    "rerun_result": "PASS_ALL"
+  },
+  "required_results": {
+    "GENERATION": "PASS",
+    "REPLAY": "PASS",
+    "EXACT10": "PASS",
+    "TRACE": "PASS",
+    "FAULT_INJECTION": "PASS_4_OF_4",
+    "PARTIAL_REPAIR": "PASS_4_OF_4",
+    "RERUN_DETERMINISM": "PASS"
+  },
+  "scope_truth": {
+    "a4_actual_chromium_evidence_consumed": true,
+    "a5_wave2_live_generator_handoff_consumed_as_ready": false,
+    "a5_stable_ready_generator_handoff_consumed": true,
+    "b3_actual_chromium_action_recipe_consumed": true,
+    "b3_http_transport_pass_claimed": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "next_owner": "A-7",
+  "next_event": "A6_WAVE3_ADAPTER_REPAIR_LOOP_REMOTE_ACCEPTANCE",
+  "terminal": "A6_SITE_ANALYZER_WAVE3_ADAPTER_REPAIR_LOOP_PASS_OR_PROVEN_EXTERNAL_BLOCKER",
+  "status": "TERMINAL_PASS"
+}
