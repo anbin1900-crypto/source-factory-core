@@ -1,0 +1,49 @@
+{
+  "schema_version": "SUCCESSOR_APPLY_PLAN_V1",
+  "directive_id": "AI001-TO-A3-CHROME-CDP-OBSERVATION-AGENT-PREBUILD-V1-20260807-001",
+  "owner": "A-3_CDP_OBSERVATION_ENGINE_OWNER",
+  "goal": "Allow the successor/local browser agent to bind the observer to an already-running Chrome/Chromium remote debugging endpoint with one command.",
+  "preconditions": [
+    "An existing Chrome/Chromium browser is already running with a local remote debugging endpoint.",
+    "The local browser agent can reach that endpoint.",
+    "No tunnel creation is performed by this package.",
+    "This package does not launch or install a new browser engine."
+  ],
+  "files": {
+    "observer_module": "CDP_OBSERVER_MODULE_V1.cjs",
+    "runner": "APPLY_RUN_CDP_OBSERVER_V1.cjs",
+    "state_file_default": "./runtime/a3-cdp-observer-state.json",
+    "evidence_file_default": "./runtime/a3-cdp-evidence.ndjson"
+  },
+  "single_command": "node APPLY_RUN_CDP_OBSERVER_V1.cjs --browser-url http://127.0.0.1:9222 --state ./runtime/a3-cdp-observer-state.json --output ./runtime/a3-cdp-evidence.ndjson --duration-ms 30000",
+  "optional_selection": {
+    "exact_page_id": "--page-id <Target.TargetID>",
+    "url_contains": "--url-contains <substring>",
+    "title_contains": "--title-contains <substring>",
+    "action_correlation_label": "--action <action-type>"
+  },
+  "playwright_binding": {
+    "supported": true,
+    "procedure": [
+      "Create a Playwright page CDPSession with page.context().newCDPSession(page).",
+      "Wrap it with PlaywrightCdpTransport from CDP_OBSERVER_MODULE_V1.cjs.",
+      "Start CdpObserverModuleV1 with pageId supplied by the caller's page identity.",
+      "The adapter uses session.send/session.on and detaches on close."
+    ],
+    "note": "The Playwright path is an adapter to an existing Playwright Chromium session; it does not create a new browser engine."
+  },
+  "chrome_devtools_mcp_alignment": {
+    "supported_pattern": "Use the same existing browser remote-debugging endpoint that Chrome DevTools MCP can attach to; the observer itself remains a local CDP module rather than invoking MCP or the successor directly.",
+    "browser_url_example": "http://127.0.0.1:9222"
+  },
+  "restore_after_restart": {
+    "automatic": true,
+    "behavior": "Runner loads --state if present before starting and persists state during observation.",
+    "pointer": "LATEST_A3_CDP_OBSERVER_PREBUILD_POINTER.json"
+  },
+  "dry_validation_command": "node APPLY_RUN_CDP_OBSERVER_V1.cjs --mock-smoke",
+  "do_not": ["TUNNEL_CREATE", "SUCCESSOR_DIRECT_CALL", "TARGET_PC_EXECUTION", "NEW_BROWSER_ENGINE", "PRODUCTION", "READY", "MERGE"],
+  "production": false,
+  "ready": false,
+  "merge": false
+}
