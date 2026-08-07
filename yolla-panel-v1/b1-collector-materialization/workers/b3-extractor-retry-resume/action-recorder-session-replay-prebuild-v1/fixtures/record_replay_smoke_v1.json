@@ -1,0 +1,13 @@
+{
+  "session_id": "ai001-b3-smoke-session-001",
+  "actions_before_restart": [
+    {"command_id":"cmd-open-search","page_id":"page-search","action_type":"navigation","payload":{"url":"https://fixture.invalid/search"},"status":"COMPLETED","cdp_evidence":[{"evidence_id":"cdp-001","cdp_method":"Page.frameNavigated","summary":"search page"}]},
+    {"command_id":"cmd-query","page_id":"page-search","action_type":"input","payload":{"locator":"[data-testid=keyword]","value":"apartment"},"status":"COMPLETED","cdp_evidence":[{"evidence_id":"cdp-002","cdp_method":"DOM.attributeModified","summary":"input correlation"}]},
+    {"command_id":"cmd-scroll","page_id":"page-search","action_type":"scroll","payload":{"x":0,"y":600},"status":"COMPLETED","cdp_evidence":[]},
+    {"command_id":"cmd-click-result","page_id":"page-search","action_type":"click","payload":{"locator":"[data-testid=result-1]"},"status":"PENDING","cdp_evidence":[{"evidence_id":"cdp-003","cdp_method":"Runtime.consoleAPICalled","summary":"click marker"}]}
+  ],
+  "duplicate_action": {"command_id":"cmd-query","page_id":"page-search","action_type":"input","payload":{"locator":"[data-testid=keyword]","value":"apartment"},"status":"COMPLETED"},
+  "actions_after_restart": [
+    {"command_id":"cmd-wait-detail","page_id":"page-detail","action_type":"wait","payload":{"condition":"domcontentloaded","timeout_ms":3000},"status":"COMPLETED","cdp_evidence":[{"evidence_id":"cdp-004","cdp_method":"Page.lifecycleEvent","summary":"detail loaded"}]}
+  ]
+}
