@@ -1,0 +1,27 @@
+{
+  "schema_version":"LATEST_A2_SUCCESSOR_EXECUTION_MANIFEST_POINTER_V1",
+  "directive_id":"AI001-TO-A2-SUCCESSOR-EXECUTION-MANIFEST-AND-CONTEXT-INDEPENDENT-INTEGRATION-V2-20260807-001",
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "role":"A-2_GENERIC_SITE_ANALYZER_INTEGRATION_OWNER",
+  "repository":"anbin1900-crypto/source-factory-core",
+  "worker_pr":18,
+  "branch":"integration/a2-generic-site-analyzer-adapter-factory-v1",
+  "parent_pointer":{"commit":"ed3457f411f6a83b4351ee8b905c9547aa6e483c","blob":"f07233174cd198eb4cae4eef5ec24b9b91ac9895","path":"yolla-panel-v1/a2-analyzer-adapter-factory/mission-capsule-prebuild/LATEST_A2_SITE_ANALYZER_MISSION_CAPSULE_POINTER.json"},
+  "source_commit":"d066ea195bf71eaa5b1a76cbf2e6c47295b80081",
+  "root":"yolla-panel-v1/a2-analyzer-adapter-factory/successor-execution-manifest-v1",
+  "artifacts":{
+    "execution_manifest":{"path":"SITE_ANALYZER_SUCCESSOR_EXECUTION_MANIFEST_V1.json","blob":"40c8d763931edea80b3899bddbe930db11a9e7aa"},
+    "current_mission":{"path":"AI001_SITE_ANALYZER_CURRENT_MISSION_V1.json","blob":"c8c7f8971578a4bd6222782d6fa92bd1e14b875d"},
+    "command_catalog":{"path":"SUCCESSOR_COMMAND_CATALOG_V1.json","blob":"7ed0b78de2fcc6a6be384f78bfb8bd349eb83956"},
+    "validation_receipt":{"path":"A2_SUCCESSOR_EXECUTION_MANIFEST_VALIDATION_RECEIPT_V1.json","blob":"9c392c21e41e4f3fe8d3ff4aff6cb438cba27784"}
+  },
+  "component_snapshot":{"A-3":"3f317672d299ebafa46f268b8aad0760d819eccf","A-4":"cd5c7a17f2f1aae02c2fbe4d988dea00e9763061","A-5":"ea5c6321204e9d2577924c14e01d658ebf46a443","A-6":"6e8c05bfc78189d02b6c9ddf785d2c1b881f7265","A-7":"7718170f6c616a99c99c4d366601a8dd6bb2b731","B-1":"434f16240ace501d5884c0e7140ed8d38e3fde39","B-2":"e436e2de37b24327da03c31a2ff7c2d10c2635b5","B-3":"31162d67eb474e7958e9a5591d87dc26bf3c307a","B-4":"908abcaf0a9281c636a3845c071192fd5b6b106b","B-5":"fe25d960020abc03b1ad528bcf0da0034c4788db","B-6":"a120e0d66af2f7811275635f7d1525fc9e9fdc47"},
+  "validation":{"schema_parse":"PASS_3_OF_3","module_count":"PASS_11_OF_11","pointer_reference":"PASS_11_OF_11","command_catalog_dry_run_1":"PASS","command_count":12,"shell_execution_during_dry_run":false,"unknown_placeholder_policy":"PASS_NO_GUESS"},
+  "CURRENT_MISSION":"CONTEXT_INDEPENDENT_SUCCESSOR_EXECUTION_MANIFEST_PREPARATION_FOR_SITE_ANALYZER",
+  "CURRENT_PHASE":"PREBUILD_CYCLE2_EXECUTION_MANIFEST",
+  "LATEST_COMPLETED":"A2_SITE_ANALYZER_MISSION_CAPSULE_AND_INTEGRATION_PREBUILD_READY",
+  "NEXT_ACTION":"AI001_DELIVER_THIS_POINTER_TO_SUCCESSOR_THEN_RESOLVE_TARGET_PC_PLACEHOLDERS_AND_EXECUTE_SELECTED_COMMAND_THROUGH_PC_COMMAND_EXECUTOR",
+  "boundaries":{"tunnel_create":false,"successor_direct_call":false,"target_pc_execution":false,"new_browser_engine":false,"production":false,"ready":false,"merge":false},
+  "terminal":"A2_SUCCESSOR_EXECUTION_MANIFEST_AND_CONTEXT_INDEPENDENT_INTEGRATION_READY",
+  "status":"TERMINAL_PASS_PREBUILD_ONLY"
+}
