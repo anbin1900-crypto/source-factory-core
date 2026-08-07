@@ -1,20 +1,20 @@
 {
-  "schema_version": "C_MODE_CYCLE3_COMPLETED_WORKERS_ONLY_V1",
+  "schema_version": "C_MODE_CYCLE3_COMPLETED_WORKERS_INCREMENTAL_V1",
   "rule_id": "YOLLA_C_MODE_RULES_V1",
   "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE3-20260808-001",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 17,
   "mode": "CYCLE_BATCH_PARALLEL",
   "policy": "YOLLA_EFFICIENCY_RATIONALITY_SPEED_FIRST_OPERATING_POLICY_V1",
-  "selection_policy": "ONLY_CYCLE2_ACCEPTED_WORKERS_RECEIVE_NEXT_DIRECTIVE",
+  "selection_policy": "ONLY_CYCLE2_TERMINAL_WORKERS_RECEIVE_NEXT_DIRECTIVE_INCREMENTALLY",
   "active_workers": [
     "AUTOMATION-C-W2",
-    "AUTOMATION-C-W5"
+    "AUTOMATION-C-W5",
+    "AUTOMATION-C-W6"
   ],
   "not_assigned": {
     "AUTOMATION-C-W3": "EXCLUDED_BY_USER_NO_WAIT",
-    "AUTOMATION-C-W4": "CYCLE2_TERMINAL_RESULT_NOT_FOUND",
-    "AUTOMATION-C-W6": "CYCLE2_BLOCKED_RESULT_NOT_SUPERSEDED_BY_NEW_TERMINAL"
+    "AUTOMATION-C-W4": "CYCLE2_TERMINAL_RESULT_NOT_FOUND"
   },
   "accepted_inputs": {
     "AUTOMATION-C-W2": {
@@ -28,6 +28,19 @@
       "result_comment_id": 5219763164,
       "result_commit": "bca5e3fd2e7d530f142197cc6a45938aa84bc736",
       "terminal": "CYCLE2_REAL_RECEIPT_INGESTION_AND_BLOCKER_METRICS_PASS"
+    },
+    "AUTOMATION-C-W6": {
+      "result": "BLOCKED_EXTERNAL",
+      "result_comment_id": 5219741593,
+      "result_commit": "c90df307e7b829603a2b2aefb8a2813b2c568550",
+      "terminal": "D2_D4_D5_PARTIAL_LIVE_INTEGRATION_BLOCKED_EXTERNAL_CONFIRMED",
+      "acceptance": "BLOCKED_EXTERNAL_CONFIRMED",
+      "superseding_inputs": [
+        "D2_RESULT_COMMENT@5219897042",
+        "D2_RESULT_COMMIT@1c6d79c492ff78cce4b0074bf7f8958d60f4edea",
+        "D5_RESULT_COMMENT@5219763164",
+        "D5_RESULT_COMMIT@bca5e3fd2e7d530f142197cc6a45938aa84bc736"
+      ]
     }
   },
   "common": {
@@ -114,11 +127,60 @@
         "로그 Writer로 실행 차단"
       ],
       "expected_terminal": "D2_LIVE_RECOVERY_INGESTION_AND_METRIC_CLOSURE_PASS"
+    },
+    {
+      "worker_id": "AUTOMATION-C-W6",
+      "role": "D-6_AUTOMATION_CONTROL_PANEL_AND_E2E_OWNER",
+      "worker_pr": 80,
+      "directive_id": "C3-W6-D2-D5-LIVE-REBIND-AND-D4-GAP-ISOLATION-V1-20260808-001",
+      "priority": "P0",
+      "goal": "Cycle2 차단 보고 이후 확보된 D-2 실제 Context Live PASS와 D-5 실제 Receipt 수용 PASS를 기존 Panel/E2E에 late-bind하여 D-2→D-5→Panel 실결속을 재검증하고, 전체 부분 Live에서 남은 결손을 D-4 Observer로 정확히 격리한다.",
+      "scope": "PR80 기존 Cycle2 adapter와 Panel 11개 필드, PR81 D-2 실제 Context Receipt, PR40 D-5 실제 수용 Receipt만 재사용한다. D-3은 계속 제외한다.",
+      "reuse_first": [
+        "PR80_CYCLE2_RESULT@c90df307e7b829603a2b2aefb8a2813b2c568550",
+        "D2_LIVE_RESULT_COMMENT@5219897042",
+        "D2_LIVE_RESULT_COMMIT@1c6d79c492ff78cce4b0074bf7f8958d60f4edea",
+        "D5_CYCLE2_RESULT_COMMENT@5219763164",
+        "D5_CYCLE2_RESULT_COMMIT@bca5e3fd2e7d530f142197cc6a45938aa84bc736",
+        "EXISTING_SAFE_PANEL_VIEWMODEL_ACTIVITY_MONITOR"
+      ],
+      "required_actions": [
+        "기존 Cycle2 결과에서 해소된 PC_EXECUTOR_V2_COMMAND_CLAIM_LOOP_STALLED와 D5_CYCLE2_RESULT_NOT_PUBLISHED를 종료 처리하되 과거 기록은 보존한다.",
+        "D-2 실제 CONTEXT_ID와 PAGE_ID를 D-5 실제 Receipt lineage 및 Panel 11개 필드에 결속하고 원격·Runtime Receipt 신선도를 검증한다.",
+        "D-4 Cycle2 완료 Receipt를 다시 조회하고 없으면 완료로 추정하지 않은 채 D4_OBSERVER_RECEIPT_MISSING 단일 결손으로 격리한다.",
+        "D-4 없이 가능한 D-2→D-5→Panel 부분 Live를 실제 Receipt로 실행·검증하고 synthetic WORKING/COMPLETED를 0으로 유지한다.",
+        "동일 실패 2회 뒤에는 경로·도구·방법을 변경하며 PASS 또는 정확한 외부 차단까지 직접 교정·재시도한다.",
+        "신규 Panel·Executor·Tunnel·Transport 없이 결과 Commit·Pointer·C모드 답장을 게시한다."
+      ],
+      "acceptance": [
+        "D-2 and D-5 superseding actual receipts consumed",
+        "resolved blocker count at least 2",
+        "Panel fields 11/11 sourced from current receipts",
+        "D-4 state not inferred and remaining gap exactly isolated",
+        "synthetic WORKING/COMPLETED 0",
+        "new Panel/Executor/Tunnel/Transport 0"
+      ],
+      "forbidden": [
+        "D-4 완료 추정",
+        "D-3 기능 재구현 또는 대기",
+        "합성 WORKING·COMPLETED·Receipt",
+        "신규 실행기·터널·전송계층·Panel 구축",
+        "과거 blocker Event 삭제 또는 덮어쓰기"
+      ],
+      "expected_terminal": "D2_D5_LIVE_PANEL_REBIND_AND_D4_GAP_ISOLATION_PASS_OR_BLOCKED_EXTERNAL_CONFIRMED"
     }
   ],
   "reply_contract": "C_MODE_WORKER_REPLY",
   "commander_verification_required": true,
   "production": false,
   "ready": false,
-  "merge": false
+  "merge": false,
+  "cycle3_incremental_updates": [
+    {
+      "worker_id": "AUTOMATION-C-W6",
+      "source_result_comment_id": 5219741593,
+      "reason": "Cycle2 BLOCKED_EXTERNAL terminal accepted; D-2 and D-5 superseding PASS receipts now available",
+      "d3_dependency_gate": false
+    }
+  ]
 }
