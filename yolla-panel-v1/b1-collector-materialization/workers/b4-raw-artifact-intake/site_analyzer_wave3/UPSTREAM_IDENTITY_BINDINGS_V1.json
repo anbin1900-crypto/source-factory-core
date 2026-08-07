@@ -1,0 +1,49 @@
+{
+  "schema_version": "B4_WAVE3_UPSTREAM_IDENTITY_BINDINGS_V1",
+  "canonical_b4_source": {
+    "wave2_head": "199362d6b90fb11fecac864f915cfb50c6becf7f",
+    "server_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/site_analyzer_wave2/fixture_site/server.py",
+    "server_blob": "671f05d903dcd8aecd7fd8160b493981f34a5b5a",
+    "stable_ids": [1,2,3,4,5,6,7,8,9,10]
+  },
+  "consumers": {
+    "A-3": {
+      "head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+      "evidence": "A3_SITE_ANALYZER_WAVE2_LIVE_CDP_EXECUTION_RECEIPT_V1",
+      "binding_level": "LIVE_ROUTE_AND_RECORD_COUNT_COMPATIBLE",
+      "record_count": 10,
+      "api_page1_sha256": "2cf6559b85df6b3d449daf526d0adfaea9790d55009905efa9dd32dcfda4fa17",
+      "api_page2_sha256": "6b41a55048a573df93965a0fb6e84d6b8d8a18a80bde53b846470f80b5643a84",
+      "identity_owner": false,
+      "mutates_record_identity": false
+    },
+    "B-3": {
+      "head": "b94ef16dd8a0e73e430c1e0678ce6c6f2e075350",
+      "evidence": "B3_WAVE2_RECORDER_A6_BINDING_FINAL_REPORT_V1",
+      "binding_level": "RECIPE_BEHAVIOR_COMPATIBLE_CANONICAL_POINTER_REBOUND",
+      "recorded_action_count": 5,
+      "recipe_hash": "22401b16caabd96e7cd59f4a617ed4ff14db9641e8dc17aa59c90bdca3c804d6",
+      "identity_owner": false,
+      "mutates_record_identity": false
+    },
+    "A-6": {
+      "head": "b6d2fef97d992f343ebfbc1443787b3c9bbd8f07",
+      "evidence": "A6_WAVE2_FINAL_REPORT_V1",
+      "binding_level": "B4_COMMON_TEST_SITE_PATTERN_EXACT10",
+      "unique_record_id_count": 10,
+      "live_replay_digest": "42e857146375c20ef61f155fd8fd730a5263e29670e62d03e8089c99ad296f4e",
+      "identity_owner": false,
+      "mutates_record_identity": false
+    },
+    "B-5": {
+      "head": "589a8074f3844bb2d8192e4b1e876484030023d1",
+      "evidence": "B5_SITE_ANALYZER_WAVE2_FINAL_REPORT_V1",
+      "binding_level": "EXACT_B4_SERVER_BLOB_AND_LOOPBACK",
+      "b4_server_blob": "671f05d903dcd8aecd7fd8160b493981f34a5b5a",
+      "record_order": "IDS_1_TO_10",
+      "source_input_mutation_count": 0,
+      "identity_owner": false,
+      "mutates_record_identity": false
+    }
+  }
+}
