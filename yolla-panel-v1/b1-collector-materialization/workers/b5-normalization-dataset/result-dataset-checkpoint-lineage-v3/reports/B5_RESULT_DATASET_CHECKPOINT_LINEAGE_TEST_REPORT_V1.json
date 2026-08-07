@@ -1,0 +1,21 @@
+{
+  "schema_version": "B5_RESULT_DATASET_CHECKPOINT_LINEAGE_TEST_REPORT_V1",
+  "compile": "PASS_3_OF_3",
+  "unit_tests": "PASS_35_OF_35",
+  "contract_json_parse": "PASS_4_OF_4",
+  "complete_before_result_smoke": "PASS_1",
+  "result_arrival_smoke": "PASS_1",
+  "restart_resume_smoke": "PASS_1",
+  "state_transition": "PASS_COMPLETE_RESULT_PENDING_TO_RESULT_AVAILABLE",
+  "checkpoint_monotonic": "PASS_1_2_3_4",
+  "contextless_lineage_recovery": "PASS",
+  "partial_complete_export_lineage_parity": "PASS",
+  "duplicate_materialization_count": 0,
+  "previous_checkpoint_overwrite_count": 0,
+  "existing_record_rewrite_count": 0,
+  "source_field_loss_count": 0,
+  "target_pc_execution": false,
+  "tunnel_change": false,
+  "c_semantic_transformation": false,
+  "d_canonical_db_write": false
+}

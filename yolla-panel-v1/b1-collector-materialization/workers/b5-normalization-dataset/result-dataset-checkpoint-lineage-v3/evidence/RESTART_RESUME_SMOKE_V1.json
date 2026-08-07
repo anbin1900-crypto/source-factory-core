@@ -1,0 +1,15 @@
+{
+  "schema_version": "RESTART_RESUME_SMOKE_V1",
+  "contextless_recovery": "PASS",
+  "recovered_command_id": "CMD-CYCLE3-001",
+  "recovered_session_id": "SESSION-CYCLE3-001",
+  "recovered_worker_id": "BROWSER-WORKER-02",
+  "duplicate_complete_noop": true,
+  "duplicate_result_noop": true,
+  "duplicate_materialization_count": 0,
+  "checkpoint_count_before_duplicate": 4,
+  "checkpoint_count_after_duplicate": 4,
+  "record_count_before_duplicate": 3,
+  "record_count_after_duplicate": 3,
+  "result": "PASS"
+}

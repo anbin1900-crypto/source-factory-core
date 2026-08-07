@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "RESULT_DATASET_EXPORT_RECEIPT_V1.schema.json",
+  "type": "object",
+  "required": ["schema_version", "command_id", "session_id", "worker_id", "dataset_id", "lineage_key", "source_result_ids", "checkpoint_seq", "checkpoint_sha256", "dataset_sha256", "record_count", "files"],
+  "properties": {
+    "schema_version": {"const": "RESULT_DATASET_EXPORT_RECEIPT_V1"},
+    "files": {"type": "object", "required": ["json", "csv", "xlsx"]},
+    "record_count": {"type": "integer", "minimum": 0}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "RESULT_DATASET_POINTER_V1.schema.json",
+  "type": "object",
+  "required": ["schema_version", "command_id", "session_id", "worker_id", "dataset_id", "lineage_key", "combined_state", "source_result_ids", "latest_checkpoint_seq", "latest_checkpoint_path", "latest_checkpoint_sha256", "dataset_sha256", "record_count", "consumers", "contextless_recovery"],
+  "properties": {
+    "schema_version": {"const": "RESULT_DATASET_POINTER_V1"},
+    "combined_state": {"enum": ["BROWSER_RUNNING", "COMPLETE_RESULT_PENDING", "RESULT_AVAILABLE"]},
+    "consumers": {"type": "array", "items": {"enum": ["B-1", "B-2", "B-6"]}, "minItems": 3},
+    "contextless_recovery": {"const": true},
+    "record_count": {"type": "integer", "minimum": 0}
+  },
+  "additionalProperties": true
+}
