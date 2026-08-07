@@ -1,0 +1,37 @@
+{
+  "directive_id": "AI001-TO-B4-RAW-TRACE-ARTIFACT-RESUME-PREBUILD-V1-20260807-001",
+  "do_not_counters": {
+    "audit_only_work": 0,
+    "secret_raw_storage": 0,
+    "successor_direct_call": 0,
+    "target_pc_execution": 0,
+    "tunnel_create": 0
+  },
+  "fixture_artifact_resume_smoke": "PASS_1_OF_1",
+  "merge": false,
+  "production": false,
+  "python_compile": "PASS_3_OF_3",
+  "ready": false,
+  "schema_parse": "PASS_4_OF_4",
+  "schema_version": "B4_RAW_TRACE_ARTIFACT_RESUME_PREBUILD_TEST_REPORT_V1",
+  "smoke": {
+    "abandoned_partial_count": 1,
+    "artifact_types": [
+      "RESPONSE_BODY",
+      "RESPONSE_BODY",
+      "DOM_SNAPSHOT",
+      "TRACE",
+      "SCREENSHOT",
+      "RECEIPT"
+    ],
+    "completed_artifact_count": 6,
+    "final_resume_cursor": "DONE",
+    "lineage_verified": "PASS",
+    "partial_write_not_promoted": true,
+    "readback_verified": "PASS_ALL",
+    "record_count_response_total": 10,
+    "resume_cursor_before_retry": "page:2",
+    "secret_raw_storage_count": 0
+  },
+  "unit_tests": "PASS_6_OF_6"
+}
