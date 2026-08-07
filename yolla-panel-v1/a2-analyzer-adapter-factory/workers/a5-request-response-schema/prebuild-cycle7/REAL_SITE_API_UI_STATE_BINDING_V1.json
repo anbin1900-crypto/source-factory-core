@@ -1,0 +1,18 @@
+{
+  "schema_version": "REAL_SITE_API_UI_STATE_BINDING_V1",
+  "source_contract": "PRODUCT_API_CONTRACT_V1",
+  "lanes": ["PUBLIC_READ", "WRITE", "MY_LISTING", "EDIT"],
+  "binding_chain": ["action", "request", "response", "ui_state"],
+  "exact_keys": ["command_id", "page_id", "action_id", "request_id"],
+  "required_evidence": "evidence_pointer",
+  "authority_policy": {
+    "exact_live_match": "OBSERVED",
+    "missing_live_causal_edge": "WAITING_INPUT",
+    "unobserved_relation": "UNKNOWN",
+    "candidate_promotion_without_new_evidence": false
+  },
+  "late_binding_policy": "Only the missing causal edge waits; already observed edges remain consumable.",
+  "redaction_policy": "No raw secret or PII values are stored.",
+  "raw_secret_value_count": 0,
+  "raw_pii_value_count": 0
+}
