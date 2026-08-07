@@ -1,0 +1,13 @@
+{
+  "schema_version":"INTERRUPTED_COMMAND_RECOVERY_DECISION_V1",
+  "decisions":["ALREADY_DONE","SAFE_TO_RESUME","NEEDS_REPAIR","BLOCKED"],
+  "worker_state_rules":{
+    "GENERATING":{"decision":"SAFE_TO_RESUME","command_reissue":false,"next_action":"OBSERVE_EXISTING_WORKER_GENERATION"},
+    "COMPLETE_TASK_PASS_TRUE":{"decision":"ALREADY_DONE","command_reissue":false,"next_action":"ADVANCE_AFTER_VERIFIED_TASK_PASS"},
+    "COMPLETE_TASK_PASS_FALSE_OR_NULL":{"decision":"SAFE_TO_RESUME","command_reissue":false,"next_action":"REVIEW_COMPLETED_WORKER_RESULT"},
+    "BLOCKED":{"decision":"BLOCKED","command_reissue":false,"next_action":"SURFACE_WORKER_BLOCKER"},
+    "UNKNOWN":{"decision":"BLOCKED","command_reissue":false,"next_action":"REFRESH_WORKER_STATE_BEFORE_ANY_REISSUE"}
+  },
+  "complete_is_not_task_pass":true,
+  "duplicate_generating_command_forbidden":true
+}
