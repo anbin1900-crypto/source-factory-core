@@ -1,0 +1,20 @@
+{
+  "schema_version":"B3_REPRESENTATIVE_STATE_COVERAGE_PLAN_READY_EVENT_V1",
+  "directive_id":"A0-TO-B3-REPRESENTATIVE-STATE-COVERAGE-PLAN-V6-20260808-001",
+  "assignment_comment_id":5220468828,
+  "cycle_id":"A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001",
+  "terminal":"B3_REPRESENTATIVE_STATE_COVERAGE_PLAN_READY",
+  "representative_state_coverage_plan":"REPRESENTATIVE_STATE_COVERAGE_PLAN_V1.json",
+  "live_site_action_scenario_set":"LIVE_SITE_ACTION_SCENARIO_SET_V1.json",
+  "flow_count":4,
+  "representative_transition_count":7,
+  "equivalent_action_suppressed_count":1,
+  "unknown_unobserved_path_count":2,
+  "next_live_cycle_input_ready":true,
+  "live_site_execution_authorized_this_cycle":false,
+  "target_pc_execution":false,
+  "live_site_call":false,
+  "production":false,
+  "ready":false,
+  "merge":false
+}
