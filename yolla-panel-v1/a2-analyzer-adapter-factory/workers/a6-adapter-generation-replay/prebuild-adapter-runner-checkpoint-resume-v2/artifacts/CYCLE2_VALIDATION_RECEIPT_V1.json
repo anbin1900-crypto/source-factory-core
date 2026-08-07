@@ -1,5 +1,5 @@
 {
-  "schema_version":"A6_CYCLE2_FIXTURE_BUILD_RUN_RESUME_SMOKE_RECEIPT_V2",
+  "schema_version":"A6_CYCLE2_FIXTURE_BUILD_RUN_RESUME_SMOKE_RECEIPT_V3",
   "status":"PASS",
   "source_parse":"PASS_2_OF_2",
   "build_run_resume_smoke":"PASS",
@@ -14,6 +14,7 @@
   "resume_executed_step_count":2,
   "duplicate_command_status":"NOOP_DUPLICATE_COMMAND",
   "duplicate_executed_step_count":0,
+  "idempotency_reexecution":{"status":"PASS_SKIP_COMPLETED_STEP","first_run_executed_step_count":1,"second_run_skipped_completed_step_count":1,"second_run_executed_step_count":2,"second_run_status":"PASS"},
   "partial_repair_status":"PASS",
   "partial_repair_scope":"FAILED_STEP_ONLY",
   "full_recipe_regeneration":false,
