@@ -1,0 +1,28 @@
+{
+  "schema_version": "D5_CYCLE4_ACTUAL_INPUTS_V1",
+  "d2": {
+    "source_comment_id": 5220605238,
+    "result_commit": "0264206865159f9ca928ffc4264859d9218f81f0",
+    "event_type": "FRESHNESS_CONFIRMED",
+    "lineage_command_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001:D-2",
+    "lineage_context_id": "UNRESOLVED:D-2",
+    "resolved_context_id": "6a72e288-7f24-83ee-b357-3e327cf6d877",
+    "page_id": "UIA-TAB-42.198100.4.0.0.5287",
+    "observed_at": "2026-08-07T18:16:52.4077010Z",
+    "stale_after_seconds": 300
+  },
+  "d3": {
+    "source_comment_id": 5220688575,
+    "result_commit": "500a9a318fdc3d61032319ca70960d8114e244b5",
+    "live_result_head": "9fb367331e9341314ff4abafb3b959efd038e548",
+    "command_id": "D3-C1-LIVE-DISPATCH-RETURN-20260808-030500-001",
+    "context_id": "6a72e288-7f24-83ee-b357-3e327cf6d877",
+    "page_id": "UIA-TAB-42.198100.4.0.0.5287",
+    "message_sent_at": "2026-08-07T18:26:03.8615229Z",
+    "reply_collected_at": "2026-08-07T18:26:41.9977282Z",
+    "reply_raw": "D3_MESSAGE_DISPATCH_RESULT_ACK_V1",
+    "reply_sha256": "2ba4efbee5d42a71be9e9ae28db1b1145fed04b9657efef63a2bcce02e3b347a",
+    "cross_context_reply_count": 0,
+    "duplicate_execution_count": 0
+  }
+}
