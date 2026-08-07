@@ -1,0 +1,24 @@
+{
+  "execution_status": "EXECUTION_PENDING",
+  "lineage_key": "41866b6747f722ce4e06a035191e2472be6d869dee83666e0f3e85d03988f35d",
+  "outputs": {
+    "MATERIALIZATION_RECEIPT_V1": {
+      "record_count": 0,
+      "sha256": "96cd09b9ac27e396c3d5cd6e447b7f4442a36eab4f8752638fbd33b6d1a77ac0"
+    },
+    "REAL_SITE_BLUEPRINT_DB_UPDATE_V1": {
+      "record_count": 1,
+      "sha256": "706ffaa4c56d06c85cfec1db827aa1156edabf3d042d4b205e8a669357ad12c7"
+    },
+    "REAL_SITE_ONTOLOGY_BINDING_UPDATE_V1": {
+      "record_count": 1,
+      "sha256": "321d3acef6c577b3a6844cae4ce7d998f6f87c4a975eae4f1e58943f11db5bce"
+    },
+    "REAL_SITE_SITE_BINDING_VERSION_V1": {
+      "record_count": 1,
+      "sha256": "4ae0dd8ca2c0cadc5b2e5b46ccf65266fdf52e8742be51db5e566786876df78c"
+    }
+  },
+  "schema_version": "B5_REAL_SITE_BLUEPRINT_ONTOLOGY_MATERIALIZATION_RESULT_POINTER_V1",
+  "terminal": "B5_REAL_SITE_BLUEPRINT_ONTOLOGY_MATERIALIZATION_READY"
+}

@@ -1,0 +1,38 @@
+{
+  "lineage": {
+    "append_policy": "SEPARATE_V7_APPEND_ONLY_LAYER",
+    "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+    "directive_id": "A0-TO-B5-REAL-SITE-BLUEPRINT-ONTOLOGY-MATERIALIZATION-V7-20260808-001",
+    "lineage_key": "41866b6747f722ce4e06a035191e2472be6d869dee83666e0f3e85d03988f35d",
+    "parent_dataset_blobs": {
+      "LISTING_ONTOLOGY_BINDING_PACKAGE_V1": "7da6d74c9f99b841a7574228f0d2b56a2b88b063",
+      "REAL_ESTATE_SITE_BLUEPRINT_DB_V1": "a4fe8282ee373b62c74b0887c7304281c71beeb3",
+      "SITE_CAPABILITY_PROFILE_V1": "542e5063b9331fd08e5b79824b0895a2188ccc29"
+    },
+    "parent_v6_head": "dad617da0c60b0937c04de46c92fd3fb72c5d556",
+    "parent_v6_pointer_blob": "5c9b18bffb20a33999b506bdfb29212f751a29ee",
+    "source_sha256": "0536f3252c7fdbc6d8bd893d76c1210b36197f429d743fcd7bd874f7f4e832a9"
+  },
+  "records": [
+    {
+      "action_id": null,
+      "api_bindings": [],
+      "command_id": null,
+      "evidence_pointer": null,
+      "form_bindings": [],
+      "observation_id": "CYCLE7-PENDING-LATE-BIND-0001",
+      "page_id": null,
+      "product_blueprint": {
+        "reason": "LIVE_EXECUTION_RECEIPT_NOT_ARRIVED",
+        "status": "UNKNOWN"
+      },
+      "record_id": "UNKNOWN_PENDING_REAL_SITE::REAL_SITE_BLUEPRINT::V1",
+      "record_policy": "APPEND_ONLY_NO_PARENT_REWRITE",
+      "semantic_status": "UNKNOWN",
+      "site_id": "UNKNOWN_PENDING_REAL_SITE",
+      "state_bindings": [],
+      "version": 1
+    }
+  ],
+  "schema_version": "REAL_SITE_BLUEPRINT_DB_UPDATE_V1"
+}

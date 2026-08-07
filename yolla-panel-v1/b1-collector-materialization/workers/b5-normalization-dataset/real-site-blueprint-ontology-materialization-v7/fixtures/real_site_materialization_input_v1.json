@@ -1,0 +1,38 @@
+{
+  "schema_version": "REAL_SITE_MATERIALIZATION_INPUT_V1",
+  "directive_id": "A0-TO-B5-REAL-SITE-BLUEPRINT-ONTOLOGY-MATERIALIZATION-V7-20260808-001",
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "parent_v6": {
+    "head": "dad617da0c60b0937c04de46c92fd3fb72c5d556",
+    "pointer_blob": "5c9b18bffb20a33999b506bdfb29212f751a29ee",
+    "dataset_blobs": {
+      "REAL_ESTATE_SITE_BLUEPRINT_DB_V1": "a4fe8282ee373b62c74b0887c7304281c71beeb3",
+      "SITE_CAPABILITY_PROFILE_V1": "542e5063b9331fd08e5b79824b0895a2188ccc29",
+      "LISTING_ONTOLOGY_BINDING_PACKAGE_V1": "7da6d74c9f99b841a7574228f0d2b56a2b88b063"
+    }
+  },
+  "producer_slots": {
+    "A3": {"status": "EXECUTION_PENDING", "directive_comment": 5220478578, "exact_pointer": null},
+    "B3": {"status": "EXECUTION_PENDING", "directive_comment": 5220804448, "exact_pointer": null},
+    "B4": {"status": "EXECUTION_PENDING", "directive_comment": 5220807009, "exact_pointer": null},
+    "B6": {"status": "EXECUTION_PENDING", "directive_comment": 5220812680, "exact_pointer": null}
+  },
+  "observations": [
+    {
+      "observation_id": "CYCLE7-PENDING-LATE-BIND-0001",
+      "site_id": "UNKNOWN_PENDING_REAL_SITE",
+      "version": 1,
+      "semantic_status": "UNKNOWN",
+      "evidence_pointer": null,
+      "command_id": null,
+      "page_id": null,
+      "action_id": null,
+      "product_blueprint": {"status": "UNKNOWN", "reason": "LIVE_EXECUTION_RECEIPT_NOT_ARRIVED"},
+      "state_bindings": [],
+      "api_bindings": [],
+      "form_bindings": [],
+      "source_fields": {"pending_payload": null},
+      "mappings": [{"source_field_name": "pending_payload", "target_candidate": null, "status": "UNKNOWN", "reason": "ACTUAL_EVIDENCE_PENDING"}]
+    }
+  ]
+}
