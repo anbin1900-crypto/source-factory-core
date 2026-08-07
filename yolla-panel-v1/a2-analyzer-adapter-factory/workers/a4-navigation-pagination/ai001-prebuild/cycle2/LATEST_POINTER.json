@@ -1,0 +1,51 @@
+{
+  "schema_version": "A4_AI001_CYCLE2_LATEST_POINTER_V1",
+  "worker": "A-4",
+  "directive_id": "AI001-TO-A4-STRUCTURE-INFERENCE-RUNNER-AND-STABLE-OUTPUT-V2-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "updated_at_kst": "2026-08-07T22:02:00+09:00",
+  "terminal": "A4_STRUCTURE_INFERENCE_RUNNER_AND_STABLE_OUTPUT_READY",
+  "decision": "PASS",
+  "parent_result": "A4_STRUCTURE_LOCATOR_PAGINATION_INFERENCE_PREBUILD_READY",
+  "outputs": {
+    "STRUCTURE_INFERENCE_RUN_REQUEST_V1": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/ai001-prebuild/cycle2/STRUCTURE_INFERENCE_RUN_REQUEST_V1.json",
+      "commit": "455b2eabffcb89531ae53ed1d3c87b31a5f65060",
+      "blob": "08ac258be29f7292f05ee05c209c4e2461d39fa7"
+    },
+    "STRUCTURE_INFERENCE_RUN_RECEIPT_V1": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/ai001-prebuild/cycle2/STRUCTURE_INFERENCE_RUN_RECEIPT_V1.json",
+      "commit": "5632826a76392d882022dfdac738d2049fbfb138",
+      "blob": "5cda7b28f1d6d8bc30a06e6b50651eb39becd85d",
+      "receipt_sha256": "f429e088dad9aacba80c9971b63de403e4796bce13dec47bdf87cbcb3c2b51be"
+    },
+    "SUCCESSOR_STRUCTURE_INFERENCE_RUNNER_V1": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/ai001-prebuild/cycle2/SUCCESSOR_STRUCTURE_INFERENCE_RUNNER_V1.cjs",
+      "commit": "f4eb04c5e216a2ddc44e44342aa34a26d0c7e9e5",
+      "blob": "73c26e1c74a9fe663ed6b9a03444e6abcff6847d"
+    },
+    "VALIDATION_RECEIPT": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/ai001-prebuild/cycle2/A4_AI001_CYCLE2_VALIDATION_RECEIPT_V1.json",
+      "commit": "732d9cfec1df2bee094a56dd2a357cf6427c4f1c",
+      "blob": "0730a52ef6d9660286f78421720ba309c273d680"
+    }
+  },
+  "deterministic_validation": {
+    "run_count": 2,
+    "byte_output_sha256": "ac1ad3a1e747f3c26503b993592efcd6d28f3853c778276f9dcdcb2cfe179640",
+    "equal": true,
+    "field_names": ["title", "price", "address", "image", "detail_url"],
+    "locator_count": 14,
+    "pagination": "NEXT",
+    "stop_condition": "NEXT_LINK_ABSENT_OR_DISABLED"
+  },
+  "successor_run_command": "node SUCCESSOR_STRUCTURE_INFERENCE_RUNNER_V1.cjs STRUCTURE_INFERENCE_RUN_REQUEST_V1.json STRUCTURE_INFERENCE_RUN_RECEIPT_V1.json",
+  "chat_context_required": false,
+  "target_pc_execution": false,
+  "tunnel_create": false,
+  "new_browser_engine": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
