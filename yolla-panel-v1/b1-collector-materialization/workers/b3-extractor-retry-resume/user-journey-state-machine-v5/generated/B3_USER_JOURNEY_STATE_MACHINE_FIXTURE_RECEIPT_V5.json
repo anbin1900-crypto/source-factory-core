@@ -1,0 +1,20 @@
+{
+  "schema_version": "B3_USER_JOURNEY_STATE_MACHINE_FIXTURE_RECEIPT_V5",
+  "status": "PASS",
+  "representative_transition_count": 7,
+  "equivalent_action_suppressed_count": 1,
+  "flow_transition_counts": {
+    "PUBLIC_READ": 3,
+    "CREATE": 2,
+    "MY_LISTING": 1,
+    "EDIT": 1
+  },
+  "shared_state_mylisting_visible_flows": ["CREATE", "MY_LISTING"],
+  "last_completed_action_id": "act-create-fill",
+  "resume_action_ids": ["act-create-save", "act-open-edit", "act-edit-save"],
+  "restart_resume_match": true,
+  "unobserved_path_count": 2,
+  "worker_lifecycle_side_stream_count": 2,
+  "target_pc_execution": false,
+  "live_site_call": false
+}
