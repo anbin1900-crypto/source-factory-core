@@ -1,0 +1,12 @@
+{
+  "schema_version": "CURRENT_WORK_POINTER_SET_V1",
+  "required": ["CURRENT_MISSION", "CURRENT_COMMAND", "LATEST_RESULT", "NEXT_ACTION"],
+  "pointers": {
+    "CURRENT_MISSION": "state/CURRENT_MISSION_POINTER.json",
+    "CURRENT_COMMAND": "state/CURRENT_COMMAND_POINTER.json",
+    "LATEST_RESULT": "state/LATEST_RESULT_POINTER.json",
+    "NEXT_ACTION": "state/NEXT_ACTION_POINTER.json"
+  },
+  "binding": "EXACT_COMMIT_PATH_BLOB",
+  "context_requirement": "EMPTY_CONTEXT_SUPPORTED"
+}

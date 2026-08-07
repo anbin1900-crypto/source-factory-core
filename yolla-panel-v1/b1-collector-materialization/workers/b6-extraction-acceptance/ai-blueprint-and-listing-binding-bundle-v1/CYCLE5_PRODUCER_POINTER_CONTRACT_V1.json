@@ -1,0 +1,49 @@
+{
+  "schema_version": "CYCLE5_PRODUCER_POINTER_CONTRACT_V1",
+  "resolution": "EXACT_HEAD_PATH_BLOB_LATE_BINDING",
+  "missing_pointer_decision": "WAIT_FOR_EXACT_POINTER_NON_BLOCKING",
+  "producers": [
+    {
+      "owner": "A-2",
+      "pr": 18,
+      "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+      "observed_head": "a7c0096b43b7915f15810d1ae4013af9b65904dc",
+      "directive_id": "A0-TO-A2-AI-PRODUCT-BLUEPRINT-ASSEMBLER-V5-20260808-001",
+      "expected_terminal": "A2_AI_PRODUCT_BLUEPRINT_ASSEMBLER_READY",
+      "outputs": ["AI_PRODUCT_BLUEPRINT_V1", "USER_JOURNEY_STATE_MACHINE"],
+      "fixture_path": "fixtures/producer-pointers/A2_CYCLE5_POINTER.json"
+    },
+    {
+      "owner": "B-1",
+      "pr": 19,
+      "branch": "integration/b1-collector-db-materialization-v1",
+      "observed_head": "92b36976f9f97eba501d28475fc601367b5c89aa",
+      "directive_id": "A0-TO-B1-AI-SEMANTIC-ANALYSIS-AGGREGATOR-V5-20260808-001",
+      "expected_terminal": "B1_AI_SEMANTIC_ANALYSIS_AGGREGATOR_READY",
+      "outputs": ["AI_ANALYSIS_RESULT_BUNDLE_V1", "SEMANTIC_GRAPH"],
+      "fixture_path": "fixtures/producer-pointers/B1_CYCLE5_POINTER.json"
+    },
+    {
+      "owner": "B-5",
+      "pr": 41,
+      "branch": "worker/b5-normalization-dataset-receipt-v1",
+      "observed_head": "d30a322b006896f424a25b2a19e69f146a24fc83",
+      "directive_id": "A0-TO-B5-REAL-ESTATE-FIELD-ONTOLOGY-SITE-BINDING-V5-20260808-001",
+      "expected_terminal": "B5_REAL_ESTATE_FIELD_ONTOLOGY_SITE_BINDING_READY",
+      "outputs": ["REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1", "SITE_LISTING_BINDING_V1", "FIELD_TRANSFORM_CANDIDATE_V1"],
+      "fixture_path": "fixtures/producer-pointers/B5_CYCLE5_POINTER.json"
+    },
+    {
+      "owner": "A-7",
+      "pr": 26,
+      "branch": "worker/a7-analyzer-acceptance-audit-v1",
+      "observed_head": "d7cc64255b1c67657bc223c8072374fcd79facc8",
+      "directive_id": "A0-TO-A7-FRESH-CONTEXT-SUCCESSOR-HANDOFF-V5-20260808-001",
+      "expected_terminal": "A7_FRESH_SUCCESSOR_RECOVERY_CONTEXT_READY",
+      "outputs": ["A7_SUCCESSOR_HANDOFF_V1", "RECOVERY_ENTRYPOINT"],
+      "fixture_path": "fixtures/producer-pointers/A7_CYCLE5_POINTER.json"
+    }
+  ],
+  "raw_secret_embed": false,
+  "sequential_approval_gate": false
+}

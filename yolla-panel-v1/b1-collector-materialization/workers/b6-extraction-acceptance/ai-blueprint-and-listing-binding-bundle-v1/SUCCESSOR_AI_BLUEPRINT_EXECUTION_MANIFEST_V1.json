@@ -1,0 +1,20 @@
+{
+  "schema_version": "SUCCESSOR_AI_BLUEPRINT_EXECUTION_MANIFEST_V1",
+  "context_requirement": "EMPTY_CONTEXT_SUPPORTED",
+  "commands": {
+    "all": "node ai_blueprint_one_command_runner_v1.mjs --root . --scope ALL",
+    "selected": "node ai_blueprint_one_command_runner_v1.mjs --root . --scope PRODUCT_BLUEPRINT,SEMANTIC_GRAPH",
+    "resume": "node ai_blueprint_one_command_runner_v1.mjs --root . --scope ALL --checkpoint fixtures/INTERRUPTED_CYCLE5_CHECKPOINT_V1.json"
+  },
+  "ordered_steps": [
+    "READ_CURRENT_WORK_POINTER_SET",
+    "READ_PRODUCER_POINTER_CONTRACTS",
+    "LATE_BIND_ARRIVED_EXACT_POINTERS",
+    "READ_LATEST_CHECKPOINT",
+    "SKIP_COMPLETED_STAGES",
+    "RESUME_INCOMPLETE_STAGES",
+    "EMIT_CURRENT_MISSION_COMMAND_RESULT_NEXT_ACTION"
+  ],
+  "success_terminal": "B6_AI_BLUEPRINT_EXECUTION_PLAN_READY",
+  "failure_terminal": "EXACT_INVALID_POINTER_CONTRACT"
+}
