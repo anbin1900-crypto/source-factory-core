@@ -1,0 +1,9 @@
+{
+  "schema_version":"PARTIAL_PRODUCT_BLUEPRINT_RECOVERY_V1",
+  "mode":"PRODUCT",
+  "stage":"BLUEPRINT",
+  "partial_status_values":["PARTIAL","RUNNING"],
+  "resume_rule":"KEEP_COMPLETED_BLUEPRINT_FIELDS_AND_FILL_ONLY_MISSING_OR_INVALID_FIELDS",
+  "completed_field_reexecution":false,
+  "repair_rule":"INVALID_FIELD_WITH_EVIDENCE_POINTER_MAY_BE_REBUILT_IN_OWNED_ROOT"
+}

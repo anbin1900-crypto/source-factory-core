@@ -1,0 +1,10 @@
+{
+  "schema_version":"EVIDENCE_POINTER_RECOVERY_MAP_V1",
+  "required_evidence_fields":["state","confidence","evidence_pointer"],
+  "states":["OBSERVED","INFERRED","UNKNOWN"],
+  "confidence_range":[0,1],
+  "recovery_rule":"PRESERVE_STATE_CONFIDENCE_POINTER_EXACTLY_UNLESS_NEWER_EVIDENCE_SUPERSEDES",
+  "unknown_requires_pointer":false,
+  "observed_requires_pointer":true,
+  "inferred_requires_pointer":true
+}

@@ -1,0 +1,6 @@
+{
+  "schema_version":"WRITE_ADAPTER_RESUME_DECISION_V1",
+  "mode":"WRITE",
+  "decisions":["ALREADY_DONE","RESUME_FROM_CHECKPOINT","SAFE_RERUN_CURRENT_STAGE","NEEDS_REPAIR","BLOCKED"],
+  "rules":{"completed_stage":"ALREADY_DONE","durable_checkpoint_same_command":"RESUME_FROM_CHECKPOINT","no_checkpoint_safe_rerun_no_committed_nonidempotent_effect":"SAFE_RERUN_CURRENT_STAGE","partial_output_repairable":"NEEDS_REPAIR","unknown_side_effect_boundary":"BLOCKED"}
+}

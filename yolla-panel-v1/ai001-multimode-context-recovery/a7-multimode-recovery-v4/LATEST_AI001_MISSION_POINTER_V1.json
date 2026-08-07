@@ -1,0 +1,20 @@
+{
+  "schema_version":"LATEST_AI001_MISSION_POINTER_V1",
+  "mission_id":"AI001-MULTIMODE-CONTEXT-RECOVERY-V4",
+  "directive_id":"A0-TO-A7-MULTIMODE-CONTEXT-RECOVERY-V4-20260808-001",
+  "directive_comment_id":5219095102,
+  "cycle_id":"A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "status":"PASS",
+  "terminal":"A7_MULTIMODE_CONTEXT_RECOVERY_READY",
+  "current_mission":"state/CURRENT_MISSION.json",
+  "current_command":"state/CURRENT_COMMAND.json",
+  "latest_result":"state/LATEST_RESULT.json",
+  "recovery_state":"MULTIMODE_ANALYSIS_RECOVERY_STATE_CURRENT.json",
+  "evidence_map":"EVIDENCE_POINTER_RECOVERY_MAP_CURRENT.json",
+  "partial_product_blueprint":"PARTIAL_PRODUCT_BLUEPRINT_CURRENT.json",
+  "write_resume_decision":"WRITE_ADAPTER_RESUME_DECISION_V1.json",
+  "checkpoint":"state/CHECKPOINT.json",
+  "single_recovery_command":"node RECOVER_WORK_BOOTSTRAP_V1.cjs --pointer ./LATEST_AI001_MISSION_POINTER_V1.json",
+  "authority_head_semantics":"COMMIT_CONTAINING_THIS_POINTER",
+  "production":false,"ready":false,"merge":false
+}
