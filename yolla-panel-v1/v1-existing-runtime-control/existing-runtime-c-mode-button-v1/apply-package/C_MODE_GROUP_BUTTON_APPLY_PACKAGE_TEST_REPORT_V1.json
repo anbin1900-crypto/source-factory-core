@@ -1,0 +1,38 @@
+{
+  "schema_version": "C_MODE_GROUP_BUTTON_APPLY_PACKAGE_TEST_REPORT_V1",
+  "status": "PASS",
+  "baseline_runtime": "5.10.2.4.0",
+  "package": {
+    "file_name": "AI_YOLLA_C_MODE_GROUP_BUTTON_PATCH_V1.zip",
+    "size_bytes": 21682,
+    "sha256": "1a573bd5bc705aa56f314b379281d3ab98c74f705e8f422c52f16f308639d654"
+  },
+  "tests": {
+    "apply_idempotency_and_hooks": "PASS_13_ASSERTIONS",
+    "actual_runtime_behavior": "PASS_17_ASSERTIONS",
+    "target_validation": "PASS_10_CHECKS",
+    "node_syntax_files": 4,
+    "powershell_static_balance_files": 2
+  },
+  "validated_capabilities": [
+    "IDLE_GRAY",
+    "RUNNING_BLUE",
+    "ERROR_RED",
+    "BUTTON_LABEL_FIXED",
+    "COMMANDER_ONLY_FIRST_DISPATCH",
+    "DEFAULT_COMMAND_MESSAGE_FIRST_LINE",
+    "DETERMINISTIC_COMMANDER_POST_FOOTER",
+    "WAVE_INCREMENT_ON_COMMANDER_DISTRIBUTION",
+    "EXECUTED_COUNT_INCREMENT_ON_DISTRIBUTION",
+    "EXACT_WORKER_ROLE_DISPATCH",
+    "POST_NUMBER_INCLUDED_IN_WORKER_PROMPT",
+    "STOP_TO_IDLE",
+    "PATCH_IDEMPOTENT",
+    "BACKUP_AND_ROLLBACK_SCRIPT_PRESENT",
+    "TARGET_RELEASE_AUTO_DISCOVERY",
+    "LOGIN_PROFILE_UNCHANGED",
+    "WORKSPACE_STATE_UNCHANGED"
+  ],
+  "target_pc_execution": "NOT_RUN_IN_THIS_ENVIRONMENT",
+  "generated_at_utc": "2026-08-06T12:08:49.091035+00:00"
+}

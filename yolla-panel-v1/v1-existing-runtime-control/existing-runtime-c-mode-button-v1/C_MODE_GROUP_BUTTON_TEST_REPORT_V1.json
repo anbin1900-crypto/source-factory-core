@@ -1,0 +1,45 @@
+{
+  "schema_version": "C_MODE_GROUP_BUTTON_TEST_REPORT_V1",
+  "report_id": "C-MODE-GROUP-BUTTON-TEST-20260806-001",
+  "tested_at_kst": "2026-08-06T20:50:00+09:00",
+  "runtime": "node",
+  "command": "node test_c_mode_group_button_patch.cjs",
+  "result": "PASS_33_ASSERTIONS",
+  "failure_count": 0,
+  "source": {
+    "path": "c_mode_group_button_patch.cjs",
+    "sha256": "ac33cd0e5dc575f32504989b25eac41b6c3b8fef7dec41dc33f2f01c500825ae",
+    "size": 9721
+  },
+  "css": {
+    "path": "c_mode_group_button.css",
+    "sha256": "474f35c2016224cdb012507f447a9c9175f9cc505d29abbba9f0e0fcd1db0ea3",
+    "size": 952
+  },
+  "test": {
+    "path": "test_c_mode_group_button_patch.cjs",
+    "sha256": "3ec323d7369195d57beaa2d1aca3e5a01fbfd4557234c112507d8e21a3cf99d1",
+    "size": 5578
+  },
+  "validated": [
+    "IDLE_GRAY",
+    "BUTTON_LABEL_FIXED",
+    "CLICK_IMMEDIATE_RUNNING_BLUE",
+    "DEFAULT_COMMANDER_MESSAGE_EXACT",
+    "ERROR_TO_RUNNING_RETRY",
+    "COMMANDER_SEND_FAILURE_TO_RED",
+    "COMPLETE_WORKER_POST_SET_VALIDATION",
+    "WAVE_INCREMENT",
+    "EXECUTED_COUNT_INCREMENT",
+    "EXACT_WORKER_WINDOW_MESSAGE",
+    "DUPLICATE_DISTRIBUTION_SUPPRESSION",
+    "WORKER_WINDOW_FAILURE_TO_RED",
+    "NORMAL_STOP_TO_GRAY"
+  ],
+  "new_runtime_created": false,
+  "target_pc_applied": false,
+  "target_pc_live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

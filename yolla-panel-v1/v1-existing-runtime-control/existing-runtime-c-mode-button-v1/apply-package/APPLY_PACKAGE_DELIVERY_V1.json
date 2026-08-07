@@ -1,0 +1,31 @@
+{
+  "schema_version": "C_MODE_GROUP_BUTTON_APPLY_PACKAGE_DELIVERY_V1",
+  "status": "READY_FOR_USER_EXECUTION",
+  "implementation_pr": 73,
+  "branch": "agent/c-mode-existing-runtime-button-v1",
+  "package": {
+    "file_name": "AI_YOLLA_C_MODE_GROUP_BUTTON_PATCH_V1.zip",
+    "delivery_channel": "CHAT_ARTIFACT",
+    "size_bytes": 21682,
+    "sha256": "1a573bd5bc705aa56f314b379281d3ab98c74f705e8f422c52f16f308639d654"
+  },
+  "execution": {
+    "entrypoint": "APPLY_C_MODE_GROUP_BUTTON_PATCH.bat",
+    "rollback_entrypoint": "ROLLBACK_C_MODE_GROUP_BUTTON_PATCH.bat",
+    "default_target_release": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\v5.10.2.4.0-c-mode-repeat-command",
+    "auto_restart": true,
+    "auto_backup": true,
+    "auto_rollback_on_failure": true
+  },
+  "validation": {
+    "feature_module": "PASS_33_ASSERTIONS",
+    "apply_package": "PASS_13_ASSERTIONS",
+    "actual_runtime_behavior": "PASS_17_ASSERTIONS",
+    "target_gate": "PASS_10_CHECKS"
+  },
+  "target_pc_applied": false,
+  "target_pc_live_pass": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

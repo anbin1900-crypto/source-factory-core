@@ -1,0 +1,33 @@
+{
+  "schema_version": "C_MODE_GROUP_BUTTON_APPLY_PAYLOAD_MANIFEST_V1",
+  "package_file": "AI_YOLLA_C_MODE_GROUP_BUTTON_PATCH_V1.zip",
+  "package_size_bytes": 21682,
+  "package_sha256": "1a573bd5bc705aa56f314b379281d3ab98c74f705e8f422c52f16f308639d654",
+  "baseline_runtime": "5.10.2.4.0",
+  "default_target_release": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\v5.10.2.4.0-c-mode-repeat-command",
+  "entrypoint": "APPLY_C_MODE_GROUP_BUTTON_PATCH.bat",
+  "rollback_entrypoint": "ROLLBACK_C_MODE_GROUP_BUTTON_PATCH.bat",
+  "receipt_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2\\automation-c-v1\\group-button-patch-receipts",
+  "backup_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2\\automation-c-v1\\group-button-patch-backups",
+  "modified_target_files": [
+    "main.js",
+    "workspace_preload.js",
+    "workspace.html",
+    "automation-c-v1/c_mode_runtime.cjs"
+  ],
+  "added_target_files": [
+    "workspace_c_mode_group_button.js",
+    "workspace_c_mode_group_button.css"
+  ],
+  "preservation": {
+    "browser_profile_unchanged": true,
+    "workspace_state_unchanged": true,
+    "automatic_backup": true,
+    "automatic_rollback_on_failure": true
+  },
+  "target_pc_applied": false,
+  "target_pc_live_pass": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "LATEST_C_MODE_EXISTING_RUNTIME_BUTTON_POINTER_V3",
+  "pointer_id": "LATEST-C-MODE-EXISTING-RUNTIME-BUTTON-20260806-003",
+  "status": "V1_REJECTED_V2_EA_REMOVAL_PACKAGE_READY_NOT_EXECUTED",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "implementation_pr": 73,
+  "branch": "agent/c-mode-existing-runtime-button-v1",
+  "authority_comment": 5204203541,
+  "target_pc_visual_regression": {
+    "observed_at_kst": "2026-08-06T21:29:00+09:00",
+    "legacy_e_visible": true,
+    "legacy_a_visible": true,
+    "c_mode_button_visible": false,
+    "v1_acceptance": "FAIL"
+  },
+  "v2_paths": {
+    "correction": "yolla-panel-v1/v1-existing-runtime-control/existing-runtime-c-mode-button-v2/C_MODE_EA_REMOVAL_CORRECTION_V2.md",
+    "test_report": "yolla-panel-v1/v1-existing-runtime-control/existing-runtime-c-mode-button-v2/C_MODE_GROUP_BUTTON_V2_TEST_REPORT.json",
+    "package_pointer": "yolla-panel-v1/v1-existing-runtime-control/existing-runtime-c-mode-button-v2/C_MODE_GROUP_BUTTON_V2_PACKAGE_POINTER.json"
+  },
+  "v2_package": {
+    "file_name": "AI_YOLLA_C_MODE_GROUP_BUTTON_PATCH_V2.zip",
+    "delivery": "CHAT_ARTIFACT",
+    "size_bytes": 23605,
+    "sha256": "65d82251a5f7cb01bc0e34e32703d7a8d0820975d4bd011926e09767e05c33c3",
+    "entrypoint": "APPLY_C_MODE_GROUP_BUTTON_PATCH_V2.bat",
+    "rollback_entrypoint": "ROLLBACK_C_MODE_GROUP_BUTTON_PATCH_V2.bat"
+  },
+  "v2_validation": {
+    "apply_fixture": "PASS_18_ASSERTIONS",
+    "legacy_ea_removal": "PASS_12_ASSERTIONS",
+    "actual_v510240_runtime": "PASS_17_ASSERTIONS",
+    "target_file_gate": "PASS_14_CHECKS",
+    "v1_to_v2_upgrade": "PASS"
+  },
+  "expected_live_ui": {
+    "legacy_e_button_count": 0,
+    "legacy_a_button_count": 0,
+    "c_mode_button_count": "1_PER_GROUP"
+  },
+  "safety": {
+    "backup_before_write": true,
+    "automatic_rollback_on_failure": true,
+    "manual_rollback": true,
+    "direct_v510240_release_restart": true,
+    "login_browser_profile_unchanged": true,
+    "workspace_state_unchanged": true,
+    "new_runtime_created": false,
+    "new_browser_view_created": false,
+    "new_transport_created": false
+  },
+  "target_pc_apply_ready": true,
+  "target_pc_applied": false,
+  "target_pc_live_pass": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

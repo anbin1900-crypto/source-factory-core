@@ -1,0 +1,90 @@
+{
+  "schema_version": "C_MODE_CURRENT_VERSION_SOURCE_SNAPSHOT_V1",
+  "snapshot_id": "C-MODE-CURRENT-SOURCE-SNAPSHOT-20260806-001",
+  "observed_at_kst": "2026-08-06T20:50:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "control_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "control_head": "a73997a3ecca2fe7b506cefdb9feaa2130afc036",
+  "control_state": "OPEN_DRAFT_UNMERGED",
+  "runtime_baseline": "5.10.2.4.0",
+  "candidate_reference": "5.10.2.4.2-rc8",
+  "runtime_source_manifest": "yolla-panel-v1/v1-existing-runtime-control/runtime-v510240/V1_V510240_C_MODE_SOURCE_MANIFEST_V1.json",
+  "latest_correction_authority": {
+    "comment": 5204203541,
+    "record_id": "V1-C-MODE-MISSION-FAILURE-RECORD-20260806-001",
+    "current_phase": "EXISTING_C_MODE_OBSERVATION_AND_DETAIL_TUNING",
+    "new_runtime_creation": false,
+    "rebuild_required": false,
+    "new_wave_without_observed_defect": false,
+    "background_transition_before_foreground_pass": false
+  },
+  "worker_heads": {
+    "W1": {
+      "pr": 59,
+      "branch": "worker/automation-c-w1-runtime-state-v2",
+      "head": "7f6e02bc5776e914ef0c87ab14390b62d803e6dd",
+      "scope": "runtime_state_machine_and_wave_timing"
+    },
+    "W2": {
+      "pr": 60,
+      "branch": "worker/automation-c-w2-github-correlation-v2",
+      "head": "9aeb3300b6ed199310ae72b8b70e85a1b774c02e",
+      "scope": "github_result_correlation"
+    },
+    "W3": {
+      "pr": 61,
+      "branch": "worker/automation-c-w3-ui-truth-v2",
+      "head": "3f6b8253aa0aa8f0d626a35805821dd1fc5dd286",
+      "scope": "ui_state_truth"
+    },
+    "W4": {
+      "pr": 62,
+      "branch": "worker/automation-c-w4-repeat-command-v2",
+      "head": "cbdf916969efbab485d97fadaa7ee49524c9d7a9",
+      "scope": "repeat_and_timer_runtime"
+    },
+    "W5": {
+      "pr": 63,
+      "branch": "worker/automation-c-w5-background-install-log-v2",
+      "head": "2a1d1e55d03ef4a472fa7b5754bad0b5af012de6",
+      "scope": "background_dispatch_install_log_integration",
+      "rc8_state": "OFFLINE_INTEGRATION_PASS_TARGET_PC_PENDING"
+    },
+    "W6": {
+      "pr": 64,
+      "branch": "worker/automation-c-w6-failure-acceptance-v2",
+      "head": "ee08a23befa44b1f1a2d110b86c90bb4492fe85d",
+      "scope": "failure_injection_and_independent_acceptance"
+    }
+  },
+  "existing_runtime_components_used": [
+    "C_MODE_STATE_MACHINE",
+    "COMMANDER_WINDOW_ADAPTER",
+    "WORKER_WINDOW_ADAPTER",
+    "GROUP_STATE_STORE",
+    "EXACT_WORKER_POST_MAPPING",
+    "EXISTING_PC_AGENT_QUEUE"
+  ],
+  "minimal_patch_scope": [
+    "GROUP_HEADER_C_MODE_BUTTON",
+    "IDLE_RUNNING_ERROR_VIEW",
+    "COMMANDER_START_MESSAGE",
+    "WAVE_AND_EXECUTED_COUNT",
+    "EXACT_WORKER_WINDOW_DISPATCH",
+    "ERROR_AND_DUPLICATE_HANDLING"
+  ],
+  "explicitly_out_of_scope": [
+    "NEW_BROWSER_VIEW",
+    "NEW_TRANSPORT",
+    "NEW_C_MODE_RUNTIME",
+    "A_MODE",
+    "E_MODE",
+    "PANEL_WIDE_REDESIGN",
+    "PRODUCTION",
+    "READY",
+    "MERGE"
+  ],
+  "target_pc_applied": false,
+  "target_pc_live_pass_claimed": false
+}

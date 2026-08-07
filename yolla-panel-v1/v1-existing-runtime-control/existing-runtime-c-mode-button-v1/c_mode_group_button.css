@@ -1,0 +1,32 @@
+/* Minimal existing-runtime patch: group header right-side C-mode button. */
+[data-c-mode-group-header="true"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.c-mode-execution-button {
+  border: 0;
+  border-radius: 7px;
+  padding: 6px 12px;
+  min-width: 92px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.c-mode-execution-button[data-c-mode-color="GRAY"] { background: #8a8f98; }
+.c-mode-execution-button[data-c-mode-color="BLUE"] { background: #2563eb; }
+.c-mode-execution-button[data-c-mode-color="RED"] { background: #dc2626; }
+
+[data-c-mode-group-status="true"] {
+  padding: 5px 8px;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+[data-c-mode-group-status="true"][data-c-mode-state="IDLE"] { color: #626874; }
+[data-c-mode-group-status="true"][data-c-mode-state="RUNNING"] { color: #1d4ed8; }
+[data-c-mode-group-status="true"][data-c-mode-state="ERROR"] { color: #b91c1c; }
