@@ -1,0 +1,41 @@
+{
+  "schema_version": "A5_TO_A6_RECIPE_DECISION_DIRECT_CONSUME_MANIFEST_V1",
+  "directive_id": "AI001-TO-A5-STRUCTURE-TO-ENDPOINT-SCHEMA-DECISION-BINDING-V3-20260807-001",
+  "from": "A-5",
+  "to": "A-6",
+  "input_contract": "RECIPE_DECISION_INPUT_V1",
+  "entrypoint": "prebuild-cycle3/structure_to_endpoint_schema_binding.cjs",
+  "command": "node structure_to_endpoint_schema_binding.cjs < a3-a4-evidence-bundle.json > recipe-decision-input.json",
+  "direct_consume_rules": {
+    "requires_additional_inference": false,
+    "compile_allowed_when": "a6_direct_consume.compile_allowed=true AND decision_status=READY",
+    "must_fail_closed_when": "decision_status=INSUFFICIENT_EVIDENCE OR fail_closed=true",
+    "unknown_fields": "Preserve exactly; do not invent values",
+    "provenance": "Preserve command_id/page_id/action_id and evidence_pointer without rewriting",
+    "session": "Use credential_reference/redacted semantics only; no raw secrets"
+  },
+  "recipe_members": [
+    "endpoint_binding",
+    "request_binding",
+    "response_binding",
+    "schema_binding",
+    "session_binding",
+    "pagination_binding",
+    "mode_decision",
+    "provenance"
+  ],
+  "exit_codes": {
+    "0": "READY_FULL_EVIDENCE",
+    "10": "INSUFFICIENT_EVIDENCE_CONFIDENCE_DEGRADED",
+    "20": "FAIL_CLOSED",
+    "30": "INVALID_INPUT_OR_HANDOFF_MISMATCH",
+    "40": "RAW_SECRET_VALUE_REJECTED"
+  },
+  "raw_secret_value_count": 0,
+  "target_pc_execution": false,
+  "live_site_call": false,
+  "tunnel_change": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
