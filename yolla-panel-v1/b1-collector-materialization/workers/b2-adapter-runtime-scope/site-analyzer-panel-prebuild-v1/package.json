@@ -1,0 +1,8 @@
+{
+  "name": "b2-visual-inspector-workflow-trace-prebuild",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "smoke": "node tools/prebuild_smoke.mjs"
+  }
+}

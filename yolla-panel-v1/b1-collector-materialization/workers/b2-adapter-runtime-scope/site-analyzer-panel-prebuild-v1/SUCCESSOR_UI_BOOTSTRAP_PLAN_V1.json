@@ -1,0 +1,52 @@
+{
+  "schema_version": "SUCCESSOR_UI_BOOTSTRAP_PLAN_V1",
+  "directive_id": "AI001-TO-B2-VISUAL-INSPECTOR-WORKFLOW-TRACE-PREBUILD-V1-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "worker": "B-2",
+  "worker_pr": 38,
+  "role": "B-2_VISUAL_INSPECTOR_WORKFLOW_TRACE_UI_OWNER",
+  "control_plane_only": true,
+  "runtime_owned_by_ui": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "goal": "Single-command materialization of a UI package from committed contracts and pointer without chat context.",
+  "single_command": "node tools/prebuild_smoke.mjs --pointer LATEST_B2_VISUAL_INSPECTOR_WORKFLOW_TRACE_PREBUILD_POINTER.json",
+  "future_product_command": "npm run analyzer:ui -- --pointer <LATEST_POINTER>",
+  "steps": [
+    "read_latest_pointer",
+    "load_contracts",
+    "validate_schema_versions",
+    "load_or_create_view_state",
+    "resolve_server_analyzer_result_refs",
+    "materialize_control_plane_store",
+    "start_ui_shell",
+    "restore_selection_and_trace_cursor"
+  ],
+  "package_plan": {
+    "framework": "reuse existing product UI shell; no new browser engine",
+    "optional_reuse_candidates": {
+      "workflow": "React Flow",
+      "table": "TanStack Table",
+      "virtualization": "TanStack Virtual",
+      "code": "Monaco",
+      "json": "JSONEditor"
+    },
+    "dependency_policy": "reuse existing dependency if present; do not install in this prebuild cycle",
+    "runtime_transport": "consume Server/Analyzer result APIs or existing Runtime Bridge only"
+  },
+  "view_state_file": "SITE_ANALYZER_PANEL_VIEW_STATE_V1.json",
+  "context_free_restore": {
+    "pointer_required": true,
+    "chat_context_required": false,
+    "result_refs_required": true,
+    "stale_ref_behavior": "render stale badge and preserve last selection"
+  },
+  "forbidden_actions": [
+    "TUNNEL_CREATE",
+    "SUCCESSOR_DIRECT_CALL",
+    "TARGET_PC_EXECUTION",
+    "NEW_BROWSER_ENGINE"
+  ]
+}

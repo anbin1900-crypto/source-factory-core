@@ -1,0 +1,257 @@
+{
+  "schema_version": "SITE_ANALYZER_PANEL_VIEWMODEL_V1",
+  "directive_id": "AI001-TO-B2-VISUAL-INSPECTOR-WORKFLOW-TRACE-PREBUILD-V1-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "worker": "B-2",
+  "worker_pr": 38,
+  "role": "B-2_VISUAL_INSPECTOR_WORKFLOW_TRACE_UI_OWNER",
+  "control_plane_only": true,
+  "runtime_owned_by_ui": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "purpose": "Context-free control-plane projection for Browser/Analyzer evidence.",
+  "benchmark_pattern_mapping": {
+    "workflow_canvas": "node/edge orchestration view",
+    "recorder": "ordered user-action stream",
+    "trace_viewer": "time-ordered correlated trace drawer",
+    "session_inspector": "live page/frame/session projection",
+    "data_console": "editable evidence-backed preview table"
+  },
+  "accepted_result_channels": [
+    "browser.session.snapshot",
+    "browser.page.snapshot",
+    "analyzer.network.event",
+    "analyzer.response.event",
+    "analyzer.dom.snapshot",
+    "analyzer.structure.result",
+    "analyzer.schema.result",
+    "analyzer.preview.result",
+    "analyzer.trace.event",
+    "analyzer.recipe.result",
+    "analyzer.adapter.result"
+  ],
+  "workflow": {
+    "nodes": {
+      "key": "node_id",
+      "fields": [
+        "node_id",
+        "kind",
+        "label",
+        "status",
+        "source_ref",
+        "page_id",
+        "recipe_step_id",
+        "adapter_id",
+        "confidence",
+        "selected",
+        "stale"
+      ]
+    },
+    "edges": {
+      "key": "edge_id",
+      "fields": [
+        "edge_id",
+        "source_node_id",
+        "target_node_id",
+        "kind",
+        "label",
+        "evidence_ref"
+      ]
+    },
+    "node_kinds": [
+      "START",
+      "NAVIGATE",
+      "ACTION",
+      "EXTRACT",
+      "TRANSFORM",
+      "PAGINATE",
+      "RETRY",
+      "EXPORT",
+      "END"
+    ],
+    "edge_kinds": [
+      "SEQUENCE",
+      "CONDITION",
+      "RETRY",
+      "DATA_FLOW",
+      "EVIDENCE_LINK"
+    ]
+  },
+  "live_session": {
+    "fields": [
+      "session_id",
+      "runtime_id",
+      "connection_state",
+      "started_at",
+      "last_event_at",
+      "selected_page_id",
+      "selected_frame_id",
+      "pages",
+      "evidence_refs"
+    ],
+    "page_fields": [
+      "page_id",
+      "target_id",
+      "url",
+      "title",
+      "frame_count",
+      "popup_parent_page_id",
+      "is_selected",
+      "screenshot_ref",
+      "dom_snapshot_ref",
+      "network_event_count",
+      "console_error_count"
+    ],
+    "selected_page_binding": {
+      "primary_key": "selected_page_id",
+      "fallback": "last_active_page_id",
+      "must_match_existing_page": true
+    }
+  },
+  "smart_inspector": {
+    "selected_element_fields": [
+      "page_id",
+      "frame_id",
+      "frame_path",
+      "selector",
+      "dom_path",
+      "text",
+      "attributes",
+      "repeated_region_id",
+      "field_id",
+      "locator_ids",
+      "network_request_ids",
+      "response_refs",
+      "schema_field_ref",
+      "source_row_pointer",
+      "source_element_pointer",
+      "confidence",
+      "evidence_state"
+    ],
+    "tabs": [
+      "DOM",
+      "LOCATOR",
+      "REPEATED_REGION",
+      "NETWORK",
+      "RESPONSE",
+      "SCHEMA",
+      "CONFIDENCE"
+    ]
+  },
+  "data_preview": {
+    "table": {
+      "row_key": "row_id",
+      "virtualizable": true,
+      "editable": true,
+      "server_owned_data": true
+    },
+    "column_fields": [
+      "field_key",
+      "label",
+      "data_type",
+      "editable",
+      "source_key",
+      "source_pointer",
+      "confidence",
+      "validation_state"
+    ],
+    "edit_fields": [
+      "edit_id",
+      "row_id",
+      "field_key",
+      "before",
+      "after",
+      "data_type",
+      "reason",
+      "applied",
+      "source_pointer"
+    ],
+    "selection_binding": {
+      "selected_row_id": "nullable",
+      "selected_field_key": "nullable",
+      "inspector_bidirectional": true
+    }
+  },
+  "trace_drawer": {
+    "event_key": "trace_event_id",
+    "sort": [
+      "timestamp",
+      "sequence"
+    ],
+    "categories": [
+      "ACTION",
+      "NETWORK",
+      "RESPONSE",
+      "CONSOLE",
+      "ERROR",
+      "RECIPE",
+      "ADAPTER"
+    ],
+    "correlation_keys": [
+      "session_id",
+      "page_id",
+      "frame_id",
+      "request_id",
+      "action_id",
+      "recipe_step_id",
+      "adapter_run_id"
+    ],
+    "filters": [
+      "category",
+      "page_id",
+      "severity",
+      "request_id",
+      "action_id",
+      "recipe_step_id",
+      "adapter_run_id",
+      "text"
+    ]
+  },
+  "view_state": {
+    "schema": "SITE_ANALYZER_PANEL_VIEW_STATE_V1",
+    "fields": [
+      "view_state_id",
+      "selected_workflow_node_id",
+      "selected_page_id",
+      "selected_frame_id",
+      "selected_element_ref",
+      "selected_request_id",
+      "selected_preview_row_id",
+      "selected_preview_field_key",
+      "active_inspector_tab",
+      "trace_filters",
+      "trace_cursor",
+      "workflow_viewport",
+      "expanded_panels",
+      "updated_at"
+    ],
+    "context_free_restore": true
+  },
+  "restore_contract": {
+    "minimum_inputs": [
+      "latest_pointer",
+      "panel_view_state",
+      "result_source_refs"
+    ],
+    "never_require_chat_context": true,
+    "missing_evidence_policy": "SHOW_UNBOUND_OR_STALE_DO_NOT_INFER"
+  },
+  "ownership_boundary": {
+    "ui_may": [
+      "render",
+      "select",
+      "filter",
+      "edit_draft_view_state",
+      "request_control_action"
+    ],
+    "ui_must_not": [
+      "launch_browser_engine",
+      "own_runtime_process",
+      "open_tunnel",
+      "mutate_raw_evidence",
+      "claim_analyzer_result"
+    ]
+  }
+}

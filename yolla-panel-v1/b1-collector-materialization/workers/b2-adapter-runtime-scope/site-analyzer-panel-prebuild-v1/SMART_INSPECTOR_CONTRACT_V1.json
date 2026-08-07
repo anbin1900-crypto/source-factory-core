@@ -1,0 +1,122 @@
+{
+  "schema_version": "SMART_INSPECTOR_CONTRACT_V1",
+  "directive_id": "AI001-TO-B2-VISUAL-INSPECTOR-WORKFLOW-TRACE-PREBUILD-V1-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "worker": "B-2",
+  "worker_pr": 38,
+  "role": "B-2_VISUAL_INSPECTOR_WORKFLOW_TRACE_UI_OWNER",
+  "control_plane_only": true,
+  "runtime_owned_by_ui": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "input_envelopes": {
+    "dom": [
+      "session_id",
+      "page_id",
+      "frame_id",
+      "dom_snapshot_id",
+      "selector",
+      "dom_path",
+      "text",
+      "attributes"
+    ],
+    "structure": [
+      "repeated_regions",
+      "field_candidates",
+      "locator_candidates",
+      "pagination_candidates",
+      "confidence"
+    ],
+    "network": [
+      "request_id",
+      "url",
+      "method",
+      "resource_type",
+      "initiator",
+      "timestamp"
+    ],
+    "response": [
+      "request_id",
+      "status",
+      "mime_type",
+      "size_bytes",
+      "body_ref",
+      "schema_ref"
+    ],
+    "schema": [
+      "schema_id",
+      "fields",
+      "primary_key",
+      "mode",
+      "confidence",
+      "source_ref"
+    ]
+  },
+  "correlation": {
+    "element_to_field": [
+      "selector",
+      "dom_path",
+      "source_element_pointer"
+    ],
+    "field_to_locator": [
+      "field_id",
+      "locator_id"
+    ],
+    "element_to_network": [
+      "request_id",
+      "source_pointer",
+      "field_id"
+    ],
+    "network_to_response": [
+      "request_id"
+    ],
+    "response_to_schema": [
+      "schema_ref",
+      "body_ref"
+    ],
+    "required_bidirectional_links": [
+      "DOM_TO_FIELD",
+      "FIELD_TO_DOM",
+      "DOM_TO_NETWORK",
+      "NETWORK_TO_DOM"
+    ]
+  },
+  "display_sections": [
+    "DOM",
+    "Locator",
+    "Repeated Region",
+    "Network",
+    "Response",
+    "Schema",
+    "Confidence"
+  ],
+  "confidence_model": {
+    "value_range": [
+      0,
+      1
+    ],
+    "fields": [
+      "score",
+      "reason_codes",
+      "producer",
+      "evidence_count",
+      "stale"
+    ],
+    "missing": "UNAVAILABLE"
+  },
+  "source_pointer_policy": {
+    "preserve_exact": true,
+    "editable_copy_only": true,
+    "raw_evidence_mutation": false
+  },
+  "evidence_states": [
+    "UNBOUND",
+    "PENDING",
+    "BOUND",
+    "STALE",
+    "INVALID"
+  ],
+  "output": "SMART_INSPECTOR_VIEW_STATE_V1"
+}
