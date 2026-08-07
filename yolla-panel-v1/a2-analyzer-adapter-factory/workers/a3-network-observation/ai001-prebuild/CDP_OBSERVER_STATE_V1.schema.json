@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "CDP_OBSERVER_STATE_V1.schema.json",
+  "title": "CDP Observer State V1",
+  "type": "object",
+  "required": ["schema_version", "observer_id", "page_id", "sequence", "counters", "pending_responses", "recent_actions"],
+  "properties": {
+    "schema_version": {"const": "CDP_OBSERVER_STATE_V1"},
+    "observer_id": {"type": "string", "minLength": 1},
+    "page_id": {"type": ["string", "null"]},
+    "session_id": {"type": ["string", "null"]},
+    "selected_target": {"type": ["object", "null"]},
+    "sequence": {"type": "integer", "minimum": 0},
+    "started_at": {"type": ["string", "null"]},
+    "stopped_at": {"type": ["string", "null"]},
+    "counters": {"type": "object"},
+    "pending_responses": {"type": "object"},
+    "recent_actions": {"type": "array"},
+    "last_event_digest": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}
