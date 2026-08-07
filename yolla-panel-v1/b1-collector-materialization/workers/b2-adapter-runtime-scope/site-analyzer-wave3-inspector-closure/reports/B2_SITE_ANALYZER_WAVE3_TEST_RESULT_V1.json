@@ -1,0 +1,77 @@
+{
+  "schema_version": "B2_SITE_ANALYZER_WAVE3_TEST_RESULT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment": 5212043685,
+  "tested_at_kst": "2026-08-07T14:24:00+09:00",
+  "remote_source_head_before_receipts": "2cf87d1c968b250f32af6cb945eb77bcf2bd3c5f",
+  "remote_readback": {
+    "status": "PASS_9_OF_9",
+    "package_blob": "1705c64066927441b66cdfbb1c44cbfd692d8f81",
+    "model_blob": "14a8883df3a05f854f68290f12c4e8bf85d6fbfa",
+    "bridge_blob": "a2b631009a2c4c277d7f46b06c5e8796bbf22682",
+    "app_blob": "2d5c371e14f346c66b937f10e1615b37b1b04582",
+    "ui_blob": "c6e7bcc5faf75a701bb0d169d76677ea796a5d6d",
+    "model_test_blob": "10e395f290a9ca4151c3bd7e17ff141719ca9608",
+    "browser_e2e_blob": "871ec99f208e58a0da9ecca4b3002e6d1365c77b",
+    "start_report_blob": "87a2865bc9d004f103210a239c7f091e557a7d77",
+    "upstream_binding_blob": "f07c44258d89df1b56b173ba355437fb83136f31"
+  },
+  "node_unit_test": {
+    "command": "node --test tests/model.test.mjs",
+    "status": "PASS",
+    "test_count": 20,
+    "pass_count": 20,
+    "fail_count": 0
+  },
+  "actual_chromium_e2e": {
+    "command": "node tests/browser_e2e.mjs",
+    "status": "PASS",
+    "runtime": "CHROMIUM_HEADLESS_144_CDP",
+    "transport": "TRANSFERABLE_MESSAGE_PORT",
+    "embedded_network_event_count": 8,
+    "standalone_network_event_count": 7,
+    "preview_row_count": 10,
+    "workflow_step_count": 10,
+    "dynamic_mutation_count": 1,
+    "popup_count": 1,
+    "iframe_count": 1,
+    "selection_selector": "h2.name",
+    "selection_field_ids": ["f-name"],
+    "selection_locator_ids": ["l-name"],
+    "selection_network_binding_count": 1,
+    "source_row_json_pointer": "/records/0",
+    "source_element_pointer": "/records/0/name"
+  },
+  "required_pass": {
+    "DOM_NETWORK_SYNC": "PASS",
+    "ELEMENT_TO_FIELD_POINTER": "PASS",
+    "LIVE_PREVIEW": "PASS",
+    "DYNAMIC_DOM": "PASS",
+    "POPUP_IFRAME": "PASS",
+    "EMBEDDED_STANDALONE_PARITY": "PASS"
+  },
+  "scenario_receipt": {
+    "commit": "ca8929889d4a333b36ea419890f63bb9210f9382",
+    "blob": "368825dd8bbefff754e26d21cfe66f682bc6bf9e",
+    "status": "PASS"
+  },
+  "environment_guard": {
+    "managed_policy_isolated_only_during_loopback_browser_test": true,
+    "managed_policy_restored": true,
+    "policy_restore_status": "PASS"
+  },
+  "authority_safety": {
+    "a3_live_stream_authority_bound": true,
+    "a4_live_structure_authority_bound": true,
+    "a5_live_producer_pass_claimed": false,
+    "b3_wave3_10_step_authority_bound": true,
+    "b5_live10_authority_bound": true,
+    "false_upstream_pass_claim_count": 0
+  },
+  "actual_external_site_call_count": 0,
+  "target_pc_electron_single_launcher_executed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
