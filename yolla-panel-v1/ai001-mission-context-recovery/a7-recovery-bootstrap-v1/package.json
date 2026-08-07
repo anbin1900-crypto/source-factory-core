@@ -1,0 +1,1 @@
+{"name":"a7-ai001-recovery-bootstrap","version":"1.0.0","private":true,"type":"commonjs","scripts":{"test":"node --test test/*.test.cjs","recover":"node recover-work.cjs --pointer ./LATEST_MISSION_POINTER.json"},"engines":{"node":">=20"}}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "COMMAND_CHECKPOINT_RESUME_V1",
+  "stale_after_seconds": 120,
+  "allowed_decisions": ["SKIP_DUPLICATE", "RESUME", "REPAIR_THEN_RESUME", "SAFE_RERUN", "BLOCKED", "ADVANCE"],
+  "rules": [
+    {"priority": 1, "when": "latest_result.status == PASS && latest_result.idempotency_key == current_command.idempotency_key", "decision": "SKIP_DUPLICATE", "next": "ADVANCE"},
+    {"priority": 2, "when": "active blocker is non-repairable", "decision": "BLOCKED"},
+    {"priority": 3, "when": "RUNNING/INTERRUPTED is stale && repairable partial state exists && checkpoint.durable == true", "decision": "REPAIR_THEN_RESUME"},
+    {"priority": 4, "when": "RUNNING/INTERRUPTED is stale && checkpoint.durable == true", "decision": "RESUME"},
+    {"priority": 5, "when": "RUNNING/INTERRUPTED is stale && checkpoint.durable != true && current_command.safe_rerun == true && current_command.non_idempotent_side_effect_committed != true", "decision": "SAFE_RERUN"},
+    {"priority": 6, "when": "current_command.status == PASS", "decision": "ADVANCE"},
+    {"priority": 7, "when": "otherwise", "decision": "BLOCKED"}
+  ],
+  "duplicate_execution_policy": {
+    "key": "idempotency_key",
+    "pass_receipt_wins": true,
+    "same_key_pass_behavior": "NEVER_EXECUTE_AGAIN",
+    "same_key_running_fresh_behavior": "BLOCKED_ACTIVE_EXECUTION"
+  },
+  "partial_write_policy": {
+    "detect": ["missing_required_file", "zero_byte_file", "malformed_json", "sha256_mismatch", "temporary_suffix", "receipt_status_WRITING", "commit_status_PENDING"],
+    "safe_repair": ["quarantine_corrupt_partial", "remove_stale_temp", "mark_missing_for_regeneration"],
+    "never_repair_automatically": ["unknown_external_side_effect", "production_write", "target_pc_execution"]
+  }
+}
