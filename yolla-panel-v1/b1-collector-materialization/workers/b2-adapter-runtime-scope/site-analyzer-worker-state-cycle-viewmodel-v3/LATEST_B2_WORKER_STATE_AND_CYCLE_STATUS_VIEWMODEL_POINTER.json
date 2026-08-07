@@ -1,0 +1,45 @@
+{
+  "schema_version": "LATEST_B2_WORKER_STATE_AND_CYCLE_STATUS_VIEWMODEL_POINTER_V1",
+  "directive_id": "AI001-TO-B2-WORKER-STATE-AND-CYCLE-STATUS-VIEWMODEL-V3-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "worker": "B-2",
+  "worker_pr": 38,
+  "terminal": "B2_WORKER_STATE_AND_CYCLE_STATUS_VIEWMODEL_READY",
+  "status": "PASS_CONTEXT_INDEPENDENT_DUAL_SOURCE_WORKER_STATE_VIEWMODEL",
+  "final_report_commit": "3e7bca3f92f707ea670a67715404a7f5949727b1",
+  "final_report_blob": "1bece96ee4ca1a1c46dded69d980cab306c92ff9",
+  "test_result_commit": "973bc2fce456dc560dcae25ac24f728d05b0e5ea",
+  "test_result_blob": "279b025513b7fe5b31d7c05a928ec9ca9a17c5c2",
+  "artifacts": {
+    "worker_card_contract_blob": "51f1d63238a1cb8efae9571f053fb9227d27d4af",
+    "cycle_status_contract_blob": "98de379699442c9af616842538d83f59e2ba5e77",
+    "event_binding_blob": "665f8f460fa5960b94d4222d236ab53724a33bb6",
+    "panel_viewmodel_js_blob": "80e8d4a391fb0c81addabf5f49a91573cc48ce36",
+    "fixture_blob": "b1376975bda22a6131b81fd93f1e1b88c746f670",
+    "smoke_blob": "0e171039877ad29544e6f73a632e8fd8f5e87430"
+  },
+  "producer_pointers": {
+    "A3": "aaee481e276485682fa73d52a70881e14d653539",
+    "B1": "617cb67d5f261e500395bd60ec99678b2720d6a8"
+  },
+  "validation": {
+    "a3_schema": "PASS_6_OF_6",
+    "b1_schema": "PASS_2_OF_2",
+    "fixture_viewmodel_smoke": "PASS_25_OF_25",
+    "remote_readback": "PASS_6_OF_6"
+  },
+  "truth_policy": {
+    "complete_result_pending": true,
+    "unknown_selector_fail_safe": true,
+    "likely_complete_not_promoted": true,
+    "cycle_terminal_not_inferred": true
+  },
+  "panel_apply": false,
+  "target_pc_execution": false,
+  "tunnel_change": false,
+  "new_browser_view": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
