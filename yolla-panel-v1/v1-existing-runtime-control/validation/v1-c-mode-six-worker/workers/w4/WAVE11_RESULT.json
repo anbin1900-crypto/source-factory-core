@@ -1,0 +1,38 @@
+{
+  "schema_version": "C_MODE_WAVE_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-011",
+  "registry_sequence": 11,
+  "command_id": "C6W-W11-W4-CONNECTOR-BYTE-PREFLIGHT-3ROUND-RERUN",
+  "role": "AUTOMATION-C-W4",
+  "result_key": "519484048400",
+  "outcome": "BLOCKED",
+  "negative_fixture": {
+    "status": "PASS",
+    "installable_runtime": false,
+    "input_artifact_commit": "5b44c83a78e2a653cf1b721d546d3f5b7b53b61d",
+    "size_bytes": 2652,
+    "sha256": "21587622092a36b16c054569ee97463cfc9458b945a26018c486f0f83f5c6447"
+  },
+  "rc4_rerun": {
+    "status": "BLOCKED",
+    "reason": "W5 Wave 11 rc4 result and immutable artifact bytes are not yet published",
+    "required_before_rerun": [
+      "W5 Wave 11 result comment",
+      "rc4 immutable artifact commit",
+      "actual runtime byte manifest",
+      "installer and rollback bytes"
+    ]
+  },
+  "counters": {
+    "DUPLICATE": null,
+    "C_REPEAT_CROSS_CANCEL": null,
+    "END_REDISPATCH": null,
+    "RECEIPT_LOSS": null,
+    "QUEUE_GROWTH": null
+  },
+  "ui_receipt_gate": "CARRYOVER",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

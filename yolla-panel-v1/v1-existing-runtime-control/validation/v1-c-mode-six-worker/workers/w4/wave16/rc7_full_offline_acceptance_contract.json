@@ -1,0 +1,43 @@
+{
+  "schema_version": "W4_WAVE16_RC7_FULL_OFFLINE_ACCEPTANCE_CONTRACT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-016",
+  "registry_sequence": 16,
+  "command_id": "C6W-W16-W4-RC7-FULL-OFFLINE-ACCEPTANCE",
+  "directive_comment": 5198285020,
+  "result_key": "519828502000",
+  "target_version": "5.10.2.4.2-rc7",
+  "input_transport": "GITHUB_BLOB_API_ONLY",
+  "required_gates": [
+    "EXACT_BLOB_SHA256_SIZE_ALL_MATCH",
+    "BASELINE_RESOLVER",
+    "BASELINE_RECURSIVE_CLONE",
+    "EXACT_RUNTIME_OVERLAY",
+    "W3_RENDERER_HOOK",
+    "ALL_RUNTIME_COMPONENT_IMPORT_AND_BASIC_BEHAVIOR",
+    "FIXED_LOGIN_PROFILE_AND_PARTITION",
+    "C_REPEAT_NAMESPACE_NONINTERFERENCE",
+    "SIX_WORKERS_X_THREE_ROUNDS",
+    "RESTART_RESUME",
+    "EXACTLY_ONCE_RECEIPTS",
+    "ROLLBACK_LAUNCHER_STATE_LOG_PROFILE_PRE_POST_READBACK"
+  ],
+  "required_counters": {
+    "DUPLICATE": 0,
+    "C_REPEAT_CROSS_CANCEL": 0,
+    "END_REDISPATCH": 0,
+    "RECEIPT_LOSS": 0,
+    "QUEUE_GROWTH": 0
+  },
+  "receipt_contract": {
+    "round_count": 3,
+    "worker_count": 6,
+    "expected_worker_round_receipts": 18,
+    "restart_required": true,
+    "rollback_readback_required": true
+  },
+  "target_pc_install_authorized": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

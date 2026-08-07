@@ -1,0 +1,22 @@
+{
+  "schema_version": "W4_ACTUAL_BRIDGE_EXPORT_MANIFEST_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-008",
+  "result_key": "519386645000",
+  "input_head": "61fc6a20b2245c691ab3812d07ea321aa2944ea0",
+  "apply_order": [
+    "automation-c-v1/actual_repeat_release_adapter.cjs",
+    "automation-c-v1/c_repeat_namespace_adapter.cjs",
+    "automation-c-v1/actual_candidate_bridge_binding.cjs"
+  ],
+  "test_path": "automation-c-v1/tests/test_actual_candidate_bridge_soak.cjs",
+  "state_namespaces": {
+    "c_mode": "REGISTRY_SEQUENCE+RESULT_KEY",
+    "repeat": "ROLE+COMMAND_ID+DISPATCH_ID"
+  },
+  "rollback_order": [
+    "automation-c-v1/actual_candidate_bridge_binding.cjs",
+    "automation-c-v1/c_repeat_namespace_adapter.cjs"
+  ],
+  "consumer": "AUTOMATION-C-W5"
+}

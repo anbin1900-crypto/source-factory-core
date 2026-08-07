@@ -1,0 +1,22 @@
+{
+  "schema_version": "W4_WAVE16_RC6_NEGATIVE_ACCEPTANCE_LOG_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-016",
+  "directive_comment": 5198285020,
+  "result_key": "519828502000",
+  "payload_commit": "60a37e73b441c19b66d3eb840a8dbc381215dd63",
+  "installer_commit": "ceb5ae6591c223be7a8b093d55c869170cb505f2",
+  "input_method": "GITHUB_CONNECTOR_COMMIT_AND_BLOB_BYTES",
+  "findings": [
+    {"code":"RESOLVER_NOT_BOUND","status":"REPRODUCED","evidence":"Installer performs inline directory search for 5.10.2.4.0 and does not import or bind an authoritative baseline resolver component."},
+    {"code":"TRUTH_BRIDGE_HOOK_NOT_BOUND","status":"REPRODUCED","evidence":"Renderer mutation inserts only workspace_c_mode_rc4_truth.css and workspace_c_mode_rc4_truth.js; workspace_ui_truth_bridge.cjs is copied but no registration/load hook is installed."},
+    {"code":"SMOKE_SCOPE_INSUFFICIENT","status":"REPRODUCED","evidence":"Installer executes only automation-c-v1/tests/rc4_isolated_smoke.cjs and does not cover renderer hook, fixed profile partition, 6x3 rounds, restart resume, exactly-once, or rollback readback."},
+    {"code":"TEMPORARY_PROFILE_USED","status":"REPRODUCED","evidence":"background_browser_dispatch.cjs opens target with {hidden:true, temporaryProfile:true}; fixed login profile and partition are not passed."},
+    {"code":"SINGLE_BUNDLE_ABSENT","status":"REPRODUCED","evidence":"Installer depends on sibling rc6-payload directory; payload and installer are separate commits and no single self-contained bundle byte is provided."}
+  ],
+  "rc5_rejection_fixture_preserved": true,
+  "target_pc_executed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "AUTOMATION_C_W4_WAVE15_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-015",
+  "registry_sequence": 15,
+  "command_id": "C6W-W15-W4-BLOB-FED-RC6-OFFLINE-ACCEPTANCE",
+  "role": "AUTOMATION-C-W4",
+  "directive_comment": 5196989097,
+  "report_request_comment": 5197566991,
+  "result_key": "519698909700",
+  "target_version": "5.10.2.4.2-rc6",
+  "outcome": "BLOCKED",
+  "completed": {
+    "rc5_rejection_fixture_retained": true,
+    "raw_url_dependency_removed": true,
+    "github_blob_api_contract_committed": true,
+    "positive_acceptance_gate_defined": true,
+    "required_zero_counters_defined": true
+  },
+  "positive_input_status": {
+    "w5_wave15_result_published": false,
+    "rc6_immutable_17_member_artifact_published": false,
+    "blob_sha_size_receipt_published": false
+  },
+  "exact_external_blocker": "W5_WAVE15_RC6_RESULT_AND_IMMUTABLE_17_MEMBER_BLOB_MANIFEST_NOT_YET_PUBLISHED",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "C_MODE_WAVE19_W4_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-019",
+  "registry_sequence": 19,
+  "command_id": "C6W-W19-W4-THIRTY-MINUTE-CHECK-RUNTIME",
+  "role": "AUTOMATION-C-W4",
+  "directive_comment": 5200547394,
+  "result_key": "520054739400",
+  "outcome": "PASS",
+  "base_result_commit": "5a4be74d6a35e85ea5a97ebfdbb46db2180d8ebc",
+  "implementation_owner": false,
+  "checks": {
+    "before_30_minutes_noop": "PASS",
+    "generating_noop": "PASS",
+    "terminal_missing_refresh_once": "PASS",
+    "post_refresh_wait_30_seconds": "PASS",
+    "restart_timer_and_refresh_count_recovery": "PASS",
+    "duplicate_refresh_prevention": "PASS",
+    "duplicate_directive_rejected": "PASS"
+  },
+  "configuration": {
+    "check_threshold_ms": 1800000,
+    "refresh_limit": 1,
+    "post_refresh_wait_ms": 30000
+  },
+  "counters": {
+    "GENERATING_REFRESH_COUNT": 0,
+    "DUPLICATE_DIRECTIVE_ACCEPTED_COUNT": 0,
+    "DUPLICATE_REFRESH_COUNT": 0
+  },
+  "test": {
+    "syntax_check": "PASS",
+    "fixture_assertions": 13,
+    "refresh_invocation_count": 1,
+    "browser_required": false
+  },
+  "artifacts": [
+    "wave19/thirty_minute_check_runtime.cjs",
+    "wave19/test_thirty_minute_check_runtime.cjs",
+    "wave19/OFFLINE_RECEIPT.json"
+  ],
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "target_pc_execution_count": 0
+}

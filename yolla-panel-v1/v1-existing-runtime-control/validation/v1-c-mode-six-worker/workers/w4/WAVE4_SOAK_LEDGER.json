@@ -1,0 +1,20 @@
+{
+  "schema_version": "V1_C_MODE_W4_WAVE4_SOAK_LEDGER_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-004",
+  "command_id": "C6W-W4-W4-SIX-SLOT-REPEAT-SOAK",
+  "virtual_trigger_cycles": 120,
+  "slot_count": 6,
+  "checkpoint_cycles": [1, 20, 25, 56, 60, 70, 100, 120],
+  "mixed_operations": ["EVERY_X_MINUTES", "AFTER_COMPLETION", "PAUSE", "RESUME", "PARTIAL_END", "REVERSED_COMPLETION_ORDER", "RESTART", "CONCURRENT_C_MODE"],
+  "receipt_count": 317,
+  "conflict_counters": {
+    "duplicate_repeat_dispatch": 0,
+    "previous_c_cancelled": 0,
+    "c_repeat_cross_cancel": 0,
+    "end_slot_redispatch": 0,
+    "receipt_loss": 0,
+    "awaiting_queue_growth": 0
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "V1_C_MODE_W4_WAVE5_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-005",
+  "worker_id": "AUTOMATION-C-W4",
+  "command_id": "C6W-W5-W4-ACTUAL-REPEAT-RELEASE-ADAPTER",
+  "status": "PASS",
+  "terminal": "C6W_W5_W4_ACTUAL_REPEAT_RELEASE_ADAPTER_PASS",
+  "input_head": "5b6f204145a1275ae9fcaab21e9be2725c8cb355",
+  "implementation_commit": "c80735a0b9e3ac197b02132a3e6fc833ac31e997",
+  "test_commit": "e493bc0f8c3c33c02cc82a3f86289ead28a5898e",
+  "export_manifest_commit": "a23565efa12c2415392b197596872326c3bf7701",
+  "soak": {
+    "virtual_trigger_cycles": 240,
+    "slots": 6,
+    "repeat_receipts": 1400,
+    "concurrent_c_mode_items": 12,
+    "restart_cycle": 80,
+    "reverse_completion_order": true,
+    "partial_end_cycle": 200
+  },
+  "counters": {
+    "duplicate_repeat_dispatch": 0,
+    "previous_c_cancelled": 0,
+    "c_repeat_cross_cancel": 0,
+    "end_slot_redispatch": 0,
+    "receipt_loss": 0,
+    "awaiting_queue_growth": 0
+  },
+  "checks": {
+    "node_check_adapter": "PASS",
+    "node_check_soak": "PASS",
+    "node_soak": "PASS",
+    "restart_active_queue_rehydration": "PASS",
+    "w2_repeat_result_correlation": "PASS",
+    "popup_channel": "ACTUAL_REPEAT_COMMAND"
+  },
+  "export_manifest_path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w4/WAVE5_EXPORT_MANIFEST.json",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

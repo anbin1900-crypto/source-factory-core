@@ -1,0 +1,36 @@
+{
+  "schema_version": "C6W_W7_W4_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-007",
+  "worker_id": "AUTOMATION-C-W4",
+  "command_id": "C6W-W7-W4-C-REPEAT-NONINTERFERENCE",
+  "result_key": "519363356800",
+  "outcome": "PASS",
+  "wave6_report": "MISSING_RECORDED_BEFORE_EXECUTION",
+  "wave6_missing_comment": 5193731686,
+  "virtual_trigger_cycles": 360,
+  "slots": 6,
+  "repeat_receipts": 2100,
+  "c_queue_items": 360,
+  "restart_cycle": 180,
+  "namespace_contracts": {
+    "c": "REGISTRY_SEQUENCE+RESULT_KEY",
+    "repeat": "ROLE+COMMAND_ID+DISPATCH_ID"
+  },
+  "counters": {
+    "duplicate": 0,
+    "cross_cancel": 0,
+    "end_redispatch": 0,
+    "receipt_loss": 0,
+    "awaiting_growth": 0,
+    "superseded_accepted": 0
+  },
+  "tests": [
+    "node --check automation-c-v1/c_repeat_namespace_adapter.cjs",
+    "node --check automation-c-v1/tests/test_c_repeat_namespace_soak.cjs",
+    "node automation-c-v1/tests/test_c_repeat_namespace_soak.cjs"
+  ],
+  "production": false,
+  "ready": false,
+  "merge": false
+}

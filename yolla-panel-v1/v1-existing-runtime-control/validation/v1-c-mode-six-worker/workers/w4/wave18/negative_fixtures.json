@@ -1,0 +1,11 @@
+{
+  "schema_version": "W4_WAVE18_NEGATIVE_FIXTURES_V1",
+  "fixtures": [
+    {"id":"SYNTHETIC_RECEIPT","input":{"synthetic":true},"expected":"SYNTHETIC_OR_SHALLOW_RECEIPT_REJECTED"},
+    {"id":"SHALLOW_RECEIPT","input":{"shallow":true},"expected":"SYNTHETIC_OR_SHALLOW_RECEIPT_REJECTED"},
+    {"id":"MISSING_PRE_EVIDENCE","missing":"pre_evidence.json","expected":"MISSING_PRE_EVIDENCE.JSON"},
+    {"id":"MISSING_POST_EVIDENCE","missing":"post_evidence.json","expected":"MISSING_POST_EVIDENCE.JSON"},
+    {"id":"DUPLICATE_RECEIPT","mutation":"duplicate receipt_id","expected":"DUPLICATE_RECEIPT_ID"},
+    {"id":"NONZERO_QUEUE_GROWTH","mutation":{"QUEUE_GROWTH":1},"expected":"NONZERO_QUEUE_GROWTH"}
+  ]
+}

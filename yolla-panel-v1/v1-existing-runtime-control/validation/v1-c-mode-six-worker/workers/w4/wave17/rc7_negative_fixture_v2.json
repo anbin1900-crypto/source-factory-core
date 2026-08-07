@@ -1,0 +1,29 @@
+{
+  "schema_version": "W4_RC7_NEGATIVE_FIXTURE_V2",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-017",
+  "target_version": "5.10.2.4.2-rc8",
+  "negative_input": "5.10.2.4.2-rc7",
+  "expected_rejections": [
+    "EXPECTED_MANIFEST_MISMATCH",
+    "SOURCE_IDENTITY_FAIL",
+    "MODULE_NOT_EXERCISED",
+    "C_REPEAT_NAMESPACE_CROSSING",
+    "RESTART_RESUME_FAIL",
+    "ROLLBACK_PRESERVATION_FAIL",
+    "COUNTER_NONZERO"
+  ],
+  "self_generated_manifest_forbidden": true,
+  "deterministic_receipt_count": 18,
+  "required_zero_counters": [
+    "DUPLICATE",
+    "C_REPEAT_CROSS_CANCEL",
+    "END_REDISPATCH",
+    "RECEIPT_LOSS",
+    "QUEUE_GROWTH"
+  ],
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "WAVE11_CONNECTOR_BYTE_NEGATIVE_FIXTURE_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-011",
+  "result_key": "519484048400",
+  "input_artifact_commit": "5b44c83a78e2a653cf1b721d546d3f5b7b53b61d",
+  "input_blob_sha1": "65941a205f2d95821bc96815e33a37855395608e",
+  "size_bytes": 2652,
+  "sha256": "21587622092a36b16c054569ee97463cfc9458b945a26018c486f0f83f5c6447",
+  "github_connector_byte_readback": "PASS",
+  "result_json_only": true,
+  "runtime_payload_reference_count": 0,
+  "runtime_install_action_present": false,
+  "installable_runtime": false,
+  "negative_fixture_pass": true,
+  "evidence": [
+    "BAT downloads four WAVE7 RESULT JSON files",
+    "BAT writes PAYLOAD_RECEIPT.json",
+    "BAT compresses downloaded result JSON files",
+    "BAT contains no .cjs/.js/.css/.ps1 runtime payload installation action"
+  ]
+}

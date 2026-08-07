@@ -1,0 +1,43 @@
+{
+  "schema_version": "AUTOMATION_C_W4_WAVE17_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-017",
+  "registry_sequence": 17,
+  "command_id": "C6W-W17-W4-RC8-FULL-OFFLINE-ACCEPTANCE-RUNNER-V2",
+  "role": "AUTOMATION-C-W4",
+  "directive_comment": 5198513106,
+  "result_key": "519851310600",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc8",
+  "outcome": "PASS",
+  "scope_completed": {
+    "runner_v2_implemented": true,
+    "expected_manifest_external_comparison": true,
+    "rc7_negative_fixture_v2_committed": true,
+    "w1_w3_identity_gate": true,
+    "runtime_instantiation_and_exercise_gate": true,
+    "c_repeat_namespace_isolation_gate": true,
+    "six_workers_x_three_rounds_fixture": true,
+    "restart_resume_gate": true,
+    "exactly_once_receipt_gate": true,
+    "rollback_and_preservation_readback_gate": true
+  },
+  "deterministic_fixture": {
+    "workers": 6,
+    "rounds": 3,
+    "expected_receipts": 18,
+    "receipt_ids_unique": true
+  },
+  "required_counters": {
+    "DUPLICATE": 0,
+    "C_REPEAT_CROSS_CANCEL": 0,
+    "END_REDISPATCH": 0,
+    "RECEIPT_LOSS": 0,
+    "QUEUE_GROWTH": 0
+  },
+  "positive_rc8_evaluation": "DEFERRED_TO_NEXT_EVENT_BY_DIRECTIVE",
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

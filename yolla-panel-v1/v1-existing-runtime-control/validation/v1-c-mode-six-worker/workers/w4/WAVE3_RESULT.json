@@ -1,0 +1,37 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE3_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-003",
+  "worker_id": "AUTOMATION-C-W4",
+  "command_id": "C6W-W3-W4-REPEAT-BRIDGE-ARBITRATION",
+  "status": "PASS",
+  "terminal": "C6W_W3_W4_REPEAT_BRIDGE_ARBITRATION_PASS",
+  "implementation_commit": "db1df9ebf1a9483fa6f3fc74cccef33add9953a7",
+  "test_commit": "83cdde17ee4c8733eb8b1e494a37e7a3b71ba7f0",
+  "tests": [
+    "node --check automation-c-v1/repeat_command_runtime.cjs",
+    "node --check automation-c-v1/tests/test_repeat_command_runtime.cjs",
+    "node automation-c-v1/tests/test_repeat_command_runtime.cjs"
+  ],
+  "assertions": 31,
+  "validated": {
+    "popup_bridge_adapter": true,
+    "one_dispatch_id_one_slot": true,
+    "repeat_and_c_mode_non_cancelling": true,
+    "one_active_command_per_worker_slot": true,
+    "repeat_queue_duplicate_count": 0,
+    "pause_isolation": true,
+    "partial_end_isolation": true,
+    "restart_recovery": true,
+    "w2_repeat_result_parser": true,
+    "mixed_completion_order_three_slots": true
+  },
+  "safety": {
+    "target_pc_execution_count": 0,
+    "auto_test_write_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "panel_terminal": "PANEL | ROLE=AUTOMATION-C-W4 | WAVE=V1-C-MODE-6W-WAVE-003 | COMMAND_ID=C6W-W3-W4-REPEAT-BRIDGE-ARBITRATION | STATUS=END"
+}

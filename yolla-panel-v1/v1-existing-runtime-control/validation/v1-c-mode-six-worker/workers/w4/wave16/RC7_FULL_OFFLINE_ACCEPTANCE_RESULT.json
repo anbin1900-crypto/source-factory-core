@@ -1,0 +1,49 @@
+{
+  "schema_version": "RC7_FULL_OFFLINE_ACCEPTANCE_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-016",
+  "registry_sequence": 16,
+  "role": "AUTOMATION-C-W4",
+  "command_id": "C6W-W16-W4-RC7-FULL-OFFLINE-ACCEPTANCE",
+  "directive_comment": 5198285020,
+  "result_key": "519828502000",
+  "target_version": "5.10.2.4.2-rc7",
+  "outcome": "BLOCKED",
+  "completed": {
+    "rc5_rejection_fixture_reused": true,
+    "rc6_connector_byte_validation": true,
+    "rc6_negative_findings_reproduced": 5,
+    "rc7_full_offline_acceptance_contract_committed": true,
+    "raw_url_dependency": false
+  },
+  "rc6_findings": [
+    "RESOLVER_NOT_BOUND",
+    "TRUTH_BRIDGE_HOOK_NOT_BOUND",
+    "SMOKE_SCOPE_INSUFFICIENT",
+    "TEMPORARY_PROFILE_USED",
+    "SINGLE_BUNDLE_ABSENT"
+  ],
+  "rc7_positive_acceptance": {
+    "status": "PENDING_INPUT",
+    "reason": "W5 Wave16 rc7 directive is bound, but no rc7 Terminal Result, immutable bundle byte, member manifest, Blob/SHA-256/size receipt, smoke receipt, or rollback readback receipt is published yet."
+  },
+  "required_counters": {
+    "DUPLICATE": 0,
+    "C_REPEAT_CROSS_CANCEL": 0,
+    "END_REDISPATCH": 0,
+    "RECEIPT_LOSS": 0,
+    "QUEUE_GROWTH": 0
+  },
+  "counter_status": "NOT_EXECUTED_WITH_RC7_INPUT",
+  "target_pc_executed": false,
+  "target_pc_pass_claimed": false,
+  "exact_remaining_dependency": "W5_WAVE16_RC7_RESULT_AND_IMMUTABLE_SINGLE_BUNDLE_WITH_FULL_OFFLINE_RECEIPTS_NOT_YET_PUBLISHED",
+  "artifacts": [
+    "wave16/rc6_negative_acceptance_log.json",
+    "wave16/rc7_full_offline_acceptance_contract.json",
+    "wave16/RC7_FULL_OFFLINE_ACCEPTANCE_RESULT.json"
+  ],
+  "production": false,
+  "ready": false,
+  "merge": false
+}

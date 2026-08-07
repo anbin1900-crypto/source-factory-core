@@ -1,0 +1,15 @@
+{
+  "schema_version": "C_MODE_THIRTY_MINUTE_CHECK_OFFLINE_RECEIPT_V1",
+  "status": "PASS",
+  "assertions": 13,
+  "refresh_invocation_count": 1,
+  "check_threshold_ms": 1800000,
+  "post_refresh_wait_ms": 30000,
+  "counters": {
+    "GENERATING_REFRESH_COUNT": 0,
+    "DUPLICATE_DIRECTIVE_ACCEPTED_COUNT": 0,
+    "DUPLICATE_REFRESH_COUNT": 0
+  },
+  "state_recovery": "PASS",
+  "browser_required": false
+}

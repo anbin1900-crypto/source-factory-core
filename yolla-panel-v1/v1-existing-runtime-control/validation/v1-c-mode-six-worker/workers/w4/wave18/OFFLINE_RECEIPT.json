@@ -1,0 +1,27 @@
+{
+  "schema_version": "W4_WAVE18_OFFLINE_RECEIPT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-018",
+  "command_id": "C6W-W18-W4-TARGET-PC-DETERMINISTIC-ACCEPTANCE-PACK-V2",
+  "result_key": "519890425000",
+  "runner_pack": "PASS_CREATED",
+  "expected_receipt_schema": "PASS_CREATED",
+  "negative_fixtures": "PASS_CREATED",
+  "synthetic_receipt_rejection": "ENFORCED",
+  "shallow_receipt_rejection": "ENFORCED",
+  "required_receipts": 18,
+  "required_counters": {
+    "DUPLICATE": 0,
+    "C_REPEAT_CROSS_CANCEL": 0,
+    "END_REDISPATCH": 0,
+    "RECEIPT_LOSS": 0,
+    "QUEUE_GROWTH": 0
+  },
+  "target_pc_actual_receipt": false,
+  "pre_post_evidence": false,
+  "outcome": "BLOCKED",
+  "exact_blocker": "TARGET_PC_ACTUAL_RECEIPT_AND_PRE_POST_EVIDENCE_NOT_SUPPLIED",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
