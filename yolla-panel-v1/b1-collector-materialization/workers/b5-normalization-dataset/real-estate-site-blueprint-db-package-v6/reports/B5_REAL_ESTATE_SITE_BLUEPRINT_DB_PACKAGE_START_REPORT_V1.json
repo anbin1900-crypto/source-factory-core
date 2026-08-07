@@ -1,0 +1,24 @@
+{
+  "schema_version": "B5_REAL_ESTATE_SITE_BLUEPRINT_DB_PACKAGE_START_REPORT_V1",
+  "directive_id": "A0-TO-B5-REAL-ESTATE-SITE-BLUEPRINT-DB-PACKAGE-V6-20260808-001",
+  "directive_comment": 5220471225,
+  "cycle_id": "A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001",
+  "worker": "B-5_REAL_ESTATE_SITE_BLUEPRINT_DB_PACKAGE_OWNER",
+  "worker_pr": 41,
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "baseline_head": "1d116f6ad9f1433a2614e56a6b3d5b8b82de463a",
+  "parent_terminal": "B5_REAL_ESTATE_FIELD_ONTOLOGY_SITE_BINDING_READY",
+  "mode": "CYCLE_BATCH_PARALLEL_PREBUILD",
+  "status": "STARTED",
+  "started_at_kst": "2026-08-08T02:58:00+09:00",
+  "boundaries": {
+    "d_canonical_schema_decision": false,
+    "target_pc_execution": false,
+    "live_site_call": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  }
+}
+

@@ -1,0 +1,63 @@
+{
+  "schema_version": "B5_REAL_ESTATE_SITE_BLUEPRINT_DB_PACKAGE_SMOKE_RECEIPT_V1",
+  "directive_id": "A0-TO-B5-REAL-ESTATE-SITE-BLUEPRINT-DB-PACKAGE-V6-20260808-001",
+  "directive_comment": 5220471225,
+  "cycle_id": "A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001",
+  "worker": "B-5_REAL_ESTATE_SITE_BLUEPRINT_DB_PACKAGE_OWNER",
+  "worker_pr": 41,
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "baseline_head": "1d116f6ad9f1433a2614e56a6b3d5b8b82de463a",
+  "result": "PASS",
+  "validation": {
+    "compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_50_OF_50",
+    "contracts": "PASS_3_OF_3",
+    "fixture_smoke": "PASS",
+    "parent_v5_dataset_pointer_readback": "PASS_3_OF_3",
+    "materialized_package_readback": "PASS_3_OF_3",
+    "site_count": 2,
+    "page_count": 4,
+    "feature_count": 6,
+    "capability_count": 8,
+    "source_field_count": 12,
+    "binding_count": 12,
+    "transform_candidate_count": 24,
+    "source_field_loss_count": 0,
+    "source_field_synthesis_count": 0,
+    "unknown_transform_count": 12,
+    "unknown_business_rule_count": 12,
+    "canonical_confirmed_without_authority_count": 0,
+    "existing_record_rewrite_count": 0,
+    "new_site_append_count": 1,
+    "new_version_append_count": 1,
+    "version_lineage": "PASS",
+    "duplicate_materialization_count": 0,
+    "checkpoint_sequence": "PASS_1_2_3_MONOTONIC",
+    "contextless_readback": "PASS"
+  },
+  "parent_v5": {
+    "head": "1d116f6ad9f1433a2614e56a6b3d5b8b82de463a",
+    "pointer_blob": "f145e416da1a7ab60e0133500b0ee109531a8c64",
+    "dataset_blobs": [
+      "b14244f68d87bec41a478f051c6275c3a20be518",
+      "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+      "1e53d9be50601e0e2acc8a78c0e6d596d1cfb47b"
+    ]
+  },
+  "package_sha256": {
+    "REAL_ESTATE_SITE_BLUEPRINT_DB_V1": "81269d658c33807c7d1afbac85cb9f86fa2625046468ec0813f653e92509dd0c",
+    "SITE_CAPABILITY_PROFILE_V1": "8a61fa3546bd5b6af1c0d65e931902772d59ef40e6e1aca967b479453afbf9da",
+    "LISTING_ONTOLOGY_BINDING_PACKAGE_V1": "c5dd378b8265983d8ce4f141469d6a018586d4fc104274cdf95314497bc85682"
+  },
+  "verified_at_kst": "2026-08-08T03:17:13+09:00",
+  "boundaries": {
+    "d_canonical_schema_decision": false,
+    "target_pc_execution": false,
+    "live_site_call": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  }
+}
+

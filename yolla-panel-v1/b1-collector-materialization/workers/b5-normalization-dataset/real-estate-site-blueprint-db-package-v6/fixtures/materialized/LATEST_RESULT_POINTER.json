@@ -1,0 +1,55 @@
+{
+  "binding_count": 12,
+  "canonical_confirmed_without_authority_count": 0,
+  "capability_count": 8,
+  "contextless_readback": true,
+  "cycle_id": "A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001",
+  "d_canonical_schema_decision": false,
+  "directive_id": "A0-TO-B5-REAL-ESTATE-SITE-BLUEPRINT-DB-PACKAGE-V6-20260808-001",
+  "existing_record_rewrite_count": 0,
+  "feature_count": 6,
+  "latest_checkpoint_path": "checkpoints/checkpoint-000003.json",
+  "latest_checkpoint_seq": 3,
+  "latest_checkpoint_sha256": "217814a715fdb8913f42edebf15bd8f00e68800e5233e9f1583f3ba52d7aa532",
+  "lineage_key": "489ffe1b1abdffafffaca6f521cb45d22f85f0dcb09861a8926e879c120b5614",
+  "live_site_call": false,
+  "merge": false,
+  "new_site_append_count": 1,
+  "new_version_append_count": 1,
+  "original_record_count": 2,
+  "packages": {
+    "LISTING_ONTOLOGY_BINDING_PACKAGE_V1": {
+      "path": "datasets/LISTING_ONTOLOGY_BINDING_PACKAGE_V1.json",
+      "record_count": 12,
+      "sha256": "c5dd378b8265983d8ce4f141469d6a018586d4fc104274cdf95314497bc85682"
+    },
+    "REAL_ESTATE_SITE_BLUEPRINT_DB_V1": {
+      "path": "datasets/REAL_ESTATE_SITE_BLUEPRINT_DB_V1.json",
+      "record_count": 2,
+      "sha256": "81269d658c33807c7d1afbac85cb9f86fa2625046468ec0813f653e92509dd0c"
+    },
+    "SITE_CAPABILITY_PROFILE_V1": {
+      "path": "datasets/SITE_CAPABILITY_PROFILE_V1.json",
+      "record_count": 2,
+      "sha256": "8a61fa3546bd5b6af1c0d65e931902772d59ef40e6e1aca967b479453afbf9da"
+    }
+  },
+  "page_count": 4,
+  "parent_v5_head": "1d116f6ad9f1433a2614e56a6b3d5b8b82de463a",
+  "parent_v5_pointer_blob": "f145e416da1a7ab60e0133500b0ee109531a8c64",
+  "production": false,
+  "ready": false,
+  "result": "PASS",
+  "schema_version": "B5_REAL_ESTATE_SITE_BLUEPRINT_DB_PACKAGE_RESULT_POINTER_V1",
+  "simulated_record_count": 4,
+  "site_count": 2,
+  "source_field_count": 12,
+  "source_field_loss_count": 0,
+  "source_field_synthesis_count": 0,
+  "source_fixture_sha256": "24ab5f6685fd9f74fd2d468838527ef5922d27600e484c54710a96d2687e3ea8",
+  "target_pc_execution": false,
+  "transform_candidate_count": 24,
+  "unknown_business_rule_count": 12,
+  "unknown_transform_count": 12,
+  "version_lineage": "PASS"
+}

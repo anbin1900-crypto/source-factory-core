@@ -1,0 +1,473 @@
+{
+  "lineage": {
+    "append_policy": "APPEND_ONLY_VERSIONED_NO_EXISTING_RECORD_REWRITE",
+    "cycle_id": "A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001",
+    "directive_id": "A0-TO-B5-REAL-ESTATE-SITE-BLUEPRINT-DB-PACKAGE-V6-20260808-001",
+    "lineage_key": "489ffe1b1abdffafffaca6f521cb45d22f85f0dcb09861a8926e879c120b5614",
+    "parent_dataset_blobs": {
+      "FIELD_TRANSFORM_CANDIDATE_V1": "1e53d9be50601e0e2acc8a78c0e6d596d1cfb47b",
+      "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1": "b14244f68d87bec41a478f051c6275c3a20be518",
+      "SITE_LISTING_BINDING_V1": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d"
+    },
+    "parent_v5_head": "1d116f6ad9f1433a2614e56a6b3d5b8b82de463a",
+    "parent_v5_pointer_blob": "f145e416da1a7ab60e0133500b0ee109531a8c64",
+    "source_fixture_sha256": "24ab5f6685fd9f74fd2d468838527ef5922d27600e484c54710a96d2687e3ea8"
+  },
+  "records": [
+    {
+      "blueprint_record_id": "SITE-KB-LAND::BLUEPRINT::V1",
+      "blueprint_version": 1,
+      "capabilities": [
+        {
+          "capability_id": "LIST_LISTINGS",
+          "confidence": 0.9,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/capability/LIST_LISTINGS"
+          },
+          "status": "CANDIDATE"
+        },
+        {
+          "capability_id": "READ_LISTING_DETAIL",
+          "confidence": 0.91,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/capability/READ_LISTING_DETAIL"
+          },
+          "status": "CANDIDATE"
+        },
+        {
+          "capability_id": "FILTER_LISTINGS",
+          "confidence": 0.82,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/capability/FILTER_LISTINGS"
+          },
+          "status": "CANDIDATE"
+        },
+        {
+          "capability_id": "PAGINATE_LISTINGS",
+          "confidence": 0.35,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/capability/PAGINATE_LISTINGS"
+          },
+          "status": "UNKNOWN"
+        }
+      ],
+      "features": [
+        {
+          "confidence": 0.84,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/feature/SEARCH_FILTER"
+          },
+          "feature_id": "SEARCH_FILTER",
+          "status": "CANDIDATE"
+        },
+        {
+          "confidence": 0.87,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/feature/LISTING_CARD"
+          },
+          "feature_id": "LISTING_CARD",
+          "status": "CANDIDATE"
+        },
+        {
+          "confidence": 0.4,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/feature/MAP_VIEW"
+          },
+          "feature_id": "MAP_VIEW",
+          "status": "UNKNOWN"
+        }
+      ],
+      "fields": [
+        {
+          "canonical_candidate_id": "sale_price",
+          "confidence": 0.93,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/매매가"
+          },
+          "label": "매매가",
+          "name": "매매가",
+          "options": [],
+          "semantic_status": "CANDIDATE",
+          "source_field_name": "매매가",
+          "unit": "만원",
+          "validation": {
+            "kind": "source_preserving_candidate",
+            "nullable": true
+          }
+        },
+        {
+          "canonical_candidate_id": "deposit",
+          "confidence": 0.91,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/보증금"
+          },
+          "label": "보증금",
+          "name": "보증금",
+          "options": [],
+          "semantic_status": "CANDIDATE",
+          "source_field_name": "보증금",
+          "unit": "만원",
+          "validation": {
+            "kind": "source_preserving_candidate",
+            "nullable": true
+          }
+        },
+        {
+          "canonical_candidate_id": "monthly_rent",
+          "confidence": 0.91,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/월세"
+          },
+          "label": "월세",
+          "name": "월세",
+          "options": [],
+          "semantic_status": "CANDIDATE",
+          "source_field_name": "월세",
+          "unit": "만원/월",
+          "validation": {
+            "kind": "source_preserving_candidate",
+            "nullable": true
+          }
+        },
+        {
+          "canonical_candidate_id": "exclusive_area",
+          "confidence": 0.95,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/전용면적"
+          },
+          "label": "전용면적",
+          "name": "전용면적",
+          "options": [],
+          "semantic_status": "CANDIDATE",
+          "source_field_name": "전용면적",
+          "unit": "㎡",
+          "validation": {
+            "kind": "source_preserving_candidate",
+            "nullable": true
+          }
+        },
+        {
+          "canonical_candidate_id": "floor",
+          "confidence": 0.83,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/해당층/총층"
+          },
+          "label": "층",
+          "name": "해당층/총층",
+          "options": [],
+          "semantic_status": "CANDIDATE",
+          "source_field_name": "해당층/총층",
+          "unit": "층",
+          "validation": {
+            "kind": "source_preserving_candidate",
+            "nullable": true
+          }
+        },
+        {
+          "canonical_candidate_id": "direction",
+          "confidence": 0.81,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/방향"
+          },
+          "label": "방향",
+          "name": "방향",
+          "options": [
+            "남향",
+            "남동향",
+            "동향",
+            "서향",
+            "북향"
+          ],
+          "semantic_status": "CANDIDATE",
+          "source_field_name": "방향",
+          "unit": "",
+          "validation": {
+            "kind": "observed_option_set",
+            "nullable": true
+          }
+        }
+      ],
+      "pages": [
+        {
+          "confidence": 0.86,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/page/LISTING_SEARCH"
+          },
+          "page_id": "LISTING_SEARCH",
+          "status": "CANDIDATE"
+        },
+        {
+          "confidence": 0.88,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/page/LISTING_DETAIL"
+          },
+          "page_id": "LISTING_DETAIL",
+          "status": "CANDIDATE"
+        }
+      ],
+      "record_policy": "APPEND_ONLY",
+      "semantic_status": "CANDIDATE",
+      "site_id": "SITE-KB-LAND",
+      "supersedes_blueprint_record_id": null,
+      "valid_from": "2026-08-08T02:30:00+09:00"
+    },
+    {
+      "blueprint_record_id": "SITE-NAVER-PAY-REAL-ESTATE::BLUEPRINT::V1",
+      "blueprint_version": 1,
+      "capabilities": [
+        {
+          "capability_id": "LIST_LISTINGS",
+          "confidence": 0.9,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/capability/LIST_LISTINGS"
+          },
+          "status": "CANDIDATE"
+        },
+        {
+          "capability_id": "READ_LISTING_DETAIL",
+          "confidence": 0.91,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/capability/READ_LISTING_DETAIL"
+          },
+          "status": "CANDIDATE"
+        },
+        {
+          "capability_id": "FILTER_LISTINGS",
+          "confidence": 0.82,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/capability/FILTER_LISTINGS"
+          },
+          "status": "CANDIDATE"
+        },
+        {
+          "capability_id": "PAGINATE_LISTINGS",
+          "confidence": 0.35,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/capability/PAGINATE_LISTINGS"
+          },
+          "status": "UNKNOWN"
+        }
+      ],
+      "features": [
+        {
+          "confidence": 0.84,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/feature/SEARCH_FILTER"
+          },
+          "feature_id": "SEARCH_FILTER",
+          "status": "CANDIDATE"
+        },
+        {
+          "confidence": 0.87,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/feature/LISTING_CARD"
+          },
+          "feature_id": "LISTING_CARD",
+          "status": "CANDIDATE"
+        },
+        {
+          "confidence": 0.4,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/feature/MAP_VIEW"
+          },
+          "feature_id": "MAP_VIEW",
+          "status": "UNKNOWN"
+        }
+      ],
+      "fields": [
+        {
+          "canonical_candidate_id": "sale_price",
+          "confidence": 0.92,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/dealOrWarrantPrc"
+          },
+          "label": "매매가",
+          "name": "dealOrWarrantPrc",
+          "options": [],
+          "semantic_status": "CANDIDATE",
+          "source_field_name": "dealOrWarrantPrc",
+          "unit": "만원",
+          "validation": {
+            "kind": "source_preserving_candidate",
+            "nullable": true
+          }
+        },
+        {
+          "canonical_candidate_id": "deposit",
+          "confidence": 0.9,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/warrantPrc"
+          },
+          "label": "보증금",
+          "name": "warrantPrc",
+          "options": [],
+          "semantic_status": "CANDIDATE",
+          "source_field_name": "warrantPrc",
+          "unit": "만원",
+          "validation": {
+            "kind": "source_preserving_candidate",
+            "nullable": true
+          }
+        },
+        {
+          "canonical_candidate_id": "monthly_rent",
+          "confidence": 0.9,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/rentPrc"
+          },
+          "label": "월세",
+          "name": "rentPrc",
+          "options": [],
+          "semantic_status": "CANDIDATE",
+          "source_field_name": "rentPrc",
+          "unit": "만원/월",
+          "validation": {
+            "kind": "source_preserving_candidate",
+            "nullable": true
+          }
+        },
+        {
+          "canonical_candidate_id": "exclusive_area",
+          "confidence": 0.95,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/area2"
+          },
+          "label": "전용면적",
+          "name": "area2",
+          "options": [],
+          "semantic_status": "CANDIDATE",
+          "source_field_name": "area2",
+          "unit": "㎡",
+          "validation": {
+            "kind": "source_preserving_candidate",
+            "nullable": true
+          }
+        },
+        {
+          "canonical_candidate_id": "floor",
+          "confidence": 0.84,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/floorInfo"
+          },
+          "label": "층",
+          "name": "floorInfo",
+          "options": [],
+          "semantic_status": "CANDIDATE",
+          "source_field_name": "floorInfo",
+          "unit": "층",
+          "validation": {
+            "kind": "source_preserving_candidate",
+            "nullable": true
+          }
+        },
+        {
+          "canonical_candidate_id": "direction",
+          "confidence": 0.82,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/direction"
+          },
+          "label": "방향",
+          "name": "direction",
+          "options": [
+            "남향",
+            "남동향",
+            "동향",
+            "서향",
+            "북향"
+          ],
+          "semantic_status": "CANDIDATE",
+          "source_field_name": "direction",
+          "unit": "",
+          "validation": {
+            "kind": "observed_option_set",
+            "nullable": true
+          }
+        }
+      ],
+      "pages": [
+        {
+          "confidence": 0.86,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/page/LISTING_SEARCH"
+          },
+          "page_id": "LISTING_SEARCH",
+          "status": "CANDIDATE"
+        },
+        {
+          "confidence": 0.88,
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/page/LISTING_DETAIL"
+          },
+          "page_id": "LISTING_DETAIL",
+          "status": "CANDIDATE"
+        }
+      ],
+      "record_policy": "APPEND_ONLY",
+      "semantic_status": "CANDIDATE",
+      "site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "supersedes_blueprint_record_id": null,
+      "valid_from": "2026-08-08T02:30:00+09:00"
+    }
+  ],
+  "schema_version": "REAL_ESTATE_SITE_BLUEPRINT_DB_V1"
+}

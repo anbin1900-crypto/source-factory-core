@@ -1,0 +1,691 @@
+{
+  "lineage": {
+    "append_policy": "APPEND_ONLY_VERSIONED_NO_EXISTING_RECORD_REWRITE",
+    "cycle_id": "A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001",
+    "directive_id": "A0-TO-B5-REAL-ESTATE-SITE-BLUEPRINT-DB-PACKAGE-V6-20260808-001",
+    "lineage_key": "489ffe1b1abdffafffaca6f521cb45d22f85f0dcb09861a8926e879c120b5614",
+    "parent_dataset_blobs": {
+      "FIELD_TRANSFORM_CANDIDATE_V1": "1e53d9be50601e0e2acc8a78c0e6d596d1cfb47b",
+      "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1": "b14244f68d87bec41a478f051c6275c3a20be518",
+      "SITE_LISTING_BINDING_V1": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d"
+    },
+    "parent_v5_head": "1d116f6ad9f1433a2614e56a6b3d5b8b82de463a",
+    "parent_v5_pointer_blob": "f145e416da1a7ab60e0133500b0ee109531a8c64",
+    "source_fixture_sha256": "24ab5f6685fd9f74fd2d468838527ef5922d27600e484c54710a96d2687e3ea8"
+  },
+  "records": [
+    {
+      "binding_record_id": "SITE-KB-LAND::매매가::V1",
+      "blueprint_record_id": "SITE-KB-LAND::BLUEPRINT::V1",
+      "business_rule_status": "UNKNOWN",
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "sale_price",
+      "confidence": 0.93,
+      "evidence_pointer": {
+        "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+        "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+        "selector": "#/records/SITE-KB-LAND/매매가"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_id": "SITE-KB-LAND",
+      "source_field_name": "매매가",
+      "source_observation": {
+        "label": "매매가",
+        "name": "매매가",
+        "options": [],
+        "unit": "만원",
+        "validation": {
+          "kind": "source_preserving_candidate",
+          "nullable": true
+        }
+      },
+      "transform_candidates": [
+        {
+          "confidence": 0.93,
+          "direction": "READ",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/매매가"
+          },
+          "operation_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MANWON_CANDIDATE",
+          "preserve_raw_value": true,
+          "semantic_status": "CANDIDATE",
+          "transform_candidate_id": "READ::SITE-KB-LAND::매매가"
+        },
+        {
+          "confidence": 0,
+          "direction": "WRITE",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/매매가"
+          },
+          "operation_candidate": "RESTORE_RAW_VALUE",
+          "preserve_raw_value": true,
+          "semantic_status": "UNKNOWN",
+          "transform_candidate_id": "WRITE::SITE-KB-LAND::매매가",
+          "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+        }
+      ]
+    },
+    {
+      "binding_record_id": "SITE-KB-LAND::방향::V1",
+      "blueprint_record_id": "SITE-KB-LAND::BLUEPRINT::V1",
+      "business_rule_status": "UNKNOWN",
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "direction",
+      "confidence": 0.81,
+      "evidence_pointer": {
+        "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+        "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+        "selector": "#/records/SITE-KB-LAND/방향"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_id": "SITE-KB-LAND",
+      "source_field_name": "방향",
+      "source_observation": {
+        "label": "방향",
+        "name": "방향",
+        "options": [
+          "남향",
+          "남동향",
+          "동향",
+          "서향",
+          "북향"
+        ],
+        "unit": "",
+        "validation": {
+          "kind": "observed_option_set",
+          "nullable": true
+        }
+      },
+      "transform_candidates": [
+        {
+          "confidence": 0.81,
+          "direction": "READ",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/방향"
+          },
+          "operation_candidate": "PRESERVE_RAW_AND_ENUM_CANDIDATE",
+          "preserve_raw_value": true,
+          "semantic_status": "CANDIDATE",
+          "transform_candidate_id": "READ::SITE-KB-LAND::방향"
+        },
+        {
+          "confidence": 0,
+          "direction": "WRITE",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/방향"
+          },
+          "operation_candidate": "RESTORE_RAW_VALUE",
+          "preserve_raw_value": true,
+          "semantic_status": "UNKNOWN",
+          "transform_candidate_id": "WRITE::SITE-KB-LAND::방향",
+          "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+        }
+      ]
+    },
+    {
+      "binding_record_id": "SITE-KB-LAND::보증금::V1",
+      "blueprint_record_id": "SITE-KB-LAND::BLUEPRINT::V1",
+      "business_rule_status": "UNKNOWN",
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "deposit",
+      "confidence": 0.91,
+      "evidence_pointer": {
+        "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+        "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+        "selector": "#/records/SITE-KB-LAND/보증금"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_id": "SITE-KB-LAND",
+      "source_field_name": "보증금",
+      "source_observation": {
+        "label": "보증금",
+        "name": "보증금",
+        "options": [],
+        "unit": "만원",
+        "validation": {
+          "kind": "source_preserving_candidate",
+          "nullable": true
+        }
+      },
+      "transform_candidates": [
+        {
+          "confidence": 0.91,
+          "direction": "READ",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/보증금"
+          },
+          "operation_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MANWON_CANDIDATE",
+          "preserve_raw_value": true,
+          "semantic_status": "CANDIDATE",
+          "transform_candidate_id": "READ::SITE-KB-LAND::보증금"
+        },
+        {
+          "confidence": 0,
+          "direction": "WRITE",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/보증금"
+          },
+          "operation_candidate": "RESTORE_RAW_VALUE",
+          "preserve_raw_value": true,
+          "semantic_status": "UNKNOWN",
+          "transform_candidate_id": "WRITE::SITE-KB-LAND::보증금",
+          "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+        }
+      ]
+    },
+    {
+      "binding_record_id": "SITE-KB-LAND::월세::V1",
+      "blueprint_record_id": "SITE-KB-LAND::BLUEPRINT::V1",
+      "business_rule_status": "UNKNOWN",
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "monthly_rent",
+      "confidence": 0.91,
+      "evidence_pointer": {
+        "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+        "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+        "selector": "#/records/SITE-KB-LAND/월세"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_id": "SITE-KB-LAND",
+      "source_field_name": "월세",
+      "source_observation": {
+        "label": "월세",
+        "name": "월세",
+        "options": [],
+        "unit": "만원/월",
+        "validation": {
+          "kind": "source_preserving_candidate",
+          "nullable": true
+        }
+      },
+      "transform_candidates": [
+        {
+          "confidence": 0.91,
+          "direction": "READ",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/월세"
+          },
+          "operation_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MONTHLY_CANDIDATE",
+          "preserve_raw_value": true,
+          "semantic_status": "CANDIDATE",
+          "transform_candidate_id": "READ::SITE-KB-LAND::월세"
+        },
+        {
+          "confidence": 0,
+          "direction": "WRITE",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/월세"
+          },
+          "operation_candidate": "RESTORE_RAW_VALUE",
+          "preserve_raw_value": true,
+          "semantic_status": "UNKNOWN",
+          "transform_candidate_id": "WRITE::SITE-KB-LAND::월세",
+          "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+        }
+      ]
+    },
+    {
+      "binding_record_id": "SITE-KB-LAND::전용면적::V1",
+      "blueprint_record_id": "SITE-KB-LAND::BLUEPRINT::V1",
+      "business_rule_status": "UNKNOWN",
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "exclusive_area",
+      "confidence": 0.95,
+      "evidence_pointer": {
+        "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+        "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+        "selector": "#/records/SITE-KB-LAND/전용면적"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_id": "SITE-KB-LAND",
+      "source_field_name": "전용면적",
+      "source_observation": {
+        "label": "전용면적",
+        "name": "전용면적",
+        "options": [],
+        "unit": "㎡",
+        "validation": {
+          "kind": "source_preserving_candidate",
+          "nullable": true
+        }
+      },
+      "transform_candidates": [
+        {
+          "confidence": 0.95,
+          "direction": "READ",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/전용면적"
+          },
+          "operation_candidate": "PRESERVE_RAW_AND_PARSE_M2_CANDIDATE",
+          "preserve_raw_value": true,
+          "semantic_status": "CANDIDATE",
+          "transform_candidate_id": "READ::SITE-KB-LAND::전용면적"
+        },
+        {
+          "confidence": 0,
+          "direction": "WRITE",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/전용면적"
+          },
+          "operation_candidate": "RESTORE_RAW_VALUE",
+          "preserve_raw_value": true,
+          "semantic_status": "UNKNOWN",
+          "transform_candidate_id": "WRITE::SITE-KB-LAND::전용면적",
+          "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+        }
+      ]
+    },
+    {
+      "binding_record_id": "SITE-KB-LAND::해당층/총층::V1",
+      "blueprint_record_id": "SITE-KB-LAND::BLUEPRINT::V1",
+      "business_rule_status": "UNKNOWN",
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "floor",
+      "confidence": 0.83,
+      "evidence_pointer": {
+        "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+        "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+        "selector": "#/records/SITE-KB-LAND/해당층/총층"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_id": "SITE-KB-LAND",
+      "source_field_name": "해당층/총층",
+      "source_observation": {
+        "label": "층",
+        "name": "해당층/총층",
+        "options": [],
+        "unit": "층",
+        "validation": {
+          "kind": "source_preserving_candidate",
+          "nullable": true
+        }
+      },
+      "transform_candidates": [
+        {
+          "confidence": 0.83,
+          "direction": "READ",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/해당층/총층"
+          },
+          "operation_candidate": "PRESERVE_RAW_AND_SPLIT_FLOOR_CANDIDATE",
+          "preserve_raw_value": true,
+          "semantic_status": "CANDIDATE",
+          "transform_candidate_id": "READ::SITE-KB-LAND::해당층/총층"
+        },
+        {
+          "confidence": 0,
+          "direction": "WRITE",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-KB-LAND/해당층/총층"
+          },
+          "operation_candidate": "RESTORE_RAW_VALUE",
+          "preserve_raw_value": true,
+          "semantic_status": "UNKNOWN",
+          "transform_candidate_id": "WRITE::SITE-KB-LAND::해당층/총층",
+          "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+        }
+      ]
+    },
+    {
+      "binding_record_id": "SITE-NAVER-PAY-REAL-ESTATE::area2::V1",
+      "blueprint_record_id": "SITE-NAVER-PAY-REAL-ESTATE::BLUEPRINT::V1",
+      "business_rule_status": "UNKNOWN",
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "exclusive_area",
+      "confidence": 0.95,
+      "evidence_pointer": {
+        "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+        "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+        "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/area2"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "source_field_name": "area2",
+      "source_observation": {
+        "label": "전용면적",
+        "name": "area2",
+        "options": [],
+        "unit": "㎡",
+        "validation": {
+          "kind": "source_preserving_candidate",
+          "nullable": true
+        }
+      },
+      "transform_candidates": [
+        {
+          "confidence": 0.95,
+          "direction": "READ",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/area2"
+          },
+          "operation_candidate": "PRESERVE_RAW_AND_PARSE_M2_CANDIDATE",
+          "preserve_raw_value": true,
+          "semantic_status": "CANDIDATE",
+          "transform_candidate_id": "READ::SITE-NAVER-PAY-REAL-ESTATE::area2"
+        },
+        {
+          "confidence": 0,
+          "direction": "WRITE",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/area2"
+          },
+          "operation_candidate": "RESTORE_RAW_VALUE",
+          "preserve_raw_value": true,
+          "semantic_status": "UNKNOWN",
+          "transform_candidate_id": "WRITE::SITE-NAVER-PAY-REAL-ESTATE::area2",
+          "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+        }
+      ]
+    },
+    {
+      "binding_record_id": "SITE-NAVER-PAY-REAL-ESTATE::dealOrWarrantPrc::V1",
+      "blueprint_record_id": "SITE-NAVER-PAY-REAL-ESTATE::BLUEPRINT::V1",
+      "business_rule_status": "UNKNOWN",
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "sale_price",
+      "confidence": 0.92,
+      "evidence_pointer": {
+        "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+        "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+        "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/dealOrWarrantPrc"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "source_field_name": "dealOrWarrantPrc",
+      "source_observation": {
+        "label": "매매가",
+        "name": "dealOrWarrantPrc",
+        "options": [],
+        "unit": "만원",
+        "validation": {
+          "kind": "source_preserving_candidate",
+          "nullable": true
+        }
+      },
+      "transform_candidates": [
+        {
+          "confidence": 0.92,
+          "direction": "READ",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/dealOrWarrantPrc"
+          },
+          "operation_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MANWON_CANDIDATE",
+          "preserve_raw_value": true,
+          "semantic_status": "CANDIDATE",
+          "transform_candidate_id": "READ::SITE-NAVER-PAY-REAL-ESTATE::dealOrWarrantPrc"
+        },
+        {
+          "confidence": 0,
+          "direction": "WRITE",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/dealOrWarrantPrc"
+          },
+          "operation_candidate": "RESTORE_RAW_VALUE",
+          "preserve_raw_value": true,
+          "semantic_status": "UNKNOWN",
+          "transform_candidate_id": "WRITE::SITE-NAVER-PAY-REAL-ESTATE::dealOrWarrantPrc",
+          "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+        }
+      ]
+    },
+    {
+      "binding_record_id": "SITE-NAVER-PAY-REAL-ESTATE::direction::V1",
+      "blueprint_record_id": "SITE-NAVER-PAY-REAL-ESTATE::BLUEPRINT::V1",
+      "business_rule_status": "UNKNOWN",
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "direction",
+      "confidence": 0.82,
+      "evidence_pointer": {
+        "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+        "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+        "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/direction"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "source_field_name": "direction",
+      "source_observation": {
+        "label": "방향",
+        "name": "direction",
+        "options": [
+          "남향",
+          "남동향",
+          "동향",
+          "서향",
+          "북향"
+        ],
+        "unit": "",
+        "validation": {
+          "kind": "observed_option_set",
+          "nullable": true
+        }
+      },
+      "transform_candidates": [
+        {
+          "confidence": 0.82,
+          "direction": "READ",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/direction"
+          },
+          "operation_candidate": "PRESERVE_RAW_AND_ENUM_CANDIDATE",
+          "preserve_raw_value": true,
+          "semantic_status": "CANDIDATE",
+          "transform_candidate_id": "READ::SITE-NAVER-PAY-REAL-ESTATE::direction"
+        },
+        {
+          "confidence": 0,
+          "direction": "WRITE",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/direction"
+          },
+          "operation_candidate": "RESTORE_RAW_VALUE",
+          "preserve_raw_value": true,
+          "semantic_status": "UNKNOWN",
+          "transform_candidate_id": "WRITE::SITE-NAVER-PAY-REAL-ESTATE::direction",
+          "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+        }
+      ]
+    },
+    {
+      "binding_record_id": "SITE-NAVER-PAY-REAL-ESTATE::floorInfo::V1",
+      "blueprint_record_id": "SITE-NAVER-PAY-REAL-ESTATE::BLUEPRINT::V1",
+      "business_rule_status": "UNKNOWN",
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "floor",
+      "confidence": 0.84,
+      "evidence_pointer": {
+        "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+        "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+        "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/floorInfo"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "source_field_name": "floorInfo",
+      "source_observation": {
+        "label": "층",
+        "name": "floorInfo",
+        "options": [],
+        "unit": "층",
+        "validation": {
+          "kind": "source_preserving_candidate",
+          "nullable": true
+        }
+      },
+      "transform_candidates": [
+        {
+          "confidence": 0.84,
+          "direction": "READ",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/floorInfo"
+          },
+          "operation_candidate": "PRESERVE_RAW_AND_SPLIT_FLOOR_CANDIDATE",
+          "preserve_raw_value": true,
+          "semantic_status": "CANDIDATE",
+          "transform_candidate_id": "READ::SITE-NAVER-PAY-REAL-ESTATE::floorInfo"
+        },
+        {
+          "confidence": 0,
+          "direction": "WRITE",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/floorInfo"
+          },
+          "operation_candidate": "RESTORE_RAW_VALUE",
+          "preserve_raw_value": true,
+          "semantic_status": "UNKNOWN",
+          "transform_candidate_id": "WRITE::SITE-NAVER-PAY-REAL-ESTATE::floorInfo",
+          "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+        }
+      ]
+    },
+    {
+      "binding_record_id": "SITE-NAVER-PAY-REAL-ESTATE::rentPrc::V1",
+      "blueprint_record_id": "SITE-NAVER-PAY-REAL-ESTATE::BLUEPRINT::V1",
+      "business_rule_status": "UNKNOWN",
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "monthly_rent",
+      "confidence": 0.9,
+      "evidence_pointer": {
+        "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+        "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+        "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/rentPrc"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "source_field_name": "rentPrc",
+      "source_observation": {
+        "label": "월세",
+        "name": "rentPrc",
+        "options": [],
+        "unit": "만원/월",
+        "validation": {
+          "kind": "source_preserving_candidate",
+          "nullable": true
+        }
+      },
+      "transform_candidates": [
+        {
+          "confidence": 0.9,
+          "direction": "READ",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/rentPrc"
+          },
+          "operation_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MONTHLY_CANDIDATE",
+          "preserve_raw_value": true,
+          "semantic_status": "CANDIDATE",
+          "transform_candidate_id": "READ::SITE-NAVER-PAY-REAL-ESTATE::rentPrc"
+        },
+        {
+          "confidence": 0,
+          "direction": "WRITE",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/rentPrc"
+          },
+          "operation_candidate": "RESTORE_RAW_VALUE",
+          "preserve_raw_value": true,
+          "semantic_status": "UNKNOWN",
+          "transform_candidate_id": "WRITE::SITE-NAVER-PAY-REAL-ESTATE::rentPrc",
+          "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+        }
+      ]
+    },
+    {
+      "binding_record_id": "SITE-NAVER-PAY-REAL-ESTATE::warrantPrc::V1",
+      "blueprint_record_id": "SITE-NAVER-PAY-REAL-ESTATE::BLUEPRINT::V1",
+      "business_rule_status": "UNKNOWN",
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "deposit",
+      "confidence": 0.9,
+      "evidence_pointer": {
+        "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+        "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+        "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/warrantPrc"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "source_field_name": "warrantPrc",
+      "source_observation": {
+        "label": "보증금",
+        "name": "warrantPrc",
+        "options": [],
+        "unit": "만원",
+        "validation": {
+          "kind": "source_preserving_candidate",
+          "nullable": true
+        }
+      },
+      "transform_candidates": [
+        {
+          "confidence": 0.9,
+          "direction": "READ",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/warrantPrc"
+          },
+          "operation_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MANWON_CANDIDATE",
+          "preserve_raw_value": true,
+          "semantic_status": "CANDIDATE",
+          "transform_candidate_id": "READ::SITE-NAVER-PAY-REAL-ESTATE::warrantPrc"
+        },
+        {
+          "confidence": 0,
+          "direction": "WRITE",
+          "evidence_pointer": {
+            "blob": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+            "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-field-ontology-site-binding-v5/fixtures/materialized/datasets/SITE_LISTING_BINDING_V1.json",
+            "selector": "#/records/SITE-NAVER-PAY-REAL-ESTATE/warrantPrc"
+          },
+          "operation_candidate": "RESTORE_RAW_VALUE",
+          "preserve_raw_value": true,
+          "semantic_status": "UNKNOWN",
+          "transform_candidate_id": "WRITE::SITE-NAVER-PAY-REAL-ESTATE::warrantPrc",
+          "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+        }
+      ]
+    }
+  ],
+  "schema_version": "LISTING_ONTOLOGY_BINDING_PACKAGE_V1"
+}
