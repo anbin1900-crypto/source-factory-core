@@ -1,0 +1,72 @@
+{
+  "schema_version": "C6_FINAL_PANEL_LAUNCH_RESULT_V1",
+  "batch_id": "C1-PDF-PREPROCESS-FINAL-PANEL-LAUNCH-20260807-001",
+  "task_id": "C6_FINAL_ACTUAL_PANEL_LAUNCH_INTEGRATED_DIRECT_REPAIR",
+  "worker": "C-6_AI_QUALITY_E2E_VALIDATION",
+  "directive_comment_id": 5212525529,
+  "commander_control_comment_id": 5212526492,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "observed_remote_head": "e3fbc3a1872de8c648bd6e945bb7031b9bcaad6c",
+  "required_result": "C6_FINAL_PANEL_LAUNCH_CORRECTION_COMPLETE_OR_EXACT_ENVIRONMENT_BLOCKER",
+  "execution_mode": "IMMEDIATE_NO_WAIT",
+  "remote_bindings": {
+    "c4_pipeline_blob": "63b40f83b0425d241ad1859864625f4211c847d5",
+    "c5_panel_blob": "af1cf6dce3a9dda8eabde1f33146b48b19ffa9c9",
+    "c4_single_pipeline_binding": true,
+    "folder_routes_to_source_folder": true,
+    "pdf_file_routes_to_pdf_file": true
+  },
+  "runtime_probe": {
+    "python_version": "3.13.5",
+    "runtime_os": "LINUX_NON_TARGET_FIXTURE_RUNTIME",
+    "pyside6_available": false,
+    "pyside6_cached_install_package_available": false,
+    "gui_window_creation_attempted": true,
+    "gui_window_created": false,
+    "launch_return_code": 2,
+    "exact_environment_blocker": "PYSIDE6_NOT_INSTALLED_IN_C6_RUNTIME"
+  },
+  "user_visible_launch_failure_contract": {
+    "dependency_message_present": true,
+    "dependency_error_detail_present": true,
+    "install_command_present": true,
+    "rerun_command_present": true,
+    "launch_exception_message_present": true,
+    "silent_pass_on_missing_pyside6": false,
+    "expected_message_prefix": "PySide6가 설치되어 있지 않아 PDF→CSV 패널을 시작할 수 없습니다."
+  },
+  "headless_safe_launch_path": {
+    "executed": true,
+    "folder_mode_request_mapping": "PASS",
+    "pdf_file_mode_request_mapping": "PASS",
+    "same_pipeline_loader": true,
+    "folder_exclusive_source_folder_argument": true,
+    "pdf_file_exclusive_pdf_file_argument": true,
+    "prior_exact_blob_integrated_execution_reused": true,
+    "prior_e2e_result_blob": "2b87baebe3526ed3bc5cdc74948e82f1e3ccae1a",
+    "prior_folder_pipeline": "PASS_2_PDFS_6_CSV_CHUNKS",
+    "prior_single_pdf_pipeline": "PASS_1_PDF_2_CSV_CHUNKS",
+    "prior_non_selected_pdf_processed_count": 0
+  },
+  "defect_accounting": {
+    "new_integrated_defects_found": 0,
+    "new_integrated_repairs_required": 0,
+    "reassigned_repairs": 0,
+    "note": "Current Remote already contains actionable PySide6 dependency and launch error handling; no additional C6 code repair was justified."
+  },
+  "decision": "C6_FINAL_PANEL_LAUNCH_EXACT_ENVIRONMENT_BLOCKER",
+  "terminal": "C6_FINAL_PANEL_LAUNCH_CORRECTION_COMPLETE_OR_EXACT_ENVIRONMENT_BLOCKER",
+  "first_blocker": "PYSIDE6_NOT_INSTALLED_IN_C6_RUNTIME",
+  "semantic_analysis": false,
+  "semantic_validation": false,
+  "gpt_call": false,
+  "database_write": false,
+  "actual_150_pdf_run": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "github_ci": "NOT_RUN_NOT_CLAIMED_PASS"
+}
