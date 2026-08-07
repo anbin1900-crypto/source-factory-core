@@ -1,0 +1,14 @@
+{
+  "schema_version": "ACTION_REPLAY_CHECKPOINT_V1",
+  "mission_id": "mission-fixture-001",
+  "session_id": "session-fixture-001",
+  "last_confirmed_action_id": "act-be36eb048f6db3f37c9c",
+  "last_confirmed_sequence_no": 3,
+  "pending_action_ids": [
+    "act-dfdb8f3fab87369ba735",
+    "act-6a3fda333a06203664d7"
+  ],
+  "next_sequence_no": 6,
+  "resume_token": "130ebc95a9b2df6abc77937b54b1d98456a6c32c5de86833bb1a1aad55721ae0",
+  "resume_policy": "REPLAY_ACTIONS_WITH_SEQUENCE_NO_GREATER_THAN_LAST_CONFIRMED_SEQUENCE_NO"
+}
