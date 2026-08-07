@@ -1,0 +1,34 @@
+{
+  "schema_version": "D3_MESSAGE_DISPATCH_RESULT_RETURN_OFFLINE_VALIDATION_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001",
+  "role": "D-3_MESSAGE_DISPATCH_AND_RESULT_RETURN_OWNER",
+  "node_test": "PASS_35_ASSERTIONS",
+  "node_syntax_check": "PASS_2_OF_2",
+  "checks": {
+    "stage4_dispatch_binding": "PASS",
+    "pr73_send_to_worker_signature": "PASS",
+    "transport_acceptance_without_visible_message_does_not_emit_message_sent": "PASS",
+    "visible_message_outside_composer_emits_message_sent": "PASS",
+    "context_mismatch_fail_closed": "PASS",
+    "page_mismatch_fail_closed": "PASS",
+    "stale_assistant_reply_rejected": "PASS",
+    "preexisting_expected_marker_rejected": "PASS",
+    "new_completed_assistant_raw_reply_collected": "PASS",
+    "command_context_page_reply_hash_bound": "PASS",
+    "stage4_run_check_and_storage_binding": "PASS",
+    "d1_or_successor_return_receipt": "PASS",
+    "duplicate_command_suppressed": "PASS"
+  },
+  "source_sha256": {
+    "message_dispatch_result_return.cjs": "ff7992f69037d40d38ebbd290573cc812d42a7de1e4461d4f34f23e6b865b0c8",
+    "test_message_dispatch_result_return.cjs": "e3a88a3a7d6e9a7ca61c50a07f9d47ccbc9a7866af1aa5b8a799428af60e8809",
+    "D3_CONTEXT_MESSAGE_DISPATCH_RESULT_RETURN_V1.ps1": "947bfc17962e22cef30e9917c09d3c19928ad68f35911f2e8e0ccf9875ac0038",
+    "D3_CONTEXT_MESSAGE_DISPATCH_RESULT_RETURN_INPUT_V1.json": "cc5c772336b1766fc308e0a55a0ab9a70d95fe3dfacb6e1e50f028545d55f6f6"
+  },
+  "target_pc_live_execution": "PENDING_COMMAND_BUS",
+  "target_pc_live_pass_claimed": false,
+  "new_system_build": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
