@@ -1,0 +1,26 @@
+{
+  "schema_version": "ENDPOINT_SCHEMA_INFERENCE_V1",
+  "directive_id": "AI001-TO-A5-ENDPOINT-SCHEMA-DOM-API-HYBRID-PREBUILD-V1-20260807-001",
+  "producer": "A-5_ENDPOINT_SCHEMA_SESSION_DECISION_OWNER",
+  "entrypoint": "prebuild_endpoint_schema_decision.cjs",
+  "input_schema": "RESPONSE_EVIDENCE_BUNDLE_V1.schema.json",
+  "output_contract": {
+    "endpoint_catalog": "grouped by method + generalized URL pattern + response kind",
+    "request_templates": "query/path/body/header parameter name, location, type, requiredness and evidence ratio",
+    "response_schemas": "JSON/HTML inferred schema and repeated record paths when response body content exists",
+    "response_candidates": ["list_paths", "detail_paths", "schema_paths"],
+    "identifier_map": "primary and alternative identifier candidates",
+    "identifier_relations": "parent/child identifier candidates",
+    "dom_json_correlation": "best normalized-name correlation between A-4 DOM fields and response JSON paths",
+    "session_requirements": "header/cookie/auth requirement types only; never raw values"
+  },
+  "secret_policy": {
+    "raw_secret_value_capture": false,
+    "credential_values": "FORBIDDEN",
+    "allowed": ["header name", "requirement type", "credential reference semantics", "redacted state"]
+  },
+  "late_binding": "Missing response body content does not fabricate fields; downstream late-binding action is emitted.",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
