@@ -1,0 +1,46 @@
+{
+  "schema_version": "WORKER_STATE_EVENT_BINDING_V1",
+  "directive_id": "AI001-TO-B2-WORKER-STATE-AND-CYCLE-STATUS-VIEWMODEL-V3-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "producer_dependencies": {
+    "A-3": {
+      "directive_id": "AI001-TO-A3-CHROME-WORKER-COMPLETION-OBSERVER-V3-20260807-001",
+      "directive_comment": 5217742284,
+      "expected_event": "WORKER_BROWSER_STATE_EVENT_V1",
+      "role": "SENSOR_ONLY",
+      "status_at_binding": "DIRECTIVE_ACTIVE_OUTPUT_NOT_REQUIRED_FOR_B2_PREBUILD",
+      "observed_head": "fb7a448e6a16ae546d2b4038973b391d40b500c6"
+    },
+    "B-1": {
+      "directive_id": "AI001-TO-B1-WORKER-STATE-EVENT-AND-CYCLE-AGGREGATOR-V3-20260807-001",
+      "directive_comment": 5217757299,
+      "expected_outputs": ["cycle aggregation", "result/pointer binding", "CYCLE_BROWSER_TERMINAL event"],
+      "role": "AGGREGATOR_AND_DURABLE_STATE_OWNER",
+      "status_at_binding": "DIRECTIVE_ACTIVE_OUTPUT_NOT_REQUIRED_FOR_B2_PREBUILD",
+      "observed_head": "cd153a2418e7896c0effed9e7f10a7fa558cdad5"
+    }
+  },
+  "accepted_event_shape": {
+    "required": ["schema_version", "worker_id", "page_id", "command_id", "browser_state", "observed_at"],
+    "optional": ["task_status", "latest_terminal", "latest_result_pointer", "blocker", "selector_status", "generation_ui_active", "dom_stable", "sequence", "event_id"],
+    "schema_version": "WORKER_BROWSER_STATE_EVENT_V1"
+  },
+  "b1_result_binding": {
+    "command_contract_blob": "f2cede931148c956de61cbcacc39a58945dc3bf8",
+    "result_contract_blob": "8c323d2aef4b4eb4c07c029a56e9f874f4eef5c9",
+    "session_job_state_blob": "8c6c5b151e9e2874963863b2083d8be323e56911",
+    "join_key": "command_id"
+  },
+  "stale_duplicate_policy": {
+    "same_event_id": "IGNORE_DUPLICATE",
+    "older_sequence_same_command": "IGNORE_STALE",
+    "older_observed_at_same_command": "IGNORE_STALE_WHEN_SEQUENCE_ABSENT"
+  },
+  "panel_boundary": {
+    "panel_is_state_projection_only": true,
+    "runtime_owner": false,
+    "sensor_owner": false,
+    "aggregator_owner": false,
+    "raw_receipt_mutation": false
+  }
+}
