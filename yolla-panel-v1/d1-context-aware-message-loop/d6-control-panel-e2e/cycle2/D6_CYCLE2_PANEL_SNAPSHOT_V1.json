@@ -1,0 +1,27 @@
+{
+  "schema_version": "D6_CYCLE2_PANEL_SNAPSHOT_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE2-20260808-001",
+  "source_receipts": {
+    "d2": 5218844105,
+    "d4": 5218697598,
+    "d5": 5218604257
+  },
+  "panel": {
+    "current_worker": "D-6_AUTOMATION_CONTROL_PANEL_AND_E2E_OWNER",
+    "context_name": null,
+    "context_id": null,
+    "current_command": "C2-W6-D2-D4-D5-PARTIAL-LIVE-INTEGRATION-V1-20260808-001",
+    "status": "BLOCKED_EXTERNAL",
+    "started_at": "2026-08-07T14:56:09.000Z",
+    "elapsed_ms": 1340000,
+    "recent_event": "D-2:ACTIVE_CONTEXT_IDENTIFICATION_LIVE_BLOCKED",
+    "error": "PC_EXECUTOR_V2_COMMAND_CLAIM_LOOP_STALLED|TARGET_PC_BROWSER_AGENT_ROUTE_UNAVAILABLE|D5_CYCLE2_LIVE_INGESTION_NOT_AVAILABLE|DISPATCH_MISSING",
+    "retry_count": 0,
+    "result_return_status": "PENDING"
+  },
+  "field_count": 11,
+  "field_presence_pass": true,
+  "fields_backed_by_latest_real_receipts": true,
+  "synthetic_completed": false,
+  "observed_at": "2026-08-07T16:40:00Z"
+}
