@@ -1,0 +1,68 @@
+{
+  "schema_version": "B2_SITE_ANALYZER_WAVE3_UPSTREAM_AUTHORITY_BINDING_V1",
+  "bound_at_kst": "2026-08-07T14:07:00+09:00",
+  "bindings": {
+    "A2": {
+      "pr": 18,
+      "head": "6cf05d0369dbae0b2413f562146243b15f350759",
+      "wave2_pointer_blob": "d6fdf79c57f44dc2bb24ff50be5720b12a21274f",
+      "target_pc_electron_live_pass": false
+    },
+    "A3": {
+      "pr": 22,
+      "head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+      "pointer_blob": "a44c59dc61be4d62db94d0536bef943d3bac2e11",
+      "live_stream_handoff_blob": "b7d2789f72263d9678a8f0335b66be284760627e",
+      "stream_sha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165",
+      "streaming_event_count": 197,
+      "network_request_count": 32,
+      "response_body_count": 31,
+      "dom_snapshot_count": 2
+    },
+    "A4": {
+      "pr": 23,
+      "head": "efc3ca185dd5c124eb0f10a55018a25d60df55dc",
+      "pointer_blob": "794d445af3ee62c1f782019a04d32c0dfbb3a10e",
+      "actual_live_structure_blob": "fae1b21205259afd7d44aad8db6bb52f6d570b75",
+      "page_type": "LIST",
+      "field_candidate_count": 5,
+      "locator_candidate_count": 10,
+      "pagination": "NEXT",
+      "highlight_count": 6
+    },
+    "A5": {
+      "pr": 24,
+      "head": "b7619f0ffacbb4937b4842eab2f6cff75504ebf8",
+      "pointer_blob": "5cd7ab3b08d65f52895beeb62904277a5075aa53",
+      "component_validation": "PASS_25_OF_25",
+      "upstream_live_terminal": "A5_SITE_ANALYZER_WAVE2_LIVE_TRAFFIC_BINDING_PROVEN_EXTERNAL_BLOCKER_COMPONENT_READY",
+      "actual_live_generator_input_generated": false,
+      "b2_policy": "DISPLAY_CONSUMER_SCHEMA_STATE_NO_FALSE_A5_PASS_CLAIM"
+    },
+    "B3": {
+      "pr": 39,
+      "head": "31162d67eb474e7958e9a5591d87dc26bf3c307a",
+      "pointer_blob": "6f28e3c20b8a3b901ecac7933a215dd0c75f0e2f",
+      "action_log_blob": "f5715fee2d537535220af97c3723af1c3e148702",
+      "recorded_event_count": 10,
+      "replay": "PASS_10_OF_10_STEPS"
+    },
+    "B5": {
+      "pr": 41,
+      "head": "589a8074f3844bb2d8192e4b1e876484030023d1",
+      "pointer_blob": "41597993e2dbb97a9d4d9b310b9e15769843db64",
+      "live_adapter_blob": "8fccbd3ba319d8e4a61551fb7eb81cbaa5ab91fa",
+      "evidence_package_blob": "cd0fbb144e47ed955ff1a60eb0600844bd667af5",
+      "preview_rows": 10,
+      "edited_row": "row-5",
+      "edited_value": 5550,
+      "source_row_pointers": 10,
+      "source_element_pointers": 40,
+      "json_csv_xlsx_parity": "PASS"
+    }
+  },
+  "false_upstream_pass_claim_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
