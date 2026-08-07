@@ -1,0 +1,14 @@
+{
+  "commands": {
+    "append": "python cli/b5_dataset_preview_cli.py append --workdir <WORKDIR> --input <records.json>",
+    "export": "python cli/b5_dataset_preview_cli.py export --workdir <WORKDIR> --outdir <EXPORT_DIR>",
+    "preview": "python cli/b5_dataset_preview_cli.py preview --workdir <WORKDIR> --offset 500 --limit 30 --overscan 7",
+    "smoke": "python cli/b5_dataset_preview_cli.py smoke --workdir <WORKDIR> --records 1205"
+  },
+  "directive_id": "AI001-TO-B5-DATASET-PREVIEW-CHECKPOINT-EXPORT-PREBUILD-V1-20260807-001",
+  "do_not": ["TUNNEL_CREATE", "SUCCESSOR_DIRECT_CALL", "TARGET_PC_EXECUTION", "PRODUCTION", "READY", "MERGE"],
+  "expected_smoke": {"checkpoint_resume": "PASS", "record_count_minimum": 1000, "round_trip_field_parity": "PASS", "source_field_loss_count": 0},
+  "recovery": "No chat context required. Read <WORKDIR>/LATEST_POINTER.json, then checkpoint.json, dataset.jsonl and edit_overlay.json.",
+  "schema_version": "SUCCESSOR_RUN_PLAN_V1",
+  "single_pc_command": "python cli/b5_dataset_preview_cli.py smoke --workdir ./runtime/b5-dataset-smoke --records 1205"
+}
