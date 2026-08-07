@@ -1,0 +1,62 @@
+{
+  "schema_version": "YOLLA_SOURCE_FACTORY_PC_AGENT_BRIDGE_V1",
+  "object_type": "WORK_REQUEST",
+  "work_id": "d1-context-aware-message-loop-cycle1-d6-live-001",
+  "project_id": "source-factory",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001",
+  "worker_slot_uid": "D-6",
+  "assignment_id": "D6-AUTOMATION-CONTROL-PANEL-AND-E2E",
+  "directive_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001:D6",
+  "execution_id": "D6-LIVE-E2E-001",
+  "attempt_id": "attempt-1",
+  "source_github_ref": "anbin1900-crypto/source-factory-core@worker/d6-context-aware-message-loop-cycle1-v1",
+  "idempotency_key": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001:D6:LIVE-001",
+  "work_type": "LOCAL_COMMAND",
+  "command_spec": {
+    "executable": "node",
+    "args": [
+      "context_aware_message_loop.cjs",
+      "--mode",
+      "existing-browser-agent-live"
+    ],
+    "cwd": "D6_PACKAGE_ROOT_ON_EXISTING_ACTIVE_CORE",
+    "timeout_seconds": 900,
+    "env": {}
+  },
+  "input_artifacts": [
+    {
+      "type": "CONTRACT",
+      "path": "D6_CONTEXT_AWARE_MESSAGE_LOOP_COMMON_CONTRACT_V1.json"
+    }
+  ],
+  "retry_policy": {
+    "max_attempts": 3,
+    "retry_on_exit_codes": [
+      10,
+      11,
+      12,
+      20,
+      21,
+      22
+    ]
+  },
+  "result_callback": {
+    "transport": "FILE_QUEUE_V1",
+    "result_file": "d1-context-aware-message-loop-cycle1-d6-live-001.json"
+  },
+  "source_factory": {
+    "source": "D6_CONTEXT_AWARE_MESSAGE_LOOP",
+    "prompt_package_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1",
+    "prompt_package_version": "1",
+    "target_window": "EXISTING_AUTHENTICATED_WORKER_CONTEXT",
+    "original_task_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001"
+  },
+  "browser_transport": {
+    "reuse_existing_authenticated_browser_agent": true,
+    "secure_tunnel_reuse": true,
+    "cdp_endpoint": "127.0.0.1:9222",
+    "new_transport": false
+  },
+  "dispatch_status": "NOT_DISPATCHED_CURRENT_SESSION_NO_APPROVED_PC_EXECUTOR_SECURE_TUNNEL_INVOKE_SURFACE",
+  "production": false
+}
