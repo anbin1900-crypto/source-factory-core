@@ -7,6 +7,14 @@ Set-StrictMode -Version Latest
 Add-Type -AssemblyName UIAutomationClient
 Add-Type -AssemblyName UIAutomationTypes
 Add-Type -AssemblyName System.Windows.Forms
+Add-Type @'
+using System;
+using System.Runtime.InteropServices;
+public static class D3NativeWindow {
+  [DllImport("user32.dll")]
+  public static extern bool SetForegroundWindow(IntPtr hWnd);
+}
+'@
 
 $script:Events = New-Object System.Collections.ArrayList
 $script:MessageSent = $false
@@ -70,62 +78,140 @@ function Get-NonCdpChromeProcesses {
   return @($items)
 }
 
+function Open-ExactContextInExistingChrome {
+  param([string]$ContextUrl)
+  $processes = @(Get-NonCdpChromeProcesses)
+  if ($processes.Count -ne 1) { throw ('NON_CDP_CHROME_WINDOW_COUNT_INVALID count=' + $processes.Count) }
+  $process = $processes[0]
+  $root = [System.Windows.Automation.AutomationElement]::FromHandle($process.MainWindowHandle)
+  $address = $null
+  foreach ($element in (Get-AllElements -Root $root)) {
+    try {
+      if ($element.Current.ControlType -ne [System.Windows.Automation.ControlType]::Edit) { continue }
+      $name = Get-ElementName -Element $element
+      $value = Get-ElementValue -Element $element
+      if ($name -match '(?i)address and search bar|주소 및 검색창' -or $value -match '^(https://)?[^ ]+\.[^ ]+') {
+        $address = $element
+        if ($name -match '(?i)address and search bar|주소 및 검색창') { break }
+      }
+    } catch {}
+  }
+  if ($null -eq $address) { throw 'CHROME_ADDRESS_BAR_NOT_FOUND' }
+  [void][D3NativeWindow]::SetForegroundWindow([IntPtr]$process.MainWindowHandle)
+  Start-Sleep -Milliseconds 300
+  try {
+    $valuePattern = $address.GetCurrentPattern([System.Windows.Automation.ValuePattern]::Pattern)
+    $valuePattern.SetValue($ContextUrl)
+  } catch { throw ('CHROME_ADDRESS_BAR_SET_FAILED ' + $_.Exception.Message) }
+  $address.SetFocus()
+  Start-Sleep -Milliseconds 150
+  [System.Windows.Forms.SendKeys]::SendWait('%{ENTER}')
+  Start-Sleep -Seconds 2
+  return $process
+}
+
 function Resolve-ExactPage {
-  param([string]$ExpectedContextId, [string]$ExpectedPageId)
-  $matches = @()
+  param([string]$ExpectedContextId, [string]$ExpectedPageId, [string]$ContextUrl)
+  $tabMatches = @()
   foreach ($process in (Get-NonCdpChromeProcesses)) {
     $root = [System.Windows.Automation.AutomationElement]::FromHandle($process.MainWindowHandle)
     if ($null -eq $root) { continue }
     $all = Get-AllElements -Root $root
+    $tabs = @()
+    $originalSelectedId = $null
     foreach ($element in $all) {
       try {
         if ($element.Current.ControlType -ne [System.Windows.Automation.ControlType]::TabItem) { continue }
         $pageId = 'UIA-TAB-' + (Get-RuntimeIdText -Element $element)
-        if ($pageId -eq $ExpectedPageId) {
-          $matches += [pscustomobject]@{ process = $process; root = $root; tab = $element; page_id = $pageId }
+        $selection = $element.GetCurrentPattern([System.Windows.Automation.SelectionItemPattern]::Pattern)
+        if ($selection.Current.IsSelected) { $originalSelectedId = $pageId }
+        $tabs += [pscustomobject]@{
+          element = $element
+          page_id = $pageId
+          priority = if ($pageId -eq $ExpectedPageId) { 0 } elseif ($selection.Current.IsSelected) { 1 } else { 2 }
         }
       } catch {}
     }
-  }
-  $pageRebound = $false
-  if ($matches.Count -gt 1) { throw ('EXACT_PAGE_MATCH_COUNT_INVALID count=' + $matches.Count) }
-  if ($matches.Count -eq 0) {
-    $contextMatches = @()
-    foreach ($process in (Get-NonCdpChromeProcesses)) {
-      $root = [System.Windows.Automation.AutomationElement]::FromHandle($process.MainWindowHandle)
-      if ($null -eq $root) { continue }
-      $all = Get-AllElements -Root $root
+    foreach ($tabInfo in ($tabs | Sort-Object priority)) {
+      try {
+        $selection = $tabInfo.element.GetCurrentPattern([System.Windows.Automation.SelectionItemPattern]::Pattern)
+        if (-not $selection.Current.IsSelected) { $selection.Select(); Start-Sleep -Milliseconds 450 }
+      } catch { continue }
+      $currentRoot = [System.Windows.Automation.AutomationElement]::FromHandle($process.MainWindowHandle)
+      $currentAll = Get-AllElements -Root $currentRoot
       $url = $null
-      $selectedTab = $null
-      foreach ($element in $all) {
+      foreach ($element in $currentAll) {
         $value = Get-ElementValue -Element $element
-        if ($value -match ('/c/' + [regex]::Escape($ExpectedContextId) + '(?:$|[/?#])')) { $url = $value }
+        if ($value -match '^(https://)?chatgpt\.com/.*/c/[A-Za-z0-9-]+') { $url = $value }
+      }
+      $contextId = $null
+      if ($url -match '/c/([A-Za-z0-9-]+)') { $contextId = $Matches[1] }
+      if ($contextId -eq $ExpectedContextId) {
+        $tabMatches += [pscustomobject]@{
+          process = $process
+          page_id = [string]$tabInfo.page_id
+        }
+        if ([string]$tabInfo.page_id -eq $ExpectedPageId) { break }
+      }
+    }
+    if ($originalSelectedId) {
+      $restoreRoot = [System.Windows.Automation.AutomationElement]::FromHandle($process.MainWindowHandle)
+      foreach ($element in (Get-AllElements -Root $restoreRoot)) {
+        try {
+          if ($element.Current.ControlType -ne [System.Windows.Automation.ControlType]::TabItem) { continue }
+          if (('UIA-TAB-' + (Get-RuntimeIdText -Element $element)) -ne $originalSelectedId) { continue }
+          $restore = $element.GetCurrentPattern([System.Windows.Automation.SelectionItemPattern]::Pattern)
+          if (-not $restore.Current.IsSelected) { $restore.Select(); Start-Sleep -Milliseconds 250 }
+        } catch {}
+      }
+    }
+  }
+  if ($tabMatches.Count -eq 0 -and $ContextUrl) {
+    $openedProcess = Open-ExactContextInExistingChrome -ContextUrl $ContextUrl
+    for ($openPoll = 0; $openPoll -lt 20; $openPoll += 1) {
+      Start-Sleep -Milliseconds 500
+      $openedRoot = [System.Windows.Automation.AutomationElement]::FromHandle($openedProcess.MainWindowHandle)
+      $openedAll = Get-AllElements -Root $openedRoot
+      $openedUrl = $null
+      $openedTab = $null
+      foreach ($element in $openedAll) {
+        $value = Get-ElementValue -Element $element
+        if ($value -match '^(https://)?chatgpt\.com/.*/c/[A-Za-z0-9-]+') { $openedUrl = $value }
         try {
           if ($element.Current.ControlType -eq [System.Windows.Automation.ControlType]::TabItem) {
             $selection = $element.GetCurrentPattern([System.Windows.Automation.SelectionItemPattern]::Pattern)
-            if ($selection.Current.IsSelected) { $selectedTab = $element }
+            if ($selection.Current.IsSelected) { $openedTab = $element }
           }
         } catch {}
       }
-      if ($url -and $selectedTab) {
-        $contextMatches += [pscustomobject]@{
-          process = $process
-          root = $root
-          tab = $selectedTab
-          page_id = 'UIA-TAB-' + (Get-RuntimeIdText -Element $selectedTab)
+      $openedContextId = $null
+      if ($openedUrl -match '/c/([A-Za-z0-9-]+)') { $openedContextId = $Matches[1] }
+      if ($openedContextId -eq $ExpectedContextId -and $openedTab) {
+        $tabMatches += [pscustomobject]@{
+          process = $openedProcess
+          page_id = 'UIA-TAB-' + (Get-RuntimeIdText -Element $openedTab)
         }
+        break
       }
     }
-    if ($contextMatches.Count -ne 1) {
-      throw ('EXACT_CONTEXT_REBIND_MATCH_COUNT_INVALID count=' + $contextMatches.Count)
-    }
-    $target = $contextMatches[0]
-    $pageRebound = $true
-  } else {
-    $target = $matches[0]
   }
+  if ($tabMatches.Count -ne 1) { throw ('EXACT_CONTEXT_OPEN_TAB_MATCH_COUNT_INVALID count=' + $tabMatches.Count) }
+  $target = $tabMatches[0]
+  $pageRebound = ([string]$target.page_id -ne $ExpectedPageId)
+  $targetRoot = [System.Windows.Automation.AutomationElement]::FromHandle($target.process.MainWindowHandle)
+  $targetTab = $null
+  foreach ($element in (Get-AllElements -Root $targetRoot)) {
+    try {
+      if ($element.Current.ControlType -eq [System.Windows.Automation.ControlType]::TabItem -and
+          ('UIA-TAB-' + (Get-RuntimeIdText -Element $element)) -eq [string]$target.page_id) {
+        $targetTab = $element
+        break
+      }
+    } catch {}
+  }
+  if ($null -eq $targetTab) { throw 'EXACT_CONTEXT_TARGET_TAB_DISAPPEARED' }
   try {
-    $selection = $target.tab.GetCurrentPattern([System.Windows.Automation.SelectionItemPattern]::Pattern)
+    $selection = $targetTab.GetCurrentPattern([System.Windows.Automation.SelectionItemPattern]::Pattern)
     if (-not $selection.Current.IsSelected) { $selection.Select(); Start-Sleep -Milliseconds 700 }
   } catch { throw ('EXACT_TAB_SELECTION_FAILED ' + $_.Exception.Message) }
   $root = [System.Windows.Automation.AutomationElement]::FromHandle($target.process.MainWindowHandle)
@@ -158,7 +244,7 @@ function Resolve-ExactPage {
 }
 
 function Find-Composer {
-  param([System.Windows.Automation.AutomationElementCollection]$Elements)
+  param([System.Collections.IEnumerable]$Elements)
   $candidates = @()
   foreach ($element in $Elements) {
     try {
@@ -242,7 +328,7 @@ function Invoke-Send {
 }
 
 function Test-StopVisible {
-  param([System.Windows.Automation.AutomationElementCollection]$Elements)
+  param([System.Collections.IEnumerable]$Elements)
   foreach ($element in $Elements) {
     try {
       if ($element.Current.IsOffscreen) { continue }
@@ -255,25 +341,25 @@ function Test-StopVisible {
 
 function Test-MessageVisibleOutsideComposer {
   param(
-    [System.Windows.Automation.AutomationElementCollection]$Elements,
+    [System.Collections.IEnumerable]$Elements,
     [System.Windows.Automation.AutomationElement]$Composer,
     [string]$Marker
   )
   $composerId = Get-RuntimeIdText -Element $Composer
   $composerValue = Get-ElementValue -Element $Composer
-  $matches = @()
+  $visibleMatches = @()
   foreach ($element in $Elements) {
     $elementId = Get-RuntimeIdText -Element $element
     if ($elementId -eq $composerId) { continue }
     $name = Get-ElementName -Element $element
     $value = Get-ElementValue -Element $element
-    if ($name.Contains($Marker) -or $value.Contains($Marker)) { $matches += $elementId }
+    if ($name.Contains($Marker) -or $value.Contains($Marker)) { $visibleMatches += $elementId }
   }
   return [pscustomobject]@{
-    visible = ($matches.Count -gt 0 -and -not $composerValue.Contains($Marker))
-    match_count = $matches.Count
+    visible = ($visibleMatches.Count -gt 0 -and -not $composerValue.Contains($Marker))
+    match_count = $visibleMatches.Count
     composer_contains_marker = $composerValue.Contains($Marker)
-    matching_runtime_ids = @($matches)
+    matching_runtime_ids = @($visibleMatches)
   }
 }
 
@@ -304,7 +390,7 @@ function Get-FilteredDescendantText {
 function Find-ReplyRaw {
   param(
     [System.Windows.Automation.AutomationElement]$Root,
-    [System.Windows.Automation.AutomationElementCollection]$Elements,
+    [System.Collections.IEnumerable]$Elements,
     [string]$ExpectedMarker,
     [string]$UserMarker
   )
@@ -344,13 +430,27 @@ function Emit-Result {
 try {
   if (-not (Test-Path -LiteralPath $InputPath)) { throw 'INPUT_FILE_NOT_FOUND' }
   $script:Input = Get-Content -LiteralPath $InputPath -Raw -Encoding UTF8 | ConvertFrom-Json
-  foreach ($name in @('cycle_id','command_id','context_id','context_name','page_id','message','message_marker','expected_reply_contains')) {
+  foreach ($name in @('cycle_id','command_id','context_id','context_name','page_id','context_url','message','message_marker','expected_reply_contains')) {
     if (-not $script:Input.PSObject.Properties[$name] -or -not [string]$script:Input.$name) { throw ($name.ToUpperInvariant() + '_REQUIRED') }
   }
 
-  $page = Resolve-ExactPage -ExpectedContextId ([string]$script:Input.context_id) -ExpectedPageId ([string]$script:Input.page_id)
+  $page = Resolve-ExactPage -ExpectedContextId ([string]$script:Input.context_id) -ExpectedPageId ([string]$script:Input.page_id) -ContextUrl ([string]$script:Input.context_url)
+  $boundPageId = [string]$page.page_id
   if ($script:Input.PSObject.Properties['role_marker'] -and [string]$script:Input.role_marker) {
-    if (-not $page.tree_text.Contains([string]$script:Input.role_marker)) { throw 'D2_ROLE_MARKER_NOT_VISIBLE_IN_BOUND_CONTEXT' }
+    if (-not $page.tree_text.Contains([string]$script:Input.role_marker)) {
+      $receiptBindingAllowed = (
+        $script:Input.PSObject.Properties['allow_d2_receipt_binding_after_refresh'] -and
+        [bool]$script:Input.allow_d2_receipt_binding_after_refresh -and
+        $script:Input.PSObject.Properties['d2_live_receipt_blob'] -and
+        [string]$script:Input.d2_live_receipt_blob -eq 'e4b12628631f89b13bf0e0d05486e99d30333290'
+      )
+      if (-not $receiptBindingAllowed) { throw 'D2_ROLE_MARKER_NOT_VISIBLE_IN_BOUND_CONTEXT' }
+      Add-LoopEvent -Type 'D2_RECEIPT_CONTEXT_REBIND_AFTER_REFRESH' -Data @{
+        context_id = [string]$script:Input.context_id
+        d2_live_receipt_blob = [string]$script:Input.d2_live_receipt_blob
+        role_marker_currently_rendered = $false
+      } | Out-Null
+    }
   }
   Add-LoopEvent -Type 'CONTEXT_BOUND' -Data @{
     context_id = [string]$script:Input.context_id
@@ -374,7 +474,8 @@ try {
   $visible = $null
   for ($attempt = 1; $attempt -le $visibilityPolls; $attempt += 1) {
     Start-Sleep -Milliseconds 500
-    $page = Resolve-ExactPage -ExpectedContextId ([string]$script:Input.context_id) -ExpectedPageId ([string]$script:Input.page_id)
+    $page = Resolve-ExactPage -ExpectedContextId ([string]$script:Input.context_id) -ExpectedPageId $boundPageId -ContextUrl ([string]$script:Input.context_url)
+    $boundPageId = [string]$page.page_id
     $composer = Find-Composer -Elements $page.all
     $proof = Test-MessageVisibleOutsideComposer -Elements $page.all -Composer $composer -Marker ([string]$script:Input.message_marker)
     if ($proof.visible) { $visible = $proof; break }
@@ -397,7 +498,8 @@ try {
   $replyRaw = $null
   for ($attempt = 1; $attempt -le $replyPolls; $attempt += 1) {
     Start-Sleep -Seconds 1
-    $page = Resolve-ExactPage -ExpectedContextId ([string]$script:Input.context_id) -ExpectedPageId ([string]$script:Input.page_id)
+    $page = Resolve-ExactPage -ExpectedContextId ([string]$script:Input.context_id) -ExpectedPageId $boundPageId -ContextUrl ([string]$script:Input.context_url)
+    $boundPageId = [string]$page.page_id
     $candidate = Find-ReplyRaw -Root $page.root -Elements $page.all -ExpectedMarker ([string]$script:Input.expected_reply_contains) -UserMarker ([string]$script:Input.message_marker)
     $stopVisible = Test-StopVisible -Elements $page.all
     if ($candidate -and -not $stopVisible) {
