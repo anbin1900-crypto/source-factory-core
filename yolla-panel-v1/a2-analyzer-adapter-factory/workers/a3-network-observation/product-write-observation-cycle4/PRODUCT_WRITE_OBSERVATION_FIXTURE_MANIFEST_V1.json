@@ -1,0 +1,31 @@
+{
+  "schema_version": "PRODUCT_WRITE_OBSERVATION_FIXTURE_MANIFEST_V1",
+  "directive_id": "A0-TO-A3-PRODUCT-WRITE-OBSERVATION-EVIDENCE-V4-20260808-001",
+  "generator": "product_write_observation_engine_v1.cjs#buildFixtureSequence",
+  "command_id": "CMD-FIXTURE-PRODUCT-WRITE-001",
+  "lineage_id": "LINEAGE-PRODUCT-WRITE-001",
+  "event_count": 13,
+  "correlation_count": 4,
+  "flows": ["PUBLIC_READ", "CREATE", "MY_LISTING", "EDIT"],
+  "event_sequence": [
+    {"event_id":"E1","schema_version":"PAGE_STATE_OBSERVATION_EVENT_V1","action_id":"A-PUBLIC-READ","page_id":"P-PUBLIC"},
+    {"event_id":"E2","schema_version":"ACTION_DOM_NETWORK_RESPONSE_CORRELATION_V2","action_id":"A-PUBLIC-READ","page_id":"P-PUBLIC"},
+    {"event_id":"E3","schema_version":"PAGE_STATE_OBSERVATION_EVENT_V1","action_id":"A-CREATE","page_id":"P-CREATE"},
+    {"event_id":"E4","schema_version":"FORM_INTERACTION_OBSERVATION_V1","action_id":"A-CREATE","page_id":"P-CREATE"},
+    {"event_id":"E5","schema_version":"FORM_INTERACTION_OBSERVATION_V1","action_id":"A-CREATE","page_id":"P-CREATE"},
+    {"event_id":"E6","schema_version":"FORM_INTERACTION_OBSERVATION_V1","action_id":"A-CREATE","page_id":"P-CREATE"},
+    {"event_id":"E7","schema_version":"ACTION_DOM_NETWORK_RESPONSE_CORRELATION_V2","action_id":"A-CREATE","page_id":"P-CREATE"},
+    {"event_id":"E8","schema_version":"MY_LISTING_PAGE_OBSERVATION_V1","action_id":"A-MY-LISTING","page_id":"P-MY"},
+    {"event_id":"E9","schema_version":"ACTION_DOM_NETWORK_RESPONSE_CORRELATION_V2","action_id":"A-MY-LISTING","page_id":"P-MY"},
+    {"event_id":"E10","schema_version":"EDIT_FLOW_OBSERVATION_V1","action_id":"A-EDIT","page_id":"P-EDIT"},
+    {"event_id":"E11","schema_version":"FORM_INTERACTION_OBSERVATION_V1","action_id":"A-EDIT","page_id":"P-EDIT"},
+    {"event_id":"E12","schema_version":"EDIT_FLOW_OBSERVATION_V1","action_id":"A-EDIT","page_id":"P-EDIT"},
+    {"event_id":"E13","schema_version":"ACTION_DOM_NETWORK_RESPONSE_CORRELATION_V2","action_id":"A-EDIT","page_id":"P-EDIT"}
+  ],
+  "full_fixture_local_sha256": "cc6dc0575f81c21ca97fd75ae4e627cf98c27e2b05719cad1f7cab385d495174",
+  "regeneration_is_deterministic": true,
+  "raw_secret_or_pii_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
