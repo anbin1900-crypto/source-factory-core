@@ -1,0 +1,15 @@
+{
+  "schema_version":"A6_DECISION_TO_RECIPE_COMPOSITE_RUN_REQUEST_V1",
+  "command_id":"AI001-A6-C3-SMOKE-001",
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "a4_path":"inputs/A4_STRUCTURE_INFERENCE_RUN_RECEIPT_V1.json",
+  "a5_path":"inputs/A5_ENDPOINT_SCHEMA_DECISION_RUNNER_VALIDATION_RECEIPT_V1.json",
+  "out_bundle":"ADAPTER_EXECUTION_BUNDLE_V1.json",
+  "out_recipe":"generated/EXTRACTION_RECIPE_V1.json",
+  "out_adapter":"generated/compiled-adapter.cjs",
+  "out_full_receipt":"artifacts/FULL_REPLAY_RECEIPT_V1.json",
+  "out_failure_receipt":"artifacts/FORCED_FAILURE_RECEIPT_V1.json",
+  "out_checkpoint":"artifacts/CHECKPOINT_RECEIPT_V1.json",
+  "out_resume_receipt":"artifacts/RESUME_RECEIPT_V1.json",
+  "boundary":{"target_pc_execution":false,"tunnel_change":false,"live_site_call":false,"new_browser_engine":false,"production":false,"ready":false,"merge":false}
+}
