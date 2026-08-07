@@ -1,0 +1,117 @@
+{
+  "schema_version": "A3_SITE_ANALYZER_WAVE3_LIVE_INTEGRATION_EXECUTION_RECEIPT_V2",
+  "supersedes": "A3_SITE_ANALYZER_WAVE3_LIVE_INTEGRATION_EXECUTION_RECEIPT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment": 5212021138,
+  "executed_at_utc": "2026-08-07T04:58:38.390Z",
+  "executed_at_kst": "2026-08-07T13:58:38.390+09:00",
+  "status": "PASS",
+  "actual_browser": {
+    "engine": "Chromium",
+    "version": "144.0.7559.96",
+    "executable": "/usr/bin/chromium",
+    "headless": true,
+    "cdp_transport": "REAL_WEBSOCKET_REMOTE_DEBUGGING",
+    "browser_restart_count": 1,
+    "browser_session_count": 2
+  },
+  "fixture": {
+    "origin": "http://127.0.0.1:40035",
+    "http_pass": true,
+    "record_count": 10,
+    "environment_policy_initially_blocked_http": true,
+    "isolated_execution_environment_policy_override": {
+      "change": "temporarily remove URLBlocklist for disposable-container live HTTP execution",
+      "policy_sha256_before": "3b740260e337305aaef268e6c63af8fa2796057ce46f43df5ae5a3949e085e86",
+      "policy_sha256_after_restore": "3b740260e337305aaef268e6c63af8fa2796057ce46f43df5ae5a3949e085e86",
+      "restored_exact": true,
+      "target_pc_policy_modified": false,
+      "repository_policy_modified": false
+    }
+  },
+  "repair_applied_before_reexecution": {
+    "finding": "A-4 eventName/snapshotFrom compatibility mismatch for canonical A-3 dom.snapshot type",
+    "repair": "cdp_product_stream_bridge_v2 adds A-4-only eventType aliases while preserving canonical type",
+    "repair_commit": "af36f6875d82bbe115d8cf156a6c508aba51c2c0",
+    "repair_blob": "eaeae42e1a742fe36d79ea5740a77385ce049c8e",
+    "repair_content_sha256": "48cc7249ca98db6c16be3c1a7700186af8b4caa26e5727cf19f2189684f74dbf"
+  },
+  "sessions": [
+    {
+      "label": "session1",
+      "session_id": "wave3-session1-4df4c93a-f070-4605-90fb-fbcb568bf9ee",
+      "browser_process_id": 1391,
+      "event_count": 87,
+      "event_sha256": "720f15da3b5e73b3394a59c89d8b45c030714dc4c2dd6c1b5f1ec0138de06011",
+      "first_sequence": 1,
+      "last_sequence": 87,
+      "network_request_count": 10,
+      "response_body_count": 10,
+      "dom_snapshot_count": 3,
+      "dynamic_dom_snapshot_count": 1,
+      "main_navigation_count": 2,
+      "child_frame_count": 2,
+      "a2_projection": {"network": 10, "dom": 3, "frames": 4, "console": 5},
+      "a4_projection": {"event_count": 87, "dom_snapshot_count": 3, "navigation_count": 4},
+      "a5_projection": {"projected_event_count": 38, "complete_triplet_count": 10, "request": 10, "response": 10, "response_body": 10, "dom_snapshot": 3, "frame_navigated": 4}
+    },
+    {
+      "label": "session2_after_browser_reopen",
+      "session_id": "wave3-session2-afab9c1c-aab3-4b43-a299-b2ce500ef2ec",
+      "browser_process_id": 1497,
+      "event_count": 87,
+      "event_sha256": "d630c4eb1a3707824e0462004dfc3b058b72be73ff8038b940437228900f6b29",
+      "first_sequence": 89,
+      "last_sequence": 175,
+      "network_request_count": 10,
+      "response_body_count": 10,
+      "dom_snapshot_count": 3,
+      "dynamic_dom_snapshot_count": 1,
+      "main_navigation_count": 2,
+      "child_frame_count": 2,
+      "a2_projection": {"network": 10, "dom": 3, "frames": 4, "console": 5},
+      "a4_projection": {"event_count": 87, "dom_snapshot_count": 3, "navigation_count": 4},
+      "a5_projection": {"projected_event_count": 38, "complete_triplet_count": 10, "request": 10, "response": 10, "response_body": 10, "dom_snapshot": 3, "frame_navigated": 4}
+    }
+  ],
+  "stream": {
+    "event_count": 176,
+    "event_sha256": "f92cbbfa80919b7f13f2fbe1dac665662e17102fe2aea44300833dc0581fa334",
+    "first_sequence": 1,
+    "last_sequence": 176,
+    "strict_global_sequence": true,
+    "unique_event_ids": true,
+    "restart_sequence_continuity": true,
+    "session_count": 2
+  },
+  "consumer_delivery": {
+    "consumer_count": 3,
+    "delivery_count_per_consumer": 176,
+    "consumer_replacement_count_on_restart": 3,
+    "duplicate_delivery_count": 0,
+    "unique_delivery_per_consumer": true
+  },
+  "pass_criteria": {
+    "cdp_stream_to_a2_a4_a5": "PASS",
+    "response_body_handoff": "PASS_10_PER_SESSION",
+    "dom_mutation_handoff": "PASS_1_PER_SESSION",
+    "restart_recovery": "PASS",
+    "no_duplicate_listener": "PASS_ZERO_DUPLICATE_DELIVERY",
+    "strict_event_order": "PASS_SEQUENCE_1_TO_176",
+    "a4_event_alias_repair": "PASS_REEXECUTED"
+  },
+  "commands": [
+    {"command": "node -c cdp_product_stream_bridge_v2_wrapper.cjs", "exit_code": 0},
+    {"command": "node -c run_wave3_live_integration_v2_wrapper.cjs", "exit_code": 0},
+    {"command": "node run_wave3_live_integration_v2_wrapper.cjs", "exit_code": 0}
+  ],
+  "tested_source": {
+    "compatibility_bridge_sha256": "48cc7249ca98db6c16be3c1a7700186af8b4caa26e5727cf19f2189684f74dbf",
+    "ephemeral_runner_sha256": "898fa9cbe434188b0036e36974fd4b16e1624a55e147116db2458c121529e5f7",
+    "raw_receipt_sha256": "d3f74b14428ace54ca90a9c23519cad2b42e4a00a8e16a2f918fc31800d42999"
+  },
+  "raw_secret_value_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
