@@ -1,0 +1,11 @@
+{
+  "schema_version": "DATA_ENTITY_RELATIONSHIP_GRAPH_V1",
+  "entity_authority": "OBSERVED_REDACTED_RESPONSE_BODY_PATHS_ONLY",
+  "identifier_policy": "IDENTIFIER_PATH_MUST_BE_OBSERVED",
+  "relationship_policy": "ONLY_EXPLICIT_NESTED_PATH_RELATION_IS_OBSERVED",
+  "business_rules": {
+    "status": "UNKNOWN",
+    "reason": "BUSINESS_RULES_NOT_OBSERVED"
+  },
+  "raw_secret_value_count": 0
+}

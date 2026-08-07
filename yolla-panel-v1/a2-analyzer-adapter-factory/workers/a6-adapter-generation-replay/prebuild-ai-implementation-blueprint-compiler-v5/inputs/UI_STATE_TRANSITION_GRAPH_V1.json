@@ -1,0 +1,7 @@
+{
+  "schema_version": "UI_STATE_TRANSITION_GRAPH_V1",
+  "observed_transition_requires": ["state_before", "state_after", "evidence_pointer"],
+  "missing_transition_policy": "UNKNOWN",
+  "allowed_authority": ["OBSERVED", "UNKNOWN"],
+  "business_rule_inference": "FORBIDDEN"
+}
