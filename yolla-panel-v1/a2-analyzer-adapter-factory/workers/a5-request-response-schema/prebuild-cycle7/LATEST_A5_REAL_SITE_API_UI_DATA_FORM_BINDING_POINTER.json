@@ -1,0 +1,31 @@
+{
+  "schema_version": "LATEST_A5_REAL_SITE_API_UI_DATA_FORM_BINDING_POINTER_V1",
+  "worker": "A-5",
+  "worker_pr": 24,
+  "directive_id": "A0-TO-A5-REAL-SITE-API-UI-DATA-FORM-BINDING-V7-20260808-001",
+  "directive_comment_id": 5220793881,
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "status": "TERMINAL_PASS",
+  "terminal": "A5_REAL_SITE_API_UI_DATA_FORM_BINDING_READY",
+  "terminal_commit": "55e741db289d59b93bbec6198a76e14ff4b90c78",
+  "terminal_report_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle7/A5_REAL_SITE_API_UI_DATA_FORM_BINDING_TERMINAL_REPORT_V1.json",
+  "validation_receipt_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle7/A5_REAL_SITE_API_UI_DATA_FORM_BINDING_VALIDATION_RECEIPT_V1.json",
+  "entrypoint_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle7/real_site_live_binding.cjs",
+  "required_output_paths": [
+    "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle7/REAL_SITE_API_UI_STATE_BINDING_V1.json",
+    "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle7/REAL_SITE_DATA_ENTITY_BINDING_V1.json",
+    "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle7/REAL_SITE_FORM_FIELD_BINDING_V1.json",
+    "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle7/UNKNOWN_BUSINESS_RULE_INDEX_V1.json",
+    "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle7/A5_TO_A6_LIVE_EXECUTION_HANDOFF_V1.json"
+  ],
+  "live_binding_digest": "56d8fc5e6a00aa567d9d07a2cd68f59b939ca80194f09882a45391fd60150523",
+  "fixture_replay_count": 2,
+  "deterministic_digest": "PASS",
+  "lane_partition": ["PUBLIC_READ", "WRITE", "MY_LISTING", "EDIT"],
+  "next_action": "A-6 consumes READY observed edges. Missing A-3 causal edges remain WAITING_INPUT and are late-bound only when their exact evidence pointer arrives.",
+  "raw_secret_value_count": 0,
+  "raw_pii_value_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
