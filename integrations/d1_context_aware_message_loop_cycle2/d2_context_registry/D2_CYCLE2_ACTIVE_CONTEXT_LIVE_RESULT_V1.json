@@ -1,0 +1,103 @@
+{
+  "schema_version": "D2_CYCLE2_ACTIVE_CONTEXT_LIVE_RESULT_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE2-20260808-001",
+  "rule_id": "YOLLA_C_MODE_RULES_V1",
+  "worker_id": "AUTOMATION-C-W2",
+  "role": "D-2_CONTEXT_REGISTRY_AND_ACTIVE_WORKER_OWNER",
+  "worker_pr": 81,
+  "control_pr": 17,
+  "directive_id": "C2-W2-EXECUTOR-CLAIM-RECOVERY-AND-EXACT-CONTEXT-LIVE-V1-20260808-001",
+  "directive_comment_id": 5219662044,
+  "authority_assignment": {
+    "commit": "92ad49fcec16aaa6cd45db8e330a52a5ea274549",
+    "path": ".yolla/automation/cycles/D1_CONTEXT_AWARE_MESSAGE_LOOP_CYCLE2_20260808_001.json"
+  },
+  "outcome": "PASS",
+  "terminal": "ACTIVE_CONTEXT_IDENTIFICATION_LIVE_PASS",
+  "target_pc": "NOTEX",
+  "recovery": {
+    "cycle1_claim_loop_blocker_resolved": true,
+    "cycle1_exact_wrapper_receipt": "D2CTX-C1-WRITE-PS1-EXACT-20260808-000400-001",
+    "cycle1_d3_bounded_extract_receipt": "D2CTX-C1-RUN-D3-BINDING-EXTRACT-20260808-001000-001",
+    "d3_dependency_gate": false
+  },
+  "retry_evidence": {
+    "exact_9222_probe_failure_signature": "D2_CONTEXT_MARKER_PAGE_NOT_FOUND",
+    "exact_9222_probe_same_signature_count": 2,
+    "method_changed_after_second_same_failure": true,
+    "boundary_diagnostic_receipt": "D2C2-RUN-BROWSER-BOUNDARY-DIAG-V3-20260808-015700-001",
+    "boundary_finding": {
+      "user_chatgpt_chrome_pid": 11712,
+      "user_chatgpt_chrome_remote_debugging_port": null,
+      "dedicated_cdp_chrome_pid": 5676,
+      "dedicated_cdp_port": 9222,
+      "dedicated_cdp_page_count": 1,
+      "dedicated_cdp_chatgpt_page_count": 0,
+      "dedicated_cdp_active_surface": "https://land.naver.com/",
+      "browser_agent_32100_tcp_reachable": true
+    },
+    "fallback_method": "EXISTING_WINDOWS_UI_AUTOMATION_OVER_EXISTING_NON_CDP_CHROME",
+    "new_browser_runtime": false,
+    "new_transport": false
+  },
+  "live_receipt": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "branch": "command/d-group-domain-knowledge-db-foundation-v1",
+    "path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/PC_OPERATION_COMMAND_BUS_V2/RECEIPTS/D2C2-RUN-UIA-CONTEXT-PROBE-V2-AFTER-MARKER-20260808-020300-001.json",
+    "blob_sha": "e4b12628631f89b13bf0e0d05486e99d30333290",
+    "command_id": "D2C2-RUN-UIA-CONTEXT-PROBE-V2-AFTER-MARKER-20260808-020300-001",
+    "executor_version": "2.0.2",
+    "runtime_script_sha256": "640f466068eae506bc0b7db5100b555a9d02760b91223b21f9599c25a72df911",
+    "status": "SUCCEEDED",
+    "target_pc_live_readback": true,
+    "role_marker_match": true,
+    "cycle_marker_match": true,
+    "binding_state": "LIVE_EXACT_ROLE_AND_CYCLE_MARKER_BOUND_UIA"
+  },
+  "runtime_fields": {
+    "ROLE_ID": "D-2_CONTEXT_REGISTRY_AND_ACTIVE_WORKER_OWNER",
+    "CONTEXT_ID": "6a72e288-7f24-83ee-b357-3e327cf6d877",
+    "CONTEXT_NAME": "자동화 C 모드 - 자동화 C 모드 - 자동화 그룹 A E  그룹에 속함",
+    "PAGE_ID": "UIA-TAB-42.198100.4.0.0.5287",
+    "COMMAND_ID": "C2-W2-EXECUTOR-CLAIM-RECOVERY-AND-EXACT-CONTEXT-LIVE-V1-20260808-001",
+    "WORK_STATUS": "RESULT_PENDING",
+    "STARTED_AT": "2026-08-07T16:39:00.000Z",
+    "LAST_SEEN_AT": "2026-08-07T17:01:58.4698489Z"
+  },
+  "live_page": {
+    "active_window_pid": 11712,
+    "active_window_handle": 198100,
+    "active_window_title": "자동화 C 모드 - 자동화 C 모드 - Chrome",
+    "selected_tab_runtime_resolved": true,
+    "url_resolved": true,
+    "accessibility_element_count": 825,
+    "marker_source": {
+      "role": "ACTUAL_CHATGPT_CONTEXT_VISIBLE_MARKER",
+      "cycle": "ACTUAL_CHATGPT_CONTEXT_CYCLE2_BINDING_MARKER"
+    }
+  },
+  "reuse": {
+    "context_registry_pr": 81,
+    "page_registry_pr": 22,
+    "view_model_pr": 38,
+    "context_registry_regression": "PASS_21_ASSERTIONS",
+    "cycle2_uia_probe_source_commit": "b049d67e58644c5dc038e10073312ea7827b30f7"
+  },
+  "anti_misbinding_acceptance": {
+    "refresh_same_context_retains_binding": "PASS",
+    "new_chat_does_not_inherit_old_role": "PASS",
+    "same_context_new_page_rebinds_page_only": "PASS",
+    "duplicate_live_context_pages_fail_closed": "PASS",
+    "new_chat_without_context_id_keeps_role_null": "PASS",
+    "live_exact_role_cycle_context_page_binding": "PASS",
+    "arbitrary_candidate_selection_count": 0
+  },
+  "new_executor_count": 0,
+  "new_tunnel_count": 0,
+  "new_transport_count": 0,
+  "raw_conversation_persisted": false,
+  "secret_exposure_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
