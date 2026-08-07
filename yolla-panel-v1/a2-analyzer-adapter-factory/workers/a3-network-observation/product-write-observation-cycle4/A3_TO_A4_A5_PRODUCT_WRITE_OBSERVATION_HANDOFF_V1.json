@@ -1,0 +1,25 @@
+{
+  "schema_version": "A3_TO_A4_A5_PRODUCT_WRITE_OBSERVATION_HANDOFF_V1",
+  "directive_id": "A0-TO-A3-PRODUCT-WRITE-OBSERVATION-EVIDENCE-V4-20260808-001",
+  "producer": "A-3",
+  "consumers": ["A-4", "A-5"],
+  "authority_boundary": "OBSERVATION_EVIDENCE_ONLY",
+  "authoritative_endpoint_catalog": false,
+  "authoritative_write_permission": false,
+  "observed_facts_and_inference_candidates_separated": true,
+  "required_provenance": ["command_id", "lineage_id", "page_id", "action_id", "timestamp"],
+  "event_schemas": ["PAGE_STATE_OBSERVATION_EVENT_V1", "FORM_INTERACTION_OBSERVATION_V1", "MY_LISTING_PAGE_OBSERVATION_V1", "EDIT_FLOW_OBSERVATION_V1", "ACTION_DOM_NETWORK_RESPONSE_CORRELATION_V2"],
+  "legacy_compatibility": {
+    "NETWORK_OBSERVATION_EVENT_V1": {"path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/NETWORK_OBSERVATION_EVENT_V1.json", "blob": "bb52dc17797c9c0fa9feb78559157b499001ae7f"},
+    "REDACTION_POLICY_V1": {"path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/REDACTION_POLICY_V1.json", "blob": "936b0eac4d4f288cfdfa2078e05f8651926cf964"},
+    "A3_TO_A5_OBSERVATION_HANDOFF_V1": {"path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_TO_A5_OBSERVATION_HANDOFF_V1.json", "blob": "1b72cf730d997102d115f71a6cf0bc98f50c8e50"},
+    "reference_names": ["NETWORK_OBSERVATION_EVENT_REF_V1", "RESPONSE_BODY_REF_V1", "DOM_EVENT_REF_V1"]
+  },
+  "a4_direct_consumption": {"fields": ["provenance", "observed.page_kind", "observed.page_role", "observed.interaction", "observed.control_type", "observed.validation", "compatibility.dom_event_ref", "consumer_projection.a4"]},
+  "a5_direct_consumption": {"fields": ["provenance.command_id", "provenance.page_id", "provenance.action_id", "compatibility.network_observation_event_ref", "compatibility.response_body_ref", "consumer_projection.a5"]},
+  "privacy": {"raw_credential_secret_pii_values_stored": false, "representation": "REDACTED_HASH_OR_REFERENCE_ONLY", "raw_secret_value_count": 0, "raw_pii_value_count": 0},
+  "fixture_done_when": {"flows": ["PUBLIC_READ", "CREATE", "MY_LISTING", "EDIT"], "same_command_lineage": true, "a4_a5_reinterpretation_required": false},
+  "production": false,
+  "ready": false,
+  "merge": false
+}
