@@ -1,0 +1,18 @@
+{
+  "schema_version":"B3_WORKER_STATE_COMMAND_CORRELATION_READY_EVENT_V1",
+  "event":"B3_WORKER_STATE_COMMAND_CORRELATION_READY",
+  "directive_id":"AI001-TO-B3-WORKER-STATE-COMMAND-CORRELATION-V3-20260807-001",
+  "assignment_comment_id":5217763332,
+  "status":"PASS_PREBUILD_AWAITING_REMOTE_READBACK",
+  "duplicate_complete":"SUPPRESSED",
+  "out_of_order_generating_after_complete":"SUPPRESSED_STALE",
+  "restart_replay":"PASS",
+  "result_receipt_binding":"PASS",
+  "b1_a7_handoff":true,
+  "target_pc_execution":false,
+  "tunnel_change":false,
+  "worker_direct_tunnel":false,
+  "production":false,
+  "ready":false,
+  "merge":false
+}
