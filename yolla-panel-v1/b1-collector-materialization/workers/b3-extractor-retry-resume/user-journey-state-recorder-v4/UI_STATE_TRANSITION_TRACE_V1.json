@@ -1,0 +1,6 @@
+{
+  "schema_version": "UI_STATE_TRANSITION_TRACE_V1",
+  "required_fields": ["transition_id", "journey_id", "sequence_no", "from_state", "to_state", "action_id", "command_id", "session_id", "page_id", "status"],
+  "correlation_preserved": ["command_id", "session_id", "page_id", "action_id"],
+  "ordering": "sequence_no ASC"
+}
