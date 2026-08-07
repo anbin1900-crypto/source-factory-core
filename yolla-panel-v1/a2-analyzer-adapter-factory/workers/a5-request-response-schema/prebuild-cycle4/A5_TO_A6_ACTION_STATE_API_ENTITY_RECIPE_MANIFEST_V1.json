@@ -1,0 +1,27 @@
+{
+  "schema_version": "A5_TO_A6_ACTION_STATE_API_ENTITY_RECIPE_MANIFEST_V1",
+  "producer": "A-5_ACTION_STATE_API_ENTITY_BINDING_OWNER",
+  "consumer": "A-6",
+  "direct_consume_contract": "ACTION_STATE_API_ENTITY_RECIPE_INPUT_V1",
+  "source_result_schema": "A5_ACTION_STATE_API_ENTITY_BINDING_RESULT_V1",
+  "required_sections": [
+    "provenance",
+    "action_network_binding",
+    "api_ui_binding_graph",
+    "ui_state_transition_graph",
+    "data_entity_relationship_graph",
+    "feature_dependency_graph",
+    "form_field_canonical_candidate",
+    "session_requirements_reference"
+  ],
+  "compile_rules": {
+    "observed_action_request_binding": "MAY_COMPILE",
+    "candidate_edges": "PRESERVE_CONFIDENCE_AND_EVIDENCE",
+    "unknown_or_insufficient_evidence": "FAIL_CLOSED",
+    "business_rules_unknown": "DO_NOT_INFER"
+  },
+  "raw_secret_value_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
