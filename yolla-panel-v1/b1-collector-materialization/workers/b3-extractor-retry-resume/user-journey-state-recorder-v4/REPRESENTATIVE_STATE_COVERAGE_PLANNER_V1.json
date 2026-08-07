@@ -1,0 +1,9 @@
+{
+  "schema_version": "REPRESENTATIVE_STATE_COVERAGE_PLAN_V1",
+  "strategy": "GROUP_SAME_STRUCTURE_FILTER_COMBINATIONS_BY_ACTION_FAMILY",
+  "family_key_fields": ["feature", "action_type", "page_role", "target_family", "structure_signature"],
+  "excluded_from_family_key": ["filter_value", "query_value", "record_identity"],
+  "representative_policy": "FIRST_STRUCTURALLY_UNIQUE_EVENT",
+  "duplicate_exploration_policy": "RECORD_EQUIVALENT_EVENT_BUT_SUPPRESS_ADDITIONAL_COVERAGE_EXPLORATION",
+  "goal": "avoid exhaustive exploration of structurally identical filter combinations"
+}
