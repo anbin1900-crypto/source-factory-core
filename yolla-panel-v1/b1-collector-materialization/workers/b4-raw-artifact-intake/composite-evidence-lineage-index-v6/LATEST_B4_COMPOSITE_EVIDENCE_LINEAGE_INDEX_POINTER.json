@@ -1,0 +1,13 @@
+{
+  "schema_version":"LATEST_B4_COMPOSITE_EVIDENCE_LINEAGE_INDEX_POINTER_V1",
+  "worker":"B-4",
+  "directive_id":"A0-TO-B4-COMPOSITE-EVIDENCE-LINEAGE-INDEX-V6-20260808-001",
+  "directive_comment_id":5220481169,
+  "cycle_id":"A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001",
+  "status":"TERMINAL_PASS",
+  "terminal":"B4_COMPOSITE_EVIDENCE_LINEAGE_INDEX_READY",
+  "activation_dependency":{"d5_cycle3_pointer":"worker-state-event-trace-checkpoint-v3/d5-context-aware-message-loop-cycle1/cycle3-d2-live-recovery-ingestion/LATEST_D5_CYCLE3_D2_LIVE_RECOVERY_POINTER.json","terminal":"D2_LIVE_RECOVERY_INGESTION_AND_METRIC_CLOSURE_PASS"},
+  "outputs":{"contract":"contracts/COMPOSITE_EVIDENCE_LINEAGE_INDEX_V1.json","runtime_source":"src/composite_evidence_lineage.py","single_entrypoint":"run_composite_evidence_smoke.py","fixture_projection":"artifacts/COMPOSITE_EVIDENCE_LINEAGE_INDEX_FIXTURE_V1.json","reverse_trace_bundle":"artifacts/B4_COMPOSITE_EVIDENCE_REVERSE_TRACE_BUNDLE_V1.json","smoke_result":"artifacts/B4_COMPOSITE_EVIDENCE_LINEAGE_SMOKE_RESULT_V1.json","test_report":"reports/B4_COMPOSITE_EVIDENCE_LINEAGE_INDEX_TEST_REPORT_V1.json","final_report":"reports/B4_COMPOSITE_EVIDENCE_LINEAGE_INDEX_FINAL_REPORT_V1.json"},
+  "validation":{"schema_parse":"PASS_1_OF_1","python_compile":"PASS_2_OF_2","unit_tests":"PASS_7_OF_7","fixture_reverse_trace_smoke":"PASS_1_OF_1"},
+  "final_head_resolution":"COMMIT_CONTAINING_THIS_POINTER"
+}
