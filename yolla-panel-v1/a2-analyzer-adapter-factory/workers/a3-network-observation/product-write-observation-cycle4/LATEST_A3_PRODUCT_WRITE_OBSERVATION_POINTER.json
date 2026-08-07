@@ -1,0 +1,48 @@
+{
+  "schema_version": "LATEST_A3_PRODUCT_WRITE_OBSERVATION_POINTER_V1",
+  "directive_id": "A0-TO-A3-PRODUCT-WRITE-OBSERVATION-EVIDENCE-V4-20260808-001",
+  "directive_comment": 5219083908,
+  "cycle_id": "A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "worker": "A-3",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "source_head": "f1ba518fcfde8490ce8c9bfa855814d8836ba0bc",
+  "pre_pointer_head": "67581969a8608aa67ae0e3a68d5a75f63ede1f55",
+  "status": "PASS",
+  "terminal": "A3_PRODUCT_WRITE_OBSERVATION_EVIDENCE_READY",
+  "artifacts": {
+    "start": {"blob": "f476fefe0525026390c42ecc1430c98944a3a5c5"},
+    "engine": {"blob": "3c6cf3f8a52afa71a795eee21e90b4bc4cfbf790", "sha256": "bfda32fe4373cdba600d2e9aa10e7aeed118097f682d0286e48b00204b2e9503"},
+    "PAGE_STATE_OBSERVATION_EVENT_V1": {"blob": "cad000c0562a5a5bac4abfdc7cdf093da357d699"},
+    "FORM_INTERACTION_OBSERVATION_V1": {"blob": "db5273b45e4443e5b09cba2ee02a75b381d486f0"},
+    "MY_LISTING_PAGE_OBSERVATION_V1": {"blob": "14e3f434d02c19b722dd44f64ae3f167f8aa1db3"},
+    "EDIT_FLOW_OBSERVATION_V1": {"blob": "74fa82c06f3e4f04562d86bb7088f16a342a69fb"},
+    "ACTION_DOM_NETWORK_RESPONSE_CORRELATION_V2": {"blob": "c9a3196127de2d8aa4e9cb0f03ce44a81e8d53dd"},
+    "a4_a5_handoff": {"blob": "5b141f94227907e05dc086453c557e89655baf63"},
+    "fixture_manifest": {"blob": "50ff8f692360a6c8a2f82657db24d306edf97e83", "full_generated_fixture_sha256": "cc6dc0575f81c21ca97fd75ae4e627cf98c27e2b05719cad1f7cab385d495174"},
+    "mock_smoke": {"blob": "d07581b2370a652e5f0897068e0050594a2a0abf", "sha256": "14cd5ca94aa7964e88c51924929cae7e8fd041c3f8dec70a374f2f4a47197fcb"},
+    "validation_receipt": {"blob": "b03721c0ccd8920dd034b36c2a259503ab36f17c"}
+  },
+  "done_when": {
+    "fixture_event_count": 13,
+    "correlation_count": 4,
+    "flows": ["PUBLIC_READ", "CREATE", "MY_LISTING", "EDIT"],
+    "same_command_lineage": true,
+    "observed_inference_separation": true,
+    "a4_direct_consumption": true,
+    "a5_direct_consumption": true,
+    "legacy_network_ref_compatibility": true,
+    "response_body_ref_compatibility": true,
+    "dom_event_ref_compatibility": true,
+    "raw_secret_or_pii_count": 0
+  },
+  "guardrails": {
+    "target_pc_execution": false,
+    "live_site_call": false,
+    "tunnel_change": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
