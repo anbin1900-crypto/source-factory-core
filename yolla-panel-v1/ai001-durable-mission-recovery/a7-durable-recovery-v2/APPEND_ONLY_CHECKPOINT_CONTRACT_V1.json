@@ -1,0 +1,9 @@
+{
+  "schema_version":"APPEND_ONLY_CHECKPOINT_CONTRACT_V1",
+  "checkpoint_path_pattern":"checkpoints/{sequence_padded}_{checkpoint_id}.json",
+  "required_fields":["checkpoint_id","sequence_no","command_id","idempotency_key","created_at","durable","completed_steps","pending_steps","artifact_manifest","receipt_pointer"],
+  "ordering":{"sequence_no":"STRICTLY_INCREASING","overwrite_existing_checkpoint":"FORBIDDEN","latest_checkpoint_selection":"MAX_SEQUENCE_NO_VALID_JSON"},
+  "integrity":{"artifact_manifest":"OPTIONAL_SHA256_PER_ARTIFACT","receipt_pointer":"MAY_BE_NULL_UNTIL_RECEIPT_EXISTS","partial_file_suffixes":[".partial",".tmp",".incomplete"]},
+  "resume":{"durable_true_required_for_resume":true,"checkpoint_command_must_match_active_command":true,"checkpoint_idempotency_key_must_match_active_command":true},
+  "production":false,"ready":false,"merge":false
+}
