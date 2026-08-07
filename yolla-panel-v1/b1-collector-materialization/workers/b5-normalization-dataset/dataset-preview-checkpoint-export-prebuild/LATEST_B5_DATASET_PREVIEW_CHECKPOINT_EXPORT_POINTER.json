@@ -1,5 +1,5 @@
 {
-  "schema_version": "LATEST_B5_DATASET_PREVIEW_CHECKPOINT_EXPORT_POINTER_V1",
+  "schema_version": "LATEST_B5_DATASET_PREVIEW_CHECKPOINT_EXPORT_POINTER_V2",
   "directive_id": "AI001-TO-B5-DATASET-PREVIEW-CHECKPOINT-EXPORT-PREBUILD-V1-20260807-001",
   "directive_comment": 5216938692,
   "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
@@ -7,17 +7,37 @@
   "worker_pr": 41,
   "branch": "worker/b5-normalization-dataset-receipt-v1",
   "baseline_head": "fe25d960020abc03b1ad528bcf0da0034c4788db",
-  "content_head_before_pointer": "663538836b93a8b04c70f15fc2bb71a9d2b98e8e",
-  "final_remote_head_resolution": "COMMIT_CONTAINING_THIS_POINTER",
+  "content_head_before_pointer": "6dee38c6f38e1cedf55665180497f2d4c7b86c85",
+  "final_remote_head_resolution": "COMMIT_CONTAINING_LATEST_POINTER_ALIAS",
   "status": "PREBUILD_IMPLEMENTED_AND_SMOKE_TESTED",
   "terminal": "B5_DATASET_PREVIEW_CHECKPOINT_EXPORT_PREBUILD_READY",
+  "required_outputs": {
+    "NORMALIZED_PREVIEW_DATASET_V1": {
+      "path": "NORMALIZED_PREVIEW_DATASET_V1.json",
+      "blob": "98f4330d8afbb862af63571764bb927fdc8e7396"
+    },
+    "DATASET_CHECKPOINT_RESUME_V1": {
+      "path": "DATASET_CHECKPOINT_RESUME_V1.json",
+      "blob": "2192083712d95cd5dfa0cebe4fb27a1514c01506"
+    },
+    "EXPORT_ROUNDTRIP_CONTRACT_V1": {
+      "path": "contracts/EXPORT_ROUNDTRIP_CONTRACT_V1.json",
+      "blob": "6bf5ec0ef2d1cea6563dac9d77f0eb92f6d8f837"
+    },
+    "SUCCESSOR_RUN_PLAN_V1": {
+      "path": "SUCCESSOR_RUN_PLAN_V1.json",
+      "blob": "c7580535485b25bc820b2690c295f9876d794284"
+    },
+    "LATEST_POINTER": {
+      "path": "LATEST_POINTER.json",
+      "blob_resolution": "CREATE_AFTER_THIS_POINTER_AND_BIND_TARGET_BLOB"
+    }
+  },
   "artifacts": {
     "engine_blob": "9352d9bf09ac0bc900640b36c9c8ead97b95012b",
     "cli_blob": "f67fdf95225bfc4bcc50ccfecef041dd9edc7d74",
     "normalized_preview_dataset_schema_blob": "dbae3d46630dbaba2d76d05b43c4ae98a38d98e9",
     "checkpoint_resume_schema_blob": "7700808e0d9c00b9b6854e2dc90d5877091903d1",
-    "export_roundtrip_contract_blob": "6bf5ec0ef2d1cea6563dac9d77f0eb92f6d8f837",
-    "successor_run_plan_blob": "c7580535485b25bc820b2690c295f9876d794284",
     "test_source_blob": "cd1eae1ae37a200a9c24d1198c494c85588948c1",
     "test_report_blob": "1490a1d934fdfc69b0d416fb42fdb766930863ce",
     "final_report_blob": "1d381aef481f1f31ddced71718a5b63fe290788c",
