@@ -1,67 +1,63 @@
 {
-  "schema_version": "LATEST_C6_PDF_TO_CSV_POINTER_V6",
-  "pointer_id": "LATEST-C6-PDF-PREPROCESS-INTEGRATED-CORRECTION-20260807-002",
-  "batch_id": "C1-PDF-PREPROCESS-CORRECTION-20260807-001",
-  "task_id": "C6_INTEGRATED_DEFECT_DIRECT_REPAIR",
+  "schema_version": "LATEST_C6_PDF_TO_CSV_POINTER_V7",
+  "pointer_id": "LATEST-C6-FINAL-PANEL-LAUNCH-20260807-001",
+  "batch_id": "C1-PDF-PREPROCESS-FINAL-PANEL-LAUNCH-20260807-001",
+  "task_id": "C6_FINAL_ACTUAL_PANEL_LAUNCH_INTEGRATED_DIRECT_REPAIR",
   "worker": "C-6_AI_QUALITY_E2E_VALIDATION",
   "repository": "anbin1900-crypto/source-factory-core",
   "control_pr": 20,
   "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
-  "directive_comment_id": 5208883940,
-  "commander_control_comment_id": 5208884860,
-  "terminal_comment_id": 5209009684,
-  "previous_pointer_blob": "31a8b5b70d0bb5b7ac2b746476ac95a79a23320a",
-  "required_result": "C6_INTEGRATED_CORRECTION_COMPLETE_OR_NO_DEFECT_FOUND",
+  "directive_comment_id": 5212525529,
+  "commander_control_comment_id": 5212526492,
+  "terminal_comment_id": 5212690546,
+  "previous_pointer_blob": "aa0e505f86d4809b7b570c3c94ee90c2ada7ef4f",
+  "terminal_remote_head_observed": "267c47de13637a8d492f17e5132364d92a90815e",
+  "required_result": "C6_FINAL_PANEL_LAUNCH_CORRECTION_COMPLETE_OR_EXACT_ENVIRONMENT_BLOCKER",
   "artifacts": {
-    "validator": {"path":"validate_pdf_preprocess_correction_e2e.py","commit":"2087b78766a0434a0341f27b515b07fd9c83b1f9","blob":"da9c84541b38149851c07a1cc1c3f1d90ba60a05"},
-    "test": {"path":"test_validate_pdf_preprocess_correction_e2e.py","commit":"43ce3821973a08a2dbfc63b97bb51ce2e64c6164","blob":"13c8aefe76e699bd42ab6274979c29c5f9276495"},
-    "e2e_result": {"path":"C6_PDF_PREPROCESS_CORRECTION_E2E_RESULT_V1.json","commit":"4cb1777dd49f9c9d5f762dec7b577b3b5683f0f3","blob":"2b87baebe3526ed3bc5cdc74948e82f1e3ccae1a"},
-    "final_report": {"path":"C6_PDF_PREPROCESS_CORRECTION_FINAL_REPORT_V1.json","commit":"f91a84c3a4e9c51e48f9f49749c907d5ac8c381b","blob":"39931f4633932fbe9bde4dd5ad077bd628386f61"}
+    "result": {
+      "path": "C6_FINAL_PANEL_LAUNCH_RESULT_V1.json",
+      "commit": "973e1396f1bfcd64a796b905028f9dc4656a7e1b",
+      "blob": "b04efc720f4ee5f8324f8b26b9c4950d96d42cc0"
+    },
+    "final_report": {
+      "path": "C6_FINAL_PANEL_LAUNCH_FINAL_REPORT_V1.json",
+      "commit": "c32c732dc55221e50c721b88213337d30d517b89",
+      "blob": "46a09ceab9339600da946d8571abbe226a9f0212"
+    },
+    "prior_full_pipeline_e2e": {
+      "path": "C6_PDF_PREPROCESS_CORRECTION_E2E_RESULT_V1.json",
+      "blob": "2b87baebe3526ed3bc5cdc74948e82f1e3ccae1a"
+    }
   },
-  "direct_repairs": {
-    "defects_found": 3,
-    "defects_repaired": 3,
-    "unrepaired": 0,
-    "reassigned": 0,
-    "C4_repair_commit": "a8761da05a4573af40d32e3c7e413222fc0b2dda",
-    "C5_repair_commit": "9a48bdb4106a80a9e65418bf9f5a01d9215ea9eb",
-    "parallel_worker_supersession_preserved_repairs": true
+  "remote_bindings": {
+    "c4_pipeline_blob": "63b40f83b0425d241ad1859864625f4211c847d5",
+    "c5_panel_blob": "af1cf6dce3a9dda8eabde1f33146b48b19ffa9c9",
+    "folder_and_pdf_file_share_c4_pipeline": true,
+    "c5_parallel_launch_hardening_retained": true
   },
-  "exact_remote_bindings": {
-    "reference_head": "ffba28b7cbefaf913552f1763958f8674230a9b0",
-    "C2_input_adapter_blob": "f73ac4c21c25346db441f4260decfd73032aaefb",
-    "C3_runtime_adapter_blob": "ba55b3685ec073c2108b3f1dae2478e2922eb3de",
-    "C4_pipeline_blob": "63b40f83b0425d241ad1859864625f4211c847d5",
-    "C5_panel_blob": "5c35e6485ae5879df051e5d8372b62dd31f385cb"
+  "launch_validation": {
+    "gui_launch_requested": true,
+    "gui_window_created": false,
+    "pyside6_available": false,
+    "pyside6_cached_install_package_available": false,
+    "launch_return_code": 2,
+    "headless_safe_panel_request_probe": "PASS_BOTH_INPUT_MODES",
+    "user_visible_dependency_error": "PASS",
+    "install_command_present": true,
+    "rerun_command_present": true,
+    "launch_exception_message_present": true,
+    "silent_pass": false
   },
-  "execution": {
-    "folder_mode": "PASS_2_PDFS_6_CSV_CHUNKS",
-    "single_pdf_mode": "PASS_1_PDF_2_CSV_CHUNKS",
-    "single_pdf_input_count": 1,
-    "non_selected_pdf_processed_count": 0,
-    "direct_text": "PASS",
-    "ocr_fallback": "PASS",
-    "utf8_sig": "PASS",
-    "required_columns": "PASS",
-    "chunk_continuity_per_source": "PASS",
-    "page_order_per_source": "PASS",
-    "progress_events": "PASS",
-    "error_propagation": "PASS",
-    "panel_call_path_executed": true,
-    "gui_window_launch_executed": false,
-    "gui_window_launch_reason": "PYSIDE6_UNAVAILABLE_IN_C6_FIXTURE_RUNTIME"
+  "defect_accounting": {
+    "new_integrated_defects_found": 0,
+    "new_integrated_repairs": 0,
+    "environment_blocker_count": 1,
+    "environment_blocker": "PYSIDE6_NOT_INSTALLED_IN_C6_RUNTIME"
   },
-  "validation": {
-    "c6_python_compile": "PASS_2_OF_2",
-    "c6_unit_tests": "PASS_10_OF_10",
-    "integrated_fixture_e2e": "PASS",
-    "all_acceptance_checks": "PASS",
-    "c6_test_bug_fixed_and_rerun": "PASS",
-    "github_ci": "NOT_RUN_NOT_CLAIMED_PASS"
-  },
-  "decision": "C6_INTEGRATED_CORRECTION_COMPLETE",
-  "terminal": "C6_INTEGRATED_CORRECTION_COMPLETE",
-  "next_gate": "C1_FINAL_CORRECTION_REVIEW_AND_CLOSE",
+  "decision": "C6_FINAL_PANEL_LAUNCH_EXACT_ENVIRONMENT_BLOCKER",
+  "terminal": "C6_FINAL_PANEL_LAUNCH_CORRECTION_COMPLETE_OR_EXACT_ENVIRONMENT_BLOCKER",
+  "first_blocker": "PYSIDE6_NOT_INSTALLED_IN_C6_RUNTIME",
+  "next_gate": "C1_FINAL_PANEL_LAUNCH_BATCH_CLOSE_REVIEW",
   "semantic_analysis": false,
   "semantic_validation": false,
   "gpt_call": false,
@@ -70,5 +66,6 @@
   "production": false,
   "ready": false,
   "merge": false,
-  "self_merge": false
+  "self_merge": false,
+  "github_ci": "NOT_RUN_NOT_CLAIMED_PASS"
 }
