@@ -1,0 +1,11 @@
+{
+  "mission_id": "mission-fixture-001",
+  "session_id": "session-fixture-001",
+  "actions": [
+    {"command_id":"cmd-001","page_id":"page-main","action_type":"input","payload":{"selector":"#q","value":"apartment"},"timestamp":"2026-08-07T13:00:00Z","status":"CONFIRMED","evidence":[{"evidence_id":"ev-001","evidence_type":"CDP_DOM","digest":"d1"}]},
+    {"command_id":"cmd-002","page_id":"page-main","action_type":"click","payload":{"selector":"#search"},"timestamp":"2026-08-07T13:00:01Z","status":"CONFIRMED","evidence":[{"evidence_id":"ev-002","evidence_type":"CDP_NETWORK","digest":"d2"}]},
+    {"command_id":"cmd-003","page_id":"page-main","action_type":"navigation","payload":{"url":"https://fixture.local/results"},"timestamp":"2026-08-07T13:00:02Z","status":"CONFIRMED","evidence":[{"evidence_id":"ev-003","evidence_type":"CDP_NAVIGATION","digest":"d3"}]},
+    {"command_id":"cmd-004","page_id":"page-results","action_type":"scroll","payload":{"x":0,"y":800},"timestamp":"2026-08-07T13:00:03Z","status":"PENDING","evidence":[]},
+    {"command_id":"cmd-005","page_id":"page-results","action_type":"wait","payload":{"ms":250},"timestamp":"2026-08-07T13:00:04Z","status":"PENDING","evidence":[]}
+  ]
+}
