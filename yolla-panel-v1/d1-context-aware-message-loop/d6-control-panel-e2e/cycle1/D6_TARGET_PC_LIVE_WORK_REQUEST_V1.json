@@ -15,13 +15,17 @@
   "command_spec": {
     "executable": "node",
     "args": [
-      "context_aware_message_loop.cjs",
-      "--mode",
-      "existing-browser-agent-live"
+      "target_pc_live_runner.cjs",
+      "--input",
+      "D6_LIVE_INPUT_V1.json",
+      "--output",
+      "D6_LIVE_RESULT_V1.json"
     ],
     "cwd": "D6_PACKAGE_ROOT_ON_EXISTING_ACTIVE_CORE",
     "timeout_seconds": 900,
-    "env": {}
+    "env": {
+      "YOLLA_EXISTING_BROWSER_AGENT_ADAPTER": "REQUIRED_EXISTING_RUNTIME_PATH_NOT_INVENTED_BY_D6"
+    }
   },
   "input_artifacts": [
     {
@@ -32,12 +36,9 @@
   "retry_policy": {
     "max_attempts": 3,
     "retry_on_exit_codes": [
-      10,
-      11,
-      12,
-      20,
-      21,
-      22
+      41,
+      42,
+      43
     ]
   },
   "result_callback": {
@@ -56,6 +57,11 @@
     "secure_tunnel_reuse": true,
     "cdp_endpoint": "127.0.0.1:9222",
     "new_transport": false
+  },
+  "fail_closed": {
+    "missing_existing_browser_agent_adapter_exit_code": 41,
+    "loop_failure_exit_code": 42,
+    "d1_return_not_completed_exit_code": 43
   },
   "dispatch_status": "NOT_DISPATCHED_CURRENT_SESSION_NO_APPROVED_PC_EXECUTOR_SECURE_TUNNEL_INVOKE_SURFACE",
   "production": false
