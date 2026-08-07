@@ -1,0 +1,25 @@
+{
+  "checkpoint_seq": 2,
+  "checkpoint_sha256": "ed585743b580b2566d7a182f8e90b8c9fdd4899f639842c7bd8e95a31f9182c9",
+  "datasets": {
+    "FIELD_TRANSFORM_CANDIDATE_V1": {
+      "path": "datasets/FIELD_TRANSFORM_CANDIDATE_V1.json",
+      "record_count": 24,
+      "sha256": "0b03800da3888a30f276c6006af9091c5190a50286214e09ccd90572ed3c69da"
+    },
+    "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1": {
+      "path": "datasets/REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1.json",
+      "record_count": 6,
+      "sha256": "c47aac50d320bbf1f293c96e2c493ad5cbf8b680442231de97421ddc5a7d28fc"
+    },
+    "SITE_LISTING_BINDING_V1": {
+      "path": "datasets/SITE_LISTING_BINDING_V1.json",
+      "record_count": 12,
+      "sha256": "04f70905c336ac7b88d767c4b45aa7aba6135ac9843d9dad2704a551178de7d5"
+    }
+  },
+  "lineage_key": "f1798d1ca39150593b8d0795bfc2f0b2f723be3a09dab71d9f0a2a45f08a77f2",
+  "phase": "APPLICATION_SEMANTICS_MATERIALIZED",
+  "previous_checkpoint_sha256": "96bdd2f08102831c555bfaf6f33f5c48d18592b9aa67a124c9faf73dc3855547",
+  "schema_version": "BLUEPRINT_ONTOLOGY_BINDING_CHECKPOINT_V2"
+}

@@ -1,0 +1,270 @@
+{
+  "lineage": {
+    "a5_entity_transform_manifest": {
+      "blob": "ca25f197302a7dd3bc0b04e92811926645d41db6",
+      "commit": "1fe291107be70fe3fe660bbb7fde4a94928b4662"
+    },
+    "b1_multimode_handoff": {
+      "blob": "04e6480d5ba1d2c8f2ade5ece270f474e301a0f2",
+      "commit": "90d8e74d7678090695ffb94f414d99c28358c241"
+    },
+    "cycle_id": "A0-AB-AI-BLUEPRINT-SEMANTIC-BINDING-CYCLE5-20260808-001",
+    "directive_id": "A0-TO-B5-REAL-ESTATE-FIELD-ONTOLOGY-SITE-BINDING-V5-20260808-001",
+    "lineage_key": "f1798d1ca39150593b8d0795bfc2f0b2f723be3a09dab71d9f0a2a45f08a77f2",
+    "parent_v4_pointer": {
+      "blob": "66d3d3d024a30629138da008368435acee491121",
+      "commit": "d30a322b006896f424a25b2a19e69f146a24fc83"
+    },
+    "source_fixture_sha256": "042ba06d0a184282bfbab68dd3c040b299e19bd317a93c8ca678343014482a8f"
+  },
+  "records": [
+    {
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "sale_price",
+      "confidence_floor": 0.92,
+      "description": "매매 계약의 표시 가격 후보",
+      "evidence_pointers": [
+        {
+          "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+          "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+          "selector": "#/field_observations/매매가"
+        },
+        {
+          "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+          "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+          "selector": "#/field_observations/dealOrWarrantPrc"
+        }
+      ],
+      "example_validation": {
+        "kind": "numeric_text",
+        "nullable": true
+      },
+      "label_ko": "매매가",
+      "option_candidates": [],
+      "semantic_status": "CANDIDATE",
+      "source_observation_count": 2,
+      "unit_candidates": [
+        "만원"
+      ],
+      "validation_candidates": [
+        {
+          "kind": "numeric_text",
+          "nullable": true
+        },
+        {
+          "kind": "numeric_text",
+          "nullable": true
+        }
+      ],
+      "value_type_candidate": "decimal"
+    },
+    {
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "deposit",
+      "confidence_floor": 0.9,
+      "description": "임대차 보증금 후보",
+      "evidence_pointers": [
+        {
+          "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+          "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+          "selector": "#/field_observations/보증금"
+        },
+        {
+          "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+          "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+          "selector": "#/field_observations/warrantPrc"
+        }
+      ],
+      "example_validation": {
+        "kind": "numeric_text",
+        "nullable": true
+      },
+      "label_ko": "보증금",
+      "option_candidates": [],
+      "semantic_status": "CANDIDATE",
+      "source_observation_count": 2,
+      "unit_candidates": [
+        "만원"
+      ],
+      "validation_candidates": [
+        {
+          "kind": "numeric_text",
+          "nullable": true
+        },
+        {
+          "kind": "numeric_text",
+          "nullable": true
+        }
+      ],
+      "value_type_candidate": "decimal"
+    },
+    {
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "monthly_rent",
+      "confidence_floor": 0.9,
+      "description": "월 단위 임대료 후보",
+      "evidence_pointers": [
+        {
+          "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+          "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+          "selector": "#/field_observations/월세"
+        },
+        {
+          "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+          "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+          "selector": "#/field_observations/rentPrc"
+        }
+      ],
+      "example_validation": {
+        "kind": "numeric_text",
+        "nullable": true
+      },
+      "label_ko": "월세",
+      "option_candidates": [],
+      "semantic_status": "CANDIDATE",
+      "source_observation_count": 2,
+      "unit_candidates": [
+        "만원/월"
+      ],
+      "validation_candidates": [
+        {
+          "kind": "numeric_text",
+          "nullable": true
+        },
+        {
+          "kind": "numeric_text",
+          "nullable": true
+        }
+      ],
+      "value_type_candidate": "decimal"
+    },
+    {
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "exclusive_area",
+      "confidence_floor": 0.95,
+      "description": "전용 사용 면적 후보",
+      "evidence_pointers": [
+        {
+          "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+          "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+          "selector": "#/field_observations/전용면적"
+        },
+        {
+          "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+          "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+          "selector": "#/field_observations/area2"
+        }
+      ],
+      "example_validation": {
+        "kind": "positive_decimal",
+        "nullable": true
+      },
+      "label_ko": "전용면적",
+      "option_candidates": [],
+      "semantic_status": "CANDIDATE",
+      "source_observation_count": 2,
+      "unit_candidates": [
+        "㎡"
+      ],
+      "validation_candidates": [
+        {
+          "kind": "positive_decimal",
+          "nullable": true
+        },
+        {
+          "kind": "positive_decimal",
+          "nullable": true
+        }
+      ],
+      "value_type_candidate": "decimal"
+    },
+    {
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "floor",
+      "confidence_floor": 0.83,
+      "description": "해당 층과 전체 층 표시 후보",
+      "evidence_pointers": [
+        {
+          "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+          "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+          "selector": "#/field_observations/해당층/총층"
+        },
+        {
+          "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+          "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+          "selector": "#/field_observations/floorInfo"
+        }
+      ],
+      "example_validation": {
+        "kind": "floor_text",
+        "nullable": true,
+        "pattern_candidate": "CURRENT/TOTAL"
+      },
+      "label_ko": "층",
+      "option_candidates": [],
+      "semantic_status": "CANDIDATE",
+      "source_observation_count": 2,
+      "unit_candidates": [
+        "층"
+      ],
+      "validation_candidates": [
+        {
+          "kind": "floor_text",
+          "nullable": true,
+          "pattern_candidate": "CURRENT/TOTAL"
+        },
+        {
+          "kind": "floor_text",
+          "nullable": true,
+          "pattern_candidate": "CURRENT/TOTAL"
+        }
+      ],
+      "value_type_candidate": "string"
+    },
+    {
+      "canonical_authority_pointer": null,
+      "canonical_candidate_id": "direction",
+      "confidence_floor": 0.81,
+      "description": "주 채광 방향 후보",
+      "evidence_pointers": [
+        {
+          "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+          "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+          "selector": "#/field_observations/방향"
+        },
+        {
+          "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+          "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+          "selector": "#/field_observations/direction"
+        }
+      ],
+      "example_validation": {
+        "kind": "observed_option_set",
+        "nullable": true
+      },
+      "label_ko": "방향",
+      "option_candidates": [
+        "남동향",
+        "남향",
+        "동향",
+        "북향",
+        "서향"
+      ],
+      "semantic_status": "CANDIDATE",
+      "source_observation_count": 2,
+      "unit_candidates": [],
+      "validation_candidates": [
+        {
+          "kind": "observed_option_set",
+          "nullable": true
+        },
+        {
+          "kind": "observed_option_set",
+          "nullable": true
+        }
+      ],
+      "value_type_candidate": "enum_candidate"
+    }
+  ],
+  "schema_version": "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1"
+}

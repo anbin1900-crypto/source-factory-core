@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FIELD_TRANSFORM_CANDIDATE_V1",
+  "type": "object",
+  "required": ["schema_version", "lineage", "records"],
+  "properties": {
+    "schema_version": {"const": "FIELD_TRANSFORM_CANDIDATE_V1"},
+    "lineage": {"type": "object"},
+    "records": {"type": "array", "minItems": 2}
+  },
+  "additionalProperties": false
+}

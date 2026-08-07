@@ -1,0 +1,22 @@
+{
+  "schema_version": "B5_REAL_ESTATE_FIELD_ONTOLOGY_SITE_BINDING_TEST_REPORT_V1",
+  "directive_id": "A0-TO-B5-REAL-ESTATE-FIELD-ONTOLOGY-SITE-BINDING-V5-20260808-001",
+  "compile": "PASS_2_OF_2",
+  "unit_tests": "PASS_45_OF_45",
+  "fixture_smoke": "PASS",
+  "dataset_contracts": "PASS_3_OF_3",
+  "evidence_readback": "PASS_1_OF_1",
+  "materialized_dataset_readback": "PASS_3_OF_3",
+  "site_count": 2,
+  "canonical_candidate_count": 6,
+  "binding_count": 12,
+  "transform_candidate_count": 24,
+  "source_field_loss_count": 0,
+  "source_field_synthesis_count": 0,
+  "canonical_confirmed_without_authority_count": 0,
+  "duplicate_materialization_count": 0,
+  "checkpoint_sequence": "PASS_1_2_MONOTONIC",
+  "contextless_readback": "PASS",
+  "status": "PASS",
+  "verified_at_kst": "2026-08-08T01:49:00+09:00"
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "REAL_ESTATE_FIELD_OBSERVATION_FIXTURE_V1",
+  "directive_id": "A0-TO-B5-REAL-ESTATE-FIELD-ONTOLOGY-SITE-BINDING-V5-20260808-001",
+  "cycle_id": "A0-AB-AI-BLUEPRINT-SEMANTIC-BINDING-CYCLE5-20260808-001",
+  "lineage": {
+    "parent_v4_pointer": {"commit": "d30a322b006896f424a25b2a19e69f146a24fc83", "blob": "66d3d3d024a30629138da008368435acee491121"},
+    "a5_entity_transform_manifest": {"commit": "1fe291107be70fe3fe660bbb7fde4a94928b4662", "blob": "ca25f197302a7dd3bc0b04e92811926645d41db6"},
+    "b1_multimode_handoff": {"commit": "90d8e74d7678090695ffb94f414d99c28358c241", "blob": "04e6480d5ba1d2c8f2ade5ece270f474e301a0f2"}
+  },
+  "candidate_definitions": {
+    "sale_price": {"label_ko": "매매가", "description": "매매 계약의 표시 가격 후보", "value_type_candidate": "decimal"},
+    "deposit": {"label_ko": "보증금", "description": "임대차 보증금 후보", "value_type_candidate": "decimal"},
+    "monthly_rent": {"label_ko": "월세", "description": "월 단위 임대료 후보", "value_type_candidate": "decimal"},
+    "exclusive_area": {"label_ko": "전용면적", "description": "전용 사용 면적 후보", "value_type_candidate": "decimal"},
+    "floor": {"label_ko": "층", "description": "해당 층과 전체 층 표시 후보", "value_type_candidate": "string"},
+    "direction": {"label_ko": "방향", "description": "주 채광 방향 후보", "value_type_candidate": "enum_candidate"}
+  },
+  "sites": [
+    {
+      "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "evidence_pointer": {"path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE", "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038"},
+      "field_observations": [
+        {"source_field_name": "dealOrWarrantPrc", "label": "매매가", "name": "dealOrWarrantPrc", "options": [], "unit": "만원", "validation": {"kind": "numeric_text", "nullable": true}, "canonical_candidate_id": "sale_price", "semantic_status": "CANDIDATE", "confidence": 0.92, "read_transform_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MANWON_CANDIDATE"},
+        {"source_field_name": "warrantPrc", "label": "보증금", "name": "warrantPrc", "options": [], "unit": "만원", "validation": {"kind": "numeric_text", "nullable": true}, "canonical_candidate_id": "deposit", "semantic_status": "CANDIDATE", "confidence": 0.90, "read_transform_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MANWON_CANDIDATE"},
+        {"source_field_name": "rentPrc", "label": "월세", "name": "rentPrc", "options": [], "unit": "만원/월", "validation": {"kind": "numeric_text", "nullable": true}, "canonical_candidate_id": "monthly_rent", "semantic_status": "CANDIDATE", "confidence": 0.90, "read_transform_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MONTHLY_CANDIDATE"},
+        {"source_field_name": "area2", "label": "전용면적", "name": "area2", "options": [], "unit": "㎡", "validation": {"kind": "positive_decimal", "nullable": true}, "canonical_candidate_id": "exclusive_area", "semantic_status": "CANDIDATE", "confidence": 0.95, "read_transform_candidate": "PRESERVE_RAW_AND_PARSE_M2_CANDIDATE"},
+        {"source_field_name": "floorInfo", "label": "층", "name": "floorInfo", "options": [], "unit": "층", "validation": {"kind": "floor_text", "pattern_candidate": "CURRENT/TOTAL", "nullable": true}, "canonical_candidate_id": "floor", "semantic_status": "CANDIDATE", "confidence": 0.84, "read_transform_candidate": "PRESERVE_RAW_AND_SPLIT_FLOOR_CANDIDATE"},
+        {"source_field_name": "direction", "label": "방향", "name": "direction", "options": ["남향", "남동향", "동향", "서향", "북향"], "unit": "", "validation": {"kind": "observed_option_set", "nullable": true}, "canonical_candidate_id": "direction", "semantic_status": "CANDIDATE", "confidence": 0.82, "read_transform_candidate": "PRESERVE_RAW_AND_ENUM_CANDIDATE"}
+      ]
+    },
+    {
+      "source_site_id": "SITE-KB-LAND",
+      "evidence_pointer": {"path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND", "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038"},
+      "field_observations": [
+        {"source_field_name": "매매가", "label": "매매가", "name": "매매가", "options": [], "unit": "만원", "validation": {"kind": "numeric_text", "nullable": true}, "canonical_candidate_id": "sale_price", "semantic_status": "CANDIDATE", "confidence": 0.93, "read_transform_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MANWON_CANDIDATE"},
+        {"source_field_name": "보증금", "label": "보증금", "name": "보증금", "options": [], "unit": "만원", "validation": {"kind": "numeric_text", "nullable": true}, "canonical_candidate_id": "deposit", "semantic_status": "CANDIDATE", "confidence": 0.91, "read_transform_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MANWON_CANDIDATE"},
+        {"source_field_name": "월세", "label": "월세", "name": "월세", "options": [], "unit": "만원/월", "validation": {"kind": "numeric_text", "nullable": true}, "canonical_candidate_id": "monthly_rent", "semantic_status": "CANDIDATE", "confidence": 0.91, "read_transform_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MONTHLY_CANDIDATE"},
+        {"source_field_name": "전용면적", "label": "전용면적", "name": "전용면적", "options": [], "unit": "㎡", "validation": {"kind": "positive_decimal", "nullable": true}, "canonical_candidate_id": "exclusive_area", "semantic_status": "CANDIDATE", "confidence": 0.95, "read_transform_candidate": "PRESERVE_RAW_AND_PARSE_M2_CANDIDATE"},
+        {"source_field_name": "해당층/총층", "label": "층", "name": "해당층/총층", "options": [], "unit": "층", "validation": {"kind": "floor_text", "pattern_candidate": "CURRENT/TOTAL", "nullable": true}, "canonical_candidate_id": "floor", "semantic_status": "CANDIDATE", "confidence": 0.83, "read_transform_candidate": "PRESERVE_RAW_AND_SPLIT_FLOOR_CANDIDATE"},
+        {"source_field_name": "방향", "label": "방향", "name": "방향", "options": ["남향", "남동향", "동향", "서향", "북향"], "unit": "", "validation": {"kind": "observed_option_set", "nullable": true}, "canonical_candidate_id": "direction", "semantic_status": "CANDIDATE", "confidence": 0.81, "read_transform_candidate": "PRESERVE_RAW_AND_ENUM_CANDIDATE"}
+      ]
+    }
+  ]
+}

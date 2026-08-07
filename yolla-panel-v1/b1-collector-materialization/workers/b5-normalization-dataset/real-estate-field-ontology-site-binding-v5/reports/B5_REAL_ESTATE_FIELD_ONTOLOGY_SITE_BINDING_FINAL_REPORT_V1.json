@@ -1,0 +1,44 @@
+{
+  "schema_version": "B5_REAL_ESTATE_FIELD_ONTOLOGY_SITE_BINDING_FINAL_REPORT_V1",
+  "directive_id": "A0-TO-B5-REAL-ESTATE-FIELD-ONTOLOGY-SITE-BINDING-V5-20260808-001",
+  "directive_comment": 5219618006,
+  "cycle_id": "A0-AB-AI-BLUEPRINT-SEMANTIC-BINDING-CYCLE5-20260808-001",
+  "worker": "B-5_REAL_ESTATE_FIELD_ONTOLOGY_SITE_BINDING_OWNER",
+  "baseline_head": "d30a322b006896f424a25b2a19e69f146a24fc83",
+  "terminal": "B5_REAL_ESTATE_FIELD_ONTOLOGY_SITE_BINDING_READY",
+  "status": "APPLICATION_LEVEL_REAL_ESTATE_ONTOLOGY_BINDING_IMPLEMENTED_AND_READBACK_VERIFIED",
+  "outputs": [
+    "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1",
+    "SITE_LISTING_BINDING_V1",
+    "FIELD_TRANSFORM_CANDIDATE_V1"
+  ],
+  "canonical_candidates": ["sale_price", "deposit", "monthly_rent", "exclusive_area", "floor", "direction"],
+  "validation": {
+    "compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_45_OF_45",
+    "fixture_smoke": "PASS",
+    "contracts": "PASS_3_OF_3",
+    "readback": "PASS_3_OF_3",
+    "site_count": 2,
+    "binding_count": 12,
+    "transform_candidate_count": 24,
+    "source_field_loss_count": 0,
+    "source_field_synthesis_count": 0,
+    "canonical_confirmed_without_authority_count": 0,
+    "unknown_write_transform_count": 12,
+    "unknown_business_rule_count": 12,
+    "duplicate_materialization_count": 0,
+    "checkpoint_sequence": "PASS_1_2_MONOTONIC",
+    "contextless_readback": "PASS"
+  },
+  "boundaries": {
+    "d_canonical_schema_decision": false,
+    "target_pc_execution": false,
+    "live_site_call": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  },
+  "completed_at_kst": "2026-08-08T01:49:00+09:00"
+}

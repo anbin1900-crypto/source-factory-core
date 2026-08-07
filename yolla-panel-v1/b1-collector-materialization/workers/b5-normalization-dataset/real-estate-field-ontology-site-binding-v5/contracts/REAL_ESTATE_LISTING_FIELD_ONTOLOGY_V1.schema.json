@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1",
+  "type": "object",
+  "required": ["schema_version", "lineage", "records"],
+  "properties": {
+    "schema_version": {"const": "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1"},
+    "lineage": {"type": "object"},
+    "records": {"type": "array", "minItems": 6}
+  },
+  "additionalProperties": false
+}

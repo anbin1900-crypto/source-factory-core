@@ -1,0 +1,419 @@
+{
+  "lineage": {
+    "a5_entity_transform_manifest": {
+      "blob": "ca25f197302a7dd3bc0b04e92811926645d41db6",
+      "commit": "1fe291107be70fe3fe660bbb7fde4a94928b4662"
+    },
+    "b1_multimode_handoff": {
+      "blob": "04e6480d5ba1d2c8f2ade5ece270f474e301a0f2",
+      "commit": "90d8e74d7678090695ffb94f414d99c28358c241"
+    },
+    "cycle_id": "A0-AB-AI-BLUEPRINT-SEMANTIC-BINDING-CYCLE5-20260808-001",
+    "directive_id": "A0-TO-B5-REAL-ESTATE-FIELD-ONTOLOGY-SITE-BINDING-V5-20260808-001",
+    "lineage_key": "f1798d1ca39150593b8d0795bfc2f0b2f723be3a09dab71d9f0a2a45f08a77f2",
+    "parent_v4_pointer": {
+      "blob": "66d3d3d024a30629138da008368435acee491121",
+      "commit": "d30a322b006896f424a25b2a19e69f146a24fc83"
+    },
+    "source_fixture_sha256": "042ba06d0a184282bfbab68dd3c040b299e19bd317a93c8ca678343014482a8f"
+  },
+  "records": [
+    {
+      "canonical_candidate_id": "sale_price",
+      "confidence": 0.93,
+      "direction": "READ",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+        "selector": "#/field_observations/매매가"
+      },
+      "operation_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MANWON_CANDIDATE",
+      "preserve_raw_value": true,
+      "semantic_status": "CANDIDATE",
+      "source_field_name": "매매가",
+      "source_site_id": "SITE-KB-LAND",
+      "transform_candidate_id": "READ::SITE-KB-LAND::매매가"
+    },
+    {
+      "canonical_candidate_id": "sale_price",
+      "confidence": 0.0,
+      "direction": "WRITE",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+        "selector": "#/field_observations/매매가"
+      },
+      "operation_candidate": "RESTORE_RAW_VALUE",
+      "preserve_raw_value": true,
+      "semantic_status": "UNKNOWN",
+      "source_field_name": "매매가",
+      "source_site_id": "SITE-KB-LAND",
+      "transform_candidate_id": "WRITE::SITE-KB-LAND::매매가",
+      "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+    },
+    {
+      "canonical_candidate_id": "direction",
+      "confidence": 0.81,
+      "direction": "READ",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+        "selector": "#/field_observations/방향"
+      },
+      "operation_candidate": "PRESERVE_RAW_AND_ENUM_CANDIDATE",
+      "preserve_raw_value": true,
+      "semantic_status": "CANDIDATE",
+      "source_field_name": "방향",
+      "source_site_id": "SITE-KB-LAND",
+      "transform_candidate_id": "READ::SITE-KB-LAND::방향"
+    },
+    {
+      "canonical_candidate_id": "direction",
+      "confidence": 0.0,
+      "direction": "WRITE",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+        "selector": "#/field_observations/방향"
+      },
+      "operation_candidate": "RESTORE_RAW_VALUE",
+      "preserve_raw_value": true,
+      "semantic_status": "UNKNOWN",
+      "source_field_name": "방향",
+      "source_site_id": "SITE-KB-LAND",
+      "transform_candidate_id": "WRITE::SITE-KB-LAND::방향",
+      "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+    },
+    {
+      "canonical_candidate_id": "deposit",
+      "confidence": 0.91,
+      "direction": "READ",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+        "selector": "#/field_observations/보증금"
+      },
+      "operation_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MANWON_CANDIDATE",
+      "preserve_raw_value": true,
+      "semantic_status": "CANDIDATE",
+      "source_field_name": "보증금",
+      "source_site_id": "SITE-KB-LAND",
+      "transform_candidate_id": "READ::SITE-KB-LAND::보증금"
+    },
+    {
+      "canonical_candidate_id": "deposit",
+      "confidence": 0.0,
+      "direction": "WRITE",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+        "selector": "#/field_observations/보증금"
+      },
+      "operation_candidate": "RESTORE_RAW_VALUE",
+      "preserve_raw_value": true,
+      "semantic_status": "UNKNOWN",
+      "source_field_name": "보증금",
+      "source_site_id": "SITE-KB-LAND",
+      "transform_candidate_id": "WRITE::SITE-KB-LAND::보증금",
+      "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+    },
+    {
+      "canonical_candidate_id": "monthly_rent",
+      "confidence": 0.91,
+      "direction": "READ",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+        "selector": "#/field_observations/월세"
+      },
+      "operation_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MONTHLY_CANDIDATE",
+      "preserve_raw_value": true,
+      "semantic_status": "CANDIDATE",
+      "source_field_name": "월세",
+      "source_site_id": "SITE-KB-LAND",
+      "transform_candidate_id": "READ::SITE-KB-LAND::월세"
+    },
+    {
+      "canonical_candidate_id": "monthly_rent",
+      "confidence": 0.0,
+      "direction": "WRITE",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+        "selector": "#/field_observations/월세"
+      },
+      "operation_candidate": "RESTORE_RAW_VALUE",
+      "preserve_raw_value": true,
+      "semantic_status": "UNKNOWN",
+      "source_field_name": "월세",
+      "source_site_id": "SITE-KB-LAND",
+      "transform_candidate_id": "WRITE::SITE-KB-LAND::월세",
+      "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+    },
+    {
+      "canonical_candidate_id": "exclusive_area",
+      "confidence": 0.95,
+      "direction": "READ",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+        "selector": "#/field_observations/전용면적"
+      },
+      "operation_candidate": "PRESERVE_RAW_AND_PARSE_M2_CANDIDATE",
+      "preserve_raw_value": true,
+      "semantic_status": "CANDIDATE",
+      "source_field_name": "전용면적",
+      "source_site_id": "SITE-KB-LAND",
+      "transform_candidate_id": "READ::SITE-KB-LAND::전용면적"
+    },
+    {
+      "canonical_candidate_id": "exclusive_area",
+      "confidence": 0.0,
+      "direction": "WRITE",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+        "selector": "#/field_observations/전용면적"
+      },
+      "operation_candidate": "RESTORE_RAW_VALUE",
+      "preserve_raw_value": true,
+      "semantic_status": "UNKNOWN",
+      "source_field_name": "전용면적",
+      "source_site_id": "SITE-KB-LAND",
+      "transform_candidate_id": "WRITE::SITE-KB-LAND::전용면적",
+      "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+    },
+    {
+      "canonical_candidate_id": "floor",
+      "confidence": 0.83,
+      "direction": "READ",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+        "selector": "#/field_observations/해당층/총층"
+      },
+      "operation_candidate": "PRESERVE_RAW_AND_SPLIT_FLOOR_CANDIDATE",
+      "preserve_raw_value": true,
+      "semantic_status": "CANDIDATE",
+      "source_field_name": "해당층/총층",
+      "source_site_id": "SITE-KB-LAND",
+      "transform_candidate_id": "READ::SITE-KB-LAND::해당층/총층"
+    },
+    {
+      "canonical_candidate_id": "floor",
+      "confidence": 0.0,
+      "direction": "WRITE",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-KB-LAND",
+        "selector": "#/field_observations/해당층/총층"
+      },
+      "operation_candidate": "RESTORE_RAW_VALUE",
+      "preserve_raw_value": true,
+      "semantic_status": "UNKNOWN",
+      "source_field_name": "해당층/총층",
+      "source_site_id": "SITE-KB-LAND",
+      "transform_candidate_id": "WRITE::SITE-KB-LAND::해당층/총층",
+      "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+    },
+    {
+      "canonical_candidate_id": "exclusive_area",
+      "confidence": 0.95,
+      "direction": "READ",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+        "selector": "#/field_observations/area2"
+      },
+      "operation_candidate": "PRESERVE_RAW_AND_PARSE_M2_CANDIDATE",
+      "preserve_raw_value": true,
+      "semantic_status": "CANDIDATE",
+      "source_field_name": "area2",
+      "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "transform_candidate_id": "READ::SITE-NAVER-PAY-REAL-ESTATE::area2"
+    },
+    {
+      "canonical_candidate_id": "exclusive_area",
+      "confidence": 0.0,
+      "direction": "WRITE",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+        "selector": "#/field_observations/area2"
+      },
+      "operation_candidate": "RESTORE_RAW_VALUE",
+      "preserve_raw_value": true,
+      "semantic_status": "UNKNOWN",
+      "source_field_name": "area2",
+      "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "transform_candidate_id": "WRITE::SITE-NAVER-PAY-REAL-ESTATE::area2",
+      "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+    },
+    {
+      "canonical_candidate_id": "sale_price",
+      "confidence": 0.92,
+      "direction": "READ",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+        "selector": "#/field_observations/dealOrWarrantPrc"
+      },
+      "operation_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MANWON_CANDIDATE",
+      "preserve_raw_value": true,
+      "semantic_status": "CANDIDATE",
+      "source_field_name": "dealOrWarrantPrc",
+      "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "transform_candidate_id": "READ::SITE-NAVER-PAY-REAL-ESTATE::dealOrWarrantPrc"
+    },
+    {
+      "canonical_candidate_id": "sale_price",
+      "confidence": 0.0,
+      "direction": "WRITE",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+        "selector": "#/field_observations/dealOrWarrantPrc"
+      },
+      "operation_candidate": "RESTORE_RAW_VALUE",
+      "preserve_raw_value": true,
+      "semantic_status": "UNKNOWN",
+      "source_field_name": "dealOrWarrantPrc",
+      "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "transform_candidate_id": "WRITE::SITE-NAVER-PAY-REAL-ESTATE::dealOrWarrantPrc",
+      "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+    },
+    {
+      "canonical_candidate_id": "direction",
+      "confidence": 0.82,
+      "direction": "READ",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+        "selector": "#/field_observations/direction"
+      },
+      "operation_candidate": "PRESERVE_RAW_AND_ENUM_CANDIDATE",
+      "preserve_raw_value": true,
+      "semantic_status": "CANDIDATE",
+      "source_field_name": "direction",
+      "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "transform_candidate_id": "READ::SITE-NAVER-PAY-REAL-ESTATE::direction"
+    },
+    {
+      "canonical_candidate_id": "direction",
+      "confidence": 0.0,
+      "direction": "WRITE",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+        "selector": "#/field_observations/direction"
+      },
+      "operation_candidate": "RESTORE_RAW_VALUE",
+      "preserve_raw_value": true,
+      "semantic_status": "UNKNOWN",
+      "source_field_name": "direction",
+      "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "transform_candidate_id": "WRITE::SITE-NAVER-PAY-REAL-ESTATE::direction",
+      "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+    },
+    {
+      "canonical_candidate_id": "floor",
+      "confidence": 0.84,
+      "direction": "READ",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+        "selector": "#/field_observations/floorInfo"
+      },
+      "operation_candidate": "PRESERVE_RAW_AND_SPLIT_FLOOR_CANDIDATE",
+      "preserve_raw_value": true,
+      "semantic_status": "CANDIDATE",
+      "source_field_name": "floorInfo",
+      "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "transform_candidate_id": "READ::SITE-NAVER-PAY-REAL-ESTATE::floorInfo"
+    },
+    {
+      "canonical_candidate_id": "floor",
+      "confidence": 0.0,
+      "direction": "WRITE",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+        "selector": "#/field_observations/floorInfo"
+      },
+      "operation_candidate": "RESTORE_RAW_VALUE",
+      "preserve_raw_value": true,
+      "semantic_status": "UNKNOWN",
+      "source_field_name": "floorInfo",
+      "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "transform_candidate_id": "WRITE::SITE-NAVER-PAY-REAL-ESTATE::floorInfo",
+      "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+    },
+    {
+      "canonical_candidate_id": "monthly_rent",
+      "confidence": 0.9,
+      "direction": "READ",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+        "selector": "#/field_observations/rentPrc"
+      },
+      "operation_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MONTHLY_CANDIDATE",
+      "preserve_raw_value": true,
+      "semantic_status": "CANDIDATE",
+      "source_field_name": "rentPrc",
+      "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "transform_candidate_id": "READ::SITE-NAVER-PAY-REAL-ESTATE::rentPrc"
+    },
+    {
+      "canonical_candidate_id": "monthly_rent",
+      "confidence": 0.0,
+      "direction": "WRITE",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+        "selector": "#/field_observations/rentPrc"
+      },
+      "operation_candidate": "RESTORE_RAW_VALUE",
+      "preserve_raw_value": true,
+      "semantic_status": "UNKNOWN",
+      "source_field_name": "rentPrc",
+      "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "transform_candidate_id": "WRITE::SITE-NAVER-PAY-REAL-ESTATE::rentPrc",
+      "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+    },
+    {
+      "canonical_candidate_id": "deposit",
+      "confidence": 0.9,
+      "direction": "READ",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+        "selector": "#/field_observations/warrantPrc"
+      },
+      "operation_candidate": "PRESERVE_RAW_AND_PARSE_KRW_MANWON_CANDIDATE",
+      "preserve_raw_value": true,
+      "semantic_status": "CANDIDATE",
+      "source_field_name": "warrantPrc",
+      "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "transform_candidate_id": "READ::SITE-NAVER-PAY-REAL-ESTATE::warrantPrc"
+    },
+    {
+      "canonical_candidate_id": "deposit",
+      "confidence": 0.0,
+      "direction": "WRITE",
+      "evidence_pointer": {
+        "artifact_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+        "path": "inputs/parent_blueprint_ontology_fixture_v4.json#/SITE-NAVER-PAY-REAL-ESTATE",
+        "selector": "#/field_observations/warrantPrc"
+      },
+      "operation_candidate": "RESTORE_RAW_VALUE",
+      "preserve_raw_value": true,
+      "semantic_status": "UNKNOWN",
+      "source_field_name": "warrantPrc",
+      "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "transform_candidate_id": "WRITE::SITE-NAVER-PAY-REAL-ESTATE::warrantPrc",
+      "unobserved_reason": "WRITE_BEHAVIOR_NOT_OBSERVED"
+    }
+  ],
+  "schema_version": "FIELD_TRANSFORM_CANDIDATE_V1"
+}
