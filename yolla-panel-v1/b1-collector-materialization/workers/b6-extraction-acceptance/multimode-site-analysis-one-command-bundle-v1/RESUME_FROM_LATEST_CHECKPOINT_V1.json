@@ -1,0 +1,15 @@
+{
+  "schema_version": "RESUME_FROM_LATEST_CHECKPOINT_V1",
+  "lookup_order": [
+    "LATEST_POINTER_SET",
+    "LATEST_CHECKPOINT",
+    "COMPLETED_MODE_TERMINALS",
+    "INCOMPLETE_MODE_SET",
+    "NEXT_ACTION"
+  ],
+  "completed_mode_decision": "SKIP_NO_REISSUE",
+  "incomplete_mode_decision": "RESUME_FROM_MODE_CHECKPOINT",
+  "duplicate_execution_suppression_key": "cycle_id:command_id:session_id:page_id:mode",
+  "user_confirm_required_decision": "AWAIT_CONFIRMATION_NO_AUTOMATIC_SIDE_EFFECT",
+  "preserve": ["OBSERVED_INFERRED_UNKNOWN", "confidence", "evidence_pointer", "lineage"]
+}
