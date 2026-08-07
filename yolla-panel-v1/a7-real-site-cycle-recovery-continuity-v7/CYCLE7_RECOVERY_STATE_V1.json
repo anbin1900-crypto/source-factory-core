@@ -1,0 +1,16 @@
+{
+  "schema_version":"CYCLE7_RECOVERY_STATE_V1",
+  "directive_id":"A0-TO-A7-REAL-SITE-CYCLE-RECOVERY-CONTINUITY-V7-20260808-001",
+  "directive_comment_id":5220799101,
+  "cycle_id":"A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "parent_recovery":{"cycle6_pointer_commit":"93efe3aadb86ccdb057d6e0ff887b725b98f5d54","cycle6_pointer_blob":"8fdceb1d9042f7d09c4be8e30a44ec437e44bf2d","entrypoint_blob":"e19f96156997e72a8793c81fe811ba5e4d86ce44"},
+  "CURRENT_MISSION":{"mission":"Maintain context-independent recovery continuity for Cycle7 real-site E2E live binding using exact pointer deltas only.","role":"NEW_A-7_REAL_SITE_CYCLE_RECOVERY_CONTINUITY_OWNER","full_history_preload":false,"audit_gate":false},
+  "CURRENT_COMMAND":{"command_id":"CYCLE7-REAL-SITE-LIVE-BINDING-WAIT-001","idempotency_key":"A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001|A7|LIVE_BINDING_WAIT","status":"WAITING_INPUT","completed_steps":["LOAD_CYCLE6_COMPACT_RECOVERY_ENTRYPOINT","LATE_BIND_A3_BASELINE_POINTER","LATE_BIND_B2_BASELINE_POINTER","CLASSIFY_CYCLE7_LIVE_RECEIPTS_PENDING"],"completed_step_reexecution":false,"duplicate_execution_suppression":true},
+  "LATEST_RESULT":{"terminal":"A7_CYCLE6_FRESH_RECOVERY_ENTRYPOINT_READY","pointer_commit":"93efe3aadb86ccdb057d6e0ff887b725b98f5d54","pointer_blob":"8fdceb1d9042f7d09c4be8e30a44ec437e44bf2d","classification":"LAST_COMPLETED_RECOVERY_RESULT"},
+  "COMPLETED_STEPS":["CYCLE5_SUCCESSION","CYCLE6_RECOVERY_ENTRYPOINT","A3_CYCLE5_CAUSAL_EVIDENCE_BASELINE_BOUND","B2_LATEST_BUILD_PLAN_BASELINE_BOUND"],
+  "CURRENT_BLOCKER":null,
+  "WAIT_CONDITION":"FIRST_EXACT_CYCLE7_A3_OR_B2_POINTER_OR_LIVE_RECEIPT_DELTA",
+  "NEXT_ACTION":{"action":"WAIT_FOR_CYCLE7_A3_OR_B2_POINTER_DELTA","on_delta":"READ_CHANGED_POINTER_ONLY; SET_AS_LATEST_RESULT; BIND_LIVE_RECEIPT_IF_PRESENT; RESUME_FIRST_INCOMPLETE_STEP","completed_step_reexecution":false,"full_history_scan":false},
+  "RECOVERY_RULE":{"read_order":["LATEST_A7_RECOVERY_POINTER","CYCLE7_RECOVERY_STATE_V1","CYCLE7_LATE_BIND_STATE_V1","LATEST_RESULT","CYCLE7_RESUME_ENTRYPOINT_V1"],"resume":"LATEST_RESULT_FIRST_THEN_FIRST_INCOMPLETE_STEP","duplicate_rule":"SKIP_IF_STAGE_OR_IDEMPOTENCY_KEY_ALREADY_PASS"},
+  "target_pc_execution":false,"live_site_call_by_a7":false,"production":false,"ready":false,"merge":false
+}
