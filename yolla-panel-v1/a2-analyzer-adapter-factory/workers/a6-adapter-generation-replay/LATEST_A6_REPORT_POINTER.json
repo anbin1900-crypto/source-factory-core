@@ -1,1 +1,34 @@
-{"schema_version":"YOLLA_LATEST_A6_REPORT_POINTER_V8","worker":"A-6","directive_id":"A2-TO-A6-GENERIC-HTML-PACKAGE-INTEGRITY-EXECUTE-NOW-V2-20260806-001","directive_comment":5195137047,"cycle_id":"A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_12-A7-FINAL-ACCEPTANCE-V1-20260806-001","updated_at_kst":"2026-08-06T02:37:00+09:00","status":"TERMINAL_PASS","terminal":"A6_GENERIC_HTML_PACKAGE_INTEGRITY_CORRECTED_READY_FOR_A7_DELTA_REACCEPTANCE","commit_resolution":"COMMIT_CONTAINING_THIS_POINTER","latest_report":{"path":"A6_PACKAGE_REMOTE_BYTE_INTEGRITY_CORRECTION_V1.json","blob":"9a5c8f5f3b20df328508582723094b5e03e8dd96","sha256":"929ebfc51fa91f7b118b92d9ec673560c2b51e614ceb8cd3bbadd6fb6977d8a9","size_bytes":3881},"package":{"path":"VERIFIED_ADAPTER_PACKAGE_V1/package.json","blob":"d758afef96e76b664f6d8b0383c5a7bc017c731a","sha256":"fad18a1e0571dfac26305d8bd3d845a639e225c51ff1a03dfe45c49d7d441854","size_bytes":4238,"member_integrity":"PASS_6_OF_6"},"build_receipt":{"path":"ADAPTER_BUILD_RECEIPT_V1.json","blob":"64a21f86ed848c35f8f99c9160ae62325630ac3f","sha256":"e31454a30f13049a89a65a9489ff717b9e75b66957f4f7aa97cfe740cb7f57a8","size_bytes":2757},"replay_receipt":{"path":"REPLAY_TEST_RECEIPT_V1.json","blob":"262dbdb3742daba28a5b1ca787b2b043fccd1955","sha256":"a8c11e4eb59ea8a6003b466a4b3b6148eeaa1d834e020b824e2331385c27ecba","size_bytes":1941,"deterministic_replay":"PASS_2_OF_2"},"a7_handoff":{"path":"A6_TO_A7_FINAL_ACCEPTANCE_HANDOFF_V2.json","blob":"414832747d9f9fc840c53623858fcae5c1ad0eea","sha256":"aca7500dcf4a958cb047f0950c353195f1a631d6450589c308b978f6c83ebb04","size_bytes":2565,"status":"READY_FOR_A7_DELTA_REACCEPTANCE"},"finding_resolution":{"finding_count":3,"resolved_count":3,"status":"PASS_3_OF_3"},"final_build_count":1,"local_html_fixture_replay_count":2,"implementation_code_change_count":0,"fixture_semantic_change_count":0,"replay_rerun_count":0,"final_build_reexecution_count":0,"integrity_metadata_correction_count":1,"intermediate_comment_count":0,"acceptance_ready":true,"next_owner":"A-7","next_event":"A7_GENERIC_HTML_ADAPTER_DELTA_REACCEPTANCE","self_acceptance":false,"live_site_call_count":0,"production":false,"ready":false,"merge":false}
+{
+  "schema_version": "YOLLA_LATEST_A6_REPORT_POINTER_V9",
+  "worker": "A-6",
+  "role": "A-6_RECIPE_ADAPTER_COMPILER_OWNER",
+  "directive_id": "AI001-TO-A6-RECIPE-PLAYWRIGHT-CRAWLEE-ADAPTER-PREBUILD-V1-20260807-001",
+  "directive_comment": 5216922666,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "status": "TERMINAL_PASS",
+  "terminal": "A6_RECIPE_PLAYWRIGHT_CRAWLEE_ADAPTER_PREBUILD_READY",
+  "commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
+  "package_commit": "289a54304010b7061fd4a8651e9d9d03b9f5c2d1",
+  "final_report": {
+    "path": "prebuild-recipe-playwright-crawlee-v1/A6_RECIPE_ADAPTER_PREBUILD_FINAL_REPORT_V1.json",
+    "commit": "833093fa28092c8f399a006d1020bfccb153e0e3",
+    "blob": "15c26c64e7c3358dd489acabb82de23634d5ee33"
+  },
+  "required_outputs": {
+    "extraction_recipe": {"path":"prebuild-recipe-playwright-crawlee-v1/EXTRACTION_RECIPE_V1.json","blob":"462d5b321b126facec1a7aeda91d92903496f4d9"},
+    "adapter_compiler": {"path":"prebuild-recipe-playwright-crawlee-v1/ADAPTER_COMPILER_V1.cjs","blob":"bbea2c76af42a1efa14fc835fe52b922e78b5567"},
+    "replay_checkpoint_resume": {"path":"prebuild-recipe-playwright-crawlee-v1/REPLAY_CHECKPOINT_RESUME_V1.cjs","blob":"a74d295ad5b590da1c6bad1e33ec4f16079ccc88"},
+    "successor_build_run_plan": {"path":"prebuild-recipe-playwright-crawlee-v1/SUCCESSOR_BUILD_RUN_PLAN_V1.json","blob":"b280bf4ff3cd473ede2fb32b15ac836d38fd7b66"}
+  },
+  "compiled_adapter": {"path":"prebuild-recipe-playwright-crawlee-v1/generated/compiled-adapter.cjs","blob":"93568a0da09b5d7ac6c00ae97a07993860f984a7","sha256":"4b94ca2caf23af8a2f2a414cabb2730ea3cfaa534efda5cba32083440ff90630"},
+  "validation_receipt": {"path":"prebuild-recipe-playwright-crawlee-v1/artifacts/PREBUILD_VALIDATION_RECEIPT_V1.json","blob":"41579b4e02a2a53f507be5a378d685bd58fcada2","source_parse":"PASS","fixture_replay_smoke_1":"PASS","deterministic_replay_2_of_2":true,"resume_equivalent_to_full":true,"partial_regeneration":"PASS_STEP_ONLY"},
+  "successor_command": "node cli.cjs build-replay EXTRACTION_RECIPE_V1.json generated",
+  "context_independent_reexecution": true,
+  "target_pc_execution": false,
+  "tunnel_create": false,
+  "successor_direct_call": false,
+  "new_browser_engine": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
