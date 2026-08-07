@@ -1,0 +1,60 @@
+{
+  "schema_version": "D5_AUTOMATION_EVENT_LOG_CONTRACT_V1",
+  "role": "D-5_AUTOMATION_EVENT_LOG_AND_IMPROVEMENT_OWNER",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001",
+  "backend_reuse": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "pr": 40,
+    "head": "fdff068241ac9818f32412fa0f39f31eabc6ecb9",
+    "source_blob": "8ae79e40725447ff55ea8d166d2a4441587a8de4",
+    "source": "worker-state-event-trace-checkpoint-v3/src/worker_state_event_store.py",
+    "reuse_mode": "COMPOSITION_NO_UPSTREAM_MUTATION"
+  },
+  "stream_key": ["COMMAND_ID", "CONTEXT_ID"],
+  "context_mapping": "CONTEXT_ID -> upstream worker_id stream slot; responsible worker preserved in D5 event state",
+  "event_types": [
+    "COMMAND_CREATED",
+    "CONTEXT_SELECTED",
+    "MESSAGE_SENT",
+    "WORKING",
+    "REPLY_COMPLETED",
+    "ERROR",
+    "RETRY",
+    "RESULT_RETURNED"
+  ],
+  "durability": {
+    "append_only": true,
+    "hash_chain": true,
+    "duplicate_suppression": true,
+    "strict_contiguous_sequence": true,
+    "atomic_checkpoint_replace": true,
+    "restart_rule": "RESTORE_LAST_DURABLE_ACCEPTED_EVENT_ONLY"
+  },
+  "metrics": [
+    "MESSAGE_SEND_SUCCESS_RATE",
+    "AVERAGE_REPLY_TIME",
+    "SEND_FAILURE_COUNT",
+    "RETRY_COUNT",
+    "ERROR_COUNT",
+    "CONTEXT_MISMATCH_COUNT",
+    "COMMAND_TO_RESULT_ELAPSED_TIME",
+    "USER_MANUAL_ACTION_COUNT"
+  ],
+  "repeated_failure_projection": {
+    "threshold": 2,
+    "group_by": ["responsible_worker_id", "cause"],
+    "output": ["responsible_worker_id", "cause", "failure_count", "improvement_item", "priority"]
+  },
+  "runtime_binding": {
+    "preferred_entrypoint": "emit_nonblocking",
+    "queue": "UNBOUNDED_IN_PROCESS_QUEUE",
+    "writer": "DEDICATED_DAEMON_THREAD",
+    "execution_path_waits_for_fsync": false,
+    "explicit_flush_available": true
+  },
+  "new_system_build": false,
+  "existing_asset_reuse_required": true,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
