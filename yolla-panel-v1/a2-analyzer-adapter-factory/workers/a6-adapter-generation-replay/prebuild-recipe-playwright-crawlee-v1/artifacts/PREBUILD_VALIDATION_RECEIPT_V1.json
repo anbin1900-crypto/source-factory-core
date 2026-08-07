@@ -1,0 +1,21 @@
+{
+  "schema_version": "A6_RECIPE_ADAPTER_PREBUILD_SMOKE_RECEIPT_V1",
+  "status": "PASS",
+  "source_parse": "PASS",
+  "fixture_replay_smoke_1": "PASS",
+  "checkpoint_created": true,
+  "resume_status": "PASS",
+  "resume_equivalent_to_full": true,
+  "full_replay_status": "PASS",
+  "deterministic_replay_2_of_2": true,
+  "full_replay_receipt_digest": "84c10d43d2ce05ef81c0efcd36da0aee146e59d6352f3dc4512dea09b2a990f5",
+  "full_replay_output_digest": "46acbfa3e11cab9d6e996cac2f5d85ac30e9679a7a2635e2cab6dcb7b844ff97",
+  "partial_regeneration_status": "PASS",
+  "partial_regeneration_scope": "STEP_ONLY",
+  "full_recipe_regeneration": false,
+  "generated_adapter_sha256": "4b94ca2caf23af8a2f2a414cabb2730ea3cfaa534efda5cba32083440ff90630",
+  "recipe_sha256": "6f50ea45292a8faf59c28a039e2aad2ceb6f1a7e303672b563e50df9d4f1bd26",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

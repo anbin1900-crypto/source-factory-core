@@ -1,0 +1,5 @@
+{
+  "schema_version":"A6_FIXTURE_REPLAY_SMOKE_V1",
+  "description":"Deterministic in-memory fixture runtime; does not execute a target PC browser.",
+  "record_template":{"record_id":"R${page}","name":"Fixture ${page}"}
+}

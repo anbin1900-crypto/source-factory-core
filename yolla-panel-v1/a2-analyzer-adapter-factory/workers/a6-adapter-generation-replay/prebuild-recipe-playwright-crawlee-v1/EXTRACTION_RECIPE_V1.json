@@ -1,0 +1,32 @@
+{
+  "schema_version": "EXTRACTION_RECIPE_V1",
+  "recipe_id": "a6-prebuild-smoke-001",
+  "source_bindings": {
+    "a3_head": "f8a38f439de097ebfc290f3621b0fbc4829aa1ea",
+    "a3_contract_blob": "3b1831709c1332fa8702389c6f2d56fb5dc69ca0",
+    "a4_head": "07e24d57dd96d2bdb14b8e1fb60150d418609ecf",
+    "a4_structure_blob": "fae1b21205259afd7d44aad8db6bb52f6d570b75",
+    "a5_head": "a1316bd6c53eb98c96aa220c442e64eb74b4c798",
+    "a5_generator_handoff_blob": "769205f0c2444263919a980bc72edfa7611ed4c8"
+  },
+  "runtime": {
+    "browser_action_runtime": "PLAYWRIGHT",
+    "queue_retry_resume_runtime": "CRAWLEE",
+    "action_cache_policy": "DETERMINISTIC_STEP_CACHE",
+    "max_request_retries": 2,
+    "checkpoint_every_steps": 1
+  },
+  "start_url": "https://fixture.invalid/list?page=1",
+  "variables": {"keyword": "apartment"},
+  "steps": [
+    {"step_id":"s01","type":"Navigate","url":"${start_url}"},
+    {"step_id":"s02","type":"Input","locator":{"strategy":"test_id","value":"keyword-input"},"value":"${keyword}"},
+    {"step_id":"s03","type":"Click","locator":{"strategy":"test_id","value":"search-submit"}},
+    {"step_id":"s04","type":"Wait","locator":{"strategy":"css","value":"article.item"},"state":"visible"},
+    {"step_id":"s05","type":"Loop","times":1,"steps":[{"type":"Click","locator":{"strategy":"css","value":"a.detail"}}]},
+    {"step_id":"s06","type":"Extract","fields":[{"name":"record_id","locator":{"strategy":"css_attr","value":"article.item@data-record-id"}},{"name":"name","locator":{"strategy":"css_text","value":"h2.name"}}]},
+    {"step_id":"s07","type":"Pagination","mode":"NEXT","locator":{"strategy":"css","value":"#next-page"},"max_pages":2}
+  ],
+  "checkpoint": {"cursor":{"page":1,"step_index":0},"idempotency_key_fields":["recipe_id","step_id","cursor","normalized_input"]},
+  "safety": {"production":false,"ready":false,"merge":false,"target_pc_execution":false}
+}
