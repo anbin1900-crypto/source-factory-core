@@ -1,0 +1,59 @@
+{
+  "schema_version": "A5_STRUCTURE_TO_ENDPOINT_SCHEMA_BINDING_VALIDATION_RECEIPT_V1",
+  "directive_id": "AI001-TO-A5-STRUCTURE-TO-ENDPOINT-SCHEMA-DECISION-BINDING-V3-20260807-001",
+  "directive_comment_id": 5217748450,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "worker": "A-5",
+  "validated_at_kst": "2026-08-07T22:45:00+09:00",
+  "exact_input_contracts": {
+    "a3_receipt": {
+      "schema_version": "CDP_OBSERVATION_RUN_RECEIPT_V1",
+      "source_head": "fb7a448e6a16ae546d2b4038973b391d40b500c6",
+      "blob": "81cc6288a92cd0effffa8063930aa3a734262d75",
+      "remote_readback": "PASS"
+    },
+    "a4_receipt": {
+      "schema_version": "STRUCTURE_INFERENCE_RUN_RECEIPT_V1",
+      "source_head": "52e1f465215adfc4e6e83bea91d766901f1de948",
+      "blob": "5cda7b28f1d6d8bc30a06e6b50651eb39becd85d",
+      "remote_readback": "PASS"
+    }
+  },
+  "implementation": {
+    "entrypoint_commit": "7024b4efcfa4d2c30eaa7a0cf152fa445222321f",
+    "entrypoint_blob": "58bc2733b9af9e294e21b4a6826fdd6b9f889aaa",
+    "test_commit": "3ef13fb274c7d3ab81fd76798e3100b3c11431d8",
+    "test_blob": "14bc73fb76e1e9155e970be2b8b0efa852c0909f",
+    "cycle2_decision_runner_blob": "1f569f96b9d1511a06984e32d12066d08b221fd6",
+    "remote_readback": "PASS"
+  },
+  "validation": {
+    "node_syntax": "PASS_2_OF_2",
+    "fixture_replay_count": 2,
+    "assertions": "PASS_17_OF_17",
+    "decision_digest_run_1": "8a5d67c36c67025a2e117db2a372211f0cab66269f3c41ad43a9f02521c9c599",
+    "decision_digest_run_2": "8a5d67c36c67025a2e117db2a372211f0cab66269f3c41ad43a9f02521c9c599",
+    "deterministic_digest": "PASS",
+    "full_evidence_mode": "HYBRID",
+    "missing_response_body": "INSUFFICIENT_EVIDENCE_DOM_CONFIDENCE_DEGRADED",
+    "page_id_mismatch_reject": "PASS",
+    "raw_secret_reject": "PASS",
+    "command_page_action_provenance": "PASS",
+    "raw_secret_value_count": 0
+  },
+  "a6_direct_consume": {
+    "contract": "RECIPE_DECISION_INPUT_V1",
+    "requires_additional_inference": false,
+    "full_evidence_compile_allowed": true,
+    "insufficient_evidence_compile_allowed": false
+  },
+  "boundaries": {
+    "target_pc_execution_count": 0,
+    "tunnel_change_count": 0,
+    "live_site_call_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "PASS"
+}
