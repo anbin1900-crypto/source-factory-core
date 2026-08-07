@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "CDP_OBSERVATION_RUN_REQUEST_V1",
+  "title": "CDP_OBSERVATION_RUN_REQUEST_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "cdp_endpoint",
+    "observation_window_ms",
+    "capture_flags"
+  ],
+  "properties": {
+    "schema_version": { "const": "CDP_OBSERVATION_RUN_REQUEST_V1" },
+    "run_id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9._-]+$" },
+    "cdp_endpoint": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048,
+      "description": "Runtime-only Chrome/CDP endpoint. Never committed or copied verbatim into receipt."
+    },
+    "page_id": { "type": ["string", "null"], "maxLength": 512 },
+    "page_selector": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "url_contains": { "type": "string", "maxLength": 2048 },
+        "title_contains": { "type": "string", "maxLength": 1024 },
+        "url_regex": { "type": "string", "maxLength": 2048 }
+      }
+    },
+    "observation_window_ms": { "type": "integer", "minimum": 0, "maximum": 600000 },
+    "capture_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dom_snapshot": { "type": "boolean" },
+        "network_metadata": { "type": "boolean" },
+        "response_body": { "type": "boolean" },
+        "frame_navigation": { "type": "boolean" },
+        "console": { "type": "boolean" }
+      }
+    },
+    "output_root": {
+      "type": ["string", "null"],
+      "description": "Optional local output root. Successor executor may override with --output-root."
+    }
+  }
+}
