@@ -1,0 +1,46 @@
+{
+  "schema_version": "B3_USER_JOURNEY_STATE_RECORDER_V4_FINAL_REPORT",
+  "directive_id": "A0-TO-B3-USER-JOURNEY-STATE-RECORDER-V4-20260808-001",
+  "cycle_id": "A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "assignment_comment_id": 5219103480,
+  "start_comment_id": 5219186674,
+  "start_head": "0d024330068a35e4a460ddc7ddb334991fe675a3",
+  "terminal": "B3_USER_JOURNEY_STATE_RECORDER_READY",
+  "status": "PASS_PREBUILD_AWAITING_FINAL_REMOTE_READBACK",
+  "implemented": {
+    "user_journey_event_stream_v1": true,
+    "user_journey_graph_v1": true,
+    "ui_state_transition_trace_v1": true,
+    "feature_action_sequence_v1": true,
+    "representative_state_coverage_planner": true,
+    "correlation_preserved": ["command_id", "session_id", "page_id", "action_id"],
+    "worker_lifecycle_separate_side_stream": true,
+    "retry_duplicate_suppression": true,
+    "restart_resume_after_last_completed_action": true
+  },
+  "fixture": {
+    "search_list_detail": "PASS",
+    "create_mylisting_edit": "PASS",
+    "last_completed_action_id": "act-create-fill",
+    "resume_action_ids": ["act-create-save", "act-open-edit", "act-edit-save"],
+    "restart_resume_match": true,
+    "journey_event_count": 8,
+    "worker_lifecycle_side_event_count": 2,
+    "worker_lifecycle_mixed_into_journey": false,
+    "representative_family_count": 7,
+    "suppressed_equivalent_event_count": 1
+  },
+  "validation": {
+    "source_parse": "PASS",
+    "python_compile": "PASS_EXIT_0",
+    "unit_tests": "PASS_12_OF_12",
+    "fixture_smoke": "PASS",
+    "ci_pass_claimed": false
+  },
+  "target_pc_execution": false,
+  "live_site_call": false,
+  "tunnel_change": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
