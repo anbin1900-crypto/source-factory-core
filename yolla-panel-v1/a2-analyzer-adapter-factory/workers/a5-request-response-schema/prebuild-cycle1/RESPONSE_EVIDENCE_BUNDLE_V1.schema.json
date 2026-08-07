@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yolla:a5:response-evidence-bundle:v1",
+  "title": "A5 Response Evidence Bundle V1",
+  "type": "object",
+  "required": ["schema_version", "network_observations", "dom_structure"],
+  "properties": {
+    "schema_version": {"const": "A5_RESPONSE_EVIDENCE_BUNDLE_V1"},
+    "generated_at": {"type": "string"},
+    "source_bindings": {"type": "object"},
+    "network_observations": {"type": "array", "items": {"type": "object"}},
+    "dom_structure": {"type": "object"},
+    "previous_schemas": {"type": "array", "items": {"type": "object"}}
+  },
+  "additionalProperties": true
+}
