@@ -1,0 +1,70 @@
+{
+  "schema_version": "AUTOMATION_C_W5_WAVE16_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-016",
+  "registry_sequence": 16,
+  "command_id": "C6W-W16-W5-ACTUAL-INSTALLABLE-RC7",
+  "role": "AUTOMATION-C-W5",
+  "integration_owner": true,
+  "directive_comment": 5198285668,
+  "result_key": "519828566800",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc7",
+  "outcome": "PASS",
+  "terminal": "C6W_W16_W5_ACTUAL_INSTALLABLE_RC7_OFFLINE_PASS_TARGET_PC_PENDING",
+  "artifact": {
+    "format": "GITHUB_BRANCH_ARCHIVE_ZIP_SINGLE_DOWNLOAD",
+    "branch": "worker/automation-c-w5-wave16-rc7-bundle-v1",
+    "root_directory": "YOLLA_C_MODE_5.10.2.4.2-rc7",
+    "initial_tree_commit": "4cd923437d4671b720c106fb857742ac50e99cd0",
+    "final_artifact_head": "854c3d928e17a30a124b2aab294ff5a9d781a252",
+    "initial_tree_sha": "c57436e030e0bba85b54547ea2d572418feddcd1",
+    "one_click_installer": "YOLLA_C_MODE_5.10.2.4.2-rc7/INSTALL.bat",
+    "target_pc_runner": "YOLLA_C_MODE_5.10.2.4.2-rc7/TARGET_PC_ACCEPT_RC7.bat",
+    "bundle_verifier": "YOLLA_C_MODE_5.10.2.4.2-rc7/VERIFY_BUNDLE.ps1",
+    "install_time_network_dependency": false,
+    "separate_payload_download_required": false
+  },
+  "exact_inputs": {
+    "w1_resolver_commit": "ed8bde5eb66f0d65de64ad1dfae4fde038e6012c",
+    "w1_handoff_commit": "001f2b23f743b204565f91bd058094330fbaa11a",
+    "w3_result_commit": "69a933c257b949340b75211b6b078a462ac2b03b",
+    "w3_load_hook_patch_commit": "ca9343722856c333ae1d7d9208642d21480130a2",
+    "w3_rollback_commit": "1076f509e85463546cbf6dc6107715c401a9b17e",
+    "rc6_payload_commit": "60a37e73b441c19b66d3eb840a8dbc381215dd63",
+    "rc6_installer_negative_fixture_commit": "ceb5ae6591c223be7a8b093d55c869170cb505f2"
+  },
+  "corrections": {
+    "resolver_actually_invoked_and_consumed": true,
+    "complete_payload_overlay_after_baseline_clone": true,
+    "w3_main_js_truth_bridge_hook": true,
+    "w3_html_css_js_hooks": true,
+    "w3_exact_rollback": true,
+    "temporary_profile_removed": true,
+    "fixed_browser_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "fixed_worker_partition": "persist:sf4-safe-panel-worker-1",
+    "fixed_analysis_partition": "persist:yolla-analysis-browser-v1",
+    "state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2",
+    "release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases",
+    "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_3_7.bat"
+  },
+  "acceptance": {
+    "offline_static_and_byte_assembly": "PASS",
+    "full_component_smoke_source_committed": true,
+    "smoke_required_before_launcher_switch": true,
+    "launcher_original_byte_backup": true,
+    "rollback_removes_candidate": true,
+    "preservation_pre_post_readback": true,
+    "runtime_member_sha256_and_size_generator": true,
+    "github_tree_and_file_byte_readback": "PASS",
+    "windows_target_pc_execution": "PENDING_NOT_AUTHORIZED",
+    "target_pc_pass_claimed": false
+  },
+  "scope": {
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "existing_validation_system_preserved_active": true,
+    "legacy_a_e_reintroduction_count": 0
+  }
+}

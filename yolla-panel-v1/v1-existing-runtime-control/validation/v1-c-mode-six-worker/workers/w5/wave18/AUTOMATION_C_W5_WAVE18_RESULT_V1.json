@@ -1,0 +1,47 @@
+{
+  "schema_version": "AUTOMATION_C_W5_WAVE18_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-018-W5-INTEGRATION",
+  "command_id": "C6W-W18-W5-RC8-FINAL-INTEGRATION",
+  "role": "AUTOMATION-C-W5",
+  "directive_comment": 5200325058,
+  "addendum_comment": 5200496187,
+  "binding_comment": 5200557553,
+  "result_key": "520032505800",
+  "target_version": "5.10.2.4.2-rc8",
+  "outcome": "PASS",
+  "status": "OFFLINE_INTEGRATION_PASS_TARGET_PC_PENDING",
+  "integration_manifest_commit": "efabf148b6881dfab0d28321d3835c4c116a2e50",
+  "implementation_commits": {
+    "liveness_runtime": "022ddf0723f35e3d4f11070c3a9c790e6d35bd9b",
+    "liveness_acceptance_test": "8ab74067dedd821affe91c6d47c8814f0a057021",
+    "integration_manifest": "efabf148b6881dfab0d28321d3835c4c116a2e50"
+  },
+  "consumed_support_commits": {
+    "w1": "f55870053245177430c20a3f9ba0029f955df8f0",
+    "w2": "d4adf24b4a5bb5381a2aec70531b56bc2f9f4a68",
+    "w3": "7af7a51ee18e6b5ae6f64942cf02392f596e4678",
+    "w4": "c068f213af2cf7cf0636ad23219cc64c157c247f",
+    "w6": "e461d6be7bca1de7682649a2c25657c976120745"
+  },
+  "liveness_acceptance": {
+    "UNDER_30_MIN_NO_REFRESH": "PASS",
+    "GENERATING_NO_REFRESH": "PASS",
+    "AFTER_30_MIN_SINGLE_REFRESH": "PASS",
+    "NEW_RESPONSE_RESULT_PENDING": "PASS",
+    "EXACT_RESULT_KEY_TERMINAL_COMPLETE": "PASS",
+    "NO_ACTIVITY_REVIEW_REQUIRED": "PASS",
+    "DUPLICATE_REFRESH_COUNT": 0,
+    "DUPLICATE_DIRECTIVE_COUNT": 0,
+    "assertion_count": 18,
+    "failure_count": 0
+  },
+  "truth": {
+    "github_missing_alone_means_unperformed": false,
+    "target_pc_install_executed": false,
+    "target_pc_pass_claimed": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

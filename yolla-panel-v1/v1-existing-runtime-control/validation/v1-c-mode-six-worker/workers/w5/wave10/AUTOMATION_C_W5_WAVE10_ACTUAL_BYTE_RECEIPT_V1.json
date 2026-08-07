@@ -1,0 +1,40 @@
+{
+  "schema_version": "AUTOMATION_C_W5_WAVE10_ACTUAL_BYTE_RECEIPT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-010",
+  "registry_sequence": 10,
+  "command_id": "C6W-W10-W5-ACTUAL-IMMUTABLE-BYTE-CLOSURE",
+  "role": "AUTOMATION-C-W5",
+  "result_key": "519458792100",
+  "target_version": "5.10.2.4.2-rc3",
+  "outcome": "PASS",
+  "artifact": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w5/wave10/YOLLA_C_MODE_5.10.2.4.2-rc3_INSTALL_AND_BUILD.bat",
+    "commit": "5b44c83a78e2a653cf1b721d546d3f5b7b53b61d",
+    "blob_sha1": "65941a205f2d95821bc96815e33a37855395608e",
+    "size_bytes": 2652,
+    "sha256": "21587622092a36b16c054569ee97463cfc9458b945a26018c486f0f83f5c6447",
+    "encoding": "ASCII_UTF8_COMPATIBLE",
+    "github_byte_readback": "PASS"
+  },
+  "assembly": {
+    "method": "SINGLE_ENTRY_SELF_EXTRACTING_VERIFIED_BAT",
+    "exact_head_path_sha256_recalculation": true,
+    "mismatch_policy": "FAIL_CLOSED",
+    "local_source_zip_generation": true,
+    "local_zip_size_sha256_receipt": true
+  },
+  "preservation": {
+    "login_profile": true,
+    "runtime_log": true,
+    "work_control_jsonl": true,
+    "dispatch_receipt": true,
+    "c_repeat_state": true,
+    "legacy_a_e_reintroduced": 0
+  },
+  "drive_upload": "NOT_EXECUTED_CONNECTOR_FILE_UPLOAD_UNAVAILABLE",
+  "target_pc_execution": "PENDING_EXTERNAL_WINDOWS_RECEIPT",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

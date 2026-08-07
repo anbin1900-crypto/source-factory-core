@@ -1,0 +1,41 @@
+{
+  "schema_version": "AUTOMATION_C_W5_WAVE9_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-009",
+  "registry_sequence": 9,
+  "command_id": "C6W-W9-W5-RC3-IMMUTABLE-BYTE-ARTIFACT",
+  "role": "AUTOMATION-C-W5",
+  "result_key": "519442227700",
+  "target_version": "5.10.2.4.2-rc3",
+  "outcome": "BLOCKED",
+  "completed": {
+    "immutable_payload_manifest": true,
+    "self_extracting_verified_payload_packer": true,
+    "single_entry_installer_bat": true,
+    "deterministic_local_zip_assembly": true,
+    "file_size_sha256_byte_readback_receipt_generation": true,
+    "profile_log_state_preservation_contract": true,
+    "legacy_a_e_reintroduction_count": 0
+  },
+  "inputs": {
+    "w1_head": "ac15ba87733445d0006953c060e73e488ab49913",
+    "w2_head": "d1e12289eb25282601894946f902238306c7b677",
+    "w3_head": "3b3f8c792e9eaba9aa495e3e229d3c6019b149db",
+    "w4_head": "c104760dc53e8ba07c509b8ef5a472f38bd1d9b3"
+  },
+  "artifacts": [
+    "wave9/RC3_IMMUTABLE_PAYLOAD_MANIFEST_V1.json",
+    "wave9/Build-RC3ImmutableArtifact.ps1",
+    "wave9/INSTALL_RC3_IMMUTABLE_ARTIFACT.bat"
+  ],
+  "pending": {
+    "actual_windows_execution": true,
+    "generated_zip_runtime_size_sha256": true,
+    "google_drive_upload_readback": true,
+    "target_pc_acceptance_receipt": true
+  },
+  "blocker": "Current execution environment cannot run Windows PowerShell target-PC assembly or upload generated binary artifact to Drive; deterministic alternative packer is committed and ready.",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
