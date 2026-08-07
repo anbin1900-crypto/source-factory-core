@@ -1,0 +1,15 @@
+{
+  "append_from_record_count": 1205,
+  "checkpoint_seq": 3,
+  "command_template": "python cli/b5_dataset_checkpoint_cli.py append --workdir <WORKDIR> --input <NEW_RECORDS_JSON> --last-cursor <CURSOR> --last-action-id <ACTION_ID>",
+  "directive_id": "AI001-TO-B5-DATASET-CHECKPOINT-RESUME-EXPORT-V2-20260807-001",
+  "export_command_template": "python cli/b5_dataset_checkpoint_cli.py export --workdir <WORKDIR> --outdir <EXPORT_DIR>",
+  "identity_rehydration": "AUTOMATIC_FROM_LATEST_CHECKPOINT",
+  "preview_command_template": "python cli/b5_dataset_checkpoint_cli.py preview --workdir <WORKDIR> --offset <OFFSET> --limit 30 --overscan 7",
+  "recovery_source": "<WORKDIR>/LATEST_POINTER.json -> checkpoint_path -> dataset.jsonl",
+  "requires_chat_context": false,
+  "schema_version": "SUCCESSOR_DATASET_RESUME_COMMAND_V1",
+  "smoke_command": "python cli/b5_dataset_checkpoint_cli.py resume-smoke --workdir ./runtime/b5-cycle2-smoke --records 1205 --cut 600",
+  "target_pc_execution_performed": false,
+  "tunnel_created": false
+}
