@@ -1,0 +1,51 @@
+{
+  "schema_version": "WORKER_COMPLETION_OBSERVER_CONTRACT_V1",
+  "directive_id": "AI001-TO-A3-CHROME-WORKER-COMPLETION-OBSERVER-V3-20260807-001",
+  "role": "REAL_TIME_STATE_SENSOR_NOT_TECHNICAL_PASS_VALIDATOR",
+  "states": ["IDLE","DISPATCHED","GENERATING","COMPLETE","BLOCKED","UNKNOWN"],
+  "completion_assessment": ["NONE","LIKELY_COMPLETE","EXPLICIT_COMPLETE","EXPLICIT_BLOCKED"],
+  "marker_parser": {
+    "keys": ["WORK_STATUS","COMMAND_ID","TERMINAL","BLOCKER"],
+    "complete_rule": "WORK_STATUS=COMPLETE|COMPLETED|DONE or non-empty TERMINAL, provided BLOCKER is absent",
+    "blocked_rule": "non-empty BLOCKER or WORK_STATUS=BLOCKED|ERROR|FAILED|FAIL",
+    "generating_rule": "WORK_STATUS=GENERATING|RUNNING|WORKING|IN_PROGRESS",
+    "dispatched_rule": "WORK_STATUS=DISPATCHED|QUEUED|STARTED or COMMAND_ID present"
+  },
+  "heuristic_rule": {
+    "condition": "dispatch observed + assistant DOM present + generating UI absent + DOM stable >= threshold + no explicit completion/blocker marker",
+    "state": "UNKNOWN",
+    "completion_assessment": "LIKELY_COMPLETE",
+    "promote_to_complete": false,
+    "technical_pass_claim": false
+  },
+  "selector_strategy": {
+    "assistant": {
+      "primary": ["[data-message-author-role=assistant]"],
+      "fallback": ["article[data-testid^=conversation-turn-]","main article"]
+    },
+    "generating": {
+      "primary": ["button[data-testid=stop-button]","[data-testid=stop-button]"],
+      "fallback": ["button[aria-label*=Stop]","button[title*=Stop]","button[aria-label*=중지]"]
+    },
+    "selector_miss_state": "UNKNOWN",
+    "fail_safe": true
+  },
+  "browser_adapters": ["Chrome DevTools Protocol Runtime.evaluate","Playwright page.evaluate/connectOverCDP compatible"],
+  "dom_observer_pattern": "MutationObserver subtree childList characterData attributes",
+  "privacy": {
+    "raw_assistant_message_persistence": false,
+    "assistant_digest_sha256": true,
+    "marker_text_redaction": true,
+    "raw_secret_storage": false
+  },
+  "boundaries": {
+    "ocr": false,
+    "screen_image_analysis": false,
+    "target_pc_execution": false,
+    "tunnel_change": false,
+    "new_browser_engine": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
