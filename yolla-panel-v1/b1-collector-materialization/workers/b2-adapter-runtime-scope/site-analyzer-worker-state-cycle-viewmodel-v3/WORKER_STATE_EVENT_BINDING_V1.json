@@ -6,24 +6,23 @@
     "A-3": {
       "directive_id": "AI001-TO-A3-CHROME-WORKER-COMPLETION-OBSERVER-V3-20260807-001",
       "directive_comment": 5217742284,
-      "expected_event": "WORKER_BROWSER_STATE_EVENT_V1",
-      "role": "SENSOR_ONLY",
-      "status_at_binding": "DIRECTIVE_ACTIVE_OUTPUT_NOT_REQUIRED_FOR_B2_PREBUILD",
-      "observed_head": "fb7a448e6a16ae546d2b4038973b391d40b500c6"
+      "current_head": "161acfc3590167f4a9feec707b958a5d3ccae535",
+      "terminal": "A3_CHROME_WORKER_COMPLETION_OBSERVER_READY",
+      "latest_pointer_blob": "aaee481e276485682fa73d52a70881e14d653539",
+      "event_schema_blob": "ebb33d2229f62591f0fc31757dfc2ab03727e649",
+      "contract_blob": "7da03105f1c96ba4528bd5f3445cfb9bafc6cfe4",
+      "input_role": "RAW_BROWSER_SENSOR"
     },
     "B-1": {
       "directive_id": "AI001-TO-B1-WORKER-STATE-EVENT-AND-CYCLE-AGGREGATOR-V3-20260807-001",
       "directive_comment": 5217757299,
-      "expected_outputs": ["cycle aggregation", "result/pointer binding", "CYCLE_BROWSER_TERMINAL event"],
-      "role": "AGGREGATOR_AND_DURABLE_STATE_OWNER",
-      "status_at_binding": "DIRECTIVE_ACTIVE_OUTPUT_NOT_REQUIRED_FOR_B2_PREBUILD",
-      "observed_head": "cd153a2418e7896c0effed9e7f10a7fa558cdad5"
+      "current_head": "9778dfe1fbefb2ceb74ba43364e33a90622f3101",
+      "terminal": "B1_WORKER_STATE_EVENT_AND_CYCLE_AGGREGATOR_READY",
+      "latest_pointer_blob": "617cb67d5f261e500395bd60ec99678b2720d6a8",
+      "event_schema_blob": "c54fee3abbcf3519cffe946503f63c30ff314628",
+      "aggregator_contract_blob": "18328841d845e26fc2434772674c77f80ee565a0",
+      "input_role": "NORMALIZED_AGGREGATOR_EVENT"
     }
-  },
-  "accepted_event_shape": {
-    "required": ["schema_version", "worker_id", "page_id", "command_id", "browser_state", "observed_at"],
-    "optional": ["task_status", "latest_terminal", "latest_result_pointer", "blocker", "selector_status", "generation_ui_active", "dom_stable", "sequence", "event_id"],
-    "schema_version": "WORKER_BROWSER_STATE_EVENT_V1"
   },
   "b1_result_binding": {
     "command_contract_blob": "f2cede931148c956de61cbcacc39a58945dc3bf8",
@@ -31,16 +30,37 @@
     "session_job_state_blob": "8c6c5b151e9e2874963863b2083d8be323e56911",
     "join_key": "command_id"
   },
+  "normalization": {
+    "A3_RAW": {
+      "detect": "state + observed_at + page_id",
+      "browser_state": "state",
+      "observed_at": "observed_at",
+      "sequence": "sequence",
+      "latest_terminal": "terminal",
+      "latest_result_pointer": null,
+      "selector_miss": "selector_match == false",
+      "likely_complete": "state == UNKNOWN && completion_assessment == LIKELY_COMPLETE"
+    },
+    "B1_AGGREGATED": {
+      "detect": "browser_state + occurred_at + cycle_id",
+      "browser_state": "browser_state",
+      "observed_at": "occurred_at",
+      "sequence": "sequence_no",
+      "latest_result_pointer": "result_pointer || result_envelope_pointer",
+      "task_status_pending": "RESPONSE_COMPLETE_RESULT_PENDING -> COMPLETE_RESULT_PENDING",
+      "task_status_bound": "RESPONSE_COMPLETE_RESULT_BOUND -> COMPLETE"
+    }
+  },
+  "merge_policy": {
+    "same_worker_and_command": "B-1 enriches task/result fields while retaining A-3 page_id/terminal when B-1 omits them.",
+    "a3_complete_without_b1_result": "COMPLETE_RESULT_PENDING",
+    "a3_unknown_or_selector_miss": "UNKNOWN_FAIL_SAFE",
+    "b1_cycle_browser_terminal": "display only when explicit B-1 receipt/event exists; never infer in panel"
+  },
   "stale_duplicate_policy": {
     "same_event_id": "IGNORE_DUPLICATE",
-    "older_sequence_same_command": "IGNORE_STALE",
-    "older_observed_at_same_command": "IGNORE_STALE_WHEN_SEQUENCE_ABSENT"
+    "older_sequence_same_correlation": "IGNORE_STALE",
+    "older_observed_at_same_correlation": "IGNORE_STALE_WHEN_SEQUENCE_UNAVAILABLE"
   },
-  "panel_boundary": {
-    "panel_is_state_projection_only": true,
-    "runtime_owner": false,
-    "sensor_owner": false,
-    "aggregator_owner": false,
-    "raw_receipt_mutation": false
-  }
+  "panel_boundary": {"panel_is_state_projection_only":true,"runtime_owner":false,"sensor_owner":false,"aggregator_owner":false,"raw_receipt_mutation":false}
 }
