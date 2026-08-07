@@ -1,0 +1,41 @@
+{
+  "schema_version": "LATEST_A4_WAVE3_STRUCTURE_HARDENING_POINTER_V1",
+  "worker": "A-4",
+  "worker_pr": 23,
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "updated_at_kst": "2026-08-07T13:53:00+09:00",
+  "terminal": "A4_SITE_ANALYZER_WAVE3_STRUCTURE_HARDENING_PASS",
+  "decision": "PASS",
+  "final_report": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave3/A4_WAVE3_STRUCTURE_HARDENING_FINAL_REPORT_V1.json",
+    "commit": "e07d66831641baaa689df68cea62351c92f1de7b",
+    "blob": "ba0e33e80e1c5211745a371a78c260e24102f7c9"
+  },
+  "scenario_matrix": {
+    "commit": "a53e2c54bff1aee4aae2ba91885f06f194371249",
+    "blob": "1e69f491849a0563ddc0d3c84939f968f9e13607"
+  },
+  "replay_digests": {
+    "commit": "3af3d24553fd2cf2dd86bdd2c5ff815e27cd1679",
+    "blob": "c508fa03bc2af081f13ae7dfe269508e167261cf",
+    "matrix_digest": "bc89d3b369351282a058fa22f728cd5c0a7f70a736a4748e3ebe4ed4541ceaff"
+  },
+  "runtime_validation": {
+    "commit": "dd92a7f07d1a32527e4251e466cd758a0e8b8b2b",
+    "blob": "aa69f1eb51497d2372a4d8892b9b6b2eeccfad49",
+    "result": "PASS_8_OF_8"
+  },
+  "a6_structure_input": {
+    "commit": "4a8fb8d5e48cc84f2102b8e0a58eb1eaf92fe173",
+    "blob": "49c151ed1327fb690ffb4e1797f84f0cfd2581fc"
+  },
+  "a3_live_authority": {
+    "head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+    "stream_sha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165"
+  },
+  "pass": ["REPEAT_REGION","FIELD_INFERENCE","LOCATOR_STABILITY","PAGINATION_INFERENCE","LOOP_GUARD","DYNAMIC_DOM_RECOVERY"],
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
