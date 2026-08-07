@@ -1,0 +1,16 @@
+{
+  "schema_version":"A7_RECOVERY_BOOTSTRAP_FINAL_REPORT_V1",
+  "directive_id":"AI001-TO-A7-MISSION-CONTEXT-RECOVERY-BOOTSTRAP-PREBUILD-V1-20260807-001",
+  "directive_comment_id":5216925894,
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "terminal":"A7_MISSION_CONTEXT_RECOVERY_BOOTSTRAP_PREBUILD_READY",
+  "status":"PASS",
+  "source_commit":"8698a83090f0bddef77a4d96def4db26a7f16956",
+  "required_outputs":{"AI001_MISSION_CONTINUITY_STATE_V1":"PASS","RECOVER_WORK_BOOTSTRAP_V1":"PASS","COMMAND_CHECKPOINT_RESUME_V1":"PASS","CROSS_CUTTING_REPAIR_HOOK_V1":"PASS","LATEST_POINTER":"PASS"},
+  "minimum_recovery_input":["MISSION_POINTER","CURRENT_COMMAND","LATEST_RESULT","CHECKPOINT"],
+  "validation":{"node_test":"PASS_4_OF_4","fixture_interruption_recovery_smoke_1":"PASS","expected_fixture_decision":"REPAIR_THEN_RESUME","duplicate_execution_prevention":"PASS","final_pointer_self_recovery_expected":"SKIP_DUPLICATE"},
+  "single_recovery_command":"node recover-work.cjs --pointer ./LATEST_MISSION_POINTER.json",
+  "full_history_scan_default":false,
+  "tunnel_create":false,"successor_direct_call":false,"target_pc_execution":false,
+  "production":false,"ready":false,"merge":false
+}

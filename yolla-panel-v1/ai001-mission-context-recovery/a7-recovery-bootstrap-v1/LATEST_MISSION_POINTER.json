@@ -1,0 +1,18 @@
+{
+  "schema_version":"LATEST_MISSION_POINTER_V1",
+  "mission_id":"AI001-RECOVERY-BOOTSTRAP-PREBUILD",
+  "directive_id":"AI001-TO-A7-MISSION-CONTEXT-RECOVERY-BOOTSTRAP-PREBUILD-V1-20260807-001",
+  "directive_comment_id":5216925894,
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "status":"PASS",
+  "terminal":"A7_MISSION_CONTEXT_RECOVERY_BOOTSTRAP_PREBUILD_READY",
+  "authority_head":"8698a83090f0bddef77a4d96def4db26a7f16956",
+  "stale_after_seconds":120,
+  "inputs":{"MISSION_POINTER":"state/MISSION_POINTER.json","CURRENT_COMMAND":"state/CURRENT_COMMAND.json","LATEST_RESULT":"state/LATEST_RESULT.json","CHECKPOINT":"state/CHECKPOINT.json"},
+  "validation_receipt":"reports/A7_RECOVERY_BOOTSTRAP_VALIDATION_RECEIPT_V1.json",
+  "validation_receipt_blob":"2881f846e0ac63469efe800718708f8eda63bf48",
+  "single_recovery_command":"node recover-work.cjs --pointer ./LATEST_MISSION_POINTER.json",
+  "blocker":null,
+  "last_pass_command":{"command_id":"A7-RECOVERY-PREBUILD-001","idempotency_key":"AI001-A7-RECOVERY-PREBUILD-001","receipt_path":"reports/A7_RECOVERY_BOOTSTRAP_VALIDATION_RECEIPT_V1.json","receipt_sha256":"git-blob:2881f846e0ac63469efe800718708f8eda63bf48"},
+  "production":false,"ready":false,"merge":false
+}
