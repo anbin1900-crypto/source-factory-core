@@ -1,0 +1,9 @@
+{
+  "schema_version":"SYNTHETIC_CONTEXT_INTERRUPTION_FIXTURE_V1",
+  "mission_state":{"mission_id":"SYNTHETIC-CONTEXT-INTERRUPTION","phase":"RUNNING","active_command_id":"CMD-SYN-002","last_completed_command_id":"CMD-SYN-001","blocker":null},
+  "active_command":{"command_id":"CMD-SYN-002","idempotency_key":"SYN-KEY-002","status":"RUNNING","heartbeat_at":"2026-08-07T12:00:30Z","safe_rerun":true,"non_idempotent_side_effect_committed":false},
+  "latest_result":{"command_id":"CMD-SYN-001","idempotency_key":"SYN-KEY-001","status":"PASS"},
+  "checkpoints":[{"checkpoint_id":"CP-SYN-001","sequence_no":1,"command_id":"CMD-SYN-001","idempotency_key":"SYN-KEY-001","durable":true},{"checkpoint_id":"CP-SYN-002","sequence_no":2,"command_id":"CMD-SYN-002","idempotency_key":"SYN-KEY-002","durable":true,"artifact_manifest":[{"path":"work/output.partial"}]}],
+  "partial_artifact":{"path":"work/output.partial","content":"partial-state"},
+  "expected":{"decision":"NEEDS_REPAIR","resume_from":"CP-SYN-002","latest_checkpoint_sequence":2}
+}

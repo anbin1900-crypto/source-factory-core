@@ -1,0 +1,14 @@
+{
+  "schema_version":"A7_DURABLE_RECOVERY_V2_VALIDATION_RECEIPT_V1",
+  "generated_at":"2026-08-07T13:10:00Z",
+  "directive_id":"AI001-TO-A7-DURABLE-MISSION-RECOVERY-AND-RESUME-BOOTSTRAP-V2-20260807-001",
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "status":"PASS",
+  "minimum_validation":"SYNTHETIC_CONTEXT_INTERRUPTION_AND_RECOVERY_SMOKE_1_PASS",
+  "smoke":{"decision":"NEEDS_REPAIR","resume_from":"CP-SYN-002","latest_checkpoint_sequence":2,"last_pass":"CMD-SYN-001","active_command":"CMD-SYN-002","partial_state_count":1},
+  "self_recovery":{"decision":"ALREADY_DONE","reason":"PASS_RESULT_ALREADY_BOUND"},
+  "late_binding":{"A-2":"BOUND_BY_HEAD_AND_POINTER","A-6":"BOUND_BY_HEAD_AND_POINTER","B-1":"BOUND_BY_HEAD_AND_POINTER"},
+  "full_history_scan_default":false,
+  "tunnel_create":false,"pc_agent_execution":false,"target_pc_execution":false,
+  "production":false,"ready":false,"merge":false
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version":"LATEST_AI001_MISSION_POINTER_V1",
+  "mission_id":"AI001-DURABLE-MISSION-RECOVERY-V2",
+  "directive_id":"AI001-TO-A7-DURABLE-MISSION-RECOVERY-AND-RESUME-BOOTSTRAP-V2-20260807-001",
+  "directive_comment_id":5217321685,
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "status":"PASS",
+  "terminal":"A7_DURABLE_MISSION_RECOVERY_AND_RESUME_BOOTSTRAP_READY",
+  "current_mission_state":"state/CURRENT_MISSION_STATE.json",
+  "active_command":"state/ACTIVE_COMMAND.json",
+  "latest_result":"state/LATEST_RESULT.json",
+  "checkpoint_directory":"checkpoints",
+  "checkpoint_contract":"APPEND_ONLY_CHECKPOINT_CONTRACT_V1.json",
+  "late_binding":{"registry":"LATE_BINDING_SOURCES_V1.json","required_sources":[]},
+  "recovery_brief":"AI001_RECOVERY_BRIEF_V1.json",
+  "decision_contract":"INTERRUPTED_COMMAND_RECOVERY_DECISION_V1.json",
+  "stale_after_seconds":120,
+  "single_recovery_command":"node RECOVER_WORK_BOOTSTRAP_V1.cjs --pointer ./LATEST_AI001_MISSION_POINTER_V1.json",
+  "authority_head_semantics":"COMMIT_CONTAINING_THIS_POINTER",
+  "production":false,"ready":false,"merge":false
+}

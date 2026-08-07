@@ -1,0 +1,11 @@
+{
+  "schema_version":"AI001_CURRENT_MISSION_STATE_V1",
+  "mission_id":"AI001-DURABLE-MISSION-RECOVERY-V2",
+  "phase":"PREBUILD_CYCLE2_TERMINAL",
+  "active_command_id":"AI001-DURABLE-RECOVERY-V2-001",
+  "last_completed_command_id":"AI001-DURABLE-RECOVERY-V2-001",
+  "latest_result_pointer":"state/LATEST_RESULT.json",
+  "current_checkpoint":"checkpoints/0001_CP-BOOTSTRAP-SOURCE.json",
+  "blocker":null,
+  "next_action":{"decision":"ALREADY_DONE","reason":"PASS_RESULT_ALREADY_BOUND"}
+}
