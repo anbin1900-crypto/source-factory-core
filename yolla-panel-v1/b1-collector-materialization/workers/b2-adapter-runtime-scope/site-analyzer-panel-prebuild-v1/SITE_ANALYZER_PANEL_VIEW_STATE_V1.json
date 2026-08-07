@@ -1,0 +1,48 @@
+{
+  "schema_version": "SITE_ANALYZER_PANEL_VIEW_STATE_V1",
+  "directive_id": "AI001-TO-B2-VISUAL-INSPECTOR-WORKFLOW-TRACE-PREBUILD-V1-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "worker": "B-2",
+  "worker_pr": 38,
+  "role": "B-2_VISUAL_INSPECTOR_WORKFLOW_TRACE_UI_OWNER",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "view_state_id": "b2-panel-prebuild-default-v1",
+  "state": "READY_FOR_RESULT_BINDING",
+  "selected_workflow_node_id": null,
+  "selected_page_id": null,
+  "selected_frame_id": null,
+  "selected_element_ref": null,
+  "selected_request_id": null,
+  "selected_preview_row_id": null,
+  "selected_preview_field_key": null,
+  "active_inspector_tab": "DOM",
+  "trace_filters": {
+    "categories": [],
+    "page_id": null,
+    "severity": null
+  },
+  "trace_cursor": null,
+  "workflow_viewport": {
+    "x": 0,
+    "y": 0,
+    "zoom": 1
+  },
+  "expanded_panels": [
+    "workflow",
+    "live_session",
+    "smart_inspector",
+    "data_preview",
+    "trace_drawer"
+  ],
+  "result_source_refs": [],
+  "restore_policy": {
+    "pointer_required": true,
+    "chat_context_required": false,
+    "missing_result_ref": "RENDER_UNBOUND",
+    "stale_result_ref": "RENDER_STALE_BADGE"
+  },
+  "updated_at_kst": "2026-08-07T21:28:00+09:00"
+}

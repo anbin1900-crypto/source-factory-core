@@ -1,0 +1,46 @@
+{
+  "schema_version": "B2_VISUAL_INSPECTOR_WORKFLOW_TRACE_PREBUILD_TEST_RESULT_V1",
+  "directive_id": "AI001-TO-B2-VISUAL-INSPECTOR-WORKFLOW-TRACE-PREBUILD-V1-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "worker": "B-2",
+  "worker_pr": 38,
+  "role": "B-2_VISUAL_INSPECTOR_WORKFLOW_TRACE_UI_OWNER",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "tested_at_kst": "2026-08-07T21:29:00+09:00",
+  "implementation_commit": "29c61d82885fe4fad0ceca63f847cd8873f6e22a",
+  "remote_readback": {
+    "result": "PASS_6_OF_6",
+    "SITE_ANALYZER_PANEL_VIEWMODEL_V1_blob": "e0533246857ee9b2cb9185cf5be3629c89fdf7f5",
+    "SMART_INSPECTOR_CONTRACT_V1_blob": "acaa5b506420ade53a3364e250a29ed1129cfdb7",
+    "TRACE_DRAWER_CONTRACT_V1_blob": "c213430a2ed6d43a2a5699cfb184e36fa461812a",
+    "SUCCESSOR_UI_BOOTSTRAP_PLAN_V1_blob": "5f9bead56e9fec2f272d933503b4b8d1cbc9c1d6",
+    "panel_prebuild_source_blob": "362d4e8126966dc970fb13d56d36b2ad4b113425",
+    "prebuild_smoke_blob": "34d9765c645218a7ff386ba0353b8de2c76d5d52"
+  },
+  "validation": {
+    "node_check_source": "PASS",
+    "node_check_smoke": "PASS",
+    "source_parse_or_build_smoke": "PASS",
+    "smoke_assertions": "PASS_12_OF_12",
+    "required_contract_parse": "PASS_4_OF_4",
+    "workflow_node_edge_viewmodel": "PASS",
+    "live_session_selected_page_binding": "PASS",
+    "smart_inspector_model": "PASS",
+    "data_preview_edit_type_source_confidence": "PASS",
+    "trace_drawer_combined_categories": "PASS_7_OF_7",
+    "control_plane_runtime_ownership_boundary": "PASS",
+    "context_free_pointer_view_state_restore": "PASS"
+  },
+  "forbidden_action_count": {
+    "tunnel_create": 0,
+    "successor_direct_call": 0,
+    "target_pc_execution": 0,
+    "new_browser_engine": 0,
+    "production": 0,
+    "ready": 0,
+    "merge": 0
+  }
+}
