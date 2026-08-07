@@ -1,0 +1,91 @@
+{
+  "schema_version": "LATEST_B5_BLUEPRINT_ONTOLOGY_BINDING_DATASET_POINTER_V1",
+  "directive_id": "A0-TO-B5-BLUEPRINT-ONTOLOGY-BINDING-DATASET-V4-20260808-001",
+  "directive_comment": 5219109148,
+  "cycle_id": "A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "worker": "B-5",
+  "worker_pr": 41,
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "baseline_head": "c97bedcefcd109ef19760cb9cb5896180b52410e",
+  "content_head_before_pointer": "53b2b56dac199cb93cadf04d81b30d8d06c690eb",
+  "parent": {
+    "terminal": "B5_RESULT_DATASET_CHECKPOINT_LINEAGE_READY",
+    "pointer_blob": "81b9fae0b4aa13b651890c8af6a2502e28df4f31"
+  },
+  "required_outputs": {
+    "AI_PRODUCT_BLUEPRINT_DATASET_V1": {
+      "path": "fixtures/materialized/datasets/AI_PRODUCT_BLUEPRINT_DATASET_V1.json",
+      "blob": "4c429512ab6042fdbc37c897e322adfe664f626e"
+    },
+    "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1": {
+      "path": "fixtures/materialized/datasets/REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1.json",
+      "blob": "7e27280cac297971e5de5ab4bcc2e4f0e940101e"
+    },
+    "SITE_LISTING_FIELD_BINDING_V1": {
+      "path": "fixtures/materialized/datasets/SITE_LISTING_FIELD_BINDING_V1.json",
+      "blob": "59a21f789dc4d19825fea2dd2586ab789c79a3e4"
+    },
+    "REAL_ESTATE_SITE_CAPABILITY_PROFILE_V1": {
+      "path": "fixtures/materialized/datasets/REAL_ESTATE_SITE_CAPABILITY_PROFILE_V1.json",
+      "blob": "f2d0a4ff76638e29df7671287e097eed986b745a"
+    },
+    "YOLLA_LISTING_LEDGER_SCHEMA_CANDIDATE_V1": {
+      "path": "fixtures/materialized/datasets/YOLLA_LISTING_LEDGER_SCHEMA_CANDIDATE_V1.json",
+      "blob": "3a637a253879ba71344bb4ab2f80c4054f36a320"
+    }
+  },
+  "lineage_outputs": {
+    "RESULT_DATASET_POINTER_V1": {
+      "path": "fixtures/materialized/RESULT_DATASET_POINTER_V1.json",
+      "blob": "be30a8248bcafffff24f6352dfb1a4e2f1dfd82b"
+    },
+    "COMPLETE_RESULT_STATE_V1": {
+      "path": "fixtures/materialized/COMPLETE_RESULT_STATE_V1.json",
+      "blob": "37b4e6046a26c50fc8fe6a8d30b218a68015ec7d"
+    },
+    "BLUEPRINT_ONTOLOGY_BINDING_EXPORT_RECEIPT_V1": {
+      "path": "fixtures/exports/BLUEPRINT_ONTOLOGY_BINDING_EXPORT_RECEIPT_V1.json",
+      "blob": "139573af74c72ac02929b05b592ada9d94c3eb4a"
+    }
+  },
+  "implementation": {
+    "engine_blob": "7d2245073041fccb34b69e4b01d3f6d6507c52a3",
+    "cli_blob": "ba3849327f32e8d534074ca08f2a55da73194c72",
+    "tests_blob": "cfd50eb2241cb9439342e68f3a65d43a26671533",
+    "fixture_blob": "e898fa05c1502cb316ae9a1f82292c6f186155fe"
+  },
+  "evidence": {
+    "smoke_receipt_blob": "f08e2a5f7460b9006f3eb7948074444824098d5c",
+    "test_report_blob": "44a1f73a861cd2eeb4b55b93a7b4625df4042124",
+    "final_report_blob": "6730252396abdac981a421ac33ffc8e525232ab1"
+  },
+  "validation": {
+    "compile": "PASS_3_OF_3",
+    "unit_tests": "PASS_45_OF_45",
+    "dataset_contracts": "PASS_5_OF_5",
+    "fixture_smoke": "PASS",
+    "site_count": 2,
+    "binding_count": 6,
+    "source_field_loss_count": 0,
+    "evidence_pointer_count": 6,
+    "canonical_confirmed_without_authority_count": 0,
+    "duplicate_materialization_count": 0,
+    "state_transition": "PASS_COMPLETE_RESULT_PENDING_TO_RESULT_AVAILABLE",
+    "checkpoint_sequence": "PASS_1_2_3_MONOTONIC",
+    "contextless_resume": "PASS",
+    "export_roundtrip": "PASS_JSON_CSV_XLSX",
+    "existing_v3_files_modified": 0
+  },
+  "status": "BLUEPRINT_ONTOLOGY_BINDING_DATASET_IMPLEMENTED_AND_SMOKE_TESTED",
+  "terminal": "B5_BLUEPRINT_ONTOLOGY_BINDING_DATASET_READY",
+  "next_event": "B1_B2_B6_CONSUME_BLUEPRINT_ONTOLOGY_BINDING_DATASET",
+  "target_pc_execution": false,
+  "live_site_call": false,
+  "tunnel_change": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "updated_at_kst": "2026-08-08T00:59:29+09:00"
+}
