@@ -1,0 +1,8 @@
+{
+  "schema_version": "COMMAND_ARTIFACT_CHECKPOINT_V1",
+  "required": ["command_id","last_durable_artifact_pointer","next_resumable_step","recovery_rule"],
+  "recovery_rule": "RESUME_FROM_LAST_DURABLE_COMPLETED_ARTIFACT_ONLY",
+  "partial_write_advances_checkpoint": false,
+  "atomic_replace_required": true,
+  "optional_pointer_fields": ["b5_dataset_checkpoint_pointer"]
+}
