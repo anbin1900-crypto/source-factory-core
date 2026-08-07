@@ -11,6 +11,7 @@ for r in fix["all_success"]:
 assert c.observed_coverage()["observed_transition_count"]==7
 assert c.unknown_coverage()["selected_unknown_count"]==0
 assert c.unknown_coverage()["latent_unknown_count"]==2
+# Duplicate, blocked, and bypass smoke use isolated consumers and do not affect the all-success coverage receipt.
 d=mod.RealSiteStateRunConsumer(plan); d.consume_receipt(fix["all_success"][0]); dup=d.consume_receipt(fix["all_success"][0])
 a=mod.RealSiteStateRunConsumer(plan); blocked=a.consume_receipt(fix["auth_blocked"])
 b=mod.RealSiteStateRunConsumer(plan); bypass=b.consume_receipt(fix["auth_bypass_attempt"])
