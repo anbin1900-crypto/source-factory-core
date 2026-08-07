@@ -1,0 +1,10 @@
+{
+  "schema_version": "MULTIMODE_ANALYSIS_CHECKPOINT_V1",
+  "cycle_id": "fixture-cycle-4",
+  "command_id": "fixture-command-1",
+  "completed_modes": ["DATA", "PRODUCT"],
+  "mode_results": {
+    "DATA": {"terminal": "PASS", "evidence_pointer": "fixture://data"},
+    "PRODUCT": {"terminal": "PASS", "evidence_pointer": "fixture://product"}
+  }
+}
