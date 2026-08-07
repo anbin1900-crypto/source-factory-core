@@ -1,0 +1,17 @@
+{
+  "schema_version": "REAL_SITE_DATA_ENTITY_BINDING_V1",
+  "source_contract": "DATA_MODEL_IMPLEMENTATION_SPEC_V1",
+  "lanes": ["PUBLIC_READ", "WRITE", "MY_LISTING", "EDIT"],
+  "required_binding_keys": ["operation_id", "request_id", "entity_id"],
+  "required_fields": ["record_path", "identifier_paths", "evidence_pointer", "status"],
+  "authority_policy": {
+    "redacted_response_body_observed": "OBSERVED",
+    "missing_response_body_or_entity_evidence": "WAITING_INPUT",
+    "unobserved_entity_rule": "UNKNOWN"
+  },
+  "redaction_policy": "Raw response body is not retained by this contract; only redacted entity evidence and pointers are consumable.",
+  "d_canonical_authority": false,
+  "production_db_write": false,
+  "raw_secret_value_count": 0,
+  "raw_pii_value_count": 0
+}
