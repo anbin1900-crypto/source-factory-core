@@ -1,0 +1,36 @@
+{
+  "schema_version": "B3_WAVE3_TEST_RESULTS_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "assignment_comment_id": 5212046897,
+  "tested_at_kst": "2026-08-07T13:43:00+09:00",
+  "commands": [
+    "python -m py_compile src/wave3_recorder_product_flow.py tools/run_wave3_product_flow.py tests/test_wave3_product_flow.py",
+    "python tools/run_wave3_product_flow.py",
+    "python -m unittest discover -s tests -v"
+  ],
+  "python_compile": "PASS",
+  "unit_tests": "PASS_24_OF_24",
+  "actual_chromium_runtime": "PASS",
+  "recorded_event_count": 10,
+  "required_action_types": ["click", "input", "select", "scroll", "popup", "iframe", "navigation"],
+  "required_action_types_result": "PASS_7_OF_7",
+  "recipe_generation": "PASS",
+  "generated_adapter_execution": "PASS",
+  "replay": "PASS_10_OF_10_STEPS",
+  "restart_resume": "PASS_BROWSER_PROCESS_RESTART_1",
+  "duplicate_fingerprint_count": 0,
+  "no_action_duplication": "PASS",
+  "recipe_digest": "4a521a4710e55d87bf14f9984b8a5cf746f2498633b33e6a947267733ccbab59",
+  "executed_adapter_source_sha256": "41e99a659c056e2a0d6f3d120208bfc3e480383d7ae2ce52b4c95027881da60f",
+  "http_transport": {
+    "wave2_blocker_preserved": "ERR_BLOCKED_BY_ADMINISTRATOR",
+    "same_failure_repeated": false,
+    "actual_http_evidence": false,
+    "http_pass_claimed": false
+  },
+  "ci_status_context_count": 0,
+  "ci_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
