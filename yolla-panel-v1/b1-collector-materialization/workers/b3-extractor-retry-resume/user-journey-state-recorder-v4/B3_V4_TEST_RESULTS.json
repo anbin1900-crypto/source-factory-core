@@ -1,0 +1,31 @@
+{
+  "schema_version": "B3_USER_JOURNEY_V4_TEST_RESULTS",
+  "directive_id": "A0-TO-B3-USER-JOURNEY-STATE-RECORDER-V4-20260808-001",
+  "assignment_comment_id": 5219103480,
+  "local_validation": {
+    "source_parse": "PASS",
+    "python_compile": "PASS_EXIT_0",
+    "unit_tests": "PASS_12_OF_12",
+    "fixture_smoke": "PASS"
+  },
+  "fixture_results": {
+    "search_list_detail_graph": "PASS",
+    "create_mylisting_edit_graph": "PASS",
+    "worker_lifecycle_mixed_into_journey": false,
+    "duplicate_retry_suppressed": true,
+    "last_completed_action_id": "act-create-fill",
+    "resume_action_ids": ["act-create-save", "act-open-edit", "act-edit-save"],
+    "restart_resume_match": true,
+    "representative_family_count": 7,
+    "suppressed_equivalent_event_count": 1,
+    "hash_tamper_fail_closed": "PASS",
+    "wrong_resume_token_fail_closed": "PASS"
+  },
+  "validation_boundary": "LOCAL_EXECUTION_AND_REMOTE_BLOB_READBACK_REPORTED_SEPARATELY",
+  "ci_pass_claimed": false,
+  "target_pc_execution": false,
+  "live_site_call": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
