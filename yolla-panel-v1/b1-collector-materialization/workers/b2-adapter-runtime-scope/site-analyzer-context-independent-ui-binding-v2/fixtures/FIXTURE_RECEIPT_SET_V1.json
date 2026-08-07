@@ -1,0 +1,10 @@
+{
+  "schema_version": "FIXTURE_RECEIPT_SET_V1",
+  "receipts": {
+    "A-3": {"receipt_id":"a3-r1","status":"PASS","terminal":"A3_SITE_ANALYZER_WAVE3_CDP_PRODUCT_STREAM_PASS","session_id":"s-1","page_id":"p-1","event_count":176,"source_ref":"c5201b3c1620f30eb407ec09f8aa4ba8bdf0dd7e"},
+    "A-4": {"receipt_id":"a4-r1","status":"PASS","terminal":"A4_SITE_ANALYZER_WAVE3_STRUCTURE_HARDENING_PASS","session_id":"s-1","page_id":"p-1","field_count":5,"source_ref":"da55a8faf01789cc23771592bf9b61e642decabd"},
+    "A-5": {"receipt_id":"a5-r1","status":"TERMINAL_PROVEN_EXTERNAL_BLOCKER","terminal":"A5_SITE_ANALYZER_WAVE3_SCHEMA_MODE_E2E_PROVEN_EXTERNAL_BLOCKER","session_id":"s-1","page_id":"p-1","mode":"HYBRID","blockers":["A3_NETWORK_REQUEST_STREAM_COUNT_MISMATCH"],"source_ref":"8f7b0b385fb41619dd47284e25a9be998efde4e5"},
+    "A-6": {"receipt_id":"a6-r1","status":"TERMINAL_PASS","terminal":"A6_SITE_ANALYZER_WAVE3_ADAPTER_REPAIR_LOOP_PASS_OR_PROVEN_EXTERNAL_BLOCKER","session_id":"s-1","page_id":"p-1","adapter_id":"adapter-1","exact10":true,"source_ref":"16f14e5ad10eb108267303210182670ab529a38b"},
+    "B-1": {"receipt_id":"b1-r1","status":"PASS_NODE_CHROMIUM_FULL_E2E_TARGET_PC_ELECTRON_NOT_CLAIMED","terminal":"B1_SITE_ANALYZER_WAVE3_SINGLE_PRODUCT_E2E_PASS_WITH_PROVEN_CURRENT_ENV_ELECTRON_BLOCKER","session_id":"s-1","page_id":"p-1","command_id":"cmd-1","source_ref":"03722c45f68c28bfe7cc3bbaa2dd05310f94dc85"}
+  }
+}
