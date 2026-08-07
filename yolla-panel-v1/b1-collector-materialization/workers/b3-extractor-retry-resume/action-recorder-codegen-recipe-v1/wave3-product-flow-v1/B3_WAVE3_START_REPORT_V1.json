@@ -1,0 +1,22 @@
+{
+  "schema_version": "B3_WAVE3_START_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "assignment_comment_id": 5212046897,
+  "worker": "B-3",
+  "worker_pr": 39,
+  "control_pr": 17,
+  "consumer_pr": 25,
+  "branch": "worker/b3-extractor-retry-resume-v1",
+  "start_head": "b94ef16dd8a0e73e430c1e0678ce6c6f2e075350",
+  "started_at_kst": "2026-08-07T13:43:00+09:00",
+  "mode": "ONE_OWNER_END_TO_END_ACTUAL_CHROMIUM_INLINE_PRODUCT_FLOW",
+  "required_pass": ["ACTION_RECORDING", "RECIPE_GENERATION", "A6_HANDOFF", "REPLAY", "RESTART_RESUME", "NO_ACTION_DUPLICATION"],
+  "preserved_wave2_http_blocker": {
+    "status": "ERR_BLOCKED_BY_ADMINISTRATOR",
+    "repeat_attempted": false,
+    "http_pass_claimed": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
