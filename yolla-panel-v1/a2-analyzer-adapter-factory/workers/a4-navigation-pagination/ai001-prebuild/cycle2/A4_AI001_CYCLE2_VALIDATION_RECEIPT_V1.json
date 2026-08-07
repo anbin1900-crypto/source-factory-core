@@ -1,0 +1,57 @@
+{
+  "schema_version": "A4_AI001_CYCLE2_VALIDATION_RECEIPT_V1",
+  "worker": "A-4",
+  "directive_id": "AI001-TO-A4-STRUCTURE-INFERENCE-RUNNER-AND-STABLE-OUTPUT-V2-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "validated_at_kst": "2026-08-07T22:02:00+09:00",
+  "parent_result": "A4_STRUCTURE_LOCATOR_PAGINATION_INFERENCE_PREBUILD_READY",
+  "validation": {
+    "source_parse": "PASS_4_OF_4",
+    "fixture_smoke_1": "PASS",
+    "deterministic_run_count": 2,
+    "deterministic_byte_output": true,
+    "output_sha256_run_1": "ac1ad3a1e747f3c26503b993592efcd6d28f3853c778276f9dcdcb2cfe179640",
+    "output_sha256_run_2": "ac1ad3a1e747f3c26503b993592efcd6d28f3853c778276f9dcdcb2cfe179640",
+    "receipt_sha256": "f429e088dad9aacba80c9971b63de403e4796bce13dec47bdf87cbcb3c2b51be",
+    "repeated_region_item_count": 3,
+    "field_count": 5,
+    "field_names": ["title", "price", "address", "image", "detail_url"],
+    "locator_count": 14,
+    "locator_strategy_order": ["semantic", "data", "role", "text", "css"],
+    "strategies_present": ["data", "role", "text", "css"],
+    "pagination": "NEXT",
+    "pagination_stop_condition": "NEXT_LINK_ABSENT_OR_DISABLED",
+    "confidence": 0.767143
+  },
+  "repair_log": [
+    {
+      "finding": "LOCAL_ABSOLUTE_PATH_WOULD_BREAK_CROSS_PC_DETERMINISM",
+      "repair": "Removed resolved absolute path from receipt and retained portable evidence pointer plus canonical evidence SHA-256."
+    },
+    {
+      "finding": "CYCLE1_NUMERIC_REGEX_OVERCLASSIFIED_ADDRESS_AND_TITLE_VALUE_TYPES",
+      "repair": "Added runner-level semantic normalization using stable source locator evidence for title/price/address/image/detail_url/id."
+    },
+    {
+      "finding": "LOCATOR_STRATEGY_ORDER_NOT_STABLE_ACROSS_PARENT_OUTPUT",
+      "repair": "Normalized and sorted semantic/data/role/text/css with stability metadata."
+    }
+  ],
+  "authority": {
+    "parent_engine_blob": "978959b6f3fb7b1fcfcc9a82e86edc87ea907419",
+    "parent_locator_scorer_blob": "f20b02ac248bc769284fd24d987aae0dfaa72ca2",
+    "parent_pagination_blob": "d69cfe56f52d61c2508ec4d64c87a80f2bd517cd",
+    "runner_blob": "73c26e1c74a9fe663ed6b9a03444e6abcff6847d",
+    "request_blob": "08ac258be29f7292f05ee05c209c4e2461d39fa7",
+    "receipt_blob": "5cda7b28f1d6d8bc30a06e6b50651eb39becd85d"
+  },
+  "successor_command": "node SUCCESSOR_STRUCTURE_INFERENCE_RUNNER_V1.cjs STRUCTURE_INFERENCE_RUN_REQUEST_V1.json STRUCTURE_INFERENCE_RUN_RECEIPT_V1.json",
+  "chat_context_required": false,
+  "target_pc_execution": false,
+  "tunnel_create": false,
+  "new_browser_engine": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "PASS"
+}
