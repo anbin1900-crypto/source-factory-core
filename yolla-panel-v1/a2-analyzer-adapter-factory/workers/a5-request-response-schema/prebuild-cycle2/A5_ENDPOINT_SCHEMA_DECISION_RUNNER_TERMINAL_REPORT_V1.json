@@ -1,0 +1,55 @@
+{
+  "schema_version": "A5_ENDPOINT_SCHEMA_DECISION_RUNNER_TERMINAL_REPORT_V1",
+  "directive_id": "AI001-TO-A5-ENDPOINT-SCHEMA-DECISION-RUNNER-V2-20260807-001",
+  "directive_comment_id": 5217313682,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "worker": "A-5",
+  "role": "A-5_ENDPOINT_SCHEMA_SESSION_DECISION_OWNER",
+  "terminal": "A5_ENDPOINT_SCHEMA_DECISION_RUNNER_READY",
+  "status": "TERMINAL_PASS",
+  "result": {
+    "run_request_contract": "READY",
+    "run_receipt_contract": "READY",
+    "observation_pointer_input": "READY",
+    "structure_pointer_input": "READY",
+    "optional_response_body_pointer_input": "READY",
+    "endpoint_candidates_output": "READY",
+    "schema_fields_output": "READY_OR_UNKNOWN",
+    "identifier_map_output": "READY_OR_UNKNOWN",
+    "session_requirements_reference": "READY_NAME_AND_REQUIREMENT_TYPE_ONLY",
+    "mode_scores": "READY_DOM_API_HYBRID",
+    "recommended_mode": "READY",
+    "evidence_pointer": "READY",
+    "unevidenced_fields_unknown": "PASS",
+    "missing_response_body": "PASS_CONFIDENCE_DEGRADED",
+    "missing_core_structure_or_observation_payload": "PASS_FAIL_CLOSED",
+    "successor_single_command": "READY",
+    "exit_code_rules": "READY_0_10_20_30_40",
+    "raw_secret_value_count": 0
+  },
+  "required_outputs": {
+    "ENDPOINT_SCHEMA_DECISION_RUN_REQUEST_V1": "prebuild-cycle2/ENDPOINT_SCHEMA_DECISION_RUN_REQUEST_V1.json",
+    "ENDPOINT_SCHEMA_DECISION_RUN_RECEIPT_V1": "prebuild-cycle2/ENDPOINT_SCHEMA_DECISION_RUN_RECEIPT_V1.json",
+    "SUCCESSOR_ENDPOINT_SCHEMA_DECISION_RUNNER_V1": "prebuild-cycle2/SUCCESSOR_ENDPOINT_SCHEMA_DECISION_RUNNER_V1.json",
+    "LATEST_POINTER": "prebuild-cycle2/LATEST_A5_ENDPOINT_SCHEMA_DECISION_RUNNER_POINTER.json"
+  },
+  "entrypoint": "prebuild-cycle2/successor_endpoint_schema_decision_runner.cjs",
+  "validation_receipt": "prebuild-cycle2/A5_ENDPOINT_SCHEMA_DECISION_RUNNER_VALIDATION_RECEIPT_V1.json",
+  "validation": {
+    "fixture_smoke": "PASS_1_OF_1",
+    "assertions": "PASS_17_OF_17",
+    "node_syntax": "PASS_2_OF_2",
+    "remote_readback": "PASS_SOURCE_AND_SMOKE",
+    "raw_secret_reject": "PASS"
+  },
+  "successor_command": "node successor_endpoint_schema_decision_runner.cjs < run-request.json > run-receipt.json",
+  "boundaries": {
+    "actual_site_call_count": 0,
+    "target_pc_execution_count": 0,
+    "tunnel_create_count": 0,
+    "secret_value_capture_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
