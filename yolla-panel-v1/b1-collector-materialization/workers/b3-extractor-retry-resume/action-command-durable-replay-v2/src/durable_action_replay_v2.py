@@ -1,3 +1,4 @@
+
 from __future__ import annotations
 
 from copy import deepcopy
@@ -47,7 +48,13 @@ class DurableActionReplay:
                 "action_index": {},
                 "command_index": {},
                 "evidence_index": {},
-                "checkpoint": {"last_confirmed_action_id": None,"last_confirmed_sequence_no": 0,"pending_action_ids": [],"next_sequence_no": 1,"resume_token": None},
+                "checkpoint": {
+                    "last_confirmed_action_id": None,
+                    "last_confirmed_sequence_no": 0,
+                    "pending_action_ids": [],
+                    "next_sequence_no": 1,
+                    "resume_token": None,
+                },
             }
             self._refresh_checkpoint()
         else:
@@ -55,69 +62,264 @@ class DurableActionReplay:
             self._validate_loaded_state()
 
     @staticmethod
-    def make_idempotency_key(*, mission_id: str, session_id: str, command_id: str, page_id: str, action_type: str, payload: dict[str, Any]) -> str:
-        return digest({"mission_id": mission_id,"session_id": session_id,"command_id": command_id,"page_id": page_id,"action_type": action_type,"payload": payload})
+    def make_idempotency_key(
+        *,
+        mission_id: str,
+        session_id: str,
+        command_id: str,
+        page_id: str,
+        action_type: str,
+        payload: dict[str, Any],
+    ) -> str:
+        return digest({
+            "mission_id": mission_id,
+            "session_id": session_id,
+            "command_id": command_id,
+            "page_id": page_id,
+            "action_type": action_type,
+            "payload": payload,
+        })
 
     def _validate_loaded_state(self) -> None:
-        if self.state.get("schema_version") != self.schema_version: raise ValueError("unsupported state schema")
-        if self.state.get("session_id") != self.session_id: raise ValueError("session_id mismatch")
-        if self.state.get("mission_id") != self.mission_id: raise ValueError("mission_id mismatch")
-        self._validate_ledger_chain(); self._refresh_checkpoint()
+        if self.state.get("schema_version") != self.schema_version:
+            raise ValueError("unsupported state schema")
+        if self.state.get("session_id") != self.session_id:
+            raise ValueError("session_id mismatch")
+        if self.state.get("mission_id") != self.mission_id:
+            raise ValueError("mission_id mismatch")
+        self._validate_ledger_chain()
+        self._refresh_checkpoint()
 
     def _validate_ledger_chain(self) -> None:
-        prev = "GENESIS"; seen_seq = set(); seen_action = set()
+        prev = "GENESIS"
+        seen_seq = set()
+        seen_action = set()
         for record in self.state.get("ledger", []):
-            if int(record["sequence_no"]) in seen_seq: raise ValueError("duplicate sequence_no")
+            if int(record["sequence_no"]) in seen_seq:
+                raise ValueError("duplicate sequence_no")
             seen_seq.add(int(record["sequence_no"]))
-            if record["action_id"] in seen_action: raise ValueError("duplicate action_id")
+            if record["action_id"] in seen_action:
+                raise ValueError("duplicate action_id")
             seen_action.add(record["action_id"])
-            if record["prev_hash"] != prev: raise ValueError("broken prev_hash")
+            if record["prev_hash"] != prev:
+                raise ValueError("broken prev_hash")
             payload = {k: deepcopy(v) for k, v in record.items() if k != "record_hash"}
-            if record["record_hash"] != digest(payload): raise ValueError("record_hash mismatch")
+            expected = digest(payload)
+            if record["record_hash"] != expected:
+                raise ValueError("record_hash mismatch")
             prev = record["record_hash"]
 
-    def record_action(self, *, command_id: str, page_id: str, action_type: str, payload: dict[str, Any], timestamp: str, status: str = "PENDING") -> tuple[dict[str, Any], bool]:
-        if action_type not in ACTION_TYPES: raise ValueError(f"unsupported action_type: {action_type}")
-        idem = self.make_idempotency_key(mission_id=self.mission_id,session_id=self.session_id,command_id=command_id,page_id=page_id,action_type=action_type,payload=payload)
+    def record_action(
+        self,
+        *,
+        command_id: str,
+        page_id: str,
+        action_type: str,
+        payload: dict[str, Any],
+        timestamp: str,
+        status: str = "PENDING",
+    ) -> tuple[dict[str, Any], bool]:
+        if action_type not in ACTION_TYPES:
+            raise ValueError(f"unsupported action_type: {action_type}")
+        idem = self.make_idempotency_key(
+            mission_id=self.mission_id,
+            session_id=self.session_id,
+            command_id=command_id,
+            page_id=page_id,
+            action_type=action_type,
+            payload=payload,
+        )
         prior_action_id = self.state["idempotency_index"].get(idem)
-        if prior_action_id: return deepcopy(self.state["action_index"][prior_action_id]), True
+        if prior_action_id:
+            return deepcopy(self.state["action_index"][prior_action_id]), True
+
         seq = int(self.state["next_sequence_no"])
-        action_id = "act-" + digest({"mission_id":self.mission_id,"session_id":self.session_id,"sequence_no":seq,"idempotency_key":idem})[:20]
-        event = asdict(ActionEvent(command_id=command_id,mission_id=self.mission_id,session_id=self.session_id,page_id=page_id,action_id=action_id,sequence_no=seq,timestamp=timestamp,action_type=action_type,status=status,payload=deepcopy(payload),idempotency_key=idem))
-        record = deepcopy(event); record["prev_hash"] = self.state["ledger"][-1]["record_hash"] if self.state["ledger"] else "GENESIS"; record["record_hash"] = digest({k:deepcopy(v) for k,v in record.items()})
-        self.state["ledger"].append(record); self.state["idempotency_index"][idem] = action_id; self.state["action_index"][action_id] = deepcopy(event); self.state["command_index"].setdefault(command_id, []).append(action_id); self.state["next_sequence_no"] = seq + 1; self._refresh_checkpoint()
+        action_id = "act-" + digest({
+            "mission_id": self.mission_id,
+            "session_id": self.session_id,
+            "sequence_no": seq,
+            "idempotency_key": idem,
+        })[:20]
+        event = asdict(ActionEvent(
+            command_id=command_id,
+            mission_id=self.mission_id,
+            session_id=self.session_id,
+            page_id=page_id,
+            action_id=action_id,
+            sequence_no=seq,
+            timestamp=timestamp,
+            action_type=action_type,
+            status=status,
+            payload=deepcopy(payload),
+            idempotency_key=idem,
+        ))
+        record = deepcopy(event)
+        record["prev_hash"] = self.state["ledger"][-1]["record_hash"] if self.state["ledger"] else "GENESIS"
+        record["record_hash"] = digest({k: deepcopy(v) for k, v in record.items()})
+        self.state["ledger"].append(record)
+        self.state["idempotency_index"][idem] = action_id
+        self.state["action_index"][action_id] = deepcopy(event)
+        self.state["command_index"].setdefault(command_id, []).append(action_id)
+        self.state["next_sequence_no"] = seq + 1
+        self._refresh_checkpoint()
         return deepcopy(event), False
 
-    def bind_evidence(self, *, action_id: str, evidence: Iterable[dict[str, Any]]) -> dict[str, Any]:
-        if action_id not in self.state["action_index"]: raise KeyError(action_id)
+    def bind_evidence(
+        self,
+        *,
+        action_id: str,
+        evidence: Iterable[dict[str, Any]],
+    ) -> dict[str, Any]:
+        if action_id not in self.state["action_index"]:
+            raise KeyError(action_id)
         normalized = []
         for item in evidence:
-            if "evidence_id" not in item or "evidence_type" not in item: raise ValueError("evidence requires evidence_id and evidence_type")
-            normalized.append({"evidence_id":str(item["evidence_id"]),"evidence_type":str(item["evidence_type"]),"digest":str(item.get("digest") or digest(item)),"metadata":deepcopy(item.get("metadata") or {})})
+            if "evidence_id" not in item or "evidence_type" not in item:
+                raise ValueError("evidence requires evidence_id and evidence_type")
+            clean = {
+                "evidence_id": str(item["evidence_id"]),
+                "evidence_type": str(item["evidence_type"]),
+                "digest": str(item.get("digest") or digest(item)),
+                "metadata": deepcopy(item.get("metadata") or {}),
+            }
+            normalized.append(clean)
         self.state["evidence_index"][action_id] = normalized
-        return {"schema_version":"ACTION_COMMAND_CORRELATION_V1","mission_id":self.mission_id,"session_id":self.session_id,"action_id":action_id,"command_id":self.state["action_index"][action_id]["command_id"],"evidence":deepcopy(normalized)}
+        return deepcopy({
+            "schema_version": "ACTION_COMMAND_CORRELATION_V1",
+            "mission_id": self.mission_id,
+            "session_id": self.session_id,
+            "action_id": action_id,
+            "command_id": self.state["action_index"][action_id]["command_id"],
+            "evidence": normalized,
+        })
+
+    def set_status(self, action_id: str, status: str) -> None:
+        if action_id not in self.state["action_index"]:
+            raise KeyError(action_id)
+        self.state["action_index"][action_id]["status"] = status
+        for record in self.state["ledger"]:
+            if record["action_id"] == action_id:
+                record["status"] = status
+        self._rebuild_chain()
+        self._refresh_checkpoint()
+
+    def _rebuild_chain(self) -> None:
+        prev = "GENESIS"
+        for record in self.state["ledger"]:
+            record["prev_hash"] = prev
+            record["record_hash"] = digest({k: deepcopy(v) for k, v in record.items() if k != "record_hash"})
+            prev = record["record_hash"]
 
     def _refresh_checkpoint(self) -> None:
-        actions = sorted(self.state.get("action_index", {}).values(), key=lambda x:int(x["sequence_no"])); confirmed = [a for a in actions if a.get("status") == "CONFIRMED"]; pending = [a["action_id"] for a in actions if a.get("status") not in TERMINAL_ACTION_STATUSES]; last = confirmed[-1] if confirmed else None
-        cp = {"last_confirmed_action_id":last["action_id"] if last else None,"last_confirmed_sequence_no":int(last["sequence_no"]) if last else 0,"pending_action_ids":pending,"next_sequence_no":int(self.state.get("next_sequence_no",1))}
-        cp["resume_token"] = digest({"mission_id":self.mission_id,"session_id":self.session_id,"ledger_tail_hash":self.state["ledger"][-1]["record_hash"] if self.state.get("ledger") else "GENESIS",**cp}); self.state["checkpoint"] = cp
+        actions = list(self.state.get("action_index", {}).values())
+        actions.sort(key=lambda x: int(x["sequence_no"]))
+        confirmed = [a for a in actions if a.get("status") == "CONFIRMED"]
+        pending = [a["action_id"] for a in actions if a.get("status") not in TERMINAL_ACTION_STATUSES]
+        last = confirmed[-1] if confirmed else None
+        checkpoint_base = {
+            "last_confirmed_action_id": last["action_id"] if last else None,
+            "last_confirmed_sequence_no": int(last["sequence_no"]) if last else 0,
+            "pending_action_ids": pending,
+            "next_sequence_no": int(self.state.get("next_sequence_no", 1)),
+        }
+        checkpoint_base["resume_token"] = digest({
+            "mission_id": self.mission_id,
+            "session_id": self.session_id,
+            "ledger_tail_hash": self.state["ledger"][-1]["record_hash"] if self.state.get("ledger") else "GENESIS",
+            **checkpoint_base,
+        })
+        self.state["checkpoint"] = checkpoint_base
 
-    def replay_checkpoint(self) -> dict[str, Any]: return {"schema_version":"ACTION_REPLAY_CHECKPOINT_V1","mission_id":self.mission_id,"session_id":self.session_id,**deepcopy(self.state["checkpoint"])}
+    def action_event_contract(self) -> dict[str, Any]:
+        return {
+            "schema_version": "ACTION_EVENT_V1",
+            "required_fields": [
+                "command_id", "mission_id", "session_id", "page_id", "action_id",
+                "sequence_no", "timestamp", "action_type", "status", "payload", "idempotency_key"
+            ],
+            "action_types": sorted(ACTION_TYPES),
+            "ordering": "sequence_no ASC",
+            "timestamp_format": "RFC3339",
+            "idempotency_policy": "SAME_KEY_RETURN_PRIOR_ACTION_WITHOUT_REEXECUTION",
+        }
+
+    def correlation_snapshot(self) -> dict[str, Any]:
+        rows = []
+        actions = sorted(self.state["action_index"].values(), key=lambda x: int(x["sequence_no"]))
+        for action in actions:
+            rows.append({
+                "mission_id": self.mission_id,
+                "session_id": self.session_id,
+                "command_id": action["command_id"],
+                "page_id": action["page_id"],
+                "action_id": action["action_id"],
+                "sequence_no": action["sequence_no"],
+                "evidence": deepcopy(self.state["evidence_index"].get(action["action_id"], [])),
+            })
+        return {"schema_version": "ACTION_COMMAND_CORRELATION_V1", "rows": rows}
+
+    def durable_ledger_contract(self) -> dict[str, Any]:
+        return {
+            "schema_version": "DURABLE_ACTION_LEDGER_V1",
+            "append_only_identity_fields": [
+                "command_id", "mission_id", "session_id", "page_id", "action_id",
+                "sequence_no", "timestamp", "action_type", "payload", "idempotency_key"
+            ],
+            "hash_chain": "prev_hash -> record_hash",
+            "dedupe_index": "idempotency_key -> action_id",
+            "recovery_order": "sequence_no ASC",
+        }
+
+    def replay_checkpoint(self) -> dict[str, Any]:
+        return {"schema_version": "ACTION_REPLAY_CHECKPOINT_V1", "mission_id": self.mission_id, "session_id": self.session_id, **deepcopy(self.state["checkpoint"])}
 
     def successor_replay_command(self, *, pointer_path: str, state_path: str) -> dict[str, Any]:
-        cp = self.replay_checkpoint(); return {"schema_version":"SUCCESSOR_ACTION_REPLAY_COMMAND_V1","operation":"REPLAY_FROM_CHECKPOINT","mission_id":self.mission_id,"session_id":self.session_id,"pointer_path":pointer_path,"state_path":state_path,"resume_token":cp["resume_token"],"resume_after_sequence_no":cp["last_confirmed_sequence_no"],"resume_after_action_id":cp["last_confirmed_action_id"],"pending_action_ids":cp["pending_action_ids"],"requires_chat_context":False,"target_pc_execution_authorized":False}
+        cp = self.replay_checkpoint()
+        return {
+            "schema_version": "SUCCESSOR_ACTION_REPLAY_COMMAND_V1",
+            "operation": "REPLAY_FROM_CHECKPOINT",
+            "mission_id": self.mission_id,
+            "session_id": self.session_id,
+            "pointer_path": pointer_path,
+            "state_path": state_path,
+            "resume_token": cp["resume_token"],
+            "resume_after_sequence_no": cp["last_confirmed_sequence_no"],
+            "resume_after_action_id": cp["last_confirmed_action_id"],
+            "pending_action_ids": cp["pending_action_ids"],
+            "requires_chat_context": False,
+            "target_pc_execution_authorized": False,
+        }
 
     def reconstruct_minimum_order_from_ledger(self) -> list[dict[str, Any]]:
-        self._validate_ledger_chain(); return [{"sequence_no":int(r["sequence_no"]),"command_id":r["command_id"],"action_id":r["action_id"],"page_id":r["page_id"],"action_type":r["action_type"],"status":r["status"]} for r in sorted(self.state["ledger"], key=lambda x:int(x["sequence_no"]))]
+        self._validate_ledger_chain()
+        rows = []
+        for record in sorted(self.state["ledger"], key=lambda x: int(x["sequence_no"])):
+            rows.append({
+                "sequence_no": int(record["sequence_no"]),
+                "command_id": record["command_id"],
+                "action_id": record["action_id"],
+                "page_id": record["page_id"],
+                "action_type": record["action_type"],
+                "status": record["status"],
+            })
+        return rows
 
     def next_replay_actions(self, resume_token: str) -> list[dict[str, Any]]:
         cp = self.replay_checkpoint()
-        if resume_token != cp["resume_token"]: raise ValueError("resume token mismatch")
-        return [deepcopy(a) for a in sorted(self.state["action_index"].values(), key=lambda x:int(x["sequence_no"])) if int(a["sequence_no"]) > int(cp["last_confirmed_sequence_no"])]
+        if resume_token != cp["resume_token"]:
+            raise ValueError("resume token mismatch")
+        last_seq = int(cp["last_confirmed_sequence_no"])
+        return [deepcopy(a) for a in sorted(self.state["action_index"].values(), key=lambda x: int(x["sequence_no"])) if int(a["sequence_no"]) > last_seq]
+
+    def export_state(self) -> dict[str, Any]:
+        self._refresh_checkpoint()
+        return deepcopy(self.state)
 
     def save(self, path: str | Path) -> None:
-        self._refresh_checkpoint(); Path(path).write_text(json.dumps(self.state, ensure_ascii=False, sort_keys=True, indent=2)+"\n", encoding="utf-8")
+        self._refresh_checkpoint()
+        Path(path).write_text(json.dumps(self.state, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8")
 
     @classmethod
     def load(cls, path: str | Path) -> "DurableActionReplay":
-        state = json.loads(Path(path).read_text(encoding="utf-8")); return cls(str(state["session_id"]), mission_id=str(state["mission_id"]), state=state)
+        state = json.loads(Path(path).read_text(encoding="utf-8"))
+        return cls(str(state["session_id"]), mission_id=str(state["mission_id"]), state=state)
