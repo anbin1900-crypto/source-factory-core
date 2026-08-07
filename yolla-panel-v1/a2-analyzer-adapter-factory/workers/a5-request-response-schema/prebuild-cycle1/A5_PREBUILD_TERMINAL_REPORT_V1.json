@@ -1,0 +1,51 @@
+{
+  "schema_version": "A5_PREBUILD_TERMINAL_REPORT_V1",
+  "directive_id": "AI001-TO-A5-ENDPOINT-SCHEMA-DOM-API-HYBRID-PREBUILD-V1-20260807-001",
+  "directive_comment_id": 5216920354,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "worker": "A-5",
+  "role": "A-5_ENDPOINT_SCHEMA_SESSION_DECISION_OWNER",
+  "completed_at_kst": "2026-08-07T21:32:00+09:00",
+  "terminal": "A5_ENDPOINT_SCHEMA_DOM_API_HYBRID_PREBUILD_READY",
+  "status": "TERMINAL_PASS",
+  "result": {
+    "endpoint_catalog_request_template_inference": "READY",
+    "response_list_detail_schema_path_inference": "READY_WITH_BODY_LATE_BINDING",
+    "dom_json_path_correlation": "READY",
+    "session_header_cookie_requirement_types": "READY_NAME_AND_TYPE_ONLY",
+    "dom_api_hybrid_confidence_scoring": "READY",
+    "schema_drift_missing_body_late_binding": "READY_FAIL_CLOSED",
+    "successor_single_command_cli": "READY",
+    "pointer_restore": "READY_AFTER_POINTER_COMMIT",
+    "raw_secret_value_count": 0
+  },
+  "required_outputs": {
+    "ENDPOINT_SCHEMA_INFERENCE_V1": "prebuild-cycle1/ENDPOINT_SCHEMA_INFERENCE_V1.json",
+    "DOM_API_HYBRID_DECISION_V1": "prebuild-cycle1/DOM_API_HYBRID_DECISION_V1.json",
+    "SCHEMA_DRIFT_LATE_BINDING_V1": "prebuild-cycle1/SCHEMA_DRIFT_LATE_BINDING_V1.json",
+    "SUCCESSOR_RUN_PLAN_V1": "prebuild-cycle1/SUCCESSOR_RUN_PLAN_V1.json",
+    "LATEST_POINTER": "prebuild-cycle1/LATEST_A5_PREBUILD_POINTER.json"
+  },
+  "entrypoint": "prebuild-cycle1/prebuild_endpoint_schema_decision.cjs",
+  "input_schema": "prebuild-cycle1/RESPONSE_EVIDENCE_BUNDLE_V1.schema.json",
+  "smoke_fixture": "prebuild-cycle1/A5_PREBUILD_FIXTURE_SMOKE_1.json",
+  "validation_receipt": "prebuild-cycle1/A5_PREBUILD_VALIDATION_RECEIPT_V1.json",
+  "validation": {
+    "schema_parse": "PASS",
+    "node_syntax": "PASS_2_OF_2",
+    "fixture_smoke_contract_assertions": "PASS_17_OF_17",
+    "deterministic_replay": "PASS",
+    "remote_byte_readback": "PASS_SOURCE_AND_TEST",
+    "raw_secret_value_count": 0
+  },
+  "boundaries": {
+    "tunnel_create": false,
+    "successor_direct_call": false,
+    "target_pc_execution": false,
+    "secret_value_capture": false,
+    "audit_only_work": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
