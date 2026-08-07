@@ -1,0 +1,55 @@
+{
+  "schema_version": "A3_CDP_OBSERVATION_RUNNER_VALIDATION_RECEIPT_V1",
+  "directive_id": "AI001-TO-A3-CDP-OBSERVATION-RUNNER-AND-RECEIPT-V2-20260807-001",
+  "directive_comment": 5217308019,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "worker": "A-3",
+  "role": "A-3_CDP_OBSERVATION_ENGINE_OWNER",
+  "parent_result": "A3_CHROME_CDP_OBSERVATION_AGENT_PREBUILD_READY",
+  "source_head": "d78269d9b3b6e7afbbefe3fb3be5ef6eea7fb111",
+  "validated_remote_head_before_receipt": "d8f189284684822c13f6a43acb3c6e4e2af6d9bd",
+  "node_version": "v22.16.0",
+  "validation": {
+    "node_syntax": "PASS_2_OF_2",
+    "local_mock_smoke": "PASS_1_OF_1",
+    "eligible_target_filter_pass": true,
+    "browser_ui_background_exclusion_pass": true,
+    "request_contract_pass": true,
+    "receipt_contract_pass": true,
+    "output_pointer_pass": true,
+    "raw_endpoint_in_receipt_count": 0,
+    "raw_secret_value_count": 0,
+    "dom_recursive_redaction_pass": true,
+    "internal_retry_count": 0,
+    "idempotent_replay_check": true,
+    "http_cdp_runtime_argument_ready": true,
+    "websocket_cdp_runtime_argument_ready": true
+  },
+  "validated_candidate_sha256": {
+    "SUCCESSOR_CDP_OBSERVATION_RUNNER_V1.cjs": "866f940b08327ee967d88e56214b4051f4207d1b49c3144a7d972f8431d94a8d",
+    "mock_smoke_cycle2_v1.cjs": "276977345a295509631dbbbbce094c8c5f4d39bf1aca94f7e0bb177bdf1317b8"
+  },
+  "remote_readback_blobs": {
+    "CDP_OBSERVATION_RUN_REQUEST_V1": "48ef55462b2c6e73713dbae0eb07c38f0f7284d0",
+    "CDP_OBSERVATION_RUN_RECEIPT_V1": "81cc6288a92cd0effffa8063930aa3a734262d75",
+    "SUCCESSOR_CDP_OBSERVATION_RUNNER_V1": "f49cae15f2922a6b705939570317f8fbddecff6c",
+    "mock_smoke_cycle2_v1": "d01958eaade2e860fc792b2d84ebc68fe4420faf"
+  },
+  "remote_clone_check": {
+    "status": "ENV_DNS_UNAVAILABLE",
+    "exact_error": "Could not resolve host: github.com",
+    "authority_fallback": "GITHUB_CONNECTOR_REMOTE_READBACK_PASS"
+  },
+  "execution_counters": {
+    "target_pc_execution_count": 0,
+    "tunnel_change_count": 0,
+    "pc_agent_direct_connection_count": 0,
+    "successor_direct_call_count": 0,
+    "production_write_count": 0
+  },
+  "status": "PASS",
+  "terminal": "A3_CDP_OBSERVATION_RUNNER_AND_RECEIPT_READY",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
