@@ -1,0 +1,22 @@
+{
+  "schema_version": "B3_USER_JOURNEY_STATE_MACHINE_V5_SOURCE_MANIFEST",
+  "directive_id": "A0-TO-B3-USER-JOURNEY-STATE-MACHINE-V5-20260808-001",
+  "execute_comment_id": 5219611492,
+  "directive_comment_id": 5219458231,
+  "files": [
+    {"path":"USER_JOURNEY_STATE_MACHINE_V1.json","blob":"98a6182ac5c5b92159085d2581278da8cca02786"},
+    {"path":"STATE_MACHINE_SEMANTIC_BINDING_V1.json","blob":"43e991f8ca443999ac7c888de42ff0a694c0937c"},
+    {"path":"src/user_journey_state_machine_v5.py","blob":"7c7998eb8f3c46ff874959d5accd8164b1d6a259"},
+    {"path":"tests/test_user_journey_state_machine_v5.py","blob":"98b6237c8cf43682213e3be6226578045829c9a8"},
+    {"path":"fixtures/user_journey_state_machine_fixture_v5.json","blob":"8d112af8f8bfa9c4479325ce16e678c08285c075"},
+    {"path":"tools/run_user_journey_state_machine_fixture_v5.py","blob":"bc4f8af509e11468893d8ac32b3e06c231b444b4"},
+    {"path":"tools/run_user_journey_state_machine_fixture_v5.cmd","blob":"95049318f8795c002f31afdb80dc9c526dc407aa"},
+    {"path":"generated/USER_JOURNEY_STATE_MACHINE_V1.json","blob":"24a5477e6f18c4f51c20897a04626306fb85310a"},
+    {"path":"generated/B3_USER_JOURNEY_STATE_MACHINE_FIXTURE_RECEIPT_V5.json","blob":"b9d3c933d1ae911ddee59341422288b14dc78ac6"},
+    {"path":"B3_V5_TEST_RESULTS.json","blob":"459e5f2ee22b960a5f92b63ba2c855f92ad4b46b"}
+  ],
+  "remote_readback_pre_final": "PASS_10_OF_10",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
