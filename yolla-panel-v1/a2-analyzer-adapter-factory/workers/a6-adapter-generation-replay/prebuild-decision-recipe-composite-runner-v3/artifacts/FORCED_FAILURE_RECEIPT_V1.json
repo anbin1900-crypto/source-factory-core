@@ -1,0 +1,14 @@
+{
+  "schema_version":"ADAPTER_REPLAY_RECEIPT_V1",
+  "command_id":"AI001-A6-C3-SMOKE-001",
+  "checkpoint_id":"cp-AI001-A6-C3-SMOKE-001",
+  "status":"FAILED",
+  "failed_step":"s03",
+  "executed_step_count":2,
+  "skipped_completed_step_count":0,
+  "last_completed_step":"s02",
+  "resume_from_step":2,
+  "recipe_version":"1.0.0-cycle3",
+  "adapter_version":"1.0.0-cycle3",
+  "receipt_sha256":"e02a06f99cf049f74e04e1a301c84d955ce9a6b9f5e4270512ac0668bee1f484"
+}
