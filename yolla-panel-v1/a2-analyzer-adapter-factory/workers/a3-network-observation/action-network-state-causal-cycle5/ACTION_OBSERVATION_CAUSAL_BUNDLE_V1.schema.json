@@ -1,0 +1,24 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"urn:yolla:a3:action-observation-causal-bundle:v1",
+  "title":"ACTION_OBSERVATION_CAUSAL_BUNDLE_V1",
+  "type":"object",
+  "required":["schema_version","bundle_id","flow_class","source_action_kind","fact_state","provenance","causal_chain","observed_facts","causal_basis","inference_candidates","compatibility","consumer_projection","redaction","bundle_sha256"],
+  "properties":{
+    "schema_version":{"const":"ACTION_OBSERVATION_CAUSAL_BUNDLE_V1"},
+    "bundle_id":{"type":"string"},
+    "flow_class":{"enum":["PUBLIC_READ","WRITE","MY_LISTING","EDIT"]},
+    "source_action_kind":{"type":"string"},
+    "fact_state":{"const":"OBSERVED_CAUSAL_BINDING"},
+    "provenance":{"type":"object","required":["command_id","lineage_id","page_id","action_id","source_event_ids","first_timestamp","last_timestamp"],"properties":{"command_id":{"type":"string"},"lineage_id":{"type":"string"},"page_id":{"type":"string"},"action_id":{"type":"string"},"source_event_ids":{"type":"array","items":{"type":"string"}},"first_timestamp":{"type":"string"},"last_timestamp":{"type":"string"}}},
+    "causal_chain":{"type":"array","minItems":4,"items":{"type":"object"}},
+    "observed_facts":{"type":"object"},
+    "causal_basis":{"type":"object","required":["same_command_id","same_page_id","same_action_id","direct_correlation_event","time_order_observed","business_causality_inferred"],"properties":{"same_command_id":{"const":true},"same_page_id":{"const":true},"same_action_id":{"const":true},"direct_correlation_event":{"const":true},"time_order_observed":{"const":true},"business_causality_inferred":{"const":false}}},
+    "inference_candidates":{"type":"array","maxItems":0},
+    "compatibility":{"type":"object","required":["NETWORK_OBSERVATION_EVENT_REF_V1","RESPONSE_BODY_REF_V1","DOM_EVENT_REF_V1"]},
+    "consumer_projection":{"type":"object","required":["a4","a5"]},
+    "redaction":{"type":"object","required":["raw_secret_value_count","raw_pii_value_count","raw_values_stored"],"properties":{"raw_secret_value_count":{"const":0},"raw_pii_value_count":{"const":0},"raw_values_stored":{"const":false}}},
+    "bundle_sha256":{"pattern":"^sha256:[0-9a-f]{64}$","type":"string"}
+  },
+  "additionalProperties":false
+}
