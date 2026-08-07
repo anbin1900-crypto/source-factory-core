@@ -1,0 +1,42 @@
+{
+  "schema_version": "LATEST_B6_CYCLE7_REAL_SITE_E2E_BUNDLE_POINTER_V1",
+  "directive_id": "A0-TO-B6-CYCLE7-REAL-SITE-E2E-BUNDLE-V6-20260808-001",
+  "cycle_id": "A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001",
+  "directive_comment": 5220474237,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 42,
+  "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+  "baseline_head": "d457178e1f572be74f44886a2ce28707f8553489",
+  "content_head": "b6ee591e67ade993c6b5fb265f16cf08f81da118",
+  "final_report_commit": "98be4825b71e2da569e5b24c69f8b61513e75bf8",
+  "root": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/cycle7-real-site-e2e-one-command-bundle-v1",
+  "objects": {
+    "bundle": {"path":"CYCLE7_REAL_SITE_E2E_ONE_COMMAND_BUNDLE_V1.json","blob":"28fffc48a40811350fe50e791ee14a1f12d86d01"},
+    "producer_contract": {"path":"CYCLE7_A3_B4_PRODUCER_POINTER_CONTRACT_V1.json","blob":"526b361e5e7521cfa367e2e014ff79807166262e"},
+    "scenario_plan": {"path":"REPRESENTATIVE_SCENARIO_PLAN_V1.json","blob":"646456f4fe832f7800490067f01fa0be18f334be"},
+    "resume_contract": {"path":"CHECKPOINT_RESUME_AND_DUPLICATE_SUPPRESSION_V1.json","blob":"5f25f1f71fb9ca320c8fd9ece719d46a659883e9"},
+    "runner": {"path":"cycle7_real_site_e2e_one_command_runner_v1.mjs","blob":"27ede49fadc2c8968c7c5d2193b3a298d364fac8"},
+    "test": {"path":"test_cycle7_real_site_e2e_one_command_v1.mjs","blob":"69d5515fab510d1f142def80b2b41217b65b6ca2"},
+    "checkpoint_fixture": {"path":"fixtures/INTERRUPTED_CYCLE7_CHECKPOINT_V1.json","blob":"09eb741753b934df56fdd5c797e71209676245b9"},
+    "a3_pointer_fixture": {"path":"fixtures/producer-pointers/A3_CYCLE7_POINTER.json","blob":"000e50e5a2dd0f578e5a69bff888772ecb0b7e9f"},
+    "b4_pointer_fixture": {"path":"fixtures/producer-pointers/B4_CYCLE7_POINTER.json","blob":"9eba54db3c833c1b117f293bf54c57c393d5c489"},
+    "final_report": {"path":"B6_CYCLE7_REAL_SITE_E2E_BUNDLE_FINAL_REPORT_V1.json","blob":"093b3682e86899cdd261c64eb18723e20e8d136e"}
+  },
+  "validation": {
+    "local_tests": "PASS_10_OF_10",
+    "remote_content_readback": "PASS_9_OF_9",
+    "result_envelope": "PASS_7_OF_7",
+    "resume": "PASS_SKIP_COMPLETED_2_RESUME_PENDING_2",
+    "a3_b4_late_bind": "PASS_2_OF_2"
+  },
+  "terminal": "B6_CYCLE7_REAL_SITE_E2E_BUNDLE_READY",
+  "status": "TERMINAL_CONTEXTLESS_REAL_SITE_E2E_PREBUILD_LATE_BIND_AND_RESUME_FIXTURE_PASS",
+  "target_pc_execution": false,
+  "live_site_call": false,
+  "tunnel_change": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}
