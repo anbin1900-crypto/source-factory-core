@@ -22,11 +22,13 @@
   "source_sha256": {
     "message_dispatch_result_return.cjs": "ff7992f69037d40d38ebbd290573cc812d42a7de1e4461d4f34f23e6b865b0c8",
     "test_message_dispatch_result_return.cjs": "e3a88a3a7d6e9a7ca61c50a07f9d47ccbc9a7866af1aa5b8a799428af60e8809",
-    "D3_CONTEXT_MESSAGE_DISPATCH_RESULT_RETURN_V1.ps1": "1e23c0437fadc48b137be9abec450b2f7c04b993a7ceedb0fa34ef2ef9e2f53f",
-    "D3_CONTEXT_MESSAGE_DISPATCH_RESULT_RETURN_INPUT_V1.json": "cc5c772336b1766fc308e0a55a0ab9a70d95fe3dfacb6e1e50f028545d55f6f6"
+    "D3_CONTEXT_MESSAGE_DISPATCH_RESULT_RETURN_V1.ps1": "cb90c42f003196ede26419d5a3095bd0e6e0afc712c48d993b815c8c17a0668c",
+    "D3_CONTEXT_MESSAGE_DISPATCH_RESULT_RETURN_INPUT_V1.json": "b09c583cc14dfb7ab6289220c7b309c7a56e06c74a765991578b51319d775a64"
   },
-  "target_pc_live_execution": "PENDING_COMMAND_BUS",
-  "target_pc_live_pass_claimed": false,
+  "target_pc_live_execution": "PASS_COMMAND_BUS_EXECUTOR_2_0_2_NOTEX",
+  "target_pc_live_pass_claimed": true,
+  "live_result_file": "D3_LIVE_RESULT_V1.json",
+  "terminal": "MESSAGE_DISPATCH_AND_RESULT_RETURN_LIVE_PASS",
   "new_system_build": false,
   "production": false,
   "ready": false,
