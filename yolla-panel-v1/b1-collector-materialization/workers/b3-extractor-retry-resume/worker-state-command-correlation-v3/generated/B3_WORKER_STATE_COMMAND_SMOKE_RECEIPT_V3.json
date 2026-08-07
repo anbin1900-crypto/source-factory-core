@@ -1,0 +1,14 @@
+{
+  "schema_version":"B3_WORKER_STATE_COMMAND_SMOKE_RECEIPT_V3",
+  "status":"PASS",
+  "accepted_count":5,
+  "duplicate_suppressed_count":1,
+  "stale_suppressed_count":1,
+  "unknown_side_state_count":1,
+  "cmd1_final_state":"COMPLETE",
+  "cmd2_final_state":"BLOCKED",
+  "result_receipt_bound":"receipt-1",
+  "restart_replay_state":"COMPLETE",
+  "ledger_record_count":6,
+  "target_pc_execution":false
+}
