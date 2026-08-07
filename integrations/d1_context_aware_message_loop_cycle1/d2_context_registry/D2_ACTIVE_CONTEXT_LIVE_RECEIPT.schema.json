@@ -1,0 +1,22 @@
+{
+ "$schema":"https://json-schema.org/draft/2020-12/schema",
+ "$id":"D2_ACTIVE_CONTEXT_LIVE_RECEIPT_V1",
+ "type":"object",
+ "required":["schema_version","cycle_id","ROLE_ID","CONTEXT_ID","CONTEXT_NAME","PAGE_ID","COMMAND_ID","WORK_STATUS","STARTED_AT","LAST_SEEN_AT","raw_conversation_persisted","secret_exposure_count","target_pc_live_readback","production"],
+ "properties":{
+   "schema_version":{"const":"D2_ACTIVE_CONTEXT_LIVE_RECEIPT_V1"},
+   "cycle_id":{"const":"D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001"},
+   "ROLE_ID":{"type":"string","minLength":1},
+   "CONTEXT_ID":{"type":"string","minLength":1},
+   "CONTEXT_NAME":{"type":["string","null"]},
+   "PAGE_ID":{"type":"string","minLength":1},
+   "COMMAND_ID":{"type":"string","minLength":1},
+   "WORK_STATUS":{"enum":["WAITING","WORKING","RESULT_PENDING","COMPLETED","REVIEW_REQUIRED"]},
+   "STARTED_AT":{"type":"string","format":"date-time"},
+   "LAST_SEEN_AT":{"type":"string","format":"date-time"},
+   "raw_conversation_persisted":{"const":false},
+   "secret_exposure_count":{"const":0},
+   "target_pc_live_readback":{"const":true},
+   "production":{"const":false}
+ }
+}
