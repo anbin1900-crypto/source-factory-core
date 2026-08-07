@@ -1,0 +1,44 @@
+{
+  "schema_version": "A3_SITE_ANALYZER_WAVE3_START_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment": 5212021138,
+  "worker": "A-3",
+  "role": "CDP_EVENT_STREAM_INTEGRATION_AND_RECOVERY_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "started_at_kst": "2026-08-07T13:42:00+09:00",
+  "observed_remote_head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+  "wave2_terminal": "A3_SITE_ANALYZER_WAVE2_LIVE_CHROMIUM_CDP_EVENT_PASS",
+  "consumer_bindings": {
+    "a2": {
+      "pr": 18,
+      "head": "6cf05d0369dbae0b2413f562146243b15f350759",
+      "interface": "AnalyzerCore.registerModule(name, module.execute(ctx))"
+    },
+    "a4": {
+      "pr": 23,
+      "head": "efc3ca185dd5c124eb0f10a55018a25d60df55dc",
+      "interface": "bindLiveEventStream(events, options)"
+    },
+    "a5": {
+      "pr": 24,
+      "head": "b7619f0ffacbb4937b4842eab2f6cff75504ebf8",
+      "interface": "bindLiveTraffic(input, options)"
+    }
+  },
+  "execution_plan": [
+    "bind real Chromium CDP stream to A-2/A-4/A-5 consumer adapters",
+    "run start-navigation-dynamic-DOM-response-page-navigation scenario",
+    "close and reopen browser/CDP session",
+    "verify monotonically ordered stream and listener cleanup",
+    "repair any attach/body/event-loss/restart defect and rerun",
+    "publish event counts, commands, exit codes, final report and pointer"
+  ],
+  "mode": "ONE_OWNER_END_TO_END",
+  "mid_process_approval": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "STARTED"
+}
