@@ -1,0 +1,9 @@
+{
+  "schema_version":"AI001_ACTIVE_COMMAND_V1",
+  "command_id":"AI001-WORKER-STATE-RECOVERY-V3-001",
+  "worker_id":"A-7",
+  "idempotency_key":"AI001-A7-WORKER-STATE-RECOVERY-V3-001",
+  "status":"PASS",
+  "safe_rerun":true,
+  "non_idempotent_side_effect_committed":false
+}

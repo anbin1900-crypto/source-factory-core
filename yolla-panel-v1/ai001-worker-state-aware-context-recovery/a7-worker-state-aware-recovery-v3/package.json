@@ -1,0 +1,8 @@
+{
+  "name":"a7-worker-state-aware-context-recovery-v3",
+  "version":"1.0.0",
+  "private":true,
+  "type":"commonjs",
+  "scripts":{"test":"node --test tests/*.test.cjs","recover":"node RECOVER_WORK_BOOTSTRAP_V1.cjs --pointer ./LATEST_AI001_MISSION_POINTER_V1.json"},
+  "engines":{"node":">=20"}
+}

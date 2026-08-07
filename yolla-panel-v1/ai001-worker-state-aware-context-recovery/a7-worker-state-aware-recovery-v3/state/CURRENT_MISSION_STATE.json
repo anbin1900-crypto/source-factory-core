@@ -1,0 +1,12 @@
+{
+  "schema_version":"AI001_CURRENT_MISSION_STATE_V1",
+  "mission_id":"AI001-WORKER-STATE-AWARE-CONTEXT-RECOVERY-V3",
+  "phase":"PREBUILD_CYCLE3_TERMINAL",
+  "active_command_id":"AI001-WORKER-STATE-RECOVERY-V3-001",
+  "last_completed_command_id":"AI001-WORKER-STATE-RECOVERY-V3-001",
+  "latest_result_pointer":"state/LATEST_RESULT.json",
+  "current_checkpoint":"checkpoints/0001_CP-V3-SOURCE.json",
+  "blocker":null,
+  "next_action":{"decision":"ALREADY_DONE","reason":"PASS_RESULT_ALREADY_BOUND"},
+  "worker_state":{"worker_id":"A-7","command_id":"AI001-WORKER-STATE-RECOVERY-V3-001","state":"COMPLETE","task_pass":true}
+}
