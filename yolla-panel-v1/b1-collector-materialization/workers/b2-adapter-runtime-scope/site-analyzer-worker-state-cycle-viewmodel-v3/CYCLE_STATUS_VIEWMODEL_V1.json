@@ -1,0 +1,27 @@
+{
+  "schema_version": "CYCLE_STATUS_VIEWMODEL_V1",
+  "directive_id": "AI001-TO-B2-WORKER-STATE-AND-CYCLE-STATUS-VIEWMODEL-V3-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "summary_fields": ["total", "complete", "generating", "blocked", "unknown", "cycle_state"],
+  "extended_fields": ["idle", "dispatched", "result_pending"],
+  "cycle_state_enum": ["IDLE", "ACTIVE", "RESULT_PENDING", "BLOCKED", "UNKNOWN", "COMPLETE"],
+  "precedence": [
+    "UNKNOWN if unknown > 0",
+    "BLOCKED if blocked > 0",
+    "RESULT_PENDING if total > 0 and complete == total and result_pending > 0",
+    "COMPLETE if total > 0 and complete == total and result_pending == 0",
+    "ACTIVE if generating > 0 or dispatched > 0",
+    "IDLE otherwise"
+  ],
+  "count_policy": {
+    "complete": "worker_state == COMPLETE including COMPLETE_RESULT_PENDING cards",
+    "result_pending": "task_status == COMPLETE_RESULT_PENDING",
+    "generating": "worker_state == GENERATING",
+    "blocked": "worker_state == BLOCKED",
+    "unknown": "worker_state == UNKNOWN"
+  },
+  "terminal_browser_event": "CYCLE_BROWSER_TERMINAL may be displayed only from an explicit B-1 receipt/event, never inferred by this ViewModel.",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
