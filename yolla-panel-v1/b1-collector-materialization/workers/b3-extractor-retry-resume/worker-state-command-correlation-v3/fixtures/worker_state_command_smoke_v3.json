@@ -1,0 +1,18 @@
+{
+  "mission_id": "mission-worker-state-v3",
+  "action_bindings": {
+    "cmd-1": {"action_id": "act-1", "session_id": "session-1"},
+    "cmd-2": {"action_id": "act-2", "session_id": "session-1"}
+  },
+  "events": [
+    {"worker_id":"A-3","page_id":"page-22","command_id":"cmd-1","event_seq":1,"observed_at":"2026-08-07T22:00:00+09:00","state":"DISPATCHED"},
+    {"worker_id":"A-3","page_id":"page-22","command_id":"cmd-1","event_seq":2,"observed_at":"2026-08-07T22:00:01+09:00","state":"GENERATING"},
+    {"worker_id":"A-3","page_id":"page-22","command_id":"cmd-1","event_seq":3,"observed_at":"2026-08-07T22:00:02+09:00","state":"COMPLETE"},
+    {"worker_id":"A-3","page_id":"page-22","command_id":"cmd-1","event_seq":3,"observed_at":"2026-08-07T22:00:02+09:00","state":"COMPLETE"},
+    {"worker_id":"A-3","page_id":"page-22","command_id":"cmd-1","event_seq":4,"observed_at":"2026-08-07T22:00:03+09:00","state":"GENERATING"},
+    {"worker_id":"A-3","page_id":"page-22","command_id":"cmd-1","event_seq":5,"observed_at":"2026-08-07T22:00:04+09:00","state":"UNKNOWN"},
+    {"worker_id":"A-3","page_id":"page-22","command_id":"cmd-2","event_seq":1,"observed_at":"2026-08-07T22:01:00+09:00","state":"DISPATCHED"},
+    {"worker_id":"A-3","page_id":"page-22","command_id":"cmd-2","event_seq":2,"observed_at":"2026-08-07T22:01:01+09:00","state":"BLOCKED"}
+  ],
+  "result_receipt": {"command_id":"cmd-1","receipt_id":"receipt-1","result_digest":"sha256:abc123","receipt_pointer":"results/cmd-1.json"}
+}
