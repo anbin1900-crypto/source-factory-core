@@ -1,0 +1,32 @@
+{
+  "schema_version":"LATEST_A2_COMPOSITE_PIPELINE_POINTER_V1",
+  "directive_id":"AI001-TO-A2-COMPOSITE-PIPELINE-AND-WORKER-STATE-INTEGRATION-V3-20260807-001",
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "role":"A-2_GENERIC_SITE_ANALYZER_INTEGRATION_OWNER",
+  "repository":"anbin1900-crypto/source-factory-core",
+  "worker_pr":18,
+  "branch":"integration/a2-generic-site-analyzer-adapter-factory-v1",
+  "parent_pointer":{"path":"yolla-panel-v1/a2-analyzer-adapter-factory/successor-execution-manifest-v1/LATEST_A2_SUCCESSOR_EXECUTION_MANIFEST_POINTER.json","commit":"639a1d652ef92a70324a59fd0bdb1f941b91fede","blob":"f12f05510dd864733b31ab0ccf0ffbfccbad1af5"},
+  "source_commit":"56dc8016f0cc568f81807bb75f6555339e2f9c69",
+  "root":"yolla-panel-v1/a2-analyzer-adapter-factory/composite-pipeline-v1",
+  "artifacts":{
+    "composite_pipeline":{"path":"COMPOSITE_PIPELINE_MANIFEST_V1.json","blob":"588685bdeb707a39f4fe2e45a6c67197f95fd0cf"},
+    "worker_browser_state_event":{"path":"WORKER_BROWSER_STATE_EVENT_V1.json","blob":"88989d40ebc42539555a0699350bd3ea86b091bf"},
+    "successor_execution_manifest_v2":{"path":"SITE_ANALYZER_SUCCESSOR_EXECUTION_MANIFEST_V2.json","blob":"ffec5a4b2248b16c65e4e4d1760db0e5ec5e49d7"},
+    "orchestration_fixture":{"path":"ORCHESTRATION_FIXTURE_V1.json","blob":"39fee52779324827ad88f358be3044da9e3d4c3c"},
+    "current_mission_v2":{"path":"AI001_SITE_ANALYZER_CURRENT_MISSION_V2.json","blob":"83b0be24c8c94317cdf700bed0a13ae5452a8c8c"},
+    "validation_receipt":{"path":"A2_COMPOSITE_PIPELINE_VALIDATION_RECEIPT_V1.json","blob":"c11b54af123525d04d0e1270517728b7adeb0a86"}
+  },
+  "a_pipeline_snapshot":{"A-3":"3f317672d299ebafa46f268b8aad0760d819eccf","A-4":"cd5c7a17f2f1aae02c2fbe4d988dea00e9763061","A-5":"ea5c6321204e9d2577924c14e01d658ebf46a443","A-6":"6e8c05bfc78189d02b6c9ddf785d2c1b881f7265","A-7":"7718170f6c616a99c99c4d366601a8dd6bb2b731"},
+  "worker_state_contract":{"required_fields":7,"browser_complete_is_technical_pass":false,"technical_pass_rule":"COMPLETE+PASS+NONEMPTY_TERMINAL","observer_consume_point":"AFTER_EACH_COMMAND_EVENT_BEFORE_NEXT_ACTION_GENERATION"},
+  "context_restore_order":["LATEST_POINTER","CURRENT_MISSION","CURRENT_COMMAND","LATEST_RESULT","NEXT_ACTION"],
+  "fixture":{"event_sequence":"DISPATCHED->GENERATING->COMPLETE","technical_result":"PASS","selected_next_stage":"A4_STRUCTURE_RUNNER","command_count":5,"target_pc_execution":false},
+  "validation":{"json_parse":"PASS_5_OF_5","exact_source_heads":"PASS_5_OF_5","pointer_references":"PASS_5_OF_5","event_fields":"PASS_7_OF_7","complete_ne_pass":"PASS","fixture_e2e":"PASS","next_stage_selection":"PASS_A4_STRUCTURE_RUNNER","shell_execution":false,"target_pc_execution":false},
+  "CURRENT_MISSION":"COMPOSITE_PIPELINE_AND_CHROME_WORKER_STATE_INTEGRATION_PRE_TARGET_PC_BINDING",
+  "CURRENT_PHASE":"PREBUILD_CYCLE3_COMPOSITE_PIPELINE",
+  "LATEST_COMPLETED":"A2_SUCCESSOR_EXECUTION_MANIFEST_AND_CONTEXT_INDEPENDENT_INTEGRATION_READY",
+  "NEXT_ACTION":"AI001_DELIVER_LATEST_COMPOSITE_POINTER_TO_SUCCESSOR;SUCCESSOR_RESOLVE_TARGET_PC_PLACEHOLDERS;EXECUTE_ONE_SELECTED_COMMAND_AT_A_TIME",
+  "boundaries":{"target_pc_execution":false,"tunnel_change":false,"worker_direct_tunnel":false,"new_browser_engine":false,"production":false,"ready":false,"merge":false},
+  "terminal":"A2_COMPOSITE_PIPELINE_AND_WORKER_STATE_INTEGRATION_READY",
+  "status":"TERMINAL_PASS_PREBUILD_ONLY"
+}
