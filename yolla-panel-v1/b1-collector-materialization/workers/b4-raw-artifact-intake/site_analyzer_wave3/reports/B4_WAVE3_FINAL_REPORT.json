@@ -1,0 +1,79 @@
+{
+  "schema_version": "B4_SITE_ANALYZER_WAVE3_FINAL_REPORT_V1",
+  "worker": "B-4",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment_id": 5212048911,
+  "role": "DETERMINISTIC_EDGE_REGRESSION_FIXTURE_OWNER",
+  "status": "PASS",
+  "terminal_contract": "B4_SITE_ANALYZER_WAVE3_EDGE_REGRESSION_PASS_OR_PROVEN_EXTERNAL_BLOCKER",
+  "terminal": "B4_SITE_ANALYZER_WAVE3_EDGE_REGRESSION_PASS",
+  "source_head": "6c12569e002bb01b2cacfcc7fef005292726bcbf",
+  "execution_artifact_commit": "880e9938069df6cfb03b18d8edf007b57060536e",
+  "test_report_commit": "49981b5c191f05ee2e6d4fd803250e87c45f6289",
+  "implementation": {
+    "wave2_fixture_extension": "PASS_NESTED_FRAME_LAZY_SCROLL_IDENTITY_MANIFEST",
+    "single_entrypoint": "python run_edge_regression.py",
+    "actual_system_chromium": true,
+    "actual_local_http": true,
+    "transport": "LOCAL_HTTP_RESPONSE_TO_CHROMIUM_DOM_BRIDGE",
+    "popup": "PASS",
+    "iframe": "PASS",
+    "nested_iframe": "PASS",
+    "lazy_scroll": "PASS_IDS_1_TO_10",
+    "infinite_scroll": "PASS_IDS_1_TO_10",
+    "pagination": "PASS_IDS_1_TO_10",
+    "reload": "PASS_IDENTITY_STABLE",
+    "browser_close_reopen": "PASS_IDENTITY_STABLE",
+    "interrupted_extraction_resume": "PASS_PAGE1_STATE_TO_PAGE2_IDS_1_TO_10"
+  },
+  "evidence": {
+    "edge_matrix": "PASS_9_OF_9",
+    "network_event_counts": "PASS_44_EACH_OF_2_RUNS",
+    "replay_digest": "ff0efc3736dcacb90fc1004c83c2220ca7eedbc1157a008f39b077c6b6470d8a",
+    "replay_digest_parity": "PASS_2_OF_2",
+    "record_identity_digest": "10fe5228cb7a25284c3ae985c42bb93643611202c5a76c5704c69a3be16a84c1",
+    "stable_ids": [1,2,3,4,5,6,7,8,9,10],
+    "pytest": "PASS_6_OF_6",
+    "python_compile": "PASS_4_OF_4"
+  },
+  "cross_worker_source_identity": {
+    "canonical_source_pointer": "B4_COMMON_HTTP_FIXTURE::stable-id-v1::records-1-10",
+    "A-3": {
+      "status": "PASS_NON_MUTATING_OBSERVER_COMPATIBILITY",
+      "evidence_head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+      "record_count": 10,
+      "note": "Historical A-3 artifact carries live route/body evidence rather than the B-4 Git blob; observer does not mutate record identity."
+    },
+    "B-3": {
+      "status": "PASS_NON_MUTATING_RECIPE_CANONICAL_REBOUND",
+      "evidence_head": "b94ef16dd8a0e73e430c1e0678ce6c6f2e075350",
+      "recipe_hash": "22401b16caabd96e7cd59f4a617ed4ff14db9641e8dc17aa59c90bdca3c804d6",
+      "note": "Historical B-3 HTTP navigation was policy-blocked; Wave3 publishes canonical pointer binding without rewriting B-3 history."
+    },
+    "A-6": {
+      "status": "PASS_EXACT10_IDENTITY_COMPATIBILITY",
+      "evidence_head": "b6d2fef97d992f343ebfbc1443787b3c9bbd8f07",
+      "unique_record_id_count": 10,
+      "live_replay_digest": "42e857146375c20ef61f155fd8fd730a5263e29670e62d03e8089c99ad296f4e"
+    },
+    "B-5": {
+      "status": "PASS_EXACT_B4_SOURCE_AND_IDS",
+      "evidence_head": "589a8074f3844bb2d8192e4b1e876484030023d1",
+      "b4_server_blob": "671f05d903dcd8aecd7fd8160b493981f34a5b5a",
+      "record_order": "IDS_1_TO_10",
+      "source_input_mutation_count": 0
+    },
+    "identity_mutation_count": 0
+  },
+  "first_attempt": {
+    "signature": "COMBINED_HARNESS_PLUS_PYTEST_COMMAND_TIMEOUT",
+    "classification": "EXECUTION_COMMAND_TIME_BUDGET_NOT_FEATURE_FAILURE",
+    "correction": "SEPARATED_HARNESS_AND_PYTEST_EXECUTION",
+    "rerun": "PASS"
+  },
+  "blockers": [],
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_LATEST_B4_REPORT_POINTER"
+}
