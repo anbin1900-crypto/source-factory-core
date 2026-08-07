@@ -117,6 +117,7 @@ function sanitizeBundle(bundle) {
 
 function runPrebuild(bundle, deps={}) {
   sanitizeBundle(bundle);
+  if (bundle?.schema_version !== 'A5_RESPONSE_EVIDENCE_BUNDLE_V1') throw Object.assign(new Error('INVALID_EVIDENCE_BUNDLE_SCHEMA'),{code:'INVALID_EVIDENCE_BUNDLE_SCHEMA'});
   const buildGeneratorInput = deps.buildGeneratorInput || require('../live-inference/endpoint_schema_mode_inference.cjs').buildGeneratorInput;
   const dom = bundle.dom_structure || bundle.dom_candidates || bundle.a4 || {};
   const network = bundle.network_observations || bundle.observations || bundle.events || [];
