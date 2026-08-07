@@ -1,0 +1,45 @@
+{
+  "schema_version": "A5_API_UI_STATE_ENTITY_BINDING_TERMINAL_REPORT_V1",
+  "directive_id": "A0-TO-A5-API-UI-STATE-ENTITY-SEMANTIC-BINDING-V5-20260808-001",
+  "resume_comment_id": 5219596904,
+  "original_directive_comment_id": 5219443363,
+  "cycle_id": "A0-AB-AI-BLUEPRINT-SEMANTIC-BINDING-CYCLE5-20260808-001",
+  "worker": "A-5",
+  "role": "A-5_API_UI_STATE_ENTITY_SEMANTIC_BINDING_OWNER",
+  "terminal": "A5_API_UI_STATE_ENTITY_BINDING_READY",
+  "status": "TERMINAL_PASS",
+  "result": {
+    "api_ui_state_binding_graph": "READY",
+    "data_entity_graph": "READY",
+    "form_field_semantic_candidate": "READY",
+    "action_endpoint_state_entity_semantics": "READY_OBSERVED_OR_CANDIDATE_WITH_EVIDENCE",
+    "insufficient_evidence": "UNKNOWN_OR_INSUFFICIENT_EVIDENCE_FAIL_CLOSED",
+    "application_canonical_candidate": "READY_APPLICATION_LEVEL_ONLY",
+    "d_canonical_db_authority": "NOT_ASSIGNED",
+    "raw_secret_value_count": 0
+  },
+  "validation": {
+    "node_syntax": "PASS_2_OF_2",
+    "fixture_replay_count": 2,
+    "assertions": "PASS_20_OF_20",
+    "semantic_digest": "53a6d16b9440f6d36df419001af8a6f0f764452f1b1f6e83284a2da17ad4301a",
+    "deterministic_digest": "PASS",
+    "remote_readback": "PASS_SOURCE_AND_TEST",
+    "raw_secret_reject": "PASS"
+  },
+  "artifacts": {
+    "entrypoint": "prebuild-cycle5/api_ui_state_entity_semantic_binding.cjs",
+    "api_ui_state_graph": "prebuild-cycle5/API_UI_STATE_BINDING_GRAPH_V1.json",
+    "data_entity_graph": "prebuild-cycle5/DATA_ENTITY_GRAPH_V1.json",
+    "form_field_semantic_candidate": "prebuild-cycle5/FORM_FIELD_SEMANTIC_CANDIDATE_V1.json",
+    "validation_receipt": "prebuild-cycle5/A5_API_UI_STATE_ENTITY_BINDING_VALIDATION_RECEIPT_V1.json"
+  },
+  "boundaries": {
+    "raw_secret_value_count": 0,
+    "target_pc_execution": false,
+    "live_site_call": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
