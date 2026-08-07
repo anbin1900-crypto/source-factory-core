@@ -1,0 +1,29 @@
+{
+  "schema_version": "LATEST_A5_PREBUILD_POINTER_V1",
+  "updated_at_kst": "2026-08-07T21:33:00+09:00",
+  "worker": "A-5",
+  "worker_pr": 24,
+  "directive_id": "AI001-TO-A5-ENDPOINT-SCHEMA-DOM-API-HYBRID-PREBUILD-V1-20260807-001",
+  "directive_comment_id": 5216920354,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "status": "TERMINAL_PASS",
+  "terminal": "A5_ENDPOINT_SCHEMA_DOM_API_HYBRID_PREBUILD_READY",
+  "terminal_commit": "64f341828955068a51b322d0a1d9a0f85dccc71a",
+  "terminal_report_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle1/A5_PREBUILD_TERMINAL_REPORT_V1.json",
+  "validation_receipt_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle1/A5_PREBUILD_VALIDATION_RECEIPT_V1.json",
+  "entrypoint_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle1/prebuild_endpoint_schema_decision.cjs",
+  "input_schema_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle1/RESPONSE_EVIDENCE_BUNDLE_V1.schema.json",
+  "successor_run_plan_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle1/SUCCESSOR_RUN_PLAN_V1.json",
+  "required_output_paths": [
+    "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle1/ENDPOINT_SCHEMA_INFERENCE_V1.json",
+    "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle1/DOM_API_HYBRID_DECISION_V1.json",
+    "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle1/SCHEMA_DRIFT_LATE_BINDING_V1.json",
+    "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle1/SUCCESSOR_RUN_PLAN_V1.json"
+  ],
+  "next_action": "Successor supplies one A5_RESPONSE_EVIDENCE_BUNDLE_V1 file and runs the single command in SUCCESSOR_RUN_PLAN_V1.json.",
+  "validation": "SCHEMA_PARSE_PASS;NODE_SYNTAX_2_OF_2;FIXTURE_SMOKE_17_OF_17;DETERMINISTIC_PASS;REMOTE_READBACK_PASS",
+  "raw_secret_value_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
