@@ -1,0 +1,22 @@
+{
+  "schema_version": "B5_BLUEPRINT_ONTOLOGY_BINDING_DATASET_SMOKE_RECEIPT_V1",
+  "result": "PASS",
+  "dataset_contract_count": 5,
+  "site_count": 2,
+  "binding_count": 6,
+  "source_field_loss_count": 0,
+  "evidence_pointer_count": 6,
+  "semantic_status_counts": {"UNKNOWN": 0, "CANDIDATE": 12, "CANONICAL": 0},
+  "complete_result_pending_to_result_available": true,
+  "checkpoint_sequence": [1, 2, 3],
+  "contextless_recovery": true,
+  "duplicate_result_noop": true,
+  "duplicate_blueprint_noop": true,
+  "duplicate_materialization_count": 0,
+  "checkpoint_resume_export_roundtrip": true,
+  "export_files": {
+    "json": {"path": "fixtures/exports/blueprint_ontology_bundle.json", "sha256": "22b2c1e3ad5ccdbc5ca1498245d5742b954a3137489d7c56bbd2a69ec3716866"},
+    "csv": {"path": "fixtures/exports/site_listing_field_binding.csv", "sha256": "35b22de076beeafe52d5e94c349bf4d06f2587805e20c8eca2107f8fc3c31dda"},
+    "xlsx": {"path": "fixtures/exports/site_listing_field_binding.xlsx", "sha256": "079a903e8409666e11ee94f4f7edc408897ea6f3a08537b5e080773eadfbfc86"}
+  }
+}

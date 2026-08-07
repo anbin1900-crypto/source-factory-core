@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "AI_PRODUCT_BLUEPRINT_DATASET_V1.schema.json",
+  "type": "object",
+  "required": ["schema_version", "records"],
+  "properties": {"schema_version": {"const": "AI_PRODUCT_BLUEPRINT_DATASET_V1"}, "records": {"type": "array"}},
+  "additionalProperties": true
+}

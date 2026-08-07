@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "BLUEPRINT_ONTOLOGY_BINDING_CHECKPOINT_V1.schema.json",
+  "type": "object",
+  "required": ["schema_version", "command_id", "session_id", "worker_id", "dataset_id", "lineage_key", "checkpoint_seq", "combined_state", "dataset_phase", "datasets", "checkpoint_sha256"],
+  "properties": {
+    "schema_version": {"const": "BLUEPRINT_ONTOLOGY_BINDING_CHECKPOINT_V1"},
+    "combined_state": {"enum": ["BROWSER_RUNNING", "COMPLETE_RESULT_PENDING", "RESULT_AVAILABLE"]},
+    "dataset_phase": {"enum": ["EMPTY", "PARTIAL", "COMPLETE"]},
+    "checkpoint_seq": {"type": "integer", "minimum": 1},
+    "datasets": {"type": "object", "minProperties": 5}
+  },
+  "additionalProperties": true
+}

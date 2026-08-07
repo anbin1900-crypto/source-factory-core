@@ -1,0 +1,111 @@
+{
+  "AI_PRODUCT_BLUEPRINT_DATASET_V1": {
+    "schema_version": "AI_PRODUCT_BLUEPRINT_DATASET_V1",
+    "records": [
+      {
+        "blueprint_id": "BLUEPRINT-REAL-ESTATE-CYCLE4-001",
+        "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+        "product_surface": "LISTING_SEARCH",
+        "source_fields": ["articleNo", "dealOrWarrantPrc", "area2"],
+        "semantic_status": "CANDIDATE",
+        "evidence_pointer": {"path": "fixtures/naver-listing.json", "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}
+      },
+      {
+        "blueprint_id": "BLUEPRINT-REAL-ESTATE-CYCLE4-001",
+        "source_site_id": "SITE-KB-LAND",
+        "product_surface": "LISTING_SEARCH",
+        "source_fields": ["매물번호", "매매가", "전용면적"],
+        "semantic_status": "CANDIDATE",
+        "evidence_pointer": {"path": "fixtures/kb-listing.json", "artifact_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}
+      }
+    ]
+  },
+  "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1": {
+    "schema_version": "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1",
+    "records": [
+      {"canonical_candidate_id": "listing_id", "label_ko": "매물 식별자", "value_type_candidate": "string", "semantic_status": "CANDIDATE", "evidence_pointers": ["EVIDENCE-NAVER-ARTICLE-NO", "EVIDENCE-KB-LISTING-NO"]},
+      {"canonical_candidate_id": "deal_price_krw", "label_ko": "매매가격 원화", "value_type_candidate": "decimal", "semantic_status": "CANDIDATE", "evidence_pointers": ["EVIDENCE-NAVER-DEAL-PRICE", "EVIDENCE-KB-DEAL-PRICE"]},
+      {"canonical_candidate_id": "exclusive_area_m2", "label_ko": "전용면적 제곱미터", "value_type_candidate": "decimal", "semantic_status": "CANDIDATE", "evidence_pointers": ["EVIDENCE-NAVER-AREA2", "EVIDENCE-KB-EXCLUSIVE-AREA"]}
+    ]
+  },
+  "SITE_LISTING_FIELD_BINDING_V1": {
+    "schema_version": "SITE_LISTING_FIELD_BINDING_V1",
+    "records": [
+      {
+        "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+        "source_field_name": "articleNo",
+        "site_field_name": "articleNo",
+        "canonical_candidate_id": "listing_id",
+        "semantic_status": "CANDIDATE",
+        "read_transform": {"op": "PRESERVE_RAW", "expression": "value"},
+        "write_transform": {"op": "RESTORE_RAW", "expression": "raw_value"},
+        "evidence_pointer": {"path": "fixtures/naver-listing.json#/articleNo", "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}
+      },
+      {
+        "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+        "source_field_name": "dealOrWarrantPrc",
+        "site_field_name": "dealOrWarrantPrc",
+        "canonical_candidate_id": "deal_price_krw",
+        "semantic_status": "CANDIDATE",
+        "read_transform": {"op": "PRESERVE_RAW_WITH_DECIMAL_CANDIDATE", "expression": "value"},
+        "write_transform": {"op": "RESTORE_RAW", "expression": "raw_value"},
+        "evidence_pointer": {"path": "fixtures/naver-listing.json#/dealOrWarrantPrc", "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}
+      },
+      {
+        "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+        "source_field_name": "area2",
+        "site_field_name": "area2",
+        "canonical_candidate_id": "exclusive_area_m2",
+        "semantic_status": "CANDIDATE",
+        "read_transform": {"op": "PRESERVE_RAW_WITH_DECIMAL_CANDIDATE", "expression": "value"},
+        "write_transform": {"op": "RESTORE_RAW", "expression": "raw_value"},
+        "evidence_pointer": {"path": "fixtures/naver-listing.json#/area2", "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}
+      },
+      {
+        "source_site_id": "SITE-KB-LAND",
+        "source_field_name": "매물번호",
+        "site_field_name": "매물번호",
+        "canonical_candidate_id": "listing_id",
+        "semantic_status": "CANDIDATE",
+        "read_transform": {"op": "PRESERVE_RAW", "expression": "value"},
+        "write_transform": {"op": "RESTORE_RAW", "expression": "raw_value"},
+        "evidence_pointer": {"path": "fixtures/kb-listing.json#/매물번호", "artifact_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}
+      },
+      {
+        "source_site_id": "SITE-KB-LAND",
+        "source_field_name": "매매가",
+        "site_field_name": "매매가",
+        "canonical_candidate_id": "deal_price_krw",
+        "semantic_status": "CANDIDATE",
+        "read_transform": {"op": "PRESERVE_RAW_WITH_DECIMAL_CANDIDATE", "expression": "value"},
+        "write_transform": {"op": "RESTORE_RAW", "expression": "raw_value"},
+        "evidence_pointer": {"path": "fixtures/kb-listing.json#/매매가", "artifact_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}
+      },
+      {
+        "source_site_id": "SITE-KB-LAND",
+        "source_field_name": "전용면적",
+        "site_field_name": "전용면적",
+        "canonical_candidate_id": "exclusive_area_m2",
+        "semantic_status": "CANDIDATE",
+        "read_transform": {"op": "PRESERVE_RAW_WITH_DECIMAL_CANDIDATE", "expression": "value"},
+        "write_transform": {"op": "RESTORE_RAW", "expression": "raw_value"},
+        "evidence_pointer": {"path": "fixtures/kb-listing.json#/전용면적", "artifact_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}
+      }
+    ]
+  },
+  "REAL_ESTATE_SITE_CAPABILITY_PROFILE_V1": {
+    "schema_version": "REAL_ESTATE_SITE_CAPABILITY_PROFILE_V1",
+    "records": [
+      {"source_site_id": "SITE-NAVER-PAY-REAL-ESTATE", "capabilities": ["LISTING_SEARCH", "LISTING_DETAIL"], "write_capability": "UNKNOWN", "semantic_status": "CANDIDATE", "evidence_pointer": {"path": "fixtures/naver-listing.json", "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}},
+      {"source_site_id": "SITE-KB-LAND", "capabilities": ["LISTING_SEARCH", "LISTING_DETAIL"], "write_capability": "UNKNOWN", "semantic_status": "CANDIDATE", "evidence_pointer": {"path": "fixtures/kb-listing.json", "artifact_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}}
+    ]
+  },
+  "YOLLA_LISTING_LEDGER_SCHEMA_CANDIDATE_V1": {
+    "schema_version": "YOLLA_LISTING_LEDGER_SCHEMA_CANDIDATE_V1",
+    "records": [
+      {"canonical_candidate_id": "listing_id", "ledger_column_candidate": "listing_id", "value_type_candidate": "string", "nullable_candidate": false, "semantic_status": "CANDIDATE"},
+      {"canonical_candidate_id": "deal_price_krw", "ledger_column_candidate": "deal_price_krw", "value_type_candidate": "decimal", "nullable_candidate": true, "semantic_status": "CANDIDATE"},
+      {"canonical_candidate_id": "exclusive_area_m2", "ledger_column_candidate": "exclusive_area_m2", "value_type_candidate": "decimal", "nullable_candidate": true, "semantic_status": "CANDIDATE"}
+    ]
+  }
+}

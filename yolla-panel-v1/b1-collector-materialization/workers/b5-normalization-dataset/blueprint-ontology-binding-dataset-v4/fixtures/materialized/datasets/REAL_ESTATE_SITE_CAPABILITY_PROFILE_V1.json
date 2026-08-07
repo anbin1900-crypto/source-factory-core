@@ -1,0 +1,42 @@
+{
+  "lineage": {
+    "blueprint_id": "BLUEPRINT-REAL-ESTATE-CYCLE4-001",
+    "command_id": "CMD-CYCLE4-001",
+    "dataset_id": "DATASET-CYCLE4-001",
+    "lineage_key": "c95774e1ccf8f37db75deacd6e46c13af3db5f23e45667c62a5b6401f5c1393e",
+    "recipe_version": "recipe-v4",
+    "result_event_id": "RESULT-EVENT-CYCLE4-001",
+    "result_id": "RESULT-CYCLE4-001",
+    "session_id": "SESSION-CYCLE4-001",
+    "worker_id": "BROWSER-WORKER-02"
+  },
+  "records": [
+    {
+      "capabilities": [
+        "LISTING_SEARCH",
+        "LISTING_DETAIL"
+      ],
+      "evidence_pointer": {
+        "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "path": "fixtures/naver-listing.json"
+      },
+      "semantic_status": "CANDIDATE",
+      "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "write_capability": "UNKNOWN"
+    },
+    {
+      "capabilities": [
+        "LISTING_SEARCH",
+        "LISTING_DETAIL"
+      ],
+      "evidence_pointer": {
+        "artifact_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "path": "fixtures/kb-listing.json"
+      },
+      "semantic_status": "CANDIDATE",
+      "source_site_id": "SITE-KB-LAND",
+      "write_capability": "UNKNOWN"
+    }
+  ],
+  "schema_version": "REAL_ESTATE_SITE_CAPABILITY_PROFILE_V1"
+}

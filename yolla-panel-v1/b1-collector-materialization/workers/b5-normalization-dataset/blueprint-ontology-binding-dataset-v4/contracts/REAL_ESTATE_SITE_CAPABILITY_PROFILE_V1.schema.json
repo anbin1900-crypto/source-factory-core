@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "REAL_ESTATE_SITE_CAPABILITY_PROFILE_V1.schema.json",
+  "type": "object",
+  "required": ["schema_version", "records"],
+  "properties": {"schema_version": {"const": "REAL_ESTATE_SITE_CAPABILITY_PROFILE_V1"}, "records": {"type": "array", "items": {"type": "object", "required": ["source_site_id", "capabilities", "semantic_status", "evidence_pointer"]}}},
+  "additionalProperties": true
+}

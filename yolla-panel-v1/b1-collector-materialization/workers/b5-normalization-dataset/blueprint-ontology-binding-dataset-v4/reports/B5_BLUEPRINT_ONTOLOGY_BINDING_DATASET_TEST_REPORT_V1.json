@@ -1,0 +1,22 @@
+{
+  "schema_version": "B5_BLUEPRINT_ONTOLOGY_BINDING_DATASET_TEST_REPORT_V1",
+  "directive_id": "A0-TO-B5-BLUEPRINT-ONTOLOGY-BINDING-DATASET-V4-20260808-001",
+  "compile": "PASS_3_OF_3",
+  "unit_tests": "PASS_45_OF_45",
+  "dataset_contracts": "PASS_5_OF_5",
+  "fixture_smoke": "PASS",
+  "site_count": 2,
+  "binding_count": 6,
+  "source_field_loss_count": 0,
+  "evidence_pointer_count": 6,
+  "unsupported_canonical_rejection": "PASS",
+  "unknown_candidate_preservation": "PASS",
+  "duplicate_result_noop": "PASS",
+  "duplicate_blueprint_noop": "PASS",
+  "duplicate_materialization_count": 0,
+  "state_transition": "PASS_COMPLETE_RESULT_PENDING_TO_RESULT_AVAILABLE",
+  "checkpoint_sequence": "PASS_1_2_3_MONOTONIC",
+  "contextless_resume": "PASS",
+  "export_roundtrip": "PASS_JSON_CSV_XLSX",
+  "existing_v3_files_modified": 0
+}

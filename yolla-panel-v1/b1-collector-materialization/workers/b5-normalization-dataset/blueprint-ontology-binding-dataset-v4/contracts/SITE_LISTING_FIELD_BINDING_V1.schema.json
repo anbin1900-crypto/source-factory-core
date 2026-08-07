@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "SITE_LISTING_FIELD_BINDING_V1.schema.json",
+  "type": "object",
+  "required": ["schema_version", "records"],
+  "properties": {"schema_version": {"const": "SITE_LISTING_FIELD_BINDING_V1"}, "records": {"type": "array", "items": {"type": "object", "required": ["source_site_id", "source_field_name", "site_field_name", "canonical_candidate_id", "semantic_status", "read_transform", "write_transform", "evidence_pointer"]}}},
+  "additionalProperties": true
+}
