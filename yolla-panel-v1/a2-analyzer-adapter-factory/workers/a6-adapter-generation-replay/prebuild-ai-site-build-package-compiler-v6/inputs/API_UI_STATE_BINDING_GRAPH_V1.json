@@ -1,0 +1,14 @@
+{
+  "schema_version": "API_UI_STATE_BINDING_GRAPH_V1",
+  "purpose": "Deterministic semantic binding from Cycle4 Action/API/Entity/UI-State evidence.",
+  "node_types": ["ACTION", "API_ENDPOINT", "DATA_ENTITY", "UI_COMPONENT", "UI_STATE_TRANSITION"],
+  "observed_relations": ["ACTION_TRIGGERS_ENDPOINT", "ACTION_TRANSITIONS_UI_STATE", "ENDPOINT_RETURNS_ENTITY"],
+  "candidate_relations": ["ENTITY_PRESENTED_BY_COMPONENT"],
+  "required_edge_fields": ["from", "to", "relation", "authority", "confidence", "evidence_pointer"],
+  "fail_closed": {
+    "missing_exact_provenance_key": "INSUFFICIENT_EVIDENCE",
+    "candidate_promotion_to_observed": false,
+    "unknown_binding_storage": "unresolved_bindings"
+  },
+  "raw_secret_value_count": 0
+}

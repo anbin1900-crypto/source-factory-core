@@ -1,0 +1,13 @@
+{
+  "schema_version": "DATA_ENTITY_GRAPH_V1",
+  "purpose": "Application-level entity semantic graph derived only from Cycle4 observed/candidate evidence.",
+  "required_node_fields": ["entity_id", "record_path", "identifier_paths", "authority", "evidence_pointer", "application_fields"],
+  "application_field_fields": ["source_field", "json_path", "application_canonical_candidate", "authority", "confidence", "evidence_pointer", "d_canonical_authority"],
+  "authority_policy": {
+    "application_canonical_candidate": "APPLICATION_CANDIDATE_ONLY",
+    "d_canonical_authority": false,
+    "business_rules_without_observation": "UNKNOWN"
+  },
+  "canonical_authority_boundary": "D Canonical DB authority is not assigned or modified by A-5.",
+  "raw_secret_value_count": 0
+}
