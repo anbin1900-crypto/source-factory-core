@@ -1,0 +1,8 @@
+{
+  "schema_version":"APPEND_ONLY_CHECKPOINT_CONTRACT_V1",
+  "append_only":true,
+  "required_fields":["checkpoint_id","sequence_no","command_id","idempotency_key","durable","created_at"],
+  "selection_rule":"MAX_VALID_SEQUENCE_NO_FOR_ACTIVE_COMMAND",
+  "mutation_policy":"NEVER_REWRITE_OLDER_CHECKPOINT",
+  "invalid_checkpoint_policy":"IGNORE_AND_REPORT"
+}
