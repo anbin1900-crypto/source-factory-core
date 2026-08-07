@@ -10,10 +10,10 @@
   "active_workers": [
     "AUTOMATION-C-W2",
     "AUTOMATION-C-W5",
-    "AUTOMATION-C-W6"
+    "AUTOMATION-C-W6",
+    "AUTOMATION-C-W3"
   ],
   "not_assigned": {
-    "AUTOMATION-C-W3": "EXCLUDED_BY_USER_NO_WAIT",
     "AUTOMATION-C-W4": "CYCLE2_TERMINAL_RESULT_NOT_FOUND"
   },
   "accepted_inputs": {
@@ -41,6 +41,15 @@
         "D5_RESULT_COMMENT@5219763164",
         "D5_RESULT_COMMIT@bca5e3fd2e7d530f142197cc6a45938aa84bc736"
       ]
+    },
+    "AUTOMATION-C-W3": {
+      "result_comment_id": 5220688575,
+      "result_commit": "500a9a318fdc3d61032319ca70960d8114e244b5",
+      "terminal": "MESSAGE_DISPATCH_AND_RESULT_RETURN_LIVE_PASS",
+      "command_id": "D3-C1-LIVE-DISPATCH-RETURN-20260808-030500-001",
+      "context_id": "6a72e288-7f24-83ee-b357-3e327cf6d877",
+      "page_id": "UIA-TAB-42.198100.4.0.0.5287",
+      "assistant_reply_sha256": "2ba4efbee5d42a71be9e9ae28db1b1145fed04b9657efef63a2bcce02e3b347a"
     }
   },
   "common": {
@@ -168,6 +177,51 @@
         "과거 blocker Event 삭제 또는 덮어쓰기"
       ],
       "expected_terminal": "D2_D5_LIVE_PANEL_REBIND_AND_D4_GAP_ISOLATION_PASS_OR_BLOCKED_EXTERNAL_CONFIRMED"
+    },
+    {
+      "worker_id": "AUTOMATION-C-W3",
+      "role": "D-3_MESSAGE_DISPATCH_AND_RESULT_RETURN_OWNER",
+      "worker_pr": 82,
+      "directive_id": "C3-W3-REUSABLE-C-MODE-DISPATCH-RETURN-AND-IDEMPOTENCY-LIVE-V1-20260808-001",
+      "priority": "P0",
+      "goal": "Cycle1의 단일 고정 ACK Live PASS를 기존 C모드 명령 서식과 Command Bus에 일반화하여, 동일한 정확 Context에서 서로 다른 실제 명령 2건을 순차 전송하고 각 신규 Assistant 답장을 정확히 회수·반환하며 중복 재실행을 억제한다.",
+      "scope": "PR82 Result Commit 500a9a318fdc3d61032319ca70960d8114e244b5, PR81 Context Handoff, 기존 YOLLA_PC_OPERATION_COMMAND_V2, Stage4 sender/result/storage와 PR73 전송 경계만 재사용한다.",
+      "reuse_first": [
+        "PR82_LIVE_RESULT@500a9a318fdc3d61032319ca70960d8114e244b5",
+        "PR82_TERMINAL_COMMENT@5220688575",
+        "D2_CONTEXT_HANDOFF@72b152dc0ae356a66f82040a0ec655756b5bce12",
+        "CONTEXT_ID@6a72e288-7f24-83ee-b357-3e327cf6d877",
+        "EXISTING_YOLLA_PC_OPERATION_COMMAND_V2",
+        "EXISTING_STAGE4_AND_PR73_DISPATCH_BOUNDARY"
+      ],
+      "required_actions": [
+        "고정 expected_reply_contains 전용 Fixture를 C모드 명령 payload와 답장 완료 경계에 재사용 가능한 입력계약으로 확장한다.",
+        "서로 다른 COMMAND_ID를 가진 실제 C모드 시험 명령 2건을 동일한 정확 Context에 순차 전송한다.",
+        "각 건에서 사용자 메시지가 대화창에 실제 표시된 뒤에만 MESSAGE_SENT를 발생시키고, 해당 명령 이후 생성된 신규 Assistant 답장 원문만 회수한다.",
+        "COMMAND_ID, CONTEXT_ID, PAGE_ID, 답장 원문, SHA-256, WORKING/COMPLETED Event를 건별 결속해 D-1 또는 후계자와 D-6 입력으로 반환한다.",
+        "첫 번째 COMMAND_ID를 재제출하여 중복 발송·중복 답장 반환이 0임을 증명한다.",
+        "stale reply, cross-context/page, composer-only message와 미완료 답장은 fail-closed한다.",
+        "신규 Executor·Tunnel·Transport 없이 실패를 직접 교정·재시험하고 결과 Commit·Pointer·C모드 답장을 게시한다."
+      ],
+      "acceptance": [
+        "actual distinct command dispatch 2/2",
+        "visible MESSAGE_SENT 2/2",
+        "new completed Assistant reply recovered 2/2",
+        "exact command/context/page/reply correlation 2/2",
+        "duplicate replay suppressed 1/1 and duplicate send count 0",
+        "stale and cross-context reply count 0",
+        "D-1/D-6 return receipts published",
+        "new Executor/Tunnel/Transport 0"
+      ],
+      "forbidden": [
+        "고정 ACK 한 건만으로 PASS 재선언",
+        "transport acceptance만으로 MESSAGE_SENT 선언",
+        "stale 또는 다른 Context 답장 회수",
+        "중복 COMMAND_ID 재발송",
+        "신규 실행기·터널·전송계층 구축",
+        "Mock 또는 정적 Fixture만으로 Live PASS"
+      ],
+      "expected_terminal": "REUSABLE_C_MODE_DISPATCH_RETURN_AND_IDEMPOTENCY_LIVE_PASS_OR_BLOCKED_EXTERNAL_CONFIRMED"
     }
   ],
   "reply_contract": "C_MODE_WORKER_REPLY",
@@ -180,6 +234,12 @@
       "worker_id": "AUTOMATION-C-W6",
       "source_result_comment_id": 5219741593,
       "reason": "Cycle2 BLOCKED_EXTERNAL terminal accepted; D-2 and D-5 superseding PASS receipts now available",
+      "d3_dependency_gate": false
+    },
+    {
+      "worker_id": "AUTOMATION-C-W3",
+      "source_result_comment_id": 5220688575,
+      "reason": "Cycle1 live dispatch and exact Assistant reply return accepted; reusable C-mode two-command and idempotency proof is now the next completed-worker assignment",
       "d3_dependency_gate": false
     }
   ]
