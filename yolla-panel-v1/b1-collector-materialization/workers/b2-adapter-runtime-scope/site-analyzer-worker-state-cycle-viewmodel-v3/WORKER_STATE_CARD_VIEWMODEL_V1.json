@@ -8,27 +8,26 @@
   "panel_apply": false,
   "worker_state_enum": ["IDLE", "DISPATCHED", "GENERATING", "COMPLETE", "BLOCKED", "UNKNOWN"],
   "task_status_enum": ["IDLE", "DISPATCHED", "GENERATING", "COMPLETE", "COMPLETE_RESULT_PENDING", "BLOCKED", "UNKNOWN"],
-  "browser_sensor_state_enum": ["IDLE", "DISPATCHED", "GENERATING", "COMPLETE", "BLOCKED", "UNKNOWN", "LIKELY_COMPLETE"],
-  "correlation_keys": ["worker_id", "page_id", "command_id"],
+  "correlation_keys": ["worker_id", "command_id", "page_id", "cycle_id"],
   "required_card_fields": ["worker_id", "worker_state", "browser_state", "task_status", "command_id", "latest_terminal", "latest_result_pointer", "observed_at"],
   "browser_state": {
-    "fields": ["sensor_state", "page_id", "selector_status", "generation_ui_active", "dom_stable", "observed_at"],
-    "selector_status_enum": ["PRIMARY_MATCH", "FALLBACK_MATCH", "SELECTOR_MISS", "NOT_APPLICABLE"],
-    "rule": "Preserve browser sensor state independently from task status."
+    "fields": ["source_schema", "sensor_state", "page_id", "selector_status", "completion_assessment", "generation_ui_active", "dom_stable_ms", "observed_at"],
+    "rule": "Preserve browser-observed state independently from server task status."
   },
   "task_status": {
-    "fields": ["state", "command_id", "latest_terminal", "latest_result_pointer", "blocker", "observed_at"],
-    "complete_rule": "COMPLETE requires browser/task COMPLETE evidence plus latest_result_pointer.",
-    "result_pending_rule": "COMPLETE evidence without latest_result_pointer becomes COMPLETE_RESULT_PENDING, never final COMPLETE.",
-    "unknown_rule": "SELECTOR_MISS, UNKNOWN, or unverified LIKELY_COMPLETE cannot render as normal COMPLETE."
+    "fields": ["state", "raw_state", "command_id", "latest_terminal", "latest_result_pointer", "blocker", "observed_at"],
+    "complete_rule": "Final COMPLETE requires explicit COMPLETE browser evidence and a B-1 result pointer/envelope pointer.",
+    "result_pending_rule": "Explicit COMPLETE without result pointer becomes COMPLETE_RESULT_PENDING.",
+    "unknown_rule": "Selector miss, UNKNOWN, or LIKELY_COMPLETE cannot render as normal COMPLETE."
   },
-  "badges": ["COMPLETE_RESULT_PENDING", "SELECTOR_MISS", "LIKELY_COMPLETE_UNVERIFIED", "STALE_EVENT_IGNORED", "DUPLICATE_EVENT_IGNORED"],
+  "correlation_state_enum": ["BOUND", "COMMAND_ID_PENDING", "PAGE_ID_PENDING"],
+  "badges": ["COMPLETE_RESULT_PENDING", "SELECTOR_MISS", "LIKELY_COMPLETE_UNVERIFIED", "COMMAND_ID_PENDING", "STALE_EVENT_IGNORED", "DUPLICATE_EVENT_IGNORED"],
   "truth_policy": {
     "receipt_required_for_state_transition": true,
-    "likely_complete_is_terminal": false,
+    "a3_likely_complete_is_terminal": false,
     "selector_miss_complete_inference": false,
     "unknown_complete_inference": false,
-    "missing_result_pointer_complete_inference": false
+    "missing_result_pointer_final_complete_inference": false
   },
   "production": false,
   "ready": false,
