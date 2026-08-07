@@ -1,0 +1,25 @@
+{
+  "action_command_index": {
+    "act-22943ec2b60cb7d983d8": "cmd-scroll",
+    "act-695bdec9cbdec7f57e51": "cmd-click-result",
+    "act-7dfd7d402a04d20a0e8c": "cmd-open-search",
+    "act-917135d5dbd97bc8a0fe": "cmd-query",
+    "act-d846dea7b65d755e3d10": "cmd-wait-detail"
+  },
+  "cdp_evidence_index": {
+    "act-22943ec2b60cb7d983d8": [],
+    "act-695bdec9cbdec7f57e51": [{"cdp_method":"Runtime.consoleAPICalled","evidence_id":"cdp-003","summary":"click marker"}],
+    "act-7dfd7d402a04d20a0e8c": [{"cdp_method":"Page.frameNavigated","evidence_id":"cdp-001","summary":"search page"}],
+    "act-917135d5dbd97bc8a0fe": [{"cdp_method":"DOM.attributeModified","evidence_id":"cdp-002","summary":"input correlation"}],
+    "act-d846dea7b65d755e3d10": [{"cdp_method":"Page.lifecycleEvent","evidence_id":"cdp-004","summary":"detail loaded"}]
+  },
+  "command_action_index": {
+    "cmd-click-result": ["act-695bdec9cbdec7f57e51"],
+    "cmd-open-search": ["act-7dfd7d402a04d20a0e8c"],
+    "cmd-query": ["act-917135d5dbd97bc8a0fe"],
+    "cmd-scroll": ["act-22943ec2b60cb7d983d8"],
+    "cmd-wait-detail": ["act-d846dea7b65d755e3d10"]
+  },
+  "schema_version": "B3_COMMAND_ACTION_CORRELATION_V1",
+  "session_id": "ai001-b3-smoke-session-001"
+}
