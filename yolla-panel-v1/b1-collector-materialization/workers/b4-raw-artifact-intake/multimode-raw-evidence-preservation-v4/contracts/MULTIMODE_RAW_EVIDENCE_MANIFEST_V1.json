@@ -1,0 +1,14 @@
+{
+  "schema_version": "MULTIMODE_RAW_EVIDENCE_MANIFEST_V1",
+  "required": ["modes", "evidence", "action_refs", "compatibility", "raw_artifact_overwrite", "duplicate_materialization_count"],
+  "modes": ["DATA", "PRODUCT", "WRITE", "MY_LISTING", "EDIT"],
+  "evidence_entry_required": ["evidence_id", "evidence_kind", "sha256", "size_bytes", "source_pointer", "observed_at", "first_mode", "stored_path", "redaction_metadata"],
+  "invariants": [
+    "CONTENT_ADDRESSED_SHA256_IDENTITY",
+    "EXACT_BYTE_READBACK_REQUIRED",
+    "APPEND_ONLY_RAW_NO_OVERWRITE",
+    "DUPLICATE_SAME_SHA_REUSE_EXISTING",
+    "SECRET_CREDENTIAL_PII_RAW_PROHIBITED",
+    "SOURCE_RECORD_ENVELOPE_AND_CHECKPOINT_POINTER_COMPATIBLE"
+  ]
+}
