@@ -1,0 +1,20 @@
+{
+  "schema_version": "LATEST_D6_CYCLE3_REBIND_POINTER_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE3-20260808-001",
+  "directive_comment_id": 5220450674,
+  "status": "TERMINAL_PASS",
+  "terminal": "D2_D5_LIVE_PANEL_REBIND_AND_D4_GAP_ISOLATION_PASS",
+  "result_commit": "d86019555d5621f60ceb67809c68bde232905ac6",
+  "result_path": "yolla-panel-v1/d1-context-aware-message-loop/d6-control-panel-e2e/cycle3/D6_CYCLE3_D2_D5_LIVE_REBIND_RESULT_V1.json",
+  "panel_state_path": "yolla-panel-v1/d1-context-aware-message-loop/d6-control-panel-e2e/cycle3/D6_CYCLE3_PANEL_STATE_V1.json",
+  "input_binding_path": "yolla-panel-v1/d1-context-aware-message-loop/d6-control-panel-e2e/cycle3/D6_CYCLE3_LATE_BIND_INPUTS_V1.json",
+  "adapter_path": "yolla-panel-v1/d1-context-aware-message-loop/d6-control-panel-e2e/cycle3/d6_cycle3_rebind_adapter.cjs",
+  "test_path": "yolla-panel-v1/d1-context-aware-message-loop/d6-control-panel-e2e/cycle3/test_d6_cycle3_rebind.cjs",
+  "remaining_gap": "D4_OBSERVER_RECEIPT_MISSING",
+  "remaining_gap_count": 1,
+  "full_message_loop_live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}
