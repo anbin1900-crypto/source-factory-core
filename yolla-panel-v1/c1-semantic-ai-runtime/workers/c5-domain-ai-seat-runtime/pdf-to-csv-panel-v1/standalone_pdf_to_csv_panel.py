@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import subprocess
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -188,6 +189,41 @@ def result_summary(result: dict[str, Any]) -> str:
     return (
         f"완료: PDF {int(result.get('pdf_count', 0))}개 / "
         f"CSV {int(result.get('chunk_count', 0))}개"
+    )
+
+
+def _command_line(parts: list[str]) -> str:
+    """Render an executable command with safe quoting, including Windows paths."""
+    return subprocess.list2cmdline([str(part) for part in parts])
+
+
+def pyside6_dependency_message() -> str:
+    """Return an actionable, exact dependency blocker for the current runtime."""
+    interpreter = str(Path(sys.executable).resolve())
+    script = str(Path(__file__).resolve())
+    install_command = _command_line([interpreter, "-m", "pip", "install", "PySide6"])
+    run_command = _command_line([interpreter, script])
+    detail = str(PYSIDE6_IMPORT_ERROR) if PYSIDE6_IMPORT_ERROR else "PySide6 import failed"
+    return "\n".join(
+        [
+            "PySide6가 설치되어 있지 않아 PDF→CSV 패널을 시작할 수 없습니다.",
+            f"의존성 오류: {detail}",
+            f"설치 명령: {install_command}",
+            f"설치 후 실행: {run_command}",
+        ]
+    )
+
+
+def launch_error_message(exc: Exception) -> str:
+    interpreter = str(Path(sys.executable).resolve())
+    script = str(Path(__file__).resolve())
+    run_command = _command_line([interpreter, script])
+    return "\n".join(
+        [
+            "PySide6 PDF→CSV 패널 창을 시작하지 못했습니다.",
+            f"시작 오류: {type(exc).__name__}: {exc}",
+            f"재실행 명령: {run_command}",
+        ]
     )
 
 
@@ -409,16 +445,16 @@ if PYSIDE6_AVAILABLE:
 
 def main() -> int:
     if not PYSIDE6_AVAILABLE:
-        detail = f": {PYSIDE6_IMPORT_ERROR}" if PYSIDE6_IMPORT_ERROR else ""
-        print(
-            "PySide6 is required. Install it with: pip install PySide6" + detail,
-            file=sys.stderr,
-        )
+        print(pyside6_dependency_message(), file=sys.stderr)
         return 2
-    app = QApplication(sys.argv)
-    window = MainWindow()
-    window.show()
-    return app.exec()
+    try:
+        app = QApplication(sys.argv)
+        window = MainWindow()
+        window.show()
+        return app.exec()
+    except Exception as exc:
+        print(launch_error_message(exc), file=sys.stderr)
+        return 3
 
 
 if __name__ == "__main__":
