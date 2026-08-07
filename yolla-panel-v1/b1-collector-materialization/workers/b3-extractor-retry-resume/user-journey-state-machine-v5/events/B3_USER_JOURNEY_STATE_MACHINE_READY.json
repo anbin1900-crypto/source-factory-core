@@ -1,0 +1,17 @@
+{
+  "schema_version":"B3_USER_JOURNEY_STATE_MACHINE_READY_EVENT_V1",
+  "event":"B3_USER_JOURNEY_STATE_MACHINE_READY",
+  "directive_id":"A0-TO-B3-USER-JOURNEY-STATE-MACHINE-V5-20260808-001",
+  "cycle_id":"A0-AB-AI-BLUEPRINT-SEMANTIC-BINDING-CYCLE5-20260808-001",
+  "status":"PASS_AWAITING_FINAL_REMOTE_READBACK",
+  "materialized_state_machine":true,
+  "representative_transition_count":7,
+  "equivalent_action_suppressed_count":1,
+  "unknown_unobserved_path_count":2,
+  "journey_scoped_resume":"PASS",
+  "target_pc_execution":false,
+  "live_site_call":false,
+  "production":false,
+  "ready":false,
+  "merge":false
+}
