@@ -1,0 +1,17 @@
+{
+  "schema_version": "REAL_SITE_FORM_FIELD_BINDING_V1",
+  "source_contract": "FORM_WRITE_BINDING_SPEC_V1",
+  "lanes": ["PUBLIC_READ", "WRITE", "MY_LISTING", "EDIT"],
+  "required_binding_keys": ["form_id", "field_name"],
+  "required_semantics": ["application_canonical_candidate", "read_transform", "write_transform", "business_rule", "evidence_pointer"],
+  "authority_policy": {
+    "exact_live_form_event": "OBSERVED",
+    "cycle6_application_candidate": "INFERRED",
+    "missing_live_form_causal_evidence": "WAITING_INPUT",
+    "unobserved_business_rule": "UNKNOWN"
+  },
+  "canonical_authority_boundary": "Application-level candidate only; D Canonical authority is not assigned.",
+  "unknown_fail_closed": true,
+  "raw_secret_value_count": 0,
+  "raw_pii_value_count": 0
+}

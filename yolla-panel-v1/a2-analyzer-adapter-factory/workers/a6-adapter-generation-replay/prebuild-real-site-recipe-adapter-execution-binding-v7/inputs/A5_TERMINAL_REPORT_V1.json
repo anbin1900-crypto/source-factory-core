@@ -1,0 +1,54 @@
+{
+  "schema_version": "A5_REAL_SITE_API_UI_DATA_FORM_BINDING_TERMINAL_REPORT_V1",
+  "directive_id": "A0-TO-A5-REAL-SITE-API-UI-DATA-FORM-BINDING-V7-20260808-001",
+  "directive_comment_id": 5220793881,
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "worker": "A-5",
+  "role": "A-5_REAL_SITE_API_UI_DATA_FORM_BINDING_OWNER",
+  "terminal": "A5_REAL_SITE_API_UI_DATA_FORM_BINDING_READY",
+  "status": "TERMINAL_PASS",
+  "result": {
+    "real_site_api_ui_state_binding": "READY",
+    "real_site_data_entity_binding": "READY",
+    "real_site_form_field_binding": "READY",
+    "unknown_business_rule_index": "READY",
+    "a5_to_a6_live_execution_handoff": "READY",
+    "lane_partition": "PUBLIC_READ_WRITE_MY_LISTING_EDIT_READY",
+    "exact_evidence_pointer_update": "READY",
+    "a3_late_input": "EDGE_ONLY_WAITING_INPUT",
+    "unknown_business_rules": "UNKNOWN_OR_CANDIDATE_FAIL_CLOSED",
+    "raw_secret_value_count": 0,
+    "raw_pii_value_count": 0
+  },
+  "validation": {
+    "node_syntax": "PASS_2_OF_2",
+    "fixture_replay_count": 2,
+    "assertions": "PASS_24_OF_24",
+    "live_binding_digest": "56d8fc5e6a00aa567d9d07a2cd68f59b939ca80194f09882a45391fd60150523",
+    "deterministic_digest": "PASS",
+    "late_binding_waiting_input": "PASS",
+    "remote_readback": "PASS_SOURCE_AND_TEST",
+    "raw_secret_reject": "PASS",
+    "raw_pii_reject": "PASS"
+  },
+  "artifacts": {
+    "entrypoint": "prebuild-cycle7/real_site_live_binding.cjs",
+    "api_ui_state": "prebuild-cycle7/REAL_SITE_API_UI_STATE_BINDING_V1.json",
+    "data_entity": "prebuild-cycle7/REAL_SITE_DATA_ENTITY_BINDING_V1.json",
+    "form_field": "prebuild-cycle7/REAL_SITE_FORM_FIELD_BINDING_V1.json",
+    "unknown_index": "prebuild-cycle7/UNKNOWN_BUSINESS_RULE_INDEX_V1.json",
+    "a6_handoff": "prebuild-cycle7/A5_TO_A6_LIVE_EXECUTION_HANDOFF_V1.json",
+    "validation_receipt": "prebuild-cycle7/A5_REAL_SITE_API_UI_DATA_FORM_BINDING_VALIDATION_RECEIPT_V1.json"
+  },
+  "upstream_live_input_state": {
+    "a3_observed_head": "1c17ca6cfb64ed0268a6ab81a08ac29881b4fa1b",
+    "cycle7_named_causal_artifact_found_at_execution": false,
+    "terminal_blocker": false,
+    "reason": "DIRECTIVE_REQUIRES_LATE_BIND_PER_MISSING_EDGE_INSTEAD_OF_GLOBAL_BLOCK"
+  },
+  "boundaries": {
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
