@@ -1,0 +1,40 @@
+{
+  "schema_version": "D6_D2_D5_PARALLEL_CONTEXT_BINDING_MATRIX_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001",
+  "binding_policy": "COMMON_CONTRACT_NO_WAIT",
+  "common_contract": "D6_CONTEXT_AWARE_MESSAGE_LOOP_COMMON_CONTRACT_V1.json",
+  "roles": [
+    {
+      "role_id": "D-2",
+      "binding_state": "READY_TO_BIND_EXISTING_CONTEXT",
+      "dependency_wait": false
+    },
+    {
+      "role_id": "D-3",
+      "binding_state": "READY_TO_BIND_EXISTING_CONTEXT",
+      "dependency_wait": false
+    },
+    {
+      "role_id": "D-4",
+      "binding_state": "READY_TO_BIND_EXISTING_CONTEXT",
+      "dependency_wait": false
+    },
+    {
+      "role_id": "D-5",
+      "binding_state": "READY_TO_BIND_EXISTING_CONTEXT",
+      "dependency_wait": false
+    }
+  ],
+  "required_runtime_callbacks": [
+    "identifyContext",
+    "sendMessage",
+    "readStatus",
+    "fetchReply",
+    "appendEvent",
+    "updatePanel"
+  ],
+  "cross_context_leak_allowed": false,
+  "duplicate_dispatch_allowed": false,
+  "stale_event_allowed": false,
+  "target_pc_live_pass_claimed": false
+}
