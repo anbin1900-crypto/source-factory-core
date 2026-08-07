@@ -1,0 +1,44 @@
+{
+  "schema_version": "A3_CDP_OBSERVER_PREBUILD_VALIDATION_RECEIPT_V1",
+  "directive_id": "AI001-TO-A3-CHROME-CDP-OBSERVATION-AGENT-PREBUILD-V1-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "validated_at_kst": "2026-08-07T21:22:00+09:00",
+  "status": "PASS",
+  "environment": {
+    "node": "v22.16.0",
+    "target_pc_execution": false,
+    "tunnel_create": false,
+    "successor_direct_call": false,
+    "new_browser_engine": false
+  },
+  "source_sha256": {
+    "CDP_OBSERVER_MODULE_V1.cjs": "3fa6ac7f8e3dbacd0ed6c19d94f07502766b529bd443d52c91ccfbe227db5ce3",
+    "APPLY_RUN_CDP_OBSERVER_V1.cjs": "cb7e468819a715bf77d8846c2d0804ee5a9b0bfec70ad9f536cbe4c7295d39ff",
+    "mock_smoke_v1.cjs": "606a0b19f0e32c7a56da6627bf338861cd6d3e5393cbde33cf8772888c909006"
+  },
+  "syntax": {
+    "CDP_OBSERVER_MODULE_V1.cjs": {"command": "node -c CDP_OBSERVER_MODULE_V1.cjs", "exit_code": 0},
+    "APPLY_RUN_CDP_OBSERVER_V1.cjs": {"command": "node -c APPLY_RUN_CDP_OBSERVER_V1.cjs", "exit_code": 0},
+    "mock_smoke_v1.cjs": {"command": "node -c mock_smoke_v1.cjs", "exit_code": 0}
+  },
+  "mock_smoke": {
+    "command": "node mock_smoke_v1.cjs",
+    "exit_code": 0,
+    "evidence_count": 10,
+    "request_count": 1,
+    "response_count": 1,
+    "response_body_count": 1,
+    "dom_snapshot_count": 2,
+    "frame_navigation_count": 1,
+    "console_count": 1,
+    "state_restore_pass": true,
+    "redaction_pass": true,
+    "get_response_body_binding_pass": true,
+    "page_target_selection_pass": true
+  },
+  "minimum_validation": "PASS_NODE_SYNTAX_3_OF_3_AND_LOCAL_MOCK_SMOKE_1",
+  "raw_secret_value_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
