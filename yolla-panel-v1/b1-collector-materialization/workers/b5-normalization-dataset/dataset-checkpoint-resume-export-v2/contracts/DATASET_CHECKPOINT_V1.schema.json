@@ -1,0 +1,24 @@
+{
+  "$id": "DATASET_CHECKPOINT_V1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "artifact_pointer": {"type": "string"},
+    "checkpoint_seq": {"minimum": 1, "type": "integer"},
+    "command_id": {"minLength": 1, "type": "string"},
+    "dataset_id": {"minLength": 1, "type": "string"},
+    "dataset_path": {"type": "string"},
+    "dataset_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "dataset_size_bytes": {"minimum": 0, "type": "integer"},
+    "last_action_id": {},
+    "last_cursor": {},
+    "previous_checkpoint_path": {"type": ["string", "null"]},
+    "previous_checkpoint_sha256": {"pattern": "^[0-9a-f]{64}$", "type": ["string", "null"]},
+    "recipe_version": {"minLength": 1, "type": "string"},
+    "record_count": {"minimum": 0, "type": "integer"},
+    "schema_pointer": {"type": "string"},
+    "schema_version": {"const": "DATASET_CHECKPOINT_V1"},
+    "session_id": {"minLength": 1, "type": "string"}
+  },
+  "required": ["schema_version","command_id","session_id","dataset_id","recipe_version","record_count","last_cursor","last_action_id","artifact_pointer","schema_pointer","checkpoint_seq","dataset_path","dataset_sha256","dataset_size_bytes"],
+  "type": "object"
+}
