@@ -1,0 +1,16 @@
+{
+  "schema_version":"ADAPTER_EXECUTION_BUNDLE_V1",
+  "consumer":"B-1",
+  "command_id":"AI001-A6-C3-SMOKE-001",
+  "recipe_version":"1.0.0-cycle3",
+  "adapter_version":"1.0.0-cycle3",
+  "recommended_mode":"HYBRID",
+  "input_authority":{"a4_head":"52e1f465215adfc4e6e83bea91d766901f1de948","a4_receipt_blob":"5cda7b28f1d6d8bc30a06e6b50651eb39becd85d","a5_head":"6fc0bdf80bb9d9e0d51697915897ccc8f4d20563","a5_validation_blob":"4bbec4547ad0be76b610c1a7f52c6198561b2802"},
+  "artifacts":{"recipe":"generated/EXTRACTION_RECIPE_V1.json","compiled_adapter":"generated/compiled-adapter.cjs","full_replay_receipt":"artifacts/FULL_REPLAY_RECEIPT_V1.json","failure_receipt":"artifacts/FORCED_FAILURE_RECEIPT_V1.json","checkpoint_receipt":"artifacts/CHECKPOINT_RECEIPT_V1.json","resume_receipt":"artifacts/RESUME_RECEIPT_V1.json"},
+  "lineage":{"command_id":"AI001-A6-C3-SMOKE-001","action_ids":["AI001-A6-C3-SMOKE-001:a01","AI001-A6-C3-SMOKE-001:a02","AI001-A6-C3-SMOKE-001:a03","AI001-A6-C3-SMOKE-001:a04"],"page_id":"fixture-smoke-1"},
+  "resume":{"checkpoint_id":"cp-AI001-A6-C3-SMOKE-001","failed_step":"s03","last_completed_step_before_failure":"s02","resume_from_step":2,"completed_steps_reexecuted":false},
+  "compiled_adapter":{"runtime":["Playwright","Crawlee"],"sha256":"088e2f7593acc9d391a11f287a058df851bfc3afa1dc0690d83f7a92f9170ad7"},
+  "browser_worker_completion_event":{"usage":"EXECUTION_LIFECYCLE_ONLY","adapter_technical_pass_source":false,"mixed_with_adapter_pass":false},
+  "reanalyze_required":false,
+  "safety":{"live_site_call":false,"target_pc_execution":false,"tunnel_change":false,"new_browser_engine":false,"production":false,"ready":false,"merge":false}
+}
