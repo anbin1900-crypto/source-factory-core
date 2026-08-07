@@ -1,0 +1,22 @@
+{
+  "fields": [
+    "last_event_seq",
+    "last_event_id",
+    "last_event_pointer",
+    "page_id",
+    "state",
+    "task_status",
+    "observed_at",
+    "source_pointer",
+    "command_artifact_checkpoint_pointer",
+    "result_receipt_pointer"
+  ],
+  "key": [
+    "command_id",
+    "worker_id"
+  ],
+  "rejected_event_advances_checkpoint": false,
+  "restart_rule": "RESTORE_LAST_DURABLE_ACCEPTED_EVENT_ONLY",
+  "schema_version": "WORKER_BROWSER_LATEST_STATE_CHECKPOINT_V1",
+  "update_rule": "ATOMIC_REPLACE_AFTER_ACCEPTED_EVENT_FSYNC_ONLY"
+}

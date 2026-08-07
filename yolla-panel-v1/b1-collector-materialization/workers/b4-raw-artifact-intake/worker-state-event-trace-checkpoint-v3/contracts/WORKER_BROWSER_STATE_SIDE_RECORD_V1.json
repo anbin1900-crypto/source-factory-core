@@ -1,0 +1,11 @@
+{
+  "advances_checkpoint": false,
+  "append_only": true,
+  "dispositions": [
+    "DUPLICATE_SUPPRESSED",
+    "TAMPERED_CONFLICT",
+    "OUT_OF_ORDER_REJECTED"
+  ],
+  "overwrites_event_log": false,
+  "schema_version": "WORKER_BROWSER_STATE_SIDE_RECORD_V1"
+}

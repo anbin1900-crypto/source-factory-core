@@ -1,29 +1,24 @@
 {
-  "schema_version": "LATEST_B4_REPORT_POINTER_V6",
+  "schema_version": "LATEST_B4_REPORT_POINTER_V7",
   "worker": "B-4",
   "branch": "worker/b4-raw-artifact-source-envelope-v1",
   "active_directive": {
-    "directive_id": "AI001-TO-B4-COMMAND-TRACE-ARTIFACT-CHECKPOINT-V2-20260807-001",
-    "directive_comment_id": 5217335150,
-    "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+    "directive_id": "AI001-TO-B4-WORKER-STATE-EVENT-TRACE-CHECKPOINT-V3-20260807-001",
+    "directive_comment_id": 5217766203,
+    "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
     "status": "TERMINAL_PASS",
-    "terminal_result": "B4_COMMAND_TRACE_ARTIFACT_CHECKPOINT_READY",
-    "root": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/command-trace-artifact-checkpoint-v2/",
-    "latest_pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/command-trace-artifact-checkpoint-v2/LATEST_B4_COMMAND_TRACE_ARTIFACT_CHECKPOINT_POINTER.json",
-    "final_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/command-trace-artifact-checkpoint-v2/B4_COMMAND_TRACE_ARTIFACT_CHECKPOINT_FINAL_REPORT_V1.json",
-    "test_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/command-trace-artifact-checkpoint-v2/B4_COMMAND_TRACE_ARTIFACT_CHECKPOINT_TEST_REPORT_V1.json",
-    "single_entrypoint_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/command-trace-artifact-checkpoint-v2/run_command_artifact_checkpoint_smoke.py",
-    "validation": {
-      "schema_parse": "PASS_4_OF_4",
-      "python_compile": "PASS_2_OF_2",
-      "unit_tests": "PASS_6_OF_6",
-      "fixture_partial_artifact_resume_smoke": "PASS_1_OF_1"
-    }
+    "terminal_result": "B4_WORKER_STATE_EVENT_TRACE_CHECKPOINT_READY",
+    "root": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/worker-state-event-trace-checkpoint-v3/",
+    "latest_pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/worker-state-event-trace-checkpoint-v3/LATEST_B4_WORKER_STATE_EVENT_TRACE_CHECKPOINT_POINTER.json",
+    "final_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/worker-state-event-trace-checkpoint-v3/reports/B4_WORKER_STATE_EVENT_TRACE_CHECKPOINT_FINAL_REPORT_V1.json",
+    "test_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/worker-state-event-trace-checkpoint-v3/reports/B4_WORKER_STATE_EVENT_TRACE_CHECKPOINT_TEST_REPORT_V1.json",
+    "single_entrypoint_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/worker-state-event-trace-checkpoint-v3/run_worker_state_event_smoke.py",
+    "validation": {"schema_parse":"PASS_4_OF_4","python_compile":"PASS_2_OF_2","unit_tests":"PASS_7_OF_7","restart_readback_smoke":"PASS_1_OF_1"}
   },
   "previous_terminal": {
-    "directive_id": "AI001-TO-B4-RAW-TRACE-ARTIFACT-RESUME-PREBUILD-V1-20260807-001",
-    "terminal_result": "B4_RAW_TRACE_ARTIFACT_RESUME_PREBUILD_READY",
-    "latest_pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/raw-trace-artifact-resume-prebuild-v1/LATEST_B4_RAW_TRACE_ARTIFACT_RESUME_POINTER.json"
+    "directive_id": "AI001-TO-B4-COMMAND-TRACE-ARTIFACT-CHECKPOINT-V2-20260807-001",
+    "terminal_result": "B4_COMMAND_TRACE_ARTIFACT_CHECKPOINT_READY",
+    "latest_pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/command-trace-artifact-checkpoint-v2/LATEST_B4_COMMAND_TRACE_ARTIFACT_CHECKPOINT_POINTER.json"
   },
   "production": false,
   "ready": false,

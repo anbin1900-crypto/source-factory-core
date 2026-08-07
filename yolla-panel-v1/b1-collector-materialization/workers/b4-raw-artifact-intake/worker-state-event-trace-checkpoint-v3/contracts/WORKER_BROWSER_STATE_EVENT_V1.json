@@ -1,0 +1,23 @@
+{
+  "duplicate_rule": "IDENTICAL_SEQ_AND_PAYLOAD_HASH_SUPPRESSED_WITH_SIDE_RECORD",
+  "immutability": "APPEND_ONLY_NO_OVERWRITE",
+  "required_fields": [
+    "command_id",
+    "worker_id",
+    "page_id",
+    "event_seq",
+    "observed_at",
+    "state",
+    "task_status",
+    "event_id",
+    "payload_sha256",
+    "source_pointer",
+    "previous_event_pointer",
+    "previous_entry_hash",
+    "entry_hash"
+  ],
+  "schema_version": "WORKER_BROWSER_STATE_EVENT_V1",
+  "secret_rule": "RAW_SECRET_HEADER_COOKIE_TOKEN_VALUES_PROHIBITED",
+  "sequence_rule": "STRICT_MONOTONIC_CONTIGUOUS_PER_COMMAND_WORKER",
+  "tamper_rule": "SAME_SEQ_DIFFERENT_HASH_REJECT_WITH_SIDE_RECORD"
+}

@@ -1,0 +1,18 @@
+{
+  "consumers": [
+    "A-7_RECOVERY",
+    "B-1_AGGREGATOR"
+  ],
+  "lookup_key": "command_id+worker_id",
+  "pointers": [
+    "event_log_pointer",
+    "latest_state_checkpoint_pointer",
+    "result_receipt_lineage_pointer",
+    "side_record_pointer",
+    "last_event_pointer",
+    "command_artifact_checkpoint_pointer",
+    "result_receipt_pointer"
+  ],
+  "receipt_storage": "POINTER_ONLY_AFTER_COMPLETE",
+  "schema_version": "A7_B1_WORKER_STATE_POINTER_MANIFEST_V1"
+}
