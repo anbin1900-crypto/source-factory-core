@@ -1,0 +1,48 @@
+{
+  "blockers": [],
+  "contract_truth": {
+    "append_only_lineage": true,
+    "artifact_identity_binding": [
+      "page_id",
+      "action_id",
+      "request_id",
+      "command_id",
+      "source_url",
+      "captured_at",
+      "sha256",
+      "record_count"
+    ],
+    "pagination_retry_resume_binding": true,
+    "partial_promoted_without_validation": false,
+    "raw_response_overwrite": false,
+    "recovery_anchor": "LAST_COMPLETED_ARTIFACT_ONLY",
+    "redaction_metadata_only": true,
+    "secret_raw_storage": false
+  },
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "directive_id": "AI001-TO-B4-RAW-TRACE-ARTIFACT-RESUME-PREBUILD-V1-20260807-001",
+  "merge": false,
+  "observed_head": "908abcaf0a9281c636a3845c071192fd5b6b106b",
+  "outputs": {
+    "entrypoint": "run_artifact_resume_smoke.py",
+    "pagination_retry_resume_state_v1": "contracts/PAGINATION_RETRY_RESUME_STATE_V1.json",
+    "partial_artifact_recovery_v1": "contracts/PARTIAL_ARTIFACT_RECOVERY_V1.json",
+    "runtime_source": "src/trace_artifact_store.py",
+    "source_trace_artifact_envelope_v1": "contracts/SOURCE_TRACE_ARTIFACT_ENVELOPE_V1.json",
+    "successor_run_plan_v1": "contracts/SUCCESSOR_RUN_PLAN_V1.json",
+    "test_report": "B4_RAW_TRACE_ARTIFACT_RESUME_PREBUILD_TEST_REPORT_V1.json",
+    "tests": "tests/test_trace_artifact_resume.py"
+  },
+  "production": false,
+  "ready": false,
+  "role": "B-4_TRACE_RAW_ARTIFACT_RESUME_ROBUSTNESS_OWNER",
+  "schema_version": "B4_RAW_TRACE_ARTIFACT_RESUME_PREBUILD_FINAL_REPORT_V1",
+  "status": "PASS",
+  "terminal": "B4_RAW_TRACE_ARTIFACT_RESUME_PREBUILD_READY",
+  "validation": {
+    "fixture_artifact_resume_smoke": "PASS_1_OF_1",
+    "python_compile": "PASS_3_OF_3",
+    "schema_parse": "PASS_4_OF_4",
+    "unit_tests": "PASS_6_OF_6"
+  }
+}
