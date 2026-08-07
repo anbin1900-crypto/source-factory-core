@@ -1,0 +1,66 @@
+{
+  "schema_version": "LATEST_B2_SITE_ANALYZER_WAVE3_POINTER_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment": 5212043685,
+  "worker": "B-2",
+  "worker_pr": 38,
+  "branch": "worker/b2-adapter-runtime-scope-v1",
+  "updated_at_kst": "2026-08-07T14:31:00+09:00",
+  "status": "PASS_ACTUAL_CHROMIUM_REMOTE_READBACK_UPSTREAM_RECONCILED",
+  "terminal": "B2_SITE_ANALYZER_WAVE3_VISUAL_INSPECTOR_PASS",
+  "required_terminal": "B2_SITE_ANALYZER_WAVE3_VISUAL_INSPECTOR_PASS_OR_PROVEN_EXTERNAL_BLOCKER",
+  "final_report": {
+    "commit": "49553faf86ad9a419c6a5e911d540ac93181da58",
+    "blob": "81cf7c81adc32194ca67482f053a977798eaf755",
+    "path": "reports/B2_SITE_ANALYZER_WAVE3_FINAL_REPORT_V1.json"
+  },
+  "test_result": {
+    "commit": "a15fc4f562e52ba11de3944956107839c871790d",
+    "blob": "f3ef6c646d2245322a7af6b5b272e6884240ea8b",
+    "node_tests": "PASS_20_OF_20",
+    "actual_chromium_e2e": "PASS"
+  },
+  "scenario_receipt": {
+    "commit": "ca8929889d4a333b36ea419890f63bb9210f9382",
+    "blob": "368825dd8bbefff754e26d21cfe66f682bc6bf9e"
+  },
+  "upstream_reconciliation": {
+    "commit": "4ca943b44920cae7bda9d43f67232183ebbd013d",
+    "blob": "43c933e13cd38af7abe69685fc8974edad4cb9ed"
+  },
+  "implementation_blobs": {
+    "package": "1705c64066927441b66cdfbb1c44cbfd692d8f81",
+    "inspector_sync_model": "14a8883df3a05f854f68290f12c4e8bf85d6fbfa",
+    "runtime_inspector_bridge": "a2b631009a2c4c277d7f46b06c5e8796bbf22682",
+    "visual_inspector_app": "2d5c371e14f346c66b937f10e1615b37b1b04582",
+    "ui": "c6e7bcc5faf75a701bb0d169d76677ea796a5d6d",
+    "model_test": "10e395f290a9ca4151c3bd7e17ff141719ca9608",
+    "browser_e2e": "871ec99f208e58a0da9ecca4b3002e6d1365c77b"
+  },
+  "required_pass": {
+    "DOM_NETWORK_SYNC": true,
+    "ELEMENT_TO_FIELD_POINTER": true,
+    "LIVE_PREVIEW": true,
+    "DYNAMIC_DOM": true,
+    "POPUP_IFRAME": true,
+    "EMBEDDED_STANDALONE_PARITY": true
+  },
+  "current_upstream_pointers": {
+    "A2": "b4e6c281f65bcda5b7839b8fd2f0ab2e0810b3f6",
+    "A3": "c5201b3c1620f30eb407ec09f8aa4ba8bdf0dd7e",
+    "A4": "da55a8faf01789cc23771592bf9b61e642decabd",
+    "A5": "8f7b0b385fb41619dd47284e25a9be998efde4e5",
+    "B3": "6f28e3c20b8a3b901ecac7933a215dd0c75f0e2f",
+    "B5": "49aef38bdf765293d9e67389eafd80b08481be9f"
+  },
+  "a5_external_blocker_preserved": true,
+  "a2_electron_external_blocker_preserved": true,
+  "false_upstream_pass_claim_count": 0,
+  "next_event": "A2_B1_CONSUME_B2_WAVE3_VISUAL_INSPECTOR_AND_PRODUCT_REBIND",
+  "target_pc_electron_single_launcher_executed": false,
+  "actual_external_site_call_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
