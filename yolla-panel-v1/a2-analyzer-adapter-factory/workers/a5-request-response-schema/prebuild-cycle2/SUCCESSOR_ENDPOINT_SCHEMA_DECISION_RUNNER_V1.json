@@ -1,0 +1,25 @@
+{
+  "schema_version": "SUCCESSOR_ENDPOINT_SCHEMA_DECISION_RUNNER_V1",
+  "directive_id": "AI001-TO-A5-ENDPOINT-SCHEMA-DECISION-RUNNER-V2-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "entrypoint": "prebuild-cycle2/successor_endpoint_schema_decision_runner.cjs",
+  "request_contract": "prebuild-cycle2/ENDPOINT_SCHEMA_DECISION_RUN_REQUEST_V1.json",
+  "receipt_contract": "prebuild-cycle2/ENDPOINT_SCHEMA_DECISION_RUN_RECEIPT_V1.json",
+  "command": "node successor_endpoint_schema_decision_runner.cjs < run-request.json > run-receipt.json",
+  "exit_codes": {
+    "0": "PASS_FULL",
+    "10": "PASS_CONFIDENCE_DEGRADED_RESPONSE_BODY_MISSING",
+    "20": "FAIL_CLOSED_CORE_EVIDENCE_MISSING",
+    "30": "INVALID_REQUEST",
+    "40": "RAW_SECRET_REJECTED"
+  },
+  "evidence_rules": [
+    "Observation and Structure pointers are required.",
+    "Receipt payloads are required to promote fields to observed authority.",
+    "Response body pointer is optional; absence yields confidence-degraded mode decision and UNKNOWN schema_fields.",
+    "Actual credential/secret values are rejected."
+  ],
+  "production": false,
+  "ready": false,
+  "merge": false
+}
