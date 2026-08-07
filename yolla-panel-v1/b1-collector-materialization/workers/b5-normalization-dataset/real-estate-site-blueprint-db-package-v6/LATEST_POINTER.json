@@ -1,0 +1,115 @@
+{
+  "schema_version": "LATEST_B5_REAL_ESTATE_SITE_BLUEPRINT_DB_PACKAGE_POINTER_V1",
+  "directive_id": "A0-TO-B5-REAL-ESTATE-SITE-BLUEPRINT-DB-PACKAGE-V6-20260808-001",
+  "directive_comment": 5220471225,
+  "cycle_id": "A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001",
+  "worker": "B-5_REAL_ESTATE_SITE_BLUEPRINT_DB_PACKAGE_OWNER",
+  "worker_pr": 41,
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "baseline_head": "1d116f6ad9f1433a2614e56a6b3d5b8b82de463a",
+  "content_head_before_pointer": "3fc46f97676a9723ec7680f602274f8f4f000b2d",
+  "parent_v5": {
+    "terminal": "B5_REAL_ESTATE_FIELD_ONTOLOGY_SITE_BINDING_READY",
+    "head": "1d116f6ad9f1433a2614e56a6b3d5b8b82de463a",
+    "pointer_blob": "f145e416da1a7ab60e0133500b0ee109531a8c64",
+    "dataset_blobs": {
+      "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1": "b14244f68d87bec41a478f051c6275c3a20be518",
+      "SITE_LISTING_BINDING_V1": "b23dd3cb4e3fc80f8f777ed38b8a2e25b4ac205d",
+      "FIELD_TRANSFORM_CANDIDATE_V1": "1e53d9be50601e0e2acc8a78c0e6d596d1cfb47b"
+    }
+  },
+  "required_outputs": {
+    "REAL_ESTATE_SITE_BLUEPRINT_DB_V1": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-site-blueprint-db-package-v6/fixtures/materialized/datasets/REAL_ESTATE_SITE_BLUEPRINT_DB_V1.json",
+      "blob": "a4fe8282ee373b62c74b0887c7304281c71beeb3",
+      "sha256": "81269d658c33807c7d1afbac85cb9f86fa2625046468ec0813f653e92509dd0c",
+      "record_count": 2
+    },
+    "SITE_CAPABILITY_PROFILE_V1": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-site-blueprint-db-package-v6/fixtures/materialized/datasets/SITE_CAPABILITY_PROFILE_V1.json",
+      "blob": "542e5063b9331fd08e5b79824b0895a2188ccc29",
+      "sha256": "8a61fa3546bd5b6af1c0d65e931902772d59ef40e6e1aca967b479453afbf9da",
+      "record_count": 2
+    },
+    "LISTING_ONTOLOGY_BINDING_PACKAGE_V1": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-site-blueprint-db-package-v6/fixtures/materialized/datasets/LISTING_ONTOLOGY_BINDING_PACKAGE_V1.json",
+      "blob": "7da6d74c9f99b841a7574228f0d2b56a2b88b063",
+      "sha256": "c5dd378b8265983d8ce4f141469d6a018586d4fc104274cdf95314497bc85682",
+      "record_count": 12
+    }
+  },
+  "lineage_outputs": {
+    "RESULT_POINTER": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-site-blueprint-db-package-v6/fixtures/materialized/LATEST_RESULT_POINTER.json",
+      "blob": "c17877850971ba06d5b64547be6a2428319d67f8"
+    },
+    "CHECKPOINT_000001": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-site-blueprint-db-package-v6/fixtures/materialized/checkpoints/checkpoint-000001.json",
+      "blob": "f9c896c5cdd4acf5864b98f1fe953b4896caf453"
+    },
+    "CHECKPOINT_000002": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-site-blueprint-db-package-v6/fixtures/materialized/checkpoints/checkpoint-000002.json",
+      "blob": "83cd563a2bfa12928fd7fdf3d960dab9c2fc56be"
+    },
+    "CHECKPOINT_000003": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/real-estate-site-blueprint-db-package-v6/fixtures/materialized/checkpoints/checkpoint-000003.json",
+      "blob": "b34163df9df6cf9b36feb05cd46898318869d11f"
+    }
+  },
+  "implementation": {
+    "engine_blob": "49ea234a9553ef2397b4405d33c7f6fe7c00afc0",
+    "tests_blob": "a10cce145e6f0c7293920ea63e1d7961f8f11e52",
+    "fixture_blob": "dc0ece8cb11ba4dcb5afacc6f0370927d7fe0b9d",
+    "blueprint_contract_blob": "7d49c4b01f02ffca4651bddfddfa53871a08f7b7",
+    "capability_contract_blob": "3e43acea1fa1421fd2a5694f80ec4b07239d0596",
+    "binding_package_contract_blob": "ee24781e656dafd08d5a455c86a00b6e0aeb6c17"
+  },
+  "evidence": {
+    "smoke_receipt_blob": "f17ea7f21d3f41fab2b245fca27ba9a8c4457c12",
+    "test_report_blob": "5260fa77b2693eae65890e6d23445755162a0b33",
+    "final_report_blob": "a9a44c7e8ccd5a3f5301ffc68607c5ea7aea10ff"
+  },
+  "validation": {
+    "compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_50_OF_50",
+    "dataset_contracts": "PASS_3_OF_3",
+    "fixture_smoke": "PASS",
+    "parent_v5_dataset_readback": "PASS_3_OF_3",
+    "remote_package_readback": "PASS_3_OF_3",
+    "site_count": 2,
+    "page_count": 4,
+    "feature_count": 6,
+    "capability_count": 8,
+    "source_field_count": 12,
+    "binding_count": 12,
+    "transform_candidate_count": 24,
+    "source_field_loss_count": 0,
+    "source_field_synthesis_count": 0,
+    "unknown_transform_count": 12,
+    "unknown_business_rule_count": 12,
+    "canonical_confirmed_without_authority_count": 0,
+    "existing_record_rewrite_count": 0,
+    "new_site_append_count": 1,
+    "new_version_append_count": 1,
+    "version_lineage": "PASS",
+    "duplicate_materialization_count": 0,
+    "checkpoint_sequence": "PASS_1_2_3_MONOTONIC",
+    "contextless_readback": "PASS",
+    "commits_from_baseline_before_pointer": 1,
+    "added_file_count_before_pointer": 18,
+    "modified_file_count": 0,
+    "deletion_count": 0,
+    "existing_v5_file_modification_count": 0
+  },
+  "terminal": "B5_REAL_ESTATE_SITE_BLUEPRINT_DB_PACKAGE_READY",
+  "status": "VERSIONED_APPEND_ONLY_BLUEPRINT_DB_PACKAGE_IMPLEMENTED_AND_READBACK_VERIFIED",
+  "target_pc_execution": false,
+  "live_site_call": false,
+  "d_canonical_schema_decision": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "updated_at_kst": "2026-08-08T03:20:15+09:00"
+}
+
