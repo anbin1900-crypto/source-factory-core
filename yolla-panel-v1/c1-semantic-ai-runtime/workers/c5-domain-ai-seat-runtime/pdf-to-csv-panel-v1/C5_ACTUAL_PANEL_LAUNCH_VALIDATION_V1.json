@@ -7,7 +7,12 @@
     "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
     "display_env": ":0",
     "pyside6_available": false,
-    "pyside6_spec": null
+    "pyside6_spec": null,
+    "direct_import_probe": {
+      "command": "python -c 'import PySide6'",
+      "exit_code": 1,
+      "stderr_terminal": "ModuleNotFoundError: No module named 'PySide6'"
+    }
   },
   "actual_gui_boundary": {
     "qapplication_created": false,
