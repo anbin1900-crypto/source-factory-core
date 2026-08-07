@@ -1,0 +1,33 @@
+{
+  "schema_version":"B3_REPRESENTATIVE_STATE_COVERAGE_V6_TEST_RESULTS",
+  "directive_id":"A0-TO-B3-REPRESENTATIVE-STATE-COVERAGE-PLAN-V6-20260808-001",
+  "assignment_comment_id":5220468828,
+  "local_validation":{
+    "source_parse":"PASS",
+    "python_compile":"PASS_EXIT_0",
+    "unit_tests":"PASS_12_OF_12",
+    "fixture_smoke":"PASS_EXIT_0"
+  },
+  "fixture_results":{
+    "flow_coverage":"PASS_4_OF_4",
+    "representative_transition_count":7,
+    "unique_representative_transition_count":7,
+    "equivalent_action_suppressed_count":1,
+    "unknown_unobserved_path_count":2,
+    "unknown_paths_preserved":true,
+    "expected_state_api_entity_evidence_classes":"PASS",
+    "public_read_path":"PASS_3_STEPS",
+    "create_path":"PASS_2_STEPS",
+    "my_listing_path":"PASS_1_STEP",
+    "edit_path":"PASS_1_STEP",
+    "live_site_execution_authorized":false
+  },
+  "environment_note":"Python startup emitted unrelated artifact_tool spreadsheet warmup stderr; validation processes exited 0 and B-3 tests had no failures.",
+  "validation_boundary":"LOCAL_EXECUTION_AND_REMOTE_BLOB_READBACK_REPORTED_SEPARATELY",
+  "ci_pass_claimed":false,
+  "target_pc_execution":false,
+  "live_site_call":false,
+  "production":false,
+  "ready":false,
+  "merge":false
+}
