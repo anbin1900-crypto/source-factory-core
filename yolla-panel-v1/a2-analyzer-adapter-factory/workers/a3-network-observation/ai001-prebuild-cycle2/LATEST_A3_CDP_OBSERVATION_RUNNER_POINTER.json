@@ -1,0 +1,68 @@
+{
+  "schema_version": "LATEST_A3_CDP_OBSERVATION_RUNNER_POINTER_V1",
+  "directive_id": "AI001-TO-A3-CDP-OBSERVATION-RUNNER-AND-RECEIPT-V2-20260807-001",
+  "directive_comment": 5217308019,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "worker": "A-3",
+  "role": "A-3_CDP_OBSERVATION_ENGINE_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "source_head": "d78269d9b3b6e7afbbefe3fb3be5ef6eea7fb111",
+  "pre_pointer_head": "40149dffadf71f8de9bf6d908dbe03ccafacfa9b",
+  "parent_result": "A3_CHROME_CDP_OBSERVATION_AGENT_PREBUILD_READY",
+  "status": "PASS",
+  "terminal": "A3_CDP_OBSERVATION_RUNNER_AND_RECEIPT_READY",
+  "artifacts": {
+    "CDP_OBSERVATION_RUN_REQUEST_V1": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild-cycle2/CDP_OBSERVATION_RUN_REQUEST_V1.schema.json",
+      "blob": "48ef55462b2c6e73713dbae0eb07c38f0f7284d0"
+    },
+    "CDP_OBSERVATION_RUN_RECEIPT_V1": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild-cycle2/CDP_OBSERVATION_RUN_RECEIPT_V1.schema.json",
+      "blob": "81cc6288a92cd0effffa8063930aa3a734262d75"
+    },
+    "SUCCESSOR_CDP_OBSERVATION_RUNNER_V1": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild-cycle2/SUCCESSOR_CDP_OBSERVATION_RUNNER_V1.cjs",
+      "blob": "f49cae15f2922a6b705939570317f8fbddecff6c",
+      "sha256": "866f940b08327ee967d88e56214b4051f4207d1b49c3144a7d972f8431d94a8d"
+    },
+    "MOCK_SMOKE_V1": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild-cycle2/mock_smoke_cycle2_v1.cjs",
+      "blob": "d01958eaade2e860fc792b2d84ebc68fe4420faf",
+      "sha256": "276977345a295509631dbbbbce094c8c5f4d39bf1aca94f7e0bb177bdf1317b8"
+    },
+    "VALIDATION_RECEIPT": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild-cycle2/A3_CDP_OBSERVATION_RUNNER_VALIDATION_RECEIPT_V1.json",
+      "blob": "e7e53d3f6db5f184b895109ea9e2f639d6a15afd"
+    }
+  },
+  "runtime_contract": {
+    "command": "node SUCCESSOR_CDP_OBSERVATION_RUNNER_V1.cjs --request <runtime-request.json> --output-root <local-output-root>",
+    "cdp_endpoint_source": "RUNTIME_REQUEST_ONLY",
+    "inputs": ["cdp_endpoint", "page_selector/page_id", "observation_window_ms", "capture_flags"],
+    "outputs": ["page_identity", "dom_snapshot_pointer", "request_response_metadata_pointer", "redacted_response_body_pointer", "frame_navigation_pointer", "timestamps"],
+    "target_filter": "PAGE_ONLY_EXCLUDING_BROWSER_UI_AND_BACKGROUND_TARGETS",
+    "idempotency": "REQUEST_SHA256_DERIVED_RUN_ID_AND_EXISTING_RECEIPT_REUSE",
+    "error_contract": "EXACT_ERROR_PLUS_RETRYABLE_NO_INTERNAL_RETRY"
+  },
+  "validation": {
+    "node_syntax": "PASS_2_OF_2",
+    "local_mock_smoke": "PASS_1_OF_1",
+    "browser_ui_background_exclusion_pass": true,
+    "idempotent_replay_check": true,
+    "raw_endpoint_in_receipt_count": 0,
+    "raw_secret_value_count": 0,
+    "internal_retry_count": 0,
+    "github_connector_remote_readback": "PASS"
+  },
+  "execution_counters": {
+    "target_pc_execution_count": 0,
+    "tunnel_change_count": 0,
+    "pc_agent_direct_connection_count": 0,
+    "successor_direct_call_count": 0
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
