@@ -1,0 +1,8 @@
+{
+  "schema_version": "USER_JOURNEY_GRAPH_V1",
+  "node_identity": "ui_state_id",
+  "edge_fields": ["from_state", "to_state", "action_id", "command_id", "page_id", "feature", "action_type", "sequence_no"],
+  "journey_partition_key": "journey_id",
+  "required_representative_flows": ["Search->List->Detail", "Create->MyListing->Edit"],
+  "worker_lifecycle_events_included": false
+}
