@@ -1,0 +1,9 @@
+{
+  "schema_version": "USER_JOURNEY_EVENT_STREAM_V1",
+  "event_domain": "PRODUCT_USER_ACTION",
+  "required_fields": ["journey_event_id", "journey_id", "feature", "mission_id", "session_id", "command_id", "page_id", "action_id", "sequence_no", "timestamp", "action_type", "status", "payload", "ui_state_before", "ui_state_after", "coverage_family_key", "idempotency_key"],
+  "ordering": "sequence_no ASC",
+  "worker_lifecycle_events_included": false,
+  "dedupe_policy": "SAME_IDEMPOTENCY_KEY_RETURN_PRIOR_EVENT_WITHOUT_APPEND",
+  "hash_chain": "prev_hash -> record_hash"
+}
