@@ -1,0 +1,59 @@
+{
+  "schema_version": "D6_CYCLE3_LATE_BIND_INPUTS_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE3-20260808-001",
+  "directive_id": "C3-W6-D2-D5-LIVE-REBIND-AND-D4-GAP-ISOLATION-V1-20260808-001",
+  "directive_comment_id": 5220450674,
+  "authority_assignment_commit": "5f547fbb337108e204729c2d2b6795d3e246ce5f",
+  "d2_cycle2": {
+    "result_comment_id": 5219897042,
+    "result_commit": "1c6d79c492ff78cce4b0074bf7f8958d60f4edea",
+    "terminal": "ACTIVE_CONTEXT_IDENTIFICATION_LIVE_PASS",
+    "context_id": "6a72e288-7f24-83ee-b357-3e327cf6d877",
+    "context_name": "자동화 C 모드 - 자동화 C 모드 - 자동화 그룹 A E  그룹에 속함",
+    "page_id": "UIA-TAB-42.198100.4.0.0.5287",
+    "target_pc_receipt_repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "target_pc_receipt_path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/PC_OPERATION_COMMAND_BUS_V2/RECEIPTS/D2C2-RUN-UIA-CONTEXT-PROBE-V2-AFTER-MARKER-20260808-020300-001.json",
+    "target_pc_receipt_blob": "e4b12628631f89b13bf0e0d05486e99d30333290",
+    "target_pc_receipt_readback": "PASS_EXACT_BLOB"
+  },
+  "d2_cycle3_freshness_guard": {
+    "result_commit": "0264206865159f9ca928ffc4264859d9218f81f0",
+    "terminal": "LIVE_CONTEXT_HANDOFF_AND_FRESHNESS_GUARD_PASS",
+    "handoff_commit": "72b152dc0ae356a66f82040a0ec655756b5bce12",
+    "pointer_commit": "69635bdf78f577d021ac6069c5cd4a17531fa0c5",
+    "last_seen_at": "2026-08-07T18:16:52.4077010Z",
+    "max_age_seconds": 300,
+    "use": "FRESHNESS_GUARD_EVIDENCE_ONLY_NOT_CURRENT_BINDING_AUTHORITY"
+  },
+  "d5_cycle2": {
+    "result_comment_id": 5219763164,
+    "result_commit": "bca5e3fd2e7d530f142197cc6a45938aa84bc736",
+    "terminal": "CYCLE2_REAL_RECEIPT_INGESTION_AND_BLOCKER_METRICS_PASS",
+    "upstream_event_store_blob": "8ae79e40725447ff55ea8d166d2a4441587a8de4"
+  },
+  "d5_cycle3_recovery": {
+    "result_commit": "e907409e56d11d88fd98278276610060137db052",
+    "terminal": "D2_LIVE_RECOVERY_INGESTION_AND_METRIC_CLOSURE_PASS",
+    "final_report_blob": "1c7d29ca4ca43aa491dfc70759bdb221a362c2a9",
+    "projection": {
+      "D-2": "LIVE_RESUMED",
+      "D-4": "ADAPTER_UNAVAILABLE",
+      "D-6": "BLOCKED_EXTERNAL"
+    },
+    "recovered_worker_count": 1,
+    "open_blocker_count": 2,
+    "upstream_event_store_mutation_count": 0
+  },
+  "d4": {
+    "cycle2_terminal_found": false,
+    "latest_confirmation_comment_id": 5220507787,
+    "latest_context_handoff_comment_id": 5220610638,
+    "isolated_gap": "D4_OBSERVER_RECEIPT_MISSING",
+    "state_inferred": false
+  },
+  "d3_wait_count": 0,
+  "synthetic_receipt_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
