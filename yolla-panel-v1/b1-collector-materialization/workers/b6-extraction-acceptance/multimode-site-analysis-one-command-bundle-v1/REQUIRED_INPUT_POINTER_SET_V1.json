@@ -1,0 +1,36 @@
+{
+  "schema_version": "REQUIRED_INPUT_POINTER_SET_V1",
+  "resolution": "LATE_BIND_FROM_WORKER_BRANCH_LATEST_POINTER",
+  "pointers": [
+    {
+      "owner": "A-2",
+      "pr": 18,
+      "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+      "latest_pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/composite-pipeline-v1/LATEST_A2_COMPOSITE_PIPELINE_POINTER.json",
+      "fixture_path": "fixtures/latest-pointers/A2_LATEST_POINTER.json"
+    },
+    {
+      "owner": "A-7",
+      "pr": 26,
+      "branch": "worker/a7-analyzer-acceptance-audit-v1",
+      "latest_pointer_path": "yolla-panel-v1/ai001-worker-state-aware-context-recovery/a7-worker-state-aware-recovery-v3/LATEST_POINTER.json",
+      "fixture_path": "fixtures/latest-pointers/A7_LATEST_POINTER.json"
+    },
+    {
+      "owner": "B-1",
+      "pr": 19,
+      "branch": "integration/b1-collector-db-materialization-v1",
+      "latest_pointer_path": "yolla-panel-v1/b1-collector-materialization/worker-state-event-cycle-aggregator-v3/LATEST_B1_WORKER_STATE_EVENT_AND_CYCLE_AGGREGATOR_POINTER.json",
+      "fixture_path": "fixtures/latest-pointers/B1_LATEST_POINTER.json"
+    },
+    {
+      "owner": "B-5",
+      "pr": 41,
+      "branch": "worker/b5-normalization-dataset-receipt-v1",
+      "latest_pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/result-dataset-checkpoint-lineage-v3/LATEST_POINTER.json",
+      "fixture_path": "fixtures/latest-pointers/B5_LATEST_POINTER.json"
+    }
+  ],
+  "raw_secret_embed": false,
+  "transport_change": false
+}
