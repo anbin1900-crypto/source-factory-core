@@ -1,0 +1,22 @@
+{
+  "action_id": "action-fixture-001",
+  "blueprint_index_schema": "PRODUCT_BLUEPRINT_SOURCE_EVIDENCE_INDEX_V1",
+  "command_checkpoint_pointer": "../command-trace-artifact-checkpoint-v2/LATEST_B4_COMMAND_TRACE_ARTIFACT_CHECKPOINT_POINTER.json",
+  "duplicate_disposition": "DUPLICATE_REUSED",
+  "duplicate_materialization_delta": 0,
+  "exact_readback_pass": true,
+  "form_ref_schema": "FORM_STRUCTURE_EVIDENCE_REF_V1",
+  "page_ref_schema": "PAGE_STATE_ARTIFACT_REF_V1",
+  "pii_raw_storage_count": 0,
+  "raw_count_after_duplicate": 6,
+  "raw_count_before_duplicate": 6,
+  "raw_materialized_count": 6,
+  "raw_overwrite": false,
+  "schema_version": "B4_MULTIMODE_RAW_EVIDENCE_SMOKE_RESULT_V1",
+  "secret_raw_storage_count": 0,
+  "source_record_envelope_pointer": "../SOURCE_RECORD_ENVELOPE_V1.json",
+  "status": "PASS",
+  "trace_evidence_count": 6,
+  "trace_unique_evidence_count": 6,
+  "worker_state_checkpoint_pointer": "../worker-state-event-trace-checkpoint-v3/LATEST_B4_WORKER_STATE_EVENT_TRACE_CHECKPOINT_POINTER.json"
+}
