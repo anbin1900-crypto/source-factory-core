@@ -1,0 +1,10 @@
+{
+  "schema_version":"ROLLBACK_REMOVE_PLAN_V1",
+  "principles":["POINTER_ONLY","SIDE_BY_SIDE","NO_WORKER_SOURCE_DELETE","NO_RAW_ARTIFACT_DELETE"],
+  "steps":[
+    {"command_id":"B6.ROLLBACK.ACTIVE_POINTER","expected_exit_code":0,"expected_receipt":"POINTER_ROLLBACK_RECEIPT_V1","rollback_action":"RESTORE_PREVIOUS_POINTER"},
+    {"command_id":"B6.REMOVE.STAGED_BUNDLE","expected_exit_code":0,"expected_receipt":"STAGED_BUNDLE_REMOVE_RECEIPT_V1","rollback_action":"NOOP_IF_ALREADY_REMOVED"},
+    {"command_id":"B6.CLEAN.RESOLUTION_CACHE","expected_exit_code":0,"expected_receipt":"RESOLUTION_CACHE_CLEAN_RECEIPT_V1","rollback_action":"RE_RESOLVE_FROM_LATEST_POINTERS"}
+  ],
+  "forbidden":["DELETE_WORKER_SOURCE","DELETE_DURABLE_RECEIPT","DELETE_RAW_ARTIFACT","TUNNEL_MUTATION","PRODUCTION_REMOVE"]
+}

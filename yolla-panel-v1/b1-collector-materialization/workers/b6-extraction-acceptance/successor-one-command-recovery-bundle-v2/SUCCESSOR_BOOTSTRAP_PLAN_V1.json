@@ -1,0 +1,17 @@
+{
+  "schema_version":"SUCCESSOR_BOOTSTRAP_PLAN_V1",
+  "directive_id":"AI001-TO-B6-SUCCESSOR-ONE-COMMAND-RECOVERY-BUNDLE-V2-20260807-001",
+  "normal_sequence":["P10_PREFLIGHT","P20_SOURCE_POINTER_RESOLVE","P30_DEPENDENCY_INSTALL_PLAN","P40_MODULE_APPLY_PLAN","P50_RUN_PLAN","P60_HEALTH_READBACK_PLAN","P70_ROLLBACK_REMOVE_PLAN"],
+  "recovery_sequence":["A7_RECOVER_WORK","P10_PREFLIGHT","P20_SOURCE_POINTER_RESOLVE","P30_DEPENDENCY_INSTALL_PLAN","P40_MODULE_APPLY_PLAN","P50_RUN_PLAN","P60_HEALTH_READBACK_PLAN","P70_ROLLBACK_REMOVE_PLAN"],
+  "steps":[
+    {"command_id":"B6.BUNDLE.PREFLIGHT","expected_exit_code":0,"expected_receipt":"SELF_CHECK_RECEIPT_V1","rollback_action":"ROLLBACK_NONE"},
+    {"command_id":"B6.BUNDLE.RESOLVE","expected_exit_code":0,"expected_receipt":"SOURCE_POINTER_RESOLUTION_RECEIPT_V1","rollback_action":"DISCARD_RESOLUTION_CACHE"},
+    {"command_id":"B6.BUNDLE.DEP_PLAN","expected_exit_code":0,"expected_receipt":"DEPENDENCY_INSTALL_PLAN_RECEIPT_V1","rollback_action":"NO_INSTALL_PERFORMED"},
+    {"command_id":"B6.BUNDLE.APPLY_PLAN","expected_exit_code":0,"expected_receipt":"MODULE_APPLY_PLAN_RECEIPT_V1","rollback_action":"POINTER_ROLLBACK_ONLY"},
+    {"command_id":"B6.BUNDLE.RUN_PLAN","expected_exit_code":0,"expected_receipt":"RUN_PLAN_RECEIPT_V1","rollback_action":"STOP_LAUNCHED_FIXTURE_ONLY"},
+    {"command_id":"B6.BUNDLE.HEALTH_PLAN","expected_exit_code":0,"expected_receipt":"HEALTH_READBACK_PLAN_RECEIPT_V1","rollback_action":"ROLLBACK_NONE"},
+    {"command_id":"B6.BUNDLE.ROLLBACK_PLAN","expected_exit_code":0,"expected_receipt":"ROLLBACK_REMOVE_RECEIPT_V1","rollback_action":"ROLLBACK_IDEMPOTENT"}
+  ],
+  "dependency_install":"PLAN_ONLY_UNTIL_AUTHORIZED_PC_EXECUTION",
+  "module_apply":"PLAN_ONLY_NO_CURRENT_WORKER_SOURCE_INSTALL"
+}
