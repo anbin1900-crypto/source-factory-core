@@ -1,0 +1,27 @@
+{
+  "schema_version": "RC7_SIMPLIFIED_UI_HOOK_ROLLBACK_NEGATIVE_FIXTURE_V1",
+  "artifact_head": "854c3d928e17a30a124b2aab294ff5a9d781a252",
+  "target_version": "5.10.2.4.2-rc7",
+  "patch": {
+    "path": "YOLLA_C_MODE_5.10.2.4.2-rc7/tools/apply_w3_rc7_ui_overlay.cjs",
+    "blob_sha1": "077e4c2a892d3188e4c93b12fcf0d162e9246be8",
+    "sha256": "f10604848a1e83d897bb87d7502e653e41846f2927106706b4033634bbcad0c0",
+    "size_bytes": 2474
+  },
+  "rollback": {
+    "path": "YOLLA_C_MODE_5.10.2.4.2-rc7/tools/rollback_w3_rc7_ui_overlay.cjs",
+    "blob_sha1": "3b341821a41ebbdebf1b5e271612e258dd978623",
+    "sha256": "1f6a649139d2c3ed3468885638ea555973e3099987bfc2f72d13d4bb93f4b56b",
+    "size_bytes": 990
+  },
+  "expected_rejection_reasons": [
+    "SIMPLIFIED_LOAD_HOOK_SUBSTITUTION",
+    "TRUTH_BRIDGE_NOT_IMMEDIATELY_AFTER_USE_STRICT",
+    "GLOBAL_TRUTH_BRIDGE_BINDING_MISSING",
+    "BASE_CSS_ANCHOR_NOT_ENFORCED",
+    "BASE_JS_ANCHOR_NOT_ENFORCED",
+    "ROLLBACK_MISSING_BACKUP_NOT_FAIL_CLOSED",
+    "EXACT_SOURCE_IDENTITY_MISMATCH"
+  ],
+  "accepted": false
+}

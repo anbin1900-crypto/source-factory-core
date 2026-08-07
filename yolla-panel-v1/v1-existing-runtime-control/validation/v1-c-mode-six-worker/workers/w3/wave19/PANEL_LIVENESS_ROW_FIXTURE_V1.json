@@ -1,0 +1,79 @@
+{
+  "schema_version": "PANEL_LIVENESS_ROW_FIXTURE_V1",
+  "current_wave_id": "V1-C-MODE-6W-WAVE-019",
+  "now_at": "2026-08-06T05:00:00Z",
+  "roles": [
+    {
+      "role_id": "W1",
+      "directive_created_at": "2026-08-06T04:40:00Z",
+      "last_check_at": "2026-08-06T04:58:00Z",
+      "chat_url": "https://chat.example/W1",
+      "legacy_profile_status": "A",
+      "results": [
+        {"wave_id":"V1-C-MODE-6W-WAVE-018","status":"END","result_comment_id":5200000001,"result_key":"520000000100","result_url":"https://github.example/result/W1-old","published_at":"2026-08-06T04:20:00Z"}
+      ]
+    },
+    {
+      "role_id": "W2",
+      "generation_active": true,
+      "lifecycle_state": "GENERATING",
+      "generation_started_at": "2026-08-06T04:35:00Z",
+      "last_check_at": "2026-08-06T04:59:00Z",
+      "chat_url": "https://chat.example/W2",
+      "results": []
+    },
+    {
+      "role_id": "W3",
+      "awaiting_result": true,
+      "lifecycle_state": "RESULT_WAITING",
+      "started_at": "2026-08-06T04:10:00Z",
+      "last_check_at": "2026-08-06T04:57:00Z",
+      "chat_url": "https://chat.example/W3",
+      "results": []
+    },
+    {
+      "role_id": "W4",
+      "started_at": "2026-08-06T03:30:00Z",
+      "last_check_at": "2026-08-06T04:56:00Z",
+      "chat_url": "https://chat.example/W4",
+      "results": [
+        {"wave_id":"V1-C-MODE-6W-WAVE-019","status":"END","result_comment_id":5200547394,"result_key":"520054739400","result_url":"https://github.example/result/W4","published_at":"2026-08-06T04:50:00Z"},
+        {"wave_id":"V1-C-MODE-6W-WAVE-018","status":"END","result_comment_id":5200000004,"result_key":"520000000400","result_url":"https://github.example/result/W4-old","published_at":"2026-08-06T03:10:00Z"}
+      ]
+    },
+    {
+      "role_id": "W5",
+      "technical_review_required": true,
+      "correlation_invalid": true,
+      "started_at": "2026-08-06T04:00:00Z",
+      "last_check_at": "2026-08-06T04:55:00Z",
+      "chat_url": "https://chat.example/W5",
+      "results": []
+    },
+    {
+      "role_id": "W6",
+      "directive_created_at": "2026-08-06T04:42:00Z",
+      "last_check_at": "2026-08-06T04:54:00Z",
+      "chat_url": "https://chat.example/W6",
+      "legacy_profile_status": "E",
+      "results": []
+    },
+    {
+      "role_id": "W7",
+      "started_at": "2026-08-06T04:30:00Z",
+      "results": [
+        {"wave_id":"V1-C-MODE-6W-WAVE-019","status":"END","result_key":"520054999900","result_url":"https://github.example/result/W7","published_at":"2026-08-06T04:45:00Z"}
+      ]
+    }
+  ],
+  "expected_states": {
+    "W1": "WAITING",
+    "W2": "WORKING",
+    "W3": "RESULT_PENDING",
+    "W4": "COMPLETED",
+    "W5": "REVIEW_REQUIRED",
+    "W6": "WAITING",
+    "W7": "COMPLETED"
+  },
+  "expected_historical_rows": 2
+}

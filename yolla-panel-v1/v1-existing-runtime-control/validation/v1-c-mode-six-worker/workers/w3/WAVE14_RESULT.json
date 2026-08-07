@@ -1,0 +1,99 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE14_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-014",
+  "registry_sequence": 14,
+  "command_id": "C6W-W14-W3-AUTHORITY-CORRECT-UI-LOAD-HOOK-OVERLAY",
+  "worker_id": "AUTOMATION-C-W3",
+  "directive_comment": 5196505437,
+  "result_key": "519650543700",
+  "target_version": "5.10.2.4.2-rc6",
+  "status": "PASS_OFFLINE_TARGET_PC_PENDING",
+  "terminal": "C6W_W14_W3_AUTHORITY_CORRECT_UI_LOAD_HOOK_OVERLAY_OFFLINE_PASS_TARGET_PC_EXECUTION_PENDING",
+  "authority": {
+    "handoff_commit": "1070b2ee3329ac5ec08020e2c2e2a9377767f888",
+    "state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2",
+    "release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases",
+    "browser_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "worker_partition": "persist:sf4-safe-panel-worker-1",
+    "analysis_partition": "persist:yolla-analysis-browser-v1",
+    "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_3_7.bat"
+  },
+  "export": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave14/W3_RC6_AUTHORITY_UI_EXPORT.json",
+    "commit": "fe4f4e977526f3152609b789efdfa06aadcc3082",
+    "blob": "f051762454c49dea914ae8ca208815869819d3b7",
+    "size_bytes": 7939,
+    "sha256": "f3603dd3cf635829d6a164f9f155518e29dfbb1a47ea4d9510f605e076f574e3"
+  },
+  "implementation": {
+    "patch_commit": "ca9343722856c333ae1d7d9208642d21480130a2",
+    "patch_blob": "1e6e54914737b1878a3f3ba1e88adbba57eab190",
+    "patch_sha256": "188dcc15f0f88ac41e5179272ccc0ee11b9ee48001ee986d1732f6414d88f462",
+    "rollback_commit": "1076f509e85463546cbf6dc6107715c401a9b17e",
+    "rollback_blob": "1b3df39a0ffa6c80ffa0b99e44422d6a26110f11",
+    "rollback_sha256": "7a86437b703b50a6b7bbe575802bdf6d82a228919d5dc48bd8169046baf9253b",
+    "validator_commit": "9f0fc60b8a1c5eab92c3da747908092f3025ee3f",
+    "validator_blob": "c3488625cf5cc94c1d4c46d0acf5f32db175818f",
+    "validator_sha256": "868bf9c59401a695603ac2191b896e395020251449c10f4734573f74cee7baee",
+    "smoke_commit": "9a085aee9479407335b99a30bc5c6e9ebe378c19",
+    "smoke_blob": "fa190d411ebe3e7e579da0fb7c6677e78547e46e",
+    "smoke_sha256": "62f272f5bcb0b8835fb7b6bac56fa878ec49be42a008bd46c6a7b1b692906aed"
+  },
+  "exact_wave12_ui_bytes": [
+    {
+      "logical_role": "TRUTH_BRIDGE",
+      "source_commit": "edcb83ef2cd96aa042ab0656c66f290d542d20f0",
+      "source_blob": "27267b1b0b1d057e2ca40e3fcc864fd4609a1520",
+      "size_bytes": 4012,
+      "sha256": "8086f56f1f0b5731cb9ad4be5339fc211d1468f4195fcf249b7a300cc3b830e8"
+    },
+    {
+      "logical_role": "CSS_OVERLAY",
+      "source_commit": "52aea6e17ce2561ed07058e304c3744eec3b166a",
+      "source_blob": "ff1bf6c84fb9806328bb3e5d8616a85cce943473",
+      "size_bytes": 1504,
+      "sha256": "43b6a3721c250e76b2562c45d931fd17d87ae219fec70aa3ef3206af9cd8b0fe"
+    },
+    {
+      "logical_role": "JS_OVERLAY",
+      "source_commit": "250b05096ba70fcbe65aed3276cebaa07bd63de5",
+      "source_blob": "82862f1b4c8c2599c4035c78023ffea850909b4c",
+      "size_bytes": 7858,
+      "sha256": "5fdd1719e110ce80ad4b3efb911fd20a86ccbfeb27182645e8d2170287114b54"
+    }
+  ],
+  "offline_receipts": {
+    "membership": {
+      "commit": "3d24d4062e6cdb98d33296304dab9517590e9007",
+      "sha256": "84a6b74655f41e932bb122c9a75c8adf5f2b71e91ef299a4ba773ecc87ba47ac",
+      "member_count": 7,
+      "status": "PASS"
+    },
+    "smoke": {
+      "commit": "55c25aa90f68a1bdfab7b20af3a1760106a3f887",
+      "sha256": "50e23242d2e44d67bf02ba1583209782d6f74662128bf97bffdd385bae766dad",
+      "assertion_count": 20,
+      "status": "PASS"
+    }
+  },
+  "verified": {
+    "EXACT_UI_SOURCE_BYTES": true,
+    "BASE_UI_PRESERVED": true,
+    "CSS_LOAD_AFTER_BASE_CSS": true,
+    "JS_LOAD_AFTER_BASE_JS": true,
+    "BRIDGE_LOAD_BEFORE_UI_OVERLAY": true,
+    "FIXED_BROWSER_PROFILE_UNCHANGED": true,
+    "C_AND_REPEAT_DISABLED_WORKING_COUNT": 0,
+    "LEGACY_A_E_CURRENT_COUNT": 0,
+    "PATCH_IDEMPOTENT": true,
+    "ROLLBACK_IDEMPOTENT": true,
+    "ROLLBACK_EXACT_PREIMAGE": true
+  },
+  "target_pc_execution": "PENDING",
+  "live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-06T04:48:00+09:00"
+}

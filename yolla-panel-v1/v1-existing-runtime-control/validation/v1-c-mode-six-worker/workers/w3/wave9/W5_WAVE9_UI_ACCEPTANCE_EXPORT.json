@@ -1,0 +1,90 @@
+{
+  "schema_version": "W3_WAVE9_UI_ACCEPTANCE_EXPORT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-009",
+  "registry_sequence": 9,
+  "result_key": "519440526200",
+  "target_version": "5.10.2.4.2-rc3",
+  "owner": "AUTOMATION-C-W3",
+  "input_head": "3b3f8c792e9eaba9aa495e3e229d3c6019b149db",
+  "files": [
+    {
+      "apply_order": 1,
+      "role": "candidate_ui_truth_bridge",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave8/candidate_ui_truth_bridge.cjs",
+      "source_commit": "119381ea8cc07016505a591cedeb053272cc2fda",
+      "blob_sha": "c2ee5755e594cc55b94bf79e6075756459509e9e",
+      "size_bytes": 2121,
+      "sha256": "3e8d29f029b1016d453e561ef8acba8618c4a594f476d0ebbaf057037f2dddd0"
+    },
+    {
+      "apply_order": 2,
+      "role": "projection_receipt_builder",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave9/build_wave9_projection_receipt.cjs",
+      "source_commit": "8c636849ffdbd4e41934d40b39b9715222c578e9",
+      "blob_sha": "2075f63cc6ce76f5d2d1202128476d24dfdcd956",
+      "size_bytes": 3357,
+      "sha256": "b80b11b5119e982f0270753e7291d5c2eb17ef63c9abb89bdedb6d71b63fa5d8"
+    },
+    {
+      "apply_order": 3,
+      "role": "expected_receipt",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave9/W3_WAVE9_EXPECTED_RECEIPT.json",
+      "source_commit": "776f4b0026d3095a99213a6a168fea94fd790f62",
+      "blob_sha": "b9817862ef546d1bb80ec51aeca7fe95590430e3",
+      "size_bytes": 2270,
+      "sha256": "0ae81672c64d888564e3aafc82564ca943fa24993fb94e5b6a888fa9adedadee"
+    },
+    {
+      "apply_order": 4,
+      "role": "target_pc_receipt_schema",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave9/W3_WAVE9_TARGET_PC_UI_ACCEPTANCE_V1.schema.json",
+      "source_commit": "03918c8d2a7063b6ebf7de962d16077ff29c3c4f",
+      "blob_sha": "3c6e1a17f6b53db5a8f8d1eeea8d64181c7de304",
+      "size_bytes": 2144,
+      "sha256": "5b2531c27bfdfcf0d732624b15aab114df32895aa1402eb5db85adba40e3da3c"
+    },
+    {
+      "apply_order": 5,
+      "role": "target_pc_collector",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave9/Collect-W3Wave9TargetPcUiAcceptance.ps1",
+      "source_commit": "ac242138540f16e50f6aa7713bd1c278e6999f70",
+      "blob_sha": "925ab115f8d9eaf89db825565fe20fd4701defe7",
+      "size_bytes": 4705,
+      "sha256": "edab94a2054b8bb14ba59abd8ecbb8f1f30ac0c103c9f3933b1dabedf5fd2375"
+    },
+    {
+      "apply_order": 6,
+      "role": "offline_regression",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave9/test_wave9_acceptance_pack.cjs",
+      "source_commit": "904ad61890bd597093859bbac417167de7ca5107",
+      "blob_sha": "435c7359c0d27ea4ac4fddcf98ac1a2d92d48a5f",
+      "size_bytes": 2026,
+      "sha256": "13ac7f40e3bbe6f85234b8cca0a2233f00a61a8439376000e16547f31b178dd2"
+    }
+  ],
+  "commands": {
+    "offline_test": "node wave9/test_wave9_acceptance_pack.cjs",
+    "projection_receipt": "node wave9/build_wave9_projection_receipt.cjs --bridge wave8/candidate_ui_truth_bridge.cjs --expected wave9/W3_WAVE9_EXPECTED_RECEIPT.json --out <OUTPUT>/W3_WAVE9_UI_PROJECTION_RECEIPT.json",
+    "target_pc": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File wave9/Collect-W3Wave9TargetPcUiAcceptance.ps1 -WorkspaceRoot <WORKSPACE> -OutputDirectory <OUTPUT> -CandidateBridgePath wave8/candidate_ui_truth_bridge.cjs -ProjectionBuilderPath wave9/build_wave9_projection_receipt.cjs -ExpectedReceiptPath wave9/W3_WAVE9_EXPECTED_RECEIPT.json -SchemaPath wave9/W3_WAVE9_TARGET_PC_UI_ACCEPTANCE_V1.schema.json -RegistrySnapshotPath <REGISTRY_JSON> -ScreenshotPaths <SCREENSHOTS>"
+  },
+  "rollback": [
+    "Remove only the packaged wave9 files in reverse apply_order.",
+    "Preserve the shared Wave 8 candidate bridge unless the entire W3 UI export is rolled back.",
+    "Restore workspace runtime, C, repeat and registry JSON from the target-PC pre-install backup."
+  ],
+  "validation": {
+    "node_syntax": "PASS",
+    "offline_assertions": 17,
+    "projection_scenarios": 2,
+    "json_schema_meta_validation": "PASS",
+    "result_comment_precedence": "PASS",
+    "disabled_working_zero": "PASS",
+    "legacy_a_e_excluded": "PASS"
+  },
+  "target_pc_execution": "PENDING",
+  "live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE18_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-018",
+  "registry_sequence": 18,
+  "command_id": "C6W-W18-W3-TARGET-PC-UI-EVIDENCE-PACK-V2",
+  "role": "AUTOMATION-C-W3",
+  "directive_comment": 5198901521,
+  "result_key": "519890152100",
+  "target_version": "5.10.2.4.2-rc8",
+  "outcome": "PASS",
+  "status": "PASS_OFFLINE_EVIDENCE_PACK_TARGET_PC_PENDING",
+  "artifact_commit": "4ef96ba6e19221d943addc803b129aace5f75b55",
+  "wave17_bundle": {
+    "result_commit": "7af7a51ee18e6b5ae6f64942cf02392f596e4678",
+    "artifact_commit": "f023ce7ab94d5522eaf2c790a172478ea268e184",
+    "manifest_blob": "984e42bab53a62bdaa61df2e41009c4e3bea0fda",
+    "reused": true
+  },
+  "artifacts": [
+    {
+      "logical_role": "ONE_CLICK_COLLECTOR",
+      "path": "wave18/Collect-W3TargetPcUiEvidencePackV2.ps1",
+      "blob": "8d4964249b516a7247957d2d66c0c94c5f04c772",
+      "size_bytes": 13729,
+      "sha256": "8f9e99f66ba5b9c9ed7a132649d4432d046bf504b5328708fd464438b0c32846"
+    },
+    {
+      "logical_role": "ONE_CLICK_WRAPPER",
+      "path": "wave18/RUN_W3_TARGET_PC_UI_EVIDENCE_PACK_V2.bat",
+      "blob": "0fa21dc44c746ee4f4153241b02b129ffbab08fb",
+      "size_bytes": 226,
+      "sha256": "10bb31d8d8e25d71062fd3bf810a36f17344c3de187333cfc37f14bbc4be3d74"
+    },
+    {
+      "logical_role": "CONFIG_EXAMPLE",
+      "path": "wave18/W3_TARGET_PC_UI_EVIDENCE_CONFIG.example.json",
+      "blob": "67bfa60a05674b013b2889c5ebd6b18bf85018f1",
+      "size_bytes": 2260,
+      "sha256": "0d3e71792f754f6ea4c72d05345e63971a624d870b39304a63731fb9092f4938"
+    },
+    {
+      "logical_role": "RECEIPT_SCHEMA",
+      "path": "wave18/W3_TARGET_PC_UI_EVIDENCE_PACK_V2.schema.json",
+      "blob": "5c64ca1d3ca6ac619f2009861d9a205e55b8e245",
+      "size_bytes": 11685,
+      "sha256": "6023cc523d7f43665518c3d4dafc21099f7ab5bf2046afc26e1c52238e553824"
+    },
+    {
+      "logical_role": "OFFLINE_FIXTURE",
+      "path": "wave18/W3_TARGET_PC_UI_EVIDENCE_OFFLINE_FIXTURE_V2.json",
+      "blob": "2cfad3ff68150d09ab43afcc5d38e9e3b0f22b7c",
+      "size_bytes": 10168,
+      "sha256": "6ed9ee0cb23fb3b1d3afd44be48bb2a7fc5a69add79701bf142c500f8d1cdef6"
+    },
+    {
+      "logical_role": "OFFLINE_VALIDATOR",
+      "path": "wave18/validate_w3_target_pc_ui_evidence_v2.py",
+      "blob": "2fd439cad1da6fbc521751bfb07ec1e786bd19f7",
+      "size_bytes": 4673,
+      "sha256": "5310b9c88e0c97c316bbd60345ffb9bfc824c0182e7d0c3114e1d34004c02336"
+    },
+    {
+      "logical_role": "VALIDATION_RECEIPT",
+      "path": "wave18/W3_TARGET_PC_UI_EVIDENCE_VALIDATION_RECEIPT_V2.json",
+      "blob": "f141baa8923c60f343208b22992f71edeb5578d5",
+      "size_bytes": 1861,
+      "sha256": "a93cfaec28c5c906d3fa106fe10a6ecc740b317450d33f7b9648e90662ab80d7"
+    }
+  ],
+  "tests": {
+    "python_validator_execution": "PASS",
+    "python_compile": "PASS",
+    "schema_meta_validation": "PASS",
+    "offline_fixture_validation": "PASS",
+    "collector_static_validation": "PASS",
+    "assertion_count": 30,
+    "negative_fixture_count": 7,
+    "negative_fixture_fail_closed": true,
+    "powershell_parser_execution": "NOT_AVAILABLE_IN_CURRENT_LINUX_ENVIRONMENT"
+  },
+  "coverage": {
+    "app_version": true,
+    "runtime_status": true,
+    "screenshot_sha256": true,
+    "login_profile_preservation": true,
+    "idle_working_count_zero": true,
+    "result_comment_priority": true,
+    "current_historical_registry_separation": true,
+    "c_repeat_mode_separation": true,
+    "legacy_a_e_absent": true,
+    "restart_before_after": true,
+    "rollback_visual_state": true,
+    "missing_evidence_fail_closed": true
+  },
+  "scope_truth": {
+    "target_pc_execution": "NOT_RUN_NOT_AUTHORIZED",
+    "target_pc_install_authorized": false,
+    "target_pc_acceptance_claimed": false,
+    "live_pass_claimed": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

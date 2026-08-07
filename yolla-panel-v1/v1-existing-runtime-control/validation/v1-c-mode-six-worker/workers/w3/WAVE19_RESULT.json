@@ -1,0 +1,57 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE19_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-019",
+  "registry_sequence": 19,
+  "command_id": "C6W-W19-W3-PANEL-LIVENESS-ROW-UI",
+  "role": "AUTOMATION-C-W3",
+  "directive_comment": 5200546204,
+  "result_key": "520054620400",
+  "base_result_commit": "36613eabf8c5a185badec39b2c23febf8a6b6483",
+  "outcome": "PASS",
+  "status": "PASS_OFFLINE_VIEW_MODEL_DOM_HARNESS_TARGET_PC_PENDING",
+  "implementation_owner": false,
+  "artifact_head": "25a321086049e4b971de3c24eac6e9ed13adffa0",
+  "artifact_commits": [
+    "6643628f85e4f7f158024dda0f7395dcbbc85267",
+    "25a321086049e4b971de3c24eac6e9ed13adffa0"
+  ],
+  "artifacts": [
+    {"logical_role":"VIEW_MODEL_AND_DOM_RENDERER","path":"wave19/panel_liveness_row_view_model.cjs","blob":"52abf56cac5eae600f75342b81165d8de7f5e5d0","size_bytes":9527,"sha256":"79255cdc4aa3f5e86a5c6696648f44ea6433bb684ee71d45f0db14f4833d9bfe"},
+    {"logical_role":"PANEL_STYLES","path":"wave19/panel_liveness_row.css","blob":"6914b6d3bf59b06bd959ff56e3d1330eee4f8c9c","size_bytes":2181,"sha256":"e8300c76787bfa085da74d469bd34ae4402184bd6e069a0f897c2c8429c9f571"},
+    {"logical_role":"DETERMINISTIC_FIXTURE","path":"wave19/PANEL_LIVENESS_ROW_FIXTURE_V1.json","blob":"80ff5c461ab75227c7df3c7d3fa743350563d2e2","size_bytes":2773,"sha256":"e82d9e781eff36860bab13608dd18f761ad88e064c5f35b5c907bef9e1487843"},
+    {"logical_role":"DOM_HARNESS","path":"wave19/test_panel_liveness_row_dom_harness.cjs","blob":"0e0d20228471366f7923fc3a4978bc6af798e14c","size_bytes":4947,"sha256":"646c3ef329fd8ee669ae0cf36bf61a02e018833fa24bc09b5151e50e0565daf0"},
+    {"logical_role":"VALIDATION_RECEIPT","path":"wave19/PANEL_LIVENESS_ROW_VALIDATION_RECEIPT_V1.json","blob":"d257cfc3f23feb5cca543a9eb5331495871a6f2e","size_bytes":2591,"sha256":"47c7e7c93f9d6aa047f01013625f351c872e9159644279a8e5c3134e3a55ee05"}
+  ],
+  "view_contract": {
+    "columns": ["ROLE", "상태", "경과시간", "마지막확인", "채팅열기", "GitHub결과"],
+    "allowed_states": ["WAITING", "WORKING", "RESULT_PENDING", "COMPLETED", "REVIEW_REQUIRED"],
+    "working_bound_to_generation": true,
+    "missing_result_alone_review_required": false,
+    "current_wave_historical_wave_separated": true,
+    "legacy_a_e_reintroduced": false,
+    "result_comment_priority": true
+  },
+  "tests": {
+    "command": "node wave19/test_panel_liveness_row_dom_harness.cjs",
+    "status": "PASS",
+    "assertion_count": 42,
+    "current_rows": 7,
+    "historical_rows": 2,
+    "remote_blob_size_readback": "PASS_5_OF_5"
+  },
+  "w5_handoff": {
+    "ready": true,
+    "consume_artifact_head": "25a321086049e4b971de3c24eac6e9ed13adffa0",
+    "js_css_fixture_receipt_complete": true,
+    "localhost_panel_integration_owned_by_w5": true
+  },
+  "scope_truth": {
+    "localhost_panel_modified": false,
+    "target_pc_render_executed": false,
+    "live_pass_claimed": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

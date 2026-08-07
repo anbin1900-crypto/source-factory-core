@@ -1,0 +1,80 @@
+{
+  "schema_version": "RC7_UI_PACKAGE_BINDING_OFFLINE_RECEIPT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-016",
+  "registry_sequence": 16,
+  "command_id": "C6W-W16-W3-RC7-UI-HOOK-PACKAGE-BINDING",
+  "worker_id": "AUTOMATION-C-W3",
+  "directive_comment": 5198283954,
+  "result_key": "519828395400",
+  "target_version": "5.10.2.4.2-rc7",
+  "status": "PASS_NONDEPENDENT_W5_RC7_PACKAGE_PENDING",
+  "binding_contract": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave16/RC7_UI_PACKAGE_BINDING.json",
+    "commit": "2c19033a6747c6b7a974b29b4d9a33c7a50281f0",
+    "blob": "d502b36f6fdd04f54de4dad336286be1d7608120",
+    "status": "PASS"
+  },
+  "verifier": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave16/validate_rc7_ui_binding.cjs",
+    "commit": "5c43b71c88d849bab55fdfedf5a435ee910506bd",
+    "blob": "5eb4153e6c641c287c2251629743d596a4c8ad45",
+    "node_syntax": "PASS",
+    "synthetic_reference_package_self_test": "PASS",
+    "synthetic_member_count": 5,
+    "synthetic_hook_counts": {"bridge": 1, "css": 1, "js": 1},
+    "synthetic_patch_two_run_idempotent": true,
+    "synthetic_rollback_two_run_idempotent": true,
+    "synthetic_exact_preimage_restore": true
+  },
+  "target_pc_schema": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave16/RC7_UI_TARGET_PC_VISUAL_ACCEPTANCE_RECEIPT_V1.schema.json",
+    "commit": "d7594929fce1916e1d6f462eb31b390e1b9d229b",
+    "blob": "65a7ed6ab17da8555a72315781e9c5756c6b7184",
+    "draft": "2020-12",
+    "status": "PASS_JSON_PARSE"
+  },
+  "exact_reused_members": [
+    {"logical_role":"TRUTH_BRIDGE","source_commit":"edcb83ef2cd96aa042ab0656c66f290d542d20f0","source_blob":"27267b1b0b1d057e2ca40e3fcc864fd4609a1520","sha256":"8086f56f1f0b5731cb9ad4be5339fc211d1468f4195fcf249b7a300cc3b830e8","size_bytes":4012,"wave15_blob_api_readback":"PASS"},
+    {"logical_role":"CSS_OVERLAY","source_commit":"52aea6e17ce2561ed07058e304c3744eec3b166a","source_blob":"ff1bf6c84fb9806328bb3e5d8616a85cce943473","sha256":"43b6a3721c250e76b2562c45d931fd17d87ae219fec70aa3ef3206af9cd8b0fe","size_bytes":1504,"wave15_blob_api_readback":"PASS"},
+    {"logical_role":"JS_OVERLAY","source_commit":"250b05096ba70fcbe65aed3276cebaa07bd63de5","source_blob":"82862f1b4c8c2599c4035c78023ffea850909b4c","sha256":"5fdd1719e110ce80ad4b3efb911fd20a86ccbfeb27182645e8d2170287114b54","size_bytes":7858,"wave15_blob_api_readback":"PASS"},
+    {"logical_role":"LOAD_HOOK_PATCH","source_commit":"ca9343722856c333ae1d7d9208642d21480130a2","source_blob":"1e6e54914737b1878a3f3ba1e88adbba57eab190","sha256":"188dcc15f0f88ac41e5179272ccc0ee11b9ee48001ee986d1732f6414d88f462","size_bytes":6304,"wave15_blob_api_readback":"PASS"},
+    {"logical_role":"ROLLBACK","source_commit":"1076f509e85463546cbf6dc6107715c401a9b17e","source_blob":"1b3df39a0ffa6c80ffa0b99e44422d6a26110f11","sha256":"7a86437b703b50a6b7bbe575802bdf6d82a228919d5dc48bd8169046baf9253b","size_bytes":2873,"wave15_blob_api_readback":"PASS"}
+  ],
+  "inherited_exact_byte_evidence": {
+    "wave15_result_commit": "69a933c257b949340b75211b6b078a462ac2b03b",
+    "wave15_bundle_commit": "a8dda9eba23c05e8c28ecb41176fd274566568db",
+    "wave15_bundle_validation_receipt_commit": "db4b51bb4652287373ba58fc28429e0fb2357635",
+    "wave15_hook_receipt_commit": "976f076a6583df2ba06e8d3c7e6ac722488d33ae",
+    "wave14_membership": "PASS_7_OF_7",
+    "wave14_ui_smoke_assertions": 20
+  },
+  "required_assertions": {
+    "hook_each_exactly_one": "PASS_REFERENCE_EXECUTION",
+    "patch_two_run_idempotent": "PASS_REFERENCE_EXECUTION",
+    "rollback_two_run_idempotent": "PASS_REFERENCE_EXECUTION",
+    "rollback_exact_pre_overlay_byte_restore": "PASS_REFERENCE_EXECUTION",
+    "base_ui_css_js_bytes_unchanged": "PASS_REFERENCE_EXECUTION",
+    "fixed_browser_profile_unchanged": "PASS_REFERENCE_EXECUTION",
+    "c_and_command_disabled_working_count": 0,
+    "result_comment_priority": true,
+    "current_and_historical_registry_separated": true
+  },
+  "w5_rc7_package_binding": {
+    "pr": 63,
+    "directive_comment": 5198285668,
+    "result_key": "519828566800",
+    "package_result_comment": null,
+    "package_result_commit": null,
+    "status": "DIRECTIVE_BOUND_PACKAGE_RESULT_PENDING",
+    "same_assignment_revalidation_required": true
+  },
+  "terminal_outcome_recommendation": "BLOCKED",
+  "blocker_code": "W5_RC7_PACKAGE_RESULT_NOT_POSTED_FOR_ACTUAL_BINDING_REVALIDATION",
+  "target_pc_execution": "NOT_AUTHORIZED",
+  "target_pc_live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-06T07:49:00+09:00"
+}

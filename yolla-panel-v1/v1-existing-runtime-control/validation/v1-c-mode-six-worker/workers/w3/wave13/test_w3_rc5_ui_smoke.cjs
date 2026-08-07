@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const m=JSON.parse(fs.readFileSync(path.join(__dirname,'W3_RC5_INSTALLER_READY_UI_EXPORT.json'),'utf8'));
+assert.equal(m.required_truth_gates.C_AND_REPEAT_DISABLED_WORKING_COUNT,0);
+for(const k of ['LEGACY_A_E_EXCLUDED','RESULT_COMMENT_PRIORITY','CURRENT_AND_HISTORICAL_REGISTRY_SEPARATED','MISSING_DUPLICATE_ERROR_END_RESTING_SEPARATED','FIXED_LOGIN_PROFILE_CONTRACT_PRESERVED'])assert.equal(m.required_truth_gates[k],true,k);
+assert.equal(m.fixed_login_profile_contract.profile_root,'E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile');
+assert.equal(m.fixed_login_profile_contract.worker_partition,'persist:sf4-safe-panel-worker-1');
+assert.equal(m.fixed_login_profile_contract.analysis_partition,'persist:yolla-analysis-browser-v1');
+assert.equal(m.fixed_login_profile_contract.write_scope,'NONE');
+assert.equal(m.rollback.mode,'REMOVAL_ONLY');
+assert.equal(m.rollback.base_files_modified,false);
+assert.ok(m.load_hooks.css.insert_after.includes('data-yolla-overlay="w3-rc5"'));
+assert.ok(m.load_hooks.js.insert_after.includes('data-yolla-overlay="w3-rc5"'));
+assert.deepEqual(m.runtime_files.map(x=>x.load_order),[11,12,13]);
+assert.ok(m.runtime_files.every(x=>x.package_path.startsWith('rc5-package/')));
+assert.ok(m.runtime_files.every(x=>x.install_destination.startsWith(m.runtime_roots.versioned_release_root+'\\')));
+assert.equal(m.live_pass_claimed,false);
+console.log('W3_RC5_UI_SMOKE_PASS assertions=17');

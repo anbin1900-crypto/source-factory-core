@@ -1,0 +1,18 @@
+{
+  "schema_version": "W3_WAVE4_REPORT_TRUTH_FIXTURES_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "command_id": "C6W-W4-W3-REPORT-TRUTH-UI-PROJECTION",
+  "fixtures": [
+    {"slot":"W1","state":"REPORTED_PASS","label":"완료","post_id":5192189857,"commit_id":"1111111111111111111111111111111111111111"},
+    {"slot":"W2","state":"REPORTED_BLOCKED","label":"차단","post_id":5192192722,"commit_id":"2222222222222222222222222222222222222222"},
+    {"slot":"W3","state":"REPORT_MISSING","label":"보고 누락","post_id":null,"commit_id":"3333333333333333333333333333333333333333"},
+    {"slot":"W4","state":"DIRECTIVE_PENDING","label":"지시 대기","post_id":5192198482,"commit_id":null},
+    {"slot":"W5","state":"C_ACTIVE","label":"C 실행","post_id":5192201361,"commit_id":null},
+    {"slot":"W6","state":"REPEAT_ACTIVE","label":"명령 실행","post_id":5192205324,"commit_id":null},
+    {"slot":"X1","state":"AWAITING","label":"완료대기","post_id":null,"commit_id":null},
+    {"slot":"X2","state":"END","label":"END","post_id":null,"commit_id":null},
+    {"slot":"X3","state":"IDLE","label":"쉬는 중","post_id":null,"commit_id":null}
+  ],
+  "expected_counters": {"reported_pass":1,"reported_blocked":1,"report_missing":1,"directive_pending":1,"c_active":1,"repeat_active":1,"awaiting":1,"end":1,"idle":1,"working":3,"error":0},
+  "legacy_profile_status_excluded": ["RUNNING","RESULT_WAITING","RETRY_READY"]
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "W3_RC6_UI_SMOKE_RECEIPT_V1",
+  "status": "PASS",
+  "assertion_count": 20,
+  "target_version": "5.10.2.4.2-rc6",
+  "exact_ui_source_bytes": true,
+  "base_ui_preserved": true,
+  "css_load_after_base_css": true,
+  "js_load_after_base_js": true,
+  "bridge_load_before_ui_overlay": true,
+  "fixed_browser_profile_unchanged": true,
+  "c_and_repeat_disabled_working_count": 0,
+  "legacy_a_e_current_count": 0,
+  "idempotent_patch": true,
+  "idempotent_rollback": true,
+  "live_pass_claimed": false
+}

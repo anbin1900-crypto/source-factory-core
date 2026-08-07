@@ -1,0 +1,33 @@
+{
+  "schema_version": "W3_WAVE3_UI_PROJECTION_FIXTURES_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "command_id": "C6W-W3-W3-UI-PROJECTION-INTEGRATION",
+  "fixtures": {
+    "all_idle_disabled": {
+      "c_enabled": false,
+      "command_enabled": false,
+      "slots": [
+        {"slot":"W1","legacy_profile_status":"RUNNING"},
+        {"slot":"W2","legacy_profile_status":"RESULT_WAITING"},
+        {"slot":"W3","legacy_profile_status":"RETRY_READY"},
+        {"slot":"W4","legacy_profile_status":"RUNNING"},
+        {"slot":"W5","legacy_profile_status":"RESULT_WAITING"},
+        {"slot":"W6","legacy_profile_status":"RETRY_READY"}
+      ],
+      "expected":{"working":0,"c_active":0,"command_active":0,"awaiting":0,"error":0,"end":0,"idle":6}
+    },
+    "mixed_six_slot": {
+      "c_enabled": true,
+      "command_enabled": true,
+      "slots": [
+        {"slot":"W1","c_state":"RUNNING","repeat_state":"IDLE","report_state":"NONE","error":false,"expected_label":"C 실행"},
+        {"slot":"W2","c_state":"IDLE","repeat_state":"RUNNING","report_state":"NONE","error":false,"expected_label":"명령 실행"},
+        {"slot":"W3","c_state":"IDLE","repeat_state":"AWAITING_COMPLETION","report_state":"C_RESULT_ACCEPTED","error":false,"expected_label":"완료대기"},
+        {"slot":"W4","c_state":"IDLE","repeat_state":"IDLE","report_state":"REPEAT_RESULT_REJECTED","error":true,"expected_label":"오류"},
+        {"slot":"W5","c_state":"END","repeat_state":"END","report_state":"C_RESULT_ACCEPTED","error":false,"expected_label":"END"},
+        {"slot":"W6","c_state":"IDLE","repeat_state":"IDLE","report_state":"NONE","error":false,"expected_label":"쉬는 중","legacy_profile_status":"RUNNING"}
+      ],
+      "expected":{"working":4,"c_active":1,"command_active":1,"awaiting":1,"error":1,"end":1,"idle":1}
+    }
+  }
+}

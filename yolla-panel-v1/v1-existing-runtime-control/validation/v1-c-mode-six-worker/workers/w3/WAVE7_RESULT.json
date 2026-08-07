@@ -1,0 +1,36 @@
+{
+  "schema_version": "V1_C_MODE_W3_WAVE7_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-007",
+  "command_id": "C6W-W7-W3-UI-AUTHORITY-TRUTH",
+  "worker_id": "AUTOMATION-C-W3",
+  "directive_comment": 5193631027,
+  "result_key": "519363102700",
+  "status": "PASS_OFFLINE_TARGET_PC_PENDING",
+  "wave6_missing_recorded_first": true,
+  "wave6_carryover_comment": 5193744215,
+  "tests": [
+    {"name":"registry authority truth model","status":"PASS","assertions":10},
+    {"name":"legacy A/E exclusion and disabled working zero","status":"PASS"},
+    {"name":"RESULT_COMMENT preferred over RESULT_KEY","status":"PASS"},
+    {"name":"target PC collector schema extension","status":"PASS_STATIC"}
+  ],
+  "verified_states": [
+    "CURRENT_REGISTRY_RESULT",
+    "HISTORICAL_REGISTRY_RESULT",
+    "REPORT_MISSING",
+    "DUPLICATE_REPORT",
+    "ERROR",
+    "END",
+    "IDLE"
+  ],
+  "expected_counters": {"working":1,"current":1,"historical":1,"missing":1,"duplicate":1,"error":1,"end":1,"idle":1},
+  "result_comment_priority": true,
+  "legacy_a_e_excluded": true,
+  "disabled_working_zero": true,
+  "target_pc_execution": "PENDING",
+  "live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_RESULT_V2",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "worker_id": "AUTOMATION-C-W3",
+  "status": "BLOCKED_EXTERNAL",
+  "terminal": "C6W3_UI_STATE_TRUTH_AND_MODE_SEPARATION_EXACT_BLOCKER_TARGET_PC_VISUAL_EVIDENCE_PENDING",
+  "head_commit": "484499f3646d8ab133c23f1b021f7732cb1ca342",
+  "runtime_baseline": "5.10.2.4.1",
+  "mission": "UI Truth and C/command execution mode separation",
+  "tests": [
+    {
+      "name": "W3 UI truth and mode separation source gate",
+      "status": "PASS",
+      "assertions": 20,
+      "command": "node test_w3_ui_truth_mode_separation.cjs <runtime-source-root>"
+    },
+    {
+      "name": "C mode runtime regression",
+      "status": "PASS",
+      "assertions": 59,
+      "command": "node src/automation-c-v1/tests/test_c_mode_runtime.cjs"
+    },
+    {
+      "name": "workspace_c_mode.js syntax",
+      "status": "PASS",
+      "command": "node --check src/workspace_c_mode.js"
+    }
+  ],
+  "finding_count": 0,
+  "findings": [],
+  "verified_truth": {
+    "c_and_command_disabled_working_zero_contract": "PASS_STATIC_AND_RUNTIME",
+    "legacy_a_e_live_projection_excluded": true,
+    "group_c_button": true,
+    "top_command_popup": true,
+    "c_counter_separate": true,
+    "command_counter_separate": true,
+    "error_counter_separate": true,
+    "idle_label": "쉬는 중",
+    "c_controls": ["configure", "start", "pause", "resume", "stop"],
+    "command_target_and_original_text_ui": true
+  },
+  "source_artifact": {
+    "drive_file_id": "1NAP-nH507TGrUzAvnHH8msHQnYqR26CT",
+    "file_name": "AI_YOLLA_V510241_C_COMMAND_UI_HOTFIX_SOURCE.zip",
+    "sha256": "362ab825b2c476f32336b227fa82ef8d8089ace76649edc1e3b0e6da99737355",
+    "byte_readback": "PASS"
+  },
+  "blocker": {
+    "code": "TARGET_PC_VISUAL_EVIDENCE_NOT_AVAILABLE_TO_W3_SESSION",
+    "scope": "Target PC screen evidence for rendered group C buttons, top command popup, counters, labels, and restart/resume",
+    "offline_source_and_runtime_regression": "PASS",
+    "pass_claim_withheld": true
+  },
+  "work_control_log_preserved": true,
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-05T17:31:00+09:00"
+}

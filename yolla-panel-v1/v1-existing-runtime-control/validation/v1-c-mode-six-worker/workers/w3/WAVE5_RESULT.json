@@ -1,0 +1,37 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE5_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-005",
+  "command_id": "C6W-W5-W3-ACTUAL-UI-TRUTH-PATCH",
+  "worker_id": "AUTOMATION-C-W3",
+  "status": "PASS_OFFLINE_ACTUAL_PATCH_TARGET_PC_PENDING",
+  "terminal": "C6W_W5_W3_ACTUAL_UI_TRUTH_PATCH_OFFLINE_PASS_TARGET_PC_EXECUTION_PENDING",
+  "input_head": "4ffa247184900467774aa8c87c1f4f12053cfac2",
+  "patch_commit": "79c525c3cc5974064f6057ba5f378e8c6ec2abbd",
+  "artifacts": {
+    "patch": "wave5/apply_actual_ui_truth_patch.cjs",
+    "bridge": "wave5/actual-runtime/workspace_ui_truth_bridge.cjs"
+  },
+  "actual_paths_patched": ["workspace_c_mode.js", "workspace_c_mode.css"],
+  "projection_states": ["C_ACTIVE", "REPEAT_ACTIVE", "AWAITING", "REPORT_MISSING", "ERROR", "END", "IDLE", "REPORTED_PASS", "REPORTED_BLOCKED", "DIRECTIVE_PENDING"],
+  "invariants": {
+    "report_missing_not_completed": true,
+    "report_missing_not_working": true,
+    "report_missing_not_error": true,
+    "legacy_a_e_status_excluded": true,
+    "c_and_command_disabled_working_zero": true,
+    "non_destructive_idempotent_patch": true
+  },
+  "tests": [
+    {"name": "actual UI truth bridge and source patch assertions", "status": "PASS", "assertions": 20},
+    {"name": "C runtime regression", "status": "PASS", "assertions": 59},
+    {"name": "Node syntax", "status": "PASS"}
+  ],
+  "live_pass_claimed": false,
+  "target_pc_execution": "PENDING",
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-05T23:20:00+09:00"
+}

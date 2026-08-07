@@ -1,0 +1,30 @@
+{
+  "schema_version": "V1_C_MODE_W3_WAVE6_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-006",
+  "command_id": "C-RELAY-W6-W3-UI-TRUTH-PROJECTION",
+  "worker_id": "AUTOMATION-C-W3",
+  "directive_comment": 5193432735,
+  "result_key": "519343273500",
+  "status": "PASS_LATE_CARRYOVER",
+  "process_finding": "WAVE6_TERMINAL_WAS_MISSING_BEFORE_WAVE7_DIRECTIVE",
+  "wave5_preserved": true,
+  "implemented_scope": [
+    "registry preparation",
+    "batch validation and transmission",
+    "result waiting",
+    "reported complete",
+    "missing report",
+    "duplicate result",
+    "error",
+    "END",
+    "RESULT_COMMENT preferred over RESULT_KEY"
+  ],
+  "c_command_separation_preserved": true,
+  "legacy_a_e_excluded": true,
+  "disabled_working_zero": true,
+  "live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

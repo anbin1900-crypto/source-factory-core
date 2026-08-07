@@ -1,0 +1,44 @@
+{
+  "schema_version": "W3_WAVE9_EXPECTED_UI_RECEIPT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-009",
+  "registry_sequence": 9,
+  "result_key": "519440526200",
+  "target_version": "5.10.2.4.2-rc3",
+  "display_precedence": ["RESULT_COMMENT", "RESULT_KEY"],
+  "scenarios": [
+    {
+      "name": "disabled_idle_truth",
+      "options": {"c_enabled": false, "command_enabled": false},
+      "entries": [
+        {"role":"W1","profile_status":"RUNNING"},
+        {"role":"W2","profile_status":"RESULT_WAITING"},
+        {"role":"W3","profile_status":"RETRY_READY"},
+        {"role":"W4","profile_status":"RUNNING"},
+        {"role":"W5","profile_status":"RESULT_WAITING"},
+        {"role":"W6","profile_status":"RETRY_READY"}
+      ],
+      "expected_counts": {"working":0,"c":0,"command":0,"current":0,"historical":0,"awaiting":0,"missing":0,"duplicate":0,"error":0,"end":0,"idle":6},
+      "expected_labels": ["쉬는 중","쉬는 중","쉬는 중","쉬는 중","쉬는 중","쉬는 중"]
+    },
+    {
+      "name": "mixed_acceptance_truth",
+      "options": {"c_enabled": true, "command_enabled": true},
+      "entries": [
+        {"role":"W1","c_active":true},
+        {"role":"W2","repeat_active":true},
+        {"role":"W3","registry_relation":"CURRENT","result_comment_id":5194248288,"result_key":"519386239100"},
+        {"role":"W4","registry_relation":"HISTORICAL","result_comment_id":5193762357,"result_key":"519363102700"},
+        {"role":"W5","awaiting_result":true,"result_key":"519442227700"},
+        {"role":"W6","result_commit":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","result_key":"519442828900"},
+        {"role":"W7","duplicate_report":true,"result_comment_id":5194248288,"result_key":"duplicate-fixture"},
+        {"role":"W8","error":true},
+        {"role":"W9","end":true},
+        {"role":"W10","profile_status":"RUNNING"}
+      ],
+      "expected_counts": {"working":4,"c":1,"command":1,"current":1,"historical":1,"awaiting":1,"missing":1,"duplicate":1,"error":1,"end":1,"idle":1},
+      "expected_labels": ["C 실행","명령 실행","현재 Registry 결과","과거 Registry 결과","결과 대기","미보고","중복 결과","오류","END","쉬는 중"]
+    }
+  ],
+  "live_pass_claimed": false
+}

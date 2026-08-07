@@ -1,0 +1,50 @@
+{
+  "schema_version": "W3_TARGET_PC_UI_EVIDENCE_PACK_V2_VALIDATION_RECEIPT",
+  "status": "PASS_OFFLINE",
+  "assertion_count": 30,
+  "schema_meta_validation": "PASS",
+  "offline_fixture_validation": "PASS",
+  "collector_static_validation": "PASS",
+  "powershell_parser_execution": "NOT_AVAILABLE_IN_CURRENT_LINUX_ENVIRONMENT",
+  "negative_fixtures": [
+    {
+      "case": "MISSING_SCREENSHOT",
+      "status": "PASS_REJECTED",
+      "reason": "[{'purpose': 'APP_VERSION_RUNTIME_STATUS', 'path': 'offline-fixture/APP_VERSION_RUNTIME_STATUS.png', 'sha256': '0000000000000000000000000000000000000000000000000000000000000001', '"
+    },
+    {
+      "case": "DUPLICATE_SCREENSHOT_HASH",
+      "status": "PASS_REJECTED",
+      "reason": "DUPLICATE_SCREENSHOT_HASH"
+    },
+    {
+      "case": "INCOMPLETE_RESTART",
+      "status": "PASS_REJECTED",
+      "reason": "True was expected\n\nFailed validating 'const' in schema['properties']['restart_evidence']['properties']['evidence_complete']:\n    {'const': True}\n\nOn instance['restart_evidence']['e"
+    },
+    {
+      "case": "PREMATURE_LIVE_PASS",
+      "status": "PASS_REJECTED",
+      "reason": "False was expected\n\nFailed validating 'const' in schema['properties']['live_pass_claimed']:\n    {'const': False}\n\nOn instance['live_pass_claimed']:\n    True"
+    },
+    {
+      "case": "REGISTRY_OVERLAP",
+      "status": "PASS_REJECTED",
+      "reason": "CURRENT_HISTORICAL_OVERLAP"
+    },
+    {
+      "case": "PROFILE_CHANGED",
+      "status": "PASS_REJECTED",
+      "reason": "PROFILE_HASH_CHANGED"
+    },
+    {
+      "case": "ROLLBACK_SCREENSHOT_MISMATCH",
+      "status": "PASS_REJECTED",
+      "reason": "ROLLBACK_SCREENSHOT_HASH_MISMATCH"
+    }
+  ],
+  "wave17_bundle_reused": true,
+  "target_pc_execution": "NOT_RUN_NOT_AUTHORIZED",
+  "target_pc_acceptance_claimed": false,
+  "live_pass_claimed": false
+}

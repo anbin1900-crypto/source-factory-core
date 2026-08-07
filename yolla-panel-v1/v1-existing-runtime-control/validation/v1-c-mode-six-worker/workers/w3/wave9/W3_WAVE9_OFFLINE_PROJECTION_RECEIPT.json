@@ -1,0 +1,48 @@
+{
+  "schema_version": "W3_WAVE9_UI_PROJECTION_RECEIPT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-009",
+  "registry_sequence": 9,
+  "result_key": "519440526200",
+  "target_version": "5.10.2.4.2-rc3",
+  "scenarios": [
+    {
+      "name": "disabled_idle_truth",
+      "options": {"c_enabled": false, "command_enabled": false},
+      "counts": {"working":0,"current":0,"historical":0,"awaiting":0,"missing":0,"duplicate":0,"error":0,"end":0,"idle":6,"c":0,"command":0},
+      "projections": [
+        {"role":"W1","state":"IDLE","display_result_reference":"","result_comment_id":null,"result_key":"","legacy_profile_status_ignored":true,"label":"쉬는 중"},
+        {"role":"W2","state":"IDLE","display_result_reference":"","result_comment_id":null,"result_key":"","legacy_profile_status_ignored":true,"label":"쉬는 중"},
+        {"role":"W3","state":"IDLE","display_result_reference":"","result_comment_id":null,"result_key":"","legacy_profile_status_ignored":true,"label":"쉬는 중"},
+        {"role":"W4","state":"IDLE","display_result_reference":"","result_comment_id":null,"result_key":"","legacy_profile_status_ignored":true,"label":"쉬는 중"},
+        {"role":"W5","state":"IDLE","display_result_reference":"","result_comment_id":null,"result_key":"","legacy_profile_status_ignored":true,"label":"쉬는 중"},
+        {"role":"W6","state":"IDLE","display_result_reference":"","result_comment_id":null,"result_key":"","legacy_profile_status_ignored":true,"label":"쉬는 중"}
+      ],
+      "labels": ["쉬는 중","쉬는 중","쉬는 중","쉬는 중","쉬는 중","쉬는 중"],
+      "assertions": {"counts_match":true,"labels_match":true,"result_comment_preferred":true,"legacy_a_e_excluded":true,"disabled_working_zero":true},
+      "pass": true
+    },
+    {
+      "name": "mixed_acceptance_truth",
+      "options": {"c_enabled": true, "command_enabled": true},
+      "counts": {"working":4,"current":1,"historical":1,"awaiting":1,"missing":1,"duplicate":1,"error":1,"end":1,"idle":1,"c":1,"command":1},
+      "projections": [
+        {"role":"W1","state":"C_ACTIVE","display_result_reference":"","result_comment_id":null,"result_key":"","legacy_profile_status_ignored":true,"label":"C 실행"},
+        {"role":"W2","state":"REPEAT_ACTIVE","display_result_reference":"","result_comment_id":null,"result_key":"","legacy_profile_status_ignored":true,"label":"명령 실행"},
+        {"role":"W3","state":"CURRENT_REGISTRY_RESULT","display_result_reference":"RESULT_COMMENT #5194248288","result_comment_id":5194248288,"result_key":"519386239100","legacy_profile_status_ignored":true,"label":"현재 Registry 결과"},
+        {"role":"W4","state":"HISTORICAL_REGISTRY_RESULT","display_result_reference":"RESULT_COMMENT #5193762357","result_comment_id":5193762357,"result_key":"519363102700","legacy_profile_status_ignored":true,"label":"과거 Registry 결과"},
+        {"role":"W5","state":"AWAITING","display_result_reference":"RESULT_KEY 519442227700","result_comment_id":null,"result_key":"519442227700","legacy_profile_status_ignored":true,"label":"결과 대기"},
+        {"role":"W6","state":"REPORT_MISSING","display_result_reference":"RESULT_KEY 519442828900","result_comment_id":null,"result_key":"519442828900","legacy_profile_status_ignored":true,"label":"미보고"},
+        {"role":"W7","state":"DUPLICATE_REPORT","display_result_reference":"RESULT_COMMENT #5194248288","result_comment_id":5194248288,"result_key":"duplicate-fixture","legacy_profile_status_ignored":true,"label":"중복 결과"},
+        {"role":"W8","state":"ERROR","display_result_reference":"","result_comment_id":null,"result_key":"","legacy_profile_status_ignored":true,"label":"오류"},
+        {"role":"W9","state":"END","display_result_reference":"","result_comment_id":null,"result_key":"","legacy_profile_status_ignored":true,"label":"END"},
+        {"role":"W10","state":"IDLE","display_result_reference":"","result_comment_id":null,"result_key":"","legacy_profile_status_ignored":true,"label":"쉬는 중"}
+      ],
+      "labels": ["C 실행","명령 실행","현재 Registry 결과","과거 Registry 결과","결과 대기","미보고","중복 결과","오류","END","쉬는 중"],
+      "assertions": {"counts_match":true,"labels_match":true,"result_comment_preferred":true,"legacy_a_e_excluded":true,"disabled_working_zero":true},
+      "pass": true
+    }
+  ],
+  "assertions_all_pass": true,
+  "live_pass_claimed": false
+}
