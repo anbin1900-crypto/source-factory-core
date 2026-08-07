@@ -1,0 +1,17 @@
+{
+  "pagination_cursor": "nullable string bound to completed artifact",
+  "partial_behavior": "partial artifacts never advance durable cursor",
+  "recovery_rule": "RESUME_FROM_LAST_COMPLETED_ARTIFACT_NEVER_FROM_PARTIAL",
+  "required_fields": [
+    "last_confirmed_artifact_id",
+    "pagination_cursor",
+    "retry_count",
+    "resume_cursor",
+    "partial_artifact_count",
+    "partial_artifact_ids",
+    "recovery_rule"
+  ],
+  "resume_cursor": "nullable string; next durable position",
+  "retry_count": "non-negative integer bound to completed artifact",
+  "schema_version": "PAGINATION_RETRY_RESUME_STATE_V1"
+}
