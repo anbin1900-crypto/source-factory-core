@@ -1,0 +1,26 @@
+{
+  "schema_version": "ONE_COMMAND_BOOTSTRAP_V1",
+  "directive_id": "AI001-TO-B6-ONE-COMMAND-BOOTSTRAP-RECOVERY-PREBUILD-V1-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "entrypoints": {
+    "windows_cmd": "ONE_COMMAND_BOOTSTRAP_V1.cmd",
+    "powershell": "ONE_COMMAND_BOOTSTRAP_V1.ps1",
+    "node": "ONE_COMMAND_BOOTSTRAP_V1.cjs"
+  },
+  "sequence": [
+    "PREREQUISITE_CHECK",
+    "DEPENDENCY_INSTALL_IF_ALLOWED",
+    "SIDE_BY_SIDE_ACTIVATION",
+    "AGENT_START_PREPARED",
+    "HEALTH_CHECK",
+    "RESULT_RECEIPT"
+  ],
+  "default_dependency_install_allowed": false,
+  "side_by_side": true,
+  "activation": "POINTER_ONLY",
+  "rollback": "POINTER_SWITCH_ONLY",
+  "overwrite_existing_runtime": false,
+  "target_pc_execution": false,
+  "production_install": false,
+  "new_tunnel_create": false
+}

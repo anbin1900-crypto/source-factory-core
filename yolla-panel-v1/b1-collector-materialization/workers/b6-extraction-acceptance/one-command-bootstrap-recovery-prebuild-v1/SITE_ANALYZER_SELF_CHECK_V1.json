@@ -1,0 +1,93 @@
+{
+  "schema_version": "SITE_ANALYZER_SELF_CHECK_V1",
+  "checks": [
+    "chrome_executable",
+    "chrome_profile",
+    "node",
+    "npm",
+    "playwright",
+    "browser_agent_endpoint",
+    "expected_localhost_ports",
+    "working_roots"
+  ],
+  "required_checks": [
+    "node",
+    "npm",
+    "chrome_or_chromium",
+    "payload_root"
+  ],
+  "optional_checks": [
+    "playwright",
+    "browser_agent_endpoint",
+    "localhost_ports",
+    "chrome_profile"
+  ],
+  "network_install_probe": false,
+  "observed_fixture_smoke": {
+    "schema_version": "SITE_ANALYZER_SELF_CHECK_V1",
+    "checked_at": "2026-08-07T12:31:55.629Z",
+    "platform": "linux",
+    "arch": "x64",
+    "fixture_mode": true,
+    "required": {
+      "node": true,
+      "npm": true,
+      "chrome_or_chromium": true,
+      "payload_root": true
+    },
+    "pass": true,
+    "node": {
+      "found": true,
+      "command": "/opt/nvm/versions/node/v22.16.0/bin/node",
+      "version": "v22.16.0",
+      "exit_code": 0
+    },
+    "npm": {
+      "found": true,
+      "command": "/opt/nvm/versions/node/v22.16.0/bin/npm",
+      "version": "10.9.2",
+      "exit_code": 0
+    },
+    "chrome": {
+      "found": true,
+      "path": "/usr/bin/chromium",
+      "profile_path": null
+    },
+    "playwright": {
+      "found": true,
+      "version": "Version 1.57.0",
+      "source": "PATH",
+      "exit_code": 0,
+      "network_probe": false
+    },
+    "browser_agent": {
+      "endpoint": null,
+      "health": {
+        "ok": false,
+        "status": "NOT_CONFIGURED"
+      }
+    },
+    "tunnel_binding": {
+      "endpoint": null,
+      "consumed_only": true,
+      "new_tunnel_create": false
+    },
+    "expected_localhost_ports": {
+      "3000": false,
+      "9222": false,
+      "43127": false
+    },
+    "working_roots": {
+      "package_root": "/mnt/data/b6_one_command_bootstrap_v1/B6_ONE_COMMAND_BOOTSTRAP_RECOVERY_PREBUILD_V1",
+      "payload_root": "/mnt/data/b6_one_command_bootstrap_v1/B6_ONE_COMMAND_BOOTSTRAP_RECOVERY_PREBUILD_V1/payload/B6_SITE_ANALYZER_WAVE3_PACKAGE_RECOVERY_V1",
+      "cwd": "/",
+      "install_home": "/home/oai/.local/share/yolla/site-analyzer"
+    },
+    "policy": {
+      "target_pc_execution": false,
+      "production_install": false,
+      "new_tunnel_create": false
+    }
+  },
+  "result": "PASS"
+}
