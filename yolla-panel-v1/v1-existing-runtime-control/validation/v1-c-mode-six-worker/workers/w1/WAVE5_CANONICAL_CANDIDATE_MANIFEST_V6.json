@@ -1,0 +1,75 @@
+{
+  "schema_version": "C6W_WAVE5_CANONICAL_CANDIDATE_MANIFEST_V6",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-005",
+  "command_id": "C6W-W5-W1-CANONICAL-CANDIDATE-MANIFEST",
+  "target_version": "5.10.2.4.2-rc1",
+  "status": "MANIFEST_COMMITTED_SHA256_BYTE_READBACK_BLOCKED",
+  "source_inventory": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/WAVE5_SOURCE_INVENTORY_V6.json",
+    "commit": "e4731004d4773d71c68d4150e132de682a275533"
+  },
+  "application_order": [
+    "01_CREATE_IMMUTABLE_BACKUP_OF_RELEASE_SOURCE_PROFILE_AND_WORK_CONTROL_LOG",
+    "02_FETCH_EACH_SOURCE_BY_EXACT_COMMIT_AND_PATH",
+    "03_VERIFY_GIT_BLOB_SHA1",
+    "04_CALCULATE_AND_RECORD_SHA256_FROM_EXACT_BYTES",
+    "05_FAIL_CLOSED_IF_ANY_PATH_COMMIT_BLOB_OR_SHA256_MISMATCHES",
+    "06_APPLY_W2_REPORT_WATCHER_ADAPTER",
+    "07_APPLY_W3_ACTUAL_UI_TRUTH_PATCH_AND_EVIDENCE_COLLECTOR",
+    "08_APPLY_W4_REPEAT_RELEASE_ADAPTER",
+    "09_RETAIN_W1_STATE_MACHINE_AS_NON_RELEASE_ORACLE",
+    "10_W5_BUILD_SINGLE_RC1_CANDIDATE_AND_INSTALLER",
+    "11_RUN_OFFLINE_TESTS_THEN_TARGET_PC_ONE_CLICK_ACCEPTANCE",
+    "12_PUBLISH_PAYLOAD_MANIFEST_DRIVE_READBACK_AND_TERMINAL"
+  ],
+  "conflict_policy": {
+    "default": "FAIL_CLOSED_NO_AUTOMATIC_TEXT_MERGE",
+    "same_path_multiple_owners": "W5_MUST_STOP_AND_PUBLISH_EXACT_CONFLICT",
+    "release_source_precedence": "BASE_RELEASE_THEN_W2_THEN_W3_THEN_W4_THEN_W5_PACKAGING_ONLY",
+    "oracle_policy": "W1_ORACLE_IS_REFERENCE_ONLY_AND_MUST_NOT_OVERWRITE_RELEASE_RUNTIME",
+    "legacy_a_e_policy": "REMOVE_FROM_CURRENT_C_TRUTH_CALCULATION_BUT_PRESERVE_BACKUP_BYTES",
+    "profile_policy": "LIVE_PROFILE_READ_ONLY_TEMPORARY_SMOKE_PROFILE_REQUIRED",
+    "work_control_log_policy": "APPEND_ONLY_PRESERVE_EXISTING_BYTES",
+    "unknown_file_policy": "REJECT_UNLISTED_SOURCE_FILE"
+  },
+  "rollback_order": [
+    "01_STOP_RC1_RUNTIME_AND_RELEASE_HIDDEN_BROWSER_HANDLES",
+    "02_CAPTURE_FAILURE_LOG_AND_FINAL_HASHES",
+    "03_RESTORE_WORK_CONTROL_LOG_FROM_PRESERVED_COPY_IF_MUTATED",
+    "04_RESTORE_LIVE_PROFILE_FROM_IMMUTABLE_BACKUP_IF_MUTATED",
+    "05_RESTORE_RELEASE_SOURCE_AND_PAYLOAD_IN_REVERSE_APPLICATION_ORDER",
+    "06_REMOVE_TEMPORARY_SMOKE_PROFILE_ONLY",
+    "07_RESTART_PREVIOUS_EXACT_VERSION",
+    "08_VERIFY_PREVIOUS_VERSION_HASH_PROFILE_AND_LOG_READBACK",
+    "09_PUBLISH_ROLLBACK_RECEIPT"
+  ],
+  "required_w5_outputs": [
+    "5.10.2.4.2-rc1_SOURCE.zip",
+    "5.10.2.4.2-rc1_INSTALL.bat",
+    "5.10.2.4.2-rc1_PAYLOAD_MANIFEST.json",
+    "5.10.2.4.2-rc1_ROLLBACK.json",
+    "Invoke-5.10.2.4.2-rc1-TargetPcAcceptance.ps1",
+    "DRIVE_FILE_ID_SIZE_SHA256_READBACK_RECEIPT.json"
+  ],
+  "acceptance_gates": {
+    "all_inventory_sha256_present": true,
+    "all_blob_sha1_match": true,
+    "duplicate_dispatch_count": 0,
+    "previous_command_cancel_count": 0,
+    "lost_work_control_event_count": 0,
+    "live_profile_preserved": true,
+    "work_control_log_preserved": true,
+    "target_pc_pass_requires_live_receipts": true
+  },
+  "current_blocker": {
+    "code": "SOURCE_SHA256_NOT_CALCULATED_IN_W1_CONNECTOR_CONTEXT",
+    "detail": "GitHub Connector exposed exact paths, commits and Git blob identities, but did not provide an executable byte stream to W1 for deterministic SHA-256 calculation. W5 must fetch exact bytes during owned integration and fill SHA-256 before build; null SHA-256 is a hard fail-closed gate.",
+    "execution_owner": "AUTOMATION-C-W5"
+  },
+  "execution_pass_claimed": false,
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

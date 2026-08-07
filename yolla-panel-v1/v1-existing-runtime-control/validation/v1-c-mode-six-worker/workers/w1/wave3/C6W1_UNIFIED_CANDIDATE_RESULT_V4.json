@@ -1,0 +1,49 @@
+{
+  "schema_version": "C6W1_UNIFIED_CANDIDATE_RESULT_V4",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-003",
+  "command_id": "C6W-W3-W1-UNIFIED-CANDIDATE",
+  "worker_id": "AUTOMATION-C-W1",
+  "status": "BLOCKED_EXACT",
+  "terminal": "C6W1_WAVE3_UNIFIED_CANDIDATE_EXACT_BLOCKER",
+  "manifest_commit": "10e46f38b8010e46a8f13c6d4a1e829e813fa46d",
+  "input_head_readback": {
+    "w2": "PASS",
+    "w4": "PASS",
+    "w3": "PASS",
+    "w5": "PASS"
+  },
+  "execution": {
+    "checkout_attempted": true,
+    "checkout_result": "FAILED_NETWORK_DNS",
+    "error": "Could not resolve host: github.com",
+    "node_regression_executed": false,
+    "offline_pass_claimed": false
+  },
+  "completed": [
+    "EXACT_HEAD_BINDING",
+    "NON_MERGED_CANDIDATE_MANIFEST",
+    "RELEASE_SOURCE_PRESERVED",
+    "WORKER_PRS_UNMERGED"
+  ],
+  "blocked_regressions": [
+    "START",
+    "SIX_WORKER_BATCH",
+    "TWENTY_MINUTE_BRANCHES",
+    "NINETY_MINUTE_ASSISTANTS",
+    "FOUR_REPORT_DEMAND_REPLACEMENT",
+    "MONOTONIC_PROGRESS",
+    "PAUSE_RESUME",
+    "END_REACTIVATION",
+    "RESTART_RESTORE",
+    "DUAL_REPORT_SCHEMA",
+    "PER_TARGET_REPEAT_STATE",
+    "BACKGROUND_LOG_REGRESSION"
+  ],
+  "resume_condition": "Run the bound manifest in an environment with repository checkout and Node execution access, then commit machine-readable regression receipts.",
+  "target_pc_pass_claimed": false,
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

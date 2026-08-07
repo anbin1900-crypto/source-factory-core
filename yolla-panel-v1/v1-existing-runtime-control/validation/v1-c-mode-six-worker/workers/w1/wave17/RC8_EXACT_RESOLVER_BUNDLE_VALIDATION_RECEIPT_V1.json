@@ -1,0 +1,71 @@
+{
+  "schema_version": "RC8_EXACT_RESOLVER_BUNDLE_VALIDATION_RECEIPT_V4",
+  "status": "PASS_EXACT_RESOLVER_BUNDLE",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-017",
+  "result_key": "519850757900",
+  "assertion_count": 54,
+  "failure_count": 0,
+  "bundle_identity": {
+    "pass": true
+  },
+  "exact_resolver_identity": {
+    "pass": true,
+    "actual": {
+      "size_bytes": 10563,
+      "sha256": "a6eaeef66a2dfc59b646fb63ab62d6bff12361b79f13d97bb4022eaa01255ea6"
+    }
+  },
+  "handoff_identity": {
+    "pass": true,
+    "actual": {
+      "size_bytes": 4958,
+      "sha256": "f509146b475a19a1de04297b33c04ac6145ae73fd147e559bc7bb3836e96a637"
+    }
+  },
+  "rc7_negative_identity": {
+    "pass": true,
+    "actual": {
+      "size_bytes": 2677,
+      "sha256": "860a736bb9237727a4d3d7b4765418eb43be588269ebbca3da212c60d747cb1d"
+    }
+  },
+  "exact_semantics_pass": true,
+  "rc7_simplified_rejected": true,
+  "positive_installer": {
+    "pass": true,
+    "missing": []
+  },
+  "negative_installer_rejected": true,
+  "negative_installer_findings": [
+    "a6eaeef66a2dfc59b646fb63ab62d6bff12361b79f13d97bb4022eaa01255ea6",
+    "ExpectedResolverSize = 10563",
+    "Get-FileHash",
+    ".Length",
+    "& node $ResolverPath @ResolverArgs",
+    "$LASTEXITCODE -ne 0",
+    "-ReleaseRoot",
+    "-BaselineVersion",
+    "-TargetVersion",
+    "-CandidateReleasePath",
+    "-LauncherPath",
+    "-StateRoot",
+    "-ReceiptPath",
+    "-BaseReleasePath",
+    "guessed_path_count -ne 0",
+    "baseline_clone_performed -ne $true",
+    ".baseline.path",
+    ".clone.candidate_release_path",
+    ".clone.baseline_tree_sha256",
+    ".launcher.launcher_sha256",
+    ".launcher.launcher_backup_path"
+  ],
+  "resolver_rewritten": false,
+  "guessed_path_count": 0,
+  "candidate_overwrite_count": 0,
+  "rc8_candidate_accepted": false,
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

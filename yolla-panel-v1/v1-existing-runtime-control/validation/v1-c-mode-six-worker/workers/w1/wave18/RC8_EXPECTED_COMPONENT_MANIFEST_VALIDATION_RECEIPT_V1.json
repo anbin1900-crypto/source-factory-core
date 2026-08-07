@@ -1,0 +1,91 @@
+{
+  "schema_version": "RC8_EXPECTED_COMPONENT_MANIFEST_VALIDATION_RECEIPT_V3",
+  "status": "PASS_MANIFEST_AUTHORITY_W5_OUTPUTS_PENDING",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-018",
+  "result_key": "519889611700",
+  "manifest_validation": {
+    "pass": true,
+    "codes": [],
+    "assertion_count": 2454
+  },
+  "assembly_checks": {
+    "manifest_path_match": true,
+    "exact_classes_match": true,
+    "output_slots_match": true,
+    "consumers_complete": true,
+    "offline_acceptance_closed": true
+  },
+  "fixture_bundle": {
+    "positive": {
+      "actual": "PASS",
+      "fixture_pass": true
+    },
+    "negatives": [
+      {
+        "id": "MISSING_TARGET_PC_RUNNER",
+        "actual": "FAIL_CLOSED",
+        "codes": [
+          "MISSING_REQUIRED_COMPONENT_CLASS:TARGET_PC_ACCEPTANCE_RUNNER",
+          "INVALID_CLASSIFICATION:RC8_INSTALLER",
+          "INVALID_CLASSIFICATION:FULL_COMPONENT_SMOKE"
+        ],
+        "missing_expected_codes": [],
+        "fixture_pass": true,
+        "assertion_count": 485
+      },
+      {
+        "id": "DUPLICATE_C_RUNTIME",
+        "actual": "FAIL_CLOSED",
+        "codes": [
+          "DUPLICATE_COMPONENT_CLASS:C_RUNTIME_STATE_MACHINE",
+          "INVALID_CLASSIFICATION:RC8_INSTALLER",
+          "INVALID_CLASSIFICATION:FULL_COMPONENT_SMOKE",
+          "INVALID_CLASSIFICATION:TARGET_PC_ACCEPTANCE_RUNNER"
+        ],
+        "missing_expected_codes": [],
+        "fixture_pass": true,
+        "assertion_count": 527
+      },
+      {
+        "id": "EVIDENCE_AS_RUNTIME",
+        "actual": "FAIL_CLOSED",
+        "codes": [
+          "EVIDENCE_COUNTED_AS_RUNTIME:RESOLVER_INTEGRATION_VERIFIER",
+          "INVALID_CLASSIFICATION:RC8_INSTALLER",
+          "INVALID_CLASSIFICATION:FULL_COMPONENT_SMOKE",
+          "INVALID_CLASSIFICATION:TARGET_PC_ACCEPTANCE_RUNNER"
+        ],
+        "missing_expected_codes": [],
+        "fixture_pass": true,
+        "assertion_count": 506
+      }
+    ],
+    "pass": true
+  },
+  "counts": {
+    "exact_source_member_count": 18,
+    "runtime_member_count": 13,
+    "executable_tool_count": 4,
+    "evidence_only_count": 1,
+    "required_output_slot_count": 5,
+    "pending_output_slot_count": 5
+  },
+  "required_w5_output_slots_pending": [
+    "RC8_INSTALLER",
+    "EXPECTED_MANIFEST_BUNDLE_VERIFIER",
+    "FULL_COMPONENT_SMOKE",
+    "LAUNCHER_AND_INSTALL_ROLLBACK",
+    "TARGET_PC_ACCEPTANCE_RUNNER"
+  ],
+  "authority_manifest_pass": true,
+  "offline_artifact_ready": false,
+  "rc8_candidate_accepted": false,
+  "target_pc_execution_performed": false,
+  "target_pc_pass_claimed": false,
+  "assertion_count": 2454,
+  "failure_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

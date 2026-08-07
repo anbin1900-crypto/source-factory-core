@@ -1,0 +1,38 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_RESULT_V5",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-004",
+  "command_id": "C6W-W4-W1-CONNECTOR-BYTE-UNIFIED-OFFLINE",
+  "worker_id": "AUTOMATION-C-W1",
+  "status": "BLOCKED_EXACT",
+  "input_heads": {
+    "w2": "e7fa30621f6d99d28f9c63e25833da6fc1e12619",
+    "w3": "e08dbab7b050f8fb350c0f435f40807fa7fb3af3",
+    "w4": "0a6d7fa97166f4991edda3b3c62cd33b1e8642d6",
+    "w5": "2000195cb9a73628a6f27261b481f760e05d42a4"
+  },
+  "connector_readback": {
+    "directive": "PASS",
+    "w2_source_bytes": "PARTIAL_PASS",
+    "content_resource_only": true,
+    "runtime_file_mount": false,
+    "immutable_supplement_runtime_input": false
+  },
+  "execution": {
+    "git_clone_used": false,
+    "git_fetch_used": false,
+    "node_regressions_executed": 0,
+    "commands": [],
+    "exit_codes": [],
+    "assertion_count": 0,
+    "pass_claimed": false
+  },
+  "exact_blocker": "GITHUB_CONNECTOR_BYTES_NOT_MOUNTED_AS_EXECUTABLE_WORKSPACE_AND_IMMUTABLE_SUPPLEMENT_NOT_AVAILABLE_AS_RUNTIME_FILE_REFERENCE",
+  "resume_condition": "Provide connector file references or mounted local paths for exact files and immutable supplement ZIP, then reconstruct workspace and execute Node regressions.",
+  "release_source_overwrite_count": 0,
+  "worker_pr_merge_count": 0,
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

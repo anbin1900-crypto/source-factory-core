@@ -1,0 +1,57 @@
+{
+  "schema_version": "ALLOWLIST_SOURCE_FETCH_MAP_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-011",
+  "result_key": "519483535500",
+  "policy": "Fetch only listed executable source bytes; reject all unlisted files and all results, reports, pointers, manifests, evidence and tests.",
+  "allowlist": [
+    {
+      "component": "c_state_machine",
+      "path": "automation-c-v1/c_mode_runtime.cjs",
+      "commit": "2f4c7a9af8b7f7068b4638353b3e32285a253784",
+      "blob_sha1": "2db157e02008f64ef8fba22f58047b80953ab26d",
+      "sha256": "7ba9ec69c501d94e79b20774b4462a1108d8896608cd440d5932f518aab10995",
+      "size": 5081
+    },
+    {
+      "component": "result_watcher",
+      "path": "automation-c-v1/result_watcher/runtime_result_adapter.cjs",
+      "commit": "53c8ee089bef9e038ca1857a55f08298afb6573a",
+      "blob_sha1": "dc868b6def0f0a252da361bd7b2c929a0c8bb6e8",
+      "sha256": "7e91f62425c971d5f062c4af065aa5f828dce00ac4f9693ee68e5f8bf504c0c3",
+      "size": 2605
+    },
+    {
+      "component": "ui",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/wave8/candidate_ui_truth_bridge.cjs",
+      "commit": "119381ea8cc07016505a591cedeb053272cc2fda",
+      "blob_sha1": "c2ee5755e594cc55b94bf79e6075756459509e9e",
+      "sha256": "3e8d29f029b1016d453e561ef8acba8618c4a594f476d0ebbaf057037f2dddd0",
+      "size": 2121,
+      "carryover_completion_counted": false
+    },
+    {
+      "component": "repeat",
+      "path": "automation-c-v1/actual_candidate_bridge_binding.cjs",
+      "commit": "cdbbc00370166d7b4debf4030f64dcbd45b5c474",
+      "blob_sha1": "0088603855b4c9afc8ea311d4e5fe2f678947f37",
+      "sha256": "02d5d9d9bbda02bdb0200b4c0b493e15de186802de4caade60bf913ffb77404f",
+      "size": 1113
+    },
+    {
+      "component": "installer",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w5/wave9/INSTALL_RC3_IMMUTABLE_ARTIFACT.bat",
+      "commit": "8ca5860acabe427e971d2c0f94fe42d522a1b616",
+      "blob_sha1": "77ba7274debeab646962cb1dbc21d95ae47fc3be",
+      "sha256": "94558ce54451a41169905a351542683996959fcd32420f7a788eef90bb56a073",
+      "size": 329
+    }
+  ],
+  "deny_components": [
+    {"component":"background","reason":"exact executable byte unavailable at locked repository heads"},
+    {"component":"rollback","reason":"exact executable byte unavailable at locked repository heads"}
+  ],
+  "allowlist_count": 5,
+  "complete_seven_component_payload": false,
+  "core_ready": false
+}

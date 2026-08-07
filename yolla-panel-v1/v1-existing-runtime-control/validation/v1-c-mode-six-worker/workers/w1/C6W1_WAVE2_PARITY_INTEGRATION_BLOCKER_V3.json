@@ -1,0 +1,39 @@
+{
+  "schema_version": "C6W1_WAVE2_PARITY_INTEGRATION_BLOCKER_V3",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-002",
+  "command_id": "C6W-W2-W1-PARITY-INTEGRATION",
+  "worker_id": "AUTOMATION-C-W1",
+  "status": "BLOCKED_EXACT",
+  "oracle_head": "c70184a6eb52743139210cf42165677f59e7e30e",
+  "required_integration_inputs": {
+    "w2_wave2_approved_head": null,
+    "w4_wave2_approved_head": null
+  },
+  "observed": {
+    "w2_wave1_head": "b287588efbf62ece3374fc56f8b64166d64627bb",
+    "w2_wave2_directive_comment": 5189691452,
+    "w2_wave2_terminal_found": false,
+    "w4_wave1_head": "2b338e5a45d316418a726ce6f1787bac114c16f6",
+    "w4_wave2_directive_comment": 5189696213,
+    "w4_wave2_terminal_found": false
+  },
+  "blocked_tests": [
+    "START_PARITY",
+    "SIX_WORKER_BATCH_PARITY",
+    "20_MINUTE_BRANCH_PARITY",
+    "90_MINUTE_ASSISTANT_PARITY",
+    "FOUR_MISSING_REPORT_REPLACEMENT_PARITY",
+    "PROGRESS_MONOTONICITY_PARITY",
+    "PAUSE_RESUME_PARITY",
+    "END_PARITY",
+    "RESTART_RECOVERY_PARITY"
+  ],
+  "reason": "WAVE2_APPROVED_HEADS_FOR_W2_AND_W4_NOT_PUBLISHED",
+  "resume_condition": "BOTH_W2_AND_W4_WAVE2_TERMINALS_PUBLISH_EXACT_APPROVED_HEADS",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "target_pc_pass_claimed": false,
+  "auto_test_write_count": 0
+}

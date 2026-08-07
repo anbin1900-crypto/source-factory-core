@@ -1,0 +1,91 @@
+{
+  "schema_version": "AUTOMATION_C_W1_WAVE17_RESULT_V1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "worker_pr": 59,
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-017",
+  "registry_sequence": 17,
+  "command_id": "C6W-W17-W1-RC8-EXACT-RESOLVER-INTEGRATION",
+  "role": "AUTOMATION-C-W1",
+  "directive_comment": 5198507579,
+  "result_key": "519850757900",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc8",
+  "outcome": "PASS",
+  "terminal": "C6W_W17_W1_RC8_EXACT_RESOLVER_INTEGRATION_PASS",
+  "artifact_head": "33f04ce798592d1338e86e554d495d95134e7052",
+  "artifacts": {
+    "bundle": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave17/RC8_EXACT_RESOLVER_BUNDLE_V1.json",
+      "blob_sha1": "564c1810968dcadb68862a1abfae04848b3d58b6",
+      "sha256": "c91b27a51a6290927e21853429f5acd79f0f516528f089aaf716cf9501883636",
+      "size_bytes": 3838
+    },
+    "verifier": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave17/validate_rc8_exact_resolver_integration.cjs",
+      "blob_sha1": "50056ae26e6ab0bb57f5e3b0c28fc44be8a0a00e",
+      "sha256": "e0aca2d3c96cea738dacd06faf84d179d98f31f2b146f89a70f59eee152e02db",
+      "size_bytes": 3328
+    },
+    "positive_fixture": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave17/fixtures/positive_rc8_resolver_integration.ps1",
+      "blob_sha1": "c17a8f7c27e094245560bb12d7a210cad02b2407",
+      "sha256": "efcddef405d2007dc14111354e84d8614e19e168574269f9039520506cc15290",
+      "size_bytes": 3019
+    },
+    "negative_installer_fixture": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave17/fixtures/negative_rc8_resolver_bypass.ps1",
+      "blob_sha1": "4dcb8f97f964a4af268b0fc28a6c8de0838f2be3",
+      "sha256": "9ad7f66d7dfdd583932429008e17fbe3d5a359ef0db5649454516e551ea87f3a",
+      "size_bytes": 1031
+    },
+    "rc7_simplified_resolver_fixture": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave17/fixtures/rc7_simplified_target_pc_runtime_locator.cjs",
+      "source_commit": "4cd923437d4671b720c106fb857742ac50e99cd0",
+      "blob_sha1": "ea14fd39e66bd52a9e2e3db5e3a00885aa1e8dc3",
+      "sha256": "860a736bb9237727a4d3d7b4765418eb43be588269ebbca3da212c60d747cb1d",
+      "size_bytes": 2677
+    },
+    "validation_receipt": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave17/RC8_EXACT_RESOLVER_BUNDLE_VALIDATION_RECEIPT_V1.json",
+      "blob_sha1": "24b2f9d68aa33d76e54ce5e99811b851598552aa",
+      "sha256": "8bd5a0cebd53c11323e84488ac9d1060e2bae0cb409ca4b55ecdb6835bc76bb5",
+      "size_bytes": 1940,
+      "status": "PASS_EXACT_RESOLVER_BUNDLE",
+      "assertion_count": 54,
+      "failure_count": 0
+    }
+  },
+  "exact_source_reuse": {
+    "resolver_commit": "ed8bde5eb66f0d65de64ad1dfae4fde038e6012c",
+    "resolver_blob_sha1": "92e3e7f027f716fb49373bc66e9d62aff61b73ae",
+    "resolver_sha256": "a6eaeef66a2dfc59b646fb63ab62d6bff12361b79f13d97bb4022eaa01255ea6",
+    "resolver_size_bytes": 10563,
+    "handoff_commit": "001f2b23f743b204565f91bd058094330fbaa11a",
+    "resolver_rewritten": false
+  },
+  "validation_summary": {
+    "bundle_identity": "PASS",
+    "exact_resolver_identity": "PASS",
+    "handoff_identity": "PASS",
+    "required_resolver_semantics": "PASS",
+    "positive_integration_fixture": "PASS",
+    "negative_bypass_fixture": "REJECTED",
+    "rc7_simplified_resolver": "REJECTED",
+    "rc7_missing_required_semantic_count": 13,
+    "guessed_path_count": 0,
+    "candidate_overwrite_count": 0
+  },
+  "scope_truth": {
+    "w1_bundle_and_verifier_pass": true,
+    "rc8_candidate_accepted": false,
+    "target_pc_install_executed": false,
+    "target_pc_pass_claimed": false
+  },
+  "target_pc_install_authorized": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-06T08:34:00+09:00"
+}

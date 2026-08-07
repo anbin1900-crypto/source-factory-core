@@ -1,0 +1,24 @@
+{
+  "schema_version": "W5_SOURCE_FETCH_MAP_V3",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "target_version": "5.10.2.4.2-rc3",
+  "pre_target_pc_lock_commit": "3f80b9c759950deb7c7120fc411930bb078532ad",
+  "fetch_order": ["AUTOMATION-C-W1","AUTOMATION-C-W2","AUTOMATION-C-W4","AUTOMATION-C-W5","AUTOMATION-C-W6"],
+  "assembly_groups": {
+    "rc3_core": ["AUTOMATION-C-W1","AUTOMATION-C-W2","AUTOMATION-C-W4"],
+    "target_pc_acceptance_addon": ["AUTOMATION-C-W4","AUTOMATION-C-W5","AUTOMATION-C-W6"],
+    "carryover_not_complete": ["AUTOMATION-C-W3"]
+  },
+  "verification_policy": {
+    "fetch_by_exact_commit_and_path": true,
+    "verify_git_blob_sha1": true,
+    "verify_sha256": true,
+    "mismatch_action": "FAIL_CLOSED",
+    "w3_missing_action": "DO_NOT_BLOCK_CORE_ASSEMBLY_AND_DO_NOT_MARK_ACCEPTANCE_COMPLETE"
+  },
+  "core_assembly_allowed": true,
+  "target_pc_acceptance_complete": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "PRE_TARGET_PC_RELEASE_LOCK_V3",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-010",
+  "registry_sequence": 10,
+  "command_id": "C6W-W10-W1-PRE-TARGET-PC-RELEASE-LOCK-V3",
+  "directive_comment": 5194580713,
+  "result_key": "519458071300",
+  "wave9_valid_result_count": 5,
+  "core_artifact_gate": "READY_FOR_W5_ASSEMBLY",
+  "target_pc_acceptance_gate": "PENDING_EXTERNAL_RECEIPTS",
+  "core_inputs": [
+    {"role":"AUTOMATION-C-W1","result_comment":5194501475,"commit":"85c2608d5459535ff1d9a36cd49be075393e1500","path":"yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/WAVE9_RC3_RELEASE_INPUT_LOCK_RESULT_V2.json","blob_sha1":"b906904503e930ea1a25120238a9efa4ac6d6c21","sha256":"9f3446d2168bd254c1f828020ea944e54e16bc028b305ee9d4b16b5401c339f5","outcome":"PASS"},
+    {"role":"AUTOMATION-C-W2","result_comment":5194498627,"commit":"53c8ee089bef9e038ca1857a55f08298afb6573a","path":"yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w2/wave9/WAVE9_RESULT_AND_EXPORT_V1.json","blob_sha1":"995746703bb8021adaabf163bdd4c9badb7d038e","sha256":"11fb8e19fbf4865105ead187b51482f61d71c2461ce5dece5c998f16aaf0ea85","outcome":"PASS"},
+    {"role":"AUTOMATION-C-W4","result_comment":5194493989,"commit":"cdbbc00370166d7b4debf4030f64dcbd45b5c474","path":"yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w4/WAVE9_RESULT.json","blob_sha1":"86315026d25018448da22aaf211b60fb1257d1ac","sha256":"e8739f665a6369507ba85251e04098ac0fdb4d64da604eb65ecf68c941584959","outcome":"PASS"}
+  ],
+  "target_pc_addon_inputs": [
+    {"role":"AUTOMATION-C-W4","result_comment":5194493989,"commit":"cdbbc00370166d7b4debf4030f64dcbd45b5c474","path":"yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w4/WAVE9_RESULT.json","blob_sha1":"86315026d25018448da22aaf211b60fb1257d1ac","sha256":"e8739f665a6369507ba85251e04098ac0fdb4d64da604eb65ecf68c941584959","outcome":"PASS"},
+    {"role":"AUTOMATION-C-W5","result_comment":5194489948,"commit":"8ca5860acabe427e971d2c0f94fe42d522a1b616","path":"yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w5/AUTOMATION_C_W5_WAVE9_RESULT_V1.json","blob_sha1":"e749ce2b59070faf4c6998bf4fe4063ac2222d35","sha256":"c67d691e08924d4b4638928542569a2505a1f5c268c7a5866a5e361263409a3e","outcome":"BLOCKED"},
+    {"role":"AUTOMATION-C-W6","result_comment":5194488117,"commit":"a51d936cb7fd58feb47bd32d8c2e676c911fffe9","path":"yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w6/WAVE9_INDEPENDENT_ARTIFACT_AUDIT_RESULT_V1.json","blob_sha1":"33438a4fc29811d119fc03ddc097da6cb3abab0b","sha256":"b57a98acb0db97a82cdca13ae4effe339872fad41e959c8aef579ed3489bf88c","outcome":"BLOCKED"}
+  ],
+  "carryover": {"role":"AUTOMATION-C-W3","directive_comment":5194405262,"result_key":"519440526200","status":"CARRYOVER_PENDING","counted_complete":false,"blocks_core_assembly":false,"blocks_target_pc_acceptance":true},
+  "cross_path_collision_count": 0,
+  "implementation_rewritten": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

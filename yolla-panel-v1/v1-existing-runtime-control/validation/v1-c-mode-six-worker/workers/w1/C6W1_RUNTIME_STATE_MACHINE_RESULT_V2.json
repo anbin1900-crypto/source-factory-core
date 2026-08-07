@@ -1,0 +1,41 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_RESULT_V2",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "worker_id": "AUTOMATION-C-W1",
+  "worker_pr": 59,
+  "terminal": "C6W1_RUNTIME_STATE_MACHINE_PASS",
+  "status": "END",
+  "finding": "RUNTIME_AND_TEST_FILES_MISSING_FROM_WORKER_BRANCH",
+  "correction": {
+    "runtime_path": "automation-c-v1/c_mode_runtime.cjs",
+    "runtime_commit": "f277cea89f91bfafd95a2b484b0c519d7221ab19",
+    "test_path": "automation-c-v1/tests/test_c_mode_runtime.cjs",
+    "test_commit": "36a15a5183340cf0de39cc3b80f96ea3952a9e06"
+  },
+  "validation": {
+    "command": "node automation-c-v1/tests/test_c_mode_runtime.cjs",
+    "status": "PASS",
+    "passed": 12,
+    "failed": 0,
+    "coverage": [
+      "IDLE_TO_START_7_RECEIPTS",
+      "SIX_WORKER_SAME_WAVE",
+      "TWENTY_MINUTE_MISSING_0",
+      "TWENTY_MINUTE_MISSING_1_TO_2",
+      "TWENTY_MINUTE_MISSING_3_PLUS",
+      "NINETY_MINUTE_EXACTLY_2_ASSISTANTS",
+      "FOUR_PUBLICATION_REQUEST_REPLACEMENT",
+      "MONOTONIC_PROGRESS",
+      "PAUSE_RESUME",
+      "RESTART_STATE_RESTORE",
+      "END_REACTIVATION",
+      "EARLY_TIME_GATE_REJECTION"
+    ]
+  },
+  "target_pc_claimed": false,
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "completed_at": "2026-08-05T17:31:00+09:00"
+}

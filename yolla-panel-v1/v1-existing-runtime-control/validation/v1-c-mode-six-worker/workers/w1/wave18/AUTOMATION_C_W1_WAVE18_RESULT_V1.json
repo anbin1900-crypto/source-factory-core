@@ -1,0 +1,94 @@
+{
+  "schema_version": "AUTOMATION_C_W1_WAVE18_RESULT_V1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "worker_pr": 59,
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-018",
+  "registry_sequence": 18,
+  "command_id": "C6W-W18-W1-RC8-EXPECTED-COMPONENT-MANIFEST-AUTHORITY",
+  "role": "AUTOMATION-C-W1",
+  "directive_comment": 5198896117,
+  "report_request_comment": 5199077282,
+  "report_request_count": 1,
+  "result_key": "519889611700",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc8",
+  "outcome": "PASS",
+  "terminal": "C6W_W18_W1_RC8_EXPECTED_COMPONENT_MANIFEST_AUTHORITY_PASS",
+  "artifact_head": "270f8ac6ab12577199c3b23f351275b522ff9089",
+  "artifacts": {
+    "expected_component_manifest": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave18/RC8_EXPECTED_COMPONENT_MANIFEST_V2.json",
+      "commit": "c3ef652b9050c8116c8a9e84b8ca02cb347c487c",
+      "blob_sha1": "c8e3d0073100f5f8b3f64133dc77a57c7e8222bd",
+      "sha256": "da772a81ed98f13acf2d7238c77d760828aa1457050f4e648387c860e5533040",
+      "size_bytes": 11239
+    },
+    "assembly_lock": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave18/RC8_ASSEMBLY_LOCK_V1.json",
+      "commit": "d38e00cecab06527baef10f96889283c5701a75f",
+      "blob_sha1": "d5741d533fddcd8dc36d8d21dc3af5a7dc73e4fb",
+      "sha256": "9a66ccddd0f78b446551f9cd624dfd4e0400768652a9b234c89fdc4dd039a6de",
+      "size_bytes": 1397
+    },
+    "fixtures": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave18/RC8_EXPECTED_COMPONENT_MANIFEST_FIXTURES_V1.json",
+      "commit": "7ce46db8312aa3ae8d02b89e6e13b3d570a57d10",
+      "blob_sha1": "fdbb5db75d1fc3ce33aea1d70a3f5b828718a53b",
+      "sha256": "a11a997884b491b8d387aab5e274b9255cea2f290cf666530efdd63d00ecd4f3",
+      "size_bytes": 3426
+    },
+    "validator": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave18/validate_rc8_expected_component_manifest.cjs",
+      "commit": "c496bd37dc64e9e3e4e251f38c0962c9a48409b6",
+      "blob_sha1": "4da906e4ec02c255e69f3c2236ce42c356f96d66",
+      "sha256": "ee2c5588ba8f61dacfb263e6cbf0a0fe078285e73b747059415a3d0d9f705c08",
+      "size_bytes": 7322
+    },
+    "validation_receipt": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave18/RC8_EXPECTED_COMPONENT_MANIFEST_VALIDATION_RECEIPT_V1.json",
+      "commit": "270f8ac6ab12577199c3b23f351275b522ff9089",
+      "blob_sha1": "348b22a0c5ceb78214abac2c3d3953fc73f99521",
+      "sha256": "2bc0b57f1635c48136f83548e6d50acdea599bb91a1a9aff7ddf4a160ef42886",
+      "size_bytes": 2721,
+      "status": "PASS_MANIFEST_AUTHORITY_W5_OUTPUTS_PENDING",
+      "assertion_count": 2454,
+      "failure_count": 0
+    }
+  },
+  "validation_summary": {
+    "exact_source_member_count": 18,
+    "runtime_member_count": 13,
+    "executable_tool_count": 4,
+    "evidence_only_count": 1,
+    "required_w5_output_slot_count": 5,
+    "pending_w5_output_slot_count": 5,
+    "positive_fixture": "PASS",
+    "negative_fixture_missing_component": "FAIL_CLOSED_PASS",
+    "negative_fixture_duplicate_component": "FAIL_CLOSED_PASS",
+    "negative_fixture_evidence_as_runtime": "FAIL_CLOSED_PASS",
+    "report_pointer_result_runtime_member_count": 0,
+    "duplicate_exact_component_count": 0,
+    "missing_exact_component_count": 0
+  },
+  "consumers": [
+    "AUTOMATION-C-W5",
+    "AUTOMATION-C-W2",
+    "AUTOMATION-C-W4",
+    "AUTOMATION-C-W6"
+  ],
+  "scope_truth": {
+    "authority_manifest_pass": true,
+    "w5_output_identities_pending": true,
+    "offline_artifact_ready": false,
+    "installable_runtime_claimed": false,
+    "rc8_candidate_accepted": false,
+    "target_pc_install_executed": false,
+    "target_pc_pass_claimed": false
+  },
+  "target_pc_install_authorized": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

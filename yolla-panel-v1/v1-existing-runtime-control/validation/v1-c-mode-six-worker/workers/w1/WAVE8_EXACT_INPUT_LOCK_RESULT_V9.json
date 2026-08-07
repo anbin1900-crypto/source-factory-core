@@ -1,0 +1,30 @@
+{
+  "schema_version": "C6W_WAVE8_EXACT_INPUT_LOCK_RESULT_V9",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-008",
+  "command_id": "C6W-W8-W1-EXACT-INPUT-LOCK",
+  "worker_id": "AUTOMATION-C-W1",
+  "directive_comment": 5193852309,
+  "report_request_comment": 5194081596,
+  "result_key": "519385230900",
+  "outcome": "PASS",
+  "status": "END",
+  "input_lock_manifest": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/WAVE8_EXACT_INPUT_LOCK_COMPATIBILITY_MAP_V9.json",
+    "commit": "e8b2f6e654e1c94af892e18cacb3a3e0de599945"
+  },
+  "verified": {
+    "exact_heads": 4,
+    "exact_result_comments": 4,
+    "exact_paths": 4,
+    "exact_blob_sha1": 4,
+    "exact_sha256": 4,
+    "cross_head_path_collision_count": 0,
+    "contract_compatibility": "PASS",
+    "w3_target_pc_pending_preserved": true,
+    "w5_export_ready": true
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

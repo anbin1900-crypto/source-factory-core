@@ -1,0 +1,68 @@
+{
+  "schema_version": "AUTOMATION_C_W1_WAVE15_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-015",
+  "registry_sequence": 15,
+  "command_id": "C6W-W15-W1-TARGET-PC-RUNTIME-LOCATOR-BASELINE-RESOLVER",
+  "role": "AUTOMATION-C-W1",
+  "directive_comment": 5196981655,
+  "report_request_comment": 5197560491,
+  "report_request_count": 1,
+  "replacement_threshold": 4,
+  "result_key": "519698165500",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc6",
+  "outcome": "PASS",
+  "terminal": "C6W_W15_W1_TARGET_PC_RUNTIME_LOCATOR_BASELINE_RESOLVER_PASS",
+  "artifacts": {
+    "resolver": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave15/target_pc_runtime_locator.cjs",
+      "commit": "ed8bde5eb66f0d65de64ad1dfae4fde038e6012c",
+      "blob_sha1": "92e3e7f027f716fb49373bc66e9d62aff61b73ae",
+      "sha256": "a6eaeef66a2dfc59b646fb63ab62d6bff12361b79f13d97bb4022eaa01255ea6",
+      "size_bytes": 10563
+    },
+    "tests": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave15/test_target_pc_runtime_locator.cjs",
+      "commit": "0a7f47207b2b542cefaff4a7f37dcc2d226f3daa",
+      "blob_sha1": "b50faa586f5af5937fb8bf70b9b14acd59518521",
+      "sha256": "c2cea25acf28e642c866c84d7ae34b13791b69c3d6a8478226ba733e0fcb5b9e",
+      "size_bytes": 7417,
+      "execution": "PASS_25_OF_25"
+    },
+    "w5_handoff": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave15/W5_TARGET_PC_RUNTIME_LOCATOR_HANDOFF_V1.json",
+      "commit": "001f2b23f743b204565f91bd058094330fbaa11a",
+      "blob_sha1": "d70529d94bdae7e89daf4ba5cb69ec2cefe8bb80",
+      "sha256": "f509146b475a19a1de04297b33c04ac6145ae73fd147e559bc7bb3836e96a637",
+      "size_bytes": 4958
+    }
+  },
+  "verified_behaviors": {
+    "explicit_base_release_parameter_validation": "PASS",
+    "authority_release_root_boundary": "PASS",
+    "baseline_version_validation": "PASS",
+    "main_js_workspace_html_package_json_validation": "PASS",
+    "package_executable_entry_validation": "PASS",
+    "exactly_one_discovery": "PASS",
+    "zero_candidate_fail_closed": "PASS",
+    "multiple_candidate_fail_closed": "PASS",
+    "target_time_launcher_readback_sha256_backup": "PASS",
+    "complete_recursive_clone_pre_post_tree_hash": "PASS",
+    "candidate_overwrite_prevention": "PASS",
+    "guessed_path_count": 0
+  },
+  "previous_wave14_blocker_status": "RESOLVED_BY_TARGET_TIME_RESOLVER_METHOD",
+  "w5_handoff_ready": true,
+  "scope_truth": {
+    "resolver_implementation_pass": true,
+    "off_target_launcher_bytes_required": false,
+    "target_pc_live_execution_performed": false,
+    "rc6_candidate_built_by_w1": false,
+    "target_pc_acceptance_claimed": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-06T06:38:00+09:00"
+}

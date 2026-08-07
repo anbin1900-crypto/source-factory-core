@@ -1,0 +1,89 @@
+{
+  "schema_version": "C6W_WAVE8_EXACT_INPUT_LOCK_V9",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-008",
+  "command_id": "C6W-W8-W1-EXACT-INPUT-LOCK",
+  "result_key": "519385230900",
+  "status": "PASS",
+  "inputs": [
+    {
+      "role": "AUTOMATION-C-W1",
+      "pr": 59,
+      "head": "91872336931c3e5686bd973766737089d1860218",
+      "result_comment": 5193766643,
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/WAVE7_REGISTRY_AUTHORITY_RESULT_V8.json",
+      "blob_sha1": "db75d87709d209c75aa1e1cdbd02b70e672825f9",
+      "sha256": "051f835b3f3b586d5a47b8b59c41d439c5582e9535044a8789f491c6863dd04d",
+      "result_key": "519362538800",
+      "outcome": "PASS"
+    },
+    {
+      "role": "AUTOMATION-C-W2",
+      "pr": 60,
+      "head": "0fdcbae0416cabd827e322bf70179bced1b4fe40",
+      "result_comment": 5193762256,
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w2/C6W2_WAVE7_RESULT_WATCHER_COLLECTOR_RESULT_V1.json",
+      "blob_sha1": "6c1209608041b6c6138e99f75391524dbd867a6c",
+      "sha256": "e295e4b701831f6003d55419805872931e7a732a17dc07e197e5e963d5b27bf1",
+      "result_key": "519362886900",
+      "outcome": "PASS"
+    },
+    {
+      "role": "AUTOMATION-C-W3",
+      "pr": 61,
+      "head": "1a3e6fbc08cb2613e70a16915367ac03a5aa38d8",
+      "result_comment": 5193762357,
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w3/WAVE7_RESULT.json",
+      "blob_sha1": "5d9775351135003a9b4a5172114d6c744a382b79",
+      "sha256": "3841a297c350ea0e5bad9cf8d41d8fe4f6e6d26c5f83db99257aa3023bb6eaf6",
+      "result_key": "519363102700",
+      "outcome": "PASS_OFFLINE_TARGET_PC_PENDING"
+    },
+    {
+      "role": "AUTOMATION-C-W4",
+      "pr": 62,
+      "head": "61fc6a20b2245c691ab3812d07ea321aa2944ea0",
+      "result_comment": 5193766350,
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w4/WAVE7_RESULT.json",
+      "blob_sha1": "9ff6910ff59e333a1fc3550a5261e2767ac811e5",
+      "sha256": "532485402f3f133d0b2d8311b4869eb109a7ed5af4cebe545bdd54d2473b0c44",
+      "result_key": "519363356800",
+      "outcome": "PASS"
+    }
+  ],
+  "input_lock": {
+    "head_count": 4,
+    "unique_head_count": 4,
+    "unique_path_count": 4,
+    "unique_blob_count": 4,
+    "unique_sha256_count": 4,
+    "all_result_comments_exact": true,
+    "all_hashes_present": true,
+    "unlisted_input_policy": "REJECT",
+    "mismatch_policy": "FAIL_CLOSED"
+  },
+  "compatibility_map": {
+    "common_contract": ["control_id", "wave_id", "command_id", "result_key"],
+    "role_normalization": {"worker_id": "role", "role": "role"},
+    "outcome_normalization": {"status_PASS": "PASS", "outcome_PASS": "PASS", "PASS_OFFLINE_TARGET_PC_PENDING": "PASS_OFFLINE_TARGET_PC_PENDING"},
+    "w1_registry_sequence_contract": "COMPATIBLE",
+    "w2_result_watcher_contract": "COMPATIBLE",
+    "w3_ui_truth_contract": "COMPATIBLE_TARGET_PC_PENDING_RETAINED",
+    "w4_repeat_namespace_contract": "COMPATIBLE",
+    "cross_head_path_collision_count": 0,
+    "cross_contract_completion_collision_count": 0,
+    "legacy_a_e_completion_source_allowed": false,
+    "candidate_assembly_order": ["W1_REGISTRY_AUTHORITY", "W2_RESULT_WATCHER", "W3_UI_TRUTH", "W4_REPEAT_NAMESPACE"],
+    "verdict": "PASS"
+  },
+  "w5_export": {
+    "consumer": "AUTOMATION-C-W5",
+    "target": "5.10.2.4.2-rc3",
+    "consume_exactly": true,
+    "recalculate_sha256_and_compare_before_assembly": true,
+    "reject_head_path_blob_sha256_result_comment_mismatch": true
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

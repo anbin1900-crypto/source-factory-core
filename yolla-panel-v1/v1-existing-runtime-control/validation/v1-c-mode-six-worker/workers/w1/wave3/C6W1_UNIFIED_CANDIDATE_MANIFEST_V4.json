@@ -1,0 +1,38 @@
+{
+  "schema_version": "C6W1_UNIFIED_CANDIDATE_MANIFEST_V4",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-003",
+  "command_id": "C6W-W3-W1-UNIFIED-CANDIDATE",
+  "worker_id": "AUTOMATION-C-W1",
+  "candidate_mode": "NON_MERGED_VALIDATION_ONLY",
+  "oracle": {
+    "branch": "worker/automation-c-w1-runtime-state-v2",
+    "head": "ea26b91c273f4da208420b5901f067d70dbb0c87",
+    "path": "automation-c-v1/c_mode_runtime.cjs"
+  },
+  "bound_inputs": {
+    "w2_dual_report_schema": "028faddc8c314361f6703c9cbbb27865ed009edd",
+    "w4_per_target_repeat": "42e5ff1857754aeb366849448f671f5144694d7d",
+    "w3_ui_harness": "9f0d97291ab47592bd9e0136d8ca44723971f90e",
+    "w5_background_log_harness": "25c2cd59e096718cc2ee9bd6e3b3591682b01acd"
+  },
+  "required_regressions": [
+    "START",
+    "SIX_WORKER_BATCH",
+    "TWENTY_MINUTE_BRANCHES",
+    "NINETY_MINUTE_ASSISTANTS",
+    "FOUR_REPORT_DEMAND_REPLACEMENT",
+    "MONOTONIC_PROGRESS",
+    "PAUSE_RESUME",
+    "END_REACTIVATION",
+    "RESTART_RESTORE",
+    "DUAL_REPORT_SCHEMA",
+    "PER_TARGET_REPEAT_STATE",
+    "BACKGROUND_LOG_REGRESSION"
+  ],
+  "source_overwrite": false,
+  "worker_pr_merge": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

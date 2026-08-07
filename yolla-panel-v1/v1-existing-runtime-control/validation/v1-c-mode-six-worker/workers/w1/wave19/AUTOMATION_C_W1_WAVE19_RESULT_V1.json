@@ -1,0 +1,89 @@
+{
+  "schema_version": "AUTOMATION_C_W1_WAVE19_RESULT_V1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "worker_pr": 59,
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-019",
+  "registry_sequence": 19,
+  "command_id": "C6W-W19-W1-LIVENESS-STATE-ORACLE",
+  "role": "AUTOMATION-C-W1",
+  "directive_comment": 5200543210,
+  "result_key": "520054321000",
+  "base_result_commit": "01d23381df5dd5f0a8309f8d9189f1f0611394b2",
+  "outcome": "PASS",
+  "terminal": "C6W_W19_W1_LIVENESS_STATE_ORACLE_PASS",
+  "artifact_head": "e51880e31463c5b440b3875e6b6178369e5b289d",
+  "artifacts": {
+    "oracle_module": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave19/liveness_state_oracle.cjs",
+      "commit": "7f30062a2bece810f3913847e77e4e224b0fc248",
+      "blob_sha1": "84774d87f3531641bd0f9fb5856cc69ce0a0a2c7",
+      "sha256": "06f42b750f6378357d9e4e65e328a7e24ec6926c0e5fb59e30366314d1a057d6",
+      "size_bytes": 4770,
+      "runtime": "Node.js CommonJS",
+      "w5_consumable": true
+    },
+    "fixtures": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave19/LIVENESS_STATE_ORACLE_FIXTURES_V1.json",
+      "commit": "740037b1888335d2411c4b73296adf4032b6cef4",
+      "blob_sha1": "d8ff217b6778cdbee80e67a6cc7ea72a6071adb6",
+      "sha256": "9374dace5f863e55126683a5609f61bfbab52aa230188212a5fd1dc6a3550ea2",
+      "size_bytes": 4762,
+      "fixture_count": 12
+    },
+    "tests": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave19/test_liveness_state_oracle.cjs",
+      "commit": "e51880e31463c5b440b3875e6b6178369e5b289d",
+      "blob_sha1": "6bcc96efc6d2935135b8ef31952fc34f057eadb2",
+      "sha256": "9e132cb7fb3d7e55b62dadae44068c27aa5f02256f53619c339291bd34fd5d40",
+      "size_bytes": 1625,
+      "execution": "PASS_43_ASSERTIONS"
+    }
+  },
+  "states": [
+    "WAITING",
+    "WORKING",
+    "RESULT_PENDING",
+    "COMPLETED",
+    "REVIEW_REQUIRED"
+  ],
+  "verified_rules": {
+    "before_30_minutes_refresh_count": 0,
+    "generation_active_refresh_count": 0,
+    "after_30_minutes_not_generating_refresh_exactly_once": true,
+    "post_refresh_reevaluation_delay_ms": 30000,
+    "exact_result_key_sets_completed": true,
+    "wrong_result_key_does_not_complete": true,
+    "github_result_absence_is_not_non_execution_proof": true,
+    "absence_after_refresh_state": "RESULT_PENDING",
+    "review_required_needs_explicit_review_signal": true,
+    "refresh_latch_prevents_repeat_refresh": true
+  },
+  "w5_integration_contract": {
+    "import": "require('./liveness_state_oracle.cjs')",
+    "entrypoint": "evaluateLiveness(input)",
+    "required_inputs": [
+      "nowMs",
+      "referenceAtMs",
+      "expectedResultKey",
+      "observedResultKeys",
+      "generationActive",
+      "workObserved",
+      "refreshCount",
+      "refreshAtMs"
+    ],
+    "panel_source_direct_edit_required": false
+  },
+  "scope_truth": {
+    "oracle_pass": true,
+    "implementation_owner": false,
+    "panel_source_direct_edit_count": 0,
+    "w5_integration_executed": false,
+    "target_pc_execution_performed": false,
+    "target_pc_pass_claimed": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

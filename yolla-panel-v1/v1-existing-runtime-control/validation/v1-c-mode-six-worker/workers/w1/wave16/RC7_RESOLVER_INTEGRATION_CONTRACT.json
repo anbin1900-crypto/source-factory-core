@@ -1,0 +1,135 @@
+{
+  "schema_version": "RC7_RESOLVER_INTEGRATION_CONTRACT_V1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "worker_pr": 59,
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-016",
+  "registry_sequence": 16,
+  "command_id": "C6W-W16-W1-RC7-RESOLVER-INTEGRATION-GATE",
+  "role": "AUTOMATION-C-W1",
+  "directive_comment": 5198279097,
+  "result_key": "519827909700",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc7",
+  "mode": "RC7_CORRECTION_AND_OFFLINE_ACCEPTANCE",
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "inputs": {
+    "resolver": {
+      "commit": "ed8bde5eb66f0d65de64ad1dfae4fde038e6012c",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave15/target_pc_runtime_locator.cjs",
+      "blob_sha1": "92e3e7f027f716fb49373bc66e9d62aff61b73ae",
+      "sha256": "a6eaeef66a2dfc59b646fb63ab62d6bff12361b79f13d97bb4022eaa01255ea6",
+      "size_bytes": 10563,
+      "reuse_without_rewrite": true
+    },
+    "handoff": {
+      "commit": "001f2b23f743b204565f91bd058094330fbaa11a",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w1/wave15/W5_TARGET_PC_RUNTIME_LOCATOR_HANDOFF_V1.json",
+      "blob_sha1": "d70529d94bdae7e89daf4ba5cb69ec2cefe8bb80",
+      "sha256": "f509146b475a19a1de04297b33c04ac6145ae73fd147e559bc7bb3836e96a637",
+      "size_bytes": 4958
+    },
+    "rc6_installer": {
+      "commit": "ceb5ae6591c223be7a8b093d55c869170cb505f2",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w5/wave15/Install-Yolla-C-Mode-5.10.2.4.2-rc6.ps1",
+      "blob_sha1": "f23fc09387caf638494ea47d7b52d0f006a40065",
+      "size_bytes": 5992,
+      "fixture_role": "REAL_NEGATIVE_INPUT"
+    }
+  },
+  "authority": {
+    "release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases",
+    "state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2",
+    "browser_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_3_7.bat"
+  },
+  "integration_rule": {
+    "resolver_must_be_materialized_from_exact_input": true,
+    "installer_must_invoke_resolver": true,
+    "installer_must_check_resolver_exit": true,
+    "installer_must_parse_resolver_receipt": true,
+    "installer_must_use_only_resolver_baseline_path": true,
+    "installer_must_use_only_resolver_candidate_path": true,
+    "inline_baseline_discovery_forbidden": true,
+    "inline_baseline_clone_forbidden": true,
+    "inline_launcher_backup_forbidden": true,
+    "resolver_receipt_required_fields": [
+      "baseline.path",
+      "baseline.resolution_mode",
+      "clone.candidate_release_path",
+      "clone.baseline_tree_sha256",
+      "launcher.launcher_sha256",
+      "launcher.launcher_backup_path",
+      "guessed_path_count",
+      "baseline_clone_performed"
+    ]
+  },
+  "required_semantics": {
+    "explicit_base_release_path_under_authority_root": true,
+    "baseline_version_exact": true,
+    "package_json_required": true,
+    "package_main_required": true,
+    "main_js_required": true,
+    "workspace_html_required": true,
+    "no_parameter_exactly_one_valid_baseline": true,
+    "zero_candidate_fail_closed": true,
+    "multiple_candidate_fail_closed": true,
+    "recursive_clone_pre_post_tree_sha256_equal": true,
+    "launcher_actual_byte_readback": true,
+    "launcher_sha256": true,
+    "launcher_immutable_backup": true,
+    "guessed_path_count": 0,
+    "candidate_overwrite_count": 0
+  },
+  "fixtures": [
+    {
+      "id": "POSITIVE_RESOLVER_ONLY_RC7",
+      "path": "fixtures/positive_rc7_installer.ps1",
+      "expected_outcome": "PASS",
+      "expected_findings": []
+    },
+    {
+      "id": "NEGATIVE_INLINE_BASELINE_RESOLUTION",
+      "path": "fixtures/negative_inline_baseline_resolution.ps1",
+      "expected_outcome": "FAIL_CLOSED",
+      "expected_findings": [
+        "RESOLVER_SOURCE_NOT_REFERENCED",
+        "RESOLVER_INVOCATION_MISSING",
+        "INLINE_BASELINE_DISCOVERY_FORBIDDEN",
+        "INLINE_BASELINE_CLONE_FORBIDDEN",
+        "MANUAL_BASELINE_ASSIGNMENT_FORBIDDEN",
+        "MANUAL_CANDIDATE_ASSIGNMENT_FORBIDDEN"
+      ]
+    },
+    {
+      "id": "NEGATIVE_RESOLVER_OUTPUT_IGNORED",
+      "path": "fixtures/negative_resolver_output_ignored.ps1",
+      "expected_outcome": "FAIL_CLOSED",
+      "expected_findings": [
+        "RESOLVED_BASE_PATH_NOT_USED",
+        "RESOLVED_CANDIDATE_PATH_NOT_USED",
+        "BASELINE_TREE_SHA_NOT_CONSUMED",
+        "LAUNCHER_SHA_NOT_CONSUMED",
+        "LAUNCHER_BACKUP_NOT_CONSUMED",
+        "MANUAL_CANDIDATE_ASSIGNMENT_FORBIDDEN"
+      ]
+    },
+    {
+      "id": "NEGATIVE_CANDIDATE_PREDELETE",
+      "path": "fixtures/negative_candidate_overwrite.ps1",
+      "expected_outcome": "FAIL_CLOSED",
+      "expected_findings": [
+        "CANDIDATE_PREDELETE_FORBIDDEN"
+      ]
+    }
+  ],
+  "rc7_actual_installer": {
+    "state": "PENDING_W5_WAVE16_DIRECTIVE_AND_RESULT",
+    "validation_in_same_assignment_required": true
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "target_pc_install_authorized": false
+}
