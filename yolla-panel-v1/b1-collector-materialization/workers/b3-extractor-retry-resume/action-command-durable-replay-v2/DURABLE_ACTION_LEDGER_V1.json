@@ -1,0 +1,21 @@
+{
+  "schema_version": "DURABLE_ACTION_LEDGER_V1",
+  "append_only_identity_fields": [
+    "command_id",
+    "mission_id",
+    "session_id",
+    "page_id",
+    "action_id",
+    "sequence_no",
+    "timestamp",
+    "action_type",
+    "payload",
+    "idempotency_key"
+  ],
+  "hash_chain": "prev_hash -> record_hash",
+  "dedupe_index": "idempotency_key -> action_id",
+  "recovery_order": "sequence_no ASC",
+  "status_transition_policy": "identity immutable; status snapshot may advance; chain revalidated",
+  "event_ledger_only_recovery": true,
+  "credential_or_session_secret_storage": false
+}
