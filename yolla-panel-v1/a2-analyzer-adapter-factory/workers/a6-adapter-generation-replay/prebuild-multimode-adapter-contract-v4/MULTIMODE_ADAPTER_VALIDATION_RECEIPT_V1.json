@@ -1,0 +1,14 @@
+{
+  "schema_version":"MULTIMODE_ADAPTER_VALIDATION_RECEIPT_V1",
+  "directive_id":"A0-TO-A6-MULTIMODE-ADAPTER-CONTRACT-EXTENSION-V4-20260808-001",
+  "status":"PASS",
+  "modes":{"READ":"PASS","WRITE":"PASS_AUTOFILL_PREVIEW","MY_LISTING":"PASS_REVERSE_CANONICAL","EDIT":"PASS_AUTOFILL_PREVIEW"},
+  "canonical_to_site_form":"PASS",
+  "my_listing_to_canonical_candidate":"PASS",
+  "final_actions":{"submitCreate":"USER_CONFIRM_REQUIRED","submitUpdate":"USER_CONFIRM_REQUIRED","delete":"USER_CONFIRM_REQUIRED","expire":"USER_CONFIRM_REQUIRED"},
+  "final_submit_execution_count":0,
+  "fail_closed_insufficient_evidence":"PASS",
+  "forced_failure":{"step":"s03","last_completed_step":"s02","resume_from_step":2,"resume_executed_steps":2,"completed_steps_reexecuted":false},
+  "existing_pipeline_reused":"Decision->Recipe->Playwright/Crawlee Adapter->Replay->Checkpoint/Resume",
+  "target_pc_execution":false,"live_site_call":false,"tunnel_change":false,"production":false,"ready":false,"merge":false
+}

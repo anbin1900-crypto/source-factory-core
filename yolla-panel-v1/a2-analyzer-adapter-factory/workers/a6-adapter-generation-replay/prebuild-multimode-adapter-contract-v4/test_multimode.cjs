@@ -1,0 +1,12 @@
+'use strict';
+const fs=require('node:fs');const assert=require('node:assert');const R=require('./multimode_runner_v1.cjs');
+const mapping=JSON.parse(fs.readFileSync('./FIELD_MAPPING_TRANSFORM_CONTRACT_V1.json'));
+const canonical={title:'Listing 1',price:'1000만원',address:' 서울시 강남구 ',image:'/1.jpg',detail_url:'/detail/1'};
+const form=R.toForm(canonical,mapping);assert.equal(form.listing_title,'Listing 1');assert.equal(form.listing_price,1000);assert.equal(form.listing_address,'서울시 강남구');
+const rev=R.fromForm(form,mapping);assert.equal(rev.title,'Listing 1');assert.equal(rev.price,1000);
+const write=R.prepare({mode:'WRITE',command_id:'C4-WRITE',canonical,mapping});assert.equal(write.recipe.steps.at(-1).status,'USER_CONFIRM_REQUIRED');
+const edit=R.prepare({mode:'EDIT',command_id:'C4-EDIT',canonical,mapping});assert.equal(edit.recipe.steps.at(-1).status,'USER_CONFIRM_REQUIRED');
+const my=R.prepare({mode:'MY_LISTING',command_id:'C4-MY',site_listing:form,canonical:{},mapping});assert.equal(my.canonical_candidate.title,'Listing 1');
+const failed=R.execute(edit.recipe,{failAtStep:'s03'});assert.equal(failed.checkpoint.last_completed_step,'s02');assert.equal(failed.receipt.resume_from_step,2);const resumed=R.execute(edit.recipe,{checkpoint:JSON.parse(JSON.stringify(failed.checkpoint))});assert.equal(resumed.receipt.executed_step_count,2);assert.equal(resumed.checkpoint.status,'COMPLETED');
+const bad=JSON.parse(JSON.stringify(mapping));delete bad.site_form_mapping.title.evidence;assert.throws(()=>R.toForm(canonical,bad),/FAIL_CLOSED_EVIDENCE/);
+console.log(JSON.stringify({status:'PASS',canonical_to_form:true,my_listing_reverse:true,user_confirm_required:true,forced_failure_step:'s03',last_completed_before_failure:'s02',resume_from_step:2,resume_executed_steps:2,completed_steps_reexecuted:false,fail_closed_evidence:true}));

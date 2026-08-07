@@ -1,0 +1,14 @@
+{
+  "schema_version":"FIELD_MAPPING_TRANSFORM_CONTRACT_V1",
+  "canonical_fields":["title","price","address","image","detail_url"],
+  "site_form_mapping":{
+    "title":{"form_field":"listing_title","transform":"IDENTITY","evidence":"fixture:title"},
+    "price":{"form_field":"listing_price","transform":"KRW_TEXT_TO_NUMBER","evidence":"fixture:price"},
+    "address":{"form_field":"listing_address","transform":"TRIM","evidence":"fixture:address"},
+    "image":{"form_field":"listing_image_url","transform":"IDENTITY","evidence":"fixture:image"},
+    "detail_url":{"form_field":"source_detail_url","transform":"IDENTITY","evidence":"fixture:detail_url"}
+  },
+  "reverse_mapping":{"listing_title":"title","listing_price":"price","listing_address":"address","listing_image_url":"image","source_detail_url":"detail_url"},
+  "evidence_required":true,
+  "missing_mapping_behavior":"FAIL_CLOSED"
+}
