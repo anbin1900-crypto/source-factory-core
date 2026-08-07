@@ -1,0 +1,32 @@
+{
+  "schema_version":"A3_ACTION_NETWORK_STATE_CAUSAL_VALIDATION_RECEIPT_V1",
+  "directive_id":"A0-TO-A3-ACTION-NETWORK-STATE-CAUSAL-BINDING-V5-20260808-001",
+  "resume_comment":5219591352,
+  "source_head":"46ccb4fd776bae30d3f25f06f1cdc62be530c71c",
+  "node_version":"v22.16.0",
+  "validation":{
+    "node_syntax":"PASS_2_OF_2",
+    "fixture_execution":"PASS_1_OF_1",
+    "fixture_readback":true,
+    "source_event_count":13,
+    "causal_bundle_count":4,
+    "flows":["PUBLIC_READ","WRITE","MY_LISTING","EDIT"],
+    "same_command_lineage":true,
+    "direct_correlation_bundle_count":4,
+    "a4_direct_consumption":true,
+    "a5_direct_consumption":true,
+    "legacy_ref_compatibility":true,
+    "business_inference_count":0,
+    "raw_secret_or_pii_count":0,
+    "readback_sha256":"67c0afa8f48046e0a8d371a6715a68fe4a45be6367009cfb5e73fff2ffac0a8c"
+  },
+  "source_authority":{"cycle4_manifest_blob":"50ff8f692360a6c8a2f82657db24d306edf97e83","cycle4_engine_blob":"3c6cf3f8a52afa71a795eee21e90b4bc4cfbf790","cycle4_evidence_recollection":false},
+  "tested_source_sha256":{"action_network_state_causal_binding_v1.cjs":"10fe728346d37b86dda9f3d89c5edaf1deafeb9ac1a42bfbb1ebaf43dc671937","mock_smoke_cycle5_v1.cjs":"dc29ba04e0dc58bed3fa43316e88fdadd8fbe10460ebcf79f3c576ebb241c34c"},
+  "terminal":"A3_ACTION_NETWORK_STATE_CAUSAL_BINDING_READY",
+  "target_pc_execution":false,
+  "live_site_call":false,
+  "production":false,
+  "ready":false,
+  "merge":false,
+  "status":"PASS"
+}
