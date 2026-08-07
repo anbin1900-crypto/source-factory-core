@@ -1,0 +1,13 @@
+{
+  "schema_version":"SITE_ANALYZER_SUCCESSOR_EXECUTION_MANIFEST_V2",
+  "directive_id":"AI001-TO-A2-COMPOSITE-PIPELINE-AND-WORKER-STATE-INTEGRATION-V3-20260807-001",
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "inherits_from":{"path":"yolla-panel-v1/a2-analyzer-adapter-factory/successor-execution-manifest-v1/SITE_ANALYZER_SUCCESSOR_EXECUTION_MANIFEST_V1.json","blob":"40c8d763931edea80b3899bddbe930db11a9e7aa","source_commit":"d066ea195bf71eaa5b1a76cbf2e6c47295b80081"},
+  "composite_pipeline_path":"yolla-panel-v1/a2-analyzer-adapter-factory/composite-pipeline-v1/COMPOSITE_PIPELINE_MANIFEST_V1.json",
+  "worker_state_observer":{"consume_contract":"yolla-panel-v1/a2-analyzer-adapter-factory/composite-pipeline-v1/WORKER_BROWSER_STATE_EVENT_V1.json","consume_point":"AFTER_EACH_COMMAND_EVENT_BEFORE_NEXT_ACTION_GENERATION","state_key":["worker_id","command_id","page_id"],"technical_pass_rule":"browser_state=COMPLETE AND task_status=PASS AND terminal!=null"},
+  "next_action_generation_rule":"APPLY_COMPOSITE_PIPELINE_MANIFEST_V1.next_action_generation_rules",
+  "context_restore_order":["LATEST_POINTER","CURRENT_MISSION","CURRENT_COMMAND","LATEST_RESULT","NEXT_ACTION"],
+  "orchestration_fixture":"yolla-panel-v1/a2-analyzer-adapter-factory/composite-pipeline-v1/ORCHESTRATION_FIXTURE_V1.json",
+  "target_pc_values":{"working_root":"PLACEHOLDER","chrome_executable":"UNKNOWN","cdp_host":"127.0.0.1","cdp_port":"PLACEHOLDER","local_agent_port":"PLACEHOLDER","server_port":"PLACEHOLDER","panel_port":"PLACEHOLDER"},
+  "boundaries":{"target_pc_execution":false,"tunnel_change":false,"worker_direct_tunnel":false,"new_browser_engine":false,"production":false,"ready":false,"merge":false}
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version":"ORCHESTRATION_FIXTURE_V1",
+  "directive_id":"AI001-TO-A2-COMPOSITE-PIPELINE-AND-WORKER-STATE-INTEGRATION-V3-20260807-001",
+  "mode":"DRY_RUN_NO_SHELL_NO_TARGET_PC",
+  "selected_stage":"A3_CDP_OBSERVATION_RUNNER",
+  "available_commands":[
+    {"order":1,"command_id":"CMD-101","module_id":"A3_CDP_OBSERVATION_RUNNER","mode":"SEQUENTIAL_OR_SELECTED","run":"PLACEHOLDER_RESOLVE_AT_TARGET_BINDING"},
+    {"order":2,"command_id":"CMD-102","module_id":"A4_STRUCTURE_RUNNER","mode":"SEQUENTIAL_OR_SELECTED","run":"PLACEHOLDER_RESOLVE_AT_TARGET_BINDING"},
+    {"order":3,"command_id":"CMD-103","module_id":"A5_DECISION_RUNNER","mode":"SEQUENTIAL_OR_SELECTED","run":"PLACEHOLDER_RESOLVE_AT_TARGET_BINDING"},
+    {"order":4,"command_id":"CMD-104","module_id":"A6_ADAPTER_RUNNER","mode":"SEQUENTIAL_OR_SELECTED","run":"PLACEHOLDER_RESOLVE_AT_TARGET_BINDING"},
+    {"order":5,"command_id":"CMD-105","module_id":"A7_RECOVERY_BOOTSTRAP","mode":"SEQUENTIAL_OR_SELECTED","run":"PLACEHOLDER_RESOLVE_AT_TARGET_BINDING","nonblocking":true}
+  ],
+  "events":[
+    {"worker_id":"A-3","command_id":"CMD-101","page_id":"pg_abcdef123456_0001","browser_state":"DISPATCHED","task_status":"RUNNING","terminal":null,"observed_at":"2026-08-07T13:40:00Z"},
+    {"worker_id":"A-3","command_id":"CMD-101","page_id":"pg_abcdef123456_0001","browser_state":"GENERATING","task_status":"RUNNING","terminal":null,"observed_at":"2026-08-07T13:40:01Z"},
+    {"worker_id":"A-3","command_id":"CMD-101","page_id":"pg_abcdef123456_0001","browser_state":"COMPLETE","task_status":"PASS","terminal":"A3_FIXTURE_OBSERVATION_PASS","observed_at":"2026-08-07T13:40:02Z"}
+  ],
+  "expected_reduction":[
+    {"after_event":1,"pipeline_state":"A3_DISPATCHED","next_action":"WAIT_FOR_LATER_WORKER_STATE_EVENT"},
+    {"after_event":2,"pipeline_state":"A3_GENERATING","next_action":"WAIT_FOR_LATER_WORKER_STATE_EVENT"},
+    {"after_event":3,"pipeline_state":"A3_COMPLETE_TECHNICAL_PASS","next_action":"A4_STRUCTURE_RUNNER"}
+  ],
+  "single_command_selection":{"command_id":"CMD-101","selection_mode":"ONE_COMMAND_AT_A_TIME","selected_module":"A3_CDP_OBSERVATION_RUNNER"},
+  "target_pc_execution":false
+}
