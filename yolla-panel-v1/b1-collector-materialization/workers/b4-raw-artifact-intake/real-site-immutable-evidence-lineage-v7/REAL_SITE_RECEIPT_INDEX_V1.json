@@ -1,0 +1,31 @@
+{
+  "schema_version": "REAL_SITE_RECEIPT_INDEX_V1",
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "status": "WAITING_INPUT",
+  "receipts": [],
+  "receipt_count": 0,
+  "actual_site_receipt_count": 0,
+  "upstream_candidate_receipts": [
+    {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/ai001-prebuild/cycle7/A4_CYCLE7_RUNTIME_BINDING_VALIDATION_RECEIPT_V1.json",
+      "blob": "bed16c27ebb68d8d4d1c552568273d23ee38a218",
+      "binding_sha256": "ba25c4e8b36cc9af43505e8b7ca50b7d1919d617edb0e317e1b360aa57894ef6",
+      "terminal": "A4_REAL_SITE_PAGE_COMPONENT_RUNTIME_BINDING_READY"
+    }
+  ],
+  "required_for_live_bind": [
+    "receipt_id",
+    "receipt_pointer",
+    "receipt_sha256",
+    "command_id",
+    "page_id",
+    "action_id"
+  ],
+  "blocking_input": {
+    "code": "EXACT_COMMAND_RECEIPT_NOT_AVAILABLE",
+    "command_id_status": "UNKNOWN",
+    "page_id_status": "INFERRED",
+    "action_id_status": "OBSERVED",
+    "external_target_site_coverage_claim": false
+  }
+}

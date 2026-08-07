@@ -1,0 +1,59 @@
+{
+  "schema_version": "B4_REAL_SITE_IMMUTABLE_EVIDENCE_LINEAGE_FINAL_REPORT_V1",
+  "worker": "B-4",
+  "role": "B-4_REAL_SITE_IMMUTABLE_EVIDENCE_LINEAGE_OWNER",
+  "directive_id": "A0-TO-B4-REAL-SITE-IMMUTABLE-EVIDENCE-LINEAGE-V7-20260808-001",
+  "directive_comment_id": 5220807009,
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "observed_head": "44c93b8d91dbdc641e8958073d837d7aae73d876",
+  "execution_start_head": "25a49345277e117b98916703e8ce03d677a549bb",
+  "parent_terminal": "B4_COMPOSITE_EVIDENCE_LINEAGE_INDEX_READY",
+  "status": "READY_WAITING_EXACT_COMMAND_RECEIPT",
+  "terminal": "B4_REAL_SITE_IMMUTABLE_EVIDENCE_LINEAGE_READY",
+  "implementation": {
+    "real_site_evidence_manifest_v1": "READY_LATE_BIND",
+    "real_site_semantic_lineage_index_v1": "READY_LATE_BIND",
+    "real_site_receipt_index_v1": "READY_LATE_BIND",
+    "append_only_hash_chain": "READY",
+    "exact_pointer_sha_validation": "READY",
+    "command_page_action_correlation": "FAIL_CLOSED_REQUIRED",
+    "producer_assertion_preservation": "READY",
+    "raw_artifact_overwrite": false,
+    "raw_payload_storage": false,
+    "raw_secret_storage": false
+  },
+  "upstream_truth": {
+    "a4_actual_chrome_readback_blob": "adee351be0e60d01572aa2924067bbca677424bf",
+    "a3_actual_chrome_receipt_blob": "467d8df95d54a54e67a52f5bb2c8e627984f0952",
+    "a4_validation_receipt_blob": "bed16c27ebb68d8d4d1c552568273d23ee38a218",
+    "actual_browser": "Chromium 144.0.7559.96",
+    "cdp_transport": "REAL_WEBSOCKET_REMOTE_DEBUGGING",
+    "command_id_status": "UNKNOWN",
+    "page_id_status": "INFERRED",
+    "action_id_status": "OBSERVED",
+    "external_target_site_coverage_claim": false
+  },
+  "live_binding": {
+    "actual_site_receipt_bound_count": 0,
+    "semantic_live_entry_count": 0,
+    "status": "WAITING_INPUT",
+    "blocking_input": "EXACT_COMMAND_ID_AND_EXACT_PAGE_ID_FROM_SUCCESSOR_COMMAND_RECEIPT"
+  },
+  "validation": {
+    "schema_parse": "PASS_3_OF_3",
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_7_OF_7",
+    "fixture_contract_smoke": "PASS_1_OF_1",
+    "hash_chain": "PASS",
+    "duplicate_suppression": "PASS",
+    "secret_pii_reject": "PASS"
+  },
+  "blockers": [
+    "EXACT_COMMAND_RECEIPT_NOT_AVAILABLE_FOR_REAL_SITE_CORRELATION"
+  ],
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "live_pass_claimed": false,
+  "intervening_non_b4_head_advances": "PRESERVED_D5_CYCLE4_COMMITS"
+}

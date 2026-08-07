@@ -1,0 +1,14 @@
+{
+  "schema_version": "REAL_SITE_SEMANTIC_LINEAGE_INDEX_V1",
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "status": "WAITING_EXACT_COMMAND_RECEIPT",
+  "entries": [],
+  "entry_count": 0,
+  "producer_assertion_reinterpreted": false,
+  "evidence_class_preservation": [
+    "OBSERVED",
+    "INFERRED",
+    "UNKNOWN"
+  ],
+  "late_bind_rule": "DO_NOT_BIND_PRODUCT_WRITE_SEMANTIC_UNTIL_EXACT_COMMAND_PAGE_ACTION_RECEIPT_AND_EVIDENCE_SHA_AVAILABLE"
+}

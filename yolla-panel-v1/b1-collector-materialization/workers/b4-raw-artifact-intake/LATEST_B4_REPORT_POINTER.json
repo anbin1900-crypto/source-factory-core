@@ -1,24 +1,38 @@
 {
-  "schema_version":"LATEST_B4_REPORT_POINTER_V10",
-  "worker":"B-4",
-  "branch":"worker/b4-raw-artifact-source-envelope-v1",
-  "active_directive":{
-    "directive_id":"A0-TO-B4-COMPOSITE-EVIDENCE-LINEAGE-INDEX-V6-20260808-001",
-    "directive_comment_id":5220481169,
-    "cycle_id":"A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001",
-    "activation_dependency":{"d5_cycle3_terminal":"D2_LIVE_RECOVERY_INGESTION_AND_METRIC_CLOSURE_PASS","status":"PASS"},
-    "status":"TERMINAL_PASS",
-    "terminal_result":"B4_COMPOSITE_EVIDENCE_LINEAGE_INDEX_READY",
-    "root":"yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/composite-evidence-lineage-index-v6/",
-    "latest_pointer_path":"yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/composite-evidence-lineage-index-v6/LATEST_B4_COMPOSITE_EVIDENCE_LINEAGE_INDEX_POINTER.json",
-    "final_report_path":"yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/composite-evidence-lineage-index-v6/reports/B4_COMPOSITE_EVIDENCE_LINEAGE_INDEX_FINAL_REPORT_V1.json",
-    "test_report_path":"yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/composite-evidence-lineage-index-v6/reports/B4_COMPOSITE_EVIDENCE_LINEAGE_INDEX_TEST_REPORT_V1.json",
-    "single_entrypoint_path":"yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/composite-evidence-lineage-index-v6/run_composite_evidence_smoke.py",
-    "validation":{"schema_parse":"PASS_1_OF_1","python_compile":"PASS_2_OF_2","unit_tests":"PASS_7_OF_7","fixture_reverse_trace_smoke":"PASS_1_OF_1","mode_count":5,"reverse_trace_count":5,"raw_artifact_materialization_count":0,"raw_artifact_overwrite":false}
+  "schema_version": "LATEST_B4_REPORT_POINTER_V11",
+  "worker": "B-4",
+  "branch": "worker/b4-raw-artifact-source-envelope-v1",
+  "active_directive": {
+    "directive_id": "A0-TO-B4-REAL-SITE-IMMUTABLE-EVIDENCE-LINEAGE-V7-20260808-001",
+    "directive_comment_id": 5220807009,
+    "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+    "status": "TERMINAL_READY_WAITING_INPUT",
+    "terminal_result": "B4_REAL_SITE_IMMUTABLE_EVIDENCE_LINEAGE_READY",
+    "root": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/real-site-immutable-evidence-lineage-v7/",
+    "latest_pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/real-site-immutable-evidence-lineage-v7/LATEST_B4_REAL_SITE_IMMUTABLE_EVIDENCE_LINEAGE_POINTER.json",
+    "final_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/real-site-immutable-evidence-lineage-v7/reports/B4_REAL_SITE_IMMUTABLE_EVIDENCE_LINEAGE_FINAL_REPORT_V1.json",
+    "test_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/real-site-immutable-evidence-lineage-v7/reports/B4_REAL_SITE_IMMUTABLE_EVIDENCE_LINEAGE_TEST_REPORT_V1.json",
+    "single_entrypoint_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/real-site-immutable-evidence-lineage-v7/run_real_site_lineage_smoke.py",
+    "live_binding_status": {
+      "actual_site_receipt_bound_count": 0,
+      "status": "WAITING_EXACT_COMMAND_RECEIPT",
+      "live_pass_claimed": false
+    },
+    "validation": {
+      "schema_parse": "PASS_3_OF_3",
+      "python_compile": "PASS_2_OF_2",
+      "unit_tests": "PASS_7_OF_7",
+      "fixture_contract_smoke": "PASS_1_OF_1",
+      "a4_actual_chrome_candidate": "PASS_CONSUMED_NOT_LIVE_BOUND"
+    }
   },
-  "previous_terminal":{"directive_id":"A0-TO-B4-SEMANTIC-EVIDENCE-INDEX-V5-20260808-001","terminal_result":"B4_SEMANTIC_EVIDENCE_INDEX_READY","latest_pointer_path":"yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/semantic-evidence-index-v5/LATEST_B4_SEMANTIC_EVIDENCE_INDEX_POINTER.json"},
-  "production":false,
-  "ready":false,
-  "merge":false,
-  "final_head_resolution":"COMMIT_CONTAINING_THIS_POINTER"
+  "previous_terminal": {
+    "directive_id": "A0-TO-B4-COMPOSITE-EVIDENCE-LINEAGE-INDEX-V6-20260808-001",
+    "terminal_result": "B4_COMPOSITE_EVIDENCE_LINEAGE_INDEX_READY",
+    "latest_pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/composite-evidence-lineage-index-v6/LATEST_B4_COMPOSITE_EVIDENCE_LINEAGE_INDEX_POINTER.json"
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
 }
