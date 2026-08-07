@@ -1,0 +1,35 @@
+{
+  "schema_version": "B4_COMMAND_TRACE_ARTIFACT_CHECKPOINT_FINAL_REPORT_V1",
+  "worker": "B-4",
+  "role": "B-4_TRACE_RAW_ARTIFACT_RESUME_ROBUSTNESS_OWNER",
+  "directive_id": "AI001-TO-B4-COMMAND-TRACE-ARTIFACT-CHECKPOINT-V2-20260807-001",
+  "directive_comment_id": 5217335150,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "observed_head": "5b7cbf076abcf3fc48868c5f5fe0adea6ccc08a1",
+  "parent_result": "B4_RAW_TRACE_ARTIFACT_RESUME_PREBUILD_READY",
+  "status": "PASS",
+  "terminal": "B4_COMMAND_TRACE_ARTIFACT_CHECKPOINT_READY",
+  "implementation": {
+    "command_trace_artifact_v1": "READY",
+    "command_artifact_checkpoint_v1": "READY",
+    "command_artifact_index_v1": "READY",
+    "a7_recovery_artifact_projection_v1": "READY",
+    "duplicate_same_hash": "REUSE_EXISTING_COMPLETED",
+    "duplicate_different_hash": "DISTINCT_LINEAGE",
+    "partial_promoted_without_validation": false,
+    "recovery_anchor": "LAST_DURABLE_COMPLETED_ARTIFACT_ONLY",
+    "b5_dataset_checkpoint_pointer_supported": true,
+    "secret_raw_storage": false
+  },
+  "validation": {
+    "schema_parse": "PASS_4_OF_4",
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_6_OF_6",
+    "fixture_partial_artifact_resume_smoke": "PASS_1_OF_1"
+  },
+  "blockers": [],
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_LATEST_POINTER"
+}
