@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "STRUCTURE_EVIDENCE_BUNDLE_V1",
+  "title": "STRUCTURE_EVIDENCE_BUNDLE_V1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "provenance",
+    "page_identity",
+    "evidence_pointer",
+    "repeated_regions",
+    "fields",
+    "locator_candidates",
+    "pagination_candidates",
+    "confidence",
+    "fallback",
+    "analysis_input_sha256",
+    "bundle_sha256",
+    "consumers"
+  ],
+  "properties": {
+    "schema_version": {"const":"STRUCTURE_EVIDENCE_BUNDLE_V1"},
+    "provenance": {
+      "type":"object",
+      "required":["page_id","action_id","command_id","observation_run_id"],
+      "properties": {
+        "page_id":{"type":["string","null"]},
+        "action_id":{"type":["string","null"]},
+        "command_id":{"type":["string","null"]},
+        "observation_run_id":{"type":["string","null"]}
+      }
+    },
+    "repeated_regions":{"type":"array"},
+    "fields":{"type":"array"},
+    "locator_candidates":{"type":"array"},
+    "pagination_candidates":{"type":"array"},
+    "confidence":{"type":"number","minimum":0,"maximum":1},
+    "fallback": {
+      "type":"object",
+      "required":["detected","confidence","fallback_reason"],
+      "properties": {
+        "detected":{"type":"boolean"},
+        "confidence":{"type":"number","minimum":0,"maximum":1},
+        "fallback_reason":{"type":"array","minItems":1,"items":{"type":"string"}}
+      }
+    },
+    "command_lifecycle_metadata": {
+      "type":["object","null"],
+      "description":"Browser Worker Completion Event metadata only. It MUST NOT be used as structure-analysis input."
+    },
+    "analysis_input_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "bundle_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "consumers":{"type":"array","items":{"enum":["A-5","A-6"]}}
+  }
+}
