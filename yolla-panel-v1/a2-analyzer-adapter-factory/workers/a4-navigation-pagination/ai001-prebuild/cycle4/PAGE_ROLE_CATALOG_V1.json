@@ -1,0 +1,15 @@
+{
+  "schema_version":"PAGE_ROLE_CATALOG_V1",
+  "roles":[
+    {"role":"PUBLIC_SEARCH","surface":"PUBLIC","intent":"READ_DISCOVERY"},
+    {"role":"PUBLIC_LIST","surface":"PUBLIC","intent":"READ_COLLECTION"},
+    {"role":"PUBLIC_DETAIL","surface":"PUBLIC","intent":"READ_ENTITY"},
+    {"role":"LISTING_CREATE","surface":"OWNER","intent":"WRITE_CREATE"},
+    {"role":"MY_LISTING_LIST","surface":"OWNER","intent":"READ_OWN_COLLECTION"},
+    {"role":"MY_LISTING_DETAIL","surface":"OWNER","intent":"READ_OWN_ENTITY"},
+    {"role":"LISTING_EDIT","surface":"OWNER","intent":"WRITE_UPDATE"},
+    {"role":"LISTING_EXPIRE","surface":"OWNER","intent":"WRITE_STATE_TRANSITION"}
+  ],
+  "evidence_status_values":["OBSERVED","INFERRED","UNKNOWN"],
+  "pixel_clone":false
+}
