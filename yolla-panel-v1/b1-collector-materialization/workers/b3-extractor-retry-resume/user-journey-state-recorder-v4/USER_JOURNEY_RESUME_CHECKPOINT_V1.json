@@ -1,0 +1,7 @@
+{
+  "schema_version": "USER_JOURNEY_RESUME_CHECKPOINT_V1",
+  "required_fields": ["mission_id", "session_id", "last_completed_sequence_no", "last_completed_action_id", "pending_action_ids", "resume_token"],
+  "resume_policy": "resume only actions after last completed sequence and exclude terminal actions",
+  "restart_safe": true,
+  "duplicate_retry_policy": "same idempotency key does not append a second journey event"
+}
