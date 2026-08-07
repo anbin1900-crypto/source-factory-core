@@ -1,0 +1,43 @@
+{
+  "schema_version": "A4_AI001_PREBUILD_VALIDATION_RECEIPT_V1",
+  "worker": "A-4",
+  "directive_id": "AI001-TO-A4-STRUCTURE-LOCATOR-PAGINATION-INFERENCE-PREBUILD-V1-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "validated_at_kst": "2026-08-07T21:29:00+09:00",
+  "validation": {
+    "source_parse": "PASS_4_OF_4",
+    "fixture_smoke_1": "PASS",
+    "repeat_item_count": 3,
+    "field_candidate_count": 5,
+    "locator_candidate_count": 14,
+    "pagination": "NEXT",
+    "virtualized_fallback": true,
+    "dynamic_dom_recapture": true,
+    "result_sha256": "416c85e06e1ec8aafac5def7ab7a72775f7f5c0b606bf36cd61ef433e34a14c1"
+  },
+  "source_sha256": {
+    "STRUCTURE_INFERENCE_ENGINE_V1.cjs": "42ebef30917323da11b08d3c7ef69071a7a2e2fb6f82fa587773ad769ed6f485",
+    "LOCATOR_STABILITY_SCORER_V1.cjs": "5af64761fa4fd7fcb6bf6bd05197f545c40058c12cb9dfbb4260a7f1ec5298ca",
+    "PAGINATION_INFERENCE_V1.cjs": "5d81023f4e89b1d90e3c124215d61b28b0e2e6ac33d1a846c3cf52bf27dddd74",
+    "a4_structure_infer.cjs": "c2cbb21f4407d6b4881fa9d6799ebd4a2568041ad117436edead3036256dd6e0",
+    "fixture_smoke_1.json": "23e521f1f6e85489472d213640f79af6ff1230b67d03dce0da3fe0caad64da43",
+    "smoke_test.cjs": "87b680dccda01564b9ff12af412a68402022322f0ac0036697a79f0ea8f5e872"
+  },
+  "remote_blobs": {
+    "STRUCTURE_INFERENCE_ENGINE_V1.cjs": "978959b6f3fb7b1fcfcc9a82e86edc87ea907419",
+    "LOCATOR_STABILITY_SCORER_V1.cjs": "f20b02ac248bc769284fd24d987aae0dfaa72ca2",
+    "PAGINATION_INFERENCE_V1.cjs": "d69cfe56f52d61c2508ec4d64c87a80f2bd517cd",
+    "a4_structure_infer.cjs": "648b0a0ddc1040351ddb0cad3e8eba892ede3ed3"
+  },
+  "forbidden_operations": {
+    "tunnel_create": 0,
+    "successor_direct_call": 0,
+    "target_pc_execution": 0,
+    "new_browser_engine": 0,
+    "audit_only_work": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "PASS"
+}
