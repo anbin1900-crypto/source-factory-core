@@ -1,0 +1,29 @@
+{
+  "schema_version": "LATEST_B4_MULTIMODE_RAW_EVIDENCE_PRESERVATION_POINTER_V1",
+  "worker": "B-4",
+  "directive_id": "A0-TO-B4-MULTIMODE-RAW-EVIDENCE-PRESERVATION-V4-20260808-001",
+  "directive_comment_id": 5219106233,
+  "cycle_id": "A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "status": "TERMINAL_PASS",
+  "terminal": "B4_MULTIMODE_RAW_EVIDENCE_PRESERVATION_READY",
+  "outputs": {
+    "multimode_raw_evidence_manifest_v1": "contracts/MULTIMODE_RAW_EVIDENCE_MANIFEST_V1.json",
+    "page_state_artifact_ref_v1": "contracts/PAGE_STATE_ARTIFACT_REF_V1.json",
+    "action_dom_network_response_evidence_ref_v1": "contracts/ACTION_DOM_NETWORK_RESPONSE_EVIDENCE_REF_V1.json",
+    "form_structure_evidence_ref_v1": "contracts/FORM_STRUCTURE_EVIDENCE_REF_V1.json",
+    "product_blueprint_source_evidence_index_v1": "contracts/PRODUCT_BLUEPRINT_SOURCE_EVIDENCE_INDEX_V1.json",
+    "runtime_source": "src/multimode_evidence_store.py",
+    "single_entrypoint": "run_multimode_evidence_smoke.py",
+    "fixture_trace": "artifacts/B4_MULTIMODE_FIXTURE_ACTION_TRACE_V1.json",
+    "smoke_result": "artifacts/B4_MULTIMODE_RAW_EVIDENCE_SMOKE_RESULT_V1.json",
+    "test_report": "reports/B4_MULTIMODE_RAW_EVIDENCE_PRESERVATION_TEST_REPORT_V1.json",
+    "final_report": "reports/B4_MULTIMODE_RAW_EVIDENCE_PRESERVATION_FINAL_REPORT_V1.json"
+  },
+  "validation": {
+    "schema_parse": "PASS_5_OF_5",
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_8_OF_8",
+    "fixture_multimode_trace_smoke": "PASS_1_OF_1"
+  },
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}
