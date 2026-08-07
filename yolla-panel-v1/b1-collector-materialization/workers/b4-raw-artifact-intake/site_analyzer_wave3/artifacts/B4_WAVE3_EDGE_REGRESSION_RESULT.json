@@ -1,0 +1,24 @@
+{
+  "base_url": "http://127.0.0.1:35527",
+  "cross_worker_binding": {
+    "all_consumers_non_mutating": true,
+    "canonical_identity_digest": "10fe5228cb7a25284c3ae985c42bb93643611202c5a76c5704c69a3be16a84c1",
+    "canonical_source_pointer": "B4_COMMON_HTTP_FIXTURE::stable-id-v1::records-1-10",
+    "checks": {
+      "A-3": {"identity_mutation_zero": true,"record_identity_contract": "PASS_NON_MUTATING_OBSERVER_RECORD_COUNT_10","source_binding": "LIVE_ROUTE_AND_RECORD_COUNT_COMPATIBLE"},
+      "A-6": {"identity_mutation_zero": true,"record_identity_contract": "PASS_EXACT_10_IDENTITY_SET","source_binding": "B4_COMMON_TEST_SITE_PATTERN_EXACT10"},
+      "B-3": {"identity_mutation_zero": true,"record_identity_contract": "PASS_NON_MUTATING_ACTION_RECIPE","source_binding": "RECIPE_BEHAVIOR_COMPATIBLE_CANONICAL_POINTER_REBOUND"},
+      "B-5": {"identity_mutation_zero": true,"record_identity_contract": "PASS_EXACT_10_IDENTITY_SET","source_binding": "EXACT_B4_SERVER_BLOB_AND_LOOPBACK"}
+    }
+  },
+  "edge_matrix": {"IDENTITY_STABILITY": true,"IFRAME": true,"NESTED_FRAME": true,"PAGINATION": true,"POPUP": true,"RELOAD": true,"RESTART": true,"RESUME": true,"SCROLL": true},
+  "identity": {"ids": [1,2,3,4,5,6,7,8,9,10],"record_identity_digest": "10fe5228cb7a25284c3ae985c42bb93643611202c5a76c5704c69a3be16a84c1","source_pointer": "B4_COMMON_HTTP_FIXTURE::stable-id-v1::records-1-10"},
+  "network_event_counts": {"browser_events": 0,"http_bridge_events": 44,"total": 44},
+  "replay_digest": "ff0efc3736dcacb90fc1004c83c2220ca7eedbc1157a008f39b077c6b6470d8a",
+  "replay_digest_parity": "PASS",
+  "schema_version": "B4_SITE_ANALYZER_WAVE3_EDGE_REGRESSION_RESULT_V1",
+  "second_replay_digest": "ff0efc3736dcacb90fc1004c83c2220ca7eedbc1157a008f39b077c6b6470d8a",
+  "second_run_network_event_counts": {"browser_events": 0,"http_bridge_events": 44,"total": 44},
+  "single_entrypoint": "python run_edge_regression.py",
+  "status": "PASS"
+}
