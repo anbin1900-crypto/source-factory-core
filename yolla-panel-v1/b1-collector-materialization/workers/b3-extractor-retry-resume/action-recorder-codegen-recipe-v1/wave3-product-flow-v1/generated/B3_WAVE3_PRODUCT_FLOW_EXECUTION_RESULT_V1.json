@@ -1,0 +1,15 @@
+{
+  "schema_version": "B3_WAVE3_PRODUCT_FLOW_EXECUTION_RESULT_V1",
+  "status": "PASS",
+  "actual_chromium_runtime": true,
+  "runtime_bootstrap_mode": "INLINE_DOCUMENT",
+  "http_pass_claimed": false,
+  "recorded_event_count": 10,
+  "action_types": ["click", "iframe", "input", "navigation", "popup", "scroll", "select"],
+  "required_action_types": ["click", "iframe", "input", "navigation", "popup", "scroll", "select"],
+  "recipe_digest": "4a521a4710e55d87bf14f9984b8a5cf746f2498633b33e6a947267733ccbab59",
+  "adapter_source_sha256": "41e99a659c056e2a0d6f3d120208bfc3e480383d7ae2ce52b4c95027881da60f",
+  "replay_status": "PASS",
+  "restart_resume": "PASS",
+  "no_action_duplication": "PASS"
+}
