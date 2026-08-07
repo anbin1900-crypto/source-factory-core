@@ -1,0 +1,53 @@
+{
+  "schema_version": "C6W_W12_NONBLOCKING_SUBSTANTIVE_AUDIT_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-012",
+  "registry_sequence": 12,
+  "command_id": "C6W-W12-W6-NONBLOCKING-SUBSTANTIVE-AUDIT",
+  "worker_id": "AUTOMATION-C-W6",
+  "directive_comment": 5195180251,
+  "report_request_comment": 5195602062,
+  "result_key": "519518025100",
+  "implementation_direct_edit": false,
+  "blocking": false,
+  "negative_fixture": {
+    "wave10_metadata_only_artifact_retained": true,
+    "installable_runtime": false
+  },
+  "w3_independent_readback": {
+    "result_comment": 5195394714,
+    "result_commit": "40023163e8faf0f918e1fa55d1dae4741a3bb7e7",
+    "payload_export_commit": "4def942235a6781c5692221324c2574e299341b8",
+    "payload_export_sha256": "37a7fac81a9c0619fdf3bd148f8d9aa9fe2f59f16c0ea026a63bc8e567d35dd4",
+    "runtime_member_count": 3,
+    "evidence_member_count": 4,
+    "membership": "PASS_OFFLINE",
+    "smoke": "PASS_15_ASSERTIONS",
+    "target_pc": "PENDING"
+  },
+  "failure_injection_matrix": {
+    "WRONG_HASH": "PASS_FAIL_CLOSED",
+    "METADATA_ONLY_PAYLOAD": "PASS_FAIL_CLOSED",
+    "TRUNCATED_PAYLOAD": "PASS_FAIL_CLOSED",
+    "STALE_HEAD": "PASS_FAIL_CLOSED",
+    "MISSING_BACKGROUND_DISPATCH": "PASS_FAIL_CLOSED",
+    "MISSING_WORK_CONTROL_LOG": "PASS_FAIL_CLOSED",
+    "MISSING_ROLLBACK": "PASS_FAIL_CLOSED",
+    "DUPLICATE_REGISTRY": "PASS_FAIL_CLOSED",
+    "PARTIAL_DISPATCH": "PASS_FAIL_CLOSED"
+  },
+  "w5_wave12": {
+    "directive_comment": 5195177693,
+    "report_request_comment": 5195599429,
+    "result_key": "519517769300",
+    "result_terminal": "NOT_POSTED_AT_AUDIT_TIME",
+    "status": "PENDING_CARRYOVER"
+  },
+  "offline_artifact_gate": "BLOCKED_PENDING_W5_WAVE12_EXECUTABLE_RC4_RESULT",
+  "target_pc_live_gate": "BLOCKED_PENDING_EXTERNAL_RECEIPTS",
+  "target_pc_pass_claimed": false,
+  "outcome": "BLOCKED",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

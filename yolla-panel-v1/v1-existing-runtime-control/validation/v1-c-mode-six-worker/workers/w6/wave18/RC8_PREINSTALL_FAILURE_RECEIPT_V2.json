@@ -1,0 +1,15 @@
+{
+  "schema_version":"RC8_PREINSTALL_FAILURE_RECEIPT_V2",
+  "control_id":"V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id":"V1-C-MODE-6W-WAVE-018",
+  "fixtures":[
+    {"name":"STALE_W5_HEAD","expected":"REJECT","observed":"REJECT","status":"PASS"},
+    {"name":"MANIFEST_MISMATCH","expected":"REJECT","observed":"REJECT","status":"PASS"},
+    {"name":"MISSING_LIVE_RECEIPT","expected":"REJECT_LIVE_PASS","observed":"REJECT_LIVE_PASS","status":"PASS"},
+    {"name":"SYNTHETIC_SCREENSHOT","expected":"REJECT","observed":"REJECT","status":"PASS"},
+    {"name":"MISSING_RESTART_EVIDENCE","expected":"REJECT_LIVE_PASS","observed":"REJECT_LIVE_PASS","status":"PASS"},
+    {"name":"ROLLBACK_READBACK_LOSS","expected":"REJECT","observed":"REJECT","status":"PASS"}
+  ],
+  "failure_count":0,
+  "implementation_direct_edit":false
+}

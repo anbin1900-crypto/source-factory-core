@@ -1,0 +1,21 @@
+{
+  "schema_version":"RC8_PREINSTALL_ACCEPTANCE_MATRIX_V2",
+  "control_id":"V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id":"V1-C-MODE-6W-WAVE-018",
+  "result_key":"519890688300",
+  "worker_results":{
+    "W1":{"status":"PASS","result_comment":5198777211,"result_commit":"f55870053245177430c20a3f9ba0029f955df8f0"},
+    "W2":{"status":"PASS","result_comment":5198641540,"result_commit":"d4adf24b4a5bb5381a2aec70531b56bc2f9f4a68"},
+    "W3":{"status":"PASS","result_comment":5198723961,"result_commit":"7af7a51ee18e6b5ae6f64942cf02392f596e4678"},
+    "W4":{"status":"PASS","result_comment":5198603151,"result_commit":"c068f213af2cf7cf0636ad23219cc64c157c247f"},
+    "W5":{"status":"NOT_EVALUATED"}
+  },
+  "offline_preinstall_gate":"PASS_PREPARATION_ONLY",
+  "rc8_artifact_gate":"NOT_EVALUATED",
+  "target_pc_live_gate":"NOT_EVALUATED",
+  "target_pc_pass_claimed":false,
+  "implementation_direct_edit":false,
+  "production":false,
+  "ready":false,
+  "merge":false
+}

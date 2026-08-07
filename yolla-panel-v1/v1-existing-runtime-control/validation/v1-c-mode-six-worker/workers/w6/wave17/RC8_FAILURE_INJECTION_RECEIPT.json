@@ -1,0 +1,17 @@
+{
+  "schema_version":"RC8_FAILURE_INJECTION_RECEIPT_V1",
+  "result_key":"519851680000",
+  "fixture_source":"rc7_negative_fixture",
+  "fixtures":[
+    {"name":"WRONG_OR_TRUNCATED_MEMBER","expected":"REJECT","status":"PASS_FAIL_CLOSED"},
+    {"name":"SELF_GENERATED_MANIFEST_ACCEPTED_AS_AUTHORITY","expected":"REJECT","status":"PASS_FAIL_CLOSED"},
+    {"name":"SIMPLIFIED_RESOLVER_SUBSTITUTION","expected":"REJECT","status":"PASS_FAIL_CLOSED"},
+    {"name":"SIMPLIFIED_HOOK_OR_ROLLBACK_SUBSTITUTION","expected":"REJECT","status":"PASS_FAIL_CLOSED"},
+    {"name":"SHALLOW_SMOKE","expected":"REJECT","status":"PASS_FAIL_CLOSED"},
+    {"name":"WRONG_PRESERVATION_PATHS","expected":"REJECT","status":"PASS_FAIL_CLOSED"},
+    {"name":"PREMATURE_TARGET_PC_PASS","expected":"REJECT","status":"PASS_FAIL_CLOSED"},
+    {"name":"MUTABLE_BRANCH_ARCHIVE","expected":"REJECT","status":"PASS_FAIL_CLOSED"}
+  ],
+  "passed":8,
+  "failed":0
+}

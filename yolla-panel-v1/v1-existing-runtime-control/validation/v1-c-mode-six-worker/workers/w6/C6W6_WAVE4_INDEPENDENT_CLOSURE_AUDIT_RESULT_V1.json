@@ -1,0 +1,51 @@
+{
+  "schema_version": "C6W6_WAVE4_INDEPENDENT_CLOSURE_AUDIT_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-004",
+  "worker_id": "AUTOMATION-C-W6",
+  "command_id": "C6W-W4-W6-INDEPENDENT-CLOSURE-AUDIT",
+  "directive_comment": 5192205324,
+  "status": "EXACT_BLOCKER_REPORTS_PENDING",
+  "wave3_terminal_correction": {
+    "result_commit": "4860202c2bde55d425cf7d48452d3cb473a602c5",
+    "terminal_comment": 5192444365,
+    "consecutive_missing_report_count": 2,
+    "process_finding": "BLOCKING"
+  },
+  "wave4_directive_comments": {
+    "AUTOMATION-C-W1": 5192189857,
+    "AUTOMATION-C-W2": 5192192722,
+    "AUTOMATION-C-W3": 5192195051,
+    "AUTOMATION-C-W4": 5192198482,
+    "AUTOMATION-C-W5": 5192201361,
+    "AUTOMATION-C-W6": 5192205324
+  },
+  "report_completeness_gate": {
+    "rule_commit_only": "REPORT_MISSING",
+    "rule_latest_directive_order": "COMMENT_ID_MONOTONIC_FAIL_CLOSED",
+    "rule_no_pending": "REJECT_WHEN_NEWER_DIRECTIVE_EXISTS",
+    "observed_wave4_terminals_w1_to_w5": 0,
+    "verdict": "REPORT_MISSING_5_OF_5_AT_AUDIT_SNAPSHOT"
+  },
+  "failure_injection_revalidation": {
+    "malformed_panel": "FAIL_CLOSED",
+    "correlation_mismatch": "FAIL_CLOSED",
+    "stale": "FAIL_CLOSED",
+    "duplicate": "FAIL_CLOSED",
+    "order_reversal": "FAIL_CLOSED",
+    "retry_exhaustion": "EXACT_BLOCKER",
+    "restart_fixture": "OFFLINE_ONLY_TARGET_PC_PENDING"
+  },
+  "independent_closure": {
+    "offline_process_audit": "PASS_WITH_FINDING",
+    "wave4_release_acceptance": "BLOCKED_REPORTS_PENDING",
+    "target_pc": "BLOCKED_NO_LIVE_RECEIPT",
+    "six_worker_three_round": "BLOCKED_NO_LIVE_RECEIPT"
+  },
+  "implementation_source_modified": false,
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-05T22:36:00+09:00"
+}

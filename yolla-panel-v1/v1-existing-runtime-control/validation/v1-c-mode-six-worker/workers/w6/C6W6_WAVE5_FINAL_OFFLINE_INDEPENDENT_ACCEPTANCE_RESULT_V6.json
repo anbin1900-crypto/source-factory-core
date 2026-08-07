@@ -1,0 +1,45 @@
+{
+  "schema_version": "C6W6_WAVE5_FINAL_OFFLINE_INDEPENDENT_ACCEPTANCE_RESULT_V6",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-005",
+  "command_id": "C6W-W5-W6-FINAL-OFFLINE-INDEPENDENT-ACCEPTANCE",
+  "worker_id": "AUTOMATION-C-W6",
+  "directive_comment": 5192631769,
+  "status": "EXACT_BLOCKER_PARTIAL_INDEPENDENT_AUDIT",
+  "wave4_report_reaudit": {
+    "reported_workers": 6,
+    "expected_workers": 6,
+    "consecutive_missing_reset_w2": true,
+    "consecutive_missing_reset_w6": true,
+    "replacement_target_count": 0
+  },
+  "wave4_final_heads": {
+    "w1": {"sha": "a13a4466f530ab7bace36bba5258974978d4293f", "readback": "PASS", "verdict": "BLOCKED_EXACT"},
+    "w2": {"sha": "1be5e02112cc16851b6d19e4fdf8a34b2ee9749f", "readback": "PASS", "verdict": "PASS_OFFLINE_REPORT_COMPLETENESS"},
+    "w3": {"sha": "4ffa247184900467774aa8c87c1f4f12053cfac2", "readback": "NOT_COMPLETED_IN_CURRENT_AUDIT_WINDOW"},
+    "w4": {"sha": "5b6f204145a1275ae9fcaab21e9be2725c8cb355", "readback": "NOT_COMPLETED_IN_CURRENT_AUDIT_WINDOW"},
+    "w5": {"sha": "77c5d465d2eaaff5a26ab62f7b31f06312fbe88f", "readback": "NOT_COMPLETED_IN_CURRENT_AUDIT_WINDOW"}
+  },
+  "w1_finding": "UNIFIED_OFFLINE_CANDIDATE_REMAINS_BLOCKED_BECAUSE_CONNECTOR_BYTES_AND_IMMUTABLE_SUPPLEMENT_WERE_NOT_MOUNTED_AS_EXECUTABLE_WORKSPACE",
+  "w2_finding": "REPORT_COMPLETENESS_GATE_PASS_12_OF_12_AND_NO_PENDING_FAIL_CLOSED_CONFIRMED",
+  "w5_installer_source_artifact_audit": {
+    "sha256": "NOT_INDEPENDENTLY_REPRODUCED",
+    "manifest": "NOT_INDEPENDENTLY_REPRODUCED",
+    "ae_removal": "NOT_INDEPENDENTLY_REPRODUCED",
+    "log_preservation": "NOT_INDEPENDENTLY_REPRODUCED",
+    "profile_preservation": "NOT_INDEPENDENTLY_REPRODUCED"
+  },
+  "exact_blockers": [
+    "W1_WAVE4_FINAL_HEAD_IS_BLOCKED_EXACT",
+    "W3_W4_W5_EXACT_HEAD_CONTENT_AUDIT_NOT_COMPLETED_IN_CURRENT_EXECUTION_WINDOW",
+    "W5_INSTALLER_AND_SOURCE_ARTIFACT_BYTES_NOT_AVAILABLE_AS_EXECUTABLE_LOCAL_INPUT",
+    "TARGET_PC_LIVE_RECEIPTS_ABSENT",
+    "SIX_WORKER_THREE_ROUND_LIVE_RECEIPTS_ABSENT"
+  ],
+  "implementation_source_modified": false,
+  "target_pc_pass_claimed": false,
+  "six_worker_three_round_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

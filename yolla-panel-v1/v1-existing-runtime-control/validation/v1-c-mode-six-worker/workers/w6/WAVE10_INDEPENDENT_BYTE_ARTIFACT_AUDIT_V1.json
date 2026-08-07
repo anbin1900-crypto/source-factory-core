@@ -1,0 +1,51 @@
+{
+  "schema_version": "C6W_WAVE10_INDEPENDENT_BYTE_ARTIFACT_AUDIT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-010",
+  "registry_sequence": 10,
+  "command_id": "C6W-W10-W6-INDEPENDENT-BYTE-ARTIFACT-AUDIT",
+  "worker_id": "AUTOMATION-C-W6",
+  "directive_comment": 5194590705,
+  "result_key": "519459070500",
+  "implementation_direct_edit": false,
+  "inputs": {
+    "w5_wave9_result_comment": 5194489948,
+    "w5_wave9_result_commit": "8ca5860acabe427e971d2c0f94fe42d522a1b616",
+    "w5_wave10_directive_comment": 5194587921,
+    "w5_wave10_result_posted_at_audit_time": false,
+    "w6_wave9_result_comment": 5194488117,
+    "w6_wave9_result_commit": "a51d936cb7fd58feb47bd32d8c2e676c911fffe9"
+  },
+  "wave9_packer_manifest_audit": {
+    "self_extracting_verified_payload_declared": true,
+    "deterministic_local_zip_assembly_declared": true,
+    "exact_input_heads_count": 4,
+    "input_sha256_validation_at_assembly_time": true,
+    "size_sha256_receipt_generated_by_packer": true,
+    "single_entry_installer": true,
+    "profile_and_log_preservation_contract": true,
+    "legacy_a_e_reintroduction_count": 0,
+    "actual_artifact_byte_receipt_available": false
+  },
+  "failure_fixtures": {
+    "wrong_hash": "PASS_FAIL_CLOSED",
+    "truncated_payload": "PASS_FAIL_CLOSED",
+    "stale_head": "PASS_FAIL_CLOSED",
+    "duplicate_registry": "PASS_FAIL_CLOSED",
+    "partial_dispatch": "PASS_FAIL_CLOSED"
+  },
+  "acceptance": {
+    "artifact_byte_closure": "BLOCKED_PENDING_W5_WAVE10_ACTUAL_BYTE_RESULT",
+    "manifest_installer_rollback_static_contract": "PASS_OFFLINE",
+    "target_pc_live_acceptance": "PENDING_EXTERNAL_RECEIPT",
+    "six_workers_three_waves": "PENDING_EXTERNAL_RECEIPT",
+    "restart_resume": "PENDING_EXTERNAL_RECEIPT",
+    "log_loss_zero": "PENDING_EXTERNAL_RECEIPT"
+  },
+  "outcome": "BLOCKED",
+  "exact_blocker": "W5_WAVE10_ACTUAL_ARTIFACT_BYTE_SIZE_SHA256_MANIFEST_AND_READBACK_RESULT_NOT_POSTED_AT_AUDIT_TIME",
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "C6W_WAVE9_INDEPENDENT_ARTIFACT_AUDIT_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-009",
+  "registry_sequence": 9,
+  "command_id": "C6W-W9-W6-INDEPENDENT-ARTIFACT-AUDIT",
+  "worker_id": "AUTOMATION-C-W6",
+  "directive_comment": 5194428289,
+  "result_key": "519442828900",
+  "implementation_direct_edit": false,
+  "wave8_w5": {
+    "result_comment": 5193944215,
+    "result_commit": "d3881f439bb393498c69b53d4c5558d4e9869420",
+    "result_key": "519387122700",
+    "target_version": "5.10.2.4.2-rc3",
+    "outcome": "BLOCKED",
+    "exact_input_heads_match": true
+  },
+  "offline_artifact_audit": {
+    "payload_lock_readback": "PASS",
+    "installer_readback": "PASS_STATIC",
+    "rollback_readback": "PASS_STATIC",
+    "one_click_acceptance_runner_readback": "PASS_STATIC",
+    "preservation_contract": "PASS_DECLARED",
+    "legacy_a_e_reintroduced": 0,
+    "source_zip_bytes": "MISSING",
+    "source_zip_sha256": "UNAVAILABLE",
+    "drive_upload_readback": "MISSING",
+    "windows_target_pc_receipt": "MISSING"
+  },
+  "prepared_validators": {
+    "hash_verifier_matrix": true,
+    "acceptance_matrix": true,
+    "failure_fixture_matrix": true,
+    "target_pc_evidence_validator_contract": true
+  },
+  "gates": {
+    "target_pc_install": "BLOCKED_EXTERNAL",
+    "six_workers_three_waves": "BLOCKED_EXTERNAL",
+    "restart_resume": "BLOCKED_EXTERNAL",
+    "log_loss_zero": "BLOCKED_EXTERNAL"
+  },
+  "outcome": "BLOCKED",
+  "exact_blockers": [
+    "SOURCE_ZIP_BYTE_AND_SHA256_NOT_PUBLISHED",
+    "GOOGLE_DRIVE_UPLOAD_AND_READBACK_NOT_PUBLISHED",
+    "WINDOWS_TARGET_PC_RECEIPT_NOT_PUBLISHED",
+    "SIX_WORKERS_THREE_WAVES_RECEIPTS_NOT_PUBLISHED",
+    "RESTART_RESUME_AND_LOG_LOSS_ZERO_NOT_PROVEN"
+  ],
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
