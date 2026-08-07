@@ -1,0 +1,47 @@
+{
+  "action_id": "action-fixture-001",
+  "action_ref": {
+    "action_id": "action-fixture-001",
+    "command_checkpoint_pointer": "../command-trace-artifact-checkpoint-v2/LATEST_B4_COMMAND_TRACE_ARTIFACT_CHECKPOINT_POINTER.json",
+    "dom_evidence_ids": ["evidence-17347f2b17ba883d98706402"],
+    "form_structure_evidence_ref": {
+      "evidence_ids": ["evidence-9c5de9ba71755ad58c862ef8"],
+      "schema_version": "FORM_STRUCTURE_EVIDENCE_REF_V1"
+    },
+    "mode": "PRODUCT",
+    "network_request_evidence_ids": ["evidence-3b499ceabecd18fc99b0f459"],
+    "network_response_evidence_ids": ["evidence-2aed123220f249972a566986"],
+    "page_id": "page-1",
+    "page_state_artifact_ref": {
+      "evidence_id": "evidence-45dc26a0ed1139eebe7837e6",
+      "schema_version": "PAGE_STATE_ARTIFACT_REF_V1"
+    },
+    "product_blueprint_source_evidence_index": {
+      "evidence_ids": ["evidence-0c9073a255074c4a2fc66e8e"],
+      "schema_version": "PRODUCT_BLUEPRINT_SOURCE_EVIDENCE_INDEX_V1"
+    },
+    "schema_version": "ACTION_DOM_NETWORK_RESPONSE_EVIDENCE_REF_V1",
+    "source_record_envelope_pointer": "../SOURCE_RECORD_ENVELOPE_V1.json",
+    "worker_state_checkpoint_pointer": "../worker-state-event-trace-checkpoint-v3/LATEST_B4_WORKER_STATE_EVENT_TRACE_CHECKPOINT_POINTER.json"
+  },
+  "duplicate_materialization_delta": 0,
+  "evidence_ids": [
+    "evidence-0c9073a255074c4a2fc66e8e",
+    "evidence-17347f2b17ba883d98706402",
+    "evidence-2aed123220f249972a566986",
+    "evidence-3b499ceabecd18fc99b0f459",
+    "evidence-45dc26a0ed1139eebe7837e6",
+    "evidence-9c5de9ba71755ad58c862ef8"
+  ],
+  "evidence_sha256": {
+    "evidence-0c9073a255074c4a2fc66e8e": "0c9073a255074c4a2fc66e8ef29917cd8764581057b87882a3d5f6091698ea89",
+    "evidence-17347f2b17ba883d98706402": "17347f2b17ba883d9870640262ab7ec9fd0fc9c64d71ccf77f310ee7c4599bfc",
+    "evidence-2aed123220f249972a566986": "2aed123220f249972a56698623d7a305a5251464475e1f18427e09b2ced1f79d",
+    "evidence-3b499ceabecd18fc99b0f459": "3b499ceabecd18fc99b0f459e2f8224503cb9180192404d69136938132e79f86",
+    "evidence-45dc26a0ed1139eebe7837e6": "45dc26a0ed1139eebe7837e654e2121bc206040a6df9dd7a5def414793b5ebd1",
+    "evidence-9c5de9ba71755ad58c862ef8": "9c5de9ba71755ad58c862ef81c64735d4785d2affddd91de911b8baf59f8b322"
+  },
+  "exact_readback_pass": true,
+  "mode": "PRODUCT",
+  "schema_version": "B4_MULTIMODE_FIXTURE_ACTION_TRACE_V1"
+}
