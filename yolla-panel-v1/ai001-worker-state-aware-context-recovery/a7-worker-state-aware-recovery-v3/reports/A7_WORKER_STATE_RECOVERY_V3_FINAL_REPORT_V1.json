@@ -1,0 +1,19 @@
+{
+  "schema_version":"A7_WORKER_STATE_RECOVERY_V3_FINAL_REPORT_V1",
+  "directive_id":"AI001-TO-A7-WORKER-STATE-AWARE-CONTEXT-RECOVERY-V3-20260807-001",
+  "directive_comment_id":5217753811,
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "terminal":"A7_WORKER_STATE_AWARE_CONTEXT_RECOVERY_READY",
+  "status":"PASS",
+  "source_commit":"cbe6058705e8d739da17963d0b0db0927c9cb9ed",
+  "mission_pointer_blob":"fa1a086528f7e969f7fff9169216f2fbe7a14870",
+  "validation_receipt_blob":"e5a3cbe852a2d95630a0b825760b1969b0feb3de",
+  "required_work":{"worker_browser_state_event_consume_adapter":"PASS","complete_task_pass_separation":"PASS","generating_duplicate_command_prevention":"PASS","complete_blocked_unknown_next_action_reconstruction":"PASS","recovery_order":"PASS","stale_duplicate_worker_event_suppression":"PASS","four_fixture_smokes":"PASS","owned_root_direct_repair":"PASS"},
+  "worker_states":["GENERATING","COMPLETE","BLOCKED","UNKNOWN"],
+  "complete_is_task_pass":false,
+  "recovery_order":["Latest Mission Pointer","Current Command","Worker State","Latest Result","Checkpoint","Next Action"],
+  "self_recovery":{"decision":"ALREADY_DONE","command_reissue":false},
+  "single_recovery_command":"node RECOVER_WORK_BOOTSTRAP_V1.cjs --pointer ./LATEST_AI001_MISSION_POINTER_V1.json",
+  "target_pc_execution":false,"tunnel_change":false,"worker_direct_tunnel":false,"audit_only_work":false,"repair_owner":true,
+  "production":false,"ready":false,"merge":false
+}
