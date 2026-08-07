@@ -1,0 +1,75 @@
+{
+  "schema_version": "B2_WORKER_STATE_AND_CYCLE_STATUS_VIEWMODEL_FINAL_REPORT_V1",
+  "directive_id": "AI001-TO-B2-WORKER-STATE-AND-CYCLE-STATUS-VIEWMODEL-V3-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "worker": "B-2",
+  "worker_pr": 38,
+  "role": "B-2_VISUAL_INSPECTOR_WORKFLOW_TRACE_UI_OWNER",
+  "baseline_head": "58d76b1d4f06b3ccc4bee68bd2cae1f8a1cfd438",
+  "completed_at_kst": "2026-08-07T22:44:00+09:00",
+  "status": "PASS_CONTEXT_INDEPENDENT_DUAL_SOURCE_WORKER_STATE_VIEWMODEL",
+  "terminal": "B2_WORKER_STATE_AND_CYCLE_STATUS_VIEWMODEL_READY",
+  "mission_result": {
+    "worker_state_viewmodel": "READY",
+    "states": ["IDLE", "DISPATCHED", "GENERATING", "COMPLETE", "BLOCKED", "UNKNOWN"],
+    "browser_state_task_status_separated": true,
+    "correlation": ["worker_id", "command_id", "page_id", "cycle_id"],
+    "cycle_summary": ["total", "complete", "generating", "blocked", "unknown", "cycle_state"],
+    "complete_result_pending": true,
+    "unknown_selector_fail_safe": true,
+    "json_contract_export": true,
+    "js_viewmodel_export": true
+  },
+  "producer_binding": {
+    "A-3": {
+      "head": "161acfc3590167f4a9feec707b958a5d3ccae535",
+      "terminal": "A3_CHROME_WORKER_COMPLETION_OBSERVER_READY",
+      "pointer_blob": "aaee481e276485682fa73d52a70881e14d653539",
+      "event_schema_blob": "ebb33d2229f62591f0fc31757dfc2ab03727e649",
+      "input": "RAW_BROWSER_SENSOR"
+    },
+    "B-1": {
+      "head": "9778dfe1fbefb2ceb74ba43364e33a90622f3101",
+      "terminal": "B1_WORKER_STATE_EVENT_AND_CYCLE_AGGREGATOR_READY",
+      "pointer_blob": "617cb67d5f261e500395bd60ec99678b2720d6a8",
+      "event_schema_blob": "c54fee3abbcf3519cffe946503f63c30ff314628",
+      "input": "NORMALIZED_AGGREGATOR_EVENT"
+    }
+  },
+  "artifacts": {
+    "WORKER_STATE_CARD_VIEWMODEL_V1": "51f1d63238a1cb8efae9571f053fb9227d27d4af",
+    "CYCLE_STATUS_VIEWMODEL_V1": "98de379699442c9af616842538d83f59e2ba5e77",
+    "WORKER_STATE_EVENT_BINDING_V1": "665f8f460fa5960b94d4222d236ab53724a33bb6",
+    "WORKER_STATE_PANEL_VIEWMODEL_V1": "80e8d4a391fb0c81addabf5f49a91573cc48ce36",
+    "WORKER_BROWSER_STATE_EVENT_STREAM_FIXTURE_V1": "b1376975bda22a6131b81fd93f1e1b88c746f670",
+    "WORKER_STATE_CYCLE_SMOKE": "0e171039877ad29544e6f73a632e8fd8f5e87430"
+  },
+  "validation": {
+    "test_result_commit": "973bc2fce456dc560dcae25ac24f728d05b0e5ea",
+    "test_result_blob": "279b025513b7fe5b31d7c05a928ec9ca9a17c5c2",
+    "remote_readback": "PASS_6_OF_6",
+    "a3_schema_validation": "PASS_6_OF_6",
+    "b1_schema_validation": "PASS_2_OF_2",
+    "fixture_viewmodel_smoke": "PASS_25_OF_25",
+    "remote_git_blob_exact_match": "PASS_MODEL_FIXTURE_SMOKE_3_OF_3"
+  },
+  "truth_and_fail_safe": {
+    "complete_without_result": "COMPLETE_RESULT_PENDING",
+    "a3_likely_complete": "UNKNOWN_WITH_LIKELY_COMPLETE_UNVERIFIED_BADGE",
+    "selector_miss": "UNKNOWN_WITH_SELECTOR_MISS_BADGE",
+    "blocked_without_exact_blocker": "UNKNOWN",
+    "b1_cycle_terminal": "DISPLAY_ONLY_IF_EXPLICIT_RECEIPT_EVENT",
+    "normal_complete_without_receipt_inference": false
+  },
+  "boundary": {
+    "panel_apply": false,
+    "target_pc_execution": false,
+    "tunnel_change": false,
+    "new_browser_view": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  },
+  "next_event": "PANEL_ADAPTER_CONSUMES_B2_VIEWMODEL_WITH_A3_SENSOR_AND_B1_AGGREGATOR_EVENTS"
+}
