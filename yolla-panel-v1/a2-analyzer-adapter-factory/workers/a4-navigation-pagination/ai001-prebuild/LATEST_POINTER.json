@@ -1,0 +1,52 @@
+{
+  "schema_version": "A4_AI001_PREBUILD_LATEST_POINTER_V1",
+  "worker": "A-4",
+  "directive_id": "AI001-TO-A4-STRUCTURE-LOCATOR-PAGINATION-INFERENCE-PREBUILD-V1-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "updated_at_kst": "2026-08-07T21:30:00+09:00",
+  "terminal": "A4_STRUCTURE_LOCATOR_PAGINATION_INFERENCE_PREBUILD_READY",
+  "decision": "PASS",
+  "required_outputs": {
+    "STRUCTURE_INFERENCE_ENGINE_V1": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/ai001-prebuild/STRUCTURE_INFERENCE_ENGINE_V1.cjs",
+      "commit": "4b021f86150125ed689e4510a84fe6f4eb26be77",
+      "blob": "978959b6f3fb7b1fcfcc9a82e86edc87ea907419"
+    },
+    "LOCATOR_STABILITY_SCORER_V1": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/ai001-prebuild/LOCATOR_STABILITY_SCORER_V1.cjs",
+      "commit": "8aea4b183eb80137c51a95184d6e38aaae07483b",
+      "blob": "f20b02ac248bc769284fd24d987aae0dfaa72ca2"
+    },
+    "PAGINATION_INFERENCE_V1": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/ai001-prebuild/PAGINATION_INFERENCE_V1.cjs",
+      "commit": "113767d3617266c3c82ce8dd9fd42e05643df542",
+      "blob": "d69cfe56f52d61c2508ec4d64c87a80f2bd517cd"
+    },
+    "SUCCESSOR_RUN_PLAN_V1": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/ai001-prebuild/SUCCESSOR_RUN_PLAN_V1.json",
+      "commit": "77773ec75576159aeba85c8601d79f8b53eaca75"
+    }
+  },
+  "entrypoint": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/ai001-prebuild/a4_structure_infer.cjs",
+    "commit": "c52f0bf17dd4eae9a692cd01127557f5c259bfc8",
+    "blob": "648b0a0ddc1040351ddb0cad3e8eba892ede3ed3",
+    "single_command": "node a4_structure_infer.cjs <dom-evidence.json> <STRUCTURE_INFERENCE_RESULT_V1.json>"
+  },
+  "validation_receipt": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/ai001-prebuild/A4_AI001_PREBUILD_VALIDATION_RECEIPT_V1.json",
+    "commit": "5696b02cea03bca02d64e2d9d3cf1664577fb8d1",
+    "source_parse": "PASS_4_OF_4",
+    "fixture_smoke_1": "PASS",
+    "repeat_item_count": 3,
+    "field_candidate_count": 5,
+    "locator_candidate_count": 14,
+    "pagination": "NEXT",
+    "result_sha256": "416c85e06e1ec8aafac5def7ab7a72775f7f5c0b606bf36cd61ef433e34a14c1"
+  },
+  "input_contract": "DOM snapshot + selected element + optional network/runtime hints",
+  "output_contract": "STRUCTURE_INFERENCE_RESULT_V1",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
