@@ -1,0 +1,31 @@
+{
+  "schema_version": "B3_WAVE3_EXTRACTION_RECIPE_V1",
+  "recipe_id": "b3-wave3-product-flow-001",
+  "recorded_event_count": 10,
+  "executable_step_count": 10,
+  "required_action_types": ["click", "iframe", "input", "navigation", "popup", "scroll", "select"],
+  "runtime_bootstrap": {
+    "mode": "INLINE_DOCUMENT",
+    "list_html": "<!doctype html><html><body style=\"height:1800px\">\n<label>Keyword <input data-testid=\"keyword-input\" aria-label=\"Keyword\" /></label>\n<label>Region <select data-testid=\"region-select\" aria-label=\"Region\"><option value=\"\">All</option><option value=\"seoul\">Seoul</option></select></label>\n<button data-testid=\"search-button\" onclick=\"document.querySelector('#search-status').textContent='searched:'+document.querySelector('[data-testid=keyword-input]').value+':'+document.querySelector('[data-testid=region-select]').value\">Search</button>\n<div id=\"search-status\">idle</div>\n<button data-testid=\"route-button\" onclick=\"location.hash='detail'; document.querySelector('#route-status').textContent='route:'+location.hash\">Route Detail</button>\n<div id=\"route-status\">route:none</div>\n<a data-testid=\"details-link\" target=\"_blank\" href=\"about:blank#popup\">Open Detail Popup</a>\n</body></html>",
+    "detail_html": "<!doctype html><html><body>\n<h1>Detail Popup</h1>\n<iframe id=\"details-frame\" name=\"details-frame\" srcdoc=\"<!doctype html><html><body><button data-testid='frame-load' onclick=&quot;document.querySelector('#frame-status').textContent='loaded'&quot;>Load Frame Data</button><div id='frame-status'>idle</div></body></html>\"></iframe>\n</body></html>"
+  },
+  "steps": [
+    {"step_id":"step-0001","kind":"input","page_alias":"main","frame_name":null,"locator":{"strategy":"test_id","value":"keyword-input"},"value":"apartment","url":null,"scroll":null,"recorded_event_id":"wave3-action-0001"},
+    {"step_id":"step-0002","kind":"select","page_alias":"main","frame_name":null,"locator":{"strategy":"test_id","value":"region-select"},"value":"seoul","url":null,"scroll":null,"recorded_event_id":"wave3-action-0002"},
+    {"step_id":"step-0003","kind":"click","page_alias":"main","frame_name":null,"locator":{"strategy":"test_id","value":"search-button"},"value":null,"url":null,"scroll":null,"recorded_event_id":"wave3-action-0003"},
+    {"step_id":"step-0004","kind":"scroll","page_alias":"main","frame_name":null,"locator":null,"value":null,"url":null,"scroll":{"x":0,"y":700},"recorded_event_id":"wave3-action-0004"},
+    {"step_id":"step-0005","kind":"click","page_alias":"main","frame_name":null,"locator":{"strategy":"test_id","value":"route-button"},"value":null,"url":null,"scroll":null,"recorded_event_id":"wave3-action-0005"},
+    {"step_id":"step-0006","kind":"navigation","page_alias":"main","frame_name":null,"locator":null,"value":null,"url":"about:blank#detail","scroll":null,"recorded_event_id":"wave3-action-0006"},
+    {"step_id":"step-0007","kind":"click","page_alias":"main","frame_name":null,"locator":{"strategy":"test_id","value":"details-link"},"value":null,"url":null,"scroll":null,"recorded_event_id":"wave3-action-0007"},
+    {"step_id":"step-0008","kind":"popup","page_alias":"popup-1","frame_name":null,"locator":null,"value":null,"url":"about:blank#popup","scroll":null,"recorded_event_id":"wave3-action-0008"},
+    {"step_id":"step-0009","kind":"iframe","page_alias":"popup-1","frame_name":"details-frame","locator":null,"value":null,"url":"about:srcdoc","scroll":null,"recorded_event_id":"wave3-action-0009"},
+    {"step_id":"step-0010","kind":"click","page_alias":"popup-1","frame_name":"details-frame","locator":{"strategy":"test_id","value":"frame-load"},"value":null,"url":null,"scroll":null,"recorded_event_id":"wave3-action-0010"}
+  ],
+  "a6_adapter_contract": {
+    "consumer_pr": 25,
+    "input_kind": "B3_WAVE3_RECORDED_PRODUCT_FLOW",
+    "required": ["recipe_digest", "adapter_source_sha256", "replay_receipt_sha256", "restart_resume_receipt_sha256"]
+  },
+  "safety": {"production": false, "ready": false, "merge": false},
+  "recipe_digest": "4a521a4710e55d87bf14f9984b8a5cf746f2498633b33e6a947267733ccbab59"
+}
