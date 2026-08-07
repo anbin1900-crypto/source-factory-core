@@ -1,0 +1,37 @@
+{
+  "schema_version": "A4_WAVE3_SCENARIO_MATRIX_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "actual_runtime": "Chromium_144_REAL_LOCAL_HTTP",
+  "a3_live_authority_head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+  "a3_stream_sha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165",
+  "scenarios": [
+    {"id":"LIST_NEXT","result":"PASS","repeat_region":"5_UNIQUE_CARDS","field_count":7,"locator_count_min":10,"pagination":"NEXT","digest":"599d7c82106a91abc952c89c4194ac032d9e12d3853a5e6c27346251acb1ef03"},
+    {"id":"DYNAMIC_DELAYED_INSERTION","result":"PASS","before_unique_cards":3,"after_unique_cards":5,"stable_locator_count":15,"dynamic_dom_recovery":true,"digest":"4a1271a4576a2d0da4726081f515d6895c70f1d51c3515c04c29946e3b7f1b97"},
+    {"id":"DUPLICATE_CARD_DEDUP","result":"PASS","raw_cards":6,"unique_cards":5,"duplicate_cards_suppressed":1,"digest":"927584c149202235ae76fcd52d0bf8b51dd35da04d0886c4440c1a307ba21a85"},
+    {"id":"IFRAME","result":"PASS","frame_repeat_region_count":1,"frame_context_preserved":true},
+    {"id":"POPUP","result":"PASS","popup_repeat_region_count":1,"popup_context_preserved":true,"digest":"8173cc01b5a3b63dddc42a41a36d6f7d93bd7cdac6ecc40133ab5c48c9cd5782"},
+    {"id":"INFINITE_SCROLL","result":"PASS","dynamic_growth":2,"pagination":"INFINITE_SCROLL","digest":"b3f3418d2d78cbd45e361a12cf990dd0de86dccaec539198ef6cbf8343db9b5c"},
+    {"id":"PAGE_NUMBER","result":"PASS","pages":[1,2],"pagination":"PAGE_NUMBER","digest":"2f637ecc985bfc7fc283eefca06a789bc5c0d4f48c5f4def64abb2b035406e94"},
+    {"id":"CURSOR","result":"PASS","cursor":"B","pagination":"CURSOR","digest":"21dbf982a83d597e473e48c7c21217cb7be4d48941072697a97cc16643b67425"},
+    {"id":"PAGINATION_LOOP_GUARD","result":"PASS","first":"CONTINUE","second":"REPEATED_PAGINATION_STATE","stop_on_second":true}
+  ],
+  "repair_attempts": [
+    {"attempt":1,"result":"FAIL","failure":"PAGINATION_TRANSITION_PRIORITY_CONFLICT","repair":"PAGE_NUMBER_DATA/HREF_SIGNAL_AND_INFINITE_SCROLL_PRIORITY_ADDED"},
+    {"attempt":2,"result":"FAIL","failure":"IFRAME_SNAPSHOT_CAPTURED_BEFORE_CHILD_LOAD","repair":"WAIT_FOR_IFRAME_ATTACH_AND_LOAD_BEFORE_CDP_SNAPSHOT"},
+    {"attempt":3,"result":"PASS","checks":"PASS_8_OF_8"}
+  ],
+  "pass_contract": {
+    "REPEAT_REGION": true,
+    "FIELD_INFERENCE": true,
+    "LOCATOR_STABILITY": true,
+    "PAGINATION_INFERENCE": true,
+    "LOOP_GUARD": true,
+    "DYNAMIC_DOM_RECOVERY": true,
+    "IFRAME": true,
+    "POPUP": true
+  },
+  "matrix_digest": "bc89d3b369351282a058fa22f728cd5c0a7f70a736a4748e3ebe4ed4541ceaff",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
