@@ -1,0 +1,16 @@
+{
+  "schema_version": "D5_CYCLE4_DISPATCH_METRICS_V1",
+  "freshness_latency_seconds": "551.4538219",
+  "freshness_stale_after_seconds": "300",
+  "freshness_guard_valid_at_dispatch": false,
+  "freshness_guard_breach_seconds": "251.4538219",
+  "message_to_reply_latency_seconds": "38.1362053",
+  "dispatch_success_rate": 1.0,
+  "message_sent_count": 1,
+  "assistant_reply_recovered_count": 1,
+  "remaining_open_blocker_count": 2,
+  "remaining_open_workers": ["D-4", "D-6"],
+  "d4_d6_completion_inference_count": 0,
+  "upstream_event_store_mutation_count": 0,
+  "finding": "D3_DISPATCH_OCCURRED_AFTER_D2_300_SECOND_FRESHNESS_WINDOW; INGESTION_PRESERVED_WITHOUT_REWRITING_SOURCE_PASS"
+}
