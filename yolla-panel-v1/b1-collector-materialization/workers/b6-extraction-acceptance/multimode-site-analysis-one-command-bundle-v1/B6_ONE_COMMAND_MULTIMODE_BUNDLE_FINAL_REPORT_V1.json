@@ -1,0 +1,43 @@
+{
+  "schema_version": "B6_ONE_COMMAND_MULTIMODE_BUNDLE_FINAL_REPORT_V1",
+  "directive_id": "A0-TO-B6-ONE-COMMAND-MULTIMODE-BUNDLE-V4-20260808-001",
+  "cycle_id": "A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "task_comment": 5219112258,
+  "created_at_kst": "2026-08-08T00:55:32+09:00",
+  "baseline_head": "53fa1ea2e071ac8b49a45a26de8306e2750f5d7c",
+  "content_head": "f13ea11161e9d4d9f2fb4ab760cde8fdc13c08fa",
+  "implemented": [
+    "MULTIMODE_SITE_ANALYSIS_ONE_COMMAND_BUNDLE_V1",
+    "SUCCESSOR_MULTIMODE_EXECUTION_MANIFEST_V1",
+    "MODE_SELECTION_AND_SCOPE_V1",
+    "REQUIRED_INPUT_POINTER_SET_V1",
+    "EXPECTED_RESULT_POINTER_SET_V1",
+    "RESUME_FROM_LATEST_CHECKPOINT_V1"
+  ],
+  "pointer_bootstrap": {
+    "owners": ["A-2", "A-7", "B-1", "B-5"],
+    "binding": "LATEST_POINTER_PATH_LATE_BINDING_WITH_TESTED_FIXTURES",
+    "status": "PASS_4_OF_4"
+  },
+  "validation": {
+    "empty_context_fixture": "PASS_5_MODES_FROM_LATEST_POINTERS_ONLY",
+    "interruption_resume_fixture": "PASS_SKIP_DATA_PRODUCT_RESUME_WRITE_MY_LISTING_EDIT",
+    "completed_mode_reexecution": "PASS_ZERO",
+    "user_confirm_required": "PASS_PREPARE_ONLY_NO_AUTOMATIC_SUBMIT_DELETE_EXPIRE",
+    "selected_scope": "PASS",
+    "cli_resume_plan": "PASS",
+    "remote_object_readback": "PASS_13_OF_13"
+  },
+  "boundaries": {
+    "target_pc_execution": false,
+    "live_site_call": false,
+    "tunnel_change": false,
+    "d1_transport_create_or_bypass": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  },
+  "terminal": "B6_ONE_COMMAND_MULTIMODE_BUNDLE_READY",
+  "status": "TERMINAL_CONTEXTLESS_MULTIMODE_PREBUILD_AND_RESUME_FIXTURE_PASS"
+}
