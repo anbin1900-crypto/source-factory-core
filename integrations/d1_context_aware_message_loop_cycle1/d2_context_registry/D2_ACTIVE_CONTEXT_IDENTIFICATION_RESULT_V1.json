@@ -1,0 +1,84 @@
+{
+  "schema_version": "D2_ACTIVE_CONTEXT_IDENTIFICATION_RESULT_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001",
+  "role": "D-2_CONTEXT_REGISTRY_AND_ACTIVE_WORKER_OWNER",
+  "priority": "P0",
+  "mode": "CYCLE_BATCH_PARALLEL",
+  "policy": "YOLLA_EFFICIENCY_RATIONALITY_SPEED_FIRST_OPERATING_POLICY_V1",
+  "outcome": "BLOCKED_EXTERNAL",
+  "required_terminal": "ACTIVE_CONTEXT_IDENTIFICATION_LIVE_PASS",
+  "terminal": "ACTIVE_CONTEXT_IDENTIFICATION_LIVE_BLOCKED",
+  "new_system_build": false,
+  "existing_asset_reuse_required": true,
+  "one_owner_end_to_end": true,
+  "static_implementation": {
+    "status": "PASS",
+    "test": "PASS_21_ASSERTIONS",
+    "source_factory_pr": 81,
+    "page_registry_reuse": {"pr":22,"head":"161acfc3590167f4a9feec707b958a5d3ccae535","status":"REUSED"},
+    "view_model_reuse": {"pr":38,"head":"8f2fcefaf02d417d39981555b5ff755f7b18e6e1","status":"REUSED"},
+    "pc_executor_v2_reused": true,
+    "secure_tunnel_reused": true,
+    "new_executor_count": 0,
+    "new_tunnel_count": 0,
+    "new_browser_runtime_count": 0
+  },
+  "runtime_fields": {
+    "ROLE_ID": "D-2_CONTEXT_REGISTRY_AND_ACTIVE_WORKER_OWNER",
+    "CONTEXT_ID": null,
+    "CONTEXT_NAME": null,
+    "PAGE_ID": null,
+    "COMMAND_ID": "D1-CYCLE1-D2-ACTIVE-CONTEXT-IDENTIFICATION-20260807-001",
+    "WORK_STATUS": "REVIEW_REQUIRED",
+    "STARTED_AT": "2026-08-07T14:40:00.000Z",
+    "LAST_SEEN_AT": "2026-08-07T15:17:30.000Z"
+  },
+  "anti_misbinding": {
+    "page_navigation_old_role_inheritance": false,
+    "new_chat_old_role_inheritance": false,
+    "refresh_same_context_binding_retained": true,
+    "duplicate_live_page_same_context": "REVIEW_REQUIRED_FAIL_CLOSED",
+    "live_discovery_requires_exact_role_and_cycle_markers": true
+  },
+  "target_pc_live_evidence": {
+    "machine": "NOTEX",
+    "workspace_state_contains_d2_marker": true,
+    "chatgpt_context_candidates": [
+      "6a746090-cb67-8320-825a-49b13a228f70",
+      "6a7460d6-91c8-832a-adf8-28a53821757b",
+      "6a7460f3-703c-8330-861b-198903a8a5b6",
+      "6a74610d-a200-832e-934f-3a80353c4e94"
+    ],
+    "candidate_context_count": 4,
+    "exact_d2_context_selected": false,
+    "reason_not_selected": "No exact live receipt binds the D-2 role marker to one candidate; selecting one would risk worker misbinding.",
+    "exact_probe_target_path": "E:\\YOLLA\\server\\approved-ops\\D2_ACTIVE_CONTEXT_PROBE_CYCLE1_EXACT.js",
+    "exact_probe_size_bytes": 7002,
+    "exact_probe_sha256": "69c37594a9ffbdca75d489bc2ab607ac704ec3a008a3939d0035b43ee85d35a5",
+    "exact_probe_file_write_command": "D2CTX-C1-WRITE-JS-BASE64-20260808-000100-001",
+    "exact_probe_file_write_status": "SUCCEEDED"
+  },
+  "external_blocker": {
+    "code": "PC_EXECUTOR_V2_COMMAND_CLAIM_LOOP_STALLED",
+    "last_observed_shared_claim_at": "2026-08-08T00:03:42.296813+09:00",
+    "last_observed_shared_claim_command": "D3-D2-BINDING-SNIPPET-WRITE-20260808-000400-001",
+    "confirmed_no_claim_through": "2026-08-08T00:17:30+09:00",
+    "unclaimed_commands": [
+      "D2CTX-C1-WRITE-PS1-EXACT-20260808-000400-001",
+      "D3-D2-BINDING-SNIPPET-RUN-20260808-000400-001",
+      "D2CTX-C1-RUN-D3-BINDING-EXTRACT-20260808-001000-001"
+    ],
+    "cross_worker_evidence": true,
+    "d2_source_defect": false,
+    "command_schema_defect": false,
+    "exact_probe_byte_deploy_passed_before_stall": true
+  },
+  "resume_condition": "Resume the existing PC Operation Executor V2 claim loop. Then execute either the already-staged exact D-2 wrapper or the already-staged D3 bounded D-2 binding extractor, collect the immutable receipt, and populate CONTEXT_ID/CONTEXT_NAME/PAGE_ID without changing D-2 source or building a new transport.",
+  "raw_conversation_persisted": false,
+  "secret_exposure_count": 0,
+  "target_pc_live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "reported_at_kst": "2026-08-08T00:17:30+09:00"
+}
