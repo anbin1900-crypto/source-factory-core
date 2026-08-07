@@ -1,0 +1,90 @@
+{
+  "schema_version": "D2_CYCLE3_LIVE_CONTEXT_HANDOFF_RESULT_V1",
+  "rule_id": "YOLLA_C_MODE_RULES_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE3-20260808-001",
+  "directive_id": "C3-W2-LIVE-CONTEXT-HANDOFF-AND-FRESHNESS-GUARD-V1-20260808-001",
+  "directive_comment_id": 5220405787,
+  "worker_id": "AUTOMATION-C-W2",
+  "role": "D-2_CONTEXT_REGISTRY_AND_ACTIVE_WORKER_OWNER",
+  "worker_pr": 81,
+  "control_pr": 17,
+  "outcome": "PASS",
+  "terminal": "LIVE_CONTEXT_HANDOFF_AND_FRESHNESS_GUARD_PASS",
+  "reused_inputs": {
+    "cycle2_result_commit": "1c6d79c492ff78cce4b0074bf7f8958d60f4edea",
+    "cycle2_result_comment_id": 5219897042,
+    "cycle2_context_id": "6a72e288-7f24-83ee-b357-3e327cf6d877",
+    "cycle2_page_id": "UIA-TAB-42.198100.4.0.0.5287"
+  },
+  "handoff": {
+    "path": "integrations/d1_context_aware_message_loop_cycle3/d2_context_registry/D2_LIVE_CONTEXT_HANDOFF_V1.json",
+    "commit": "72b152dc0ae356a66f82040a0ec655756b5bce12",
+    "blob_sha1": "7d6e6f5bc6cba7c640bed3fbe212bf2c8396d75e",
+    "consumer_d4_pr": 22,
+    "consumer_d6_pr": 80,
+    "additional_context_discovery_required_when_fresh": false
+  },
+  "final_live_binding": {
+    "ROLE_ID": "D-2_CONTEXT_REGISTRY_AND_ACTIVE_WORKER_OWNER",
+    "CONTEXT_ID": "6a72e288-7f24-83ee-b357-3e327cf6d877",
+    "CONTEXT_NAME": "자동화 C 모드 - 자동화 C 모드 - 자동화 그룹 A E  그룹에 속함",
+    "PAGE_ID": "UIA-TAB-42.198100.4.0.0.5287",
+    "COMMAND_ID": "C3-W2-LIVE-CONTEXT-HANDOFF-AND-FRESHNESS-GUARD-V1-20260808-001",
+    "WORK_STATUS": "RESULT_PENDING",
+    "LAST_SEEN_AT": "2026-08-07T18:16:52.4077010Z",
+    "binding_method": "EXISTING_WINDOWS_UI_AUTOMATION_EXACT_WINDOW_AND_PAGE_ID_RESELECT",
+    "activation_pattern": "SELECTION_ITEM_SELECT",
+    "role_marker_match": true,
+    "cycle_marker_match": true,
+    "page_reselected": true,
+    "target_pc_live_readback": true
+  },
+  "target_pc_receipt": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "branch": "command/d-group-domain-knowledge-db-foundation-v1",
+    "path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/PC_OPERATION_COMMAND_BUS_V2/RECEIPTS/D2C3-RUN-EXACT-TAB-ACTIVATE-V3-20260808-031600-001.json",
+    "blob_sha1": "c5fb6687d596e7e651c3eb747e0e461e8148feb1",
+    "runtime_sha256": "5cfa19f4a8eb33b385afe305a8c697f5a6f42f98d4d810956082222ac951cbfd",
+    "executor_version": "2.0.2",
+    "status": "SUCCEEDED"
+  },
+  "freshness_guard_evidence": {
+    "first_exact_reselect_marker_mismatch_fail_closed": {
+      "receipt": "D2C3-RUN-RESELECT-FRESHNESS-PROBE-V2-20260808-030700-001",
+      "blob_sha1": "8cf8b1239aac7bf9546173f7792fdb664e17ddb3",
+      "blocker": "ROLE_OR_CYCLE_MARKER_MISMATCH_AFTER_RESELECT"
+    },
+    "wrong_selected_context_fail_closed": {
+      "receipt": "D2C3-RUN-RESELECT-FRESHNESS-PROBE-V2-AFTER-ROLE-MARKER-20260808-030800-001",
+      "blob_sha1": "48566232ab8d534fd3a63520499dfaf727bc43cd",
+      "observed_context_id": "6a761b45-f28c-83ee-b71c-c7e29d320a2f",
+      "expected_context_id": "6a72e288-7f24-83ee-b357-3e327cf6d877",
+      "automatic_transition_performed": false
+    },
+    "exact_window_page_inventory": {
+      "receipt": "D2C3-RUN-EXACT-WINDOW-INVENTORY-20260808-031200-001",
+      "blob_sha1": "e9594549cfbdeda9bbac5b4321d9ae15b4c40fec",
+      "cycle2_window_handle_still_exists": true,
+      "expected_page_id_still_exists": true,
+      "safe_rebind_basis": "EXACT_WINDOW_HANDLE_PLUS_EXACT_PAGE_ID"
+    },
+    "final_exact_reselect_pass": true,
+    "max_age_seconds": 300,
+    "stale_or_mismatch_consumer_action": "REJECT_AND_REQUEST_D2_FRESHNESS_RECHECK"
+  },
+  "acceptance": {
+    "CONSUMABLE_HANDOFF": "PASS",
+    "LIVE_FRESHNESS_RECHECK": "PASS",
+    "STALE_FAIL_CLOSED": "PASS",
+    "MARKER_MISMATCH_FAIL_CLOSED": "PASS",
+    "MISBINDING_0": "PASS",
+    "arbitrary_context_selection_count": 0,
+    "new_executor_count": 0,
+    "new_tunnel_count": 0,
+    "new_transport_count": 0,
+    "assumption_that_9222_is_chatgpt_count": 0
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
