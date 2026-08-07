@@ -1,0 +1,12 @@
+{
+  "schema_version": "A7_WAVE3_B1_PATH_RESOLUTION_REPRO_V1",
+  "status": "REPRODUCED_AND_REPAIRED",
+  "b1_head": "fc66a09669716c9ef4be6548102e76d86f2fadc8",
+  "b1_launcher_path": "yolla-panel-v1/b1-collector-materialization/site-analyzer-wave2-single-product-v1/launcher.cjs",
+  "b1_missing_required_path": "runtime/scenario-runner.cjs",
+  "github_fetch_result": "404_NOT_FOUND",
+  "b1_manifest_expected_sha256": "4a3f01c65d7a04e558ce9494dc695a7629cc37aa110aac9c9bb1f7a5200e60fc",
+  "b6_actual_sha256": "4a3f01c65d7a04e558ce9494dc695a7629cc37aa110aac9c9bb1f7a5200e60fc",
+  "repair": "VERIFIED_EXTERNAL_PACKAGE_ROOT_FALLBACK_WITH_EXACT_SHA256",
+  "unsafe_fallback_allowed": false
+}

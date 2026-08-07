@@ -1,0 +1,70 @@
+{
+  "schema_version": "A7_SITE_ANALYZER_WAVE3_FINAL_REPORT_V1",
+  "generated_at_kst": "2026-08-07T13:42:00+09:00",
+  "worker": "A-7",
+  "worker_pr": 26,
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment_id": 5212035852,
+  "parent_directive": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "wave2_terminal": "A7_SITE_ANALYZER_WAVE2_INTEGRATION_REPAIR_PASS",
+  "wave2_terminal_pointer_comment_id": 5208553554,
+  "terminal": "A7_SITE_ANALYZER_WAVE3_CROSS_CUTTING_REPAIR_PASS",
+  "status": "PASS",
+  "root_cause": {
+    "b1_launcher_declares_runtime_path": "runtime/scenario-runner.cjs",
+    "b1_git_head_runtime_path_present": false,
+    "b1_product_manifest_declares_runtime_sha256": "4a3f01c65d7a04e558ce9494dc695a7629cc37aa110aac9c9bb1f7a5200e60fc",
+    "b6_authoritative_package_contains_matching_runtime_sha256": true,
+    "classification": "PATH_RESOLUTION_AND_PACKAGE_MATERIALIZATION_SPLIT_AUTHORITY"
+  },
+  "repairs": {
+    "ipc": "stale owner handlers are disposed before replacement; idempotent disposal",
+    "bridge": "A/B network, response-body, CDP, action and DOM summary events normalize into YOLLA_SITE_ANALYZER_EVENT_V2 with semantic dedupe and monotonic sequence",
+    "selector": "test_id/id/css locator normalization with unsafe input rejection and actual fixture HTML resolution",
+    "launcher": "B1 missing Git runtime path is resolved only from a verified external B6 package root with exact member SHA256",
+    "event_contract": "canonical event fingerprint and deterministic digest",
+    "restart_recovery": "checkpointed invariant is verified across two actual launcher runs",
+    "path_resolution": "absolute/traversal paths rejected; mismatched SHA roots skipped fail-closed"
+  },
+  "validation": {
+    "node_test": "PASS_4_OF_4",
+    "actual_package_verify": "PASS",
+    "actual_b6_package_test": "PASS_4_OF_4",
+    "actual_launcher_restart_runs": 2,
+    "network_event_count": 28,
+    "response_body_count": 14,
+    "dom_snapshot_count": 2,
+    "recorded_action_count": 8,
+    "extracted_record_count": 10,
+    "preview_export_parity": "PASS_10_10_10",
+    "canonical_event_count": 51,
+    "event_duplicate_count": 0,
+    "event_monotonic": true,
+    "selector_checked_count": 6,
+    "selector_not_found_count": 0,
+    "restart_recovery": true,
+    "restart_run_count": 2,
+    "all_wave3_pass_dimensions": {
+      "ipc": "PASS_STALE_REBIND_TESTED",
+      "bridge": "PASS",
+      "selector": "PASS",
+      "launcher": "PASS",
+      "event_contract": "PASS",
+      "restart_recovery": "PASS",
+      "path_resolution": "PASS"
+    }
+  },
+  "authority": {
+    "a7_wave2_head": "27514804d9486fe1b0a1c543a03215778605d7e4",
+    "b1_head": "fc66a09669716c9ef4be6548102e76d86f2fadc8",
+    "b6_drive_file_id": "13LrXXmW_p69HP1kgMLPaDuSr2l2fEZnP",
+    "b6_zip_size_bytes": 49490,
+    "b6_zip_sha256": "94bd0ef75e8ae2fe8385d298d53d4827b8208096230ee3e0a57a11a3c8586dcd"
+  },
+  "repair_handoff_count": 0,
+  "audit_only": false,
+  "finding_only_terminal": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

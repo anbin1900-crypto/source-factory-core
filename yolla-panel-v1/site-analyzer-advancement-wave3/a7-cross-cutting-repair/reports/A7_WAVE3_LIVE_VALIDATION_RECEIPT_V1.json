@@ -1,0 +1,339 @@
+{
+  "schema_version": "A7_WAVE3_LIVE_VALIDATION_RECEIPT_V1",
+  "generated_at": "2026-08-07T04:49:50.129Z",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "status": "PASS",
+  "execution_mode": "ACTUAL_B6_PACKAGE_NODE_HTTP_CHROMIUM_CDP_RESTART_2X",
+  "authority": {
+    "b1_head": "fc66a09669716c9ef4be6548102e76d86f2fadc8",
+    "wave2_a7_head": "27514804d9486fe1b0a1c543a03215778605d7e4",
+    "b6_drive_file_id": "13LrXXmW_p69HP1kgMLPaDuSr2l2fEZnP",
+    "b6_zip_sha256": "94bd0ef75e8ae2fe8385d298d53d4827b8208096230ee3e0a57a11a3c8586dcd"
+  },
+  "first_run": {
+    "schema_version": "A7_SITE_ANALYZER_WAVE3_INTEGRATION_RECEIPT_V1",
+    "status": "PASS",
+    "launcher": {
+      "terminal": "B6_SITE_ANALYZER_WAVE2_NODE_CHROMIUM_SAMPLE_PASS",
+      "runtime_result": "PASS"
+    },
+    "path_resolution": {
+      "critical_member_count": 7,
+      "external_package_member_count": 7,
+      "resolved": [
+        {
+          "relative_path": "runtime/scenario-runner.cjs",
+          "absolute_path": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1/runtime/scenario-runner.cjs",
+          "root": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1",
+          "source": "VERIFIED_EXTERNAL_PACKAGE",
+          "sha256": "4a3f01c65d7a04e558ce9494dc695a7629cc37aa110aac9c9bb1f7a5200e60fc",
+          "expected_sha256": "4a3f01c65d7a04e558ce9494dc695a7629cc37aa110aac9c9bb1f7a5200e60fc"
+        },
+        {
+          "relative_path": "runtime/chromium-cdp.cjs",
+          "absolute_path": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1/runtime/chromium-cdp.cjs",
+          "root": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1",
+          "source": "VERIFIED_EXTERNAL_PACKAGE",
+          "sha256": "46ecb1b3332b3bc2fab056790fbe6ce378933afa85c2ce61ec3f48e9bdd3b1c8",
+          "expected_sha256": "46ecb1b3332b3bc2fab056790fbe6ce378933afa85c2ce61ec3f48e9bdd3b1c8"
+        },
+        {
+          "relative_path": "runtime/node-http-bridge.cjs",
+          "absolute_path": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1/runtime/node-http-bridge.cjs",
+          "root": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1",
+          "source": "VERIFIED_EXTERNAL_PACKAGE",
+          "sha256": "35e765351e28285d1b79d49fe6668ff120bc37964522bfa67c51145f19e89642",
+          "expected_sha256": "35e765351e28285d1b79d49fe6668ff120bc37964522bfa67c51145f19e89642"
+        },
+        {
+          "relative_path": "runtime/fixture-site.cjs",
+          "absolute_path": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1/runtime/fixture-site.cjs",
+          "root": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1",
+          "source": "VERIFIED_EXTERNAL_PACKAGE",
+          "sha256": "bb06e5a87663ca1016b5ff1d0af2428bd53a1c4759dbe0033493ee62e561c632",
+          "expected_sha256": "bb06e5a87663ca1016b5ff1d0af2428bd53a1c4759dbe0033493ee62e561c632"
+        },
+        {
+          "relative_path": "modules/a6-adapter-compat.cjs",
+          "absolute_path": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1/modules/a6-adapter-compat.cjs",
+          "root": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1",
+          "source": "VERIFIED_EXTERNAL_PACKAGE",
+          "sha256": "eb6de4b848b682563dc226dbf73f7c98e1c529febd38fac38656212f98949fb3",
+          "expected_sha256": "eb6de4b848b682563dc226dbf73f7c98e1c529febd38fac38656212f98949fb3"
+        },
+        {
+          "relative_path": "modules/b5-preview-export.cjs",
+          "absolute_path": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1/modules/b5-preview-export.cjs",
+          "root": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1",
+          "source": "VERIFIED_EXTERNAL_PACKAGE",
+          "sha256": "0544f4118d94a797f1208f4f390fcda37aff1f97de3acd6a32f036b55c4282bc",
+          "expected_sha256": "0544f4118d94a797f1208f4f390fcda37aff1f97de3acd6a32f036b55c4282bc"
+        },
+        {
+          "relative_path": "modules/vendor/b3/EXTRACTION_RECIPE_V1.json",
+          "absolute_path": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1/modules/vendor/b3/EXTRACTION_RECIPE_V1.json",
+          "root": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1",
+          "source": "VERIFIED_EXTERNAL_PACKAGE",
+          "sha256": "6cc57da2c3bb825ee84da7aa325530dce6ddf50d29d4e202e0b52c34d2bd1ecd",
+          "expected_sha256": "6cc57da2c3bb825ee84da7aa325530dce6ddf50d29d4e202e0b52c34d2bd1ecd"
+        }
+      ]
+    },
+    "ipc_contract": {
+      "stale_rebind_supported": true
+    },
+    "event_contract": {
+      "count": 51,
+      "unique_fingerprint_count": 51,
+      "duplicate_count": 0,
+      "monotonic": true,
+      "digest": "c41b6cf1569a0b39ee09f2406ea894734d397cbebe014553d3b1f0914d269bf1"
+    },
+    "selector_contract": {
+      "checked_count": 6,
+      "not_found_count": 0,
+      "results": [
+        {
+          "step_id": "step-0001",
+          "sequence": 1,
+          "css": "[data-testid=\"keyword-input\"]",
+          "match_count": 1,
+          "status": "UNIQUE"
+        },
+        {
+          "step_id": "step-0002",
+          "sequence": 2,
+          "css": "[data-testid=\"region-select\"]",
+          "match_count": 1,
+          "status": "UNIQUE"
+        },
+        {
+          "step_id": "step-0003",
+          "sequence": 3,
+          "css": "[data-testid=\"search-submit-new\"]",
+          "match_count": 1,
+          "status": "UNIQUE"
+        },
+        {
+          "step_id": "step-0005",
+          "sequence": 5,
+          "css": "[data-testid=\"details-link\"]",
+          "match_count": 6,
+          "status": "AMBIGUOUS"
+        },
+        {
+          "step_id": "step-0006",
+          "sequence": 6,
+          "css": "[data-testid=\"result-frame\"]",
+          "match_count": 1,
+          "status": "UNIQUE"
+        },
+        {
+          "step_id": "step-0008",
+          "sequence": 8,
+          "css": "[data-testid=\"result-frame\"]",
+          "match_count": 1,
+          "status": "UNIQUE"
+        }
+      ]
+    },
+    "runtime": {
+      "network_event_count": 28,
+      "response_body_count": 14,
+      "dom_snapshot_count": 2,
+      "recorded_action_count": 8,
+      "extracted_record_count": 10,
+      "parity": "PASS_10_10_10",
+      "deterministic": true
+    },
+    "restart_recovery": {
+      "previous_checkpoint_present": false,
+      "pass": true,
+      "run_count": 1,
+      "invariant_digest": "11b38d13470b3b6ca9305bf9fa0bfb268e66ab27604813907b7dce7e8826a98a"
+    },
+    "invariant": {
+      "result_sha256": "a3e3deb499533812e72fe486c6c2d6965a12bd914af3673c88b5b2a3db9e3903",
+      "records_hash": "a3e3deb499533812e72fe486c6c2d6965a12bd914af3673c88b5b2a3db9e3903",
+      "recipe_hash": "a036077ce3cd3d4d45e2cfc470a6116a59ce3ab30329c179bdda3821db096228",
+      "parity": "PASS_10_10_10",
+      "exact_record_count": 10,
+      "selector_digest": "c6fc8955d04edf750cb0aa8c2330d40354e4852babc047a0e83e703735a5ebd4"
+    },
+    "boundaries": {
+      "production": false,
+      "ready": false,
+      "merge": false
+    }
+  },
+  "second_run": {
+    "schema_version": "A7_SITE_ANALYZER_WAVE3_INTEGRATION_RECEIPT_V1",
+    "status": "PASS",
+    "launcher": {
+      "terminal": "B6_SITE_ANALYZER_WAVE2_NODE_CHROMIUM_SAMPLE_PASS",
+      "runtime_result": "PASS"
+    },
+    "path_resolution": {
+      "critical_member_count": 7,
+      "external_package_member_count": 7,
+      "resolved": [
+        {
+          "relative_path": "runtime/scenario-runner.cjs",
+          "absolute_path": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1/runtime/scenario-runner.cjs",
+          "root": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1",
+          "source": "VERIFIED_EXTERNAL_PACKAGE",
+          "sha256": "4a3f01c65d7a04e558ce9494dc695a7629cc37aa110aac9c9bb1f7a5200e60fc",
+          "expected_sha256": "4a3f01c65d7a04e558ce9494dc695a7629cc37aa110aac9c9bb1f7a5200e60fc"
+        },
+        {
+          "relative_path": "runtime/chromium-cdp.cjs",
+          "absolute_path": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1/runtime/chromium-cdp.cjs",
+          "root": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1",
+          "source": "VERIFIED_EXTERNAL_PACKAGE",
+          "sha256": "46ecb1b3332b3bc2fab056790fbe6ce378933afa85c2ce61ec3f48e9bdd3b1c8",
+          "expected_sha256": "46ecb1b3332b3bc2fab056790fbe6ce378933afa85c2ce61ec3f48e9bdd3b1c8"
+        },
+        {
+          "relative_path": "runtime/node-http-bridge.cjs",
+          "absolute_path": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1/runtime/node-http-bridge.cjs",
+          "root": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1",
+          "source": "VERIFIED_EXTERNAL_PACKAGE",
+          "sha256": "35e765351e28285d1b79d49fe6668ff120bc37964522bfa67c51145f19e89642",
+          "expected_sha256": "35e765351e28285d1b79d49fe6668ff120bc37964522bfa67c51145f19e89642"
+        },
+        {
+          "relative_path": "runtime/fixture-site.cjs",
+          "absolute_path": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1/runtime/fixture-site.cjs",
+          "root": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1",
+          "source": "VERIFIED_EXTERNAL_PACKAGE",
+          "sha256": "bb06e5a87663ca1016b5ff1d0af2428bd53a1c4759dbe0033493ee62e561c632",
+          "expected_sha256": "bb06e5a87663ca1016b5ff1d0af2428bd53a1c4759dbe0033493ee62e561c632"
+        },
+        {
+          "relative_path": "modules/a6-adapter-compat.cjs",
+          "absolute_path": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1/modules/a6-adapter-compat.cjs",
+          "root": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1",
+          "source": "VERIFIED_EXTERNAL_PACKAGE",
+          "sha256": "eb6de4b848b682563dc226dbf73f7c98e1c529febd38fac38656212f98949fb3",
+          "expected_sha256": "eb6de4b848b682563dc226dbf73f7c98e1c529febd38fac38656212f98949fb3"
+        },
+        {
+          "relative_path": "modules/b5-preview-export.cjs",
+          "absolute_path": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1/modules/b5-preview-export.cjs",
+          "root": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1",
+          "source": "VERIFIED_EXTERNAL_PACKAGE",
+          "sha256": "0544f4118d94a797f1208f4f390fcda37aff1f97de3acd6a32f036b55c4282bc",
+          "expected_sha256": "0544f4118d94a797f1208f4f390fcda37aff1f97de3acd6a32f036b55c4282bc"
+        },
+        {
+          "relative_path": "modules/vendor/b3/EXTRACTION_RECIPE_V1.json",
+          "absolute_path": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1/modules/vendor/b3/EXTRACTION_RECIPE_V1.json",
+          "root": "/mnt/data/a7_wave3/b6pkg/B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1",
+          "source": "VERIFIED_EXTERNAL_PACKAGE",
+          "sha256": "6cc57da2c3bb825ee84da7aa325530dce6ddf50d29d4e202e0b52c34d2bd1ecd",
+          "expected_sha256": "6cc57da2c3bb825ee84da7aa325530dce6ddf50d29d4e202e0b52c34d2bd1ecd"
+        }
+      ]
+    },
+    "ipc_contract": {
+      "stale_rebind_supported": true
+    },
+    "event_contract": {
+      "count": 51,
+      "unique_fingerprint_count": 51,
+      "duplicate_count": 0,
+      "monotonic": true,
+      "digest": "c41b6cf1569a0b39ee09f2406ea894734d397cbebe014553d3b1f0914d269bf1"
+    },
+    "selector_contract": {
+      "checked_count": 6,
+      "not_found_count": 0,
+      "results": [
+        {
+          "step_id": "step-0001",
+          "sequence": 1,
+          "css": "[data-testid=\"keyword-input\"]",
+          "match_count": 1,
+          "status": "UNIQUE"
+        },
+        {
+          "step_id": "step-0002",
+          "sequence": 2,
+          "css": "[data-testid=\"region-select\"]",
+          "match_count": 1,
+          "status": "UNIQUE"
+        },
+        {
+          "step_id": "step-0003",
+          "sequence": 3,
+          "css": "[data-testid=\"search-submit-new\"]",
+          "match_count": 1,
+          "status": "UNIQUE"
+        },
+        {
+          "step_id": "step-0005",
+          "sequence": 5,
+          "css": "[data-testid=\"details-link\"]",
+          "match_count": 6,
+          "status": "AMBIGUOUS"
+        },
+        {
+          "step_id": "step-0006",
+          "sequence": 6,
+          "css": "[data-testid=\"result-frame\"]",
+          "match_count": 1,
+          "status": "UNIQUE"
+        },
+        {
+          "step_id": "step-0008",
+          "sequence": 8,
+          "css": "[data-testid=\"result-frame\"]",
+          "match_count": 1,
+          "status": "UNIQUE"
+        }
+      ]
+    },
+    "runtime": {
+      "network_event_count": 28,
+      "response_body_count": 14,
+      "dom_snapshot_count": 2,
+      "recorded_action_count": 8,
+      "extracted_record_count": 10,
+      "parity": "PASS_10_10_10",
+      "deterministic": true
+    },
+    "restart_recovery": {
+      "previous_checkpoint_present": true,
+      "pass": true,
+      "run_count": 2,
+      "invariant_digest": "11b38d13470b3b6ca9305bf9fa0bfb268e66ab27604813907b7dce7e8826a98a"
+    },
+    "invariant": {
+      "result_sha256": "a3e3deb499533812e72fe486c6c2d6965a12bd914af3673c88b5b2a3db9e3903",
+      "records_hash": "a3e3deb499533812e72fe486c6c2d6965a12bd914af3673c88b5b2a3db9e3903",
+      "recipe_hash": "a036077ce3cd3d4d45e2cfc470a6116a59ce3ab30329c179bdda3821db096228",
+      "parity": "PASS_10_10_10",
+      "exact_record_count": 10,
+      "selector_digest": "c6fc8955d04edf750cb0aa8c2330d40354e4852babc047a0e83e703735a5ebd4"
+    },
+    "boundaries": {
+      "production": false,
+      "ready": false,
+      "merge": false
+    }
+  },
+  "checks": {
+    "ipc": "PASS_STALE_REBIND_TESTED",
+    "bridge": "PASS",
+    "selector": "PASS",
+    "launcher": "PASS",
+    "event_contract": "PASS",
+    "restart_recovery": "PASS",
+    "path_resolution": "PASS"
+  },
+  "boundaries": {
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

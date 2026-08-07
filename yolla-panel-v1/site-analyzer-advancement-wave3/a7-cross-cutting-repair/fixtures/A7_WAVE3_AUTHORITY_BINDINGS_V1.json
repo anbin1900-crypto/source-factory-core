@@ -1,0 +1,29 @@
+{
+  "schema_version": "A7_WAVE3_AUTHORITY_BINDINGS_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment_id": 5212035852,
+  "wave2_a7_head": "27514804d9486fe1b0a1c543a03215778605d7e4",
+  "b1_head": "fc66a09669716c9ef4be6548102e76d86f2fadc8",
+  "b6_package": {
+    "drive_file_id": "13LrXXmW_p69HP1kgMLPaDuSr2l2fEZnP",
+    "file_name": "B6_SITE_ANALYZER_WAVE2_ELECTRON_NODE_PACKAGE_V1.zip",
+    "size_bytes": 49490,
+    "sha256": "94bd0ef75e8ae2fe8385d298d53d4827b8208096230ee3e0a57a11a3c8586dcd"
+  },
+  "b1_git_tree_reproduction": {
+    "canonical_launcher": "launcher.cjs",
+    "declared_runtime": "runtime/scenario-runner.cjs",
+    "declared_runtime_observed_in_git_tree": false,
+    "failure": "MODULE_NOT_FOUND_AT_LAUNCHER_REQUIRE"
+  },
+  "critical_members": {
+    "runtime/scenario-runner.cjs": "4a3f01c65d7a04e558ce9494dc695a7629cc37aa110aac9c9bb1f7a5200e60fc",
+    "runtime/chromium-cdp.cjs": "46ecb1b3332b3bc2fab056790fbe6ce378933afa85c2ce61ec3f48e9bdd3b1c8",
+    "runtime/node-http-bridge.cjs": "35e765351e28285d1b79d49fe6668ff120bc37964522bfa67c51145f19e89642",
+    "runtime/fixture-site.cjs": "bb06e5a87663ca1016b5ff1d0af2428bd53a1c4759dbe0033493ee62e561c632",
+    "modules/a6-adapter-compat.cjs": "eb6de4b848b682563dc226dbf73f7c98e1c529febd38fac38656212f98949fb3",
+    "modules/b5-preview-export.cjs": "0544f4118d94a797f1208f4f390fcda37aff1f97de3acd6a32f036b55c4282bc",
+    "modules/vendor/b3/EXTRACTION_RECIPE_V1.json": "6cc57da2c3bb825ee84da7aa325530dce6ddf50d29d4e202e0b52c34d2bd1ecd"
+  },
+  "boundaries": {"production":false,"ready":false,"merge":false}
+}
