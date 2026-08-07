@@ -87,8 +87,43 @@ function Resolve-ExactPage {
       } catch {}
     }
   }
-  if ($matches.Count -ne 1) { throw ('EXACT_PAGE_MATCH_COUNT_INVALID count=' + $matches.Count) }
-  $target = $matches[0]
+  $pageRebound = $false
+  if ($matches.Count -gt 1) { throw ('EXACT_PAGE_MATCH_COUNT_INVALID count=' + $matches.Count) }
+  if ($matches.Count -eq 0) {
+    $contextMatches = @()
+    foreach ($process in (Get-NonCdpChromeProcesses)) {
+      $root = [System.Windows.Automation.AutomationElement]::FromHandle($process.MainWindowHandle)
+      if ($null -eq $root) { continue }
+      $all = Get-AllElements -Root $root
+      $url = $null
+      $selectedTab = $null
+      foreach ($element in $all) {
+        $value = Get-ElementValue -Element $element
+        if ($value -match ('/c/' + [regex]::Escape($ExpectedContextId) + '(?:$|[/?#])')) { $url = $value }
+        try {
+          if ($element.Current.ControlType -eq [System.Windows.Automation.ControlType]::TabItem) {
+            $selection = $element.GetCurrentPattern([System.Windows.Automation.SelectionItemPattern]::Pattern)
+            if ($selection.Current.IsSelected) { $selectedTab = $element }
+          }
+        } catch {}
+      }
+      if ($url -and $selectedTab) {
+        $contextMatches += [pscustomobject]@{
+          process = $process
+          root = $root
+          tab = $selectedTab
+          page_id = 'UIA-TAB-' + (Get-RuntimeIdText -Element $selectedTab)
+        }
+      }
+    }
+    if ($contextMatches.Count -ne 1) {
+      throw ('EXACT_CONTEXT_REBIND_MATCH_COUNT_INVALID count=' + $contextMatches.Count)
+    }
+    $target = $contextMatches[0]
+    $pageRebound = $true
+  } else {
+    $target = $matches[0]
+  }
   try {
     $selection = $target.tab.GetCurrentPattern([System.Windows.Automation.SelectionItemPattern]::Pattern)
     if (-not $selection.Current.IsSelected) { $selection.Select(); Start-Sleep -Milliseconds 700 }
@@ -113,7 +148,9 @@ function Resolve-ExactPage {
     process = $target.process
     root = $root
     all = $all
-    page_id = $ExpectedPageId
+    page_id = [string]$target.page_id
+    previous_page_id = $ExpectedPageId
+    page_rebound = $pageRebound
     context_id = $contextId
     url = $url
     tree_text = $roleText.ToString()
@@ -317,7 +354,9 @@ try {
   }
   Add-LoopEvent -Type 'CONTEXT_BOUND' -Data @{
     context_id = [string]$script:Input.context_id
-    page_id = [string]$script:Input.page_id
+    page_id = [string]$page.page_id
+    previous_page_id = [string]$script:Input.page_id
+    page_rebound = [bool]$page.page_rebound
     url = [string]$page.url
   } | Out-Null
 
@@ -385,7 +424,9 @@ try {
     command_id = [string]$script:Input.command_id
     context_id = [string]$script:Input.context_id
     context_name = [string]$script:Input.context_name
-    page_id = [string]$script:Input.page_id
+    page_id = [string]$page.page_id
+    d2_observed_page_id = [string]$script:Input.page_id
+    page_rebound = [bool]$page.page_rebound
     return_target = 'D-1_OR_SUCCESSOR'
     message_sha256 = (Get-Sha256Text -Text ([string]$script:Input.message))
     assistant_reply_raw = $replyRaw
