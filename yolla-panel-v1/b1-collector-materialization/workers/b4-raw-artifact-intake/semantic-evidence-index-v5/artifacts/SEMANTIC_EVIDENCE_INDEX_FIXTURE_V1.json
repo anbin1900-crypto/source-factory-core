@@ -1,0 +1,68 @@
+{
+  "classification_counts": {"INFERRED": 1, "OBSERVED": 1, "UNKNOWN": 1},
+  "edge_count": 1,
+  "entries": [
+    {
+      "assertion_sha256": "62ead2cdf3554900ba36f2ab4f1a5ea046829c07b0c504ca2591b2ad74788d2c",
+      "confidence": 1.0,
+      "created_at": "2026-08-08T01:30:00+09:00",
+      "derivation_reference": null,
+      "derived_evidence_pointers": [],
+      "entity_type": "NODE",
+      "evidence_class": "OBSERVED",
+      "identity_sha256": "1b159296e1d7a0e202503a10af4f5f50129cefbf8f505a376c9e2df9c57ab60f",
+      "previous_semantic_pointer": null,
+      "producer_assertion": {"label": "product-editor", "type": "FORM"},
+      "producer_id": "A5-BLUEPRINT",
+      "raw_evidence_pointers": ["evidence-45dc26a0ed1139eebe7837e6", "evidence-9c5de9ba71755ad58c862ef8"],
+      "raw_evidence_sha256": {
+        "evidence-45dc26a0ed1139eebe7837e6": "45dc26a0ed1139eebe7837e654e2121bc206040a6df9dd7a5def414793b5ebd1",
+        "evidence-9c5de9ba71755ad58c862ef8": "9c5de9ba71755ad58c862ef81c64735d4785d2affddd91de911b8baf59f8b322"
+      },
+      "schema_version": "SEMANTIC_EVIDENCE_ENTRY_V1",
+      "semantic_id": "node:product-form",
+      "semantic_pointer": "semantic://000001/1b159296e1d7a0e2"
+    },
+    {
+      "assertion_sha256": "b4497345171f0da2d670badc8a0ae48d37555ee1c3ba3f3b3534738e658d91df",
+      "confidence": 0.91,
+      "created_at": "2026-08-08T01:30:01+09:00",
+      "derivation_reference": "derive://A5-BLUEPRINT/rule-17",
+      "derived_evidence_pointers": ["semantic://000001/1b159296e1d7a0e2"],
+      "entity_type": "NODE",
+      "evidence_class": "INFERRED",
+      "identity_sha256": "638acd2802e0181e6ea3ee707c2e1ce861c377c10ee0e55cba18c4e51972ed3e",
+      "previous_semantic_pointer": "semantic://000001/1b159296e1d7a0e2",
+      "producer_assertion": {"blueprint": "product-page", "has_form": true},
+      "producer_id": "A5-BLUEPRINT",
+      "raw_evidence_pointers": ["evidence-0c9073a255074c4a2fc66e8e"],
+      "raw_evidence_sha256": {"evidence-0c9073a255074c4a2fc66e8e": "0c9073a255074c4a2fc66e8ef29917cd8764581057b87882a3d5f6091698ea89"},
+      "schema_version": "SEMANTIC_EVIDENCE_ENTRY_V1",
+      "semantic_id": "node:product-blueprint",
+      "semantic_pointer": "semantic://000002/638acd2802e0181e"
+    },
+    {
+      "assertion_sha256": "d3394623300e81b978b97e1b04545c2f897b7dfda043e33f698171e31c66d53c",
+      "confidence": 0.0,
+      "created_at": "2026-08-08T01:30:02+09:00",
+      "derivation_reference": "unknown://producer-no-confirmed-causality",
+      "derived_evidence_pointers": ["semantic://000001/1b159296e1d7a0e2"],
+      "entity_type": "EDGE",
+      "evidence_class": "UNKNOWN",
+      "identity_sha256": "bfe032df074f89e6c163054c65c616d20c0eb9664dd2f47966ea647eede806a4",
+      "previous_semantic_pointer": "semantic://000002/638acd2802e0181e",
+      "producer_assertion": {"from": "node:product-form", "relation": "SUBMITS_TO", "to": "network:response"},
+      "producer_id": "A5-BLUEPRINT",
+      "raw_evidence_pointers": ["evidence-2aed123220f249972a566986"],
+      "raw_evidence_sha256": {"evidence-2aed123220f249972a566986": "2aed123220f249972a56698623d7a305a5251464475e1f18427e09b2ced1f79d"},
+      "schema_version": "SEMANTIC_EVIDENCE_ENTRY_V1",
+      "semantic_id": "edge:form-to-response",
+      "semantic_pointer": "semantic://000003/bfe032df074f89e6"
+    }
+  ],
+  "entry_count": 3,
+  "node_count": 2,
+  "raw_artifact_overwrite": false,
+  "schema_version": "SEMANTIC_EVIDENCE_INDEX_V1",
+  "semantic_decision_by_b4": false
+}
