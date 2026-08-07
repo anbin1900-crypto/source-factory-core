@@ -1,0 +1,159 @@
+{
+  "schema_version": "A3_SITE_ANALYZER_WAVE3_LIVE_INTEGRATION_EXECUTION_RECEIPT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment": 5212021138,
+  "executed_at_utc": "2026-08-07T04:53:07.443Z",
+  "executed_at_kst": "2026-08-07T13:53:07.443+09:00",
+  "status": "PASS",
+  "actual_browser": {
+    "engine": "Chromium",
+    "version": "144.0.7559.96",
+    "executable": "/usr/bin/chromium",
+    "headless": true,
+    "cdp_transport": "REAL_WEBSOCKET_REMOTE_DEBUGGING",
+    "browser_restart_count": 1,
+    "browser_session_count": 2
+  },
+  "fixture": {
+    "origin": "http://127.0.0.1:43185",
+    "http_pass": true,
+    "record_count": 10,
+    "environment_policy_initially_blocked_http": true,
+    "isolated_execution_environment_policy_override": {
+      "scope": "/etc/chromium/policies/managed/000_policy_merge.json in disposable execution container only",
+      "change": "temporarily remove URLBlocklist for the live HTTP test",
+      "policy_sha256_before": "3b740260e337305aaef268e6c63af8fa2796057ce46f43df5ae5a3949e085e86",
+      "policy_sha256_after_restore": "3b740260e337305aaef268e6c63af8fa2796057ce46f43df5ae5a3949e085e86",
+      "restored_exact": true,
+      "target_pc_policy_modified": false,
+      "repository_policy_modified": false
+    }
+  },
+  "sessions": [
+    {
+      "label": "session1",
+      "session_id": "wave3-session1-ce2abecf-f9c0-4977-8093-d9d0b0907d61",
+      "browser_process_id": 705,
+      "event_count": 87,
+      "event_sha256": "ac9d763b6075f495e685a610d1d9a367fc2de767e488a04642d1d40f3f424d22",
+      "first_sequence": 1,
+      "last_sequence": 87,
+      "network_request_count": 10,
+      "response_body_count": 10,
+      "dom_snapshot_count": 3,
+      "dynamic_dom_snapshot_count": 1,
+      "main_navigation_count": 2,
+      "child_frame_count": 2,
+      "console_event_count": 5,
+      "a2_capture_projection": {
+        "network": 10,
+        "dom": 3,
+        "frames": 4,
+        "console": 5
+      },
+      "a4_contract_projection": {
+        "event_count": 87,
+        "dom_snapshot_count": 3,
+        "navigation_and_frame_count": 4
+      },
+      "a5_contract_projection": {
+        "cdp_attached": 1,
+        "request": 10,
+        "response": 10,
+        "response_body": 10,
+        "dom_snapshot": 3,
+        "frame_navigated": 4,
+        "projected_event_count": 38,
+        "complete_request_response_body_triplet_count": 10
+      }
+    },
+    {
+      "label": "session2_after_browser_reopen",
+      "session_id": "wave3-session2-2f43cfe2-ae2f-403b-9919-743e88767974",
+      "browser_process_id": 812,
+      "event_count": 87,
+      "event_sha256": "e8e5364783155a1c50bd8442e05b7455a95e53042de4860d79149d946ed0057a",
+      "first_sequence": 89,
+      "last_sequence": 175,
+      "network_request_count": 10,
+      "response_body_count": 10,
+      "dom_snapshot_count": 3,
+      "dynamic_dom_snapshot_count": 1,
+      "main_navigation_count": 2,
+      "child_frame_count": 2,
+      "console_event_count": 5,
+      "a2_capture_projection": {
+        "network": 10,
+        "dom": 3,
+        "frames": 4,
+        "console": 5
+      },
+      "a4_contract_projection": {
+        "event_count": 87,
+        "dom_snapshot_count": 3,
+        "navigation_and_frame_count": 4
+      },
+      "a5_contract_projection": {
+        "cdp_attached": 1,
+        "request": 10,
+        "response": 10,
+        "response_body": 10,
+        "dom_snapshot": 3,
+        "frame_navigated": 4,
+        "projected_event_count": 38,
+        "complete_request_response_body_triplet_count": 10
+      }
+    }
+  ],
+  "stream": {
+    "event_count": 176,
+    "event_sha256": "ae0156483606c2b00d944c06355a6ac7e48f06d36506508681fe3caabb7d42bd",
+    "first_sequence": 1,
+    "last_sequence": 176,
+    "strict_global_sequence": true,
+    "unique_event_ids": true,
+    "restart_sequence_continuity": true,
+    "session_count": 2
+  },
+  "consumer_delivery": {
+    "consumer_count": 3,
+    "consumer_names": ["A2_RUNTIME_BRIDGE", "A4_LIVE_EVENT_CONSUMER", "A5_LIVE_TRAFFIC_CONSUMER"],
+    "consumer_replacement_count_on_restart": 3,
+    "duplicate_delivery_count": 0,
+    "delivery_count_per_consumer": 176,
+    "unique_delivery_per_consumer": true
+  },
+  "pass_criteria": {
+    "cdp_stream_to_a2_a4_a5": "PASS",
+    "response_body_handoff": "PASS_10_PER_SESSION",
+    "dom_mutation_handoff": "PASS_1_PER_SESSION",
+    "restart_recovery": "PASS",
+    "no_duplicate_listener": "PASS_ZERO_DUPLICATE_DELIVERY",
+    "strict_event_order": "PASS_SEQUENCE_1_TO_176",
+    "http_runtime_execution": "PASS_LOCAL_FIXTURE_ONLY"
+  },
+  "commands": [
+    {
+      "command": "node -c cdp_product_stream_bridge.cjs",
+      "exit_code": 0
+    },
+    {
+      "command": "node -c run_wave3_live_integration.cjs",
+      "exit_code": 0
+    },
+    {
+      "command": "node run_wave3_live_integration.cjs",
+      "exit_code": 0
+    }
+  ],
+  "tested_source": {
+    "bridge_content_sha256": "650cd99393a9557f04ccba1bce22b225ed1c25206d6b00b940164ad0bdc92821",
+    "ephemeral_runner_content_sha256": "59591441bc3ab6cdf6b42160204b430bd79c42ba4f40cca91451420bb2db1583",
+    "raw_execution_receipt_sha256": "a89b486bea9cc78917139076db9df3da5ae2a56dbd8501789d3549da8bdbd04d"
+  },
+  "false_http_pass_count": 0,
+  "raw_secret_value_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
