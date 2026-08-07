@@ -1,0 +1,11 @@
+{
+  "schema_version": "WORKER_PAGE_REGISTRY_V1",
+  "registry_kind": "FIXTURE_ONLY",
+  "entries": [
+    {"worker_id": "A-3", "page_id": "page-a3"},
+    {"worker_id": "A-4", "page_id": "page-a4"},
+    {"worker_id": "B-5", "page_id": "page-b5"}
+  ],
+  "target_pc_binding": false,
+  "production": false
+}
