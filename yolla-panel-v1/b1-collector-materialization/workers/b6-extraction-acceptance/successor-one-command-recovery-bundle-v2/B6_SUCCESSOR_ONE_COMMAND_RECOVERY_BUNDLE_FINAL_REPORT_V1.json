@@ -1,0 +1,87 @@
+{
+  "schema_version": "B6_SUCCESSOR_ONE_COMMAND_RECOVERY_BUNDLE_FINAL_REPORT_V1",
+  "directive_id": "AI001-TO-B6-SUCCESSOR-ONE-COMMAND-RECOVERY-BUNDLE-V2-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "task_comment": 5217341467,
+  "role": "B-6_ONE_COMMAND_BOOTSTRAP_SELF_CHECK_RECOVERY_PACKAGE_OWNER",
+  "mode": "PARALLEL_PREPARATION",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 42,
+  "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+  "baseline_head": "fd169f98ae905105e876189d1837ccf603eaec2d",
+  "contract_content_head": "3e156e394437b7301ee5f4c039c6ec2271af7d4f",
+  "goal_result": "SUCCESSOR_CAN_LATE_BIND_CYCLE2_WORKER_ASSETS_AND_EXECUTE_ORDERED_BOOTSTRAP_OR_RECOVERY_WITHOUT_CHAT_CONTEXT",
+  "required_work": {
+    "SUCCESSOR_ONE_COMMAND_BUNDLE_MANIFEST_V1": "PASS",
+    "ORDERED_BOOTSTRAP_PHASES": "PASS_PREFLIGHT_RESOLVE_DEP_PLAN_APPLY_PLAN_RUN_PLAN_HEALTH_READBACK_ROLLBACK_REMOVE",
+    "LATE_BINDING_SLOTS": "PASS_11_OF_11",
+    "STEP_CONTRACT_FIELDS": "PASS_COMMAND_ID_EXPECTED_EXIT_CODE_EXPECTED_RECEIPT_ROLLBACK_ACTION",
+    "RECOVERY_MODE": "PASS_A7_RECOVER_WORK_FIRST",
+    "ENDPOINT_AND_CREDENTIAL_POLICY": "PASS_UNKNOWN_REFERENCE_ONLY"
+  },
+  "late_binding_slots": [
+    {"slot_id":"A2_COMMAND_CATALOG","pr":18,"assignment_comment":5217305389,"assignment_observed_head":"ed3457f411f6a83b4351ee8b905c9547aa6e483c","resolve":"LATEST_POINTER_AT_EXECUTION"},
+    {"slot_id":"A3_CDP_RUNNER","pr":22,"assignment_comment":5217308019,"assignment_observed_head":"d78269d9b3b6e7afbbefe3fb3be5ef6eea7fb111","resolve":"LATEST_POINTER_AT_EXECUTION"},
+    {"slot_id":"A4_STRUCTURE_RUNNER","pr":23,"assignment_comment":5217310761,"assignment_observed_head":"07e24d57dd96d2bdb14b8e1fb60150d418609ecf","resolve":"LATEST_POINTER_AT_EXECUTION"},
+    {"slot_id":"A5_DECISION_RUNNER","pr":24,"assignment_comment":5217313682,"assignment_observed_head":"a1316bd6c53eb98c96aa220c442e64eb74b4c798","resolve":"LATEST_POINTER_AT_EXECUTION"},
+    {"slot_id":"A6_ADAPTER_RUNNER","pr":25,"assignment_comment":5217317771,"assignment_observed_head":"71cb958dfb18558abd30f9615c18a26795062067","resolve":"LATEST_POINTER_AT_EXECUTION"},
+    {"slot_id":"A7_RECOVER_WORK","pr":26,"assignment_comment":5217321685,"assignment_observed_head":"24d634ca02ddd94a4c701b60c165c38f4cbdfad9","resolve":"LATEST_POINTER_AT_EXECUTION","recovery_priority":1},
+    {"slot_id":"B1_COMMAND_RESULT_STATE","pr":19,"assignment_comment":5217324901,"terminal_comment":5217454695,"known_terminal_head":"cd153a2418e7896c0effed9e7f10a7fa558cdad5","known_latest_pointer":"yolla-panel-v1/b1-collector-materialization/server-session-job-command-result-contract-v2/LATEST_B1_SERVER_SESSION_JOB_COMMAND_RESULT_CONTRACT_POINTER.json","resolve":"KNOWN_POINTER_THEN_REFRESH_HEAD"},
+    {"slot_id":"B2_UI_REBUILD","pr":38,"assignment_comment":5217328324,"assignment_observed_head":"27e1fbd4e37f0a8fdffbda468a1e42c69e0bab7b","resolve":"LATEST_POINTER_AT_EXECUTION"},
+    {"slot_id":"B3_ACTION_REPLAY","pr":39,"assignment_comment":5217331799,"assignment_observed_head":"813d814c17c323155eca98f29a8b729bcde44826","resolve":"LATEST_POINTER_AT_EXECUTION"},
+    {"slot_id":"B4_ARTIFACT_CHECKPOINT","pr":40,"assignment_comment":5217335150,"assignment_observed_head":"5b7cbf076abcf3fc48868c5f5fe0adea6ccc08a1","resolve":"LATEST_POINTER_AT_EXECUTION"},
+    {"slot_id":"B5_DATASET_CHECKPOINT","pr":41,"assignment_comment":5217338181,"assignment_observed_head":"05993d7ea722a2110e7c40a5e71df568b8c087bc","resolve":"LATEST_POINTER_AT_EXECUTION"}
+  ],
+  "recovery_contract": {
+    "first_action": "A7_RECOVER_WORK",
+    "resolve_order": ["LATEST_AI001_MISSION_POINTER_V1","active_command","latest_result","checkpoint","duplicate_idempotency_check","resume_or_next_action"],
+    "decision_states": ["ALREADY_DONE","SAFE_TO_RESUME","NEEDS_REPAIR","BLOCKED"],
+    "fail_closed": "BLOCKED_IF_A7_POINTER_UNRESOLVED_NO_GUESS"
+  },
+  "package": {
+    "name": "B6_SUCCESSOR_ONE_COMMAND_RECOVERY_BUNDLE_V1.zip",
+    "size_bytes": 13609,
+    "sha256": "57c81a001ecd95341bbe92250b7e633e01a6cb3877cd39599699dfc012ba95f7",
+    "entry_count": 13,
+    "package_member_tree_sha256": "d96cc69e12a8361118778fc0946a01b4e907d0917a6ff30f3608f1a99ef31635",
+    "drive_file_id": "1aNDLNjh81nU0hyolLQv-MF7-gw46wLgd",
+    "drive_raw_byte_readback": "PASS_SIZE_13609_SHA256_EXACT_ZIP_INTEGRITY"
+  },
+  "validation": {
+    "package_parse": "PASS",
+    "fixture_package_assembly": "PASS_11_OF_11_SLOTS",
+    "recovery_mode_smoke": "PASS_A7_RECOVER_WORK_FIRST",
+    "unpacked_package_smoke": "PASS",
+    "minimum_validation": "PASS_FIXTURE_PACKAGE_ASSEMBLY_AND_RECOVERY_MODE_SMOKE_1",
+    "smoke_receipt_sha256": "ed965668dfaf6dea499d56a67d2f5d18b6e05cc5553b490240d70282cd12e3ef",
+    "secret_value_count": 0,
+    "embedded_endpoint_value_count": 0
+  },
+  "authority_blobs": {
+    "successor_one_command_bundle_manifest": "fee66d08b8778e59f140c46240f9ffd02dc6ecf5",
+    "successor_bootstrap_plan": "14f57feee4c3bfa5e665e3263ac0301b3cb1b672",
+    "successor_recovery_mode": "e76b1957050736f04aa5cf33922d546ab4949e35",
+    "self_check_receipt_schema": "acffd7179a7fcab8a18d14e63846f0c0a75caec4",
+    "rollback_remove_plan": "52fbdc281d3945654431e1bde2ffb53338744838",
+    "bundle_test_result": "5826541219ed0d7b7c759e72588ff09f13c6bb13",
+    "drive_artifact_manifest": "af803621d94a0433328f21a6756c00fb5a73c03b"
+  },
+  "boundaries": {
+    "qa_audit_role": false,
+    "worker_source_merged": false,
+    "worker_source_installed": false,
+    "worker_source_modified": false,
+    "tunnel_created_or_modified": false,
+    "pc_agent_called_or_modified": false,
+    "target_pc_execution": false,
+    "actual_server_endpoint_embedded": false,
+    "raw_credential_embedded": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  },
+  "terminal": "B6_SUCCESSOR_ONE_COMMAND_RECOVERY_BUNDLE_READY",
+  "status": "TERMINAL_LATE_BINDING_RECOVERY_BUNDLE_READY",
+  "next_event": "SUCCESSOR_PC_COMMAND_RUNNER_RESOLVE_LATEST_POINTERS_AND_EXECUTE_RECOVER_WORK_FIRST_IF_CONTEXT_REPLACED"
+}
