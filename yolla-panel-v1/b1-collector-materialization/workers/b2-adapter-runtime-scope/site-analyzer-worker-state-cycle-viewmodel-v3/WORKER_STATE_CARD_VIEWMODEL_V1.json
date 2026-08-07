@@ -1,0 +1,36 @@
+{
+  "schema_version": "WORKER_STATE_CARD_VIEWMODEL_V1",
+  "directive_id": "AI001-TO-B2-WORKER-STATE-AND-CYCLE-STATUS-VIEWMODEL-V3-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "worker": "B-2",
+  "worker_pr": 38,
+  "control_plane_only": true,
+  "panel_apply": false,
+  "worker_state_enum": ["IDLE", "DISPATCHED", "GENERATING", "COMPLETE", "BLOCKED", "UNKNOWN"],
+  "task_status_enum": ["IDLE", "DISPATCHED", "GENERATING", "COMPLETE", "COMPLETE_RESULT_PENDING", "BLOCKED", "UNKNOWN"],
+  "browser_sensor_state_enum": ["IDLE", "DISPATCHED", "GENERATING", "COMPLETE", "BLOCKED", "UNKNOWN", "LIKELY_COMPLETE"],
+  "correlation_keys": ["worker_id", "page_id", "command_id"],
+  "required_card_fields": ["worker_id", "worker_state", "browser_state", "task_status", "command_id", "latest_terminal", "latest_result_pointer", "observed_at"],
+  "browser_state": {
+    "fields": ["sensor_state", "page_id", "selector_status", "generation_ui_active", "dom_stable", "observed_at"],
+    "selector_status_enum": ["PRIMARY_MATCH", "FALLBACK_MATCH", "SELECTOR_MISS", "NOT_APPLICABLE"],
+    "rule": "Preserve browser sensor state independently from task status."
+  },
+  "task_status": {
+    "fields": ["state", "command_id", "latest_terminal", "latest_result_pointer", "blocker", "observed_at"],
+    "complete_rule": "COMPLETE requires browser/task COMPLETE evidence plus latest_result_pointer.",
+    "result_pending_rule": "COMPLETE evidence without latest_result_pointer becomes COMPLETE_RESULT_PENDING, never final COMPLETE.",
+    "unknown_rule": "SELECTOR_MISS, UNKNOWN, or unverified LIKELY_COMPLETE cannot render as normal COMPLETE."
+  },
+  "badges": ["COMPLETE_RESULT_PENDING", "SELECTOR_MISS", "LIKELY_COMPLETE_UNVERIFIED", "STALE_EVENT_IGNORED", "DUPLICATE_EVENT_IGNORED"],
+  "truth_policy": {
+    "receipt_required_for_state_transition": true,
+    "likely_complete_is_terminal": false,
+    "selector_miss_complete_inference": false,
+    "unknown_complete_inference": false,
+    "missing_result_pointer_complete_inference": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
