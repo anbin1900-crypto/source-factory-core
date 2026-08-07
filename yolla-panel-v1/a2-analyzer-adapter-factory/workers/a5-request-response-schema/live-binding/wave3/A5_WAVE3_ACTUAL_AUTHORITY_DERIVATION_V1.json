@@ -1,0 +1,77 @@
+{
+  "schema_version": "A5_WAVE3_ACTUAL_AUTHORITY_DERIVATION_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "worker": "A-5",
+  "authority": {
+    "a3_head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+    "a3_stream_sha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165",
+    "a3_handoff_blob": "b7d2789f72263d9678a8f0335b66be284760627e",
+    "a4_head": "4ff280cc4098fada678a82826644b77b6288f274",
+    "a4_result_sha256": "5e1c6e856bddddf4f3678cb9d0cc60191d8913e5854158a54b4762663fc9f4c1",
+    "a4_handoff_blob": "fae1b21205259afd7d44aad8db6bb52f6d570b75"
+  },
+  "coverage": {
+    "advertised_network_requests": 32,
+    "listed_network_requests": 31,
+    "response_body_metadata_count": 18,
+    "endpoint_group_count": 14,
+    "json_endpoint_group_count": 4
+  },
+  "endpoint_groups": [
+    {"id":"LIVE-47B16B96EAF1","path":"/","samples":1,"response":["HTML"],"params":[]},
+    {"id":"LIVE-EE9270B945BA","path":"/api/items","samples":4,"response":["JSON"],"params":[{"name":"page","required":true},{"name":"run","required":false}]},
+    {"id":"LIVE-9B7DEC1F8B62","path":"/assets/app.css","samples":3,"response":["CSS"],"params":[{"name":"run","required":false}]},
+    {"id":"LIVE-580224832A6D","path":"/assets/app.js","samples":1,"response":[],"params":[]},
+    {"id":"LIVE-051E068BD745","path":"/assets/list.js","samples":2,"response":["JAVASCRIPT"],"params":[{"name":"run","required":false}]},
+    {"id":"LIVE-F809979BEF34","path":"/assets/pixel.png","samples":1,"response":[],"params":[]},
+    {"id":"LIVE-C11D8DB1294E","path":"/detail/{id_2}","samples":5,"response":["HTML"],"params":[{"name":"run","required":false}]},
+    {"id":"LIVE-71FF97881040","path":"/download.csv","samples":2,"response":["CSV"],"params":[{"name":"run","required":false}]},
+    {"id":"LIVE-6D9D54C9D87A","path":"/frame","samples":3,"response":["HTML"],"params":[{"name":"from","required":false},{"name":"run","required":false}]},
+    {"id":"LIVE-1D05103AF263","path":"/infinite","samples":2,"response":["JSON"],"params":[{"name":"run","required":false}]},
+    {"id":"LIVE-105B3FF72F14","path":"/list","samples":1,"response":["HTML"],"params":[{"name":"page","required":true}]},
+    {"id":"LIVE-3703A2575946","path":"/load-more","samples":2,"response":["JSON"],"params":[{"name":"run","required":false}]},
+    {"id":"LIVE-5C8E08421AC3","path":"/popup","samples":2,"response":["HTML"],"params":[{"name":"run","required":false}]},
+    {"id":"LIVE-A6F6C1E95E21","path":"/schema-drift","samples":2,"response":["JSON"],"params":[{"name":"mode","required":true},{"name":"run","required":false}]}
+  ],
+  "api_body_metadata": {
+    "LIVE-EE9270B945BA": ["2cf6559b85df6b3d449daf526d0adfaea9790d55009905efa9dd32dcfda4fa17","6b41a55048a573df93965a0fb6e84d6b8d8a18a80bde53b846470f80b5643a84"],
+    "LIVE-1D05103AF263": ["33b54550450f70857ea046882c1e72626ee373182e4a199763fd842228332acb"],
+    "LIVE-3703A2575946": ["2654d280f32449438b1f8aee18a7722022e360305edd0899cf1e1bfab36a0718"],
+    "LIVE-A6F6C1E95E21": ["fb2b24a0df3fc7092eda45649459355101319d78ef84eafdd1bb788bbd6ae50f"]
+  },
+  "dom_schema": {
+    "record_path": "main#records > article.item",
+    "repeated_card_count": 5,
+    "fields": [
+      {"name":"record_id","type":"integer-string","locator":"article.item"},
+      {"name":"name","type":"string","locator":"h2.name"},
+      {"name":"category","type":"string","locator":"span.category"},
+      {"name":"value","type":"integer-string","locator":"span.value"},
+      {"name":"detail_url","type":"string","locator":"a.detail"}
+    ]
+  },
+  "identifier_map": {
+    "primary_key": "record_id",
+    "relation": "LIST_RECORD_TO_DETAIL_ROUTE",
+    "detail_field": "detail_url",
+    "confirmed_detail_routes": ["/detail/1","/detail/2","/detail/3"]
+  },
+  "schema_drift": {
+    "status": "BLOCKED",
+    "observed_modes": ["v2"],
+    "reason": "NO_LIVE_V1_BASELINE_AND_NO_BODY_CONTENT_POINTER"
+  },
+  "mode_decision": {
+    "mode": "HYBRID",
+    "json_endpoint_group_count": 4,
+    "dom_field_count": 5,
+    "repeated_card_count": 5
+  },
+  "blockers": [
+    "A3_NETWORK_REQUEST_STREAM_COUNT_MISMATCH",
+    "A3_RESPONSE_BODY_BYTES_OR_CONTENT_POINTER_NOT_PUBLISHED",
+    "A3_LIVE_SCHEMA_DRIFT_BASELINE_MISSING"
+  ],
+  "output_sha256": "142e79b9a16fe045b665a39200467d09be7497c1edb8e009e2cd636d036100d0",
+  "raw_secret_value_count": 0
+}
