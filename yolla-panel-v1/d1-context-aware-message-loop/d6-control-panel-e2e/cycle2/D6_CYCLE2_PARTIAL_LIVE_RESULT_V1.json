@@ -17,6 +17,14 @@
     "d4": "DIRECTIVE_ONLY_NO_RESULT",
     "d5": "DIRECTIVE_ONLY_NO_RESULT"
   },
+  "final_requery": {
+    "d2_head": "f4a7b60d70fed4feeefb7e9c0278c97456c4950d",
+    "d4_head": "1c17ca6cfb64ed0268a6ab81a08ac29881b4fa1b",
+    "d5_head": "320fc92dd744549848902265ba72cfb0b5325cc6",
+    "cycle2_terminal_comment_count": 0,
+    "head_advance_is_not_result": true,
+    "note": "PR22 and PR40 heads advanced after Cycle2 directive, but no Cycle2 terminal result comment or Cycle2 result artifact was found; no PASS inference was made."
+  },
   "actual_latest_receipt_comments": {
     "d2": 5218844105,
     "d4": 5218697598,
