@@ -1,0 +1,35 @@
+{
+  "schema_version": "A6_WAVE3_INPUT_BINDINGS_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "wave2_parent_head": "b6d2fef97d992f343ebfbc1443787b3c9bbd8f07",
+  "a4": {
+    "head": "efc3ca185dd5c124eb0f10a55018a25d60df55dc",
+    "handoff_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave2/A4_WAVE2_ACTUAL_LIVE_STRUCTURE_HANDOFF_V2.json",
+    "handoff_blob": "fae1b21205259afd7d44aad8db6bb52f6d570b75",
+    "actual_chromium": true,
+    "repeated_region": "main#records > article.item",
+    "pagination": {"type":"NEXT","locator":"#next-page"}
+  },
+  "a5": {
+    "head": "b7619f0ffacbb4937b4842eab2f6cff75504ebf8",
+    "generator_handoff_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/A5_TO_A6_SITE_ANALYZER_GENERATOR_INPUT_HANDOFF_V1.json",
+    "generator_handoff_blob": "769205f0c2444263919a980bc72edfa7611ed4c8",
+    "status": "READY",
+    "mode": "HYBRID",
+    "record_path": "$.items",
+    "primary_key": "listingId",
+    "pagination": "PAGE_NUMBER",
+    "wave2_live_handoff_status": "BLOCKED_WAITING_ACTUAL_LIVE_TRAFFIC_AND_A4_STRUCTURE"
+  },
+  "b3": {
+    "head": "b94ef16dd8a0e73e430c1e0678ce6c6f2e075350",
+    "handoff_path": "yolla-panel-v1/b1-collector-materialization/workers/b3-extractor-retry-resume/action-recorder-codegen-recipe-v1/wave2-runtime-binding-v1/handoffs/B3_TO_A6_LIVE_RECIPE_HANDOFF_V1.json",
+    "handoff_blob": "4201ca631d487397a886ae19697f2aa8024b808d",
+    "recipe_path": "yolla-panel-v1/b1-collector-materialization/workers/b3-extractor-retry-resume/action-recorder-codegen-recipe-v1/wave2-runtime-binding-v1/generated/B3_LIVE_EXTRACTION_RECIPE_V2.json",
+    "recipe_blob": "23a04bf54a66e577bc9d52a4fe0ed8411d53a692",
+    "recorded_action_count": 5,
+    "runtime_bootstrap_mode": "INLINE_DOCUMENT",
+    "actual_chromium_runtime": true,
+    "actual_http_runtime": false
+  }
+}

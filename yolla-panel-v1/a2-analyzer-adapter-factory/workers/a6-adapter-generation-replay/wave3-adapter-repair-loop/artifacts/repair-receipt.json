@@ -1,0 +1,16 @@
+{
+  "schema_version": "A6_WAVE3_REPAIR_LOOP_RECEIPT_V1",
+  "base_url": "http://127.0.0.1:46161",
+  "scenarios": {
+    "none": {"status":"PASS","failure_count":0,"repair_count":0,"digest":"24a9e30af56e9f65be5f4ff6430e7a0a9794989e44fc5edc673f28e7c886211d","repairs":[]},
+    "locator": {"status":"PASS","failure_count":1,"repair_count":1,"digest":"24a9e30af56e9f65be5f4ff6430e7a0a9794989e44fc5edc673f28e7c886211d","repairs":[{"fault":"locator_drift","step":"dom-locator","before":"article.item","after":"article.record-card","scope":"STEP_ONLY"}]},
+    "schema": {"status":"PASS","failure_count":1,"repair_count":1,"digest":"24a9e30af56e9f65be5f4ff6430e7a0a9794989e44fc5edc673f28e7c886211d","repairs":[{"fault":"schema_drift","step":"schema-record-path","before":"$.items","after":"$.records","scope":"CONTRACT_ONLY"}]},
+    "pagination": {"status":"PASS","failure_count":1,"repair_count":1,"digest":"24a9e30af56e9f65be5f4ff6430e7a0a9794989e44fc5edc673f28e7c886211d","repairs":[{"fault":"pagination_failure","step":"pagination-parameter","before":"page","after":"p","scope":"PAGINATION_ONLY"}]},
+    "transient": {"status":"PASS","failure_count":1,"repair_count":1,"digest":"24a9e30af56e9f65be5f4ff6430e7a0a9794989e44fc5edc673f28e7c886211d","repairs":[{"fault":"transient_response","step":"retry-policy","before":"single-attempt-observation","after":"retry-up-to-3","scope":"POLICY_ONLY"}]}
+  },
+  "all_pass": true,
+  "rerun_determinism": {"status":"PASS","run1_sha256":"24a9e30af56e9f65be5f4ff6430e7a0a9794989e44fc5edc673f28e7c886211d","run2_sha256":"24a9e30af56e9f65be5f4ff6430e7a0a9794989e44fc5edc673f28e7c886211d","equal":true},
+  "exact10": true,
+  "fault_injection_count": 4,
+  "partial_repair_faults": ["locator_drift","schema_drift","pagination_failure","transient_response"]
+}
