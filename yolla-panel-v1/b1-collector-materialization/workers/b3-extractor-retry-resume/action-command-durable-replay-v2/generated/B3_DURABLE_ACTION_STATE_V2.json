@@ -1,0 +1,46 @@
+{
+  "schema_version": "B3_DURABLE_ACTION_REPLAY_STATE_V2",
+  "mission_id": "mission-fixture-001",
+  "session_id": "session-fixture-001",
+  "next_sequence_no": 6,
+  "checkpoint": {
+    "last_confirmed_action_id": "act-be36eb048f6db3f37c9c",
+    "last_confirmed_sequence_no": 3,
+    "next_sequence_no": 6,
+    "pending_action_ids": ["act-dfdb8f3fab87369ba735", "act-6a3fda333a06203664d7"],
+    "resume_token": "130ebc95a9b2df6abc77937b54b1d98456a6c32c5de86833bb1a1aad55721ae0"
+  },
+  "command_index": {
+    "cmd-001": ["act-37ab672247c5ae4a9f69"],
+    "cmd-002": ["act-404a7691e56503699b40"],
+    "cmd-003": ["act-be36eb048f6db3f37c9c"],
+    "cmd-004": ["act-dfdb8f3fab87369ba735"],
+    "cmd-005": ["act-6a3fda333a06203664d7"]
+  },
+  "idempotency_index": {
+    "932a55ec2f511ee833329c884fd939293ec1f24f0766a5ec9b8314be52c075db": "act-37ab672247c5ae4a9f69",
+    "fdf7c3be38e68660aebe58ca7bfa0dc6629fb51110a7b05bf96c28062c02b739": "act-404a7691e56503699b40",
+    "4d7a09e956a07f377e6e9ecbb4bc66b4681b8d3dddc20c51fa7c66be983073c4": "act-be36eb048f6db3f37c9c",
+    "44de7a1b4e46055bc4d6aca365939025663ee6862a9f9389d7e2d81962a6ee05": "act-dfdb8f3fab87369ba735",
+    "cc23863b059bf0b43c5eab14b08a0e52fc3beb0b539a0894b4c55b25316a8cba": "act-6a3fda333a06203664d7"
+  },
+  "action_index": {
+    "act-37ab672247c5ae4a9f69": {"command_id":"cmd-001","mission_id":"mission-fixture-001","session_id":"session-fixture-001","page_id":"page-main","action_id":"act-37ab672247c5ae4a9f69","sequence_no":1,"timestamp":"2026-08-07T13:00:00Z","action_type":"input","status":"CONFIRMED","payload":{"selector":"#q","value":"apartment"},"idempotency_key":"932a55ec2f511ee833329c884fd939293ec1f24f0766a5ec9b8314be52c075db"},
+    "act-404a7691e56503699b40": {"command_id":"cmd-002","mission_id":"mission-fixture-001","session_id":"session-fixture-001","page_id":"page-main","action_id":"act-404a7691e56503699b40","sequence_no":2,"timestamp":"2026-08-07T13:00:01Z","action_type":"click","status":"CONFIRMED","payload":{"selector":"#search"},"idempotency_key":"fdf7c3be38e68660aebe58ca7bfa0dc6629fb51110a7b05bf96c28062c02b739"},
+    "act-be36eb048f6db3f37c9c": {"command_id":"cmd-003","mission_id":"mission-fixture-001","session_id":"session-fixture-001","page_id":"page-main","action_id":"act-be36eb048f6db3f37c9c","sequence_no":3,"timestamp":"2026-08-07T13:00:02Z","action_type":"navigation","status":"CONFIRMED","payload":{"url":"https://fixture.local/results"},"idempotency_key":"4d7a09e956a07f377e6e9ecbb4bc66b4681b8d3dddc20c51fa7c66be983073c4"},
+    "act-dfdb8f3fab87369ba735": {"command_id":"cmd-004","mission_id":"mission-fixture-001","session_id":"session-fixture-001","page_id":"page-results","action_id":"act-dfdb8f3fab87369ba735","sequence_no":4,"timestamp":"2026-08-07T13:00:03Z","action_type":"scroll","status":"PENDING","payload":{"x":0,"y":800},"idempotency_key":"44de7a1b4e46055bc4d6aca365939025663ee6862a9f9389d7e2d81962a6ee05"},
+    "act-6a3fda333a06203664d7": {"command_id":"cmd-005","mission_id":"mission-fixture-001","session_id":"session-fixture-001","page_id":"page-results","action_id":"act-6a3fda333a06203664d7","sequence_no":5,"timestamp":"2026-08-07T13:00:04Z","action_type":"wait","status":"PENDING","payload":{"ms":250},"idempotency_key":"cc23863b059bf0b43c5eab14b08a0e52fc3beb0b539a0894b4c55b25316a8cba"}
+  },
+  "evidence_index": {
+    "act-37ab672247c5ae4a9f69": [{"evidence_id":"ev-001","evidence_type":"CDP_DOM","digest":"d1","metadata":{}}],
+    "act-404a7691e56503699b40": [{"evidence_id":"ev-002","evidence_type":"CDP_NETWORK","digest":"d2","metadata":{}}],
+    "act-be36eb048f6db3f37c9c": [{"evidence_id":"ev-003","evidence_type":"CDP_NAVIGATION","digest":"d3","metadata":{}}]
+  },
+  "ledger": [
+    {"command_id":"cmd-001","mission_id":"mission-fixture-001","session_id":"session-fixture-001","page_id":"page-main","action_id":"act-37ab672247c5ae4a9f69","sequence_no":1,"timestamp":"2026-08-07T13:00:00Z","action_type":"input","status":"CONFIRMED","payload":{"selector":"#q","value":"apartment"},"idempotency_key":"932a55ec2f511ee833329c884fd939293ec1f24f0766a5ec9b8314be52c075db","prev_hash":"GENESIS","record_hash":"7d954c198217ae4bec0b107beca8f4dd7f7cceaf89b0bd72f9b281e3250b7df3"},
+    {"command_id":"cmd-002","mission_id":"mission-fixture-001","session_id":"session-fixture-001","page_id":"page-main","action_id":"act-404a7691e56503699b40","sequence_no":2,"timestamp":"2026-08-07T13:00:01Z","action_type":"click","status":"CONFIRMED","payload":{"selector":"#search"},"idempotency_key":"fdf7c3be38e68660aebe58ca7bfa0dc6629fb51110a7b05bf96c28062c02b739","prev_hash":"7d954c198217ae4bec0b107beca8f4dd7f7cceaf89b0bd72f9b281e3250b7df3","record_hash":"e3a7a0598f72c9b10cfc469f00c353aaae2f94ffae55d52b81333d2053a1b7a3"},
+    {"command_id":"cmd-003","mission_id":"mission-fixture-001","session_id":"session-fixture-001","page_id":"page-main","action_id":"act-be36eb048f6db3f37c9c","sequence_no":3,"timestamp":"2026-08-07T13:00:02Z","action_type":"navigation","status":"CONFIRMED","payload":{"url":"https://fixture.local/results"},"idempotency_key":"4d7a09e956a07f377e6e9ecbb4bc66b4681b8d3dddc20c51fa7c66be983073c4","prev_hash":"e3a7a0598f72c9b10cfc469f00c353aaae2f94ffae55d52b81333d2053a1b7a3","record_hash":"9e78949cb00ec566c1c1167cb223d1ca40dca4ae541186845e7b95cab865d109"},
+    {"command_id":"cmd-004","mission_id":"mission-fixture-001","session_id":"session-fixture-001","page_id":"page-results","action_id":"act-dfdb8f3fab87369ba735","sequence_no":4,"timestamp":"2026-08-07T13:00:03Z","action_type":"scroll","status":"PENDING","payload":{"x":0,"y":800},"idempotency_key":"44de7a1b4e46055bc4d6aca365939025663ee6862a9f9389d7e2d81962a6ee05","prev_hash":"9e78949cb00ec566c1c1167cb223d1ca40dca4ae541186845e7b95cab865d109","record_hash":"006daa77da76708977f5534986d0daf5cd146cf7ebb8f5e49af64c3e46cabd01"},
+    {"command_id":"cmd-005","mission_id":"mission-fixture-001","session_id":"session-fixture-001","page_id":"page-results","action_id":"act-6a3fda333a06203664d7","sequence_no":5,"timestamp":"2026-08-07T13:00:04Z","action_type":"wait","status":"PENDING","payload":{"ms":250},"idempotency_key":"cc23863b059bf0b43c5eab14b08a0e52fc3beb0b539a0894b4c55b25316a8cba","prev_hash":"006daa77da76708977f5534986d0daf5cd146cf7ebb8f5e49af64c3e46cabd01","record_hash":"851e181787f73819ae879587e2bb1770fcba709921ce629bc195a5ee84ef3f02"}
+  ]
+}
