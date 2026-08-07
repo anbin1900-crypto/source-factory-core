@@ -1,0 +1,53 @@
+{
+  "schema": "C_MODE_RC5_PACKAGE_TECHNICAL_ACCEPTANCE_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-013",
+  "registry_sequence": 13,
+  "command_id": "C6W-W13-W2-RC5-PACKAGE-TECHNICAL-ACCEPTANCE-GATE",
+  "role": "AUTOMATION-C-W2",
+  "directive_comment": 5196054976,
+  "continue_comment": 5196194041,
+  "result_key": "519605497600",
+  "target_version": "5.10.2.4.2-rc5",
+  "outcome": "PASS",
+  "test": "PASS_45_OF_45",
+  "runtime_adapter_commit": "e23eab909d0f649383e5903f46e48f1bedbe5faf",
+  "test_commit": "bcf2840940149e6a358a199c2f9c3113cc59054f",
+  "export_commit": "064000c3ed1e7602c3072c86b020ffb92e2b5c5f",
+  "negative_fixture": {
+    "source": "AUTOMATION-C-W5 Wave 12 Installer",
+    "result_comment": 5195686133,
+    "installer_commit": "295bb5ae24163a34e9633945cec0db8b66875b72",
+    "reported": true,
+    "technically_accepted": false,
+    "installable_runtime": false,
+    "target_pc_accepted": false,
+    "rejection_count": 8
+  },
+  "implemented_rejections": [
+    "PACKAGE_DIRECTORY_MISSING",
+    "SELF_CONTAINED_PAYLOAD_MISSING",
+    "NETWORK_DEPENDENT_INSTALLER",
+    "ACTIVE_RUNTIME_ROOT_MISMATCH",
+    "FIXED_PROFILE_BINDING_MISSING",
+    "UI_PATH_OR_LOAD_ORDER_MISMATCH",
+    "REQUIRED_COMPONENT_NOT_LOADED_BY_SMOKE",
+    "ROLLBACK_PRESERVATION_NOT_VERIFIED"
+  ],
+  "invariants": {
+    "reported_separate_from_technical_acceptance": true,
+    "worker_pass_cannot_override_gate": true,
+    "result_key_exact_match": true,
+    "pagination_preserved": true,
+    "retry_max": 5,
+    "restart_dedupe_preserved": true,
+    "duplicate_fail_closed": true,
+    "commander_result_comment_output_preserved": true,
+    "manual_early_check_missing_counter_increment": 0
+  },
+  "rc5_positive_candidate_status": "NOT_REQUIRED_TO_COMPLETE_W2_OWNED_GATE",
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

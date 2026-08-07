@@ -1,0 +1,43 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_RESULT_V4",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-003",
+  "command_id": "C6W-W3-W2-LIVE-LEDGER-DIRECTIVE-DISCOVERY",
+  "worker_id": "AUTOMATION-C-W2",
+  "status": "PASS",
+  "terminal": "C6W2_WAVE3_LIVE_LEDGER_DIRECTIVE_DISCOVERY_PASS",
+  "implemented": {
+    "directive_discovery": "automation-c-v1/report_parser/directive_discovery.cjs",
+    "test": "automation-c-v1/tests/test_directive_discovery.cjs",
+    "ledger": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w2/WAVE3_LIVE_ACCEPTANCE_LEDGER_V4.json"
+  },
+  "regression": {
+    "directive_post_id": 5189701057,
+    "false_no_pending_post_id": 5189877834,
+    "older_terminal_post_id": 5189537363,
+    "reproduced": true,
+    "fixed": true
+  },
+  "behavior": {
+    "newer_directive_cannot_be_hidden_by_older_terminal": true,
+    "false_no_pending_rejected": true,
+    "exact_command_id_required": true,
+    "terminal_must_be_newer_than_directive": true,
+    "latest_duplicate_directive_retained": true,
+    "fail_closed": true,
+    "c_result_and_repeat_result_separated": true
+  },
+  "tests": {
+    "command": "node automation-c-v1/tests/test_directive_discovery.cjs",
+    "result": "PASS_9_OF_9",
+    "failure_count": 0
+  },
+  "commits": {
+    "discovery": "988903434ca3cec70c409bfb882224474d296ae5",
+    "test": "c5ad80ab69ae1022bd5a157c6921cfde0c2b580d",
+    "ledger": "fa794cc136e866f907068fe7288e55142b0d12a9"
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

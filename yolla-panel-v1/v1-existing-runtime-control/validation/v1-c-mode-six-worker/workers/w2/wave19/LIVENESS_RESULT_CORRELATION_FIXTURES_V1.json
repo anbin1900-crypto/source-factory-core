@@ -1,0 +1,74 @@
+{
+  "schema_version": "C_MODE_LIVENESS_RESULT_CORRELATION_FIXTURES_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-019",
+  "command_id": "C6W-W19-W2-LIVENESS-RESULT-CORRELATION",
+  "directive_comment": 5200544815,
+  "result_key": "520054481500",
+  "w5_binding_comment": 5200557553,
+  "base_result_commit": "6df7688a72e253ad4806762e685d1683d3da0065",
+  "cases": [
+    {
+      "id": "EXACT_RESULT_KEY_TERMINAL",
+      "inputs": {"exact_terminal": true, "chat_generating": true},
+      "expected_status": "COMPLETED",
+      "precedence": 1
+    },
+    {
+      "id": "CHAT_GENERATING",
+      "inputs": {"exact_terminal": false, "chat_generating": true},
+      "expected_status": "WORKING",
+      "precedence": 2
+    },
+    {
+      "id": "CHAT_SETTLED_NO_TERMINAL",
+      "inputs": {"exact_terminal": false, "chat_generating": false, "idle_minutes": 10},
+      "expected_status": "RESULT_PENDING",
+      "worker_fault": false
+    },
+    {
+      "id": "THIRTY_MIN_NO_REFRESH",
+      "inputs": {"exact_terminal": false, "chat_generating": false, "idle_minutes": 40, "refresh_count": 0},
+      "expected_status": "RESULT_PENDING",
+      "worker_fault": false
+    },
+    {
+      "id": "THIRTY_MIN_AFTER_ONE_REFRESH",
+      "inputs": {"exact_terminal": false, "chat_generating": false, "idle_minutes": 40, "refresh_count": 1},
+      "expected_status": "REVIEW_REQUIRED",
+      "worker_fault": false
+    },
+    {
+      "id": "STALE_WAVE_ONLY",
+      "inputs": {"stale_wave_terminal": true, "exact_terminal": false},
+      "expected_status": "RESULT_PENDING",
+      "stale_rejected": true
+    },
+    {
+      "id": "CURRENT_WAVE_OVER_STALE",
+      "inputs": {"stale_wave_terminal": true, "exact_terminal": true},
+      "expected_status": "COMPLETED",
+      "current_wave_priority": true
+    },
+    {
+      "id": "DUPLICATE_EXACT_TERMINAL",
+      "inputs": {"exact_terminal_count": 2},
+      "expected_status": "REVIEW_REQUIRED",
+      "fail_closed": true
+    },
+    {
+      "id": "GITHUB_MISSING_ONLY",
+      "inputs": {"github_terminal": false, "other_activity_present": true},
+      "expected_fault_attribution": "NEVER_WORKER_FAULT"
+    },
+    {
+      "id": "PAGINATION_RETRY_RESTART",
+      "inputs": {"pages": 2, "transient_failures_before_success": 4, "restart_dedup": true},
+      "expected": {"max_retry": 5, "deduplicated": true}
+    }
+  ],
+  "panel_source_modified": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": "WAVE15_EXACT_BLOB_POSITIVE_GATE_EXPORT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-015",
+  "registry_sequence": 15,
+  "command_id": "C6W-W15-W2-EXACT-BLOB-PACKAGE-POSITIVE-GATE",
+  "worker_id": "AUTOMATION-C-W2",
+  "directive_comment": 5196983918,
+  "report_request_comment": 5197562479,
+  "result_key": "519698391800",
+  "target_version": "5.10.2.4.2-rc6",
+  "authority": {
+    "w1_result_comment": 5196402486,
+    "source_to_target_map_commit": "29be4ed7346a78a849c4a2a55ffd98e176eafdfe",
+    "required_member_count": 17,
+    "immutable_blob_sha_required": true,
+    "exact_source_sha256_and_size_required": true
+  },
+  "implementation": {
+    "path": "automation-c-v1/result_watcher/exact_blob_package_positive_gate.cjs",
+    "commit": "62ed308cc5ff0d730191a896c34c5c49c2092017"
+  },
+  "test": {
+    "path": "automation-c-v1/tests/test_exact_blob_package_positive_gate.cjs",
+    "commit": "0cf2e78579fc9fc91ba1d7be6a17d6ad2b7b1f67",
+    "result": "PASS_47_OF_47"
+  },
+  "required_checks": {
+    "IMMUTABLE_BLOB_SHA_17_OF_17": true,
+    "EXACT_SOURCE_SHA256_AND_SIZE_17_OF_17": true,
+    "BASELINE_RESOLVER_VALIDATED": true,
+    "BASELINE_RECURSIVE_CLONE": true,
+    "TARGET_TIME_LAUNCHER_BACKUP": true,
+    "RUNTIME_AND_RENDERER_HOOKS_COMPLETE": true,
+    "FULL_COMPONENT_SMOKE": true,
+    "ROLLBACK_AND_PRESERVATION_READBACK": true,
+    "STATE_SEPARATION": "REPORTED != TECHNICALLY_ACCEPTED != TARGET_PC_ACCEPTED"
+  },
+  "rc5_negative_gate": {
+    "input_result_comment": 5196292106,
+    "input_package_commit": "ef8481aa504c8e622a4df4087951a3a639de32b0",
+    "reported": true,
+    "reported_outcome": "PASS",
+    "technically_accepted": false,
+    "installable_runtime": false,
+    "effective_outcome": "BLOCKED",
+    "preserved": true
+  },
+  "rc6_positive_gate": {
+    "w5_directive_comment": 5196992640,
+    "w5_result_key": "519699264000",
+    "w5_report_request_comment": 5197569051,
+    "w5_result_comment": null,
+    "candidate_status": "WAITING_W5_RC6_RESULT",
+    "positive_fixture": "PASS_TARGET_PC_PENDING",
+    "technical_acceptance_requires_all_checks": true,
+    "target_pc_acceptance_requires_live_receipt": true
+  },
+  "regression": {
+    "result_key": "PRESERVED",
+    "pagination": "PRESERVED",
+    "retry_max": 5,
+    "restart": "PRESERVED",
+    "duplicate": "FAIL_CLOSED",
+    "commander_result_comment_output": "PRESERVED"
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

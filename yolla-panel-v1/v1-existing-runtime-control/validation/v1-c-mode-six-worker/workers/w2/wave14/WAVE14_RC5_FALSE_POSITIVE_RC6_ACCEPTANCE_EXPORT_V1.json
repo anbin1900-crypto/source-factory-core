@@ -1,0 +1,92 @@
+{
+  "schema_version": "C_MODE_RC5_FALSE_POSITIVE_RC6_ACCEPTANCE_EXPORT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-014",
+  "registry_sequence": 14,
+  "command_id": "C6W-W14-W2-RC5-FALSE-POSITIVE-RC6-ACCEPTANCE-GATE",
+  "role": "AUTOMATION-C-W2",
+  "directive_comment": 5196501537,
+  "result_key": "519650153700",
+  "target_version": "5.10.2.4.2-rc6",
+  "runtime_adapter": {
+    "path": "automation-c-v1/result_watcher/rc6_package_acceptance_adapter.cjs",
+    "commit": "8fa42e205ad0f05a9fe3a4cc0d3b93478797ebd5"
+  },
+  "test": {
+    "path": "automation-c-v1/tests/test_rc6_package_acceptance_adapter.cjs",
+    "commit": "cdbee7423936536f31c9374655cf3af77325122b",
+    "result": "PASS_43_OF_43"
+  },
+  "authority": {
+    "w1_result_comment": 5196402486,
+    "w1_result_commit": "c40901d086faca60ad16cac3e95cabcdbe2babb5",
+    "source_to_target_map_commit": "29be4ed7346a78a849c4a2a55ffd98e176eafdfe",
+    "required_member_count": 17,
+    "release_root": "E:\\SOURCE FACTORY\\.yolla\\releases\\5.10.2.4.2-rc6",
+    "state_root": "E:\\SOURCE FACTORY\\.yolla\\state",
+    "profile_root": "E:\\SOURCE FACTORY\\.yolla\\profiles",
+    "partition_c": "persist:yolla-v510241-c",
+    "partition_repeat": "persist:yolla-v510241-repeat",
+    "startup_entrypoint": "E:\\SOURCE FACTORY\\RUN_YOLLA_WORKSPACE_V5_2.bat"
+  },
+  "rc5_negative_fixture": {
+    "result_comment": 5196292106,
+    "reported_outcome": "PASS",
+    "result_commit": "e9d690ea71092924aec58ed32eeb47c1fa6f7d1c",
+    "package_commit": "ef8481aa504c8e622a4df4087951a3a639de32b0",
+    "package_blob_sha1": "c3dbc640dccaa2b55ef824896fc6a59a9da2af52",
+    "package_size": 7225,
+    "package_sha256": "f254d2220a41679d78b8717dafaed4e0fb26217813cd9b44cca43b622fdcf126",
+    "embedded_member_count": 12,
+    "authoritative_member_count": 17,
+    "reported": true,
+    "technically_accepted": false,
+    "installable_runtime": false,
+    "target_pc_accepted": false,
+    "effective_outcome": "BLOCKED",
+    "pass_does_not_override_technical_gate": true,
+    "rejection_flags": {
+      "STUB_PAYLOAD_SUBSTITUTION": true,
+      "EXACT_SOURCE_HASH_MISMATCH": true,
+      "REQUIRED_MEMBER_COUNT_MISMATCH": true,
+      "BASE_RELEASE_NOT_PRESENT_OR_CLONED": true,
+      "RUNTIME_LOAD_HOOK_MISSING": true,
+      "AUTHORITATIVE_PATH_MISMATCH": true,
+      "PRESERVATION_PATH_MISMATCH": true,
+      "LAUNCHER_TARGET_NOT_EXECUTABLE": true,
+      "TARGET_VERSION_MISMATCH": true
+    },
+    "findings": [
+      "The rc5 installer embeds 12 small substitute implementations instead of the 17 exact authoritative source members.",
+      "Common member SHA-256 values and sizes do not match the W1 source-to-target authority map.",
+      "Registry authority, repeat release adapter, C/repeat namespace adapter, actual candidate bridge and startup wrapper members are absent.",
+      "The launcher replacement writes only an environment variable and does not invoke an executable runtime entrypoint.",
+      "UI member names and release/preservation paths do not match the authoritative deployment layout.",
+      "The package identifies itself as rc5 while this gate requires rc6."
+    ]
+  },
+  "rc6_positive_gate": {
+    "required_member_count": 17,
+    "exact_source_hash_match_required": true,
+    "stub_substitution_allowed": false,
+    "base_release_present_or_cloned_required": true,
+    "runtime_load_hooks_required": true,
+    "authoritative_paths_required": true,
+    "preservation_paths_required": true,
+    "executable_launcher_target_required": true,
+    "target_version": "5.10.2.4.2-rc6",
+    "technical_acceptance_when_all_pass": true,
+    "target_pc_pending_until_live_receipt": true
+  },
+  "regression_contracts": {
+    "result_key_exact_match": true,
+    "pagination": true,
+    "retry_max": 5,
+    "restart_state": true,
+    "duplicate_result": "FAIL_CLOSED",
+    "commander_result_comment_output": true
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

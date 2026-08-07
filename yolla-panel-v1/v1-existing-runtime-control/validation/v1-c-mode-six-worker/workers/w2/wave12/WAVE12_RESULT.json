@@ -1,0 +1,61 @@
+{
+  "schema": "V1_C_MODE_6_WORKER_WAVE12_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-012",
+  "registry_sequence": 12,
+  "command_id": "C6W-W12-W2-RUNTIME-TECHNICAL-ACCEPTANCE-GATE",
+  "worker_id": "AUTOMATION-C-W2",
+  "directive_comment": 5195170358,
+  "report_request_comment": 5195594681,
+  "result_key": "519517035800",
+  "outcome": "PASS",
+  "status": "END",
+  "test": "PASS_24_OF_24",
+  "adapter_commit": "eee673ea0e3b01a9760eae78c1fb1bff92750f64",
+  "test_commit": "8d53bc6867ffb2d58e35c3047e1f94114309a051",
+  "export_commit": "2bbfbf3ee7e869fe5b8849e6b87868f1b29bc952",
+  "negative_fixture": {
+    "source": "W5 Wave 10 2652-byte BAT",
+    "reported": true,
+    "reported_outcome": "PASS",
+    "technical_state": "METADATA_ONLY_REJECTED",
+    "installable_runtime": false,
+    "effective_outcome": "BLOCKED"
+  },
+  "positive_partial_fixture": {
+    "source": "W3 Wave 12 UI Payload",
+    "result_comment": 5195394714,
+    "result_commit": "40023163e8faf0f918e1fa55d1dae4741a3bb7e7",
+    "executable_source_present": true,
+    "install_action_present": false,
+    "smoke_and_rollback_present": true,
+    "technical_state": "INSTALL_ACTION_MISSING",
+    "installable_runtime": false,
+    "target_pc_pending": true
+  },
+  "acceptance_contract": {
+    "REPORTED": "Result comment with exact RESULT_KEY, ROLE, PR and post-order match",
+    "TECHNICALLY_ACCEPTED": "Installable runtime content gate passed",
+    "METADATA_ONLY_REJECTED": "Byte exists but payload consists only of metadata/result/report JSON",
+    "EXECUTABLE_SOURCE_MISSING": "No executable runtime source member",
+    "INSTALL_ACTION_MISSING": "No executable installation action",
+    "SMOKE_OR_ROLLBACK_MISSING": "Smoke or rollback action absent",
+    "INSTALLABLE_RUNTIME": "Executable source, install action, smoke and rollback all present",
+    "TARGET_PC_PENDING": "Installable runtime exists but target-PC receipt is absent",
+    "TARGET_PC_ACCEPTED": "Valid target-PC receipt exists"
+  },
+  "regression": {
+    "result_key": "PASS",
+    "pagination": "PASS",
+    "retry_max_5": "PASS",
+    "restart": "PASS",
+    "duplicate_fail_closed": "PASS",
+    "commander_result_comment_output": "PASS",
+    "worker_pass_cannot_override_technical_gate": "PASS"
+  },
+  "w5_final_rc4_result": "PENDING_AT_EXECUTION_TIME",
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,118 @@
+{
+  "schema_version": "C_MODE_RC8_ACTUAL_ARTIFACT_GATE_V2_EXPORT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-017",
+  "registry_sequence": 17,
+  "command_id": "C6W-W17-W2-RC8-ACTUAL-ARTIFACT-GATE-V2",
+  "role": "AUTOMATION-C-W2",
+  "directive_comment": 5198509366,
+  "result_key": "519850936600",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc8",
+  "input_rc7": {
+    "result_comment": 5198366530,
+    "reported_outcome": "PASS",
+    "result_commit": "6862d0fbbd82d17f708330aa1f71cd49565ecad4",
+    "artifact_initial_commit": "4cd923437d4671b720c106fb857742ac50e99cd0",
+    "artifact_head": "854c3d928e17a30a124b2aab294ff5a9d781a252",
+    "tree_sha": "c57436e030e0bba85b54547ea2d572418feddcd1",
+    "artifact_branch": "worker/automation-c-w5-wave16-rc7-bundle-v1"
+  },
+  "rc7_actual_byte_evidence": {
+    "resolver": {
+      "path": "YOLLA_C_MODE_5.10.2.4.2-rc7/tools/target_pc_runtime_locator.cjs",
+      "blob_sha1": "ea14fd39e66bd52a9e2e3db5e3a00885aa1e8dc3",
+      "size_bytes": 2677,
+      "expected_w1_bundle_hash_comparison": false
+    },
+    "ui_hook": {
+      "path": "YOLLA_C_MODE_5.10.2.4.2-rc7/tools/apply_w3_rc7_ui_overlay.cjs",
+      "blob_sha1": "077e4c2a892d3188e4c93b12fcf0d162e9246be8",
+      "size_bytes": 2474,
+      "expected_w3_bundle_hash_comparison": false
+    },
+    "ui_rollback": {
+      "path": "YOLLA_C_MODE_5.10.2.4.2-rc7/tools/rollback_w3_rc7_ui_overlay.cjs",
+      "blob_sha1": "3b341821a41ebbdebf1b5e271612e258dd978623",
+      "size_bytes": 990,
+      "expected_w3_rollback_hash_comparison": false
+    },
+    "bundle_verifier": {
+      "path": "YOLLA_C_MODE_5.10.2.4.2-rc7/VERIFY_BUNDLE.ps1",
+      "blob_sha1": "07ddb825f4b343b0ba394d4387ee241fe085cef8",
+      "size_bytes": 1032,
+      "behavior": "GENERATES_RUNTIME_MEMBER_MANIFEST_FROM_CURRENT_TREE_WITHOUT_EXPECTED_MANIFEST_COMPARISON"
+    },
+    "smoke": {
+      "path": "YOLLA_C_MODE_5.10.2.4.2-rc7/tests/full_component_smoke.cjs",
+      "blob_sha1": "87852c14246c81898f0435264119596b6edb288b",
+      "size_bytes": 2887,
+      "behavioral_components_executed": ["C_RUNTIME_START_RESTORE", "BACKGROUND_DISPATCH"],
+      "required_components_not_behaviorally_executed": ["POINTER", "REGISTRY", "RESULT_WATCHER", "REPEAT_RUNTIME", "RELEASE_ADAPTER", "NAMESPACE_ADAPTER", "CANDIDATE_BRIDGE", "WORK_CONTROL_LOG", "UI_TRUTH", "LAUNCHER", "ROLLBACK"]
+    },
+    "installer": {
+      "path": "YOLLA_C_MODE_5.10.2.4.2-rc7/Install-Yolla-C-Mode-5.10.2.4.2-rc7.ps1",
+      "blob_sha1": "2bf62df5adb1ffba7da7256c095529348ddd724c",
+      "size_bytes": 6536,
+      "observed_state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2",
+      "observed_profile_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+      "observed_partition_c": "persist:sf4-safe-panel-worker-1",
+      "observed_partition_repeat": "persist:yolla-analysis-browser-v1"
+    },
+    "target_pc_runner": {
+      "path": "YOLLA_C_MODE_5.10.2.4.2-rc7/TARGET_PC_ACCEPT_RC7.bat",
+      "blob_sha1": "561b9bcef9db9df9dc83fc602ff783e48fa2fca2",
+      "size_bytes": 490,
+      "prints_target_pc_pass_from_shallow_install_receipt": true
+    },
+    "archive_authority": {
+      "advertised_format": "GITHUB_BRANCH_ARCHIVE_ZIP_SINGLE_DOWNLOAD",
+      "authority_type": "MUTABLE_BRANCH",
+      "immutable_release_asset_or_commit_archive_authority": false
+    }
+  },
+  "expected_preservation_authority": {
+    "state_root": "E:\\SOURCE FACTORY\\.yolla\\state",
+    "profile_root": "E:\\SOURCE FACTORY\\.yolla\\profiles",
+    "partition_c": "persist:yolla-v510241-c",
+    "partition_repeat": "persist:yolla-v510241-repeat",
+    "work_control_path": "E:\\SOURCE FACTORY\\.yolla\\state\\work-control.jsonl",
+    "dispatch_receipt_path": "E:\\SOURCE FACTORY\\.yolla\\state\\dispatch-receipts"
+  },
+  "gate_result": {
+    "REPORTED": true,
+    "REPORTED_OUTCOME": "PASS",
+    "OFFLINE_ARTIFACT_ACCEPTED": false,
+    "INSTALLABLE_RUNTIME": false,
+    "TARGET_PC_PENDING": false,
+    "TARGET_PC_ACCEPTED": false,
+    "EFFECTIVE_OUTCOME": "BLOCKED",
+    "PASS_DOES_NOT_OVERRIDE_TECHNICAL_GATE": true,
+    "rejections": {
+      "SIMPLIFIED_RESOLVER_SUBSTITUTION": true,
+      "SIMPLIFIED_UI_HOOK_OR_ROLLBACK_SUBSTITUTION": true,
+      "SELF_GENERATED_MANIFEST_WITHOUT_EXPECTED_MANIFEST_COMPARISON": true,
+      "SHALLOW_COMPONENT_SMOKE": true,
+      "WRONG_PRESERVATION_PATHS": true,
+      "PREMATURE_TARGET_PC_PASS": true,
+      "MUTABLE_BRANCH_ONLY_ARCHIVE_AUTHORITY": true
+    }
+  },
+  "commander_result_comment": "AUTOMATION-C-W5|RESULT_COMMENT=5198366530|REPORTED=true|OFFLINE_ARTIFACT_ACCEPTED=false|INSTALLABLE_RUNTIME=false|TARGET_PC_PENDING=false|TARGET_PC_ACCEPTED=false|EFFECTIVE_OUTCOME=BLOCKED|REJECTIONS=SIMPLIFIED_RESOLVER_SUBSTITUTION,SIMPLIFIED_UI_HOOK_OR_ROLLBACK_SUBSTITUTION,SELF_GENERATED_MANIFEST_WITHOUT_EXPECTED_MANIFEST_COMPARISON,SHALLOW_COMPONENT_SMOKE,WRONG_PRESERVATION_PATHS,PREMATURE_TARGET_PC_PASS,MUTABLE_BRANCH_ONLY_ARCHIVE_AUTHORITY",
+  "rc8_status": "AWAITING_ACTUAL_RC8_RESULT_AND_IMMUTABLE_BYTE_AUTHORITY",
+  "rc8_directive_comment": 5198514990,
+  "rc8_result_key": "519851499000",
+  "regression": {
+    "test": "PASS_41_OF_41",
+    "result_key": "PASS",
+    "pagination": "PASS",
+    "retry_5": "PASS",
+    "restart": "PASS",
+    "duplicate_fail_closed": "PASS",
+    "commander_builder": "PASS"
+  },
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

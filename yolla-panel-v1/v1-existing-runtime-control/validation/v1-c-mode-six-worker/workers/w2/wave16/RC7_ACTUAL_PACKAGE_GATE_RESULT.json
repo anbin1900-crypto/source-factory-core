@@ -1,0 +1,79 @@
+{
+  "schema_version": "RC7_ACTUAL_PACKAGE_GATE_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-016",
+  "registry_sequence": 16,
+  "command_id": "C6W-W16-W2-RC7-ACTUAL-PACKAGE-TECHNICAL-GATE",
+  "role": "AUTOMATION-C-W2",
+  "directive_comment": 5198279537,
+  "result_key": "519827953700",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc7",
+  "mode": "RC7_CORRECTION_AND_OFFLINE_ACCEPTANCE",
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "inputs": {
+    "w2_gate_result_commit": "6d0d32ce730c1588691e41add754f1f520481b54",
+    "w5_rc6_result_comment": 5197743827,
+    "w5_rc6_result_commit": "414be4873edb9c7246e616e2d6097002b7ad93f1",
+    "w5_rc6_payload_commit": "60a37e73b441c19b66d3eb840a8dbc381215dd63",
+    "w5_rc6_installer_commit": "ceb5ae6591c223be7a8b093d55c869170cb505f2"
+  },
+  "rc6_negative_fixture": {
+    "REPORTED": true,
+    "REPORTED_OUTCOME": "PASS",
+    "TECHNICALLY_ACCEPTED": false,
+    "INSTALLABLE_RUNTIME": false,
+    "TARGET_PC_PENDING": false,
+    "TARGET_PC_ACCEPTED": false,
+    "EFFECTIVE_OUTCOME": "BLOCKED",
+    "PASS_DOES_NOT_OVERRIDE_TECHNICAL_GATE": true,
+    "rejection_flags": {
+      "W1_RESOLVER_NOT_BOUND": true,
+      "W3_MAIN_JS_TRUTH_BRIDGE_HOOK_NOT_BOUND": true,
+      "FULL_COMPONENT_SMOKE_MISSING": true,
+      "TEMPORARY_PROFILE_USED": true,
+      "SPLIT_INSTALLER_PAYLOAD_NOT_SINGLE_DOWNLOAD": true,
+      "BASELINE_TREE_READBACK_MISSING": true,
+      "ROLLBACK_PRESERVATION_READBACK_MISSING": true
+    },
+    "evidence": {
+      "installer_uses_sibling_payload_directory": "rc6-payload",
+      "smoke_entrypoint": "automation-c-v1/tests/rc4_isolated_smoke.cjs",
+      "background_dispatch_contains_temporary_profile_true": true,
+      "w1_resolver_invocation_found": false,
+      "main_js_truth_bridge_hook_found": false,
+      "baseline_tree_pre_post_hash_found": false,
+      "rollback_preservation_post_readback_found": false
+    }
+  },
+  "rc7_recheck": {
+    "w5_wave16_directive_comment": 5198285668,
+    "result_state": "NOT_REPORTED_AT_EVALUATION_TIME",
+    "actual_byte_evaluation": "PENDING_W5_RC7_TERMINAL_AND_PACKAGE",
+    "positive_gate_requirements": {
+      "w1_resolver_bound": true,
+      "w3_main_js_truth_bridge_hook_bound": true,
+      "full_component_smoke": true,
+      "temporary_profile_used": false,
+      "single_download_artifact": true,
+      "baseline_tree_readback": true,
+      "rollback_preservation_readback": true,
+      "target_pc_receipt_required_for_target_pc_accepted": true
+    }
+  },
+  "commander_result_comment": "AUTOMATION-C-W5|RESULT_COMMENT=5197743827|REPORTED=true|TECHNICALLY_ACCEPTED=false|INSTALLABLE_RUNTIME=false|TARGET_PC_PENDING=false|TARGET_PC_ACCEPTED=false|EFFECTIVE_OUTCOME=BLOCKED|REJECTIONS=W1_RESOLVER_NOT_BOUND,W3_MAIN_JS_TRUTH_BRIDGE_HOOK_NOT_BOUND,FULL_COMPONENT_SMOKE_MISSING,TEMPORARY_PROFILE_USED,SPLIT_INSTALLER_PAYLOAD_NOT_SINGLE_DOWNLOAD,BASELINE_TREE_READBACK_MISSING,ROLLBACK_PRESERVATION_READBACK_MISSING",
+  "regression": {
+    "result_key": "PASS",
+    "pagination": "PASS",
+    "retry_max": 5,
+    "restart": "PASS",
+    "duplicate_fail_closed": "PASS",
+    "commander_builder": "PASS",
+    "test_result": "PASS_48_OF_48"
+  },
+  "target_pc_install_authorized": false,
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

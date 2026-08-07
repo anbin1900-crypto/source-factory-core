@@ -1,0 +1,58 @@
+{
+  "schema_version": "RC8_PREINSTALL_AUTHORIZATION_AGGREGATOR_RECEIPT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-018",
+  "registry_sequence": 18,
+  "command_id": "C6W-W18-W2-RC8-PREINSTALL-AUTHORIZATION-AGGREGATOR",
+  "role": "AUTOMATION-C-W2",
+  "directive_comment": 5198898401,
+  "report_request_comment": 5199078465,
+  "result_key": "519889840100",
+  "outcome": "PASS",
+  "test": "PASS_39_OF_39",
+  "implementation_commit": "dd1a0820a548bd6de45fd3b06db349d966b452af",
+  "test_commit": "25ceeb6148cfe1b2315fa7d310cf871f77c30653",
+  "test_matrix_commit": "026a629b0c7393bbd5a8640ebbbb0c4909eb4890",
+  "commander_output_commit": "7b7df4a93e166ea32f9d9148956eb2dd4aa0f8f8",
+  "inputs": [
+    {"role":"AUTOMATION-C-W1","result_key":"519850757900","result_comment":5198777211,"outcome":"PASS","result_commit":"f55870053245177430c20a3f9ba0029f955df8f0","expected_head":"33f04ce798592d1338e86e554d495d95134e7052","report_state":"REPORTED","scoped_accepted":true},
+    {"role":"AUTOMATION-C-W3","result_key":"519851160600","result_comment":5198723961,"outcome":"PASS","result_commit":"7af7a51ee18e6b5ae6f64942cf02392f596e4678","expected_head":"f023ce7ab94d5522eaf2c790a172478ea268e184","report_state":"REPORTED","scoped_accepted":true},
+    {"role":"AUTOMATION-C-W4","result_key":"519851310600","result_comment":5198603151,"outcome":"PASS","result_commit":"c068f213af2cf7cf0636ad23219cc64c157c247f","expected_head":"c068f213af2cf7cf0636ad23219cc64c157c247f","report_state":"REPORTED","scoped_accepted":true},
+    {"role":"AUTOMATION-C-W6","result_key":"519851680000","result_comment":5198605692,"outcome":"PASS","result_commit":"e461d6be7bca1de7682649a2c25657c976120745","expected_head":"e461d6be7bca1de7682649a2c25657c976120745","report_state":"REPORTED","scoped_accepted":true},
+    {"role":"AUTOMATION-C-W5","result_key":"519851499000","result_comment":null,"outcome":null,"result_commit":null,"report_state":"MISSING","carryover_to_wave18":true,"report_request_comments":[5198893788,5199082307],"scoped_accepted":false}
+  ],
+  "current_decision": {
+    "reported_count": 4,
+    "expected_report_count": 5,
+    "REPORTED": false,
+    "SCOPED_ACCEPTED": false,
+    "OFFLINE_ARTIFACT_ACCEPTED": false,
+    "INSTALLABLE_RUNTIME": false,
+    "TARGET_PC_AUTHORIZED": false,
+    "TARGET_PC_ACCEPTED": false,
+    "FAIL_CLOSED": true,
+    "reasons": ["MISSING_W5"]
+  },
+  "fail_closed_rules": {
+    "missing_w5": true,
+    "worker_pass_override": true,
+    "wrong_manifest": true,
+    "stale_head": true,
+    "duplicate_result": true,
+    "target_pc_authorization_before_all_offline_gates": true,
+    "target_pc_receipt_before_authorization": true
+  },
+  "runtime_contract": {
+    "exact_result_key_correlation": true,
+    "pagination": true,
+    "max_retry": 5,
+    "restart_state_and_comment_dedup": true,
+    "w5_carryover_re_evaluation": true,
+    "commander_builder": true
+  },
+  "target_pc_install_authorized": false,
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

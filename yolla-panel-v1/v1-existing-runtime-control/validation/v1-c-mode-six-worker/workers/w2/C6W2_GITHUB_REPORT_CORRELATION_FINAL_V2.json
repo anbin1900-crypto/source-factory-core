@@ -1,0 +1,45 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_RESULT_V2",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "worker_id": "AUTOMATION-C-W2",
+  "gate": "G2_GITHUB_REPORT_CORRELATION",
+  "terminal": "C6W2_GITHUB_REPORT_CORRELATION_PASS_OR_EXACT_BLOCKER",
+  "status": "PASS",
+  "implemented": {
+    "panel_parser": "automation-c-v1/report_parser/index.cjs",
+    "github_client": "automation-c-v1/github_comment_client.cjs",
+    "tests": "automation-c-v1/tests/test_github_report_correlation.cjs"
+  },
+  "correlation_contract": {
+    "required_fields": ["ROLE", "WAVE", "COMMAND_ID", "STATUS"],
+    "accepted_statuses": ["REPORTED", "END"],
+    "stale_report_rejected": true,
+    "duplicate_role_counted_once": true,
+    "latest_valid_report_wins": true,
+    "post_id_capture": true,
+    "malformed_panel_fail_closed": true,
+    "pagination": true,
+    "temporary_error_retry_attempts": 5,
+    "missing_report_is_separate_from_working_state": true
+  },
+  "tests": {
+    "command": "node automation-c-v1/tests/test_github_report_correlation.cjs",
+    "result": "PASS_12_OF_12",
+    "failure_count": 0,
+    "environment": "offline Node.js regression execution"
+  },
+  "commits": {
+    "parser": "a5fa3ed2369fecad0b8ce2a3c988d2e34006c95e",
+    "client": "e01ce86e4b56b4bc7950ce2223dbfe645691e0bf",
+    "tests": "20c146f4f637efadf037379146f237b583838d78"
+  },
+  "live_snapshot": {
+    "observed_at": "2026-08-05T17:39:00+09:00",
+    "worker_prs": [59, 60, 61, 62, 63, 64],
+    "w1_terminal_observed": false,
+    "note": "Other worker terminal availability is independently evolving; this result validates deterministic calculation rather than claiming six-worker closure."
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

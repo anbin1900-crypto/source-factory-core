@@ -1,0 +1,44 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_WAVE19_RESULT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-019",
+  "registry_sequence": 19,
+  "command_id": "C6W-W19-W2-LIVENESS-RESULT-CORRELATION",
+  "role": "AUTOMATION-C-W2",
+  "directive_comment": 5200544815,
+  "result_key": "520054481500",
+  "base_result_commit": "6df7688a72e253ad4806762e685d1683d3da0065",
+  "outcome": "PASS",
+  "test_status": "PASS_36_OF_36",
+  "implementation_commit": "8a56f35c3331efe1e7ad8268cfdab2f70d06cd30",
+  "test_commit": "6f333b4327fe5ac3cf36a52ec954fce115ac5c91",
+  "fixture_commit": "9860fbe853522b4c07fc6ce69badc4993bc12ca3",
+  "receipt_commit": "23f3b989cbc152839103089f8444129bcf1c401c",
+  "required_statuses": {
+    "exact_result_key_terminal": "COMPLETED",
+    "chat_generating": "WORKING",
+    "chat_settled_no_terminal": "RESULT_PENDING",
+    "thirty_min_no_activity_after_one_refresh": "REVIEW_REQUIRED",
+    "no_github_result_only": "NEVER_WORKER_FAULT",
+    "stale_wave_result": "REJECT"
+  },
+  "regression": {
+    "pagination": "PASS",
+    "retry_5": "PASS",
+    "restart_deduplication": "PASS",
+    "exact_result_key": "PASS",
+    "current_wave_priority": "PASS",
+    "historical_result_separation": "PASS",
+    "duplicate_exact_result_fail_closed": "PASS"
+  },
+  "w5_handoff": {
+    "binding_comment": 5200557553,
+    "module": "automation-c-v1/result_watcher/liveness_result_correlation.cjs",
+    "serial_dependency_created": false,
+    "panel_source_modified": false
+  },
+  "target_pc_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

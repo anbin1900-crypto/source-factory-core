@@ -1,0 +1,23 @@
+{
+  "schema_version": "C6W2_WAVE1_TERMINAL_COMPATIBILITY_MATRIX_V3",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-002",
+  "command_id": "C6W-W2-W2-DUAL-REPORT-SCHEMA",
+  "fixtures": [
+    {"pr":59,"comment_id":5189564576,"role":"AUTOMATION-C-W1","legacy_fields":["ROLE","WAVE","STATUS"],"missing":["COMMAND_ID"],"wave2_accept":false},
+    {"pr":60,"comment_id":5189565149,"role":"AUTOMATION-C-W2","legacy_fields":["ROLE","WAVE","COMMAND_ID","STATUS"],"wave2_accept":false,"reason":"OLD_WAVE_AND_OLD_COMMAND"},
+    {"pr":61,"comment_id":5189564226,"role":"AUTOMATION-C-W3","legacy_fields":["ROLE","STATUS"],"missing":["WAVE","COMMAND_ID"],"wave2_accept":false},
+    {"pr":62,"comment_id":5189560973,"role":"AUTOMATION-C-W4","legacy_fields":["ROLE","STATUS"],"missing":["WAVE","COMMAND_ID"],"wave2_accept":false},
+    {"pr":63,"comment_id":5189560459,"role":"AUTOMATION-C-W5","legacy_fields":[],"missing":["PANEL"],"wave2_accept":false},
+    {"pr":64,"comment_id":5189537363,"role":"AUTOMATION-C-W6","legacy_fields":[],"missing":["PANEL"],"wave2_accept":false}
+  ],
+  "contracts": {
+    "C_RESULT": ["ROLE","WAVE","COMMAND_ID","STATUS"],
+    "REPEAT_RESULT": ["ROLE","COMMAND_ID","DISPATCH_ID","STATUS"]
+  },
+  "fail_closed": ["MISSING_FIELD","STALE_WAVE","DUPLICATE","ORDER_REVERSAL","SCHEMA_MISMATCH","MIXED_SCHEMA"],
+  "legacy_policy": "READ_ONLY_AND_CONTROL_ID_SCOPED_NO_WAVE2_COMPLETION_CREDIT",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
