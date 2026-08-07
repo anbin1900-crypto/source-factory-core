@@ -1,0 +1,29 @@
+{
+  "schema_version": "B4_MULTIMODE_RAW_EVIDENCE_PRESERVATION_TEST_REPORT_V1",
+  "directive_id": "A0-TO-B4-MULTIMODE-RAW-EVIDENCE-PRESERVATION-V4-20260808-001",
+  "status": "PASS",
+  "validation": {
+    "schema_parse": "PASS_5_OF_5",
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_8_OF_8",
+    "fixture_multimode_trace_smoke": "PASS_1_OF_1"
+  },
+  "smoke": {
+    "action_id": "action-fixture-001",
+    "raw_materialized_count": 6,
+    "raw_count_before_duplicate": 6,
+    "raw_count_after_duplicate": 6,
+    "duplicate_disposition": "DUPLICATE_REUSED",
+    "duplicate_materialization_delta": 0,
+    "trace_evidence_count": 6,
+    "trace_unique_evidence_count": 6,
+    "exact_readback_pass": true,
+    "source_record_envelope_pointer": "../SOURCE_RECORD_ENVELOPE_V1.json",
+    "command_checkpoint_pointer": "../command-trace-artifact-checkpoint-v2/LATEST_B4_COMMAND_TRACE_ARTIFACT_CHECKPOINT_POINTER.json",
+    "worker_state_checkpoint_pointer": "../worker-state-event-trace-checkpoint-v3/LATEST_B4_WORKER_STATE_EVENT_TRACE_CHECKPOINT_POINTER.json"
+  },
+  "raw_secret_storage_count": 0,
+  "raw_pii_storage_count": 0,
+  "live_site_call_count": 0,
+  "target_pc_execution_count": 0
+}
