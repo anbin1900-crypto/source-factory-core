@@ -1,0 +1,14 @@
+{
+  "schema_version":"ADAPTER_CHECKPOINT_RESUME_V1",
+  "checkpoint_id":"cp-AI001-A6-C3-SMOKE-001",
+  "command_id":"AI001-A6-C3-SMOKE-001",
+  "recipe_version":"1.0.0-cycle3",
+  "adapter_version":"1.0.0-cycle3",
+  "last_completed_step":"s02",
+  "resume_from_step":2,
+  "completed_idempotency_keys":["3c010efbcb2bca4fbd043203c09ef4d1bec81805b9f67c14f87bf22cc3b5c0ad","23cc55c21b357e1472fec0aa1d88e299fb7d663a0982fb4d4fc7ef382ff17c28"],
+  "receipts":[{"command_id":"AI001-A6-C3-SMOKE-001","action_id":"AI001-A6-C3-SMOKE-001:a01","page_id":"fixture-smoke-1","step_id":"s01","status":"PASS","idempotency_key":"3c010efbcb2bca4fbd043203c09ef4d1bec81805b9f67c14f87bf22cc3b5c0ad"},{"command_id":"AI001-A6-C3-SMOKE-001","action_id":"AI001-A6-C3-SMOKE-001:a02","page_id":"fixture-smoke-1","step_id":"s02","status":"PASS","idempotency_key":"23cc55c21b357e1472fec0aa1d88e299fb7d663a0982fb4d4fc7ef382ff17c28"}],
+  "status":"FAILED",
+  "failed_step":"s03",
+  "checkpoint_sha256":"2055cfcf77bcef123e73eeb220504b9bcbc479c615cc571969644764fae1979c"
+}
