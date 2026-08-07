@@ -1,0 +1,19 @@
+{
+  "schema_version": "D6_CONTEXT_AWARE_MESSAGE_LOOP_LIVE_INPUT_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001",
+  "worker_id": "D-6",
+  "correlation_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001:D-2:CANARY-001",
+  "idempotency_key": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001:D-2:CANARY-001",
+  "context_selector": {
+    "role_id": "D-2",
+    "require_existing_window": true,
+    "require_existing_authenticated_session": true,
+    "create_new_browser": false,
+    "create_new_tunnel": false
+  },
+  "command": "Context-aware 1:1 Live E2E canary. 현재 Context 이름과 ID를 유지한 채 이 메시지를 수신했으면 D6_CONTEXT_LOOP_E2E_ACK_V1을 반환하라.",
+  "max_polls": 120,
+  "poll_delay_ms": 1000,
+  "expected_reply_contains": "D6_CONTEXT_LOOP_E2E_ACK_V1",
+  "production": false
+}
