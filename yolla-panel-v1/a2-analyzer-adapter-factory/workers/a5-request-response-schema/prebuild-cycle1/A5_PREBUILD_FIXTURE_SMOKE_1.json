@@ -1,0 +1,43 @@
+{
+  "schema_version": "A5_RESPONSE_EVIDENCE_BUNDLE_V1",
+  "generated_at": "2026-08-07T21:10:00+09:00",
+  "source_bindings": {"a3": "SMOKE_FIXTURE", "a4": "SMOKE_FIXTURE"},
+  "network_observations": [
+    {
+      "event_id": "SMOKE-001",
+      "request": {
+        "method": "GET",
+        "url": "https://fixture.invalid/api/items?page=1&size=2",
+        "resource_type": "FETCH",
+        "headers": [{"name": "Accept"}, {"name": "Cookie", "value_state": "PRESENT_REDACTED"}],
+        "body_format": "NONE"
+      },
+      "response": {
+        "status": 200,
+        "content_type": "application/json",
+        "body_format": "JSON",
+        "body": {
+          "records": [
+            {"record_id": "R1", "name": "Alpha", "category": "odd", "value": 100, "detail_url": "/detail/1"},
+            {"record_id": "R2", "name": "Beta", "category": "even", "value": 200, "detail_url": "/detail/2"}
+          ],
+          "page": 1,
+          "next_page": 2
+        }
+      },
+      "evidence_pointer": "fixture://smoke/1"
+    }
+  ],
+  "dom_structure": {
+    "pageType": {"type": "LIST", "confidence": 0.99},
+    "repeatedRegions": [{"kind": "CARD_LIST", "itemCount": 2}],
+    "fieldCandidates": [
+      {"name": "record_id"}, {"name": "name"}, {"name": "category"}, {"name": "value"}, {"name": "detail_url"}
+    ],
+    "locatorCandidates": [
+      {"locator": "article.item"}, {"locator": "h2.name"}, {"locator": "span.category"}, {"locator": "span.value"}, {"locator": "a.detail"}
+    ],
+    "pagination": {"type": "NEXT", "detected": true, "locator": "#next-page"}
+  },
+  "previous_schemas": []
+}
