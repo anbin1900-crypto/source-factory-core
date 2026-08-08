@@ -1,7 +1,9 @@
-# 욜라 패널·워크스테이션 전체 구조 및 영구 인수인계 원장
+# 욜라 패널·워크스테이션 전체 구조 및 영구 인수인계 원장 V2
 
-문서 ID: `YOLLA-PANEL-WORKSPACE-MASTER-STRUCTURE-V1-20260809`  
+문서 ID: `YOLLA-PANEL-WORKSPACE-MASTER-STRUCTURE-V2-20260809`  
+이전 기준선: `V1 commit 7d14996a92462f2f4f13029350604b8a881969ee`  
 기준 시각: `2026-08-09 KST`  
+V2 보강 범위: `03:54~06:06 KST Target-PC Receipt 및 복구 경로 감사`  
 대상 저장소: `anbin1900-crypto/source-factory-core`  
 문서 목적: 기존 대화나 특정 AI 컨텍스트가 사라져도 제3자가 욜라 패널과 워크스테이션의 계보, 구조, 경계, 실행 경로, 상태, 로그, 복구 순서를 이해하고 후속 조사를 시작할 수 있게 한다.
 
@@ -172,20 +174,71 @@ E:\YOLLA_PANEL_6-1\app\
 | Worker Command | `modules\worker-command\**` | 그룹·좌석·명령·응답·Cycle | Analyzer 쿠키/토큰/상태 접근 |
 | Site Analysis/Extraction | `modules\site-analysis-extraction\**` | 사이트 탐색·분석·추출·Artifact | Worker ChatGPT Context 변경 |
 
-### 3. 패널 메인화면 요구사항
+### 3. 패널 메인화면 — 2026-08-09 R4 적용 기준
 
-다음은 사용자가 지정한 패널 요구사항이며, 각 항목은 구현 Receipt가 나오기 전까지 `DESIGN_REQUIRED`다.
+이 항목은 V1 작성 당시 `DESIGN_REQUIRED`였으나, 이후 Target-PC R4 Receipt로 실제 적용이 확인됐다.
+
+```text
+FACT_GRADE=VERIFIED_TARGET_PC_RECEIPT
+OPERATION_ID=PANEL-MAIN-DASHBOARD-DIRECT-APPLY-R4-20260809-051200-001
+STATUS=PASS
+TERMINAL=YOLLA_PANEL_MAIN_DASHBOARD_BOUND_LIVE_PASS
+COMPLETED_AT_KST=2026-08-09T05:18:18.7468789+09:00
+OWNER_SURFACE=LEFT_INDEPENDENT_PANEL
+```
+
+적용된 기능:
 
 - 서버 상태
 - PC Agent 상태
-- API 관제창 바로가기
-- `http://localhost:3000/` 바로가기
-- 로컬 게시판 바로가기
-- 네트워크 상태와 실시간 로그
-- Workspace와 Log Window 복구/열기
+- API 관제장 바로가기
+- `http://localhost:3000/` 통합 관리 패널 바로가기
+- `http://localhost:3310/` PC 내부 게시판 바로가기
+- 실제 Registry 기반 좌석 수
+- Workspace 상태와 제어
+- 기존 Log Window 진입과 로그 다운로드
 
-`http://localhost:3000/`은 패널 자체와 동일한 앱으로 간주하지 않는다. DB·외부 서비스 관제 영역으로 분리한다.
+상태 Probe의 해당 시점 결과:
 
+```text
+SERVER_3000=HTTP_200
+API_CONTROL_8130=HTTP_200
+LOCAL_BOARD_3310=HTTP_200
+PC_AGENT_PROJECTION=STALE
+HARDCODED_50_SEAT_LABEL=false
+REAL_SEAT_COUNT_RENDERING=true
+```
+
+변경된 파일:
+
+```text
+E:\YOLLA_PANEL_6-1\app\main.js
+E:\YOLLA_PANEL_6-1\app\panel.html
+E:\YOLLA_PANEL_6-1\app\panel.css
+E:\YOLLA_PANEL_6-1\app\panel.js
+E:\YOLLA_PANEL_6-1\app\panel_preload.js
+```
+
+변경하지 않은 범위:
+
+```text
+WORKSPACE_UI_FILES_CHANGED=0
+WORKER_COMMAND_MODULE_FILES_CHANGED=0
+SITE_ANALYSIS_MODULE_FILES_CHANGED=0
+```
+
+Rollback:
+
+```text
+E:\YOLLA_PANEL_6-1\backups\panel-main-dashboard-before-20260809-051755
+```
+
+중요한 실제 호환성 사실:
+
+- Panel R4는 현재 `v5:panel:get-service-status`, `v5:panel:open-link` IPC를 사용한다.
+- 따라서 `yolla:host:*`는 모듈화 목표 Namespace이고, 모든 현재 Panel IPC가 이미 그 Namespace로 전환됐다고 기록하면 안 된다.
+- Panel과 Workspace가 하나의 Electron Process Tree를 공유하므로 `MainWindowTitle` 하나만으로 Panel 창 생존을 판정하지 않는다.
+- R4 수용 시 Workspace 제목 `AI YOLLA Panel Workspace V5.11`이 관찰됐다. Root/실행 권위 판정은 제목이 아니라 Process CommandLine, Source Hash, Identity Manifest, Receipt로 한다.
 ---
 
 ## VI. Workspace UI 구조
@@ -488,8 +541,8 @@ TARGET_PC_FINAL_RECEIPT=PENDING_AT_LAST_REPORT
 RELEASE=E:\SOURCE FACTORY\.yolla\yolla-panel\releases\v5.10.2.3.7-dispatch-token-recovery
 LAUNCHER=E:\SOURCE FACTORY\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_3_7.bat
 STATE_ROOT=E:\SOURCE FACTORY\.yolla\yolla-workspace-v5-2
-STATE_FILE=...\workspace_state.json
-RUNTIME_LOG=...\runtime.log
+STATE_FILE=E:\SOURCE FACTORY\.yolla\yolla-workspace-v5-2\workspace_state.json
+RUNTIME_LOG=E:\SOURCE FACTORY\.yolla\yolla-workspace-v5-2\runtime.log
 PROFILE=E:\SOURCE FACTORY\.yolla\yolla-workspace-browser-profile
 ```
 
@@ -548,17 +601,69 @@ E:\YOLLA\panel-v6\
    └─ receipts\
 ```
 
-### 4. 현재 Panel 6-1
+### 4. 현재 Panel 6-1 — 실제 Self-contained Receipt 기준
+
+2026-08-09 03:54 KST의 독립 구축 Receipt:
 
 ```text
-AUTHORITY_ROOT=E:\YOLLA_PANEL_6-1
-AUTHORITY_APP=E:\YOLLA_PANEL_6-1\app
-WORKER_STATE=E:\YOLLA_PANEL_6-1\state\worker-command\   # 최종 Manifest로 확인 필요
-ANALYZER_STATE=E:\YOLLA_PANEL_6-1\state\site-analysis-extraction\ # 최종 Manifest로 확인 필요
+FACT_GRADE=VERIFIED_TARGET_PC_RECEIPT
+STATUS=PASS
+TERMINAL=YOLLA_PANEL_6_1_SELF_CONTAINED_LIVE_PASS
+IDENTITY=6-1
+TARGET_ROOT=E:\YOLLA_PANEL_6-1
+SOURCE_MODE=PANEL_V6_SELF_CONTAINED_SOURCE
+FILE_COUNT=6167
+TOTAL_BYTES=632629871
+OPERATIONAL_EXTERNAL_REFERENCE_COUNT=0
 ```
 
-`E:\YOLLA_AUTO_TEST`와 과거 V5 Release는 명시적 지시 없이는 수정하지 않는다.
+정확한 Root 파일:
 
+```text
+IDENTITY_MANIFEST=E:\YOLLA_PANEL_6-1\YOLLA_PANEL_6-1_IDENTITY.json
+HASH_INVENTORY=E:\YOLLA_PANEL_6-1\FILE_HASHES_SHA256.jsonl
+LAUNCHER_BAT=E:\YOLLA_PANEL_6-1\RUN_YOLLA_PANEL_6-1_CURRENT.bat
+LAUNCHER_PS1=E:\YOLLA_PANEL_6-1\RUN_YOLLA_PANEL_6-1_CURRENT.ps1
+APP_ROOT=E:\YOLLA_PANEL_6-1\app
+APP_MAIN=E:\YOLLA_PANEL_6-1\app\main.js
+ELECTRON=E:\YOLLA_PANEL_6-1\dependencies\electron\electron.exe
+STATE_ROOT=E:\YOLLA_PANEL_6-1\state
+PROFILE_ROOT=E:\YOLLA_PANEL_6-1\profile
+LOG_AUX_ROOT=E:\YOLLA_PANEL_6-1\logs
+RECEIPT_ROOT=E:\YOLLA_PANEL_6-1\receipts
+BACKUP_ROOT=E:\YOLLA_PANEL_6-1\backups
+PC_AGENT_COPY_ROOT=E:\YOLLA_PANEL_6-1\pc-agent
+PC_AGENT_BRIDGE=E:\YOLLA_PANEL_6-1\pc-agent\agent\state\source-factory-bridge-v1
+```
+
+Self-contained 구축 Receipt:
+
+```text
+E:\YOLLA_PANEL_6-1\receipts\YOLLA_PANEL_6_1_INDEPENDENCE_RECEIPT.json
+E:\YOLLA\server\approved-ops\receipts\YOLLA_PANEL_6_1_INDEPENDENCE_RECEIPT.json
+```
+
+실제 Launcher 환경 결속:
+
+```text
+YOLLA_PANEL_61_ROOT=E:\YOLLA_PANEL_6-1
+YOLLA_BROWSER_PROFILE_ROOT=E:\YOLLA_PANEL_6-1\profile
+AI_YOLLA_TEST_STATE_ROOT=E:\YOLLA_PANEL_6-1\state
+YOLLA_PC_AGENT_BRIDGE_ROOT=E:\YOLLA_PANEL_6-1\pc-agent\agent\state\source-factory-bridge-v1
+YOLLA_PANEL_IDENTITY=6-1
+```
+
+`E:\YOLLA_PANEL_6-1\pc-agent`는 복구·독립성을 위해 복사된 지원 자산 Root다. 현재 Scheduled Task의 실제 PC Operation Executor 권위는 별도 경로에 존재한다.
+
+```text
+ACTIVE_EXECUTOR_SCRIPT=
+E:\YOLLA\server\yolla-data-ledger-v1\pc-operation-executor-v2\YOLLA_PC_OPERATION_EXECUTOR_V2.ps1
+
+COPIED_RECOVERY_ASSETS=
+E:\YOLLA_PANEL_6-1\pc-agent\**
+```
+
+복사본을 실행 권위와 혼동하지 않는다. `E:\YOLLA_AUTO_TEST`, `E:\SOURCE FACTORY`, `E:\YOLLA\panel-v6`도 명시적 권위 전환 없이 현재 6-1 Source로 사용하지 않는다.
 ---
 
 ## XII. 로그 창과 진단 Export
@@ -953,33 +1058,82 @@ yolla-panel-v1/minimal-v1/LATEST_YOLLA_MINIMAL_V1_2_OBSERVABILITY_POINTER.json
 
 ---
 
-## XVIII. 현재 확인 상태
+## XVIII. 현재 확인 상태 — 2026-08-09 06:06 KST까지의 증거
 
 ### 확인됨
 
-- V5 Clean Runtime의 창/좌석/그룹/BrowserView 구조가 GitHub PR #14에 존재한다.
-- V5 Target-PC에서 50좌석, 7그룹, ChatGPT BrowserView, 프로젝트 Context Binding, 흰 화면 복구가 과거 PASS로 기록됐다.
-- V5는 Automation/Analyzer/Extractor의 3-Lane, One Runtime 구조다.
-- Legacy V5.10.2.3.7 경로와 핵심 Source Hash가 인수인계 문서에 존재한다.
-- Minimal V1/V1.2의 State, Profile, Log, Launcher 구조가 문서화돼 있다.
-- 역사적 V6 6.0.2의 47개 Source Manifest와 72개 PR 변경 파일이 GitHub에 존재한다.
-- 역사적 V6의 Session Restore, Site Analyzer, Commander/Worker Menu 모듈 계약이 존재한다.
-- 현재 6-1의 Panel/Workspace 파일 경계, Worker/Analyzer 모듈 경계, IPC/partition 경계가 최신 지시 자료에 정의돼 있다.
-- 최신 역할은 향후 공식 V6의 총괄 로그기록자다.
+- 6-1 Self-contained Runtime은 `E:\YOLLA_PANEL_6-1`에서 6,167개 파일, 약 632.6MB로 구축됐고 외부 운영 Source Reference 0건으로 PASS했다.
+- 실행기는 `RUN_YOLLA_PANEL_6-1_CURRENT.bat` → `RUN_YOLLA_PANEL_6-1_CURRENT.ps1` → 전용 `dependencies\electron\electron.exe` → `app` 순서다.
+- Runtime State, Browser Profile, PC Agent 복사 Root가 각각 `state`, `profile`, `pc-agent`로 6-1 내부에 결속됐다.
+- Panel 메인 R4는 Target-PC에 적용됐고 서버/API 관제장/게시판 HTTP 200, 실제 좌석 수 표시, PC Agent `STALE` Projection이 확인됐다.
+- Panel R4의 정확한 변경 파일 5개와 SHA-256, Rollback 경로가 Receipt에 남아 있다.
+- B-1 Worker Command 모듈은 `app\modules\worker-command`에 설치됐고 `yolla:worker:*`, `persist:yolla-v6-worker`, 단일 Browser Transaction Broker가 Runtime Validation PASS했다.
+- B-1 설치·Runtime Validation 과정에서 Site Namespace/State/Profile Write Count는 모두 0이었다.
+- PC Operation Executor `2.1.3-dual-plane-runner-self-wake`는 2026-08-09 02:43 KST 상태 Receipt가 있으며 Queue Rescan과 Poll-end Self-wake 수용 기록이 존재한다.
+- V-1 Site Analysis/Extraction은 Offline Test 24개 Assertion을 통과했지만 Live Capture에서 `screenshot.png:empty`로 실패했고 공통 파일은 자동 Rollback됐다.
+- V5, Minimal, 역사적 V6, 현재 6-1은 서로 다른 계보이며 자동으로 같은 실행 권위가 아니다.
+- 로그 담당자의 V1 원장은 main 브랜치 Commit `7d14996a92462f2f4f13029350604b8a881969ee`에 존재하고 PR #14 댓글 `5228094386`, PR #84 댓글 `5228094532`에서 연결됐다.
 
-### 미확인 또는 재검증 필요
+### 완료로 오인하면 안 되는 항목
 
-- `E:\YOLLA_PANEL_6-1` 전체 파일 Inventory와 SHA-256
-- 6-1의 정확 Launcher, installed release, dependencies, state/log/receipt 실제 Root
-- 6-1의 Panel/Workspace/Log Window 전체 재시작 복구 Live PASS
-- 6-1 Worker Command 모듈의 실제 End-to-End 메시지/응답 Receipt
-- 6-1 Site Analysis/Extraction 모듈의 실제 Artifact/Receipt
-- PR #84 V6 6.0.2의 최종 Target-PC Receipt
-- 현재 Tunnel, MCP, PC Executor의 실시간 연결 상태
-- localhost:3000의 현재 서비스와 패널 링크의 실제 동작
-- 로컬 게시판 설치·첨부 기능의 실제 Live PASS
-- 향후 공식 독립 V6의 최종 Root, 버전, 런타임, Logger 설치 위치
+#### B-1 Worker Command
 
+```text
+MODULE_INSTALL=PASS
+RUNTIME_ACTIVE=PASS
+END_TO_END_WORKER_TO_WORKER_ROUNDTRIP=NOT_PASS
+```
+
+실제 B-1→B-2→B-1 Live Relay는 다음 이유로 수용되지 않았다.
+
+- 중간 Relay Object에 `visible_confirmation` 속성이 없어 승인 스크립트 실패
+- 같은 Context에서 응답 Poll 중 반복 Navigation/새로고침 발생
+- `E:\YOLLA_PANEL_6-1\state\worker-command\...` 직접 Read가 Executor Allowlist 밖이라 실패
+- No-refresh Patch는 로컬 영수증을 작성했다고 보고됐으나 GitHub Readback이 종결되지 않음
+- 이전 Live Test는 재실행 금지
+
+따라서 다음을 기록하지 않는다.
+
+```text
+MANUAL_DISPATCH_LIVE_PASS=false
+WORKER_TO_WORKER_CONVERSATION_ROUNDTRIP_PASS=false
+FULL_B1_TERMINAL=false
+```
+
+#### V-1 Site Analysis·Extraction
+
+```text
+OFFLINE_TEST=PASS_24_ASSERTIONS
+LIVE_CAPTURE_ACCEPTANCE=FAIL_SCREENSHOT_EMPTY
+ROLLBACK_APPLIED=true
+MODULE_MANIFEST_LOADED=false
+FINAL_LIVE_PASS=false
+```
+
+실패한 Module Directory가 보존됐을 수 있으나, 폴더 존재를 활성 모듈 또는 Live PASS로 판정하지 않는다.
+
+### 시간·상태 차이 해석
+
+Panel R4의 `PC_AGENT_STATUS=STALE`와 PC Operation Executor 2.1.3의 상태 Receipt는 서로 모순이 아니다.
+
+- Panel은 `pc-agent\agent\state\source-factory-bridge-v1`의 최근 활동을 Projection한다.
+- Executor Receipt는 별도 Scheduled Task/실행기 Plane의 상태를 기록한다.
+- 관측 시각과 판정 근거가 다르므로 둘을 하나의 `CONNECTED` 값으로 합치지 않는다.
+
+PCV2 상태 Receipt에는 Target PC가 `Windows 11 Home`, OS Version `10.0.26200`으로 기록됐다. 과거 지시의 `TARGET_PC_OS=WINDOWS_10`과 다르므로 현재 복구자는 실제 OS를 다시 Readback한 뒤 호환성 판단을 해야 한다.
+
+### 여전히 재검증할 항목
+
+- 현재 시각의 Electron Process Tree와 정확 CommandLine
+- 현재 `FILE_HASHES_SHA256.jsonl` 전체 Hash 및 Core 파일 Drift
+- Panel, Workspace, Log Window의 현재 전체 재시작 복구
+- B-1 No-refresh Patch 로컬 Receipt와 현재 `index.cjs` Hash
+- B-1 실제 메시지 1회 전송·표시·응답회수·Relay 왕복
+- V-1 `screenshot.png:empty` 교정 후 Live Capture와 Module Manifest Load
+- 현재 PC Agent Bridge 최신 Heartbeat
+- 현재 Executor Claim/Receipt 진행성과 `0x800710E0` 재발 여부
+- 로컬 게시판 파일 첨부 기능의 실제 Live PASS
+- 향후 공식 독립 V6의 최종 Root/Version/Logger 위치
 ---
 
 ## XIX. 다음 문서 갱신 규칙
@@ -1015,16 +1169,697 @@ DECISION=
 
 ---
 
-## XX. 인수인계 Terminal
+## XX. 운영정책 적용 원칙
+
+첨부된 `YOLLA_EFFICIENCY_RATIONALITY_SPEED_FIRST_OPERATING_POLICY_V1`은 이 원장의 복구 실행 원칙으로 사용한다. 다만 속도 우선은 증거·백업·Rollback Gate를 생략한다는 뜻이 아니다.
 
 ```text
-DOCUMENT_STATUS=PUBLISHED_BASELINE
-THIRD_PARTY_READINESS=STRUCTURE_AND_RECOVERY_START_READY
-TARGET_PC_CURRENT_LIVE_STATE=REQUIRES_READBACK
-CURRENT_6_1_FULL_INVENTORY=REQUIRED
-FUTURE_OFFICIAL_V6_INITIALIZED=false
-V6_MASTER_LOG_RECORDER_ROLE=ACTIVE_WAITING_FOR_INITIALIZATION
+ONE_OWNER_END_TO_END=true
+READ_ONLY_EVIDENCE_FIRST=true
+MINIMAL_SAFE_CHANGE=true
+RETRY_AFTER_CAUSE_CORRECTION=true
+ROLLBACK_ON_FAILED_ACCEPTANCE=true
+SECOND_EXECUTOR_CREATE=false
+UNNECESSARY_APPROVAL_GATE=false
+FALSE_PASS=false
+```
+
+적용 순서:
+
+1. 한 작업 소유자가 Inventory부터 최종 Receipt까지 연결한다.
+2. 다른 계보나 모듈 소유권을 침범하지 않는 최소 변경만 한다.
+3. 실패하면 원인을 분류하고 같은 입력을 맹목적으로 반복하지 않는다.
+4. 교정 후 재시도하고, 수용 Gate를 통과하지 못하면 준비된 Backup으로 되돌린다.
+5. 보고는 간결하게 하되 Root, 변경 파일, Hash, Receipt, Rollback, 미완료 항목은 생략하지 않는다.
+
+이 정책은 B-1과 V-1의 소유권을 합치거나, Host가 도메인 로직을 가져가거나, Target-PC Receipt 없이 `PASS`를 선언할 권한을 주지 않는다.
+
+---
+
+## XXI. V1 원장 재분석 결과와 V2 보강 이유
+
+V1 원장은 계보 분리와 사실 등급 정의는 적절했지만, 컨텍스트 없이 실제 복구를 시작하기에는 다섯 가지 공백이 있었다.
+
+1. 6-1 구축·Panel R4·B-1·V-1의 03:54~06:06 KST 실제 Receipt가 반영되지 않았다.
+2. `DESIGN_REQUIRED`와 이미 구현된 기능이 섞여 있었다.
+3. 절대경로가 부족하고 `...\runtime.log` 같은 축약 경로가 남아 있었다.
+4. 파일 목록은 있었지만 Launcher→Host→Preload→Renderer→State/Profile 관계가 한눈에 연결되지 않았다.
+5. “설치됨”, “Runtime Active”, “실제 End-to-End PASS”가 분리되지 않아 과대판정 위험이 있었다.
+
+V2는 기존 내용을 삭제하지 않고 다음을 보강한다.
+
+```text
+CURRENT_6_1_ABSOLUTE_PATHS=ADDED
+FILE_RELATIONSHIP_MAP=ADDED
+LATEST_RECEIPT_STATE=ADDED
+RECOVERY_DECISION_ORDER=ADDED
+CONTEXT_EXPIRY_BOOTSTRAP=ADDED
+V1_LOG_RECORDER_AUDIT=ADDED
+STALE_OR_CONFLICTING_CLAIMS=CORRECTED
+```
+
+---
+
+## XXII. 6-1 중요 파일 절대경로·역할·관계
+
+### 1. 부팅·권위 파일
+
+| 절대경로 | 역할 | 직접 관계 | 복구 우선도 |
+|---|---|---|---|
+| `E:\YOLLA_PANEL_6-1\YOLLA_PANEL_6-1_IDENTITY.json` | Root·Identity·State/Profile/Electron/PC Agent 경계 선언 | Launcher와 Inventory가 가리키는 대상 확인 | P0 |
+| `E:\YOLLA_PANEL_6-1\FILE_HASHES_SHA256.jsonl` | 설치 당시 및 후속 갱신 파일 Hash 원장 | 실제 파일과 Drift 비교 | P0 |
+| `E:\YOLLA_PANEL_6-1\RUN_YOLLA_PANEL_6-1_CURRENT.bat` | 사용자/Task 진입점 | PowerShell Launcher 호출 | P0 |
+| `E:\YOLLA_PANEL_6-1\RUN_YOLLA_PANEL_6-1_CURRENT.ps1` | 환경변수·Root·Profile·State·Bridge 결속 후 Electron 실행 | `electron.exe`와 `app` 연결 | P0 |
+| `E:\YOLLA_PANEL_6-1\dependencies\electron\electron.exe` | 6-1 전용 Electron 실행 파일 | `app\package.json`과 `app\main.js` 실행 | P0 |
+| `E:\YOLLA_PANEL_6-1\app\package.json` | 앱 이름·버전·Main Entry | `main=main.js` | P0 |
+| `E:\YOLLA_PANEL_6-1\app\main.js` | 공통 Electron Host | 모든 창, BrowserView, IPC, Session, State Projection의 중앙 결속점 | P0 |
+
+실행 사슬:
+
+```text
+RUN_YOLLA_PANEL_6-1_CURRENT.bat
+→ RUN_YOLLA_PANEL_6-1_CURRENT.ps1
+→ 환경변수 5개와 --user-data-dir=E:\YOLLA_PANEL_6-1\profile
+→ E:\YOLLA_PANEL_6-1\dependencies\electron\electron.exe
+→ E:\YOLLA_PANEL_6-1\app\package.json
+→ E:\YOLLA_PANEL_6-1\app\main.js
+```
+
+### 2. 독립 Panel 파일
+
+```text
+E:\YOLLA_PANEL_6-1\app\panel.html
+E:\YOLLA_PANEL_6-1\app\panel.css
+E:\YOLLA_PANEL_6-1\app\panel.js
+E:\YOLLA_PANEL_6-1\app\panel_preload.js
+```
+
+관계:
+
+```text
+main.js
+→ Panel BrowserWindow 생성
+→ panel_preload.js가 제한된 IPC Bridge 노출
+→ panel.html이 DOM 구조 제공
+→ panel.css가 Panel 전용 Layout 제공
+→ panel.js가 상태를 Projection하고 버튼을 IPC에 결속
+```
+
+R4 기준 Hash:
+
+```text
+app\main.js           28f93bbf9aee51cb849cc7ccc3454042fe43121a8d4e36b1b28b4341ea5154f3
+app\panel.html        7ef788f9f15be7fee0f1092bf4e05d3c4ea3bf42d4c41532ff052e288ab21f11
+app\panel.css         89a5ad7caa04cba5caa9cb2f1072c59a40f215058bb5e3a02927176eb4b206bb
+app\panel.js          63c681630cbe9f433a9346b0eb89f29b03045a5a5082961eca249c1e0941c2e3
+app\panel_preload.js  fcd17498352fd546413520090286230da585d92c6cfc399d2d592e8bd9d31ba3
+```
+
+이 Hash는 05:18 KST R4 Receipt 기준이다. 이후 Drift 여부는 현재 Inventory로 다시 판정한다.
+
+### 3. Workspace Shell 파일
+
+```text
+E:\YOLLA_PANEL_6-1\app\workspace.html
+E:\YOLLA_PANEL_6-1\app\workspace.css
+E:\YOLLA_PANEL_6-1\app\workspace.js
+E:\YOLLA_PANEL_6-1\app\workspace_preload.js
+```
+
+관계:
+
+```text
+main.js
+→ Workspace BrowserWindow와 BrowserView Slot 관리
+→ workspace_preload.js가 Host/Module IPC를 제한 노출
+→ workspace.html이 Shell/Mount Slot 제공
+→ workspace.css가 공통 Layout 제공
+→ workspace.js가 모드 전환·공통 Projection·기존 UI Adapter 수행
+```
+
+04:43 KST Readback 및 05:56 KST V-1 Source Guard 기준:
+
+```text
+app\workspace.js          91f8da591297c50be3c9cf97f18edff74ba65239cdd6085969d9517067359a83
+app\workspace.html        1a23fdc433f93df238ea13fed58123f01b1db0cf44a519ef56275d0fc85ff43b
+app\workspace.css         63a8faf0f39725f5557f91bb574ea78477e9df84d37f18aaae23c9efd4620e53
+app\workspace_preload.js  3adf7eacd3536055b714cee5475f6cb3fa2249c8612114c1da74accb16adf9bd
+```
+
+V-1 R3B가 공통 파일을 변경하려다 실패했고 자동 Rollback했으므로, `workspace_preload.js`의 후속 V-1 Patch Hash를 현재 권위로 사용하지 않는다.
+
+### 4. Registry·공통 State·Log
+
+```text
+REGISTRY=E:\YOLLA_PANEL_6-1\app\registry.json
+WORKSPACE_STATE=E:\YOLLA_PANEL_6-1\state\workspace_state.json
+RUNTIME_LOG=E:\YOLLA_PANEL_6-1\state\runtime.log
+LATEST_RUNTIME_RECEIPT=E:\YOLLA_PANEL_6-1\state\LATEST_RUNTIME_RECEIPT.json
+AUX_LOG_ROOT=E:\YOLLA_PANEL_6-1\logs
+```
+
+관계:
+
+```text
+app\registry.json
+→ 그룹·역할·기본 좌석 정의
+
+state\workspace_state.json
+→ 사용자 선택·좌석 Profile·현재 Mode·Context Binding의 지속 State
+
+state\runtime.log
+→ main.js의 현재 V5 호환 Log Sink
+
+logs\
+→ 6-1 독립 Root가 보유하는 보조/후속 로그 영역
+```
+
+`logs\` 폴더 존재만으로 Runtime이 그곳에 쓰고 있다고 판단하지 않는다. 현재 Host 계보에서는 `state\runtime.log`가 실제 Log Sink다.
+
+04:43 KST Readback:
+
+```text
+app\registry.json  a3c557ef1195459ade0ab18c469c27b9c93b1fddef1d6d94a0a6e7bd84f6a44a
+```
+
+### 5. Worker Command 모듈
+
+```text
+MODULE_ROOT=E:\YOLLA_PANEL_6-1\app\modules\worker-command
+ENTRY=E:\YOLLA_PANEL_6-1\app\modules\worker-command\index.cjs
+MANIFEST=E:\YOLLA_PANEL_6-1\app\modules\worker-command\module.json
+TEST=E:\YOLLA_PANEL_6-1\app\modules\worker-command\test.cjs
+STATE_ROOT=E:\YOLLA_PANEL_6-1\state\worker-command
+PARTITION=persist:yolla-v6-worker
+IPC=yolla:worker:*
+ROLLBACK=E:\YOLLA_PANEL_6-1\rollback\B1_WORKER_COMMAND_20260809-045542
+```
+
+설치 당시 Hash:
+
+```text
+index.cjs   96f48af4490d9a37fb56a441fb7e380aa8640bb118a2ae7fb8c5ef7f034d4199
+module.json ed8c4c20ab7c1b3e9771351204093f858b4ce0cad1ed03a531f7015366060654
+test.cjs    da003e720c5a36e8de95ba27322fe6a5116f9ee1b990d588ffb889d4d7a5e076
+```
+
+05:36 KST Runtime Validation의 `index.cjs` Hash는 다음으로 바뀌었다.
+
+```text
+59dce2e690effd116c5ec21f531fb25ec7e3e51c079f06bb89c846b91bef7ca1
+```
+
+05:58 KST No-refresh Patch가 `index.cjs`를 다시 변경했을 가능성이 있으나 GitHub Readback이 종결되지 않았다. 따라서 현재 `index.cjs` Hash는 Inventory/로컬 Patch Receipt를 읽기 전 `UNKNOWN`이다.
+
+권장 State 하위구조:
+
+```text
+E:\YOLLA_PANEL_6-1\state\worker-command\registry
+E:\YOLLA_PANEL_6-1\state\worker-command\commands
+E:\YOLLA_PANEL_6-1\state\worker-command\attempts
+E:\YOLLA_PANEL_6-1\state\worker-command\cycles
+E:\YOLLA_PANEL_6-1\state\worker-command\dispatch-ledger
+E:\YOLLA_PANEL_6-1\state\worker-command\schedule
+E:\YOLLA_PANEL_6-1\state\worker-command\group-loop
+E:\YOLLA_PANEL_6-1\state\worker-command\context-recovery
+E:\YOLLA_PANEL_6-1\state\worker-command\receipts
+E:\YOLLA_PANEL_6-1\state\worker-command\runtime
+```
+
+각 하위 폴더의 실제 존재와 현재 파일은 새 Inventory에서 확인한다. 설계 경로를 실파일 존재로 오인하지 않는다.
+
+### 6. Site Analysis·Extraction 모듈
+
+```text
+MODULE_ROOT=E:\YOLLA_PANEL_6-1\app\modules\site-analysis-extraction
+HOST_ADAPTER=E:\YOLLA_PANEL_6-1\app\modules\site-analysis-extraction\main\host_adapter.cjs
+STATE_ROOT=E:\YOLLA_PANEL_6-1\state\site-analysis-extraction
+PARTITION=persist:yolla-v6-analyzer
+PROFILE_ROOT=E:\YOLLA_PANEL_6-1\profile
+IPC=yolla:site:*
+ROLLBACK_SCRIPT=E:\YOLLA_PANEL_6-1\backups\v1-site-analysis-extraction\V1-20260809-055613\ROLLBACK_V1_SITE_ANALYSIS_EXTRACTION.ps1
+```
+
+현재 판정:
+
+```text
+OFFLINE_SOURCE_AND_TEST=PASS
+LIVE_MODULE_BINDING=FAIL
+COMMON_FILES_ROLLED_BACK=true
+FAILED_MODULE_PRESERVED=true
+MODULE_MANIFEST_LOADED=false
+```
+
+폴더가 남아 있어도 Host가 로드하지 않으면 비활성이다.
+
+### 7. Legacy Automation 파일의 6-1 Readback
+
+04:43 KST Readback에서 확인된 실제 상태:
+
+```text
+EXISTS:
+E:\YOLLA_PANEL_6-1\app\command_cycle.cjs
+E:\YOLLA_PANEL_6-1\app\automation-v1\schedule_runtime.cjs
+E:\YOLLA_PANEL_6-1\app\automation-v1\src\scheduleRunner.js
+E:\YOLLA_PANEL_6-1\app\automation-v1\src\scheduleCore.js
+E:\YOLLA_PANEL_6-1\app\automation-v1\src\nextJobDispatcher.js
+E:\YOLLA_PANEL_6-1\app\automation-v1\src\githubResultWatcher.js
+E:\YOLLA_PANEL_6-1\app\automation-v2\src\commanderWorkerRelay.js
+E:\YOLLA_PANEL_6-1\app\automation-v2\src\twoModeAutomationRuntime.js
+E:\YOLLA_PANEL_6-1\app\automation-v2\src\epicResultValidator.js
+
+MISSING_AT_READBACK:
+E:\YOLLA_PANEL_6-1\app\context_recovery.cjs
+E:\YOLLA_PANEL_6-1\app\automation-v2\group_loop_runtime.cjs
+E:\YOLLA_PANEL_6-1\app\automation-v2\src\groupCommanderWorkerLoop.js
+```
+
+V5에 존재했던 파일명을 근거로 6-1에도 있다고 가정하지 않는다. 누락 파일을 새로 만들기 전에 B-1 모듈이 해당 책임을 대체했는지 확인한다.
+
+### 8. Receipt·Command Bus·Executor
+
+```text
+LOCAL_APPROVED_RECEIPTS=E:\YOLLA\server\approved-ops\receipts
+ACTIVE_EXECUTOR=E:\YOLLA\server\yolla-data-ledger-v1\pc-operation-executor-v2\YOLLA_PC_OPERATION_EXECUTOR_V2.ps1
+TASK_NAME=YOLLA PC Operation Executor V2
+TASK_WATCHDOG=YOLLA PC Operation Executor V2 Watchdog
+```
+
+GitHub Command Bus:
+
+```text
+REPOSITORY=anbin1900-crypto/yolla-real-estate-data-engine
+BRANCH=command/d-group-domain-knowledge-db-foundation-v1
+ROOT=COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/PC_OPERATION_COMMAND_BUS_V2
+INBOX=<ROOT>/INBOX
+CLAIMS=<ROOT>/CLAIMS
+RECEIPTS=<ROOT>/RECEIPTS
+```
+
+관계:
+
+```text
+GitHub INBOX Command
+→ PC Executor Claim
+→ Target-PC 승인 Script/File Read/Status
+→ Local authoritative Receipt
+→ GitHub RECEIPTS Readback
+→ PR #188 Pointer/Incident 기록
+```
+
+PC Executor Wrapper `FAILED`와 내부 승인 스크립트의 실제 결과가 다를 수 있다. 특히 빈 Exit 값 회귀가 보고됐으므로 Local authoritative Receipt를 반드시 별도 Readback한다.
+
+---
+
+## XXIII. 파일 소유권과 변경 경계
+
+```text
+Panel UI Owner
+→ panel.html / panel.css / panel.js / panel_preload.js
+→ 필요한 최소 main.js Panel IPC
+
+Workspace Shell Owner
+→ workspace.html / workspace.css / workspace.js / workspace_preload.js
+→ Module Mount와 공통 Layout만
+
+B-1
+→ app\modules\worker-command\**
+→ state\worker-command\**
+→ yolla:worker:*
+→ persist:yolla-v6-worker
+
+V-1
+→ app\modules\site-analysis-extraction\**
+→ state\site-analysis-extraction\**
+→ yolla:site:*
+→ persist:yolla-v6-analyzer
+
+Electron Host Integrator
+→ main.js의 공통 Window/BrowserView/Session/IPC Adapter
+→ 각 모듈 private 업무 로직 소유 금지
+
+Log Recorder
+→ 사실·경로·Hash·Receipt·Rollback·실패·교정 기록
+→ 구현 소유권 없음
+```
+
+`main.js`와 `workspace_preload.js`는 여러 Owner가 필요한 최소 Adapter를 추가하는 공유 충돌 지점이다. 이 두 파일을 바꾸기 전에는 반드시 현재 Hash를 읽고, 기존 Panel/B-1/V-1 Marker를 보존하는 Patch를 생성한다.
+
+---
+
+## XXIV. 무컨텍스트 복구 Runbook
+
+### 1. 첫 10분 — 쓰기 금지 Readback
+
+다음 순서로만 읽는다.
+
+```text
+1. E:\YOLLA_PANEL_6-1\YOLLA_PANEL_6-1_IDENTITY.json
+2. E:\YOLLA_PANEL_6-1\FILE_HASHES_SHA256.jsonl
+3. E:\YOLLA_PANEL_6-1\RUN_YOLLA_PANEL_6-1_CURRENT.ps1
+4. E:\YOLLA_PANEL_6-1\app\package.json
+5. E:\YOLLA_PANEL_6-1\app\main.js의 Version/Marker/Path 상수
+6. Electron Process CommandLine
+7. state\workspace_state.json과 최신 Receipt의 수정시각
+8. profile 폴더 존재·크기·최종 수정시각만 확인
+9. PC Executor Task 상태·LastRun·LastResult·정확 Script CommandLine
+10. GitHub Command Bus 최신 Claim/Receipt
+```
+
+금지:
+
+```text
+프로세스 종료
+Scheduled Task 재시작
+Profile 삭제
+State 초기화
+Launcher 재작성
+과거 V5/V6 복사
+Git reset/checkout으로 Target-PC Source 덮어쓰기
+```
+
+### 2. 권위 판정
+
+현재 실행 권위는 다음이 모두 맞아야 한다.
+
+```text
+PROCESS_EXECUTABLE=
+E:\YOLLA_PANEL_6-1\dependencies\electron\electron.exe
+
+PROCESS_APP_PATH=
+E:\YOLLA_PANEL_6-1\app
+
+PROCESS_USER_DATA_DIR=
+E:\YOLLA_PANEL_6-1\profile
+
+IDENTITY_ROOT=
+E:\YOLLA_PANEL_6-1
+```
+
+창 제목에 V5.11이 남아 있어도 위 네 항목이 6-1이면 6-1 Process다. 반대로 제목에 6-1이 있어도 CommandLine이 다른 Root면 현재 권위로 판정하지 않는다.
+
+### 3. Backup Gate
+
+수정 전 최소 보존:
+
+```text
+E:\YOLLA_PANEL_6-1\YOLLA_PANEL_6-1_IDENTITY.json
+E:\YOLLA_PANEL_6-1\FILE_HASHES_SHA256.jsonl
+E:\YOLLA_PANEL_6-1\app\main.js
+E:\YOLLA_PANEL_6-1\app\package.json
+E:\YOLLA_PANEL_6-1\app\panel.*
+E:\YOLLA_PANEL_6-1\app\workspace.*
+E:\YOLLA_PANEL_6-1\app\modules\<TARGET_MODULE>\**
+E:\YOLLA_PANEL_6-1\state\<TARGET_SCOPE>\**
+```
+
+Profile은 파일 단위로 수정하지 않는다. 필요 시 전체 Profile의 읽기 전용 Snapshot/복사 가능성만 검토하고 Secret·Cookie를 GitHub에 올리지 않는다.
+
+### 4. 정상 기동
+
+정확한 Launcher:
+
+```text
+E:\YOLLA_PANEL_6-1\RUN_YOLLA_PANEL_6-1_CURRENT.bat
+```
+
+검증 순서:
+
+```text
+Launcher Exit/STARTED Receipt
+→ Root Electron Process CommandLine
+→ Panel Renderer
+→ Workspace Renderer
+→ Log Window
+→ Worker BrowserView
+→ Analyzer BrowserView
+→ State Load
+→ Profile 로그인 화면 Marker
+→ Module별 Runtime Status
+```
+
+한 단계가 실패해도 이후 상태를 `PASS`로 추정하지 않는다.
+
+### 5. 증상별 복구
+
+#### 흰 화면
+
+```text
+main.js Syntax
+→ package.json main Entry
+→ preload 파일 존재·Syntax
+→ renderer HTML/JS/CSS 존재
+→ DevTools/Runtime Error
+→ BrowserView Bounds/Attach
+→ Profile Lock
+→ State JSON Parse
+```
+
+Profile 삭제는 금지한다.
+
+#### Panel은 없고 Workspace 제목만 보임
+
+하나의 Root Electron Process가 두 창을 공유할 수 있다. `MainWindowTitle` 한 값만 보지 말고 Panel Source Hash, Renderer Load, BrowserWindow 목록, R4 Marker를 확인한다.
+
+#### 워커 화면이 반복 새로고침
+
+```text
+B-1 Live Dispatch 즉시 중지
+→ 이전 Command 재실행 금지
+→ same-context navigation count 확인
+→ response poll과 navigation 분리
+→ visible send proof 확인
+→ 한 번만 새 bounded test
+```
+
+#### V-1 screenshot가 0 byte
+
+```text
+Panel/B-1 공통 Hash 보존
+→ V-1 Module만 격리
+→ capture timing/page readiness/screenshot write 확인
+→ 기존 R3B Rollback 상태 확인
+→ Offline 24 Assertion 재사용
+→ Live Capture만 교정 후 재시험
+```
+
+#### Executor가 Running인데 Claim이 없음
+
+```text
+Task State
+→ LastRunTime / LastTaskResult
+→ 정확 Script Path의 PowerShell Process
+→ Heartbeat / Last Progress
+→ Inbox/Claim/Receipt 최신시각
+→ 0x800710E0 / IgnoreNew / Stale Instance 판정
+```
+
+두 번째 Executor를 만들지 않는다. 실제 Stale Process가 확정된 경우에만 정확한 Script Path의 단일 Instance를 복구한다.
+
+#### Receipt가 없음
+
+장기 자식 Process가 승인 Runner의 stdout/stderr Handle을 보유했는지 확인한다. Panel/Control/Executor 자식은 분리 로그로 Redirect하고 부모 Receipt 반환을 막지 않게 한다.
+
+### 6. Rollback 우선순위
+
+```text
+Panel R4 실패
+→ E:\YOLLA_PANEL_6-1\backups\panel-main-dashboard-before-20260809-051755
+
+B-1 실패
+→ E:\YOLLA_PANEL_6-1\rollback\B1_WORKER_COMMAND_20260809-045542
+→ 단, 이후 Panel R4 Hash를 덮어쓰지 않도록 파일별 복구
+
+V-1 실패
+→ E:\YOLLA_PANEL_6-1\backups\v1-site-analysis-extraction\V1-20260809-055613\ROLLBACK_V1_SITE_ANALYSIS_EXTRACTION.ps1
+→ R3B Receipt상 이미 Rollback 적용
+
+전체 6-1 손상
+→ Identity + Inventory + Independence Receipt로 손상 범위 확정
+→ Profile/State 보존
+→ 정확 Source 계보와 Hash가 일치할 때만 재구축
+```
+
+전체 Root를 과거 V5 또는 역사적 V6로 덮어쓰는 것은 복구가 아니라 권위 교체이므로 사용자 지시와 새 Manifest가 필요하다.
+
+---
+
+## XXV. 실제 상태 수용 Gate
+
+| 영역 | 설치/존재 | Runtime | 실제 기능 | 현재 판정 |
+|---|---:|---:|---:|---|
+| 6-1 Self-contained Root | PASS | PASS | Panel/Workspace Process Tree 관찰 | PASS as of 03:54 KST |
+| Panel Main R4 | PASS | PASS | 3000/8130/3310 HTTP 200, 실제 좌석 수 | PASS as of 05:18 KST |
+| B-1 Worker Command | PASS | PASS | B-1→B-2→B-1 Roundtrip | NOT PASS |
+| V-1 Site Analysis | Source/Offline PASS | Rollback 후 Manifest 미로드 | Live screenshot Capture | FAIL_ROLLED_BACK |
+| PC Executor 2.1.3 | PASS | Self-wake 수용 기록 | 현재 시각 Claim 진행 | READBACK_REQUIRED |
+| Local Board | HTTP 200 | 서비스 응답 | 파일 첨부 | READBACK_REQUIRED |
+
+이 표의 “현재”는 영구 상태가 아니라 기록된 관측시각 기준이다. 새 작업자는 최신 Readback으로 갱신한다.
+
+---
+
+## XXVI. 기존 로그 담당자 기록 감사
+
+확인한 원본:
+
+```text
+DOCUMENT_PATH=
+docs/yolla-panel/YOLLA_PANEL_AND_WORKSPACE_MASTER_STRUCTURE_20260809.md
+
+V1_COMMIT=
+7d14996a92462f2f4f13029350604b8a881969ee
+
+V1_SHA256=
+f80b20e5ad94d4bf073d920a597efb7a3106be7d7ccec87f423a6bb3d05d947b
+
+PR14_POINTER_COMMENT=
+5228094386
+
+PR84_POINTER_COMMENT=
+5228094532
+```
+
+감사 결론:
+
+- V1의 계보 분리, 사실 등급, Secret 금지, 비파괴 복구 원칙은 유지한다.
+- 05:18 이후 Receipt가 반영되지 않은 것은 문서 작성시점 차이이며 허위기록으로 보지 않는다.
+- 다만 V1의 `DESIGN_REQUIRED` Panel 항목, 6-1 미확인 경로, B-1/V-1 상태는 현재 증거로 교정해야 한다.
+- 과거 V5의 50좌석 설명은 역사적 구조 설명으로 유지하되 현재 Panel의 좌석 수는 Registry 실값만 표시한다.
+- `yolla:host:*`는 목표 경계이고 실제 Panel R4의 `v5:panel:*` 호환 IPC가 남아 있음을 병기한다.
+- V2는 V1 Commit을 삭제·재작성한 것처럼 숨기지 않고, 같은 파일의 후속 Commit으로 계보를 보존한다.
+
+---
+
+## XXVII. 증거 읽기 순서
+
+1. 이 V2 문서
+2. 6-1 Independence Receipt
+3. Panel R4 Receipt
+4. B-1 Install Receipt
+5. B-1 Runtime Validation Receipt
+6. B-1 Worker Command Successor Handoff
+7. V-1 R3B Terminal Receipt
+8. PCV2 2.1.3 Status Receipt
+9. PR #188 최신 Claim/Receipt
+10. Target-PC 현재 Readback
+
+GitHub 증거 경로:
+
+```text
+anbin1900-crypto/yolla-real-estate-data-engine
+branch: command/d-group-domain-knowledge-db-foundation-v1
+
+COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/PC_OPERATION_COMMAND_BUS_V2/RECEIPTS/
+  YOLLA-PANEL-6-1-INDEPENDENCE-R3-RECEIPT-READ-20260809-035600-001.json
+  PANEL-MAIN-DASHBOARD-DIRECT-APPLY-RECEIPT-READ-R4-20260809-051850-001.json
+  B1-WORKER-COMMAND-INSTALL-RECEIPT-READ-20260809-050021-001.json
+  B1-WORKER-COMMAND-RUNTIME-VALIDATION-READ-20260809-053701-001.json
+  B1-WORKER-TO-WORKER-LIVE-RELAY-RUN-20260809-054200-001.json
+  B1-WORKER-TO-WORKER-SOURCE-STATE-READ-20260809-054400-001.json
+  B1-WORKER-SUBMIT-NO-REFRESH-PATCH-RUN-20260809-060001-001.json
+  V1-SITE-MODULE-DEPLOY-TERMINAL-READ-R3B-20260809-055800-001.json
+  PCV2-V2-1-3-STATUS-20260809-024200-001.json
+
+docs/YOLLA_PANEL_6_1_WORKER_COMMAND_SUCCESSOR_HANDOFF_20260809.md
+```
+
+---
+
+## XXVIII. 컨텍스트 만료 후 즉시 사용하는 Bootstrap Envelope
+
+```text
+ROLE=YOLLA_PANEL_WORKSPACE_RECOVERY_SUCCESSOR
+AUTHORITY_ROOT=E:\YOLLA_PANEL_6-1
+AUTHORITY_APP=E:\YOLLA_PANEL_6-1\app
+MASTER_DOCUMENT=docs/yolla-panel/YOLLA_PANEL_AND_WORKSPACE_MASTER_STRUCTURE_20260809.md
+OPERATING_POLICY=YOLLA_EFFICIENCY_RATIONALITY_SPEED_FIRST_OPERATING_POLICY_V1
+
+READ_ONLY_FIRST=true
+PROFILE_DELETE=false
+STATE_RESET=false
+LEGACY_ROOT_OVERWRITE=false
+SECOND_EXECUTOR_CREATE=false
+PASS_BY_PROCESS_EXISTENCE=false
+PASS_BY_FOLDER_EXISTENCE=false
+PASS_BY_WINDOW_TITLE=false
+
+FIRST_READ=
+YOLLA_PANEL_6-1_IDENTITY.json,
+FILE_HASHES_SHA256.jsonl,
+RUN_YOLLA_PANEL_6-1_CURRENT.ps1,
+app\package.json,
+app\main.js,
+state\workspace_state.json,
+latest receipts,
+exact process command lines
+
+CURRENT_KNOWN=
+SELF_CONTAINED_ROOT_PASS,
+PANEL_R4_PASS_AS_OF_2026-08-09T05:18:18+09:00,
+B1_INSTALLED_RUNTIME_ACTIVE_ROUNDTRIP_NOT_PASS,
+V1_OFFLINE_PASS_LIVE_CAPTURE_FAIL_ROLLED_BACK,
+PCV2_2_1_3_CURRENT_STATUS_REQUIRES_READBACK
+
+RECOVERY_ORDER=
+INVENTORY,
+AUTHORITY_DECISION,
+BACKUP,
+MINIMAL_FIX,
+RUN,
+VERIFY,
+ROLLBACK_ON_FAILURE,
+CORRECT,
+RETRY,
+FINAL_RECEIPT
+
+REPORT_REQUIRED=
+CURRENT_ROOT,
+CURRENT_PROCESS_COMMAND_LINE,
+CORE_HASH_DRIFT,
+STATE_PROFILE_PRESERVED,
+MODULE_SPECIFIC_RESULT,
+ROLLBACK_PATH,
+USER_ACTION_COUNT,
+EXTERNAL_BLOCKER,
+FINAL_TERMINAL
+```
+
+---
+
+## XXIX. V2 변경 이력
+
+```text
+CHANGE_ID=YOLLA-PANEL-WORKSPACE-MASTER-STRUCTURE-V2-20260809
+CHANGED_AT_KST=2026-08-09
+ACTOR=YOLLA_PANEL_UI_AND_STRUCTURE_OWNER
+SCOPE=MASTER_STRUCTURE_RECOVERY_LEDGER
+BEFORE=V1_1030_LINES_BASELINE
+AFTER=V2_RECEIPT_AUDITED_ABSOLUTE_PATH_AND_RECOVERY_EXPANSION
+EVIDENCE=TARGET_PC_RECEIPTS_AND_GITHUB_POINTERS
+V1_COMMIT=7d14996a92462f2f4f13029350604b8a881969ee
+ROLLBACK=GITHUB_FILE_VERSION_HISTORY
+DECISION=SUPERSEDE_V1_STATUS_NOT_V1_LINEAGE
+```
+
+---
+
+## XXX. 인수인계 Terminal (V2)
+
+```text
+DOCUMENT_STATUS=PUBLISHED_AUDITED_V2
+THIRD_PARTY_READINESS=STRUCTURE_RECOVERY_AND_STATUS_TRIAGE_READY
+CURRENT_6_1_SELF_CONTAINED=PASS_AS_OF_2026-08-09T03:54:05+09:00
+PANEL_MAIN_R4=PASS_AS_OF_2026-08-09T05:18:18+09:00
+B1_MODULE_INSTALL=PASS
+B1_RUNTIME_ACTIVE=PASS
+B1_END_TO_END_ROUNDTRIP=NOT_PASS
+V1_OFFLINE_TEST=PASS_24_ASSERTIONS
+V1_LIVE_BINDING=FAILED_ROLLED_BACK
+PCV2_VERSION=2.1.3_DUAL_PLANE_RUNNER_SELF_WAKE
+CURRENT_LIVE_STATE=REQUIRES_NEW_READBACK
+PROFILE_DELETE_COUNT=0
 SECRET_EXPOSURE_COUNT=0
 ```
 
-이 문서를 읽은 후에도 확실하지 않은 사항은 추정하지 말고 `UNKNOWN`으로 남긴 뒤 Target-PC 비파괴 Readback으로 종결한다.
+이 문서를 읽은 후에도 확실하지 않은 사항은 추정하지 않는다. `UNKNOWN`으로 남기고 Target-PC 비파괴 Readback으로 종결한다. 구조·폴더·Process 존재는 기능 PASS가 아니며, 최신 Receipt가 이전 상태를 명시적으로 대체할 때만 상태를 승격한다.
