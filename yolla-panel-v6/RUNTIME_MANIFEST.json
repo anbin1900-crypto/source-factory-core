@@ -1,0 +1,154 @@
+{
+  "schema_version": "YOLLA_PANEL_V6_RUNTIME_MANIFEST_V1",
+  "system": "YOLLA_PANEL_V6",
+  "version": "6.0.0",
+  "target_root": "E:\\YOLLA\\panel-v6",
+  "source_baseline_sha256": "902ab7eaa08b71998169084f2a2efcdbaf06a2b2a8a6b3272636b6c954608d05",
+  "file_count": 36,
+  "files": {
+    "INSTALL_AI_YOLLA_V6.bat": {
+      "size": 106,
+      "sha256": "36a25fb905e37e70e6901afed1baac466856565404b1b77624920eb9fbcd581c"
+    },
+    "LATEST_YOLLA_PANEL_V6_POINTER.json": {
+      "size": 707,
+      "sha256": "a063bffe18b4a2097504c385b70a23a1b6f03045fdc5e1d4ed18463459438fdc"
+    },
+    "README.md": {
+      "size": 1840,
+      "sha256": "22c7315a3e437e9bfdd2e11497a9df688ad4237950c5dfb7c80ddb9abc0888c6"
+    },
+    "REMOVE_AI_YOLLA_V6.bat": {
+      "size": 109,
+      "sha256": "76ece060f6cc866b038c6a3d7f2dee0a826b31a332985c56aeb9b9799fc0337b"
+    },
+    "REMOVE_AI_YOLLA_V6.ps1": {
+      "size": 713,
+      "sha256": "66ce24a3148c4208fbf1b4595f81a74ec2edf4af324ba15930766a8430605f49"
+    },
+    "RUN_AI_YOLLA_V6.bat": {
+      "size": 106,
+      "sha256": "165aa004fefe111b5d29a39f5fde1768553707e129bba75ce973dc26e410e695"
+    },
+    "RUN_AI_YOLLA_V6.ps1": {
+      "size": 1280,
+      "sha256": "b9ae089a5aecb088b8f912a8249dfbadeca14aa7bfda66833bb4d326853354ea"
+    },
+    "RUN_YOLLA_V6_CONTROL.ps1": {
+      "size": 1533,
+      "sha256": "1a3d166920592572e0d2edd206ce25be0dcea924e9f33cd37c6df56d7ab730a0"
+    },
+    "RUN_YOLLA_V6_EXECUTOR.ps1": {
+      "size": 876,
+      "sha256": "f95d8088e523e05a43fa25a83720e6a0691399f15d44799f7290e3a88fef388f"
+    },
+    "START_YOLLA_V6_SERVICES.ps1": {
+      "size": 191,
+      "sha256": "f75e7074fdb0256af71c40696414b6dc52e4ea35269250210fcec7a18a35e7ce"
+    },
+    "V6.Common.ps1": {
+      "size": 3481,
+      "sha256": "dddb5c7783fb7852ba797016b8ee638c9be869fc84ecea06cc37c69026d480d0"
+    },
+    "V6.Executor.ps1": {
+      "size": 5486,
+      "sha256": "5f51d81665eb220b0dacb354f97c0664e6e75849f7488f05af59de272c558b86"
+    },
+    "V6.Snapshot.ps1": {
+      "size": 2682,
+      "sha256": "4cbfaec50ca44922211113ffe85db2662aed49e8289d82669c525859d9488173"
+    },
+    "V6.Validate.ps1": {
+      "size": 2933,
+      "sha256": "e7781ce3304158bd44e9298e05435bb581f4cffe78b6cd46a7352515be6759ec"
+    },
+    "V6_BOUNDARY_MANIFEST.json": {
+      "size": 4027,
+      "sha256": "73ead780e728587310f672ac6957ae82029c6305b65b1e60e3c4203aafd7de7f"
+    },
+    "control/package.json": {
+      "size": 117,
+      "sha256": "f74b38dbdbefaa1846a06900c457e7dc70dd351fad291d2a0c1e9320b6e4b8f1"
+    },
+    "control/test_v6_mcp_server.cjs": {
+      "size": 1573,
+      "sha256": "b59f885c28fedc56f05ff50c00dc997e6e04bb4bde59d6ea11dde1569d965a1d"
+    },
+    "control/v6_mcp_server.cjs": {
+      "size": 10318,
+      "sha256": "2f9f31aba3777ca23c2816febd626927dc5fcda31c598e873f736488e3ea6cc7"
+    },
+    "generate_manifest.cjs": {
+      "size": 1373,
+      "sha256": "c8530254b2ea8af607979fcf538ee6c7160e8c18db84b24769361d78168e606d"
+    },
+    "install-v6.ps1": {
+      "size": 7797,
+      "sha256": "0a6caf64b5fe1d4c4a956b5152bf9e696e9ea96545f48d9e4fa42d066e6a817e"
+    },
+    "runtime/automation-c-v1/c_mode_runtime.cjs": {
+      "size": 54691,
+      "sha256": "2f3dded91d69e5eb2eed504e068d6b7429bb30ae410c77b17ecc92ae9d6fff6c"
+    },
+    "runtime/automation-c-v1/github_comment_client.cjs": {
+      "size": 3010,
+      "sha256": "1b6e7dff885d300d5d8ccb148962ad7e59edd7869517642bc86e77480262ea55"
+    },
+    "runtime/chatgpt_dispatch.cjs": {
+      "size": 14612,
+      "sha256": "3f3a2c2f64a1905655f6293596640aae102c88fe490f44cf700658873c7ea6e5"
+    },
+    "runtime/command_scheduler.cjs": {
+      "size": 12216,
+      "sha256": "ccee79483cd4a738814fbdc9147568866a8108f10664cc47e88ca3229d44436a"
+    },
+    "runtime/index.html": {
+      "size": 4490,
+      "sha256": "87fcb16256cf410effb5150673bac7e59b87a084e7a15cc45487d9fcb6feda96"
+    },
+    "runtime/log_analyzer.css": {
+      "size": 2298,
+      "sha256": "28ead89dd3680bc635e3b1b0254136dbb868fd52d6719901ab3f6975bff9602d"
+    },
+    "runtime/log_analyzer.html": {
+      "size": 2002,
+      "sha256": "917655f7ca4b538007e81a280d00076f37582e79c4397ac01893c49cdf994c9f"
+    },
+    "runtime/log_analyzer.js": {
+      "size": 2877,
+      "sha256": "af76cb04915868cdcdbc90f432313caad6c5d1061af64aa27feecb98728b3b13"
+    },
+    "runtime/log_analyzer_preload.js": {
+      "size": 734,
+      "sha256": "92839b54f5455703e542e86651a8497267e8b017a753d601c3648c1075f75474"
+    },
+    "runtime/main.js": {
+      "size": 32628,
+      "sha256": "ab0c6a2fd4dd5916f0c35923326678d2fc05fe4da98b6ee97bbf4f069f1f5f14"
+    },
+    "runtime/package.json": {
+      "size": 253,
+      "sha256": "1678152ff1ed4a7da54f3f76b8b3e4dd84c04e45c9debcf02c62e4835f40d2e0"
+    },
+    "runtime/preload.js": {
+      "size": 2782,
+      "sha256": "8f12e0f27d510089a6746cc1203a28f589a018d21fcc4ddd49f7647b669ff627"
+    },
+    "runtime/renderer.js": {
+      "size": 27021,
+      "sha256": "d5136b4cd5342f0595134159e86b0f18482b532d416032a97fc3d4e54d968778"
+    },
+    "runtime/state_store.cjs": {
+      "size": 23015,
+      "sha256": "bb8f4a6d27a54bdf29201d1abd414d1d267063677b42fd636450741158c94aa5"
+    },
+    "runtime/styles.css": {
+      "size": 9695,
+      "sha256": "0f6b66701183683ab46ee50e827355d138e5def4527369792f0b52fc1225e4bd"
+    },
+    "test_v6_package.cjs": {
+      "size": 3206,
+      "sha256": "079fc9408a4c86e3d94970d91cbd6c22904e51469a8001e444b0ade72b727890"
+    }
+  }
+}

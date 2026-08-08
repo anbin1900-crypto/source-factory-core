@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; connect-src 'self';">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI YOLLA Workspace V6</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand"><strong>AI YOLLA</strong><span>V6</span></div>
+      <nav class="mode-tabs" aria-label="작업 영역">
+        <button type="button" class="active" data-mode="CONTEXTS">커맨더·워커</button>
+        <button type="button" data-mode="ANALYZER">사이트 분석기</button>
+      </nav>
+      <div class="selection"><span id="selected-dot" class="dot idle"></span><div><strong id="selected-name">불러오는 중</strong><small id="selected-meta">대기</small></div></div>
+
+      <section class="top-actions" data-panel="CONTEXTS">
+        <button type="button" data-action="project">프로젝트</button>
+        <button type="button" data-action="log-analyzer">로그 분석기</button>
+        <button type="button" data-action="context">대화</button>
+        <button type="button" data-action="assign-worker">워커 지정</button>
+        <button type="button" class="primary" data-action="commands">명령</button>
+      </section>
+      <section class="top-actions" data-panel="ANALYZER" hidden>
+        <button type="button" data-action="register-site">현재 사이트 등록</button>
+        <button type="button" data-action="site-provider">분석기 연결</button>
+      </section>
+
+      <section class="address-row" data-address="WORKER">
+        <button type="button" data-browser="WORKER" data-browser-action="back">←</button>
+        <button type="button" data-browser="WORKER" data-browser-action="forward">→</button>
+        <button type="button" data-browser="WORKER" data-browser-action="refresh">새로고침</button>
+        <input id="worker-address" type="text" spellcheck="false" aria-label="컨텍스트 주소">
+        <button type="button" class="go" data-browser="WORKER" data-browser-action="navigate">이동</button>
+      </section>
+      <section class="address-row" data-address="ANALYZER" hidden>
+        <button type="button" data-browser="ANALYZER" data-browser-action="back">←</button>
+        <button type="button" data-browser="ANALYZER" data-browser-action="forward">→</button>
+        <button type="button" data-browser="ANALYZER" data-browser-action="refresh">새로고침</button>
+        <input id="analyzer-address" type="text" spellcheck="false" aria-label="사이트 분석 주소">
+        <button type="button" class="go" data-browser="ANALYZER" data-browser-action="navigate">이동</button>
+      </section>
+    </header>
+
+    <aside class="sidebar">
+      <header class="sidebar-header">
+        <div><small id="sidebar-eyebrow">컨텍스트 구조</small><strong id="sidebar-title">커맨더·워커 그룹</strong></div>
+        <div class="counts"><span>그룹 <b id="group-count">0</b></span><span>좌석 <b id="role-count">0</b></span></div>
+      </header>
+
+      <section id="context-sidebar" class="sidebar-content">
+        <div id="groups" class="group-list"></div>
+        <button type="button" id="add-group" class="add-group">＋ 그룹 추가</button>
+      </section>
+
+      <section id="analyzer-sidebar" class="sidebar-content" hidden>
+        <div class="analyzer-intro"><strong>사이트 분석기 연결 구조</strong><small>주소·등록 사이트·Provider 연결점만 제공합니다.</small></div>
+        <div id="sites" class="site-list"></div>
+      </section>
+
+      <footer class="sidebar-footer"><span id="footer-message">시작 중</span><button type="button" id="open-state">상태 폴더</button></footer>
+    </aside>
+
+    <main id="browser-host" class="browser-host">
+      <section id="boot-card" class="boot-card"><div class="spinner"></div><strong>컨텍스트 화면 준비 중</strong><span>기존 Runtime은 변경하지 않습니다.</span></section>
+    </main>
+
+    <section id="drawer" class="drawer" hidden>
+      <header><strong id="drawer-title">설정</strong><button type="button" id="drawer-close">닫기</button></header>
+      <div id="drawer-body" class="drawer-body"></div>
+    </section>
+    <div id="shade" class="shade" hidden></div>
+  </div>
+  <script src="./renderer.js"></script>
+</body>
+</html>

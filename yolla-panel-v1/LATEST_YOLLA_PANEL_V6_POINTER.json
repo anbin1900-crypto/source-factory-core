@@ -1,0 +1,37 @@
+{
+  "schema_version": "LATEST_YOLLA_PANEL_V6_POINTER_V1",
+  "system": "YOLLA_PANEL_V6",
+  "version": "6.0.0",
+  "existing_v6_inherited": false,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "branch": "agent/yolla-panel-v6-independent",
+  "pr": null,
+  "source_root": "yolla-panel-v6",
+  "boundary_manifest": "yolla-panel-v6/V6_BOUNDARY_MANIFEST.json",
+  "runtime_manifest": "yolla-panel-v6/RUNTIME_MANIFEST.json",
+  "target_pc": "NOTEX",
+  "target_root": "E:\\YOLLA\\panel-v6",
+  "local_mcp_endpoint": "http://127.0.0.1:8610/mcp",
+  "artifact": {
+    "file_name": "AI_YOLLA_PANEL_V6_SOURCE_PACKAGE.zip",
+    "drive_file_id": "1k8DYjHFEvFHxLUq1DTadQl_L5kUEn8dp",
+    "size_bytes": 81570,
+    "sha256": "5d409d291afabe3f228265ea4b05c8650a22b8393c5404b78d41aa6b666c84d7",
+    "remote_metadata_readback": "PASS"
+  },
+  "source_baseline": {
+    "file_name": "AI_YOLLA_MINIMAL_V1_2_OBSERVABILITY_PACKAGE.zip",
+    "sha256": "902ab7eaa08b71998169084f2a2efcdbaf06a2b2a8a6b3272636b6c954608d05"
+  },
+  "source_validation": "PASS_95_ASSERTIONS",
+  "windows_powershell_5_1_parse": "PENDING_GITHUB_ACTIONS",
+  "target_pc_install": "PENDING_PC_EXECUTOR_CONNECTION",
+  "tunnel_connected": false,
+  "executor_round_trip_pass": false,
+  "panel_live_pass": false,
+  "legacy_pending_command_policy": "QUARANTINE_DO_NOT_REISSUE_007_TO_010",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at_kst": "2026-08-08T16:35:00+09:00"
+}
