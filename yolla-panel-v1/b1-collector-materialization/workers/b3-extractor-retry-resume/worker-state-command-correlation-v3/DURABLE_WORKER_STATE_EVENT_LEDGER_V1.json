@@ -1,0 +1,9 @@
+{
+  "schema_version":"B3_DURABLE_WORKER_STATE_EVENT_LEDGER_V1",
+  "append_only":true,
+  "record_fields":["worker_id","page_id","command_id","action_id","session_id","event_seq","observed_at","state","idempotency_key","classification","prev_hash","record_hash"],
+  "hash_chain":"SHA256(canonical_record_with_prev_hash)",
+  "replay_order":"event ledger append order with per-command event_seq monotonicity",
+  "restart_restore":true,
+  "result_receipt_index":"command_id"
+}

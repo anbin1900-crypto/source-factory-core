@@ -1,0 +1,26 @@
+{
+  "action_types": [
+    "click",
+    "input",
+    "navigation",
+    "scroll",
+    "wait"
+  ],
+  "idempotency_policy": "SAME_KEY_RETURN_PRIOR_ACTION_WITHOUT_REEXECUTION",
+  "ordering": "sequence_no ASC",
+  "required_fields": [
+    "command_id",
+    "mission_id",
+    "session_id",
+    "page_id",
+    "action_id",
+    "sequence_no",
+    "timestamp",
+    "action_type",
+    "status",
+    "payload",
+    "idempotency_key"
+  ],
+  "schema_version": "ACTION_EVENT_V1",
+  "timestamp_format": "RFC3339"
+}

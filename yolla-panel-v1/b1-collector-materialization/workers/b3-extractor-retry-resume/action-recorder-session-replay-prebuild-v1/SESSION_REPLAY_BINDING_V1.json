@@ -1,0 +1,19 @@
+{
+  "action_binding": {
+    "act-22943ec2b60cb7d983d8": {"cdp_evidence_ids": [], "replay_event_ids": ["rr-0003"]},
+    "act-695bdec9cbdec7f57e51": {"cdp_evidence_ids": ["cdp-003"], "replay_event_ids": ["rr-0004"]},
+    "act-7dfd7d402a04d20a0e8c": {"cdp_evidence_ids": ["cdp-001"], "replay_event_ids": ["rr-0001"]},
+    "act-917135d5dbd97bc8a0fe": {"cdp_evidence_ids": ["cdp-002"], "replay_event_ids": ["rr-0002"]},
+    "act-d846dea7b65d755e3d10": {"cdp_evidence_ids": ["cdp-004"], "replay_event_ids": ["rr-0005"]}
+  },
+  "events": [
+    {"action_id":"act-7dfd7d402a04d20a0e8c","action_type":"navigation","kind":"navigation","page_id":"page-search","payload":{"url":"https://fixture.invalid/search"},"replay_event_id":"rr-0001","visible":true},
+    {"action_id":"act-917135d5dbd97bc8a0fe","action_type":"input","kind":"interaction","page_id":"page-search","payload":{"locator":"[data-testid=keyword]","value":"apartment"},"replay_event_id":"rr-0002","visible":true},
+    {"action_id":"act-22943ec2b60cb7d983d8","action_type":"scroll","kind":"viewport","page_id":"page-search","payload":{"x":0,"y":600},"replay_event_id":"rr-0003","visible":true},
+    {"action_id":"act-695bdec9cbdec7f57e51","action_type":"click","kind":"interaction","page_id":"page-search","payload":{"locator":"[data-testid=result-1]"},"replay_event_id":"rr-0004","visible":true},
+    {"action_id":"act-d846dea7b65d755e3d10","action_type":"wait","kind":"timing","page_id":"page-detail","payload":{"condition":"domcontentloaded","timeout_ms":3000},"replay_event_id":"rr-0005","visible":false}
+  ],
+  "replay_model": "RRWEB_EQUIVALENT_ACTION_TIMELINE_V1",
+  "schema_version": "B3_SESSION_REPLAY_BINDING_V1",
+  "session_id": "ai001-b3-smoke-session-001"
+}

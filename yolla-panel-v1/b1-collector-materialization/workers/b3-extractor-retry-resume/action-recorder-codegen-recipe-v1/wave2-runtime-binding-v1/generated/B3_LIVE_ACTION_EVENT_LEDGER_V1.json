@@ -1,0 +1,107 @@
+{
+  "action_event_count": 5,
+  "event_count": 5,
+  "events": [
+    {
+      "event_id": "live-action-0001",
+      "frame_name": null,
+      "frame_url": "about:blank",
+      "kind": "input",
+      "page_alias": "main",
+      "page_url": "about:blank",
+      "payload": {
+        "kind": "input",
+        "target": {
+          "aria_label": "Keyword",
+          "id": "keyword",
+          "tag": "input",
+          "test_id": "keyword-input"
+        },
+        "value": "apartment"
+      },
+      "sequence": 1,
+      "source": "PLAYWRIGHT_ACTION_WRAPPER"
+    },
+    {
+      "event_id": "live-action-0002",
+      "frame_name": null,
+      "frame_url": "about:blank",
+      "kind": "click",
+      "page_alias": "main",
+      "page_url": "about:blank",
+      "payload": {
+        "kind": "click",
+        "target": {
+          "aria_label": "Search",
+          "id": "search-btn",
+          "tag": "button",
+          "test_id": "search-submit",
+          "text": "Search"
+        }
+      },
+      "sequence": 2,
+      "source": "PLAYWRIGHT_ACTION_WRAPPER"
+    },
+    {
+      "event_id": "live-action-0003",
+      "frame_name": null,
+      "frame_url": "about:blank",
+      "kind": "scroll",
+      "page_alias": "main",
+      "page_url": "about:blank",
+      "payload": {
+        "kind": "scroll",
+        "target": {
+          "tag": "window"
+        },
+        "x": 0,
+        "y": 850
+      },
+      "sequence": 3,
+      "source": "PLAYWRIGHT_ACTION_WRAPPER"
+    },
+    {
+      "event_id": "live-action-0004",
+      "frame_name": null,
+      "frame_url": "about:blank",
+      "kind": "click",
+      "page_alias": "main",
+      "page_url": "about:blank",
+      "payload": {
+        "kind": "click",
+        "target": {
+          "aria_label": "Open detail",
+          "href": "about:blank",
+          "id": "detail-link",
+          "tag": "a",
+          "target": "_blank",
+          "test_id": "detail-open",
+          "text": "Open Detail"
+        }
+      },
+      "sequence": 4,
+      "source": "PLAYWRIGHT_ACTION_WRAPPER"
+    },
+    {
+      "event_id": "live-action-0005",
+      "frame_name": "details-frame",
+      "frame_url": "about:srcdoc",
+      "kind": "click",
+      "page_alias": "popup-1",
+      "page_url": "about:blank",
+      "payload": {
+        "kind": "click",
+        "target": {
+          "aria_label": "Load frame detail",
+          "id": "frame-action",
+          "tag": "button",
+          "test_id": "frame-action",
+          "text": "Load Frame Detail"
+        }
+      },
+      "sequence": 5,
+      "source": "PLAYWRIGHT_ACTION_WRAPPER"
+    }
+  ],
+  "schema_version": "B3_LIVE_ACTION_EVENT_LEDGER_V1"
+}

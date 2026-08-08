@@ -1,0 +1,29 @@
+{
+  "schema_version": "B3_D_COLLECTION_RUN_REMOTE_READBACK_RECEIPT_V1",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "B3_D_COLLECTION_RUN_LEDGER",
+  "readback_at_kst": "2026-08-06T04:23:00+09:00",
+  "readback_ref": "worker/b3-extractor-retry-resume-v1",
+  "head_before_receipt": "4baa56c58e70b6842934b745652bdca3f3ad06ce",
+  "files": [
+    {"path":"B3_D_COLLECTION_RUN_START_REPORT_V1.json","blob":"1a3339beea3375e840e45f11461c4cbd8fcbd283"},
+    {"path":"src/d_collection_run_ledger.py","blob":"b1fa38fe46f071a3093d188805f44caed9ddae5b"},
+    {"path":"fixtures/d_collection_run_fixture_v1.json","blob":"e3d0e41bf7c7b82cc9132fecd6c685ad748df4da"},
+    {"path":"tests/test_d_collection_run_ledger.py","blob":"98ea0cffd57c55987b161eb718ac67b500af2561"},
+    {"path":"B3_D_COLLECTION_RUN_RESUME_LEDGER_V1.json","blob":"776a3c012db5aaee7204f1ec374c21bbca6abda3"},
+    {"path":"generated/B3_D_COLLECTION_RUN_FIXTURE_RESULT_V1.json","blob":"e6266c5cc4af42bc3797d17a3640381fa6634c16"},
+    {"path":"B3_D_COLLECTION_RUN_TEST_RESULTS_V1.json","blob":"eab65a61e7b6791880daeab8a4ad8c067abfa2a8"},
+    {"path":"B3_D_COLLECTION_RUN_SOURCE_MANIFEST_V1.json","blob":"c48e1f978c82659161e33b7c56ef69de0cd015b9"},
+    {"path":"B3_D_COLLECTION_RUN_FINAL_REPORT_V1.json","blob":"687aeab229074e2935a126582f80c047841391df"},
+    {"path":"events/B3_D_COLLECTION_RUN_LEDGER_READY.json","blob":"fd6d27f4df8d313dec53661071655cd8ffd8e440"},
+    {"path":"LATEST_B3_D_COLLECTION_RUN_POINTER_V1.json","blob":"0386b0f58906caf3b4ea5e96513562ce26ab95a1"}
+  ],
+  "remote_readback": "PASS_11_OF_11",
+  "terminal": "B3_D_COLLECTION_RUN_LEDGER_READY",
+  "site_call_count": 0,
+  "automated_pagination": false,
+  "d_canonical_id_generation": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

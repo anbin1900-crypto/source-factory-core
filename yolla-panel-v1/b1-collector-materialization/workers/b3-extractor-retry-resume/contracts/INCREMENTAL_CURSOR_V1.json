@@ -1,0 +1,1 @@
+{"schema_version":"INCREMENTAL_CURSOR_V1","fields":["last_committed_page","next_page","accepted_keys","input_record_count","duplicate_count","output_records","completed"],"cursor_regression_rejected":true,"dedup_key_policy":"record.id OR canonical_record_sha256"}

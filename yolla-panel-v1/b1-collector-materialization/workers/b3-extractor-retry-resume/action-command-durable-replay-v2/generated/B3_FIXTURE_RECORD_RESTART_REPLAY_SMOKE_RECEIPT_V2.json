@@ -1,0 +1,19 @@
+{
+  "schema_version": "B3_FIXTURE_RECORD_RESTART_REPLAY_SMOKE_V2",
+  "status": "PASS",
+  "recorded_action_count": 5,
+  "duplicate_suppressed_count": 1,
+  "ledger_record_count": 5,
+  "ledger_reconstruct_count": 5,
+  "last_confirmed_sequence_no": 3,
+  "resume_action_count": 2,
+  "resume_action_ids": [
+    "act-dfdb8f3fab87369ba735",
+    "act-6a3fda333a06203664d7"
+  ],
+  "contextless_replay_command": true,
+  "target_pc_execution": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

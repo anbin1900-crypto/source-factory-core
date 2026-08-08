@@ -1,0 +1,55 @@
+{
+  "schema_version": "B3_AI001_ACTION_RECORDER_SESSION_REPLAY_FINAL_REPORT_V1",
+  "directive_id": "AI001-TO-B3-ACTION-RECORDER-SESSION-REPLAY-PREBUILD-V1-20260807-001",
+  "assignment_comment_id": 5216933632,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "worker": "B-3",
+  "worker_pr": 39,
+  "started_from_head": "31162d67eb474e7958e9a5591d87dc26bf3c307a",
+  "status": "PASS_PREBUILD_LOCAL_VALIDATION_REMOTE_BLOB_READBACK",
+  "terminal": "B3_ACTION_RECORDER_SESSION_REPLAY_PREBUILD_READY",
+  "required_work": {
+    "action_event_model": "PASS_CLICK_INPUT_SCROLL_NAVIGATION_WAIT",
+    "action_page_command_binding": "PASS",
+    "session_replay_candidate": "PASS_RRWEB_EQUIVALENT_ACTION_TIMELINE_V1",
+    "cdp_recorder_action_id_binding": "PASS",
+    "duplicate_suppression": "PASS_1_SUPPRESSED",
+    "resume_cursor": "PASS",
+    "restart_state_restore": "PASS",
+    "single_command_cli": "PASS_TOOLS_RUN_B3_ACTION_RECORDER_SMOKE_CMD",
+    "contextless_state_pointer_resume": "PASS"
+  },
+  "validation": {
+    "source_parse": "PASS",
+    "python_compile": "PASS",
+    "unit_tests": "PASS_9_OF_9",
+    "fixture_record_replay_smoke_1": "PASS",
+    "action_count": 5,
+    "action_types": ["click", "input", "navigation", "scroll", "wait"],
+    "replay_event_count": 5,
+    "cdp_bound_action_count": 4,
+    "duplicate_suppressed_count": 1,
+    "restart_restore": "PASS",
+    "pending_action_ids_after_resume": [],
+    "contextless_resume": true,
+    "local_validation_and_remote_blob_readback_separated": true,
+    "ci_pass_claimed": false
+  },
+  "continuity": {
+    "state_path": "generated/B3_ACTION_RECORDER_STATE_V1.json",
+    "smoke_receipt_path": "generated/B3_RECORD_REPLAY_SMOKE_RECEIPT_V1.json",
+    "last_completed_action_id": "act-d846dea7b65d755e3d10",
+    "resume_state_digest": "55db5cfc60b50947e30e0ad5ded6bc70a77dacfb271af99f7686a66a0f855ae4",
+    "single_command_entrypoint": "tools/run_b3_action_recorder_smoke.cmd"
+  },
+  "forbidden_counters": {
+    "tunnel_create": 0,
+    "successor_direct_call": 0,
+    "target_pc_execution": 0,
+    "new_browser_engine": 0,
+    "audit_only_work": 0,
+    "production": 0,
+    "ready_transition": 0,
+    "merge": 0
+  }
+}

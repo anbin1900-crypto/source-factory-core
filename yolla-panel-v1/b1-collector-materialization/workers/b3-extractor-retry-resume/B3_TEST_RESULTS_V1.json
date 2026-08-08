@@ -1,0 +1,13 @@
+{
+  "schema_version":"B3_TEST_RESULTS_V1",
+  "python_compile":"PASS",
+  "minimum_test_count":20,
+  "executed_test_count":32,
+  "initial_run":{"passed":20,"errors":12,"failure_signature":"LEDGER_MUTABLE_PAYLOAD_HASH_DRIFT"},
+  "correction":{"root_cause":"cursor output_records list was retained by reference inside hashed ledger payload","change":"deep-copy payload and reconstructed entries before hashing/storage"},
+  "rerun_1":"PASS_32_OF_32",
+  "final_regression":"PASS_32_OF_32",
+  "fixture_validation":{"input_record_count":4,"duplicate_count":1,"output_record_count":3,"crash_resume":"PASS","progress_monotonic":"PASS","second_run_execution_delta":0,"ledger_delta_second_run":0,"network_call_count":0},
+  "retry_validation":{"retryable_429":"PASS","nonretryable_400":"PASS_FAIL_CLOSED","retry_exhaustion":"PASS_RECORDED"},
+  "ci_claimed":false
+}

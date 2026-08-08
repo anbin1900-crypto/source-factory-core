@@ -1,0 +1,235 @@
+{
+  "append_only": true,
+  "entries": [
+    {
+      "entry_hash": "9b05b3d19e8c714612d68e2e8e73954c7de88ab34cc1b958e8ec897cfa7ee67d",
+      "event": "START",
+      "payload": {
+        "cursor": {
+          "accepted_keys": [],
+          "completed": false,
+          "duplicate_count": 0,
+          "input_record_count": 0,
+          "last_committed_page": 0,
+          "next_page": 1,
+          "output_record_count": 0,
+          "output_records": [],
+          "start_page": 1
+        },
+        "execution_key": "1b44707984e742adb763cb7bb9dc522ba3dc885c47d0545d6159f6755032e4f8",
+        "resumed": false
+      },
+      "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "sequence": 1
+    },
+    {
+      "entry_hash": "913cbecf37fddf1b1f79298fbae649d356f8403578f692e170a0e92150bf6c1d",
+      "event": "PAGE_COMMITTED",
+      "payload": {
+        "cursor": {
+          "accepted_keys": [
+            "id:L-001",
+            "id:L-002"
+          ],
+          "completed": false,
+          "duplicate_count": 0,
+          "input_record_count": 2,
+          "last_committed_page": 1,
+          "next_page": 2,
+          "output_record_count": 2,
+          "output_records": [
+            {
+              "address": "Seoul",
+              "extra": {
+                "floor": 3,
+                "tags": [
+                  "a",
+                  "b"
+                ]
+              },
+              "id": "L-001",
+              "name": "Alpha",
+              "price": 100
+            },
+            {
+              "address": "Busan",
+              "id": "L-002",
+              "name": "Beta",
+              "note": "preserve-me",
+              "price": 200
+            }
+          ],
+          "start_page": 1
+        },
+        "execution_key": "1b44707984e742adb763cb7bb9dc522ba3dc885c47d0545d6159f6755032e4f8",
+        "page": 1,
+        "page_delta": {
+          "added": 2,
+          "duplicates": 0
+        }
+      },
+      "previous_hash": "9b05b3d19e8c714612d68e2e8e73954c7de88ab34cc1b958e8ec897cfa7ee67d",
+      "sequence": 2
+    },
+    {
+      "entry_hash": "549df3649c352b5e4ee343937278554d87d326ff69987c7be53fdda9a4aeab90",
+      "event": "CRASH_SIMULATED_AFTER_COMMIT",
+      "payload": {
+        "cursor": {
+          "accepted_keys": [
+            "id:L-001",
+            "id:L-002"
+          ],
+          "completed": false,
+          "duplicate_count": 0,
+          "input_record_count": 2,
+          "last_committed_page": 1,
+          "next_page": 2,
+          "output_record_count": 2,
+          "output_records": [
+            {
+              "address": "Seoul",
+              "extra": {
+                "floor": 3,
+                "tags": [
+                  "a",
+                  "b"
+                ]
+              },
+              "id": "L-001",
+              "name": "Alpha",
+              "price": 100
+            },
+            {
+              "address": "Busan",
+              "id": "L-002",
+              "name": "Beta",
+              "note": "preserve-me",
+              "price": 200
+            }
+          ],
+          "start_page": 1
+        },
+        "execution_key": "1b44707984e742adb763cb7bb9dc522ba3dc885c47d0545d6159f6755032e4f8",
+        "page": 1
+      },
+      "previous_hash": "913cbecf37fddf1b1f79298fbae649d356f8403578f692e170a0e92150bf6c1d",
+      "sequence": 3
+    },
+    {
+      "entry_hash": "1e7a909e8ff089205eee103a2f96e894a604de9dcd940e791f024e17ec007dda",
+      "event": "PAGE_COMMITTED",
+      "payload": {
+        "cursor": {
+          "accepted_keys": [
+            "id:L-001",
+            "id:L-002",
+            "id:L-003"
+          ],
+          "completed": true,
+          "duplicate_count": 1,
+          "input_record_count": 4,
+          "last_committed_page": 2,
+          "next_page": null,
+          "output_record_count": 3,
+          "output_records": [
+            {
+              "address": "Seoul",
+              "extra": {
+                "floor": 3,
+                "tags": [
+                  "a",
+                  "b"
+                ]
+              },
+              "id": "L-001",
+              "name": "Alpha",
+              "price": 100
+            },
+            {
+              "address": "Busan",
+              "id": "L-002",
+              "name": "Beta",
+              "note": "preserve-me",
+              "price": 200
+            },
+            {
+              "address": "Incheon",
+              "id": "L-003",
+              "name": "Gamma",
+              "price": 300,
+              "unknown_field": {
+                "x": 1
+              }
+            }
+          ],
+          "start_page": 1
+        },
+        "execution_key": "1b44707984e742adb763cb7bb9dc522ba3dc885c47d0545d6159f6755032e4f8",
+        "page": 2,
+        "page_delta": {
+          "added": 1,
+          "duplicates": 1
+        }
+      },
+      "previous_hash": "549df3649c352b5e4ee343937278554d87d326ff69987c7be53fdda9a4aeab90",
+      "sequence": 4
+    },
+    {
+      "entry_hash": "2a78a4b8099b33d61caf6413e8b96e5b3b00036152bada861707b75f932b5173",
+      "event": "COMPLETE",
+      "payload": {
+        "cursor": {
+          "accepted_keys": [
+            "id:L-001",
+            "id:L-002",
+            "id:L-003"
+          ],
+          "completed": true,
+          "duplicate_count": 1,
+          "input_record_count": 4,
+          "last_committed_page": 2,
+          "next_page": null,
+          "output_record_count": 3,
+          "output_records": [
+            {
+              "address": "Seoul",
+              "extra": {
+                "floor": 3,
+                "tags": [
+                  "a",
+                  "b"
+                ]
+              },
+              "id": "L-001",
+              "name": "Alpha",
+              "price": 100
+            },
+            {
+              "address": "Busan",
+              "id": "L-002",
+              "name": "Beta",
+              "note": "preserve-me",
+              "price": 200
+            },
+            {
+              "address": "Incheon",
+              "id": "L-003",
+              "name": "Gamma",
+              "price": 300,
+              "unknown_field": {
+                "x": 1
+              }
+            }
+          ],
+          "start_page": 1
+        },
+        "execution_key": "1b44707984e742adb763cb7bb9dc522ba3dc885c47d0545d6159f6755032e4f8"
+      },
+      "previous_hash": "1e7a909e8ff089205eee103a2f96e894a604de9dcd940e791f024e17ec007dda",
+      "sequence": 5
+    }
+  ],
+  "hash_chain_validation": "PASS",
+  "schema_version": "RESUME_LEDGER_V1"
+}

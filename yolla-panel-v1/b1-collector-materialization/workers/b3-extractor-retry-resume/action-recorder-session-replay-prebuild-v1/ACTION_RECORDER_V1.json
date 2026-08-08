@@ -1,0 +1,23 @@
+{
+  "action_id_policy": "DETERMINISTIC_SESSION_SEQUENCE_FINGERPRINT",
+  "action_types": [
+    "click",
+    "input",
+    "navigation",
+    "scroll",
+    "wait"
+  ],
+  "dedupe_key": "SHA256(command_id,page_id,action_type,payload)",
+  "required_fields": [
+    "action_id",
+    "page_id",
+    "command_id",
+    "sequence",
+    "action_type",
+    "payload",
+    "status",
+    "fingerprint"
+  ],
+  "schema_version": "B3_ACTION_RECORDER_V1",
+  "timeline_order": "sequence ASC"
+}

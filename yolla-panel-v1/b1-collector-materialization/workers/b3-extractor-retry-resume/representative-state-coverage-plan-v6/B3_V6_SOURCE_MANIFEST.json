@@ -1,0 +1,23 @@
+{
+  "schema_version":"B3_REPRESENTATIVE_STATE_COVERAGE_V6_SOURCE_MANIFEST",
+  "directive_id":"A0-TO-B3-REPRESENTATIVE-STATE-COVERAGE-PLAN-V6-20260808-001",
+  "assignment_comment_id":5220468828,
+  "cycle_id":"A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001",
+  "source_authority":{"path":"yolla-panel-v1/b1-collector-materialization/workers/b3-extractor-retry-resume/user-journey-state-machine-v5/generated/USER_JOURNEY_STATE_MACHINE_V1.json","blob":"24a5477e6f18c4f51c20897a04626306fb85310a"},
+  "files":[
+    {"path":"REPRESENTATIVE_STATE_COVERAGE_PLAN_V1.json","blob":"6407a1cda0887b4c6252815f3b0a6769a3f94e17"},
+    {"path":"LIVE_SITE_ACTION_SCENARIO_SET_V1.json","blob":"d5d537f4ffff67d98dc7a61ba7478e2e85948731"},
+    {"path":"src/representative_state_coverage_plan_v6.py","blob":"99f7b984cb65a117b70e227051673878e17c71ae"},
+    {"path":"tests/test_representative_state_coverage_plan_v6.py","blob":"2e2609f03f2bdd005b09ef2653d8b44f99202f1e"},
+    {"path":"tools/run_representative_state_coverage_fixture_v6.py","blob":"9997a8123f00c80b0857bc4f2fc19782070921b8"},
+    {"path":"tools/run_representative_state_coverage_fixture_v6.cmd","blob":"9dda31ea8e281c801f094bbd4363a4fabfa43b5b"},
+    {"path":"generated/B3_REPRESENTATIVE_STATE_COVERAGE_SMOKE_RECEIPT_V6.json","blob":"07500df3e2410cb6ca3f870dcd99ab2fb304c2f8"},
+    {"path":"B3_V6_TEST_RESULTS.json","blob":"b49385c831ab0798ae97f3a99ae01d42b1c3a872"}
+  ],
+  "remote_readback_pre_final":"PASS_8_OF_8",
+  "target_pc_execution":false,
+  "live_site_call":false,
+  "production":false,
+  "ready":false,
+  "merge":false
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "B3_A3_WORKER_BROWSER_STATE_EVENT_CONSUMER_V1",
+  "source_worker": "A-3",
+  "source_pr": 22,
+  "source_schema": "WORKER_BROWSER_STATE_EVENT_V1",
+  "source_cycle": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "accepted_states": ["IDLE", "DISPATCHED", "GENERATING", "COMPLETE", "BLOCKED", "UNKNOWN"],
+  "required_source_fields": ["worker_id", "page_id", "command_id", "event_seq", "observed_at", "state"],
+  "b3_enrichment_fields": ["action_id", "session_id"],
+  "unknown_policy": "SIDE_STATE_ONLY_NEVER_MAIN_STATE_NEVER_PASS",
+  "likely_complete_policy": "DO_NOT_PROMOTE_TO_COMPLETE_WITHOUT_EXPLICIT_COMPLETE_MARKER",
+  "a3_terminal_claimed": false,
+  "target_pc_execution": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

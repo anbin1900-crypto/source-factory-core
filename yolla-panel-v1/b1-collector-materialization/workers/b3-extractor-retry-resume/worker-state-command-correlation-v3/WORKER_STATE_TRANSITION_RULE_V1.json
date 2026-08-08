@@ -1,0 +1,11 @@
+{
+  "schema_version":"B3_WORKER_STATE_TRANSITION_RULE_V1",
+  "main_path":["DISPATCHED","GENERATING","COMPLETE|BLOCKED"],
+  "initial_optional":"IDLE",
+  "unknown":"SIDE_STATE_ONLY",
+  "terminal_states":["COMPLETE","BLOCKED"],
+  "after_terminal":"SUPPRESS_ALL_MAIN_STATE_CHANGES",
+  "stale_rule":"event_seq must be strictly greater than accepted main-state event_seq",
+  "duplicate_rule":"same idempotency key is not re-applied",
+  "likely_complete":"never promoted to COMPLETE without explicit marker"
+}

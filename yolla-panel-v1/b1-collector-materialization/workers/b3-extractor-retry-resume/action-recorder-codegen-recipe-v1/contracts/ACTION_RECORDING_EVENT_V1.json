@@ -1,0 +1,23 @@
+{
+  "schema_version": "B3_ACTION_RECORDING_EVENT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "action_types": ["click", "input", "select", "scroll", "popup", "frame", "navigation"],
+  "required_common_fields": ["step_id", "sequence", "action_type", "enabled", "page_alias", "frame_path"],
+  "target_action_types": ["click", "input", "select", "popup", "frame"],
+  "target_fields": ["target_signature", "locator", "locator_candidates"],
+  "editable_fields": ["enabled", "value", "url", "metadata", "locator", "locator_candidates"],
+  "determinism": {
+    "step_id": "CONTIGUOUS_STEP_0001",
+    "sequence": "CONTIGUOUS_FROM_1",
+    "target_signature": "SHA256_CANONICAL_JSON_OF_SEMANTIC_TARGET_FIELDS",
+    "locator_order": ["test_id", "role", "label", "placeholder", "id", "text", "css"]
+  },
+  "boundary": {
+    "fixture_execution_only": true,
+    "actual_site_execution": false,
+    "actual_bulk_collection": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

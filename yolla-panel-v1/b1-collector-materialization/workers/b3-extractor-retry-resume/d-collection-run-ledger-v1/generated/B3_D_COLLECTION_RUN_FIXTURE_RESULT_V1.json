@@ -1,0 +1,156 @@
+{
+  "schema_version": "B3_D_COLLECTION_RUN_RESUME_LEDGER_V1",
+  "collection_run": {
+    "native_run_identity": {
+      "source_key": "fixture.source-factory-core.d-collection-run",
+      "native_run_key": "b3-native-run-20260806-fixture-001"
+    },
+    "d_canonical_run_id": null,
+    "package_sha256": "ad9255eaf99c89df257c1c89eb0f34e2e6d3165b3613114487606581999863d3",
+    "started_at": "2026-08-06T00:01:00+09:00",
+    "ended_at": "2026-08-06T00:07:00+09:00",
+    "status": "COMPLETED",
+    "retry_count": 1,
+    "resume_count": 1,
+    "processing_event_count": 8
+  },
+  "processing_events": [
+    {
+      "native_event_id": "b3-native-run-20260806-fixture-001:event:0001",
+      "sequence": 1,
+      "event_type": "RUN_CREATED",
+      "status_from": null,
+      "status_to": "CREATED",
+      "occurred_at": "2026-08-06T00:00:00+09:00",
+      "idempotency_key": "evt-created",
+      "retry_attempt": 0,
+      "resume_from_event_id": null,
+      "details": {"package_state": "SEALED"},
+      "payload_sha256": "4b0a28a746948668a423e1104fedb96347ba137c964824115299f13defbeef3c",
+      "previous_event_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "event_hash": "92609223ea1dcf5e3be9b9051208d51ad4f2d652dcce7fbf393ad911c1b1a949"
+    },
+    {
+      "native_event_id": "b3-native-run-20260806-fixture-001:event:0002",
+      "sequence": 2,
+      "event_type": "RUN_STARTED",
+      "status_from": "CREATED",
+      "status_to": "RUNNING",
+      "occurred_at": "2026-08-06T00:01:00+09:00",
+      "idempotency_key": "evt-start-1",
+      "retry_attempt": 0,
+      "resume_from_event_id": null,
+      "details": {"worker": "B-3"},
+      "payload_sha256": "a4ee29555f0e61c70d03503618a49714c962c87d994f57b5404166d4909ea027",
+      "previous_event_hash": "92609223ea1dcf5e3be9b9051208d51ad4f2d652dcce7fbf393ad911c1b1a949",
+      "event_hash": "46220d7d6b0b92139387d5fc94889a0feafa29192f33c318451c249fedb28822"
+    },
+    {
+      "native_event_id": "b3-native-run-20260806-fixture-001:event:0003",
+      "sequence": 3,
+      "event_type": "RETRY_SCHEDULED",
+      "status_from": "RUNNING",
+      "status_to": "RETRY_WAIT",
+      "occurred_at": "2026-08-06T00:02:00+09:00",
+      "idempotency_key": "evt-retry-1",
+      "retry_attempt": 1,
+      "resume_from_event_id": null,
+      "details": {"reason": "FIXTURE_RETRYABLE_FAILURE"},
+      "payload_sha256": "e8e0134f7b5b8ebd0259c13c9e9096378aa8b66c3d24aa52237d6395f3d8f4a6",
+      "previous_event_hash": "46220d7d6b0b92139387d5fc94889a0feafa29192f33c318451c249fedb28822",
+      "event_hash": "66a87ad03c650c4b2b77b1f448b81bec99227349698122eb01e8ccc195fd7648"
+    },
+    {
+      "native_event_id": "b3-native-run-20260806-fixture-001:event:0004",
+      "sequence": 4,
+      "event_type": "RUN_STARTED",
+      "status_from": "RETRY_WAIT",
+      "status_to": "RUNNING",
+      "occurred_at": "2026-08-06T00:03:00+09:00",
+      "idempotency_key": "evt-start-2",
+      "retry_attempt": 1,
+      "resume_from_event_id": null,
+      "details": {"retry": true},
+      "payload_sha256": "53de2bd2b583405c88e58928713bd26344ef2f08ad9f566b7563171548ac8307",
+      "previous_event_hash": "66a87ad03c650c4b2b77b1f448b81bec99227349698122eb01e8ccc195fd7648",
+      "event_hash": "e45227cceb902d3d52a9c189b197e4f533d05c7dfe7f05c5f0b6d4798651d822"
+    },
+    {
+      "native_event_id": "b3-native-run-20260806-fixture-001:event:0005",
+      "sequence": 5,
+      "event_type": "RUN_INTERRUPTED",
+      "status_from": "RUNNING",
+      "status_to": "INTERRUPTED",
+      "occurred_at": "2026-08-06T00:04:00+09:00",
+      "idempotency_key": "evt-interrupt",
+      "retry_attempt": 1,
+      "resume_from_event_id": null,
+      "details": {"reason": "FIXTURE_PROCESS_RESTART"},
+      "payload_sha256": "d3083dcbe8b4ebaf8d2286b10c9ecce7d60fabecacc985d830a39275774ff339",
+      "previous_event_hash": "e45227cceb902d3d52a9c189b197e4f533d05c7dfe7f05c5f0b6d4798651d822",
+      "event_hash": "c38b56238d61cc4d1ac5b8b230c4dee1d4311ebacdfa30a6f64a6c9c53642423"
+    },
+    {
+      "native_event_id": "b3-native-run-20260806-fixture-001:event:0006",
+      "sequence": 6,
+      "event_type": "RUN_RESUMED",
+      "status_from": "INTERRUPTED",
+      "status_to": "RESUMED",
+      "occurred_at": "2026-08-06T00:05:00+09:00",
+      "idempotency_key": "evt-resume",
+      "retry_attempt": 1,
+      "resume_from_event_id": "b3-native-run-20260806-fixture-001:event:0005",
+      "details": {"checkpoint": "native-checkpoint-0005"},
+      "payload_sha256": "12bece2d5389e3c303d5fdb5d72207a2d48165c449742aade8ac173a330b56d9",
+      "previous_event_hash": "c38b56238d61cc4d1ac5b8b230c4dee1d4311ebacdfa30a6f64a6c9c53642423",
+      "event_hash": "69a4991e72a2d06e43b5c7d01e0c75dd4d3669c5e4d26e26a988226212719881"
+    },
+    {
+      "native_event_id": "b3-native-run-20260806-fixture-001:event:0007",
+      "sequence": 7,
+      "event_type": "RUN_STARTED",
+      "status_from": "RESUMED",
+      "status_to": "RUNNING",
+      "occurred_at": "2026-08-06T00:06:00+09:00",
+      "idempotency_key": "evt-start-3",
+      "retry_attempt": 1,
+      "resume_from_event_id": null,
+      "details": {"resumed": true},
+      "payload_sha256": "d0e1026b662af3b15ce6d2ad500d8f29d25c40cfeb71aaa93eb836b70707e25d",
+      "previous_event_hash": "69a4991e72a2d06e43b5c7d01e0c75dd4d3669c5e4d26e26a988226212719881",
+      "event_hash": "85c876bb845fc12056a76bcf9ca51815131662b3be9d7c823e5bf3db8eff139c"
+    },
+    {
+      "native_event_id": "b3-native-run-20260806-fixture-001:event:0008",
+      "sequence": 8,
+      "event_type": "RUN_COMPLETED",
+      "status_from": "RUNNING",
+      "status_to": "COMPLETED",
+      "occurred_at": "2026-08-06T00:07:00+09:00",
+      "idempotency_key": "evt-complete",
+      "retry_attempt": 1,
+      "resume_from_event_id": null,
+      "details": {"output_package_count": 1},
+      "payload_sha256": "fbcf1801793178923f5c854242b1841918add521a928209c16e097134631d838",
+      "previous_event_hash": "85c876bb845fc12056a76bcf9ca51815131662b3be9d7c823e5bf3db8eff139c",
+      "event_hash": "a6be1177a4fc87cccbd4a42f1d6b2af76a67c7fdf1c2c405444e6a542e2ed5de"
+    }
+  ],
+  "retry_resume_lineage": {
+    "interruption_event_ids": ["b3-native-run-20260806-fixture-001:event:0005"],
+    "resume_edges": [
+      {
+        "resume_event_id": "b3-native-run-20260806-fixture-001:event:0006",
+        "resume_from_event_id": "b3-native-run-20260806-fixture-001:event:0005"
+      }
+    ]
+  },
+  "safety": {
+    "site_call_count": 0,
+    "automated_pagination": false,
+    "d_canonical_id_generation": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

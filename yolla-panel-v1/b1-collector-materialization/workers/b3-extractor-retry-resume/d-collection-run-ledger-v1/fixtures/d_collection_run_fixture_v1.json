@@ -1,0 +1,16 @@
+{
+  "schema_version": "B3_D_COLLECTION_RUN_FIXTURE_V1",
+  "source_key": "fixture.source-factory-core.d-collection-run",
+  "native_run_key": "b3-native-run-20260806-fixture-001",
+  "package_sha256": "ad9255eaf99c89df257c1c89eb0f34e2e6d3165b3613114487606581999863d3",
+  "events": [
+    {"event_type":"RUN_CREATED","occurred_at":"2026-08-06T00:00:00+09:00","idempotency_key":"evt-created","retry_attempt":0,"details":{"package_state":"SEALED"}},
+    {"event_type":"RUN_STARTED","occurred_at":"2026-08-06T00:01:00+09:00","idempotency_key":"evt-start-1","retry_attempt":0,"details":{"worker":"B-3"}},
+    {"event_type":"RETRY_SCHEDULED","occurred_at":"2026-08-06T00:02:00+09:00","idempotency_key":"evt-retry-1","retry_attempt":1,"details":{"reason":"FIXTURE_RETRYABLE_FAILURE"}},
+    {"event_type":"RUN_STARTED","occurred_at":"2026-08-06T00:03:00+09:00","idempotency_key":"evt-start-2","retry_attempt":1,"details":{"retry":true}},
+    {"event_type":"RUN_INTERRUPTED","occurred_at":"2026-08-06T00:04:00+09:00","idempotency_key":"evt-interrupt","retry_attempt":1,"details":{"reason":"FIXTURE_PROCESS_RESTART"}},
+    {"event_type":"RUN_RESUMED","occurred_at":"2026-08-06T00:05:00+09:00","idempotency_key":"evt-resume","retry_attempt":1,"resume_from_sequence":5,"details":{"checkpoint":"native-checkpoint-0005"}},
+    {"event_type":"RUN_STARTED","occurred_at":"2026-08-06T00:06:00+09:00","idempotency_key":"evt-start-3","retry_attempt":1,"details":{"resumed":true}},
+    {"event_type":"RUN_COMPLETED","occurred_at":"2026-08-06T00:07:00+09:00","idempotency_key":"evt-complete","retry_attempt":1,"details":{"output_package_count":1}}
+  ]
+}

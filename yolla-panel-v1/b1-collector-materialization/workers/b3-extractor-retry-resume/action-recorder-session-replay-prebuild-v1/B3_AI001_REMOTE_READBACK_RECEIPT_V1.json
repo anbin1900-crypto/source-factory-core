@@ -1,0 +1,43 @@
+{
+  "schema_version": "B3_AI001_ACTION_RECORDER_SESSION_REPLAY_REMOTE_READBACK_RECEIPT_V1",
+  "directive_id": "AI001-TO-B3-ACTION-RECORDER-SESSION-REPLAY-PREBUILD-V1-20260807-001",
+  "assignment_comment_id": 5216933632,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "readback_ref": "worker/b3-extractor-retry-resume-v1",
+  "head_before_receipt": "890f74f42451e6ceb2c9e28dd761677c29fdbac6",
+  "files": [
+    {"path":"ACTION_RECORDER_V1.json","blob":"3a2046fa181b3e16de4a6b526f4221e1e8dd46d5"},
+    {"path":"SESSION_REPLAY_BINDING_V1.json","blob":"f201fec5f2fd8d064ae1de6245a26e0d84bf3719"},
+    {"path":"COMMAND_ACTION_CORRELATION_V1.json","blob":"b1bc69d1d18850d3af996838d604e7f99b20b5d3"},
+    {"path":"RESUME_CURSOR_V1.json","blob":"5de55ee0edbbe1df315383874f57784aeb02a848"},
+    {"path":"src/action_recorder_session_replay.py","blob":"42f21d7888d61c36c2f679f1b71c9cf88556d457"},
+    {"path":"tools/b3_action_recorder_smoke.py","blob":"9f731a03b780a7ff2b6eca1adacba9309350f3f7"},
+    {"path":"tools/run_b3_action_recorder_smoke.cmd","blob":"0a4c570f7cf05c900aa005fa850f18fb78dbd6a3"},
+    {"path":"tests/test_action_recorder_session_replay.py","blob":"e279de6fc4aa8c29cc07a25bce2e8cefb5f5b792"},
+    {"path":"fixtures/record_replay_smoke_v1.json","blob":"6ce8f9f4edf602558f22419061b504970249d581"},
+    {"path":"generated/B3_ACTION_RECORDER_STATE_V1.json","blob":"4ca33f4f331a86c590e4f303da3e476f4b733bd1"},
+    {"path":"generated/B3_RECORD_REPLAY_SMOKE_RECEIPT_V1.json","blob":"4d12681649686cf2a426b962a561fbfbe007b9d9"},
+    {"path":"B3_AI001_START_REPORT_V1.json","blob":"8528017c9f36d1859c6f4dde5ccc715402531168"},
+    {"path":"B3_AI001_TEST_RESULTS_V1.json","blob":"6ba0b414c6fc018792c5de197f0025ad6b06fc4c"},
+    {"path":"B3_AI001_SOURCE_MANIFEST_V1.json","blob":"54c608604a0cee507f88fdb7d2d3496cc7383b35"},
+    {"path":"B3_AI001_FINAL_REPORT_V1.json","blob":"19ce7fdbe9411a2c11fd2f935b89f215958fd135"},
+    {"path":"events/B3_ACTION_RECORDER_SESSION_REPLAY_PREBUILD_READY.json","blob":"fa4849da0eaf287eac93beb56d061026464c18df"},
+    {"path":"LATEST_B3_ACTION_RECORDER_SESSION_REPLAY_POINTER_V1.json","blob":"22c02652bd4de1d2886f77647a75ae3b03cf4525"}
+  ],
+  "remote_readback": "PASS_17_OF_17",
+  "local_validation": {
+    "source_parse": "PASS",
+    "python_compile": "PASS",
+    "unit_tests": "PASS_9_OF_9",
+    "fixture_record_replay_smoke_1": "PASS",
+    "restart_restore": "PASS",
+    "duplicate_suppressed_count": 1,
+    "contextless_resume": true
+  },
+  "validation_boundary": "LOCAL_EXECUTION_AND_REMOTE_BLOB_READBACK_REPORTED_SEPARATELY",
+  "target_pc_execution": false,
+  "ci_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

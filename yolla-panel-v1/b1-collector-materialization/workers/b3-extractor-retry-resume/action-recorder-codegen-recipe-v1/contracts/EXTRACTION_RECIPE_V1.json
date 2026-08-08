@@ -1,0 +1,22 @@
+{
+  "schema_version": "B3_EXTRACTION_RECIPE_V1_CONTRACT",
+  "recipe_schema": "B3_EXTRACTION_RECIPE_V1",
+  "required_fields": ["recipe_id", "session_id", "start_url", "variables", "steps", "extraction", "safety", "recipe_hash"],
+  "recipe_hash": "SHA256_CANONICAL_JSON_EXCLUDING_RECIPE_HASH",
+  "step_requirements": {
+    "sequence": "CONTIGUOUS_FROM_1",
+    "enabled_only": "DISABLED_RECORDED_STEPS_ARE_EXCLUDED_AT_COMPILE",
+    "target_actions_require_locator": true
+  },
+  "playwright_codegen": {
+    "language": "TypeScript",
+    "runtime": "Playwright",
+    "supported": ["click", "fill", "selectOption", "scrollTo", "popup wait", "frame binding", "goto"],
+    "generated_source_is_executable_candidate": true,
+    "real_browser_execution_in_this_task": false
+  },
+  "extraction": {
+    "mode_values": ["NONE", "DOM", "API", "HYBRID"],
+    "field_locator_preservation": true
+  }
+}

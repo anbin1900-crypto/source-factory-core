@@ -1,0 +1,19 @@
+{
+  "action_count": 5,
+  "action_types": ["click", "input", "navigation", "scroll", "wait"],
+  "assignment_comment_id": 5216933632,
+  "cdp_bound_action_count": 4,
+  "ci_pass_claimed": false,
+  "contextless_resume": true,
+  "directive_id": "AI001-TO-B3-ACTION-RECORDER-SESSION-REPLAY-PREBUILD-V1-20260807-001",
+  "duplicate_suppressed_count": 1,
+  "fixture_record_replay_smoke_1": "PASS",
+  "pending_action_ids": [],
+  "python_compile": "PASS",
+  "restart_restore": "PASS",
+  "schema_version": "B3_AI001_ACTION_RECORDER_SESSION_REPLAY_TEST_RESULTS_V1",
+  "single_command_entrypoint": "tools/run_b3_action_recorder_smoke.cmd",
+  "source_parse": "PASS",
+  "target_pc_execution": false,
+  "unit_tests": "PASS_9_OF_9"
+}

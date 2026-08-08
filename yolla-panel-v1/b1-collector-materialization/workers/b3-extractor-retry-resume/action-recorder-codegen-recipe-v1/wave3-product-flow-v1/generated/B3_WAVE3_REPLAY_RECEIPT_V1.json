@@ -1,0 +1,30 @@
+{
+  "schema_version": "B3_WAVE3_REPLAY_RECEIPT_V1",
+  "status": "PASS",
+  "adapter_execution": true,
+  "actual_chromium_runtime": true,
+  "http_pass_claimed": false,
+  "recipe_digest": "4a521a4710e55d87bf14f9984b8a5cf746f2498633b33e6a947267733ccbab59",
+  "adapter_source_sha256": "41e99a659c056e2a0d6f3d120208bfc3e480383d7ae2ce52b4c95027881da60f",
+  "step_count": 10,
+  "trace": [
+    {"step_id":"step-0001","kind":"input","status":"PASS"},
+    {"step_id":"step-0002","kind":"select","status":"PASS"},
+    {"step_id":"step-0003","kind":"click","status":"PASS"},
+    {"step_id":"step-0004","kind":"scroll","status":"PASS"},
+    {"step_id":"step-0005","kind":"click","status":"PASS"},
+    {"step_id":"step-0006","kind":"navigation","status":"PASS"},
+    {"step_id":"step-0007","kind":"click","status":"PASS"},
+    {"step_id":"step-0008","kind":"popup","status":"PASS"},
+    {"step_id":"step-0009","kind":"iframe","status":"PASS"},
+    {"step_id":"step-0010","kind":"click","status":"PASS"}
+  ],
+  "assertions": {
+    "query": "apartment",
+    "region": "seoul",
+    "search_status": "searched:apartment:seoul",
+    "navigation_hash": "#detail",
+    "popup_opened": true,
+    "frame_status": "loaded"
+  }
+}

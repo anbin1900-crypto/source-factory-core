@@ -1,0 +1,23 @@
+{
+  "a6_handoff_path": "handoffs/B3_TO_A6_LIVE_RECIPE_HANDOFF_V1.json",
+  "branch": "worker/b3-extractor-retry-resume-v1",
+  "content_head": "730bfe8028f3f39c777511c3898a47ce219ffb31",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "event_path": "events/B3_RECORDER_RECIPE_A6_BINDING_PASS.json",
+  "final_report_path": "B3_WAVE2_RECORDER_A6_BINDING_FINAL_REPORT_V1.json",
+  "merge": false,
+  "production": false,
+  "ready": false,
+  "remote_readback_commit": "62da04156daacc4d2a7c8f2aad9a9aec4be7d3ee",
+  "remote_readback_blob": "7bebeb2f71d95aadf1542e12eee66994c5392a7b",
+  "remote_readback_receipt_path": "B3_WAVE2_RECORDER_A6_BINDING_REMOTE_READBACK_RECEIPT_V1.json",
+  "remote_readback_result": "PASS_17_OF_17",
+  "schema_version": "LATEST_B3_WAVE2_RECORDER_A6_BINDING_POINTER_V1",
+  "source_manifest_path": "B3_WAVE2_RECORDER_A6_BINDING_SOURCE_MANIFEST_V1.json",
+  "status": "PASS_REMOTE_READBACK",
+  "terminal": "B3_RECORDER_RECIPE_A6_BINDING_PASS_WITH_PROVEN_HTTP_TRANSPORT_BLOCKER",
+  "test_results_path": "B3_WAVE2_RECORDER_A6_BINDING_TEST_RESULTS_V1.json",
+  "updated_at_kst": "2026-08-07T04:14:00+09:00",
+  "worker": "B-3",
+  "worker_pr": 39
+}

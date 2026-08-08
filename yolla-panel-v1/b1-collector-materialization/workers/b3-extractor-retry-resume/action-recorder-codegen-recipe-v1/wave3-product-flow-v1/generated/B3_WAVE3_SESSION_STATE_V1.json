@@ -1,0 +1,19 @@
+{
+  "schema_version": "B3_WAVE3_SESSION_STATE_V1",
+  "state_digest": "eac451bb8f913f56a662ef24d6ae3b9e23c32a15cfaeab32ef2f554878f7021a",
+  "state": {
+    "query": "apartment",
+    "region": "seoul",
+    "search_status": "searched:apartment:seoul",
+    "navigation_hash": "#detail",
+    "scroll_y": 0
+  },
+  "events": [
+    {"sequence":1,"event_id":"wave3-action-0001","kind":"input","page_alias":"main","frame_name":null,"locator":{"strategy":"test_id","value":"keyword-input"},"value":"apartment","url":null,"scroll":null,"fingerprint":"3ea0ec71aa209487f44de0c79a02daaf6f4d0c7ff7e5ed16b56dff95164aff95","previous_hash":"0000000000000000000000000000000000000000000000000000000000000000","event_hash":"567151fed80570f49b608f9eddcfb7d70ece6fb784eed1405704a481f639cd68"},
+    {"sequence":2,"event_id":"wave3-action-0002","kind":"select","page_alias":"main","frame_name":null,"locator":{"strategy":"test_id","value":"region-select"},"value":"seoul","url":null,"scroll":null,"fingerprint":"185627d5a0a131763fddccbe4485af7971d3cd26e2d432852602555fafcf155a","previous_hash":"567151fed80570f49b608f9eddcfb7d70ece6fb784eed1405704a481f639cd68","event_hash":"bc90c21d8045289178395a201afa03a2223cf00f1265d4e7b5bb0623c90df04c"},
+    {"sequence":3,"event_id":"wave3-action-0003","kind":"click","page_alias":"main","frame_name":null,"locator":{"strategy":"test_id","value":"search-button"},"value":null,"url":null,"scroll":null,"fingerprint":"7edbb17c24eab6a96b88d0cb1458615492b44a76467447273023f05f0c53cff3","previous_hash":"bc90c21d8045289178395a201afa03a2223cf00f1265d4e7b5bb0623c90df04c","event_hash":"57e4f644fa83cd88db46706f7a5e45655d9a840ecbd59925f2ac119216e31bd7"},
+    {"sequence":4,"event_id":"wave3-action-0004","kind":"scroll","page_alias":"main","frame_name":null,"locator":null,"value":null,"url":null,"scroll":{"x":0,"y":700},"fingerprint":"00bd2af37a299609fec2f3a50f37bfac672f637931e992303e71a5aaf606f1ec","previous_hash":"57e4f644fa83cd88db46706f7a5e45655d9a840ecbd59925f2ac119216e31bd7","event_hash":"012e63eb9427004be7b369024a9ae753d435dd6b9d8dab9944faf94a7c9e8540"},
+    {"sequence":5,"event_id":"wave3-action-0005","kind":"click","page_alias":"main","frame_name":null,"locator":{"strategy":"test_id","value":"route-button"},"value":null,"url":null,"scroll":null,"fingerprint":"1d365d30a833aa6c3d525977b4b099467ba285869a6ef27be3f21bb132c0dac9","previous_hash":"012e63eb9427004be7b369024a9ae753d435dd6b9d8dab9944faf94a7c9e8540","event_hash":"db866ce8b7855233d30fb8b843819767281a94f897814dc86a66066dba9a8459"},
+    {"sequence":6,"event_id":"wave3-action-0006","kind":"navigation","page_alias":"main","frame_name":null,"locator":null,"value":null,"url":"about:blank#detail","scroll":null,"fingerprint":"e7389a5d29af5a9f69be2dc53d2b6402a975c3bf8a492b3a227a5f06e033a64f","previous_hash":"db866ce8b7855233d30fb8b843819767281a94f897814dc86a66066dba9a8459","event_hash":"408281d632de0e8fcbbd140f11500f2114dc30714b104ac021c5a9feafbfb7f3"}
+  ]
+}

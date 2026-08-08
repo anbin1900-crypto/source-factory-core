@@ -1,0 +1,26 @@
+{
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "file_count": 13,
+  "files": [
+    {"path": "B3_WAVE2_RECORDER_A6_BINDING_START_REPORT_V1.json", "sha256": "fc25368e88f9c3671b6cbbc9e8cf6a92636d79ae832ac23d7a705f5554e8dbcd", "size": 842},
+    {"path": "src/common_http_test_site.py", "sha256": "24812bdb577e975c73491d8645c196203b34aa1777325e5596532bcd0904fa9d", "size": 2834},
+    {"path": "src/live_recorder_pipeline.py", "sha256": "748e2aa99d36c5d4c7ae9d5f919316b7a853a851d99bb854d47714fcf33cfe7e", "size": 10482},
+    {"path": "tools/run_live_pipeline.py", "sha256": "3b1ac9bda8ffc3ac9648d997be3faf2c8b7a14d1cf729925b7351c4f054cc591", "size": 6680},
+    {"path": "tests/test_live_pipeline.py", "sha256": "83eb12ceae3f92162d13fcda1a723d9f17e725b71e426b5883c4b0b2e8b797ae", "size": 3642},
+    {"path": "generated/B3_LIVE_ACTION_EVENT_LEDGER_V1.json", "sha256": "aa79ac5f17edd5649a168c5f5ed51939f623c3b35e70a4bc33465387d9f3ed79", "size": 2627},
+    {"path": "generated/B3_LIVE_EXTRACTION_RECIPE_V2.json", "sha256": "cdfd23f965a09c1195b6abc606d2a0550fbe154aac7d5a6b1945b9fa92470427", "size": 3952},
+    {"path": "generated/B3_LIVE_REPLAY_TRACE_V1.json", "sha256": "7dcc9aba3d82969678c93d0e851e36a23c11a36f98e1c1f44b2c7cd63cf196a4", "size": 636},
+    {"path": "generated/B3_TO_A6_GENERATED_ADAPTER_V1.py", "sha256": "7d5d2941e8f0be9c103d496ff88caf4063ce211888d2504dc6112255bf1efad1", "size": 4083},
+    {"path": "generated/B3_WAVE2_LIVE_EXECUTION_RESULT_V1.json", "sha256": "57686fb059522284147777169a7713177540cc59c129c46f6cf32b7eb0fd3bed", "size": 2693},
+    {"path": "handoffs/B3_TO_A6_LIVE_RECIPE_HANDOFF_V1.json", "sha256": "97d4509216ca89499350b0c7fdf4f6c62318d48c6afaa4769712cc1701966e96", "size": 817},
+    {"path": "B3_COMMON_HTTP_TRANSPORT_BLOCKER_V1.json", "sha256": "c1956c165d49264f59f0e2afdad46740064ba15d8d7dea03e34aee1fca0e2dcb", "size": 646},
+    {"path": "B3_WAVE2_RECORDER_A6_BINDING_TEST_RESULTS_V1.json", "sha256": "351b236ea624d004368a996202078f077620fc6cbbb3d5f4cbc442382ff7520d", "size": 1312}
+  ],
+  "merge": false,
+  "out_of_scope_path_count": 0,
+  "owned_root": "yolla-panel-v1/b1-collector-materialization/workers/b3-extractor-retry-resume/action-recorder-codegen-recipe-v1/wave2-runtime-binding-v1/",
+  "preserved_prior_wave1": true,
+  "production": false,
+  "ready": false,
+  "schema_version": "B3_WAVE2_RECORDER_A6_BINDING_SOURCE_MANIFEST_V1"
+}

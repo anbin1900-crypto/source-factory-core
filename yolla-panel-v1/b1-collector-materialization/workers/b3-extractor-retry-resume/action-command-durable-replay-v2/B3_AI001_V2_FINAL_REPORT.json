@@ -1,0 +1,57 @@
+{
+  "schema_version": "B3_AI001_V2_FINAL_REPORT",
+  "directive_id": "AI001-TO-B3-ACTION-COMMAND-CORRELATION-AND-DURABLE-REPLAY-V2-20260807-001",
+  "assignment_comment_id": 5217331799,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "worker": "B-3",
+  "worker_pr": 39,
+  "parent_result": "B3_ACTION_RECORDER_SESSION_REPLAY_PREBUILD_READY",
+  "started_from_head": "813d814c17c323155eca98f29a8b729bcde44826",
+  "content_head_before_final": "e1bfd5c56383c8307a17bff6427a3c1e0f6dc39e",
+  "status": "PASS_PREBUILD",
+  "terminal": "B3_ACTION_COMMAND_CORRELATION_AND_DURABLE_REPLAY_READY",
+  "required_work": {
+    "action_event_v1_required_fields": true,
+    "command_action_evidence_correlation": true,
+    "append_only_hash_ledger": true,
+    "latest_replay_checkpoint": true,
+    "resume_token_after_last_confirmed_action": true,
+    "idempotency_duplicate_execution_suppression": true,
+    "event_ledger_only_minimum_order_recovery": true,
+    "contextless_successor_replay_command": true
+  },
+  "fixture_validation": {
+    "source_parse": "PASS",
+    "python_compile": "PASS_EXIT_0",
+    "unit_tests": "PASS_12_OF_12",
+    "fixture_record_restart_replay_smoke_1": "PASS",
+    "recorded_action_count": 5,
+    "evidence_bound_action_count": 3,
+    "duplicate_suppressed_count": 1,
+    "ledger_record_count": 5,
+    "ledger_reconstruct_count": 5,
+    "last_confirmed_sequence_no": 3,
+    "resume_action_count": 2,
+    "contextless_resume": true
+  },
+  "outputs": [
+    "ACTION_EVENT_V1.json",
+    "ACTION_COMMAND_CORRELATION_V1.json",
+    "DURABLE_ACTION_LEDGER_V1.json",
+    "ACTION_REPLAY_CHECKPOINT_V1.json",
+    "SUCCESSOR_ACTION_REPLAY_COMMAND_V1.json",
+    "LATEST_B3_ACTION_COMMAND_DURABLE_REPLAY_POINTER_V1.json"
+  ],
+  "boundary": {
+    "tunnel_create": false,
+    "pc_agent_direct_execution": false,
+    "target_pc_execution": false,
+    "credential_or_session_secret_storage": false,
+    "multi_user_routing": false,
+    "multi_agent_routing": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "ci_pass_claimed": false
+}

@@ -1,0 +1,18 @@
+{
+  "session_id": "fixture-session-001",
+  "start_url": "https://fixture.local/search",
+  "elements": [
+    {"tag":"input","role":"textbox","accessible_name":"Keyword","label":"Keyword","placeholder":"Search","id":"keyword","test_id":"keyword-input","css":"input.search"},
+    {"tag":"select","role":"combobox","accessible_name":"Region","label":"Region","id":"region","test_id":"region-select","css":"select.region"},
+    {"tag":"button","role":"button","accessible_name":"Search","text":"Search","id":"search-button-new","test_id":"search-submit-new","css":"button.search-submit-new"},
+    {"tag":"a","role":"link","accessible_name":"Open details","text":"Open details","id":"details-link","test_id":"details-link","css":"a.details"},
+    {"tag":"iframe","role":"document","accessible_name":"Result frame","id":"result-frame","test_id":"result-frame","css":"iframe.result"}
+  ],
+  "recording_targets": {
+    "keyword": {"tag":"input","role":"textbox","accessible_name":"Keyword","label":"Keyword","placeholder":"Search","id":"keyword","test_id":"keyword-input","css":"input.search"},
+    "region": {"tag":"select","role":"combobox","accessible_name":"Region","label":"Region","id":"region","test_id":"region-select","css":"select.region"},
+    "search_button_stale": {"tag":"button","role":"button","accessible_name":"Search","text":"Search","id":"search-button-old","test_id":"search-submit-old","css":"button.search-submit-old"},
+    "details": {"tag":"a","role":"link","accessible_name":"Open details","text":"Open details","id":"details-link","test_id":"details-link","css":"a.details"},
+    "frame": {"tag":"iframe","role":"document","accessible_name":"Result frame","id":"result-frame","test_id":"result-frame","css":"iframe.result"}
+  }
+}

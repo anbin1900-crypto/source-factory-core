@@ -1,0 +1,12 @@
+{
+  "expected_repair": "SEMANTIC_TARGET_SIGNATURE_TO_ALTERNATE_STABLE_LOCATOR",
+  "failed_step_id": "step-0003",
+  "original_recipe_hash": "adffe26f86a22ee98e8cc51a4e19ade4526a7707c4001e7d6a79a7bbb8494c3d",
+  "reason": "locator_not_found_or_ambiguous",
+  "schema_version": "B3_REPLAY_FAILURE_TRACE_V1",
+  "status": "FAILED",
+  "trace": [
+    {"action_type":"input","status":"PASS","step_id":"step-0001"},
+    {"action_type":"select","status":"PASS","step_id":"step-0002"}
+  ]
+}

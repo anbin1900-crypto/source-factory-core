@@ -1,0 +1,16 @@
+{
+  "schema_version": "B3_USER_JOURNEY_FIXTURE_SMOKE_RECEIPT_V4",
+  "status": "PASS",
+  "search_list_detail_graph": true,
+  "create_mylisting_edit_graph": true,
+  "journey_event_count": 8,
+  "worker_lifecycle_side_event_count": 2,
+  "worker_lifecycle_mixed_into_journey": false,
+  "duplicate_retry_suppressed": true,
+  "resume_before_restart": ["act-create-save", "act-open-edit", "act-edit-save"],
+  "resume_after_restart": ["act-create-save", "act-open-edit", "act-edit-save"],
+  "restart_resume_match": true,
+  "last_completed_action_id": "act-create-fill",
+  "representative_family_count": 7,
+  "suppressed_equivalent_event_count": 1
+}

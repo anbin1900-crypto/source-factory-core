@@ -1,0 +1,34 @@
+{
+  "schema_version": "B3_WAVE3_SOURCE_MANIFEST_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "assignment_comment_id": 5212046897,
+  "owned_root": "yolla-panel-v1/b1-collector-materialization/workers/b3-extractor-retry-resume/action-recorder-codegen-recipe-v1/wave3-product-flow-v1/",
+  "start_head": "b94ef16dd8a0e73e430c1e0678ce6c6f2e075350",
+  "files": [
+    {"path":"B3_WAVE3_START_REPORT_V1.json","blob":"9e1fdaa195e1cdb2f595c0ccb2e2c3e5ca280399","role":"START_REPORT"},
+    {"path":"src/wave3_recorder_product_flow.py","blob":"bf9806cc8f9eb4bd0e508f5499062ceff507ae73","role":"PRODUCT_FLOW_RUNTIME"},
+    {"path":"tools/run_wave3_product_flow.py","blob":"7202bc6fa4227ae070d291531548bc866cdae0ea","role":"ACTUAL_CHROMIUM_RUNNER"},
+    {"path":"tests/test_wave3_product_flow.py","blob":"fcd90def30db2ac0b61b0c333c59b0b4deaefd91","role":"REGRESSION_TESTS"},
+    {"path":"generated/B3_WAVE3_ACTION_LOG_V1.json","blob":"f5715fee2d537535220af97c3723af1c3e148702","role":"ACTION_LOG"},
+    {"path":"generated/B3_WAVE3_EXTRACTION_RECIPE_V1.json","blob":"b972ac393b3dd5619a1f748dd4458b593bc4e7a4","role":"RECIPE"},
+    {"path":"generated/B3_TO_A6_WAVE3_GENERATED_ADAPTER_V1.py","blob":"488b3e0c47c71e4e2902664f96d0ff7cf4b5f5e5","role":"EXECUTED_GENERATED_ADAPTER"},
+    {"path":"generated/B3_WAVE3_REPLAY_RECEIPT_V1.json","blob":"ccaae24843e668a87a6968293240eb0a162c8814","role":"REPLAY_RECEIPT"},
+    {"path":"generated/B3_WAVE3_RESTART_RESUME_RECEIPT_V1.json","blob":"33274635a3c92e0c6c3377b474e59769daa5fdbf","role":"RESTART_RESUME_RECEIPT"},
+    {"path":"generated/B3_WAVE3_PRODUCT_FLOW_EXECUTION_RESULT_V1.json","blob":"f52c31934cace1a1b2368889486efca2212b5218","role":"EXECUTION_RESULT"},
+    {"path":"generated/B3_WAVE3_SESSION_STATE_V1.json","blob":"50bad5bfc4bf9f5cafe984923c453b5f7cf169ae","role":"PERSISTED_SESSION_STATE"},
+    {"path":"handoffs/B3_TO_A6_WAVE3_PRODUCT_FLOW_HANDOFF_V1.json","blob":"a12b6e061f6b593d0a47ec2ed4066a90cd20f691","role":"A6_HANDOFF"},
+    {"path":"B3_WAVE3_TEST_RESULTS_V1.json","blob":"ba0ebed456207b6b866f40ba36339845abd7860a","role":"TEST_EVIDENCE"}
+  ],
+  "preserved_wave2_http_blocker": {
+    "path": "../wave2-runtime-binding-v1/B3_COMMON_HTTP_TRANSPORT_BLOCKER_V1.json",
+    "blob": "59bce7c9a12f9fd3f7649d8f3746315ef3cb9b97",
+    "repeat_attempted": false,
+    "http_pass_claimed": false
+  },
+  "recipe_digest": "4a521a4710e55d87bf14f9984b8a5cf746f2498633b33e6a947267733ccbab59",
+  "executed_adapter_source_sha256": "41e99a659c056e2a0d6f3d120208bfc3e480383d7ae2ce52b4c95027881da60f",
+  "out_of_owned_root_change_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

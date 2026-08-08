@@ -1,0 +1,35 @@
+{
+  "schema_version": "B3_AI001_V2_TEST_RESULTS",
+  "directive_id": "AI001-TO-B3-ACTION-COMMAND-CORRELATION-AND-DURABLE-REPLAY-V2-20260807-001",
+  "assignment_comment_id": 5217331799,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "tested_at_kst": "2026-08-07T22:13:00+09:00",
+  "local_execution": {
+    "source_parse": "PASS",
+    "python_compile": "PASS_EXIT_0",
+    "unit_tests": "PASS_12_OF_12",
+    "fixture_record_restart_replay_smoke_1": "PASS",
+    "recorded_action_count": 5,
+    "duplicate_suppressed_count": 1,
+    "ledger_record_count": 5,
+    "ledger_reconstruct_count": 5,
+    "last_confirmed_sequence_no": 3,
+    "resume_action_count": 2,
+    "contextless_replay_command": true
+  },
+  "remote_readback": {
+    "required_contract_count": 5,
+    "source_blob": "bac35a7e7c74b872290c81f24e73c379c9880a7d",
+    "test_blob": "3fa272f8538f4a7faebfa43cc6f36c081a42bf7a",
+    "fixture_blob": "161c28330ccfa9f6f2853995fa288a1d1b9448ba",
+    "state_blob": "d3cdb144a3d8530711254b7480480182f28eada1",
+    "smoke_receipt_blob": "fefc99031f723c32274b5007e375fba1ddb34e11",
+    "status": "PASS_BLOB_PRESENT"
+  },
+  "validation_boundary": "LOCAL_EXECUTION_AND_REMOTE_BLOB_READBACK_REPORTED_SEPARATELY",
+  "target_pc_execution": false,
+  "ci_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

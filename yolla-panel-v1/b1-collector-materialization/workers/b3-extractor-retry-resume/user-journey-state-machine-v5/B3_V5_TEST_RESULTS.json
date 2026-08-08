@@ -1,0 +1,40 @@
+{
+  "schema_version": "B3_USER_JOURNEY_STATE_MACHINE_V5_TEST_RESULTS",
+  "directive_id": "A0-TO-B3-USER-JOURNEY-STATE-MACHINE-V5-20260808-001",
+  "execute_comment_id": 5219611492,
+  "directive_comment_id": 5219458231,
+  "local_validation": {
+    "source_parse": "PASS",
+    "python_compile": "PASS_EXIT_0",
+    "unit_tests": "PASS_12_OF_12",
+    "fixture_smoke": "PASS"
+  },
+  "fixture_results": {
+    "representative_transition_count": 7,
+    "equivalent_action_suppressed_count": 1,
+    "public_read_transition_count": 3,
+    "create_transition_count": 2,
+    "my_listing_transition_count": 1,
+    "edit_transition_count": 1,
+    "shared_state_identity_mylisting_visible": "PASS_CREATE_AND_MY_LISTING",
+    "unobserved_path_count": 2,
+    "unobserved_policy": "UNKNOWN_UNOBSERVED_NOT_MATERIALIZED",
+    "worker_lifecycle_side_stream_count": 2,
+    "worker_lifecycle_mixed_into_product_state_machine": false,
+    "create_edit_last_completed_action_id": "act-create-fill",
+    "resume_action_ids": ["act-create-save", "act-open-edit", "act-edit-save"],
+    "restart_resume_match": true
+  },
+  "direct_repair": {
+    "initial_finding": "GLOBAL_LAST_COMPLETED_ACTION_ALLOWED_A_LATER_INDEPENDENT_SEARCH_JOURNEY_TO_MASK_CREATE_EDIT_RESUME",
+    "repair": "REPLACE_GLOBAL_RESUME_CURSOR_WITH_JOURNEY_SCOPED_CHECKPOINT",
+    "post_repair_validation": "PASS_12_OF_12"
+  },
+  "validation_boundary": "LOCAL_EXECUTION_AND_REMOTE_BLOB_READBACK_REPORTED_SEPARATELY",
+  "ci_pass_claimed": false,
+  "target_pc_execution": false,
+  "live_site_call": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

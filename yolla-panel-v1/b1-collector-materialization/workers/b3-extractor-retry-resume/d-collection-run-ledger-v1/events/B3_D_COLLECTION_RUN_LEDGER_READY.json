@@ -1,0 +1,28 @@
+{
+  "schema_version": "B3_D_COLLECTION_RUN_LEDGER_READY_EVENT_V1",
+  "event": "B3_D_COLLECTION_RUN_LEDGER_READY",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "B3_D_COLLECTION_RUN_LEDGER",
+  "assignment_comment_id": 5196022442,
+  "event_owner": "B-3",
+  "event_source_pr": 39,
+  "branch": "worker/b3-extractor-retry-resume-v1",
+  "final_report_commit": "cc4601d912bbe77627cc420169c9d63368cc1d1c",
+  "final_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b3-extractor-retry-resume/d-collection-run-ledger-v1/B3_D_COLLECTION_RUN_FINAL_REPORT_V1.json",
+  "contract_path": "yolla-panel-v1/b1-collector-materialization/workers/b3-extractor-retry-resume/d-collection-run-ledger-v1/B3_D_COLLECTION_RUN_RESUME_LEDGER_V1.json",
+  "consumer_objects": ["COLLECTION_RUN", "PROCESSING_EVENT"],
+  "validation": {
+    "python_compile": "PASS",
+    "unit_tests": "PASS_32_OF_32",
+    "fixture_state_transition": "PASS",
+    "interruption_resume": "PASS",
+    "idempotency": "PASS",
+    "hash_chain": "PASS"
+  },
+  "site_call_count": 0,
+  "automated_pagination": false,
+  "d_canonical_id_generation": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

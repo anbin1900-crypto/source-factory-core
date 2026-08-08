@@ -1,0 +1,7 @@
+{
+  "schema_version": "FEATURE_ACTION_SEQUENCE_V1",
+  "partition_key": "feature",
+  "sequence_fields": ["sequence_no", "journey_id", "action_id", "command_id", "page_id", "action_type", "ui_state_before", "ui_state_after", "status"],
+  "ordering": "sequence_no ASC",
+  "purpose": "reconstruct product feature usage without mixing worker lifecycle state"
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "B3_D_COLLECTION_RUN_START_REPORT_V1",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "B3_D_COLLECTION_RUN_LEDGER",
+  "assignment_comment_id": 5196022442,
+  "worker": "B-3",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 39,
+  "control_pr": 17,
+  "branch": "worker/b3-extractor-retry-resume-v1",
+  "observed_head": "f8299be24108b84af06abfe53e939c8bf68ec9dd",
+  "started_at_kst": "2026-08-06T04:04:00+09:00",
+  "mode": "FIXTURE_ONLY_APPEND_ONLY_D_INTAKE_PREPARATION",
+  "scope": [
+    "PRODUCER_NATIVE_RUN_IDENTITY",
+    "PACKAGE_SHA256_BINDING",
+    "START_END_TIMESTAMPS",
+    "STATUS_TRANSITION_LEDGER",
+    "RETRY_RESUME_LINEAGE",
+    "PROCESSING_EVENT_HASH_CHAIN",
+    "IDEMPOTENCY_REPLAY"
+  ],
+  "preserved_authority": {
+    "previous_terminal": "B3_EXTRACTOR_RETRY_RESUME_READY",
+    "previous_head": "f8299be24108b84af06abfe53e939c8bf68ec9dd",
+    "previous_source_mutation": false
+  },
+  "safety": {
+    "site_call_count": 0,
+    "automated_pagination": false,
+    "d_canonical_id_generation": false,
+    "actual_bulk_collection": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

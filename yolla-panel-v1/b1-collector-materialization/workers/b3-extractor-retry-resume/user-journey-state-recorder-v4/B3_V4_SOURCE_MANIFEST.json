@@ -1,0 +1,32 @@
+{
+  "schema_version": "B3_USER_JOURNEY_V4_SOURCE_MANIFEST",
+  "directive_id": "A0-TO-B3-USER-JOURNEY-STATE-RECORDER-V4-20260808-001",
+  "assignment_comment_id": 5219103480,
+  "files": [
+    {"path":"USER_JOURNEY_EVENT_STREAM_V1.json","blob":"ea62f6aab81a4bc3de929796513bb88a29781b79"},
+    {"path":"USER_JOURNEY_GRAPH_V1.json","blob":"1704914c8346fa2dc63ab27b38bc9bee99c3c59a"},
+    {"path":"UI_STATE_TRANSITION_TRACE_V1.json","blob":"0c9b3b9238522a8f2fc04a2befc4223433b8e2cb"},
+    {"path":"FEATURE_ACTION_SEQUENCE_V1.json","blob":"e43f1ae499a1fa0c21be017972f317b527dd99a8"},
+    {"path":"REPRESENTATIVE_STATE_COVERAGE_PLANNER_V1.json","blob":"2fd0be5ea8474691beb92518dc6b614bf0d5a5e9"},
+    {"path":"USER_JOURNEY_RESUME_CHECKPOINT_V1.json","blob":"005405f2cab175e0c1272c554705f59399f152e4"},
+    {"path":"src/user_journey_state_recorder_v4.py","blob":"9fd21c8e8b673446236791af8b5bd426db9fff23"},
+    {"path":"tests/test_user_journey_state_recorder_v4.py","blob":"66e5bc5f4126e1dff431966c8a928d94922d7749"},
+    {"path":"fixtures/user_journey_fixture_v4.json","blob":"1a24af1e7388bc5175cf6fe4b504bbea9f6ac57f"},
+    {"path":"tools/run_user_journey_fixture_smoke_v4.py","blob":"709d5510e621a2a8a00743663d784ac6226d4126"},
+    {"path":"tools/run_user_journey_fixture_smoke_v4.cmd","blob":"9d33761d5d0af7ebdc2f9746d2cccc98ce620f16"},
+    {"path":"generated/B3_USER_JOURNEY_FIXTURE_SMOKE_RECEIPT_V4.json","blob":"d405a48ae010c31690da496db425162a933accc1"},
+    {"path":"B3_V4_TEST_RESULTS.json","blob":"19e54c10b93ab9aa1f23e8df0fa4b0e7d06b527a"}
+  ],
+  "remote_readback_stage": "PASS_13_OF_13_PRE_FINAL",
+  "previous_authority_preserved": {
+    "terminal": "B3_WORKER_STATE_COMMAND_CORRELATION_READY",
+    "head": "0d024330068a35e4a460ddc7ddb334991fe675a3",
+    "previous_source_modified": false
+  },
+  "target_pc_execution": false,
+  "live_site_call": false,
+  "tunnel_change": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

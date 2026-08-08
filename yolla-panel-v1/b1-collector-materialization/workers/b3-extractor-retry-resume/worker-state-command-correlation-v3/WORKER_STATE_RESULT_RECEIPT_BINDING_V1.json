@@ -1,0 +1,8 @@
+{
+  "schema_version":"B3_WORKER_STATE_RESULT_RECEIPT_BINDING_V1",
+  "precondition":"worker state is COMPLETE",
+  "binding_fields":["command_id","worker_id","page_id","action_id","session_id","complete_event_seq","complete_record_hash","receipt_id","result_digest","receipt_pointer"],
+  "same_command_required":true,
+  "blocked_state_receipt_binding_allowed":false,
+  "binding_digest":"SHA256(canonical binding)"
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "USER_JOURNEY_STATE_MACHINE_V1",
+  "directive_id": "A0-TO-B3-USER-JOURNEY-STATE-MACHINE-V5-20260808-001",
+  "source_authority": "Cycle4 USER_JOURNEY_EVENT_STREAM_V1 + UI_STATE_TRANSITION_TRACE_V1",
+  "flows": ["PUBLIC_READ", "CREATE", "MY_LISTING", "EDIT"],
+  "state_identity_policy": "UI_STATE_NAME_STABLE_ID_ACROSS_FLOWS",
+  "representative_transition_fields": ["transition_id", "flow", "feature", "precondition", "postcondition", "page_role", "representative_action_id", "evidence_pointer", "occurrence_count"],
+  "dedup_policy": "SAME_FROM_TO_FLOW_FEATURE_PAGE_ROLE_ACTION_TYPE_TARGET_FAMILY_STRUCTURE_SIGNATURE",
+  "unknown_policy": "UNOBSERVED_PATH_REMAINS_UNKNOWN_UNOBSERVED_AND_IS_NOT_MATERIALIZED",
+  "worker_lifecycle_policy": "SEPARATE_SIDE_STREAM_NOT_PRODUCT_STATE_MACHINE",
+  "resume_policy": "JOURNEY_SCOPED_LAST_COMPLETED_ACTION_CHECKPOINT",
+  "correlation_fields": ["command_id", "session_id", "page_id", "action_id", "evidence_pointer"],
+  "production": false,
+  "ready": false,
+  "merge": false
+}

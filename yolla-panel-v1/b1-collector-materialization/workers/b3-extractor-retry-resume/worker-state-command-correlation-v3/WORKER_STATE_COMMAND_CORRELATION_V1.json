@@ -1,0 +1,13 @@
+{
+  "schema_version": "B3_WORKER_STATE_COMMAND_CORRELATION_V1",
+  "correlation_fields": ["worker_id", "page_id", "command_id", "action_id", "session_id"],
+  "primary_key": "command_id",
+  "state_event_key": ["command_id", "event_seq"],
+  "idempotency_key": "SHA256(worker_id,page_id,command_id,event_seq,observed_at,state)",
+  "result_binding_key": "command_id",
+  "requires_complete_for_result_receipt": true,
+  "contextless_restart_replay": true,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,24 @@
+{
+  "action_count": 5,
+  "action_types": ["click", "input", "navigation", "scroll", "wait"],
+  "cdp_bound_action_count": 4,
+  "command_count": 5,
+  "contextless_resume": true,
+  "duplicate_suppressed_count": 1,
+  "last_completed_action_id": "act-d846dea7b65d755e3d10",
+  "pending_action_ids": [],
+  "replay_event_count": 5,
+  "restart_restore": "PASS",
+  "resume_cursor": {
+    "last_action_id": "act-d846dea7b65d755e3d10",
+    "last_completed_action_id": "act-d846dea7b65d755e3d10",
+    "last_sequence": 5,
+    "pending_action_ids": [],
+    "state_digest": "55db5cfc60b50947e30e0ad5ded6bc70a77dacfb271af99f7686a66a0f855ae4"
+  },
+  "schema_version": "B3_RECORD_REPLAY_SMOKE_RECEIPT_V1",
+  "session_id": "ai001-b3-smoke-session-001",
+  "state_digest": "55db5cfc60b50947e30e0ad5ded6bc70a77dacfb271af99f7686a66a0f855ae4",
+  "state_sha256": "0ad6576ee905ce7cfee342921f28fc42c2499cf5765bd286f2bf37df994774b3",
+  "status": "PASS"
+}

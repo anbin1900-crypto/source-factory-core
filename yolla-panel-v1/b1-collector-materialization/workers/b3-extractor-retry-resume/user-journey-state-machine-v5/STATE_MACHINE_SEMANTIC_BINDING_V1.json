@@ -1,0 +1,20 @@
+{
+  "schema_version": "STATE_MACHINE_SEMANTIC_BINDING_V1",
+  "shared_state_identity": {
+    "key": "ui_state",
+    "example": "MYLISTING_VISIBLE",
+    "expected_flows": ["CREATE", "MY_LISTING"]
+  },
+  "flow_partition": {
+    "Search": "PUBLIC_READ",
+    "List": "PUBLIC_READ",
+    "Detail": "PUBLIC_READ",
+    "Create": "CREATE",
+    "MyListing": "MY_LISTING",
+    "Edit": "EDIT"
+  },
+  "branch_policy": "ONLY_OBSERVED_REPRESENTATIVE_TRANSITIONS_FORM_BRANCHES",
+  "unobserved_policy": "UNKNOWN_UNOBSERVED_NO_INFERENCE",
+  "evidence_pointer_policy": "EACH_REPRESENTATIVE_TRANSITION_POINTS_TO_AN_OBSERVED_ACTION",
+  "retry_resume": "REUSE_PRIOR_CORRELATION_AND_IDEMPOTENCY_WITH_JOURNEY_SCOPED_CHECKPOINT"
+}

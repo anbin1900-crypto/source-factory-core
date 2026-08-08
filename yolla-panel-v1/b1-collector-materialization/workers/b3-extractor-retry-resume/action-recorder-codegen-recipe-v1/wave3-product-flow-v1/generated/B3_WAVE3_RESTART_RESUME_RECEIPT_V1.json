@@ -1,0 +1,19 @@
+{
+  "schema_version": "B3_WAVE3_RESTART_RESUME_RECEIPT_V1",
+  "status": "PASS",
+  "browser_process_restart_count": 1,
+  "state_digest": "eac451bb8f913f56a662ef24d6ae3b9e23c32a15cfaeab32ef2f554878f7021a",
+  "phase1_event_count": 6,
+  "event_count_before_resume": 6,
+  "final_event_count": 10,
+  "resume_appended_event_count": 4,
+  "duplicate_fingerprint_count": 0,
+  "no_action_duplication": true,
+  "restored_state": {
+    "query": "apartment",
+    "region": "seoul",
+    "search_status": "searched:apartment:seoul",
+    "navigation_hash": "#detail",
+    "scroll_y": 0
+  }
+}

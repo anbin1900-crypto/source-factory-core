@@ -1,0 +1,63 @@
+{
+  "schema_version": "B3_D_COLLECTION_RUN_FINAL_REPORT_V1",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "B3_D_COLLECTION_RUN_LEDGER",
+  "assignment_comment_id": 5196022442,
+  "worker": "B-3",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 39,
+  "control_pr": 17,
+  "branch": "worker/b3-extractor-retry-resume-v1",
+  "started_from_head": "f8299be24108b84af06abfe53e939c8bf68ec9dd",
+  "content_head_before_final_report": "4698143019c4922111d5b630d1638fbe715b8fc0",
+  "completed_at_kst": "2026-08-06T04:18:00+09:00",
+  "terminal": "B3_D_COLLECTION_RUN_LEDGER_READY",
+  "status": "PASS",
+  "implemented": {
+    "native_run_identity": true,
+    "package_sha256_binding": true,
+    "started_at_ended_at": true,
+    "status_transition_validation": true,
+    "retry_resume_lineage": true,
+    "append_only_processing_event_hash_chain": true,
+    "idempotent_replay_delta_zero": true,
+    "idempotency_conflict_rejection": true,
+    "d_canonical_run_id_generation": false
+  },
+  "fixture_result": {
+    "status": "COMPLETED",
+    "retry_count": 1,
+    "resume_count": 1,
+    "processing_event_count": 8,
+    "idempotent_replay_append_delta": 0
+  },
+  "validation": {
+    "python_compile": "PASS",
+    "unit_tests": "PASS_32_OF_32",
+    "remote_key_blob_readback": "PASS_6_OF_6",
+    "ci_status_context_count": 0,
+    "ci_pass_claimed": false
+  },
+  "authority_paths": {
+    "contract": "B3_D_COLLECTION_RUN_RESUME_LEDGER_V1.json",
+    "source": "src/d_collection_run_ledger.py",
+    "fixture": "fixtures/d_collection_run_fixture_v1.json",
+    "fixture_result": "generated/B3_D_COLLECTION_RUN_FIXTURE_RESULT_V1.json",
+    "tests": "tests/test_d_collection_run_ledger.py",
+    "test_results": "B3_D_COLLECTION_RUN_TEST_RESULTS_V1.json",
+    "source_manifest": "B3_D_COLLECTION_RUN_SOURCE_MANIFEST_V1.json"
+  },
+  "preserved_authority": {
+    "previous_terminal": "B3_EXTRACTOR_RETRY_RESUME_READY",
+    "previous_source_paths_modified": false
+  },
+  "forbidden_counters": {
+    "site_call_count": 0,
+    "automated_pagination_count": 0,
+    "d_canonical_id_generation_count": 0,
+    "actual_bulk_collection_count": 0,
+    "production_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  }
+}

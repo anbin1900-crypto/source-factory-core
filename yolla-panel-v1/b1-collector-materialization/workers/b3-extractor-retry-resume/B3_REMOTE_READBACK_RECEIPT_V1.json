@@ -1,0 +1,30 @@
+{
+  "schema_version":"B3_REMOTE_READBACK_RECEIPT_V1",
+  "directive_id":"B1-TO-B3-EXTRACTOR-RETRY-RESUME-INCREMENTAL-V1-20260804-001",
+  "content_commit":"03bba66710109a334c0c28341356864c3e4b8c67",
+  "remote_readback":"PASS_5_OF_5_KEY_AUTHORITIES",
+  "files":[
+    {"path":"src/pagination_loop.py","blob":"e447408ab0f09454ffd2b9781b8876d7840d3abd","readback":"PASS"},
+    {"path":"B3_TEST_RESULTS_V1.json","blob":"706ee49f2342bdfd39e701aca14f2c7f1d7d01f6","readback":"PASS"},
+    {"path":"B3_FINAL_REPORT_V1.json","blob":"2938d4e49462b17e5494b298fa49aa7db7424cf5","readback":"PASS"},
+    {"path":"SOURCE_MANIFEST.json","blob":"f35239c507d276a537c668141021102d3c4a616e","readback":"PASS"},
+    {"path":"events/B3_EXTRACTOR_RETRY_RESUME_READY.json","blob":"f04df08c085126ee2ec3ce89bdac0baad8cce6f6","readback":"PASS"}
+  ],
+  "pr_state":"OPEN_DRAFT_UNMERGED",
+  "ci_status_context_count":0,
+  "ci_pass_claimed":false,
+  "python_compile":"PASS",
+  "unit_tests":"PASS_32_OF_32",
+  "input_record_count":4,
+  "duplicate_count":1,
+  "output_record_count":3,
+  "crash_resume":"PASS",
+  "second_run_execution_delta":0,
+  "progress_monotonic":"PASS",
+  "network_call_count":0,
+  "actual_site_extraction":false,
+  "production":false,
+  "ready":false,
+  "merge":false,
+  "result":"PASS"
+}
