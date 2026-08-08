@@ -1,0 +1,57 @@
+{
+  "schema_version": "C_MODE_CYCLE1_TARGET_PC_READBACK_RECEIPT_V1",
+  "receipt_id": "A3-C1-TARGET-PC-ACCESS-BLOCKER-20260807-001",
+  "captured_at_utc": "2026-08-06T15:10:00Z",
+  "status": "EXACT_ACCESS_BLOCKER",
+  "target_pc_access": false,
+  "execution_mode": "CONTROLLER_ENVIRONMENT_NO_TARGET_PC_CONNECTION",
+  "non_destructive_read_only": "PASS",
+  "target_pc_write_count": 0,
+  "browser_profile_modification": false,
+  "workspace_state_reset": false,
+  "runtime_installation_change": false,
+  "machine": {
+    "os": null,
+    "computer": null,
+    "powershell": {}
+  },
+  "launcher_candidates": [],
+  "release_roots": [],
+  "state_roots": [],
+  "browser_profiles": [],
+  "processes": [],
+  "process_tree": [],
+  "runtime_environment": [],
+  "evidence_counts": {
+    "launcher_candidate_count": 0,
+    "release_root_count": 0,
+    "state_root_count": 0,
+    "browser_profile_count": 0,
+    "process_count": 0,
+    "process_tree_edge_count": 0,
+    "file_hash_count": 0,
+    "file_version_count": 0,
+    "command_line_count": 0,
+    "raw_secret_value_count": 0
+  },
+  "warnings": [
+    "Runnable Windows readback package is committed, but no live target-PC process namespace was available to this execution environment."
+  ],
+  "errors": [
+    {
+      "stage": "TARGET_PC_CONNECTION",
+      "code": "TARGET_PC_ACCESS_UNAVAILABLE_FROM_CURRENT_EXECUTION_ENVIRONMENT",
+      "message": "The current isolated Linux execution environment cannot access the user's Windows 10 process namespace, launcher files, browser profile, state root, or release root.",
+      "required_external_action": "Execute Invoke-CModeCycle1TargetPcReadback.ps1 on the target Windows PC through the YOLLA PC Agent/controller and return captured stdout JSON."
+    }
+  ],
+  "guardrails": {
+    "registry_write_count": 0,
+    "file_write_count": 0,
+    "process_start_count": 0,
+    "process_stop_count": 0,
+    "profile_write_count": 0,
+    "state_write_count": 0,
+    "release_write_count": 0
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "A3_WAVE4_VALIDATION_RECEIPT_V1",
+  "directive_id": "A2-TO-A3-RESPONSE-BODY-FIELD-EVIDENCE-CLOSURE-V4-20260804-001",
+  "validated_at_kst": "2026-08-04T06:14:00+09:00",
+  "status": "BLOCKED_EXPECTED_FAIL_CLOSED",
+  "checks": {
+    "a3_trace_searched": "PASS",
+    "a5_static_fixture_searched": "PASS",
+    "a6_static_fixture_searched": "PASS",
+    "no_field_inference_from_body_format_or_size": "PASS",
+    "placeholder_fixture_not_promoted": "PASS",
+    "superseded_candidate_not_promoted": "PASS",
+    "missing_json_endpoint_list_complete": "PASS_8_OF_8",
+    "exact_endpoint_body_fixture_binding": "FAIL_0_OF_8",
+    "raw_secret_value_count": 0,
+    "live_site_call_count": 0,
+    "out_of_owned_root_change_count": 0
+  },
+  "searched_authority": {
+    "a3_head": "b04a2cac2e506e8ca746b35d4e41e68322a4b7c1",
+    "a3_fixture_trace_blob": "cd29511601f27a128ff88e2e3f265c116d99e4a0",
+    "a5_head": "38ee3e4f935c5507d5fb5db22704bfcf078f3f02",
+    "a5_fixture_blob": "e372ecdb8cbaad343dbe49b23340a2436c149c52",
+    "a6_head": "3c047097db807f83c0558961425e0578400ef797",
+    "a6_fixture_blob": "31a6ae2709b881f5570a29862ae3ae7cb7b6d73d"
+  },
+  "missing_profiles": ["EP-001","EP-002","EP-003","EP-004","EP-005","EP-010","EP-011","EP-012"],
+  "first_blocker": "EXACT_RESPONSE_BODY_FIXTURES_FOR_A3_JSON_ENDPOINT_PROFILES_ARE_NOT_PRESENT_IN_SEARCHED_REPOSITORY_FIXTURES",
+  "terminal": "A3_RESPONSE_BODY_FIELD_EVIDENCE_EXACT_BLOCKER",
+  "raw_secret_value_count": 0,
+  "live_site_call_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

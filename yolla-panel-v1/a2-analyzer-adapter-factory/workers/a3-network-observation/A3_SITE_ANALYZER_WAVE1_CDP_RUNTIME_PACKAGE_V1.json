@@ -1,0 +1,71 @@
+{
+  "schema_version": "A3_SITE_ANALYZER_WAVE1_CDP_RUNTIME_PACKAGE_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "worker": "A-3",
+  "role": "LIVE_CDP_CAPTURE_OWNER",
+  "package_status": "RUNTIME_IMPLEMENTATION_READY_TARGET_BROWSER_EXECUTION_BLOCKED_EXTERNAL",
+  "runtime": {
+    "node_minimum": "18",
+    "electron_requirement": "Electron WebContents Debugger API",
+    "external_dependencies": [],
+    "module_format": "CommonJS"
+  },
+  "implemented_cdp_methods": [
+    "Network.enable",
+    "Network.requestWillBeSent",
+    "Network.responseReceived",
+    "Network.loadingFinished",
+    "Network.loadingFailed",
+    "Network.getResponseBody",
+    "Page.enable",
+    "Page.setLifecycleEventsEnabled",
+    "Page.frameNavigated",
+    "Page.lifecycleEvent",
+    "Runtime.enable",
+    "Runtime.consoleAPICalled",
+    "DOMSnapshot.captureSnapshot"
+  ],
+  "implemented_capabilities": [
+    "actual Electron webContents.debugger attach lifecycle",
+    "request response loading and response-body capture",
+    "frame navigation and lifecycle capture",
+    "console capture",
+    "DOM snapshot capture on attach navigation and lifecycle",
+    "action network DOM temporal correlation",
+    "ordered push and async-iterator streaming event API",
+    "optional response-body storage pointer",
+    "header and URL secret redaction",
+    "shared debugger attachment ownership safety"
+  ],
+  "files": {
+    "engine": "live_cdp_capture_engine.cjs",
+    "test": "live_cdp_capture_engine.test.cjs",
+    "event_schema": "STREAMING_ANALYZER_EVENT_V1.schema.json",
+    "consumer_contract": "A3_SITE_ANALYZER_WAVE1_CDP_CONSUMER_CONTRACT_V1.json",
+    "test_receipt": "A3_SITE_ANALYZER_WAVE1_CDP_TEST_RECEIPT_V1.json"
+  },
+  "deterministic_test": {
+    "command": "node live_cdp_capture_engine.test.cjs",
+    "status": "PASS",
+    "event_count": 12,
+    "live_protocol_path_implemented": true,
+    "response_body_count": 1,
+    "dom_snapshot_count": 2,
+    "navigation_event_count": 2,
+    "action_correlation_count": 8,
+    "raw_secret_finding_count": 0
+  },
+  "live_target_execution": {
+    "executed": false,
+    "pass_claimed": false,
+    "blocker_code": "ELECTRON_ANALYZER_BROWSER_UNAVAILABLE_FROM_CURRENT_EXECUTION_ENVIRONMENT",
+    "blocker_detail": "The current execution environment cannot access the running YOLLA Electron analyzer Browser, its WebContents instance, or its debugger event stream.",
+    "required_external_action": "Import the committed module into AnalyzerCore, call attachLiveCdpCapture with the live analyzer WebContents, perform one navigation or action, and capture the emitted STREAMING_ANALYZER_EVENT_V1 events."
+  },
+  "guardrails": {
+    "c_mode_runtime_work": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

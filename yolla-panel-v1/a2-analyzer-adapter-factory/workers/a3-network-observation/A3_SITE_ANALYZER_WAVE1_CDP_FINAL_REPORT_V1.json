@@ -1,0 +1,127 @@
+{
+  "schema_version": "A3_SITE_ANALYZER_WAVE1_CDP_FINAL_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "directive_comment": 5207559549,
+  "start_comment": 5207606019,
+  "worker": "A-3",
+  "role": "LIVE_CDP_CAPTURE_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "completed_at_kst": "2026-08-07T02:05:00+09:00",
+  "source_head_before_final": "d4697bffe9d225eedac556ac4c34f06e5499005c",
+  "status": "IMPLEMENTATION_PASS_WITH_PROVEN_EXTERNAL_BLOCKER",
+  "terminal": "A3_SITE_ANALYZER_WAVE1_LIVE_CDP_CAPTURE_PROVEN_EXTERNAL_BLOCKER_RUNTIME_IMPLEMENTATION_READY",
+  "artifacts": {
+    "start_report": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_SITE_ANALYZER_WAVE1_CDP_START_REPORT_V1.json",
+      "commit": "64cd32b87730374659620a671be9827f9e073c56",
+      "blob": "6f409682f3b8cc3ad05eb9bf4303afd388149320"
+    },
+    "engine": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/live_cdp_capture_engine.cjs",
+      "commit": "5e1953b68e4c4b6f967da1333adc88b77dee5efa",
+      "blob": "2c8cf6f7e9487be4732eb2c99fee1d2515e4c4a8",
+      "content_sha256": "bea1a63b953f7366fa4927dc2c8986641491cf2b96e5864f8a0fa7ad2dd4b2d5"
+    },
+    "test": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/live_cdp_capture_engine.test.cjs",
+      "commit": "cd7842e1e6ee25d9b17d00475f34592e1caab9b1",
+      "blob": "598a7172945a023d317e16b5af9cd1251da2d637",
+      "content_sha256": "fb85444dd702c11c02629f65db1066a1ceea061d837f695db119760339afc126"
+    },
+    "event_schema": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/STREAMING_ANALYZER_EVENT_V1.schema.json",
+      "commit": "c98273bb28b948432ac4692d9a9f40d17b7447a3",
+      "blob": "eaf7c5a8b65cba8467d0925c89c314fe45f85d01",
+      "content_sha256": "5b037c5a3df3087a2e1f4b74f03e907974572f3eed2f585fd992922d278e498b"
+    },
+    "consumer_contract": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_SITE_ANALYZER_WAVE1_CDP_CONSUMER_CONTRACT_V1.json",
+      "commit": "99556fe4fc2c8891dc891546cae0abf1ac766305",
+      "blob": "3b1831709c1332fa8702389c6f2d56fb5dc69ca0",
+      "content_sha256": "e955b6b26fb528dfec8276e7664cf92b681a22d560b20dec895cda1afb138d45"
+    },
+    "test_receipt": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_SITE_ANALYZER_WAVE1_CDP_TEST_RECEIPT_V1.json",
+      "commit": "3427fe22d0cf832b6db72d915d33e00891362767",
+      "blob": "9f9c0aa6bba8be2cc7db9730259eddc946d29417"
+    },
+    "runtime_package": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_SITE_ANALYZER_WAVE1_CDP_RUNTIME_PACKAGE_V1.json",
+      "commit": "c25b3d258614a8d08f9f2fbd0b92e5f39c3be407",
+      "blob": "997123f0ff225469455edda80dc1c73a54b74f2e",
+      "content_sha256": "52e10cf38fd63ee15fa8f07f7d88c4ba1625c3e9d865f05bef4285db7a28bab7"
+    },
+    "live_blocker_receipt": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_SITE_ANALYZER_WAVE1_CDP_LIVE_BLOCKER_RECEIPT_V1.json",
+      "commit": "d4697bffe9d225eedac556ac4c34f06e5499005c",
+      "blob": "9c4e60a75f1b77e3d04522a86cfc49103e863a5c"
+    }
+  },
+  "implemented": {
+    "electron_webcontents_debugger_attach": "PASS",
+    "network_request_will_be_sent": "PASS",
+    "network_response_received": "PASS",
+    "network_loading_finished": "PASS",
+    "network_get_response_body": "PASS",
+    "page_frame_navigated": "PASS",
+    "page_lifecycle_event": "PASS",
+    "runtime_console_api_called": "PASS",
+    "dom_snapshot_capture_snapshot": "PASS",
+    "action_network_dom_time_correlation": "PASS",
+    "streaming_analyzer_event_api": "PASS",
+    "response_body_storage_pointer": "PASS",
+    "shared_debugger_attachment_safety": "PASS",
+    "consumer_contract_a4_a5_b2_b3": "PASS"
+  },
+  "validation": {
+    "node_syntax_check_engine": "PASS",
+    "node_syntax_check_test": "PASS",
+    "deterministic_protocol_execution": "PASS",
+    "event_count": 12,
+    "network_request_count": 1,
+    "network_response_count": 1,
+    "response_body_count": 1,
+    "dom_snapshot_count": 2,
+    "navigation_event_count": 2,
+    "console_event_count": 1,
+    "action_correlation_count": 8,
+    "response_body_storage_count": 1,
+    "raw_secret_finding_count": 0,
+    "remote_artifact_readback": "PASS_8_OF_8"
+  },
+  "live_pass_minimum": {
+    "required": "LIVE_NETWORK_EVENT>0,RESPONSE_BODY>0,DOM_SNAPSHOT>0,NAVIGATION_EVENT>0",
+    "live_network_event_count": 0,
+    "live_response_body_count": 0,
+    "live_dom_snapshot_count": 0,
+    "live_navigation_event_count": 0,
+    "satisfied": false,
+    "false_live_pass_count": 0
+  },
+  "external_blocker": {
+    "code": "ELECTRON_ANALYZER_BROWSER_UNAVAILABLE_FROM_CURRENT_EXECUTION_ENVIRONMENT",
+    "owner_boundary": "TARGET_PC_ELECTRON_ANALYZER_RUNTIME",
+    "evidence": "The current execution environment has no running YOLLA Electron analyzer Browser, live WebContents instance, or debugger event stream.",
+    "required_external_action": "Import live_cdp_capture_engine.cjs into AnalyzerCore, call attachLiveCdpCapture with the real analyzer WebContents, perform one real navigation or user action, and persist emitted STREAMING_ANALYZER_EVENT_V1 evidence.",
+    "retry_ready": true
+  },
+  "counters": {
+    "out_of_owned_root_change_count": 0,
+    "c_mode_runtime_work_count": 0,
+    "production_change_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0,
+    "raw_secret_finding_count": 0,
+    "false_live_pass_count": 0
+  },
+  "guardrails": {
+    "audit_only": false,
+    "validation_only": false,
+    "c_mode_runtime_work": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

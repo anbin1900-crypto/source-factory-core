@@ -1,0 +1,21 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"CHROME_REPLY_COMPLETION_RECEIPT_V1.schema.json",
+  "type":"object",
+  "required":["schema_version","cycle_id","role","browser_agent_endpoint","cdp_endpoint","cdp_localhost_only","status","live_pass_claimed","terminal"],
+  "properties":{
+    "schema_version":{"const":"D4_CHROME_REPLY_COMPLETION_LIVE_RECEIPT_V1"},
+    "cycle_id":{"const":"D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001"},
+    "role":{"const":"D-4_CHROME_WORKER_STATE_OBSERVER_OWNER"},
+    "browser_agent_endpoint":{"const":"127.0.0.1:32100"},
+    "cdp_endpoint":{"const":"127.0.0.1:9222"},
+    "cdp_localhost_only":{"const":true},
+    "status":{"enum":["PASS","BLOCKED"]},
+    "events":{"type":"array","items":{"type":"object","required":["state"],"properties":{"state":{"enum":["WORKING","COMPLETED","ERROR"]}}}},
+    "streaming_intermediate_observed":{"type":"boolean"},
+    "terminal_state":{"enum":["COMPLETED","ERROR",null]},
+    "live_pass_claimed":{"type":"boolean"},
+    "terminal":{"enum":["CHROME_REPLY_COMPLETION_LIVE_PASS","CHROME_REPLY_COMPLETION_LIVE_BLOCKED"]}
+  },
+  "allOf":[{"if":{"properties":{"live_pass_claimed":{"const":true}}},"then":{"required":["browser_agent_reachable","cdp_connected","page","streaming_intermediate_observed","terminal_state"],"properties":{"status":{"const":"PASS"},"browser_agent_reachable":{"const":true},"cdp_connected":{"const":true},"streaming_intermediate_observed":{"const":true},"terminal_state":{"const":"COMPLETED"},"terminal":{"const":"CHROME_REPLY_COMPLETION_LIVE_PASS"}}}}]
+}

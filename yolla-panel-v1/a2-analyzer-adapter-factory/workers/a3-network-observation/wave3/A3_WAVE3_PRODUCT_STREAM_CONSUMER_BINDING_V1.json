@@ -1,0 +1,62 @@
+{
+  "schema_version": "A3_WAVE3_PRODUCT_STREAM_CONSUMER_BINDING_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "producer": "A-3",
+  "producer_pr": 22,
+  "bridge": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/wave3/cdp_product_stream_bridge.cjs",
+    "commit": "89d205a5733b18f4280158558df39830086dcf42",
+    "blob": "c7188f1b89977ad89155f926927715f6e14a9d97",
+    "tested_content_sha256": "650cd99393a9557f04ccba1bce22b225ed1c25206d6b00b940164ad0bdc92821"
+  },
+  "bindings": {
+    "A-2": {
+      "pr": 18,
+      "head": "6cf05d0369dbae0b2413f562146243b15f350759",
+      "source_path": "yolla-panel-v1/a2-analyzer-adapter-factory/site-analyzer-wave1/src/analyzer-core.mjs",
+      "interface": "AnalyzerCore.registerModule(name, module) with module.execute(ctx)",
+      "a3_adapter": "createA2AnalyzerModule",
+      "projection": ["networkEvents", "domSnapshots", "frames", "console", "streamingEvents"]
+    },
+    "A-4": {
+      "pr": 23,
+      "head": "efc3ca185dd5c124eb0f10a55018a25d60df55dc",
+      "source_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave2/live_event_binding.cjs",
+      "source_blob": "00352b6b4a2d8fa76a59b07e9f44f1f4da754794",
+      "interface": "bindLiveEventStream(events, options)",
+      "requirements": ["producer=A-3", "live=true", "dom.snapshot>0", "page.frameNavigated>0", "deduplicated event ids"]
+    },
+    "A-5": {
+      "pr": 24,
+      "head": "b7619f0ffacbb4937b4842eab2f6cff75504ebf8",
+      "source_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/live_traffic_endpoint_schema_binding.cjs",
+      "source_blob": "ca6f506970535ebf0d2654306b7c4a42640c295a",
+      "interface": "bindLiveTraffic(input, options)",
+      "input_schema": "A5_LIVE_TRAFFIC_BINDING_INPUT_V1",
+      "requirements": [
+        "STREAMING_ANALYZER_EVENT_V1",
+        "strictly increasing unique sequence",
+        "single analyzer_session_id per binding envelope",
+        "single positive web_contents_id per binding envelope",
+        "cdp.attached",
+        "network.requestWillBeSent",
+        "network.responseReceived",
+        "network.responseBody",
+        "dom.snapshot",
+        "page.frameNavigated",
+        "complete request-response-body triplets"
+      ]
+    }
+  },
+  "restart_policy": {
+    "global_sequence_continues_across_browser_restart": true,
+    "new_analyzer_session_id_per_browser_generation": true,
+    "consumer_name_registration_replaces_previous_listener": true,
+    "duplicate_delivery_for_same_consumer_event_id_forbidden": true,
+    "a5_projection_is_per_session": true
+  },
+  "status": "BOUND_AND_EXECUTION_VALIDATED",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

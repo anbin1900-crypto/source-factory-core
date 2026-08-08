@@ -1,0 +1,101 @@
+{
+  "schema_version": "LATEST_A3_CDP_OBSERVER_PREBUILD_POINTER_V1",
+  "directive_id": "AI001-TO-A3-CHROME-CDP-OBSERVATION-AGENT-PREBUILD-V1-20260807-001",
+  "directive_comment": 5216915235,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "worker": "A-3",
+  "role": "A-3_CDP_OBSERVATION_ENGINE_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "updated_at_kst": "2026-08-07T21:22:00+09:00",
+  "source_head": "3f317672d299ebafa46f268b8aad0760d819eccf",
+  "pre_pointer_head": "f8a38f439de097ebfc290f3621b0fbc4829aa1ea",
+  "status": "PASS_PREBUILD_READY_FOR_LOCAL_BROWSER_AGENT_APPLY",
+  "terminal": "A3_CHROME_CDP_OBSERVATION_AGENT_PREBUILD_READY",
+  "artifacts": {
+    "observer_module": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild/CDP_OBSERVER_MODULE_V1.cjs",
+      "commit": "ef852adc2badeb0a3fc53bffecf666d1dd4dfaa6",
+      "blob": "3a3c988d3ab3a042999ac345d07b7e601937785a",
+      "sha256": "3fa6ac7f8e3dbacd0ed6c19d94f07502766b529bd443d52c91ccfbe227db5ce3"
+    },
+    "runner": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild/APPLY_RUN_CDP_OBSERVER_V1.cjs",
+      "commit": "21c7a8c852363b4f9c9c1e783c7c551f8370f201",
+      "blob": "b3092ecd241dfa88e90036e161316e1abf8635f3",
+      "sha256": "cb7e468819a715bf77d8846c2d0804ee5a9b0bfec70ad9f536cbe4c7295d39ff"
+    },
+    "evidence_contract": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild/NETWORK_RESPONSE_EVIDENCE_CONTRACT_V1.json",
+      "commit": "d0f3054bb78ba884c85eb449626732c43dcc9647",
+      "blob": "cf0a2cd09dc5e41f8b63d6b76d252d7bac142959"
+    },
+    "successor_apply_plan": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild/SUCCESSOR_APPLY_PLAN_V1.json",
+      "commit": "7b73b94508df001b2850560cb8f53c08322fc549",
+      "blob": "5bdab36f93a48c7ae6c38aea27674119245a3d02"
+    },
+    "state_schema": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild/CDP_OBSERVER_STATE_V1.schema.json",
+      "commit": "f151ba419fd57243762e5357124063f613c30d7e",
+      "blob": "dc4398f1d2b98103d74053c97d09e49fbaecb5d7"
+    },
+    "mock_smoke": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild/mock_smoke_v1.cjs",
+      "commit": "8f7f80ef07a488bbeca9dbe09b3d6d586275f25c",
+      "blob": "6a7103ba802ed1580dc554df8cc2f7601eddb559",
+      "sha256": "606a0b19f0e32c7a56da6627bf338861cd6d3e5393cbde33cf8772888c909006"
+    },
+    "validation_receipt": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild/A3_CDP_OBSERVER_PREBUILD_VALIDATION_RECEIPT_V1.json",
+      "commit": "f8a38f439de097ebfc290f3621b0fbc4829aa1ea",
+      "blob": "4adacc21171ba8fee96c0c23408853648055f973"
+    }
+  },
+  "capabilities": {
+    "existing_chrome_cdp_attach": true,
+    "playwright_cdp_adapter": true,
+    "page_target_discovery_selection": true,
+    "dom_observation": true,
+    "frame_navigation_observation": true,
+    "console_observation": true,
+    "xhr_fetch_observation": true,
+    "response_received_to_get_response_body_binding": true,
+    "evidence_envelope": "CDP_OBSERVER_EVIDENCE_V1",
+    "authorization_cookie_token_redaction": true,
+    "restart_state_restore": true,
+    "single_command_local_browser_agent_apply": true
+  },
+  "single_command": "node APPLY_RUN_CDP_OBSERVER_V1.cjs --browser-url http://127.0.0.1:9222 --state ./runtime/a3-cdp-observer-state.json --output ./runtime/a3-cdp-evidence.ndjson --duration-ms 30000",
+  "restore": {
+    "state_schema": "CDP_OBSERVER_STATE_V1",
+    "state_path_default": "./runtime/a3-cdp-observer-state.json",
+    "strategy": "validate schema, load state before observation, persist with temp-write then rename"
+  },
+  "validation": {
+    "node_syntax": "PASS_3_OF_3",
+    "local_mock_smoke": "PASS_1_OF_1",
+    "evidence_count": 10,
+    "request_count": 1,
+    "response_count": 1,
+    "response_body_count": 1,
+    "dom_snapshot_count": 2,
+    "frame_navigation_count": 1,
+    "console_count": 1,
+    "state_restore_pass": true,
+    "redaction_pass": true,
+    "get_response_body_binding_pass": true,
+    "page_target_selection_pass": true,
+    "raw_secret_value_count": 0
+  },
+  "execution_counters": {
+    "target_pc_execution_count": 0,
+    "tunnel_create_count": 0,
+    "successor_direct_call_count": 0,
+    "new_browser_engine_count": 0
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

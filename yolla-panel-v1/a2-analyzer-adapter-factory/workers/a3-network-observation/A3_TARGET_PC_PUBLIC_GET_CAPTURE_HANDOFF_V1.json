@@ -1,0 +1,171 @@
+{
+  "schema_version": "A3_TARGET_PC_PUBLIC_GET_CAPTURE_HANDOFF_V1",
+  "worker": "A-3",
+  "directive_id": "A2-TO-A3-TARGET-PC-CAPTURE-HANDOFF-NONBLOCKING-V1-20260806-001",
+  "directive_comment": 5193792814,
+  "parent_cycle": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_10-GENERIC-HTML-MVP-FAST-CLOSURE-V1-20260806-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "source_head": "30ef339d303debeaa2098c4f5f5d2ca44f087c67",
+  "status": "A3_TARGET_PC_CAPTURE_HANDOFF_READY",
+  "handoff_mode": "NON_BLOCKING_TARGET_PC_OR_EXTERNAL_RUNTIME_ONLY",
+  "mvp_critical_path_owner": false,
+  "dns_blocker": {
+    "frozen": true,
+    "terminal": "DNS_EXECUTION_ENVIRONMENT_EXACT_EXTERNAL_BLOCKER",
+    "pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/LATEST_DNS_EXECUTION_ENVIRONMENT_POINTER.json",
+    "pointer_commit": "30ef339d303debeaa2098c4f5f5d2ca44f087c67",
+    "pointer_blob": "7756001e205ce0af8ae80e16b04bb678081824aa",
+    "retest_by_a3_allowed": false,
+    "blocking_handoff_readiness": false
+  },
+  "immutable_inputs": {
+    "source_authority": {
+      "path": "yolla-panel-v1/a0-successor-control/authorities/naver-fin-land/CONCRETE_SOURCE_TARGET_AUTHORITY_V1.json",
+      "commit": "545425a10d48bf59746d8db98ff2f56b79360cc0",
+      "blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
+      "pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5"
+    },
+    "operator_package": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/CORRECTED_ONE_SHOT_OPERATOR_PACKAGE_V2.json",
+      "commit": "af25d9e018bdca9676e35ae9371315af171bb063",
+      "blob": "f742b7a1e83ec9199258f9b7d7df9b8947f321d7"
+    },
+    "allowlist": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/PUBLIC_DOCUMENT_ROUTE_CAPTURE_ALLOWLIST_V1.json",
+      "commit": "021e3b2303cb3fe3072529451f5370e7b9f149a9",
+      "blob": "47aa9c3a02fcd8e8168c8d272d33a88733094cec"
+    },
+    "request_binding": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/PUBLIC_DOCUMENT_ROUTE_REQUEST_BINDING_V1.json",
+      "commit": "eca3c1314bd6d322e777d4b5ff100f6bad472548",
+      "blob": "74aa2232a274b77fb51adadb60e66ea7ae6a7fe9"
+    },
+    "a5_capture_input_handoff": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/A5_TO_A3_CONCRETE_CAPTURE_INPUT_HANDOFF_V2.json",
+      "head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+      "blob": "515b72792199f971b0a754bcb9dbc796b06fe26f"
+    }
+  },
+  "target_runtime_preconditions": {
+    "runtime_class": "TARGET_PC_OR_CONNECTED_EXTERNAL_RUNTIME",
+    "independent_network_path_required": true,
+    "dns_resolution_required": true,
+    "dns_target": "fin.land.naver.com",
+    "dns_pass_rule": "EXECUTION_RUNTIME_MUST_RESOLVE_AT_LEAST_ONE_IP_BEFORE_FIRST_GET",
+    "recommended_readiness_rule": "TWO_CONSECUTIVE_DNS_PASS_RESULTS_WITH_IP_LIST",
+    "http_before_dns_pass_allowed": false,
+    "handoff_itself_is_execution_authorization": false,
+    "separate_execution_authority_required": true
+  },
+  "capture_contract": {
+    "origin": "https://fin.land.naver.com",
+    "public_non_login_read_only_only": true,
+    "method": "GET",
+    "expected_response_format": "text/html",
+    "active_profile_count": 7,
+    "active_profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-012"],
+    "excluded_profiles": [
+      {
+        "profile_id": "EP-011",
+        "reason": "EXCLUDED_NO_CREDENTIAL_REFERENCE"
+      }
+    ],
+    "max_capture_per_profile": 1,
+    "max_total_capture": 7,
+    "batch_execution_count": 1,
+    "transport_retry_count_owner": "EXECUTION_RUNTIME_POLICY",
+    "a3_retry_count_prescribed": false,
+    "automated_pagination_allowed": false,
+    "authentication_bypass_allowed": false,
+    "access_control_bypass_allowed": false,
+    "credential_use_allowed": false,
+    "bulk_collection_allowed": false
+  },
+  "requests": [
+    {
+      "profile_id": "EP-001",
+      "method": "GET",
+      "url": "https://fin.land.naver.com/map?layer=NobwRAlgJmBcYAsD2BbApmANGAzmghgE4DGCACkfijnCAL50C6QA&center=3zhc4G-2ALg18&zoom=15",
+      "expected_mime": "text/html"
+    },
+    {
+      "profile_id": "EP-002",
+      "method": "GET",
+      "url": "https://fin.land.naver.com/articles/2528362542",
+      "expected_mime": "text/html"
+    },
+    {
+      "profile_id": "EP-003",
+      "method": "GET",
+      "url": "https://fin.land.naver.com/articles/2528927768",
+      "expected_mime": "text/html"
+    },
+    {
+      "profile_id": "EP-004",
+      "method": "GET",
+      "url": "https://fin.land.naver.com/map?layer=NobwRAlgJmBcYAsD2BbApmANGAzmghgE4DGCACkfijnCAL50C6QA&center=3zhc4G-2ALg18&zoom=15&tradeTypes=A1-B1-B2-B3&realEstateTypes=A01-A04-B01-A05-A06-A07-C02-A02-B02-C01-C03-C04-F01-D05-D02-E03-D01-E04-E02-D03-D04-E01-Z00",
+      "expected_mime": "text/html",
+      "automated_pagination_allowed": false
+    },
+    {
+      "profile_id": "EP-005",
+      "method": "GET",
+      "url": "https://fin.land.naver.com/map?center=3zhc4G-2ALg18&zoom=15&layer=NobwRAlgJmBcYAsD2BbApmANGAzmghgE4DGCACkfijnCAL50C6QA",
+      "expected_mime": "text/html"
+    },
+    {
+      "profile_id": "EP-010",
+      "method": "GET",
+      "url": "https://fin.land.naver.com/map?tradeTypes=A1-B1-B2-B3&realEstateTypes=A01-A04-B01-A05-A06-A07-C02-A02-B02-C01-C03-C04-F01-D05-D02-E03-D01-E04-E02-D03-D04-E01-Z00",
+      "expected_mime": "text/html"
+    },
+    {
+      "profile_id": "EP-012",
+      "method": "GET",
+      "url": "https://fin.land.naver.com/search",
+      "expected_mime": "text/html"
+    }
+  ],
+  "response_handling": {
+    "max_response_size_bytes": 2097152,
+    "request_timeout_ms": 20000,
+    "raw_response_byte_persistence": false,
+    "raw_sha256_in_memory": true,
+    "redaction_before_persist": true,
+    "transient_raw_byte_disposal_deadline_seconds": 30,
+    "dispose_raw_before_next_profile": true,
+    "redacted_derivative_retention_days": 30,
+    "forbidden_persisted_values": ["Cookie", "Authorization", "Token", "Secret", "API_KEY", "PII"],
+    "required_success_bindings": ["profile_id", "source_url", "acquired_at", "status", "mime", "size_bytes", "raw_sha256", "redacted_sha256"]
+  },
+  "runtime_result_contract": {
+    "one_receipt_per_profile": true,
+    "run_summary_required": true,
+    "dns_readiness_receipt_required": true,
+    "raw_byte_disposal_receipt_required": true,
+    "exact_blocker_required_on_failure": true,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "current_execution_counters": {
+    "dns_retest_count": 0,
+    "live_site_call_count": 0,
+    "capture_execution_count": 0,
+    "browser_automation_count": 0,
+    "credential_use_count": 0,
+    "authorization_request_count": 0
+  },
+  "a3_execution_permissions_for_this_directive": {
+    "dns_retest_allowed": false,
+    "live_site_call_allowed": false,
+    "capture_execution_allowed": false,
+    "authorization_request_allowed": false
+  },
+  "terminal": "A3_TARGET_PC_CAPTURE_HANDOFF_READY",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

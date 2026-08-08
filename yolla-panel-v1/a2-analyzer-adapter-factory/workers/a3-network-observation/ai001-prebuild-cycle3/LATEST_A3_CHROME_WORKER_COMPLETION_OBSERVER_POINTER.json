@@ -1,0 +1,75 @@
+{
+  "schema_version": "LATEST_A3_CHROME_WORKER_COMPLETION_OBSERVER_POINTER_V1",
+  "directive_id": "AI001-TO-A3-CHROME-WORKER-COMPLETION-OBSERVER-V3-20260807-001",
+  "directive_comment": 5217742284,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "worker": "A-3",
+  "role": "A-3_CDP_OBSERVATION_ENGINE_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "source_head": "fb7a448e6a16ae546d2b4038973b391d40b500c6",
+  "pre_pointer_head": "b83245f21f9087d24cd83d255f81f0f439ec7929",
+  "parent_terminal": "A3_CDP_OBSERVATION_RUNNER_AND_RECEIPT_READY",
+  "status": "PASS",
+  "terminal": "A3_CHROME_WORKER_COMPLETION_OBSERVER_READY",
+  "artifacts": {
+    "observer": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild-cycle3/WORKER_COMPLETION_OBSERVER_V1.cjs",
+      "blob": "65c055e91bde22fc2d1de06d652ce71654b36126",
+      "sha256": "9a06c7db9ffff3644da0f6a639816d845f0c2ac6e7c5c54268216d9c3a2b793c"
+    },
+    "state_event_schema": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild-cycle3/WORKER_BROWSER_STATE_EVENT_V1.schema.json",
+      "blob": "ebb33d2229f62591f0fc31757dfc2ab03727e649"
+    },
+    "contract": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild-cycle3/WORKER_COMPLETION_OBSERVER_CONTRACT_V1.json",
+      "blob": "7da03105f1c96ba4528bd5f3445cfb9bafc6cfe4"
+    },
+    "worker_page_registry_fixture": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild-cycle3/WORKER_PAGE_REGISTRY_FIXTURE_V1.json",
+      "blob": "1d3bb76805679b19e232e1f47140375273c64e1f"
+    },
+    "smoke": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild-cycle3/mock_smoke_cycle3_v1.cjs",
+      "blob": "c579b5986f768554a29bff67e48b3f3aea0c3b99",
+      "sha256": "41799c31665794cd39789c007c4a50580cc3fb72592f2097e2a1a081847eb2fc"
+    },
+    "validation_receipt": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild-cycle3/A3_CHROME_WORKER_COMPLETION_OBSERVER_VALIDATION_RECEIPT_V1.json",
+      "commit": "b83245f21f9087d24cd83d255f81f0f439ec7929",
+      "blob": "52e14b7b2224138bfe3b2f4ec03aca08f8e18094"
+    }
+  },
+  "sensor_contract": {
+    "states": ["IDLE","DISPATCHED","GENERATING","COMPLETE","BLOCKED","UNKNOWN"],
+    "markers": ["WORK_STATUS","COMMAND_ID","TERMINAL","BLOCKER"],
+    "complete_source": "EXPLICIT_MARKER_ONLY",
+    "likely_complete": "STATE_UNKNOWN_PLUS_COMPLETION_ASSESSMENT_LIKELY_COMPLETE",
+    "likely_complete_promoted_to_complete": false,
+    "selector_miss": "UNKNOWN_FAIL_SAFE",
+    "event_schema": "WORKER_BROWSER_STATE_EVENT_V1",
+    "technical_pass_validator": false
+  },
+  "validation": {
+    "node_syntax": "PASS_2_OF_2",
+    "fixture_browser_dom_smoke": "PASS_1_OF_1",
+    "dispatched_generating_complete": "PASS",
+    "blocked": "PASS",
+    "selector_miss_unknown": "PASS",
+    "likely_complete_not_promoted": "PASS",
+    "technical_pass_claim_count": 0,
+    "raw_secret_storage_count": 0
+  },
+  "execution_counters": {
+    "target_pc_execution_count": 0,
+    "tunnel_change_count": 0,
+    "ocr_count": 0,
+    "screen_image_analysis_count": 0,
+    "new_browser_engine_count": 0
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

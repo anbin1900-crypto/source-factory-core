@@ -1,0 +1,32 @@
+{
+  "schema_version": "A3_WAVE5_1_START_REPORT_V1",
+  "worker": "A-3",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-PREAUTH-GAP-CLOSURE-V1-20260805-001",
+  "directive_id": "A2-TO-A3-ACQUISITION-PACKAGE-EXACT-REBIND-AND-RETENTION-BOUND-V5_1-20260805-001",
+  "directive_comment_id": 5181081197,
+  "parent_cycle": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
+  "existing_wave5_superseded": false,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/",
+  "start_head": "4f79e986c9f9cc53c429d94d354bf2f287658e30",
+  "started_at_kst": "2026-08-05T01:13:00+09:00",
+  "execution_mode": "EXACT_AUTHORITY_REBIND_AND_RETENTION_POLICY_ONLY_NO_CAPTURE",
+  "a5_expected": {
+    "final_head": "19781a67eb24ee217b1d072869c407077cca72e1",
+    "pointer_blob": "59f9a82c6edd15e1aa23c11573657ecf25efb004",
+    "requirement_handoff_blob": "a9a5112e53992b6149ec954447fa413ffeca9978",
+    "terminal": "A5_RESPONSE_FIXTURE_REQUIREMENTS_READY_FOR_ACQUISITION",
+    "required_profile_count": 8
+  },
+  "capture_execution_count": 0,
+  "live_site_call_count": 0,
+  "browser_automation_execution_count": 0,
+  "credential_use_count": 0,
+  "duplicate_execution_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "STARTED"
+}

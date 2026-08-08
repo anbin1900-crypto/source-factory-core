@@ -1,0 +1,54 @@
+{
+  "schema_version": "LATEST_A3_TARGET_PC_HANDOFF_POINTER_V1",
+  "worker": "A-3",
+  "directive_id": "A2-TO-A3-TARGET-PC-CAPTURE-HANDOFF-NONBLOCKING-V1-20260806-001",
+  "directive_comment": 5193792814,
+  "parent_cycle": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_10-GENERIC-HTML-MVP-FAST-CLOSURE-V1-20260806-001",
+  "status": "PASS",
+  "terminal": "A3_TARGET_PC_CAPTURE_HANDOFF_READY",
+  "branch": "worker/a3-network-observation-v1",
+  "source_head": "30ef339d303debeaa2098c4f5f5d2ca44f087c67",
+  "handoff": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_TARGET_PC_PUBLIC_GET_CAPTURE_HANDOFF_V1.json",
+    "commit": "705fadfc3a5b0f7638663f3c834b700c24f1354d",
+    "blob": "88a3283a09a90f0bad5fae4eb64af5e048a13732",
+    "status": "A3_TARGET_PC_CAPTURE_HANDOFF_READY"
+  },
+  "immutable_inputs": {
+    "source_authority_blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
+    "source_authority_pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5",
+    "operator_package_blob": "f742b7a1e83ec9199258f9b7d7df9b8947f321d7",
+    "allowlist_blob": "47aa9c3a02fcd8e8168c8d272d33a88733094cec",
+    "request_binding_blob": "74aa2232a274b77fb51adadb60e66ea7ae6a7fe9",
+    "dns_blocker_pointer_blob": "7756001e205ce0af8ae80e16b04bb678081824aa"
+  },
+  "scope": {
+    "active_profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-012"],
+    "excluded_profiles": ["EP-011"],
+    "origin": "https://fin.land.naver.com",
+    "method": "GET",
+    "expected_response_format": "text/html",
+    "public_non_login_read_only_only": true,
+    "dns_pass_precondition_required": true,
+    "raw_response_byte_persistence": false,
+    "redaction_before_persist": true,
+    "retry_policy_owner": "EXECUTION_RUNTIME"
+  },
+  "execution_counters": {
+    "dns_retest_count": 0,
+    "live_site_call_count": 0,
+    "capture_execution_count": 0,
+    "browser_automation_count": 0,
+    "credential_use_count": 0,
+    "authorization_request_count": 0
+  },
+  "handoff_non_blocking": true,
+  "mvp_critical_path_owner": false,
+  "handoff_itself_is_execution_authorization": false,
+  "separate_execution_authority_required": true,
+  "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
+  "updated_at_kst": "2026-08-06T00:36:00+09:00",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

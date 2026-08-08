@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yolla.local/schemas/STREAMING_ANALYZER_EVENT_V1.schema.json",
+  "title": "Streaming Analyzer Event V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "sequence",
+    "event_id",
+    "analyzer_session_id",
+    "web_contents_id",
+    "type",
+    "observed_at",
+    "monotonic_ms",
+    "page_url",
+    "payload"
+  ],
+  "properties": {
+    "schema_version": { "const": "STREAMING_ANALYZER_EVENT_V1" },
+    "sequence": { "type": "integer", "minimum": 1 },
+    "event_id": { "type": "string", "minLength": 1 },
+    "analyzer_session_id": { "type": "string", "minLength": 1 },
+    "web_contents_id": { "type": ["integer", "null"] },
+    "type": {
+      "enum": [
+        "cdp.attached",
+        "cdp.detached",
+        "cdp.closed",
+        "cdp.error",
+        "analyzer.action",
+        "network.requestWillBeSent",
+        "network.responseReceived",
+        "network.loadingFinished",
+        "network.loadingFailed",
+        "network.responseBody",
+        "network.responseBodyUnavailable",
+        "page.frameNavigated",
+        "page.lifecycleEvent",
+        "runtime.consoleAPICalled",
+        "dom.snapshot"
+      ]
+    },
+    "observed_at": { "type": "string", "format": "date-time" },
+    "monotonic_ms": { "type": "number" },
+    "page_url": { "type": ["string", "null"] },
+    "payload": { "type": "object" }
+  }
+}

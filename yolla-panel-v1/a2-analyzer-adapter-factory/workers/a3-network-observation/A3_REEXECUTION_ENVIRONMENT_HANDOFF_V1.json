@@ -1,0 +1,91 @@
+{
+  "schema_version": "A3_REEXECUTION_ENVIRONMENT_HANDOFF_V1",
+  "worker": "A-3",
+  "directive_id": "A2-TO-A3-DNS-EXECUTION-ENVIRONMENT-RECOVERY-END-TO-END-V1-20260805-001",
+  "directive_comment": 5193425888,
+  "producer": "A-3",
+  "consumers": ["A-2", "A-0", "A-1", "V-2", "TARGET_PC_OPERATOR"],
+  "status": "READY_FOR_EXTERNAL_RUNTIME_DNS_PROBE_EXECUTION",
+  "consumable": true,
+  "dns_execution_environment_ready": false,
+  "terminal_candidate": "DNS_EXECUTION_ENVIRONMENT_EXACT_EXTERNAL_BLOCKER",
+  "current_runtime_blocker": "CURRENT_RUNTIME_NETWORK_NAMESPACE_BLOCKS_ALL_DNS_EGRESS",
+  "required_external_runtime": {
+    "runtime_class": "TARGET_PC_OR_INDEPENDENT_NETWORK_ENABLED_RUNTIME",
+    "must_be_independent_from_network_namespace": "net:[4026531833]",
+    "target_host": "fin.land.naver.com",
+    "required_consecutive_dns_passes": 2,
+    "required_ip_address_count_minimum": 1,
+    "http_request_allowed": false,
+    "capture_execution_allowed": false,
+    "browser_automation_allowed": false,
+    "credential_use_allowed": false
+  },
+  "prepared_probes": {
+    "windows_powershell_5_1": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/dns-runtime/Invoke-DnsReadinessProbe.ps1",
+      "commit": "b4cd5cce6985fbd799e49f32ebc6586ebe7a3009",
+      "blob": "54c48f977ec0de2dd36d1cdc360d6f6f64dacdf8",
+      "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File Invoke-DnsReadinessProbe.ps1 -HostName fin.land.naver.com -RequiredConsecutivePasses 2 -MaxAttempts 2 -OutputPath DNS_RESOLUTION_READINESS_PROBE_RESULT_V1.json"
+    },
+    "python_standard_library": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/dns-runtime/dns_readiness_probe.py",
+      "commit": "4a2d5ba6fedef6c30e459805fad8a7ee1831ee1f",
+      "blob": "10a19c82106d062870b4feafc59414b017ba82a7",
+      "command": "python dns_readiness_probe.py --host fin.land.naver.com --required-consecutive-passes 2 --max-attempts 2 --output DNS_RESOLUTION_READINESS_PROBE_RESULT_V1.json"
+    }
+  },
+  "current_evidence": {
+    "environment_profile": {
+      "path": "DNS_EXECUTION_ENVIRONMENT_PROFILE_V1.json",
+      "commit": "b774e51d4d03aa10db5b813fd98293bf181bf216",
+      "blob": "f4b7fae2af334bc48b19bb7d5ba8e7842b0e56e1"
+    },
+    "readiness_receipt": {
+      "path": "DNS_RESOLUTION_READINESS_RECEIPT_V1.json",
+      "commit": "ff16328f6af8b02b95ab062d38d755a38c97f763",
+      "blob": "fdfedfcb8d7330f5fbdfece400acb9a5e3ea3779"
+    },
+    "attempt_count": 15,
+    "pass_count": 0,
+    "configured_resolver_failure": true,
+    "alternate_udp53_failure": true,
+    "alternate_tcp53_failure": true,
+    "dns_over_tls_failure": true,
+    "comparison_domain_failure": true,
+    "same_namespace_alternative_runtime_failure": true
+  },
+  "required_external_receipt_fields": [
+    "runtime.runtime_id",
+    "runtime.resolver",
+    "required_consecutive_passes",
+    "observed_consecutive_passes",
+    "attempts[].started_at_utc",
+    "attempts[].command_type",
+    "attempts[].status",
+    "attempts[].ip_addresses",
+    "status",
+    "http_request_sent_count",
+    "remote_server_http_contact_count",
+    "capture_execution_count",
+    "browser_automation_count"
+  ],
+  "acceptance_rule": "STATUS_PASS_AND_OBSERVED_CONSECUTIVE_PASSES_GTE_2_AND_EACH_PASS_HAS_AT_LEAST_ONE_IP_AND_ALL_HTTP_CAPTURE_BROWSER_COUNTERS_EQUAL_0",
+  "after_external_pass": [
+    "COMMIT_EXTERNAL_DNS_READINESS_RECEIPT_UNDER_A3_OWNED_ROOT",
+    "UPDATE_LATEST_DNS_EXECUTION_ENVIRONMENT_POINTER_TO_PASS",
+    "POST_DNS_EXECUTION_ENVIRONMENT_READY_FOR_NEW_A2_AUTHORIZATION_REQUEST",
+    "A2_SUBMITS_NEW_SEPARATE_CAPTURE_AUTHORIZATION_REQUEST",
+    "DO_NOT_REUSE_ANY_PRIOR_CAPTURE_AUTHORIZATION"
+  ],
+  "request_execution_authorized": false,
+  "capture_execution_authorized": false,
+  "auto_retry_capture": false,
+  "http_request_sent_count": 0,
+  "remote_server_http_contact_count": 0,
+  "capture_execution_count": 0,
+  "browser_automation_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

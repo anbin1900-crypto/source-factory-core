@@ -1,0 +1,106 @@
+{
+  "schema_version": "A3_CYCLE1_FINAL_REPORT_V1",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "directive_id": "C1-A3-TARGET-PC-RUNTIME-READBACK-HARNESS",
+  "directive_comment": 5206060577,
+  "start_comment": 5206536081,
+  "worker": "A-3",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "completed_at_kst": "2026-08-07T00:11:00+09:00",
+  "status": "PASS_WITH_EXACT_EXTERNAL_BLOCKER",
+  "terminal": "A3_C_MODE_CYCLE1_TARGET_PC_READBACK_EXACT_ACCESS_BLOCKER_PACKAGE_READY",
+  "source_head_before_final": "d682cfa00dcf358993017085f8d47bff807571fa",
+  "artifacts": {
+    "start_report": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a3-target-pc-readback/A3_CYCLE1_START_REPORT_V1.json",
+      "commit": "713f0c0ee96ccab5a10f8912b9eaa8bdb7d9e0c0",
+      "blob": "2615fc3a83ce0fb92f3bf52f69fd2d8a0afbbf7a"
+    },
+    "readback_harness": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a3-target-pc-readback/Invoke-CModeCycle1TargetPcReadback.ps1",
+      "commit": "0f844b490c3d79ecb6f27458d66ea7b10f8c33ff",
+      "blob": "c79e102fa805054d2c2a07b62de2d616ce87454d",
+      "content_sha256": "942e4a3a0e7e99c21065e6f35855969f770178043be603757ace7a7d196fa541"
+    },
+    "receipt_schema": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a3-target-pc-readback/C_MODE_CYCLE1_TARGET_PC_READBACK_RECEIPT_V1.schema.json",
+      "commit": "60bb4465b504d139457d25a26930be0e255b559c",
+      "blob": "4bed3a97d31e2bf7499529da076c2a38c9ad4bdb",
+      "content_sha256": "1fa35e1fa77195cbfc9b6276e280edce5e0125fd149958ac0aaddd6557326f9a"
+    },
+    "package": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a3-target-pc-readback/A3_CYCLE1_TARGET_PC_READBACK_PACKAGE_V1.json",
+      "commit": "39370a1579b0f400d418688ea029153b2ea03145",
+      "blob": "02b7266ac49b02d4f7a7c8fabb6a31452299bfed"
+    },
+    "static_validation_receipt": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a3-target-pc-readback/A3_CYCLE1_STATIC_VALIDATION_RECEIPT_V1.json",
+      "commit": "c1f3844e8aae5b1c483859cd503921a4c8ecc199",
+      "blob": "f1e5112f90e76513eb0d8ddd139a971ab3e44fed"
+    },
+    "target_pc_access_blocker_receipt": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a3-target-pc-readback/A3_CYCLE1_TARGET_PC_ACCESS_BLOCKER_RECEIPT_V1.json",
+      "commit": "d682cfa00dcf358993017085f8d47bff807571fa",
+      "blob": "f2834873b61f6709a38300cab7e8dd5cce783f07"
+    }
+  },
+  "result": {
+    "non_destructive_read_only": "PASS",
+    "launcher_and_process_path_capture": "PASS_IMPLEMENTED_PACKAGE_READY",
+    "file_hash_version_command_line_capture": "PASS_IMPLEMENTED_PACKAGE_READY",
+    "profile_and_state_path_capture": "PASS_IMPLEMENTED_PACKAGE_READY",
+    "process_tree_and_runtime_environment_capture": "PASS_IMPLEMENTED_PACKAGE_READY",
+    "target_pc_receipt": "EXACT_ACCESS_BLOCKER_RECEIPT_SCHEMA_VALID",
+    "target_pc_live_execution": "NOT_EXECUTED",
+    "target_pc_live_pass": false,
+    "target_pc_write_count": 0,
+    "browser_profile_modification": false,
+    "workspace_state_reset": false,
+    "runtime_installation_change": false,
+    "remote_artifact_readback": "PASS_6_OF_6",
+    "false_live_pass_count": 0
+  },
+  "validation": {
+    "json_schema_parse": "PASS",
+    "sample_receipt_schema_validation": "PASS_0_ERRORS",
+    "access_blocker_receipt_schema_validation": "PASS_0_ERRORS",
+    "required_capture_tokens": "PASS_10_OF_10",
+    "forbidden_mutating_cmdlet_findings": 0,
+    "stdout_only_contract": "PASS",
+    "raw_secret_value_contract": "PASS_EQUALS_0",
+    "remote_blob_binding": "PASS_6_OF_6"
+  },
+  "external_blocker": {
+    "code": "TARGET_PC_ACCESS_UNAVAILABLE_FROM_CURRENT_EXECUTION_ENVIRONMENT",
+    "owner_boundary": "EXTERNAL_TARGET_PC_CONNECTIVITY",
+    "evidence": "Current isolated Linux execution environment has no Windows target-PC process namespace, launcher files, browser profile, state root, or release root.",
+    "required_external_action": "Run the committed PowerShell harness on the user's Windows 10 target PC through the YOLLA PC Agent/controller and return captured stdout JSON.",
+    "runnable_command": "powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\\Invoke-CModeCycle1TargetPcReadback.ps1",
+    "retry_ready": true
+  },
+  "counters": {
+    "target_pc_write_count": 0,
+    "registry_write_count": 0,
+    "file_write_count": 0,
+    "process_start_count": 0,
+    "process_stop_count": 0,
+    "profile_write_count": 0,
+    "state_write_count": 0,
+    "release_write_count": 0,
+    "raw_secret_value_count": 0,
+    "out_of_owned_root_change_count": 0,
+    "site_analyzer_work_count": 0,
+    "production_change_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  },
+  "guardrails": {
+    "browser_profile_modification": false,
+    "site_analyzer_work": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

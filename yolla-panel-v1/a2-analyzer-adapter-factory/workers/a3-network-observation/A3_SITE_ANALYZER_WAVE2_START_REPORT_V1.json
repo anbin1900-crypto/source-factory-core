@@ -1,0 +1,27 @@
+{
+  "schema_version": "A3_SITE_ANALYZER_WAVE2_START_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment": 5208236237,
+  "worker": "A-3",
+  "role": "LIVE_ELECTRON_CDP_FIXTURE_SITE_EXECUTION_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "observed_remote_head": "e86dfcc2fc32ad366cd7fd8ba07392850419b853",
+  "authority_commit": "9ca851933fb329b1d965f4459d452c684a06f9cd",
+  "started_at_kst": "2026-08-07T03:50:00+09:00",
+  "execution_plan": [
+    "launch actual Chromium with remote debugging",
+    "serve common fixture routes on 127.0.0.1",
+    "enable Network Page Runtime DOMSnapshot CDP domains",
+    "generate at least ten network requests and two response bodies",
+    "capture two main navigations and at least one child frame",
+    "publish live stream handoff and exact execution receipt"
+  ],
+  "fixture_only_terminal": false,
+  "c_mode_runtime_work": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "STARTED"
+}

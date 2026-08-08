@@ -1,0 +1,17 @@
+{
+  "schema_version": "CYCLE5_CAUSAL_FIXTURE_READBACK_V1",
+  "source_cycle4_manifest_blob": "50ff8f692360a6c8a2f82657db24d306edf97e83",
+  "source_cycle4_engine_blob": "3c6cf3f8a52afa71a795eee21e90b4bc4cfbf790",
+  "cycle4_evidence_recollection": false,
+  "source_event_count": 13,
+  "bundle_count": 4,
+  "full_bundle_set_sha256": "67c0afa8f48046e0a8d371a6715a68fe4a45be6367009cfb5e73fff2ffac0a8c",
+  "bundles": [
+    {"bundle_id":"CB-A-PUBLIC-READ","flow_class":"PUBLIC_READ","source_action_kind":"PUBLIC_READ","command_id":"CMD-FIXTURE-PRODUCT-WRITE-001","lineage_id":"LINEAGE-PRODUCT-WRITE-001","page_id":"P-PUBLIC","action_id":"A-PUBLIC-READ","source_event_ids":["E1","E2"],"network_ref_id":"NET-1","response_ref_id":"RB-1","dom_ref_id":"DOM-1","business_causality_inferred":false,"bundle_sha256":"sha256:fe0f3ad6b4db4c56703584121bc3aac0e0d2b8c55d6c4e5d678012a8ec0d67af"},
+    {"bundle_id":"CB-A-CREATE","flow_class":"WRITE","source_action_kind":"CREATE","command_id":"CMD-FIXTURE-PRODUCT-WRITE-001","lineage_id":"LINEAGE-PRODUCT-WRITE-001","page_id":"P-CREATE","action_id":"A-CREATE","source_event_ids":["E3","E4","E5","E6","E7"],"network_ref_id":"NET-2","response_ref_id":"RB-2","dom_ref_id":"DOM-6","business_causality_inferred":false,"bundle_sha256":"sha256:cc65656d7afef207c195026dd2a0c038bc0764fcb08e3bd560c27b22e528841c"},
+    {"bundle_id":"CB-A-MY-LISTING","flow_class":"MY_LISTING","source_action_kind":"MY_LISTING","command_id":"CMD-FIXTURE-PRODUCT-WRITE-001","lineage_id":"LINEAGE-PRODUCT-WRITE-001","page_id":"P-MY","action_id":"A-MY-LISTING","source_event_ids":["E8","E9"],"network_ref_id":"NET-3","response_ref_id":"RB-3","dom_ref_id":"DOM-7","business_causality_inferred":false,"bundle_sha256":"sha256:05bcaf7098a12a1754aaa041fa294583abd7381e7e933ffa7de75c2ebc09140e"},
+    {"bundle_id":"CB-A-EDIT","flow_class":"EDIT","source_action_kind":"EDIT","command_id":"CMD-FIXTURE-PRODUCT-WRITE-001","lineage_id":"LINEAGE-PRODUCT-WRITE-001","page_id":"P-EDIT","action_id":"A-EDIT","source_event_ids":["E10","E11","E12","E13"],"network_ref_id":"NET-4","response_ref_id":"RB-4","dom_ref_id":"DOM-10","business_causality_inferred":false,"bundle_sha256":"sha256:98b99520df73a444360d66ba6605be0e92188509b65339aad294f70f1cf9f63f"}
+  ],
+  "readback_pass": true,
+  "raw_secret_or_pii_count": 0
+}

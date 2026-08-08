@@ -1,0 +1,42 @@
+{
+  "schema_version": "A3_SITE_ANALYZER_WAVE1_CDP_TEST_RECEIPT_V1",
+  "status": "PASS",
+  "event_count": 12,
+  "live_protocol_path_implemented": true,
+  "deterministic_fake_debugger_execution": true,
+  "event_counts": {
+    "cdp.attached": 1,
+    "dom.snapshot": 2,
+    "analyzer.action": 1,
+    "network.requestWillBeSent": 1,
+    "network.responseReceived": 1,
+    "page.frameNavigated": 1,
+    "page.lifecycleEvent": 1,
+    "runtime.consoleAPICalled": 1,
+    "network.loadingFinished": 1,
+    "network.responseBody": 1,
+    "cdp.closed": 1
+  },
+  "response_body_count": 1,
+  "dom_snapshot_count": 2,
+  "navigation_event_count": 2,
+  "action_correlation_count": 8,
+  "response_body_storage_count": 1,
+  "raw_secret_finding_count": 0,
+  "commands_verified": [
+    "Network.enable",
+    "Page.enable",
+    "Runtime.enable",
+    "Page.setLifecycleEventsEnabled",
+    "Network.getResponseBody",
+    "DOMSnapshot.captureSnapshot"
+  ],
+  "syntax_check": "PASS",
+  "test_command": "node live_cdp_capture_engine.test.cjs",
+  "engine_content_sha256": "bea1a63b953f7366fa4927dc2c8986641491cf2b96e5864f8a0fa7ad2dd4b2d5",
+  "test_content_sha256": "fb85444dd702c11c02629f65db1066a1ceea061d837f695db119760339afc126",
+  "receipt_content_sha256": "cc82152377e2290f20eabe90abfa746ff6d0ed413487232e1083f110ac3b3171",
+  "live_electron_execution": false,
+  "live_pass_claimed": false,
+  "external_blocker_code": "ELECTRON_ANALYZER_BROWSER_UNAVAILABLE_FROM_CURRENT_EXECUTION_ENVIRONMENT"
+}

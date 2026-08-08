@@ -1,0 +1,39 @@
+{
+  "schema_version": "A3_PRODUCT_WRITE_OBSERVATION_VALIDATION_RECEIPT_V1",
+  "directive_id": "A0-TO-A3-PRODUCT-WRITE-OBSERVATION-EVIDENCE-V4-20260808-001",
+  "directive_comment": 5219083908,
+  "cycle_id": "A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "source_head": "f1ba518fcfde8490ce8c9bfa855814d8836ba0bc",
+  "node_version": "v22.16.0",
+  "validation": {
+    "node_syntax": "PASS_2_OF_2",
+    "fixture_smoke": "PASS_1_OF_1",
+    "status": "PASS",
+    "event_count": 13,
+    "correlation_count": 4,
+    "flows": ["PUBLIC_READ", "CREATE", "MY_LISTING", "EDIT"],
+    "schemas": ["PAGE_STATE_OBSERVATION_EVENT_V1", "ACTION_DOM_NETWORK_RESPONSE_CORRELATION_V2", "FORM_INTERACTION_OBSERVATION_V1", "MY_LISTING_PAGE_OBSERVATION_V1", "EDIT_FLOW_OBSERVATION_V1"],
+    "command_lineage_pass": true,
+    "raw_secret_or_pii_count": 0,
+    "observed_inference_separation_pass": true,
+    "a4_direct_consumer_projection_pass": true,
+    "a5_direct_consumer_projection_pass": true,
+    "network_observation_compatibility_pass": true,
+    "response_body_ref_compatibility_pass": true,
+    "dom_event_ref_compatibility_pass": true
+  },
+  "validated_source_sha256": {
+    "product_write_observation_engine_v1.cjs": "bfda32fe4373cdba600d2e9aa10e7aeed118097f682d0286e48b00204b2e9503",
+    "mock_smoke_cycle4_v1.cjs": "14cd5ca94aa7964e88c51924929cae7e8fd041c3f8dec70a374f2f4a47197fcb",
+    "full_generated_fixture": "cc6dc0575f81c21ca97fd75ae4e627cf98c27e2b05719cad1f7cab385d495174"
+  },
+  "guardrails": {
+    "target_pc_execution": false,
+    "live_site_call": false,
+    "tunnel_change": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "terminal": "A3_PRODUCT_WRITE_OBSERVATION_EVIDENCE_READY"
+}

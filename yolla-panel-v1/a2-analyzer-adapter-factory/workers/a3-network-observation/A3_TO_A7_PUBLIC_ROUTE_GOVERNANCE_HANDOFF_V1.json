@@ -1,0 +1,74 @@
+{
+  "schema_version": "A3_TO_A7_PUBLIC_ROUTE_GOVERNANCE_HANDOFF_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_4-A3-PUBLIC-ROUTE-PACKAGE-REBUILD-V1-20260805-001",
+  "directive_id": "A2-TO-A3-PUBLIC-DOCUMENT-ROUTE-NONEXECUTING-PACKAGE-REBUILD-V6_4-20260805-001",
+  "producer": "A-3",
+  "consumer": "A-7",
+  "status": "READY_FOR_INDEPENDENT_GOVERNANCE_REAUDIT",
+  "consumable": true,
+  "authority": {
+    "comment": "#17/5189632712",
+    "commit": "545425a10d48bf59746d8db98ff2f56b79360cc0",
+    "blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
+    "pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5"
+  },
+  "a5_exact_binding": {
+    "restart_event_comment": 5189989430,
+    "terminal_comment": 5189970139,
+    "final_pointer_comment": 5189986641,
+    "head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+    "pointer_blob": "40a282ccb4573ae00a12645f40bf39b6faea1abc",
+    "handoff_blob": "515b72792199f971b0a754bcb9dbc796b06fe26f",
+    "validation_blob": "20abdd912d7b64f245f9a8252a90bec3c819f2c9",
+    "terminal": "A5_PUBLIC_DOCUMENT_ROUTE_REBIND_READY"
+  },
+  "a3_artifacts": {
+    "start_report": {
+      "commit": "9eb57304ac261542529d5ea03f4f6498d3acf712",
+      "blob": "f419658089057e6a260468212a0cc50829099b67"
+    },
+    "allowlist": {
+      "commit": "021e3b2303cb3fe3072529451f5370e7b9f149a9",
+      "blob": "47aa9c3a02fcd8e8168c8d272d33a88733094cec"
+    },
+    "request_binding": {
+      "commit": "eca3c1314bd6d322e777d4b5ff100f6bad472548",
+      "blob": "74aa2232a274b77fb51adadb60e66ea7ae6a7fe9"
+    },
+    "operator_package": {
+      "commit": "af25d9e018bdca9676e35ae9371315af171bb063",
+      "blob": "f742b7a1e83ec9199258f9b7d7df9b8947f321d7"
+    }
+  },
+  "required_audit_checks": {
+    "authority_exact_readback": true,
+    "a5_head_pointer_handoff_validation_exact": true,
+    "public_route_binding_pass_7_of_7": true,
+    "all_methods_get": true,
+    "all_expected_formats_text_html": true,
+    "ep011_excluded_no_credential_reference": true,
+    "fixture_invalid_promotion_count_equals_0": true,
+    "unobserved_internal_api_inference_count_equals_0": true,
+    "post_or_graphql_promotion_count_equals_0": true,
+    "automated_pagination_count_equals_0": true,
+    "secret_cookie_token_pii_raw_value_count_equals_0": true,
+    "capture_attempt_count_equals_0": true,
+    "live_site_call_count_equals_0": true,
+    "browser_automation_execution_count_equals_0": true,
+    "actual_bulk_collection_equals_false": true,
+    "out_of_owned_root_change_count_equals_0": true
+  },
+  "active_profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-012"],
+  "excluded_profiles": ["EP-011"],
+  "requested_a7_terminal": "A7_PUBLIC_DOCUMENT_ROUTE_OPERATOR_PACKAGE_GOVERNANCE_PASS_OR_EXACT_FINDINGS",
+  "capture_execution_authorized": false,
+  "second_attempt_authorized": false,
+  "capture_attempt_count": 0,
+  "live_site_call_count": 0,
+  "browser_automation_execution_count": 0,
+  "credential_use_count": 0,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": "RESPONSE_BODY_SCHEMA_OBSERVATION_V1",
+  "directive_id": "A2-TO-A3-RESPONSE-BODY-FIELD-EVIDENCE-CLOSURE-V4-20260804-001",
+  "authority_boundary": "OBSERVATION_ONLY_NO_INFERENCE_A5_FINAL_SCHEMA_AUTHORITY",
+  "status": "BLOCKED_NO_EXACT_RESPONSE_BODY_FIXTURE_BINDING",
+  "authoritative_observations": [],
+  "authoritative_observation_count": 0,
+  "unbound_candidate_observations": [
+    {
+      "source": "A5_FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+      "source_blob": "e372ecdb8cbaad343dbe49b23340a2436c149c52",
+      "exact_a3_endpoint_binding": false,
+      "candidate_fields": [
+        "$.request_id",
+        "$.page",
+        "$.page_size",
+        "$.total_pages",
+        "$.items[]",
+        "$.items[].source_object_id",
+        "$.items[].parent_source_object_id",
+        "$.items[].title",
+        "$.items[].updated_at",
+        "$.item",
+        "$.item.source_object_id",
+        "$.item.parent_source_object_id",
+        "$.item.title",
+        "$.item.attributes",
+        "$.item.updated_at"
+      ],
+      "use_for_final_schema": false
+    },
+    {
+      "source": "A6_SUPERSEDED_NON_AUTHORITY_FIXTURE_ONLY",
+      "source_blob": "31a6ae2709b881f5570a29862ae3ae7cb7b6d73d",
+      "exact_a3_endpoint_binding": false,
+      "candidate_fields": [
+        "$.items[]",
+        "$.items[].complexNo",
+        "$.items[].lat",
+        "$.items[].listingId",
+        "$.items[].lng",
+        "$.items[].price",
+        "$.lastPage",
+        "$.status",
+        "$.item.areaM2",
+        "$.item.floor",
+        "$.item.listingId"
+      ],
+      "use_for_final_schema": false
+    }
+  ],
+  "missing_profiles": ["EP-001","EP-002","EP-003","EP-004","EP-005","EP-010","EP-011","EP-012"],
+  "required_evidence_for_unblock": [
+    "exact endpoint-bound static response body fixture or immutable snapshot",
+    "field path and observed value type",
+    "null observation or explicit non-null observation",
+    "array/object cardinality evidence",
+    "identifier and parent-child field evidence where applicable",
+    "repository path, commit and blob pointer"
+  ],
+  "field_inference_from_status_content_type_body_format_size": false,
+  "raw_secret_value_count": 0,
+  "live_site_call_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

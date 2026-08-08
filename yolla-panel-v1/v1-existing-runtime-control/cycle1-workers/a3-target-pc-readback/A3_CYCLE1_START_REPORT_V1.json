@@ -1,0 +1,36 @@
+{
+  "schema_version": "A3_C_MODE_CYCLE1_START_REPORT_V1",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "directive_id": "C1-A3-TARGET-PC-RUNTIME-READBACK-HARNESS",
+  "directive_comment": 5206060577,
+  "worker": "A-3",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "observed_remote_head": "f1a32cdaeafb2ef8cc7442bc3ef8351d689e02c3",
+  "common_directive": {
+    "commit": "3a66f45dcbd81818013247b1e50efb55df27ec69",
+    "blob": "bb5d64ee5c0b672d972cc981f04bc3acfb9d6491",
+    "path": "yolla-panel-v1/v1-existing-runtime-control/cycles/cycle1/C_MODE_CYCLE1_A2_A7_WORKER_ASSIGNMENT_V1.json"
+  },
+  "owned_root": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a3-target-pc-readback/**",
+  "started_at_kst": "2026-08-06T23:59:00+09:00",
+  "mode": "ONE_OWNER_END_TO_END",
+  "target_pc_access_from_current_execution_environment": false,
+  "execution_plan": [
+    "build_non_destructive_windows_readback_harness",
+    "validate_receipt_schema_and_package_contract",
+    "publish_exact_runnable_package",
+    "record_exact_target_pc_access_blocker_without_false_live_pass",
+    "verify_remote_readback_and_publish_terminal"
+  ],
+  "guardrails": {
+    "browser_profile_modification": false,
+    "target_pc_mutating_write": false,
+    "site_analyzer_work": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "STARTED"
+}

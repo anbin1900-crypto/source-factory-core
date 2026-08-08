@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "CDP_OBSERVATION_RUN_RECEIPT_V1",
+  "title": "CDP_OBSERVATION_RUN_RECEIPT_V1",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["schema_version", "status", "run_id", "request_sha256", "page_identity", "artifacts", "timestamps", "retry_count", "retry_policy"],
+      "properties": {
+        "schema_version": { "const": "CDP_OBSERVATION_RUN_RECEIPT_V1" },
+        "status": { "const": "PASS" },
+        "run_id": { "type": "string" },
+        "request_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "cdp_endpoint_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "page_identity": { "type": "object", "required": ["page_id", "target_type", "title", "url"] },
+        "artifacts": { "type": "object", "required": ["dom_snapshot_pointer", "request_response_metadata_pointer", "redacted_response_body_pointer", "frame_navigation_pointer"] },
+        "timestamps": { "type": "object", "required": ["started_at", "finished_at"] },
+        "retry_count": { "const": 0 },
+        "retry_policy": { "const": "NO_INTERNAL_RETRY" },
+        "idempotent_replay": { "type": "boolean" }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_version", "status", "exact_error", "retryable"],
+      "properties": {
+        "schema_version": { "const": "CDP_OBSERVATION_RUN_RECEIPT_V1" },
+        "status": { "const": "ERROR" },
+        "exact_error": { "type": "string", "minLength": 1, "maxLength": 512 },
+        "retryable": { "type": "boolean" }
+      }
+    }
+  ]
+}

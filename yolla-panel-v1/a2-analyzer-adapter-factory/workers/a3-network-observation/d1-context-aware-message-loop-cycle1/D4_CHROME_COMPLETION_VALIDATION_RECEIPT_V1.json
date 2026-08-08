@@ -1,0 +1,48 @@
+{
+  "schema_version": "D4_CHROME_COMPLETION_VALIDATION_RECEIPT_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001",
+  "role": "D-4_CHROME_WORKER_STATE_OBSERVER_OWNER",
+  "directive_comment": 5218617239,
+  "status": "PASS_OFFLINE_LIVE_BLOCKED",
+  "reused_assets": {
+    "worker_completion_observer_v1": {
+      "commit": "161acfc3590167f4a9feec707b958a5d3ccae535",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild-cycle3/WORKER_COMPLETION_OBSERVER_V1.cjs"
+    },
+    "cdp_adapter": {
+      "commit": "161acfc3590167f4a9feec707b958a5d3ccae535",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/ai001-prebuild/CDP_OBSERVER_MODULE_V1.cjs"
+    }
+  },
+  "state_contract": ["WORKING", "COMPLETED", "ERROR"],
+  "offline_tests": {
+    "status": "PASS",
+    "assertion_count": 23,
+    "message_visible_maps_working": true,
+    "new_assistant_reply_finished_maps_completed": true,
+    "explicit_error_visible_maps_error": true,
+    "streaming_intermediate_not_completed": true,
+    "new_reply_baseline_required": true,
+    "stable_digest_two_observation_gate": true,
+    "likely_complete_removed": true,
+    "unknown_removed": true
+  },
+  "remote_artifacts": [
+    {"role":"OBSERVER_V2","commit":"3870d2103bca5cc47ddae276e9f7e37bb0f49c38","blob":"d99088a37ff3fa3c049da0b03035d30546f4bbd2","size_bytes":11691},
+    {"role":"FIXTURE_HARNESS","commit":"48ceaf3db4688d6e32582387d72e0c2b575f8758","blob":"30516237e3dfd3c84d96583d9eb5236cef0700ae","size_bytes":3962},
+    {"role":"LIVE_RUNNER","commit":"610fb4fd702391cf5b7322d70526a32c77da1825","blob":"90c983fffa9bc8fc7233eb7dccff5a8f335e7e16","size_bytes":5164},
+    {"role":"LIVE_RECEIPT_SCHEMA","commit":"f2ef14063adec382a4794382987a85497175a219","blob":"f190be0e55c6f470cc105690937173d5df713703","size_bytes":1575}
+  ],
+  "live_preflight": {
+    "browser_agent_endpoint": "127.0.0.1:32100",
+    "browser_agent_reachable": false,
+    "browser_agent_error": "ECONNREFUSED",
+    "cdp_endpoint": "127.0.0.1:9222",
+    "cdp_localhost_only": true,
+    "cdp_reachable": false,
+    "cdp_error": "ECONNREFUSED",
+    "actual_chatgpt_page_observed": false
+  },
+  "live_pass_claimed": false,
+  "terminal": "CHROME_REPLY_COMPLETION_LIVE_BLOCKED_BROWSER_AGENT_AND_CDP_UNREACHABLE_CURRENT_ENVIRONMENT"
+}

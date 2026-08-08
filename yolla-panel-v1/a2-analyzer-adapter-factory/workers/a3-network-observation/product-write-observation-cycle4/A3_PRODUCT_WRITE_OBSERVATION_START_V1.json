@@ -1,0 +1,35 @@
+{
+  "schema_version": "A3_PRODUCT_WRITE_OBSERVATION_START_V1",
+  "directive_id": "A0-TO-A3-PRODUCT-WRITE-OBSERVATION-EVIDENCE-V4-20260808-001",
+  "directive_comment": 5219083908,
+  "cycle_id": "A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "worker": "A-3",
+  "role": "A-3_CDP_OBSERVATION_EVIDENCE_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "observed_head": "f1ba518fcfde8490ce8c9bfa855814d8836ba0bc",
+  "mode": "CYCLE_BATCH_PARALLEL_PREBUILD",
+  "scope": "OFFLINE_PRODUCT_WRITE_OBSERVATION_EVIDENCE",
+  "required_outputs": [
+    "PAGE_STATE_OBSERVATION_EVENT_V1",
+    "FORM_INTERACTION_OBSERVATION_V1",
+    "MY_LISTING_PAGE_OBSERVATION_V1",
+    "EDIT_FLOW_OBSERVATION_V1",
+    "ACTION_DOM_NETWORK_RESPONSE_CORRELATION_V2"
+  ],
+  "compatibility": [
+    "NETWORK_OBSERVATION_EVENT_V1",
+    "RESPONSE_BODY_REF",
+    "DOM_EVENT_REF"
+  ],
+  "guardrails": {
+    "target_pc_execution": false,
+    "live_site_call": false,
+    "tunnel_change": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "STARTED"
+}

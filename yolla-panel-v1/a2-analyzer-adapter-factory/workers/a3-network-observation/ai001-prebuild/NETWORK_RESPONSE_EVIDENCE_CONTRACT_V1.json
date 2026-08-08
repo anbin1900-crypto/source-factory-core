@@ -1,0 +1,84 @@
+{
+  "schema_version": "NETWORK_RESPONSE_EVIDENCE_CONTRACT_V1",
+  "directive_id": "AI001-TO-A3-CHROME-CDP-OBSERVATION-AGENT-PREBUILD-V1-20260807-001",
+  "owner": "A-3_CDP_OBSERVATION_ENGINE_OWNER",
+  "purpose": "Bind page target, action, request, response metadata and redacted response evidence without retaining raw secrets.",
+  "benchmark_authority": [
+    {
+      "name": "Chrome DevTools Protocol Target domain",
+      "url": "https://chromedevtools.github.io/devtools-protocol/tot/Target/",
+      "methods": ["Target.setDiscoverTargets", "Target.getTargets", "Target.attachToTarget"]
+    },
+    {
+      "name": "Chrome DevTools Protocol Network domain",
+      "url": "https://chromedevtools.github.io/devtools-protocol/tot/Network/",
+      "events_and_methods": ["Network.requestWillBeSent", "Network.responseReceived", "Network.loadingFinished", "Network.getResponseBody"]
+    },
+    {
+      "name": "Chrome DevTools Protocol DOMSnapshot domain",
+      "url": "https://chromedevtools.github.io/devtools-protocol/tot/DOMSnapshot/",
+      "methods": ["DOMSnapshot.captureSnapshot"]
+    },
+    {
+      "name": "Playwright CDPSession",
+      "url": "https://playwright.dev/docs/api/class-cdpsession",
+      "compatibility": "session.send + session.on + detach"
+    },
+    {
+      "name": "Chrome DevTools MCP",
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "compatibility": "attach to an already-running Chrome remote debugging endpoint; no new browser engine required"
+    }
+  ],
+  "evidence_envelope": {
+    "schema_version": "CDP_OBSERVER_EVIDENCE_V1",
+    "required": ["observer_id", "sequence", "event_id", "type", "page_id", "request_id", "action_id", "timestamp", "timestamp_ms", "payload", "evidence_sha256"],
+    "identity_semantics": {
+      "page_id": "CDP Target.TargetID selected from page targets",
+      "request_id": "CDP Network.RequestId when event is request/response scoped; null otherwise",
+      "action_id": "nearest locally-recorded user/agent action within the configured correlation window; null when no action applies",
+      "timestamp": "observer wall-clock ISO-8601 timestamp",
+      "sequence": "strictly increasing observer-local event sequence"
+    }
+  },
+  "response_body_binding": {
+    "on_response_received": "Persist only redacted response metadata and mark body_state=PENDING_LOADING_FINISHED.",
+    "on_loading_finished": "Invoke Network.getResponseBody with the same requestId.",
+    "on_body_success": "Compute raw SHA-256 in memory, redact sensitive response content, emit redacted_body and redacted_body_sha256, and set raw_body_retained=false.",
+    "on_body_failure": "Emit network.responseBodyUnavailable with request_id and error message; never fabricate body evidence.",
+    "request_response_body_join_key": "request_id"
+  },
+  "observed_domains": {
+    "page_target_discovery": ["Target.setDiscoverTargets", "Target.getTargets", "Target.attachToTarget"],
+    "dom": ["DOMSnapshot.captureSnapshot"],
+    "navigation_frame": ["Page.frameNavigated", "Page.lifecycleEvent"],
+    "console": ["Runtime.consoleAPICalled"],
+    "network": ["Network.requestWillBeSent", "Network.responseReceived", "Network.loadingFinished", "Network.loadingFailed", "Network.getResponseBody"],
+    "xhr_fetch_classification": "Network.requestWillBeSent/responseReceived resource type XHR or Fetch"
+  },
+  "redaction_boundary": {
+    "sensitive_header_names": ["Authorization", "Proxy-Authorization", "Cookie", "Set-Cookie", "X-API-Key", "API-Key", "X-Auth-Token"],
+    "sensitive_query_names": ["access_token", "refresh_token", "token", "api_key", "apikey", "key", "secret", "password", "passwd", "authorization", "cookie"],
+    "response_json_sensitive_key_pattern": "authorization|cookie|token|secret|password|passwd|api[_-]?key|session[_-]?key|credential|jwt",
+    "response_text_secret_patterns": ["Bearer token", "Basic credential", "key=value secret-like assignments", "sensitive query parameters"],
+    "raw_response_bytes_persisted": false,
+    "raw_response_sha256_allowed": true,
+    "redacted_derivative_persisted": true
+  },
+  "state_restore": {
+    "schema_version": "CDP_OBSERVER_STATE_V1",
+    "persisted_fields": ["observer_id", "page_id", "session_id", "selected_target", "sequence", "started_at", "stopped_at", "counters", "pending_responses", "recent_actions", "last_event_digest"],
+    "write_strategy": "temp file then rename",
+    "load_strategy": "validate schema_version before restore"
+  },
+  "forbidden": {
+    "tunnel_create": false,
+    "successor_direct_call": false,
+    "target_pc_execution": false,
+    "new_browser_engine": false,
+    "raw_cookie_or_authorization_persistence": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

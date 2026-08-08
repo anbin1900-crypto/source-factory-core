@@ -1,0 +1,110 @@
+{
+  "schema_version": "A3_SITE_ANALYZER_WAVE3_FINAL_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment": 5212021138,
+  "start_comment": 5212539527,
+  "worker": "A-3",
+  "role": "CDP_EVENT_STREAM_INTEGRATION_AND_RECOVERY_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "completed_at_kst": "2026-08-07T14:00:00+09:00",
+  "status": "PASS",
+  "terminal": "A3_SITE_ANALYZER_WAVE3_CDP_PRODUCT_STREAM_PASS",
+  "source_head_before_wave3": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+  "head_before_final": "015bab8c8487b0cdcef56cbd72f10da07fe074d7",
+  "consumer_authority": {
+    "a2": {"pr": 18, "head": "6cf05d0369dbae0b2413f562146243b15f350759"},
+    "a4": {"pr": 23, "head": "efc3ca185dd5c124eb0f10a55018a25d60df55dc", "binding_blob": "00352b6b4a2d8fa76a59b07e9f44f1f4da754794"},
+    "a5": {"pr": 24, "head": "b7619f0ffacbb4937b4842eab2f6cff75504ebf8", "binding_blob": "ca6f506970535ebf0d2654306b7c4a42640c295a"}
+  },
+  "artifacts": {
+    "start_report": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/A3_SITE_ANALYZER_WAVE3_START_REPORT_V1.json",
+      "commit": "eb6587ce0ada3358e21046d576bdc0288e1ac9be",
+      "blob": "c3029cdbbc5c5dd42fcdaa95d3866336f5c3e491"
+    },
+    "base_bridge": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/wave3/cdp_product_stream_bridge.cjs",
+      "commit": "89d205a5733b18f4280158558df39830086dcf42",
+      "blob": "c7188f1b89977ad89155f926927715f6e14a9d97"
+    },
+    "repaired_bridge_v2": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/wave3/cdp_product_stream_bridge_v2.cjs",
+      "commit": "af36f6875d82bbe115d8cf156a6c508aba51c2c0",
+      "blob": "eaeae42e1a742fe36d79ea5740a77385ce049c8e",
+      "content_sha256": "48cc7249ca98db6c16be3c1a7700186af8b4caa26e5727cf19f2189684f74dbf"
+    },
+    "consumer_binding_v2": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/wave3/A3_WAVE3_PRODUCT_STREAM_CONSUMER_BINDING_V2.json",
+      "commit": "b9f8378e5961f8e5bb99ce3a8e71efe9dd21c7fd",
+      "blob": "d0e4d56d9863c65b34dbaa3e2e5387a9053ff04a"
+    },
+    "execution_receipt_v2": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/wave3/A3_SITE_ANALYZER_WAVE3_LIVE_INTEGRATION_EXECUTION_RECEIPT_V2.json",
+      "commit": "015bab8c8487b0cdcef56cbd72f10da07fe074d7",
+      "blob": "50abc10ce7d01a2f1bc4e93ff73c5e6d1affdcea"
+    }
+  },
+  "repair_history": [
+    {
+      "finding": "A-4 live binding did not recognize canonical A-3 dom.snapshot through snapshotFrom",
+      "repair": "A-4-only eventType aliases added in compatibility bridge V2; canonical A-3 type preserved",
+      "reexecution": "PASS_REAL_CHROMIUM_TWO_SESSIONS"
+    }
+  ],
+  "execution_result": {
+    "actual_chromium": true,
+    "browser_session_count": 2,
+    "browser_restart_count": 1,
+    "event_count": 176,
+    "event_sha256": "f92cbbfa80919b7f13f2fbe1dac665662e17102fe2aea44300833dc0581fa334",
+    "session1_network_request_count": 10,
+    "session1_response_body_count": 10,
+    "session1_dom_snapshot_count": 3,
+    "session1_dynamic_dom_snapshot_count": 1,
+    "session1_main_navigation_count": 2,
+    "session1_child_frame_count": 2,
+    "session2_network_request_count": 10,
+    "session2_response_body_count": 10,
+    "session2_dom_snapshot_count": 3,
+    "session2_dynamic_dom_snapshot_count": 1,
+    "session2_main_navigation_count": 2,
+    "session2_child_frame_count": 2,
+    "strict_global_sequence": true,
+    "restart_sequence_continuity": true,
+    "duplicate_delivery_count": 0,
+    "consumer_delivery_count_each": 176,
+    "a2_projection": "PASS",
+    "a4_projection": "PASS_AFTER_DIRECT_REPAIR",
+    "a5_projection": "PASS_10_COMPLETE_TRIPLETS_PER_SESSION"
+  },
+  "pass_criteria": {
+    "CDP_STREAM_TO_A2_A4_A5": "PASS",
+    "RESPONSE_BODY_HANDOFF": "PASS",
+    "DOM_MUTATION_HANDOFF": "PASS",
+    "RESTART_RECOVERY": "PASS",
+    "NO_DUPLICATE_LISTENER": "PASS",
+    "REQUIRED_EVENT_COUNTS": "PASS",
+    "COMMAND_EXIT_CODES": "PASS_ZERO",
+    "HEAD_ADVANCED": "PASS"
+  },
+  "environment_recovery": {
+    "initial_http_block": "CHROMIUM_URLBLOCKLIST_IN_DISPOSABLE_CONTAINER",
+    "reversible_fix": "TEMPORARY_CONTAINER_POLICY_OVERRIDE_ONLY",
+    "policy_restored_exact": true,
+    "policy_sha256_before_after": "3b740260e337305aaef268e6c63af8fa2796057ce46f43df5ae5a3949e085e86",
+    "target_pc_change_count": 0
+  },
+  "counters": {
+    "duplicate_listener_delivery_count": 0,
+    "raw_secret_value_count": 0,
+    "false_http_pass_count": 0,
+    "production_change_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

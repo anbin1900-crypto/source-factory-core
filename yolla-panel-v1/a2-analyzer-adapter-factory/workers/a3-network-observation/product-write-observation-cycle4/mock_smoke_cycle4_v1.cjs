@@ -1,0 +1,10 @@
+'use strict';
+const assert=require('node:assert/strict');
+const {buildFixtureSequence,validateFixture}=require('./product_write_observation_engine_v1.cjs');
+const bundle=buildFixtureSequence();
+const result=validateFixture(bundle);
+assert.equal(result.status,'PASS');
+assert.deepEqual(result.flows,['PUBLIC_READ','CREATE','MY_LISTING','EDIT']);
+assert.equal(result.raw_secret_or_pii_count,0);
+assert.equal(result.correlation_count,4);
+process.stdout.write(JSON.stringify(result,null,2)+'\n');

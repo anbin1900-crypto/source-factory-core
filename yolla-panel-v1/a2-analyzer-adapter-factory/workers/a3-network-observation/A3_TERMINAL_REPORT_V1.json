@@ -1,0 +1,73 @@
+{
+  "schema_version": "A3_TERMINAL_REPORT_V1",
+  "worker": "A-3",
+  "directive_id": "A2-TO-A3-SITE-OBSERVATION-EVIDENCE-EXECUTION-V3-20260804-001",
+  "directive_comment_id": 5171205788,
+  "registered_at_kst": "2026-08-04T05:11:00+09:00",
+  "completed_at_kst": "2026-08-04T05:34:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 22,
+  "branch": "worker/a3-network-observation-v1",
+  "start_head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+  "start_commit": "dce303ae3b2c662306ad26ef1507f4bdaa6ad139",
+  "progress_head": "d15b81416baccf504f5a66d277cd060906f6042a",
+  "start_comment_id": 5171382093,
+  "progress_comment_id": 5171384180,
+  "terminal": "A3_NETWORK_ENDPOINT_OBSERVATION_READY",
+  "status": "PASS",
+  "fixture_authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "branch": "publish/reusable-core-20260801",
+    "path": "releases/SF_REUSABLE_CORE_20260801_175708/integration/pc_agent_adapter_support_v1/SOURCE_FACTORY_MOCK_E2E_RESULT.json",
+    "blob": "d99a50375a1c3fd376a3e7143075f3153ce5d174",
+    "derivation_mode": "STATIC_NETWORK_OBSERVATION_EXPANSION_FROM_REPOSITORY_MOCK_E2E_SEED",
+    "actual_browser_capture": false
+  },
+  "validation": {
+    "fixture_event_count": 15,
+    "classification_type_count": 11,
+    "endpoint_profile_count": 13,
+    "parameter_evidence_entry_count": 15,
+    "fixture_replay_count": 2,
+    "deterministic_replay": "PASS",
+    "canonical_projection_sha256": "5fec9024924220872d0757200ad50cfdac2e3247de9ff123e0aa88c5973b55f4",
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_7_OF_7",
+    "schema_validation": "PASS_15_OF_15_EVENTS",
+    "unknown_event_preserved": true,
+    "http_429": "OBSERVED",
+    "retry_after": "OBSERVED",
+    "backoff_execution": "NOT_OBSERVED",
+    "timeout": "OBSERVED",
+    "secret_like_finding_count": 0,
+    "raw_secret_value_count": 0,
+    "live_site_call_count": 0,
+    "out_of_owned_root_change_count": 0
+  },
+  "remote_blobs": {
+    "network_observation_event": "bb52dc17797c9c0fa9feb78559157b499001ae7f",
+    "traffic_classification_catalog": "ae60d725f876f47d108ee3a56fbce7e874b0409c",
+    "redaction_policy": "936b0eac4d4f288cfdfa2078e05f8651926cf964",
+    "endpoint_observation_profile": "3341c655cc8d84bbea70607c5a216c89a2d505a6",
+    "parameter_evidence_ledger": "1cabef820c2dee1d4038a76c3eafef8e1dc46218",
+    "rate_limit_retry_observation": "3790f049be587f4c2c7ad374f7e0a97573e74ec6",
+    "a3_to_a5_handoff": "1b72cf730d997102d115f71a6cf0bc98f50c8e50",
+    "a3_to_a6_handoff": "8fe991a225275ece977944f157b72509cd3345f7",
+    "test_report": "47dd9f516026f8ad0d9f7279e3b92313aee58c20"
+  },
+  "handoff": {
+    "a5_ready": true,
+    "a6_ready": true,
+    "a5_final_endpoint_catalog_authority_preserved": true,
+    "a5_final_parameter_dictionary_authority_preserved": true,
+    "a5_session_header_contract_authority_preserved": true
+  },
+  "boundaries": {
+    "actual_bulk_collection": false,
+    "authentication_bypass": false,
+    "panel_shell_direct_edit": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
