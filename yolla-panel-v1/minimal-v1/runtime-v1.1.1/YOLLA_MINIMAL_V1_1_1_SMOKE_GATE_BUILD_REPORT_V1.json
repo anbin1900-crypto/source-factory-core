@@ -1,0 +1,49 @@
+{
+  "schema_version": "YOLLA_MINIMAL_V1_1_1_SMOKE_GATE_BUILD_REPORT_V1",
+  "version": "1.1.1",
+  "status": "OFFLINE_PASS_TARGET_PC_PENDING",
+  "failure_observed": {
+    "previous_version": "1.1.0",
+    "error": "SMOKE_STATUS_NOT_PASS:STARTING",
+    "root_cause": "INSTALLER_READ_RECEIPT_ON_FILE_EXISTENCE_BEFORE_RENDERER_UPDATED_STATUS_TO_PASS"
+  },
+  "correction": {
+    "poll_until_pass": true,
+    "receipt_starting_is_transient": true,
+    "smoke_pass_not_overwritten_by_stopped": true,
+    "target_release": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\yolla-minimal-v1.1.1-ui-fix",
+    "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_MINIMAL_V1_1_1.bat"
+  },
+  "validation": {
+    "static_assertions": 30,
+    "static_status": "PASS",
+    "node_syntax_files": 3,
+    "overlay_hash_files": 6,
+    "zip_integrity": "PASS",
+    "self_extract_payload_crc": "PASS"
+  },
+  "artifacts": {
+    "one_click": {
+      "file_name": "APPLY_AI_YOLLA_MINIMAL_V1_1_1_UI_SMOKE_FIX_ONE_CLICK.bat",
+      "size": 37404,
+      "sha256": "7f1c0760e84cff128d2dd8fb7d2562addba18a39660ca72539daafb070f2c58e",
+      "drive_file_id": "1v_ADW8vrgNsdaiXCTYMMpHut6e7E1Idp",
+      "remote_readback": "PASS"
+    },
+    "package": {
+      "file_name": "AI_YOLLA_MINIMAL_V1_1_1_UI_SMOKE_FIX_PACKAGE.zip",
+      "size": 25202,
+      "sha256": "bdc7801190f96146ca61c4cba0904f251686a2f9db946a593698f66ecb866287",
+      "drive_file_id": "1Plx4uBK6HRG1pxvTGKYkCNboJIDNOme3",
+      "remote_readback": "PASS"
+    }
+  },
+  "existing_runtime_modified": false,
+  "base_minimal_runtime_modified": false,
+  "target_pc_install": "PENDING",
+  "target_pc_live_pass": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "generated_at": "2026-08-07T04:22:00+09:00"
+}

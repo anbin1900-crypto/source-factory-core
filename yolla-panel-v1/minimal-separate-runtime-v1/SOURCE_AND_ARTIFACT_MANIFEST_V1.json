@@ -1,0 +1,69 @@
+{
+  "schema_version": "YOLLA_MINIMAL_SEPARATE_RUNTIME_SOURCE_AND_ARTIFACT_MANIFEST_V1",
+  "version": "1.0.0",
+  "existing_runtime_policy": "PRESERVE_UNMODIFIED",
+  "paths": {
+    "new_release": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\yolla-minimal-v1",
+    "new_state": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-minimal-v1",
+    "profile_source": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "new_profile_clone": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile-minimal-v1",
+    "new_launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_MINIMAL_V1.bat"
+  },
+  "source_files": [
+    {"path":"main.js","size_bytes":19242,"sha256":"9c6e661cbfb5ee429b9d490de1b0760dad374a6e4116e95faf026f80063c5d24"},
+    {"path":"preload.js","size_bytes":2671,"sha256":"8243f55717dff00613fef30493942ddb6c6bd3ea66a523a1b9421d71a0a9b25e"},
+    {"path":"renderer.js","size_bytes":23350,"sha256":"4cb51777de9e829476f0911c0dda8d960d848df26496b7a66e722af0c8e588b4"},
+    {"path":"index.html","size_bytes":4410,"sha256":"17804aac1935a0ef8603dfc03575ec4eb4ad871e03557760a8b75e1875ed8dbc"},
+    {"path":"styles.css","size_bytes":9395,"sha256":"f6f70707ade09e84bf6750fe5cc6da6e80e6b746afe66c6b63522e6a627605ca"},
+    {"path":"state_store.cjs","size_bytes":23020,"sha256":"6a870c93c00fe21216bf2b37495ba8e9a81fe7a23a645957116175b7df2c3bfc"},
+    {"path":"chatgpt_dispatch.cjs","size_bytes":14622,"sha256":"ffcbc712775caadb0a585f65dc14fe4b33287071d8b26f2b541bbdb7133c56cd"},
+    {"path":"command_scheduler.cjs","size_bytes":10182,"sha256":"35ce4455032d00a9375ee7c92377ec29e26fe7770146d2d2b78d4c16c47f3d43"},
+    {"path":"package.json","size_bytes":229,"sha256":"5fe64c019bc0cf6deb105f0afa59cc1cc4ae37a5990dde868524d68e7a29c144"},
+    {"path":"automation-c-v1/c_mode_runtime.cjs","size_bytes":54691,"sha256":"2f3dded91d69e5eb2eed504e068d6b7429bb30ae410c77b17ecc92ae9d6fff6c"},
+    {"path":"automation-c-v1/github_comment_client.cjs","size_bytes":3010,"sha256":"1b6e7dff885d300d5d8ccb148962ad7e59edd7869517642bc86e77480262ea55"},
+    {"path":"install.ps1","size_bytes":7367,"sha256":"c4ee8e36f134e354f932b220030388c62a078a99567d47b56173b3206c4e0ffa"},
+    {"path":"INSTALL_AI_YOLLA_MINIMAL_V1.bat","size_bytes":389,"sha256":"b8385c635c5b3483ab388043fd40246c3184ac7c58ec2904902cd569e528e69b"},
+    {"path":"RUN_AI_YOLLA_MINIMAL_V1.ps1","size_bytes":1094,"sha256":"d8a2eca108fbf01fcab1b2c67cef533cae7f0ab26b09179db5e6e1cea682087f"},
+    {"path":"RUN_AI_YOLLA_MINIMAL_V1.bat","size_bytes":140,"sha256":"9acc44d2203b31df0682321ec83843addf5e1acb7002af30e668144c823931f1"},
+    {"path":"REMOVE_AI_YOLLA_MINIMAL_V1.ps1","size_bytes":499,"sha256":"c272b67d28b2527409006fbb9dd37545c748583f34742dcfeb531f9aec742eb0"},
+    {"path":"REMOVE_AI_YOLLA_MINIMAL_V1.bat","size_bytes":143,"sha256":"e47f71e436ff69775ac1966f3711b1f25c41700f47ff9742fecd68376d44f96b"},
+    {"path":"README.txt","size_bytes":1278,"sha256":"16ea356631085dd929f2e8a67f69d561951cc533d221fc205c0896a539f92516"}
+  ],
+  "package": {
+    "file_name": "AI_YOLLA_MINIMAL_V1_SEPARATE_RUNTIME_PACKAGE.zip",
+    "drive_file_id": "12DOVAiQkQ5ioG2_6AJo0Weu9rIjOBGN-",
+    "size_bytes": 49916,
+    "sha256": "06ed11cd571e5d9222487cc75b902dda526b8e7b7ca13f116ebb536576f7e0c6",
+    "entry_count": 19,
+    "remote_readback": "PASS"
+  },
+  "one_click_installer": {
+    "file_name": "INSTALL_AI_YOLLA_MINIMAL_V1_ONE_CLICK.bat",
+    "drive_file_id": "1G68UM_92eN8Pd5srC7Q1Wg8ZVb-xT58e",
+    "size_bytes": 69144,
+    "sha256": "2d39122dd23b0d41e638cec9263c8f39c85d033166f4ef1b05570b517f4e9e61",
+    "embedded_package_sha256": "06ed11cd571e5d9222487cc75b902dda526b8e7b7ca13f116ebb536576f7e0c6",
+    "remote_readback": "PASS"
+  },
+  "included_functions": [
+    "LEFT_GROUP_ROLE_MENU",
+    "SITE_ANALYZER_SHELL",
+    "DUAL_ADDRESS_BARS",
+    "COMMANDER_WORKER_ASSIGNMENT",
+    "C_MODE",
+    "INTERVAL_COMMAND",
+    "USE_END_COMMAND"
+  ],
+  "excluded_functions": [
+    "E_MODE",
+    "A_MODE",
+    "LEGACY_SCHEDULE_RUNTIME",
+    "LEGACY_GROUP_LOOP_RUNTIME",
+    "DATA_FACTORY",
+    "SITE_ANALYZER_ENGINE",
+    "LOG_STATUS_WINDOW",
+    "OLD_RUNTIME_PATCH"
+  ],
+  "target_pc_install": "PENDING",
+  "target_pc_live_pass": false
+}
