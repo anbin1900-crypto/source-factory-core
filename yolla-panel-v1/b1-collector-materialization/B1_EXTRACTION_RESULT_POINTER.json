@@ -1,0 +1,70 @@
+{
+  "schema_version": "B1_EXTRACTION_RESULT_POINTER_V4",
+  "pointer_id": "B1-EXTRACTION-RESULT-POINTER-V4",
+  "updated_at_kst": "2026-08-05T17:06:00+09:00",
+  "control_pr": 19,
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "required_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
+  "previous_pointer_blob": "33b7bfe3e7843f00f420ecaa60136b463d8a4c34",
+  "commander_acceptance_report": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave7/B1_FIXTURE_PIPELINE_COMMANDER_ACCEPTANCE_V1.json",
+    "commit": "5a3e853ee57cfa67bce50e485cfc9753e5a8fab6",
+    "blob": "978c2b9ffeeb9e3177b568e31c57f780e3131d36"
+  },
+  "status": "FIXTURE_PIPELINE_INDEPENDENTLY_ACCEPTED",
+  "required_outputs": {
+    "RAW_ARTIFACT_MANIFEST_V1": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V1.json",
+      "blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+      "sha256": "9059a443c88103cf1472b50617e61097b29ad8e118825485c2a1d68ccf748a97",
+      "authority": "B6_ACCEPTED"
+    },
+    "SOURCE_RECORD_ENVELOPE_V1": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/SOURCE_RECORD_ENVELOPE_V1.json",
+      "blob": "0148a841344ce5a0df03e55df532871106dd7333",
+      "sha256": "9889c83d72f6ecca84714509493552b8a9bfa304917275cb779ddb0ecb3aa0ba",
+      "authority": "B6_ACCEPTED"
+    },
+    "NORMALIZED_DATASET_V1": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/generated/NORMALIZED_DATASET_V1.json",
+      "blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+      "sha256": "add8698d36c9a87043409168ce6831cf3ab87ff5d77db98c2a81aa782591a112",
+      "authority": "B6_ACCEPTED"
+    },
+    "EXTRACTION_RECEIPT_V1": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/generated/EXTRACTION_RECEIPT_V1.json",
+      "blob": "a4b4f7504c0a2b552fe165176f51833b78e0fd09",
+      "sha256": "ca8d871353740ccb5ea753467d5e3d183ded1e958688f92d019ca1756930711c",
+      "authority": "B6_ACCEPTED"
+    }
+  },
+  "worker_terminals": {
+    "received": 5,
+    "required": 5,
+    "status": "PASS_5_OF_5"
+  },
+  "b6_acceptance": {
+    "head": "797930d24fc00edef4276b355b7ea7ff71109972",
+    "pointer_blob": "448fbfb07321f3cabae4a25649feee90e46ba106",
+    "final_report_blob": "d81716e1626b96ca120b8b08892d85210da337f3",
+    "acceptance_matrix_blob": "eff2d5143c93510683dda8695cd3b715efab9a41",
+    "final_acceptance_completed": true,
+    "terminal_result": "B6_EXTRACTION_ACCEPTANCE_C1_HANDOFF_READY"
+  },
+  "record_accounting": {
+    "input_record_count": 4,
+    "duplicate_count": 1,
+    "output_record_count": 3,
+    "source_field_loss_count": 0,
+    "sqlite_row_count": 3,
+    "sqlite_decoded_sha256": "f03e20844e805af3105791934352f8bc3dcbeb1a165ad5c80e5d6ae5739ea14d"
+  },
+  "terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
+  "terminal_result": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_FIXTURE_ONLY",
+  "execution_scope": "FIXTURE_FIRST_ONLY",
+  "actual_site_extraction": false,
+  "a2_verified_adapter_package_v1_published": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "B1_ABC_INTEGRATION_READINESS_PREPARATION_V1",
+  "report_id": "B1-ABC-INTEGRATION-READINESS-20260805-001",
+  "prepared_at_kst": "2026-08-05T22:24:39+09:00",
+  "role": "B-1_COLLECTION_DB_MATERIALIZATION_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 19,
+  "branch": "integration/b1-collector-db-materialization-v1",
+  "fixture_baseline": {
+    "worker_gate": "PASS_5_OF_5",
+    "latest_pointer_blob": "10e715ddef42b7843c0b49a9b35e2475fee6c42f",
+    "handoff_pointer_blob": "932904cede5bcfb239a62952173f82147b0b0f26",
+    "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+    "source_record_envelope_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+    "normalized_dataset_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+    "extraction_receipt_blob": "a4b4f7504c0a2b552fe165176f51833b78e0fd09",
+    "classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE",
+    "c1_handoff_published": true
+  },
+  "a2_dependency": {
+    "control_pr": 18,
+    "current_head_before_b1_preparation": "322ff94fa1768d7f9036f25ce306962dd5ebc59d",
+    "a7_governance_terminal": "A7_PUBLIC_ROUTE_GOVERNANCE_READY_FOR_A2_SECOND_AUTHORIZATION_REQUEST",
+    "authorization_request_ready": true,
+    "new_authorization_granted": false,
+    "verified_adapter_package_ready": false
+  },
+  "integration_contract": {
+    "input_contract": "VERIFIED_ADAPTER_PACKAGE_V1",
+    "outputs": [
+      "RAW_ARTIFACT_MANIFEST_V1",
+      "SOURCE_RECORD_ENVELOPE_V1",
+      "NORMALIZED_DATASET_V1",
+      "EXTRACTION_RECEIPT_V1",
+      "MATERIALIZED_DATABASE_PACKAGE_V1",
+      "D_INTAKE_REQUEST_V1"
+    ],
+    "current_status": "FIXTURE_BASELINE_FROZEN_ACTUAL_PUBLIC_RUN_STANDBY",
+    "actual_public_run_entry_conditions": [
+      "A2_VERIFIED_ADAPTER_PACKAGE_V1_REMOTE_READBACK_PASS",
+      "EXPLICIT_MINIMUM_PUBLIC_READ_ONLY_COLLECTION_SCOPE",
+      "NO_LOGIN_NO_BYPASS_BOUNDARY",
+      "B6_INDEPENDENT_ACCEPTANCE_REQUIRED"
+    ]
+  },
+  "next_action": "WAIT_A2_VERIFIED_ADAPTER_PACKAGE_THEN_RUN_MINIMUM_PUBLIC_READ_ONLY_VERTICAL_COLLECTION",
+  "actual_site_extraction": false,
+  "actual_bulk_collection": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

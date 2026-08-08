@@ -1,0 +1,80 @@
+{
+  "schema_version": "LATEST_B1_REPORT_POINTER_V7",
+  "pointer_id": "LATEST-B1-COLLECTOR-DB-MATERIALIZATION-REPORT-V7",
+  "updated_at_kst": "2026-08-06T03:19:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 19,
+  "branch": "integration/b1-collector-db-materialization-v1",
+  "previous_pointer_blob": "67dcfbda0675c7cbd3d4994e2417e2327055b466",
+  "current_report": {
+    "type": "A2_VERIFIED_ADAPTER_DELTA_CONSUMPTION",
+    "path": "yolla-panel-v1/b1-collector-materialization/B1_A2_VERIFIED_ADAPTER_CONSUMPTION_RECEIPT_V1.json",
+    "commit": "899566c528b1f9122d49d268bd0f7595568c283e",
+    "blob": "e5994dbe33c44e9c6e94283c7332304086082b87",
+    "remote_readback": "PASS"
+  },
+  "fixture_integration": {
+    "path": "yolla-panel-v1/b1-collector-materialization/B1_VERIFIED_ADAPTER_FIXTURE_INTEGRATION_V1.json",
+    "commit": "cff9f778c89b807148093ae15fbdeff97646c1a3",
+    "blob": "dccce007b7b883f408b7d62aaa99207f40f76b1c",
+    "official_execution_count": 1,
+    "result": "PASS",
+    "output_file_sha256": "1aff69a94e54979af003f4a3949686b62b948c89914d5d7332490b94eafdc6cc",
+    "network_call_count": 0
+  },
+  "fixture_baseline": {
+    "worker_gate": "PASS_5_OF_5_UNCHANGED",
+    "prior_acceptance_report_blob": "978c2b9ffeeb9e3177b568e31c57f780e3131d36",
+    "handoff_pointer_blob": "932904cede5bcfb239a62952173f82147b0b0f26",
+    "classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE",
+    "c1_handoff_published": true,
+    "full_b2_b6_reexecution": false
+  },
+  "accepted_outputs": {
+    "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+    "source_record_envelope_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+    "normalized_dataset_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+    "extraction_receipt_blob": "a4b4f7504c0a2b552fe165176f51833b78e0fd09",
+    "sqlite_base64_blob": "951a53ddb336e8a1cfd56b3dac94088d78bb57da"
+  },
+  "a2_dependency": {
+    "control_pr": 18,
+    "handoff_directive_id": "A2-TO-B1-CONSUME-VERIFIED-GENERIC-HTML-ADAPTER-PACKAGE-V1-20260806-001",
+    "handoff_comment_id": 5195584095,
+    "a7_final_head": "96247ec90c19ae476735750a7dd0233ab237f0f0",
+    "a7_terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_PASS",
+    "a7_latest_pointer_blob": "806949a223115c26cdd6a264faf6e438003b5ed1",
+    "a7_b1_handoff_commit": "2104c9b4dff1d50987cf70487f5c486f3b32c660",
+    "a7_b1_handoff_blob": "34fd92322e8348e6aa16f4d7193f432621819db8",
+    "a6_final_head": "a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793",
+    "a6_pointer_blob": "30a7854ca46e7e6f477b1c17c5762e4651d53a82",
+    "package_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/VERIFIED_ADAPTER_PACKAGE_V1/package.json",
+    "package_blob": "d758afef96e76b664f6d8b0383c5a7bc017c731a",
+    "package_sha256": "fad18a1e0571dfac26305d8bd3d845a639e225c51ff1a03dfe45c49d7d441854",
+    "package_member_binding": "PASS_6_OF_6",
+    "build_receipt_blob": "64a21f86ed848c35f8f99c9160ae62325630ac3f",
+    "replay_receipt_blob": "262dbdb3742daba28a5b1ca787b2b043fccd1955",
+    "deterministic_replay": "PASS_2_OF_2",
+    "b1_execution_ready": true,
+    "b1_reanalysis_required": false,
+    "verified_adapter_package_ready": true
+  },
+  "integration_state": {
+    "input_contract": "VERIFIED_ADAPTER_PACKAGE_V1",
+    "verified_adapter_consumer_contract_bound": true,
+    "status": "B1_A2_VERIFIED_ADAPTER_CONSUMED_FIXTURE_PIPELINE_READY",
+    "actual_public_run_ready": false,
+    "site_structure_reanalysis": false,
+    "adapter_regeneration": false
+  },
+  "current_terminal": "B1_A2_VERIFIED_ADAPTER_CONSUMED_FIXTURE_PIPELINE_READY_OR_EXACT_BLOCKER",
+  "terminal_result": "B1_A2_VERIFIED_ADAPTER_CONSUMED_FIXTURE_PIPELINE_READY",
+  "current_status": "VERIFIED_ADAPTER_DELTA_CONSUMPTION_COMPLETE_FIXTURE_PIPELINE_READY",
+  "next_gate": "EXPLICIT_ACTUAL_EXTRACTION_AUTHORIZATION_OR_NEW_A2_AUTHORITY_DELTA",
+  "actual_site_extraction": false,
+  "actual_bulk_collection": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

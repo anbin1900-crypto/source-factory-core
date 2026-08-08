@@ -1,0 +1,25 @@
+{
+  "schema_version": "B1_SITE_ANALYZER_WAVE2_MODULE_BINDINGS_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "authority_commit": "9ca851933fb329b1d965f4459d452c684a06f9cd",
+  "b1_assignment_comment": 5208242890,
+  "b1_start_head": "6dca87e976439134dc24fed8bd60bc2c9db05fa0",
+  "binding_policy": {
+    "current_evidence_head_is_not_automatically_packaged_byte_head": true,
+    "packaged_byte_lineage_is_recorded_separately": true,
+    "single_product_owner": "B-1"
+  },
+  "workers": {
+    "A-2": {"pr":18,"task_comment":5208234675,"current_head":"6cf05d0369dbae0b2413f562146243b15f350759","role":"AnalyzerCore Runtime Bridge embedded/standalone integration","packaged_lineage":{"mode":"BOUND_ARTIFACT_NOT_BYTE_VENDORED","package_blob":"654833d0aaeeb6005a47e2adf63dd33928099f61","package_sha256":"ce584baef74fe0fac0b16b5317e20c2160fe59e9e58deb4c4d8a85796d823be4"}},
+    "A-3": {"pr":22,"task_comment":5208236237,"current_head":"0c4533b0556a468b50e1ebd4f3a166b7da331d64","role":"Electron CDP Network Response DOM events","packaged_lineage":{"mode":"B6_CHROMIUM_CDP_COMPAT_RUNTIME"}},
+    "A-4": {"pr":23,"task_comment":5208237501,"current_head":"708a615d6c262b0ea62a703917d04236053ca1a8","role":"live field locator pagination inference","packaged_lineage":{"mode":"B6_ANALYSIS_PROFILE_COMPAT"}},
+    "A-5": {"pr":24,"task_comment":5208238898,"current_head":"b7619f0ffacbb4937b4842eab2f6cff75504ebf8","role":"endpoint schema DOM API HYBRID inference","packaged_lineage":{"mode":"B6_ANALYSIS_PROFILE_COMPAT"}},
+    "A-6": {"pr":25,"task_comment":5208240151,"current_head":"b6d2fef97d992f343ebfbc1443787b3c9bbd8f07","role":"adapter replay trace exact 10","packaged_lineage":{"mode":"B6_COMPAT_ADAPTER","module":"modules/a6-adapter-compat.cjs"}},
+    "A-7": {"pr":26,"task_comment":5208241338,"current_head":"27514804d9486fe1b0a1c543a03215778605d7e4","role":"IPC bridge selector launcher repair","packaged_lineage":{"mode":"B1_DIRECT_REPAIR_CONSUMES_FINDINGS"}},
+    "B-2": {"pr":38,"task_comment":5208244151,"current_head":"e6f03ebe532adb3d51d2e7613fddaaea7242e01b","role":"Visual Analyzer live runtime binding","packaged_lineage":{"mode":"B1_UI_COMPAT_REIMPLEMENTATION","runtime_bridge_blob":"8777873e6d1a2ca3e67a84af3d2bec49229abfe7","live_model_blob":"1e3a1b7b00782bf8635a2573111c4e3f2deb8694","live_app_blob":"9e601f56e787eee3c5acffd41356984d0c3c7ea8"}},
+    "B-3": {"pr":39,"task_comment":5208245427,"current_head":"b94ef16dd8a0e73e430c1e0678ce6c6f2e075350","role":"actual action recorder recipe adapter binding","packaged_lineage":{"mode":"VENDORED_RECIPE_FROM_IMPLEMENTATION_HEAD","implementation_head":"d74c609241ba9c48cc432bf1fa3c7d7257354f8a","recipe_blob":"384d1383b501577a8b2a3e72d79003fcdc699e0c","recipe_hash":"22401b16caabd96e7cd59f4a617ed4ff14db9641e8dc17aa59c90bdca3c804d6"}},
+    "B-4": {"pr":40,"task_comment":5208247001,"current_head":"199362d6b90fb11fecac864f915cfb50c6becf7f","role":"local test site popup frame scroll resume","packaged_lineage":{"mode":"B6_DIRECT_REPAIR_RUNTIME","module":"runtime/fixture-site.cjs"}},
+    "B-5": {"pr":41,"task_comment":5208248247,"current_head":"589a8074f3844bb2d8192e4b1e876484030023d1","role":"10-row preview edit JSON CSV XLSX parity","packaged_lineage":{"mode":"B6_COMPAT_PREVIEW_EXPORT","module":"modules/b5-preview-export.cjs"}},
+    "B-6": {"pr":42,"task_comment":5208249616,"current_head":"75f2f5fb0d70f5243d4a5852ebdbb82d9e1a18ad","role":"Electron Node runnable package direct repair","packaged_lineage":{"mode":"BYTE_BASE_PACKAGE","drive_file_id":"13LrXXmW_p69HP1kgMLPaDuSr2l2fEZnP","sha256":"94bd0ef75e8ae2fe8385d298d53d4827b8208096230ee3e0a57a11a3c8586dcd","size_bytes":49490}}
+  }
+}

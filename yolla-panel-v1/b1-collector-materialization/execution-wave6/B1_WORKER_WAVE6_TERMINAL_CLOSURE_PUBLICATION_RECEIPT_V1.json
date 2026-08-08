@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "receipt_id": "B1-WORKER-WAVE6-TERMINAL-CLOSURE-PUBLICATION-RECEIPT-V1-20260805-001",
+  "published_at_kst": "2026-08-05T00:15:00+09:00",
+  "control_pr": 19,
+  "recovery": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave6/B1_WORKER_WAVE6_TERMINAL_CLOSURE_RECOVERY_V1.json",
+    "commit": "1e611f26d4a96d302146118a1af8a534e6a791a8",
+    "blob": "88320828aae24925ade553bfa460117cad39d80b"
+  },
+  "pointer": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave6/LATEST_B1_WORKER_WAVE6_TERMINAL_CLOSURE_POINTER.json",
+    "commit": "789ad770b95da2dfca110a674fe37292f76dc288"
+  },
+  "comments": {
+    "B-2": {"pr": 38, "comment": 5181070002, "action": "ACCEPTED_PASS_FROZEN"},
+    "B-3": {"pr": 39, "comment": 5181076773, "action": "TERMINAL_OR_EXACT_BLOCKER_REQUIRED"},
+    "B-4": {"pr": 40, "comment": 5181080352, "action": "TERMINAL_OR_EXACT_BLOCKER_REQUIRED"},
+    "B-5": {"pr": 41, "comment": 5181085194, "action": "TERMINAL_OR_EXACT_BLOCKER_REQUIRED"},
+    "B-6": {"pr": 42, "comment": 5181091367, "action": "START_EVENT_WAIT_POINTER_OR_EXACT_BLOCKER_REQUIRED"}
+  },
+  "publication_result": "PASS_5_OF_5",
+  "accepted_workers": 1,
+  "pending_terminal_workers": 3,
+  "event_wait_ledger_pending_workers": 1,
+  "new_directive_count": 0,
+  "existing_task_ids_reused": true,
+  "next_gate": "B3_B4_B5_TERMINALS_3_OF_3_THEN_B6_FINAL_ACCEPTANCE",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

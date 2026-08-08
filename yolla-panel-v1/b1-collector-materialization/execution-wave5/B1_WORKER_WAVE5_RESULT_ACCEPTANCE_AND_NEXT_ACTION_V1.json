@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0.0",
+  "audit_id": "B1-WORKER-WAVE5-RESULT-ACCEPTANCE-AND-NEXT-ACTION-V1-20260804-001",
+  "registered_at_kst": "2026-08-04T23:14:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 19,
+  "control_branch": "integration/b1-collector-db-materialization-v1",
+  "control_head_before_audit": "4bbd542c9e0cb99acff8dc81443117297757c6a3",
+  "parent_batch_id": "B1-EXTRACTOR-EXECUTION-BATCH-V1-20260804-001",
+  "existing_directives_superseded": false,
+  "new_directive_count": 0,
+  "a2_dependency": {
+    "control_pr": 18,
+    "observed_head": "3c3f7077ab070cb0259c253268ab3a7b17ecb446",
+    "verified_adapter_package_v1_file_present": false,
+    "actual_site_extraction_allowed": false,
+    "fixture_only_execution": true
+  },
+  "worker_review": {
+    "B-2": {
+      "pr": 38,
+      "head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+      "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY",
+      "status": "ACCEPTED_PASS",
+      "latest_pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/LATEST_B2_REPORT_POINTER.json",
+      "latest_report_commit": "ad7a6d7a39d36907269ffcaff052bfb778b271f5",
+      "final_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/B2_FINAL_REPORT_V1.json",
+      "test_result_path": "yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/B2_TEST_RESULTS_V1.json",
+      "unit_tests": "PASS_24_OF_24",
+      "json_parse": "PASS_2_OF_2",
+      "python_compile": "PASS_5_OF_5",
+      "remote_blob_readback": "PASS_7_OF_7",
+      "network_call_count": 0,
+      "actual_site_extraction_count": 0,
+      "handoff_ready_for": ["B-3", "B-4", "B-5", "B-6", "B-1"]
+    },
+    "B-3": {
+      "pr": 39,
+      "head": "8c31cec83f1b81ba80511bed8a61b15536da3b48",
+      "terminal_found": false,
+      "status": "IMPLEMENTATION_NOT_STARTED_AFTER_WAVE4",
+      "next_action": "CONSUME_B2_EXACT_CONTRACT_AND_B1_FIXTURE_SEED_THEN_IMPLEMENT_PAGINATION_RETRY_RESUME_INCREMENTAL"
+    },
+    "B-4": {
+      "pr": 40,
+      "head": "f1c327882bfd73d9670afa661e11c6acc8a8cccb",
+      "terminal_found": false,
+      "status": "IMPLEMENTATION_NOT_STARTED_AFTER_WAVE4",
+      "next_action": "CONSUME_B2_EXACT_CONTRACT_AND_REBUILD_RAW_MANIFEST_SOURCE_ENVELOPE_FROM_B1_FIXTURE_BYTES"
+    },
+    "B-5": {
+      "pr": 41,
+      "head": "dfd99f6188d263fd7e7ded72396f72006680fee8",
+      "terminal_found": false,
+      "status": "IMPLEMENTATION_NOT_STARTED_AFTER_WAVE4",
+      "next_action": "REPRODUCE_LOSSLESS_NORMALIZATION_SQLITE_AND_PUBLISH_BASE64_READBACK_RECEIPT"
+    },
+    "B-6": {
+      "pr": 42,
+      "head": "6ccf2fea6cc4d05db2704ac08c50eb8ff43015b1",
+      "terminal_found": false,
+      "start_event_wait_pointer_found": false,
+      "accepted_worker_inputs": "1_OF_4",
+      "accepted_input": "B-2",
+      "status": "EVENT_WAIT_START_POINTER_NOT_PUBLISHED",
+      "next_action": "POST_START_EVENT_WAIT_POINTER_AND_PREFLIGHT_B2_EXACT_HEAD_PLUS_B1_SEED"
+    }
+  },
+  "additional_work": {
+    "B-3": {
+      "existing_task_id": "B1-B3-EXECUTION-TASK-V1-20260804-001",
+      "required_inputs": {
+        "b2_head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+        "b2_consumer_contract_path": "yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/contracts/VERIFIED_ADAPTER_PACKAGE_CONSUMER_CONTRACT_V1.json",
+        "b1_seed_head": "8b8f7888128e7472269b79385886ff48a421de1f"
+      },
+      "required_result": "PAGINATION_RETRY_RESUME_INCREMENTAL_FIXTURE_PASS_OR_EXACT_BLOCKER",
+      "terminal": "B3_EXTRACTOR_RETRY_RESUME_READY_OR_EXACT_BLOCKER"
+    },
+    "B-4": {
+      "existing_task_id": "B1-B4-EXECUTION-TASK-V1-20260804-001",
+      "required_inputs": {
+        "b2_head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+        "b1_seed_head": "8b8f7888128e7472269b79385886ff48a421de1f"
+      },
+      "required_result": "RAW_ARTIFACT_AND_SOURCE_ENVELOPE_PARITY_PASS_OR_EXACT_BLOCKER",
+      "terminal": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY_OR_EXACT_BLOCKER"
+    },
+    "B-5": {
+      "existing_task_id": "B1-B5-EXECUTION-TASK-V1-20260804-001",
+      "required_inputs": {
+        "b2_head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+        "b1_seed_head": "8b8f7888128e7472269b79385886ff48a421de1f"
+      },
+      "required_result": "LOSSLESS_NORMALIZATION_SQLITE_BASE64_READBACK_PASS_OR_EXACT_BLOCKER",
+      "terminal": "B5_NORMALIZED_DATASET_EXTRACTION_RECEIPT_READY_OR_EXACT_BLOCKER"
+    },
+    "B-6": {
+      "existing_task_id": "B1-B6-EXECUTION-TASK-V1-20260804-001",
+      "accepted_inputs": "1_OF_4",
+      "required_now": [
+        "B6_START_REPORT_V1.json",
+        "LATEST_B6_REPORT_POINTER.json",
+        "B6_B2_INPUT_PREFLIGHT_V1.json",
+        "STATUS_EVENT_WAIT_B3_B4_B5"
+      ],
+      "final_entry_condition": "B2_B3_B4_B5_TERMINALS_AND_POINTERS_4_OF_4",
+      "terminal": "B6_EXTRACTION_ACCEPTANCE_C1_HANDOFF_READY_OR_EXACT_BLOCKER"
+    }
+  },
+  "next_gate": "B3_B4_B5_TERMINALS_3_OF_3_THEN_B6_FINAL_ACCEPTANCE",
+  "required_b1_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
+  "boundaries": {
+    "actual_site_extraction": false,
+    "actual_bulk_collection": false,
+    "unverified_adapter_use": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

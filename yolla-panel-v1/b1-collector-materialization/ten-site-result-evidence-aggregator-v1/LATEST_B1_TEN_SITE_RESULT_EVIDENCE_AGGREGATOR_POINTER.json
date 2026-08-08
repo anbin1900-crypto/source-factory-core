@@ -1,0 +1,24 @@
+{
+  "schema_version":"LATEST_B1_TEN_SITE_RESULT_EVIDENCE_AGGREGATOR_POINTER_V1",
+  "cycle_id":"V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "directive_comment":5224505836,
+  "role":"B-1_TEN_SITE_RESULT_EVIDENCE_AGGREGATOR_SOURCE_OWNER",
+  "start_head":"196302a2ab39e24ce4435ebee5e83a3cb2d1cc80",
+  "evidence_commit":"ad4044a6fb0b826c80f6ae6f29e9c966b2270063",
+  "root":"yolla-panel-v1/b1-collector-materialization/ten-site-result-evidence-aggregator-v1/",
+  "terminal":"B1_TEN_SITE_RESULT_AGGREGATOR_SOURCE_PASS_OR_EXACT_BLOCKER",
+  "status":"PASS_SOURCE_FIXTURE_VALIDATOR_REPLAY_ZERO_ACTUAL_RECEIPT_BASELINE",
+  "outputs":{
+    "matrix":{"path":"B1_TEN_SITE_LANE_RESULT_MATRIX_V1.json","blob":"da6f20ebbe740077d9d1a0393f901f51aa26aaff"},
+    "aggregator":{"path":"B1_EVIDENCE_AGGREGATOR_V1.py","blob":"47a5795733e19c231868fc1f22f638b8795835fe"},
+    "next_action_gap":{"path":"B1_NEXT_ACTION_AND_GAP_SNAPSHOT_V1.json","blob":"eb0cb7fdfa2ddbf014c3b8fabcb999f1baec2279"},
+    "validation_receipt":{"path":"reports/B1_AGGREGATOR_VALIDATION_RECEIPT_V1.json","blob":"be183b2405ee1512dcbba66ed172ef68ff19eacd"},
+    "replay_result":{"path":"reports/B1_EVIDENCE_AGGREGATOR_REPLAY_RESULT_V1.json","blob":"5be258fe92ae3c6367513ecbdb478776bc52aa8d"}
+  },
+  "baseline":{"authority_site_slots":10,"actual_bound_site_count":0,"lanes":5,"potential_cells":50,"actual_receipt_count":0,"actual_materialized_cell_count":0,"technical_pass_cell_count":0,"gap_count":50,"target_value_guessing":false},
+  "validation":{"result":"PASS_13_OF_13","duplicate_receipt_suppression":"PASS","retry_lineage_preservation":"PASS","exact_validation_pass_gate":"PASS","inferred_unknown_waiting_pass_rejection":"PASS","partial_result_gap_computation":"PASS","zero_actual_receipt_baseline":"PASS"},
+  "fixture_replay":{"input_receipts":6,"accepted_receipts":5,"duplicate_suppressed":1,"retry_groups":4,"effective_cells":4,"fixture_technical_pass_cells":2,"remaining_fixture_gaps":48},
+  "next_action":{"action":"INJECT_SITE_AUTHORITY","site_slot":"SITE_SLOT_01","then_lane":"DATA","site_name":"UNKNOWN_NOT_GUESSED","site_url":"UNKNOWN_NOT_GUESSED"},
+  "handoff":{"after_this_terminal_owner":"V-2","additional_worker_cycle_planned":false,"direct_consumer_ready":true},
+  "guardrails":{"raw_secret_or_pii":false,"final_write_or_edit_submit":false,"production":false,"ready":false,"merge":false,"self_merge":false}
+}

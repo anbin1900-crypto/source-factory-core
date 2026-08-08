@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "pointer_id": "LATEST-B1-WORKER-ADDITIONAL-WORK-POINTER-V1",
+  "updated_at_kst": "2026-08-04T11:56:00+09:00",
+  "control_pr": 19,
+  "assignment": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave4/B1_WORKER_ADDITIONAL_WORK_AND_FIXTURE_SEED_BINDING_V1.json",
+    "commit": "1ebe108668bd1ffd7f176a75accaaf3fd3988eb9",
+    "blob": "2495c7d8eb244e40d2a1a291f5c49309a28cc505"
+  },
+  "worker_status": {
+    "B-2": "LATE_BIND_SEED_EXECUTE_NOW",
+    "B-3": "REPRODUCE_SEED_EXECUTE_NOW",
+    "B-4": "REBUILD_RAW_EVIDENCE_EXECUTE_NOW",
+    "B-5": "NORMALIZE_AND_CLOSE_SQLITE_TRANSPORT_GAP_EXECUTE_NOW",
+    "B-6": "SEED_PREFLIGHT_NOW_EVENT_WAIT_FINAL"
+  },
+  "implementation_terminals_received": 0,
+  "new_directive_count": 0,
+  "existing_task_ids_reused": true,
+  "required_b1_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

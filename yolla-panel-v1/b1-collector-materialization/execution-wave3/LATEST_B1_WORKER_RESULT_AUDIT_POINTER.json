@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "pointer_id": "LATEST-B1-WORKER-RESULT-AUDIT-POINTER-V1",
+  "updated_at_kst": "2026-08-04T05:22:00+09:00",
+  "control_pr": 19,
+  "audit": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave3/B1_WORKER_RESULT_AUDIT_AND_NEXT_ACTION_V1.json",
+    "commit": "80944c23587bb9472142f26a4a856bcce16c7944",
+    "blob": "081a1a598a4141a59f12b5d10d3e1e9d6f9f05ac"
+  },
+  "status": "B2_TO_B5_IMPLEMENTATION_NOT_STARTED_B6_START_EVENT_WAIT_NOT_PUBLISHED",
+  "workers_checked": 5,
+  "terminals_received": 0,
+  "next_action": "REUSE_EXISTING_TASK_IDS_AND_POST_RESULT_OR_EXACT_BLOCKER",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

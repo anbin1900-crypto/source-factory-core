@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "receipt_id": "B1-WORKER-ASSIGNMENT-PUBLICATION-RECEIPT-V1",
+  "published_at_kst": "2026-08-04T04:44:00+09:00",
+  "control_pr": 19,
+  "control_branch": "integration/b1-collector-db-materialization-v1",
+  "worker_assignment_pointer_blob": "f39933e5ba9962d513e41fa4d8b2f043d181820d",
+  "worker_directives": {
+    "B-2": {
+      "pr": 38,
+      "head": "6ccaf5c1913395138dd4e9e50ee5cd576e549017",
+      "comment": 5171036066,
+      "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY_OR_EXACT_BLOCKER"
+    },
+    "B-3": {
+      "pr": 39,
+      "head": "72f2f9ee23e0119ec6a79aabc26996d5c0948f85",
+      "comment": 5171038055,
+      "terminal": "B3_EXTRACTOR_RETRY_RESUME_READY_OR_EXACT_BLOCKER"
+    },
+    "B-4": {
+      "pr": 40,
+      "head": "26922b80cc307523e3b2375d08cc2e63d98d7bf9",
+      "comment": 5171040545,
+      "terminal": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY_OR_EXACT_BLOCKER"
+    },
+    "B-5": {
+      "pr": 41,
+      "head": "4528d2c96bb26d67ff275c505f9a23b1b01db4db",
+      "comment": 5171042948,
+      "terminal": "B5_NORMALIZED_DATASET_EXTRACTION_RECEIPT_READY_OR_EXACT_BLOCKER"
+    },
+    "B-6": {
+      "pr": 42,
+      "head": "a9987e5e52dbe191685a5a28cd4a36194c6c6e11",
+      "comment": 5171045051,
+      "entry_condition": "B2_B3_B4_B5_TERMINALS_AND_POINTERS_4_OF_4",
+      "terminal": "B6_EXTRACTION_ACCEPTANCE_C1_HANDOFF_READY_OR_EXACT_BLOCKER"
+    }
+  },
+  "publication_result": "PASS_5_OF_5",
+  "owned_root_overlap_count": 0,
+  "duplicate_directive_count": 0,
+  "actual_site_extraction": false,
+  "actual_bulk_collection": false,
+  "a2_verified_adapter_package_v1_published": false,
+  "required_b1_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
+  "current_b1_terminal": null,
+  "current_status": "WORKERS_DISPATCHED_WAITING_TERMINALS",
+  "operational_correction": {
+    "accidental_issue": 28,
+    "state": "CLOSED_NOT_PLANNED",
+    "source_effect": false,
+    "branch_effect": false,
+    "authority_effect": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

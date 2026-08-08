@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.0.0",
+  "batch_id": "B1-EXTRACTOR-EXECUTION-BATCH-V1-20260804-001",
+  "registered_at_kst": "2026-08-04T05:11:00+09:00",
+  "control_pr": 19,
+  "control_branch": "integration/b1-collector-db-materialization-v1",
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "existing_directive": "A0-TO-B1-GENERIC-COLLECTOR-MATERIALIZATION-SHELL-V1-20260803-001",
+  "existing_worker_directives_superseded": false,
+  "task_breakdown_addendum": true,
+  "execution_mode": "B2_TO_B5_PARALLEL_FIXTURE_FIRST_THEN_B6_INDEPENDENT_ACCEPTANCE",
+  "a2_dependency": {
+    "control_pr": 18,
+    "observed_head": "9fc006d7a2f252eb487ead74dd1608bfa9ff7f8e",
+    "verified_adapter_package_v1_published": false,
+    "actual_site_extraction_allowed": false,
+    "fixture_shell_execution_allowed": true
+  },
+  "shared_rules": {
+    "site_structure_reanalysis": false,
+    "unverified_adapter_generation_or_use": false,
+    "actual_site_call": false,
+    "actual_bulk_collection": false,
+    "source_field_loss_allowed": 0,
+    "raw_artifact_overwrite": false,
+    "c_semantic_transformation_owned_by_b": false,
+    "d_canonical_schema_decision_owned_by_b": false,
+    "d_canonical_db_direct_write": false,
+    "panel_shell_direct_edit": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "assignments": [
+    {
+      "worker": "B-2",
+      "pr": 38,
+      "branch": "worker/b2-adapter-runtime-scope-v1",
+      "start_head": "6ccaf5c1913395138dd4e9e50ee5cd576e549017",
+      "task_id": "B1-B2-EXECUTION-TASK-V1-20260804-001",
+      "mission": "IMPLEMENT_VERIFIED_ADAPTER_CONSUMER_LOADER_SCOPE_QUOTA_SCHEDULE",
+      "required_outputs": [
+        "VERIFIED_ADAPTER_PACKAGE_CONSUMER_CONTRACT_V1.json",
+        "FIXTURE_ADAPTER_PACKAGE_V1.json",
+        "adapter_loader.py",
+        "scope_planner.py",
+        "quota_schedule_planner.py",
+        "B2_TEST_RESULTS_V1.json",
+        "B2_FINAL_REPORT_V1.json",
+        "LATEST_B2_REPORT_POINTER.json"
+      ],
+      "acceptance_checks": [
+        "REQUIRED_FIELD_VALIDATION",
+        "UNKNOWN_FIELD_FAIL_CLOSED",
+        "AUTH_SECRET_REFERENCE_ONLY",
+        "PAGINATION_POLICY_CONSUMABLE",
+        "QUOTA_NEVER_EXCEEDED",
+        "SCHEDULE_DETERMINISTIC",
+        "UNVERIFIED_PACKAGE_REJECTED",
+        "ACTUAL_SITE_CALL_COUNT_ZERO"
+      ],
+      "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "worker": "B-3",
+      "pr": 39,
+      "branch": "worker/b3-extractor-retry-resume-v1",
+      "start_head": "72f2f9ee23e0119ec6a79aabc26996d5c0948f85",
+      "task_id": "B1-B3-EXECUTION-TASK-V1-20260804-001",
+      "mission": "IMPLEMENT_PAGINATION_RETRY_RESUME_INCREMENTAL_EXTRACTION_ENGINE",
+      "required_outputs": [
+        "PAGINATION_STATE_V1.json",
+        "RETRY_POLICY_STATE_V1.json",
+        "RESUME_LEDGER_V1.json",
+        "INCREMENTAL_CURSOR_V1.json",
+        "COLLECTION_PROGRESS_EVENT_V1.json",
+        "pagination_loop.py",
+        "retry_resume_engine.py",
+        "incremental_cursor.py",
+        "B3_TEST_RESULTS_V1.json",
+        "B3_FINAL_REPORT_V1.json",
+        "LATEST_B3_REPORT_POINTER.json"
+      ],
+      "acceptance_checks": [
+        "MULTI_PAGE_FIXTURE_COMPLETE",
+        "DUPLICATE_PAGE_SUPPRESSED",
+        "RETRYABLE_AND_NONRETRYABLE_SEPARATED",
+        "RETRY_EXHAUSTION_FAIL_CLOSED",
+        "CRASH_RESUME_FROM_LAST_COMMITTED_CURSOR",
+        "CURSOR_REGRESSION_REJECTED",
+        "PROGRESS_MONOTONIC",
+        "SECOND_RUN_EXECUTION_DELTA_ZERO"
+      ],
+      "terminal": "B3_EXTRACTOR_RETRY_RESUME_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "worker": "B-4",
+      "pr": 40,
+      "branch": "worker/b4-raw-artifact-source-envelope-v1",
+      "start_head": "26922b80cc307523e3b2375d08cc2e63d98d7bf9",
+      "task_id": "B1-B4-EXECUTION-TASK-V1-20260804-001",
+      "mission": "IMPLEMENT_IMMUTABLE_RAW_ARTIFACT_AND_SOURCE_RECORD_ENVELOPE",
+      "required_outputs": [
+        "RAW_ARTIFACT_MANIFEST_V1.json",
+        "SOURCE_RECORD_ENVELOPE_V1.json",
+        "REQUEST_SUMMARY_V1.json",
+        "raw_artifact_store.py",
+        "source_record_envelope.py",
+        "fixture_responses/page_001.json",
+        "fixture_responses/page_002.json",
+        "B4_READBACK_RECEIPT_V1.json",
+        "B4_TEST_RESULTS_V1.json",
+        "B4_FINAL_REPORT_V1.json",
+        "LATEST_B4_REPORT_POINTER.json"
+      ],
+      "acceptance_checks": [
+        "SHA256_FROM_EXACT_BYTES",
+        "SOURCE_URL_PRESERVED",
+        "COLLECTED_AT_PRESERVED",
+        "REQUEST_SUMMARY_PRESERVED",
+        "RECORD_COUNT_PARITY",
+        "METADATA_PARITY",
+        "RAW_OVERWRITE_REJECTED",
+        "SECRET_VALUE_EXPOSURE_COUNT_ZERO",
+        "SEMANTIC_TRANSFORMATION_COUNT_ZERO"
+      ],
+      "terminal": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "worker": "B-5",
+      "pr": 41,
+      "branch": "worker/b5-normalization-dataset-receipt-v1",
+      "start_head": "4528d2c96bb26d67ff275c505f9a23b1b01db4db",
+      "task_id": "B1-B5-EXECUTION-TASK-V1-20260804-001",
+      "mission": "IMPLEMENT_LOSSLESS_NORMALIZATION_DEDUP_DATASET_RECEIPT_AND_FIXTURE_DB_PACKAGE",
+      "required_outputs": [
+        "NORMALIZED_DATASET_V1.json",
+        "EXTRACTION_RECEIPT_V1.json",
+        "FIELD_PRESERVATION_MAP_V1.json",
+        "DEDUP_LINEAGE_V1.json",
+        "FIXTURE_MATERIALIZED_DATABASE_PACKAGE_V1.json",
+        "lossless_normalizer.py",
+        "deduplicator.py",
+        "sqlite_materializer.py",
+        "B5_TEST_RESULTS_V1.json",
+        "B5_FINAL_REPORT_V1.json",
+        "LATEST_B5_REPORT_POINTER.json"
+      ],
+      "acceptance_checks": [
+        "SOURCE_FIELD_LOSS_COUNT_ZERO",
+        "UNMAPPED_FIELDS_PRESERVED",
+        "NORMALIZATION_DETERMINISTIC",
+        "DEDUP_LINEAGE_COMPLETE",
+        "INPUT_OUTPUT_RECORD_PARITY_EXCEPT_DOCUMENTED_DUPLICATES",
+        "SQLITE_ROW_READBACK_PASS",
+        "C_SEMANTIC_TRANSFORMATION_COUNT_ZERO",
+        "D_CANONICAL_SCHEMA_DECISION_COUNT_ZERO",
+        "D_CANONICAL_DB_WRITE_COUNT_ZERO"
+      ],
+      "terminal": "B5_NORMALIZED_DATASET_EXTRACTION_RECEIPT_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "worker": "B-6",
+      "pr": 42,
+      "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+      "start_head": "a9987e5e52dbe191685a5a28cd4a36194c6c6e11",
+      "task_id": "B1-B6-EXECUTION-TASK-V1-20260804-001",
+      "mission": "INDEPENDENTLY_ACCEPT_B2_TO_B5_AND_PREPARE_C1_HANDOFF",
+      "entry_condition": "B2_B3_B4_B5_TERMINALS_AND_POINTERS_4_OF_4",
+      "required_outputs": [
+        "B6_EXACT_HEAD_BLOB_MATRIX_V1.json",
+        "B6_EXTRACTION_ACCEPTANCE_REPORT_V1.json",
+        "B6_C1_HANDOFF_AUDIT_RECEIPT_V1.json",
+        "B1_TO_C1_HANDOFF_CANDIDATE_V1.json",
+        "B6_FINAL_REPORT_V1.json",
+        "LATEST_B6_REPORT_POINTER.json"
+      ],
+      "acceptance_checks": [
+        "B2_TO_B5_EXACT_HEAD_BOUND_4_OF_4",
+        "REQUIRED_OUTPUTS_PRESENT_4_OF_4",
+        "RAW_SHA_AND_METADATA_PARITY",
+        "SOURCE_FIELD_LOSS_COUNT_ZERO",
+        "RETRY_RESUME_DETERMINISTIC",
+        "UNVERIFIED_ADAPTER_BLOCKED",
+        "ACTUAL_SITE_EXTRACTION_COUNT_ZERO_WHILE_A2_PENDING",
+        "C1_HANDOFF_CONTAINS_SOURCE_EVIDENCE_NOT_SEMANTIC_DECISION",
+        "PRODUCTION_READY_MERGE_FALSE"
+      ],
+      "terminal": "B6_EXTRACTION_ACCEPTANCE_C1_HANDOFF_READY_OR_EXACT_BLOCKER"
+    }
+  ],
+  "b1_required_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
+  "b1_completion_condition": "B2_TO_B5_TERMINALS_4_OF_4_AND_B6_INDEPENDENT_TERMINAL_AND_REMOTE_POINTER_READBACK"
+}

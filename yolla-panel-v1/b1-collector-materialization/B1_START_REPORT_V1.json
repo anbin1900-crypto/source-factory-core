@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "report_id": "B1-COLLECTOR-DB-MATERIALIZATION-START-V1-20260803",
+  "role": "B-1_COLLECTION_DB_MATERIALIZATION_COMMANDER",
+  "registered_at_kst": "2026-08-03T19:35:00+09:00",
+  "authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "control_pr": 19,
+    "branch": "integration/b1-collector-db-materialization-v1",
+    "accepted_head": "2ea38ddeff0ca7c19b3338a57c42167050d8a293",
+    "upper_control_pr": 17,
+    "upper_control_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+    "upper_control_head_observed": "d322caf446c0406db4a5b048219c7fdef606a75a",
+    "role_assignment_comment": 5165116744,
+    "role_charter_path": "yolla-panel-v1/b1-collector-materialization/B1_ROLE_CHARTER_AND_FIRST_DIRECTIVE_V1.md"
+  },
+  "directive": {
+    "directive_id": "A0-TO-B1-GENERIC-COLLECTOR-MATERIALIZATION-SHELL-V1-20260803-001",
+    "priority": "P0",
+    "mode": "FIXTURE_FIRST_CONTRACT_AND_FOLDER_PIPELINE",
+    "status": "ACTIVE"
+  },
+  "mission": {
+    "input_contract": "VERIFIED_ADAPTER_PACKAGE_V1",
+    "output_contract": "MATERIALIZED_DATABASE_PACKAGE_V1",
+    "handoff_contract": "D_INTAKE_REQUEST_V1",
+    "worker_map": {
+      "B-2": "ADAPTER_RUNTIME_SCOPE_QUOTA_SCHEDULE_PLANNER",
+      "B-3": "BULK_COLLECTOR_RETRY_RESUME_INCREMENTAL_COLLECTION",
+      "B-4": "RAW_ARTIFACT_FOLDER_INTAKE_SHA256_READBACK",
+      "B-5": "NORMALIZATION_DEDUPLICATION_SQLITE_DB_PACKAGE",
+      "B-6": "COLLECTION_ACCEPTANCE_D_HANDOFF_AUDIT"
+    }
+  },
+  "dependency_review": {
+    "a2_control_pr": 18,
+    "a2_observed_head": "66e43a914929949d1c8d106014fe08bca00d8eaa",
+    "verified_adapter_package_v1_published": false,
+    "a2_result_comment_count": 0,
+    "classification": "DEPENDENCY_NOT_YET_PUBLISHED_NON_BLOCKING_FOR_FIXTURE_FIRST_SHELL",
+    "runtime_collection_allowed": false
+  },
+  "execution_plan": [
+    "FREEZE_VERIFIED_ADAPTER_PACKAGE_CONSUMER_CONTRACT",
+    "BUILD_FIXTURE_ADAPTER_LOADER_SCOPE_PAGINATION_RETRY_RESUME_MODEL",
+    "BUILD_COLLECTION_PROGRESS_EVENT_MONOTONIC_CONTRACT",
+    "BUILD_IMMUTABLE_RAW_ARTIFACT_MANIFEST_AND_FOLDER_INTAKE",
+    "RUN_FIXTURE_COLLECTION_NORMALIZATION_SQLITE_MINIMUM_E2E",
+    "BUILD_MATERIALIZED_DATABASE_PACKAGE_AND_D_INTAKE_REQUEST",
+    "PUBLISH_COLLECTOR_PROVIDER_AND_STATUS_VIEWMODEL"
+  ],
+  "initial_status": {
+    "role_accepted": true,
+    "start_report_published": true,
+    "fixture_first_shell_ready_to_begin": true,
+    "actual_site_collection_started": false,
+    "actual_large_collection_started": false,
+    "d_canonical_db_write_started": false
+  },
+  "prohibitions": {
+    "unverified_adapter_use": true,
+    "access_control_bypass": true,
+    "unapproved_bulk_collection": true,
+    "d_canonical_db_direct_write": true,
+    "panel_shell_direct_mutation": true,
+    "common_electron_main_direct_mutation": true,
+    "production": true,
+    "ready": true,
+    "merge": true
+  },
+  "next_required_event": "B1_FIXTURE_FIRST_CONTRACT_PACKAGE_PUBLISHED_OR_EXACT_BLOCKER",
+  "terminal": "B1_COLLECTOR_DB_MATERIALIZATION_START_ACCEPTED"
+}

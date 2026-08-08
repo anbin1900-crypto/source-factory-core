@@ -1,0 +1,71 @@
+{
+  "schema_version": "B1_TO_C1_HANDOFF_POINTER_V4",
+  "pointer_id": "B1-TO-C1-HANDOFF-POINTER-V4",
+  "updated_at_kst": "2026-08-05T17:06:00+09:00",
+  "control_pr": 19,
+  "target_control_pr": 20,
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "previous_pointer_blob": "2a0a894961b04299a85ade0ebb1922aad7325cda",
+  "commander_acceptance_report": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave7/B1_FIXTURE_PIPELINE_COMMANDER_ACCEPTANCE_V1.json",
+    "commit": "5a3e853ee57cfa67bce50e485cfc9753e5a8fab6",
+    "blob": "978c2b9ffeeb9e3177b568e31c57f780e3131d36"
+  },
+  "status": "B1_TO_C1_FIXTURE_HANDOFF_READY",
+  "handoff_contract": "SOURCE_RECORD_ENVELOPE_V1_PLUS_NORMALIZED_DATASET_V1_PLUS_EXTRACTION_RECEIPT_V1_PLUS_B6_ACCEPTANCE",
+  "semantic_transformation_performed_by_b": false,
+  "required_inputs": {
+    "RAW_ARTIFACT_MANIFEST_V1": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V1.json",
+      "blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+      "status": "B6_ACCEPTED"
+    },
+    "SOURCE_RECORD_ENVELOPE_V1": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/SOURCE_RECORD_ENVELOPE_V1.json",
+      "blob": "0148a841344ce5a0df03e55df532871106dd7333",
+      "status": "B6_ACCEPTED"
+    },
+    "NORMALIZED_DATASET_V1": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/generated/NORMALIZED_DATASET_V1.json",
+      "blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+      "status": "B6_ACCEPTED"
+    },
+    "EXTRACTION_RECEIPT_V1": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/generated/EXTRACTION_RECEIPT_V1.json",
+      "blob": "a4b4f7504c0a2b552fe165176f51833b78e0fd09",
+      "status": "B6_ACCEPTED"
+    },
+    "B6_EXTRACTION_ACCEPTANCE_REPORT_V1": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_FINAL_REPORT_V1.json",
+      "blob": "d81716e1626b96ca120b8b08892d85210da337f3",
+      "status": "PASS_FINAL_ACCEPTANCE"
+    },
+    "B1_TO_C1_SOURCE_EVIDENCE_HANDOFF_CANDIDATE_V1": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B1_TO_C1_SOURCE_EVIDENCE_HANDOFF_CANDIDATE_V1.json",
+      "blob": "01c4c2175b30314538494ed5694668005769635a",
+      "status": "PROMOTED_BY_B1_COMMANDER"
+    }
+  },
+  "worker_acceptance_state": {
+    "worker_gate": "PASS_5_OF_5",
+    "b6_head": "797930d24fc00edef4276b355b7ea7ff71109972",
+    "b6_pointer_blob": "448fbfb07321f3cabae4a25649feee90e46ba106",
+    "b6_final_acceptance_completed": true
+  },
+  "target_rules": {
+    "source_evidence_and_lineage_preserved": true,
+    "c1_owns_semantic_transformation": true,
+    "c1_must_preserve_fixture_classification": true,
+    "b1_does_not_define_d_canonical_schema": true,
+    "b1_does_not_write_d_canonical_db": true
+  },
+  "handoff_published": true,
+  "handoff_classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE",
+  "c1_consumption_classification": "B6_ACCEPTED_FIXTURE_HANDOFF_READY",
+  "next_gate": "C1_ACKNOWLEDGE_B1_HANDOFF_AND_INCREMENTALLY_REVALIDATE_ONLY_IF_AUTHORITY_CONTENT_CHANGED",
+  "actual_site_extraction": false,
+  "a2_verified_adapter_package_ready": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

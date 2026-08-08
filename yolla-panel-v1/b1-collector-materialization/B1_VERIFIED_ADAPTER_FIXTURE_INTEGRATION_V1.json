@@ -1,0 +1,71 @@
+{
+  "schema_version": "B1_VERIFIED_ADAPTER_FIXTURE_INTEGRATION_V1",
+  "integration_id": "B1-VERIFIED-ADAPTER-FIXTURE-INTEGRATION-20260806-001",
+  "executed_at_kst": "2026-08-06T03:19:00+09:00",
+  "directive_id": "A2-TO-B1-CONSUME-VERIFIED-GENERIC-HTML-ADAPTER-PACKAGE-V1-20260806-001",
+  "directive_comment_id": 5195584095,
+  "execution_mode": "EXACTLY_ONE_LOCAL_FIXTURE_CONSUMPTION",
+  "official_execution_count": 1,
+  "package_authority": {
+    "a6_final_head": "a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793",
+    "package_blob": "d758afef96e76b664f6d8b0383c5a7bc017c731a",
+    "package_sha256": "fad18a1e0571dfac26305d8bd3d845a639e225c51ff1a03dfe45c49d7d441854",
+    "package_member_binding": "PASS_6_OF_6",
+    "a7_final_head": "96247ec90c19ae476735750a7dd0233ab237f0f0",
+    "a7_handoff_blob": "34fd92322e8348e6aa16f4d7193f432621819db8",
+    "a7_terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_PASS"
+  },
+  "consumed_members": {
+    "adapter": {
+      "path": "GENERIC_HTML_DOCUMENT_ADAPTER_V1/adapter.py",
+      "git_blob": "e4202462f48996e4dd0d1647ada1cba37bc29e2f",
+      "sha256": "558a9f10d6cb807c6f3f948f6abb80758cd0016bcd5cae8e7395c81aba916f26"
+    },
+    "route_bindings": {
+      "path": "GENERIC_HTML_DOCUMENT_ADAPTER_V1/profile_route_bindings.json",
+      "git_blob": "2edd02d8dd96e7519f2d2cd0bf1fac37bd074871",
+      "sha256": "6333d3b11d52946e617a1c0885e209ff3c87cde94ac2a3bd4fce63b70c6fb0da"
+    },
+    "local_fixture": {
+      "path": "GENERIC_HTML_DOCUMENT_ADAPTER_V1/local_fixture.json",
+      "git_blob": "9c414cc45b72bfc787953c6773ea2c4462ffce3b",
+      "sha256": "658064d525b88a25dc4c7049ad0357161b8708f1b8c4359e5f994a5beb0171fb"
+    },
+    "expected_output": {
+      "path": "GENERIC_HTML_DOCUMENT_ADAPTER_V1/local_fixture_output.json",
+      "git_blob": "ca208bdaea4abf7203fc81dc255967cba0aa2c1e",
+      "sha256": "1aff69a94e54979af003f4a3949686b62b948c89914d5d7332490b94eafdc6cc"
+    }
+  },
+  "verification": {
+    "member_sha256_binding": "PASS_4_OF_4_CONSUMED_MEMBERS",
+    "profile_authorized": true,
+    "route_binding_match": true,
+    "content_type_match": true,
+    "output_exact_match": true,
+    "actual_output_file_sha256": "1aff69a94e54979af003f4a3949686b62b948c89914d5d7332490b94eafdc6cc",
+    "expected_output_file_sha256": "1aff69a94e54979af003f4a3949686b62b948c89914d5d7332490b94eafdc6cc",
+    "raw_sha256": "61d631c953c10b91bf6c71ae65564f3f6fac981c0e6bc6f868510de05c9fd95c",
+    "redacted_sha256": "fdde383a709b242e187d3299dd2e62fbd18f9da381f8ea93ba0268d56b757a0d",
+    "outbound_link_count": 2,
+    "automated_pagination": false,
+    "network_call_count": 0,
+    "result": "PASS"
+  },
+  "fixture_baseline_preservation": {
+    "worker_gate": "PASS_5_OF_5_UNCHANGED",
+    "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+    "source_record_envelope_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+    "normalized_dataset_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+    "extraction_receipt_blob": "a4b4f7504c0a2b552fe165176f51833b78e0fd09",
+    "sqlite_base64_blob": "951a53ddb336e8a1cfd56b3dac94088d78bb57da",
+    "full_b2_b6_reexecution": false
+  },
+  "terminal_result": "B1_A2_VERIFIED_ADAPTER_CONSUMED_FIXTURE_PIPELINE_READY",
+  "actual_site_extraction": false,
+  "actual_bulk_collection": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

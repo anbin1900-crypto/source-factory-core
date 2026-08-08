@@ -1,0 +1,104 @@
+{
+  "schema_version": "B1_CURRENT_STATE_RECONCILIATION_V1",
+  "report_id": "B1-CURRENT-STATE-RECONCILIATION-20260805-001",
+  "updated_at_kst": "2026-08-05T16:53:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 19,
+  "branch": "integration/b1-collector-db-materialization-v1",
+  "source_authority": {
+    "prior_latest_b1_pointer_blob": "7b765cf103edeef0fd652e7462389d61f464c6ce",
+    "prior_extraction_result_pointer_blob": "3918f6d513a1abdf641fc86c0b91371720a9535e",
+    "prior_b1_to_c1_handoff_pointer_blob": "3c51e55ec25828ece1a2e60d69893c7ff9a65bc5"
+  },
+  "inconsistencies_resolved": [
+    {
+      "id": "B1_WORKER_STATE_STALE",
+      "before": "B3_B4_B5_PENDING_AND_B6_ACCEPTED_INPUTS_1_OF_4",
+      "after": "B2_B3_ACCEPTED_B4_TERMINAL_AVAILABLE_B5_IN_PROGRESS_B6_ACCEPTED_INPUTS_2_OF_4"
+    },
+    {
+      "id": "B1_EXTRACTION_RESULT_ZERO_TERMINALS_STALE",
+      "before": "WORKER_TERMINALS_RECEIVED_0_OF_5_AND_REQUIRED_OUTPUTS_NULL",
+      "after": "WORKER_TERMINALS_RECEIVED_3_OF_5_WITH_B4_RAW_OUTPUT_AUTHORITY_AVAILABLE"
+    },
+    {
+      "id": "B1_TO_C1_INPUT_NULL_STALE",
+      "before": "SOURCE_RECORD_ENVELOPE_AND_RAW_MANIFEST_POINTERS_NULL",
+      "after": "B4_EXACT_WORKER_AUTHORITY_BOUND_HANDOFF_STILL_BLOCKED_BY_B5_AND_B6"
+    }
+  ],
+  "worker_state": {
+    "B-2": {
+      "pr": 38,
+      "head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+      "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY",
+      "status": "ACCEPTED_BY_B6",
+      "tests": "PASS_24_OF_24"
+    },
+    "B-3": {
+      "pr": 39,
+      "head": "f8299be24108b84af06abfe53e939c8bf68ec9dd",
+      "pointer_blob": "fb81b02eac0fca4597f5a93e168a5889e0046df1",
+      "terminal": "B3_EXTRACTOR_RETRY_RESUME_READY",
+      "status": "ACCEPTED_BY_B6",
+      "tests": "PASS_32_OF_32"
+    },
+    "B-4": {
+      "pr": 40,
+      "head": "6dfe697363a69f83797775aa549f34614aa3748a",
+      "pointer_blob": "cc83b028c725e34861e8737bbf4c6932da48315a",
+      "terminal": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY_OR_EXACT_BLOCKER",
+      "terminal_result": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY",
+      "status": "TERMINAL_PASS_PENDING_B6_ACCEPTANCE",
+      "tests": "PASS_24_OF_24",
+      "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+      "source_record_envelope_blob": "0148a841344ce5a0df03e55df532871106dd7333"
+    },
+    "B-5": {
+      "pr": 41,
+      "head_observed": "cabd37b27f2a4892567486c03714920fa5f54ad4",
+      "pointer_blob": "b6a0aee500d9401c5a42391edec89101b17c5f32",
+      "status": "IMPLEMENTATION_IN_PROGRESS",
+      "terminal": null
+    },
+    "B-6": {
+      "pr": 42,
+      "head": "1cceefd06f651a57e8bb08ab81eac2c7e91fd2f6",
+      "pointer_blob": "f627f03207947fcf00c07094882856f258ea8e19",
+      "accepted_inputs": "2_OF_4",
+      "accepted_workers": [
+        "B-2",
+        "B-3"
+      ],
+      "waiting_workers_at_pointer": [
+        "B-4",
+        "B-5"
+      ],
+      "current_required_event": "CONSUME_B4_TERMINAL_THEN_WAIT_B5"
+    }
+  },
+  "extraction_state": {
+    "worker_terminals_received": 3,
+    "worker_terminals_required": 5,
+    "fixture_only": true,
+    "actual_site_extraction": false,
+    "a2_verified_adapter_package_ready": false,
+    "a2_current_pointer_commit": "25aaf4b568fbd6b97e7116c9160d5a0046298d34"
+  },
+  "current_status": "B4_TERMINAL_AVAILABLE_B6_ACCEPTANCE_PENDING_B5_IMPLEMENTATION_IN_PROGRESS",
+  "next_actions": [
+    "B6_CONSUME_B4_EXACT_HEAD_POINTER_AND_PUBLISH_3_OF_4_PREFLIGHT",
+    "B5_COMPLETE_TEST_FINAL_POINTER_OR_EXACT_BLOCKER",
+    "B6_RUN_FINAL_ACCEPTANCE_AFTER_B5_TERMINAL",
+    "B1_UPDATE_C1_HANDOFF_ONLY_AFTER_B6_FINAL_ACCEPTANCE"
+  ],
+  "boundaries": {
+    "actual_site_extraction": false,
+    "actual_bulk_collection": false,
+    "c_semantic_transformation": false,
+    "d_canonical_db_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

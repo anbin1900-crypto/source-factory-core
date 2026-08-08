@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "pointer_id": "LATEST-B1-WORKER-WAVE6-TERMINAL-CLOSURE-POINTER-V1",
+  "updated_at_kst": "2026-08-05T00:15:00+09:00",
+  "control_pr": 19,
+  "recovery": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave6/B1_WORKER_WAVE6_TERMINAL_CLOSURE_RECOVERY_V1.json",
+    "commit": "1e611f26d4a96d302146118a1af8a534e6a791a8",
+    "blob": "88320828aae24925ade553bfa460117cad39d80b"
+  },
+  "accepted_workers": {
+    "B-2": {
+      "head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+      "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY",
+      "status": "ACCEPTED_PASS_FROZEN"
+    }
+  },
+  "pending_workers": {
+    "B-3": "TERMINAL_CLOSURE_REQUIRED",
+    "B-4": "TERMINAL_CLOSURE_REQUIRED",
+    "B-5": "TERMINAL_CLOSURE_REQUIRED",
+    "B-6": "START_EVENT_WAIT_POINTER_REQUIRED_ACCEPTED_INPUTS_1_OF_4"
+  },
+  "next_gate": "B3_B4_B5_TERMINALS_3_OF_3_THEN_B6_FINAL_ACCEPTANCE",
+  "actual_site_extraction": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

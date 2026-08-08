@@ -1,0 +1,13 @@
+{
+  "schema_version":"B1_AGGREGATOR_VALIDATION_RECEIPT_V1",
+  "cycle_id":"V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "directive_comment":5224505836,
+  "role":"B-1_TEN_SITE_RESULT_EVIDENCE_AGGREGATOR_SOURCE_OWNER",
+  "scope":"SOURCE_FIXTURE_VALIDATOR_REPLAY_AND_ZERO_ACTUAL_RECEIPT_BASELINE",
+  "validation_result":"PASS_13_OF_13",
+  "checks":{"matrix_site_slots_10":true,"matrix_lanes_5":true,"potential_cells_50":true,"baseline_actual_receipt_zero":true,"baseline_materialized_cells_zero":true,"fixture_duplicate_suppressed":true,"retry_highest_attempt_selected":true,"retry_lineage_preserved":true,"inferred_not_promoted":true,"gap_computation":true,"next_target_computed":true,"reject_inferred_pass":true,"reject_pass_without_exact_validation":true},
+  "fixture_metrics":{"input_receipts":6,"accepted_receipts":5,"duplicate_suppressed":1,"retry_groups":4,"effective_cells":4,"technical_pass_cells":2,"remaining_gaps":48},
+  "baseline_metrics":{"authority_slots":10,"lanes":5,"potential_cells":50,"actual_receipts":0,"actual_materialized_cells":0,"technical_pass_cells":0,"unbound_site_slots":10},
+  "guardrails":{"target_value_guessing":false,"raw_secret_or_pii":false,"final_write_or_edit_submit":false,"production":false,"ready":false,"merge":false,"self_merge":false},
+  "expected_terminal":"B1_TEN_SITE_RESULT_AGGREGATOR_SOURCE_PASS_OR_EXACT_BLOCKER"
+}

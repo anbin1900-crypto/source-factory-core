@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "pointer_id": "LATEST-B1-WORKER-EXECUTION-POINTER-V1",
+  "updated_at_kst": "2026-08-04T05:11:00+09:00",
+  "batch_id": "B1-EXTRACTOR-EXECUTION-BATCH-V1-20260804-001",
+  "control_pr": 19,
+  "assignment_matrix": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave2/B1_WORKER_EXECUTION_ASSIGNMENT_MATRIX_V1.json",
+    "commit": "f83906eefb81337931fd2c1ca391b4d75fabc470",
+    "blob": "9ddf76aff594e324a66918978ac3c30e25a90835"
+  },
+  "publication_receipt": {
+    "path": "yolla-panel-v1/b1-collector-materialization/execution-wave2/B1_WORKER_EXECUTION_ASSIGNMENT_PUBLICATION_RECEIPT_V1.json",
+    "commit": "007d4ee44dc9776746c9e045a2780164783db500",
+    "blob": "35063f6cba6620149e312f0e3287ae4c43ccf6ba"
+  },
+  "workers": {
+    "B-2": {"pr": 38, "head": "34a536c91fbd537643bf40eb19c598ad177f880e", "task_blob": "1167921ecd3228a00edba828fcf2db61c6647c3f", "comment": 5171246365, "status": "EXECUTE_NOW"},
+    "B-3": {"pr": 39, "head": "8c31cec83f1b81ba80511bed8a61b15536da3b48", "task_blob": "23c4e907c563a823997a10173af402bf28cf8bc9", "comment": 5171248663, "status": "EXECUTE_NOW"},
+    "B-4": {"pr": 40, "head": "f1c327882bfd73d9670afa661e11c6acc8a8cccb", "task_blob": "583146b1b59cc08c44be8318e904c679626b7cd7", "comment": 5171250796, "status": "EXECUTE_NOW"},
+    "B-5": {"pr": 41, "head": "dfd99f6188d263fd7e7ded72396f72006680fee8", "task_blob": "ce72f71bf1e5f053ede0b9bf7aac35e365f8a29d", "comment": 5171252831, "status": "EXECUTE_NOW"},
+    "B-6": {"pr": 42, "head": "6ccf2fea6cc4d05db2704ac08c50eb8ff43015b1", "task_blob": "cb7c1a7bf6814788d65edee09b1fa8eb43343c4f", "comment": 5171255582, "status": "EVENT_WAIT_THEN_EXECUTE"}
+  },
+  "next_gate": "B2_TO_B5_START_REPORTS_AND_FIRST_IMPLEMENTATION_COMMITS",
+  "b1_required_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
+  "actual_site_extraction": false,
+  "a2_verified_adapter_package_v1_published": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

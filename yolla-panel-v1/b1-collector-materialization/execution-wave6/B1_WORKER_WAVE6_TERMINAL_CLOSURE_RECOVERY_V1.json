@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0.0",
+  "recovery_id": "B1-WORKER-WAVE6-TERMINAL-CLOSURE-RECOVERY-V1-20260805-001",
+  "registered_at_kst": "2026-08-05T00:15:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 19,
+  "control_branch": "integration/b1-collector-db-materialization-v1",
+  "control_head_before_recovery": "475359cbe2980c91c07820e8c2134965e4db356c",
+  "parent_batch_id": "B1-EXTRACTOR-EXECUTION-BATCH-V1-20260804-001",
+  "existing_directives_superseded": false,
+  "new_directive_count": 0,
+  "recovery_policy": {
+    "reuse_existing_task_ids": true,
+    "additional_planning_artifacts_accepted": false,
+    "required_next_publication": "IMPLEMENTATION_TERMINAL_OR_EXACT_BLOCKER",
+    "duplicate_execution": false,
+    "fixture_only": true
+  },
+  "a2_dependency": {
+    "control_pr": 18,
+    "observed_head": "3c3f7077ab070cb0259c253268ab3a7b17ecb446",
+    "verified_adapter_package_v1_present": false,
+    "actual_site_extraction_allowed": false
+  },
+  "worker_review": {
+    "B-2": {
+      "pr": 38,
+      "head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+      "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY",
+      "unit_tests": "PASS_24_OF_24",
+      "remote_blob_readback": "PASS_7_OF_7",
+      "status": "ACCEPTED_PASS_FROZEN",
+      "additional_work": "NONE_EVENT_WAIT"
+    },
+    "B-3": {
+      "pr": 39,
+      "head": "8c31cec83f1b81ba80511bed8a61b15536da3b48",
+      "task_id": "B1-B3-EXECUTION-TASK-V1-20260804-001",
+      "terminal_found": false,
+      "status": "STALLED_AFTER_WAVE5",
+      "required_inputs": {
+        "b2_head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+        "b1_seed_head": "8b8f7888128e7472269b79385886ff48a421de1f"
+      },
+      "required_terminal": "B3_EXTRACTOR_RETRY_RESUME_READY_OR_EXACT_BLOCKER",
+      "required_closure": [
+        "IMPLEMENTATION_SOURCE_COMMITTED",
+        "MINIMUM_20_TESTS_OR_EXACT_FAILED_CHECK",
+        "START_TEST_FINAL_LATEST_POINTER",
+        "INPUT_4_DUPLICATE_1_OUTPUT_3_PARITY",
+        "CRASH_RESUME_AND_SECOND_RUN_DELTA_ZERO"
+      ]
+    },
+    "B-4": {
+      "pr": 40,
+      "head": "f1c327882bfd73d9670afa661e11c6acc8a8cccb",
+      "task_id": "B1-B4-EXECUTION-TASK-V1-20260804-001",
+      "terminal_found": false,
+      "status": "STALLED_AFTER_WAVE5",
+      "required_inputs": {
+        "b2_head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+        "b1_seed_head": "8b8f7888128e7472269b79385886ff48a421de1f"
+      },
+      "required_terminal": "B4_RAW_ARTIFACT_SOURCE_ENVELOPE_READY_OR_EXACT_BLOCKER",
+      "required_closure": [
+        "IMPLEMENTATION_SOURCE_COMMITTED",
+        "MINIMUM_18_TESTS_OR_EXACT_FAILED_CHECK",
+        "RAW_ARTIFACT_MANIFEST_AND_SOURCE_RECORD_ENVELOPE",
+        "EXACT_BYTE_SHA256_URL_TIME_METADATA_RECORD_COUNT_PARITY",
+        "START_TEST_FINAL_LATEST_POINTER"
+      ]
+    },
+    "B-5": {
+      "pr": 41,
+      "head": "dfd99f6188d263fd7e7ded72396f72006680fee8",
+      "task_id": "B1-B5-EXECUTION-TASK-V1-20260804-001",
+      "terminal_found": false,
+      "status": "STALLED_AFTER_WAVE5",
+      "required_inputs": {
+        "b2_head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+        "b1_seed_head": "8b8f7888128e7472269b79385886ff48a421de1f"
+      },
+      "required_terminal": "B5_NORMALIZED_DATASET_EXTRACTION_RECEIPT_READY_OR_EXACT_BLOCKER",
+      "required_closure": [
+        "IMPLEMENTATION_SOURCE_COMMITTED",
+        "MINIMUM_22_TESTS_OR_EXACT_FAILED_CHECK",
+        "SOURCE_FIELD_LOSS_COUNT_ZERO",
+        "SQLITE_ROW_COUNT_3",
+        "SQLITE_BASE64_PUBLISHED_AND_DECODE_READBACK",
+        "DECODED_SIZE_12288_AND_SHA256_f03e20844e805af3105791934352f8bc3dcbeb1a165ad5c80e5d6ae5739ea14d",
+        "START_TEST_FINAL_LATEST_POINTER"
+      ]
+    },
+    "B-6": {
+      "pr": 42,
+      "head": "6ccf2fea6cc4d05db2704ac08c50eb8ff43015b1",
+      "task_id": "B1-B6-EXECUTION-TASK-V1-20260804-001",
+      "accepted_inputs": "1_OF_4",
+      "accepted_worker": "B-2",
+      "start_event_wait_pointer_found": false,
+      "status": "STALLED_EVENT_WAIT_PUBLICATION_MISSING",
+      "required_now": [
+        "B6_START_REPORT_V1.json",
+        "LATEST_B6_REPORT_POINTER.json",
+        "B6_B2_INPUT_PREFLIGHT_V1.json",
+        "STATUS_EVENT_WAIT_B3_B4_B5"
+      ],
+      "required_terminal": "B6_EXTRACTION_ACCEPTANCE_C1_HANDOFF_READY_OR_EXACT_BLOCKER",
+      "final_entry_condition": "B2_B3_B4_B5_TERMINALS_AND_POINTERS_4_OF_4"
+    }
+  },
+  "next_gate": "B3_B4_B5_TERMINALS_3_OF_3_THEN_B6_FINAL_ACCEPTANCE",
+  "required_b1_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
+  "boundaries": {
+    "actual_site_extraction": false,
+    "actual_bulk_collection": false,
+    "unverified_adapter_use": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

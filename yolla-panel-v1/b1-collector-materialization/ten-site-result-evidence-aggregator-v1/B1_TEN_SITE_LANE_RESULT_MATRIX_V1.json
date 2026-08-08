@@ -1,0 +1,55 @@
+{
+  "schema_version": "B1_TEN_SITE_LANE_RESULT_MATRIX_V1",
+  "cycle_id": "V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "role": "B-1_TEN_SITE_RESULT_EVIDENCE_AGGREGATOR_SOURCE_OWNER",
+  "matrix_type": "SPARSE_10_SITE_X_5_LANE",
+  "site_slot_count": 10,
+  "lane_count": 5,
+  "potential_cell_count": 50,
+  "site_identity_policy": "AUTHORITY_SLOT_ONLY_UNTIL_SITE_ID_INJECTED_NO_GUESSING",
+  "site_slots": [
+    {"slot_id":"SITE_SLOT_01","site_id":null,"site_name":null,"site_url":null,"status":"WAITING_INPUT"},
+    {"slot_id":"SITE_SLOT_02","site_id":null,"site_name":null,"site_url":null,"status":"WAITING_INPUT"},
+    {"slot_id":"SITE_SLOT_03","site_id":null,"site_name":null,"site_url":null,"status":"WAITING_INPUT"},
+    {"slot_id":"SITE_SLOT_04","site_id":null,"site_name":null,"site_url":null,"status":"WAITING_INPUT"},
+    {"slot_id":"SITE_SLOT_05","site_id":null,"site_name":null,"site_url":null,"status":"WAITING_INPUT"},
+    {"slot_id":"SITE_SLOT_06","site_id":null,"site_name":null,"site_url":null,"status":"WAITING_INPUT"},
+    {"slot_id":"SITE_SLOT_07","site_id":null,"site_name":null,"site_url":null,"status":"WAITING_INPUT"},
+    {"slot_id":"SITE_SLOT_08","site_id":null,"site_name":null,"site_url":null,"status":"WAITING_INPUT"},
+    {"slot_id":"SITE_SLOT_09","site_id":null,"site_name":null,"site_url":null,"status":"WAITING_INPUT"},
+    {"slot_id":"SITE_SLOT_10","site_id":null,"site_name":null,"site_url":null,"status":"WAITING_INPUT"}
+  ],
+  "lanes": ["DATA","PRODUCT","WRITE","MY_LISTING","EDIT"],
+  "evidence_kinds": ["OBSERVED","FIXTURE","INFERRED","UNKNOWN","WAITING_INPUT"],
+  "cell_required_fields": ["site_id","lane","command_id","result","evidence","validation","status"],
+  "cell_optional_fields": ["site_slot","receipt_id","attempt_count","source_pointer_lineage","capabilities","updated_at"],
+  "default_unmaterialized_cell": {"site_id":null,"command_id":null,"result":null,"evidence":{"kind":"WAITING_INPUT","pointer":null},"validation":{"exact":false,"pointer":null},"status":"WAITING_INPUT"},
+  "materialized_cells": [],
+  "baseline": {
+    "actual_receipt_count": 0,
+    "materialized_cell_count": 0,
+    "browser_complete_count": 0,
+    "technical_pass_count": 0,
+    "source_cycle7_pointer": {
+      "path": "yolla-panel-v1/b1-collector-materialization/real-site-e2e-result-aggregator-v7/LATEST_B1_REAL_SITE_E2E_RESULT_AGGREGATOR_POINTER.json",
+      "commit": "196302a2ab39e24ce4435ebee5e83a3cb2d1cc80",
+      "blob": "14634bad69d0ce65d046aec9d8f379f1430f400d"
+    }
+  },
+  "promotion_rules": {
+    "pass_requires_exact_validation": true,
+    "pass_requires_validation_pointer": true,
+    "inferred_cannot_promote_to_pass": true,
+    "unknown_cannot_promote_to_pass": true,
+    "waiting_input_cannot_promote_to_pass": true,
+    "missing_receipt_cannot_promote_to_pass": true,
+    "browser_complete_is_not_technical_pass": true
+  },
+  "idempotency": {
+    "duplicate_key": ["site_slot","lane","command_id","receipt_id"],
+    "retry_group_key": ["site_slot","lane","command_id"],
+    "duplicate_receipt_action": "SUPPRESS_DUPLICATE_KEEP_FIRST_POINTER_LINEAGE",
+    "retry_action": "KEEP_ALL_RECEIPT_POINTER_LINEAGE_SELECT_HIGHEST_VALID_ATTEMPT",
+    "same_attempt_conflict": "FAIL_CLOSED_CONFLICT"
+  }
+}
