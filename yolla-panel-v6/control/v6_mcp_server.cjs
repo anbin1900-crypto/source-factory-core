@@ -131,7 +131,7 @@ function handleRpc(message) {
   const id = Object.prototype.hasOwnProperty.call(message || {}, "id") ? message.id : null;
   try {
     if (!message || message.jsonrpc !== "2.0") throw new Error("INVALID_JSON_RPC");
-    if (message.method === "initialize") return { jsonrpc: "2.0", id, result: { protocolVersion: "2025-03-26", capabilities: { tools: {} }, serverInfo: { name: "yolla-panel-v6-control-plane", version: "6.0.0" } } };
+    if (message.method === "initialize") return { jsonrpc: "2.0", id, result: { protocolVersion: "2025-03-26", capabilities: { tools: {} }, serverInfo: { name: "yolla-panel-v6-control-plane", version: "6.0.1" } } };
     if (message.method === "notifications/initialized") return null;
     if (message.method === "ping") return { jsonrpc: "2.0", id, result: {} };
     if (message.method === "tools/list") return { jsonrpc: "2.0", id, result: { tools } };

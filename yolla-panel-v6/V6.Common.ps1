@@ -11,7 +11,7 @@ function Get-YollaV6Paths {
   return [ordered]@{
     Root=$root
     Releases=(Join-Path $root 'releases')
-    Release=(Join-Path $root 'releases\6.0.0')
+    Release=(Join-Path $root 'releases\6.0.1')
     State=(Join-Path $root 'state')
     Profile=(Join-Path $root 'profile')
     Logs=(Join-Path $root 'logs')

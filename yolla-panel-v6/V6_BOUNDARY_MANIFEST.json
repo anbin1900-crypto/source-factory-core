@@ -1,17 +1,17 @@
 {
   "schema_version": "YOLLA_PANEL_V6_BOUNDARY_MANIFEST_V1",
   "system_name": "YOLLA_PANEL_V6",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "existing_v6_inherited": false,
   "target_pc": "NOTEX",
   "created_at_kst": "2026-08-08T16:20:00+09:00",
   "authority": {
     "repository": "anbin1900-crypto/source-factory-core",
     "control_pr": 17,
-    "source_implementation_pr": 76,
+    "source_implementation_pr": 84,
     "source_head": "79700f3d79065eb3ef7b0791bbc90205d1746533",
     "target_branch": "agent/yolla-panel-v6-independent",
-    "target_pr": null
+    "target_pr": 84
   },
   "source_baseline": {
     "artifact": "AI_YOLLA_MINIMAL_V1_2_OBSERVABILITY_PACKAGE.zip",
@@ -20,7 +20,7 @@
   },
   "roots": {
     "root": "E:\\YOLLA\\panel-v6",
-    "release": "E:\\YOLLA\\panel-v6\\releases\\6.0.0",
+    "release": "E:\\YOLLA\\panel-v6\\releases\\6.0.1",
     "state": "E:\\YOLLA\\panel-v6\\state",
     "profile": "E:\\YOLLA\\panel-v6\\profile",
     "logs": "E:\\YOLLA\\panel-v6\\logs",

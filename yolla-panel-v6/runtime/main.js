@@ -14,7 +14,7 @@ const { createCModeRuntime } = require("./automation-c-v1/c_mode_runtime.cjs");
 const { SessionRestoreManager } = require("./session_restore_manager.cjs");
 const { V6ModuleHost } = require("./module_host.cjs");
 
-const APP_VERSION = "6.0.0";
+const APP_VERSION = "6.0.1";
 const YOLLA_ROOT = path.join("E:\\", "YOLLA");
 const V6_ROOT = process.env.YOLLA_V6_ROOT
   ? path.resolve(process.env.YOLLA_V6_ROOT)
