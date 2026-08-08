@@ -1,0 +1,91 @@
+{
+  "schema_version": "A2_WAVE6_4_A5_PASS_A3_ACTIVE_DISPATCH_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_4-A3-PUBLIC-ROUTE-PACKAGE-REBUILD-V1-20260805-001",
+  "updated_at_kst": "2026-08-05T21:39:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "a2_control_pr": 18,
+  "a0_control_pr": 17,
+  "source_authority": {
+    "comment_id": 5189632712,
+    "authority_commit": "545425a10d48bf59746d8db98ff2f56b79360cc0",
+    "authority_blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
+    "authority_pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5",
+    "target_site_id": "NAVER_FIN_LAND_PUBLIC_WEB_V1",
+    "origin": "https://fin.land.naver.com",
+    "active_profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-012"],
+    "excluded_profiles": ["EP-011"]
+  },
+  "a5_result": {
+    "pr": 24,
+    "terminal": "A5_PUBLIC_DOCUMENT_ROUTE_REBIND_READY",
+    "terminal_comment": 5189970139,
+    "final_pointer_comment": 5189986641,
+    "final_head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+    "pointer_blob": "40a282ccb4573ae00a12645f40bf39b6faea1abc",
+    "handoff_blob": "515b72792199f971b0a754bcb9dbc796b06fe26f",
+    "validation_blob": "20abdd912d7b64f245f9a8252a90bec3c819f2c9",
+    "decision": "PASS_PUBLIC_DOCUMENT_ROUTE_REBIND_NON_EXECUTING_ONLY"
+  },
+  "worker_states": {
+    "A-3": {
+      "pr": 22,
+      "head_before_dispatch": "c0a75f7bfeb53aec2ffa561dfca3dd190ee47daa",
+      "comment_id": 5191847571,
+      "mode": "P0_ACTIVE_OWNER",
+      "expected_terminal": "A3_PUBLIC_DOCUMENT_ROUTE_OPERATOR_PACKAGE_READY_FOR_GOVERNANCE"
+    },
+    "A-4": {
+      "pr": 23,
+      "head": "d18192df1f672f7f1022eb428e521d720226a86b",
+      "comment_id": 5191851534,
+      "mode": "EVENT_WAIT",
+      "no_pending_directive": true,
+      "waiting_event": "A3_PUBLIC_DOCUMENT_ROUTE_OPERATOR_PACKAGE_READY_FOR_GOVERNANCE"
+    },
+    "A-5": {
+      "pr": 24,
+      "head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+      "comment_id": 5191855374,
+      "mode": "TERMINAL_FROZEN",
+      "no_pending_directive": true,
+      "waiting_event": "A3_EXACT_RESPONSE_FIXTURE_RESULT_POINTER_PUBLISHED"
+    },
+    "A-6": {
+      "pr": 25,
+      "head": "5cd6ead3671df508197cb6681571be7e681829e4",
+      "comment_id": 5191857766,
+      "mode": "EVENT_WAIT",
+      "no_pending_directive": true,
+      "waiting_event": "A3_CAPTURE_RESULT_PLUS_A5_FINAL_SCHEMA_PLUS_A4_AUDIT"
+    },
+    "A-7": {
+      "pr": 26,
+      "head": "f4ca318a6335bc15970a8bff5c94f112d64807f4",
+      "comment_id": 5191860834,
+      "mode": "EVENT_DRIVEN_AFTER_A3",
+      "no_pending_directive": true,
+      "waiting_event": "A3_PUBLIC_DOCUMENT_ROUTE_OPERATOR_PACKAGE_READY_FOR_GOVERNANCE"
+    }
+  },
+  "critical_path": [
+    "A3_PUBLIC_DOCUMENT_ROUTE_NONEXECUTING_PACKAGE_REBUILD",
+    "A7_PUBLIC_ROUTE_GOVERNANCE_REAUDIT",
+    "A2_NEW_EXPLICIT_SECOND_AUTHORIZATION_REQUEST",
+    "A3_SECOND_ONE_SHOT_CAPTURE",
+    "A5_FINAL_RESPONSE_SCHEMA_REBIND",
+    "A4_PUBLIC_ROUTE_PAGINATION_AUDIT",
+    "A6_VERIFIED_ADAPTER_PACKAGE_REBUILD",
+    "A7_FINAL_ACCEPTANCE",
+    "A2_TO_B1_HANDOFF"
+  ],
+  "active_owner": "A-3",
+  "current_terminal": "A2_A5_PUBLIC_ROUTE_REBIND_PASS_A3_PACKAGE_REBUILD_ACTIVE",
+  "capture_execution_authorized": false,
+  "second_attempt_authorized": false,
+  "new_authorization_request_ready": false,
+  "verified_adapter_package_ready": false,
+  "b1_handoff_ready": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,88 @@
+{
+  "schema_version": "A2_WAVE6_2_CONCRETE_ORIGIN_CLOSURE_TERMINAL_RECONCILIATION_V1",
+  "report_id": "A2-WAVE6_2-CONCRETE-ORIGIN-CLOSURE-TERMINAL-RECONCILIATION-20260805-001",
+  "updated_at_kst": "2026-08-05T16:52:00+09:00",
+  "role": "A-2_GENERIC_SITE_ANALYZER_ADAPTER_FACTORY_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 18,
+  "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+  "source_authority": {
+    "prior_a2_pointer_blob": "6b37cdc3987115ddd4e253390723b07b9ee09cef",
+    "a3_head": "c0a75f7bfeb53aec2ffa561dfca3dd190ee47daa",
+    "a3_pointer_blob": "a32fe02629658e114e252c981554ab79f15dd338",
+    "a3_terminal": "A3_ONE_SHOT_EXACT_RESPONSE_FIXTURE_CAPTURE_EXACT_BLOCKER",
+    "a5_head": "57359d2c0a83e1f09f6284df69e18f83c53e2113",
+    "a5_pointer_blob": "0173635d3b8e111ad35665513248ca8860bfe3d9",
+    "a5_terminal": "A5_CONCRETE_SOURCE_ORIGIN_MAPPING_EXACT_BLOCKER",
+    "a5_terminal_comment": 5189062601
+  },
+  "inconsistencies_resolved": [
+    {
+      "id": "A2_POINTER_STALE_ACTIVE_OWNER_STATE",
+      "before": "A2_CONCRETE_SOURCE_ORIGIN_CLOSURE_ACTIVE_WITH_A5_ACTIVE_OWNER",
+      "after": "A2_CAPTURE_INPUT_AUTHORITY_EXACT_BLOCKER",
+      "reason": "A-5 published a terminal exact blocker after the prior A-2 pointer."
+    },
+    {
+      "id": "AUTHORIZATION_USAGE_AMBIGUITY",
+      "before": "AUTHORIZED_BATCH_EXECUTION_COUNT_USED_1_COEXISTED_WITH_CAPTURE_ATTEMPT_COUNT_0_WITHOUT_EXPLICIT_SEMANTICS",
+      "after": "OPERATOR_PACKAGE_EXECUTION_CONSUMED_1_NETWORK_CAPTURE_ATTEMPT_0",
+      "reason": "The one-shot execution authority was consumed by fail-closed preflight before any routable request was attempted."
+    }
+  ],
+  "terminal_decision": {
+    "terminal": "A2_CAPTURE_INPUT_AUTHORITY_EXACT_BLOCKER",
+    "first_blocker": "NO_IMMUTABLE_AUTHORITY_PUBLISHES_ROUTABLE_CONCRETE_SOURCE_ORIGIN_AND_NONSECRET_REQUEST_VALUES_FOR_EP001_EP002_EP003_EP004_EP005_EP010_EP012",
+    "resolution_owner": "A2_OR_UPPER_SOURCE_TARGET_AUTHORITY",
+    "active_profile_count": 7,
+    "blocked_profiles": [
+      "EP-001",
+      "EP-002",
+      "EP-003",
+      "EP-004",
+      "EP-005",
+      "EP-010",
+      "EP-012"
+    ],
+    "excluded_profiles": [
+      "EP-011"
+    ],
+    "ep011_reason": "NO_VALID_CREDENTIAL_REFERENCE_PUBLISHED",
+    "a3_rebind_ready": false,
+    "new_authorization_request_ready": false
+  },
+  "required_external_input": {
+    "per_active_profile": [
+      "ROUTABLE_SCHEME_HOST_PATH_TEMPLATE",
+      "EXACT_NONSECRET_REQUEST_VALUES_OR_IMMUTABLE_VALUE_SOURCE_POINTER",
+      "SOURCE_COMMIT_BLOB_OR_OBSERVATION_POINTER"
+    ],
+    "prohibited": [
+      "FIXTURE_INVALID_PROMOTION",
+      "INVENTED_URL",
+      "INVENTED_REQUEST_VALUE",
+      "RAW_CREDENTIAL_VALUE"
+    ]
+  },
+  "execution_accounting": {
+    "authorized_batch_execution_count": 1,
+    "operator_package_execution_count_used": 1,
+    "network_capture_attempt_count": 0,
+    "successful_capture_count": 0,
+    "live_site_call_count": 0,
+    "second_attempt_authorized": false
+  },
+  "next_action": "WAIT_FOR_AUTHORITATIVE_CONCRETE_SOURCE_TARGET_INPUT_THEN_REBIND_A5_A3_AND_REQUEST_NEW_AUTHORIZATION",
+  "boundaries": {
+    "capture_execution_authorized": false,
+    "browser_automation_authorized": false,
+    "credential_use_authorized": false,
+    "actual_bulk_collection": false,
+    "verified_adapter_package_ready": false,
+    "b1_handoff_ready": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  }
+}

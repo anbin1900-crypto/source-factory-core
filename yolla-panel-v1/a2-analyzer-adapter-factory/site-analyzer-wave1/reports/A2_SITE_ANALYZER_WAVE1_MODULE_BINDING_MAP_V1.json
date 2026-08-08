@@ -1,0 +1,29 @@
+{
+  "schema_version": "A2_SITE_ANALYZER_WAVE1_MODULE_BINDING_MAP_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "integration_owner": "A-2",
+  "binding_strategy": "EXECUTABLE_BUILTIN_FALLBACK_WITH_REGISTER_MODULE_REPLACEMENT_PORT",
+  "shared_contract": {
+    "core": "AnalyzerCore",
+    "state": "ANALYZER_SHARED_STATE_V1",
+    "browser_partition": "persist:yolla-site-analyzer-v1",
+    "adapter_registry": "shared Map",
+    "run_history": "shared Array"
+  },
+  "bindings": [
+    {"module":"A-3-live-cdp-capture","owner":"A-3","pr":22,"observed_head":"57012279520de80260bd857c9b6a9edd7aa51cba","interface":"execute(ctx)->capture"},
+    {"module":"A-4-structure-inference","owner":"A-4","pr":23,"observed_head":"b54af2bb3272b613be5458a283e22e2eb5d90ade","interface":"execute(ctx)->structure"},
+    {"module":"A-5-endpoint-mode-inference","owner":"A-5","pr":24,"observed_head":"9f83895589f48c765422624a3538d7d5e872fdc1","interface":"execute(ctx)->endpoint"},
+    {"module":"A-6-adapter-compiler","owner":"A-6","pr":25,"observed_head":"84ea9b34a7c9445a77214288556ff3230442d81e","interface":"execute(ctx)->adapter"},
+    {"module":"A-7-integration-repair","owner":"A-7","pr":26,"observed_head":"09ec824f7e245c93b4ca05d2ac098c16403c9ca5","interface":"execute(ctx)->repair"},
+    {"module":"B-2-visual-analyzer","owner":"B-2","pr":38,"observed_head":"771da102a0202dc21d9226d9c534275df345582e","interface":"execute(ctx)->visual"},
+    {"module":"B-3-action-recorder","owner":"B-3","pr":39,"observed_head":"86d789a136ce5070d79eab7e6d0205eb23da11d7","interface":"execute(ctx)->actions"},
+    {"module":"B-4-extraction-runner","owner":"B-4","pr":40,"observed_head":"f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3","interface":"execute(ctx)->extraction"},
+    {"module":"B-5-preview-export","owner":"B-5","pr":41,"observed_head":"40891f2f87eb9f58a369f71e46cadc43f4586157","interface":"execute(ctx)->preview"},
+    {"module":"B-6-package-assembler","owner":"B-6","pr":42,"observed_head":"dde23c6a83ac3d4c263a12888e944b6d4c255614","interface":"execute(ctx)->package"}
+  ],
+  "external_replacement_api": "AnalyzerCore.registerModule(name,module)",
+  "external_worker_source_imported": false,
+  "reason": "Parallel worker sources were not yet present on the A-2 branch; executable built-ins remove the sequential gate and preserve replacement ports.",
+  "status": "PASS_10_EXECUTABLE_BINDINGS"
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "A2_CYCLE4_A3_A7_EXACT_HANDOFF_MANIFEST_V1",
+  "directive_id": "A0-TO-A2-AI-READABLE-MULTIMODE-ANALYZER-CORE-V4-20260808-001",
+  "cycle_id": "A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "parallel_gate": true,
+  "sequential_approval_gate": false,
+  "workers": [
+    {"worker":"A-3","pr":22,"observed_head":"f1ba518fcfde8490ce8c9bfa855814d8836ba0bc","directive_id":"A0-TO-A3-PRODUCT-WRITE-OBSERVATION-EVIDENCE-V4-20260808-001","directive_comment_id":5219083908,"expected_terminal":"A3_PRODUCT_WRITE_OBSERVATION_EVIDENCE_READY","result_status_at_a2_prebuild":"ASSIGNED_PARALLEL"},
+    {"worker":"A-4","pr":23,"observed_head":"d0751642741fdb7a09947605c14fd4481eecf8ef","directive_id":"A0-TO-A4-PAGE-COMPONENT-FORM-ROLE-GRAPH-V4-20260808-001","directive_comment_id":5219086603,"expected_terminal":"A4_PAGE_COMPONENT_FORM_ROLE_GRAPH_READY","result_status_at_a2_prebuild":"ASSIGNED_PARALLEL"},
+    {"worker":"A-5","pr":24,"observed_head":"99ab23f9ce3124d79dc25fa5676307359537edde","directive_id":"A0-TO-A5-ACTION-STATE-API-ENTITY-BINDING-V4-20260808-001","directive_comment_id":5219089509,"expected_terminal":"A5_ACTION_STATE_API_ENTITY_BINDING_READY","result_status_at_a2_prebuild":"ASSIGNED_PARALLEL"},
+    {"worker":"A-6","pr":25,"observed_head":"d668eb915d15b09f41145b6871122c7822464aad","directive_id":"A0-TO-A6-MULTIMODE-ADAPTER-CONTRACT-EXTENSION-V4-20260808-001","directive_comment_id":5219092172,"expected_terminal":"A6_MULTIMODE_READ_WRITE_ADAPTER_CONTRACT_READY","result_status_at_a2_prebuild":"ASSIGNED_PARALLEL"},
+    {"worker":"A-7","pr":26,"observed_head":"59b0a87363e8e4b0cecca9b6b74d88568a55c871","directive_id":"A0-TO-A7-MULTIMODE-CONTEXT-RECOVERY-V4-20260808-001","directive_comment_id":5219095102,"expected_terminal":"A7_MULTIMODE_CONTEXT_RECOVERY_READY","result_status_at_a2_prebuild":"ASSIGNED_PARALLEL"}
+  ]
+}

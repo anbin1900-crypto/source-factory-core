@@ -1,0 +1,27 @@
+{
+  "schema_version": "A2_WAVE3_ELECTRON_RUNTIME_BLOCKER_RECEIPT_V1",
+  "launcher_exit_code": 20,
+  "code": "A2_WAVE3_ELECTRON_RUNTIME_NOT_MATERIALIZED",
+  "message": "A2_WAVE3_ELECTRON_RUNTIME_NOT_MATERIALIZED",
+  "resolution": {
+    "status": "BLOCKED_ELECTRON_RUNTIME_NOT_MATERIALIZED",
+    "executable": null,
+    "module": null,
+    "attempts": [
+      {
+        "method": "executable_path",
+        "candidate": "/mnt/data/a2_wave3_work/node_modules/electron/dist/electron",
+        "exists": false
+      },
+      {
+        "method": "require_resolve",
+        "exists": false,
+        "code": "MODULE_NOT_FOUND",
+        "message": "Cannot find module 'electron'\nRequire stack:\n- /mnt/data/a2_wave3_work/electron/electron-resolver.cjs\n- /mnt/data/a2_wave3_work/launcher.cjs"
+      }
+    ],
+    "required_external_condition": "MATERIALIZE_ELECTRON_DEPENDENCY_OR_SET_ELECTRON_PATH"
+  },
+  "false_electron_pass": false,
+  "mandatory_offline_install_probe": "ENOTCACHED"
+}

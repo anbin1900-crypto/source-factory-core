@@ -1,0 +1,90 @@
+{
+  "schema_version": "LATEST_A2_SITE_ANALYZER_WAVE2_POINTER_V1",
+  "pointer_id": "A2-SITE-ANALYZER-WAVE2-LATEST-V1",
+  "updated_at_kst": "2026-08-07T04:15:00+09:00",
+  "role": "LIVE_ANALYZER_CORE_PRODUCT_INTEGRATION_OWNER",
+  "worker_pr": 18,
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment_id": 5208234675,
+  "root": "yolla-panel-v1/a2-analyzer-adapter-factory/site-analyzer-wave2",
+  "source_commit": "1ccd2035aaad03869ead4a69844cb3e0c0dbd6fb",
+  "artifacts": {
+    "runtime_package": {
+      "path": "A2_SITE_ANALYZER_WAVE2_RUNTIME_PACKAGE.zip",
+      "commit": "1ccd2035aaad03869ead4a69844cb3e0c0dbd6fb",
+      "blob": "654833d0aaeeb6005a47e2adf63dd33928099f61",
+      "size_bytes": 14860,
+      "sha256": "ce584baef74fe0fac0b16b5317e20c2160fe59e9e58deb4c4d8a85796d823be4",
+      "remote_tree_binding": "PASS"
+    },
+    "bootstrap": {
+      "path": "BOOTSTRAP_A2_SITE_ANALYZER_WAVE2.py",
+      "commit": "1ccd2035aaad03869ead4a69844cb3e0c0dbd6fb",
+      "blob": "e19e78e8c1db6f173d19347c70841f3ab69fe313",
+      "remote_readback": "PASS"
+    },
+    "start": {
+      "path": "reports/A2_SITE_ANALYZER_WAVE2_START_REPORT_V1.json",
+      "commit": "1ccd2035aaad03869ead4a69844cb3e0c0dbd6fb",
+      "blob": "25836beca64d23cedbb1db0777f8c0d7084d5ed5",
+      "remote_readback": "PASS"
+    },
+    "build_report": {
+      "path": "reports/A2_SITE_ANALYZER_WAVE2_BUILD_TEST_REPORT_V1.json",
+      "commit": "1ccd2035aaad03869ead4a69844cb3e0c0dbd6fb",
+      "blob": "b2883c7250bd4f449c6eba7dcce851c80356d19b",
+      "remote_readback": "PASS"
+    },
+    "head_matrix": {
+      "path": "reports/A2_SITE_ANALYZER_WAVE2_EXACT_HEAD_BINDING_MATRIX_V1.json",
+      "commit": "1ccd2035aaad03869ead4a69844cb3e0c0dbd6fb",
+      "blob": "94cf688dc54ff39da76dac085f1aa23af2bcf003",
+      "remote_readback": "PASS"
+    },
+    "package_manifest": {
+      "path": "reports/A2_SITE_ANALYZER_WAVE2_PACKAGE_MANIFEST_V1.json",
+      "commit": "1ccd2035aaad03869ead4a69844cb3e0c0dbd6fb",
+      "blob": "8050f914342f2a1900b67ebfe637ff8fac70be5d",
+      "remote_readback": "PASS"
+    },
+    "final_report": {
+      "path": "reports/A2_SITE_ANALYZER_WAVE2_FINAL_REPORT_V1.json",
+      "commit": "1ccd2035aaad03869ead4a69844cb3e0c0dbd6fb",
+      "blob": "9f08be1e8568c2f85b3474facfa836346ce861dd",
+      "remote_readback": "PASS"
+    }
+  },
+  "result": {
+    "node_http_runtime_pass": true,
+    "test_status": "PASS_2_SUITES",
+    "smoke_status": "PASS",
+    "network_event_count": 8,
+    "response_body_count": 8,
+    "dom_snapshot_count": 5,
+    "recorded_action_count": 5,
+    "field_candidate_count": 6,
+    "generated_adapter_count": 1,
+    "replay_success_count": 1,
+    "extracted_record_count": 10,
+    "exact_worker_head_binding_count": 10,
+    "ipc_handler_count": 6,
+    "embedded_and_standalone_shared_core": true,
+    "single_launcher": "RUN_SITE_ANALYZER_WAVE2.bat",
+    "target_pc_electron_live_pass": false,
+    "false_live_pass_count": 0
+  },
+  "next_gate": {
+    "action": "RUN_COMMITTED_PACKAGE_IN_TARGET_PC_ELECTRON_AND_BIND_A3_ACTUAL_CDP_STREAM",
+    "required_live_evidence": [
+      "ELECTRON_BROWSERWINDOW_LIVE",
+      "NONZERO_CDP_EVENTS_FROM_REAL_CHROMIUM",
+      "EMBEDDED_AND_STANDALONE_SHARED_SESSION_RECEIPT",
+      "EXACT_10_RECORD_PRODUCT_RECEIPT"
+    ]
+  },
+  "terminal": "A2_SITE_ANALYZER_WAVE2_RUNTIME_BRIDGE_SINGLE_LAUNCHER_SOURCE_PASS_TARGET_PC_ELECTRON_PENDING",
+  "status": "TERMINAL_SOURCE_AND_NODE_RUNTIME_PASS_EXTERNAL_ELECTRON_LIVE_PENDING",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": "A2_WAVE6_13_ALL_WORKERS_CHECK_A6_INTEGRITY_CORRECTION_ACTIVE_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_13-INTEGRITY-CORRECTION-V1-20260806-001",
+  "updated_at_kst": "2026-08-06T02:30:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "a2_control_pr": 18,
+  "a0_control_pr": 17,
+  "policy": {
+    "policy_id": "YOLLA_EFFICIENCY_RATIONALITY_SPEED_FIRST_OPERATING_POLICY_V1",
+    "owner_model": "ONE_OWNER_END_TO_END",
+    "mid_process_audit_count": 0,
+    "delta_reacceptance_only": true
+  },
+  "worker_states": {
+    "A-3": {
+      "pr": 22,
+      "head": "6a91c9ccedf96aa538fbbf34e4bf91553778297d",
+      "terminal": "A3_TARGET_PC_CAPTURE_HANDOFF_READY",
+      "pointer_blob": "53a63cfb09f181169bdb8a3982a31fd1da8eac41",
+      "handoff_blob": "88a3283a09a90f0bad5fae4eb64af5e048a13732",
+      "status": "PASS_NONBLOCKING_ENHANCEMENT_HANDOFF_FROZEN",
+      "mvp_blocking": false
+    },
+    "A-4": {
+      "pr": 23,
+      "head": "032c609396db198db6bd14c96436f07bc429cae8",
+      "terminal": "A4_NO_AUTOMATED_PAGINATION_MVP_BINDING_READY",
+      "pointer_blob": "9ac48216663f3390214e5dca4cb7b030b64f0535",
+      "handoff_blob": "894fc02cc1cdf72708d1ccb1660f56b302f80aa3",
+      "status": "PASS_FROZEN"
+    },
+    "A-5": {
+      "pr": 24,
+      "head": "85bb7c7c6b07a0a58cdc74ea7d74a6de2ed81adb",
+      "terminal": "A5_GENERIC_HTML_DOCUMENT_RESPONSE_CONTRACT_READY",
+      "pointer_blob": "d5ec690e342a699639d21a0da0c4139b4333337f",
+      "handoff_blob": "0f4e31bfd5ebfcf77872c52369322c67930330f2",
+      "status": "PASS_FROZEN"
+    },
+    "A-6": {
+      "pr": 25,
+      "head": "6fab17d37c1db2feb955fd2c447b498088b99d4a",
+      "previous_terminal": "A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_READY",
+      "previous_pointer_blob": "22ead89ed6ad08bb38089ee922d9734f432d41d2",
+      "a7_integrity_validation": "FAIL_FINDINGS_3",
+      "active_directive_comment": 5195137047,
+      "active_mode": "INTEGRITY_METADATA_ONLY_ONE_OWNER_END_TO_END",
+      "expected_terminal": "A6_GENERIC_HTML_PACKAGE_INTEGRITY_CORRECTED_READY_FOR_A7_DELTA_REACCEPTANCE",
+      "status": "ACTIVE"
+    },
+    "A-7": {
+      "pr": 26,
+      "head": "79cfdcddafc72b7d80cd237c72a773086b19a136",
+      "terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_EXACT_FINDINGS",
+      "terminal_comment": 5194842802,
+      "pointer_blob": "ec17a4c97f6225e5e9e5fc4fdcdade74e606d1a6",
+      "report_blob": "e66ba97803991de4982ddf4ebd756df4cde584b1",
+      "finding_count": 3,
+      "first_blocker": "PACKAGE_AND_MEMBER_SHA256_BINDING_MISMATCH",
+      "b1_execution_ready": false,
+      "delta_wait_comment": 5195141948,
+      "status": "WAITING_A6_INTEGRITY_CORRECTION"
+    }
+  },
+  "a7_findings": {
+    "owner": "A-6",
+    "package_sha256_binding": "FAIL",
+    "package_member_binding": "PASS_2_OF_6_FAIL_4_OF_6",
+    "build_receipt_sha256_exact": false,
+    "replay_receipt_sha256_exact": false,
+    "implementation_semantics_valid": true,
+    "replay_determinism": "PASS_2_OF_2",
+    "a5_a4_authority_binding": "PASS",
+    "required_correction": "RECOMPUTE_EXACT_REMOTE_BYTE_SHA256_AND_SIZE_AND_REPUBLISH_FINAL_POINTER_AND_A7_HANDOFF"
+  },
+  "next_execution": {
+    "active_owner": "A-6",
+    "directive_comment": 5195137047,
+    "a7_event_wait_comment": 5195141948,
+    "implementation_code_change_count": 0,
+    "fixture_semantic_change_count": 0,
+    "replay_rerun_count": 0,
+    "final_build_reexecution_count": 0,
+    "integrity_metadata_correction_count": 1
+  },
+  "critical_path": [
+    "A6_REMOTE_BYTE_SHA_SIZE_INTEGRITY_CORRECTION",
+    "A7_TWO_CHECK_DELTA_REACCEPTANCE",
+    "A2_TO_B1_FORMAL_HANDOFF"
+  ],
+  "active_owner": "A-6",
+  "current_terminal": "A2_A7_FINDINGS_A6_INTEGRITY_CORRECTION_ACTIVE",
+  "current_status": "WAITING_A6_INTEGRITY_CORRECTION_TERMINAL",
+  "next_action": "PROCESS_A6_CORRECTED_POINTER_AND_TRIGGER_A7_DELTA_REACCEPTANCE",
+  "verified_adapter_semantics_ready": true,
+  "verified_adapter_integrity_ready": false,
+  "b1_handoff_ready": false,
+  "request_execution_authorized": false,
+  "capture_execution_authorized": false,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

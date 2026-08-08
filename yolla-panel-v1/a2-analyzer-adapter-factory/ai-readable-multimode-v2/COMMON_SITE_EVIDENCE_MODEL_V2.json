@@ -1,0 +1,27 @@
+{
+  "schema_version": "COMMON_SITE_EVIDENCE_MODEL_V2",
+  "directive_id": "A0-TO-A2-AI-READABLE-MULTIMODE-ANALYZER-CORE-V4-20260808-001",
+  "cycle_id": "A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "purpose": "One observation evidence model shared by DATA, PRODUCT, WRITE, MY_LISTING, EDIT without rewriting AnalyzerCore.",
+  "backward_compatibility": {
+    "existing_data_path_preserved": true,
+    "existing_event_refs_preserved": ["NETWORK_OBSERVATION_EVENT", "RESPONSE_BODY_REF", "DOM_EVENT_REF"],
+    "cycle3_parent_head": "d2895e9e6590a1a68ac1f219e5d5787264def763",
+    "breaking_field_rename_count": 0
+  },
+  "evidence_record": {
+    "required_fields": ["evidence_id", "evidence_type", "provenance", "assertion_state", "confidence", "evidence_pointer", "payload_ref", "consumer_modes"],
+    "assertion_state_enum": ["OBSERVED", "INFERRED", "UNKNOWN"],
+    "confidence_range": [0, 1],
+    "rules": ["OBSERVED requires evidence_pointer", "INFERRED requires source evidence_pointer", "UNKNOWN must not fabricate payload values", "raw credential/secret/PII values forbidden"]
+  },
+  "provenance": {"required": ["command_id", "session_id", "page_id", "action_id", "observed_at", "source_head"]},
+  "consumer_projection": {
+    "DATA": ["network", "response", "dom", "entity", "pagination", "field"],
+    "PRODUCT": ["page_role", "component_role", "feature_dependency", "ui_state", "action_state"],
+    "WRITE": ["form_field", "validation", "action_network", "write_transform", "submit_boundary"],
+    "MY_LISTING": ["my_listing_page", "listing_entity", "read_transform", "status"],
+    "EDIT": ["edit_flow", "form_field", "write_transform", "validation", "user_confirm_boundary"]
+  },
+  "boundaries": {"target_pc_execution": false, "live_site_call": false, "tunnel_change": false, "production": false, "ready": false, "merge": false}
+}

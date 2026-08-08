@@ -1,0 +1,32 @@
+{
+  "schema_version":"COMPOSITE_PIPELINE_MANIFEST_V1",
+  "directive_id":"AI001-TO-A2-COMPOSITE-PIPELINE-AND-WORKER-STATE-INTEGRATION-V3-20260807-001",
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "parent":{
+    "cycle1_pointer":"yolla-panel-v1/a2-analyzer-adapter-factory/mission-capsule-prebuild/LATEST_A2_SITE_ANALYZER_MISSION_CAPSULE_POINTER.json",
+    "cycle1_pointer_commit":"ed3457f411f6a83b4351ee8b905c9547aa6e483c",
+    "cycle2_pointer":"yolla-panel-v1/a2-analyzer-adapter-factory/successor-execution-manifest-v1/LATEST_A2_SUCCESSOR_EXECUTION_MANIFEST_POINTER.json",
+    "cycle2_pointer_commit":"639a1d652ef92a70324a59fd0bdb1f941b91fede"
+  },
+  "architecture":"CHROME_CDP_PLAYWRIGHT_LOCAL_AGENT_SERVER_PANEL",
+  "worker_state_event_contract":"WORKER_BROWSER_STATE_EVENT_V1.json",
+  "state_separation":{"browser_lifecycle":"browser_state","technical_result":"task_status+terminal","rule":"COMPLETE_NE_PASS"},
+  "pipeline_chain":[
+    {"stage":1,"module_id":"A3_CDP_OBSERVATION_RUNNER","owner":"A-3","source_head":"3f317672d299ebafa46f268b8aad0760d819eccf","source_pointer_path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/LATEST_A3_REPORT_POINTER.json","source_pointer_blob":"4e5424a1a9a097b13f53e08fdb3f58b535445d8f","working_root":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation","entrypoint":"PLACEHOLDER_RESOLVE_AT_TARGET_BINDING","inputs":["LOCAL_CHROME_CDP_SESSION","PLAYWRIGHT_CDP_TRANSPORT","session_id","page_id","WORKER_BROWSER_STATE_EVENT_V1"],"outputs":["NETWORK_OBSERVATION_EVENT","TRAFFIC_CLASSIFICATION","RESPONSE_BODY_REF","DOM_EVENT_REF"],"next_on_pass":"A4_STRUCTURE_RUNNER"},
+    {"stage":2,"module_id":"A4_STRUCTURE_RUNNER","owner":"A-4","source_head":"cd5c7a17f2f1aae02c2fbe4d988dea00e9763061","source_pointer_path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/LATEST_A4_REPORT_POINTER.json","source_pointer_blob":"7cb42160835fbc7a724a2bce40f65b03a0545018","working_root":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination","entrypoint":"PLACEHOLDER_RESOLVE_AT_TARGET_BINDING","inputs":["NETWORK_OBSERVATION_EVENT","DOM_EVENT_REF","DOM_SNAPSHOT","WORKER_BROWSER_STATE_EVENT_V1"],"outputs":["REPEATING_REGION_CANDIDATES","FIELD_CANDIDATES","LOCATOR_SET","PAGINATION_CONTRACT"],"next_on_pass":"A5_DECISION_RUNNER"},
+    {"stage":3,"module_id":"A5_DECISION_RUNNER","owner":"A-5","source_head":"ea5c6321204e9d2577924c14e01d658ebf46a443","source_pointer_path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/LATEST_A5_REPORT_POINTER.json","source_pointer_blob":"aa7c0c94cf4d6912dfb881ed63b0e10a392e92ca","working_root":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema","entrypoint":"PLACEHOLDER_RESOLVE_AT_TARGET_BINDING","inputs":["NETWORK_OBSERVATION_EVENT","TRAFFIC_CLASSIFICATION","LOCATOR_SET","PAGINATION_CONTRACT","WORKER_BROWSER_STATE_EVENT_V1"],"outputs":["ENDPOINT_CATALOG","REQUEST_TEMPLATE","SESSION_HEADER_CONTRACT","RESPONSE_SCHEMA","MODE_DECISION"],"next_on_pass":"A6_ADAPTER_RUNNER"},
+    {"stage":4,"module_id":"A6_ADAPTER_RUNNER","owner":"A-6","source_head":"6e8c05bfc78189d02b6c9ddf785d2c1b881f7265","source_pointer_path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/LATEST_A6_REPORT_POINTER.json","source_pointer_blob":"30a7854ca46e7e6f477b1c17c5762e4651d53a82","working_root":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay","entrypoint":"VERIFIED_ADAPTER_PACKAGE_V1/package.json_DESCRIPTOR_EXECUTABLE_ENTRY_UNKNOWN","inputs":["LOCATOR_SET","PAGINATION_CONTRACT","ENDPOINT_CATALOG","RESPONSE_SCHEMA","MODE_DECISION","WORKER_BROWSER_STATE_EVENT_V1"],"outputs":["VERIFIED_ADAPTER_PACKAGE_V1","ADAPTER_BUILD_RECEIPT","REPLAY_TEST_RECEIPT","TRACE"],"next_on_pass":"A7_RECOVERY_BOOTSTRAP"},
+    {"stage":5,"module_id":"A7_RECOVERY_BOOTSTRAP","owner":"A-7","source_head":"7718170f6c616a99c99c4d366601a8dd6bb2b731","source_pointer_path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/LATEST_A7_REPORT_POINTER.json","source_pointer_blob":"86f44c705c16ef5c73d0080f2806a5fe674fb1a3","working_root":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit","entrypoint":"PLACEHOLDER_RESOLVE_AT_TARGET_BINDING","inputs":["A3_A6_EXACT_HEADS","A3_A6_POINTERS","VERIFIED_ADAPTER_PACKAGE_V1","ADAPTER_BUILD_RECEIPT","REPLAY_TEST_RECEIPT","WORKER_BROWSER_STATE_EVENT_V1"],"outputs":["NON_BLOCKING_ACCEPTANCE_FINDINGS","HANDOFF_READINESS","RECOVERY_ACTION_IF_NEEDED"],"nonblocking":true,"next_on_pass":"B1_PRODUCT_ORCHESTRATOR_OR_SUCCESSOR_SELECTED_NEXT_ACTION"}
+  ],
+  "worker_state_observer_consume_point":{"position":"AFTER_EACH_COMMAND_EVENT_AND_BEFORE_NEXT_ACTION_SELECTION","consumer":"COMPOSITE_PIPELINE_STATE_REDUCER","input":"WORKER_BROWSER_STATE_EVENT_V1","writes":["current_command","latest_browser_state","latest_task_status","latest_terminal","latest_result","next_action"]},
+  "next_action_generation_rules":[
+    {"when":"browser_state in [DISPATCHED,GENERATING]","next_action":"WAIT_FOR_LATER_WORKER_STATE_EVENT"},
+    {"when":"browser_state=COMPLETE and task_status=PASS and terminal is nonempty","next_action":"SELECT_current_stage.next_on_pass"},
+    {"when":"browser_state=COMPLETE and task_status in [UNKNOWN,RUNNING,NOT_STARTED]","next_action":"READ_LATEST_RESULT_DO_NOT_ADVANCE"},
+    {"when":"task_status=FAIL","next_action":"RUN_OWNER_CORRECTION_OR_ROLLBACK_RULE_DO_NOT_ADVANCE"},
+    {"when":"task_status=BLOCKED","next_action":"EMIT_EXACT_BLOCKER_AND_STOP_AT_STAGE"},
+    {"when":"stage.nonblocking=true and task_status not PASS","next_action":"PRESERVE_FINDINGS_AND_ALLOW_EXPLICIT_SUCCESSOR_DECISION"}
+  ],
+  "context_restore_order":["LATEST_POINTER","CURRENT_MISSION","CURRENT_COMMAND","LATEST_RESULT","NEXT_ACTION"],
+  "boundaries":{"target_pc_execution":false,"tunnel_change":false,"worker_direct_tunnel":false,"new_browser_engine":false,"production":false,"ready":false,"merge":false}
+}

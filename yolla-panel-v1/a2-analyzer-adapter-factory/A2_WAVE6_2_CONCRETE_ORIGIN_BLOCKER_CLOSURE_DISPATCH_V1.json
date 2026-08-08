@@ -1,0 +1,73 @@
+{
+  "schema_version": "A2_WAVE6_2_CONCRETE_ORIGIN_BLOCKER_CLOSURE_DISPATCH_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_2-CONCRETE-ORIGIN-CLOSURE-V1-20260805-001",
+  "updated_at_kst": "2026-08-05T16:01:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "a2_control_pr": 18,
+  "a0_control_pr": 17,
+  "authorization": {
+    "authorization_id": "A1-AUTH-ONE-SHOT-EXACT-RESPONSE-FIXTURE-20260805-001",
+    "decision_comment_id": 5188164989,
+    "decision": "APPROVED",
+    "authorized_profile_count": 8,
+    "authorized_batch_execution_count": 1,
+    "authorized_batch_execution_count_used": 1,
+    "second_attempt_authorized": false
+  },
+  "a3_result": {
+    "pr": 22,
+    "head": "c0a75f7bfeb53aec2ffa561dfca3dd190ee47daa",
+    "pointer_blob": "a32fe02629658e114e252c981554ab79f15dd338",
+    "terminal": "A3_ONE_SHOT_EXACT_RESPONSE_FIXTURE_CAPTURE_EXACT_BLOCKER",
+    "first_blocker": "AUTHORIZED_ALLOWLIST_CONTAINS_ONLY_RESERVED_NON_ROUTABLE_FIXTURE_INVALID_PLACEHOLDER_URLS_WITHOUT_CONCRETE_SOURCE_ORIGIN_MAPPING",
+    "capture_attempt_count": 0,
+    "successful_capture_count": 0,
+    "live_site_call_count": 0
+  },
+  "worker_dispatch": {
+    "A-3": {
+      "comment_id": 5188647300,
+      "mode": "EVENT_DRIVEN_AFTER_A5",
+      "expected_terminal": "A3_CONCRETE_ORIGIN_CAPTURE_PACKAGE_READY_FOR_REAUTHORIZATION"
+    },
+    "A-4": {
+      "comment_id": 5188652806,
+      "mode": "EVENT_WAIT",
+      "no_pending_directive": true
+    },
+    "A-5": {
+      "comment_id": 5188644176,
+      "mode": "P0_ACTIVE_OWNER",
+      "expected_terminal": "A5_CONCRETE_CAPTURE_INPUT_HANDOFF_READY_OR_EXACT_BLOCKER"
+    },
+    "A-6": {
+      "comment_id": 5188654648,
+      "mode": "EVENT_WAIT",
+      "no_pending_directive": true
+    },
+    "A-7": {
+      "comment_id": 5188650256,
+      "mode": "EVENT_DRIVEN_AFTER_A3",
+      "expected_terminal": "A7_SECOND_ONE_SHOT_GOVERNANCE_READY_FOR_A2_REAUTHORIZATION_REQUEST_OR_EXACT_FINDINGS"
+    }
+  },
+  "critical_path": [
+    "A5_CONCRETE_SOURCE_ORIGIN_AND_REQUEST_VALUE_MAPPING",
+    "A3_EXACT_REBIND_AND_SECOND_AUTHORIZATION_PACKAGE",
+    "A7_SECOND_ONE_SHOT_GOVERNANCE_AUDIT",
+    "A2_TO_A0_A1_NEW_EXPLICIT_AUTHORIZATION_REQUEST",
+    "A3_SECOND_ONE_SHOT_CAPTURE",
+    "A5_FINAL_AUTHORITY_REBIND",
+    "A4_PAGINATION_BINDING_AUDIT",
+    "A6_VERIFIED_ADAPTER_PACKAGE_REBUILD",
+    "A7_FINAL_ACCEPTANCE",
+    "A2_TO_B1_HANDOFF"
+  ],
+  "current_terminal": "A2_CONCRETE_SOURCE_ORIGIN_CLOSURE_ACTIVE",
+  "capture_execution_authorized": false,
+  "verified_adapter_package_ready": false,
+  "b1_handoff_ready": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

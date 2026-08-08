@@ -1,0 +1,62 @@
+{
+  "schema_version": "A2_WAVE6_AUTHORIZATION_WAIT_REFRESH_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6-AUTHORIZATION-WAIT-REFRESH-V1-20260805-001",
+  "updated_at_kst": "2026-08-05T06:31:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "a2_control_pr": 18,
+  "a0_control_pr": 17,
+  "authorization_request": {
+    "request_id": "A2-TO-A0-A1-ONE-SHOT-EXACT-RESPONSE-FIXTURE-CAPTURE-AUTHORIZATION-REQUEST-V1-20260805-001",
+    "comment_id": 5184545017,
+    "decision": "NOT_PUBLISHED",
+    "capture_execution_authorized": false
+  },
+  "worker_states": {
+    "A-3": {
+      "head": "6735d9335dd5e5137d09c494b3c6921989bb3252",
+      "pointer_blob": "e9d9b5a86c08e7862c6d68099e860e33567ca987",
+      "terminal": "A3_RESPONSE_FIXTURE_ACQUISITION_PACKAGE_REBOUND_READY_FOR_GOVERNANCE",
+      "comment_id": 5184875937,
+      "no_pending_directive": true,
+      "waiting_event": "A0_A1_EXPLICIT_ONE_SHOT_CAPTURE_AUTHORIZATION_APPROVED"
+    },
+    "A-4": {
+      "head": "d18192df1f672f7f1022eb428e521d720226a86b",
+      "pointer_blob": "da26c979685d28e28632ec594f695f04b7effb7d",
+      "terminal": "A4_NAVIGATION_AUTHORITY_FROZEN_EVENT_WAIT",
+      "comment_id": 5184877652,
+      "no_pending_directive": true,
+      "waiting_event": "A5_FINAL_EXECUTION_CONTRACT_READY_FOR_PAGINATION_REAUDIT"
+    },
+    "A-5": {
+      "head": "19781a67eb24ee217b1d072869c407077cca72e1",
+      "pointer_blob": "59f9a82c6edd15e1aa23c11573657ecf25efb004",
+      "terminal": "A5_RESPONSE_FIXTURE_REQUIREMENTS_READY_FOR_ACQUISITION",
+      "comment_id": 5184879644,
+      "no_pending_directive": true,
+      "waiting_event": "A3_EXACT_RESPONSE_FIXTURE_RESULT_POINTER_PUBLISHED"
+    },
+    "A-6": {
+      "head": "5cd6ead3671df508197cb6681571be7e681829e4",
+      "pointer_blob": "26bc7bb2e8bef94cc27530605ea3f38b98a24fc2",
+      "terminal": "A6_CORRECTED_AUTHORITY_REBUILD_TRIGGER_READY",
+      "comment_id": 5184881802,
+      "no_pending_directive": true,
+      "waiting_event": "A5_FINAL_AUTHORITY_READY_AND_A4_PAGINATION_REAUDIT_PASS"
+    },
+    "A-7": {
+      "head": "f4ca318a6335bc15970a8bff5c94f112d64807f4",
+      "pointer_blob": "eb058aa9a827884da1ea2f142743795ff98522de",
+      "terminal": "A7_FIXTURE_ACQUISITION_GOVERNANCE_READY_FOR_A2_AUTHORIZATION_REQUEST",
+      "comment_id": 5184883435,
+      "no_pending_directive": true,
+      "waiting_event": "A3_EXACT_CAPTURE_RESULT_POINTER_PUBLISHED_FOR_POST_CAPTURE_AUDIT"
+    }
+  },
+  "current_terminal": "A2_ONE_SHOT_CAPTURE_AUTHORIZATION_REQUEST_POSTED_AWAITING_DECISION",
+  "verified_adapter_package_ready": false,
+  "b1_handoff_ready": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

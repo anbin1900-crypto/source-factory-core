@@ -1,0 +1,85 @@
+{
+  "schema_version": "A2_WAVE1_WORKER_ASSIGNMENT_LEDGER_V1",
+  "status": "A2_WAVE1_ASSIGNED",
+  "commander": "A-2_GENERIC_SITE_ANALYZER_ADAPTER_FACTORY_COMMANDER",
+  "control_pr": 18,
+  "control_branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+  "wave_id": "A2_WAVE1_ANALYZER_ADAPTER_FACTORY_FOUNDATION",
+  "objective": "Build contract-first generic site analyzer and site-specific adapter factory provider shell without modifying the shared panel runtime.",
+  "workers": {
+    "A-3": {
+      "role": "NETWORK_OBSERVATION_AND_TRAFFIC_CLASSIFICATION_WORKER",
+      "directive_id": "A2-TO-A3-NETWORK-OBSERVATION-CONTRACT-V1-20260803-001",
+      "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/**",
+      "outputs": [
+        "NETWORK_OBSERVATION_EVENT_V1",
+        "TRAFFIC_CLASSIFICATION_CATALOG_V1",
+        "REDACTION_POLICY_V1",
+        "FIXTURE_TRACE_BUNDLE_V1"
+      ]
+    },
+    "A-4": {
+      "role": "NAVIGATION_PAGE_PAGINATION_STRUCTURE_WORKER",
+      "directive_id": "A2-TO-A4-NAVIGATION-PAGINATION-CONTRACT-V1-20260803-001",
+      "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/**",
+      "outputs": [
+        "SITE_NAVIGATION_GRAPH_V1",
+        "PAGE_TYPE_CATALOG_V1",
+        "PAGINATION_SCOPE_CONTRACT_V1",
+        "FIXTURE_NAVIGATION_REPLAY_V1"
+      ]
+    },
+    "A-5": {
+      "role": "REQUEST_RESPONSE_SESSION_SCHEMA_CONTRACT_WORKER",
+      "directive_id": "A2-TO-A5-REQUEST-RESPONSE-SCHEMA-CONTRACT-V1-20260803-001",
+      "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/**",
+      "outputs": [
+        "ENDPOINT_CATALOG_V1",
+        "REQUEST_TEMPLATE_CATALOG_V1",
+        "SESSION_HEADER_CONTRACT_V1",
+        "RESPONSE_SCHEMA_CATALOG_V1",
+        "IDENTIFIER_RELATIONSHIP_MAP_V1"
+      ]
+    },
+    "A-6": {
+      "role": "ADAPTER_GENERATION_FIXTURE_REPLAY_WORKER",
+      "directive_id": "A2-TO-A6-ADAPTER-GENERATION-REPLAY-V1-20260803-001",
+      "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/**",
+      "outputs": [
+        "GENERIC_ADAPTER_INTERFACE_V1",
+        "ADAPTER_PACKAGE_SCHEMA_V1",
+        "FIXTURE_ONLY_NAVER_REAL_ESTATE_ADAPTER_CANDIDATE_V1",
+        "ADAPTER_REPLAY_TEST_REPORT_V1"
+      ]
+    },
+    "A-7": {
+      "role": "INDEPENDENT_ANALYZER_ACCEPTANCE_HANDOFF_AUDITOR",
+      "directive_id": "A2-TO-A7-ANALYZER-ACCEPTANCE-AUDIT-V1-20260803-001",
+      "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/**",
+      "outputs": [
+        "ANALYZER_ACCEPTANCE_CHECKLIST_V1",
+        "PROGRESS_MONOTONICITY_AUDIT_V1",
+        "ADAPTER_HANDOFF_ACCEPTANCE_REPORT_V1",
+        "A2_WAVE1_INDEPENDENT_AUDIT_RECEIPT_V1"
+      ]
+    }
+  },
+  "common_rules": {
+    "official_authority": "GITHUB_REMOTE_HEAD_COMMITTED_JSON",
+    "panel_shell_direct_edit": false,
+    "shared_electron_main_direct_edit": false,
+    "actual_bulk_collection": false,
+    "authentication_bypass": false,
+    "target_pc_pass_without_evidence": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "required_reports": [
+    "START_REPORT",
+    "PROGRESS_OR_BLOCKER_REPORT",
+    "FINAL_REPORT",
+    "LATEST_REPORT_POINTER"
+  ],
+  "assigned_at": "2026-08-03T19:45:00+09:00"
+}

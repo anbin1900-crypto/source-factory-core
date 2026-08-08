@@ -1,0 +1,7 @@
+{
+  "schema_version": "AI_READABLE_PRODUCT_EVIDENCE_ENVELOPE_V1",
+  "required_fields": ["site_id", "mode", "page_role", "evidence_items", "structure_summary", "unknowns", "critical_structure_coverage"],
+  "evidence_item_contract": {"assertion_state": ["OBSERVED", "INFERRED", "UNKNOWN"], "confidence": "0..1", "evidence_pointer": "required unless UNKNOWN"},
+  "unknown_policy": "Never invent unobserved business rules.",
+  "goal": "AI implementation-direction reduction, not pixel-perfect clone."
+}

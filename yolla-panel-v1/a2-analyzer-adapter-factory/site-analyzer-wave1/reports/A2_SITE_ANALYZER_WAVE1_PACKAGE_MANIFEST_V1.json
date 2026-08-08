@@ -1,0 +1,41 @@
+{
+  "schema_version": "A2_SITE_ANALYZER_WAVE1_PACKAGE_MANIFEST_V1",
+  "package_id": "A2-SITE-ANALYZER-WAVE1-INTEGRATED-SOURCE-V1",
+  "root_path": "yolla-panel-v1/a2-analyzer-adapter-factory/site-analyzer-wave1",
+  "entrypoints": {
+    "library": "src/index.mjs",
+    "electron": "src/integration-entry.mjs",
+    "demo": "tests/run-demo.mjs",
+    "windows_demo": "RUN_ANALYZER_DEMO.bat",
+    "windows_test": "RUN_ANALYZER_TESTS.bat"
+  },
+  "shared_runtime": {
+    "browser_partition": "persist:yolla-site-analyzer-v1",
+    "state_schema": "ANALYZER_SHARED_STATE_V1",
+    "adapter_registry": "AnalyzerCore.adapterRegistry",
+    "run_history": "AnalyzerCore.runHistory"
+  },
+  "source_files": [
+    {"path":"src/analyzer-core.mjs","size_bytes":15711,"sha256":"340ec83bc85f9a0782596e2c952de0598426d3e477d9e1f646e82ef6ea8c2ba4"},
+    {"path":"src/electron-integration.mjs","size_bytes":2708,"sha256":"7c12c33d34cfab1ab44db8a2c7c97a0b846fb7e9dc3796073ba27d5f7277f4aa"},
+    {"path":"src/analyzer-preload.cjs","size_bytes":718,"sha256":"691997feba8b356011d4052a39d7af9ae0668b61e3d8a7ac5a8374f3110e7d6f"},
+    {"path":"src/index.mjs","size_bytes":166,"sha256":"6deb8dd91560448e6887539d4eb2d643a00da1088f830eeaa051c58af2360379"},
+    {"path":"src/integration-entry.mjs","size_bytes":684,"sha256":"32c25b97cbf772345b6ea12cd6ace7f93da1084ed9df420d1385f36a4f47c984"},
+    {"path":"src/ui/index.html","size_bytes":1193,"sha256":"29d20a80e94b34a7fc9fde32f8b8bb874c6ed8daca30cb9210df64854b0a38bb"},
+    {"path":"src/ui/analyzer-ui.css","size_bytes":890,"sha256":"1cfc0b6253b46f7e9c8aca5e46b375330e9e9845f577b024a13850c0d1d04906"},
+    {"path":"src/ui/analyzer-ui.js","size_bytes":2202,"sha256":"7bd416de7daeba21ddc265f3f738b3a8564031416d13f84cb2549f074042fc6b"},
+    {"path":"tests/analyzer-core.e2e.test.mjs","size_bytes":5674,"sha256":"7afe7de6d6c317127e1bc2b93c27c8b81ec1fe1fe21dc06247e46d073ecfe637"},
+    {"path":"tests/run-demo.mjs","size_bytes":545,"sha256":"faf877badafd6c419c88c3080dde1ee6b95dfadd5234d711db04f02357135a9e"},
+    {"path":"package.json","size_bytes":245,"sha256":"9b2ef5e5819aa3a298956f5939b229d3dd7d3bf287ae359096f93ab6be50174a"},
+    {"path":"README.md","size_bytes":1109,"sha256":"02d0865c1ba8083ec8c66183a5ca11da72680f457e96b002193808edcfd987e3"},
+    {"path":"RUN_ANALYZER_DEMO.bat","size_bytes":92,"sha256":"8aadd70086db6353172bb0fed526a133ec27ab7640674f8740b9b3e570d0e1cb"},
+    {"path":"RUN_ANALYZER_TESTS.bat","size_bytes":97,"sha256":"eb9f739b8aa8b4827c87ffe0f8f541dc160e9e2955439ca74bd5db1bcf142e8b"}
+  ],
+  "source_file_count": 14,
+  "test_status": "PASS_1_SUITE_48_ASSERTIONS",
+  "target_pc_applied": false,
+  "target_pc_live_pass": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

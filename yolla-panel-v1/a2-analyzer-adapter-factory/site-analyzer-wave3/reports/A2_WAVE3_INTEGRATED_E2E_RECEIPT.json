@@ -1,0 +1,27 @@
+{
+  "schema_version": "A2_SITE_ANALYZER_WAVE3_INTEGRATED_E2E_RECEIPT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "upstream_heads": {
+    "A3": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+    "A4": "9c3dbfbae71dc8c254a3215e62ce3f6e3f4e9ca3",
+    "A5": "b7619f0ffacbb4937b4842eab2f6cff75504ebf8",
+    "A6": "6e8c05bfc78189d02b6c9ddf785d2c1b881f7265",
+    "B6": "75f2f5fb0d70f5243d4a5852ebdbb82d9e1a18ad"
+  },
+  "analyzer_core_single_flow": true,
+  "runtime_bridge": true,
+  "shared_state_id": "a2-wave3-b5f2b341-1621-483b-b898-6c2a3955ac5a",
+  "adapter_registry_count": 1,
+  "run_history_count": 1,
+  "network_event_count": 28,
+  "response_body_count": 14,
+  "dom_snapshot_count": 2,
+  "generated_adapter_count": 1,
+  "replay_success_count": 2,
+  "extracted_record_count": 10,
+  "adapter_10_record_handoff": true,
+  "json_csv_xlsx_parity": "PASS_10_10_10",
+  "deterministic_replay": true,
+  "terminal_source_node": "PASS",
+  "receipt_sha256": "e1fd511ca74c68ea2fa14dad753ede4821ab7bd331bffcae53b4bce1cbeab505"
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "A2_WAVE6_12_A6_PASS_A7_FINAL_ACCEPTANCE_ACTIVE_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_12-A7-FINAL-ACCEPTANCE-V1-20260806-001",
+  "updated_at_kst": "2026-08-06T01:34:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "a2_control_pr": 18,
+  "policy": {
+    "policy_id": "YOLLA_EFFICIENCY_RATIONALITY_SPEED_FIRST_OPERATING_POLICY_V1",
+    "mid_process_audit_count": 0,
+    "final_acceptance_count": 1
+  },
+  "a6_result": {
+    "pr": 25,
+    "final_head": "6fab17d37c1db2feb955fd2c447b498088b99d4a",
+    "terminal": "A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_READY",
+    "pointer_blob": "22ead89ed6ad08bb38089ee922d9734f432d41d2",
+    "handoff_blob": "0e9fd96b1ff8c13594cc4d42c23da223847040a6",
+    "package_path": "VERIFIED_ADAPTER_PACKAGE_V1/package.json",
+    "package_sha256": "3500125a7c0d1629d793110516d6a3b6084afbc191f5bc55e6131921441f94f9",
+    "build_receipt_sha256": "ff8b25ad1d96805233faaa986ab4a9a119a4fc305be1e92b0b0fbd24e9e196f9",
+    "replay_receipt_sha256": "e85fdc59767e95a01771c32417df52d6ba524e9d4cb57caf2c81dbb438866a4e",
+    "final_build_count": 1,
+    "replay_count": 2,
+    "deterministic_replay": "PASS_2_OF_2",
+    "acceptance_ready": true,
+    "freeze_comment": 5194567120,
+    "status": "PASS_ACCEPTED_FROZEN"
+  },
+  "a7_execution": {
+    "pr": 26,
+    "head_before_execution": "690445a0b7815dcfaea209af67efe9dfbf30dcc8",
+    "directive_comment": 5194563911,
+    "mode": "FINAL_ACCEPTANCE_ONLY",
+    "required_check_count": 7,
+    "expected_terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_PASS_OR_EXACT_FINDINGS"
+  },
+  "upstream_authority": {
+    "a5_head": "85bb7c7c6b07a0a58cdc74ea7d74a6de2ed81adb",
+    "a5_pointer_blob": "d5ec690e342a699639d21a0da0c4139b4333337f",
+    "a5_handoff_blob": "0f4e31bfd5ebfcf77872c52369322c67930330f2",
+    "a4_head": "032c609396db198db6bd14c96436f07bc429cae8",
+    "a4_pointer_blob": "9ac48216663f3390214e5dca4cb7b030b64f0535",
+    "a4_handoff_blob": "894fc02cc1cdf72708d1ccb1660f56b302f80aa3"
+  },
+  "critical_path": [
+    "A7_ONE_FINAL_ACCEPTANCE",
+    "A2_TO_B1_HANDOFF"
+  ],
+  "active_owner": "A-7",
+  "current_terminal": "A2_A6_PASS_A7_FINAL_ACCEPTANCE_ACTIVE",
+  "current_status": "WAITING_A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_TERMINAL",
+  "next_action": "PROCESS_A7_FINAL_POINTER_AND_PUBLISH_A2_TO_B1_HANDOFF_ON_PASS",
+  "verified_adapter_package_ready": true,
+  "b1_handoff_ready": false,
+  "request_execution_authorized": false,
+  "capture_execution_authorized": false,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

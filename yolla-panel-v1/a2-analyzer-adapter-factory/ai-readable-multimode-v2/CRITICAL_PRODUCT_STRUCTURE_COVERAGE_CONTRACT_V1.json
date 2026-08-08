@@ -1,0 +1,9 @@
+{
+  "schema_version": "CRITICAL_PRODUCT_STRUCTURE_COVERAGE_CONTRACT_V1",
+  "items": [
+    {"id": "PAGE_ROLE", "weight": 15}, {"id": "COMPONENT_GRAPH", "weight": 15}, {"id": "FORM_STRUCTURE", "weight": 15}, {"id": "ACTION_API_STATE", "weight": 15}, {"id": "ENTITY_RELATIONSHIP", "weight": 10}, {"id": "WRITE_MAPPING", "weight": 15}, {"id": "MY_LISTING_BINDING", "weight": 10}, {"id": "EDIT_FLOW", "weight": 5}
+  ],
+  "state_factor": {"OBSERVED": 1.0, "INFERRED": 0.6, "UNKNOWN": 0.0},
+  "formula": "sum(weight*state_factor*confidence*evidence_pointer_factor)/sum(weight)*100",
+  "not_pixel_clone_accuracy": true
+}

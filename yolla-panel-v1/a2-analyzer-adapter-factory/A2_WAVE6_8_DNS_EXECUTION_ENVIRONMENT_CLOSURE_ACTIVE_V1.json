@@ -1,0 +1,103 @@
+{
+  "schema_version": "A2_WAVE6_8_DNS_EXECUTION_ENVIRONMENT_CLOSURE_ACTIVE_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_8-DNS-ENVIRONMENT-CLOSURE-V1-20260805-001",
+  "updated_at_kst": "2026-08-05T23:49:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "a2_control_pr": 18,
+  "a0_control_pr": 17,
+  "consumed_authorization": {
+    "authorization_id": "V2-AUTH-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-20260805-001",
+    "decision_comment": 5192765975,
+    "batch_execution_count_authorized": 1,
+    "batch_execution_count_used": 1,
+    "status": "CONSUMED_CLOSED_DNS_FAIL_CLOSED",
+    "reusable": false
+  },
+  "a3_result": {
+    "pr": 22,
+    "final_head": "8516f862bf467e52dab0deb1b20d03e910ebf486",
+    "pointer_blob": "4e5424a1a9a097b13f53e08fdb3f58b535445d8f",
+    "terminal_report_blob": "62d3aca0485e915dfa9cb7f9a7e01278d6d1d4cb",
+    "run_summary_blob": "fab57ddec4c23636195fa4161fcf3bb17a073074",
+    "disposal_receipt_blob": "5effd82f39714f29b465211374afff1867b4e1fc",
+    "terminal": "A3_NAVER_PUBLIC_DOCUMENT_GET_ONE_SHOT_CAPTURE_DNS_EXACT_BLOCKER",
+    "first_blocker": "EP-001_DNS_NAME_RESOLUTION_TEMPORARY_FAILURE",
+    "terminal_comment": 5193262768,
+    "final_pointer_comment": 5193283132,
+    "a2_handoff_comment": 5193286766,
+    "a5_handoff_comment": 5193289370,
+    "batch_execution_count_used": 1,
+    "request_execution_attempt_count": 1,
+    "live_site_call_attempt_count": 1,
+    "http_request_sent_count": 0,
+    "remote_server_contact_count": 0,
+    "captured_profile_count": 0,
+    "blocked_profile_count": 1,
+    "skipped_profile_count": 6,
+    "raw_persisted_count": 0,
+    "redacted_fixture_count": 0,
+    "auto_retry": false,
+    "second_batch": false
+  },
+  "dns_environment_closure": {
+    "request_comment": 5193338108,
+    "required_terminal": "DNS_EXECUTION_ENVIRONMENT_READY_FOR_NEW_A2_AUTHORIZATION_REQUEST_OR_EXACT_BLOCKER",
+    "required_artifacts": [
+      "DNS_EXECUTION_ENVIRONMENT_PROFILE_V1.json",
+      "DNS_RESOLUTION_READINESS_RECEIPT_V1.json",
+      "A3_REEXECUTION_ENVIRONMENT_HANDOFF_V1.json",
+      "LATEST_DNS_EXECUTION_ENVIRONMENT_POINTER.json"
+    ],
+    "http_request_sent_count_allowed": 0,
+    "capture_execution_count_allowed": 0,
+    "browser_automation_count_allowed": 0
+  },
+  "worker_states": {
+    "A-3": {
+      "pr": 22,
+      "head": "8516f862bf467e52dab0deb1b20d03e910ebf486",
+      "comment_id": 5193341194,
+      "mode": "TERMINAL_FROZEN_DNS_RECOVERY_WAIT",
+      "no_pending_directive": true
+    },
+    "A-4": {
+      "pr": 23,
+      "comment_id": 5193346275,
+      "mode": "EVENT_WAIT",
+      "no_pending_directive": true
+    },
+    "A-5": {
+      "pr": 24,
+      "comment_id": 5193344214,
+      "mode": "CAPTURE_BODY_ABSENT_FINAL_SCHEMA_HOLD",
+      "no_pending_directive": true
+    },
+    "A-6": {
+      "pr": 25,
+      "comment_id": 5193348582,
+      "mode": "EVENT_WAIT",
+      "no_pending_directive": true
+    },
+    "A-7": {
+      "pr": 26,
+      "comment_id": 5193350581,
+      "mode": "GOVERNANCE_PASS_PRESERVED_EVENT_WAIT",
+      "no_pending_directive": true
+    }
+  },
+  "active_owner": "A0_A1_V2_DNS_EXECUTION_ENVIRONMENT_AUTHORITY",
+  "current_terminal": "A2_A3_DNS_BLOCKER_CAPTURE_ZERO_DNS_ENVIRONMENT_CLOSURE_ACTIVE",
+  "current_status": "WAITING_DNS_EXECUTION_ENVIRONMENT_READINESS_RECEIPT",
+  "next_action": "PUBLISH_DNS_EXECUTION_ENVIRONMENT_READY_POINTER_THEN_SUBMIT_NEW_DISTINCT_CAPTURE_AUTHORIZATION_REQUEST",
+  "request_execution_authorized": false,
+  "capture_execution_authorized": false,
+  "failed_capture_auto_retry": false,
+  "second_batch_execution_authorized": false,
+  "final_response_schema_complete": false,
+  "verified_adapter_package_ready": false,
+  "b1_handoff_ready": false,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

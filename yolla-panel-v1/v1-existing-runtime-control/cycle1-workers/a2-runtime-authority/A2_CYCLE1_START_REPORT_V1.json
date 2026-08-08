@@ -1,0 +1,43 @@
+{
+  "schema_version": "A2_CYCLE1_START_REPORT_V1",
+  "role": "A-2_C_MODE_CYCLE1_RUNTIME_AUTHORITY_WORKER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "worker_pr": 18,
+  "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "directive_id": "C1-A2-EXACT-RUNTIME-AUTHORITY-RESOLUTION",
+  "started_at_kst": "2026-08-07T00:03:00+09:00",
+  "baseline_remote_head": "01e1321401211a53ae9237ca05d3a8f46822405f",
+  "authority_inputs": {
+    "assignment": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycles/cycle1/C_MODE_CYCLE1_A2_A7_WORKER_ASSIGNMENT_V1.json",
+      "commit": "3a66f45dcbd81818013247b1e50efb55df27ec69",
+      "blob": "bb5d64ee5c0b672d972cc981f04bc3acfb9d6491",
+      "remote_readback": "PASS"
+    },
+    "assignment_pointer": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/LATEST_C_MODE_CYCLE1_A2_A7_WORKER_ASSIGNMENT_POINTER.json",
+      "commit": "008ee26b192f5c186bd064f8382831ddfdf4a288",
+      "blob": "1584c7b8100ba25c4f3a3e1e5794f7609921a3e8",
+      "remote_readback": "PASS"
+    },
+    "directive_comment_id": 5206055628
+  },
+  "scope": {
+    "active_runtime": "5.10.2.3.7",
+    "candidate_chain": ["5.10.2.4.0", "5.10.2.4.1"],
+    "pr73_candidate": true,
+    "resolve_byte_launcher_release_installer_relationships": true,
+    "select_exact_next_install_and_readback_target": true,
+    "target_pc_apply": false,
+    "site_analyzer_work": false
+  },
+  "boundaries": {
+    "false_target_pc_pass_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "STARTED"
+}

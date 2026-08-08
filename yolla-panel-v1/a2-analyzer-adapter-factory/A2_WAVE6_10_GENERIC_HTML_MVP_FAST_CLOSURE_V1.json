@@ -1,0 +1,96 @@
+{
+  "schema_version": "A2_WAVE6_10_GENERIC_HTML_MVP_FAST_CLOSURE_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_10-GENERIC-HTML-MVP-FAST-CLOSURE-V1-20260806-001",
+  "updated_at_kst": "2026-08-06T00:25:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "a2_control_pr": 18,
+  "a0_control_pr": 17,
+  "policy": {
+    "policy_id": "YOLLA_EFFICIENCY_RATIONALITY_SPEED_FIRST_OPERATING_POLICY_V1",
+    "owner_model": "ONE_OWNER_END_TO_END",
+    "live_capture_required_for_mvp": false,
+    "mid_process_audit_count": 0,
+    "final_acceptance_count": 1,
+    "start_progress_comments_required": false
+  },
+  "a3_dns_result": {
+    "final_head": "30ef339d303debeaa2098c4f5f5d2ca44f087c67",
+    "terminal": "DNS_EXECUTION_ENVIRONMENT_EXACT_EXTERNAL_BLOCKER",
+    "first_blocker": "CURRENT_RUNTIME_NETWORK_NAMESPACE_BLOCKS_ALL_DNS_EGRESS_AND_NO_CONNECTED_ALTERNATIVE_CAPTURE_RUNTIME_IS_AVAILABLE",
+    "attempt_count": 15,
+    "live_capture_success_count": 0,
+    "mvp_blocking": false,
+    "next_directive_comment": 5193792814,
+    "mode": "TARGET_PC_HANDOFF_NONBLOCKING"
+  },
+  "worker_states": {
+    "A-5": {
+      "pr": 24,
+      "head_before_final": "37605b27071d46b4c7d61d93b2f2a81295f115d8",
+      "prep_terminal": "A5_FINAL_RESPONSE_SCHEMA_BINDER_VALIDATOR_PARALLEL_PREP_READY_WAITING_CAPTURE_FIXTURES",
+      "directive_comment": 5193798083,
+      "mode": "P0_GENERIC_HTML_RESPONSE_CONTRACT_FINAL",
+      "expected_terminal": "A5_GENERIC_HTML_DOCUMENT_RESPONSE_CONTRACT_READY"
+    },
+    "A-4": {
+      "pr": 23,
+      "head_before_final": "d18192df1f672f7f1022eb428e521d720226a86b",
+      "directive_comment": 5193802731,
+      "mode": "P0_NO_AUTOMATED_PAGINATION_MVP_FINAL",
+      "expected_terminal": "A4_NO_AUTOMATED_PAGINATION_MVP_BINDING_READY"
+    },
+    "A-6": {
+      "pr": 25,
+      "head_before_final": "153c71faf5462c6e12d4390987d67be0dd4efa60",
+      "prep_terminal": "A6_SINGLE_REBUILD_PRESTAGE_READY",
+      "directive_comment": 5193808362,
+      "mode": "EVENT_SINGLE_BUILD_AFTER_A5_A4",
+      "expected_terminal": "A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_READY"
+    },
+    "A-7": {
+      "pr": 26,
+      "head_before_final": "2711ee7a7611cdd4b4ebfdb29f337b02354da604",
+      "directive_comment": 5193812113,
+      "mode": "FINAL_ACCEPTANCE_ONLY",
+      "expected_terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_PASS_OR_EXACT_FINDINGS"
+    }
+  },
+  "control_comments": {
+    "pr18_fast_pivot": 5193787876,
+    "pr17_fast_path_control": 5193816719
+  },
+  "mvp_contract": {
+    "adapter_type": "GENERIC_HTML_DOCUMENT_ADAPTER_V1",
+    "method": "GET",
+    "response_format": "text/html",
+    "profile_count": 7,
+    "excluded_profiles": ["EP-011"],
+    "site_specific_dom_selector_claim": false,
+    "automated_pagination": false,
+    "live_response_body_required": false,
+    "generic_outputs": [
+      "html_document_text",
+      "outbound_links",
+      "response_metadata",
+      "sha256_bindings"
+    ]
+  },
+  "critical_path": [
+    "A5_GENERIC_HTML_RESPONSE_CONTRACT_FINAL_AND_A4_NO_PAGINATION_BINDING_IN_PARALLEL",
+    "A6_SINGLE_VERIFIED_ADAPTER_BUILD_AND_2X_REPLAY",
+    "A7_ONE_FINAL_ACCEPTANCE",
+    "A2_TO_B1_HANDOFF"
+  ],
+  "active_owners": ["A-5", "A-4"],
+  "current_terminal": "A2_GENERIC_HTML_MVP_FAST_CLOSURE_ACTIVE",
+  "current_status": "A5_A4_PARALLEL_FINALIZATION",
+  "next_action": "WAIT_A5_A4_FINAL_POINTERS_THEN_TRIGGER_A6_SINGLE_BUILD",
+  "request_execution_authorized": false,
+  "capture_execution_authorized": false,
+  "verified_adapter_package_ready": false,
+  "b1_handoff_ready": false,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "LATEST_A2_SITE_ANALYZER_WAVE1_POINTER_V1",
+  "pointer_id": "A2-SITE-ANALYZER-WAVE1-LATEST-V1",
+  "updated_at_kst": "2026-08-07T02:16:00+09:00",
+  "role": "ANALYZER_CORE_EMBEDDED_STANDALONE_INTEGRATION_OWNER",
+  "worker_pr": 18,
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "root": "yolla-panel-v1/a2-analyzer-adapter-factory/site-analyzer-wave1",
+  "artifacts": {
+    "start": {"commit":"3d0bacb0f36d5602291deda66f6c21db47ed26f5","blob":"858af69354e49f32cf26287644cef7652aa7f00b","path":"reports/A2_SITE_ANALYZER_WAVE1_START_REPORT_V1.json","remote_readback":"PASS"},
+    "source_head": {"commit":"7ad941f5c2a2aecfa94aa6956a7db0191fadb0d1","core_blob":"adb9736267289e1b299c0450af7b294cf89387c1","electron_blob":"2d9276e7c3d7a6f00ba90c6b75f4af48cc7fe793","test_blob":"d4ae3b3ac5325c2b28be60f7c6c00f75abb40566","remote_readback":"PASS"},
+    "build_report": {"commit":"716f64e3cf61ad1d6f19b453b33e7138f45a788a","blob":"ee4e8a520fd7fd0d5ec946f18d297f6117ce917f","path":"reports/A2_SITE_ANALYZER_WAVE1_BUILD_TEST_REPORT_V1.json","remote_readback":"PASS"},
+    "module_map": {"commit":"1be7b1649640313507a33e9581408da479c9df99","blob":"8dd33444c7a4d4b902ff8b25c5526f3445f681d7","path":"reports/A2_SITE_ANALYZER_WAVE1_MODULE_BINDING_MAP_V1.json","remote_readback":"PASS"},
+    "package_manifest": {"commit":"7ad941f5c2a2aecfa94aa6956a7db0191fadb0d1","blob":"f16bc51ff289536441c55a8ebb2cf301ef9ff248","path":"reports/A2_SITE_ANALYZER_WAVE1_PACKAGE_MANIFEST_V1.json","remote_readback":"PASS"},
+    "final_report": {"commit":"ea584872c12c490f88a7db70aba987cdd2ecae2c","blob":"0c0fb1851556a24824c98ad32cdefa86d51e3c37","path":"reports/A2_SITE_ANALYZER_WAVE1_FINAL_REPORT_V1.json","remote_readback":"PASS"}
+  },
+  "result": {
+    "integrated_source_pass": true,
+    "deterministic_local_e2e_pass": true,
+    "test_status": "PASS_1_SUITE_48_ASSERTIONS",
+    "module_bindings": 10,
+    "ipc_handlers": 5,
+    "ui_sections": 7,
+    "sample_records": 1,
+    "target_pc_live_pass": false
+  },
+  "external_blocker": "TARGET_PC_ELECTRON_AND_LIVE_SITE_SESSION_UNAVAILABLE",
+  "terminal": "A2_SITE_ANALYZER_WAVE1_INTEGRATED_EMBEDDED_STANDALONE_PROVEN_EXTERNAL_BLOCKER",
+  "status": "TERMINAL_SOURCE_PASS_EXTERNAL_LIVE_BLOCKER",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

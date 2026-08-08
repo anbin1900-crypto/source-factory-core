@@ -1,0 +1,38 @@
+{
+  "schema_version": "CYCLE7_LIVE_RECEIPT_BINDING_V1",
+  "followup_id": "A0-TO-A2-CYCLE7B-LIVE-RECEIPT-CLOSURE-20260808-001",
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "wave_id": "A0-AB-REAL-SITE-LIVE-RECEIPT-CLOSURE-WAVE7B-20260808-001",
+  "command_id": "A2-B6-CYCLE7-REAL-SITE-E2E-001",
+  "request_id": "A2-CYCLE7-REAL-SITE-E2E-SUCCESSOR-REQUEST-001",
+  "request_pointer": {
+    "path": "CYCLE7_ACTUAL_EXECUTION_REQUEST_V1.json",
+    "resolution": "SAME_COMMIT_TREE"
+  },
+  "handoff_pointer": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "pr": 42,
+    "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+    "commit": "dde3ff79eafeede994e672c21648155b998c9a1a",
+    "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/real-site-one-command-execution-handoff-v1/LATEST_B6_REAL_SITE_ONE_COMMAND_EXECUTION_HANDOFF_POINTER.json",
+    "blob": "8e523ca375cc726e7d6f27e35f30553ab87df555",
+    "terminal_comment": 5224337124,
+    "terminal": "B6_REAL_SITE_ONE_COMMAND_EXECUTION_HANDOFF_READY"
+  },
+  "binding_state": "NO_ACTUAL_EXECUTION_RECEIPT",
+  "receipt_count": 0,
+  "receipts": [],
+  "fail_closed_validation": {
+    "command_id_match": "NOT_EVALUATED_NO_RECEIPT",
+    "request_id_match": "NOT_EVALUATED_NO_RECEIPT",
+    "page_binding": "NOT_EVALUATED_NO_RECEIPT",
+    "lane_results": "NOT_EVALUATED_NO_RECEIPT",
+    "pass_without_receipt": "REJECTED"
+  },
+  "result_return_contract": {
+    "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/real-site-one-command-execution-handoff-v1/REAL_SITE_RESULT_RETURN_CONTRACT_V1.json",
+    "commit": "dde3ff79eafeede994e672c21648155b998c9a1a",
+    "blob": "13a1ab5abea77e729e3a4ee75b93fdf46e851fb8"
+  },
+  "live_pass_claimed": false
+}

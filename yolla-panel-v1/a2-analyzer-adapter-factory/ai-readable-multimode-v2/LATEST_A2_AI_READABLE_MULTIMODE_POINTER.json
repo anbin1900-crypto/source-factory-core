@@ -1,0 +1,29 @@
+{
+  "schema_version":"LATEST_A2_AI_READABLE_MULTIMODE_POINTER_V1",
+  "directive_id":"A0-TO-A2-AI-READABLE-MULTIMODE-ANALYZER-CORE-V4-20260808-001",
+  "cycle_id":"A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "role":"A-2_GENERIC_SITE_ANALYZER_INTEGRATION_OWNER",
+  "repository":"anbin1900-crypto/source-factory-core",
+  "worker_pr":18,
+  "branch":"integration/a2-generic-site-analyzer-adapter-factory-v1",
+  "parent_head":"d2895e9e6590a1a68ac1f219e5d5787264def763",
+  "source_commit":"c05eeae7d88a6708174a950310936f001a5fd9b5",
+  "root":"yolla-panel-v1/a2-analyzer-adapter-factory/ai-readable-multimode-v2",
+  "artifacts":{
+    "common_site_evidence_model":{"path":"COMMON_SITE_EVIDENCE_MODEL_V2.json","blob":"fa158ee900dc00f90be009291a3e3012d917b23d"},
+    "analysis_mode_catalog":{"path":"ANALYSIS_MODE_CATALOG_V1.json","blob":"4fc31677833a98243200c582c318d74ad9d3b35f"},
+    "product_evidence_envelope":{"path":"AI_READABLE_PRODUCT_EVIDENCE_ENVELOPE_V1.json","blob":"0e7e44cf0becb4efca3fa2e65d8da6a1d225c62a"},
+    "coverage_contract":{"path":"CRITICAL_PRODUCT_STRUCTURE_COVERAGE_CONTRACT_V1.json","blob":"7a721cbd9946d41b39669e4b8bd1d2b7782752d3"},
+    "a3_a7_handoff_manifest":{"path":"A2_CYCLE4_A3_A7_EXACT_HANDOFF_MANIFEST_V1.json","blob":"97f3d296258e61440768757d15fd182e6fc63db4"},
+    "shared_evidence_fixture":{"path":"A2_MULTIMODE_SHARED_EVIDENCE_FIXTURE_V1.json","blob":"8257ea0c69a2d412f01408da270d02922e25bd9b"},
+    "validation_receipt":{"path":"A2_AI_READABLE_MULTIMODE_VALIDATION_RECEIPT_V1.json","blob":"2c6de09c4c29b0d83693beb5c067b12c20291ae8"}
+  },
+  "analysis_modes":["DATA","PRODUCT","WRITE","MY_LISTING","EDIT"],
+  "shared_evidence_fixture":{"same_evidence_data_product_write":"PASS_EV-003","critical_product_structure_coverage":82.45,"legacy_data_projection_unchanged":true},
+  "a3_a7_snapshot":{"A-3":"f1ba518fcfde8490ce8c9bfa855814d8836ba0bc","A-4":"d0751642741fdb7a09947605c14fd4481eecf8ef","A-5":"99ab23f9ce3124d79dc25fa5676307359537edde","A-6":"d668eb915d15b09f41145b6871122c7822464aad","A-7":"59b0a87363e8e4b0cecca9b6b74d88568a55c871"},
+  "rules":{"assertion_states":["OBSERVED","INFERRED","UNKNOWN"],"confidence_required":true,"evidence_pointer_required_for_observed_inferred":true,"unknown_must_not_fabricate":true,"pixel_clone_target":false},
+  "validation":{"fixture":"PASS","data_backward_compatibility":"PASS","cycle3_regression":"PASS","parallel_nonblocking_manifest":"PASS","target_pc_execution":false,"live_site_call":false},
+  "terminal":"A2_AI_READABLE_MULTIMODE_ANALYZER_CORE_READY",
+  "status":"TERMINAL_PASS_PREBUILD_ONLY",
+  "production":false,"ready":false,"merge":false
+}

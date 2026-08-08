@@ -1,0 +1,24 @@
+{
+  "schema_version":"WORKER_BROWSER_STATE_EVENT_V1",
+  "directive_id":"AI001-TO-A2-COMPOSITE-PIPELINE-AND-WORKER-STATE-INTEGRATION-V3-20260807-001",
+  "purpose":"Observe Chrome-based worker browser lifecycle separately from technical task result.",
+  "required_fields":["worker_id","command_id","page_id","browser_state","task_status","terminal","observed_at"],
+  "properties":{
+    "worker_id":{"type":"string","examples":["A-3"]},
+    "command_id":{"type":"string","pattern":"^CMD-[0-9]{3}$"},
+    "page_id":{"type":"string","pattern":"^pg_[0-9a-f]{12}_[0-9]{4}$|^PLACEHOLDER$"},
+    "browser_state":{"enum":["IDLE","DISPATCHED","GENERATING","COMPLETE","ERROR","UNKNOWN"]},
+    "task_status":{"enum":["NOT_STARTED","RUNNING","PASS","FAIL","BLOCKED","UNKNOWN"]},
+    "terminal":{"type":["string","null"]},
+    "observed_at":{"type":"string","format":"date-time"}
+  },
+  "semantic_rules":[
+    "browser_state=COMPLETE does not imply task_status=PASS",
+    "technical PASS requires task_status=PASS and nonempty terminal",
+    "next pipeline stage may be selected only when current stage technical result is PASS or explicitly nonblocking",
+    "browser_state ERROR with task_status UNKNOWN is observation only, not a technical failure claim"
+  ],
+  "producer":"LOCAL_BROWSER_AGENT_OR_SUCCESSOR_WORKER_STATE_OBSERVER",
+  "consumer":"COMPOSITE_PIPELINE_STATE_REDUCER",
+  "communication_boundary":"AI001_TO_SUCCESSOR_ONE_TO_ONE_ONLY"
+}

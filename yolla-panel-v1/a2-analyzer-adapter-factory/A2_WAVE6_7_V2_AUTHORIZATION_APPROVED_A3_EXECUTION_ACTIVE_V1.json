@@ -1,0 +1,108 @@
+{
+  "schema_version": "A2_WAVE6_7_V2_AUTHORIZATION_APPROVED_A3_EXECUTION_ACTIVE_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_7-A3-ONE-SHOT-EXECUTION-V1-20260805-001",
+  "updated_at_kst": "2026-08-05T23:08:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "a2_control_pr": 18,
+  "a0_control_pr": 17,
+  "authorization": {
+    "request_id": "A2-TO-A0-A1-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-CAPTURE-AUTHORIZATION-REQUEST-V1-20260805-001",
+    "request_comment": 5192321213,
+    "decision_comment": 5192765975,
+    "a2_control_receipt_comment": 5192794199,
+    "decision": "APPROVED",
+    "authorized_by": "V-2",
+    "authorization_id": "V2-AUTH-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-20260805-001",
+    "decision_report_commit": "9629c8fa64404013a9e9b77d5083608d8728e8ba",
+    "decision_report_blob": "dde73406d83be9ceffab209ddbc86ce5acbc3534",
+    "dedicated_pointer_commit": "84cea6f4da98c060c6729be23edac8e3fed03155",
+    "dedicated_pointer_blob": "4c0cf0f3b60c02da24883b9fcb60ead631e98074",
+    "latest_authorization_pointer_commit": "ff46003c3f0749e20d3f4c289f5381b01a6576cb",
+    "latest_authorization_pointer_blob": "fdaf17c1a0a5e401d234ce32b8e3fe5fa349e6c3"
+  },
+  "a3_execution_event": {
+    "pr": 22,
+    "comment": 5192799338,
+    "required_head": "8e2c06d6e33ae23e0bf408cb5e2bd7513a72d7a9",
+    "pointer_blob": "aa2c564c52ac1bd0f0a6dd4973f8b16dd53a2030",
+    "operator_package_blob": "f742b7a1e83ec9199258f9b7d7df9b8947f321d7",
+    "allowlist_blob": "47aa9c3a02fcd8e8168c8d272d33a88733094cec",
+    "request_binding_blob": "74aa2232a274b77fb51adadb60e66ea7ae6a7fe9",
+    "status": "EXECUTION_EVENT_POSTED"
+  },
+  "authorized_scope": {
+    "origin": "https://fin.land.naver.com",
+    "method": "GET",
+    "expected_response_format": "text/html",
+    "profiles": [
+      "EP-001",
+      "EP-002",
+      "EP-003",
+      "EP-004",
+      "EP-005",
+      "EP-010",
+      "EP-012"
+    ],
+    "excluded_profiles": [
+      "EP-011"
+    ],
+    "max_capture_per_profile": 1,
+    "max_total_capture": 7,
+    "batch_execution_count": 1,
+    "max_response_size_bytes": 2097152,
+    "request_timeout_ms": 20000,
+    "total_execution_timeout_ms": 180000
+  },
+  "worker_states": {
+    "A-3": {
+      "head": "8e2c06d6e33ae23e0bf408cb5e2bd7513a72d7a9",
+      "mode": "P0_ACTIVE_OWNER",
+      "waiting_event": null,
+      "next_required_terminal": "A3_PUBLIC_DOCUMENT_GET_ONE_SHOT_CAPTURE_TERMINAL_OR_EXACT_BLOCKER"
+    },
+    "A-4": {
+      "head": "d18192df1f672f7f1022eb428e521d720226a86b",
+      "mode": "EVENT_WAIT",
+      "waiting_event": "A3_SECOND_CAPTURE_RESULT_PLUS_A5_FINAL_RESPONSE_SCHEMA_REBIND"
+    },
+    "A-5": {
+      "head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+      "mode": "EVENT_WAIT",
+      "waiting_event": "A3_SECOND_ONE_SHOT_CAPTURE_RESULT_POINTER"
+    },
+    "A-6": {
+      "head": "5cd6ead3671df508197cb6681571be7e681829e4",
+      "mode": "EVENT_WAIT",
+      "waiting_event": "A3_CAPTURE_RESULT_PLUS_A5_SCHEMA_PLUS_A4_PAGINATION_AUDIT"
+    },
+    "A-7": {
+      "head": "2711ee7a7611cdd4b4ebfdb29f337b02354da604",
+      "mode": "EVENT_WAIT",
+      "waiting_event": "A6_VERIFIED_ADAPTER_PACKAGE_FOR_FINAL_ACCEPTANCE"
+    }
+  },
+  "critical_path": [
+    "A3_ONE_SHOT_CAPTURE",
+    "A5_FINAL_RESPONSE_SCHEMA_REBIND",
+    "A4_PUBLIC_ROUTE_PAGINATION_AUDIT",
+    "A6_VERIFIED_ADAPTER_PACKAGE_REBUILD",
+    "A7_FINAL_ACCEPTANCE",
+    "A2_TO_B1_HANDOFF"
+  ],
+  "active_owner": "A-3",
+  "current_terminal": "A2_SECOND_ONE_SHOT_AUTHORIZATION_APPROVED_A3_EXECUTION_ACTIVE",
+  "request_execution_authorized": true,
+  "capture_execution_authorized": true,
+  "failed_capture_auto_retry": false,
+  "second_batch_execution_authorized": false,
+  "browser_automation_authorized": false,
+  "automated_pagination_authorized": false,
+  "credential_use_authorized": false,
+  "verified_adapter_package_ready": false,
+  "b1_handoff_ready": false,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

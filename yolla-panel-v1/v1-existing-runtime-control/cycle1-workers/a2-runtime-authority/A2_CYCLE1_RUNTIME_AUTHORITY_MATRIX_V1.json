@@ -1,0 +1,71 @@
+{
+  "schema_version": "A2_CYCLE1_RUNTIME_AUTHORITY_MATRIX_V1",
+  "role": "A-2_C_MODE_CYCLE1_RUNTIME_AUTHORITY_WORKER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "worker_pr": 18,
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "directive_id": "C1-A2-EXACT-RUNTIME-AUTHORITY-RESOLUTION",
+  "generated_at_kst": "2026-08-07T00:10:00+09:00",
+  "authority_precedence": [
+    "USER_LATEST_EXPLICIT_DIRECTIVE",
+    "CYCLE1_ASSIGNMENT_EXACT_COMMIT_AND_BLOB",
+    "ACTIVE_RUNTIME_SOURCE_AUTHORITY_POINTER_AND_READBACK_MANIFEST",
+    "VERSIONED_RUNTIME_POINTERS_AND_MANIFESTS",
+    "POST_DIRECTIVE_NEWER_VERSIONED_CANDIDATE_POINTER",
+    "UNEXECUTED_PATCH_CANDIDATE"
+  ],
+  "authority_inputs": [
+    {"id":"CYCLE1_ASSIGNMENT","path":"yolla-panel-v1/v1-existing-runtime-control/cycles/cycle1/C_MODE_CYCLE1_A2_A7_WORKER_ASSIGNMENT_V1.json","commit":"3a66f45dcbd81818013247b1e50efb55df27ec69","blob":"bb5d64ee5c0b672d972cc981f04bc3acfb9d6491","remote_readback":"PASS"},
+    {"id":"CYCLE1_ASSIGNMENT_POINTER","path":"yolla-panel-v1/v1-existing-runtime-control/LATEST_C_MODE_CYCLE1_A2_A7_WORKER_ASSIGNMENT_POINTER.json","commit":"008ee26b192f5c186bd064f8382831ddfdf4a288","blob":"1584c7b8100ba25c4f3a3e1e5794f7609921a3e8","remote_readback":"PASS"},
+    {"id":"ACTIVE_RUNTIME_AUTHORITY_POINTER","path":"yolla-panel-v1/v1-existing-runtime-control/LATEST_C_MODE_ACTIVE_RUNTIME_SOURCE_AUTHORITY_POINTER.json","control_head":"90403b02872f6449f17bd62929fc4e2357325329","blob":"6f07a8fb4d72e651e4f9e74e3c32d5bc1a2a1a1a","remote_readback":"PASS"},
+    {"id":"ACTIVE_RUNTIME_SOURCE_READBACK","path":"yolla-panel-v1/v1-existing-runtime-control/source-authority/YOLLA_ACTIVE_RUNTIME_SOURCE_READBACK_V1.json","commit":"14c8483ea143220e8eab0beea06556be7dbb6377","blob":"2e1b787ccc96a565c7a7e97f2346569077d9591a","remote_readback":"PASS"},
+    {"id":"V510240_SOURCE_MANIFEST","path":"yolla-panel-v1/v1-existing-runtime-control/runtime-v510240/V1_V510240_C_MODE_SOURCE_MANIFEST_V1.json","control_head":"90403b02872f6449f17bd62929fc4e2357325329","blob":"4d25baf82203e7e0bcaf5ee1cb8e2630950c32f8","remote_readback":"PASS"},
+    {"id":"V510241_POINTER","path":"yolla-panel-v1/v1-existing-runtime-control/LATEST_V1_V510241_C_COMMAND_UI_POINTER.json","control_head":"90403b02872f6449f17bd62929fc4e2357325329","blob":"1a6a2aa366a52562cde9a449ece9996e7457f782","remote_readback":"PASS"},
+    {"id":"V510241_SOURCE_MANIFEST","path":"yolla-panel-v1/v1-existing-runtime-control/runtime-v510241/V1_V510241_C_COMMAND_UI_SOURCE_MANIFEST_V1.json","control_head":"90403b02872f6449f17bd62929fc4e2357325329","blob":"611ab96ae78b0563de014d576aaa236c127e8b1f","remote_readback":"PASS"},
+    {"id":"PR73_BUTTON_POINTER","pr":73,"head":"e1d0353c3f993793787cb228efc3abef69957ad4","path":"yolla-panel-v1/v1-existing-runtime-control/LATEST_C_MODE_EXISTING_RUNTIME_BUTTON_POINTER.json","blob":"8aa49d263c3f0d5addf5659ab7d327c2f18beab4","remote_readback":"PASS"},
+    {"id":"V510243_POINTER_POST_DIRECTIVE_DELTA","pr":75,"head":"5f737c796500ade755532c6922f38448151f1d55","path":"yolla-panel-v1/v1-existing-runtime-control/LATEST_V1_V510243_C_ONLY_SOURCE_OPTIMIZATION_POINTER.json","blob":"901b83d606c77a0bfd15bc22411fef6f32d36078","remote_readback":"PASS"},
+    {"id":"V510243_ARTIFACT_MANIFEST","pr":75,"head":"5f737c796500ade755532c6922f38448151f1d55","path":"yolla-panel-v1/v1-existing-runtime-control/runtime-v510243-c-only/V1_V510243_C_ONLY_SOURCE_OPTIMIZATION_ARTIFACT_MANIFEST_V1.json","blob":"d2408cba56ddf92d99ddc2d16614cb80c4b33c56","remote_readback":"PASS"},
+    {"id":"V510243_BUILD_REPORT","pr":75,"head":"5f737c796500ade755532c6922f38448151f1d55","path":"yolla-panel-v1/v1-existing-runtime-control/runtime-v510243-c-only/V1_V510243_C_ONLY_SOURCE_OPTIMIZATION_BUILD_TEST_REPORT_V1.json","blob":"4b635b573070eec13b5cf403e3737c5ca7f01482","remote_readback":"PASS"}
+  ],
+  "runtimes": [
+    {
+      "version":"5.10.2.3.7","classification":"LAST_VERIFIED_ACTIVE_RUNTIME","target_pc_live_status":"LAST_VERIFIED_ACTIVE_BUT_CURRENT_PROCESS_IDENTITY_READBACK_PENDING","launcher_bat":"E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_3_7.bat","launcher_ps1":"E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_3_7.ps1","release_root":"E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\v5.10.2.3.7-dispatch-token-recovery",
+      "installer":{"file_name":"INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510237_DISPATCH_TOKEN_RECOVERY.bat","size_bytes":232504,"sha256":"fc23f2388e977e3d2e2a78ef15313528c120a3ec6d8d976616311cb3f9016155"},
+      "release_zip":{"size_bytes":167850,"sha256":"88abb91dd6053f367667fd2ed7b3984691960f3da556ea1bb1ae8a3a9aec9ad7","entry_count":73},
+      "actual_live_executable_path":"UNOBSERVED","actual_live_full_command_line":"UNOBSERVED","authority_rank":1,"eligible_as_active_claim":true,"eligible_as_next_install_target":false
+    },
+    {
+      "version":"5.10.2.4.0","classification":"BASE_CANDIDATE_NOT_ACTIVE","target_pc_live_status":"PENDING","launcher_bat":"E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_4_0.bat","release_root":"E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\v5.10.2.4.0-c-mode-repeat-command",
+      "source_bundle":{"file_name":"AI_YOLLA_V510240_C_MODE_REPEAT_COMMAND_SOURCE.zip","drive_file_id":"17bsngsdCP3YGGQa-0LrGK7PxK1xe33qL","size_bytes":79945,"sha256":"ed5ff7d376e0a0f481431037c01bd06728f35dfd55be80332a9e11a1a3070e7d"},
+      "installer":{"file_name":"INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510240_C_MODE_REPEAT_COMMAND.bat","drive_file_id":"14Zo9kuJDZXtLRs1HXYLbv-Zhk4q3LpRG","size_bytes":59212,"sha256":"782e959e1d829053cf6e30158c4d3c7cb6c0f2dd34c9610f1c50da4caae13d3e"},
+      "authority_rank":4,"eligible_as_active_claim":false,"eligible_as_next_install_target":false,"reason":"SUPERSEDED_AS_STANDALONE_TARGET_BY_5.10.2.4.1_AND_5.10.2.4.3"
+    },
+    {
+      "version":"5.10.2.4.1","classification":"VALIDATED_CHAIN_CANDIDATE_NOT_ACTIVE","base_version":"5.10.2.4.0","target_pc_live_status":"PENDING","launcher_bat":"E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_4_1.bat","release_root":"E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\v5.10.2.4.1-c-command-ui-hotfix",
+      "source_bundle":{"file_name":"AI_YOLLA_V510241_C_COMMAND_UI_HOTFIX_SOURCE.zip","drive_file_id":"1NAP-nH507TGrUzAvnHH8msHQnYqR26CT","size_bytes":139463,"sha256":"362ab825b2c476f32336b227fa82ef8d8089ace76649edc1e3b0e6da99737355"},
+      "installer":{"file_name":"INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510241_C_COMMAND_UI_HOTFIX.bat","drive_file_id":"1H9B3Sqy1Cl5BXbxvU-7JUz_Nup3Ir_Vw","size_bytes":59153,"sha256":"d8a2ef37272d5d5931af56e1785fa36517b5d66de87f1f04103e5703f763f6b0"},
+      "offline_validation":{"c_runtime_unit_assertions":59,"static_integration_assertions":86,"installer_package_assertions":69,"drive_byte_readback":"PASS"},
+      "authority_rank":3,"eligible_as_active_claim":false,"eligible_as_next_install_target":false,"reason":"SUPERSEDED_FOR_NEXT_INSTALL_BY_POST_DIRECTIVE_5.10.2.4.3_FULL_VERSIONED_CANDIDATE"
+    },
+    {
+      "version":"PR73_V1_V2","classification":"REJECTED_OR_UNEXECUTED_PATCH_CANDIDATE","pr":73,"head":"e1d0353c3f993793787cb228efc3abef69957ad4","baseline":"5.10.2.4.0","v1_acceptance":"FAIL",
+      "v2_package":{"file_name":"AI_YOLLA_C_MODE_GROUP_BUTTON_PATCH_V2.zip","size_bytes":23605,"sha256":"65d82251a5f7cb01bc0e34e32703d7a8d0820975d4bd011926e09767e05c33c3","entrypoint":"APPLY_C_MODE_GROUP_BUTTON_PATCH_V2.bat","rollback_entrypoint":"ROLLBACK_C_MODE_GROUP_BUTTON_PATCH_V2.bat"},
+      "target_pc_applied":false,"target_pc_live_pass":false,"authority_rank":5,"eligible_as_active_claim":false,"eligible_as_next_install_target":false,"reason":"V1_REJECTED_V2_PATCH_NOT_EXECUTED_AND_FULL_VERSIONED_5.10.2.4.3_EXISTS"
+    },
+    {
+      "version":"5.10.2.4.3","classification":"LATEST_EXACT_VERSIONED_INSTALL_AND_READBACK_CANDIDATE_NOT_ACTIVE","source_chain":["5.10.2.4.0-c-mode-repeat-command","5.10.2.4.1-c-command-ui-hotfix","5.10.2.4.3-c-only-source-optimized"],"pr":75,"head":"5f737c796500ade755532c6922f38448151f1d55","target_release":"E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\v5.10.2.4.3-c-only-source-optimized","launcher_bat":"E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_4_3.bat",
+      "package":{"file_name":"AI_YOLLA_V510243_C_ONLY_SOURCE_OPTIMIZATION_PACKAGE.zip","drive_file_id":"1UeD2949fXfQWPUFZoYevRr7LcMu1duCb","size_bytes":62866,"sha256":"85e4586b637a6a3030eb33c43c79ab4822a7a8a723af82787e8fd1c102715707","remote_readback":"PASS"},
+      "installer":{"file_name":"INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510243_C_ONLY_SOURCE_OPTIMIZATION.bat","drive_file_id":"18zTbJ2v3fQNMAuBkILbBGWuIsjS_HVXk","size_bytes":86244,"sha256":"65a147d5edd3060bcf9ffee86ff0a87fa09c874afcccc796d82d8a9bc1374b7c","remote_readback":"PASS"},
+      "offline_validation":{"total_assertion_events":177,"failure_count":0,"status":"PASS"},"target_pc_install":"PENDING","target_pc_live_pass":false,"authority_rank":2,"eligible_as_active_claim":false,"eligible_as_next_install_target":true
+    }
+  ],
+  "conflicts": [
+    {"conflict_id":"C01_ASSIGNMENT_CHAIN_VS_POST_DIRECTIVE_V510243","type":"POST_DIRECTIVE_NEWER_CANDIDATE","description":"Cycle 1 assignment named 5.10.2.4.0, 5.10.2.4.1 and PR73; PR75 5.10.2.4.3 was published later with exact immutable package and installer bytes.","resolution":"INCLUDE_AS_POST_DIRECTIVE_DELTA_AND_SELECT_AS_NEXT_INSTALL_READBACK_CANDIDATE","blocking":false},
+    {"conflict_id":"C02_PR73_PATCH_VS_VERSIONED_RELEASE","type":"CANDIDATE_PRECEDENCE","description":"PR73 V1 failed visual acceptance and V2 is an unexecuted patch against 5.10.2.4.0; PR75 provides a full versioned release candidate.","resolution":"PR73_NOT_SELECTED_PR75_PRECEDENCE","blocking":false},
+    {"conflict_id":"C03_ASSIGNMENT_COMMITS_NOT_CONTROL_REF_HEAD","type":"REF_PUBLICATION_DELTA","description":"Exact assignment commits and blobs read back successfully, while the current control branch ref observed at review was 90403b02872f6449f17bd62929fc4e2357325329.","resolution":"EXPLICIT_DIRECTIVE_COMMENT_AND_EXACT_COMMIT_BLOB_REMAIN_EXECUTION_AUTHORITY","blocking":false}
+  ],
+  "classification_result":{"active_runtime":"5.10.2.3.7","next_install_and_readback_candidate":"5.10.2.4.3","active_vs_candidate_classification":"EXACT","all_authority_pointers_read_back":"PASS","installer_launcher_release_paths":"RESOLVED","conflict_count":3,"unresolved_conflict_count":0,"false_target_pc_pass_count":0},
+  "boundaries":{"target_pc_applied":false,"target_pc_live_pass_claimed":false,"production":false,"ready":false,"merge":false},
+  "status":"PASS"
+}

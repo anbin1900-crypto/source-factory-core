@@ -1,0 +1,25 @@
+{
+  "schema_version":"LATEST_A2_SITE_ANALYZER_MISSION_CAPSULE_POINTER_V1",
+  "directive_id":"AI001-TO-A2-SITE-ANALYZER-MISSION-CAPSULE-AND-INTEGRATION-PREBUILD-V1-20260807-001",
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "role":"A-2_GENERIC_SITE_ANALYZER_INTEGRATION_OWNER",
+  "repository":"anbin1900-crypto/source-factory-core",
+  "worker_pr":18,
+  "branch":"integration/a2-generic-site-analyzer-adapter-factory-v1",
+  "source_commit":"72e8bac568bcf897f0ae269e15711a9807b6f64c",
+  "root":"yolla-panel-v1/a2-analyzer-adapter-factory/mission-capsule-prebuild",
+  "artifacts":{
+    "mission_capsule":{"path":"SITE_ANALYZER_MISSION_CAPSULE_V1.json","blob":"2c45d3f7dd038e2622b99bc0db125eae9fb21870"},
+    "component_graph":{"path":"SITE_ANALYZER_COMPONENT_GRAPH_V1.json","blob":"9e0eb6eb88ce70afbab454c8728ad6803a1b1d51"},
+    "bootstrap_plan":{"path":"SUCCESSOR_ONE_COMMAND_BOOTSTRAP_PLAN_V1.json","blob":"c5574f11f38958f70b833d4009a060e3f995a34e"},
+    "validation_receipt":{"path":"A2_SITE_ANALYZER_MISSION_CAPSULE_VALIDATION_RECEIPT_V1.json","blob":"a1d494e688ae33a474a89e85e5aebe5ca85520cb"}
+  },
+  "exact_component_heads":{"A-3":"3f317672d299ebafa46f268b8aad0760d819eccf","A-4":"cd5c7a17f2f1aae02c2fbe4d988dea00e9763061","A-5":"ea5c6321204e9d2577924c14e01d658ebf46a443","A-6":"6e8c05bfc78189d02b6c9ddf785d2c1b881f7265","A-7":"7718170f6c616a99c99c4d366601a8dd6bb2b731","B-1":"434f16240ace501d5884c0e7140ed8d38e3fde39","B-2":"e436e2de37b24327da03c31a2ff7c2d10c2635b5","B-3":"31162d67eb474e7958e9a5591d87dc26bf3c307a","B-4":"908abcaf0a9281c636a3845c071192fd5b6b106b","B-5":"fe25d960020abc03b1ad528bcf0da0034c4788db","B-6":"a120e0d66af2f7811275635f7d1525fc9e9fdc47"},
+  "architecture":"CHROME_CDP_PLAYWRIGHT_LOCAL_AGENT_SERVER_PANEL",
+  "browser_runtime_authority":"LOCAL_CHROME_OR_CHROMIUM_CDP_SESSION",
+  "electron_role":"OPTIONAL_UI_SHELL_ONLY_NOT_BROWSER_RUNTIME_AUTHORITY",
+  "validation":{"json_source_parse":"PASS_3_OF_3","dependency_reference_check":"PASS","static_smoke_1":"PASS","graph_acyclic":true,"id_regex_samples":"PASS_3_OF_3","interface_method_count":7},
+  "boundaries":{"tunnel_create":false,"successor_direct_call":false,"target_pc_execution":false,"new_browser_engine":false,"production":false,"ready":false,"merge":false},
+  "terminal":"A2_SITE_ANALYZER_MISSION_CAPSULE_AND_INTEGRATION_PREBUILD_READY",
+  "status":"TERMINAL_PASS_PREBUILD_ONLY"
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": "A2_WAVE6_3_SOURCE_TARGET_AUTHORITY_REQUEST_AND_WORKER_WAIT_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_3-SOURCE-TARGET-AUTHORITY-RESOLUTION-V1-20260805-001",
+  "updated_at_kst": "2026-08-05T16:52:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "a2_control_pr": 18,
+  "a0_control_pr": 17,
+  "source_target_authority_request": {
+    "request_id": "A2-TO-A0-A1-CONCRETE-SOURCE-TARGET-AUTHORITY-REQUEST-V1-20260805-001",
+    "comment_id": 5189150690,
+    "required_output": "CONCRETE_SOURCE_TARGET_AUTHORITY_V1.json",
+    "request_is_capture_authorization": false,
+    "status": "WAITING_UPPER_AUTHORITY_INPUT"
+  },
+  "a5_terminal": {
+    "pr": 24,
+    "remote_head": "47f41120b8724c063924b679c343a8ee570af244",
+    "pointer_blob": "0173635d3b8e111ad35665513248ca8860bfe3d9",
+    "terminal": "A5_CONCRETE_SOURCE_ORIGIN_MAPPING_EXACT_BLOCKER",
+    "terminal_comment": 5189062601,
+    "first_blocker": "NO_IMMUTABLE_AUTHORITY_PUBLISHES_ROUTABLE_CONCRETE_SOURCE_ORIGIN_AND_NONSECRET_REQUEST_VALUES_FOR_EP001_EP002_EP003_EP004_EP005_EP010_EP012",
+    "required_provider": "A2_OR_UPPER_SOURCE_TARGET_AUTHORITY",
+    "blocked_profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-012"],
+    "excluded_profiles": ["EP-011"]
+  },
+  "worker_states": {
+    "A-3": {
+      "pr": 22,
+      "head": "c0a75f7bfeb53aec2ffa561dfca3dd190ee47daa",
+      "terminal": "A3_ONE_SHOT_EXACT_RESPONSE_FIXTURE_CAPTURE_EXACT_BLOCKER",
+      "comment_id": 5189153438,
+      "no_pending_directive": true,
+      "waiting_event": "CONCRETE_SOURCE_TARGET_AUTHORITY_AND_NEW_EXPLICIT_AUTHORIZATION"
+    },
+    "A-4": {
+      "pr": 23,
+      "head": "d18192df1f672f7f1022eb428e521d720226a86b",
+      "terminal": "A4_NAVIGATION_PAGINATION_CONTRACT_READY",
+      "comment_id": 5189156366,
+      "no_pending_directive": true,
+      "waiting_event": "A5_FINAL_CONCRETE_EXECUTION_CONTRACT_FOR_PAGINATION_AUDIT"
+    },
+    "A-5": {
+      "pr": 24,
+      "head": "47f41120b8724c063924b679c343a8ee570af244",
+      "terminal": "A5_CONCRETE_SOURCE_ORIGIN_MAPPING_EXACT_BLOCKER",
+      "comment_id": 5189159176,
+      "no_pending_directive": true,
+      "waiting_event": "UPPER_CONCRETE_SOURCE_TARGET_AUTHORITY_POINTER"
+    },
+    "A-6": {
+      "pr": 25,
+      "head": "5cd6ead3671df508197cb6681571be7e681829e4",
+      "terminal": "A6_CORRECTED_AUTHORITY_REBUILD_TRIGGER_READY",
+      "comment_id": 5189161605,
+      "no_pending_directive": true,
+      "waiting_event": "A5_FINAL_AUTHORITY_A3_FIXTURE_RESULT_AND_A4_AUDIT_PASS"
+    },
+    "A-7": {
+      "pr": 26,
+      "head": "f4ca318a6335bc15970a8bff5c94f112d64807f4",
+      "terminal": "A7_FIXTURE_ACQUISITION_GOVERNANCE_READY_FOR_A2_AUTHORIZATION_REQUEST",
+      "comment_id": 5189164016,
+      "no_pending_directive": true,
+      "waiting_event": "A3_REAUTHORIZATION_PACKAGE_FOR_SECOND_GOVERNANCE_AUDIT"
+    }
+  },
+  "active_owner": "A2_OR_UPPER_SOURCE_TARGET_AUTHORITY",
+  "current_terminal": "A2_CAPTURE_INPUT_AUTHORITY_EXACT_BLOCKER",
+  "capture_execution_authorized": false,
+  "second_attempt_authorized": false,
+  "verified_adapter_package_ready": false,
+  "b1_handoff_ready": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

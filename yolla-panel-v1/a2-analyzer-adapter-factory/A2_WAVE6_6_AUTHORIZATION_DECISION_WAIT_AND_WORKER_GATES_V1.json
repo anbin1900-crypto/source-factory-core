@@ -1,0 +1,69 @@
+{
+  "schema_version": "A2_WAVE6_6_AUTHORIZATION_DECISION_WAIT_AND_WORKER_GATES_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_6-AUTHORIZATION-DECISION-WAIT-V1-20260805-001",
+  "updated_at_kst": "2026-08-05T22:45:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "a2_control_pr": 18,
+  "a0_control_pr": 17,
+  "authorization_request": {
+    "request_id": "A2-TO-A0-A1-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-CAPTURE-AUTHORIZATION-REQUEST-V1-20260805-001",
+    "request_comment": 5192321213,
+    "decision_reminder_comment": 5192575973,
+    "status": "AWAITING_EXPLICIT_DECISION",
+    "prior_authorization_reusable": false,
+    "new_authorization_granted": false,
+    "capture_execution_authorized": false,
+    "profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-012"],
+    "excluded_profiles": ["EP-011"]
+  },
+  "worker_states": {
+    "A-3": {
+      "pr": 22,
+      "head": "8e2c06d6e33ae23e0bf408cb5e2bd7513a72d7a9",
+      "terminal": "A3_PUBLIC_DOCUMENT_ROUTE_OPERATOR_PACKAGE_READY_FOR_GOVERNANCE",
+      "comment_id": 5192578859,
+      "mode": "AUTHORIZATION_DECISION_WAIT",
+      "no_pending_directive": true
+    },
+    "A-4": {
+      "pr": 23,
+      "head": "d18192df1f672f7f1022eb428e521d720226a86b",
+      "terminal": "A4_NAVIGATION_AUTHORITY_FROZEN_EVENT_WAIT",
+      "comment_id": 5192581420,
+      "mode": "EVENT_WAIT",
+      "no_pending_directive": true
+    },
+    "A-5": {
+      "pr": 24,
+      "head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+      "terminal": "A5_PUBLIC_DOCUMENT_ROUTE_REBIND_READY",
+      "comment_id": 5192584579,
+      "mode": "EVENT_WAIT",
+      "no_pending_directive": true
+    },
+    "A-6": {
+      "pr": 25,
+      "head": "5cd6ead3671df508197cb6681571be7e681829e4",
+      "terminal": "A6_CORRECTED_AUTHORITY_REBUILD_TRIGGER_READY",
+      "comment_id": 5192587661,
+      "mode": "EVENT_WAIT",
+      "no_pending_directive": true
+    },
+    "A-7": {
+      "pr": 26,
+      "head": "2711ee7a7611cdd4b4ebfdb29f337b02354da604",
+      "terminal": "A7_PUBLIC_ROUTE_GOVERNANCE_READY_FOR_A2_SECOND_AUTHORIZATION_REQUEST",
+      "comment_id": 5192591124,
+      "mode": "AUTHORIZATION_DECISION_WAIT",
+      "no_pending_directive": true
+    }
+  },
+  "active_owner": "A0_A1_AUTHORIZATION_DECISION",
+  "current_terminal": "A2_SECOND_EXPLICIT_AUTHORIZATION_REQUEST_PENDING_WORKERS_HELD",
+  "request_execution_authorized": false,
+  "capture_execution_authorized": false,
+  "second_attempt_authorized": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
