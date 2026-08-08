@@ -1,0 +1,33 @@
+{
+  "schema_version": "A5_CAPABILITY_AND_VALIDATION_MATRIX_V1",
+  "cycle_id": "V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "worker": "A-5",
+  "purpose": "Preserve per-site support and validation status for read/write/manage/edit/delete/end-posting capabilities without inferring unsupported behavior.",
+  "lanes": ["PUBLIC_READ","WRITE","MY_LISTING","EDIT"],
+  "capabilities": ["PUBLIC_READ","WRITE","MY_LISTING","EDIT","DELETE","END_POSTING"],
+  "support_states": ["OBSERVED_SUPPORTED","OBSERVED_UNSUPPORTED","WAITING_INPUT","UNKNOWN"],
+  "per_site_required_fields": ["site_id","site_origin","capabilities","source_semantics_preserved"],
+  "per_capability_required_fields": ["support","state","confidence","evidence_pointer"],
+  "validation_matrix": {
+    "PUBLIC_READ": ["request_evidence","response_evidence","entity_or_ui_evidence"],
+    "WRITE": ["form_field","validation_rule","request_binding","response_binding","ui_state_binding"],
+    "MY_LISTING": ["session_reference","listing_ownership_surface_evidence","request_response_evidence"],
+    "EDIT": ["session_reference","form_field","request_binding","response_binding","ui_state_binding"],
+    "DELETE": ["session_reference","explicit_delete_capability_evidence","request_response_evidence"],
+    "END_POSTING": ["session_reference","explicit_end_posting_capability_evidence","request_response_evidence"]
+  },
+  "fail_closed_policy": {
+    "unobserved_support": "UNKNOWN",
+    "missing_site_receipt": "WAITING_INPUT",
+    "missing_request_or_response": "WAITING_INPUT",
+    "missing_business_rule": "UNKNOWN",
+    "guess_target_values": false,
+    "promote_fixture_to_site_authority": false
+  },
+  "fixture_policy": "Fixture values validate contract mechanics only and never become live-site authority.",
+  "raw_secret_or_pii": false,
+  "final_write_or_edit_submit": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
