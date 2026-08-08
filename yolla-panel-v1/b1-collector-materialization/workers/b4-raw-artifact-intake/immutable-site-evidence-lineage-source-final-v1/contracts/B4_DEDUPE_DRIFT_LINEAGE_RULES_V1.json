@@ -1,0 +1,14 @@
+{
+  "schema_version": "B4_DEDUPE_DRIFT_LINEAGE_RULES_V1",
+  "dedupe_identity_fields": ["site_slot", "lane", "evidence_kind", "source_pointer", "source_sha256", "source_reference_time"],
+  "duplicate_identical": "SUPPRESS_NO_NEW_MATERIALIZATION",
+  "duplicate_collision": "REJECT_FAIL_CLOSED",
+  "lineage": "PREVIOUS_RECORD_HASH_CHAIN",
+  "drift_detection": "SAME_LOGICAL_SOURCE_WITH_DIFFERENT_SOURCE_SHA256",
+  "drift_write": "APPEND_DRIFT_DELTA_WITH_DRIFT_FROM_HASH",
+  "observation_time_semantics": "TIME_CAPTURE_OBSERVED",
+  "source_reference_time_semantics": "TIME_UPSTREAM_SOURCE_REFERENCES",
+  "source_mutation_allowed": false,
+  "source_field_loss_allowed": false,
+  "raw_secret_or_pii": false
+}

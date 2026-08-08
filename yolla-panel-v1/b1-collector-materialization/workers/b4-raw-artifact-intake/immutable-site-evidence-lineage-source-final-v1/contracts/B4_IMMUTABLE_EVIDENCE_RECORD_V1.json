@@ -1,0 +1,12 @@
+{
+  "schema_version": "B4_IMMUTABLE_EVIDENCE_RECORD_V1",
+  "evidence_kinds": ["site", "page", "action", "request", "response", "entity", "form", "adapter", "receipt"],
+  "required_fields": ["site_slot", "lane", "evidence_kind", "status", "source_pointer", "source_sha256", "dedupe_key", "observation_time", "source_reference_time", "capture_method", "redaction_state", "confidence", "source_fields", "previous_record_hash", "record_hash", "delta_kind", "drift_from_hash"],
+  "time_fields_are_distinct": ["observation_time", "source_reference_time"],
+  "capture_methods": ["FIXTURE", "BROWSER_DOM", "CDP_NETWORK", "HTTP_RESPONSE", "DERIVED_REFERENCE", "SUCCESSOR_RECEIPT", "UNKNOWN"],
+  "redaction_states": ["NONE", "REDACTED_REFERENCE_ONLY", "REJECTED_SECRET_OR_PII"],
+  "confidence": {"minimum": 0.0, "maximum": 1.0, "nullable_when_unknown": true},
+  "immutability": "APPEND_ONLY_NO_OVERWRITE",
+  "target_value_guessing": false,
+  "raw_secret_or_pii": false
+}

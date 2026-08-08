@@ -1,0 +1,19 @@
+{
+  "schema_version": "B4_LINEAGE_FIXTURE_V1",
+  "site_slot": "SITE_SLOT_01",
+  "lane": "DATA",
+  "observation_time": "2026-08-08T13:30:00+09:00",
+  "source_reference_time": "2026-08-08T13:29:00+09:00",
+  "source_pointer_prefix": "fixture://site-slot-01/data",
+  "records": [
+    {"evidence_kind":"site","source_fields":{"host":"fixture.invalid","status":"WAITING_INPUT_AUTHORITY_NAME"}},
+    {"evidence_kind":"page","source_fields":{"page_role":"LIST","url_ref":"/list?page=1"}},
+    {"evidence_kind":"action","source_fields":{"action_role":"OPEN_LIST","locator_ref":"main#records"}},
+    {"evidence_kind":"request","source_fields":{"method":"GET","url_template":"/api/items?page={page}"}},
+    {"evidence_kind":"response","source_fields":{"status":200,"content_type":"application/json","record_count":5}},
+    {"evidence_kind":"entity","source_fields":{"entity_type":"listing","id_field":"record_id"}},
+    {"evidence_kind":"form","source_fields":{"form_role":"SEARCH","field_names":["query"]}},
+    {"evidence_kind":"adapter","source_fields":{"adapter_status":"WAITING_INPUT","adapter_pointer":"UNKNOWN"}},
+    {"evidence_kind":"receipt","source_fields":{"receipt_status":"WAITING_INPUT","command_id":"UNKNOWN"}}
+  ]
+}

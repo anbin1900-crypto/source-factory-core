@@ -1,38 +1,41 @@
 {
-  "schema_version": "LATEST_B4_REPORT_POINTER_V11",
+  "schema_version": "LATEST_B4_REPORT_POINTER_V12",
   "worker": "B-4",
   "branch": "worker/b4-raw-artifact-source-envelope-v1",
   "active_directive": {
-    "directive_id": "A0-TO-B4-REAL-SITE-IMMUTABLE-EVIDENCE-LINEAGE-V7-20260808-001",
-    "directive_comment_id": 5220807009,
-    "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
-    "status": "TERMINAL_READY_WAITING_INPUT",
-    "terminal_result": "B4_REAL_SITE_IMMUTABLE_EVIDENCE_LINEAGE_READY",
-    "root": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/real-site-immutable-evidence-lineage-v7/",
-    "latest_pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/real-site-immutable-evidence-lineage-v7/LATEST_B4_REAL_SITE_IMMUTABLE_EVIDENCE_LINEAGE_POINTER.json",
-    "final_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/real-site-immutable-evidence-lineage-v7/reports/B4_REAL_SITE_IMMUTABLE_EVIDENCE_LINEAGE_FINAL_REPORT_V1.json",
-    "test_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/real-site-immutable-evidence-lineage-v7/reports/B4_REAL_SITE_IMMUTABLE_EVIDENCE_LINEAGE_TEST_REPORT_V1.json",
-    "single_entrypoint_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/real-site-immutable-evidence-lineage-v7/run_real_site_lineage_smoke.py",
-    "live_binding_status": {
-      "actual_site_receipt_bound_count": 0,
-      "status": "WAITING_EXACT_COMMAND_RECEIPT",
-      "live_pass_claimed": false
-    },
+    "directive_id": "V2-TO-B4-IMMUTABLE-SITE-EVIDENCE-LINEAGE-SOURCE-FINAL-V1-20260808-001",
+    "directive_comment_id": 5224506003,
+    "cycle_id": "V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+    "status": "TERMINAL_PASS",
+    "terminal_contract": "B4_IMMUTABLE_EVIDENCE_LINEAGE_SOURCE_PASS_OR_EXACT_BLOCKER",
+    "terminal_result": "B4_IMMUTABLE_EVIDENCE_LINEAGE_SOURCE_PASS",
+    "root": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/immutable-site-evidence-lineage-source-final-v1/",
+    "latest_pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/immutable-site-evidence-lineage-source-final-v1/LATEST_B4_IMMUTABLE_EVIDENCE_LINEAGE_SOURCE_POINTER.json",
+    "final_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/immutable-site-evidence-lineage-source-final-v1/reports/B4_IMMUTABLE_EVIDENCE_LINEAGE_SOURCE_FINAL_REPORT_V1.json",
+    "test_report_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/immutable-site-evidence-lineage-source-final-v1/reports/B4_IMMUTABLE_EVIDENCE_LINEAGE_SOURCE_TEST_REPORT_V1.json",
     "validation": {
       "schema_parse": "PASS_3_OF_3",
-      "python_compile": "PASS_2_OF_2",
-      "unit_tests": "PASS_7_OF_7",
-      "fixture_contract_smoke": "PASS_1_OF_1",
-      "a4_actual_chrome_candidate": "PASS_CONSUMED_NOT_LIVE_BOUND"
+      "python_compile": "PASS_3_OF_3",
+      "unit_tests": "PASS_8_OF_8",
+      "fixture_lineage_validation": "PASS_1_OF_1",
+      "deterministic_replay": "PASS_2_OF_2",
+      "ten_site_manifest": "PASS_10_SITES_X_5_LANES",
+      "source_mutation_count": 0,
+      "source_field_loss_count": 0,
+      "raw_artifact_overwrite": false
     }
   },
   "previous_terminal": {
-    "directive_id": "A0-TO-B4-COMPOSITE-EVIDENCE-LINEAGE-INDEX-V6-20260808-001",
-    "terminal_result": "B4_COMPOSITE_EVIDENCE_LINEAGE_INDEX_READY",
-    "latest_pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/composite-evidence-lineage-index-v6/LATEST_B4_COMPOSITE_EVIDENCE_LINEAGE_INDEX_POINTER.json"
+    "directive_id": "A0-TO-B4-REAL-SITE-IMMUTABLE-EVIDENCE-LINEAGE-V7-20260808-001",
+    "terminal_result": "B4_REAL_SITE_IMMUTABLE_EVIDENCE_LINEAGE_READY",
+    "latest_pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/real-site-immutable-evidence-lineage-v7/LATEST_B4_REAL_SITE_IMMUTABLE_EVIDENCE_LINEAGE_POINTER.json"
   },
+  "after_this_terminal_owner": "V-2",
+  "additional_worker_cycle_planned": false,
+  "d5_scope_modified": false,
   "production": false,
   "ready": false,
   "merge": false,
+  "self_merge": false,
   "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
 }
