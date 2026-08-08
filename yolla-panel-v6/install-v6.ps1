@@ -8,7 +8,7 @@ $installLog=Join-Path $paths.Logs 'install-v6.log'
 $installReceipt=Join-Path $paths.Receipts 'INSTALL_RECEIPT_V6.json'
 function Log([string]$message){$line='['+(Get-Date -Format 'yyyy-MM-dd HH:mm:ss.fff')+'] '+$message;Add-Content -LiteralPath $installLog -Value $line -Encoding UTF8;Write-Output $line}
 function Receipt([string]$status,$extra){
-  $value=[ordered]@{schema_version='YOLLA_PANEL_V6_INSTALL_RECEIPT_V1';status=$status;root=$paths.Root;release=$paths.Release;state=$paths.State;profile=$paths.Profile;electron=$paths.Electron;legacy_runtime_modified=false;legacy_state_modified=false;legacy_queue_reissued=false;production=false;ready=false;merge=false;observed_at=(Get-Date).ToString('o')}
+  $value=[ordered]@{schema_version='YOLLA_PANEL_V6_INSTALL_RECEIPT_V1';status=$status;root=$paths.Root;release=$paths.Release;state=$paths.State;profile=$paths.Profile;electron=$paths.Electron;legacy_runtime_modified=$false;legacy_state_modified=$false;legacy_queue_reissued=$false;production=$false;ready=$false;merge=$false;observed_at=(Get-Date).ToString('o')}
   foreach($key in $extra.Keys){$value[$key]=$extra[$key]}
   Write-YollaV6JsonAtomic -Path $installReceipt -Value $value
 }
@@ -109,10 +109,10 @@ try{
     if($env:YOLLA_V6_RUNTIME_API_KEY){& (Join-Path $paths.Root 'RUN_YOLLA_V6_CONTROL.ps1')}else{Log 'CONTROL_NOT_STARTED_API_KEY_REQUIRED'}
     & (Join-Path $paths.Root 'RUN_AI_YOLLA_V6.ps1')
   }
-  Receipt 'PASS_SOURCE_AND_SMOKE' @{snapshot_root=$snapshot;import_state_path=$importState;scheduled_tasks=$taskResults;control_started=([bool]$env:YOLLA_V6_RUNTIME_API_KEY);terminal='YOLLA_PANEL_V6_INDEPENDENT_SOURCE_SMOKE_PASS';target_pc_live_acceptance=false}
+  Receipt 'PASS_SOURCE_AND_SMOKE' @{snapshot_root=$snapshot;import_state_path=$importState;scheduled_tasks=$taskResults;control_started=([bool]$env:YOLLA_V6_RUNTIME_API_KEY);terminal='YOLLA_PANEL_V6_INDEPENDENT_SOURCE_SMOKE_PASS';target_pc_live_acceptance=$false}
   Log 'INSTALL_V6_PASS_SOURCE_AND_SMOKE'
 }catch{
   Log ('INSTALL_V6_FAILED='+$_.Exception.Message)
-  Receipt 'FAIL_EXISTING_SYSTEMS_PRESERVED' @{error=$_.Exception.Message;exception=$_.Exception.ToString();target_pc_live_acceptance=false}
+  Receipt 'FAIL_EXISTING_SYSTEMS_PRESERVED' @{error=$_.Exception.Message;exception=$_.Exception.ToString();target_pc_live_acceptance=$false}
   throw
 }

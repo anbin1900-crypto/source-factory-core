@@ -16,6 +16,6 @@ $environment=@{
 $psi=New-YollaV6ProcessStartInfo -FileName $paths.Electron -WorkingDirectory $paths.Control -Arguments ('"{0}"' -f $server) -EnvironmentVariables $environment
 $psi.CreateNoWindow=$true
 $process=[System.Diagnostics.Process]::Start($psi)
-$receipt=[ordered]@{schema_version='YOLLA_PANEL_V6_CONTROL_START_RECEIPT_V1';status='STARTED';pid=$process.Id;endpoint='http://127.0.0.1:8610/mcp';api_key_persisted_to_file=false;legacy_write_count=0;started_at=(Get-Date).ToString('o')}
+$receipt=[ordered]@{schema_version='YOLLA_PANEL_V6_CONTROL_START_RECEIPT_V1';status='STARTED';pid=$process.Id;endpoint='http://127.0.0.1:8610/mcp';api_key_persisted_to_file=$false;legacy_write_count=0;started_at=(Get-Date).ToString('o')}
 Write-YollaV6JsonAtomic -Path (Join-Path $paths.Receipts 'LATEST_CONTROL_START_RECEIPT.json') -Value $receipt
 Write-Output ('YOLLA_V6_CONTROL_STARTED PID='+$process.Id)

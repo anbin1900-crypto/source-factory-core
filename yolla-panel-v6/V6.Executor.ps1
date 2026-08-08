@@ -21,7 +21,7 @@ function Write-ExecutorReceipt($command,[string]$status,$result,[string]$error='
     result=$result
     error=$error
     legacy_write_count=0
-    arbitrary_shell_executed=false
+    arbitrary_shell_executed=$false
     completed_at=(Get-Date).ToString('o')
   }
   $target=Join-Path $paths.ExecutorReceipts ($safeRequestId+'.json')
