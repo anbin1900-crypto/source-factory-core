@@ -1,0 +1,15 @@
+{
+  "schema_version":"A7_FINAL_BATCH_MINIMAL_RECOVERY_FIXTURE_V1",
+  "workers":{
+    "A-2":{"directive":5224504704,"state":"WAITING_INPUT"},"A-3":{"directive":5224504749,"state":"WAITING_INPUT"},"A-4":{"directive":5224505696,"state":"WAITING_INPUT"},"A-5":{"directive":5224505743,"state":"WAITING_INPUT"},"A-6":{"directive":5224505792,"state":"WAITING_INPUT"},"A-7":{"directive":5224505876,"state":"IN_PROGRESS_OWNERSHIP_TRANSFER"},
+    "B-1":{"directive":5224505836,"state":"WAITING_INPUT"},"B-2":{"directive":5224505964,"state":"WAITING_INPUT"},"B-3":{"directive":5224505915,"state":"WAITING_INPUT"},"B-4":{"directive":5224506003,"state":"WAITING_INPUT"},"B-5":{"directive":5224506049,"state":"WAITING_INPUT"},"B-6":{"directive":5224506097,"state":"WAITING_INPUT"}
+  },
+  "a2_completed_rerun":false,
+  "b6_completed_rerun":false,
+  "first_incomplete_step":"PUBLISH_EXACT_TARGET_RUNTIME_BINDING",
+  "resume_entry":"A2_RS003_RESOLVE_TARGET_PC_RUNTIME_INPUTS",
+  "owner_after_terminal":"V-2",
+  "required_runtime_field_count":6,
+  "full_history_preload":false,
+  "target_value_guessing":false
+}
