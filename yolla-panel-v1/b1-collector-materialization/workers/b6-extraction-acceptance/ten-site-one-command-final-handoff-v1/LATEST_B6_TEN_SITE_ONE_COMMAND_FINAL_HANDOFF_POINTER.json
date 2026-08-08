@@ -1,0 +1,64 @@
+{
+  "schema_version": "LATEST_B6_TEN_SITE_ONE_COMMAND_FINAL_HANDOFF_POINTER_V1",
+  "created_at_kst": "2026-08-08T14:36:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pr": 42,
+  "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+  "root": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1",
+  "directive_comment_id": 5224506097,
+  "parent": {
+    "head": "dde3ff79eafeede994e672c21648155b998c9a1a",
+    "pointer_blob": "8e523ca375cc726e7d6f27e35f30553ab87df555",
+    "completed_handoff_reexecuted": false
+  },
+  "objects": {
+    "handoff": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/B6_TEN_SITE_BATCH_HANDOFF_V1.json",
+      "blob": "ee093219ee3cf9e3d854d73d9e18d49801635934"
+    },
+    "scheduler": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/B6_TWO_BROWSER_FIVE_BATCH_SCHEDULER_V1.json",
+      "blob": "99c4dcd66e4dd89be34e0e7fd304c0e77743bd38"
+    },
+    "activation_resume": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/B6_SITE_ACTIVATION_AND_RESUME_CONTRACT_V1.json",
+      "blob": "7bb4316642fa9757a81b535a0aafb6c53fa9b694"
+    },
+    "validation": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/B6_FINAL_HANDOFF_VALIDATION_RECEIPT_V1.json",
+      "blob": "5efe88395500f441eb3164e918d670081a413fea"
+    },
+    "b3_revalidation": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/V2_B3_REMOTE_EXACT_BYTE_REVALIDATION_RECEIPT_V1.json",
+      "blob": "f6f356d75b1a3fea82d63d970c55716c8d88316a"
+    },
+    "integration": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/V2_AB_FINAL_SOURCE_INTEGRATION_POINTER_V1.json",
+      "blob": "1d77f20e49206f0b8a3be562c0a037c116804d84"
+    },
+    "final_report": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/B6_TEN_SITE_ONE_COMMAND_FINAL_HANDOFF_FINAL_REPORT_V1.json",
+      "blob": "9ccb732f94373b989bbd599c1bcdd31baadff2f1"
+    }
+  },
+  "validation": {
+    "local": "PASS_38_OF_38",
+    "remote_base_readback": "PASS_7_OF_7",
+    "b3": "PASS_17_OF_17_BLOBS_24_OF_24_TESTS"
+  },
+  "runtime": {
+    "bound": "2_OF_6",
+    "waiting_input": "4_OF_6",
+    "actual_live_site_count": 0,
+    "actual_receipt_count": 0
+  },
+  "first_incomplete_step": "BIND_EXACT_SITE_ID_TARGET_URL_AND_PAGE_BINDING",
+  "resume_entry": "A2_RS003_RESOLVE_TARGET_PC_RUNTIME_INPUTS",
+  "terminal": "B6_TEN_SITE_ONE_COMMAND_FINAL_HANDOFF_PASS",
+  "live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}
