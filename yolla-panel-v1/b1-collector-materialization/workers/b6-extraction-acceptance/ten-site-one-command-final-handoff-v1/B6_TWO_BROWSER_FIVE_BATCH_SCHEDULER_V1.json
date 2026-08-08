@@ -1,0 +1,40 @@
+{
+  "schema_version": "B6_TWO_BROWSER_FIVE_BATCH_SCHEDULER_V1",
+  "browser_concurrency": 2,
+  "batch_count": 5,
+  "site_count": 10,
+  "dispatch_order": ["BATCH_01", "BATCH_02", "BATCH_03", "BATCH_04", "BATCH_05"],
+  "batches": [
+    {"batch_id": "BATCH_01", "slots": ["SITE_SLOT_01", "SITE_SLOT_02"]},
+    {"batch_id": "BATCH_02", "slots": ["SITE_SLOT_03", "SITE_SLOT_04"]},
+    {"batch_id": "BATCH_03", "slots": ["SITE_SLOT_05", "SITE_SLOT_06"]},
+    {"batch_id": "BATCH_04", "slots": ["SITE_SLOT_07", "SITE_SLOT_08"]},
+    {"batch_id": "BATCH_05", "slots": ["SITE_SLOT_09", "SITE_SLOT_10"]}
+  ],
+  "eligibility": {
+    "dispatch_states": ["READY", "PARTIAL_RESUME"],
+    "skip_states": ["WAITING_INPUT", "COMPLETE", "DISABLED"],
+    "batch_can_run_with_one_ready_site": true,
+    "waiting_site_blocks_peer": false
+  },
+  "locking": {
+    "lock_key": "site_slot+lane",
+    "max_active_site_locks": 2,
+    "same_site_parallel_lanes": false,
+    "duplicate_execution_suppression": true
+  },
+  "resume": {
+    "checkpoint_key": "site_slot+lane+attempt_id",
+    "strategy": "FIRST_INCOMPLETE_CHECKPOINT_ONLY",
+    "successful_site_reexecution": false,
+    "successful_lane_reexecution": false,
+    "partial_batch_resume": true
+  },
+  "current_state": {
+    "actual_ready_sites": 0,
+    "waiting_sites": 10,
+    "actual_dispatched_sites": 0,
+    "actual_receipt_count": 0,
+    "live_pass_claimed": false
+  }
+}
