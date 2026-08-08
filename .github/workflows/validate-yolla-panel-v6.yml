@@ -60,6 +60,12 @@ jobs:
         working-directory: yolla-panel-v6
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          sparse-checkout: |
+            yolla-panel-v6
+          sparse-checkout-cone-mode: false
       - name: Parse V6 PowerShell
         shell: powershell
         run: |
