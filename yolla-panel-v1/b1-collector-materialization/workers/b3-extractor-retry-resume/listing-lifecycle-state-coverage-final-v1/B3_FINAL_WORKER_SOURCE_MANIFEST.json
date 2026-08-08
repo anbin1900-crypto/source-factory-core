@@ -1,0 +1,30 @@
+{
+  "schema_version":"B3_LISTING_LIFECYCLE_FINAL_WORKER_SOURCE_MANIFEST_V1",
+  "cycle_id":"V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "assignment_comment_id":5224505915,
+  "implementation_commit":"daeb5afa3e995c1dfb246b1d4cce479ef4c9d4d6",
+  "files":[
+    {"path":"B3_LISTING_LIFECYCLE_STATE_MACHINE_V1.json","blob":"7cf965a93c2d36cb28c351bb382a7eefb73d752d"},
+    {"path":"B3_ACTION_STATE_COVERAGE_MATRIX_V1.json","blob":"a530aa31662d853369bec39fb7ca24c7c319620d"},
+    {"path":"B3_OWNERSHIP_AND_AUTHORIZATION_BOUNDARY_V1.json","blob":"aa87fdc0bb3496159a9211ac9a6948e6c38cc597"},
+    {"path":"B3_STATE_GAP_VALIDATION_RECEIPT_V1.json","blob":"72005527e38ba0236347f188fcbf3efc3469e2df"},
+    {"path":"B3_FINAL_WORKER_TEST_RESULTS.json","blob":"b8625822f349a29268841033ca6063a4f055cc66"},
+    {"path":"src/listing_lifecycle_state_coverage_v1.py","blob":"7f11baeeb3d4d578123b233210006c7e13840ff4"},
+    {"path":"tests/test_listing_lifecycle_state_coverage_v1.py","blob":"d46c1fa723c1c5628541f4d00d6643a3251bf193"},
+    {"path":"fixtures/listing_lifecycle_fixture_v1.json","blob":"1aef3a5f9a00160d969901dbe449f49e61054e5e"},
+    {"path":"tools/run_listing_lifecycle_fixture_v1.py","blob":"37946307885159b3c2519ad4e0a9203cc2cb2cbb"},
+    {"path":"tools/run_listing_lifecycle_fixture_v1.cmd","blob":"8e73a3e6bb62b8421f34c85be7095a038a565454"},
+    {"path":"generated/B3_LISTING_LIFECYCLE_FIXTURE_REPLAY_RECEIPT_V1.json","blob":"2c040b2ae0b7c829e4d46953ab613fc6d120d0a2"},
+    {"path":"generated/B3_LISTING_LIFECYCLE_REPLAY_STATE_V1.json","blob":"7541c2403d6cb56222051c42ca6fa0c50f9d9e05"}
+  ],
+  "pre_final_remote_readback":"PASS_12_OF_12",
+  "local_validation":{"source_parse":"PASS","python_compile":"PASS_EXIT_0","unit_tests":"PASS_24_OF_24","fixture_replay":"PASS"},
+  "remote_exact_byte_execution_reverify":{"status":"BLOCKED_EXTERNAL_ENVIRONMENT","signature":"curl_error_6_COULD_NOT_RESOLVE_raw.githubusercontent.com","remote_execution_pass_claimed":false},
+  "target_value_guessing":false,
+  "raw_secret_or_pii":false,
+  "final_write_or_edit_submit":false,
+  "production":false,
+  "ready":false,
+  "merge":false,
+  "self_merge":false
+}
