@@ -1,0 +1,87 @@
+{
+  "schema_version": "YOLLA_PANEL_V6_COMMANDER_WORKER_MENU_MODULE_CONTRACT_V1",
+  "module_id": "commander-worker-menu",
+  "owner": "B-1",
+  "owned_root": "yolla-panel-v6/modules/commander-worker-menu/**",
+  "purpose": "Let B-1 modify Commander/Worker menu behavior and presentation without editing or relearning the V6 shell or Site Analyzer module.",
+  "host_interface": {
+    "provider_entrypoint": "provider.cjs",
+    "required_exports": [
+      "getManifest",
+      "getViewModel",
+      "handleAction",
+      "getStatus"
+    ],
+    "mount_slots": [
+      "CONTEXT_TOP_ACTIONS",
+      "CONTEXT_SIDEBAR",
+      "CONTEXT_DRAWER",
+      "CONTEXT_STATUS"
+    ],
+    "ipc_namespace": "v6:module:commander-worker-menu:*",
+    "state_namespace": "modules.commander_worker_menu"
+  },
+  "inputs": [
+    "workspace_groups",
+    "workspace_roles",
+    "selected_group_id",
+    "selected_role_id",
+    "role_status",
+    "command_and_dispatch_summary"
+  ],
+  "outputs": [
+    "COMMANDER_WORKER_MENU_VIEW_MODEL_V1",
+    "COMMANDER_WORKER_MENU_ACTION_V1",
+    "COMMANDER_WORKER_MENU_STATUS_V1"
+  ],
+  "allowed_host_actions": [
+    "SELECT_GROUP",
+    "SELECT_ROLE",
+    "ADD_GROUP",
+    "UPDATE_GROUP",
+    "DELETE_GROUP",
+    "ADD_ROLE",
+    "UPDATE_ROLE",
+    "DELETE_ROLE",
+    "ASSIGN_CURRENT_WORKER",
+    "OPEN_COMMANDS"
+  ],
+  "state_rules": {
+    "host_state_store_adapter_only": true,
+    "direct_workspace_state_file_write": false,
+    "cross_module_private_state_read": false,
+    "role_and_group_validation_required": true
+  },
+  "change_rules": {
+    "b1_may_modify": [
+      "owned_root",
+      "menu_view_model",
+      "declared_menu_actions",
+      "menu_status_contract"
+    ],
+    "b1_may_not_modify": [
+      "runtime/main.js",
+      "runtime/renderer.js",
+      "runtime/index.html",
+      "site-analyzer owned root",
+      "session-restore owned root"
+    ],
+    "shell_change_request_required_for": [
+      "new_mount_slot",
+      "new_host_action",
+      "breaking_contract"
+    ]
+  },
+  "acceptance": [
+    "B-1 can change labels, ordering, cards and declared actions inside the owned root only.",
+    "Group and role mutations pass through the host state-store adapter.",
+    "Site Analyzer provider code is not imported or modified.",
+    "A menu module failure leaves the panel shell and Analyzer module recoverable.",
+    "No direct V5 or Minimal state write is possible."
+  ],
+  "implementation_status": "CONTRACT_READY_PROVIDER_PENDING",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "observed_at": "2026-08-08T17:59:57+09:00"
+}
