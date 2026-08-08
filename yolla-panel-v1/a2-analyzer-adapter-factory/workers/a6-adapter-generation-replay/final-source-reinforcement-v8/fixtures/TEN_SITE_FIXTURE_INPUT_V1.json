@@ -1,0 +1,21 @@
+{
+  "schema_version":"TEN_SITE_FIXTURE_INPUT_V1",
+  "authority_note":"No exact ten external target site names/URLs were supplied in the directive; target values remain WAITING_INPUT and are not guessed.",
+  "contracts":{
+    "A3":{"head":"1c17ca6cfb64ed0268a6ab81a08ac29881b4fa1b","actual_chrome_receipt_blob":"467d8df95d54a54e67a52f5bb2c8e627984f0952","status":"REFERENCE_AVAILABLE"},
+    "A4":{"head":"143f9f68f261fd7f4e5484ffdd474925c84bfa24","binding_blob":"89801bae1967b3908d7d64bbd2c9366c1fc3e122","status":"OBSERVED_CONTRACT_AVAILABLE"},
+    "A5":{"head":"2580c345b449c2aedbf45909d30aa3a80498a579","handoff_blob":"e5ba16fdf03db99d9893f5413cead2cee8e64501","status":"CONTRACT_AVAILABLE"}
+  },
+  "site_slots":[
+    {"site_slot_id":"SITE-01","fixture_mode":"API","target_status":"WAITING_INPUT"},
+    {"site_slot_id":"SITE-02","fixture_mode":"DOM","target_status":"WAITING_INPUT"},
+    {"site_slot_id":"SITE-03","fixture_mode":"HYBRID","target_status":"WAITING_INPUT"},
+    {"site_slot_id":"SITE-04","fixture_mode":"API","target_status":"WAITING_INPUT"},
+    {"site_slot_id":"SITE-05","fixture_mode":"DOM","target_status":"WAITING_INPUT"},
+    {"site_slot_id":"SITE-06","fixture_mode":"HYBRID","target_status":"WAITING_INPUT"},
+    {"site_slot_id":"SITE-07","fixture_mode":"API","target_status":"WAITING_INPUT"},
+    {"site_slot_id":"SITE-08","fixture_mode":"DOM","target_status":"WAITING_INPUT"},
+    {"site_slot_id":"SITE-09","fixture_mode":"HYBRID","target_status":"WAITING_INPUT"},
+    {"site_slot_id":"SITE-10","fixture_mode":"HYBRID","target_status":"WAITING_INPUT"}
+  ]
+}

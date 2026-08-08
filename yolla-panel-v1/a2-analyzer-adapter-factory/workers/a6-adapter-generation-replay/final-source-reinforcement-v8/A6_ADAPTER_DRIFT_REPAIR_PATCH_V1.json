@@ -1,0 +1,8 @@
+{
+  "schema_version":"A6_ADAPTER_DRIFT_REPAIR_PATCH_V1",
+  "purpose":"Partial adapter repair without full regeneration",
+  "required_fields":["patch_id","site_slot_id","operations","evidence_status"],
+  "operation_kinds":["locator.replace","schema.path.replace","pagination.replace","retry.policy.replace"],
+  "provenance_rules":{"OBSERVED":"may only be preserved from exact upstream evidence","FIXTURE_ONLY":"never promoted to OBSERVED","WAITING_INPUT":"never guessed","UNKNOWN":"fail closed"},
+  "full_regeneration_default":false
+}
