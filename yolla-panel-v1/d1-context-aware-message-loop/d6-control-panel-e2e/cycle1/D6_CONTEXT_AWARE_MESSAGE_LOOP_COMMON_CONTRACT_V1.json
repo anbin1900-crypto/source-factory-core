@@ -1,0 +1,136 @@
+{
+  "schema_version": "D6_CONTEXT_AWARE_MESSAGE_LOOP_COMMON_CONTRACT_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001",
+  "role": "D-6_AUTOMATION_CONTROL_PANEL_AND_E2E_OWNER",
+  "new_system_build": false,
+  "existing_asset_reuse_required": true,
+  "one_owner_end_to_end": true,
+  "mid_process_approval_gate": false,
+  "reused_assets": {
+    "safe_panel": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 2,
+      "head": "15fcc6e252b064a22fb5b5a9288810093dcec075",
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10/safe_panel_renderer.js",
+      "blob": "8e9b67efa92b0bd5e1ccecd006ff12469361023f"
+    },
+    "context_identity": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 2,
+      "head": "15fcc6e252b064a22fb5b5a9288810093dcec075",
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/src/shared/stage4/projectPanelIdentityHelper.js",
+      "blob": "f579353c5c882d159b9415dce9239700a43d55f7"
+    },
+    "prompt_sender": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 2,
+      "head": "15fcc6e252b064a22fb5b5a9288810093dcec075",
+      "path": "releases/SF_REUSABLE_CORE_20260801_175708/src/shared/stage4/sequentialPromptSender.js",
+      "blob": "4001772fa2b2475171cd8595d5294cbcebe8cfde"
+    },
+    "worker_cycle_viewmodel": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 38,
+      "head": "8f2fcefaf02d417d39981555b5ff755f7b18e6e1",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/site-analyzer-worker-state-cycle-viewmodel-v3/WORKER_STATE_PANEL_VIEWMODEL_V1.mjs",
+      "blob": "80e8d4a391fb0c81addabf5f49a91573cc48ce36"
+    },
+    "activity_monitor": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 17,
+      "head": "58a1e60236a5f4be8b30f215ba5b6e119493ce31",
+      "path": "yolla-panel-v1/a0-successor-control/automation-v2/runtime-v5121-operation-control-center/activity_monitor.cjs",
+      "blob": "5b80b0b40a0ade2d878e58cf2abad8c16e4e304c"
+    },
+    "pc_agent_bridge_contract": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 3,
+      "head": "58a1e60236a5f4be8b30f215ba5b6e119493ce31",
+      "path": "integrations/pc_agent_v1/SOURCE_FACTORY_PC_AGENT_INTEGRATION_CONTRACT_V1.json",
+      "blob": "78c5207a75f2d891358f8edfd9530b0f1eae9887",
+      "transport": "LOCAL_DURABLE_FILE_QUEUE_V1"
+    },
+    "pc_agent_runtime_contract": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 3,
+      "head": "58a1e60236a5f4be8b30f215ba5b6e119493ce31",
+      "path": "runtime/pc_agent_runtime_v1/PC_AGENT_RUNTIME_CONTRACT_V1.json",
+      "blob": "508b0890f89ae8a38bdb0be7d50d5a78d75a1dd6"
+    },
+    "stage3_two_way_return": {
+      "repository": "anbin1900-crypto/source-factory-private",
+      "pr": 2,
+      "head": "1ea9a795036f8d190816b6ece674729cb0f53e04",
+      "path": "source_factory_core/runtime/docs/STAGE3_DISPATCH_RETURN_BACKEND_NOTES.md",
+      "blob": "6f9bb63f7517fc09f470a48d24fb7c3186004af4"
+    }
+  },
+  "common_adapter_interface": {
+    "identifyContext": "resolve one exact existing worker/project browser context; must return context_id and context_name",
+    "sendMessage": "reuse existing sequentialPromptSender -> PC Agent bridge / authenticated Browser Agent path; must return accepted and optional context_id/dispatch_id",
+    "readStatus": "consume Worker Browser State / result correlation; map active generation to WORKING and exact completion to COMPLETED",
+    "fetchReply": "reuse existing return/result collector and require exact context correlation",
+    "appendEvent": "append D6_CONTEXT_MESSAGE_EVENT_V1 into existing event/log authority without overwriting history",
+    "updatePanel": "project D6_CONTEXT_MESSAGE_PANEL_STATE_V1 through SAFE Panel/ViewModel/Activity Monitor"
+  },
+  "parallel_binding_roles": [
+    "D-2",
+    "D-3",
+    "D-4",
+    "D-5"
+  ],
+  "panel_fields": [
+    "current_worker",
+    "context_name",
+    "context_id",
+    "current_command",
+    "status",
+    "started_at",
+    "elapsed_ms",
+    "recent_event",
+    "error",
+    "retry_count",
+    "result_return_status"
+  ],
+  "state_flow": [
+    "STARTING",
+    "CONTEXT_IDENTIFIED",
+    "WORKING",
+    "COMPLETED"
+  ],
+  "result_return_flow": [
+    "PENDING",
+    "COLLECTED",
+    "RETURNED_TO_D1"
+  ],
+  "fail_closed": [
+    "CONTEXT_IDENTIFICATION_INCOMPLETE",
+    "DISPATCH_REJECTED",
+    "DISPATCH_CONTEXT_MISMATCH",
+    "STATUS_CONTEXT_MISMATCH",
+    "COMPLETION_TIMEOUT_OR_NON_COMPLETE_TERMINAL",
+    "REPLY_MISSING",
+    "REPLY_CONTEXT_MISMATCH"
+  ],
+  "browser_tunnel_boundary": {
+    "reuse_existing_authenticated_browser_agent": true,
+    "new_tunnel": false,
+    "new_browser_engine": false,
+    "cdp_endpoint": "127.0.0.1:9222",
+    "localhost_only": true
+  },
+  "target_pc_live_pass_requires": [
+    "actual PC Executor dispatch receipt",
+    "actual context identity receipt",
+    "actual message dispatch receipt",
+    "WORKING observation",
+    "COMPLETED observation",
+    "actual reply byte/readback",
+    "event log readback",
+    "panel state readback",
+    "D-1 result return receipt"
+  ],
+  "production": false,
+  "ready": false,
+  "merge": false
+}

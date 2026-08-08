@@ -1,0 +1,85 @@
+{
+  "schema_version": "D6_CYCLE3_D2_D5_LIVE_REBIND_RESULT_V1",
+  "rule_id": "YOLLA_C_MODE_RULES_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE3-20260808-001",
+  "directive_id": "C3-W6-D2-D5-LIVE-REBIND-AND-D4-GAP-ISOLATION-V1-20260808-001",
+  "directive_comment_id": 5220450674,
+  "worker_id": "AUTOMATION-C-W6",
+  "role": "D-6_AUTOMATION_CONTROL_PANEL_AND_E2E_OWNER",
+  "worker_pr": 80,
+  "control_pr": 17,
+  "outcome": "PASS",
+  "terminal": "D2_D5_LIVE_PANEL_REBIND_AND_D4_GAP_ISOLATION_PASS",
+  "superseding_actual_inputs": {
+    "d2_cycle2_result_comment": 5219897042,
+    "d2_cycle2_result_commit": "1c6d79c492ff78cce4b0074bf7f8958d60f4edea",
+    "d2_target_pc_receipt_blob": "e4b12628631f89b13bf0e0d05486e99d30333290",
+    "d5_cycle2_result_comment": 5219763164,
+    "d5_cycle2_result_commit": "bca5e3fd2e7d530f142197cc6a45938aa84bc736"
+  },
+  "additional_current_evidence": {
+    "d2_cycle3_freshness_guard_result_commit": "0264206865159f9ca928ffc4264859d9218f81f0",
+    "d2_cycle3_terminal": "LIVE_CONTEXT_HANDOFF_AND_FRESHNESS_GUARD_PASS",
+    "d5_cycle3_recovery_result_commit": "e907409e56d11d88fd98278276610060137db052",
+    "d5_cycle3_terminal": "D2_LIVE_RECOVERY_INGESTION_AND_METRIC_CLOSURE_PASS",
+    "d5_cycle3_final_report_blob": "1c7d29ca4ca43aa491dfc70759bdb221a362c2a9"
+  },
+  "resolved_blockers": [
+    "PC_EXECUTOR_V2_COMMAND_CLAIM_LOOP_STALLED",
+    "D5_CYCLE2_RESULT_NOT_PUBLISHED"
+  ],
+  "resolved_blocker_count": 2,
+  "context_binding": {
+    "context_id": "6a72e288-7f24-83ee-b357-3e327cf6d877",
+    "context_name": "자동화 C 모드 - 자동화 C 모드 - 자동화 그룹 A E  그룹에 속함",
+    "page_id": "UIA-TAB-42.198100.4.0.0.5287",
+    "authority": "D2_CYCLE2_IMMUTABLE_TARGET_PC_RECEIPT",
+    "target_pc_live_readback": true
+  },
+  "event_metric_binding": {
+    "cycle2_ingestion_terminal": "CYCLE2_REAL_RECEIPT_INGESTION_AND_BLOCKER_METRICS_PASS",
+    "cycle3_recovery_terminal": "D2_LIVE_RECOVERY_INGESTION_AND_METRIC_CLOSURE_PASS",
+    "d2_projection": "LIVE_RESUMED",
+    "d2_blocker_duration_seconds": 6209.469848,
+    "d2_recovery_latency_seconds": 1338.469848,
+    "d2_retry_to_recovery_seconds": 1378.469848,
+    "upstream_event_store_mutation_count": 0
+  },
+  "panel_acceptance": {
+    "panel_fields": "PASS_11_OF_11",
+    "actual_remote_receipt_backed": true,
+    "synthetic_working_completed_count": 0,
+    "panel_state": "PARTIAL_LIVE_D4_GAP"
+  },
+  "d4_gap_isolation": {
+    "cycle2_terminal_found": false,
+    "latest_independent_confirmation_comment": 5220507787,
+    "latest_context_handoff_comment": 5220610638,
+    "remaining_gap": "D4_OBSERVER_RECEIPT_MISSING",
+    "remaining_gap_count": 1,
+    "d4_state_inferred": false
+  },
+  "validation": {
+    "local_adapter_test": "PASS_20_ASSERTIONS",
+    "d2_result_commit_readback": "PASS",
+    "d2_target_pc_receipt_blob_readback": "PASS",
+    "d5_result_commit_readback": "PASS",
+    "d5_cycle3_final_report_readback": "PASS",
+    "d4_terminal_requery": "NOT_FOUND",
+    "d3_wait_count": 0
+  },
+  "forbidden_counters": {
+    "synthetic_working_completed": 0,
+    "new_panel": 0,
+    "new_executor": 0,
+    "new_tunnel": 0,
+    "new_transport": 0,
+    "d4_completion_inference": 0,
+    "d3_reimplementation": 0,
+    "historical_blocker_delete_or_overwrite": 0
+  },
+  "full_message_loop_live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": "D6_CYCLE5_D4_ATTEMPT_D5_METRIC_PANEL_LATE_BIND_RESULT_V1",
+  "rule_id": "YOLLA_C_MODE_RULES_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE5-20260808-001",
+  "directive_id": "C5-W6-D4-ATTEMPT-D5-METRIC-PANEL-LATE-BIND-V1-20260808-001",
+  "directive_comment_id": 5224184153,
+  "authority_commit": "53c1f034dc11dd7c3bbe2eb08585dabad1ec877a",
+  "control_receipt_comment_id": 5224185332,
+  "worker_id": "AUTOMATION-C-W6",
+  "role": "D-6_AUTOMATION_CONTROL_PANEL_AND_E2E_OWNER",
+  "outcome": "PASS",
+  "terminal": "D4_ATTEMPT_AND_D5_METRIC_PANEL_LATE_BIND_PASS",
+  "actual_d4_attempt": {
+    "receipt_repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "receipt_blob": "f503589ea335ad5cf397b33a2d4be9307df17957",
+    "receipt_readback": "PASS",
+    "executor_status": "SUCCEEDED",
+    "queue_unlocked_after_powershell_restart": true,
+    "working_observed": true,
+    "error_event_observed": true,
+    "completed_observed": false,
+    "message_sent": true,
+    "live_pass_claimed": false,
+    "internal_failure": "D3_CHILD_RESULT_SCHEMA_MISSING_ASSISTANT_REPLY_COMPLETED"
+  },
+  "d5_metric_binding": {
+    "source_comment_id": 5220844654,
+    "source_result_commit": "25a49345277e117b98916703e8ce03d677a549bb",
+    "terminal": "D2_FRESHNESS_AND_D3_DISPATCH_EVENT_INGESTION_PASS",
+    "message_to_reply_latency_seconds": 38.1362053,
+    "dispatch_success_rate": 1.0,
+    "freshness_guard_breach_seconds": 251.4538219,
+    "cycle5_result_available": false,
+    "cycle5_incremental_late_bind_ready": true
+  },
+  "panel_acceptance": {
+    "actual_d4_attempt_visible": true,
+    "panel_fields": "PASS_11_OF_11",
+    "truthful_error_projection": true,
+    "synthetic_completion_count": 0,
+    "full_loop_gate_closed": true
+  },
+  "activation_contract": {
+    "d4_pass_trigger": "CHROME_REPLY_COMPLETION_LIVE_PASS",
+    "actual_d4_pass_receipt_required": true,
+    "rebuild_required": false,
+    "one_late_bind_close_ready": true
+  },
+  "validation": {
+    "local_adapter_test": "PASS_20_ASSERTIONS",
+    "actual_d4_blob_readback": "PASS",
+    "d5_cycle4_comment_readback": "PASS",
+    "d4_cycle5_terminal_requery": "NOT_FOUND_AT_SNAPSHOT",
+    "d5_cycle5_terminal_requery": "NOT_FOUND_AT_SNAPSHOT"
+  },
+  "forbidden_counters": {
+    "synthetic_completed": 0,
+    "d4_pass_inference": 0,
+    "new_panel": 0,
+    "new_executor": 0,
+    "new_tunnel": 0,
+    "new_transport": 0,
+    "d3_wait": 0
+  },
+  "full_message_loop_live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

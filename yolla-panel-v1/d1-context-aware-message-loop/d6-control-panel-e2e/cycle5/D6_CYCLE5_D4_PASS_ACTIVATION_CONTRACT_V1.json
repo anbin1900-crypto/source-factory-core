@@ -1,0 +1,19 @@
+{
+  "schema_version": "D6_CYCLE5_D4_PASS_ACTIVATION_CONTRACT_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE5-20260808-001",
+  "trigger": {
+    "required_terminal": "CHROME_REPLY_COMPLETION_LIVE_PASS",
+    "actual_d4_pass_receipt_required": true
+  },
+  "activation": {
+    "rebuild_required": false,
+    "action": "LATE_BIND_D4_PASS_RECEIPT_AND_REPROJECT_PANEL_ONCE",
+    "full_e2e_close_candidate": true
+  },
+  "guards": {
+    "synthetic_completed_allowed": false,
+    "d4_pass_inference_allowed": false,
+    "d3_wait_required": false,
+    "new_panel_executor_tunnel_transport_allowed": false
+  }
+}
