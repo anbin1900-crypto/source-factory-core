@@ -1,0 +1,79 @@
+{
+  "schema_version": "C1_WORKER_DIRECTIVE_PUBLICATION_RECEIPT_V1",
+  "receipt_id": "C1-D-ALIGNED-WORKER-DIRECTIVES-PUBLISHED-20260804-001",
+  "registered_at_kst": "2026-08-04 05:11 KST",
+  "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "parent_directive_comment": 5170768957,
+  "existing_directive": "A0-TO-C1-SEMANTIC-KNOWLEDGE-DOMAIN-AI-SHELL-V1-20260803-001",
+  "existing_directive_superseded": false,
+  "assignment_authority": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/directives/C1_D_ALIGNED_TRANSFORMER_WORKER_ASSIGNMENT_V1.json",
+    "commit": "5cd2d079c4a33324bf1b4c2b0882ecf1674c2d54",
+    "blob": "23d4f789f8f272e043b83dc7cfe9ddc6c291ac87"
+  },
+  "publications": {
+    "C-2": {
+      "directive_id": "C1-TO-C2-D-ALIGNED-SOURCE-LINEAGE-V1-20260804-001",
+      "duplicate_prompt_key": "9b0d40bd3fe9df62dad8c6a31e4d8f6d2ac9aafa29070b97299306b532c3107f",
+      "comment_id": 5171210387,
+      "expected_terminal": "C2_D_ALIGNED_SOURCE_LINEAGE_READY_OR_EXACT_BLOCKER",
+      "status": "PUBLISHED"
+    },
+    "C-3": {
+      "directive_id": "C1-TO-C3-D-ALIGNED-FIELD-MAPPING-TRANSFORM-RULES-V1-20260804-001",
+      "duplicate_prompt_key": "ed293d3858fa97ae0eb9ed8739f633b9166b46121c5495970e7f6d304ae6f50b",
+      "comment_id": 5171213455,
+      "expected_terminal": "C3_D_ALIGNED_FIELD_MAPPING_READY_OR_EXACT_BLOCKER",
+      "status": "PUBLISHED"
+    },
+    "C-4": {
+      "directive_id": "C1-TO-C4-D-ALIGNED-PACKAGE-KNOWLEDGE-CANDIDATE-V1-20260804-001",
+      "duplicate_prompt_key": "291a3b7aac297b0bbc744cb1c57a017d895cf9b35204db511ecaec54aacf8b97",
+      "comment_id": 5171216606,
+      "expected_terminal": "C4_D_ALIGNED_PACKAGE_READY_OR_EXACT_BLOCKER",
+      "status": "PUBLISHED"
+    },
+    "C-5": {
+      "directive_id": "C1-TO-C5-D-SCHEMA-CONSUMER-VALIDATION-REJECTION-V1-20260804-001",
+      "duplicate_prompt_key": "8615080f268afb2f55132b60012332d679ce8c5df66bdb60055369681b70b4de",
+      "comment_id": 5171221057,
+      "expected_terminal": "C5_D_SCHEMA_VALIDATOR_REJECTION_READY_OR_EXACT_BLOCKER",
+      "status": "PUBLISHED"
+    },
+    "C-6": {
+      "directive_id": "C1-TO-C6-D-ALIGNED-TRANSFORMER-E2E-AUDIT-V1-20260804-001",
+      "duplicate_prompt_key": "1edd009166e3df99f8245d9577b60342ccbd715358ba3d948382a289d02d71a9",
+      "comment_id": 5171225017,
+      "expected_terminal": "C6_D_ALIGNED_TRANSFORMER_E2E_PASS_OR_EXACT_BLOCKER",
+      "status": "PUBLISHED"
+    }
+  },
+  "publication_count": 5,
+  "duplicate_directive_count": 0,
+  "owned_root_collision_count": 0,
+  "required_reporting": {
+    "start_comment_required": true,
+    "terminal_comment_required": true,
+    "remote_head_required": true,
+    "pointer_path_and_blob_required": true,
+    "exact_blocker_required_when_not_pass": true,
+    "silent_wait_prohibited": true
+  },
+  "boundaries": {
+    "site_analyzer_ownership": false,
+    "site_extraction_runtime_ownership": false,
+    "d_canonical_schema_mutation": false,
+    "d_canonical_db_write": false,
+    "fixture_claimed_as_d_accepted_data": false,
+    "panel_shell_direct_edit": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "terminal": "C1_D_ALIGNED_WORKER_DIRECTIVES_PUBLISHED",
+  "status": "PASS_5_OF_5"
+}

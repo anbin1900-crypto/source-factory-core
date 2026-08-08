@@ -1,0 +1,93 @@
+{
+  "schema_version": "LATEST_C1_LOCAL_SERVER_CONSUMER_POINTER_V1",
+  "pointer_id": "LATEST-C1-LOCAL-SERVER-CONSUMER-20260806-001",
+  "published_at_kst": "2026-08-06T19:49:00+09:00",
+  "role": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "batch_id": "V2-TO-ABCD-LOCAL-SERVER-OPERATION-AND-FUTURE-MIGRATION-BATCH-V1-20260806-001",
+  "task_id": "C1_D_LOCAL_SERVER_QUERY_CITATION_CONSUMER_V1",
+  "task_comment_id": 5203035242,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "baseline_head": "a05cdc280ee28c1c0ffd7ef65e541a1be26f57bd",
+  "authority": {
+    "common_directive_path": "yolla-panel-v1/a0-successor-control/integration/abcd-local-server-v1/V2_ABCD_LOCAL_SERVER_OPERATION_AND_FUTURE_MIGRATION_BATCH_V1.json",
+    "common_directive_commit": "bcc40274036282dc1065f3b6f139755d7dc0ecc9",
+    "common_directive_blob": "c272b0d7b965cb8b3bac50061fff90b4e9a97263",
+    "remote_readback": "PASS"
+  },
+  "artifacts": {
+    "query_client": {
+      "path": "C1_LOCAL_SERVER_QUERY_CLIENT_V1.json",
+      "commit": "bb22179b37e57ebffcc64b67b05aa7891c8d2749",
+      "blob": "6d09a5727e2c9092ea8b473087750047fd62aeb5",
+      "remote_readback": "PASS"
+    },
+    "citation_client": {
+      "path": "C1_LOCAL_SERVER_CITATION_CLIENT_V1.json",
+      "commit": "1cf3e0a3753beed5358c180491a21176d5f106bb",
+      "blob": "0b67e8ff2e5b4f5aad0f1634b39cc1322a3bee38",
+      "remote_readback": "PASS"
+    },
+    "receipt_consumer": {
+      "path": "C1_LOCAL_SERVER_RECEIPT_CONSUMER_V1.json",
+      "commit": "67fc5f09e14e8190921ab3db1b2fb89b4acb6595",
+      "blob": "c002ac8370676153fa0675f726057f234f46ebbe",
+      "remote_readback": "PASS"
+    },
+    "panel_provider": {
+      "path": "C1_LOCAL_SERVER_PANEL_PROVIDER_V1.json",
+      "commit": "98d76c943fe395220f4a4ec47d062b2117d5bfef",
+      "blob": "f9473bf257d317ae8c1f67fe128342e130832fba",
+      "remote_readback": "PASS"
+    },
+    "endpoint_switch_contract": {
+      "path": "C1_LOCAL_TO_REMOTE_SERVER_ENDPOINT_SWITCH_CONTRACT_V1.json",
+      "commit": "a292dcb1437436ed3d4e3a8ad98c8509d5c77925",
+      "blob": "c52e2b3a550d62f8959e856290a326562faee58b",
+      "remote_readback": "PASS"
+    }
+  },
+  "validation": {
+    "artifact_remote_readback": "PASS_5_OF_5",
+    "endpoint_values_in_github_count": 0,
+    "raw_secret_values_in_github_count": 0,
+    "public_binding_count": 0,
+    "actual_local_endpoint_call_count": 0,
+    "semantic_rerun_count": 0,
+    "fabricated_candidate_count": 0,
+    "fabricated_assertion_count": 0,
+    "silent_drop_count": 0
+  },
+  "current_state": {
+    "target_pc": "YOLLA-USER-PC01",
+    "target_root": "E:\\YOLLA",
+    "endpoint_authority_status": "UNRESOLVED_WAITING_D_LOCAL_SERVER_ENDPOINT_AUTHORITY",
+    "local_server_health": "UNKNOWN",
+    "source_document_query_smoke_allowed_after_d_local_server_ready": true,
+    "source_document_query_smoke_allowed_now": false,
+    "candidate_count": 0,
+    "assertion_count": 0,
+    "evidence_count": 0,
+    "rejected_record_count": 15,
+    "actual_d_knowledge_receipt_present": false,
+    "d_knowledge_release_present": false,
+    "runtime_activation": false,
+    "runtime_activation_state": "BLOCKED_FAIL_CLOSED"
+  },
+  "waiting_conditions": [
+    "D_LOCAL_SERVER_ENDPOINT_AUTHORITY_BOUND",
+    "D_LOCAL_SERVER_HEALTH_READY",
+    "D1_ACTUAL_KNOWLEDGE_ACCEPTANCE_RECEIPT_PRESENT",
+    "D1_KNOWLEDGE_RELEASE_V1_PRESENT"
+  ],
+  "next_action": "BIND_D_LOCAL_ENDPOINT_AUTHORITY_THEN_ALLOW_SOURCE_DOCUMENT_SMOKE; KEEP_KNOWLEDGE_RUNTIME_BLOCKED_UNTIL_D_RECEIPT_AND_RELEASE",
+  "decision": "READY_WAITING_D_LOCAL_ENDPOINT_AND_KNOWLEDGE_RELEASE",
+  "terminal": "C1_LOCAL_SERVER_QUERY_CITATION_CONSUMER_READY_WAITING_D_RELEASE_OR_EXACT_BLOCKER",
+  "terminal_result": "C1_LOCAL_SERVER_QUERY_CITATION_CONSUMER_READY_WAITING_D_RELEASE",
+  "production": false,
+  "public_binding": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

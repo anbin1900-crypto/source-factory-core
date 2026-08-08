@@ -1,0 +1,88 @@
+{
+  "schema_version": "LATEST_C5_PDF_TO_CSV_POINTER_V3",
+  "pointer_id": "LATEST-C5-ACTUAL-PANEL-LAUNCH-20260807-001",
+  "batch_id": "C1-PDF-PREPROCESS-FINAL-PANEL-LAUNCH-20260807-001",
+  "task_id": "C5_ACTUAL_PANEL_LAUNCH_DIRECT_REPAIR",
+  "directive_comment_id": 5212524440,
+  "control_comment_id": 5212526492,
+  "start_comment_id": 5212639070,
+  "previous_pointer_blob": "af9820a654628f178807c17b23952d3ef14b155c",
+  "worker": "C-5_DOMAIN_AI_QUERY_CITATION_CONSUMER_WORKER",
+  "authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "control_pr": 20,
+    "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+    "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c5-domain-ai-seat-runtime/pdf-to-csv-panel-v1/**",
+    "pre_pointer_head": "c32c732dc55221e50c721b88213337d30d517b89",
+    "pointer_commit_status": "THIS_COMMIT"
+  },
+  "c4_binding": {
+    "scope_close_comment_id": 5212523100,
+    "scope_status": "C4_SCOPE_CLOSED",
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c4-evidence-knowledge-candidate/pdf-to-csv-panel-v1/pdf_to_csv_pipeline_orchestrator.py",
+    "function": "run_pipeline",
+    "single_pipeline_only": true,
+    "separate_processing_engine": false
+  },
+  "objects": {
+    "panel": {
+      "path": "standalone_pdf_to_csv_panel.py",
+      "commit": "e69e914cab00b67093e19f19f5e51e7bc528caaf",
+      "blob": "af1cf6dce3a9dda8eabde1f33146b48b19ffa9c9"
+    },
+    "launch_test": {
+      "path": "test_actual_panel_launch_repair.py",
+      "commit": "e3fbc3a1872de8c648bd6e945bb7031b9bcaad6c",
+      "blob": "8a0ac3693ff4934a482f0a3e036f336bdef13327"
+    },
+    "launch_contract": {
+      "path": "C5_ACTUAL_PANEL_LAUNCH_CONTRACT_V1.json",
+      "commit": "0204d56348f44b8e4d080e7b99905b7bf606285d",
+      "blob": "de6c9407e21ea422e6634ecb883479a199175b34"
+    },
+    "launch_validation": {
+      "path": "C5_ACTUAL_PANEL_LAUNCH_VALIDATION_V1.json",
+      "commit": "e358ddb99a018056e28619776deca5b02d3de0fc",
+      "blob": "fd5490902140564e039335c972ba60d4022b6d56"
+    },
+    "final_report": {
+      "path": "C5_ACTUAL_PANEL_LAUNCH_FINAL_REPORT_V1.json",
+      "commit": "d625343c127c5e5682335562fc343ae831ac7424",
+      "blob": "1e4bd890f9b03e28c98e002e4bb5a4cb0a1e7ee9"
+    }
+  },
+  "repair": {
+    "dependency_path_repaired": true,
+    "missing_pyside6_user_message": true,
+    "exact_install_command": true,
+    "exact_relaunch_command": true,
+    "generic_launch_error_message": true,
+    "folder_selection_preserved": true,
+    "single_pdf_selection_preserved": true,
+    "output_selection_preserved": true,
+    "chunk_size_preserved": true,
+    "background_thread_preserved": true,
+    "error_and_result_display_preserved": true
+  },
+  "validation": {
+    "runtime_pyside6_available": false,
+    "direct_import_probe_exit_code": 1,
+    "direct_import_probe_terminal_error": "ModuleNotFoundError: No module named 'PySide6'",
+    "actual_qapplication_created": false,
+    "actual_window_created": false,
+    "actual_gui_flow_executed": false,
+    "dependency_message_logic": "PASS_7_OF_7",
+    "remote_readback": "PASS_5_OF_5_BEFORE_POINTER",
+    "actual_window_launch_pass_claimed": false,
+    "ci": "NOT_RUN_NOT_CLAIMED_PASS"
+  },
+  "required_result": "C5_ACTUAL_PANEL_LAUNCH_CORRECTED_OR_ENVIRONMENT_EXACT_BLOCKER",
+  "result": "ENVIRONMENT_EXACT_BLOCKER_AFTER_DEPENDENCY_PATH_REPAIR",
+  "first_blocker": "PYSIDE6_NOT_INSTALLED_IN_VALIDATION_RUNTIME",
+  "semantic_analysis": false,
+  "gpt_call": false,
+  "database_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": "LATEST_C3_PDF_TO_CSV_POINTER_V3",
+  "batch_id": "C1-PDF-PREPROCESS-CORRECTION-20260807-001",
+  "task_id": "C3_EXTRACTION_DIRECT_REPAIR",
+  "directive_comment_id": 5208880453,
+  "control_comment_id": 5208884860,
+  "start_comment_id": 5208947794,
+  "terminal_comment_id": 5208982115,
+  "authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "control_pr": 20,
+    "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+    "shared_head_before_pointer": "0b985bb18d17d5a9f8a0b5e21e4c1b0205d75023",
+    "shared_head_at_terminal_readback": "ffba28b7cbefaf913552f1763958f8674230a9b0",
+    "preterminal_pointer_commit": "87b9e95ad5e2a083e1f656a25912d4b884e81876",
+    "preterminal_pointer_blob": "1c86d45356abb32c281612fd8d6d56b43c474bfa",
+    "previous_pointer_blob": "3aa2d77df839ad5ee95a44965d4a99da088cf1ef",
+    "pointer_commit_status": "THIS_COMMIT",
+    "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c3-field-mapping-rules/pdf-to-csv-panel-v1/**"
+  },
+  "artifacts": {
+    "extractor": {
+      "path": "pdf_text_extractor.py",
+      "commit": "adaf4b895457cb0681f2038e258bb411eb5817c5",
+      "blob": "e3d6ecf7f557c40edccdd4c025fc4832945efaa1"
+    },
+    "runtime_adapter": {
+      "path": "pdf_extraction_runtime_adapter.py",
+      "commit": "07034757f7cf0d64eaee7cfd7965b724da1da3bd",
+      "blob": "f0135afd4e773421dc747d20da7a5b32b8110317"
+    },
+    "page_contract": {
+      "path": "PDF_PAGE_TEXT_RECORD_CONTRACT_V1.json",
+      "commit": "1858bdb3ce1ebe0269ce9884aaa98c083c0d80b9",
+      "blob": "06dc87319859b9ee4baf58f9bf5a84f5021c8159"
+    },
+    "runtime_contract": {
+      "path": "PDF_EXTRACTION_RUNTIME_ADAPTER_CONTRACT_V1.json",
+      "commit": "5b862e9c458496881af81f4b7a2211b5515a7171",
+      "blob": "974caa8653880e6885695779bb1c3704dbe7a679"
+    },
+    "repair_test": {
+      "path": "test_pdf_extraction_direct_repair.py",
+      "commit": "5331bb1e89d554e7a0db714878e09c5af329e8f8",
+      "blob": "b350110950b128b4d40692dab022faaa14b6bf96"
+    },
+    "actual_smoke": {
+      "path": "C3_EXTRACTION_DIRECT_REPAIR_SMOKE_V1.json",
+      "commit": "823b7a32b8d86a04667ba081fe391e998327b617",
+      "blob": "abe2e7851b4b2962d03ccd9d6e9dcd63f9fd3404"
+    },
+    "final_report": {
+      "path": "C3_EXTRACTION_DIRECT_REPAIR_FINAL_REPORT_V1.json",
+      "commit": "0b985bb18d17d5a9f8a0b5e21e4c1b0205d75023",
+      "blob": "5d57c217dedc3f5416c8fd38c5f217db284d2962"
+    }
+  },
+  "correction": {
+    "defect_count": 3,
+    "short_direct_text_preserved": true,
+    "true_blank_page_explicit": true,
+    "kor_eng_language_pack_doctor": true,
+    "scanned_pdf_without_ocr_fail_closed": true,
+    "one_record_inventory_supported": true
+  },
+  "validation": {
+    "local_expanded_extractor_harness": "PASS_31_OF_31",
+    "local_expanded_runtime_harness": "PASS_43_OF_43",
+    "committed_direct_repair_regression": "PASS_12_OF_12",
+    "actual_runtime_smoke": "PASS_4_OF_4",
+    "remote_readback": "PASS_7_OF_7"
+  },
+  "result": "C3_EXTRACTION_CORRECTED",
+  "terminal_comment_status": "PUBLISHED",
+  "ci_status": "NOT_RUN_NOT_CLAIMED_PASS",
+  "semantic_analysis": false,
+  "gpt_call": false,
+  "database_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

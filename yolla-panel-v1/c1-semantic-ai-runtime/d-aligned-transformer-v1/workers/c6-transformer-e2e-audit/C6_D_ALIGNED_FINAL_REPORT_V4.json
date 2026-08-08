@@ -1,0 +1,71 @@
+{
+  "schema_version": "C6_D_ALIGNED_FINAL_REPORT_V4",
+  "report_id": "C6-D-ALIGNED-FINAL-REPORT-V4-20260805-001",
+  "group_id": "GROUP-03",
+  "loop_id": "A-LOOP-GROUP-03",
+  "cycle_id": "A-LOOP-GROUP-03-GROUP03-W06-CYCLE-0002",
+  "worker_id": "GROUP03-W06",
+  "directive_id": "GROUP03-W01-TO-GROUP03-W06-C6V4-FINAL-E2E-CYCLE-0002",
+  "directive_comment_id": 5184578323,
+  "start_comment_id": 5184734169,
+  "completed_at_kst": "2026-08-05 06:13 KST",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "execution_control_pr": 20,
+  "execution_branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "start_head": "ab43148dfc87720e90a32f958270fd291594ea43",
+  "prior_pointer_blob": "af382a6675c5bee1894275e308e9bd9fa7c01649",
+  "completed_work": [
+    "C6_V3_BASELINE_READBACK",
+    "C2_LATEST_POINTER_AND_TERMINAL_REVALIDATED",
+    "C3_REQUIRED_PATH_ACCOUNTING_AND_C4_REJECTION_INPUT_REVALIDATED",
+    "C3_C4_C5_CYCLE_0002_RESULT_PRESENCE_REQUERIED",
+    "PR188_EXACT_CONTRACT_AUTHORITY_REVALIDATED",
+    "C6_WORKER_TERMINAL_ACCEPTANCE_MATRIX_V4_PUBLISHED",
+    "C1_TO_D1_HANDOFF_VALIDATION_V3_PUBLISHED",
+    "C6_D_ALIGNED_FINAL_E2E_REPORT_V4_PUBLISHED",
+    "FAIL_CLOSED_FINAL_GATE_EVALUATION_COMPLETED"
+  ],
+  "validation": {
+    "c2_pointer_binding": "PASS",
+    "c2_lineage_accounting": "PASS_50_OF_50",
+    "c3_required_path_accounting": "PASS_22_OF_22",
+    "c3_c4_rejection_input_coverage": "PASS_22_OF_22",
+    "c3_required_path_tests": "PASS_37_OF_37",
+    "mapping_rule_accounting": "PASS_43_OF_43_UPSTREAM",
+    "pr188_exact_authority": "PASS_4_OF_4",
+    "worker_gate": "PASS_2_OF_4",
+    "handoff_package_completeness": "FAIL_0_OF_4_EXTERNAL",
+    "virtual_pass_count": 0
+  },
+  "not_executed": {
+    "final_v4_e2e": true,
+    "reason": "C4_V2_PACKAGE_TERMINAL_AND_C5_V2_VALIDATION_TERMINAL_NOT_PUBLISHED",
+    "c4_cycle_0002_directive_comment": 5184566722,
+    "c5_cycle_0002_directive_comment": 5184572293,
+    "c3_cycle_0002_directive_comment": 5184559676,
+    "c3_cycle_0002_terminal_published": false,
+    "c4_v2_terminal_published": false,
+    "c5_v2_terminal_published": false
+  },
+  "safety": {
+    "d_acceptance_claimed": false,
+    "d1_submission_pass_claimed": false,
+    "actual_d_handoff_performed": false,
+    "d_canonical_schema_mutation": false,
+    "d_canonical_db_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "ci_status": "NOT_RUN_NOT_CLAIMED_PASS"
+  },
+  "first_blocker": "C4_V2_PACKAGE_TERMINAL_NOT_PUBLISHED",
+  "additional_blockers": [
+    "C4_V2_REQUIRED_PACKAGE_OUTPUTS_NOT_PUBLISHED",
+    "C5_V2_VALIDATION_TERMINAL_WAITING_C4_V2_PACKAGE",
+    "C3_CYCLE_0002_TERMINAL_NOT_PUBLISHED"
+  ],
+  "terminal": "C6_D_ALIGNED_TRANSFORMER_E2E_EXACT_BLOCKER",
+  "terminal_status_for_loop": "BLOCKED_EXTERNAL",
+  "decision": "EXACT_EXTERNAL_BLOCKER"
+}

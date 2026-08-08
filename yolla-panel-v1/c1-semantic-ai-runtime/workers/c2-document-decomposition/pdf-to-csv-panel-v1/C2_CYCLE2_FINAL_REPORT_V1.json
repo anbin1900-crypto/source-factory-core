@@ -1,0 +1,50 @@
+{
+  "schema_version": "C2_INPUT_SELECTION_DIRECT_REPAIR_FINAL_REPORT_V1",
+  "reported_at_kst": "2026-08-07T05:26:00+09:00",
+  "worker": "C-2_DOCUMENT_DECOMPOSITION_FRAGMENT_LOCATOR_WORKER",
+  "batch_id": "C1-PDF-PREPROCESS-CORRECTION-20260807-001",
+  "directive_comment": 5208879253,
+  "commander_control_comment": 5208884860,
+  "prior_terminal": "C2_FOLDER_OR_SINGLE_PDF_SELECTION_ADAPTER_READY",
+  "required_result": "C2_INPUT_SELECTION_CORRECTED_OR_NO_DEFECT_FOUND",
+  "decision": "PASS_CORRECTED",
+  "terminal_result": "C2_INPUT_SELECTION_CORRECTED",
+  "defects_found_count": 3,
+  "defects_repaired": [
+    {"id":"C2-DEFECT-001","name":"PDF_FILE_PARENT_OUTPUT_COLLISION_NOT_REJECTED","repair":"Apply source/output collision check after both input modes resolve source root.","status":"PASS"},
+    {"id":"C2-DEFECT-002","name":"PDF_FILE_EXTENSION_ONLY_FALSE_POSITIVE","repair":"After case-insensitive .pdf suffix validation, read four-byte %PDF signature prefix; reject mismatch.","status":"PASS"},
+    {"id":"C2-DEFECT-003","name":"INVENTORY_SHA256_FORMAT_ONLY_NO_PARITY","repair":"Recompute canonical files-array SHA-256 after structural validation and require exact digest parity.","status":"PASS"}
+  ],
+  "test_fixture_repair": {
+    "existing_test_file_updated": true,
+    "reason": "record-shape fixture used non-PDF bytes and must satisfy new signature contract",
+    "behavior_under_test_unchanged": true
+  },
+  "validation": {
+    "python_compile": "PASS_3_OF_3",
+    "focused_direct_repair_tests": "PASS_12_OF_12",
+    "prior_regression_suite": "PRESERVED_44_TESTS_WITH_SIGNATURE_FIXTURE_CORRECTION",
+    "folder_mode": "PASS",
+    "single_pdf_mode": "PASS",
+    "case_insensitive_extension": "PASS",
+    "nonexistent_paths": "PASS_FAIL_CLOSED",
+    "symlink": "PASS_FAIL_CLOSED",
+    "source_output_collision": "PASS_FAIL_CLOSED_BOTH_MODES",
+    "inventory_hash_parity": "PASS_FAIL_CLOSED",
+    "fake_pdf_signature": "PASS_FAIL_CLOSED",
+    "non_selected_pdf_included_count": 0,
+    "output_probe_residue_count": 0
+  },
+  "scope_counters": {
+    "panel_ui": 0,
+    "pdf_text_extraction": 0,
+    "ocr": 0,
+    "csv_generation": 0,
+    "semantic_analysis": 0,
+    "gpt_call": 0,
+    "database_write": 0
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

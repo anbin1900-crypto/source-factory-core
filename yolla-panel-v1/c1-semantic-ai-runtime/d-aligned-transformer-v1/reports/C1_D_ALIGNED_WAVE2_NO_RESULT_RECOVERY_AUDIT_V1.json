@@ -1,0 +1,91 @@
+{
+  "schema_version": "C1_D_ALIGNED_WAVE2_NO_RESULT_RECOVERY_AUDIT_V1",
+  "audit_id": "C1-D-ALIGNED-WAVE2-NO-RESULT-RECOVERY-AUDIT-20260804-001",
+  "registered_at_kst": "2026-08-04 23:14 KST",
+  "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
+  "wave2_assignment_commit": "00b26e424077aa85caf993e2569da9b916911818",
+  "wave2_assignment_blob": "a904e8d6c4ee8684c70ee57203836432196ef175",
+  "observed_c1_state": {
+    "head": "ad8fcff137fd641e563159a5c179a42c7123ab81",
+    "head_advanced_after_wave2_publication": false,
+    "new_wave2_terminal_count": 0,
+    "current_gate": "C2_C3_WAVE2_UPDATED_TERMINALS",
+    "classification": "DIRECTIVES_PUBLISHED_EXECUTION_RESULTS_NOT_RETURNED"
+  },
+  "worker_state": {
+    "C-2": {
+      "wave2_comment": 5174120343,
+      "latest_pointer_blob": "8c29ac70b338fa21b41d2205bd2d846537a18314",
+      "wave2_terminal_published": false,
+      "required_action": "EXECUTE_EXISTING_C2_WAVE2_REBIND_AND_PUBLISH_TERMINAL_OR_EXACT_BLOCKER"
+    },
+    "C-3": {
+      "wave2_comment": 5174123016,
+      "latest_pointer_blob": "f46c5c64e3da5b6d4cbfc338a5d99b4e67335204",
+      "wave2_terminal_published": false,
+      "required_action": "EXECUTE_EXISTING_C3_PR188_REBIND_AND_PUBLISH_TERMINAL_OR_EXACT_BLOCKER"
+    },
+    "C-4": {
+      "wave2_comment": 5174125762,
+      "entry_gate": "C2_V2_AND_C3_V2_TERMINALS",
+      "entry_gate_open": false,
+      "required_action": "PREFLIGHT_ONLY_AND_EVENT_WAIT_NO_FINAL_ASSEMBLY_BEFORE_GATE"
+    },
+    "C-5": {
+      "wave2_comment": 5174129167,
+      "entry_gate": "C4_V2_PACKAGE_TERMINAL",
+      "entry_gate_open": false,
+      "required_action": "PR188_CONTRACT_PREFLIGHT_ONLY_AND_EVENT_WAIT"
+    },
+    "C-6": {
+      "wave2_comment": 5174132443,
+      "entry_gate": "UPDATED_C2_C3_C4_C5_TERMINALS_4_OF_4",
+      "entry_gate_open": false,
+      "required_action": "FREEZE_PRIOR_EVIDENCE_AND_EVENT_WAIT_FINAL_E2E"
+    }
+  },
+  "external_dependency_state": {
+    "B-1": {
+      "control_pr": 19,
+      "prior_head": "fb20d1df329150388889ad13ff0507b0fb3060be",
+      "current_head": "4bbd542c9e0cb99acff8dc81443117297757c6a3",
+      "head_advanced": true,
+      "latest_report_pointer_blob": "81f6731c4615afedbfec3985aadf028819672b00",
+      "current_status": "WAITING_WORKER_SEED_BINDING_TERMINALS_OR_EXACT_BLOCKERS",
+      "b1_to_c1_handoff_pointer_blob": "3c51e55ec25828ece1a2e60d69893c7ff9a65bc5",
+      "handoff_pointer_updated": false,
+      "handoff_published": false,
+      "next_gate": "B2_TO_B5_TERMINALS_4_OF_4_THEN_B6_FINAL_ACCEPTANCE",
+      "new_c1_request_required": false
+    },
+    "D-1": {
+      "authority_repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "control_pr": 188,
+      "head": "1bb475c440983aae761b897a3b58a8f4dab880cc",
+      "schema_profile_blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+      "mapping_contract_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
+      "validation_ruleset_blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
+      "acceptance_receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
+      "contract_gate": "OPEN"
+    }
+  },
+  "recovery_policy": {
+    "reuse_existing_directives": true,
+    "reuse_existing_duplicate_prompt_keys": true,
+    "new_directive_count": 0,
+    "new_duplicate_prompt_key_count": 0,
+    "c2_c3_execute_now": true,
+    "c4_c5_c6_event_wait": true,
+    "silent_non_response_allowed": false,
+    "terminal_or_exact_blocker_required": true
+  },
+  "status": "C1_D_ALIGNED_WAVE2_NO_RESULT_RECOVERY_REQUIRED",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

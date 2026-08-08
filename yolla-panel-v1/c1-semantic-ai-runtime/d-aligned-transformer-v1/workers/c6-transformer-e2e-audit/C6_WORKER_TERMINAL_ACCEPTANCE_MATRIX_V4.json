@@ -1,0 +1,89 @@
+{
+  "schema_version": "C6_WORKER_TERMINAL_ACCEPTANCE_MATRIX_V4",
+  "matrix_id": "C6-WORKER-TERMINAL-ACCEPTANCE-MATRIX-V4-20260805-001",
+  "group_id": "GROUP-03",
+  "loop_id": "A-LOOP-GROUP-03",
+  "cycle_id": "A-LOOP-GROUP-03-GROUP03-W06-CYCLE-0002",
+  "worker_id": "GROUP03-W06",
+  "directive_id": "GROUP03-W01-TO-GROUP03-W06-C6V4-FINAL-E2E-CYCLE-0002",
+  "directive_comment_id": 5184578323,
+  "start_comment_id": 5184734169,
+  "evaluated_at_kst": "2026-08-05 06:13 KST",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "execution_control_pr": 20,
+  "execution_branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "prior_pointer_blob": "af382a6675c5bee1894275e308e9bd9fa7c01649",
+  "authorities": {
+    "C-2": {
+      "result_comment": 5181940916,
+      "terminal": "C2_D_ALIGNED_SOURCE_LINEAGE_READY_OR_EXACT_BLOCKER",
+      "pointer_blob": "a4bc27b8e24dbadf668db5da21cacda0a866284a",
+      "tests": "PASS_34_OF_34",
+      "source_lineage_accounting": "PASS_50_OF_50",
+      "silent_drop_count": 0,
+      "accepted": true
+    },
+    "C-3": {
+      "latest_pointer_blob": "e77cdc3f449d405b3144f8dd18ed21f269863748",
+      "latest_pointer_cycle": "A-LOOP-GROUP-03-GROUP03-W03-CYCLE-0001",
+      "cycle_0002_directive_comment": 5184559676,
+      "cycle_0002_terminal_published": false,
+      "required_path_accounting": "PASS_22_OF_22",
+      "resolved_path_count": 0,
+      "unresolved_external_path_count": 22,
+      "c4_rejection_input_blob": "73b49771eab3f00e27705aca5e124f02762e1c5f",
+      "c4_rejection_coverage": "PASS_22_OF_22",
+      "tests": "PASS_37_OF_37",
+      "deterministic_replay": "PASS",
+      "silent_drop_count": 0,
+      "accounting_accepted": true,
+      "cycle_0002_result_accepted": false
+    },
+    "C-4": {
+      "cycle_0002_directive_comment": 5184566722,
+      "latest_pointer_blob": "489f4511852fe7c6410152a2cc26e21233ffe15b",
+      "latest_pointer_status": "FIXTURE_PACKAGE_READY_FINAL_BINDING_BLOCKED",
+      "v2_required_package_outputs_published": false,
+      "v2_terminal_published": false,
+      "accepted": false
+    },
+    "C-5": {
+      "cycle_0002_directive_comment": 5184572293,
+      "latest_pointer_blob": "266cda2df7e055c5bf5f63a24f181bf7d5283073",
+      "latest_pointer_status": "PREFLIGHT_READY_EVENT_WAIT",
+      "entry_gate": "C4_V2_PACKAGE_TERMINAL",
+      "entry_gate_open": false,
+      "v2_validation_outputs_published": false,
+      "v2_terminal_published": false,
+      "accepted": false
+    }
+  },
+  "completion_conditions": {
+    "C2_ACCEPTED": true,
+    "C3_REQUIRED_PATH_ACCOUNTING": "PASS_22_OF_22",
+    "C4_V2_TERMINAL_ACCEPTED": false,
+    "C5_V2_TERMINAL_ACCEPTED": false,
+    "SOURCE_LINEAGE_ACCOUNTING": "PASS_50_OF_50",
+    "MAPPING_RULE_ACCOUNTING": "PASS_43_OF_43_UPSTREAM",
+    "SILENT_DROP_COUNT": null,
+    "PROVENANCE_EVIDENCE_PRESERVATION": "NOT_EXECUTED_NO_C4_V2_PACKAGE",
+    "DETERMINISTIC_REPLAY": "NOT_EXECUTED_NO_C4_V2_PACKAGE",
+    "C1_TO_D1_HANDOFF_INTEGRITY": "FAIL_NO_C4_V2_PACKAGE"
+  },
+  "gate": {
+    "required": 4,
+    "accepted": 2,
+    "status": "PASS_2_OF_4",
+    "final_e2e_authorized": false
+  },
+  "first_blocker": "C4_V2_PACKAGE_TERMINAL_NOT_PUBLISHED",
+  "additional_blockers": [
+    "C4_V2_REQUIRED_PACKAGE_OUTPUTS_NOT_PUBLISHED",
+    "C5_V2_VALIDATION_TERMINAL_WAITING_C4_V2_PACKAGE",
+    "C3_CYCLE_0002_TERMINAL_NOT_PUBLISHED",
+    "C1_TO_D1_HANDOFF_PACKAGES_NOT_PUBLISHED"
+  ],
+  "virtual_pass_count": 0,
+  "decision": "EXACT_EXTERNAL_BLOCKER"
+}

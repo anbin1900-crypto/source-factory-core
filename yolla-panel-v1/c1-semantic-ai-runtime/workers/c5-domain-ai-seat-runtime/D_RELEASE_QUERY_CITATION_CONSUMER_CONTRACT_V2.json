@@ -1,0 +1,73 @@
+{
+  "schema_version": "D_RELEASE_QUERY_CITATION_CONSUMER_CONTRACT_V2",
+  "contract_id": "C5-D-RELEASE-QUERY-CITATION-CONSUMER-V2",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "C5_D_RELEASE_QUERY_CITATION_CONSUMER_V2",
+  "directive_comment_id": 5196037750,
+  "consumer": "C-5_DOMAIN_AI_SEAT_AND_TOOL_RUNTIME",
+  "activation_rule": "ONLY_D1_ACTUAL_ACCEPTANCE_RECEIPT_AND_D1_KNOWLEDGE_RELEASE_MAY_ACTIVATE_RUNTIME",
+  "required_inputs": {
+    "d1_acceptance_receipt": {
+      "issuer": "D-1_DOMAIN_KNOWLEDGE_DATABASE_COMMANDER",
+      "decision_authority": "D-1_ONLY",
+      "actual_db_authority": "D-1_ONLY",
+      "fixture_only": false,
+      "eligible_decisions": ["ACCEPTED", "PARTIALLY_ACCEPTED"],
+      "accepted_record_ids_minimum": 1,
+      "receipt_id_required": true,
+      "receipt_sha256_required": true
+    },
+    "d1_knowledge_release": {
+      "release_type": "KNOWLEDGE_RELEASE_V1",
+      "issuer": "D-1_DOMAIN_KNOWLEDGE_DATABASE_COMMANDER",
+      "release_status": "D1_KNOWLEDGE_RELEASE_ISSUED",
+      "fixture_only": false,
+      "knowledge_version_required": true,
+      "source_snapshot_sha256_required": true,
+      "released_record_ids_minimum": 1,
+      "released_records_must_be_receipt_accepted_subset": true,
+      "rejected_records_in_release_prohibited": true
+    }
+  },
+  "exact_policy_bindings": {
+    "d1_repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "d1_control_pr": 188,
+    "d1_head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+    "acceptance_receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
+    "knowledge_version_policy_blob": "318ba9eed622d7f9a0164662eb85c8bbd20d06f0",
+    "query_contract_blob": "536e0cd95df6613fcf6306413870b09658d76d35",
+    "citation_contract_blob": "615a3b25781851cc2502ceee6f5f6a356eea0675",
+    "evidence_contract_blob": "615a3b25781851cc2502ceee6f5f6a356eea0675"
+  },
+  "fail_closed_reason_codes": [
+    "D1_ACTUAL_ACCEPTANCE_RECEIPT_NOT_PUBLISHED",
+    "D1_KNOWLEDGE_RELEASE_V1_NOT_PUBLISHED",
+    "FIXTURE_RECEIPT_NOT_AUTHORITY",
+    "FIXTURE_RELEASE_NOT_AUTHORITY",
+    "KNOWLEDGE_VERSION_NOT_BOUND",
+    "KNOWLEDGE_VERSION_CONTRACT_NOT_BOUND",
+    "QUERY_CONTRACT_NOT_BOUND",
+    "CITATION_CONTRACT_NOT_BOUND",
+    "EVIDENCE_CONTRACT_NOT_BOUND",
+    "ACCEPTANCE_RECEIPT_ID_MISMATCH",
+    "ACCEPTANCE_RECEIPT_SHA256_MISMATCH",
+    "PACKAGE_ID_MISMATCH",
+    "PACKAGE_SHA256_MISMATCH",
+    "RELEASED_RECORD_NOT_ACCEPTED_BY_RECEIPT",
+    "REJECTED_RECORD_INCLUDED_IN_RELEASE"
+  ],
+  "fixture_boundary": {
+    "fixture_release_may_test_contract": true,
+    "fixture_release_is_runtime_authority": false,
+    "fixture_release_can_activate_specialist_ai": false,
+    "fixture_as_authority": false
+  },
+  "side_effects": {
+    "runtime_activation_performed": false,
+    "d_canonical_db_write": false,
+    "postgresql_connection_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

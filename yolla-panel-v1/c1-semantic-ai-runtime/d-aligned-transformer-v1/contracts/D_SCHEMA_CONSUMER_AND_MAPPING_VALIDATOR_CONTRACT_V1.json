@@ -1,0 +1,82 @@
+{
+  "schema_version": "D_SCHEMA_CONSUMER_AND_MAPPING_VALIDATOR_CONTRACT_V1",
+  "contract_id": "C1-D-SCHEMA-CONSUMER-MAPPING-VALIDATOR-V1",
+  "mode": "READ_ONLY_CONSUMER_FAIL_CLOSED",
+  "required_d_inputs": {
+    "D_CANONICAL_SCHEMA_PROFILE_V1": {
+      "required_metadata": [
+        "schema_profile_id",
+        "schema_version",
+        "entity_catalog",
+        "field_catalog",
+        "type_catalog",
+        "required_field_rules",
+        "profile_sha256"
+      ]
+    },
+    "D_INBOUND_FIELD_MAPPING_CONTRACT_V1": {
+      "required_metadata": [
+        "mapping_contract_id",
+        "mapping_version",
+        "source_to_target_rules",
+        "transformation_rule_catalog_ref",
+        "unmapped_field_policy",
+        "contract_sha256"
+      ]
+    },
+    "D_INTAKE_VALIDATION_RULESET_V1": {
+      "required_metadata": [
+        "ruleset_id",
+        "ruleset_version",
+        "required_value_rules",
+        "type_rules",
+        "range_rules",
+        "code_rules",
+        "relation_rules",
+        "evidence_rules",
+        "ruleset_sha256"
+      ]
+    }
+  },
+  "required_b_inputs": {
+    "NORMALIZED_DATASET_V1": {
+      "acceptable_alternative": "RAW_ARTIFACT_MANIFEST_V1",
+      "minimum_metadata": [
+        "dataset_id_or_manifest_id",
+        "source_record_count",
+        "source_artifact_refs",
+        "provenance_refs",
+        "package_sha256"
+      ]
+    }
+  },
+  "consumer_behavior": {
+    "unknown_d_field": "REJECT_TO_REJECTED_RECORD_BUNDLE",
+    "unknown_d_entity": "REJECT_TO_REJECTED_RECORD_BUNDLE",
+    "missing_required_value": "REJECT_TO_REJECTED_RECORD_BUNDLE",
+    "type_error": "REJECT_TO_REJECTED_RECORD_BUNDLE",
+    "range_error": "REJECT_TO_REJECTED_RECORD_BUNDLE",
+    "invalid_code": "REJECT_TO_REJECTED_RECORD_BUNDLE",
+    "missing_provenance": "REJECT_TO_REJECTED_RECORD_BUNDLE",
+    "missing_evidence": "REJECT_TO_REJECTED_RECORD_BUNDLE",
+    "schema_version_mismatch": "FAIL_CLOSED",
+    "mapping_version_mismatch": "FAIL_CLOSED",
+    "ruleset_version_mismatch": "FAIL_CLOSED",
+    "silent_drop": "PROHIBITED"
+  },
+  "fixture_mode": {
+    "allowed": true,
+    "purpose": "CONSUMER_AND_VALIDATOR_INTERFACE_TEST_ONLY",
+    "fixture_schema_authority": false,
+    "fixture_d_acceptance_claim": false,
+    "actual_binding_requires_all_d_inputs": true,
+    "actual_transformation_requires_b_input": true
+  },
+  "readiness_decision": {
+    "contract_interface_ready": true,
+    "authoritative_d_binding_ready": false,
+    "authoritative_b_data_ready": false,
+    "actual_transformation_ready": false
+  },
+  "status": "FIXTURE_CONSUMER_VALIDATOR_CONTRACT_READY_AUTHORITATIVE_BINDING_BLOCKED"
+}

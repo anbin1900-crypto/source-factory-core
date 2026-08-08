@@ -1,0 +1,81 @@
+{
+  "assignment": {
+    "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
+    "directive_comment": 5171210387,
+    "directive_id": "C1-TO-C2-D-ALIGNED-SOURCE-LINEAGE-V1-20260804-001",
+    "duplicate_prompt_key": "9b0d40bd3fe9df62dad8c6a31e4d8f6d2ac9aafa29070b97299306b532c3107f",
+    "enforcement_comment": 5181054986,
+    "existing_directive_superseded": false,
+    "new_directive": false,
+    "new_duplicate_prompt_key": false,
+    "recovery_comment": 5180350028,
+    "wave2_assignment_blob": "a904e8d6c4ee8684c70ee57203836432196ef175",
+    "wave2_comment": 5174120343
+  },
+  "b1_binding": {
+    "actual_b_fixture_input_used": true,
+    "actual_real_site_input_used": false,
+    "assignment_bound_head": "fb20d1df329150388889ad13ff0507b0fb3060be",
+    "b1_to_c1_handoff_status": "WAITING_B6_INDEPENDENT_ACCEPTANCE",
+    "b6_accepted_handoff_used": false,
+    "current_branch_head_observed": "2026443d51256f6c11295d3db9c652dc34b90bd4",
+    "extraction_receipt_blob": "a4b4f7504c0a2b552fe165176f51833b78e0fd09",
+    "input_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+    "normalized_dataset_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+    "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+    "source_record_envelope_blob": "0148a841344ce5a0df03e55df532871106dd7333"
+  },
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "completed_at_kst": "2026-08-05T01:25:00+09:00",
+  "control_pr": 20,
+  "decision": "PASS",
+  "execution_start_head": "79c016e35f6b18c58be0161f9b008fb9e71b74aa",
+  "first_blocker": null,
+  "handoff": {
+    "c4_consumable": true,
+    "d_acceptance_claim": false,
+    "fixture_claimed_as_real_site_data": false,
+    "remaining_gate": "C3_PR188_CROSSWALK_V2_AND_C4_PACKAGE_ASSEMBLY",
+    "unmapped_values_preserved": true
+  },
+  "outputs": [
+    "C2_B1_FIXTURE_LINEAGE_BINDING_V2.json",
+    "C2_D_ALIGNED_LINEAGE_TEST_RESULT_V2.json",
+    "C2_D_ALIGNED_FINAL_REPORT_V2.json",
+    "LATEST_C2_D_ALIGNED_POINTER.json"
+  ],
+  "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c2-source-lineage/**",
+  "report_id": "C2_D_ALIGNED_FINAL_REPORT_V2",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "result": {
+    "deterministic_replay": "PASS",
+    "lineage_attempt_count": 50,
+    "normalized_dataset_source_field_occurrence_count": 15,
+    "normalized_field_occurrence_count": 9,
+    "normalized_record_count": 3,
+    "pending_mapping_count": 44,
+    "raw_source_field_occurrence_count": 20,
+    "raw_source_record_count": 4,
+    "receipt_hash_parity": "PASS_3_OF_3",
+    "rejected_unmapped_count": 6,
+    "silent_drop_count": 0,
+    "source_field_loss_count": 0,
+    "source_record_sha_parity": "PASS_4_OF_4",
+    "source_value_mutation_count": 0,
+    "test_status": "PASS_34_OF_34",
+    "unmapped_field_occurrence_count": 6
+  },
+  "safety": {
+    "d_canonical_db_write": false,
+    "d_canonical_schema_mutation": false,
+    "merge": false,
+    "panel_shell_direct_edit": false,
+    "production": false,
+    "ready": false,
+    "site_analyzer_ownership": false,
+    "site_extraction_runtime_ownership": false
+  },
+  "schema_version": "2.0.0",
+  "terminal": "C2_D_ALIGNED_SOURCE_LINEAGE_READY_OR_EXACT_BLOCKER",
+  "worker": "C-2_DOCUMENT_DECOMPOSITION"
+}

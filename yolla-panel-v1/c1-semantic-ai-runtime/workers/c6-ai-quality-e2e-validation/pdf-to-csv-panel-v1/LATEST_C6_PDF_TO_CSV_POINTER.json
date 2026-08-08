@@ -1,0 +1,71 @@
+{
+  "schema_version": "LATEST_C6_PDF_TO_CSV_POINTER_V7",
+  "pointer_id": "LATEST-C6-FINAL-PANEL-LAUNCH-20260807-001",
+  "batch_id": "C1-PDF-PREPROCESS-FINAL-PANEL-LAUNCH-20260807-001",
+  "task_id": "C6_FINAL_ACTUAL_PANEL_LAUNCH_INTEGRATED_DIRECT_REPAIR",
+  "worker": "C-6_AI_QUALITY_E2E_VALIDATION",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "directive_comment_id": 5212525529,
+  "commander_control_comment_id": 5212526492,
+  "terminal_comment_id": 5212690546,
+  "previous_pointer_blob": "aa0e505f86d4809b7b570c3c94ee90c2ada7ef4f",
+  "terminal_remote_head_observed": "267c47de13637a8d492f17e5132364d92a90815e",
+  "required_result": "C6_FINAL_PANEL_LAUNCH_CORRECTION_COMPLETE_OR_EXACT_ENVIRONMENT_BLOCKER",
+  "artifacts": {
+    "result": {
+      "path": "C6_FINAL_PANEL_LAUNCH_RESULT_V1.json",
+      "commit": "973e1396f1bfcd64a796b905028f9dc4656a7e1b",
+      "blob": "b04efc720f4ee5f8324f8b26b9c4950d96d42cc0"
+    },
+    "final_report": {
+      "path": "C6_FINAL_PANEL_LAUNCH_FINAL_REPORT_V1.json",
+      "commit": "c32c732dc55221e50c721b88213337d30d517b89",
+      "blob": "46a09ceab9339600da946d8571abbe226a9f0212"
+    },
+    "prior_full_pipeline_e2e": {
+      "path": "C6_PDF_PREPROCESS_CORRECTION_E2E_RESULT_V1.json",
+      "blob": "2b87baebe3526ed3bc5cdc74948e82f1e3ccae1a"
+    }
+  },
+  "remote_bindings": {
+    "c4_pipeline_blob": "63b40f83b0425d241ad1859864625f4211c847d5",
+    "c5_panel_blob": "af1cf6dce3a9dda8eabde1f33146b48b19ffa9c9",
+    "folder_and_pdf_file_share_c4_pipeline": true,
+    "c5_parallel_launch_hardening_retained": true
+  },
+  "launch_validation": {
+    "gui_launch_requested": true,
+    "gui_window_created": false,
+    "pyside6_available": false,
+    "pyside6_cached_install_package_available": false,
+    "launch_return_code": 2,
+    "headless_safe_panel_request_probe": "PASS_BOTH_INPUT_MODES",
+    "user_visible_dependency_error": "PASS",
+    "install_command_present": true,
+    "rerun_command_present": true,
+    "launch_exception_message_present": true,
+    "silent_pass": false
+  },
+  "defect_accounting": {
+    "new_integrated_defects_found": 0,
+    "new_integrated_repairs": 0,
+    "environment_blocker_count": 1,
+    "environment_blocker": "PYSIDE6_NOT_INSTALLED_IN_C6_RUNTIME"
+  },
+  "decision": "C6_FINAL_PANEL_LAUNCH_EXACT_ENVIRONMENT_BLOCKER",
+  "terminal": "C6_FINAL_PANEL_LAUNCH_CORRECTION_COMPLETE_OR_EXACT_ENVIRONMENT_BLOCKER",
+  "first_blocker": "PYSIDE6_NOT_INSTALLED_IN_C6_RUNTIME",
+  "next_gate": "C1_FINAL_PANEL_LAUNCH_BATCH_CLOSE_REVIEW",
+  "semantic_analysis": false,
+  "semantic_validation": false,
+  "gpt_call": false,
+  "database_write": false,
+  "actual_150_pdf_run": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "github_ci": "NOT_RUN_NOT_CLAIMED_PASS"
+}

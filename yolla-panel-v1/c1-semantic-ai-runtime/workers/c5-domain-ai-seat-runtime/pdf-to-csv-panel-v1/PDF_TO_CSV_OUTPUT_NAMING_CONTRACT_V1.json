@@ -1,0 +1,98 @@
+{
+  "schema_version": "PDF_TO_CSV_OUTPUT_NAMING_CONTRACT_V1",
+  "contract_id": "C5-PDF-TO-CSV-OUTPUT-NAMING-20260807-001",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
+  "task_id": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_V1",
+  "directive_comment_id": 5207637581,
+  "authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "control_pr": 20,
+    "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+    "common_directive_commit": "ef02e3b59a2d389b571d5b5feaa20a8d24a21e4d",
+    "common_directive_blob": "2ce798647c86363a8fd2382a08013304f73bc1ef",
+    "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c5-domain-ai-seat-runtime/pdf-to-csv-panel-v1/**"
+  },
+  "purpose": "Generate deterministic, collision-resistant, Windows-safe output directories and CSV chunk filenames for multiple source PDFs without editing the panel shell.",
+  "required_inputs": [
+    "source_no",
+    "source_relative_path",
+    "chunk_no",
+    "page_start",
+    "page_end"
+  ],
+  "source_path_canonicalization": {
+    "separator": "/",
+    "windows_backslash_input_allowed": true,
+    "unicode_normalization": "NFC",
+    "dot_segments_removed": true,
+    "absolute_path": "REJECT",
+    "windows_drive_path": "REJECT",
+    "unc_path": "REJECT",
+    "parent_traversal": "REJECT",
+    "non_pdf_extension": "REJECT",
+    "canonical_source_relative_path_preserved_in_plan": true,
+    "source_parent_relative_path_preserved_in_plan": true,
+    "source_file_preserved_in_plan": true
+  },
+  "source_output_directory_rule": {
+    "template": "{sanitized_parent_hierarchy}/source-{source_no:08d}--{safe_source_stem}--src-{sha256(canonical_source_relative_path)}",
+    "source_sequence_width": 8,
+    "source_path_digest": "FULL_SHA256_HEX_64",
+    "parent_hierarchy_preserved": true,
+    "lossy_sanitization_disambiguated_by_full_source_digest": true,
+    "default_max_output_relative_chars": 240,
+    "path_budget_exceeded": "FAIL_CLOSED_OUTPUT_RELATIVE_PATH_TOO_LONG"
+  },
+  "csv_chunk_filename_rule": {
+    "template": "source-{source_no:08d}--chunk-{chunk_no:08d}--pages-{page_start:08d}-{page_end:08d}--{safe_source_stem}--{source_sha256_prefix16}.csv",
+    "source_sequence_preserved": true,
+    "chunk_sequence_preserved": true,
+    "page_range_preserved": true,
+    "lexicographic_chunk_order_matches_numeric_order": true,
+    "maximum_sequence_value": 99999999
+  },
+  "windows_safe_component_rule": {
+    "forbidden_characters": "<>:\"/\\|?* and ASCII control 0x00-0x1F",
+    "replacement": "_",
+    "whitespace": "COLLAPSE_TO_SINGLE_SPACE",
+    "trailing_space_or_dot": "REMOVE",
+    "reserved_names": [
+      "CON",
+      "PRN",
+      "AUX",
+      "NUL",
+      "COM1-COM9",
+      "LPT1-LPT9"
+    ],
+    "reserved_name_action": "PREFIX_UNDERSCORE",
+    "long_component_action": "TRUNCATE_AND_APPEND_SHA256_PREFIX12",
+    "default_component_max_length": 80
+  },
+  "batch_invariants": {
+    "source_sequence_contiguous_from_one": true,
+    "chunk_sequence_contiguous_from_one": true,
+    "source_order_preserved": true,
+    "page_start_order_non_decreasing": true,
+    "duplicate_source_no": "REJECT",
+    "duplicate_source_path_windows_casefold": "REJECT",
+    "duplicate_output_directory_windows_casefold": "REJECT",
+    "duplicate_chunk_output_path_windows_casefold": "REJECT",
+    "chunk_source_binding_required": true,
+    "silent_overwrite": false,
+    "silent_collision_resolution": false
+  },
+  "integration_boundary": {
+    "returns_relative_paths_only": true,
+    "creates_directories": false,
+    "writes_csv": false,
+    "mutates_original_pdf": false,
+    "panel_shell_edit": false,
+    "semantic_analysis": false,
+    "gpt_call": false,
+    "database_write": false
+  },
+  "required_terminal": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_READY_OR_EXACT_BLOCKER",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

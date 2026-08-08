@@ -1,0 +1,135 @@
+{
+  "schema_version": "C1_PDF_TO_CSV_PANEL_CYCLE1_BATCH_V1",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
+  "issued_at_kst": "2026-08-07T01:55:00+09:00",
+  "issuer": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "baseline_head": "0466b4ec54bb18060dca6821fc1c559aeef396a5",
+  "mode": "CYCLE_BATCH_PARALLEL_ONE_OWNER_END_TO_END",
+  "mission": "BUILD_FIRST_FUNCTIONAL_COMPONENTS_FOR_A_STANDALONE_PANEL_THAT_SELECTS_A_FOLDER_AND_CONVERTS_PDF_DOCUMENTS_TO_SMALL_CSV_CHUNK_FILES",
+  "phase_1_scope": [
+    "STANDALONE_PANEL",
+    "SOURCE_FOLDER_SELECTION",
+    "PDF_DISCOVERY",
+    "PDF_TEXT_EXTRACTION_WITH_OCR_FALLBACK",
+    "TEXT_CHUNKING",
+    "CSV_CHUNK_FILE_OUTPUT"
+  ],
+  "explicitly_excluded": [
+    "SEMANTIC_ANALYSIS",
+    "SEMANTIC_MATCHING",
+    "GPT_CALL",
+    "LEGAL_CLASSIFICATION",
+    "KNOWLEDGE_CANDIDATE_GENERATION",
+    "DATABASE_WRITE",
+    "SERVER_INTEGRATION",
+    "PRODUCTION",
+    "READY",
+    "MERGE",
+    "SELF_MERGE"
+  ],
+  "technical_baseline": {
+    "use_case": "INTERNAL_NON_DISTRIBUTED_WINDOWS_PC_TOOL",
+    "primary_pdf_engine_candidate": "PYMUPDF",
+    "secondary_pdf_engine_candidate": "PDFPLUMBER",
+    "ocr_candidate": "TESSERACT_OR_OCRMYPDF",
+    "csv_encoding": "UTF-8-SIG",
+    "source_files": "OCR_FRIENDLY_CLEAN_PDF_DOCUMENTS",
+    "meaning_analysis": false
+  },
+  "common_output_contract": {
+    "minimum_csv_columns": [
+      "source_file",
+      "source_path",
+      "chunk_no",
+      "page_start",
+      "page_end",
+      "text"
+    ],
+    "source_order_preserved": true,
+    "page_order_preserved": true,
+    "empty_text_silent_success": false,
+    "configurable_chunk_limit_required": true,
+    "original_pdf_mutation": false
+  },
+  "worker_assignments": {
+    "C2": {
+      "role": "PDF_FOLDER_INVENTORY_WORKER",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c2-document-decomposition/pdf-to-csv-panel-v1/**",
+      "task": "IMPLEMENT_RECURSIVE_FOLDER_PDF_DISCOVERY_AND_DETERMINISTIC_FILE_INVENTORY",
+      "required_outputs": [
+        "pdf_folder_inventory.py",
+        "PDF_FOLDER_INVENTORY_CONTRACT_V1.json",
+        "test_pdf_folder_inventory.py",
+        "C2_PDF_FOLDER_INVENTORY_FINAL_REPORT_V1.json",
+        "LATEST_C2_PDF_TO_CSV_POINTER.json"
+      ],
+      "required_terminal": "C2_PDF_FOLDER_INVENTORY_READY_OR_EXACT_BLOCKER"
+    },
+    "C3": {
+      "role": "PDF_TEXT_EXTRACTION_OCR_WORKER",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c3-field-mapping-rules/pdf-to-csv-panel-v1/**",
+      "task": "IMPLEMENT_PAGE_ORDERED_PDF_TEXT_EXTRACTION_WITH_DIRECT_TEXT_FIRST_AND_OCR_FALLBACK_WITHOUT_SEMANTIC_PROCESSING",
+      "required_outputs": [
+        "pdf_text_extractor.py",
+        "PDF_PAGE_TEXT_RECORD_CONTRACT_V1.json",
+        "test_pdf_text_extractor.py",
+        "C3_PDF_TEXT_EXTRACTION_FINAL_REPORT_V1.json",
+        "LATEST_C3_PDF_TO_CSV_POINTER.json"
+      ],
+      "required_terminal": "C3_PDF_TEXT_EXTRACTION_OCR_READY_OR_EXACT_BLOCKER"
+    },
+    "C4": {
+      "role": "TEXT_CHUNK_CSV_WRITER_WORKER",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c4-evidence-knowledge-candidate/pdf-to-csv-panel-v1/**",
+      "task": "IMPLEMENT_CONFIGURABLE_TEXT_CHUNKING_AND_UTF8_SIG_CSV_CHUNK_FILE_WRITING_WITH_PAGE_RANGE_PRESERVATION",
+      "required_outputs": [
+        "text_chunk_csv_writer.py",
+        "CSV_CHUNK_FILE_CONTRACT_V1.json",
+        "test_text_chunk_csv_writer.py",
+        "C4_CSV_CHUNK_WRITER_FINAL_REPORT_V1.json",
+        "LATEST_C4_PDF_TO_CSV_POINTER.json"
+      ],
+      "required_terminal": "C4_TEXT_CHUNK_CSV_WRITER_READY_OR_EXACT_BLOCKER"
+    },
+    "C5": {
+      "role": "OUTPUT_PATH_NAMING_WORKER",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c5-domain-ai-seat-runtime/pdf-to-csv-panel-v1/**",
+      "task": "IMPLEMENT_DETERMINISTIC_OUTPUT_FOLDER_AND_CHUNK_FILENAME_RULES_FOR_MULTIPLE_SOURCE_PDFS_WITHOUT_PANEL_SHELL_EDIT",
+      "required_outputs": [
+        "output_path_policy.py",
+        "PDF_TO_CSV_OUTPUT_NAMING_CONTRACT_V1.json",
+        "test_output_path_policy.py",
+        "C5_OUTPUT_PATH_NAMING_FINAL_REPORT_V1.json",
+        "LATEST_C5_PDF_TO_CSV_POINTER.json"
+      ],
+      "required_terminal": "C5_PDF_TO_CSV_OUTPUT_PATH_NAMING_READY_OR_EXACT_BLOCKER"
+    },
+    "C6": {
+      "role": "PDF_TO_CSV_VALIDATION_WORKER",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c6-ai-quality-e2e-validation/pdf-to-csv-panel-v1/**",
+      "task": "IMPLEMENT_INDEPENDENT_VALIDATION_FOR_PAGE_ORDER_CHUNK_SEQUENCE_CSV_ENCODING_REQUIRED_COLUMNS_AND_NONEMPTY_SOURCE_COVERAGE",
+      "required_outputs": [
+        "validate_pdf_to_csv_cycle1.py",
+        "PDF_TO_CSV_ACCEPTANCE_CONTRACT_V1.json",
+        "test_validate_pdf_to_csv_cycle1.py",
+        "C6_PDF_TO_CSV_VALIDATION_FINAL_REPORT_V1.json",
+        "LATEST_C6_PDF_TO_CSV_POINTER.json"
+      ],
+      "required_terminal": "C6_PDF_TO_CSV_VALIDATOR_READY_OR_EXACT_BLOCKER"
+    }
+  },
+  "cycle_1_acceptance": {
+    "worker_terminal_count_required": 5,
+    "source_or_test_code_required": true,
+    "unit_test_required": true,
+    "remote_readback_required": true,
+    "panel_integration_required_in_cycle_1": false,
+    "actual_150_pdf_batch_required_in_cycle_1": false,
+    "semantic_analysis_count": 0,
+    "gpt_call_count": 0
+  },
+  "status": "CYCLE1_DISPATCH_READY"
+}

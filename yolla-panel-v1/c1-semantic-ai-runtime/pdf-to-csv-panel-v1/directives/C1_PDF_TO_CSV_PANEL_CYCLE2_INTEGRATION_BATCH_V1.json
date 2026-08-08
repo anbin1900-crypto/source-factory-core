@@ -1,0 +1,137 @@
+{
+  "schema_version": "C1_PDF_TO_CSV_PANEL_CYCLE2_INTEGRATION_BATCH_V1",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE2-20260807-001",
+  "issued_at_kst": "2026-08-07T03:31:00+09:00",
+  "issuer": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "cycle1_acceptance": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/pdf-to-csv-panel-v1/reports/C1_PDF_TO_CSV_CYCLE1_ACCEPTANCE_MATRIX_V1.json",
+    "commit": "7947161938162ba5b868e489bee8e27e1066e0bb",
+    "blob": "b29aaac241a0802e4af95595bf4070f57ce066f0",
+    "decision": "CYCLE1_COMPONENTS_ACCEPTED_READY_FOR_CYCLE2_INTEGRATION"
+  },
+  "mission": "CONNECT_THE_FIVE_READY_COMPONENTS_INTO_ONE_STANDALONE_FOLDER_SELECT_PDF_TO_CSV_PANEL_AND_PASS_FIXTURE_E2E",
+  "phase_1_scope_only": [
+    "STANDALONE_PANEL",
+    "SOURCE_FOLDER_SELECTION",
+    "OUTPUT_FOLDER_SELECTION",
+    "PDF_DISCOVERY",
+    "DIRECT_TEXT_EXTRACTION_WITH_OCR_FALLBACK",
+    "CONFIGURABLE_TEXT_CHUNKING",
+    "UTF8_SIG_CSV_CHUNK_OUTPUT",
+    "PROGRESS_AND_ERROR_DISPLAY",
+    "INTEGRATED_FIXTURE_E2E"
+  ],
+  "explicitly_excluded": [
+    "SEMANTIC_ANALYSIS",
+    "SEMANTIC_MATCHING",
+    "GPT_CALL",
+    "LEGAL_CLASSIFICATION",
+    "KNOWLEDGE_CANDIDATE_GENERATION",
+    "DATABASE_WRITE",
+    "SERVER_INTEGRATION",
+    "ACTUAL_150_PDF_ACCEPTANCE_RUN",
+    "PRODUCTION",
+    "READY",
+    "MERGE",
+    "SELF_MERGE"
+  ],
+  "execution_sequence": [
+    "C2_FOLDER_SELECTION_INVENTORY_ADAPTER_AND_C3_EXTRACTION_RUNTIME_ADAPTER_IN_PARALLEL",
+    "C4_PIPELINE_ORCHESTRATOR_AFTER_C2_AND_C3_TERMINALS",
+    "C5_STANDALONE_PANEL_AFTER_C4_TERMINAL",
+    "C6_INTEGRATED_FIXTURE_E2E_AFTER_C5_TERMINAL"
+  ],
+  "cycle1_component_bindings": {
+    "C2_POINTER_BLOB": "ba27ebb810d29b989a6677930b13b04cd7e23daf",
+    "C3_POINTER_BLOB": "1296e68317ca027e20aa812e6a2bb0f6f1a70004",
+    "C4_POINTER_BLOB": "7845c8676a133f5e4b71d118d3d9eed1044e7b2b",
+    "C5_POINTER_BLOB": "22d7eacd826e732490f85151fd6f09de97f1fc20",
+    "C6_POINTER_BLOB": "cf53524eb4149004638a913deddb507e08157a80"
+  },
+  "worker_assignments": {
+    "C2": {
+      "task_id": "C2_PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_V1",
+      "entry_event": "IMMEDIATE",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c2-document-decomposition/pdf-to-csv-panel-v1/**",
+      "task": "IMPLEMENT_A_FOLDER_SELECTION_INPUT_ADAPTER_THAT_VALIDATES_SOURCE_FOLDER_AND_OUTPUT_FOLDER_AND_RETURNS_THE_CYCLE1_DETERMINISTIC_PDF_INVENTORY_WITHOUT_BUILDING_THE_PANEL_UI",
+      "required_outputs": [
+        "panel_folder_inventory_adapter.py",
+        "PANEL_FOLDER_SELECTION_INVENTORY_CONTRACT_V1.json",
+        "test_panel_folder_inventory_adapter.py",
+        "C2_CYCLE2_FINAL_REPORT_V1.json",
+        "LATEST_C2_PDF_TO_CSV_POINTER.json"
+      ],
+      "required_terminal": "C2_PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_READY_OR_EXACT_BLOCKER"
+    },
+    "C3": {
+      "task_id": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_V1",
+      "entry_event": "IMMEDIATE",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c3-field-mapping-rules/pdf-to-csv-panel-v1/**",
+      "task": "BIND_THE_CYCLE1_EXTRACTOR_TO_INVENTORY_RECORDS_ADD_DEPENDENCY_DOCTOR_AND_EXECUTABLE_DIRECT_TEXT_FIRST_OCR_FALLBACK_STATUS_WITHOUT_SEMANTIC_PROCESSING",
+      "required_outputs": [
+        "pdf_extraction_runtime_adapter.py",
+        "PDF_EXTRACTION_RUNTIME_ADAPTER_CONTRACT_V1.json",
+        "test_pdf_extraction_runtime_adapter.py",
+        "C3_CYCLE2_FINAL_REPORT_V1.json",
+        "LATEST_C3_PDF_TO_CSV_POINTER.json"
+      ],
+      "required_terminal": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_READY_OR_EXACT_BLOCKER"
+    },
+    "C4": {
+      "task_id": "C4_PDF_TO_CSV_PIPELINE_ORCHESTRATOR_V1",
+      "entry_event": "C2_AND_C3_CYCLE2_TERMINALS",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c4-evidence-knowledge-candidate/pdf-to-csv-panel-v1/**",
+      "task": "CONNECT_C2_INVENTORY_C3_EXTRACTION_C4_CHUNK_WRITER_AND_C5_OUTPUT_NAMING_INTO_ONE_CALLABLE_PIPELINE_WITH_PROGRESS_EVENTS_AND_FAIL_CLOSED_ERROR_RECORDS",
+      "required_outputs": [
+        "pdf_to_csv_pipeline_orchestrator.py",
+        "PDF_TO_CSV_PIPELINE_CONTRACT_V1.json",
+        "test_pdf_to_csv_pipeline_orchestrator.py",
+        "C4_CYCLE2_FINAL_REPORT_V1.json",
+        "LATEST_C4_PDF_TO_CSV_POINTER.json"
+      ],
+      "required_terminal": "C4_PDF_TO_CSV_PIPELINE_ORCHESTRATOR_READY_OR_EXACT_BLOCKER"
+    },
+    "C5": {
+      "task_id": "C5_STANDALONE_PDF_TO_CSV_PANEL_V1",
+      "entry_event": "C4_CYCLE2_TERMINAL",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c5-domain-ai-seat-runtime/pdf-to-csv-panel-v1/**",
+      "task": "BUILD_A_STANDALONE_PYSIDE6_PANEL_FOR_SOURCE_FOLDER_OUTPUT_FOLDER_CHUNK_LIMIT_START_PROGRESS_ERROR_AND_RESULT_DISPLAY_AND_CALL_ONLY_THE_C4_PIPELINE_ORCHESTRATOR",
+      "required_outputs": [
+        "standalone_pdf_to_csv_panel.py",
+        "STANDALONE_PDF_TO_CSV_PANEL_CONTRACT_V1.json",
+        "test_standalone_pdf_to_csv_panel.py",
+        "C5_CYCLE2_FINAL_REPORT_V1.json",
+        "LATEST_C5_PDF_TO_CSV_POINTER.json"
+      ],
+      "required_terminal": "C5_STANDALONE_PDF_TO_CSV_PANEL_READY_OR_EXACT_BLOCKER"
+    },
+    "C6": {
+      "task_id": "C6_PDF_TO_CSV_CYCLE2_INTEGRATED_E2E_V1",
+      "entry_event": "C5_CYCLE2_TERMINAL",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c6-ai-quality-e2e-validation/pdf-to-csv-panel-v1/**",
+      "task": "REBIND_CURRENT_C4_POINTER_AND_RUN_INDEPENDENT_FIXTURE_E2E_FROM_FOLDER_INVENTORY_THROUGH_PANEL_CALL_PATH_TO_GENERATED_CSV_VALIDATING_COLUMNS_ENCODING_CHUNK_AND_PAGE_ORDER_AND_ERROR_REPORTING",
+      "required_outputs": [
+        "validate_pdf_to_csv_cycle2_e2e.py",
+        "PDF_TO_CSV_CYCLE2_E2E_ACCEPTANCE_CONTRACT_V1.json",
+        "test_validate_pdf_to_csv_cycle2_e2e.py",
+        "C6_CYCLE2_FINAL_REPORT_V1.json",
+        "LATEST_C6_PDF_TO_CSV_POINTER.json"
+      ],
+      "required_terminal": "C6_PDF_TO_CSV_CYCLE2_INTEGRATED_E2E_PASS_OR_EXACT_BLOCKER"
+    }
+  },
+  "cycle2_acceptance": {
+    "standalone_panel_source_present": true,
+    "source_and_output_folder_selection_present": true,
+    "cycle1_components_bound": "PASS_5_OF_5",
+    "integrated_fixture_e2e_required": true,
+    "actual_150_pdf_batch_required": false,
+    "semantic_analysis_count": 0,
+    "gpt_call_count": 0,
+    "database_write_count": 0
+  },
+  "status": "CYCLE2_DISPATCH_READY"
+}

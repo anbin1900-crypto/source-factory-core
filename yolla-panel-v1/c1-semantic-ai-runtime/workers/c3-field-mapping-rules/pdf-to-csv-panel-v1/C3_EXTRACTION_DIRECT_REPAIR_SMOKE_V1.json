@@ -1,0 +1,46 @@
+{
+  "schema_version": "C3_EXTRACTION_DIRECT_REPAIR_SMOKE_V1",
+  "batch_id": "C1-PDF-PREPROCESS-CORRECTION-20260807-001",
+  "directive_comment_id": 5208880453,
+  "environment": {
+    "os": "Linux test runtime",
+    "pymupdf": true,
+    "pillow": true,
+    "pytesseract": true,
+    "tesseract_path": "/usr/bin/tesseract",
+    "required_languages": ["kor", "eng"],
+    "missing_languages": []
+  },
+  "actual_execution": {
+    "direct_blank_pdf": {
+      "pages": 3,
+      "modes": ["DIRECT_TEXT_LOW_VOLUME", "DIRECT_TEXT", "EMPTY_PAGE"],
+      "empty_page_count": 1,
+      "warning_page_count": 1,
+      "result": "PASS"
+    },
+    "mixed_korean_english_scanned_pdf": {
+      "pages": 1,
+      "mode": "OCR_FALLBACK",
+      "ocr_page_count": 1,
+      "nonempty_text": true,
+      "result": "PASS"
+    },
+    "scanned_pdf_without_ocr": {
+      "error_code": "OCR_BACKEND_REQUIRED",
+      "page_no": 1,
+      "result": "PASS_FAIL_CLOSED"
+    },
+    "one_record_inventory_runtime": {
+      "status": "PASS",
+      "passed_file_count": 1,
+      "ocr_page_count": 1,
+      "result": "PASS"
+    }
+  },
+  "accuracy_claim": false,
+  "target_windows_pc_execution": false,
+  "semantic_analysis": false,
+  "gpt_call": false,
+  "database_write": false
+}

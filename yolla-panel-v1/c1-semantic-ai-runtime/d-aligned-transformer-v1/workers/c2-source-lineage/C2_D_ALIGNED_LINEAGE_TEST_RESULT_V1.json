@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "result_id": "C2_D_ALIGNED_LINEAGE_TEST_RESULT_V1",
+  "worker": "C-2_DOCUMENT_DECOMPOSITION",
+  "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
+  "directive_id": "C1-TO-C2-D-ALIGNED-SOURCE-LINEAGE-V1-20260804-001",
+  "directive_comment": 5171210387,
+  "validated_at_kst": "2026-08-04 05:27 KST",
+  "status": "PASS_FIXTURE_CONTRACT",
+  "execution": {
+    "python_compile": "PASS_2_OF_2",
+    "contract_shape_validation": "PASS",
+    "semantic_validator": "PASS",
+    "unit_tests": "PASS_18_OF_18",
+    "clean_system_python_rerun": "PASS",
+    "source_record_count": 1,
+    "source_field_count": 6,
+    "lineage_entry_count": 6,
+    "accepted_count": 3,
+    "rejected_count": 3,
+    "silent_drop_count": 0,
+    "source_value_mutation_count": 0
+  },
+  "required_lineage_fields": {
+    "SOURCE_RECORD_ID": "PASS","SOURCE_FIELD": "PASS","SOURCE_VALUE": "PASS","PROVENANCE_REF": "PASS","EVIDENCE_REF": "PASS","VALIDATION_STATUS": "PASS","REJECTION_REASON": "PASS"
+  },
+  "negative_tests": {
+    "silent_drop_reject": "PASS","duplicate_field_lineage_reject": "PASS","source_value_mutation_reject": "PASS","source_value_digest_mismatch_reject": "PASS",
+    "missing_provenance_reject": "PASS","missing_evidence_reject": "PASS","rejected_without_reason_reject": "PASS",
+    "actual_binding_without_exact_head_path_blob_reject": "PASS","fixture_actual_input_overclaim_reject": "PASS","coverage_summary_mismatch_reject": "PASS"
+  },
+  "retention_tests": {
+    "unmapped_field_retained": "PASS","missing_required_value_retained": "PASS","format_error_value_retained": "PASS","nested_json_value_preserved": "PASS"
+  },
+  "input_authority": {
+    "actual_b_input_used": false,
+    "normalized_dataset_v1": "NOT_PUBLISHED",
+    "raw_artifact_manifest_v1": "NOT_PUBLISHED",
+    "first_blocker": "B1_NORMALIZED_DATASET_OR_RAW_ARTIFACT_MANIFEST_NOT_PUBLISHED"
+  },
+  "attempt_log": [
+    {"attempt": 1,"runtime": "/opt/pyvenv/bin/python","result": "PASS_WITH_UNRELATED_STARTUP_WARNING","project_exit_codes": [0,0,0],"warning": "COMMON_SPREADSHEET_WARMUP_HOOK_WARNING_NOT_PROJECT_FAILURE"},
+    {"attempt": 2,"runtime": "/usr/bin/python3","result": "FAIL_DEPENDENCY","failure": "ModuleNotFoundError: jsonschema"},
+    {"attempt": 3,"runtime": "/usr/bin/python3","correction": "REMOVED_EXTERNAL_JSONSCHEMA_RUNTIME_DEPENDENCY_AND_ADDED_STDLIB_CONTRACT_SHAPE_VALIDATOR","result": "PASS_CLEAN","unit_tests": "18/18"}
+  ],
+  "safety": {
+    "site_analyzer_ownership": false,"site_extraction_runtime_ownership": false,"d_canonical_schema_mutation": false,"d_canonical_db_write": false,
+    "panel_shell_direct_edit": false,"production": false,"ready": false,"merge": false
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": "C1_TRANSFORMATION_RESULT_POINTER_V3",
+  "pointer_id": "C1-D-ALIGNED-TRANSFORMATION-RESULT-POINTER-20260805-003",
+  "registered_at_kst": "2026-08-05T17:09:00+09:00",
+  "directive_accepted": true,
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "existing_directive_superseded": false,
+  "previous_pointer_blob": "c8675a82b45fc1291fed0f3f754026fe94dabc14",
+  "b1_handoff_ack": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/reports/C1_B1_ACCEPTED_FIXTURE_HANDOFF_ACK_V1.json",
+    "commit": "c8ea192fa2d6f8e69b3a171a7777efb950fc36f6",
+    "blob": "b24f72ad6480280ac9a17480b0adb001452f8016",
+    "decision": "ACK_ACCEPTED_FIXTURE_HANDOFF_NO_CONTENT_DELTA_NO_REEXECUTION"
+  },
+  "b1_authority": {
+    "head": "b452cff27ff9088eb3754a8cc35c05af340339ec",
+    "latest_pointer_blob": "10e715ddef42b7843c0b49a9b35e2475fee6c42f",
+    "extraction_result_pointer_blob": "cbfcb28741ff3a8d1e4ff0f4006c7fc996d73c0f",
+    "handoff_pointer_blob": "932904cede5bcfb239a62952173f82147b0b0f26",
+    "b6_pointer_blob": "448fbfb07321f3cabae4a25649feee90e46ba106",
+    "handoff_candidate_blob": "01c4c2175b30314538494ed5694668005769635a",
+    "status": "B6_ACCEPTED_FIXTURE_HANDOFF_READY"
+  },
+  "worker_gate": {
+    "status": "PASS_4_OF_4",
+    "C-2_POINTER_BLOB": "a4bc27b8e24dbadf668db5da21cacda0a866284a",
+    "C-3_POINTER_BLOB": "344cd19f110c825ac3ac6cdc6c2b70571eae3a55",
+    "C-4_POINTER_BLOB": "1779b1f6fbfcba913859850fec0c69f533154da3",
+    "C-5_POINTER_BLOB": "c86cf94f2ad858602ef06c88a4f29f4813814c41",
+    "C-6_POINTER_BLOB": "77039ddf47c4e640335e0464b477f260eb84b94f"
+  },
+  "result": {
+    "terminal": "C1_D_ALIGNED_TRANSFORMER_READY_OR_EXACT_BLOCKER",
+    "terminal_decision": "EXACT_EXTERNAL_BLOCKER",
+    "worker_gate": "PASS_4_OF_4",
+    "package_completeness": "PASS_4_OF_4",
+    "final_e2e_executed": true,
+    "first_blocker": "PR188_REQUIRED_SOURCE_PATHS_MISSING_22",
+    "first_blocker_detail": {
+      "rule_id": "B001",
+      "source_path": "package.source_id",
+      "target": "SOURCE.source_id",
+      "failure_signature": "B1_PACKAGE_SOURCE_ID_NOT_PUBLISHED"
+    }
+  },
+  "required_output_state": {
+    "D_ALIGNED_TRANSFORMATION_PACKAGE_V1": {
+      "blob": "b763db81fee8a4b43566f1e13e9c23b72659458a",
+      "status": "AVAILABLE"
+    },
+    "FIELD_MAPPING_REPORT_V1": {
+      "blob": "d6e8eb45532ba6b4e290593b35924c3fb3e06aa1",
+      "status": "AVAILABLE"
+    },
+    "REJECTED_RECORD_BUNDLE_V1": {
+      "blob": "c17f85fd86deb6812ec327da2d89e6b129dfae69",
+      "status": "AVAILABLE"
+    },
+    "KNOWLEDGE_CANDIDATE_BUNDLE_V1": {
+      "blob": "9a6fd20c6228fc641167fbd7667e77abf2b53ecf",
+      "status": "AVAILABLE_EMPTY_CANDIDATE_COUNT_0"
+    }
+  },
+  "validation_state": {
+    "C5_PR188_PACKAGE_VALIDATION_RESULT_V2_BLOB": "b472a3816161d7322b739f20eb18876643d96195",
+    "REJECTED_RECORD_BUNDLE_V2_BLOB": "9056ea53e9d4e66e3a37c308da79223bcfa06c0f",
+    "KNOWLEDGE_ACCEPTANCE_RECEIPT_CANDIDATE_V1_BLOB": "8084d33b4dc98d1537a5e431e0de99ec944b62d1",
+    "package_decision": "REJECTED",
+    "accepted_count": 0,
+    "rejected_count": 28,
+    "pending_count": 44,
+    "candidate_count": 0
+  },
+  "input_state": {
+    "B1_HANDOFF_AUTHORITY": "B6_ACCEPTED_FIXTURE_HANDOFF_CONSUMED",
+    "B1_CONTENT_DELTA_FROM_PRIOR_CONSUMED_INPUT": false,
+    "C2_TO_C6_REEXECUTION_REQUIRED": false,
+    "B1_NORMALIZED_DATASET_V1": "AVAILABLE_CONSUMED_UNCHANGED",
+    "B1_RAW_ARTIFACT_MANIFEST_V1": "AVAILABLE_CONSUMED_UNCHANGED",
+    "B1_SOURCE_RECORD_ENVELOPE_V1": "AVAILABLE_CONSUMED_UNCHANGED",
+    "B1_EXTRACTION_RECEIPT_V1": "AVAILABLE_CONSUMED_UNCHANGED",
+    "D1_D_CANONICAL_SCHEMA_PROFILE_V1": "AVAILABLE_CONSUMED_PR188",
+    "D1_D_INBOUND_FIELD_MAPPING_CONTRACT_V1": "AVAILABLE_CONSUMED_PR188",
+    "D1_D_INTAKE_VALIDATION_RULESET_V1": "AVAILABLE_CONSUMED_PR188",
+    "D1_KNOWLEDGE_ACCEPTANCE_RECEIPT_CONTRACT": "AVAILABLE_CONSUMED_PR188"
+  },
+  "superseded_blockers": [
+    "D1_REQUIRED_SCHEMA_MAPPING_VALIDATION_CONTRACT_SET_NOT_PUBLISHED",
+    "B1_NORMALIZED_DATASET_OR_RAW_ARTIFACT_MANIFEST_NOT_PUBLISHED",
+    "B1_TO_C1_HANDOFF_NOT_PUBLISHED_WAITING_B6_INDEPENDENT_ACCEPTANCE"
+  ],
+  "actual_d_handoff_performed": false,
+  "d1_submission_eligible": false,
+  "silent_drop_count": 0,
+  "d_canonical_schema_mutation_count": 0,
+  "d_canonical_db_write_count": 0,
+  "next_action": "WAIT_B1_OR_D1_AUTHORITY_CONTENT_DELTA_RESOLVING_REQUIRED_SOURCE_PATHS_22_THEN_INCREMENTAL_REVALIDATION",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "C1_D_ALIGNED_TRANSFORMATION_E2E_COMPLETE_B1_HANDOFF_ACCEPTED_EXTERNAL_REQUIRED_PATHS_22"
+}

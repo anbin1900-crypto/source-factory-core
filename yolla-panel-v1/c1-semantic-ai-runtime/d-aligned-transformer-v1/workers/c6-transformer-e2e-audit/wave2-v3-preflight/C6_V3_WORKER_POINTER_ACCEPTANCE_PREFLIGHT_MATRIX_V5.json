@@ -1,0 +1,68 @@
+{
+  "schema_version": "C6_V3_WORKER_POINTER_ACCEPTANCE_PREFLIGHT_MATRIX_V5",
+  "matrix_id": "C6-V3-WORKER-POINTER-PREFLIGHT-20260805-005",
+  "worker": "C-6_AI_QUALITY_AND_E2E_VALIDATION",
+  "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
+  "directive_id": "C1-TO-C6-D-ALIGNED-TRANSFORMER-E2E-AUDIT-V1-20260804-001",
+  "evaluated_at_kst": "2026-08-05 01:51 KST",
+  "entry_gate": "UPDATED_C2_C3_C4_C5_TERMINALS_4_OF_4",
+  "entry_gate_open": false,
+  "updated_wave2_gate": {"required": 4, "accepted": 2, "status": "PASS_2_OF_4"},
+  "workers": {
+    "C-2": {
+      "result_comment": 5181940916,
+      "terminal": "C2_D_ALIGNED_SOURCE_LINEAGE_READY_OR_EXACT_BLOCKER",
+      "pointer_blob": "a4bc27b8e24dbadf668db5da21cacda0a866284a",
+      "tests": "PASS_34_OF_34",
+      "lineage_attempt_count": 50,
+      "silent_drop_count": 0,
+      "decision": "PASS",
+      "accepted_into_c6_gate": true
+    },
+    "C-3": {
+      "result_comment": 5182029836,
+      "final_pointer_comment": 5182046563,
+      "terminal": "C3_D_ALIGNED_FIELD_MAPPING_READY_OR_EXACT_BLOCKER",
+      "pointer_blob": "4dd95a48d1094badabc0e0988ed652a1789ac020",
+      "crosswalk_v2_blob": "e6a9478142b1f379065a16b88a69869e0866cbe8",
+      "field_mapping_report_v1_blob": "8e55bf106f04ceb49ee7c6da6a1cf7028f0ab700",
+      "test_result_v2_blob": "c890659157fd574568e4e35906e4f2ed20b8a072",
+      "final_report_v2_blob": "123d9875b42b6485f7905ed186df95530ed02259",
+      "tests": "PASS_60_OF_60",
+      "mapping_rule_count": 43,
+      "missing_required_source_path_count": 22,
+      "silent_drop_count": 0,
+      "decision": "EXACT_BLOCKER_FOR_FULL_PR188_SUBMISSION",
+      "exact_blocker": "PR188_REQUIRED_SOURCE_PATHS_MISSING_22",
+      "accepted_into_c6_gate": true
+    },
+    "C-4": {
+      "preflight_comment": 5181849736,
+      "entry_gate": "C2_V2_AND_C3_V2_TERMINALS",
+      "C2_gate": "PASS",
+      "C3_gate": "PASS_EXACT_BLOCKER_TERMINAL",
+      "execution_gate_open": true,
+      "updated_package_outputs": "NOT_PUBLISHED",
+      "updated_pointer": "NOT_PUBLISHED",
+      "updated_terminal": "NOT_PUBLISHED",
+      "accepted_into_c6_gate": false,
+      "status": "EXECUTION_REQUIRED_NOW"
+    },
+    "C-5": {
+      "preflight_comment": 5181916005,
+      "entry_gate": "C4_V2_PACKAGE_TERMINAL",
+      "updated_validation_terminal": "NOT_PUBLISHED",
+      "accepted_into_c6_gate": false,
+      "status": "EVENT_WAIT_C4_UPDATED_PACKAGE_TERMINAL"
+    }
+  },
+  "virtual_pass_count": 0,
+  "final_v3_e2e_authorized": false,
+  "first_blocker": "C4_UPDATED_WAVE2_PACKAGE_OUTPUTS_POINTER_AND_TERMINAL_NOT_PUBLISHED",
+  "additional_blockers": [
+    "C3_PR188_REQUIRED_SOURCE_PATHS_MISSING_22_MUST_BE_PRESERVED_BY_C4",
+    "C5_UPDATED_VALIDATION_TERMINAL_WAITING_C4",
+    "B1_TO_C1_HANDOFF_NOT_PUBLISHED_WAITING_B6_INDEPENDENT_ACCEPTANCE"
+  ],
+  "decision": "C2_C3_ACCEPTED_GATE_REMAINS_CLOSED_WAITING_C4_C5"
+}

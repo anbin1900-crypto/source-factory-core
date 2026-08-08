@@ -1,0 +1,1965 @@
+{
+  "assignment": {
+    "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
+    "directive_comment": 5171210387,
+    "directive_id": "C1-TO-C2-D-ALIGNED-SOURCE-LINEAGE-V1-20260804-001",
+    "duplicate_prompt_key": "9b0d40bd3fe9df62dad8c6a31e4d8f6d2ac9aafa29070b97299306b532c3107f",
+    "enforcement_comment": 5181054986,
+    "new_directive": false,
+    "new_duplicate_prompt_key": false,
+    "recovery_comment": 5180350028,
+    "reuse_existing_directive": true,
+    "wave2_assignment_blob": "a904e8d6c4ee8684c70ee57203836432196ef175",
+    "wave2_comment": 5174120343
+  },
+  "b1_authority": {
+    "actual_site_data": false,
+    "assignment_bound_head": "fb20d1df329150388889ad13ff0507b0fb3060be",
+    "b1_to_c1_handoff_status": "WAITING_B6_INDEPENDENT_ACCEPTANCE",
+    "b6_accepted_handoff": false,
+    "branch_head_observed_at_execution": "2026443d51256f6c11295d3db9c652dc34b90bd4",
+    "control_pr": 19,
+    "input_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+    "inputs": {
+      "EXTRACTION_RECEIPT_V1": {
+        "actual_site_extraction": false,
+        "blob": "a4b4f7504c0a2b552fe165176f51833b78e0fd09",
+        "mode": "FIXTURE",
+        "network_call_count": 0,
+        "run_id": "fixture-run-001",
+        "status": "FIXTURE_E2E_PASS"
+      },
+      "NORMALIZED_DATASET_V1": {
+        "blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "canonical_sha256": "add8698d36c9a87043409168ce6831cf3ab87ff5d77db98c2a81aa782591a112",
+        "duplicate_count": 1,
+        "input_record_count": 4,
+        "output_record_count": 3,
+        "source_field_loss_count": 0
+      },
+      "RAW_ARTIFACT_MANIFEST_V1": {
+        "artifact_count": 2,
+        "blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+        "canonical_sha256": "9059a443c88103cf1472b50617e61097b29ad8e118825485c2a1d68ccf748a97",
+        "total_record_count": 4
+      },
+      "SOURCE_RECORD_ENVELOPE_V1": {
+        "blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "canonical_sha256": "9889c83d72f6ecca84714509493552b8a9bfa304917275cb779ddb0ecb3aa0ba",
+        "record_count": 4
+      }
+    },
+    "receipt_hash_parity": {
+      "normalized_dataset": "PASS",
+      "raw_artifact_manifest": "PASS",
+      "source_record_envelope": "PASS"
+    },
+    "repository": "anbin1900-crypto/source-factory-core"
+  },
+  "binding_id": "C2-B1-FIXTURE-LINEAGE-BINDING-V2-20260805-001",
+  "coverage": {
+    "accepted_count": 0,
+    "attempt_kind_counts": {
+      "NORMALIZED_DATASET_SOURCE_FIELD": 15,
+      "NORMALIZED_FIELD": 9,
+      "SOURCE_ENVELOPE_FIELD": 20,
+      "UNMAPPED_FIELD": 6
+    },
+    "duplicate_lineage_attempt_count": 0,
+    "lineage_attempt_count": 50,
+    "normalized_dataset_source_field_occurrence_count": 15,
+    "normalized_field_occurrence_count": 9,
+    "normalized_record_count": 3,
+    "pending_mapping_count": 44,
+    "raw_source_field_occurrence_count": 20,
+    "raw_source_record_count": 4,
+    "rejected_count": 6,
+    "rejection_consumer_ready_count": 6,
+    "silent_drop_count": 0,
+    "source_field_loss_count": 0,
+    "source_value_mutation_count": 0,
+    "unmapped_field_occurrence_count": 6,
+    "validation_status_counts": {
+      "PENDING_MAPPING": 44,
+      "REJECTED": 6
+    }
+  },
+  "generated_at_kst": "2026-08-05T01:25:00+09:00",
+  "handoff": {
+    "consumer": "C-4_EVIDENCE_AND_KNOWLEDGE_CANDIDATE",
+    "d_acceptance_claim": false,
+    "fixture_claimed_as_b6_accepted_handoff": false,
+    "fixture_claimed_as_real_site_data": false,
+    "next_required_gate": "C3_PR188_CROSSWALK_V2_AND_C4_PACKAGE_ASSEMBLY",
+    "ready": true,
+    "unmapped_values_preserved": true
+  },
+  "lineage_attempts": [
+    {
+      "attempt_kind": "NORMALIZED_DATASET_SOURCE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "source_fields.address",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-3f62e909994379cc6d066d96",
+      "logical_record_id": "L-001",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-001",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-001",
+      "source_value": "Seoul",
+      "source_value_sha256": "553941023afc336c5bd9897fd5543a94db7bb04a25efe5cdb22a1c05d9ef0a87",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_DATASET_SOURCE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "source_fields.extra",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-d23eb3ee2ce6725c075986ab",
+      "logical_record_id": "L-001",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-001",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-001",
+      "source_value": {
+        "floor": 3,
+        "tags": [
+          "a",
+          "b"
+        ]
+      },
+      "source_value_sha256": "f81cbf569364f87906f9ec9d88ad3159368643b5c033e91a54a6ba156300b8bf",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_DATASET_SOURCE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "source_fields.id",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-4afc52e549b43032173ee37a",
+      "logical_record_id": "L-001",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-001",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-001",
+      "source_value": "L-001",
+      "source_value_sha256": "29a34a1d6b894d4d74ff98e3376ae15114b12082c8ffb406044f350f1457d35d",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_DATASET_SOURCE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "source_fields.name",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-93e55f08a7825827da086217",
+      "logical_record_id": "L-001",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-001",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-001",
+      "source_value": "Alpha",
+      "source_value_sha256": "b1a96dd646bccaa24cef7a3db22a6f995f05658f31b8d7e04505326a7609c27d",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_DATASET_SOURCE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "source_fields.price",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-647f44dec76effd743e23ed3",
+      "logical_record_id": "L-001",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-001",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-001",
+      "source_value": 100,
+      "source_value_sha256": "ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_DATASET_SOURCE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        },
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.address",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-e5c2da9a50dfe24aebbc914e",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-002",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3",
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1",
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-002",
+      "source_value": "Busan",
+      "source_value_sha256": "e2f964590be5067ee5fb79c04fec6eabff1fc6f7a2ae787b000c835d46497b51",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_DATASET_SOURCE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        },
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.id",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-16bdd56482df2cbf36a85c3a",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-002",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3",
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1",
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-002",
+      "source_value": "L-002",
+      "source_value_sha256": "25b11373fa7311cddf216bc539f638ebde5c751680915fdc9e811cd969fbc406",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_DATASET_SOURCE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        },
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.name",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-eb0e8ef82ccd3d7666fb9ce6",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-002",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3",
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1",
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-002",
+      "source_value": "Beta",
+      "source_value_sha256": "703390318bd55aef075d1e8ee1de19a80633cc1a465b966197299a3e31b6df6",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_DATASET_SOURCE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        },
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.note",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-baf86e16a9ae3ffc8f3cfa71",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-002",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3",
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1",
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-002",
+      "source_value": "preserve-me",
+      "source_value_sha256": "4747f22d62ba4f44ee673d6211b8bc0392356915209b249e72a7373c2668eb61",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_DATASET_SOURCE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        },
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.price",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-b3f3344294973e82740df4b7",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-002",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3",
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1",
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-002",
+      "source_value": 200,
+      "source_value_sha256": "27badc983df1780b60c2b3dad0820607c364923dfd01a1ea42a87a5200e85cb6",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_DATASET_SOURCE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.address",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-07e0e6bb963bb36dde4627dd",
+      "logical_record_id": "L-003",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "dedup_lineage": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-003",
+        "raw_artifact_ids": [
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-003",
+      "source_value": "Incheon",
+      "source_value_sha256": "a885268a52dc04a733cfd47a9ed194f8794be1b049d516fcd2e21f7691d865b4",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_DATASET_SOURCE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.id",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-64aaee0a4ebca953b98ee49a",
+      "logical_record_id": "L-003",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "dedup_lineage": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-003",
+        "raw_artifact_ids": [
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-003",
+      "source_value": "L-003",
+      "source_value_sha256": "a1b6b1fa0898a9dad07ed97b660aec3f3235ac33aef44ce1502fe4b5b3ae9f98",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_DATASET_SOURCE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.name",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-753e22be8072fdc958e4ae28",
+      "logical_record_id": "L-003",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "dedup_lineage": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-003",
+        "raw_artifact_ids": [
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-003",
+      "source_value": "Gamma",
+      "source_value_sha256": "6dcf31a9096f3db35430aebd4e786a5181ae002f018b0d3d8e083437be3c46ad",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_DATASET_SOURCE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.price",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-f302c8e1163418616b8dcc68",
+      "logical_record_id": "L-003",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "dedup_lineage": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-003",
+        "raw_artifact_ids": [
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-003",
+      "source_value": 300,
+      "source_value_sha256": "983bd614bb5afece5ab3b6023f71147cd7b6bc2314f9d27af7422541c655838f",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_DATASET_SOURCE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.unknown_field",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-5dd345352729407952f32fbd",
+      "logical_record_id": "L-003",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "dedup_lineage": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-003",
+        "raw_artifact_ids": [
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-003",
+      "source_value": {
+        "x": 1
+      },
+      "source_value_sha256": "5041bf1f713df204784353e82f6a4a535fb5a945e519a69009ee93b4f6a64e62",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "normalized_fields.price",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-5ec9ab542671f8ea0a9e3791",
+      "logical_record_id": "L-001",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-001",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-001",
+      "source_value": 100,
+      "source_value_sha256": "ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "normalized_fields.record_id",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-3122c7af4f709db6f334ecf3",
+      "logical_record_id": "L-001",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-001",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-001",
+      "source_value": "L-001",
+      "source_value_sha256": "29a34a1d6b894d4d74ff98e3376ae15114b12082c8ffb406044f350f1457d35d",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "normalized_fields.title",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-0f4751e3e570bcd0fdfde17d",
+      "logical_record_id": "L-001",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-001",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-001",
+      "source_value": "Alpha",
+      "source_value_sha256": "b1a96dd646bccaa24cef7a3db22a6f995f05658f31b8d7e04505326a7609c27d",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        },
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "normalized_fields.price",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-2ec4cdbf99e51659fa857bbf",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-002",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3",
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1",
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-002",
+      "source_value": 200,
+      "source_value_sha256": "27badc983df1780b60c2b3dad0820607c364923dfd01a1ea42a87a5200e85cb6",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        },
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "normalized_fields.record_id",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-a7408ce375d26eb52c3ceab1",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-002",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3",
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1",
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-002",
+      "source_value": "L-002",
+      "source_value_sha256": "25b11373fa7311cddf216bc539f638ebde5c751680915fdc9e811cd969fbc406",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        },
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "normalized_fields.title",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-5fc73546578eaee1977b5d64",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-002",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3",
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1",
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-002",
+      "source_value": "Beta",
+      "source_value_sha256": "703390318bd55aef075d1e8ee1de19a80633cc1a465b966197299a3e31b6df6",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "normalized_fields.price",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-b18795d230c2cc7616adb3ba",
+      "logical_record_id": "L-003",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "dedup_lineage": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-003",
+        "raw_artifact_ids": [
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-003",
+      "source_value": 300,
+      "source_value_sha256": "983bd614bb5afece5ab3b6023f71147cd7b6bc2314f9d27af7422541c655838f",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "normalized_fields.record_id",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-68de6101a578559fc6846e60",
+      "logical_record_id": "L-003",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "dedup_lineage": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-003",
+        "raw_artifact_ids": [
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-003",
+      "source_value": "L-003",
+      "source_value_sha256": "a1b6b1fa0898a9dad07ed97b660aec3f3235ac33aef44ce1502fe4b5b3ae9f98",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "NORMALIZED_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "normalized_fields.title",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-67f44589e0f62874cb598a65",
+      "logical_record_id": "L-003",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "dedup_lineage": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-003",
+        "raw_artifact_ids": [
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ]
+      },
+      "rejection_reason": null,
+      "source_record_id": "L-003",
+      "source_value": "Gamma",
+      "source_value_sha256": "6dcf31a9096f3db35430aebd4e786a5181ae002f018b0d3d8e083437be3c46ad",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "source_fields.address",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-eb4c33ff5ca73e77a86c7de8",
+      "logical_record_id": "L-001",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 0,
+        "source_record_id": "raw-001-b8ab938fbc39b3f3:0",
+        "source_record_sha256": "f65590fc0a0e121c7cf7deacde2bbe32669e38fd4281400420b3d27241cf1273",
+        "source_url": "https://fixture.invalid/listings?page=1"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-001-b8ab938fbc39b3f3:0",
+      "source_value": "Seoul",
+      "source_value_sha256": "553941023afc336c5bd9897fd5543a94db7bb04a25efe5cdb22a1c05d9ef0a87",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "source_fields.extra",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-d3f185131695e652d852ec8e",
+      "logical_record_id": "L-001",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 0,
+        "source_record_id": "raw-001-b8ab938fbc39b3f3:0",
+        "source_record_sha256": "f65590fc0a0e121c7cf7deacde2bbe32669e38fd4281400420b3d27241cf1273",
+        "source_url": "https://fixture.invalid/listings?page=1"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-001-b8ab938fbc39b3f3:0",
+      "source_value": {
+        "floor": 3,
+        "tags": [
+          "a",
+          "b"
+        ]
+      },
+      "source_value_sha256": "f81cbf569364f87906f9ec9d88ad3159368643b5c033e91a54a6ba156300b8bf",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "source_fields.id",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-4ddab1360de147675400b5dd",
+      "logical_record_id": "L-001",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 0,
+        "source_record_id": "raw-001-b8ab938fbc39b3f3:0",
+        "source_record_sha256": "f65590fc0a0e121c7cf7deacde2bbe32669e38fd4281400420b3d27241cf1273",
+        "source_url": "https://fixture.invalid/listings?page=1"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-001-b8ab938fbc39b3f3:0",
+      "source_value": "L-001",
+      "source_value_sha256": "29a34a1d6b894d4d74ff98e3376ae15114b12082c8ffb406044f350f1457d35d",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "source_fields.name",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-b9d6c9d57721119ec85f8f92",
+      "logical_record_id": "L-001",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 0,
+        "source_record_id": "raw-001-b8ab938fbc39b3f3:0",
+        "source_record_sha256": "f65590fc0a0e121c7cf7deacde2bbe32669e38fd4281400420b3d27241cf1273",
+        "source_url": "https://fixture.invalid/listings?page=1"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-001-b8ab938fbc39b3f3:0",
+      "source_value": "Alpha",
+      "source_value_sha256": "b1a96dd646bccaa24cef7a3db22a6f995f05658f31b8d7e04505326a7609c27d",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "source_fields.price",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-9530313cad3e11a4fa60f300",
+      "logical_record_id": "L-001",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 0,
+        "source_record_id": "raw-001-b8ab938fbc39b3f3:0",
+        "source_record_sha256": "f65590fc0a0e121c7cf7deacde2bbe32669e38fd4281400420b3d27241cf1273",
+        "source_url": "https://fixture.invalid/listings?page=1"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-001-b8ab938fbc39b3f3:0",
+      "source_value": 100,
+      "source_value_sha256": "ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "source_fields.address",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-0996253218c7e38fc433c70d",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 1,
+        "source_record_id": "raw-001-b8ab938fbc39b3f3:1",
+        "source_record_sha256": "2e33dcf8b0f1c47530ec2207c85bb9b8a73a6651f3f0882a6b088fb79033ba88",
+        "source_url": "https://fixture.invalid/listings?page=1"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-001-b8ab938fbc39b3f3:1",
+      "source_value": "Busan",
+      "source_value_sha256": "e2f964590be5067ee5fb79c04fec6eabff1fc6f7a2ae787b000c835d46497b51",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "source_fields.id",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-943eb83b0e39dc3e803bdbd6",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 1,
+        "source_record_id": "raw-001-b8ab938fbc39b3f3:1",
+        "source_record_sha256": "2e33dcf8b0f1c47530ec2207c85bb9b8a73a6651f3f0882a6b088fb79033ba88",
+        "source_url": "https://fixture.invalid/listings?page=1"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-001-b8ab938fbc39b3f3:1",
+      "source_value": "L-002",
+      "source_value_sha256": "25b11373fa7311cddf216bc539f638ebde5c751680915fdc9e811cd969fbc406",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "source_fields.name",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-a46f3e70cd2f69b33c3ed56f",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 1,
+        "source_record_id": "raw-001-b8ab938fbc39b3f3:1",
+        "source_record_sha256": "2e33dcf8b0f1c47530ec2207c85bb9b8a73a6651f3f0882a6b088fb79033ba88",
+        "source_url": "https://fixture.invalid/listings?page=1"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-001-b8ab938fbc39b3f3:1",
+      "source_value": "Beta",
+      "source_value_sha256": "703390318bd55aef075d1e8ee1de19a80633cc1a465b966197299a3e31b6df6",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "source_fields.note",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-2b95c99a8a811a7b9db2773c",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 1,
+        "source_record_id": "raw-001-b8ab938fbc39b3f3:1",
+        "source_record_sha256": "2e33dcf8b0f1c47530ec2207c85bb9b8a73a6651f3f0882a6b088fb79033ba88",
+        "source_url": "https://fixture.invalid/listings?page=1"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-001-b8ab938fbc39b3f3:1",
+      "source_value": "preserve-me",
+      "source_value_sha256": "4747f22d62ba4f44ee673d6211b8bc0392356915209b249e72a7373c2668eb61",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "source_fields.price",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-c67c56bd3797a3d1addb40bd",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 1,
+        "source_record_id": "raw-001-b8ab938fbc39b3f3:1",
+        "source_record_sha256": "2e33dcf8b0f1c47530ec2207c85bb9b8a73a6651f3f0882a6b088fb79033ba88",
+        "source_url": "https://fixture.invalid/listings?page=1"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-001-b8ab938fbc39b3f3:1",
+      "source_value": 200,
+      "source_value_sha256": "27badc983df1780b60c2b3dad0820607c364923dfd01a1ea42a87a5200e85cb6",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.address",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-7886809475a17d75dc891227",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 0,
+        "source_record_id": "raw-002-c2bd6c5ae5921e52:0",
+        "source_record_sha256": "2e33dcf8b0f1c47530ec2207c85bb9b8a73a6651f3f0882a6b088fb79033ba88",
+        "source_url": "https://fixture.invalid/listings?page=2"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-002-c2bd6c5ae5921e52:0",
+      "source_value": "Busan",
+      "source_value_sha256": "e2f964590be5067ee5fb79c04fec6eabff1fc6f7a2ae787b000c835d46497b51",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.id",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-6ee98ddf5ff452de80406c3e",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 0,
+        "source_record_id": "raw-002-c2bd6c5ae5921e52:0",
+        "source_record_sha256": "2e33dcf8b0f1c47530ec2207c85bb9b8a73a6651f3f0882a6b088fb79033ba88",
+        "source_url": "https://fixture.invalid/listings?page=2"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-002-c2bd6c5ae5921e52:0",
+      "source_value": "L-002",
+      "source_value_sha256": "25b11373fa7311cddf216bc539f638ebde5c751680915fdc9e811cd969fbc406",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.name",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-81ec649c2545177a20bf0d71",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 0,
+        "source_record_id": "raw-002-c2bd6c5ae5921e52:0",
+        "source_record_sha256": "2e33dcf8b0f1c47530ec2207c85bb9b8a73a6651f3f0882a6b088fb79033ba88",
+        "source_url": "https://fixture.invalid/listings?page=2"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-002-c2bd6c5ae5921e52:0",
+      "source_value": "Beta",
+      "source_value_sha256": "703390318bd55aef075d1e8ee1de19a80633cc1a465b966197299a3e31b6df6",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.note",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-adf79bbaf39f5bb2a730880a",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 0,
+        "source_record_id": "raw-002-c2bd6c5ae5921e52:0",
+        "source_record_sha256": "2e33dcf8b0f1c47530ec2207c85bb9b8a73a6651f3f0882a6b088fb79033ba88",
+        "source_url": "https://fixture.invalid/listings?page=2"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-002-c2bd6c5ae5921e52:0",
+      "source_value": "preserve-me",
+      "source_value_sha256": "4747f22d62ba4f44ee673d6211b8bc0392356915209b249e72a7373c2668eb61",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.price",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-c2dd7246b2ce3076fa4c7190",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 0,
+        "source_record_id": "raw-002-c2bd6c5ae5921e52:0",
+        "source_record_sha256": "2e33dcf8b0f1c47530ec2207c85bb9b8a73a6651f3f0882a6b088fb79033ba88",
+        "source_url": "https://fixture.invalid/listings?page=2"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-002-c2bd6c5ae5921e52:0",
+      "source_value": 200,
+      "source_value_sha256": "27badc983df1780b60c2b3dad0820607c364923dfd01a1ea42a87a5200e85cb6",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.address",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-d40d61e46107c2df4b56e968",
+      "logical_record_id": "L-003",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 1,
+        "source_record_id": "raw-002-c2bd6c5ae5921e52:1",
+        "source_record_sha256": "ec2a5a21d5bb4fd984969e1cd597c50e4d83658e28dd319bb23fe5408306e24f",
+        "source_url": "https://fixture.invalid/listings?page=2"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-002-c2bd6c5ae5921e52:1",
+      "source_value": "Incheon",
+      "source_value_sha256": "a885268a52dc04a733cfd47a9ed194f8794be1b049d516fcd2e21f7691d865b4",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.id",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-a7c44fa6a8964f9aa8485be7",
+      "logical_record_id": "L-003",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 1,
+        "source_record_id": "raw-002-c2bd6c5ae5921e52:1",
+        "source_record_sha256": "ec2a5a21d5bb4fd984969e1cd597c50e4d83658e28dd319bb23fe5408306e24f",
+        "source_url": "https://fixture.invalid/listings?page=2"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-002-c2bd6c5ae5921e52:1",
+      "source_value": "L-003",
+      "source_value_sha256": "a1b6b1fa0898a9dad07ed97b660aec3f3235ac33aef44ce1502fe4b5b3ae9f98",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.name",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-2f63a4c08b233be3e5b8b1c2",
+      "logical_record_id": "L-003",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 1,
+        "source_record_id": "raw-002-c2bd6c5ae5921e52:1",
+        "source_record_sha256": "ec2a5a21d5bb4fd984969e1cd597c50e4d83658e28dd319bb23fe5408306e24f",
+        "source_url": "https://fixture.invalid/listings?page=2"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-002-c2bd6c5ae5921e52:1",
+      "source_value": "Gamma",
+      "source_value_sha256": "6dcf31a9096f3db35430aebd4e786a5181ae002f018b0d3d8e083437be3c46ad",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.price",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-32ac1eb777606513f1677c01",
+      "logical_record_id": "L-003",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 1,
+        "source_record_id": "raw-002-c2bd6c5ae5921e52:1",
+        "source_record_sha256": "ec2a5a21d5bb4fd984969e1cd597c50e4d83658e28dd319bb23fe5408306e24f",
+        "source_url": "https://fixture.invalid/listings?page=2"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-002-c2bd6c5ae5921e52:1",
+      "source_value": 300,
+      "source_value_sha256": "983bd614bb5afece5ab3b6023f71147cd7b6bc2314f9d27af7422541c655838f",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "SOURCE_ENVELOPE_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "source_fields.unknown_field",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-7f270396e84d817618757aca",
+      "logical_record_id": "L-003",
+      "provenance": {
+        "collected_at": "2026-08-04T05:22:00+09:00",
+        "input_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+        "record_index": 1,
+        "source_record_id": "raw-002-c2bd6c5ae5921e52:1",
+        "source_record_sha256": "ec2a5a21d5bb4fd984969e1cd597c50e4d83658e28dd319bb23fe5408306e24f",
+        "source_url": "https://fixture.invalid/listings?page=2"
+      },
+      "rejection_reason": null,
+      "source_record_id": "raw-002-c2bd6c5ae5921e52:1",
+      "source_value": {
+        "x": 1
+      },
+      "source_value_sha256": "5041bf1f713df204784353e82f6a4a535fb5a945e519a69009ee93b4f6a64e62",
+      "validation_status": "PENDING_MAPPING"
+    },
+    {
+      "attempt_kind": "UNMAPPED_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "unmapped_fields.address",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-7505232bd74e29a1c54d0c2b",
+      "logical_record_id": "L-001",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-001",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ]
+      },
+      "rejection_reason": "UNMAPPED_FIELD",
+      "source_record_id": "L-001",
+      "source_value": "Seoul",
+      "source_value_sha256": "553941023afc336c5bd9897fd5543a94db7bb04a25efe5cdb22a1c05d9ef0a87",
+      "validation_status": "REJECTED"
+    },
+    {
+      "attempt_kind": "UNMAPPED_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        }
+      ],
+      "field_path": "unmapped_fields.extra",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-4ee686581fb34e1606b06ca1",
+      "logical_record_id": "L-001",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-001",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:0"
+        ]
+      },
+      "rejection_reason": "UNMAPPED_FIELD",
+      "source_record_id": "L-001",
+      "source_value": {
+        "floor": 3,
+        "tags": [
+          "a",
+          "b"
+        ]
+      },
+      "source_value_sha256": "f81cbf569364f87906f9ec9d88ad3159368643b5c033e91a54a6ba156300b8bf",
+      "validation_status": "REJECTED"
+    },
+    {
+      "attempt_kind": "UNMAPPED_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        },
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "unmapped_fields.address",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-1b8c6864ef79ae67cc75866b",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-002",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3",
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1",
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ]
+      },
+      "rejection_reason": "UNMAPPED_FIELD",
+      "source_record_id": "L-002",
+      "source_value": "Busan",
+      "source_value_sha256": "e2f964590be5067ee5fb79c04fec6eabff1fc6f7a2ae787b000c835d46497b51",
+      "validation_status": "REJECTED"
+    },
+    {
+      "attempt_kind": "UNMAPPED_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-001-b8ab938fbc39b3f3",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "b8ab938fbc39b3f3b41f73f3b819a871c9e8416aa269e18278682ae0362338f0",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=1"
+        },
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "unmapped_fields.note",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-5ee5f06cfb8a6ef38006c40c",
+      "logical_record_id": "L-002",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=1"
+        ],
+        "dedup_lineage": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-002",
+        "raw_artifact_ids": [
+          "raw-001-b8ab938fbc39b3f3",
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=1",
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-001-b8ab938fbc39b3f3:1",
+          "raw-002-c2bd6c5ae5921e52:0"
+        ]
+      },
+      "rejection_reason": "UNMAPPED_FIELD",
+      "source_record_id": "L-002",
+      "source_value": "preserve-me",
+      "source_value_sha256": "4747f22d62ba4f44ee673d6211b8bc0392356915209b249e72a7373c2668eb61",
+      "validation_status": "REJECTED"
+    },
+    {
+      "attempt_kind": "UNMAPPED_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "unmapped_fields.address",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-e4bcc9834a8c40e2177ba0ac",
+      "logical_record_id": "L-003",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "dedup_lineage": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-003",
+        "raw_artifact_ids": [
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ]
+      },
+      "rejection_reason": "UNMAPPED_FIELD",
+      "source_record_id": "L-003",
+      "source_value": "Incheon",
+      "source_value_sha256": "a885268a52dc04a733cfd47a9ed194f8794be1b049d516fcd2e21f7691d865b4",
+      "validation_status": "REJECTED"
+    },
+    {
+      "attempt_kind": "UNMAPPED_FIELD",
+      "evidence": [
+        {
+          "raw_artifact_id": "raw-002-c2bd6c5ae5921e52",
+          "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+          "raw_artifact_sha256": "c2bd6c5ae5921e520c35fbc7ebe22baff7926944bc001277b9d95931947ab4d2",
+          "raw_artifact_source_url": "https://fixture.invalid/listings?page=2"
+        }
+      ],
+      "field_path": "unmapped_fields.unknown_field",
+      "fixture_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+      "lineage_attempt_id": "c2v2-7f0ef157e533a281828d4eea",
+      "logical_record_id": "L-003",
+      "provenance": {
+        "declared_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "dedup_lineage": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ],
+        "input_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+        "normalized_record_id": "L-003",
+        "raw_artifact_ids": [
+          "raw-002-c2bd6c5ae5921e52"
+        ],
+        "resolved_source_urls": [
+          "https://fixture.invalid/listings?page=2"
+        ],
+        "source_record_ids": [
+          "raw-002-c2bd6c5ae5921e52:1"
+        ]
+      },
+      "rejection_reason": "UNMAPPED_FIELD",
+      "source_record_id": "L-003",
+      "source_value": {
+        "x": 1
+      },
+      "source_value_sha256": "5041bf1f713df204784353e82f6a4a535fb5a945e519a69009ee93b4f6a64e62",
+      "validation_status": "REJECTED"
+    }
+  ],
+  "safety": {
+    "d_canonical_db_write": false,
+    "d_canonical_schema_mutation": false,
+    "merge": false,
+    "panel_shell_direct_edit": false,
+    "production": false,
+    "ready": false,
+    "site_analyzer_ownership": false,
+    "site_extraction_runtime_ownership": false
+  },
+  "schema_version": "2.0.0",
+  "worker": "C-2_DOCUMENT_DECOMPOSITION"
+}

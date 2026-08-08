@@ -1,0 +1,53 @@
+{
+  "schema_version": "C1_WORKER_ASSIGNMENT_POINTER_V2",
+  "pointer_id": "C1-D-ALIGNED-TRANSFORMER-WORKER-ASSIGNMENT-POINTER-20260804-001",
+  "registered_at_kst": "2026-08-04 05:11 KST",
+  "directive_accepted": true,
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "directive_comment": 5170768957,
+  "existing_directive": "A0-TO-C1-SEMANTIC-KNOWLEDGE-DOMAIN-AI-SHELL-V1-20260803-001",
+  "existing_directive_superseded": false,
+  "authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "control_pr": 20,
+    "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1"
+  },
+  "assignment": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/directives/C1_D_ALIGNED_TRANSFORMER_WORKER_ASSIGNMENT_V1.json",
+    "commit": "5cd2d079c4a33324bf1b4c2b0882ecf1674c2d54",
+    "blob": "23d4f789f8f272e043b83dc7cfe9ddc6c291ac87",
+    "worker_count": 5,
+    "owned_root_collision_count": 0,
+    "status": "PASS_5_OF_5_ASSIGNED"
+  },
+  "publication_receipt": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/directives/C1_WORKER_DIRECTIVE_PUBLICATION_RECEIPT_V1.json",
+    "commit": "9ec8950249d6603221d499148cb075b1cf4b3f12",
+    "blob": "4caeef9614fea5be7afd334c8965ddf14366010b",
+    "publication_count": 5,
+    "status": "PASS_5_OF_5"
+  },
+  "worker_comments": {
+    "C-2": 5171210387,
+    "C-3": 5171213455,
+    "C-4": 5171216606,
+    "C-5": 5171221057,
+    "C-6": 5171225017
+  },
+  "new_root": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/",
+  "existing_worker_root_mutation_count": 0,
+  "reporting_gate": {
+    "start_required": true,
+    "terminal_required": true,
+    "remote_head_required": true,
+    "pointer_path_and_blob_required": true,
+    "exact_blocker_required_when_not_pass": true,
+    "silent_wait_prohibited": true
+  },
+  "next_action": "C2_TO_C6_EXECUTE_PUBLISHED_DIRECTIVES_AND_POST_START_THEN_TERMINAL",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "terminal": "C1_D_ALIGNED_WORKER_DIRECTIVES_PUBLISHED",
+  "status": "C1_D_ALIGNED_TRANSFORMER_WORKER_DIRECTIVES_PUBLISHED_PASS_5_OF_5"
+}

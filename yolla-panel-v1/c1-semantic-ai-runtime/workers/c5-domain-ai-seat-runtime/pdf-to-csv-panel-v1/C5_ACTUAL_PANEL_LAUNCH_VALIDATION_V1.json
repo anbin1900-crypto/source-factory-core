@@ -1,0 +1,46 @@
+{
+  "schema_version": "C5_ACTUAL_PANEL_LAUNCH_VALIDATION_V1",
+  "batch_id": "C1-PDF-PREPROCESS-FINAL-PANEL-LAUNCH-20260807-001",
+  "directive_comment_id": 5212524440,
+  "validation_runtime": {
+    "python_version": "3.13.5",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "display_env": ":0",
+    "pyside6_available": false,
+    "pyside6_spec": null,
+    "direct_import_probe": {
+      "command": "python -c 'import PySide6'",
+      "exit_code": 1,
+      "stderr_terminal": "ModuleNotFoundError: No module named 'PySide6'"
+    }
+  },
+  "actual_gui_boundary": {
+    "qapplication_created": false,
+    "window_created": false,
+    "folder_dialog_executed": false,
+    "single_pdf_dialog_executed": false,
+    "output_dialog_executed": false,
+    "start_button_executed": false,
+    "blocker": "PYSIDE6_NOT_INSTALLED_IN_VALIDATION_RUNTIME"
+  },
+  "direct_repair_validation": {
+    "dependency_message_logic": "PASS_7_OF_7",
+    "user_facing_message": "PASS",
+    "exact_interpreter_in_message": "PASS",
+    "install_command_present": "PASS",
+    "relaunch_command_present": "PASS",
+    "launch_error_message_present": "PASS",
+    "space_path_quoting": "PASS",
+    "environment_blocker_detected": "PASS",
+    "expected_missing_dependency_exit_code": 2
+  },
+  "result": "ENVIRONMENT_EXACT_BLOCKER_AFTER_DEPENDENCY_PATH_REPAIR",
+  "first_blocker": "PYSIDE6_NOT_INSTALLED_IN_VALIDATION_RUNTIME",
+  "actual_window_launch_pass_claimed": false,
+  "semantic_analysis": false,
+  "gpt_call": false,
+  "database_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

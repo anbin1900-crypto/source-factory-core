@@ -1,0 +1,77 @@
+{
+  "schema_version": "D_RELEASE_QUERY_CITATION_ACTIVATION_FIXTURE_V2",
+  "fixture_boundary": {
+    "fixture_is_authority": false,
+    "actual_runtime_activation_claimed": false
+  },
+  "base_authoritative_receipt": {
+    "schema_version": "KNOWLEDGE_ACCEPTANCE_RECEIPT_V1_INSTANCE",
+    "receipt_id": "KAR-D1-ACTUAL-001",
+    "receipt_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "issuer": "D-1_DOMAIN_KNOWLEDGE_DATABASE_COMMANDER",
+    "decision_authority": "D-1_ONLY",
+    "actual_db_authority": "D-1_ONLY",
+    "decision": "ACCEPTED",
+    "fixture_only": false,
+    "package_id": "PKG-D1-001",
+    "package_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "accepted_record_ids": ["REC-001", "REC-002"],
+    "rejected_records": [{"source_record_id": "REC-REJECTED"}],
+    "knowledge_release_created": true
+  },
+  "base_authoritative_release": {
+    "schema_version": "KNOWLEDGE_RELEASE_V1",
+    "release_type": "KNOWLEDGE_RELEASE_V1",
+    "knowledge_release_id": "KREL-D1-001",
+    "issuer": "D-1_DOMAIN_KNOWLEDGE_DATABASE_COMMANDER",
+    "release_status": "D1_KNOWLEDGE_RELEASE_ISSUED",
+    "fixture_only": false,
+    "knowledge_version": "knowledge://hazmat/1.0.0",
+    "source_snapshot_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "package_id": "PKG-D1-001",
+    "package_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "acceptance_receipt_ref": {
+      "receipt_id": "KAR-D1-ACTUAL-001",
+      "receipt_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "version_policy_ref": {
+      "policy_id": "D1_DOCUMENT_IDENTITY_AND_VERSION_POLICY_V1",
+      "blob": "318ba9eed622d7f9a0164662eb85c8bbd20d06f0"
+    },
+    "query_contract_ref": {
+      "policy_id": "D1_QUERY_PLANNING_AND_RERANK_POLICY_V1",
+      "blob": "536e0cd95df6613fcf6306413870b09658d76d35"
+    },
+    "citation_contract_ref": {
+      "policy_id": "D1_EVIDENCE_AND_CITATION_POLICY_V1",
+      "blob": "615a3b25781851cc2502ceee6f5f6a356eea0675"
+    },
+    "evidence_contract_ref": {
+      "policy_id": "D1_EVIDENCE_AND_CITATION_POLICY_V1",
+      "blob": "615a3b25781851cc2502ceee6f5f6a356eea0675"
+    },
+    "released_record_ids": ["REC-001"]
+  },
+  "scenarios": [
+    {"scenario_id":"S01","description":"actual receipt and release activate","expected_activation_status":"ACTIVATED_BY_D1_RELEASE","expected_first_blocker":null},
+    {"scenario_id":"S02","description":"missing receipt","receipt_mode":"NONE","expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"D1_ACTUAL_ACCEPTANCE_RECEIPT_NOT_PUBLISHED"},
+    {"scenario_id":"S03","description":"missing release","release_mode":"NONE","expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"D1_KNOWLEDGE_RELEASE_V1_NOT_PUBLISHED"},
+    {"scenario_id":"S04","description":"fixture receipt","receipt_overrides":{"fixture_only":true},"expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"FIXTURE_RECEIPT_NOT_AUTHORITY"},
+    {"scenario_id":"S05","description":"fixture release","release_overrides":{"fixture_only":true},"expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"FIXTURE_RELEASE_NOT_AUTHORITY"},
+    {"scenario_id":"S06","description":"missing knowledge version","release_remove_paths":["knowledge_version"],"expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"KNOWLEDGE_VERSION_NOT_BOUND"},
+    {"scenario_id":"S07","description":"missing query contract","release_remove_paths":["query_contract_ref"],"expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"QUERY_CONTRACT_NOT_BOUND"},
+    {"scenario_id":"S08","description":"missing citation contract","release_remove_paths":["citation_contract_ref"],"expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"CITATION_CONTRACT_NOT_BOUND"},
+    {"scenario_id":"S09","description":"missing evidence contract","release_remove_paths":["evidence_contract_ref"],"expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"EVIDENCE_CONTRACT_NOT_BOUND"},
+    {"scenario_id":"S10","description":"receipt ref mismatch","release_overrides":{"acceptance_receipt_ref.receipt_id":"BAD"},"expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"ACCEPTANCE_RECEIPT_ID_MISMATCH"},
+    {"scenario_id":"S11","description":"package mismatch","release_overrides":{"package_id":"BAD"},"expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"PACKAGE_ID_MISMATCH"},
+    {"scenario_id":"S12","description":"empty release set","release_overrides":{"released_record_ids":[]},"expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"RELEASED_RECORD_SET_EMPTY"},
+    {"scenario_id":"S13","description":"rejected record included","release_overrides":{"released_record_ids":["REC-REJECTED"]},"expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"RELEASED_RECORD_NOT_ACCEPTED_BY_RECEIPT"},
+    {"scenario_id":"S14","description":"partial receipt valid subset","receipt_overrides":{"decision":"PARTIALLY_ACCEPTED"},"expected_activation_status":"ACTIVATED_BY_D1_RELEASE","expected_first_blocker":null},
+    {"scenario_id":"S15","description":"query blob mismatch","release_overrides":{"query_contract_ref.blob":"0000000000000000000000000000000000000000"},"expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"QUERY_CONTRACT_BLOB_MISMATCH"},
+    {"scenario_id":"S16","description":"release not issued","release_overrides":{"release_status":"CANDIDATE"},"expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"KNOWLEDGE_RELEASE_STATUS_NOT_ISSUED"},
+    {"scenario_id":"S17","description":"missing snapshot","release_overrides":{"source_snapshot_sha256":null},"expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"SOURCE_SNAPSHOT_SHA256_MISSING"},
+    {"scenario_id":"S18","description":"receipt release flag false","receipt_overrides":{"knowledge_release_created":false},"expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"RECEIPT_KNOWLEDGE_RELEASE_CREATED_FALSE"},
+    {"scenario_id":"S19","description":"version blob mismatch","release_overrides":{"version_policy_ref.blob":"1111111111111111111111111111111111111111"},"expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"KNOWLEDGE_VERSION_CONTRACT_BLOB_MISMATCH"},
+    {"scenario_id":"S20","description":"evidence blob mismatch","release_overrides":{"evidence_contract_ref.blob":"2222222222222222222222222222222222222222"},"expected_activation_status":"BLOCKED_FAIL_CLOSED","expected_first_blocker":"EVIDENCE_CONTRACT_BLOB_MISMATCH"}
+  ]
+}

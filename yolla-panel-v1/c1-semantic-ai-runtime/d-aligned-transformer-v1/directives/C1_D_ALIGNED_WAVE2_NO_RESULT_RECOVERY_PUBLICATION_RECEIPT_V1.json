@@ -1,0 +1,76 @@
+{
+  "schema_version": "C1_D_ALIGNED_WAVE2_NO_RESULT_RECOVERY_PUBLICATION_RECEIPT_V1",
+  "receipt_id": "C1-D-ALIGNED-WAVE2-NO-RESULT-RECOVERY-PUBLICATION-20260804-001",
+  "registered_at_kst": "2026-08-04 23:14 KST",
+  "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "audit": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/reports/C1_D_ALIGNED_WAVE2_NO_RESULT_RECOVERY_AUDIT_V1.json",
+    "commit": "1ebd04ef89370b5119ad497cbf8b5e09cb83e79f"
+  },
+  "recovery_assignment": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/directives/C1_D_ALIGNED_WAVE2_NO_RESULT_RECOVERY_V1.json",
+    "commit": "83ccf4167152a1276659e11077d00efc5e699e74"
+  },
+  "worker_publications": {
+    "C-2": {
+      "comment_id": 5180350028,
+      "action": "EXECUTE_NOW",
+      "directive_reused": true,
+      "duplicate_prompt_key_reused": true,
+      "expected_terminal": "C2_D_ALIGNED_SOURCE_LINEAGE_READY_OR_EXACT_BLOCKER"
+    },
+    "C-3": {
+      "comment_id": 5180356187,
+      "action": "EXECUTE_NOW",
+      "directive_reused": true,
+      "duplicate_prompt_key_reused": true,
+      "expected_terminal": "C3_D_ALIGNED_FIELD_MAPPING_READY_OR_EXACT_BLOCKER"
+    },
+    "C-4": {
+      "comment_id": 5180360102,
+      "action": "PREFLIGHT_AND_EVENT_WAIT",
+      "entry_gate": "C2_V2_AND_C3_V2_TERMINALS"
+    },
+    "C-5": {
+      "comment_id": 5180365149,
+      "action": "PR188_PREFLIGHT_AND_EVENT_WAIT",
+      "entry_gate": "C4_V2_PACKAGE_TERMINAL"
+    },
+    "C-6": {
+      "comment_id": 5180369398,
+      "action": "FREEZE_AND_EVENT_WAIT",
+      "entry_gate": "UPDATED_C2_C3_C4_C5_TERMINALS_4_OF_4"
+    }
+  },
+  "external_dependency": {
+    "B-1_PR": 19,
+    "head": "4bbd542c9e0cb99acff8dc81443117297757c6a3",
+    "latest_report_pointer_blob": "81f6731c4615afedbfec3985aadf028819672b00",
+    "status": "ACTIVE_WAVE4_WAITING_B2_TO_B5_TERMINALS_THEN_B6",
+    "new_request_published": false,
+    "reason": "Existing B1 Wave4 already covers fixture seed binding and handoff closure."
+  },
+  "publication_summary": {
+    "worker_comments": 5,
+    "execute_now_workers": 2,
+    "event_wait_workers": 3,
+    "new_directive_count": 0,
+    "new_duplicate_prompt_key_count": 0,
+    "duplicate_external_request_count": 0,
+    "status": "PASS_5_OF_5"
+  },
+  "boundaries": {
+    "actual_site_data_claim": false,
+    "fixture_claimed_as_d_accepted_data": false,
+    "d_acceptance_receipt_issued": false,
+    "d_canonical_db_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "terminal": "C1_D_ALIGNED_WAVE2_NO_RESULT_RECOVERY_PUBLISHED",
+  "status": "PASS_5_OF_5"
+}

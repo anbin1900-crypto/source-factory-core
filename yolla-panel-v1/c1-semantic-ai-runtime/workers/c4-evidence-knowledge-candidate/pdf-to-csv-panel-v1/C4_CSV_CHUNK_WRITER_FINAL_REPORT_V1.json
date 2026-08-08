@@ -1,0 +1,104 @@
+{
+  "schema_version": "C4_CSV_CHUNK_WRITER_FINAL_REPORT_V1",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
+  "task_id": "C4_TEXT_CHUNK_CSV_WRITER_V1",
+  "worker": "C-4_EVIDENCE_KNOWLEDGE_CANDIDATE_WORKER",
+  "directive_comment_id": 5207635653,
+  "start_comment_id": 5208062784,
+  "published_at_kst": "2026-08-07T03:14:56+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c4-evidence-knowledge-candidate/pdf-to-csv-panel-v1/**",
+  "authority": {
+    "common_directive_path": "yolla-panel-v1/c1-semantic-ai-runtime/pdf-to-csv-panel-v1/directives/C1_PDF_TO_CSV_PANEL_CYCLE1_BATCH_V1.json",
+    "common_directive_commit": "ef02e3b59a2d389b571d5b5feaa20a8d24a21e4d",
+    "common_directive_blob": "2ce798647c86363a8fd2382a08013304f73bc1ef",
+    "start_head": "0bd710217c9c7a0f62544e1f53b7e2f0167b22aa",
+    "head_before_final_report": "b83cee4afdc7d684becd3adad49a039a32adcfe1"
+  },
+  "outputs": {
+    "source": {
+      "path": "text_chunk_csv_writer.py",
+      "commit": "6c2384f629b8b9e0228d8a3cd3b99b9c1a96bf68",
+      "blob": "5555e2c7622076d4be290c4d68e966c0ce34a547"
+    },
+    "contract": {
+      "path": "CSV_CHUNK_FILE_CONTRACT_V1.json",
+      "commit": "56f692e5afc177730167d3af38b50fd3f206062d",
+      "blob": "2968022397f35bf398f7e04dab40e1ec77f992c1"
+    },
+    "tests": {
+      "path": "test_text_chunk_csv_writer.py",
+      "commit": "a8714645cc9bbc84fb4bf503cf9e1b04050e2764",
+      "blob": "c2d4cfdcfc00c24265425209d05a08b9a84bc806"
+    }
+  },
+  "implementation": {
+    "accepted_page_number_fields": ["page_no", "page_number"],
+    "required_text_field": "text",
+    "strict_page_order": true,
+    "duplicate_page_number_allowed": false,
+    "configurable_max_chars": true,
+    "character_count_unit": "UNICODE_CODE_POINT",
+    "page_boundary_crossing": false,
+    "source_text_normalization": "NONE",
+    "source_text_trim": false,
+    "one_based_contiguous_chunk_no": true,
+    "csv_encoding": "UTF-8-SIG",
+    "csv_layout": "ONE_HEADER_AND_ONE_CHUNK_ROW_PER_FILE",
+    "minimum_columns": [
+      "source_file",
+      "source_path",
+      "chunk_no",
+      "page_start",
+      "page_end",
+      "text"
+    ],
+    "additional_columns": ["char_start", "char_end", "text_sha256"],
+    "atomic_write": true,
+    "identical_rerun": "REUSED_IDENTICAL",
+    "different_existing_output_default": "FAIL_CLOSED",
+    "filename_factory_injectable": true,
+    "original_pdf_mutation": false
+  },
+  "validation": {
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_15_OF_15",
+    "remote_blob_readback": "PASS_3_OF_3",
+    "utf8_sig_bom": "PASS",
+    "minimum_column_coverage": "PASS_6_OF_6",
+    "page_order_preservation": "PASS",
+    "chunk_sequence": "PASS",
+    "unicode_codepoint_limit": "PASS",
+    "exact_text_sha256": "PASS",
+    "csv_quote_newline_roundtrip": "PASS",
+    "atomic_write": "PASS",
+    "idempotent_reuse": "PASS",
+    "conflicting_output_fail_closed": "PASS",
+    "path_traversal_rejected": "PASS",
+    "empty_text_silent_success": false,
+    "semantic_analysis_count": 0,
+    "gpt_call_count": 0
+  },
+  "integration_state": {
+    "c3_page_text_contract_consumed": false,
+    "c3_terminal_available_at_final_check": false,
+    "adapter_ready_for_page_no_or_page_number": true,
+    "c5_filename_factory_injection_ready": true,
+    "panel_integration_required_in_cycle_1": false,
+    "panel_integration_performed": false,
+    "actual_150_pdf_batch_required_in_cycle_1": false,
+    "actual_pdf_batch_performed": false
+  },
+  "decision": "PASS_SOURCE_CONTRACT_TEST_READY",
+  "terminal": "C4_TEXT_CHUNK_CSV_WRITER_READY_OR_EXACT_BLOCKER",
+  "first_blocker": null,
+  "semantic_analysis": false,
+  "gpt_call": false,
+  "database_write": false,
+  "server_integration": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

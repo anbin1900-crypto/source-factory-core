@@ -1,0 +1,62 @@
+{
+  "schema_version": "C6_FINAL_PANEL_LAUNCH_FINAL_REPORT_V1",
+  "batch_id": "C1-PDF-PREPROCESS-FINAL-PANEL-LAUNCH-20260807-001",
+  "task_id": "C6_FINAL_ACTUAL_PANEL_LAUNCH_INTEGRATED_DIRECT_REPAIR",
+  "worker": "C-6_AI_QUALITY_E2E_VALIDATION",
+  "directive_comment_id": 5212525529,
+  "commander_control_comment_id": 5212526492,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "observed_remote_head_before_report": "e358ddb99a018056e28619776deca5b02d3de0fc",
+  "required_result": "C6_FINAL_PANEL_LAUNCH_CORRECTION_COMPLETE_OR_EXACT_ENVIRONMENT_BLOCKER",
+  "result_artifact": {
+    "path": "C6_FINAL_PANEL_LAUNCH_RESULT_V1.json",
+    "commit": "973e1396f1bfcd64a796b905028f9dc4656a7e1b",
+    "blob": "b04efc720f4ee5f8324f8b26b9c4950d96d42cc0"
+  },
+  "current_remote": {
+    "c4_pipeline_blob": "63b40f83b0425d241ad1859864625f4211c847d5",
+    "c5_panel_blob": "af1cf6dce3a9dda8eabde1f33146b48b19ffa9c9",
+    "c5_parallel_launch_hardening_observed": true,
+    "c5_dependency_message_korean": true,
+    "c5_install_command_generated_from_current_python": true,
+    "c5_rerun_command_generated": true,
+    "c5_launch_exception_message_generated": true
+  },
+  "execution": {
+    "gui_launch_requested": true,
+    "gui_window_created": false,
+    "pyside6_available": false,
+    "pyside6_cached_install_package_available": false,
+    "launch_boundary_return_code": 2,
+    "headless_safe_panel_request_probe": "PASS_BOTH_INPUT_MODES",
+    "folder_to_c4_argument": "source_folder",
+    "pdf_file_to_c4_argument": "pdf_file",
+    "same_c4_pipeline_loader": true,
+    "prior_exact_blob_full_pipeline_e2e": "PASS",
+    "prior_exact_blob_e2e_result_blob": "2b87baebe3526ed3bc5cdc74948e82f1e3ccae1a"
+  },
+  "defect_accounting": {
+    "new_c6_integrated_defects_found": 0,
+    "new_c6_integrated_repairs": 0,
+    "environment_blocker_count": 1,
+    "environment_blocker": "PYSIDE6_NOT_INSTALLED_IN_C6_RUNTIME",
+    "silent_pass": false,
+    "user_actionable_dependency_guidance": true
+  },
+  "decision": "C6_FINAL_PANEL_LAUNCH_EXACT_ENVIRONMENT_BLOCKER",
+  "terminal": "C6_FINAL_PANEL_LAUNCH_CORRECTION_COMPLETE_OR_EXACT_ENVIRONMENT_BLOCKER",
+  "first_blocker": "PYSIDE6_NOT_INSTALLED_IN_C6_RUNTIME",
+  "next_gate": "C1_FINAL_PANEL_LAUNCH_BATCH_CLOSE_REVIEW",
+  "semantic_analysis": false,
+  "semantic_validation": false,
+  "gpt_call": false,
+  "database_write": false,
+  "actual_150_pdf_run": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "github_ci": "NOT_RUN_NOT_CLAIMED_PASS"
+}

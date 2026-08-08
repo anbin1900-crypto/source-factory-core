@@ -1,0 +1,78 @@
+{
+  "schema_version": "LATEST_C1_PDF_TO_CSV_CYCLE_POINTER_V3",
+  "pointer_id": "LATEST-C1-PDF-TO-CSV-CYCLE2-C4-ACTIVE-20260807-001",
+  "published_at_kst": "2026-08-07T04:13:00+09:00",
+  "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "previous_pointer_blob": "9ab5b3fd382edcc9f0c3f8d0df7c616630a16003",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE2-20260807-001",
+  "common_directive": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/pdf-to-csv-panel-v1/directives/C1_PDF_TO_CSV_PANEL_CYCLE2_INTEGRATION_BATCH_V1.json",
+    "commit": "9484b996f10885a174fb0e1ef661ab357563f705",
+    "blob": "078dd6f439c612a092fbdbf467f7bffb3e6a1a2f",
+    "remote_readback": "PASS"
+  },
+  "entry_event_receipt": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/pdf-to-csv-panel-v1/events/C1_CYCLE2_C2_C3_TERMINAL_EVENT_RECEIPT_V1.json",
+    "commit": "860411a10c16e1e9d57f05b268c1d46d2139fec1",
+    "blob": "40c581e97c4aef676acd8ce960d23fa21ef25728",
+    "entry_event": "C2_AND_C3_CYCLE2_TERMINALS",
+    "entry_event_satisfied": true,
+    "remote_readback": "PASS"
+  },
+  "completed_components": {
+    "C2": {
+      "task_id": "C2_PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_V1",
+      "pointer_blob": "b648fae1da2b31662861aef31ebd30e6daa5676e",
+      "terminal": "C2_PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_READY",
+      "tests": "PASS_29_OF_29",
+      "status": "ACCEPTED"
+    },
+    "C3": {
+      "task_id": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_V1",
+      "pointer_blob": "3aa2d77df839ad5ee95a44965d4a99da088cf1ef",
+      "terminal_comment_id": 5208429694,
+      "terminal": "C3_PDF_EXTRACTION_RUNTIME_ADAPTER_READY",
+      "tests": "PASS_35_OF_35",
+      "status": "ACCEPTED"
+    }
+  },
+  "active_task": {
+    "worker": "C4",
+    "task_id": "C4_PDF_TO_CSV_PIPELINE_ORCHESTRATOR_V1",
+    "original_directive_comment_id": 5208259504,
+    "activation_comment_id": 5208490779,
+    "required_terminal": "C4_PDF_TO_CSV_PIPELINE_ORCHESTRATOR_READY_OR_EXACT_BLOCKER",
+    "status": "ACTIVE_ENTRY_EVENT_SATISFIED"
+  },
+  "event_wait": {
+    "C5": {
+      "task_id": "C5_STANDALONE_PDF_TO_CSV_PANEL_V1",
+      "entry_event": "C4_CYCLE2_TERMINAL",
+      "status": "EVENT_WAIT"
+    },
+    "C6": {
+      "task_id": "C6_PDF_TO_CSV_CYCLE2_INTEGRATED_E2E_V1",
+      "entry_event": "C5_CYCLE2_TERMINAL",
+      "status": "EVENT_WAIT"
+    }
+  },
+  "scope": {
+    "standalone_panel": true,
+    "folder_selection": true,
+    "pdf_to_csv": true,
+    "semantic_analysis": false,
+    "gpt_call": false,
+    "database_write": false,
+    "actual_150_pdf_run": false
+  },
+  "current_gate": "C4_CYCLE2_TERMINAL",
+  "next_action": "ACTIVATE_C5_AFTER_C4_TERMINAL",
+  "status": "C1_PDF_TO_CSV_CYCLE2_C4_ACTIVE",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

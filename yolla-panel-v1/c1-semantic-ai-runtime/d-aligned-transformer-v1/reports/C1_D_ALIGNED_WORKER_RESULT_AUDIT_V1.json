@@ -1,0 +1,106 @@
+{
+  "schema_version": "C1_D_ALIGNED_WORKER_RESULT_AUDIT_V1",
+  "audit_id": "C1-D-ALIGNED-WORKER-RESULT-AUDIT-20260804-001",
+  "registered_at_kst": "2026-08-04 11:56 KST",
+  "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
+  "existing_directives_superseded": false,
+  "reviewed_control_head": "aae3aefd2230674fa90c8ab80bd7d0034f6cf17c",
+  "authoritative_inputs": {
+    "B-1": {
+      "control_pr": 19,
+      "head": "fb20d1df329150388889ad13ff0507b0fb3060be",
+      "classification": "REMOTE_COMMITTED_FIXTURE_INPUT_AVAILABLE_BUT_COMMANDER_HANDOFF_POINTER_STALE",
+      "normalized_dataset_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+      "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+      "source_record_envelope_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+      "extraction_receipt_blob": "a4b4f7504c0a2b552fe165176f51833b78e0fd09",
+      "materialized_database_package_blob": "1561bdf34694fb2e692ae60c045c759a23383f41",
+      "source_evidence_handoff_blob": "20dadfc3e58ac817031f14ef58ac64b691619b6f",
+      "handoff_pointer_blob": "3c51e55ec25828ece1a2e60d69893c7ff9a65bc5",
+      "handoff_pointer_status": "WAITING_B6_INDEPENDENT_ACCEPTANCE",
+      "actual_site_extraction": false,
+      "fixture_only": true
+    },
+    "D-1": {
+      "authority_repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "control_pr": 188,
+      "head": "1bb475c440983aae761b897a3b58a8f4dab880cc",
+      "schema_profile_blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+      "mapping_contract_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
+      "validation_ruleset_blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
+      "acceptance_receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
+      "schema_alignment_pointer_blob": "aa08ed2273957f72bf5445917c15bd394805b1dd",
+      "fixture_decision": "PARTIALLY_ACCEPTED",
+      "fixture_decision_is_actual_db_acceptance": false
+    }
+  },
+  "worker_reviews": {
+    "C-2": {
+      "result_comment": 5171397378,
+      "pointer_blob": "8c29ac70b338fa21b41d2205bd2d846537a18314",
+      "tests": "PASS_18_OF_18",
+      "technical_status": "FIXTURE_CONTRACT_VALIDATOR_READY",
+      "actual_b_input_used": false,
+      "finding": "STALE_B1_NOT_PUBLISHED_BLOCKER",
+      "required_next_action": "BIND_COMMITTED_B1_FIXTURE_INPUTS_AND_UPDATE_LINEAGE_POINTER"
+    },
+    "C-3": {
+      "result_comment": 5171465080,
+      "pointer_blob": "f46c5c64e3da5b6d4cbfc338a5d99b4e67335204",
+      "catalog_tests": "PASS_29_OF_29",
+      "continuation_tests": "PASS_34_OF_34",
+      "mapping_rules": "PASS_69_OF_69",
+      "finding": "USED_SOURCE_FACTORY_PR21_INTEGRATION_CONTRACT_AND_FOUND_19_REQUIRED_SOURCE_PATHS_MISSING",
+      "first_blocker": "B1_D_MAPPING_REQUIRED_SOURCE_PATH_MISSING:B001:package.source_id",
+      "required_next_action": "REBIND_PR188_EXACT_BLOBS_AND_PUBLISH_SOURCE_PATH_CROSSWALK_WITHOUT_ALIAS_INFERENCE"
+    },
+    "C-4": {
+      "result_comment": 5171604846,
+      "pointer_blob": "489f4511852fe7c6410152a2cc26e21233ffe15b",
+      "tests": "PASS_37_OF_37",
+      "finding": "STALE_B1_NOT_PUBLISHED_BLOCKER",
+      "required_next_action": "ASSEMBLE_B1_FIXTURE_D_ALIGNED_PACKAGE_USING_UPDATED_C2_C3_AND_PR188_CONTRACTS"
+    },
+    "C-5": {
+      "result_comment": 5171489904,
+      "pointer_blob": "91d2b2c7fe41490962864c086409850ce98a87ce",
+      "tests": "PASS_17_OF_17",
+      "input_count": 3,
+      "valid_count": 0,
+      "rejected_count": 3,
+      "silent_drop_count": 0,
+      "finding": "B1_BOUND_BUT_USED_PRE_PR188_INPUT_AND_NO_C4_D_ALIGNED_MAPPING_OR_EVIDENCE",
+      "first_blocker": "NO_D_MAPPING_ROWS_FOR_NORMALIZED_DATASET_V1",
+      "required_next_action": "VALIDATE_C4_PACKAGE_AGAINST_PR188_EXACT_CONTRACTS_AND_CLASSIFY_ACCEPTED_PARTIAL_OR_REJECTED"
+    },
+    "C-6": {
+      "original_result_comment": 5171440017,
+      "revalidation_start_comment": 5171722750,
+      "pointer_blob": "91ca4d06c2d12bc3271d1cd2e0f9bbe1cb5de64e",
+      "combined_worker_tests": "PASS_106_OF_106",
+      "worker_terminal_gate": "PASS_4_OF_4",
+      "aggregate_silent_drop_count": 0,
+      "finding": "STALE_B1_NOT_PUBLISHED_AND_SOURCE_FACTORY_PR21_D_CONTRACT_GATE",
+      "required_next_action": "RUN_FINAL_E2E_AFTER_C2_TO_C5_UPDATED_POINTERS_AND_PR188_BINDING"
+    }
+  },
+  "summary": {
+    "workers_checked": 5,
+    "initial_terminals_received": 5,
+    "workers_requiring_followup": 5,
+    "d1_contract_gate_now_open": true,
+    "b1_fixture_bytes_available": true,
+    "b1_commander_handoff_pointer_final": false,
+    "actual_d_acceptance_receipt_issued": false,
+    "actual_d_canonical_db_write": false
+  },
+  "status": "C1_D_ALIGNED_WORKERS_AUDITED_WAVE2_REBIND_REQUIRED",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

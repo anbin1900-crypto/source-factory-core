@@ -1,0 +1,37 @@
+test_01_authoritative_pair_activates (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_01_authoritative_pair_activates) ... ok
+test_02_missing_receipt_fails_closed (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_02_missing_receipt_fails_closed) ... ok
+test_03_missing_release_fails_closed (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_03_missing_release_fails_closed) ... ok
+test_04_fixture_receipt_is_not_authority (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_04_fixture_receipt_is_not_authority) ... ok
+test_05_fixture_release_is_not_authority (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_05_fixture_release_is_not_authority) ... ok
+test_06_wrong_receipt_issuer (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_06_wrong_receipt_issuer) ... ok
+test_07_wrong_release_issuer (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_07_wrong_release_issuer) ... ok
+test_08_rejected_receipt_not_eligible (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_08_rejected_receipt_not_eligible) ... ok
+test_09_empty_accepted_set_blocked (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_09_empty_accepted_set_blocked) ... ok
+test_10_missing_knowledge_version (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_10_missing_knowledge_version) ... ok
+test_11_missing_version_contract (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_11_missing_version_contract) ... ok
+test_12_version_contract_mismatch (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_12_version_contract_mismatch) ... ok
+test_13_missing_query_contract (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_13_missing_query_contract) ... ok
+test_14_query_contract_mismatch (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_14_query_contract_mismatch) ... ok
+test_15_missing_citation_contract (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_15_missing_citation_contract) ... ok
+test_16_citation_contract_mismatch (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_16_citation_contract_mismatch) ... ok
+test_17_missing_evidence_contract (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_17_missing_evidence_contract) ... ok
+test_18_evidence_contract_mismatch (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_18_evidence_contract_mismatch) ... ok
+test_19_receipt_id_mismatch (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_19_receipt_id_mismatch) ... ok
+test_20_receipt_sha_mismatch (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_20_receipt_sha_mismatch) ... ok
+test_21_package_id_mismatch (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_21_package_id_mismatch) ... ok
+test_22_package_sha_mismatch (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_22_package_sha_mismatch) ... ok
+test_23_released_record_must_be_accepted (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_23_released_record_must_be_accepted) ... ok
+test_24_rejected_record_cannot_be_released (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_24_rejected_record_cannot_be_released) ... ok
+test_25_empty_release_set_blocked (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_25_empty_release_set_blocked) ... ok
+test_26_missing_snapshot_hash (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_26_missing_snapshot_hash) ... ok
+test_27_release_status_must_be_issued (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_27_release_status_must_be_issued) ... ok
+test_28_receipt_release_created_must_be_true (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_28_receipt_release_created_must_be_true) ... ok
+test_29_partial_receipt_valid_subset_activates (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_29_partial_receipt_valid_subset_activates) ... ok
+test_30_fixture_matrix_all_passes (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_30_fixture_matrix_all_passes) ... ok
+test_31_authority_constants_exact (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_31_authority_constants_exact) ... ok
+test_32_activation_has_no_fixture_authority (test_d_release_query_citation_consumer_v2.TestDReleaseConsumerV2.test_32_activation_has_no_fixture_authority) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.002s
+
+OK

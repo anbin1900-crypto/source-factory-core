@@ -1,0 +1,104 @@
+{
+  "schema_version": "C1_D_ALIGNED_TRANSFORMER_RESULT_V1",
+  "report_id": "C1-D-ALIGNED-TRANSFORMER-RESULT-20260804-001",
+  "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "directive_comment": 5170768957,
+  "existing_directive": "A0-TO-C1-SEMANTIC-KNOWLEDGE-DOMAIN-AI-SHELL-V1-20260803-001",
+  "existing_directive_superseded": false,
+  "registered_at_kst": "2026-08-04 04:44 KST",
+  "authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "control_pr": 20,
+    "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+    "assignment_commit": "5cd2d079c4a33324bf1b4c2b0882ecf1674c2d54",
+    "lineage_contract_commit": "6ade58adc96bdcb009cdd5df3b4c94b1cb33d881",
+    "schema_consumer_contract_commit": "f32d25208f5613e2e938e2ba6b9e0d6a9a7d8de5"
+  },
+  "completed_work": {
+    "worker_assignment": "PASS_5_OF_5",
+    "owned_root_collision_count": 0,
+    "required_lineage_fields_defined": "PASS_12_OF_12",
+    "rejection_taxonomy_defined": true,
+    "silent_drop_prohibited": true,
+    "d_schema_consumer_contract": "PASS_FIXTURE_INTERFACE_ONLY",
+    "mapping_validator_contract": "PASS_FIXTURE_INTERFACE_ONLY",
+    "d_canonical_schema_mutation_count": 0,
+    "d_canonical_db_write_count": 0,
+    "existing_worker_root_mutation_count": 0
+  },
+  "input_observation": {
+    "B-1": {
+      "control_pr": 19,
+      "head": "a99144065c86af0dd70866fcd4c0486372441c2d",
+      "observed_files": [
+        "yolla-panel-v1/b1-collector-materialization/B1_ROLE_CHARTER_AND_FIRST_DIRECTIVE_V1.md",
+        "yolla-panel-v1/b1-collector-materialization/B1_START_REPORT_V1.json",
+        "yolla-panel-v1/b1-collector-materialization/LATEST_B1_REPORT_POINTER.json"
+      ],
+      "NORMALIZED_DATASET_V1": "NOT_PUBLISHED",
+      "RAW_ARTIFACT_MANIFEST_V1": "NOT_PUBLISHED"
+    },
+    "D-1": {
+      "control_pr": 21,
+      "head": "65bf71a0b6b766dea914fcd2decfad4f9218e8a7",
+      "observed_files": [
+        "yolla-panel-v1/d1-knowledge-db-intake/D1_ROLE_CHARTER_AND_FIRST_DIRECTIVE_V1.md"
+      ],
+      "D_CANONICAL_SCHEMA_PROFILE_V1": "NOT_PUBLISHED",
+      "D_INBOUND_FIELD_MAPPING_CONTRACT_V1": "NOT_PUBLISHED",
+      "D_INTAKE_VALIDATION_RULESET_V1": "NOT_PUBLISHED",
+      "knowledge_db_authority_repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "knowledge_db_control_pr": 188
+    }
+  },
+  "required_outputs": {
+    "D_ALIGNED_TRANSFORMATION_PACKAGE_V1": "NOT_GENERATED_NO_AUTHORITATIVE_INPUT",
+    "FIELD_MAPPING_REPORT_V1": "NOT_GENERATED_NO_D_MAPPING_CONTRACT",
+    "REJECTED_RECORD_BUNDLE_V1": "CONTRACT_READY_NO_SOURCE_RECORDS_TO_CLASSIFY",
+    "KNOWLEDGE_CANDIDATE_BUNDLE_V1": "NOT_GENERATED_NO_TRANSFORMED_RECORDS"
+  },
+  "blockers": [
+    {
+      "priority": 1,
+      "blocker": "D1_REQUIRED_SCHEMA_MAPPING_VALIDATION_CONTRACT_SET_NOT_PUBLISHED",
+      "missing": [
+        "D_CANONICAL_SCHEMA_PROFILE_V1",
+        "D_INBOUND_FIELD_MAPPING_CONTRACT_V1",
+        "D_INTAKE_VALIDATION_RULESET_V1"
+      ],
+      "effect": "AUTHORITATIVE_TARGET_ENTITY_FIELD_TYPE_AND_VALIDATION_BINDING_IMPOSSIBLE"
+    },
+    {
+      "priority": 2,
+      "blocker": "B1_NORMALIZED_DATASET_OR_RAW_ARTIFACT_MANIFEST_NOT_PUBLISHED",
+      "missing": [
+        "NORMALIZED_DATASET_V1",
+        "RAW_ARTIFACT_MANIFEST_V1"
+      ],
+      "effect": "NO_SOURCE_RECORDS_AVAILABLE_FOR_ACTUAL_TRANSFORMATION"
+    }
+  ],
+  "first_blocker": "D1_REQUIRED_SCHEMA_MAPPING_VALIDATION_CONTRACT_SET_NOT_PUBLISHED",
+  "resume_conditions": [
+    "D-1 publishes D_CANONICAL_SCHEMA_PROFILE_V1 with exact Remote Head and blob",
+    "D-1 publishes D_INBOUND_FIELD_MAPPING_CONTRACT_V1 with exact Remote Head and blob",
+    "D-1 publishes D_INTAKE_VALIDATION_RULESET_V1 with exact Remote Head and blob",
+    "B-1 publishes NORMALIZED_DATASET_V1 or RAW_ARTIFACT_MANIFEST_V1 with exact Remote Head and blob",
+    "C-1 reuses the existing five worker assignments and duplicate keys without creating conflicting Owned Roots"
+  ],
+  "terminal": "C1_D_ALIGNED_TRANSFORMER_READY_OR_EXACT_BLOCKER",
+  "terminal_decision": "EXACT_BLOCKER",
+  "status": "C1_D_ALIGNED_TRANSFORMER_CONTRACTS_READY_AUTHORITATIVE_TRANSFORMATION_BLOCKED",
+  "safety": {
+    "site_analyzer_owned": false,
+    "site_extraction_runtime_owned": false,
+    "d_canonical_schema_changed": false,
+    "d_canonical_db_write": false,
+    "fixture_claimed_as_d_accepted_data": false,
+    "panel_shell_modified": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

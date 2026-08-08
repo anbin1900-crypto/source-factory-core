@@ -1,0 +1,20 @@
+{
+  "schema_version": "D_DUAL_RECEIPT_E2E_MATRIX_V1",
+  "matrix_id": "C6-D-DUAL-RECEIPT-E2E-MATRIX-20260806-001",
+  "cases": [
+    {"case_id": "DR-001", "mutation": "NONE", "expected_valid": true, "expected_runtime_activated": false},
+    {"case_id": "DR-002", "mutation": "DUPLICATE_RECEIPT_ID", "expected_valid": false, "expected_error": "RECEIPT_ID_COLLISION"},
+    {"case_id": "DR-003", "mutation": "SOURCE_RECEIPT_HAS_KNOWLEDGE_PACKAGE_REF", "expected_valid": false, "expected_error": "SOURCE_RECEIPT_SCOPE_CONTAMINATION"},
+    {"case_id": "DR-004", "mutation": "KNOWLEDGE_RECEIPT_HAS_SOURCE_PACKAGE_REF", "expected_valid": false, "expected_error": "KNOWLEDGE_RECEIPT_SCOPE_CONTAMINATION"},
+    {"case_id": "DR-005", "mutation": "SOURCE_DB_WRITE_TRUE", "expected_valid": false, "expected_error": "AUTHORITATIVE_DB_WRITE_FORBIDDEN"},
+    {"case_id": "DR-006", "mutation": "KNOWLEDGE_DB_WRITE_TRUE", "expected_valid": false, "expected_error": "AUTHORITATIVE_DB_WRITE_FORBIDDEN"},
+    {"case_id": "DR-007", "mutation": "REJECTED_VALUE_NOT_PRESERVED", "expected_valid": false, "expected_error": "REJECTED_VALUE_NOT_PRESERVED"},
+    {"case_id": "DR-008", "mutation": "KNOWLEDGE_SOURCE_RECEIPT_REF_MISMATCH", "expected_valid": false, "expected_error": "SOURCE_RECEIPT_LINK_MISMATCH"},
+    {"case_id": "DR-009", "mutation": "RELEASE_RECEIPT_REF_MISMATCH", "expected_valid": false, "expected_error": "KNOWLEDGE_RELEASE_RECEIPT_LINK_MISMATCH"},
+    {"case_id": "DR-010", "mutation": "FIXTURE_RUNTIME_ACTIVATED_TRUE", "expected_valid": false, "expected_error": "FIXTURE_RUNTIME_ACTIVATION_FORBIDDEN"},
+    {"case_id": "DR-011", "mutation": "MISSING_QUERY_CONTRACT", "expected_valid": false, "expected_error": "KNOWLEDGE_RELEASE_CONTRACT_BINDING_MISSING"},
+    {"case_id": "DR-012", "mutation": "MISSING_CITATION_CONTRACT", "expected_valid": false, "expected_error": "KNOWLEDGE_RELEASE_CONTRACT_BINDING_MISSING"},
+    {"case_id": "DR-013", "mutation": "MISSING_EVIDENCE_CONTRACT", "expected_valid": false, "expected_error": "KNOWLEDGE_RELEASE_CONTRACT_BINDING_MISSING"},
+    {"case_id": "DR-014", "mutation": "RECEIPT_TYPE_COLLISION", "expected_valid": false, "expected_error": "RECEIPT_TYPE_COLLISION"}
+  ]
+}

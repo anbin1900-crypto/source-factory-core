@@ -1,0 +1,94 @@
+{
+  "schema_version": "C6_D_DUAL_RECEIPT_UPSTREAM_BINDING_STATUS_V1",
+  "status_id": "C6-D-DUAL-RECEIPT-UPSTREAM-BINDING-20260806-001",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "C6_D_DUAL_RECEIPT_E2E_VALIDATOR",
+  "directive_comment_id": 5196040055,
+  "observed_at_kst": "2026-08-06 04:28 KST",
+  "upstream_workers": {
+    "C-2": {
+      "task_id": "C2_D_FRAGMENT_LOCATOR_CONTRACT",
+      "directive_comment_id": 5196030857,
+      "result_comment_id": 5196253050,
+      "pointer_blob": "61d0255327a2f507f50d0eee2c9b2d5814054748",
+      "decision": "PASS_CONTRACT_PREPARED",
+      "tests": "PASS_23_OF_23",
+      "semantic_inference_count": 0,
+      "d_canonical_id_generation_count": 0,
+      "status": "ACCEPTED_CONTRACT_READY"
+    },
+    "C-3": {
+      "task_id": "C3_PR188_PATH_CLOSURE_V2",
+      "directive_comment_id": 5196033083,
+      "start_published": true,
+      "terminal_published": false,
+      "matrix_v2_published": false,
+      "mapping_addendum_request_published": false,
+      "status": "IN_PROGRESS"
+    },
+    "C-4": {
+      "task_id": "KNOWLEDGE_CANDIDATE_BUNDLE_V2",
+      "directive_comment_id": 5196035014,
+      "start_published": true,
+      "terminal_published": false,
+      "knowledge_candidate_bundle_v2_published": false,
+      "status": "IN_PROGRESS"
+    },
+    "C-5": {
+      "task_id": "C5_D_RELEASE_QUERY_CITATION_CONSUMER_V2",
+      "directive_comment_id": 5196037750,
+      "contract_blob": "0c617b519b3202cd4f9d6e37adf200b19c7c2516",
+      "activation_decision_blob": "6285e6ff03a41b359f9622a49ff7811527e87b1c",
+      "test_result_blob": "b658d4479335ebb6420c926f07b9a7c31f259808",
+      "tests": "PASS_32_OF_32_AND_SCENARIO_20_OF_20",
+      "actual_authority_decision": "BLOCKED_FAIL_CLOSED",
+      "specialist_ai_runtime_activated": false,
+      "terminal_published": false,
+      "status": "ARTIFACTS_READY_TERMINAL_PENDING"
+    }
+  },
+  "authority_state": {
+    "b1_head": "fded2aa3f24bd7e6eaa8aedeafa7d2e6a4e2dc04",
+    "b1_handoff_pointer_blob": "932904cede5bcfb239a62952173f82147b0b0f26",
+    "b1_handoff_classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE",
+    "d1_pr188_head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+    "d1_actual_source_document_acceptance_receipt_published": false,
+    "d1_actual_knowledge_candidate_acceptance_receipt_published": false,
+    "d1_knowledge_release_v1_published": false,
+    "d_relevant_contract_delta_since_previous_schema_alignment": false
+  },
+  "c6_validator": {
+    "fixture_validator_ready": true,
+    "contract_blob": "e3f9bcbe2078c91a3bf3e2e6e8967b3a3c6eb237",
+    "fixture_blob": "d22241ab1fa4d91fdbed1e5e99435a3d16b3c036",
+    "matrix_blob": "188cc40ae949200ffd5ede98fef4873fa1803224",
+    "validator_blob": "b4bd782e615fd2e6680f1311d0d2b824d2ee762b",
+    "test_source_blob": "1d9597bec0022c5a647a9735a67b3301dfdc6213",
+    "test_result_blob": "c80b95e89862ff19abbd25d3cc1911d2f41fc80d",
+    "final_report_blob": "835b199f4a79e88e1c167c8af19789cb22b8d4fb",
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_26_OF_26",
+    "matrix": "PASS_14_OF_14",
+    "semantic_rerun_count": 0,
+    "silent_drop_count": 0,
+    "virtual_d_acceptance_count": 0
+  },
+  "actual_e2e_binding": {
+    "authorized": false,
+    "executed": false,
+    "reason": "D1_ACTUAL_DUAL_RECEIPTS_AND_KNOWLEDGE_RELEASE_NOT_PUBLISHED",
+    "runtime_activation": false
+  },
+  "first_external_blocker": "D1_ACTUAL_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_NOT_PUBLISHED",
+  "additional_blockers": [
+    "D1_ACTUAL_KNOWLEDGE_CANDIDATE_ACCEPTANCE_RECEIPT_NOT_PUBLISHED",
+    "D1_KNOWLEDGE_RELEASE_V1_NOT_PUBLISHED",
+    "C3_PATH_CLOSURE_V2_TERMINAL_PENDING",
+    "C4_KNOWLEDGE_CANDIDATE_BUNDLE_V2_TERMINAL_PENDING",
+    "C5_RELEASE_QUERY_CITATION_CONSUMER_TERMINAL_PENDING"
+  ],
+  "decision": "FIXTURE_VALIDATOR_READY_ACTUAL_BINDING_EXACT_BLOCKER",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

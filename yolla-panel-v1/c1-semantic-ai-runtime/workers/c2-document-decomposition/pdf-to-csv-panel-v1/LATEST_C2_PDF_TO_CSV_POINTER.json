@@ -1,0 +1,46 @@
+{
+  "schema_version": "LATEST_C2_PDF_TO_CSV_POINTER_V4",
+  "pointer_id": "LATEST-C2-INPUT-SELECTION-DIRECT-REPAIR-20260807-001",
+  "published_at_kst": "2026-08-07T05:27:00+09:00",
+  "worker": "C-2_DOCUMENT_DECOMPOSITION_FRAGMENT_LOCATOR_WORKER",
+  "batch_id": "C1-PDF-PREPROCESS-CORRECTION-20260807-001",
+  "directive_comment": 5208879253,
+  "commander_control_comment": 5208884860,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "previous_pointer_blob": "668cf994c338df81353c4f1c37d87d7c66e734be",
+  "artifacts": {
+    "adapter_source": {"commit":"d151de343883449d06ec3028a6f1645b88641867","blob":"f73ac4c21c25346db441f4260decfd73032aaefb"},
+    "contract": {"commit":"fdfa11648d89b29da049b0a6e576e49b53386ed5","blob":"8a277dbce7dbde3d13718b5e482e0853ac70fd69"},
+    "regression_test": {"commit":"bce798d6a8420803d93c22f68691473d7d0168a4","blob":"416fc16657e725b88ccfbd4f37ce055063092f31"},
+    "direct_repair_test": {"commit":"34e87e00aeef6bef5f1de9c35fbcf2774a68e416","blob":"ebe8b77860c46329e5777e8d9df18c1269a1f853"},
+    "final_report": {"commit":"7708fe6f30d4aed755a900c1ea82be5d0e8fd74e","blob":"e4290cd722a57b9522eb00b7bd844c776178eb1d"}
+  },
+  "direct_repairs": {
+    "pdf_file_parent_output_collision": "PASS_REPAIRED",
+    "pdf_file_signature_validation": "PASS_REPAIRED",
+    "inventory_hash_parity": "PASS_REPAIRED",
+    "validation_error_precedence": "PASS_PRESERVED"
+  },
+  "validation": {
+    "focused_direct_repair_tests": "PASS_12_OF_12",
+    "prior_regression_suite": "PRESERVED_44_TESTS_WITH_FIXTURE_CORRECTION",
+    "remote_artifact_readback": "PASS_5_OF_5"
+  },
+  "required_result": "C2_INPUT_SELECTION_CORRECTED_OR_NO_DEFECT_FOUND",
+  "terminal_result": "C2_INPUT_SELECTION_CORRECTED",
+  "defects_found_count": 3,
+  "scope_counters": {
+    "semantic_analysis": 0,
+    "gpt_call": 0,
+    "database_write": 0,
+    "panel_ui": 0,
+    "pdf_text_extraction": 0,
+    "ocr": 0,
+    "csv_generation": 0
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

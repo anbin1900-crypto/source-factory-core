@@ -1,0 +1,84 @@
+{
+  "schema_version": "C1_D_INTEGRATION_WAIT_GATE_V1",
+  "gate_id": "C1-D-INTEGRATION-WAIT-GATE-20260806-001",
+  "published_at_kst": "2026-08-06T05:18:00+09:00",
+  "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "task_id": "C1_D_INTEGRATION_RESULT_INTEGRATION",
+  "directive_comment_id": 5196655145,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "worker_result_matrix": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D_INTEGRATION_WORKER_RESULT_MATRIX_V1.json",
+    "commit": "782c312e2910473de1a871444a3c06842be42ae6",
+    "blob": "c99c7d5d7fa73887f25dabb5d6bac4b93660a04b"
+  },
+  "contract_set": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D_INTEGRATION_CONTRACT_SET_V1.json",
+    "commit": "7276e29ede7a605c138dc55454d384518084a40d",
+    "blob": "8e6deaacb2350605faf1c0dc5e4214274c7da8b6",
+    "status": "READY"
+  },
+  "current_state": {
+    "candidate_count": 0,
+    "assertion_count": 0,
+    "evidence_count": 0,
+    "rejected_record_count": 15,
+    "d1_actual_source_document_receipt": false,
+    "d1_actual_knowledge_receipt": false,
+    "d1_knowledge_release": false,
+    "semantic_rerun_count": 0,
+    "runtime_activation": false,
+    "runtime_activation_state": "BLOCKED_FAIL_CLOSED"
+  },
+  "closed_conditions": {
+    "b_content_byte_delta": false,
+    "d_fragment_contract_reconciliation_delta": false,
+    "d_canonical_fragment_binding_delta": false,
+    "d_b001_mapping_addendum_delta": false,
+    "d_b014_hash_equivalence_addendum_delta": false,
+    "d_actual_source_document_receipt_delta": false,
+    "d_actual_knowledge_receipt_delta": false,
+    "d_knowledge_release_delta": false
+  },
+  "open_conditions": [
+    {
+      "condition": "B_CONTENT_BYTE_DELTA",
+      "action": "RUN_INCREMENTAL_C2_C3_C4_C5_C6_REVALIDATION"
+    },
+    {
+      "condition": "D_AUTHORITY_FRAGMENT_CONTRACT_OR_CANONICAL_BINDING_DELTA",
+      "action": "RUN_INCREMENTAL_C2_C3_C4_C5_C6_REVALIDATION"
+    },
+    {
+      "condition": "D_AUTHORITY_B001_OR_B014_MAPPING_ADDENDUM_DELTA",
+      "action": "RUN_INCREMENTAL_C3_C4_C5_C6_REVALIDATION"
+    },
+    {
+      "condition": "D_ACTUAL_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_DELTA",
+      "action": "RUN_INCREMENTAL_C5_C6_BINDING"
+    },
+    {
+      "condition": "D_ACTUAL_KNOWLEDGE_ACCEPTANCE_RECEIPT_DELTA",
+      "action": "RUN_INCREMENTAL_C5_C6_BINDING"
+    },
+    {
+      "condition": "D_KNOWLEDGE_RELEASE_V1_DELTA",
+      "action": "RUN_INCREMENTAL_C5_C6_RUNTIME_ACTIVATION_VALIDATION"
+    }
+  ],
+  "prohibitions": {
+    "semantic_duplicate_reexecution": true,
+    "drop_rejected_records": true,
+    "fabricate_candidate_assertion_evidence": true,
+    "claim_d_acceptance_without_receipt": true,
+    "activate_runtime_without_release": true,
+    "d_canonical_db_write": true
+  },
+  "gate_status": "WAITING_B_OR_D_DELTA",
+  "next_action": "WAIT_B_CONTENT_OR_D_AUTHORITY_RECEIPT_RELEASE_DELTA_THEN_RUN_INCREMENTAL_ONLY",
+  "decision": "PASS_FAIL_CLOSED_WAIT_GATE_READY",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

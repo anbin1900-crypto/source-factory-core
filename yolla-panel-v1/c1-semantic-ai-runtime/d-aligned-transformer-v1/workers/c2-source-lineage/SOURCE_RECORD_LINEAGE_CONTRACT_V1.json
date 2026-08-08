@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yolla:c1:d-aligned:c2:source-record-lineage:v1",
+  "title": "SOURCE_RECORD_LINEAGE_CONTRACT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "contract_id",
+    "assignment",
+    "source_authority",
+    "source_records",
+    "lineage_entries",
+    "coverage_summary",
+    "safety"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "contract_id": {"const": "SOURCE_RECORD_LINEAGE_CONTRACT_V1"},
+    "assignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assignment_id","directive_id","directive_comment","duplicate_prompt_key","control_pr","branch","owned_root","official_assignment_blob"],
+      "properties": {
+        "assignment_id": {"const": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001"},
+        "directive_id": {"const": "C1-TO-C2-D-ALIGNED-SOURCE-LINEAGE-V1-20260804-001"},
+        "directive_comment": {"const": 5171210387},
+        "duplicate_prompt_key": {"const": "9b0d40bd3fe9df62dad8c6a31e4d8f6d2ac9aafa29070b97299306b532c3107f"},
+        "control_pr": {"const": 20},
+        "branch": {"const": "integration/c1-semantic-knowledge-domain-ai-runtime-v1"},
+        "owned_root": {"const": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c2-source-lineage/**"},
+        "official_assignment_blob": {"const": "23d4f789f8f272e043b83dc7cfe9ddc6c291ac87"}
+      }
+    },
+    "source_authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode","producer","control_pr","accepted_input_types","actual_input_used","exact_head","exact_path","exact_blob","first_blocker"],
+      "properties": {
+        "mode": {"enum": ["FIXTURE","B1_EXACT_AUTHORITY"]},
+        "producer": {"const": "B-1_COLLECTION_DB_MATERIALIZATION_COMMANDER"},
+        "control_pr": {"const": 19},
+        "accepted_input_types": {"type": "array","const": ["NORMALIZED_DATASET_V1","RAW_ARTIFACT_MANIFEST_V1"]},
+        "actual_input_used": {"type": "boolean"},
+        "exact_head": {"type": ["string","null"],"pattern": "^[0-9a-f]{40}$"},
+        "exact_path": {"type": ["string","null"],"minLength": 1},
+        "exact_blob": {"type": ["string","null"],"pattern": "^[0-9a-f]{40}$"},
+        "first_blocker": {"type": ["string","null"]}
+      },
+      "allOf": [{
+        "if": {"properties": {"mode": {"const": "B1_EXACT_AUTHORITY"}}},
+        "then": {"properties": {
+          "actual_input_used": {"const": true},
+          "exact_head": {"type": "string","pattern": "^[0-9a-f]{40}$"},
+          "exact_path": {"type": "string","minLength": 1},
+          "exact_blob": {"type": "string","pattern": "^[0-9a-f]{40}$"},
+          "first_blocker": {"type": "null"}
+        }},
+        "else": {"properties": {
+          "actual_input_used": {"const": false},
+          "exact_head": {"type": "null"},
+          "exact_path": {"type": "null"},
+          "exact_blob": {"type": "null"},
+          "first_blocker": {"const": "B1_NORMALIZED_DATASET_OR_RAW_ARTIFACT_MANIFEST_NOT_PUBLISHED"}
+        }}
+      }]
+    },
+    "source_records": {
+      "type": "array","minItems": 1,
+      "items": {
+        "type": "object","additionalProperties": false,
+        "required": ["SOURCE_RECORD_ID","SOURCE_RECORD_VERSION","FIELDS","PROVENANCE_REF","EVIDENCE_REF"],
+        "properties": {
+          "SOURCE_RECORD_ID": {"type": "string","minLength": 1},
+          "SOURCE_RECORD_VERSION": {"type": "string","minLength": 1},
+          "FIELDS": {"type": "object","minProperties": 1},
+          "PROVENANCE_REF": {"type": "string","minLength": 1},
+          "EVIDENCE_REF": {"type": "string","minLength": 1}
+        }
+      }
+    },
+    "lineage_entries": {"type": "array","minItems": 1,"items": {"$ref": "#/$defs/lineage_entry"}},
+    "coverage_summary": {
+      "type": "object","additionalProperties": false,
+      "required": ["source_record_count","source_field_count","lineage_entry_count","silent_drop_count","duplicate_lineage_count","source_value_mutation_count","accepted_count","rejected_count","pending_count"],
+      "properties": {
+        "source_record_count": {"type": "integer","minimum": 1},
+        "source_field_count": {"type": "integer","minimum": 1},
+        "lineage_entry_count": {"type": "integer","minimum": 1},
+        "silent_drop_count": {"const": 0},
+        "duplicate_lineage_count": {"const": 0},
+        "source_value_mutation_count": {"const": 0},
+        "accepted_count": {"type": "integer","minimum": 0},
+        "rejected_count": {"type": "integer","minimum": 0},
+        "pending_count": {"type": "integer","minimum": 0}
+      }
+    },
+    "safety": {
+      "type": "object","additionalProperties": false,
+      "required": ["site_analyzer_ownership","site_extraction_runtime_ownership","d_canonical_schema_mutation","d_canonical_db_write","panel_shell_direct_edit","production","ready","merge"],
+      "properties": {
+        "site_analyzer_ownership": {"const": false},
+        "site_extraction_runtime_ownership": {"const": false},
+        "d_canonical_schema_mutation": {"const": false},
+        "d_canonical_db_write": {"const": false},
+        "panel_shell_direct_edit": {"const": false},
+        "production": {"const": false},
+        "ready": {"const": false},
+        "merge": {"const": false}
+      }
+    }
+  },
+  "$defs": {
+    "lineage_entry": {
+      "type": "object","additionalProperties": false,
+      "required": ["LINEAGE_ENTRY_ID","SOURCE_RECORD_ID","SOURCE_RECORD_VERSION","SOURCE_FIELD","SOURCE_VALUE","SOURCE_VALUE_SHA256","PROVENANCE_REF","EVIDENCE_REF","VALIDATION_STATUS","REJECTION_REASON"],
+      "properties": {
+        "LINEAGE_ENTRY_ID": {"type": "string","minLength": 1},
+        "SOURCE_RECORD_ID": {"type": "string","minLength": 1},
+        "SOURCE_RECORD_VERSION": {"type": "string","minLength": 1},
+        "SOURCE_FIELD": {"type": "string","minLength": 1},
+        "SOURCE_VALUE": {},
+        "SOURCE_VALUE_SHA256": {"type": "string","pattern": "^[0-9a-f]{64}$"},
+        "PROVENANCE_REF": {"type": "string","minLength": 1},
+        "EVIDENCE_REF": {"type": "string","minLength": 1},
+        "VALIDATION_STATUS": {"enum": ["ACCEPTED","REJECTED","PENDING_MAPPING"]},
+        "REJECTION_REASON": {"type": ["string","null"],"enum": [null,"MISSING_REQUIRED_VALUE","TYPE_ERROR","RANGE_ERROR","UNMAPPED_FIELD","INVALID_CODE","FORMAT_ERROR","UNIT_CONVERSION_ERROR","IDENTIFIER_NORMALIZATION_ERROR","RELATION_TARGET_MISSING","PROVENANCE_REF_MISSING","EVIDENCE_REF_MISSING"]}
+      },
+      "allOf": [{
+        "if": {"properties": {"VALIDATION_STATUS": {"const": "ACCEPTED"}}},
+        "then": {"properties": {"REJECTION_REASON": {"type": "null"}}},
+        "else": {"properties": {"REJECTION_REASON": {"type": "string"}}}
+      }]
+    }
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "schema_version": "C1_WORKER_LANE_ASSIGNMENT_MATRIX_V1",
+  "matrix_id": "C1-SEMANTIC-AI-WAVE1-ASSIGNMENT-20260803-001",
+  "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "parent_directive": "A0-TO-C1-SEMANTIC-KNOWLEDGE-DOMAIN-AI-SHELL-V1-20260803-001",
+  "wave_id": "C1_SEMANTIC_AI_WAVE_1",
+  "registered_at_kst": "2026-08-03 19:36 KST",
+  "authority": {
+    "control_pr": 20,
+    "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+    "start_report_commit": "a85544665e1c546fcbd82ac8640173af6429579c"
+  },
+  "parallelism": {
+    "static_contract_lanes_parallel": true,
+    "runtime_execution_count": 0,
+    "actual_pc_execution_count": 0,
+    "final_e2e_serial_after_inputs": true
+  },
+  "assignments": {
+    "C-2": {
+      "directive_id": "C1-TO-C2-DOCUMENT-UNIT-BUNDLE-FIXTURE-V1-20260803-001",
+      "duplicate_prompt_key": "d994c274908eaf3a7ae987b0f4f648bbea69fe76121ec011778c3306c5744794",
+      "role": "DOCUMENT_DECOMPOSITION",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c2-document-decomposition/**",
+      "required_outputs": [
+        "DOCUMENT_UNIT_BUNDLE_CONTRACT_V1.json",
+        "SOURCE_SPAN_AND_EVIDENCE_REF_CONTRACT_V1.json",
+        "DOCUMENT_DECOMPOSITION_FIXTURES_V1.json",
+        "DOCUMENT_DECOMPOSITION_TEST_RESULT_V1.json",
+        "C2_FINAL_REPORT_V1.json",
+        "LATEST_C2_REPORT_POINTER.json"
+      ],
+      "fixture_types": [
+        "STATUTE_ARTICLE",
+        "CASE_HOLDING",
+        "MANUAL_SECTION",
+        "TABLE_ITEM",
+        "FORM_ITEM"
+      ],
+      "entry_gate": "IMMEDIATE",
+      "expected_terminal": "C2_DOCUMENT_UNIT_BUNDLE_FIXTURE_PIPELINE_PASS"
+    },
+    "C-3": {
+      "directive_id": "C1-TO-C3-SEMANTIC-CLASSIFICATION-FIXTURE-V1-20260803-001",
+      "duplicate_prompt_key": "ade74996695c971b45ae545b31d70303a81dcda7b3b17b82c27e1ff98ed3b7cc",
+      "role": "SEMANTIC_CLASSIFICATION",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c3-semantic-classification/**",
+      "required_outputs": [
+        "SEMANTIC_CLASSIFICATION_CONTRACT_V1.json",
+        "CONCEPT_RELATION_APPLICABILITY_SCHEMA_V1.json",
+        "SEMANTIC_CLASSIFICATION_FIXTURES_V1.json",
+        "SEMANTIC_CLASSIFICATION_TEST_RESULT_V1.json",
+        "C3_FINAL_REPORT_V1.json",
+        "LATEST_C3_REPORT_POINTER.json"
+      ],
+      "classification_dimensions": [
+        "DOMAIN",
+        "CONCEPT",
+        "RELATION",
+        "CONDITION",
+        "APPLICABILITY",
+        "TARGET_ENTITY",
+        "TEMPORAL_SCOPE"
+      ],
+      "entry_gate": "CONTRACT_IMMEDIATE_FINAL_BINDING_AFTER_C2",
+      "expected_terminal": "C3_SEMANTIC_CLASSIFICATION_FIXTURE_PIPELINE_PASS"
+    },
+    "C-4": {
+      "directive_id": "C1-TO-C4-KNOWLEDGE-CANDIDATE-EVIDENCE-BINDING-V1-20260803-001",
+      "duplicate_prompt_key": "b51b95c3a52e541313c5c4e1e34079b85e7d968245ba156283070010d6dc7fef",
+      "role": "EVIDENCE_AND_KNOWLEDGE_CANDIDATE",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c4-evidence-knowledge-candidate/**",
+      "required_outputs": [
+        "KNOWLEDGE_CANDIDATE_BUNDLE_CONTRACT_V1.json",
+        "EVIDENCE_BINDING_CONTRACT_V1.json",
+        "KNOWLEDGE_CANDIDATE_FIXTURES_V1.json",
+        "EVIDENCE_BINDING_REPORT_V1.json",
+        "C4_FINAL_REPORT_V1.json",
+        "LATEST_C4_REPORT_POINTER.json"
+      ],
+      "mandatory_fields": [
+        "candidate_bundle_id",
+        "domain_scope",
+        "knowledge_objects",
+        "evidence_refs",
+        "relationship_edges",
+        "classification_version",
+        "validation_summary"
+      ],
+      "entry_gate": "CONTRACT_IMMEDIATE_FINAL_BINDING_AFTER_C2_C3",
+      "expected_terminal": "C4_KNOWLEDGE_CANDIDATE_EVIDENCE_BINDING_PASS"
+    },
+    "C-5": {
+      "directive_id": "C1-TO-C5-DOMAIN-AI-SEAT-QUERY-CITATION-RUNTIME-V1-20260803-001",
+      "duplicate_prompt_key": "934b7b93d3194454ca8e05a75299b01dc4604359283f48664d91ffc74e95d88c",
+      "role": "DOMAIN_AI_SEAT_AND_TOOL_RUNTIME",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c5-domain-ai-seat-runtime/**",
+      "required_outputs": [
+        "DOMAIN_AI_SEAT_PACKAGE_V1.json",
+        "KNOWLEDGE_RELEASE_CONSUMPTION_CONTRACT_V1.json",
+        "QUERY_CONTRACT_CONSUMER_V1.json",
+        "CITATION_CONTRACT_CONSUMER_V1.json",
+        "SEMANTIC_AI_PROVIDER_V1.json",
+        "AI_RUNTIME_RECEIPT_CONTRACT_V1.json",
+        "C5_FINAL_REPORT_V1.json",
+        "LATEST_C5_REPORT_POINTER.json"
+      ],
+      "fixture_domains": [
+        "REAL_ESTATE",
+        "GAS_STATION_PETROLEUM",
+        "HAZARDOUS_MATERIALS_FIRE_SAFETY"
+      ],
+      "entry_gate": "IMMEDIATE_FIXTURE_RELEASE_ONLY",
+      "expected_terminal": "C5_DOMAIN_AI_SEAT_QUERY_CITATION_RUNTIME_PASS"
+    },
+    "C-6": {
+      "directive_id": "C1-TO-C6-DOMAIN-AI-QUALITY-CITATION-E2E-V1-20260803-001",
+      "duplicate_prompt_key": "014bf7f7a19286741a6f465eae57c3d9201ba06a870efd38187b041fad86837a",
+      "role": "AI_QUALITY_AND_E2E_VALIDATION",
+      "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c6-ai-quality-citation-e2e/**",
+      "required_outputs": [
+        "AI_EVALUATION_CONTRACT_V1.json",
+        "CITATION_INTEGRITY_MATRIX_V1.json",
+        "KNOWLEDGE_VERSION_BINDING_TEST_V1.json",
+        "SEARCH_EVIDENCE_CITATION_ANSWER_E2E_RESULT_V1.json",
+        "AI_EVALUATION_REPORT_V1.json",
+        "C6_FINAL_REPORT_V1.json",
+        "LATEST_C6_REPORT_POINTER.json"
+      ],
+      "required_scenarios": [
+        "SUPPORTED_ANSWER_WITH_CITATION",
+        "INSUFFICIENT_EVIDENCE_FAIL_CLOSED",
+        "STALE_KNOWLEDGE_VERSION_REJECT",
+        "MISSING_CITATION_REJECT",
+        "CITATION_SOURCE_SPAN_MISMATCH_REJECT",
+        "CROSS_DOMAIN_KNOWLEDGE_LEAK_REJECT"
+      ],
+      "entry_gate": "CONTRACT_IMMEDIATE_FINAL_E2E_AFTER_C4_C5",
+      "expected_terminal": "C6_DOMAIN_AI_QUALITY_CITATION_E2E_PASS"
+    }
+  },
+  "handoff_chain": [
+    "C2_DOCUMENT_UNIT_BUNDLE_V1",
+    "C3_SEMANTIC_CLASSIFICATION",
+    "C4_KNOWLEDGE_CANDIDATE_BUNDLE_V1",
+    "D1_KNOWLEDGE_RELEASE_V1_FIXTURE_OR_ACCEPTED_RELEASE",
+    "C5_DOMAIN_AI_SEAT_AND_QUERY_CITATION_RUNTIME",
+    "C6_SEARCH_EVIDENCE_CITATION_ANSWER_E2E",
+    "C1_AI_RUNTIME_RECEIPT_V1_TO_A0"
+  ],
+  "authority_rules": {
+    "official_result": "GITHUB_REMOTE_HEAD_COMMITTED_JSON",
+    "comments_and_chat": "POINTER_AND_NON_AUTHORITY_SUMMARY_ONLY",
+    "d1_is_knowledge_authority": true,
+    "fixture_release_must_not_be_claimed_as_d_accepted_release": true
+  },
+  "forbidden": {
+    "adapter_ownership": true,
+    "bulk_collection_ownership": true,
+    "direct_d_canonical_db_write": true,
+    "panel_shell_direct_edit": true,
+    "unsupported_knowledge_authority_claim": true,
+    "production": true,
+    "ready": true,
+    "merge": true
+  },
+  "status": "C1_SEMANTIC_AI_WAVE1_WORKER_LANES_ASSIGNED"
+}

@@ -1,0 +1,55 @@
+{
+  "group_id": "GROUP-03",
+  "loop_id": "A-LOOP-GROUP-03",
+  "cycle_id": "A-LOOP-GROUP-03-GROUP03-W06-CYCLE-0001",
+  "worker_id": "GROUP03-W06",
+  "directive_id": "GROUP03-W01-TO-GROUP03-W06-C6V3-GATE-AND-TERMINAL-CLOSURE-CYCLE-0001",
+  "directive_comment_id": 5183596219,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "execution_branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "evaluated_at_kst": "2026-08-05 05:32 KST",
+  "schema_version": "C6_D_ALIGNED_FINAL_REPORT_V3",
+  "report_id": "C6-D-ALIGNED-FINAL-REPORT-V3-20260805-001",
+  "directive_chain": {
+    "prior_directive_comment": 5183194866,
+    "closure_directive_comment": 5183596219,
+    "duplicate_or_reimplementation": false
+  },
+  "completed_work": [
+    "C2_C3_LATEST_POINTERS_REBOUND",
+    "PR188_EXACT_CONTRACTS_BOUND_AS_ACTIVE_D_AUTHORITY",
+    "SOURCE_FACTORY_PR21_CLASSIFIED_AS_HISTORICAL",
+    "C6_WORKER_TERMINAL_ACCEPTANCE_MATRIX_V3_PUBLISHED",
+    "C1_TO_D1_HANDOFF_VALIDATION_V2_PUBLISHED",
+    "FINAL_E2E_FAIL_CLOSED_GATE_EVALUATION_COMPLETED"
+  ],
+  "validation": {
+    "json_parse": "PASS_4_OF_4_PRE_POINTER",
+    "c2_pointer_binding": "PASS",
+    "c3_pointer_binding": "PASS",
+    "pr188_exact_authority": "PASS_4_OF_4",
+    "worker_gate": "PASS_2_OF_4",
+    "handoff_package_completeness": "FAIL_0_OF_4_EXTERNAL",
+    "virtual_pass_count": 0
+  },
+  "failure_correction": {
+    "first_observed_failure": "STALE_C6_V2_AUTHORITY_BASELINE",
+    "correction": "REBOUND_C2_C3_AND_PR188_EXACT_AUTHORITY_AND_REEVALUATED_GATE",
+    "rerun_result": "EXACT_EXTERNAL_BLOCKER_C4_V2_PACKAGE_TERMINAL_NOT_PUBLISHED",
+    "same_failure_repeated_without_correction": false
+  },
+  "safety": {
+    "d_acceptance_claimed": false,
+    "d_canonical_schema_mutation": false,
+    "d_canonical_db_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "ci_status": "NOT_RUN_NOT_CLAIMED_PASS"
+  },
+  "first_blocker": "C4_V2_PACKAGE_TERMINAL_NOT_PUBLISHED",
+  "terminal": "C6_D_ALIGNED_TRANSFORMER_E2E_EXACT_BLOCKER",
+  "terminal_status_for_loop": "BLOCKED_EXTERNAL",
+  "decision": "EXACT_EXTERNAL_BLOCKER"
+}

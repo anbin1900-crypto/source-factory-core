@@ -1,0 +1,44 @@
+{
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "directive_comment_id": 5196040055,
+  "executed_at_kst": "2026-08-06 04:10 KST",
+  "fixture_canonical_sha256": "cbac358fb4427908ece0deb25684ddd5eab6b2f22c8130a3615c2bb77025f374",
+  "implementation_sha256": {
+    "test_source": "0192daf51e3d482f73941575fa35065ebfc8bd9c2c2ab0dfe03e598e35d87ea7",
+    "validator": "e4ec068f37541f27e5d6406a1f721eedfcd03e7b83c60610050a18abc08b40cb"
+  },
+  "matrix_case_results": [
+    {"case_id": "DR-001", "errors": [], "passed": true},
+    {"case_id": "DR-002", "errors": ["KNOWLEDGE_RELEASE_RECEIPT_LINK_MISMATCH", "RECEIPT_ID_COLLISION"], "passed": true},
+    {"case_id": "DR-003", "errors": ["SOURCE_RECEIPT_SCOPE_CONTAMINATION"], "passed": true},
+    {"case_id": "DR-004", "errors": ["KNOWLEDGE_RECEIPT_SCOPE_CONTAMINATION"], "passed": true},
+    {"case_id": "DR-005", "errors": ["AUTHORITATIVE_DB_WRITE_FORBIDDEN"], "passed": true},
+    {"case_id": "DR-006", "errors": ["AUTHORITATIVE_DB_WRITE_FORBIDDEN"], "passed": true},
+    {"case_id": "DR-007", "errors": ["REJECTED_VALUE_NOT_PRESERVED"], "passed": true},
+    {"case_id": "DR-008", "errors": ["SOURCE_RECEIPT_LINK_MISMATCH"], "passed": true},
+    {"case_id": "DR-009", "errors": ["KNOWLEDGE_RELEASE_RECEIPT_LINK_MISMATCH"], "passed": true},
+    {"case_id": "DR-010", "errors": ["FIXTURE_RUNTIME_ACTIVATION_FORBIDDEN"], "passed": true},
+    {"case_id": "DR-011", "errors": ["KNOWLEDGE_RELEASE_CONTRACT_BINDING_MISSING", "KNOWLEDGE_RELEASE_CONTRACT_BINDING_MISSING:query_contract_ref"], "passed": true},
+    {"case_id": "DR-012", "errors": ["KNOWLEDGE_RELEASE_CONTRACT_BINDING_MISSING", "KNOWLEDGE_RELEASE_CONTRACT_BINDING_MISSING:citation_contract_ref"], "passed": true},
+    {"case_id": "DR-013", "errors": ["KNOWLEDGE_RELEASE_CONTRACT_BINDING_MISSING", "KNOWLEDGE_RELEASE_CONTRACT_BINDING_MISSING:evidence_contract_ref"], "passed": true},
+    {"case_id": "DR-014", "errors": ["KNOWLEDGE_RECEIPT_TYPE_OR_SCOPE_INVALID", "RECEIPT_TYPE_COLLISION"], "passed": true}
+  ],
+  "result_id": "C6-D-DUAL-RECEIPT-TEST-RESULT-20260806-001",
+  "schema_version": "C6_D_DUAL_RECEIPT_TEST_RESULT_V1",
+  "status": "PASS_FIXTURE_VALIDATOR_READY",
+  "task_id": "C6_D_DUAL_RECEIPT_E2E_VALIDATOR",
+  "validation": {
+    "authoritative_db_write_false": "PASS_3_OF_3_SOURCE_KNOWLEDGE_RUNTIME",
+    "fixture_matrix": "PASS_14_OF_14",
+    "fixture_matrix_passed": 14,
+    "fixture_matrix_total": 14,
+    "fixture_runtime_activation_false": "PASS",
+    "python_compile": "PASS_2_OF_2",
+    "receipt_separation": "PASS",
+    "rejected_value_preservation": "PASS_2_OF_2_BASE_FIXTURE_AND_NEGATIVE_MUTATION",
+    "semantic_rerun_count": 0,
+    "silent_drop_count": 0,
+    "unit_tests": "PASS_26_OF_26",
+    "virtual_d_acceptance_count": 0
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "LATEST_C4_WAVE2_PACKAGE_ASSEMBLY_POINTER_V1",
+  "pointer_id": "LATEST_C4_WAVE2_PACKAGE_ASSEMBLY_POINTER",
+  "updated_at_kst": "2026-08-05 01:19 KST",
+  "worker": "C-4_EVIDENCE_AND_KNOWLEDGE_CANDIDATE",
+  "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
+  "directive_id": "C1-TO-C4-D-ALIGNED-PACKAGE-KNOWLEDGE-CANDIDATE-V1-20260804-001",
+  "duplicate_prompt_key": "291a3b7aac297b0bbc744cb1c57a017d895cf9b35204db511ecaec54aacf8b97",
+  "wave2_event_id": "C4-B1-PR188-PACKAGE-ASSEMBLY-V2-20260804-001",
+  "recovery_comment": 5180360102,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c4-package-knowledge-candidate/**",
+  "current_report": {
+    "path": "wave2-preflight/C4_WAVE2_PACKAGE_ASSEMBLY_PREFLIGHT_EVENT_WAIT_REPORT_V1.json",
+    "blob": "8acf29be0ab2e42cbc5d239a696b20a57f8677cb",
+    "decision": "EVENT_WAIT_GATE_CLOSED_PREFLIGHT_PASS"
+  },
+  "entry_gate": {
+    "name": "C2_V2_AND_C3_V2_TERMINALS",
+    "open": false,
+    "c2_pointer_blob": "8c29ac70b338fa21b41d2205bd2d846537a18314",
+    "c2_wave2_terminal_published": false,
+    "c3_pointer_blob": "f46c5c64e3da5b6d4cbfc338a5d99b4e67335204",
+    "c3_wave2_terminal_published": false
+  },
+  "authority_readback": {
+    "b1": "PASS_4_OF_4",
+    "d1": "PASS_4_OF_4",
+    "total": "PASS_8_OF_8"
+  },
+  "historical_pointer_preserved": {
+    "path": "LATEST_C4_D_ALIGNED_POINTER.json",
+    "blob": "489f4511852fe7c6410152a2cc26e21233ffe15b",
+    "mutation": false
+  },
+  "package_status": "PREFLIGHT_READY_EVENT_WAIT",
+  "final_package_assembly_executed": false,
+  "first_blocker": "C2_V2_TERMINAL_NOT_PUBLISHED_AFTER_WAVE2_ASSIGNMENT",
+  "next_action": "REQUERY_C2_C3_POINTERS_AFTER_WAVE2_TERMINALS_THEN_ASSEMBLE",
+  "terminal": "C4_D_ALIGNED_PACKAGE_READY_OR_EXACT_BLOCKER",
+  "terminal_decision": "EXACT_BLOCKER_EVENT_WAIT",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": "C1_D1_MAPPING_ADDENDUM_CONSUMPTION_V1",
+  "consumption_id": "C1-D1-MAPPING-ADDENDUM-CONSUMPTION-20260806-001",
+  "published_at_kst": "2026-08-06T08:23:00+09:00",
+  "role": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "common_directive_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V2-20260806-001",
+  "task_id": "C1_D1_AUTHORITY_DELTA_BINDING",
+  "task_directive_comment_id": 5198233686,
+  "authority_delta_binding": {
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/integration-preparation/C1_D1_AUTHORITY_DELTA_BINDING_V1.json",
+    "commit": "61b225c609dbc39579ba830697564ca1a41cb4a9"
+  },
+  "d1_mapping_addendum": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/D_INBOUND_FIELD_MAPPING_CONTRACT_V1_1_ADDENDUM.json",
+    "blob": "118d6403dd5db47afafb982991f8fd9a51f35f28",
+    "mapping_version": "1.1.0",
+    "remote_readback": "PASS"
+  },
+  "c3_request": {
+    "request_blob": "40c21a62fb2af9654e4d1ccb79a744ab68852edc",
+    "prior_required_rules": ["B001", "B013", "B014"],
+    "consumption_status": "CONSUMED_BY_D1_ADDENDUM"
+  },
+  "rule_delta_validation": {
+    "B001": {
+      "resolved": true,
+      "decision": "SOURCE_KEY_IS_LOOKUP_INPUT_NOT_CANONICAL_ID",
+      "accepted_source_path": "package.source_key",
+      "target": "SOURCE.source_id",
+      "transform": "CANONICAL_SOURCE_ID_LOOKUP_OR_D_GENERATE_V1",
+      "canonical_id_generation_owner": "D-1_ONLY",
+      "c1_or_c3_may_generate_d_id": false,
+      "effect": "C3_D1_DECISION_REQUIREMENT_RESOLVED"
+    },
+    "B013": {
+      "resolved": true,
+      "decision": "TARGET_LANGUAGE_CODE_REQUIRED_WITH_DETERMINISTIC_DERIVATION_OPTION",
+      "accepted_source_path": "records[*].language_code",
+      "target": "DOCUMENT.language_code",
+      "absence_policy": "DERIVE_BY_VERSIONED_RULE_OR_REJECT_RECORD_MISSING_REQUIRED_VALUE",
+      "silent_default": false,
+      "effect": "OPTIONAL_ALIGNMENT_RESOLVED"
+    },
+    "B014": {
+      "resolved": true,
+      "decision": "RECORD_CONTENT_HASH_DISTINCT_FROM_RAW_ARTIFACT_HASH",
+      "preferred_source_path": "records[*].record_hash",
+      "conditional_alias_source_path": "records[*].source_sha256",
+      "target": "DOCUMENT_VERSION.content_hash",
+      "equivalence_version": "D_HASH_EQUIVALENCE_V1_1",
+      "raw_artifact_sha256_substitution": false,
+      "effect": "C3_D1_DECISION_REQUIREMENT_RESOLVED"
+    }
+  },
+  "delta_result": {
+    "requested_rule_count": 3,
+    "resolved_rule_count": 3,
+    "unresolved_rule_count": 0,
+    "status": "PASS_3_OF_3",
+    "d1_required_decisions": "PASS_2_OF_2",
+    "optional_b013_alignment_resolved": true
+  },
+  "unchanged_semantic_bytes": {
+    "C2_FRAGMENT_CONTRACT_BLOB": "4e7a6569c700864f016d050f5ced7c514511b390",
+    "C4_CANDIDATE_BUNDLE_BLOB": "8c5ecfb8114330ca86ce9d0b50a971fd5b99037f",
+    "semantic_rerun_count": 0,
+    "candidate_count": 0,
+    "assertion_count": 0,
+    "evidence_count": 0,
+    "rejected_record_count": 15
+  },
+  "decision": "PASS_D1_MAPPING_ADDENDUM_CONSUMED_NO_SEMANTIC_RERUN",
+  "next_gate": "B_CONTENT_DELTA_OR_ACTUAL_D_RECEIPTS",
+  "d_acceptance_claim": false,
+  "runtime_activation": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

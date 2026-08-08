@@ -1,0 +1,46 @@
+{
+  "schema_version": "C5_D_RELEASE_QUERY_CITATION_FINAL_REPORT_V2",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "C5_D_RELEASE_QUERY_CITATION_CONSUMER_V2",
+  "directive_comment_id": 5196037750,
+  "worker": "C-5_DOMAIN_AI_SEAT_AND_TOOL_RUNTIME",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "observed_shared_head": "67fb5888ef408998ca70f06621b716ed87ad09a8",
+  "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c5-domain-ai-seat-runtime/**",
+  "performed": [
+    "read_exact_v2_directive",
+    "verify_d1_latest_head_delta_is_api_only",
+    "classify_published_receipt_as_contract_plus_fixture_not_actual_receipt",
+    "classify_static_product_release_candidate_as_not_knowledge_release_v1",
+    "bind_knowledge_version_query_citation_evidence_policies",
+    "implement_fail_closed_runtime_activation_engine",
+    "implement_fixture_non_authority_boundary",
+    "test_authoritative_and_failure_scenarios"
+  ],
+  "result": {
+    "consumer_contract_status": "READY",
+    "specialist_ai_runtime_activation_status": "BLOCKED_FAIL_CLOSED",
+    "d1_actual_acceptance_receipt_consumed": false,
+    "d1_knowledge_release_consumed": false,
+    "fixture_release_authority": false,
+    "first_blocker": "D1_ACTUAL_ACCEPTANCE_RECEIPT_NOT_PUBLISHED",
+    "additional_blockers": [
+      "D1_KNOWLEDGE_RELEASE_V1_NOT_PUBLISHED"
+    ],
+    "next_gate": "D1_PUBLISH_ACTUAL_ACCEPTANCE_RECEIPT_AND_KNOWLEDGE_RELEASE_V1_WITH_EXACT_VERSION_QUERY_CITATION_EVIDENCE_REFS"
+  },
+  "tests": {
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_32_OF_32",
+    "scenario_matrix": "PASS_20_OF_20",
+    "silent_activation_count": 0
+  },
+  "terminal": "C5_D_RELEASE_QUERY_CITATION_CONSUMER_READY_OR_EXACT_BLOCKER",
+  "terminal_decision": "CONTRACT_READY_EXACT_BLOCKER_D1_ACTUAL_RECEIPT_AND_KNOWLEDGE_RELEASE_NOT_PUBLISHED",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "d_canonical_db_write": false
+}

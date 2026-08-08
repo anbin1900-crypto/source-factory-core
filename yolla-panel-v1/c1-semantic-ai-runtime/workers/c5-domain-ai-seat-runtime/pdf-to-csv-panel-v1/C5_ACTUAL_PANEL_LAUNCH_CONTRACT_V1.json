@@ -1,0 +1,36 @@
+{
+  "schema_version": "C5_ACTUAL_PANEL_LAUNCH_CONTRACT_V1",
+  "batch_id": "C1-PDF-PREPROCESS-FINAL-PANEL-LAUNCH-20260807-001",
+  "directive_comment_id": 5212524440,
+  "control_comment_id": 5212526492,
+  "entry_event": "IMMEDIATE",
+  "panel": "standalone_pdf_to_csv_panel.py",
+  "launch_contract": {
+    "pyside6_required": true,
+    "missing_dependency_exit_code": 2,
+    "missing_dependency_message_required": true,
+    "missing_dependency_install_command_required": true,
+    "missing_dependency_relaunch_command_required": true,
+    "generic_launch_exception_exit_code": 3,
+    "generic_launch_exception_message_required": true,
+    "folder_selection": true,
+    "single_pdf_selection": true,
+    "output_folder_selection": true,
+    "chunk_size_control": true,
+    "start_button": true,
+    "progress_display": true,
+    "error_display": true,
+    "result_display": true,
+    "background_thread": true,
+    "single_c4_pipeline_only": true,
+    "separate_processing_engine": false
+  },
+  "forbidden": {
+    "semantic_analysis": false,
+    "gpt_call": false,
+    "database_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

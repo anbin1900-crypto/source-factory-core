@@ -1,0 +1,150 @@
+{
+  "schema_version": "C1_D_ALIGNED_TRANSFORMER_WAVE2_REBIND_ASSIGNMENT_V1",
+  "event_id": "C1-D-ALIGNED-AUTHORITY-REBIND-CLOSURE-WAVE2-20260804-001",
+  "registered_at_kst": "2026-08-04 11:56 KST",
+  "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
+  "existing_directives_superseded": false,
+  "new_directive_count": 0,
+  "new_duplicate_prompt_key_count": 0,
+  "execution_mode": "REUSE_EXISTING_DIRECTIVES_AND_KEYS_AUTHORITY_REBIND_THEN_SERIAL_CLOSURE",
+  "authority_inputs": {
+    "B1_HEAD": "fb20d1df329150388889ad13ff0507b0fb3060be",
+    "B1_NORMALIZED_DATASET_BLOB": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+    "B1_RAW_ARTIFACT_MANIFEST_BLOB": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+    "B1_SOURCE_RECORD_ENVELOPE_BLOB": "0148a841344ce5a0df03e55df532871106dd7333",
+    "B1_EXTRACTION_RECEIPT_BLOB": "a4b4f7504c0a2b552fe165176f51833b78e0fd09",
+    "B1_MATERIALIZED_DATABASE_PACKAGE_BLOB": "1561bdf34694fb2e692ae60c045c759a23383f41",
+    "B1_SOURCE_EVIDENCE_HANDOFF_BLOB": "20dadfc3e58ac817031f14ef58ac64b691619b6f",
+    "B1_INPUT_CLASSIFICATION": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+    "D1_PR188_HEAD": "1bb475c440983aae761b897a3b58a8f4dab880cc",
+    "D1_SCHEMA_PROFILE_BLOB": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+    "D1_MAPPING_CONTRACT_BLOB": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
+    "D1_VALIDATION_RULESET_BLOB": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
+    "D1_ACCEPTANCE_RECEIPT_CONTRACT_BLOB": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
+    "D1_INPUT_CLASSIFICATION": "PR188_CANONICAL_SCHEMA_AND_INTAKE_AUTHORITY"
+  },
+  "assignments": {
+    "C-2": {
+      "directive_id": "C1-TO-C2-D-ALIGNED-SOURCE-LINEAGE-V1-20260804-001",
+      "duplicate_prompt_key": "9b0d40bd3fe9df62dad8c6a31e4d8f6d2ac9aafa29070b97299306b532c3107f",
+      "continuation_event": "C2-B1-FIXTURE-LINEAGE-REBIND-V2-20260804-001",
+      "entry_gate": "IMMEDIATE",
+      "required_work": [
+        "Consume B1 SOURCE_RECORD_ENVELOPE_V1, NORMALIZED_DATASET_V1, RAW_ARTIFACT_MANIFEST_V1 and EXTRACTION_RECEIPT_V1 by exact head and blob.",
+        "Generate one lineage attempt for every source field, including normalized and unmapped fields.",
+        "Preserve source value, provenance and fixture classification; do not call the B1 fixture an accepted real-site handoff.",
+        "Update C2 final report and latest pointer with actual_b_fixture_input_used=true and exact counts."
+      ],
+      "required_outputs": [
+        "C2_B1_FIXTURE_LINEAGE_BINDING_V2.json",
+        "C2_D_ALIGNED_LINEAGE_TEST_RESULT_V2.json",
+        "C2_D_ALIGNED_FINAL_REPORT_V2.json",
+        "LATEST_C2_D_ALIGNED_POINTER.json"
+      ],
+      "expected_terminal": "C2_D_ALIGNED_SOURCE_LINEAGE_READY_OR_EXACT_BLOCKER"
+    },
+    "C-3": {
+      "directive_id": "C1-TO-C3-D-ALIGNED-FIELD-MAPPING-TRANSFORM-RULES-V1-20260804-001",
+      "duplicate_prompt_key": "ed293d3858fa97ae0eb9ed8739f633b9166b46121c5495970e7f6d304ae6f50b",
+      "continuation_event": "C3-PR188-MAPPING-REBIND-CROSSWALK-V2-20260804-001",
+      "entry_gate": "IMMEDIATE",
+      "required_work": [
+        "Replace Source Factory PR21 contract authority with PR188 exact schema, mapping and ruleset blobs.",
+        "For every PR188 inbound rule classify DIRECT_MATCH, DECLARED_RULE_DERIVABLE, MISSING_REQUIRED_SOURCE_PATH or OPTIONAL_MISSING.",
+        "Do not infer aliases or invent source values; preserve all missing-path findings in FIELD_MAPPING_REPORT_V1.",
+        "Publish a deterministic crosswalk consumed by C4 and C5."
+      ],
+      "required_outputs": [
+        "PR188_B1_SOURCE_PATH_CROSSWALK_V2.json",
+        "FIELD_MAPPING_REPORT_V1.json",
+        "C3_D_ALIGNED_MAPPING_TEST_RESULT_V2.json",
+        "C3_D_ALIGNED_FINAL_REPORT_V2.json",
+        "LATEST_C3_D_ALIGNED_POINTER.json"
+      ],
+      "expected_terminal": "C3_D_ALIGNED_FIELD_MAPPING_READY_OR_EXACT_BLOCKER"
+    },
+    "C-4": {
+      "directive_id": "C1-TO-C4-D-ALIGNED-PACKAGE-KNOWLEDGE-CANDIDATE-V1-20260804-001",
+      "duplicate_prompt_key": "291a3b7aac297b0bbc744cb1c57a017d895cf9b35204db511ecaec54aacf8b97",
+      "continuation_event": "C4-B1-PR188-PACKAGE-ASSEMBLY-V2-20260804-001",
+      "entry_gate": "C2_V2_AND_C3_V2_TERMINALS",
+      "required_work": [
+        "Consume updated C2 lineage and C3 PR188 crosswalk plus exact B1 fixture inputs.",
+        "Assemble D_ALIGNED_TRANSFORMATION_PACKAGE_V1 and FIELD_MAPPING_REPORT_V1 without silent drop.",
+        "Put missing required paths, unmapped fields, missing evidence and type failures into REJECTED_RECORD_BUNDLE_V1 with source values preserved.",
+        "Create KNOWLEDGE_CANDIDATE_BUNDLE_V1 only for evidence-backed candidates; an empty candidate set is valid when evidence is insufficient.",
+        "Do not claim D acceptance."
+      ],
+      "required_outputs": [
+        "D_ALIGNED_TRANSFORMATION_PACKAGE_V1.json",
+        "FIELD_MAPPING_REPORT_V1.json",
+        "REJECTED_RECORD_BUNDLE_V1.json",
+        "KNOWLEDGE_CANDIDATE_BUNDLE_V1.json",
+        "C4_D_ALIGNED_FINAL_REPORT_V2.json",
+        "LATEST_C4_D_ALIGNED_POINTER.json"
+      ],
+      "expected_terminal": "C4_D_ALIGNED_PACKAGE_READY_OR_EXACT_BLOCKER"
+    },
+    "C-5": {
+      "directive_id": "C1-TO-C5-D-SCHEMA-CONSUMER-VALIDATION-REJECTION-V1-20260804-001",
+      "duplicate_prompt_key": "8615080f268afb2f55132b60012332d679ce8c5df66bdb60055369681b70b4de",
+      "continuation_event": "C5-PR188-C4-PACKAGE-VALIDATION-V2-20260804-001",
+      "entry_gate": "C4_V2_PACKAGE_TERMINAL",
+      "required_work": [
+        "Validate C4 packages against PR188 exact schema, mapping and ruleset blobs.",
+        "Classify the fixture package as ACCEPTED, PARTIALLY_ACCEPTED or REJECTED using D rules, but label it C1 validation candidate only.",
+        "Report valid, rejected and pending counts and every rejection reason; silent_drop_count must remain zero.",
+        "Produce a receipt candidate compatible with KNOWLEDGE_ACCEPTANCE_RECEIPT_V1 without issuing D authority acceptance."
+      ],
+      "required_outputs": [
+        "C5_PR188_PACKAGE_VALIDATION_RESULT_V2.json",
+        "REJECTED_RECORD_BUNDLE_V2.json",
+        "KNOWLEDGE_ACCEPTANCE_RECEIPT_CANDIDATE_V1.json",
+        "C5_D_ALIGNED_FINAL_REPORT_V2.json",
+        "LATEST_C5_D_ALIGNED_POINTER.json"
+      ],
+      "expected_terminal": "C5_D_SCHEMA_VALIDATOR_REJECTION_READY_OR_EXACT_BLOCKER"
+    },
+    "C-6": {
+      "directive_id": "C1-TO-C6-D-ALIGNED-TRANSFORMER-E2E-AUDIT-V1-20260804-001",
+      "duplicate_prompt_key": "1edd009166e3df99f8245d9577b60342ccbd715358ba3d948382a289d02d71a9",
+      "continuation_event": "C6-D-ALIGNED-FINAL-E2E-PR188-V3-20260804-001",
+      "entry_gate": "UPDATED_C2_C3_C4_C5_TERMINALS_4_OF_4",
+      "required_work": [
+        "Requery all updated exact heads, comments and pointers.",
+        "Verify source-field accounting, no silent drop, provenance/evidence retention, PR188 version binding, rejected-record coverage and deterministic replay.",
+        "Verify C1_TO_D1_HANDOFF package completeness for PR188 submission, not D acceptance.",
+        "Publish PASS_FOR_D1_SUBMISSION or the exact first blocker."
+      ],
+      "required_outputs": [
+        "C6_WORKER_TERMINAL_ACCEPTANCE_MATRIX_V3.json",
+        "C1_TO_D1_HANDOFF_VALIDATION_V2.json",
+        "C6_D_ALIGNED_FINAL_E2E_REPORT_V3.json",
+        "C6_D_ALIGNED_FINAL_REPORT_V3.json",
+        "LATEST_C6_D_ALIGNED_POINTER.json"
+      ],
+      "expected_terminal": "C6_D_ALIGNED_TRANSFORMER_E2E_PASS_OR_EXACT_BLOCKER"
+    }
+  },
+  "execution_order": [
+    "B1_COMMANDER_HANDOFF_POINTER_CORRECTION_IN_PARALLEL",
+    "C2_AND_C3_PARALLEL_REBIND",
+    "C4_PACKAGE_ASSEMBLY",
+    "C5_PR188_VALIDATION",
+    "C6_FINAL_E2E",
+    "C1_RESULT_AND_D1_HANDOFF_POINTER_UPDATE"
+  ],
+  "boundaries": {
+    "actual_site_data_claim": false,
+    "fixture_claimed_as_d_accepted_data": false,
+    "d_canonical_schema_mutation": false,
+    "d_canonical_db_write": false,
+    "panel_shell_direct_edit": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "C1_D_ALIGNED_WAVE2_REBIND_ASSIGNED"
+}

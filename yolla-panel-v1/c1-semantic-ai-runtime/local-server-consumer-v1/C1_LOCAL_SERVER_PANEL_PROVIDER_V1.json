@@ -1,0 +1,82 @@
+{
+  "schema_version": "C1_LOCAL_SERVER_PANEL_PROVIDER_V1",
+  "provider_id": "C1-LOCAL-SERVER-PANEL-PROVIDER-20260806-001",
+  "published_at_kst": "2026-08-06T19:49:00+09:00",
+  "batch_id": "V2-TO-ABCD-LOCAL-SERVER-OPERATION-AND-FUTURE-MIGRATION-BATCH-V1-20260806-001",
+  "task_id": "C1_D_LOCAL_SERVER_QUERY_CITATION_CONSUMER_V1",
+  "task_comment_id": 5203035242,
+  "producer": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+  "consumer": "A-0_PANEL_PROVIDER_CONSUMER",
+  "panel_shell_direct_edit": false,
+  "contract_bindings": {
+    "query_client_blob": "6d09a5727e2c9092ea8b473087750047fd62aeb5",
+    "citation_client_blob": "0b67e8ff2e5b4f5aad0f1634b39cc1322a3bee38",
+    "receipt_consumer_blob": "c002ac8370676153fa0675f726057f234f46ebbe"
+  },
+  "provider_payload": {
+    "required_fields": [
+      "provider_version",
+      "observed_at",
+      "local_server_health",
+      "endpoint_binding_state",
+      "source_document_query_state",
+      "knowledge_query_state",
+      "citation_state",
+      "receipt_state",
+      "knowledge_release_state",
+      "runtime_activation_state",
+      "migration_state",
+      "blocking_reason_codes"
+    ],
+    "allowed_health_states": [
+      "UNKNOWN",
+      "STARTING",
+      "READY",
+      "DEGRADED",
+      "UNAVAILABLE"
+    ],
+    "allowed_runtime_states": [
+      "BLOCKED_FAIL_CLOSED",
+      "SOURCE_DOCUMENT_SMOKE_ONLY",
+      "ACTIVE_WITH_D_KNOWLEDGE_RELEASE"
+    ]
+  },
+  "current_provider_state": {
+    "local_server_health": "UNKNOWN",
+    "endpoint_binding_state": "WAITING_D_LOCAL_SERVER_ENDPOINT_AUTHORITY",
+    "source_document_query_state": "DISABLED_WAITING_ENDPOINT_AND_HEALTH",
+    "knowledge_query_state": "BLOCKED_WAITING_D_KNOWLEDGE_RELEASE",
+    "citation_state": "BLOCKED_WAITING_D_KNOWLEDGE_RELEASE",
+    "receipt_state": "WAITING_D_ACTUAL_RECEIPTS",
+    "knowledge_release_state": "NOT_PUBLISHED",
+    "runtime_activation_state": "BLOCKED_FAIL_CLOSED",
+    "migration_state": "LOCAL_ONLY_REMOTE_SWITCH_NOT_AUTHORIZED",
+    "blocking_reason_codes": [
+      "D_LOCAL_SERVER_ENDPOINT_AUTHORITY_NOT_BOUND",
+      "D_LOCAL_SERVER_HEALTH_NOT_READY",
+      "D1_ACTUAL_KNOWLEDGE_RECEIPT_NOT_PUBLISHED",
+      "D1_KNOWLEDGE_RELEASE_V1_NOT_PUBLISHED"
+    ]
+  },
+  "display_rules": {
+    "do_not_display_ready_when_endpoint_unresolved": true,
+    "do_not_display_active_when_release_missing": true,
+    "show_fixture_or_contract_as_authority": false,
+    "show_exact_blocking_reason_codes": true,
+    "show_public_service_status": false
+  },
+  "preserved_state": {
+    "candidate_count": 0,
+    "assertion_count": 0,
+    "evidence_count": 0,
+    "rejected_record_count": 15,
+    "fabricated_candidate_count": 0,
+    "fabricated_assertion_count": 0,
+    "semantic_rerun_count": 0
+  },
+  "decision": "PANEL_PROVIDER_CONTRACT_READY_FAIL_CLOSED_WAITING_D_LOCAL_ENDPOINT_AND_RELEASE",
+  "production": false,
+  "public_binding": false,
+  "ready": false,
+  "merge": false
+}

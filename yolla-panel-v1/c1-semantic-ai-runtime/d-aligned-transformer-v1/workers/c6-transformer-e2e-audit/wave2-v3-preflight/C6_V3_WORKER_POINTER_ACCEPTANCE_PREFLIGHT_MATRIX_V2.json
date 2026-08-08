@@ -1,0 +1,73 @@
+{
+  "schema_version": "C6_V3_WORKER_POINTER_ACCEPTANCE_PREFLIGHT_MATRIX_V2",
+  "matrix_id": "C6-V3-WORKER-POINTER-PREFLIGHT-20260805-002",
+  "supersedes_only": "C2_POINTER_NOT_PUBLISHED_FINDING_IN_V1",
+  "prior_matrix_blob": "35c304942e8a332e3b3cf8fcc737487a45257e47",
+  "worker": "C-6_AI_QUALITY_AND_E2E_VALIDATION",
+  "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
+  "directive_id": "C1-TO-C6-D-ALIGNED-TRANSFORMER-E2E-AUDIT-V1-20260804-001",
+  "evaluated_at_kst": "2026-08-05 01:36 KST",
+  "entry_gate": "UPDATED_C2_C3_C4_C5_TERMINALS_4_OF_4",
+  "entry_gate_open": false,
+  "updated_wave2_gate": {
+    "required": 4,
+    "accepted": 0,
+    "status": "WAITING_0_OF_4"
+  },
+  "workers": {
+    "C-2": {
+      "wave2_recovery_comment": 5180350028,
+      "terminal_enforcement_comment": 5181054986,
+      "pointer_path": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c2-source-lineage/LATEST_C2_D_ALIGNED_POINTER.json",
+      "pointer_blob": "a4bc27b8e24dbadf668db5da21cacda0a866284a",
+      "pointer_schema_version": "2.0.0",
+      "final_report_v2_blob": "7f723e965109382bda1ba0c5e51d92a4c5cf653a",
+      "test_result_v2_blob": "e6e1668e46fadf6feec7f8b960487b53b19c87d1",
+      "binding_v2_blob": "2689b2a7e6bd8ecb956c753ba585894a4c785b6e",
+      "validation": "PASS_34_OF_34",
+      "lineage_attempt_count": 50,
+      "silent_drop_count": 0,
+      "remote_blob_readback": "PASS_3_OF_3",
+      "terminal_field_in_pointer": "C2_D_ALIGNED_SOURCE_LINEAGE_READY_OR_EXACT_BLOCKER",
+      "terminal_comment": "NOT_PUBLISHED",
+      "accepted_into_c6_gate": false,
+      "status": "V2_POINTER_READY_TERMINAL_COMMENT_REQUIRED"
+    },
+    "C-3": {
+      "wave2_recovery_comment": 5180356187,
+      "terminal_enforcement_comment": 5181059789,
+      "v2_crosswalk": "NOT_PUBLISHED",
+      "v2_pointer": "NOT_PUBLISHED",
+      "terminal_comment": "NOT_PUBLISHED",
+      "accepted_into_c6_gate": false,
+      "status": "UPDATED_WAVE2_OUTPUTS_AND_TERMINAL_NOT_PUBLISHED"
+    },
+    "C-4": {
+      "wave2_recovery_comment": 5180360102,
+      "entry_gate": "C2_V2_AND_C3_V2_TERMINALS",
+      "preflight_published": true,
+      "updated_package_terminal": "NOT_PUBLISHED",
+      "accepted_into_c6_gate": false,
+      "status": "EVENT_WAIT_C2_C3_UPDATED_TERMINALS"
+    },
+    "C-5": {
+      "wave2_recovery_comment": 5180365149,
+      "entry_gate": "C4_V2_PACKAGE_TERMINAL",
+      "preflight_published": true,
+      "updated_validation_terminal": "NOT_PUBLISHED",
+      "accepted_into_c6_gate": false,
+      "status": "EVENT_WAIT_C4_UPDATED_PACKAGE_TERMINAL"
+    }
+  },
+  "acceptance_rule": "REMOTE_COMMITTED_REQUIRED_OUTPUTS_PLUS_UPDATED_POINTER_PLUS_PR20_TERMINAL_COMMENT",
+  "virtual_pass_count": 0,
+  "final_v3_e2e_authorized": false,
+  "first_blocker": "C2_UPDATED_WAVE2_TERMINAL_COMMENT_NOT_PUBLISHED",
+  "additional_blockers": [
+    "C3_UPDATED_WAVE2_OUTPUTS_POINTER_AND_TERMINAL_NOT_PUBLISHED",
+    "C4_UPDATED_PACKAGE_TERMINAL_WAITING_C2_C3",
+    "C5_UPDATED_VALIDATION_TERMINAL_WAITING_C4",
+    "B1_TO_C1_HANDOFF_NOT_PUBLISHED_WAITING_B6_INDEPENDENT_ACCEPTANCE"
+  ],
+  "decision": "C2_POINTER_OBSERVED_GATE_REMAINS_CLOSED"
+}

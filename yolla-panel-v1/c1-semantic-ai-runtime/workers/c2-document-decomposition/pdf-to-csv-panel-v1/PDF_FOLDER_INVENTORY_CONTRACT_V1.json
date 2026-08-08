@@ -1,0 +1,108 @@
+{
+  "schema_version": "PDF_FOLDER_INVENTORY_CONTRACT_V1",
+  "contract_id": "C2-PDF-FOLDER-INVENTORY-CONTRACT-V1",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
+  "task_id": "C2_PDF_FOLDER_INVENTORY_V1",
+  "directive_comment": 5207631489,
+  "producer": "C-2_PDF_FOLDER_INVENTORY_WORKER",
+  "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c2-document-decomposition/pdf-to-csv-panel-v1/**",
+  "purpose": "Recursively discover PDF files beneath a user-selected folder and produce a deterministic source inventory without reading or modifying PDF content.",
+  "input_contract": {
+    "selected_folder": {
+      "type": "existing_local_directory_path",
+      "required": true,
+      "symlink_root_allowed": false
+    }
+  },
+  "discovery_rules": {
+    "recursive": true,
+    "extension": ".pdf",
+    "extension_case_sensitive": false,
+    "exact_suffix_required": true,
+    "directory_symlinks_followed": false,
+    "file_symlinks_included": false,
+    "hidden_pdf_files_included": true,
+    "zero_byte_pdf_files_included": true,
+    "non_pdf_files_ignored": true,
+    "filesystem_access_error_policy": "FAIL_CLOSED_NO_SILENT_SKIP",
+    "original_pdf_opened": false,
+    "original_pdf_mutated": false
+  },
+  "inventory_document": {
+    "schema_version": "PDF_FOLDER_INVENTORY_V1",
+    "required_fields": [
+      "schema_version",
+      "selected_folder",
+      "ordering_rule",
+      "recursive",
+      "pdf_extension_case_sensitive",
+      "symlinks_followed",
+      "pdf_count",
+      "inventory_sha256",
+      "files"
+    ],
+    "file_entry_required_fields": [
+      "processing_order",
+      "relative_path",
+      "file_name",
+      "size_bytes"
+    ],
+    "field_definitions": {
+      "processing_order": "Contiguous 1-based integer assigned after deterministic sorting.",
+      "relative_path": "Original path relative to selected_folder, emitted with '/' separators.",
+      "file_name": "Original final path component, case preserved.",
+      "size_bytes": "Non-negative filesystem byte size from stat without opening the PDF.",
+      "inventory_sha256": "Lowercase SHA-256 of canonical JSON files array only, independent of selected root absolute location."
+    }
+  },
+  "deterministic_order": {
+    "primary": "UNICODE_NFC_CASEFOLD(relative_path)",
+    "tie_breaker": "ORIGINAL_RELATIVE_PATH_UTF8_BYTES",
+    "traversal_order_dependency": false,
+    "source_order_preserved_for_downstream": true
+  },
+  "canonical_inventory_hash": {
+    "algorithm": "SHA-256",
+    "encoding": "UTF-8",
+    "input": "json.dumps(files, ensure_ascii=false, sort_keys=true, separators=(',', ':'))",
+    "includes_absolute_selected_folder": false
+  },
+  "failure_codes": [
+    "SELECTED_FOLDER_NOT_FOUND",
+    "SELECTED_FOLDER_STAT_FAILED",
+    "SELECTED_FOLDER_SYMLINK_FORBIDDEN",
+    "SELECTED_FOLDER_NOT_DIRECTORY",
+    "DIRECTORY_TRAVERSAL_FAILED",
+    "DIRECTORY_ENTRY_STAT_FAILED",
+    "FILE_STAT_FAILED",
+    "RELATIVE_PATH_ESCAPE_DETECTED",
+    "INVENTORY_WRITE_FAILED"
+  ],
+  "cli_contract": {
+    "command": "python pdf_folder_inventory.py SELECTED_FOLDER [--output INVENTORY.json] [--compact]",
+    "success_exit_code": 0,
+    "failure_exit_code": 2,
+    "stdout_json_when_output_omitted": true,
+    "stderr_prefix_on_failure": "PDF_INVENTORY_ERROR:"
+  },
+  "explicit_exclusions": {
+    "pdf_text_extraction": false,
+    "ocr": false,
+    "text_chunking": false,
+    "csv_generation": false,
+    "semantic_analysis": false,
+    "gpt_call": false,
+    "database_write": false,
+    "panel_shell_edit": false
+  },
+  "acceptance": {
+    "recursive_pdf_only_discovery": true,
+    "relative_path_file_name_size_order_present": true,
+    "deterministic_replay": true,
+    "unit_test_required": true,
+    "remote_readback_required": true,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

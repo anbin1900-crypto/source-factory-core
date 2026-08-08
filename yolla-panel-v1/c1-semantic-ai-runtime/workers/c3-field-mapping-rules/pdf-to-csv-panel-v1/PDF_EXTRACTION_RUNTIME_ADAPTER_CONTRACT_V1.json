@@ -1,0 +1,98 @@
+{
+  "schema_version": "PDF_EXTRACTION_RUNTIME_ADAPTER_CONTRACT_V2",
+  "contract_id": "C3-PDF-EXTRACTION-RUNTIME-ADAPTER-DIRECT-REPAIR-20260807-001",
+  "batch_id": "C1-PDF-PREPROCESS-CORRECTION-20260807-001",
+  "task_id": "C3_EXTRACTION_DIRECT_REPAIR",
+  "directive_comment_id": 5208880453,
+  "bindings": {
+    "inventory_schema": "PDF_FOLDER_INVENTORY_V1",
+    "page_text_contract": "PDF_PAGE_TEXT_RECORD_CONTRACT_V2",
+    "cycle2_adapter_predecessor": "PDF_EXTRACTION_RUNTIME_ADAPTER_CONTRACT_V1"
+  },
+  "input_contract": {
+    "inventory_required_fields": [
+      "schema_version",
+      "selected_folder",
+      "files"
+    ],
+    "inventory_optional_verified_fields": [
+      "pdf_count",
+      "inventory_sha256"
+    ],
+    "file_entry_required_fields": [
+      "processing_order",
+      "relative_path",
+      "file_name",
+      "size_bytes"
+    ],
+    "accepted_panel_selection_schemas": [
+      "PANEL_FOLDER_SELECTION_INVENTORY_ADAPTER_V1",
+      "PANEL_FOLDER_OR_PDF_SELECTION_INVENTORY_ADAPTER_V1"
+    ],
+    "one_record_pdf_inventory_supported": true
+  },
+  "dependency_doctor": {
+    "schema_version": "PDF_EXTRACTION_DEPENDENCY_DOCTOR_V2",
+    "checks": [
+      "fitz",
+      "PIL",
+      "pytesseract",
+      "tesseract executable",
+      "kor language pack",
+      "eng language pack"
+    ],
+    "statuses": [
+      "READY_DIRECT_TEXT_AND_OCR",
+      "READY_DIRECT_TEXT_ONLY_OCR_UNAVAILABLE",
+      "READY_DIRECT_TEXT_ONLY_OCR_LANGUAGE_MISSING",
+      "READY_DIRECT_TEXT_ONLY_OCR_LANGUAGE_PROBE_FAILED",
+      "BLOCKED_PYMUPDF_UNAVAILABLE"
+    ],
+    "ocr_ready_requires": [
+      "fitz",
+      "PIL",
+      "pytesseract",
+      "tesseract executable",
+      "kor",
+      "eng"
+    ],
+    "target_pc_claim": "NOT_IMPLIED_BY_NON_TARGET_ENVIRONMENT_DOCTOR"
+  },
+  "execution_contract": {
+    "direct_text_first": true,
+    "raster_aware_ocr_fallback": true,
+    "short_direct_text_preserved_without_ocr": true,
+    "blank_page_explicit": true,
+    "scanned_page_without_ocr_fail_closed": true,
+    "file_error_policy": "PRESERVE_EXACT_ERROR_RECORD_AND_CONTINUE_BY_DEFAULT",
+    "source_order_preserved": true,
+    "page_order_preserved": true,
+    "original_pdf_mutation": false
+  },
+  "result_contract": {
+    "schema_version": "PDF_EXTRACTION_RUNTIME_RESULT_V2",
+    "required_counts": [
+      "total_page_count",
+      "direct_text_page_count",
+      "ocr_page_count",
+      "empty_page_count",
+      "warning_page_count"
+    ],
+    "status_values": [
+      "PASS",
+      "PARTIAL_FAILURE",
+      "FAILURE",
+      "NO_PDF_FILES"
+    ],
+    "silent_drop_allowed": false
+  },
+  "boundaries": {
+    "semantic_analysis": false,
+    "gpt_call": false,
+    "database_write": false,
+    "actual_150_pdf_acceptance_run": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

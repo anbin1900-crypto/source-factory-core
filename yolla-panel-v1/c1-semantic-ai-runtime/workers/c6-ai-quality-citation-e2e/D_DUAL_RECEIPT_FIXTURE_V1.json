@@ -1,0 +1,63 @@
+{
+  "schema_version": "D_DUAL_RECEIPT_FIXTURE_V1",
+  "fixture_id": "C6-D-DUAL-RECEIPT-FIXTURE-20260806-001",
+  "authority_bindings": {
+    "source_repository": "anbin1900-crypto/source-factory-core",
+    "b1_control_pr": 19,
+    "b1_head": "fded2aa3f24bd7e6eaa8aedeafa7d2e6a4e2dc04",
+    "b1_handoff_pointer_blob": "932904cede5bcfb239a62952173f82147b0b0f26",
+    "b1_handoff_classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE",
+    "d_repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "d1_control_pr": 188,
+    "d1_head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+    "d_relevant_contract_delta": false
+  },
+  "source_document_receipt": {
+    "receipt_id": "D-SOURCE-RECEIPT-FIXTURE-001",
+    "receipt_type": "D_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_V1",
+    "receipt_scope": "SOURCE_DOCUMENT",
+    "issuer": "D-1_DOMAIN_KNOWLEDGE_DATABASE_COMMANDER",
+    "source_package_ref": "B1_TO_C1_HANDOFF_POINTER_V4@932904cede5bcfb239a62952173f82147b0b0f26",
+    "source_package_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+    "decision": "PARTIALLY_ACCEPTED",
+    "accepted_record_count": 3,
+    "rejected_records": [{"source_record_id": "B-FIXTURE-004", "source_field": "unmapped_fields.note", "source_value": "preserve-me", "reason_codes": ["UNMAPPED_FIELD"], "retryable": true, "source_value_preserved": true}],
+    "authoritative_db_write_performed": false,
+    "fixture_only": true
+  },
+  "knowledge_candidate_receipt": {
+    "receipt_id": "D-KNOWLEDGE-RECEIPT-FIXTURE-001",
+    "receipt_type": "D_KNOWLEDGE_CANDIDATE_ACCEPTANCE_RECEIPT_V1",
+    "receipt_scope": "KNOWLEDGE_CANDIDATE",
+    "issuer": "D-1_DOMAIN_KNOWLEDGE_DATABASE_COMMANDER",
+    "source_receipt_ref": "D-SOURCE-RECEIPT-FIXTURE-001",
+    "knowledge_candidate_package_ref": "KNOWLEDGE_CANDIDATE_BUNDLE_V2_FIXTURE",
+    "knowledge_candidate_package_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+    "decision": "REJECTED",
+    "accepted_record_count": 0,
+    "rejected_records": [{"source_record_id": "CANDIDATE-FIXTURE-001", "source_field": "evidence_refs[0].quote_hash", "source_value": null, "reason_codes": ["EVIDENCE_REF_MISSING"], "retryable": true, "source_value_preserved": true}],
+    "authoritative_db_write_performed": false,
+    "fixture_only": true
+  },
+  "knowledge_release": {
+    "knowledge_release_id": "D-KNOWLEDGE-RELEASE-FIXTURE-001",
+    "issuer": "D-1_DOMAIN_KNOWLEDGE_DATABASE_COMMANDER",
+    "source_receipt_ref": "D-SOURCE-RECEIPT-FIXTURE-001",
+    "knowledge_receipt_ref": "D-KNOWLEDGE-RECEIPT-FIXTURE-001",
+    "knowledge_version": "fixture-0.0.1",
+    "query_contract_ref": "D_QUERY_CONTRACT_FIXTURE_V1",
+    "citation_contract_ref": "D_CITATION_CONTRACT_FIXTURE_V1",
+    "evidence_contract_ref": "D_EVIDENCE_CONTRACT_FIXTURE_V1",
+    "release_status": "REJECTED_FIXTURE",
+    "fixture_only": true
+  },
+  "c_ai_runtime_receipt": {
+    "runtime_receipt_id": "C-AI-RUNTIME-RECEIPT-FIXTURE-001",
+    "knowledge_release_ref": "D-KNOWLEDGE-RELEASE-FIXTURE-001",
+    "activated": false,
+    "activation_decision": "BLOCKED_FIXTURE_NON_AUTHORITY_OR_REJECTED_KNOWLEDGE_RECEIPT",
+    "authoritative_db_write_performed": false
+  },
+  "fixture_claimed_as_d_accepted_data": false,
+  "actual_d_acceptance_claim": false
+}

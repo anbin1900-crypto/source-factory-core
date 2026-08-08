@@ -1,0 +1,77 @@
+{
+  "schema_version": "C6_PDF_TO_CSV_VALIDATION_FINAL_REPORT_V1",
+  "batch_id": "C1-PDF-TO-CSV-PANEL-CYCLE1-20260807-001",
+  "task_id": "C6_PDF_TO_CSV_VALIDATION_V1",
+  "worker": "C-6_AI_QUALITY_E2E_VALIDATION",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "directive_comment_id": 5207639329,
+  "start_comment_id": 5208068178,
+  "common_directive": {
+    "commit": "ef02e3b59a2d389b571d5b5feaa20a8d24a21e4d",
+    "blob": "2ce798647c86363a8fd2382a08013304f73bc1ef",
+    "path": "yolla-panel-v1/c1-semantic-ai-runtime/pdf-to-csv-panel-v1/directives/C1_PDF_TO_CSV_PANEL_CYCLE1_BATCH_V1.json"
+  },
+  "observed_head_before_final_report": "1df4f15ee084656e1929eaa16336adb2a8d87fae",
+  "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/workers/c6-ai-quality-e2e-validation/pdf-to-csv-panel-v1/**",
+  "implementation": {
+    "validator": {
+      "path": "validate_pdf_to_csv_cycle1.py",
+      "commit": "9390e8aefa8d8156a8696e46ed48eae3a330342d",
+      "blob": "ec1c609f4f9972561fde455b1a08bcf7b716c00c",
+      "sha256": "ee1057d9a309ec770ea2250a6befafb83333968f3a38411c30b45776ee86236b"
+    },
+    "contract": {
+      "path": "PDF_TO_CSV_ACCEPTANCE_CONTRACT_V1.json",
+      "commit": "909573c27ff4f13bf6d93a03ba0c90b1d7d4184a",
+      "blob": "2870ef3607db122430e05b107b833febff473be4",
+      "sha256": "0d994ebc507dd4605b07a3216894a589c960645d1eaf88e1d9d12e1d9b762234"
+    },
+    "test_source": {
+      "path": "test_validate_pdf_to_csv_cycle1.py",
+      "commit": "372d4cbb97e14e05d1dd6eaa514d447b8b65a86a",
+      "blob": "4035e021f8029af0c2ce13a2ccd5c44a72f7f48e",
+      "sha256": "4f7dcfdeb77ca806f496dd404b0856b58b6fb459407e677bba1e33219102d958"
+    }
+  },
+  "validation_scope": {
+    "required_columns": ["source_file", "source_path", "chunk_no", "page_start", "page_end", "text"],
+    "utf8_sig_bom": true,
+    "chunk_sequence_contiguous_per_source": true,
+    "page_order_non_decreasing": true,
+    "nonempty_source_text_coverage": true,
+    "unknown_source_fail_closed": true,
+    "semantic_accuracy_evaluated": false
+  },
+  "test_result": {
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_24_OF_24",
+    "positive_fixture": "PASS",
+    "negative_fail_closed_cases": "PASS_18_OF_18",
+    "deterministic_hash": "PASS",
+    "remote_blob_readback": "PASS_3_OF_3"
+  },
+  "upstream_cycle1_output_state": {
+    "C2_LATEST_POINTER": "NOT_PUBLISHED_AT_FINAL_REPORT",
+    "C3_LATEST_POINTER": "NOT_PUBLISHED_AT_FINAL_REPORT",
+    "C4_LATEST_POINTER": "NOT_PUBLISHED_AT_FINAL_REPORT",
+    "C5_LATEST_POINTER": "NOT_PUBLISHED_AT_FINAL_REPORT",
+    "actual_csv_artifact_validation_executed": false,
+    "actual_csv_artifact_pass_claimed": false,
+    "reason": "C2_TO_C5_CYCLE1_OUTPUT_POINTERS_NOT_YET_PUBLISHED"
+  },
+  "decision": "VALIDATOR_READY_WAITING_CYCLE1_OUTPUTS",
+  "terminal": "C6_PDF_TO_CSV_VALIDATOR_READY_OR_EXACT_BLOCKER",
+  "first_blocker": null,
+  "semantic_validation": false,
+  "semantic_analysis": false,
+  "gpt_call": false,
+  "database_write": false,
+  "original_pdf_mutation": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "ci_status": "LOCAL_TESTS_RUN_GITHUB_CI_NOT_RUN_NOT_CLAIMED_PASS",
+  "completed_at_kst": "2026-08-07T03:09:00+09:00"
+}

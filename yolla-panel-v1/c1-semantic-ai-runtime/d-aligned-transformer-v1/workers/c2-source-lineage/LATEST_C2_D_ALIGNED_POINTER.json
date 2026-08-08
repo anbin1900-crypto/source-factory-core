@@ -1,0 +1,108 @@
+{
+  "schema_version": "2.0.0",
+  "pointer_id": "LATEST_C2_D_ALIGNED_POINTER",
+  "worker": "C-2_DOCUMENT_DECOMPOSITION",
+  "assignment_id": "C1-D-ALIGNED-TRANSFORMER-WAVE1-20260804-001",
+  "directive_id": "C1-TO-C2-D-ALIGNED-SOURCE-LINEAGE-V1-20260804-001",
+  "directive_comment": 5171210387,
+  "duplicate_prompt_key": "9b0d40bd3fe9df62dad8c6a31e4d8f6d2ac9aafa29070b97299306b532c3107f",
+  "continuation": {
+    "wave2_comment": 5174120343,
+    "recovery_comment": 5180350028,
+    "enforcement_comment": 5181054986,
+    "wave2_assignment_blob": "a904e8d6c4ee8684c70ee57203836432196ef175",
+    "reuse_existing_directive": true,
+    "new_directive": false,
+    "new_duplicate_prompt_key": false
+  },
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 20,
+  "branch": "integration/c1-semantic-knowledge-domain-ai-runtime-v1",
+  "owned_root": "yolla-panel-v1/c1-semantic-ai-runtime/d-aligned-transformer-v1/workers/c2-source-lineage/**",
+  "published_at_kst": "2026-08-05T01:35:00+09:00",
+  "execution_start_head": "79c016e35f6b18c58be0161f9b008fb9e71b74aa",
+  "control_head_before_pointer": "e7ca24f7bd6a1dd96c7d64379352656ca43658e8",
+  "previous_pointer": {
+    "schema_version": "1.0.0",
+    "blob": "8c29ac70b338fa21b41d2205bd2d846537a18314",
+    "historical_status": "FIXTURE_CONTRACT_VALIDATOR_READY_WAITING_B1_INPUT",
+    "superseded_fact": "B1_INPUT_NOT_PUBLISHED"
+  },
+  "b1_authority": {
+    "control_pr": 19,
+    "assignment_bound_head": "fb20d1df329150388889ad13ff0507b0fb3060be",
+    "branch_head_observed_at_execution": "2026443d51256f6c11295d3db9c652dc34b90bd4",
+    "input_classification": "FIXTURE_REMOTE_COMMITTED_NOT_YET_B6_ACCEPTED_HANDOFF",
+    "actual_b_fixture_input_used": true,
+    "actual_real_site_input_used": false,
+    "b6_accepted_handoff_used": false,
+    "b1_to_c1_handoff_status": "WAITING_B6_INDEPENDENT_ACCEPTANCE",
+    "source_record_envelope_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+    "normalized_dataset_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+    "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+    "extraction_receipt_blob": "a4b4f7504c0a2b552fe165176f51833b78e0fd09",
+    "receipt_hash_parity": "PASS_3_OF_3",
+    "source_record_sha_parity": "PASS_4_OF_4"
+  },
+  "artifacts": {
+    "binding_v2": {
+      "path": "C2_B1_FIXTURE_LINEAGE_BINDING_V2.json",
+      "commit": "52056c5c5a29e56ddc773a46fd952c165592627e",
+      "blob": "2689b2a7e6bd8ecb956c753ba585894a4c785b6e"
+    },
+    "test_result_v2": {
+      "path": "C2_D_ALIGNED_LINEAGE_TEST_RESULT_V2.json",
+      "commit": "8227bc8af3d8ce6916ed249f17f6ce91f16c8fd1",
+      "blob": "e6e1668e46fadf6feec7f8b960487b53b19c87d1"
+    },
+    "final_report_v2": {
+      "path": "C2_D_ALIGNED_FINAL_REPORT_V2.json",
+      "commit": "e7ca24f7bd6a1dd96c7d64379352656ca43658e8",
+      "blob": "7f723e965109382bda1ba0c5e51d92a4c5cf653a"
+    }
+  },
+  "coverage": {
+    "raw_source_record_count": 4,
+    "normalized_record_count": 3,
+    "raw_source_field_occurrence_count": 20,
+    "normalized_dataset_source_field_occurrence_count": 15,
+    "normalized_field_occurrence_count": 9,
+    "unmapped_field_occurrence_count": 6,
+    "lineage_attempt_count": 50,
+    "pending_mapping_count": 44,
+    "rejected_unmapped_count": 6,
+    "accepted_count": 0,
+    "silent_drop_count": 0,
+    "source_value_mutation_count": 0,
+    "source_field_loss_count": 0,
+    "duplicate_lineage_attempt_count": 0
+  },
+  "validation": {
+    "test_status": "PASS_34_OF_34",
+    "deterministic_replay": "PASS",
+    "binding_canonical_sha256": "e56031761817508f09be5eb41acb31dee53a43d8b3c3193f4fb4eef865402a0d",
+    "remote_blob_readback": "PASS_3_OF_3",
+    "fixture_classification_preserved": "PASS_50_OF_50",
+    "evidence_present": "PASS_50_OF_50",
+    "unmapped_rejection_coverage": "PASS_6_OF_6"
+  },
+  "handoff": {
+    "c4_consumable": true,
+    "unmapped_values_preserved": true,
+    "remaining_gate": "C3_PR188_CROSSWALK_V2_AND_C4_PACKAGE_ASSEMBLY",
+    "d_acceptance_claim": false
+  },
+  "decision": "PASS",
+  "first_blocker": null,
+  "terminal": "C2_D_ALIGNED_SOURCE_LINEAGE_READY_OR_EXACT_BLOCKER",
+  "safety": {
+    "site_analyzer_ownership": false,
+    "site_extraction_runtime_ownership": false,
+    "d_canonical_schema_mutation": false,
+    "d_canonical_db_write": false,
+    "panel_shell_direct_edit": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
