@@ -1,0 +1,49 @@
+{
+  "schema_version": "LATEST_A0_V51023_LOG_STATUS_WINDOW_POINTER_V1",
+  "status": "V5102_BASELINE_LOG_STATUS_WINDOW_RESTORE_BUILD_PASS_TARGET_PC_PENDING",
+  "version": "5.10.2.3",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "baseline_version": "5.10.2",
+  "prior_release": "5.10.2.2",
+  "features": {
+    "auto_open_log_status_window": true,
+    "panel_reopen_button": true,
+    "live_runtime_log_tail": true,
+    "worker_count_summary": true,
+    "schedule_state": true,
+    "commander_worker_loop_state": true,
+    "floating_or_tiled_layout": true,
+    "second_instance_restore": true,
+    "E_A_automation_preserved": true
+  },
+  "installer": {
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V51023_LOG_STATUS_WINDOW_RESTORE.bat",
+    "drive_file_id": "1cXDKTHntjsv66FPcyWiuU_Mm72avkRx-",
+    "size_bytes": 201331,
+    "sha256": "e0810b69b742d77cc8652d5bbde33b0f18db065e655efe34df6faae26e9c88e3"
+  },
+  "validation": {
+    "self_extract_readback": "PASS",
+    "node_syntax": "PASS_12_OF_12",
+    "regression_suites": "PASS_17_OF_17",
+    "log_status_window": "PASS_16_ASSERTIONS",
+    "duplicate_execution_count": 0
+  },
+  "report": {
+    "path": "yolla-panel-v1/a0-successor-control/reports/A0_V51023_LOG_STATUS_WINDOW_RESTORE_BUILD_REPORT_V1.json",
+    "commit": "f9ed7e55872281f10a79de89ce7c857217de9cdd"
+  },
+  "target_pc_observation": {
+    "installed": false,
+    "log_status_window_visible": false,
+    "actual_automation_loop_observed": false
+  },
+  "new_runtime": false,
+  "new_transport": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-05T00:37:00+09:00"
+}

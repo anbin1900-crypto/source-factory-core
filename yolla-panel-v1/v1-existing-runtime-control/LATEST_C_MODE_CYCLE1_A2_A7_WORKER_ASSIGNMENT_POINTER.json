@@ -1,0 +1,37 @@
+{
+  "schema_version": "LATEST_C_MODE_CYCLE1_A2_A7_WORKER_ASSIGNMENT_POINTER_V1",
+  "directive_id": "A0-TO-A2-A7-C-MODE-CYCLE1-RUNTIME-AUTHORITY-PERFORMANCE-BASELINE-V1-20260806-001",
+  "issued_at_kst": "2026-08-06T23:25:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "authority_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "assignment_document": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/cycles/cycle1/C_MODE_CYCLE1_A2_A7_WORKER_ASSIGNMENT_V1.json",
+    "commit": "3a66f45dcbd81818013247b1e50efb55df27ec69",
+    "blob": "bb5d64ee5c0b672d972cc981f04bc3acfb9d6491",
+    "remote_readback": "PASS"
+  },
+  "handoff_pointer": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/LATEST_C_MODE_COMPLETION_HANDOFF_POINTER.json",
+    "commit": "cd4a1f52df9982b2a37444dbd650ccbadcd0f2e7",
+    "blob": "adb4aca62ca419432689a387e75f15777730d1a8"
+  },
+  "commander": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+  "workers": {
+    "A-2": {"pr": 18, "task_id": "C1-A2-EXACT-RUNTIME-AUTHORITY-RESOLUTION"},
+    "A-3": {"pr": 22, "task_id": "C1-A3-TARGET-PC-RUNTIME-READBACK-HARNESS"},
+    "A-4": {"pr": 23, "task_id": "C1-A4-IDLE-RESOURCE-BASELINE-HARNESS"},
+    "A-5": {"pr": 24, "task_id": "C1-A5-BROWSER-LIFECYCLE-POLLING-STATIC-AUDIT"},
+    "A-6": {"pr": 25, "task_id": "C1-A6-WEBCONTENTS-LEAK-REPEAT-HARNESS"},
+    "A-7": {"pr": 26, "task_id": "C1-A7-INDEPENDENT-BASELINE-ACCEPTANCE"}
+  },
+  "cycle": 1,
+  "primary_goal": "C_MODE_COMPLETION",
+  "next_gate": "ALL_SIX_WORKER_DIRECTIVE_COMMENTS_PUBLISHED_THEN_START_REPORTS",
+  "site_analyzer_work": false,
+  "d_group_new_assignment": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "POINTER_PUBLISHED_PENDING_WORKER_COMMENT_DISPATCH"
+}

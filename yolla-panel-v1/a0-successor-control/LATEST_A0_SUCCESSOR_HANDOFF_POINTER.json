@@ -1,0 +1,116 @@
+{
+  "schema_version": "LATEST_A0_SUCCESSOR_HANDOFF_POINTER_V2",
+  "status": "A0_V59_CONTRACT_RESOLUTION_AND_SOURCE_BUILD_READY_TARGET_PC_PENDING",
+  "terminal": "A0_AUTOMATION_CONTRACT_CONFLICTS_RESOLVED_V59_ALIGNED_SOURCE_PASS",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "upper_control_pr": 14,
+  "successor_control_pr": 17,
+  "upper_branch": "integration/a1-yolla-panel-connection-frontier-v1",
+  "successor_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "successor_base_commit": "124367a50a72505516666b4f427bfeda325ba3d3",
+  "primary_pointers": [
+    {
+      "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_CONTRACT_POINTER.json",
+      "commit": "59f98477a0e8055df8eb4830aadfb142048063eb"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_RUNTIME_POINTER_V1.json",
+      "commit": "1b3ba76632ca13d427d04484062e607a9600b850"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_UI_POINTER.json",
+      "current_version": "5.9.0"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/LATEST_A0_SUCCESSOR_REPORT_POINTER.json",
+      "commit": "c2d34abf1305a4097756f17bab01e294ac146529"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/LATEST_FUTURE_COMMAND_PLAN_POINTER.json",
+      "commit": "71dde085593d3e55c99de4ba248474d29d3d5a20"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/LATEST_GROUP_ROLE_ASSIGNMENT_POINTER.json",
+      "commit": "f9caebb7a95a8976d9c83ed6d7eb0baf1263305d"
+    }
+  ],
+  "current_authority_documents": [
+    {
+      "path": "yolla-panel-v1/a0-successor-control/A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_V1.json",
+      "commit": "a03e0cb83ecf612599d3814a37ecb73ba831018a"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/WORKER_JOB_SCHEDULE_CONTRACT_V1.json",
+      "commit": "ac435baa55d85c1b65737ce51a8d8e07c5320476"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/automation-v1/WORKER_JOB_SCHEDULE_V1.schema.json",
+      "blob_sha": "860f350f056595c46c22a8cad851ddc9fb71a4fd"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V2.json",
+      "commit": "4ee6c4373ab46eb5ecd08115cec06662429d23fb"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/reports/A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_FINAL_REPORT_V1.json",
+      "commit": "628bbcf916b80b5a798f322a4c53e06a0105d7a7"
+    },
+    {
+      "path": "yolla-panel-v1/a0-successor-control/reports/A0_AUTOMATION_RUNTIME_V59_BUILD_TEST_REPORT_V1.json",
+      "commit": "dc290012d12435bdba94545f2fd8d97ea9cd12ea"
+    }
+  ],
+  "historical_documents_retained": [
+    "A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V1.json",
+    "A0_PROGRESS_REPORT_V2.json",
+    "V5.2 installation acceptance package"
+  ],
+  "read_order": [
+    "LATEST_A0_SUCCESSOR_HANDOFF_POINTER.json",
+    "LATEST_A0_AUTOMATION_CONTRACT_POINTER.json",
+    "A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_V1.json",
+    "WORKER_JOB_SCHEDULE_CONTRACT_V1.json",
+    "automation-v1/WORKER_JOB_SCHEDULE_V1.schema.json",
+    "LATEST_A0_AUTOMATION_RUNTIME_POINTER_V1.json",
+    "LATEST_A0_UI_POINTER.json",
+    "A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V2.json",
+    "LATEST_A0_SUCCESSOR_REPORT_POINTER.json",
+    "latest referenced report",
+    "LATEST_FUTURE_COMMAND_PLAN_POINTER.json",
+    "LATEST_GROUP_ROLE_ASSIGNMENT_POINTER.json",
+    "A0_SUCCESSOR_ROLE_CHARTER_V1.md",
+    "A0_REPORTING_AND_HANDOFF_CONTRACT_V1.json"
+  ],
+  "current_runtime": {
+    "ui_version": "5.9.0",
+    "runtime_provider_version": "5.7.0",
+    "schedule_runner_version": "1.0.0-panel-bound-build-pass",
+    "current_schedule_id": "REAL-ESTATE-CYCLE-001",
+    "source_build": "PASS",
+    "target_pc_execution": "NOT_OBSERVED"
+  },
+  "resolved_contract_rules": [
+    "seat code is transport identity; display and project roles are bindings",
+    "up to 100 planned jobs; at most one derived active directive per seat",
+    "GitHub owns plans and terminal results; local runtime owns rebuildable cursor",
+    "worker command and data factory idempotency namespaces are separate",
+    "exclusive PC runtime concurrency is 1; GPT worker concurrency is 5; browser analysis concurrency is 2",
+    "job attempt logs and cycle official reports are separate",
+    "A-1 owns upper planning; project commander authors jobs; A-0 executes"
+  ],
+  "not_yet_confirmed": [
+    "V59_TARGET_PC_INSTALLATION",
+    "B2_B3_CONTEXT_BINDING",
+    "ACTUAL_SIX_JOB_DISPATCH",
+    "ACTUAL_GITHUB_RESULT_INGESTION",
+    "RESTART_RESUME_ON_TARGET_PC",
+    "A0_WORKER_SCHEDULE_AUTOMATION_LOOP_V1_PASS"
+  ],
+  "current_phase": "V59_TARGET_PC_ACCEPTANCE",
+  "next_task": "INSTALL_V59_ON_TARGET_PC_BIND_B2_B3_CONTEXTS_RUN_THREE_JOBS_EACH_AND_OBSERVE_GITHUB_RESULTS",
+  "required_next_report": "A0_V59_TARGET_PC_ACTUAL_LOOP_TEST_REPORT_V1.json",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-04T04:02:00+09:00"
+}

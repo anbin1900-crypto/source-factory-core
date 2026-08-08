@@ -1,0 +1,122 @@
+# V-1 C 모드 6-워커 실험·검증·보완 Control V2
+
+```text
+CONTROL_ID=V1-C-MODE-6W-VALIDATION-CYCLE-002
+OWNER=V-1
+REPOSITORY=anbin1900-crypto/source-factory-core
+CONTROL_PR=#17
+RUNTIME_BASELINE=5.10.2.4.1
+WORKER_COUNT=6
+DISPATCH_MODE=CYCLE_BATCH_PARALLEL
+SUPERSEDES=V1-C-MODE-VALIDATION-CYCLE-001
+STATUS=ACTIVE_READY_FOR_6_WORKER_ASSIGNMENT
+PRODUCTION=false
+READY=false
+MERGE=false
+```
+
+## 1. 목적
+
+현재 C 모드와 명령어 입력모드를 실제 사용 가능한 안정판으로 종결한다.
+
+```text
+실험
+→ 결함 재현
+→ 담당 워커 직접 교정
+→ 동일 시험 재실행
+→ 6개 Terminal 통합
+→ 대상 PC 6워커·3 WAVE
+→ 재시작 복구
+→ V-1 LTS 판정
+```
+
+이전 3-워커 구성은 잘못된 워커 수를 전제로 한 준비안이므로 본 Control이 승계한다.
+
+## 2. 기준선
+
+업로드된 운영 로그 기준:
+
+```text
+C_MODE_ENABLED=false
+C_MODE_STATUS=IDLE
+REPEAT_COMMAND_COUNT=0
+WORKING=0
+RESTING=5
+LEGACY_A_E_MODES_REMOVED=true
+```
+
+따라서 C와 명령 실행이 비활성인데 작업 중 수가 1 이상이면 즉시 실패다.
+
+## 3. 실행원칙
+
+```text
+ONE_OWNER_END_TO_END=true
+WORKER_COUNT=6
+SEQUENTIAL_MANUAL_DISPATCH=false
+MID_PROCESS_AUDIT=NONE
+RETRY_UNTIL_PASS_OR_PROVEN_EXTERNAL_BLOCKER=true
+SAME_FAILURE_SIGNATURE_REPEAT_LIMIT=2
+```
+
+W1~W5는 자신의 소유범위 결함을 직접 수정하고 재시험한다. W6 검토는 비차단이며 구현 Source를 직접 수정하지 않는다.
+
+## 4. Wave
+
+### Wave 0 — Readback·START
+
+6개 워커가 Control·Matrix·Test Matrix를 읽고 자신의 PR에 START를 게시한다.
+
+### Wave 1 — 독립 실험·교정
+
+W1~W5는 서로 다른 영역을 병렬 시험·교정한다. W6은 실패 주입 Fixture와 독립 수용 Harness를 준비한다.
+
+### Wave 2 — 통합회귀
+
+정확한 후보 Head들을 V-1이 통합하여 다음을 재실행한다.
+
+```text
+IDLE_WORKING_COUNT=0
+BATCH_DISPATCH_6_OF_6
+DUPLICATE_DISPATCH_COUNT=0
+STALE_RESULT_ACCEPT_COUNT=0
+WRONG_CORRELATION_ACCEPT_COUNT=0
+TWENTY_MINUTE_PARTIAL_RULE=PASS
+NINETY_MINUTE_RESCUE_COUNT=2
+FOUR_REPORT_DEMAND_REPLACEMENT=PASS
+END_REPEAT_STOP=PASS
+WORK_CONTROL_LOG_LOSS_COUNT=0
+```
+
+### Wave 3 — 대상 PC 실제 수용
+
+```text
+C_WORKER_COUNT=6
+ROUND_COUNT=3
+EXPECTED_COMPLETED_ROUNDS=3
+RESTART_RESUME=PASS
+LOGIN_PROFILE_PRESERVED=PASS
+ROLLBACK=PASS
+AUTO_TEST_WRITE_COUNT=0
+```
+
+대상 PC 증거가 없으면 LTS PASS를 주장하지 않는다.
+
+## 5. 최종 수용조건
+
+```text
+WORKER_TERMINALS=6_OF_6
+FALSE_WORKING_WHEN_IDLE=0
+DUPLICATE_DISPATCH_COUNT=0
+PREVIOUS_COMMAND_CANCEL_COUNT=0
+LOST_WORK_CONTROL_EVENT_COUNT=0
+C_COMPLETED_ROUNDS=3
+RESTART_RESUME=PASS
+LOGIN_PROFILE_PRESERVED=PASS
+AUTO_TEST_WRITE_COUNT=0
+```
+
+최종 Terminal:
+
+```text
+V1_EXISTING_YOLLA_RUNTIME_C_RELAY_LTS_PASS
+```

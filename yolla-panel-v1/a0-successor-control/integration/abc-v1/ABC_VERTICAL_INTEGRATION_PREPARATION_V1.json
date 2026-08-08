@@ -1,0 +1,133 @@
+{
+  "schema_version": "ABC_VERTICAL_INTEGRATION_PREPARATION_V3",
+  "preparation_id": "V2-ABC-VERTICAL-INTEGRATION-PREPARATION-20260805-001",
+  "prepared_at_kst": "2026-08-05T23:11:00+09:00",
+  "commander": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "mode": "CONTRACT_POINTER_GATE_BINDING_WITH_AUTHORIZED_A3_EXECUTION",
+  "purpose": "Run one controlled public non-login read-only vertical integration while keeping production, ready, merge, bulk collection, and D canonical write gates closed.",
+  "authorization_transition": {
+    "request_id": "A2-TO-A0-A1-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-CAPTURE-AUTHORIZATION-REQUEST-V1-20260805-001",
+    "request_comment": 5192321213,
+    "decision_comment": 5192765975,
+    "decision": "APPROVED",
+    "authorized_by": "V-2",
+    "authorization_id": "V2-AUTH-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-20260805-001",
+    "decision_report_commit": "9629c8fa64404013a9e9b77d5083608d8728e8ba",
+    "decision_report_blob": "dde73406d83be9ceffab209ddbc86ce5acbc3534",
+    "authorization_pointer_blob": "4c0cf0f3b60c02da24883b9fcb60ead631e98074",
+    "latest_authorization_pointer_blob": "fdaf17c1a0a5e401d234ce32b8e3fe5fa349e6c3",
+    "a3_execution_event_comment": 5192799338
+  },
+  "authority_freeze": {
+    "A": {
+      "control_pr": 18,
+      "head": "eab3101f83c2f88acc5be8207d704ead9eb58721",
+      "latest_pointer_blob": "88598259e4ee68976774665d74c92185bbf01020",
+      "integration_report_blob": "11ccfafa560c78e28a49d31ef8d8af10244cff74",
+      "state": "AUTHORIZATION_APPROVED_A3_ONE_SHOT_EXECUTION_ACTIVE",
+      "output_contract": "VERIFIED_ADAPTER_PACKAGE_V1",
+      "output_ready": false
+    },
+    "B": {
+      "control_pr": 19,
+      "head": "41217df04fcbcc56ef8e35e3b811fee2b5c74b8c",
+      "latest_pointer_blob": "67dcfbda0675c7cbd3d4994e2417e2327055b466",
+      "state": "FIXTURE_BASELINE_FROZEN_WAITING_A_FINAL_VERIFIED_ADAPTER",
+      "fixture_worker_gate": "PASS_5_OF_5",
+      "actual_public_run_ready": false
+    },
+    "C": {
+      "control_pr": 20,
+      "head": "67fb5888ef408998ca70f06621b716ed87ad09a8",
+      "latest_pointer_blob": "fb520b13001f684cb15dd14ae5d6589b33f0c766",
+      "state": "FIXTURE_SEMANTIC_BASELINE_FROZEN_WAITING_CONTENT_DELTA_AND_REQUIRED_PATH_RESOLUTION",
+      "fixture_worker_gate": "PASS_4_OF_4",
+      "d_submission_eligible": false
+    }
+  },
+  "target": {
+    "site_id": "NAVER_FIN_LAND_PUBLIC_WEB_V1",
+    "origin": "https://fin.land.naver.com",
+    "active_profiles": [
+      "EP-001",
+      "EP-002",
+      "EP-003",
+      "EP-004",
+      "EP-005",
+      "EP-010",
+      "EP-012"
+    ],
+    "excluded_profiles": [
+      "EP-011"
+    ],
+    "scope": "PUBLIC_NON_LOGIN_READ_ONLY_MINIMUM_VERTICAL_E2E"
+  },
+  "lane_state": {
+    "A_TO_B": {
+      "contract": "VERIFIED_ADAPTER_PACKAGE_V1",
+      "status": "BLOCKED_WAITING_A3_CAPTURE_AND_A_FINAL_ADAPTER",
+      "reason": "A-3 is authorized for one exact batch; A-5, A-4, A-6, and A-7 final steps remain."
+    },
+    "B_TO_C": {
+      "contract": "B1_TO_C1_SOURCE_EVIDENCE_HANDOFF_CANDIDATE_V1",
+      "status": "PASS_FIXTURE_ONLY",
+      "classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE",
+      "actual_site_data": false
+    },
+    "C_TO_D": {
+      "contracts": [
+        "D_ALIGNED_TRANSFORMATION_PACKAGE_V1",
+        "KNOWLEDGE_CANDIDATE_BUNDLE_V1"
+      ],
+      "status": "BLOCKED_FAIL_CLOSED",
+      "reason": "PR188_REQUIRED_SOURCE_PATHS_MISSING_22"
+    }
+  },
+  "integration_entry_gate": {
+    "status": "PHASE1_OPEN_A3_ONE_SHOT_EXECUTION_ACTIVE",
+    "phase2_opens_only_when": [
+      "A3_SECOND_PUBLIC_DOCUMENT_CAPTURE_TERMINAL_PUBLISHED",
+      "A5_FINAL_RESPONSE_SCHEMA_REBIND_PASS",
+      "A4_PUBLIC_ROUTE_PAGINATION_AUDIT_PASS",
+      "A6_VERIFIED_ADAPTER_PACKAGE_REMOTE_READBACK_PASS",
+      "A7_FINAL_ADAPTER_ACCEPTANCE_PASS"
+    ]
+  },
+  "integration_strategy": {
+    "branch_merge_required_now": false,
+    "binding_method": "EXACT_HEAD_POINTER_BLOB_AND_HANDOFF_CONTRACT",
+    "execution_owner_sequence": [
+      "A-3",
+      "A-2",
+      "B-1",
+      "C-1",
+      "D-1",
+      "C-1",
+      "A-0"
+    ],
+    "single_owner_per_active_gate": true,
+    "duplicate_reexecution_without_content_delta": false,
+    "fail_closed_on_head_or_blob_drift": true
+  },
+  "readiness": {
+    "contract_readiness": "PASS",
+    "pointer_readiness": "PASS",
+    "fixture_baseline_readiness": "PASS",
+    "actual_public_vertical_execution_readiness": "A3_ONE_SHOT_AUTHORIZED_FINAL_ADAPTER_PENDING",
+    "overall": "ABC_INTEGRATION_A3_EXECUTION_GATE_ACTIVE"
+  },
+  "next_action": "A3_EXECUTE_EXACT_ONE_SHOT_AND_PUBLISH_TERMINAL; B1_AND_C1_HOLD_FROZEN_BASELINES",
+  "request_execution_authorized": true,
+  "capture_execution_authorized": true,
+  "capture_execution_terminal_published": false,
+  "actual_site_extraction": false,
+  "actual_bulk_collection": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

@@ -1,0 +1,112 @@
+{
+  "schema_version": "LATEST_V1_C_MODE_POINTER_RELAY_WAVE7_POINTER_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-007",
+  "registry_sequence": 7,
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "review_and_directive": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave7/C_MODE_WAVE6_REVIEW_AND_WAVE7_DIRECTIVE_V1.md",
+    "commit": "afb968d50cd66f7f0fdfa6bcd914a9af610658c0"
+  },
+  "wave6_review": {
+    "duplicate_registry_finding": true,
+    "superseded_registry_comment": 5193445434,
+    "latest_wave6_registry_comment": 5193471047,
+    "latest_registry_valid_reports": 0,
+    "substantive_reusable_results": 3,
+    "missing_workers": [
+      "AUTOMATION-C-W2",
+      "AUTOMATION-C-W3",
+      "AUTOMATION-C-W4"
+    ],
+    "reusable_evidence": {
+      "AUTOMATION-C-W1": {
+        "result_comment": 5193518682,
+        "result_key": "519342314700",
+        "result_commit": "b597692983120f1d5bbd8c2d1820150efa21b705",
+        "technical_status": "PASS_16_OF_16",
+        "correlation": "HISTORICAL_SUPERSEDED_REGISTRY"
+      },
+      "AUTOMATION-C-W5": {
+        "result_comment": 5193510906,
+        "result_key": "519343566200",
+        "result_commit": "e04cba11e0e008ee04abbeaabc1728477f7e387f",
+        "technical_status": "EXACT_DEPENDENCY_BLOCKER",
+        "correlation": "HISTORICAL_SUPERSEDED_REGISTRY"
+      },
+      "AUTOMATION-C-W6": {
+        "result_comment": 5193508667,
+        "result_key": "519344076100",
+        "result_commit": "cc55a245305cf7d19bab33267fc2156c5fc30fd2",
+        "technical_status": "OFFLINE_PASS_TARGET_PC_BLOCKED",
+        "correlation": "HISTORICAL_SUPERSEDED_REGISTRY"
+      }
+    }
+  },
+  "wave7_registry": {
+    "comment_id": 5193659817,
+    "previous_registry_comment": 5193471047,
+    "supersedes": [
+      5193445434,
+      5193471047
+    ],
+    "same_wave_multiple_ready": "FAIL_CLOSED",
+    "highest_valid_registry_sequence_wins": true,
+    "all_rows_valid_before_any_dispatch": true
+  },
+  "worker_bindings": {
+    "AUTOMATION-C-W1": {
+      "pr": 59,
+      "directive_comment": 5193625388,
+      "result_key": "519362538800",
+      "command_id": "C6W-W7-W1-REGISTRY-AUTHORITY-EXPORT"
+    },
+    "AUTOMATION-C-W2": {
+      "pr": 60,
+      "directive_comment": 5193628869,
+      "result_key": "519362886900",
+      "command_id": "C6W-W7-W2-RESULT-WATCHER-COLLECTOR"
+    },
+    "AUTOMATION-C-W3": {
+      "pr": 61,
+      "directive_comment": 5193631027,
+      "result_key": "519363102700",
+      "command_id": "C6W-W7-W3-UI-AUTHORITY-TRUTH"
+    },
+    "AUTOMATION-C-W4": {
+      "pr": 62,
+      "directive_comment": 5193633568,
+      "result_key": "519363356800",
+      "command_id": "C6W-W7-W4-C-REPEAT-NONINTERFERENCE"
+    },
+    "AUTOMATION-C-W5": {
+      "pr": 63,
+      "directive_comment": 5193635975,
+      "result_key": "519363597500",
+      "command_id": "C6W-W7-W5-CANDIDATE-ASSEMBLER",
+      "integration_owner": true
+    },
+    "AUTOMATION-C-W6": {
+      "pr": 64,
+      "directive_comment": 5193638419,
+      "result_key": "519363841900",
+      "command_id": "C6W-W7-W6-DUPLICATE-REGISTRY-AUDIT",
+      "implementation_direct_edit": false
+    }
+  },
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "target_candidate_version": "5.10.2.4.2-rc3",
+  "current_progress_percent": 90,
+  "status": "WAVE7_SINGLE_AUTHORITY_DISPATCHED_6_OF_6",
+  "next_gate": "SIX_VALID_RESULT_KEYS_RESULT_COMMENT_COLLECTION_RUNTIME_CONVERGENCE_AND_INDEPENDENT_AUDIT",
+  "target_pc_pass": "PENDING",
+  "lts_terminal_claimed": false,
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at_kst": "2026-08-06T00:20:00+09:00"
+}

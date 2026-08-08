@@ -1,0 +1,164 @@
+{
+  "schema_version": "V2_ABC_GITHUB_INCONSISTENCY_RECONCILIATION_V1",
+  "report_id": "V2-ABC-GITHUB-INCONSISTENCY-RECONCILIATION-20260805-001",
+  "reconciled_at_kst": "2026-08-05T17:12:00+09:00",
+  "commander": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "scope": [
+    "A2_ANALYZER_ADAPTER_FACTORY",
+    "B1_COLLECTION_DB_MATERIALIZATION",
+    "C1_SEMANTIC_AI_RUNTIME"
+  ],
+  "summary": {
+    "inconsistency_count_found": 12,
+    "inconsistency_count_resolved": 12,
+    "remaining_internal_pointer_inconsistency_count": 0,
+    "remaining_external_blocker_count": 2,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "A_GROUP": {
+    "control_pr": 18,
+    "head": "ffccd8e9fc2866388c46f3ec916fec321cc02fbb",
+    "latest_pointer_blob": "7210c50b07a34044402caec3e49ddae4f44b79b5",
+    "current_terminal": "A2_CAPTURE_INPUT_AUTHORITY_EXACT_BLOCKER",
+    "current_status": "WAITING_AUTHORITATIVE_CONCRETE_SOURCE_TARGET_INPUT",
+    "resolved_inconsistencies": [
+      "A2_ACTIVE_OWNER_STATE_STALE_AFTER_A5_TERMINAL",
+      "AUTHORIZED_BATCH_USED_AND_NETWORK_CAPTURE_ATTEMPT_MEANING_AMBIGUOUS",
+      "EP011_INCLUDED_WITHOUT_VALID_CREDENTIAL_REFERENCE",
+      "A5_TERMINAL_NOT_REFLECTED_IN_A2_POINTER"
+    ],
+    "resolution_authority": {
+      "reconciliation_report_commit": "484b56c8e788b8b5c1587f8ba43a513fb50dd48e",
+      "reconciliation_report_blob": "da353c40c0493a4655e7bc4fc79c9f49e9671bc2",
+      "latest_a2_pointer_commit": "25aaf4b568fbd6b97e7116c9160d5a0046298d34",
+      "latest_a2_pointer_promoted_by_a2_to_blob": "7210c50b07a34044402caec3e49ddae4f44b79b5",
+      "upper_authority_request_comment": 5189150690
+    },
+    "authorization_accounting": {
+      "operator_package_execution_count_used": 1,
+      "network_capture_attempt_count": 0,
+      "successful_capture_count": 0,
+      "second_attempt_authorized": false
+    },
+    "remaining_external_blocker": {
+      "id": "A_CONCRETE_SOURCE_TARGET_AUTHORITY_MISSING",
+      "required_output": "CONCRETE_SOURCE_TARGET_AUTHORITY_V1.json",
+      "affected_profiles": [
+        "EP-001",
+        "EP-002",
+        "EP-003",
+        "EP-004",
+        "EP-005",
+        "EP-010",
+        "EP-012"
+      ],
+      "required_fields": [
+        "ROUTABLE_SCHEME_HOST_PATH_TEMPLATE",
+        "EXACT_NONSECRET_REQUEST_VALUES_OR_IMMUTABLE_VALUE_SOURCE_POINTER",
+        "SOURCE_COMMIT_BLOB_OR_OBSERVATION_POINTER"
+      ]
+    },
+    "capture_execution_authorized": false,
+    "verified_adapter_package_ready": false,
+    "b1_actual_extraction_handoff_ready": false
+  },
+  "B_GROUP": {
+    "control_pr": 19,
+    "head": "b452cff27ff9088eb3754a8cc35c05af340339ec",
+    "latest_pointer_blob": "10e715ddef42b7843c0b49a9b35e2475fee6c42f",
+    "extraction_result_pointer_blob": "cbfcb28741ff3a8d1e4ff0f4006c7fc996d73c0f",
+    "c1_handoff_pointer_blob": "932904cede5bcfb239a62952173f82147b0b0f26",
+    "current_terminal": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_OR_EXACT_BLOCKER",
+    "terminal_result": "B1_EXTRACTOR_NORMALIZED_DATASET_READY_FIXTURE_ONLY",
+    "resolved_inconsistencies": [
+      "B1_LATEST_POINTER_STALE_B3_B4_B5_PENDING",
+      "B1_EXTRACTION_RESULT_POINTER_TERMINALS_0_OF_5_STALE",
+      "B1_REQUIRED_OUTPUT_POINTERS_NULL_AFTER_WORKER_PUBLICATION",
+      "B1_TO_C1_HANDOFF_POINTER_INPUTS_NULL",
+      "B6_EVENT_WAIT_2_OF_4_AFTER_B4_B5_TERMINALS",
+      "B1_HANDOFF_NOT_PROMOTED_AFTER_B6_ACCEPTANCE"
+    ],
+    "worker_gate": "PASS_5_OF_5",
+    "b6_authority": {
+      "head": "797930d24fc00edef4276b355b7ea7ff71109972",
+      "pointer_blob": "448fbfb07321f3cabae4a25649feee90e46ba106",
+      "final_report_blob": "d81716e1626b96ca120b8b08892d85210da337f3",
+      "acceptance_matrix_blob": "eff2d5143c93510683dda8695cd3b715efab9a41",
+      "handoff_candidate_blob": "01c4c2175b30314538494ed5694668005769635a",
+      "terminal_result": "B6_EXTRACTION_ACCEPTANCE_C1_HANDOFF_READY"
+    },
+    "accepted_outputs": {
+      "raw_artifact_manifest_blob": "bca1029b2587b4c78f6fdd78df6c9b95031addb1",
+      "source_record_envelope_blob": "0148a841344ce5a0df03e55df532871106dd7333",
+      "normalized_dataset_blob": "1429d3081c7323d058b6effd3129c83cfc3120b9",
+      "extraction_receipt_blob": "a4b4f7504c0a2b552fe165176f51833b78e0fd09",
+      "sqlite_base64_blob": "951a53ddb336e8a1cfd56b3dac94088d78bb57da",
+      "input_record_count": 4,
+      "duplicate_count": 1,
+      "output_record_count": 3,
+      "source_field_loss_count": 0,
+      "sqlite_row_count": 3,
+      "network_call_count": 0
+    },
+    "handoff_classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE",
+    "c1_handoff_published": true,
+    "actual_site_extraction": false
+  },
+  "C_GROUP": {
+    "control_pr": 20,
+    "head": "c7483089c1d398d5af3f1118a3357bed6a8e629f",
+    "latest_pointer_blob": "f567fecfb8f1db428f79b4d30d47042d1d13efe8",
+    "transformation_result_pointer_blob": "2e5fca1afc7a6ee6148f76bd4b385866f8d3b3fa",
+    "d1_handoff_pointer_blob": "0265e2bd145c374277321b6d98bfda1a5d04bf02",
+    "current_terminal": "C1_D_ALIGNED_TRANSFORMER_READY_OR_EXACT_BLOCKER",
+    "terminal_decision": "EXACT_EXTERNAL_BLOCKER",
+    "resolved_inconsistencies": [
+      "C1_WAITING_C2_C3_TERMINALS_AFTER_C6_FINAL_E2E",
+      "C1_B1_INPUT_CONSUMED_WITHOUT_B6_ACCEPTED_HANDOFF_AUTHORITY",
+      "C1_TO_D1_POINTER_STALE_B1_HANDOFF_NOT_PUBLISHED_BLOCKER",
+      "B1_AUTHORITY_PROMOTION_COULD_TRIGGER_REDUNDANT_C2_TO_C6_REEXECUTION"
+    ],
+    "b1_handoff_ack": {
+      "blob": "b24f72ad6480280ac9a17480b0adb001452f8016",
+      "content_blob_delta": false,
+      "authority_classification_delta": true,
+      "c2_to_c6_reexecution_required": false
+    },
+    "worker_gate": "PASS_4_OF_4",
+    "final_e2e_executed": true,
+    "package_decision": "REJECTED",
+    "actual_d_handoff_performed": false,
+    "remaining_external_blocker": {
+      "id": "PR188_REQUIRED_SOURCE_PATHS_MISSING_22",
+      "rule_id": "B001",
+      "first_source_path": "package.source_id",
+      "target": "SOURCE.source_id",
+      "resolved_path_count": 0,
+      "unresolved_path_count": 22,
+      "resolution_owner": "B-1_OR_D-1_AUTHORITY_CONTENT_DELTA"
+    }
+  },
+  "cross_group_consistency": {
+    "A_TO_B_ACTUAL_EXTRACTION": "BLOCKED_BY_A_CONCRETE_SOURCE_TARGET_AUTHORITY",
+    "B_TO_C_FIXTURE_HANDOFF": "PASS_ACCEPTED_AND_PUBLISHED",
+    "C_TO_D_HANDOFF": "BLOCKED_FAIL_CLOSED_REQUIRED_SOURCE_PATHS_22",
+    "duplicate_reexecution_required": false,
+    "actual_site_data_claim": false,
+    "actual_bulk_collection": false,
+    "d_canonical_db_write": false
+  },
+  "next_actions": [
+    "A0_OR_A1_PUBLISH_CONCRETE_SOURCE_TARGET_AUTHORITY_V1_FOR_7_ACTIVE_PROFILES_OR_EXACT_EXTERNAL_BLOCKER",
+    "B1_OR_D1_PUBLISH_AUTHORITY_CONTENT_DELTA_RESOLVING_PR188_REQUIRED_SOURCE_PATHS_22",
+    "C1_RUN_INCREMENTAL_C3_C4_C5_C6_REVALIDATION_ONLY_AFTER_CONTENT_DELTA"
+  ],
+  "final_decision": "ABC_INTERNAL_POINTER_AND_HANDOFF_INCONSISTENCIES_RESOLVED_EXTERNAL_INPUT_BLOCKERS_REMAIN",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

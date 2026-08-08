@@ -1,0 +1,152 @@
+{
+  "schema_version": "C_MODE_WAVE13_REVIEW_AND_WAVE14_DIRECTIVE_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "previous_wave": "V1-C-MODE-6W-WAVE-013",
+  "wave_id": "V1-C-MODE-6W-WAVE-014",
+  "registry_sequence": 14,
+  "owner": "V-1",
+  "mode": "AUTHORITATIVE_ROOT_EXACT_SOURCE_OVERLAY_CANDIDATE",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc6",
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "wave13_review": {
+    "reported": 5,
+    "missing": 1,
+    "duplicate_result": 0,
+    "results": {
+      "AUTOMATION-C-W1": {
+        "result_comment": 5196402486,
+        "result_commit": "c40901d086faca60ad16cac3e95cabcdbe2babb5",
+        "reported_outcome": "PASS",
+        "commander_acceptance": "REJECTED_AUTHORITY_PATH_AND_VERSION_MISMATCH"
+      },
+      "AUTOMATION-C-W2": {
+        "result_comment": 5196298739,
+        "result_commit": "549b61ba219be9ad616f23087c7676586f969ddb",
+        "commander_acceptance": "PASS_NEGATIVE_GATE_SCOPE"
+      },
+      "AUTOMATION-C-W3": {
+        "result_comment": 5196320722,
+        "result_commit": "aac4180efae651930f98d842e73bb047ecd5726e",
+        "reported_outcome": "BLOCKED",
+        "commander_acceptance": "REUSABLE_UI_EXPORT_BUT_AUTHORITY_ALIGNMENT_INCOMPLETE"
+      },
+      "AUTOMATION-C-W4": {
+        "result_comment": 5196270579,
+        "result_commit": "7c70c49cdde1c7295ce4a4cf9bd6463c99d7591e",
+        "reported_outcome": "BLOCKED",
+        "commander_acceptance": "REUSABLE_VALIDATOR_PREPARATION_POSITIVE_RERUN_REQUIRED"
+      },
+      "AUTOMATION-C-W5": {
+        "result_comment": 5196292106,
+        "result_commit": "e9d690ea71092924aec58ed32eeb47c1fa6f7d1c",
+        "reported_outcome": "PASS",
+        "commander_acceptance": "REJECTED_STUB_PAYLOAD_AND_AUTHORITY_BINDING_FAILURE"
+      },
+      "AUTOMATION-C-W6": {
+        "result_comment": null,
+        "result_key": "519606842800",
+        "report_request_count": 1,
+        "replacement_threshold": 4,
+        "replacement_required": false
+      }
+    }
+  },
+  "authority": {
+    "source_path": "yolla-panel-v1/a0-successor-control/handoffs/v1-existing-runtime/A0_TO_V1_EXISTING_YOLLA_RUNTIME_HANDOFF_V2.json",
+    "source_commit": "1070b2ee3329ac5ec08020e2c2e2a9377767f888",
+    "state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2",
+    "release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases",
+    "browser_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "worker_partition": "persist:sf4-safe-panel-worker-1",
+    "analysis_partition": "persist:yolla-analysis-browser-v1",
+    "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_3_7.bat",
+    "runtime_log": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2\\runtime.log",
+    "c_mode_state": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2\\automation-c-v1\\C_MODE_STATE.json",
+    "repeat_commands": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2\\automation-c-v1\\REPEAT_COMMANDS.json",
+    "work_control_log": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2\\automation-c-v1\\work_control_events.jsonl"
+  },
+  "critical_findings": {
+    "w1_authority_mismatch": {
+      "reported_target_version": "5.10.2.4.2-rc4",
+      "wrong_release_root": "E:\\SOURCE FACTORY\\.yolla\\releases",
+      "wrong_state_root": "E:\\SOURCE FACTORY\\.yolla\\state",
+      "wrong_profile_root": "E:\\SOURCE FACTORY\\.yolla\\profiles",
+      "wrong_launcher": "E:\\SOURCE FACTORY\\.yolla\\launcher.json",
+      "invented_partitions": ["persist:yolla-v510241-c", "persist:yolla-v510241-repeat"]
+    },
+    "w5_stub_payload": {
+      "package_path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w5/wave13/Install-Yolla-C-Mode-5.10.2.4.2-rc5.ps1",
+      "package_commit": "ef8481aa504c8e622a4df4087951a3a639de32b0",
+      "package_blob_sha1": "c3dbc640dccaa2b55ef824896fc6a59a9da2af52",
+      "package_size": 7225,
+      "package_sha256": "f254d2220a41679d78b8717dafaed4e0fb26217813cd9b44cca43b622fdcf126",
+      "embedded_member_count": 12,
+      "required_member_count": 17,
+      "examples": {
+        "c_mode_runtime": {"embedded_size": 142, "locked_size": 5081},
+        "c_mode_wave_pointer": {"embedded_size": 170, "locked_size": 3518},
+        "runtime_result_adapter": {"embedded_size": 206, "locked_size": 2605},
+        "repeat_command_runtime": {"embedded_size": 203, "locked_size": 9094}
+      },
+      "missing_component_classes": [
+        "REGISTRY_SEQUENCE_RESTART_EXPORT",
+        "REPEAT_RELEASE_ADAPTER",
+        "C_REPEAT_NAMESPACE_ADAPTER",
+        "ACTUAL_CANDIDATE_BRIDGE_BINDING"
+      ],
+      "base_release_overlay_proven": false,
+      "runtime_load_hook_proven": false,
+      "installable_runtime": false,
+      "target_pc_accepted": false
+    }
+  },
+  "wave14_assignments": {
+    "AUTOMATION-C-W1": {
+      "command_id": "C6W-W14-W1-AUTHORITY-CORRECT-BASELINE-OVERLAY-MAP-V2",
+      "task": "REBUILD_EXACT_AUTHORITY_ROOT_BASELINE_OVERLAY_AND_17_MEMBER_MAP"
+    },
+    "AUTOMATION-C-W2": {
+      "command_id": "C6W-W14-W2-RC5-FALSE-POSITIVE-RC6-ACCEPTANCE-GATE",
+      "task": "REJECT_STUB_PAYLOAD_AND_VALIDATE_RC6_EXACT_SOURCE_OVERLAY"
+    },
+    "AUTOMATION-C-W3": {
+      "command_id": "C6W-W14-W3-AUTHORITY-CORRECT-UI-LOAD-HOOK-OVERLAY",
+      "task": "BUILD_IDEMPOTENT_UI_LOAD_HOOK_AND_REMOVAL_ONLY_ROLLBACK"
+    },
+    "AUTOMATION-C-W4": {
+      "command_id": "C6W-W14-W4-RC5-REJECTION-RC6-OFFLINE-ACCEPTANCE",
+      "task": "RUN_ACTUAL_RC5_NEGATIVE_AND_PREPARE_RC6_6X3_ACCEPTANCE"
+    },
+    "AUTOMATION-C-W5": {
+      "command_id": "C6W-W14-W5-EXACT-SOURCE-BASELINE-OVERLAY-RC6",
+      "task": "BUILD_COMPLETE_BASELINE_CLONE_PLUS_EXACT_17_MEMBER_OVERLAY_INSTALLER",
+      "integration_owner": true
+    }
+  },
+  "carryover": {
+    "role": "AUTOMATION-C-W6",
+    "pr": 64,
+    "wave_id": "V1-C-MODE-6W-WAVE-013",
+    "directive_comment": 5196068428,
+    "result_key": "519606842800",
+    "report_request_count": 1,
+    "replacement_threshold": 4,
+    "new_wave14_command": false
+  },
+  "registry_plan": {
+    "new_row_count": 5,
+    "carryover_count": 1,
+    "all_new_rows_valid_before_any_new_dispatch": true,
+    "partial_new_wave_dispatch": false,
+    "active_command_per_worker": 1,
+    "same_sequence_duplicate": "FAIL_CLOSED"
+  },
+  "current_progress_percent": 96,
+  "progress_increase_withheld_reason": "RC5_FALSE_POSITIVE_AND_AUTHORITY_MISMATCH",
+  "target_pc_pass": "PENDING",
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

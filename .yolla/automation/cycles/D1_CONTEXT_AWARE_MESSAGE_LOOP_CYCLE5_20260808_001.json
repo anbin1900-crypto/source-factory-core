@@ -1,0 +1,90 @@
+{
+  "schema_version": "YOLLA_C_MODE_CYCLE_ASSIGNMENT_V1",
+  "rule_id": "YOLLA_C_MODE_RULES_V1",
+  "policy": "YOLLA_EFFICIENCY_RATIONALITY_SPEED_FIRST_OPERATING_POLICY_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE5-20260808-001",
+  "mode": "CYCLE_BATCH_PARALLEL",
+  "created_at_kst": "2026-08-08T13:10:00+09:00",
+  "source_cycle": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE4-20260808-001",
+  "source_authority_commit": "d146f6b12747ac24d798eadacda02cc8494b01c8",
+  "commander_decisions": {
+    "AUTOMATION-C-W2": "EXCLUDED_EXISTING_CYCLE4_DIRECTIVE_OPEN_NO_NEW_TERMINAL",
+    "AUTOMATION-C-W3": "EXCLUDED_EXISTING_CYCLE3_DIRECTIVE_OPEN_NO_NEW_TERMINAL",
+    "AUTOMATION-C-W4": "CORRECTION_REQUIRED_RESUME_EXISTING_CYCLE2_DIRECTIVE",
+    "AUTOMATION-C-W5": "ACCEPTED_CYCLE4_PASS_NEXT_ASSIGNMENT",
+    "AUTOMATION-C-W6": "ACCEPTED_CYCLE3_PASS_NEXT_ASSIGNMENT"
+  },
+  "accepted_inputs": [
+    {
+      "worker_id": "AUTOMATION-C-W5",
+      "result_comment_id": 5220844654,
+      "result_commit": "25a49345277e117b98916703e8ce03d677a549bb",
+      "terminal": "D2_FRESHNESS_AND_D3_DISPATCH_EVENT_INGESTION_PASS"
+    },
+    {
+      "worker_id": "AUTOMATION-C-W6",
+      "result_comment_id": 5220762744,
+      "result_commit": "31d530f399f7dab3e9e0f718007735408723c344",
+      "terminal": "D2_D5_LIVE_PANEL_REBIND_AND_D4_GAP_ISOLATION_PASS"
+    },
+    {
+      "worker_id": "AUTOMATION-C-W4",
+      "result_type": "ATTEMPT_RECEIPT_NOT_TERMINAL",
+      "command_id": "D4C2-RUN-UIA-LIVE-OBSERVER-V3-20260808-042130-001",
+      "receipt_blob": "f503589ea335ad5cf397b33a2d4be9307df17957",
+      "executor_status": "SUCCEEDED",
+      "observer_terminal": "CHROME_REPLY_COMPLETION_LIVE_BLOCKED",
+      "working_observed": true,
+      "error_observed": true,
+      "exact_internal_failure": "D3_CHILD_RESULT_SCHEMA_MISSING_ASSISTANT_REPLY_COMPLETED"
+    }
+  ],
+  "assignments": [
+    {
+      "worker_id": "AUTOMATION-C-W4",
+      "worker_pr": 22,
+      "role": "D-4_CHROME_WORKER_STATE_OBSERVER_OWNER",
+      "directive_id": "C5-W4-RESUME-D3-RESULT-SCHEMA-COMPAT-AND-COMPLETED-LIVE-V1-20260808-001",
+      "parent_directive_id": "C2-W4-TARGET-PC-OBSERVER-ADAPTER-LIVE-V1-20260808-001",
+      "assignment_kind": "CORRECTION_CONTINUATION",
+      "goal": "Preserve the recovered PC queue path, add alias-safe D3 child result parsing, and rerun the existing UIA observer until actual WORKING to COMPLETED or exact external blocker.",
+      "expected_terminal": "CHROME_REPLY_COMPLETION_LIVE_PASS_OR_BLOCKED_EXTERNAL_CONFIRMED",
+      "delivery_state": "GITHUB_DIRECTIVE_POSTED",
+      "queue_registered": false,
+      "claimed": false
+    },
+    {
+      "worker_id": "AUTOMATION-C-W5",
+      "worker_pr": 40,
+      "role": "D-5_AUTOMATION_EVENT_LOG_AND_IMPROVEMENT_OWNER",
+      "directive_id": "C5-W5-D4-EXECUTOR-RESTART-AND-OBSERVER-ATTEMPT-INGESTION-V1-20260808-001",
+      "assignment_kind": "NEXT_AFTER_ACCEPTED_PASS",
+      "goal": "Append the actual D4 V3 claim, restart recovery, WORKING, ERROR and internal schema failure events without rewriting history, and calculate queue stall and recovery metrics.",
+      "expected_terminal": "D4_EXECUTOR_RESTART_AND_OBSERVER_ATTEMPT_INGESTION_PASS_OR_BLOCKED_EXTERNAL_CONFIRMED",
+      "delivery_state": "GITHUB_DIRECTIVE_POSTED",
+      "queue_registered": false,
+      "claimed": false
+    },
+    {
+      "worker_id": "AUTOMATION-C-W6",
+      "worker_pr": 80,
+      "role": "D-6_AUTOMATION_CONTROL_PANEL_AND_E2E_OWNER",
+      "directive_id": "C5-W6-D4-ATTEMPT-D5-METRIC-PANEL-LATE-BIND-V1-20260808-001",
+      "assignment_kind": "NEXT_AFTER_ACCEPTED_PASS",
+      "goal": "Late-bind the actual D4 V3 attempt receipt and D5 latest event metrics into the existing panel, expose exact in-progress/error truth, and keep full-loop PASS closed until D4 live completion.",
+      "expected_terminal": "D4_ATTEMPT_AND_D5_METRIC_PANEL_LATE_BIND_PASS_OR_BLOCKED_EXTERNAL_CONFIRMED",
+      "delivery_state": "GITHUB_DIRECTIVE_POSTED",
+      "queue_registered": false,
+      "claimed": false
+    }
+  ],
+  "boundaries": {
+    "assignment_includes_execution_authority": true,
+    "one_owner_end_to_end": true,
+    "new_executor_tunnel_transport_allowed": false,
+    "mock_only_live_pass_allowed": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

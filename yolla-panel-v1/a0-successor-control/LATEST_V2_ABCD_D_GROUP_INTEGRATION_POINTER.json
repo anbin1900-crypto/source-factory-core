@@ -1,0 +1,74 @@
+{
+  "schema_version": "LATEST_V2_ABCD_D_GROUP_INTEGRATION_POINTER_V8",
+  "pointer_id": "LATEST-V2-ABCD-D-GROUP-INTEGRATION-20260806-008",
+  "updated_at_kst": "2026-08-06T18:45:00+09:00",
+  "commander": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "previous_pointer_blob": "16246a4f345275779330a9be125f5aa5ba9b8747",
+  "local_server_transition": {
+    "batch_id": "V2-TO-ABCD-LOCAL-SERVER-OPERATION-AND-FUTURE-MIGRATION-BATCH-V1-20260806-001",
+    "batch_path": "yolla-panel-v1/a0-successor-control/integration/abcd-local-server-v1/V2_ABCD_LOCAL_SERVER_OPERATION_AND_FUTURE_MIGRATION_BATCH_V1.json",
+    "batch_commit": "bcc40274036282dc1065f3b6f139755d7dc0ecc9",
+    "dispatch_receipt_path": "yolla-panel-v1/a0-successor-control/integration/abcd-local-server-v1/V2_ABCD_LOCAL_SERVER_OPERATION_DISPATCH_RECEIPT_V1.json",
+    "dispatch_receipt_commit": "ed893ce08ecb0d3286f9e383fb40bad4bb8d41fe",
+    "dedicated_latest_pointer_path": "yolla-panel-v1/a0-successor-control/LATEST_V2_ABCD_LOCAL_SERVER_OPERATION_POINTER.json",
+    "dedicated_latest_pointer_commit": "f9c06b0f4f7781125f54bf479504325fba0be5bf",
+    "status": "ACTIVE"
+  },
+  "review_accounting": {
+    "workers_reviewed": 20,
+    "commander_and_bridge_checked": 5,
+    "missing_worker_terminal": 0
+  },
+  "current_pipeline": {
+    "B5": {
+      "head": "40891f2f87eb9f58a369f71e46cadc43f4586157",
+      "terminal": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_READY",
+      "status": "PASS_EVENT_WAIT"
+    },
+    "B6": {
+      "pr": 42,
+      "comment": 5203025369,
+      "status": "IMMEDIATE_DELTA_ONLY_REPREFLIGHT"
+    },
+    "B1": {
+      "pr": 19,
+      "comment": 5203028027,
+      "status": "EVENT_WAIT_B6"
+    }
+  },
+  "local_server_state": {
+    "target_pc": "YOLLA-USER-PC01",
+    "install_root": "E:\\YOLLA",
+    "A0": "PC_AGENT_CONTROL_SUPPORT_ACTIVE",
+    "A2": "LOCAL_SERVER_HANDOFF_PREPARATION_ACTIVE",
+    "C1": "LOCAL_SERVER_CONSUMER_PREPARATION_ACTIVE",
+    "D1": "LOCAL_SERVER_CONTROL_REALIGNMENT_ACTIVE",
+    "D2": "ENVIRONMENT_DOCTOR_ACTIVE",
+    "D3": "APPLICATION_PACKAGE_ACTIVE",
+    "D4": "SECURITY_POLICY_ACTIVE",
+    "D5": "EVENT_WAIT_D1_D2_D3_D4_THEN_ACTUAL_INSTALL",
+    "D6": "EVENT_WAIT_D5_B1_C1_THEN_ACTUAL_E2E"
+  },
+  "current_phase": "B6_PIPELINE_CLOSURE_AND_D_LOCAL_SERVER_PREPARATION_ACTIVE",
+  "current_status": "B5_PASS_B6_ACTIVE_D_GROUP_REALIGNED_TO_LOCAL_SERVER_OPERATION",
+  "next_gate": "B6_TERMINAL_AND_D2_ENVIRONMENT_DOCTOR_TERMINAL",
+  "worker_completion_claimed": false,
+  "execution_authority": {
+    "actual_local_install": true,
+    "actual_local_service_start_stop": true,
+    "actual_local_staging_postgresql": true,
+    "actual_local_staging_migration_apply": true,
+    "actual_local_staging_db_write": true,
+    "actual_local_backup_restore": true,
+    "actual_local_snapshot": true,
+    "public_binding": false,
+    "external_server_migration_now": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  }
+}

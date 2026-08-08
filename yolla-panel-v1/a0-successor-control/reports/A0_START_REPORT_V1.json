@@ -1,0 +1,71 @@
+{
+  "schema_version": "A0_START_REPORT_V1",
+  "report_type": "START",
+  "role": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+  "directive_id": "A0-P0-V52-TARGET-PC-ACCEPTANCE",
+  "cycle_id": "A0-V52-TARGET-PC-ACCEPTANCE-20260803-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "base_commit": "124367a50a72505516666b4f427bfeda325ba3d3",
+  "observed_remote_head_before": "2d73972b13b505cf52cba8a0812681bbd048d402",
+  "observed_remote_head_after": null,
+  "owned_paths": [
+    "yolla-panel-v1/a0-successor-control/**",
+    "yolla-panel-v1/a1-connection-frontier/v5/**",
+    "yolla-panel-v1/a1-connection-frontier/INSTALL_YOLLA_PANEL_CONNECTION_FRONTIER.ps1",
+    "yolla-panel-v1/a1-connection-frontier/RUN_YOLLA_PANEL_CONNECTION_FRONTIER.cmd",
+    "yolla-panel-v1/a1-connection-frontier/ROLLBACK_YOLLA_PANEL_CONNECTION_FRONTIER.cmd"
+  ],
+  "status": "STARTED",
+  "progress_percent": 5,
+  "authority_pointer": "yolla-panel-v1/a0-successor-control/LATEST_A0_SUCCESSOR_HANDOFF_POINTER.json",
+  "authority_pointer_commit": "2d73972b13b505cf52cba8a0812681bbd048d402",
+  "directive_summary": "Apply and validate YOLLA Workspace V5.2 non-destructively on the Target PC while preserving the stable V5 fallback, fixed browser profile, workspace state, project/current-conversation binding, and cycle ledger.",
+  "acceptance_criteria": [
+    "fixed_user_data_path_exists",
+    "chatgpt_login_preserved_after_update",
+    "chatgpt_login_preserved_after_app_restart",
+    "worker_address_bar_only_visible_on_worker_tab",
+    "analyzer_address_bar_only_visible_on_analyzer_tab",
+    "site_navigation_does_not_change_chatgpt_context",
+    "50_seats_and_7_groups_preserved",
+    "project_and_context_bindings_preserved"
+  ],
+  "preservation_plan": [
+    "Do not delete or reset E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "Do not overwrite existing workspace_state files without readback and backup",
+    "Keep E:\\SOURCE FACTORY\\RUN_YOLLA_WORKSPACE_V5.bat as the stable fallback",
+    "Preserve project/current-conversation bindings and existing cycle ledgers",
+    "Use append-only receipts and exact remote commit pointers"
+  ],
+  "rollback_plan": [
+    "Stop only the V5.2 process started by this cycle",
+    "Restore modified launcher/runtime files from the pre-apply backup",
+    "Retain the fixed browser profile and all workspace_state/cycle ledger files",
+    "Launch the stable V5 fallback through RUN_YOLLA_WORKSPACE_V5.bat",
+    "Record rollback and readback receipts before retry"
+  ],
+  "artifacts": [],
+  "tests": [],
+  "target_pc_observation": {
+    "status": "NOT_YET_OBSERVED_IN_THIS_CYCLE",
+    "evidence_required": true
+  },
+  "blockers": [],
+  "forbidden_counters": {
+    "browser_profile_deleted": 0,
+    "workspace_state_reset": 0,
+    "stable_v5_deleted": 0,
+    "legacy_v3_hotfix_reused": 0,
+    "target_pc_pass_claimed_without_evidence": 0,
+    "b_group_direct_authoritative_d_write": 0,
+    "production_connection": 0,
+    "ready_transition": 0,
+    "merge": 0
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "next_action": "Resolve the existing Target PC execution interface, capture pre-apply state and backup receipts, then run the V5.2 non-destructive acceptance sequence.",
+  "reported_at": "2026-08-03T19:10:42+09:00"
+}

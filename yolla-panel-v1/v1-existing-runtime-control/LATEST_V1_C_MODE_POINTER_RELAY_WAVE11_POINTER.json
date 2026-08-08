@@ -1,0 +1,87 @@
+{
+  "schema_version": "LATEST_V1_C_MODE_POINTER_RELAY_WAVE11_POINTER_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-011",
+  "registry_sequence": 11,
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "review_and_directive": {
+    "md_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave11/C_MODE_WAVE10_REVIEW_AND_WAVE11_DIRECTIVE_V1.md",
+    "md_commit": "2ebac65fe0439e507bfb06122adb08fa0974efa7",
+    "json_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave11/C_MODE_WAVE10_REVIEW_AND_WAVE11_DIRECTIVE_V1.json",
+    "json_commit": "28b4eff8e92dbebddd4a82b4e3b751a92a69587d"
+  },
+  "publication_receipt": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave11/C_MODE_WAVE11_PUBLICATION_RECEIPT_V1.json",
+    "commit": "59da009614bc19347bd9ddb5744d2d30ec85a1a6"
+  },
+  "wave10_review": {
+    "registry_comment": 5194612544,
+    "valid_current_reports": 5,
+    "current_missing": 0,
+    "carryover_missing": 1,
+    "duplicate_results": 0,
+    "results": {
+      "AUTOMATION-C-W1": {"result_comment": 5194741515, "outcome": "PASS_METADATA_LOCK_ONLY"},
+      "AUTOMATION-C-W2": {"result_comment": 5194721209, "outcome": "PASS"},
+      "AUTOMATION-C-W4": {"result_comment": 5194722039, "outcome": "BLOCKED_RAW_DNS"},
+      "AUTOMATION-C-W5": {"result_comment": 5194725335, "reported_outcome": "PASS", "commander_acceptance": "REJECTED_SUBSTANTIVE_RUNTIME_PAYLOAD_NOT_PRESENT"},
+      "AUTOMATION-C-W6": {"result_comment": 5194713046, "outcome": "BLOCKED_AUDIT_PRECEDED_W5_RESULT"}
+    }
+  },
+  "critical_finding": {
+    "code": "METADATA_ONLY_BYTE_FALSE_POSITIVE",
+    "artifact_commit": "5b44c83a78e2a653cf1b721d546d3f5b7b53b61d",
+    "artifact_path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w5/wave10/YOLLA_C_MODE_5.10.2.4.2-rc3_INSTALL_AND_BUILD.bat",
+    "artifact_size": 2652,
+    "artifact_sha256": "21587622092a36b16c054569ee97463cfc9458b945a26018c486f0f83f5c6447",
+    "byte_exists": true,
+    "installable_runtime_proven": false,
+    "reason": "BAT_DOWNLOADS_AND_ZIPS_FOUR_RESULT_JSON_FILES_ONLY"
+  },
+  "wave11_registry": {
+    "comment_id": 5194861923,
+    "previous_registry_comment": 5194612544,
+    "worker_count": 5,
+    "carryover_count": 1,
+    "all_rows_valid_before_any_dispatch": true,
+    "partial_dispatch": false,
+    "same_sequence_duplicate": "FAIL_CLOSED"
+  },
+  "worker_bindings": {
+    "AUTOMATION-C-W1": {"pr": 59, "directive_comment": 5194835355, "result_key": "519483535500", "command_id": "C6W-W11-W1-SUBSTANTIVE-EXECUTABLE-PAYLOAD-LOCK-V4"},
+    "AUTOMATION-C-W2": {"pr": 60, "directive_comment": 5194838029, "result_key": "519483802900", "command_id": "C6W-W11-W2-ARTIFACT-CONTENT-COMPLETION-GATE"},
+    "AUTOMATION-C-W4": {"pr": 62, "directive_comment": 5194840484, "result_key": "519484048400", "command_id": "C6W-W11-W4-CONNECTOR-BYTE-PREFLIGHT-3ROUND-RERUN"},
+    "AUTOMATION-C-W5": {"pr": 63, "directive_comment": 5194844026, "result_key": "519484402600", "command_id": "C6W-W11-W5-ACTUAL-INSTALLABLE-RUNTIME-RC4", "integration_owner": true},
+    "AUTOMATION-C-W6": {"pr": 64, "directive_comment": 5194846605, "result_key": "519484660500", "command_id": "C6W-W11-W6-INDEPENDENT-SUBSTANTIVE-ARTIFACT-AUDIT", "implementation_direct_edit": false}
+  },
+  "carryover": {
+    "role": "AUTOMATION-C-W3",
+    "pr": 61,
+    "wave_id": "V1-C-MODE-6W-WAVE-009",
+    "directive_comment": 5194405262,
+    "result_key": "519440526200",
+    "report_request_comment": 5194832672,
+    "report_request_count": 2,
+    "replacement_threshold": 4,
+    "new_directive": false
+  },
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "target_version": "5.10.2.4.2-rc4",
+  "current_progress_percent": 96,
+  "progress_increase_withheld_reason": "SUBSTANTIVE_RUNTIME_PAYLOAD_FALSE_POSITIVE_FOUND",
+  "next_gate": "FIVE_WAVE11_RESULTS_PLUS_W3_CARRYOVER_AND_REAL_INSTALLABLE_RUNTIME_BYTE_THEN_TARGET_PC_ACCEPTANCE",
+  "target_pc_pass": "PENDING",
+  "six_workers_three_waves": "PENDING_TARGET_PC",
+  "restart_resume": "PENDING_TARGET_PC",
+  "log_loss_zero": "PENDING_TARGET_PC",
+  "login_profile_preserved": "PENDING_TARGET_PC_READBACK",
+  "a_e_reintroduction_count": 0,
+  "auto_test_write_count": 0,
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

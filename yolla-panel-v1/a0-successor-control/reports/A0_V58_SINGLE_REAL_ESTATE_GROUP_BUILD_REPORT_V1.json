@@ -1,0 +1,81 @@
+{
+  "schema_version": "A0_V58_SINGLE_REAL_ESTATE_GROUP_BUILD_REPORT_V1",
+  "report_type": "BUILD_AND_STATIC_TEST",
+  "owner": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+  "control_pr": 17,
+  "status": "BUILD_PASS_TARGET_PC_EXECUTION_PENDING",
+  "terminal": "A0_V58_SINGLE_REAL_ESTATE_GROUP_BUILD_PASS",
+  "requested_change": {
+    "default_group_count": 1,
+    "default_group_id": "B_GROUP",
+    "default_group_name": "부동산 홈페이지 제작",
+    "excluded_prior_default_groups": ["MASTER", "A_GROUP", "C_GROUP", "D_GROUP", "API_GROUP"],
+    "default_roles": ["B-1", "B-2", "B-3", "B-4", "B-5", "B-6"],
+    "b6_required_visible": true
+  },
+  "role_labels": {
+    "B-1": "부동산 홈페이지 제작 커맨더",
+    "B-2": "워커1",
+    "B-3": "워커2",
+    "B-4": "워커3",
+    "B-5": "워커4",
+    "B-6": "워커5"
+  },
+  "state_migration": {
+    "version": "5.8.0",
+    "one_time": true,
+    "workspace_state_backup_before_migration": true,
+    "retain_base_group": "B_GROUP",
+    "retain_user_added_workers_in_b_group": true,
+    "remove_other_saved_default_and_custom_groups_on_first_v58_run": true,
+    "rollback_restores_runtime_and_workspace_state": true
+  },
+  "worker_reachability": {
+    "single_outer_vertical_scroll": true,
+    "nested_worker_scroll": false,
+    "nested_worker_max_height": false,
+    "group_list_keyboard_focusable": true,
+    "compact_group_header": true,
+    "compact_worker_row": true,
+    "b6_present": true
+  },
+  "preserved_integrations": {
+    "pr276_data_factory_ui": true,
+    "pr278_runtime_provider": true,
+    "exactly_once_contract": true,
+    "fixed_browser_profile": true,
+    "cycles": true,
+    "sites_and_adapters": true
+  },
+  "installer": {
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V58_SINGLE_REAL_ESTATE_GROUP.bat",
+    "size_bytes": 86842,
+    "sha256": "bbd08d7d53c3cd88100549e88cb047a61f66c5f3254287a1cafadc7cbcd88dd7",
+    "git_required": false,
+    "administrator_auto_elevation": true,
+    "launcher_after_install": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_8.bat"
+  },
+  "source_artifact": {
+    "file_name": "AI_YOLLA_RUNTIME_V58_SINGLE_REAL_ESTATE_GROUP_SOURCE.zip",
+    "drive_file_id": "1nMKdaMBwieYeT_uX0-Q4HcX2beFsn9ER",
+    "sha256": "e648426687050e3999696f1a807ba18dcbfd1518958b94aa9dd218e86d3bbde8",
+    "size_bytes": 62535,
+    "mime_type": "application/zip"
+  },
+  "tests": {
+    "node_syntax": "PASS_7_OF_7",
+    "command_cycle": "PASS",
+    "single_group_contract": "PASS_16",
+    "worker_reachability_contract": "PASS_22",
+    "dynamic_group_worker_state": "PASS_20",
+    "pr276_workspace_mount": "PASS_25",
+    "pr278_exactly_once_provider": "PASS_31",
+    "source_zip_self_extract_readback": "PASS_22_ENTRIES"
+  },
+  "target_pc_execution_observed": false,
+  "target_pc_visual_acceptance_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "built_at": "2026-08-04T01:26:00+09:00"
+}

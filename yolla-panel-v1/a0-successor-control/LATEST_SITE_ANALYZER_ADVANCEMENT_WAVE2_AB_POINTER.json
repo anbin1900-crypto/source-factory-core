@@ -1,0 +1,24 @@
+{
+  "schema_version": "LATEST_SITE_ANALYZER_ADVANCEMENT_WAVE2_AB_POINTER_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE2-LIVE-INTEGRATION-AB-V1-20260807-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "authority_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "assignment": {
+    "path": "yolla-panel-v1/a0-successor-control/directives/site-analyzer-advancement-wave2/SITE_ANALYZER_ADVANCEMENT_WAVE2_LIVE_INTEGRATION_AB_ASSIGNMENT_V1.json",
+    "commit": "60c48c34d093ac43838215f341efe0c6060ccd3f"
+  },
+  "dispatch_receipt": {
+    "path": "yolla-panel-v1/a0-successor-control/directives/site-analyzer-advancement-wave2/SITE_ANALYZER_ADVANCEMENT_WAVE2_AB_DISPATCH_RECEIPT_V1.json",
+    "commit": "f2f48e163917b8e23ddc50e64f94d9cf78f93b52"
+  },
+  "primary_goal": "WORKING_ADVANCED_SITE_ANALYZER",
+  "active_worker_count": 12,
+  "dispatch_count": 12,
+  "c_mode_runtime_worker_count": 0,
+  "audit_only_worker_count": 0,
+  "validation_only_worker_count": 0,
+  "next_gate": "LOCAL_HTTP_FIXTURE_SITE_AND_REAL_BROWSER_E2E",
+  "status": "WAVE2_ACTIVE_ALL_A_B_WORKERS_DISPATCHED",
+  "updated_at": "2026-08-07T03:02:00+09:00"
+}

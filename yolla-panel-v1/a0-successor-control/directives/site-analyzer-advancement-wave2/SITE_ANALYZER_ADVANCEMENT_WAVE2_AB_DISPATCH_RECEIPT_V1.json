@@ -1,0 +1,31 @@
+{
+  "schema_version": "SITE_ANALYZER_ADVANCEMENT_WAVE2_AB_DISPATCH_RECEIPT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE2-LIVE-INTEGRATION-AB-V1-20260807-001",
+  "dispatched_at_kst": "2026-08-07T03:02:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "authority_commit": "60c48c34d093ac43838215f341efe0c6060ccd3f",
+  "dispatches": [
+    {"worker":"A-2","pr":18,"comment_id":5208073215,"observed_head":"7528715951ab6fd64b60181c6f9fa156ef7e8ef6"},
+    {"worker":"A-3","pr":22,"comment_id":5208074694,"observed_head":"e86dfcc2fc32ad366cd7fd8ba07392850419b853"},
+    {"worker":"A-4","pr":23,"comment_id":5208076013,"observed_head":"50c0555394f5fb3543f079ecfb60a0ed2eeab638"},
+    {"worker":"A-5","pr":24,"comment_id":5208077506,"observed_head":"db1ce4af35b4724554d9d972766826d18ae9891b"},
+    {"worker":"A-6","pr":25,"comment_id":5208078860,"observed_head":"91baa2fb09471ed2a840c2dea9e614bc430da906"},
+    {"worker":"A-7","pr":26,"comment_id":5208080198,"observed_head":"e6c17fb27572340adac8ca73ff754f48e9598472"},
+    {"worker":"B-1","pr":19,"comment_id":5208081562,"observed_head":"6dca87e976439134dc24fed8bd60bc2c9db05fa0"},
+    {"worker":"B-2","pr":38,"comment_id":5208082836,"observed_head":"99bb8ec27ee95088c7228c5fc6cb6399da7f0319"},
+    {"worker":"B-3","pr":39,"comment_id":5208083999,"observed_head":"d74c609241ba9c48cc432bf1fa3c7d7257354f8a"},
+    {"worker":"B-4","pr":40,"comment_id":5208085396,"observed_head":"a204fec405cd861c966831f325dfc43ba4fe51b2"},
+    {"worker":"B-5","pr":41,"comment_id":5208086888,"observed_head":"430f7599f04feb2a2863c95027efe66ff3eef698"},
+    {"worker":"B-6","pr":42,"comment_id":5208088151,"observed_head":"398aacb67f43d0394af3ac0e3db63d77c4cc8648"}
+  ],
+  "worker_count": 12,
+  "dispatch_count": 12,
+  "missing_worker_count": 0,
+  "duplicate_dispatch_count": 0,
+  "primary_goal": "WORKING_ADVANCED_SITE_ANALYZER",
+  "c_mode_runtime_worker_count": 0,
+  "audit_only_worker_count": 0,
+  "validation_only_worker_count": 0,
+  "status": "ALL_A_B_WAVE2_LIVE_INTEGRATION_TASKS_DISPATCHED"
+}

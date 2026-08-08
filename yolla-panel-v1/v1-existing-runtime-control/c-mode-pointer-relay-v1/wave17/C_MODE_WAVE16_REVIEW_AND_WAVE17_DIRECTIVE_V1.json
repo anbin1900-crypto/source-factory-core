@@ -1,0 +1,69 @@
+{
+  "schema_version": "C_MODE_WAVE16_REVIEW_AND_WAVE17_DIRECTIVE_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "previous_wave": "V1-C-MODE-6W-WAVE-016",
+  "wave_id": "V1-C-MODE-6W-WAVE-017",
+  "registry_sequence": 17,
+  "owner": "V-1",
+  "mode": "RC8_EXACT_SOURCE_CORRECTION_AND_ACCEPTANCE_PREPARATION",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc8",
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "wave16_review": {
+    "assigned": 6,
+    "authoritative_results": 5,
+    "missing": 1,
+    "duplicate_results": 0,
+    "complete": false,
+    "results": {
+      "AUTOMATION-C-W1": {"directive_comment": 5198279097, "result_key": "519827909700", "result_commit": "9f68450072e4ba426e7d0cced3c100260641a7c4", "outcome": "BLOCKED_W5_RC7_PENDING_AT_RESULT_TIME"},
+      "AUTOMATION-C-W2": {"directive_comment": 5198279537, "result_key": "519827953700", "result_commit": "132b60e1137fbfd22ee4f565720b77176a58f71d", "outcome": "PASS_GATE_IMPLEMENTATION"},
+      "AUTOMATION-C-W3": {"directive_comment": 5198283954, "result_key": "519828395400", "result_commit": "6431abc8d99f6daa255a0f65f22988ea4ae867fc", "outcome": "BLOCKED_W5_RC7_PENDING_AT_RESULT_TIME"},
+      "AUTOMATION-C-W4": {"directive_comment": 5198285020, "result_key": "519828502000", "result_commit": "fa83a517355bfb28d93437980a6e0c4e0e4e344f", "outcome": "BLOCKED_W5_RC7_PENDING_AT_RESULT_TIME"},
+      "AUTOMATION-C-W5": {"directive_comment": 5198285668, "result_key": "519828566800", "result_commit": "6862d0fbbd82d17f708330aa1f71cd49565ecad4", "outcome": "PASS_OFFLINE_STATIC_AND_BYTE_ASSEMBLY", "artifact_head": "854c3d928e17a30a124b2aab294ff5a9d781a252"},
+      "AUTOMATION-C-W6": {"directive_comment": null, "result_key": null, "result_commit": null, "outcome": "UNBOUND_NO_TERMINAL"}
+    }
+  },
+  "rc7_findings": [
+    "W1_EXACT_RESOLVER_SUBSTITUTED_BY_SIMPLIFIED_IMPLEMENTATION",
+    "W3_EXACT_MAIN_AND_HTML_HOOK_SUBSTITUTED_BY_SIMPLIFIED_IMPLEMENTATION",
+    "W3_ROLLBACK_DOES_NOT_FAIL_CLOSED_ON_MISSING_BACKUP",
+    "FULL_COMPONENT_SMOKE_DOES_NOT_EXECUTE_ALL_REQUIRED_COMPONENT_BEHAVIORS",
+    "PRESERVATION_PATHS_FOR_C_MODE_STATE_REPEAT_STATE_AND_WORK_CONTROL_LOG_ARE_WRONG",
+    "BUNDLE_VERIFIER_GENERATES_A_MANIFEST_BUT_DOES_NOT_COMPARE_TO_AN_IMMUTABLE_EXPECTED_MANIFEST",
+    "TARGET_PC_RUNNER_CAN_PRINT_PASS_WITHOUT_APP_LAUNCH_RESTART_6W_3_ROUNDS_LOG_LOSS_ZERO_OR_UI_ACCEPTANCE",
+    "GITHUB_BRANCH_ARCHIVE_IS_NOT_AN_IMMUTABLE_COMMIT_PINNED_USER_ARTIFACT"
+  ],
+  "reusable_rc7_result": {
+    "corrected_background_dispatch": true,
+    "fixed_browser_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "worker_partition": "persist:sf4-safe-panel-worker-1",
+    "analysis_partition": "persist:yolla-analysis-browser-v1",
+    "temporary_profile": false
+  },
+  "wave17_assignments": {
+    "AUTOMATION-C-W1": {"pr": 59, "command_id": "C6W-W17-W1-RC8-EXACT-RESOLVER-INTEGRATION", "terminal_scope": "EXACT_RESOLVER_BUNDLE_VERIFIER_AND_FIXTURES", "wait_for_w5": false},
+    "AUTOMATION-C-W2": {"pr": 60, "command_id": "C6W-W17-W2-RC8-ACTUAL-ARTIFACT-GATE-V2", "terminal_scope": "GATE_IMPLEMENTATION_RC7_NEGATIVE_AND_REGRESSION", "wait_for_w5": false},
+    "AUTOMATION-C-W3": {"pr": 61, "command_id": "C6W-W17-W3-RC8-EXACT-UI-HOOK-BUNDLE-V2", "terminal_scope": "EXACT_UI_HOOK_ROLLBACK_BUNDLE_AND_FIXTURES", "wait_for_w5": false},
+    "AUTOMATION-C-W4": {"pr": 62, "command_id": "C6W-W17-W4-RC8-FULL-OFFLINE-ACCEPTANCE-RUNNER-V2", "terminal_scope": "RUNNER_IMPLEMENTATION_RC7_NEGATIVE_AND_FIXTURES", "wait_for_w5": false},
+    "AUTOMATION-C-W5": {"pr": 63, "command_id": "C6W-W17-W5-ACTUAL-INSTALLABLE-RC8", "terminal_scope": "IMMUTABLE_RC8_ARTIFACT_AND_OFFLINE_RECEIPTS", "integration_owner": true},
+    "AUTOMATION-C-W6": {"pr": 64, "command_id": "C6W-W17-W6-INDEPENDENT-RC8-AUDIT-PREPARATION", "terminal_scope": "INDEPENDENT_MATRIX_RC7_NEGATIVE_AND_AUDIT_RUNNER", "wait_for_w5": false, "implementation_direct_edit": false}
+  },
+  "registry_contract": {
+    "dispatch_mode": "CYCLE_BATCH_PARALLEL",
+    "worker_count": 6,
+    "all_rows_valid_before_any_dispatch": true,
+    "partial_dispatch": false,
+    "same_sequence_duplicate": "FAIL_CLOSED",
+    "result_key_rule": "DIRECTIVE_COMMENT_STRING_PLUS_ASCII_00"
+  },
+  "next_event_after_wave17": "ACTUAL_RC8_CROSS_WORKER_OFFLINE_TECHNICAL_ACCEPTANCE",
+  "current_progress_percent": 96,
+  "progress_increase_withheld_reason": "RC7_NOT_TECHNICALLY_ACCEPTED_AND_WAVE16_W6_UNBOUND",
+  "target_pc_install_authorized": false,
+  "target_pc_pass": "PENDING",
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

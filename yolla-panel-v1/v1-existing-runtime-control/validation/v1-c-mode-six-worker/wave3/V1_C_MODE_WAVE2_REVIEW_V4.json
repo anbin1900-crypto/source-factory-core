@@ -1,0 +1,111 @@
+{
+  "schema_version": "V1_C_MODE_WAVE2_REVIEW_V4",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "reviewed_wave_id": "V1-C-MODE-6W-WAVE-002",
+  "next_wave_id": "V1-C-MODE-6W-WAVE-003",
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "reviewed_at": "2026-08-05T18:30:00+09:00",
+  "previous_progress_percent": 60,
+  "current_progress_percent": 72,
+  "worker_results": {
+    "AUTOMATION-C-W1": {
+      "worker_pr": 59,
+      "result_comment_id": 5189877182,
+      "head": "ea26b91c273f4da208420b5901f067d70dbb0c87",
+      "status": "BLOCKED_EXACT_AT_OBSERVATION_TIME",
+      "finding": "W2_AND_W4_WAVE2_TERMINALS_WERE_NOT_YET_POSTED",
+      "blocker_now_resolved": true,
+      "resolution_inputs": {
+        "w2_head": "028faddc8c314361f6703c9cbbb27865ed009edd",
+        "w2_comment_id": 5189897838,
+        "w4_head": "42e5ff1857754aeb366849448f671f5144694d7d",
+        "w4_comment_id": 5189897742
+      },
+      "next_action": "RESUME_PARITY_AND_BUILD_UNIFIED_CANDIDATE"
+    },
+    "AUTOMATION-C-W2": {
+      "worker_pr": 60,
+      "result_comment_id": 5189897838,
+      "head": "028faddc8c314361f6703c9cbbb27865ed009edd",
+      "status": "PASS",
+      "tests": "PASS_16_OF_16",
+      "accepted_scope": "DUAL_REPORT_SCHEMA_AND_ACTUAL_COMMENT_COMPATIBILITY"
+    },
+    "AUTOMATION-C-W3": {
+      "worker_pr": 61,
+      "result_comment_id": 5189896710,
+      "head": "9f0d97291ab47592bd9e0136d8ca44723971f90e",
+      "status": "PASS_OFFLINE_TARGET_PC_PENDING",
+      "tests": "PASS_17_OF_17",
+      "accepted_scope": "DETERMINISTIC_UI_RENDER_HARNESS_AND_TARGET_PC_EVIDENCE_COLLECTOR"
+    },
+    "AUTOMATION-C-W4": {
+      "worker_pr": 62,
+      "result_comment_id": 5189897742,
+      "head": "42e5ff1857754aeb366849448f671f5144694d7d",
+      "status": "PASS",
+      "tests": "PASS_25_ASSERTIONS",
+      "accepted_scope": "PER_TARGET_REPEAT_COMMAND_RUNTIME"
+    },
+    "AUTOMATION-C-W5": {
+      "worker_pr": 63,
+      "result_comment_id": 5189900823,
+      "head": "25c2cd59e096718cc2ee9bd6e3b3591682b01acd",
+      "status": "PASS_OFFLINE_TARGET_PC_PENDING",
+      "tests": [
+        "C_MODE_RUNTIME_PASS_59_ASSERTIONS",
+        "BACKGROUND_INSTALL_LOG_PASS_12_ASSERTIONS"
+      ],
+      "accepted_scope": "BACKGROUND_DISPATCH_INSTALL_ROLLBACK_LOG_OFFLINE_VALIDATION"
+    },
+    "AUTOMATION-C-W6": {
+      "worker_pr": 64,
+      "latest_comment_id": 5189877834,
+      "head": "a92d111600c14c7fb06efbe3b73ef5daee149060",
+      "status": "MISSING_VALID_WAVE2_REPORT",
+      "finding": "NEWER_WAVE2_DIRECTIVE_5189701057_WAS_MISSED_AND_NO_PENDING_WAS_INCORRECTLY_REPORTED",
+      "result_json_committed": false,
+      "next_action": "MANDATORY_CARRYOVER_CORRECTION_AND_INDEPENDENT_AUDIT"
+    }
+  },
+  "wave2_summary": {
+    "expected_worker_count": 6,
+    "valid_correlated_report_count": 5,
+    "missing_or_invalid_report_count": 1,
+    "full_offline_pass_workers": [
+      "AUTOMATION-C-W2",
+      "AUTOMATION-C-W4"
+    ],
+    "offline_pass_target_pc_pending_workers": [
+      "AUTOMATION-C-W3",
+      "AUTOMATION-C-W5"
+    ],
+    "resolved_blocker_workers": [
+      "AUTOMATION-C-W1"
+    ],
+    "carryover_workers": [
+      "AUTOMATION-C-W6"
+    ]
+  },
+  "decision": {
+    "advance_workers": [
+      "AUTOMATION-C-W1",
+      "AUTOMATION-C-W2",
+      "AUTOMATION-C-W3",
+      "AUTOMATION-C-W4",
+      "AUTOMATION-C-W5"
+    ],
+    "carryover_worker": "AUTOMATION-C-W6",
+    "dispatch_mode": "PARALLEL_WITH_ONE_CARRYOVER",
+    "target_pc_pass": "PENDING",
+    "lts_terminal_claimed": false
+  },
+  "boundaries": {
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "auto_test_write_count": 0
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "LATEST_A0_V510232_LOG_DOWNLOAD_POINTER_V1",
+  "status": "V5102_BASELINE_NATIVE_LOG_DOWNLOAD_BUILD_PASS_TARGET_PC_PENDING",
+  "version": "5.10.2.3.2",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "source_baseline_version": "5.10.2",
+  "supersedes": [
+    {
+      "version": "5.10.2.3.1",
+      "reason": "LOG_FOLDER_PATH_NOT_RELIABLE_AND_RUNTIME_LOG_MISSING_ON_TARGET_PC",
+      "installer_status": "DO_NOT_RUN"
+    },
+    {
+      "version": "5.10.2.3",
+      "reason": "NODE_REPL_INSTALLER_DEFECT_AND_LOG_FOLDER_DEPENDENCY",
+      "installer_status": "DO_NOT_RUN"
+    }
+  ],
+  "features": {
+    "panel_log_download": true,
+    "log_status_window_download": true,
+    "save_as_json": true,
+    "default_to_user_downloads": true,
+    "runtime_log_file_required": false,
+    "in_memory_log_fallback": true,
+    "runtime_snapshot": true,
+    "state_artifact_bundle": true,
+    "secret_redaction": true,
+    "E_A_automation_preserved": true
+  },
+  "installer": {
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510232_LOG_DOWNLOAD_FIX.bat",
+    "drive_file_id": "1RGyL795i2hYB1iYpWBaiRcK17i0HQ-bV",
+    "size_bytes": 202251,
+    "sha256": "c87b11fc3c9a3c817930e8ba6ecfaa7c7f910f564b53db29e667235dc7e4f333"
+  },
+  "validation": {
+    "self_extract_readback": "PASS",
+    "node_syntax": "PASS_42_OF_42",
+    "regression_suites": "PASS_18_OF_18",
+    "log_download": "PASS_18_ASSERTIONS",
+    "duplicate_execution_count": 0
+  },
+  "report": {
+    "path": "yolla-panel-v1/a0-successor-control/reports/A0_V510232_LOG_DOWNLOAD_BUILD_REPORT_V1.json",
+    "commit": "377e1cd6422b59e23190a9a14aa953fc73b95476"
+  },
+  "target_pc_observation": {
+    "installed": false,
+    "actual_log_download_observed": false
+  },
+  "next_gate": "INSTALL_AND_DOWNLOAD_AI_YOLLA_LOG_EXPORT_JSON",
+  "new_runtime": false,
+  "new_transport": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-05T01:09:00+09:00"
+}

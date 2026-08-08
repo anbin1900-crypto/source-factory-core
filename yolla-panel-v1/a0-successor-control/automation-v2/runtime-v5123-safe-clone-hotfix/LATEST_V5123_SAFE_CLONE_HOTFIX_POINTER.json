@@ -1,0 +1,80 @@
+{
+  "schema_version": "LATEST_V5123_SAFE_CLONE_HOTFIX_POINTER_V1",
+  "status": "INSTALLER_BUILD_PASS_TARGET_PC_REINSTALL_PENDING",
+  "version": "5.12.3-safe-clone-hotfix",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "observed_failure": {
+    "error": "ReferenceError: safeClone is not defined",
+    "location": "getRuntimeStatus -> group_epic_bootstrap",
+    "effect": "MAIN_PROCESS_EXCEPTION_AFTER_EPIC_SCHEDULE_MATERIALIZATION"
+  },
+  "documents": {
+    "contract": {
+      "path": "yolla-panel-v1/a0-successor-control/automation-v2/runtime-v5123-safe-clone-hotfix/OPERATION_CONTROL_CENTER_V5123_SAFE_CLONE_HOTFIX_CONTRACT.json",
+      "commit": "2d18365bc8f3ff3ab08edd1eb76f43f1e48143f5"
+    },
+    "patch": {
+      "path": "yolla-panel-v1/a0-successor-control/automation-v2/runtime-v5123-safe-clone-hotfix/V5123_SAFE_CLONE_HOTFIX.patch",
+      "commit": "7a5ec34d28bdc51028d75ed24dcb7ffc002c08b8"
+    },
+    "regression_test": {
+      "path": "yolla-panel-v1/a0-successor-control/automation-v2/runtime-v5123-safe-clone-hotfix/test_safe_clone_runtime_v5123.cjs",
+      "commit": "e478d8f2b5389b71b8afa5abfdeed4df63f23bcb",
+      "terminal": "V5123_SAFE_CLONE_RUNTIME_PASS"
+    },
+    "build_test_report": {
+      "path": "yolla-panel-v1/a0-successor-control/reports/A0_V5123_SAFE_CLONE_HOTFIX_BUILD_TEST_REPORT_V1.json",
+      "commit": "28bbea3e694e578bd39cb1d56f4a5997332700ba"
+    }
+  },
+  "artifacts": {
+    "installer": {
+      "file_name": "YOLLA_PANEL_V5123_SAFE_CLONE_HOTFIX_INSTALLER.zip",
+      "drive_file_id": "1L7bufKaQU92LiAol_L1xdNoqzqXsE25K",
+      "sha256": "d73af25b4fbc53d2bd7aaa1e94b817cac1a485a2dd5645557677b707232114d6",
+      "size_bytes": 204765,
+      "payload_file_count": 83,
+      "install_entry": "INSTALL_AI_YOLLA_PANEL_V5123_SAFE_CLONE_HOTFIX.bat"
+    },
+    "source": {
+      "file_name": "AI_YOLLA_PANEL_V5123_SAFE_CLONE_HOTFIX_SOURCE.zip",
+      "drive_file_id": "1iJyHg4rz0TwiequUxDCeRPcXc6UAhXa8",
+      "sha256": "b91091dff255b674a90fe8ffab9bd0d95726a43e50d2843697ef3d421f784477",
+      "size_bytes": 185932
+    }
+  },
+  "fixes": {
+    "safe_clone_defined": true,
+    "canonical_deep_clone_reused": true,
+    "undefined_fallback": true,
+    "clone_failure_fallback": true,
+    "main_process_crash_path_removed": true
+  },
+  "expected_after_install": {
+    "app_version": "5.12.3",
+    "main_process_exception_count": 0,
+    "group_epic_bootstrap_status_visible": true,
+    "active_schedule_id": "YOLLA-REAL-ESTATE-SITE-FOUNDATION-20260804-001",
+    "worker_count": 5,
+    "epic_count": 11
+  },
+  "validation": {
+    "node_syntax": "PASS_43_OF_43",
+    "test_suites": "PASS_20_OF_20",
+    "installer_package": "PASS_83_FILES",
+    "duplicate_execution_count": 0
+  },
+  "runtime_observation": {
+    "target_pc_install_observed": false,
+    "main_process_recovery_observed": false,
+    "actual_five_worker_dispatch_observed": false
+  },
+  "new_runtime": false,
+  "new_transport": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-04T13:35:00+09:00"
+}

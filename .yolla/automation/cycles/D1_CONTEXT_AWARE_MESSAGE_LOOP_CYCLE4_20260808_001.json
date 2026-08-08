@@ -1,0 +1,134 @@
+{
+  "schema_version": "C_MODE_CYCLE4_COMPLETED_WORKERS_BATCH_V1",
+  "rule_id": "YOLLA_C_MODE_RULES_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE4-20260808-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "mode": "CYCLE_BATCH_PARALLEL",
+  "policy": "YOLLA_EFFICIENCY_RATIONALITY_SPEED_FIRST_OPERATING_POLICY_V1",
+  "selection_policy": "ONLY_NEWLY_COMPLETED_ACCEPTED_WORKERS",
+  "active_workers": [
+    "AUTOMATION-C-W2",
+    "AUTOMATION-C-W5"
+  ],
+  "not_assigned": {
+    "AUTOMATION-C-W3": "CYCLE3_DIRECTIVE_ALREADY_OPEN_NO_NEW_TERMINAL",
+    "AUTOMATION-C-W4": "CYCLE2_LIVE_OBSERVER_TERMINAL_NOT_FOUND",
+    "AUTOMATION-C-W6": "CYCLE3_DIRECTIVE_ALREADY_OPEN_NO_NEW_TERMINAL"
+  },
+  "accepted_inputs": {
+    "AUTOMATION-C-W2": {
+      "result_comment_id": 5220605238,
+      "result_commit": "0264206865159f9ca928ffc4264859d9218f81f0",
+      "handoff_commit": "72b152dc0ae356a66f82040a0ec655756b5bce12",
+      "pointer_commit": "69635bdf78f577d021ac6069c5cd4a17531fa0c5",
+      "terminal": "LIVE_CONTEXT_HANDOFF_AND_FRESHNESS_GUARD_PASS"
+    },
+    "AUTOMATION-C-W5": {
+      "result_comment_id": 5220495657,
+      "result_commit": "e907409e56d11d88fd98278276610060137db052",
+      "terminal": "D2_LIVE_RECOVERY_INGESTION_AND_METRIC_CLOSURE_PASS"
+    },
+    "D3_LIVE_INPUT": {
+      "result_comment_id": 5220688575,
+      "result_commit": "500a9a318fdc3d61032319ca70960d8114e244b5",
+      "terminal": "MESSAGE_DISPATCH_AND_RESULT_RETURN_LIVE_PASS",
+      "assistant_reply_sha256": "2ba4efbee5d42a71be9e9ae28db1b1145fed04b9657efef63a2bcce02e3b347a"
+    }
+  },
+  "common": {
+    "assignment_includes_execution_authority": true,
+    "one_owner_end_to_end": true,
+    "new_system_build": false,
+    "reuse_first": true,
+    "same_failure_signature_repeat_limit": 2,
+    "delivery_state_initial": "GITHUB_DIRECTIVE_POSTED",
+    "queue_registered": false,
+    "claimed": false
+  },
+  "assignments": [
+    {
+      "worker_id": "AUTOMATION-C-W2",
+      "role": "D-2_CONTEXT_REGISTRY_AND_ACTIVE_WORKER_OWNER",
+      "worker_pr": 81,
+      "directive_id": "C4-W2-JUST-IN-TIME-CONTEXT-LEASE-RENEWAL-LIVE-V1-20260808-001",
+      "priority": "P0",
+      "goal": "기존 Live Context Handoff를 D-3·D-4·D-6 소비 직전에 안전하게 갱신할 수 있는 재사용 가능한 Context Lease로 확장한다.",
+      "reuse_first": [
+        "PR81_RESULT@0264206865159f9ca928ffc4264859d9218f81f0",
+        "PR81_HANDOFF@72b152dc0ae356a66f82040a0ec655756b5bce12",
+        "PR81_POINTER@69635bdf78f577d021ac6069c5cd4a17531fa0c5",
+        "EXISTING_WINDOWS_UI_AUTOMATION"
+      ],
+      "required_actions": [
+        "현재 Handoff의 stale_after_seconds를 보존하고 소비 요청 시점에 exact CONTEXT_ID, PAGE_ID, ROLE_ID, cycle marker를 재검증한다.",
+        "fresh 입력은 동일 lease generation으로 반환하고 stale 입력은 다른 Context를 선택하지 않은 채 exact page reselect 후 한 번 갱신한다.",
+        "갱신 성공 시 monotonically increasing lease_generation, observed_at, expires_at, binding_method와 consumer correlation을 기록한다.",
+        "marker 또는 Context 불일치는 fail-closed하고 misbinding count를 0으로 유지한다.",
+        "서로 다른 기존 소비자 D-3와 D-6 요청 2건에서 Live lease 발급 또는 갱신을 검증한다.",
+        "신규 Executor, Tunnel, Transport 없이 결과 Commit, Pointer와 C모드 답장을 게시한다."
+      ],
+      "acceptance": [
+        "actual consumer lease request 2/2",
+        "fresh or renewed exact-context lease 2/2",
+        "monotonic lease generation PASS",
+        "stale and mismatch fail-closed PASS",
+        "misbinding count 0",
+        "new Executor/Tunnel/Transport 0"
+      ],
+      "forbidden": [
+        "후보 Context 임의 선택",
+        "stale Handoff 무검증 재사용",
+        "9222를 ChatGPT Chrome으로 가정",
+        "Mock-only Live PASS",
+        "신규 실행기·터널·전송계층"
+      ],
+      "expected_terminal": "JUST_IN_TIME_CONTEXT_LEASE_RENEWAL_LIVE_PASS_OR_BLOCKED_EXTERNAL_CONFIRMED"
+    },
+    {
+      "worker_id": "AUTOMATION-C-W5",
+      "role": "D-5_AUTOMATION_EVENT_LOG_AND_IMPROVEMENT_OWNER",
+      "worker_pr": 40,
+      "directive_id": "C4-W5-D2-FRESHNESS-AND-D3-DISPATCH-EVENT-INGESTION-V1-20260808-001",
+      "priority": "P0",
+      "goal": "D-2 Cycle3 freshness PASS와 D-3 실제 메시지 발송·답장회수 PASS를 기존 append-only Event Store에 증분 수용해 Context와 Dispatch 단계 지표를 갱신한다.",
+      "reuse_first": [
+        "PR40_RESULT@e907409e56d11d88fd98278276610060137db052",
+        "PR40_EVENT_STORE_BLOB@8ae79e40725447ff55ea8d166d2a4441587a8de4",
+        "D2_CYCLE3_RESULT_COMMENT@5220605238",
+        "D3_LIVE_RESULT_COMMENT@5220688575",
+        "D3_LIVE_RESULT_COMMIT@500a9a318fdc3d61032319ca70960d8114e244b5"
+      ],
+      "required_actions": [
+        "D-2 Cycle3 Context freshness 결과를 기존 D-2 lineage에 append하고 과거 Event를 수정하지 않는다.",
+        "D-3 MESSAGE_SENT와 ASSISTANT_REPLY_RECOVERED를 COMMAND_ID, CONTEXT_ID, PAGE_ID, reply SHA-256에 결속해 실제 Event로 append한다.",
+        "context freshness latency, message-to-reply latency, dispatch success count, recovered worker count와 remaining open blocker count를 실제 시각으로 계산한다.",
+        "D-4와 D-6 완료는 추정하지 않고 기존 open 상태를 유지한다.",
+        "duplicate, order reversal, restart restore와 nonblocking writer를 검증한다.",
+        "기존 Event Store 변경 0을 확인하고 결과 Commit, Pointer와 C모드 답장을 게시한다."
+      ],
+      "acceptance": [
+        "D2 Cycle3 actual freshness event ingested",
+        "D3 actual MESSAGE_SENT and reply-recovered events ingested",
+        "exact command/context/page/reply correlation PASS",
+        "derived metrics use actual timestamps only",
+        "upstream event store mutation 0",
+        "D4/D6 completion inference 0",
+        "duplicate/order/restart/nonblocking PASS"
+      ],
+      "forbidden": [
+        "기존 Event 덮어쓰기",
+        "합성 Receipt 또는 합성 시각",
+        "D-4·D-6 완료 추정",
+        "Writer로 실행 차단",
+        "D-3 Cycle3 완료 추정"
+      ],
+      "expected_terminal": "D2_FRESHNESS_AND_D3_DISPATCH_EVENT_INGESTION_PASS"
+    }
+  ],
+  "reply_contract": "C_MODE_WORKER_REPLY",
+  "commander_verification_required": true,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

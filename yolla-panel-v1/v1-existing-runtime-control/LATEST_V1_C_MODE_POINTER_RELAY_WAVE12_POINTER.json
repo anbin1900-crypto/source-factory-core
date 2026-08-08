@@ -1,0 +1,84 @@
+{
+  "schema_version": "LATEST_V1_C_MODE_POINTER_RELAY_WAVE12_POINTER_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-012",
+  "registry_sequence": 12,
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "review_and_directive": {
+    "md_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave12/C_MODE_WAVE11_REVIEW_AND_WAVE12_DIRECTIVE_V1.md",
+    "md_commit": "7a677d97f81c46c277edc8df2c6fa1f6973871bd",
+    "json_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave12/C_MODE_WAVE11_REVIEW_AND_WAVE12_DIRECTIVE_V1.json",
+    "json_commit": "41121b0d5596a37b374450b1d1f1abcb054b7aee"
+  },
+  "publication_receipt": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave12/C_MODE_WAVE12_PUBLICATION_RECEIPT_V1.json",
+    "commit": "2549d0dcd73ffef9e76c9bc6d4a4ec8e3c79f0ee"
+  },
+  "wave11_review": {
+    "registry_comment": 5194861923,
+    "valid_correlated_reports": 6,
+    "missing_reports": 0,
+    "duplicate_results": 0,
+    "replacement_required": 0,
+    "w3_carryover_closed": true,
+    "results": {
+      "AUTOMATION-C-W1": {"result_comment": 5194951700, "result_commit": "34eb98aa5f76c944d68261b4546b57ea81e1a5b8", "outcome": "BLOCKED_EXECUTABLE_SOURCE_CLASSES_MISSING"},
+      "AUTOMATION-C-W2": {"result_comment": 5194934304, "result_commit": "375227bf41fe01a664ae699b7e258069955620e2", "outcome": "PASS_ARTIFACT_CONTENT_GATE"},
+      "AUTOMATION-C-W3": {"result_comment": 5194984232, "result_commit": "8345de884b750b91a26f538e98c58847c6eb2e39", "outcome": "PASS_OFFLINE_TARGET_PC_PENDING", "source_wave": "V1-C-MODE-6W-WAVE-009"},
+      "AUTOMATION-C-W4": {"result_comment": 5194957912, "result_commit": "493b7884a966ffa93537cb2b7d74c3f83fbbc225", "outcome": "BLOCKED_WAITING_CORRECTED_RC4_PACKAGE"},
+      "AUTOMATION-C-W5": {"result_comment": 5194936814, "result_commit": "f0235125a629867020cd17573048f540ff67d8a1", "outcome": "BLOCKED_EXECUTABLE_SOURCE_CLASSES_MISSING"},
+      "AUTOMATION-C-W6": {"result_comment": 5194921717, "result_commit": "a0e9e84639a9cf388464ded43957b2c007708814", "outcome": "BLOCKED_WAITING_CORRECTED_RC4_PACKAGE"}
+    }
+  },
+  "exact_remaining_gap": {
+    "missing_component_classes": [
+      "BACKGROUND_BROWSER_DISPATCH_AND_WORK_CONTROL_LOG",
+      "INSTALLER_LAUNCHER_SMOKE_ROLLBACK"
+    ],
+    "missing_executable_capabilities": [
+      "BACKGROUND_BROWSER_DISPATCH",
+      "WORK_CONTROL_EVENT_LOGGING",
+      "ROLLBACK_RUNTIME",
+      "LAUNCHER_SWITCH_AFTER_SMOKE"
+    ],
+    "missing_preexisting_source_is_external_blocker": false,
+    "single_implementation_owner": "AUTOMATION-C-W5"
+  },
+  "wave12_registry": {
+    "comment_id": 5195196731,
+    "previous_registry_comment": 5194861923,
+    "worker_count": 6,
+    "carryover_count": 0,
+    "dispatch_mode": "CYCLE_BATCH_PARALLEL",
+    "all_rows_valid_before_any_dispatch": true,
+    "partial_dispatch": false,
+    "same_sequence_duplicate": "FAIL_CLOSED"
+  },
+  "worker_bindings": {
+    "AUTOMATION-C-W1": {"pr": 59, "directive_comment": 5195168219, "result_key": "519516821900", "command_id": "C6W-W12-W1-EXECUTABLE-SOURCE-INVENTORY-LOCK-V5"},
+    "AUTOMATION-C-W2": {"pr": 60, "directive_comment": 5195170358, "result_key": "519517035800", "command_id": "C6W-W12-W2-RUNTIME-TECHNICAL-ACCEPTANCE-GATE"},
+    "AUTOMATION-C-W3": {"pr": 61, "directive_comment": 5195172641, "result_key": "519517264100", "command_id": "C6W-W12-W3-UI-PAYLOAD-EVIDENCE-INTEGRATION"},
+    "AUTOMATION-C-W4": {"pr": 62, "directive_comment": 5195175006, "result_key": "519517500600", "command_id": "C6W-W12-W4-CONNECTOR-BYTE-PREFLIGHT-ACCEPTANCE"},
+    "AUTOMATION-C-W5": {"pr": 63, "directive_comment": 5195177693, "result_key": "519517769300", "command_id": "C6W-W12-W5-EXECUTABLE-GAP-CLOSURE-RC4-BUILD", "integration_owner": true},
+    "AUTOMATION-C-W6": {"pr": 64, "directive_comment": 5195180251, "result_key": "519518025100", "command_id": "C6W-W12-W6-NONBLOCKING-SUBSTANTIVE-AUDIT", "implementation_direct_edit": false, "blocking": false}
+  },
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "target_version": "5.10.2.4.2-rc4",
+  "current_progress_percent": 96,
+  "progress_increase_withheld_reason": "REAL_INSTALLABLE_RUNTIME_NOT_YET_BUILT",
+  "next_gate": "SIX_WAVE12_RESULTS_AND_REAL_INSTALLABLE_RC4_BYTE_THEN_TARGET_PC_ACCEPTANCE",
+  "target_pc_pass": "PENDING",
+  "six_workers_three_waves": "PENDING_TARGET_PC",
+  "restart_resume": "PENDING_TARGET_PC",
+  "log_loss_zero": "PENDING_TARGET_PC",
+  "login_profile_preserved": "PENDING_TARGET_PC_READBACK",
+  "a_e_reintroduction_count": 0,
+  "auto_test_write_count": 0,
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

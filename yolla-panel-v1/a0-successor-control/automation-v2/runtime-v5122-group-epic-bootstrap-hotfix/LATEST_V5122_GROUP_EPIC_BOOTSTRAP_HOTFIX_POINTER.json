@@ -1,0 +1,81 @@
+{
+  "schema_version": "LATEST_V5122_GROUP_EPIC_BOOTSTRAP_HOTFIX_POINTER_V1",
+  "status": "INSTALLER_BUILD_PASS_TARGET_PC_REINSTALL_PENDING",
+  "version": "5.12.2-group-epic-bootstrap-hotfix",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "diagnostic_input": {
+    "schema_version": "YOLLA_PANEL_ACTIVITY_MONITOR_V1",
+    "exported_at": "2026-08-04T04:11:14.165Z",
+    "overall_state": "ERROR",
+    "observed_active_schedule": "REAL-ESTATE-CYCLE-001",
+    "observed_worker_count": 3,
+    "observed_error": "source.commit_sha must be 40 hex"
+  },
+  "root_cause": "GROUP_EPIC_BOOTSTRAP_SOURCE_FIELD_MISMATCH",
+  "documents": {
+    "contract": {
+      "path": "yolla-panel-v1/a0-successor-control/automation-v2/runtime-v5122-group-epic-bootstrap-hotfix/OPERATION_CONTROL_CENTER_V5122_HOTFIX_CONTRACT.json",
+      "commit": "f3694712eafe47d2d0199bfe6c3ee9400651195a"
+    },
+    "mapping_test": {
+      "path": "yolla-panel-v1/a0-successor-control/automation-v2/runtime-v5122-group-epic-bootstrap-hotfix/testGroupEpicBootstrapV5122.js",
+      "commit": "667b306ea73a48aa47f7271016ecc2e9b7ee75f7",
+      "terminal": "V5122_GROUP_EPIC_BOOTSTRAP_SOURCE_MAPPING_PASS"
+    },
+    "build_test_report": {
+      "path": "yolla-panel-v1/a0-successor-control/reports/A0_V5122_GROUP_EPIC_BOOTSTRAP_HOTFIX_BUILD_TEST_REPORT_V1.json",
+      "commit": "96ea31467875433d7026d63c2a6ad4731fde1787"
+    }
+  },
+  "artifacts": {
+    "installer": {
+      "file_name": "YOLLA_PANEL_V5122_GROUP_EPIC_BOOTSTRAP_HOTFIX_INSTALLER.zip",
+      "drive_file_id": "140Vjtav9idJpDlhyqipO6zqKxTbhrFq6",
+      "sha256": "386bcfd97ace299445421a62cb698809f43e4b31d916ddad7d1cee45f8252e9e",
+      "size_bytes": 196627,
+      "payload_file_count": 78,
+      "install_entry": "INSTALL_AI_YOLLA_PANEL_V5122_GROUP_EPIC_BOOTSTRAP_HOTFIX.bat"
+    },
+    "source": {
+      "file_name": "AI_YOLLA_PANEL_V5122_GROUP_EPIC_BOOTSTRAP_HOTFIX_SOURCE.zip",
+      "drive_file_id": "1RAmspek9_ZcrO9TebGPj-xZnHf1L4m0F",
+      "sha256": "1b5c9c0de2882a01a54b5b33a2c670b90c54bbd2d8de2f6d918f957637e220bb",
+      "size_bytes": 176810
+    }
+  },
+  "fixes": {
+    "epic_commit_sha_to_source_commit_sha": true,
+    "epic_file_path_to_source_epic_file_path": true,
+    "epic_sha256_to_source_epic_sha256": true,
+    "stale_group_registry_rebuild": true,
+    "registered_schedule_pointer_reactivation": true,
+    "bootstrap_status_visible_in_monitor": true,
+    "bootstrap_failure_anomaly": true,
+    "inactive_epic_schedule_anomaly": true
+  },
+  "expected_after_install": {
+    "active_schedule_id": "YOLLA-REAL-ESTATE-SITE-FOUNDATION-20260804-001",
+    "worker_count": 5,
+    "epic_count": 11,
+    "initial_ready_workers": ["B-2", "B-3", "B-4", "B-5", "B-6"]
+  },
+  "validation": {
+    "node_syntax": "PASS_42_OF_42",
+    "test_suites": "PASS_19_OF_19",
+    "installer_package": "PASS_78_FILES",
+    "duplicate_execution_count": 0
+  },
+  "runtime_observation": {
+    "target_pc_install_observed": false,
+    "bootstrap_pass_observed": false,
+    "actual_five_worker_dispatch_observed": false
+  },
+  "new_runtime": false,
+  "new_transport": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-04T13:13:00+09:00"
+}

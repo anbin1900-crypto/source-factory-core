@@ -1,0 +1,137 @@
+{
+  "schema_version": "C_MODE_CYCLE2_D2_D4_D6_ASSIGNMENT_V1",
+  "rule_id": "YOLLA_C_MODE_RULES_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE2-20260808-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "mode": "CYCLE_BATCH_PARALLEL",
+  "policy": "YOLLA_EFFICIENCY_RATIONALITY_SPEED_FIRST_OPERATING_POLICY_V1",
+  "active_workers": ["AUTOMATION-C-W2", "AUTOMATION-C-W4", "AUTOMATION-C-W5", "AUTOMATION-C-W6"],
+  "excluded_workers": {
+    "AUTOMATION-C-W3": {
+      "active": false,
+      "reason": "USER_DIRECTIVE_EXCLUDED_DUE_TO_EXCESSIVE_DURATION",
+      "dependency_gate": false
+    }
+  },
+  "common": {
+    "assignment_includes_execution_authority": true,
+    "one_owner_end_to_end": true,
+    "new_system_build": false,
+    "reuse_first": true,
+    "sequential_wait_for_d3": false,
+    "same_failure_signature_repeat_limit": 2,
+    "delivery_state_initial": "GITHUB_DIRECTIVE_POSTED",
+    "queue_item_id": null,
+    "claim_receipt_id": null
+  },
+  "assignments": [
+    {
+      "worker_id": "AUTOMATION-C-W2",
+      "role": "D-2_CONTEXT_REGISTRY_AND_ACTIVE_WORKER_OWNER",
+      "worker_pr": 81,
+      "directive_id": "C2-W2-EXECUTOR-CLAIM-RECOVERY-AND-EXACT-CONTEXT-LIVE-V1-20260808-001",
+      "priority": "P0",
+      "goal": "D-3을 기다리지 않고 기존 PC Executor V2 claim loop의 실제 상태를 재확인·복구하고 이미 배포된 exact probe로 단일 Context identity Live Receipt를 완성한다.",
+      "scope": "기존 PR81 Context Registry, PR22 Page Registry, PR38 ViewModel, 이미 배포된 D2 exact probe와 PC Operation Command Bus V2만 사용한다.",
+      "reuse_first": ["PR81@f4a7b60d70fed4feeefb7e9c0278c97456c4950d", "PR22_PAGE_REGISTRY", "PR38_VIEWMODEL", "D2_ACTIVE_CONTEXT_PROBE_CYCLE1_EXACT.js", "PC_EXECUTOR_V2"],
+      "required_actions": [
+        "현재 claim loop와 기존 unclaimed command 상태를 새 시각 증거로 읽는다.",
+        "담당 범위에서 가능한 service/process/queue 복구와 안전한 재시도를 수행한다.",
+        "D-3 산출물이나 D-3 완료를 입력 Gate로 사용하지 않고 D-2 exact probe만으로 실행한다.",
+        "후보 4개 중 역할·cycle marker가 정확히 결속된 하나만 선택하고 CONTEXT_ID, CONTEXT_NAME, PAGE_ID를 Receipt로 고정한다.",
+        "동일 실패 2회 후 실행순서, wrapper 또는 probe 방법을 변경한다.",
+        "결과와 Remote pointer를 게시한다."
+      ],
+      "acceptance": [
+        "ACTIVE_CONTEXT_IDENTIFICATION_LIVE_PASS 및 불변 Target-PC Receipt",
+        "세 필드 CONTEXT_ID, CONTEXT_NAME, PAGE_ID가 null이 아님",
+        "오결속·신규 Executor·신규 Tunnel·D-3 대기 0"
+      ],
+      "forbidden": ["후보 Context 임의 선택", "신규 Transport 구축", "Mock만으로 Live PASS", "첫 실패 후 BLOCKED 종결"],
+      "expected_terminal": "ACTIVE_CONTEXT_IDENTIFICATION_LIVE_PASS_OR_BLOCKED_EXTERNAL_CONFIRMED"
+    },
+    {
+      "worker_id": "AUTOMATION-C-W4",
+      "role": "D-4_CHROME_WORKER_STATE_OBSERVER_OWNER",
+      "worker_pr": 22,
+      "directive_id": "C2-W4-TARGET-PC-OBSERVER-ADAPTER-LIVE-V1-20260808-001",
+      "priority": "P0",
+      "goal": "기존 Browser Agent 32100 경계에 Observer V2 Live Runner를 결속해 D-3 없이 실제 ChatGPT Page의 WORKING·COMPLETED·ERROR 관측 경로를 검증한다.",
+      "scope": "PR22 Observer V2와 Live Runner, 기존 Browser Agent 32100, localhost-only CDP 9222를 재사용한다.",
+      "reuse_first": ["PR22_RESULT_COMMIT@f1ba518fcfde8490ce8c9bfa855814d8836ba0bc", "WORKER_COMPLETION_OBSERVER_V2.cjs", "LIVE_CHATGPT_COMPLETION_RUNNER_V1.cjs", "BROWSER_AGENT_32100", "CDP_9222_LOCALHOST_ONLY"],
+      "required_actions": [
+        "현재 실행문맥 localhost probe를 반복하지 말고 승인된 기존 Target-PC 실행경계에 runner를 결속한다.",
+        "D-2 Context Receipt가 아직 없으면 Page URL·page marker 기반 안전한 단일 관측 Fixture를 실행하되 메시지는 발송하지 않는다.",
+        "streaming 중 WORKING, 안정 digest 후 COMPLETED, 명시 오류 시 ERROR를 실제 Page에서 관측한다.",
+        "32100 접근과 9222 localhost-only 보존을 동시에 증명한다.",
+        "실패 시 adapter 호출방식 또는 실행위치를 변경해 재시도한다.",
+        "Live Receipt와 Remote pointer를 게시한다."
+      ],
+      "acceptance": [
+        "실제 ChatGPT Page에서 상태전이 Receipt",
+        "streaming 중간 DOM 완료 오판 0",
+        "CDP 외부노출·신규 Browser Engine·D-3 대기 0"
+      ],
+      "forbidden": ["CDP 9222 외부노출", "신규 Browser Engine", "Fixture만으로 Live PASS", "현재 세션 localhost ECONNREFUSED 반복만으로 종결"],
+      "expected_terminal": "CHROME_REPLY_COMPLETION_LIVE_PASS_OR_BLOCKED_EXTERNAL_CONFIRMED"
+    },
+    {
+      "worker_id": "AUTOMATION-C-W5",
+      "role": "D-5_AUTOMATION_EVENT_LOG_AND_IMPROVEMENT_OWNER",
+      "worker_pr": 40,
+      "directive_id": "C2-W5-REAL-RECEIPT-INGESTION-AND-BLOCKER-METRICS-V1-20260808-001",
+      "priority": "P0",
+      "goal": "Cycle1 정적 Smoke를 넘어 D-2·D-4·D-6의 실제 결과 Receipt를 append-only Event Store에 수용하고 지연·차단·재시도 지표를 생성한다.",
+      "scope": "PR40 기존 Event Store Blob을 보존하고 Cycle1 D-5 모듈에 실제 Receipt ingestion adapter만 추가한다.",
+      "reuse_first": ["PR40_EVENT_STORE_BLOB@8ae79e40725447ff55ea8d166d2a4441587a8de4", "D5_CYCLE1@97295682f4819968bc14496f8f27f2474d5f4a58", "PR81_D2_RESULT", "PR22_D4_RESULT", "PR80_D6_RESULT"],
+      "required_actions": [
+        "D-2·D-4·D-6 결과 형식을 공통 8필드 Event로 정규화한다.",
+        "BLOCKED_EXTERNAL, CLAIM_STALLED, ADAPTER_UNAVAILABLE, LIVE_RESUMED를 원문 변조 없이 projection한다.",
+        "실제 Cycle1 결과 3건을 replay 입력으로 사용해 중복·순서역전·재시작 복원을 검증한다.",
+        "워커별 벽시계 지연, blocker duration, retry-to-recovery, D-3 비의존 진행률을 계산한다.",
+        "Writer는 비차단을 유지하고 기존 Blob을 수정하지 않는다.",
+        "결과와 Remote pointer를 게시한다."
+      ],
+      "acceptance": [
+        "실제 결과 Receipt 3종 ingestion PASS",
+        "append-only·restart·duplicate·order guard PASS",
+        "Cycle2 개선지표에 blocker duration과 recovery latency 포함",
+        "기존 Event Store Blob 변경·D-3 대기 0"
+      ],
+      "forbidden": ["기존 Blob 수정", "합성 Receipt만으로 PASS", "로그 Writer로 실행 차단", "D-3 완료 대기"],
+      "expected_terminal": "CYCLE2_REAL_RECEIPT_INGESTION_AND_BLOCKER_METRICS_PASS"
+    },
+    {
+      "worker_id": "AUTOMATION-C-W6",
+      "role": "D-6_AUTOMATION_CONTROL_PANEL_AND_E2E_OWNER",
+      "worker_pr": 80,
+      "directive_id": "C2-W6-D2-D4-D5-PARTIAL-LIVE-INTEGRATION-V1-20260808-001",
+      "priority": "P0",
+      "goal": "D-3 메시지 발송 단계를 제외한 D-2 Context 식별→D-4 관측→D-5 로그→Panel 표시의 부분 Live 통합을 완성해 전체 E2E의 남은 단일 결손을 명확히 한다.",
+      "scope": "PR80 상태기계와 SAFE Panel·ViewModel·Activity Monitor를 유지하고 D-2·D-4·D-5 최신 Receipt를 late-bind한다.",
+      "reuse_first": ["PR80@913fb4128cd746f6ad2d8168446b6f027eab1bc9", "SAFE_PANEL_PR2", "VIEWMODEL_PR38", "ACTIVITY_MONITOR_PR17", "D2_D4_D5_CYCLE2_RECEIPTS"],
+      "required_actions": [
+        "D-3을 기다리지 않고 D-2·D-4·D-5 Receipt의 late-binding adapter를 실행한다.",
+        "Context identity, observer state, event metrics, blocker 상태를 11개 Panel 필드에 표시한다.",
+        "메시지 발송이 없을 때 COMPLETED를 합성하지 않고 DISPATCH_MISSING 상태로 fail-closed한다.",
+        "가용한 Target-PC 실행경계가 있으면 부분 Live loop를 실행하고 Receipt를 회수한다.",
+        "실패 시 adapter binding 또는 실행위치를 변경해 재시도한다.",
+        "전체 E2E의 남은 결손이 D-3 dispatch 하나인지 계약·실행 증거로 판정하고 결과를 게시한다."
+      ],
+      "acceptance": [
+        "D-2→D-4→D-5→Panel 부분 Live 또는 정확한 외부차단 Receipt",
+        "Panel 필드 11/11 실제 최신 Receipt 기반",
+        "합성 COMPLETED·신규 Panel·신규 Executor·D-3 대기 0",
+        "남은 결손 목록이 실행 증거로 정확히 1개 이하"
+      ],
+      "forbidden": ["D-3 작업을 무단 재구현", "합성 메시지 발송 또는 COMPLETED", "신규 Panel·Executor·Tunnel", "오프라인 5/5 재보고만으로 종결"],
+      "expected_terminal": "D2_D4_D5_PARTIAL_LIVE_INTEGRATION_PASS_OR_BLOCKED_EXTERNAL_CONFIRMED"
+    }
+  ],
+  "reply_contract": "C_MODE_WORKER_REPLY",
+  "commander_verification_required": true,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

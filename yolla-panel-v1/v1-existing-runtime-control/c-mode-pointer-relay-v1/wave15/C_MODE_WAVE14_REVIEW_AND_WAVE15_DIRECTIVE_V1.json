@@ -1,0 +1,58 @@
+{
+  "schema_version": "C_MODE_WAVE14_REVIEW_AND_WAVE15_DIRECTIVE_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "previous_wave": "V1-C-MODE-6W-WAVE-014",
+  "wave_id": "V1-C-MODE-6W-WAVE-015",
+  "registry_sequence": 15,
+  "owner": "V-1",
+  "mode": "EXACT_BLOB_PACKAGE_AND_TARGET_TIME_BASELINE_RESOLUTION",
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc6",
+  "wave14_review": {
+    "reported": 6,
+    "missing": 0,
+    "duplicate_result": 0,
+    "results": {
+      "AUTOMATION-C-W1": {"result_comment": 5196728251, "result_commit": "9b20426bd8983462577c6763e87e945429ca8d71", "reported_outcome": "BLOCKED", "commander_acceptance": "MAP_PASS_BLOCKER_NOT_FINAL"},
+      "AUTOMATION-C-W2": {"result_comment": 5196647746, "result_commit": "e98b86bfbfb41bf81b737a56056677fb8f9f575c", "reported_outcome": "PASS", "commander_acceptance": "PASS_GATE_SCOPE"},
+      "AUTOMATION-C-W3": {"result_comment": 5196694708, "result_commit": "4eee173f5ad5ab3613bea43cadd27cf2330cec4f", "reported_outcome": "PASS", "commander_acceptance": "PASS_OFFLINE_SCOPE"},
+      "AUTOMATION-C-W4": {"result_comment": 5196612369, "result_commit": "661f900629e3f239cca6c5eea5b4f805e5672ea1", "reported_outcome": "BLOCKED", "commander_acceptance": "VALIDATOR_REUSABLE_POSITIVE_INPUT_PENDING"},
+      "AUTOMATION-C-W5": {"result_comment": 5196617821, "result_commit": "4bfbe00403e832d9d9e2fe67121646ddfe9d3150", "reported_outcome": "BLOCKED", "commander_acceptance": "BLOCKER_REJECTED_ALTERNATIVE_BLOB_API_AVAILABLE"},
+      "AUTOMATION-C-W6": {"result_comment": 5196614410, "result_commit": "3ba0a6f376fac8bb223f83b27dcadd94c93e3852", "reported_outcome": "FAIL", "commander_acceptance": "PASS_NEGATIVE_AUDIT_SCOPE"}
+    }
+  },
+  "commander_method_correction": {
+    "github_blob_api_available": true,
+    "verified_blob_sha": "2db157e02008f64ef8fba22f58047b80953ab26d",
+    "verified_component": "C_RUNTIME_STATE_MACHINE",
+    "raw_github_dns_required": false,
+    "mounted_checkout_required": false,
+    "launcher_byte_readback_at_install_time": true,
+    "base_release_explicit_parameter_allowed": true,
+    "base_release_exactly_one_discovery_allowed": true,
+    "base_release_guessing": false
+  },
+  "wave15_assignments": {
+    "AUTOMATION-C-W1": {"command_id": "C6W-W15-W1-TARGET-PC-RUNTIME-LOCATOR-BASELINE-RESOLVER", "task": "IMPLEMENT_VALIDATED_BASE_RELEASE_AND_LAUNCHER_RUNTIME_RESOLUTION"},
+    "AUTOMATION-C-W2": {"command_id": "C6W-W15-W2-EXACT-BLOB-PACKAGE-POSITIVE-GATE", "task": "VALIDATE_EXACT_17_BLOBS_AND_TARGET_TIME_RESOLUTION"},
+    "AUTOMATION-C-W3": {"command_id": "C6W-W15-W3-EXACT-UI-BLOB-BUNDLE-HOOK-RECEIPT", "task": "PUBLISH_EXACT_UI_BLOB_INPUTS_AND_HOOK_ROLLBACK"},
+    "AUTOMATION-C-W4": {"command_id": "C6W-W15-W4-BLOB-FED-RC6-OFFLINE-ACCEPTANCE", "task": "RUN_FULL_OFFLINE_ACCEPTANCE_ON_RC6"},
+    "AUTOMATION-C-W5": {"command_id": "C6W-W15-W5-EXACT-17-BLOB-SELF-CONTAINED-RC6", "task": "BUILD_REAL_EXACT_SOURCE_RC6_WITH_GITHUB_BLOB_API", "integration_owner": true},
+    "AUTOMATION-C-W6": {"command_id": "C6W-W15-W6-INDEPENDENT-RC6-AUDIT", "task": "INDEPENDENT_EXACT_BLOB_AND_RUNTIME_EFFECT_AUDIT", "implementation_direct_edit": false}
+  },
+  "registry_plan": {
+    "worker_count": 6,
+    "all_rows_valid_before_any_dispatch": true,
+    "partial_dispatch": false,
+    "same_sequence_duplicate": "FAIL_CLOSED",
+    "result_key_rule": "DIRECTIVE_COMMENT_STRING_PLUS_ASCII_00"
+  },
+  "current_progress_percent": 96,
+  "progress_increase_withheld_reason": "EXACT_RC6_PACKAGE_NOT_YET_BUILT",
+  "target_pc_pass": "PENDING",
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

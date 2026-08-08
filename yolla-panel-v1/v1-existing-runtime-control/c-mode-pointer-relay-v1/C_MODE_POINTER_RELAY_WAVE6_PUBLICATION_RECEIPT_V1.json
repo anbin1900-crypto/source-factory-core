@@ -1,0 +1,82 @@
+{
+  "schema_version": "C_MODE_POINTER_RELAY_WAVE6_PUBLICATION_RECEIPT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-006",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "contract": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/C_MODE_DIRECTIVE_RESULT_KEY_RELAY_CONTRACT_V1.md",
+    "commit": "96852cbdb40752a6e63eb00b45c7355ff7428f4d"
+  },
+  "directive": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/C_MODE_POINTER_RELAY_ADDITIVE_WAVE6_DIRECTIVE_V1.md",
+    "commit": "e5764ad523ba782ae66050062976702cd7c2fa00"
+  },
+  "registry": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/C_MODE_POINTER_RELAY_WAVE6_REGISTRY_V1.json",
+    "commit": "89c6287a9508307ae76f76a24dff1d2d09ae53b4",
+    "control_comment_id": 5193471047
+  },
+  "worker_directives": {
+    "AUTOMATION-C-W1": {
+      "pr": 59,
+      "comment_id": 5193410427,
+      "result_key": "519341042700",
+      "binding_update": "PASS"
+    },
+    "AUTOMATION-C-W2": {
+      "pr": 60,
+      "comment_id": 5193421124,
+      "result_key": "519342112400",
+      "binding_update": "PASS"
+    },
+    "AUTOMATION-C-W3": {
+      "pr": 61,
+      "comment_id": 5193432735,
+      "result_key": "519343273500",
+      "binding_update": "PASS"
+    },
+    "AUTOMATION-C-W4": {
+      "pr": 62,
+      "comment_id": 5193441544,
+      "result_key": "519344154400",
+      "binding_update": "PASS"
+    },
+    "AUTOMATION-C-W5": {
+      "pr": 63,
+      "comment_id": 5193451478,
+      "result_key": "519345147800",
+      "binding_update": "PASS"
+    },
+    "AUTOMATION-C-W6": {
+      "pr": 64,
+      "comment_id": 5193460631,
+      "result_key": "519346063100",
+      "binding_update": "PASS"
+    }
+  },
+  "dispatch": {
+    "mode": "CYCLE_BATCH_PARALLEL",
+    "worker_count": 6,
+    "registry_status": "READY",
+    "all_bindings_unique": true,
+    "all_result_keys_follow_ascii_suffix_00": true,
+    "partial_dispatch_allowed": false
+  },
+  "scope": {
+    "additive_goal": true,
+    "existing_validation_system": "PRESERVED_ACTIVE",
+    "existing_validation_superseded": false,
+    "wave1_to_wave5_results": "PRESERVED_AS_INPUT",
+    "normal_path_changed": "POINTER_RELAY_AND_RESULT_KEY",
+    "validation_path_changed": "ADDED_NEW_TARGET_ONLY"
+  },
+  "status": "PUBLISHED_TO_6_OF_6_READY_FOR_EXECUTION",
+  "target_runtime": "5.10.2.4.2-rc2",
+  "target_pc_pass": "PENDING",
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "YOLLA_OPERATION_CONTROL_CENTER_V5123_SAFE_CLONE_HOTFIX_CONTRACT_V1",
+  "version": "5.12.3",
+  "observed_failure": {
+    "error": "ReferenceError: safeClone is not defined",
+    "location": "getRuntimeStatus -> group_epic_bootstrap status projection",
+    "impact": "MAIN_PROCESS_EXCEPTION_AFTER_GROUP_EPIC_SCHEDULE_MATERIALIZATION"
+  },
+  "fix": {
+    "safe_clone_helper_defined": true,
+    "canonical_deep_clone_reused": true,
+    "undefined_value_fallback": true,
+    "clone_failure_fallback": true
+  },
+  "expected_after_install": {
+    "main_process_exception_count": 0,
+    "group_epic_bootstrap_status_visible": true,
+    "active_schedule_id": "YOLLA-REAL-ESTATE-SITE-FOUNDATION-20260804-001",
+    "worker_count": 5,
+    "epic_count": 11
+  },
+  "preserved": [
+    "GROUP_EPIC_BOOTSTRAP_V5122",
+    "OPERATION_CONTROL_CENTER_V5121",
+    "GROUP_EPIC_REGISTRATION",
+    "WORKER_RIGHT_MENU",
+    "COMMANDER_WORKER_RELAY",
+    "SESSION_PARTITION_COMPATIBILITY",
+    "FIXED_BROWSER_PROFILE",
+    "WORKER_JOB_SCHEDULE_V1",
+    "LOCAL_DURABLE_FILE_QUEUE_V1"
+  ],
+  "new_runtime": false,
+  "new_transport": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

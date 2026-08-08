@@ -1,0 +1,51 @@
+{
+  "schema_version": "C_MODE_WAVE11_PUBLICATION_RECEIPT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-011",
+  "registry_sequence": 11,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "directive": {
+    "md_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave11/C_MODE_WAVE10_REVIEW_AND_WAVE11_DIRECTIVE_V1.md",
+    "md_commit": "2ebac65fe0439e507bfb06122adb08fa0974efa7",
+    "json_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave11/C_MODE_WAVE10_REVIEW_AND_WAVE11_DIRECTIVE_V1.json",
+    "json_commit": "28b4eff8e92dbebddd4a82b4e3b751a92a69587d"
+  },
+  "registry_comment": 5194861923,
+  "worker_bindings": {
+    "AUTOMATION-C-W1": {"pr": 59, "directive_comment": 5194835355, "result_key": "519483535500", "command_id": "C6W-W11-W1-SUBSTANTIVE-EXECUTABLE-PAYLOAD-LOCK-V4"},
+    "AUTOMATION-C-W2": {"pr": 60, "directive_comment": 5194838029, "result_key": "519483802900", "command_id": "C6W-W11-W2-ARTIFACT-CONTENT-COMPLETION-GATE"},
+    "AUTOMATION-C-W4": {"pr": 62, "directive_comment": 5194840484, "result_key": "519484048400", "command_id": "C6W-W11-W4-CONNECTOR-BYTE-PREFLIGHT-3ROUND-RERUN"},
+    "AUTOMATION-C-W5": {"pr": 63, "directive_comment": 5194844026, "result_key": "519484402600", "command_id": "C6W-W11-W5-ACTUAL-INSTALLABLE-RUNTIME-RC4", "integration_owner": true},
+    "AUTOMATION-C-W6": {"pr": 64, "directive_comment": 5194846605, "result_key": "519484660500", "command_id": "C6W-W11-W6-INDEPENDENT-SUBSTANTIVE-ARTIFACT-AUDIT", "implementation_direct_edit": false}
+  },
+  "carryover": {
+    "role": "AUTOMATION-C-W3",
+    "pr": 61,
+    "wave_id": "V1-C-MODE-6W-WAVE-009",
+    "directive_comment": 5194405262,
+    "result_key": "519440526200",
+    "report_request_comment": 5194832672,
+    "report_request_count": 2,
+    "replacement_threshold": 4,
+    "new_directive": false
+  },
+  "critical_finding": {
+    "code": "METADATA_ONLY_BYTE_FALSE_POSITIVE",
+    "wave10_w5_result_comment": 5194725335,
+    "artifact_commit": "5b44c83a78e2a653cf1b721d546d3f5b7b53b61d",
+    "artifact_path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w5/wave10/YOLLA_C_MODE_5.10.2.4.2-rc3_INSTALL_AND_BUILD.bat",
+    "artifact_sha256": "21587622092a36b16c054569ee97463cfc9458b945a26018c486f0f83f5c6447",
+    "artifact_size": 2652,
+    "technical_pass_accepted": false
+  },
+  "current_progress_percent": 96,
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "target_version": "5.10.2.4.2-rc4",
+  "target_pc_pass": "PENDING",
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

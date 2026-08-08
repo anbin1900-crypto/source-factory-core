@@ -1,0 +1,85 @@
+{
+  "schema_version": "LATEST_A0_V512_PANEL_ACTIVITY_MONITOR_POINTER_V1",
+  "status": "A0_V512_NATURAL_LANGUAGE_OPERATION_MONITOR_SOURCE_PASS_TARGET_PC_PENDING",
+  "terminal": "A00_V512_NATURAL_LANGUAGE_PANEL_ACTIVITY_MONITOR_SOURCE_PASS",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "baseline_head": "9d5aee945fac4048f8c948c57f3009584f16fdb1",
+  "source_publication_head": "930ae03d67f212e0de88c052e91b791c4588c8c2",
+  "ui_version": "5.12.0",
+  "baseline_ui_version": "5.11.0",
+  "monitor_version": "1.0.0",
+  "authority": {
+    "runtime_owner": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+    "execution_actor": "A-00"
+  },
+  "documents": {
+    "contract": {
+      "path": "yolla-panel-v1/a0-successor-control/automation-v1/runtime-v512/A0_V512_PANEL_ACTIVITY_MONITOR_CONTRACT_V1.json",
+      "commit": "4fb78a579b1b68cea3b0b95a626beae51c1f444b",
+      "blob_sha": "5b7257a5e7f5f459771410d8d243478e187bd5cb"
+    },
+    "source_manifest": {
+      "path": "yolla-panel-v1/a0-successor-control/automation-v1/runtime-v512/A0_V512_PANEL_ACTIVITY_MONITOR_SOURCE_MANIFEST_V1.json",
+      "commit": "b2364ea50eb6a79d82189f8ee123e0aa078881f0",
+      "blob_sha": "25ad72ccb2ece1371af2797d8d3ea527c331be94"
+    },
+    "build_test_report": {
+      "path": "yolla-panel-v1/a0-successor-control/reports/A0_V512_PANEL_ACTIVITY_MONITOR_BUILD_TEST_REPORT_V1.json",
+      "commit": "930ae03d67f212e0de88c052e91b791c4588c8c2",
+      "blob_sha": "0d2040dc0ba86c356640200577896557953478f6"
+    },
+    "test_log": {
+      "path": "yolla-panel-v1/a0-successor-control/reports/A0_V512_PANEL_ACTIVITY_MONITOR_TEST_LOG.txt",
+      "commit": "1be2aa0eca2fd85f8ec44d16967827234a85aca2",
+      "blob_sha": "76ff5d3c6cb4fb363c0d27c9050e64a23999a689",
+      "sha256": "00f7d2f254e6f05f58c8345976ae529eabe5dc29ae47637d978c2560d17fff9f"
+    }
+  },
+  "artifacts": {
+    "source_zip": {
+      "drive_file_id": "1_3OfFQooM6GSI4A2ebFU4hsIabTvhNeG",
+      "file_name": "AI_YOLLA_RUNTIME_V512_NATURAL_LANGUAGE_OPERATION_MONITOR_SOURCE.zip",
+      "size_bytes": 142249,
+      "sha256": "cda327c4bd93fb010db8275de74017df0bb1ca7894f1861c21385a265caaa13a",
+      "metadata_readback": "PASS"
+    },
+    "patch_package": {
+      "drive_file_id": "1nhxVoZUFdql6Y7cQ6xVkRuFIPhlMWTjm",
+      "file_name": "AI_YOLLA_V512_ACTIVITY_MONITOR_PATCH_PACKAGE.zip",
+      "size_bytes": 88514,
+      "sha256": "ada94aae3122c34f64dfbe0402244f0c99dd9cb4d1c738af69918889de851bd8",
+      "metadata_readback": "PASS"
+    }
+  },
+  "capabilities": [
+    "SEPARATE_OPERATION_MONITOR_WINDOW",
+    "NATURAL_LANGUAGE_CURRENT_WORK_AND_PROGRESS",
+    "WHOLE_PANEL_FEATURE_HEALTH",
+    "REAL_TIME_IPC_AND_WINDOW_EVENT_FEED",
+    "ERROR_AND_ANOMALY_DETECTION",
+    "REPEATED_FAILURE_DETECTION",
+    "SAFE_AUTO_REPAIR",
+    "MANUAL_REPAIR_ACTION",
+    "DIAGNOSTIC_JSON_AND_NDJSON_LEDGER"
+  ],
+  "validation": {
+    "node_syntax": "PASS_34_OF_34",
+    "regression_suites": "PASS_11_OF_11",
+    "activity_monitor_unit": "PASS",
+    "activity_monitor_integration": "PASS"
+  },
+  "runtime_boundary": {
+    "target_pc_execution_observed": false,
+    "target_pc_monitor_window_observed": false,
+    "electron_visual_smoke": "NOT_RUN_ELECTRON_NOT_INSTALLED_IN_BUILD_ENVIRONMENT",
+    "actual_worker_dispatch_count": 0,
+    "actual_github_result_count": 0
+  },
+  "next_gate": "INSTALL_OR_APPLY_V512_ON_TARGET_PC_AND_OBSERVE_SEPARATE_MONITOR_WINDOW_WITH_REAL_WORK_AND_FAILURE_INJECTION",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-04T06:30:00+09:00"
+}

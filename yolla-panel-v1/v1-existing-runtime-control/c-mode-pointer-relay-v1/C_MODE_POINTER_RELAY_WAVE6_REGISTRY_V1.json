@@ -1,0 +1,98 @@
+{
+  "schema_version": "C_MODE_POINTER_RELAY_WAVE6_REGISTRY_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-006",
+  "mode": "POINTER_RELAY_RESULT_KEY",
+  "status": "READY",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "control_registry_comment_id": 5193471047,
+  "additive_goal": true,
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "supersedes_previous_validation": false,
+  "wave1_to_wave5_results": "PRESERVED_AS_INPUT",
+  "result_key_rule": "ASCII_DECIMAL_STRING(DIRECTIVE_COMMENT)+00",
+  "workers": [
+    {
+      "worker": "W1",
+      "role": "AUTOMATION-C-W1",
+      "pr": 59,
+      "directive_comment": 5193410427,
+      "result_key": "519341042700",
+      "command_id": "C-RELAY-W6-W1-REGISTRY-BATCH-STATE"
+    },
+    {
+      "worker": "W2",
+      "role": "AUTOMATION-C-W2",
+      "pr": 60,
+      "directive_comment": 5193421124,
+      "result_key": "519342112400",
+      "command_id": "C-RELAY-W6-W2-RESULT-WATCH-COLLECT"
+    },
+    {
+      "worker": "W3",
+      "role": "AUTOMATION-C-W3",
+      "pr": 61,
+      "directive_comment": 5193432735,
+      "result_key": "519343273500",
+      "command_id": "C-RELAY-W6-W3-UI-TRUTH-PROJECTION"
+    },
+    {
+      "worker": "W4",
+      "role": "AUTOMATION-C-W4",
+      "pr": 62,
+      "directive_comment": 5193441544,
+      "result_key": "519344154400",
+      "command_id": "C-RELAY-W6-W4-REPEAT-NONINTERFERENCE"
+    },
+    {
+      "worker": "W5",
+      "role": "AUTOMATION-C-W5",
+      "pr": 63,
+      "directive_comment": 5193451478,
+      "result_key": "519345147800",
+      "command_id": "C-RELAY-W6-W5-INTEGRATION-INSTALLER",
+      "integration_owner": true
+    },
+    {
+      "worker": "W6",
+      "role": "AUTOMATION-C-W6",
+      "pr": 64,
+      "directive_comment": 5193460631,
+      "result_key": "519346063100",
+      "command_id": "C-RELAY-W6-W6-INDEPENDENT-ACCEPTANCE",
+      "implementation_source_modified": false
+    }
+  ],
+  "batch_contract": {
+    "prevalidate_all_before_dispatch": true,
+    "partial_dispatch_allowed": false,
+    "directive_body_rewrite_allowed": false,
+    "result_marker": "C_RESULT|RESULT_KEY={RESULT_KEY}|ROLE={ROLE}|OUTCOME={OUTCOME}|STATUS=END|RESULT_COMMIT={RESULT_COMMIT}",
+    "result_zero": "MISSING",
+    "result_one": "REPORTED",
+    "result_multiple": "DUPLICATE_RESULT",
+    "actual_result_comment_capture": true
+  },
+  "preserved_validation_gates": [
+    "STATE_MACHINE_AND_TIMING",
+    "GITHUB_CORRELATION_AND_MISSING_REPORT",
+    "UI_TRUTH_AND_MODE_SEPARATION",
+    "REPEAT_COMMAND_RUNTIME_AND_SOAK",
+    "BACKGROUND_INSTALL_ROLLBACK_LOG",
+    "FAILURE_INJECTION_TARGET_PC_INDEPENDENT_ACCEPTANCE",
+    "SIX_WORKERS_THREE_ROUNDS",
+    "RESTART_RESUME",
+    "LOG_LOSS_ZERO",
+    "LOGIN_PROFILE_PRESERVATION",
+    "A_E_REINTRODUCTION_ZERO"
+  ],
+  "target_runtime": "5.10.2.4.2-rc2",
+  "target_pc_installed_baseline": "5.10.2.4.0",
+  "target_pc_pass": "PENDING",
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "published_at_kst": "2026-08-06T00:00:00+09:00"
+}

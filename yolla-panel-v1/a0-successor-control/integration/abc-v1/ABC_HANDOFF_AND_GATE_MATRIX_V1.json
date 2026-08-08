@@ -1,0 +1,95 @@
+{
+  "schema_version": "ABC_HANDOFF_AND_GATE_MATRIX_V3",
+  "matrix_id": "V2-ABC-HANDOFF-GATE-MATRIX-20260805-001",
+  "prepared_at_kst": "2026-08-05T23:12:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "authorization_transition": {
+    "decision_comment": 5192765975,
+    "authorization_id": "V2-AUTH-NAVER-PUBLIC-DOCUMENT-GET-SECOND-ONE-SHOT-20260805-001",
+    "decision": "APPROVED",
+    "a3_execution_event_comment": 5192799338
+  },
+  "contracts": [
+    {
+      "lane": "A2_TO_B1",
+      "contract": "VERIFIED_ADAPTER_PACKAGE_V1",
+      "producer": "A-2",
+      "consumer": "B-1",
+      "producer_state": "A3_ONE_SHOT_AUTHORIZED_EXECUTION_EVENT_POSTED",
+      "current_artifact_state": "NOT_YET_ISSUED",
+      "entry_gate": "A3_CAPTURE_TERMINAL_THEN_A5_SCHEMA_A4_PAGINATION_A6_REBUILD_A7_ACCEPTANCE",
+      "consumer_action": "HOLD_NO_ACTUAL_SITE_EXTRACTION",
+      "status": "BLOCKED_WAITING_FINAL_VERIFIED_ADAPTER"
+    },
+    {
+      "lane": "B1_TO_C1",
+      "contract": "B1_TO_C1_SOURCE_EVIDENCE_HANDOFF_CANDIDATE_V1",
+      "producer": "B-1",
+      "consumer": "C-1",
+      "producer_state": "FIXTURE_PIPELINE_PASS_5_OF_5",
+      "current_artifact_state": "ISSUED_AND_ACKNOWLEDGED",
+      "classification": "FIXTURE_ONLY_INDEPENDENTLY_ACCEPTED_SOURCE_EVIDENCE",
+      "content_delta": false,
+      "consumer_action": "FREEZE_NO_DUPLICATE_REEXECUTION",
+      "status": "PASS_FIXTURE_ONLY"
+    },
+    {
+      "lane": "B1_TO_D1",
+      "contract": "MATERIALIZED_DATABASE_PACKAGE_V1_AND_D_INTAKE_REQUEST_V1",
+      "producer": "B-1",
+      "consumer": "D-1",
+      "producer_state": "FIXTURE_MATERIALIZATION_BASELINE_AVAILABLE",
+      "current_artifact_state": "NOT_PROMOTED_AS_D_INTAKE_AUTHORITY",
+      "entry_gate": "ACTUAL_OR_APPROVED_FIXTURE_INTAKE_CONTRACT_AND_D1_ACCEPTANCE_SCOPE",
+      "status": "HOLD"
+    },
+    {
+      "lane": "C1_TO_D1",
+      "contract": "D_ALIGNED_TRANSFORMATION_PACKAGE_V1_AND_KNOWLEDGE_CANDIDATE_BUNDLE_V1",
+      "producer": "C-1",
+      "consumer": "D-1",
+      "producer_state": "E2E_EXECUTED_FAIL_CLOSED",
+      "current_artifact_state": "PACKAGE_REJECTED_CANDIDATE_COUNT_0",
+      "entry_gate": "PR188_REQUIRED_SOURCE_PATHS_22_RESOLVED",
+      "status": "BLOCKED_FAIL_CLOSED"
+    },
+    {
+      "lane": "D1_TO_C1",
+      "contract": "KNOWLEDGE_RELEASE_V1",
+      "producer": "D-1",
+      "consumer": "C-1",
+      "current_artifact_state": "NOT_AVAILABLE",
+      "entry_gate": "D1_ACCEPTANCE_RECEIPT_AND_KNOWLEDGE_RELEASE",
+      "status": "WAIT"
+    },
+    {
+      "lane": "C1_TO_A0",
+      "contract": "AI_RUNTIME_RECEIPT_V1",
+      "producer": "C-1",
+      "consumer": "A-0",
+      "current_artifact_state": "NOT_AVAILABLE_FOR_ACTUAL_DOMAIN_RELEASE",
+      "entry_gate": "D1_KNOWLEDGE_RELEASE_AVAILABLE",
+      "status": "WAIT"
+    }
+  ],
+  "global_rules": [
+    "NO_OWNERSHIP_OVERLAP",
+    "SOURCE_PROVENANCE_PRESERVED",
+    "UNMAPPED_VALUES_REJECTED_NOT_SILENTLY_DROPPED",
+    "NO_BRANCH_MERGE_REQUIRED_FOR_INTEGRATION_EXECUTION",
+    "A3_EXECUTION_EXACT_AUTHORIZED_SCOPE_ONLY",
+    "NO_AUTO_RETRY_OR_SECOND_BATCH",
+    "NO_B_ACTUAL_COLLECTION_WITHOUT_VERIFIED_ADAPTER",
+    "NO_C_REEXECUTION_WITHOUT_CONTENT_OR_D_AUTHORITY_DELTA",
+    "NO_D_CANONICAL_DB_WRITE_BY_A_B_OR_C"
+  ],
+  "current_active_lane": "A3_PUBLIC_DOCUMENT_GET_ONE_SHOT_CAPTURE",
+  "overall_status": "CONTRACT_MATRIX_READY_A3_EXECUTION_GATE_ACTIVE",
+  "request_execution_authorized": true,
+  "capture_execution_authorized": true,
+  "actual_site_extraction": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,88 @@
+{
+  "schema_version": "A0_V5124_DISPATCH_INTEGRITY_HOTFIX_BUILD_REPORT_V1",
+  "owner": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "observed_remote_head_before_publication": "ecbd0e830b061d9503ca0c211d840870cbc23f4e",
+  "diagnostic_basis": {
+    "installed_app_version": "5.12.3",
+    "schedule_id": "YOLLA-REAL-ESTATE-SITE-FOUNDATION-20260804-001",
+    "affected_workers": ["B-2", "B-3", "B-4", "B-5", "B-6"],
+    "observed_state": "RESULT_WAITING_WITHOUT_DISPATCH_PROOF",
+    "observed_automation_dispatch_count": 0,
+    "observed_automation_result_count": 0,
+    "observed_active_command_cycle_count": 0,
+    "observed_errors": [
+      "SCHEDULE_WORKER_BROWSER_VIEW_NOT_READY",
+      "BROWSER_INITIAL_NAVIGATION_FAILED",
+      "INVALID_SCHEDULE_SCHEMA",
+      "GROUP_ID_MISMATCH:B_GROUP:REAL_ESTATE_SITE",
+      "REPEATED_EVENT_LOOP_LAG"
+    ]
+  },
+  "status": "BUILD_PATCH_SIMULATION_AND_STATE_REPAIR_FIXTURE_PASS_TARGET_PC_PENDING",
+  "terminal": "A0_V5124_DISPATCH_INTEGRITY_HOTFIX_BUILD_PASS",
+  "target_release": "v5.12.4-dispatch-integrity-hotfix",
+  "base_release_policy": "CLONE_CURRENT_INSTALLED_RELEASE_NON_DESTRUCTIVELY",
+  "implemented": [
+    "RESULT_WAITING_REQUIRES_ACTUAL_DISPATCH_PROOF",
+    "GHOST_ACTIVE_STATE_REPAIRED_TO_RETRY_READY",
+    "SENT_LEDGER_RESTART_PROOF_RESTORATION",
+    "STALE_PREPARED_LEDGER_REMOVAL",
+    "BROWSER_VIEW_READY_BEFORE_DISPATCH",
+    "DEFINITELY_NOT_SENT_FAILURE_ROLLBACK_TO_RETRY_READY",
+    "UNCERTAIN_DISPATCH_FAIL_CLOSED_TO_NEEDS_REPLAN",
+    "DUPLICATE_NAVIGATION_SUPPRESSION",
+    "ACTIVE_WORKSPACE_CLOSE_HIDES_INSTEAD_OF_DESTROYING_BROWSER_VIEW",
+    "ASYNC_GH_RESULT_WATCHER_WITH_COMMENT_CACHE",
+    "SCHEDULE_AND_EPIC_IMPORT_AUTO_ROUTING",
+    "EPIC_GITHUB_BYTE_READBACK_BEFORE_TRANSFORM",
+    "B_GROUP_REAL_ESTATE_SITE_ALIAS_MAPPING",
+    "WORKER_STATUS_REQUIRES_DISPATCH_PROOF",
+    "IDEMPOTENT_SCHEDULE_START_AND_TICK_SUPPRESSION",
+    "INSTALL_TIME_STATE_REPAIR_RECEIPT"
+  ],
+  "worker_status_policy": {
+    "working": "RUNNING_OR_RESULT_WAITING_WITH_VALID_DISPATCH_PROOF",
+    "error": "ACTIVE_STATE_WITHOUT_DISPATCH_PROOF_OR_RUNTIME_BROWSER_FAILURE",
+    "resting": "PENDING_READY_WAIT_DEPENDENCY_COMPLETED_OR_NO_RUNNABLE_JOB"
+  },
+  "tests": {
+    "patch_simulation": "PASS",
+    "patched_node_syntax": "PASS_5_OF_5",
+    "dispatch_integrity": "PASS_28_ASSERTIONS",
+    "state_repair_fixture": "PASS",
+    "ghost_state_to_retry_ready": "PASS",
+    "sent_ledger_proof_restore": "PASS",
+    "stale_prepared_ledger_removal": "PASS",
+    "self_extract_readback": "PASS_7_ENTRIES",
+    "duplicate_execution_count": 0
+  },
+  "installer_artifact": {
+    "drive_file_id": "1pMzoDNIPMNkjFqy0vG19wWWlPcQk274Q",
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V5124_DISPATCH_INTEGRITY_HOTFIX.bat",
+    "sha256": "6e534f40f8ec3c8b290fe0e7f71105d855c65fd884dd31f0d30829f18bd23da0",
+    "size_bytes": 30041
+  },
+  "embedded_payload": {
+    "file_name": "AI_YOLLA_V5124_DISPATCH_INTEGRITY_HOTFIX_PAYLOAD.zip",
+    "sha256": "f08879e794fb88a2918b19df26d87b07e2e61b601d0fa076b9a0e3871fdb921e",
+    "size_bytes": 20516,
+    "entry_count": 7
+  },
+  "target_pc": {
+    "installed": false,
+    "state_repair_executed": false,
+    "first_real_dispatch_receipt_observed": false,
+    "first_real_github_result_observed": false,
+    "worker_status_transition_observed": false,
+    "top_counter_transition_observed": false
+  },
+  "next_gate": "INSTALL_V5124_AND_OBSERVE_FIRST_REAL_DISPATCH_RECEIPT_THEN_GITHUB_RESULT_AND_NEXT_JOB",
+  "official_automation_terminal_claimed": false,
+  "target_pc_execution_observed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "completed_at": "2026-08-04T22:55:00+09:00"
+}

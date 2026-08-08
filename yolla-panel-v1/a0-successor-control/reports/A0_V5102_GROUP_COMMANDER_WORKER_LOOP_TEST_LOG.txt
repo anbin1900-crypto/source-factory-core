@@ -1,0 +1,111 @@
+== NODE_SYNTAX_ALL ==
+NODE_SYNTAX_ALL_PASS
+== GROUP_LOOP_CORE ==
+{
+  "terminal": "A0_V5102_GROUP_COMMANDER_WORKER_INFINITE_LOOP_PASS",
+  "assertions": 32,
+  "dispatch_count": 4,
+  "worker_lane_count": 2,
+  "duplicate_execution_count": 0,
+  "manual_relay_count": 0
+}
+== GROUP_LOOP_BINDING ==
+{
+  "terminal": "A0_V5102_GROUP_LOOP_UI_AND_RUNTIME_BINDING_PASS",
+  "assertions": 24,
+  "baseline": "V5.10.2",
+  "e_button_before_a_button": true,
+  "new_runtime": false,
+  "new_transport": false
+}
+== TWO_MODE ==
+{
+  "terminal": "A0_TWO_MODE_AUTOMATION_SOURCE_CORE_PASS",
+  "assertions": 33,
+  "dispatch_count": 3,
+  "duplicate_execution_count": 0,
+  "manual_relay_count": 0
+}
+== SCHEDULE_AUTOMATION ==
+{
+  "terminal": "A0_WORKER_SCHEDULE_AUTOMATION_LOOP_V1_FIXTURE_PASS",
+  "assertions": 17,
+  "schedule_import_pass": true,
+  "worker_independent_sequence_pass": true,
+  "github_result_watch_pass": true,
+  "next_job_auto_dispatch_pass": true,
+  "restart_resume_pass": true,
+  "duplicate_execution_count": 0,
+  "user_manual_relay_count": 0,
+  "actual_target_pc_execution": false,
+  "actual_github_result_count": 0
+}
+== COMMAND_CYCLE ==
+{
+  "schema_version": "YOLLA_WORKER_COMMAND_CYCLE_V51_TEST",
+  "status": "PASS",
+  "prompt_contract": "PASS",
+  "exact_role_cycle_validation": "PASS",
+  "lifecycle_transition": "PASS"
+}
+== DATA_FACTORY ==
+V58_DATA_FACTORY_RUNTIME_PROVIDER_TEST_PASS assertions=31
+== SCHEDULE_RUNTIME ==
+{
+  "terminal": "A0_WORKER_SCHEDULE_RUNTIME_V59_SOURCE_PASS",
+  "assertions": 15,
+  "schedule_import": "PASS",
+  "current_next_job": "PASS",
+  "exactly_once_additional_execution_count": 0,
+  "github_comment_parser": "PASS",
+  "pass_to_next_dispatch": "PASS"
+}
+== SINGLE_GROUP ==
+{
+  "status": "PASS",
+  "tests": 16,
+  "group_count": 1,
+  "base_worker_count": 6,
+  "b6_present": true,
+  "all_workers_outer_scroll": true,
+  "legacy_groups_removed": true
+}
+== V56_CONTRACT ==
+{
+  "status": "PASS",
+  "tests": 22,
+  "b6_present": true,
+  "all_workers_reachable_by_single_outer_scroll": true,
+  "nested_clipping_removed": true,
+  "worker_menu_operational": true
+}
+== V56_STATE ==
+{
+  "status": "PASS",
+  "tests": 20,
+  "auto_group_id": "GROUP-01",
+  "auto_worker_code": "GROUP01-W01",
+  "persistence": "PASS",
+  "vertical_dynamic_model": "PASS",
+  "live_state_isolation": "PASS",
+  "baseline_count_derived": true,
+  "reserve_seats": false,
+  "fixed_seat_count": false
+}
+== PR276_MOUNT ==
+V59_PR276_WORKSPACE_MOUNT_TEST_PASS assertions=25
+== SCHEDULE_MAIN_BINDING ==
+{
+  "terminal": "A0_V59_SCHEDULE_MAIN_BINDING_PASS",
+  "assertions": 20,
+  "existing_browser_view_reused": true,
+  "github_result_authority": true,
+  "restart_restore_hook": true
+}
+== SCHEDULE_PANEL_MOUNT ==
+{
+  "terminal": "A0_V59_SCHEDULE_PANEL_MOUNT_PASS",
+  "assertions": 20
+}
+
+ALL_TESTS_PASS

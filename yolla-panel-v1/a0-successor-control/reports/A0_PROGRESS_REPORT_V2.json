@@ -1,0 +1,105 @@
+{
+  "schema_version": "A0_PROGRESS_REPORT_V2",
+  "report_type": "PROGRESS",
+  "role": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+  "directive_id": "A0-P0-V52-TARGET-PC-ACCEPTANCE",
+  "cycle_id": "A0-V52-TARGET-PC-ACCEPTANCE-20260803-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "base_commit": "124367a50a72505516666b4f427bfeda325ba3d3",
+  "observed_remote_head_before": "36b3c3131cfe225441a38855bacdbc0cffebfdd8",
+  "observed_remote_head_after": "b0502760c7eaf3018e1d5cd2e5592c77d0a2a2cf",
+  "owned_paths": [
+    "yolla-panel-v1/a0-successor-control/target-pc-v52/**",
+    "yolla-panel-v1/a0-successor-control/reports/**",
+    ".github/workflows/a0-v52-target-pc-acceptance-package.yml"
+  ],
+  "status": "PARTIAL_PASS",
+  "progress_percent": 70,
+  "completed_steps": [
+    "LATEST_A0_SUCCESSOR_HANDOFF_POINTER_REQUERY",
+    "EXACT_V52_SELF_EXTRACTING_INSTALLER_REFERENCE_DISCOVERED",
+    "PREVIOUS_PACKAGE_LOCATION_BLOCKER_SUPERSEDED",
+    "EXACT_INSTALLER_AUTHORITY_LEDGER_COMMITTED",
+    "SHA256_VERIFY_INSTALL_RECEIPT_ROLLBACK_RUNNER_COMMITTED",
+    "PC_AGENT_WORK_REQUEST_V2_COMMITTED",
+    "PACKAGE_VALIDATOR_AND_UNIT_TESTS_COMMITTED",
+    "GITHUB_ACTIONS_LINUX_VALIDATION_PASS",
+    "GITHUB_ACTIONS_WINDOWS_POWERSHELL_5_1_PARSE_PASS",
+    "INITIAL_WINDOWS_LONG_PATH_CHECKOUT_FAILURE_CORRECTED_WITH_SPARSE_CHECKOUT",
+    "B1_START_REPORT_RECEIVED",
+    "C1_START_REPORT_RECEIVED",
+    "A2_START_REPORT_REISSUED",
+    "D1_START_REPORT_REISSUED"
+  ],
+  "current_step": "TARGET_PC_EXACT_INSTALLER_MATERIALIZATION_AND_EXECUTION",
+  "remaining_steps": [
+    "COPY_EXACT_FILE_LIBRARY_INSTALLER_TO_E_SOURCE_FACTORY_INCOMING",
+    "TARGET_PC_INSTALLER_SHA256_READBACK",
+    "RUN_INVOKE_A0V52_EXACT_INSTALLER_EXECUTION",
+    "INGEST_INSTALL_LOG_SESSION_RECEIPT_AND_SMOKE_RECEIPT",
+    "VERIFY_LOGIN_PERSISTENCE_AFTER_RESTART",
+    "VERIFY_WORKER_AND_ANALYZER_BROWSER_VIEW_ISOLATION",
+    "VERIFY_ONE_VISIBLE_ADDRESS_BAR_PER_SELECTED_TAB",
+    "VERIFY_50_SEATS_7_GROUPS_AND_PROJECT_CONTEXT_BINDING",
+    "PUBLISH_A0_TEST_REPORT_V3_AND_FINAL_OR_EXACT_BLOCKER"
+  ],
+  "runtime_state": {
+    "runtime_baseline": "YOLLA_WORKSPACE_V5_CLEAN_RUNTIME",
+    "stable_v5_preserved": true,
+    "exact_v52_installer_reference_resolved": true,
+    "target_pc_execution_channel_connected": false,
+    "target_pc_execution_performed": false
+  },
+  "artifact_state": {
+    "file_name": "INSTALL_YOLLA_WORKSPACE_V52_SESSION_ANALYZER.bat",
+    "file_library_id": "file_000000007b3c81fba7d531a98fcc5112",
+    "documented_expected_sha256": "96731d281a138048d96d8f2a99900805d2ee15711666a2f3f4d33d994ac8d544",
+    "authority_resolution_commit": "530e226b10e562acaba7addcf79cb6ddafaec3fd",
+    "execution_runner_commit": "1773b6abf0d3e45eac446bdaffbdd064aa2c238e",
+    "work_request_commit": "6a2dd98c7a91fb011d19a54d3e4597d542baa0c4",
+    "test_report_v2_commit": "b0502760c7eaf3018e1d5cd2e5592c77d0a2a2cf",
+    "ci_run_id": 30807035470,
+    "ci_status": "PASS_2_OF_2"
+  },
+  "artifacts": [
+    "A0_V52_EXACT_INSTALLER_AUTHORITY_RESOLUTION_V1.json",
+    "Invoke-A0V52ExactInstallerExecution.ps1",
+    "A0_V52_EXACT_INSTALLER_WORK_REQUEST_V2.json",
+    "validate_a0_v52_exact_installer_execution.py",
+    "test_a0_v52_exact_installer_execution.py",
+    "A0_TEST_REPORT_V2.json"
+  ],
+  "tests": {
+    "ci_run_id": 30807035470,
+    "linux": "PASS",
+    "windows_powershell_5_1": "PASS",
+    "target_pc": "NOT_RUN_NO_CONNECTED_EXECUTION_CHANNEL"
+  },
+  "target_pc_observation": {
+    "previous_v5_visual_acceptance": "PASS_PRESERVED_AUTHORITY",
+    "v52_install": "NOT_RUN",
+    "v52_login_persistence": "NOT_OBSERVED",
+    "v52_dual_browser": "NOT_OBSERVED",
+    "v52_target_pc_pass_claimed": false
+  },
+  "blockers": [
+    "TARGET_PC_INSTALLER_BYTE_MATERIALIZATION_CHANNEL_NOT_CONNECTED",
+    "TARGET_PC_LOCAL_FILE_QUEUE_NOT_CONNECTED"
+  ],
+  "forbidden_counters": {
+    "browser_profile_deleted": 0,
+    "workspace_state_reset": 0,
+    "stable_v5_deleted": 0,
+    "cycle_ledger_deleted": 0,
+    "target_pc_pass_claimed_without_evidence": 0,
+    "production_connection": 0,
+    "ready_transition": 0,
+    "merge": 0
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "next_action": "RESUME_SAME_CYCLE_ON_FIRST_AVAILABLE_TARGET_PC_CHANNEL_USING_WORK_REQUEST_V2",
+  "reported_at": "2026-08-03T19:51:00+09:00"
+}

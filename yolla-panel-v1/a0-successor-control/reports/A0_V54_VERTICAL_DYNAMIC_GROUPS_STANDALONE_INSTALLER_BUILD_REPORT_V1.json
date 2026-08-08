@@ -1,0 +1,97 @@
+{
+  "schema_version": "A0_V54_VERTICAL_DYNAMIC_GROUPS_STANDALONE_INSTALLER_BUILD_REPORT_V1",
+  "report_type": "BUILD_AND_STATIC_TEST",
+  "owner": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+  "product_identity": "AI_YOLLA_PANEL_WORKSPACE_RUNTIME",
+  "product_not_identity": "SOURCE_FACTORY_FINAL_PRODUCT",
+  "active_project_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 242,
+    "active_pointer": "COMMAND_CENTER/GOVERNANCE/AI_YOLLA_V2/LATEST_AI_YOLLA_ACTIVE_AUTHORITY_POINTER_V2.json",
+    "first_vertical_product": "YOLLA_REAL_ESTATE_MINIMUM_USABLE_SERVICE",
+    "primary_goal": "DIRECTIVE_TO_EXECUTION_TO_DATA_TO_SPECIALIZED_AI_TO_WEB_SERVICE_VERTICAL_PIPELINE"
+  },
+  "user_correction": {
+    "prior_interpretation": "HORIZONTAL_CHROME_GROUP_TABS",
+    "correct_interpretation": "VERTICAL_STACKED_GROUPS_WITH_COLLAPSE_EXPAND",
+    "fixed_50_worker_label_required": false,
+    "reserve_seats_required": false,
+    "fixed_group_count_required": false,
+    "fixed_worker_count_required": false,
+    "v53_horizontal_installer_status": "SUPERSEDED_DO_NOT_RUN"
+  },
+  "implemented_features": [
+    "VERTICAL_STACKED_GROUP_CARDS",
+    "GROUP_COLLAPSE_EXPAND",
+    "GROUP_NAME_EDIT",
+    "GROUP_COLOR_EDIT",
+    "GROUP_VERTICAL_REORDER",
+    "DYNAMIC_GROUP_ADD_UNLIMITED_BY_CONTRACT",
+    "DYNAMIC_WORKER_ADD_PER_GROUP_UNLIMITED_BY_CONTRACT",
+    "OPTIONAL_GROUP_ID",
+    "OPTIONAL_WORKER_ID",
+    "PROJECT_AND_CONTEXT_URL_PERSISTENCE",
+    "USER_ADDED_WORKER_DELETE",
+    "EMPTY_USER_ADDED_GROUP_DELETE",
+    "REMOVE_RESERVE_GROUP_AND_11_RESERVE_SEATS",
+    "REMOVE_FIXED_50_WORKER_DISPLAY"
+  ],
+  "initial_registry_after_correction": {
+    "group_count": 6,
+    "worker_count": 39,
+    "reserve_group_present": false,
+    "reserve_worker_count": 0
+  },
+  "target_pc": {
+    "git_checkout_required": false,
+    "preferred_active_core": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038",
+    "active_core_auto_discovery_fallback": true,
+    "runtime_target": "<ACTIVE_CORE>\\yolla_workspace_v5_2",
+    "state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2",
+    "fixed_login_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "launcher_after_install": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_4.bat"
+  },
+  "installer": {
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V54_VERTICAL_GROUPS_UNLIMITED.bat",
+    "size_bytes": 69292,
+    "sha256": "49fa94eeb72e44bbad4c00ff8507b2d14811f9728de7b08d7f006da6c5f72bb1",
+    "embedded_payload_size_bytes": 48759,
+    "embedded_payload_sha256": "e2e7d6c485aadeebd9b97425cf3bc23c9dd334f21a76427e0975c9e95e32af34",
+    "standalone": true,
+    "administrator_auto_elevation": true,
+    "git_required": false,
+    "rollback_on_install_failure": true
+  },
+  "preservation": {
+    "workspace_state": true,
+    "existing_custom_workers": true,
+    "fixed_browser_profile": true,
+    "cycles": true,
+    "analysis_artifacts": true,
+    "existing_runtime_backup": true,
+    "reserve_profiles_migrated": false,
+    "reserve_profiles_ignored_as_obsolete": true
+  },
+  "tests": {
+    "self_extract_payload_readback": "PASS",
+    "embedded_payload_integrity": "PASS_20_ENTRIES",
+    "node_syntax": "PASS",
+    "command_cycle_contract": "PASS",
+    "v54_vertical_ui_contract": "PASS_20",
+    "state_store_dynamic_group_worker_model": "PASS_18",
+    "auto_group_id": "GROUP-01",
+    "auto_worker_code": "GROUP01-W01",
+    "restart_persistence_model": "PASS",
+    "nonempty_group_delete_reject": "PASS",
+    "base_group_delete_reject": "PASS",
+    "base_worker_delete_reject": "PASS",
+    "target_pc_execution": "NOT_YET_RUN",
+    "target_pc_visual_acceptance": "NOT_YET_OBSERVED"
+  },
+  "status": "BUILD_PASS_TARGET_PC_EXECUTION_PENDING",
+  "terminal": "A0_V54_VERTICAL_DYNAMIC_GROUPS_STANDALONE_INSTALLER_BUILD_PASS",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "built_at": "2026-08-03T23:20:00+09:00"
+}

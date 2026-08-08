@@ -1,0 +1,73 @@
+{
+  "schema_version": "LATEST_V1_C_MODE_POINTER_RELAY_WAVE10_POINTER_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-010",
+  "registry_sequence": 10,
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "review_and_directive": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave10/C_MODE_WAVE9_PARTIAL_REVIEW_AND_WAVE10_DIRECTIVE_V1.md",
+    "commit": "39e56c9d9ab18d8fdcea0d877169299f8dfdd9ab"
+  },
+  "wave9_review": {
+    "registry_comment": 5194433759,
+    "valid_correlated_reports": 5,
+    "missing_reports": 1,
+    "duplicate_results": 0,
+    "replacement_required": 0,
+    "results": {
+      "AUTOMATION-C-W1": {"result_comment": 5194501475, "result_commit": "85c2608d5459535ff1d9a36cd49be075393e1500", "outcome": "PASS"},
+      "AUTOMATION-C-W2": {"result_comment": 5194498627, "result_commit": "53c8ee089bef9e038ca1857a55f08298afb6573a", "outcome": "PASS"},
+      "AUTOMATION-C-W3": {"result_comment": null, "result_key": "519440526200", "outcome": "CARRYOVER", "report_request_comment": 5194576075},
+      "AUTOMATION-C-W4": {"result_comment": 5194493989, "result_commit": "cdbbc00370166d7b4debf4030f64dcbd45b5c474", "outcome": "PASS"},
+      "AUTOMATION-C-W5": {"result_comment": 5194489948, "result_commit": "8ca5860acabe427e971d2c0f94fe42d522a1b616", "outcome": "BLOCKED_TARGET_PC_AND_BYTE_RECEIPTS_PENDING"},
+      "AUTOMATION-C-W6": {"result_comment": 5194488117, "result_commit": "a51d936cb7fd58feb47bd32d8c2e676c911fffe9", "outcome": "BLOCKED_BYTE_AND_TARGET_PC_RECEIPTS_PENDING"}
+    }
+  },
+  "wave10_registry": {
+    "comment_id": 5194612544,
+    "previous_registry_comment": 5194433759,
+    "worker_count": 5,
+    "carryover_count": 1,
+    "same_wave_multiple_ready": "FAIL_CLOSED",
+    "highest_valid_registry_sequence_wins": true,
+    "all_rows_valid_before_any_dispatch": true,
+    "partial_dispatch": false
+  },
+  "carryover": {
+    "role": "AUTOMATION-C-W3",
+    "pr": 61,
+    "wave_id": "V1-C-MODE-6W-WAVE-009",
+    "directive_comment": 5194405262,
+    "result_key": "519440526200",
+    "report_request_comment": 5194576075,
+    "active_command_preserved": true,
+    "counted_as_wave10_missing": false
+  },
+  "worker_bindings": {
+    "AUTOMATION-C-W1": {"pr": 59, "directive_comment": 5194580713, "result_key": "519458071300", "command_id": "C6W-W10-W1-PRE-TARGET-PC-RELEASE-LOCK-V3"},
+    "AUTOMATION-C-W2": {"pr": 60, "directive_comment": 5194583449, "result_key": "519458344900", "command_id": "C6W-W10-W2-PARTIAL-WAVE-CARRYOVER-RUNTIME"},
+    "AUTOMATION-C-W4": {"pr": 62, "directive_comment": 5194585493, "result_key": "519458549300", "command_id": "C6W-W10-W4-PORTABLE-PREFLIGHT-3ROUND-FIXTURE"},
+    "AUTOMATION-C-W5": {"pr": 63, "directive_comment": 5194587921, "result_key": "519458792100", "command_id": "C6W-W10-W5-ACTUAL-IMMUTABLE-BYTE-CLOSURE", "integration_owner": true},
+    "AUTOMATION-C-W6": {"pr": 64, "directive_comment": 5194590705, "result_key": "519459070500", "command_id": "C6W-W10-W6-INDEPENDENT-BYTE-ARTIFACT-AUDIT", "implementation_direct_edit": false}
+  },
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "target_candidate_version": "5.10.2.4.2-rc3",
+  "current_progress_percent": 96,
+  "status": "WAVE10_PARTIAL_CYCLE_DISPATCHED_5_WITH_W3_WAVE9_CARRYOVER",
+  "next_gate": "FIVE_WAVE10_RESULTS_AND_W3_CARRYOVER_RESULT_THEN_ACTUAL_TARGET_PC_ACCEPTANCE",
+  "target_pc_pass": "PENDING",
+  "six_workers_three_waves": "PENDING_TARGET_PC",
+  "restart_resume": "PENDING_TARGET_PC",
+  "log_loss_zero": "PENDING_TARGET_PC",
+  "login_profile_preserved": "PENDING_TARGET_PC_READBACK",
+  "a_e_reintroduction_count": 0,
+  "auto_test_write_count": 0,
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at_kst": "2026-08-06T01:42:00+09:00"
+}

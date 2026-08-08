@@ -1,0 +1,134 @@
+{
+  "schema_version": "V1_C_MODE_WAVE4_REVIEW_V6",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "reviewed_wave_id": "V1-C-MODE-6W-WAVE-004",
+  "next_wave_id": "V1-C-MODE-6W-WAVE-005",
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "reviewed_at_kst": "2026-08-05T22:50:00+09:00",
+  "previous_progress_percent": 82,
+  "current_progress_percent": 88,
+  "runtime_baseline": {
+    "app_version": "5.10.2.4.0",
+    "c_mode_enabled": false,
+    "c_mode_status": "IDLE",
+    "repeat_command_count": 0,
+    "actual_working_count": 0,
+    "resting_count": 5,
+    "legacy_a_e_modes_removed": true
+  },
+  "worker_results": {
+    "AUTOMATION-C-W1": {
+      "worker_pr": 59,
+      "result_comment_id": 5192448767,
+      "head": "a13a4466f530ab7bace36bba5258974978d4293f",
+      "status": "BLOCKED_EXACT_EXECUTION_WORKSPACE_NOT_MOUNTED",
+      "valid_correlated_report": true,
+      "accepted_scope": "EXACT_HEAD_BINDING_AND_FAIL_CLOSED_BLOCKER",
+      "finding": "GITHUB_CONNECTOR_BYTES_AND_SUPPLEMENT_NOT_AVAILABLE_AS_EXECUTABLE_LOCAL_WORKSPACE",
+      "strategy_change": "MOVE_CROSS_HEAD_EXECUTION_OWNERSHIP_TO_W5_AND_LIMIT_W1_TO_CANONICAL_CANDIDATE_MANIFEST"
+    },
+    "AUTOMATION-C-W2": {
+      "worker_pr": 60,
+      "result_comment_id": 5192476493,
+      "head": "1be5e02112cc16851b6d19e4fdf8a34b2ee9749f",
+      "status": "PASS",
+      "valid_correlated_report": true,
+      "tests": "PASS_12_OF_12",
+      "accepted_scope": "REPORT_COMPLETENESS_GATE_AND_MISSING_REPORT_LEDGER",
+      "wave3_terminal_corrected": true,
+      "consecutive_missing_report_count_after_valid_report": 0
+    },
+    "AUTOMATION-C-W3": {
+      "worker_pr": 61,
+      "result_comment_id": 5192457794,
+      "head": "4ffa247184900467774aa8c87c1f4f12053cfac2",
+      "status": "PASS_OFFLINE_TARGET_PC_PENDING",
+      "valid_correlated_report": true,
+      "tests": "PASS_17_OF_17",
+      "accepted_scope": "REPORT_TRUTH_UI_PROJECTION_AND_TARGET_PC_COLLECTOR"
+    },
+    "AUTOMATION-C-W4": {
+      "worker_pr": 62,
+      "result_comment_id": 5192500064,
+      "head": "5b6f204145a1275ae9fcaab21e9be2725c8cb355",
+      "status": "PASS",
+      "valid_correlated_report": true,
+      "virtual_trigger_cycles": 120,
+      "receipt_count": 317,
+      "duplicate_repeat_dispatch": 0,
+      "previous_c_cancelled": 0,
+      "c_repeat_cross_cancel": 0,
+      "end_slot_redispatch": 0,
+      "receipt_loss": 0,
+      "awaiting_queue_growth": 0,
+      "accepted_scope": "SIX_SLOT_REPEAT_SOAK_AND_RESTART_QUEUE_RECOVERY_FIX"
+    },
+    "AUTOMATION-C-W5": {
+      "worker_pr": 63,
+      "result_comment_id": 5192458699,
+      "head": "77c5d465d2eaaff5a26ab62f7b31f06312fbe88f",
+      "status": "PACKAGE_READY_EXECUTION_BLOCKED",
+      "valid_correlated_report": true,
+      "accepted_scope": "ONE_CLICK_TARGET_PC_PACKAGE_SOURCE_AND_CONTRACT",
+      "blockers": [
+        "POWERSHELL_NOT_AVAILABLE_IN_WORKER_ENVIRONMENT",
+        "WINDOWS_TARGET_PC_NOT_AVAILABLE",
+        "W1_WAVE4_CANDIDATE_MANIFEST_NOT_AVAILABLE_AT_EXECUTION_TIME"
+      ],
+      "next_owner_role": "FINAL_CANDIDATE_BUILD_AND_PACKAGE_INTEGRATION_OWNER"
+    },
+    "AUTOMATION-C-W6": {
+      "worker_pr": 64,
+      "result_comment_id": 5192458728,
+      "head": "eb9ec0a33e2c621f35aef1002aa6277907d8aa1f",
+      "status": "VALID_REPORT_EARLY_SNAPSHOT_REAUDIT_REQUIRED",
+      "valid_correlated_report": true,
+      "wave3_missing_terminal_corrected": true,
+      "consecutive_missing_report_count_after_valid_report": 0,
+      "finding": "WAVE4_AUDIT_EXECUTED_BEFORE_W1_TO_W5_TERMINALS_ARRIVED",
+      "target_pc_pass": "PENDING"
+    }
+  },
+  "wave4_summary": {
+    "expected_worker_count": 6,
+    "valid_correlated_report_count": 6,
+    "missing_or_invalid_report_count": 0,
+    "replacement_required_worker_count": 0,
+    "full_offline_pass_workers": [
+      "AUTOMATION-C-W2",
+      "AUTOMATION-C-W4"
+    ],
+    "offline_pass_target_pc_pending_workers": [
+      "AUTOMATION-C-W3"
+    ],
+    "exact_environment_blocker_workers": [
+      "AUTOMATION-C-W1"
+    ],
+    "package_ready_execution_blocked_workers": [
+      "AUTOMATION-C-W5"
+    ],
+    "reaudit_required_workers": [
+      "AUTOMATION-C-W6"
+    ]
+  },
+  "decision": {
+    "dispatch_mode": "PARALLEL_FINAL_INTEGRATION_WAVE",
+    "integration_owner": "AUTOMATION-C-W5",
+    "manifest_owner": "AUTOMATION-C-W1",
+    "report_runtime_owner": "AUTOMATION-C-W2",
+    "ui_runtime_owner": "AUTOMATION-C-W3",
+    "repeat_runtime_owner": "AUTOMATION-C-W4",
+    "independent_acceptance_owner": "AUTOMATION-C-W6",
+    "target_candidate_version": "5.10.2.4.2-rc1",
+    "target_pc_pass": "PENDING",
+    "lts_terminal_claimed": false
+  },
+  "boundaries": {
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "auto_test_write_count": 0
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "V2_ABCD_LOCAL_SERVER_OPERATION_DISPATCH_RECEIPT_V1",
+  "receipt_id": "V2-ABCD-LOCAL-SERVER-OPERATION-DISPATCH-20260806-001",
+  "published_at_kst": "2026-08-06T18:45:00+09:00",
+  "batch": {
+    "id": "V2-TO-ABCD-LOCAL-SERVER-OPERATION-AND-FUTURE-MIGRATION-BATCH-V1-20260806-001",
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-local-server-v1/V2_ABCD_LOCAL_SERVER_OPERATION_AND_FUTURE_MIGRATION_BATCH_V1.json",
+    "commit": "bcc40274036282dc1065f3b6f139755d7dc0ecc9"
+  },
+  "comments": {
+    "B6_pr42": 5203025369,
+    "B1_pr19": 5203028027,
+    "A0_control_pr17": 5203030391,
+    "A2_pr18": 5203032855,
+    "C1_pr20": 5203035242,
+    "D1_pr188": 5203039631,
+    "D2_pr189": 5203042226,
+    "D3_pr190": 5203044814,
+    "D4_pr191": 5203047322,
+    "D5_pr192": 5203050455,
+    "D6_pr193": 5203053652,
+    "D1_bridge_pr21": 5203057196,
+    "V2_control_pr17": 5203060597
+  },
+  "dispatch_accounting": {
+    "required_comment_count": 13,
+    "published_comment_count": 13,
+    "missing_comment_count": 0,
+    "immediate_active_count": 5,
+    "event_driven_count": 7,
+    "status": "PASS_13_OF_13"
+  },
+  "immediate_active": [
+    "B-6_DELTA_REPREFLIGHT",
+    "A-0_PC_AGENT_CONTROL_SUPPORT",
+    "A-2_LOCAL_SERVER_HANDOFF_PREPARATION",
+    "C-1_LOCAL_SERVER_CONSUMER_PREPARATION",
+    "D-2_D-3_D-4_PARALLEL_LOCAL_SERVER_PREPARATION"
+  ],
+  "event_driven": [
+    "B-1_AFTER_B6",
+    "D-1_LOCAL_SERVER_CONTROL_INTEGRATION",
+    "D-5_AFTER_D1_D2_D3_D4",
+    "D-6_AFTER_D5_B1_C1",
+    "PR21_BRIDGE_AFTER_D1_CONTROL_POINTER"
+  ],
+  "local_server_authority": {
+    "target_pc": "YOLLA-USER-PC01",
+    "install_root": "E:\\YOLLA",
+    "actual_local_install": true,
+    "actual_local_staging_write": true,
+    "actual_local_backup_restore": true,
+    "public_binding": false,
+    "external_server_migration_now": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "DISPATCH_COMPLETE"
+}

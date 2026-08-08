@@ -1,0 +1,46 @@
+{
+  "schema_version": "C_MODE_WAVE12_PUBLICATION_RECEIPT_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-012",
+  "registry_sequence": 12,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "directive": {
+    "md_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave12/C_MODE_WAVE11_REVIEW_AND_WAVE12_DIRECTIVE_V1.md",
+    "md_commit": "7a677d97f81c46c277edc8df2c6fa1f6973871bd",
+    "json_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave12/C_MODE_WAVE11_REVIEW_AND_WAVE12_DIRECTIVE_V1.json",
+    "json_commit": "41121b0d5596a37b374450b1d1f1abcb054b7aee"
+  },
+  "registry_comment": 5195196731,
+  "worker_bindings": {
+    "AUTOMATION-C-W1": {"pr": 59, "directive_comment": 5195168219, "result_key": "519516821900", "command_id": "C6W-W12-W1-EXECUTABLE-SOURCE-INVENTORY-LOCK-V5"},
+    "AUTOMATION-C-W2": {"pr": 60, "directive_comment": 5195170358, "result_key": "519517035800", "command_id": "C6W-W12-W2-RUNTIME-TECHNICAL-ACCEPTANCE-GATE"},
+    "AUTOMATION-C-W3": {"pr": 61, "directive_comment": 5195172641, "result_key": "519517264100", "command_id": "C6W-W12-W3-UI-PAYLOAD-EVIDENCE-INTEGRATION"},
+    "AUTOMATION-C-W4": {"pr": 62, "directive_comment": 5195175006, "result_key": "519517500600", "command_id": "C6W-W12-W4-CONNECTOR-BYTE-PREFLIGHT-ACCEPTANCE"},
+    "AUTOMATION-C-W5": {"pr": 63, "directive_comment": 5195177693, "result_key": "519517769300", "command_id": "C6W-W12-W5-EXECUTABLE-GAP-CLOSURE-RC4-BUILD", "integration_owner": true},
+    "AUTOMATION-C-W6": {"pr": 64, "directive_comment": 5195180251, "result_key": "519518025100", "command_id": "C6W-W12-W6-NONBLOCKING-SUBSTANTIVE-AUDIT", "implementation_direct_edit": false, "blocking": false}
+  },
+  "wave11_report_collection": {
+    "reported": 6,
+    "missing": 0,
+    "duplicate": 0,
+    "replacement_required": 0,
+    "w3_carryover_closed": true
+  },
+  "exact_remaining_gap": [
+    "BACKGROUND_BROWSER_DISPATCH",
+    "WORK_CONTROL_EVENT_LOGGING",
+    "ROLLBACK_RUNTIME",
+    "LAUNCHER_SWITCH_AFTER_SMOKE"
+  ],
+  "single_implementation_owner": "AUTOMATION-C-W5",
+  "current_progress_percent": 96,
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "target_version": "5.10.2.4.2-rc4",
+  "target_pc_pass": "PENDING",
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

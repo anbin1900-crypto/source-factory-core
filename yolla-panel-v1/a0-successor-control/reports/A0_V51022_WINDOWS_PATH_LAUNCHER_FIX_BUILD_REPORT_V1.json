@@ -1,0 +1,67 @@
+{
+  "schema_version": "A0_V51022_WINDOWS_PATH_LAUNCHER_FIX_BUILD_REPORT_V1",
+  "owner": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "status": "EXACT_V5102_BASELINE_WINDOWS_ABSOLUTE_PATH_AND_ROBUST_LAUNCHER_BUILD_PASS_TARGET_PC_PENDING",
+  "terminal": "A0_V51022_WINDOWS_PATH_LAUNCHER_FIX_BUILD_PASS",
+  "baseline": {
+    "source_version": "5.10.2",
+    "prior_integrated_version": "5.10.2.1",
+    "result_version": "5.10.2.2",
+    "v511_or_v512_source_used": false
+  },
+  "observed_failure": {
+    "installation_terminal": "INSTALLATION_PASS",
+    "launch_error": "WINDOWS_CANNOT_FIND_E_SOURCE_FACTORY_ROOT",
+    "root_causes": [
+      "CMD_START_QUOTED_PATH_AMBIGUITY",
+      "NODE_PATH_JOIN_E_COLON_CREATED_DRIVE_RELATIVE_PATH"
+    ],
+    "screenshot_observed_at": "2026-08-05T00:25:38+09:00"
+  },
+  "implemented": [
+    "REMOVE_CMD_START_LAUNCH_PATH",
+    "ADD_POWERSHELL_PROCESSSTARTINFO_LAUNCHER",
+    "REPLACE_PATH_JOIN_E_COLON_WITH_ABSOLUTE_E_DRIVE_ROOT",
+    "PRESERVE_E_EPIC_SCHEDULE_MODE",
+    "PRESERVE_A_COMMANDER_WORKER_CONTINUOUS_LOOP",
+    "PRESERVE_DURABLE_STATE_AND_DISPATCH_RECEIPTS",
+    "PRESERVE_B4_CONTEXT_RECOVERY",
+    "NON_DESTRUCTIVE_NEW_RELEASE_AND_ROLLBACK"
+  ],
+  "installer_artifact": {
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V51022_PATH_LAUNCHER_FIX.bat",
+    "drive_file_id": "1f7aFoBjXWFr61XRg-ctkwFXuGoVbt4T2",
+    "size_bytes": 194527,
+    "sha256": "2df098b046950adea74a82df39fd2e939c1ee230ca3a73d3abef468111db0d18",
+    "target_release": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\v5.10.2.2-e-a-unified-path-fix",
+    "launcher_bat": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_2.bat",
+    "launcher_ps1": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_2.ps1"
+  },
+  "validation": {
+    "self_extract_readback": "PASS",
+    "payload_sha256": "c2662bd8657bd35eaa205b5ca31d7ef8a2e0f1bddd50e849a3dcfa2ab18184d1",
+    "release_sha256": "88e9b5d21d5654e43216bf4daa3c14bb9ddcff0b9f939d27b287fa5e9905ee03",
+    "release_entry_count": 60,
+    "node_syntax": "PASS_10_OF_10",
+    "regression_suites": "PASS_16_OF_16",
+    "drive_relative_path_remaining_count": 0,
+    "cmd_start_usage_in_new_launcher": false,
+    "duplicate_execution_count": 0
+  },
+  "target_pc": {
+    "v51022_installed": false,
+    "launcher_success_observed": false,
+    "panel_workspace_monitor_open_observed": false,
+    "actual_e_mode_cycle_observed": false,
+    "actual_a_mode_cycle_observed": false
+  },
+  "next_gate": "INSTALL_V51022_AND_VERIFY_LAUNCH_WITHOUT_PATH_DIALOG",
+  "official_automation_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "completed_at": "2026-08-05T00:35:00+09:00"
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": "V1_C_MODE_6_WORKER_ASSIGNMENT_MATRIX_V2",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "owner": "V-1",
+  "dispatch_mode": "CYCLE_BATCH_PARALLEL",
+  "sequential_manual_dispatch": false,
+  "workers": [
+    {
+      "worker_id": "AUTOMATION-C-W1",
+      "title": "C Runtime State Machine·Wave Timing Owner",
+      "mission": "C 시작, START receipt, 일괄 WAVE, 20분 부분진행, 90분 보조워커, 4회 미보고 교체, END·공정률·재시작 상태를 End-to-End로 검증하고 직접 교정한다.",
+      "owned_paths": [
+        "validation/v1-c-mode-six-worker/workers/w1/**",
+        "automation-c-v1/c_mode_runtime.cjs",
+        "automation-c-v1/tests/test_c_mode_runtime.cjs"
+      ],
+      "direct_edit": true,
+      "terminal": "C6W1_RUNTIME_STATE_MACHINE_PASS_OR_EXACT_BLOCKER"
+    },
+    {
+      "worker_id": "AUTOMATION-C-W2",
+      "title": "GitHub Report·Correlation·Missing Report Owner",
+      "mission": "GitHub PANEL 보고의 ROLE·WAVE·COMMAND_ID 상관관계, 중복·지연·과거보고 차단, 미보고 계산과 게시물 번호 추출을 검증하고 직접 교정한다.",
+      "owned_paths": [
+        "validation/v1-c-mode-six-worker/workers/w2/**",
+        "automation-c-v1/github_comment_client.cjs",
+        "automation-c-v1/report_parser/**"
+      ],
+      "direct_edit": true,
+      "terminal": "C6W2_GITHUB_REPORT_CORRELATION_PASS_OR_EXACT_BLOCKER"
+    },
+    {
+      "worker_id": "AUTOMATION-C-W3",
+      "title": "UI Truth·C and Command Mode Separation Owner",
+      "mission": "C 미실행 시 작업중 0, 그룹별 C 버튼, 상단 명령실행 팝업, C 실행·명령 실행·오류 분리, 과거 A/E 상태 제외를 대상 UI와 상태투영에서 검증하고 직접 교정한다.",
+      "owned_paths": [
+        "validation/v1-c-mode-six-worker/workers/w3/**",
+        "workspace_c_mode.js",
+        "workspace_c_mode.css"
+      ],
+      "direct_edit": true,
+      "terminal": "C6W3_UI_STATE_TRUTH_AND_MODE_SEPARATION_PASS_OR_EXACT_BLOCKER"
+    },
+    {
+      "worker_id": "AUTOMATION-C-W4",
+      "title": "Repeat Command Runtime·Trigger·Persistence Owner",
+      "mission": "사용자 원문 명령, X분마다, 작업완료 후, ROLE+COMMAND_ID 일치, END 자동정지, Pause·Resume·삭제·재시작 복구를 검증하고 직접 교정한다.",
+      "owned_paths": [
+        "validation/v1-c-mode-six-worker/workers/w4/**",
+        "automation-c-v1/repeat_command_runtime.cjs",
+        "automation-c-v1/tests/test_repeat_command_runtime.cjs"
+      ],
+      "direct_edit": true,
+      "terminal": "C6W4_REPEAT_COMMAND_RUNTIME_PASS_OR_EXACT_BLOCKER"
+    },
+    {
+      "worker_id": "AUTOMATION-C-W5",
+      "title": "Browser Dispatch·Background Resource·Install·Log Owner",
+      "mission": "브라우저 전송 exactly-once, 30초·5회 재시도, 백그라운드 자원해제, 로그인 Profile 보존, 설치·Rollback, 작업관제 로그·다운로드를 검증하고 직접 교정한다.",
+      "owned_paths": [
+        "validation/v1-c-mode-six-worker/workers/w5/**",
+        "automation-c-v1/background_dispatch_runtime.cjs",
+        "install_v51024*.ps1",
+        "workspace_main_bridge.cjs"
+      ],
+      "direct_edit": true,
+      "terminal": "C6W5_BACKGROUND_DISPATCH_INSTALL_LOG_PASS_OR_EXACT_BLOCKER"
+    },
+    {
+      "worker_id": "AUTOMATION-C-W6",
+      "title": "Failure Injection·Target PC E2E·Independent Acceptance",
+      "mission": "ERR_ABORTED, GitHub 지연·오류, 잘못된 PANEL, 중복·경합·재시작·로그누락을 주입하고 6워커 3 WAVE와 대상 PC 증거를 독립 수용한다.",
+      "owned_paths": [
+        "validation/v1-c-mode-six-worker/workers/w6/**"
+      ],
+      "direct_edit": false,
+      "terminal": "C6W6_FAILURE_RECOVERY_INDEPENDENT_ACCEPTANCE_PASS_OR_EXACT_BLOCKER"
+    }
+  ],
+  "integration_owner": "V-1",
+  "independent_acceptance_worker": "AUTOMATION-C-W6",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

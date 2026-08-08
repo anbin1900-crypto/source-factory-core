@@ -1,0 +1,69 @@
+{
+  "schema_version": "SESSION_PARTITION_COMPATIBILITY_HOTFIX_CONTRACT_V1",
+  "version": "5.10.2-group-epic-relay-session-hotfix",
+  "status": "HOTFIX_BUILD_PASS_TARGET_PC_REINSTALL_PENDING",
+  "source_version": "5.10.1-group-epic-relay",
+  "observed_failure": {
+    "error_type": "TypeError",
+    "error_message": "workerBrowserView.webContents.session.getPartition is not a function",
+    "failure_path": "actualWorkerSession -> resolveRoleSession -> scheduleRunner.dispatchNext",
+    "effect": "worker schedule command dispatch stopped before prompt transmission"
+  },
+  "root_cause": {
+    "component": "Electron Session API compatibility",
+    "finding": "The installed Electron Session object does not expose getPartition(). The BrowserView was already created from the fixed WORKER_BROWSER_PARTITION, so direct runtime introspection was unnecessary.",
+    "affected_call_count": 3
+  },
+  "repair": {
+    "helper": "currentWorkerBrowserPartition",
+    "primary_value": "persist:sf4-safe-panel-worker-1",
+    "behavior": "Use optional legacy getPartition only when the method exists; otherwise return the fixed worker partition.",
+    "direct_session_get_partition_calls_after_repair": 0,
+    "schedule_runtime_replaced": false,
+    "prompt_transport_replaced": false,
+    "browser_profile_recreated": false
+  },
+  "installer": {
+    "file_name": "YOLLA_PANEL_V5102_GROUP_EPIC_RELAY_SESSION_HOTFIX_INSTALLER.zip",
+    "drive_file_id": "1HpGhCGXGK2Ci8fOajnzLMq0ZEN6JmTWY",
+    "sha256": "9372888519112de231ba494f71e8f8754c4418fa24623b8cf807438d8bc21bd1",
+    "size_bytes": 139061,
+    "entry_count": 70,
+    "install_entry": "INSTALL_AI_YOLLA_PANEL_V5102_GROUP_EPIC_RELAY_SESSION_HOTFIX.bat",
+    "release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\v5.10.2-group-epic-relay-session-hotfix",
+    "rollback": "AUTOMATIC_PREVIOUS_RELEASE_AND_LAUNCHER_RESTORE"
+  },
+  "preserved_features": {
+    "group_epic_registration": true,
+    "worker_right_menu_command_registration": true,
+    "commander_command_registration": true,
+    "commander_comment_id_detection": true,
+    "automatic_worker_redispatch": true,
+    "existing_worker_job_schedule_v1": true,
+    "existing_local_durable_file_queue_v1": true
+  },
+  "validation": {
+    "node_syntax": "PASS",
+    "session_partition_regression": "PASS",
+    "direct_get_partition_calls": 0,
+    "two_mode_automation_assertions": 33,
+    "relay_assertions": 11,
+    "ui_contract_assertions": 20,
+    "automation_runtime_assertions": 17,
+    "schedule_runtime_assertions": 15,
+    "schedule_panel_assertions": 20,
+    "duplicate_execution_count": 0,
+    "installer_payload_files": 52,
+    "installer_zip_validation": "PASS"
+  },
+  "target_pc": {
+    "reinstall_observed": false,
+    "schedule_dispatch_after_hotfix_observed": false,
+    "commander_comment_detection_after_hotfix_observed": false,
+    "worker_redispatch_after_hotfix_observed": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "built_at": "2026-08-04T11:57:43+09:00"
+}

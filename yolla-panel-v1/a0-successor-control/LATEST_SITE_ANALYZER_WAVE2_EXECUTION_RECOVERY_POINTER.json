@@ -1,0 +1,21 @@
+{
+  "schema_version": "LATEST_SITE_ANALYZER_WAVE2_EXECUTION_RECOVERY_POINTER_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "authority_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "assignment": {
+    "path": "yolla-panel-v1/a0-successor-control/directives/site-analyzer-wave2-execution-recovery/SITE_ANALYZER_WAVE2_EXECUTION_RECOVERY_SPRINT_V1.json",
+    "commit": "9ca851933fb329b1d965f4459d452c684a06f9cd"
+  },
+  "dispatch_receipt": {
+    "path": "yolla-panel-v1/a0-successor-control/directives/site-analyzer-wave2-execution-recovery/SITE_ANALYZER_WAVE2_EXECUTION_RECOVERY_DISPATCH_RECEIPT_V1.json",
+    "commit": "7305d90e5284c9e46bf2711f113ee622099f1dc9"
+  },
+  "active_worker_count": 12,
+  "dispatch_count": 12,
+  "primary_goal": "WORKING_ADVANCED_SITE_ANALYZER",
+  "next_gate": "ALL_12_HEADS_ADVANCE_AND_WAVE2_TERMINALS_WITH_LIVE_FIXTURE_E2E",
+  "status": "ACTIVE_EXECUTION_RECOVERY",
+  "updated_at_kst": "2026-08-07T03:30:00+09:00"
+}

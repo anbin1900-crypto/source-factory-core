@@ -1,0 +1,86 @@
+{
+  "schema_version": "A0_TWO_MODE_AUTOMATION_SOURCE_CORE_REPORT_V1",
+  "owner": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+  "control_pr": 17,
+  "status": "TWO_MODE_SOURCE_CORE_PASS_PANEL_RUNTIME_BINDING_PENDING",
+  "terminal": "A0_TWO_MODE_AUTOMATION_SOURCE_CORE_PASS",
+  "source_base_head": "7c995cb2ccfecf461b801255450d66d071cda847",
+  "confirmed_authorities": {
+    "common_rules_comment": 5170441820,
+    "db_mapping_comment": 5170615948,
+    "daily_commander_comment": 5170734131,
+    "common_rules_pointer": "yolla-panel-v1/a0-successor-control/automation-v1/LATEST_COMMON_AUTOMATION_RULES_POINTER_V2.json",
+    "policy_id": "YOLLA_AUTOMATION_COMMON_RULES_V2",
+    "official_runtime": "WORKER_JOB_SCHEDULE_V1",
+    "official_transport": "LOCAL_DURABLE_FILE_QUEUE_V1",
+    "result_authority": "GITHUB_REMOTE_COMMITTED_RESULT_JSON"
+  },
+  "mode_1": {
+    "mode": "COMMANDER_WORKER_RELAY",
+    "implemented": [
+      "EXACT_DIRECTIVE_POINTER_WORKER_DISPATCH",
+      "WORKER_COMMITTED_RESULT_PASS_OR_BLOCKED_EXTERNAL_DETECTION_PROVIDER_BOUNDARY",
+      "COMMANDER_REVIEW_AND_NEXT_DIRECTIVE_PROMPT",
+      "COMMANDER_NEXT_DIRECTIVE_POINTER_SCHEMA",
+      "NEXT_POINTER_TO_WORKER_AUTOMATIC_DISPATCH",
+      "EXACTLY_ONCE_RELAY_LEDGER",
+      "RESTARTABLE_STATE_OBJECT"
+    ]
+  },
+  "mode_2": {
+    "mode": "EPIC_SCHEDULE",
+    "implemented": [
+      "COMMANDER_EPIC_SUBMISSION_V2_VALIDATION",
+      "FORBIDDEN_RUNTIME_STATE_FIELD_REJECTION",
+      "GLOBAL_ID_AND_DEPENDENCY_VALIDATION",
+      "DETERMINISTIC_WORKER_JOB_SCHEDULE_V1_TRANSFORM",
+      "NON_BREAKING_SIDECAR_FOR_WORKER_SLOT_AND_DONE_WHEN",
+      "PC_AGENT_DB_REBUILDABLE_PROJECTION_ROWS",
+      "EPIC_RESULT_V2_CORRELATION_VALIDATION"
+    ]
+  },
+  "tests": {
+    "node_syntax": "PASS",
+    "assertions": 33,
+    "relay_first_worker_dispatch": "PASS",
+    "worker_pass_to_commander_dispatch": "PASS",
+    "commander_pointer_to_next_worker_dispatch": "PASS",
+    "duplicate_execution_count": 0,
+    "manual_relay_count": 0,
+    "epic_to_existing_schedule": "PASS",
+    "forbidden_input_field_reject": "PASS",
+    "cyclic_dependency_reject": "PASS",
+    "result_correlation_validation": "PASS",
+    "pc_agent_db_projection": "PASS"
+  },
+  "source_artifact": {
+    "drive_file_id": "1pBPO87PiipoMFYhw9jX-FUG2DWiVbCMP",
+    "file_name": "AI_YOLLA_AUTOMATION_V510_TWO_MODE_SOURCE.zip",
+    "sha256": "88e85f8f8ca479897b2f0fd4e9d4e3304eac59a114259a5fac989865ae0cfd66",
+    "size_bytes": 106759,
+    "mime_type": "application/zip"
+  },
+  "github_contract_commits": {
+    "two_mode_contract": "7af66a0f1da5e2e9ca58b990ebba7a98fd6f3c0d",
+    "relay_pointer_schema": "7c8cf3b2e913763ae4cc121c63dffa7072b9f6a7",
+    "epic_adapter_contract": "da71ef80250a0e94d79abd72f0c00eb9fd1490f6"
+  },
+  "tooling_incident": {
+    "accidental_issue_numbers": [30, 32, 34, 35, 36, 37],
+    "all_closed_immediately": true,
+    "state_reason": "not_planned",
+    "source_or_branch_effect": false
+  },
+  "target_pc": {
+    "runtime_bound": false,
+    "actual_worker_result_observed": false,
+    "actual_commander_pointer_observed": false,
+    "actual_epic_import_observed": false
+  },
+  "next_gate": "BIND_TWO_MODE_SOURCE_TO_V59_PANEL_AND_EXISTING_BROWSER_SCHEDULE_RUNTIME_THEN_RUN_ONE_RELAY_CYCLE_AND_ONE_EPIC_PACKAGE",
+  "official_automation_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "completed_at": "2026-08-04T04:50:00+09:00"
+}

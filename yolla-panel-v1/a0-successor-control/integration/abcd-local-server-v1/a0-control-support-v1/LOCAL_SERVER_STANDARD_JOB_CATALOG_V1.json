@@ -1,0 +1,37 @@
+{
+  "schema_version": "LOCAL_SERVER_STANDARD_JOB_CATALOG_V1",
+  "task_id": "A0_D_LOCAL_SERVER_PC_AGENT_CONTROL_AND_STATUS_V1",
+  "target_pc": "YOLLA-USER-PC01",
+  "target_root": "E:\\YOLLA",
+  "existing_pc_agent_service": "YOLLA-PROJECT-AGENT",
+  "existing_action_queue": "E:\\YOLLA\\agent\\state\\file-management\\action_queue",
+  "jobs": [
+    {"action":"LOCAL_SERVER_ENVIRONMENT_DOCTOR","mutating":false,"purpose":"Inspect Windows, Docker, PostgreSQL, ports, filesystem layout, service accounts and resource capacity without changing the host."},
+    {"action":"LOCAL_SERVER_INSTALL_OR_UPDATE","mutating":true,"purpose":"Request D-group-owned local install or update using locked manifests and pre-action snapshot.","rollback":"RESTORE_PRE_ACTION_SNAPSHOT_AND_PREVIOUS_COMPONENT_MANIFEST"},
+    {"action":"LOCAL_SERVER_START","mutating":true,"purpose":"Request D group to start the local service and return health/readiness evidence.","rollback":"STOP_PARTIALLY_STARTED_SERVICE_AND_RESTORE_PRE_ACTION_STATUS"},
+    {"action":"LOCAL_SERVER_STOP","mutating":true,"purpose":"Request D group to stop the local service gracefully and preserve receipts.","rollback":"RESTORE_PRE_ACTION_STATUS"},
+    {"action":"LOCAL_SERVER_RESTART","mutating":true,"purpose":"Request stop/start with recovery to the prior known-good state on failure.","rollback":"RESTORE_PRE_ACTION_SERVICE_STATUS_AND_LAST_KNOWN_GOOD_CONFIG"},
+    {"action":"LOCAL_SERVER_HEALTH","mutating":false,"purpose":"Read service, database, API, disk, backup freshness and loopback bind health."},
+    {"action":"LOCAL_SERVER_BACKUP","mutating":false,"purpose":"Request a new backup artifact without deleting or replacing existing backups."},
+    {"action":"LOCAL_SERVER_RESTORE_SMOKE","mutating":true,"purpose":"Restore a backup only into an isolated smoke target and verify readback.","rollback":"DELETE_ISOLATED_SMOKE_RESTORE_TARGET_ONLY"},
+    {"action":"LOCAL_SERVER_LOG_BUNDLE","mutating":false,"purpose":"Collect bounded logs, manifests and receipt pointers with secret redaction."}
+  ],
+  "common_contracts": [
+    "EXACTLY_ONCE_JOB_IDENTITY",
+    "RESTART_RECOVERY",
+    "MISSED_EVENT_RECOVERY",
+    "DUPLICATE_EVENT_SUPPRESSION",
+    "ROLLBACK_ON_FAILED_REVERSIBLE_ACTION",
+    "SERVICE_STATUS_AND_LAST_RECEIPT_POINTER"
+  ],
+  "forbidden": [
+    "NEW_PC_AGENT_RUNTIME",
+    "NEW_TRANSPORT",
+    "A0_INSTALL_OWNERSHIP",
+    "PUBLIC_BINDING",
+    "PRODUCTION",
+    "READY",
+    "MERGE",
+    "RAW_SECRET_PUBLICATION"
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "schema_version": "SITE_ANALYZER_ADVANCEMENT_WAVE2_LIVE_INTEGRATION_AB_ASSIGNMENT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE2-LIVE-INTEGRATION-AB-V1-20260807-001",
+  "issued_at_kst": "2026-08-07T03:02:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "authority_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "parent_directive": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "primary_goal": "WORKING_ADVANCED_SITE_ANALYZER",
+  "dispatch_mode": "CYCLE_BATCH_PARALLEL",
+  "active_workers": ["A-2","A-3","A-4","A-5","A-6","A-7","B-1","B-2","B-3","B-4","B-5","B-6"],
+  "excluded_work": {
+    "c_mode_runtime": true,
+    "database_build": true,
+    "audit_only": true,
+    "validation_only": true,
+    "document_only_terminal": true,
+    "production": true,
+    "ready": true,
+    "merge": true
+  },
+  "wave1_observed_results": {
+    "A-2": {"head":"7528715951ab6fd64b60181c6f9fa156ef7e8ef6","status":"SOURCE_INTEGRATION_PASS_LIVE_ELECTRON_BLOCKER"},
+    "A-3": {"head":"e86dfcc2fc32ad366cd7fd8ba07392850419b853","status":"CDP_RUNTIME_IMPLEMENTATION_READY_LIVE_ELECTRON_BLOCKER"},
+    "A-4": {"head":"50c0555394f5fb3543f079ecfb60a0ed2eeab638","status":"STRUCTURE_INFERENCE_PASS"},
+    "A-5": {"head":"db1ce4af35b4724554d9d972766826d18ae9891b","status":"ENDPOINT_SCHEMA_MODE_INFERENCE_PASS"},
+    "A-6": {"head":"91baa2fb09471ed2a840c2dea9e614bc430da906","status":"EXECUTABLE_ADAPTER_AND_REPLAY_PASS_LIVE_NETWORK_BLOCKER"},
+    "A-7": {"head":"e6c17fb27572340adac8ca73ff754f48e9598472","status":"SOURCE_REPAIR_PASS_LIVE_ELECTRON_BLOCKER"},
+    "B-1": {"head":"6dca87e976439134dc24fed8bd60bc2c9db05fa0","status":"NO_WAVE1_PRODUCT_ASSEMBLY_TERMINAL"},
+    "B-2": {"head":"99bb8ec27ee95088c7228c5fc6cb6399da7f0319","status":"VISUAL_ANALYZER_OFFLINE_PASS_ELECTRON_BINDING_READY"},
+    "B-3": {"head":"d74c609241ba9c48cc432bf1fa3c7d7257354f8a","status":"ACTION_REPLAY_EXTRACTION_RECIPE_PASS"},
+    "B-4": {"head":"a204fec405cd861c966831f325dfc43ba4fe51b2","status":"EXTRACTION_IMPLEMENTATION_PASS_LIVE_BROWSER_BLOCKER"},
+    "B-5": {"head":"430f7599f04feb2a2863c95027efe66ff3eef698","status":"PREVIEW_EDITOR_EXPORT_PASS"},
+    "B-6": {"head":"398aacb67f43d0394af3ac0e3db63d77c4cc8648","status":"RUNNABLE_PACKAGE_READY_LIVE_BROWSER_BLOCKER"}
+  },
+  "wave2_strategy": {
+    "external_pc_wait": false,
+    "build_local_http_fixture_site": true,
+    "run_real_electron_or_playwright_browser_against_fixture_site": true,
+    "generate_nonzero_live_events": true,
+    "assemble_all_modules_into_one_product": true,
+    "repair_until_working": true
+  },
+  "local_fixture_site_required_features": [
+    "list page",
+    "detail page",
+    "json api",
+    "page-number pagination",
+    "load-more",
+    "infinite-scroll",
+    "iframe",
+    "popup",
+    "download",
+    "stable identifiers",
+    "schema drift toggle"
+  ],
+  "assignments": {
+    "A-2": {
+      "pr":18,
+      "role":"LIVE_ANALYZER_CORE_PRODUCT_INTEGRATION_OWNER",
+      "mission":"Consume the exact A3-A7 and B2-B6 heads, bind shared AnalyzerCore to embedded and standalone windows, connect the local fixture site and actual browser event bridge, and directly repair IPC, state, build and launcher failures until one working product shell runs.",
+      "required_result":["embedded analyzer working","standalone analyzer working","same session and registry","all current module entrypoints bound","single working launch path"]
+    },
+    "A-3": {
+      "pr":22,
+      "role":"LIVE_ELECTRON_CDP_FIXTURE_SITE_EXECUTION_OWNER",
+      "mission":"Run the implemented Electron CDP observer against the local HTTP fixture site and publish nonzero Network, response-body, DOMSnapshot, frame, navigation and console events through the shared event stream. Repair attach and event-loss defects directly.",
+      "required_result":["network events >=10","response bodies >=2","dom snapshots >=1","navigation events >=2","frame event >=1","streaming event handoff"]
+    },
+    "A-4": {
+      "pr":23,
+      "role":"LIVE_EVENT_STRUCTURE_INFERENCE_BINDING_OWNER",
+      "mission":"Consume A3 live events rather than direct fixture injection, infer page types, repeated regions, at least five fields, locators, list-detail relations and pagination, and emit highlight payloads consumable by B2. Repair over-detection, under-detection and loops directly.",
+      "required_result":["live-event input bound","field candidates >=5","locator candidates >=5","pagination workflow","B2 highlight payload"]
+    },
+    "A-5": {
+      "pr":24,
+      "role":"LIVE_TRAFFIC_ENDPOINT_SCHEMA_MODE_BINDING_OWNER",
+      "mission":"Consume A3 live traffic and A4 structure output, infer endpoint groups, request templates, response schemas and identifier relations, detect schema drift, choose DOM/API/HYBRID with reasons, and publish the exact A6 generator input package.",
+      "required_result":["live endpoint groups","schema inference","schema drift response","identifier map","A6 generator input"]
+    },
+    "A-6": {
+      "pr":25,
+      "role":"FULL_INPUT_EXECUTABLE_ADAPTER_AND_REPLAY_OWNER",
+      "mission":"Consume A3-A5 and B3 outputs, generate one executable adapter and recipe, run it against the local fixture site, produce Playwright trace, repair failed steps, and extract 10 deterministic records.",
+      "required_result":["generated adapter source","generated recipe","replay pass","trace","10 extracted records"]
+    },
+    "A-7": {
+      "pr":26,
+      "role":"WAVE1_TO_WAVE2_INTEGRATION_REPAIR_OWNER",
+      "mission":"Reproduce the cross-module failures that keep live Electron execution blocked, directly modify and repair interface adapters, launchers, selectors, event bridges and package wiring, and continue until the integrated fixture-site scenario works. Never return repair to another worker.",
+      "required_result":["cross-module defect reproduction","source repairs","working fixture-site E2E","no repair handoff"]
+    },
+    "B-1": {
+      "pr":19,
+      "role":"SITE_ANALYZER_PRODUCT_ASSEMBLY_AND_RELEASE_CANDIDATE_OWNER",
+      "mission":"Immediately consume all exact A and B heads, remove duplicated shells, assemble one runnable analyzer product under the B1 owned root, fix interface conflicts directly, and publish the single integration entrypoint and package. This is the highest-priority missing Wave1 result.",
+      "required_result":["single product tree","module binding map","single launcher","integrated fixture-site scenario","runnable package"]
+    },
+    "B-2": {
+      "pr":38,
+      "role":"LIVE_VISUAL_ANALYZER_BINDING_OWNER",
+      "mission":"Bind the existing visual analyzer UI to A3 live events, A4 candidates, A5 mode inference, B3 workflow and B5 preview/export. Element selection, highlights, workflow edits and preview updates must operate through the runtime bridge rather than static samples.",
+      "required_result":["live runtime bridge","element selection","candidate highlight","workflow editor","live preview"]
+    },
+    "B-3": {
+      "pr":39,
+      "role":"RECORDER_TO_ADAPTER_PIPELINE_OWNER",
+      "mission":"Bind the completed action recorder to B2 and A6, record a list-to-detail workflow including scroll and frame or popup, emit deterministic locators and recipe, and prove replay against the local fixture site. Repair recorder and replay defects directly.",
+      "required_result":["recorded actions >=5","editable workflow","recipe output","A6 handoff","replay pass"]
+    },
+    "B-4": {
+      "pr":40,
+      "role":"FIXTURE_SITE_AND_EDGE_CASE_EXTRACTION_OWNER",
+      "mission":"Build the local HTTP fixture site with list/detail/API/pagination/load-more/infinite-scroll/frame/popup/download behaviors, then run the A6 adapter and B3 recipe against it with retry and resume. Repair browser edge-case failures directly.",
+      "required_result":["fixture site launcher","edge-case pages","adapter execution","resume after injected failure","10 extracted records"]
+    },
+    "B-5": {
+      "pr":41,
+      "role":"LIVE_RESULT_PREVIEW_AND_EXPORT_BINDING_OWNER",
+      "mission":"Bind the completed preview/editor/export engine to B2 live preview and B4 extracted records, preserve source element pointers, and export the same 10 records to JSON, CSV and XLSX with parity.",
+      "required_result":["live preview binding","field rename/remove/apply","source pointers","JSON CSV XLSX parity"]
+    },
+    "B-6": {
+      "pr":42,
+      "role":"ELECTRON_NODE_RUNNABLE_PRODUCT_PACKAGE_OWNER",
+      "mission":"Replace the standalone Python-only package limitation by assembling the Electron/Node analyzer product, fixture site, recipes, adapter, trace and sample output into one runnable package with a single launcher. Directly repair missing dependencies, paths and startup failures.",
+      "required_result":["Electron/Node package","single launcher","fixture-site bundled or launched","sample scenario","direct package repair"]
+    }
+  },
+  "wave2_pass": {
+    "local_fixture_site_launch": "PASS_REQUIRED",
+    "live_network_event_count_min": 10,
+    "response_body_count_min": 2,
+    "dom_snapshot_count_min": 1,
+    "recorded_user_action_count_min": 5,
+    "auto_field_candidate_count_min": 5,
+    "generated_executable_adapter_count_min": 1,
+    "replay_success_count_min": 1,
+    "extracted_record_count": 10,
+    "live_data_preview": true,
+    "json_csv_xlsx_parity": true,
+    "embedded_analyzer_working": true,
+    "standalone_analyzer_working": true,
+    "single_runnable_package": true
+  },
+  "status":"PUBLISHED_PENDING_WORKER_DISPATCH",
+  "production":false,
+  "ready":false,
+  "merge":false
+}

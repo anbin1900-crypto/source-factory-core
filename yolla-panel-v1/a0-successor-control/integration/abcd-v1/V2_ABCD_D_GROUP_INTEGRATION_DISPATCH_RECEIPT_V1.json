@@ -1,0 +1,83 @@
+{
+  "schema_version": "V2_ABCD_D_GROUP_INTEGRATION_DISPATCH_RECEIPT_V1",
+  "receipt_id": "V2-ABCD-D-GROUP-INTEGRATION-DISPATCH-RECEIPT-20260806-001",
+  "published_at_kst": "2026-08-06T03:57:24+09:00",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "batch": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_INTEGRATION_WORKER_BATCH_V1.json",
+    "commit": "8226ea11e96434aeab350a949965cd4188d65471",
+    "blob": "4d7565521bf5b1b5723d30a1f8bdb9ab82bbd7d6",
+    "remote_readback": "PASS"
+  },
+  "control_comments": {
+    "A0_PR17": 5195981116,
+    "A2_PR18": 5195985251,
+    "B1_PR19": 5195989286,
+    "C1_PR20": 5195992893,
+    "D1_PR21": 5195996116,
+    "D1_PR188": 5196000013
+  },
+  "worker_comments": {
+    "A-3": {"repository": "anbin1900-crypto/source-factory-core", "pr": 22, "comment": 5196003221},
+    "A-4": {"repository": "anbin1900-crypto/source-factory-core", "pr": 23, "comment": 5196006114},
+    "A-5": {"repository": "anbin1900-crypto/source-factory-core", "pr": 24, "comment": 5196008982},
+    "A-6": {"repository": "anbin1900-crypto/source-factory-core", "pr": 25, "comment": 5196013898},
+    "A-7": {"repository": "anbin1900-crypto/source-factory-core", "pr": 26, "comment": 5196017240},
+    "B-2": {"repository": "anbin1900-crypto/source-factory-core", "pr": 38, "comment": 5196020144},
+    "B-3": {"repository": "anbin1900-crypto/source-factory-core", "pr": 39, "comment": 5196022442},
+    "B-4": {"repository": "anbin1900-crypto/source-factory-core", "pr": 40, "comment": 5196024447},
+    "B-5": {"repository": "anbin1900-crypto/source-factory-core", "pr": 41, "comment": 5196026867},
+    "B-6": {"repository": "anbin1900-crypto/source-factory-core", "pr": 42, "comment": 5196028913},
+    "C-2": {"repository": "anbin1900-crypto/source-factory-core", "pr": 20, "comment": 5196030857},
+    "C-3": {"repository": "anbin1900-crypto/source-factory-core", "pr": 20, "comment": 5196033083},
+    "C-4": {"repository": "anbin1900-crypto/source-factory-core", "pr": 20, "comment": 5196035014},
+    "C-5": {"repository": "anbin1900-crypto/source-factory-core", "pr": 20, "comment": 5196037750},
+    "C-6": {"repository": "anbin1900-crypto/source-factory-core", "pr": 20, "comment": 5196040055},
+    "D-2": {"repository": "anbin1900-crypto/yolla-real-estate-data-engine", "pr": 189, "comment": 5196042242},
+    "D-3": {"repository": "anbin1900-crypto/yolla-real-estate-data-engine", "pr": 190, "comment": 5196044072},
+    "D-4": {"repository": "anbin1900-crypto/yolla-real-estate-data-engine", "pr": 191, "comment": 5196045913},
+    "D-5": {"repository": "anbin1900-crypto/yolla-real-estate-data-engine", "pr": 192, "comment": 5196048694},
+    "D-6": {"repository": "anbin1900-crypto/yolla-real-estate-data-engine", "pr": 193, "comment": 5196052162}
+  },
+  "dispatch_accounting": {
+    "commander_control_comment_count": 6,
+    "worker_directive_count": 20,
+    "A_worker_count": 5,
+    "B_worker_count": 5,
+    "C_worker_count": 5,
+    "D_worker_count": 5,
+    "missing_worker_directive_count": 0
+  },
+  "integration_owners": {
+    "A": "A-2",
+    "B_package_v2": "B-5",
+    "C": "C-1",
+    "D_authority": "D-1_PR188",
+    "cross_repository_bridge": "D-1_PR21"
+  },
+  "active_work": {
+    "parallel_prepare_now": [
+      "A_D_HANDOFFS",
+      "B_D_PACKAGE_V2_CONTRACTS",
+      "C_D_SCHEMA_VALIDATORS",
+      "D_SOURCE_MAPPING_RECEIPT_STAGING_AUDIT_PREP"
+    ],
+    "event_execution_later": [
+      "ACTUAL_SITE_COLLECTION",
+      "C_SEMANTIC_REEXECUTION",
+      "D_ACTUAL_PACKAGE_ACCEPTANCE",
+      "POSTGRESQL_STAGING"
+    ]
+  },
+  "safety": {
+    "new_external_request": false,
+    "actual_bulk_collection": false,
+    "postgresql_connection": false,
+    "migration_apply": false,
+    "canonical_db_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "DISPATCH_COMPLETE_20_OF_20"
+}

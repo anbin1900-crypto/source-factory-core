@@ -1,0 +1,35 @@
+{
+  "schema_version": "LATEST_C_MODE_ACTIVE_RUNTIME_SOURCE_AUTHORITY_POINTER_V1",
+  "question_id": "C-MODE-ACTIVE-RUNTIME-SOURCE-AUTHORITY-QUESTION-V1-20260806-001",
+  "answer_to_comment_id": 5205286126,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "authority_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "answer_document": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/source-authority/C_MODE_ACTIVE_RUNTIME_SOURCE_AUTHORITY_ANSWER_V1.md",
+    "commit": "95e5e2cb95dae39f0d69f9191ec1ccc0f1c5eea1",
+    "size_bytes": 5387,
+    "sha256": "26a55d734e21dc745e61c4adbaac4163cd7eeae593a9ce166218105e5137c9e9"
+  },
+  "readback_manifest": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/source-authority/YOLLA_ACTIVE_RUNTIME_SOURCE_READBACK_V1.json",
+    "commit": "14c8483ea143220e8eab0beea06556be7dbb6377",
+    "size_bytes": 11649,
+    "sha256": "f9a343f718a0a06aa35eb6a170727a63cff2107bcedf9aa77ee95db15dfddbf3"
+  },
+  "last_verified_active_runtime": "5.10.2.3.7",
+  "live_process_readback": "PENDING_INSTALLER_RECEIPT",
+  "c_target_chain": [
+    "5.10.2.4.0-c-mode-repeat-command",
+    "5.10.2.4.1-c-command-ui-hotfix"
+  ],
+  "c_final_launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_4_1.bat",
+  "a_e_state_decision": "BACKUP_THEN_RUNTIME_REFERENCE_REMOVAL_THEN_DEFERRED_CLEANUP",
+  "log_panel_preserved": true,
+  "auto_test_write_count": 0,
+  "status": "SOURCE_AUTHORITY_RESOLVED_LIVE_PROCESS_READBACK_PENDING_TARGET_PC_INSTALL",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-06T22:45:00+09:00"
+}

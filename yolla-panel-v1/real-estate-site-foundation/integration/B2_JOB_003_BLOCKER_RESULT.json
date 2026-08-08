@@ -1,0 +1,82 @@
+{
+  "schema_version": "YOLLA_WORKER_EPIC_RESULT_V1",
+  "schedule_id": "REAL-ESTATE-CYCLE-001",
+  "job_id": "B2-JOB-003",
+  "command_id": "B2-JOB-003",
+  "execution_id": "schedule-c4059e5ed89d9f67f93bdd82",
+  "duplicate_prompt_key": "a5-p1-command-a6cc4f94c0f728bd5fb5826c9ae0f75f44498f0d1410e9f914150f9ce886df60",
+  "worker_id": "B-2",
+  "directive_id": "A0-SCHEDULE-B2-JOB-003",
+  "source_epic_directive_id": "REAL-ESTATE-COMMANDER-TO-B2-FOUNDATION-INTEGRATION-V1-20260804-002",
+  "epic_id": "RE-W1-E02-ARCHITECTURE-OWNERSHIP-INTEGRATION",
+  "terminal": "BLOCKED_EXTERNAL",
+  "result_code": "B2_FOUNDATION_INTEGRATION_BLOCKED_DEPENDENCIES",
+  "dependency_status": {
+    "RE-W1-E01-CORE-REUSE-AUDIT": {
+      "status": "PASS",
+      "worker_id": "B-2",
+      "pointer_path": "yolla-panel-v1/real-estate-site-foundation/workers/b2-platform-core/LATEST_B2_REAL_ESTATE_FOUNDATION_POINTER.json",
+      "result_path": "yolla-panel-v1/real-estate-site-foundation/workers/b2-platform-core/RESULT.json",
+      "result_commit": "57de732899becece5f6ea51603794ef858195598"
+    },
+    "RE-W2-E02-VWORLD-MAP-LIST-SYNC": {
+      "status": "BLOCKED_EXTERNAL",
+      "worker_id": "B-3",
+      "pointer_path": "yolla-panel-v1/real-estate-site-foundation/workers/b3-consumer-search-map/LATEST_B3_REAL_ESTATE_FOUNDATION_POINTER.json",
+      "blocker_result_path": "yolla-panel-v1/real-estate-site-foundation/workers/b3-consumer-search-map/B3_JOB_002_BLOCKER_RESULT.json",
+      "blocker_commit": "fff34ce3bc69d9e087e2ee1bb836acd2ff352576",
+      "note": "B-2 audit is now PASS, but B-3 has not published a resumed PASS and its security/data dependencies remain unsatisfied."
+    },
+    "RE-W3-E03-DOCUMENT-OUTREACH-CONTRACT": {
+      "status": "NOT_FOUND",
+      "worker_id": "B-4",
+      "expected_pointer_path": "yolla-panel-v1/real-estate-site-foundation/workers/b4-broker-desktop/LATEST_B4_REAL_ESTATE_FOUNDATION_POINTER.json"
+    },
+    "RE-W4-E02-PRIVATE-LISTING-SECURITY": {
+      "status": "NOT_FOUND",
+      "worker_id": "B-5",
+      "expected_pointer_path": "yolla-panel-v1/real-estate-site-foundation/workers/b5-identity-security/LATEST_B5_REAL_ESTATE_FOUNDATION_POINTER.json"
+    },
+    "RE-W5-E02-SOURCE-RIGHTS-INCREMENTAL-RANKING": {
+      "status": "NOT_FOUND",
+      "worker_id": "B-6",
+      "expected_pointer_path": "yolla-panel-v1/real-estate-site-foundation/workers/b6-data-dgroup/LATEST_B6_REAL_ESTATE_FOUNDATION_POINTER.json"
+    }
+  },
+  "validation": {
+    "declared_dependency_count": 5,
+    "dependency_pass_count": 1,
+    "dependency_blocked_count": 1,
+    "dependency_not_found_count": 3,
+    "all_required_remote_results_pass": false,
+    "integration_artifact_count": 0,
+    "portal_code_mutation_count": 0,
+    "fabricated_contract_count": 0,
+    "production_action_count": 0,
+    "ready_transition_count": 0,
+    "merge_action_count": 0
+  },
+  "resume_when": [
+    "RE-W2-E02-VWORLD-MAP-LIST-SYNC=PASS",
+    "RE-W3-E03-DOCUMENT-OUTREACH-CONTRACT=PASS",
+    "RE-W4-E02-PRIVATE-LISTING-SECURITY=PASS",
+    "RE-W5-E02-SOURCE-RIGHTS-INCREMENTAL-RANKING=PASS",
+    "all five dependency RESULT files and commits pass Remote Readback"
+  ],
+  "not_created_due_to_gate": [
+    "yolla-panel-v1/real-estate-site-foundation/integration/REAL_ESTATE_SITE_FOUNDATION_INTEGRATED_ARCHITECTURE_V1.md",
+    "yolla-panel-v1/real-estate-site-foundation/integration/OWNED_PATH_MATRIX_V1.json",
+    "yolla-panel-v1/real-estate-site-foundation/integration/WAVE2_EPIC_BACKLOG_V1.json",
+    "yolla-panel-v1/real-estate-site-foundation/integration/LATEST_REAL_ESTATE_SITE_FOUNDATION_POINTER.json"
+  ],
+  "blockers": [
+    "RE-W2-E02 is not PASS",
+    "RE-W3-E03 result pointer is absent from the Control PR branch",
+    "RE-W4-E02 result pointer is absent from the Control PR branch",
+    "RE-W5-E02 result pointer is absent from the Control PR branch"
+  ],
+  "completed_at": "2026-08-04T12:53:00+09:00",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

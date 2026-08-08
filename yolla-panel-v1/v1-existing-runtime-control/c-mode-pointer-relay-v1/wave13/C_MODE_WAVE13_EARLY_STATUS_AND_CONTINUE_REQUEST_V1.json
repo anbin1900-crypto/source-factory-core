@@ -1,0 +1,102 @@
+{
+  "schema_version": "C_MODE_WAVE13_EARLY_STATUS_AND_CONTINUE_REQUEST_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-013",
+  "registry_sequence": 13,
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "registry_comment": 5196092403,
+  "checked_at_kst": "2026-08-06T04:12:23+09:00",
+  "manual_user_requested_check": true,
+  "twenty_minute_gate_reached_at_check": false,
+  "early_check_increments_missing_report_counter": false,
+  "wave_status": "ACTIVE_IN_PROGRESS",
+  "assigned": 6,
+  "reported": 0,
+  "missing_result_marker": 6,
+  "duplicate_result": 0,
+  "new_wave_posted": false,
+  "current_wave_remains_authoritative": true,
+  "replacement_required": [],
+  "workers": {
+    "AUTOMATION-C-W1": {
+      "pr": 59,
+      "directive_comment": 5196052506,
+      "result_key": "519605250600",
+      "result_comment": null,
+      "observed_head": "7492abf88c6f6bb84ec50084948ca9e635069f2e",
+      "wave13_head_advanced": false,
+      "manual_continue_comment": 5196192026,
+      "report_request_count": 0
+    },
+    "AUTOMATION-C-W2": {
+      "pr": 60,
+      "directive_comment": 5196054976,
+      "result_key": "519605497600",
+      "result_comment": null,
+      "observed_head": "35da3fbbabe6d12b5aa18e4e3206459f907366ec",
+      "wave13_head_advanced": false,
+      "manual_continue_comment": 5196194041,
+      "report_request_count": 0
+    },
+    "AUTOMATION-C-W3": {
+      "pr": 61,
+      "directive_comment": 5196057701,
+      "result_key": "519605770100",
+      "result_comment": null,
+      "observed_head": "40023163e8faf0f918e1fa55d1dae4741a3bb7e7",
+      "wave13_head_advanced": false,
+      "manual_continue_comment": 5196195927,
+      "report_request_count": 0
+    },
+    "AUTOMATION-C-W4": {
+      "pr": 62,
+      "directive_comment": 5196061603,
+      "result_key": "519606160300",
+      "result_comment": null,
+      "observed_head": "f15c83ecbfb5f737d0283246c88d5ea861632acb",
+      "wave13_head_advanced": false,
+      "manual_continue_comment": 5196197860,
+      "report_request_count": 0
+    },
+    "AUTOMATION-C-W5": {
+      "pr": 63,
+      "directive_comment": 5196065109,
+      "result_key": "519606510900",
+      "result_comment": null,
+      "observed_head": "d21c152985fd98b010b4e2c95b20faad42789a6d",
+      "wave13_head_advanced": false,
+      "manual_continue_comment": 5196200295,
+      "report_request_count": 0,
+      "critical_path": true
+    },
+    "AUTOMATION-C-W6": {
+      "pr": 64,
+      "directive_comment": 5196068428,
+      "result_key": "519606842800",
+      "result_comment": null,
+      "observed_head": "8459971d75a7a267afd89cd794d45c855af2ce00",
+      "wave13_head_advanced": false,
+      "manual_continue_comment": 5196202446,
+      "report_request_count": 0
+    }
+  },
+  "decision": {
+    "new_wave": "HOLD",
+    "reason": "NO_WAVE13_RESULT_MARKER_AND_CHECK_OCCURRED_BEFORE_20_MINUTE_GATE",
+    "worker_action": "CONTINUE_EXISTING_ASSIGNMENT_AND_POST_RESULT",
+    "commander_action": "RECHECK_AFTER_RESULT_OR_VALID_TIME_GATE",
+    "sequential_manual_dispatch": false,
+    "cycle_batch_parallel_preserved": true
+  },
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "target_version": "5.10.2.4.2-rc5",
+  "current_progress_percent": 96,
+  "progress_increase_authorized": false,
+  "target_pc_pass": "PENDING",
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,149 @@
+{
+  "schema_version": "WORKER_JOB_SCHEDULE_CONTRACT_V1",
+  "revision": 2,
+  "status": "ACTIVE_ALIGNED_WITH_V59_SCHEMA",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "schema_authority": {
+    "path": "yolla-panel-v1/a0-successor-control/automation-v1/WORKER_JOB_SCHEDULE_V1.schema.json",
+    "blob_sha": "860f350f056595c46c22a8cad851ddc9fb71a4fd",
+    "schema_version_value": "WORKER_JOB_SCHEDULE_V1"
+  },
+  "owner_model": {
+    "upper_plan_authority": "A-1_YOLLA_WORKSPACE_SUPERVISING_COMMANDER",
+    "schedule_commander_field": "Project commander that authors concrete worker jobs under the upper goal, for example B-1.",
+    "execution_owner": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER"
+  },
+  "seat_binding": {
+    "seat_code_location": "workers object key",
+    "seat_code_is_immutable_transport_id": true,
+    "worker_slot_uid_source": "existing role and correlation registry at dispatch time",
+    "display_name_source": "workspace registry",
+    "project_role_source": "active project schedule or role profile binding",
+    "baseline_group_role_is_not_automatic_override": true
+  },
+  "schedule_rules": {
+    "maximum_jobs_per_seat_policy": 100,
+    "maximum_active_directives_per_seat": 1,
+    "jobs_are_plans_until_active_status": true,
+    "schedule_revision_requires_github_commit": true,
+    "runtime_cursor_is_local_durable_state": true,
+    "runtime_cursor_must_be_rebuildable": true
+  },
+  "schema_required_schedule_fields": [
+    "schema_version",
+    "project_id",
+    "schedule_id",
+    "commander",
+    "status",
+    "created_at",
+    "updated_at",
+    "workers"
+  ],
+  "schema_required_worker_fields": ["current_order", "enabled", "state", "jobs"],
+  "schema_required_job_fields": [
+    "job_id",
+    "order",
+    "command",
+    "repository",
+    "pr",
+    "status",
+    "depends_on",
+    "expected_terminal",
+    "attempt",
+    "retry_limit",
+    "result_pointer"
+  ],
+  "job_states": [
+    "PENDING",
+    "READY",
+    "DISPATCHING",
+    "RUNNING",
+    "RESULT_WAITING",
+    "PASS",
+    "RETRY_READY",
+    "BLOCKED_EXTERNAL",
+    "WAIT_DEPENDENCY",
+    "NEEDS_REPLAN",
+    "COMPLETED"
+  ],
+  "derived_active_directive_states": ["DISPATCHING", "RUNNING", "RESULT_WAITING"],
+  "terminal_values": [
+    "PENDING",
+    "PASS",
+    "BLOCKED_EXTERNAL",
+    "FAIL",
+    "FAIL_CLOSED",
+    "NO_DELTA",
+    "DUPLICATE_PROMPT_SUPPRESSED",
+    "UNKNOWN"
+  ],
+  "promotion_contract": {
+    "preconditions": [
+      "worker_enabled",
+      "no_other_job_in_derived_active_directive_states_for_seat",
+      "all_dependencies_resolved",
+      "seat_registry_binding_resolved",
+      "no_owned_path_or_exclusive_resource_conflict"
+    ],
+    "action": "PROMOTE_ONE_ELIGIBLE_JOB_TO_DISPATCHING",
+    "after_pass": "ADVANCE_CURRENT_ORDER_AND_PROMOTE_NEXT_ELIGIBLE_JOB",
+    "after_blocked_external": "WAIT_FOR_RESOLUTION_EVENT",
+    "after_retryable_failure": "RETRY_SAME_JOB_WITH_SAME_JOB_ID_AND_INCREMENTED_ATTEMPT",
+    "after_replan_trigger": "CREATE_REPLAN_REQUEST_FOR_UPPER_PLAN_AUTHORITY"
+  },
+  "github_result_acceptance": {
+    "required_identity": [
+      "schedule_id",
+      "job_id",
+      "seat_code_from_workers_key",
+      "directive_id_when_present",
+      "command_id_cycle_id_execution_id_when_present"
+    ],
+    "required_evidence": ["result_pointer_or_result_commit", "terminal"],
+    "accepted_pass": "PASS",
+    "accepted_external_block": "BLOCKED_EXTERNAL",
+    "natural_language_only_result": "REJECT"
+  },
+  "idempotency": {
+    "namespace": "WORKER_COMMAND",
+    "key": "SHA256(schedule_id|job_id|seat_code|directive_id_or_generation|payload_sha256)",
+    "duplicate_same_payload": "RETURN_EXISTING_RECEIPT",
+    "duplicate_different_payload": "REJECT_IDEMPOTENCY_CONFLICT",
+    "restart_resume": "REUSE_EXISTING_EXECUTION_ID_OR_LEDGER_ENTRY"
+  },
+  "concurrency": {
+    "exclusive_pc_runtime_jobs": 1,
+    "gpt_worker_jobs": 5,
+    "browser_analysis_jobs": 2,
+    "same_owned_path_parallelism": false
+  },
+  "reporting": {
+    "job": "ATTEMPT_LOG_AND_CORRELATED_TERMINAL_RESULT_POINTER",
+    "cycle": "START_TEST_BLOCKER_IF_NEEDED_FINAL_OR_CHECKPOINT",
+    "github_checkpoint_triggers": ["schedule_revision", "cycle_terminal", "schedule_completed", "replan", "external_blocker"]
+  },
+  "current_implementation": {
+    "ui_version": "5.9.0",
+    "schedule_runner_version": "1.0.0-panel-bound-build-pass",
+    "schedule_import_save": "PASS_SOURCE",
+    "github_result_watcher": "PASS_SOURCE",
+    "next_job_auto_dispatch": "PASS_SOURCE",
+    "restart_recovery": "PASS_SOURCE_FIXTURE",
+    "target_pc_actual_loop": "NOT_RUN"
+  },
+  "minimum_acceptance_test": {
+    "workers": 2,
+    "jobs_per_worker": 3,
+    "manual_relay_count": 0,
+    "duplicate_execution_count": 0,
+    "restart_resume_required": true,
+    "one_worker_failure_must_not_stop_other": true,
+    "terminal": "A0_WORKER_SCHEDULE_AUTOMATION_LOOP_V1_PASS"
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "aligned_at": "2026-08-04T04:02:00+09:00"
+}

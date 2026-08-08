@@ -1,0 +1,74 @@
+{
+  "schema_version": "C_MODE_WAVE10_REVIEW_AND_WAVE11_DIRECTIVE_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "previous_wave": "V1-C-MODE-6W-WAVE-010",
+  "wave_id": "V1-C-MODE-6W-WAVE-011",
+  "registry_sequence": 11,
+  "owner": "V-1",
+  "mode": "SUBSTANTIVE_RUNTIME_PAYLOAD_CLOSURE",
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "target_version": "5.10.2.4.2-rc4",
+  "wave10_review": {
+    "registry_comment": 5194612544,
+    "current_registry_rows": 5,
+    "valid_correlated_reports": 5,
+    "missing_current_rows": 0,
+    "duplicate_results": 0,
+    "carryover": {
+      "role": "AUTOMATION-C-W3",
+      "wave_id": "V1-C-MODE-6W-WAVE-009",
+      "directive_comment": 5194405262,
+      "result_key": "519440526200",
+      "result_comment": null,
+      "report_request_count": 2,
+      "replacement_required": false
+    },
+    "results": {
+      "AUTOMATION-C-W1": {"result_comment": 5194741515, "result_commit": "2f4c7a9af8b7f7068b4638353b3e32285a253784", "reported_outcome": "PASS", "commander_acceptance": "PASS_METADATA_LOCK_ONLY"},
+      "AUTOMATION-C-W2": {"result_comment": 5194721209, "result_commit": "f544399bf8e967c21531972d006c1fb1396f0ce8", "reported_outcome": "PASS", "commander_acceptance": "PASS"},
+      "AUTOMATION-C-W4": {"result_comment": 5194722039, "result_commit": "0264edc95282457fc9a0131382952fa4da51d1c1", "reported_outcome": "BLOCKED", "blocker": "LOCAL_VALIDATION_INPUT_FETCH_DNS_FAILURE"},
+      "AUTOMATION-C-W5": {"result_comment": 5194725335, "result_commit": "155515e048efd7689eab7f13e00ac9b9f5d9978b", "reported_outcome": "PASS", "commander_acceptance": "REJECTED_SUBSTANTIVE_RUNTIME_PAYLOAD_NOT_PRESENT"},
+      "AUTOMATION-C-W6": {"result_comment": 5194713046, "result_commit": "d05b0ddd51ee89c96955c35d3fa7bd80aec439d7", "reported_outcome": "BLOCKED", "blocker": "AUDIT_PRECEDED_W5_WAVE10_RESULT"}
+    }
+  },
+  "critical_finding": {
+    "code": "METADATA_ONLY_BYTE_FALSE_POSITIVE",
+    "artifact_path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/workers/w5/wave10/YOLLA_C_MODE_5.10.2.4.2-rc3_INSTALL_AND_BUILD.bat",
+    "artifact_commit": "5b44c83a78e2a653cf1b721d546d3f5b7b53b61d",
+    "artifact_blob_sha1": "65941a205f2d95821bc96815e33a37855395608e",
+    "artifact_size": 2652,
+    "artifact_sha256": "21587622092a36b16c054569ee97463cfc9458b945a26018c486f0f83f5c6447",
+    "byte_exists": true,
+    "github_byte_readback": "PASS",
+    "downloads_only_result_json": true,
+    "contains_executable_runtime_payload": false,
+    "creates_release_directory": false,
+    "installs_c_mode_runtime": false,
+    "switches_launcher_after_smoke": false,
+    "rollback_runtime_implemented": false,
+    "installable_runtime_proven": false,
+    "wave10_w5_technical_pass_accepted": false
+  },
+  "wave11_assignments": {
+    "AUTOMATION-C-W1": {"command_id": "C6W-W11-W1-SUBSTANTIVE-EXECUTABLE-PAYLOAD-LOCK-V4", "task": "LOCK_ACTUAL_EXECUTABLE_RUNTIME_SOURCE_NOT_RESULT_JSON"},
+    "AUTOMATION-C-W2": {"command_id": "C6W-W11-W2-ARTIFACT-CONTENT-COMPLETION-GATE", "task": "DISTINGUISH_BYTE_METADATA_EXECUTABLE_INSTALLABLE_TARGET_PC"},
+    "AUTOMATION-C-W4": {"command_id": "C6W-W11-W4-CONNECTOR-BYTE-PREFLIGHT-3ROUND-RERUN", "task": "REMOVE_RAW_DNS_DEPENDENCY_AND_VALIDATE_CORRECTED_PACKAGE"},
+    "AUTOMATION-C-W5": {"command_id": "C6W-W11-W5-ACTUAL-INSTALLABLE-RUNTIME-RC4", "task": "BUILD_REAL_RUNTIME_PAYLOAD_INSTALLER_SMOKE_ROLLBACK", "integration_owner": true},
+    "AUTOMATION-C-W6": {"command_id": "C6W-W11-W6-INDEPENDENT-SUBSTANTIVE-ARTIFACT-AUDIT", "task": "NEGATIVE_FIXTURE_AND_RC4_INDEPENDENT_AUDIT", "implementation_direct_edit": false}
+  },
+  "registry_plan": {
+    "new_row_count": 5,
+    "carryover_count": 1,
+    "all_rows_valid_before_any_dispatch": true,
+    "partial_dispatch": false,
+    "same_wave_multiple_ready": "FAIL_CLOSED",
+    "result_key_rule": "DIRECTIVE_COMMENT_STRING_PLUS_ASCII_00"
+  },
+  "current_progress_percent": 96,
+  "progress_increase_withheld_reason": "SUBSTANTIVE_RUNTIME_PAYLOAD_FALSE_POSITIVE_FOUND",
+  "target_pc_pass": "PENDING",
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

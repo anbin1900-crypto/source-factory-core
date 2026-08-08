@@ -1,0 +1,67 @@
+{
+  "schema_version": "V2_A6_TASK_IDENTITY_DISAMBIGUATION_AND_REVIEW_CORRECTION_V1",
+  "correction_id": "V2-A6-TASK-IDENTITY-DISAMBIGUATION-20260806-001",
+  "corrected_at_kst": "2026-08-06T05:03:00+09:00",
+  "issuer": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "worker_pr": 25,
+  "reason": "SEPARATE_PRIOR_GENERIC_HTML_REMOTE_BYTE_INTEGRITY_CORRECTION_FROM_NEW_D_INTAKE_COMPATIBILITY_ENVELOPE_TASK",
+  "prior_completed_task": {
+    "directive_id": "A2-TO-A6-GENERIC-HTML-PACKAGE-INTEGRITY-EXECUTE-NOW-V2-20260806-001",
+    "directive_comment": 5195137047,
+    "terminal_comment": 5195297489,
+    "a7_handoff_comment": 5195301516,
+    "a2_control_comment": 5195304294,
+    "final_head": "a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793",
+    "terminal": "A6_GENERIC_HTML_PACKAGE_INTEGRITY_CORRECTED_READY_FOR_A7_DELTA_REACCEPTANCE",
+    "latest_pointer_blob": "30a7854ca46e7e6f477b1c17c5762e4651d53a82",
+    "finding_resolution": "PASS_3_OF_3",
+    "package_member_integrity": "PASS_6_OF_6",
+    "remote_readback": "PASS_ALL",
+    "status": "TERMINAL_PASS_CLOSED",
+    "reopened": false,
+    "reexecution_required": false
+  },
+  "current_distinct_task": {
+    "parent_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+    "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+    "task_id": "A6_VERIFIED_ADAPTER_D_COMPATIBILITY",
+    "initial_directive_comment": 5196013898,
+    "followup_directive_comment": 5196648256,
+    "required_outputs": [
+      "A6_VERIFIED_ADAPTER_D_INTAKE_COMPATIBILITY_V1.json",
+      "A6_D_INTAKE_MEMBER_BINDING_MATRIX_V1.json",
+      "A6_D_INTAKE_COMPATIBILITY_TEST_RESULT_V1.json",
+      "A6_D_INTAKE_COMPATIBILITY_FINAL_REPORT_V1.json",
+      "LATEST_A6_D_INTAKE_COMPATIBILITY_POINTER.json"
+    ],
+    "new_input_delta": {
+      "A3_D_SOURCE_PROVENANCE_HANDOFF_BLOB": "7b06de0089917dc41069da4950675f22b1f4d5e6",
+      "A4_D_LOCATOR_PAGINATION_HANDOFF_BLOB": "ccdb978a08fe94bf61df3477b1eef71f904c7ce4",
+      "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF_BLOB": "0fac8fac5069a013717ea74202d6d1741adfd966"
+    },
+    "accepted_adapter_package_blob": "d758afef96e76b664f6d8b0383c5a7bc017c731a",
+    "accepted_adapter_package_mutation": false,
+    "status_at_correction": "ACTIVE_NEW_TASK_TERMINAL_NOT_YET_PUBLISHED",
+    "prior_integrity_completion_does_not_satisfy_this_task": true
+  },
+  "review_correction": {
+    "superseded_interpretation": "A6_PRIOR_INTEGRITY_TASK_INCOMPLETE",
+    "correct_interpretation": "A6_PRIOR_INTEGRITY_TASK_PASS_CLOSED_AND_NEW_D_COMPATIBILITY_TASK_ACTIVE",
+    "followup_directive_5196648256_valid": true,
+    "cancel_followup_directive": false,
+    "A7_delta_review_entry_event": "A6_D_COMPATIBILITY_TERMINAL_PUBLISHED",
+    "A2_integration_entry_event": "A7_D_INTEGRATION_DELTA_REVIEW_TERMINAL"
+  },
+  "safety": {
+    "new_external_request": false,
+    "actual_site_extraction": false,
+    "actual_bulk_collection": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  },
+  "status": "CORRECTION_PUBLISHED_PRIOR_TASK_CLOSED_CURRENT_DISTINCT_TASK_ACTIVE"
+}

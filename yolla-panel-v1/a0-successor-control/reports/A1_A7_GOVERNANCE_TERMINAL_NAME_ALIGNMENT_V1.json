@@ -1,0 +1,66 @@
+{
+  "schema_version": "A1_A7_GOVERNANCE_TERMINAL_NAME_ALIGNMENT_V1",
+  "report_id": "A1-A7-GOVERNANCE-TERMINAL-NAME-ALIGNMENT-V1-20260805-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "role": "A-1_YOLLA_WORKSPACE_SUPERVISING_COMMANDER",
+  "aligned_at_kst": "2026-08-05T22:12:00+09:00",
+  "concurrent_directives": {
+    "a2_authoritative_child_directive": {
+      "comment": 5192071024,
+      "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_5-PUBLIC-ROUTE-GOVERNANCE-REAUDIT-V1-20260805-001",
+      "directive_id": "A2-TO-A7-PUBLIC-DOCUMENT-ROUTE-GOVERNANCE-REAUDIT-V6_5-20260805-001",
+      "pass_terminal": "A7_PUBLIC_ROUTE_GOVERNANCE_READY_FOR_A2_SECOND_AUTHORIZATION_REQUEST",
+      "findings_terminal": "A7_PUBLIC_ROUTE_GOVERNANCE_EXACT_FINDINGS"
+    },
+    "a1_activation": {
+      "directive_id": "A1-TO-A7-PUBLIC-DOCUMENT-ROUTE-GOVERNANCE-REAUDIT-V1-20260805-001",
+      "activation_comment": 5192074571,
+      "activation_review_id": 4864588596,
+      "activation_pointer_review_id": 4864595093,
+      "report_commit": "e7a839d4f15c76935dc468dd3b9266347070c0ee",
+      "report_blob": "87ea65cefcca6151928477f2b3f34313e4d2dd9b"
+    }
+  },
+  "alignment_decision": {
+    "scope_conflict": false,
+    "terminal_name_conflict": true,
+    "authority_for_child_terminal_names": "A2_CONTROL_PR_18_COMMENT_5192071024",
+    "effective_pass_terminal": "A7_PUBLIC_ROUTE_GOVERNANCE_READY_FOR_A2_SECOND_AUTHORIZATION_REQUEST",
+    "effective_findings_terminal": "A7_PUBLIC_ROUTE_GOVERNANCE_EXACT_FINDINGS",
+    "previous_a1_pass_terminal_alias": "A7_PUBLIC_DOCUMENT_ROUTE_GOVERNANCE_READY_FOR_REAUTHORIZATION",
+    "previous_a1_findings_terminal_alias": "A7_PUBLIC_DOCUMENT_ROUTE_GOVERNANCE_EXACT_FINDINGS",
+    "previous_aliases_authoritative": false,
+    "a1_activation_scope_preserved": true,
+    "duplicate_execution_requested": false
+  },
+  "exact_inputs": {
+    "a3_final_head": "8e2c06d6e33ae23e0bf408cb5e2bd7513a72d7a9",
+    "a3_pointer_blob": "aa2c564c52ac1bd0f0a6dd4973f8b16dd53a2030",
+    "a3_handoff_blob": "6ff1fc01bb6a6f589622d33bb0d3879e400f76cd",
+    "a3_operator_package_blob": "f742b7a1e83ec9199258f9b7d7df9b8947f321d7",
+    "a5_final_head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+    "a5_pointer_blob": "40a282ccb4573ae00a12645f40bf39b6faea1abc",
+    "a5_handoff_blob": "515b72792199f971b0a754bcb9dbc796b06fe26f",
+    "a7_observed_head": "f4ca318a6335bc15970a8bff5c94f112d64807f4"
+  },
+  "current_gate": {
+    "status": "A7_PUBLIC_ROUTE_GOVERNANCE_REAUDIT_ACTIVE",
+    "expected_pass": "A7_PUBLIC_ROUTE_GOVERNANCE_READY_FOR_A2_SECOND_AUTHORIZATION_REQUEST",
+    "expected_findings": "A7_PUBLIC_ROUTE_GOVERNANCE_EXACT_FINDINGS",
+    "new_authorization_granted": false,
+    "capture_execution_authorized": false,
+    "second_attempt_authorized": false,
+    "b1_handoff_authorized": false
+  },
+  "safety": {
+    "capture_attempt_count": 0,
+    "live_site_call_count": 0,
+    "browser_automation_execution_count": 0,
+    "credential_use_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "LATEST_V1_C_MODE_6_WORKER_WAVE2_POINTER_V3",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-002",
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "current_progress_percent": 60,
+  "wave1_review": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave2/V1_C_MODE_WAVE1_REVIEW_V3.json",
+    "commit": "2495db4bc4eea761ec30f883c1ac6934d3d7ace7",
+    "size_bytes": 2893,
+    "sha256": "fff7226594dbacd44c376970a746ccb029e7812f07da0f37e077d9cc447d9808"
+  },
+  "wave2_directive": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave2/V1_C_MODE_6_WORKER_WAVE2_DIRECTIVE_V3.md",
+    "commit": "16feab0d494ec36cce0807a4c3c9e669d3c39540",
+    "size_bytes": 4858,
+    "sha256": "bc1f3c91fffbad4cfc4eff54677ad8fca8b336399b9d4af1757165786e48263a"
+  },
+  "source_supplement_manifest": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave2/V1_C_MODE_WAVE2_SOURCE_SUPPLEMENT_MANIFEST_V3.json",
+    "commit": "f22cdba1c9f18bc86737989d8f0a05e554472b19",
+    "size_bytes": 1619,
+    "sha256": "47a42bd8f55079d2c65fa5ff2513a8856543e9734e79e04efa5835d8f8bc03bd"
+  },
+  "publication_receipt": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave2/V1_C_MODE_6_WORKER_WAVE2_PUBLICATION_RECEIPT_V3.json",
+    "commit": "85b027826d3b1c7d60e29285b54aa1c4aa81a178",
+    "control_comment_id": 5189704060,
+    "worker_comment_ids": [5189688748, 5189691452, 5189693654, 5189696213, 5189698995, 5189701057]
+  },
+  "source_supplement": {
+    "drive_file_id": "1EaHhHablINACVR-syzy4o6r4wEnbK8z_",
+    "file_name": "V1_C_MODE_WAVE2_SOURCE_SUPPLEMENT_V3.zip",
+    "size_bytes": 105656,
+    "sha256": "fd60e47b6134ee06bd568941da66e45d158bc660557f624540f2a61589f7d7ea"
+  },
+  "wave1_status": {
+    "pass_workers": ["AUTOMATION-C-W1", "AUTOMATION-C-W2", "AUTOMATION-C-W4"],
+    "target_pc_blocked_workers": ["AUTOMATION-C-W3", "AUTOMATION-C-W6"],
+    "source_blocker_resolved_worker": "AUTOMATION-C-W5",
+    "w6_result_json_commit_required": true
+  },
+  "worker_prs": {
+    "AUTOMATION-C-W1": 59,
+    "AUTOMATION-C-W2": 60,
+    "AUTOMATION-C-W3": 61,
+    "AUTOMATION-C-W4": 62,
+    "AUTOMATION-C-W5": 63,
+    "AUTOMATION-C-W6": 64
+  },
+  "status": "WAVE2_DISPATCHED_TO_6_OF_6",
+  "target_pc_pass": "PENDING",
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-05T18:12:00+09:00"
+}

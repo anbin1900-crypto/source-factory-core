@@ -1,0 +1,137 @@
+{
+  "schema_version": "A0_CROSS_GROUP_COMMANDER_DELIVERY_MATRIX_V1",
+  "status": "ACTIVE_DELIVERY_REQUIRED",
+  "directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "authority_directive_path": "yolla-panel-v1/a0-successor-control/directives/A0_CROSS_GROUP_SITE_ANALYSIS_EXTRACTION_TRANSFORM_DB_ALIGNMENT_BATCH_V1.json",
+  "delivery_rule": "각 게시문은 지정된 Commander의 ChatGPT 대화 좌석에 전달한다. 워커 대화에 직접 전달하지 않고 Commander가 자기 그룹 워커에게 배정한다.",
+  "delivery_order": [
+    "D-1_SCHEMA_CONTRACT_PUBLICATION",
+    "A-2_ANALYZER_AND_VERIFIED_ADAPTER",
+    "B-1_EXTRACTOR_AND_NORMALIZED_DATASET",
+    "C-1_D_ALIGNED_TRANSFORMER",
+    "D-1_FIXTURE_INTAKE_ACCEPTANCE",
+    "A-0_RECEIPT_CHAIN_ACCEPTANCE"
+  ],
+  "recipients": [
+    {
+      "order": 1,
+      "recipient_role": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+      "deliver_to_chatgpt_seat": "A-0",
+      "repository": "anbin1900-crypto/source-factory-core",
+      "control_pr": 17,
+      "existing_comment_id": 5170674024,
+      "purpose": "전체 교차그룹 진행 감시, Pointer 수집, 인계조건 판정, 결과 Chain 수용",
+      "must_deliver": true,
+      "worker_direct_delivery": false
+    },
+    {
+      "order": 2,
+      "recipient_role": "A-2_GENERIC_SITE_ANALYZER_ADAPTER_FACTORY_COMMANDER",
+      "deliver_to_chatgpt_seat": "A-2",
+      "repository": "anbin1900-crypto/source-factory-core",
+      "control_pr": 18,
+      "existing_comment_id": 5170676647,
+      "purpose": "범용 사이트 분석기, SiteStructureProfile, VerifiedAdapterPackage 및 Replay Acceptance",
+      "required_outputs": [
+        "SITE_STRUCTURE_PROFILE_V1",
+        "VERIFIED_ADAPTER_PACKAGE_V1",
+        "ADAPTER_BUILD_RECEIPT_V1",
+        "ANALYSIS_PROGRESS_EVENT_V1"
+      ],
+      "must_deliver": true,
+      "worker_direct_delivery": false,
+      "commander_must_delegate_to": ["A-3", "A-4", "A-5", "A-6", "A-7"]
+    },
+    {
+      "order": 3,
+      "recipient_role": "B-1_COLLECTION_DB_MATERIALIZATION_COMMANDER",
+      "deliver_to_chatgpt_seat": "B-1",
+      "repository": "anbin1900-crypto/source-factory-core",
+      "control_pr": 19,
+      "existing_comment_id": 5170679407,
+      "purpose": "A-2 Verified Adapter 소비형 데이터 추출기, Raw Artifact 보존, NormalizedDataset 생성",
+      "required_inputs": ["VERIFIED_ADAPTER_PACKAGE_V1"],
+      "required_outputs": [
+        "RAW_ARTIFACT_MANIFEST_V1",
+        "SOURCE_RECORD_ENVELOPE_V1",
+        "NORMALIZED_DATASET_V1",
+        "EXTRACTION_RECEIPT_V1"
+      ],
+      "must_deliver": true,
+      "worker_direct_delivery": false,
+      "commander_must_delegate_to": ["B-2", "B-3", "B-4", "B-5", "B-6"]
+    },
+    {
+      "order": 4,
+      "recipient_role": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+      "deliver_to_chatgpt_seat": "C-1",
+      "repository": "anbin1900-crypto/source-factory-core",
+      "control_pr": 20,
+      "existing_comment_id": 5170682348,
+      "purpose": "B 추출 결과를 D Canonical Schema에 맞추는 데이터 변환기·Field Mapping·Rejected Record 처리",
+      "required_inputs": [
+        "NORMALIZED_DATASET_V1_OR_RAW_ARTIFACT_MANIFEST_V1",
+        "D_CANONICAL_SCHEMA_PROFILE_V1",
+        "D_INBOUND_FIELD_MAPPING_CONTRACT_V1"
+      ],
+      "required_outputs": [
+        "D_ALIGNED_TRANSFORMATION_PACKAGE_V1",
+        "FIELD_MAPPING_REPORT_V1",
+        "REJECTED_RECORD_BUNDLE_V1",
+        "KNOWLEDGE_CANDIDATE_BUNDLE_V1"
+      ],
+      "must_deliver": true,
+      "worker_direct_delivery": false,
+      "commander_must_delegate_to": ["C-2", "C-3", "C-4", "C-5", "C-6"]
+    },
+    {
+      "order": 5,
+      "recipient_role": "D-1_KNOWLEDGE_DB_INTEGRATION_COMMANDER",
+      "deliver_to_chatgpt_seat": "D-1_INTEGRATION",
+      "repository": "anbin1900-crypto/source-factory-core",
+      "control_pr": 21,
+      "existing_comment_id": 5170684734,
+      "purpose": "Source Factory와 실제 D DB 권위 사이 Intake·Mapping·Release 계약 조정",
+      "required_outputs": [
+        "D_CANONICAL_SCHEMA_PROFILE_V1",
+        "D_INBOUND_FIELD_MAPPING_CONTRACT_V1",
+        "D_INTAKE_VALIDATION_RULESET_V1",
+        "KNOWLEDGE_ACCEPTANCE_RECEIPT_V1"
+      ],
+      "must_deliver": true,
+      "worker_direct_delivery": false
+    },
+    {
+      "order": 6,
+      "recipient_role": "D-1_DOMAIN_KNOWLEDGE_DATABASE_COMMANDER",
+      "deliver_to_chatgpt_seat": "D-1_ACTUAL_DB_AUTHORITY",
+      "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "control_pr": 188,
+      "existing_comment_id": 5170687497,
+      "purpose": "실제 Canonical Schema, 자료형·Key·제약·Evidence·Versioning 및 수용/거절 규칙 확정",
+      "required_outputs": [
+        "CANONICAL_SCHEMA_PROFILE_OR_EXACT_POINTER",
+        "INBOUND_FIELD_MAPPING_CONTRACT",
+        "INTAKE_VALIDATION_RULESET",
+        "FIXTURE_ACCEPTANCE_OR_REJECTION_RECEIPT"
+      ],
+      "must_deliver": true,
+      "worker_direct_delivery": false,
+      "commander_must_delegate_to": ["D-2", "D-3", "D-4", "D-5", "D-6"]
+    }
+  ],
+  "do_not_deliver_directly_to": [
+    "A-3_TO_A-7_BEFORE_A-2_DELEGATION",
+    "B-2_TO_B-6_BEFORE_B-1_DELEGATION",
+    "C-2_TO_C-6_BEFORE_C-1_DELEGATION",
+    "D-2_TO_D-6_BEFORE_D-1_DELEGATION"
+  ],
+  "delivery_completion_rule": "각 Commander 대화에서 해당 PR의 최신 보완지시를 읽고 워커별 실행가능 Directive를 게시한 뒤 Pointer와 Terminal을 원 PR에 게시해야 전달 완료로 인정한다.",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "issued_at": "2026-08-04T04:21:00+09:00"
+}

@@ -1,0 +1,138 @@
+{
+  "schema_version": "V2_ABCD_D_GROUP_NEXT_EVENT_BATCH_V2",
+  "batch_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V2-20260806-001",
+  "issued_at_kst": "2026-08-06T07:39:29+09:00",
+  "issuer": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "review": {
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_ALL_WORKER_REVIEW_V2.json",
+    "commit": "24daff386da73b28615a32a565d7bc052081da46"
+  },
+  "mode": "ACTIVE_OWNER_THEN_EVENT_CHAIN_NO_DUPLICATE_REEXECUTION",
+  "immediate_active_owners": [
+    {
+      "owner": "A-2",
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 18,
+      "entry_event": "A7_D_INTEGRATION_DELTA_REVIEW_PASS",
+      "event_evidence": {
+        "a7_head": "4ff15507cebe8a185d92fcbcdd17f0aa547d37e7",
+        "terminal_comment": 5197623755,
+        "review_blob": "b6aa887aea1e5557791b15588b9823f494fd1ba6"
+      },
+      "task": "PUBLISH_A2_D_INTEGRATION_HANDOFF_SET_V1_AND_LATEST_POINTER",
+      "required_terminal": "A2_D_INTEGRATION_HANDOFF_SET_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "owner": "B-5",
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 41,
+      "entry_event": "D1_AUTHORITY_TYPE_AND_MAPPING_ADDENDUM_PUBLISHED",
+      "event_evidence": {
+        "d1_head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+        "d1_pointer_blob": "d65285f969294c19c0d9e2d1bbc2adf8165f8819",
+        "source_authority_type": "OFFICIAL_SECONDARY",
+        "source_authority_decision_blob": "6bf779b937bf2bea761780315b22692ccca07ad9",
+        "mapping_addendum_blob": "118d6403dd5db47afafb982991f8fd9a51f35f28",
+        "b_receipt_procedure_blob": "2a8b7c1b04924728cce14dc21c225ad09598905f",
+        "tree_binding_manifest_blob": "dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd"
+      },
+      "task": "REBIND_D1_AUTHORITY_RERUN_FULL_TESTS_PUBLISH_B5_D_READY_PACKAGE_V2",
+      "required_terminal": "B5_D_READY_PACKAGE_V2_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "owner": "C-1",
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 20,
+      "entry_event": "D1_AUTHORITY_CONTENT_DELTA",
+      "event_evidence": {
+        "d1_head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+        "mapping_addendum_blob": "118d6403dd5db47afafb982991f8fd9a51f35f28",
+        "tree_binding_manifest_blob": "dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd",
+        "b_receipt_procedure_blob": "2a8b7c1b04924728cce14dc21c225ad09598905f"
+      },
+      "task": "CONSUME_D1_AUTHORITY_DELTA_AND_PUBLISH_DELTA_BINDING_POINTER",
+      "semantic_rerun": false,
+      "required_terminal": "C1_D1_AUTHORITY_DELTA_BOUND_WAITING_B_CONTENT_OR_ACTUAL_RECEIPTS_OR_EXACT_BLOCKER"
+    }
+  ],
+  "event_driven_owners": [
+    {
+      "owner": "B-6",
+      "pr": 42,
+      "entry_event": "B5_D_READY_PACKAGE_V2_READY",
+      "task": "DELTA_REPREFLIGHT_AND_PROMOTE_OR_BLOCK_HANDOFF_CANDIDATE",
+      "required_terminal": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "owner": "B-1",
+      "pr": 19,
+      "entry_event": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_TERMINAL",
+      "task": "PUBLISH_B1_D_SOURCE_DOCUMENT_PACKAGE_V2_COMMANDER_TERMINAL",
+      "required_terminal": "B1_D_SOURCE_DOCUMENT_PACKAGE_V2_READY_OR_EXACT_BLOCKER"
+    },
+    {
+      "owner": "D-6",
+      "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+      "pr": 193,
+      "entry_event": "SEPARATE_D1_B_SOURCE_DOCUMENT_RECEIPT_AND_D1_C_KNOWLEDGE_RECEIPT_AVAILABLE",
+      "task": "DELTA_ONLY_PROVENANCE_CITATION_ACCEPTANCE",
+      "required_terminal": "D6_ABCD_CROSS_REPOSITORY_ACCEPTANCE_PASS_OR_EXACT_FINDINGS"
+    }
+  ],
+  "event_wait": {
+    "A_workers": [
+      "A-3",
+      "A-4",
+      "A-5",
+      "A-6",
+      "A-7"
+    ],
+    "B_workers": [
+      "B-2",
+      "B-3",
+      "B-4"
+    ],
+    "C_workers": [
+      "C-2",
+      "C-3",
+      "C-4",
+      "C-5",
+      "C-6"
+    ],
+    "D_workers": [
+      "D-2",
+      "D-3",
+      "D-4",
+      "D-5"
+    ],
+    "bridge": [
+      "D-1_PR21"
+    ]
+  },
+  "no_duplicate_reexecution": [
+    "NO_A3_TO_A7_REBUILD",
+    "NO_B2_B3_B4_REBUILD",
+    "NO_C2_TO_C6_SEMANTIC_RERUN_WITHOUT_NEW_CONTENT",
+    "NO_D2_TO_D5_REBUILD",
+    "NO_PR21_POINTER_REBUILD_WITHOUT_D1_HEAD_OR_BLOB_DELTA"
+  ],
+  "actual_acceptance_boundary": {
+    "D1_B_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_ISSUANCE_AUTHORIZED": false,
+    "D1_C_KNOWLEDGE_ACCEPTANCE_RECEIPT_ISSUANCE_AUTHORIZED": false,
+    "KNOWLEDGE_RELEASE_CREATION_AUTHORIZED": false,
+    "reason": "CURRENT_BATCH_IS_CONTRACT_AND_FIXTURE_PREPARATION_ONLY"
+  },
+  "forbidden": [
+    "NEW_EXTERNAL_REQUEST",
+    "ACTUAL_SITE_EXTRACTION",
+    "ACTUAL_BULK_COLLECTION",
+    "POSTGRESQL_CONNECTION",
+    "MIGRATION_APPLY",
+    "CANONICAL_DB_WRITE",
+    "PRODUCTION",
+    "READY",
+    "MERGE",
+    "SELF_MERGE"
+  ],
+  "status": "NEXT_EVENT_BATCH_READY_FOR_DISPATCH"
+}

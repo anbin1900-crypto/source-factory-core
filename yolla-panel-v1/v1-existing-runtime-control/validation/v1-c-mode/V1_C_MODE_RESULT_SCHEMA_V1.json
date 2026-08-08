@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "V1_C_MODE_RESULT_SCHEMA_V1",
+  "type": "object",
+  "required": ["schema_version", "worker", "cycle_id", "status", "tests", "findings", "artifacts", "terminal"],
+  "properties": {
+    "schema_version": {"const": "V1_C_MODE_WORKER_RESULT_V1"},
+    "worker": {"enum": ["V1-CV-1", "V1-CV-2", "V1-CV-3"]},
+    "cycle_id": {"const": "V1-C-MODE-VALIDATION-CYCLE-001"},
+    "status": {"enum": ["PASS", "FAIL_FIXED_RETEST_PASS", "BLOCKED_EXTERNAL"]},
+    "tests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "result"],
+        "properties": {
+          "id": {"type": "string"},
+          "result": {"enum": ["PASS", "FAIL", "NOT_RUN"]},
+          "evidence": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "findings": {"type": "array"},
+    "artifacts": {"type": "array"},
+    "source_mutation_count": {"type": "integer", "minimum": 0},
+    "retest_count": {"type": "integer", "minimum": 0},
+    "terminal": {"type": "string"}
+  }
+}

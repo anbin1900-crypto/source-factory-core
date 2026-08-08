@@ -1,0 +1,34 @@
+{
+  "schema_version": "LATEST_YOLLA_COMMANDER_TO_WORKER_DIRECTIVE_OUTPUT_FORMAT_POLICY_POINTER_V1",
+  "pointer_id": "LATEST-YOLLA-COMMANDER-TO-WORKER-DIRECTIVE-OUTPUT-FORMAT-POLICY-20260806-001",
+  "updated_at_kst": "2026-08-06T13:45:00+09:00",
+  "status": "ACTIVE_MANDATORY",
+  "owner": "V-2_YOLLA_AI_SUPREME_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "policy": {
+    "path": "yolla-panel-v1/a0-successor-control/policies/YOLLA_COMMANDER_TO_WORKER_DIRECTIVE_OUTPUT_FORMAT_POLICY_V1.json",
+    "commit": "b3fc3ad492f611762ad8144766c444ebdd37b99d",
+    "blob": "0fdc0f8346313d8ef2bf45c4f20fff6281817d20",
+    "schema_version": "YOLLA_COMMANDER_TO_WORKER_DIRECTIVE_OUTPUT_FORMAT_POLICY_V1",
+    "remote_readback": "PASS"
+  },
+  "mandatory_summary": {
+    "one_recipient_one_independent_block": true,
+    "recipient_in_title": true,
+    "fixed_metadata_order": true,
+    "full_url_inside_worker_block": false,
+    "common_directive_commit_and_path_required": true,
+    "cross_repository_common_directive_repository_required": true,
+    "unified_sentence_with_common": "게시물 공통지시문 <COMMON_DIRECTIVE_FILENAME>과 PR #<PR_NUMBER> 댓글 <TASK_COMMENT>을 읽고 작업을 수행하라.",
+    "unified_sentence_without_common": "게시물 PR #<PR_NUMBER> 댓글 <TASK_COMMENT>을 읽고 작업을 수행하라."
+  },
+  "applies_from": "NEXT_COMMANDER_OUTPUT",
+  "supersedes_older_output_examples": true,
+  "changes_task_scope": false,
+  "changes_execution_authority": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

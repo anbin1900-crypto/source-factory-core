@@ -1,0 +1,72 @@
+{
+  "schema_version": "A0_V561_STATE_TEST_ISOLATION_HOTFIX_BUILD_REPORT_V1",
+  "report_type": "FAILURE_CORRECTION_BUILD_AND_STATIC_TEST",
+  "owner": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+  "product_identity": "AI_YOLLA_PANEL_WORKSPACE_RUNTIME",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "observed_target_pc_failure": {
+    "observed_at_kst": "2026-08-04T00:55:59+09:00",
+    "stage": "V56_STATE_RUNTIME_TEST",
+    "failure": "ERR_ASSERTION",
+    "actual_role_count": 40,
+    "expected_role_count": 39,
+    "terminal": "V56_STATE_RUNTIME_TEST_FAILED",
+    "rollback_runtime_from_backup": true,
+    "interpretation": "BASE_ROLE_COUNT_39_PLUS_EXISTING_USER_ADDED_WORKER_1_WAS_VALID_BUT_TEST_USED_HARDCODED_39"
+  },
+  "root_cause": {
+    "live_state_path": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2\\workspace_state.json",
+    "defect": "WINDOWS_TEST_LOADED_LIVE_PERSISTED_CUSTOM_ROLE_STATE",
+    "invalid_assumption": "MERGED_ROLE_COUNT_MUST_ALWAYS_EQUAL_39",
+    "user_data_corruption": false,
+    "custom_worker_invalid": false
+  },
+  "correction": {
+    "version": "5.6.1",
+    "test_state_environment_override": "AI_YOLLA_TEST_STATE_ROOT",
+    "test_state_isolated_temporary_directory": true,
+    "live_workspace_state_read_during_install_test": false,
+    "baseline_role_count_derived_from_registry": true,
+    "baseline_group_count_derived_from_registry": true,
+    "existing_custom_groups_workers_preserved": true,
+    "ui_behavior_changed": false,
+    "single_outer_scroll_preserved": true,
+    "all_workers_reachable_preserved": true,
+    "worker_menu_preserved": true
+  },
+  "installer": {
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V561_STATE_TEST_HOTFIX.bat",
+    "size_bytes": 72913,
+    "sha256": "fc9031c59c8971df5af2ff43ac36b7880f9e65487cd5c858514683256966e5ce",
+    "embedded_payload_size_bytes": 51559,
+    "embedded_payload_sha256": "708257b6ddd4640c3f55abdbf8f18e0ec8f0006b8838c7e6a90ed51e15bdb4a2",
+    "git_required": false,
+    "administrator_auto_elevation": true,
+    "rollback_on_install_failure": true,
+    "launcher_after_install": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_6_1.bat"
+  },
+  "tests": {
+    "embedded_payload_integrity": "PASS_20_ENTRIES",
+    "node_syntax": "PASS",
+    "command_cycle_contract": "PASS",
+    "v56_reachability_contract": "PASS_22",
+    "state_runtime_contract": "PASS_20",
+    "live_state_isolation": "PASS",
+    "baseline_count_derived": true,
+    "b6_present": true,
+    "all_workers_reachable": true
+  },
+  "supersession": {
+    "v56_installer_status": "SUPERSEDED_DO_NOT_RUN",
+    "reason": "INSTALL_TEST_READ_LIVE_CUSTOM_STATE_AND_USED_HARDCODED_ROLE_COUNT"
+  },
+  "target_pc_execution_observed": false,
+  "target_pc_visual_acceptance_claimed": false,
+  "status": "BUILD_PASS_TARGET_PC_RETRY_PENDING",
+  "terminal": "A0_V561_STATE_TEST_ISOLATION_HOTFIX_BUILD_PASS",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "built_at": "2026-08-04T01:02:00+09:00"
+}

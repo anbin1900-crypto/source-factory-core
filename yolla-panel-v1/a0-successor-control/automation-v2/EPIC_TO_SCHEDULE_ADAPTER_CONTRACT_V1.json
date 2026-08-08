@@ -1,0 +1,60 @@
+{
+  "schema_version": "EPIC_TO_SCHEDULE_ADAPTER_CONTRACT_V1",
+  "status": "SOURCE_CORE_IMPLEMENTED",
+  "input_authority": {
+    "rules": ".yolla/automation/YOLLA_AUTOMATION_COMMON_RULES_V2.md",
+    "schema": ".yolla/automation/COMMANDER_EPIC_SUBMISSION_V2.schema.json",
+    "template": ".yolla/automation/COMMANDER_EPIC_SUBMISSION_V2.template.json"
+  },
+  "output_authority": {
+    "schedule_schema": "yolla-panel-v1/a0-successor-control/automation-v1/WORKER_JOB_SCHEDULE_V1.schema.json",
+    "runtime": "WORKER_JOB_SCHEDULE_V1",
+    "transport": "LOCAL_DURABLE_FILE_QUEUE_V1"
+  },
+  "mapping": {
+    "package_id": ["schedule_id", "cycle_id"],
+    "project_id": ["project_id"],
+    "commander_id": ["commander"],
+    "worker_id": ["workers key"],
+    "sequence": ["job.order"],
+    "epic_id": ["job.job_id", "assignment_id sidecar"],
+    "directive_id": ["job.directive_id"],
+    "instruction": ["job.command"],
+    "depends_on": ["job.depends_on"],
+    "expected_terminal": ["job.expected_terminal"],
+    "retry_limit": ["job.retry_limit"]
+  },
+  "sidecar": {
+    "schema_version": "EPIC_TO_WORKER_SCHEDULE_BINDING_V1",
+    "purpose": "기존 WORKER_JOB_SCHEDULE_V1 Schema를 변경하지 않고 worker_slot_uid, done_when, title, source_github_ref를 보존",
+    "authoritative": false,
+    "rebuildable_from_epic_json": true
+  },
+  "pc_agent_db_projection": {
+    "schema": ".yolla/automation/PC_AGENT_AUTOMATION_DB_V1.sql",
+    "mapping": ".yolla/automation/EPIC_TO_PC_AGENT_DB_MAPPING_V1.json",
+    "authority": "REBUILDABLE_NON_AUTHORITATIVE_PROJECTION",
+    "transaction_required": true,
+    "rollback_on_failure": true
+  },
+  "validation": {
+    "forbidden_input_state_fields_rejected": true,
+    "worker_sequence_contiguous_from_1": true,
+    "global_epic_id_unique": true,
+    "global_directive_id_unique": true,
+    "unknown_dependency_rejected": true,
+    "cyclic_dependency_rejected": true,
+    "source_commit_40_hex_required": true,
+    "source_path_exact_match_required": true
+  },
+  "result_authority": {
+    "schema": ".yolla/automation/EPIC_RESULT_V2.schema.json",
+    "external_terminal": ["PASS", "BLOCKED_EXTERNAL"],
+    "pr_comment_role": "POINTER_ONLY"
+  },
+  "new_runtime": false,
+  "new_transport": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

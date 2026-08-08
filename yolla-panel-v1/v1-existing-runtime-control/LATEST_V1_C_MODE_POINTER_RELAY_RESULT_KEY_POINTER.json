@@ -1,0 +1,86 @@
+{
+  "schema_version": "LATEST_V1_C_MODE_POINTER_RELAY_RESULT_KEY_POINTER_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-006",
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "objective": "POINTER_RELAY_RESULT_KEY_RUNTIME",
+  "objective_mode": "ADDITIVE_NOT_REPLACEMENT",
+  "previous_wave5_cancelled": false,
+  "existing_validation_system": "RETAINED_AND_EXTENDED",
+  "documents": {
+    "contract": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode/C_MODE_POINTER_RELAY_RESULT_KEY_CONTRACT_V1.md",
+      "commit": "971f92d9593240e00d10244630bc10f0273a0e9c"
+    },
+    "wave6_directive": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave6/V1_C_MODE_6_WORKER_WAVE6_ADDITIVE_DIRECTIVE_V7.md",
+      "commit": "c8c4b1173ece0f7f13bdc53aaadf51164d261e9a"
+    },
+    "publication_receipt": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave6/V1_C_MODE_6_WORKER_WAVE6_POINTER_RELAY_PUBLICATION_RECEIPT_V7.json",
+      "commit": "7574ff99c973c63f597fb9f7af536784a0aeb280"
+    }
+  },
+  "control_wave_comment_id": 5193445434,
+  "worker_rows": [
+    {
+      "slot": "W1",
+      "role": "AUTOMATION-C-W1",
+      "pr": 59,
+      "comment": 5193423147,
+      "result_key": "519342314700"
+    },
+    {
+      "slot": "W2",
+      "role": "AUTOMATION-C-W2",
+      "pr": 60,
+      "comment": 5193426330,
+      "result_key": "519342633000"
+    },
+    {
+      "slot": "W3",
+      "role": "AUTOMATION-C-W3",
+      "pr": 61,
+      "comment": 5193429263,
+      "result_key": "519342926300"
+    },
+    {
+      "slot": "W4",
+      "role": "AUTOMATION-C-W4",
+      "pr": 62,
+      "comment": 5193432471,
+      "result_key": "519343247100"
+    },
+    {
+      "slot": "W5",
+      "role": "AUTOMATION-C-W5",
+      "pr": 63,
+      "comment": 5193435662,
+      "result_key": "519343566200"
+    },
+    {
+      "slot": "W6",
+      "role": "AUTOMATION-C-W6",
+      "pr": 64,
+      "comment": 5193440761,
+      "result_key": "519344076100"
+    }
+  ],
+  "result_key_rule": "COMMENT_DECIMAL_STRING_PLUS_ASCII_00",
+  "panel_normal_path": "FETCH_WAVE_INDEX_THEN_FETCH_EXACT_DIRECTIVE_COMMENTS_THEN_BATCH_DISPATCH_THEN_CHECK_RESULT_KEY_THEN_CAPTURE_RESULT_COMMENT_THEN_NOTIFY_COMMANDER",
+  "commander_message": "작업완료. 위 RESULT_COMMENT 게시물을 모두 검토하고 다음 WAVE의 워커별 작업을 게시하라.",
+  "target_candidate_version": "5.10.2.4.2-rc2",
+  "current_progress_percent": 88,
+  "status": "WAVE6_POINTER_RELAY_ADDITIVE_OBJECTIVE_DISPATCHED_6_OF_6",
+  "next_gate": "SIX_RESULT_KEY_TERMINALS_RUNTIME_INTEGRATION_AND_EXISTING_VALIDATION_REGRESSION",
+  "target_pc_pass": "PENDING",
+  "lts_terminal_claimed": false,
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at_kst": "2026-08-06T00:00:44+09:00"
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "LOCAL_SERVER_PC_AGENT_RECEIPT_V1.schema.json",
+  "title": "Local Server PC Agent Receipt V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version","job_id","idempotency_key","action","status","accepted_at","updated_at","completed_at","service_status","health_status","result","blocker","rollback","executor_owner","production","ready","merge"],
+  "properties": {
+    "schema_version": {"const":"LOCAL_SERVER_PC_AGENT_RECEIPT_V1"},
+    "job_id": {"type":"string","pattern":"^LSJ-"},
+    "idempotency_key": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "action": {"type":"string","pattern":"^LOCAL_SERVER_"},
+    "status": {"enum":["ACCEPTED","RUNNING","PASS","FAILED_ROLLED_BACK","FAILED_EXACT_BLOCKER","BLOCKED_EXTERNAL","CANCELLED"]},
+    "accepted_at": {"type":"string","format":"date-time"},
+    "updated_at": {"type":"string","format":"date-time"},
+    "completed_at": {"type":["string","null"],"format":"date-time"},
+    "service_status": {"type":["string","null"],"enum":[null,"UNKNOWN","STOPPED","STARTING","RUNNING","DEGRADED","FAILED"]},
+    "health_status": {"type":["string","null"]},
+    "result": {"type":"object"},
+    "blocker": {"type":["object","null"]},
+    "rollback": {"type":["object","null"]},
+    "executor_owner": {"const":"D_GROUP"},
+    "production": {"const":false},
+    "ready": {"const":false},
+    "merge": {"const":false}
+  }
+}

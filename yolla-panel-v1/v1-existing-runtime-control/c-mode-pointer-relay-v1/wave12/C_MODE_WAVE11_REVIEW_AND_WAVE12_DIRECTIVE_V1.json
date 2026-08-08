@@ -1,0 +1,71 @@
+{
+  "schema_version": "C_MODE_WAVE11_REVIEW_AND_WAVE12_DIRECTIVE_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "previous_wave": "V1-C-MODE-6W-WAVE-011",
+  "wave_id": "V1-C-MODE-6W-WAVE-012",
+  "registry_sequence": 12,
+  "owner": "V-1",
+  "mode": "EXECUTABLE_SOURCE_GAP_CLOSURE_AND_REAL_RC4_BUILD",
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "target_version": "5.10.2.4.2-rc4",
+  "wave11_review": {
+    "registry_comment": 5194861923,
+    "valid_correlated_reports": 6,
+    "missing_reports": 0,
+    "duplicate_results": 0,
+    "replacement_required": 0,
+    "w3_carryover_closed": true,
+    "results": {
+      "AUTOMATION-C-W1": {"result_comment": 5194951700, "result_commit": "34eb98aa5f76c944d68261b4546b57ea81e1a5b8", "outcome": "BLOCKED_EXECUTABLE_SOURCE_CLASSES_MISSING"},
+      "AUTOMATION-C-W2": {"result_comment": 5194934304, "result_commit": "375227bf41fe01a664ae699b7e258069955620e2", "outcome": "PASS_ARTIFACT_CONTENT_GATE"},
+      "AUTOMATION-C-W3": {"result_comment": 5194984232, "result_commit": "8345de884b750b91a26f538e98c58847c6eb2e39", "outcome": "PASS_OFFLINE_TARGET_PC_PENDING", "source_wave": "V1-C-MODE-6W-WAVE-009"},
+      "AUTOMATION-C-W4": {"result_comment": 5194957912, "result_commit": "493b7884a966ffa93537cb2b7d74c3f83fbbc225", "outcome": "BLOCKED_WAITING_CORRECTED_RC4_PACKAGE"},
+      "AUTOMATION-C-W5": {"result_comment": 5194936814, "result_commit": "f0235125a629867020cd17573048f540ff67d8a1", "outcome": "BLOCKED_EXECUTABLE_SOURCE_CLASSES_MISSING"},
+      "AUTOMATION-C-W6": {"result_comment": 5194921717, "result_commit": "a0e9e84639a9cf388464ded43957b2c007708814", "outcome": "BLOCKED_WAITING_CORRECTED_RC4_PACKAGE"}
+    }
+  },
+  "exact_remaining_gap": {
+    "missing_component_classes": [
+      "BACKGROUND_BROWSER_DISPATCH_AND_WORK_CONTROL_LOG",
+      "INSTALLER_LAUNCHER_SMOKE_ROLLBACK"
+    ],
+    "missing_executable_capabilities": [
+      "BACKGROUND_BROWSER_DISPATCH",
+      "WORK_CONTROL_EVENT_LOGGING",
+      "ROLLBACK_RUNTIME",
+      "LAUNCHER_SWITCH_AFTER_SMOKE"
+    ],
+    "missing_preexisting_source_is_external_blocker": false,
+    "single_implementation_owner": "AUTOMATION-C-W5"
+  },
+  "wave12_assignments": {
+    "AUTOMATION-C-W1": {"command_id": "C6W-W12-W1-EXECUTABLE-SOURCE-INVENTORY-LOCK-V5", "task": "LOCK_EXECUTABLE_SOURCE_OR_EXPLICIT_IMPLEMENT_BY_W5_GAPS"},
+    "AUTOMATION-C-W2": {"command_id": "C6W-W12-W2-RUNTIME-TECHNICAL-ACCEPTANCE-GATE", "task": "SEPARATE_REPORTED_OUTCOME_FROM_TECHNICAL_ACCEPTANCE"},
+    "AUTOMATION-C-W3": {"command_id": "C6W-W12-W3-UI-PAYLOAD-EVIDENCE-INTEGRATION", "task": "LOCK_UI_EXECUTABLE_MEMBERS_AND_PACKAGE_VALIDATOR"},
+    "AUTOMATION-C-W4": {"command_id": "C6W-W12-W4-CONNECTOR-BYTE-PREFLIGHT-ACCEPTANCE", "task": "CONNECTOR_BYTE_VALIDATION_AND_6X3_RERUN"},
+    "AUTOMATION-C-W5": {"command_id": "C6W-W12-W5-EXECUTABLE-GAP-CLOSURE-RC4-BUILD", "task": "IMPLEMENT_MISSING_RUNTIME_AND_BUILD_REAL_RC4", "integration_owner": true},
+    "AUTOMATION-C-W6": {"command_id": "C6W-W12-W6-NONBLOCKING-SUBSTANTIVE-AUDIT", "task": "INDEPENDENT_NEGATIVE_FIXTURES_AND_RC4_AUDIT", "implementation_direct_edit": false, "blocking": false}
+  },
+  "registry_plan": {
+    "worker_count": 6,
+    "carryover_count": 0,
+    "dispatch_mode": "CYCLE_BATCH_PARALLEL",
+    "all_rows_valid_before_any_dispatch": true,
+    "partial_dispatch": false,
+    "same_sequence_duplicate": "FAIL_CLOSED",
+    "result_key_rule": "DIRECTIVE_COMMENT_STRING_PLUS_ASCII_00"
+  },
+  "current_progress_percent": 96,
+  "progress_increase_withheld_reason": "REAL_INSTALLABLE_RUNTIME_NOT_YET_BUILT",
+  "target_pc_pass": "PENDING",
+  "six_workers_three_waves": "PENDING_TARGET_PC",
+  "restart_resume": "PENDING_TARGET_PC",
+  "log_loss_zero": "PENDING_TARGET_PC",
+  "login_profile_preserved": "PENDING_TARGET_PC_READBACK",
+  "a_e_reintroduction_count": 0,
+  "auto_test_write_count": 0,
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

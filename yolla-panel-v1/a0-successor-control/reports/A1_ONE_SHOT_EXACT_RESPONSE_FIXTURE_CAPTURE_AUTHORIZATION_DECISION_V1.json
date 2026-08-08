@@ -1,0 +1,106 @@
+{
+  "schema_version": "A1_ONE_SHOT_EXACT_RESPONSE_FIXTURE_CAPTURE_AUTHORIZATION_DECISION_V1",
+  "decision_id": "A1-ONE-SHOT-EXACT-RESPONSE-FIXTURE-CAPTURE-DECISION-V1-20260805-001",
+  "decided_at_kst": "2026-08-05T06:55:00+09:00",
+  "role": "A-1_YOLLA_WORKSPACE_SUPERVISING_COMMANDER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "request": {
+    "request_id": "A2-TO-A0-A1-ONE-SHOT-EXACT-RESPONSE-FIXTURE-CAPTURE-AUTHORIZATION-REQUEST-V1-20260805-001",
+    "request_comment": 5184545017,
+    "request_is_authorization": false,
+    "requested_profiles": [
+      "EP-001",
+      "EP-002",
+      "EP-003",
+      "EP-004",
+      "EP-005",
+      "EP-010",
+      "EP-011",
+      "EP-012"
+    ],
+    "requested_max_capture_per_profile": 1,
+    "requested_max_total_capture": 8,
+    "requested_max_response_size_bytes": 2097152,
+    "requested_request_timeout_ms": 20000,
+    "requested_total_execution_timeout_ms": 180000,
+    "requested_transient_raw_byte_disposal_deadline_seconds": 30,
+    "requested_redacted_derivative_retention_days": 30,
+    "requested_redaction_before_persist": true,
+    "requested_auth_bypass": false,
+    "requested_access_control_bypass": false,
+    "requested_actual_bulk_collection": false,
+    "referenced_authorities": {
+      "A-3": {
+        "request_head": "6735d9335dd5e5137d09c494b3c6921989bb3252",
+        "current_pr_head": "6735d9335dd5e5137d09c494b3c6921989bb3252",
+        "head_match": true,
+        "request_pointer_blob": "e9d9b5a86c08e7862c6d68099e860e33567ca987",
+        "request_terminal": "A3_RESPONSE_FIXTURE_ACQUISITION_PACKAGE_REBOUND_READY_FOR_GOVERNANCE"
+      },
+      "A-5": {
+        "request_head": "19781a67eb24ee217b1d072869c407077cca72e1",
+        "current_pr_head": "19781a67eb24ee217b1d072869c407077cca72e1",
+        "head_match": true,
+        "request_pointer_blob": "59f9a82c6edd15e1aa23c11573657ecf25efb004",
+        "request_handoff_blob": "a9a5112e53992b6149ec954447fa413ffeca9978"
+      },
+      "A-7": {
+        "request_head": "f4ca318a6335bc15970a8bff5c94f112d64807f4",
+        "current_pr_head": "b41978dc9840446293f5e4a6255e5d869604f16d",
+        "head_match": false,
+        "request_head_ahead_of_current_by_commits": 5,
+        "request_pointer_blob": "eb058aa9a827884da1ea2f142743795ff98522de",
+        "request_terminal": "A7_FIXTURE_ACQUISITION_GOVERNANCE_READY_FOR_A2_AUTHORIZATION_REQUEST",
+        "current_pointer_blob": "480b692a3e71f646e847785315ad3a02bec2fbf0",
+        "current_pointer_status": "EVENT_WAIT",
+        "current_authorization_recommendation": "EVENT_WAIT_DO_NOT_REQUEST_ONE_SHOT_AUTHORIZATION_YET",
+        "current_authorization_request_ready": false,
+        "current_capture_execution_authorized": false,
+        "current_live_site_call_authorized": false,
+        "remaining_event": "A3_WAVE5_1_TERMINAL_VALIDATION_REBIND_RETENTION_RECEIPTS_AND_POINTER_REMOTE_READBACK"
+      }
+    }
+  },
+  "decision": {
+    "format": "A0_A1_ONE_SHOT_CAPTURE_AUTHORIZATION_DECISION_V1",
+    "decision": "DENIED",
+    "authorized_profiles": [],
+    "authorized_max_total_capture": 0,
+    "authorized_by": "A-1",
+    "terminal": "A1_ONE_SHOT_CAPTURE_AUTHORIZATION_DENIED_STALE_NON_CURRENT_A7_AUTHORITY",
+    "first_blocker": "REQUEST_REFERENCES_A7_HEAD_AND_RECOMMENDATION_NOT_PRESENT_AT_CURRENT_PR26_REMOTE_HEAD",
+    "fail_closed": true,
+    "capture_execution_authorized": false,
+    "live_site_call_authorized": false,
+    "credential_use_authorized": false
+  },
+  "reasoning_evidence": {
+    "authority_precedence": "EXACT_GITHUB_REMOTE_HEAD_COMMITTED_LEDGER",
+    "a7_compare_base_current": "b41978dc9840446293f5e4a6255e5d869604f16d",
+    "a7_compare_head_request": "f4ca318a6335bc15970a8bff5c94f112d64807f4",
+    "a7_request_head_ahead_by": 5,
+    "current_branch_contains_request_decision_commits": false,
+    "request_can_be_approved_from_orphaned_or_non_current_head": false
+  },
+  "resubmission_requirements": [
+    "PR #26 current Remote Head must contain the governing A-7 terminal and latest pointer used by the request.",
+    "LATEST_A7_REPORT_POINTER.json must state authorization_request_ready=true at the current PR #26 Remote Head.",
+    "A-7 must bind A-3 validation, rebind and retention receipts at current exact heads and blobs.",
+    "A-2 must publish a new request using the then-current A-3, A-5 and A-7 exact heads and pointer blobs.",
+    "No capture, live site call or credential use may occur before a new explicit APPROVED decision."
+  ],
+  "safety": {
+    "capture_execution_count": 0,
+    "live_site_call_count": 0,
+    "credential_use_count": 0,
+    "auth_bypass": false,
+    "access_control_bypass": false,
+    "actual_bulk_collection": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  }
+}

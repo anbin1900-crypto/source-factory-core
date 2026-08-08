@@ -1,0 +1,72 @@
+{
+  "schema_version": "V2_ABCD_D_GROUP_NEXT_EVENT_DISPATCH_RECEIPT_V4",
+  "receipt_id": "V2-ABCD-D-GROUP-NEXT-EVENT-DISPATCH-20260806-004",
+  "published_at_kst": "2026-08-06T17:47:33+09:00",
+  "batch": {
+    "id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V4-20260806-001",
+    "path": "yolla-panel-v1/a0-successor-control/integration/abcd-v1/V2_ABCD_D_GROUP_NEXT_EVENT_BATCH_V4.json",
+    "commit": "15e65360dea7c7e0f6b1595558d3f92ce25c1843",
+    "blob": "1f230fc15179bc793bd23d391ebb238e4264b940"
+  },
+  "comments": {
+    "B5_pr41": 5202449584,
+    "B6_pr42": 5202452407,
+    "B1_pr19": 5202455091,
+    "D6_pr193": 5202457107,
+    "control_pr17": 5202458843
+  },
+  "dispatch_accounting": {
+    "required_comment_count": 5,
+    "published_comment_count": 5,
+    "missing_comment_count": 0,
+    "immediate_active_owner_count": 1,
+    "event_driven_owner_count": 3,
+    "control_notice_count": 1,
+    "status": "PASS_5_OF_5"
+  },
+  "active_owner_state": {
+    "B5": "ACTIVE_RESUME_EXISTING_TASK_AFTER_D1_BLOCKER_RESOLUTION",
+    "B6": "READ_ONLY_EVENT_WAIT_B5",
+    "B1": "EVENT_WAIT_B6",
+    "D6": "READ_ONLY_EVENT_WAIT_ACTUAL_RECEIPTS"
+  },
+  "completed_event_wait": [
+    "A-2",
+    "A-3",
+    "A-4",
+    "A-5",
+    "A-6",
+    "A-7",
+    "B-2",
+    "B-3",
+    "B-4",
+    "C-1",
+    "C-2",
+    "C-3",
+    "C-4",
+    "C-5",
+    "C-6",
+    "D-1",
+    "D-1_BRIDGE",
+    "D-2",
+    "D-3",
+    "D-4",
+    "D-5"
+  ],
+  "safety": {
+    "new_external_request": false,
+    "actual_site_extraction": false,
+    "actual_bulk_collection": false,
+    "actual_d_package_acceptance": false,
+    "actual_receipt_issuance": false,
+    "knowledge_release_creation": false,
+    "postgresql_connection": false,
+    "migration_apply": false,
+    "canonical_db_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  },
+  "status": "NEXT_WORK_DISPATCH_V4_COMPLETE"
+}

@@ -1,0 +1,208 @@
+{
+  "schema_version": "A0_CURRENT_OPERATIONAL_HANDOFF_V1",
+  "status": "SUCCESSOR_HANDOFF_PREPARED",
+  "terminal": "A0_AUTOMATION_SUCCESSOR_CONTROL_CREATED",
+  "authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "upper_control_pr": 14,
+    "upper_branch": "integration/a1-yolla-panel-connection-frontier-v1",
+    "upper_documented_head": "124367a50a72505516666b4f427bfeda325ba3d3",
+    "successor_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+    "successor_base_commit": "124367a50a72505516666b4f427bfeda325ba3d3",
+    "role_charter_commit": "689436932385ef321312df6523045e2af3b042d2"
+  },
+  "command_chain": {
+    "supervising_commander": "YOLLA_WORKSPACE_SUPERVISING_COMMANDER",
+    "execution_successor": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+    "analyzer_commander": "A-2_SITE_ANALYZER_AND_ADAPTER_FACTORY_COMMANDER",
+    "collection_db_commander": "B-1_COLLECTION_AND_DB_MATERIALIZATION_COMMANDER",
+    "ai_runtime_commander": "C-1_DOMAIN_AI_RUNTIME_COMMANDER",
+    "knowledge_authority_commander": "D-1_DOMAIN_KNOWLEDGE_AUTHORITY_COMMANDER"
+  },
+  "runtime_baseline": {
+    "name": "YOLLA_WORKSPACE_V5_CLEAN_RUNTIME",
+    "target_pc_visual_acceptance": "PASS",
+    "seat_count": 50,
+    "group_count": 7,
+    "chatgpt_browser_view": "PASS",
+    "project_context_binding_restored": "PASS",
+    "white_screen_regression": "RESOLVED",
+    "launcher": "E:\\SOURCE FACTORY\\RUN_YOLLA_WORKSPACE_V5.bat",
+    "legacy_safe_panel_v10": "FALLBACK_ONLY",
+    "v3_patch_chain": "RETIRED_FROM_FORWARD_DEVELOPMENT"
+  },
+  "version_status": {
+    "v5_0": {
+      "purpose": "stable clean runtime fallback",
+      "build": "PASS",
+      "target_pc": "PASS",
+      "preserve": true
+    },
+    "v5_1": {
+      "purpose": "selected-seat actual command lifecycle",
+      "features": [
+        "dynamic_cycle_id",
+        "actual_chatgpt_prompt_dispatch",
+        "exact_role_and_cycle_result_validation",
+        "seat_status_lifecycle",
+        "cycle_json_ledger"
+      ],
+      "build_contract_tests": "PASS",
+      "target_pc_actual_command_cycle": "NOT_YET_CONFIRMED",
+      "launcher": "E:\\SOURCE FACTORY\\RUN_YOLLA_WORKSPACE_V5_1.bat"
+    },
+    "v5_2": {
+      "purpose": "fixed login session and independent analyzer browser",
+      "features": [
+        "fixed_browser_user_data",
+        "chatgpt_worker_browser_view",
+        "site_analyzer_browser_view",
+        "tab_specific_address_bar",
+        "analysis_artifact_pipeline"
+      ],
+      "build_tests": "PASS",
+      "target_pc_login_persistence": "NOT_YET_CONFIRMED",
+      "target_pc_dual_browser_view": "NOT_YET_CONFIRMED",
+      "target_pc_analysis_artifact": "NOT_YET_CONFIRMED",
+      "launcher": "E:\\SOURCE FACTORY\\RUN_YOLLA_WORKSPACE_V5_2.bat"
+    }
+  },
+  "fixed_paths": {
+    "browser_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "v5_state": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5\\workspace_state.json",
+    "v51_state": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-1\\workspace_state.json",
+    "v51_cycles": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-1\\cycles",
+    "v52_state": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2\\workspace_state.json",
+    "v52_analysis_runs": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2\\analysis_runs"
+  },
+  "window_architecture": {
+    "control_panel": [
+      "runtime_status",
+      "window_open_focus_arrange_restart",
+      "pc_agent_status",
+      "cycle_status",
+      "logs_and_receipts"
+    ],
+    "workspace_tabs": [
+      "WORKER_AUTOMATION",
+      "SITE_STRUCTURE_ANALYZER",
+      "ADAPTER_MANAGEMENT",
+      "BULK_COLLECTION",
+      "DB_MATERIALIZATION",
+      "KNOWLEDGE_DB",
+      "AI_SEATS"
+    ],
+    "worker_tab": {
+      "browser_view": "CHATGPT_DEDICATED",
+      "address_bar": "WORKER_ONLY_VISIBLE",
+      "state": "PROJECT_AND_CONTEXT_BOUND"
+    },
+    "analyzer_tab": {
+      "browser_view": "GENERAL_SITE_DEDICATED",
+      "address_bar": "ANALYZER_ONLY_VISIBLE",
+      "purpose": "SITE_STRUCTURE_AND_COMMUNICATION_DISCOVERY",
+      "output": "SITE_SPECIFIC_ADAPTER"
+    }
+  },
+  "system_pipeline": [
+    "GENERIC_SITE_ANALYZER",
+    "SITE_SPECIFIC_ADAPTER_FACTORY",
+    "SITE_AGNOSTIC_COLLECTOR",
+    "RAW_ARTIFACT_STORAGE",
+    "DOCUMENT_AND_DATA_DECOMPOSITION",
+    "AI_READABLE_CLASSIFICATION",
+    "AI_SEMANTIC_KNOWLEDGE_CLASSIFICATION",
+    "D_GROUP_KNOWLEDGE_ACCEPTANCE",
+    "DOMAIN_EXPERT_AI_RUNTIME",
+    "WEB_APPLICATION_INTEGRATION",
+    "PANEL_CONTINUOUS_AUTOMATION"
+  ],
+  "group_responsibilities": {
+    "A0_AUTOMATION_INTEGRATION": [
+      "panel_and_workspace_shell",
+      "login_session",
+      "worker_command_cycle",
+      "status_and_progress",
+      "provider_integration",
+      "scheduler_retry_resume",
+      "non_destructive_update_and_rollback"
+    ],
+    "A2_ANALYZER_ADAPTER_FACTORY": [
+      "site_structure_analysis",
+      "network_and_page_flow_analysis",
+      "endpoint_parameter_pagination_discovery",
+      "adapter_candidate_generation",
+      "adapter_replay_and_verification"
+    ],
+    "B_COLLECTION_DB_MATERIALIZATION": [
+      "verified_adapter_consumption",
+      "bulk_collection",
+      "raw_artifact_storage",
+      "folder_ingestion",
+      "normalization_and_deduplication",
+      "database_file_and_load_manifest_creation",
+      "d_group_staging_handoff"
+    ],
+    "D_KNOWLEDGE_AUTHORITY": [
+      "canonical_schema",
+      "evidence_validation",
+      "duplicate_and_conflict_resolution",
+      "knowledge_versioning",
+      "authoritative_database_acceptance"
+    ],
+    "C_DOMAIN_AI_RUNTIME": [
+      "domain_ai_seat_profiles",
+      "d_group_knowledge_query",
+      "citation_and_evidence_contract",
+      "actual_ai_runtime_validation",
+      "web_app_ai_interface_handoff"
+    ]
+  },
+  "analyzer_progress_definition": {
+    "meaning": "percentage of site structure and collection method understood, not page content read percentage",
+    "required_metrics": [
+      "progress_percent",
+      "current_stage",
+      "observed_request_count",
+      "classified_endpoint_count",
+      "verified_endpoint_count",
+      "replay_success_count",
+      "unresolved_count",
+      "adapter_generation_percent",
+      "adapter_replay_status"
+    ],
+    "final_output": [
+      "SITE_STRUCTURE_PROFILE",
+      "ENDPOINT_CATALOG",
+      "REQUEST_TEMPLATE_CATALOG",
+      "PARAMETER_DICTIONARY",
+      "SESSION_AND_HEADER_CONTRACT",
+      "PAGINATION_AND_SCOPE_CONTRACT",
+      "RESPONSE_SCHEMA_CATALOG",
+      "IDENTIFIER_RELATIONSHIP_MAP",
+      "RATE_LIMIT_AND_RETRY_POLICY",
+      "COLLECTION_RECIPE",
+      "SITE_SPECIFIC_ADAPTER",
+      "ADAPTER_BUILD_RECEIPT"
+    ]
+  },
+  "known_risks": [
+    "installing a new Electron userData can expire ChatGPT login",
+    "showing two address inputs simultaneously confuses worker and analyzer navigation",
+    "sharing one BrowserView between ChatGPT and site analysis corrupts current conversation state",
+    "multiple groups modifying panel shell causes integration conflicts",
+    "extractor or collector writing directly to D authoritative DB bypasses knowledge acceptance",
+    "target_pc_pass_must_not_be_claimed_without_receipt_or_user_observation"
+  ],
+  "forbidden": {
+    "browser_profile_delete": false,
+    "workspace_state_reset": false,
+    "new_profile_per_version": false,
+    "legacy_hotfix_reuse": false,
+    "direct_b_to_d_authoritative_write": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "prepared_at": "2026-08-03T18:43:00+09:00"
+}

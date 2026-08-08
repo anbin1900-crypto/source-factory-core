@@ -1,0 +1,60 @@
+{
+  "schema_version": "LATEST_V5102_SESSION_PARTITION_HOTFIX_POINTER_V1",
+  "status": "INSTALLER_BUILD_PASS_TARGET_PC_REINSTALL_PENDING",
+  "version": "5.10.2-group-epic-relay-session-hotfix",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "observed_failure": "workerBrowserView.webContents.session.getPartition is not a function",
+  "patch": {
+    "path": "yolla-panel-v1/a0-successor-control/automation-v2/runtime-v5102-session-hotfix/SESSION_PARTITION_COMPATIBILITY_HOTFIX_V1.patch",
+    "commit": "dccc1db7e26efb1d64fd11c99fd230cf153c9b23"
+  },
+  "regression_test": {
+    "path": "yolla-panel-v1/a0-successor-control/automation-v2/runtime-v5102-session-hotfix/test_worker_session_partition_compat.cjs",
+    "commit": "5c91a033e0721c221f888ea18f5b4373588bf5f1",
+    "terminal": "V5102_WORKER_SESSION_PARTITION_COMPAT_PASS"
+  },
+  "contract": {
+    "path": "yolla-panel-v1/a0-successor-control/automation-v2/runtime-v5102-session-hotfix/SESSION_PARTITION_COMPATIBILITY_HOTFIX_CONTRACT_V1.json",
+    "commit": "00ba50e7d8ebd5c8547edd72e7eb32ff8b144059"
+  },
+  "build_report": {
+    "path": "yolla-panel-v1/a0-successor-control/reports/A0_V5102_SESSION_PARTITION_HOTFIX_INSTALLER_BUILD_REPORT_V1.json",
+    "commit": "4150d79c6ce3d280b247dcb7799437d1b46f9020"
+  },
+  "installer": {
+    "file_name": "YOLLA_PANEL_V5102_GROUP_EPIC_RELAY_SESSION_HOTFIX_INSTALLER.zip",
+    "drive_file_id": "1HpGhCGXGK2Ci8fOajnzLMq0ZEN6JmTWY",
+    "sha256": "9372888519112de231ba494f71e8f8754c4418fa24623b8cf807438d8bc21bd1",
+    "size_bytes": 139061,
+    "entry_count": 70,
+    "install_entry": "INSTALL_AI_YOLLA_PANEL_V5102_GROUP_EPIC_RELAY_SESSION_HOTFIX.bat"
+  },
+  "validation": {
+    "direct_incompatible_calls_after": 0,
+    "payload_files": 52,
+    "two_mode_assertions": 33,
+    "relay_assertions": 11,
+    "ui_assertions": 20,
+    "schedule_assertions": 52,
+    "duplicate_execution_count": 0,
+    "zip_integrity": "PASS"
+  },
+  "preserved": {
+    "group_epic_registration": true,
+    "worker_right_menu": true,
+    "commander_comment_detection": true,
+    "automatic_worker_redispatch": true,
+    "workspace_state": true,
+    "browser_profile": true,
+    "existing_runtime": true,
+    "existing_transport": true
+  },
+  "target_pc_install_observed": false,
+  "actual_dispatch_after_hotfix_observed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-04T11:57:43+09:00"
+}

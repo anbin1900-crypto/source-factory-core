@@ -1,0 +1,154 @@
+{
+  "schema_version": "LATEST_V1_C_MODE_POINTER_RELAY_WAVE14_POINTER_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-014",
+  "registry_sequence": 14,
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "review_and_directive": {
+    "md_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave14/C_MODE_WAVE13_REVIEW_AND_WAVE14_DIRECTIVE_V1.md",
+    "md_commit": "1791bcb33975e0feccac5d0d0b24171c1ad8594e",
+    "json_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave14/C_MODE_WAVE13_REVIEW_AND_WAVE14_DIRECTIVE_V1.json",
+    "json_commit": "0e6496014bf305be33140bd174aa2591e17eb533"
+  },
+  "publication_receipt": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave14/C_MODE_WAVE14_PUBLICATION_RECEIPT_V1.json",
+    "commit": "d8d9bffbba1a26d99f9b0f7a6d07f9b0290b12c8"
+  },
+  "wave13_review": {
+    "reported": 5,
+    "missing": 1,
+    "duplicate_result": 0,
+    "results": {
+      "AUTOMATION-C-W1": {
+        "result_comment": 5196402486,
+        "result_commit": "c40901d086faca60ad16cac3e95cabcdbe2babb5",
+        "commander_acceptance": "REJECTED_AUTHORITY_PATH_AND_VERSION_MISMATCH"
+      },
+      "AUTOMATION-C-W2": {
+        "result_comment": 5196298739,
+        "result_commit": "549b61ba219be9ad616f23087c7676586f969ddb",
+        "commander_acceptance": "PASS_NEGATIVE_GATE_SCOPE"
+      },
+      "AUTOMATION-C-W3": {
+        "result_comment": 5196320722,
+        "result_commit": "aac4180efae651930f98d842e73bb047ecd5726e",
+        "commander_acceptance": "REUSABLE_UI_EXPORT_AUTHORITY_ALIGNMENT_INCOMPLETE"
+      },
+      "AUTOMATION-C-W4": {
+        "result_comment": 5196270579,
+        "result_commit": "7c70c49cdde1c7295ce4a4cf9bd6463c99d7591e",
+        "commander_acceptance": "REUSABLE_VALIDATOR_POSITIVE_RERUN_REQUIRED"
+      },
+      "AUTOMATION-C-W5": {
+        "result_comment": 5196292106,
+        "result_commit": "e9d690ea71092924aec58ed32eeb47c1fa6f7d1c",
+        "commander_acceptance": "REJECTED_STUB_PAYLOAD_AND_AUTHORITY_BINDING_FAILURE"
+      },
+      "AUTOMATION-C-W6": {
+        "result_comment": null,
+        "result_key": "519606842800",
+        "report_request_count": 1
+      }
+    }
+  },
+  "critical_findings": {
+    "w1_wrong_target_and_roots": {
+      "reported_target": "5.10.2.4.2-rc4",
+      "required_target": "5.10.2.4.2-rc6",
+      "authority_mismatch": true
+    },
+    "w5_rc5_stub_payload": {
+      "package_commit": "ef8481aa504c8e622a4df4087951a3a639de32b0",
+      "package_blob_sha1": "c3dbc640dccaa2b55ef824896fc6a59a9da2af52",
+      "package_size": 7225,
+      "package_sha256": "f254d2220a41679d78b8717dafaed4e0fb26217813cd9b44cca43b622fdcf126",
+      "embedded_member_count": 12,
+      "required_member_count": 17,
+      "exact_source_bytes": false,
+      "installable_runtime": false
+    }
+  },
+  "authority": {
+    "source_path": "yolla-panel-v1/a0-successor-control/handoffs/v1-existing-runtime/A0_TO_V1_EXISTING_YOLLA_RUNTIME_HANDOFF_V2.json",
+    "source_commit": "1070b2ee3329ac5ec08020e2c2e2a9377767f888",
+    "state_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-v5-2",
+    "release_root": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases",
+    "browser_profile": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-browser-profile",
+    "worker_partition": "persist:sf4-safe-panel-worker-1",
+    "analysis_partition": "persist:yolla-analysis-browser-v1",
+    "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_PANEL_WORKSPACE_V5_10_2_3_7.bat"
+  },
+  "wave14_registry": {
+    "comment_id": 5196538398,
+    "previous_registry_comment": 5196092403,
+    "new_worker_count": 5,
+    "carryover_count": 1,
+    "all_rows_valid_before_any_dispatch": true,
+    "partial_dispatch": false,
+    "same_sequence_duplicate": "FAIL_CLOSED"
+  },
+  "worker_bindings": {
+    "AUTOMATION-C-W1": {
+      "pr": 59,
+      "directive_comment": 5196497295,
+      "result_key": "519649729500",
+      "command_id": "C6W-W14-W1-AUTHORITY-CORRECT-BASELINE-OVERLAY-MAP-V2"
+    },
+    "AUTOMATION-C-W2": {
+      "pr": 60,
+      "directive_comment": 5196501537,
+      "result_key": "519650153700",
+      "command_id": "C6W-W14-W2-RC5-FALSE-POSITIVE-RC6-ACCEPTANCE-GATE"
+    },
+    "AUTOMATION-C-W3": {
+      "pr": 61,
+      "directive_comment": 5196505437,
+      "result_key": "519650543700",
+      "command_id": "C6W-W14-W3-AUTHORITY-CORRECT-UI-LOAD-HOOK-OVERLAY"
+    },
+    "AUTOMATION-C-W4": {
+      "pr": 62,
+      "directive_comment": 5196509441,
+      "result_key": "519650944100",
+      "command_id": "C6W-W14-W4-RC5-REJECTION-RC6-OFFLINE-ACCEPTANCE"
+    },
+    "AUTOMATION-C-W5": {
+      "pr": 63,
+      "directive_comment": 5196513835,
+      "result_key": "519651383500",
+      "command_id": "C6W-W14-W5-EXACT-SOURCE-BASELINE-OVERLAY-RC6",
+      "integration_owner": true
+    }
+  },
+  "carryover": {
+    "role": "AUTOMATION-C-W6",
+    "pr": 64,
+    "wave_id": "V1-C-MODE-6W-WAVE-013",
+    "directive_comment": 5196068428,
+    "result_key": "519606842800",
+    "report_request_comment": 5196491929,
+    "report_request_count": 1,
+    "replacement_threshold": 4,
+    "new_wave14_directive": false
+  },
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "baseline_version": "5.10.2.4.0",
+  "target_version": "5.10.2.4.2-rc6",
+  "current_progress_percent": 96,
+  "progress_increase_withheld_reason": "RC5_FALSE_POSITIVE_AND_AUTHORITY_MISMATCH",
+  "next_gate": "FIVE_WAVE14_RESULTS_PLUS_W6_WAVE13_CARRYOVER_THEN_RC6_OFFLINE_ACCEPTANCE_AND_TARGET_PC_INSTALL",
+  "target_pc_pass": "PENDING",
+  "six_workers_three_waves": "PENDING_TARGET_PC",
+  "restart_resume": "PENDING_TARGET_PC",
+  "log_loss_zero": "PENDING_TARGET_PC",
+  "login_profile_preserved": "PENDING_TARGET_PC_READBACK",
+  "a_e_reintroduction_count": 0,
+  "auto_test_write_count": 0,
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

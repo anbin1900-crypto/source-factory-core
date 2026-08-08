@@ -1,0 +1,19 @@
+{
+  "schema_version": "LATEST_SITE_ANALYZER_SINGLE_GOAL_AB_PARALLEL_POINTER_V1",
+  "directive_id": "A0-SITE-ANALYZER-SINGLE-GOAL-AB-PARALLEL-V2-20260807-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "authority_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "assignment": {
+    "path": "yolla-panel-v1/a0-successor-control/directives/SITE_ANALYZER_SINGLE_GOAL_AB_PARALLEL_ASSIGNMENT_V2.json",
+    "commit": "a0c9f0910dff0405fdbb315b5a45237ba3ed85a4"
+  },
+  "primary_goal": "SITE_ANALYZER_PRODUCT_COMPLETION",
+  "c_mode_runtime_worker_count": 0,
+  "active_worker_count": 12,
+  "manual_validation_worker_count": 0,
+  "manual_audit_worker_count": 0,
+  "dispatch_status": "A2_A7_AND_B1_B6_ALL_DISPATCHED",
+  "status": "ACTIVE_SINGLE_GOAL_AUTHORITY",
+  "updated_at": "2026-08-07T01:07:00+09:00"
+}

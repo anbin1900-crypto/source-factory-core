@@ -1,0 +1,42 @@
+{
+  "schema_version": "A0_AUTOMATION_RUNTIME_V59_SOURCE_MANIFEST_V1",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "source_base_head": "dd28bc46111a2536c8af3b837bc01483dc69f41a",
+  "version": "5.9.0",
+  "files": [
+    {"path":"automation-v1/schedule_runtime.cjs","size_bytes":20707,"sha256":"70e3b776d0510f24582e6de69194c6a9dbbf87b45b3d4323f3fff2da0a0bef3d"},
+    {"path":"automation-v1/src/scheduleCore.js","size_bytes":9534,"sha256":"63f44e279daf2bda653c5dccee658dbb87b7e17173a3ae9c042516a5e2a0e2f2"},
+    {"path":"automation-v1/src/scheduleRunner.js","size_bytes":7792,"sha256":"c5a4849db33aa1de4c61c85cbf38116404f4b327538cce877e39c7704b871f8e"},
+    {"path":"automation-v1/src/githubResultWatcher.js","size_bytes":3323,"sha256":"744fc32e7a642eb5a9c8fa37184bc8571e2daed6c0f9ea482440357a3a6081ab"},
+    {"path":"automation-v1/src/nextJobDispatcher.js","size_bytes":644,"sha256":"b14edcd40499f98df0104a6f69c7c0ad87152e17ec32fff04fdf657dc52ac8f2"},
+    {"path":"automation-v1/WORKER_JOB_SCHEDULE_V1.schema.json","size_bytes":4080,"sha256":"eb50fd876b7245964f0d083498477514fae722589bdb57d910219550a1e0d363"},
+    {"path":"automation-v1/schedules/REAL_ESTATE_CYCLE_001.json","size_bytes":11927,"sha256":"f7aaadc24a52cbeaf94306cdbf54cd6b85882c8a19f587084b07866e93ae6b50"},
+    {"path":"A0_WORKER_SCHEDULE_AUTOMATION_V59_CONTRACT.json","size_bytes":1677,"sha256":"c1bc807e0f27526228bc28264d0f676ee70eba94e907afb69a8de87552dd9646"},
+    {"path":"workspace.html","size_bytes":9412,"sha256":"44a55e220b36669ebc7cd18844293a96a90653649e87d42dc0ec087492d123e1"},
+    {"path":"workspace.css","size_bytes":30539,"sha256":"8a9013f69ecc1f8129998aaa2ed553c53044adeac613fa9ae0eeee9603d94a6d"},
+    {"path":"workspace.js","size_bytes":49385,"sha256":"4161a56f736b6a50864d211f66eb05b3b3323af9b22192e17034c1de5d95b30e"},
+    {"path":"workspace_preload.js","size_bytes":5259,"sha256":"007fd40697f1c54feb37f4499da3d67b0de14fb4a016a57207e49db0d3ff3daf"},
+    {"path":"main.js","size_bytes":87643,"sha256":"4ed770ffae399cf322f02ca603bbb0ef4b4686abab6633f97509c97436059f16"}
+  ],
+  "source_zip": {
+    "file_name": "AI_YOLLA_RUNTIME_V59_WORKER_SCHEDULE_AUTOMATION_SOURCE.zip",
+    "drive_file_id": "1M7a7ArE3VtLp7wKDqztQbOUbmSq39p3B",
+    "size_bytes": 89656,
+    "sha256": "13f4c475f32523937d990888905a40a256d0742ddb6515d70f3c0cfd15a3af4d"
+  },
+  "installer": {
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V59_WORKER_SCHEDULE_AUTOMATION.bat",
+    "drive_file_id": "1A4B9QKO23C4TFiIsV8Gd4mmrmepcViHx",
+    "size_bytes": 131131,
+    "sha256": "197b008b23ed396d9784d8e881a6db224579f34e5d75d60db997c3f78dc0b2bc",
+    "embedded_payload_sha256": "7fdd584b54f8d313f8fbef3febd9c8b20fa7f862cce1d3bf809205aa6d1636cc",
+    "embedded_payload_size_bytes": 94114,
+    "entry_count": 43
+  },
+  "target_pc_execution_observed": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "created_at": "2026-08-04T03:38:00+09:00"
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": "V1_C_MODE_TEST_MATRIX_V1",
+  "gates": [
+    {
+      "gate": "G0",
+      "name": "BASELINE_AND_AUTHORITY",
+      "tests": [
+        "G0-01 source hashes match",
+        "G0-02 C state schema readable",
+        "G0-03 repeat state schema readable",
+        "G0-04 work-control log path preserved"
+      ]
+    },
+    {
+      "gate": "G1",
+      "name": "IDLE_TRUTH",
+      "tests": [
+        "G1-01 C disabled plus no repeat commands equals working zero",
+        "G1-02 stale A/E status is excluded",
+        "G1-03 open browser alone does not equal working",
+        "G1-04 error count is current C/command error only"
+      ]
+    },
+    {
+      "gate": "G2",
+      "name": "C_BATCH_AND_REPORTS",
+      "tests": [
+        "G2-01 START dispatches commander and all workers once",
+        "G2-02 WAVE dispatches all targets without completion gating",
+        "G2-03 wrong WAVE report is ignored",
+        "G2-04 duplicate result does not increment task count",
+        "G2-05 END stops current assignment but new task reactivates role"
+      ]
+    },
+    {
+      "gate": "G3",
+      "name": "TIME_AND_MISSING_REPORT",
+      "tests": [
+        "G3-01 one or two missing after 20 minutes becomes carryover",
+        "G3-02 three or more missing after 20 minutes waits",
+        "G3-03 two rescue workers after 90 minutes",
+        "G3-04 exactly four explicit missing-report failures before replacement",
+        "G3-05 expected-minutes value never becomes automatic success"
+      ]
+    },
+    {
+      "gate": "G4",
+      "name": "REPEAT_COMMAND",
+      "tests": [
+        "G4-01 user text is byte-preserved",
+        "G4-02 time trigger does not queue duplicates",
+        "G4-03 completion trigger requires ROLE plus COMMAND_ID",
+        "G4-04 unrelated result is ignored",
+        "G4-05 END auto-stops the target",
+        "G4-06 restart restores enabled commands"
+      ]
+    },
+    {
+      "gate": "G5",
+      "name": "TARGET_PC_UI_AND_INSTALL",
+      "tests": [
+        "G5-01 exact-base install and temporary-profile smoke",
+        "G5-02 group C button visible and scoped",
+        "G5-03 top command popup visible",
+        "G5-04 runtime and browser profile preserved",
+        "G5-05 rollback restores prior launcher"
+      ]
+    },
+    {
+      "gate": "G6",
+      "name": "LIVE_3_WORKER_3_ROUND",
+      "tests": [
+        "G6-01 three workers receive one batch per round",
+        "G6-02 three completed rounds",
+        "G6-03 duplicate dispatch zero",
+        "G6-04 previous command cancellation zero",
+        "G6-05 counter final three"
+      ]
+    },
+    {
+      "gate": "G7",
+      "name": "RECOVERY_AND_LTS",
+      "tests": [
+        "G7-01 restart mid-wave resumes",
+        "G7-02 GitHub temporary failure retries without duplicate",
+        "G7-03 browser navigation failure is logged and recoverable",
+        "G7-04 work-control log has no lost terminal transition",
+        "G7-05 independent acceptance passes"
+      ]
+    }
+  ]
+}

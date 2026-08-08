@@ -1,0 +1,135 @@
+{
+  "schema_version": "YOLLA_GROUP_ROLE_ASSIGNMENT_LEDGER_V1",
+  "status": "GROUP_ROLES_ASSIGNED",
+  "upper_commander": "A-1_YOLLA_WORKSPACE_UPPER_COMMANDER",
+  "integration_commander": "A-0_AUTOMATION_EXECUTION_SUCCESSOR_COMMANDER",
+  "control_pr": 17,
+  "control_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "groups": [
+    {
+      "group": "A_ANALYZER_ADAPTER_FACTORY",
+      "commander": "A-2_GENERIC_SITE_ANALYZER_ADAPTER_FACTORY_COMMANDER",
+      "workers": {
+        "A-3": "NETWORK_OBSERVATION_AND_TRAFFIC_CLASSIFICATION",
+        "A-4": "NAVIGATION_PAGE_PAGINATION_STRUCTURE",
+        "A-5": "REQUEST_RESPONSE_SESSION_SCHEMA_CONTRACT",
+        "A-6": "ADAPTER_GENERATION_AND_REPLAY_TEST",
+        "A-7": "INDEPENDENT_ANALYZER_ACCEPTANCE"
+      },
+      "inputs": [
+        "SITE_ANALYSIS_REQUEST",
+        "USER_AUTHORIZED_BROWSER_OBSERVATION"
+      ],
+      "outputs": [
+        "SITE_STRUCTURE_PROFILE",
+        "VERIFIED_ADAPTER_PACKAGE",
+        "ADAPTER_BUILD_RECEIPT",
+        "ANALYSIS_PROGRESS_EVENT"
+      ],
+      "forbidden": [
+        "BULK_COLLECTION",
+        "CANONICAL_DB_WRITE",
+        "PANEL_SHELL_DIRECT_EDIT"
+      ]
+    },
+    {
+      "group": "B_COLLECTION_DB_MATERIALIZATION",
+      "commander": "B-1_COLLECTION_DB_MATERIALIZATION_COMMANDER",
+      "workers": {
+        "B-2": "ADAPTER_RUNTIME_AND_SCOPE_PLANNER",
+        "B-3": "BULK_COLLECTOR_RETRY_RESUME",
+        "B-4": "RAW_ARTIFACT_AND_FOLDER_INTAKE",
+        "B-5": "NORMALIZATION_AND_DB_PACKAGE",
+        "B-6": "COLLECTION_ACCEPTANCE_AND_D_HANDOFF"
+      },
+      "inputs": [
+        "VERIFIED_ADAPTER_PACKAGE",
+        "COLLECTION_REQUEST"
+      ],
+      "outputs": [
+        "COLLECTION_RUN",
+        "RAW_ARTIFACT_MANIFEST",
+        "NORMALIZED_DATASET",
+        "MATERIALIZED_DATABASE_PACKAGE",
+        "D_INTAKE_REQUEST"
+      ],
+      "forbidden": [
+        "UNVERIFIED_ADAPTER_PRODUCTION_USE",
+        "DIRECT_CANONICAL_DB_WRITE",
+        "PANEL_SHELL_DIRECT_EDIT"
+      ]
+    },
+    {
+      "group": "C_SEMANTIC_KNOWLEDGE_DOMAIN_AI",
+      "commander": "C-1_SEMANTIC_KNOWLEDGE_DOMAIN_AI_RUNTIME_COMMANDER",
+      "workers": {
+        "C-2": "DOCUMENT_DECOMPOSITION",
+        "C-3": "SEMANTIC_CLASSIFICATION",
+        "C-4": "EVIDENCE_AND_KNOWLEDGE_CANDIDATE",
+        "C-5": "DOMAIN_AI_SEAT_AND_TOOL_RUNTIME",
+        "C-6": "AI_QUALITY_AND_E2E_VALIDATION"
+      },
+      "inputs": [
+        "RAW_ARTIFACT_OR_NORMALIZED_DATASET",
+        "SUPPLEMENTAL_DOCUMENTS",
+        "KNOWLEDGE_RELEASE"
+      ],
+      "outputs": [
+        "DOCUMENT_UNIT_BUNDLE",
+        "KNOWLEDGE_CANDIDATE_BUNDLE",
+        "DOMAIN_AI_SEAT_PACKAGE",
+        "AI_RUNTIME_RECEIPT",
+        "AI_EVALUATION_REPORT"
+      ],
+      "forbidden": [
+        "ADAPTER_OWNERSHIP",
+        "BULK_COLLECTION_OWNERSHIP",
+        "DIRECT_CANONICAL_DB_WRITE",
+        "PANEL_SHELL_DIRECT_EDIT"
+      ]
+    },
+    {
+      "group": "D_KNOWLEDGE_DB_AUTHORITY",
+      "commander": "D-1_KNOWLEDGE_DB_AUTHORITY_COMMANDER",
+      "external_authority": {
+        "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+        "control_pr": 188
+      },
+      "workers": {
+        "D-2": "SOURCE_REGISTRY_PROVENANCE_EVIDENCE_INTAKE",
+        "D-3": "CANONICAL_SCHEMA_AND_EVIDENCE",
+        "D-4": "ACCEPTANCE_REVISION_DEDUP_VERSIONING",
+        "D-5": "STAGING_POSTGRESQL_MATERIALIZATION",
+        "D-6": "RETRIEVAL_CITATION_INDEPENDENT_AUDIT"
+      },
+      "inputs": [
+        "MATERIALIZED_DATABASE_PACKAGE",
+        "KNOWLEDGE_CANDIDATE_BUNDLE"
+      ],
+      "outputs": [
+        "KNOWLEDGE_ACCEPTANCE_RECEIPT",
+        "KNOWLEDGE_RELEASE",
+        "QUERY_CONTRACT",
+        "CITATION_CONTRACT",
+        "REVISION_LEDGER"
+      ],
+      "forbidden": [
+        "COLLECTOR_OWNERSHIP",
+        "ADAPTER_OWNERSHIP",
+        "DOMAIN_AI_UI_OWNERSHIP",
+        "UNVALIDATED_AUTHORITY_CLAIM"
+      ]
+    }
+  ],
+  "integration_rules": {
+    "single_runtime_owner": "A-0",
+    "single_panel_shell_owner": "A-0",
+    "group_delivery_mode": "PROVIDER_PLUS_VERSIONED_CONTRACT_PLUS_IMMUTABLE_ARTIFACT",
+    "official_authority": "GITHUB_REMOTE_HEAD_COMMITTED_JSON",
+    "comments_and_chat": "POINTER_AND_NON_AUTHORITY_SUMMARY_ONLY"
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "assigned_at": "2026-08-03T19:09:00+09:00"
+}

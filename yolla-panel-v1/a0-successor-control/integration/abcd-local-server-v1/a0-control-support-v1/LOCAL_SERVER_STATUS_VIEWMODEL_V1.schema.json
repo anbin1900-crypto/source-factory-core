@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "LOCAL_SERVER_STATUS_VIEWMODEL_V1.schema.json",
+  "title": "Local Server Status ViewModel V1",
+  "type": "object",
+  "required": ["schema_version","support_contract","generated_at","target","service","queue","recovery","active_job","jobs","action_status","last_receipt_pointer","terminal"],
+  "properties": {
+    "schema_version": {"const":"LOCAL_SERVER_STATUS_VIEWMODEL_V1"},
+    "support_contract": {"const":"A0_D_LOCAL_SERVER_PC_AGENT_CONTROL_SUPPORT_V1"},
+    "generated_at": {"type":"string","format":"date-time"},
+    "target": {"type":"object"},
+    "service": {"type":"object"},
+    "queue": {"type":"object"},
+    "recovery": {"type":"object"},
+    "active_job": {"type":["object","null"]},
+    "jobs": {"type":"array","items":{"type":"object"}},
+    "action_status": {"type":"object"},
+    "last_receipt_pointer": {"type":["object","null"]},
+    "terminal": {"enum":["CONTROL_SUPPORT_ACTIVE","ALL_OBSERVED_JOBS_TERMINAL"]}
+  }
+}

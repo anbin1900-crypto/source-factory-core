@@ -1,0 +1,26 @@
+{
+  "schema_version": "C_MODE_RULE_PACKAGE_PUBLICATION_RECEIPT_V1",
+  "package_id": "YOLLA-V1-C-MODE-RULE-PACKAGE-V1-20260805-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "published_documents": 3,
+  "latest_pointer": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/LATEST_V1_C_MODE_RULE_PACKAGE_POINTER.json",
+    "commit": "8e9e0bc9d79d461f07ce51bdb2856228c7c17c80"
+  },
+  "readback": {
+    "output_message_templates": "PASS",
+    "worker_commander_rules": "PASS",
+    "v1_implementation_plan": "PASS",
+    "latest_pointer": "PASS"
+  },
+  "implementation_started": false,
+  "runtime_modified": false,
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "C_MODE_RULE_PACKAGE_PUBLICATION_PASS",
+  "completion_percent": 100
+}

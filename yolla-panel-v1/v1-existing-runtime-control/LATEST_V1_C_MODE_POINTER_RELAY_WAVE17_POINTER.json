@@ -1,0 +1,83 @@
+{
+  "schema_version": "LATEST_V1_C_MODE_POINTER_RELAY_WAVE17_POINTER_V1",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-017",
+  "registry_sequence": 17,
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "review_and_directive": {
+    "md_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave17/C_MODE_WAVE16_REVIEW_AND_WAVE17_DIRECTIVE_V1.md",
+    "md_commit": "c5890984ae6d9009848175b83495b276c441afea",
+    "json_path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave17/C_MODE_WAVE16_REVIEW_AND_WAVE17_DIRECTIVE_V1.json",
+    "json_commit": "0e272762cf140b8e4907cd878a6af26c67b6659b"
+  },
+  "publication_receipt": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/c-mode-pointer-relay-v1/wave17/C_MODE_WAVE17_PUBLICATION_RECEIPT_V1.json",
+    "commit": "e684caa022ea710414f2f69e78bb219fcaed3357"
+  },
+  "wave16_review": {
+    "assigned": 6,
+    "authoritative_results": 5,
+    "missing": 1,
+    "duplicate_results": 0,
+    "complete": false,
+    "missing_role": "AUTOMATION-C-W6",
+    "worker_heads": {
+      "AUTOMATION-C-W1": "9f68450072e4ba426e7d0cced3c100260641a7c4",
+      "AUTOMATION-C-W2": "132b60e1137fbfd22ee4f565720b77176a58f71d",
+      "AUTOMATION-C-W3": "6431abc8d99f6daa255a0f65f22988ea4ae867fc",
+      "AUTOMATION-C-W4": "fa83a517355bfb28d93437980a6e0c4e0e4e344f",
+      "AUTOMATION-C-W5": "6862d0fbbd82d17f708330aa1f71cd49565ecad4",
+      "AUTOMATION-C-W6": "fc1d1cf8c798bd815d12524de8aa1de18c19849b"
+    }
+  },
+  "rc7_authority": {
+    "result_commit": "6862d0fbbd82d17f708330aa1f71cd49565ecad4",
+    "artifact_head": "854c3d928e17a30a124b2aab294ff5a9d781a252",
+    "reported_outcome": "PASS_OFFLINE_STATIC_AND_BYTE_ASSEMBLY",
+    "commander_technical_acceptance": "HOLD",
+    "findings": [
+      "W1_EXACT_RESOLVER_SUBSTITUTED_BY_SIMPLIFIED_IMPLEMENTATION",
+      "W3_EXACT_MAIN_AND_HTML_HOOK_SUBSTITUTED_BY_SIMPLIFIED_IMPLEMENTATION",
+      "W3_ROLLBACK_DOES_NOT_FAIL_CLOSED_ON_MISSING_BACKUP",
+      "FULL_COMPONENT_SMOKE_DOES_NOT_EXECUTE_ALL_REQUIRED_COMPONENT_BEHAVIORS",
+      "PRESERVATION_PATHS_FOR_C_MODE_STATE_REPEAT_STATE_AND_WORK_CONTROL_LOG_ARE_WRONG",
+      "BUNDLE_VERIFIER_GENERATES_A_MANIFEST_BUT_DOES_NOT_COMPARE_TO_AN_IMMUTABLE_EXPECTED_MANIFEST",
+      "TARGET_PC_RUNNER_CAN_PRINT_PASS_WITHOUT_REQUIRED_LIVE_EVIDENCE",
+      "GITHUB_BRANCH_ARCHIVE_IS_NOT_IMMUTABLE_COMMIT_PINNED_USER_ARTIFACT"
+    ]
+  },
+  "wave17_registry": {
+    "comment_id": 5198530009,
+    "status": "READY",
+    "worker_count": 6,
+    "all_rows_valid_before_any_dispatch": true,
+    "partial_dispatch": false,
+    "same_sequence_duplicate": "FAIL_CLOSED"
+  },
+  "worker_bindings": {
+    "AUTOMATION-C-W1": {"pr": 59, "directive_comment": 5198507579, "result_key": "519850757900", "command_id": "C6W-W17-W1-RC8-EXACT-RESOLVER-INTEGRATION"},
+    "AUTOMATION-C-W2": {"pr": 60, "directive_comment": 5198509366, "result_key": "519850936600", "command_id": "C6W-W17-W2-RC8-ACTUAL-ARTIFACT-GATE-V2"},
+    "AUTOMATION-C-W3": {"pr": 61, "directive_comment": 5198511606, "result_key": "519851160600", "command_id": "C6W-W17-W3-RC8-EXACT-UI-HOOK-BUNDLE-V2"},
+    "AUTOMATION-C-W4": {"pr": 62, "directive_comment": 5198513106, "result_key": "519851310600", "command_id": "C6W-W17-W4-RC8-FULL-OFFLINE-ACCEPTANCE-RUNNER-V2"},
+    "AUTOMATION-C-W5": {"pr": 63, "directive_comment": 5198514990, "result_key": "519851499000", "command_id": "C6W-W17-W5-ACTUAL-INSTALLABLE-RC8", "integration_owner": true},
+    "AUTOMATION-C-W6": {"pr": 64, "directive_comment": 5198516800, "result_key": "519851680000", "command_id": "C6W-W17-W6-INDEPENDENT-RC8-AUDIT-PREPARATION", "implementation_direct_edit": false}
+  },
+  "target_version": "5.10.2.4.2-rc8",
+  "existing_validation_system": "PRESERVED_ACTIVE",
+  "current_progress_percent": 96,
+  "next_gate": "COLLECT_SIX_WAVE17_RESULTS_THEN_ACTUAL_RC8_CROSS_WORKER_OFFLINE_TECHNICAL_ACCEPTANCE",
+  "target_pc_install_authorized": false,
+  "target_pc_pass": "PENDING",
+  "six_workers_three_rounds_live": "PENDING_TARGET_PC",
+  "restart_resume_live": "PENDING_TARGET_PC",
+  "log_loss_zero_live": "PENDING_TARGET_PC",
+  "a_e_reintroduction_count": 0,
+  "auto_test_write_count": 0,
+  "lts_terminal_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

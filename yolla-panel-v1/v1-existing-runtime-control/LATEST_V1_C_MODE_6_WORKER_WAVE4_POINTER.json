@@ -1,0 +1,89 @@
+{
+  "schema_version": "LATEST_V1_C_MODE_6_WORKER_WAVE4_POINTER_V5",
+  "control_id": "V1-C-MODE-6W-VALIDATION-CYCLE-002",
+  "wave_id": "V1-C-MODE-6W-WAVE-004",
+  "owner": "V-1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "previous_pointer": "yolla-panel-v1/v1-existing-runtime-control/LATEST_V1_C_MODE_6_WORKER_WAVE3_POINTER.json",
+  "documents": {
+    "wave3_review": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave4/V1_C_MODE_WAVE3_REVIEW_V5.json",
+      "commit": "27e4110b47b591a619ec7b464be0858fe495dec6"
+    },
+    "wave4_directive": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave4/V1_C_MODE_6_WORKER_WAVE4_DIRECTIVE_V5.md",
+      "commit": "551bccbdc22875834d30a03924a3c0052d602db6"
+    },
+    "publication_receipt": {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/validation/v1-c-mode-six-worker/wave4/V1_C_MODE_6_WORKER_WAVE4_PUBLICATION_RECEIPT_V5.json",
+      "commit": "3c6e8af521cd26eb882a1fe2e026915115a4087a"
+    }
+  },
+  "wave3_review": {
+    "valid_correlated_reports": 4,
+    "result_committed_report_missing": 2,
+    "valid_report_workers": [
+      "AUTOMATION-C-W1",
+      "AUTOMATION-C-W3",
+      "AUTOMATION-C-W4",
+      "AUTOMATION-C-W5"
+    ],
+    "report_missing_workers": [
+      "AUTOMATION-C-W2",
+      "AUTOMATION-C-W6"
+    ],
+    "consecutive_missing_report_count": {
+      "AUTOMATION-C-W2": 1,
+      "AUTOMATION-C-W6": 2
+    },
+    "replacement_required_workers": [],
+    "target_pc_pass": "PENDING"
+  },
+  "worker_controls": {
+    "AUTOMATION-C-W1": {
+      "pr": 59,
+      "comment_id": 5192189857,
+      "command_id": "C6W-W4-W1-CONNECTOR-BYTE-UNIFIED-OFFLINE"
+    },
+    "AUTOMATION-C-W2": {
+      "pr": 60,
+      "comment_id": 5192192722,
+      "command_id": "C6W-W4-W2-REPORT-COMPLETENESS-GATE",
+      "repair_wave3_terminal_first": true
+    },
+    "AUTOMATION-C-W3": {
+      "pr": 61,
+      "comment_id": 5192195051,
+      "command_id": "C6W-W4-W3-REPORT-TRUTH-UI-PROJECTION"
+    },
+    "AUTOMATION-C-W4": {
+      "pr": 62,
+      "comment_id": 5192198482,
+      "command_id": "C6W-W4-W4-SIX-SLOT-REPEAT-SOAK"
+    },
+    "AUTOMATION-C-W5": {
+      "pr": 63,
+      "comment_id": 5192201361,
+      "command_id": "C6W-W4-W5-ONE-CLICK-TARGET-PC-PACKAGE"
+    },
+    "AUTOMATION-C-W6": {
+      "pr": 64,
+      "comment_id": 5192205324,
+      "command_id": "C6W-W4-W6-INDEPENDENT-CLOSURE-AUDIT",
+      "repair_wave3_terminal_first": true
+    }
+  },
+  "control_comment_id": 5192208826,
+  "status": "WAVE4_DISPATCHED_TO_6_OF_6",
+  "current_progress_percent": 82,
+  "next_gate": "SIX_VALID_CORRELATED_TERMINALS_REPORT_COMPLETENESS_GATE_AND_UNIFIED_OFFLINE_CANDIDATE",
+  "target_pc_pass": "PENDING",
+  "lts_terminal_claimed": false,
+  "auto_test_write_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at_kst": "2026-08-05T22:16:00+09:00"
+}

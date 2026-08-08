@@ -1,0 +1,156 @@
+{
+  "schema_version": "A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_V1",
+  "revision": 2,
+  "status": "ACTIVE_SUPERSEDING_CONFLICT_RESOLUTION_ALIGNED_V59",
+  "resolution_id": "A0-AUTOMATION-CONTRACT-CONFLICT-RESOLUTION-V1-20260804-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "purpose": "Resolve prior contract conflicts and align the authority model with the existing V5.9 worker schedule runtime.",
+  "precedence": [
+    "USER_LATEST_EXPLICIT_DIRECTIVE",
+    "A0_AUTOMATION_CONTRACT_CONFLICT_RESOLUTION_V1",
+    "WORKER_JOB_SCHEDULE_CONTRACT_V1",
+    "WORKER_JOB_SCHEDULE_V1_SCHEMA",
+    "LATEST_A0_AUTOMATION_CONTRACT_POINTER_V1",
+    "A0_EXECUTION_QUEUE_AND_AUTOMATION_CYCLE_V2",
+    "A0_REPORTING_AND_HANDOFF_CONTRACT_V1",
+    "GROUP_ROLE_ASSIGNMENT_LEDGER_V1",
+    "OTHER_PRIOR_AUTOMATION_CONTRACTS"
+  ],
+  "implementation_alignment": {
+    "current_ui_version": "5.9.0",
+    "runtime_provider_version": "5.7.0",
+    "schedule_runner_version": "1.0.0-panel-bound-build-pass",
+    "schedule_schema_path": "yolla-panel-v1/a0-successor-control/automation-v1/WORKER_JOB_SCHEDULE_V1.schema.json",
+    "schedule_schema_blob_sha": "860f350f056595c46c22a8cad851ddc9fb71a4fd",
+    "sample_schedule_path": "yolla-panel-v1/a0-successor-control/automation-v1/schedules/REAL_ESTATE_CYCLE_001.json",
+    "runtime_pointer_path": "yolla-panel-v1/a0-successor-control/LATEST_A0_AUTOMATION_RUNTIME_POINTER_V1.json",
+    "build_report_path": "yolla-panel-v1/a0-successor-control/reports/A0_AUTOMATION_RUNTIME_V59_BUILD_TEST_REPORT_V1.json",
+    "source_build_status": "PASS_TARGET_PC_PENDING"
+  },
+  "resolved_conflicts": {
+    "seat_identity": {
+      "decision": "WORKERS_OBJECT_KEY_IS_IMMUTABLE_SEAT_CODE_AND_TRANSPORT_ID",
+      "worker_slot_uid_resolution": "Resolve from the existing role and correlation registry at dispatch time; it is not duplicated inside the current V5.9 schedule JSON.",
+      "mutable_bindings": ["display_name", "project_role", "project_url", "context_url", "status"],
+      "role_binding_rule": "A schedule-bound project role or authority reference may change without changing the seat code.",
+      "baseline_role_ledger_rule": "GROUP_ROLE_ASSIGNMENT_LEDGER_V1 is a baseline capability profile and does not overwrite an explicit project schedule binding.",
+      "v59_display_aliases": {
+        "B-1": "부동산 홈페이지 제작 커맨더",
+        "B-2": "워커1",
+        "B-3": "워커2",
+        "B-4": "워커3",
+        "B-5": "워커4",
+        "B-6": "워커5"
+      }
+    },
+    "schedule_vs_directive": {
+      "decision": "MANY_PLANNED_JOBS_ONE_DERIVED_ACTIVE_DIRECTIVE_PER_SEAT",
+      "maximum_planned_jobs_per_seat_policy": 100,
+      "planned_job_statuses": ["PENDING", "READY", "WAIT_DEPENDENCY"],
+      "derived_active_directive_statuses": ["DISPATCHING", "RUNNING", "RESULT_WAITING"],
+      "maximum_derived_active_directives_per_seat": 1,
+      "terminal_or_resolution_statuses": ["PASS", "BLOCKED_EXTERNAL", "NEEDS_REPLAN", "COMPLETED"],
+      "next_job_rule": "Promote the next eligible job only after the current derived active directive leaves the active status set."
+    },
+    "authority_split": {
+      "decision": "GITHUB_PLAN_AND_TERMINAL_RESULTS_LOCAL_RUNTIME_CURSOR",
+      "github_authority": [
+        "schedule schema and committed schedule plan",
+        "schedule revisions",
+        "directive source",
+        "terminal result pointer and commit",
+        "cycle checkpoint and final reports"
+      ],
+      "local_runtime_authority": [
+        "current_order cursor",
+        "in-flight attempt",
+        "heartbeat and check time",
+        "temporary retry timer",
+        "browser and process state"
+      ],
+      "local_runtime_status": "DURABLE_OPERATIONAL_STATE_NOT_OFFICIAL_PROJECT_AUTHORITY",
+      "rebuild_rule": "Rebuild the local cursor from the committed schedule and accepted GitHub terminal results.",
+      "checkpoint_rule": "Commit on schedule revision, cycle terminal, schedule completion, replan or external blocker; do not commit every heartbeat."
+    },
+    "idempotency_namespaces": {
+      "decision": "SEPARATE_WORKER_COMMAND_AND_DATA_FACTORY_KEYS",
+      "WORKER_COMMAND": {
+        "key_fields": ["schedule_id", "job_id", "seat_code", "directive_id_or_generation", "payload_sha256"],
+        "same_key_same_payload": "RETURN_EXISTING_EXECUTION_AND_RECEIPT",
+        "same_key_different_payload": "REJECT_IDEMPOTENCY_CONFLICT"
+      },
+      "DATA_FACTORY": {
+        "key_fields": ["project", "job_type", "target", "sorted_source_token_set"],
+        "authority": "PR276_PR278_RUNTIME_PROVIDER_CONTRACT_V1"
+      },
+      "cross_namespace_deduplication": false
+    },
+    "concurrency": {
+      "decision": "TYPED_CONCURRENCY_LIMITS",
+      "exclusive_pc_runtime_jobs": 1,
+      "gpt_worker_jobs": 5,
+      "browser_analysis_jobs": 2,
+      "rule": "The historical maximum_parallel_runtime_jobs=1 applies only to exclusive shared-PC mutations, not to independent GPT worker seats.",
+      "source_collision_rule": "Jobs touching the same owned path or exclusive resource must not run concurrently."
+    },
+    "reporting": {
+      "decision": "JOB_AND_CYCLE_REPORTING_ARE_SEPARATE",
+      "job_reporting": "Attempt log plus correlated terminal result pointer; no mandatory START/PROGRESS/TEST/FINAL set per individual job.",
+      "cycle_reporting": "START, TEST, BLOCKER when applicable, and FINAL or checkpoint reports.",
+      "no_value_reporting": "MUST_NOT_DELAY_EXECUTION"
+    },
+    "command_authority": {
+      "decision": "A1_UPPER_PLAN_AUTHORITY_PROJECT_COMMANDER_AUTHORS_A0_EXECUTES",
+      "A-1": [
+        "set project goal, priority and completion criteria",
+        "authorize creation, revision, cancellation and reordering of schedules",
+        "decide unplanned strategic branches"
+      ],
+      "schedule_commander_field": "Identifies the active project commander, such as B-1, who may author the concrete worker jobs under the A-1 goal.",
+      "A-0": [
+        "validate and store schedules",
+        "promote the next eligible job",
+        "dispatch through existing worker sessions",
+        "watch GitHub results",
+        "retry within policy",
+        "resume after restart",
+        "raise REPLAN_REQUEST"
+      ],
+      "replan_triggers": [
+        "retry_limit_reached",
+        "same_failure_signature_repeated_twice",
+        "directive_missing_or_superseded",
+        "dependency_cycle_or conflict",
+        "schedule_exhausted",
+        "unexpected_terminal",
+        "user_priority_changed"
+      ]
+    },
+    "pointer_unification": {
+      "decision": "ONE_CURRENT_AUTOMATION_POINTER_WITH_V59_RUNTIME",
+      "current_ui": "V5.9",
+      "runtime_provider": "V5.7_PR276_PR278",
+      "schedule_runner": "V1.0.0_SOURCE_PASS",
+      "historical_v52_pointer": "RETAINED_AS_HISTORY_NOT_CURRENT",
+      "required_pointer": "LATEST_A0_AUTOMATION_CONTRACT_POINTER.json"
+    }
+  },
+  "target_pc_boundary": {
+    "source_contract_resolution": "PASS",
+    "v59_source_build": "PASS",
+    "target_pc_execution_observed": false,
+    "target_pc_visual_acceptance_claimed": false,
+    "actual_schedule_loop_observed": false
+  },
+  "forbidden": {
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "target_pc_pass_without_evidence": false
+  },
+  "next_gate": "INSTALL_V59_ON_TARGET_PC_BIND_B2_B3_CONTEXTS_RUN_THREE_JOBS_EACH_AND_OBSERVE_GITHUB_RESULTS",
+  "effective_at": "2026-08-04T03:49:00+09:00",
+  "aligned_at": "2026-08-04T04:02:00+09:00"
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "YOLLA_COMMANDER_CONTEXT_FAILOVER_AND_SUCCESSION_POLICY_V1",
+  "status": "ACTIVE",
+  "purpose": "REMOVE_CHAT_CONTEXT_DEPENDENCY_AND_PRESERVE_CONTINUOUS_COMMAND",
+  "authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "control_pr": 17,
+    "branch": "integration/a0-yolla-workspace-automation-successor-v1"
+  },
+  "succession_triggers": [
+    "CURRENT_COMMANDER_CONTEXT_LIMIT_RISK",
+    "CURRENT_COMMANDER_UNAVAILABLE",
+    "USER_ORDERS_SUCCESSOR_ACTIVATION",
+    "ROLE_SCOPE_SPLIT_REQUIRED",
+    "LONG_RUNNING_LANE_REQUIRES_INDEPENDENT_CONTEXT"
+  ],
+  "successor_read_order": [
+    "LATEST_FUTURE_COMMAND_PLAN_POINTER.json",
+    "FUTURE_COMMAND_AND_AUTOMATION_MASTER_PLAN_V1.md",
+    "COMMAND_PHASE_GATE_ROADMAP_V1.json",
+    "COMMANDER_CONTEXT_FAILOVER_AND_SUCCESSION_POLICY_V1.json",
+    "LATEST_A0_SUCCESSOR_HANDOFF_POINTER.json",
+    "LATEST_GROUP_ROLE_ASSIGNMENT_POINTER.json",
+    "GROUP_HANDOFF_CONTRACT_MATRIX_V1.json",
+    "EACH_COMMANDER_LATEST_REPORT_POINTER",
+    "TARGET_PC_AND_RUNTIME_RECEIPTS"
+  ],
+  "required_successor_actions": [
+    "VERIFY_EXACT_REMOTE_HEAD",
+    "READ_ALL_AUTHORITY_DOCUMENTS_IN_ORDER",
+    "COMPARE_CURRENT_REPORT_POINTERS_WITH_RUNTIME_RECEIPTS",
+    "COMMIT_SUCCESSOR_ACCEPTANCE_REPORT",
+    "UPDATE_LATEST_REPORT_POINTER",
+    "CONTINUE_HIGHEST_PRIORITY_UNBLOCKED_GATE",
+    "DO_NOT_RELY_ON_UNPUBLISHED_CHAT_MEMORY"
+  ],
+  "required_acceptance_report_fields": [
+    "successor_role",
+    "accepted_control_pr",
+    "accepted_branch",
+    "observed_remote_head",
+    "observed_plan_pointer",
+    "observed_phase_status",
+    "target_pc_confirmed_facts",
+    "not_yet_confirmed_facts",
+    "active_blockers",
+    "next_directive",
+    "production",
+    "ready",
+    "merge",
+    "accepted_at"
+  ],
+  "authority_precedence": [
+    "EXACT_GITHUB_REMOTE_HEAD_COMMITTED_JSON",
+    "EXACT_GITHUB_REMOTE_HEAD_COMMITTED_MARKDOWN",
+    "TARGET_PC_RECEIPT_LOG_SCREENSHOT",
+    "PR_COMMENT_POINTER_SUMMARY",
+    "CHAT_SUMMARY"
+  ],
+  "conflict_resolution": {
+    "rule": "FAIL_CLOSED_AND_PREFER_NEWEST_EXACT_REMOTE_HEAD_WITH_SUPPORTED_EVIDENCE",
+    "unsupported_pass": "REJECT",
+    "stale_pointer": "REQUIRE_POINTER_REPAIR_BEFORE_NEW_PASS_CLAIM",
+    "runtime_vs_document_conflict": "COLLECT_RUNTIME_EVIDENCE_AND_COMMIT_CORRECTION",
+    "cross_group_owned_path_conflict": "A0_HOLD_AND_REASSIGN"
+  },
+  "context_safe_operating_model": {
+    "upper_commander": "STRUCTURE_PRIORITY_ACCEPTANCE_ONLY",
+    "a0": "AUTOMATION_RUNTIME_INTEGRATION_EXECUTION",
+    "a2": "SITE_ANALYSIS_AND_ADAPTER_FACTORY",
+    "b1": "COLLECTION_AND_DB_MATERIALIZATION",
+    "c1": "SEMANTIC_KNOWLEDGE_AND_DOMAIN_AI_RUNTIME",
+    "d1": "KNOWLEDGE_DB_AUTHORITY",
+    "chat_role": "EPHEMERAL_EXECUTION_CONTEXT",
+    "github_role": "DURABLE_AUTHORITY_AND_MEMORY"
+  },
+  "handoff_frequency": {
+    "start_report": "BEFORE_EACH_DIRECTIVE_EXECUTION",
+    "progress_report": "AT_MEANINGFUL_STAGE_OR_BLOCKER",
+    "test_report": "AFTER_EACH_TEST_WAVE",
+    "final_report": "AFTER_GATE_COMPLETION_OR_TERMINAL_BLOCKER",
+    "pointer_update": "AFTER_EVERY_OFFICIAL_REPORT_COMMIT"
+  },
+  "state_preservation": [
+    "STABLE_V5_RUNTIME",
+    "FIXED_BROWSER_PROFILE",
+    "WORKSPACE_STATE",
+    "PROJECT_CONTEXT_BINDINGS",
+    "COMMAND_CYCLE_LEDGERS",
+    "ANALYSIS_RUNS",
+    "ADAPTER_PACKAGES",
+    "RAW_ARTIFACTS",
+    "DB_PACKAGES",
+    "KNOWLEDGE_RELEASE_LEDGERS"
+  ],
+  "forbidden": [
+    "CLAIMING_PASS_FROM_MEMORY",
+    "REPLACING_OFFICIAL_LEDGER_WITH_CHAT_SUMMARY",
+    "DELETING_PRIOR_POINTERS_OR_REPORTS",
+    "HIDING_FAILED_ATTEMPTS",
+    "UNAPPROVED_PRODUCTION",
+    "READY",
+    "MERGE"
+  ],
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "published_at": "2026-08-03T19:33:00+09:00"
+}
