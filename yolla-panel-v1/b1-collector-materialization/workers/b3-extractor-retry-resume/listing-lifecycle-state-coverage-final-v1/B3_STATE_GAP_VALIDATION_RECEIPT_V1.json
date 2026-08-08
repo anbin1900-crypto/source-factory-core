@@ -1,0 +1,18 @@
+{
+  "canonical_state_coverage_count": 8,
+  "capability_coverage_count": 5,
+  "final_write_or_edit_submit": false,
+  "gaps": [
+    {"gap_id":"gap-site-state-variants","required_input":"site_state_variants","status":"WAITING_INPUT"},
+    {"gap_id":"gap-auth-session-shape","required_input":"auth_session_shape","status":"WAITING_INPUT"},
+    {"gap_id":"gap-ownership-evidence-shape","required_input":"ownership_evidence_shape","status":"WAITING_INPUT"},
+    {"gap_id":"gap-delete-close-semantics","required_input":"delete_close_semantics","status":"UNKNOWN"},
+    {"gap_id":"gap-final-submit-semantics","required_input":"future_authorized_live_cycle","status":"UNKNOWN_PROHIBITED_THIS_CYCLE"}
+  ],
+  "representative_transition_count": 23,
+  "required_canonical_states":["DRAFT","VALIDATION_ERROR","SUBMITTED","PUBLISHED","REJECTED","PAUSED","CLOSED","DELETED"],
+  "required_capabilities":["PUBLIC_READ","CREATE","MY_LISTING","EDIT","DELETE_OR_CLOSE"],
+  "schema_version":"B3_STATE_GAP_VALIDATION_RECEIPT_V1",
+  "target_value_guessing": false,
+  "waiting_or_unknown_count": 5
+}

@@ -1,0 +1,78 @@
+{
+  "assignment_comment_id": 5224505915,
+  "canonical_states": [
+    "DRAFT",
+    "VALIDATION_ERROR",
+    "SUBMITTED",
+    "PUBLISHED",
+    "REJECTED",
+    "PAUSED",
+    "CLOSED",
+    "DELETED"
+  ],
+  "capabilities": [
+    "PUBLIC_READ",
+    "CREATE",
+    "MY_LISTING",
+    "EDIT",
+    "DELETE_OR_CLOSE"
+  ],
+  "cycle_id": "V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "final_submit_performed": false,
+  "idempotency": {
+    "duplicate_policy": "RETURN_PRIOR_OR_SUPPRESS_WITHOUT_REEXECUTION",
+    "key_fields": [
+      "capability",
+      "action",
+      "listing_ref_hash",
+      "command_id",
+      "page_id",
+      "action_id",
+      "from_state",
+      "to_state"
+    ]
+  },
+  "merge": false,
+  "production": false,
+  "ready": false,
+  "representative_transitions": [
+    {"action":"VIEW_PUBLIC","capability":"PUBLIC_READ","from_state":"PUBLISHED","requires_auth":false,"requires_ownership":false,"to_state":"PUBLISHED","transition_id":"tr-public-view"},
+    {"action":"START_OR_CONTINUE_DRAFT","capability":"CREATE","from_state":"DRAFT","requires_auth":true,"requires_ownership":false,"to_state":"DRAFT","transition_id":"tr-create-start"},
+    {"action":"VALIDATE_DRAFT_FAIL","capability":"CREATE","from_state":"DRAFT","requires_auth":true,"requires_ownership":false,"to_state":"VALIDATION_ERROR","transition_id":"tr-create-validation-error"},
+    {"action":"FIX_VALIDATION_ERROR","capability":"CREATE","from_state":"VALIDATION_ERROR","requires_auth":true,"requires_ownership":false,"to_state":"DRAFT","transition_id":"tr-create-fix"},
+    {"action":"SUBMIT_FOR_REVIEW","capability":"CREATE","from_state":"DRAFT","requires_auth":true,"requires_ownership":false,"to_state":"SUBMITTED","transition_id":"tr-create-submit"},
+    {"action":"VIEW_OWN","capability":"MY_LISTING","from_state":"DRAFT","requires_auth":true,"requires_ownership":true,"to_state":"DRAFT","transition_id":"tr-my-draft"},
+    {"action":"VIEW_OWN","capability":"MY_LISTING","from_state":"SUBMITTED","requires_auth":true,"requires_ownership":true,"to_state":"SUBMITTED","transition_id":"tr-my-submitted"},
+    {"action":"VIEW_OWN","capability":"MY_LISTING","from_state":"PUBLISHED","requires_auth":true,"requires_ownership":true,"to_state":"PUBLISHED","transition_id":"tr-my-published"},
+    {"action":"VIEW_OWN","capability":"MY_LISTING","from_state":"REJECTED","requires_auth":true,"requires_ownership":true,"to_state":"REJECTED","transition_id":"tr-my-rejected"},
+    {"action":"VIEW_OWN","capability":"MY_LISTING","from_state":"PAUSED","requires_auth":true,"requires_ownership":true,"to_state":"PAUSED","transition_id":"tr-my-paused"},
+    {"action":"VIEW_OWN","capability":"MY_LISTING","from_state":"CLOSED","requires_auth":true,"requires_ownership":true,"to_state":"CLOSED","transition_id":"tr-my-closed"},
+    {"action":"EDIT_FIELDS","capability":"EDIT","from_state":"DRAFT","requires_auth":true,"requires_ownership":true,"to_state":"DRAFT","transition_id":"tr-edit-draft"},
+    {"action":"EDIT_REJECTED","capability":"EDIT","from_state":"REJECTED","requires_auth":true,"requires_ownership":true,"to_state":"DRAFT","transition_id":"tr-edit-rejected"},
+    {"action":"EDIT_FIELDS","capability":"EDIT","from_state":"PUBLISHED","requires_auth":true,"requires_ownership":true,"to_state":"PUBLISHED","transition_id":"tr-edit-published"},
+    {"action":"EDIT_FIELDS","capability":"EDIT","from_state":"PAUSED","requires_auth":true,"requires_ownership":true,"to_state":"PAUSED","transition_id":"tr-edit-paused"},
+    {"action":"PAUSE_PUBLICATION","capability":"EDIT","from_state":"PUBLISHED","requires_auth":true,"requires_ownership":true,"to_state":"PAUSED","transition_id":"tr-edit-pause"},
+    {"action":"RESUME_PUBLICATION","capability":"EDIT","from_state":"PAUSED","requires_auth":true,"requires_ownership":true,"to_state":"PUBLISHED","transition_id":"tr-edit-resume"},
+    {"action":"DELETE","capability":"DELETE_OR_CLOSE","from_state":"DRAFT","requires_auth":true,"requires_ownership":true,"to_state":"DELETED","transition_id":"tr-delete-draft"},
+    {"action":"DELETE","capability":"DELETE_OR_CLOSE","from_state":"REJECTED","requires_auth":true,"requires_ownership":true,"to_state":"DELETED","transition_id":"tr-delete-rejected"},
+    {"action":"CLOSE","capability":"DELETE_OR_CLOSE","from_state":"PUBLISHED","requires_auth":true,"requires_ownership":true,"to_state":"CLOSED","transition_id":"tr-close-published"},
+    {"action":"CLOSE","capability":"DELETE_OR_CLOSE","from_state":"PAUSED","requires_auth":true,"requires_ownership":true,"to_state":"CLOSED","transition_id":"tr-close-paused"},
+    {"action":"DELETE","capability":"DELETE_OR_CLOSE","from_state":"CLOSED","requires_auth":true,"requires_ownership":true,"to_state":"DELETED","transition_id":"tr-delete-closed"},
+    {"action":"WITHDRAW","capability":"DELETE_OR_CLOSE","from_state":"SUBMITTED","requires_auth":true,"requires_ownership":true,"to_state":"CLOSED","transition_id":"tr-withdraw-submitted"}
+  ],
+  "resume": {
+    "checkpoint_fields": ["last_applied_sequence_no","last_event_id","last_action_id","resume_token"],
+    "policy": "RESUME_AFTER_LAST_APPLIED_EVENT"
+  },
+  "schema_version": "B3_LISTING_LIFECYCLE_STATE_MACHINE_V1",
+  "site_variant_policy": {
+    "canonicalize_only_when_evidence_exists": true,
+    "preserve_raw_site_state_losslessly": true,
+    "target_value_guessing": false,
+    "unknown_variant_status": "WAITING_INPUT/UNKNOWN"
+  },
+  "source_parent": {
+    "cycle5_state_machine_blob": "24a5477e6f18c4f51c20897a04626306fb85310a",
+    "cycle7_pointer_blob": "3b3f53eaf23f6ba5ce64fdb0a95b78475e28e15e"
+  }
+}
