@@ -1,0 +1,54 @@
+{
+  "schema_version": "V1_V510243_TARGET_PC_INSTALL_FAILURE_REPORT_V1",
+  "result_id": "V510243-C-ONLY-TARGET-PC-INSTALL-FAILURE-V1-20260807-001",
+  "version": "5.10.2.4.3",
+  "observed_at": "2026-08-07T01:14:37.9869785+09:00",
+  "status": "FAIL_ROLLBACK_ATTEMPTED",
+  "active_runtime_after_failure": {
+    "app_version": "5.10.2.3.7",
+    "terminal": "YOLLA_WORKSPACE_V5_RENDERER_PASS",
+    "legacy_runtime_modified": false
+  },
+  "installation": {
+    "base_release": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\v5.10.2.3.7-dispatch-token-recovery",
+    "target_release": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\v5.10.2.4.3-c-only-source-optimized",
+    "failed_stage": "STEP_4_BUILD_NEW_VERSIONED_RELEASE_WHILE_OLD_RUNTIME_REMAINS_AVAILABLE",
+    "base_c_mode_patch": "PASS",
+    "c_command_ui_hotfix": "PASS",
+    "c_only_source_optimizer": "FAIL",
+    "captured_error": "apply_c_only_source_optimization.cjs:33",
+    "full_error_message_captured": false,
+    "rollback_attempted": true
+  },
+  "preservation": {
+    "historical_a_e_state_modified": false,
+    "workspace_state_preserved": true,
+    "runtime_log_preserved": true,
+    "browser_profile_preservation_expected": true
+  },
+  "ui_observation": {
+    "e_button_visible": true,
+    "a_button_visible": true,
+    "c_mode_button_visible": false,
+    "interpretation": "EXPECTED_BASELINE_UI_AFTER_ROLLBACK"
+  },
+  "workspace_state_observation": {
+    "schema_version": "YOLLA_WORKSPACE_V58_STATE",
+    "selected_mode": "WORKER_COMMAND",
+    "group_c_mode_state_present": false
+  },
+  "diagnostic_collector": {
+    "file_name": "YOLLA_V510243_FAILURE_SOURCE_COLLECTOR_V1.zip",
+    "drive_file_id": "14Dsj_NtkT_AwuNIPHIpZeToZkT1Vsgr_",
+    "size": 2904,
+    "sha256": "217d95a30bac64dbc3da1ab08122e66eb95ebbed3f3d077017745c5a15c0b37e",
+    "runtime_write": false,
+    "process_stop": false,
+    "purpose": "COLLECT_EXISTING_ACTIVE_SOURCE_READBACK_FOR_EXACT_REPRODUCTION"
+  },
+  "next_gate": "UPLOAD_YOLLA_V510243_FAILURE_SOURCE_ZIP_AND_REPRODUCE_EXACT_OPTIMIZER_FAILURE",
+  "target_pc_live_pass": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

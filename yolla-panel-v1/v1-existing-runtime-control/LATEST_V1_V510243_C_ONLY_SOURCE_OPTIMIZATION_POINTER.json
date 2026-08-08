@@ -1,0 +1,32 @@
+{
+  "schema_version": "LATEST_V1_V510243_C_ONLY_SOURCE_OPTIMIZATION_POINTER_V1",
+  "version": "5.10.2.4.3",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "implementation_pr": 75,
+  "r1_status": "REJECTED_TARGET_PC_INSTALL_FAILED_ROLLBACK_PASS",
+  "r1_exact_error": "LEGACY_ACTION_CHANNEL_REMAINS_MAIN:v5:group-loop:start",
+  "active_runtime_after_r1_failure": "5.10.2.3.7",
+  "workspace_state_preserved": true,
+  "runtime_log_preserved": true,
+  "historical_a_e_state_modified": false,
+  "diagnostic_source": {
+    "file_name": "YOLLA_V510243_FAILURE_SOURCE_20260807-012627.zip",
+    "size": 70970,
+    "sha256": "6941ac28faf75bd137ca06cd393c4200dd3b9f014f0ebfd39f1b7fb43c230915"
+  },
+  "superseded_by": {
+    "target_version": "5.10.2.4.3-R2",
+    "pointer": "yolla-panel-v1/v1-existing-runtime-control/LATEST_V1_V510243_R2_C_ONLY_SOURCE_OPTIMIZATION_POINTER.json",
+    "installation_strategy": "EXACT_HASH_GATED_RELEASE_FILE_OVERLAY_NO_RUNTIME_REGEX_PATCH",
+    "status": "R2_EXACT_OVERLAY_READY_TARGET_PC_PENDING"
+  },
+  "r1_installer_authorized": false,
+  "r2_installer_authorized_for_target_pc_test": true,
+  "target_pc_live_pass": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "R1_REJECTED_SUPERSEDED_BY_R2_TARGET_PC_PENDING",
+  "updated_at": "2026-08-07T01:50:00+09:00"
+}

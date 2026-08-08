@@ -1,0 +1,30 @@
+{
+  "schema_version": "V1_V510243_R2_C_ONLY_ARTIFACT_MANIFEST_V1",
+  "target_version": "5.10.2.4.3-R2",
+  "artifact_authority": "GITHUB_MANIFEST_PLUS_GOOGLE_DRIVE_BYTES",
+  "one_click_installer": {
+    "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510243_R2_C_ONLY_SOURCE_OPTIMIZATION.bat",
+    "drive_file_id": "1-B76yhC8tXVgdp36yeQXEKV-FU0jEYzc",
+    "size": 129056,
+    "sha256": "37dd8f5117f48bdbe69c221bbb93b3d118480f36617fd75642b7afa8eb917b4b",
+    "remote_metadata_readback": "PASS"
+  },
+  "source_package": {
+    "file_name": "AI_YOLLA_V510243_R2_C_ONLY_SOURCE_OPTIMIZATION_PACKAGE.zip",
+    "drive_file_id": "1J2jzc653gF19OJYjdSCd2dttw5OIYsDB",
+    "size": 93308,
+    "sha256": "bb7fe2ec92a2ffbb046b705c06a1a00864ce54f43f8a6b745499df123129bec8",
+    "remote_metadata_readback": "PASS",
+    "zip_integrity": "PASS"
+  },
+  "diagnostic_source": {
+    "file_name": "YOLLA_V510243_FAILURE_SOURCE_20260807-012627.zip",
+    "size": 70970,
+    "sha256": "6941ac28faf75bd137ca06cd393c4200dd3b9f014f0ebfd39f1b7fb43c230915"
+  },
+  "r1_exact_failure": "LEGACY_ACTION_CHANNEL_REMAINS_MAIN:v5:group-loop:start",
+  "r2_installation_strategy": "EXACT_HASH_GATED_RELEASE_FILE_OVERLAY_NO_RUNTIME_REGEX_PATCH",
+  "target_pc_install": "PENDING",
+  "target_pc_live_pass": false,
+  "generated_at": "2026-08-07T01:48:00+09:00"
+}
