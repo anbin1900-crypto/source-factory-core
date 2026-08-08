@@ -14,7 +14,7 @@
 
 | 모듈 | 담당 | 독립 수정 범위 |
 |---|---|---|
-| Session Restore | YOLLA Panel UI Owner | Workspace·Panel·Log Window 세션 복구 |
+| Session Restore | YOLLA Panel UI Owner | Google·GPT 로그인 저장소 재사용 + Workspace·Panel·Log Window 상태 복구 |
 | Site Analyzer | V-2 | 분석기 Provider·ViewModel·Action·Status |
 | Commander/Worker Menu | B-1 | 그룹·커맨더·워커 메뉴 ViewModel·Action·Status |
 
@@ -24,6 +24,6 @@
 - `runtime/main.js`, `runtime/renderer.js`, `runtime/index.html` 직접 수정
 - 임의 IPC namespace 또는 임의 Shell 실행 추가
 - V5·Minimal 상태 쓰기·삭제
-- 쿠키·토큰·비밀번호를 Manifest·Receipt에 기록
+- 쿠키·토큰·비밀번호를 복사하거나 Manifest·Receipt·로그에 기록
 
 현재 단계는 **구조·계약 확정**입니다. Runtime binding과 Target-PC 적용은 각 Contract의 Acceptance를 통과한 별도 커밋과 Receipt로 수행합니다.
