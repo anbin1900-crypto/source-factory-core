@@ -4,11 +4,15 @@
   "version": "6.0.0",
   "target_root": "E:\\YOLLA\\panel-v6",
   "source_baseline_sha256": "902ab7eaa08b71998169084f2a2efcdbaf06a2b2a8a6b3272636b6c954608d05",
-  "file_count": 36,
+  "file_count": 42,
   "files": {
     "INSTALL_AI_YOLLA_V6.bat": {
       "size": 106,
       "sha256": "36a25fb905e37e70e6901afed1baac466856565404b1b77624920eb9fbcd581c"
+    },
+    "LATEST_V6_MODULE_REGISTRY_POINTER.json": {
+      "size": 755,
+      "sha256": "d91da45b66b026d7c9abf09b854ed2e8583398d4f9e1d5a1161b8c23c063f0df"
     },
     "LATEST_YOLLA_PANEL_V6_POINTER.json": {
       "size": 707,
@@ -85,6 +89,26 @@
     "install-v6.ps1": {
       "size": 7805,
       "sha256": "3663fa149604f4192a72026e648cf0f29d1439a9994345f5eacd4dfa0e912def"
+    },
+    "modules/README.md": {
+      "size": 1431,
+      "sha256": "d80e7539801d114f46c313fb267f83fc581677e7a7c9387433b3a24498139be0"
+    },
+    "modules/V6_MODULE_REGISTRY_V1.json": {
+      "size": 3062,
+      "sha256": "78d971fdf514f1f3c44c40ce40cc3b0fb6c7cefbcfb85ff9a6e0cbe044c718dc"
+    },
+    "modules/commander-worker-menu/B1_COMMANDER_WORKER_MENU_MODULE_CONTRACT_V1.json": {
+      "size": 2564,
+      "sha256": "653f95c4f99f55f8605ccb13a8668290ce973b83014158229dc6b38e04b1757d"
+    },
+    "modules/session-restore/SESSION_RESTORE_CONTRACT_V1.json": {
+      "size": 4844,
+      "sha256": "d2cb67b28f04f0abf97ce189d1a161e221504297794834e16de5810ae6f97136"
+    },
+    "modules/site-analyzer/V2_SITE_ANALYZER_MODULE_CONTRACT_V1.json": {
+      "size": 2337,
+      "sha256": "8ac493b4bf1bf4dbd3c752aa3b57c27df79f6d27ee0e8222f4eb70e7df214ac1"
     },
     "runtime/automation-c-v1/c_mode_runtime.cjs": {
       "size": 54691,
