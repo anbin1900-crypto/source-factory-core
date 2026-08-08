@@ -37,7 +37,7 @@
       "mount_slots": [],
       "ipc_namespace": "v6:module:session-restore:*",
       "state_namespace": "modules.session_restore",
-      "status": "CONTRACT_READY_RUNTIME_BINDING_PENDING"
+      "status": "RUNTIME_BOUND_LIVE_AUTH_RESTART_VERIFICATION_PENDING"
     },
     {
       "module_id": "site-analyzer",
@@ -52,7 +52,8 @@
       ],
       "ipc_namespace": "v6:module:site-analyzer:*",
       "state_namespace": "modules.site_analyzer",
-      "status": "CONTRACT_READY_PROVIDER_PENDING"
+      "provider_entrypoint": "provider.cjs",
+      "status": "PROVIDER_BOUND_UPSTREAM_RECEIPTS_PENDING"
     },
     {
       "module_id": "commander-worker-menu",
@@ -67,7 +68,8 @@
       ],
       "ipc_namespace": "v6:module:commander-worker-menu:*",
       "state_namespace": "modules.commander_worker_menu",
-      "status": "CONTRACT_READY_PROVIDER_PENDING"
+      "provider_entrypoint": "provider.cjs",
+      "status": "PROVIDER_BOUND"
     }
   ],
   "worker_bootstrap_rule": {
@@ -89,5 +91,5 @@
     "ready": false,
     "merge": false
   },
-  "observed_at": "2026-08-08T17:59:57+09:00"
+  "observed_at": "2026-08-08T21:10:32+09:00"
 }

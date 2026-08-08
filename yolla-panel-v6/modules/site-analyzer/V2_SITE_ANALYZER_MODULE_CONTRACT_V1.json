@@ -33,6 +33,12 @@
     "ANALYZER_ACTION_RECEIPT_V1",
     "ANALYZER_STATUS_V1"
   ],
+  "allowed_host_actions": [
+    "REGISTER_SITE",
+    "DELETE_SITE",
+    "NAVIGATE_ANALYZER",
+    "SELECT_SITE"
+  ],
   "state_rules": {
     "missing_required_receipt": "UNBOUND",
     "inference_from_missing_evidence": false,
@@ -67,9 +73,9 @@
     "Analyzer actions cannot execute arbitrary shell commands.",
     "Provider failure is isolated from Workspace and Commander/Worker UI."
   ],
-  "implementation_status": "CONTRACT_READY_PROVIDER_PENDING",
+  "implementation_status": "PROVIDER_AND_HOST_ADAPTER_BOUND_UPSTREAM_RECEIPTS_PENDING",
   "production": false,
   "ready": false,
   "merge": false,
-  "observed_at": "2026-08-08T17:59:57+09:00"
+  "observed_at": "2026-08-08T21:10:32+09:00"
 }

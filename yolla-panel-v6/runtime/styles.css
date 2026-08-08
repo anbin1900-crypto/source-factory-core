@@ -89,6 +89,10 @@ button:disabled { opacity: .55; cursor: default; }
 .sidebar-footer { padding: 8px 10px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 11px; color: var(--muted); }
 .sidebar-footer span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .sidebar-footer button { padding: 4px 7px; font-size: 10px; }
+.module-status { padding: 7px 10px; border-top: 1px solid var(--line); background: #f8fafc; color: var(--muted); font-size: 10px; line-height: 1.35; }
+.module-status.bound { color: var(--success); }
+.module-status.waiting { color: #b45309; }
+.module-status.error { color: var(--danger); }
 .browser-host { position: fixed; top: var(--topbar); left: var(--sidebar); right: 0; bottom: 0; background: #eef2f7; }
 .boot-card { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--muted); }
 .spinner { width: 30px; height: 30px; border: 3px solid #dbe3ef; border-top-color: var(--blue); border-radius: 50%; animation: spin 1s linear infinite; }

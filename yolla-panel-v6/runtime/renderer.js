@@ -25,8 +25,17 @@ function footer(message, tone = "") {
   node.dataset.tone = tone;
 }
 function workspace() { return appState && appState.workspace || { groups:{}, roles:{}, sites:{}, browser:{} }; }
-function groups() { return Object.values(workspace().groups || {}).sort((a,b)=>Number(a.order||0)-Number(b.order||0)); }
-function rolesFor(groupId) { return Object.values(workspace().roles || {}).filter(role=>role.group_id===groupId).sort((a,b)=>Number(a.order||0)-Number(b.order||0)); }
+function moduleEntry(moduleId) { return appState && appState.modules && appState.modules[moduleId] || null; }
+function menuView() { return moduleEntry("commander-worker-menu") && moduleEntry("commander-worker-menu").view_model || null; }
+function analyzerView() { return moduleEntry("site-analyzer") && moduleEntry("site-analyzer").view_model || null; }
+function groups() {
+  const model = menuView();
+  return model && Array.isArray(model.groups) ? model.groups : Object.values(workspace().groups || {}).sort((a,b)=>Number(a.order||0)-Number(b.order||0));
+}
+function rolesFor(groupId) {
+  const group = groups().find(item => item.group_id === groupId);
+  return group && Array.isArray(group.roles) ? group.roles : Object.values(workspace().roles || {}).filter(role=>role.group_id===groupId).sort((a,b)=>Number(a.order||0)-Number(b.order||0));
+}
 function selectedRole() { return workspace().selected_role_id && workspace().roles[workspace().selected_role_id] || null; }
 function cProjection(groupId) {
   const value = appState && appState.c_mode || {};
@@ -72,11 +81,30 @@ function renderGroups() {
   $("#role-count").textContent = String(Object.keys(state.roles || {}).length);
 }
 function renderSites() {
-  const values = Object.values(workspace().sites || {});
+  const model = analyzerView();
+  const values = model && Array.isArray(model.sites) ? model.sites : Object.values(workspace().sites || {});
   $("#sites").innerHTML = values.length ? values.map(site => `<article class="site-item">
     <strong>${esc(site.display_name)}</strong><small>${esc(site.url)}</small>
     <footer><span>${esc(site.analyzer_provider || "UNASSIGNED")} · ${esc(site.status || "READY")}</span><button type="button" data-delete-site="${esc(site.site_id)}">삭제</button></footer>
   </article>`).join("") : `<article class="site-item"><strong>등록 사이트 없음</strong><small>사이트 분석기 주소창에서 이동한 뒤 현재 사이트를 등록하십시오.</small></article>`;
+}
+function renderModuleSlots() {
+  const mode = workspace().selected_mode || "CONTEXTS";
+  const entry = mode === "ANALYZER" ? moduleEntry("site-analyzer") : moduleEntry("commander-worker-menu");
+  const slotName = mode === "ANALYZER" ? "ANALYZER_STATUS" : "CONTEXT_STATUS";
+  const slot = entry && entry.view_model && entry.view_model.slots && entry.view_model.slots[slotName];
+  const node = $("#module-status");
+  const status = String(entry && (entry.provider_status && entry.provider_status.status || entry.binding_status) || "UNBOUND").toUpperCase();
+  node.textContent = slot && slot.text || `${mode === "ANALYZER" ? "V-2" : "B-1"} Provider ${status}`;
+  node.dataset.moduleSlot = slotName;
+  node.className = `module-status ${/ERROR|DEGRADED|UNBOUND/.test(status) ? "error" : /WAIT|PENDING/.test(status) ? "waiting" : "bound"}`;
+  const actions = entry && entry.view_model && entry.view_model.slots || {};
+  const actionSlot = mode === "ANALYZER" ? actions.TOPBAR_ANALYZER_ACTIONS : actions.CONTEXT_TOP_ACTIONS;
+  for (const item of actionSlot && actionSlot.actions || []) {
+    const selector = item.action === "REGISTER_SITE" ? '[data-action="register-site"]' : item.action === "OPEN_COMMANDS" ? '[data-action="commands"]' : null;
+    const button = selector && $(selector);
+    if (button && item.label) button.textContent = item.label;
+  }
 }
 function renderTop() {
   const state = workspace();
@@ -99,7 +127,7 @@ function renderTop() {
 }
 function renderAll() {
   if (!appState) return;
-  renderTop(); renderGroups(); renderSites();
+  renderTop(); renderGroups(); renderSites(); renderModuleSlots();
   $("#boot-card").hidden = true;
   requestAnimationFrame(reportLayout);
 }
@@ -256,7 +284,12 @@ async function handleClick(event) {
     if (action.dataset.action === "assign-worker") openWorkerAssignDrawer();
     if (action.dataset.action === "commands") openCommandsDrawer();
     if (action.dataset.action === "register-site") openSiteDrawer();
-    if (action.dataset.action === "site-provider") openDrawer("사이트 분석기", `<div class="status-box">분석기 Provider가 들어갈 독립 연결점입니다. 현재는 주소·사이트 등록 구조만 유지하며 실제 분석 엔진은 포함하지 않습니다.</div>`);
+    if (action.dataset.action === "site-provider") {
+      const entry = moduleEntry("site-analyzer");
+      const status = entry && entry.provider_status || {};
+      const missing = Array.isArray(status.missing_upstream_receipts) ? status.missing_upstream_receipts.join(", ") : "";
+      openDrawer("사이트 분석기 Provider", `<div class="status-box">상태: ${esc(status.status || entry && entry.binding_status || "UNBOUND")}\n담당: ${esc(status.owner || "V-2")}\n등록 사이트: ${esc(status.site_count || 0)}${missing ? `\n대기 Receipt: ${esc(missing)}` : ""}</div>`);
+    }
     renderAll(); return;
   }
   const cAction = event.target.closest('[data-c-action]');

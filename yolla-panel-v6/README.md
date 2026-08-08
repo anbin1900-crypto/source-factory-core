@@ -32,3 +32,11 @@ Windows 10 PowerShell 5.1에서 INSTALL_AI_YOLLA_V6.bat을 실행합니다. 설�
 5. 기존 V5 및 Minimal 핵심 Hash 불변
 
 현재 GitHub 소스 검증과 Target-PC 실가동은 별도 상태로 관리합니다.
+
+## 세션 복구와 모듈 결속
+
+- GPT/ChatGPT는 persist:yolla-v6-worker, Google은 persist:yolla-v6-analyzer를 재사용합니다.
+- Workspace 선택 상태와 Panel·Log Window 위치/열림 상태는 state\session\V6_UI_SESSION_STATE.json에 저장합니다.
+- 로그인 복구 Receipt에는 쿠키·토큰·비밀번호를 기록하지 않습니다. 전체 Runtime 재시작 후 인증된 UI marker가 양쪽에서 관찰돼야 PASS입니다.
+- V-2 사이트 분석기와 B-1 Commander·Worker 메뉴는 runtime/module_host.cjs의 공통 계약으로 결속되며, 담당자는 자기 modules/<module>/provider.cjs만 수정합니다.
+- 현재 47-file Source Runtime은 오프라인 126 assertions PASS이며 Target-PC 재배포·전체 재시작 검증은 아직 수행하지 않았습니다.

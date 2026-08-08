@@ -482,6 +482,15 @@ class V6StateStore {
     });
   }
 
+  selectSite(siteId) {
+    const id = String(siteId || "");
+    return this.mutate(state => {
+      if (!state.sites[id]) throw new Error(`SITE_NOT_FOUND:${id}`);
+      state.selected_site_id = id;
+      state.browser.ANALYZER.url = cleanText(state.sites[id].url, 3000);
+    });
+  }
+
   toCRegistry() {
     const state = this.snapshot();
     return {

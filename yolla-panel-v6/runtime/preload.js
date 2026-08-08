@@ -27,6 +27,8 @@ contextBridge.exposeInMainWorld("yollaV6", Object.freeze({
   openStateFolder: () => ipcRenderer.invoke("v6:open-state-folder"),
   assignCurrentWorker: payload => ipcRenderer.invoke("v6:assign-current-worker", payload || {}),
   openLogAnalyzer: () => ipcRenderer.invoke("v6:log-analyzer:open"),
+  getModuleState: module_id => ipcRenderer.invoke("v6:module:get-state", { module_id }),
+  moduleAction: (module_id, action, payload) => ipcRenderer.invoke("v6:module:action", { module_id, action, payload:payload || {} }),
   cStart: payload => ipcRenderer.invoke("v6:c:start", payload || {}),
   cPause: () => ipcRenderer.invoke("v6:c:pause"),
   cResume: () => ipcRenderer.invoke("v6:c:resume"),

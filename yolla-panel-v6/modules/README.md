@@ -26,4 +26,11 @@
 - V5·Minimal 상태 쓰기·삭제
 - 쿠키·토큰·비밀번호를 복사하거나 Manifest·Receipt·로그에 기록
 
-현재 단계는 **구조·계약 확정**입니다. Runtime binding과 Target-PC 적용은 각 Contract의 Acceptance를 통과한 별도 커밋과 Receipt로 수행합니다.
+## 현재 결속
+
+- Shell은 `runtime/module_host.cjs`만 알며 각 Provider의 private 구현은 읽지 않습니다.
+- V-2는 `site-analyzer/provider.cjs`, B-1은 `commander-worker-menu/provider.cjs`와 자기 Contract만 수정합니다.
+- Provider의 출력은 선언된 ViewModel·Action·Status와 Mount Slot 검증을 통과해야 합니다.
+- Session Restore는 `runtime/session_restore_manager.cjs`에서 창 상태와 영구 파티션 재사용 증거를 관리합니다.
+
+현재 단계는 **Source Runtime 결속 완료 / Target-PC 전체 재시작 검증 대기**입니다. Google·GPT 로그인 PASS는 쿠키를 읽어서 판정하지 않고, 재시작 뒤 인증된 화면의 비민감 UI marker가 양쪽에서 관찰될 때만 기록합니다.

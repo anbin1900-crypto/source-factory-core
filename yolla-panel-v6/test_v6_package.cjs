@@ -38,6 +38,11 @@ ok(state.imported_from === null, "IMPLICIT_LEGACY_IMPORT_OCCURRED");
 fs.rmSync(stateRoot, { recursive: true, force: true });
 const control = child.spawnSync(process.execPath, [path.join(root, "control", "test_v6_mcp_server.cjs")], { encoding: "utf8" });
 ok(control.status === 0, "CONTROL_TEST_FAILED:" + control.stdout + control.stderr);
+const runtimeModules = child.spawnSync(process.execPath, [path.join(root, "test_runtime_modules.cjs")], { encoding: "utf8" });
+ok(runtimeModules.status === 0 && /YOLLA_V6_RUNTIME_MODULES_PASS/.test(runtimeModules.stdout), "RUNTIME_MODULE_TEST_FAILED:" + runtimeModules.stdout + runtimeModules.stderr);
+ok(text.includes("persist:yolla-v6-worker") && text.includes("persist:yolla-v6-analyzer"), "AUTH_PARTITION_CONTRACT_MISSING");
+ok(text.includes("secret_export_count") && text.includes("credential_value_logged_count"), "SECRET_FREE_RECEIPT_FIELDS_MISSING");
+ok(text.includes("V6ModuleHost") && text.includes("SessionRestoreManager"), "RUNTIME_BINDING_MISSING");
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "RUNTIME_MANIFEST.json"), "utf8"));
 for (const [relative, expected] of Object.entries(manifest.files)) {
   const body = fs.readFileSync(path.join(root, relative));

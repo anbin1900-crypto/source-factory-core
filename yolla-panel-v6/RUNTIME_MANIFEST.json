@@ -4,23 +4,23 @@
   "version": "6.0.0",
   "target_root": "E:\\YOLLA\\panel-v6",
   "source_baseline_sha256": "902ab7eaa08b71998169084f2a2efcdbaf06a2b2a8a6b3272636b6c954608d05",
-  "file_count": 42,
+  "file_count": 47,
   "files": {
     "INSTALL_AI_YOLLA_V6.bat": {
       "size": 106,
       "sha256": "36a25fb905e37e70e6901afed1baac466856565404b1b77624920eb9fbcd581c"
     },
     "LATEST_V6_MODULE_REGISTRY_POINTER.json": {
-      "size": 755,
-      "sha256": "d91da45b66b026d7c9abf09b854ed2e8583398d4f9e1d5a1161b8c23c063f0df"
+      "size": 777,
+      "sha256": "4a1f0d44161f79e00473dd98f3993b050a3e40b7b1a744bcced24924afca345d"
     },
     "LATEST_YOLLA_PANEL_V6_POINTER.json": {
-      "size": 707,
-      "sha256": "a063bffe18b4a2097504c385b70a23a1b6f03045fdc5e1d4ed18463459438fdc"
+      "size": 1004,
+      "sha256": "859aa17561587311baa42742e9af4ebe4c8c2e6a06be124174f972f3b7bea8f0"
     },
     "README.md": {
-      "size": 1840,
-      "sha256": "22c7315a3e437e9bfdd2e11497a9df688ad4237950c5dfb7c80ddb9abc0888c6"
+      "size": 2643,
+      "sha256": "8c336bc88956f564143c46f70128d37e9e6bc100d4075afc41fa281d4bcd05e3"
     },
     "REMOVE_AI_YOLLA_V6.bat": {
       "size": 109,
@@ -91,24 +91,32 @@
       "sha256": "3663fa149604f4192a72026e648cf0f29d1439a9994345f5eacd4dfa0e912def"
     },
     "modules/README.md": {
-      "size": 1431,
-      "sha256": "d80e7539801d114f46c313fb267f83fc581677e7a7c9387433b3a24498139be0"
+      "size": 2016,
+      "sha256": "522408e0b1537cdb0f6128b13314ace58be4aa40398d7f5f991d1b50316fdb21"
     },
     "modules/V6_MODULE_REGISTRY_V1.json": {
-      "size": 3062,
-      "sha256": "78d971fdf514f1f3c44c40ce40cc3b0fb6c7cefbcfb85ff9a6e0cbe044c718dc"
+      "size": 3158,
+      "sha256": "b8a6fd6b1ae488640579c149464a3ad60b03b3f5472647e25af291888e504cff"
     },
     "modules/commander-worker-menu/B1_COMMANDER_WORKER_MENU_MODULE_CONTRACT_V1.json": {
       "size": 2564,
-      "sha256": "653f95c4f99f55f8605ccb13a8668290ce973b83014158229dc6b38e04b1757d"
+      "sha256": "a020b1942b4b1669e5debab503b4e58340f2edf3d9e66d78e2cd14b5c9a840fa"
+    },
+    "modules/commander-worker-menu/provider.cjs": {
+      "size": 2193,
+      "sha256": "80638f11eea4e68aa91399245a06e38f44355d4c8161fdecef391575b383fbcf"
     },
     "modules/session-restore/SESSION_RESTORE_CONTRACT_V1.json": {
       "size": 4844,
-      "sha256": "d2cb67b28f04f0abf97ce189d1a161e221504297794834e16de5810ae6f97136"
+      "sha256": "9829e2a45664e4147a16ce26cb0f878115d602c22270b77c3216fa8b7bcdc657"
     },
     "modules/site-analyzer/V2_SITE_ANALYZER_MODULE_CONTRACT_V1.json": {
-      "size": 2337,
-      "sha256": "8ac493b4bf1bf4dbd3c752aa3b57c27df79f6d27ee0e8222f4eb70e7df214ac1"
+      "size": 2479,
+      "sha256": "035baa137de7bb907e20047f36f082c5f2b88ad8da1200aa8bf98b920da9ba4f"
+    },
+    "modules/site-analyzer/provider.cjs": {
+      "size": 2247,
+      "sha256": "6a5964ba6ce198ec137c6cb3f078922e710c7adedcf503fa594fc4e65c8827b2"
     },
     "runtime/automation-c-v1/c_mode_runtime.cjs": {
       "size": 54691,
@@ -127,8 +135,8 @@
       "sha256": "ccee79483cd4a738814fbdc9147568866a8108f10664cc47e88ca3229d44436a"
     },
     "runtime/index.html": {
-      "size": 4490,
-      "sha256": "87fcb16256cf410effb5150673bac7e59b87a084e7a15cc45487d9fcb6feda96"
+      "size": 4607,
+      "sha256": "8c021dd03a43017bdc58092592e2e217b8be5803edf7bb1afe1fab40f8ec445c"
     },
     "runtime/log_analyzer.css": {
       "size": 2298,
@@ -147,32 +155,44 @@
       "sha256": "92839b54f5455703e542e86651a8497267e8b017a753d601c3648c1075f75474"
     },
     "runtime/main.js": {
-      "size": 32628,
-      "sha256": "ab0c6a2fd4dd5916f0c35923326678d2fc05fe4da98b6ee97bbf4f069f1f5f14"
+      "size": 39500,
+      "sha256": "9eae07573f4c3a1f787f152bc9327c5ae2b18c19f94228168f9620c11d43c36b"
+    },
+    "runtime/module_host.cjs": {
+      "size": 6027,
+      "sha256": "f9b3952cd338b076b02aa997d29bced56c3e69ff086c2a6776d0c2220907da4e"
     },
     "runtime/package.json": {
       "size": 253,
       "sha256": "1678152ff1ed4a7da54f3f76b8b3e4dd84c04e45c9debcf02c62e4835f40d2e0"
     },
     "runtime/preload.js": {
-      "size": 2782,
-      "sha256": "8f12e0f27d510089a6746cc1203a28f589a018d21fcc4ddd49f7647b669ff627"
+      "size": 3005,
+      "sha256": "a8fd68c7c30a27bd194907ea15e77dfb4bb8f8f63c7554fd4d6462cc22164593"
     },
     "runtime/renderer.js": {
-      "size": 27021,
-      "sha256": "d5136b4cd5342f0595134159e86b0f18482b532d416032a97fc3d4e54d968778"
+      "size": 29340,
+      "sha256": "19df579f3b942082e264070646a2585d5fb38630e6e5e4d470c5215c08a14b22"
+    },
+    "runtime/session_restore_manager.cjs": {
+      "size": 15990,
+      "sha256": "b03520ae5eab180c6d0b2289967dc6d6b7936ac1489b6f60b374d3f87692ca57"
     },
     "runtime/state_store.cjs": {
-      "size": 23015,
-      "sha256": "bb8f4a6d27a54bdf29201d1abd414d1d267063677b42fd636450741158c94aa5"
+      "size": 23299,
+      "sha256": "76c0966f821b9ee30f7a6cc9affe96ffa84e43f56ad9fc45a1511acb66537134"
     },
     "runtime/styles.css": {
-      "size": 9695,
-      "sha256": "0f6b66701183683ab46ee50e827355d138e5def4527369792f0b52fc1225e4bd"
+      "size": 9984,
+      "sha256": "042f3dbf3db26a1483b9a6ed898a8a2c0ccc9d66b9d1fb85a978ac37eb1e20d3"
+    },
+    "test_runtime_modules.cjs": {
+      "size": 6437,
+      "sha256": "947776c2c18aca8ba92b5928fdf292574e71266d16faa7d63361666f6f2b6892"
     },
     "test_v6_package.cjs": {
-      "size": 3206,
-      "sha256": "079fc9408a4c86e3d94970d91cbd6c22904e51469a8001e444b0ade72b727890"
+      "size": 3869,
+      "sha256": "cc943a6a0b9ae91585566fe530b26b6eba5af89dc928d662e8482ca430b2ff9b"
     }
   }
 }

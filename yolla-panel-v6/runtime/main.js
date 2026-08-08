@@ -1,7 +1,7 @@
 /* eslint-env node */
 "use strict";
 
-const { app, BrowserWindow, BrowserView, ipcMain, session, shell, dialog } = require("electron");
+const { app, BrowserWindow, BrowserView, ipcMain, session, shell, dialog, screen } = require("electron");
 const fs = require("node:fs");
 const path = require("node:path");
 const crypto = require("node:crypto");
@@ -11,6 +11,8 @@ const { V6StateStore, readJson, writeJsonAtomic, cleanText } = require("./state_
 const { ChatGptDispatcher } = require("./chatgpt_dispatch.cjs");
 const { CommandScheduler } = require("./command_scheduler.cjs");
 const { createCModeRuntime } = require("./automation-c-v1/c_mode_runtime.cjs");
+const { SessionRestoreManager } = require("./session_restore_manager.cjs");
+const { V6ModuleHost } = require("./module_host.cjs");
 
 const APP_VERSION = "6.0.0";
 const YOLLA_ROOT = path.join("E:\\", "YOLLA");
@@ -54,6 +56,8 @@ const stateStore = new V6StateStore(STATE_PATH, IMPORT_STATE_PATH);
 let dispatcher = null;
 let cMode = null;
 let scheduler = null;
+let sessionRestore = null;
+let moduleHost = null;
 let rendered = false;
 
 function ensureDir(directory) { fs.mkdirSync(directory, { recursive: true }); }
@@ -90,6 +94,13 @@ function writeRuntimeReceipt(status, details = {}) {
     role_count: Object.keys(state.roles).length,
     worker_browser_created: browserState.WORKER.created,
     analyzer_browser_created: browserState.ANALYZER.created,
+    session_restore: sessionRestore ? {
+      launch_count: sessionRestore.snapshot().launch_count,
+      gpt_partition: WORKER_PARTITION,
+      google_partition: ANALYZER_PARTITION,
+      secret_export_count: 0
+    } : null,
+    module_bindings: moduleHost ? moduleHost.status() : null,
     rendered,
     observed_at: nowIso(),
     ...details
@@ -230,11 +241,16 @@ async function exportDiagnosticBundle() {
 }
 function createLogAnalyzerWindow() {
   if (logAnalyzerWindow && !logAnalyzerWindow.isDestroyed()) { logAnalyzerWindow.show(); logAnalyzerWindow.focus(); return logAnalyzerWindow; }
-  logAnalyzerWindow = new BrowserWindow({
+  const options = {
     width: 1080, height: 780, minWidth: 820, minHeight: 560, show: true,
     backgroundColor: "#0f172a", title: "AI YOLLA 로그 분석기",
     webPreferences: { preload: path.join(RELEASE_ROOT, "log_analyzer_preload.js"), contextIsolation: true, nodeIntegration: false, sandbox: true }
-  });
+  };
+  logAnalyzerWindow = new BrowserWindow(sessionRestore ? sessionRestore.windowOptions("log_window", options) : options);
+  if (sessionRestore) {
+    sessionRestore.applyWindowState("log_window", logAnalyzerWindow);
+    sessionRestore.trackWindow("log_window", logAnalyzerWindow);
+  }
   logAnalyzerWindow.loadFile(path.join(RELEASE_ROOT, "log_analyzer.html"));
   logAnalyzerWindow.on("closed", () => { logAnalyzerWindow = null; });
   return logAnalyzerWindow;
@@ -287,7 +303,7 @@ function updateRoleStatus(roleId, status) {
 function cSummary() { try { return cMode ? cMode.summary() : null; } catch (error) { return { status: "ERROR", last_error: String(error && error.message || error) }; } }
 function schedulerSummary() { try { return scheduler ? scheduler.summary() : null; } catch (error) { return { error: String(error && error.message || error) }; } }
 function publicState() {
-  return {
+  const state = {
     app_version: APP_VERSION,
     workspace: stateStore.snapshot(),
     browser: JSON.parse(JSON.stringify(browserState)),
@@ -295,10 +311,14 @@ function publicState() {
     c_mode: cSummary(),
     commands: schedulerSummary(),
     paths: { v6_root: V6_ROOT, state_root: STATE_ROOT, profile_root: PROFILE_ROOT, log_path: LOG_PATH, receipt_root: RECEIPT_ROOT },
+    session_restore: sessionRestore ? sessionRestore.snapshot() : null,
     existing_runtime_preserved: true
   };
+  state.modules = moduleHost ? moduleHost.snapshot(state) : {};
+  return state;
 }
 function emitState() {
+  try { if (sessionRestore) sessionRestore.recordWorkspace(stateStore.snapshot(), activeKind); } catch (_error) {}
   try { if (mainWindow && !mainWindow.isDestroyed()) mainWindow.webContents.send("v6:state", publicState()); } catch (_error) {}
 }
 function updateBrowserState(kind) {
@@ -345,13 +365,40 @@ function configureView(kind, view) {
   wc.on("did-navigate-in-page", changed);
   wc.on("page-title-updated", changed);
   wc.on("did-start-loading", () => { browserState[kind].loading = true; emitState(); });
-  wc.on("did-stop-loading", () => { browserState[kind].loading = false; changed(); });
+  wc.on("did-stop-loading", () => {
+    browserState[kind].loading = false;
+    changed();
+    setTimeout(() => probeAuthentication(kind).catch(error => appendLog("AUTH_SESSION_PROBE_FAILED", { kind, error: String(error && error.message || error) })), 500);
+  });
   wc.on("render-process-gone", (_event, details) => {
     appendLog("BROWSER_RENDER_PROCESS_GONE", { kind, reason: details && details.reason, exit_code: details && details.exitCode });
     browserState[kind].created = false;
     views[kind] = null;
     emitState();
   });
+}
+async function probeAuthentication(kindValue) {
+  const kind = kindValue === "ANALYZER" ? "ANALYZER" : "WORKER";
+  const view = views[kind];
+  if (!sessionRestore || !view || view.webContents.isDestroyed()) return null;
+  const script = kind === "ANALYZER"
+    ? `(() => {
+        const host=location.hostname.toLowerCase(); const path=location.pathname||"/";
+        const account=Boolean(document.querySelector('a[href*="SignOutOptions"],a[href*="ManageAccount"],[aria-label*="Google Account"],[aria-label*="Google 계정"]'));
+        const login=host==="accounts.google.com" && /signin|identifier|challenge/i.test(path);
+        return {observed:true,authenticated:(host==="www.google.com"||host.endsWith(".google.com"))&&!login&&account,host,path,authenticated_marker:account?"GOOGLE_ACCOUNT_CONTROL":"NONE"};
+      })()`
+    : `(() => {
+        const host=location.hostname.toLowerCase(); const path=location.pathname||"/";
+        const account=Boolean(document.querySelector('[data-testid="profile-button"],[data-testid="user-avatar"],[data-testid="accounts-profile-button"]'))||Array.from(document.querySelectorAll('button,[role="button"]')).some(node=>/account|profile|계정|프로필/i.test(node.getAttribute('aria-label')||""));
+        const login=/\/auth\/(?:login|signup)|\/login|\/signup/i.test(path);
+        return {observed:true,authenticated:host==="chatgpt.com"&&!login&&account,host,path,authenticated_marker:account?"CHATGPT_ACCOUNT_OR_WORKSPACE_CONTROL":"NONE"};
+      })()`;
+  const result = await view.webContents.executeJavaScript(script, true);
+  const receipt = sessionRestore.recordAuthProbe(kind, result || {});
+  appendLog("AUTH_SESSION_PROBE", { kind, authenticated: Boolean(result && result.authenticated), host: String(result && result.host || ""), path: String(result && result.path || ""), secret_export_count: 0, terminal: receipt.terminal });
+  emitState();
+  return receipt;
 }
 function ensureView(kindValue) {
   const kind = kindValue === "ANALYZER" ? "ANALYZER" : "WORKER";
@@ -452,7 +499,7 @@ async function navigateWorkerForDispatch(url, roleId) {
   return views.WORKER;
 }
 function createWindow() {
-  mainWindow = new BrowserWindow({
+  const options = {
     width: 1500,
     height: 940,
     minWidth: 1040,
@@ -466,7 +513,12 @@ function createWindow() {
       nodeIntegration: false,
       sandbox: true
     }
-  });
+  };
+  mainWindow = new BrowserWindow(sessionRestore ? sessionRestore.windowOptions("panel", options) : options);
+  if (sessionRestore) {
+    sessionRestore.applyWindowState("panel", mainWindow);
+    sessionRestore.trackWindow("panel", mainWindow);
+  }
   mainWindow.loadFile(path.join(RELEASE_ROOT, "index.html"));
   mainWindow.on("closed", () => {
     for (const kind of Object.keys(views)) {
@@ -476,6 +528,57 @@ function createWindow() {
     }
     mainWindow = null;
   });
+}
+function moduleActionContext() {
+  return {
+    workspace: stateStore.snapshot(),
+    browser: JSON.parse(JSON.stringify(browserState)),
+    c_mode: cSummary(),
+    commands: schedulerSummary(),
+    upstream_receipts: {}
+  };
+}
+function initializeModuleHost() {
+  moduleHost = new V6ModuleHost({
+    releaseRoot: RELEASE_ROOT,
+    appendLog,
+    adapters: {
+      "commander-worker-menu": {
+        perform: async (action, payload = {}) => {
+          if (action === "SELECT_GROUP") stateStore.selectGroup(payload.group_id);
+          else if (action === "SELECT_ROLE") {
+            const state = stateStore.selectRole(payload.role_id);
+            const role = state.roles[state.selected_role_id];
+            if (role) await navigate("WORKER", role.context_url || role.project_url);
+          }
+          else if (action === "ADD_GROUP") stateStore.addGroup(payload);
+          else if (action === "UPDATE_GROUP") stateStore.updateGroup(payload);
+          else if (action === "DELETE_GROUP") stateStore.deleteGroup(payload.group_id);
+          else if (action === "ADD_ROLE") stateStore.addRole(payload);
+          else if (action === "UPDATE_ROLE") stateStore.updateRole(payload);
+          else if (action === "DELETE_ROLE") stateStore.deleteRole(payload.role_id);
+          else if (action === "ASSIGN_CURRENT_WORKER") return assignCurrentWorker(payload);
+          else if (action === "OPEN_COMMANDS") return { ok: true, directive: "OPEN_COMMANDS" };
+          else throw new Error(`B1_HOST_ACTION_NOT_ALLOWED:${action}`);
+          emitState();
+          return publicState();
+        }
+      },
+      "site-analyzer": {
+        perform: async (action, payload = {}) => {
+          if (action === "REGISTER_SITE") stateStore.registerSite({ ...payload, url: payload.url || browserState.ANALYZER.url });
+          else if (action === "DELETE_SITE") stateStore.deleteSite(payload.site_id);
+          else if (action === "SELECT_SITE") stateStore.selectSite(payload.site_id);
+          else if (action === "NAVIGATE_ANALYZER") return navigate("ANALYZER", payload.url);
+          else throw new Error(`V2_HOST_ACTION_NOT_ALLOWED:${action}`);
+          emitState();
+          return publicState();
+        }
+      }
+    }
+  });
+  const status = moduleHost.load();
+  appendLog("V6_MODULE_HOST_BOUND", { status });
 }
 function initializeRuntimes() {
   dispatcher = new ChatGptDispatcher({
@@ -559,6 +662,18 @@ function registerIpc() {
   ipcMain.handle("v6:log-analyzer:get-snapshot", () => logAnalyzerSnapshot());
   ipcMain.handle("v6:log-analyzer:export", () => exportDiagnosticBundle());
   ipcMain.handle("v6:log-analyzer:open-folder", () => { ensureDir(STATE_ROOT); shell.openPath(STATE_ROOT); return { ok: true, path: STATE_ROOT }; });
+  ipcMain.handle("v6:module:get-state", (_event, payload) => {
+    const moduleId = cleanText(payload && payload.module_id, 100);
+    const modules = moduleHost ? moduleHost.snapshot(moduleActionContext()) : {};
+    if (!modules[moduleId]) throw new Error(`MODULE_NOT_FOUND:${moduleId}`);
+    return modules[moduleId];
+  });
+  ipcMain.handle("v6:module:action", async (_event, payload) => {
+    if (!moduleHost) throw new Error("MODULE_HOST_NOT_READY");
+    const result = await moduleHost.handleAction(cleanText(payload && payload.module_id, 100), cleanText(payload && payload.action, 100), payload && payload.payload || {}, moduleActionContext());
+    emitState();
+    return result;
+  });
   ipcMain.handle("v6:c:start", async (_event, payload) => {
     const groupId = String(payload && payload.group_id || stateStore.snapshot().selected_group_id || "").toUpperCase();
     const state = stateStore.snapshot();
@@ -598,10 +713,15 @@ function registerIpc() {
 
 app.whenReady().then(() => {
   [STATE_ROOT, PROFILE_ROOT, LOG_ROOT, RECEIPT_ROOT].forEach(ensureDir);
-  stateStore.load();
+  const loadedState = stateStore.load();
+  activeKind = loadedState.selected_mode === "ANALYZER" ? "ANALYZER" : "WORKER";
+  sessionRestore = new SessionRestoreManager({ stateRoot: STATE_ROOT, profileRoot: PROFILE_ROOT, receiptRoot: RECEIPT_ROOT, workerPartition: WORKER_PARTITION, analyzerPartition: ANALYZER_PARTITION, screen, appendLog });
+  sessionRestore.load(loadedState);
   initializeRuntimes();
+  initializeModuleHost();
   registerIpc();
   createWindow();
+  if (!IS_SMOKE_TEST && sessionRestore.shouldOpenLogWindow()) createLogAnalyzerWindow();
   appendLog("RUNTIME_STARTED", { app_version: APP_VERSION, v6_root: V6_ROOT, release_root: RELEASE_ROOT, state_root: STATE_ROOT, profile_root: PROFILE_ROOT, existing_runtime_preserved: true, legacy_write_count: 0 });
   writeRuntimeReceipt("STARTING");
 }).catch(error => {
@@ -612,4 +732,4 @@ app.whenReady().then(() => {
 
 app.on("activate", () => { if (!mainWindow) createWindow(); });
 app.on("window-all-closed", () => { if (process.platform !== "darwin") app.quit(); });
-app.on("before-quit", () => { appendLog("RUNTIME_STOPPING", { smoke_test: IS_SMOKE_TEST }); if (!IS_SMOKE_TEST) writeRuntimeReceipt("STOPPED"); });
+app.on("before-quit", () => { if (sessionRestore) sessionRestore.markQuitting(); appendLog("RUNTIME_STOPPING", { smoke_test: IS_SMOKE_TEST }); if (!IS_SMOKE_TEST) writeRuntimeReceipt("STOPPED"); });
