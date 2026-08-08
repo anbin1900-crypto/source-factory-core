@@ -15,15 +15,23 @@
     "result_return_status": "D4_COMPLETION_PENDING"
   },
   "truth": {
+    "d4_v3_queue_registered": true,
+    "d4_v3_claimed_or_execution_started": true,
+    "d4_v3_claim_evidence": "EXECUTOR_RECEIPT_STATUS_SUCCEEDED",
+    "executor_restarted": true,
     "queue_unlock_after_powershell_restart": true,
     "executor_receipt_status": "SUCCEEDED",
     "working_observed": true,
     "error_observed": true,
     "completed_observed": false,
     "message_sent": true,
+    "internal_schema_correction_pending": true,
     "full_message_loop_live_pass": false,
     "d5_cycle4_metric_bound": true,
     "d5_cycle5_late_bind_ready": true,
-    "d5_cycle5_result_available": false
+    "d5_cycle5_result_available": false,
+    "cycle5_w6_directive_delivery_state": "GITHUB_DIRECTIVE_POSTED",
+    "cycle5_w6_queue_registered": false,
+    "cycle5_w6_claimed": false
   }
 }
