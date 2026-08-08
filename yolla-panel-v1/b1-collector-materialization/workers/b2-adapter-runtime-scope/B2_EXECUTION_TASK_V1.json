@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "B1-B2-EXECUTION-TASK-V1-20260804-001",
+  "registered_at_kst": "2026-08-04T05:11:00+09:00",
+  "worker": "B-2",
+  "control_pr": 38,
+  "parent_directive": "B1-TO-B2-ADAPTER-RUNTIME-SCOPE-PLANNER-V1-20260804-001",
+  "parent_directive_superseded": false,
+  "mode": "FIXTURE_FIRST_IMPLEMENTATION",
+  "objective": "Implement the VerifiedAdapterPackage consumer boundary, fixture Adapter loader, collection scope, quota and deterministic schedule planner.",
+  "implementation_order": [
+    "COMMIT_B2_START_REPORT_AND_LATEST_POINTER",
+    "FREEZE_VERIFIED_ADAPTER_PACKAGE_CONSUMER_CONTRACT",
+    "BUILD_FIXTURE_ADAPTER_PACKAGE_MATCHING_CONSUMER_CONTRACT",
+    "IMPLEMENT_ADAPTER_LOADER_FAIL_CLOSED",
+    "IMPLEMENT_SCOPE_PLANNER",
+    "IMPLEMENT_QUOTA_AND_SCHEDULE_PLANNER",
+    "RUN_TEST_MATRIX_AND_REMOTE_READBACK",
+    "COMMIT_B2_FINAL_REPORT_AND_LATEST_POINTER",
+    "POST_TERMINAL_TO_PR38_AND_PR19"
+  ],
+  "required_paths": [
+    "contracts/VERIFIED_ADAPTER_PACKAGE_CONSUMER_CONTRACT_V1.json",
+    "fixtures/FIXTURE_ADAPTER_PACKAGE_V1.json",
+    "src/adapter_loader.py",
+    "src/scope_planner.py",
+    "src/quota_schedule_planner.py",
+    "tests/test_adapter_runtime_scope.py",
+    "B2_START_REPORT_V1.json",
+    "B2_TEST_RESULTS_V1.json",
+    "B2_FINAL_REPORT_V1.json",
+    "LATEST_B2_REPORT_POINTER.json"
+  ],
+  "minimum_test_cases": 16,
+  "required_test_categories": [
+    "VALID_PACKAGE_ACCEPTED",
+    "MISSING_REQUIRED_FIELD_REJECTED",
+    "UNKNOWN_CRITICAL_FIELD_REJECTED",
+    "RAW_SECRET_REJECTED_CREDENTIAL_REFERENCE_ACCEPTED",
+    "UNVERIFIED_PACKAGE_REJECTED_FOR_ACTUAL_MODE",
+    "FIXTURE_PACKAGE_ACCEPTED_FOR_FIXTURE_MODE",
+    "SCOPE_BOUNDARY_DETERMINISTIC",
+    "QUOTA_LIMIT_NEVER_EXCEEDED",
+    "SCHEDULE_NEXT_RUN_DETERMINISTIC",
+    "PAGINATION_POLICY_EXPOSED_TO_B3",
+    "ZERO_NETWORK_CALLS"
+  ],
+  "handoff_to": ["B-3", "B-4", "B-5", "B-6", "B-1"],
+  "terminal": "B2_ADAPTER_RUNTIME_SCOPE_READY_OR_EXACT_BLOCKER",
+  "boundaries": {
+    "site_structure_reanalysis": false,
+    "adapter_generation": false,
+    "actual_site_call": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

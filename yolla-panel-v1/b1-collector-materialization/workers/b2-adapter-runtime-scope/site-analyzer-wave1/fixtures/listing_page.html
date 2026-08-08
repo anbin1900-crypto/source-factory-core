@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>분석기 로컬 브라우저 Fixture</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f6f7f9;color:#18202a}header{padding:18px 22px;background:white;border-bottom:1px solid #ddd}.listing-grid{display:grid;gap:12px;padding:18px}.listing-card{background:white;border:1px solid #d8dde5;border-radius:10px;padding:14px;display:grid;grid-template-columns:1fr auto;gap:8px}.listing-title{font-weight:700;font-size:18px}.price{font-weight:700;color:#1565c0}.address,.area,.agency{font-size:13px;color:#55606f}.next-page{margin:0 18px 22px;padding:10px 16px}</style>
+</head>
+<body>
+<header><h1>네이버페이 부동산 분석용 로컬 Fixture</h1><p>외부 호출 없이 Element Picker와 후보 Highlight를 검증합니다.</p></header>
+<section class="listing-grid" data-region="listing-repeat">
+<article class="listing-card" data-record-id="L-001"><div><a class="listing-title" href="/articles/1">한강뷰 아파트</a><div class="address">서울시 영등포구</div><div class="area">84.9㎡</div><div class="agency">욜라공인중개사</div></div><div class="price">12억 5,000</div></article>
+<article class="listing-card" data-record-id="L-002"><div><a class="listing-title" href="/articles/2">역세권 오피스텔</a><div class="address">서울시 마포구</div><div class="area">39.2㎡</div><div class="agency">스마트부동산</div></div><div class="price">4억 2,000</div></article>
+<article class="listing-card" data-record-id="L-003"><div><a class="listing-title" href="/articles/3">신축 빌라</a><div class="address">경기도 화성시</div><div class="area">61.1㎡</div><div class="agency">남양공인중개사</div></div><div class="price">3억 8,000</div></article>
+</section>
+<button id="load-more" class="next-page" type="button">더 보기 후보</button>
+</body>
+</html>

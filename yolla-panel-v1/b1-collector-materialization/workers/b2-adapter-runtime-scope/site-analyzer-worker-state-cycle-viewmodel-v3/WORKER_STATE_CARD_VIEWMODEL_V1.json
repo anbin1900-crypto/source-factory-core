@@ -1,0 +1,35 @@
+{
+  "schema_version": "WORKER_STATE_CARD_VIEWMODEL_V1",
+  "directive_id": "AI001-TO-B2-WORKER-STATE-AND-CYCLE-STATUS-VIEWMODEL-V3-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "worker": "B-2",
+  "worker_pr": 38,
+  "control_plane_only": true,
+  "panel_apply": false,
+  "worker_state_enum": ["IDLE", "DISPATCHED", "GENERATING", "COMPLETE", "BLOCKED", "UNKNOWN"],
+  "task_status_enum": ["IDLE", "DISPATCHED", "GENERATING", "COMPLETE", "COMPLETE_RESULT_PENDING", "BLOCKED", "UNKNOWN"],
+  "correlation_keys": ["worker_id", "command_id", "page_id", "cycle_id"],
+  "required_card_fields": ["worker_id", "worker_state", "browser_state", "task_status", "command_id", "latest_terminal", "latest_result_pointer", "observed_at"],
+  "browser_state": {
+    "fields": ["source_schema", "sensor_state", "page_id", "selector_status", "completion_assessment", "generation_ui_active", "dom_stable_ms", "observed_at"],
+    "rule": "Preserve browser-observed state independently from server task status."
+  },
+  "task_status": {
+    "fields": ["state", "raw_state", "command_id", "latest_terminal", "latest_result_pointer", "blocker", "observed_at"],
+    "complete_rule": "Final COMPLETE requires explicit COMPLETE browser evidence and a B-1 result pointer/envelope pointer.",
+    "result_pending_rule": "Explicit COMPLETE without result pointer becomes COMPLETE_RESULT_PENDING.",
+    "unknown_rule": "Selector miss, UNKNOWN, or LIKELY_COMPLETE cannot render as normal COMPLETE."
+  },
+  "correlation_state_enum": ["BOUND", "COMMAND_ID_PENDING", "PAGE_ID_PENDING"],
+  "badges": ["COMPLETE_RESULT_PENDING", "SELECTOR_MISS", "LIKELY_COMPLETE_UNVERIFIED", "COMMAND_ID_PENDING", "STALE_EVENT_IGNORED", "DUPLICATE_EVENT_IGNORED"],
+  "truth_policy": {
+    "receipt_required_for_state_transition": true,
+    "a3_likely_complete_is_terminal": false,
+    "selector_miss_complete_inference": false,
+    "unknown_complete_inference": false,
+    "missing_result_pointer_final_complete_inference": false
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

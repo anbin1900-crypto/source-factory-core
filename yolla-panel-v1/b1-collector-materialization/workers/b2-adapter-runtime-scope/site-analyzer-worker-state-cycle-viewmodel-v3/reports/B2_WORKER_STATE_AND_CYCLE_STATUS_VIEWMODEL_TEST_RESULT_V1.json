@@ -1,0 +1,73 @@
+{
+  "schema_version": "B2_WORKER_STATE_AND_CYCLE_STATUS_VIEWMODEL_TEST_RESULT_V1",
+  "directive_id": "AI001-TO-B2-WORKER-STATE-AND-CYCLE-STATUS-VIEWMODEL-V3-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "worker": "B-2",
+  "worker_pr": 38,
+  "tested_at_kst": "2026-08-07T22:42:00+09:00",
+  "source_head_before_report": "90ab861d9482ebb3ec333633d39d53d6eade8eb4",
+  "producer_authority": {
+    "A-3": {
+      "head": "161acfc3590167f4a9feec707b958a5d3ccae535",
+      "terminal": "A3_CHROME_WORKER_COMPLETION_OBSERVER_READY",
+      "pointer_blob": "aaee481e276485682fa73d52a70881e14d653539",
+      "event_schema_blob": "ebb33d2229f62591f0fc31757dfc2ab03727e649",
+      "contract_blob": "7da03105f1c96ba4528bd5f3445cfb9bafc6cfe4"
+    },
+    "B-1": {
+      "head": "9778dfe1fbefb2ceb74ba43364e33a90622f3101",
+      "terminal": "B1_WORKER_STATE_EVENT_AND_CYCLE_AGGREGATOR_READY",
+      "pointer_blob": "617cb67d5f261e500395bd60ec99678b2720d6a8",
+      "event_schema_blob": "c54fee3abbcf3519cffe946503f63c30ff314628",
+      "aggregator_contract_blob": "18328841d845e26fc2434772674c77f80ee565a0"
+    }
+  },
+  "remote_artifacts": {
+    "worker_card_contract_blob": "51f1d63238a1cb8efae9571f053fb9227d27d4af",
+    "cycle_status_contract_blob": "98de379699442c9af616842538d83f59e2ba5e77",
+    "event_binding_blob": "665f8f460fa5960b94d4222d236ab53724a33bb6",
+    "panel_viewmodel_js_blob": "80e8d4a391fb0c81addabf5f49a91573cc48ce36",
+    "fixture_event_stream_blob": "b1376975bda22a6131b81fd93f1e1b88c746f670",
+    "smoke_tool_blob": "0e171039877ad29544e6f73a632e8fd8f5e87430"
+  },
+  "validation": {
+    "remote_readback": "PASS_6_OF_6",
+    "a3_event_schema_validation": "PASS_6_OF_6",
+    "b1_event_schema_validation": "PASS_2_OF_2",
+    "fixture_viewmodel_smoke": "PASS_25_OF_25",
+    "remote_git_blob_exact_match": "PASS_MODEL_FIXTURE_SMOKE_3_OF_3",
+    "a3_raw_sensor_consumed": true,
+    "b1_aggregated_event_consumed": true,
+    "browser_state_task_status_separated": true,
+    "command_id_terminal_result_pointer_observed_at_bound": true,
+    "complete_result_pending": "PASS",
+    "selector_miss_unknown_fail_safe": "PASS",
+    "likely_complete_not_promoted": "PASS",
+    "command_id_pending_fail_safe": "PASS",
+    "duplicate_suppression": "PASS",
+    "stale_suppression": "PASS",
+    "a3_page_terminal_preserved_after_b1_result_enrichment": "PASS"
+  },
+  "fixture_cycle_summary": {
+    "total": 5,
+    "complete": 1,
+    "generating": 1,
+    "blocked": 1,
+    "unknown": 2,
+    "cycle_state": "UNKNOWN"
+  },
+  "direct_repairs": [
+    "REPLACED_ASSUMED_EVENT_SHAPE_WITH_EXACT_A3_RAW_AND_B1_AGGREGATED_DUAL_SOURCE_NORMALIZATION",
+    "REPAIRED_A3_FIXTURE_EVENT_ID_MIN_LENGTH_FOR_EXACT_SCHEMA_VALIDATION"
+  ],
+  "boundary": {
+    "panel_apply": false,
+    "target_pc_execution": false,
+    "tunnel_change": false,
+    "new_browser_view": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  }
+}

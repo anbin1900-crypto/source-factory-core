@@ -1,0 +1,207 @@
+{
+  "schema_version": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_V1",
+  "contract_id": "B2-D-INTAKE-SOURCE-SCOPE-NAVER-FIN-LAND-PUBLIC-WEB-V1",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "task_id": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT",
+  "source_key": "NAVER_FIN_LAND_PUBLIC_WEB_V1",
+  "source_alias_candidate": "NAVER_FIN_LAND",
+  "source_key_alias_decision_owner": "D-1",
+  "SILENT_SOURCE_KEY_RENAME": false,
+  "source_name": "네이버페이 부동산",
+  "official_source_url": "https://fin.land.naver.com",
+  "method": "GET",
+  "response_format": "HTML",
+  "authorized_scope": "PUBLIC_NON_LOGIN_READ_ONLY",
+  "active_profiles": [
+    "EP-001",
+    "EP-002",
+    "EP-003",
+    "EP-004",
+    "EP-005",
+    "EP-010",
+    "EP-012"
+  ],
+  "excluded_profiles": [
+    {
+      "profile_id": "EP-011",
+      "semantic_role": "AUTH_SESSION",
+      "reason": "EXCLUDED_NO_CREDENTIAL_REFERENCE",
+      "credential_reference": null,
+      "login_required": true,
+      "included": false
+    }
+  ],
+  "route_templates": [
+    {
+      "profile_id": "EP-001",
+      "route_template": "/map",
+      "method": "GET",
+      "response_format": "HTML",
+      "mime_type": "text/html",
+      "semantic_role": "MAP_MOVE_PUBLIC_STATE"
+    },
+    {
+      "profile_id": "EP-002",
+      "route_template": "/articles/{articleNo}",
+      "method": "GET",
+      "response_format": "HTML",
+      "mime_type": "text/html",
+      "semantic_role": "LISTING_DETAIL_PUBLIC_DOCUMENT_PRIMARY"
+    },
+    {
+      "profile_id": "EP-003",
+      "route_template": "/articles/{articleNo}",
+      "method": "GET",
+      "response_format": "HTML",
+      "mime_type": "text/html",
+      "semantic_role": "LISTING_DETAIL_PUBLIC_DOCUMENT_ALTERNATE"
+    },
+    {
+      "profile_id": "EP-004",
+      "route_template": "/map",
+      "method": "GET",
+      "response_format": "HTML",
+      "mime_type": "text/html",
+      "semantic_role": "LIST_SURFACE_PUBLIC_MAP_STATE"
+    },
+    {
+      "profile_id": "EP-005",
+      "route_template": "/map",
+      "method": "GET",
+      "response_format": "HTML",
+      "mime_type": "text/html",
+      "semantic_role": "REGION_DISCOVERY_PUBLIC_MAP_STATE"
+    },
+    {
+      "profile_id": "EP-010",
+      "route_template": "/map",
+      "method": "GET",
+      "response_format": "HTML",
+      "mime_type": "text/html",
+      "semantic_role": "FILTER_PUBLIC_MAP_STATE"
+    },
+    {
+      "profile_id": "EP-012",
+      "route_template": "/search",
+      "method": "GET",
+      "response_format": "HTML",
+      "mime_type": "text/html",
+      "semantic_role": "PUBLIC_SEARCH_DOCUMENT"
+    }
+  ],
+  "credential_required": false,
+  "login_required": false,
+  "pagination_observed": false,
+  "D_schema_blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+  "D_mapping_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
+  "D_ruleset_blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
+  "D_receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410",
+  "authority_type": null,
+  "authority_type_status": "PENDING_D1_DECISION",
+  "authority_type_decision_pointer": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+    "pointer_blob": "95e6983a79b80867dd7de196a21e1aefc4c3dcb1",
+    "decision_owner": "D-1_ONLY"
+  },
+  "d_canonical_source_id": null,
+  "D_CANONICAL_SOURCE_ID_GENERATION": false,
+  "D_AUTHORITY_TYPE_FINAL_DECISION": false,
+  "D_ACCEPTANCE_RECEIPT_ISSUANCE": false,
+  "d_canonical_id_generation_owner": "D-1_ONLY",
+  "input_bindings": {
+    "A2_VERIFIED_ADAPTER_PACKAGE": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "control_pr": 18,
+      "head": "536715fcfb2ac2e4c589b952b3bb191135af6eb7",
+      "pointer_blob": "fb5528153b2c1b1c47f5780a8f16d72a6a696a95",
+      "a6_head": "a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793",
+      "a6_pointer_blob": "30a7854ca46e7e6f477b1c17c5762e4651d53a82",
+      "package_blob": "d758afef96e76b664f6d8b0383c5a7bc017c731a",
+      "package_sha256": "fad18a1e0571dfac26305d8bd3d845a639e225c51ff1a03dfe45c49d7d441854",
+      "active_profiles": [
+        "EP-001",
+        "EP-002",
+        "EP-003",
+        "EP-004",
+        "EP-005",
+        "EP-010",
+        "EP-012"
+      ],
+      "excluded_profiles": [
+        "EP-011"
+      ],
+      "method": "GET",
+      "mime_type": "text/html",
+      "credential_mode": "NONE",
+      "automated_pagination": false
+    },
+    "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "worker_pr": 24,
+      "current_head": "ba04d2dbae45a5ed51e86d6715565d15b8428464",
+      "observed_head": "85bb7c7c6b07a0a58cdc74ea7d74a6de2ed81adb",
+      "handoff_blob": "0fac8fac5069a013717ea74202d6d1741adfd966",
+      "status": "READY_FOR_D_SOURCE_ENDPOINT_INTAKE",
+      "active_profile_binding": "PASS_7_OF_7",
+      "ep011_excluded": true
+    }
+  },
+  "d_contract_refs": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+    "control_pointer_blob": "95e6983a79b80867dd7de196a21e1aefc4c3dcb1",
+    "schema_blob": "710f1de7860f62143f81f36bd3eb4fbe2b613ff1",
+    "mapping_blob": "fcd879221b8d2b2c8f988a76e4045877ced9336b",
+    "ruleset_blob": "7bc601dd16a84f44b95c7e5757a1a796cb5fd793",
+    "receipt_contract_blob": "c5b2d0087c52fb1af4b9c0a31f7181aedebfd410"
+  },
+  "scope_policy": {
+    "allowed_origin": "https://fin.land.naver.com",
+    "allowed_methods": [
+      "GET"
+    ],
+    "allowed_response_formats": [
+      "HTML"
+    ],
+    "access_class": [
+      "PUBLIC",
+      "NON_LOGIN",
+      "READ_ONLY"
+    ],
+    "credential_required": false,
+    "login_required": false,
+    "browser_automation_authorized": false,
+    "automated_pagination_authorized": false,
+    "actual_site_extraction_authorized": false,
+    "bulk_collection_authorized": false
+  },
+  "handoff": {
+    "consumer": "B-5",
+    "consumer_pr": 41,
+    "independent_preflight_consumer": "B-6",
+    "independent_preflight_pr": 42,
+    "control_consumer": "B-1",
+    "control_pr": 19,
+    "next_event": "B5_RESUME_AFTER_B2_AND_B4",
+    "canonical_id_generation_requested_from": "D-1",
+    "producer_acceptance_claim": false,
+    "producer_canonical_write_claim": false
+  },
+  "safety": {
+    "actual_site_call_count": 0,
+    "actual_site_extraction": false,
+    "d_canonical_id_generation_count": 0,
+    "d_canonical_db_write_count": 0,
+    "d_acceptance_receipt_issuance_count": 0,
+    "postgresql_connection_count": 0,
+    "contains_personal_data": false,
+    "contains_secret_value": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  }
+}

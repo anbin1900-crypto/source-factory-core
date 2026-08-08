@@ -1,0 +1,16 @@
+{
+  "schema_version": "SITE_ANALYZER_UI_EVENT_V1",
+  "directive_id": "AI001-TO-B2-CONTEXT-INDEPENDENT-UI-VIEWMODEL-BINDING-V2-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "event_contract": {
+    "required": ["event_id", "event_type", "timestamp", "producer", "source_ref"],
+    "correlation_keys": ["session_id", "page_id", "action_id", "command_id"],
+    "nullable_correlation": true,
+    "event_types": ["SESSION_STATE", "PAGE_SELECTED", "ACTION_RECORDED", "COMMAND_STATE", "OBSERVATION_RECEIPT", "STRUCTURE_RECEIPT", "DECISION_RECEIPT", "ADAPTER_RECEIPT", "JOB_STATE", "INSPECTOR_SELECTION", "PREVIEW_UPDATE", "TRACE_EVENT", "ERROR_RECEIPT"],
+    "payload_policy": {"raw_evidence_inline": false, "evidence_ref_required_for_evidence_events": true, "status_without_receipt_forbidden": true}
+  },
+  "example": {"event_id": "evt-example", "event_type": "OBSERVATION_RECEIPT", "timestamp": "2026-08-07T00:00:00Z", "producer": "A-3", "source_ref": "pointer-or-receipt-ref", "session_id": "session-example", "page_id": "page-example", "action_id": null, "command_id": null, "payload_ref": "receipt-ref"},
+  "production": false,
+  "ready": false,
+  "merge": false
+}

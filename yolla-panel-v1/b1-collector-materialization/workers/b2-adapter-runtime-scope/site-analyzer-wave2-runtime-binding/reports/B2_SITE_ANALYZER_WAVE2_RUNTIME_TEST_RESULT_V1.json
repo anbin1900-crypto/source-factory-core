@@ -1,0 +1,89 @@
+{
+  "schema_version": "B2_SITE_ANALYZER_WAVE2_RUNTIME_TEST_RESULT_V2",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment": 5208244151,
+  "worker": "B-2",
+  "tested_at_kst": "2026-08-07T04:18:00+09:00",
+  "test_commands": {
+    "node": "node --test tests/runtime_bridge_client.test.mjs tests/runtime_bridge_model.test.mjs",
+    "chromium_runtime": "node tests/runtime_bridge_browser_smoke.mjs"
+  },
+  "node_test": {
+    "status": "PASS",
+    "test_count": 22,
+    "pass_count": 22,
+    "fail_count": 0,
+    "added_repairs": [
+      "A2_ANALYZER_API_PROGRESS_BRIDGE",
+      "A2_ANALYZER_STATE_TO_A3_A4_A5_B3_B5_TOPIC_SYNTHESIS"
+    ]
+  },
+  "chromium_runtime_smoke": {
+    "status": "PASS",
+    "runtime": "CHROMIUM_HEADLESS_CDP_WITH_TRANSFERABLE_MESSAGE_PORT",
+    "transport_names": ["BROADCAST_CHANNEL", "CUSTOM_EVENT", "MESSAGE_PORT"],
+    "runtime_host_connected": true,
+    "runtime_inbound_count": 7,
+    "a3_event_count": 1,
+    "field_candidate_count": 3,
+    "workflow_step_count": 5,
+    "workflow_first_label_after_edit": "Open live list",
+    "preview_row_count": 10,
+    "preview_column_count": 3,
+    "mode": "HYBRID",
+    "selected_selector": "a.listing-title",
+    "highlight_counts": {"repeat": 3, "field": 6, "pagination": 1},
+    "static_fixture_auto_loaded": false
+  },
+  "a2_existing_runtime_contract": {
+    "preload_path": "yolla-panel-v1/a2-analyzer-adapter-factory/site-analyzer-wave1/src/analyzer-preload.cjs",
+    "preload_blob": "875e3dde34b852adca554f3d5d670011b7c77e72",
+    "exposed_object": "window.analyzerAPI",
+    "bound_methods": ["getState", "onProgress"],
+    "progress_schema": "ANALYSIS_PROGRESS_EVENT_V1",
+    "compatibility": "PASS"
+  },
+  "synthesized_live_topics_from_analyzer_state": [
+    "analyzer:browser-state",
+    "analyzer:a3-event",
+    "analyzer:a4-candidates",
+    "analyzer:a5-inference",
+    "analyzer:b3-workflow",
+    "analyzer:b5-preview"
+  ],
+  "required_validation": {
+    "HEAD_ADVANCE": "PASS",
+    "LIVE_BRIDGE": "PASS_ANALYZER_API_AND_MESSAGE_PORT_RUNTIME",
+    "ELEMENT_PICKER": "PASS",
+    "HIGHLIGHT": "PASS_REPEAT_FIELD_PAGINATION",
+    "WORKFLOW_EDITOR": "PASS_EDIT_REORDER_REMOVE",
+    "LIVE_PREVIEW": "PASS_EXACTLY_10_ROWS",
+    "STATIC_SAMPLE_TERMINAL": false
+  },
+  "runtime_compatibility": {
+    "existing_a2_analyzer_api": "PASS_UNIT_AND_STATE_SYNTHESIS",
+    "electron_preload_generic_bridge": "PASS_UNIT_COMPATIBILITY",
+    "message_port": "PASS_ACTUAL_CHROMIUM_RUNTIME",
+    "broadcast_channel": "PASS_BOUND",
+    "custom_event": "PASS_BOUND",
+    "target_electron_single_launcher_executed": false
+  },
+  "remote_readback": {
+    "package_blob": "00d60f4a265d756b214cbac1c016c7404416aad8",
+    "runtime_bridge_blob": "8777873e6d1a2ca3e67a84af3d2bec49229abfe7",
+    "live_model_blob": "1e3a1b7b00782bf8635a2573111c4e3f2deb8694",
+    "live_app_blob": "9e601f56e787eee3c5acffd41356984d0c3c7ea8",
+    "ui_blob": "a422a36141d28f46dfeaeea1e90621cbbd5d77b9",
+    "client_test_blob": "8a24f43d61d71241a5e79a3da57d94212957f55d",
+    "model_test_blob": "4da9b9098d062b2d5e0ec19ff1d1131b47631dbf",
+    "browser_smoke_test_blob": "5f8823aa938784ac3ed07134344e06dd1b8a2f92",
+    "status": "PASS_8_OF_8"
+  },
+  "actual_external_site_call_count": 0,
+  "credential_use_count": 0,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": "LATEST_B2_SITE_ANALYZER_WAVE2_RUNTIME_POINTER_V2",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment": 5208244151,
+  "worker": "B-2",
+  "worker_pr": 38,
+  "branch": "worker/b2-adapter-runtime-scope-v1",
+  "updated_at_kst": "2026-08-07T04:20:00+09:00",
+  "status": "PASS_LIVE_CHROMIUM_RUNTIME_EXISTING_A2_ANALYZER_API_COMPATIBLE",
+  "terminal": "B2_SITE_ANALYZER_WAVE2_LIVE_RUNTIME_BINDING_PASS",
+  "final_report": {
+    "commit": "527e2e1f311a4bdb275d571851f912d9d7b87001",
+    "blob": "0269264826a74bd5f305f3e6fd03ef4ac2b913a2",
+    "path": "reports/B2_SITE_ANALYZER_WAVE2_RUNTIME_FINAL_REPORT_V1.json"
+  },
+  "test_result": {
+    "commit": "f6bfec23fdef6203ee642d9e30cd63b8356fecb7",
+    "blob": "95bd6216efac850dee47063e1f78071f5863d821",
+    "path": "reports/B2_SITE_ANALYZER_WAVE2_RUNTIME_TEST_RESULT_V1.json",
+    "node_tests": "PASS_22_OF_22",
+    "chromium_message_port_runtime": "PASS"
+  },
+  "entrypoint": {
+    "path": "ui/index.html",
+    "commit": "41c11f45a5829b64603a4bb5e0c4b5ec06d5cd28",
+    "blob": "a422a36141d28f46dfeaeea1e90621cbbd5d77b9"
+  },
+  "implementation_blobs": {
+    "runtime_bridge": "8777873e6d1a2ca3e67a84af3d2bec49229abfe7",
+    "live_model": "1e3a1b7b00782bf8635a2573111c4e3f2deb8694",
+    "live_app": "9e601f56e787eee3c5acffd41356984d0c3c7ea8",
+    "package": "00d60f4a265d756b214cbac1c016c7404416aad8"
+  },
+  "existing_a2_runtime": {
+    "preload_blob": "875e3dde34b852adca554f3d5d670011b7c77e72",
+    "exposed_object": "window.analyzerAPI",
+    "get_state_bound": true,
+    "progress_bound": true,
+    "state_topic_synthesis": "PASS_A3_A4_A5_B3_B5"
+  },
+  "required": {
+    "head_advance": true,
+    "live_bridge": true,
+    "element_picker": true,
+    "highlight": true,
+    "workflow_editor": true,
+    "live_preview": true,
+    "static_sample_terminal": false
+  },
+  "execution": {
+    "message_port_actual_runtime_executed": true,
+    "chromium_cdp_runtime_executed": true,
+    "existing_a2_analyzer_api_compatible": true,
+    "target_electron_single_launcher_executed": false,
+    "runtime_inbound_count": 7,
+    "preview_row_count": 10,
+    "workflow_step_count": 5,
+    "mode": "HYBRID"
+  },
+  "next_event": "BIND_B2_WAVE2_ENTRYPOINT_TO_SHARED_ANALYZER_CORE_AND_SINGLE_LAUNCHER",
+  "actual_external_site_call_count": 0,
+  "credential_use_count": 0,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

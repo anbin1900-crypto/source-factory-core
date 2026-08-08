@@ -1,0 +1,117 @@
+{
+  "schema_version": "B2_SITE_ANALYZER_WAVE3_FINAL_UPSTREAM_RECONCILIATION_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment": 5212043685,
+  "worker": "B-2",
+  "reconciled_at_kst": "2026-08-07T14:28:00+09:00",
+  "policy": "CURRENT_REMOTE_HEAD_AND_POINTER_SEPARATE_FROM_IMMUTABLE_CONSUMED_HANDOFF",
+  "current_authority": {
+    "A-2": {
+      "pr": 18,
+      "current_head": "a70750231a1451bc703f843bab9fbfc0ee17ac68",
+      "wave3_pointer_blob": "b4e6c281f65bcda5b7839b8fd2f0ab2e0810b3f6",
+      "terminal": "A2_SITE_ANALYZER_WAVE3_INTEGRATED_E2E_PROVEN_EXTERNAL_BLOCKER_ELECTRON_RUNTIME_NOT_MATERIALIZED",
+      "source_node_chromium_e2e": "PASS",
+      "electron_actual_embedded_window": false,
+      "electron_actual_standalone_window": false,
+      "relationship_to_b2": "B2_COMPONENT_PASS_DOES_NOT_CLAIM_A2_ELECTRON_PRODUCT_PASS"
+    },
+    "A-3": {
+      "pr": 22,
+      "current_head": "3f317672d299ebafa46f268b8aad0760d819eccf",
+      "wave3_pointer_blob": "c5201b3c1620f30eb407ec09f8aa4ba8bdf0dd7e",
+      "terminal": "A3_SITE_ANALYZER_WAVE3_CDP_PRODUCT_STREAM_PASS",
+      "final_report_blob": "e38d1c3a0e2209a3351538c2d1d9d4695fb8e7f3",
+      "execution_receipt_blob": "50abc10ce7d01a2f1bc4e93ff73c5e6d1affdcea",
+      "consumer_binding_blob": "d0e4d56d9863c65b34dbaa3e2e5387a9053ff04a",
+      "active_bridge_blob": "eaeae42e1a742fe36d79ea5740a77385ce049c8e",
+      "event_count": 176,
+      "restart_recovery": "PASS",
+      "compatibility_with_b2_inspector": "PASS_STRONGER_CURRENT_LIVE_STREAM_AUTHORITY"
+    },
+    "A-4": {
+      "pr": 23,
+      "current_head": "cd5c7a17f2f1aae02c2fbe4d988dea00e9763061",
+      "wave3_pointer_blob": "da55a8faf01789cc23771592bf9b61e642decabd",
+      "terminal": "A4_SITE_ANALYZER_WAVE3_STRUCTURE_HARDENING_PASS",
+      "final_report_blob": "ba0e33e80e1c5211745a371a78c260e24102f7c9",
+      "runtime_validation_blob": "aa69f1eb51497d2372a4d8892b9b6b2eeccfad49",
+      "a6_structure_input_blob": "49c151ed1327fb690ffb4e1797f84f0cfd2581fc",
+      "pass": ["REPEAT_REGION","FIELD_INFERENCE","LOCATOR_STABILITY","PAGINATION_INFERENCE","LOOP_GUARD","DYNAMIC_DOM_RECOVERY"],
+      "compatibility_with_b2_inspector": "PASS_STRONGER_CURRENT_STRUCTURE_AUTHORITY"
+    },
+    "A-5": {
+      "pr": 24,
+      "current_head": "ea5c6321204e9d2577924c14e01d658ebf46a443",
+      "wave3_pointer_blob": "8f7b0b385fb41619dd47284e25a9be998efde4e5",
+      "status": "TERMINAL_PROVEN_EXTERNAL_BLOCKER",
+      "terminal": "A5_SITE_ANALYZER_WAVE3_SCHEMA_MODE_E2E_PROVEN_EXTERNAL_BLOCKER",
+      "regression_assertions": "PASS_21_OF_21",
+      "endpoint_group_count": 14,
+      "json_endpoint_group_count": 4,
+      "mode": "HYBRID",
+      "primary_key": "record_id",
+      "blockers": [
+        "A3_NETWORK_REQUEST_STREAM_COUNT_MISMATCH",
+        "A3_RESPONSE_BODY_BYTES_OR_CONTENT_POINTER_NOT_PUBLISHED",
+        "A3_LIVE_SCHEMA_DRIFT_BASELINE_MISSING"
+      ],
+      "b2_claim": "CONSUMER_SCHEMA_MODE_DISPLAY_AND_SELECTION_SYNC_PASS_ONLY",
+      "a5_full_producer_pass_claimed_by_b2": false
+    },
+    "B-3": {
+      "pr": 39,
+      "current_head": "31162d67eb474e7958e9a5591d87dc26bf3c307a",
+      "wave3_pointer_blob": "6f28e3c20b8a3b901ecac7933a215dd0c75f0e2f",
+      "content_head": "61a9607c283caa426b1cbd76e944994b5c135da1",
+      "action_log_blob": "f5715fee2d537535220af97c3723af1c3e148702",
+      "recorded_event_count": 10,
+      "replay": "PASS_10_OF_10_STEPS",
+      "consumption": "PASS_EXACT_WAVE3_WORKFLOW"
+    },
+    "B-5": {
+      "pr": 41,
+      "current_head": "fe25d960020abc03b1ad528bcf0da0034c4788db",
+      "wave3_pointer_blob": "49aef38bdf765293d9e67389eafd80b08481be9f",
+      "wave3_terminal": "B5_SITE_ANALYZER_WAVE3_PREVIEW_EXPORT_PARITY_PASS",
+      "wave3_b2_binding_blob": "d7c71a1b9b94b0ce1a737c2794212ad1072478a3",
+      "wave3_restart_reproducibility": "PASS",
+      "wave3_live_preview": "PASS_10_ROWS",
+      "wave3_source_pointer": "PASS_10_ROWS_40_ELEMENTS",
+      "wave3_json_csv_xlsx_parity": "PASS",
+      "consumed_immutable_handoff": {
+        "comment": 5208543321,
+        "head": "589a8074f3844bb2d8192e4b1e876484030023d1",
+        "pointer_blob": "41597993e2dbb97a9d4d9b310b9e15769843db64",
+        "live_adapter_blob": "8fccbd3ba319d8e4a61551fb7eb81cbaa5ab91fa",
+        "evidence_package_blob": "cd0fbb144e47ed955ff1a60eb0600844bd667af5",
+        "preview_rows": 10,
+        "edited_row": "row-5",
+        "edited_value": 5550,
+        "source_row_pointers": 10,
+        "source_element_pointers": 40,
+        "json_csv_xlsx_parity": "PASS"
+      },
+      "consumed_exact_handoff_blob_immutable": true,
+      "current_wave3_is_compatible_and_stronger": true
+    }
+  },
+  "b2_execution_evidence": {
+    "scenario_receipt_blob": "368825dd8bbefff754e26d21cfe66f682bc6bf9e",
+    "test_result_blob": "f3ef6c646d2245322a7af6b5b272e6884240ea8b",
+    "node_tests": "PASS_20_OF_20",
+    "actual_chromium_e2e": "PASS",
+    "required_pass": "PASS_6_OF_6",
+    "remote_source_readback": "PASS_9_OF_9"
+  },
+  "reconciliation_decision": "PASS_B2_COMPONENT_SCOPE_UPSTREAM_CURRENT_STATE_RECONCILED",
+  "a5_external_blocker_invalidates_b2_component_pass": false,
+  "reason": "B2 owns visual inspector synchronization and rendering. It preserves A5 blocker state and does not assert A5 producer completeness or A2 Electron product completeness.",
+  "false_upstream_pass_claim_count": 0,
+  "target_pc_electron_single_launcher_executed": false,
+  "actual_external_site_call_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

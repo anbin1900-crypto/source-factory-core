@@ -1,0 +1,63 @@
+{
+  "schema_version": "B2_VISUAL_INSPECTOR_WORKFLOW_TRACE_PREBUILD_FINAL_REPORT_V1",
+  "directive_id": "AI001-TO-B2-VISUAL-INSPECTOR-WORKFLOW-TRACE-PREBUILD-V1-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "worker": "B-2",
+  "worker_pr": 38,
+  "role": "B-2_VISUAL_INSPECTOR_WORKFLOW_TRACE_UI_OWNER",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "completed_at_kst": "2026-08-07T21:30:00+09:00",
+  "observed_baseline_head": "e436e2de37b24327da03c31a2ff7c2d10c2635b5",
+  "implementation_commit": "29c61d82885fe4fad0ceca63f847cd8873f6e22a",
+  "terminal": "B2_VISUAL_INSPECTOR_WORKFLOW_TRACE_PREBUILD_READY",
+  "status": "PASS_CONTROL_PLANE_PREBUILD_REMOTE_READBACK",
+  "required_outputs": {
+    "SITE_ANALYZER_PANEL_VIEWMODEL_V1": {
+      "path": "SITE_ANALYZER_PANEL_VIEWMODEL_V1.json",
+      "blob": "e0533246857ee9b2cb9185cf5be3629c89fdf7f5"
+    },
+    "SMART_INSPECTOR_CONTRACT_V1": {
+      "path": "SMART_INSPECTOR_CONTRACT_V1.json",
+      "blob": "acaa5b506420ade53a3364e250a29ed1129cfdb7"
+    },
+    "TRACE_DRAWER_CONTRACT_V1": {
+      "path": "TRACE_DRAWER_CONTRACT_V1.json",
+      "blob": "c213430a2ed6d43a2a5699cfb184e36fa461812a"
+    },
+    "SUCCESSOR_UI_BOOTSTRAP_PLAN_V1": {
+      "path": "SUCCESSOR_UI_BOOTSTRAP_PLAN_V1.json",
+      "blob": "5f9bead56e9fec2f272d933503b4b8d1cbc9c1d6"
+    }
+  },
+  "view_state": {
+    "path": "SITE_ANALYZER_PANEL_VIEW_STATE_V1.json",
+    "status": "READY_FOR_RESULT_BINDING",
+    "chat_context_required": false
+  },
+  "smoke": {
+    "source_parse_or_build_smoke": "PASS",
+    "assertions": "PASS_12_OF_12",
+    "remote_readback": "PASS_6_OF_6"
+  },
+  "design_closure": {
+    "workflow_node_edge_viewmodel": true,
+    "live_browser_session_selected_page_binding": true,
+    "smart_inspector_dom_locator_repeat_network_response_schema_confidence": true,
+    "data_preview_field_edit_type_source_confidence": true,
+    "trace_action_network_response_console_error_recipe_adapter": true,
+    "ui_is_control_plane_not_runtime_owner": true,
+    "successor_single_command_plan": true,
+    "context_free_pointer_view_state_restore": true
+  },
+  "do_not_compliance": {
+    "tunnel_created": false,
+    "successor_direct_call": false,
+    "target_pc_execution": false,
+    "new_browser_engine": false,
+    "audit_only": false
+  },
+  "next_event": "SERVER_OR_ANALYZER_RESULT_EVIDENCE_BINDING_OR_SUCCESSOR_UI_PACKAGE_MATERIALIZATION"
+}

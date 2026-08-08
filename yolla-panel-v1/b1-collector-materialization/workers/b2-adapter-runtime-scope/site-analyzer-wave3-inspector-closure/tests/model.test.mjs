@@ -1,0 +1,22 @@
+import test from 'node:test'; import assert from 'node:assert/strict'; import {VisualInspectorSyncModel} from '../src/inspector_sync_model.mjs';
+function ready(mode='embedded'){const m=new VisualInspectorSyncModel({mode});m.ingestA3({type:'network.request',request_id:'req-1',url:'/api/items?page=1',method:'GET'});m.ingestA3({type:'network.response',request_id:'req-1',url:'/api/items?page=1',status:200,mime_type:'application/json'});m.ingestA4({repeatedRegions:[{semanticLocator:'article.item',itemCount:10}],fieldCandidates:[{id:'f-name',name:'name',css:'h2.name',networkRequestId:'req-1'},{id:'f-value',name:'value',css:'span.value',networkRequestId:'req-1'}],locatorCandidates:[{id:'l-name',fieldId:'f-name',locator:'h2.name'},{id:'l-value',fieldId:'f-value',locator:'span.value'}],highlightPayload:{highlights:[{kind:'field',locator:'h2.name'}]},pagination:{detected:true,type:'NEXT',locator:'#next-page'}});m.ingestA5({status:'BOUND',mode_decision:'HYBRID',endpoint_groups:[{url_pattern:'/api/items'}],response_schemas:[{fields:['id','name','value']}],identifier_relations:[{field:'name',request_id:'req-1'}]});m.ingestB3({steps:[{id:'s1',label:'open list'},{id:'s2',label:'scroll'}]});m.ingestB5({columns:[{name:'id'},{name:'name'},{name:'value'}],records:Array.from({length:10},(_,i)=>({data:{id:i+1,name:`Item ${i+1}`,value:(i+1)*100},source:{rowPointer:{jsonPointer:`/records/${i}`}}}))});return m;}
+test('network request',()=>assert.equal(ready().state.network.length,1));
+test('response',()=>assert.equal(ready().state.responses[0].status,200));
+test('fields',()=>assert.equal(ready().state.structure.fields.length,2));
+test('locators',()=>assert.equal(ready().state.structure.locators.length,2));
+test('schema mode',()=>assert.equal(ready().state.schema.mode,'HYBRID'));
+test('workflow',()=>assert.equal(ready().state.workflow.length,2));
+test('preview 10',()=>assert.equal(ready().state.preview.rows.length,10));
+test('select element field binding',()=>{const m=ready();m.selectElement({selector:'h2.name',recordId:5,networkRequestId:'req-1'});assert.deepEqual(m.state.selection.fieldIds,['f-name']);});
+test('element locator binding',()=>{const m=ready();m.selectElement({selector:'h2.name',networkRequestId:'req-1'});assert.deepEqual(m.state.selection.locatorIds,['l-name']);});
+test('dom network sync',()=>{const m=ready();m.selectElement({selector:'h2.name',networkRequestId:'req-1'});assert.equal(m.state.pass.DOM_NETWORK_SYNC,true);});
+test('element pointer pass',()=>{const m=ready();m.selectElement({selector:'span.value',networkRequestId:'req-1'});assert.equal(m.state.pass.ELEMENT_TO_FIELD_POINTER,true);});
+test('network reverse sync',()=>{const m=ready();m.selectNetwork('req-1');assert.ok(m.state.selectedFieldId);});
+test('preview select record',()=>{const m=ready();m.selectElement({selector:'h2.name',recordId:5,networkRequestId:'req-1'});assert.equal(m.state.preview.selectedRow,4);});
+test('dynamic mutation',()=>{const m=ready();m.selectElement({selector:'h2.name',networkRequestId:'req-1'});m.recordDynamicMutation(2);assert.equal(m.state.pass.DYNAMIC_DOM,true);});
+test('popup iframe',()=>{const m=ready();m.recordIframe('main/iframe:0');m.recordPopup('/popup');assert.equal(m.state.pass.POPUP_IFRAME,true);});
+test('scroll survives selection',()=>{const m=ready();m.selectElement({selector:'h2.name',networkRequestId:'req-1'});m.recordScroll(500);assert.equal(m.state.selection.selector,'h2.name');});
+test('response body',()=>{const m=ready();m.ingestA3({type:'network.response_body',request_id:'req-1',sha256:'a'.repeat(64),size_bytes:123});assert.equal(m.state.responseBodies.length,1);});
+test('dom snapshot',()=>{const m=ready();m.ingestA3({type:'dom.snapshot',sha256:'b'.repeat(64),node_count:30});assert.equal(m.state.domSnapshots[0].nodeCount,30);});
+test('embedded standalone parity',()=>{const a=ready('embedded'),b=ready('standalone');a.selectElement({selector:'h2.name',networkRequestId:'req-1'});b.selectElement({selector:'h2.name',networkRequestId:'req-1'});assert.equal(a.markParity(b),true);});
+test('all pass after scenarios',()=>{const a=ready('embedded'),b=ready('standalone');for(const m of [a,b]){m.selectElement({selector:'h2.name',recordId:1,networkRequestId:'req-1'});m.recordDynamicMutation();m.recordIframe('x');m.recordPopup('/popup');}a.markParity(b);a.assertPass();});

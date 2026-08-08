@@ -1,0 +1,36 @@
+{
+  "schema_version": "B2_SITE_ANALYZER_WAVE3_START_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment": 5212043685,
+  "worker": "B-2",
+  "role": "VISUAL_ANALYZER_RUNTIME_INSPECTOR_OWNER",
+  "mode": "ONE_OWNER_END_TO_END",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 38,
+  "branch": "worker/b2-adapter-runtime-scope-v1",
+  "started_at_kst": "2026-08-07T13:43:00+09:00",
+  "baseline_head": "e6f03ebe532adb3d51d2e7613fddaaea7242e01b",
+  "prior_terminal": "B2_SITE_ANALYZER_WAVE2_LIVE_RUNTIME_BINDING_PASS",
+  "required_pass": [
+    "DOM_NETWORK_SYNC",
+    "ELEMENT_TO_FIELD_POINTER",
+    "LIVE_PREVIEW",
+    "DYNAMIC_DOM",
+    "POPUP_IFRAME",
+    "EMBEDDED_STANDALONE_PARITY"
+  ],
+  "implementation_plan": [
+    "bind A3 live CDP request/response/body/DOM state",
+    "bind A4 fields/locators/highlights/pagination",
+    "display A5 schema/mode consumer state without false upstream pass",
+    "bind B3 Wave3 10-step workflow",
+    "bind B5 live10 preview and source pointers",
+    "prove two-way DOM-network-field synchronization",
+    "prove dynamic DOM/popup/iframe/scroll continuity",
+    "prove embedded/standalone parity with actual Chromium targets"
+  ],
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "SITE_ANALYZER_UI_STATE_V1",
+  "directive_id": "AI001-TO-B2-CONTEXT-INDEPENDENT-UI-VIEWMODEL-BINDING-V2-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "control_plane_only": true,
+  "runtime_owned_by_ui": false,
+  "correlation_keys": ["session_id", "page_id", "action_id", "command_id"],
+  "status_truth_policy": {
+    "allowed_projected_states": ["UNBOUND", "RUNNING", "BLOCKED", "COMPLETE", "ERROR"],
+    "missing_receipt": "UNBOUND",
+    "receipt_required": true,
+    "inference_without_receipt": false,
+    "never_infer_running_from_recency": true,
+    "never_infer_error_from_missing_data": true,
+    "never_upgrade_blocked_to_complete": true
+  },
+  "viewmodels": {
+    "workflow": {"nodes": [], "edges": [], "selected_node_id": null, "fields": ["node_id", "kind", "label", "state", "session_id", "page_id", "action_id", "command_id", "source_ref", "confidence"]},
+    "live_session": {"session_id": null, "selected_page_id": null, "pages": [], "identity_fields": ["session_id", "page_id", "target_id", "url", "title", "frame_ids", "popup_parent_page_id", "source_ref"]},
+    "smart_inspector": {"selected_element": null, "sections": ["DOM", "LOCATOR", "REPEATED_REGION", "NETWORK", "RESPONSE", "SCHEMA", "CONFIDENCE"], "correlation_fields": ["session_id", "page_id", "action_id", "command_id", "request_id", "field_id", "locator_id", "source_pointer"]},
+    "data_preview": {"rows": [], "columns": [], "selected_row_id": null, "selected_field_key": null, "column_fields": ["field_key", "label", "data_type", "source", "source_pointer", "confidence", "validation_state"], "edit_fields": ["row_id", "field_key", "before", "after", "data_type", "source_pointer", "applied"]},
+    "trace_error_drawer": {"events": [], "categories": ["ACTION", "NETWORK", "RESPONSE", "CONSOLE", "ERROR", "RECIPE", "ADAPTER"], "selected_trace_event_id": null, "correlation_fields": ["session_id", "page_id", "action_id", "command_id", "request_id", "recipe_step_id", "adapter_run_id"]}
+  },
+  "source_states": {"A-3": "UNBOUND", "A-4": "UNBOUND", "A-5": "UNBOUND", "A-6": "UNBOUND", "B-1": "UNBOUND"},
+  "source_receipt_refs": {},
+  "restore": {"latest_pointer_only": true, "chat_context_required": false, "view_state_digest": null, "last_rebuild_at": null},
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": "B2_SITE_ANALYZER_WAVE3_FINAL_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment": 5212043685,
+  "worker": "B-2",
+  "role": "VISUAL_ANALYZER_RUNTIME_INSPECTOR_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 38,
+  "branch": "worker/b2-adapter-runtime-scope-v1",
+  "baseline_head": "e6f03ebe532adb3d51d2e7613fddaaea7242e01b",
+  "completed_at_kst": "2026-08-07T14:30:00+09:00",
+  "status": "PASS_ACTUAL_CHROMIUM_REMOTE_READBACK_UPSTREAM_RECONCILED",
+  "terminal": "B2_SITE_ANALYZER_WAVE3_VISUAL_INSPECTOR_PASS",
+  "required_terminal": "B2_SITE_ANALYZER_WAVE3_VISUAL_INSPECTOR_PASS_OR_PROVEN_EXTERNAL_BLOCKER",
+  "implementation": {
+    "package_blob": "1705c64066927441b66cdfbb1c44cbfd692d8f81",
+    "inspector_sync_model_blob": "14a8883df3a05f854f68290f12c4e8bf85d6fbfa",
+    "runtime_inspector_bridge_blob": "a2b631009a2c4c277d7f46b06c5e8796bbf22682",
+    "visual_inspector_app_blob": "2d5c371e14f346c66b937f10e1615b37b1b04582",
+    "ui_blob": "c6e7bcc5faf75a701bb0d169d76677ea796a5d6d",
+    "model_test_blob": "10e395f290a9ca4151c3bd7e17ff141719ca9608",
+    "browser_e2e_blob": "871ec99f208e58a0da9ecca4b3002e6d1365c77b"
+  },
+  "execution_evidence": {
+    "scenario_receipt": {
+      "commit": "ca8929889d4a333b36ea419890f63bb9210f9382",
+      "blob": "368825dd8bbefff754e26d21cfe66f682bc6bf9e"
+    },
+    "test_result": {
+      "commit": "a15fc4f562e52ba11de3944956107839c871790d",
+      "blob": "f3ef6c646d2245322a7af6b5b272e6884240ea8b"
+    },
+    "upstream_reconciliation": {
+      "commit": "4ca943b44920cae7bda9d43f67232183ebbd013d",
+      "blob": "43c933e13cd38af7abe69685fc8974edad4cb9ed"
+    }
+  },
+  "validation": {
+    "remote_source_readback": "PASS_9_OF_9",
+    "node_unit_tests": "PASS_20_OF_20",
+    "actual_chromium_cdp_e2e": "PASS",
+    "required_pass": "PASS_6_OF_6",
+    "DOM_NETWORK_SYNC": "PASS_BIDIRECTIONAL",
+    "ELEMENT_TO_FIELD_POINTER": "PASS_FIELD_LOCATOR_SOURCE_ROW_SOURCE_ELEMENT",
+    "LIVE_PREVIEW": "PASS_10_ROWS_ROW5_EDIT_5550",
+    "DYNAMIC_DOM": "PASS_MUTATION_AND_SCROLL_SELECTION_PRESERVED",
+    "POPUP_IFRAME": "PASS_ACTUAL_CHROMIUM_POPUP_AND_CHILD_FRAME",
+    "EMBEDDED_STANDALONE_PARITY": "PASS_TWO_ACTUAL_CHROMIUM_TARGETS",
+    "network_response_body_visible": true,
+    "schema_mode_visible": true,
+    "workflow_step_count": 10,
+    "preview_row_count": 10,
+    "selection_selector": "h2.name",
+    "selection_field_id": "f-name",
+    "selection_locator_id": "l-name",
+    "source_row_json_pointer": "/records/0",
+    "source_element_pointer": "/records/0/name"
+  },
+  "current_upstream": {
+    "A2_head": "a70750231a1451bc703f843bab9fbfc0ee17ac68",
+    "A2_wave3_pointer_blob": "b4e6c281f65bcda5b7839b8fd2f0ab2e0810b3f6",
+    "A3_head": "3f317672d299ebafa46f268b8aad0760d819eccf",
+    "A3_wave3_pointer_blob": "c5201b3c1620f30eb407ec09f8aa4ba8bdf0dd7e",
+    "A4_head": "cd5c7a17f2f1aae02c2fbe4d988dea00e9763061",
+    "A4_wave3_pointer_blob": "da55a8faf01789cc23771592bf9b61e642decabd",
+    "A5_head": "ea5c6321204e9d2577924c14e01d658ebf46a443",
+    "A5_wave3_pointer_blob": "8f7b0b385fb41619dd47284e25a9be998efde4e5",
+    "B3_head": "31162d67eb474e7958e9a5591d87dc26bf3c307a",
+    "B3_wave3_pointer_blob": "6f28e3c20b8a3b901ecac7933a215dd0c75f0e2f",
+    "B5_head": "fe25d960020abc03b1ad528bcf0da0034c4788db",
+    "B5_wave3_pointer_blob": "49aef38bdf765293d9e67389eafd80b08481be9f",
+    "B5_wave3_b2_binding_blob": "d7c71a1b9b94b0ce1a737c2794212ad1072478a3"
+  },
+  "authority_boundary": {
+    "a2_electron_product_pass_claimed": false,
+    "a2_electron_external_blocker_preserved": true,
+    "a5_full_live_schema_mode_producer_pass_claimed": false,
+    "a5_external_blocker_preserved": true,
+    "a5_blocker_invalidates_b2_visual_inspector_component_pass": false,
+    "false_upstream_pass_claim_count": 0
+  },
+  "environment_guard": {
+    "loopback_only_runtime_test": true,
+    "managed_browser_policy_isolated_only_for_test": true,
+    "managed_browser_policy_restored": true
+  },
+  "next_event": "A2_B1_CONSUME_B2_WAVE3_VISUAL_INSPECTOR_AND_PRODUCT_REBIND",
+  "target_pc_electron_single_launcher_executed": false,
+  "actual_external_site_call_count": 0,
+  "credential_use_count": 0,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

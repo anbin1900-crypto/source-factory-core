@@ -1,0 +1,65 @@
+{
+  "schema_version": "VERIFIED_ADAPTER_PACKAGE_CONSUMER_CONTRACT_V1",
+  "contract_version": "1.0.0",
+  "consumer": "B-2",
+  "accepted_package_schema": "VERIFIED_ADAPTER_PACKAGE_V1",
+  "required_top_level_fields": [
+    "schema_version",
+    "package_id",
+    "adapter_id",
+    "site_id",
+    "source_url",
+    "verified",
+    "fixture",
+    "verification",
+    "credential_reference",
+    "request_policy",
+    "scope",
+    "quota",
+    "schedule"
+  ],
+  "allowed_top_level_fields": [
+    "schema_version",
+    "package_id",
+    "adapter_id",
+    "site_id",
+    "source_url",
+    "verified",
+    "fixture",
+    "verification",
+    "credential_reference",
+    "request_policy",
+    "scope",
+    "quota",
+    "schedule",
+    "metadata"
+  ],
+  "forbidden_secret_key_fragments": [
+    "api_key",
+    "apikey",
+    "access_token",
+    "refresh_token",
+    "authorization",
+    "password",
+    "secret",
+    "cookie"
+  ],
+  "actual_mode_requirements": {
+    "verified": true,
+    "fixture": false,
+    "verification_status": "VERIFIED",
+    "content_sha256_format": "^[0-9a-f]{64}$"
+  },
+  "fixture_mode_requirements": {
+    "fixture": true,
+    "network_calls": 0
+  },
+  "boundaries": {
+    "site_structure_reanalysis": false,
+    "adapter_generation": false,
+    "actual_site_call": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

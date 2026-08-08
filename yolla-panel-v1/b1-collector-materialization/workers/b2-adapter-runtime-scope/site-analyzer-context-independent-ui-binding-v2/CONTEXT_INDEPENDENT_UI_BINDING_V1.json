@@ -1,0 +1,29 @@
+{
+  "schema_version": "CONTEXT_INDEPENDENT_UI_BINDING_V1",
+  "directive_id": "AI001-TO-B2-CONTEXT-INDEPENDENT-UI-VIEWMODEL-BINDING-V2-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "binding_mode": "LATE_BIND_RECEIPT_ONLY",
+  "chat_context_required": false,
+  "control_plane_only": true,
+  "correlation_keys": ["session_id", "page_id", "action_id", "command_id"],
+  "sources": {
+    "A-3": {"kind": "OBSERVATION_RECEIPT", "pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/LATEST_A3_SITE_ANALYZER_WAVE3_POINTER.json", "pointer_blob": "c5201b3c1620f30eb407ec09f8aa4ba8bdf0dd7e", "required_receipt_selector": ["execution_receipt", "final_report"], "projects_to": ["live_session", "smart_inspector", "trace_error_drawer"]},
+    "A-4": {"kind": "STRUCTURE_RECEIPT", "pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave3/LATEST_A4_WAVE3_STRUCTURE_HARDENING_POINTER.json", "pointer_blob": "da55a8faf01789cc23771592bf9b61e642decabd", "required_receipt_selector": ["final_report", "runtime_validation"], "projects_to": ["workflow", "smart_inspector"]},
+    "A-5": {"kind": "DECISION_RECEIPT", "pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/wave3/LATEST_A5_WAVE3_POINTER.json", "pointer_blob": "8f7b0b385fb41619dd47284e25a9be998efde4e5", "required_receipt_selector": ["terminal_report_path", "validation_receipt_path"], "projects_to": ["smart_inspector", "data_preview", "trace_error_drawer"]},
+    "A-6": {"kind": "ADAPTER_RECEIPT", "pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/wave3-adapter-repair-loop/LATEST_A6_WAVE3_POINTER.json", "pointer_blob": "16f14e5ad10eb108267303210182670ab529a38b", "required_receipt_selector": ["final_report_path", "generation_receipt_blob", "repair_receipt_blob"], "projects_to": ["workflow", "trace_error_drawer"]},
+    "B-1": {"kind": "JOB_STATE", "pointer_path": "yolla-panel-v1/b1-collector-materialization/site-analyzer-wave3-release-candidate-v1/reports/LATEST_B1_SITE_ANALYZER_WAVE3_PRODUCT_POINTER.json", "pointer_blob": "03722c45f68c28bfe7cc3bbaa2dd05310f94dc85", "required_receipt_selector": ["command_receipt", "integration_receipt"], "projects_to": ["workflow", "live_session", "trace_error_drawer"]}
+  },
+  "projection_rules": {
+    "pointer_is_discovery_not_status_authority": true,
+    "receipt_required_for_status_projection": true,
+    "missing_receipt_state": "UNBOUND",
+    "preserve_blocker_exactly": true,
+    "never_upgrade_blocked_to_complete": true,
+    "never_infer_running_from_recency": true,
+    "never_infer_error_from_missing_data": true
+  },
+  "restore_order": ["load_binding_contract", "read_latest_source_pointers", "resolve_declared_receipts", "validate_receipt_identity", "derive_source_state_from_receipt_only", "correlate_session_page_action_command", "project_workflow_live_session_inspector_preview_trace", "persist_rebuild_digest"],
+  "production": false,
+  "ready": false,
+  "merge": false
+}

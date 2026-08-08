@@ -1,0 +1,52 @@
+{
+  "schema_version": "B2_CONTEXT_INDEPENDENT_UI_VIEWMODEL_BINDING_TEST_RESULT_V1",
+  "directive_id": "AI001-TO-B2-CONTEXT-INDEPENDENT-UI-VIEWMODEL-BINDING-V2-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "worker": "B-2",
+  "worker_pr": 38,
+  "tested_at_kst": "2026-08-07T22:10:00+09:00",
+  "source_head": "3d652ee0e28849586ca225218558e39953bba742",
+  "remote_readback": {
+    "result": "PASS_7_OF_7",
+    "SITE_ANALYZER_UI_STATE_V1_blob": "910561775b90df4dc684cf3ad7237beaa845bee1",
+    "SITE_ANALYZER_UI_EVENT_V1_blob": "e192a1fccd8f1fa330c91d1738b65a3b8ddea794",
+    "CONTEXT_INDEPENDENT_UI_BINDING_V1_blob": "2caa9fcc9cc962ef3c31d834adb912370b5ef986",
+    "SUCCESSOR_UI_STATE_REBUILD_COMMAND_V1_blob": "afdb67386cc460bc6306e99f7513bdc399f03117",
+    "fixture_blob": "05221b1d8eec5e2e8c0d8353c181f5a9fd6e5e05",
+    "rebuild_tool_blob": "2a0e3bd03611bd604aa7eec3a3f8132ae2e80c45",
+    "smoke_tool_blob": "c7beec237ce83af405c72830dd6df2cef9a7b519"
+  },
+  "validation": {
+    "minimum_validation": "FIXTURE_VIEWMODEL_REBUILD_SMOKE_1",
+    "source_parse": "PASS",
+    "fixture_viewmodel_rebuild_smoke": "PASS",
+    "assertions": "PASS_12_OF_12",
+    "correlation_keys": "PASS_SESSION_PAGE_ACTION_COMMAND",
+    "workflow_viewmodel": "PASS",
+    "live_session_identity": "PASS",
+    "smart_inspector": "PASS",
+    "data_preview": "PASS",
+    "trace_error_drawer": "PASS",
+    "late_binding_A3_A4_A5_A6_B1": "PASS_5_OF_5",
+    "context_free_restore": "PASS",
+    "missing_receipt_no_status_inference": "PASS",
+    "explicit_blocker_preservation": "PASS"
+  },
+  "fixture_projection": {
+    "A-3": "COMPLETE",
+    "A-4": "COMPLETE",
+    "A-5": "BLOCKED",
+    "A-6": "COMPLETE",
+    "B-1": "BLOCKED"
+  },
+  "direct_repair": {
+    "first_attempt_finding": "GENERIC_REQUIRED_TERMINAL_NAME_PASS_OR_PROVEN_EXTERNAL_BLOCKER_WAS_AT_RISK_OF_FALSE_BLOCKED_CLASSIFICATION",
+    "repair": "EXPLICIT_STATUS_TERMINAL_PASS_PRECEDENCE_AND_WITH_PROVEN_ACTUAL_BLOCKER_CLASSIFICATION",
+    "rerun": "PASS_12_OF_12"
+  },
+  "forbidden_action_count": {"tunnel_create":0,"pc_agent_direct":0,"target_pc_execution":0,"new_browser_engine":0,"browser_rendering":0,"audit_only":0},
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
