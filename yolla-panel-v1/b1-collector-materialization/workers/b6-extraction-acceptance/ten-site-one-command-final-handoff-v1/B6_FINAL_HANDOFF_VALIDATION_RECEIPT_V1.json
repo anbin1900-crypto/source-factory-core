@@ -1,0 +1,168 @@
+{
+  "schema_version": "B6_FINAL_HANDOFF_LOCAL_VALIDATION_RESULT_V1",
+  "result": "PASS",
+  "assertion_count": 38,
+  "passed": 38,
+  "failed": 0,
+  "fixture_ready_sites": [
+    "SITE_SLOT_03"
+  ],
+  "fixture_waiting_site_count": 9,
+  "fixture_first_dispatch_batch": "BATCH_02",
+  "actual_live_site_count": 0,
+  "actual_receipt_count": 0,
+  "checks": [
+    {
+      "name": "parent_pointer_exact",
+      "pass": true
+    },
+    {
+      "name": "parent_completed_handoff_not_reexecuted",
+      "pass": true
+    },
+    {
+      "name": "ab_latest_pointer_count_11",
+      "pass": true
+    },
+    {
+      "name": "site_count_10",
+      "pass": true
+    },
+    {
+      "name": "unique_site_slots_10",
+      "pass": true
+    },
+    {
+      "name": "all_live_slots_waiting",
+      "pass": true
+    },
+    {
+      "name": "lane_count_5",
+      "pass": true
+    },
+    {
+      "name": "lane_names_exact",
+      "pass": true
+    },
+    {
+      "name": "browser_concurrency_2",
+      "pass": true
+    },
+    {
+      "name": "batch_count_5",
+      "pass": true
+    },
+    {
+      "name": "two_slots_per_batch",
+      "pass": true
+    },
+    {
+      "name": "scheduler_slot_coverage_10",
+      "pass": true
+    },
+    {
+      "name": "scheduler_matches_registry",
+      "pass": true
+    },
+    {
+      "name": "waiting_peer_nonblocking",
+      "pass": true
+    },
+    {
+      "name": "max_active_site_locks_2",
+      "pass": true
+    },
+    {
+      "name": "completed_site_not_reexecuted",
+      "pass": true
+    },
+    {
+      "name": "completed_lane_not_reexecuted",
+      "pass": true
+    },
+    {
+      "name": "target_pc_root_bound",
+      "pass": true
+    },
+    {
+      "name": "physical_hostname_bound",
+      "pass": true
+    },
+    {
+      "name": "logical_pc_id_bound",
+      "pass": true
+    },
+    {
+      "name": "browser_agent_bound",
+      "pass": true
+    },
+    {
+      "name": "target_site_not_guessed",
+      "pass": true
+    },
+    {
+      "name": "session_not_guessed",
+      "pass": true
+    },
+    {
+      "name": "page_binding_not_guessed",
+      "pass": true
+    },
+    {
+      "name": "public_slice_exact",
+      "pass": true
+    },
+    {
+      "name": "public_slice_data_product_only",
+      "pass": true
+    },
+    {
+      "name": "write_confirm_guard",
+      "pass": true
+    },
+    {
+      "name": "edit_confirm_guard",
+      "pass": true
+    },
+    {
+      "name": "pass_without_receipt_rejected",
+      "pass": true
+    },
+    {
+      "name": "fixture_classification",
+      "pass": true
+    },
+    {
+      "name": "fixture_ready_site_count_1",
+      "pass": true
+    },
+    {
+      "name": "fixture_waiting_site_count_9",
+      "pass": true
+    },
+    {
+      "name": "fixture_expected_batch_02",
+      "pass": true
+    },
+    {
+      "name": "fixture_waiting_peer_does_not_block",
+      "pass": true
+    },
+    {
+      "name": "fixture_never_live",
+      "pass": true
+    },
+    {
+      "name": "no_target_guessing",
+      "pass": true
+    },
+    {
+      "name": "no_raw_secret_or_pii",
+      "pass": true
+    },
+    {
+      "name": "no_production_ready_merge",
+      "pass": true
+    }
+  ]
+}
