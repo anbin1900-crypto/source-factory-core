@@ -13,10 +13,20 @@ function validatedJson(value, label) {
   return JSON.parse(text);
 }
 
+function resolveModuleRoot(releaseRoot, requestedRoot) {
+  if (requestedRoot) return path.resolve(requestedRoot);
+  const candidates = [
+    path.join(releaseRoot, "..", "modules"),
+    path.join(releaseRoot, "..", "..", "modules"),
+    path.join(releaseRoot, "modules")
+  ].map(candidate => path.resolve(candidate));
+  return candidates.find(candidate => fs.existsSync(path.join(candidate, "V6_MODULE_REGISTRY_V1.json"))) || candidates[0];
+}
+
 class V6ModuleHost {
   constructor(options = {}) {
     this.releaseRoot = path.resolve(options.releaseRoot);
-    this.moduleRoot = path.resolve(options.moduleRoot || path.join(this.releaseRoot, "..", "modules"));
+    this.moduleRoot = resolveModuleRoot(this.releaseRoot, options.moduleRoot);
     this.registryPath = path.resolve(options.registryPath || path.join(this.moduleRoot, "V6_MODULE_REGISTRY_V1.json"));
     this.adapters = options.adapters || {};
     this.appendLog = typeof options.appendLog === "function" ? options.appendLog : () => {};

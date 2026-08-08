@@ -43,8 +43,8 @@ ok(runtimeModules.status === 0 && /YOLLA_V6_RUNTIME_MODULES_PASS/.test(runtimeMo
 ok(text.includes("persist:yolla-v6-worker") && text.includes("persist:yolla-v6-analyzer"), "AUTH_PARTITION_CONTRACT_MISSING");
 ok(text.includes("secret_export_count") && text.includes("credential_value_logged_count"), "SECRET_FREE_RECEIPT_FIELDS_MISSING");
 ok(text.includes("V6ModuleHost") && text.includes("SessionRestoreManager"), "RUNTIME_BINDING_MISSING");
-ok(text.includes("releases\\6.0.1"), "IMMUTABLE_RELEASE_601_MISSING");
-ok(!text.includes("releases\\6.0.0"), "OLD_IMMUTABLE_RELEASE_TARGET_STILL_ACTIVE");
+ok(text.includes("releases\\6.0.2"), "IMMUTABLE_RELEASE_602_MISSING");
+ok(!text.includes("releases\\6.0.1"), "OLD_IMMUTABLE_RELEASE_601_TARGET_STILL_ACTIVE");
 ok(text.includes('for (const kind of ["WORKER", "ANALYZER"])'), "DUAL_AUTH_PARTITION_STARTUP_PROBE_MISSING");
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "RUNTIME_MANIFEST.json"), "utf8"));
 for (const [relative, expected] of Object.entries(manifest.files)) {

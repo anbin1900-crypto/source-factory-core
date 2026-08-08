@@ -24,7 +24,7 @@ for (const relative of files(root).sort()) {
 const manifest = {
   schema_version: "YOLLA_PANEL_V6_RUNTIME_MANIFEST_V1",
   system: "YOLLA_PANEL_V6",
-  version: "6.0.1",
+  version: "6.0.2",
   target_root: "E:\\YOLLA\\panel-v6",
   source_baseline_sha256: "902ab7eaa08b71998169084f2a2efcdbaf06a2b2a8a6b3272636b6c954608d05",
   file_count: Object.keys(entries).length,

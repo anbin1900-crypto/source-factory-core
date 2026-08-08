@@ -73,6 +73,17 @@ async function main() {
     assert.equal(binding["commander-worker-menu"].status, "BOUND");
     assert.equal(binding["site-analyzer"].status, "BOUND");
     assert.equal(binding["session-restore"].status, "HOST_BOUND");
+    const installedLayoutHost = new V6ModuleHost({
+      releaseRoot: path.join(__dirname, "releases", "6.0.2"),
+      adapters: {
+        "commander-worker-menu": { perform: async () => ({ ok: true }) },
+        "site-analyzer": { perform: async () => ({ ok: true }) }
+      }
+    });
+    const installedBinding = installedLayoutHost.load();
+    assert.equal(installedLayoutHost.moduleRoot, path.join(__dirname, "modules"));
+    assert.equal(installedBinding["commander-worker-menu"].status, "BOUND");
+    assert.equal(installedBinding["site-analyzer"].status, "BOUND");
     const context = {
       workspace: {
         groups: { "GROUP-01": { group_id: "GROUP-01", display_name: "A", order: 10 } },
