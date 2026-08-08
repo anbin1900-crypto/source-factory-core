@@ -1,0 +1,88 @@
+name: Validate YOLLA Panel V6
+
+on:
+  push:
+    branches:
+      - agent/yolla-panel-v6-independent
+    paths:
+      - 'yolla-panel-v6/**'
+      - 'yolla-panel-v1/LATEST_YOLLA_PANEL_V6_POINTER.json'
+      - '.github/workflows/validate-yolla-panel-v6.yml'
+  pull_request:
+    paths:
+      - 'yolla-panel-v6/**'
+      - 'yolla-panel-v1/LATEST_YOLLA_PANEL_V6_POINTER.json'
+      - '.github/workflows/validate-yolla-panel-v6.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  node-offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: yolla-panel-v6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Verify generated manifest is current
+        shell: bash
+        run: |
+          set -euo pipefail
+          node generate_manifest.cjs
+          git diff --exit-code -- RUNTIME_MANIFEST.json
+      - name: Run V6 offline tests
+        shell: bash
+        run: node test_v6_package.cjs
+      - name: Record non-live boundary
+        shell: bash
+        run: |
+          printf '%s\n' \
+            'SOURCE_VALIDATION=PASS' \
+            'TARGET_PC_EXECUTED=false' \
+            'TUNNEL_CONNECTED=false' \
+            'EXECUTOR_ROUND_TRIP_PASS=false' \
+            'PANEL_LIVE_PASS=false' \
+            'PRODUCTION=false' \
+            'READY=false' \
+            'MERGE=false'
+
+  windows-powershell-51:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: yolla-panel-v6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          sparse-checkout: |
+            yolla-panel-v6
+          sparse-checkout-cone-mode: false
+      - name: Parse V6 PowerShell
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          if($PSVersionTable.PSEdition-ne'Desktop'-or$PSVersionTable.PSVersion.Major-ne5-or$PSVersionTable.PSVersion.Minor-ne1){
+            throw ('WINDOWS_POWERSHELL_51_REQUIRED actual='+$PSVersionTable.PSVersion)
+          }
+          Get-ChildItem -Recurse -File -Filter '*.ps1' | ForEach-Object {
+            $tokens=$null
+            $errors=$null
+            [System.Management.Automation.Language.Parser]::ParseFile($_.FullName,[ref]$tokens,[ref]$errors) | Out-Null
+            if($errors.Count-ne0){throw ('POWERSHELL_PARSE_FAILED file='+$_.FullName+' error='+$errors[0].Message)}
+          }
+          'YOLLA_V6_POWERSHELL_51_PARSE=PASS'
+      - name: Run V6 static validator
+        shell: powershell
+        run: |
+          $output=Join-Path $env:RUNNER_TEMP 'YOLLA_V6_VALIDATION.json'
+          .\V6.Validate.ps1 -PackageRoot . -OutputPath $output
+          Get-Content -Raw -LiteralPath $output
