@@ -1,0 +1,75 @@
+{
+  "schema_version": "YOLLA_PANEL_V6_SITE_ANALYZER_MODULE_CONTRACT_V1",
+  "module_id": "site-analyzer",
+  "owner": "V-2",
+  "owned_root": "yolla-panel-v6/modules/site-analyzer/**",
+  "purpose": "Let V-2 attach and evolve the Workspace site analyzer without editing or relearning the V6 shell or Commander/Worker module.",
+  "host_interface": {
+    "provider_entrypoint": "provider.cjs",
+    "required_exports": [
+      "getManifest",
+      "getViewModel",
+      "handleAction",
+      "getStatus"
+    ],
+    "mount_slots": [
+      "TOPBAR_ANALYZER_ACTIONS",
+      "ANALYZER_SIDEBAR",
+      "ANALYZER_DRAWER",
+      "ANALYZER_STATUS"
+    ],
+    "ipc_namespace": "v6:module:site-analyzer:*",
+    "state_namespace": "modules.site_analyzer"
+  },
+  "inputs": [
+    "current_analyzer_browser_state",
+    "registered_site_record",
+    "late_bound_A3_A4_A5_A6_receipts",
+    "late_bound_B1_handoff_receipt"
+  ],
+  "outputs": [
+    "SITE_ANALYZER_VIEW_MODEL_V1",
+    "ANALYZER_PROVIDER_BINDING_V1",
+    "ANALYZER_ACTION_RECEIPT_V1",
+    "ANALYZER_STATUS_V1"
+  ],
+  "state_rules": {
+    "missing_required_receipt": "UNBOUND",
+    "inference_from_missing_evidence": false,
+    "cross_module_private_state_read": false,
+    "direct_workspace_state_file_write": false,
+    "host_adapter_only": true
+  },
+  "change_rules": {
+    "v2_may_modify": [
+      "owned_root",
+      "provider_view_model",
+      "provider_actions",
+      "provider_status_contract"
+    ],
+    "v2_may_not_modify": [
+      "runtime/main.js",
+      "runtime/renderer.js",
+      "runtime/index.html",
+      "commander-worker-menu owned root",
+      "session-restore owned root"
+    ],
+    "shell_change_request_required_for": [
+      "new_mount_slot",
+      "new_host_capability",
+      "breaking_contract"
+    ]
+  },
+  "acceptance": [
+    "V-2 can attach a provider by changing only the site-analyzer owned root.",
+    "The shell renders only validated ViewModel data into declared mount slots.",
+    "Missing upstream receipts remain UNBOUND and are not guessed.",
+    "Analyzer actions cannot execute arbitrary shell commands.",
+    "Provider failure is isolated from Workspace and Commander/Worker UI."
+  ],
+  "implementation_status": "CONTRACT_READY_PROVIDER_PENDING",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "observed_at": "2026-08-08T17:59:57+09:00"
+}
