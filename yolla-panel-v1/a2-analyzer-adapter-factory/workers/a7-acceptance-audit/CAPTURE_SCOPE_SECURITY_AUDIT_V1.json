@@ -1,0 +1,48 @@
+{
+  "schema_version": "CAPTURE_SCOPE_SECURITY_AUDIT_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
+  "directive_id": "A2-TO-A7-WAVE5-FIXTURE-ACQUISITION-GOVERNANCE-RESULT-RECOVERY-V1-20260804-001",
+  "evaluated_at_kst": "2026-08-04T23:13:00+09:00",
+  "scope": {
+    "target_profiles": ["EP-001", "EP-002", "EP-003", "EP-004", "EP-005", "EP-010", "EP-011", "EP-012"],
+    "target_profile_count": 8,
+    "max_capture_per_profile": 1,
+    "total_max_capture_count": 8,
+    "allowlist_only": true,
+    "non_allowlisted_endpoint_count_authorized": 0,
+    "method_and_url_source": "EXISTING_A3_ENDPOINT_EVIDENCE_ONLY"
+  },
+  "security": {
+    "auth_bypass": false,
+    "access_control_bypass": false,
+    "credential_value_commit": false,
+    "cookie_token_pii_raw_persistence": false,
+    "local_absolute_path_publication": false,
+    "redirect_outside_allowlist": "REJECT_REQUIRED",
+    "capture_failure_auto_retry": false,
+    "retry_requires_new_one_shot_authorization": true
+  },
+  "upper_bounds": {
+    "request_count": "BOUND_8_TOTAL",
+    "response_size_max_bytes": "NOT_PUBLISHED",
+    "timeout_seconds": "NOT_PUBLISHED"
+  },
+  "execution_observation": {
+    "live_capture_executed_before_authorization": false,
+    "capture_execution_count": 0,
+    "source_mutation_count": 0
+  },
+  "decision": "EXACT_FINDINGS",
+  "findings": [
+    "RESPONSE_SIZE_MAX_BYTES_NOT_PUBLISHED",
+    "TIMEOUT_SECONDS_NOT_PUBLISHED",
+    "A3_WAVE5_ACQUISITION_PACKAGE_NOT_PUBLISHED",
+    "A5_WAVE5_FIXTURE_REQUIREMENT_AUTHORITY_NOT_PUBLISHED"
+  ],
+  "capture_execution_authorized": false,
+  "implementation_file_direct_edit": false,
+  "self_approval": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

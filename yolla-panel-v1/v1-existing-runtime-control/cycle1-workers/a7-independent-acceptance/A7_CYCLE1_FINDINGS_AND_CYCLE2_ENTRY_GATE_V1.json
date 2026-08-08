@@ -1,0 +1,62 @@
+{
+  "schema_version": "A7_CYCLE1_FINDINGS_AND_CYCLE2_ENTRY_GATE_V1",
+  "task_id": "W2-A7-REPAIR-CYCLE1-INCOMPLETE-BASELINE",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "evaluated_at_kst": "2026-08-07T01:12:05+09:00",
+  "decision": "EXACT_FINDINGS_REPAIR_PACKAGE_REQUIRED",
+  "findings": [
+    {
+      "id": "A7-C1-F01",
+      "severity": "BLOCKER",
+      "code": "TARGET_PC_LIVE_BASELINE_NOT_EXECUTED",
+      "evidence": "A-3, A-4 and A-6 each published exact target-PC execution blockers; no live CPU/RAM/process/WebContents or repeat result exists.",
+      "repair": "Run the A-7 integrated target-PC repair entrypoint once."
+    },
+    {
+      "id": "A7-C1-F02",
+      "severity": "BLOCKER",
+      "code": "A6_REAL_RUNTIME_ADAPTER_NOT_AVAILABLE",
+      "evidence": "A-6 self-test is valid but the installed-runtime lifecycle adapter was not available.",
+      "repair": "Provide action and snapshot drivers to the A-7 adapter bridge; required metrics fail closed when absent."
+    },
+    {
+      "id": "A7-C1-F03",
+      "severity": "FINDING",
+      "code": "A5_OWNED_ROOT_MISMATCH",
+      "evidence": "Assigned root was cycle1-workers/a5-browser-lifecycle-audit while committed C-mode artifacts are under v1-existing-runtime-control/workers/a5.",
+      "repair": "Treat committed A-5 bytes as static evidence only; normalize pointer location in a later non-blocking cleanup."
+    },
+    {
+      "id": "A7-C1-F04",
+      "severity": "FINDING",
+      "code": "A5_DIRECTIVE_ID_MISMATCH",
+      "evidence": "Assignment uses C1-A5-BROWSER-LIFECYCLE-POLLING-STATIC-AUDIT; report uses C1-A5-BROWSER-LIFECYCLE-POLLING-RENDER-STATIC-AUDIT.",
+      "repair": "Preserve both IDs in lineage; do not reject technically useful static findings."
+    },
+    {
+      "id": "A7-C1-F05",
+      "severity": "FINDING",
+      "code": "A4_TERMINAL_COMMENT_NOT_OBSERVED",
+      "evidence": "A-4 final report and pointer are committed, but a matching C-mode Terminal PR comment was not found.",
+      "repair": "Do not block repair execution; A-7 consumes exact committed report bytes."
+    }
+  ],
+  "cycle2_entry": {
+    "status": "BLOCKED",
+    "gate_id": "CYCLE2_LIGHTWEIGHT_OPTIMIZATION_ENTRY_GATE_V1",
+    "all_required": [
+      "A3_TARGET_PC_READBACK_PASS_AND_ACTIVE_RUNTIME_IDENTITY_5_10_2_3_7",
+      "A4_PANEL_ONLY_ONE_BROWSER_CLOSE_REOPEN_LIVE_RECEIPTS_MIN_30_SAMPLES_EACH",
+      "A6_REAL_ADAPTER_REPEAT_PASS_MIN_10_ITERATIONS",
+      "A6_PROCESS_RENDERER_WEBCONTENTS_LISTENER_TIMER_AND_BACKGROUND_METRICS_COMPLETE",
+      "FALSE_LIVE_PASS_COUNT_0",
+      "CANDIDATE_5_10_2_4_3_REMAINS_NOT_ACTIVE_UNLESS_SEPARATELY_INSTALLED_AND_READ_BACK"
+    ],
+    "single_next_action": "RUN_A7_INTEGRATED_TARGET_PC_REPAIR_ENTRYPOINT",
+    "entrypoint": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a7-independent-acceptance/Invoke-CModeCycle1EndToEndRepair.ps1"
+  },
+  "approval_granted": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

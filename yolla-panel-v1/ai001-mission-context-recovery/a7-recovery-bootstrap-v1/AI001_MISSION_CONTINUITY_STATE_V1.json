@@ -1,0 +1,19 @@
+{
+  "schema_version": "AI001_MISSION_CONTINUITY_STATE_V1",
+  "required_sections": ["MISSION", "CURRENT_COMMAND", "LATEST_RESULT", "NEXT_ACTION", "CHECKPOINT"],
+  "section_contract": {
+    "MISSION": ["mission_id", "directive_id", "cycle_id", "status", "authority_head"],
+    "CURRENT_COMMAND": ["command_id", "sequence_no", "idempotency_key", "status", "attempt", "safe_rerun", "non_idempotent_side_effect_committed", "heartbeat_at"],
+    "LATEST_RESULT": ["command_id", "idempotency_key", "status", "receipt_path", "receipt_sha256"],
+    "NEXT_ACTION": ["decision", "command_id", "reason"],
+    "CHECKPOINT": ["checkpoint_id", "command_id", "durable", "completed_steps", "pending_steps", "artifacts"]
+  },
+  "recovery_invariants": [
+    "PASS receipt bound to the same idempotency key suppresses duplicate execution",
+    "fresh RUNNING command is never stolen by recovery",
+    "stale RUNNING/INTERRUPTED command resumes only from a durable checkpoint",
+    "safe rerun requires safe_rerun=true and no committed non-idempotent side effect",
+    "partial artifacts are quarantined before regeneration",
+    "full history scan is not required by default"
+  ]
+}

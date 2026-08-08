@@ -1,0 +1,61 @@
+{
+  "schema_version": "VERIFIED_ADAPTER_PACKAGE_ACCEPTANCE_REPORT_V1",
+  "directive_id": "A2-TO-A7-VERIFIED-ADAPTER-INDEPENDENT-ACCEPTANCE-V3-20260804-001",
+  "evaluated_at_kst": "2026-08-04T06:16:26+09:00",
+  "a6_pointer": {
+    "blob": "dc5d8601f1dc81abfe57c013ce74c5fd8c6cbec6",
+    "terminal": "A6_VERIFIED_ADAPTER_PACKAGE_EXACT_BLOCKER",
+    "status": "BLOCKED_A5_CORRECTED_AUTHORITY_REQUIRED"
+  },
+  "site_structure_profile_v1": {
+    "blob": "ac7351e52aa836b147aa485b6ece0189a285e99c",
+    "authority_status": "UNRESOLVED_INPUT",
+    "verification_status": "BLOCKED_UNRESOLVED_INPUTS",
+    "complete": false
+  },
+  "required_components": {
+    "Endpoint Catalog": "BLOCKED_A5_AUTHORITY",
+    "Request Template": "BLOCKED_A5_AUTHORITY",
+    "Parameter Dictionary": "BLOCKED_A5_AUTHORITY",
+    "Session/Header Contract": "BLOCKED_A5_AUTHORITY",
+    "Pagination Contract": "PASS_A4_AUTHORITY",
+    "Response Schema": "BLOCKED_A3_BODY_EVIDENCE_AND_A5_AUTHORITY",
+    "Identifier Map": "BLOCKED_A5_AUTHORITY",
+    "Retry Rate Limit Policy": "BLOCKED_A5_AUTHORITY",
+    "Replay Test Receipt": "PASS_A6_FIXTURE_REPLAY"
+  },
+  "authoritative_component_count": 2,
+  "required_component_count": 9,
+  "verified_package_required_components": "2_OF_9_AUTHORITATIVE",
+  "physical_package_member_count": 3,
+  "build_receipt": {
+    "blob": "731dc2a146c36b9046839cbd08b07a40fc3d7a2b",
+    "schema": "ADAPTER_BUILD_RECEIPT_V4",
+    "package_aggregate_sha256": "9d4b7705321b39b38ce9c8be085c6d87f163f853cbaca2d89f87e3708239300d",
+    "member_count": 3,
+    "member_size_sha_binding_present": true,
+    "package_status": "SUPERSEDED_NON_AUTHORITY_FIXTURE_ONLY_A5_CORRECTED_AUTHORITY_REQUIRED"
+  },
+  "replay_receipt": {
+    "blob": "38f87a84acbb7346a0df9c030280a17a3c1884e9",
+    "fixture_replay_count": 2,
+    "pass_count": 16,
+    "test_count": 16,
+    "replay_1_sha256": "4e92f47570b0ec8495bd5e8f0f9d1734e9a77d68552347c2b8748705b45c6269",
+    "replay_2_sha256": "4e92f47570b0ec8495bd5e8f0f9d1734e9a77d68552347c2b8748705b45c6269",
+    "deterministic_replay": "PASS",
+    "a5_execution_contract_status": "UNRESOLVED_INPUT"
+  },
+  "a6_to_a7_handoff": {
+    "blob": "08c0ad9d6866541828fe384fe8279047129f7489",
+    "audit_ready": true,
+    "acceptance_ready": false,
+    "package_status": "SUPERSEDED_NON_AUTHORITY_FIXTURE_ONLY_A5_CORRECTED_AUTHORITY_REQUIRED"
+  },
+  "raw_secret_exposure_count": 0,
+  "live_site_call_count": 0,
+  "decision": "A7_VERIFIED_ADAPTER_ACCEPTANCE_EXACT_FINDINGS",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "LATEST_A7_D_INTEGRATION_DELTA_REVIEW_POINTER_V1",
+  "worker": "A-7",
+  "task_id": "A7_D_INTEGRATION_DELTA_REVIEW",
+  "directive_comment": 5196662863,
+  "terminal_comment_id": 5197623755,
+  "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "mode": "DELTA_ONLY",
+  "status": "TERMINAL_PASS",
+  "terminal": "A7_D_INTEGRATION_DELTA_REVIEW_PASS",
+  "artifacts": {
+    "delta_review": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_D_INTEGRATION_DELTA_REVIEW_V1.json",
+      "commit": "4d5e67ea05bd894640a33b30bb381ff8178c6f26",
+      "blob": "b6aa887aea1e5557791b15588b9823f494fd1ba6"
+    },
+    "final_report": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_D_INTEGRATION_DELTA_REVIEW_FINAL_REPORT_V1.json",
+      "commit": "9aa4bdd9cf3468cc841599a3c7f85ec95c0232cc",
+      "blob": "d3359dfd4a617f7b7220b49912d01e41c3815dcb"
+    }
+  },
+  "handoff_heads": {
+    "A3": "f1a32cdaeafb2ef8cc7442bc3ef8351d689e02c3",
+    "A4": "2efc3866b292cd8c43a6fdc75a43479c0bbf2fad",
+    "A5": "ba04d2dbae45a5ed51e86d6715565d15b8428464",
+    "A6": "4d5acd815d52c2fdfca079447989f565f90857eb"
+  },
+  "handoff_blobs": {
+    "A3": "7b06de0089917dc41069da4950675f22b1f4d5e6",
+    "A4": "ccdb978a08fe94bf61df3477b1eef71f904c7ce4",
+    "A5": "0fac8fac5069a013717ea74202d6d1741adfd966",
+    "A6": "8380c740d9f5f019c5146b553f983cce97ed5dbd"
+  },
+  "checks": {
+    "exact_head_path_blob_sha": "PASS_4_OF_4",
+    "package_member_byte_unchanged": "PASS_6_OF_6",
+    "d_canonical_id_generation_by_a6": false,
+    "authority_type_decision_by_a6": false,
+    "secret_pii_credential_value_finding_count": 0,
+    "new_external_request_count": 0,
+    "state_mixing_finding_count": 0,
+    "prior_finding_reopen": false,
+    "prior_finding_reexecution": false,
+    "finding_count": 0
+  },
+  "next_event": "A2_D_INTEGRATION_HANDOFF_SET",
+  "implementation_edit": false,
+  "self_approval": false,
+  "blocking_mid_process_gate": false,
+  "remote_readback": "PASS",
+  "remote_readback_evidence": {
+    "pre_terminal_pointer_commit": "19bbda51c6a0779aeca08ae5ef2fa63d1e8b112c",
+    "pre_terminal_pointer_blob": "e2b1f173afac14c79ceab4ed28d95c1b0b711a93"
+  },
+  "updated_at_kst": "2026-08-06T06:27:00+09:00",
+  "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

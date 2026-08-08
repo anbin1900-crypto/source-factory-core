@@ -1,0 +1,4 @@
+osed = true; resources.embedded?.dispose?.(); resources.ipc?.dispose?.(); await core.detachBrowser(); resources.standalone?.close?.(); } };
+}
+
+module.exports = { ...base, compileWave2Adapter, inferWave2Structure, AnalyzerCore: Wave2AnalyzerCore, Wave2AnalyzerCore, EventBridge, eventFingerprint, normalizeSelector, selectorCandidates, validateSelector, resolveSelector, registerAnalyzerIpc, RawCdpDebuggerAdapter, launchChromiumCdp, launchAnalyzerProduct, digest };

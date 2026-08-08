@@ -1,0 +1,11 @@
+{
+  "schema_version":"CYCLE7_LATE_BIND_STATE_V1",
+  "directive_id":"A0-TO-A7-REAL-SITE-CYCLE-RECOVERY-CONTINUITY-V7-20260808-001",
+  "cycle_id":"A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "policy":"READ_EXACT_POINTER_ON_DEMAND_ONLY",
+  "A-3":{"pr":22,"current_head":"1c17ca6cfb64ed0268a6ab81a08ac29881b4fa1b","baseline_pointer":{"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/action-network-state-causal-cycle5/LATEST_A3_ACTION_NETWORK_STATE_CAUSAL_POINTER.json","blob":"91d4d58f58b927e5a688fb49217f7591ef87a145","terminal":"A3_ACTION_NETWORK_STATE_CAUSAL_BINDING_READY","cycle_id":"A0-AB-AI-BLUEPRINT-SEMANTIC-BINDING-CYCLE5-20260808-001","live_site_call":false,"validation_receipt_blob":"d03304316cb2a2e9a3697bf5e6f47b4a3d994033"},"cycle7_pointer":null,"cycle7_live_receipt":null,"cycle7_status":"PENDING_EXACT_POINTER_OR_LIVE_RECEIPT","historical_generic_dns_blocker":{"pointer_blob":"4e5424a1a9a097b13f53e08fdb3f58b535445d8f","classification":"HISTORICAL_REFERENCE_ONLY_NOT_PROMOTED_TO_CYCLE7_BLOCKER"}},
+  "B-2":{"pr":38,"current_head":"b87bff0cfe91127ee26f340df5141ae1213e494d","baseline_pointer":{"path":"yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/LATEST_B2_REPORT_POINTER.json","blob":"ebe7e0990d200a21c889ba59be73798285b042bc","terminal":"B2_AI_BUILD_PLAN_AND_BACKLOG_READY","detail_pointer_blob":"437a56cba8cb9255d3a6053818771c0797fa5fb6","test_result_blob":"0a9d80c9529c23d8e53769395c8183815b3e8d83","live_site_call":false},"cycle7_pointer":null,"cycle7_live_receipt":null,"cycle7_status":"PENDING_EXACT_POINTER_OR_LIVE_RECEIPT"},
+  "LIVE_RECEIPT_POINTERS":{"A-3":{"cycle7":null,"status":"PENDING_NOT_INVENTED"},"B-2":{"cycle7":null,"status":"PENDING_NOT_INVENTED"}},
+  "refresh_rule":"ONLY_REFRESH_A3_OR_B2_WHEN_HEAD_OR_EXACT_POINTER_DELTA_IS_OBSERVED",
+  "full_history_preload":false,"target_pc_execution":false,"live_site_call_by_a7":false,"production":false,"ready":false,"merge":false
+}

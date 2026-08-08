@@ -1,0 +1,22 @@
+{
+  "schema_version":"A7_DURABLE_RECOVERY_V2_FINAL_REPORT_V1",
+  "directive_id":"AI001-TO-A7-DURABLE-MISSION-RECOVERY-AND-RESUME-BOOTSTRAP-V2-20260807-001",
+  "directive_comment_id":5217321685,
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "terminal":"A7_DURABLE_MISSION_RECOVERY_AND_RESUME_BOOTSTRAP_READY",
+  "status":"PASS",
+  "source_commit":"b84689c7d6aeecddc34fd5fd1a1a47e2641b721e",
+  "validation_receipt_blob":"ded8d50839d36cd601a77f70ff2bbbb66faa6b63",
+  "required_outputs":{"AI001_CURRENT_MISSION_STATE_V1":"PASS","LATEST_AI001_MISSION_POINTER_V1":"PASS","RECOVER_WORK_BOOTSTRAP_V1":"PASS","AI001_RECOVERY_BRIEF_V1":"PASS","INTERRUPTED_COMMAND_RECOVERY_DECISION_V1":"PASS","LATEST_POINTER":"PASS"},
+  "append_only_checkpoint_contract":"PASS",
+  "recovery_order":["latest mission pointer","active command","latest result","checkpoint","duplicate/idempotency","resume/next_action"],
+  "interrupted_decisions":["ALREADY_DONE","SAFE_TO_RESUME","NEEDS_REPAIR","BLOCKED"],
+  "late_binding":{"A-2":{"head":"ed3457f411f6a83b4351ee8b905c9547aa6e483c","pointer_blob":"71e62d0bf457aa47ee4d385534fe4be2dfb09757"},"A-6":{"head":"71cb958dfb18558abd30f9615c18a26795062067","pointer_blob":"4f6125c4486e31e16af14ad95b2d486654311c88"},"B-1":{"head":"52fc8753e21a077344afa7cb9430a7c5336eef6f","pointer_blob":"ab5fad5a9d93292654058d0609d58cf2562eba89"}},
+  "minimum_validation":"SYNTHETIC_CONTEXT_INTERRUPTION_AND_RECOVERY_SMOKE_1_PASS",
+  "smoke":{"decision":"NEEDS_REPAIR","resume_from":"CP-SYN-002","latest_checkpoint_sequence":2,"last_pass":"CMD-SYN-001","active_command":"CMD-SYN-002","partial_state_count":1},
+  "self_recovery":{"decision":"ALREADY_DONE","reason":"PASS_RESULT_ALREADY_BOUND"},
+  "single_recovery_command":"node RECOVER_WORK_BOOTSTRAP_V1.cjs --pointer ./LATEST_AI001_MISSION_POINTER_V1.json",
+  "full_history_scan_default":false,
+  "tunnel_create":false,"pc_agent_execution":false,"target_pc_execution":false,
+  "production":false,"ready":false,"merge":false
+}

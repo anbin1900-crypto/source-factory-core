@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "AI001_CURRENT_MISSION_STATE_V1",
+  "title": "AI001 Current Mission State V1",
+  "type": "object",
+  "required": ["mission_id","phase","active_command_id","last_completed_command_id","latest_result_pointer","current_checkpoint","blocker","next_action"],
+  "properties": {
+    "mission_id": {"type":"string","minLength":1},
+    "phase": {"type":"string","minLength":1},
+    "active_command_id": {"type":["string","null"]},
+    "last_completed_command_id": {"type":["string","null"]},
+    "latest_result_pointer": {"type":["string","null"]},
+    "current_checkpoint": {"type":["string","null"]},
+    "blocker": {"type":["object","null"]},
+    "next_action": {"type":["object","string","null"]}
+  },
+  "additionalProperties": true
+}

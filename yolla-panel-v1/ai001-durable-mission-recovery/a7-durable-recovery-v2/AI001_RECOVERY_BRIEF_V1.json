@@ -1,0 +1,10 @@
+{
+  "schema_version":"AI001_RECOVERY_BRIEF_V1",
+  "current_goal":"Complete Durable Mission Recovery V2 so AI-001 can restore work from persistent minimal state after context loss.",
+  "current_phase":"PREBUILD_CYCLE2_TERMINAL",
+  "last_pass":{"command_id":"AI001-DURABLE-RECOVERY-V2-001","result":"PASS","receipt":"reports/A7_DURABLE_RECOVERY_V2_VALIDATION_RECEIPT_V1.json"},
+  "in_progress":null,
+  "next_work":{"decision":"ALREADY_DONE","action":"Await a new mission pointer or changed active command; do not rerun this completed bootstrap."},
+  "read_once_sources":["LATEST_AI001_MISSION_POINTER_V1.json","state/ACTIVE_COMMAND.json","state/LATEST_RESULT.json","latest append-only checkpoint"],
+  "full_history_scan_required":false
+}

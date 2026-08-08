@@ -1,0 +1,8 @@
+{
+  "site": {"siteId":"fixture-site","url":"https://example.test/items?page=1","name":"Fixture Shop"},
+  "action": {"action_id":"action-1","type":"click","selector":"button.load"},
+  "request": {"requestId":"r1","request":{"url":"https://example.test/api/items?page=1","method":"GET"}},
+  "response": {"requestId":"r1","response":{"url":"https://example.test/api/items?page=1","status":200,"mimeType":"application/json"}},
+  "body": {"items":[{"id":1,"title":"Alpha","price":100,"address":"Seoul","description":"First","date":"2026-08-07"},{"id":2,"title":"Beta","price":200,"address":"Busan","description":"Second","date":"2026-08-07"}]},
+  "snapshot": {"records":[{"id":1,"title":"Alpha","price":100,"address":"Seoul","description":"First","date":"2026-08-07","next":"다음"},{"id":2,"title":"Beta","price":200,"address":"Busan","description":"Second","date":"2026-08-07","next":"다음"}]}
+}

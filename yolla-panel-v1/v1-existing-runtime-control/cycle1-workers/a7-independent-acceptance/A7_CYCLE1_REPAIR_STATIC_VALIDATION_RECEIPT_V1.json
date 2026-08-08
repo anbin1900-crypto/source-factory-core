@@ -1,0 +1,34 @@
+{
+  "schema_version": "A7_CYCLE1_REPAIR_STATIC_VALIDATION_RECEIPT_V1",
+  "task_id": "W2-A7-REPAIR-CYCLE1-INCOMPLETE-BASELINE",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "validated_at_kst": "2026-08-07T01:12:05+09:00",
+  "status": "PASS_WITH_EXACT_TARGET_PC_EXECUTION_BLOCKER",
+  "checks": {
+    "generated_worktree_json_parse": "PASS_6_OF_6",
+    "generated_worktree_node_adapter_syntax": "PASS",
+    "generated_worktree_exact_source_binding_tokens": "PASS_7_OF_7",
+    "generated_worktree_required_runtime_metrics": "PASS_8_OF_8",
+    "generated_worktree_fail_closed_gates": "PASS",
+    "remote_artifact_directory_readback": "PASS_9_OF_9_BEFORE_THIS_RECEIPT",
+    "powershell_parser": "NOT_RUN_POWERSHELL_UNAVAILABLE_IN_CURRENT_CONTAINER",
+    "target_pc_live_execution": "NOT_RUN_EXACT_EXTERNAL_BLOCKER"
+  },
+  "remote_git_blobs": {
+    "A7_CYCLE1_REPAIR_START_REPORT_V1.json": "b0b9b2b214b847c613543387b06cb78bd1a278e0",
+    "A7_CYCLE1_REPAIR_EXECUTION_CONTRACT_V1.json": "2e04f2bac48108ef3dc350874430aec5930b0835",
+    "Invoke-CModeCycle1EndToEndRepair.ps1": "7f16af98b77918468093f19e32b6a3f85bfd514c",
+    "target_pc_runtime_adapter.cjs": "20cd74c2fa91c20b1338f89923598c88c4fe22de",
+    "A7_CYCLE1_INDEPENDENT_ACCEPTANCE_MATRIX_V1.json": "7600d95637df001815d1525694a1989fb642f3dc",
+    "A7_CYCLE1_FINDINGS_AND_CYCLE2_ENTRY_GATE_V1.json": "3791295a90112d69ddc58499753379a1d259d323",
+    "test_a7_cycle1_repair_static.py": "1289cbf69ccfabab0aaf507127d2a739b5d4d487",
+    "A7_CYCLE1_FINAL_REPORT_V1.json": "b64839441c77c431f9a1f738852a90ad457b9688",
+    "LATEST_A7_C_MODE_CYCLE1_POINTER.json": "1ffd62f8b648ddaf93725fc6168088581bf20912"
+  },
+  "validator_output": "PASS_A7_CYCLE1_REPAIR_STATIC_VALIDATION",
+  "environment_note": "An unrelated spreadsheet runtime warmup warning was emitted by the Python environment after the validator had exited 0; it did not affect JSON, Node syntax or token checks.",
+  "false_live_pass_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

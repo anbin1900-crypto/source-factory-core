@@ -1,0 +1,15 @@
+{
+  "schema_version":"FIXTURE_INTERRUPTION_RECOVERY_SMOKE_1",
+  "status":"PASS",
+  "scenario":"stale RUNNING command + durable checkpoint + malformed partial receipt + pending commit",
+  "latest_pass_command":"CMD-001",
+  "interrupted_command":"CMD-002",
+  "repairable_count":4,
+  "nonrepairable_count":0,
+  "decision":"REPAIR_THEN_RESUME",
+  "resume_from":"CP-002",
+  "duplicate_execution":false,
+  "production":false,
+  "ready":false,
+  "merge":false
+}

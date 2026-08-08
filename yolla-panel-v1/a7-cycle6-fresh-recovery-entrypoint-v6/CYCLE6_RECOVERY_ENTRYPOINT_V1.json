@@ -1,0 +1,103 @@
+{
+  "schema_version": "CYCLE6_RECOVERY_ENTRYPOINT_V1",
+  "directive_id": "A0-TO-A7-CYCLE6-FRESH-RECOVERY-ENTRYPOINT-V6-20260808-001",
+  "directive_comment_id": 5220460286,
+  "parent_handoff": {
+    "path": "yolla-panel-v1/a7-fresh-context-successor-handoff-v5/A7_SUCCESSOR_HANDOFF_V1.json",
+    "commit": "2df648cdb56b54d1fe00ecf296f1b6b3c99ba577",
+    "blob": "9fb92d2b97e1a76d40518fe5f552c375423ac867"
+  },
+  "CURRENT_MISSION": {
+    "mission": "Maintain pointer-only recovery continuity for Cycle6 multimode composite reconstruction across context loss or interruption.",
+    "role": "NEW_A-7_FRESH_RECOVERY_CONTINUITY_OWNER",
+    "policy": "POINTER_ONLY_MINIMUM_CONTEXT",
+    "audit_gate_role": false
+  },
+  "CURRENT_CYCLE": {
+    "cycle_id": "A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001",
+    "mode": "FRESH_CONTEXT_POINTER_ONLY_CONTINUITY",
+    "terminal_required": "A7_CYCLE6_FRESH_RECOVERY_ENTRYPOINT_READY"
+  },
+  "CURRENT_COMMAND": {
+    "command_id": "A7-CYCLE6-RECOVERY-ENTRYPOINT-001",
+    "idempotency_key": "A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001|A7|RECOVERY_ENTRYPOINT_V1",
+    "status": "PASS",
+    "completed_stage": "RECOVERY_ENTRYPOINT_PUBLISHED",
+    "duplicate_execution_suppression": true,
+    "completed_stage_reexecution": false
+  },
+  "COMPLETED_CYCLES": [
+    {"cycle":"PRE_RECOVERY_WAVE3","terminal":"A7_SITE_ANALYZER_WAVE3_CROSS_CUTTING_REPAIR_PASS","final_head":"7718170f6c616a99c99c4d366601a8dd6bb2b731"},
+    {"cycle":"CYCLE1","terminal":"A7_MISSION_CONTEXT_RECOVERY_BOOTSTRAP_PREBUILD_READY","final_head":"24d634ca02ddd94a4c701b60c165c38f4cbdfad9"},
+    {"cycle":"CYCLE2","terminal":"A7_DURABLE_MISSION_RECOVERY_AND_RESUME_BOOTSTRAP_READY","final_head":"4eab2f6605c81950fa81182d60736c4117615103"},
+    {"cycle":"CYCLE3","terminal":"A7_WORKER_STATE_AWARE_CONTEXT_RECOVERY_READY","final_head":"59b0a87363e8e4b0cecca9b6b74d88568a55c871"},
+    {"cycle":"CYCLE4","terminal":"A7_MULTIMODE_CONTEXT_RECOVERY_READY","final_head":"d7cc64255b1c67657bc223c8072374fcd79facc8"},
+    {"cycle":"CYCLE5_SUCCESSION","terminal":"A7_FRESH_SUCCESSOR_RECOVERY_CONTEXT_READY","final_head":"87112c1c51e8b8db5dd2ddafdd313340eac236bb"}
+  ],
+  "LATEST_COMPLETED_PRODUCER_POINTERS": {
+    "A-6": {
+      "pr": 25,
+      "head": "e8d3a1723311ac64aa5b262ebcd81587379bafd6",
+      "pointer_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/LATEST_A6_REPORT_POINTER.json",
+      "pointer_blob": "643d80cdf199fe29a4af98a4f7b98030b0d15fea",
+      "cycle_id": "A0-AB-AI-BLUEPRINT-SEMANTIC-BINDING-CYCLE5-20260808-001",
+      "terminal": "A6_AI_IMPLEMENTATION_BLUEPRINT_COMPILER_READY"
+    },
+    "B-2": {
+      "pr": 38,
+      "head": "f3b2753aec749265118624cd75917a5388795f1d",
+      "pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b2-adapter-runtime-scope/LATEST_B2_REPORT_POINTER.json",
+      "pointer_blob": "342568ee67abee1ac5c9087c57ba7cf431a43b0e",
+      "terminal": "B2_AI_BUILD_DECISION_VIEWMODEL_READY"
+    },
+    "B-3": {
+      "pr": 39,
+      "head": "891955e5a0f9087a4f7d4b44b89a9b95620fd8ce",
+      "pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b3-extractor-retry-resume/LATEST_B3_REPORT_POINTER.json",
+      "pointer_blob": "91b6462c009696fad360559dd50591aaceedb572",
+      "cycle_id": "A0-AB-AI-BLUEPRINT-SEMANTIC-BINDING-CYCLE5-20260808-001",
+      "terminal": "B3_USER_JOURNEY_STATE_MACHINE_READY"
+    },
+    "B-4": {
+      "pr": 40,
+      "head": "e907409e56d11d88fd98278276610060137db052",
+      "pointer_path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/LATEST_B4_REPORT_POINTER.json",
+      "pointer_blob": "65656a306aa4158a13a8f7f094e714058d6920e8",
+      "cycle_id": "A0-AB-AI-BLUEPRINT-SEMANTIC-BINDING-CYCLE5-20260808-001",
+      "terminal": "B4_SEMANTIC_EVIDENCE_INDEX_READY"
+    }
+  },
+  "CURRENT_BLOCKERS": {
+    "cycle6_recovery_entrypoint": null,
+    "producer_result_state": "NO_CYCLE6_COMPLETED_PRODUCER_POINTER_BOUND_YET",
+    "historical_a3_dns_blocker": "REFERENCE_ONLY_NOT_CYCLE6_EXECUTION_BLOCKER",
+    "full_history_preload": "FORBIDDEN_BY_RECOVERY_POLICY"
+  },
+  "NEXT_ACTION": {
+    "owner": "NEW_A-7",
+    "action": "WAIT_FOR_FIRST_CYCLE6_COMPLETED_PRODUCER_POINTER_OR_EXPLICIT_RECOVERY_CONTINUITY_DIRECTIVE",
+    "on_pointer_delta": "READ_ONLY_CHANGED_PRODUCER_POINTER; SET_AS_LATEST_RESULT; RECONSTRUCT_FIRST_INCOMPLETE_STAGE; DO_NOT_RERUN_COMPLETED_STAGES",
+    "completed_stage_reexecution": false,
+    "full_history_scan": false
+  },
+  "RECOVERY_ENTRYPOINT": {
+    "read_order": [
+      "CYCLE6_RECOVERY_ENTRYPOINT_V1",
+      "CURRENT_MISSION",
+      "CURRENT_COMMAND",
+      "LATEST_COMPLETED_PRODUCER_POINTERS_OR_NEWEST_CYCLE6_POINTER_DELTA",
+      "LATEST_RESULT",
+      "NEXT_ACTION"
+    ],
+    "resume_rule": "LATEST_RESULT_FIRST_THEN_FIRST_INCOMPLETE_STAGE",
+    "duplicate_rule": "IF_COMMAND_IDEMPOTENCY_KEY_OR_STAGE_ALREADY_PASS_THEN_SKIP",
+    "completed_stage_reexecution_count_required": 0,
+    "producer_refresh_policy": "ON_DEMAND_EXACT_POINTER_ONLY",
+    "full_history_scan_default": false
+  },
+  "target_pc_execution": false,
+  "live_site_call": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version":"LATEST_A7_RECOVERY_POINTER_V1",
+  "directive_id":"A0-TO-A7-REAL-SITE-CYCLE-RECOVERY-CONTINUITY-V7-20260808-001",
+  "directive_comment_id":5220799101,
+  "cycle_id":"A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "status":"PASS",
+  "terminal":"A7_REAL_SITE_CYCLE_RECOVERY_CONTINUITY_READY",
+  "source_head":"f8572cb6fe701c8dab7db080f4ea12dba54eaf1b",
+  "recovery_state":{"path":"CYCLE7_RECOVERY_STATE_V1.json","blob":"90bde79e8c91a119eda407a7873b8db19161dfa5"},
+  "late_bind_state":{"path":"CYCLE7_LATE_BIND_STATE_V1.json","blob":"5772b34db778f9625f83599cbd5121fd163f7315"},
+  "resume_entrypoint":{"path":"CYCLE7_RESUME_ENTRYPOINT_V1.json","blob":"edaf7f072b822a4d66337ac2876d53035236fca8"},
+  "current_state":"WAITING_FOR_FIRST_EXACT_CYCLE7_A3_OR_B2_POINTER_OR_LIVE_RECEIPT_DELTA",
+  "live_receipts":{"A-3":"PENDING_NOT_INVENTED","B-2":"PENDING_NOT_INVENTED"},
+  "next_action":"ON_EXACT_CYCLE7_POINTER_DELTA_READ_CHANGED_POINTER_ONLY_AND_RESUME_FIRST_INCOMPLETE_STEP",
+  "completed_step_reexecution":false,
+  "full_history_preload":false,
+  "audit_gate":false,
+  "target_pc_execution":false,
+  "live_site_call_by_a7":false,
+  "production":false,"ready":false,"merge":false,
+  "final_head_semantics":"COMMIT_CONTAINING_THIS_POINTER"
+}

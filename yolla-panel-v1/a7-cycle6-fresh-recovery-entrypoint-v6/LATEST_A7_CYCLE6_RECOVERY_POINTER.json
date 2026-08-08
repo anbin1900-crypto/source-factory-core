@@ -1,0 +1,19 @@
+{
+  "schema_version":"LATEST_A7_CYCLE6_RECOVERY_POINTER_V1",
+  "directive_id":"A0-TO-A7-CYCLE6-FRESH-RECOVERY-ENTRYPOINT-V6-20260808-001",
+  "directive_comment_id":5220460286,
+  "cycle_id":"A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001",
+  "status":"PASS",
+  "terminal":"A7_CYCLE6_FRESH_RECOVERY_ENTRYPOINT_READY",
+  "entrypoint":{"path":"yolla-panel-v1/a7-cycle6-fresh-recovery-entrypoint-v6/CYCLE6_RECOVERY_ENTRYPOINT_V1.json","commit":"b6d8345bd15baca861debad258c7c519c75e57e7","blob":"e19f96156997e72a8793c81fe811ba5e4d86ce44"},
+  "next_action":"WAIT_FOR_FIRST_CYCLE6_COMPLETED_PRODUCER_POINTER_OR_EXPLICIT_RECOVERY_CONTINUITY_DIRECTIVE",
+  "pointer_only_recovery":true,
+  "completed_stage_reexecution":false,
+  "full_history_scan_default":false,
+  "target_pc_execution":false,
+  "live_site_call":false,
+  "production":false,
+  "ready":false,
+  "merge":false,
+  "final_head_semantics":"COMMIT_CONTAINING_THIS_POINTER"
+}

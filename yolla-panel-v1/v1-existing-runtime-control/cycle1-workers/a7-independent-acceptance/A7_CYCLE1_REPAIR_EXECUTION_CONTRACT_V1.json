@@ -1,0 +1,87 @@
+{
+  "schema_version": "A7_C_MODE_CYCLE1_REPAIR_EXECUTION_CONTRACT_V1",
+  "task_id": "W2-A7-REPAIR-CYCLE1-INCOMPLETE-BASELINE",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "generated_at_kst": "2026-08-07T01:12:05+09:00",
+  "entrypoint": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a7-independent-acceptance/Invoke-CModeCycle1EndToEndRepair.ps1",
+  "adapter_bridge": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a7-independent-acceptance/target_pc_runtime_adapter.cjs",
+  "source_bindings": [
+    {
+      "worker": "A-3",
+      "pr": 22,
+      "commit": "57012279520de80260bd857c9b6a9edd7aa51cba",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a3-target-pc-readback/Invoke-CModeCycle1TargetPcReadback.ps1",
+      "blob": "c79e102fa805054d2c2a07b62de2d616ce87454d",
+      "purpose": "NON_DESTRUCTIVE_ACTIVE_RUNTIME_READBACK"
+    },
+    {
+      "worker": "A-4",
+      "pr": 23,
+      "commit": "b54af2bb3272b613be5458a283e22e2eb5d90ade",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a4-resource-baseline/Invoke-CModeCycle1ResourceBaseline.ps1",
+      "blob": "82bfd506922b7471d5bd1c4ed6697950a738489f",
+      "purpose": "CPU_RAM_PROCESS_BROWSER_SCENARIO_BASELINE"
+    },
+    {
+      "worker": "A-6",
+      "pr": 25,
+      "commit": "84ea9b34a7c9445a77214288556ff3230442d81e",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a6-leak-and-repeat-harness/c_mode_cycle1_browser_repeat_harness.cjs",
+      "blob": "0d1e4bbf2220212c2d85c39826b31abe01bd176c",
+      "purpose": "BROWSER_OPEN_CLOSE_REPEAT_AND_LEAK_GATE"
+    },
+    {
+      "worker": "A-6",
+      "pr": 25,
+      "commit": "84ea9b34a7c9445a77214288556ff3230442d81e",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a6-leak-and-repeat-harness/C_MODE_CYCLE1_LEAK_THRESHOLD_CONTRACT_V1.json",
+      "blob": "26c30db46bc103ead553ac723469d099d714d900",
+      "purpose": "LEAK_THRESHOLD_AUTHORITY"
+    }
+  ],
+  "execution_order": [
+    "MATERIALIZE_AND_VERIFY_EXACT_GIT_BLOBS",
+    "A3_NON_DESTRUCTIVE_READBACK",
+    "RESOLVE_ACTIVE_RUNTIME_ROOT_PID",
+    "A4_PANEL_ONLY_AND_DYNAMIC_RESOURCE_SCENARIOS",
+    "A6_REAL_ADAPTER_REPEAT_HARNESS",
+    "AGGREGATE_FAIL_CLOSED_RECEIPT",
+    "DECIDE_CYCLE2_ENTRY"
+  ],
+  "minimum_live_requirements": {
+    "a3_target_pc_readback_status": "PASS",
+    "a3_active_runtime_identity": "5.10.2.3.7",
+    "a4_required_scenarios": ["PANEL_ONLY", "ONE_BROWSER", "CLOSE_REOPEN"],
+    "a4_minimum_samples_per_scenario": 30,
+    "a6_real_adapter": true,
+    "a6_minimum_repeat_count": 10,
+    "a6_evaluation": "PASS",
+    "false_live_pass_count": 0
+  },
+  "fail_closed_codes": [
+    "EXACT_GIT_BLOB_BINDING_FAILED",
+    "TARGET_PC_READBACK_NOT_PASS",
+    "ACTIVE_RUNTIME_ROOT_PID_UNRESOLVED",
+    "A4_ACTION_DRIVER_REQUIRED",
+    "A4_LIVE_SCENARIO_FAILED",
+    "A6_RUNTIME_ACTION_OR_SNAPSHOT_DRIVER_REQUIRED",
+    "A6_REAL_ADAPTER_REPEAT_FAILED"
+  ],
+  "driver_contracts": {
+    "a4_action_script": {
+      "purpose": "Execute the requested browser lifecycle scenario without modifying runtime source.",
+      "interface": "PowerShell script accepting -Scenario and -RootProcessId; exit code 0 only when the requested lifecycle action completed."
+    },
+    "a6_action_driver": {
+      "interface": "PowerShell script accepting -Operation and -ContextPath.",
+      "required_operations": ["openBrowser", "activateBrowser", "switchSeat", "hideBrowser", "closeBrowser", "reopenBrowser", "shutdown"]
+    },
+    "a6_snapshot_driver": {
+      "interface": "PowerShell script accepting -ContextPath and emitting exactly one JSON object to stdout.",
+      "required_numeric_metrics": ["process_count", "private_bytes", "renderer_count", "webcontents_count", "listener_count", "timer_count", "log_entries", "closed_background_active"]
+    }
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

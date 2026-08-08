@@ -1,0 +1,8 @@
+{
+  "schema_version":"MODE_AWARE_CURRENT_COMMAND_V1",
+  "required_fields":["command_id","idempotency_key","mode","stage","status","attempt_no"],
+  "allowed_modes":["DATA","PRODUCT","WRITE","MY_LISTING","EDIT"],
+  "interrupted_statuses":["RUNNING","PARTIAL","INTERRUPTED"],
+  "same_idempotency_key_completed_stage":"SUPPRESS_DUPLICATE",
+  "generating_or_running_without_terminal":"DO_NOT_REISSUE_BLINDLY"
+}

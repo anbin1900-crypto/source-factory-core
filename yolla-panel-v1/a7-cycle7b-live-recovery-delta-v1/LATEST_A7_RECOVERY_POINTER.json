@@ -1,0 +1,67 @@
+{
+  "schema_version": "LATEST_A7_RECOVERY_POINTER_V2",
+  "followup_id": "A0-TO-A7-CYCLE7B-LIVE-RECOVERY-DELTA-20260808-001",
+  "source_followup_comment": 5221171239,
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "wave_id": "A0-AB-REAL-SITE-LIVE-RECEIPT-CLOSURE-WAVE7B-20260808-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 26,
+  "branch": "worker/a7-analyzer-acceptance-audit-v1",
+  "baseline_head": "a2657b97a4961ba6a3ba2f54280988a7436137d3",
+  "root": "yolla-panel-v1/a7-cycle7b-live-recovery-delta-v1",
+  "parent_recovery_pointer": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "pr": 26,
+    "branch": "worker/a7-analyzer-acceptance-audit-v1",
+    "commit": "a2657b97a4961ba6a3ba2f54280988a7436137d3",
+    "path": "yolla-panel-v1/a7-real-site-cycle-recovery-continuity-v7/LATEST_A7_RECOVERY_POINTER.json",
+    "blob": "97aad0ee617bb78f981bb104ded620e083b6fbb2",
+    "terminal": "A7_REAL_SITE_CYCLE_RECOVERY_CONTINUITY_READY"
+  },
+  "recovery_delta": {
+    "path": "CYCLE7B_RECOVERY_DELTA_V1.json",
+    "blob": "c6d6e6f12058405a1de9c7dbf5ebae439a63c3e6"
+  },
+  "resume_entrypoint": {
+    "path": "CYCLE7B_RESUME_ENTRYPOINT_V1.json",
+    "blob": "adc21c8a0254aa4dc8e02a2f3abcd78ea4dca77e"
+  },
+  "latest_exact_results": {
+    "B6_HANDOFF": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 42,
+      "commit": "dde3ff79eafeede994e672c21648155b998c9a1a",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/real-site-one-command-execution-handoff-v1/LATEST_B6_REAL_SITE_ONE_COMMAND_EXECUTION_HANDOFF_POINTER.json",
+      "blob": "8e523ca375cc726e7d6f27e35f30553ab87df555",
+      "terminal_comment": 5224337124,
+      "terminal": "B6_REAL_SITE_ONE_COMMAND_EXECUTION_HANDOFF_READY"
+    },
+    "A2_CLOSURE": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 18,
+      "commit": "0bb16203214606a9eb32368f32f3d8115b0860a6",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/real-site-live-receipt-closure-v1/LATEST_A2_CYCLE7_LIVE_RECEIPT_CLOSURE_POINTER.json",
+      "blob": "8d45544b099379caeda49205c3ecdcfe49b4c124",
+      "terminal_comment": 5224349908,
+      "terminal": "A2_CYCLE7_LIVE_RECEIPT_CLOSURE_EXACT_BLOCKER"
+    }
+  },
+  "current_state": "AB_INTERNAL_BOTTLENECK_RESOLVED_WAITING_EXACT_TARGET_RUNTIME_BINDING",
+  "current_command_id": "A2-B6-CYCLE7-REAL-SITE-E2E-001",
+  "latest_result": "A2_CYCLE7_LIVE_RECEIPT_CLOSURE_EXACT_BLOCKER_AFTER_B6_HANDOFF_REPAIR",
+  "first_incomplete_step": "PUBLISH_EXACT_TARGET_RUNTIME_BINDING",
+  "next_action": "BIND_EXACT_REQUIRED_VALUES_AND_RESUME_A2_RS003",
+  "actual_execution_receipt_count": 0,
+  "live_pass_claimed": false,
+  "completed_step_reexecution": false,
+  "full_history_preload": false,
+  "audit_gate": false,
+  "target_pc_execution_by_a7": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "terminal": "A7_CYCLE7B_LIVE_RECOVERY_DELTA_READY",
+  "status": "PASS_POINTER_ONLY_DELTA_UPDATED",
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version":"WORKER_STATE_RECOVERY_SMOKE_SCENARIOS_V1",
+  "scenarios":[
+    {"id":"GENERATING_CONTEXT_LOSS","worker_state":"GENERATING","expected_decision":"SAFE_TO_RESUME","expected_next_action":"OBSERVE_EXISTING_WORKER_GENERATION","command_reissue":false},
+    {"id":"COMPLETE_BEFORE_REVIEW","worker_state":"COMPLETE","task_pass":null,"expected_decision":"SAFE_TO_RESUME","expected_next_action":"REVIEW_COMPLETED_WORKER_RESULT","command_reissue":false},
+    {"id":"BLOCKED","worker_state":"BLOCKED","expected_decision":"BLOCKED","expected_next_action":"SURFACE_WORKER_BLOCKER","command_reissue":false},
+    {"id":"UNKNOWN","worker_state":"UNKNOWN","expected_decision":"BLOCKED","expected_next_action":"REFRESH_WORKER_STATE_BEFORE_ANY_REISSUE","command_reissue":false}
+  ]
+}

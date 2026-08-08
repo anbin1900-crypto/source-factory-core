@@ -1,0 +1,47 @@
+{
+  "schema_version": "REDACTION_AND_RETENTION_ACCEPTANCE_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
+  "directive_id": "A2-TO-A7-WAVE5-FIXTURE-ACQUISITION-GOVERNANCE-RESULT-RECOVERY-V1-20260804-001",
+  "evaluated_at_kst": "2026-08-04T23:13:00+09:00",
+  "redaction_controls": {
+    "redaction_before_persist": true,
+    "raw_credential_storage": false,
+    "raw_cookie_storage": false,
+    "raw_token_storage": false,
+    "raw_pii_storage": false,
+    "local_absolute_path_publication": false,
+    "source_endpoint_profile_binding": true,
+    "content_type_status_size_timestamp_binding": true
+  },
+  "artifact_separation": {
+    "raw_capture_bytes": "TRANSIENT_ONLY_UNTIL_REDACTION_AND_HASH",
+    "raw_sha256_required": true,
+    "redacted_derivative_required": true,
+    "redacted_sha256_required": true,
+    "raw_and_redacted_sha256_binding": true,
+    "immutable_receipt_required": true,
+    "raw_sensitive_body_persisted": false
+  },
+  "retention": {
+    "redacted_derivative_retention_period": "NOT_PUBLISHED",
+    "transient_raw_byte_disposal_deadline": "NOT_PUBLISHED",
+    "deletion_receipt_required": true,
+    "status": "EXACT_RETENTION_LIMITS_NOT_PUBLISHED"
+  },
+  "acceptance": {
+    "redaction_immutability_design": "PASS_CONDITIONAL",
+    "retention_policy": "FINDING",
+    "live_capture_execution_count": 0
+  },
+  "decision": "EXACT_FINDINGS",
+  "findings": [
+    "REDACTED_DERIVATIVE_RETENTION_PERIOD_NOT_PUBLISHED",
+    "TRANSIENT_RAW_BYTE_DISPOSAL_DEADLINE_NOT_PUBLISHED"
+  ],
+  "capture_execution_authorized": false,
+  "implementation_file_direct_edit": false,
+  "self_approval": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

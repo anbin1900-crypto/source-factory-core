@@ -1,0 +1,66 @@
+{
+  "schema_version": "A7_B1_EXECUTION_READINESS_HANDOFF_V1",
+  "producer": "A-7",
+  "consumer": "A-2_AND_B-1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_10-GENERIC-HTML-FINAL-ACCEPTANCE-V2-20260806-001",
+  "directive_id": "A2-TO-A7-GENERIC-HTML-VERIFIED-ADAPTER-FINAL-ACCEPTANCE-V1-20260806-001",
+  "directive_comment": 5194563911,
+  "status": "BLOCKED_PACKAGE_INTEGRITY",
+  "terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_EXACT_FINDINGS",
+  "final_acceptance_count": 1,
+  "mid_process_audit_count": 0,
+  "acceptance_report": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_GENERIC_HTML_FINAL_ACCEPTANCE_REPORT_V1.json",
+    "commit": "f422acf2839a05c8db28ad501b64ca83c67baf94",
+    "blob": "e66ba97803991de4982ddf4ebd756df4cde584b1"
+  },
+  "a6_authority": {
+    "final_head": "6fab17d37c1db2feb955fd2c447b498088b99d4a",
+    "terminal": "A6_GENERIC_HTML_VERIFIED_ADAPTER_PACKAGE_READY",
+    "pointer_blob": "22ead89ed6ad08bb38089ee922d9734f432d41d2",
+    "handoff_blob": "0e9fd96b1ff8c13594cc4d42c23da223847040a6",
+    "package_path": "VERIFIED_ADAPTER_PACKAGE_V1/package.json",
+    "package_blob": "cc52e85881602fc0fd18ca231842a6401aad92c9"
+  },
+  "contract_readiness": {
+    "entrypoint_present": true,
+    "input_contract_present": true,
+    "output_schema_present": true,
+    "parameter_and_route_binding_present": true,
+    "session_header_reference_present": true,
+    "pagination_stop_contract_present": true,
+    "retry_and_failure_codes_present": true,
+    "fixture_pointer_present": true,
+    "replay_digest_equal": true,
+    "generic_html_contract_complete": true,
+    "b1_reanalysis_required": false
+  },
+  "integrity_readiness": {
+    "package_sha256_exact": false,
+    "package_member_sha256_exact": "PASS_2_OF_6_FAIL_4_OF_6",
+    "package_member_size_exact": "PASS_2_OF_6_FAIL_4_OF_6",
+    "build_receipt_sha256_exact": false,
+    "replay_receipt_sha256_exact": false,
+    "execution_ready": false
+  },
+  "checks_passed": [
+    "EXACT_A5_A4_AUTHORITY_BINDING",
+    "GENERIC_HTML_REQUIRED_OUTPUT_SCHEMA_PASS_12_OF_12",
+    "REPLAY_DIGEST_EQUALITY_PASS_2_OF_2",
+    "SECRET_COOKIE_TOKEN_PII_AND_LOCAL_PATH_FINDING_COUNT_0",
+    "AUTOMATED_PAGINATION_FALSE_AND_EP011_EXCLUDED",
+    "A6_OWNED_ROOT_PASS_12_OF_12"
+  ],
+  "blocking_findings": [
+    "PACKAGE_SHA256_EXPECTED_3500125A_ACTUAL_573623D9",
+    "PACKAGE_MEMBER_SHA256_SIZE_FAIL_4_OF_6",
+    "BUILD_AND_REPLAY_RECEIPT_SHA256_MISMATCH"
+  ],
+  "first_blocker": "PACKAGE_AND_MEMBER_SHA256_BINDING_MISMATCH",
+  "required_owner": "A-6",
+  "required_correction": "RECOMPUTE_SHA256_AND_SIZE_FROM_EXACT_REMOTE_BYTES_THEN_REPUBLISH_PACKAGE_BUILD_RECEIPT_REPLAY_RECEIPT_LATEST_POINTER_AND_A7_HANDOFF",
+  "b1_execution_ready": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "A7_SITE_ANALYZER_WAVE1_START_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "directive_comment_id": 5207566541,
+  "common_authority_commit": "20b8a6401de124186037d44f9f17076c97142402",
+  "worker": "A-7",
+  "role": "SITE_ANALYZER_END_TO_END_REPAIR_OWNER",
+  "started_at_kst": "2026-08-07T01:52:00+09:00",
+  "mode": "ONE_OWNER_END_TO_END_DIRECT_SOURCE_REPAIR",
+  "repair_targets": [
+    "AnalyzerCore runtime and Electron UI binding",
+    "Live CDP Network DOM Response observation",
+    "Automatic structure field locator pagination inference",
+    "Response-body endpoint schema and extraction-mode inference",
+    "Executable adapter compilation and deterministic replay",
+    "A/B interface build and replay conflict closure"
+  ],
+  "audit_only": false,
+  "repair_handoff_to_other_worker": false,
+  "c_mode_runtime_work": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

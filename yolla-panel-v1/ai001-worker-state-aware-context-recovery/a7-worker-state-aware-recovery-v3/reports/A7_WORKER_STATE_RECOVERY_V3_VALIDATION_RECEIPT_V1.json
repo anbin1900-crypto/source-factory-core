@@ -1,0 +1,18 @@
+{
+  "schema_version":"A7_WORKER_STATE_RECOVERY_V3_VALIDATION_RECEIPT_V1",
+  "generated_at":"2026-08-07T13:45:00Z",
+  "directive_id":"AI001-TO-A7-WORKER-STATE-AWARE-CONTEXT-RECOVERY-V3-20260807-001",
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "status":"PASS",
+  "minimum_validation":"WORKER_STATE_CONTEXT_RECOVERY_SMOKE_4_CASES_PASS",
+  "smokes":[
+    {"case":"GENERATING_CONTEXT_LOSS","execution_count":1,"decision":"SAFE_TO_RESUME","next_action":"OBSERVE_EXISTING_WORKER_GENERATION","command_reissue":false,"stale_duplicate_suppression":"PASS"},
+    {"case":"COMPLETE_BEFORE_REVIEW","execution_count":1,"decision":"SAFE_TO_RESUME","next_action":"REVIEW_COMPLETED_WORKER_RESULT","complete_is_task_pass":false},
+    {"case":"BLOCKED","execution_count":1,"decision":"BLOCKED","next_action":"SURFACE_WORKER_BLOCKER"},
+    {"case":"UNKNOWN","execution_count":1,"decision":"BLOCKED","next_action":"REFRESH_WORKER_STATE_BEFORE_ANY_REISSUE","command_reissue":false}
+  ],
+  "self_recovery":{"decision":"ALREADY_DONE","reason":"PASS_RESULT_ALREADY_BOUND","command_reissue":false},
+  "recovery_order":["Latest Mission Pointer","Current Command","Worker State","Latest Result","Checkpoint","Next Action"],
+  "target_pc_execution":false,"tunnel_change":false,"worker_direct_tunnel":false,"audit_only_work":false,
+  "production":false,"ready":false,"merge":false
+}

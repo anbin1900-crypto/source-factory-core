@@ -1,0 +1,14 @@
+{
+  "mission_id": "AI001-RECOVERY-BOOTSTRAP-PREBUILD",
+  "current_command": "A7-RECOVERY-PREBUILD-001",
+  "latest_result": "PASS",
+  "checkpoint": "A7-RECOVERY-PREBUILD-CP1",
+  "resume_candidate": {
+    "decision": "SKIP_DUPLICATE",
+    "command_id": "A7-RECOVERY-PREBUILD-001",
+    "reason": "PASS_RECEIPT_ALREADY_BOUND_TO_IDEMPOTENCY_KEY",
+    "resume_from": null
+  },
+  "blocker": null,
+  "recovery_digest": "7998bb34266d51bbc8ccbe074a60859e327fc1f077261702bab507e1a19ab2f3"
+}

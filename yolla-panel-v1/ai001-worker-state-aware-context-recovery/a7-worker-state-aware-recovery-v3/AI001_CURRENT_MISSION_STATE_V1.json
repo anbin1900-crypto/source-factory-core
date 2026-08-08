@@ -1,0 +1,7 @@
+{
+  "schema_version":"AI001_CURRENT_MISSION_STATE_V1",
+  "required_fields":["mission_id","phase","active_command_id","last_completed_command_id","latest_result_pointer","current_checkpoint","blocker","next_action","worker_state"],
+  "worker_state_fields":["worker_id","command_id","state","task_pass","event_id","sequence_no"],
+  "complete_is_task_pass":false,
+  "task_pass_is_separate_authority":true
+}

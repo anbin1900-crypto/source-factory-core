@@ -1,0 +1,34 @@
+TAP version 13
+# Subtest: FIXTURE_INTERRUPTION_RECOVERY_SMOKE_1 chooses repair then resume and quarantines partials
+ok 1 - FIXTURE_INTERRUPTION_RECOVERY_SMOKE_1 chooses repair then resume and quarantines partials
+  ---
+  duration_ms: 4.615088
+  type: 'test'
+  ...
+# Subtest: PASS receipt with same idempotency key suppresses duplicate execution
+ok 2 - PASS receipt with same idempotency key suppresses duplicate execution
+  ---
+  duration_ms: 0.126307
+  type: 'test'
+  ...
+# Subtest: fresh running command is not stolen
+ok 3 - fresh running command is not stolen
+  ---
+  duration_ms: 0.110074
+  type: 'test'
+  ...
+# Subtest: stale command without durable checkpoint can safe rerun only when side effects are safe
+ok 4 - stale command without durable checkpoint can safe rerun only when side effects are safe
+  ---
+  duration_ms: 0.116512
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 48.498055

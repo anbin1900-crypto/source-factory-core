@@ -1,0 +1,37 @@
+{
+  "schema_version": "A7_TO_A2_CAPTURE_AUTHORIZATION_RECOMMENDATION_V1",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
+  "directive_id": "A2-TO-A7-WAVE5-FIXTURE-ACQUISITION-GOVERNANCE-RESULT-RECOVERY-V1-20260804-001",
+  "evaluated_at_kst": "2026-08-04T23:13:00+09:00",
+  "recommendation": "DO_NOT_REQUEST_ONE_SHOT_CAPTURE_AUTHORIZATION_YET",
+  "authorization_request_ready": false,
+  "capture_execution_authorized": false,
+  "passed_controls": [
+    "TARGET_PROFILE_ALLOWLIST_EXACTLY_8",
+    "MAX_CAPTURE_PER_PROFILE_1",
+    "TOTAL_MAX_CAPTURE_COUNT_8",
+    "AUTH_BYPASS_FALSE",
+    "ACCESS_CONTROL_BYPASS_FALSE",
+    "RAW_CREDENTIAL_STORAGE_FALSE",
+    "REDACTION_BEFORE_PERSIST_TRUE",
+    "RAW_AND_REDACTED_SHA256_BINDING_REQUIRED",
+    "LOCAL_ABSOLUTE_PATH_PUBLICATION_FALSE",
+    "LIVE_CAPTURE_EXECUTED_BEFORE_AUTHORIZATION_FALSE",
+    "AUTOMATIC_RETRY_AUTHORIZATION_FALSE"
+  ],
+  "blocking_inputs": [
+    "A3_WAVE5_ACQUISITION_PACKAGE_WITH_EXACT_METHOD_URL_PROFILE_BINDING",
+    "A5_WAVE5_FIXTURE_REQUIREMENT_AUTHORITY_AND_A5_TO_A3_HANDOFF",
+    "RESPONSE_SIZE_MAX_BYTES",
+    "TIMEOUT_SECONDS",
+    "REDACTED_DERIVATIVE_RETENTION_PERIOD",
+    "TRANSIENT_RAW_BYTE_DISPOSAL_DEADLINE"
+  ],
+  "next_action": "A-2 should re-evaluate only after the six blocking inputs are published by exact Head and Blob. A-7 then performs an incremental readback and may recommend, but may not grant, one-shot authorization.",
+  "self_approval": false,
+  "implementation_file_direct_edit": false,
+  "live_capture_execution_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

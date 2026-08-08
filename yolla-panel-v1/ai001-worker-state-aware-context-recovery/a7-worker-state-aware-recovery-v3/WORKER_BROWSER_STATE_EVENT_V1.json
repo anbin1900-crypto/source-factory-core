@@ -1,0 +1,9 @@
+{
+  "schema_version":"WORKER_BROWSER_STATE_EVENT_V1",
+  "required_fields":["worker_id","command_id","event_id","sequence_no","state"],
+  "state_enum":["GENERATING","COMPLETE","BLOCKED","UNKNOWN"],
+  "task_pass_type":"boolean|null",
+  "ordering":"per worker_id+command_id monotonically increasing sequence_no",
+  "duplicate_suppression":"event_id duplicate or non-increasing sequence_no",
+  "complete_is_task_pass":false
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version":"AI001_RECOVERY_LATE_BINDING_SOURCES_V1",
+  "policy":"READ_ON_DEMAND_ONLY_NO_FULL_PR_HISTORY_SCAN",
+  "sources":{
+    "A-2":{"pr":18,"head":"ed3457f411f6a83b4351ee8b905c9547aa6e483c","pointer_path":"yolla-panel-v1/a2-analyzer-adapter-factory/LATEST_A2_REPORT_POINTER.json","pointer_blob":"71e62d0bf457aa47ee4d385534fe4be2dfb09757"},
+    "A-6":{"pr":25,"head":"71cb958dfb18558abd30f9615c18a26795062067","pointer_path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/LATEST_A6_REPORT_POINTER.json","pointer_blob":"4f6125c4486e31e16af14ad95b2d486654311c88"},
+    "B-1":{"pr":19,"head":"52fc8753e21a077344afa7cb9430a7c5336eef6f","pointer_path":"yolla-panel-v1/b1-collector-materialization/LATEST_B1_REPORT_POINTER.json","pointer_blob":"ab5fad5a9d93292654058d0609d58cf2562eba89"}
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "A7_WAVE5_FINAL_POINTER_V1",
+  "worker": "A-7",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE5-RESULT-RECOVERY-V1-20260804-001",
+  "directive_id": "A2-TO-A7-WAVE5-FIXTURE-ACQUISITION-GOVERNANCE-RESULT-RECOVERY-V1-20260804-001",
+  "status": "TERMINAL_EXACT_FINDINGS",
+  "terminal": "A7_FIXTURE_ACQUISITION_GOVERNANCE_EXACT_FINDINGS",
+  "terminal_report": {
+    "commit": "0b16f457f5189a9257a1ce557abfab27d7fba3ad",
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_WAVE5_TERMINAL_REPORT_V1.json",
+    "blob": "dae3a04b3ffa844e2a2aa15c15349f064a1063c0"
+  },
+  "core_outputs": {
+    "governance_checklist_blob": "faaef78bd12086cfc1280746fbea783ea4967210",
+    "capture_scope_security_blob": "4489371464276ef7a7858801d3b1c5fa28de8c2d",
+    "redaction_retention_blob": "8f2ccabeb4e7c4fe5ec5b812d5ef31789cf9c63b",
+    "one_shot_matrix_blob": "0e841c01151d20f40f3ad7281e85b3e42aff9ef9",
+    "authorization_recommendation_blob": "3e4af85e3c2bdedba5b314b79637cb947667a2eb"
+  },
+  "compatibility_outputs": {
+    "governance_audit_blob": "2635dadf61fbe5f5c6cf2b8f01a6c947a07385d3",
+    "scope_rate_limit_blob": "cc5f2dd8ccd85117aa082ec25f78f3e55bbba9ff",
+    "redaction_immutability_blob": "718e2da43fb1d944b23bbb8606a1eece140b15e4",
+    "acquisition_recommendation_blob": "5542da1ca7a940be921bfa541735ccb0e9274051"
+  },
+  "target_profile_count": 8,
+  "max_capture_per_profile": 1,
+  "total_max_capture_count": 8,
+  "capture_execution_authorized": false,
+  "authorization_request_ready": false,
+  "recommendation": "DO_NOT_REQUEST_ONE_SHOT_CAPTURE_AUTHORIZATION_YET",
+  "first_finding": "RESPONSE_SIZE_AND_TIMEOUT_UPPER_BOUNDS_AND_A3_A5_WAVE5_TRACE_PACKAGES_ARE_NOT_PUBLISHED",
+  "remote_readback": "PASS",
+  "implementation_file_direct_edit": false,
+  "self_approval": false,
+  "live_capture_execution_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

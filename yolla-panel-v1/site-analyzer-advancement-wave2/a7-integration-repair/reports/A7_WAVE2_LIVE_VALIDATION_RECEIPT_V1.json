@@ -1,0 +1,61 @@
+{
+  "schema_version": "A7_SITE_ANALYZER_WAVE2_LIVE_VALIDATION_RECEIPT_V1",
+  "generated_at": "2026-08-06T19:07:07.779Z",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "status": "PASS",
+  "execution_mode": "ACTUAL_HEADLESS_CHROMIUM_CDP_DOCUMENT_INJECTION_FALLBACK",
+  "recovered_environment_blocker": "net::ERR_BLOCKED_BY_ADMINISTRATOR",
+  "runtime": {
+    "chromium_path": "/usr/bin/chromium",
+    "node": "v22.16.0",
+    "platform": "linux"
+  },
+  "counts": {
+    "live_network_request_count": 1,
+    "live_network_response_body_count": 1,
+    "live_dom_snapshot_count": 1,
+    "live_navigation_count": 3,
+    "bridged_event_count": 35,
+    "unique_event_fingerprint_count": 35,
+    "recorded_action_count": 5,
+    "field_candidate_count": 7,
+    "endpoint_group_count": 1,
+    "extracted_record_count": 10,
+    "preview_record_count": 10
+  },
+  "decisions": {
+    "event_bridge_monotonic": true,
+    "event_bridge_duplicate_count": 0,
+    "selector_status": "UNIQUE",
+    "selector_resolve_status": "UNIQUE",
+    "page_type": "LIST",
+    "pagination": "PAGINATION_DETECTED",
+    "extraction_mode": "HYBRID",
+    "deterministic_replay": true,
+    "exact_ten_records": true,
+    "stale_ipc_replacement_supported": true,
+    "browser_reattach_cleanup_supported": true,
+    "false_live_pass": false
+  },
+  "adapter": {
+    "adapter_id": "common-test-site-adapter-v2",
+    "source_sha256": "3cfa6de8fb11bdfa7ab121c544fe6f2de3795c280f481a9905a1604b289d6449",
+    "recipe_sha256": "9a5b83fdab7c8d1e5dbafccbf7d15c73a8d518deb3ea10b0bae1c14afe2590cb"
+  },
+  "replay": {
+    "first_sha256": "d12a1f21526bda00fc4f45e309b6a773d13775573f512adbd7db22f900ba6fb0",
+    "second_sha256": "d12a1f21526bda00fc4f45e309b6a773d13775573f512adbd7db22f900ba6fb0",
+    "record_count": 10
+  },
+  "source_repair": {
+    "event_bridge": "PASS",
+    "ipc_rebinding": "PASS",
+    "selector_engine": "PASS",
+    "recipe_recorder": "PASS",
+    "single_launcher": "PASS",
+    "browser_reattach_cleanup": "PASS"
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

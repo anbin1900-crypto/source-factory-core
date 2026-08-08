@@ -1,0 +1,13 @@
+{
+  "schema_version":"INTERRUPTED_COMMAND_RECOVERY_DECISION_V1",
+  "decisions":["ALREADY_DONE","SAFE_TO_RESUME","NEEDS_REPAIR","BLOCKED"],
+  "rules":[
+    {"priority":1,"when":"latest_result.status == PASS AND latest_result.idempotency_key == active_command.idempotency_key","decision":"ALREADY_DONE","reason":"PASS_RESULT_ALREADY_BOUND"},
+    {"priority":2,"when":"active blocker exists AND blocker.repairable != true","decision":"BLOCKED","reason":"NONREPAIRABLE_ACTIVE_BLOCKER"},
+    {"priority":3,"when":"active command heartbeat is fresh","decision":"BLOCKED","reason":"COMMAND_STILL_ACTIVE"},
+    {"priority":4,"when":"interrupted AND partial_or_invalid_artifact_detected","decision":"NEEDS_REPAIR","reason":"PARTIAL_STATE_REPAIR_REQUIRED"},
+    {"priority":5,"when":"interrupted AND durable checkpoint matches command/idempotency","decision":"SAFE_TO_RESUME","reason":"DURABLE_CHECKPOINT_AVAILABLE"},
+    {"priority":6,"when":"interrupted AND no durable checkpoint AND command.safe_rerun == true AND non_idempotent_side_effect_committed != true","decision":"SAFE_TO_RESUME","reason":"SAFE_RERUN_FROM_START"},
+    {"priority":99,"when":"otherwise","decision":"BLOCKED","reason":"NO_SAFE_RECOVERY_RULE"}
+  ]
+}

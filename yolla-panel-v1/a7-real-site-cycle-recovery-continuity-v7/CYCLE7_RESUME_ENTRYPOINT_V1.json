@@ -1,0 +1,22 @@
+{
+  "schema_version":"CYCLE7_RESUME_ENTRYPOINT_V1",
+  "directive_id":"A0-TO-A7-REAL-SITE-CYCLE-RECOVERY-CONTINUITY-V7-20260808-001",
+  "cycle_id":"A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "state_path":"CYCLE7_RECOVERY_STATE_V1.json",
+  "late_bind_path":"CYCLE7_LATE_BIND_STATE_V1.json",
+  "entry_policy":"POINTER_ONLY_CONTEXT_INDEPENDENT_RESUME",
+  "read_order":["LATEST_A7_RECOVERY_POINTER","CYCLE7_RECOVERY_STATE_V1","CURRENT_COMMAND","CYCLE7_LATE_BIND_STATE_V1","LATEST_RESULT","NEXT_ACTION"],
+  "completed_steps_policy":"NEVER_REEXECUTE_COMPLETED_STEP",
+  "resume_algorithm":[
+    "READ_CURRENT_COMPLETED_STEPS_AND_IDEMPOTENCY_KEY",
+    "READ_ONLY_A3_B2_POINTERS_WHOSE_HEAD_OR_POINTER_CHANGED",
+    "IF_NEW_LIVE_RECEIPT_EXISTS_BIND_EXACT_RECEIPT_POINTER_ELSE_KEEP_PENDING",
+    "SET_NEWEST_CONFIRMED_CYCLE7_RESULT_AS_LATEST_RESULT",
+    "SKIP_ALL_COMPLETED_STEPS",
+    "RESUME_FIRST_INCOMPLETE_STEP"
+  ],
+  "current_resume_candidate":{"step":"LATE_BIND_FIRST_CYCLE7_A3_OR_B2_RESULT","status":"WAITING_INPUT","command_reissue":false},
+  "blocker_policy":"DO_NOT_PROMOTE_HISTORICAL_BLOCKER_TO_CYCLE7_WITHOUT_EXACT_CYCLE7_POINTER",
+  "live_receipt_policy":"NO_SYNTHETIC_RECEIPT; EXACT_POINTER_ONLY",
+  "audit_gate":false,"full_history_preload":false,"target_pc_execution":false,"live_site_call_by_a7":false,"production":false,"ready":false,"merge":false
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": "LATEST_A7_REPORT_POINTER_V6",
+  "pointer_type": "LATEST_A7_REPORT_POINTER",
+  "worker": "A-7",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "A7_D_INTEGRATION_READINESS_REVIEW",
+  "directive_comment_id": 5196017240,
+  "terminal_comment_id": 5196189584,
+  "mode": "ADVISORY_NON_BLOCKING",
+  "status": "TERMINAL_FINDINGS",
+  "terminal": "A7_D_INTEGRATION_READINESS_REVIEW_EXACT_FINDINGS",
+  "previous_pointer_blob": "806949a223115c26cdd6a264faf6e438003b5ed1",
+  "blocking_gate": false,
+  "artifacts": {
+    "audit": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_D_INTEGRATION_READINESS_AUDIT_V1.json",
+      "commit": "74ecbd8aaac397bc765eeac5a010a982b5eab549",
+      "blob": "2ab28e12f5e172227224f4691549b3f330194c24"
+    },
+    "final_report": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a7-acceptance-audit/A7_D_INTEGRATION_READINESS_FINAL_REPORT_V1.json",
+      "commit": "7631d3792be62eaa33e680b4761878ddfa7df800",
+      "blob": "a0921185cc6eb8b5386880b5b234fb4930f4db37"
+    }
+  },
+  "worker_states": {
+    "A-3": {
+      "head": "6a91c9ccedf96aa538fbbf34e4bf91553778297d",
+      "pointer_blob": "4e5424a1a9a097b13f53e08fdb3f58b535445d8f",
+      "expected_handoff": "A3_D_SOURCE_PROVENANCE_HANDOFF_V1.json",
+      "published": false
+    },
+    "A-4": {
+      "head": "032c609396db198db6bd14c96436f07bc429cae8",
+      "pointer_blob": "9ac48216663f3390214e5dca4cb7b030b64f0535",
+      "expected_handoff": "A4_D_LOCATOR_PAGINATION_HANDOFF_V1.json",
+      "published": false
+    },
+    "A-5": {
+      "head": "85bb7c7c6b07a0a58cdc74ea7d74a6de2ed81adb",
+      "pointer_blob": "d5ec690e342a699639d21a0da0c4139b4333337f",
+      "expected_handoff": "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF_V1.json",
+      "published": false
+    },
+    "A-6": {
+      "head": "a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793",
+      "pointer_blob": "30a7854ca46e7e6f477b1c17c5762e4651d53a82",
+      "expected_handoff": "A6_VERIFIED_ADAPTER_D_INTAKE_COMPATIBILITY_V1.json",
+      "published": false
+    }
+  },
+  "review": {
+    "worker_head_matches_observed_head": "PASS_4_OF_4",
+    "required_handoff_published": "FAIL_0_OF_4",
+    "existing_secret_pii_counter_finding_count": 0,
+    "new_external_request_evidence_count_after_directives": 0,
+    "source_id_authority_type_intrusion_observed_count": 0,
+    "finding_count": 4,
+    "integration_readiness": false
+  },
+  "next_event": "A3_A4_A5_A6_D_HANDOFF_TERMINALS_AND_LATEST_POINTERS_PUBLISHED",
+  "re_review_scope_after_event": "DELTA_ONLY_FOUR_HANDOFF_ARTIFACTS",
+  "implementation_edit": false,
+  "self_approval": false,
+  "remote_readback": "PASS",
+  "remote_readback_evidence": {
+    "pre_terminal_pointer_commit": "d1b1e91c8a2f19880297f96b6de3f4245cc135be",
+    "pre_terminal_pointer_blob": "d9523ec753858915162ee375739871fb0e991d60"
+  },
+  "updated_at_kst": "2026-08-06T04:15:00+09:00",
+  "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

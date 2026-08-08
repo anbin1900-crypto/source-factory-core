@@ -1,0 +1,10 @@
+{
+  "schema_version":"AI001_RECOVERY_LATE_BINDING_SOURCES_V1",
+  "policy":"READ_ON_DEMAND_ONLY",
+  "sources":{
+    "A-2":{"pr":18,"pointer_path":"yolla-panel-v1/a2-analyzer-adapter-factory/LATEST_A2_REPORT_POINTER.json"},
+    "A-6":{"pr":25,"pointer_path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/LATEST_A6_REPORT_POINTER.json"},
+    "B-1":{"pr":19,"pointer_path":"yolla-panel-v1/b1-collector-materialization/LATEST_B1_REPORT_POINTER.json"}
+  },
+  "full_pr_history_scan_default":false
+}

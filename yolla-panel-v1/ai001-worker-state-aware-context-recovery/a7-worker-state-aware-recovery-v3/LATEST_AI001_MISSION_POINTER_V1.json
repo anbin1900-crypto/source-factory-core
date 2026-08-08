@@ -1,0 +1,23 @@
+{
+  "schema_version":"LATEST_AI001_MISSION_POINTER_V1",
+  "mission_id":"AI001-WORKER-STATE-AWARE-CONTEXT-RECOVERY-V3",
+  "directive_id":"AI001-TO-A7-WORKER-STATE-AWARE-CONTEXT-RECOVERY-V3-20260807-001",
+  "directive_comment_id":5217753811,
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "status":"PASS",
+  "terminal":"A7_WORKER_STATE_AWARE_CONTEXT_RECOVERY_READY",
+  "current_mission_state":"state/CURRENT_MISSION_STATE.json",
+  "active_command":"state/ACTIVE_COMMAND.json",
+  "worker_state_events":"state/WORKER_EVENTS.json",
+  "latest_result":"state/LATEST_RESULT.json",
+  "checkpoint_directory":"checkpoints",
+  "checkpoint_contract":"APPEND_ONLY_CHECKPOINT_CONTRACT_V1.json",
+  "worker_event_contract":"WORKER_BROWSER_STATE_EVENT_V1.json",
+  "worker_event_adapter":"WORKER_BROWSER_STATE_EVENT_ADAPTER_V1.cjs",
+  "recovery_brief":"AI001_RECOVERY_BRIEF_V1.json",
+  "decision_contract":"INTERRUPTED_COMMAND_RECOVERY_DECISION_V1.json",
+  "late_binding":{"registry":"LATE_BINDING_SOURCES_V1.json","policy":"READ_ON_DEMAND_ONLY"},
+  "single_recovery_command":"node RECOVER_WORK_BOOTSTRAP_V1.cjs --pointer ./LATEST_AI001_MISSION_POINTER_V1.json",
+  "authority_head_semantics":"COMMIT_CONTAINING_THIS_POINTER",
+  "production":false,"ready":false,"merge":false
+}

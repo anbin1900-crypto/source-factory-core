@@ -1,0 +1,10 @@
+{
+  "schema_version":"AI001_RECOVERY_BRIEF_V1",
+  "goal":"Restore AI-001 work from durable mission and worker state without full chat history.",
+  "current_phase":"PREBUILD_CYCLE3_TERMINAL",
+  "last_pass":"AI001-WORKER-STATE-RECOVERY-V3-001",
+  "active_work":"AI001-WORKER-STATE-RECOVERY-V3-001",
+  "next_work":"WAIT_FOR_NEXT_AI001_COMMAND_OR_WORKER_EVENT",
+  "read_once_order":["LATEST_AI001_MISSION_POINTER_V1.json","state/CURRENT_MISSION_STATE.json","state/ACTIVE_COMMAND.json","state/WORKER_EVENTS.json","state/LATEST_RESULT.json","checkpoints/* max valid sequence","recovery decision"],
+  "full_history_scan_default":false
+}

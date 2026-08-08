@@ -1,0 +1,83 @@
+{
+  "schema_version": "A7_CYCLE1_INDEPENDENT_ACCEPTANCE_MATRIX_V1",
+  "task_id": "W2-A7-REPAIR-CYCLE1-INCOMPLETE-BASELINE",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "evaluated_at_kst": "2026-08-07T01:12:05+09:00",
+  "a2_a6_terminals_reviewed": "5_OF_5_BY_REMOTE_HEAD_AND_OR_COMMITTED_TERMINAL_ARTIFACT",
+  "workers": [
+    {
+      "worker": "A-2",
+      "pr": 18,
+      "remote_head": "e29431309a17fc6d3f2f1eb3b422f5ff93866658",
+      "terminal": "A2_C_MODE_CYCLE1_RUNTIME_AUTHORITY_READY",
+      "classification": "PASS",
+      "active_runtime": "5.10.2.3.7",
+      "candidate_runtime": "5.10.2.4.3_NOT_ACTIVE",
+      "false_live_pass_count": 0,
+      "finding_count": 0
+    },
+    {
+      "worker": "A-3",
+      "pr": 22,
+      "remote_head": "57012279520de80260bd857c9b6a9edd7aa51cba",
+      "terminal": "A3_C_MODE_CYCLE1_TARGET_PC_READBACK_EXACT_ACCESS_BLOCKER_PACKAGE_READY",
+      "classification": "PASS_PACKAGE_WITH_EXACT_EXTERNAL_BLOCKER",
+      "target_pc_live_execution": "NOT_EXECUTED",
+      "false_live_pass_count": 0,
+      "blocker": "TARGET_PC_ACCESS_UNAVAILABLE_FROM_CURRENT_EXECUTION_ENVIRONMENT"
+    },
+    {
+      "worker": "A-4",
+      "pr": 23,
+      "remote_head": "b54af2bb3272b613be5458a283e22e2eb5d90ade",
+      "terminal": "A4_C_MODE_CYCLE1_RESOURCE_BASELINE_READY_OR_EXACT_BLOCKER",
+      "classification": "HARNESS_READY_WITH_EXACT_EXTERNAL_BLOCKER",
+      "live_scenario_count": 0,
+      "live_metrics_present": false,
+      "false_live_pass_count": 0,
+      "blocker": "TARGET_WINDOWS_PC_EXECUTION_CHANNEL_UNAVAILABLE",
+      "publication_note": "COMMITTED_FINAL_REPORT_PRESENT; MATCHING_C_MODE_TERMINAL_PR_COMMENT_NOT_OBSERVED"
+    },
+    {
+      "worker": "A-5",
+      "pr": 24,
+      "remote_head": "9f83895589f48c765422624a3538d7d5e872fdc1",
+      "terminal": "A5_C_MODE_CYCLE1_STATIC_AUDIT_COMPLETE_A4_A6_HANDOFF_READY",
+      "classification": "STATIC_AUDIT_PASS_WITH_PUBLICATION_FINDINGS",
+      "live_measurement": false,
+      "false_live_pass_count": 0,
+      "findings": [
+        "ASSIGNED_OWNED_ROOT_AND_PUBLISHED_ROOT_DIFFER",
+        "ASSIGNED_DIRECTIVE_ID_AND_PUBLISHED_DIRECTIVE_ID_DIFFER",
+        "ACTIVE_RUNTIME_EXACT_SOURCE_BYTES_NOT_AVAILABLE_TO_A5"
+      ]
+    },
+    {
+      "worker": "A-6",
+      "pr": 25,
+      "remote_head": "84ea9b34a7c9445a77214288556ff3230442d81e",
+      "terminal": "A6_C_MODE_CYCLE1_LEAK_REPEAT_BASELINE_READY_OR_EXACT_BLOCKER",
+      "classification": "SELF_TEST_PASS_REAL_TARGET_PC_EXACT_EXTERNAL_BLOCKER",
+      "self_test": "PASS",
+      "real_adapter_execution": "NOT_EXECUTED",
+      "false_live_pass_count": 0,
+      "blocker": "TARGET_PC_EXECUTION_CHANNEL_AND_INSTALLED_RUNTIME_ADAPTER_UNAVAILABLE"
+    }
+  ],
+  "exact_head_path_blob_binding": {
+    "a3_harness": "PASS",
+    "a4_harness": "PASS",
+    "a6_harness": "PASS",
+    "a6_threshold_contract": "PASS"
+  },
+  "active_runtime_authority": "UNAMBIGUOUS_LAST_VERIFIED_5.10.2.3.7",
+  "candidate_runtime_authority": "5.10.2.4.3_NOT_ACTIVE_UNTIL_INSTALL_AND_LIVE_READBACK",
+  "target_pc_baseline_receipt": "INCOMPLETE_EXACT_EXTERNAL_BLOCKER",
+  "idle_resource_baseline": "INCOMPLETE_EXACT_EXTERNAL_BLOCKER",
+  "false_live_pass_count": 0,
+  "cycle2_entry_gate": "BLOCKED_PENDING_ONE_TARGET_PC_REPAIR_RUN",
+  "implementation_file_direct_edit": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

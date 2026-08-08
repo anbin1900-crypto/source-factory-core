@@ -1,0 +1,110 @@
+{
+  "schema_version": "A7_GENERIC_HTML_INTEGRITY_DELTA_REACCEPTANCE_V1",
+  "worker": "A-7",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_12-INTEGRITY-DELTA-REACCEPTANCE-V1-20260806-001",
+  "directive_id": "A2-TO-A7-GENERIC-HTML-INTEGRITY-DELTA-REACCEPTANCE-V2-20260806-001",
+  "directive_comment": 5195141948,
+  "mode": "EVENT_ONLY_DELTA_REACCEPTANCE",
+  "completed_at_kst": "2026-08-06T02:58:00+09:00",
+  "parent_terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_EXACT_FINDINGS",
+  "parent_a7_head": "79cfdcddafc72b7d80cd237c72a773086b19a136",
+  "parent_a7_pointer_blob": "ec17a4c97f6225e5e9e5fc4fdcdade74e606d1a6",
+  "delta_recheck_count": 2,
+  "full_reaudit": false,
+  "replay_rerun": false,
+  "mid_process_audit_count": 0,
+  "final_acceptance_count": 1,
+  "a6_correction_authority": {
+    "directive_comment": 5195137047,
+    "terminal_comment": 5195297489,
+    "final_head": "a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793",
+    "terminal": "A6_GENERIC_HTML_PACKAGE_INTEGRITY_CORRECTED_READY_FOR_A7_DELTA_REACCEPTANCE",
+    "pointer_blob": "30a7854ca46e7e6f477b1c17c5762e4651d53a82",
+    "handoff_path": "A6_TO_A7_FINAL_ACCEPTANCE_HANDOFF_V2.json",
+    "handoff_blob": "414832747d9f9fc840c53623858fcae5c1ad0eea",
+    "handoff_sha256_expected": "aca7500dcf4a958cb047f0950c353195f1a631d6450589c308b978f6c83ebb04",
+    "handoff_sha256_actual": "aca7500dcf4a958cb047f0950c353195f1a631d6450589c308b978f6c83ebb04",
+    "handoff_size_bytes": 2565,
+    "status": "PASS_EXACT_REMOTE_BYTE"
+  },
+  "delta_check_1_package_member_sha256_binding": {
+    "status": "PASS",
+    "package": {
+      "path": "VERIFIED_ADAPTER_PACKAGE_V1/package.json",
+      "blob": "d758afef96e76b664f6d8b0383c5a7bc017c731a",
+      "sha256_expected": "fad18a1e0571dfac26305d8bd3d845a639e225c51ff1a03dfe45c49d7d441854",
+      "sha256_actual": "fad18a1e0571dfac26305d8bd3d845a639e225c51ff1a03dfe45c49d7d441854",
+      "size_expected": 4238,
+      "size_actual": 4238,
+      "status": "PASS"
+    },
+    "members": {
+      "adapter.py": {"sha256": "558a9f10d6cb807c6f3f948f6abb80758cd0016bcd5cae8e7395c81aba916f26", "size_bytes": 3075, "status": "PASS_UNCHANGED_REMOTE_BYTE"},
+      "profile_route_bindings.json": {"sha256": "6333d3b11d52946e617a1c0885e209ff3c87cde94ac2a3bd4fce63b70c6fb0da", "size_bytes": 857, "status": "PASS_UNCHANGED_REMOTE_BYTE"},
+      "local_fixture.json": {"sha256": "658064d525b88a25dc4c7049ad0357161b8708f1b8c4359e5f994a5beb0171fb", "size_bytes": 977, "status": "PASS_UNCHANGED_REMOTE_BYTE"},
+      "local_fixture_output.json": {"sha256": "1aff69a94e54979af003f4a3949686b62b948c89914d5d7332490b94eafdc6cc", "size_bytes": 1092, "status": "PASS_UNCHANGED_REMOTE_BYTE"},
+      "test_generic_html_document_adapter_v1.py": {"sha256": "70d9b85c56f2c43151514080dd2b0f7919697110be8e7b15445d7e941a272857", "size_bytes": 824, "status": "PASS_UNCHANGED_REMOTE_BYTE"},
+      "A6_GENERIC_HTML_FINAL_INPUT_BINDING_V1.json": {"sha256": "a1ad6342ffeb8597b16a2261fad890aa1bf3588f5ca4a0dadd37e31a3cb0e039", "size_bytes": 1073, "status": "PASS_UNCHANGED_REMOTE_BYTE"}
+    },
+    "member_binding": "PASS_6_OF_6",
+    "build_receipt": {
+      "path": "ADAPTER_BUILD_RECEIPT_V1.json",
+      "blob": "64a21f86ed848c35f8f99c9160ae62325630ac3f",
+      "sha256_expected": "e31454a30f13049a89a65a9489ff717b9e75b66957f4f7aa97cfe740cb7f57a8",
+      "sha256_actual": "e31454a30f13049a89a65a9489ff717b9e75b66957f4f7aa97cfe740cb7f57a8",
+      "size_bytes": 2757,
+      "status": "PASS"
+    },
+    "replay_receipt": {
+      "path": "REPLAY_TEST_RECEIPT_V1.json",
+      "blob": "262dbdb3742daba28a5b1ca787b2b043fccd1955",
+      "sha256_expected": "a8c11e4eb59ea8a6003b466a4b3b6148eeaa1d834e020b824e2331385c27ecba",
+      "sha256_actual": "a8c11e4eb59ea8a6003b466a4b3b6148eeaa1d834e020b824e2331385c27ecba",
+      "size_bytes": 1941,
+      "status": "PASS"
+    },
+    "finding_resolution": "PASS_3_OF_3"
+  },
+  "delta_check_7_a6_owned_root_and_b1_consumable_handoff": {
+    "status": "PASS",
+    "compare_base": "6fab17d37c1db2feb955fd2c447b498088b99d4a",
+    "compare_head": "a4b1889ca907dbf9e0e3adae26e4cbdbebe5e793",
+    "changed_file_count": 6,
+    "a6_owned_root_file_count": 6,
+    "out_of_owned_root_change_count": 0,
+    "changed_files": [
+      "A6_PACKAGE_REMOTE_BYTE_INTEGRITY_CORRECTION_V1.json",
+      "A6_TO_A7_FINAL_ACCEPTANCE_HANDOFF_V2.json",
+      "ADAPTER_BUILD_RECEIPT_V1.json",
+      "LATEST_A6_REPORT_POINTER.json",
+      "REPLAY_TEST_RECEIPT_V1.json",
+      "VERIFIED_ADAPTER_PACKAGE_V1/package.json"
+    ],
+    "implementation_code_change_count": 0,
+    "fixture_semantic_change_count": 0,
+    "replay_rerun_count": 0,
+    "final_build_reexecution_count": 0,
+    "integrity_metadata_correction_count": 1,
+    "b1_consumable_handoff": true,
+    "b1_execution_ready": true,
+    "b1_reanalysis_required": false
+  },
+  "inherited_parent_pass_checks_not_reaudited": {
+    "exact_a5_a4_authority_binding": "PASS_INHERITED_UNCHANGED",
+    "generic_html_required_output_schema": "PASS_12_OF_12_INHERITED_UNCHANGED",
+    "replay_digest_equality": "PASS_2_OF_2_INHERITED_UNCHANGED",
+    "secret_cookie_token_pii_and_local_path": "PASS_INHERITED_UNCHANGED",
+    "automated_pagination_false_and_ep011_excluded": "PASS_INHERITED_UNCHANGED"
+  },
+  "findings": [],
+  "finding_count": 0,
+  "decision": "PASS",
+  "terminal": "A7_GENERIC_HTML_ADAPTER_FINAL_ACCEPTANCE_PASS",
+  "b1_execution_ready": true,
+  "implementation_file_direct_edit": false,
+  "self_approval": false,
+  "live_site_call_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,11 @@
+{
+  "name": "yolla-site-analyzer-a7-wave2-repair",
+  "version": "2.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test test/*.test.cjs",
+    "validate:live": "node scripts/run_wave2_live_validation.cjs reports/A7_WAVE2_LIVE_VALIDATION_RECEIPT_V1.json"
+  },
+  "engines": {"node": ">=20"}
+}

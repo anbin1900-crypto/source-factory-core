@@ -1,0 +1,11 @@
+{
+  "schema_version":"MULTIMODE_ANALYSIS_RECOVERY_STATE_V1",
+  "mission_id":"AI001-MULTIMODE-CONTEXT-RECOVERY-V4",
+  "mode_order":["DATA","PRODUCT","WRITE","MY_LISTING","EDIT"],
+  "stage_contract":{"DATA":["SOURCE_DISCOVERY","LIVE_OBSERVATION","STRUCTURE_INFERENCE"],"PRODUCT":["PRODUCT_DISCOVERY","BLUEPRINT","PREVIEW"],"WRITE":["ADAPTER_DRAFT","VALIDATE","COMMIT"],"MY_LISTING":["READ","MAP","VERIFY"],"EDIT":["LOAD","PATCH","VALIDATE"]},
+  "status_values":["PENDING","RUNNING","PARTIAL","COMPLETE","BLOCKED"],
+  "evidence_state_values":["OBSERVED","INFERRED","UNKNOWN"],
+  "completed_stage_reexecution":false,
+  "duplicate_execution_suppression":true,
+  "production":false,"ready":false,"merge":false
+}

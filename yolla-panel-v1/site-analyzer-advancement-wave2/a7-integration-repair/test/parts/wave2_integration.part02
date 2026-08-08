@@ -1,0 +1,52 @@
+ission', async () => {
+  class MockDebugger extends EventEmitter {
+    constructor() { super(); this.attached = true; }
+    isAttached() { return this.attached; }
+    attach() { this.attached = true; }
+    async sendCommand() { return {}; }
+  }
+  const core = new AnalyzerCore({ sessionKey: `reattach-${Date.now()}` });
+  const first = new MockDebugger();
+  await core.attachBrowser({ debugger: first });
+  const second = new MockDebugger();
+  await core.attachBrowser({ debugger: second });
+  assert.equal(first.listenerCount('message'), 0);
+  assert.equal(second.listenerCount('message'), 1);
+
+  const event = { schema_version: 'X', type: 'probe', action_id: null, payload: { id: 1 } };
+  const bridge = new EventBridge({ sessionKey: 'dedup' });
+  assert.ok(bridge.ingest(event));
+  assert.equal(bridge.ingest({ ...event, sequence: 999, captured_at: 'later' }), null);
+  assert.equal(bridge.snapshot().length, 1);
+  await core.detachBrowser();
+});
+
+test('single product launcher binds embedded and standalone surfaces to the same Core', async () => {
+  const handlers = new Map();
+  const ipcMain = { handle: (name, fn) => handlers.set(name, fn), removeHandler: name => handlers.delete(name) };
+  class FakeWindow extends EventEmitter {
+    constructor(options) { super(); this.options = options; this.loaded = null; this.visible = false; this.closed = false; }
+    loadFile(file) { this.loaded = file; }
+    show() { this.visible = true; }
+    close() { this.closed = true; }
+  }
+  const embedded = new EventEmitter();
+  embedded.sent = [];
+  embedded.send = (name, payload) => embedded.sent.push({ name, payload });
+  const product = await launchAnalyzerProduct({
+    sessionKey: 'single-launcher', ipcMain, BrowserWindow: FakeWindow,
+    embeddedWebContents: embedded, standaloneHtml: 'analyzer.html'
+  });
+  product.resources.standalone.emit('ready-to-show');
+  assert.equal(product.resources.standalone.loaded, 'analyzer.html');
+  assert.equal(product.resources.standalone.visible, true);
+  assert.equal(product.resources.standalone.__yollaAnalyzer.core, product.core);
+  assert.equal(product.product_tree.ipc, true);
+  assert.equal(product.product_tree.embedded_workspace, true);
+  assert.equal(product.product_tree.standalone_window, true);
+  product.core.emit('analyzer-event', { type: 'probe' });
+  assert.equal(embedded.sent.length, 1);
+  await product.dispose();
+  assert.equal(handlers.size, 0);
+  assert.equal(product.resources.standalone.closed, true);
+});
