@@ -1,0 +1,45 @@
+{
+  "schema_version": "B5_TEN_SITE_AI_BLUEPRINT_FINAL_REPORT_V1",
+  "cycle_id": "V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "directive_id": "V2-TO-B5-TEN-SITE-AI-BLUEPRINT-MATERIALIZATION-V1-20260808-001",
+  "directive_comment": 5224506049,
+  "worker": "B-5_AI_BLUEPRINT_ONTOLOGY_MATERIALIZER_SOURCE_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 41,
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "parent_head": "a5445ba97dad347e3bc7a7a4b9586ad3de4c3c98",
+  "content_head": "ba397f30adb1217242ecfe14ceb727c10ca383de",
+  "owned_root": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/ten-site-ai-blueprint-materialization-v8/",
+  "outputs": {
+    "B5_TEN_SITE_SOURCE_ONTOLOGY_V1": {"blob": "ca537333d144e94206acfd01fa6b3522d72f3866", "sha256": "4faa14ba301c9658de21ff881146f312e3392735ca8078374ba104d2fa7c59a0", "record_count": 11},
+    "B5_AI_REAL_ESTATE_PRODUCT_BLUEPRINT_V1": {"blob": "8fd75c27db543c09f81b3cba18f7d196345d1de7", "sha256": "187ca9e9153ef946de1f7fd13d26a86aec35f6629b75280545d8d94afc02080c", "record_count": 8},
+    "B5_LOSSLESS_SITE_EXTENSION_PACKAGE_V1": {"blob": "51787cb682235500ed10dc2a93a82f1e27511b6f", "sha256": "9c850577a28e79cbfe97ded34742a3ca7b9a6b0fcdbb80b2fa19a13e3d807e83", "record_count": 10},
+    "B5_MATERIALIZATION_VALIDATION_RECEIPT_V1": {"blob": "f55067e3fb70000dc6b3e146162fd8f2e5a8362d", "sha256": "f19f3a856d61c47e3679135593f5c1940966704d27b8a9a021f851cfc74b75b5"}
+  },
+  "validation": {
+    "compile_result": "PASS_2_OF_2",
+    "unit_test_result": "PASS_31_OF_31",
+    "site_slot_count": 10,
+    "product_blueprint_count": 8,
+    "source_field_loss_count": 0,
+    "prior_v6_v7_rewrite_count": 0,
+    "d_canonical_schema_decision_count": 0,
+    "raw_secret_or_pii_count": 0,
+    "final_write_or_edit_submit_count": 0,
+    "production_write_count": 0
+  },
+  "producer_slots": {
+    "A4": "WAITING_INPUT",
+    "A5": "WAITING_INPUT",
+    "B3": "WAITING_INPUT"
+  },
+  "execution_status": "WAITING_INPUT",
+  "live_pass_claimed": false,
+  "terminal": "B5_AI_BLUEPRINT_ONTOLOGY_MATERIALIZER_PASS",
+  "status": "SOURCE_REINFORCEMENT_PASS_LIVE_EVIDENCE_LATE_BIND_READY",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "completed_at_kst": "2026-08-08T13:38:59+09:00"
+}
