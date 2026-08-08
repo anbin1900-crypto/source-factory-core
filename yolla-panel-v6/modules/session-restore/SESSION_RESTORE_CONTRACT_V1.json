@@ -1,0 +1,96 @@
+{
+  "schema_version": "YOLLA_PANEL_V6_SESSION_RESTORE_CONTRACT_V1",
+  "module_id": "session-restore",
+  "owner": "YOLLA_PANEL_UI_OWNER",
+  "owned_root": "yolla-panel-v6/modules/session-restore/**",
+  "objective": "Restore the authenticated workspace session and the V6 panel/log-window UI session after restart without exporting credentials.",
+  "restore_surfaces": [
+    {
+      "surface_id": "WORKSPACE",
+      "required": true,
+      "persistence": [
+        "persist:yolla-v6-worker",
+        "persist:yolla-v6-analyzer",
+        "E:\\YOLLA\\panel-v6\\profile"
+      ],
+      "state": [
+        "selected_mode",
+        "selected_group_id",
+        "selected_role_id",
+        "selected_site_id",
+        "worker_url",
+        "analyzer_url",
+        "active_browser_kind"
+      ],
+      "secret_export_allowed": false
+    },
+    {
+      "surface_id": "PANEL",
+      "required": true,
+      "persistence": [
+        "main_window_open",
+        "bounds",
+        "maximized",
+        "full_screen",
+        "visible",
+        "last_active_at"
+      ],
+      "state_path": "E:\\YOLLA\\panel-v6\\state\\session\\V6_UI_SESSION_STATE.json"
+    },
+    {
+      "surface_id": "LOG_WINDOW",
+      "required": true,
+      "persistence": [
+        "log_window_open",
+        "bounds",
+        "maximized",
+        "visible",
+        "last_active_at"
+      ],
+      "state_path": "E:\\YOLLA\\panel-v6\\state\\session\\V6_UI_SESSION_STATE.json"
+    }
+  ],
+  "restore_order": [
+    "SET_V6_USER_DATA_BEFORE_APP_READY",
+    "LOAD_WORKSPACE_STATE",
+    "RESTORE_PANEL_WINDOW",
+    "RESTORE_ACTIVE_BROWSER_VIEW_AND_URL",
+    "RESTORE_LOG_WINDOW_IF_PREVIOUSLY_OPEN",
+    "WRITE_SESSION_RESTORE_RECEIPT"
+  ],
+  "failure_policy": {
+    "missing_state": "USE_SAFE_DEFAULT_AND_REPORT_PARTIAL",
+    "invalid_bounds": "CLAMP_TO_ACTIVE_DISPLAY",
+    "missing_profile": "FAIL_CLOSED_NO_FAKE_LOGIN_PASS",
+    "log_window_failure": "PANEL_CONTINUES_WITH_EXPLICIT_PARTIAL_STATUS",
+    "credentials_or_cookies_in_receipt": false
+  },
+  "required_receipt": {
+    "schema_version": "YOLLA_PANEL_V6_SESSION_RESTORE_RECEIPT_V1",
+    "fields": [
+      "workspace_session_restored",
+      "panel_window_restored",
+      "log_window_restored",
+      "selected_mode_restored",
+      "active_browser_kind_restored",
+      "profile_root",
+      "legacy_write_count",
+      "terminal",
+      "observed_at"
+    ],
+    "terminal_pass": "YOLLA_V6_WORKSPACE_PANEL_LOG_SESSION_RESTORE_PASS"
+  },
+  "acceptance": [
+    "Workspace reopens with the prior selected mode, role/site and browser URL.",
+    "Authenticated browser partitions remain reusable without cookie or token export.",
+    "Panel window restores valid bounds and maximized/full-screen state.",
+    "Log window reopens only when it was open before shutdown and restores valid bounds.",
+    "A partial restore is never reported as full PASS.",
+    "No V5 or Minimal state is modified."
+  ],
+  "implementation_status": "CONTRACT_READY_RUNTIME_BINDING_PENDING",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "observed_at": "2026-08-08T17:59:57+09:00"
+}
