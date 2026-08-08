@@ -1,0 +1,12 @@
+{
+  "schema_version":"B1_TEN_SITE_EVIDENCE_AGGREGATOR_FIXTURE_V1",
+  "fixture_only":true,
+  "receipts":[
+    {"site_slot":"SITE_SLOT_01","site_id":"FIXTURE_SITE_ALPHA","lane":"DATA","command_id":"CMD-FX-001","receipt_id":"R-001","attempt_count":1,"result":{"code":"TRANSIENT_FAIL"},"evidence":{"kind":"OBSERVED","pointer":"ptr://obs/data/a1"},"validation":{"exact":true,"pointer":"ptr://val/data/a1"},"status":"FAIL","source_pointer_lineage":["ptr://source/1"],"capabilities":["DATA"]},
+    {"site_slot":"SITE_SLOT_01","site_id":"FIXTURE_SITE_ALPHA","lane":"DATA","command_id":"CMD-FX-001","receipt_id":"R-002","attempt_count":2,"result":{"code":"OK"},"evidence":{"kind":"OBSERVED","pointer":"ptr://obs/data/a2"},"validation":{"exact":true,"pointer":"ptr://val/data/a2"},"status":"PASS","source_pointer_lineage":["ptr://source/2"],"capabilities":["DATA"]},
+    {"site_slot":"SITE_SLOT_01","site_id":"FIXTURE_SITE_ALPHA","lane":"DATA","command_id":"CMD-FX-001","receipt_id":"R-002","attempt_count":2,"result":{"code":"OK"},"evidence":{"kind":"OBSERVED","pointer":"ptr://obs/data/a2"},"validation":{"exact":true,"pointer":"ptr://val/data/a2"},"status":"PASS","source_pointer_lineage":["ptr://source/2"],"capabilities":["DATA"]},
+    {"site_slot":"SITE_SLOT_01","site_id":"FIXTURE_SITE_ALPHA","lane":"PRODUCT","command_id":"CMD-FX-002","receipt_id":"R-003","attempt_count":1,"result":{"code":"CANDIDATE"},"evidence":{"kind":"INFERRED","pointer":"ptr://inf/product"},"validation":{"exact":false,"pointer":null},"status":"PARTIAL","source_pointer_lineage":["ptr://source/3"],"capabilities":["PRODUCT"]},
+    {"site_slot":"SITE_SLOT_02","site_id":"FIXTURE_SITE_BETA","lane":"WRITE","command_id":"CMD-FX-003","receipt_id":"R-004","attempt_count":1,"result":{"code":"FORM_SPEC"},"evidence":{"kind":"FIXTURE","pointer":"ptr://fixture/write"},"validation":{"exact":true,"pointer":"ptr://val/write"},"status":"PASS","source_pointer_lineage":["ptr://source/4"],"capabilities":["WRITE"]},
+    {"site_slot":"SITE_SLOT_02","site_id":"FIXTURE_SITE_BETA","lane":"MY_LISTING","command_id":"CMD-FX-004","receipt_id":"R-005","attempt_count":1,"result":{"code":"WAIT"},"evidence":{"kind":"WAITING_INPUT","pointer":null},"validation":{"exact":false,"pointer":null},"status":"WAITING_INPUT","source_pointer_lineage":[],"capabilities":["MY_LISTING"]}
+  ]
+}

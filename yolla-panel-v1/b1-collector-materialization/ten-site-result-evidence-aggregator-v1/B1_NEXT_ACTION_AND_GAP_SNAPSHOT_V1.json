@@ -1,0 +1,24 @@
+{
+  "schema_version":"B1_NEXT_ACTION_AND_GAP_SNAPSHOT_V1",
+  "cycle_id":"V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "source_matrix":"B1_TEN_SITE_LANE_RESULT_MATRIX_V1.json",
+  "actual_receipt_count":0,
+  "actual_materialized_cell_count":0,
+  "technical_pass_cell_count":0,
+  "gap_count":50,
+  "site_authority_binding":{"bound_site_count":0,"unbound_site_slot_count":10,"target_value_guessing":false},
+  "unmet_capabilities":{
+    "SITE_SLOT_01":["DATA","PRODUCT","WRITE","MY_LISTING","EDIT"],
+    "SITE_SLOT_02":["DATA","PRODUCT","WRITE","MY_LISTING","EDIT"],
+    "SITE_SLOT_03":["DATA","PRODUCT","WRITE","MY_LISTING","EDIT"],
+    "SITE_SLOT_04":["DATA","PRODUCT","WRITE","MY_LISTING","EDIT"],
+    "SITE_SLOT_05":["DATA","PRODUCT","WRITE","MY_LISTING","EDIT"],
+    "SITE_SLOT_06":["DATA","PRODUCT","WRITE","MY_LISTING","EDIT"],
+    "SITE_SLOT_07":["DATA","PRODUCT","WRITE","MY_LISTING","EDIT"],
+    "SITE_SLOT_08":["DATA","PRODUCT","WRITE","MY_LISTING","EDIT"],
+    "SITE_SLOT_09":["DATA","PRODUCT","WRITE","MY_LISTING","EDIT"],
+    "SITE_SLOT_10":["DATA","PRODUCT","WRITE","MY_LISTING","EDIT"]
+  },
+  "next_execution_target":{"action":"INJECT_SITE_AUTHORITY","site_slot":"SITE_SLOT_01","required_fields":["site_id"],"site_name":"UNKNOWN_NOT_GUESSED","site_url":"UNKNOWN_NOT_GUESSED","then_lane":"DATA"},
+  "delta_update_policy":{"replace_only_matching_sparse_cell":true,"preserve_pointer_lineage":true,"do_not_rewrite_previous_cycle_outputs":true}
+}
