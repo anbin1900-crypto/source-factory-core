@@ -1,0 +1,104 @@
+{
+  "schema_version": "SUCCESSOR_COMMAND_ENVELOPE_V1",
+  "directive_id": "A0-TO-B6-REAL-SITE-ONE-COMMAND-EXECUTION-HANDOFF-V7-20260808-001",
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "command_id": "A2-B6-CYCLE7-REAL-SITE-E2E-001",
+  "request_id": "A2-CYCLE7-REAL-SITE-E2E-SUCCESSOR-REQUEST-001",
+  "dispatch_target": "SUCCESSOR_EXISTING_PC_OPERATION_COMMAND_BUS",
+  "dispatch_hook_selection": "SUCCESSOR_RESOLVES_EXISTING_SEND_TO_COMMANDER_OR_WORKER_HOOK",
+  "payload": {
+    "operation": "REAL_SITE_E2E_ANALYZE",
+    "target_url": null,
+    "site_id": null,
+    "scenario_set": "REPRESENTATIVE",
+    "analysis_modes": [
+      "DATA",
+      "PRODUCT",
+      "WRITE",
+      "MY_LISTING",
+      "EDIT"
+    ],
+    "mission_pointer": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 18,
+      "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+      "commit": "16dd210aab321aebec94ff8e1578c20b74b122f2",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/real-site-e2e-live-binding-v1/LATEST_A2_REAL_SITE_E2E_MISSION_POINTER.json",
+      "blob": "b0a75d31712ee36832c5e00d3274875e2ce740a8",
+      "terminal": "A2_REAL_SITE_E2E_LIVE_BINDING_ORCHESTRATOR_READY"
+    },
+    "bundle_pointer": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 42,
+      "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+      "commit": "181fc049193a15cc6a9a3d6623f1e8bb0a1930af",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/cycle7-real-site-e2e-one-command-bundle-v1/LATEST_B6_CYCLE7_REAL_SITE_E2E_BUNDLE_POINTER.json",
+      "blob": "3da83d6d3d0e8b3553cf4c06c4242c00461c03af",
+      "terminal": "B6_CYCLE7_REAL_SITE_E2E_BUNDLE_READY"
+    },
+    "expected_chrome_page_binding": {
+      "browser_engine": "EXISTING_AUTHENTICATED_USER_CHROME_ONLY",
+      "browser_agent": "EXISTING_BROWSER_AGENT_RESOLVED_BY_SUCCESSOR",
+      "page_match": [
+        "AUTHORIZED_USER_SESSION_REFERENCE",
+        "TARGET_URL_OR_SITE_ID",
+        "ACTIVE_PAGE_READBACK"
+      ],
+      "cdp_policy": "REUSE_EXISTING_IF_REACHABLE_OTHERWISE_EXISTING_UIA_FALLBACK",
+      "page_binding_receipt_required": true,
+      "new_browser_engine": false,
+      "new_profile": false,
+      "new_tunnel": false,
+      "new_executor": false
+    },
+    "late_bind_slots": {
+      "A3_LIVE_OBSERVATION_RECEIPT": {
+        "state": "WAITING_INPUT",
+        "scope": "LANE_SCOPED_NONBLOCKING",
+        "inference_forbidden": true
+      },
+      "B2_RUNTIME_SCOPE_RECEIPT": {
+        "state": "WAITING_INPUT",
+        "scope": "LANE_SCOPED_NONBLOCKING",
+        "inference_forbidden": true
+      }
+    },
+    "ordered_step_ids": [
+      "RS-001",
+      "RS-002",
+      "RS-003",
+      "RS-004",
+      "RS-005",
+      "RS-006",
+      "RS-007",
+      "RS-008"
+    ]
+  },
+  "activation_condition": {
+    "required": [
+      "target_pc_working_root",
+      "chrome_executable_or_existing_browser_agent",
+      "target_url",
+      "authorized_user_session_reference"
+    ],
+    "optional": [
+      "cdp_endpoint",
+      "A3_LIVE_OBSERVATION_RECEIPT",
+      "B2_RUNTIME_SCOPE_RECEIPT"
+    ],
+    "current_state": "WAITING_REQUIRED_RUNTIME_INPUT"
+  },
+  "idempotency_key_components": [
+    "cycle_id",
+    "command_id",
+    "site_id",
+    "scenario_set",
+    "analysis_modes",
+    "mission_pointer.blob",
+    "bundle_pointer.blob"
+  ],
+  "receipt_contract": "REAL_SITE_RESULT_RETURN_CONTRACT_V1.json",
+  "rollback_resume_plan": "ROLLBACK_RESUME_PLAN_V1.json",
+  "status": "COMMAND_ENVELOPE_READY_NOT_DISPATCHED",
+  "live_pass_claimed": false
+}

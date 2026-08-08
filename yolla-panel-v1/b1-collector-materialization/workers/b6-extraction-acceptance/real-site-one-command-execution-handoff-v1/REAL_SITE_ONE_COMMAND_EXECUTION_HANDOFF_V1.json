@@ -1,0 +1,164 @@
+{
+  "schema_version": "REAL_SITE_ONE_COMMAND_EXECUTION_HANDOFF_V1",
+  "directive_id": "A0-TO-B6-REAL-SITE-ONE-COMMAND-EXECUTION-HANDOFF-V7-20260808-001",
+  "followup_id": "A0-TO-B6-CYCLE7B-EXECUTION-HANDOFF-RESUME-20260808-001",
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "wave_id": "A0-AB-REAL-SITE-LIVE-RECEIPT-CLOSURE-WAVE7B-20260808-001",
+  "role": "B-6_REAL_SITE_ONE_COMMAND_EXECUTION_HANDOFF_OWNER",
+  "command_id": "A2-B6-CYCLE7-REAL-SITE-E2E-001",
+  "request_id": "A2-CYCLE7-REAL-SITE-E2E-SUCCESSOR-REQUEST-001",
+  "authority": {
+    "b6_cycle7_bundle": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 42,
+      "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+      "commit": "181fc049193a15cc6a9a3d6623f1e8bb0a1930af",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/cycle7-real-site-e2e-one-command-bundle-v1/LATEST_B6_CYCLE7_REAL_SITE_E2E_BUNDLE_POINTER.json",
+      "blob": "3da83d6d3d0e8b3553cf4c06c4242c00461c03af",
+      "terminal": "B6_CYCLE7_REAL_SITE_E2E_BUNDLE_READY"
+    },
+    "a2_cycle7_mission": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 18,
+      "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+      "commit": "16dd210aab321aebec94ff8e1578c20b74b122f2",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/real-site-e2e-live-binding-v1/LATEST_A2_REAL_SITE_E2E_MISSION_POINTER.json",
+      "blob": "b0a75d31712ee36832c5e00d3274875e2ce740a8",
+      "terminal": "A2_REAL_SITE_E2E_LIVE_BINDING_ORCHESTRATOR_READY"
+    },
+    "existing_pc_operation_bus": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 73,
+      "commit": "e1d0353c3f993793787cb228efc3abef69957ad4",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/LATEST_C_MODE_EXISTING_RUNTIME_BUTTON_POINTER.json",
+      "blob": "8aa49d263c3f0d5addf5659ab7d327c2f18beab4",
+      "dispatch_hooks": [
+        "sendToCommander(groupId,message,metadata)",
+        "sendToWorker(groupId,workerId,message,metadata)"
+      ]
+    }
+  },
+  "target": {
+    "site_id": {
+      "value": null,
+      "state": "WAITING_RUNTIME_INPUT",
+      "source_rule": "BIND_EXACT_VALUE_FROM_A2_MISSION_OR_SUCCESSOR_RUNTIME_ONLY"
+    },
+    "target_url": {
+      "value": null,
+      "state": "WAITING_RUNTIME_INPUT",
+      "source_observation": "A2_SUCCESSOR_EXECUTION_REQUEST_V1.site_url=PLACEHOLDER",
+      "guessing_forbidden": true
+    },
+    "scenario_set": {
+      "value": "REPRESENTATIVE",
+      "state": "BOUND_FROM_B6_CYCLE7_BUNDLE"
+    },
+    "analysis_modes": {
+      "value": [
+        "DATA",
+        "PRODUCT",
+        "WRITE",
+        "MY_LISTING",
+        "EDIT"
+      ],
+      "state": "BOUND_FROM_A2_CYCLE7_MISSION"
+    }
+  },
+  "expected_chrome_page_binding": {
+    "browser_engine": "EXISTING_AUTHENTICATED_USER_CHROME_ONLY",
+    "browser_agent": "EXISTING_BROWSER_AGENT_RESOLVED_BY_SUCCESSOR",
+    "page_match": [
+      "AUTHORIZED_USER_SESSION_REFERENCE",
+      "TARGET_URL_OR_SITE_ID",
+      "ACTIVE_PAGE_READBACK"
+    ],
+    "cdp_policy": "REUSE_EXISTING_IF_REACHABLE_OTHERWISE_EXISTING_UIA_FALLBACK",
+    "page_binding_receipt_required": true,
+    "new_browser_engine": false,
+    "new_profile": false,
+    "new_tunnel": false,
+    "new_executor": false
+  },
+  "late_bind_slots": {
+    "A3_LIVE_OBSERVATION_RECEIPT": {
+      "state": "WAITING_INPUT",
+      "scope": "LANE_SCOPED_NONBLOCKING",
+      "inference_forbidden": true
+    },
+    "B2_RUNTIME_SCOPE_RECEIPT": {
+      "state": "WAITING_INPUT",
+      "scope": "LANE_SCOPED_NONBLOCKING",
+      "inference_forbidden": true
+    }
+  },
+  "ordered_steps": [
+    {
+      "order": 1,
+      "step_id": "RS-001",
+      "action": "READ_CYCLE6_POINTER",
+      "state": "READY"
+    },
+    {
+      "order": 2,
+      "step_id": "RS-002",
+      "action": "VERIFY_EXISTING_PC_OPERATION_PATH",
+      "state": "READY"
+    },
+    {
+      "order": 3,
+      "step_id": "RS-003",
+      "action": "RESOLVE_TARGET_PC_RUNTIME_INPUTS",
+      "state": "WAITING_RUNTIME_INPUT"
+    },
+    {
+      "order": 4,
+      "step_id": "RS-004",
+      "action": "BIND_LATE_INPUTS_IF_AVAILABLE",
+      "state": "READY_NONBLOCKING"
+    },
+    {
+      "order": 5,
+      "step_id": "RS-005",
+      "action": "DISPATCH_ENABLED_LANES",
+      "state": "ACTIVATE_AFTER_RS003"
+    },
+    {
+      "order": 6,
+      "step_id": "RS-006",
+      "action": "COLLECT_LIVE_RESULT_ENVELOPES",
+      "state": "ACTIVATE_AFTER_DISPATCH"
+    },
+    {
+      "order": 7,
+      "step_id": "RS-007",
+      "action": "RESUME_FAILED_OR_WAITING_LANES_ONLY",
+      "state": "ACTIVATE_ON_PARTIAL_FAILURE"
+    },
+    {
+      "order": 8,
+      "step_id": "RS-008",
+      "action": "EMIT_REAL_SITE_E2E_RECEIPT",
+      "state": "ACTIVATE_AFTER_RESULTS"
+    }
+  ],
+  "lane_policy": {
+    "lanes": [
+      "DATA",
+      "PRODUCT",
+      "WRITE",
+      "MY_LISTING",
+      "EDIT"
+    ],
+    "parallel_eligible": true,
+    "missing_late_bind_is_lane_scoped": true,
+    "write_final_submit": "USER_CONFIRM_REQUIRED",
+    "edit_final_submit": "USER_CONFIRM_REQUIRED"
+  },
+  "dispatch_state": "HANDOFF_READY_EXECUTION_PENDING_RUNTIME_INPUT",
+  "live_execution_receipt_count": 0,
+  "live_pass_claimed": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

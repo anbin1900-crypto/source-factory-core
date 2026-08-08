@@ -1,0 +1,84 @@
+{
+  "schema_version": "REAL_SITE_RESULT_RETURN_CONTRACT_V1",
+  "directive_id": "A0-TO-B6-REAL-SITE-ONE-COMMAND-EXECUTION-HANDOFF-V7-20260808-001",
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "command_id": "A2-B6-CYCLE7-REAL-SITE-E2E-001",
+  "request_id": "A2-CYCLE7-REAL-SITE-E2E-SUCCESSOR-REQUEST-001",
+  "per_lane_required_fields": [
+    "schema_version",
+    "request_id",
+    "command_id",
+    "lane",
+    "execution_state",
+    "technical_result",
+    "input_pointer",
+    "output_pointer",
+    "observed_at"
+  ],
+  "lanes": [
+    "DATA",
+    "PRODUCT",
+    "WRITE",
+    "MY_LISTING",
+    "EDIT"
+  ],
+  "execution_states": [
+    "DISPATCHED",
+    "RUNNING",
+    "WAITING_INPUT",
+    "COMPLETE",
+    "ERROR"
+  ],
+  "technical_results": [
+    "NOT_EVALUATED",
+    "PASS",
+    "FAIL",
+    "BLOCKED"
+  ],
+  "pass_rules": [
+    "execution_state=COMPLETE",
+    "technical_result=PASS",
+    "live_execution=true",
+    "receipt_pointer!=null",
+    "command_id_exact_match",
+    "request_id_exact_match"
+  ],
+  "aggregate_receipt": {
+    "schema_version": "CYCLE7_LIVE_RECEIPT_BINDING_V1",
+    "required": [
+      "command_id",
+      "request_id",
+      "site_id",
+      "target_url",
+      "page_binding_receipt",
+      "lane_results",
+      "started_at",
+      "completed_at",
+      "artifact_pointer"
+    ],
+    "allow_partial": true,
+    "missing_lane_state": "WAITING_INPUT_OR_NOT_DISPATCHED"
+  },
+  "return_binding": {
+    "consumer": "A2_CYCLE7_LIVE_RECEIPT_CLOSURE_ORCHESTRATOR",
+    "mission_pointer": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 18,
+      "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+      "commit": "16dd210aab321aebec94ff8e1578c20b74b122f2",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/real-site-e2e-live-binding-v1/LATEST_A2_REAL_SITE_E2E_MISSION_POINTER.json",
+      "blob": "b0a75d31712ee36832c5e00d3274875e2ce740a8",
+      "terminal": "A2_REAL_SITE_E2E_LIVE_BINDING_ORCHESTRATOR_READY"
+    },
+    "append_only": true,
+    "exact_pointer_required": true
+  },
+  "fail_closed": {
+    "complete_ne_pass": true,
+    "pass_without_actual_receipt": "REJECTED",
+    "screen_state_without_result_pointer": "ATTEMPT_ONLY",
+    "missing_runtime_input": "EXECUTION_PENDING_NOT_BLOCKED_HANDOFF"
+  },
+  "current_receipt_count": 0,
+  "current_state": "WAITING_ACTUAL_EXECUTION_RECEIPT"
+}
