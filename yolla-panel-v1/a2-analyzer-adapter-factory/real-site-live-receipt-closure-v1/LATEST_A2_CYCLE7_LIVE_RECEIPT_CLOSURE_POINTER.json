@@ -1,0 +1,75 @@
+{
+  "schema_version": "LATEST_A2_CYCLE7_LIVE_RECEIPT_CLOSURE_POINTER_V1",
+  "followup_id": "A0-TO-A2-CYCLE7B-LIVE-RECEIPT-CLOSURE-20260808-001",
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "wave_id": "A0-AB-REAL-SITE-LIVE-RECEIPT-CLOSURE-WAVE7B-20260808-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 18,
+  "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+  "baseline_head": "16dd210aab321aebec94ff8e1578c20b74b122f2",
+  "root": "yolla-panel-v1/a2-analyzer-adapter-factory/real-site-live-receipt-closure-v1",
+  "exact_inputs": {
+    "a2_mission_pointer": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 18,
+      "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+      "commit": "16dd210aab321aebec94ff8e1578c20b74b122f2",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/real-site-e2e-live-binding-v1/LATEST_A2_REAL_SITE_E2E_MISSION_POINTER.json",
+      "blob": "b0a75d31712ee36832c5e00d3274875e2ce740a8"
+    },
+    "b6_handoff_pointer": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 42,
+      "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+      "commit": "dde3ff79eafeede994e672c21648155b998c9a1a",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/real-site-one-command-execution-handoff-v1/LATEST_B6_REAL_SITE_ONE_COMMAND_EXECUTION_HANDOFF_POINTER.json",
+      "blob": "8e523ca375cc726e7d6f27e35f30553ab87df555",
+      "terminal_comment": 5224337124,
+      "terminal": "B6_REAL_SITE_ONE_COMMAND_EXECUTION_HANDOFF_READY"
+    }
+  },
+  "objects": {
+    "actual_request": {
+      "path": "CYCLE7_ACTUAL_EXECUTION_REQUEST_V1.json",
+      "blob": "6e89cb4e73d7341950b6c44e6fa3a2b8cb3cbebe"
+    },
+    "receipt_binding": {
+      "path": "CYCLE7_LIVE_RECEIPT_BINDING_V1.json",
+      "blob": "1e2961af0f2ef436d2b6524e960f5adf69403747"
+    },
+    "lane_pointers": {
+      "path": "CYCLE7_LANE_RESULT_POINTERS_V1.json",
+      "blob": "5df48fbb12ad305f59677c422b9a4b695c0e80fd"
+    },
+    "final_report": {
+      "path": "A2_CYCLE7_LIVE_RECEIPT_CLOSURE_FINAL_REPORT_V1.json",
+      "blob": "1a7600c0b664fc9852a370c2a8d0f78689ae5507"
+    }
+  },
+  "command_id": "A2-B6-CYCLE7-REAL-SITE-E2E-001",
+  "request_id": "A2-CYCLE7-REAL-SITE-E2E-SUCCESSOR-REQUEST-001",
+  "b6_internal_blocker_resolved": true,
+  "blocker": {
+    "id": "A2-CYCLE7-EXACT-TARGET-RUNTIME-BINDING-MISSING",
+    "class": "EXTERNAL_RUNTIME_INPUT",
+    "required_values": [
+      "target_pc_working_root",
+      "chrome_executable_or_existing_browser_agent_exact_binding",
+      "target_url",
+      "site_id",
+      "authorized_user_session_reference",
+      "target_page_binding"
+    ],
+    "owner_outside_ab": "SUCCESSOR_TARGET_PC_RUNTIME_INPUT_AUTHORITY",
+    "retry_entry": "CONSUME_SAME_B6_POINTER_BIND_REQUIRED_VALUES_RESUME_RS003"
+  },
+  "actual_execution_receipt_count": 0,
+  "live_pass_claimed": false,
+  "terminal": "A2_CYCLE7_LIVE_RECEIPT_CLOSURE_EXACT_BLOCKER",
+  "status": "TERMINAL_EXACT_EXTERNAL_BLOCKER_AFTER_AB_HANDOFF_REPAIR",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "CYCLE7_LANE_RESULT_POINTERS_V1",
+  "followup_id": "A0-TO-A2-CYCLE7B-LIVE-RECEIPT-CLOSURE-20260808-001",
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "command_id": "A2-B6-CYCLE7-REAL-SITE-E2E-001",
+  "lanes": {
+    "DATA": {
+      "dispatch_state": "WAITING_RUNTIME_INPUT",
+      "result_pointer": null,
+      "live_pass": false,
+      "late_bind": [
+        "A3_LIVE_OBSERVATION_RECEIPT",
+        "B2_RUNTIME_SCOPE_RECEIPT"
+      ]
+    },
+    "PRODUCT": {
+      "dispatch_state": "WAITING_RUNTIME_INPUT",
+      "result_pointer": null,
+      "live_pass": false,
+      "late_bind": [
+        "A3_LIVE_OBSERVATION_RECEIPT"
+      ]
+    },
+    "WRITE": {
+      "dispatch_state": "WAITING_RUNTIME_INPUT",
+      "result_pointer": null,
+      "live_pass": false,
+      "late_bind": [
+        "A3_LIVE_OBSERVATION_RECEIPT"
+      ],
+      "final_submit": "USER_CONFIRM_REQUIRED"
+    },
+    "MY_LISTING": {
+      "dispatch_state": "WAITING_RUNTIME_INPUT",
+      "result_pointer": null,
+      "live_pass": false,
+      "late_bind": [
+        "A3_LIVE_OBSERVATION_RECEIPT",
+        "B2_RUNTIME_SCOPE_RECEIPT"
+      ]
+    },
+    "EDIT": {
+      "dispatch_state": "WAITING_RUNTIME_INPUT",
+      "result_pointer": null,
+      "live_pass": false,
+      "late_bind": [
+        "A3_LIVE_OBSERVATION_RECEIPT"
+      ],
+      "final_submit": "USER_CONFIRM_REQUIRED"
+    }
+  },
+  "aggregate_state": "WAITING_EXACT_TARGET_RUNTIME_BINDING",
+  "actual_result_pointer_count": 0,
+  "live_pass_count": 0
+}
