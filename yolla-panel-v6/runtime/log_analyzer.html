@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self';">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI YOLLA 로그 분석기</title>
+  <link rel="stylesheet" href="./log_analyzer.css">
+</head>
+<body>
+  <header class="top">
+    <div><p class="eyebrow">C MODE OBSERVABILITY</p><h1>로그 분석기</h1><small>C 모드 충돌·오류·미보고·전송 실패를 관찰합니다.</small></div>
+    <div class="actions"><button id="refresh">지금 분석</button><button id="export" class="primary">진단 ZIP 저장</button></div>
+  </header>
+  <section class="summary">
+    <article><span>오류</span><strong id="errors">0</strong></article>
+    <article><span>경고</span><strong id="warnings">0</strong></article>
+    <article><span>충돌 신호</span><strong id="signals">0</strong></article>
+    <article><span>작업완료</span><strong id="completed">0</strong></article>
+  </section>
+  <section class="runtime">
+    <div><span>C 상태</span><strong id="c-status">-</strong></div>
+    <div><span>Wave</span><strong id="wave">0</strong></div>
+    <div><span>미보고</span><strong id="missing">0</strong></div>
+    <div><span>중복 전송</span><strong id="duplicates">0</strong></div>
+    <div><span>워커</span><strong id="workers">0</strong></div>
+    <div><span>마지막 분석</span><strong id="observed">-</strong></div>
+  </section>
+  <section class="toolbar">
+    <label><input id="errors-only" type="checkbox"> 오류·경고만</label>
+    <label><input id="autoscroll" type="checkbox" checked> 자동 스크롤</label>
+    <button id="open-folder">로그 폴더</button>
+    <span id="export-result"></span>
+  </section>
+  <section class="issues"><h2>최근 충돌·오류 판단</h2><div id="issues"></div></section>
+  <main id="log" aria-live="polite"></main>
+  <script src="./log_analyzer.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+{
+  "schema_version": "YOLLA_PANEL_V6_SESSION_RESTORE_CONTRACT_V1",
+  "module_id": "session-restore",
+  "owner": "YOLLA_PANEL_UI_OWNER",
+  "owned_root": "yolla-panel-v6/modules/session-restore/**",
+  "objective": "Restore Google and GPT/ChatGPT login sessions by reusing V6-only Electron persistent storage, and separately restore Workspace, Panel and Log Window UI state after restart without exporting credentials.",
+  "authentication_sessions": [
+    {
+      "session_id": "GPT_CHATGPT_LOGIN",
+      "surface": "WORKSPACE_WORKER_BROWSER",
+      "partition": "persist:yolla-v6-worker",
+      "profile_root": "E:\\YOLLA\\panel-v6\\profile",
+      "expected_origins": [
+        "https://chatgpt.com",
+        "https://auth.openai.com"
+      ],
+      "restore_method": "REUSE_ELECTRON_PERSISTENT_PARTITION",
+      "live_pass_condition": "CHATGPT_AUTHENTICATED_SURFACE_VISIBLE_AFTER_FULL_RUNTIME_RESTART",
+      "credential_export_allowed": false
+    },
+    {
+      "session_id": "GOOGLE_LOGIN",
+      "surface": "WORKSPACE_ANALYZER_BROWSER",
+      "partition": "persist:yolla-v6-analyzer",
+      "profile_root": "E:\\YOLLA\\panel-v6\\profile",
+      "expected_origins": [
+        "https://accounts.google.com",
+        "https://www.google.com"
+      ],
+      "restore_method": "REUSE_ELECTRON_PERSISTENT_PARTITION",
+      "live_pass_condition": "GOOGLE_AUTHENTICATED_SURFACE_VISIBLE_AFTER_FULL_RUNTIME_RESTART",
+      "credential_export_allowed": false
+    }
+  ],
+  "restore_surfaces": [
+    {
+      "surface_id": "WORKSPACE",
+      "required": true,
+      "persistence": [
+        "persist:yolla-v6-worker",
+        "persist:yolla-v6-analyzer",
+        "E:\\YOLLA\\panel-v6\\profile"
+      ],
+      "state": [
+        "selected_mode",
+        "selected_group_id",
+        "selected_role_id",
+        "selected_site_id",
+        "worker_url",
+        "analyzer_url",
+        "active_browser_kind"
+      ],
+      "secret_export_allowed": false
+    },
+    {
+      "surface_id": "PANEL",
+      "required": true,
+      "persistence": [
+        "main_window_open",
+        "bounds",
+        "maximized",
+        "full_screen",
+        "visible",
+        "last_active_at"
+      ],
+      "state_path": "E:\\YOLLA\\panel-v6\\state\\session\\V6_UI_SESSION_STATE.json"
+    },
+    {
+      "surface_id": "LOG_WINDOW",
+      "required": true,
+      "persistence": [
+        "log_window_open",
+        "bounds",
+        "maximized",
+        "visible",
+        "last_active_at"
+      ],
+      "state_path": "E:\\YOLLA\\panel-v6\\state\\session\\V6_UI_SESSION_STATE.json"
+    }
+  ],
+  "restore_order": [
+    "SET_V6_USER_DATA_BEFORE_APP_READY",
+    "BIND_GPT_CHATGPT_TO_PERSIST_YOLLA_V6_WORKER",
+    "BIND_GOOGLE_TO_PERSIST_YOLLA_V6_ANALYZER",
+    "LOAD_WORKSPACE_STATE",
+    "RESTORE_PANEL_WINDOW",
+    "RESTORE_ACTIVE_BROWSER_VIEW_AND_URL",
+    "RESTORE_LOG_WINDOW_IF_PREVIOUSLY_OPEN",
+    "WRITE_SESSION_RESTORE_RECEIPT"
+  ],
+  "failure_policy": {
+    "missing_state": "USE_SAFE_DEFAULT_AND_REPORT_PARTIAL",
+    "invalid_bounds": "CLAMP_TO_ACTIVE_DISPLAY",
+    "missing_profile": "FAIL_CLOSED_NO_FAKE_LOGIN_PASS",
+    "auth_surface_redirected_to_login": "REPORT_PARTIAL_AUTH_RESTORE_AND_REQUIRE_USER_LOGIN",
+    "log_window_failure": "PANEL_CONTINUES_WITH_EXPLICIT_PARTIAL_STATUS",
+    "credentials_or_cookies_in_receipt": false,
+    "secret_value_logging": false
+  },
+  "required_receipt": {
+    "schema_version": "YOLLA_PANEL_V6_SESSION_RESTORE_RECEIPT_V1",
+    "fields": [
+      "workspace_session_restored",
+      "panel_window_restored",
+      "log_window_restored",
+      "selected_mode_restored",
+      "active_browser_kind_restored",
+      "profile_root",
+      "gpt_partition_reused",
+      "google_partition_reused",
+      "gpt_login_restored",
+      "google_login_restored",
+      "secret_export_count",
+      "legacy_write_count",
+      "terminal",
+      "observed_at"
+    ],
+    "terminal_pass": "YOLLA_V6_GOOGLE_GPT_LOGIN_WORKSPACE_PANEL_LOG_SESSION_RESTORE_PASS"
+  },
+  "acceptance": [
+    "Workspace reopens with the prior selected mode, role/site and browser URL.",
+    "GPT/ChatGPT remains authenticated after a full V6 runtime stop/start by reusing persist:yolla-v6-worker.",
+    "Google remains authenticated after a full V6 runtime stop/start by reusing persist:yolla-v6-analyzer.",
+    "No cookie, token, password or credential value is copied, exported or logged.",
+    "Panel window restores valid bounds and maximized/full-screen state.",
+    "Log window reopens only when it was open before shutdown and restores valid bounds.",
+    "A partial restore is never reported as full PASS.",
+    "No V5 or Minimal state is modified."
+  ],
+  "implementation_status": "RUNTIME_BOUND_TARGET_PC_FULL_RESTART_AUTH_VERIFICATION_PENDING",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "observed_at": "2026-08-08T21:10:32+09:00"
+}

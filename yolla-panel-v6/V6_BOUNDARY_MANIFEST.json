@@ -1,0 +1,118 @@
+{
+  "schema_version": "YOLLA_PANEL_V6_BOUNDARY_MANIFEST_V1",
+  "system_name": "YOLLA_PANEL_V6",
+  "version": "6.0.2",
+  "existing_v6_inherited": false,
+  "target_pc": "NOTEX",
+  "created_at_kst": "2026-08-08T16:20:00+09:00",
+  "authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "control_pr": 17,
+    "source_implementation_pr": 84,
+    "source_head": "79700f3d79065eb3ef7b0791bbc90205d1746533",
+    "target_branch": "agent/yolla-panel-v6-independent",
+    "target_pr": 84
+  },
+  "source_baseline": {
+    "artifact": "AI_YOLLA_MINIMAL_V1_2_OBSERVABILITY_PACKAGE.zip",
+    "sha256": "902ab7eaa08b71998169084f2a2efcdbaf06a2b2a8a6b3272636b6c954608d05",
+    "policy": "INPUT_BYTES_PRESERVED_V6_COPY_ONLY"
+  },
+  "roots": {
+    "root": "E:\\YOLLA\\panel-v6",
+    "release": "E:\\YOLLA\\panel-v6\\releases\\6.0.2",
+    "state": "E:\\YOLLA\\panel-v6\\state",
+    "profile": "E:\\YOLLA\\panel-v6\\profile",
+    "logs": "E:\\YOLLA\\panel-v6\\logs",
+    "receipts": "E:\\YOLLA\\panel-v6\\receipts",
+    "imports": "E:\\YOLLA\\panel-v6\\imports",
+    "staging": "E:\\YOLLA\\panel-v6\\staging",
+    "dependencies": "E:\\YOLLA\\panel-v6\\dependencies",
+    "control": "E:\\YOLLA\\panel-v6\\control",
+    "executor": "E:\\YOLLA\\panel-v6\\executor"
+  },
+  "namespaces": {
+    "ipc": "v6:*",
+    "worker_partition": "persist:yolla-v6-worker",
+    "analyzer_partition": "persist:yolla-v6-analyzer",
+    "runtime_environment_prefix": "YOLLA_V6_",
+    "scheduled_task_prefix": "YOLLA_PANEL_V6_",
+    "receipt_prefix": "YOLLA_PANEL_V6_"
+  },
+  "tunnel": {
+    "local_endpoint": "http://127.0.0.1:8610/mcp",
+    "health_endpoint": "http://127.0.0.1:8610/health",
+    "auth_environment_variable": "YOLLA_V6_RUNTIME_API_KEY",
+    "api_key_written_to_file": false,
+    "public_inbound_port_required": false,
+    "external_secure_tunnel_registration": "PENDING_TARGET_PC_CONNECTION"
+  },
+  "executor": {
+    "transport": "V6_LOCAL_DURABLE_FILE_QUEUE",
+    "inbox": "E:\\YOLLA\\panel-v6\\executor\\inbox",
+    "processing": "E:\\YOLLA\\panel-v6\\executor\\processing",
+    "archive": "E:\\YOLLA\\panel-v6\\executor\\archive",
+    "receipts": "E:\\YOLLA\\panel-v6\\executor\\receipts",
+    "allowed_actions": [
+      "STATUS",
+      "SNAPSHOT",
+      "VALIDATE",
+      "START_PANEL",
+      "STOP_PANEL",
+      "INSTALL_UPDATE"
+    ],
+    "arbitrary_shell_allowed": false,
+    "legacy_target_allowed": false,
+    "maximum_parallel_commands": 1
+  },
+  "system_boundaries": {
+    "panel_runtime": "V6_OWNED",
+    "workspace_state": "V6_OWNED",
+    "browser_profile": "V6_OWNED_CLONE",
+    "command_scheduler": "V6_OWNED",
+    "c_mode": "V6_OWNED_COPY",
+    "site_analyzer_shell": "V6_OWNED_COPY",
+    "log_analyzer": "V6_OWNED",
+    "control_plane": "V6_OWNED",
+    "pc_executor": "V6_OWNED",
+    "secure_tunnel": "V6_ENDPOINT_EXTERNAL_TUNNEL",
+    "electron_dependency": "COPIED_INTO_V6",
+    "data_ledger_server": "EXTERNAL_API_ONLY_NOT_COPIED",
+    "source_factory": "READ_ONLY_IMPORT_SOURCE",
+    "legacy_v5_runtime": "PRESERVED_NO_WRITES",
+    "minimal_v1_runtime": "PRESERVED_NO_WRITES",
+    "pc_operation_executor_v2": "PRESERVED_NOT_REUSED"
+  },
+  "legacy_import": {
+    "mode": "EXPLICIT_READ_ONLY_SNAPSHOT",
+    "automatic_live_state_link": false,
+    "source_write_count": 0,
+    "source_delete_count": 0,
+    "pending_command_policy": "QUARANTINE_DO_NOT_REISSUE",
+    "pending_command_ids": [
+      "007",
+      "008",
+      "009",
+      "010"
+    ]
+  },
+  "acceptance": {
+    "source_validation_required": true,
+    "windows_powershell_5_1_required": true,
+    "target_pc_install_receipt_required": true,
+    "tunnel_health_required": true,
+    "executor_round_trip_required": true,
+    "panel_live_render_required": true,
+    "legacy_hash_unchanged_required": true
+  },
+  "status": {
+    "source_ready": false,
+    "target_pc_installed": false,
+    "tunnel_connected": false,
+    "executor_round_trip_pass": false,
+    "panel_live_pass": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

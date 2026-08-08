@@ -1,0 +1,50 @@
+{
+  "schema_version": "LATEST_YOLLA_MINIMAL_V1_1_1_SMOKE_GATE_POINTER_V1",
+  "version": "1.1.1",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "implementation_pr": 76,
+  "implementation_branch": "agent/yolla-minimal-separate-runtime-v1",
+  "previous_failure": {
+    "version": "1.1.0",
+    "status": "FAIL",
+    "error": "SMOKE_STATUS_NOT_PASS:STARTING",
+    "existing_runtimes_preserved": true
+  },
+  "contract": "yolla-panel-v1/minimal-v1/runtime-v1.1.1/YOLLA_MINIMAL_V1_1_1_SMOKE_GATE_CORRECTION_CONTRACT_V1.md",
+  "build_report": "yolla-panel-v1/minimal-v1/runtime-v1.1.1/YOLLA_MINIMAL_V1_1_1_SMOKE_GATE_BUILD_REPORT_V1.json",
+  "source_hash_manifest": "yolla-panel-v1/minimal-v1/runtime-v1.1.1/YOLLA_MINIMAL_V1_1_1_SOURCE_HASH_MANIFEST_V1.json",
+  "target_release": "E:\\SOURCE FACTORY\\.yolla\\yolla-panel\\releases\\yolla-minimal-v1.1.1-ui-fix",
+  "launcher": "E:\\SOURCE FACTORY\\RUN_AI_YOLLA_MINIMAL_V1_1_1.bat",
+  "receipt": "E:\\SOURCE FACTORY\\.yolla\\yolla-workspace-minimal-v1\\MINIMAL_V1_1_1_UI_FIX_INSTALL_RECEIPT.json",
+  "one_click": {
+    "file_name": "APPLY_AI_YOLLA_MINIMAL_V1_1_1_UI_SMOKE_FIX_ONE_CLICK.bat",
+    "drive_file_id": "1v_ADW8vrgNsdaiXCTYMMpHut6e7E1Idp",
+    "size": 37404,
+    "sha256": "7f1c0760e84cff128d2dd8fb7d2562addba18a39660ca72539daafb070f2c58e",
+    "remote_readback": "PASS"
+  },
+  "package": {
+    "file_name": "AI_YOLLA_MINIMAL_V1_1_1_UI_SMOKE_FIX_PACKAGE.zip",
+    "drive_file_id": "1Plx4uBK6HRG1pxvTGKYkCNboJIDNOme3",
+    "size": 25202,
+    "sha256": "bdc7801190f96146ca61c4cba0904f251686a2f9db946a593698f66ecb866287",
+    "remote_readback": "PASS"
+  },
+  "validation": {
+    "static_assertions": 30,
+    "node_syntax": "PASS_3",
+    "overlay_hashes": "PASS_6",
+    "zip_integrity": "PASS",
+    "self_extract_crc": "PASS"
+  },
+  "target_pc_install": "PENDING",
+  "target_pc_live_pass": false,
+  "legacy_runtime_modified": false,
+  "base_minimal_runtime_modified": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "V1_1_1_SMOKE_GATE_CORRECTED_TARGET_PC_PENDING",
+  "updated_at": "2026-08-07T04:24:00+09:00"
+}

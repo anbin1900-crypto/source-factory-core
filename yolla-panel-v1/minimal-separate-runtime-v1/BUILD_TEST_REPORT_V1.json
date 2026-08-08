@@ -1,0 +1,56 @@
+{
+  "schema_version": "YOLLA_MINIMAL_SEPARATE_RUNTIME_BUILD_TEST_REPORT_V1",
+  "version": "1.0.0",
+  "status": "OFFLINE_PASS_TARGET_PC_PENDING",
+  "tests": {
+    "state_import_and_assignment": {
+      "status": "PASS",
+      "assertions": 13,
+      "actual_uploaded_fixture_original_groups": 5,
+      "actual_uploaded_fixture_original_roles": 28
+    },
+    "scheduled_command_runtime": {
+      "status": "PASS",
+      "assertions": 9,
+      "triggers": ["INTERVAL", "ON_USE_END"]
+    },
+    "c_mode_runtime": {
+      "status": "PASS",
+      "assertions": 59
+    },
+    "minimal_scope_static": {
+      "status": "PASS",
+      "assertions": 36,
+      "legacy_e_a_marker_count": 0,
+      "legacy_schedule_group_loop_runtime_count": 0
+    },
+    "node_syntax": {
+      "status": "PASS",
+      "files": 11
+    },
+    "package_zip_integrity": {
+      "status": "PASS",
+      "entries": 19
+    },
+    "self_extract_payload_crc": {
+      "status": "PASS",
+      "embedded_package_sha256": "06ed11cd571e5d9222487cc75b902dda526b8e7b7ca13f116ebb536576f7e0c6"
+    },
+    "total_assertions": 117,
+    "failure_count": 0
+  },
+  "resource_design": {
+    "role_count_does_not_create_browser_count": true,
+    "worker_browser_lazy_max": 1,
+    "analyzer_browser_lazy_max": 1,
+    "inactive_command_timer": false
+  },
+  "existing_runtime_modified": false,
+  "existing_runtime_stopped_by_installer": false,
+  "target_pc_install": "PENDING",
+  "login_session_clone_live_pass": "PENDING",
+  "target_pc_live_pass": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "YOLLA_MINIMAL_V1_TARGET_PC_SMOKE_FAILURE_V1",
+  "implementation_pr": 76,
+  "observed_at": "2026-08-07T03:35:39+09:00",
+  "status": "INSTALL_FAILED_EXISTING_RUNTIME_UNMODIFIED",
+  "installer_terminal": "SMOKE_RECEIPT_TIMEOUT",
+  "visible_error": {
+    "title": "Error launching app",
+    "unable_to_find": "E:\\SOURCE",
+    "cannot_find_module": "E:\\SOURCE"
+  },
+  "root_cause": "POWERSHELL_START_PROCESS_ARGUMENTLIST_DID_NOT_QUOTE_SPACE_CONTAINING_ELECTRON_APP_PATH",
+  "bad_launch_pattern": "Start-Process -FilePath $electron -ArgumentList @($ReleaseRoot)",
+  "affected_steps": [
+    "installer smoke launch",
+    "installed minimal runtime launcher"
+  ],
+  "runtime_source_install": "COMPLETED_BEFORE_SMOKE_FAILURE",
+  "profile_clone": "COMPLETED_BEFORE_SMOKE_FAILURE",
+  "existing_runtime_modified": false,
+  "existing_runtime_stopped": false,
+  "legacy_state_modified": false,
+  "target_pc_live_pass": false,
+  "next_gate": "APPLY_LAUNCHER_ONLY_QUOTING_REPAIR_AND_REPEAT_SMOKE"
+}

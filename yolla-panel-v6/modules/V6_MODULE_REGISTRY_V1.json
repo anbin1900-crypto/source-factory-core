@@ -1,0 +1,95 @@
+{
+  "schema_version": "YOLLA_PANEL_V6_MODULE_REGISTRY_V1",
+  "registry_id": "YOLLA-PANEL-V6-MODULAR-WORKSPACE-20260808-001",
+  "purpose": "Allow module owners to extend V6 without relearning or editing the whole panel shell.",
+  "shell_contract": {
+    "stable_inputs": [
+      "module_id",
+      "contract_version",
+      "owner",
+      "owned_root",
+      "mount_slots",
+      "ipc_namespace",
+      "state_namespace",
+      "provider_entrypoint",
+      "capabilities",
+      "acceptance_contract"
+    ],
+    "forbidden_coupling": [
+      "cross_module_private_import",
+      "direct_shell_dom_mutation",
+      "direct_legacy_state_write",
+      "arbitrary_ipc_namespace",
+      "secret_persistence"
+    ],
+    "shell_change_required_only_for": [
+      "new_mount_slot",
+      "new_host_capability",
+      "breaking_contract_version"
+    ]
+  },
+  "modules": [
+    {
+      "module_id": "session-restore",
+      "owner": "YOLLA_PANEL_UI_OWNER",
+      "owned_root": "yolla-panel-v6/modules/session-restore/**",
+      "contract": "yolla-panel-v6/modules/session-restore/SESSION_RESTORE_CONTRACT_V1.json",
+      "mount_slots": [],
+      "ipc_namespace": "v6:module:session-restore:*",
+      "state_namespace": "modules.session_restore",
+      "status": "RUNTIME_BOUND_LIVE_AUTH_RESTART_VERIFICATION_PENDING"
+    },
+    {
+      "module_id": "site-analyzer",
+      "owner": "V-2",
+      "owned_root": "yolla-panel-v6/modules/site-analyzer/**",
+      "contract": "yolla-panel-v6/modules/site-analyzer/V2_SITE_ANALYZER_MODULE_CONTRACT_V1.json",
+      "mount_slots": [
+        "TOPBAR_ANALYZER_ACTIONS",
+        "ANALYZER_SIDEBAR",
+        "ANALYZER_DRAWER",
+        "ANALYZER_STATUS"
+      ],
+      "ipc_namespace": "v6:module:site-analyzer:*",
+      "state_namespace": "modules.site_analyzer",
+      "provider_entrypoint": "provider.cjs",
+      "status": "PROVIDER_BOUND_UPSTREAM_RECEIPTS_PENDING"
+    },
+    {
+      "module_id": "commander-worker-menu",
+      "owner": "B-1",
+      "owned_root": "yolla-panel-v6/modules/commander-worker-menu/**",
+      "contract": "yolla-panel-v6/modules/commander-worker-menu/B1_COMMANDER_WORKER_MENU_MODULE_CONTRACT_V1.json",
+      "mount_slots": [
+        "CONTEXT_TOP_ACTIONS",
+        "CONTEXT_SIDEBAR",
+        "CONTEXT_DRAWER",
+        "CONTEXT_STATUS"
+      ],
+      "ipc_namespace": "v6:module:commander-worker-menu:*",
+      "state_namespace": "modules.commander_worker_menu",
+      "provider_entrypoint": "provider.cjs",
+      "status": "PROVIDER_BOUND"
+    }
+  ],
+  "worker_bootstrap_rule": {
+    "required_reads": [
+      "yolla-panel-v6/modules/V6_MODULE_REGISTRY_V1.json",
+      "OWN_MODULE_CONTRACT",
+      "OWN_MODULE_README_IF_PRESENT"
+    ],
+    "full_panel_source_read_required": false,
+    "other_module_source_read_required": false,
+    "shell_source_edit_allowed": false,
+    "exception": "Only an explicit new mount-slot or host-capability request may require shell-owner review."
+  },
+  "boundaries": {
+    "v5_write_count": 0,
+    "minimal_write_count": 0,
+    "legacy_delete_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "observed_at": "2026-08-08T21:10:32+09:00"
+}

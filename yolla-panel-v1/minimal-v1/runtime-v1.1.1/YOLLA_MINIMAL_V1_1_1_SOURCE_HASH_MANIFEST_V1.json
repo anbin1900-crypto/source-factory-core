@@ -1,0 +1,37 @@
+{
+  "schema_version": "YOLLA_MINIMAL_V1_1_1_SOURCE_HASH_MANIFEST_V1",
+  "version": "1.1.1",
+  "target_release": "yolla-minimal-v1.1.1-ui-fix",
+  "files": {
+    "index.html": {
+      "size": 4411,
+      "sha256": "4b2bca66558e9a4965105ff2b8f44105d39bfe8ce6cbd46b35552a0a29ace602"
+    },
+    "main.js": {
+      "size": 20578,
+      "sha256": "07f066e63d15d35bf0df1cae8e40915720d754f24139c31df0a1691756eae894"
+    },
+    "package.json": {
+      "size": 254,
+      "sha256": "75d7b98765f65e81d1d19f6e49a237919ad31a04a3e042d65d10add3c44d8595"
+    },
+    "preload.js": {
+      "size": 2848,
+      "sha256": "e288df4f6017d33ccf270a58d9df87cf7d3a568af228d8f1c405dfb1d5ff478b"
+    },
+    "renderer.js": {
+      "size": 24831,
+      "sha256": "336badb9dc960dc092a9c08488a7344e7370c4db287cb32d880d0dd00cfaee05"
+    },
+    "styles.css": {
+      "size": 9464,
+      "sha256": "69d7dc6290859f731ab56ae5fdd9a626067eb7ca30d0e4ddbf1a5e21d6404fb8"
+    }
+  },
+  "smoke_gate": {
+    "installer_polling": "WAIT_UNTIL_PASS",
+    "starting_is_transient": true,
+    "pass_overwrite_by_stopped": false
+  },
+  "artifact_package_sha256": "bdc7801190f96146ca61c4cba0904f251686a2f9db946a593698f66ecb866287"
+}

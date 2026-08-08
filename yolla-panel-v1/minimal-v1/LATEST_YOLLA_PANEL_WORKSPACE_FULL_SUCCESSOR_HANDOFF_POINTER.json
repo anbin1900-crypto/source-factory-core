@@ -1,0 +1,35 @@
+{
+  "schema_version": "LATEST_YOLLA_PANEL_WORKSPACE_FULL_SUCCESSOR_HANDOFF_POINTER_V1",
+  "handoff_id": "YOLLA-PANEL-WORKSPACE-FULL-SUCCESSOR-HANDOFF-V1-20260808-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "control_branch": "integration/a0-yolla-workspace-automation-successor-v1",
+  "control_head_at_check": "53c1f034dc11dd7c3bbe2eb08585dabad1ec877a",
+  "implementation_pr": 76,
+  "implementation_branch": "agent/yolla-minimal-separate-runtime-v1",
+  "implementation_head_before_handoff": "367d6d78e05bd27720adae1d464dff677a88a20b",
+  "handoff_document": {
+    "path": "yolla-panel-v1/minimal-v1/handoffs/YOLLA_PANEL_WORKSPACE_FULL_SUCCESSOR_HANDOFF_20260808_V1.md",
+    "commit": "df80d6e3f9aa6035d5f00881f62b8d48d0fa0b42"
+  },
+  "legacy_baseline": "5.10.2.3.7",
+  "last_target_pc_verified_minimal": "yolla-minimal-v1 launcher repair PASS",
+  "current_development_target": "yolla-minimal-v1.2-observability",
+  "current_blocker": "WINDOWS_POWERSHELL_5_1_PROCESSSTARTINFO_ARGUMENTLIST_NULL",
+  "next_action": "MINIMAL_V1_2_POWERSHELL_5_1_LAUNCHER_AND_SMOKE_REPAIR_THEN_TARGET_PC_RETEST",
+  "v1_2_package": {
+    "drive_file_id": "1IgrrhyONEBfKS6UT6Ryndy0lLchpHsBb",
+    "size": 59043,
+    "sha256": "902ab7eaa08b71998169084f2a2efcdbaf06a2b2a8a6b3272636b6c954608d05"
+  },
+  "v1_2_one_click": {
+    "drive_file_id": "1Ee4-YDvMhDT0sEsrtbdXLbrSVMlMLBCn",
+    "size": 85929,
+    "sha256": "b1efd60068f302d7a2e501bcd3028076c6894b66db011f79de8c1c05331853bf"
+  },
+  "target_pc_live_pass": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-08T14:33:00+09:00"
+}
