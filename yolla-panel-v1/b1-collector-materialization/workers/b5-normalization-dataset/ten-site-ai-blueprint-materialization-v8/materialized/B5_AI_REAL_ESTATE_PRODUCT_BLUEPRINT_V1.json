@@ -1,0 +1,249 @@
+{
+  "lineage": {
+    "append_policy": "SEPARATE_V8_APPEND_ONLY_NO_PRIOR_REWRITE",
+    "cycle_id": "V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+    "directive_comment": 5224506049,
+    "directive_id": "V2-TO-B5-TEN-SITE-AI-BLUEPRINT-MATERIALIZATION-V1-20260808-001",
+    "input_sha256": "3cad583eed9119f86d111ad880ee0ccdfbdc0999e170b0b1d815775abbf2c43e",
+    "lineage_key": "aa09ca3187213a4a73212eab716ac186d8bd7d485c355e0e4e85f5d72946bc9c",
+    "parent_v7_head": "a5445ba97dad347e3bc7a7a4b9586ad3de4c3c98",
+    "parent_v7_pointer_blob": "8452508bb9f4dd0af0cc2731de76339ed4615096",
+    "parent_v7_terminal": "B5_REAL_SITE_BLUEPRINT_ONTOLOGY_MATERIALIZATION_READY"
+  },
+  "records": [
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "archetype": "SEARCH",
+      "authority_status": "WAITING_INPUT",
+      "blueprint_id": "REAL_ESTATE_PRODUCT::SEARCH::V1",
+      "final_write_or_edit_submit": false,
+      "record_policy": "APPEND_ONLY_TEMPLATE",
+      "required_structure": {
+        "components": [
+          "query",
+          "filter",
+          "sort",
+          "submit"
+        ],
+        "data_contract": "SOURCE_EXTENSION_AWARE"
+      },
+      "site_specific_values": "LATE_BIND_ONLY"
+    },
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "archetype": "LIST",
+      "authority_status": "WAITING_INPUT",
+      "blueprint_id": "REAL_ESTATE_PRODUCT::LIST::V1",
+      "final_write_or_edit_submit": false,
+      "record_policy": "APPEND_ONLY_TEMPLATE",
+      "required_structure": {
+        "components": [
+          "result_count",
+          "cards",
+          "pagination_or_scroll"
+        ],
+        "data_contract": "LOSSLESS_LISTING_SUMMARY"
+      },
+      "site_specific_values": "LATE_BIND_ONLY"
+    },
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "archetype": "DETAIL",
+      "authority_status": "WAITING_INPUT",
+      "blueprint_id": "REAL_ESTATE_PRODUCT::DETAIL::V1",
+      "final_write_or_edit_submit": false,
+      "record_policy": "APPEND_ONLY_TEMPLATE",
+      "required_structure": {
+        "components": [
+          "identity",
+          "price",
+          "area",
+          "location",
+          "media",
+          "contact"
+        ],
+        "data_contract": "LOSSLESS_LISTING_DETAIL"
+      },
+      "site_specific_values": "LATE_BIND_ONLY"
+    },
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "archetype": "MAP",
+      "authority_status": "WAITING_INPUT",
+      "blueprint_id": "REAL_ESTATE_PRODUCT::MAP::V1",
+      "final_write_or_edit_submit": false,
+      "record_policy": "APPEND_ONLY_TEMPLATE",
+      "required_structure": {
+        "components": [
+          "viewport",
+          "marker",
+          "cluster",
+          "result_sync"
+        ],
+        "data_contract": "LOCATION_EXTENSION_AWARE"
+      },
+      "site_specific_values": "LATE_BIND_ONLY"
+    },
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "archetype": "AGENCY",
+      "authority_status": "WAITING_INPUT",
+      "blueprint_id": "REAL_ESTATE_PRODUCT::AGENCY::V1",
+      "final_write_or_edit_submit": false,
+      "record_policy": "APPEND_ONLY_TEMPLATE",
+      "required_structure": {
+        "components": [
+          "agency_identity",
+          "agent_list",
+          "listing_list"
+        ],
+        "data_contract": "SOURCE_IDENTITY_PRESERVING"
+      },
+      "site_specific_values": "LATE_BIND_ONLY"
+    },
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "archetype": "MY_LISTING",
+      "authority_status": "WAITING_INPUT",
+      "blueprint_id": "REAL_ESTATE_PRODUCT::MY_LISTING::V1",
+      "final_write_or_edit_submit": false,
+      "record_policy": "APPEND_ONLY_TEMPLATE",
+      "required_structure": {
+        "components": [
+          "auth_reference",
+          "owned_list",
+          "status",
+          "actions"
+        ],
+        "data_contract": "OBSERVATION_ONLY_NO_SUBMIT"
+      },
+      "site_specific_values": "LATE_BIND_ONLY"
+    },
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "archetype": "CREATE",
+      "authority_status": "WAITING_INPUT",
+      "blueprint_id": "REAL_ESTATE_PRODUCT::CREATE::V1",
+      "final_write_or_edit_submit": false,
+      "record_policy": "APPEND_ONLY_TEMPLATE",
+      "required_structure": {
+        "components": [
+          "auth_reference",
+          "dynamic_form",
+          "validation",
+          "preview"
+        ],
+        "data_contract": "PRE_SUBMIT_ONLY"
+      },
+      "site_specific_values": "LATE_BIND_ONLY"
+    },
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "archetype": "EDIT",
+      "authority_status": "WAITING_INPUT",
+      "blueprint_id": "REAL_ESTATE_PRODUCT::EDIT::V1",
+      "final_write_or_edit_submit": false,
+      "record_policy": "APPEND_ONLY_TEMPLATE",
+      "required_structure": {
+        "components": [
+          "auth_reference",
+          "record_identity",
+          "dynamic_form",
+          "validation",
+          "preview"
+        ],
+        "data_contract": "PRE_SUBMIT_ONLY"
+      },
+      "site_specific_values": "LATE_BIND_ONLY"
+    }
+  ],
+  "schema_version": "B5_AI_REAL_ESTATE_PRODUCT_BLUEPRINT_V1"
+}

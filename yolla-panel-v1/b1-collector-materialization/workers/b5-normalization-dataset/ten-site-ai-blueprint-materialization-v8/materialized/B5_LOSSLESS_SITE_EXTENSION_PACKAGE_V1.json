@@ -1,0 +1,205 @@
+{
+  "lineage": {
+    "append_policy": "SEPARATE_V8_APPEND_ONLY_NO_PRIOR_REWRITE",
+    "cycle_id": "V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+    "directive_comment": 5224506049,
+    "directive_id": "V2-TO-B5-TEN-SITE-AI-BLUEPRINT-MATERIALIZATION-V1-20260808-001",
+    "input_sha256": "3cad583eed9119f86d111ad880ee0ccdfbdc0999e170b0b1d815775abbf2c43e",
+    "lineage_key": "aa09ca3187213a4a73212eab716ac186d8bd7d485c355e0e4e85f5d72946bc9c",
+    "parent_v7_head": "a5445ba97dad347e3bc7a7a4b9586ad3de4c3c98",
+    "parent_v7_pointer_blob": "8452508bb9f4dd0af0cc2731de76339ed4615096",
+    "parent_v7_terminal": "B5_REAL_SITE_BLUEPRINT_ONTOLOGY_MATERIALIZATION_READY"
+  },
+  "producer_slots": {
+    "A4": {
+      "directive_comment": 5224505696,
+      "exact_pointer": null,
+      "status": "WAITING_INPUT"
+    },
+    "A5": {
+      "directive_comment": 5224505743,
+      "exact_pointer": null,
+      "status": "WAITING_INPUT"
+    },
+    "B3": {
+      "directive_comment": 5224505915,
+      "exact_pointer": null,
+      "status": "WAITING_INPUT"
+    }
+  },
+  "records": [
+    {
+      "authority_status": "WAITING_INPUT",
+      "candidate_field_ids": [],
+      "canonical_authority": null,
+      "conflict_detail": null,
+      "evidence_pointer": null,
+      "extension_id": "SITE_SLOT_001::pending_payload::V1",
+      "mapping_status": "UNKNOWN",
+      "raw_value": null,
+      "record_policy": "LOSSLESS_APPEND_ONLY_EXTENSION",
+      "site_id": "SITE_SLOT_001",
+      "source_field_name": "pending_payload"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "candidate_field_ids": [],
+      "canonical_authority": null,
+      "conflict_detail": null,
+      "evidence_pointer": null,
+      "extension_id": "SITE_SLOT_002::pending_payload::V1",
+      "mapping_status": "UNKNOWN",
+      "raw_value": null,
+      "record_policy": "LOSSLESS_APPEND_ONLY_EXTENSION",
+      "site_id": "SITE_SLOT_002",
+      "source_field_name": "pending_payload"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "candidate_field_ids": [],
+      "canonical_authority": null,
+      "conflict_detail": null,
+      "evidence_pointer": null,
+      "extension_id": "SITE_SLOT_003::pending_payload::V1",
+      "mapping_status": "UNKNOWN",
+      "raw_value": null,
+      "record_policy": "LOSSLESS_APPEND_ONLY_EXTENSION",
+      "site_id": "SITE_SLOT_003",
+      "source_field_name": "pending_payload"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "candidate_field_ids": [],
+      "canonical_authority": null,
+      "conflict_detail": null,
+      "evidence_pointer": null,
+      "extension_id": "SITE_SLOT_004::pending_payload::V1",
+      "mapping_status": "UNKNOWN",
+      "raw_value": null,
+      "record_policy": "LOSSLESS_APPEND_ONLY_EXTENSION",
+      "site_id": "SITE_SLOT_004",
+      "source_field_name": "pending_payload"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "candidate_field_ids": [],
+      "canonical_authority": null,
+      "conflict_detail": null,
+      "evidence_pointer": null,
+      "extension_id": "SITE_SLOT_005::pending_payload::V1",
+      "mapping_status": "UNKNOWN",
+      "raw_value": null,
+      "record_policy": "LOSSLESS_APPEND_ONLY_EXTENSION",
+      "site_id": "SITE_SLOT_005",
+      "source_field_name": "pending_payload"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "candidate_field_ids": [],
+      "canonical_authority": null,
+      "conflict_detail": null,
+      "evidence_pointer": null,
+      "extension_id": "SITE_SLOT_006::pending_payload::V1",
+      "mapping_status": "UNKNOWN",
+      "raw_value": null,
+      "record_policy": "LOSSLESS_APPEND_ONLY_EXTENSION",
+      "site_id": "SITE_SLOT_006",
+      "source_field_name": "pending_payload"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "candidate_field_ids": [],
+      "canonical_authority": null,
+      "conflict_detail": null,
+      "evidence_pointer": null,
+      "extension_id": "SITE_SLOT_007::pending_payload::V1",
+      "mapping_status": "UNKNOWN",
+      "raw_value": null,
+      "record_policy": "LOSSLESS_APPEND_ONLY_EXTENSION",
+      "site_id": "SITE_SLOT_007",
+      "source_field_name": "pending_payload"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "candidate_field_ids": [],
+      "canonical_authority": null,
+      "conflict_detail": null,
+      "evidence_pointer": null,
+      "extension_id": "SITE_SLOT_008::pending_payload::V1",
+      "mapping_status": "UNKNOWN",
+      "raw_value": null,
+      "record_policy": "LOSSLESS_APPEND_ONLY_EXTENSION",
+      "site_id": "SITE_SLOT_008",
+      "source_field_name": "pending_payload"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "candidate_field_ids": [],
+      "canonical_authority": null,
+      "conflict_detail": null,
+      "evidence_pointer": null,
+      "extension_id": "SITE_SLOT_009::pending_payload::V1",
+      "mapping_status": "UNKNOWN",
+      "raw_value": null,
+      "record_policy": "LOSSLESS_APPEND_ONLY_EXTENSION",
+      "site_id": "SITE_SLOT_009",
+      "source_field_name": "pending_payload"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "candidate_field_ids": [],
+      "canonical_authority": null,
+      "conflict_detail": null,
+      "evidence_pointer": null,
+      "extension_id": "SITE_SLOT_010::pending_payload::V1",
+      "mapping_status": "UNKNOWN",
+      "raw_value": null,
+      "record_policy": "LOSSLESS_APPEND_ONLY_EXTENSION",
+      "site_id": "SITE_SLOT_010",
+      "source_field_name": "pending_payload"
+    }
+  ],
+  "schema_version": "B5_LOSSLESS_SITE_EXTENSION_PACKAGE_V1",
+  "site_slots": [
+    {
+      "authority_status": "WAITING_INPUT",
+      "site_id": "SITE_SLOT_001"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "site_id": "SITE_SLOT_002"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "site_id": "SITE_SLOT_003"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "site_id": "SITE_SLOT_004"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "site_id": "SITE_SLOT_005"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "site_id": "SITE_SLOT_006"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "site_id": "SITE_SLOT_007"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "site_id": "SITE_SLOT_008"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "site_id": "SITE_SLOT_009"
+    },
+    {
+      "authority_status": "WAITING_INPUT",
+      "site_id": "SITE_SLOT_010"
+    }
+  ]
+}
