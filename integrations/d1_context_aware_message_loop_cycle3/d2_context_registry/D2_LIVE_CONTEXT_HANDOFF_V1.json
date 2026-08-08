@@ -1,0 +1,93 @@
+{
+  "schema_version": "D2_LIVE_CONTEXT_HANDOFF_V1",
+  "handoff_id": "D2-C3-LIVE-CONTEXT-HANDOFF-20260808-001",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE3-20260808-001",
+  "directive_id": "C3-W2-LIVE-CONTEXT-HANDOFF-AND-FRESHNESS-GUARD-V1-20260808-001",
+  "directive_comment_id": 5220405787,
+  "worker_id": "AUTOMATION-C-W2",
+  "role": "D-2_CONTEXT_REGISTRY_AND_ACTIVE_WORKER_OWNER",
+  "authority": {
+    "control_pr": 17,
+    "assignment_commit": "d4360c78aa16a3220c1bfa845c17652772eb0fb9",
+    "assignment_path": ".yolla/automation/cycles/D1_CONTEXT_AWARE_MESSAGE_LOOP_CYCLE3_20260808_001.json",
+    "cycle2_result_commit": "1c6d79c492ff78cce4b0074bf7f8958d60f4edea",
+    "cycle2_result_comment_id": 5219897042
+  },
+  "binding": {
+    "ROLE_ID": "D-2_CONTEXT_REGISTRY_AND_ACTIVE_WORKER_OWNER",
+    "CONTEXT_ID": "6a72e288-7f24-83ee-b357-3e327cf6d877",
+    "CONTEXT_NAME": "자동화 C 모드 - 자동화 C 모드 - 자동화 그룹 A E  그룹에 속함",
+    "PAGE_ID": "UIA-TAB-42.198100.4.0.0.5287",
+    "COMMAND_ID": "C3-W2-LIVE-CONTEXT-HANDOFF-AND-FRESHNESS-GUARD-V1-20260808-001",
+    "WORK_STATUS": "RESULT_PENDING",
+    "LAST_SEEN_AT": "2026-08-07T18:16:52.4077010Z",
+    "binding_method": "EXISTING_WINDOWS_UI_AUTOMATION_EXACT_WINDOW_AND_PAGE_ID_RESELECT",
+    "activation_pattern": "SELECTION_ITEM_SELECT",
+    "active_window_pid": 11712,
+    "active_window_handle": 198100,
+    "role_marker_match": true,
+    "cycle_marker_match": true,
+    "target_pc_live_readback": true
+  },
+  "stale_policy": {
+    "max_age_seconds": 300,
+    "freshness_basis": "LAST_SEEN_AT_FROM_IMMUTABLE_TARGET_PC_RECEIPT",
+    "required_role_id": "D-2_CONTEXT_REGISTRY_AND_ACTIVE_WORKER_OWNER",
+    "required_context_id": "6a72e288-7f24-83ee-b357-3e327cf6d877",
+    "required_page_id": "UIA-TAB-42.198100.4.0.0.5287",
+    "required_role_marker_match": true,
+    "required_cycle_marker_match": true,
+    "required_target_pc_live_readback": true,
+    "on_age_exceeded": "REJECT_HANDOFF_AND_REQUEST_D2_FRESHNESS_RECHECK",
+    "on_page_id_missing_or_changed": "REJECT_STALE_NO_AUTOMATIC_ALTERNATE_CONTEXT_SELECTION",
+    "on_context_id_mismatch": "REJECT_MISMATCH_NO_AUTOMATIC_REBIND",
+    "on_role_or_cycle_marker_mismatch": "REJECT_MISMATCH_NO_AUTOMATIC_REBIND",
+    "automatic_alternate_context_selection": false,
+    "consumer_must_fail_closed": true
+  },
+  "consumer_contract": {
+    "D4_CHROME_WORKER_STATE_OBSERVER_OWNER": {
+      "worker_pr": 22,
+      "may_consume_without_context_discovery_when_fresh": true,
+      "inputs": ["CONTEXT_ID", "PAGE_ID", "active_window_handle", "binding_method", "LAST_SEEN_AT"],
+      "must_reject_when_stale": true
+    },
+    "D6_AUTOMATION_CONTROL_PANEL_AND_E2E_OWNER": {
+      "worker_pr": 80,
+      "may_consume_without_context_discovery_when_fresh": true,
+      "inputs": ["ROLE_ID", "CONTEXT_ID", "CONTEXT_NAME", "PAGE_ID", "COMMAND_ID", "WORK_STATUS", "LAST_SEEN_AT"],
+      "must_reject_when_stale": true
+    }
+  },
+  "live_evidence": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "branch": "command/d-group-domain-knowledge-db-foundation-v1",
+    "final_receipt_path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/PC_OPERATION_COMMAND_BUS_V2/RECEIPTS/D2C3-RUN-EXACT-TAB-ACTIVATE-V3-20260808-031600-001.json",
+    "final_receipt_blob_sha1": "c5fb6687d596e7e651c3eb747e0e461e8148feb1",
+    "final_runtime_sha256": "5cfa19f4a8eb33b385afe305a8c697f5a6f42f98d4d810956082222ac951cbfd",
+    "final_executor_version": "2.0.2",
+    "negative_marker_mismatch_receipt": "D2C3-RUN-RESELECT-FRESHNESS-PROBE-V2-20260808-030700-001",
+    "negative_marker_mismatch_blob_sha1": "8cf8b1239aac7bf9546173f7792fdb664e17ddb3",
+    "negative_stale_or_wrong_selected_context_receipt": "D2C3-RUN-RESELECT-FRESHNESS-PROBE-V2-AFTER-ROLE-MARKER-20260808-030800-001",
+    "negative_stale_or_wrong_selected_context_blob_sha1": "48566232ab8d534fd3a63520499dfaf727bc43cd",
+    "exact_window_inventory_receipt": "D2C3-RUN-EXACT-WINDOW-INVENTORY-20260808-031200-001",
+    "exact_window_inventory_blob_sha1": "e9594549cfbdeda9bbac5b4321d9ae15b4c40fec"
+  },
+  "acceptance": {
+    "consumable_handoff": "PASS",
+    "live_freshness_recheck": "PASS",
+    "tab_reselect_performed": true,
+    "same_context_after_reselect": true,
+    "same_page_id_after_reselect": true,
+    "stale_fail_closed": "PASS",
+    "marker_mismatch_fail_closed": "PASS",
+    "misbinding_count": 0,
+    "arbitrary_context_selection_count": 0,
+    "new_executor_count": 0,
+    "new_tunnel_count": 0,
+    "new_transport_count": 0
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

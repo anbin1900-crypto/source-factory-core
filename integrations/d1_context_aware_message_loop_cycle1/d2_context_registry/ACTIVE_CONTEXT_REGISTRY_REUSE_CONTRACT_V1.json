@@ -1,0 +1,18 @@
+{
+  "schema_version":"D2_ACTIVE_CONTEXT_REGISTRY_REUSE_CONTRACT_V1",
+  "cycle_id":"D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001",
+  "role":"D-2_CONTEXT_REGISTRY_AND_ACTIVE_WORKER_OWNER",
+  "new_system_build":false,
+  "sources":{
+    "page_registry":{"pr":22,"head":"161acfc3590167f4a9feec707b958a5d3ccae535","observer_blob":"65c055e91bde22fc2d1de06d652ce71654b36126","event_schema_blob":"ebb33d2229f62591f0fc31757dfc2ab03727e649","registry_fixture_blob":"1d3bb76805679b19e232e1f47140375273c64e1f"},
+    "view_model":{"pr":38,"head":"8f2fcefaf02d417d39981555b5ff755f7b18e6e1","viewmodel_blob":"80e8d4a391fb0c81addabf5f49a91573cc48ce36","event_binding_blob":"665f8f460fa5960b94d4222d236ab53724a33bb6"},
+    "source_factory_stage4":{"pr":2,"head":"15fcc6e252b064a22fb5b5a9288810093dcec075","pc_agent_binding_reused":true,"project_panel_identity_reused":true},
+    "pc_executor":{"authority_comment":5216921577,"version":"2.0.2","command_schema":"YOLLA_PC_OPERATION_COMMAND_V2","new_executor":false},
+    "secure_tunnel":{"profile":"yolla-data-ledger-http","tunnel_id":"tunnel_6a74a9e2d43c81919bdc113cdff7c9dc","mcp_target":"127.0.0.1:8110/mcp","browser_agent_target":"127.0.0.1:32100","cdp_target":"127.0.0.1:9222","mcp_preserved":true,"new_tunnel":false}
+  },
+  "identity_fields":["ROLE_ID","CONTEXT_ID","CONTEXT_NAME","PAGE_ID","COMMAND_ID","WORK_STATUS","STARTED_AT","LAST_SEEN_AT"],
+  "binding_priority":["EXACT_CONTEXT_ID","EXPLICIT_ROLE_CONTEXT_BINDING","PAGE_OBSERVATION"],
+  "anti_misbinding":["PAGE_NAVIGATION_DOES_NOT_INHERIT_OLD_CONTEXT_ROLE","NEW_CHAT_WITHOUT_CONTEXT_ID_UNBOUND","DUPLICATE_LIVE_PAGE_SAME_CONTEXT_REVIEW_REQUIRED","REFRESH_SAME_CONTEXT_RETAINS_BINDING","ROLE_AND_CYCLE_DOM_MARKER_REQUIRED_FOR_LIVE_DISCOVERY"],
+  "raw_conversation_persistence":false,
+  "production":false
+}

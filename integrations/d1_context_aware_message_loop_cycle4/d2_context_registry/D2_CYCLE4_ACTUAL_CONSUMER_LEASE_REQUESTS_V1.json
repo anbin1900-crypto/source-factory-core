@@ -1,0 +1,41 @@
+{
+  "schema_version": "D2_CYCLE4_ACTUAL_CONSUMER_LEASE_REQUESTS_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE4-20260808-001",
+  "request_count": 2,
+  "requests": [
+    {
+      "consumer_id": "D-3_MESSAGE_DISPATCH_AND_RESULT_RETURN_OWNER",
+      "consumer_pr": 82,
+      "consumer_result_comment_id": 5220688575,
+      "consumer_result_commit": "500a9a318fdc3d61032319ca70960d8114e244b5",
+      "consumer_command_id": "D3-C1-LIVE-DISPATCH-RETURN-20260808-030500-001",
+      "correlation_id": "PR82-COMMENT-5220688575:D3-C1-LIVE-DISPATCH-RETURN-20260808-030500-001",
+      "actual_consumer_basis": "MESSAGE_DISPATCH_AND_RESULT_RETURN_LIVE_PASS",
+      "lease_bus_command": "D2C4-RUN-JIT-LEASE-D3-20260808-034500-001",
+      "lease_bus_receipt_blob_sha1": "631ff5b8b8046f6d9478838419bbc704c9fa9d2e",
+      "lease_generation": 1,
+      "lease_action": "RENEWED_STALE_EXACT_PAGE",
+      "live_pass": true
+    },
+    {
+      "consumer_id": "D-6_AUTOMATION_CONTROL_PANEL_AND_E2E_OWNER",
+      "consumer_pr": 80,
+      "consumer_result_comment_id": 5220762744,
+      "consumer_result_head": "31d530f399f7dab3e9e0f718007735408723c344",
+      "consumer_directive_id": "C3-W6-D2-D5-LIVE-REBIND-AND-D4-GAP-ISOLATION-V1-20260808-001",
+      "correlation_id": "PR80-COMMENT-5220762744:C3-W6-D2-D5-LIVE-REBIND-AND-D4-GAP-ISOLATION-V1-20260808-001",
+      "actual_consumer_basis": "D2_D5_LIVE_PANEL_REBIND_AND_D4_GAP_ISOLATION_PASS",
+      "lease_bus_command": "D2C4-RUN-JIT-LEASE-D6-20260808-034600-001",
+      "lease_bus_receipt_blob_sha1": "ea90ce92387b354e63eb421737f062dc768d9160",
+      "lease_generation": 1,
+      "lease_action": "REUSED_FRESH_GENERATION",
+      "live_pass": true
+    }
+  ],
+  "actual_consumer_request_pass": "2/2",
+  "same_generation_fresh_reuse": "PASS",
+  "misbinding_count": 0,
+  "new_executor_count": 0,
+  "new_tunnel_count": 0,
+  "new_transport_count": 0
+}

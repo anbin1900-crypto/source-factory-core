@@ -1,0 +1,114 @@
+{
+  "schema_version": "D2_CYCLE4_JIT_CONTEXT_LEASE_RESULT_V1",
+  "rule_id": "YOLLA_C_MODE_RULES_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE4-20260808-001",
+  "directive_id": "C4-W2-JUST-IN-TIME-CONTEXT-LEASE-RENEWAL-LIVE-V1-20260808-001",
+  "directive_comment_id": 5220765071,
+  "worker_id": "AUTOMATION-C-W2",
+  "role": "D-2_CONTEXT_REGISTRY_AND_ACTIVE_WORKER_OWNER",
+  "worker_pr": 81,
+  "control_pr": 17,
+  "authority": {
+    "commit": "d146f6b12747ac24d798eadacda02cc8494b01c8",
+    "path": ".yolla/automation/cycles/D1_CONTEXT_AWARE_MESSAGE_LOOP_CYCLE4_20260808_001.json",
+    "source_result_comment": 5220605238,
+    "source_result_commit": "0264206865159f9ca928ffc4264859d9218f81f0"
+  },
+  "outcome": "PASS",
+  "terminal": "JUST_IN_TIME_CONTEXT_LEASE_RENEWAL_LIVE_PASS",
+  "binding_authority": {
+    "ROLE_ID": "D-2_CONTEXT_REGISTRY_AND_ACTIVE_WORKER_OWNER",
+    "CONTEXT_ID": "6a72e288-7f24-83ee-b357-3e327cf6d877",
+    "CONTEXT_NAME": "자동화 C 모드 - 자동화 C 모드 - 자동화 그룹 A E  그룹에 속함",
+    "PAGE_ID": "UIA-TAB-42.198100.4.0.0.5287",
+    "window_handle": 198100,
+    "window_pid": 11712,
+    "binding_method": "EXISTING_WINDOWS_UI_AUTOMATION_EXACT_WINDOW_AND_PAGE",
+    "ttl_seconds": 300
+  },
+  "runtime": {
+    "target_pc": "NOTEX",
+    "executor_version": "2.0.2",
+    "script_path": "E:\\YOLLA\\server\\approved-ops\\D2_CYCLE4_JIT_CONTEXT_LEASE.ps1",
+    "script_sha256": "735586eb62d4db54629342b78b1a145c9c2a3696e541e8527d89ab81bbccdf20",
+    "new_executor_count": 0,
+    "new_tunnel_count": 0,
+    "new_transport_count": 0
+  },
+  "actual_consumer_requests": [
+    {
+      "consumer": "D-3_MESSAGE_DISPATCH_AND_RESULT_RETURN_OWNER",
+      "consumer_pr": 82,
+      "consumer_result_comment": 5220688575,
+      "correlation_id": "PR82-COMMENT-5220688575:D3-C1-LIVE-DISPATCH-RETURN-20260808-030500-001",
+      "receipt_path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/PC_OPERATION_COMMAND_BUS_V2/RECEIPTS/D2C4-RUN-JIT-LEASE-D3-20260808-034500-001.json",
+      "receipt_blob_sha1": "631ff5b8b8046f6d9478838419bbc704c9fa9d2e",
+      "lease_generation": 1,
+      "lease_action": "RENEWED_STALE_EXACT_PAGE",
+      "role_marker_match": true,
+      "cycle_marker_match": true,
+      "target_pc_live_readback": true,
+      "status": "PASS"
+    },
+    {
+      "consumer": "D-6_AUTOMATION_CONTROL_PANEL_AND_E2E_OWNER",
+      "consumer_pr": 80,
+      "consumer_result_comment": 5220762744,
+      "correlation_id": "PR80-COMMENT-5220762744:C3-W6-D2-D5-LIVE-REBIND-AND-D4-GAP-ISOLATION-V1-20260808-001",
+      "receipt_path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/PC_OPERATION_COMMAND_BUS_V2/RECEIPTS/D2C4-RUN-JIT-LEASE-D6-20260808-034600-001.json",
+      "receipt_blob_sha1": "ea90ce92387b354e63eb421737f062dc768d9160",
+      "lease_generation": 1,
+      "lease_action": "REUSED_FRESH_GENERATION",
+      "role_marker_match": true,
+      "cycle_marker_match": true,
+      "target_pc_live_readback": true,
+      "status": "PASS"
+    }
+  ],
+  "generation_validation": {
+    "generation_sequence": [1, 1],
+    "monotonic_definition": "NONDECREASING",
+    "monotonic_pass": true,
+    "stale_input_renewed": true,
+    "fresh_input_same_generation_returned": true
+  },
+  "fail_closed_validation": {
+    "context_mismatch_receipt": "D2C4-RUN-JIT-LEASE-NEGATIVE-MISMATCH-20260808-034700-001",
+    "context_mismatch_receipt_blob_sha1": "47d4fcd5f4eb233b2ba05bcc1d53f6a9cb661669",
+    "context_mismatch_blocker": "CONTEXT_ID_MISMATCH",
+    "context_mismatch_lease_action": "REJECTED_FAIL_CLOSED",
+    "generation_after_mismatch": 1,
+    "misbinding_count": 0,
+    "arbitrary_context_selection_count": 0,
+    "post_expiry_marker_mismatch_receipt": "D2C4-RUN-JIT-LEASE-POST-EXPIRY-20260808-121100-001",
+    "post_expiry_marker_mismatch_receipt_blob_sha1": "735027e459323cf6414670ae2cbfdb7e3f30b218",
+    "post_expiry_blocker": "ROLE_OR_CYCLE_MARKER_MISMATCH",
+    "post_expiry_state_update_performed": false,
+    "optional_unclaimed_retry_withdraw_commit": "4da362057d602efa05ca13ed60c90735cc21ee42"
+  },
+  "source_artifacts": {
+    "lease_contract_path": "integrations/d1_context_aware_message_loop_cycle4/d2_context_registry/D2_JIT_CONTEXT_LEASE_CONTRACT_V1.json",
+    "lease_contract_blob_sha1": "bb3e7ef97cf618dcfe3631de569cd6b0e2ca25e1",
+    "actual_consumer_requests_path": "integrations/d1_context_aware_message_loop_cycle4/d2_context_registry/D2_CYCLE4_ACTUAL_CONSUMER_LEASE_REQUESTS_V1.json",
+    "actual_consumer_requests_blob_sha1": "019e1341ba1da3b38b28d2a6a4e5e5024584a99c"
+  },
+  "acceptance": {
+    "actual_consumer_lease_request_2_of_2": "PASS",
+    "fresh_or_renewed_exact_context_lease_2_of_2": "PASS",
+    "monotonic_lease_generation": "PASS",
+    "stale_fail_closed": "PASS",
+    "mismatch_fail_closed": "PASS",
+    "misbinding_0": "PASS",
+    "new_executor_tunnel_transport_0": "PASS",
+    "mock_only_pass": false
+  },
+  "cycle5_control_receipt": {
+    "authority_commit": "53c1f034dc11dd7c3bbe2eb08585dabad1ec877a",
+    "control_receipt_comment": 5224185332,
+    "w2_cycle5_new_directive_count": 0,
+    "interpretation": "CYCLE4_MUST_TERMINATE_BEFORE_ANY_FUTURE_W2_ASSIGNMENT"
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}
