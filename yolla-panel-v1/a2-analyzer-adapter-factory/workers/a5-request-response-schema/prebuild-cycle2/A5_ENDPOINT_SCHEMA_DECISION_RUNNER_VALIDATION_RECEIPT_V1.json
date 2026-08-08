@@ -1,0 +1,46 @@
+{
+  "schema_version": "A5_ENDPOINT_SCHEMA_DECISION_RUNNER_VALIDATION_RECEIPT_V1",
+  "directive_id": "AI001-TO-A5-ENDPOINT-SCHEMA-DECISION-RUNNER-V2-20260807-001",
+  "directive_comment_id": 5217313682,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "worker": "A-5",
+  "validation": {
+    "fixture_smoke_count": 1,
+    "fixture_smoke": "PASS",
+    "assertions": "PASS_17_OF_17",
+    "node_syntax": "PASS_2_OF_2",
+    "full_evidence_mode": "HYBRID",
+    "response_body_missing_behavior": "PASS_CONFIDENCE_DEGRADED_RECOMMEND_DOM",
+    "core_structure_payload_missing_behavior": "FAIL_CLOSED",
+    "unevidenced_field_behavior": "UNKNOWN",
+    "raw_secret_reject": "PASS",
+    "raw_secret_value_count": 0
+  },
+  "failure_repair": {
+    "attempt_1": "Object Header branch failed to collect Cookie requirement because else bound to inner if.",
+    "repair": "Added explicit braces and separate Array/Object header branches.",
+    "attempt_2": "PASS"
+  },
+  "remote_readback": {
+    "runner_commit": "513b5927df96f8dc84855bfe639361d46a6a977d",
+    "runner_blob": "1f569f96b9d1511a06984e32d12066d08b221fd6",
+    "runner_readback": "PASS",
+    "smoke_commit": "bfd521bd268c9f7942b9486129f692abf0f728dc",
+    "smoke_blob": "20a69713cbdb159ced50fcf844d3b833c230ed09",
+    "smoke_readback": "PASS",
+    "request_contract_commit": "e138f40854b763b2750ede319986977784a150f5",
+    "receipt_contract_commit": "a643c2ddaa5550d83ae6ea835dbb5035c0d2470d",
+    "runner_manifest_commit": "03dae3d06602fdcf3d01c8a60d96d766baf7238b"
+  },
+  "boundaries": {
+    "actual_site_call_count": 0,
+    "target_pc_execution_count": 0,
+    "tunnel_create_count": 0,
+    "pc_agent_execution_count": 0,
+    "secret_value_capture_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "PASS"
+}

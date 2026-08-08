@@ -1,0 +1,36 @@
+{
+  "schema_version": "YOLLA_A5_START_REPORT_V1",
+  "worker": "A-5",
+  "directive_id": "A2-TO-A5-REQUEST-RESPONSE-EXECUTION-CONTRACT-V3-20260804-001",
+  "parent_directive_id": "A0-CROSS-GROUP-SITE-ANALYSIS-EXTRACTION-TRANSFORM-DB-ALIGNMENT-V1-20260804-001",
+  "directive_comment": 5171210803,
+  "registered_at_kst": "2026-08-04T05:11:00+09:00",
+  "started_at_kst": "2026-08-04T05:20:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pr": 24,
+  "branch": "worker/a5-request-response-schema-v1",
+  "observed_head": "e111860285fb4a4ef177e7d7a20586c994a5e8c6",
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/",
+  "upstream_inputs": {
+    "a3_observation_handoff": {
+      "pr": 22,
+      "directive_comment": 5171205788,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+      "observed_head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105"
+    },
+    "a4_pagination_handoff": {
+      "pr": 23,
+      "directive_comment": 5171208197,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+      "observed_head": "31e9c7678d95c62b80fddc27d042fe5291d72b46"
+    }
+  },
+  "execution_mode": "FIXTURE_FIRST_FAIL_CLOSED",
+  "status": "ACTIVE",
+  "raw_secret_value_count": 0,
+  "actual_bulk_collection": false,
+  "panel_shell_direct_edit": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

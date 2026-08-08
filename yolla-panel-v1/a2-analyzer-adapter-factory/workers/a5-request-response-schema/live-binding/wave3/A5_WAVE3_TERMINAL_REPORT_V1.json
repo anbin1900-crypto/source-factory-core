@@ -1,0 +1,69 @@
+{
+  "schema_version": "A5_WAVE3_TERMINAL_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment_id": 5212027354,
+  "worker": "A-5",
+  "role": "LIVE_ENDPOINT_SCHEMA_MODE_CLOSURE_OWNER",
+  "worker_pr": 24,
+  "completed_at_kst": "2026-08-07T13:42:00+09:00",
+  "source_head_before_terminal": "0327e8f14917a14c26265ab13120ce0f47c7e07b",
+  "terminal": "A5_SITE_ANALYZER_WAVE3_SCHEMA_MODE_E2E_PROVEN_EXTERNAL_BLOCKER",
+  "status": "TERMINAL_PROVEN_EXTERNAL_BLOCKER",
+  "wave2_first_required_terminal": {
+    "terminal": "A5_SITE_ANALYZER_WAVE2_LIVE_SCHEMA_MODE_BINDING_PROVEN_EXTERNAL_BLOCKER",
+    "artifact": "A5_WAVE2_LIVE_SCHEMA_MODE_CLOSURE_V2.json",
+    "commit": "fbd9f09bf74eeb5f734ba8d4681c2ecef357dba6"
+  },
+  "authority": {
+    "a3_head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+    "a3_live_stream_handoff_blob": "b7d2789f72263d9678a8f0335b66be284760627e",
+    "a3_stream_sha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165",
+    "a4_head": "4ff280cc4098fada678a82826644b77b6288f274",
+    "a4_actual_live_handoff_blob": "fae1b21205259afd7d44aad8db6bb52f6d570b75",
+    "a4_result_sha256": "5e1c6e856bddddf4f3678cb9d0cc60191d8913e5854158a54b4762663fc9f4c1"
+  },
+  "wave3_result": {
+    "live_endpoint_grouping": "PASS_PARTIAL_COVERAGE_31_OF_32_REQUESTS",
+    "endpoint_group_count": 14,
+    "request_template_count": 14,
+    "schema_inference": "DOM_PASS_5_FIELDS_API_BLOCKED_BODY_CONTENT_ABSENT",
+    "schema_drift": "BLOCKED_LIVE_V1_BASELINE_AND_BODY_CONTENT_ABSENT",
+    "identifier_map": "PASS_PRIMARY_KEY_record_id_LIST_TO_DETAIL",
+    "auto_mode": "PASS_HYBRID",
+    "json_endpoint_group_count": 4,
+    "a6_input": "PARTIAL_READY_FULL_HYBRID_BLOCKED_EXACT_UPSTREAM_EVIDENCE_GAP",
+    "actual_projection_sha256": "142e79b9a16fe045b665a39200467d09be7497c1edb8e009e2cd636d036100d0"
+  },
+  "validation": {
+    "node_syntax": "PASS_2_OF_2",
+    "regression_assertions": "PASS_21_OF_21",
+    "deterministic_replay": "PASS",
+    "remote_source_readback": "PASS",
+    "remote_test_readback": "PASS",
+    "raw_secret_value_count": 0,
+    "false_live_pass_count": 0
+  },
+  "external_blockers": [
+    "A3_NETWORK_REQUEST_STREAM_COUNT_MISMATCH",
+    "A3_RESPONSE_BODY_BYTES_OR_CONTENT_POINTER_NOT_PUBLISHED",
+    "A3_LIVE_SCHEMA_DRIFT_BASELINE_MISSING"
+  ],
+  "external_owner": {
+    "worker": "A-3",
+    "wave3_directive_comment": 5212021138,
+    "required_pass_item": "RESPONSE_BODY_HANDOFF"
+  },
+  "artifacts": {
+    "entrypoint": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/wave3/wave3_live_authority_closure.cjs",
+    "test": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/wave3/test_wave3_live_authority_closure.cjs",
+    "validation_receipt": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/wave3/A5_WAVE3_LIVE_AUTHORITY_VALIDATION_RECEIPT_V1.json",
+    "actual_derivation": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/wave3/A5_WAVE3_ACTUAL_AUTHORITY_DERIVATION_V1.json",
+    "a6_handoff": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/wave3/A5_TO_A6_WAVE3_PARTIAL_GENERATOR_INPUT_HANDOFF_V1.json",
+    "blocker": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/wave3/A5_WAVE3_EXTERNAL_BLOCKER_V1.json"
+  },
+  "finding_only_terminal": false,
+  "fixture_only_terminal": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

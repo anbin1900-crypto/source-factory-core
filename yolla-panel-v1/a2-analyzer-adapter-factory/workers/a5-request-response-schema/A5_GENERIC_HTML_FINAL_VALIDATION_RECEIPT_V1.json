@@ -1,0 +1,117 @@
+{
+  "schema_version": "A5_GENERIC_HTML_FINAL_VALIDATION_RECEIPT_V1",
+  "directive_id": "A2-TO-A5-GENERIC-HTML-DOCUMENT-RESPONSE-CONTRACT-FINAL-V1-20260806-001",
+  "directive_comment": 5193798083,
+  "validated_at_kst": "2026-08-06T00:41:00+09:00",
+  "status": "PASS",
+  "terminal_candidate": "A5_GENERIC_HTML_DOCUMENT_RESPONSE_CONTRACT_READY",
+  "contract_artifacts": {
+    "response_schema": {
+      "path": "GENERIC_HTML_DOCUMENT_RESPONSE_SCHEMA_V1.json",
+      "blob": "162a9dc2ee524227412ed7a3b06e02482be0bb42"
+    },
+    "execution_contract": {
+      "path": "PUBLIC_DOCUMENT_GET_EXECUTION_CONTRACT_V1.json",
+      "blob": "bd974465423f49f9c438d6f750b8622e9f580641"
+    },
+    "identifier_map": {
+      "path": "GENERIC_HTML_DOCUMENT_IDENTIFIER_MAP_V1.json",
+      "blob": "ab2a5d82f8431a21fe1dfa56fd2dabaff45f3826"
+    },
+    "a5_to_a6_handoff": {
+      "path": "A5_TO_A6_GENERIC_HTML_EXECUTION_HANDOFF_V1.json",
+      "blob": "0f4e31bfd5ebfcf77872c52369322c67930330f2"
+    }
+  },
+  "authority_validation": {
+    "origin_mapping_v2_blob": "45dc6154e884cb7c234a0605e86f5a208583dd9e",
+    "request_binding_v2_blob": "e613036257babe24f7bb03ef6bcdc81a68d6a013",
+    "active_profile_binding": "PASS_7_OF_7",
+    "method_binding": "PASS_GET_7_OF_7",
+    "response_format_binding": "PASS_TEXT_HTML_7_OF_7",
+    "ep011_exclusion": "PASS",
+    "automated_pagination": false,
+    "credential_value_count": 0
+  },
+  "schema_validation": {
+    "draft": "2020-12",
+    "schema_parse": "PASS",
+    "schema_meta_validation": "PASS",
+    "positive_envelope_validation": "PASS",
+    "required_field_count": 12,
+    "required_field_presence": "PASS_12_OF_12",
+    "required_field_removal_negative_tests": "PASS_REJECT_12_OF_12",
+    "additional_property_policy": "REJECT",
+    "site_specific_field_claim_count": 0
+  },
+  "secret_like_reject_validation": {
+    "policy": "FAIL_CLOSED_BEFORE_GENERIC_OUTPUT",
+    "tested_classes": [
+      "AUTHORIZATION_HEADER",
+      "COOKIE_HEADER",
+      "SET_COOKIE_HEADER",
+      "BEARER_TOKEN",
+      "API_KEY",
+      "PASSWORD_OR_SECRET",
+      "EMAIL_ADDRESS",
+      "PHONE_NUMBER",
+      "RESIDENT_REGISTRATION_NUMBER"
+    ],
+    "test_result": "PASS_REJECT_9_OF_9",
+    "negative_test_raw_values_committed": false,
+    "raw_secret_value_count": 0,
+    "credential_value_count": 0
+  },
+  "deterministic_local_fixture_validation": {
+    "fixture_kind": "SYNTHETIC_LOCAL_GENERIC_HTML_NOT_LIVE",
+    "fixture_body_committed": false,
+    "fixture_url": "https://example.invalid/doc/1",
+    "fixture_size_bytes": 457,
+    "fixture_raw_sha256": "41fa6cd94026752f89081f177aabfde557e4b1e2684074338641908f1b72465b",
+    "run_1": {
+      "html_document_text": "Generic Fixture About Item 2 Duplicate Generic HTML Document Whitespace normalized.",
+      "outbound_links": [
+        "https://example.invalid/about",
+        "https://example.invalid/item/2"
+      ],
+      "redacted_sha256": "dfab00635c66f5f01fa6df90f3d5c42020e003034e7350b778e8e85148799d9f"
+    },
+    "run_2": {
+      "html_document_text": "Generic Fixture About Item 2 Duplicate Generic HTML Document Whitespace normalized.",
+      "outbound_links": [
+        "https://example.invalid/about",
+        "https://example.invalid/item/2"
+      ],
+      "redacted_sha256": "dfab00635c66f5f01fa6df90f3d5c42020e003034e7350b778e8e85148799d9f"
+    },
+    "raw_sha_match": "PASS",
+    "redacted_sha_match": "PASS",
+    "text_match": "PASS",
+    "outbound_links_match": "PASS",
+    "deterministic_replay": "PASS_2_OF_2"
+  },
+  "checks": {
+    "schema_parse": "PASS",
+    "required_fields": "PASS",
+    "secret_like_reject": "PASS",
+    "same_local_html_fixture_two_run_sha": "PASS",
+    "generic_text_output_contract": "PASS",
+    "generic_outbound_links_output_contract": "PASS",
+    "site_specific_dom_selector_claim_count": 0,
+    "site_specific_listing_field_claim_count": 0,
+    "internal_api_structure_claim_count": 0,
+    "live_site_call_count": 0,
+    "browser_automation_execution_count": 0,
+    "capture_execution_count": 0,
+    "independent_audit_count": 0,
+    "additional_authorization_request_count": 0,
+    "out_of_owned_root_change_count": 0
+  },
+  "a6_handoff_consumable": true,
+  "a6_offline_adapter_rebuild_ready": true,
+  "live_execution_authorized": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "decision": "A5_GENERIC_HTML_DOCUMENT_RESPONSE_CONTRACT_VALIDATION_PASS"
+}

@@ -1,0 +1,107 @@
+{
+  "schema_version": "A5_D_SOURCE_ENDPOINT_SCHEMA_VALIDATION_RECEIPT_V1",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF",
+  "directive_comment": 5196008982,
+  "validated_at_kst": "2026-08-06T04:14:00+09:00",
+  "status": "PASS",
+  "terminal_candidate": "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF_READY",
+  "validated_artifact": {
+    "path": "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF_V1.json",
+    "commit": "ca6badefd93da4b9722c955ff66117bbdf7ae38d",
+    "blob": "0fac8fac5069a013717ea74202d6d1741adfd966",
+    "remote_readback": "PASS"
+  },
+  "validator_contract": {
+    "required_profile_set": [
+      "EP-001",
+      "EP-002",
+      "EP-003",
+      "EP-004",
+      "EP-005",
+      "EP-010",
+      "EP-012"
+    ],
+    "required_method": "GET",
+    "required_response_format": "HTML",
+    "required_mime_type": "text/html",
+    "required_official_origin": "https://fin.land.naver.com",
+    "required_evidence_sections": [
+      "profile_evidence",
+      "identifier_evidence",
+      "response_field_evidence"
+    ],
+    "forbidden_entry_fields": [
+      "authority_type",
+      "d_canonical_id"
+    ],
+    "required_excluded_profile": "EP-011"
+  },
+  "positive_checks": {
+    "json_parse": "PASS",
+    "schema_version": "PASS",
+    "source_object_target": "PASS_SOURCE_ENDPOINT",
+    "active_profile_count": "PASS_7_OF_7",
+    "active_profile_set": "PASS_EXACT_SET",
+    "duplicate_profile_count": 0,
+    "official_source_url": "PASS_7_OF_7",
+    "official_origin": "PASS_7_OF_7",
+    "route_template": "PASS_7_OF_7",
+    "method_get": "PASS_7_OF_7",
+    "response_format_html": "PASS_7_OF_7",
+    "mime_type_text_html": "PASS_7_OF_7",
+    "request_value_evidence": "PASS_7_OF_7",
+    "profile_evidence": "PASS_7_OF_7",
+    "identifier_evidence": "PASS_7_OF_7",
+    "response_field_evidence": "PASS_7_OF_7",
+    "generic_response_fields": "PASS_12_OF_12",
+    "ep011_exclusion": "PASS",
+    "ep011_exclusion_reason": "PASS_EXCLUDED_NO_CREDENTIAL_REFERENCE",
+    "authority_type_value_provided": false,
+    "d_canonical_id_value_provided": false,
+    "new_external_request": false
+  },
+  "negative_tests": {
+    "missing_active_profile": "PASS_REJECT",
+    "duplicate_profile": "PASS_REJECT",
+    "ep011_promoted_to_active": "PASS_REJECT",
+    "non_get_method": "PASS_REJECT",
+    "non_html_response_format": "PASS_REJECT",
+    "non_text_html_mime": "PASS_REJECT",
+    "foreign_origin": "PASS_REJECT",
+    "missing_official_source_url": "PASS_REJECT",
+    "missing_route_template": "PASS_REJECT",
+    "missing_request_value_evidence": "PASS_REJECT",
+    "missing_profile_evidence": "PASS_REJECT",
+    "missing_identifier_evidence": "PASS_REJECT",
+    "missing_response_field_evidence": "PASS_REJECT",
+    "authority_type_assigned_by_a5": "PASS_REJECT",
+    "d_canonical_id_assigned_by_a5": "PASS_REJECT",
+    "credential_value_present": "PASS_REJECT",
+    "raw_secret_value_present": "PASS_REJECT"
+  },
+  "evidence_readback": {
+    "origin_mapping_v2_blob": "PASS_45dc6154e884cb7c234a0605e86f5a208583dd9e",
+    "request_binding_v2_blob": "PASS_e613036257babe24f7bb03ef6bcdc81a68d6a013",
+    "identifier_map_blob": "PASS_ab2a5d82f8431a21fe1dfa56fd2dabaff45f3826",
+    "response_schema_blob": "PASS_162a9dc2ee524227412ed7a3b06e02482be0bb42",
+    "response_validation_blob": "PASS_465ed0f7c2d68c613394bb4738e00a5ce2d9c91a"
+  },
+  "safety": {
+    "d_authority_type_decision": false,
+    "d_canonical_id_generation": false,
+    "new_external_request": false,
+    "live_site_call_count": 0,
+    "browser_automation_execution_count": 0,
+    "capture_execution_count": 0,
+    "automated_pagination": false,
+    "credential_value_count": 0,
+    "raw_secret_value_count": 0,
+    "out_of_owned_root_change_count": 0,
+    "actual_bulk_collection": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "decision": "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF_VALIDATION_PASS"
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "A5_TO_A6_WAVE2_LIVE_GENERATOR_INPUT_HANDOFF_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "from": "A-5",
+  "to": "A-6",
+  "status": "BLOCKED_WAITING_ACTUAL_LIVE_TRAFFIC_AND_A4_STRUCTURE",
+  "entrypoint": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/live_traffic_endpoint_schema_binding.cjs",
+  "test": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/test_live_traffic_endpoint_schema_binding.cjs",
+  "upstream_contracts": {
+    "a3": "STREAMING_ANALYZER_EVENT_V1",
+    "a4_direct": "A4_STRUCTURE_INFERENCE_RESULT_V1",
+    "a4_wave2": "A4_WAVE2_LIVE_EVENT_STRUCTURE_HANDOFF_V1"
+  },
+  "output_contract": "A5_LIVE_TRAFFIC_GENERATOR_INPUT_V1",
+  "output_sections_when_unblocked": [
+    "live_evidence",
+    "generator_input.endpoint_groups",
+    "generator_input.request_templates",
+    "generator_input.response_schemas",
+    "generator_input.identifier_map",
+    "generator_input.identifier_relations",
+    "generator_input.schema_drift",
+    "generator_input.extraction_mode",
+    "generator_input.repairs",
+    "a6_handoff"
+  ],
+  "acceptance_gate": {
+    "actual_browser": true,
+    "fixture": false,
+    "synthetic": false,
+    "fake_debugger": false,
+    "required_event_types": [
+      "cdp.attached",
+      "network.requestWillBeSent",
+      "network.responseReceived",
+      "network.responseBody",
+      "dom.snapshot",
+      "page.frameNavigated"
+    ],
+    "single_analyzer_session": true,
+    "positive_web_contents_id": true,
+    "request_response_body_correlation": true,
+    "a3_a4_exact_event_digest_match": true,
+    "raw_secret_value_count": 0
+  },
+  "current_blocker": "A3_ACTUAL_LIVE_TRAFFIC_AND_A4_BOUND_STRUCTURE_UNAVAILABLE",
+  "a6_action_now": "DO_NOT_COMPILE_OR_CLAIM_LIVE_ADAPTER_FROM_FIXTURE_OUTPUT",
+  "a6_action_after_unblock": "Consume A5_LIVE_TRAFFIC_GENERATOR_INPUT_V1 only when a6_handoff.status is READY.",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

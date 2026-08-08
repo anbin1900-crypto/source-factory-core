@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:yolla:a5:site-analyzer-generator-input:v1",
+  "title": "A5 Site Analyzer Generator Input V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_bindings",
+    "endpoint_groups",
+    "request_templates",
+    "response_schemas",
+    "identifier_map",
+    "identifier_relations",
+    "dom_binding",
+    "pagination",
+    "extraction_mode",
+    "schema_drift",
+    "repairs",
+    "a6_generator_contract",
+    "counters"
+  ],
+  "properties": {
+    "schema_version": {"const": "A5_SITE_ANALYZER_GENERATOR_INPUT_V1"},
+    "generated_at": {"type": "string"},
+    "source_bindings": {"type": "object"},
+    "endpoint_groups": {"type": "array", "items": {"type": "object"}},
+    "request_templates": {"type": "array", "items": {"type": "object"}},
+    "response_schemas": {"type": "array", "items": {"type": "object"}},
+    "identifier_map": {"type": "array", "items": {"type": "object"}},
+    "identifier_relations": {"type": "array", "items": {"type": "object"}},
+    "dom_binding": {"type": "object"},
+    "pagination": {"type": ["object", "null"]},
+    "extraction_mode": {
+      "type": "object",
+      "required": ["mode", "api_score", "dom_score", "reasons"],
+      "properties": {
+        "mode": {"enum": ["DOM_HTML", "JSON_API", "HYBRID"]},
+        "api_score": {"type": "number", "minimum": 0, "maximum": 1},
+        "dom_score": {"type": "number", "minimum": 0, "maximum": 1},
+        "reasons": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "schema_drift": {"type": "array", "items": {"type": "object"}},
+    "repairs": {"type": "object"},
+    "a6_generator_contract": {
+      "type": "object",
+      "required": ["adapter_mode", "endpoint_group_ids", "request_template_ids", "record_paths", "dom_locators", "pagination", "preconditions"]
+    },
+    "counters": {
+      "type": "object",
+      "required": ["observation_count", "endpoint_group_count", "request_template_count", "response_schema_count", "repeated_record_path_count", "identifier_candidate_count", "schema_drift_count", "raw_secret_value_count"],
+      "properties": {
+        "raw_secret_value_count": {"const": 0}
+      }
+    }
+  }
+}

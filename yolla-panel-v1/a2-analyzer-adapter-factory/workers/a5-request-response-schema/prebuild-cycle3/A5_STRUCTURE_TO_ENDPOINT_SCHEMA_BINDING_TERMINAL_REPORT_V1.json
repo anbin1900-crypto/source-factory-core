@@ -1,0 +1,44 @@
+{
+  "schema_version": "A5_STRUCTURE_TO_ENDPOINT_SCHEMA_BINDING_TERMINAL_REPORT_V1",
+  "directive_id": "AI001-TO-A5-STRUCTURE-TO-ENDPOINT-SCHEMA-DECISION-BINDING-V3-20260807-001",
+  "directive_comment_id": 5217748450,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "worker": "A-5",
+  "terminal": "A5_STRUCTURE_TO_ENDPOINT_SCHEMA_DECISION_BINDING_READY",
+  "status": "TERMINAL_PASS",
+  "result": {
+    "a3_a4_exact_handoff_adapter": "READY",
+    "dom_api_hybrid_decision": "READY_WITH_CONFIDENCE_AND_EVIDENCE_POINTER",
+    "recipe_decision_input": "READY",
+    "command_id_page_id_action_id_provenance": "READY",
+    "session_secret_policy": "CREDENTIAL_REFERENCE_OR_REDACTED_SEMANTICS_ONLY",
+    "insufficient_evidence": "UNKNOWN_OR_INSUFFICIENT_EVIDENCE_FAIL_CLOSED",
+    "fixture_replay_2_identical_digest": "PASS",
+    "a6_direct_consume_manifest": "READY",
+    "raw_secret_value_count": 0
+  },
+  "required_artifacts": {
+    "adapter_contract": "prebuild-cycle3/A3_A4_EXACT_HANDOFF_ADAPTER_V1.json",
+    "recipe_contract": "prebuild-cycle3/RECIPE_DECISION_INPUT_V1.json",
+    "entrypoint": "prebuild-cycle3/structure_to_endpoint_schema_binding.cjs",
+    "a6_manifest": "prebuild-cycle3/A5_TO_A6_RECIPE_DECISION_DIRECT_CONSUME_MANIFEST_V1.json",
+    "validation_receipt": "prebuild-cycle3/A5_STRUCTURE_TO_ENDPOINT_SCHEMA_BINDING_VALIDATION_RECEIPT_V1.json"
+  },
+  "validation": {
+    "node_syntax": "PASS_2_OF_2",
+    "fixture_replay_count": 2,
+    "assertions": "PASS_17_OF_17",
+    "decision_digest": "8a5d67c36c67025a2e117db2a372211f0cab66269f3c41ad43a9f02521c9c599",
+    "deterministic_digest": "PASS",
+    "remote_readback": "PASS",
+    "raw_secret_value_count": 0
+  },
+  "boundaries": {
+    "target_pc_execution": false,
+    "tunnel_change": false,
+    "live_site_call": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

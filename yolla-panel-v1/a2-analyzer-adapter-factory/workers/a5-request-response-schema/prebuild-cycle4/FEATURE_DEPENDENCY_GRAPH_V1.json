@@ -1,0 +1,11 @@
+{
+  "schema_version": "FEATURE_DEPENDENCY_GRAPH_V1",
+  "observed_edge": "ACTION_REQUIRES_ENDPOINT",
+  "candidate_edge": "FEATURE_DATA_PRESENTATION_DEPENDENCY",
+  "candidate_requires_confidence": true,
+  "business_rules": {
+    "status": "UNKNOWN",
+    "reason": "BUSINESS_RULES_NOT_OBSERVED"
+  },
+  "authority_policy": "CANDIDATE_EDGES_MUST_NOT_BE_PROMOTED_WITHOUT_NEW_EVIDENCE"
+}

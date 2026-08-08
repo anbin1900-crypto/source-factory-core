@@ -1,0 +1,30 @@
+{
+  "schema_version": "LATEST_A5_API_UI_STATE_ENTITY_BINDING_POINTER_V1",
+  "worker": "A-5",
+  "worker_pr": 24,
+  "directive_id": "A0-TO-A5-API-UI-STATE-ENTITY-SEMANTIC-BINDING-V5-20260808-001",
+  "resume_comment_id": 5219596904,
+  "original_directive_comment_id": 5219443363,
+  "cycle_id": "A0-AB-AI-BLUEPRINT-SEMANTIC-BINDING-CYCLE5-20260808-001",
+  "status": "TERMINAL_PASS",
+  "terminal": "A5_API_UI_STATE_ENTITY_BINDING_READY",
+  "terminal_commit": "c043a91709f36f57add4d976585b932f65e03098",
+  "terminal_report_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle5/A5_API_UI_STATE_ENTITY_BINDING_TERMINAL_REPORT_V1.json",
+  "validation_receipt_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle5/A5_API_UI_STATE_ENTITY_BINDING_VALIDATION_RECEIPT_V1.json",
+  "entrypoint_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle5/api_ui_state_entity_semantic_binding.cjs",
+  "required_output_paths": [
+    "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle5/API_UI_STATE_BINDING_GRAPH_V1.json",
+    "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle5/DATA_ENTITY_GRAPH_V1.json",
+    "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle5/FORM_FIELD_SEMANTIC_CANDIDATE_V1.json"
+  ],
+  "semantic_digest": "53a6d16b9440f6d36df419001af8a6f0f764452f1b1f6e83284a2da17ad4301a",
+  "fixture_replay_count": 2,
+  "deterministic_digest": "PASS",
+  "next_action": "Consumers may use observed semantic edges directly; candidate edges remain candidates and UNKNOWN/INSUFFICIENT_EVIDENCE bindings remain fail-closed. D Canonical DB authority is not assigned by A-5.",
+  "raw_secret_value_count": 0,
+  "target_pc_execution": false,
+  "live_site_call": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,69 @@
+{
+  "authority": {
+    "a3_observation": {
+      "directive_comment": 5171205788,
+      "observed_head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+      "pr": 22,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM"
+    },
+    "a4_pagination": {
+      "directive_comment": 5171208197,
+      "observed_head": "31e9c7678d95c62b80fddc27d042fe5291d72b46",
+      "pr": 23,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM"
+    },
+    "directive_comment": 5171210803,
+    "directive_id": "A2-TO-A5-REQUEST-RESPONSE-EXECUTION-CONTRACT-V3-20260804-001",
+    "registered_at_kst": "2026-08-04T05:11:00+09:00"
+  },
+  "contract_mode": "FIXTURE_FIRST_FAIL_CLOSED",
+  "endpoints": [
+    {
+      "endpoint_id": "EP_FIXTURE_ITEM_SEARCH_V1",
+      "evidence": {
+        "comment": 5171205788,
+        "head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+        "kind": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+        "pr": 22
+      },
+      "method": "GET",
+      "pagination_contract_id": "PAGINATION_FIXTURE_PAGE_V1",
+      "request_template_id": "REQ_FIXTURE_ITEM_SEARCH_V1",
+      "response_format": "application/json",
+      "response_schema_id": "RESP_FIXTURE_ITEM_SEARCH_V1",
+      "retry_policy_id": "RETRY_STANDARD_READ_V1",
+      "session_header_contract_id": "SESSION_HEADER_FIXTURE_ANONYMOUS_V1",
+      "timeout_ms": 10000,
+      "url_template": "https://fixture.invalid/api/v1/items"
+    },
+    {
+      "endpoint_id": "EP_FIXTURE_ITEM_DETAIL_V1",
+      "evidence": {
+        "comment": 5171205788,
+        "head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+        "kind": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+        "pr": 22
+      },
+      "method": "GET",
+      "pagination_contract_id": null,
+      "request_template_id": "REQ_FIXTURE_ITEM_DETAIL_V1",
+      "response_format": "application/json",
+      "response_schema_id": "RESP_FIXTURE_ITEM_DETAIL_V1",
+      "retry_policy_id": "RETRY_STANDARD_READ_V1",
+      "session_header_contract_id": "SESSION_HEADER_FIXTURE_ANONYMOUS_V1",
+      "timeout_ms": 10000,
+      "url_template": "https://fixture.invalid/api/v1/items/{item_id}"
+    }
+  ],
+  "fail_closed_rules": [
+    "UPSTREAM_A3_CONFLICT_REJECT",
+    "UNDECLARED_ENDPOINT_REJECT",
+    "RAW_SECRET_VALUE_REJECT",
+    "LIVE_AUTHORITY_PROMOTION_BEFORE_POINTER_REJECT"
+  ],
+  "live_site_call_count": 0,
+  "merge": false,
+  "production": false,
+  "ready": false,
+  "schema_version": "YOLLA_ENDPOINT_CATALOG_V1"
+}

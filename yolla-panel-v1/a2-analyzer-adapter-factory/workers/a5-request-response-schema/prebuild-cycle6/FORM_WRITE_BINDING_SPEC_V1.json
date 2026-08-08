@@ -1,0 +1,26 @@
+{
+  "schema_version": "FORM_WRITE_BINDING_SPEC_V1",
+  "purpose": "AI implementation specification joining Form Field -> application canonical candidate -> read/write transform with preserved evidence and confidence.",
+  "binding_fields": [
+    "form_id",
+    "field_name",
+    "application_canonical_candidate",
+    "canonical_semantic_status",
+    "canonical_confidence",
+    "read_transform",
+    "write_transform",
+    "business_rule",
+    "evidence_pointer",
+    "d_canonical_authority"
+  ],
+  "semantic_status_enum": ["OBSERVED", "INFERRED", "UNKNOWN"],
+  "implementation_policy": {
+    "write_allowed_only_when_transform_status": "OBSERVED_OR_VALIDATED_INFERRED",
+    "unknown_transform_fail_closed": true,
+    "evidence_less_business_rule_generation": false,
+    "d_canonical_schema_decision": false,
+    "production_db_write": false
+  },
+  "raw_secret_value_count": 0,
+  "raw_pii_value_count": 0
+}

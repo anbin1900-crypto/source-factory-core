@@ -1,0 +1,22 @@
+{
+  "schema_version": "LATEST_A5_WAVE2_LIVE_TRAFFIC_BINDING_POINTER_V1",
+  "updated_at_kst": "2026-08-07T04:05:00+09:00",
+  "worker": "A-5",
+  "worker_pr": 24,
+  "directive_comment_id": 5208238898,
+  "status": "TERMINAL_PROVEN_EXTERNAL_BLOCKER",
+  "terminal": "A5_SITE_ANALYZER_WAVE2_LIVE_TRAFFIC_BINDING_PROVEN_EXTERNAL_BLOCKER_COMPONENT_READY",
+  "terminal_commit": "d4a0441f404f0924b9b2586d0b1cac82c9f00414",
+  "terminal_report_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/A5_WAVE2_LIVE_TRAFFIC_BINDING_TERMINAL_REPORT_V1.json",
+  "validation_receipt_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/A5_WAVE2_LIVE_TRAFFIC_BINDING_VALIDATION_RECEIPT_V1.json",
+  "blocker_receipt_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/A5_WAVE2_LIVE_TRAFFIC_EXTERNAL_BLOCKER_V1.json",
+  "a6_handoff_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/A5_TO_A6_WAVE2_LIVE_GENERATOR_INPUT_HANDOFF_V1.json",
+  "entrypoint_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/live_traffic_endpoint_schema_binding.cjs",
+  "component_validation": "PASS_25_OF_25",
+  "actual_live_generator_input_generated": false,
+  "blocker_code": "A3_ACTUAL_LIVE_TRAFFIC_AND_A4_BOUND_STRUCTURE_UNAVAILABLE",
+  "raw_secret_value_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

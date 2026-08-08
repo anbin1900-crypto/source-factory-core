@@ -1,0 +1,37 @@
+{
+  "schema_version": "A5_FORM_ACTION_BINDING_CONTRACT_V1",
+  "cycle_id": "V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "worker": "A-5",
+  "purpose": "Bind real-estate form fields to validation, request, response and UI state while preserving site-specific evidence and preventing unobserved writes.",
+  "lanes": ["PUBLIC_READ","WRITE","MY_LISTING","EDIT"],
+  "capabilities": ["PUBLIC_READ","WRITE","MY_LISTING","EDIT","DELETE","END_POSTING"],
+  "binding_chain": ["form_field","validation_rule","request_field","response_result","ui_state"],
+  "binding_fields": ["binding_id","site_id","lane","capability","form_id","form_field","validation_rule","request_binding","response_binding","ui_state_binding","state","confidence","evidence_pointer","final_submit_performed"],
+  "stage_contracts": {
+    "validation_rule": ["state","rule"],
+    "request_binding": ["state","request_field"],
+    "response_binding": ["state","result_path"],
+    "ui_state_binding": ["state","component"]
+  },
+  "state_values": ["OBSERVED","INFERRED","WAITING_INPUT","UNKNOWN"],
+  "session_policy": {
+    "credential_reference_only": true,
+    "allowed_reference_example": "credential_ref://<site>/<account>",
+    "raw_cookie_storage": false,
+    "raw_authorization_storage": false,
+    "raw_csrf_token_storage": false,
+    "raw_pii_storage": false
+  },
+  "write_safety": {
+    "final_write_or_edit_submit": false,
+    "delete_submit": false,
+    "end_posting_submit": false,
+    "target_value_guessing": false,
+    "unobserved_stage": "WAITING_INPUT_OR_UNKNOWN_FAIL_CLOSED"
+  },
+  "evidence_policy": "Every OBSERVED or INFERRED binding preserves confidence and exact evidence_pointer; absent evidence is never promoted.",
+  "d_canonical_schema_decision": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

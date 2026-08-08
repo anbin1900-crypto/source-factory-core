@@ -1,0 +1,64 @@
+{
+  "schema_version": "A5_WAVE2_LIVE_TRAFFIC_BINDING_TERMINAL_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment_id": 5208238898,
+  "worker": "A-5",
+  "role": "LIVE_TRAFFIC_ENDPOINT_SCHEMA_MODE_BINDING_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 24,
+  "branch": "worker/a5-request-response-schema-v1",
+  "completed_at_kst": "2026-08-07T04:05:00+09:00",
+  "terminal": "A5_SITE_ANALYZER_WAVE2_LIVE_TRAFFIC_BINDING_PROVEN_EXTERNAL_BLOCKER_COMPONENT_READY",
+  "status": "TERMINAL_PROVEN_EXTERNAL_BLOCKER",
+  "result": {
+    "head_advance": "PASS",
+    "live_traffic_binding_component": "PASS_EXECUTABLE_NODE_CLI",
+    "a3_streaming_event_validation": "PASS",
+    "request_response_body_correlation": "PASS",
+    "a4_direct_structure_binding": "PASS",
+    "a4_wave2_handoff_binding": "PASS",
+    "endpoint_schema_identifier_generator_path": "PASS_BOUND_TO_WAVE1_ENGINE",
+    "schema_drift_path": "PASS_BOUND",
+    "mode_decision_path": "PASS_BOUND",
+    "fixture_live_misclassification_rejection": "PASS",
+    "raw_secret_rejection": "PASS",
+    "actual_live_generator_input": "NOT_GENERATED_FAIL_CLOSED",
+    "a6_handoff": "BLOCKED_WAITING_ACTUAL_LIVE_TRAFFIC_AND_A4_STRUCTURE"
+  },
+  "validation": {
+    "node_syntax": "PASS_2_OF_2",
+    "regression_assertions": "PASS_25_OF_25",
+    "deterministic_replay": "PASS",
+    "remote_readback": "PASS_2_OF_2",
+    "source_sha256": "79b923bacdee39cfc3fd5b25a51610c727ed170a535a4d2bf45afe2ec869f10a",
+    "test_sha256": "1e65c1595132d33e9add3a328a1a5c6ec2f07c9415cdb6e2ecf82111b82d96f0",
+    "raw_secret_value_count": 0,
+    "false_live_pass_count": 0
+  },
+  "external_blocker": {
+    "code": "A3_ACTUAL_LIVE_TRAFFIC_AND_A4_BOUND_STRUCTURE_UNAVAILABLE",
+    "a3_head": "e86dfcc2fc32ad366cd7fd8ba07392850419b853",
+    "a3_live_network_event_count": 0,
+    "a3_live_response_body_count": 0,
+    "a3_live_dom_snapshot_count": 0,
+    "a3_live_navigation_event_count": 0,
+    "a4_head": "a22337ce5f39c6a12837d3771e5eb1660c155b24",
+    "a4_actual_live_handoff_available": false,
+    "owner_boundary": "A-3 actual Electron runtime capture then A-4 exact digest-bound structure inference"
+  },
+  "artifacts": {
+    "start": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/A5_WAVE2_LIVE_TRAFFIC_BINDING_START_V1.json",
+    "entrypoint": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/live_traffic_endpoint_schema_binding.cjs",
+    "test": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/test_live_traffic_endpoint_schema_binding.cjs",
+    "validation": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/A5_WAVE2_LIVE_TRAFFIC_BINDING_VALIDATION_RECEIPT_V1.json",
+    "blocker": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/A5_WAVE2_LIVE_TRAFFIC_EXTERNAL_BLOCKER_V1.json",
+    "a6_handoff": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/A5_TO_A6_WAVE2_LIVE_GENERATOR_INPUT_HANDOFF_V1.json"
+  },
+  "guardrails": {
+    "fixture_only_terminal": false,
+    "finding_only_terminal": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

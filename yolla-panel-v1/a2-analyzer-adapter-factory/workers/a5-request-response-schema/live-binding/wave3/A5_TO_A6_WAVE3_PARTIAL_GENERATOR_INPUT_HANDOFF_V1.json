@@ -1,0 +1,44 @@
+{
+  "schema_version": "A5_TO_A6_WAVE3_PARTIAL_GENERATOR_INPUT_HANDOFF_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "from": "A-5",
+  "to": "A-6",
+  "status": "BLOCKED_EXACT_UPSTREAM_EVIDENCE_GAP",
+  "partial_generator_input_usable": true,
+  "full_hybrid_compile_ready": false,
+  "authority": {
+    "a3_head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+    "a3_stream_sha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165",
+    "a4_head": "4ff280cc4098fada678a82826644b77b6288f274",
+    "a4_result_sha256": "5e1c6e856bddddf4f3678cb9d0cc60191d8913e5854158a54b4762663fc9f4c1"
+  },
+  "available": {
+    "mode": "HYBRID",
+    "endpoint_group_count": 14,
+    "json_endpoint_group_count": 4,
+    "request_template_count": 14,
+    "dom_record_path": "main#records > article.item",
+    "dom_fields": ["record_id","name","category","value","detail_url"],
+    "primary_key": "record_id",
+    "detail_relation": "LIST_RECORD_TO_DETAIL_ROUTE",
+    "pagination": {"type":"NEXT","locator":"#next-page"},
+    "derivation_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/wave3/A5_WAVE3_ACTUAL_AUTHORITY_DERIVATION_V1.json",
+    "entrypoint_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/wave3/wave3_live_authority_closure.cjs"
+  },
+  "blocked_for_full_hybrid": {
+    "api_response_schema_fields": "A3_RESPONSE_BODY_BYTES_OR_CONTENT_POINTER_NOT_PUBLISHED",
+    "schema_drift_comparison": "A3_LIVE_SCHEMA_DRIFT_BASELINE_MISSING",
+    "full_request_stream_coverage": "A3_NETWORK_REQUEST_STREAM_COUNT_MISMATCH"
+  },
+  "resume_conditions": [
+    "A-3 publishes network_request_stream with listed count exactly matching advertised network.request count",
+    "A-3 publishes immutable response body bytes or content/storage pointer for JSON response metadata SHA values",
+    "A-3 publishes live schema-drift baseline v1 plus v2 with response body evidence",
+    "A-5 reruns wave3_live_authority_closure.cjs and obtains blockers=[]"
+  ],
+  "a3_wave3_response_body_handoff_directive_comment": 5212021138,
+  "raw_secret_value_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

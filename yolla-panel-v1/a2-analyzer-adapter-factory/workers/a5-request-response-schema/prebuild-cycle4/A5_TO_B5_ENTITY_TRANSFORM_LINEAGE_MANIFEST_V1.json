@@ -1,0 +1,25 @@
+{
+  "schema_version": "A5_TO_B5_ENTITY_TRANSFORM_LINEAGE_MANIFEST_V1",
+  "producer": "A-5_ACTION_STATE_API_ENTITY_BINDING_OWNER",
+  "consumer": "B-5",
+  "direct_consume_contract": "ENTITY_TRANSFORM_LINEAGE_INPUT_V1",
+  "source_result_schema": "A5_ACTION_STATE_API_ENTITY_BINDING_RESULT_V1",
+  "dataset_lineage_inputs": [
+    "provenance.command_id",
+    "provenance.page_id",
+    "provenance.action_ids",
+    "data_entity_relationship_graph",
+    "form_field_canonical_candidate",
+    "api_ui_binding_graph"
+  ],
+  "transform_rules": {
+    "read_transform_candidate": "PRESERVE_CONFIDENCE_AND_EVIDENCE",
+    "write_transform_candidate": "PRESERVE_CONFIDENCE_AND_EVIDENCE",
+    "unknown_transform": "PRESERVE_UNKNOWN",
+    "business_rule": "UNKNOWN_UNLESS_OBSERVED"
+  },
+  "raw_secret_value_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

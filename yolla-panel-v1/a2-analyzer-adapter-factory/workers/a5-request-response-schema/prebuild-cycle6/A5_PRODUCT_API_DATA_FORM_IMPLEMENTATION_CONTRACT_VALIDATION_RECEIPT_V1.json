@@ -1,0 +1,47 @@
+{
+  "schema_version": "A5_PRODUCT_API_DATA_FORM_IMPLEMENTATION_CONTRACT_VALIDATION_RECEIPT_V1",
+  "directive_id": "A0-TO-A5-PRODUCT-API-DATA-FORM-IMPLEMENTATION-CONTRACT-V6-20260808-001",
+  "directive_comment_id": 5220452931,
+  "cycle_id": "A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001",
+  "worker": "A-5",
+  "validated_remote_head_before_receipt": "761766dcb643ac4a1e529b67679af80676a34f51",
+  "implementation": {
+    "entrypoint_commit": "9bbaf11c9c4792207b294820870d50ddfc8deb29",
+    "entrypoint_blob": "39cdf5f72def4aa51241c39f37a8ce7f83df7e37",
+    "test_commit": "813dc6caf50613284048623be4253d0bb9ea8220",
+    "test_blob": "a2d48a7553d3c47bcb27a554e9a74e629e187740",
+    "remote_source_readback": "PASS",
+    "remote_test_readback": "PASS"
+  },
+  "validation": {
+    "node_syntax": "PASS_2_OF_2",
+    "fixture_replay_count": 2,
+    "assertions": "PASS_24_OF_24",
+    "implementation_digest_run1": "3c3d69d9b8e15e79db074665f2776a1bec27f5f8177eeac38b127763b852f328",
+    "implementation_digest_run2": "3c3d69d9b8e15e79db074665f2776a1bec27f5f8177eeac38b127763b852f328",
+    "deterministic_digest": "PASS",
+    "observed_inferred_unknown_preservation": "PASS",
+    "evidence_pointer_preservation": "PASS",
+    "unknown_fail_closed": "PASS",
+    "business_rule_generation_without_evidence_count": 0,
+    "d_canonical_schema_decision_count": 0,
+    "production_db_write_count": 0,
+    "raw_secret_reject": "PASS",
+    "raw_pii_reject": "PASS",
+    "raw_secret_value_count": 0,
+    "raw_pii_value_count": 0
+  },
+  "required_outputs": {
+    "PRODUCT_API_CONTRACT_V1": "PASS",
+    "DATA_MODEL_IMPLEMENTATION_SPEC_V1": "PASS",
+    "FORM_WRITE_BINDING_SPEC_V1": "PASS"
+  },
+  "boundaries": {
+    "target_pc_execution": false,
+    "live_site_call": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "PASS"
+}

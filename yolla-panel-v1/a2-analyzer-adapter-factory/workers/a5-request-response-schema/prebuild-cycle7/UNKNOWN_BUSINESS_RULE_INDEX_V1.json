@@ -1,0 +1,14 @@
+{
+  "schema_version": "UNKNOWN_BUSINESS_RULE_INDEX_V1",
+  "index_kinds": ["CAUSAL_WAITING_INPUT", "ENTITY_WAITING_INPUT", "FORM_WAITING_INPUT", "UNKNOWN_BUSINESS_RULE"],
+  "statuses": ["WAITING_INPUT", "UNKNOWN"],
+  "required_fields": ["index_kind", "status", "reason", "lane", "evidence_pointer"],
+  "late_binding_policy": {
+    "waiting_input": "Re-evaluate only when new exact evidence for the indexed edge arrives.",
+    "unknown_business_rule": "Never promote without observed evidence.",
+    "unrelated_ready_edges": "Remain usable and are not blocked by waiting entries."
+  },
+  "promotion_without_exact_evidence": false,
+  "raw_secret_value_count": 0,
+  "raw_pii_value_count": 0
+}

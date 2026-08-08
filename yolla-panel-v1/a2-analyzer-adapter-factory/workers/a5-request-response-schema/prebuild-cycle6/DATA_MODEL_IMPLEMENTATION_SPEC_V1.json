@@ -1,0 +1,16 @@
+{
+  "schema_version": "DATA_MODEL_IMPLEMENTATION_SPEC_V1",
+  "purpose": "Application-level data model implementation specification derived from Cycle5 DATA_ENTITY_GRAPH_V1 without assigning D Canonical authority.",
+  "entity_fields": ["entity_id", "record_path", "request_id", "identifier_paths", "semantic_status", "authority", "evidence_pointer", "fields"],
+  "field_fields": ["source_field", "json_path", "application_canonical_candidate", "semantic_status", "authority", "confidence", "evidence_pointer", "d_canonical_authority"],
+  "semantic_status_enum": ["OBSERVED", "INFERRED", "UNKNOWN"],
+  "authority_boundary": {
+    "application_level_only": true,
+    "d_canonical_schema_decision": false,
+    "production_db_write": false
+  },
+  "business_rules_without_observation": "UNKNOWN",
+  "unknown_policy": "FAIL_CLOSED",
+  "raw_secret_value_count": 0,
+  "raw_pii_value_count": 0
+}

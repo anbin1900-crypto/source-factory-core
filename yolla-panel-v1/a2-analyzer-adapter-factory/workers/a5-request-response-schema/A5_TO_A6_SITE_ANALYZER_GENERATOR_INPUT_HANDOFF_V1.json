@@ -1,0 +1,34 @@
+{
+  "schema_version": "A5_TO_A6_SITE_ANALYZER_GENERATOR_INPUT_HANDOFF_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "from": "A-5",
+  "to": "A-6",
+  "status": "READY",
+  "consumer_goal": "Compile executable Playwright/Crawlee adapter and extraction recipe from inferred endpoint, schema, DOM and pagination contracts.",
+  "entrypoint": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/endpoint_schema_mode_inference.cjs",
+  "input_schema": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/A5_SITE_ANALYZER_GENERATOR_INPUT_V1.schema.json",
+  "fixture_input": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/fixture_input.json",
+  "regression_test": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/test_endpoint_schema_mode_inference.cjs",
+  "command": "node endpoint_schema_mode_inference.cjs < fixture_input.json > generator_input.json",
+  "fixture_output_digest": "sha256:2c18d5ed515fed1e0dec451ca53ede3bfd1bddd77ad1785bb3e6e785af33dc94",
+  "generator_input_contract": {
+    "required_sections": ["endpoint_groups","request_templates","response_schemas","identifier_map","identifier_relations","dom_binding","pagination","extraction_mode","schema_drift","repairs","a6_generator_contract","counters"],
+    "mode_enum": ["DOM_HTML","JSON_API","HYBRID"],
+    "stable_endpoint_id_pattern": "^EG-[0-9A-F]{12}$",
+    "breaking_drift_behavior": "FAIL_CLOSED",
+    "raw_secret_value_count": 0
+  },
+  "fixture_acceptance": {
+    "endpoint_groups": 3,
+    "response_schemas": 3,
+    "mode": "HYBRID",
+    "record_path": "$.items",
+    "primary_key": "listingId",
+    "parent_identifier": "regionId",
+    "pagination": "PAGE_NUMBER"
+  },
+  "preconditions": ["NO_RAW_SECRET_VALUES","SOURCE_BINDINGS_RETAINED","FAIL_CLOSED_ON_BREAKING_SCHEMA_DRIFT"],
+  "production": false,
+  "ready": false,
+  "merge": false
+}

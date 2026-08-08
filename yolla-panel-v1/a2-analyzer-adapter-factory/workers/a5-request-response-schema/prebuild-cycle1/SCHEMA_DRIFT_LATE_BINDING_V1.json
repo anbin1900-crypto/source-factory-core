@@ -1,0 +1,21 @@
+{
+  "schema_version": "SCHEMA_DRIFT_LATE_BINDING_V1",
+  "directive_id": "AI001-TO-A5-ENDPOINT-SCHEMA-DOM-API-HYBRID-PREBUILD-V1-20260807-001",
+  "strategy": "LATE_BINDING_FAIL_CLOSED",
+  "conditions": [
+    {"when": "MISSING_RESPONSE_BODY", "action": "SUPPLY_RESPONSE_BODY_CONTENT_OR_IMMUTABLE_POINTER", "rerun": "FULL_PREBUILD"},
+    {"when": "NO_PREVIOUS_SCHEMA_BASELINE", "action": "SUPPLY_PREVIOUS_SCHEMA_SNAPSHOT_FOR_DRIFT_COMPARISON", "rerun": "DRIFT_ONLY_OR_FULL_PREBUILD"},
+    {"when": "BREAKING_SCHEMA_DRIFT", "action": "VERSION_SCHEMA_AND_FAIL_CLOSED_UNTIL_SUCCESSOR_REVIEW", "rerun": "AFTER_UPDATED_EVIDENCE"},
+    {"when": "MISSING_DOM_STRUCTURE", "action": "SUPPLY_A4_STRUCTURE_RESULT", "rerun": "MODE_AND_CORRELATION"}
+  ],
+  "drift_rules": {
+    "FIELD_ADDED": "ACCEPT_ADDITIVE_FIELD",
+    "FIELD_REMOVED": "VERSION_SCHEMA_AND_FAIL_CLOSED",
+    "TYPE_CHANGED": "VERSION_SCHEMA_AND_FAIL_CLOSED"
+  },
+  "fabricate_missing_fields": false,
+  "raw_secret_value_capture": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

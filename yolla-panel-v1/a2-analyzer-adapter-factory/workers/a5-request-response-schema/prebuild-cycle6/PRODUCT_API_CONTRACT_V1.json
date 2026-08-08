@@ -1,0 +1,25 @@
+{
+  "schema_version": "PRODUCT_API_CONTRACT_V1",
+  "purpose": "AI implementation contract joining observed Action -> Endpoint/Request -> Response Entity -> UI State semantics from Cycle5.",
+  "operation_fields": [
+    "operation_id",
+    "semantic_status",
+    "authority",
+    "confidence",
+    "action",
+    "request",
+    "response_entities",
+    "ui_state_updates",
+    "evidence_pointer"
+  ],
+  "semantic_status_enum": ["OBSERVED", "INFERRED", "UNKNOWN"],
+  "authority_policy": {
+    "OBSERVED": "Direct implementation input only when explicit Cycle5 provenance exists.",
+    "INFERRED": "Candidate/inferred semantics require consumer validation and may not be promoted to authority by A-5.",
+    "UNKNOWN": "Fail closed; do not synthesize missing response, state, or business behavior."
+  },
+  "unresolved_binding_policy": "Preserve Cycle5 INSUFFICIENT_EVIDENCE entries without promotion.",
+  "business_rule_generation_without_evidence": false,
+  "raw_secret_value_count": 0,
+  "raw_pii_value_count": 0
+}

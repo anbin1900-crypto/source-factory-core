@@ -1,0 +1,51 @@
+{
+  "schema_version": "A5_WAVE2_LIVE_SCHEMA_MODE_CLOSURE_V2",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "assignment_comment_id": 5208238898,
+  "closure_trigger_comment_id": 5212027354,
+  "worker": "A-5",
+  "worker_pr": 24,
+  "closed_at_kst": "2026-08-07T13:42:00+09:00",
+  "prior_terminal": "A5_SITE_ANALYZER_WAVE2_LIVE_TRAFFIC_BINDING_PROVEN_EXTERNAL_BLOCKER_COMPONENT_READY",
+  "terminal": "A5_SITE_ANALYZER_WAVE2_LIVE_SCHEMA_MODE_BINDING_PROVEN_EXTERNAL_BLOCKER",
+  "status": "TERMINAL_PROVEN_EXTERNAL_BLOCKER",
+  "authority": {
+    "a3_head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+    "a3_live_stream_handoff_blob": "b7d2789f72263d9678a8f0335b66be284760627e",
+    "a3_stream_sha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165",
+    "a4_head": "4ff280cc4098fada678a82826644b77b6288f274",
+    "a4_actual_live_handoff_blob": "fae1b21205259afd7d44aad8db6bb52f6d570b75",
+    "a4_result_sha256": "5e1c6e856bddddf4f3678cb9d0cc60191d8913e5854158a54b4762663fc9f4c1"
+  },
+  "completed": {
+    "a3_actual_live_traffic_binding": "PASS",
+    "a4_actual_live_structure_binding": "PASS",
+    "live_endpoint_grouping": "PASS_PARTIAL_COVERAGE_31_OF_32_REQUESTS",
+    "request_template_inference": "PASS_14_GROUPS",
+    "dom_response_schema": "PASS_5_FIELDS",
+    "identifier_map": "PASS_PRIMARY_KEY_record_id_LIST_TO_DETAIL",
+    "auto_mode": "PASS_HYBRID",
+    "raw_secret_value_count": 0
+  },
+  "blocked": {
+    "api_response_schema": "A3_RESPONSE_BODY_BYTES_OR_CONTENT_POINTER_NOT_PUBLISHED",
+    "schema_drift": "A3_LIVE_SCHEMA_DRIFT_BASELINE_MISSING",
+    "full_endpoint_coverage": "A3_NETWORK_REQUEST_STREAM_COUNT_MISMATCH"
+  },
+  "coverage": {
+    "advertised_network_requests": 32,
+    "listed_network_requests": 31,
+    "endpoint_group_count": 14,
+    "response_body_metadata_count": 18,
+    "json_endpoint_group_count": 4,
+    "a4_field_count": 5,
+    "a4_locator_count": 10,
+    "a4_repeated_card_count": 5
+  },
+  "mode": "HYBRID",
+  "a6_handoff_status": "BLOCKED_EXACT_UPSTREAM_EVIDENCE_GAP",
+  "actual_projection_sha256": "142e79b9a16fe045b665a39200467d09be7497c1edb8e009e2cd636d036100d0",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

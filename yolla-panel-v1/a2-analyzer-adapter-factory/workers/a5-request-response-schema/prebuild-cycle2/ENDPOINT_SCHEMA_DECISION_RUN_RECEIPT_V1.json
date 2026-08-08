@@ -1,0 +1,10 @@
+{
+  "schema_version": "ENDPOINT_SCHEMA_DECISION_RUN_RECEIPT_V1",
+  "required": ["schema_version", "run_id", "decision_status", "endpoint_candidates", "schema_fields", "identifier_map", "session_requirements_reference", "mode_scores", "recommended_mode", "evidence_pointer", "unknown_fields", "authority_policy", "raw_secret_value_count", "exit_code", "receipt_sha256"],
+  "decision_status_enum": ["PASS", "PASS_CONFIDENCE_DEGRADED", "FAIL_CLOSED"],
+  "recommended_mode_enum": ["DOM", "API", "HYBRID"],
+  "mode_score_range": [0, 1],
+  "unknown_contract": {"status": "UNKNOWN", "reason": "string", "evidence_pointer": "string|null"},
+  "authority_policy": "UNEVIDENCED_FIELDS_REMAIN_UNKNOWN",
+  "raw_secret_value_count": 0
+}

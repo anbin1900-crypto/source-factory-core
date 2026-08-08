@@ -1,0 +1,103 @@
+{
+  "schema_version": "GENERIC_HTML_DOCUMENT_IDENTIFIER_MAP_V1",
+  "directive_id": "A2-TO-A5-GENERIC-HTML-DOCUMENT-RESPONSE-CONTRACT-FINAL-V1-20260806-001",
+  "status": "FINAL_GENERIC_IDENTIFIER_MAP",
+  "scope": "GENERIC_HTML_DOCUMENT_ONLY",
+  "identifiers": [
+    {
+      "identifier_id": "GENERIC_REQUEST_PROFILE_ID",
+      "field": "request_profile_id",
+      "role": "AUTHORIZED_REQUEST_PROFILE_CONTEXT",
+      "cardinality": "ONE",
+      "required": true,
+      "collision_domain": "CONTRACT_PROFILE_SET",
+      "validation": "ENUM_EXACT_7_ACTIVE_PROFILES"
+    },
+    {
+      "identifier_id": "GENERIC_REQUESTED_URL",
+      "field": "requested_url",
+      "role": "REQUEST_IDENTITY",
+      "cardinality": "ONE",
+      "required": true,
+      "normalization": "RFC3986_URI_PRESERVE_QUERY"
+    },
+    {
+      "identifier_id": "GENERIC_FINAL_URL",
+      "field": "final_url",
+      "role": "FINAL_DOCUMENT_LOCATION",
+      "cardinality": "ONE",
+      "required": true,
+      "normalization": "RFC3986_URI_AFTER_REDIRECT"
+    },
+    {
+      "identifier_id": "GENERIC_RAW_SHA256",
+      "field": "raw_sha256",
+      "role": "EXACT_RESPONSE_BYTE_IDENTITY",
+      "cardinality": "ONE",
+      "required": true,
+      "algorithm": "SHA-256"
+    },
+    {
+      "identifier_id": "GENERIC_REDACTED_SHA256",
+      "field": "redacted_sha256",
+      "role": "SANITIZED_GENERIC_DOCUMENT_CONTENT_IDENTITY",
+      "cardinality": "ONE",
+      "required": true,
+      "algorithm": "SHA-256"
+    },
+    {
+      "identifier_id": "GENERIC_OUTBOUND_LINK",
+      "field": "outbound_links[]",
+      "role": "NORMALIZED_OUTBOUND_DOCUMENT_REFERENCE",
+      "cardinality": "ZERO_OR_MANY",
+      "required": false,
+      "normalization": "HTTP_HTTPS_RESOLVED_FRAGMENT_REMOVED_SORTED_UNIQUE"
+    }
+  ],
+  "relationships": [
+    {
+      "relationship_id": "PROFILE_REQUESTS_URL",
+      "parent": "GENERIC_REQUEST_PROFILE_ID",
+      "child": "GENERIC_REQUESTED_URL",
+      "type": "ONE_TO_ONE_PER_ENVELOPE"
+    },
+    {
+      "relationship_id": "REQUEST_RESOLVES_FINAL_URL",
+      "parent": "GENERIC_REQUESTED_URL",
+      "child": "GENERIC_FINAL_URL",
+      "type": "ONE_TO_ONE_PER_ENVELOPE"
+    },
+    {
+      "relationship_id": "FINAL_URL_HAS_RAW_CONTENT",
+      "parent": "GENERIC_FINAL_URL",
+      "child": "GENERIC_RAW_SHA256",
+      "type": "ONE_TO_ONE_PER_FETCH"
+    },
+    {
+      "relationship_id": "RAW_CONTENT_PRODUCES_REDACTED_CONTENT",
+      "parent": "GENERIC_RAW_SHA256",
+      "child": "GENERIC_REDACTED_SHA256",
+      "type": "ONE_TO_ONE_PER_PIPELINE_RESULT"
+    },
+    {
+      "relationship_id": "DOCUMENT_REFERENCES_OUTBOUND_LINK",
+      "parent": "GENERIC_REDACTED_SHA256",
+      "child": "GENERIC_OUTBOUND_LINK",
+      "type": "ONE_TO_MANY"
+    }
+  ],
+  "explicit_non_identifiers": [
+    "site-specific listing id",
+    "complex id",
+    "region id",
+    "DOM selector",
+    "internal API response id",
+    "GraphQL entity id"
+  ],
+  "orphan_policy": "FAIL_CLOSED",
+  "collision_policy": "SHA_OR_URL_COLLISION_IS_CONTENT_EQUIVALENCE_ONLY_NOT_SITE_ENTITY_IDENTITY",
+  "site_specific_identifier_claim_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

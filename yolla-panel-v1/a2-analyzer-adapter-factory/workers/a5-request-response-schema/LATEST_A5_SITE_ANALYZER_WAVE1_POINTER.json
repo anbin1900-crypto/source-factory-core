@@ -1,0 +1,19 @@
+{
+  "schema_version": "LATEST_A5_SITE_ANALYZER_WAVE1_POINTER_V1",
+  "updated_at_kst": "2026-08-07T02:10:00+09:00",
+  "worker": "A-5",
+  "worker_pr": 24,
+  "directive_comment_id": 5207562721,
+  "status": "TERMINAL_PASS",
+  "terminal": "A5_SITE_ANALYZER_WAVE1_ENDPOINT_SCHEMA_MODE_INFERENCE_PASS",
+  "terminal_commit": "d4d7e8707fb1651864a6c74b1f7f14cfa2079676",
+  "terminal_report_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/A5_SITE_ANALYZER_WAVE1_TERMINAL_REPORT_V1.json",
+  "validation_receipt_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/A5_SITE_ANALYZER_WAVE1_VALIDATION_RECEIPT_V1.json",
+  "a6_handoff_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/A5_TO_A6_SITE_ANALYZER_GENERATOR_INPUT_HANDOFF_V1.json",
+  "entrypoint_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/endpoint_schema_mode_inference.cjs",
+  "regression_assertions": 50,
+  "raw_secret_value_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": "API_UI_BINDING_GRAPH_V1",
+  "node_types": ["API_ENDPOINT", "DATA_ENTITY", "UI_COMPONENT"],
+  "edge_types": ["ENTITY_FIELD_TO_COMPONENT_CANDIDATE"],
+  "candidate_policy": "NAME_CORRELATION_EDGES_ARE_CANDIDATE_NOT_AUTHORITY",
+  "required_evidence": ["response_entity_path", "a4_field_or_component", "evidence_pointer"],
+  "confidence_required_for_candidate_edges": true,
+  "business_rule_inference": "FORBIDDEN"
+}

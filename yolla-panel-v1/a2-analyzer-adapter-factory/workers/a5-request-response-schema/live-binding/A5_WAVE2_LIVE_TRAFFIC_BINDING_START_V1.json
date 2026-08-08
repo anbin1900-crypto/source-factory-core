@@ -1,0 +1,25 @@
+{
+  "schema_version": "A5_WAVE2_LIVE_TRAFFIC_BINDING_START_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment_id": 5208238898,
+  "worker": "A-5",
+  "role": "LIVE_TRAFFIC_ENDPOINT_SCHEMA_MODE_BINDING_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 24,
+  "branch": "worker/a5-request-response-schema-v1",
+  "started_at_kst": "2026-08-07T03:50:00+09:00",
+  "observed_a5_head": "db1ce4af35b4724554d9d972766826d18ae9891b",
+  "observed_a3_head": "e86dfcc2fc32ad366cd7fd8ba07392850419b853",
+  "observed_a4_head": "a22337ce5f39c6a12837d3771e5eb1660c155b24",
+  "execution_scope": [
+    "actual A-3 STREAMING_ANALYZER_EVENT_V1 validation",
+    "A-4 live structure or Wave 2 handoff binding",
+    "endpoint, request, response schema and identifier inference",
+    "schema drift and DOM/API/HYBRID decision",
+    "A-6 generator input handoff"
+  ],
+  "fixture_only_terminal": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

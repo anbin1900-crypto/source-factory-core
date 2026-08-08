@@ -1,0 +1,40 @@
+{
+  "schema_version": "A5_SITE_ANALYZER_WAVE1_VALIDATION_RECEIPT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "directive_comment_id": 5207562721,
+  "worker": "A-5",
+  "worker_pr": 24,
+  "validated_at_kst": "2026-08-07T02:08:00+09:00",
+  "implementation": {
+    "main": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/endpoint_schema_mode_inference.cjs","commit":"697a3cfe40033f472743dc5ba8c5ea6b5b716232","blob":"609f7d11318b91b616f1fe8a6516e8ad7244ea52","sha256":"04e6c10c566079e6ec8c49436c2997d6a91e7ed90cdb999f16834bd3b325ffa9","remote_readback":"PASS"},
+    "normalizer": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/lib/observation_normalizer.cjs","commit":"4de9be10ef096b4a3b4785d43fa030fe7905451f","blob":"c4467a5c5e22a4f287148698bc3596f607ef5974","sha256":"487b25c62c188ae89b658b822c8922eae2d77fd5cedbdaefe29b07203b787d1a","remote_readback":"PASS"},
+    "schema_identifier": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/lib/schema_identifier_inference.cjs","commit":"01df415697b94312d27c17585d031fa6114b0955","blob":"f8f5dcd025113bb9050d754f9a1d01ad97f10065","sha256":"31edfafdcb059501a4f2e45a8acb45d4c92bcef8865aab4cc5d2e4fe9f5a8376","remote_readback":"PASS"},
+    "test": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/test_endpoint_schema_mode_inference.cjs","commit":"b8ffc2900f399ce122e0dd82b02cd5709bf4d774","blob":"57f50584b0fdda859ad853dabcdb211e41feab6e","sha256":"0173d3961e8af02f32b420d0add7bb5ebf5076b7a339b8c07258f4eed5bca6ee","remote_readback":"PASS"},
+    "input_schema": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/A5_SITE_ANALYZER_GENERATOR_INPUT_V1.schema.json","commit":"545c10accc727dcf57425badb2776a827bb80a79","sha256":"2b75e3193cc517bdceb504301ebb07335ec906913b4bcf6f5725ae2eba76bc26"},
+    "fixture": {"path":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-inference/fixture_input.json","commit":"8e843d88da2bb534533b731623de332e29b99b00","sha256":"663501602ff4f46aa7b1f900f2947061f6684daca4fae5ccb23ab87752c083a4"}
+  },
+  "validation": {
+    "node_syntax": "PASS_4_OF_4",
+    "regression_assertions": "PASS_50_OF_50",
+    "deterministic_replay": "PASS",
+    "json_parse": "PASS_3_OF_3",
+    "fixture_output_sha256": "2c18d5ed515fed1e0dec451ca53ede3bfd1bddd77ad1785bb3e6e785af33dc94",
+    "fixture_result": {"observation_count":4,"endpoint_group_count":3,"request_template_count":3,"response_schema_count":3,"repeated_record_path_count":1,"identifier_candidate_count":2,"extraction_mode":"HYBRID","api_score":1,"dom_score":0.85},
+    "url_generalization": "PASS_NUMERIC_UUID_MIXED_KEY_SEMANTIC_PLACEHOLDER",
+    "request_parameter_inference": "PASS_QUERY_PATH_BODY_FUNCTIONAL_HEADER",
+    "response_schema_inference": "PASS_JSON_HTML_ARRAY_CARDINALITY_NULLABILITY",
+    "identifier_inference": "PASS_PRIMARY_PARENT_CHILD_COLLISION_DEMOTION",
+    "mode_inference": "PASS_DOM_HTML_JSON_API_HYBRID",
+    "schema_drift": "PASS_ADDITIVE_ACCEPT_BREAKING_FAIL_CLOSED",
+    "error_response_clustering": "PASS_ERROR_ATTACHED_TO_DOMINANT_SUCCESS_CLUSTER",
+    "raw_secret_value_count": 0
+  },
+  "upstream_boundary": {
+    "a3_head_at_start": "57012279520de80260bd857c9b6a9edd7aa51cba",
+    "a4_head_at_start": "b54af2bb3272b613be5458a283e22e2eb5d90ade",
+    "live_wave1_payload_at_start": "NOT_YET_PUBLISHED",
+    "compatibility_result": "PASS_CURRENT_CONTRACT_AND_FUTURE_LIVE_SHAPES",
+    "terminal_blocker": false
+  },
+  "status": "PASS"
+}

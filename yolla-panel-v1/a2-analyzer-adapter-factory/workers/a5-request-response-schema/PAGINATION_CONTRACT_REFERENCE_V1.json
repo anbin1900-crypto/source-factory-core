@@ -1,0 +1,66 @@
+{
+  "authority": {
+    "a3_observation": {
+      "directive_comment": 5171205788,
+      "observed_head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105",
+      "pr": 22,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM"
+    },
+    "a4_pagination": {
+      "directive_comment": 5171208197,
+      "observed_head": "31e9c7678d95c62b80fddc27d042fe5291d72b46",
+      "pr": 23,
+      "status": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM"
+    },
+    "directive_comment": 5171210803,
+    "directive_id": "A2-TO-A5-REQUEST-RESPONSE-EXECUTION-CONTRACT-V3-20260804-001",
+    "registered_at_kst": "2026-08-04T05:11:00+09:00"
+  },
+  "contracts": [
+    {
+      "authority_state": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+      "endpoint_id": "EP_FIXTURE_ITEM_SEARCH_V1",
+      "loop_guard": {
+        "max_pages": 1000,
+        "non_monotonic_page": "FAIL_CLOSED",
+        "repeated_page_key": "FAIL_CLOSED"
+      },
+      "page_key": "sha256(endpoint_id + canonical_query_without_page + page)",
+      "pagination_contract_id": "PAGINATION_FIXTURE_PAGE_V1",
+      "parameters": {
+        "page_parameter_id": "PARAM_SEARCH_PAGE",
+        "page_size_parameter_id": "PARAM_SEARCH_PAGE_SIZE",
+        "start_page": 1
+      },
+      "replacement_rule": "MUST_REBIND_TO_A4_TERMINAL_POINTER_BEFORE_LIVE_AUTHORITY",
+      "request_template_id": "REQ_FIXTURE_ITEM_SEARCH_V1",
+      "response_bindings": {
+        "current_page_path": "$.page",
+        "items_path": "$.items",
+        "total_pages_path": "$.total_pages"
+      },
+      "strategy": "PAGE_NUMBER",
+      "termination_conditions": [
+        {
+          "condition": "EMPTY_RESULT",
+          "expression": "len($.items) == 0"
+        },
+        {
+          "condition": "LAST_PAGE",
+          "expression": "$.page >= $.total_pages"
+        },
+        {
+          "condition": "REPEATED_PAGE_KEY",
+          "expression": "page_key already_seen"
+        }
+      ],
+      "upstream_a4_pointer": {
+        "comment": 5171208197,
+        "head": "31e9c7678d95c62b80fddc27d042fe5291d72b46",
+        "kind": "FIXTURE_PLACEHOLDER_PENDING_UPSTREAM",
+        "pr": 23
+      }
+    }
+  ],
+  "schema_version": "YOLLA_PAGINATION_CONTRACT_REFERENCE_V1"
+}

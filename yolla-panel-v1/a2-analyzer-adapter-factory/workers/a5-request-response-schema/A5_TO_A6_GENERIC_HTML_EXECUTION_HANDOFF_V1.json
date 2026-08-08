@@ -1,0 +1,109 @@
+{
+  "schema_version": "A5_TO_A6_GENERIC_HTML_EXECUTION_HANDOFF_V1",
+  "directive_id": "A2-TO-A5-GENERIC-HTML-DOCUMENT-RESPONSE-CONTRACT-FINAL-V1-20260806-001",
+  "producer": "A-5",
+  "consumer": "A-6",
+  "status": "GENERIC_HTML_DOCUMENT_RESPONSE_CONTRACT_READY_FOR_OFFLINE_ADAPTER_REBUILD",
+  "consumable": true,
+  "generic_adapter_contract_ready": true,
+  "offline_adapter_rebuild_ready": true,
+  "authority": {
+    "source_authority_comment": "#17/5189632712",
+    "source_authority_blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
+    "source_authority_pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5",
+    "origin_mapping_v2_blob": "45dc6154e884cb7c234a0605e86f5a208583dd9e",
+    "request_binding_v2_blob": "e613036257babe24f7bb03ef6bcdc81a68d6a013"
+  },
+  "contract_artifacts": {
+    "response_schema": {
+      "path": "GENERIC_HTML_DOCUMENT_RESPONSE_SCHEMA_V1.json",
+      "blob": "162a9dc2ee524227412ed7a3b06e02482be0bb42"
+    },
+    "execution_contract": {
+      "path": "PUBLIC_DOCUMENT_GET_EXECUTION_CONTRACT_V1.json",
+      "blob": "bd974465423f49f9c438d6f750b8622e9f580641"
+    },
+    "identifier_map": {
+      "path": "GENERIC_HTML_DOCUMENT_IDENTIFIER_MAP_V1.json",
+      "blob": "ab2a5d82f8431a21fe1dfa56fd2dabaff45f3826"
+    }
+  },
+  "active_profile_ids": [
+    "EP-001",
+    "EP-002",
+    "EP-003",
+    "EP-004",
+    "EP-005",
+    "EP-010",
+    "EP-012"
+  ],
+  "excluded_profile_ids": [
+    "EP-011"
+  ],
+  "input_contract": {
+    "method": "GET",
+    "response_format": "text/html",
+    "route_binding_source": "PROFILE_REQUEST_VALUE_BINDING_V2.json",
+    "credential_mode": "NONE",
+    "automated_pagination": false
+  },
+  "output_contract": {
+    "required_fields": [
+      "request_profile_id",
+      "requested_url",
+      "final_url",
+      "http_status",
+      "content_type",
+      "fetched_at",
+      "response_size_bytes",
+      "raw_sha256",
+      "redacted_sha256",
+      "html_document_text",
+      "outbound_links",
+      "source_authority_pointer"
+    ],
+    "generic_text_extraction": true,
+    "generic_outbound_link_extraction": true,
+    "site_specific_dom_extraction": false,
+    "site_specific_listing_field_extraction": false,
+    "internal_api_parsing": false
+  },
+  "required_adapter_checks": [
+    "SCHEMA_PARSE",
+    "REQUIRED_FIELD_VALIDATION",
+    "PROFILE_ROUTE_AUTHORITY_BINDING",
+    "CONTENT_TYPE_TEXT_HTML",
+    "SECRET_LIKE_REJECT",
+    "RAW_AND_REDACTED_SHA256",
+    "LOCAL_FIXTURE_DETERMINISM_TWO_RUNS"
+  ],
+  "failure_codes": [
+    "A5_GENERIC_HTML_METHOD_NOT_GET",
+    "A5_GENERIC_HTML_CONTENT_TYPE_MISMATCH",
+    "A5_GENERIC_HTML_PROFILE_NOT_AUTHORIZED",
+    "A5_GENERIC_HTML_ROUTE_BINDING_MISMATCH",
+    "A5_GENERIC_HTML_RESPONSE_TOO_LARGE",
+    "A5_GENERIC_HTML_SECRET_LIKE_VALUE_REJECT",
+    "A5_GENERIC_HTML_SCHEMA_VALIDATION_FAILED",
+    "A5_GENERIC_HTML_DETERMINISM_MISMATCH"
+  ],
+  "authorization_boundary": {
+    "offline_build_authorized": true,
+    "fixture_replay_authorized": true,
+    "live_site_call_authorized": false,
+    "browser_automation_authorized": false,
+    "capture_execution_authorized": false,
+    "automated_pagination_authorized": false,
+    "credential_use_authorized": false,
+    "production_authorized": false,
+    "ready_transition_authorized": false,
+    "merge_authorized": false
+  },
+  "site_specific_field_claim_count": 0,
+  "live_site_call_count": 0,
+  "credential_value_count": 0,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

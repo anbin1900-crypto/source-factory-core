@@ -1,0 +1,81 @@
+{
+  "schema_version": "YOLLA_A5_UPSTREAM_LATE_BINDING_ASSESSMENT_V1",
+  "worker": "A-5",
+  "directive_id": "A2-TO-A5-REQUEST-RESPONSE-EXECUTION-CONTRACT-V3-20260804-001",
+  "assessed_at_kst": "2026-08-04T05:43:00+09:00",
+  "previous_terminal": "A5_REQUEST_RESPONSE_EXECUTION_CONTRACT_READY",
+  "previous_terminal_comment": 5171452863,
+  "previous_final_pointer_comment": 5171455547,
+  "a3_handoff": {
+    "status": "A3_TO_A5_OBSERVATION_HANDOFF_READY",
+    "source_pr": 22,
+    "source_terminal_comment": 5171420790,
+    "source_final_pointer_comment": 5171422957,
+    "source_final_head": "b04a2cac2e506e8ca746b35d4e41e68322a4b7c1",
+    "handoff_blob": "1b72cf730d997102d115f71a6cf0bc98f50c8e50",
+    "endpoint_profile_blob": "3341c655cc8d84bbea70607c5a216c89a2d505a6",
+    "parameter_evidence_blob": "1cabef820c2dee1d4038a76c3eafef8e1dc46218",
+    "retry_observation_blob": "3790f049be587f4c2c7ad374f7e0a97573e74ec6",
+    "fixture_replay_sha256": "5fec9024924220872d0757200ad50cfdac2e3247de9ff123e0aa88c5973b55f4",
+    "endpoint_profiles": 13,
+    "parameter_entries": 15,
+    "raw_secret_value_count": 0,
+    "live_site_call_count": 0
+  },
+  "a4_handoff": {
+    "status": "READY",
+    "source_pr": 23,
+    "source_terminal_comment": 5171462169,
+    "source_final_pointer_comment": 5171464660,
+    "source_final_head": "6567f380e4249dc7cd9b55693fa85856a37b91e6",
+    "handoff_blob": "988d34dc259a4c93280680f9ee252eeeadc110df",
+    "primary_mode": "PAGE_NUMBER",
+    "observed_pagination_parameters": ["page", "size"],
+    "observed_retry": "HTTP_429_WITH_RETRY_AFTER_2",
+    "raw_secret_value_count": 0,
+    "live_site_call_count": 0
+  },
+  "conflicts": [
+    {
+      "code": "ENDPOINT_SET_CONFLICT",
+      "observed": "13 A-3 endpoint profiles under /api/listings, /api/regions, /graphql, session, static, media and telemetry patterns",
+      "placeholder": "2 A-5 fixture endpoints under /api/v1/items",
+      "decision": "FAIL_CLOSED"
+    },
+    {
+      "code": "PAGINATION_PARAMETER_NAME_CONFLICT",
+      "observed": ["page", "size"],
+      "placeholder": ["page", "page_size"],
+      "decision": "FAIL_CLOSED"
+    },
+    {
+      "code": "RESPONSE_FIELD_EVIDENCE_INSUFFICIENT",
+      "observed": "A-3 trace supplies response status, content type, body format and size but not response body field paths/types/nullability/cardinality",
+      "required": "evidence-backed response field path/type/nullability/cardinality",
+      "decision": "FAIL_CLOSED"
+    },
+    {
+      "code": "IDENTIFIER_RELATIONSHIP_EVIDENCE_INSUFFICIENT",
+      "observed": "listing_id path evidence exists but actual response-body identifier paths and parent/child values are not supplied",
+      "required": "evidence-backed source identifiers and parent/child relationships",
+      "decision": "FAIL_CLOSED"
+    }
+  ],
+  "preserved_observations": {
+    "credential_reference_only": true,
+    "authorization_and_cookie_are_redacted": true,
+    "http_429_observed": true,
+    "retry_after_seconds_observed": 2,
+    "timeout_observed": true,
+    "network_retry_attempt_observed": false,
+    "backoff_execution_observed": false
+  },
+  "fixture_candidate_status": "SUPERSEDED_AS_FINAL_AUTHORITY_PRESERVED_FOR_NON_LIVE_TESTING_ONLY",
+  "decision": "A5_REQUEST_RESPONSE_EXECUTION_CONTRACT_EXACT_BLOCKER",
+  "first_blocker": "A3_OBSERVED_ENDPOINT_AND_PARAMETER_AUTHORITY_CONFLICTS_WITH_PLACEHOLDER_CONTRACT_AND_RESPONSE_BODY_FIELD_EVIDENCE_IS_ABSENT",
+  "raw_secret_value_count": 0,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

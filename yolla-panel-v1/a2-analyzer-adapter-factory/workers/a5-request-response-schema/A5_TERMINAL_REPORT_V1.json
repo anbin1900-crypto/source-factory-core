@@ -1,0 +1,68 @@
+{
+  "schema_version": "YOLLA_A5_TERMINAL_REPORT_V1",
+  "worker": "A-5",
+  "directive_id": "A2-TO-A5-REQUEST-RESPONSE-EXECUTION-CONTRACT-V3-20260804-001",
+  "directive_comment": 5171210803,
+  "published_at_kst": "2026-08-04T05:43:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pr": 24,
+  "branch": "worker/a5-request-response-schema-v1",
+  "terminal": "A5_REQUEST_RESPONSE_EXECUTION_CONTRACT_EXACT_BLOCKER",
+  "decision": "BLOCKED_AFTER_REQUIRED_UPSTREAM_LATE_BINDING",
+  "supersedes": {
+    "previous_terminal": "A5_REQUEST_RESPONSE_EXECUTION_CONTRACT_READY",
+    "previous_terminal_comment": 5171452863,
+    "previous_final_pointer_comment": 5171455547,
+    "reason": "A-3 and A-4 actual handoffs arrived during execution and conflict with the placeholder package"
+  },
+  "attempted_actions": [
+    "published START authority before implementation",
+    "built fixture-first Endpoint, Request, Parameter, Session/Header, Pagination, Response, Identifier and Retry contracts",
+    "validated schema, required-field rejection, secret rejection, identifier collision and deterministic replay",
+    "consumed A-3 actual observation handoff and A-4 actual pagination handoff when they arrived",
+    "compared actual endpoint and parameter evidence against the placeholder contract",
+    "failed closed on endpoint-set, pagination-name and response-evidence conflicts"
+  ],
+  "authority": {
+    "a3_final_head": "b04a2cac2e506e8ca746b35d4e41e68322a4b7c1",
+    "a3_handoff_blob": "1b72cf730d997102d115f71a6cf0bc98f50c8e50",
+    "a3_endpoint_profile_blob": "3341c655cc8d84bbea70607c5a216c89a2d505a6",
+    "a3_parameter_evidence_blob": "1cabef820c2dee1d4038a76c3eafef8e1dc46218",
+    "a3_retry_observation_blob": "3790f049be587f4c2c7ad374f7e0a97573e74ec6",
+    "a4_final_head": "6567f380e4249dc7cd9b55693fa85856a37b91e6",
+    "a4_handoff_blob": "988d34dc259a4c93280680f9ee252eeeadc110df",
+    "late_binding_assessment_blob": "e7033724790f60c13d3dbdabf14dc3086a18dcaf",
+    "validation_blob": "84e35f4240f18868d6fac4398ee15a77922dd04b",
+    "a6_handoff_blob": "8f47d5ae800e9398b2bd926e9a6c12df47a5383a"
+  },
+  "conflict_summary": {
+    "a3_endpoint_profiles": 13,
+    "placeholder_endpoints": 2,
+    "a3_parameter_entries": 15,
+    "placeholder_parameters": 6,
+    "observed_pagination_parameters": ["page", "size"],
+    "placeholder_pagination_parameters": ["page", "page_size"],
+    "response_body_field_evidence_available": false,
+    "identifier_relationship_body_evidence_available": false
+  },
+  "first_blocker": "A3_OBSERVED_ENDPOINT_AND_PARAMETER_AUTHORITY_CONFLICTS_WITH_PLACEHOLDER_CONTRACT_AND_RESPONSE_BODY_FIELD_EVIDENCE_IS_ABSENT",
+  "unfinished_outputs": [
+    "evidence-rebound ENDPOINT_CATALOG_V1 for all observed functional endpoints",
+    "evidence-rebound REQUEST_TEMPLATE_CATALOG_V1 and PARAMETER_DICTIONARY_V1 using observed names",
+    "evidence-backed RESPONSE_SCHEMA_CATALOG_V1 with field path/type/nullability/cardinality",
+    "evidence-backed IDENTIFIER_RELATIONSHIP_MAP_V1 from actual fixture response bodies",
+    "corrected A5_TO_A6_EXECUTION_CONTRACT_HANDOFF_V1 with a6_handoff_ready=true"
+  ],
+  "fixture_candidate": {
+    "package_commit": "457b51e2d74161e1ec89697ae5de582485077df4",
+    "status": "PRESERVED_FOR_NON_LIVE_TESTING_ONLY",
+    "validation_before_late_binding": "PASS_12_OF_12",
+    "live_authority": false
+  },
+  "raw_secret_value_count": 0,
+  "actual_bulk_collection": false,
+  "panel_shell_direct_edit": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

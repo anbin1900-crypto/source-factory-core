@@ -1,0 +1,79 @@
+{
+  "schema_version": "A5_WAVE3_LIVE_AUTHORITY_VALIDATION_RECEIPT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment_id": 5212027354,
+  "worker": "A-5",
+  "worker_pr": 24,
+  "validated_at_kst": "2026-08-07T13:42:00+09:00",
+  "source": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/wave3/wave3_live_authority_closure.cjs",
+    "commit": "fde3f19cb1fe76eb03c5a675b065c82384124dd0",
+    "blob": "3a87422738c92887ed6a451a10ddd4180208f365",
+    "sha256": "9dee4e473b063c52d8fe43a9eca82818b6a42a6839613614e935add087efcf39",
+    "remote_readback": "PASS"
+  },
+  "test": {
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/live-binding/wave3/test_wave3_live_authority_closure.cjs",
+    "commit": "84ad145e46c7428cade3ad9063d6a1e87bad32fc",
+    "blob": "c4175df422c6cff8beeb385be5ae9b58ecd2ea86",
+    "sha256": "027cbf4576c32941e00c827132856768451551f1f572f96d5da4d4c6655669ce",
+    "remote_readback": "PASS"
+  },
+  "runtime": {
+    "node": "v22.16.0",
+    "node_syntax": "PASS_2_OF_2",
+    "regression_assertions": "PASS_21_OF_21",
+    "deterministic_replay": "PASS",
+    "actual_authority_projection_sha256": "142e79b9a16fe045b665a39200467d09be7497c1edb8e009e2cd636d036100d0"
+  },
+  "actual_authority": {
+    "a3_head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+    "a3_handoff_blob": "b7d2789f72263d9678a8f0335b66be284760627e",
+    "a3_stream_sha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165",
+    "a4_head": "4ff280cc4098fada678a82826644b77b6288f274",
+    "a4_handoff_blob": "fae1b21205259afd7d44aad8db6bb52f6d570b75",
+    "a4_result_sha256": "5e1c6e856bddddf4f3678cb9d0cc60191d8913e5854158a54b4762663fc9f4c1"
+  },
+  "actual_projection": {
+    "advertised_network_requests": 32,
+    "listed_network_requests": 31,
+    "endpoint_group_count": 14,
+    "response_body_metadata_count": 18,
+    "json_endpoint_group_count": 4,
+    "mode": "HYBRID",
+    "dom_field_count": 5,
+    "primary_key": "record_id",
+    "observed_schema_drift_modes": ["v2"],
+    "a6_status": "BLOCKED_EXACT_UPSTREAM_EVIDENCE_GAP"
+  },
+  "alternative_attempts": [
+    {
+      "method": "READ_EXACT_A3_LIVE_HANDOFF_BLOB",
+      "result": "PASS_METADATA_ONLY_NO_BODY_BYTES_OR_CONTENT_POINTER"
+    },
+    {
+      "method": "CONSUME_A4_ACTUAL_LIVE_STRUCTURE_HANDOFF",
+      "result": "PASS_DOM_SCHEMA_IDENTIFIER_AND_MODE_EVIDENCE"
+    },
+    {
+      "method": "SEARCH_REPOSITORY_FOR_A3_RESPONSE_BODY_SHA",
+      "result": "NO_EXACT_BODY_ARTIFACT_FOUND"
+    },
+    {
+      "method": "RECONSTRUCT_FROM_CURRENT_B4_COMMON_FIXTURE_SOURCE",
+      "result": "REJECTED_BYTE_MISMATCH_WITH_A3_RESPONSE_SHA_AND_SIZE"
+    },
+    {
+      "method": "INFER_API_FIELDS_FROM_SHA_SIZE_MIME_ONLY",
+      "result": "REJECTED_FAIL_CLOSED_NO_FIELD_EVIDENCE"
+    }
+  ],
+  "blockers": [
+    "A3_NETWORK_REQUEST_STREAM_COUNT_MISMATCH",
+    "A3_RESPONSE_BODY_BYTES_OR_CONTENT_POINTER_NOT_PUBLISHED",
+    "A3_LIVE_SCHEMA_DRIFT_BASELINE_MISSING"
+  ],
+  "raw_secret_value_count": 0,
+  "false_live_pass_count": 0,
+  "status": "PASS_COMPONENT_VALIDATION_WITH_PROVEN_EXTERNAL_EVIDENCE_GAP"
+}

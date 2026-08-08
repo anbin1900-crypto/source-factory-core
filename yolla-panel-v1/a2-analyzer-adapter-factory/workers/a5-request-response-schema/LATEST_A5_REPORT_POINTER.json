@@ -1,0 +1,98 @@
+{
+  "schema_version": "LATEST_A5_REPORT_POINTER_V4",
+  "worker": "A-5",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "task_id": "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF",
+  "directive_comment": 5196008982,
+  "status": "TERMINAL",
+  "terminal": "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF_READY",
+  "updated_at_kst": "2026-08-06T04:20:00+09:00",
+  "previous_pointer_blob": "d5ec690e342a699639d21a0da0c4139b4333337f",
+  "observed_start_head": "85bb7c7c6b07a0a58cdc74ea7d74a6de2ed81adb",
+  "package_head": "7688b1d93b2ea88f50400c8eec7d526e4b5ce845",
+  "terminal_comment": 5196186184,
+  "terminal_report": {
+    "path": "A5_D_SOURCE_ENDPOINT_SCHEMA_TERMINAL_REPORT_V1.json",
+    "commit": "04137a882d7d7aed0b41044aac2f9f56b5f3bd3b",
+    "blob": "9dfb303dfde75b781a8c24aaebf5e4a494f6878a"
+  },
+  "artifacts": {
+    "source_endpoint_handoff": {
+      "path": "A5_D_SOURCE_ENDPOINT_SCHEMA_HANDOFF_V1.json",
+      "commit": "ca6badefd93da4b9722c955ff66117bbdf7ae38d",
+      "blob": "0fac8fac5069a013717ea74202d6d1741adfd966"
+    },
+    "validation_receipt": {
+      "path": "A5_D_SOURCE_ENDPOINT_SCHEMA_VALIDATION_RECEIPT_V1.json",
+      "commit": "7688b1d93b2ea88f50400c8eec7d526e4b5ce845",
+      "blob": "199eb85b1b3bc9fd37f83a93fb9d0f9e7e26f494"
+    }
+  },
+  "authority_evidence": {
+    "source_authority_comment": "#17/5189632712",
+    "source_authority_commit": "545425a10d48bf59746d8db98ff2f56b79360cc0",
+    "source_authority_blob": "21e6ca23ccc8027e6b93cadda7f260d08153622a",
+    "source_authority_pointer_blob": "b5b9e2aaec5b3f774e121fa33eaf8d4c1da47da5",
+    "origin_mapping_v2_blob": "45dc6154e884cb7c234a0605e86f5a208583dd9e",
+    "request_binding_v2_blob": "e613036257babe24f7bb03ef6bcdc81a68d6a013",
+    "identifier_map_blob": "ab2a5d82f8431a21fe1dfa56fd2dabaff45f3826",
+    "generic_response_schema_blob": "162a9dc2ee524227412ed7a3b06e02482be0bb42",
+    "generic_response_validation_blob": "465ed0f7c2d68c613394bb4738e00a5ce2d9c91a"
+  },
+  "result": {
+    "source_object_target": "SOURCE_ENDPOINT",
+    "d_consumable": true,
+    "active_profile_binding": "PASS_7_OF_7",
+    "active_profiles": [
+      "EP-001",
+      "EP-002",
+      "EP-003",
+      "EP-004",
+      "EP-005",
+      "EP-010",
+      "EP-012"
+    ],
+    "excluded_profiles": [
+      "EP-011"
+    ],
+    "ep011_exclusion_reason": "EXCLUDED_NO_CREDENTIAL_REFERENCE",
+    "official_source_url": "PASS_7_OF_7",
+    "route_template": "PASS_7_OF_7",
+    "method": "GET",
+    "response_format": "HTML",
+    "mime_type": "text/html",
+    "profile_evidence": "PASS_7_OF_7",
+    "identifier_evidence": "PASS_7_OF_7",
+    "response_field_evidence": "PASS_7_OF_7",
+    "generic_response_fields": "PASS_12_OF_12"
+  },
+  "d_authority_boundary": {
+    "authority_type_decision": false,
+    "d_canonical_id_generation": false,
+    "authority_type_value_provided": false,
+    "d_canonical_id_value_provided": false,
+    "d1_assignment_required": true
+  },
+  "validation": {
+    "json_parse": "PASS",
+    "active_profile_set": "PASS_EXACT_SET",
+    "negative_tests": "PASS_REJECT_17_OF_17",
+    "remote_readback": "PASS_2_OF_2",
+    "new_external_request": false
+  },
+  "next_gate": "D1_SOURCE_ENDPOINT_AUTHORITY_TYPE_AND_CANONICAL_ID_ASSIGNMENT_OR_A7_NONBLOCKING_REVIEW",
+  "safety": {
+    "live_site_call_count": 0,
+    "browser_automation_execution_count": 0,
+    "capture_execution_count": 0,
+    "automated_pagination": false,
+    "credential_value_count": 0,
+    "raw_secret_value_count": 0,
+    "out_of_owned_root_change_count": 0,
+    "actual_bulk_collection": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "pointer_commit_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}

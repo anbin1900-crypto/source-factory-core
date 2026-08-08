@@ -1,0 +1,54 @@
+{
+  "schema_version": "A5_ACTION_STATE_API_ENTITY_BINDING_TERMINAL_REPORT_V1",
+  "directive_id": "A0-TO-A5-ACTION-STATE-API-ENTITY-BINDING-V4-20260808-001",
+  "directive_comment_id": 5219089509,
+  "cycle_id": "A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "worker": "A-5",
+  "role": "A-5_ACTION_STATE_API_ENTITY_BINDING_OWNER",
+  "terminal": "A5_ACTION_STATE_API_ENTITY_BINDING_READY",
+  "status": "TERMINAL_PASS",
+  "result": {
+    "action_network_binding": "READY",
+    "api_ui_binding_graph": "READY",
+    "ui_state_transition_graph": "READY_OBSERVED_OR_UNKNOWN",
+    "data_entity_relationship_graph": "READY",
+    "feature_dependency_graph": "READY",
+    "form_field_canonical_candidate": "READY",
+    "read_transform_candidate": "READY_WITH_EVIDENCE_CONFIDENCE",
+    "write_transform_candidate": "READY_WITH_EVIDENCE_CONFIDENCE_OR_UNKNOWN",
+    "business_rules": "UNKNOWN_UNLESS_OBSERVED",
+    "session_secret_policy": "REQUIREMENT_REFERENCE_ONLY",
+    "a6_direct_consume": "READY",
+    "b5_direct_consume": "READY",
+    "raw_secret_value_count": 0
+  },
+  "validation": {
+    "node_syntax": "PASS_2_OF_2",
+    "fixture_replay_count": 2,
+    "assertions": "PASS_19_OF_19",
+    "decision_digest": "d9210bb9a63982cc6fae1e85cd55eac50a237cea47e96ca72c6c4c0a90620411",
+    "deterministic_digest": "PASS",
+    "remote_readback": "PASS_SOURCE_AND_TEST",
+    "raw_secret_reject": "PASS"
+  },
+  "artifacts": {
+    "entrypoint": "prebuild-cycle4/action_state_api_entity_binding.cjs",
+    "action_network": "prebuild-cycle4/ACTION_NETWORK_BINDING_V1.json",
+    "api_ui": "prebuild-cycle4/API_UI_BINDING_GRAPH_V1.json",
+    "ui_state": "prebuild-cycle4/UI_STATE_TRANSITION_GRAPH_V1.json",
+    "entity_graph": "prebuild-cycle4/DATA_ENTITY_RELATIONSHIP_GRAPH_V1.json",
+    "feature_graph": "prebuild-cycle4/FEATURE_DEPENDENCY_GRAPH_V1.json",
+    "form_candidate": "prebuild-cycle4/FORM_FIELD_CANONICAL_CANDIDATE_V1.json",
+    "a6_manifest": "prebuild-cycle4/A5_TO_A6_ACTION_STATE_API_ENTITY_RECIPE_MANIFEST_V1.json",
+    "b5_manifest": "prebuild-cycle4/A5_TO_B5_ENTITY_TRANSFORM_LINEAGE_MANIFEST_V1.json",
+    "validation_receipt": "prebuild-cycle4/A5_ACTION_STATE_API_ENTITY_BINDING_VALIDATION_RECEIPT_V1.json"
+  },
+  "boundaries": {
+    "target_pc_execution": false,
+    "live_site_call": false,
+    "tunnel_change": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

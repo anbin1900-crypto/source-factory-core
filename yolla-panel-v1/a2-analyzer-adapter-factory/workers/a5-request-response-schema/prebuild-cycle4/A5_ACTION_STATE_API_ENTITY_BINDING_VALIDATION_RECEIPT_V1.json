@@ -1,0 +1,61 @@
+{
+  "schema_version": "A5_ACTION_STATE_API_ENTITY_BINDING_VALIDATION_RECEIPT_V1",
+  "directive_id": "A0-TO-A5-ACTION-STATE-API-ENTITY-BINDING-V4-20260808-001",
+  "directive_comment_id": 5219089509,
+  "cycle_id": "A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "worker": "A-5",
+  "validated_remote_head_before_receipt": "f49167eda3908c85f29ad682a43f3e5d481052fc",
+  "implementation": {
+    "entrypoint_commit": "9750eaa5e236710d817392b49c7fb68d5a092ff5",
+    "test_commit": "5a963d9fb6fa99755cbb5eeb265ddf78613148be",
+    "remote_source_readback": "PASS",
+    "remote_test_readback": "PASS"
+  },
+  "validation": {
+    "node_syntax": "PASS_2_OF_2",
+    "fixture_replay_count": 2,
+    "assertions": "PASS_19_OF_19",
+    "decision_digest_run1": "d9210bb9a63982cc6fae1e85cd55eac50a237cea47e96ca72c6c4c0a90620411",
+    "decision_digest_run2": "d9210bb9a63982cc6fae1e85cd55eac50a237cea47e96ca72c6c4c0a90620411",
+    "deterministic_digest": "PASS",
+    "action_request_binding": "PASS_EXPLICIT_ACTION_ID",
+    "single_object_response_entity": "PASS_AFTER_REPAIR",
+    "ui_state_transition": "PASS_OBSERVED_OR_UNKNOWN",
+    "read_transform_candidate": "PASS_WITH_CONFIDENCE_AND_EVIDENCE",
+    "write_transform_candidate": "PASS_OBSERVED_BODY_FIELD_WITH_CONFIDENCE_AND_EVIDENCE",
+    "business_rule_unknown_preservation": "PASS",
+    "session_requirement_reference_only": "PASS",
+    "raw_secret_reject": "PASS",
+    "raw_secret_value_count": 0
+  },
+  "attempt_log": [
+    {
+      "attempt": 1,
+      "result": "FAILED_SINGLE_OBJECT_RESPONSE_ENTITY_NOT_DETECTED",
+      "repair": "EXPANDED_ENTITY_INFERENCE_FROM_ARRAY_PATHS_TO_ARRAY_PLUS_IDENTIFIER_BEARING_OBJECT_PATHS"
+    },
+    {
+      "attempt": 2,
+      "result": "PASS_19_OF_19"
+    }
+  ],
+  "required_outputs": {
+    "ACTION_NETWORK_BINDING_V1": "PASS",
+    "API_UI_BINDING_GRAPH_V1": "PASS",
+    "UI_STATE_TRANSITION_GRAPH_V1": "PASS",
+    "DATA_ENTITY_RELATIONSHIP_GRAPH_V1": "PASS",
+    "FEATURE_DEPENDENCY_GRAPH_V1": "PASS",
+    "FORM_FIELD_CANONICAL_CANDIDATE_V1": "PASS",
+    "A6_DIRECT_CONSUME_MANIFEST": "PASS",
+    "B5_DIRECT_CONSUME_MANIFEST": "PASS"
+  },
+  "boundaries": {
+    "target_pc_execution": false,
+    "live_site_call": false,
+    "tunnel_change": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "PASS"
+}

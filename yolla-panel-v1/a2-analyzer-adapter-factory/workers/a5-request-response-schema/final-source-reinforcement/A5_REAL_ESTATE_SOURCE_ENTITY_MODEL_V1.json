@@ -1,0 +1,44 @@
+{
+  "schema_version": "A5_REAL_ESTATE_SOURCE_ENTITY_MODEL_V1",
+  "cycle_id": "V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "worker": "A-5",
+  "purpose": "Preserve site-specific real-estate source semantics while binding common source entities without defining D Canonical Schema.",
+  "entity_types": ["listing","agency","agent","complex","location","price","area","media","contact","status"],
+  "evidence_state_values": ["OBSERVED","INFERRED","WAITING_INPUT","UNKNOWN"],
+  "entity_contract": {
+    "required_fields": ["entity_type","source_identifier","source_field_bindings","lossless_extensions","d_canonical_authority"],
+    "source_identifier_fields": ["field","path","state","evidence_pointer"],
+    "source_field_binding_fields": ["source_field","source_path","semantic_role","state","confidence","evidence_pointer","lossless_extension"]
+  },
+  "relationship_contract": {
+    "required_fields": ["relationship_id","from_entity","to_entity","relation_type","source_join_fields","state","confidence","evidence_pointer"],
+    "allowed_entity_types": ["listing","agency","agent","complex","location","price","area","media","contact","status"],
+    "unobserved_relation_policy": "WAITING_INPUT_OR_UNKNOWN"
+  },
+  "recommended_source_relationship_roles": [
+    "LISTED_BY_AGENCY",
+    "REPRESENTED_BY_AGENT",
+    "LOCATED_IN_COMPLEX",
+    "LOCATED_AT",
+    "HAS_PRICE",
+    "HAS_AREA",
+    "HAS_MEDIA",
+    "HAS_CONTACT",
+    "HAS_STATUS"
+  ],
+  "source_ontology_policy": {
+    "preserve_original_field_names": true,
+    "preserve_original_paths": true,
+    "preserve_site_specific_semantics": true,
+    "unknown_source_fields_lossless_extension": true,
+    "lossless_extension_storage": "source_extensions",
+    "target_value_guessing": false,
+    "d_canonical_schema_defined": false,
+    "d_canonical_id_generated": false
+  },
+  "authority_boundary": "A-5 defines source ontology and evidence-bound application semantics only. D Canonical Schema authority remains external.",
+  "raw_secret_or_pii": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

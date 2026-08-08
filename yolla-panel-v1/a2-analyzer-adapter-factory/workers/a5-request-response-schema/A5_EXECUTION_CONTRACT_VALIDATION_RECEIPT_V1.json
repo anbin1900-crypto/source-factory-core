@@ -1,0 +1,46 @@
+{
+  "schema_version": "YOLLA_A5_EXECUTION_CONTRACT_VALIDATION_RESULT_V1",
+  "status": "FAIL_CLOSED",
+  "validated_at_kst": "2026-08-04T05:43:00+09:00",
+  "late_binding_assessment_blob": "e7033724790f60c13d3dbdabf14dc3086a18dcaf",
+  "checks": {
+    "a3_handoff_ready": true,
+    "a4_handoff_ready": true,
+    "a3_endpoint_profile_count": 13,
+    "a3_parameter_entry_count": 15,
+    "placeholder_endpoint_count": 2,
+    "placeholder_parameter_count": 6,
+    "endpoint_set_parity": "FAIL_CLOSED",
+    "pagination_parameter_parity": "FAIL_CLOSED_SIZE_VS_PAGE_SIZE",
+    "response_field_evidence_sufficiency": "FAIL_CLOSED",
+    "identifier_relationship_evidence_sufficiency": "FAIL_CLOSED",
+    "raw_secret_value_count": 0,
+    "live_site_call_count": 0,
+    "fixture_replay_preserved_for_non_live_test_only": true
+  },
+  "findings": [
+    "ENDPOINT_SET_CONFLICT",
+    "PAGINATION_PARAMETER_NAME_CONFLICT",
+    "RESPONSE_FIELD_EVIDENCE_INSUFFICIENT",
+    "IDENTIFIER_RELATIONSHIP_EVIDENCE_INSUFFICIENT"
+  ],
+  "previous_fixture_validation": {
+    "schema_validation": "PASS",
+    "unit_tests": "PASS_12_OF_12",
+    "python_compile": "PASS_2_OF_2",
+    "json_parse": "PASS_9_OF_9",
+    "required_field_reject": "PASS",
+    "secret_reject": "PASS",
+    "identifier_collision_test": "PASS",
+    "upstream_conflict_injection": "FAIL_CLOSED_PASS",
+    "fixture_replay_digest": "d7fb282def721a4ffb6d55788d564af843bfdc277edd40729687d9ac53522a3d"
+  },
+  "terminal": "A5_REQUEST_RESPONSE_EXECUTION_CONTRACT_EXACT_BLOCKER",
+  "first_blocker": "A3_OBSERVED_ENDPOINT_AND_PARAMETER_AUTHORITY_CONFLICTS_WITH_PLACEHOLDER_CONTRACT_AND_RESPONSE_BODY_FIELD_EVIDENCE_IS_ABSENT",
+  "raw_secret_value_count": 0,
+  "actual_bulk_collection": false,
+  "panel_shell_direct_edit": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

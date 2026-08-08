@@ -1,0 +1,17 @@
+{
+  "schema_version": "SUCCESSOR_RUN_PLAN_V1",
+  "directive_id": "AI001-TO-A5-ENDPOINT-SCHEMA-DOM-API-HYBRID-PREBUILD-V1-20260807-001",
+  "working_directory": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle1",
+  "single_command": "node prebuild_endpoint_schema_decision.cjs < response-evidence-bundle.json > a5-prebuild-result.json",
+  "input_schema": "RESPONSE_EVIDENCE_BUNDLE_V1.schema.json",
+  "fixture_smoke": "A5_PREBUILD_FIXTURE_SMOKE_1.json",
+  "required_input": ["schema_version=A5_RESPONSE_EVIDENCE_BUNDLE_V1", "network_observations", "dom_structure"],
+  "optional_input": ["previous_schemas", "source_bindings", "generated_at"],
+  "result_sections": ["endpoint_schema_inference", "dom_api_hybrid_decision", "schema_drift_late_binding", "successor_run_plan"],
+  "next_action_resolution": "Read schema_drift_late_binding.late_binding.actions; when empty the result is fully bound.",
+  "secret_boundary": "Never place raw Authorization/Cookie/Token/Secret values in the bundle; requirement types and redacted states only.",
+  "do_not": ["TUNNEL_CREATE", "SUCCESSOR_DIRECT_CALL", "TARGET_PC_EXECUTION", "SECRET_VALUE_CAPTURE", "AUDIT_ONLY_WORK"],
+  "production": false,
+  "ready": false,
+  "merge": false
+}

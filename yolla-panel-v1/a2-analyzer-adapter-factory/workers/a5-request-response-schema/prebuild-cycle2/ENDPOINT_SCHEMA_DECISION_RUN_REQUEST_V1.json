@@ -1,0 +1,15 @@
+{
+  "schema_version": "ENDPOINT_SCHEMA_DECISION_RUN_REQUEST_V1",
+  "purpose": "Context-free successor request envelope for A-5 endpoint/schema/mode decision.",
+  "required": ["schema_version", "run_id", "observation_pointer", "structure_pointer"],
+  "properties": {
+    "schema_version": {"const": "ENDPOINT_SCHEMA_DECISION_RUN_REQUEST_V1"},
+    "run_id": {"type": "string", "minLength": 1},
+    "observation_pointer": {"required": ["uri"], "payload_field": "receipt", "semantics": "A-3 Observation Receipt pointer plus resolved receipt payload when available"},
+    "structure_pointer": {"required": ["uri"], "payload_field": "receipt", "semantics": "A-4 Structure Receipt pointer plus resolved receipt payload when available"},
+    "response_body_pointer": {"optional": true, "payload_field": "receipt", "semantics": "Optional response body evidence pointer; absence degrades API/HYBRID confidence"}
+  },
+  "authority_rule": "Pointer is evidence identity; only fields supported by supplied receipt payload may become observed authority.",
+  "unknown_rule": "Unevidenced fields remain UNKNOWN.",
+  "raw_secret_value_storage": false
+}

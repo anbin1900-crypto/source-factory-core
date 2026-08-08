@@ -1,0 +1,59 @@
+{
+  "schema_version": "A5_PREBUILD_VALIDATION_RECEIPT_V1",
+  "directive_id": "AI001-TO-A5-ENDPOINT-SCHEMA-DOM-API-HYBRID-PREBUILD-V1-20260807-001",
+  "directive_comment_id": 5216920354,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "worker": "A-5",
+  "validated_at_kst": "2026-08-07T21:31:00+09:00",
+  "implementation": {
+    "entrypoint": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle1/prebuild_endpoint_schema_decision.cjs",
+      "commit": "35d91b5201b0f1493cbd3a43220a5fdeebbc089c",
+      "blob": "bbede277c4d414c64fadf0b6ddf0a8a38b834edc",
+      "remote_readback": "PASS"
+    },
+    "test": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a5-request-response-schema/prebuild-cycle1/test_prebuild_endpoint_schema_decision.cjs",
+      "commit": "d875fde883bf3d7b7b61361c1dc633d26af6c206",
+      "blob": "994096c594363dadd7d5c185c4ada61dfd54da54",
+      "remote_readback": "PASS"
+    },
+    "input_schema_commit": "226c95ed2fefdf27869c2bfa18dcbb7fb23142fa",
+    "smoke_fixture_commit": "a8d4777683892f8ee1ca4e6cbf73b873b32f3040"
+  },
+  "validation": {
+    "schema_parse": "PASS",
+    "schema_required_field_count": 3,
+    "node_syntax": "PASS_2_OF_2",
+    "fixture_smoke_contract_assertions": "PASS_17_OF_17",
+    "smoke_recommendation": "HYBRID",
+    "smoke_result_sha256": "c757ef5fbcbe4a1138739b0c9d2c9ae226d9adb14e9db65d7719208a78afd94e",
+    "deterministic_replay": "PASS",
+    "raw_secret_reject": "PASS",
+    "invalid_bundle_schema_reject": "PASS",
+    "raw_secret_value_count": 0
+  },
+  "alternative_validation": {
+    "repository_clone_for_full_dependency_smoke": "NOT_AVAILABLE_CURRENT_EXECUTION_ENVIRONMENT_DNS",
+    "response": "METHOD_CHANGED_TO_GITHUB_REMOTE_BYTE_READBACK_PLUS_CONTRACT_SMOKE",
+    "terminal_blocker": false
+  },
+  "required_outputs": {
+    "ENDPOINT_SCHEMA_INFERENCE_V1": "PASS",
+    "DOM_API_HYBRID_DECISION_V1": "PASS",
+    "SCHEMA_DRIFT_LATE_BINDING_V1": "PASS",
+    "SUCCESSOR_RUN_PLAN_V1": "PASS",
+    "LATEST_POINTER": "PENDING_NEXT_COMMIT"
+  },
+  "do_not_counters": {
+    "tunnel_create": 0,
+    "successor_direct_call": 0,
+    "target_pc_execution": 0,
+    "secret_value_capture": 0,
+    "audit_only_work": 0
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "PASS"
+}

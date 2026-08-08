@@ -1,0 +1,54 @@
+{
+  "schema_version": "A5_WAVE3_EXTERNAL_BLOCKER_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment_id": 5212027354,
+  "worker": "A-5",
+  "status": "PROVEN_EXTERNAL_BLOCKER",
+  "blocked_scope": ["API_RESPONSE_SCHEMA_FIELDS","LIVE_SCHEMA_DRIFT_COMPARISON","FULL_REQUEST_STREAM_COVERAGE","FULL_A6_HYBRID_INPUT"],
+  "evidence": {
+    "a3_head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+    "a3_live_stream_handoff_blob": "b7d2789f72263d9678a8f0335b66be284760627e",
+    "a3_advertised_network_request_count": 32,
+    "a3_listed_network_request_count": 31,
+    "a3_response_body_event_count": 31,
+    "a3_published_response_body_metadata_count": 18,
+    "a3_published_body_content_pointer_count": 0,
+    "a3_schema_drift_modes_observed": ["v2"],
+    "a4_head": "4ff280cc4098fada678a82826644b77b6288f274",
+    "a4_actual_live_handoff_blob": "fae1b21205259afd7d44aad8db6bb52f6d570b75",
+    "a4_actual_live_structure_ready": true
+  },
+  "blockers": [
+    {
+      "code": "A3_NETWORK_REQUEST_STREAM_COUNT_MISMATCH",
+      "detail": "A-3 authority advertises 32 network requests but publishes 31 request entries in network_request_stream.",
+      "external_action": "Publish the missing request entry or corrected exact request stream and recomputed stream/handoff evidence."
+    },
+    {
+      "code": "A3_RESPONSE_BODY_BYTES_OR_CONTENT_POINTER_NOT_PUBLISHED",
+      "detail": "Published response_body_stream provides request_id, URL, MIME, size and SHA only; there are no immutable body bytes, inline body, storage_pointer or content_pointer values.",
+      "external_action": "A-3 Wave 3 RESPONSE_BODY_HANDOFF must publish immutable body bytes or exact content/storage pointers preserving the advertised SHA values."
+    },
+    {
+      "code": "A3_LIVE_SCHEMA_DRIFT_BASELINE_MISSING",
+      "detail": "Live schema-drift requests include mode=v2 only, so no live v1/v2 schema comparison is possible.",
+      "external_action": "Capture both schema-drift mode=v1 and mode=v2 response bodies in the same governed live stream or exact comparable capture pair."
+    }
+  ],
+  "owner_boundary": "A-3 CDP_EVENT_STREAM_INTEGRATION_AND_RECOVERY_OWNER",
+  "a3_wave3_directive_comment": 5212021138,
+  "a3_wave3_required_pass_item": "RESPONSE_BODY_HANDOFF",
+  "attempts_before_blocker": [
+    "Consumed exact A-3 live handoff blob and A-4 actual live structure handoff",
+    "Implemented and executed live metadata grouping and mode closure",
+    "Searched repository for exact A-3 response body SHA artifact",
+    "Compared current B-4 common fixture source reconstruction and rejected it because bytes do not match A-3 live SHA/size",
+    "Rejected field inference from SHA/size/MIME metadata only"
+  ],
+  "resume_command": "node wave3_live_authority_closure.cjs < exact-a3-a4-authority-input.json",
+  "terminal_eligibility": "EXTERNAL_EVIDENCE_NOT_AVAILABLE_IN_A5_OWNED_SCOPE_AFTER_ALTERNATIVE_METHODS",
+  "raw_secret_value_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

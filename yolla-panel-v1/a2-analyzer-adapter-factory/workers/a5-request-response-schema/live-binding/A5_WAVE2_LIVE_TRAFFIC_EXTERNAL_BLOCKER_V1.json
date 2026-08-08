@@ -1,0 +1,54 @@
+{
+  "schema_version": "A5_WAVE2_LIVE_TRAFFIC_EXTERNAL_BLOCKER_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment_id": 5208238898,
+  "worker": "A-5",
+  "blocked_at_kst": "2026-08-07T04:03:00+09:00",
+  "blocker_code": "A3_ACTUAL_LIVE_TRAFFIC_AND_A4_BOUND_STRUCTURE_UNAVAILABLE",
+  "blocker_class": "PROVEN_EXTERNAL_UPSTREAM_RUNTIME_EVIDENCE_BLOCKER",
+  "owner_boundary": [
+    "A-3 Electron/Chromium live CDP execution",
+    "A-4 inference over the exact A-3 live event digest"
+  ],
+  "evidence": {
+    "a3_pr": 22,
+    "a3_head": "e86dfcc2fc32ad366cd7fd8ba07392850419b853",
+    "a3_report": "A3_SITE_ANALYZER_WAVE1_CDP_FINAL_REPORT_V1.json",
+    "a3_live_network_event_count": 0,
+    "a3_live_response_body_count": 0,
+    "a3_live_dom_snapshot_count": 0,
+    "a3_live_navigation_event_count": 0,
+    "a4_pr": 23,
+    "a4_head": "a22337ce5f39c6a12837d3771e5eb1660c155b24",
+    "a4_wave2_module": "live-inference/wave2/live_event_binding.cjs",
+    "a4_actual_live_handoff_published": false
+  },
+  "a5_completed_work": {
+    "head_advanced": true,
+    "live_binding_entrypoint_implemented": true,
+    "a3_raw_event_contract_supported": true,
+    "a4_direct_result_supported": true,
+    "a4_wave2_handoff_supported": true,
+    "schema_drift_path_bound": true,
+    "mode_decision_path_bound": true,
+    "a6_handoff_contract_prepared": true,
+    "regression_assertions": 25,
+    "remote_readback": "PASS"
+  },
+  "fail_closed_effect": {
+    "fixture_only_terminal": false,
+    "actual_generator_input_generated": false,
+    "a6_ready_claimed": false,
+    "false_live_pass_count": 0
+  },
+  "unblock_conditions": [
+    "A-3 publishes a non-empty STREAMING_ANALYZER_EVENT_V1 array from an actual Electron WebContents",
+    "required events include cdp.attached, network request, response, responseBody, dom.snapshot and frame navigation",
+    "capture evidence includes one analyzer_session_id, positive web_contents_id and exact event digest",
+    "A-4 publishes A4_STRUCTURE_INFERENCE_RESULT_V1 or A4_WAVE2_LIVE_EVENT_STRUCTURE_HANDOFF_V1 bound to the exact A-3 event digest",
+    "A-5 reruns live_traffic_endpoint_schema_binding.cjs and publishes the resulting generator input"
+  ],
+  "production": false,
+  "ready": false,
+  "merge": false
+}
