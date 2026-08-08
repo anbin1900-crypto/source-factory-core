@@ -1,0 +1,62 @@
+{
+  "schema_version": "B6_TEN_SITE_BATCH_HANDOFF_V1",
+  "cycle_id": "V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "directive_comment_id": 5224506097,
+  "owner": "V-2_AB_GROUP_COMMANDER_AND_DIRECT_INTEGRATION_OWNER",
+  "parent_handoff": {
+    "commit": "dde3ff79eafeede994e672c21648155b998c9a1a",
+    "pointer_blob": "8e523ca375cc726e7d6f27e35f30553ab87df555",
+    "terminal": "B6_REAL_SITE_ONE_COMMAND_EXECUTION_HANDOFF_READY",
+    "command_id": "A2-B6-CYCLE7-REAL-SITE-E2E-001",
+    "completed_handoff_materialization_steps_reexecuted": false
+  },
+  "latest_ab_authority": {
+    "A-2": {"head": "e5ab30eebc973115b863356f7d4c2a38b74b0d96", "pointer_blob": "a57109e5814a793d08495830fbc16c3638672906"},
+    "A-3": {"head": "9bfa112fc559343f47e6e0ed23991abb974e4530", "pointer_blob": "c018adde42d2c189eeee84a12787ae169d9f8410"},
+    "A-4": {"head": "3488c7c119f8e0c292aedfa923a32687528b7ef0", "pointer_blob": "4518ca3d300b6085aab4e7b732f63d3d01207bdd"},
+    "A-5": {"head": "ccd3bdd403794209f7f60e74b597fcb053823ab3", "pointer_blob": "dcab4902142d8a4e2e15dd5a7fc3d37aa721789e"},
+    "A-6": {"head": "70e9f0e66bf90ab341067492bda434fe3ce7b7d3", "pointer_blob": "8577ae70578930e31a5127bd9a6ba83c259c389b"},
+    "A-7": {"head": "e3629c17c4e8fd4fe9c7989873a90090f767af7d", "pointer_blob": "d7cdb4c72da0a4a284519b55a34fcf7098feaa8f", "snapshot_state": "SUPERSEDED_BY_THIS_V2_INTEGRATION"},
+    "B-1": {"head": "b1a1bc2fd31d7f3cb1be601d24263eacd40fd8cc", "pointer_blob": "cebd8e93717de44acd63a271b60ffbae7408fcc2"},
+    "B-2": {"head": "3dd39a4ee19b17958e9e319ebfdc7978532a0702", "pointer_blob": "21c09bd60a443b5ecb4f37134ae3f3b00bb2f747"},
+    "B-3": {"head": "a3c4485162dcb2e7b606ebeb73365b94c11e0398", "pointer_blob": "69378ad58b4d0dcc3bb27f2a6eb7a084c574d00d"},
+    "B-4": {"head": "3708fbf755b4313a83d0913a8cf0b6db0d562489", "pointer_blob": "c55f6e0ba6a23b801f3f75955d46cf890137c593"},
+    "B-5": {"head": "63436e99cc51deb6df4a593313e8c235b5f62cd1", "pointer_blob": "a27551a270a946a4cbae19d0f0dee1822c0a7018"}
+  },
+  "runtime_authority": {
+    "physical_hostname": {"value": "NOTEX", "state": "BOUND"},
+    "logical_pc_id": {"value": "YOLLA-USER-PC01", "state": "BOUND"},
+    "target_pc_working_root": {"value": "E:\\YOLLA", "state": "BOUND"},
+    "executor_source": {"value": "E:\\YOLLA\\server\\yolla-data-ledger-v1\\pc-operation-executor-v2\\YOLLA_PC_OPERATION_EXECUTOR_V2.ps1", "state": "BOUND"},
+    "command_bus": {"repository": "anbin1900-crypto/yolla-real-estate-data-engine", "pr": 188, "root": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/PC_OPERATION_COMMAND_BUS_V2", "state": "BOUND"},
+    "existing_browser_agent_exact_binding": {"value": "http://127.0.0.1:32100", "auth": "BEARER_REFERENCE_ONLY", "state": "BOUND"},
+    "chrome_cdp": {"value": "http://127.0.0.1:9222", "exposure": "LOCALHOST_ONLY", "state": "OBSERVED_LIVE_FOUNDATION"},
+    "target_url": {"value": null, "state": "WAITING_INPUT"},
+    "site_id": {"value": null, "state": "WAITING_INPUT"},
+    "authorized_user_session_reference": {"value": null, "state": "WAITING_INPUT"},
+    "target_page_binding": {"value": null, "state": "WAITING_INPUT"}
+  },
+  "site_registry": [
+    {"slot": "SITE_SLOT_01", "batch": "BATCH_01", "site_id": null, "target_url": null, "authorized_user_session_reference": null, "target_page_binding": null, "state": "WAITING_INPUT"},
+    {"slot": "SITE_SLOT_02", "batch": "BATCH_01", "site_id": null, "target_url": null, "authorized_user_session_reference": null, "target_page_binding": null, "state": "WAITING_INPUT"},
+    {"slot": "SITE_SLOT_03", "batch": "BATCH_02", "site_id": null, "target_url": null, "authorized_user_session_reference": null, "target_page_binding": null, "state": "WAITING_INPUT"},
+    {"slot": "SITE_SLOT_04", "batch": "BATCH_02", "site_id": null, "target_url": null, "authorized_user_session_reference": null, "target_page_binding": null, "state": "WAITING_INPUT"},
+    {"slot": "SITE_SLOT_05", "batch": "BATCH_03", "site_id": null, "target_url": null, "authorized_user_session_reference": null, "target_page_binding": null, "state": "WAITING_INPUT"},
+    {"slot": "SITE_SLOT_06", "batch": "BATCH_03", "site_id": null, "target_url": null, "authorized_user_session_reference": null, "target_page_binding": null, "state": "WAITING_INPUT"},
+    {"slot": "SITE_SLOT_07", "batch": "BATCH_04", "site_id": null, "target_url": null, "authorized_user_session_reference": null, "target_page_binding": null, "state": "WAITING_INPUT"},
+    {"slot": "SITE_SLOT_08", "batch": "BATCH_04", "site_id": null, "target_url": null, "authorized_user_session_reference": null, "target_page_binding": null, "state": "WAITING_INPUT"},
+    {"slot": "SITE_SLOT_09", "batch": "BATCH_05", "site_id": null, "target_url": null, "authorized_user_session_reference": null, "target_page_binding": null, "state": "WAITING_INPUT"},
+    {"slot": "SITE_SLOT_10", "batch": "BATCH_05", "site_id": null, "target_url": null, "authorized_user_session_reference": null, "target_page_binding": null, "state": "WAITING_INPUT"}
+  ],
+  "lanes": ["DATA", "PRODUCT", "WRITE", "MY_LISTING", "EDIT"],
+  "execution_policy": {
+    "waiting_site_blocks_ready_site": false,
+    "completed_lane_reexecution": false,
+    "target_value_guessing": false,
+    "raw_secret_or_pii": false,
+    "final_write_or_edit_submit": "USER_CONFIRM_REQUIRED",
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}
