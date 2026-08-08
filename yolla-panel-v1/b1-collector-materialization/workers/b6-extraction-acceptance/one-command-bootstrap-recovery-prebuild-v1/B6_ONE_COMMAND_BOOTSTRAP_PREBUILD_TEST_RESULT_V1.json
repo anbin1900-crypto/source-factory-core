@@ -1,0 +1,51 @@
+{
+  "schema_version": "B6_ONE_COMMAND_BOOTSTRAP_PREBUILD_TEST_RESULT_V1",
+  "directive_id": "AI001-TO-B6-ONE-COMMAND-BOOTSTRAP-RECOVERY-PREBUILD-V1-20260807-001",
+  "tested_at": "2026-08-07T21:31:55+09:00",
+  "node_version": "v22.16.0",
+  "npm_version": "10.9.2",
+  "chromium_path": "/usr/bin/chromium",
+  "playwright": {
+    "found": true,
+    "version": "Version 1.57.0",
+    "source": "PATH",
+    "exit_code": 0,
+    "network_probe": false
+  },
+  "package_parse": "PASS",
+  "unit_tests": "PASS_4_OF_4",
+  "fixture_self_check_smoke": "PASS",
+  "side_by_side_bootstrap_smoke": "PASS",
+  "repair_smoke": "PASS_ACTION_COUNT_0",
+  "zip_test": "PASS",
+  "package_build": {
+    "size_bytes": 55985,
+    "sha256": "336a14fb6d366406597281b6262c4eaadddee4e948fa95e849fa9334fcdf8a6f",
+    "entry_count": 39,
+    "manifest_member_count": 34,
+    "manifest_tree_sha256": "6cd526dc7239a01ed0784c0e12a43e0896de4aae4076cbf3bf7e665cdd81e4e2"
+  },
+  "smoke": {
+    "schema_version": "B6_ONE_COMMAND_BOOTSTRAP_SMOKE_V1",
+    "pass": true,
+    "install_result": "PASS_PREBUILD_BOOTSTRAP",
+    "repair_action_count": 0,
+    "version_key": "1.0.0-prebuild_6cd526dc7239",
+    "side_by_side_pointer_created": true
+  },
+  "self_check_required": {
+    "node": true,
+    "npm": true,
+    "chrome_or_chromium": true,
+    "payload_root": true
+  },
+  "failures_repaired": [
+    "CORE_LITERAL_BACKSLASH_N_PARSE_FAILURE",
+    "POINTER_JSON_LITERAL_BACKSLASH_N_WRITE_FAILURE",
+    "PLAYWRIGHT_NPX_NETWORK_PROBE_REMOVED"
+  ],
+  "minimum_validation": "PASS_PACKAGE_PARSE_PLUS_LOCAL_FIXTURE_SELF_CHECK_SMOKE_1",
+  "target_pc_execution": false,
+  "production_install": false,
+  "new_tunnel_create": false
+}

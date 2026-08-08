@@ -1,0 +1,102 @@
+{
+  "schema_version": "LATEST_B6_REAL_SITE_ONE_COMMAND_EXECUTION_HANDOFF_POINTER_V1",
+  "directive_id": "A0-TO-B6-REAL-SITE-ONE-COMMAND-EXECUTION-HANDOFF-V7-20260808-001",
+  "followup_id": "A0-TO-B6-CYCLE7B-EXECUTION-HANDOFF-RESUME-20260808-001",
+  "directive_comment": 5220812680,
+  "followup_comment": 5221188733,
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "wave_id": "A0-AB-REAL-SITE-LIVE-RECEIPT-CLOSURE-WAVE7B-20260808-001",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 42,
+  "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+  "baseline_head": "181fc049193a15cc6a9a3d6623f1e8bb0a1930af",
+  "root": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/real-site-one-command-execution-handoff-v1",
+  "source_pointers": {
+    "b6_cycle7_bundle": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 42,
+      "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+      "commit": "181fc049193a15cc6a9a3d6623f1e8bb0a1930af",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/cycle7-real-site-e2e-one-command-bundle-v1/LATEST_B6_CYCLE7_REAL_SITE_E2E_BUNDLE_POINTER.json",
+      "blob": "3da83d6d3d0e8b3553cf4c06c4242c00461c03af",
+      "terminal": "B6_CYCLE7_REAL_SITE_E2E_BUNDLE_READY"
+    },
+    "a2_cycle7_mission": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 18,
+      "branch": "integration/a2-generic-site-analyzer-adapter-factory-v1",
+      "commit": "16dd210aab321aebec94ff8e1578c20b74b122f2",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/real-site-e2e-live-binding-v1/LATEST_A2_REAL_SITE_E2E_MISSION_POINTER.json",
+      "blob": "b0a75d31712ee36832c5e00d3274875e2ce740a8",
+      "terminal": "A2_REAL_SITE_E2E_LIVE_BINDING_ORCHESTRATOR_READY"
+    },
+    "existing_pc_operation_bus": {
+      "repository": "anbin1900-crypto/source-factory-core",
+      "pr": 73,
+      "commit": "e1d0353c3f993793787cb228efc3abef69957ad4",
+      "path": "yolla-panel-v1/v1-existing-runtime-control/LATEST_C_MODE_EXISTING_RUNTIME_BUTTON_POINTER.json",
+      "blob": "8aa49d263c3f0d5addf5659ab7d327c2f18beab4",
+      "dispatch_hooks": [
+        "sendToCommander(groupId,message,metadata)",
+        "sendToWorker(groupId,workerId,message,metadata)"
+      ]
+    }
+  },
+  "objects": {
+    "handoff": {
+      "path": "REAL_SITE_ONE_COMMAND_EXECUTION_HANDOFF_V1.json",
+      "blob": "99bcaa58b46626fa29ae370e14d31ae495fbac2c"
+    },
+    "command_envelope": {
+      "path": "SUCCESSOR_COMMAND_ENVELOPE_V1.json",
+      "blob": "84a85c1f3e9cfbcd23acb0e6cb829d2d84a00adb"
+    },
+    "result_contract": {
+      "path": "REAL_SITE_RESULT_RETURN_CONTRACT_V1.json",
+      "blob": "13a1ab5abea77e729e3a4ee75b93fdf46e851fb8"
+    },
+    "rollback_resume": {
+      "path": "ROLLBACK_RESUME_PLAN_V1.json",
+      "blob": "0a6db6c369f739c6ec0fa096eead9ac40370b319"
+    },
+    "final_report": {
+      "path": "B6_REAL_SITE_ONE_COMMAND_EXECUTION_HANDOFF_FINAL_REPORT_V1.json",
+      "blob": "9da8a67036b026873c8e9de1fba47700a4eaeb29"
+    }
+  },
+  "command_id": "A2-B6-CYCLE7-REAL-SITE-E2E-001",
+  "request_id": "A2-CYCLE7-REAL-SITE-E2E-SUCCESSOR-REQUEST-001",
+  "activation": {
+    "handoff_ready": true,
+    "execution_pending": true,
+    "required_runtime_input_state": "WAITING_INPUT",
+    "a3_input_state": "WAITING_INPUT_LANE_SCOPED_NONBLOCKING",
+    "b2_input_state": "WAITING_INPUT_LANE_SCOPED_NONBLOCKING"
+  },
+  "validation": {
+    "json_parse": "PASS_4_OF_4",
+    "required_output_presence": "PASS_4_OF_4",
+    "command_id_consistency": "PASS_4_OF_4",
+    "request_id_consistency": "PASS_3_OF_3_APPLICABLE",
+    "ordered_steps": "PASS_8_OF_8",
+    "lane_coverage": "PASS_5_OF_5",
+    "write_edit_user_confirm_guard": "PASS_2_OF_2",
+    "no_new_transport": "PASS",
+    "no_new_tunnel": "PASS",
+    "no_new_executor": "PASS",
+    "no_new_browser_engine": "PASS"
+  },
+  "terminal": "B6_REAL_SITE_ONE_COMMAND_EXECUTION_HANDOFF_READY",
+  "status": "TERMINAL_PASS_HANDOFF_READY_EXECUTION_PENDING_RUNTIME_INPUT",
+  "live_execution_receipt_count": 0,
+  "live_pass_claimed": false,
+  "target_pc_execution_by_b6": false,
+  "new_tunnel": false,
+  "new_executor": false,
+  "new_browser_engine": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}

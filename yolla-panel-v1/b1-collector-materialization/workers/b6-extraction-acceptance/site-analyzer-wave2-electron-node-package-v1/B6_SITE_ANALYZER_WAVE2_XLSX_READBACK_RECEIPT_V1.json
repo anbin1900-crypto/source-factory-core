@@ -1,0 +1,28 @@
+{
+  "schema_version": "B6_SITE_ANALYZER_WAVE2_XLSX_READBACK_RECEIPT_V1",
+  "workbook_path": "outputs/results.xlsx",
+  "sheet": "Preview",
+  "range": "A1:K11",
+  "header_count": 11,
+  "data_row_count": 10,
+  "headers": [
+    "id",
+    "listing_title",
+    "city",
+    "price",
+    "area_m2",
+    "bedrooms",
+    "listing_type",
+    "stable_id",
+    "updated_at",
+    "__source_row_pointer",
+    "__source_element_pointers"
+  ],
+  "all_ids_present": true,
+  "all_titles_present": true,
+  "edited_first_title": true,
+  "source_row_pointer_present_count": 10,
+  "source_element_pointer_present_count": 10,
+  "formula_error_scan": "PASS_ZERO_MATCH",
+  "result": "PASS_10_OF_10_ROWS_AND_POINTERS"
+}

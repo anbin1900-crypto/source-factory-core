@@ -1,0 +1,21 @@
+{
+  "schema_version": "B6_TEN_SITE_FINAL_HANDOFF_FIXTURE_V1",
+  "classification": "FIXTURE_ONLY_NOT_LIVE_AUTHORITY",
+  "site_overrides": {
+    "SITE_SLOT_03": {
+      "site_id": "FIXTURE_SITE_03",
+      "target_url": "https://fixture.invalid/real-estate",
+      "target_page_binding": "FIXTURE_PAGE_BINDING_03",
+      "authorized_user_session_reference": "FIXTURE_SESSION_REFERENCE_NOT_A_SECRET",
+      "state": "READY"
+    }
+  },
+  "expected": {
+    "ready_sites": ["SITE_SLOT_03"],
+    "waiting_site_count": 9,
+    "first_dispatch_batch": "BATCH_02",
+    "dispatch_site_count": 1,
+    "live_execution": false,
+    "actual_receipt_count": 0
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": "SUCCESSOR_MULTIMODE_EXECUTION_MANIFEST_V1",
+  "context_requirement": "EMPTY_CONTEXT_SUPPORTED",
+  "commands": {
+    "all": "node multimode_one_command_runner_v1.mjs --root . --scope ALL",
+    "selected": "node multimode_one_command_runner_v1.mjs --root . --scope DATA,PRODUCT",
+    "resume": "node multimode_one_command_runner_v1.mjs --root . --scope ALL --checkpoint fixtures/INTERRUPTED_CHECKPOINT_V1.json"
+  },
+  "ordered_steps": [
+    "READ_REQUIRED_INPUT_POINTER_SET",
+    "VERIFY_A2_A7_B1_B5_TERMINALS",
+    "READ_LATEST_CHECKPOINT_IF_PRESENT",
+    "SKIP_COMPLETED_MODES",
+    "PREPARE_ONLY_INCOMPLETE_MODES",
+    "EMIT_EXPECTED_RESULT_POINTER_PLAN"
+  ],
+  "failure_terminal": "EXACT_MISSING_POINTER_OR_INVALID_SCOPE",
+  "success_terminal": "B6_ONE_COMMAND_MULTIMODE_EXECUTION_PLAN_READY"
+}

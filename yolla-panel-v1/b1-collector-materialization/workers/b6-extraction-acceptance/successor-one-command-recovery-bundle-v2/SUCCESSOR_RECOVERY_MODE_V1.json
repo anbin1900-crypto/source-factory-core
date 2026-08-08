@@ -1,0 +1,9 @@
+{
+  "schema_version":"SUCCESSOR_RECOVERY_MODE_V1",
+  "trigger":["CONTEXT_REPLACED","ACTIVE_COMMAND_WITHOUT_TERMINAL_RESULT","EXPLICIT_RECOVER_WORK"],
+  "first_action":{"slot_id":"A7_RECOVER_WORK","command":"RECOVER_WORK","must_precede_normal_preflight":true},
+  "resolve_order":["LATEST_AI001_MISSION_POINTER_V1","active_command","latest_result","checkpoint","duplicate_idempotency_check","resume_or_next_action"],
+  "decision_states":["ALREADY_DONE","SAFE_TO_RESUME","NEEDS_REPAIR","BLOCKED"],
+  "fail_closed":"BLOCKED_IF_A7_POINTER_UNRESOLVED_NO_GUESS",
+  "late_bind_dependencies":["A2_COMMAND_CATALOG","A6_ADAPTER_RUNNER","B1_COMMAND_RESULT_STATE","B4_ARTIFACT_CHECKPOINT","B5_DATASET_CHECKPOINT"]
+}

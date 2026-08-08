@@ -1,0 +1,27 @@
+{
+  "schema_version": "LATEST_B6_C1_ACK_CLOSURE_POINTER_V1",
+  "pointer_id": "LATEST_B6_C1_ACK_CLOSURE_POINTER",
+  "updated_at_kst": "2026-08-05T21:50:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 42,
+  "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+  "authority_comment_id": 5191897980,
+  "handoff_publication_comment_id": 5191870621,
+  "report": {
+    "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_C1_ACK_CLOSURE_CHECK_V1.json",
+    "commit": "3e84446e83b3808e4481a98c4db2cf555ab3a426",
+    "decision": "EXACT_EXTERNAL_BLOCKER",
+    "blocker_code": "C1_EXACT_HEAD_BLOB_ACK_NOT_PUBLISHED"
+  },
+  "current_gate": "C1_EXACT_HEAD_BLOB_ACK_OR_EXACT_BLOCKER",
+  "c1_pr": 20,
+  "c1_head": "c7483089c1d398d5af3f1118a3357bed6a8e629f",
+  "c1_latest_comment_id": 5191870621,
+  "c1_ack_found": false,
+  "c1_exact_blocker_found": false,
+  "b6_terminal_preserved": "B6_EXTRACTION_ACCEPTANCE_C1_HANDOFF_READY",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}

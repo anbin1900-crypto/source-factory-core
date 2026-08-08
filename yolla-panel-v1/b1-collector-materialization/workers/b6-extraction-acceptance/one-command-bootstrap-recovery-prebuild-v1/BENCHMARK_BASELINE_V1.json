@@ -1,0 +1,30 @@
+{
+  "schema_version": "B6_BOOTSTRAP_BENCHMARK_BASELINE_V1",
+  "directive_id": "AI001-TO-B6-ONE-COMMAND-BOOTSTRAP-RECOVERY-PREBUILD-V1-20260807-001",
+  "benchmarks": [
+    {
+      "name": "electron-builder portable",
+      "pattern": "Windows portable target; resolve package paths relative to executable/package root; no in-place production overwrite",
+      "source": "electron.build/nsis portable target"
+    },
+    {
+      "name": "Playwright install",
+      "pattern": "Install browsers explicitly; support PLAYWRIGHT_BROWSERS_PATH; install only when allow_install=true",
+      "source": "playwright.dev/docs/browsers"
+    },
+    {
+      "name": "Windows launcher",
+      "pattern": "Invoke PowerShell script by explicit path; do not permanently mutate execution policy",
+      "source": "Microsoft Learn about_Scripts/about_Execution_Policies"
+    }
+  ],
+  "design_decisions": [
+    "side_by_side_versioned_install",
+    "pointer_only_activation_and_rollback",
+    "no_tunnel_creation",
+    "no_target_pc_execution",
+    "no_production_install",
+    "dependency_install_requires_explicit_allow_install",
+    "self_check_is_read_only_except_receipt_output"
+  ]
+}

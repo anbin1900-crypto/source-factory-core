@@ -1,0 +1,62 @@
+{
+  "schema_version": "LATEST_B6_SUCCESSOR_ONE_COMMAND_RECOVERY_BUNDLE_POINTER_V1",
+  "directive_id": "AI001-TO-B6-SUCCESSOR-ONE-COMMAND-RECOVERY-BUNDLE-V2-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "task_comment": 5217341467,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 42,
+  "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+  "baseline_head": "fd169f98ae905105e876189d1837ccf603eaec2d",
+  "contract_commit": "3e156e394437b7301ee5f4c039c6ec2271af7d4f",
+  "final_report_commit": "60d714b9168b21fe2fd36ce4cc54ebb8f6cacb50",
+  "package": {
+    "name": "B6_SUCCESSOR_ONE_COMMAND_RECOVERY_BUNDLE_V1.zip",
+    "size_bytes": 13609,
+    "sha256": "57c81a001ecd95341bbe92250b7e633e01a6cb3877cd39599699dfc012ba95f7",
+    "entry_count": 13,
+    "package_member_tree_sha256": "d96cc69e12a8361118778fc0946a01b4e907d0917a6ff30f3608f1a99ef31635",
+    "drive_file_id": "1aNDLNjh81nU0hyolLQv-MF7-gw46wLgd",
+    "drive_raw_readback": "PASS_SIZE_SHA256_ZIP_INTEGRITY"
+  },
+  "required_outputs": {
+    "SUCCESSOR_ONE_COMMAND_BUNDLE_MANIFEST_V1": {"blob":"fee66d08b8778e59f140c46240f9ffd02dc6ecf5","status":"PASS"},
+    "SUCCESSOR_BOOTSTRAP_PLAN_V1": {"blob":"14f57feee4c3bfa5e665e3263ac0301b3cb1b672","status":"PASS"},
+    "SUCCESSOR_RECOVERY_MODE_V1": {"blob":"e76b1957050736f04aa5cf33922d546ab4949e35","status":"PASS_A7_RECOVER_WORK_FIRST"},
+    "SELF_CHECK_RECEIPT_SCHEMA_V1": {"blob":"acffd7179a7fcab8a18d14e63846f0c0a75caec4","status":"PASS"},
+    "ROLLBACK_REMOVE_PLAN_V1": {"blob":"52fbdc281d3945654431e1bde2ffb53338744838","status":"PASS"}
+  },
+  "supporting_objects": {
+    "bundle_test_result": {"blob":"5826541219ed0d7b7c759e72588ff09f13c6bb13","result":"PASS_FIXTURE_PACKAGE_ASSEMBLY_AND_RECOVERY_MODE_SMOKE_1"},
+    "drive_artifact_manifest": {"blob":"af803621d94a0433328f21a6756c00fb5a73c03b"},
+    "final_report": {"blob":"b8ead30b2353bd6c33a658f94597276366314486","terminal":"B6_SUCCESSOR_ONE_COMMAND_RECOVERY_BUNDLE_READY"}
+  },
+  "validation": {
+    "late_binding_slots": "PASS_11_OF_11",
+    "required_phase_order": "PASS_7_PHASES",
+    "step_contract_fields": "PASS_COMMAND_ID_EXPECTED_EXIT_CODE_EXPECTED_RECEIPT_ROLLBACK_ACTION",
+    "recovery_first": "PASS_A7_RECOVER_WORK_FIRST",
+    "package_parse": "PASS",
+    "fixture_assembly_smoke": "PASS",
+    "unpacked_smoke": "PASS",
+    "secret_value_count": 0,
+    "embedded_endpoint_value_count": 0,
+    "worker_source_modified": false,
+    "worker_source_merged": false,
+    "worker_source_installed": false
+  },
+  "unknown_references": {
+    "tunnel_endpoint": "UNKNOWN/REFERENCE",
+    "server_endpoint": "UNKNOWN/REFERENCE",
+    "credential_reference": "UNKNOWN/REFERENCE"
+  },
+  "terminal": "B6_SUCCESSOR_ONE_COMMAND_RECOVERY_BUNDLE_READY",
+  "status": "TERMINAL_LATE_BINDING_RECOVERY_BUNDLE_READY",
+  "next_event": "SUCCESSOR_PC_COMMAND_RUNNER_RESOLVE_LATEST_POINTERS_AND_EXECUTE_RECOVER_WORK_FIRST_IF_CONTEXT_REPLACED",
+  "target_pc_execution": false,
+  "tunnel_pc_agent_execution": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}

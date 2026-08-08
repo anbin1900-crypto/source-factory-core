@@ -1,0 +1,9 @@
+{
+  "schema_version": "CHECKPOINT_RESUME_AND_DUPLICATE_SUPPRESSION_V1",
+  "ordered_steps": ["COMMON_EVIDENCE", "DATA", "PRODUCT", "WRITE"],
+  "completed_step_decision": "SKIP_NO_REISSUE",
+  "incomplete_step_decision": "RESUME_FIRST_INCOMPLETE",
+  "duplicate_execution_suppression_key": "cycle_id:command_id:site_id:scenario_set:branch:producer_pointer_blobs",
+  "write_branch_decision": "PREPARE_ONLY_AWAIT_USER_CONFIRM",
+  "preserve": ["OBSERVED", "INFERRED", "UNKNOWN", "confidence", "evidence_pointer", "lineage"]
+}

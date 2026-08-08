@@ -1,0 +1,24 @@
+{
+  "schema_version": "RECOVERY_REPAIR_ENTRYPOINT_V1",
+  "detects": [
+    "partial_install_marker",
+    "stale_pid",
+    "missing_active_path",
+    "missing_playwright",
+    "node_or_npm_missing",
+    "expected_port_state"
+  ],
+  "repairs_package_owned": [
+    "remove_non_active_partial_install_when_apply",
+    "clear_stale_pid_when_apply"
+  ],
+  "external_or_guarded": [
+    "dependency_install_requires_allow_install",
+    "unknown_port_owner_not_killed",
+    "node_or_npm_external_install"
+  ],
+  "side_by_side_rollback": "POINTER_SWITCH_ONLY",
+  "target_pc_execution": false,
+  "production_install": false,
+  "new_tunnel_create": false
+}

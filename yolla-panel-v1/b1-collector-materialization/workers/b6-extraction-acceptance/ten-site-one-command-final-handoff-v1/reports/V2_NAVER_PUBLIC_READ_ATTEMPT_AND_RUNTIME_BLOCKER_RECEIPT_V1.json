@@ -1,0 +1,125 @@
+{
+  "schema_version": "V2_NAVER_PUBLIC_READ_ATTEMPT_AND_RUNTIME_BLOCKER_RECEIPT_V1",
+  "receipt_id": "V2-NAVER-PUBLIC-READ-ATTEMPT-RUNTIME-BLOCKER-20260808-001",
+  "policy": "YOLLA_EFFICIENCY_RATIONALITY_SPEED_FIRST_OPERATING_POLICY_V1",
+  "owner": "V-2_AB_GROUP_COMMANDER_AND_DIRECT_INTEGRATION_OWNER",
+  "source_package": {
+    "pr": 42,
+    "base_head": "a46f5bb3b537b7c7c87daab601d532d890c4e1e3",
+    "handoff_blob": "ee093219ee3cf9e3d854d73d9e18d49801635934",
+    "scheduler_blob": "99c4dcd66e4dd89be34e0e7fd304c0e77743bd38",
+    "b3_exact_byte_receipt_blob": "f6f356d75b1a3fea82d63d970c55716c8d88316a"
+  },
+  "target_authority": {
+    "authority_id": "CONCRETE-SOURCE-TARGET-NAVER-FIN-LAND-20260805-002",
+    "site_id": "NAVER_FIN_LAND_PUBLIC_WEB_V1",
+    "origin": "https://fin.land.naver.com",
+    "routes": [
+      "/search",
+      "/map",
+      "/articles/2528362542"
+    ],
+    "scope": "PUBLIC_NON_LOGIN_READ_ONLY",
+    "target_pc": "NOTEX",
+    "working_root": "E:\\YOLLA",
+    "authorized_user_session_reference": "NOT_REQUIRED_PUBLIC_READ"
+  },
+  "completed_attempts": [
+    {
+      "method": "EXISTING_NAVER_TAB_UIA",
+      "command_id": "V2-PUBLIC-READ-NAVER-SLICE-RUN-20260808-144700-001",
+      "receipt_blob": "d8592edc425ebd9f3ea2cb92398117a083899930",
+      "executor_status": "SUCCEEDED",
+      "internal_terminal": "EXACT_BLOCKER",
+      "blocker": "NAVER_REAL_ESTATE_CHROME_TAB_NOT_FOUND",
+      "live_route_count": 0
+    },
+    {
+      "method": "EXISTING_CHROME_CDP_TEMP_TARGETS",
+      "command_id": "V2-PUBLIC-READ-NAVER-SLICE-V2-RUN-20260808-145100-001",
+      "receipt_blob": "99f1b8c3117817db713a84f8dcff409f66ea5412",
+      "executor_status": "SUCCEEDED",
+      "internal_terminal": "EXACT_BLOCKER",
+      "blocker": "CDP_127.0.0.1_9222_CONNECTION_REFUSED",
+      "live_route_count": 0,
+      "temporary_target_close_pending_count": 0
+    },
+    {
+      "method": "EXISTING_BROWSER_BOUNDARY_DIAG",
+      "command_id": "V2-BROWSER-BOUNDARY-DIAG-RERUN-20260808-145400-001",
+      "receipt_blob": "eec90f856763cd836ae472d82df45d03ac10933f",
+      "executor_status": "SUCCEEDED",
+      "finding": {
+        "chrome_window_pid": 11712,
+        "chrome_window_title": "ChatGPT - 자동화 C 모드 - Chrome",
+        "cdp_9222_reachable": false,
+        "browser_agent_32100_reachable": false
+      }
+    },
+    {
+      "method": "RUNTIME_AUTHORITY_DISCOVERY",
+      "command_id": "V2-EXISTING-BROWSER-RUNTIME-AUTHORITY-DIAG-RUN-20260808-144800-001",
+      "receipt_blob": "9f90b6e2c6e9a3ca06d6c6a5d9171ad212d28504",
+      "executor_status": "SUCCEEDED",
+      "finding": {
+        "pc_executor_task_state_at_execution": "Running",
+        "pc_executor_pid": 14148,
+        "chrome_executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "output_cap_bytes": 10000,
+        "full_authority_payload_truncated": true
+      }
+    }
+  ],
+  "method_change_log": [
+    "NAVER_TAB_UIA_TO_CDP_TEMP_TARGET",
+    "CDP_TEMP_TARGET_TO_RUNTIME_AUTHORITY_DISCOVERY",
+    "LARGE_AUTHORITY_DIAG_TO_COMPACT_EXACT_MATCH_DIAG",
+    "DEDICATED_RUNTIME_PATH_TO_EXISTING_CHROME_TEMP_UIA_TAB"
+  ],
+  "queued_resume_commands": [
+    {
+      "command_id": "V2-EXISTING-BROWSER-RUNTIME-AUTHORITY-DIAG-V2-WRITE-20260808-145300-001",
+      "state": "UNCLAIMED"
+    },
+    {
+      "command_id": "V2-EXISTING-BROWSER-RUNTIME-AUTHORITY-DIAG-V2-RUN-20260808-145400-001",
+      "state": "UNCLAIMED"
+    },
+    {
+      "command_id": "V2-PUBLIC-READ-NAVER-SLICE-V3-UIA-WRITE-20260808-145600-001",
+      "state": "UNCLAIMED"
+    },
+    {
+      "command_id": "V2-PUBLIC-READ-NAVER-SLICE-V3-UIA-RUN-20260808-145700-001",
+      "state": "UNCLAIMED"
+    },
+    {
+      "command_id": "V2-COMMAND-BUS-LIVENESS-PROBE-20260808-150100-001",
+      "state": "UNCLAIMED"
+    }
+  ],
+  "blocker": {
+    "id": "V2-PC-OPERATION-EXECUTOR-POLLING-STOPPED-AFTER-20260808T145121+0900",
+    "class": "EXTERNAL_TARGET_PC_EXECUTION_TRANSPORT",
+    "exact_statement": "PC Operation Executor published the 14:51:21 authority-diagnostic receipt, then stopped claiming all later Command Bus entries including a read-only SYSTEM_STATUS liveness probe.",
+    "first_incomplete_step": "EXECUTE_EXISTING_CHROME_TEMPORARY_UIA_TAB_V3",
+    "resume_entry": "DO_NOT_REISSUE; reactivate existing scheduled task YOLLA PC Operation Executor V2, then consume already queued commands in order 007 through 010.",
+    "new_executor_required": false,
+    "new_tunnel_required": false,
+    "new_browser_engine_required": false
+  },
+  "terminal": "V2_NAVER_PUBLIC_READ_EXACT_EXTERNAL_BLOCKER_PC_EXECUTOR_POLLING_STOPPED",
+  "actual_live_route_count": 0,
+  "live_pass_claimed": false,
+  "target_value_guessing": false,
+  "write_action_count": 0,
+  "final_submit_count": 0,
+  "raw_secret_or_pii_count": 0,
+  "new_tunnel_count": 0,
+  "new_executor_count": 0,
+  "new_browser_engine_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "observed_at_kst": "2026-08-08T15:03:00+09:00"
+}

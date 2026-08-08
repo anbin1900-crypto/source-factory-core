@@ -1,0 +1,61 @@
+{
+  "schema_version": "B6_SITE_ANALYZER_WAVE3_A2_B1_CONSUMPTION_HANDOFF_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "task_comment": 5212053131,
+  "package": {
+    "name": "B6_SITE_ANALYZER_WAVE3_PACKAGE_RECOVERY_V1.zip",
+    "sha256": "6f495a8796d30c9ac359ec56d8fe740dd4299ad545dec80b6c73d52c26d9267a",
+    "size_bytes": 35005,
+    "drive_file_id": "1ituzJSHwoZmlW8QTffu2n-kgo0pRU0kD",
+    "single_launcher": "launcher.cjs"
+  },
+  "consumers": {
+    "A2": {
+      "pr": 18,
+      "observed_head": "6cf05d0369dbae0b2413f562146243b15f350759",
+      "wave3_assignment_comment": 5212018964,
+      "reproduced_blocker": "ERR_MODULE_NOT_FOUND_ELECTRON_PATH",
+      "repair_contract": "launcher resolves Electron from YOLLA_ELECTRON_EXECUTABLE, package-local module, parent/workspace module roots, and PATH"
+    },
+    "B1": {
+      "pr": 19,
+      "observed_head": "fc66a09669716c9ef4be6548102e76d86f2fadc8",
+      "wave3_assignment_comment": 5212039794,
+      "reproduced_blocker": "ELECTRON_MODULE_NOT_INSTALLED_USE_NODE_CHROMIUM_MODE",
+      "repair_contract": "consume exact package, run package-relative launcher, use workspace Electron executable or package-local optional Electron installation"
+    }
+  },
+  "commands": {
+    "common": [
+      "node launcher.cjs verify",
+      "node launcher.cjs deps",
+      "node launcher.cjs sample",
+      "node launcher.cjs close",
+      "node launcher.cjs restart",
+      "node launcher.cjs state"
+    ],
+    "target_pc_existing_electron": [
+      "set YOLLA_ELECTRON_EXECUTABLE=<path-to-electron.exe>",
+      "node launcher.cjs electron"
+    ],
+    "target_pc_package_local_electron": [
+      "npm install --include=optional --no-audit --no-fund",
+      "node launcher.cjs electron"
+    ]
+  },
+  "validated": {
+    "package_relative_path": "PASS",
+    "cwd_independent_launcher": "PASS",
+    "clean_extraction": "PASS",
+    "restart_state_recovery": "PASS_AFTER_OUTPUT_LOSS",
+    "exact_10_records": "PASS",
+    "node_chromium_mode": "PASS",
+    "electron_source_packaged": true,
+    "electron_runtime_current_environment": "PROVEN_EXTERNAL_BLOCKER"
+  },
+  "handoff_status": "READY_FOR_A2_B1_CONSUMPTION_WITH_EXACT_PACKAGE_AND_COMMANDS",
+  "false_electron_pass_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

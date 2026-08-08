@@ -1,0 +1,29 @@
+{
+  "schema_version":"B1_TO_D1_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_V2",
+  "candidate_id":"B1-TO-D1-SOURCE-DOCUMENT-HANDOFF-CANDIDATE-V2-20260806-001",
+  "task_id":"B6_D_SOURCE_DOCUMENT_HANDOFF_REPREFLIGHT",
+  "directive_comment_id":5196668910,
+  "updated_at_kst":"2026-08-06T06:47:00+09:00",
+  "audit_cutoff":{"B5_head":"981104d415a97901c29cec6b12897a64f2806c6d","D1_head":"17e920e0643dd89c059f1d99fda7c0c0383f1a18"},
+  "producer_lane":"B_TO_D_SOURCE_DOCUMENT",
+  "excluded_lane":"C_TO_D_KNOWLEDGE_CANDIDATE",
+  "target":{"repository":"anbin1900-crypto/yolla-real-estate-data-engine","pr":188,"head":"17e920e0643dd89c059f1d99fda7c0c0383f1a18","control_pointer_blob":"d65285f969294c19c0d9e2d1bbc2adf8165f8819","authority_root":"COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/"},
+  "inputs":{
+    "B2":{"status":"READY","head":"771da102a0202dc21d9226d9c534275df345582e","pointer_blob":"6ba3df93d41d3b00f58d598ca6867db376c9f30c"},
+    "B3":{"status":"READY","head":"86d789a136ce5070d79eab7e6d0205eb23da11d7","pointer_blob":"dedbad43c8c23df18e2af2560af5d5f48ca1fa00"},
+    "B4":{"status":"READY","head":"f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3","pointer_blob":"b0158bbb27dfb0efab012ec1a97c3c31f2266e7c"},
+    "B5":{"status":"EXACT_BLOCKER","head":"981104d415a97901c29cec6b12897a64f2806c6d","pointer_blob":"e9ac7480a1a7c89ad61c56e51c191a431aeaf717","final_report_blob":"bd7041e7a8eda71d1a40e0cdeae789482193566d","package_blob":"f65c54194609d8bc709033c0d36abf916c60debe","test_report_blob":"88311daf3a146cfdbb9d3dc1df1f9bdc5ede0650","terminal":"B5_D_READY_PACKAGE_V2_EXACT_BLOCKER","bound_D_head":"327547fd74f615a4c709c6da8473b1bf63fd5d6a","bound_D_pointer_blob":"95e6983a79b80867dd7de196a21e1aefc4c3dcb1","authority_type":null},
+    "D1_TREE_BINDING":{"status":"READY","blob":"dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd"},
+    "D1_MAPPING_ADDENDUM":{"status":"READY","blob":"118d6403dd5db47afafb982991f8fd9a51f35f28"},
+    "D1_B_RECEIPT_PROCEDURE":{"status":"READY","blob":"2a8b7c1b04924728cce14dc21c225ad09598905f"},
+    "D1_SOURCE_AUTHORITY":{"status":"READY","blob":"6bf779b937bf2bea761780315b22692ccca07ad9","authority_type":"OFFICIAL_SECONDARY"},
+    "D1_SOURCE_ALIAS":{"status":"READY","blob":"27683e5dc4a9448c3d0a9bd3200a0a62c84d158c","preferred_key":"NAVER_FIN_LAND_PUBLIC_WEB_V1"}
+  },
+  "preflight":{"B_input_objects":"PASS_4_OF_4","B_ready_terminals":"FAIL_3_OF_4","D_tree_binding":"PASS","manifest_paths":"PASS_10_OF_10","PR188_required_paths":"PASS_18_OF_18_FULL_ACCOUNTING","lane_separation":"PASS"},
+  "promotion_gate":{"passed":["B2_READY","B3_READY","B4_READY","D_TREE_BINDING","REQUIRED_PATHS","LANE_SEPARATION","D1_AUTHORITY_AVAILABLE"],"failed":["B5_CURRENT_D1_AUTHORITY_BINDING","B5_READY_TERMINAL"]},
+  "defect_handoff_to_B5":{"Field":"B5_CURRENT_D1_AUTHORITY_REBIND","Expected":"Bind D1@17e920e, pointer d65285f and OFFICIAL_SECONDARY decision, then publish READY terminal with package/test/readback","Evidence":"B5@981104 pointer e9ac748 remains Exact Blocker and binds old D authority"},
+  "classification":"PREHANDOFF_EXACT_BLOCKER",
+  "promotable":false,
+  "first_blocker":"B5_D_READY_PACKAGE_V2_CURRENT_D1_AUTHORITY_BINDING_MISSING",
+  "D_acceptance_receipt_issued":false,"D_acceptance_claim":false,"D_canonical_id_generated_by_B":false,"D_canonical_db_write":false,"actual_package_submission":false,"production":false,"ready":false,"merge":false
+}

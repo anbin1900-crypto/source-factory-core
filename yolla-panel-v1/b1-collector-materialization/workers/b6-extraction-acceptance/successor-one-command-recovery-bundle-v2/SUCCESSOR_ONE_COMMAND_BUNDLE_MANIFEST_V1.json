@@ -1,0 +1,23 @@
+{
+  "schema_version":"SUCCESSOR_ONE_COMMAND_BUNDLE_MANIFEST_V1",
+  "directive_id":"AI001-TO-B6-SUCCESSOR-ONE-COMMAND-RECOVERY-BUNDLE-V2-20260807-001",
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "task_comment":5217341467,
+  "mode":"LATE_BINDING_NO_WORKER_SOURCE_MUTATION",
+  "recovery_first_command":"A7.RECOVER_WORK",
+  "late_binding_slots":[
+    {"slot_id":"A2_COMMAND_CATALOG","pr":18,"assignment_comment":5217305389,"required_assets":["SUCCESSOR_COMMAND_CATALOG_V1","SITE_ANALYZER_SUCCESSOR_EXECUTION_MANIFEST_V1"],"resolve":"LATEST_POINTER_AT_EXECUTION"},
+    {"slot_id":"A3_CDP_RUNNER","pr":22,"assignment_comment":5217308019,"required_assets":["SUCCESSOR_CDP_OBSERVATION_RUNNER_V1","CDP_OBSERVATION_RUN_RECEIPT_V1"],"resolve":"LATEST_POINTER_AT_EXECUTION"},
+    {"slot_id":"A4_STRUCTURE_RUNNER","pr":23,"assignment_comment":5217310761,"required_assets":["SUCCESSOR_STRUCTURE_INFERENCE_RUNNER_V1","STRUCTURE_INFERENCE_RUN_RECEIPT_V1"],"resolve":"LATEST_POINTER_AT_EXECUTION"},
+    {"slot_id":"A5_DECISION_RUNNER","pr":24,"assignment_comment":5217313682,"required_assets":["SUCCESSOR_ENDPOINT_SCHEMA_DECISION_RUNNER_V1","ENDPOINT_SCHEMA_DECISION_RUN_RECEIPT_V1"],"resolve":"LATEST_POINTER_AT_EXECUTION"},
+    {"slot_id":"A6_ADAPTER_RUNNER","pr":25,"assignment_comment":5217317771,"required_assets":["SUCCESSOR_ADAPTER_BUILD_RUNNER_V1","ADAPTER_CHECKPOINT_RESUME_V1","ADAPTER_BUILD_RUN_RECEIPT_V1"],"resolve":"LATEST_POINTER_AT_EXECUTION"},
+    {"slot_id":"A7_RECOVER_WORK","pr":26,"assignment_comment":5217321685,"required_assets":["RECOVER_WORK_BOOTSTRAP_V1","LATEST_AI001_MISSION_POINTER_V1","AI001_RECOVERY_BRIEF_V1"],"resolve":"LATEST_POINTER_AT_EXECUTION"},
+    {"slot_id":"B1_COMMAND_RESULT_STATE","pr":19,"assignment_comment":5217324901,"known_terminal_head":"cd153a2418e7896c0effed9e7f10a7fa558cdad5","known_latest_pointer":"yolla-panel-v1/b1-collector-materialization/server-session-job-command-result-contract-v2/LATEST_B1_SERVER_SESSION_JOB_COMMAND_RESULT_CONTRACT_POINTER.json","required_assets":["AI001_SUCCESSOR_COMMAND_V1","SUCCESSOR_AI001_RESULT_V1","AI001_SUCCESSOR_SESSION_JOB_STATE_V1","LATEST_COMMAND_POINTER_V1","LATEST_RESULT_POINTER_V1"],"resolve":"KNOWN_POINTER_THEN_REFRESH_HEAD"},
+    {"slot_id":"B2_UI_REBUILD","pr":38,"assignment_comment":5217328324,"required_assets":["SUCCESSOR_UI_STATE_REBUILD_COMMAND_V1","CONTEXT_INDEPENDENT_UI_BINDING_V1"],"resolve":"LATEST_POINTER_AT_EXECUTION"},
+    {"slot_id":"B3_ACTION_REPLAY","pr":39,"assignment_comment":5217331799,"required_assets":["SUCCESSOR_ACTION_REPLAY_COMMAND_V1","ACTION_REPLAY_CHECKPOINT_V1","DURABLE_ACTION_LEDGER_V1"],"resolve":"LATEST_POINTER_AT_EXECUTION"},
+    {"slot_id":"B4_ARTIFACT_CHECKPOINT","pr":40,"assignment_comment":5217335150,"required_assets":["COMMAND_ARTIFACT_CHECKPOINT_V1","COMMAND_ARTIFACT_INDEX_V1","A7_RECOVERY_ARTIFACT_PROJECTION_V1"],"resolve":"LATEST_POINTER_AT_EXECUTION"},
+    {"slot_id":"B5_DATASET_CHECKPOINT","pr":41,"assignment_comment":5217338181,"required_assets":["SUCCESSOR_DATASET_RESUME_COMMAND_V1","DATASET_CHECKPOINT_V1","A7_RECOVERY_DATASET_PROJECTION_V1"],"resolve":"LATEST_POINTER_AT_EXECUTION"}
+  ],
+  "endpoint_policy":{"tunnel_endpoint":"UNKNOWN/REFERENCE","server_endpoint":"UNKNOWN/REFERENCE","credential_reference":"UNKNOWN/REFERENCE","raw_credentials_in_package":false},
+  "boundaries":{"worker_source_merge":false,"worker_source_install":false,"worker_source_modify":false,"new_tunnel_create":false,"pc_agent_change":false,"target_pc_execution":false,"production":false,"ready":false,"merge":false}
+}

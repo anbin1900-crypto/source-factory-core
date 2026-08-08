@@ -1,0 +1,22 @@
+{
+  "schema_version": "AI_BLUEPRINT_AND_LISTING_BINDING_BUNDLE_V1",
+  "directive_id": "A0-TO-B6-AI-BLUEPRINT-ONE-COMMAND-BUNDLE-V5-20260808-001",
+  "cycle_id": "A0-AB-AI-BLUEPRINT-SEMANTIC-BINDING-CYCLE5-20260808-001",
+  "entrypoint": "node ai_blueprint_one_command_runner_v1.mjs --root . --scope ALL",
+  "cycle4_runner_reuse": "../multimode-site-analysis-one-command-bundle-v1/multimode_one_command_runner_v1.mjs",
+  "stages": [
+    "PRODUCT_BLUEPRINT",
+    "SEMANTIC_GRAPH",
+    "USER_JOURNEY_STATE_MACHINE",
+    "REAL_ESTATE_ONTOLOGY_SITE_BINDING"
+  ],
+  "bootstrap": "EMPTY_CONTEXT_EXACT_POINTER_CONTRACTS",
+  "producer_arrival_policy": "LATE_BIND_WITHOUT_SEQUENTIAL_APPROVAL_GATE",
+  "resume": "SKIP_COMPLETED_RESUME_FIRST_INCOMPLETE",
+  "duplicate_execution_suppression": true,
+  "target_pc_execution": false,
+  "live_site_call": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

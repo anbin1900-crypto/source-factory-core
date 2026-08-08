@@ -1,0 +1,22 @@
+{
+  "schema_version":"B6_SUCCESSOR_ONE_COMMAND_BUNDLE_TEST_RESULT_V1",
+  "directive_id":"AI001-TO-B6-SUCCESSOR-ONE-COMMAND-RECOVERY-BUNDLE-V2-20260807-001",
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "package_parse":"PASS",
+  "fixture_package_assembly":"PASS_11_OF_11_SLOTS",
+  "recovery_mode":"PASS_A7_RECOVER_WORK_FIRST",
+  "required_step_fields":"PASS_COMMAND_ID_EXPECTED_EXIT_CODE_EXPECTED_RECEIPT_ROLLBACK_ACTION",
+  "minimum_validation":"PASS_FIXTURE_PACKAGE_ASSEMBLY_AND_RECOVERY_MODE_SMOKE_1",
+  "zip_integrity":"PASS",
+  "zip_size_bytes":13609,
+  "zip_sha256":"57c81a001ecd95341bbe92250b7e633e01a6cb3877cd39599699dfc012ba95f7",
+  "zip_entry_count":13,
+  "package_member_tree_sha256":"d96cc69e12a8361118778fc0946a01b4e907d0917a6ff30f3608f1a99ef31635",
+  "smoke_receipt_sha256":"ed965668dfaf6dea499d56a67d2f5d18b6e05cc5553b490240d70282cd12e3ef",
+  "worker_source_modified":false,
+  "worker_source_installed":false,
+  "target_pc_execution":false,
+  "secret_value_count":0,
+  "embedded_endpoint_value_count":0,
+  "result":"PASS"
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": "B6_SITE_ANALYZER_WAVE3_INSTALL_RESTART_RECOVERY_TEST_RESULT_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "task_comment": 5212053131,
+  "execution_mode": "CLEAN_EXTRACTION_PACKAGE_RELATIVE_RESTART_RECOVERY",
+  "package_sha256": "6f495a8796d30c9ac359ec56d8fe740dd4299ad545dec80b6c73d52c26d9267a",
+  "clean_extraction": true,
+  "cwd_independent_launcher": true,
+  "commands": [
+    {"command":"node <PACKAGE_ROOT>/launcher.cjs verify","exit_code":0,"result":"PASS_20_OF_20_IMMUTABLE_MEMBERS"},
+    {"command":"node <PACKAGE_ROOT>/launcher.cjs deps","exit_code":0,"result":"PASS_NODE_CHROMIUM_DEPENDENCIES"},
+    {"command":"node <PACKAGE_ROOT>/launcher.cjs test","exit_code":0,"result":"PASS_6_OF_6"},
+    {"command":"node <PACKAGE_ROOT>/launcher.cjs sample","exit_code":0,"result":"PASS_EXACT_10"},
+    {"command":"node <PACKAGE_ROOT>/launcher.cjs state","exit_code":0,"result":"PASS_CHECKPOINT_GENERATION_1"},
+    {"command":"node <PACKAGE_ROOT>/launcher.cjs close","exit_code":0,"result":"PASS_CLEAN_CLOSE"},
+    {"command":"rm -rf <PACKAGE_ROOT>/outputs","exit_code":0,"result":"SIMULATED_OUTPUT_LOSS"},
+    {"command":"node <PACKAGE_ROOT>/launcher.cjs restart","exit_code":0,"result":"PASS_STATE_RECOVERY"},
+    {"command":"node <PACKAGE_ROOT>/launcher.cjs state","exit_code":0,"result":"PASS_CHECKPOINT_GENERATION_2_CLOSED"},
+    {"command":"node <PACKAGE_ROOT>/launcher.cjs verify","exit_code":0,"result":"PASS_POST_RECOVERY_INTEGRITY"},
+    {"command":"node <PACKAGE_ROOT>/launcher.cjs electron","exit_code":2,"result":"PROVEN_EXTERNAL_BLOCKER_ELECTRON_MODULE_NOT_INSTALLED_OR_DISCOVERABLE"}
+  ],
+  "dependency_resolution": {
+    "node_version": "v22.16.0",
+    "node_minimum": 22,
+    "node": "PASS",
+    "chromium_path": "/usr/bin/chromium",
+    "chromium": "PASS",
+    "electron_available": false,
+    "electron_blocker": "ELECTRON_MODULE_NOT_INSTALLED_OR_DISCOVERABLE_USE_NODE_CHROMIUM_MODE"
+  },
+  "sample_execution": {
+    "network_event_count": 28,
+    "response_body_count": 14,
+    "recorded_action_count": 8,
+    "field_candidate_count": 9,
+    "extracted_record_count": 10,
+    "json_csv_xlsx_parity": "PASS_10_10_10"
+  },
+  "restart_recovery": {
+    "output_loss_injected": true,
+    "prior_generation": 1,
+    "current_generation": 2,
+    "prior_record_count": 10,
+    "current_record_count": 10,
+    "records_sha256": "bc8f7b4064507d6f4e3b3a63a0db38eab3d23d0342b05758c3435d58d47c9a1a",
+    "adapter_semantic_sha256": "293c935c3a27d7e33fd023b87416ab9f055ec82d218ffd81572cf53481edc3be",
+    "record_parity": "PASS",
+    "adapter_parity": "PASS",
+    "preview_parity": "PASS_10_10_10",
+    "state_recovery": "PASS",
+    "recovery_receipt_sha256": "985655cb6c92fd5608d7bea5fbf4b06fd194bb3a86afb237aa61b7539af59410",
+    "final_closed_cleanly": true,
+    "residual_fixture_or_cdp_listener_count": 0
+  },
+  "direct_repairs": [
+    "EXPANDED_ELECTRON_DISCOVERY_TO_ENV_PACKAGE_PARENT_WORKSPACE_AND_PATH",
+    "ADDED_CWD_INDEPENDENT_PACKAGE_RELATIVE_DEPENDENCY_RESOLUTION",
+    "ADDED_SESSION_CHECKPOINT_CLOSE_RESTART_COMMANDS",
+    "ADDED_INLINE_10_RECORD_CHECKPOINT_FOR_OUTPUT_LOSS_RECOVERY",
+    "CHANGED_RECOVERY_PARITY_FROM_DYNAMIC_PORT_RUNTIME_HASH_TO_SEMANTIC_RECORD_HASH",
+    "MARKED_RESTART_COMPLETION_AS_CLEAN_CLOSE"
+  ],
+  "aggregate": "PASS_PACKAGE_INTEGRITY_DEPENDENCY_SINGLE_LAUNCHER_RESTART_STATE_RECOVERY_WITH_PROVEN_ELECTRON_BLOCKER",
+  "github_actions_ci_pass_claimed": false,
+  "false_electron_pass_count": 0,
+  "database_work": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "SUCCESSOR_COMPOSITE_RESULT_ENVELOPE_V1",
+  "command_id": "<COMMAND_ID>",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "bundle_version": "V3",
+  "started_at": "<ISO8601>",
+  "finished_at": "<ISO8601>",
+  "exit_code": "<INTEGER>",
+  "self_check": {"status":"<PASS|BLOCKED>","receipt_pointer":"<REFERENCE>"},
+  "pointer_resolution": {"A2":"<REFERENCE>","A3":"<REFERENCE>","A7":"<REFERENCE>","B1":"<REFERENCE>"},
+  "observer": {"status":"<STARTED|BLOCKED|UNKNOWN>","worker_state_event_pointer":"<REFERENCE>"},
+  "aggregator": {"status":"<CONNECTED|BLOCKED|UNKNOWN>","cycle_snapshot_pointer":"<REFERENCE>"},
+  "recovery": {"status":"<READBACK|BLOCKED|UNKNOWN>","snapshot_pointer":"<REFERENCE>","next_action":"<REFERENCE>"},
+  "rollback": {"status":"<NOT_NEEDED|PLANNED|EXECUTED>","receipt_pointer":"<REFERENCE>"},
+  "errors": [],
+  "raw_token_included": false,
+  "raw_secret_included": false
+}

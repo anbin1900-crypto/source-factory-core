@@ -1,0 +1,51 @@
+{
+  "schema_version": "LATEST_B6_ONE_COMMAND_BOOTSTRAP_RECOVERY_POINTER_V1",
+  "directive_id": "AI001-TO-B6-ONE-COMMAND-BOOTSTRAP-RECOVERY-PREBUILD-V1-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "task_comment": 5216940963,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 42,
+  "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+  "baseline_head": "a120e0d66af2f7811275635f7d1525fc9e9fdc47",
+  "content_head_before_pointer": "d5be82babb3f86179938f89d3eeb301e91ad9627",
+  "package": {
+    "name": "B6_ONE_COMMAND_BOOTSTRAP_RECOVERY_PREBUILD_V1.zip",
+    "size_bytes": 55985,
+    "sha256": "336a14fb6d366406597281b6262c4eaadddee4e948fa95e849fa9334fcdf8a6f",
+    "entry_count": 39,
+    "drive_file_id": "1UPHeu2ZcU6tm5t23dh3hieHbExUuHkt5",
+    "drive_raw_readback": "PASS_SIZE_SHA256_ZIP_INTEGRITY",
+    "internal_manifest_member_count": 34,
+    "internal_manifest_tree_sha256": "6cd526dc7239a01ed0784c0e12a43e0896de4aae4076cbf3bf7e665cdd81e4e2"
+  },
+  "objects": {
+    "one_command_bootstrap": {"blob":"cb84ee00f39f47d3259a64d00e116816895359d7"},
+    "site_analyzer_self_check": {"blob":"ac223d1f3333e836c82c3409361ab7af9d86b61f","result":"PASS"},
+    "recovery_repair_entrypoint": {"blob":"e115eb95b953e6363015546b6d8dbed3060e3938"},
+    "package_manifest": {"blob":"be47a8c27549bd094ca93d40de4302a2c97a7a9c"},
+    "prebuild_test_result": {"blob":"2022de2db87cdd1d4939468f82152c33454ebcf5","result":"PASS_PACKAGE_PARSE_PLUS_LOCAL_FIXTURE_SELF_CHECK_SMOKE_1"},
+    "drive_artifact_manifest": {"blob":"82019e7478d4bdac833b56301d9b2d02aab500c7"},
+    "benchmark_baseline": {"blob":"636d42d7b2a104c8fac811676df487619220401f"},
+    "final_report": {"commit":"d5be82babb3f86179938f89d3eeb301e91ad9627","blob":"14f172102d2693f9107e84fed6c2a373f4a79a2f"}
+  },
+  "validation": {
+    "package_parse": "PASS",
+    "unit_tests": "PASS_4_OF_4",
+    "fixture_self_check_smoke": "PASS",
+    "side_by_side_bootstrap_smoke": "PASS",
+    "repair_smoke": "PASS_ACTION_COUNT_0",
+    "drive_raw_readback": "PASS",
+    "required_outputs": "PASS_5_OF_5"
+  },
+  "terminal": "B6_ONE_COMMAND_BOOTSTRAP_RECOVERY_PREBUILD_READY",
+  "status": "TERMINAL_PREBUILD_READY",
+  "new_tunnel_create": false,
+  "successor_direct_call": false,
+  "target_pc_execution": false,
+  "production_install": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}

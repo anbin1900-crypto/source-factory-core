@@ -1,0 +1,91 @@
+{
+  "schema_version": "B6_SITE_ANALYZER_WAVE2_SAMPLE_SCENARIO_RECEIPT_V1",
+  "executed_at_kst": "2026-08-07T03:51:00+09:00",
+  "runtime": {
+    "node": "v22.16.0",
+    "chromium": "/usr/bin/chromium",
+    "electron_source_packaged": true,
+    "electron_runtime_executed": false
+  },
+  "fixture_site": {
+    "launched": true,
+    "base_url": "http://127.0.0.1:43127",
+    "record_count": 10
+  },
+  "node_http_runtime_bridge": {
+    "actual_http_execution": true,
+    "network_event_count": 28,
+    "request_count": 14,
+    "response_body_count": 14
+  },
+  "chromium_cdp": {
+    "actual_browser_execution": true,
+    "navigation_blocked_by_policy": true,
+    "navigation_blocker": "ORGANIZATION_POLICY_BLOCKED_LOCAL_NAVIGATION",
+    "fallback_dom_injection_used": true,
+    "network_event_count": 0,
+    "network_request_count": 0,
+    "response_body_count": 0,
+    "dom_snapshot_count": 2,
+    "dom_node_count": 0,
+    "navigation_event_count": 0,
+    "frame_count": 2,
+    "recorded_action_count": 8
+  },
+  "inference": {
+    "field_candidate_count": 9,
+    "endpoint_group_count": 4,
+    "mode": "HYBRID",
+    "schema_drift_detected": true
+  },
+  "adapter": {
+    "generated_adapter_count": 1,
+    "replay_success_count": 2,
+    "exact_record_count": 10,
+    "repair_count": 2,
+    "deterministic": true,
+    "result_sha256": "a3e3deb499533812e72fe486c6c2d6965a12bd914af3673c88b5b2a3db9e3903"
+  },
+  "preview_export": {
+    "preview_visible": true,
+    "edit_count": 2,
+    "json_row_count": 10,
+    "csv_row_count": 10,
+    "xlsx_row_count_declared": 10,
+    "xlsx_magic": "PK",
+    "parity": "PASS_10_10_10"
+  },
+  "completion": {
+    "head_advance_at_execution_time": false,
+    "electron_node_package": true,
+    "single_launcher": true,
+    "fixture_site_launch": true,
+    "live_network_event_count_min_10": true,
+    "response_body_count_min_2": true,
+    "dom_snapshot_count_min_1": true,
+    "recorded_action_count_min_5": true,
+    "field_candidate_count_min_5": true,
+    "generated_adapter_count_min_1": true,
+    "replay_success_count_min_1": true,
+    "extracted_record_count_exact_10": true,
+    "live_preview": true,
+    "json_csv_xlsx_parity": true
+  },
+  "hashes": {
+    "records": "a3e3deb499533812e72fe486c6c2d6965a12bd914af3673c88b5b2a3db9e3903",
+    "workflow_recipe": "91b0fca69d1257fa48b93bc0d6a839931f61d202a24759a6c56077d2ce1bfed9",
+    "replay_trace": "32438ef85ea5953db5030e1ec44d9cb58833fb8cf4a2c7798e1a81e556fbc9e1",
+    "results_json": "7a101f31180298a477f41aad043b278f679aca421b574cd4dbd264b4ccf01536",
+    "results_csv": "09e8b61678ff193ca76b03982463de6c62f3371f74b43694f77ef252a45f0f1d",
+    "results_xlsx": "92aafa17d091578bbf1eace07e30a45c6ee0f8a473659ed0fbaea3d22ed8be4f",
+    "preview_html": "8b4aac53287127696587c35cdec404b06ee3a568832addd3deba5911d70468ef"
+  },
+  "boundaries": {
+    "database_work": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "runtime_result": "PASS",
+  "receipt_sha256": "0d6762e5c33be2d945afe5ac2dd274a92fd9b6dfed751535ccc35f78588590ad"
+}

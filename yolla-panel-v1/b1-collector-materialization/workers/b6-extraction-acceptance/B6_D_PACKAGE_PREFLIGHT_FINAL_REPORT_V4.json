@@ -1,0 +1,102 @@
+{
+  "schema_version": "B6_D_PACKAGE_PREFLIGHT_FINAL_REPORT_V4",
+  "report_id": "B6-D-SOURCE-DOCUMENT-HANDOFF-DELTA-REPREFLIGHT-FINAL-V4-20260806-001",
+  "task_id": "B6_D_SOURCE_DOCUMENT_HANDOFF_DELTA_REPREFLIGHT_V4",
+  "role": "B-6_COLLECTION_ACCEPTANCE_D_HANDOFF_AUDITOR",
+  "common_directive_id": "V2-TO-ABCD-LOCAL-SERVER-OPERATION-AND-FUTURE-MIGRATION-BATCH-V1-20260806-001",
+  "common_directive_commit": "bcc40274036282dc1065f3b6f139755d7dc0ecc9",
+  "common_directive_blob": "c272b0d7b965cb8b3bac50061fff90b4e9a97263",
+  "task_directive_comment_id": 5203025369,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 42,
+  "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+  "baseline_head": "a237ef43dfd380372df29923a7179ba5226c7fe2",
+  "content_head_before_final_report": "ba28234394f64f043eba9a256ee5b462f2081861",
+  "completed_at_kst": "2026-08-06T19:48:00+09:00",
+  "execution_mode": "DELTA_ONLY_AFTER_B5_EXACT_SUBMISSION_FIELDS_READY",
+  "entry_event": {
+    "name": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_READY",
+    "satisfied": true,
+    "B5_head": "40891f2f87eb9f58a369f71e46cadc43f4586157",
+    "B5_pointer_blob": "c4f04fa4d295d98bf6a9b45b8a48c63d51af8cc9",
+    "B5_terminal": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_READY",
+    "B5_request_blob": "4971b8b57cfd2f2a36b9146fa562579214a01a2a",
+    "B5_final_report_blob": "056634c01b0c98312872a20b2f15f693c454e1e0",
+    "B5_test_report_blob": "767edfa569fb66915e12f86c892ef952e98a1bd5"
+  },
+  "result_summary": {
+    "D1_B_receipt_V2_compatibility": "PASS",
+    "B5_submission_required_fields": "PASS_4_OF_4",
+    "producer_head_package_readback": "PASS",
+    "package_blob_sha256_parity": "PASS",
+    "record_count_package_dataset_sqlite_parity": "PASS_3_3_3",
+    "submitted_at_RFC3339_timezone": "PASS",
+    "PR188_tree_binding": "PASS",
+    "source_field_loss_count": 0,
+    "silent_drop_count": 0,
+    "lane_separation": "PASS",
+    "delta_tests": "PASS_62_OF_62_DELTA_ONLY",
+    "candidate_promotable_to_B1": true,
+    "decision": "READY"
+  },
+  "exact_submission": {
+    "producer_head": "59405edba453e2f8512dfddd969ba1ae899526ae",
+    "package_blob_or_storage_pointer": "3a204094b4a81486646f863228b5059745fba758",
+    "package_sha256": "f97df341fedb2a81e681b1f00fb3f857b95b425de0fe5ce264bb28a5e18905aa",
+    "record_count": 3,
+    "submitted_at": "2026-08-06T18:09:00+09:00",
+    "request_commit": "23111e17dfc4cc81f117414dfccd8555477d9b59",
+    "request_commit_descendant_of_producer_head": "PASS_AHEAD_BY_11"
+  },
+  "D1_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "pr": 188,
+    "head": "0bc38b41375fdef78172ed3cb4112b099ea28426",
+    "control_pointer_blob": "ed77c18b1d45c6b94c8d3b02dd589033fcec63cb",
+    "terminal": "D1_B_RECEIPT_V2_COMPATIBILITY_READY",
+    "procedure_addendum_blob": "58408175b1683cf566e201b57bd17b5e19c459e8",
+    "compatibility_decision_blob": "fb1e8f7b82a4516a06fbe58c27da89b46a746431",
+    "tree_binding_v2_blob": "38692279e691ab1de4a97017246c2c85b4ee6d3e",
+    "final_report_blob": "b3767e1db80be6623971160840f6b3a28ff4b57c",
+    "package_compatibility": "COMPATIBLE_FOR_B_SOURCE_DOCUMENT_SUBMISSION_AND_D1_PREFLIGHT_ONLY"
+  },
+  "outputs": {
+    "preflight": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_D_PACKAGE_PREFLIGHT_V4.json",
+      "blob": "96f246513dd55e2a5fbe3fb9412b469cafcd1189"
+    },
+    "submission_field_delta_matrix": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_D_SUBMISSION_FIELD_DELTA_MATRIX_V1.json",
+      "blob": "80c9366662e88627e8f1cb04079e16dc6735b513"
+    },
+    "handoff_candidate": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B1_TO_D1_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_V4.json",
+      "blob": "94b615d779dc574fa03d07f90d8d70193870a8c7",
+      "classification": "READY_FOR_B1_COMMANDER_SUBMISSION_FIXTURE_ONLY",
+      "promotable_to_B1": true
+    },
+    "test_result": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_D_PACKAGE_PREFLIGHT_TEST_RESULT_V4.json",
+      "blob": "261fa04d2e184c270771ef8cfa153bdc77ad1d22",
+      "result": "PASS_62_OF_62_DELTA_ONLY"
+    }
+  },
+  "local_server_transition": {
+    "current_pipeline_closure_complete_at_B6": true,
+    "next_required_owner": "B-1",
+    "next_event": "B1_D_SOURCE_DOCUMENT_PACKAGE_V2_COMMANDER_TERMINAL",
+    "B6_local_server_install_ownership": false,
+    "D_group_local_server_sequence_may_continue_after_B1_terminal": true
+  },
+  "required_terminal": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_READY_OR_EXACT_BLOCKER",
+  "terminal_result": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_READY",
+  "actual_D_package_acceptance": false,
+  "actual_receipt_issuance": false,
+  "D_acceptance_claim": false,
+  "D_canonical_db_write": false,
+  "postgresql_connection": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

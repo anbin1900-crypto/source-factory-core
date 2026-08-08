@@ -1,0 +1,8 @@
+{
+  "schema_version":"SELF_CHECK_RECEIPT_SCHEMA_V1",
+  "required":["bundle_id","command_id","started_at","finished_at","exit_code","slot_resolution","missing_slots","endpoint_reference_status","credential_reference_status","result"],
+  "slot_resolution_required":["slot_id","pr","resolved_head","latest_pointer","asset_bindings","status"],
+  "unknown_policy":"UNKNOWN_IS_EXPLICIT_NOT_INFERRED",
+  "credential_policy":"REFERENCE_ONLY_NO_RAW_VALUE",
+  "expected_exit_code":0
+}

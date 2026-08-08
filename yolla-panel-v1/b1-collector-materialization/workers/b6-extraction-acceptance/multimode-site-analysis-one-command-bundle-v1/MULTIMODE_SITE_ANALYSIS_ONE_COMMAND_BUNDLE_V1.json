@@ -1,0 +1,17 @@
+{
+  "schema_version": "MULTIMODE_SITE_ANALYSIS_ONE_COMMAND_BUNDLE_V1",
+  "directive_id": "A0-TO-B6-ONE-COMMAND-MULTIMODE-BUNDLE-V4-20260808-001",
+  "cycle_id": "A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "entrypoint": "node multimode_one_command_runner_v1.mjs --root . --scope ALL",
+  "modes": ["DATA", "PRODUCT", "WRITE", "MY_LISTING", "EDIT"],
+  "bootstrap": "LATEST_POINTERS_ONLY",
+  "resume": "SKIP_COMPLETED_RESUME_INCOMPLETE",
+  "confirmation_policy": "USER_CONFIRM_REQUIRED_NEVER_AUTOMATIC_SUBMIT_DELETE_EXPIRE",
+  "transport_policy": "D1_ONE_TO_ONE_TRANSPORT_UNCHANGED_NO_BYPASS",
+  "target_pc_execution": false,
+  "live_site_call": false,
+  "tunnel_change": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

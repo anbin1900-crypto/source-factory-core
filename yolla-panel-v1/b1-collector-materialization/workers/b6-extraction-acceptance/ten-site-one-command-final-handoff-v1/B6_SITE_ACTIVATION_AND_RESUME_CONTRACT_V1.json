@@ -1,0 +1,56 @@
+{
+  "schema_version": "B6_SITE_ACTIVATION_AND_RESUME_CONTRACT_V1",
+  "command_template": {
+    "parent_command_id": "A2-B6-CYCLE7-REAL-SITE-E2E-001",
+    "derived_command_id": "A2-B6-CYCLE7-REAL-SITE-E2E-001::<SITE_SLOT>::<ATTEMPT_ID>",
+    "dispatch_target": "EXISTING_PC_OPERATION_COMMAND_BUS_V2",
+    "operation": "REAL_SITE_E2E_ANALYZE",
+    "lanes": ["DATA", "PRODUCT", "WRITE", "MY_LISTING", "EDIT"]
+  },
+  "common_required_inputs": [
+    "physical_hostname",
+    "logical_pc_id",
+    "target_pc_working_root",
+    "existing_browser_agent_exact_binding",
+    "site_id",
+    "target_url",
+    "target_page_binding"
+  ],
+  "lane_activation": {
+    "DATA": {"session_policy": "OPTIONAL_ONLY_WHEN_PAGE_BINDING_PROVES_PUBLIC_READ", "final_submit": false},
+    "PRODUCT": {"session_policy": "OPTIONAL_ONLY_WHEN_PAGE_BINDING_PROVES_PUBLIC_READ", "final_submit": false},
+    "WRITE": {"authorized_user_session_reference": "REQUIRED", "execution_boundary": "PRE_SUBMIT_ONLY", "final_submit": "USER_CONFIRM_REQUIRED"},
+    "MY_LISTING": {"authorized_user_session_reference": "REQUIRED", "ownership_evidence": "REQUIRED", "final_submit": false},
+    "EDIT": {"authorized_user_session_reference": "REQUIRED", "ownership_evidence": "REQUIRED", "execution_boundary": "PRE_SUBMIT_ONLY", "final_submit": "USER_CONFIRM_REQUIRED"}
+  },
+  "first_vertical_slice": {
+    "scope": "PUBLIC_READ",
+    "sequence": ["SEARCH", "LIST", "DETAIL"],
+    "lanes": ["DATA", "PRODUCT"],
+    "activation": "EXACT_SITE_ID_TARGET_URL_AND_PUBLIC_PAGE_BINDING_AVAILABLE",
+    "current_state": "WAITING_SITE_AUTHORITY"
+  },
+  "checkpoints": [
+    "TARGET_AUTHORITY_BOUND",
+    "PAGE_BINDING_VERIFIED",
+    "LANE_INPUT_VALIDATED",
+    "COMMAND_DISPATCHED",
+    "RESULT_COLLECTED",
+    "EVIDENCE_HASHED",
+    "AGGREGATOR_LATE_BOUND",
+    "SITE_RECEIPT_EMITTED"
+  ],
+  "on_failure": {
+    "preserve": ["SUCCESSFUL_LANE_RECEIPTS", "USER_CHROME_PROFILE", "SOURCE_ARTIFACTS", "CHECKPOINT"],
+    "rollback": ["AGENT_OWNED_EPHEMERAL_BINDING", "AGENT_OWNED_PROCESS", "PREVIEW_OR_DRAFT_ONLY"],
+    "never": ["FINAL_WRITE_SUBMIT", "FINAL_EDIT_SUBMIT", "DELETE_ORIGINAL_DATA", "NEW_TUNNEL", "NEW_EXECUTOR", "NEW_BROWSER_ENGINE"]
+  },
+  "result_return": {
+    "required_identity": ["command_id", "site_slot", "site_id", "lane", "attempt_id"],
+    "required_evidence": ["execution_state", "technical_result", "input_pointer", "output_pointer", "observed_at", "receipt_pointer"],
+    "aggregate_target": "B1_TEN_SITE_RESULT_EVIDENCE_AGGREGATOR_V1",
+    "append_only": true,
+    "idempotent": true,
+    "pass_without_actual_receipt": "REJECTED"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "NON_DESTRUCTIVE_ROLLBACK_REMOVE_PLAN_V3",
+  "destructive_operation_allowed": false,
+  "steps": [
+    {"step":"STOP_BUNDLE_OWNED_OBSERVER_ONLY","scope":"bundle-spawned process reference only"},
+    {"step":"DETACH_AGGREGATOR_BINDING","scope":"bundle-local binding/cache only"},
+    {"step":"RESTORE_PREVIOUS_ACTIVE_POINTER","scope":"pointer reference only"},
+    {"step":"REMOVE_BUNDLE_TEMP_RECEIPTS","scope":"bundle-local temp/receipt directory only"},
+    {"step":"PRESERVE_WORKER_SOURCE_AND_PARENT_BUNDLES","scope":"immutable/no deletion"}
+  ],
+  "forbidden": ["DELETE_WORKER_SOURCE","KILL_UNRELATED_PROCESS","SERVER_MUTATION","TUNNEL_CHANGE","RAW_ARTIFACT_OVERWRITE"]
+}

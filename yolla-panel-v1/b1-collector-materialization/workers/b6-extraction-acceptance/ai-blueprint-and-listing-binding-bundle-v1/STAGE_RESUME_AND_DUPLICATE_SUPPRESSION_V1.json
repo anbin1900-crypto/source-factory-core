@@ -1,0 +1,10 @@
+{
+  "schema_version": "STAGE_RESUME_AND_DUPLICATE_SUPPRESSION_V1",
+  "ordered_stages": ["PRODUCT_BLUEPRINT", "SEMANTIC_GRAPH", "USER_JOURNEY_STATE_MACHINE", "REAL_ESTATE_ONTOLOGY_SITE_BINDING"],
+  "completed_stage_decision": "SKIP_NO_REISSUE",
+  "incomplete_stage_decision": "RESUME_FROM_STAGE_CHECKPOINT",
+  "missing_producer_decision": "WAIT_FOR_EXACT_POINTER_NON_BLOCKING",
+  "duplicate_execution_suppression_key": "cycle_id:stage:producer_head:result_pointer_blob",
+  "pointer_validation": "OWNER_DIRECTIVE_TERMINAL_HEAD_PATH_BLOB_REQUIRED",
+  "preserve": ["OBSERVED", "INFERRED", "UNKNOWN", "confidence", "evidence_pointer", "lineage"]
+}

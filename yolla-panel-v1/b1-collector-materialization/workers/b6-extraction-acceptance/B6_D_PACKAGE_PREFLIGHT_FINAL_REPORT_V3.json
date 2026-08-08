@@ -1,0 +1,133 @@
+{
+  "schema_version": "B6_D_PACKAGE_PREFLIGHT_FINAL_REPORT_V3",
+  "report_id": "B6-D-SOURCE-DOCUMENT-HANDOFF-REPREFLIGHT-FINAL-V3-20260806-001",
+  "task_id": "B6_D_SOURCE_DOCUMENT_HANDOFF_REPREFLIGHT",
+  "role": "B-6_COLLECTION_ACCEPTANCE_D_HANDOFF_AUDITOR",
+  "common_directive_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V2-20260806-001",
+  "common_directive_commit": "6c4f3a06dc158c2c60421f41f346b14bd37fd51b",
+  "common_directive_blob": "0f18e0e999ca1b65be0999e329000deff1831645",
+  "latest_control_pointer_commit": "47b5c6aee2659a8b69ac315f0ae713f4301097dc",
+  "latest_control_pointer_blob": "c5bee6300675e1c66a3b1fead364851e45a277e4",
+  "task_directive_comment_id": 5198235423,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 42,
+  "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+  "baseline_head": "fb83a4152d5a6b3f3d26cd5f38c7e08590f7c54d",
+  "content_head_before_final_report": "231f262884aa4af582494f996b9a45f85c1c5f91",
+  "completed_at_kst": "2026-08-06T09:06:00+09:00",
+  "execution_mode": "DELTA_ONLY_AFTER_B5_READY_CONTENT_DELTA",
+  "entry_event": {
+    "name": "B5_D_READY_PACKAGE_V2_READY",
+    "satisfied": true,
+    "B5_head": "fcdf48eca8c4aa8709ec0040e3e0cbc2a4bf99a7",
+    "B5_pointer_blob": "ae6001c683340f7280b74f5289918efedc1b3e7e",
+    "B5_final_report_blob": "517e738166bdd8c2627bcfb46f20e1c4a9a35926",
+    "B5_test_report_blob": "2e489b91da91cceabfbbeeb9f4b9fdfc760e2091",
+    "B5_fixture_bundle_blob": "3a204094b4a81486646f863228b5059745fba758",
+    "B5_terminal": "B5_D_READY_PACKAGE_V2_READY"
+  },
+  "result_summary": {
+    "B_ready_terminals": "PASS_4_OF_4",
+    "B2_B3_B4_binding": "PASS_3_OF_3",
+    "B5_internal_tests": "PASS_45_OF_45",
+    "B5_remote_blob_parity": "PASS_6_OF_6",
+    "D_tree_binding": "PASS",
+    "D_manifest_paths": "PASS_10_OF_10",
+    "PR188_required_paths": "PASS_18_OF_18_FULL_ACCOUNTING",
+    "lane_separation": "PASS",
+    "prior_test_suite": "PASS_88_OF_88_PRESERVED_NOT_RERUN",
+    "delta_tests": "PASS_72_OF_72_DELTA_ONLY",
+    "candidate_promotable": false,
+    "decision": "EXACT_BLOCKER"
+  },
+  "positive_findings": {
+    "B5_current_D1_authority_binding": "PASS",
+    "source_authority_type": "OFFICIAL_SECONDARY",
+    "mapping_addendum": "PASS_B001_B013_B014",
+    "source_field_loss_count": 0,
+    "silent_drop_count": 0,
+    "unmapped_value_preservation": "PASS_6_OF_6",
+    "dedup_lineage_preservation": "PASS",
+    "D1_only_receipt_issuer": true,
+    "D_acceptance_claim_by_B6": false
+  },
+  "contract_findings": {
+    "package_type_compatibility": {
+      "result": "FAIL_EXACT",
+      "B5_package_type": "MATERIALIZED_DATABASE_PACKAGE_V2",
+      "D1_accepted_package_types": [
+        "MATERIALIZED_DATABASE_PACKAGE_V1",
+        "NORMALIZED_DATASET_V1",
+        "RAW_ARTIFACT_MANIFEST_V1"
+      ],
+      "mapping_addendum_scope": "NORMALIZED_DATASET_V1_OR_MATERIALIZED_DATABASE_PACKAGE_V1",
+      "explicit_V2_alias_or_compatibility_rule": false,
+      "reason_code": "SCHEMA_VERSION_MISMATCH"
+    },
+    "submission_required_fields": {
+      "result": "FAIL_EXACT",
+      "missing_exact_fields": [
+        "producer_head",
+        "package_blob_or_storage_pointer",
+        "record_count",
+        "submitted_at"
+      ],
+      "observed_substitutes": [
+        "producer_head_baseline",
+        "producer_head_resolution",
+        "package_blob_resolution",
+        "preservation",
+        "generated_at_kst outside d_intake_request"
+      ],
+      "silent_alias_or_coercion_permitted": false,
+      "reason_code": "MISSING_REQUIRED_VALUE"
+    }
+  },
+  "lane_validation": {
+    "B_lane": "B_TO_D_SOURCE_DOCUMENT",
+    "C_lane": "C_TO_D_KNOWLEDGE_CANDIDATE",
+    "separate_transactions": true,
+    "separate_receipts": true,
+    "combined_receipt": false,
+    "result": "PASS"
+  },
+  "outputs": {
+    "path_matrix": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_PR188_REQUIRED_PATH_MATRIX_V3.json",
+      "blob": "baf7faedc0efa1ea9aaf8e0376f3051bf0508d9b"
+    },
+    "preflight": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_D_PACKAGE_PREFLIGHT_V3.json",
+      "blob": "2beeec5acff6f80b3b95742c5dee3525be549349"
+    },
+    "candidate": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B1_TO_D1_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_V3.json",
+      "blob": "25b9d2bc1fd810c49afe0f8620f6547d7a56496b"
+    },
+    "test_result": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/B6_D_PACKAGE_PREFLIGHT_TEST_RESULT_V3.json",
+      "blob": "a8201832490b4d83d75de73aa476da51168032c5",
+      "result": "PASS_72_OF_72_DELTA_ONLY"
+    }
+  },
+  "recovery": {
+    "option_1": "D-1 publishes an append-only B receipt procedure or compatibility addendum explicitly accepting MATERIALIZED_DATABASE_PACKAGE_V2 and defining exact compatibility for the four missing submission fields",
+    "option_2": "B-5 publishes a new package and D intake request conforming exactly to the currently authoritative V1 package types and exact submission_required_fields",
+    "resume_event": "D1_B_RECEIPT_V2_COMPATIBILITY_PUBLISHED_OR_B5_EXACT_V1_COMPATIBLE_PACKAGE_READY"
+  },
+  "first_blocker": "D1_B_RECEIPT_PROCEDURE_PACKAGE_TYPE_NOT_ACCEPTED_MATERIALIZED_DATABASE_PACKAGE_V2",
+  "secondary_blocker": "D1_B_RECEIPT_SUBMISSION_REQUIRED_FIELDS_MISSING_4",
+  "required_terminal": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_READY_OR_EXACT_BLOCKER",
+  "terminal_result": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_EXACT_BLOCKER",
+  "next_event": "B1_D_SOURCE_DOCUMENT_PACKAGE_V2_COMMANDER_TERMINAL",
+  "local_runtime_test_execution": false,
+  "github_actions_ci_pass_claimed": false,
+  "D_acceptance_claim": false,
+  "D_acceptance_receipt_issued": false,
+  "D_canonical_db_write": false,
+  "postgresql_connection": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

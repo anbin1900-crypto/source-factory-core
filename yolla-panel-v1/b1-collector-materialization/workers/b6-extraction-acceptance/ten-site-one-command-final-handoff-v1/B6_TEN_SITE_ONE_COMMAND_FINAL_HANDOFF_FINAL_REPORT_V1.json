@@ -1,0 +1,77 @@
+{
+  "schema_version": "B6_TEN_SITE_ONE_COMMAND_FINAL_HANDOFF_FINAL_REPORT_V1",
+  "created_at_kst": "2026-08-08T14:35:00+09:00",
+  "directive_comment_id": 5224506097,
+  "owner": "V-2_AB_GROUP_COMMANDER_AND_DIRECT_INTEGRATION_OWNER",
+  "parent_head": "dde3ff79eafeede994e672c21648155b998c9a1a",
+  "parent_pointer_blob": "8e523ca375cc726e7d6f27e35f30553ab87df555",
+  "implementation": {
+    "ten_site_batch_handoff": "PASS",
+    "two_browser_five_batch_scheduler": "PASS",
+    "site_activation_resume_rollback_result_return": "PASS",
+    "fixture_one_command_packaging": "PASS_38_OF_38",
+    "latest_ab_pointer_integration": "PASS_11_WORKER_POINTERS_PLUS_V2_B6",
+    "b3_exact_byte_revalidation": "PASS_17_OF_17_BLOBS_24_OF_24_TESTS"
+  },
+  "artifacts": {
+    "handoff": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/B6_TEN_SITE_BATCH_HANDOFF_V1.json",
+      "blob": "ee093219ee3cf9e3d854d73d9e18d49801635934"
+    },
+    "scheduler": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/B6_TWO_BROWSER_FIVE_BATCH_SCHEDULER_V1.json",
+      "blob": "99c4dcd66e4dd89be34e0e7fd304c0e77743bd38"
+    },
+    "activation_resume": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/B6_SITE_ACTIVATION_AND_RESUME_CONTRACT_V1.json",
+      "blob": "7bb4316642fa9757a81b535a0aafb6c53fa9b694"
+    },
+    "validation": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/B6_FINAL_HANDOFF_VALIDATION_RECEIPT_V1.json",
+      "blob": "5efe88395500f441eb3164e918d670081a413fea"
+    },
+    "b3_revalidation": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/V2_B3_REMOTE_EXACT_BYTE_REVALIDATION_RECEIPT_V1.json",
+      "blob": "f6f356d75b1a3fea82d63d970c55716c8d88316a"
+    },
+    "integration": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/V2_AB_FINAL_SOURCE_INTEGRATION_POINTER_V1.json",
+      "blob": "1d77f20e49206f0b8a3be562c0a037c116804d84"
+    }
+  },
+  "runtime_recovery": {
+    "required_fields": 6,
+    "bound_fields": 2,
+    "waiting_fields": 4,
+    "bound": [
+      "target_pc_working_root",
+      "existing_browser_agent_exact_binding"
+    ],
+    "waiting": [
+      "target_url",
+      "site_id",
+      "authorized_user_session_reference",
+      "target_page_binding"
+    ]
+  },
+  "first_public_slice": {
+    "sequence": [
+      "SEARCH",
+      "LIST",
+      "DETAIL"
+    ],
+    "state": "WAITING_EXACT_SITE_ID_TARGET_URL_AND_PAGE_BINDING"
+  },
+  "actual_live_site_count": 0,
+  "actual_receipt_count": 0,
+  "live_pass_claimed": false,
+  "terminal": "B6_TEN_SITE_ONE_COMMAND_FINAL_HANDOFF_PASS",
+  "status": "SOURCE_AND_HANDOFF_PASS_LIVE_SITE_AUTHORITY_WAITING_INPUT",
+  "target_value_guessing": false,
+  "raw_secret_or_pii": false,
+  "final_write_or_edit_submit": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

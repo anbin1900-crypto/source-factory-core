@@ -1,0 +1,60 @@
+{
+  "schema_version": "LATEST_B6_SITE_ANALYZER_WAVE1_PACKAGE_POINTER_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "task_comment": 5207576134,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 42,
+  "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+  "baseline_head": "dde23c6a83ac3d4c263a12888e944b6d4c255614",
+  "package_content_commit": "e86a20b3974b9dfe27768f6564432c514652da9c",
+  "content_head_before_pointer": "0388c41464e062b4c5c27515667fd38dbf49ab6e",
+  "package": {
+    "root": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/site-analyzer-wave1-runnable-package-v1/",
+    "archive_name": "B6_SITE_ANALYZER_WAVE1_RUNNABLE_PACKAGE_V1.zip",
+    "archive_sha256": "d51654c036f2d70745f58a6f4d94af9734b56d3c0d9a89d7c5c5da1c873767ee",
+    "archive_size_bytes": 18417,
+    "transport": "BASE64_7_PARTS_WITH_BOOTSTRAP",
+    "entry_count": 18,
+    "envelope_manifest_blob": "d08cc86b060e11520cc906f0bae4bd68c8a99f3e",
+    "bootstrap_py_blob": "9f418baecf863d5fbf7057a6c3b0a48fd49a6e62",
+    "bootstrap_ps1_blob": "a627995604f13247e53585e6addd4a3bf8d957d0"
+  },
+  "objects": {
+    "upstream_binding_matrix": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/site-analyzer-wave1-runnable-package-v1/B6_SITE_ANALYZER_WAVE1_UPSTREAM_BINDING_MATRIX_V1.json",
+      "blob": "ec2e2d90fdb7aa5425a6fb5c13c088ec34bd5204",
+      "result": "PASS_10_OF_11_IMPLEMENTATION_EVIDENCE_B1_ACTIVE_NO_SEQUENTIAL_WAIT"
+    },
+    "test_result": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/site-analyzer-wave1-runnable-package-v1/B6_SITE_ANALYZER_WAVE1_PACKAGE_TEST_RESULT_V1.json",
+      "blob": "72665f0744214b7c1ef32dfa938c39f012b07c04",
+      "result": "PASS_48_OF_48_PACKAGE_AND_BINDING_CHECKS"
+    },
+    "final_report": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/site-analyzer-wave1-runnable-package-v1/B6_SITE_ANALYZER_WAVE1_RUNNABLE_PACKAGE_FINAL_REPORT_V1.json",
+      "blob": "282d3a8567754139442e2c77d7172a0388185650",
+      "terminal_result": "B6_SITE_ANALYZER_WAVE1_RUNNABLE_PACKAGE_PROVEN_EXTERNAL_BLOCKER"
+    }
+  },
+  "validation": {
+    "package_integrity": "PASS_17_OF_17",
+    "archive_entries": "PASS_18_OF_18",
+    "self_test": "PASS_10_OF_10",
+    "unit_tests": "PASS_3_OF_3",
+    "bootstrap_sequence": "PASS",
+    "remote_package_envelope": "PASS_10_OF_10",
+    "aggregate": "PASS_48_OF_48_PACKAGE_AND_BINDING_CHECKS",
+    "fixture_and_local_html_runnable": true,
+    "live_electron_runtime": "PROVEN_EXTERNAL_BLOCKER"
+  },
+  "terminal": "B6_SITE_ANALYZER_WAVE1_RUNNABLE_PACKAGE_PASS_OR_PROVEN_EXTERNAL_BLOCKER",
+  "terminal_result": "B6_SITE_ANALYZER_WAVE1_RUNNABLE_PACKAGE_PROVEN_EXTERNAL_BLOCKER",
+  "next_owner": "B-1",
+  "next_event": "B1_CONSUME_B6_PACKAGE_AND_COMPLETE_A_B_PRODUCT_ASSEMBLY",
+  "database_work": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "ROLLBACK_RESUME_PLAN_V1",
+  "directive_id": "A0-TO-B6-REAL-SITE-ONE-COMMAND-EXECUTION-HANDOFF-V7-20260808-001",
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "command_id": "A2-B6-CYCLE7-REAL-SITE-E2E-001",
+  "checkpoint_order": [
+    "RS-001",
+    "RS-002",
+    "RS-003",
+    "RS-004",
+    "RS-005",
+    "RS-006",
+    "RS-007",
+    "RS-008"
+  ],
+  "on_failure": {
+    "before_dispatch": [
+      "CLEAR_EPHEMERAL_BINDINGS",
+      "RESTORE_WAITING_RUNTIME_INPUT"
+    ],
+    "after_dispatch": [
+      "STOP_AGENT_OWNED_PROCESSES",
+      "PRESERVE_USER_CHROME_PROFILE",
+      "PRESERVE_GITHUB_ARTIFACTS",
+      "PRESERVE_SUCCESSFUL_LANE_RECEIPTS"
+    ],
+    "page_mismatch": [
+      "STOP_CURRENT_DISPATCH",
+      "RE_RESOLVE_AUTHORIZED_PAGE",
+      "DO_NOT_SELECT_DIFFERENT_CONTEXT_OR_PROFILE_AUTOMATICALLY"
+    ],
+    "write_or_edit": [
+      "NO_FINAL_SUBMIT_WITHOUT_USER_CONFIRM",
+      "ROLLBACK_PREVIEW_OR_DRAFT_ONLY"
+    ]
+  },
+  "resume": {
+    "strategy": "FIRST_INCOMPLETE_OR_FAILED_STEP",
+    "completed_step_reexecution": false,
+    "successful_lane_reexecution": false,
+    "waiting_input_lane_only": true,
+    "duplicate_execution_suppression": true
+  },
+  "idempotency_key_components": [
+    "cycle_id",
+    "command_id",
+    "site_id",
+    "scenario_set",
+    "analysis_modes",
+    "mission_pointer.blob",
+    "bundle_pointer.blob"
+  ],
+  "boundaries": {
+    "delete_original_data": false,
+    "change_tunnel": false,
+    "create_executor": false,
+    "create_browser_engine": false,
+    "production": false
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "EXPECTED_RESULT_POINTER_SET_V1",
+  "result_pointers": {
+    "DATA": "results/LATEST_DATA_RESULT_POINTER.json",
+    "PRODUCT": "results/LATEST_PRODUCT_RESULT_POINTER.json",
+    "WRITE": "results/LATEST_WRITE_RESULT_POINTER.json",
+    "MY_LISTING": "results/LATEST_MY_LISTING_RESULT_POINTER.json",
+    "EDIT": "results/LATEST_EDIT_RESULT_POINTER.json"
+  },
+  "required_correlation": ["cycle_id", "command_id", "session_id", "page_id", "mode", "evidence_pointer"],
+  "completion_rule": "RESULT_POINTER_TERMINAL_REQUIRED",
+  "browser_complete_is_task_pass": false
+}

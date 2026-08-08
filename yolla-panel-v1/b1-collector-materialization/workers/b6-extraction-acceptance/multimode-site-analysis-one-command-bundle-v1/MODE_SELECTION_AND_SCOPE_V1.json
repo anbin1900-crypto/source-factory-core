@@ -1,0 +1,17 @@
+{
+  "schema_version": "MODE_SELECTION_AND_SCOPE_V1",
+  "catalog": ["DATA", "PRODUCT", "WRITE", "MY_LISTING", "EDIT"],
+  "selection": {
+    "ALL": ["DATA", "PRODUCT", "WRITE", "MY_LISTING", "EDIT"],
+    "explicit": "COMMA_SEPARATED_SUBSET_IN_CATALOG_ORDER"
+  },
+  "mode_policy": {
+    "DATA": "READY_TO_EXECUTE",
+    "PRODUCT": "READY_TO_EXECUTE",
+    "WRITE": "PREPARE_ONLY_AWAIT_USER_CONFIRM",
+    "MY_LISTING": "PREPARE_ONLY_AWAIT_USER_CONFIRM",
+    "EDIT": "PREPARE_ONLY_AWAIT_USER_CONFIRM"
+  },
+  "forbidden_automatic_actions": ["SUBMIT", "DELETE", "EXPIRE"],
+  "completed_mode_reexecution": false
+}

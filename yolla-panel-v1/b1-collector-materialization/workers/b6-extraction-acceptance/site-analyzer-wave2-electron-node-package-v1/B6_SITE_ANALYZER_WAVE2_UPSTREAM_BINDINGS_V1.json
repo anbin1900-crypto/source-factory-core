@@ -1,0 +1,59 @@
+{
+  "schema_version": "B6_SITE_ANALYZER_WAVE2_UPSTREAM_BINDINGS_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "authority_commit": "9ca851933fb329b1d965f4459d452c684a06f9cd",
+  "task_comment": 5208249616,
+  "baseline_head": "398aacb67f43d0394af3ac0e3db63d77c4cc8648",
+  "bindings": {
+    "B3_recipe": {
+      "head": "d74c609241ba9c48cc432bf1fa3c7d7257354f8a",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b3-extractor-retry-resume/action-recorder-codegen-recipe-v1/generated/EXTRACTION_RECIPE_V1.json",
+      "blob": "384d1383b501577a8b2a3e72d79003fcdc699e0c",
+      "vendored_path": "modules/vendor/b3/EXTRACTION_RECIPE_V1.json",
+      "action_count": 8
+    },
+    "A6_adapter_trace": {
+      "head": "b7183942b93c4567e4dfd249e6c3bf5114b2a8b4",
+      "adapter_source_blob": "8f5f421b0d33da51e9ef72dfa6a1cfc21f24288b",
+      "trace_blob": "32d505d2cde49580d4b01c83230441cff3f7c0b1",
+      "compatibility_adapter": "modules/a6-adapter-compat.cjs",
+      "vendored_trace": "modules/vendor/a6/REPLAY_TRACE_WAVE1.json",
+      "wave2_status_at_cutoff": "START_COMMIT_ONLY_NO_TERMINAL"
+    },
+    "B5_preview_export": {
+      "head": "430f7599f04feb2a2863c95027efe66ff3eef698",
+      "entrypoint_blob": "36961bf41a273864705b1e70eb6c8729b6c3c1f8",
+      "preview_engine_blob": "7674152ceb3a28d20ffabcd21cc1aa9b98467202",
+      "xlsx_writer_blob": "6625b33d55dd8c28ce9817e94a0650261a263c0f",
+      "compatibility_module": "modules/b5-preview-export.cjs",
+      "wave2_status_at_cutoff": "DIRECTIVE_ONLY_NO_TERMINAL"
+    },
+    "B4_fixture_site": {
+      "wave1_head": "a204fec405cd861c966831f325dfc43ba4fe51b2",
+      "wave2_directive_comment": 5208247001,
+      "wave2_terminal_at_cutoff": false,
+      "direct_B6_repair": "runtime/fixture-site.cjs",
+      "contract_routes": [
+        "/",
+        "/list?page=1",
+        "/detail/:id",
+        "/api/items?page=1",
+        "/load-more",
+        "/infinite",
+        "/frame",
+        "/popup",
+        "/download.csv",
+        "/schema-drift?mode=v2"
+      ],
+      "record_count": 10
+    }
+  },
+  "policy": {
+    "no_sequential_wait": true,
+    "repair_handoff": false,
+    "database_work": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

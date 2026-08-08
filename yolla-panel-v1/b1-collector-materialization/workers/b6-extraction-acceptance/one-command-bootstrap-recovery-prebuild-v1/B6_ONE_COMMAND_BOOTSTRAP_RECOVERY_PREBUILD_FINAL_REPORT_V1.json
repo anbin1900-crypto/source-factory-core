@@ -1,0 +1,79 @@
+{
+  "schema_version": "B6_ONE_COMMAND_BOOTSTRAP_RECOVERY_PREBUILD_FINAL_REPORT_V1",
+  "directive_id": "AI001-TO-B6-ONE-COMMAND-BOOTSTRAP-RECOVERY-PREBUILD-V1-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "task_comment": 5216940963,
+  "role": "B-6_ONE_COMMAND_BOOTSTRAP_SELF_CHECK_RECOVERY_PACKAGE_OWNER",
+  "mode": "PARALLEL_PREPARATION",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 42,
+  "branch": "worker/b6-extraction-acceptance-c1-handoff-v1",
+  "baseline_head": "a120e0d66af2f7811275635f7d1525fc9e9fdc47",
+  "content_head": "cf8dd53d659e1f7de9c5db7b57b0c88abcf704ba",
+  "benchmark_first": {
+    "electron_builder_portable": "APPLIED_SIDE_BY_SIDE_PORTABLE_PATH_MODEL",
+    "playwright_install": "APPLIED_EXPLICIT_INSTALL_AND_PLAYWRIGHT_BROWSERS_PATH_PATTERN",
+    "windows_launcher": "APPLIED_EXPLICIT_SCRIPT_PATH_NO_PERSISTENT_EXECUTION_POLICY_MUTATION"
+  },
+  "required_work": {
+    "ONE_COMMAND_BOOTSTRAP_V1": "PASS",
+    "SELF_CHECK_CHROME_NODE_NPM_PLAYWRIGHT_AGENT_PORTS_ROOTS": "PASS",
+    "FIXED_SEQUENCE": "PASS_PREREQUISITE_DEPENDENCY_IF_ALLOWED_AGENT_START_STAGE_HEALTH_RECEIPT",
+    "SIDE_BY_SIDE_INSTALL_ROLLBACK": "PASS_POINTER_ONLY_NO_OVERWRITE",
+    "RECOVERY_REPAIR_ENTRYPOINT": "PASS_PARTIAL_INSTALL_STALE_PID_PORT_DEPENDENCY_ACTIVE_PATH",
+    "POINTER_MANIFEST_ONLY_REINSTALL": "PASS_EMBEDDED_PAYLOAD_AND_REMOTE_BYTE_POINTER",
+    "SINGLE_PC_COMMAND": "PASS_CMD_POWERSHELL_NODE_ENTRYPOINTS",
+    "TUNNEL_BOUNDARY": "PASS_CONSUME_ENDPOINT_ONLY_NO_TUNNEL_CREATE"
+  },
+  "package": {
+    "name": "B6_ONE_COMMAND_BOOTSTRAP_RECOVERY_PREBUILD_V1.zip",
+    "size_bytes": 55985,
+    "sha256": "336a14fb6d366406597281b6262c4eaadddee4e948fa95e849fa9334fcdf8a6f",
+    "entry_count": 39,
+    "drive_file_id": "1UPHeu2ZcU6tm5t23dh3hieHbExUuHkt5",
+    "drive_raw_readback": "PASS_SIZE_SHA256_ZIP_INTEGRITY",
+    "internal_manifest_member_count": 34,
+    "internal_manifest_tree_sha256": "6cd526dc7239a01ed0784c0e12a43e0896de4aae4076cbf3bf7e665cdd81e4e2"
+  },
+  "local_fixture_validation": {
+    "package_parse": "PASS",
+    "unit_tests": "PASS_4_OF_4",
+    "self_check_smoke": "PASS",
+    "side_by_side_bootstrap_smoke": "PASS",
+    "repair_smoke": "PASS_ACTION_COUNT_0",
+    "node": "v22.16.0",
+    "npm": "10.9.2",
+    "chromium": "/usr/bin/chromium",
+    "playwright": "Version 1.57.0",
+    "playwright_network_probe": false,
+    "minimum_validation": "PASS_PACKAGE_PARSE_PLUS_LOCAL_FIXTURE_SELF_CHECK_SMOKE_1"
+  },
+  "direct_repairs": [
+    "CORE_LITERAL_BACKSLASH_N_PARSE_FAILURE_REPAIRED",
+    "POINTER_JSON_LITERAL_BACKSLASH_N_WRITE_FAILURE_REPAIRED",
+    "PLAYWRIGHT_NPX_NETWORK_PROBE_REMOVED_FOR_READ_ONLY_SELF_CHECK"
+  ],
+  "authority_blobs": {
+    "one_command_bootstrap": "cb84ee00f39f47d3259a64d00e116816895359d7",
+    "site_analyzer_self_check": "ac223d1f3333e836c82c3409361ab7af9d86b61f",
+    "recovery_repair_entrypoint": "e115eb95b953e6363015546b6d8dbed3060e3938",
+    "package_manifest": "be47a8c27549bd094ca93d40de4302a2c97a7a9c",
+    "prebuild_test_result": "2022de2db87cdd1d4939468f82152c33454ebcf5",
+    "drive_artifact_manifest": "82019e7478d4bdac833b56301d9b2d02aab500c7",
+    "benchmark_baseline": "636d42d7b2a104c8fac811676df487619220401f"
+  },
+  "boundaries": {
+    "new_tunnel_create": false,
+    "successor_direct_call": false,
+    "target_pc_execution": false,
+    "production_install": false,
+    "audit_only_work": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  },
+  "terminal": "B6_ONE_COMMAND_BOOTSTRAP_RECOVERY_PREBUILD_READY",
+  "status": "TERMINAL_PREBUILD_READY",
+  "next_event": "SUCCESSOR_OR_PC_COMMAND_RUNNER_CONSUME_POINTER_MANIFEST_AND_EXECUTE_ON_AUTHORIZED_TARGET_PC"
+}

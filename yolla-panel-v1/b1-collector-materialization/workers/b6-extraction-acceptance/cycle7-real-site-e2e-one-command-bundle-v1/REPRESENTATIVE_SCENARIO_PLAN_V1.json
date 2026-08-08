@@ -1,0 +1,15 @@
+{
+  "schema_version": "REPRESENTATIVE_SCENARIO_PLAN_V1",
+  "scenario_sets": {
+    "REPRESENTATIVE": [
+      {"id": "SITE_ENTRY_AND_SCOPE", "branch": "COMMON_EVIDENCE", "side_effect": false},
+      {"id": "NETWORK_DOM_RESPONSE_CAPTURE", "branch": "COMMON_EVIDENCE", "side_effect": false},
+      {"id": "REPEATED_REGION_AND_PAGINATION", "branch": "DATA", "side_effect": false},
+      {"id": "PRODUCT_BLUEPRINT_AND_USER_JOURNEY", "branch": "PRODUCT", "side_effect": false},
+      {"id": "WRITE_FORM_DRY_RUN", "branch": "WRITE", "side_effect": false, "decision": "PREPARE_ONLY_USER_CONFIRM_REQUIRED"}
+    ]
+  },
+  "write_submit": false,
+  "delete": false,
+  "expire": false
+}

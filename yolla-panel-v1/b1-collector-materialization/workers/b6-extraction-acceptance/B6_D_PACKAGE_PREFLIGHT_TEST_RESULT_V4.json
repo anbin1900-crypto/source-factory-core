@@ -1,0 +1,70 @@
+{
+  "schema_version": "B6_D_PACKAGE_PREFLIGHT_TEST_RESULT_V4",
+  "task_id": "B6_D_SOURCE_DOCUMENT_HANDOFF_DELTA_REPREFLIGHT_V4",
+  "executed_at_kst": "2026-08-06T19:48:00+09:00",
+  "execution_mode": "DELTA_ONLY_EXACT_HEAD_BLOB_CONTRACT_LINEAGE_AND_FAIL_CLOSED_VALIDATION",
+  "prior_results": {
+    "V3_result": "PASS_72_OF_72_DELTA_ONLY",
+    "V3_preserved": true,
+    "full_rerun": false
+  },
+  "categories": {
+    "directive_and_entry_event": {"executed": 5, "passed": 5, "failed": 0, "result": "PASS_5_OF_5"},
+    "D1_V2_compatibility": {"executed": 8, "passed": 8, "failed": 0, "result": "PASS_8_OF_8"},
+    "B5_pointer_request_and_report_identity": {"executed": 7, "passed": 7, "failed": 0, "result": "PASS_7_OF_7"},
+    "submission_required_fields": {"executed": 12, "passed": 12, "failed": 0, "result": "PASS_12_OF_12", "semantic_result": "PASS_4_OF_4_FIELDS"},
+    "producer_head_package_lineage": {"executed": 6, "passed": 6, "failed": 0, "result": "PASS_6_OF_6"},
+    "package_hash_record_and_time_parity": {"executed": 6, "passed": 6, "failed": 0, "result": "PASS_6_OF_6"},
+    "PR188_tree_lane_and_preservation": {"executed": 6, "passed": 6, "failed": 0, "result": "PASS_6_OF_6"},
+    "safety_boundaries": {"executed": 6, "passed": 6, "failed": 0, "result": "PASS_6_OF_6"}
+  },
+  "deterministic_delta_checks": {
+    "executed": 56,
+    "passed": 56,
+    "failed": 0,
+    "result": "PASS_56_OF_56_DELTA_ONLY"
+  },
+  "fail_closed_mutations": {
+    "executed": 6,
+    "passed": 6,
+    "failed": 0,
+    "result": "PASS_6_OF_6",
+    "mutations": [
+      {"mutation": "producer_head points to later request commit instead of package content commit", "expected": "REJECT", "actual": "REJECT", "status": "PASS"},
+      {"mutation": "package blob differs from blob at producer_head", "expected": "REJECT", "actual": "REJECT", "status": "PASS"},
+      {"mutation": "record_count differs from dataset or SQLite row count", "expected": "REJECT", "actual": "REJECT", "status": "PASS"},
+      {"mutation": "submitted_at lacks timezone", "expected": "REJECT", "actual": "REJECT", "status": "PASS"},
+      {"mutation": "treat preflight compatibility as actual D acceptance", "expected": "REJECT", "actual": "REJECT", "status": "PASS"},
+      {"mutation": "combine B and C receipt lanes", "expected": "REJECT", "actual": "REJECT", "status": "PASS"}
+    ]
+  },
+  "overall": "PASS_62_OF_62_DELTA_ONLY",
+  "evidence": {
+    "B5_head": "40891f2f87eb9f58a369f71e46cadc43f4586157",
+    "B5_pointer_blob": "c4f04fa4d295d98bf6a9b45b8a48c63d51af8cc9",
+    "B5_request_blob": "4971b8b57cfd2f2a36b9146fa562579214a01a2a",
+    "B5_test_report_blob": "767edfa569fb66915e12f86c892ef952e98a1bd5",
+    "producer_head": "59405edba453e2f8512dfddd969ba1ae899526ae",
+    "package_blob": "3a204094b4a81486646f863228b5059745fba758",
+    "package_sha256": "f97df341fedb2a81e681b1f00fb3f857b95b425de0fe5ce264bb28a5e18905aa",
+    "request_publication_commit": "23111e17dfc4cc81f117414dfccd8555477d9b59",
+    "D1_head": "0bc38b41375fdef78172ed3cb4112b099ea28426",
+    "D1_control_pointer_blob": "ed77c18b1d45c6b94c8d3b02dd589033fcec63cb",
+    "D1_procedure_addendum_blob": "58408175b1683cf566e201b57bd17b5e19c459e8",
+    "D1_compatibility_decision_blob": "fb1e8f7b82a4516a06fbe58c27da89b46a746431",
+    "D1_tree_binding_v2_blob": "38692279e691ab1de4a97017246c2c85b4ee6d3e"
+  },
+  "decision": "READY",
+  "terminal_recommendation": "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_READY",
+  "github_actions_ci_run_count": 0,
+  "github_actions_ci_pass_claimed": false,
+  "local_runtime_test_execution": false,
+  "actual_D_package_acceptance": false,
+  "actual_receipt_issuance": false,
+  "postgresql_connection": false,
+  "D_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

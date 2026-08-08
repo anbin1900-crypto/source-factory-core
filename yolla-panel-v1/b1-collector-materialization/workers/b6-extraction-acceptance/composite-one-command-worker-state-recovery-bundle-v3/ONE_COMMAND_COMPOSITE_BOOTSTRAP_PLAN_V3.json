@@ -1,0 +1,26 @@
+{
+  "schema_version": "ONE_COMMAND_COMPOSITE_BOOTSTRAP_PLAN_V3",
+  "directive_id": "AI001-TO-B6-COMPOSITE-ONE-COMMAND-WORKER-STATE-RECOVERY-BUNDLE-V3-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "single_commands": {
+    "windows_cmd": "RUN_COMPOSITE_DRY_RUN.cmd",
+    "powershell": "powershell -NoProfile -File .\\RUN_COMPOSITE_DRY_RUN.ps1",
+    "node_self_check": "node runtime/COMPOSITE_BUNDLE_RUNNER_V3.cjs self-check",
+    "node_dry_run": "node runtime/COMPOSITE_BUNDLE_RUNNER_V3.cjs dry-run",
+    "node_recovery_dry_run": "node runtime/COMPOSITE_BUNDLE_RUNNER_V3.cjs recovery-dry-run"
+  },
+  "ordered_steps": [
+    {"sequence":10,"step_id":"P10_PARENT_BUNDLE_VERIFY","command_id":"B6.C3.PARENT_VERIFY","expected_exit_code":0,"expected_receipt":"PARENT_BUNDLE_VERIFY_RECEIPT","rollback_action":"NONE"},
+    {"sequence":20,"step_id":"P20_PREFLIGHT_SELF_CHECK","command_id":"B6.C3.SELF_CHECK","expected_exit_code":0,"expected_receipt":"COMPOSITE_SELF_CHECK_RECEIPT_V1","rollback_action":"NONE"},
+    {"sequence":30,"step_id":"P30_EXACT_POINTER_RESOLVE","command_id":"B6.C3.POINTER_RESOLVE","expected_exit_code":0,"expected_receipt":"CYCLE3_POINTER_RESOLUTION_RECEIPT_V1","rollback_action":"DISCARD_RESOLUTION_CACHE"},
+    {"sequence":40,"step_id":"P40_DEPENDENCY_PLAN","command_id":"B6.C3.DEPENDENCY_PLAN","expected_exit_code":0,"expected_receipt":"DEPENDENCY_PLAN_RECEIPT_V1","rollback_action":"NO_INSTALL_PERFORMED"},
+    {"sequence":50,"step_id":"P50_OBSERVER_START","command_id":"B6.C3.OBSERVER_START","expected_exit_code":0,"expected_receipt":"WORKER_OBSERVER_START_RECEIPT_V1","rollback_action":"STOP_OBSERVER_IF_BUNDLE_OWNED"},
+    {"sequence":60,"step_id":"P60_AGGREGATOR_CONNECT","command_id":"B6.C3.AGGREGATOR_CONNECT","expected_exit_code":0,"expected_receipt":"EVENT_AGGREGATOR_CONNECT_RECEIPT_V1","rollback_action":"DETACH_BUNDLE_BINDING_ONLY"},
+    {"sequence":70,"step_id":"P70_RECOVERY_SNAPSHOT_READBACK","command_id":"B6.C3.RECOVERY_READBACK","expected_exit_code":0,"expected_receipt":"RECOVERY_SNAPSHOT_READBACK_RECEIPT_V1","rollback_action":"NONE"},
+    {"sequence":80,"step_id":"P80_RESULT_ENVELOPE","command_id":"B6.C3.RESULT_ENVELOPE","expected_exit_code":0,"expected_receipt":"SUCCESSOR_COMPOSITE_RESULT_ENVELOPE_V1","rollback_action":"NONE"},
+    {"sequence":90,"step_id":"P90_ROLLBACK_REMOVE_PLAN","command_id":"B6.C3.ROLLBACK_PLAN","expected_exit_code":0,"expected_receipt":"NON_DESTRUCTIVE_ROLLBACK_REMOVE_RECEIPT_V1","rollback_action":"IDEMPOTENT_BUNDLE_REMOVE_ONLY"}
+  ],
+  "apply_sequence": "WORKER_OBSERVER_START -> EVENT_AGGREGATOR_CONNECT -> RECOVERY_SNAPSHOT_READBACK",
+  "target_pc_apply_requires": ["AUTHORIZED_TARGET_PC","ALL_CYCLE3_POINTERS_RESOLVED","TOKEN_FILE_REFERENCE_EXISTS","CDP_ENDPOINT_RUNTIME_PARAMETER"],
+  "target_pc_execution_this_cycle": false
+}

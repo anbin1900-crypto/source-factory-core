@@ -1,0 +1,33 @@
+{
+  "schema_version":"B6_D_PACKAGE_PREFLIGHT_TEST_RESULT_V2",
+  "task_id":"B6_D_SOURCE_DOCUMENT_HANDOFF_REPREFLIGHT",
+  "directive_comment_id":5196668910,
+  "executed_at_kst":"2026-08-06T06:47:00+09:00",
+  "audit_cutoff":{"B5_head":"981104d415a97901c29cec6b12897a64f2806c6d","D1_head":"17e920e0643dd89c059f1d99fda7c0c0383f1a18"},
+  "execution_mode":"STATIC_EXACT_HEAD_PATH_BLOB_CONTRACT_AND_CROSS_HEAD_BINDING_VALIDATION",
+  "categories":{
+    "entry_event_gate":{"executed":3,"passed":3,"result":"PASS_3_OF_3"},
+    "B_worker_input_binding":{"executed":16,"passed":16,"result":"PASS_16_OF_16","semantic":"INPUTS_4_OF_4_READY_3_OF_4"},
+    "D_tree_binding":{"executed":16,"passed":16,"result":"PASS_16_OF_16","manifest_paths":"PASS_10_OF_10"},
+    "required_path_accounting":{"executed":4,"passed":4,"result":"PASS_4_OF_4","paths":"PASS_18_OF_18"},
+    "D_contracts_decisions_procedures":{"executed":8,"passed":8,"result":"PASS_8_OF_8"},
+    "B5_final_replay_pointer_binding":{"executed":12,"passed":12,"result":"PASS_12_OF_12","semantic":"FINAL_EXACT_BLOCKER_STALE_D_AUTHORITY_DETECTED"},
+    "source_identity_alignment":{"executed":7,"passed":7,"result":"PASS_7_OF_7","semantic":"CURRENT_D1_AUTHORITY_AVAILABLE_B5_NOT_BOUND"},
+    "lane_separation":{"executed":5,"passed":5,"result":"PASS_5_OF_5"},
+    "candidate_promotion_gate":{"executed":5,"passed":5,"result":"PASS_5_OF_5","semantic":"CORRECTLY_NOT_PROMOTED"},
+    "safety_boundaries":{"executed":8,"passed":8,"result":"PASS_8_OF_8"}
+  },
+  "deterministic":{"executed":84,"passed":84,"failed":0,"result":"PASS_84_OF_84"},
+  "fail_closed_mutations":{"executed":4,"passed":4,"failed":0,"result":"PASS_4_OF_4","mutations":[
+    {"mutation":"promote candidate while B5 terminal is Exact Blocker","actual":"REJECT","status":"PASS"},
+    {"mutation":"treat replay PASS_37_X2 as D-ready despite stale D authority","actual":"REJECT","status":"PASS"},
+    {"mutation":"use COMMAND_CENTER/GOVERNANCE instead of manifest root","actual":"REJECT","status":"PASS"},
+    {"mutation":"combine B and C receipt lanes","actual":"REJECT","status":"PASS"}
+  ]},
+  "overall":"PASS_88_OF_88",
+  "preflight_decision":"EXACT_BLOCKER",
+  "first_blocker":"B5_D_READY_PACKAGE_V2_CURRENT_D1_AUTHORITY_BINDING_MISSING",
+  "evidence":{"B5_head":"981104d415a97901c29cec6b12897a64f2806c6d","B5_pointer_blob":"e9ac7480a1a7c89ad61c56e51c191a431aeaf717","B5_final_report_blob":"bd7041e7a8eda71d1a40e0cdeae789482193566d","B5_package_blob":"f65c54194609d8bc709033c0d36abf916c60debe","B5_test_report_blob":"88311daf3a146cfdbb9d3dc1df1f9bdc5ede0650","B5_bound_D_head":"327547fd74f615a4c709c6da8473b1bf63fd5d6a","B5_bound_D_pointer":"95e6983a79b80867dd7de196a21e1aefc4c3dcb1","current_D_head":"17e920e0643dd89c059f1d99fda7c0c0383f1a18","current_D_pointer":"d65285f969294c19c0d9e2d1bbc2adf8165f8819","current_authority_type":"OFFICIAL_SECONDARY"},
+  "expected_recovery":"B5_REBUILD_WITH_CURRENT_D1_AUTHORITY_AND_PUBLISH_READY_TERMINAL_POINTER_TEST_READBACK",
+  "actual_site_call_count":0,"github_actions_ci_pass_claimed":false,"D_acceptance_claim":false,"D_canonical_db_write":false,"production":false,"ready":false,"merge":false
+}

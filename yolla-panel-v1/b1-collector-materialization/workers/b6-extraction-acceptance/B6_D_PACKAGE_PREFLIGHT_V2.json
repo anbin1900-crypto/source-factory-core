@@ -1,0 +1,57 @@
+{
+  "schema_version":"B6_D_PACKAGE_PREFLIGHT_V2",
+  "task_id":"B6_D_SOURCE_DOCUMENT_HANDOFF_REPREFLIGHT",
+  "directive_comment_id":5196668910,
+  "checked_at_kst":"2026-08-06T06:47:00+09:00",
+  "audit_cutoff":{"B5_head":"981104d415a97901c29cec6b12897a64f2806c6d","D1_head":"17e920e0643dd89c059f1d99fda7c0c0383f1a18"},
+  "entry_gate":{"B5_terminal_event":"PASS_PRESENT","D1_tree_binding_event":"PASS_PRESENT","do_not_start_before_both_events":"PASS"},
+  "B_worker_inputs":{
+    "input_objects":"PASS_4_OF_4",
+    "ready_terminals":"FAIL_3_OF_4",
+    "B2":{"head":"771da102a0202dc21d9226d9c534275df345582e","pointer_blob":"6ba3df93d41d3b00f58d598ca6867db376c9f30c","terminal":"B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_READY"},
+    "B3":{"head":"86d789a136ce5070d79eab7e6d0205eb23da11d7","pointer_blob":"dedbad43c8c23df18e2af2560af5d5f48ca1fa00","terminal":"B3_D_COLLECTION_RUN_LEDGER_READY"},
+    "B4":{"head":"f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3","pointer_blob":"b0158bbb27dfb0efab012ec1a97c3c31f2266e7c","terminal":"B4_RAW_ARTIFACT_MANIFEST_V2_D_READY"},
+    "B5":{
+      "head":"981104d415a97901c29cec6b12897a64f2806c6d",
+      "pointer_blob":"e9ac7480a1a7c89ad61c56e51c191a431aeaf717",
+      "final_report_blob":"bd7041e7a8eda71d1a40e0cdeae789482193566d",
+      "package_blob":"f65c54194609d8bc709033c0d36abf916c60debe",
+      "test_report_blob":"88311daf3a146cfdbb9d3dc1df1f9bdc5ede0650",
+      "tests":"PASS_37_OF_37_X2_AND_VALIDATOR_PASS",
+      "terminal":"B5_D_READY_PACKAGE_V2_EXACT_BLOCKER",
+      "status":"BLOCKED_D1_AUTHORITY_TYPE_FINAL_DECISION",
+      "bound_D_head":"327547fd74f615a4c709c6da8473b1bf63fd5d6a",
+      "bound_D_pointer_blob":"95e6983a79b80867dd7de196a21e1aefc4c3dcb1",
+      "authority_type":null
+    }
+  },
+  "D_tree_binding":{
+    "decision":"PASS",
+    "head":"17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "control_pointer_blob":"d65285f969294c19c0d9e2d1bbc2adf8165f8819",
+    "manifest_blob":"dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd",
+    "authoritative_root":"COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/",
+    "manifest_paths":"PASS_10_OF_10",
+    "required_paths":"PASS_18_OF_18_FULL_ACCOUNTING",
+    "old_governance_path_used":false
+  },
+  "D_current_decisions":{
+    "authority_type":"OFFICIAL_SECONDARY",
+    "authority_decision_blob":"6bf779b937bf2bea761780315b22692ccca07ad9",
+    "alias_decision_blob":"27683e5dc4a9448c3d0a9bd3200a0a62c84d158c",
+    "mapping_addendum_blob":"118d6403dd5db47afafb982991f8fd9a51f35f28",
+    "B_receipt_procedure_blob":"2a8b7c1b04924728cce14dc21c225ad09598905f"
+  },
+  "lane_separation":{"result":"PASS","B_lane":"B_TO_D_SOURCE_DOCUMENT","C_lane":"C_TO_D_KNOWLEDGE_CANDIDATE","combined_receipt":false,"D1_only_receipt_issuer":true},
+  "defects":[
+    {"Field":"B5_CURRENT_D1_AUTHORITY_BINDING","Expected":"B5 binds D1@17e920e with pointer d65285f and OFFICIAL_SECONDARY decision","Evidence":"B5@981104 pointer e9ac748 binds D1@327547 with pointer 95e698 and authority_type null"},
+    {"Field":"B5_READY_TERMINAL","Expected":"B5_D_READY_PACKAGE_V2_READY","Evidence":"B5 terminal is B5_D_READY_PACKAGE_V2_EXACT_BLOCKER"},
+    {"Field":"HANDOFF_CANDIDATE_PROMOTABILITY","Expected":"B READY 4_OF_4","Evidence":"B READY 3_OF_4"}
+  ],
+  "decision":"EXACT_BLOCKER",
+  "first_blocker":"B5_D_READY_PACKAGE_V2_CURRENT_D1_AUTHORITY_BINDING_MISSING",
+  "candidate_promotable":false,
+  "required_terminal":"B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_READY_OR_EXACT_BLOCKER",
+  "terminal_result":"B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_EXACT_BLOCKER",
+  "D_acceptance_claim":false,"D_canonical_db_write":false,"production":false,"ready":false,"merge":false
+}

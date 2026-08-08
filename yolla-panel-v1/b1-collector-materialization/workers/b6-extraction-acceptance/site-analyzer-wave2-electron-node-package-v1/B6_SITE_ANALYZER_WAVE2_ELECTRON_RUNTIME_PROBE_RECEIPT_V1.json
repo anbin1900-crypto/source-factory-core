@@ -1,0 +1,13 @@
+{
+  "schema_version": "B6_SITE_ANALYZER_WAVE2_ELECTRON_RUNTIME_PROBE_RECEIPT_V1",
+  "command": "node launcher.cjs electron",
+  "exit_code": 2,
+  "electron_source_packaged": true,
+  "electron_runtime_executed": false,
+  "blocker_code": "ELECTRON_MODULE_NOT_INSTALLED_USE_NODE_CHROMIUM_MODE",
+  "stderr_summary": "ELECTRON_MODULE_NOT_INSTALLED_USE_NODE_CHROMIUM_MODE",
+  "stdout": "",
+  "node_chromium_fallback_available": true,
+  "local_absolute_stack_path_published": false,
+  "result": "PROVEN_EXTERNAL_RUNTIME_DEPENDENCY_BLOCKER"
+}
