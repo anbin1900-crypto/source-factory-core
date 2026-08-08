@@ -1,0 +1,25 @@
+{
+  "schema_version":"A7_FINAL_AB_POINTER_INDEX_V1",
+  "cycle_id":"V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "directive_comment_id":5224505876,
+  "snapshot_policy":{"append_only_post_directive_results":true,"rerun_completed_outputs":false,"full_history_preload":false,"after_terminal_owner":"V-2"},
+  "workers":{
+    "A-2":{"pr":18,"directive_comment":5224504704,"head":"0bb16203214606a9eb32368f32f3d8115b0860a6","state":"WAITING_INPUT","post_directive_terminal":null,"post_directive_pointer":null},
+    "A-3":{"pr":22,"directive_comment":5224504749,"head":"1c17ca6cfb64ed0268a6ab81a08ac29881b4fa1b","state":"WAITING_INPUT","post_directive_terminal":null,"post_directive_pointer":null},
+    "A-4":{"pr":23,"directive_comment":5224505696,"head":"143f9f68f261fd7f4e5484ffdd474925c84bfa24","state":"WAITING_INPUT","post_directive_terminal":null,"post_directive_pointer":null},
+    "A-5":{"pr":24,"directive_comment":5224505743,"head":"2580c345b449c2aedbf45909d30aa3a80498a579","state":"WAITING_INPUT","post_directive_terminal":null,"post_directive_pointer":null},
+    "A-6":{"pr":25,"directive_comment":5224505792,"head":"4edf04e89f20ae03eea769e7f5ea72021b1201a6","state":"WAITING_INPUT","post_directive_terminal":null,"post_directive_pointer":null},
+    "A-7":{"pr":26,"directive_comment":5224505876,"head":"ea93fc6e1bd8a89e481d189f7894c91f54381ac8","state":"IN_PROGRESS_OWNERSHIP_TRANSFER","post_directive_terminal":null,"post_directive_pointer":null},
+    "B-1":{"pr":19,"directive_comment":5224505836,"head":"196302a2ab39e24ce4435ebee5e83a3cb2d1cc80","state":"WAITING_INPUT","post_directive_terminal":null,"post_directive_pointer":null},
+    "B-2":{"pr":38,"directive_comment":5224505964,"head":"b87bff0cfe91127ee26f340df5141ae1213e494d","state":"WAITING_INPUT","post_directive_terminal":null,"post_directive_pointer":null},
+    "B-3":{"pr":39,"directive_comment":5224505915,"head":"2d9d1226564dcfe72179f479ff11d1972e0f5eac","state":"WAITING_INPUT","post_directive_terminal":null,"post_directive_pointer":null},
+    "B-4":{"pr":40,"directive_comment":5224506003,"head":"17a4e0f0d8e8532402f1d03269a23bfe151735a0","state":"WAITING_INPUT","post_directive_terminal":null,"post_directive_pointer":null},
+    "B-5":{"pr":41,"directive_comment":5224506049,"head":"a5445ba97dad347e3bc7a7a4b9586ad3de4c3c98","state":"WAITING_INPUT","post_directive_terminal":null,"post_directive_pointer":null},
+    "B-6":{"pr":42,"directive_comment":5224506097,"head":"dde3ff79eafeede994e672c21648155b998c9a1a","state":"WAITING_INPUT","post_directive_terminal":null,"post_directive_pointer":null}
+  },
+  "completed_authorities_do_not_rerun":{
+    "A-2":{"pointer":"yolla-panel-v1/a2-analyzer-adapter-factory/real-site-live-receipt-closure-v1/LATEST_A2_CYCLE7_LIVE_RECEIPT_CLOSURE_POINTER.json","commit":"0bb16203214606a9eb32368f32f3d8115b0860a6","blob":"8d45544b099379caeda49205c3ecdcfe49b4c124","terminal":"A2_CYCLE7_LIVE_RECEIPT_CLOSURE_EXACT_BLOCKER"},
+    "B-6":{"pointer":"yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/real-site-one-command-execution-handoff-v1/LATEST_B6_REAL_SITE_ONE_COMMAND_EXECUTION_HANDOFF_POINTER.json","commit":"dde3ff79eafeede994e672c21648155b998c9a1a","blob":"8e523ca375cc726e7d6f27e35f30553ab87df555","terminal":"B6_REAL_SITE_ONE_COMMAND_EXECUTION_HANDOFF_READY"},
+    "A-7":{"pointer":"yolla-panel-v1/a7-cycle7b-live-recovery-delta-v1/LATEST_A7_RECOVERY_POINTER.json","commit":"ea93fc6e1bd8a89e481d189f7894c91f54381ac8","blob":"c5a2d451b37999a54af15824c94985b0e3e3c2a1","terminal":"A7_CYCLE7B_LIVE_RECOVERY_DELTA_READY"}
+  }
+}
