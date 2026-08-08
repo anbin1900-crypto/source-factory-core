@@ -1,0 +1,37 @@
+{
+  "schema_version": "A5_REAL_ESTATE_SOURCE_REINFORCEMENT_INPUT_V1",
+  "identifiers": {
+    "listing": {"field":"listing_id","path":"$.listing.id","state":"OBSERVED","evidence_pointer":"fixture://site-a/listing/id"},
+    "agency": {"field":"agency_id","path":"$.agency.id","state":"OBSERVED","evidence_pointer":"fixture://site-a/agency/id"},
+    "agent": {"field":"agent_id","path":"$.agent.id","state":"WAITING_INPUT","evidence_pointer":"fixture://site-a/agent"},
+    "complex": {"field":"complex_id","path":"$.complex.id","state":"OBSERVED","evidence_pointer":"fixture://site-a/complex/id"},
+    "location": {"field":"location_code","path":"$.location.code","state":"INFERRED","evidence_pointer":"fixture://site-a/location"},
+    "price": {"field":"price_id","path":"$.price.id","state":"UNKNOWN","evidence_pointer":"UNKNOWN"},
+    "area": {"field":"area_id","path":"$.area.id","state":"UNKNOWN","evidence_pointer":"UNKNOWN"},
+    "media": {"field":"media_id","path":"$.media[].id","state":"OBSERVED","evidence_pointer":"fixture://site-a/media"},
+    "contact": {"field":"contact_ref","path":"$.contact.ref","state":"WAITING_INPUT","evidence_pointer":"fixture://site-a/contact"},
+    "status": {"field":"status_code","path":"$.status.code","state":"OBSERVED","evidence_pointer":"fixture://site-a/status"}
+  },
+  "source_field_bindings": [
+    {"entity_type":"listing","source_field":"articleNo","source_path":"$.listing.articleNo","semantic_role":"SOURCE_LISTING_IDENTIFIER","state":"OBSERVED","confidence":1,"evidence_pointer":"fixture://site-a/listing/articleNo"},
+    {"entity_type":"price","source_field":"dealPrice","source_path":"$.listing.price.deal","semantic_role":"SOURCE_PRICE_VALUE","state":"OBSERVED","confidence":0.98,"evidence_pointer":"fixture://site-a/listing/price"},
+    {"entity_type":"area","source_field":"exclusiveArea","source_path":"$.listing.area.exclusive","semantic_role":"SOURCE_AREA_VALUE","state":"OBSERVED","confidence":0.96,"evidence_pointer":"fixture://site-a/listing/area"},
+    {"entity_type":"status","source_field":"exposureStatus","source_path":"$.listing.status","semantic_role":"SOURCE_LISTING_STATUS","state":"OBSERVED","confidence":0.95,"evidence_pointer":"fixture://site-a/listing/status"},
+    {"entity_type":"media","source_field":"images","source_path":"$.listing.images[]","semantic_role":"SOURCE_MEDIA_COLLECTION","state":"OBSERVED","confidence":0.95,"evidence_pointer":"fixture://site-a/listing/images"}
+  ],
+  "relationships": [
+    {"relationship_id":"REL-LISTING-AGENCY","from_entity":"listing","to_entity":"agency","relation_type":"LISTED_BY_AGENCY","source_join_fields":["listing.agency_id","agency.id"],"state":"OBSERVED","confidence":0.96,"evidence_pointer":"fixture://site-a/rel/listing-agency"},
+    {"relationship_id":"REL-LISTING-COMPLEX","from_entity":"listing","to_entity":"complex","relation_type":"LOCATED_IN_COMPLEX","source_join_fields":["listing.complex_id","complex.id"],"state":"OBSERVED","confidence":0.94,"evidence_pointer":"fixture://site-a/rel/listing-complex"},
+    {"relationship_id":"REL-COMPLEX-LOCATION","from_entity":"complex","to_entity":"location","relation_type":"LOCATED_AT","source_join_fields":["complex.location_code","location.code"],"state":"INFERRED","confidence":0.74,"evidence_pointer":"fixture://site-a/rel/complex-location"},
+    {"relationship_id":"REL-AGENCY-AGENT","from_entity":"agency","to_entity":"agent","relation_type":"HAS_AGENT","source_join_fields":[],"state":"WAITING_INPUT","confidence":0,"evidence_pointer":"fixture://site-a/rel/agency-agent"}
+  ],
+  "form_actions": [
+    {"binding_id":"FAB-CREATE-PRICE","site_id":"SITE-A","lane":"WRITE","capability":"WRITE","form_id":"listing-create","form_field":"price","validation_rule":{"state":"OBSERVED","rule":"NUMERIC_FORMAT"},"request_binding":{"state":"OBSERVED","request_field":"price"},"response_binding":{"state":"OBSERVED","result_path":"$.result.listing_id"},"ui_state_binding":{"state":"OBSERVED","component":"listing-editor"},"state":"OBSERVED","confidence":0.95,"evidence_pointer":"fixture://site-a/form/create/price"},
+    {"binding_id":"FAB-EDIT-STATUS","site_id":"SITE-A","lane":"EDIT","capability":"EDIT","form_id":"listing-edit","form_field":"status","validation_rule":{"state":"UNKNOWN","rule":"UNKNOWN"},"request_binding":{"state":"WAITING_INPUT","request_field":"UNKNOWN"},"response_binding":{"state":"WAITING_INPUT","result_path":"UNKNOWN"},"ui_state_binding":{"state":"WAITING_INPUT","component":"UNKNOWN"},"state":"WAITING_INPUT","confidence":0,"evidence_pointer":"fixture://site-a/form/edit/status"},
+    {"binding_id":"FAB-END-POSTING","site_id":"SITE-B","lane":"EDIT","capability":"END_POSTING","form_id":"listing-manage","form_field":"posting_status","validation_rule":{"state":"UNKNOWN","rule":"UNKNOWN"},"request_binding":{"state":"WAITING_INPUT","request_field":"UNKNOWN"},"response_binding":{"state":"WAITING_INPUT","result_path":"UNKNOWN"},"ui_state_binding":{"state":"WAITING_INPUT","component":"UNKNOWN"},"state":"WAITING_INPUT","confidence":0,"evidence_pointer":"fixture://site-b/form/end-posting"}
+  ],
+  "sites": [
+    {"site_id":"SITE-A","site_origin":"https://fixture-a.invalid","capabilities":{"PUBLIC_READ":{"support":"OBSERVED_SUPPORTED","confidence":1,"evidence_pointer":"fixture://site-a/cap/public-read"},"WRITE":{"support":"OBSERVED_SUPPORTED","confidence":0.95,"evidence_pointer":"fixture://site-a/cap/write"},"MY_LISTING":{"support":"WAITING_INPUT","confidence":0,"evidence_pointer":"fixture://site-a/cap/my-listing"},"EDIT":{"support":"OBSERVED_SUPPORTED","confidence":0.9,"evidence_pointer":"fixture://site-a/cap/edit"},"DELETE":{"support":"UNKNOWN","confidence":0,"evidence_pointer":"UNKNOWN"},"END_POSTING":{"support":"WAITING_INPUT","confidence":0,"evidence_pointer":"fixture://site-a/cap/end-posting"}}},
+    {"site_id":"SITE-B","site_origin":"https://fixture-b.invalid","capabilities":{"PUBLIC_READ":{"support":"OBSERVED_SUPPORTED","confidence":1,"evidence_pointer":"fixture://site-b/cap/public-read"},"WRITE":{"support":"UNKNOWN","confidence":0,"evidence_pointer":"UNKNOWN"},"MY_LISTING":{"support":"OBSERVED_SUPPORTED","confidence":0.9,"evidence_pointer":"fixture://site-b/cap/my-listing"},"EDIT":{"support":"WAITING_INPUT","confidence":0,"evidence_pointer":"fixture://site-b/cap/edit"},"DELETE":{"support":"OBSERVED_UNSUPPORTED","confidence":0.92,"evidence_pointer":"fixture://site-b/cap/delete"},"END_POSTING":{"support":"WAITING_INPUT","confidence":0,"evidence_pointer":"fixture://site-b/cap/end-posting"}}}
+  ]
+}
