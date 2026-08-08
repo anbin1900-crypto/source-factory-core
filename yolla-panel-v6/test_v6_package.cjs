@@ -46,6 +46,11 @@ ok(text.includes("V6ModuleHost") && text.includes("SessionRestoreManager"), "RUN
 ok(text.includes("releases\\6.0.2"), "IMMUTABLE_RELEASE_602_MISSING");
 ok(!text.includes("releases\\6.0.1"), "OLD_IMMUTABLE_RELEASE_601_TARGET_STILL_ACTIVE");
 ok(text.includes('for (const kind of ["WORKER", "ANALYZER"])'), "DUAL_AUTH_PARTITION_STARTUP_PROBE_MISSING");
+for (const launcher of ["RUN_AI_YOLLA_V6.ps1", "RUN_YOLLA_V6_CONTROL.ps1", "RUN_YOLLA_V6_EXECUTOR.ps1"]) {
+  const launcherText = fs.readFileSync(path.join(root, launcher), "utf8");
+  ok(launcherText.includes("Start-Process"), "DETACHED_START_PROCESS_MISSING:" + launcher);
+  ok(!launcherText.includes("New-YollaV6ProcessStartInfo"), "INHERITED_PIPE_LAUNCHER_STILL_ACTIVE:" + launcher);
+}
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "RUNTIME_MANIFEST.json"), "utf8"));
 for (const [relative, expected] of Object.entries(manifest.files)) {
   const body = fs.readFileSync(path.join(root, relative));
