@@ -1,0 +1,34 @@
+{
+  "schema_version": "D5_CYCLE5_ACCEPTANCE_REPORT_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE5-20260808-001",
+  "directive_comment_id": 5224184126,
+  "authority_commit": "53c1f034dc11dd7c3bbe2eb08585dabad1ec877a",
+  "control_receipt_comment_id": 5224185332,
+  "validation": {
+    "actual_v3_receipt_readback": "PASS",
+    "actual_event_chronology": "PASS_5_ACTUAL_EVENTS",
+    "local_metric_assertions": "PASS_18_OF_18",
+    "duplicate_guard_simulation": "PASS",
+    "order_reversal_guard_simulation": "PASS",
+    "restart_restore_guard_simulation": "PASS",
+    "nonblocking_writer_guard_simulation": "PASS",
+    "committed_regression_test_source": "PRESENT",
+    "upstream_event_store_mutation_count": 0,
+    "synthetic_event_count": 0,
+    "d4_completion_inference_count": 0
+  },
+  "acceptance": {
+    "ACTUAL_D4_RECEIPT_INGESTED": "PASS_SOURCE_AND_ADAPTER_BOUND",
+    "APPEND_ONLY": "PASS_DESIGN_AND_GUARDS",
+    "RECOVERY_METRICS_NON_NULL": "FAIL_RESTART_TO_RECEIPT_NULL",
+    "UPSTREAM_MUTATION_0": "PASS",
+    "SYNTHETIC_EVENT_0": "PASS"
+  },
+  "exact_blocker": {
+    "classification": "EXTERNAL_EVIDENCE_GAP",
+    "code": "USER_RESTARTED_EXECUTOR_ACTUAL_TIMESTAMP_NOT_PUBLISHED",
+    "detail": "PR22 progress, D4 V3 receipt, Authority Commit and Control Receipt confirm restart requirement/effect but contain no authoritative actual restart timestamp. Synthetic time is forbidden, therefore restart-to-receipt latency cannot be populated.",
+    "internal_schema_mismatch_is_external": false
+  },
+  "status": "BLOCKED_EXTERNAL_CONFIRMED"
+}
