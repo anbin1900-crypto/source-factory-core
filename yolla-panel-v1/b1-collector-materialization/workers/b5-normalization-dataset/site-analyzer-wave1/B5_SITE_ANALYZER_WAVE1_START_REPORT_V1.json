@@ -1,0 +1,30 @@
+{
+  "schema_version": "B5_SITE_ANALYZER_WAVE1_START_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "directive_comment": 5207574580,
+  "common_authority_commit": "20b8a6401de124186037d44f9f17076c97142402",
+  "worker": "B-5",
+  "worker_pr": 41,
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "baseline_head": "40891f2f87eb9f58a369f71e46cadc43f4586157",
+  "owned_root": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/site-analyzer-wave1/",
+  "mode": "ONE_OWNER_END_TO_END_BUILD_AND_REPAIR",
+  "required_result": [
+    "record and table auto shaping",
+    "editable data preview model",
+    "field rename remove order",
+    "source row and source element pointers",
+    "JSON CSV Excel export",
+    "preview and export parity"
+  ],
+  "excluded": [
+    "independent Excel pipeline",
+    "PDF pipeline",
+    "document processing pipeline",
+    "database work",
+    "production",
+    "ready",
+    "merge"
+  ],
+  "started_at_kst": "2026-08-07T02:08:00+09:00"
+}

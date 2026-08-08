@@ -1,0 +1,44 @@
+{
+  "schema_version": "B5_RESULT_DATASET_CHECKPOINT_LINEAGE_FINAL_REPORT_V1",
+  "role": "B-5_DATASET_PREVIEW_CHECKPOINT_EXPORT_OWNER",
+  "directive_id": "AI001-TO-B5-RESULT-DATASET-CHECKPOINT-LINEAGE-V3-20260807-001",
+  "directive_comment": 5217769444,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "baseline_head": "d816119d95989b0f1aa656b31aceedc009635509",
+  "parent_terminal": "B5_DATASET_CHECKPOINT_RESUME_EXPORT_READY",
+  "implementation": {
+    "command_session_worker_checkpoint_binding": true,
+    "browser_complete_dataset_materialization_separated": true,
+    "complete_result_pending_to_result_available_contract": true,
+    "checkpoint_resume_source_command_lineage_preserved": true,
+    "partial_complete_export_same_lineage": true,
+    "duplicate_command_result_materialization_prevented": true,
+    "result_dataset_pointer_consumers": ["B-1", "B-2", "B-6"],
+    "contextless_recovery": true
+  },
+  "required_outputs": {
+    "RESULT_DATASET_LINEAGE_CHECKPOINT_V1": "RESULT_DATASET_LINEAGE_CHECKPOINT_V1.json",
+    "COMPLETE_RESULT_STATE_V1": "COMPLETE_RESULT_STATE_V1.json",
+    "RESULT_DATASET_POINTER_V1": "RESULT_DATASET_POINTER_V1.json",
+    "RESULT_DATASET_EXPORT_RECEIPT_V1": "RESULT_DATASET_EXPORT_RECEIPT_V1.json",
+    "LATEST_POINTER": "LATEST_POINTER.json"
+  },
+  "validation": {
+    "compile": "PASS_3_OF_3",
+    "unit_tests": "PASS_35_OF_35",
+    "fixture_smokes": "PASS_3_OF_3",
+    "duplicate_materialization_count": 0,
+    "source_field_loss_count": 0
+  },
+  "terminal": "B5_RESULT_DATASET_CHECKPOINT_LINEAGE_READY",
+  "status": "RESULT_DATASET_CHECKPOINT_LINEAGE_IMPLEMENTED_AND_SMOKE_TESTED",
+  "target_pc_execution": false,
+  "tunnel_change": false,
+  "c_semantic_transformation": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "completed_at_kst": "2026-08-07T22:50:00+09:00"
+}

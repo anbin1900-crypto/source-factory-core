@@ -1,0 +1,54 @@
+{
+  "bound_producer_count": 0,
+  "d_canonical_schema_decision_count": 0,
+  "dataset_sha256": {
+    "REAL_SITE_BLUEPRINT_DB_UPDATE_V1": "706ffaa4c56d06c85cfec1db827aa1156edabf3d042d4b205e8a669357ad12c7",
+    "REAL_SITE_ONTOLOGY_BINDING_UPDATE_V1": "321d3acef6c577b3a6844cae4ce7d998f6f87c4a975eae4f1e58943f11db5bce",
+    "REAL_SITE_SITE_BINDING_VERSION_V1": "4ae0dd8ca2c0cadc5b2e5b46ccf65266fdf52e8742be51db5e566786876df78c"
+  },
+  "execution_status": "EXECUTION_PENDING",
+  "existing_v6_record_rewrite_count": 0,
+  "lineage": {
+    "append_policy": "SEPARATE_V7_APPEND_ONLY_LAYER",
+    "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+    "directive_id": "A0-TO-B5-REAL-SITE-BLUEPRINT-ONTOLOGY-MATERIALIZATION-V7-20260808-001",
+    "lineage_key": "41866b6747f722ce4e06a035191e2472be6d869dee83666e0f3e85d03988f35d",
+    "parent_dataset_blobs": {
+      "LISTING_ONTOLOGY_BINDING_PACKAGE_V1": "7da6d74c9f99b841a7574228f0d2b56a2b88b063",
+      "REAL_ESTATE_SITE_BLUEPRINT_DB_V1": "a4fe8282ee373b62c74b0887c7304281c71beeb3",
+      "SITE_CAPABILITY_PROFILE_V1": "542e5063b9331fd08e5b79824b0895a2188ccc29"
+    },
+    "parent_v6_head": "dad617da0c60b0937c04de46c92fd3fb72c5d556",
+    "parent_v6_pointer_blob": "5c9b18bffb20a33999b506bdfb29212f751a29ee",
+    "source_sha256": "0536f3252c7fdbc6d8bd893d76c1210b36197f429d743fcd7bd874f7f4e832a9"
+  },
+  "live_observation_count": 0,
+  "materialized_field_count": 1,
+  "pending_producer_count": 4,
+  "producer_slots": {
+    "A3": {
+      "directive_comment": 5220478578,
+      "exact_pointer": null,
+      "status": "EXECUTION_PENDING"
+    },
+    "B3": {
+      "directive_comment": 5220804448,
+      "exact_pointer": null,
+      "status": "EXECUTION_PENDING"
+    },
+    "B4": {
+      "directive_comment": 5220807009,
+      "exact_pointer": null,
+      "status": "EXECUTION_PENDING"
+    },
+    "B6": {
+      "directive_comment": 5220812680,
+      "exact_pointer": null,
+      "status": "EXECUTION_PENDING"
+    }
+  },
+  "production_write_count": 0,
+  "schema_version": "MATERIALIZATION_RECEIPT_V1",
+  "source_field_count": 1,
+  "source_field_loss_count": 0
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": "B5_SITE_ANALYZER_WAVE1_TEST_REPORT_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "directive_comment": 5207574580,
+  "common_authority_commit": "20b8a6401de124186037d44f9f17076c97142402",
+  "worker": "B-5",
+  "worker_pr": 41,
+  "baseline_head": "40891f2f87eb9f58a369f71e46cadc43f4586157",
+  "implementation_commit": "510ff003b4383c3b198e0055c0c69d8e984332b9",
+  "tested_at_kst": "2026-08-07T02:18:00+09:00",
+  "runtime": {
+    "node": "v22.16.0",
+    "python": "3.13.5",
+    "external_node_dependencies": 0
+  },
+  "test_execution": {
+    "command": "node --test tests/test_preview_export_engine.js",
+    "test_count": 41,
+    "pass_count": 41,
+    "fail_count": 0,
+    "result": "PASS_41_OF_41",
+    "deterministic_xlsx_second_run": "PASS",
+    "source_input_mutation": "PASS_NONE",
+    "preview_export_parity": "PASS_3_OF_3_RECORDS",
+    "source_row_pointer_preservation": "PASS_3_OF_3",
+    "source_element_pointer_preservation": "PASS_6_POINTERS",
+    "field_rename_remove_order": "PASS",
+    "cell_edit_audit_trail": "PASS",
+    "json_export": "PASS",
+    "csv_export": "PASS_RFC4180_QUOTES_NEWLINES_UTF8_BOM",
+    "excel_export": "PASS_XLSX_OPENXML_ZIP"
+  },
+  "excel_readback": {
+    "reader": "openpyxl",
+    "workbook_open": "PASS",
+    "sheet": "Preview",
+    "data_rows": 3,
+    "columns": 10,
+    "edited_price_expected": 250,
+    "edited_price_actual": 250,
+    "binary_sha256_expected": "db5a18169723c183822ca8d54311f25c98a0a64af08a38b12ae54c334cf6a343",
+    "binary_sha256_actual": "db5a18169723c183822ca8d54311f25c98a0a64af08a38b12ae54c334cf6a343",
+    "binary_sha256_parity": "PASS"
+  },
+  "direct_repair": {
+    "failure_signature": "XLSX_MANIFEST_SHA_HASHED_BUFFER_OBJECT_REPRESENTATION_INSTEAD_OF_BINARY_BYTES",
+    "root_cause": "sha256 helper treated Buffer as a generic object",
+    "repair": "Buffer and Uint8Array are now hashed as exact binary bytes",
+    "regression_test": "41 Excel manifest SHA is the exact binary byte hash",
+    "rerun_result": "PASS_41_OF_41"
+  },
+  "sample_exports": {
+    "row_count": 3,
+    "visible_field_count": 8,
+    "source_pointer_columns": 2,
+    "json_sha256": "a5b751b79255d829e36410b9201cb1f0388eafa9154f3bbd4f0c3ed1c2953d53",
+    "csv_sha256": "14415eaa2d9d1f0d673a4677cbc2dcc9ee371eed4f44aa040466070bc2288ac1",
+    "xlsx_sha256": "db5a18169723c183822ca8d54311f25c98a0a64af08a38b12ae54c334cf6a343",
+    "xlsx_size_bytes": 9431
+  },
+  "remote_blob_matrix": {
+    "start_report": "867800fd7dc0e71037ec12c840c2e043a7313c8a",
+    "contract": "352f005aecf2ae5059157a86ae8960f36bd62c6e",
+    "preview_export_engine": "7674152ceb3a28d20ffabcd21cc1aa9b98467202",
+    "xlsx_writer": "6625b33d55dd8c28ce9817e94a0650261a263c0f",
+    "index": "36961bf41a273864705b1e70eb6c8729b6c3c1f8",
+    "fixture": "79bf601c8508ab9c444f73adca8814e78e2f5982",
+    "test_source": "8f156ffdd3c2156d83b52a1bb059eb9780543722",
+    "sample_json": "73e5cfe1a5833f99e882afbc1bf1ff82f9d384a9",
+    "sample_csv": "d8f186b96d299833d247ce52f0efd9575a4b62e1",
+    "sample_xlsx": "f1ae80dc3905adbe744cfa29f3516545ecb151be",
+    "sample_manifest": "c3f16d1bdf45ab0a4ebed3a9bc853322a9a2373a"
+  },
+  "scope": {
+    "changed_file_count": 11,
+    "out_of_scope_write_count": 0,
+    "database_work": false,
+    "independent_document_pipeline": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "github_actions_ci_pass_claimed": false,
+  "terminal_recommendation": "B5_SITE_ANALYZER_WAVE1_PREVIEW_EDITOR_EXPORT_PASS"
+}

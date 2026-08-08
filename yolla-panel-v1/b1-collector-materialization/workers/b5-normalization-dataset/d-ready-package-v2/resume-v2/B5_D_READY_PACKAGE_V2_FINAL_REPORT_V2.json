@@ -1,0 +1,144 @@
+{
+  "actual_site_extraction": false,
+  "authority_type": {
+    "decision_owner": "D-1_ONLY",
+    "decision_pointer_blob": "95e6983a79b80867dd7de196a21e1aefc4c3dcb1",
+    "final_decision_present": false,
+    "status": "PENDING_D1_DECISION",
+    "value": null
+  },
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "completed_at_kst": "2026-08-06T06:22:00+09:00",
+  "d_acceptance_receipt_issued": false,
+  "d_canonical_db_write_count": 0,
+  "d_canonical_id_generation_count": 0,
+  "directive_comment": 5196664899,
+  "entry_condition": {
+    "B2": {
+      "contract_blob": "f7b5faee6c3fce138bcd95f9edce734f2086eb6d",
+      "decision": "PASS_EXACT",
+      "head": "771da102a0202dc21d9226d9c534275df345582e",
+      "pointer_blob": "6ba3df93d41d3b00f58d598ca6867db376c9f30c",
+      "pr": 38,
+      "terminal": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_READY"
+    },
+    "B4": {
+      "decision": "PASS_EXACT",
+      "head": "f3bb1a6fcc7b731f8045a8c5ca6e6f1dce8419d3",
+      "manifest_blob": "d900e06bcc73908e3af589581d67b599bfb84d65",
+      "pointer_blob": "b0158bbb27dfb0efab012ec1a97c3c31f2266e7c",
+      "pr": 40,
+      "terminal": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY"
+    },
+    "met": true,
+    "required": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_TERMINAL_AND_B4_RAW_ARTIFACT_MANIFEST_V2_TERMINAL"
+  },
+  "first_blocker": "D1_AUTHORITY_TYPE_FINAL_DECISION_NOT_PUBLISHED",
+  "merge": false,
+  "postgresql_connection_count": 0,
+  "production": false,
+  "ready": false,
+  "rebind_result": {
+    "B2_source_scope": "PASS_EXACT",
+    "B3_collection_run_binding": {
+      "decision": "PASS_PRESERVED",
+      "fixture_result_blob": "e6266c5cc4af42bc3797d17a3640381fa6634c16",
+      "head": "86d789a136ce5070d79eab7e6d0205eb23da11d7",
+      "pointer_blob": "dedbad43c8c23df18e2af2560af5d5f48ca1fa00",
+      "terminal": "B3_D_COLLECTION_RUN_LEDGER_READY"
+    },
+    "B4_raw_manifest_and_pii": "PASS_EXACT",
+    "method": "GET",
+    "official_source_url": "https://fin.land.naver.com",
+    "pending_raw_pii_replaced": true,
+    "personal_data_status": "NOT_APPLICABLE",
+    "provisional_source_scope_removed": true,
+    "redaction_status": "NOT_APPLICABLE",
+    "response_format": "HTML",
+    "source_key": "NAVER_FIN_LAND_PUBLIC_WEB_V1",
+    "source_name": "네이버페이 부동산",
+    "upstream_binding": "PASS_3_OF_3"
+  },
+  "remote_artifacts": {
+    "d_intake_schema": {
+      "blob": "755d5b1ad36d9d295ccdbe9a3bbe6d484a65816c",
+      "commit": "9aee3de3400dc834d23ee657fa0cbbe26692fe55",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/resume-v2/D_INTAKE_REQUEST_V1.schema.json"
+    },
+    "fixture_bundle": {
+      "blob": "f65c54194609d8bc709033c0d36abf916c60debe",
+      "commit": "302718b6724aba6b6a08eff6cc5566752ca8741c",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/resume-v2/B5_D_READY_FIXTURE_PACKAGE_V2.json"
+    },
+    "materialized_schema": {
+      "blob": "b6067ae8ed0fec514981e9bc18604208d0619c17",
+      "commit": "b96d8ddcdb195e597b5571a80f41f97394d27cef",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/resume-v2/MATERIALIZED_DATABASE_PACKAGE_V2.schema.json"
+    },
+    "normalized_schema": {
+      "blob": "5eb8cfc2a0e745e5e3cdce4dbc2467be6020852d",
+      "commit": "fbdc984c5f03df1578825b3cc8820f5324a129b8",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/resume-v2/NORMALIZED_DATASET_V2.schema.json"
+    },
+    "start_report": {
+      "blob": "8907447e6835357a4d9abe3ded543933ee759f6d",
+      "commit": "bf55fc9095cd242accd9cbd1832402f2d5767d6c",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/resume-v2/B5_D_READY_PACKAGE_V2_RESUME_START_REPORT_V1.json"
+    },
+    "test_report_v2": {
+      "blob": "88311daf3a146cfdbb9d3dc1df1f9bdc5ede0650",
+      "commit": "24435e2a3eb8d7f07ad566098a93416b70fa1435",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/resume-v2/B5_D_READY_PACKAGE_V2_TEST_REPORT_V2.json"
+    },
+    "test_source": {
+      "blob": "0ec0f4b3a351539506bc3ad353e415a02caeed92",
+      "commit": "29896b048928bcb25601b6558161f8be6b1d5d70",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/resume-v2/tests/test_b5_d_ready_package_v2_resume.py"
+    },
+    "validator": {
+      "blob": "c9be49666dd4530a9a3a0d827d1ce4cb1f43a83b",
+      "commit": "d3f1da49b087aa9704ca7f7766aa5bc5df60f511",
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/resume-v2/src/validate_b5_d_ready_package_v2_resume.py"
+    }
+  },
+  "repository": "anbin1900-crypto/source-factory-core",
+  "resume_condition": "D-1 publishes an exact authority_type final decision pointer for NAVER_FIN_LAND_PUBLIC_WEB_V1; B-5 binds it without changing B2/B3/B4 values, reruns the same 37 checks, and publishes READY or a new exact blocker.",
+  "schema_version": "B5_D_READY_PACKAGE_V2_FINAL_REPORT_V2",
+  "start_head": "ecda54115e8bcac427344cddd4578b8a748042fc",
+  "status": "BLOCKED_D1_AUTHORITY_TYPE_FINAL_DECISION",
+  "task_id": "B5_D_READY_PACKAGE_V2_RESUME",
+  "terminal": "B5_D_READY_PACKAGE_V2_EXACT_BLOCKER",
+  "validation": {
+    "bundle_sha256": "61076a92214b1fdfcc7887e666f5e1f528694c082a01cf40844be0a91c1bcab4",
+    "compile_result": "PASS_2_OF_2",
+    "custom_validator": "PASS",
+    "dataset_sha256": "2341352963108565dca27bf4476bfa91f67690cd86fc609d25bf9239ef65b36c",
+    "deterministic_second_run": "PASS_37_OF_37",
+    "duplicate_count": 1,
+    "duplicate_lineage_preservation": "PASS",
+    "first_failure_correction": {
+      "correction": "LOAD_SCHEMAS_FROM_RESUME_V2_ROOT",
+      "failure": "TEST_HARNESS_SCHEMA_PATH_ROOT_LOOKUP",
+      "rerun_result": "PASS_37_OF_37"
+    },
+    "input_record_count": 4,
+    "output_record_count": 3,
+    "package_sha256": "69dc71948d1ed5417ae027d2ae8e347cd24306d29447ff20246ff042b2b8196f",
+    "published_tree_replay": {
+      "compile_result": "PASS_2_OF_2",
+      "first_run": "PASS_37_OF_37",
+      "second_run": "PASS_37_OF_37",
+      "structure": "resume-v2 root schemas + fixture bundle + src + tests",
+      "validator": "PASS"
+    },
+    "rejected_records_preserved": "PASS",
+    "request_sha256": "7baa4e24323c739d4907f4c81e2aca7a5bfe8650f0c10854aa348f6d0a71e651",
+    "silent_drop_count": 0,
+    "source_field_loss_count": 0,
+    "sqlite_row_count": 3,
+    "tests": "PASS_37_OF_37",
+    "unmapped_value_preservation": "PASS"
+  },
+  "worker": "B-5_NORMALIZATION_DB_PACKAGE_WORKER",
+  "worker_pr": 41
+}

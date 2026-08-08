@@ -1,0 +1,11 @@
+{
+  "$id":"SUCCESSOR_DATASET_RESUME_COMMAND_V1.schema.json",
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "type":"object",
+  "required":["schema_version","command_template","preview_command_template","export_command_template","smoke_command","recovery_source","identity_rehydration","requires_chat_context","target_pc_execution_performed","tunnel_created"],
+  "properties":{
+    "schema_version":{"const":"SUCCESSOR_DATASET_RESUME_COMMAND_V1"},"command_template":{"type":"string"},"preview_command_template":{"type":"string"},"export_command_template":{"type":"string"},
+    "smoke_command":{"type":"string"},"recovery_source":{"type":"string"},"identity_rehydration":{"const":"AUTOMATIC_FROM_LATEST_CHECKPOINT"},
+    "requires_chat_context":{"const":false},"target_pc_execution_performed":{"const":false},"tunnel_created":{"const":false}
+  }
+}

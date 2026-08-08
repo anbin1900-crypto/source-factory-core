@@ -1,0 +1,13 @@
+{
+  "$id":"DATASET_RESUME_STATE_V1.schema.json",
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "type":"object",
+  "required":["schema_version","command_id","session_id","dataset_id","recipe_version","checkpoint_seq","last_committed_record_count","last_cursor","last_action_id","dataset_path","dataset_sha256","dataset_size_bytes","checkpoint_path","checkpoint_sha256","append_from_record_index","existing_records_rewrite_allowed"],
+  "properties":{
+    "schema_version":{"const":"DATASET_RESUME_STATE_V1"},"command_id":{"type":"string"},"session_id":{"type":"string"},"dataset_id":{"type":"string"},"recipe_version":{"type":"string"},
+    "checkpoint_seq":{"type":"integer","minimum":1},"last_committed_record_count":{"type":"integer","minimum":0},"last_cursor":{},"last_action_id":{},
+    "dataset_path":{"type":"string"},"dataset_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"dataset_size_bytes":{"type":"integer","minimum":0},
+    "checkpoint_path":{"type":"string"},"checkpoint_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"append_from_record_index":{"type":"integer","minimum":0},
+    "existing_records_rewrite_allowed":{"const":false}
+  }
+}

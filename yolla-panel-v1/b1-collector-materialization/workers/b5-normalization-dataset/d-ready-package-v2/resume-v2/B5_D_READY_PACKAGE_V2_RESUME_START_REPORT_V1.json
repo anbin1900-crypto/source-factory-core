@@ -1,0 +1,16 @@
+{
+  "B2_terminal": "B2_D_INTAKE_SOURCE_SCOPE_CONTRACT_READY",
+  "B4_terminal": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY",
+  "directive_comment": 5196664899,
+  "entry_condition": "B2_AND_B4_TERMINALS",
+  "entry_condition_met": true,
+  "merge": false,
+  "production": false,
+  "ready": false,
+  "schema_version": "B5_D_READY_PACKAGE_V2_RESUME_START_REPORT_V1",
+  "start_head": "ecda54115e8bcac427344cddd4578b8a748042fc",
+  "started_at_kst": "2026-08-06T06:22:00+09:00",
+  "task_id": "B5_D_READY_PACKAGE_V2_RESUME",
+  "worker": "B-5_NORMALIZATION_DB_PACKAGE_WORKER",
+  "worker_pr": 41
+}

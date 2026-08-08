@@ -1,0 +1,21 @@
+{
+  "schema_version": "BLUEPRINT_ONTOLOGY_BINDING_EXPORT_RECEIPT_V1",
+  "command_id": "CMD-CYCLE4-001",
+  "session_id": "SESSION-CYCLE4-001",
+  "worker_id": "BROWSER-WORKER-02",
+  "dataset_id": "DATASET-CYCLE4-001",
+  "recipe_version": "recipe-v4",
+  "lineage_key": "c95774e1ccf8f37db75deacd6e46c13af3db5f23e45667c62a5b6401f5c1393e",
+  "checkpoint_seq": 3,
+  "checkpoint_sha256": "2cc6810499355bedeee0380372ebae82342c56a3d3d40c573215b845dcd5a2a0",
+  "source_result_ids": ["RESULT-CYCLE4-001"],
+  "source_blueprint_ids": ["BLUEPRINT-REAL-ESTATE-CYCLE4-001"],
+  "record_count": 6,
+  "field_order": ["source_site_id", "source_field_name", "site_field_name", "canonical_candidate_id", "semantic_status", "read_transform", "write_transform", "evidence_pointer"],
+  "files": {
+    "json": {"path": "blueprint_ontology_bundle.json", "sha256": "22b2c1e3ad5ccdbc5ca1498245d5742b954a3137489d7c56bbd2a69ec3716866"},
+    "csv": {"path": "site_listing_field_binding.csv", "sha256": "35b22de076beeafe52d5e94c349bf4d06f2587805e20c8eca2107f8fc3c31dda"},
+    "xlsx": {"path": "site_listing_field_binding.xlsx", "sha256": "079a903e8409666e11ee94f4f7edc408897ea6f3a08537b5e080773eadfbfc86"}
+  },
+  "roundtrip": {"json": true, "csv": true, "xlsx": true}
+}

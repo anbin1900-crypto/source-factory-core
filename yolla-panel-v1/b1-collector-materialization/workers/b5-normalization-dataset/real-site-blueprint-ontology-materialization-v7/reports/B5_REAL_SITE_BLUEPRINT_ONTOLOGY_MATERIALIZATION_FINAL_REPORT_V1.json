@@ -1,0 +1,68 @@
+{
+  "schema_version": "B5_REAL_SITE_BLUEPRINT_ONTOLOGY_MATERIALIZATION_FINAL_REPORT_V1",
+  "directive_id": "A0-TO-B5-REAL-SITE-BLUEPRINT-ONTOLOGY-MATERIALIZATION-V7-20260808-001",
+  "directive_comment": 5220809444,
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "worker": "B-5_REAL_SITE_BLUEPRINT_ONTOLOGY_MATERIALIZATION_OWNER",
+  "worker_pr": 41,
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "baseline_head": "dad617da0c60b0937c04de46c92fd3fb72c5d556",
+  "content_head": "1834a20b6f73ee09719976641d1d206bf1aeb29b",
+  "parent_v6": {
+    "terminal": "B5_REAL_ESTATE_SITE_BLUEPRINT_DB_PACKAGE_READY",
+    "pointer_blob": "5c9b18bffb20a33999b506bdfb29212f751a29ee",
+    "checkpoint_blob": "b34163df9df6cf9b36feb05cd46898318869d11f"
+  },
+  "required_outputs": {
+    "REAL_SITE_BLUEPRINT_DB_UPDATE_V1": {
+      "blob": "1399cf6c48494ed6070abe0155718ad0ee7ac090",
+      "sha256": "9ab5df19d816e8f0fb4296644d8646a60045011d5f50e0452fa59e3b0da2b675"
+    },
+    "REAL_SITE_ONTOLOGY_BINDING_UPDATE_V1": {
+      "blob": "78483546698f6e308e87a665327e91861552aabd",
+      "sha256": "6e94a787864a6cce492c670c35124b006bb8bfc628d09681a20cae6d9cfccbb1"
+    },
+    "REAL_SITE_SITE_BINDING_VERSION_V1": {
+      "blob": "872620984b849e0faea1268eaa03bef499c03df4",
+      "sha256": "1340b8644ff7666167abd26f4525bd246a2aafc184cf46ea7d42272b37e61a4e"
+    },
+    "MATERIALIZATION_RECEIPT_V1": {
+      "blob": "a8c340cb733bd5904642ffcda7c556f4fb7952b3",
+      "sha256": "faa53147df1bf7a252cbff0d313ad959559376558a5a0b5dde02cd8762469254"
+    },
+    "LATEST_RESULT_POINTER": {
+      "blob": "95f94e561df361c0ad4d32374d0dca829a10359e",
+      "sha256": "16aee3f0b5711ba230b5a8255d19efa3bf343a4a526ed4bb734dde1758dc9d82"
+    }
+  },
+  "implementation": {
+    "engine_blob": "61ef9f750143fddfa25d9ad323bfdb144be82e7b",
+    "tests_blob": "637317693a8715991ff81d545356b338f9bed9ba",
+    "fixture_blob": "ae30f696b9abee9bbd315c4e0f0a8b5fd5a846d1",
+    "checkpoint_000004_blob": "db1242332410bb00c551b7228fab76f987e0481f",
+    "test_report_blob": "462b175b025dada96f1e0c96b704f72959cfead7"
+  },
+  "validation": {
+    "compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_20_OF_20",
+    "contracts": "PASS_4_OF_4",
+    "generated_json": "PASS_5_OF_5",
+    "remote_readback": "PASS_7_OF_7",
+    "source_field_loss_count": 0,
+    "existing_v6_record_rewrite_count": 0,
+    "d_canonical_schema_decision_count": 0,
+    "production_write_count": 0,
+    "live_observation_count": 0,
+    "pending_producer_count": 4,
+    "bound_producer_count": 0
+  },
+  "execution_status": "EXECUTION_PENDING",
+  "live_pass_claimed": false,
+  "status": "APPEND_ONLY_MATERIALIZER_READY_LIVE_RECEIPTS_PENDING",
+  "terminal": "B5_REAL_SITE_BLUEPRINT_ONTOLOGY_MATERIALIZATION_READY",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "completed_at_kst": "2026-08-08T03:53:24+09:00"
+}

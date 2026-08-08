@@ -1,0 +1,46 @@
+{
+  "schema_version": "B5_D_READY_PACKAGE_V2_START_REPORT_V1",
+  "task_id": "B5_D_READY_PACKAGE_V2",
+  "batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-CYCLE-BATCH-V1-20260806-001",
+  "directive_comment_id": 5196026867,
+  "worker": "B-5",
+  "role_in_batch": "B_PACKAGE_V2_SINGLE_INTEGRATION_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 41,
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "observed_start_head": "3e6549581e954fac8deb6960a82aadb5c93de07c",
+  "started_at_kst": "2026-08-06T04:12:00+09:00",
+  "owned_root": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/",
+  "required_outputs": [
+    "MATERIALIZED_DATABASE_PACKAGE_V2.schema.json",
+    "NORMALIZED_DATASET_V2.schema.json",
+    "D_INTAKE_REQUEST_V1.schema.json",
+    "B5_D_READY_FIXTURE_PACKAGE_V2.json"
+  ],
+  "d_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "head": "327547fd74f615a4c709c6da8473b1bf63fd5d6a"
+  },
+  "upstream_v2_observation": {
+    "b2_head": "7244993335d6bd93a7700bdf9c3294b4c6ee94d4",
+    "b2_task_comment": 5196020144,
+    "b2_v2_output_published": false,
+    "b3_head": "f8299be24108b84af06abfe53e939c8bf68ec9dd",
+    "b3_task_comment": 5196022442,
+    "b3_v2_output_published": false,
+    "b4_head": "6dfe697363a69f83797775aa549f34614aa3748a",
+    "b4_task_comment": 5196024447,
+    "b4_v2_output_published": false
+  },
+  "implementation_strategy": "BUILD_SCHEMA_VALIDATOR_AND_FIXTURE_FROM_EXACT_V1_EVIDENCE_AND_D_CONTRACTS_THEN_LATE_BIND_UPSTREAM_V2",
+  "source_field_loss_count": 0,
+  "silent_drop_count": 0,
+  "actual_site_extraction": false,
+  "d_canonical_id_generation": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "STARTED"
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "RESULT_DATASET_POINTER_V1",
+  "command_id": "CMD-CYCLE4-001",
+  "session_id": "SESSION-CYCLE4-001",
+  "worker_id": "BROWSER-WORKER-02",
+  "dataset_id": "DATASET-CYCLE4-001",
+  "recipe_version": "recipe-v4",
+  "lineage_key": "c95774e1ccf8f37db75deacd6e46c13af3db5f23e45667c62a5b6401f5c1393e",
+  "combined_state": "RESULT_AVAILABLE",
+  "source_result_ids": ["RESULT-CYCLE4-001"],
+  "source_blueprint_ids": ["BLUEPRINT-REAL-ESTATE-CYCLE4-001"],
+  "latest_result_event_id": "RESULT-EVENT-CYCLE4-001",
+  "latest_checkpoint_seq": 3,
+  "latest_checkpoint_path": "checkpoints/checkpoint-000003.json",
+  "latest_checkpoint_sha256": "2cc6810499355bedeee0380372ebae82342c56a3d3d40c573215b845dcd5a2a0",
+  "datasets": {
+    "AI_PRODUCT_BLUEPRINT_DATASET_V1": {"path": "datasets/AI_PRODUCT_BLUEPRINT_DATASET_V1.json", "record_count": 2, "sha256": "52a14bcf686c3d37e831d9081ccd23769b1420fb89e0bd8a21fa14fc7cdf62d6"},
+    "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1": {"path": "datasets/REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1.json", "record_count": 3, "sha256": "dd2a04fb620b0e7cd875358b286f986b7396a557d304e307e4cc12bbd5770d05"},
+    "SITE_LISTING_FIELD_BINDING_V1": {"path": "datasets/SITE_LISTING_FIELD_BINDING_V1.json", "record_count": 6, "sha256": "acfd800715f07274efcc0ed3e4aabf03485860ef32a6b3656aba0125de819778"},
+    "REAL_ESTATE_SITE_CAPABILITY_PROFILE_V1": {"path": "datasets/REAL_ESTATE_SITE_CAPABILITY_PROFILE_V1.json", "record_count": 2, "sha256": "7296a77420d657cb5aad0122b7dd808b09f7711e5956c3695b9cc740288cca3a"},
+    "YOLLA_LISTING_LEDGER_SCHEMA_CANDIDATE_V1": {"path": "datasets/YOLLA_LISTING_LEDGER_SCHEMA_CANDIDATE_V1.json", "record_count": 3, "sha256": "3ed90d759eb3f5665cef97173285782cc7ae7a0ca7211d05cbdbd89989b9d3aa"}
+  },
+  "source_field_loss_count": 0,
+  "evidence_pointer_count": 6,
+  "semantic_status_counts": {"UNKNOWN": 0, "CANDIDATE": 12, "CANONICAL": 0},
+  "duplicate_materialization_count": 0,
+  "contextless_recovery": true,
+  "consumers": ["B-1", "B-2", "B-6"],
+  "export_receipt_path": "../exports/BLUEPRINT_ONTOLOGY_BINDING_EXPORT_RECEIPT_V1.json",
+  "export_receipt_sha256": "8138aed1af1bc3e98c2e989b332281c108a3ea0286a8c9f795feedb424f5959b"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "B5_BLUEPRINT_ONTOLOGY_BINDING_DATASET_FINAL_REPORT_V1",
+  "directive_id": "A0-TO-B5-BLUEPRINT-ONTOLOGY-BINDING-DATASET-V4-20260808-001",
+  "directive_comment": 5219109148,
+  "cycle_id": "A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "worker": "B-5",
+  "baseline_head": "c97bedcefcd109ef19760cb9cb5896180b52410e",
+  "status": "BLUEPRINT_ONTOLOGY_BINDING_DATASET_IMPLEMENTED_AND_SMOKE_TESTED",
+  "terminal": "B5_BLUEPRINT_ONTOLOGY_BINDING_DATASET_READY",
+  "required_datasets": [
+    "AI_PRODUCT_BLUEPRINT_DATASET_V1",
+    "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1",
+    "SITE_LISTING_FIELD_BINDING_V1",
+    "REAL_ESTATE_SITE_CAPABILITY_PROFILE_V1",
+    "YOLLA_LISTING_LEDGER_SCHEMA_CANDIDATE_V1"
+  ],
+  "validation": {
+    "compile": "PASS_3_OF_3",
+    "unit_tests": "PASS_45_OF_45",
+    "dataset_contracts": "PASS_5_OF_5",
+    "fixture_smoke": "PASS",
+    "source_field_loss_count": 0,
+    "evidence_pointer_count": 6,
+    "duplicate_materialization_count": 0,
+    "checkpoint_resume_export_roundtrip": "PASS_JSON_CSV_XLSX"
+  },
+  "target_pc_execution": false,
+  "live_site_call": false,
+  "tunnel_change": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

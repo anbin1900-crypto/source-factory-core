@@ -1,0 +1,130 @@
+{
+  "lineage": {
+    "blueprint_id": "BLUEPRINT-REAL-ESTATE-CYCLE4-001",
+    "command_id": "CMD-CYCLE4-001",
+    "dataset_id": "DATASET-CYCLE4-001",
+    "lineage_key": "c95774e1ccf8f37db75deacd6e46c13af3db5f23e45667c62a5b6401f5c1393e",
+    "recipe_version": "recipe-v4",
+    "result_event_id": "RESULT-EVENT-CYCLE4-001",
+    "result_id": "RESULT-CYCLE4-001",
+    "session_id": "SESSION-CYCLE4-001",
+    "worker_id": "BROWSER-WORKER-02"
+  },
+  "records": [
+    {
+      "canonical_candidate_id": "listing_id",
+      "evidence_pointer": {
+        "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "path": "fixtures/naver-listing.json#/articleNo"
+      },
+      "read_transform": {
+        "expression": "value",
+        "op": "PRESERVE_RAW"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_field_name": "articleNo",
+      "source_field_name": "articleNo",
+      "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "write_transform": {
+        "expression": "raw_value",
+        "op": "RESTORE_RAW"
+      }
+    },
+    {
+      "canonical_candidate_id": "deal_price_krw",
+      "evidence_pointer": {
+        "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "path": "fixtures/naver-listing.json#/dealOrWarrantPrc"
+      },
+      "read_transform": {
+        "expression": "value",
+        "op": "PRESERVE_RAW_WITH_DECIMAL_CANDIDATE"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_field_name": "dealOrWarrantPrc",
+      "source_field_name": "dealOrWarrantPrc",
+      "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "write_transform": {
+        "expression": "raw_value",
+        "op": "RESTORE_RAW"
+      }
+    },
+    {
+      "canonical_candidate_id": "exclusive_area_m2",
+      "evidence_pointer": {
+        "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "path": "fixtures/naver-listing.json#/area2"
+      },
+      "read_transform": {
+        "expression": "value",
+        "op": "PRESERVE_RAW_WITH_DECIMAL_CANDIDATE"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_field_name": "area2",
+      "source_field_name": "area2",
+      "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+      "write_transform": {
+        "expression": "raw_value",
+        "op": "RESTORE_RAW"
+      }
+    },
+    {
+      "canonical_candidate_id": "listing_id",
+      "evidence_pointer": {
+        "artifact_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "path": "fixtures/kb-listing.json#/매물번호"
+      },
+      "read_transform": {
+        "expression": "value",
+        "op": "PRESERVE_RAW"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_field_name": "매물번호",
+      "source_field_name": "매물번호",
+      "source_site_id": "SITE-KB-LAND",
+      "write_transform": {
+        "expression": "raw_value",
+        "op": "RESTORE_RAW"
+      }
+    },
+    {
+      "canonical_candidate_id": "deal_price_krw",
+      "evidence_pointer": {
+        "artifact_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "path": "fixtures/kb-listing.json#/매매가"
+      },
+      "read_transform": {
+        "expression": "value",
+        "op": "PRESERVE_RAW_WITH_DECIMAL_CANDIDATE"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_field_name": "매매가",
+      "source_field_name": "매매가",
+      "source_site_id": "SITE-KB-LAND",
+      "write_transform": {
+        "expression": "raw_value",
+        "op": "RESTORE_RAW"
+      }
+    },
+    {
+      "canonical_candidate_id": "exclusive_area_m2",
+      "evidence_pointer": {
+        "artifact_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "path": "fixtures/kb-listing.json#/전용면적"
+      },
+      "read_transform": {
+        "expression": "value",
+        "op": "PRESERVE_RAW_WITH_DECIMAL_CANDIDATE"
+      },
+      "semantic_status": "CANDIDATE",
+      "site_field_name": "전용면적",
+      "source_field_name": "전용면적",
+      "source_site_id": "SITE-KB-LAND",
+      "write_transform": {
+        "expression": "raw_value",
+        "op": "RESTORE_RAW"
+      }
+    }
+  ],
+  "schema_version": "SITE_LISTING_FIELD_BINDING_V1"
+}

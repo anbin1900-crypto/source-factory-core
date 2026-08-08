@@ -1,0 +1,46 @@
+{
+  "lineage": {
+    "blueprint_id": "BLUEPRINT-REAL-ESTATE-CYCLE4-001",
+    "command_id": "CMD-CYCLE4-001",
+    "dataset_id": "DATASET-CYCLE4-001",
+    "lineage_key": "c95774e1ccf8f37db75deacd6e46c13af3db5f23e45667c62a5b6401f5c1393e",
+    "recipe_version": "recipe-v4",
+    "result_event_id": "RESULT-EVENT-CYCLE4-001",
+    "result_id": "RESULT-CYCLE4-001",
+    "session_id": "SESSION-CYCLE4-001",
+    "worker_id": "BROWSER-WORKER-02"
+  },
+  "records": [
+    {
+      "canonical_candidate_id": "listing_id",
+      "evidence_pointers": [
+        "EVIDENCE-NAVER-ARTICLE-NO",
+        "EVIDENCE-KB-LISTING-NO"
+      ],
+      "label_ko": "매물 식별자",
+      "semantic_status": "CANDIDATE",
+      "value_type_candidate": "string"
+    },
+    {
+      "canonical_candidate_id": "deal_price_krw",
+      "evidence_pointers": [
+        "EVIDENCE-NAVER-DEAL-PRICE",
+        "EVIDENCE-KB-DEAL-PRICE"
+      ],
+      "label_ko": "매매가격 원화",
+      "semantic_status": "CANDIDATE",
+      "value_type_candidate": "decimal"
+    },
+    {
+      "canonical_candidate_id": "exclusive_area_m2",
+      "evidence_pointers": [
+        "EVIDENCE-NAVER-AREA2",
+        "EVIDENCE-KB-EXCLUSIVE-AREA"
+      ],
+      "label_ko": "전용면적 제곱미터",
+      "semantic_status": "CANDIDATE",
+      "value_type_candidate": "decimal"
+    }
+  ],
+  "schema_version": "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1"
+}

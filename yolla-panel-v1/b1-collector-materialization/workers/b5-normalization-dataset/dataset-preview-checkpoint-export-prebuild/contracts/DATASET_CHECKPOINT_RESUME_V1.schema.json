@@ -1,0 +1,21 @@
+{
+  "$id": "DATASET_CHECKPOINT_RESUME_V1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "dataset_id": {"type": "string"},
+    "dataset_path": {"type": "string"},
+    "dataset_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "dataset_size_bytes": {"minimum": 0, "type": "integer"},
+    "edit_overlay_path": {"type": "string"},
+    "edit_overlay_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "field_stats": {"type": "object"},
+    "fields": {"type": "array"},
+    "last_committed_record_count": {"minimum": 0, "type": "integer"},
+    "next_append_index": {"minimum": 0, "type": "integer"},
+    "schema_version": {"const": "DATASET_CHECKPOINT_RESUME_V1"},
+    "source_field_loss_count": {"const": 0}
+  },
+  "required": ["schema_version", "dataset_id", "dataset_path", "edit_overlay_path", "last_committed_record_count", "next_append_index", "dataset_sha256", "dataset_size_bytes", "edit_overlay_sha256", "fields", "source_field_loss_count"],
+  "title": "DATASET_CHECKPOINT_RESUME_V1",
+  "type": "object"
+}

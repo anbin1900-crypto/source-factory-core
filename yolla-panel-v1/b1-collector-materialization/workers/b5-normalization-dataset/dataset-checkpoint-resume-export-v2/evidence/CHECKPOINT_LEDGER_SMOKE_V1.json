@@ -1,0 +1,10 @@
+{
+  "append_only":"PASS",
+  "checkpoints":[
+    {"checkpoint_file":"checkpoint-000001.json","checkpoint_seq":1,"checkpoint_sha256":"ebb93bce929a302709c850bdbfd32edb61d39481164b22a5e6ba8b23432a3fda","dataset_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","previous_checkpoint_sha256":null,"record_count":0},
+    {"checkpoint_file":"checkpoint-000002.json","checkpoint_seq":2,"checkpoint_sha256":"d03392cc4bbc5f57e308b62a9f6333c81cc0339a63196c5a14271a523e34c6d6","dataset_sha256":"8dda7ed9278b57ca5fafe8847b313592fb3d91571c167bbddca11e51663d758e","previous_checkpoint_sha256":"ebb93bce929a302709c850bdbfd32edb61d39481164b22a5e6ba8b23432a3fda","record_count":600},
+    {"checkpoint_file":"checkpoint-000003.json","checkpoint_seq":3,"checkpoint_sha256":"3433e90ad2d3d80be5fe58ae2f0a0cda1904e1ce738435915f040b6ca8e3e675","dataset_sha256":"b2a101cadd3392c4bb8c5f2dbf591307577229f4f35a8b699792e1a018e1a26c","previous_checkpoint_sha256":"d03392cc4bbc5f57e308b62a9f6333c81cc0339a63196c5a14271a523e34c6d6","record_count":1205}
+  ],
+  "directive_id":"AI001-TO-B5-DATASET-CHECKPOINT-RESUME-EXPORT-V2-20260807-001",
+  "existing_record_rewrite_count":0,"monotonic":"PASS","previous_checkpoint_overwrite_count":0,"schema_version":"CHECKPOINT_LEDGER_SMOKE_V1"
+}

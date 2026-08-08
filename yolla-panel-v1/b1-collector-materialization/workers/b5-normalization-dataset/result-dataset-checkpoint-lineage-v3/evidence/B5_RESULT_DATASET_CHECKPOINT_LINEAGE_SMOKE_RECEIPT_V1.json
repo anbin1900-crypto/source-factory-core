@@ -1,0 +1,18 @@
+{
+  "schema_version": "B5_RESULT_DATASET_CHECKPOINT_LINEAGE_SMOKE_RECEIPT_V1",
+  "directive_id": "AI001-TO-B5-RESULT-DATASET-CHECKPOINT-LINEAGE-V3-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "complete_before_result_smoke": "PASS",
+  "result_arrival_smoke": "PASS",
+  "restart_resume_smoke": "PASS",
+  "checkpoint_seq": "PASS_1_2_3_4_MONOTONIC",
+  "command_session_worker_lineage_binding": "PASS",
+  "partial_complete_export_same_lineage": "PASS",
+  "duplicate_complete_noop": "PASS",
+  "duplicate_result_noop": "PASS",
+  "duplicate_materialization_count": 0,
+  "previous_checkpoint_overwrite_count": 0,
+  "existing_record_rewrite_count": 0,
+  "source_field_loss_count": 0,
+  "result": "PASS"
+}

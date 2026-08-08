@@ -1,0 +1,23 @@
+{
+  "checkpoint_seq": 4,
+  "checkpoint_sha256": "c8e0d15d1b35cddb3ca85c8bab5bd26470b4c04981f03652d67bf98339d26e69",
+  "combined_state": "RESULT_AVAILABLE",
+  "command_id": "CMD-CYCLE3-001",
+  "complete_checkpoint_seq": 4,
+  "dataset_id": "DATASET-CYCLE3-001",
+  "dataset_sha256": "8c938debf6d8b0abe516893f45dd24f3402a051c873e803edb55b3d4234a8c89",
+  "field_order": ["id", "name"],
+  "files": {
+    "csv": {"path": "fixtures/exports/dataset.csv", "sha256": "f1696df94df363333ce472e50e6fe6763a7ff98c63f157f563f25d366c04908b"},
+    "json": {"path": "fixtures/exports/dataset.json", "sha256": "3e08e2c3d72a912908a4042b129f4ae66bac70e924d1a45adadb8043d457057f"},
+    "xlsx": {"path": "fixtures/exports/dataset.xlsx", "sha256": "bc3028ba4dc17dd77cb2a8f9677cfd2d1f32cfa9ac94fad332bfe1bd65cd7d98"}
+  },
+  "lineage_key": "8fa5f5609b4044f45f0d86385e8db8727b4af3ca6d8eeda855e786bb1428b5ce",
+  "partial_checkpoint_seq": 3,
+  "recipe_version": "recipe-v3",
+  "record_count": 3,
+  "schema_version": "RESULT_DATASET_EXPORT_RECEIPT_V1",
+  "session_id": "SESSION-CYCLE3-001",
+  "source_result_ids": ["RESULT-PARTIAL-001", "RESULT-FINAL-001"],
+  "worker_id": "BROWSER-WORKER-02"
+}

@@ -1,0 +1,28 @@
+{
+  "execution_status": "WAITING_INPUT",
+  "lineage_key": "aa09ca3187213a4a73212eab716ac186d8bd7d485c355e0e4e85f5d72946bc9c",
+  "live_pass_claimed": false,
+  "merge": false,
+  "outputs": {
+    "B5_AI_REAL_ESTATE_PRODUCT_BLUEPRINT_V1": {
+      "record_count": 8,
+      "sha256": "187ca9e9153ef946de1f7fd13d26a86aec35f6629b75280545d8d94afc02080c"
+    },
+    "B5_LOSSLESS_SITE_EXTENSION_PACKAGE_V1": {
+      "record_count": 10,
+      "sha256": "9c850577a28e79cbfe97ded34742a3ca7b9a6b0fcdbb80b2fa19a13e3d807e83"
+    },
+    "B5_MATERIALIZATION_VALIDATION_RECEIPT_V1": {
+      "record_count": 0,
+      "sha256": "f19f3a856d61c47e3679135593f5c1940966704d27b8a9a021f851cfc74b75b5"
+    },
+    "B5_TEN_SITE_SOURCE_ONTOLOGY_V1": {
+      "record_count": 11,
+      "sha256": "4faa14ba301c9658de21ff881146f312e3392735ca8078374ba104d2fa7c59a0"
+    }
+  },
+  "production": false,
+  "ready": false,
+  "schema_version": "LATEST_B5_TEN_SITE_AI_BLUEPRINT_MATERIALIZATION_POINTER_V1",
+  "terminal": "B5_AI_BLUEPRINT_ONTOLOGY_MATERIALIZER_PASS"
+}

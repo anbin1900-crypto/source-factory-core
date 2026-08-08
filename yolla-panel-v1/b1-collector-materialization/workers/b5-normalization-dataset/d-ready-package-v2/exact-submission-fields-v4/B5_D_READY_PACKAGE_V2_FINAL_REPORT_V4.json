@@ -1,0 +1,105 @@
+{
+  "schema_version": "B5_D_READY_PACKAGE_V2_FINAL_REPORT_V4",
+  "batch_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V4-20260806-001",
+  "task_id": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS",
+  "directive_comment": 5202449584,
+  "worker": "B-5_NORMALIZATION_DB_PACKAGE_WORKER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 41,
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "baseline_head": "4fde3e03f19a772c0d95047ca724ce44ad3a4be3",
+  "completed_at_kst": "2026-08-06T18:09:00+09:00",
+  "status": "EXACT_SUBMISSION_FIELDS_READY_FOR_B6_DELTA_ONLY_REPREFLIGHT",
+  "required_terminal": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_READY_OR_EXACT_BLOCKER",
+  "terminal": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_READY",
+  "next_event": "B6_D_SOURCE_DOCUMENT_HANDOFF_REPREFLIGHT",
+  "common_directive": {
+    "commit": "15e65360dea7c7e0f6b1595558d3f92ce25c1843",
+    "blob": "1f230fc15179bc793bd23d391ebb238e4264b940",
+    "remote_readback": "PASS"
+  },
+  "prior_blocker": {
+    "terminal": "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_EXACT_BLOCKER",
+    "reason": "PRODUCER_HEAD_SELF_REFERENTIAL_CONTENT_COMMIT_SEMANTICS_UNRESOLVED",
+    "resolved": true,
+    "resolution": "D1_DEFINED_producer_head_AS_PACKAGE_CONTENT_COMMIT_AND_ALLOWED_LATER_REQUEST_PUBLICATION"
+  },
+  "d1_compatibility": {
+    "head": "0bc38b41375fdef78172ed3cb4112b099ea28426",
+    "terminal": "D1_B_RECEIPT_V2_COMPATIBILITY_READY",
+    "terminal_comment": 5200586374,
+    "procedure_addendum_blob": "58408175b1683cf566e201b57bd17b5e19c459e8",
+    "compatibility_decision_blob": "fb1e8f7b82a4516a06fbe58c27da89b46a746431",
+    "tree_binding_v2_blob": "38692279e691ab1de4a97017246c2c85b4ee6d3e",
+    "decision": "PASS_EXACT"
+  },
+  "exact_submission_fields": {
+    "result": "PASS_4_OF_4",
+    "producer_head": "59405edba453e2f8512dfddd969ba1ae899526ae",
+    "package_blob_or_storage_pointer": "3a204094b4a81486646f863228b5059745fba758",
+    "record_count": 3,
+    "submitted_at": "2026-08-06T18:09:00+09:00"
+  },
+  "producer_head_validation": {
+    "package_path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/d-ready-package-v2/authority-ready-v2/B5_D_READY_FIXTURE_PACKAGE_V2.json",
+    "package_json_pointer": "/materialized_database_package",
+    "package_blob_at_producer_head": "3a204094b4a81486646f863228b5059745fba758",
+    "package_readback": "PASS",
+    "request_publication_commit": "23111e17dfc4cc81f117414dfccd8555477d9b59",
+    "request_commit_descendant_of_producer_head": "PASS"
+  },
+  "package_preservation": {
+    "package_sha256": "f97df341fedb2a81e681b1f00fb3f857b95b425de0fe5ce264bb28a5e18905aa",
+    "dataset_sha256": "5692223b88c966323e3080825f44f473020e4d027d3282449e938183d2af429b",
+    "sqlite_row_count": 3,
+    "input_record_count": 4,
+    "output_record_count": 3,
+    "duplicate_count": 1,
+    "package_modified": false,
+    "source_fields_changed": false,
+    "unmapped_values_changed": false,
+    "dedup_lineage_changed": false,
+    "source_field_loss_count": 0,
+    "silent_drop_count": 0
+  },
+  "validation": {
+    "prior_package_tests": "PASS_45_OF_45_UNCHANGED",
+    "delta_tests": "PASS_24_OF_24",
+    "deterministic_second_run": "PASS_24_OF_24",
+    "aggregate_evidence": "PASS_69_OF_69_EVIDENCE",
+    "compile": "PASS_2_OF_2",
+    "custom_validator": "PASS",
+    "schema_validation": "PASS",
+    "producer_head_package_readback": "PASS",
+    "package_blob_sha256_parity": "PASS_PRIOR_VALIDATED_PACKAGE_AND_EXACT_BLOB_READBACK",
+    "record_count_package_dataset_sqlite_parity": "PASS_3_3_3",
+    "submitted_at_rfc3339_timezone": "PASS",
+    "test_report_blob": "767edfa569fb66915e12f86c892ef952e98a1bd5",
+    "github_actions_ci_pass_claimed": false
+  },
+  "artifacts": {
+    "schema_blob": "955c873d10d41e8f5499d4f576530f16d3a286ca",
+    "request_blob": "4971b8b57cfd2f2a36b9146fa562579214a01a2a",
+    "fixture_bundle_blob": "a9f6e8fcf015eddbe2303cb89862c6587cec559a",
+    "validator_blob": "96cbb4f3a77ebff37359dd75eee37ffac8b634b6",
+    "test_source_blob": "6a558d11431e1b3ea40e79d9e3171970393fdadb",
+    "test_report_blob": "767edfa569fb66915e12f86c892ef952e98a1bd5"
+  },
+  "hashes": {
+    "package_sha256": "f97df341fedb2a81e681b1f00fb3f857b95b425de0fe5ce264bb28a5e18905aa",
+    "request_sha256": "6edfd33f0771e19a6a17381a7c40d3d238cfb66d80b102a255ed9c4e908ad9b9",
+    "bundle_sha256": "660b0842c4381b41dd954a9e607ff642de5d398b008eb076158ec898f90e8b2c"
+  },
+  "external_blocker_count": 0,
+  "d_canonical_id_generation_count": 0,
+  "d_acceptance_claim": false,
+  "actual_site_extraction": false,
+  "actual_d_package_acceptance": false,
+  "actual_receipt_issuance": false,
+  "postgresql_connection": false,
+  "canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

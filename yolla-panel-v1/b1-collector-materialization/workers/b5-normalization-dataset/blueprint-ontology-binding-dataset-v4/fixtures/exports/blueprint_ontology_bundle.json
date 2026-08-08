@@ -1,0 +1,248 @@
+{
+  "AI_PRODUCT_BLUEPRINT_DATASET_V1": {
+    "records": [
+      {
+        "blueprint_id": "BLUEPRINT-REAL-ESTATE-CYCLE4-001",
+        "evidence_pointer": {
+          "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "path": "fixtures/naver-listing.json"
+        },
+        "product_surface": "LISTING_SEARCH",
+        "semantic_status": "CANDIDATE",
+        "source_fields": [
+          "articleNo",
+          "dealOrWarrantPrc",
+          "area2"
+        ],
+        "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE"
+      },
+      {
+        "blueprint_id": "BLUEPRINT-REAL-ESTATE-CYCLE4-001",
+        "evidence_pointer": {
+          "artifact_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "path": "fixtures/kb-listing.json"
+        },
+        "product_surface": "LISTING_SEARCH",
+        "semantic_status": "CANDIDATE",
+        "source_fields": [
+          "매물번호",
+          "매매가",
+          "전용면적"
+        ],
+        "source_site_id": "SITE-KB-LAND"
+      }
+    ],
+    "schema_version": "AI_PRODUCT_BLUEPRINT_DATASET_V1"
+  },
+  "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1": {
+    "records": [
+      {
+        "canonical_candidate_id": "listing_id",
+        "evidence_pointers": [
+          "EVIDENCE-NAVER-ARTICLE-NO",
+          "EVIDENCE-KB-LISTING-NO"
+        ],
+        "label_ko": "매물 식별자",
+        "semantic_status": "CANDIDATE",
+        "value_type_candidate": "string"
+      },
+      {
+        "canonical_candidate_id": "deal_price_krw",
+        "evidence_pointers": [
+          "EVIDENCE-NAVER-DEAL-PRICE",
+          "EVIDENCE-KB-DEAL-PRICE"
+        ],
+        "label_ko": "매매가격 원화",
+        "semantic_status": "CANDIDATE",
+        "value_type_candidate": "decimal"
+      },
+      {
+        "canonical_candidate_id": "exclusive_area_m2",
+        "evidence_pointers": [
+          "EVIDENCE-NAVER-AREA2",
+          "EVIDENCE-KB-EXCLUSIVE-AREA"
+        ],
+        "label_ko": "전용면적 제곱미터",
+        "semantic_status": "CANDIDATE",
+        "value_type_candidate": "decimal"
+      }
+    ],
+    "schema_version": "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1"
+  },
+  "REAL_ESTATE_SITE_CAPABILITY_PROFILE_V1": {
+    "records": [
+      {
+        "capabilities": [
+          "LISTING_SEARCH",
+          "LISTING_DETAIL"
+        ],
+        "evidence_pointer": {
+          "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "path": "fixtures/naver-listing.json"
+        },
+        "semantic_status": "CANDIDATE",
+        "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+        "write_capability": "UNKNOWN"
+      },
+      {
+        "capabilities": [
+          "LISTING_SEARCH",
+          "LISTING_DETAIL"
+        ],
+        "evidence_pointer": {
+          "artifact_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "path": "fixtures/kb-listing.json"
+        },
+        "semantic_status": "CANDIDATE",
+        "source_site_id": "SITE-KB-LAND",
+        "write_capability": "UNKNOWN"
+      }
+    ],
+    "schema_version": "REAL_ESTATE_SITE_CAPABILITY_PROFILE_V1"
+  },
+  "SITE_LISTING_FIELD_BINDING_V1": {
+    "records": [
+      {
+        "canonical_candidate_id": "listing_id",
+        "evidence_pointer": {
+          "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "path": "fixtures/naver-listing.json#/articleNo"
+        },
+        "read_transform": {
+          "expression": "value",
+          "op": "PRESERVE_RAW"
+        },
+        "semantic_status": "CANDIDATE",
+        "site_field_name": "articleNo",
+        "source_field_name": "articleNo",
+        "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+        "write_transform": {
+          "expression": "raw_value",
+          "op": "RESTORE_RAW"
+        }
+      },
+      {
+        "canonical_candidate_id": "deal_price_krw",
+        "evidence_pointer": {
+          "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "path": "fixtures/naver-listing.json#/dealOrWarrantPrc"
+        },
+        "read_transform": {
+          "expression": "value",
+          "op": "PRESERVE_RAW_WITH_DECIMAL_CANDIDATE"
+        },
+        "semantic_status": "CANDIDATE",
+        "site_field_name": "dealOrWarrantPrc",
+        "source_field_name": "dealOrWarrantPrc",
+        "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+        "write_transform": {
+          "expression": "raw_value",
+          "op": "RESTORE_RAW"
+        }
+      },
+      {
+        "canonical_candidate_id": "exclusive_area_m2",
+        "evidence_pointer": {
+          "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "path": "fixtures/naver-listing.json#/area2"
+        },
+        "read_transform": {
+          "expression": "value",
+          "op": "PRESERVE_RAW_WITH_DECIMAL_CANDIDATE"
+        },
+        "semantic_status": "CANDIDATE",
+        "site_field_name": "area2",
+        "source_field_name": "area2",
+        "source_site_id": "SITE-NAVER-PAY-REAL-ESTATE",
+        "write_transform": {
+          "expression": "raw_value",
+          "op": "RESTORE_RAW"
+        }
+      },
+      {
+        "canonical_candidate_id": "listing_id",
+        "evidence_pointer": {
+          "artifact_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "path": "fixtures/kb-listing.json#/매물번호"
+        },
+        "read_transform": {
+          "expression": "value",
+          "op": "PRESERVE_RAW"
+        },
+        "semantic_status": "CANDIDATE",
+        "site_field_name": "매물번호",
+        "source_field_name": "매물번호",
+        "source_site_id": "SITE-KB-LAND",
+        "write_transform": {
+          "expression": "raw_value",
+          "op": "RESTORE_RAW"
+        }
+      },
+      {
+        "canonical_candidate_id": "deal_price_krw",
+        "evidence_pointer": {
+          "artifact_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "path": "fixtures/kb-listing.json#/매매가"
+        },
+        "read_transform": {
+          "expression": "value",
+          "op": "PRESERVE_RAW_WITH_DECIMAL_CANDIDATE"
+        },
+        "semantic_status": "CANDIDATE",
+        "site_field_name": "매매가",
+        "source_field_name": "매매가",
+        "source_site_id": "SITE-KB-LAND",
+        "write_transform": {
+          "expression": "raw_value",
+          "op": "RESTORE_RAW"
+        }
+      },
+      {
+        "canonical_candidate_id": "exclusive_area_m2",
+        "evidence_pointer": {
+          "artifact_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "path": "fixtures/kb-listing.json#/전용면적"
+        },
+        "read_transform": {
+          "expression": "value",
+          "op": "PRESERVE_RAW_WITH_DECIMAL_CANDIDATE"
+        },
+        "semantic_status": "CANDIDATE",
+        "site_field_name": "전용면적",
+        "source_field_name": "전용면적",
+        "source_site_id": "SITE-KB-LAND",
+        "write_transform": {
+          "expression": "raw_value",
+          "op": "RESTORE_RAW"
+        }
+      }
+    ],
+    "schema_version": "SITE_LISTING_FIELD_BINDING_V1"
+  },
+  "YOLLA_LISTING_LEDGER_SCHEMA_CANDIDATE_V1": {
+    "records": [
+      {
+        "canonical_candidate_id": "listing_id",
+        "ledger_column_candidate": "listing_id",
+        "nullable_candidate": false,
+        "semantic_status": "CANDIDATE",
+        "value_type_candidate": "string"
+      },
+      {
+        "canonical_candidate_id": "deal_price_krw",
+        "ledger_column_candidate": "deal_price_krw",
+        "nullable_candidate": true,
+        "semantic_status": "CANDIDATE",
+        "value_type_candidate": "decimal"
+      },
+      {
+        "canonical_candidate_id": "exclusive_area_m2",
+        "ledger_column_candidate": "exclusive_area_m2",
+        "nullable_candidate": true,
+        "semantic_status": "CANDIDATE",
+        "value_type_candidate": "decimal"
+      }
+    ],
+    "schema_version": "YOLLA_LISTING_LEDGER_SCHEMA_CANDIDATE_V1"
+  }
+}

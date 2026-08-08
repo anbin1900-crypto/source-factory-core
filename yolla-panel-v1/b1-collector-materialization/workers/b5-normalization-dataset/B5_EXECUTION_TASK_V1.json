@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "B1-B5-EXECUTION-TASK-V1-20260804-001",
+  "registered_at_kst": "2026-08-04T05:11:00+09:00",
+  "worker": "B-5",
+  "control_pr": 41,
+  "parent_directive": "B1-TO-B5-NORMALIZATION-DATASET-RECEIPT-V1-20260804-001",
+  "parent_directive_superseded": false,
+  "mode": "FIXTURE_FIRST_LOSSLESS_IMPLEMENTATION",
+  "objective": "Implement deterministic lossless normalization, documented deduplication lineage, normalized dataset, extraction receipt and fixture SQLite materialization without semantic classification or D canonical decisions.",
+  "implementation_order": [
+    "COMMIT_B5_START_REPORT_AND_LATEST_POINTER",
+    "FREEZE_NORMALIZED_DATASET_AND_EXTRACTION_RECEIPT_CONTRACTS",
+    "IMPLEMENT_FIELD_PRESERVATION_MAP",
+    "IMPLEMENT_LOSSLESS_NORMALIZER",
+    "IMPLEMENT_DEDUPLICATOR_WITH_LINEAGE",
+    "IMPLEMENT_FIXTURE_SQLITE_MATERIALIZER",
+    "VERIFY_RECORD_AND_FIELD_PARITY",
+    "RUN_DETERMINISM_DEDUP_AND_RESTART_READBACK_TESTS",
+    "COMMIT_B5_FINAL_REPORT_AND_LATEST_POINTER",
+    "POST_TERMINAL_TO_PR41_AND_PR19"
+  ],
+  "required_paths": [
+    "contracts/NORMALIZED_DATASET_V1.json",
+    "contracts/EXTRACTION_RECEIPT_V1.json",
+    "contracts/FIELD_PRESERVATION_MAP_V1.json",
+    "contracts/DEDUP_LINEAGE_V1.json",
+    "contracts/FIXTURE_MATERIALIZED_DATABASE_PACKAGE_V1.json",
+    "src/lossless_normalizer.py",
+    "src/deduplicator.py",
+    "src/sqlite_materializer.py",
+    "tests/test_normalization_dataset_receipt.py",
+    "B5_START_REPORT_V1.json",
+    "B5_SQLITE_READBACK_RECEIPT_V1.json",
+    "B5_TEST_RESULTS_V1.json",
+    "B5_FINAL_REPORT_V1.json",
+    "LATEST_B5_REPORT_POINTER.json"
+  ],
+  "minimum_test_cases": 22,
+  "required_test_categories": [
+    "ALL_SOURCE_FIELDS_ACCOUNTED_FOR",
+    "UNMAPPED_FIELDS_PRESERVED_UNCHANGED",
+    "SOURCE_FIELD_LOSS_COUNT_ZERO",
+    "NORMALIZATION_DETERMINISTIC_SECOND_RUN",
+    "DOCUMENTED_DUPLICATES_ONLY_REMOVED",
+    "DEDUP_LINEAGE_TO_ALL_SOURCE_RECORDS",
+    "DISTINCT_RECORDS_NOT_COLLAPSED",
+    "INPUT_OUTPUT_COUNT_PARITY_EXCEPT_DOCUMENTED_DUPLICATES",
+    "SQLITE_ROW_COUNT_PARITY",
+    "SQLITE_RESTART_READBACK",
+    "EXTRACTION_RECEIPT_HASH_AND_POINTER_PARITY",
+    "C_SEMANTIC_TRANSFORMATION_COUNT_ZERO",
+    "D_CANONICAL_SCHEMA_DECISION_COUNT_ZERO",
+    "D_CANONICAL_DB_WRITE_COUNT_ZERO"
+  ],
+  "inputs": {
+    "immediate": "FIXTURE_SOURCE_RECORD_ENVELOPES",
+    "later_rebind": "B4_SOURCE_RECORD_ENVELOPE_AND_B3_INCREMENTAL_COLLECTION_RESULTS"
+  },
+  "handoff_to": ["B-6", "D-1_VIA_B1_SEPARATE_HANDOFF", "C-1_VIA_B6_SOURCE_EVIDENCE", "B-1"],
+  "terminal": "B5_NORMALIZED_DATASET_EXTRACTION_RECEIPT_READY_OR_EXACT_BLOCKER",
+  "boundaries": {
+    "source_field_loss": 0,
+    "semantic_classification": false,
+    "d_canonical_schema_decision": false,
+    "d_canonical_db_write": false,
+    "actual_bulk_collection": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

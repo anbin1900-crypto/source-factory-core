@@ -1,0 +1,18 @@
+{
+  "artifact_pointer": "b4://artifact-checkpoint/fixture",
+  "checkpoint_seq": 3,
+  "command_id": "CMD-B5-SMOKE",
+  "dataset_id": "b5-cycle2-smoke",
+  "dataset_path": "dataset.jsonl",
+  "dataset_sha256": "b2a101cadd3392c4bb8c5f2dbf591307577229f4f35a8b699792e1a018e1a26c",
+  "dataset_size_bytes": 93076,
+  "last_action_id": "action:1205",
+  "last_cursor": "cursor:1205",
+  "previous_checkpoint_path": "checkpoints/checkpoint-000002.json",
+  "previous_checkpoint_sha256": "d03392cc4bbc5f57e308b62a9f6333c81cc0339a63196c5a14271a523e34c6d6",
+  "recipe_version": "recipe-v1",
+  "record_count": 1205,
+  "schema_pointer": "schema://normalized-preview-v1",
+  "schema_version": "DATASET_CHECKPOINT_V1",
+  "session_id": "SESSION-B5-001"
+}

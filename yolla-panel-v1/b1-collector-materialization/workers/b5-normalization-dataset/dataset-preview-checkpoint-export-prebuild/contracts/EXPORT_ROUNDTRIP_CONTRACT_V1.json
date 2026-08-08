@@ -1,0 +1,15 @@
+{
+  "encoding": {"csv": "UTF-8-BOM + CRLF", "json": "UTF-8", "xlsx": "OpenXML ZIP"},
+  "field_order_rule": "checkpoint.fields order is authoritative and identical across exports",
+  "formats": ["JSON", "CSV", "XLSX"],
+  "round_trip": {
+    "display_value_parity": "canonical_cell exact for CSV/XLSX; JSON preserves native values",
+    "field_name_parity": "EXACT",
+    "missing_value": "empty cell/string in CSV/XLSX; null or absent source normalized to null/empty by field projection",
+    "nested_value": "canonical JSON string with sorted keys for CSV/XLSX",
+    "record_count_parity": "EXACT"
+  },
+  "schema_version": "EXPORT_ROUNDTRIP_CONTRACT_V1",
+  "source_immutability": "Dataset JSONL is append-only; user edits are overlay-only and do not mutate source lines",
+  "validation": ["header equality", "record count equality", "canonical display value matrix equality", "SHA-256 for every export"]
+}

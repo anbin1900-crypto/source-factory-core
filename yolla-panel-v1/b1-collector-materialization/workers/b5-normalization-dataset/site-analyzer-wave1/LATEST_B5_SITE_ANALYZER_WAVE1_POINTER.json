@@ -1,0 +1,58 @@
+{
+  "schema_version": "LATEST_B5_SITE_ANALYZER_WAVE1_POINTER_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "directive_comment": 5207574580,
+  "common_authority_commit": "20b8a6401de124186037d44f9f17076c97142402",
+  "worker": "B-5",
+  "worker_pr": 41,
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "baseline_head": "40891f2f87eb9f58a369f71e46cadc43f4586157",
+  "implementation_commit": "510ff003b4383c3b198e0055c0c69d8e984332b9",
+  "test_report": {
+    "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/site-analyzer-wave1/B5_SITE_ANALYZER_WAVE1_TEST_REPORT_V1.json",
+    "commit": "6a79aa76f066b12ff592ce28aa02b9618a543919",
+    "blob": "69c26c269dff3c651b02f1f9006ed7bb73a476fa"
+  },
+  "final_report": {
+    "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/site-analyzer-wave1/B5_SITE_ANALYZER_WAVE1_FINAL_REPORT_V1.json",
+    "commit": "985ae0f7e6a71d27481d5729a0796f9d3e759196",
+    "blob": "b9b507ee3b32bba003545617aa16c40bec1860fe"
+  },
+  "entrypoint": {
+    "path": "yolla-panel-v1/b1-collector-materialization/workers/b5-normalization-dataset/site-analyzer-wave1/src/index.js",
+    "blob": "36961bf41a273864705b1e70eb6c8729b6c3c1f8",
+    "runtime": "NODE_COMMONJS_ELECTRON_COMPATIBLE"
+  },
+  "artifact_blobs": {
+    "contract": "352f005aecf2ae5059157a86ae8960f36bd62c6e",
+    "preview_export_engine": "7674152ceb3a28d20ffabcd21cc1aa9b98467202",
+    "xlsx_writer": "6625b33d55dd8c28ce9817e94a0650261a263c0f",
+    "fixture": "79bf601c8508ab9c444f73adca8814e78e2f5982",
+    "test_source": "8f156ffdd3c2156d83b52a1bb059eb9780543722",
+    "sample_json": "73e5cfe1a5833f99e882afbc1bf1ff82f9d384a9",
+    "sample_csv": "d8f186b96d299833d247ce52f0efd9575a4b62e1",
+    "sample_xlsx": "f1ae80dc3905adbe744cfa29f3516545ecb151be",
+    "sample_manifest": "c3f16d1bdf45ab0a4ebed3a9bc853322a9a2373a"
+  },
+  "validation": {
+    "tests": "PASS_41_OF_41",
+    "preview_export_record_parity": "PASS_3_OF_3",
+    "excel_openxml_readback": "PASS_OPENPYXL",
+    "json_export": "PASS",
+    "csv_export": "PASS",
+    "xlsx_export": "PASS",
+    "source_pointer_preservation": "PASS",
+    "binary_manifest_sha_parity": "PASS",
+    "out_of_scope_write_count": 0
+  },
+  "status": "SITE_ANALYZER_PREVIEW_EDITOR_EXPORT_IMPLEMENTED_AND_TESTED",
+  "terminal": "B5_SITE_ANALYZER_WAVE1_PREVIEW_EDITOR_EXPORT_PASS",
+  "external_blocker_count": 0,
+  "next_event": "B1_AND_B6_CONSUME_B5_PREVIEW_EXPORT_MODULE",
+  "database_work": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "updated_at_kst": "2026-08-07T02:24:00+09:00"
+}

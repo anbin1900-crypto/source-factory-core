@@ -1,0 +1,225 @@
+{
+  "lineage": {
+    "append_policy": "SEPARATE_V8_APPEND_ONLY_NO_PRIOR_REWRITE",
+    "cycle_id": "V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+    "directive_comment": 5224506049,
+    "directive_id": "V2-TO-B5-TEN-SITE-AI-BLUEPRINT-MATERIALIZATION-V1-20260808-001",
+    "input_sha256": "3cad583eed9119f86d111ad880ee0ccdfbdc0999e170b0b1d815775abbf2c43e",
+    "lineage_key": "aa09ca3187213a4a73212eab716ac186d8bd7d485c355e0e4e85f5d72946bc9c",
+    "parent_v7_head": "a5445ba97dad347e3bc7a7a4b9586ad3de4c3c98",
+    "parent_v7_pointer_blob": "8452508bb9f4dd0af0cc2731de76339ed4615096",
+    "parent_v7_terminal": "B5_REAL_SITE_BLUEPRINT_ONTOLOGY_MATERIALIZATION_READY"
+  },
+  "records": [
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "canonical_authority": null,
+      "field_id": "agency.source_id",
+      "mapping_status": "CANDIDATE",
+      "record_policy": "APPEND_ONLY_CANDIDATE_OR_UNKNOWN",
+      "value_type": "string"
+    },
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "canonical_authority": null,
+      "field_id": "agent.source_id",
+      "mapping_status": "UNKNOWN",
+      "record_policy": "APPEND_ONLY_CANDIDATE_OR_UNKNOWN",
+      "value_type": "string"
+    },
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "canonical_authority": null,
+      "field_id": "complex.source_id",
+      "mapping_status": "UNKNOWN",
+      "record_policy": "APPEND_ONLY_CANDIDATE_OR_UNKNOWN",
+      "value_type": "string"
+    },
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "canonical_authority": null,
+      "field_id": "listing.area",
+      "mapping_status": "CANDIDATE",
+      "record_policy": "APPEND_ONLY_CANDIDATE_OR_UNKNOWN",
+      "value_type": "object"
+    },
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "canonical_authority": null,
+      "field_id": "listing.contact",
+      "mapping_status": "UNKNOWN",
+      "record_policy": "APPEND_ONLY_CANDIDATE_OR_UNKNOWN",
+      "value_type": "object"
+    },
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "canonical_authority": null,
+      "field_id": "listing.location",
+      "mapping_status": "CANDIDATE",
+      "record_policy": "APPEND_ONLY_CANDIDATE_OR_UNKNOWN",
+      "value_type": "object"
+    },
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "canonical_authority": null,
+      "field_id": "listing.media",
+      "mapping_status": "CANDIDATE",
+      "record_policy": "APPEND_ONLY_CANDIDATE_OR_UNKNOWN",
+      "value_type": "array"
+    },
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "canonical_authority": null,
+      "field_id": "listing.price",
+      "mapping_status": "CANDIDATE",
+      "record_policy": "APPEND_ONLY_CANDIDATE_OR_UNKNOWN",
+      "value_type": "object"
+    },
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "canonical_authority": null,
+      "field_id": "listing.source_id",
+      "mapping_status": "CANDIDATE",
+      "record_policy": "APPEND_ONLY_CANDIDATE_OR_UNKNOWN",
+      "value_type": "string"
+    },
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "canonical_authority": null,
+      "field_id": "listing.status",
+      "mapping_status": "UNKNOWN",
+      "record_policy": "APPEND_ONLY_CANDIDATE_OR_UNKNOWN",
+      "value_type": "string"
+    },
+    {
+      "applicable_site_slots": [
+        "SITE_SLOT_001",
+        "SITE_SLOT_002",
+        "SITE_SLOT_003",
+        "SITE_SLOT_004",
+        "SITE_SLOT_005",
+        "SITE_SLOT_006",
+        "SITE_SLOT_007",
+        "SITE_SLOT_008",
+        "SITE_SLOT_009",
+        "SITE_SLOT_010"
+      ],
+      "canonical_authority": null,
+      "field_id": "listing.title",
+      "mapping_status": "CANDIDATE",
+      "record_policy": "APPEND_ONLY_CANDIDATE_OR_UNKNOWN",
+      "value_type": "string"
+    }
+  ],
+  "schema_version": "B5_TEN_SITE_SOURCE_ONTOLOGY_V1"
+}

@@ -1,0 +1,13 @@
+{
+  "checkpoint_path": "checkpoint.json",
+  "checkpoint_sha256": "22b8bfa0fbbbb14e21556cd960577b62e37e4f62f1a3428d437c8d0457467e24",
+  "dataset_id": "b5-contextless-fixture",
+  "dataset_path": "dataset.jsonl",
+  "dataset_sha256": "0df35907ae18e34e545972ecbf046f8b4a2b6567731e50c0b7bb24813419986d",
+  "edit_overlay_path": "edit_overlay.json",
+  "edit_overlay_sha256": "99953df08dfbe728d3de81b4ba2bc6d07f8a433219db473ec0cb07049b90554b",
+  "last_committed_record_count": 12,
+  "next_append_index": 12,
+  "recovery_requires_chat_context": false,
+  "schema_version": "LATEST_B5_DATASET_POINTER_V1"
+}

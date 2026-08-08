@@ -1,0 +1,18 @@
+{
+  "$id": "NORMALIZED_PREVIEW_DATASET_V1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "dataset_id": {"minLength": 1, "type": "string"},
+    "edit_overlay": {"properties": {"path": {"type": "string"}, "sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}}, "required": ["path", "sha256"], "type": "object"},
+    "fields": {"items": {"properties": {"confidence": {"maximum": 1, "minimum": 0, "type": "number"}, "duplicate": {"properties": {"count": {"minimum": 0, "type": "integer"}, "present": {"type": "boolean"}}, "required": ["count", "present"], "type": "object"}, "missing": {"properties": {"count": {"minimum": 0, "type": "integer"}, "present": {"type": "boolean"}}, "required": ["count", "present"], "type": "object"}, "name": {"type": "string"}, "record_count": {"minimum": 0, "type": "integer"}, "source": {}, "type": {"enum": ["null", "boolean", "integer", "number", "string", "array", "object", "mixed", "unknown"]}}, "required": ["name", "type", "source", "confidence", "missing", "duplicate", "record_count"], "type": "object"}, "type": "array"},
+    "last_committed_record_count": {"minimum": 0, "type": "integer"},
+    "record_count": {"minimum": 0, "type": "integer"},
+    "schema_version": {"const": "NORMALIZED_PREVIEW_DATASET_V1"},
+    "source_field_loss_count": {"const": 0},
+    "storage": {"properties": {"format": {"const": "JSONL_APPEND_ONLY"}, "path": {"type": "string"}, "sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}, "size_bytes": {"minimum": 0, "type": "integer"}}, "required": ["format", "path", "sha256", "size_bytes"], "type": "object"}
+  },
+  "required": ["schema_version", "dataset_id", "record_count", "last_committed_record_count", "fields", "storage", "edit_overlay", "source_field_loss_count"],
+  "title": "NORMALIZED_PREVIEW_DATASET_V1",
+  "type": "object"
+}

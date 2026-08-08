@@ -1,0 +1,22 @@
+{
+  "schema_version": "B5_REAL_ESTATE_FIELD_ONTOLOGY_SITE_BINDING_SMOKE_RECEIPT_V1",
+  "directive_id": "A0-TO-B5-REAL-ESTATE-FIELD-ONTOLOGY-SITE-BINDING-V5-20260808-001",
+  "result": "PASS",
+  "dataset_readback": "PASS_3_OF_3",
+  "contract_validation": "PASS_3_OF_3",
+  "evidence_artifact_readback": "PASS_1_OF_1",
+  "checkpoint_sequence": [1, 2],
+  "contextless_readback": "PASS",
+  "duplicate_materialization_noop": "PASS",
+  "site_count": 2,
+  "canonical_candidate_count": 6,
+  "binding_count": 12,
+  "transform_candidate_count": 24,
+  "source_field_loss_count": 0,
+  "source_field_synthesis_count": 0,
+  "canonical_confirmed_without_authority_count": 0,
+  "unknown_write_transform_count": 12,
+  "unknown_business_rule_count": 12,
+  "parent_evidence_sha256": "4b8f68a10a9ca63bf2d24b01f93cdce8928aefd3aa92b851d8cb82541fbad038",
+  "verified_at_kst": "2026-08-08T01:49:00+09:00"
+}

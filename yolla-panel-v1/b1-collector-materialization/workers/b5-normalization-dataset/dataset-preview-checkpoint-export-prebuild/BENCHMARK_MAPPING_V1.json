@@ -1,0 +1,7 @@
+{
+  "apify_dataset_ux": "Append-oriented dataset storage with export and resumable pointers; B5 uses JSONL append + checkpoint + JSON/CSV/XLSX export.",
+  "implementation_dependency": "No TanStack/JSONEditor/Apify runtime dependency is added; benchmarks are behavioral references only.",
+  "jsoneditor": "Keep editable user state explicit; B5 stores edits in an overlay/audit stream and never mutates append-only source JSONL.",
+  "schema_version": "B5_BENCHMARK_MAPPING_V1",
+  "tanstack_table_virtual": "Separate row model from virtualization; B5 exposes total_record_count plus partial virtual window rather than materializing 1000+ rows into the preview."
+}

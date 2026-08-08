@@ -1,0 +1,22 @@
+{
+  "events": [
+    {
+      "blueprint_id": "BLUEPRINT-REAL-ESTATE-CYCLE4-001",
+      "bound_source_field_count": 6,
+      "bundle_sha256": "03026a3f6a3fa7bfc4323c02f4722048e8045ce7aeb41981afcd94f3b509db3a",
+      "checkpoint_seq": 3,
+      "dataset_phase": "COMPLETE",
+      "evidence_pointer_count": 6,
+      "received_at": "2026-08-08T13:11:00+09:00",
+      "result_event_id": "RESULT-EVENT-CYCLE4-001",
+      "result_id": "RESULT-CYCLE4-001",
+      "semantic_status_counts": {
+        "CANDIDATE": 12,
+        "CANONICAL": 0,
+        "UNKNOWN": 0
+      },
+      "source_field_count": 6,
+      "source_field_loss_count": 0
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"REAL_SITE_ONTOLOGY_BINDING_UPDATE_V1","type":"object","required":["schema_version","lineage","records"],"properties":{"schema_version":{"const":"REAL_SITE_ONTOLOGY_BINDING_UPDATE_V1"},"lineage":{"type":"object"},"records":{"type":"array"}},"additionalProperties":false}

@@ -1,0 +1,44 @@
+{
+  "blueprint_id": null,
+  "checkpoint_seq": 2,
+  "checkpoint_sha256": "8094dc0bb4e5e10f52e026334a9153a6eab34c0f0172ca7c5676d9889ea87dda",
+  "combined_state": "COMPLETE_RESULT_PENDING",
+  "command_id": "CMD-CYCLE4-001",
+  "dataset_id": "DATASET-CYCLE4-001",
+  "dataset_phase": "EMPTY",
+  "datasets": {
+    "AI_PRODUCT_BLUEPRINT_DATASET_V1": {
+      "path": "datasets/AI_PRODUCT_BLUEPRINT_DATASET_V1.json",
+      "record_count": 0,
+      "sha256": "42a3fccc2f66499364cd5248c856f71b4506cef416df98670caf4b888679e703"
+    },
+    "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1": {
+      "path": "datasets/REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1.json",
+      "record_count": 0,
+      "sha256": "74890c5c7e7f9988138fad1170c52ecbd26f69ec92600245827ca5e18b6a438e"
+    },
+    "REAL_ESTATE_SITE_CAPABILITY_PROFILE_V1": {
+      "path": "datasets/REAL_ESTATE_SITE_CAPABILITY_PROFILE_V1.json",
+      "record_count": 0,
+      "sha256": "c0220c765b0b37e02f008c7fcf5eaa0152ed601c9c2fd3499bd96647634cd8fd"
+    },
+    "SITE_LISTING_FIELD_BINDING_V1": {
+      "path": "datasets/SITE_LISTING_FIELD_BINDING_V1.json",
+      "record_count": 0,
+      "sha256": "67b622fbac77d0d359cdb3dfd21383b3cf59b69df5675b230eaf353b229e033a"
+    },
+    "YOLLA_LISTING_LEDGER_SCHEMA_CANDIDATE_V1": {
+      "path": "datasets/YOLLA_LISTING_LEDGER_SCHEMA_CANDIDATE_V1.json",
+      "record_count": 0,
+      "sha256": "1c16f11abfcce7f6383b6cdad1fb5f87fe4908edb2962b41b2c6b6cfc8c05344"
+    }
+  },
+  "last_result_event_id": null,
+  "lineage_key": "c95774e1ccf8f37db75deacd6e46c13af3db5f23e45667c62a5b6401f5c1393e",
+  "previous_checkpoint_path": "checkpoints/checkpoint-000001.json",
+  "previous_checkpoint_sha256": "dc89af421f88bb776e94d62e1a2d52e7dddd3e22c4f2d734819709b1c2b1a9bf",
+  "recipe_version": "recipe-v4",
+  "schema_version": "BLUEPRINT_ONTOLOGY_BINDING_CHECKPOINT_V1",
+  "session_id": "SESSION-CYCLE4-001",
+  "worker_id": "BROWSER-WORKER-02"
+}

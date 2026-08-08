@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1.schema.json",
+  "type": "object",
+  "required": ["schema_version", "records"],
+  "properties": {"schema_version": {"const": "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1"}, "records": {"type": "array", "items": {"type": "object", "required": ["canonical_candidate_id", "semantic_status"]}}},
+  "additionalProperties": true
+}

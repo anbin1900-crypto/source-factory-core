@@ -1,0 +1,55 @@
+{
+  "checkpoint": {
+    "dataset_sha256": "d248a3fe62bc81fc7d435ede20aa3a38b7d8d339ce61c451cd8cde81dc401293",
+    "edit_overlay_sha256": "105b80c8cba37d3f3edee5d552c8b1add1727a05aa7d2de193152b67603ae3b9",
+    "last_committed_record_count": 1205,
+    "source_field_loss_count": 0
+  },
+  "checks": {
+    "checkpoint_resume": "PASS",
+    "contextless_pointer_recovery": "PASS",
+    "field_status_model": "PASS",
+    "incremental_append": "PASS",
+    "round_trip_field_parity": "PASS",
+    "schema_parse": "PASS",
+    "single_command_smoke": "PASS",
+    "virtual_preview_1000_plus": "PASS"
+  },
+  "duplicate_field_count": 2,
+  "edited_record_index": 700,
+  "edited_value": 777777,
+  "exports": {
+    "field_order": ["category", "duplicate_bucket", "id", "name", "optional_note", "value"],
+    "files": {
+      "csv": {"encoding": "UTF-8-BOM", "line_ending": "CRLF", "path": "exports/dataset.csv", "sha256": "ce97bd6a6bdb6bfb1a4d323f5f5b5148cafce92b82c61af10443b99e2e1dc664"},
+      "json": {"encoding": "UTF-8", "path": "exports/dataset.json", "sha256": "45e6f8a47d59f8dd3e837e13bdeb93fbb71853be3bfaf77b3e57e2ad7b93c248"},
+      "xlsx": {"encoding": "OPENXML", "path": "exports/dataset.xlsx", "sha256": "9c2018dcc8c7524045b46c867bf3c4e539e2bc5c5081758e8f1781b617eac674"}
+    },
+    "record_count": 1205,
+    "round_trip_display_value_parity": "PASS",
+    "round_trip_field_parity": "PASS",
+    "schema_version": "EXPORT_ROUNDTRIP_CONTRACT_V1"
+  },
+  "field_count": 6,
+  "final_record_count": 1205,
+  "first_checkpoint_count": 600,
+  "fixture_record_count": 1205,
+  "missing_field_count": 1,
+  "pointer": {
+    "checkpoint_path": "checkpoint.json",
+    "checkpoint_sha256": "c1c3dfb7e0392c2a5893e6d67a2b53a3312ee93899c30271cc6ce74de269f9dc",
+    "dataset_id": "b5-prebuild-smoke",
+    "dataset_path": "dataset.jsonl",
+    "dataset_sha256": "d248a3fe62bc81fc7d435ede20aa3a38b7d8d339ce61c451cd8cde81dc401293",
+    "edit_overlay_path": "edit_overlay.json",
+    "edit_overlay_sha256": "105b80c8cba37d3f3edee5d552c8b1add1727a05aa7d2de193152b67603ae3b9",
+    "last_committed_record_count": 1205,
+    "next_append_index": 1205,
+    "recovery_requires_chat_context": false,
+    "schema_version": "LATEST_B5_DATASET_POINTER_V1"
+  },
+  "preview": {"total_record_count": 1205, "virtual_end_index_exclusive": 537, "virtual_row_count": 44, "virtual_start_index": 493},
+  "result": "PASS",
+  "resumed_from_count": 600,
+  "schema_version": "B5_DATASET_PREVIEW_CHECKPOINT_EXPORT_SMOKE_RECEIPT_V1"
+}

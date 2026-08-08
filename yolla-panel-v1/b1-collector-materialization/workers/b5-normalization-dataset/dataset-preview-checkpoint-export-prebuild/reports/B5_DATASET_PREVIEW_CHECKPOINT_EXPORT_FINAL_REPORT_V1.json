@@ -1,0 +1,35 @@
+{
+  "direct_repairs": ["PUBLIC_API_ALIAS_canonical_cell_RESTORED", "DatasetStore.paths_COMPATIBILITY_RESTORED"],
+  "directive_comment": 5216938692,
+  "directive_id": "AI001-TO-B5-DATASET-PREVIEW-CHECKPOINT-EXPORT-PREBUILD-V1-20260807-001",
+  "do_not": {"merge": false, "production": false, "ready": false, "successor_direct_call": false, "target_pc_execution": false, "tunnel_create": false},
+  "implementation": {
+    "checkpoint": true,
+    "contextless_recovery": true,
+    "csv_json_xlsx_export": true,
+    "field_name_type_source_confidence_missing_duplicate": true,
+    "incremental_append": true,
+    "normalized_preview_dataset_v1": true,
+    "resume_pointer": true,
+    "round_trip_field_parity": true,
+    "single_command_cli": true,
+    "virtual_preview_1000_plus": true
+  },
+  "next_event": "SUCCESSOR_OR_INTEGRATOR_CONSUME_B5_PREBUILD_POINTER",
+  "schema_version": "B5_DATASET_PREVIEW_CHECKPOINT_EXPORT_PREBUILD_FINAL_REPORT_V1",
+  "status": "PREBUILD_IMPLEMENTED_AND_SMOKE_TESTED",
+  "terminal": "B5_DATASET_PREVIEW_CHECKPOINT_EXPORT_PREBUILD_READY",
+  "validation": {
+    "checkpoint_at": 600,
+    "compile": "PASS_3_OF_3",
+    "external_blocker_count": 0,
+    "final_records": 1205,
+    "fixture_records": 1205,
+    "resume_from": 600,
+    "round_trip_display_value_parity": "PASS",
+    "round_trip_field_parity": "PASS",
+    "source_field_loss_count": 0,
+    "unit_tests": "PASS_30_OF_30",
+    "virtual_window_rows": 44
+  }
+}

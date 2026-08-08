@@ -1,0 +1,20 @@
+{
+  "baseline_head":"05993d7ea722a2110e7c40a5e71df568b8c087bc",
+  "completed_at_kst":"2026-08-07T22:04:00+09:00",
+  "cycle_id":"AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE2-20260807-001",
+  "directive_comment":5217338181,
+  "directive_id":"AI001-TO-B5-DATASET-CHECKPOINT-RESUME-EXPORT-V2-20260807-001",
+  "implementation":{"a7_b4_compact_projection":true,"checkpoint_append_only":true,"checkpoint_monotonic":true,"checkpoint_required_fields":["command_id","session_id","dataset_id","recipe_version","record_count","last_cursor","last_action_id","artifact_pointer","schema_pointer","checkpoint_seq"],"checkpoint_schema":"DATASET_CHECKPOINT_V1","existing_record_rewrite_count":0,"export_receipt_bind_dataset_checkpoint_version_hash":true,"preview_reconstruct_from_latest_checkpoint":true,"previous_checkpoint_overwrite_count":0,"resume_append_only":true,"successor_contextless_resume_cli":true},
+  "merge":false,
+  "next_event":"A7_B4_SUCCESSOR_CONSUME_B5_DATASET_CHECKPOINT_PROJECTION",
+  "parent_binding":{"pointer_blob":"4796c38d5d645e8d1a43b85c52a193164c46aedd","result":"PASS","terminal":"B5_DATASET_PREVIEW_CHECKPOINT_EXPORT_PREBUILD_READY"},
+  "production":false,"ready":false,
+  "required_outputs":{"A7_RECOVERY_DATASET_PROJECTION_V1":"A7_RECOVERY_DATASET_PROJECTION_V1.json","DATASET_CHECKPOINT_V1":"DATASET_CHECKPOINT_V1.json","DATASET_EXPORT_RECEIPT_V1":"DATASET_EXPORT_RECEIPT_V1.json","DATASET_RESUME_STATE_V1":"DATASET_RESUME_STATE_V1.json","LATEST_POINTER":"LATEST_POINTER.json","SUCCESSOR_DATASET_RESUME_COMMAND_V1":"SUCCESSOR_DATASET_RESUME_COMMAND_V1.json"},
+  "role":"B-5_DATASET_PREVIEW_CHECKPOINT_EXPORT_OWNER",
+  "schema_version":"B5_DATASET_CHECKPOINT_RESUME_EXPORT_FINAL_REPORT_V1",
+  "self_merge":false,
+  "status":"DATASET_CHECKPOINT_RESUME_EXPORT_LAYER_IMPLEMENTED_AND_SMOKE_TESTED",
+  "terminal":"B5_DATASET_CHECKPOINT_RESUME_EXPORT_READY",
+  "validation":{"actual_site_collection":false,"checkpoint_seq":"PASS_1_2_3_MONOTONIC","compile":"PASS_3_OF_3","contextless_identity_rehydration":"PASS_LATEST_CHECKPOINT","dataset_checkpoint_resume_export_a7_checkpoint_seq_parity":"PASS_3","dataset_checkpoint_resume_export_a7_dataset_sha_parity":"PASS","dataset_checkpoint_resume_export_a7_record_count_parity":"PASS_1205","existing_record_rewrite_count":0,"export_roundtrip_field_parity":"PASS_JSON_CSV_XLSX","export_roundtrip_record_count_parity":"PASS_1205_1205_1205","final_record_count":1205,"first_data_checkpoint_record_count":600,"fixture_checkpoint_resume_export_smoke":"PASS_1","fixture_record_count":1205,"preview_latest_checkpoint_reconstruction":"PASS","previous_checkpoint_overwrite_count":0,"schema_validation":"PASS_5_OF_5","source_field_loss_count":0,"target_pc_execution":false,"unit_tests":"PASS_33_OF_33","virtual_preview_materialized_rows":44},
+  "worker":"B-5"
+}

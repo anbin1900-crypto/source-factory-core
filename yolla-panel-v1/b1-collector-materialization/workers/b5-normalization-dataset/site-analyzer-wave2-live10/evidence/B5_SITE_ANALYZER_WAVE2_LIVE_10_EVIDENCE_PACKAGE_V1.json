@@ -1,0 +1,119 @@
+{
+  "schema_version": "B5_SITE_ANALYZER_WAVE2_LIVE_10_EVIDENCE_PACKAGE_V2_REMOTE_READBACK",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE2-INTEGRATION-V1-20260807-001",
+  "directive_comment": 5208248247,
+  "common_authority_commit": "9ca851933fb329b1d965f4459d452c684a06f9cd",
+  "run": {
+    "run_id": "b5-wave2-live10-20260807-001",
+    "run_at_kst": "2026-08-07T03:58:00+09:00",
+    "b4_head": "47d29598259a4ed0529aaca8110ea65914f87bb5",
+    "b4_server_blob": "671f05d903dcd8aecd7fd8160b493981f34a5b5a",
+    "source_endpoint": "/api/items",
+    "actual_loopback_http_run": true,
+    "http_attempts": [
+      {"page":1,"attempt_count":1,"statuses":[200]},
+      {"page":2,"attempt_count":2,"statuses":[503,200]}
+    ],
+    "retry_count": 1,
+    "record_count": 10,
+    "record_ids_in_order": [1,2,3,4,5,6,7,8,9,10],
+    "source_record_sha256": "eebb7481740dc5e58aeadd15f42c28c73ca0efe251e9d5fe6042437c6ec8f877"
+  },
+  "preview": {
+    "modelVersion": "ANALYZER_DATA_PREVIEW_MODEL_V1",
+    "liveRunId": "b5-wave2-live10-20260807-001",
+    "sourceRecordCount": 10,
+    "rowCount": 10,
+    "columnCount": 3,
+    "revision": 4,
+    "columns": [
+      {"id":"id","label":"id","order":0},
+      {"id":"name","label":"item_name","order":1},
+      {"id":"value","label":"edited_value","order":2}
+    ],
+    "rows": [
+      {"rowId":"row-1","cells":[{"value":1},{"value":"Fixture Item 01"},{"value":100}]},
+      {"rowId":"row-2","cells":[{"value":2},{"value":"Fixture Item 02"},{"value":200}]},
+      {"rowId":"row-3","cells":[{"value":3},{"value":"Fixture Item 03"},{"value":300}]},
+      {"rowId":"row-4","cells":[{"value":4},{"value":"Fixture Item 04"},{"value":400}]},
+      {"rowId":"row-5","cells":[{"value":5},{"value":"Fixture Item 05"},{"value":5550}]},
+      {"rowId":"row-6","cells":[{"value":6},{"value":"Fixture Item 06"},{"value":600}]},
+      {"rowId":"row-7","cells":[{"value":7},{"value":"Fixture Item 07"},{"value":700}]},
+      {"rowId":"row-8","cells":[{"value":8},{"value":"Fixture Item 08"},{"value":800}]},
+      {"rowId":"row-9","cells":[{"value":9},{"value":"Fixture Item 09"},{"value":900}]},
+      {"rowId":"row-10","cells":[{"value":10},{"value":"Fixture Item 10"},{"value":1000}]}
+    ]
+  },
+  "export_manifest": {
+    "schema_version": "B5_SITE_ANALYZER_LIVE_10_EXPORT_MANIFEST_V2_REMOTE_READBACK",
+    "row_count": 10,
+    "column_count": 3,
+    "edited_row_id": "row-5",
+    "edited_field": "edited_value",
+    "edited_value": 5550,
+    "source_row_pointer_count": 10,
+    "source_element_pointer_count": 40,
+    "preview_json_csv_xlsx_order_parity": "PASS",
+    "preview_json_csv_xlsx_edit_parity": "PASS",
+    "source_input_mutation_count": 0,
+    "files": {
+      "json": {
+        "path":"exports/live_10_edited.json",
+        "local_run_content_sha256":"e241d620f00433b87aecfb4716eea8a15d1a35e58df7bd14066a446b952241cd",
+        "remote_git_blob":"44f9328263bfff1bfd57e05183eec232cec85b06",
+        "remote_readback":"PASS",
+        "row_count":10
+      },
+      "csv": {
+        "path":"exports/live_10_edited.csv",
+        "local_run_content_sha256":"84a6a2378bf21864cd27717043baf8130c957c478d2bc4c1d2c55157630e17e8",
+        "remote_git_blob":"c001249682caf089659a4f788df937e52adbb5b7",
+        "remote_readback":"PASS",
+        "row_count":10
+      },
+      "xlsx": {
+        "path":"exports/live_10_edited.xlsx",
+        "binary_sha256":"62c7cdb55f4d58cd45d97e76cdf9a2b092925ca5bf5ff81502ef2f984e1d2148",
+        "remote_git_blob":"24489ece10cb1fecf25cfea9d314594ec884e090",
+        "remote_readback":"PASS",
+        "size_bytes":5700,
+        "row_count":10
+      }
+    },
+    "b4_binding": {
+      "head":"47d29598259a4ed0529aaca8110ea65914f87bb5",
+      "server_blob":"671f05d903dcd8aecd7fd8160b493981f34a5b5a",
+      "actual_loopback_http_run":true,
+      "retry_count":1
+    },
+    "result":"PASS_LIVE_10_PARITY"
+  },
+  "remote_artifacts": {
+    "live_adapter_blob":"8fccbd3ba319d8e4a61551fb7eb81cbaa5ab91fa",
+    "contract_blob":"5ffca95a494ca2ddcf33ded1b77bfc1932e1d548",
+    "node_test_blob":"2a5efc9de5e7ca57d3fff0e892f2a7b2fea1bae6",
+    "python_test_blob":"e02044cbe4afe3d3acfe8cd91c7057f628a9987b",
+    "json_blob":"44f9328263bfff1bfd57e05183eec232cec85b06",
+    "csv_blob":"c001249682caf089659a4f788df937e52adbb5b7",
+    "xlsx_blob":"24489ece10cb1fecf25cfea9d314594ec884e090"
+  },
+  "validation": {
+    "node_tests":"PASS_20_OF_20",
+    "python_cross_format_tests":"PASS_15_OF_15_AFTER_REMOTE_SCHEMA_ALIGNMENT",
+    "total_new_checks":"PASS_35_OF_35",
+    "prior_wave1_tests":"PASS_41_OF_41",
+    "aggregate_evidence":"PASS_76_OF_76",
+    "source_input_mutation_count":0,
+    "external_blocker_count":0,
+    "static_fixture_only_terminal":false
+  },
+  "direct_repairs": [
+    "PYTHON_TESTCASE_RUN_NAME_SHADOW_COLLISION_FIXED",
+    "XLSX_MANIFEST_FIELD_ALIGNED_TO_binary_sha256"
+  ],
+  "database_work":false,
+  "production":false,
+  "ready":false,
+  "merge":false,
+  "self_merge":false
+}

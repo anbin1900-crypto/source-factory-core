@@ -1,0 +1,17 @@
+{
+  "dataset_id": "b5-contextless-fixture",
+  "edit_overlay": {"path": "edit_overlay.json", "sha256": "99953df08dfbe728d3de81b4ba2bc6d07f8a433219db473ec0cb07049b90554b"},
+  "fields": [
+    {"confidence": 0.98, "duplicate": {"count": 10, "present": true}, "missing": {"count": 0, "present": false}, "name": "category", "record_count": 12, "source": {"json_pointer": "/records/0/category"}, "type": "string"},
+    {"confidence": 1.0, "duplicate": {"count": 5, "present": true}, "missing": {"count": 0, "present": false}, "name": "duplicate_bucket", "record_count": 12, "source": {"json_pointer": "/records/0", "kind": "fixture", "record_index": 0}, "type": "string"},
+    {"confidence": 1.0, "duplicate": {"count": 0, "present": false}, "missing": {"count": 0, "present": false}, "name": "id", "record_count": 12, "source": {"json_pointer": "/records/0/id"}, "type": "integer"},
+    {"confidence": 0.99, "duplicate": {"count": 0, "present": false}, "missing": {"count": 0, "present": false}, "name": "name", "record_count": 12, "source": {"json_pointer": "/records/0/name"}, "type": "string"},
+    {"confidence": 1.0, "duplicate": {"count": 0, "present": false}, "missing": {"count": 4, "present": true}, "name": "optional_note", "record_count": 12, "source": {"json_pointer": "/records/1", "kind": "fixture", "record_index": 1}, "type": "string"},
+    {"confidence": 0.97, "duplicate": {"count": 0, "present": false}, "missing": {"count": 0, "present": false}, "name": "value", "record_count": 12, "source": {"json_pointer": "/records/0/value"}, "type": "integer"}
+  ],
+  "last_committed_record_count": 12,
+  "record_count": 12,
+  "schema_version": "NORMALIZED_PREVIEW_DATASET_V1",
+  "source_field_loss_count": 0,
+  "storage": {"format": "JSONL_APPEND_ONLY", "path": "dataset.jsonl", "sha256": "0df35907ae18e34e545972ecbf046f8b4a2b6567731e50c0b7bb24813419986d", "size_bytes": 5964}
+}

@@ -1,0 +1,42 @@
+{
+  "binding_count": 12,
+  "canonical_confirmed_without_authority_count": 0,
+  "contextless_readback": true,
+  "cycle_id": "A0-AB-AI-BLUEPRINT-SEMANTIC-BINDING-CYCLE5-20260808-001",
+  "d_canonical_schema_decision": false,
+  "datasets": {
+    "FIELD_TRANSFORM_CANDIDATE_V1": {
+      "path": "datasets/FIELD_TRANSFORM_CANDIDATE_V1.json",
+      "record_count": 24,
+      "sha256": "0b03800da3888a30f276c6006af9091c5190a50286214e09ccd90572ed3c69da"
+    },
+    "REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1": {
+      "path": "datasets/REAL_ESTATE_LISTING_FIELD_ONTOLOGY_V1.json",
+      "record_count": 6,
+      "sha256": "c47aac50d320bbf1f293c96e2c493ad5cbf8b680442231de97421ddc5a7d28fc"
+    },
+    "SITE_LISTING_BINDING_V1": {
+      "path": "datasets/SITE_LISTING_BINDING_V1.json",
+      "record_count": 12,
+      "sha256": "04f70905c336ac7b88d767c4b45aa7aba6135ac9843d9dad2704a551178de7d5"
+    }
+  },
+  "directive_id": "A0-TO-B5-REAL-ESTATE-FIELD-ONTOLOGY-SITE-BINDING-V5-20260808-001",
+  "latest_checkpoint_path": "checkpoints/checkpoint-000002.json",
+  "latest_checkpoint_seq": 2,
+  "latest_checkpoint_sha256": "91534c310bae245708dc516bc24d118887e940ceacb97e8b48a0d4d2ff3009cf",
+  "lineage_key": "f1798d1ca39150593b8d0795bfc2f0b2f723be3a09dab71d9f0a2a45f08a77f2",
+  "live_site_call": false,
+  "merge": false,
+  "production": false,
+  "ready": false,
+  "schema_version": "B5_REAL_ESTATE_FIELD_ONTOLOGY_SITE_BINDING_RESULT_POINTER_V1",
+  "site_count": 2,
+  "source_field_loss_count": 0,
+  "source_field_synthesis_count": 0,
+  "source_fixture_sha256": "042ba06d0a184282bfbab68dd3c040b299e19bd317a93c8ca678343014482a8f",
+  "target_pc_execution": false,
+  "transform_count": 24,
+  "unknown_business_rule_count": 12,
+  "unknown_write_transform_count": 12
+}

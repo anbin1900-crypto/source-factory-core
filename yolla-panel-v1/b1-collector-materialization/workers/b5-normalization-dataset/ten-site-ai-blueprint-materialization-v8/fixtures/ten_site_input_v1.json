@@ -1,0 +1,52 @@
+{
+  "schema_version": "B5_TEN_SITE_BLUEPRINT_MATERIALIZATION_INPUT_V1",
+  "directive_id": "V2-TO-B5-TEN-SITE-AI-BLUEPRINT-MATERIALIZATION-V1-20260808-001",
+  "directive_comment": 5224506049,
+  "cycle_id": "V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "parent_v7": {
+    "head": "a5445ba97dad347e3bc7a7a4b9586ad3de4c3c98",
+    "pointer_blob": "8452508bb9f4dd0af0cc2731de76339ed4615096",
+    "terminal": "B5_REAL_SITE_BLUEPRINT_ONTOLOGY_MATERIALIZATION_READY",
+    "execution_status": "EXECUTION_PENDING"
+  },
+  "producer_slots": {
+    "A4": {"status": "WAITING_INPUT", "directive_comment": 5224505696, "exact_pointer": null},
+    "A5": {"status": "WAITING_INPUT", "directive_comment": 5224505743, "exact_pointer": null},
+    "B3": {"status": "WAITING_INPUT", "directive_comment": 5224505915, "exact_pointer": null}
+  },
+  "common_ontology": [
+    {"field_id": "listing.source_id", "value_type": "string", "mapping_status": "CANDIDATE", "canonical_authority": null},
+    {"field_id": "listing.title", "value_type": "string", "mapping_status": "CANDIDATE", "canonical_authority": null},
+    {"field_id": "listing.status", "value_type": "string", "mapping_status": "UNKNOWN", "canonical_authority": null},
+    {"field_id": "listing.price", "value_type": "object", "mapping_status": "CANDIDATE", "canonical_authority": null},
+    {"field_id": "listing.area", "value_type": "object", "mapping_status": "CANDIDATE", "canonical_authority": null},
+    {"field_id": "listing.location", "value_type": "object", "mapping_status": "CANDIDATE", "canonical_authority": null},
+    {"field_id": "listing.media", "value_type": "array", "mapping_status": "CANDIDATE", "canonical_authority": null},
+    {"field_id": "listing.contact", "value_type": "object", "mapping_status": "UNKNOWN", "canonical_authority": null},
+    {"field_id": "agency.source_id", "value_type": "string", "mapping_status": "CANDIDATE", "canonical_authority": null},
+    {"field_id": "agent.source_id", "value_type": "string", "mapping_status": "UNKNOWN", "canonical_authority": null},
+    {"field_id": "complex.source_id", "value_type": "string", "mapping_status": "UNKNOWN", "canonical_authority": null}
+  ],
+  "product_blueprint_templates": {
+    "SEARCH": {"components": ["query", "filter", "sort", "submit"], "data_contract": "SOURCE_EXTENSION_AWARE"},
+    "LIST": {"components": ["result_count", "cards", "pagination_or_scroll"], "data_contract": "LOSSLESS_LISTING_SUMMARY"},
+    "DETAIL": {"components": ["identity", "price", "area", "location", "media", "contact"], "data_contract": "LOSSLESS_LISTING_DETAIL"},
+    "MAP": {"components": ["viewport", "marker", "cluster", "result_sync"], "data_contract": "LOCATION_EXTENSION_AWARE"},
+    "AGENCY": {"components": ["agency_identity", "agent_list", "listing_list"], "data_contract": "SOURCE_IDENTITY_PRESERVING"},
+    "MY_LISTING": {"components": ["auth_reference", "owned_list", "status", "actions"], "data_contract": "OBSERVATION_ONLY_NO_SUBMIT"},
+    "CREATE": {"components": ["auth_reference", "dynamic_form", "validation", "preview"], "data_contract": "PRE_SUBMIT_ONLY"},
+    "EDIT": {"components": ["auth_reference", "record_identity", "dynamic_form", "validation", "preview"], "data_contract": "PRE_SUBMIT_ONLY"}
+  },
+  "sites": [
+    {"site_id": "SITE_SLOT_001", "authority_status": "WAITING_INPUT", "source_extensions": [{"source_field_name": "pending_payload", "raw_value": null, "mapping_status": "UNKNOWN", "candidate_field_ids": [], "evidence_pointer": null}]},
+    {"site_id": "SITE_SLOT_002", "authority_status": "WAITING_INPUT", "source_extensions": [{"source_field_name": "pending_payload", "raw_value": null, "mapping_status": "UNKNOWN", "candidate_field_ids": [], "evidence_pointer": null}]},
+    {"site_id": "SITE_SLOT_003", "authority_status": "WAITING_INPUT", "source_extensions": [{"source_field_name": "pending_payload", "raw_value": null, "mapping_status": "UNKNOWN", "candidate_field_ids": [], "evidence_pointer": null}]},
+    {"site_id": "SITE_SLOT_004", "authority_status": "WAITING_INPUT", "source_extensions": [{"source_field_name": "pending_payload", "raw_value": null, "mapping_status": "UNKNOWN", "candidate_field_ids": [], "evidence_pointer": null}]},
+    {"site_id": "SITE_SLOT_005", "authority_status": "WAITING_INPUT", "source_extensions": [{"source_field_name": "pending_payload", "raw_value": null, "mapping_status": "UNKNOWN", "candidate_field_ids": [], "evidence_pointer": null}]},
+    {"site_id": "SITE_SLOT_006", "authority_status": "WAITING_INPUT", "source_extensions": [{"source_field_name": "pending_payload", "raw_value": null, "mapping_status": "UNKNOWN", "candidate_field_ids": [], "evidence_pointer": null}]},
+    {"site_id": "SITE_SLOT_007", "authority_status": "WAITING_INPUT", "source_extensions": [{"source_field_name": "pending_payload", "raw_value": null, "mapping_status": "UNKNOWN", "candidate_field_ids": [], "evidence_pointer": null}]},
+    {"site_id": "SITE_SLOT_008", "authority_status": "WAITING_INPUT", "source_extensions": [{"source_field_name": "pending_payload", "raw_value": null, "mapping_status": "UNKNOWN", "candidate_field_ids": [], "evidence_pointer": null}]},
+    {"site_id": "SITE_SLOT_009", "authority_status": "WAITING_INPUT", "source_extensions": [{"source_field_name": "pending_payload", "raw_value": null, "mapping_status": "UNKNOWN", "candidate_field_ids": [], "evidence_pointer": null}]},
+    {"site_id": "SITE_SLOT_010", "authority_status": "WAITING_INPUT", "source_extensions": [{"source_field_name": "pending_payload", "raw_value": null, "mapping_status": "UNKNOWN", "candidate_field_ids": [], "evidence_pointer": null}]}
+  ]
+}

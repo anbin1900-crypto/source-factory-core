@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "item_name": "Fixture Item 01",
+    "edited_value": 100,
+    "__source": {
+      "rowPointer": {"provider":"B-4","runId":"b5-wave2-live10-20260807-001","page":1,"rowIndex":0,"pageUrl":"http://127.0.0.1:38197/api/items?page=1&run_id=b5-wave2-live10-20260807-001&fail_once=1","jsonPointer":"/records/0"},
+      "elementPointers": {"id":{"kind":"json-pointer","pointer":"/records/0/id"},"name":{"kind":"json-pointer","pointer":"/records/0/name"},"category":{"kind":"json-pointer","pointer":"/records/0/category"},"value":{"kind":"json-pointer","pointer":"/records/0/value"}}
+    }
+  },
+  {
+    "id": 2,
+    "item_name": "Fixture Item 02",
+    "edited_value": 200,
+    "__source": {
+      "rowPointer": {"provider":"B-4","runId":"b5-wave2-live10-20260807-001","page":1,"rowIndex":1,"pageUrl":"http://127.0.0.1:38197/api/items?page=1&run_id=b5-wave2-live10-20260807-001&fail_once=1","jsonPointer":"/records/1"},
+      "elementPointers": {"id":{"kind":"json-pointer","pointer":"/records/1/id"},"name":{"kind":"json-pointer","pointer":"/records/1/name"},"category":{"kind":"json-pointer","pointer":"/records/1/category"},"value":{"kind":"json-pointer","pointer":"/records/1/value"}}
+    }
+  },
+  {
+    "id": 3,
+    "item_name": "Fixture Item 03",
+    "edited_value": 300,
+    "__source": {
+      "rowPointer": {"provider":"B-4","runId":"b5-wave2-live10-20260807-001","page":1,"rowIndex":2,"pageUrl":"http://127.0.0.1:38197/api/items?page=1&run_id=b5-wave2-live10-20260807-001&fail_once=1","jsonPointer":"/records/2"},
+      "elementPointers": {"id":{"kind":"json-pointer","pointer":"/records/2/id"},"name":{"kind":"json-pointer","pointer":"/records/2/name"},"category":{"kind":"json-pointer","pointer":"/records/2/category"},"value":{"kind":"json-pointer","pointer":"/records/2/value"}}
+    }
+  },
+  {
+    "id": 4,
+    "item_name": "Fixture Item 04",
+    "edited_value": 400,
+    "__source": {
+      "rowPointer": {"provider":"B-4","runId":"b5-wave2-live10-20260807-001","page":1,"rowIndex":3,"pageUrl":"http://127.0.0.1:38197/api/items?page=1&run_id=b5-wave2-live10-20260807-001&fail_once=1","jsonPointer":"/records/3"},
+      "elementPointers": {"id":{"kind":"json-pointer","pointer":"/records/3/id"},"name":{"kind":"json-pointer","pointer":"/records/3/name"},"category":{"kind":"json-pointer","pointer":"/records/3/category"},"value":{"kind":"json-pointer","pointer":"/records/3/value"}}
+    }
+  },
+  {
+    "id": 5,
+    "item_name": "Fixture Item 05",
+    "edited_value": 5550,
+    "__source": {
+      "rowPointer": {"provider":"B-4","runId":"b5-wave2-live10-20260807-001","page":1,"rowIndex":4,"pageUrl":"http://127.0.0.1:38197/api/items?page=1&run_id=b5-wave2-live10-20260807-001&fail_once=1","jsonPointer":"/records/4"},
+      "elementPointers": {"id":{"kind":"json-pointer","pointer":"/records/4/id"},"name":{"kind":"json-pointer","pointer":"/records/4/name"},"category":{"kind":"json-pointer","pointer":"/records/4/category"},"value":{"kind":"json-pointer","pointer":"/records/4/value"}}
+    }
+  },
+  {
+    "id": 6,
+    "item_name": "Fixture Item 06",
+    "edited_value": 600,
+    "__source": {
+      "rowPointer": {"provider":"B-4","runId":"b5-wave2-live10-20260807-001","page":2,"rowIndex":0,"pageUrl":"http://127.0.0.1:38197/api/items?page=2&run_id=b5-wave2-live10-20260807-001&fail_once=1","jsonPointer":"/records/0"},
+      "elementPointers": {"id":{"kind":"json-pointer","pointer":"/records/0/id"},"name":{"kind":"json-pointer","pointer":"/records/0/name"},"category":{"kind":"json-pointer","pointer":"/records/0/category"},"value":{"kind":"json-pointer","pointer":"/records/0/value"}}
+    }
+  },
+  {
+    "id": 7,
+    "item_name": "Fixture Item 07",
+    "edited_value": 700,
+    "__source": {
+      "rowPointer": {"provider":"B-4","runId":"b5-wave2-live10-20260807-001","page":2,"rowIndex":1,"pageUrl":"http://127.0.0.1:38197/api/items?page=2&run_id=b5-wave2-live10-20260807-001&fail_once=1","jsonPointer":"/records/1"},
+      "elementPointers": {"id":{"kind":"json-pointer","pointer":"/records/1/id"},"name":{"kind":"json-pointer","pointer":"/records/1/name"},"category":{"kind":"json-pointer","pointer":"/records/1/category"},"value":{"kind":"json-pointer","pointer":"/records/1/value"}}
+    }
+  },
+  {
+    "id": 8,
+    "item_name": "Fixture Item 08",
+    "edited_value": 800,
+    "__source": {
+      "rowPointer": {"provider":"B-4","runId":"b5-wave2-live10-20260807-001","page":2,"rowIndex":2,"pageUrl":"http://127.0.0.1:38197/api/items?page=2&run_id=b5-wave2-live10-20260807-001&fail_once=1","jsonPointer":"/records/2"},
+      "elementPointers": {"id":{"kind":"json-pointer","pointer":"/records/2/id"},"name":{"kind":"json-pointer","pointer":"/records/2/name"},"category":{"kind":"json-pointer","pointer":"/records/2/category"},"value":{"kind":"json-pointer","pointer":"/records/2/value"}}
+    }
+  },
+  {
+    "id": 9,
+    "item_name": "Fixture Item 09",
+    "edited_value": 900,
+    "__source": {
+      "rowPointer": {"provider":"B-4","runId":"b5-wave2-live10-20260807-001","page":2,"rowIndex":3,"pageUrl":"http://127.0.0.1:38197/api/items?page=2&run_id=b5-wave2-live10-20260807-001&fail_once=1","jsonPointer":"/records/3"},
+      "elementPointers": {"id":{"kind":"json-pointer","pointer":"/records/3/id"},"name":{"kind":"json-pointer","pointer":"/records/3/name"},"category":{"kind":"json-pointer","pointer":"/records/3/category"},"value":{"kind":"json-pointer","pointer":"/records/3/value"}}
+    }
+  },
+  {
+    "id": 10,
+    "item_name": "Fixture Item 10",
+    "edited_value": 1000,
+    "__source": {
+      "rowPointer": {"provider":"B-4","runId":"b5-wave2-live10-20260807-001","page":2,"rowIndex":4,"pageUrl":"http://127.0.0.1:38197/api/items?page=2&run_id=b5-wave2-live10-20260807-001&fail_once=1","jsonPointer":"/records/4"},
+      "elementPointers": {"id":{"kind":"json-pointer","pointer":"/records/4/id"},"name":{"kind":"json-pointer","pointer":"/records/4/name"},"category":{"kind":"json-pointer","pointer":"/records/4/category"},"value":{"kind":"json-pointer","pointer":"/records/4/value"}}
+    }
+  }
+]
