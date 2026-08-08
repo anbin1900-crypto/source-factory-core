@@ -1,0 +1,65 @@
+{
+  "schema_version": "LATEST_A00_V510236_INDEPENDENT_RUNTIME_POINTER_V2",
+  "status": "A00_V510236_INDEPENDENT_RUNTIME_POWERSHELL51_FIX_PASS_TARGET_PC_RETRY_REQUIRED",
+  "terminal": "A00_V510236_INDEPENDENT_RUNTIME_POWERSHELL51_COMPAT_FIX_PASS",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "branch": "experimental/a00-v510236-independent-runtime-v1",
+  "draft_pr": 55,
+  "runtime_id": "A00-ISO-01",
+  "base_version": "5.10.2.3.6",
+  "default_mode": "READ_ONLY_ISOLATED_SANDBOX",
+  "default_dispatch_enabled": false,
+  "non_interference": {
+    "existing_runtime_execute_count": 0,
+    "existing_runtime_write_count": 0,
+    "existing_process_stop_count": 0,
+    "shared_queue_import_count": 0,
+    "shared_pointer_write_count": 0,
+    "shared_launcher_overwrite_count": 0
+  },
+  "fix": {
+    "id": "POWERSHELL51_ASCII_ENCODING_AND_STRICTMODE_INIT_FIX_V1",
+    "cause": "BOM-less UTF-8 Korean labels were decoded by Windows PowerShell 5.1 as ANSI and corrupted the script syntax.",
+    "resolution": [
+      "ASCII-only executable PowerShell source",
+      "No Korean literals in install_independent_runtime.ps1",
+      "Independent Electron modules variable initialized before StrictMode reference",
+      "Embedded payload rebuilt and read back"
+    ]
+  },
+  "documents": {
+    "build_report_v2": {
+      "path": "yolla-panel-v1/a00-independent-runtime-v510236/A00_V510236_INDEPENDENT_RUNTIME_BUILD_REPORT_V2.json",
+      "commit": "cc2815cee8dbeb7bad35321cd81689aa6ac2afa0",
+      "blob_sha": "fec11d3bfaea5a59948c17513b51c9ced2719d96"
+    }
+  },
+  "artifacts": {
+    "installer": {
+      "drive_file_id": "18kbxIB2ZZKGBKXMhAT1vxXQ87AKhIZbS",
+      "file_name": "INSTALL_AI_YOLLA_PANEL_WORKSPACE_V510236_INDEPENDENT_RUNTIME_FIXED.bat",
+      "size_bytes": 14163,
+      "sha256": "32901b9c61f7e839c48eddc91670138d672e603c1d7db3a10e221468c8a949e8",
+      "metadata_readback": "PASS"
+    },
+    "package": {
+      "drive_file_id": "1B57zhaG_WGzaMeEsHZAshaVMwncljH4O",
+      "file_name": "AI_YOLLA_V510236_INDEPENDENT_RUNTIME_PACKAGE_FIXED.zip",
+      "size_bytes": 33374,
+      "sha256": "afbb89f07b1e2ae9c99cfd43b77bacf02a3b03afff3de552c19a892ac59df49e",
+      "metadata_readback": "PASS"
+    }
+  },
+  "validation": {
+    "embedded_script_ascii_only": "PASS",
+    "powershell51_mojibake_regression": "PASS",
+    "quote_bracket_lexical_validation": "PASS",
+    "strictmode_initialization_order": "PASS",
+    "package_regression": "PASS",
+    "target_pc_install_retry": "NOT_RUN"
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at": "2026-08-05T04:55:00+09:00"
+}
