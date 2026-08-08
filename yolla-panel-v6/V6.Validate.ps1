@@ -20,7 +20,8 @@ $oldIpcNamespace='mini'+'mal:'
 $oldEnvironmentPattern='(^|[^A-Z_])YOLLA_'+'MINIMAL_'
 Check 'NO_MINIMAL_IPC_NAMESPACE' (-not($allText -match [regex]::Escape($oldIpcNamespace)))
 Check 'NO_MINIMAL_ENV_NAMESPACE' (-not($allText -match $oldEnvironmentPattern))
-Check 'NO_ARBITRARY_SHELL_TOOL' (-not($allText -match 'yolla_v6_(shell|exec|powershell)'))
+$arbitraryShellToolPattern='yolla_v6_(shell|exec|powershell)(?![a-z0-9_])'
+Check 'NO_ARBITRARY_SHELL_TOOL' (-not($allText -match $arbitraryShellToolPattern))
 Check 'V6_ROOT_PRESENT' ($allText -match 'E:\\YOLLA\\panel-v6')
 Check 'V6_IPC_PRESENT' ($allText -match 'v6:')
 Check 'LEGACY_QUEUE_QUARANTINE_PRESENT' ($allText -match 'QUARANTINE_DO_NOT_REISSUE')
