@@ -1,0 +1,22 @@
+{
+  "classification_counts": {"INFERRED": 1, "OBSERVED": 1, "UNKNOWN": 1},
+  "cycle4_evidence_ids_verified": [
+    "evidence-0c9073a255074c4a2fc66e8e",
+    "evidence-2aed123220f249972a566986",
+    "evidence-45dc26a0ed1139eebe7837e6",
+    "evidence-9c5de9ba71755ad58c862ef8"
+  ],
+  "duplicate_disposition": "DUPLICATE_IDENTICAL_SUPPRESSED",
+  "edge_count": 1,
+  "entry_count": 3,
+  "inferred_derivation_reference": "derive://A5-BLUEPRINT/rule-17",
+  "node_count": 2,
+  "raw_artifact_materialization_count": 0,
+  "raw_artifact_overwrite": false,
+  "restart_readback_entry_count": 3,
+  "reverse_trace_derived_count": 1,
+  "reverse_trace_raw_count": 1,
+  "schema_version": "B4_SEMANTIC_EVIDENCE_INDEX_SMOKE_RESULT_V1",
+  "semantic_decision_by_b4": false,
+  "status": "PASS"
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "REAL_SITE_RECEIPT_INDEX_V1",
+  "required": [
+    "receipt_id",
+    "receipt_pointer",
+    "receipt_sha256",
+    "command_id",
+    "page_id",
+    "action_id",
+    "received_at",
+    "source_kind",
+    "evidence_ids"
+  ],
+  "source_kinds": [
+    "ACTUAL_SITE",
+    "TEST_FIXTURE"
+  ],
+  "invariants": [
+    "APPEND_ONLY_NO_OVERWRITE",
+    "IDENTICAL_RECEIPT_SUPPRESSED",
+    "ACTUAL_SITE_RECEIPT_NEVER_SYNTHESIZED",
+    "NO_RAW_PAYLOAD_STORAGE",
+    "EXACT_RECEIPT_SHA_REQUIRED"
+  ]
+}

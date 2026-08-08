@@ -1,0 +1,15 @@
+{
+  "schema_version": "COMPOSITE_EVIDENCE_LINEAGE_INDEX_V1",
+  "entry_count": 5,
+  "modes": ["DATA", "EDIT", "MY_LISTING", "PRODUCT", "WRITE"],
+  "entries": [
+    {"composite_id":"composite:data:listing","composite_entity_type":"NODE","mode":"DATA","producer_id":"B5-DATA","producer_assertion":{"kind":"listing-record"},"semantic_evidence_pointers":["semantic://000001/1b159296e1d7a0e2"],"resolved_raw_evidence_pointers":["evidence-45dc26a0ed1139eebe7837e6","evidence-9c5de9ba71755ad58c862ef8"],"resolved_derived_evidence_pointers":[],"composite_pointer":"composite://000001/c82f67530b0967e8","previous_composite_pointer":null},
+    {"composite_id":"composite:product:page","composite_entity_type":"NODE","mode":"PRODUCT","producer_id":"A5-BLUEPRINT","producer_assertion":{"kind":"product-page"},"semantic_evidence_pointers":["semantic://000002/638acd2802e0181e"],"resolved_raw_evidence_pointers":["evidence-0c9073a255074c4a2fc66e8e"],"resolved_derived_evidence_pointers":["semantic://000001/1b159296e1d7a0e2"],"composite_pointer":"composite://000002/4d76f00b55d6f484","previous_composite_pointer":"composite://000001/c82f67530b0967e8"},
+    {"composite_id":"composite:write:submit","composite_entity_type":"EDGE","mode":"WRITE","producer_id":"A6-WRITE","producer_assertion":{"relation":"SUBMITS"},"semantic_evidence_pointers":["semantic://000003/bfe032df074f89e6"],"resolved_raw_evidence_pointers":["evidence-2aed123220f249972a566986"],"resolved_derived_evidence_pointers":["semantic://000001/1b159296e1d7a0e2"],"composite_pointer":"composite://000003/f8e8df6b517eda56","previous_composite_pointer":"composite://000002/4d76f00b55d6f484"},
+    {"composite_id":"composite:my-listing:editor","composite_entity_type":"NODE","mode":"MY_LISTING","producer_id":"A5-BLUEPRINT","producer_assertion":{"kind":"owned-editor"},"semantic_evidence_pointers":["semantic://000001/1b159296e1d7a0e2","semantic://000002/638acd2802e0181e"],"resolved_raw_evidence_pointers":["evidence-45dc26a0ed1139eebe7837e6","evidence-9c5de9ba71755ad58c862ef8","evidence-0c9073a255074c4a2fc66e8e"],"resolved_derived_evidence_pointers":["semantic://000001/1b159296e1d7a0e2"],"composite_pointer":"composite://000004/2314aa915292bd4d","previous_composite_pointer":"composite://000003/f8e8df6b517eda56"},
+    {"composite_id":"composite:edit:save","composite_entity_type":"EDGE","mode":"EDIT","producer_id":"A6-EDIT","producer_assertion":{"relation":"SAVES"},"semantic_evidence_pointers":["semantic://000002/638acd2802e0181e","semantic://000003/bfe032df074f89e6"],"resolved_raw_evidence_pointers":["evidence-0c9073a255074c4a2fc66e8e","evidence-2aed123220f249972a566986"],"resolved_derived_evidence_pointers":["semantic://000001/1b159296e1d7a0e2"],"composite_pointer":"composite://000005/771a18e50709b5f7","previous_composite_pointer":"composite://000004/2314aa915292bd4d"}
+  ],
+  "raw_artifact_materialization_count": 0,
+  "raw_artifact_overwrite": false,
+  "semantic_decision_by_b4": false
+}

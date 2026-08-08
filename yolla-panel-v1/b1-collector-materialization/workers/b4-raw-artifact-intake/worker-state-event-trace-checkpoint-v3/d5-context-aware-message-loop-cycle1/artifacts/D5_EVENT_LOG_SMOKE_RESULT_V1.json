@@ -1,0 +1,38 @@
+{
+  "metrics": {
+    "AVERAGE_REPLY_TIME": 5.0,
+    "COMMAND_TO_RESULT_BY_STREAM": {
+      "D1-CYCLE1-CMD-001::CTX-D1-AUTOMATION-001": 8.0
+    },
+    "COMMAND_TO_RESULT_ELAPSED_TIME": 8.0,
+    "CONTEXT_MISMATCH_COUNT": 0,
+    "ERROR_COUNT": 0,
+    "MESSAGE_SEND_SUCCESS_RATE": 1.0,
+    "REPEATED_FAILURE_IMPROVEMENTS": [],
+    "RETRY_COUNT": 0,
+    "SEND_FAILURE_COUNT": 0,
+    "USER_MANUAL_ACTION_COUNT": 0,
+    "accepted_event_count": 6,
+    "schema_version": "D5_AUTOMATION_IMPROVEMENT_METRICS_V1"
+  },
+  "persisted_dispositions": [
+    "ACCEPTED",
+    "ACCEPTED",
+    "ACCEPTED",
+    "ACCEPTED",
+    "ACCEPTED",
+    "ACCEPTED"
+  ],
+  "queued_count": 6,
+  "restart_readback": {
+    "command_id": "D1-CYCLE1-CMD-001",
+    "context_id": "CTX-D1-AUTOMATION-001",
+    "last_event_pointer": "worker-state://D1-CYCLE1-CMD-001/CTX-D1-AUTOMATION-001/6",
+    "restored_event_seq": 6,
+    "restored_event_type": "RESULT_RETURNED",
+    "restored_task_status": "COMPLETE",
+    "schema_version": "D5_AUTOMATION_EVENT_RESTART_READBACK_V1",
+    "status": "PASS"
+  },
+  "status": "PASS"
+}

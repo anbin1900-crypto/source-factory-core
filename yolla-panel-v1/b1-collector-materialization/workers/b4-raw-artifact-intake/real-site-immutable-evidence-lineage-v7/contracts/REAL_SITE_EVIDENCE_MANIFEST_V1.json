@@ -1,0 +1,38 @@
+{
+  "schema_version": "REAL_SITE_EVIDENCE_MANIFEST_V1",
+  "required": [
+    "evidence_id",
+    "evidence_kind",
+    "evidence_pointer",
+    "sha256",
+    "command_id",
+    "page_id",
+    "action_id",
+    "producer_id",
+    "evidence_class",
+    "observed_at"
+  ],
+  "evidence_kinds": [
+    "DOM",
+    "NETWORK_REQUEST",
+    "NETWORK_RESPONSE",
+    "ACTION",
+    "PAGE_STATE",
+    "PRODUCT_SEMANTIC",
+    "WRITE_SEMANTIC",
+    "DERIVED"
+  ],
+  "evidence_classes": [
+    "OBSERVED",
+    "INFERRED",
+    "UNKNOWN"
+  ],
+  "invariants": [
+    "APPEND_ONLY_NO_OVERWRITE",
+    "EXACT_POINTER_AND_SHA_REQUIRED",
+    "CORRELATION_COMMAND_PAGE_ACTION_REQUIRED",
+    "NO_RAW_SECRET_OR_PII_VALUES",
+    "PRODUCER_ASSERTION_CLASS_NOT_REWRITTEN",
+    "CYCLE6_LINEAGE_COMPATIBLE"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "LATEST_B4_WAVE3_POINTER_V1",
+  "worker": "B-4",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment_id": 5212048911,
+  "status": "TERMINAL_PASS",
+  "terminal": "B4_SITE_ANALYZER_WAVE3_EDGE_REGRESSION_PASS",
+  "source_head": "6c12569e002bb01b2cacfcc7fef005292726bcbf",
+  "execution_artifact_commit": "880e9938069df6cfb03b18d8edf007b57060536e",
+  "test_report_commit": "49981b5c191f05ee2e6d4fd803250e87c45f6289",
+  "final_report_commit": "2c76dffcdc72db5231ccee2e8cab8bdbce60a3a9",
+  "edge_matrix": "PASS_9_OF_9",
+  "replay_digest": "ff0efc3736dcacb90fc1004c83c2220ca7eedbc1157a008f39b077c6b6470d8a",
+  "record_identity_digest": "10fe5228cb7a25284c3ae985c42bb93643611202c5a76c5704c69a3be16a84c1",
+  "network_events_each_run": 44,
+  "pytest": "PASS_6_OF_6",
+  "single_entrypoint": "site_analyzer_wave3/run_edge_regression.py",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "ACTION_DOM_NETWORK_RESPONSE_EVIDENCE_REF_V1",
+  "required": [
+    "action_id", "mode", "page_id", "page_state_artifact_ref",
+    "dom_evidence_ids", "network_request_evidence_ids", "network_response_evidence_ids",
+    "form_structure_evidence_ref", "product_blueprint_source_evidence_index",
+    "source_record_envelope_pointer", "command_checkpoint_pointer", "worker_state_checkpoint_pointer"
+  ],
+  "invariants": [
+    "ALL_EVIDENCE_IDS_EXIST_IN_MULTIMODE_MANIFEST",
+    "ACTION_REF_APPEND_ONLY_NO_OVERWRITE"
+  ]
+}

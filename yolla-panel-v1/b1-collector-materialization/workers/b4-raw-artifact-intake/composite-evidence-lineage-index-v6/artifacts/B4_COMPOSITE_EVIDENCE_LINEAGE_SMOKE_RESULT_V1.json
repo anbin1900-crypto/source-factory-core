@@ -1,0 +1,16 @@
+{
+  "schema_version": "B4_COMPOSITE_EVIDENCE_LINEAGE_SMOKE_RESULT_V1",
+  "status": "PASS",
+  "entry_count": 5,
+  "mode_count": 5,
+  "modes": ["DATA", "EDIT", "MY_LISTING", "PRODUCT", "WRITE"],
+  "node_count": 3,
+  "edge_count": 2,
+  "duplicate_disposition": "DUPLICATE_IDENTICAL_SUPPRESSED",
+  "reverse_trace_count": 5,
+  "reverse_trace_raw_total": 9,
+  "reverse_trace_derived_total": 4,
+  "raw_artifact_materialization_count": 0,
+  "raw_artifact_overwrite": false,
+  "semantic_decision_by_b4": false
+}

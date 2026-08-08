@@ -1,0 +1,55 @@
+{
+  "schema_version": "B4_SITE_ANALYZER_WAVE3_TEST_RESULTS_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment_id": 5212048911,
+  "executed_at_kst": "2026-08-07T13:59:04+09:00",
+  "source_head": "6c12569e002bb01b2cacfcc7fef005292726bcbf",
+  "result": "PASS",
+  "python_compile": "PASS_4_OF_4",
+  "pytest": "PASS_6_OF_6",
+  "edge_matrix": {
+    "POPUP": "PASS",
+    "IFRAME": "PASS",
+    "NESTED_FRAME": "PASS",
+    "SCROLL": "PASS_LAZY_AND_INFINITE_IDS_1_TO_10",
+    "PAGINATION": "PASS_IDS_1_TO_10",
+    "RELOAD": "PASS_IDS_1_TO_5_STABLE",
+    "RESTART": "PASS_BROWSER_CLOSE_REOPEN_IDS_1_TO_5_STABLE",
+    "RESUME": "PASS_INTERRUPTED_AFTER_PAGE1_RESUME_PAGE2_IDS_1_TO_10",
+    "IDENTITY_STABILITY": "PASS_IDS_1_TO_10"
+  },
+  "network_event_counts": {
+    "run_1_http_bridge_events": 44,
+    "run_2_http_bridge_events": 44,
+    "browser_direct_network_events": 0,
+    "transport_note": "REAL_LOCAL_HTTP_RESPONSE_BYTES_TO_SYSTEM_CHROMIUM_DOM_BRIDGE"
+  },
+  "replay": {
+    "run_1_digest": "ff0efc3736dcacb90fc1004c83c2220ca7eedbc1157a008f39b077c6b6470d8a",
+    "run_2_digest": "ff0efc3736dcacb90fc1004c83c2220ca7eedbc1157a008f39b077c6b6470d8a",
+    "digest_parity": "PASS"
+  },
+  "identity": {
+    "canonical_source_pointer": "B4_COMMON_HTTP_FIXTURE::stable-id-v1::records-1-10",
+    "stable_ids": [1,2,3,4,5,6,7,8,9,10],
+    "record_identity_digest": "10fe5228cb7a25284c3ae985c42bb93643611202c5a76c5704c69a3be16a84c1"
+  },
+  "cross_worker_binding": {
+    "A-3": "PASS_NON_MUTATING_OBSERVER_RECORD_COUNT_10_ROUTE_COMPATIBLE",
+    "B-3": "PASS_NON_MUTATING_ACTION_RECIPE_CANONICAL_POINTER_REBOUND",
+    "A-6": "PASS_B4_COMMON_SITE_PATTERN_EXACT_10_IDS",
+    "B-5": "PASS_EXACT_B4_SERVER_BLOB_AND_IDS_1_TO_10",
+    "all_consumer_identity_mutation_count": 0
+  },
+  "single_entrypoint": "python run_edge_regression.py",
+  "source_sha256": {
+    "wave3_server.py": "eb5c5173d4d95be8bb5b880b8ddf081d295ebafb8eca7f0223f8956847744886",
+    "edge_regression_harness.py": "f9215229875252dd26b9fb5bc415983eca3b77bf6a93621730334052970c9fa9",
+    "run_edge_regression.py": "4403d41b4b67a8ddac5ec6b85ec319ab3d8e6170a1ce1f1e84250e6069507273",
+    "test_edge_regression.py": "3882e5aad36690c8e273b64531092fa19157bb805f3fbde9453d0df758f6f5ea",
+    "UPSTREAM_IDENTITY_BINDINGS_V1.json": "c2831df17cff4655cf4caa44909e3ad1f3adbd13fdca220bf516fec0af53827a"
+  },
+  "production": false,
+  "ready": false,
+  "merge": false
+}

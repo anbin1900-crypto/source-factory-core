@@ -1,0 +1,20 @@
+{
+  "drift_delta_disposition": "APPENDED",
+  "drift_from_hash_bound": true,
+  "duplicate_collision": "PASS_REJECTED",
+  "duplicate_identical_disposition": "DUPLICATE_IDENTICAL_SUPPRESSED",
+  "evidence_kind_coverage": ["action", "adapter", "entity", "form", "page", "receipt", "request", "response", "site"],
+  "fixture_record_count": 9,
+  "hash_lineage_pass": true,
+  "ledger_record_count_after_dedupe_and_drift": 10,
+  "raw_artifact_overwrite": false,
+  "raw_secret_or_pii": false,
+  "schema_version": "B4_LINEAGE_VALIDATION_RECEIPT_V1",
+  "source_field_loss_count": 0,
+  "source_field_loss_keys": [],
+  "source_mutation_count": 0,
+  "status": "PASS",
+  "target_value_guessing": false,
+  "ten_site_manifest_lane_slots": 50,
+  "ten_site_manifest_site_count": 10
+}

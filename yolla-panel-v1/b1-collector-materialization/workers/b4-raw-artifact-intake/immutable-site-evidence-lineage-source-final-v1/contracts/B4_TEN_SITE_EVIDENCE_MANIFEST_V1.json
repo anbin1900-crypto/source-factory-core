@@ -1,0 +1,13 @@
+{
+  "schema_version": "B4_TEN_SITE_EVIDENCE_MANIFEST_V1",
+  "site_slots": 10,
+  "lanes_per_site": 5,
+  "total_site_lane_slots": 50,
+  "lanes": ["DATA", "PRODUCT", "WRITE", "MY_LISTING", "EDIT"],
+  "site_identity_policy": "AUTHORITY_VALUE_ONLY_ELSE_UNKNOWN",
+  "missing_input_policy": "WAITING_INPUT_OR_UNKNOWN_NO_GUESS",
+  "evidence_kinds": ["site", "page", "action", "request", "response", "entity", "form", "adapter", "receipt"],
+  "append_only": true,
+  "drift_delta_rule": "APPEND_NEW_DELTA_REFERENCING_PRIOR_RECORD_HASH",
+  "raw_artifact_overwrite": false
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "LATEST_B4_REAL_SITE_IMMUTABLE_EVIDENCE_LINEAGE_POINTER_V1",
+  "worker": "B-4",
+  "directive_id": "A0-TO-B4-REAL-SITE-IMMUTABLE-EVIDENCE-LINEAGE-V7-20260808-001",
+  "directive_comment_id": 5220807009,
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "status": "TERMINAL_READY_WAITING_INPUT",
+  "terminal": "B4_REAL_SITE_IMMUTABLE_EVIDENCE_LINEAGE_READY",
+  "outputs": {
+    "real_site_evidence_manifest_v1": "REAL_SITE_EVIDENCE_MANIFEST_V1.json",
+    "real_site_semantic_lineage_index_v1": "REAL_SITE_SEMANTIC_LINEAGE_INDEX_V1.json",
+    "real_site_receipt_index_v1": "REAL_SITE_RECEIPT_INDEX_V1.json",
+    "runtime_source": "src/real_site_evidence_lineage.py",
+    "single_entrypoint": "run_real_site_lineage_smoke.py",
+    "test_report": "reports/B4_REAL_SITE_IMMUTABLE_EVIDENCE_LINEAGE_TEST_REPORT_V1.json",
+    "final_report": "reports/B4_REAL_SITE_IMMUTABLE_EVIDENCE_LINEAGE_FINAL_REPORT_V1.json"
+  },
+  "live_binding_status": {
+    "actual_site_receipt_bound_count": 0,
+    "status": "WAITING_EXACT_COMMAND_RECEIPT",
+    "live_pass_claimed": false
+  },
+  "validation": {
+    "schema_parse": "PASS_3_OF_3",
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_7_OF_7",
+    "fixture_contract_smoke": "PASS_1_OF_1",
+    "hash_chain": "PASS",
+    "duplicate_suppression": "PASS",
+    "secret_pii_reject": "PASS"
+  },
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}

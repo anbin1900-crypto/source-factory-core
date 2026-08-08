@@ -1,0 +1,21 @@
+{
+  "schema_version": "D5_CYCLE4_ACCEPTANCE_REPORT_V1",
+  "validation": {
+    "local_adapter_tests": "PASS_22_ASSERTIONS",
+    "d2_same_lineage_append": "PASS",
+    "d3_command_context_page_reply_sha_binding": "PASS",
+    "duplicate_guard": "PASS",
+    "order_reversal_guard": "PASS",
+    "restart_restore": "PASS",
+    "nonblocking_writer": "PASS",
+    "d4_d6_no_inference": "PASS",
+    "upstream_event_store_mutation_count": 0
+  },
+  "actual_time_validation": {
+    "synthetic_time_count": 0,
+    "freshness_latency_seconds": "551.4538219",
+    "message_to_reply_latency_seconds": "38.1362053"
+  },
+  "freshness_guard_at_dispatch": "STALE_BY_251.4538219_SECONDS",
+  "status": "PASS_WITH_OBSERVED_FRESHNESS_BREACH"
+}

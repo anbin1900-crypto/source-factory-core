@@ -1,0 +1,7 @@
+{
+  "entries": [
+    {"semantic_pointer":"semantic://000001/1b159296e1d7a0e2","raw_evidence_pointers":["evidence-45dc26a0ed1139eebe7837e6","evidence-9c5de9ba71755ad58c862ef8"],"derived_evidence_pointers":[],"evidence_class":"OBSERVED","producer_assertion":{"label":"product-editor","type":"FORM"}},
+    {"semantic_pointer":"semantic://000002/638acd2802e0181e","raw_evidence_pointers":["evidence-0c9073a255074c4a2fc66e8e"],"derived_evidence_pointers":["semantic://000001/1b159296e1d7a0e2"],"evidence_class":"INFERRED","producer_assertion":{"blueprint":"product-page","has_form":true}},
+    {"semantic_pointer":"semantic://000003/bfe032df074f89e6","raw_evidence_pointers":["evidence-2aed123220f249972a566986"],"derived_evidence_pointers":["semantic://000001/1b159296e1d7a0e2"],"evidence_class":"UNKNOWN","producer_assertion":{"from":"node:product-form","relation":"SUBMITS_TO","to":"network:response"}}
+  ]
+}

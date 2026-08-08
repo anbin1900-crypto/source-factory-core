@@ -1,0 +1,49 @@
+{
+  "artifact_type_enum": [
+    "RESPONSE_BODY",
+    "DOM_SNAPSHOT",
+    "TRACE",
+    "SCREENSHOT",
+    "RECEIPT"
+  ],
+  "hash_contract": "SHA256_EXACT_STORED_BYTES",
+  "identity_binding": [
+    "page_id",
+    "action_id",
+    "request_id",
+    "command_id",
+    "source_url",
+    "captured_at",
+    "sha256",
+    "record_count"
+  ],
+  "immutability": "APPEND_ONLY_NO_OVERWRITE",
+  "lineage": "previous_artifact_id + append-only hash-chain ledger",
+  "purpose": "Immutable browser-analysis/source artifact envelope for RESPONSE_BODY, DOM_SNAPSHOT, TRACE, SCREENSHOT, RECEIPT.",
+  "required_fields": [
+    "artifact_id",
+    "artifact_type",
+    "status",
+    "page_id",
+    "action_id",
+    "request_id",
+    "command_id",
+    "source_url",
+    "captured_at",
+    "sha256",
+    "size_bytes",
+    "record_count",
+    "stored_path",
+    "lineage_seq",
+    "previous_artifact_id",
+    "pagination_cursor",
+    "retry_count",
+    "resume_cursor",
+    "redaction_metadata"
+  ],
+  "schema_version": "SOURCE_TRACE_ARTIFACT_ENVELOPE_V1",
+  "secret_policy": "SECRET_RAW_STORAGE_FORBIDDEN; redaction metadata only",
+  "status_enum": [
+    "COMPLETED"
+  ]
+}

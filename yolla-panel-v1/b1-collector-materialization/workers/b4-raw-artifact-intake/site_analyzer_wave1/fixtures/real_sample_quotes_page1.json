@@ -1,0 +1,13 @@
+{
+  "schema_version": "B4_REAL_SITE_SAMPLE_V1",
+  "source_url": "https://quotes.toscrape.com/page/1/",
+  "captured_at_kst": "2026-08-07T01:53:00+09:00",
+  "capture_method": "PUBLIC_PAGE_READBACK_FOR_RUNTIME_FIXTURE",
+  "records": [
+    {"id": "quote-001", "author": "Albert Einstein", "text_snippet": "The world as we have created it...", "tags": ["change", "thinking", "world"]},
+    {"id": "quote-002", "author": "J.K. Rowling", "text_snippet": "It is our choices, Harry...", "tags": ["abilities", "choices"]},
+    {"id": "quote-003", "author": "Jane Austen", "text_snippet": "The person, be it gentleman or lady...", "tags": ["books", "classic", "humor"]}
+  ],
+  "record_count": 3,
+  "copyright_minimization": "ONLY_SHORT_SNIPPETS_AND_METADATA_PRESERVED"
+}

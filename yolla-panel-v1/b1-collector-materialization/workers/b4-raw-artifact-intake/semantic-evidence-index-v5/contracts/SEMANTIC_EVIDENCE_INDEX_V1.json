@@ -1,0 +1,22 @@
+{
+  "schema_version": "SEMANTIC_EVIDENCE_INDEX_V1",
+  "entity_types": ["NODE", "EDGE"],
+  "evidence_classes": ["OBSERVED", "INFERRED", "UNKNOWN"],
+  "required": [
+    "semantic_id", "entity_type", "producer_id", "producer_assertion",
+    "evidence_class", "confidence", "raw_evidence_pointers",
+    "derived_evidence_pointers", "derivation_reference", "created_at",
+    "assertion_sha256", "previous_semantic_pointer"
+  ],
+  "invariants": [
+    "APPEND_ONLY_NO_OVERWRITE",
+    "PRODUCER_ASSERTION_PRESERVED_NO_B4_SEMANTIC_DECISION",
+    "RAW_POINTERS_REFERENCE_CYCLE4_IMMUTABLE_EVIDENCE",
+    "OBSERVED_INFERRED_UNKNOWN_EXPLICIT",
+    "CONFIDENCE_RANGE_0_TO_1",
+    "INFERRED_REQUIRES_DERIVATION_REFERENCE",
+    "AT_LEAST_ONE_RAW_OR_DERIVED_EVIDENCE_POINTER",
+    "DUPLICATE_IDENTICAL_ASSERTION_SUPPRESSED",
+    "SEMANTIC_NODE_EDGE_REVERSE_TRACE_REQUIRED"
+  ]
+}

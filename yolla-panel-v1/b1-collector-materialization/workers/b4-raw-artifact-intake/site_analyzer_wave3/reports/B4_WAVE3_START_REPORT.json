@@ -1,0 +1,17 @@
+{
+  "schema_version": "B4_SITE_ANALYZER_WAVE3_START_REPORT_V1",
+  "worker": "B-4",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment_id": 5212048911,
+  "role": "DETERMINISTIC_EDGE_REGRESSION_FIXTURE_OWNER",
+  "mode": "ONE_OWNER_END_TO_END",
+  "observed_remote_head": "199362d6b90fb11fecac864f915cfb50c6becf7f",
+  "wave2_terminal": "B4_WAVE2_COMMON_HTTP_FIXTURE_EDGE_EXTRACTION_PASS",
+  "started_at_kst": "2026-08-07T13:55:31+09:00",
+  "required_edges": ["POPUP","IFRAME","NESTED_FRAME","SCROLL","PAGINATION","RELOAD","RESTART","RESUME","IDENTITY_STABILITY"],
+  "required_evidence": ["EDGE_MATRIX","NETWORK_EVENT_COUNTS","REPLAY_DIGEST","HEAD","POINTER"],
+  "single_entrypoint_required": true,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

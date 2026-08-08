@@ -1,0 +1,19 @@
+{
+  "contract": "RAW_ARTIFACT_MANIFEST_V1",
+  "invariants": [
+    "artifact_count_equals_entries_length",
+    "total_record_count_equals_entry_sum",
+    "immutability=APPEND_ONLY_NO_OVERWRITE",
+    "sha256_is_exact_byte_digest",
+    "raw_overwrite_rejected"
+  ],
+  "required_fields": [
+    "schema_version",
+    "manifest_id",
+    "entries",
+    "artifact_count",
+    "total_record_count",
+    "immutability"
+  ],
+  "schema_version": "1.0.0"
+}

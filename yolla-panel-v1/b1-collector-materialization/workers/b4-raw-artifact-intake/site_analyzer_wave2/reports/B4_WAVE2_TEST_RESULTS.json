@@ -1,0 +1,31 @@
+{
+  "all_edge_routes": "PASS_10_OF_10",
+  "browser_runtime": "PASS_PLAYWRIGHT_SYSTEM_CHROMIUM",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "download_row_count": 10,
+  "executed_at_utc": "2026-08-06T18:56:33.290352+00:00",
+  "extracted_record_count": 10,
+  "failure_injection": "INJECTED_FAILURE_AFTER_PAGE_1",
+  "fixture_site_launch": "PASS_DYNAMIC_HTTP",
+  "infinite_scroll_count": 10,
+  "load_more_count": 10,
+  "merge": false,
+  "network_event_count": 42,
+  "production": false,
+  "python_compile": "PASS",
+  "ready": false,
+  "result": "PASS",
+  "resume_after_failure": "PASS",
+  "schema_drift_detected": true,
+  "schema_version": "B4_WAVE2_TEST_RESULTS_V1",
+  "tested_paths": [
+    "fixture_site/server.py",
+    "fixture_site/launcher.py",
+    "fixture_site/adapter.py",
+    "recipes/B4_COMMON_FIXTURE_EDGE_RECIPE_V1.json",
+    "tests/test_wave2_fixture_site.py",
+    "run_wave2_validation.py"
+  ],
+  "transport_mode": "LOCAL_HTTP_RESPONSE_TO_CHROMIUM_DOM_BRIDGE_AFTER_NATIVE_GOTO_POLICY_BLOCK",
+  "unit_tests": "PASS_14_OF_14"
+}

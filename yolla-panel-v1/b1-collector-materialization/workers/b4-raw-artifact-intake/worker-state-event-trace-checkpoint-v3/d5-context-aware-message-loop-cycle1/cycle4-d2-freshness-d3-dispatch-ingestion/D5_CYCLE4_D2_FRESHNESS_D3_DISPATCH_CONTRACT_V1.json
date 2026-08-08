@@ -1,0 +1,42 @@
+{
+  "schema_version": "D5_CYCLE4_D2_FRESHNESS_D3_DISPATCH_CONTRACT_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE4-20260808-001",
+  "directive_id": "C4-W5-D2-FRESHNESS-AND-D3-DISPATCH-EVENT-INGESTION-V1-20260808-001",
+  "directive_comment_id": 5220765162,
+  "authority_commit": "d146f6b12747ac24d798eadacda02cc8494b01c8",
+  "role": "D-5_AUTOMATION_EVENT_LOG_AND_IMPROVEMENT_OWNER",
+  "worker_pr": 40,
+  "upstream_event_store_blob": "8ae79e40725447ff55ea8d166d2a4441587a8de4",
+  "mutation_allowed": false,
+  "actual_inputs": {
+    "d2_comment": 5220605238,
+    "d2_result_commit": "0264206865159f9ca928ffc4264859d9218f81f0",
+    "d2_last_seen_at": "2026-08-07T18:16:52.4077010Z",
+    "d3_comment": 5220688575,
+    "d3_result_commit": "500a9a318fdc3d61032319ca70960d8114e244b5",
+    "d3_live_result_head": "9fb367331e9341314ff4abafb3b959efd038e548",
+    "message_sent_at": "2026-08-07T18:26:03.8615229Z",
+    "reply_collected_at": "2026-08-07T18:26:41.9977282Z",
+    "command_id": "D3-C1-LIVE-DISPATCH-RETURN-20260808-030500-001",
+    "context_id": "6a72e288-7f24-83ee-b357-3e327cf6d877",
+    "page_id": "UIA-TAB-42.198100.4.0.0.5287",
+    "reply_sha256": "2ba4efbee5d42a71be9e9ae28db1b1145fed04b9657efef63a2bcce02e3b347a"
+  },
+  "guards": {
+    "append_only": true,
+    "duplicate_suppression": true,
+    "order_reversal_reject": true,
+    "restart_restore": true,
+    "writer_nonblocking": true,
+    "d4_d6_completion_inference": false,
+    "synthetic_receipt_or_time": false
+  },
+  "freshness": {
+    "stale_after_seconds": 300,
+    "policy": "OBSERVE_BREACH_DO_NOT_REWRITE_SOURCE_PASS"
+  },
+  "expected_terminal": "D2_FRESHNESS_AND_D3_DISPATCH_EVENT_INGESTION_PASS",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

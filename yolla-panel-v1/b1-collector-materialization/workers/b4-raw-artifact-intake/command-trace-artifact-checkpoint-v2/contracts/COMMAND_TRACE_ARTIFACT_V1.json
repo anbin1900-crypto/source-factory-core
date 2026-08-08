@@ -1,0 +1,11 @@
+{
+  "schema_version": "COMMAND_TRACE_ARTIFACT_V1",
+  "required": ["command_id","attempt_no","step_id","artifact_id","sha256","size","created_at","source_pointer","previous_artifact_pointer","idempotency_key","status"],
+  "status_values": ["COMPLETED"],
+  "idempotency_key_formula": "sha256(canonical_json(command_id,attempt_no,step_id,payload_sha256))",
+  "duplicate_policy": "SAME_IDEMPOTENCY_KEY_REUSES_EXISTING_COMPLETED_ARTIFACT",
+  "different_payload_policy": "SAME_COMMAND_STEP_DIFFERENT_HASH_IS_DISTINCT_LINEAGE_ARTIFACT",
+  "optional_pointer_fields": ["b5_dataset_checkpoint_pointer"],
+  "immutability": "APPEND_ONLY_NO_OVERWRITE",
+  "secret_raw_storage": false
+}

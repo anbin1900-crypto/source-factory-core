@@ -1,0 +1,26 @@
+{
+  "schema_version": "REAL_SITE_EVIDENCE_MANIFEST_V1",
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "status": "WAITING_EXACT_COMMAND_RECEIPT",
+  "actual_site_bound_evidence_count": 0,
+  "candidate_observations": [
+    {
+      "candidate_id": "candidate-a4-actual-chrome-readback",
+      "evidence_kind": "PAGE_STATE",
+      "source_pointer": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/ai001-prebuild/cycle7/actual_chrome_readback_input_v1.json",
+      "source_blob": "adee351be0e60d01572aa2924067bbca677424bf",
+      "stream_sha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165",
+      "action_id": "action-list",
+      "command_id": "UNKNOWN",
+      "page_id": "INFERRED",
+      "binding_status": "CANDIDATE_ONLY_NOT_ACTUAL_SITE_BOUND",
+      "reason": "A4 validation explicitly reports command_id UNKNOWN, page_id INFERRED, external target-site coverage claim false"
+    }
+  ],
+  "evidence": [],
+  "cycle6_composite_pointer": "../composite-evidence-lineage-index-v6/LATEST_B4_COMPOSITE_EVIDENCE_LINEAGE_INDEX_POINTER.json",
+  "append_only": true,
+  "raw_artifact_overwrite": false,
+  "raw_payload_storage": false,
+  "raw_secret_storage": false
+}

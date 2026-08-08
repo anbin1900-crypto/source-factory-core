@@ -1,0 +1,62 @@
+{
+  "schema_version": "B4_SITE_ANALYZER_WAVE1_TEST_RESULTS_V2",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "executed_at_kst": "2026-08-07T02:08:33+09:00",
+  "result": "PASS_LOCAL_RUNTIME_WITH_PROVEN_EXTERNAL_NAVIGATION_BLOCKER",
+  "python_compile": "PASS_2_OF_2",
+  "tests": {
+    "total": "PASS_34_OF_34",
+    "deterministic_runtime": "PASS_23_OF_23",
+    "real_chromium_inline_harness": "PASS_8_OF_8",
+    "upstream_binding": "PASS_3_OF_3"
+  },
+  "capabilities": {
+    "popup": "PASS_REAL_CHROMIUM",
+    "new_tab": "PASS_REAL_CHROMIUM",
+    "frame": "PASS_REAL_CHROMIUM",
+    "download_capture_sha256": "PASS_REAL_CHROMIUM",
+    "load_more": "PASS_REAL_CHROMIUM",
+    "infinite_scroll": "PASS_REAL_CHROMIUM",
+    "page_pagination": "PASS_REAL_CHROMIUM",
+    "cursor_pagination": "PASS_DETERMINISTIC_DRIVER",
+    "retry": "PASS",
+    "resume_after_failure": "PASS_REAL_CHROMIUM_AND_DETERMINISTIC"
+  },
+  "upstream_binding": {
+    "a6_head": "91baa2fb09471ed2a840c2dea9e614bc430da906",
+    "a6_adapter_manifest_blob": "46664fd7732507b5c59493d5203c42ebb61f5013",
+    "a6_workflow_recipe_blob": "e24f0e9d6d30561b749eb5c3d1ac8620b6a6a124",
+    "b3_head": "4716f2e6dd1a8bf9ab6210fe9f72223c18690992",
+    "b3_recipe_contract_blob": "0ec568a6d74114de6461170491905ce227d8a576",
+    "b3_recording_fixture_blob": "c46bcfd61f84e32a5a9818a8b9071b0b514090ad"
+  },
+  "real_sample": {
+    "source_url": "https://quotes.toscrape.com/page/1/",
+    "record_count": 3,
+    "allowed_range": "1..20",
+    "evidence_class": "PUBLIC_PAGE_READBACK_FIXTURE",
+    "live_playwright_extraction": "BLOCKED_BY_ADMINISTRATOR"
+  },
+  "external_blocker": {
+    "signature": "ERR_BLOCKED_BY_ADMINISTRATOR",
+    "affected_navigation": ["HTTPS", "LOCALHOST_HTTP", "FILE", "DATA_URL"],
+    "browser_launch": "PASS",
+    "inline_content_execution": "PASS",
+    "classification": "PROVEN_EXTERNAL_BROWSER_NAVIGATION_POLICY_BLOCKER"
+  },
+  "boundaries": {"production": false, "ready": false, "merge": false},
+  "artifacts": [
+    {"path":"src/browser_edge_runtime.py","sha256":"9ac6c1d92592479472d9c26819392a608845cd064db2ca3827a0d1dee4f83b45","size_bytes":15587},
+    {"path":"src/playwright_browser_driver.py","sha256":"ada6b2322cd1b6d132336397c1320f36019e2495911abae11eac7fda45847cbe","size_bytes":5023},
+    {"path":"recipes/browser-edge-workflow-recipe.json","sha256":"0ace3b58f1fe61cefc2d457dd3ce3c9101e4f869412ed7b3ea191c8ab789c087","size_bytes":1206},
+    {"path":"recipes/quotes-real-sample-recipe.json","sha256":"730b6fd235ce58981c51161d2589aa9eb57af37da92c2b7dafead26b329b51ce","size_bytes":565},
+    {"path":"fixtures/real_sample_quotes_page1.json","sha256":"a7f4c896bab3409daab057585a4fcc58607a8660abd4077f5d1eb4783072ac3b","size_bytes":760},
+    {"path":"fixtures/harness/inline_harness.html","sha256":"b88ed6e3ca26909c9c1cee457cd30084b9cc3f0382da9d88d6f897e00076be2a","size_bytes":2489},
+    {"path":"tests/test_browser_edge_runtime.py","sha256":"18cbe8a4d06843b7fd81d66ffcaa24cf3339aa0f898e1a81707a7809890b37c4","size_bytes":9293},
+    {"path":"tests/test_playwright_local_harness.py","sha256":"d4ec05cf66130b30f80e979fd400dea9aa9f7e218afc42ed883b1916064ad74e","size_bytes":4534},
+    {"path":"tests/test_upstream_binding.py","sha256":"81e9c65f6450995ba3bf5b7086da1a3e183a11746409859d42808c1485e4e367","size_bytes":1393},
+    {"path":"upstream/B4_UPSTREAM_BINDING_V1.json","sha256":"808719137b0ef7821e93b53fc683411a5567e266f2cde3ca5314afa529cc0e49","size_bytes":1883},
+    {"path":"reports/B4_LIVE_BROWSER_NAVIGATION_BLOCKER_EVIDENCE.json","sha256":"1d882f98ef1f7df0ff72922d26a933ba626ad2a8d5c27cc68084c44f78c98c58","size_bytes":1193},
+    {"path":"reports/test-output.txt","sha256":"66238d0ae575b7339429898afad5a79330c6311b394c2b361382ec24697fbf92","size_bytes":4053}
+  ]
+}

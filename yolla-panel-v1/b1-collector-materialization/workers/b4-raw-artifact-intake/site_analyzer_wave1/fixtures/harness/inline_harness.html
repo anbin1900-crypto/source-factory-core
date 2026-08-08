@@ -1,0 +1,18 @@
+<!doctype html><html><body>
+<h1>B4 Browser Edge Harness</h1>
+<button id="popup" onclick="const w=window.open('','b4popup','width=400,height=300');w.document.write('<div id=&quot;popup-record&quot; data-id=&quot;popup-1&quot;>Popup Record</div>');w.document.close();">Popup</button>
+<button id="newtab" onclick="const w=window.open('','_blank');w.document.write('<div id=&quot;newtab-record&quot; data-id=&quot;tab-1&quot;>New Tab Record</div>');w.document.close();">New Tab</button>
+<iframe id="data-frame" srcdoc="<div class='frame-record' data-id='frame-1'><span class='id'>frame-1</span><span class='value'>inside-frame</span></div>"></iframe>
+<button id="download">Download</button>
+<div id="records"><div class="record" data-id="r1"><span class="id">r1</span><span class="value">alpha</span></div></div>
+<button id="load-more">Load More</button>
+<div id="scroll-sentinel" style="height:1200px"></div>
+<button id="next">Next</button>
+<script>
+document.querySelector('#download').addEventListener('click',()=>{const blob=new Blob(['id,name\n1,alpha\n2,beta\n'],{type:'text/csv'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='sample.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);});
+let loadCount=1;
+document.querySelector('#load-more').addEventListener('click',()=>{loadCount++;const d=document.createElement('div');d.className='record';d.dataset.id='r'+loadCount;d.innerHTML='<span class="id">r'+loadCount+'</span><span class="value">value-'+loadCount+'</span>';document.querySelector('#records').appendChild(d);if(loadCount>=3)document.querySelector('#load-more').remove();});
+let scrollAdded=false;
+window.addEventListener('scroll',()=>{if(!scrollAdded&&window.innerHeight+window.scrollY>=document.body.scrollHeight-10){scrollAdded=true;const d=document.createElement('div');d.className='record';d.dataset.id='scroll-1';d.innerHTML='<span class="id">scroll-1</span><span class="value">scroll-value</span>';document.querySelector('#records').appendChild(d);const pad=document.createElement('div');pad.style.height='300px';document.body.appendChild(pad);}});
+document.querySelector('#next').addEventListener('click',()=>{document.querySelector('#records').innerHTML='<div class="record" data-id="r2"><span class="id">r2</span><span class="value">beta</span></div><div class="record" data-id="r3"><span class="id">r3</span><span class="value">gamma</span></div>';document.querySelector('#next').remove();});
+</script></body></html>

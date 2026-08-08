@@ -1,0 +1,39 @@
+test_21_real_sample_count (test_browser_edge_runtime.FixtureContractTest.test_21_real_sample_count) ... ok
+test_22_recipe_has_required_edge_steps (test_browser_edge_runtime.FixtureContractTest.test_22_recipe_has_required_edge_steps) ... ok
+test_23_actual_recipe_uses_page_pagination (test_browser_edge_runtime.FixtureContractTest.test_23_actual_recipe_uses_page_pagination) ... ok
+test_01_popup (test_browser_edge_runtime.RuntimeTest.test_01_popup) ... ok
+test_02_new_tab (test_browser_edge_runtime.RuntimeTest.test_02_new_tab) ... ok
+test_03_frame (test_browser_edge_runtime.RuntimeTest.test_03_frame) ... ok
+test_04_download_capture_and_hash (test_browser_edge_runtime.RuntimeTest.test_04_download_capture_and_hash) ... ok
+test_05_load_more (test_browser_edge_runtime.RuntimeTest.test_05_load_more) ... ok
+test_06_infinite_scroll_stable_stop (test_browser_edge_runtime.RuntimeTest.test_06_infinite_scroll_stable_stop) ... ok
+test_07_page_pagination_and_dedup (test_browser_edge_runtime.RuntimeTest.test_07_page_pagination_and_dedup) ... ok
+test_08_cursor_pagination (test_browser_edge_runtime.RuntimeTest.test_08_cursor_pagination) ... ok
+test_09_retry_success (test_browser_edge_runtime.RuntimeTest.test_09_retry_success) ... ok
+test_10_retry_exhaustion (test_browser_edge_runtime.RuntimeTest.test_10_retry_exhaustion) ... ok
+test_11_resume_after_interruption (test_browser_edge_runtime.RuntimeTest.test_11_resume_after_interruption) ... ok
+test_12_checkpoint_is_valid_json (test_browser_edge_runtime.RuntimeTest.test_12_checkpoint_is_valid_json) ... ok
+test_13_max_records_cap (test_browser_edge_runtime.RuntimeTest.test_13_max_records_cap) ... ok
+test_14_invalid_max_records_rejected (test_browser_edge_runtime.RuntimeTest.test_14_invalid_max_records_rejected) ... ok
+test_15_missing_identity_fails_closed (test_browser_edge_runtime.RuntimeTest.test_15_missing_identity_fails_closed) ... ok
+test_16_unsupported_step_rejected (test_browser_edge_runtime.RuntimeTest.test_16_unsupported_step_rejected) ... ok
+test_17_empty_recipe_rejected (test_browser_edge_runtime.RuntimeTest.test_17_empty_recipe_rejected) ... ok
+test_18_trace_contains_accept_and_complete (test_browser_edge_runtime.RuntimeTest.test_18_trace_contains_accept_and_complete) ... ok
+test_19_download_receipt_size_nonzero (test_browser_edge_runtime.RuntimeTest.test_19_download_receipt_size_nonzero) ... ok
+test_20_record_limit_contract_is_one_to_twenty (test_browser_edge_runtime.RuntimeTest.test_20_record_limit_contract_is_one_to_twenty) ... ok
+test_24_popup_real_chromium (test_playwright_local_harness.PlaywrightHarnessTest.test_24_popup_real_chromium) ... ok
+test_25_new_tab_real_chromium (test_playwright_local_harness.PlaywrightHarnessTest.test_25_new_tab_real_chromium) ... ok
+test_26_frame_extract_real_chromium (test_playwright_local_harness.PlaywrightHarnessTest.test_26_frame_extract_real_chromium) ... ok
+test_27_download_real_chromium (test_playwright_local_harness.PlaywrightHarnessTest.test_27_download_real_chromium) ... ok
+test_28_load_more_real_chromium (test_playwright_local_harness.PlaywrightHarnessTest.test_28_load_more_real_chromium) ... ok
+test_29_infinite_scroll_real_chromium (test_playwright_local_harness.PlaywrightHarnessTest.test_29_infinite_scroll_real_chromium) ... ok
+test_30_page_pagination_real_chromium (test_playwright_local_harness.PlaywrightHarnessTest.test_30_page_pagination_real_chromium) ... ok
+test_31_interruption_resume_real_chromium (test_playwright_local_harness.PlaywrightHarnessTest.test_31_interruption_resume_real_chromium) ... ok
+test_32_a6_exact_head_and_blobs_bound (test_upstream_binding.UpstreamBindingTest.test_32_a6_exact_head_and_blobs_bound) ... ok
+test_33_b3_codegen_actions_mapped (test_upstream_binding.UpstreamBindingTest.test_33_b3_codegen_actions_mapped) ... ok
+test_34_edge_recipe_covers_upstream_runtime_mapping (test_upstream_binding.UpstreamBindingTest.test_34_edge_recipe_covers_upstream_runtime_mapping) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 3.039s
+
+OK

@@ -1,0 +1,42 @@
+{
+  "schema_version": "D5_CYCLE5_ACTUAL_D4_V3_INPUT_V1",
+  "source_progress_comment": 5221274709,
+  "control_receipt_comment": 5224185332,
+  "command": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "authority_commit": "d886074844175213d0e8dced25db74e8ca9abed8",
+    "command_id": "D4C2-RUN-UIA-LIVE-OBSERVER-V3-20260808-042130-001",
+    "created_at": "2026-08-08T04:21:30+09:00",
+    "claimed_at": "2026-08-08T04:19:53.0662978+09:00"
+  },
+  "receipt": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "blob": "f503589ea335ad5cf397b33a2d4be9307df17957",
+    "status": "SUCCEEDED",
+    "started_at": "2026-08-08T04:19:53.9165713+09:00",
+    "completed_at": "2026-08-08T04:57:43.8793145+09:00",
+    "browser_agent_32100_reachable": true,
+    "cdp_9222_reachable": false,
+    "uia_fallback_used": true,
+    "live_pass_claimed": false
+  },
+  "actual_observer_events": [
+    {"event": "CLAIMED", "observed_at": "2026-08-08T04:19:53.0662978+09:00", "source": "PR22_COMMENT_5221274709"},
+    {"event": "WORKING", "observed_at": "2026-08-07T19:20:20.2468294Z", "reason": "USER_MESSAGE_VISIBLE_AWAITING_REPLY", "source": "D4_V3_RECEIPT_BLOB"},
+    {"event": "EXECUTOR_STALLED", "observed_at": "2026-08-07T19:36:29Z", "reason": "PC_EXECUTOR_V2_CHILD_PROCESS_STALLED_AFTER_CLAIM", "source": "PR22_COMMENT_5221274709_CREATED_AT"},
+    {"event": "ERROR", "observed_at": "2026-08-07T19:57:43.3552601Z", "reason": "D3_CHILD_RESULT_SCHEMA_MISSING_ASSISTANT_REPLY_COMPLETED", "classification": "INTERNAL_SCHEMA_MISMATCH", "source": "D4_V3_RECEIPT_BLOB"},
+    {"event": "RECEIPT_PUBLISHED", "observed_at": "2026-08-08T04:57:43.8793145+09:00", "source": "D4_V3_RECEIPT_BLOB"}
+  ],
+  "missing_actual_event": {
+    "event": "USER_RESTARTED_EXECUTOR",
+    "timestamp": null,
+    "reason": "CONTROL_RECEIPT_CONFIRMS_RESTART_EFFECT_BUT_DOES_NOT_CONTAIN_ACTUAL_RESTART_TIMESTAMP",
+    "synthetic_time_forbidden": true
+  },
+  "retry_evidence": {
+    "V1": "D4C2-RUN-UIA-LIVE-OBSERVER-V1-20260808-041700-001",
+    "V2": "D4C2-RUN-UIA-LIVE-OBSERVER-V2-20260808-041930-001",
+    "V3": "D4C2-RUN-UIA-LIVE-OBSERVER-V3-20260808-042130-001",
+    "retry_count": 2
+  }
+}

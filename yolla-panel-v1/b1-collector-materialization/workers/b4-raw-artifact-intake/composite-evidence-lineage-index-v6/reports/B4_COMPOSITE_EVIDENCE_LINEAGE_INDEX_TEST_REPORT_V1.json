@@ -1,0 +1,15 @@
+{
+  "schema_version":"B4_COMPOSITE_EVIDENCE_LINEAGE_INDEX_TEST_REPORT_V1",
+  "directive_id":"A0-TO-B4-COMPOSITE-EVIDENCE-LINEAGE-INDEX-V6-20260808-001",
+  "directive_comment_id":5220481169,
+  "cycle_id":"A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001",
+  "activation_dependency":{"required":"D5_CYCLE3_TERMINAL","observed_terminal":"D2_LIVE_RECOVERY_INGESTION_AND_METRIC_CLOSURE_PASS","status":"PASS"},
+  "validation":{"schema_parse":"PASS_1_OF_1","python_compile":"PASS_2_OF_2","unit_tests":"PASS_7_OF_7","fixture_reverse_trace_smoke":"PASS_1_OF_1"},
+  "smoke":{"entry_count":5,"mode_count":5,"node_count":3,"edge_count":2,"duplicate_disposition":"DUPLICATE_IDENTICAL_SUPPRESSED","reverse_trace_count":5,"reverse_trace_raw_total":9,"reverse_trace_derived_total":4,"raw_artifact_materialization_count":0,"raw_artifact_overwrite":false,"semantic_decision_by_b4":false},
+  "status":"PASS",
+  "target_pc_execution":false,
+  "live_site_call":false,
+  "production":false,
+  "ready":false,
+  "merge":false
+}

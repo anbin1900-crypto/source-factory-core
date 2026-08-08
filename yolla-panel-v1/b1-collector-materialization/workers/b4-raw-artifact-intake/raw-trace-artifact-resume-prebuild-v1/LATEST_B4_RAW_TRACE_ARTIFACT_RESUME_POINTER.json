@@ -1,0 +1,27 @@
+{
+  "branch": "worker/b4-raw-artifact-source-envelope-v1",
+  "content_head_before_pointer": "1655eed5ef6d0ecb8797ba9110fa8dfc4eb799c2",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "directive_comment_id": 5216936339,
+  "directive_id": "AI001-TO-B4-RAW-TRACE-ARTIFACT-RESUME-PREBUILD-V1-20260807-001",
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER",
+  "outputs": {
+    "final_report": "B4_RAW_TRACE_ARTIFACT_RESUME_PREBUILD_FINAL_REPORT_V1.json",
+    "pagination_retry_resume_state_v1": "contracts/PAGINATION_RETRY_RESUME_STATE_V1.json",
+    "partial_artifact_recovery_v1": "contracts/PARTIAL_ARTIFACT_RECOVERY_V1.json",
+    "single_entrypoint": "run_artifact_resume_smoke.py",
+    "source_trace_artifact_envelope_v1": "contracts/SOURCE_TRACE_ARTIFACT_ENVELOPE_V1.json",
+    "successor_run_plan_v1": "contracts/SUCCESSOR_RUN_PLAN_V1.json",
+    "test_report": "B4_RAW_TRACE_ARTIFACT_RESUME_PREBUILD_TEST_REPORT_V1.json"
+  },
+  "schema_version": "LATEST_B4_RAW_TRACE_ARTIFACT_RESUME_POINTER_V1",
+  "status": "TERMINAL_PASS",
+  "terminal": "B4_RAW_TRACE_ARTIFACT_RESUME_PREBUILD_READY",
+  "validation": {
+    "fixture_artifact_resume_smoke": "PASS_1_OF_1",
+    "python_compile": "PASS_3_OF_3",
+    "schema_parse": "PASS_4_OF_4",
+    "unit_tests": "PASS_6_OF_6"
+  },
+  "worker": "B-4"
+}

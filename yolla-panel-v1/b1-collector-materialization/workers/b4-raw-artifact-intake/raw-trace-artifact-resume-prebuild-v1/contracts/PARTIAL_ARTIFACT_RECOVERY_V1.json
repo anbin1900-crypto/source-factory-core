@@ -1,0 +1,17 @@
+{
+  "failure_rule": "PARTIAL is never considered completed and never becomes recovery anchor",
+  "overwrite_policy": "NO_OVERWRITE_FOR_PARTIAL_OR_COMPLETED",
+  "partial_status_enum": [
+    "PARTIAL",
+    "ABANDONED",
+    "PROMOTED"
+  ],
+  "promotion_preconditions": [
+    "exact-byte SHA256 matches staged bytes",
+    "secret scan PASS",
+    "metadata secret-key scan PASS",
+    "exclusive completed-path create succeeds"
+  ],
+  "recovery_action": "ABANDON_OR_RETRY_FROM_LAST_COMPLETED_ARTIFACT",
+  "schema_version": "PARTIAL_ARTIFACT_RECOVERY_V1"
+}

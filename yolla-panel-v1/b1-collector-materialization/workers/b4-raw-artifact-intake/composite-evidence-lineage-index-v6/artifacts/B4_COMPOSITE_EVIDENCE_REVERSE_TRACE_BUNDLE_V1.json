@@ -1,0 +1,14 @@
+{
+  "schema_version":"B4_COMPOSITE_EVIDENCE_REVERSE_TRACE_BUNDLE_V1",
+  "trace_count":5,
+  "traces":[
+    {"composite_pointer":"composite://000001/c82f67530b0967e8","mode":"DATA","semantic_evidence_pointers":["semantic://000001/1b159296e1d7a0e2"],"raw_evidence_pointers":["evidence-45dc26a0ed1139eebe7837e6","evidence-9c5de9ba71755ad58c862ef8"],"derived_evidence_pointers":[]},
+    {"composite_pointer":"composite://000002/4d76f00b55d6f484","mode":"PRODUCT","semantic_evidence_pointers":["semantic://000002/638acd2802e0181e"],"raw_evidence_pointers":["evidence-0c9073a255074c4a2fc66e8e"],"derived_evidence_pointers":["semantic://000001/1b159296e1d7a0e2"]},
+    {"composite_pointer":"composite://000003/f8e8df6b517eda56","mode":"WRITE","semantic_evidence_pointers":["semantic://000003/bfe032df074f89e6"],"raw_evidence_pointers":["evidence-2aed123220f249972a566986"],"derived_evidence_pointers":["semantic://000001/1b159296e1d7a0e2"]},
+    {"composite_pointer":"composite://000004/2314aa915292bd4d","mode":"MY_LISTING","semantic_evidence_pointers":["semantic://000001/1b159296e1d7a0e2","semantic://000002/638acd2802e0181e"],"raw_evidence_pointers":["evidence-45dc26a0ed1139eebe7837e6","evidence-9c5de9ba71755ad58c862ef8","evidence-0c9073a255074c4a2fc66e8e"],"derived_evidence_pointers":["semantic://000001/1b159296e1d7a0e2"]},
+    {"composite_pointer":"composite://000005/771a18e50709b5f7","mode":"EDIT","semantic_evidence_pointers":["semantic://000002/638acd2802e0181e","semantic://000003/bfe032df074f89e6"],"raw_evidence_pointers":["evidence-0c9073a255074c4a2fc66e8e","evidence-2aed123220f249972a566986"],"derived_evidence_pointers":["semantic://000001/1b159296e1d7a0e2"]}
+  ],
+  "raw_artifact_materialization_count":0,
+  "raw_artifact_overwrite":false,
+  "semantic_decision_by_b4":false
+}

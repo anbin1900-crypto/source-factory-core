@@ -1,0 +1,55 @@
+{
+  "schema_version": "D5_CYCLE5_D4_ATTEMPT_FINAL_REPORT_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE5-20260808-001",
+  "directive_id": "C5-W5-D4-EXECUTOR-RESTART-AND-OBSERVER-ATTEMPT-INGESTION-V1-20260808-001",
+  "directive_comment_id": 5224184126,
+  "authority_commit": "53c1f034dc11dd7c3bbe2eb08585dabad1ec877a",
+  "control_receipt_comment_id": 5224185332,
+  "role": "D-5_AUTOMATION_EVENT_LOG_AND_IMPROVEMENT_OWNER",
+  "status": "BLOCKED_EXTERNAL_CONFIRMED",
+  "terminal": "D4_EXECUTOR_RESTART_AND_OBSERVER_ATTEMPT_INGESTION_BLOCKED_EXTERNAL_CONFIRMED",
+  "actual_input": {
+    "progress_comment": 5221274709,
+    "v3_command_id": "D4C2-RUN-UIA-LIVE-OBSERVER-V3-20260808-042130-001",
+    "v3_receipt_blob": "f503589ea335ad5cf397b33a2d4be9307df17957",
+    "executor_status": "SUCCEEDED",
+    "working_observed": true,
+    "error_observed": true,
+    "live_pass_claimed": false
+  },
+  "actual_chronology": [
+    "CLAIMED@2026-08-08T04:19:53.0662978+09:00",
+    "WORKING@2026-08-07T19:20:20.2468294Z",
+    "EXECUTOR_STALLED_OBSERVED@2026-08-07T19:36:29Z",
+    "ERROR@2026-08-07T19:57:43.3552601Z",
+    "RECEIPT_PUBLISHED@2026-08-08T04:57:43.8793145+09:00"
+  ],
+  "missing_required_actual_event": "USER_RESTARTED_EXECUTOR",
+  "metrics": {
+    "claim_to_receipt_seconds": 2270.813017,
+    "queue_stall_observation_to_receipt_seconds": 1274.879314,
+    "observer_working_duration_seconds": 2243.108431,
+    "restart_to_receipt_latency_seconds": null,
+    "retry_count": 2
+  },
+  "classification": {
+    "observer_error": "INTERNAL_SCHEMA_MISMATCH",
+    "observer_error_is_external_blocker": false,
+    "terminal_blocker": "USER_RESTARTED_EXECUTOR_ACTUAL_TIMESTAMP_NOT_PUBLISHED",
+    "terminal_blocker_classification": "EXTERNAL_EVIDENCE_GAP"
+  },
+  "validation": {
+    "local_metric_assertions": "PASS_18_OF_18",
+    "guard_simulation": "PASS_4_OF_4",
+    "duplicate_order_restart_nonblocking_test_source": "COMMITTED",
+    "upstream_event_store_mutation_count": 0,
+    "synthetic_event_count": 0,
+    "d4_completion_inference_count": 0
+  },
+  "boundaries": {
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "full_message_loop_live_pass_claimed": false
+  }
+}

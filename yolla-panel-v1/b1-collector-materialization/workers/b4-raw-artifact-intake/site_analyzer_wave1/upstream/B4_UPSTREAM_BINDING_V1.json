@@ -1,0 +1,31 @@
+{
+  "schema_version": "B4_SITE_ANALYZER_UPSTREAM_BINDING_V1",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "a6": {
+    "head": "91baa2fb09471ed2a840c2dea9e614bc430da906",
+    "adapter_manifest_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/wave1-executable-adapter/generated/adapter.json",
+    "adapter_manifest_blob": "46664fd7732507b5c59493d5203c42ebb61f5013",
+    "workflow_recipe_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/wave1-executable-adapter/generated/workflow-recipe.json",
+    "workflow_recipe_blob": "e24f0e9d6d30561b749eb5c3d1ac8620b6a6a124",
+    "mode": "HYBRID",
+    "required_capabilities": ["replay", "trace", "pagination", "failed_step_repair"]
+  },
+  "b3": {
+    "head": "4716f2e6dd1a8bf9ab6210fe9f72223c18690992",
+    "recipe_contract_path": "yolla-panel-v1/b1-collector-materialization/workers/b3-extractor-retry-resume/action-recorder-codegen-recipe-v1/contracts/EXTRACTION_RECIPE_V1.json",
+    "recipe_contract_blob": "0ec568a6d74114de6461170491905ce227d8a576",
+    "recording_fixture_path": "yolla-panel-v1/b1-collector-materialization/workers/b3-extractor-retry-resume/action-recorder-codegen-recipe-v1/fixtures/action_recording_fixture_v1.json",
+    "recording_fixture_blob": "c46bcfd61f84e32a5a9818a8b9071b0b514090ad",
+    "supported_codegen_actions": ["click", "fill", "selectOption", "scrollTo", "popup wait", "frame binding", "goto"]
+  },
+  "b4_mapping": {
+    "popup wait": ["popup", "new_tab"],
+    "frame binding": ["frame"],
+    "scrollTo": ["infinite_scroll"],
+    "goto": ["navigate", "page_pagination", "cursor_pagination"],
+    "click": ["load_more", "download"],
+    "a6_loop": ["page_pagination", "cursor_pagination"],
+    "a6_trace": ["trace"]
+  },
+  "binding_status": "PASS_CONTRACT_CONSUMED_NO_UPSTREAM_MUTATION"
+}

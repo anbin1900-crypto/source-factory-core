@@ -1,0 +1,17 @@
+{
+  "contract": "SOURCE_RECORD_ENVELOPE_V1",
+  "invariants": [
+    "record_count_equals_records_length",
+    "source_fields_preserved_exactly",
+    "source_sha256_is_canonical_source_record_digest",
+    "semantic_transformation_count=0"
+  ],
+  "required_fields": [
+    "schema_version",
+    "bundle_id",
+    "records",
+    "record_count",
+    "semantic_transformation_count"
+  ],
+  "schema_version": "1.0.0"
+}

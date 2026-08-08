@@ -1,0 +1,7 @@
+{
+  "schema_version": "A7_RECOVERY_ARTIFACT_PROJECTION_V1",
+  "lookup_key": "command_id",
+  "required": ["command_id","artifact_chain","artifact_count","last_durable_artifact_pointer","next_resumable_step"],
+  "a7_usage": "Resolve one command_id to completed trace/artifact lineage and next resumable step.",
+  "b5_dataset_checkpoint_pointer_supported": true
+}

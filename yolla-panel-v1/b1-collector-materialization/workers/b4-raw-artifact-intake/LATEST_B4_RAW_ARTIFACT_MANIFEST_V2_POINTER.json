@@ -1,0 +1,64 @@
+{
+  "schema_version": "LATEST_B4_RAW_ARTIFACT_MANIFEST_V2_POINTER_V2",
+  "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+  "task_id": "RAW_ARTIFACT_MANIFEST_V2",
+  "directive_comment": 5196652743,
+  "worker": "B-4_RAW_ARTIFACT_INTAKE_WORKER",
+  "worker_pr": 40,
+  "branch": "worker/b4-raw-artifact-source-envelope-v1",
+  "updated_at_kst": "2026-08-06T05:03:00+09:00",
+  "status": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY",
+  "terminal_contract": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY_OR_EXACT_BLOCKER",
+  "terminal_result": "B4_RAW_ARTIFACT_MANIFEST_V2_D_READY",
+  "required_artifacts": {
+    "schema": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V2.schema.json",
+      "blob": "38e72bb43c5f630e9b3f94c3796ef72ae092c85e"
+    },
+    "manifest": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/RAW_ARTIFACT_MANIFEST_V2.json",
+      "blob": "d900e06bcc73908e3af589581d67b599bfb84d65"
+    },
+    "fixture": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_RAW_ARTIFACT_MANIFEST_V2_FIXTURE_V1.json",
+      "blob": "12938d5e9d15cf73d69e4b38f6cc960cbf868ebc"
+    },
+    "test_result": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_RAW_ARTIFACT_MANIFEST_V2_TEST_RESULT_V1.json",
+      "blob": "5bf5800391174c946eeaf7acedd293eb3ced6ece",
+      "result": "PASS_46_OF_46"
+    },
+    "final_report": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b4-raw-artifact-intake/B4_RAW_ARTIFACT_MANIFEST_V2_FINAL_REPORT_V1.json",
+      "commit": "3e0e3964b1513c854b3ecd21f51b76ff3e513027",
+      "blob": "d9b2c7210aedd01a4dc77f67a9809e44733ef10b"
+    }
+  },
+  "supporting_evidence": {
+    "validator_blob": "43bbff1ab2c86af54ea51d1031da437eeb9decff",
+    "test_source_blob": "84975a579a6482bb4c802130d5bcf7e2c0d37e67",
+    "remote_readback_receipt_blob": "d4f3632074c667755a23d034146dc30945a38be6",
+    "remote_readback": "PASS_10_OF_10",
+    "custom_validator": "PASS"
+  },
+  "validation_counters": {
+    "RAW_OVERWRITE_COUNT": 0,
+    "HASH_MISMATCH_COUNT": 0,
+    "SIZE_MISMATCH_COUNT": 0,
+    "SECRET_VALUE_STORAGE_COUNT": 0,
+    "UNAUTHORIZED_PERSONAL_DATA_COUNT": 0,
+    "INVENTED_METADATA_COUNT": 0,
+    "SOURCE_FIELD_LOSS_COUNT": 0
+  },
+  "source_key": "PENDING_AUTHORITY",
+  "official_source_url": "PENDING_AUTHORITY",
+  "expected_mime_type": "application/json",
+  "observed_mime_type": "NOT_OBSERVED",
+  "actual_site_extraction": false,
+  "d_canonical_db_write": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "next_event": "B5_RESUME_AFTER_B2_AND_B4",
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}

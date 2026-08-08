@@ -1,0 +1,27 @@
+{
+  "schema_version": "LATEST_B4_SITE_ANALYZER_WAVE1_POINTER_V1",
+  "worker": "B-4",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "directive_comment_id": 5207572969,
+  "branch": "worker/b4-raw-artifact-source-envelope-v1",
+  "status": "TERMINAL_PROVEN_EXTERNAL_BLOCKER",
+  "terminal_contract": "B4_SITE_ANALYZER_WAVE1_REAL_EXTRACTION_PASS_OR_PROVEN_EXTERNAL_BLOCKER",
+  "terminal_result": "B4_SITE_ANALYZER_WAVE1_REAL_EXTRACTION_PROVEN_EXTERNAL_BLOCKER",
+  "start_report": "site_analyzer_wave1/reports/B4_SITE_ANALYZER_WAVE1_START_REPORT.json",
+  "test_results": "site_analyzer_wave1/reports/B4_SITE_ANALYZER_WAVE1_TEST_RESULTS.json",
+  "blocker_evidence": "site_analyzer_wave1/reports/B4_LIVE_BROWSER_NAVIGATION_BLOCKER_EVIDENCE.json",
+  "final_report": "site_analyzer_wave1/reports/B4_SITE_ANALYZER_WAVE1_FINAL_REPORT.json",
+  "implementation": {
+    "python_compile": "PASS_2_OF_2",
+    "tests": "PASS_34_OF_34",
+    "real_chromium_inline_harness": "PASS_8_OF_8",
+    "real_sample_record_count": 3,
+    "resume_after_failure": "PASS"
+  },
+  "external_blocker_signature": "ERR_BLOCKED_BY_ADMINISTRATOR",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at_kst": "2026-08-07T02:08:33+09:00",
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}
