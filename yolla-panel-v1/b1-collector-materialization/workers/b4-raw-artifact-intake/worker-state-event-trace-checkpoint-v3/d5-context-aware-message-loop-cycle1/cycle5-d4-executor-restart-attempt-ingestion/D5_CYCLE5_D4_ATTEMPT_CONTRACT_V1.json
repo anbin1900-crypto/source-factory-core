@@ -1,0 +1,34 @@
+{
+  "schema_version": "D5_CYCLE5_D4_ATTEMPT_CONTRACT_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE5-20260808-001",
+  "directive_id": "C5-W5-D4-EXECUTOR-RESTART-AND-OBSERVER-ATTEMPT-INGESTION-V1-20260808-001",
+  "directive_comment_id": 5224184126,
+  "authority_commit": "53c1f034dc11dd7c3bbe2eb08585dabad1ec877a",
+  "control_receipt_comment_id": 5224185332,
+  "role": "D-5_AUTOMATION_EVENT_LOG_AND_IMPROVEMENT_OWNER",
+  "worker_pr": 40,
+  "upstream_event_store_blob": "8ae79e40725447ff55ea8d166d2a4441587a8de4",
+  "upstream_mutation_allowed": false,
+  "lineage": {
+    "command_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001:D-4",
+    "context_id": "UNRESOLVED:D-4",
+    "prior_status": "ADAPTER_UNAVAILABLE",
+    "actual_v3_command_id": "D4C2-RUN-UIA-LIVE-OBSERVER-V3-20260808-042130-001"
+  },
+  "required_events": ["CLAIMED", "EXECUTOR_STALLED", "USER_RESTARTED_EXECUTOR", "RECEIPT_PUBLISHED", "WORKING", "ERROR"],
+  "actual_time_policy": "NO_SYNTHETIC_TIME",
+  "chronology_policy": "OBSERVED_AT_MUST_REMAIN_MONOTONIC; LATE_RECEIPT_CONTENT_IS_REORDERED_BY_ACTUAL_OBSERVED_TIME",
+  "guards": {
+    "append_only": true,
+    "duplicate_suppression": true,
+    "order_reversal_reject": true,
+    "restart_restore": true,
+    "writer_nonblocking": true,
+    "d4_completion_inference": false,
+    "internal_schema_mismatch_is_external": false
+  },
+  "expected_terminal": "D4_EXECUTOR_RESTART_AND_OBSERVER_ATTEMPT_INGESTION_PASS_OR_BLOCKED_EXTERNAL_CONFIRMED",
+  "production": false,
+  "ready": false,
+  "merge": false
+}
