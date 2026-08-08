@@ -1,0 +1,49 @@
+{
+  "schema_version": "A5_FINAL_SOURCE_REINFORCEMENT_TERMINAL_REPORT_V1",
+  "cycle_id": "V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "directive_comment_id": 5224505743,
+  "worker": "A-5",
+  "role": "A-5_REAL_ESTATE_ENTITY_FORM_ACTION_BINDING_SOURCE_OWNER",
+  "terminal": "A5_ENTITY_FORM_ACTION_BINDING_SOURCE_PASS",
+  "status": "TERMINAL_PASS",
+  "result": {
+    "real_estate_source_entity_model": "PASS",
+    "form_action_binding_contract": "PASS",
+    "capability_and_validation_matrix": "PASS",
+    "secret_pii_redaction_validation": "PASS",
+    "entity_types": ["listing","agency","agent","complex","location","price","area","media","contact","status"],
+    "capabilities": ["PUBLIC_READ","WRITE","MY_LISTING","EDIT","DELETE","END_POSTING"],
+    "waiting_input_unknown_fail_closed": "PASS",
+    "lossless_source_extension": "PASS",
+    "d_canonical_schema_defined": false,
+    "target_value_guessing": false,
+    "final_write_or_edit_submit": false,
+    "raw_secret_value_count": 0,
+    "raw_pii_value_count": 0
+  },
+  "validation": {
+    "fixture_replay_count": 2,
+    "assertions": "PASS_31_OF_31",
+    "deterministic_digest": "b82cf13f53d6d47db31cf19b9d43fa99d94e3c3056ab896ed376c484254ee627",
+    "remote_readback": "PASS_SOURCE_VALIDATOR_FIXTURE_TEST",
+    "raw_secret_reject": "PASS",
+    "raw_pii_reject": "PASS",
+    "d_canonical_authority_reject": "PASS"
+  },
+  "artifacts": {
+    "entity_model": "final-source-reinforcement/A5_REAL_ESTATE_SOURCE_ENTITY_MODEL_V1.json",
+    "form_action_contract": "final-source-reinforcement/A5_FORM_ACTION_BINDING_CONTRACT_V1.json",
+    "capability_matrix": "final-source-reinforcement/A5_CAPABILITY_AND_VALIDATION_MATRIX_V1.json",
+    "redaction_validation_receipt": "final-source-reinforcement/A5_SECRET_PII_REDACTION_VALIDATION_RECEIPT_V1.json",
+    "source": "final-source-reinforcement/source_reinforcement.cjs",
+    "validator": "final-source-reinforcement/secret_pii_redaction_validator.cjs",
+    "fixture": "final-source-reinforcement/fixture_source_reinforcement_v1.json",
+    "test": "final-source-reinforcement/test_source_reinforcement.cjs"
+  },
+  "ownership_after_terminal": "V-2",
+  "additional_worker_cycle_planned": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}
