@@ -1,0 +1,13 @@
+{
+  "schema_version":"A3_CAUSAL_FIXTURE_MATRIX_V1",
+  "cases":[
+    {"case_id":"CDP_ALIAS","input":{"source":"cdp","commandId":"CMD-1","targetId":"PAGE-1","actionId":"ACT-1","requestId":"REQ-1","eventType":"Network.requestWillBeSent","observedAt":"2026-08-08T04:30:00Z","payload":{"url":"https://fixture.invalid/api","headers":{"Authorization":"Bearer abcdefghijk"}}},"expect":{"source_kind":"CDP","fact_state":"OBSERVED","alias_min":5,"raw_secret_absent":true}},
+    {"case_id":"DYNAMIC_DOM","input":{"source_kind":"DOM","command_id":"CMD-1","page_id":"PAGE-1","action_id":"ACT-1","pageStateId":"STATE-1","event_kind":"dom.mutation.streaming","payload":{"mutation_count":7,"streaming":true}},"expect":{"source_kind":"DOM","page_state_id":"STATE-1"}},
+    {"case_id":"MISSING_RESPONSE","input":{"source_kind":"RESPONSE","command_id":"CMD-1","page_id":"PAGE-1","action_id":"ACT-2","request_id":"REQ-2","event_kind":"network.response.missing","waiting_input":true,"payload":{"reason":"response receipt not arrived"}},"expect":{"fact_state":"WAITING_INPUT"}},
+    {"case_id":"ALIASED_RESPONSE","input":{"source":"response","cmdId":"CMD-1","pageId":"PAGE-1","actionId":"ACT-3","networkRequestId":"REQ-3","responseId":"RES-3","eventKind":"response.received","details":{"status":200}},"expect":{"request_id":"REQ-3","response_id":"RES-3"}},
+    {"case_id":"REDIRECT","input":{"source_kind":"CDP","command_id":"CMD-1","page_id":"PAGE-1","action_id":"ACT-4","request_id":"REQ-4B","event_kind":"network.request","payload":{"redirect_from_request_id":"REQ-4A"}},"expect":{"redirect_rule":"EXPLICIT_ONLY"}},
+    {"case_id":"RETRY","input":{"source_kind":"CDP","command_id":"CMD-1","page_id":"PAGE-1","action_id":"ACT-5","request_id":"REQ-5B","event_kind":"network.request","payload":{"retry_of_request_id":"REQ-5A"}},"expect":{"retry_rule":"EXPLICIT_ONLY"}},
+    {"case_id":"DUPLICATE","input":{"source_kind":"UIA","command_id":"CMD-1","page_id":"PAGE-1","action_id":"ACT-6","event_kind":"uia.click","payload":{"control":"submit"}},"repeat":2,"expect":{"duplicate_rule":"PRESERVE_AND_MARK"}},
+    {"case_id":"UNKNOWN_MINIMAL","input":{"source_kind":"UNKNOWN","event_kind":"UNKNOWN"},"expect":{"fact_state":"UNKNOWN","missing_fields":["command_id","page_id"]}}
+  ]
+}
