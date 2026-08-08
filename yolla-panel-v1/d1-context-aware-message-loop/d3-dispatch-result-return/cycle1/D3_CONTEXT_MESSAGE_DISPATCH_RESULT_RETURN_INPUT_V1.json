@@ -1,0 +1,20 @@
+{
+  "schema_version": "D3_CONTEXT_MESSAGE_DISPATCH_RESULT_RETURN_INPUT_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001",
+  "command_id": "D3-C1-LIVE-DISPATCH-RETURN-20260808-030500-001",
+  "context_id": "6a72e288-7f24-83ee-b357-3e327cf6d877",
+  "context_name": "자동화 C 모드 - 자동화 C 모드 - 자동화 그룹 A E  그룹에 속함",
+  "page_id": "UIA-TAB-42.198100.4.0.0.5287",
+  "context_url": "https://chatgpt.com/g/g-p-6a72e27a3de881919da4ba270ffa3d28-jadonghwa-c-modeu/c/6a72e288-7f24-83ee-b357-3e327cf6d877#main",
+  "role_marker": "ROLE=D-2_CONTEXT_REGISTRY_AND_ACTIVE_WORKER_OWNER",
+  "allow_d2_receipt_binding_after_refresh": true,
+  "d2_live_receipt_blob": "e4b12628631f89b13bf0e0d05486e99d30333290",
+  "message_marker": "COMMAND_ID=D3-C1-LIVE-DISPATCH-RETURN-20260808-030500-001",
+  "message": "ROLE=D-3_MESSAGE_DISPATCH_AND_RESULT_RETURN_OWNER\nCYCLE_ID=D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE1-20260807-001\nCOMMAND_ID=D3-C1-LIVE-DISPATCH-RETURN-20260808-030500-001\nCONTEXT_ID=6a72e288-7f24-83ee-b357-3e327cf6d877\n\n이 사용자 메시지가 현재 대화창에 실제 표시되었다면, 아래 승인 토큰 한 줄만 답하십시오.\nD3_MESSAGE_DISPATCH_RESULT_ACK_V1",
+  "expected_reply_contains": "D3_MESSAGE_DISPATCH_RESULT_ACK_V1",
+  "visibility_polls": 40,
+  "reply_polls": 600,
+  "stable_polls": 3,
+  "return_target": "D-1_OR_SUCCESSOR",
+  "production": false
+}
