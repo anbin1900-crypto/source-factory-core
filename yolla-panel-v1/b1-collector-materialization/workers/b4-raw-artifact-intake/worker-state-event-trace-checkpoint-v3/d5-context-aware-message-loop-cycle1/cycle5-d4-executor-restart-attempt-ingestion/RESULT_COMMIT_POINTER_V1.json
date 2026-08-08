@@ -1,0 +1,8 @@
+{
+  "schema_version": "D5_CYCLE5_RESULT_COMMIT_POINTER_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE5-20260808-001",
+  "result_commit_pre_pointer": "98e65bf12984dd2b64066afb756628e9cc276d9f",
+  "latest_pointer_commit": "dc64992946cbf90e6ddb34d9ff92208d0d0d891f",
+  "terminal": "D4_EXECUTOR_RESTART_AND_OBSERVER_ATTEMPT_INGESTION_BLOCKED_EXTERNAL_CONFIRMED",
+  "note": "The authoritative result commit for C_MODE_WORKER_REPLY is the commit containing this pointer's immediate parent or later fast-forward head; no history rewrite is performed."
+}
