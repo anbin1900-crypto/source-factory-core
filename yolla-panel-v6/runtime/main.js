@@ -643,7 +643,9 @@ function registerIpc() {
     writeRuntimeReceipt("PASS", { terminal: "YOLLA_V6_RENDERER_PASS", renderer: payload || {} });
     if (!IS_SMOKE_TEST) {
       const mode = stateStore.snapshot().selected_mode;
-      attachView(mode === "ANALYZER" ? "ANALYZER" : "WORKER");
+      const restoredKind = mode === "ANALYZER" ? "ANALYZER" : "WORKER";
+      attachView(restoredKind);
+      for (const kind of ["WORKER", "ANALYZER"]) if (kind !== restoredKind) ensureView(kind);
     } else {
       setTimeout(() => app.quit(), 500);
     }

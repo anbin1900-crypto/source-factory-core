@@ -45,6 +45,7 @@ ok(text.includes("secret_export_count") && text.includes("credential_value_logge
 ok(text.includes("V6ModuleHost") && text.includes("SessionRestoreManager"), "RUNTIME_BINDING_MISSING");
 ok(text.includes("releases\\6.0.1"), "IMMUTABLE_RELEASE_601_MISSING");
 ok(!text.includes("releases\\6.0.0"), "OLD_IMMUTABLE_RELEASE_TARGET_STILL_ACTIVE");
+ok(text.includes('for (const kind of ["WORKER", "ANALYZER"])'), "DUAL_AUTH_PARTITION_STARTUP_PROBE_MISSING");
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "RUNTIME_MANIFEST.json"), "utf8"));
 for (const [relative, expected] of Object.entries(manifest.files)) {
   const body = fs.readFileSync(path.join(root, relative));
