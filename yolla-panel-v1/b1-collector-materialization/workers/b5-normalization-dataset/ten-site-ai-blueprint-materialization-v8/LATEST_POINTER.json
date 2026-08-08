@@ -1,0 +1,44 @@
+{
+  "schema_version": "LATEST_B5_TEN_SITE_AI_BLUEPRINT_MATERIALIZATION_POINTER_V1",
+  "cycle_id": "V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "directive_id": "V2-TO-B5-TEN-SITE-AI-BLUEPRINT-MATERIALIZATION-V1-20260808-001",
+  "directive_comment": 5224506049,
+  "worker": "B-5_AI_BLUEPRINT_ONTOLOGY_MATERIALIZER_SOURCE_OWNER",
+  "worker_pr": 41,
+  "branch": "worker/b5-normalization-dataset-receipt-v1",
+  "parent_head": "a5445ba97dad347e3bc7a7a4b9586ad3de4c3c98",
+  "content_head": "ba397f30adb1217242ecfe14ceb727c10ca383de",
+  "final_report_commit": "13901930571b66fa45d5f6613eb4ac88c45b74dd",
+  "final_report_blob": "2a61e2ae35d11183865e93196205c93c62fc91f7",
+  "test_report_blob": "8d7e60022d328c03dad2fc5afccae1a2f7825541",
+  "outputs": {
+    "B5_TEN_SITE_SOURCE_ONTOLOGY_V1": "ca537333d144e94206acfd01fa6b3522d72f3866",
+    "B5_AI_REAL_ESTATE_PRODUCT_BLUEPRINT_V1": "8fd75c27db543c09f81b3cba18f7d196345d1de7",
+    "B5_LOSSLESS_SITE_EXTENSION_PACKAGE_V1": "51787cb682235500ed10dc2a93a82f1e27511b6f",
+    "B5_MATERIALIZATION_VALIDATION_RECEIPT_V1": "f55067e3fb70000dc6b3e146162fd8f2e5a8362d",
+    "MATERIALIZED_RESULT_POINTER": "c07cb1cb243ccc57c2af061fef91167fec32c2df"
+  },
+  "validation": {
+    "compile_result": "PASS_2_OF_2",
+    "unit_test_result": "PASS_31_OF_31",
+    "site_slot_count": 10,
+    "product_blueprint_count": 8,
+    "source_field_loss_count": 0,
+    "prior_v6_v7_rewrite_count": 0,
+    "d_canonical_schema_decision_count": 0
+  },
+  "producer_slots": {
+    "A4": "WAITING_INPUT",
+    "A5": "WAITING_INPUT",
+    "B3": "WAITING_INPUT"
+  },
+  "execution_status": "WAITING_INPUT",
+  "live_pass_claimed": false,
+  "terminal": "B5_AI_BLUEPRINT_ONTOLOGY_MATERIALIZER_PASS",
+  "status": "SOURCE_REINFORCEMENT_PASS_LIVE_EVIDENCE_LATE_BIND_READY",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "updated_at_kst": "2026-08-08T13:38:59+09:00"
+}
