@@ -1,0 +1,99 @@
+{
+  "authority_artifacts": {
+    "D1_B_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_PROCEDURE_V1": {
+      "blob": "2a8b7c1b04924728cce14dc21c225ad09598905f",
+      "commit": "7710789324e56ec743c98e556489cc5888083d76",
+      "lane": "B_TO_D_SOURCE_DOCUMENT",
+      "path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/D1_B_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_PROCEDURE_V1.json"
+    },
+    "D1_C_KNOWLEDGE_CANDIDATE_ACCEPTANCE_RECEIPT_PROCEDURE_V1": {
+      "blob": "5dc797523718f53bab67f48ed65029061e5ee45a",
+      "commit": "9a619571bf21288e902bed14b1e7bc74ae782258",
+      "lane": "C_TO_D_KNOWLEDGE_CANDIDATE",
+      "path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/D1_C_KNOWLEDGE_CANDIDATE_ACCEPTANCE_RECEIPT_PROCEDURE_V1.json"
+    },
+    "D1_SCHEMA_ALIGNMENT_TREE_BINDING_MANIFEST_V1": {
+      "blob": "dd37ba938b32d9c03b9bfc50d6e6d638e9d4b7fd",
+      "commit": "fdba1b17588016f8754d8c335c01b65deb093708",
+      "path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/D1_SCHEMA_ALIGNMENT_TREE_BINDING_MANIFEST_V1.json",
+      "status": "D1_SCHEMA_ALIGNMENT_TREE_BINDING_READY"
+    },
+    "D_INBOUND_FIELD_MAPPING_CONTRACT_V1_1_ADDENDUM": {
+      "blob": "118d6403dd5db47afafb982991f8fd9a51f35f28",
+      "commit": "812b1144105cc4275bb30f6e763e06a4788dc0d6",
+      "mapping_version": "1.1.0",
+      "path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/D_INBOUND_FIELD_MAPPING_CONTRACT_V1_1_ADDENDUM.json",
+      "resolved_rules": [
+        "B001",
+        "B013",
+        "B014"
+      ]
+    },
+    "D_PUBLIC_REAL_ESTATE_SOURCE_AUTHORITY_DECISION_V1": {
+      "authority_type": "OFFICIAL_SECONDARY",
+      "blob": "6bf779b937bf2bea761780315b22692ccca07ad9",
+      "commit": "ff7359bbb4460ccfbe3be1a632dd8627ccaae11f",
+      "path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/D_PUBLIC_REAL_ESTATE_SOURCE_AUTHORITY_DECISION_V1.json",
+      "primary_fact_authority": false
+    }
+  },
+  "canonical_root": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/",
+  "control_pointer": {
+    "blob": "d65285f969294c19c0d9e2d1bbc2adf8165f8819",
+    "commit": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/LATEST_D_GROUP_CONTROL_POINTER.json",
+    "schema_version": "LATEST_D_GROUP_CONTROL_POINTER_V18_ABCD_INTEGRATION_AUTHORITY"
+  },
+  "created_at_kst": "2026-08-06T06:30:05+09:00",
+  "execution_boundary": {
+    "canonical_db_write_count": 0,
+    "d_acceptance_issuance_count": 0,
+    "d_schema_change_count": 0,
+    "merge_count": 0,
+    "migration_apply_count": 0,
+    "postgresql_connection_count": 0,
+    "production_count": 0,
+    "ready_transition_count": 0,
+    "self_merge_count": 0
+  },
+  "legacy_path_resolution": {
+    "fallback_allowed": false,
+    "pattern": "COMMAND_CENTER/GOVERNANCE/**",
+    "relation": "SUPERSEDED_NONEXISTENT_EXPECTATION",
+    "resolves_to": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/"
+  },
+  "pointer_id": "D1-PR188-CROSS-REPOSITORY-POINTER-V2-20260806-001",
+  "pr188_authority": {
+    "authority_head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "branch": "command/d-group-domain-knowledge-db-foundation-v1",
+    "control_pr": 188,
+    "decision": "PASS",
+    "directive_comment_id": 5196658981,
+    "followup_batch_id": "V2-TO-ABCD-D-GROUP-INTEGRATION-FOLLOWUP-BATCH-V1-20260806-001",
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "task_id": "D1_ABCD_INTEGRATION_AUTHORITY_AND_INTAKE_PROCEDURE",
+    "terminal": "D1_ABCD_INTEGRATION_AUTHORITY_AND_INTAKE_PROCEDURE_READY",
+    "terminal_comment_id": 5196986028
+  },
+  "role": "D-1_SOURCE_FACTORY_CROSS_REPOSITORY_BRIDGE",
+  "schema_version": "D1_PR188_CROSS_REPOSITORY_POINTER_V2",
+  "source_factory_projection": {
+    "branch": "integration/d1-knowledge-db-intake-authority-v1",
+    "control_pr": 21,
+    "may_change_d_schema": false,
+    "may_issue_d_acceptance": false,
+    "ownership": "INTEGRATION_PROJECTION_ONLY",
+    "repository": "anbin1900-crypto/source-factory-core",
+    "start_head": "4f251262b6ee67c9d41aae6216bf752c9eaf52ee"
+  },
+  "status": "D1_PR188_CROSS_REPOSITORY_POINTER_V2_READY",
+  "task": "D_AUTHORITY_MAPPING_RECEIPT_PROCEDURE_AND_TREE_BINDING",
+  "verification": {
+    "control_pointer_readback": "PASS",
+    "cross_repository_write_to_pr188": false,
+    "exact_path_commit_blob_binding": "PASS_5_OF_5",
+    "pr188_head_matches_terminal": true,
+    "pr188_terminal_observed": true,
+    "required_artifact_readback": "PASS_5_OF_5"
+  }
+}

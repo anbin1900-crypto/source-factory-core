@@ -1,0 +1,55 @@
+{
+  "schema_version": "D1_PR188_CROSS_REPOSITORY_BRIDGE_TERMINAL_V2",
+  "terminal_id": "D1-PR188-CROSS-REPOSITORY-BRIDGE-TERMINAL-V2-20260806-001",
+  "role": "D-1_SOURCE_FACTORY_CROSS_REPOSITORY_BRIDGE",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 21,
+  "branch": "integration/d1-knowledge-db-intake-authority-v1",
+  "task": "D_AUTHORITY_MAPPING_RECEIPT_PROCEDURE_AND_TREE_BINDING",
+  "work_started_at_kst": "2026-08-06T06:30:05+09:00",
+  "terminal_posted_at_kst": "2026-08-06T06:32:43+09:00",
+  "pr188_terminal": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "branch": "command/d-group-domain-knowledge-db-foundation-v1",
+    "comment_id": 5196986028,
+    "authority_head": "17e920e0643dd89c059f1d99fda7c0c0383f1a18",
+    "terminal": "D1_ABCD_INTEGRATION_AUTHORITY_AND_INTAKE_PROCEDURE_READY",
+    "decision": "PASS"
+  },
+  "pointer_v2": {
+    "path": "yolla-panel-v1/d1-knowledge-db-intake/D1_PR188_CROSS_REPOSITORY_POINTER_V2.json",
+    "commit": "451e5e671fb2fbb5eb072257458557bdafa22346",
+    "blob": "4d18cfba43c603fd6427d983e5d8e5bf2ca956e8",
+    "remote_readback": "PASS"
+  },
+  "validation": {
+    "pr188_terminal_observed": "PASS",
+    "authority_head_match": "PASS",
+    "source_authority_decision_binding": "PASS",
+    "mapping_addendum_binding": "PASS",
+    "B_receipt_procedure_binding": "PASS",
+    "C_receipt_procedure_binding": "PASS",
+    "tree_binding_manifest_binding": "PASS",
+    "required_artifacts": "PASS_5_OF_5",
+    "exact_path_commit_blob": "PASS_5_OF_5",
+    "source_factory_projection_only": "PASS"
+  },
+  "execution_boundary": {
+    "d_schema_change_count": 0,
+    "d_acceptance_issuance_count": 0,
+    "postgresql_connection_count": 0,
+    "migration_apply_count": 0,
+    "canonical_db_write_count": 0,
+    "production_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0,
+    "self_merge_count": 0
+  },
+  "terminal": "PASS",
+  "final_status": "D1_PR188_CROSS_REPOSITORY_POINTER_V2_READY",
+  "next_event": "EVENT_WAIT_EXACT_B_SOURCE_DOCUMENT_AND_C_KNOWLEDGE_CANDIDATE_PACKAGES",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

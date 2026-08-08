@@ -1,0 +1,128 @@
+{
+  "schema_version": "D1_PR188_CROSS_REPOSITORY_POINTER_V3",
+  "pointer_id": "D1-PR21-PR188-CROSS-REPOSITORY-POINTER-V3-20260806-001",
+  "role": "D-1_SOURCE_FACTORY_CROSS_REPOSITORY_BRIDGE",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 21,
+  "branch": "integration/d1-knowledge-db-intake-authority-v1",
+  "batch_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V3-20260806-001",
+  "batch_commit": "bd1aa99afb61e91392823f43753f15de24403321",
+  "batch_blob": "cc419bbba8bf9112f529672ea05626ac394b865a",
+  "task_id": "D1_PR21_PR188_CROSS_REPOSITORY_POINTER_V3",
+  "directive_comment_id": 5200279275,
+  "created_at_kst": "2026-08-06T14:33:50+09:00",
+  "append_only": true,
+  "supersedes_pointer": {
+    "path": "yolla-panel-v1/d1-knowledge-db-intake/D1_PR188_CROSS_REPOSITORY_POINTER_V2.json",
+    "commit": "451e5e671fb2fbb5eb072257458557bdafa22346",
+    "blob": "4d18cfba43c603fd6427d983e5d8e5bf2ca956e8",
+    "schema_version": "D1_PR188_CROSS_REPOSITORY_POINTER_V2",
+    "preserved": true,
+    "mutated": false
+  },
+  "entry_event": {
+    "name": "D1_B_RECEIPT_V2_COMPATIBILITY_TERMINAL_WITH_NEW_PR188_HEAD_OR_BLOB",
+    "satisfied": true,
+    "initial_event_comment_id": 5200592603,
+    "time_corrected_event_comment_id": 5200610417,
+    "terminal_comment_id": 5200586374,
+    "time_correction_comment_id": 5200608451
+  },
+  "authority_precedence": "PR188",
+  "pr188_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "branch": "command/d-group-domain-knowledge-db-foundation-v1",
+    "authority_head": "0bc38b41375fdef78172ed3cb4112b099ea28426",
+    "state": "OPEN_DRAFT_UNMERGED",
+    "terminal": "D1_B_RECEIPT_V2_COMPATIBILITY_READY",
+    "terminal_comment_id": 5200586374,
+    "actual_terminal_posted_at_kst": "2026-08-06T14:02:52+09:00"
+  },
+  "control_pointer": {
+    "path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/LATEST_D_GROUP_CONTROL_POINTER.json",
+    "commit": "0bc38b41375fdef78172ed3cb4112b099ea28426",
+    "blob": "ed77c18b1d45c6b94c8d3b02dd589033fcec63cb",
+    "schema_version": "LATEST_D_GROUP_CONTROL_POINTER_V20_B_RECEIPT_V2_COMPATIBILITY_TIME_CORRECTED",
+    "remote_readback": "PASS"
+  },
+  "required_authority_artifacts": {
+    "D1_B_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_PROCEDURE_V1_1_ADDENDUM": {
+      "path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/D1_B_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_PROCEDURE_V1_1_ADDENDUM.json",
+      "commit": "fed3a52bf11e17b8b0a56b45eba5ca66d72bad84",
+      "blob": "58408175b1683cf566e201b57bd17b5e19c459e8",
+      "remote_readback": "PASS"
+    },
+    "D1_B_PACKAGE_V2_COMPATIBILITY_DECISION_V1": {
+      "path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/D1_B_PACKAGE_V2_COMPATIBILITY_DECISION_V1.json",
+      "commit": "b738b27b49e5636d1d91e820bf1c935bef7a691e",
+      "blob": "fb1e8f7b82a4516a06fbe58c27da89b46a746431",
+      "remote_readback": "PASS"
+    },
+    "D1_SCHEMA_ALIGNMENT_TREE_BINDING_MANIFEST_V2": {
+      "path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/D1_SCHEMA_ALIGNMENT_TREE_BINDING_MANIFEST_V2.json",
+      "commit": "68346dac4f794f8f2312abf1d08bc470c3012e18",
+      "blob": "38692279e691ab1de4a97017246c2c85b4ee6d3e",
+      "remote_readback": "PASS"
+    }
+  },
+  "supporting_authority_artifacts": {
+    "D1_B_RECEIPT_V2_COMPATIBILITY_FINAL_REPORT_V1": {
+      "path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/D1_B_RECEIPT_V2_COMPATIBILITY_FINAL_REPORT_V1.json",
+      "commit": "80ef64c2045e236de487f18aa035f2341f992e71",
+      "blob": "b3767e1db80be6623971160840f6b3a28ff4b57c",
+      "remote_readback": "PASS"
+    },
+    "D1_B_RECEIPT_V2_COMPATIBILITY_PUBLICATION_TIME_CORRECTION_V1": {
+      "path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/SCHEMA_ALIGNMENT/V1/D1_B_RECEIPT_V2_COMPATIBILITY_PUBLICATION_TIME_CORRECTION_V1.json",
+      "commit": "70a637663ad9ec852d6a933d5e4d1ed4baff58b7",
+      "blob": "84468d1d9ab965948d3baea198e3f79a892c3a35",
+      "remote_readback": "PASS"
+    }
+  },
+  "compatibility_projection": {
+    "package_type": "MATERIALIZED_DATABASE_PACKAGE_V2",
+    "decision": "COMPATIBLE_FOR_B_SOURCE_DOCUMENT_SUBMISSION_AND_D1_PREFLIGHT_ONLY",
+    "producer_head_semantics": "EXACT_PACKAGE_CONTENT_COMMIT_SEPARATE_FROM_LATER_SUBMISSION_ENVELOPE_COMMIT",
+    "required_exact_submission_fields": [
+      "producer_head",
+      "package_blob_or_storage_pointer",
+      "record_count",
+      "submitted_at"
+    ],
+    "implicit_alias_or_coercion_allowed": false,
+    "actual_package_acceptance": false,
+    "actual_acceptance_receipt_issuance": false,
+    "knowledge_release_creation": false
+  },
+  "source_factory_projection": {
+    "ownership": "INTEGRATION_PROJECTION_ONLY",
+    "may_change_d_schema": false,
+    "may_issue_d_acceptance": false,
+    "may_write_pr188": false
+  },
+  "verification": {
+    "entry_event_satisfied": "PASS",
+    "pr188_head_remote_readback": "PASS",
+    "control_pointer_remote_readback": "PASS",
+    "required_exact_path_commit_blob_binding": "PASS_3_OF_3",
+    "supporting_exact_path_commit_blob_binding": "PASS_2_OF_2",
+    "authority_precedence_binding": "PASS_PR188",
+    "prior_v2_pointer_preserved": "PASS",
+    "source_factory_projection_only": "PASS"
+  },
+  "execution_boundary": {
+    "d_schema_change_count": 0,
+    "d_acceptance_issuance_count": 0,
+    "cross_repository_write_to_pr188_count": 0,
+    "postgresql_connection_count": 0,
+    "migration_apply_count": 0,
+    "canonical_db_write_count": 0,
+    "production_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0,
+    "self_merge_count": 0
+  },
+  "required_terminal": "D1_PR21_PR188_CROSS_REPOSITORY_POINTER_V3_READY_OR_EXACT_BLOCKER",
+  "status": "D1_PR21_PR188_CROSS_REPOSITORY_POINTER_V3_READY"
+}

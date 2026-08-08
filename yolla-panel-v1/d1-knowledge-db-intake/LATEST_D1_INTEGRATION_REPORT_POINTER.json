@@ -1,0 +1,103 @@
+{
+  "schema_version": "LATEST_D1_INTEGRATION_REPORT_POINTER_V3",
+  "role": "D-1_SOURCE_FACTORY_CROSS_REPOSITORY_BRIDGE",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 21,
+  "branch": "integration/d1-knowledge-db-intake-authority-v1",
+  "head_before_latest_pointer": "199215e3695765e7f6a3e26a39b4321b6f87fb9b",
+  "batch_id": "V2-TO-ABCD-D-GROUP-NEXT-EVENT-BATCH-V3-20260806-001",
+  "batch_commit": "bd1aa99afb61e91392823f43753f15de24403321",
+  "task_id": "D1_PR21_PR188_CROSS_REPOSITORY_POINTER_V3",
+  "directive_comment_id": 5200279275,
+  "status": "D1_PR21_PR188_CROSS_REPOSITORY_POINTER_V3_READY",
+  "prior_latest_pointer": {
+    "schema_version": "LATEST_D1_INTEGRATION_REPORT_POINTER_V2",
+    "commit": "4a0a8a14243028487825d1404d7fc7e3f7921fb7",
+    "blob": "b3cad251947cfa86d99e0f8901db05c8c5609ee1",
+    "status": "D1_PR188_CROSS_REPOSITORY_POINTER_V2_READY",
+    "preserved": true,
+    "mutated": false
+  },
+  "current_pointer": {
+    "path": "yolla-panel-v1/d1-knowledge-db-intake/D1_PR188_CROSS_REPOSITORY_POINTER_V3.json",
+    "commit": "d29fda98a73dbd32abcb698b68849dd10042b657",
+    "blob": "7d7ce86544faf29ee8c751ba77c00fab9869bf52",
+    "remote_readback": "PASS"
+  },
+  "current_terminal": {
+    "path": "yolla-panel-v1/d1-knowledge-db-intake/reports/D1_PR188_CROSS_REPOSITORY_BRIDGE_TERMINAL_V3.json",
+    "commit": "199215e3695765e7f6a3e26a39b4321b6f87fb9b",
+    "blob": "954e6c56247a30952e60707ecf4ac5c0c2a41edd",
+    "terminal": "D1_PR21_PR188_CROSS_REPOSITORY_POINTER_V3_READY",
+    "final_status": "PASS_CROSS_REPOSITORY_PROJECTION_ONLY",
+    "remote_readback": "PASS"
+  },
+  "pr188_authority": {
+    "repository": "anbin1900-crypto/yolla-real-estate-data-engine",
+    "control_pr": 188,
+    "branch": "command/d-group-domain-knowledge-db-foundation-v1",
+    "authority_head": "0bc38b41375fdef78172ed3cb4112b099ea28426",
+    "authority_precedence": "PR188",
+    "terminal_comment_id": 5200586374,
+    "terminal": "D1_B_RECEIPT_V2_COMPATIBILITY_READY",
+    "control_pointer_path": "COMMAND_CENTER/REPORTS/D_GROUP/DOMAIN_KNOWLEDGE_DB_FOUNDATION_V1/LATEST_D_GROUP_CONTROL_POINTER.json",
+    "control_pointer_blob": "ed77c18b1d45c6b94c8d3b02dd589033fcec63cb",
+    "control_pointer_schema_version": "LATEST_D_GROUP_CONTROL_POINTER_V20_B_RECEIPT_V2_COMPATIBILITY_TIME_CORRECTED"
+  },
+  "bound_authority_artifacts": {
+    "procedure_addendum_blob": "58408175b1683cf566e201b57bd17b5e19c459e8",
+    "compatibility_decision_blob": "fb1e8f7b82a4516a06fbe58c27da89b46a746431",
+    "tree_binding_manifest_v2_blob": "38692279e691ab1de4a97017246c2c85b4ee6d3e",
+    "final_report_blob": "b3767e1db80be6623971160840f6b3a28ff4b57c",
+    "publication_time_correction_blob": "84468d1d9ab965948d3baea198e3f79a892c3a35"
+  },
+  "compatibility_projection": {
+    "package_type": "MATERIALIZED_DATABASE_PACKAGE_V2",
+    "decision": "COMPATIBLE_FOR_B_SOURCE_DOCUMENT_SUBMISSION_AND_D1_PREFLIGHT_ONLY",
+    "producer_head_semantics": "EXACT_PACKAGE_CONTENT_COMMIT_SEPARATE_FROM_LATER_SUBMISSION_ENVELOPE_COMMIT",
+    "required_exact_submission_fields": [
+      "producer_head",
+      "package_blob_or_storage_pointer",
+      "record_count",
+      "submitted_at"
+    ],
+    "implicit_alias_or_coercion_allowed": false,
+    "actual_package_acceptance": false,
+    "actual_acceptance_receipt_issuance": false,
+    "knowledge_release_creation": false
+  },
+  "verification": {
+    "entry_event_satisfied": "PASS",
+    "pr188_authority_head_match": "PASS",
+    "required_authority_artifact_readback": "PASS_3_OF_3",
+    "supporting_authority_artifact_readback": "PASS_2_OF_2",
+    "pointer_v3_remote_readback": "PASS",
+    "terminal_v3_remote_readback": "PASS",
+    "prior_v2_pointer_preserved": "PASS",
+    "source_factory_projection_only": "PASS"
+  },
+  "execution_boundary": {
+    "d_schema_change_count": 0,
+    "d_acceptance_issuance_count": 0,
+    "cross_repository_write_to_pr188_count": 0,
+    "postgresql_connection_count": 0,
+    "migration_apply_count": 0,
+    "canonical_db_write_count": 0,
+    "production_count": 0,
+    "ready_transition_count": 0,
+    "merge_count": 0,
+    "self_merge_count": 0
+  },
+  "required_terminal": "D1_PR21_PR188_CROSS_REPOSITORY_POINTER_V3_READY_OR_EXACT_BLOCKER",
+  "terminal": "D1_PR21_PR188_CROSS_REPOSITORY_POINTER_V3_READY",
+  "next_events": [
+    "B5_D_READY_PACKAGE_V2_EXACT_SUBMISSION_FIELDS_READY_OR_EXACT_BLOCKER",
+    "B6_D_SOURCE_DOCUMENT_HANDOFF_CANDIDATE_READY_OR_EXACT_BLOCKER",
+    "D1_B_SOURCE_DOCUMENT_ACCEPTANCE_RECEIPT_AVAILABLE",
+    "D1_C_KNOWLEDGE_CANDIDATE_ACCEPTANCE_RECEIPT_AVAILABLE"
+  ],
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "updated_at_kst": "2026-08-06T14:35:30+09:00"
+}
