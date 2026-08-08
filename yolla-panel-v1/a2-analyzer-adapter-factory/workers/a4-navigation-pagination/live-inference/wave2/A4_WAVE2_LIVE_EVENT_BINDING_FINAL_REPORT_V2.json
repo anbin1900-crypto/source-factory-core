@@ -1,0 +1,79 @@
+{
+  "schema_version": "A4_WAVE2_LIVE_EVENT_BINDING_FINAL_REPORT_V2",
+  "worker": "A-4",
+  "role": "LIVE_EVENT_STRUCTURE_INFERENCE_BINDING_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 23,
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment_id": 5208237501,
+  "completed_at_kst": "2026-08-07T04:54:00+09:00",
+  "supersedes_status_only": {
+    "prior_final_report": "A4_WAVE2_LIVE_EVENT_BINDING_FINAL_REPORT_V1.json",
+    "prior_terminal": "A4_SITE_ANALYZER_WAVE2_LIVE_EVENT_BINDING_EXACT_BLOCKER",
+    "reason": "A-3 subsequently advanced its Remote Head and published actual Chromium CDP Live Stream evidence. Historical blocker remains preserved."
+  },
+  "a3_live_input": {
+    "head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+    "live_stream_handoff_blob": "b7d2789f72263d9678a8f0335b66be284760627e",
+    "live_execution_receipt_blob": "467d8df95d54a54e67a52f5bb2c8e627984f0952",
+    "stream_sha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165",
+    "streaming_events": 197,
+    "network_requests": 32,
+    "response_bodies": 31,
+    "dom_snapshots": 2,
+    "navigations": 2,
+    "frames": 3
+  },
+  "implementation_and_recovery": {
+    "existing_binding_tests": "PASS_11_OF_11",
+    "actual_runtime_validation": "PASS_8_OF_8",
+    "actual_browser": "Chromium 144.0.7559.96",
+    "actual_cdp_transport": "REAL_WEBSOCKET_REMOTE_DEBUGGING",
+    "a3_handoff_gap": "Live Stream handoff retained DOMSnapshot SHA/count but not full Node payload",
+    "repair": "Consumed A-3 live stream authority/correlation and recaptured the B-4 Wave2 common HTTP fixture through actual Chromium CDP to obtain full DOMSnapshot nodes for inference.",
+    "first_runtime_failure": "chrome-error://chromewebdata due isolated Chromium URLBlocklist policy",
+    "runtime_repair": "Temporarily moved isolated container managed-policy directory, reran, then restored it immediately.",
+    "policy_restored": true
+  },
+  "actual_result": {
+    "page_type": "LIST",
+    "repeated_region_type": "CARD_LIST",
+    "repeated_card_count": 5,
+    "field_candidate_count": 5,
+    "field_names": ["record_id","name","category","value","detail_url"],
+    "locator_candidate_count": 10,
+    "list_detail_relation": "LIST_TO_DETAIL",
+    "pagination": "NEXT",
+    "pagination_locator": "#next-page",
+    "highlight_count": 6,
+    "false_live_pass_count": 0
+  },
+  "artifacts": {
+    "actual_live_handoff": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave2/A4_WAVE2_ACTUAL_LIVE_STRUCTURE_HANDOFF_V2.json",
+      "commit": "b67a04c5661007b8b2a68bf7f0c83fdfde23c463",
+      "blob": "fae1b21205259afd7d44aad8db6bb52f6d570b75",
+      "result_sha256": "5e1c6e856bddddf4f3678cb9d0cc60191d8913e5854158a54b4762663fc9f4c1"
+    },
+    "runtime_receipt": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave2/A4_WAVE2_ACTUAL_LIVE_RUNTIME_RECEIPT_V2.json",
+      "commit": "708a615d6c262b0ea62a703917d04236053ca1a8",
+      "blob": "7ade943b64f34071f908f22cec2bd07c798fd9c1"
+    }
+  },
+  "required": {
+    "HEAD_ADVANCE": "PASS",
+    "LIVE_EVENT_BINDING": "PASS",
+    "FIELD_5": "PASS_5",
+    "LOCATOR_5": "PASS_10",
+    "HIGHLIGHT_HANDOFF": "PASS_6"
+  },
+  "terminal": "A4_SITE_ANALYZER_WAVE2_LIVE_EVENT_STRUCTURE_INFERENCE_PASS",
+  "decision": "PASS",
+  "finding_only_terminal": false,
+  "fixture_only_terminal": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "A4_WAVE2_ORIGINAL_DIRECTIVE_RECONCILIATION_V1",
+  "worker": "A-4",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 23,
+  "original_directive": {
+    "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE2-LIVE-INTEGRATION-AB-V1-20260807-001",
+    "comment_id": 5208076013,
+    "requested_terminal": "A4_SITE_ANALYZER_WAVE2_LIVE_STRUCTURE_BINDING_PASS_OR_PROVEN_EXTERNAL_BLOCKER",
+    "requested_pass_min": ["LIVE_EVENT_BOUND", "FIELD>=5", "LOCATOR>=5", "PAGINATION_WORKFLOW", "HIGHLIGHT_PAYLOAD"]
+  },
+  "execution_that_satisfied_scope": {
+    "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+    "comment_id": 5208237501,
+    "terminal_comment_id": 5208796303,
+    "terminal": "A4_SITE_ANALYZER_WAVE2_LIVE_EVENT_STRUCTURE_INFERENCE_PASS",
+    "final_head": "4ff280cc4098fada678a82826644b77b6288f274",
+    "a3_live_head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+    "a3_stream_sha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165",
+    "actual_live_handoff_blob": "fae1b21205259afd7d44aad8db6bb52f6d570b75",
+    "actual_runtime_receipt_blob": "7ade943b64f34071f908f22cec2bd07c798fd9c1",
+    "field_count": 5,
+    "locator_count": 10,
+    "pagination": "NEXT",
+    "highlight_count": 6,
+    "live_event_bound": true,
+    "fixture_only_terminal": false
+  },
+  "later_hardening": {
+    "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+    "terminal_comment_id": 5212562336,
+    "terminal": "A4_SITE_ANALYZER_WAVE3_STRUCTURE_HARDENING_PASS",
+    "head": "9c3dbfbae71dc8c254a3215e62ce3f6e3f4e9ca3",
+    "pagination_workflow": ["NEXT", "PAGE_NUMBER", "CURSOR", "INFINITE_SCROLL"],
+    "runtime_validation": "PASS_8_OF_8"
+  },
+  "reconciliation": {
+    "technical_reexecution_required": false,
+    "duplicate_execution_count": 0,
+    "original_scope_satisfied": true,
+    "terminal_status": "A4_SITE_ANALYZER_WAVE2_LIVE_STRUCTURE_BINDING_PASS",
+    "reason": "The later Wave2 execution-recovery directive executed and passed the original Wave2 Live Integration technical scope with actual Chromium CDP evidence; only an explicit terminal linkage to the original directive ID was missing."
+  },
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

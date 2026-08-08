@@ -1,0 +1,36 @@
+{
+  "schema_version": "A4_CYCLE5_LATEST_POINTER_V1",
+  "worker": "A-4",
+  "directive_id": "A0-TO-A4-PAGE-COMPONENT-FEATURE-SEMANTIC-GRAPH-V5-20260808-001",
+  "cycle_id": "A0-AB-AI-BLUEPRINT-SEMANTIC-BINDING-CYCLE5-20260808-001",
+  "terminal": "A4_PAGE_COMPONENT_FEATURE_GRAPH_READY",
+  "decision": "PASS",
+  "parent_terminal": "A4_PAGE_COMPONENT_FORM_ROLE_GRAPH_READY",
+  "outputs": {
+    "PAGE_COMPONENT_FEATURE_SEMANTIC_GRAPH_ENGINE_V1": {"commit":"a7e45ad5b55f725e12329ca698021d43dc46d2c3","blob":"95763151aa837e85077f2a2cac7ad1e5727718c2"},
+    "PAGE_ROLE_CATALOG_V2": {"commit":"0ba67b733992931d155db2c0de65df06101ae905","blob":"e8b6967d72221612e7fdbe0284886a66b05e5359"},
+    "PAGE_COMPONENT_FEATURE_GRAPH_V1": {"commit":"75d055e6cb7c81c4e16c493eb02991a73a73186e","blob":"a417bb3360c0bd28218bdee98b27fb703bbc3be4"},
+    "FEATURE_DEPENDENCY_CANDIDATES_V1": {"commit":"b2d65836efe2ca988725bcb2d3a5e04bafd99c67","blob":"28b5d49242545e5dfe386bfa5d4ef25830a2d15a"},
+    "FIXTURE": {"commit":"8aa101575e3d1ba3826b6d7276a5e985da9789c1","blob":"72971fa03e59f044585d295756061bc4f47fac1b"},
+    "SMOKE": {"commit":"b0bb401d03472ab7f3cff5e343538bfca66fd690","blob":"c21f6d60fe97b17c5c09d14a53d33a6ead61e01c"},
+    "VALIDATION_RECEIPT": {"commit":"9509ef72b76a736c097f6b2581efdc2b48604f84","blob":"4668a2f9fc70571874036176e80c391297460bb8"}
+  },
+  "validation": {
+    "deterministic_semantic_digest": "ba518d41b2dac7bae88d39062e2d5c78bfcad7d06c0cac68a8cde6a6e5eecd67",
+    "page_roles": 8,
+    "features": 9,
+    "feature_dependencies": 9,
+    "unknown_dependencies": 5,
+    "remote_readback": "PASS_6_OF_6",
+    "cycle4_rewritten": false,
+    "repeated_region_provenance_preserved": true,
+    "locator_provenance_preserved": true,
+    "pagination_provenance_preserved": true
+  },
+  "target_pc_execution": false,
+  "live_site_call": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

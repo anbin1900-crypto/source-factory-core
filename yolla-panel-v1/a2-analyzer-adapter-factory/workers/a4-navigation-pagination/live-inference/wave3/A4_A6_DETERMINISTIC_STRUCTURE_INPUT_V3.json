@@ -1,0 +1,50 @@
+{
+  "schema_version": "A4_A6_DETERMINISTIC_STRUCTURE_INPUT_V3",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "producer": "A-4",
+  "consumer": "A-6",
+  "a3_live_authority": {
+    "head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+    "stream_sha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165",
+    "event_count": 197
+  },
+  "page_type": "LIST",
+  "primary_region": {
+    "semantic_locator": "main#records",
+    "item_keys": ["data-record-id:1","data-record-id:2","data-record-id:3","data-record-id:4","data-record-id:5"],
+    "raw_item_count": 5,
+    "unique_item_count": 5,
+    "duplicate_item_count": 0,
+    "confidence": 0.95
+  },
+  "fields": [
+    {"name":"record_id","relative_locator":"[data-record-id]","stable":true},
+    {"name":"name","relative_locator":"h2.name","stable":true},
+    {"name":"category","relative_locator":"span.category","stable":true},
+    {"name":"value","relative_locator":"span.value","stable":true},
+    {"name":"detail_url","relative_locator":"a.detail","stable":true}
+  ],
+  "pagination": {
+    "initial": {"type":"NEXT","locator":"a#next-page","target":"/page-numbers?page=2"},
+    "workflow": ["NEXT","PAGE_NUMBER","CURSOR","INFINITE_SCROLL"],
+    "stop_rule": "STOP_ON_REPEATED_PAGINATION_STATE"
+  },
+  "loop_guard": {
+    "fingerprint": "f651f19418bbebba13f2d55b043b25f1a3a81605f27d68d52234771e21568411",
+    "first_result": "CONTINUE",
+    "second_result": "REPEATED_PAGINATION_STATE"
+  },
+  "dynamic_dom_recovery": {
+    "stable_locator_count": 15,
+    "before_digest": "954f5fed314139078c1500159317f3955ceef5cf3d4931496abf04a17cb74406",
+    "after_digest": "4a1271a4576a2d0da4726081f515d6895c70f1d51c3515c04c29946e3b7f1b97"
+  },
+  "frame_context_preserved": true,
+  "popup_context_preserved": true,
+  "deduplicate_by_item_key": true,
+  "scenario_replay_digest": "bc89d3b369351282a058fa22f728cd5c0a7f70a736a4748e3ebe4ed4541ceaff",
+  "runtime_result_sha256": "ad2cb1f673f8241b66728b477e71898cde560929c9eede50686a25a19e88d7d7",
+  "production": false,
+  "ready": false,
+  "merge": false
+}

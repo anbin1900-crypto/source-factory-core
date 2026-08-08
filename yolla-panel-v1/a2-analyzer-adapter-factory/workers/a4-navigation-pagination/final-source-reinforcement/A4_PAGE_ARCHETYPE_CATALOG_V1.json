@@ -1,0 +1,20 @@
+{
+  "schema_version": "A4_PAGE_ARCHETYPE_CATALOG_V1",
+  "cycle_id": "V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "scope": "GENERIC_10_SITE_REAL_ESTATE_RECONSTRUCTION_SOURCE",
+  "target_site_values": "WAITING_INPUT",
+  "archetypes": [
+    {"id":"PUBLIC_LIST","purpose":"browse public listing collection","required_signals":["repeated_collection"],"optional_signals":["pagination","filter","map_link"],"status":"INFERRED_TEMPLATE"},
+    {"id":"PUBLIC_DETAIL","purpose":"read one public listing entity","required_signals":["entity_detail"],"optional_signals":["gallery","contact_action","map_region"],"status":"INFERRED_TEMPLATE"},
+    {"id":"MAP_SEARCH","purpose":"map-centered property discovery","required_signals":["map_region"],"optional_signals":["marker_cluster","viewport_query","drawer_detail"],"status":"INFERRED_TEMPLATE"},
+    {"id":"PUBLIC_SEARCH","purpose":"query listings","required_signals":["search_control"],"optional_signals":["keyword","region","category"],"status":"INFERRED_TEMPLATE"},
+    {"id":"FILTER_RESULTS","purpose":"refine listing collection","required_signals":["filter_control"],"optional_signals":["chips","range","multi_select"],"status":"INFERRED_TEMPLATE"},
+    {"id":"LOGIN","purpose":"authenticate user","required_signals":["credential_form"],"optional_signals":["social_login","otp"],"status":"INFERRED_TEMPLATE"},
+    {"id":"MY_LISTING","purpose":"manage own listing collection/detail","required_signals":["owner_collection_or_detail"],"optional_signals":["edit_action","expire_action","status_badge"],"status":"INFERRED_TEMPLATE"},
+    {"id":"LISTING_CREATE","purpose":"create listing","required_signals":["write_form","create_action"],"optional_signals":["stepper","media_upload","dynamic_fields"],"status":"INFERRED_TEMPLATE"},
+    {"id":"LISTING_EDIT","purpose":"edit listing","required_signals":["write_form","update_action"],"optional_signals":["dirty_state","save_state","dynamic_fields"],"status":"INFERRED_TEMPLATE"}
+  ],
+  "interaction_modes": ["SPA_ROUTE","PAGE_NUMBER","NEXT_LINK","CURSOR","INFINITE_SCROLL","VIRTUALIZED_LIST","LAZY_LOAD","MODAL","DRAWER","DYNAMIC_FORM"],
+  "evidence_status_enum": ["OBSERVED","INFERRED","UNKNOWN"],
+  "late_bind_policy": "Unarrived site-specific values remain WAITING_INPUT/UNKNOWN; do not guess target values."
+}

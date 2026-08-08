@@ -1,0 +1,61 @@
+{
+  "schema_version": "A4_C_MODE_CYCLE1_TARGET_PC_EXECUTION_BLOCKER_V1",
+  "worker": "A-4",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "directive_id": "C1-A4-IDLE-RESOURCE-BASELINE-HARNESS",
+  "directive_comment_id": 5206065265,
+  "captured_at_kst": "2026-08-07T00:09:34+09:00",
+  "classification": "EXACT_EXTERNAL_BLOCKER",
+  "blocker_code": "TARGET_WINDOWS_PC_EXECUTION_CHANNEL_UNAVAILABLE",
+  "current_execution_environment": {
+    "operating_system_family": "LINUX",
+    "powershell_desktop_available": false,
+    "powershell_core_available": false,
+    "windows_cim_process_tree_available": false,
+    "target_pc_attached": false
+  },
+  "reason": "The current execution environment has no attached target Windows PC and no powershell.exe or pwsh runtime. Therefore Win32_Process, the live YOLLA/Electron process tree, Browser lifecycle controls, and 30-sample live scenario measurements cannot be executed or truthfully promoted from this environment.",
+  "completed_within_owner_scope": [
+    "REPRODUCIBLE_WINDOWS_MEASUREMENT_HARNESS",
+    "RECEIPT_JSON_SCHEMA",
+    "SCENARIO_MATRIX",
+    "STATIC_VALIDATION_TESTS",
+    "REMOTE_GITHUB_PUBLICATION"
+  ],
+  "scenario_results": {
+    "PANEL_ONLY": "EXACT_TARGET_PC_ACCESS_BLOCKER",
+    "ONE_BROWSER": "EXACT_TARGET_PC_ACCESS_BLOCKER",
+    "INACTIVE_SEAT_TRANSITION": "EXACT_TARGET_PC_ACCESS_BLOCKER",
+    "BROWSER_CLOSE": "EXACT_TARGET_PC_ACCESS_BLOCKER",
+    "BROWSER_REOPEN": "EXACT_TARGET_PC_ACCESS_BLOCKER",
+    "CLOSE_REOPEN": "EXACT_TARGET_PC_ACCESS_BLOCKER"
+  },
+  "live_measurement": {
+    "executed_scenario_count": 0,
+    "sample_count": 0,
+    "cpu_metrics_captured": false,
+    "working_set_metrics_captured": false,
+    "private_bytes_metrics_captured": false,
+    "process_metrics_captured": false,
+    "browser_process_type_metrics_captured": false,
+    "load_time_captured": false,
+    "false_live_pass_count": 0
+  },
+  "required_external_action": {
+    "owner": "TARGET_PC_EXECUTION_CHANNEL_OR_PC_AGENT",
+    "action": "Execute Invoke-CModeCycle1ResourceBaseline.ps1 on the target Windows PC against the exact active runtime process ID resolved by A-3, using the existing runtime lifecycle action path for browser open, inactive transition, close and reopen.",
+    "minimum_samples_per_executed_scenario": 30,
+    "required_receipts": [
+      "PANEL_ONLY receipt.json and samples.json",
+      "ONE_BROWSER receipt.json and samples.json",
+      "BROWSER_CLOSE receipt.json and samples.json",
+      "BROWSER_REOPEN receipt.json and samples.json"
+    ]
+  },
+  "optimization_source_change_count": 0,
+  "site_analyzer_work": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "HARNESS_READY_LIVE_MEASUREMENT_BLOCKED_EXTERNAL"
+}

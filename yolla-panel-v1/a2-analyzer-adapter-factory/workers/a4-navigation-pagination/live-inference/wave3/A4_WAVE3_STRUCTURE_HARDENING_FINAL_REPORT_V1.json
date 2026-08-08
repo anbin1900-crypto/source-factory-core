@@ -1,0 +1,110 @@
+{
+  "schema_version": "A4_WAVE3_STRUCTURE_HARDENING_FINAL_REPORT_V1",
+  "worker": "A-4",
+  "role": "LIVE_STRUCTURE_INFERENCE_HARDENING_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 23,
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment_id": 5212023265,
+  "parent_directive": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "completed_at_kst": "2026-08-07T13:52:00+09:00",
+  "source_authority": {
+    "wave2_head": "4ff280cc4098fada678a82826644b77b6288f274",
+    "a3_live_head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+    "a3_stream_sha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165"
+  },
+  "implementation": {
+    "cdp_dom_snapshot_parser": "HARDENED_MULTI_DOCUMENT_FRAME_AWARE",
+    "repeat_region_detection": "PASS_WITH_DUPLICATE_ITEM_SUPPRESSION",
+    "field_inference": "PASS_DYNAMIC_MERGE",
+    "locator_stability": "PASS_SEMANTIC_LOCATORS_NO_NTH_DEPENDENCY",
+    "pagination_inference": "PASS_NEXT_PAGE_NUMBER_CURSOR_INFINITE_SCROLL",
+    "loop_guard": "PASS_REPEATED_STATE_STOP",
+    "dynamic_dom_recovery": "PASS_DELAYED_INSERTION",
+    "iframe_context": "PASS",
+    "popup_context": "PASS",
+    "a6_deterministic_structure_input": "PUBLISHED"
+  },
+  "actual_runtime": {
+    "browser": "Chromium 144.0.7559.96",
+    "execution": "ACTUAL_HEADLESS_CHROMIUM_LOCAL_HTTP",
+    "dom_capture": "CDP_DOMSnapshot.captureSnapshot",
+    "unit_tests": "PASS_2_OF_2",
+    "runtime_final": "PASS_8_OF_8",
+    "replay_digest": "bc89d3b369351282a058fa22f728cd5c0a7f70a736a4748e3ebe4ed4541ceaff",
+    "runtime_result_sha256": "ad2cb1f673f8241b66728b477e71898cde560929c9eede50686a25a19e88d7d7"
+  },
+  "repair_log": [
+    {
+      "attempt": 1,
+      "failure": "PAGINATION_TRANSITION_PRIORITY_CONFLICT",
+      "repair": "Added data-page and href page-number evidence and prioritized infinite-scroll growth ahead of cursor fallback."
+    },
+    {
+      "attempt": 2,
+      "failure": "IFRAME_CAPTURE_BEFORE_CHILD_LOAD",
+      "repair": "Waited for iframe attachment and child load before DOMSnapshot capture."
+    },
+    {
+      "attempt": 3,
+      "result": "PASS_8_OF_8"
+    }
+  ],
+  "pass": {
+    "REPEAT_REGION": true,
+    "FIELD_INFERENCE": true,
+    "LOCATOR_STABILITY": true,
+    "PAGINATION_INFERENCE": true,
+    "LOOP_GUARD": true,
+    "DYNAMIC_DOM_RECOVERY": true
+  },
+  "additional_scenario_acceptance": {
+    "duplicate_card_suppression": "PASS_1_DUPLICATE_REMOVED_FROM_6_RAW_TO_5_UNIQUE",
+    "iframe": "PASS_REPEAT_REGION_1",
+    "popup": "PASS_REPEAT_REGION_1",
+    "stable_locator_count": 15,
+    "pagination_workflow": ["NEXT", "PAGE_NUMBER", "CURSOR", "INFINITE_SCROLL"]
+  },
+  "artifacts": {
+    "start": {
+      "commit": "efc3ca185dd5c124eb0f10a55018a25d60df55dc",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave3/A4_WAVE3_STRUCTURE_HARDENING_START_V1.json"
+    },
+    "source": {
+      "commit": "c7a630eff096ec0302f1b6373e691466f6a15387",
+      "blob": "0abfc7a2afe0c146a1ebea0f89e3ca00e74bf215",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave3/structure_hardening.py"
+    },
+    "scenario_matrix": {
+      "commit": "a53e2c54bff1aee4aae2ba91885f06f194371249",
+      "blob": "1e69f491849a0563ddc0d3c84939f968f9e13607",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave3/A4_WAVE3_SCENARIO_MATRIX_V1.json"
+    },
+    "replay_digests": {
+      "commit": "3af3d24553fd2cf2dd86bdd2c5ff815e27cd1679",
+      "blob": "c508fa03bc2af081f13ae7dfe269508e167261cf",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave3/A4_WAVE3_REPLAY_DIGESTS_V1.json"
+    },
+    "runtime_validation": {
+      "commit": "dd92a7f07d1a32527e4251e466cd758a0e8b8b2b",
+      "blob": "aa69f1eb51497d2372a4d8892b9b6b2eeccfad49",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave3/A4_WAVE3_RUNTIME_VALIDATION_RECEIPT_V1.json"
+    },
+    "a6_structure_input": {
+      "commit": "4a8fb8d5e48cc84f2102b8e0a58eb1eaf92fe173",
+      "blob": "49c151ed1327fb690ffb4e1797f84f0cfd2581fc",
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave3/A4_A6_DETERMINISTIC_STRUCTURE_INPUT_V3.json"
+    }
+  },
+  "policy": {
+    "isolated_chromium_policy_restored": true,
+    "user_target_pc_policy_modified": false,
+    "false_live_pass_count": 0,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  },
+  "terminal": "A4_SITE_ANALYZER_WAVE3_STRUCTURE_HARDENING_PASS",
+  "decision": "PASS"
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "PAGE_ROLE_CATALOG_V2",
+  "directive_id": "A0-TO-A4-PAGE-COMPONENT-FEATURE-SEMANTIC-GRAPH-V5-20260808-001",
+  "source_provenance": {
+    "PAGE_GRAPH_V1": {"blob": "9b3fd8ce34cc0298f38f23c13d102ea9fb3f4167"},
+    "COMPONENT_ROLE_GRAPH_V1": {"blob": "52c0d882c4098d86bdaf0b611fad6079df9e849c"},
+    "FORM_FIELD_STRUCTURE_V1": {"blob": "4795c84f1b0433692de6b606713bfdca846323b2"},
+    "UI_STATE_REGION_V1": {"blob": "bea875940040e45313306fa348bee2935de2e343"},
+    "HANDOFF": {"blob": "4b0197e146a70ff0bb4c92fe9717b42d5b3ff8c8"},
+    "graph_sha256": "1297f9d7b5dc1be47c450ba87d883e36884a48da10ff43a1eb4a4a8dddc04ec4",
+    "deterministic_output_sha256": "41357d8547813b11bbfada71b951c885abd517a86c7270bd1c4d003153fcf839"
+  },
+  "roles": [
+    {"page_role":"PUBLIC_SEARCH","semantic_purpose":"DISCOVERY_QUERY","feature_roles":["SEARCH_LISTINGS"],"access_mode":"READ","source_page_id":"public-search","evidence_status":"OBSERVED","confidence":0.99},
+    {"page_role":"PUBLIC_LIST","semantic_purpose":"RESULT_BROWSE","feature_roles":["BROWSE_LISTINGS","PAGINATE_LISTINGS"],"access_mode":"READ","source_page_id":"public-list","evidence_status":"OBSERVED","confidence":0.99},
+    {"page_role":"PUBLIC_DETAIL","semantic_purpose":"PUBLIC_ENTITY_READ","feature_roles":["VIEW_LISTING_DETAIL"],"access_mode":"READ","source_page_id":"public-detail","evidence_status":"OBSERVED","confidence":0.99},
+    {"page_role":"LISTING_CREATE","semantic_purpose":"OWNER_ENTITY_CREATE","feature_roles":["CREATE_LISTING"],"access_mode":"WRITE","source_page_id":"listing-create","evidence_status":"OBSERVED","confidence":0.99},
+    {"page_role":"MY_LISTING_LIST","semantic_purpose":"OWNER_COLLECTION_READ","feature_roles":["VIEW_OWN_LISTINGS"],"access_mode":"READ","source_page_id":"my-listing-list","evidence_status":"OBSERVED","confidence":0.99},
+    {"page_role":"MY_LISTING_DETAIL","semantic_purpose":"OWNER_ENTITY_READ","feature_roles":["VIEW_OWN_LISTING","OPEN_LISTING_EDIT","OPEN_LISTING_EXPIRE"],"access_mode":"READ","source_page_id":"my-listing-detail","evidence_status":"OBSERVED","confidence":0.99},
+    {"page_role":"LISTING_EDIT","semantic_purpose":"OWNER_ENTITY_UPDATE","feature_roles":["UPDATE_LISTING"],"access_mode":"WRITE","source_page_id":"listing-edit","evidence_status":"OBSERVED","confidence":0.99},
+    {"page_role":"LISTING_EXPIRE","semantic_purpose":"OWNER_ENTITY_LIFECYCLE","feature_roles":["EXPIRE_LISTING"],"access_mode":"WRITE","source_page_id":"listing-expire","evidence_status":"OBSERVED","confidence":0.99}
+  ],
+  "unknown_policy": {"unobserved_page_or_feature":"UNKNOWN","no_auth_or_permission_inference_without_evidence":true,"visual_pixel_clone":false}
+}

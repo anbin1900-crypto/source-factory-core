@@ -1,0 +1,72 @@
+{
+  "schema_version": "A4_TERMINAL_REPORT_V1",
+  "worker": "A-4",
+  "role": "NAVIGATION_PAGE_PAGINATION_STRUCTURE_WORKER",
+  "directive_id": "A2-TO-A4-NAVIGATION-PAGINATION-EXECUTION-V3-20260804-001",
+  "directive_comment": 5171208197,
+  "registered_at_kst": "2026-08-04T05:11:00+09:00",
+  "started_at_kst": "2026-08-04T05:17:00+09:00",
+  "completed_at_kst": "2026-08-04T05:37:00+09:00",
+  "terminal": "A4_NAVIGATION_PAGINATION_CONTRACT_READY",
+  "decision": "PASS",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pr": 23,
+  "branch": "worker/a4-navigation-pagination-v1",
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/**",
+  "input_authority": {
+    "a2_role_charter_blob": "5445002aca7d51c6f230e7f65c1f1d57ae9e8e63",
+    "a2_assignment_ledger_blob": "d6c3a1cf88193a0444637d85fc256dce5d33de92",
+    "a3_status_at_start": "NOT_PUBLISHED",
+    "a3_late_bound_head": "a5632d6dbdddd956d478b593ffe144ff8a6241cf",
+    "a3_final_report_blob": "38db5f8afb78f25fa36554d33246a2f1ab34f2d9",
+    "a3_fixture_trace_blob": "cd29511601f27a128ff88e2e3f265c116d99e4a0",
+    "a3_trace_event_count": 15,
+    "a3_latest_pointer_note": "STARTED_STALE_RELATIVE_TO_FINAL_REPORT",
+    "fixture_mode": "REPOSITORY_LOCAL_FIXTURE_ONLY"
+  },
+  "artifacts": {
+    "fixture": {"path": "fixtures/NAVER_REAL_ESTATE_NAVIGATION_FIXTURE_V1.json", "blob": "5cb6f21a5361be47f4c5dd458f8dc74b51be1b0e"},
+    "navigation_graph": {"path": "SITE_NAVIGATION_GRAPH_V1.json", "blob": "6f261e6e505cd3253b17744c3617dbbb883b0b65", "node_count": 12, "edge_count": 13},
+    "page_type_catalog": {"path": "PAGE_TYPE_CATALOG_V1.json", "blob": "14841a34d36cf638e8c8510cffd8f4597bd1f7f3", "page_type_count": 10},
+    "pagination_contract": {"path": "PAGINATION_SCOPE_CONTRACT_V1.json", "blob": "176dec49623ff2e67026820f62889bcf22f01b1b", "pagination_type_count": 8},
+    "collection_scope": {"path": "COLLECTION_SCOPE_BOUNDARY_V1.json", "blob": "604e4a40c37ff0778db1b4089f7b001f0c321da1"},
+    "loop_stop_policy": {"path": "NAVIGATION_LOOP_STOP_POLICY_V1.json", "blob": "58caa28c5b26db944a77e8108979f67b7ad5861e"},
+    "fixture_replay": {"path": "FIXTURE_NAVIGATION_REPLAY_V1.json", "blob": "cc70e4f967b6c92fa5ddf86a6c31babad4b80983", "digest": "5efffc455deb166bb00afedc918c17f0bf3d0b2be6ca0d266acc680f62ca6bb9"},
+    "a3_trace_late_binding": {"path": "A3_TRACE_LATE_BINDING_V1.json", "blob": "371ef6d890083f7283c77010d0d6d2d841066a41", "mapping_count": 10},
+    "a5_handoff": {"path": "A4_TO_A5_PAGINATION_HANDOFF_V1.json", "blob": "988d34dc259a4c93280680f9ee252eeeadc110df", "ready": true},
+    "a6_handoff": {"path": "A4_TO_A6_NAVIGATION_HANDOFF_V1.json", "blob": "39dc506fad6e8f23b6a8ab334a6ab2418342277d", "ready": true},
+    "progress_report": {"path": "A4_PROGRESS_OR_BLOCKER_REPORT_V1.json", "blob": "5330a1c00e094705381d0b1721116957b1536c45"},
+    "validation_result": {"path": "A4_NAVIGATION_VALIDATION_RESULT_V1.json", "blob": "9c4fad4765f971f9380ce139e471e5fe90850caf"}
+  },
+  "validation": {
+    "first_attempt": "FAIL_DUPLICATE_AFTER_STOP",
+    "correction": "APPLY_DUPLICATE_ID_STOP_ONLY_TO_NON_REVISIT_LIST_OR_PAGINATION_PAGES",
+    "python_compile": "PASS_2_OF_2",
+    "builder_execution": "PASS",
+    "unit_tests": "PASS_15_OF_15",
+    "fixture_replay_count": 2,
+    "deterministic_navigation_replay": "PASS",
+    "unbounded_loop_count": 0,
+    "duplicate_page_visit_after_stop_count": 0,
+    "guard_cases": "PASS_4_OF_4",
+    "canonical_url_query_order_normalization": "PASS",
+    "a3_trace_category_binding": "PASS_10_MAPPINGS",
+    "a3_unknown_event_preserved": true,
+    "out_of_owned_root_change_count": 0,
+    "remote_readback": "PASS_12_OF_12"
+  },
+  "handoff_authority": {
+    "endpoint_request_response_schema": "A-5",
+    "adapter_generation_and_replay_package": "A-6",
+    "a4_scope": "NAVIGATION_PAGE_TYPE_PAGINATION_TERMINATION_ONLY"
+  },
+  "boundaries": {
+    "actual_bulk_collection": false,
+    "live_site_call_count": 0,
+    "panel_shell_direct_edit": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  }
+}

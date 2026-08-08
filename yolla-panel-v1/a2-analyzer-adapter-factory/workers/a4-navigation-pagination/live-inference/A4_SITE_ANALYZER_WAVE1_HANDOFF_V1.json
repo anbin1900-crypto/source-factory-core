@@ -1,0 +1,45 @@
+{
+  "schema_version": "A4_SITE_ANALYZER_WAVE1_HANDOFF_V1",
+  "producer": "A-4",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "source_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/",
+  "entrypoint": "run_inference.cjs",
+  "module": "live_structure_inference_engine.cjs",
+  "input_schema": "schemas/A3_LIVE_DOM_NAVIGATION_INPUT_V1.schema.json",
+  "output_schema": "schemas/A4_STRUCTURE_INFERENCE_RESULT_V1.schema.json",
+  "input_sources": [
+    "A-3 normalized live DOM node array",
+    "A-3 raw CDP DOMSnapshot.captureSnapshot payload",
+    "A-3 navigation, scroll, cursor and item-growth events"
+  ],
+  "outputs": [
+    "pageType",
+    "repeatedRegions",
+    "fieldCandidates",
+    "locatorCandidates",
+    "listDetailRelation",
+    "pagination",
+    "highlightPayload",
+    "resultSha256"
+  ],
+  "consumer_bindings": {
+    "A-2": "Mount inferStructure(input) in shared AnalyzerCore for embedded and standalone modes.",
+    "A-5": "Consume field, locator, list-detail and pagination evidence when selecting DOM, API or Hybrid mode.",
+    "A-6": "Compile locatorCandidates and pagination into executable Playwright/Crawlee adapter steps.",
+    "B-2": "Render highlightPayload and editable field candidates in Visual Analyzer and Smart Inspector.",
+    "B-3": "Reuse locator candidates as Recorder/Codegen defaults while preserving recorded action authority.",
+    "B-4": "Consume explicit pagination type and locator evidence for actual sample extraction."
+  },
+  "execution_example": "node run_inference.cjs <A3-input.json> <A4-result.json>",
+  "minimum_contract": {
+    "auto_field_candidate_count": 5,
+    "locator_candidate_count": 5,
+    "pagination": "DETECTED_OR_EXPLICIT_NONE"
+  },
+  "actual_a3_live_fixture_bound": false,
+  "actual_a3_live_fixture_status": "WAITING_A3_PUBLICATION_EVENT",
+  "component_implementation_ready": true,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

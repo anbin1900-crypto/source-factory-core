@@ -1,0 +1,21 @@
+{
+  "schema_version":"A4_STRUCTURE_10_SITE_FIXTURE_V1",
+  "fixture_only":true,
+  "profiles":[
+    {"site_profile_id":"fixture-site-01","url":"https://fixture.invalid/list","signals":["repeated_collection"],"observed_page":true,"navigation":{"pagination_type":"PAGE_NUMBER","pagination_observed":true},"runtime":{"lazy_load":true,"lazy_load_observed":true}},
+    {"site_profile_id":"fixture-site-02","url":"https://fixture.invalid/detail/1","signals":["entity_detail"],"observed_page":true,"runtime":{"modal":true,"modal_observed":true}},
+    {"site_profile_id":"fixture-site-03","url":"https://fixture.invalid/map","signals":["map_region"],"observed_page":true,"runtime":{"drawer":true,"drawer_observed":true}},
+    {"site_profile_id":"fixture-site-04","url":"https://fixture.invalid/search","signals":["search_control"],"observed_page":true,"runtime":{"spa_route":true,"spa_route_observed":true}},
+    {"site_profile_id":"fixture-site-05","url":"https://fixture.invalid/filter","signals":["filter_control","repeated_collection"],"observed_page":true,"runtime":{"virtualized_list":true,"virtualized_observed":true}},
+    {"site_profile_id":"fixture-site-06","url":"https://fixture.invalid/login","signals":["credential_form"],"observed_page":true,"runtime":{}},
+    {"site_profile_id":"fixture-site-07","url":"https://fixture.invalid/my/listings","signals":["owner_collection_or_detail","repeated_collection"],"observed_page":true,"navigation":{"pagination_type":"CURSOR","pagination_observed":true}},
+    {"site_profile_id":"fixture-site-08","url":"https://fixture.invalid/listing/create","signals":["write_form","create_action"],"observed_page":true,"runtime":{"dynamic_form":true,"dynamic_form_observed":true}},
+    {"site_profile_id":"fixture-site-09","url":"https://fixture.invalid/listing/1/edit","signals":["write_form","update_action"],"observed_page":true,"runtime":{"dynamic_form":true,"dynamic_form_observed":true}},
+    {"site_profile_id":"fixture-site-10","url":"https://fixture.invalid/list/infinite","signals":["repeated_collection"],"observed_page":true,"runtime":{"infinite_scroll":true,"infinite_scroll_observed":true,"virtualized_list":true,"virtualized_observed":true}}
+  ],
+  "shared_locator_candidates":[
+    {"strategy":"DATA","locator":"[data-testid=\"listing-card\"]","data_key":"data-testid","tag":"article","field_role":"LISTING_CARD","observed":true},
+    {"strategy":"ROLE","locator":"getByRole('button',{name:'Next'})","role":"button","field_role":"NEXT","observed":true},
+    {"strategy":"CSS","locator":"div.css-a13f98 > div:nth-child(2)","tag":"div","field_role":"FALLBACK","inferred":true,"fallback":"DOM_ANCESTOR_CHAIN"}
+  ]
+}

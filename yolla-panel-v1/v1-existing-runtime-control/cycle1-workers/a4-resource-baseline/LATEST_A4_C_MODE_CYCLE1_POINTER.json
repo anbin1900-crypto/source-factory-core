@@ -1,0 +1,40 @@
+{
+  "schema_version": "LATEST_A4_C_MODE_CYCLE1_POINTER_V1",
+  "worker": "A-4",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "directive_id": "C1-A4-IDLE-RESOURCE-BASELINE-HARNESS",
+  "worker_pr": 23,
+  "updated_at_kst": "2026-08-07T00:11:20+09:00",
+  "terminal": "A4_C_MODE_CYCLE1_RESOURCE_BASELINE_READY_OR_EXACT_BLOCKER",
+  "decision": "EXACT_BLOCKER",
+  "status_detail": "HARNESS_READY_TARGET_PC_LIVE_MEASUREMENT_BLOCKED_EXTERNAL",
+  "final_report": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a4-resource-baseline/A4_CYCLE1_FINAL_REPORT_V1.json",
+    "commit": "b249bf2503e772de84d17212e331aaf79aa4334a",
+    "blob": "b2d197f28ed53b213a27f94c8beab6b427ad88a8"
+  },
+  "blocker_evidence": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a4-resource-baseline/A4_CYCLE1_TARGET_PC_EXECUTION_BLOCKER_V1.json",
+    "commit": "02c9a16d23b76e68e7228c25b8f377084ee17bd2",
+    "blob": "64eb6158ee5eaf4056418b0fa3a51892b6682080",
+    "code": "TARGET_WINDOWS_PC_EXECUTION_CHANNEL_UNAVAILABLE"
+  },
+  "harness": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a4-resource-baseline/Invoke-CModeCycle1ResourceBaseline.ps1",
+    "commit": "b2f79923073b9ab12d16e542be442dd765316b7e",
+    "blob": "82bfd506922b7471d5bd1c4ed6697950a738489f",
+    "sha256": "598d22288b090f20eab7f12f27c37c7c66efa432ecd29a710528022e8f6ae036"
+  },
+  "validation": {
+    "static_tests": "PASS_5_OF_5",
+    "synthetic_receipt_schema": "PASS",
+    "live_target_pc_measurement": "NOT_RUN_EXACT_EXTERNAL_BLOCKER",
+    "false_live_pass_count": 0,
+    "optimization_source_change_count": 0
+  },
+  "required_next_event": "TARGET_PC_EXECUTION_CHANNEL_AVAILABLE_WITH_A3_EXACT_RUNTIME_ROOT_PROCESS_ID",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

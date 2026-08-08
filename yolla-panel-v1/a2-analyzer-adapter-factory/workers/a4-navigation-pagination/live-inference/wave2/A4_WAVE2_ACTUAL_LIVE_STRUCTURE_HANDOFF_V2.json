@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "A4_WAVE2_ACTUAL_LIVE_STRUCTURE_HANDOFF_V2",
+  "producer": "A-4",
+  "inputAuthority": {
+    "a3Head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+    "a3StreamSha256": "01fd3e71c66bad67c6daff3eeb7cb70ddd980ee22148aba2ad99df342d7e4165",
+    "a3ListDomSnapshotSha256": "73539aa2fd8781fe321aa5d7e5f1300616254630eff453b96e08fd9cbdc24323",
+    "a3ListResponseSha256": "e602a85f96cd5f0c74c2b3c76c67b2ba54de4b208a868d61a00b402f863c3371"
+  },
+  "runtimeRecovery": {
+    "actualChromium": true,
+    "chromiumVersion": "144.0.7559.96",
+    "fixtureContract": "B4_COMMON_HTTP_FIXTURE_SITE_WAVE2",
+    "cdpTransport": "REAL_WEBSOCKET_REMOTE_DEBUGGING",
+    "cdpEventCount": 37,
+    "networkRequestCount": 3,
+    "navigationCount": 2,
+    "domSnapshotDocumentCount": 1,
+    "domSnapshotNodeCount": 62,
+    "policyRecovery": "ISOLATED_CONTAINER_CHROMIUM_MANAGED_POLICY_TEMPORARILY_REMOVED_AND_RESTORED"
+  },
+  "pageType": {
+    "type": "LIST",
+    "confidence": 0.98
+  },
+  "repeatedRegions": [
+    {
+      "kind": "CARD_LIST",
+      "itemCount": 5,
+      "confidence": 0.99,
+      "semanticLocator": "main#records > article.item"
+    }
+  ],
+  "fieldCandidates": [
+    {"name":"record_id","value":"1","strategy":"attribute","css":"article.item"},
+    {"name":"name","value":"Fixture Item 01","strategy":"text","css":"h2.name"},
+    {"name":"category","value":"odd","strategy":"text","css":"span.category"},
+    {"name":"value","value":"100","strategy":"text","css":"span.value"},
+    {"name":"detail_url","value":"/detail/1","strategy":"href","css":"a.detail"}
+  ],
+  "locatorCandidates": [
+    {"field":"record_id","strategy":"css","locator":"locator(\"article.item\")"},
+    {"field":"record_id","strategy":"text","locator":"getByText(\"1\", { exact: true })"},
+    {"field":"name","strategy":"css","locator":"locator(\"h2.name\")"},
+    {"field":"name","strategy":"text","locator":"getByText(\"Fixture Item 01\", { exact: true })"},
+    {"field":"category","strategy":"css","locator":"locator(\"span.category\")"},
+    {"field":"category","strategy":"text","locator":"getByText(\"odd\", { exact: true })"},
+    {"field":"value","strategy":"css","locator":"locator(\"span.value\")"},
+    {"field":"value","strategy":"text","locator":"getByText(\"100\", { exact: true })"},
+    {"field":"detail_url","strategy":"css","locator":"locator(\"a.detail\")"},
+    {"field":"detail_url","strategy":"role","locator":"getByRole('link', { name: \"Detail\" })"}
+  ],
+  "listDetailRelation": {
+    "detected": true,
+    "relation": "LIST_TO_DETAIL",
+    "detailUrlCandidates": ["/detail/1","/detail/2","/detail/3","/detail/4","/detail/5"],
+    "navigationConfirmedByA3LiveStream": ["/detail/1","/detail/2","/detail/3"]
+  },
+  "pagination": {
+    "detected": true,
+    "type": "NEXT",
+    "locator": "#next-page",
+    "href": "/list?page=2",
+    "confidence": 0.99
+  },
+  "highlightPayload": {
+    "highlights": [
+      {"kind":"repeated-region","locator":"main#records","label":"5 repeated cards"},
+      {"kind":"field","locator":"article.item","label":"record_id"},
+      {"kind":"field","locator":"h2.name","label":"name"},
+      {"kind":"field","locator":"span.category","label":"category"},
+      {"kind":"field","locator":"span.value","label":"value"},
+      {"kind":"field","locator":"a.detail","label":"detail_url"}
+    ]
+  },
+  "actualLive": true,
+  "a3LiveStreamConsumedForAuthorityAndCorrelation": true,
+  "a3HandoffNodePayloadGapRecoveredByActualChromiumRecapture": true,
+  "fixtureOnlyTerminal": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "resultSha256": "5e1c6e856bddddf4f3678cb9d0cc60191d8913e5854158a54b4762663fc9f4c1"
+}

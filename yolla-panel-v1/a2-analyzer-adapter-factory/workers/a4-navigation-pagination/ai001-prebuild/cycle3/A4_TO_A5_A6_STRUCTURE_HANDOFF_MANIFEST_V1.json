@@ -1,0 +1,36 @@
+{
+  "schema_version": "A4_TO_A5_A6_STRUCTURE_HANDOFF_MANIFEST_V1",
+  "directive_id": "AI001-TO-A4-OBSERVATION-TO-STRUCTURE-COMPOSITE-BINDING-V3-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "producer": "A-4",
+  "consumers": ["A-5", "A-6"],
+  "input_authority": {
+    "producer": "A-3",
+    "receipt_schema": "CDP_OBSERVATION_RUN_RECEIPT_V1",
+    "required_fields": ["status=PASS", "run_id", "page_identity.page_id", "page_identity.url", "artifacts.dom_snapshot_pointer"],
+    "parent_a3_head_observed": "fb7a448e6a16ae546d2b4038973b391d40b500c6"
+  },
+  "bundle_contract": {
+    "schema": "STRUCTURE_EVIDENCE_BUNDLE_V1",
+    "required_payloads": ["repeated_regions", "fields", "locator_candidates", "pagination_candidates", "confidence", "evidence_pointer", "fallback"],
+    "provenance": ["page_id", "action_id", "command_id", "observation_run_id"],
+    "deterministic_digest": "bundle_sha256"
+  },
+  "consumer_guidance": {
+    "A-5": "Consume fields, locator_candidates, pagination_candidates, confidence and evidence_pointer without reinterpreting Browser Worker Completion Event as analysis evidence.",
+    "A-6": "Consume repeated_regions, fields, locator_candidates, pagination_candidates and provenance directly as structure input for adapter compilation/replay."
+  },
+  "browser_worker_completion_event_policy": {
+    "binding": "COMMAND_LIFECYCLE_METADATA_ONLY",
+    "analysis_input_mixed": false,
+    "allowed_fields": ["command_id", "worker_id", "status", "event_type", "completion_event_sha256"]
+  },
+  "successor_command": "node A3_OBSERVATION_TO_A4_STRUCTURE_ADAPTER_V1.cjs <CDP_OBSERVATION_RUN_RECEIPT_V1.json> <BROWSER_WORKER_COMPLETION_EVENT_OR_-> <STRUCTURE_EVIDENCE_BUNDLE_V1.json>",
+  "target_pc_execution": false,
+  "tunnel_change": false,
+  "live_site_call": false,
+  "new_browser_engine": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

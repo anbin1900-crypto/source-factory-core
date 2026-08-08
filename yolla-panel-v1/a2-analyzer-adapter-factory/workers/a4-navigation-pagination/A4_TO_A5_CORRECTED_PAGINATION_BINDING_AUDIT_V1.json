@@ -1,0 +1,75 @@
+{
+  "schema_version": "A4_TO_A5_CORRECTED_PAGINATION_BINDING_AUDIT_V1",
+  "worker": "A-4",
+  "cycle_id": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE4-BLOCKER-CLOSURE-V1-20260804-001",
+  "directive_id": "A2-TO-A4-CORRECTED-A5-PAGINATION-BINDING-AUDIT-V4-20260804-001",
+  "directive_comment": 5171687404,
+  "audit_request_comment": 5171916972,
+  "audited_at_kst": "2026-08-04T23:18:00+09:00",
+  "terminal": "A4_CORRECTED_A5_PAGINATION_BINDING_PASS",
+  "decision": "PASS",
+  "a4_authority": {
+    "pr": 23,
+    "final_head": "6567f380e4249dc7cd9b55693fa85856a37b91e6",
+    "pointer_blob": "da26c979685d28e28632ec594f695f04b7effb7d",
+    "pagination_handoff_blob": "988d34dc259a4c93280680f9ee252eeeadc110df",
+    "pagination_parameters": ["page", "size"],
+    "primary_mode": "PAGE_NUMBER",
+    "termination_rules": [
+      "EMPTY_RESULT",
+      "LAST_PAGE_FLAG",
+      "REPEATED_CURSOR",
+      "REPEATED_CANONICAL_URL",
+      "NO_NEW_RECORD_IDS",
+      "MAXIMUM_PAGE_COUNT",
+      "LOGIN_REQUIRED",
+      "ERROR_PAGE",
+      "OUT_OF_SCOPE_PAGE_TYPE"
+    ],
+    "termination_rule_count": 9,
+    "loop_guard_authority": "EXACT_A4_HANDOFF_BLOB"
+  },
+  "a5_corrected_authority": {
+    "pr": 24,
+    "final_head": "ba35bab8c36cdba70ebeab34286b4a14710b8b7c",
+    "terminal": "A5_FINAL_AUTHORITY_REBIND_EXACT_BLOCKER",
+    "pointer_blob": "42d6e91d6134ad243ce94a23dd8ebd207d4d35d1",
+    "matrix_blob": "fd144547a66aff488440d71e62a8d67ebc641b74",
+    "package_commit": "123fa4c62ef671ff953f4b32b0387edb07114666",
+    "pagination_component_state": "EXACT_A4_REBIND_READY",
+    "previous_pagination_contract_state": "SUPERSEDED_NON_AUTHORITY_FIXTURE_ONLY",
+    "overall_blocker": "EXACT_RESPONSE_BODY_FIXTURES_FOR_A3_JSON_ENDPOINT_PROFILES_ARE_NOT_PRESENT_IN_SEARCHED_REPOSITORY_FIXTURES"
+  },
+  "checks": {
+    "a4_final_head_exact_match": "PASS",
+    "a4_pointer_blob_exact_match": "PASS",
+    "a4_pagination_handoff_blob_exact_match": "PASS",
+    "pagination_component_exact_rebind_state": "PASS",
+    "placeholder_contract_isolated_non_authority": "PASS",
+    "pagination_parameter_names_page_size": "PASS",
+    "primary_mode_page_number": "PASS",
+    "termination_rule_count_9": "PASS",
+    "termination_rule_content_preserved_by_exact_blob_reference": "PASS",
+    "loop_guard_preserved_by_exact_blob_reference": "PASS",
+    "a5_redefinition_of_a4_owned_rules_count": 0,
+    "a5_placeholder_substitution_for_a4_authority_count": 0,
+    "navigation_replay_rerun": false,
+    "live_site_call_count": 0
+  },
+  "findings": [],
+  "classification": {
+    "pagination_binding": "PASS",
+    "a5_overall_execution_contract": "BLOCKED_NON_PAGINATION_RESPONSE_BODY_FIXTURE_DEPENDENCY",
+    "pagination_is_current_blocker": false
+  },
+  "boundaries": {
+    "new_navigation_implementation": false,
+    "navigation_replay_rerun": false,
+    "actual_bulk_collection": false,
+    "panel_shell_direct_edit": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  }
+}

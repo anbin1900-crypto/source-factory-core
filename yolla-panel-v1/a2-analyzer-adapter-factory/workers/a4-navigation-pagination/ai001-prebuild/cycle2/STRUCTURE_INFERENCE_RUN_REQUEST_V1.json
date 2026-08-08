@@ -1,0 +1,19 @@
+{
+  "schema_version": "STRUCTURE_INFERENCE_RUN_REQUEST_V1",
+  "request_id": "AI001-C2-SMOKE-001",
+  "page_identity": {
+    "page_id": "fixture-smoke-1",
+    "url": "https://fixture.local/list?page=1"
+  },
+  "evidence_pointer": {
+    "kind": "LOCAL_JSON",
+    "path": "../fixture_smoke_1.json",
+    "sha256": "c8ff5d5bb095d4a5ef2436092a2bad8935ae620d5125025ad81ced243bf6a4a8"
+  },
+  "input_boundary": {
+    "chat_context_required": false,
+    "allowed": ["page_identity", "dom_snapshot", "evidence_pointer", "selected_element", "network_hints", "runtime_hints", "snapshot_id"],
+    "required": ["page_identity", "dom_snapshot_or_evidence_pointer"]
+  },
+  "successor_command": "node SUCCESSOR_STRUCTURE_INFERENCE_RUNNER_V1.cjs STRUCTURE_INFERENCE_RUN_REQUEST_V1.json STRUCTURE_INFERENCE_RUN_RECEIPT_V1.json"
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yolla.local/schemas/A3_LIVE_DOM_NAVIGATION_INPUT_V1.schema.json",
+  "title": "A-3 Live DOM and Navigation Input V1",
+  "type": "object",
+  "required": ["url"],
+  "properties": {
+    "snapshotId": {"type": "string"},
+    "snapshot_id": {"type": "string"},
+    "url": {"type": "string"},
+    "documentUrl": {"type": "string"},
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "tag"],
+        "properties": {
+          "id": {"type": ["string", "integer"]},
+          "parentId": {"type": ["string", "integer", "null"]},
+          "tag": {"type": "string"},
+          "role": {"type": ["string", "null"]},
+          "text": {"type": ["string", "null"]},
+          "attributes": {"type": ["object", "array"]},
+          "bounds": {"type": ["array", "null"], "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+          "visible": {"type": "boolean"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "strings": {"type": "array", "items": {"type": "string"}},
+    "documents": {"type": "array"},
+    "domSnapshot": {"type": "object"},
+    "snapshot": {"type": "object"},
+    "navigationEvents": {"type": "array", "items": {"type": "object"}},
+    "navigation_events": {"type": "array", "items": {"type": "object"}},
+    "viewportHeight": {"type": "number", "minimum": 0},
+    "documentScrollHeight": {"type": "number", "minimum": 0}
+  },
+  "anyOf": [
+    {"required": ["nodes"]},
+    {"required": ["documents", "strings"]},
+    {"required": ["domSnapshot"]},
+    {"required": ["snapshot"]}
+  ],
+  "additionalProperties": true
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "PAGINATION_SCOPE_CONTRACT_V1",
+  "contract_id": "A4-PAGINATION-SCOPE-CONTRACT-V1",
+  "fixture_id": "A4-NAVER-REAL-ESTATE-NAVIGATION-20260804-001",
+  "pagination_types": [
+    "PAGE_NUMBER",
+    "OFFSET_LIMIT",
+    "CURSOR",
+    "NEXT_URL",
+    "INFINITE_SCROLL_FIXTURE",
+    "MAP_TILE_OR_BBOX",
+    "NESTED_SCOPE",
+    "NONE"
+  ],
+  "pagination_type_count": 8,
+  "primary_fixture_mode": "PAGE_NUMBER",
+  "page_number": {
+    "start_value": 1,
+    "increment_rule": "+1",
+    "semantic_parameter": "page",
+    "maximum_page_count": 5,
+    "cursor_transfer": null
+  },
+  "offset_limit": {
+    "start_offset": 0,
+    "offset_increment": "previous_offset + limit",
+    "maximum_page_count": 5
+  },
+  "cursor": {
+    "start_cursor": null,
+    "next_cursor_source": "A5_RESPONSE_CONTRACT_REFERENCE",
+    "repeated_cursor_stop": true
+  },
+  "next_url": {
+    "canonicalize_before_visit": true,
+    "repeated_canonical_url_stop": true
+  },
+  "infinite_scroll_fixture": {
+    "live_scroll": false,
+    "fixture_batch_sequence_only": true,
+    "maximum_batch_count": 5
+  },
+  "termination_rules": [
+    "EMPTY_RESULT",
+    "LAST_PAGE_FLAG",
+    "REPEATED_CURSOR",
+    "REPEATED_CANONICAL_URL",
+    "NO_NEW_RECORD_IDS",
+    "MAXIMUM_PAGE_COUNT",
+    "LOGIN_REQUIRED",
+    "ERROR_PAGE",
+    "OUT_OF_SCOPE_PAGE_TYPE"
+  ],
+  "duplicate_id_stop_rule": "STOP_WHEN_A_PAGE_ADDS_ZERO_NEW_RECORD_IDS",
+  "canonical_url_rule": "LOWERCASE_SCHEME_HOST_SORT_QUERY_REMOVE_FRAGMENT",
+  "endpoint_request_authority": "A-5",
+  "adapter_implementation_authority": "A-6",
+  "live_site_call_count": 0
+}

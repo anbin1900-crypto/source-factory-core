@@ -1,0 +1,73 @@
+{
+  "schema_version": "A4_SITE_ANALYZER_WAVE1_FINAL_REPORT_V1",
+  "worker": "A-4",
+  "role": "DOM_STRUCTURE_FIELD_LOCATOR_PAGINATION_INFERENCE_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "worker_pr": 23,
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "directive_comment_id": 5207561157,
+  "completed_at_kst": "2026-08-07T02:06:00+09:00",
+  "implementation": {
+    "raw_cdp_dom_snapshot_adapter": "PASS",
+    "normalized_dom_node_adapter": "PASS",
+    "page_type_auto_classification": "PASS",
+    "repeated_list_card_table_detection": "PASS",
+    "field_candidate_generation": "PASS_MIN_5",
+    "playwright_role_text_label_css_locator_generation": "PASS_MIN_5",
+    "list_detail_relation_inference": "PASS",
+    "pagination_next": "PASS",
+    "pagination_load_more": "PASS",
+    "pagination_page_number": "IMPLEMENTED",
+    "pagination_cursor": "IMPLEMENTED",
+    "pagination_infinite_scroll": "IMPLEMENTED",
+    "pagination_explicit_none": "PASS",
+    "visual_highlight_payload": "PASS",
+    "deterministic_result_sha256": "PASS"
+  },
+  "validation": {
+    "attempt_1": "FAIL_TREE_NORMALIZATION_MISMATCH",
+    "attempt_2": "FAIL_DETAIL_PARAGRAPH_FALSE_REPEAT",
+    "attempt_3": "PASS_9_OF_9",
+    "remote_source_blob_parity": "PASS_4_OF_4",
+    "schema_json_parse": "PASS_2_OF_2",
+    "fixture_count": 3,
+    "representative_page_type": "LIST",
+    "representative_auto_field_candidate_count": 5,
+    "representative_locator_candidate_count": 12,
+    "representative_pagination": "NEXT",
+    "representative_list_detail_candidate_count": 3
+  },
+  "authority_blobs": {
+    "dom_input": "8507967a37940f6b3e39eef9a1e5fe86fbf196cb",
+    "engine": "e10dafebd36b5c9c39a2b8cbd94fd72df899d486",
+    "cli": "f2a6ed907db7b6508aa826199f7eedb91488733b",
+    "tests": "9511fa1b609a06365338aeb0e6c481c8d42cfc7c",
+    "a3_input_schema": "9b25394ae9ca2f124b1fb4bbe1972954ac83d029",
+    "a4_output_schema": "1b3e1678a544f408998adf077dbe7d970085343a",
+    "list_fixture": "7fa4fa34e4c24d56b9e3a876f8f740ca7f01fe5e",
+    "load_more_fixture": "a78df2426f97d68502f353780d4ce414e34a3b11",
+    "detail_fixture": "bd134a249b23713396c4b129561d3a31801c776b"
+  },
+  "handoff": {
+    "commit": "b379f94942b5d44163e5e6aed7c0dc2e54548721",
+    "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/A4_SITE_ANALYZER_WAVE1_HANDOFF_V1.json",
+    "consumers": ["A-2", "A-5", "A-6", "B-2", "B-3", "B-4"]
+  },
+  "a3_actual_live_event_binding": "PENDING_A3_PUBLICATION_NOT_REQUIRED_FOR_COMPONENT_IMPLEMENTATION_PASS",
+  "false_live_event_claim_count": 0,
+  "pass_min": {
+    "auto_field_candidate_count_gte_5": true,
+    "locator_candidate_count_gte_5": true,
+    "pagination_detected_or_explicit_none": true
+  },
+  "terminal": "A4_SITE_ANALYZER_WAVE1_STRUCTURE_INFERENCE_PASS",
+  "decision": "PASS",
+  "audit_only": false,
+  "validation_only": false,
+  "c_mode_runtime_work": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

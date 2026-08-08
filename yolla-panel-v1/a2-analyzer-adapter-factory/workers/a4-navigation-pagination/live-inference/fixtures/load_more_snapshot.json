@@ -1,0 +1,24 @@
+{
+  "snapshotId": "fixture-load-more-001",
+  "url": "https://example.test/search",
+  "nodes": [
+    {"id":"1","parentId":null,"tag":"html"},
+    {"id":"2","parentId":"1","tag":"body"},
+    {"id":"3","parentId":"2","tag":"h1","text":"Search results"},
+    {"id":"10","parentId":"2","tag":"ul","attributes":{"class":"items"}},
+    {"id":"11","parentId":"10","tag":"li","attributes":{"class":"result"}},
+    {"id":"12","parentId":"11","tag":"a","text":"Alpha","attributes":{"href":"/alpha"}},
+    {"id":"13","parentId":"11","tag":"span","text":"$10"},
+    {"id":"14","parentId":"11","tag":"span","text":"New"},
+    {"id":"15","parentId":"11","tag":"span","text":"2026-08-07"},
+    {"id":"16","parentId":"11","tag":"img","attributes":{"src":"/a.png","alt":"Alpha"}},
+    {"id":"21","parentId":"10","tag":"li","attributes":{"class":"result"}},
+    {"id":"22","parentId":"21","tag":"a","text":"Beta","attributes":{"href":"/beta"}},
+    {"id":"23","parentId":"21","tag":"span","text":"$20"},
+    {"id":"24","parentId":"21","tag":"span","text":"Used"},
+    {"id":"25","parentId":"21","tag":"span","text":"2026-08-06"},
+    {"id":"26","parentId":"21","tag":"img","attributes":{"src":"/b.png","alt":"Beta"}},
+    {"id":"30","parentId":"2","tag":"button","text":"Load more","attributes":{"aria-label":"Load more results"}}
+  ],
+  "navigationEvents": []
+}

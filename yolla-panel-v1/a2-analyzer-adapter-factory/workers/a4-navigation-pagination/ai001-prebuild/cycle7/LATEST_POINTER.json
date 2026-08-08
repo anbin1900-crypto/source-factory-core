@@ -1,0 +1,22 @@
+{
+  "schema_version":"A4_CYCLE7_LATEST_POINTER_V1",
+  "worker":"A-4",
+  "directive_id":"A0-TO-A4-REAL-SITE-PAGE-COMPONENT-RUNTIME-BINDING-V7-20260808-001",
+  "cycle_id":"A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "terminal":"A4_REAL_SITE_PAGE_COMPONENT_RUNTIME_BINDING_READY",
+  "decision":"PASS",
+  "parent_terminal":"A4_PAGE_COMPONENT_IMPLEMENTATION_SPEC_READY",
+  "outputs":{
+    "RUNTIME_BINDING_ENGINE":{"commit":"4e0a21ae4c28c4871d8864ab791c94170ea1da95","blob":"f01ccb233d433aa7700b86e0f0d1008ab9fbe63d"},
+    "ACTUAL_CHROME_READBACK_INPUT":{"commit":"1ae5029f9f24fd27f6900061cfd9a56de532fcfa","blob":"adee351be0e60d01572aa2924067bbca677424bf"},
+    "REAL_SITE_PAGE_COMPONENT_BINDING_V1":{"commit":"665c206966a8e08064ec3b86bd777f3584d786b0","blob":"89801bae1967b3908d7d64bbd2c9366c1fc3e122","binding_sha256":"ba25c4e8b36cc9af43505e8b7ca50b7d1919d617edb0e317e1b360aa57894ef6"},
+    "REAL_SITE_STRUCTURE_COVERAGE_RESULT_V1":{"commit":"b2f0bfd8e1243eab1aee8770c6b6f8921844856a","blob":"5beb123a478d67d6370a53c3abd638b006bb751d"},
+    "UNKNOWN_STRUCTURE_INDEX_V1":{"commit":"7935099ac5b99377aa3e8dc0fbde2d54e67a20e2","blob":"3cfc04be66108d377bd2155f9fba356cc76a0704","unknown_count":20},
+    "A4_TO_A5_A6_LIVE_HANDOFF_V1":{"commit":"62b1c20455cc901df9a38f132e5cc35870d7cceb","blob":"e41801310306fcdac9c7d95e9e57def3715b117b"},
+    "VALIDATION_RECEIPT":{"commit":"d85273907e45e1099ed9b6c8cc8854186bdfff02","blob":"bed16c27ebb68d8d4d1c552568273d23ee38a218"}
+  },
+  "actual_runtime_authority":{"a3_chrome_receipt_blob":"467d8df95d54a54e67a52f5bb2c8e627984f0952","a4_actual_structure_blob":"fae1b21205259afd7d44aad8db6bb52f6d570b75","action_id":"OBSERVED:action-list","page_id":"INFERRED:public-list","command_id":"UNKNOWN"},
+  "coverage":{"page_roles_observed":0,"page_roles_inferred":1,"component_locators_observed":3,"features_inferred":2,"write_forms_observed":0,"external_target_site_coverage_claim":false},
+  "deterministic_validation":{"run_count":2,"byte_equal":true,"output_file_sha256":"d982db3ddac538c56c59903fa41ace6261e4954a2a334ab6d2350ef52146d758"},
+  "new_browser_engine":false,"target_pc_execution_by_a4":false,"live_site_call_by_a4":false,"production":false,"ready":false,"merge":false,"self_merge":false
+}

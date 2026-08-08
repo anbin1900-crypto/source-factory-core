@@ -1,0 +1,20 @@
+{
+  "schema_version": "COLLECTION_SCOPE_BOUNDARY_V1",
+  "boundary_id": "A4-COLLECTION-SCOPE-BOUNDARY-V1",
+  "fixture_id": "A4-NAVER-REAL-ESTATE-NAVIGATION-20260804-001",
+  "allowed_scheme": "fixture",
+  "allowed_host": "naver-real-estate",
+  "allowed_page_types": ["HOME", "SEARCH", "REGION", "MAP", "LIST", "DETAIL", "PAGINATION"],
+  "stop_page_types": ["LOGIN_REQUIRED", "ERROR"],
+  "blocked_page_types": ["UNKNOWN"],
+  "maximum_page_count": 5,
+  "maximum_detail_count": 10,
+  "maximum_navigation_depth": 8,
+  "scope_freeze_key_fields": ["site_id", "region", "sort", "query", "bbox", "zoom"],
+  "detail_navigation_scope_effect": "TRANSIENT_NO_PAGINATION_ADVANCE",
+  "query_normalization": "SORT_QUERY_KEYS_LEXICOGRAPHICALLY",
+  "fragment_policy": "DROP",
+  "outside_host_navigation": "BLOCK",
+  "actual_bulk_collection": false,
+  "live_site_call_count": 0
+}

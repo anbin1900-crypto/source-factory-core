@@ -1,0 +1,96 @@
+{
+  "schema_version": "A4_NO_PAGINATION_TERMINAL_REPORT_V1",
+  "directive_id": "A2-TO-A4-NO-AUTOMATED-PAGINATION-MVP-BINDING-FINAL-V1-20260806-001",
+  "parent_cycle": "A2-SITE-ANALYZER-ADAPTER-FACTORY-WAVE6_10-GENERIC-HTML-MVP-FAST-CLOSURE-V1-20260806-001",
+  "reported_at_kst": "2026-08-06T00:34:00+09:00",
+  "worker": "A-4",
+  "status": "PASS",
+  "terminal": "A4_NO_AUTOMATED_PAGINATION_MVP_BINDING_READY",
+  "decision": "PASS_MVP_SINGLE_DOCUMENT_NO_AUTOMATED_PAGINATION",
+  "start_head": "d18192df1f672f7f1022eb428e521d720226a86b",
+  "navigation_authority": {
+    "head": "6567f380e4249dc7cd9b55693fa85856a37b91e6",
+    "pointer_blob": "da26c979685d28e28632ec594f695f04b7effb7d",
+    "frozen": true,
+    "implementation_changed": false
+  },
+  "artifacts": {
+    "binding": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/NO_AUTOMATED_PAGINATION_MVP_BINDING_V1.json",
+      "commit": "d8986b6f5d878fb181fc4efffdcbf53df3f0e3fa",
+      "blob": "e067f3711b022ea8f058de733e209aee3f67748e"
+    },
+    "a6_handoff": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/A4_TO_A6_NO_PAGINATION_HANDOFF_V1.json",
+      "commit": "eb91728ea66aa1fb98d22170a8035d270910014c",
+      "blob": "894fc02cc1cdf72708d1ccb1660f56b302f80aa3"
+    }
+  },
+  "source_contract": {
+    "a5_head": "754ab61f6823fe69591f0e13b9f865c29a5a3593",
+    "a5_pointer_blob": "40a282ccb4573ae00a12645f40bf39b6faea1abc",
+    "a5_endpoint_catalog_blob": "7e56b41ad64699dcd4abf58f81374801bb7739f2",
+    "a5_terminal": "A5_PUBLIC_DOCUMENT_ROUTE_REBIND_READY"
+  },
+  "result": {
+    "active_profile_count": 7,
+    "active_profiles": [
+      "EP-001",
+      "EP-002",
+      "EP-003",
+      "EP-004",
+      "EP-005",
+      "EP-010",
+      "EP-012"
+    ],
+    "excluded_profiles": [
+      "EP-011"
+    ],
+    "routes": [
+      "/map",
+      "/articles/{articleNo}",
+      "/search"
+    ],
+    "method": "GET",
+    "response_format": "text/html",
+    "max_documents_per_profile": 1,
+    "automated_pagination": false,
+    "next_link_follow": false,
+    "cursor_loop": false,
+    "page_increment": false,
+    "full_navigation_replay": false,
+    "full_authority_reaudit": false
+  },
+  "validation": {
+    "json_parse": "PASS_2_OF_2",
+    "required_profile_binding": "PASS_7_OF_7",
+    "excluded_profile_binding": "PASS_EP_011",
+    "method_and_format_binding": "PASS_7_OF_7",
+    "no_automated_pagination": "PASS",
+    "finding_count": 0
+  },
+  "attempted_actions": [
+    "READ_DIRECTIVE_COMMENT_5193802731",
+    "READ_A5_PUBLIC_ROUTE_ENDPOINT_AUTHORITY",
+    "CREATE_MVP_NO_PAGINATION_BINDING",
+    "CREATE_A6_NO_PAGINATION_HANDOFF",
+    "JSON_PARSE_AND_PROFILE_BINDING_VALIDATION",
+    "REMOTE_READBACK_BINDING_AND_HANDOFF"
+  ],
+  "safety": {
+    "replay_rerun": false,
+    "live_site_call_count": 0,
+    "capture_execution_count": 0,
+    "automated_pagination_count": 0,
+    "browser_automation_execution_count": 0,
+    "out_of_owned_root_change_count": 0,
+    "actual_bulk_collection": false,
+    "panel_shell_direct_edit": false,
+    "production": false,
+    "ready": false,
+    "merge": false,
+    "self_merge": false
+  },
+  "next_owner": "A-6",
+  "next_event": "A6_BUILD_MVP_ADAPTER_FROM_A4_NO_PAGINATION_HANDOFF"
+}

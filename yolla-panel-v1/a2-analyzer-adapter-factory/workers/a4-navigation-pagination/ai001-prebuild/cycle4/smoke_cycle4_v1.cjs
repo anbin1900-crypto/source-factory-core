@@ -1,0 +1,13 @@
+'use strict';
+const fs=require('node:fs');const assert=require('node:assert/strict');const {build,stable,sha,classifyRole}=require('./PAGE_COMPONENT_FORM_ROLE_GRAPH_ENGINE_V1.cjs');
+const fixture=JSON.parse(fs.readFileSync('./fixture_product_write_v1.json','utf8'));
+const a=build(fixture),b=build(fixture);assert.equal(stable(a),stable(b));
+for(const role of ['PUBLIC_SEARCH','PUBLIC_LIST','PUBLIC_DETAIL','LISTING_CREATE','MY_LISTING_LIST','MY_LISTING_DETAIL','LISTING_EDIT','LISTING_EXPIRE'])assert.equal(a.role_coverage[role],1);
+assert(a.page_graph.nodes.some(x=>x.page_id==='public-list'&&x.fallback.active&&x.fallback.fallback_reason.includes('VIRTUALIZED_LIST_RENDER_WINDOW')));
+assert(a.page_graph.nodes.some(x=>x.page_id==='listing-edit'&&x.fallback.fallback_reason.includes('SPA_ROUTE_WITHOUT_FULL_DOCUMENT_RELOAD')));
+const create=a.form_field_structure.forms.find(x=>x.form_id==='listing-create-form');assert.equal(create.fields.length,3);assert(create.fields.every(x=>x.label&&x.input_type&&Array.isArray(x.locator_candidates)));
+assert(a.consumer_contract.A5_PRODUCT_BINDING.length>0&&a.consumer_contract.A6_WRITE_ADAPTER.length>0);
+assert(a.page_graph.nodes.every(x=>['OBSERVED','INFERRED','UNKNOWN'].includes(x.evidence_status)));
+assert.equal(classifyRole({page_id:'inferred-search',url:'https://fixture.local/search',title:'Search'}).evidence_status,'INFERRED');
+assert.equal(classifyRole({page_id:'unknown',url:'https://fixture.local/misc',title:'Misc'}).evidence_status,'UNKNOWN');
+const out={status:'PASS',deterministic:true,digest:sha(a),page_count:a.page_graph.nodes.length,page_edge_count:a.page_graph.edges.length,component_count:a.component_role_graph.nodes.length,form_count:a.form_field_structure.forms.length,form_field_count:a.form_field_structure.forms.reduce((n,f)=>n+f.fields.length,0),ui_state_region_count:a.ui_state_region.regions.length,role_coverage:a.role_coverage};process.stdout.write(JSON.stringify(out,null,2)+'\n');

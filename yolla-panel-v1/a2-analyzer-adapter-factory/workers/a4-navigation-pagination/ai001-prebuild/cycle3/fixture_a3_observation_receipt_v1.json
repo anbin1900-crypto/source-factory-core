@@ -1,0 +1,30 @@
+{
+  "schema_version": "CDP_OBSERVATION_RUN_RECEIPT_V1",
+  "status": "PASS",
+  "run_id": "A3-AI001-C3-FIXTURE-001",
+  "request_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "page_identity": {
+    "page_id": "fixture-smoke-1",
+    "target_type": "page",
+    "title": "Fixture Listing",
+    "url": "https://fixture.local/list?page=1"
+  },
+  "artifacts": {
+    "dom_snapshot_pointer": {
+      "kind": "LOCAL_JSON",
+      "path": "../fixture_smoke_1.json",
+      "sha256": "c8ff5d5bb095d4a5ef2436092a2bad8935ae620d5125025ad81ced243bf6a4a8"
+    },
+    "request_response_metadata_pointer": {"kind":"FIXTURE","path":"NONE"},
+    "redacted_response_body_pointer": {"kind":"FIXTURE","path":"NONE"},
+    "frame_navigation_pointer": {"kind":"FIXTURE","path":"NONE"}
+  },
+  "timestamps": {
+    "started_at": "2026-08-07T13:30:00.000Z",
+    "finished_at": "2026-08-07T13:30:00.100Z"
+  },
+  "retry_count": 0,
+  "retry_policy": "NO_INTERNAL_RETRY",
+  "idempotent_replay": true,
+  "action_id": "fixture-action-001"
+}

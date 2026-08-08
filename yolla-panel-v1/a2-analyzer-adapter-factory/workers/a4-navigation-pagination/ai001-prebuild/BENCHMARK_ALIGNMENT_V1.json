@@ -1,0 +1,24 @@
+{
+  "schema_version": "A4_AI001_BENCHMARK_ALIGNMENT_V1",
+  "directive_id": "AI001-TO-A4-STRUCTURE-LOCATOR-PAGINATION-INFERENCE-PREBUILD-V1-20260807-001",
+  "benchmarks": {
+    "PLAYWRIGHT_LOCATOR": {
+      "applied": ["role locator candidate", "text locator candidate", "data-testid candidate", "CSS fallback"],
+      "implementation": "LOCATOR_STABILITY_SCORER_V1.cjs"
+    },
+    "MEDV_FINDER": {
+      "applied": ["stable/short CSS preference", "dynamic-token penalty", "nth-position penalty", "stable id/data hook preference"],
+      "reference": "antonmedv/finder (@medv/finder) CSS selector generator",
+      "implementation": "LOCATOR_STABILITY_SCORER_V1.cjs"
+    },
+    "CHROME_DOM": {
+      "applied": ["raw DOMSnapshot strings/documents/nodes normalization", "normalized node-array input"],
+      "implementation": "STRUCTURE_INFERENCE_ENGINE_V1.cjs"
+    },
+    "OCTOPARSE_VISUAL_SELECTION": {
+      "applied": ["selectedElement input anchor", "selection confidence boost", "selected element preserved through fallback"],
+      "implementation": "STRUCTURE_INFERENCE_ENGINE_V1.cjs"
+    }
+  },
+  "note": "Benchmark alignment is implemented as compatible inference behavior; no third-party runtime dependency is introduced."
+}

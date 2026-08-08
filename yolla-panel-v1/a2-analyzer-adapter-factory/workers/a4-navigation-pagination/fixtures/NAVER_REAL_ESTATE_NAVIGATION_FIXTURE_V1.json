@@ -1,0 +1,157 @@
+{
+  "schema_version": "NAVER_REAL_ESTATE_NAVIGATION_FIXTURE_V1",
+  "fixture_id": "A4-NAVER-REAL-ESTATE-NAVIGATION-20260804-001",
+  "source_mode": "REPOSITORY_LOCAL_FIXTURE_ONLY",
+  "authority_basis": {
+    "a2_role_charter_blob": "5445002aca7d51c6f230e7f65c1f1d57ae9e8e63",
+    "a2_assignment_ledger_blob": "d6c3a1cf88193a0444637d85fc256dce5d33de92",
+    "a3_trace_handoff_status": "NOT_PUBLISHED_AT_START",
+    "a3_pr": 22,
+    "a3_observed_head": "fef706fd1c8b5e40988d7e84d355b3d5efbc4105"
+  },
+  "site_id": "FIXTURE_NAVER_REAL_ESTATE",
+  "allowed_scheme": "fixture",
+  "allowed_host": "naver-real-estate",
+  "snapshots": [
+    {
+      "snapshot_id": "home-001",
+      "url": "fixture://naver-real-estate/home",
+      "signals": ["main_navigation", "search_entry", "region_entry"],
+      "expected_page_type": "HOME",
+      "result_ids": []
+    },
+    {
+      "snapshot_id": "search-001",
+      "url": "fixture://naver-real-estate/search?query=seoul",
+      "signals": ["search_form", "filter_controls", "submit_search"],
+      "expected_page_type": "SEARCH",
+      "result_ids": []
+    },
+    {
+      "snapshot_id": "region-001",
+      "url": "fixture://naver-real-estate/region?code=seoul",
+      "signals": ["region_selector", "region_code", "region_breadcrumb"],
+      "expected_page_type": "REGION",
+      "result_ids": []
+    },
+    {
+      "snapshot_id": "map-001",
+      "url": "fixture://naver-real-estate/map?bbox=126.90,37.50,127.10,37.60&zoom=14",
+      "signals": ["map_canvas", "bbox", "zoom", "listing_markers"],
+      "expected_page_type": "MAP",
+      "result_ids": ["listing-1001", "listing-1002"]
+    },
+    {
+      "snapshot_id": "list-page-1",
+      "url": "fixture://naver-real-estate/list?sort=recent&page=1&region=seoul",
+      "signals": ["listing_cards", "result_count", "page_number", "next_link"],
+      "expected_page_type": "LIST",
+      "result_ids": ["listing-1001", "listing-1002"],
+      "pagination": {"mode": "PAGE_NUMBER", "page": 1, "has_next": true, "is_last_page": false}
+    },
+    {
+      "snapshot_id": "detail-1001",
+      "url": "fixture://naver-real-estate/detail?id=listing-1001",
+      "signals": ["listing_detail", "canonical_listing_id", "back_to_list"],
+      "expected_page_type": "DETAIL",
+      "result_ids": ["listing-1001"]
+    },
+    {
+      "snapshot_id": "list-page-2",
+      "url": "fixture://naver-real-estate/list?region=seoul&sort=recent&page=2",
+      "signals": ["listing_cards", "result_count", "page_number", "next_link"],
+      "expected_page_type": "PAGINATION",
+      "content_role": "LIST",
+      "result_ids": ["listing-1002", "listing-1003"],
+      "pagination": {"mode": "PAGE_NUMBER", "page": 2, "has_next": true, "is_last_page": false}
+    },
+    {
+      "snapshot_id": "detail-1003",
+      "url": "fixture://naver-real-estate/detail?id=listing-1003",
+      "signals": ["listing_detail", "canonical_listing_id", "back_to_list"],
+      "expected_page_type": "DETAIL",
+      "result_ids": ["listing-1003"]
+    },
+    {
+      "snapshot_id": "list-page-3-empty",
+      "url": "fixture://naver-real-estate/list?page=3&region=seoul&sort=recent",
+      "signals": ["empty_result", "page_number", "last_page"],
+      "expected_page_type": "PAGINATION",
+      "content_role": "LIST",
+      "result_ids": [],
+      "pagination": {"mode": "PAGE_NUMBER", "page": 3, "has_next": false, "is_last_page": true}
+    },
+    {
+      "snapshot_id": "login-required-001",
+      "url": "fixture://naver-real-estate/login-required",
+      "signals": ["login_form", "session_required"],
+      "expected_page_type": "LOGIN_REQUIRED",
+      "result_ids": []
+    },
+    {
+      "snapshot_id": "error-001",
+      "url": "fixture://naver-real-estate/error?code=FIXTURE_RATE_LIMIT",
+      "signals": ["error_banner", "retry_after", "fixture_error"],
+      "expected_page_type": "ERROR",
+      "result_ids": []
+    },
+    {
+      "snapshot_id": "unknown-001",
+      "url": "fixture://naver-real-estate/unsupported",
+      "signals": ["unclassified_surface"],
+      "expected_page_type": "UNKNOWN",
+      "result_ids": []
+    }
+  ],
+  "primary_actions": [
+    {"action": "NAVIGATE", "target": "home-001"},
+    {"action": "SUBMIT_SEARCH", "target": "search-001"},
+    {"action": "SELECT_REGION", "target": "region-001"},
+    {"action": "OPEN_MAP", "target": "map-001"},
+    {"action": "OPEN_LIST", "target": "list-page-1"},
+    {"action": "OPEN_DETAIL", "target": "detail-1001"},
+    {"action": "BACK_TO_LIST", "target": "list-page-1", "allow_revisit": true},
+    {"action": "NEXT_PAGE", "target": "list-page-2"},
+    {"action": "OPEN_DETAIL", "target": "detail-1003"},
+    {"action": "BACK_TO_LIST", "target": "list-page-2", "allow_revisit": true},
+    {"action": "NEXT_PAGE", "target": "list-page-3-empty"},
+    {"action": "ATTEMPT_NEXT_AFTER_STOP", "target": "list-page-3-empty", "expect_blocked": true}
+  ],
+  "guard_cases": [
+    {
+      "case_id": "repeated-cursor",
+      "mode": "CURSOR",
+      "sequence": ["cursor-A", "cursor-B", "cursor-B"],
+      "expected_stop": "REPEATED_CURSOR"
+    },
+    {
+      "case_id": "repeated-next-url",
+      "mode": "NEXT_URL",
+      "sequence": [
+        "fixture://naver-real-estate/list?page=1&region=seoul&sort=recent",
+        "fixture://naver-real-estate/list?page=2&region=seoul&sort=recent",
+        "fixture://naver-real-estate/list?sort=recent&region=seoul&page=2"
+      ],
+      "expected_stop": "REPEATED_CANONICAL_URL"
+    },
+    {
+      "case_id": "duplicate-only-page",
+      "mode": "PAGE_NUMBER",
+      "pages": [
+        ["listing-2001", "listing-2002"],
+        ["listing-2002", "listing-2001"]
+      ],
+      "expected_stop": "NO_NEW_RECORD_IDS"
+    },
+    {
+      "case_id": "last-page-flag",
+      "mode": "OFFSET_LIMIT",
+      "pages": [
+        {"offset": 0, "limit": 2, "is_last_page": false, "ids": ["listing-3001", "listing-3002"]},
+        {"offset": 2, "limit": 2, "is_last_page": true, "ids": ["listing-3003"]}
+      ],
+      "expected_stop": "LAST_PAGE_FLAG"
+    }
+  ],
+  "live_site_call_count": 0
+}

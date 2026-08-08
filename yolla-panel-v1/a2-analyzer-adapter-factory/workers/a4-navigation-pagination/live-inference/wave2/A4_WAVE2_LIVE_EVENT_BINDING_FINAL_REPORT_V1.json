@@ -1,0 +1,92 @@
+{
+  "schema_version": "A4_WAVE2_LIVE_EVENT_BINDING_FINAL_REPORT_V1",
+  "worker": "A-4",
+  "role": "LIVE_EVENT_STRUCTURE_INFERENCE_BINDING_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 23,
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment_id": 5208237501,
+  "completed_at_kst": "2026-08-07T04:01:00+09:00",
+  "head_advance": {
+    "observed_head": "50c0555394f5fb3543f079ecfb60a0ed2eeab638",
+    "head_before_final_report": "d8531b2268ad4dad6615bbfd1acb5cdc0b9407a7",
+    "advanced": true
+  },
+  "implementation": {
+    "a3_live_event_envelope_binding": "PASS",
+    "json_and_ndjson_runner": "PASS",
+    "latest_live_dom_snapshot_selection": "PASS",
+    "navigation_event_projection": "PASS",
+    "event_type_counting": "PASS",
+    "duplicate_event_suppression": "PASS",
+    "event_stream_loop_limit": "PASS",
+    "fixture_only_rejection": "PASS",
+    "nonzero_live_event_requirement": "PASS",
+    "page_type_output_requirement": "PASS",
+    "field_minimum_five": "PASS",
+    "locator_minimum_five": "PASS",
+    "pagination_or_explicit_none": "PASS",
+    "b2_highlight_handoff": "PASS",
+    "deterministic_handoff_sha256": "PASS"
+  },
+  "validation": {
+    "tests": "PASS_11_OF_11",
+    "binding_blob": "00352b6b4a2d8fa76a59b07e9f44f1f4da754794",
+    "runner_blob": "f9b0768125024cb60ebbdd19543df3c88b256dbb",
+    "test_blob": "47888e33e7d0b467c619a18a1a725a855a60f2ff",
+    "handoff_schema_blob": "206cdc73e34998c95b6e52d2f1b5f918a267d8d8",
+    "validation_receipt_commit": "5777b846af2e0b3916ec87d973df467ea336c5a4",
+    "validation_receipt_blob": "044ba5c3608504ce884ed350e840c74306dea06f"
+  },
+  "attempt_log": [
+    {
+      "attempt": 1,
+      "action": "Read A-3 Wave 2 directive and exact current Remote Head",
+      "result": "A3_HEAD_NOT_ADVANCED"
+    },
+    {
+      "attempt": 2,
+      "action": "Implement A-3 live event stream envelope normalization, deduplication, DOMSnapshot selection and inference handoff",
+      "result": "PASS"
+    },
+    {
+      "attempt": 3,
+      "action": "Inject malformed and incomplete streams and repair fail-closed handling",
+      "result": "PASS_11_OF_11"
+    },
+    {
+      "attempt": 4,
+      "action": "Re-read A-3 exact Remote Head before Terminal",
+      "result": "A3_HEAD_STILL_NOT_ADVANCED"
+    }
+  ],
+  "actual_live_binding": {
+    "a3_worker_pr": 22,
+    "a3_wave2_directive_comment": 5208236237,
+    "a3_head_at_cutoff": "e86dfcc2fc32ad366cd7fd8ba07392850419b853",
+    "a3_head_advanced": false,
+    "a3_live_stream_pointer_present": false,
+    "actual_stream_consumed": false,
+    "actual_live_page_type_generated": false,
+    "actual_live_field_candidate_count": 0,
+    "actual_live_locator_candidate_count": 0,
+    "actual_live_highlight_count": 0,
+    "false_live_pass_count": 0
+  },
+  "exact_blocker": {
+    "code": "A3_WAVE2_LIVE_EVENT_STREAM_NOT_PUBLISHED",
+    "receipt_commit": "d8531b2268ad4dad6615bbfd1acb5cdc0b9407a7",
+    "receipt_blob": "99b91cf44bfb5e1cb95ce730e655d3151f7831cc",
+    "receipt_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave2/A4_WAVE2_A3_LIVE_STREAM_BLOCKER_V1.json",
+    "resume_condition": "A-3 publishes an advanced exact Remote Head and actual live CDP event stream pointer containing at least one DOMSnapshot and Navigation event."
+  },
+  "terminal": "A4_SITE_ANALYZER_WAVE2_LIVE_EVENT_BINDING_EXACT_BLOCKER",
+  "decision": "EXACT_BLOCKER",
+  "status_detail": "BINDING_IMPLEMENTATION_PASS_WAITING_A3_ACTUAL_LIVE_STREAM",
+  "finding_only_terminal": false,
+  "fixture_only_terminal": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

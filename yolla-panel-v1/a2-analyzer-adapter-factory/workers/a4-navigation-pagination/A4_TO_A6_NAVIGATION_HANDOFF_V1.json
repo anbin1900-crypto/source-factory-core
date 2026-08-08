@@ -1,0 +1,34 @@
+{
+  "schema_version": "A4_TO_A6_NAVIGATION_HANDOFF_V1",
+  "handoff_id": "A4-TO-A6-NAVIGATION-20260804-001",
+  "status": "READY",
+  "navigation_graph_ref": "SITE_NAVIGATION_GRAPH_V1.json",
+  "page_type_catalog_ref": "PAGE_TYPE_CATALOG_V1.json",
+  "pagination_contract_ref": "PAGINATION_SCOPE_CONTRACT_V1.json",
+  "fixture_ref": "fixtures/NAVER_REAL_ESTATE_NAVIGATION_FIXTURE_V1.json",
+  "replay_ref": "FIXTURE_NAVIGATION_REPLAY_V1.json",
+  "a3_trace_late_binding_ref": "A3_TRACE_LATE_BINDING_V1.json",
+  "a3_fixture_trace_authority": {
+    "head": "a5632d6dbdddd956d478b593ffe144ff8a6241cf",
+    "fixture_trace_path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a3-network-observation/FIXTURE_TRACE_BUNDLE_V1.json",
+    "fixture_trace_blob": "cd29511601f27a128ff88e2e3f265c116d99e4a0",
+    "a3_to_a6_handoff_blob": "8fe991a225275ece977944f157b72509cd3345f7",
+    "event_count": 15,
+    "relevant_event_ids": ["EVT-001", "EVT-003", "EVT-005", "EVT-006", "EVT-007", "EVT-008", "EVT-009", "EVT-010", "EVT-014", "EVT-015"],
+    "unknown_event_preserved": true,
+    "raw_secret_value_count": 0,
+    "live_site_call_count": 0
+  },
+  "root_node_id": "home-001",
+  "allowed_page_types": ["DETAIL", "ERROR", "HOME", "LIST", "LOGIN_REQUIRED", "MAP", "PAGINATION", "REGION", "SEARCH"],
+  "blocked_page_types": ["UNKNOWN"],
+  "adapter_operation_mapping": {
+    "detectSite": "fixture scheme + host plus A3 PAGE_ENTRY observation",
+    "discoverScope": "COLLECTION_SCOPE_BOUNDARY_V1 plus A3 SEARCH LIST MAP_MOVE evidence",
+    "getNextCursor": "PAGINATION_SCOPE_CONTRACT_V1 termination rules plus A3 PAGINATION and HTTP_429 evidence",
+    "buildDetailRequest": "DETAIL edge target plus A3 DETAIL evidence; endpoint authority remains A-5"
+  },
+  "expected_replay_digest": "5efffc455deb166bb00afedc918c17f0bf3d0b2be6ca0d266acc680f62ca6bb9",
+  "adapter_implementation_authority": "A-6",
+  "ready": true
+}

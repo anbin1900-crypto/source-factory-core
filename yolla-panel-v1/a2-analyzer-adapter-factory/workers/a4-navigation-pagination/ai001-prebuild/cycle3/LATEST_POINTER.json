@@ -1,0 +1,59 @@
+{
+  "schema_version": "A4_AI001_CYCLE3_LATEST_POINTER_V1",
+  "worker": "A-4",
+  "directive_id": "AI001-TO-A4-OBSERVATION-TO-STRUCTURE-COMPOSITE-BINDING-V3-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "updated_at_kst": "2026-08-07T22:40:00+09:00",
+  "terminal": "A4_OBSERVATION_TO_STRUCTURE_COMPOSITE_BINDING_READY",
+  "decision": "PASS",
+  "parent_terminal": "A4_STRUCTURE_INFERENCE_RUNNER_AND_STABLE_OUTPUT_READY",
+  "a3_authority": {
+    "worker_pr": 22,
+    "head": "fb7a448e6a16ae546d2b4038973b391d40b500c6",
+    "receipt_contract": "CDP_OBSERVATION_RUN_RECEIPT_V1",
+    "receipt_schema_blob": "81cc6288a92cd0effffa8063930aa3a734262d75"
+  },
+  "outputs": {
+    "A3_OBSERVATION_TO_A4_STRUCTURE_ADAPTER_V1": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/ai001-prebuild/cycle3/A3_OBSERVATION_TO_A4_STRUCTURE_ADAPTER_V1.cjs",
+      "commit": "e3ccce5bb2095c06464a1acb0d17c2aa88637d54",
+      "blob": "7733ae7c86133ebe5abf96cf93a363da9a8a96d1"
+    },
+    "STRUCTURE_EVIDENCE_BUNDLE_V1": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/ai001-prebuild/cycle3/STRUCTURE_EVIDENCE_BUNDLE_V1.schema.json",
+      "commit": "b98a9f5ac190439755859cc2457ca2c626f5c1f1",
+      "blob": "8ca14b04e6f6f4ff3f467e495bcb1ca50dbfa557"
+    },
+    "A4_TO_A5_A6_STRUCTURE_HANDOFF_MANIFEST_V1": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/ai001-prebuild/cycle3/A4_TO_A5_A6_STRUCTURE_HANDOFF_MANIFEST_V1.json",
+      "commit": "bdb4e7037aba3725d60aaca6b3cdc1b2ce5d134a",
+      "blob": "e958dea4d3d9f641e4904351a4f58f2a9604249d"
+    },
+    "VALIDATION_RECEIPT": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/ai001-prebuild/cycle3/A4_AI001_CYCLE3_VALIDATION_RECEIPT_V1.json",
+      "commit": "449364edc11632e7a600801812501be1a68f3650",
+      "blob": "0b19e9cc811f3c87eb53d4a72e784b9f53e1b45a"
+    },
+    "SMOKE_SOURCE": {
+      "path": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/ai001-prebuild/cycle3/smoke_cycle3_v1.cjs",
+      "commit": "7d81117d3c4f44021f104554331618773ce990ac",
+      "blob": "4ccfd356d38d20681996807b272ddb877d9d3731"
+    }
+  },
+  "deterministic_validation": {
+    "run_count": 2,
+    "equal": true,
+    "bundle_sha256": "865c4e005f48077b60e9f2b9e789b0433bebbc46a6e1c125ae1582b8cddfdc6e",
+    "fallback_reason": ["VIRTUALIZED_LIST_RENDER_WINDOW", "DYNAMIC_DOM_MUTATION_OR_LAZY_LOAD"],
+    "completion_event_analysis_input_mixed": false
+  },
+  "successor_command": "node A3_OBSERVATION_TO_A4_STRUCTURE_ADAPTER_V1.cjs <CDP_OBSERVATION_RUN_RECEIPT_V1.json> <BROWSER_WORKER_COMPLETION_EVENT_OR_-> <STRUCTURE_EVIDENCE_BUNDLE_V1.json>",
+  "target_pc_execution": false,
+  "tunnel_change": false,
+  "live_site_call": false,
+  "new_browser_engine": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

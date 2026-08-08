@@ -1,0 +1,128 @@
+{
+  "schema_version": "A4_C_MODE_CYCLE1_FINAL_REPORT_V1",
+  "worker": "A-4",
+  "role": "A-4_C_MODE_CYCLE1_RESOURCE_BASELINE_WORKER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "worker_pr": 23,
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "directive_id": "C1-A4-IDLE-RESOURCE-BASELINE-HARNESS",
+  "directive_comment_id": 5206065265,
+  "completed_at_kst": "2026-08-07T00:10:30+09:00",
+  "start": {
+    "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a4-resource-baseline/A4_CYCLE1_START_REPORT_V1.json",
+    "commit": "fc7841f365999f5b450fa3bc6e69b5c7540963ee",
+    "blob": "54deb635de749a6740bd8a0eddef82b610084cd0",
+    "pr_comment_id": 5206545364
+  },
+  "delivered_artifacts": [
+    {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a4-resource-baseline/Invoke-CModeCycle1ResourceBaseline.ps1",
+      "commit": "b2f79923073b9ab12d16e542be442dd765316b7e",
+      "blob": "82bfd506922b7471d5bd1c4ed6697950a738489f",
+      "sha256": "598d22288b090f20eab7f12f27c37c7c66efa432ecd29a710528022e8f6ae036"
+    },
+    {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a4-resource-baseline/C_MODE_CYCLE1_RESOURCE_BASELINE_RECEIPT_V1.schema.json",
+      "commit": "403605a15ba71ac44196e19d166f8a82c2261476",
+      "blob": "52a058a69e389dd938457c6bcc7a0103b827f64f",
+      "sha256": "dbe4114e7d4f0ff12152357649ef76cbcec1e5da8815c1cba9015372dce8bace"
+    },
+    {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a4-resource-baseline/C_MODE_CYCLE1_RESOURCE_SCENARIO_MATRIX_V1.json",
+      "commit": "4a8d5287978fa9a6fe857ab62850fcd298e3ba7e",
+      "blob": "aca9f9836bb421fb658b75111525fe1a92e8819d",
+      "sha256": "5a33168d6889df90b090f3533549e6f9668fa38ff6fa53bdab02a481a45ad9e5"
+    },
+    {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a4-resource-baseline/test_resource_baseline_static.py",
+      "commit": "66858e8b16aabf6abc95c0e5170d61fded080a20",
+      "blob": "b3bb82a6fa66f5f2285600fb9085ab522cbc26b4",
+      "sha256": "3ec815fb35da19f818aa94aa0a7189c4a220cb608c6eb6809b27f8feff726d03"
+    },
+    {
+      "path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a4-resource-baseline/A4_CYCLE1_TARGET_PC_EXECUTION_BLOCKER_V1.json",
+      "commit": "02c9a16d23b76e68e7228c25b8f377084ee17bd2",
+      "blob": "64eb6158ee5eaf4056418b0fa3a51892b6682080"
+    }
+  ],
+  "harness_capabilities": {
+    "cpu_percent": true,
+    "working_set_bytes": true,
+    "private_bytes": true,
+    "process_count": true,
+    "renderer_count": true,
+    "gpu_process_count": true,
+    "utility_process_count": true,
+    "load_elapsed_ms": true,
+    "process_tree_enumeration": true,
+    "explicit_root_process_id": true,
+    "fail_closed_auto_detection": true,
+    "minimum_sample_count": 30,
+    "non_destructive_measurement": true
+  },
+  "validation": {
+    "python_static_tests": "PASS_5_OF_5",
+    "json_parse": "PASS",
+    "synthetic_receipt_schema_validation": "PASS",
+    "remote_artifact_readback": "PASS_5_OF_5_BEFORE_FINAL_REPORT",
+    "powershell_parser": "NOT_RUN_POWERSHELL_UNAVAILABLE",
+    "windows_runtime_execution": "NOT_RUN_TARGET_PC_CHANNEL_UNAVAILABLE"
+  },
+  "attempt_log": [
+    {
+      "attempt": 1,
+      "method": "Check current execution environment for Windows PowerShell target-PC measurement capability",
+      "result": "FAIL_EXTERNAL",
+      "finding": "Linux environment; powershell.exe and pwsh unavailable; target Windows PC not attached"
+    },
+    {
+      "attempt": 2,
+      "method": "Build a Windows PowerShell 5.1-compatible read-only measurement harness with schema and scenario matrix",
+      "result": "PASS"
+    },
+    {
+      "attempt": 3,
+      "method": "Run Python static validation and synthetic receipt schema validation",
+      "result": "PASS_5_OF_5_AND_SCHEMA_PASS"
+    },
+    {
+      "attempt": 4,
+      "method": "Publish all owner-scope artifacts to the worker branch and perform GitHub Remote readback",
+      "result": "PASS"
+    }
+  ],
+  "scenario_results": {
+    "PANEL_ONLY": "EXACT_TARGET_PC_ACCESS_BLOCKER",
+    "ONE_BROWSER": "EXACT_TARGET_PC_ACCESS_BLOCKER",
+    "INACTIVE_SEAT_TRANSITION": "EXACT_TARGET_PC_ACCESS_BLOCKER",
+    "BROWSER_CLOSE": "EXACT_TARGET_PC_ACCESS_BLOCKER",
+    "BROWSER_REOPEN": "EXACT_TARGET_PC_ACCESS_BLOCKER",
+    "CLOSE_REOPEN": "EXACT_TARGET_PC_ACCESS_BLOCKER"
+  },
+  "pass_criteria": {
+    "SCENARIO_PANEL_ONLY": "EXACT_BLOCKER",
+    "SCENARIO_ONE_BROWSER": "EXACT_BLOCKER",
+    "SCENARIO_CLOSE_REOPEN": "EXACT_BLOCKER",
+    "CPU_MEMORY_PROCESS_METRICS_PRESENT_IN_HARNESS": true,
+    "LIVE_CPU_MEMORY_PROCESS_METRICS_PRESENT": false,
+    "SAMPLE_COUNT_PER_EXECUTED_SCENARIO": 0,
+    "EXECUTED_SCENARIO_COUNT": 0,
+    "OPTIMIZATION_SOURCE_CHANGE_COUNT": 0,
+    "FALSE_LIVE_PASS_COUNT": 0
+  },
+  "exact_external_blocker": {
+    "code": "TARGET_WINDOWS_PC_EXECUTION_CHANNEL_UNAVAILABLE",
+    "evidence_path": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a4-resource-baseline/A4_CYCLE1_TARGET_PC_EXECUTION_BLOCKER_V1.json",
+    "required_action": "Run the committed harness on the target Windows PC using the exact active-runtime root PID from A-3 and the existing browser lifecycle action path, producing at least 30 samples for each executed scenario."
+  },
+  "decision": "EXACT_BLOCKER",
+  "status_detail": "HARNESS_READY_TARGET_PC_LIVE_MEASUREMENT_BLOCKED_EXTERNAL",
+  "terminal": "A4_C_MODE_CYCLE1_RESOURCE_BASELINE_READY_OR_EXACT_BLOCKER",
+  "optimization_source_change_count": 0,
+  "site_analyzer_work": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false
+}

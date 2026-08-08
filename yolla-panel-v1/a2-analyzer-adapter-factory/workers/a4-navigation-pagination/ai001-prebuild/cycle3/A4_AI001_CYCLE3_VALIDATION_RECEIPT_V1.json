@@ -1,0 +1,67 @@
+{
+  "schema_version": "A4_AI001_CYCLE3_VALIDATION_RECEIPT_V1",
+  "worker": "A-4",
+  "directive_id": "AI001-TO-A4-OBSERVATION-TO-STRUCTURE-COMPOSITE-BINDING-V3-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE3-20260807-001",
+  "validated_at_kst": "2026-08-07T22:40:00+09:00",
+  "parent_terminal": "A4_STRUCTURE_INFERENCE_RUNNER_AND_STABLE_OUTPUT_READY",
+  "a3_authority": {
+    "worker_pr": 22,
+    "observed_head": "fb7a448e6a16ae546d2b4038973b391d40b500c6",
+    "receipt_schema_blob": "81cc6288a92cd0effffa8063930aa3a734262d75",
+    "runner_validation_blob": "e7e53d3f6db5f184b895109ea9e2f639d6a15afd",
+    "receipt_contract": "CDP_OBSERVATION_RUN_RECEIPT_V1"
+  },
+  "parent_a4_cycle2": {
+    "runner_blob": "73c26e1c74a9fe663ed6b9a03444e6abcff6847d",
+    "request_blob": "08ac258be29f7292f05ee05c209c4e2461d39fa7",
+    "receipt_blob": "5cda7b28f1d6d8bc30a06e6b50651eb39becd85d",
+    "validation_blob": "0730a52ef6d9660286f78421720ba309c273d680",
+    "parent_deterministic_output_sha256": "ac1ad3a1e747f3c26503b993592efcd6d28f3853c778276f9dcdcb2cfe179640"
+  },
+  "cycle3_remote_readback": {
+    "adapter_blob": "7733ae7c86133ebe5abf96cf93a363da9a8a96d1",
+    "bundle_schema_blob": "8ca14b04e6f6f4ff3f467e495bcb1ca50dbfa557",
+    "handoff_manifest_blob": "e958dea4d3d9f641e4904351a4f58f2a9604249d",
+    "observation_fixture_blob": "da889f0a51fb3563b7da4e4b21b9e3510eeb53c8",
+    "completion_event_fixture_blob": "a78085adb5db8e9dd5d571b04c96a060bb55f438",
+    "smoke_source_blob": "4ccfd356d38d20681996807b272ddb877d9d3731"
+  },
+  "validation": {
+    "a3_observation_receipt_to_a4_request_adapter": "PASS",
+    "page_id_provenance": "PASS",
+    "action_id_provenance": "PASS",
+    "command_id_provenance": "PASS_LIFECYCLE_METADATA",
+    "structure_evidence_bundle": "PASS",
+    "fallback_confidence_required": "PASS_0_82",
+    "fallback_reason": ["VIRTUALIZED_LIST_RENDER_WINDOW", "DYNAMIC_DOM_MUTATION_OR_LAZY_LOAD"],
+    "completion_event_analysis_input_mixed": false,
+    "a5_a6_handoff_manifest": "PASS",
+    "deterministic_run_count": 2,
+    "deterministic_output_equal": true,
+    "deterministic_bundle_sha256": "865c4e005f48077b60e9f2b9e789b0433bebbc46a6e1c125ae1582b8cddfdc6e",
+    "analysis_input_sha256": "5a24f98140e3face08097253a98fe59da2bd5286b580217550ac2cf4a709e200",
+    "representative_repeated_region_count": 1,
+    "representative_field_count": 5,
+    "representative_locator_count": 14,
+    "representative_pagination_candidate_count": 1
+  },
+  "execution_note": {
+    "repository_checkout": "NOT_AVAILABLE_DNS_COULD_NOT_RESOLVE_GITHUB_COM",
+    "validation_method": "GITHUB_CONNECTOR_REMOTE_READBACK_PLUS_LOCAL_DETERMINISTIC_COMPOSITE_MIRROR_USING_PARENT_CYCLE2_RECEIPT_SHAPE",
+    "repository_integrated_smoke_source_published": true,
+    "target_pc_execution": false,
+    "live_site_call": false
+  },
+  "boundaries": {
+    "target_pc_execution": false,
+    "tunnel_change": false,
+    "live_site_call": false,
+    "new_browser_engine": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "PASS",
+  "terminal": "A4_OBSERVATION_TO_STRUCTURE_COMPOSITE_BINDING_READY"
+}

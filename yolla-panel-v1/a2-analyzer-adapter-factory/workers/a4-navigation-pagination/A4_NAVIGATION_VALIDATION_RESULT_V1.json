@@ -1,0 +1,55 @@
+{
+  "schema_version": "A4_NAVIGATION_VALIDATION_RESULT_V1",
+  "worker": "A-4",
+  "directive_id": "A2-TO-A4-NAVIGATION-PAGINATION-EXECUTION-V3-20260804-001",
+  "status": "PASS",
+  "attempt_count": 2,
+  "first_attempt": {
+    "status": "FAIL",
+    "failure_code": "DUPLICATE_AFTER_STOP",
+    "root_cause": "DETAIL_RESULT_IDS_WERE_INCLUDED_IN_LIST_PAGINATION_DUPLICATE_STATE"
+  },
+  "final_attempt": {
+    "status": "PASS",
+    "correction": "APPLY_DUPLICATE_ID_STOP_ONLY_TO_NON_REVISIT_LIST_OR_PAGINATION_PAGES",
+    "python_compile": "PASS_2_OF_2",
+    "unit_tests": "PASS_15_OF_15",
+    "builder_execution": "PASS"
+  },
+  "contract_checks": {
+    "navigation_graph_schema": "PASS",
+    "page_type_count": 10,
+    "pagination_type_count": 8,
+    "termination_rule_present": true,
+    "duplicate_loop_guard": "PASS",
+    "scope_freeze_progress_rule": "PASS",
+    "fixture_replay_count": 2,
+    "deterministic_navigation_replay": "PASS",
+    "unbounded_loop_count": 0,
+    "duplicate_page_visit_after_stop_count": 0,
+    "guard_cases": "PASS_4_OF_4",
+    "live_site_call_count": 0,
+    "a5_handoff_ready": true,
+    "a6_handoff_ready": true
+  },
+  "required_artifact_sha256": {
+    "fixtures/NAVER_REAL_ESTATE_NAVIGATION_FIXTURE_V1.json": "567f0278d66090f638b5bb36fade1e2626444bc36e1ef16dc5e21e44f4cafbbe",
+    "SITE_NAVIGATION_GRAPH_V1.json": "d212f210d46508501702e758e309d82a0ee2a1604b507f348ad37555b63a37f5",
+    "PAGE_TYPE_CATALOG_V1.json": "fd4d8954f3d4f88bf219ea6bd65bb9613f18663e36524f3e43ab37d1c451c1d3",
+    "PAGINATION_SCOPE_CONTRACT_V1.json": "bf52a0fb6b44af620bd35a1184addcfecddda9c4112f1b9d90f1927dee6d6f94",
+    "FIXTURE_NAVIGATION_REPLAY_V1.json": "44a043ed3710513245b9a75a289ca2a6d07e9409a01d20bd5086943dae12c436",
+    "COLLECTION_SCOPE_BOUNDARY_V1.json": "30559d48c0eed2706518a3cd574590a8bbd499dcb001a734c6ef5556dd2e483d",
+    "NAVIGATION_LOOP_STOP_POLICY_V1.json": "44dbd7636d5ef8901b1c06f863d512b3196310651b8a34a2d316edffa3ef02d3",
+    "A4_TO_A5_PAGINATION_HANDOFF_V1.json": "91b1d0be5c128a795df22f0e0f27e2f7f0869a73e624d5746a55649fa04ac4a8",
+    "A4_TO_A6_NAVIGATION_HANDOFF_V1.json": "6e75294278faa66d14f136dd90a25365d16c06aff04f53f408fc03c7ce6e6aa2"
+  },
+  "local_validation_sources": {
+    "builder_sha256": "e9f767b4183abddf5823965ffd3481887f0317068029236d5ca29751fbe8f4f9",
+    "test_sha256": "390d1c5abfabe8e25830836b69a49eb55c0061fd60ba01d609bd55f41faed55d"
+  },
+  "out_of_owned_root_change_count": 0,
+  "actual_bulk_collection": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

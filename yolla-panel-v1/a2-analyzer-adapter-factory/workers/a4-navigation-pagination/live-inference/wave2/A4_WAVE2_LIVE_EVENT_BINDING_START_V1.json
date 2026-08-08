@@ -1,0 +1,25 @@
+{
+  "schema_version": "A4_WAVE2_LIVE_EVENT_BINDING_START_V1",
+  "worker": "A-4",
+  "role": "LIVE_EVENT_STRUCTURE_INFERENCE_BINDING_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 23,
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment_id": 5208237501,
+  "started_at_kst": "2026-08-07T03:51:00+09:00",
+  "remote_head_before_start": "50c0555394f5fb3543f079ecfb60a0ed2eeab638",
+  "authority_commit": "9ca851933fb329b1d965f4459d452c684a06f9cd",
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a4-navigation-pagination/live-inference/wave2/",
+  "mission": "Bind the A-3 streaming CDP event envelope to the existing live structure inference engine and emit page type, repeated regions, at least five fields, at least five locators, list-detail relation, pagination workflow and B-2 highlight payload.",
+  "a3_live_event_state_at_start": {
+    "worker_pr": 22,
+    "observed_head": "e86dfcc2fc32ad366cd7fd8ba07392850419b853",
+    "wave2_terminal_published": false
+  },
+  "fixture_only_terminal_allowed": false,
+  "finding_only_terminal": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "STARTED"
+}

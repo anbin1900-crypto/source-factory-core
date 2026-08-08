@@ -1,0 +1,51 @@
+{
+  "schema_version": "A4_CYCLE5_SEMANTIC_GRAPH_VALIDATION_RECEIPT_V1",
+  "worker": "A-4",
+  "directive_id": "A0-TO-A4-PAGE-COMPONENT-FEATURE-SEMANTIC-GRAPH-V5-20260808-001",
+  "cycle_id": "A0-AB-AI-BLUEPRINT-SEMANTIC-BINDING-CYCLE5-20260808-001",
+  "parent_terminal": "A4_PAGE_COMPONENT_FORM_ROLE_GRAPH_READY",
+  "validation": {
+    "source_parse": "PASS_2_OF_2",
+    "fixture_smoke": "PASS",
+    "deterministic_run_count": 2,
+    "deterministic_output_equal": true,
+    "deterministic_semantic_digest": "ba518d41b2dac7bae88d39062e2d5c78bfcad7d06c0cac68a8cde6a6e5eecd67",
+    "page_role_count": 8,
+    "feature_count": 9,
+    "feature_dependency_candidate_count": 9,
+    "unknown_dependency_count": 5,
+    "unknown_dependency_policy": "AUTHENTICATION_OR_AUTHORIZATION_NOT_OBSERVED_REMAINS_UNKNOWN",
+    "cycle4_page_component_form_graph_rewritten": false,
+    "repeated_region_provenance_preserved": true,
+    "locator_provenance_preserved": true,
+    "pagination_provenance_preserved": true,
+    "visual_pixel_clone": false,
+    "remote_readback": "PASS_6_OF_6"
+  },
+  "cycle4_authority": {
+    "PAGE_GRAPH_V1_blob": "9b3fd8ce34cc0298f38f23c13d102ea9fb3f4167",
+    "COMPONENT_ROLE_GRAPH_V1_blob": "52c0d882c4098d86bdaf0b611fad6079df9e849c",
+    "FORM_FIELD_STRUCTURE_V1_blob": "4795c84f1b0433692de6b606713bfdca846323b2",
+    "UI_STATE_REGION_V1_blob": "bea875940040e45313306fa348bee2935de2e343",
+    "A5_A6_HANDOFF_blob": "4b0197e146a70ff0bb4c92fe9717b42d5b3ff8c8",
+    "graph_sha256": "1297f9d7b5dc1be47c450ba87d883e36884a48da10ff43a1eb4a4a8dddc04ec4",
+    "deterministic_output_sha256": "41357d8547813b11bbfada71b951c885abd517a86c7270bd1c4d003153fcf839"
+  },
+  "cycle5_remote_blobs": {
+    "PAGE_COMPONENT_FEATURE_SEMANTIC_GRAPH_ENGINE_V1": "95763151aa837e85077f2a2cac7ad1e5727718c2",
+    "fixture_cycle5_v1": "72971fa03e59f044585d295756061bc4f47fac1b",
+    "smoke_cycle5_v1": "c21f6d60fe97b17c5c09d14a53d33a6ead61e01c",
+    "PAGE_ROLE_CATALOG_V2": "e8b6967d72221612e7fdbe0284886a66b05e5359",
+    "PAGE_COMPONENT_FEATURE_GRAPH_V1": "a417bb3360c0bd28218bdee98b27fb703bbc3be4",
+    "FEATURE_DEPENDENCY_CANDIDATES_V1": "28b5d49242545e5dfe386bfa5d4ef25830a2d15a"
+  },
+  "boundaries": {
+    "target_pc_execution": false,
+    "live_site_call": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "PASS",
+  "terminal": "A4_PAGE_COMPONENT_FEATURE_GRAPH_READY"
+}

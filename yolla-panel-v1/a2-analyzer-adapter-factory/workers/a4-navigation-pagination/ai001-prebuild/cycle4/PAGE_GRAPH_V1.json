@@ -1,0 +1,24 @@
+{
+  "schema_version": "PAGE_GRAPH_V1",
+  "nodes": [
+    {"page_id":"public-search","url":"https://fixture.local/search","title":"Search","page_role":"PUBLIC_SEARCH","evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"public-search","fallback":{"active":false,"confidence":0.98,"fallback_reason":["NONE"]},"structure_summary":{"repeated_region_count":0,"field_count":0,"locator_count":0,"pagination_candidate_count":0}},
+    {"page_id":"public-list","url":"https://fixture.local/list?page=1","title":"Listings","page_role":"PUBLIC_LIST","evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"public-list","fallback":{"active":true,"confidence":0.75,"fallback_reason":["VIRTUALIZED_LIST_RENDER_WINDOW","DYNAMIC_DOM_MUTATION","LAZY_LOAD_PENDING_OR_INCREMENTAL"]},"structure_summary":{"repeated_region_count":1,"field_count":3,"locator_count":1,"pagination_candidate_count":1}},
+    {"page_id":"public-detail","url":"https://fixture.local/detail/1","title":"Listing Detail","page_role":"PUBLIC_DETAIL","evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"public-detail","fallback":{"active":false,"confidence":0.98,"fallback_reason":["NONE"]},"structure_summary":{"repeated_region_count":0,"field_count":0,"locator_count":0,"pagination_candidate_count":0}},
+    {"page_id":"listing-create","url":"https://fixture.local/listing/create","title":"Create Listing","page_role":"LISTING_CREATE","evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"listing-create","fallback":{"active":false,"confidence":0.98,"fallback_reason":["NONE"]},"structure_summary":{"repeated_region_count":0,"field_count":0,"locator_count":0,"pagination_candidate_count":0}},
+    {"page_id":"my-listing-list","url":"https://fixture.local/my/listings","title":"My Listings","page_role":"MY_LISTING_LIST","evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"my-listing-list","fallback":{"active":false,"confidence":0.98,"fallback_reason":["NONE"]},"structure_summary":{"repeated_region_count":0,"field_count":0,"locator_count":0,"pagination_candidate_count":0}},
+    {"page_id":"my-listing-detail","url":"https://fixture.local/my/listing/1","title":"My Listing Detail","page_role":"MY_LISTING_DETAIL","evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"my-listing-detail","fallback":{"active":false,"confidence":0.98,"fallback_reason":["NONE"]},"structure_summary":{"repeated_region_count":0,"field_count":0,"locator_count":0,"pagination_candidate_count":0}},
+    {"page_id":"listing-edit","url":"https://fixture.local/my/listing/1/edit","title":"Edit Listing","page_role":"LISTING_EDIT","evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"listing-edit","fallback":{"active":true,"confidence":0.8,"fallback_reason":["DYNAMIC_DOM_MUTATION","SPA_ROUTE_WITHOUT_FULL_DOCUMENT_RELOAD"]},"structure_summary":{"repeated_region_count":0,"field_count":0,"locator_count":0,"pagination_candidate_count":0}},
+    {"page_id":"listing-expire","url":"https://fixture.local/my/listing/1/expire","title":"Expire Listing","page_role":"LISTING_EXPIRE","evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"listing-expire","fallback":{"active":false,"confidence":0.98,"fallback_reason":["NONE"]},"structure_summary":{"repeated_region_count":0,"field_count":0,"locator_count":0,"pagination_candidate_count":0}}
+  ],
+  "edges": [
+    {"from_page_id":"public-search","to_page_id":"public-list","relation":"SUBMIT_SEARCH","trigger_locator":"#search-submit","evidence_status":"OBSERVED","confidence":0.9},
+    {"from_page_id":"public-list","to_page_id":"public-detail","relation":"OPEN_DETAIL","trigger_locator":"a.detail","evidence_status":"OBSERVED","confidence":0.9},
+    {"from_page_id":"public-list","to_page_id":"public-list","relation":"NEXT_PAGE","trigger_locator":"#next-page","evidence_status":"OBSERVED","confidence":0.9},
+    {"from_page_id":"listing-create","to_page_id":"my-listing-detail","relation":"CREATE_SUCCESS","trigger_locator":"#create-submit","evidence_status":"OBSERVED","confidence":0.9},
+    {"from_page_id":"my-listing-list","to_page_id":"my-listing-detail","relation":"OPEN_OWN_DETAIL","trigger_locator":"a.my-detail","evidence_status":"OBSERVED","confidence":0.9},
+    {"from_page_id":"my-listing-detail","to_page_id":"listing-edit","relation":"EDIT","trigger_locator":"#edit","evidence_status":"OBSERVED","confidence":0.9},
+    {"from_page_id":"my-listing-detail","to_page_id":"listing-expire","relation":"EXPIRE","trigger_locator":"#expire","evidence_status":"OBSERVED","confidence":0.9},
+    {"from_page_id":"listing-edit","to_page_id":"my-listing-detail","relation":"UPDATE_SUCCESS","trigger_locator":"#edit-submit","evidence_status":"OBSERVED","confidence":0.9},
+    {"from_page_id":"listing-expire","to_page_id":"my-listing-detail","relation":"EXPIRE_SUCCESS","trigger_locator":"#expire-submit","evidence_status":"OBSERVED","confidence":0.9}
+  ]
+}

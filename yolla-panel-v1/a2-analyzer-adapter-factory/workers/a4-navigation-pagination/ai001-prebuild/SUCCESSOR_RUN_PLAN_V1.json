@@ -1,0 +1,45 @@
+{
+  "schema_version": "SUCCESSOR_RUN_PLAN_V1",
+  "worker": "A-4",
+  "directive_id": "AI001-TO-A4-STRUCTURE-LOCATOR-PAGINATION-INFERENCE-PREBUILD-V1-20260807-001",
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "mode": "SINGLE_PC_COMMAND_INPUT_INJECTION",
+  "entrypoint": "a4_structure_infer.cjs",
+  "single_command": "node a4_structure_infer.cjs <dom-evidence.json> <STRUCTURE_INFERENCE_RESULT_V1.json>",
+  "fixture_smoke_command": "node a4_structure_infer.cjs fixture_smoke_1.json STRUCTURE_INFERENCE_RESULT_V1.fixture.json",
+  "source_parse_commands": [
+    "node --check STRUCTURE_INFERENCE_ENGINE_V1.cjs",
+    "node --check LOCATOR_STABILITY_SCORER_V1.cjs",
+    "node --check PAGINATION_INFERENCE_V1.cjs",
+    "node --check a4_structure_infer.cjs"
+  ],
+  "input_contract": {
+    "required_one_of": ["nodes", "domSnapshot"],
+    "selected_element": "optional object with nodeId/id plus role/text hints",
+    "network_hints": "optional array containing observed request URLs/cursor/page/offset hints",
+    "runtime_hints": "optional virtualized/dynamic DOM/SPA/scroll growth hints"
+  },
+  "output_contract": "STRUCTURE_INFERENCE_RESULT_V1",
+  "output_sections": [
+    "repeatedRegions",
+    "fieldCandidates",
+    "locatorCandidates",
+    "pagination",
+    "fallbackPolicy",
+    "selectedElementBinding",
+    "stats",
+    "resultSha256"
+  ],
+  "fallback_order": ["data-*", "role+name", "stable-id", "relative-css", "text"],
+  "virtualized_list_rule": "When totalItemCount materially exceeds renderedItemCount, mark virtualized=true, penalize text-only locators, and require recapture after mutation.",
+  "dynamic_dom_rule": "When DOM mutation/lazy-load/SPA hints are present, set recaptureAfterMutation=true and preserve selected element anchoring.",
+  "safety": {
+    "tunnel_create": false,
+    "successor_direct_call": false,
+    "target_pc_execution": false,
+    "new_browser_engine": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  }
+}

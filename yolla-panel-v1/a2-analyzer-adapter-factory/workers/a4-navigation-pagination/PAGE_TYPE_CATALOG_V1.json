@@ -1,0 +1,19 @@
+{
+  "schema_version": "PAGE_TYPE_CATALOG_V1",
+  "catalog_id": "A4-PAGE-TYPE-CATALOG-V1",
+  "entries": [
+    {"page_type": "HOME", "description": "Entry page containing navigation and search entry.", "evidence_snapshot_ids": ["home-001"], "collection_allowed": true, "terminal_or_blocking": false},
+    {"page_type": "SEARCH", "description": "Search form and filter-state page.", "evidence_snapshot_ids": ["search-001"], "collection_allowed": true, "terminal_or_blocking": false},
+    {"page_type": "REGION", "description": "Region hierarchy selection page.", "evidence_snapshot_ids": ["region-001"], "collection_allowed": true, "terminal_or_blocking": false},
+    {"page_type": "MAP", "description": "Map/bbox/zoom navigation surface.", "evidence_snapshot_ids": ["map-001"], "collection_allowed": true, "terminal_or_blocking": false},
+    {"page_type": "LIST", "description": "First result-list page.", "evidence_snapshot_ids": ["list-page-1"], "collection_allowed": true, "terminal_or_blocking": false},
+    {"page_type": "DETAIL", "description": "Single-record detail page.", "evidence_snapshot_ids": ["detail-1001", "detail-1003"], "collection_allowed": true, "terminal_or_blocking": false},
+    {"page_type": "PAGINATION", "description": "List continuation or terminal page.", "evidence_snapshot_ids": ["list-page-2", "list-page-3-empty"], "collection_allowed": true, "terminal_or_blocking": false},
+    {"page_type": "LOGIN_REQUIRED", "description": "Session boundary page; navigation stops.", "evidence_snapshot_ids": ["login-required-001"], "collection_allowed": false, "terminal_or_blocking": true},
+    {"page_type": "ERROR", "description": "Error boundary page; retry policy owned downstream.", "evidence_snapshot_ids": ["error-001"], "collection_allowed": false, "terminal_or_blocking": true},
+    {"page_type": "UNKNOWN", "description": "Unclassified page; blocked from collection scope.", "evidence_snapshot_ids": ["unknown-001"], "collection_allowed": false, "terminal_or_blocking": true}
+  ],
+  "page_type_count": 10,
+  "classification_basis": "FIXTURE_PAGE_SNAPSHOT_SIGNALS",
+  "live_site_call_count": 0
+}

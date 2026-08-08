@@ -1,0 +1,28 @@
+{
+  "schema_version": "A4_WAVE3_STRUCTURE_HARDENING_START_V1",
+  "worker": "A-4",
+  "role": "LIVE_STRUCTURE_INFERENCE_HARDENING_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 23,
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment_id": 5212023265,
+  "parent_directive": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "started_at_kst": "2026-08-07T13:43:00+09:00",
+  "remote_head_before_start": "4ff280cc4098fada678a82826644b77b6288f274",
+  "wave2_terminal": "A4_SITE_ANALYZER_WAVE2_LIVE_EVENT_STRUCTURE_INFERENCE_PASS",
+  "a3_live_authority_head": "0c4533c8631e984cfd58d30fad364d767b7a517c",
+  "mode": "ONE_OWNER_END_TO_END",
+  "required_pass": [
+    "REPEAT_REGION",
+    "FIELD_INFERENCE",
+    "LOCATOR_STABILITY",
+    "PAGINATION_INFERENCE",
+    "LOOP_GUARD",
+    "DYNAMIC_DOM_RECOVERY"
+  ],
+  "required_evidence": ["SCENARIO_MATRIX", "REPLAY_DIGESTS", "HEAD", "POINTER"],
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "STARTED"
+}
