@@ -1,0 +1,142 @@
+{
+  "schema_version": "V2_AB_FINAL_SOURCE_INTEGRATION_POINTER_V1",
+  "created_at_kst": "2026-08-08T14:34:00+09:00",
+  "control_id": "V2-AB-FINAL-WORKER-BATCH-AND-DIRECT-COMPLETION-TRANSFER-20260808-001",
+  "cycle_id": "V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "owner": "V-2_AB_GROUP_COMMANDER_AND_DIRECT_INTEGRATION_OWNER",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "final_worker_terminals": "11_OF_12_CONSUMED",
+  "b6_missing_worker_output": "DIRECTLY_COMPLETED_BY_V2",
+  "ab": {
+    "A-2": {
+      "pr": 18,
+      "head": "e5ab30eebc973115b863356f7d4c2a38b74b0d96",
+      "pointer_blob": "a57109e5814a793d08495830fbc16c3638672906",
+      "terminal_comment": 5224553693
+    },
+    "A-3": {
+      "pr": 22,
+      "head": "9bfa112fc559343f47e6e0ed23991abb974e4530",
+      "pointer_blob": "c018adde42d2c189eeee84a12787ae169d9f8410",
+      "terminal_comment": 5224540887
+    },
+    "A-4": {
+      "pr": 23,
+      "head": "3488c7c119f8e0c292aedfa923a32687528b7ef0",
+      "pointer_blob": "4518ca3d300b6085aab4e7b732f63d3d01207bdd",
+      "terminal_comment": 5224538442
+    },
+    "A-5": {
+      "pr": 24,
+      "head": "ccd3bdd403794209f7f60e74b597fcb053823ab3",
+      "pointer_blob": "dcab4902142d8a4e2e15dd5a7fc3d37aa721789e",
+      "terminal_comment": 5224556042
+    },
+    "A-6": {
+      "pr": 25,
+      "head": "70e9f0e66bf90ab341067492bda434fe3ce7b7d3",
+      "pointer_blob": "8577ae70578930e31a5127bd9a6ba83c259c389b",
+      "terminal_comment": 5224541279
+    },
+    "A-7": {
+      "pr": 26,
+      "head": "e3629c17c4e8fd4fe9c7989873a90090f767af7d",
+      "pointer_blob": "d7cdb4c72da0a4a284519b55a34fcf7098feaa8f",
+      "terminal_comment": 5224553318,
+      "snapshot": "SUPERSEDED_BY_V2_FINAL_INTEGRATION"
+    },
+    "B-1": {
+      "pr": 19,
+      "head": "b1a1bc2fd31d7f3cb1be601d24263eacd40fd8cc",
+      "pointer_blob": "cebd8e93717de44acd63a271b60ffbae7408fcc2",
+      "terminal_comment": 5224555811
+    },
+    "B-2": {
+      "pr": 38,
+      "head": "3dd39a4ee19b17958e9e319ebfdc7978532a0702",
+      "pointer_blob": "21c09bd60a443b5ecb4f37134ae3f3b00bb2f747",
+      "terminal_comment": 5224611061
+    },
+    "B-3": {
+      "pr": 39,
+      "head": "a3c4485162dcb2e7b606ebeb73365b94c11e0398",
+      "pointer_blob": "69378ad58b4d0dcc3bb27f2a6eb7a084c574d00d",
+      "terminal_comment": 5224581780,
+      "revalidation": "PASS_17_OF_17_BLOBS_24_OF_24_TESTS"
+    },
+    "B-4": {
+      "pr": 40,
+      "head": "3708fbf755b4313a83d0913a8cf0b6db0d562489",
+      "pointer_blob": "c55f6e0ba6a23b801f3f75955d46cf890137c593",
+      "terminal_comment": 5224550499
+    },
+    "B-5": {
+      "pr": 41,
+      "head": "63436e99cc51deb6df4a593313e8c235b5f62cd1",
+      "pointer_blob": "a27551a270a946a4cbae19d0f0dee1822c0a7018",
+      "terminal_comment": 5224552762
+    }
+  },
+  "b6_final_handoff_objects": {
+    "B6_TEN_SITE_BATCH_HANDOFF_V1.json": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/B6_TEN_SITE_BATCH_HANDOFF_V1.json",
+      "blob": "ee093219ee3cf9e3d854d73d9e18d49801635934"
+    },
+    "B6_TWO_BROWSER_FIVE_BATCH_SCHEDULER_V1.json": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/B6_TWO_BROWSER_FIVE_BATCH_SCHEDULER_V1.json",
+      "blob": "99c4dcd66e4dd89be34e0e7fd304c0e77743bd38"
+    },
+    "B6_SITE_ACTIVATION_AND_RESUME_CONTRACT_V1.json": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/B6_SITE_ACTIVATION_AND_RESUME_CONTRACT_V1.json",
+      "blob": "7bb4316642fa9757a81b535a0aafb6c53fa9b694"
+    },
+    "fixtures/B6_TEN_SITE_FINAL_HANDOFF_FIXTURE_V1.json": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/fixtures/B6_TEN_SITE_FINAL_HANDOFF_FIXTURE_V1.json",
+      "blob": "1bf84dc37cf555687fb03029d40487fa76300981"
+    },
+    "validate_b6_ten_site_final_handoff_v1.mjs": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/validate_b6_ten_site_final_handoff_v1.mjs",
+      "blob": "59e9a1a72660fe4fb3ba550e1cb1caf7df92695e"
+    },
+    "B6_FINAL_HANDOFF_VALIDATION_RECEIPT_V1.json": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/B6_FINAL_HANDOFF_VALIDATION_RECEIPT_V1.json",
+      "blob": "5efe88395500f441eb3164e918d670081a413fea"
+    },
+    "V2_B3_REMOTE_EXACT_BYTE_REVALIDATION_RECEIPT_V1.json": {
+      "path": "yolla-panel-v1/b1-collector-materialization/workers/b6-extraction-acceptance/ten-site-one-command-final-handoff-v1/V2_B3_REMOTE_EXACT_BYTE_REVALIDATION_RECEIPT_V1.json",
+      "blob": "f6f356d75b1a3fea82d63d970c55716c8d88316a"
+    }
+  },
+  "runtime_binding": {
+    "physical_hostname": "NOTEX",
+    "logical_pc_id": "YOLLA-USER-PC01",
+    "target_pc_working_root": "E:\\YOLLA",
+    "existing_browser_agent_exact_binding": "http://127.0.0.1:32100",
+    "command_bus": "anbin1900-crypto/yolla-real-estate-data-engine#188/PC_OPERATION_COMMAND_BUS_V2",
+    "target_url": "WAITING_INPUT",
+    "site_id": "WAITING_INPUT",
+    "authorized_user_session_reference": "WAITING_INPUT",
+    "target_page_binding": "WAITING_INPUT"
+  },
+  "source_acceptance": {
+    "b6_local_validation": "PASS_38_OF_38",
+    "b3_exact_byte_revalidation": "PASS_17_OF_17_BLOBS",
+    "b3_unit_tests": "PASS_24_OF_24",
+    "ten_site_slots": "PASS_10_OF_10",
+    "scheduler": "PASS_2_BROWSERS_X_5_BATCHES",
+    "lanes": "PASS_DATA_PRODUCT_WRITE_MY_LISTING_EDIT",
+    "write_edit_user_confirm_guard": "PASS"
+  },
+  "live_state": {
+    "confirmed_site_count": 0,
+    "actual_receipt_count": 0,
+    "live_pass_claimed": false
+  },
+  "resume_entry": "INJECT_EXACT_SITE_AUTHORITY_THEN_A2_RS003",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "self_merge": false,
+  "final_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}
