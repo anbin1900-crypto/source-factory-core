@@ -1,0 +1,20 @@
+{
+  "schema_version": "A6_SITE_ANALYZER_WAVE1_START_REPORT_V1",
+  "worker": "A-6",
+  "role": "EXECUTABLE_ADAPTER_COMPILER_REPLAY_TRACE_OWNER",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "directive_comment": 5207564607,
+  "common_authority_commit": "20b8a6401de124186037d44f9f17076c97142402",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 25,
+  "branch": "worker/a6-adapter-generation-replay-v1",
+  "observed_remote_head": "84ea9b34a7c9445a77214288556ff3230442d81e",
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/wave1-executable-adapter/",
+  "mission": "Replace manifest-only generation with executable DOM/API/Hybrid adapter compilation, replay, trace and failed-step partial repair.",
+  "execution_authority": "ASSIGNMENT_INCLUDES_EXECUTION_AUTHORITY",
+  "c_mode_runtime_work": false,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "STARTED"
+}

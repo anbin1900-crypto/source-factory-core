@@ -1,0 +1,23 @@
+{
+  "schema_version":"A6_CYCLE7_REAL_SITE_BINDING_TERMINAL_REPORT_V1",
+  "worker":"A-6",
+  "role":"A-6_REAL_SITE_RECIPE_ADAPTER_EXECUTION_BINDING_OWNER",
+  "directive_id":"A0-TO-A6-REAL-SITE-RECIPE-ADAPTER-EXECUTION-BINDING-V7-20260808-001",
+  "directive_comment":5220796902,
+  "cycle_id":"A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "observed_head":"fa874c50e824bd32e00b8c60cc12f6e2412546f9",
+  "package_commit":"bb7ef975cd51870659825f76067181132984b6c1",
+  "owned_root":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/prebuild-real-site-recipe-adapter-execution-binding-v7/",
+  "input_authority":{"cycle6_head":"fa874c50e824bd32e00b8c60cc12f6e2412546f9","cycle6_package_blob":"7170d27253efd393954708c278d55889e7d967c4","a4_head":"143f9f68f261fd7f4e5484ffdd474925c84bfa24","a4_handoff_blob":"e41801310306fcdac9c7d95e9e57def3715b117b","a4_binding_blob":"89801bae1967b3908d7d64bbd2c9366c1fc3e122","a4_validation_blob":"bed16c27ebb68d8d4d1c552568273d23ee38a218","a4_actual_chrome_receipt_blob":"467d8df95d54a54e67a52f5bb2c8e627984f0952","a5_head":"2580c345b449c2aedbf45909d30aa3a80498a579","a5_handoff_blob":"e5ba16fdf03db99d9893f5413cead2cee8e64501","a5_validation_blob":"c5f5b499da3c0fb32dfe3a675ece8d64d915718e"},
+  "required_outputs":{"REAL_SITE_RECIPE_V1":"945bf7effd302072ecf1e753d849f41493b2c7aa","REAL_SITE_ADAPTER_EXECUTION_SPEC_V1":"c0028fd217490cfdfb315c968e96b93a7ebbac23","REAL_SITE_REPLAY_RESULT_V1":"6ef53bd17dc6ec3323535e1a5dd1bd346638902f","REAL_SITE_RESUME_CHECKPOINT_V1":"9604598d83024f64c3430b647e65ddd0bfdde5e1","AI_SITE_BUILD_PACKAGE_LIVE_BINDING_V1":"2a2d2e3b800c3f7863d00b3c29e261c34d451cb6","LATEST_POINTER":"PENDING_NEXT_COMMIT"},
+  "implementation":{"binder_blob":"b025499cb7e63de742a1c992aba77f08cdc16897","test_blob":"7df8d542268d3490601f6303182a3c4311eb02bf","input_authority_blob":"2f2d894810d33c9f29ed1bef83f343f7fe3792c8","validation_receipt_blob":"49cbcb1a1f8b4bf6f46f03d055b5f7e148e47ce9"},
+  "lane_status":{"READ":"READY_ACTUAL_BROWSER_EVIDENCE","WRITE":"PARTIAL_WAITING_INPUT","MY_LISTING":"PARTIAL_WAITING_INPUT","EDIT":"PARTIAL_WAITING_INPUT"},
+  "read_binding":{"browser":"Chromium 144.0.7559.96","cdp_transport":"REAL_WEBSOCKET_REMOTE_DEBUGGING","evidence_scope":"B4_COMMON_HTTP_FIXTURE_SITE_WAVE2_REAL_CHROMIUM_EXECUTION","observed_component_locator_count":3,"field_count":5,"external_target_site_coverage":false},
+  "provenance":{"command_id":"UNKNOWN_NO_COMMAND_RECEIPT","action_id":"OBSERVED_action-list","page_id":"INFERRED_public-list"},
+  "validation":{"status":"PASS_BINDING_WITH_FAIL_CLOSED_PARTIAL_LANES","deterministic_replay_2_of_2":true,"replay_digest":"a9dd0983ad2531764a1ca8e093fd34caf7bc6c36da536510421bdef2b8ec39d5","forced_failure_step":"s03","last_completed_before_failure":"s02","resume_from_step":2,"resume_executed_steps":2,"completed_steps_reexecuted":false,"missing_exact_binding_fail_closed":true,"remote_readback":"PASS"},
+  "scope_truth":{"actual_chromium_evidence":true,"actual_http_fixture":true,"external_target_site_execution":false,"target_pc_execution_receipt":false,"write_runtime_ready":false,"my_listing_runtime_ready":false,"edit_runtime_ready":false,"a4_unknown_structure_count":20,"a5_waiting_edge_count":6,"browser_worker_completion_event_usage":"EXECUTION_LIFECYCLE_ONLY"},
+  "confirmation_boundary":{"submitCreate":"USER_CONFIRM_REQUIRED","submitUpdate":"USER_CONFIRM_REQUIRED","delete":"USER_CONFIRM_REQUIRED","expire":"USER_CONFIRM_REQUIRED","final_submit":false},
+  "boundaries":{"new_executor":false,"new_tunnel":false,"new_browser_engine":false,"target_pc_execution":false,"production":false,"ready":false,"merge":false},
+  "terminal":"A6_REAL_SITE_RECIPE_ADAPTER_EXECUTION_BINDING_READY",
+  "status":"TERMINAL_PASS"
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version":"MULTIMODE_ADAPTER_INTERFACE_V1",
+  "modes":["READ","WRITE","MY_LISTING","EDIT"],
+  "shared_pipeline":["Decision","Recipe","Playwright/Crawlee Adapter","Replay","Checkpoint","Resume"],
+  "final_confirmation_actions":["submitCreate","submitUpdate","delete","expire"],
+  "final_confirmation_policy":"USER_CONFIRM_REQUIRED",
+  "fail_closed_on_insufficient_evidence":true
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "A5_API_UI_STATE_ENTITY_BINDING_VALIDATION_RECEIPT_V1",
+  "directive_id": "A0-TO-A5-API-UI-STATE-ENTITY-SEMANTIC-BINDING-V5-20260808-001",
+  "resume_comment_id": 5219596904,
+  "original_directive_comment_id": 5219443363,
+  "cycle_id": "A0-AB-AI-BLUEPRINT-SEMANTIC-BINDING-CYCLE5-20260808-001",
+  "worker": "A-5",
+  "validated_remote_head_before_receipt": "c42314adbc191fd889d706b6252ddf725645a30d",
+  "implementation": {
+    "entrypoint_commit": "16ad74941d4d98280c2505d196f0e8efcb91f6cc",
+    "entrypoint_blob": "e277bee805d15b76583f14061e720aea2e3a5558",
+    "test_commit": "44e4b3335ea3c118f681f1339f36affb55931128",
+    "test_blob": "1467ad5388105f84889500a6273028c690d79219",
+    "remote_source_readback": "PASS",
+    "remote_test_readback": "PASS"
+  },
+  "validation": {
+    "node_syntax": "PASS_2_OF_2",
+    "fixture_replay_count": 2,
+    "assertions": "PASS_20_OF_20",
+    "semantic_digest_run1": "53a6d16b9440f6d36df419001af8a6f0f764452f1b1f6e83284a2da17ad4301a",
+    "semantic_digest_run2": "53a6d16b9440f6d36df419001af8a6f0f764452f1b1f6e83284a2da17ad4301a",
+    "deterministic_digest": "PASS",
+    "action_endpoint_binding": "PASS_EXPLICIT_PROVENANCE",
+    "action_ui_state_binding": "PASS_EXPLICIT_ACTION_COMPONENT_PROVENANCE",
+    "endpoint_entity_binding": "PASS_WHEN_REQUEST_ID_PRESENT_OTHERWISE_INSUFFICIENT_EVIDENCE",
+    "entity_ui_binding": "PASS_CANDIDATE_NOT_PROMOTED",
+    "evidence_pointer_preservation": "PASS",
+    "application_canonical_candidate_only": "PASS",
+    "d_canonical_authority_assignment_count": 0,
+    "unknown_insufficient_evidence_preservation": "PASS",
+    "raw_secret_reject": "PASS",
+    "raw_secret_value_count": 0
+  },
+  "required_outputs": {
+    "API_UI_STATE_BINDING_GRAPH_V1": "PASS",
+    "DATA_ENTITY_GRAPH_V1": "PASS",
+    "FORM_FIELD_SEMANTIC_CANDIDATE_V1": "PASS"
+  },
+  "boundaries": {
+    "target_pc_execution": false,
+    "live_site_call": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version":"A6_REPLAY_RESUME_ROLLBACK_CONTRACT_V1",
+  "checkpoint":{"frequency":"EACH_COMPLETED_STEP","resume":"FIRST_UNCOMPLETED_STEP","completed_step_reexecution":false},
+  "idempotency":{"required":true,"scope":"SITE_SLOT_FIXTURE_VERSION","stable_across_retry":true},
+  "retry":{"budget":2,"same_failure_signature_limit":2,"on_limit":"CHANGE_IMPLEMENTATION_METHOD"},
+  "rollback":{"on_failure":"LAST_COMPLETED_CHECKPOINT","write_side_effects":"NONE_PRE_SUBMIT_ONLY"},
+  "lanes":{"READ":"EXECUTABLE_REPLAY","WRITE":"PRE_SUBMIT_ONLY","MY_LISTING":"PRE_SUBMIT_ONLY","EDIT":"PRE_SUBMIT_ONLY"},
+  "final_submit":false
+}

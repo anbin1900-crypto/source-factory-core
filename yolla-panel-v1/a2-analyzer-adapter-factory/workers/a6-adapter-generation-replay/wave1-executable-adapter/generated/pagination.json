@@ -1,0 +1,15 @@
+{
+  "schema_version": "EXECUTABLE_PAGINATION_CONTRACT_V1",
+  "type": "QUERY_PAGE",
+  "parameter": "_page",
+  "page_size_parameter": "_limit",
+  "page_size": 20,
+  "start": 1,
+  "max_pages": 5,
+  "termination": "records.length < page_size",
+  "loop_guard": {
+    "max_pages": 5,
+    "stop_on_repeated_identity": true,
+    "stop_on_empty_page": true
+  }
+}

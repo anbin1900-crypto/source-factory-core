@@ -1,0 +1,14 @@
+{
+  "schema_version": "A6_EXECUTABLE_ADAPTER_REPLAY_TEST_RECEIPT_V1",
+  "status": "PASS",
+  "tests": {
+    "normal_replay": "PASS",
+    "failed_items_path_partial_repair": "PASS",
+    "hybrid_missing_id_dom_fill": "PASS"
+  },
+  "generated_executable_adapter_count": 1,
+  "replay_success_count": 3,
+  "real_sample_record_count": 1,
+  "trace_event_count": 10,
+  "partial_repair_event_count": 1
+}

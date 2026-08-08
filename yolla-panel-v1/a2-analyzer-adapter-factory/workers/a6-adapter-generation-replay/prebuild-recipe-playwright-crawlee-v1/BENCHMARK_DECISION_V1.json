@@ -1,0 +1,10 @@
+{
+  "schema_version":"A6_RECIPE_ADAPTER_BENCHMARK_DECISION_V1",
+  "benchmarks":[
+    {"name":"Playwright","reuse":"Locator-based browser actions with built-in actionability/auto-wait","decision":"DEFAULT_BROWSER_ACTION_RUNTIME"},
+    {"name":"Crawlee","reuse":"PlaywrightCrawler + RequestQueue + request retry/reclaim semantics","decision":"QUEUE_RETRY_RESUME_LAYER"},
+    {"name":"Stagehand action cache","reuse":"Cache resolved actions for deterministic repeated runs","decision":"LOCAL_DETERMINISTIC_STEP_CACHE_BY_IDEMPOTENCY_KEY_NO_LLM_REQUIRED"}
+  ],
+  "new_browser_engine":false,
+  "target_pc_execution":false
+}

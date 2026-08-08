@@ -1,0 +1,25 @@
+{
+  "schema_version": "FEATURE_DEPENDENCY_CANDIDATES_V1",
+  "directive_id": "A0-TO-A4-PAGE-COMPONENT-FEATURE-SEMANTIC-GRAPH-V5-20260808-001",
+  "source_provenance": {
+    "PAGE_GRAPH_V1": {"blob": "9b3fd8ce34cc0298f38f23c13d102ea9fb3f4167"},
+    "COMPONENT_ROLE_GRAPH_V1": {"blob": "52c0d882c4098d86bdaf0b611fad6079df9e849c"},
+    "FORM_FIELD_STRUCTURE_V1": {"blob": "4795c84f1b0433692de6b606713bfdca846323b2"},
+    "UI_STATE_REGION_V1": {"blob": "bea875940040e45313306fa348bee2935de2e343"},
+    "HANDOFF": {"blob": "4b0197e146a70ff0bb4c92fe9717b42d5b3ff8c8"},
+    "graph_sha256": "1297f9d7b5dc1be47c450ba87d883e36884a48da10ff43a1eb4a4a8dddc04ec4",
+    "deterministic_output_sha256": "41357d8547813b11bbfada71b951c885abd517a86c7270bd1c4d003153fcf839"
+  },
+  "candidates": [
+    {"feature_id":"SEARCH_LISTINGS","requires":[{"kind":"PAGE_ROLE","id":"PUBLIC_SEARCH","status":"OBSERVED"},{"kind":"COMPONENT_ROLE","id":"SEARCH_FORM","status":"OBSERVED"}],"produces":["PUBLIC_LIST"]},
+    {"feature_id":"BROWSE_LISTINGS","requires":[{"kind":"PAGE_ROLE","id":"PUBLIC_LIST","status":"OBSERVED"},{"kind":"COMPONENT_ROLE","id":"RESULT_LIST","status":"OBSERVED"},{"kind":"COMPONENT_ROLE","id":"RESULT_CARD","status":"OBSERVED"}]},
+    {"feature_id":"PAGINATE_LISTINGS","requires":[{"kind":"PAGE_ROLE","id":"PUBLIC_LIST","status":"OBSERVED"},{"kind":"COMPONENT_ROLE","id":"PAGINATION","status":"OBSERVED"}],"stop_condition_source":"PAGE_GRAPH_V1"},
+    {"feature_id":"VIEW_LISTING_DETAIL","requires":[{"kind":"PAGE_ROLE","id":"PUBLIC_DETAIL","status":"OBSERVED"},{"kind":"COMPONENT_ROLE","id":"DETAIL_PANEL","status":"OBSERVED"}]},
+    {"feature_id":"CREATE_LISTING","requires":[{"kind":"PAGE_ROLE","id":"LISTING_CREATE","status":"OBSERVED"},{"kind":"FORM","id":"listing-create-form","status":"OBSERVED"},{"kind":"AUTHENTICATION","id":"OWNER_SESSION","status":"UNKNOWN"}],"produces":["MY_LISTING_DETAIL"]},
+    {"feature_id":"VIEW_OWN_LISTINGS","requires":[{"kind":"PAGE_ROLE","id":"MY_LISTING_LIST","status":"OBSERVED"},{"kind":"AUTHENTICATION","id":"OWNER_SESSION","status":"UNKNOWN"}]},
+    {"feature_id":"VIEW_OWN_LISTING","requires":[{"kind":"PAGE_ROLE","id":"MY_LISTING_DETAIL","status":"OBSERVED"},{"kind":"AUTHENTICATION","id":"OWNER_SESSION","status":"UNKNOWN"}]},
+    {"feature_id":"UPDATE_LISTING","requires":[{"kind":"PAGE_ROLE","id":"LISTING_EDIT","status":"OBSERVED"},{"kind":"FORM","id":"listing-edit-form","status":"OBSERVED"},{"kind":"AUTHORIZATION","id":"LISTING_OWNERSHIP","status":"UNKNOWN"}],"produces":["MY_LISTING_DETAIL"]},
+    {"feature_id":"EXPIRE_LISTING","requires":[{"kind":"PAGE_ROLE","id":"LISTING_EXPIRE","status":"OBSERVED"},{"kind":"FORM","id":"expire-form","status":"OBSERVED"},{"kind":"AUTHORIZATION","id":"LISTING_OWNERSHIP","status":"UNKNOWN"}],"produces":["MY_LISTING_DETAIL"]}
+  ],
+  "status_rule": "OBSERVED only when Cycle4 evidence exists; otherwise UNKNOWN"
+}

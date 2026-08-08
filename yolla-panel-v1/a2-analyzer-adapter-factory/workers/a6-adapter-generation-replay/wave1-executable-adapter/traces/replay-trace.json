@@ -1,0 +1,50 @@
+{
+  "schema_version": "EXECUTABLE_ADAPTER_TRACE_V1",
+  "adapter_id": "jsonplaceholder-posts-hybrid-v1",
+  "events": [
+    {
+      "seq": 1,
+      "at": "2026-08-06T16:56:00.243Z",
+      "type": "OBSERVE",
+      "step": "adapter-start",
+      "adapter_id": "jsonplaceholder-posts-hybrid-v1",
+      "mode": "HYBRID"
+    },
+    {
+      "seq": 2,
+      "at": "2026-08-06T16:56:00.243Z",
+      "type": "CACHE_HIT",
+      "step": "api-fixture",
+      "path": "/tmp/a6_wave1/fixtures/public-api-posts.response.json"
+    },
+    {
+      "seq": 3,
+      "at": "2026-08-06T16:56:00.243Z",
+      "type": "STEP_FAILED",
+      "step": "api-items-path",
+      "requested_path": "data.posts"
+    },
+    {
+      "seq": 4,
+      "at": "2026-08-06T16:56:00.243Z",
+      "type": "STEP_REPAIRED",
+      "step": "api-items-path",
+      "old_path": "data.posts",
+      "new_path": "$"
+    },
+    {
+      "seq": 5,
+      "at": "2026-08-06T16:56:00.244Z",
+      "type": "CACHE_HIT",
+      "step": "dom-fixture",
+      "path": "/tmp/a6_wave1/fixtures/dom-fallback.html"
+    },
+    {
+      "seq": 6,
+      "at": "2026-08-06T16:56:00.244Z",
+      "type": "REPLAY_COMPLETE",
+      "step": "emit",
+      "record_count": 1
+    }
+  ]
+}

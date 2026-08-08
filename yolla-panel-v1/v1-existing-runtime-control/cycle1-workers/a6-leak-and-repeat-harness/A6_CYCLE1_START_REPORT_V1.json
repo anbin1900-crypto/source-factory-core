@@ -1,0 +1,33 @@
+{
+  "schema_version": "A6_C_MODE_CYCLE1_START_REPORT_V1",
+  "worker": "A-6",
+  "role": "A-6_C_MODE_CYCLE1_LEAK_REPEAT_HARNESS_WORKER",
+  "cycle_id": "C-MODE-CYCLE1-AUTHORITY-RUNTIME-PERFORMANCE-BASELINE-20260806-001",
+  "directive_id": "C1-A6-WEBCONTENTS-LEAK-REPEAT-HARNESS",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "control_pr": 17,
+  "worker_pr": 25,
+  "branch": "worker/a6-adapter-generation-replay-v1",
+  "observed_remote_head_before_start": "4d5acd815d52c2fdfca079447989f565f90857eb",
+  "owned_root": "yolla-panel-v1/v1-existing-runtime-control/cycle1-workers/a6-leak-and-repeat-harness/",
+  "started_at_kst": "2026-08-07T00:00:00+09:00",
+  "execution_model": "ONE_OWNER_END_TO_END",
+  "scope": {
+    "build_deterministic_repeat_harness": true,
+    "open_activate_switch_hide_close_reopen": true,
+    "capture_process_memory_delta": true,
+    "capture_renderer_webcontents_residue": true,
+    "capture_duplicate_listener_timer_signals": true,
+    "capture_log_growth": true,
+    "capture_closed_browser_background_activity": true,
+    "target_pc_execution_when_accessible": true
+  },
+  "boundaries": {
+    "functional_patch_count": 0,
+    "site_analyzer_work": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "status": "STARTED"
+}

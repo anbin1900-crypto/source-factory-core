@@ -1,0 +1,26 @@
+{
+  "schema_version":"A6_MULTIMODE_CYCLE4_FINAL_REPORT_V1",
+  "worker":"A-6",
+  "role":"A-6_READ_WRITE_MYLISTING_EDIT_ADAPTER_OWNER",
+  "directive_id":"A0-TO-A6-MULTIMODE-ADAPTER-CONTRACT-EXTENSION-V4-20260808-001",
+  "directive_comment":5219092172,
+  "cycle_id":"A0-AB-AI-READABLE-PRODUCT-WRITE-EXPANSION-CYCLE4-20260808-001",
+  "observed_head":"d668eb915d15b09f41145b6871122c7822464aad",
+  "package_commit":"22df8a2177bd8e4a271e37640265e1a5006a15a7",
+  "owned_root":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/prebuild-multimode-adapter-contract-v4/",
+  "contracts":{
+    "multimode_interface_blob":"3ea8b01216e75ab6615a2da99e9b0cd7edb5a11d",
+    "public_read_blob":"50a459331be541944659fd75270857a18c2c8fe8",
+    "listing_create_blob":"6f74bfb207fb5b3c82fbd461817448aaff7fe452",
+    "my_listing_read_blob":"488e6665a5c029a1a8a3afb216db37310baaf3d4",
+    "listing_edit_blob":"67508f49d4d5b47aec8090229768a21e5f12c834",
+    "field_mapping_blob":"54a8eba24e3b8b0b2599d49d31fe1d586972e2cc"
+  },
+  "runtime":{"runner_blob":"4a323cccead623e623e3847156bf3e7c7b97fa2f","test_blob":"b89cd6d8972c0573c2955f42d2ecb3a352d440da","pipeline_reused":"Decision->Recipe->Playwright/Crawlee Adapter->Replay->Checkpoint/Resume"},
+  "fixtures":{"canonical_listing_blob":"017889ccf459c34f6c0736871049be700a9073ee","site_form_blob":"ac5aa691df98077588bbd84abd2e0b4cb2c9da06"},
+  "validation":{"receipt_blob":"49f3ab35f28d3298276017c3413ba819e548cf31","read":"PASS","write":"PASS_AUTOFILL_PREVIEW","my_listing":"PASS_REVERSE_CANONICAL","edit":"PASS_AUTOFILL_PREVIEW","canonical_to_site_form":"PASS","site_form_to_canonical_candidate":"PASS","fail_closed_insufficient_evidence":"PASS","forced_failure_step":"s03","last_completed_step":"s02","resume_from_step":2,"resume_executed_steps":2,"completed_steps_reexecuted":false},
+  "confirmation_boundary":{"submitCreate":"USER_CONFIRM_REQUIRED","submitUpdate":"USER_CONFIRM_REQUIRED","delete":"USER_CONFIRM_REQUIRED","expire":"USER_CONFIRM_REQUIRED","final_submit_execution_count":0},
+  "boundaries":{"target_pc_execution":false,"live_site_call":false,"final_submit_execution":false,"tunnel_change":false,"production":false,"ready":false,"merge":false},
+  "terminal":"A6_MULTIMODE_READ_WRITE_ADAPTER_CONTRACT_READY",
+  "status":"TERMINAL_PASS"
+}

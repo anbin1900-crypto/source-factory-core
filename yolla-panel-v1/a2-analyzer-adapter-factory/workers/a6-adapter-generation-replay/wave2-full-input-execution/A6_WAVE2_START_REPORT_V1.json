@@ -1,0 +1,21 @@
+{
+  "schema_version": "A6_SITE_ANALYZER_WAVE2_START_REPORT_V1",
+  "worker": "A-6",
+  "role": "FULL_INPUT_EXECUTABLE_ADAPTER_AND_REPLAY_OWNER",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment": 5208240151,
+  "authority_commit": "9ca851933fb329b1d965f4459d452c684a06f9cd",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 25,
+  "branch": "worker/a6-adapter-generation-replay-v1",
+  "observed_remote_head": "91baa2fb09471ed2a840c2dea9e614bc430da906",
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/wave2-full-input-execution/",
+  "required": ["HEAD_ADVANCE", "EXECUTABLE_ADAPTER_1", "REPLAY_PASS", "TRACE", "EXTRACTED_RECORDS_10"],
+  "input_workers": ["A-3", "A-4", "A-5", "B-3"],
+  "fixture_only_terminal": false,
+  "execution_authority": "ASSIGNMENT_INCLUDES_EXECUTION_AUTHORITY",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "STARTED"
+}

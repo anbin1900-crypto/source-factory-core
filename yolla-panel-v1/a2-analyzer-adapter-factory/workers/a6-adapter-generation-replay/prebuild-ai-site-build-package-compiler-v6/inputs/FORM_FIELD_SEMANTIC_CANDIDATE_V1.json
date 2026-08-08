@@ -1,0 +1,13 @@
+{
+  "schema_version": "FORM_FIELD_SEMANTIC_CANDIDATE_V1",
+  "purpose": "Application-level form field semantic candidates with read/write transform evidence.",
+  "candidate_fields": ["form_id", "field_name", "application_canonical_candidate", "read_transform", "write_transform", "semantic_confidence", "business_rule"],
+  "authority_policy": {
+    "application_canonical_candidate": "APPLICATION_CANDIDATE_ONLY",
+    "d_canonical_authority": false,
+    "unobserved_business_rule": "UNKNOWN",
+    "unobserved_read_or_write_transform": "UNKNOWN"
+  },
+  "evidence_policy": "Every promoted candidate preserves evidence_pointer and confidence.",
+  "raw_secret_value_count": 0
+}

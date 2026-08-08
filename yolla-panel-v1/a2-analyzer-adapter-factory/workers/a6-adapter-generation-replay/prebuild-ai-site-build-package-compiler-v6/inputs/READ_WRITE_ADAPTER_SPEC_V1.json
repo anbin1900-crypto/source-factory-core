@@ -1,0 +1,23 @@
+{
+  "schema_version": "READ_WRITE_ADAPTER_SPEC_V1",
+  "adapter_version": "1.0.0-cycle5",
+  "modes": {
+    "READ": {"mode":"READ","page_ids":["public-search","public-list","public-detail"],"runtime":["Playwright","Crawlee"],"shared_pipeline":["Decision","Recipe","Playwright/Crawlee Adapter","Replay","Checkpoint","Resume"],"allowed_actions":["Navigate","Wait","Extract","Pagination"],"confirmation_policy":null,"blocked_final_actions":[],"final_submit_execution":false},
+    "WRITE": {"mode":"WRITE","page_ids":["listing-create"],"runtime":["Playwright","Crawlee"],"shared_pipeline":["Decision","Recipe","Playwright/Crawlee Adapter","Replay","Checkpoint","Resume"],"allowed_actions":["Navigate","Wait","Input","Select","UploadPreview"],"confirmation_policy":"USER_CONFIRM_REQUIRED","blocked_final_actions":["submitCreate"],"final_submit_execution":false},
+    "MY_LISTING": {"mode":"MY_LISTING","page_ids":["my-listing-list","my-listing-detail"],"runtime":["Playwright","Crawlee"],"shared_pipeline":["Decision","Recipe","Playwright/Crawlee Adapter","Replay","Checkpoint","Resume"],"allowed_actions":["Navigate","Wait","Extract"],"confirmation_policy":null,"blocked_final_actions":[],"final_submit_execution":false},
+    "EDIT": {"mode":"EDIT","page_ids":["listing-edit","listing-expire"],"runtime":["Playwright","Crawlee"],"shared_pipeline":["Decision","Recipe","Playwright/Crawlee Adapter","Replay","Checkpoint","Resume"],"allowed_actions":["Navigate","Wait","Input","Select","UploadPreview"],"confirmation_policy":"USER_CONFIRM_REQUIRED","blocked_final_actions":["submitUpdate","delete","expire"],"final_submit_execution":false}
+  },
+  "field_bindings": [
+    {"form_id":"search-form","field_id":"q","canonical_field":null,"cycle4_site_form_field":null,"locator":{"strategy":"role","locator":"getByRole('textbox',{name:'Keyword'})","confidence":0.94,"evidence_status":"OBSERVED"},"binding_status":"UNKNOWN","confidence":0,"evidence":["NO_CYCLE4_CANONICAL_MAPPING"]},
+    {"form_id":"listing-create-form","field_id":"title","canonical_field":"title","cycle4_site_form_field":"listing_title","locator":{"strategy":"role","locator":"getByRole('textbox',{name:'Title'})","confidence":0.96,"evidence_status":"OBSERVED"},"binding_status":"CANDIDATE_COMPOSED","confidence":0.95,"evidence":["A4_FORM_FIELD_OBSERVED","CYCLE4_CANONICAL_MAPPING"]},
+    {"form_id":"listing-create-form","field_id":"price","canonical_field":"price","cycle4_site_form_field":"listing_price","locator":{"strategy":"css","locator":"#price","confidence":0.9,"evidence_status":"OBSERVED"},"binding_status":"CANDIDATE_COMPOSED","confidence":0.9,"evidence":["A4_FORM_FIELD_OBSERVED","CYCLE4_CANONICAL_MAPPING"]},
+    {"form_id":"listing-create-form","field_id":"property_type","canonical_field":null,"cycle4_site_form_field":null,"locator":{"strategy":"role","locator":"getByRole('combobox',{name:'Type'})","confidence":0.95,"evidence_status":"OBSERVED"},"binding_status":"UNKNOWN","confidence":0,"evidence":["NO_CYCLE4_CANONICAL_MAPPING"]},
+    {"form_id":"listing-edit-form","field_id":"price","canonical_field":"price","cycle4_site_form_field":"listing_price","locator":{"strategy":"css","locator":"#edit-price","confidence":0.9,"evidence_status":"OBSERVED"},"binding_status":"CANDIDATE_COMPOSED","confidence":0.9,"evidence":["A4_FORM_FIELD_OBSERVED","CYCLE4_CANONICAL_MAPPING"]},
+    {"form_id":"expire-form","field_id":"reason","canonical_field":null,"cycle4_site_form_field":null,"locator":{"strategy":"role","locator":"getByRole('combobox',{name:'Reason'})","confidence":0.94,"evidence_status":"OBSERVED"},"binding_status":"UNKNOWN","confidence":0,"evidence":["NO_CYCLE4_CANONICAL_MAPPING"]}
+  ],
+  "api_execution":{"status":"UNKNOWN","reason":"NO_CONCRETE_ACTION_TO_ENDPOINT_BINDING_ROWS","policy":{"authority_policy":"ONLY_EXPLICIT_ACTION_ID_REQUEST_ID_COMMAND_ID_PAGE_ID_BINDINGS_ARE_OBSERVED","unbound_request_policy":"ACTION_ID_NOT_OBSERVED_REMAINS_UNBOUND"}},
+  "entity_execution":{"status":"UNKNOWN","reason":"NO_CONCRETE_ENTITY_PATH_BINDINGS","policy":{"entity_authority":"OBSERVED_REDACTED_RESPONSE_BODY_PATHS_ONLY","business_rules":{"status":"UNKNOWN","reason":"BUSINESS_RULES_NOT_OBSERVED"}}},
+  "checkpoint_resume":{"checkpoint_every_step":true,"resume_from_failed_step":true,"completed_step_reexecution":false,"idempotency_key_fields":["command_id","mode","page_id","step_id","normalized_input"]},
+  "final_action_policy":{"submitCreate":"USER_CONFIRM_REQUIRED","submitUpdate":"USER_CONFIRM_REQUIRED","delete":"USER_CONFIRM_REQUIRED","expire":"USER_CONFIRM_REQUIRED"},
+  "source_blueprint_sha256":"adcda3fff1780fdf548b7f70b0d45f760bd9e3ca7fb9813e03d6e85cb68f9b81"
+}

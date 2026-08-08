@@ -1,0 +1,10 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const stable=v=>Array.isArray(v)?v.map(stable):v&&typeof v==='object'?Object.keys(v).sort().reduce((a,k)=>(a[k]=stable(v[k]),a),{}):v;
+const sha=x=>crypto.createHash('sha256').update(x).digest('hex');
+const root=__dirname;const bindings=JSON.parse(fs.readFileSync(path.join(root,'input-bindings.json'),'utf8'));const template=fs.readFileSync(path.join(root,'adapter-runtime-template.cjs'),'utf8');
+if(bindings.a5.status!=='READY'||bindings.a5.mode!=='HYBRID'||bindings.a5.record_path!=='$.items')throw new Error('A5_GENERATOR_INPUT_NOT_READY');
+if(!bindings.a4.actual_chromium||bindings.b3.recorded_action_count<5)throw new Error('UPSTREAM_INPUT_INCOMPLETE');
+const header=`// GENERATED_BY=A6_WAVE3_COMPILER\n// INPUT_SHA256=${sha(JSON.stringify(stable(bindings)))}\n`;
+const output=header+template;fs.mkdirSync(path.join(root,'generated'),{recursive:true});fs.writeFileSync(path.join(root,'generated/adapter.cjs'),output);
+const receipt={schema_version:'A6_WAVE3_GENERATION_RECEIPT_V1',status:'PASS',input_sha256:sha(JSON.stringify(stable(bindings))),template_sha256:sha(template),generated_adapter_sha256:sha(output),generated_adapter_count:1,mode:'HYBRID',production:false,ready:false,merge:false};fs.writeFileSync(path.join(root,'artifacts/generation-receipt.json'),JSON.stringify(receipt,null,2)+'\n');console.log(JSON.stringify(receipt));

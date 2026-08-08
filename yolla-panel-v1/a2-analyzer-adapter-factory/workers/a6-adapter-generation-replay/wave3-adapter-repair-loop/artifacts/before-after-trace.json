@@ -1,0 +1,14 @@
+{
+  "schema_version": "A6_WAVE3_BEFORE_AFTER_TRACE_V1",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "faults": {
+    "locator": {"before_failures":[{"type":"step.failed","step":"dom-locator","selector":"article.item"}],"after_repairs":[{"type":"step.repaired","step":"dom-locator","selector":"article.record-card"}],"record_count":10,"records_sha256":"24a9e30af56e9f65be5f4ff6430e7a0a9794989e44fc5edc673f28e7c886211d"},
+    "schema": {"before_failures":[{"type":"step.failed","step":"schema-record-path","expected":"$.items","observed":"$.records","page":1}],"after_repairs":[{"type":"step.repaired","step":"schema-record-path","record_key":"records"}],"record_count":10,"records_sha256":"24a9e30af56e9f65be5f4ff6430e7a0a9794989e44fc5edc673f28e7c886211d"},
+    "pagination": {"before_failures":[{"type":"step.failed","step":"pagination","reason":"DUPLICATE_IDS","page_parameter":"page"}],"after_repairs":[{"type":"step.repaired","step":"pagination","page_parameter":"p"}],"record_count":10,"records_sha256":"24a9e30af56e9f65be5f4ff6430e7a0a9794989e44fc5edc673f28e7c886211d"},
+    "transient": {"before_failures":[{"type":"step.failed","step":"transient-response","status":503,"page":2,"attempt":1}],"after_repairs":[{"type":"step.repaired","step":"retry-policy","page":2,"next_attempt":2}],"record_count":10,"records_sha256":"24a9e30af56e9f65be5f4ff6430e7a0a9794989e44fc5edc673f28e7c886211d"}
+  },
+  "all_faults_have_before_after": true,
+  "exact10_all": true,
+  "digest_all_equal": true,
+  "canonical_records_sha256": "24a9e30af56e9f65be5f4ff6430e7a0a9794989e44fc5edc673f28e7c886211d"
+}

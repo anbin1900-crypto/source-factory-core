@@ -1,0 +1,60 @@
+{
+  "$id": "YOLLA_ADAPTER_PACKAGE_SCHEMA_V1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "components": {
+      "required": [
+        "endpoint_catalog",
+        "request_template",
+        "parameter_dictionary",
+        "session_header_contract",
+        "pagination_contract",
+        "response_schema",
+        "identifier_map",
+        "retry_rate_limit_policy",
+        "replay_test_receipt"
+      ],
+      "type": "object"
+    },
+    "entrypoint": {
+      "type": "string"
+    },
+    "failure_codes": {
+      "type": "array"
+    },
+    "fixture_location": {
+      "type": "string"
+    },
+    "input_schema": {
+      "type": "object"
+    },
+    "output_schema": {
+      "type": "object"
+    },
+    "source_pointers": {
+      "type": "object"
+    },
+    "verification_status": {
+      "enum": [
+        "VERIFIED",
+        "BLOCKED_UNRESOLVED_INPUTS"
+      ]
+    },
+    "version": {
+      "const": "1.0"
+    }
+  },
+  "required": [
+    "version",
+    "verification_status",
+    "components",
+    "entrypoint",
+    "input_schema",
+    "output_schema",
+    "fixture_location",
+    "failure_codes",
+    "source_pointers"
+  ],
+  "type": "object"
+}

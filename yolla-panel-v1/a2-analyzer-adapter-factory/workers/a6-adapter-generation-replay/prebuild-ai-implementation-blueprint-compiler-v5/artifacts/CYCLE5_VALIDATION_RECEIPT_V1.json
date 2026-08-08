@@ -1,0 +1,19 @@
+{
+  "schema_version": "A6_CYCLE5_COMPILER_VALIDATION_RECEIPT_V1",
+  "status": "PASS",
+  "fixture_compile_replay_1": "PASS",
+  "deterministic_replay_2_of_2": true,
+  "blueprint_sha256": "adcda3fff1780fdf548b7f70b0d45f760bd9e3ca7fb9813e03d6e85cb68f9b81",
+  "adapter_spec_sha256": "542d05d2e32bfae0105b4443525c7d04b6f27277f9ab41e4d74f295b503e1388",
+  "full_replay_sha256": "f373fc8b63483b5fd8d6ab7d444217b98adc54da362eb05206354ca9a146f5cb",
+  "forced_failure_step": "s03",
+  "last_completed_before_failure": "s02",
+  "resume_from_step": 2,
+  "resume_status": "PASS",
+  "resume_executed_steps": 2,
+  "completed_steps_reexecuted": false,
+  "final_submit_execution": false,
+  "unknown_api_preserved": true,
+  "unknown_entity_preserved": true,
+  "business_rule_inference": "FORBIDDEN"
+}

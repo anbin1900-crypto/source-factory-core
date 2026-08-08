@@ -1,0 +1,16 @@
+{
+  "schema_version":"EXTRACTION_RECIPE_V1",
+  "recipe_version":"1.0.0-cycle3",
+  "adapter_version":"1.0.0-cycle3",
+  "recipe_id":"AI001-A6-C3-SMOKE-001:recipe",
+  "command_id":"AI001-A6-C3-SMOKE-001",
+  "page_id":"fixture-smoke-1",
+  "recommended_mode":"HYBRID",
+  "steps":[
+    {"step_id":"s01","action_id":"AI001-A6-C3-SMOKE-001:a01","page_id":"fixture-smoke-1","type":"Navigate","url":"https://fixture.local/list?page=1"},
+    {"step_id":"s02","action_id":"AI001-A6-C3-SMOKE-001:a02","page_id":"fixture-smoke-1","type":"Wait","locator":"records","state":"visible"},
+    {"step_id":"s03","action_id":"AI001-A6-C3-SMOKE-001:a03","page_id":"fixture-smoke-1","type":"Extract","fields":[{"name":"title","source_locator":"h2.name","compiled_locator":"getByRole('heading', { name: \"Listing 1\" })"},{"name":"price","source_locator":"span.price","compiled_locator":"locator(\"span.price\")"},{"name":"address","source_locator":"span.address","compiled_locator":"locator(\"span.address\")"},{"name":"image","source_locator":"img","compiled_locator":"locator(\"img\")"},{"name":"detail_url","source_locator":"[data-testid=\"detail-link\"]","compiled_locator":"getByTestId(\"detail-link\")"}]},
+    {"step_id":"s04","action_id":"AI001-A6-C3-SMOKE-001:a04","page_id":"fixture-smoke-1","type":"Pagination","mode":"NEXT","evidence":"/list?page=2","stop_condition":"NEXT_LINK_ABSENT_OR_DISABLED"}
+  ],
+  "safety":{"fixture_only":true,"live_site_call":false,"production":false,"ready":false,"merge":false}
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version":"ADAPTER_CHECKPOINT_RESUME_V1",
+  "checkpoint_id":"cp-a6-c2-smoke-002",
+  "command_id":"A6-C2-SMOKE-002",
+  "recipe_id":"A6-C2-SMOKE-002:recipe",
+  "recipe_version":"1.0.0-cycle2",
+  "adapter_version":"1.0.0-cycle2",
+  "last_completed_step":"s03",
+  "resume_from_step":3,
+  "cursor":{"page":1,"record_offset":0},
+  "completed_idempotency_keys":["5f4249319b37961583ad68e2f611fc0eb2560f20dafdc1352ba3379fd4f0f230","e9aa5d51162718854a819f6194d04da2820bd080e15c81bdd4aa66509015057e","f6f474c84164ca30ec1f80d99bdb6202a7293f193c780e5aa9b4a77f6ae55383"],
+  "status":"COMPLETED",
+  "checkpoint_sha256":"a7c0e00943689d62016d89e654148a0376cd891fd5e85f5e1266a1661b1a02aa"
+}

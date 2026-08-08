@@ -1,0 +1,117 @@
+{
+  "schema_version": "A6_SITE_ANALYZER_WAVE2_FINAL_REPORT_V1",
+  "worker": "A-6",
+  "role": "FULL_INPUT_EXECUTABLE_ADAPTER_AND_REPLAY_OWNER",
+  "directive_id": "A0-SITE-ANALYZER-WAVE2-EXECUTION-RECOVERY-SPRINT-V1-20260807-001",
+  "directive_comment": 5208240151,
+  "authority_commit": "9ca851933fb329b1d965f4459d452c684a06f9cd",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 25,
+  "branch": "worker/a6-adapter-generation-replay-v1",
+  "observed_head_before_start": "91baa2fb09471ed2a840c2dea9e614bc430da906",
+  "start_commit": "b7183942b93c4567e4dfd249e6c3bf5114b2a8b4",
+  "package_head_before_final_report": "e4002be33cd7e88e7b44f257bd3e58b7285bfc48",
+  "completed_at_kst": "2026-08-07T03:50:00+09:00",
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/wave2-full-input-execution/",
+  "input_bindings": {
+    "A-3": {
+      "head": "e86dfcc2fc32ad366cd7fd8ba07392850419b853",
+      "contract_blob": "3b1831709c1332fa8702389c6f2d56fb5dc69ca0",
+      "consumed": "NETWORK_RESPONSE_ACTION_EVENT_CONTRACT"
+    },
+    "A-4": {
+      "head": "50c0555394f5fb3543f079ecfb60a0ed2eeab638",
+      "handoff_blob": "08658d71ee54c825cc5ad3a2ec12934b4d45626c",
+      "snapshot_blob": "7fa4fa34e4c24d56b9e3a876f8f740ca7f01fe5e",
+      "consumed": "PROPERTY_CARD_LOCATORS_AND_PAGE_NUMBER_PAGINATION"
+    },
+    "A-5": {
+      "head": "db1ce4af35b4724554d9d972766826d18ae9891b",
+      "handoff_blob": "769205f0c2444263919a980bc72edfa7611ed4c8",
+      "fixture_blob": "3bd9ab79b2b83883d3c83e09322c57217c24800e",
+      "consumed": "HYBRID_ITEMS_PATH_LISTING_ID_PAGE_NUMBER"
+    },
+    "B-3": {
+      "head": "d74c609241ba9c48cc432bf1fa3c7d7257354f8a",
+      "recipe_blob": "384d1383b501577a8b2a3e72d79003fcdc699e0c",
+      "recorded_step_count": 8,
+      "consumed": "INPUT_SELECT_CLICK_SCROLL_POPUP_FRAME_NAVIGATION_RECIPE"
+    },
+    "B-4_COMMON_TEST_SITE_PATTERN": {
+      "head": "a204fec405cd861c966831f325dfc43ba4fe51b2",
+      "use": "LOCAL_HTTP_COMMON_TEST_SITE_PATTERN_EXTENDED_TO_EXACT_10"
+    }
+  },
+  "implementation": {
+    "compiler": "adapter-compiler.cjs",
+    "runtime_template": "adapter-runtime-template.cjs",
+    "generated_adapter": "generated/adapter.cjs",
+    "generated_adapter_blob": "9ada9fe2da9751d8a3fc95a7adc4c1acbb8c1dbe",
+    "adapter_manifest": "generated/adapter.json",
+    "adapter_manifest_blob": "31140ebbfec52a841a5b6b043eb673a6d52ca5ce",
+    "workflow_recipe": "generated/workflow-recipe.json",
+    "playwright_recipe": "generated/playwright-recipe.ts",
+    "mode": "HYBRID",
+    "record_path": "$.items",
+    "primary_key": "listingId",
+    "pagination": "PAGE_NUMBER_SIZE_5_TWO_PAGES",
+    "exact_record_contract": 10,
+    "repair_scope": "FAILED_STEP_ONLY"
+  },
+  "execution": {
+    "actual_http": true,
+    "execution_target": "LOCALHOST_COMMON_TEST_SITE",
+    "fixture_only_terminal": false,
+    "actual_local_http_request_count": 5,
+    "extracted_record_count": 10,
+    "unique_record_id_count": 10,
+    "live_records_sha256": "42e857146375c20ef61f155fd8fd730a5263e29670e62d03e8089c99ad296f4e",
+    "replay_records_sha256": "42e857146375c20ef61f155fd8fd730a5263e29670e62d03e8089c99ad296f4e",
+    "live_replay_sha_parity": "PASS",
+    "failed_step_partial_repair": "PASS_404_/api/listing_TO_/api/listings",
+    "transient_retry_and_resume": "PASS_503_RETRY_PAGE_2",
+    "trace_event_count": 21,
+    "replay_trace_event_count": 2
+  },
+  "artifacts": {
+    "live_capture": {
+      "path": "artifacts/live-capture.json",
+      "blob": "e3435c5208691d65b1bc71f5a8be9c136fa33422"
+    },
+    "live_trace": {
+      "path": "artifacts/live-trace.json",
+      "blob": "1ba3a0dc71fb3c977935b9bbc9a752a155b04698"
+    },
+    "replay_trace": {
+      "path": "artifacts/replay-trace.json",
+      "blob": "92db2641e3f136c50cfb47628c093ef051b78b44"
+    },
+    "test_receipt": {
+      "path": "A6_WAVE2_E2E_TEST_RECEIPT_V1.json",
+      "blob": "d1bfa69dd33adf0ec0408271d03df9343249b7b5"
+    },
+    "regression_test": "tests/wave2-e2e.test.cjs"
+  },
+  "required_results": {
+    "head_advance": "PASS",
+    "executable_adapter_1": "PASS_1",
+    "replay_pass": "PASS",
+    "trace": "PASS_LIVE_AND_REPLAY",
+    "extracted_records_10": "PASS_EXACTLY_10"
+  },
+  "scope_truth": {
+    "a3_nonzero_electron_chromium_cdp_event_bound": false,
+    "reason": "A-3 WAVE2 NONZERO ELECTRON CDP OUTPUT WAS NOT PUBLISHED AT EXECUTION TIME",
+    "local_http_contract_compatible_event_trace": true,
+    "false_electron_cdp_live_claim_count": 0
+  },
+  "boundaries": {
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "next_owner": "A-7",
+  "next_event": "A6_WAVE2_REMOTE_HEAD_EXACT10_AND_SCOPE_TRUTH_REVIEW",
+  "terminal": "A6_SITE_ANALYZER_WAVE2_EXECUTABLE_ADAPTER_REPLAY_EXACT10_PASS",
+  "status": "TERMINAL_PASS"
+}

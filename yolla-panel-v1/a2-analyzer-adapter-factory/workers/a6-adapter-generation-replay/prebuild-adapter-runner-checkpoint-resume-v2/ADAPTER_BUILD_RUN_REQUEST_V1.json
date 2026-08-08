@@ -1,0 +1,11 @@
+{
+  "schema_version":"ADAPTER_BUILD_RUN_REQUEST_V1",
+  "command_id":"A6-C2-SMOKE-002",
+  "checkpoint_id":"cp-a6-c2-smoke-002",
+  "recipe_version":"1.0.0-cycle2",
+  "adapter_version":"1.0.0-cycle2",
+  "operation_contract":{"commands":["build","run","resume","cleanup","repair-step","build-run-resume"],"exit_codes":{"0":"PASS_OR_IDEMPOTENT_NOOP","10":"INVALID_REQUEST","11":"UPSTREAM_RECEIPT_INVALID","20":"BUILD_FAILED","30":"RUN_FAILED","31":"RESUME_FAILED","40":"CLEANUP_FAILED","50":"PARTIAL_REPAIR_FAILED","64":"UNKNOWN_COMMAND"}},
+  "upstream":{"a4_head":"07e24d57dd96d2bdb14b8e1fb60150d418609ecf","a4_receipt_blob":"e4258df195ae422bf76fd3746d1c239da06f7ca7","a5_head":"a1316bd6c53eb98c96aa220c442e64eb74b4c798","a5_receipt_blob":"199eb85b1b3bc9fd37f83a93fb9d0f9e7e26f494"},
+  "paths":{"a4_receipt":"inputs/A4_RECEIPT.json","a5_receipt":"inputs/A5_RECEIPT.json","generated_recipe":"generated/EXTRACTION_RECIPE_V1.json","generated_adapter":"generated/compiled-adapter.cjs","package_manifest":"generated/package-manifest.json","runtime_dir":"runtime","run_receipt":"artifacts/ADAPTER_BUILD_RUN_RECEIPT_V1.json"},
+  "production":false,"ready":false,"merge":false
+}

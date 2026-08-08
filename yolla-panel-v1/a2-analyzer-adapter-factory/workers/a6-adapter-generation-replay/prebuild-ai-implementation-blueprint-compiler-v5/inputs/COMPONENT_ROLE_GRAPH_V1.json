@@ -1,0 +1,34 @@
+{
+  "schema_version": "COMPONENT_ROLE_GRAPH_V1",
+  "nodes": [
+    {"component_id":"search-form-c","page_id":"public-search","component_role":"SEARCH_FORM","locator":"#search-form","parent_component_id":null,"evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"search-form-c"},
+    {"component_id":"result-list","page_id":"public-list","component_role":"RESULT_LIST","locator":"#records","parent_component_id":null,"evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"result-list"},
+    {"component_id":"result-card","page_id":"public-list","component_role":"RESULT_CARD","locator":"article.item","parent_component_id":"result-list","evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"result-card"},
+    {"component_id":"pager","page_id":"public-list","component_role":"PAGINATION","locator":"#pager","parent_component_id":null,"evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"pager"},
+    {"component_id":"detail-panel","page_id":"public-detail","component_role":"DETAIL_PANEL","locator":"#detail","parent_component_id":null,"evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"detail-panel"},
+    {"component_id":"create-form-c","page_id":"listing-create","component_role":"CREATE_FORM","locator":"#listing-create-form","parent_component_id":null,"evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"create-form-c"},
+    {"component_id":"my-result-list","page_id":"my-listing-list","component_role":"RESULT_LIST","locator":"#my-listings","parent_component_id":null,"evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"my-result-list"},
+    {"component_id":"my-detail-panel","page_id":"my-listing-detail","component_role":"DETAIL_PANEL","locator":"#my-detail","parent_component_id":null,"evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"my-detail-panel"},
+    {"component_id":"actions","page_id":"my-listing-detail","component_role":"ACTION_BAR","locator":"#actions","parent_component_id":null,"evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"actions"},
+    {"component_id":"edit-form-c","page_id":"listing-edit","component_role":"EDIT_FORM","locator":"#listing-edit-form","parent_component_id":null,"evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"edit-form-c"},
+    {"component_id":"expire-control","page_id":"listing-expire","component_role":"EXPIRE_CONTROL","locator":"#expire-form","parent_component_id":null,"evidence_status":"OBSERVED","confidence":0.99,"evidence_pointer":"expire-control"}
+  ],
+  "edges": [
+    {"from":"public-search","to":"search-form-c","relation":"PAGE_CONTAINS_COMPONENT"},
+    {"from":"public-search","to":"search-form","relation":"PAGE_CONTAINS_FORM"},
+    {"from":"public-list","to":"result-list","relation":"PAGE_CONTAINS_COMPONENT"},
+    {"from":"public-list","to":"result-card","relation":"PAGE_CONTAINS_COMPONENT"},
+    {"from":"result-list","to":"result-card","relation":"COMPONENT_CONTAINS_COMPONENT"},
+    {"from":"public-list","to":"pager","relation":"PAGE_CONTAINS_COMPONENT"},
+    {"from":"public-detail","to":"detail-panel","relation":"PAGE_CONTAINS_COMPONENT"},
+    {"from":"listing-create","to":"create-form-c","relation":"PAGE_CONTAINS_COMPONENT"},
+    {"from":"listing-create","to":"listing-create-form","relation":"PAGE_CONTAINS_FORM"},
+    {"from":"my-listing-list","to":"my-result-list","relation":"PAGE_CONTAINS_COMPONENT"},
+    {"from":"my-listing-detail","to":"my-detail-panel","relation":"PAGE_CONTAINS_COMPONENT"},
+    {"from":"my-listing-detail","to":"actions","relation":"PAGE_CONTAINS_COMPONENT"},
+    {"from":"listing-edit","to":"edit-form-c","relation":"PAGE_CONTAINS_COMPONENT"},
+    {"from":"listing-edit","to":"listing-edit-form","relation":"PAGE_CONTAINS_FORM"},
+    {"from":"listing-expire","to":"expire-control","relation":"PAGE_CONTAINS_COMPONENT"},
+    {"from":"listing-expire","to":"expire-form","relation":"PAGE_CONTAINS_FORM"}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": "A6_SITE_ANALYZER_WAVE3_START_REPORT_V1",
+  "worker": "A-6",
+  "role": "GENERATED_ADAPTER_E2E_REPLAY_REPAIR_OWNER",
+  "directive_id": "A0-SITE-ANALYZER-WAVE3-INTEGRATED-E2E-CLOSURE-AND-REPAIR-V1-20260807-001",
+  "directive_comment": 5212031674,
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 25,
+  "branch": "worker/a6-adapter-generation-replay-v1",
+  "observed_remote_head": "b6d2fef97d992f343ebfbc1443787b3c9bbd8f07",
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/wave3-adapter-repair-loop/",
+  "pass_contract": ["GENERATION","REPLAY","EXACT10","TRACE","FAULT_INJECTION","PARTIAL_REPAIR","RERUN_DETERMINISM"],
+  "faults": ["locator_drift","schema_drift","pagination_failure","transient_response"],
+  "mid_process_approval": "none",
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "status": "STARTED"
+}

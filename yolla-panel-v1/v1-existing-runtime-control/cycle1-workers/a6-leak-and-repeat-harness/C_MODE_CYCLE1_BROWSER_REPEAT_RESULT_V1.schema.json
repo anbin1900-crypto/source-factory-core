@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "C_MODE_CYCLE1_BROWSER_REPEAT_RESULT_V1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version","harness_version","run_id","target","adapter","started_at","completed_at","requested_repeat_count","completed_repeat_count","operation_sequence","phase_sequence","threshold_contract","iterations","evaluation","attempt_log","boundaries","terminal","result_sha256"],
+  "properties": {
+    "schema_version": {"const": "C_MODE_CYCLE1_BROWSER_REPEAT_RESULT_V1"},
+    "harness_version": {"type": "string"},
+    "run_id": {"type": "string"},
+    "target": {"type": "string"},
+    "adapter": {"type": "object"},
+    "started_at": {"type": "string"},
+    "completed_at": {"type": "string"},
+    "requested_repeat_count": {"type": "integer", "minimum": 1},
+    "completed_repeat_count": {"type": "integer", "minimum": 0},
+    "operation_sequence": {"type": "array", "minItems": 7, "maxItems": 7},
+    "phase_sequence": {"type": "array", "minItems": 8, "maxItems": 8},
+    "threshold_contract": {"type": "object", "required": ["schema_version","sha256"]},
+    "iterations": {"type": "array", "items": {"$ref": "#/$defs/iteration"}},
+    "evaluation": {"type": "object", "required": ["status","findings","metric_summaries"], "properties": {"status": {"enum": ["PASS","EXACT_FINDING","EXACT_BLOCKER"]}, "findings": {"type": "array"}, "metric_summaries": {"type": "object"}}},
+    "attempt_log": {"type": "array"},
+    "boundaries": {"type": "object", "required": ["functional_patch_count","site_analyzer_work","production","ready","merge"], "properties": {"functional_patch_count": {"const": 0}, "site_analyzer_work": {"const": false}, "production": {"const": false}, "ready": {"const": false}, "merge": {"const": false}}},
+    "terminal": {"type": "string"},
+    "result_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "$defs": {
+    "metrics": {"type": "object", "required": ["process_count","private_bytes","renderer_count","webcontents_count","listener_count","timer_count","log_entries","closed_background_active","evidence"], "properties": {"process_count": {"type": ["number","null"]}, "private_bytes": {"type": ["number","null"]}, "renderer_count": {"type": ["number","null"]}, "webcontents_count": {"type": ["number","null"]}, "listener_count": {"type": ["number","null"]}, "timer_count": {"type": ["number","null"]}, "log_entries": {"type": ["number","null"]}, "closed_background_active": {"type": ["number","null"]}, "evidence": {}}},
+    "snapshot": {"type": "object", "required": ["phase","at","metrics"], "properties": {"phase": {"type": "string"}, "at": {"type": "string"}, "metrics": {"$ref": "#/$defs/metrics"}}},
+    "iteration": {"type": "object", "required": ["iteration","operations","phases"], "properties": {"iteration": {"type": "integer", "minimum": 1}, "operations": {"type": "array", "minItems": 7}, "phases": {"type": "object", "required": ["baseline","after_open","after_activate","after_switch","after_hide","after_close","after_reopen","after_final_close"], "additionalProperties": {"$ref": "#/$defs/snapshot"}}}
+  }
+}

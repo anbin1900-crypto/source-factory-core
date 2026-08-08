@@ -1,0 +1,8 @@
+{
+  "schema_version": "ACTION_NETWORK_BINDING_V1",
+  "authority_policy": "ONLY_EXPLICIT_ACTION_ID_REQUEST_ID_COMMAND_ID_PAGE_ID_BINDINGS_ARE_OBSERVED",
+  "binding_fields": ["command_id", "page_id", "action_id", "action_kind", "target", "network_requests", "evidence_pointer"],
+  "request_fields": ["request_id", "endpoint_id", "method", "url_template", "evidence_pointer"],
+  "unbound_request_policy": "ACTION_ID_NOT_OBSERVED_REMAINS_UNBOUND",
+  "raw_secret_value_count": 0
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "YOLLA_A6_START_REPORT_V1",
+  "worker": "A-6",
+  "directive_id": "A2-TO-A6-VERIFIED-ADAPTER-PACKAGE-BUILD-V3-20260804-001",
+  "directive_comment": 5171214115,
+  "registered_at_kst": "2026-08-04T05:11:00+09:00",
+  "started_at_kst": "2026-08-04T05:18:00+09:00",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pr": 25,
+  "branch": "worker/a6-adapter-generation-replay-v1",
+  "observed_head": "f020f2d5e9100a0a1bc3a0461b2c383362d9f7f8",
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/",
+  "mode": "FIXTURE_ONLY_BUILD_AND_REPLAY",
+  "upstream_requirements": [
+    "A3_FIXTURE_TRACE_POINTER",
+    "A4_NAVIGATION_PAGINATION_POINTER",
+    "A5_EXECUTION_CONTRACT_POINTER"
+  ],
+  "initial_upstream_pointer_count": 0,
+  "initial_status": "ACTIVE_WITH_UPSTREAM_POINTER_DISCOVERY",
+  "live_site_call_count": 0,
+  "actual_bulk_collection": false,
+  "self_acceptance": false,
+  "panel_shell_direct_edit": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

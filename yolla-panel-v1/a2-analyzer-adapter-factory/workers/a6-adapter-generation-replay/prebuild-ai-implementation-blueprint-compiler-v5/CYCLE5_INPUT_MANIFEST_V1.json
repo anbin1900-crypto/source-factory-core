@@ -1,0 +1,10 @@
+{
+  "schema_version":"A6_CYCLE5_INPUT_MANIFEST_V1",
+  "cycle4_head":"2c18d0f82d8f2c4d8d6a98ade6aa054e8c0763e9",
+  "cycle4_contract_blobs":{"multimode_interface":"3ea8b01216e75ab6615a2da99e9b0cd7edb5a11d","public_read":"50a459331be541944659fd75270857a18c2c8fe8","listing_create":"6f74bfb207fb5b3c82fbd461817448aaff7fe452","my_listing_read":"488e6665a5c029a1a8a3afb216db37310baaf3d4","listing_edit":"67508f49d4d5b47aec8090229768a21e5f12c834","field_mapping":"54a8eba24e3b8b0b2599d49d31fe1d586972e2cc"},
+  "a4_head":"7e5a534c28dd3e81586bf3cd8d33f0bb198b11f0",
+  "a4_blobs":{"page_graph":"9b3fd8ce34cc0298f38f23c13d102ea9fb3f4167","component_role_graph":"52c0d882c4098d86bdaf0b611fad6079df9e849c","form_field_structure":"4795c84f1b0433692de6b606713bfdca846323b2","ui_state_region":"bea875940040e45313306fa348bee2935de2e343"},
+  "a5_head":"1fe291107be70fe3fe660bbb7fde4a94928b4662",
+  "a5_blobs":{"api_ui_binding":"92968a313d3e7104da4bf85b147616ae9b14d18e","action_network_binding":"dc9649bcffb8274e1b37f483dc45260b8ad12238","data_entity_relationship":"4358e6ee03b9dfba215f3d795fbb0bcc60bf412d","feature_dependency":"b761a605280f226b583db8a17839917e226ebd09","ui_state_transition":"1cb3a8eda99adcf1cf761f8dd272683810f33a81","form_field_candidate":"9f3b0ae83a6a43c7c09897bda9d8d7e54b400597"},
+  "authority_policy":"EXACT_GIT_BLOB_INPUTS; OBSERVED->SPEC; CANDIDATE_PRESERVE_CONFIDENCE; UNEVIDENCED->UNKNOWN"
+}

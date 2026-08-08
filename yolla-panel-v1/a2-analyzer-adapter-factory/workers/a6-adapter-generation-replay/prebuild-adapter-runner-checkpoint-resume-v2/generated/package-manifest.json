@@ -1,0 +1,11 @@
+{
+  "schema_version":"A6_EXECUTABLE_ADAPTER_PACKAGE_V1",
+  "recipe_path":"generated/EXTRACTION_RECIPE_V1.json",
+  "adapter_path":"generated/compiled-adapter.cjs",
+  "recipe_sha256":"88ed6e116a3a73853e8e36a80218a6b7fb569099ae831fd8a974e62e34157fd2",
+  "adapter_sha256":"de7aa6942fe5daf2ebb5c99f93788608f908801a8b4b9df0980a6a0b89446978",
+  "runtime":["playwright","crawlee"],
+  "commands":["build","run","resume","cleanup","repair-step"],
+  "recipe_version":"1.0.0-cycle2",
+  "adapter_version":"1.0.0-cycle2"
+}

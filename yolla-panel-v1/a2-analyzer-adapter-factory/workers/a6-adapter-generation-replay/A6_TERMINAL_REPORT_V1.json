@@ -1,0 +1,28 @@
+{
+  "completed_at_kst": "2026-08-04T05:24:00+09:00",
+  "deterministic_replay": "PASS",
+  "directive_id": "A2-TO-A6-VERIFIED-ADAPTER-PACKAGE-BUILD-V3-20260804-001",
+  "first_blocker": "A3_A4_A5_HANDOFF_POINTERS_NOT_PUBLISHED",
+  "fixture_replay_count": 2,
+  "live_site_call_count": 0,
+  "merge": false,
+  "missing_upstream_pointers": [
+    "A3_TO_A6_FIXTURE_TRACE_HANDOFF_V1",
+    "A4_TO_A6_NAVIGATION_HANDOFF_V1",
+    "A5_TO_A6_EXECUTION_CONTRACT_HANDOFF_V1"
+  ],
+  "out_of_owned_root_change_count": 0,
+  "output_schema_validation": "PASS",
+  "pagination_stop_test": "PASS",
+  "partial_package_status": "SCAFFOLD_AND_REPLAY_PASS_VERIFIED_PROMOTION_BLOCKED",
+  "production": false,
+  "raw_secret_value_count": 0,
+  "ready": false,
+  "retry_policy_test": "PASS",
+  "schema_version": "A6_TERMINAL_REPORT_V1",
+  "self_acceptance": false,
+  "terminal": "A6_VERIFIED_ADAPTER_PACKAGE_EXACT_BLOCKER",
+  "upstream_pointer_count": 0,
+  "verified_package_required_components": "9_OF_9_SCAFFOLDED",
+  "worker": "A-6"
+}

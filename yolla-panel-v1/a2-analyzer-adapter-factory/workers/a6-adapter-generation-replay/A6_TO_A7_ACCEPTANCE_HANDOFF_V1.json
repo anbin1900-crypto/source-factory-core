@@ -1,0 +1,20 @@
+{
+  "acceptance_ready": false,
+  "audit_ready": true,
+  "blockers": [
+    "A3_TO_A6_FIXTURE_TRACE_HANDOFF_V1",
+    "A4_TO_A6_NAVIGATION_HANDOFF_V1",
+    "A5_TO_A6_EXECUTION_CONTRACT_HANDOFF_V1"
+  ],
+  "package_aggregate_sha256": "aa6a5d7759dfa9a0fdffcfbc9790e2ba8ecc026517116d03cde4035e369c048b",
+  "package_status": "PARTIAL_BLOCKED_UNRESOLVED_INPUTS",
+  "required_audit_checks": [
+    "owned_root",
+    "member_sha256",
+    "replay_receipt",
+    "unresolved_input_guard",
+    "secret_scan"
+  ],
+  "schema_version": "A6_TO_A7_ACCEPTANCE_HANDOFF_V1",
+  "self_acceptance": false
+}

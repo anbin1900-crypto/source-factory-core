@@ -1,0 +1,20 @@
+{
+  "schema_version":"YOLLA_LATEST_A6_REPORT_POINTER_V16",
+  "worker":"A-6",
+  "role":"A-6_ADAPTER_COMPILER_REPLAY_REPAIR_SOURCE_OWNER",
+  "directive_comment":5224505792,
+  "cycle_id":"V2-AB-PRE-BULK-INSTALL-FINAL-SOURCE-REINFORCEMENT-20260808-001",
+  "status":"TERMINAL_PASS",
+  "terminal":"A6_ADAPTER_COMPILER_REPLAY_REPAIR_SOURCE_PASS_OR_EXACT_BLOCKER",
+  "terminal_result":"PASS",
+  "commit_resolution":"COMMIT_CONTAINING_THIS_POINTER",
+  "package_commit":"940325ddc5a2fb0169d70cc76007899cd7f99eb6",
+  "final_report":{"path":"final-source-reinforcement-v8/A6_FINAL_SOURCE_REINFORCEMENT_TERMINAL_REPORT_V1.json","commit":"d7f8e46482601d7c242663bb61ce7cd60504b492","blob":"299516d54c1c6bb2ef7e5f8cded33a68904244b9"},
+  "required_outputs":{"ten_site_adapter_compiler_blob":"8fd9087c1e98969c9e3b2533b0a3a486f41d8cef","drift_repair_patch_blob":"21a367326b76378cbbea56c4dee0d81ba2da93f9","replay_resume_rollback_contract_blob":"c98b92c1ee53a59d68f84138f9b8ca826e976d38","one_command_validation_receipt_blob":"67fe697672ad8440f59fe795109ce67d048186b6"},
+  "validation":{"site_count":10,"modes":["API","DOM","HYBRID"],"deterministic_read_replay":"PASS_10_OF_10","failure_injection_recovery":"PASS_3_OF_3_MODES","partial_repair":"PASS_3_OF_3","full_regeneration_during_repair":0,"checkpoint":true,"idempotency":true,"retry_budget":2,"rollback":true,"completed_step_reuse":true,"remote_readback":"PASS"},
+  "provenance":{"ten_site_targets":"WAITING_INPUT","target_value_guessing":false,"fixture_only_preserved":true,"observed_not_synthesized":true},
+  "lanes":{"READ":"EXECUTABLE_PASS","WRITE":"PRE_SUBMIT_ONLY","MY_LISTING":"PRE_SUBMIT_ONLY","EDIT":"PRE_SUBMIT_ONLY"},
+  "raw_secret_or_pii":false,
+  "final_write_or_edit_submit":false,
+  "production":false,"ready":false,"merge":false,"self_merge":false
+}

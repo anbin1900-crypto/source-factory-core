@@ -1,0 +1,13 @@
+{
+  "schema_version": "SUCCESSOR_BUILD_RUN_PLAN_V1",
+  "purpose": "Build and deterministically replay the A-6 recipe package without chat context.",
+  "single_pc_command": "node cli.cjs build-replay EXTRACTION_RECIPE_V1.json generated",
+  "inputs": ["EXTRACTION_RECIPE_V1.json","ADAPTER_COMPILER_V1.cjs","REPLAY_CHECKPOINT_RESUME_V1.cjs","fixture-replay-runtime.cjs"],
+  "expected_outputs": ["generated/compiled-adapter.cjs","artifacts/PREBUILD_VALIDATION_RECEIPT_V1.json"],
+  "runtime_contract": {"browser_actions":"Playwright locators and auto-waiting","queue_retry_resume":"Crawlee RequestQueue/PlaywrightCrawler","action_cache":"deterministic idempotency key + checkpoint completed key set"},
+  "partial_regeneration": "Call regenerateStep(recipe, step_id, replacement) and rebuild only from the changed Recipe step.",
+  "target_pc_execution": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}

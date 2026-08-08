@@ -1,0 +1,10 @@
+{
+  "schema_version": "FORM_FIELD_CANONICAL_CANDIDATE_V1",
+  "candidate_fields": ["form_id", "field_name", "canonical_candidate", "read_transform", "write_transform"],
+  "canonical_candidate_authority": "CANDIDATE",
+  "read_transform_policy": "EXACT_NORMALIZED_FIELD_NAME_MATCH_ONLY_WITH_CONFIDENCE_AND_EVIDENCE",
+  "write_transform_policy": "OBSERVED_REQUEST_QUERY_OR_BODY_FIELD_MATCH_ONLY_WITH_CONFIDENCE_AND_EVIDENCE",
+  "missing_transform_policy": "UNKNOWN",
+  "business_rule_policy": "UNOBSERVED_RULES_REMAIN_UNKNOWN",
+  "raw_secret_value_count": 0
+}

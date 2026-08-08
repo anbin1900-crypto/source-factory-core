@@ -1,0 +1,43 @@
+{
+  "confidence": 0.767143,
+  "evidence_pointer": {
+    "kind": "LOCAL_JSON",
+    "path": "../fixture_smoke_1.json",
+    "sha256": "c8ff5d5bb095d4a5ef2436092a2bad8935ae620d5125025ad81ced243bf6a4a8"
+  },
+  "fields": [
+    {"confidence":0.75,"coverage":1,"field_id":"field-1","name":"title","sample_values":["Listing 1"],"source_locator":"h2.name","source_node_id":"t1","value_type":"text"},
+    {"confidence":0.75,"coverage":1,"field_id":"field-2","name":"price","sample_values":["1000만원"],"source_locator":"span.price","source_node_id":"p1","value_type":"price"},
+    {"confidence":0.75,"coverage":1,"field_id":"field-3","name":"address","sample_values":["서울시 강남구 역삼동 1"],"source_locator":"span.address","source_node_id":"a1","value_type":"text"},
+    {"confidence":0.75,"coverage":1,"field_id":"field-4","name":"image","sample_values":["/1.jpg"],"source_locator":"img","source_node_id":"i1","value_type":"image"},
+    {"confidence":0.75,"coverage":1,"field_id":"field-5","name":"detail_url","sample_values":["/detail/1"],"source_locator":"[data-testid=\"detail-link\"]","source_node_id":"l1","value_type":"url_or_text"}
+  ],
+  "locator_candidates": [
+    {"field_id":"field-5","locator":"getByTestId(\"detail-link\")","stability_metadata":{"coverage":1,"reasons":["stable-data-hook","coverage"],"selected":false},"stability_score":0.94,"strategy":"data"},
+    {"field_id":"field-5","locator":"locator(\"[data-testid=\\\"detail-link\\\"]\")","stability_metadata":{"coverage":1,"reasons":["stable-data-hook","coverage"],"selected":false},"stability_score":0.94,"strategy":"data"},
+    {"field_id":"field-1","locator":"getByRole('heading', { name: \"Listing 1\" })","stability_metadata":{"coverage":1,"reasons":["semantic-role","accessible-name","coverage"],"selected":false},"stability_score":0.92,"strategy":"role"},
+    {"field_id":"field-4","locator":"getByRole('img', { name: \"Listing 1 image\" })","stability_metadata":{"coverage":1,"reasons":["semantic-role","accessible-name","coverage"],"selected":false},"stability_score":0.92,"strategy":"role"},
+    {"field_id":"field-5","locator":"getByRole('link', { name: \"Detail\" })","stability_metadata":{"coverage":1,"reasons":["semantic-role","accessible-name","coverage"],"selected":false},"stability_score":0.92,"strategy":"role"},
+    {"field_id":"field-2","locator":"getByText(\"1000만원\", { exact: true })","stability_metadata":{"coverage":1,"reasons":["visible-text","coverage"],"selected":false},"stability_score":0.7,"strategy":"text"},
+    {"field_id":"field-5","locator":"getByText(\"Detail\", { exact: true })","stability_metadata":{"coverage":1,"reasons":["visible-text","coverage"],"selected":false},"stability_score":0.7,"strategy":"text"},
+    {"field_id":"field-4","locator":"getByText(\"Listing 1 image\", { exact: true })","stability_metadata":{"coverage":1,"reasons":["visible-text","coverage"],"selected":false},"stability_score":0.7,"strategy":"text"},
+    {"field_id":"field-1","locator":"getByText(\"Listing 1\", { exact: true })","stability_metadata":{"coverage":1,"reasons":["visible-text","coverage"],"selected":false},"stability_score":0.7,"strategy":"text"},
+    {"field_id":"field-3","locator":"getByText(\"서울시 강남구 역삼동 1\", { exact: true })","stability_metadata":{"coverage":1,"reasons":["visible-text","coverage"],"selected":false},"stability_score":0.7,"strategy":"text"},
+    {"field_id":"field-1","locator":"locator(\"h2.name\")","stability_metadata":{"coverage":1,"reasons":["css","coverage"],"selected":false},"stability_score":0.64,"strategy":"css"},
+    {"field_id":"field-4","locator":"locator(\"img\")","stability_metadata":{"coverage":1,"reasons":["css","coverage"],"selected":false},"stability_score":0.64,"strategy":"css"},
+    {"field_id":"field-3","locator":"locator(\"span.address\")","stability_metadata":{"coverage":1,"reasons":["css","coverage"],"selected":false},"stability_score":0.64,"strategy":"css"},
+    {"field_id":"field-2","locator":"locator(\"span.price\")","stability_metadata":{"coverage":1,"reasons":["css","coverage"],"selected":false},"stability_score":0.64,"strategy":"css"}
+  ],
+  "page_identity": {"page_id":"fixture-smoke-1","url":"https://fixture.local/list?page=1"},
+  "pagination_candidates": [
+    {"confidence":0.96,"detected":true,"evidence":"/list?page=2","source":"DOM","stop_condition":"NEXT_LINK_ABSENT_OR_DISABLED","type":"NEXT"}
+  ],
+  "producer": {"runner":"SUCCESSOR_STRUCTURE_INFERENCE_RUNNER_V1","worker":"A-4"},
+  "receipt_sha256": "f429e088dad9aacba80c9971b63de403e4796bce13dec47bdf87cbcb3c2b51be",
+  "repeated_regions": [
+    {"confidence":0.7,"item_count":3,"item_node_ids":["c1","c2","c3"],"parent_node_id":"records","region_id":"region-records-11c3937e"}
+  ],
+  "request_id": "AI001-C2-SMOKE-001",
+  "schema_version": "STRUCTURE_INFERENCE_RUN_RECEIPT_V1",
+  "source_result_sha256": "7d9c8e3d011c2c9cc554bc8dcaf600e1c26ee986cae0a75e6632c234fed4771a"
+}

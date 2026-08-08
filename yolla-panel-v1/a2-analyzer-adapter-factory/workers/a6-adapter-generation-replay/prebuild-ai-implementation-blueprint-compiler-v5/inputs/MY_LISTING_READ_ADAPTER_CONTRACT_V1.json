@@ -1,0 +1,9 @@
+{
+  "schema_version":"MY_LISTING_READ_ADAPTER_CONTRACT_V1",
+  "mode":"MY_LISTING",
+  "input":"MY_LISTING_PAGE_EVIDENCE",
+  "output":"CANONICAL_LISTING_CANDIDATE",
+  "allowed_actions":["Navigate","Wait","Extract"],
+  "reverse_transform_required":true,
+  "final_submit_execution":false
+}

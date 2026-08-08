@@ -1,0 +1,10 @@
+{
+  "schema_version":"LISTING_EDIT_FORM_ADAPTER_CONTRACT_V1",
+  "mode":"EDIT",
+  "input":"CANONICAL_LISTING_PATCH",
+  "output":"FORM_AUTOFILL_PREVIEW",
+  "allowed_actions":["Navigate","Wait","Input","Select","UploadPreview"],
+  "blocked_final_actions":["submitUpdate","delete","expire"],
+  "confirmation_policy":"USER_CONFIRM_REQUIRED",
+  "final_submit_execution":false
+}

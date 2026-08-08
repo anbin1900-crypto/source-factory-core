@@ -1,0 +1,23 @@
+{
+  "schema_version": "A6_ONE_COMMAND_LOCAL_VALIDATION_RECEIPT_V1",
+  "status": "PASS",
+  "command": "node tests/one-command-local-verifier.cjs",
+  "site_count": 10,
+  "modes": ["API", "DOM", "HYBRID"],
+  "deterministic_compile": true,
+  "deterministic_read_replay": "PASS_10_OF_10",
+  "failure_injection_recovery": "PASS_3_OF_3_MODES",
+  "partial_repair": "PASS_3_OF_3",
+  "full_regeneration_during_repair": 0,
+  "checkpoint": true,
+  "idempotency": true,
+  "retry_budget": 2,
+  "rollback": true,
+  "completed_step_reuse": true,
+  "fail_closed": {"exact_10_required": true, "invalid_patch_rejected": true},
+  "provenance": {"fixture_only_preserved": true, "observed_not_synthesized": true, "target_values_guessed": false},
+  "lanes": {"READ": "EXECUTABLE_PASS", "WRITE": "PRE_SUBMIT_ONLY", "MY_LISTING": "PRE_SUBMIT_ONLY", "EDIT": "PRE_SUBMIT_ONLY"},
+  "final_submit": false,
+  "raw_secret_or_pii": false,
+  "compiler_digest": "4223f7983f2e49a19c47ee64d97a30cdcd08308dcdfafbe621ec9f5e796bd8f0"
+}

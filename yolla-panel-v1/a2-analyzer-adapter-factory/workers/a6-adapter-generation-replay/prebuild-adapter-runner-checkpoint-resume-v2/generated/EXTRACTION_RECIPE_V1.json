@@ -1,0 +1,13 @@
+{
+  "schema_version": "EXTRACTION_RECIPE_V1",
+  "recipe_id": "A6-C2-SMOKE-002:recipe",
+  "recipe_version": "1.0.0-cycle2",
+  "adapter_version": "1.0.0-cycle2",
+  "source_receipts": {"a4":{"blob":"e4258df195ae422bf76fd3746d1c239da06f7ca7","decision":"PASS"},"a5":{"blob":"199eb85b1b3bc9fd37f83a93fb9d0f9e7e26f494","status":"PASS"}},
+  "runtime":{"browser_action_runtime":"PLAYWRIGHT","queue_retry_resume_runtime":"CRAWLEE","max_request_retries":2},
+  "profiles":["EP-001","EP-002","EP-003","EP-004","EP-005","EP-010","EP-012"],
+  "start_url":"https://fin.land.naver.com",
+  "steps":[{"step_id":"s01","type":"Navigate","url":"${start_url}"},{"step_id":"s02","type":"Wait","locator":{"strategy":"css","value":"body"},"state":"visible"},{"step_id":"s03","type":"Extract","fields":[{"name":"html_document_text","locator":{"strategy":"css_text","value":"body"}},{"name":"outbound_links","locator":{"strategy":"css_links","value":"a[href]"}}]}],
+  "pagination":{"automated":false,"max_documents_per_profile":1},
+  "safety":{"production":false,"ready":false,"merge":false}
+}

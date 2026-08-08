@@ -1,0 +1,58 @@
+{
+  "schema_version": "A6_RECIPE_ADAPTER_PREBUILD_FINAL_REPORT_V1",
+  "worker": "A-6",
+  "role": "A-6_RECIPE_ADAPTER_COMPILER_OWNER",
+  "directive_id": "AI001-TO-A6-RECIPE-PLAYWRIGHT-CRAWLEE-ADAPTER-PREBUILD-V1-20260807-001",
+  "directive_comment": 5216922666,
+  "cycle_id": "AI001-AB-SITE-ANALYZER-PREBUILD-CYCLE1-20260807-001",
+  "priority": "P0",
+  "mode": "PARALLEL_PREPARATION",
+  "observed_head": "6e8c05bfc78189d02b6c9ddf785d2c1b881f7265",
+  "package_commit": "289a54304010b7061fd4a8651e9d9d03b9f5c2d1",
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/prebuild-recipe-playwright-crawlee-v1/",
+  "upstream_bindings": {
+    "A-3": {"head":"f8a38f439de097ebfc290f3621b0fbc4829aa1ea","contract_blob":"3b1831709c1332fa8702389c6f2d56fb5dc69ca0","consumed":"action/network/DOM event contract"},
+    "A-4": {"head":"07e24d57dd96d2bdb14b8e1fb60150d418609ecf","structure_blob":"fae1b21205259afd7d44aad8db6bb52f6d570b75","consumed":"locator candidates and pagination evidence"},
+    "A-5": {"head":"a1316bd6c53eb98c96aa220c442e64eb74b4c798","generator_handoff_blob":"769205f0c2444263919a980bc72edfa7611ed4c8","consumed":"READY HYBRID generator input contract"}
+  },
+  "benchmark_decision": {
+    "playwright": "DEFAULT_BROWSER_ACTION_RUNTIME_LOCATOR_AUTO_WAIT",
+    "crawlee": "QUEUE_RETRY_RESUME_LAYER_REQUEST_QUEUE_PLAYWRIGHT_CRAWLER",
+    "stagehand_action_cache": "REFERENCE_ONLY_REDUCED_TO_LOCAL_DETERMINISTIC_STEP_CACHE_IDEMPOTENCY_KEY",
+    "new_browser_engine": false
+  },
+  "required_outputs": {
+    "EXTRACTION_RECIPE_V1": {"path":"EXTRACTION_RECIPE_V1.json","blob":"462d5b321b126facec1a7aeda91d92903496f4d9"},
+    "ADAPTER_COMPILER_V1": {"path":"ADAPTER_COMPILER_V1.cjs","blob":"bbea2c76af42a1efa14fc835fe52b922e78b5567"},
+    "REPLAY_CHECKPOINT_RESUME_V1": {"path":"REPLAY_CHECKPOINT_RESUME_V1.cjs","blob":"a74d295ad5b590da1c6bad1e33ec4f16079ccc88"},
+    "SUCCESSOR_BUILD_RUN_PLAN_V1": {"path":"SUCCESSOR_BUILD_RUN_PLAN_V1.json","blob":"b280bf4ff3cd473ede2fb32b15ac836d38fd7b66"},
+    "LATEST_POINTER": "PENDING_NEXT_COMMIT"
+  },
+  "compiled_asset": {"path":"generated/compiled-adapter.cjs","blob":"93568a0da09b5d7ac6c00ae97a07993860f984a7","sha256":"4b94ca2caf23af8a2f2a414cabb2730ea3cfaa534efda5cba32083440ff90630"},
+  "step_support": ["Navigate","Input","Click","Wait","Loop","Extract","Pagination"],
+  "runtime_reuse": {"playwright":true,"crawlee":true,"stagehand_runtime_dependency":false},
+  "replay_resume": {
+    "checkpoint_every_steps": 1,
+    "cursor": true,
+    "idempotency_key": true,
+    "completed_key_cache": true,
+    "resume_equivalent_to_full": true
+  },
+  "partial_regeneration": {"status":"PASS","scope":"STEP_ONLY","full_recipe_regeneration":false},
+  "validation": {
+    "receipt_blob":"41579b4e02a2a53f507be5a378d685bd58fcada2",
+    "source_parse":"PASS",
+    "fixture_replay_smoke_1":"PASS",
+    "deterministic_replay_2_of_2":true,
+    "full_replay_receipt_digest":"84c10d43d2ce05ef81c0efcd36da0aee146e59d6352f3dc4512dea09b2a990f5",
+    "full_replay_output_digest":"46acbfa3e11cab9d6e996cac2f5d85ac30e9679a7a2635e2cab6dcb7b844ff97"
+  },
+  "successor_command": "node cli.cjs build-replay EXTRACTION_RECIPE_V1.json generated",
+  "context_independent_reexecution": true,
+  "do_not": {"tunnel_create":false,"successor_direct_call":false,"target_pc_execution":false,"new_browser_engine":false,"audit_only_work":false},
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "terminal": "A6_RECIPE_PLAYWRIGHT_CRAWLEE_ADAPTER_PREBUILD_READY",
+  "status": "TERMINAL_PASS"
+}

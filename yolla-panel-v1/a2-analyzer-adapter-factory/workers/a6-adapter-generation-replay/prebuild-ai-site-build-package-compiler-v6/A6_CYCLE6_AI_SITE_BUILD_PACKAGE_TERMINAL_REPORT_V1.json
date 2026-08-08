@@ -1,0 +1,19 @@
+{
+  "schema_version":"A6_CYCLE6_AI_SITE_BUILD_PACKAGE_TERMINAL_REPORT_V1",
+  "worker":"A-6",
+  "role":"A-6_AI_SITE_BUILD_PACKAGE_COMPILER_OWNER",
+  "directive_id":"A0-TO-A6-AI-SITE-BUILD-PACKAGE-COMPILER-V6-20260808-001",
+  "directive_comment":5220455992,
+  "cycle_id":"A0-AB-MULTIMODE-COMPOSITE-RECONSTRUCTION-CYCLE6-20260808-001",
+  "observed_head":"e8d3a1723311ac64aa5b262ebcd81587379bafd6",
+  "package_commit":"963e99d4a15c71d627c572038e9c19b3e50d29e8",
+  "owned_root":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/prebuild-ai-site-build-package-compiler-v6/",
+  "input_authority":{"cycle5_head":"e8d3a1723311ac64aa5b262ebcd81587379bafd6","a4_head":"fef4b0252bf8e7b1a7486b2bd8e224c7e173156b","a5_head":"cf34c8c15dd75eb15e99317b3baa9e6b4df06162","manifest_blob":"b6b26aecb95d1f550b1034f4d73d134dd06d15b2"},
+  "artifacts":{"compiler_blob":"74a0daef4e1f6f077d16a371ae2781ecd14d3fb3","test_blob":"cc745410b214f89e20a0a6571a80ddea67abbf80","ai_site_build_package_blob":"7170d27253efd393954708c278d55889e7d967c4","implementation_plan_blob":"103afc435a2a747a1e64ad49bf8c0637305319c0","validation_receipt_blob":"da62e3bbbfa9aeb7e773e3f5ebd2bd0d5b5a944f"},
+  "package_summary":{"pages":8,"components":11,"features":9,"forms":4,"reuse":23,"adapt":8,"new_build_blocked":2,"unknown_blockers":10,"package_sha256":"64e48174d12f7dac13d9a5726bf430a0ae15aa544abe4352fba60f6fe0c27e17","plan_sha256":"d082ae08cb94ee21f2b1e6d035142a6970da23fa3147a659c3d0bdd7dd9f34f1"},
+  "unknowns":{"owner_session_authentication":3,"listing_ownership_authorization":2,"api_binding":1,"entity_binding":1,"field_binding":3,"business_rule_inference":"FORBIDDEN"},
+  "validation":{"fixture_compile_replay_1":"PASS","deterministic_replay_2_of_2":true,"forced_failure_task":"T20","last_completed_before_failure":"T10","resume_from_index":2,"resume_executed_tasks":5,"completed_tasks_reexecuted":false,"remote_readback":"PASS"},
+  "boundaries":{"actual_homepage_code_generation":false,"target_pc_execution":false,"live_site_call":false,"final_submit_execution":false,"production":false,"ready":false,"merge":false},
+  "terminal":"A6_AI_SITE_BUILD_PACKAGE_COMPILER_READY",
+  "status":"TERMINAL_PASS"
+}

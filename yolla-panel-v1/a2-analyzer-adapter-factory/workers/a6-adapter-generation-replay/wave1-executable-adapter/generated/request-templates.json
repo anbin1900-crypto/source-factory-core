@@ -1,0 +1,39 @@
+{
+  "schema_version": "EXECUTABLE_REQUEST_TEMPLATE_CATALOG_V1",
+  "templates": [
+    {
+      "id": "posts-list",
+      "method": "GET",
+      "url": "https://api.jsonplaceholder.dev/posts?userId=1",
+      "headers": {
+        "accept": "application/json"
+      },
+      "items_path": "$",
+      "field_map": {
+        "id": "id",
+        "user_id": "userId",
+        "title": "title",
+        "body": "body"
+      },
+      "identity_path": "id",
+      "timeout_ms": 15000,
+      "retry": {
+        "max_attempts": 3,
+        "backoff_ms": [
+          250,
+          1000,
+          3000
+        ],
+        "retry_status": [
+          408,
+          425,
+          429,
+          500,
+          502,
+          503,
+          504
+        ]
+      }
+    }
+  ]
+}

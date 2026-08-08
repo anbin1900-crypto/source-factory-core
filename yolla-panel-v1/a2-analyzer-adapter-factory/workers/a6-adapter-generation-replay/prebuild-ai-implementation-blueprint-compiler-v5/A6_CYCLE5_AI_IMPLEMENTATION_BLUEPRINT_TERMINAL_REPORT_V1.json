@@ -1,0 +1,20 @@
+{
+  "schema_version":"A6_CYCLE5_AI_IMPLEMENTATION_BLUEPRINT_TERMINAL_REPORT_V1",
+  "worker":"A-6",
+  "role":"A-6_AI_IMPLEMENTATION_BLUEPRINT_COMPILER_OWNER",
+  "directive_id":"A0-TO-A6-AI-IMPLEMENTATION-BLUEPRINT-COMPILER-V5-20260808-001",
+  "directive_comment":5219445865,
+  "resume_execute_comment":5219599964,
+  "cycle_id":"A0-AB-AI-BLUEPRINT-SEMANTIC-BINDING-CYCLE5-20260808-001",
+  "observed_head":"2c18d0f82d8f2c4d8d6a98ade6aa054e8c0763e9",
+  "package_commit":"9e8e5542357a12ec59480a3d607b083771632edb",
+  "owned_root":"yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/prebuild-ai-implementation-blueprint-compiler-v5/",
+  "input_authority":{"cycle4_head":"2c18d0f82d8f2c4d8d6a98ade6aa054e8c0763e9","a4_head":"7e5a534c28dd3e81586bf3cd8d33f0bb198b11f0","a5_head":"1fe291107be70fe3fe660bbb7fde4a94928b4662","manifest_blob":"f1cc54e6e6666738153f303e4cd3c2582b001e3e"},
+  "artifacts":{"compiler_blob":"9a1ef6e1c5650f0d96bc721a898b248642a516f9","ai_implementation_blueprint_blob":"3bf585a93ffd1593fb57a3c5ca1b2ddacf2b6636","read_write_adapter_spec_blob":"98154c9a7885e8f630b160fdc84dcd19fbad99c9","validation_receipt_blob":"b0b13c3003bc770a92ad901441dda9894a52a02f"},
+  "blueprint":{"page_count":8,"page_transition_count":9,"page_component_form_state_relations":"OBSERVED_TO_IMPLEMENTATION_SPEC","api_bindings":"UNKNOWN_NO_CONCRETE_BINDING_ROWS","entity_relationships":"UNKNOWN_NO_CONCRETE_ENTITY_PATH_ROWS","business_rule_inference":"FORBIDDEN"},
+  "adapter_spec":{"modes":["READ","WRITE","MY_LISTING","EDIT"],"runtime":["Playwright","Crawlee"],"candidate_composed_fields":["listing-create-form.title","listing-create-form.price","listing-edit-form.price"],"unknown_fields":["search-form.q","listing-create-form.property_type","expire-form.reason"],"final_actions":{"submitCreate":"USER_CONFIRM_REQUIRED","submitUpdate":"USER_CONFIRM_REQUIRED","delete":"USER_CONFIRM_REQUIRED","expire":"USER_CONFIRM_REQUIRED"}},
+  "validation":{"fixture_compile_replay_1":"PASS","deterministic_replay_2_of_2":true,"blueprint_sha256":"adcda3fff1780fdf548b7f70b0d45f760bd9e3ca7fb9813e03d6e85cb68f9b81","adapter_spec_sha256":"542d05d2e32bfae0105b4443525c7d04b6f27277f9ab41e4d74f295b503e1388","forced_failure_step":"s03","last_completed_before_failure":"s02","resume_from_step":2,"resume_executed_steps":2,"completed_steps_reexecuted":false,"unknown_api_preserved":true,"unknown_entity_preserved":true,"final_submit_execution":false,"remote_readback":"PASS"},
+  "boundaries":{"actual_homepage_code_generation":false,"target_pc_execution":false,"live_site_call":false,"final_submit_execution":false,"production":false,"ready":false,"merge":false},
+  "terminal":"A6_AI_IMPLEMENTATION_BLUEPRINT_COMPILER_READY",
+  "status":"TERMINAL_PASS"
+}

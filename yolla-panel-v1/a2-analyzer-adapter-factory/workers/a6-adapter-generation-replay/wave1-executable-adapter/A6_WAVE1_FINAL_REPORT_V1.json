@@ -1,0 +1,98 @@
+{
+  "schema_version": "A6_SITE_ANALYZER_WAVE1_EXECUTABLE_ADAPTER_FINAL_REPORT_V1",
+  "worker": "A-6",
+  "role": "EXECUTABLE_ADAPTER_COMPILER_REPLAY_TRACE_OWNER",
+  "directive_id": "A0-SITE-ANALYZER-ADVANCEMENT-WAVE1-AB-BUILD-V1-20260807-001",
+  "directive_comment": 5207564607,
+  "common_authority_commit": "20b8a6401de124186037d44f9f17076c97142402",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "worker_pr": 25,
+  "branch": "worker/a6-adapter-generation-replay-v1",
+  "observed_head_before_start": "84ea9b34a7c9445a77214288556ff3230442d81e",
+  "start_commit": "780f514e929574eddbf9ec631ab51b72dd4baf05",
+  "package_commit": "00a5b7c897d40d406bfec00b69bca83911b49433",
+  "owned_root": "yolla-panel-v1/a2-analyzer-adapter-factory/workers/a6-adapter-generation-replay/wave1-executable-adapter/",
+  "implementation": {
+    "compiler": "adapter-compiler.cjs",
+    "runtime_template": "adapter-runtime-template.cjs",
+    "generated_adapter_source": "generated/adapter.cjs",
+    "generated_adapter_manifest": "generated/adapter.json",
+    "mode": "HYBRID",
+    "mode_selection": {
+      "api_confidence": 0.98,
+      "dom_confidence": 0.78,
+      "decision": "HYBRID"
+    },
+    "required_artifacts": {
+      "adapter_source": "PASS",
+      "adapter_json": "PASS",
+      "workflow_recipe": "PASS",
+      "selectors": "PASS",
+      "request_templates": "PASS",
+      "input_schema": "PASS",
+      "output_schema": "PASS",
+      "pagination": "PASS",
+      "replay_fixture_tests_trace": "PASS"
+    },
+    "capabilities": {
+      "observe": true,
+      "act": true,
+      "action_cache": true,
+      "failed_step_repair": true,
+      "replay": true,
+      "trace": true,
+      "pagination": true
+    }
+  },
+  "validation": {
+    "syntax_check": "PASS",
+    "generated_executable_adapter_count": 1,
+    "generated_contract_file_count": 8,
+    "replay_success_count": 3,
+    "normal_replay": "PASS",
+    "failed_items_path_partial_repair": "PASS_DATA_POSTS_TO_ROOT_ARRAY",
+    "hybrid_missing_identifier_dom_fill": "PASS",
+    "partial_repair_event_count": 1,
+    "trace_event_count": 10,
+    "replay_sample_record_count": 1,
+    "sample_source_class": "OFFICIAL_DOCUMENTED_PUBLIC_API_RESPONSE_SAMPLE",
+    "sample_source_document": "https://jsonplaceholder.dev/api/posts",
+    "sample_live_network_capture_in_this_execution": false,
+    "live_real_sample_record_count": 0
+  },
+  "live_execution": {
+    "attempted": true,
+    "status": "PROVEN_EXTERNAL_BLOCKER",
+    "target": "https://api.jsonplaceholder.dev/posts?userId=1",
+    "error_name": "TypeError",
+    "error_message": "fetch failed",
+    "cause_code": "EAI_AGAIN",
+    "cause_message": "getaddrinfo EAI_AGAIN api.jsonplaceholder.dev",
+    "required_external_action": "Run generated/adapter.cjs in a network-enabled Node.js 22+ environment with --live and capture 1 to 20 records and trace. No source modification is required."
+  },
+  "remote_readback": {
+    "head": "00a5b7c897d40d406bfec00b69bca83911b49433",
+    "adapter_manifest_blob": "46664fd7732507b5c59493d5203c42ebb61f5013",
+    "replay_receipt_blob": "2e57aaff723571d0fab8e98e2dd3f36854afb994",
+    "replay_trace_blob": "32d505d2cde49580d4b01c83230441cff3f7c0b1",
+    "status": "PASS"
+  },
+  "pass_min": {
+    "generated_executable_adapter_gte_1": "PASS_1",
+    "replay_success_gte_1": "PASS_3",
+    "sample_record_count_1_to_20": "PASS_1_REPLAY_SAMPLE",
+    "live_sample_execution": "PROVEN_EXTERNAL_BLOCKER_EAI_AGAIN"
+  },
+  "boundaries": {
+    "c_mode_runtime_work": false,
+    "audit_only": false,
+    "validation_only": false,
+    "production": false,
+    "ready": false,
+    "merge": false
+  },
+  "next_owner": "A-7",
+  "next_event": "A6_EXECUTABLE_ADAPTER_REMOTE_HEAD_AND_LIVE_BLOCKER_REVIEW",
+  "terminal": "A6_SITE_ANALYZER_WAVE1_EXECUTABLE_ADAPTER_REPLAY_PASS_OR_PROVEN_EXTERNAL_BLOCKER",
+  "status": "PASS_EXECUTABLE_ADAPTER_AND_REPLAY_LIVE_NETWORK_PROVEN_EXTERNAL_BLOCKER"
+}

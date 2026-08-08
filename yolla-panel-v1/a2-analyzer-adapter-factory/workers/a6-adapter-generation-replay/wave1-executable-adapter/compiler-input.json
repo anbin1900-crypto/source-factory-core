@@ -1,0 +1,41 @@
+{
+  "schema_version": "A6_EXECUTABLE_ADAPTER_COMPILER_INPUT_V1",
+  "adapter_id": "jsonplaceholder-posts-hybrid-v1",
+  "target": {
+    "name": "JSONPlaceholder Posts Public API",
+    "base_url": "https://api.jsonplaceholder.dev",
+    "source_document": "https://jsonplaceholder.dev/api/posts"
+  },
+  "observations": {
+    "api": {
+      "confidence": 0.98,
+      "response_mime": "application/json",
+      "items_path": "$",
+      "identity_path": "id",
+      "request": {"method": "GET", "path": "/posts?userId=1"},
+      "field_map": {"id": "id", "user_id": "userId", "title": "title", "body": "body"}
+    },
+    "dom": {
+      "confidence": 0.78,
+      "record_pattern": "<article[^>]*data-post-id=\\\"(?<id>[^\\\"]+)\\\"[^>]*>(?<content>[\\s\\S]*?)</article>",
+      "field_patterns": {
+        "title": "<h2[^>]*>(?<value>[\\s\\S]*?)</h2>",
+        "body": "<p[^>]*>(?<value>[\\s\\S]*?)</p>",
+        "user_id": "data-user-id=\\\"(?<value>[^\\\"]+)\\\""
+      }
+    },
+    "pagination": {
+      "type": "QUERY_PAGE",
+      "parameter": "_page",
+      "page_size_parameter": "_limit",
+      "page_size": 20,
+      "start": 1,
+      "max_pages": 5,
+      "termination": "records.length < page_size"
+    }
+  },
+  "output": {
+    "required_fields": ["id", "user_id", "title", "body"],
+    "max_sample_records": 20
+  }
+}
