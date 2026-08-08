@@ -1,0 +1,22 @@
+{
+  "schema_version": "LATEST_D5_CYCLE5_D4_ATTEMPT_POINTER_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE5-20260808-001",
+  "directive_comment_id": 5224184126,
+  "authority_commit": "53c1f034dc11dd7c3bbe2eb08585dabad1ec877a",
+  "control_receipt_comment_id": 5224185332,
+  "status": "BLOCKED_EXTERNAL_CONFIRMED",
+  "terminal": "D4_EXECUTOR_RESTART_AND_OBSERVER_ATTEMPT_INGESTION_BLOCKED_EXTERNAL_CONFIRMED",
+  "upstream_event_store_blob": "8ae79e40725447ff55ea8d166d2a4441587a8de4",
+  "actual_v3_receipt_blob": "f503589ea335ad5cf397b33a2d4be9307df17957",
+  "blocker": "USER_RESTARTED_EXECUTOR_ACTUAL_TIMESTAMP_NOT_PUBLISHED",
+  "outputs": {
+    "contract": "D5_CYCLE5_D4_ATTEMPT_CONTRACT_V1.json",
+    "actual_input": "D5_CYCLE5_ACTUAL_D4_V3_INPUT_V1.json",
+    "runtime_source": "src/cycle5_d4_attempt_ingestion.py",
+    "tests": "tests/test_cycle5_d4_attempt_ingestion.py",
+    "metrics": "reports/D5_CYCLE5_D4_ATTEMPT_METRICS_V1.json",
+    "acceptance": "reports/D5_CYCLE5_ACCEPTANCE_REPORT_V1.json",
+    "final_report": "reports/D5_CYCLE5_D4_ATTEMPT_FINAL_REPORT_V1.json"
+  },
+  "result_head_resolution": "COMMIT_CONTAINING_THIS_POINTER"
+}
