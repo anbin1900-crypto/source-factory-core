@@ -1,0 +1,47 @@
+{
+  "schema_version": "CYCLE7B_RESUME_ENTRYPOINT_V1",
+  "followup_id": "A0-TO-A7-CYCLE7B-LIVE-RECOVERY-DELTA-20260808-001",
+  "cycle_id": "A0-AB-REAL-SITE-E2E-LIVE-BINDING-CYCLE7-20260808-001",
+  "wave_id": "A0-AB-REAL-SITE-LIVE-RECEIPT-CLOSURE-WAVE7B-20260808-001",
+  "recovery_delta_path": "CYCLE7B_RECOVERY_DELTA_V1.json",
+  "read_order": [
+    "LATEST_A7_RECOVERY_POINTER",
+    "CYCLE7B_RECOVERY_DELTA_V1",
+    "CURRENT_COMMAND",
+    "LATEST_RESULT",
+    "CURRENT_BLOCKER",
+    "NEXT_ACTION"
+  ],
+  "resume_policy": "POINTER_ONLY_FIRST_INCOMPLETE_STEP",
+  "first_incomplete_step": "PUBLISH_EXACT_TARGET_RUNTIME_BINDING",
+  "required_input_fields": [
+    "target_pc_working_root",
+    "chrome_executable_or_existing_browser_agent_exact_binding",
+    "target_url",
+    "site_id",
+    "authorized_user_session_reference",
+    "target_page_binding"
+  ],
+  "activation_sequence": [
+    "VERIFY_EXACT_INPUT_AUTHORITY",
+    "BIND_VALUES_TO_EXISTING_B6_COMMAND_ENVELOPE",
+    "RESUME_A2_RS003",
+    "DISPATCH_ELIGIBLE_LANES",
+    "COLLECT_ACTUAL_RECEIPT",
+    "UPDATE_CHANGED_POINTERS_ONLY"
+  ],
+  "skip_completed_steps": [
+    "B6_CREATE_REAL_SITE_ONE_COMMAND_HANDOFF",
+    "B6_REMOTE_READBACK_6_OF_6",
+    "A2_BIND_B6_EXACT_POINTER",
+    "A2_CREATE_ACTUAL_REQUEST_RECEIPT_AND_LANE_POINTERS",
+    "A2_REMOTE_READBACK_5_OF_5"
+  ],
+  "a3_b2_policy": "LATE_BIND_IF_AVAILABLE_NEVER_GLOBAL_GATE",
+  "receipt_policy": "NO_ACTUAL_RECEIPT_NO_LIVE_PASS",
+  "full_history_preload": false,
+  "audit_gate": false,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
