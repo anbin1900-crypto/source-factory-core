@@ -1,0 +1,29 @@
+{
+  "schema_version": "D6_CYCLE5_PANEL_STATE_V1",
+  "cycle_id": "D1-CONTEXT-AWARE-MESSAGE-LOOP-CYCLE5-20260808-001",
+  "panel": {
+    "current_worker": "D-4_CHROME_WORKER_STATE_OBSERVER_OWNER",
+    "context_name": "자동화 C 모드 - 자동화 C 모드 - 자동화 그룹 A E  그룹에 속함",
+    "context_id": "6a72e288-7f24-83ee-b357-3e327cf6d877",
+    "current_command": "D4C2-RUN-UIA-LIVE-OBSERVER-V3-20260808-042130-001",
+    "status": "ERROR_CORRECTION_PENDING",
+    "started_at": "2026-08-08T04:19:53.9165713+09:00",
+    "elapsed_ms": 2269963,
+    "recent_event": "ERROR:D3_CHILD_RESULT_SCHEMA_MISSING_ASSISTANT_REPLY_COMPLETED",
+    "error": "D3_CHILD_RESULT_SCHEMA_MISSING_ASSISTANT_REPLY_COMPLETED",
+    "retry_count": 0,
+    "result_return_status": "D4_COMPLETION_PENDING"
+  },
+  "truth": {
+    "queue_unlock_after_powershell_restart": true,
+    "executor_receipt_status": "SUCCEEDED",
+    "working_observed": true,
+    "error_observed": true,
+    "completed_observed": false,
+    "message_sent": true,
+    "full_message_loop_live_pass": false,
+    "d5_cycle4_metric_bound": true,
+    "d5_cycle5_late_bind_ready": true,
+    "d5_cycle5_result_available": false
+  }
+}
