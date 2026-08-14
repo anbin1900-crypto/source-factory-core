@@ -1,0 +1,118 @@
+{
+  "schema_version": "YOLLA_HANDOFF_CURRENT_V1",
+  "generated_at": "2026-08-14T14:27:00+09:00",
+  "authority": {
+    "repository": "anbin1900-crypto/source-factory-core",
+    "remote": "https://github.com/anbin1900-crypto/source-factory-core.git",
+    "base_branch": "main",
+    "base_sha": "50877defc2e6b69f5f9a941aa508e3ac2c3dcbd5",
+    "publication_branch": "agent/yolla-handoff-20260814"
+  },
+  "goal": "Portable YOLLA WEB and legacy control surfaces for exact commander/worker ChatGPT contexts, primary-state monitoring, durable command/result evidence, and fail-closed recovery.",
+  "user_decisions": {
+    "automatic_wake": false,
+    "automatic_followup": false,
+    "automatic_status_or_goal_messages": false,
+    "outbound_authorities": [
+      "USER_DIRECT_ONE_SHOT",
+      "USER_CONFIGURED_POST_CHAT_RELAY_AFTER_SEPARATE_ACCEPTANCE"
+    ],
+    "delivery_authority": "EXACT_TARGET_CHATGPT_COMPOSER_PROTOCOL_OR_DOM_ACK",
+    "minimum_user_send_interval_ms": 10000,
+    "global_resume_for_one_shot": false,
+    "business_states": ["IDLE", "WORKING", "ERROR"],
+    "standalone_popup_ui_frozen": true
+  },
+  "safety": {
+    "schema": "V2",
+    "revision": 1,
+    "program_stopped": true,
+    "commander_wake_stopped": true,
+    "runtime_active": false,
+    "audit_sha256": "57F389FFD5B62ACBA9431CD5CEEB3202D8342BB12C49A6B8BA540151EE779EDF",
+    "audit_since": "2026-08-13T19:50:28.691Z",
+    "gpt_sent_count_since": 31,
+    "gpt_sent_kinds_since": {"PANEL_USER_COMMAND": 31},
+    "automatic_or_wake_markers_since": 0,
+    "handoff_collection_send_delta": 0,
+    "handoff_collection_restart_delta": 0
+  },
+  "ledger": {
+    "sha256": "FC6754E5058DE778A335AA89605A5161916F3AC1B021F91FBCFD1225A69C33E1",
+    "status_field_occurrences_not_unique_commands": {
+      "COMPLETED": 527,
+      "ABORTED": 32,
+      "ERROR": 56,
+      "RECOVERY_APPROVAL_REQUIRED": 9,
+      "UNKNOWN_RECONCILE": 1,
+      "WORKING": 18,
+      "QUEUED": 3
+    }
+  },
+  "systems": [
+    {"id":"legacy","path":"E:/YOLLA/yolla-communicator-clean-v06","runtime_path":"E:/YOLLA/yolla-communicator-runtime-v06/current","pid":22780,"port":37860,"health":true,"production_applied":true,"status":"FIXING"},
+    {"id":"continuity","path":"E:/YOLLA/yolla-communicator-clean-v06/app/commanderContinuityService.cjs","pid":7852,"port":37861,"health":true,"production_applied":true,"status":"RUNNING"},
+    {"id":"web_v1","path":"E:/YOLLA/lao-project-web-v1-independent","pid":6000,"port":8080,"health":true,"live_chatgpt_access":false,"status_observation_endpoint":"http://127.0.0.1:37961/v1/status/snapshot","request_timeout_ms":2500,"production_applied":true,"status":"PARTIAL"},
+    {"id":"board_3340","path":"E:/YOLLA/web-server-v1","pid":16944,"port":3340,"health":true,"control_panel_status":502,"production_applied":true,"status":"NO_GO"},
+    {"id":"site_mri_3350","pid":25680,"port":3350,"root_status":200,"health_status":404,"production_applied":true,"status":"PARTIAL"},
+    {"id":"control_dependency_3320","port":3320,"listener":false,"production_applied":false,"status":"BLOCKED"},
+    {"id":"dom_bridge","path":"E:/YOLLA/yolla-dom-status-bridge-v1","pid":19068,"port":37961,"health":true,"item_count":21,"registration_id_non_null":0,"group_id_non_null":0,"generation_non_null":0,"gpt_send_count":0,"reload_count":0,"navigation_count":0,"production_applied":true,"status":"NO_GO"},
+    {"id":"dom_extension","path":"E:/YOLLA/yolla-dom-status-monitor-v1.1.0","version":"1.2.2","manifest_sha256":"AF58B42837BAF23525193F4A1E38803EF74EFF55DB619121220E03FFA2925F34","background_sha256":"50A4427DB4B49A8A4D9BBBE8C47804AAE017A3D3AB91B42ACD8A1C9F2DA183F3","native_messaging_registered":false,"production_applied":true,"status":"PARTIAL"},
+    {"id":"ai_browser","path":"E:/YOLLA/ai-browser-v1","pids":[26728,9124],"ports":[32120,32121],"health":true,"production_applied":true,"status":"RUNNING"},
+    {"id":"native_adapter_gateway","path":"E:/YOLLA/lao-project-web-v1-independent/workstreams/tool-gateway","production_applied":false,"status":"STAGING_ONLY"},
+    {"id":"android","path":"E:/YOLLA/lao-android-mobile-v1","artifact":"라오-모바일-바로업데이트-v1.2.3.apk","apk_sha256":"964F4FC2BB749523B3BAB4733646848BE0343441E216D95E2DD3289BA26D1FB5","device_verified":false,"production_applied":false,"status":"ARTIFACT_READY"},
+    {"id":"external_tunnel","process_count":2,"mode":"quick-tunnel","credential_values_published":false,"status":"USER_APPROVAL_REQUIRED"}
+  ],
+  "legacy_projection": {
+    "observed_at": "2026-08-14T14:23:01+09:00",
+    "rows": 31,
+    "states": {"ERROR":30,"IDLE":1,"WORKING":0},
+    "freshness": {"STALE":30,"FRESH":1},
+    "source": {"DOM_STATUS_BRIDGE_SIMPLE_V1":31},
+    "exact_join": 1,
+    "release_ready": false
+  },
+  "workstreams": [
+    {"id":"A","worker_number":23,"command_id":"YOLLA-COMM-20260814033043-D2813F","attempt_id":"ATT-27818407-F91B-487C-A8E4-F43CF781EFC5","path":"E:/YOLLA/lao-project-web-v1-independent/workstreams/legacy-dom-live-activation-v2","handoff_sha256":"468491DDAF53B09C68EAC8C6A42EF04FD97F8EA527BC1C6E7681F5B1AFA8F7F0","classification":"FIXING_NO_GO","production_claim_accepted":false},
+    {"id":"B1","worker_number":21,"command_id":"YOLLA-COMM-20260814035238-A02F49","attempt_id":"ATT-2EAC1359-7F74-4D24-980F-7A6C2BC1B132","path":"E:/YOLLA/lao-project-web-v1-independent/workstreams/tool-gateway/native-security-production-candidate-v2","handoff_sha256":"2C08CBB068F237EF08B95759ABE7CAC40C3FE5B4941173CD56EFF86AEDE79DE6","classification":"INTEGRATION_READY_STAGING_ONLY","production_applied":false},
+    {"id":"B2","worker_number":20,"command_id":"YOLLA-COMM-20260814035339-E44408","attempt_id":"ATT-0F8C6AAC-0E13-4EBB-B2CA-7DAFD596FBDD","path":"E:/YOLLA/lao-project-web-v1-independent/workstreams/tool-gateway/native-runtime-production-wiring-v2","handoff_sha256":"0AC599AA001E8926DE07B25FBCAF43A68F4DC94C1AC6525D498E5814BDF84DE7","classification":"INTEGRATION_READY_DRY_RUN_ONLY","production_applied":false},
+    {"id":"B3","worker_number":22,"command_id":"YOLLA-COMM-20260814033137-19DABC","attempt_id":"ATT-D5B45551-9443-4F41-8580-5B686AB5D404","handoff_sha256":"03EB3E18BF7FE6FF0915CD3F7459C15EEE6069EB458E1646FC3C56614140E4FA","classification":"BLOCKED_FIXABLE","production_applied":false},
+    {"id":"C","worker_number":12,"command_id":"YOLLA-COMM-20260814033159-36ED6B","attempt_id":"ATT-210BB528-1897-4A7F-AAC7-B00D8E06BC22","path":"E:/YOLLA/lao-project-web-v1-independent/workstreams/gpt-pc-tools-inventory-v1","handoff_sha256":"AFB6C5A6AC58826E305D10D1595A6A55E9D330B46F4672AB05F5D4908BC255FA","post_id":"20260814034730-6e854ba43a","display_post_number_derived":700,"readback":true,"classification":"PARTIAL"},
+    {"id":"D","worker_number":15,"command_id":"YOLLA-COMM-20260814033230-8CD9C4","attempt_id":"ATT-1F3AE291-17AF-458E-B561-7AB08BEB84A2","path":"E:/YOLLA/lao-project-web-v1-independent/workstreams/board3340-tools-menu-v1","handoff_sha256":"66E48A79D5809DFFA81F8C346FF9E18EC3BC6E7176EBF19D9BC3F2928B86A6D6","classification":"FIXING_NO_GO"},
+    {"id":"URL_PARSER_EXACT_V2","handoff_sha256":"DD6CD86342AC7086ABFEEAF5222ABD8D109FC231042732722AC99B95BA63E652","latest_isolated_tests":{"passed":241,"total":247},"classification":"BLOCKED_FIXABLE","production_applied":false}
+  ],
+  "blockers": [
+    {"priority":"P0","id":"DOM_IDENTITY","acceptance":"Authenticated non-null registrationId/groupId/generation, active-generation exact URL join, stale/replay/cross-group fail-closed, live UI readback."},
+    {"priority":"P0","id":"URL_PARSER","acceptance":"Arbitrary safe scoped slug accepted, malicious forms rejected, URL present provisions zero, blank provisions exactly once, full test suite zero failures."},
+    {"priority":"P0","id":"BOARD_3340","acceptance":"No visible dead links, honest missing-dependency response, authenticated or removed launch actions, 360/390 viewport assertions and screenshots."},
+    {"priority":"P0","id":"NATIVE_SECURITY_WIRING","acceptance":"C09/C10/C12 wired; installed path ACL/hash, extension ID, registry, Native Messaging, rollback independently read back."},
+    {"priority":"P1","id":"DIRECT_RELAY","acceptance":"Fake exact-composer protocol acknowledgement, durable replay/dedupe/generation fence; live canary separately approved."},
+    {"priority":"P1","id":"EXTERNAL_AND_ANDROID","acceptance":"Explicit approval for Cloudflare canary/credentials and Android device mutation."}
+  ],
+  "recovery_policy": {
+    "before_mutation": ["exact target", "sha256", "pid", "port", "health", "queue snapshot", "safety revision"],
+    "backup": "timestamped under owning E:/YOLLA product root",
+    "deploy": "staging tests then atomic owner-only overlay and one stable-launcher restart",
+    "after_restart": ["single process", "expected port and schema", "safety true twice", "queue delta zero", "GPT send delta zero", "UI and DOM readback", "rollback viability"],
+    "chatgpt_conversation_delete_on_panel_cleanup": false
+  },
+  "new_commander_first_15_minutes": [
+    "Read both handoff files and note NO-GO items.",
+    "Read safety twice; require program and wake stop true.",
+    "Snapshot 8080, 3340, 37860, 37861 and 37961 without restart.",
+    "Read ledger and GPT audit; do not flush queues.",
+    "Compare bridge identity with registry; stale or mismatched is ERROR.",
+    "Review independent blockers, not only self-declared HANDOFF flags.",
+    "Select non-overlapping owners.",
+    "Use one authenticated USER_DIRECT gate per send, expiry <=120 seconds, spacing >=10 seconds.",
+    "Record command, attempt, ACK and durable result without automatic follow-up."
+  ],
+  "operating_modes": {
+    "panel_direct_chat": "Exact registered target plus authenticated one-shot; composer protocol/DOM ACK is success.",
+    "ledger_and_board": "Durable command, receipt, result, attachment and post readback; no receipt-triggered outbound loop."
+  },
+  "publication_redaction": {
+    "mechanisms_documented": ["loopback binding", "password-login capability", "commander authorization", "USER_DIRECT confirmation", "revision CAS", "nonce and expiry", "Cloudflare Access concepts", "Android signing and install flow", "rotation and revocation"],
+    "values_excluded": ["passwords", "tokens", "cookies", "authorization headers", "tunnel secrets", "APK signing material", "device identifiers", "full conversation URLs", "user-profile paths"]
+  }
+}
