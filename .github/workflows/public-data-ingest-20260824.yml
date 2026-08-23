@@ -1,0 +1,132 @@
+name: public-data-ingest-20260824
+
+on:
+  push:
+    branches: [public-data-ingest-20260824]
+    paths:
+      - '_staging/public_data_ingest_20260824/**'
+      - '.github/workflows/public-data-ingest-20260824.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: public-data-ingest-20260824
+  cancel-in-progress: false
+
+jobs:
+  download-and-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Expand verified collector bundle
+        run: |
+          set -euo pipefail
+          base64 -d _staging/public_data_ingest_20260824/public_data_ingest_bundle.tar.gz.b64 > /tmp/public_data_ingest_bundle.tar.gz
+          echo '7c42f04554eddbfb87f6109477bdfa3fa24cfc5d5b3076a2bf0815a17d68a458  /tmp/public_data_ingest_bundle.tar.gz' | sha256sum -c -
+          tar -xzf /tmp/public_data_ingest_bundle.tar.gz
+          python -m py_compile tools/public_data_ingest/download_manifest.py tools/public_data_ingest/load_to_postgres.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: tools/public_data_ingest/requirements.txt
+
+      - name: Install collector and browser
+        run: |
+          python -m pip install --disable-pip-version-check -r tools/public_data_ingest/requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Run unit tests
+        working-directory: tools/public_data_ingest
+        run: python -m unittest discover -s tests -v
+
+      - name: Download all manifest targets and prepare DB bundle
+        run: |
+          python tools/public_data_ingest/download_manifest.py \
+            --manifest tools/public_data_ingest/manifest.csv \
+            --output output/public_data_ingest_20260824 \
+            --concurrency 2
+
+      - name: Finalize immutable receipts and loader package
+        if: always()
+        run: |
+          python - <<'PY'
+          import csv
+          import json
+          import shutil
+          from collections import Counter
+          from pathlib import Path
+
+          root = Path('output/public_data_ingest_20260824')
+          root.mkdir(parents=True, exist_ok=True)
+          receipts_path = root / 'download_receipts.csv'
+          if receipts_path.exists():
+              with receipts_path.open(encoding='utf-8-sig', newline='') as f:
+                  rows = list(csv.DictReader(f))
+          else:
+              rows = []
+
+          failure_statuses = {
+              'DOWNLOAD_FAILED',
+              'DETAIL_PAGE_FAILED',
+              'EXTERNAL_SOURCE_REQUIRES_SITE_WORKFLOW',
+          }
+          fieldnames = list(rows[0].keys()) if rows else [
+              'data_id', 'domain', 'priority', 'dataset_type', 'expected_title',
+              'portal_title', 'provider', 'detail_url', 'source_url',
+              'download_mode', 'status', 'raw_file', 'db_ready_file',
+              'file_name', 'bytes', 'sha256', 'row_count', 'column_count',
+              'encoding', 'delimiter', 'downloaded_at', 'error'
+          ]
+          with (root / 'failure_receipts.csv').open('w', encoding='utf-8-sig', newline='') as f:
+              writer = csv.DictWriter(f, fieldnames=fieldnames)
+              writer.writeheader()
+              writer.writerows(r for r in rows if r.get('status') in failure_statuses)
+
+          shutil.copy2('tools/public_data_ingest/load_to_postgres.py', root / 'load_to_postgres.py')
+          shutil.copy2('tools/public_data_ingest/README.md', root / 'README_DB_LOAD.md')
+          shutil.copy2('tools/public_data_ingest/manifest.csv', root / 'SOURCE_MANIFEST.csv')
+          shutil.copy2('tools/public_data_ingest/requirements.txt', root / 'requirements.txt')
+
+          summary_path = root / 'SUMMARY.json'
+          summary = json.loads(summary_path.read_text(encoding='utf-8')) if summary_path.exists() else {}
+          summary.update({
+              'manifest_expected': 84,
+              'receipt_rows': len(rows),
+              'status_counts_verified': dict(Counter(r.get('status', '') for r in rows)),
+              'portal_file_or_standard_targets': sum(r.get('download_mode') in {'PORTAL_FILE', 'PORTAL_STANDARD'} for r in rows),
+              'raw_files_verified': sum(bool(r.get('raw_file')) for r in rows),
+              'db_ready_files_verified': sum(bool(r.get('db_ready_file')) for r in rows),
+              'api_metadata_targets': sum(r.get('download_mode') == 'API_METADATA' for r in rows),
+              'metadata_only_targets': sum(r.get('download_mode') == 'METADATA_ONLY' for r in rows),
+              'external_source_targets': sum(r.get('download_mode') == 'EXTERNAL_SOURCE' for r in rows),
+          })
+          summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          print(json.dumps(summary, ensure_ascii=False, indent=2))
+
+          if len(rows) != 84:
+              raise SystemExit(f'Expected 84 receipt rows, got {len(rows)}')
+          if any(r.get('status') == 'PENDING' for r in rows):
+              raise SystemExit('PENDING receipt remains')
+          PY
+
+          find output/public_data_ingest_20260824 -type f -print0 \
+            | sort -z \
+            | xargs -0 sha256sum \
+            > output/public_data_ingest_20260824/ARTIFACT_SHA256SUMS.txt
+
+      - name: Upload original files, DB-ready CSVs, schemas, SQL and receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-data-ingest-20260824
+          path: output/public_data_ingest_20260824
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 6
