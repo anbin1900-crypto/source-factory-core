@@ -13,64 +13,71 @@ permissions:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Query official ePeople similarity-case search
+      - name: Fetch official ePeople API guide and examples
         shell: bash
         run: |
           set -euxo pipefail
-          out="$RUNNER_TEMP/p19-epeople-query-probe"
+          out="$RUNNER_TEMP/p19-epeople-api-guide"
           mkdir -p "$out"
           python - <<'PY'
-          import hashlib, html, json, os, pathlib, ssl, time, urllib.error, urllib.request, uuid
-          import xml.etree.ElementTree as ET
-          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'p19-epeople-query-probe'
-          endpoint='https://api.epeople.go.kr/soap/CivilAppealService'
-          queries=[
-            ('known_both','신용카드 부정 사용','자동세차장 키오스크에 신용카드를 넣고 세차를 하였는데 깜박하고 카드를 빼지 않아 누군가가 제 카드로 세차비를 결제 하였을때 처리 절차가 어떻게 되나요?'),
-            ('known_title','신용카드 부정 사용',''),
-            ('known_content','', '자동세차장 키오스크에 신용카드를 넣고 세차를 하였는데 깜박하고 카드를 빼지 않아 누군가가 제 카드로 세차비를 결제 하였을때 처리 절차가 어떻게 되나요?'),
-            ('station_permit','주유소 허가 변경','주유소를 신설하거나 시설을 변경할 때 필요한 허가와 등록 절차가 궁금합니다.'),
-            ('carwash_wastewater','세차장 폐수','자동세차장이나 셀프세차장에서 발생하는 폐수의 처리와 신고 절차가 궁금합니다.'),
-            ('fake_petroleum','가짜석유 품질','주유소에서 판매한 석유제품이 가짜석유 또는 품질부적합인지 검사하고 신고하는 절차가 궁금합니다.'),
-            ('hazmat_fire','주유소 위험물 화재','주유소의 위험물 시설과 화재 예방 및 흡연 단속 기준이 궁금합니다.'),
-            ('soil_vapor','주유소 토양오염 유증기','주유소 지하탱크 누출과 토양오염 또는 유증기 민원 처리 절차가 궁금합니다.'),
-          ]
-          ctx=ssl.create_default_context(); allres={}
-          def local(el): return el.tag.split('}',1)[-1]
-          for name,title,content in queries:
-              body=f'''<?xml version="1.0" encoding="UTF-8"?>
-          <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:q="http://soap.civil.pc.acrc/" xmlns:hdr="http://apache.org/headers"><soapenv:Header><hdr:ComMsgHeader><RequestMsgID>{uuid.uuid4()}</RequestMsgID><ServiceKey></ServiceKey><RequestTime>20260825052000</RequestTime></hdr:ComMsgHeader></soapenv:Header><soapenv:Body><q:getSimilarityCaseList><CaseListRequest><nowPageNo>1</nowPageNo><pageMg>20</pageMg><title>{html.escape(title)}</title><content>{html.escape(content)}</content></CaseListRequest></q:getSimilarityCaseList></soapenv:Body></soapenv:Envelope>'''.encode('utf-8')
-              req=urllib.request.Request(endpoint,data=body,method='POST',headers={'Content-Type':'text/xml; charset=UTF-8','SOAPAction':'','User-Agent':'P19ActualSourceResearch/1.0'})
+          import hashlib, json, os, pathlib, re, ssl, time, urllib.parse, urllib.request
+          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'p19-epeople-api-guide'
+          starts=['https://api.epeople.go.kr/guide/','http://api.epeople.go.kr/guide/','https://api.epeople.go.kr/']
+          queue=[(u,0) for u in starts]; seen=set(); manifest=[]; ctx=ssl.create_default_context()
+          def fetch(url):
+              last=None
+              for n in range(3):
+                  try:
+                      req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 (compatible; P19ActualSourceResearch/1.0)','Accept':'text/html,application/javascript,text/css,application/json,text/plain,*/*'})
+                      with urllib.request.urlopen(req,timeout=30,context=ctx) as r:
+                          return r.geturl(),r.status,r.headers.get('content-type',''),r.read()
+                  except Exception as e: last=e; time.sleep(n+1)
+              raise last
+          while queue and len(seen)<80:
+              url,depth=queue.pop(0)
+              if url in seen: continue
+              seen.add(url)
               try:
-                  with urllib.request.urlopen(req,timeout=40,context=ctx) as r:
-                      data=r.read(); status=r.status
-              except urllib.error.HTTPError as e:
-                  data=e.read(); status=e.code
-              except Exception as e:
-                  allres[name]={'error':repr(e)}; continue
-              (out/f'{name}_request.xml').write_bytes(body); (out/f'{name}_response.xml').write_bytes(data)
-              parsed={'status':status,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'query_title':title,'query_content':content,'items':[]}
-              try:
-                  root=ET.fromstring(data)
-                  for el in root.iter():
-                      if local(el)=='CaseListResponse':
-                          for ch in list(el):
-                              if local(ch) in ('errCode','errMsg','totcnt'): parsed[local(ch)]=ch.text or ''
-                      if local(el)=='CaseListInfo':
-                          item={local(ch):(ch.text or '') for ch in list(el)}
-                          parsed['items'].append(item)
-              except Exception as e: parsed['parse_error']=repr(e)
-              allres[name]=parsed; time.sleep(.5)
-          (out/'results.json').write_text(json.dumps(allres,ensure_ascii=False,indent=2),encoding='utf-8')
-          print(json.dumps({k:{'status':v.get('status'),'totcnt':v.get('totcnt'),'items':v.get('items',[])[:5],'error':v.get('error')} for k,v in allres.items()},ensure_ascii=False,indent=2))
+                  final,status,ctype,data=fetch(url)
+                  ext='.html'
+                  if 'javascript' in ctype or urllib.parse.urlparse(final).path.endswith('.js'): ext='.js'
+                  elif 'css' in ctype or urllib.parse.urlparse(final).path.endswith('.css'): ext='.css'
+                  elif 'json' in ctype: ext='.json'
+                  name=f'{len(manifest):03d}_'+hashlib.sha256(url.encode()).hexdigest()[:12]+ext
+                  (out/name).write_bytes(data)
+                  rec={'url':url,'final_url':final,'status':status,'content_type':ctype,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'file':name}
+                  text=data.decode('utf-8','ignore')
+                  rec['matches']={k:len(re.findall(k,text,re.I)) for k in ['ServiceKey','getSimilarityCaseList','CivilAppealService','service.?key','인증키','활용신청','키발급']}
+                  links=[]
+                  if depth<2 and ('html' in ctype or ext=='.html'):
+                      for v in re.findall(r'''(?:href|src)=["']([^"'#]+)''',text,re.I):
+                          nxt=urllib.parse.urljoin(final,v)
+                          p=urllib.parse.urlparse(nxt)
+                          if p.hostname=='api.epeople.go.kr' and ('/guide' in p.path or p.path.endswith(('.js','.css','.json','.do','.action','.html','.jsp'))):
+                              links.append(nxt)
+                              if nxt not in seen: queue.append((nxt,depth+1))
+                  rec['links']=links
+                  manifest.append(rec)
+              except Exception as e: manifest.append({'url':url,'error':repr(e)})
+          (out/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
+          searchable=[]
+          for p in out.iterdir():
+              if p.suffix in ('.html','.js','.css','.json'):
+                  t=p.read_text(encoding='utf-8',errors='ignore')
+                  for pat in ('ServiceKey','getSimilarityCaseList','CivilAppealService','인증키','활용신청','발급'):
+                      for m in re.finditer(pat,t,re.I): searchable.append({'file':p.name,'pattern':pat,'snippet':t[max(0,m.start()-300):m.end()+500]})
+          (out/'matches.json').write_text(json.dumps(searchable,ensure_ascii=False,indent=2),encoding='utf-8')
+          print(json.dumps(manifest,ensure_ascii=False,indent=2))
+          print('MATCH_COUNT',len(searchable))
           PY
-      - name: Upload query responses
+      - name: Upload API guide files
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: p19-epeople-query-probe
-          path: ${{ runner.temp }}/p19-epeople-query-probe
+          name: p19-epeople-api-guide
+          path: ${{ runner.temp }}/p19-epeople-api-guide
           if-no-files-found: warn
           retention-days: 1
