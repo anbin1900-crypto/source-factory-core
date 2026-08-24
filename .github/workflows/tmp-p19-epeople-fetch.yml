@@ -13,42 +13,39 @@ permissions:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
-      - name: Probe ePeople through public document reader
+      - name: Extract concrete ePeople detail IDs from search HTML
         shell: bash
         run: |
           set -euxo pipefail
-          out="$RUNNER_TEMP/p19-epeople-reader-probe"; mkdir -p "$out"
+          out="$RUNNER_TEMP/p19-epeople-html-id-probe"; mkdir -p "$out"
           python - <<'PY'
-          import hashlib,json,os,pathlib,ssl,urllib.parse,urllib.request
-          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'p19-epeople-reader-probe'
+          import hashlib,html,json,os,pathlib,re,ssl,urllib.parse,urllib.request
+          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'p19-epeople-html-id-probe'
           base='https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseList.npaid'
           params={'recordCountPerPage':'100','pageIndex':'1','searchOptionClickYn':'Y','searchWordType':'0','searchWord':'주유소','rqstStDt':'2020-01-01','rqstEndDt':'2026-08-25','dateType':'6','pttnTypeNm':'','searchInstCd':'all'}
-          search=base+'?'+urllib.parse.urlencode(params)
-          detail='https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseDetail.npaid?dutySctnNm=tqapttn&epUnionSn=6903173'
-          targets={
-            'reader_list_https':'https://r.jina.ai/https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseList.npaid',
-            'reader_list_http':'https://r.jina.ai/http://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseList.npaid',
-            'reader_search_https':'https://r.jina.ai/'+search,
-            'reader_detail_https':'https://r.jina.ai/'+detail,
-            'reader_detail_http':'https://r.jina.ai/http://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseDetail.npaid?dutySctnNm=tqapttn&epUnionSn=6903173',
-          }
-          ctx=ssl.create_default_context(); result={}
-          for name,url in targets.items():
-              try:
-                  req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0','Accept':'text/plain,text/markdown,*/*'})
-                  with urllib.request.urlopen(req,timeout=60,context=ctx) as r: data=r.read(); status=r.status; ctype=r.headers.get('content-type')
-                  (out/f'{name}.txt').write_bytes(data)
-                  result[name]={'url':url,'status':status,'content_type':ctype,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'prefix':data[:1000].decode('utf-8','replace')}
-              except Exception as e: result[name]={'url':url,'error':repr(e)}
+          target=base+'?'+urllib.parse.urlencode(params)
+          reader='https://r.jina.ai/'+target
+          req=urllib.request.Request(reader,headers={'User-Agent':'Mozilla/5.0','Accept':'text/html,*/*','X-Respond-With':'html','X-Engine':'browser','X-No-Cache':'true','X-Timeout':'120'})
+          with urllib.request.urlopen(req,timeout=150,context=ssl.create_default_context()) as r: data=r.read(); status=r.status; ctype=r.headers.get('content-type')
+          (out/'search.html').write_bytes(data); text=data.decode('utf-8','replace')
+          rows=[]
+          for m in re.finditer(r'''<a\b[^>]*class=["'][^"']*\btit\b[^"']*["'][^>]*onclick=["']fn_detail\(this,\s*['"]([^'"]+)['"],\s*['"]([^'"]+)['"]\)["'][^>]*>(.*?)</a>''',text,re.I|re.S):
+              ident,typ,inner=m.groups(); title=re.sub(r'<[^>]+>',' ',inner); title=html.unescape(re.sub(r'\s+',' ',title)).strip()
+              start=text.rfind('<tr',0,m.start()); end=text.find('</tr>',m.end()); rowhtml=text[start:end+5] if start>=0 and end>=0 else ''
+              cells=[]
+              for c in re.findall(r'<td\b[^>]*>(.*?)</td>',rowhtml,re.I|re.S):
+                  s=html.unescape(re.sub(r'<[^>]+>',' ',c)); cells.append(re.sub(r'\s+',' ',s).strip())
+              rows.append({'id':ident,'type':typ,'title':title,'cells':cells})
+          result={'status':status,'content_type':ctype,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'target':target,'rows':rows,'fn_detail_count':text.count('fn_detail'),'tit_count':text.count('class="tit"')+text.count("class='tit'")}
           (out/'results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8'); print(json.dumps(result,ensure_ascii=False,indent=2))
           PY
-      - name: Upload reader probe
+      - name: Upload ID probe
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: p19-epeople-reader-probe
-          path: ${{ runner.temp }}/p19-epeople-reader-probe
+          name: p19-epeople-html-id-probe
+          path: ${{ runner.temp }}/p19-epeople-html-id-probe
           retention-days: 1
