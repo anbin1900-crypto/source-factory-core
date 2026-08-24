@@ -16,36 +16,37 @@ jobs:
     timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
-      - name: Extract concrete ePeople detail IDs from search HTML
+      - name: Convert ePeople onclick detail IDs into public links
         shell: bash
         run: |
           set -euxo pipefail
-          out="$RUNNER_TEMP/p19-epeople-html-id-probe"; mkdir -p "$out"
+          out="$RUNNER_TEMP/p19-epeople-inject-probe"; mkdir -p "$out"
           python - <<'PY'
-          import hashlib,html,json,os,pathlib,re,ssl,urllib.parse,urllib.request
-          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'p19-epeople-html-id-probe'
+          import hashlib,json,os,pathlib,re,ssl,urllib.parse,urllib.request
+          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'p19-epeople-inject-probe'
           base='https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseList.npaid'
           params={'recordCountPerPage':'100','pageIndex':'1','searchOptionClickYn':'Y','searchWordType':'0','searchWord':'주유소','rqstStDt':'2020-01-01','rqstEndDt':'2026-08-25','dateType':'6','pttnTypeNm':'','searchInstCd':'all'}
           target=base+'?'+urllib.parse.urlencode(params)
-          reader='https://r.jina.ai/'+target
-          req=urllib.request.Request(reader,headers={'User-Agent':'Mozilla/5.0','Accept':'text/html,*/*','X-Respond-With':'html','X-Engine':'browser','X-No-Cache':'true','X-Timeout':'120'})
-          with urllib.request.urlopen(req,timeout=150,context=ssl.create_default_context()) as r: data=r.read(); status=r.status; ctype=r.headers.get('content-type')
-          (out/'search.html').write_bytes(data); text=data.decode('utf-8','replace')
-          rows=[]
-          for m in re.finditer(r'''<a\b[^>]*class=["'][^"']*\btit\b[^"']*["'][^>]*onclick=["']fn_detail\(this,\s*['"]([^'"]+)['"],\s*['"]([^'"]+)['"]\)["'][^>]*>(.*?)</a>''',text,re.I|re.S):
-              ident,typ,inner=m.groups(); title=re.sub(r'<[^>]+>',' ',inner); title=html.unescape(re.sub(r'\s+',' ',title)).strip()
-              start=text.rfind('<tr',0,m.start()); end=text.find('</tr>',m.end()); rowhtml=text[start:end+5] if start>=0 and end>=0 else ''
-              cells=[]
-              for c in re.findall(r'<td\b[^>]*>(.*?)</td>',rowhtml,re.I|re.S):
-                  s=html.unescape(re.sub(r'<[^>]+>',' ',c)); cells.append(re.sub(r'\s+',' ',s).strip())
-              rows.append({'id':ident,'type':typ,'title':title,'cells':cells})
-          result={'status':status,'content_type':ctype,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'target':target,'rows':rows,'fn_detail_count':text.count('fn_detail'),'tit_count':text.count('class="tit"')+text.count("class='tit'")}
+          script=r'''document.querySelectorAll('a.tit[onclick*="fn_detail"]').forEach(a=>{const s=a.getAttribute('onclick')||'';const m=s.match(/fn_detail\(this,\s*['\"]([^'\"]+)['\"],\s*['\"]([^'\"]+)['\"]\)/);if(m){a.href='https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseDetail.npaid?dutySctnNm='+encodeURIComponent(m[2])+'&epUnionSn='+encodeURIComponent(m[1]);a.removeAttribute('onclick');a.textContent='['+m[2]+':'+m[1]+'] '+a.textContent.trim();}});'''
+          payload={'url':target,'injectPageScript':[script]}
+          body=json.dumps(payload,ensure_ascii=False).encode('utf-8')
+          req=urllib.request.Request('https://r.jina.ai/',data=body,method='POST',headers={'User-Agent':'Mozilla/5.0','Content-Type':'application/json','Accept':'application/json','X-Engine':'browser','X-No-Cache':'true','X-Wait-For-Selector':'a.tit','X-Timeout':'120'})
+          try:
+              with urllib.request.urlopen(req,timeout=150,context=ssl.create_default_context()) as r: data=r.read(); status=r.status; ctype=r.headers.get('content-type')
+              (out/'raw.json').write_bytes(data); obj=json.loads(data); content=obj.get('data',{}).get('content','') if isinstance(obj,dict) else ''
+              if not content and isinstance(obj,dict): content=obj.get('data','') if isinstance(obj.get('data'),str) else obj.get('content','')
+              (out/'content.md').write_text(content,encoding='utf-8')
+              links=[]
+              for m in re.finditer(r'\[\[(?P<type>[^:\]]+):(?P<id>[^\]]+)\]\s*(?P<title>[^\]]+)\]\((?P<url>https://www\.epeople\.go\.kr/[^)]+)\)',content): links.append(m.groupdict())
+              result={'status':status,'content_type':ctype,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'target':target,'content_chars':len(content),'links':links,'content_prefix':content[:2000]}
+          except Exception as e:
+              result={'error':repr(e),'target':target}
           (out/'results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8'); print(json.dumps(result,ensure_ascii=False,indent=2))
           PY
-      - name: Upload ID probe
+      - name: Upload injection probe
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: p19-epeople-html-id-probe
-          path: ${{ runner.temp }}/p19-epeople-html-id-probe
+          name: p19-epeople-inject-probe
+          path: ${{ runner.temp }}/p19-epeople-inject-probe
           retention-days: 1
