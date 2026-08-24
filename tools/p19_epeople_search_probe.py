@@ -5,7 +5,10 @@ import html
 import http.cookiejar
 import json
 import re
+import socket
 import ssl
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -74,20 +77,34 @@ def parse_detail(text: str) -> dict[str, str]:
     return {"title": title, "question": question, "date": date, "department": dept}
 
 
+def open_retry(opener: urllib.request.OpenerDirector, request: str | urllib.request.Request, *, timeout: int = 25, attempts: int = 8) -> tuple[bytes, str, str]:
+    last: Exception | None = None
+    for attempt in range(1, attempts + 1):
+        try:
+            with opener.open(request, timeout=timeout) as resp:
+                return resp.read(), resp.headers.get("Content-Type", ""), resp.geturl()
+        except Exception as exc:
+            last = exc
+            print(f"RETRY attempt={attempt}/{attempts} target={getattr(request, 'full_url', request)} error={exc!r}", flush=True)
+            if attempt < attempts:
+                time.sleep(min(4 * attempt, 20))
+    raise RuntimeError(f"request failed after {attempts} attempts: {last!r}")
+
+
 def main() -> None:
+    print("DNS", socket.getaddrinfo("www.epeople.go.kr", 443, type=socket.SOCK_STREAM), flush=True)
     context = ssl.create_default_context()
     jar = http.cookiejar.CookieJar()
     opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar), urllib.request.HTTPSHandler(context=context))
-    opener.addheaders = [("User-Agent", UA), ("Accept-Language", "ko-KR,ko;q=0.9,en;q=0.7")]
+    opener.addheaders = [("User-Agent", UA), ("Accept-Language", "ko-KR,ko;q=0.9,en;q=0.7"), ("Connection", "close")]
 
-    with opener.open(LIST, timeout=40) as resp:
-        initial_raw = resp.read()
-        initial = decode(initial_raw, resp.headers.get("Content-Type", ""))
+    initial_raw, initial_type, _ = open_retry(opener, LIST, timeout=25, attempts=8)
+    initial = decode(initial_raw, initial_type)
     csrf_match = re.search(r'name="_csrf"\s+value="([^"]+)"', initial)
     if not csrf_match:
         raise RuntimeError("CSRF token not found")
     csrf = csrf_match.group(1)
-    print("CSRF", csrf, "COOKIES", [(c.name, c.domain) for c in jar])
+    print("CSRF", csrf, "COOKIES", [(c.name, c.domain) for c in jar], flush=True)
 
     keywords = ["주유소", "세차장", "위험물", "면세유", "탱크로리"]
     result: dict[str, object] = {"keywords": {}}
@@ -102,7 +119,7 @@ def main() -> None:
             "searchOptionClickYn": "Y",
             "searchWordType": "0",
             "searchWord": keyword,
-            "rqstStDt": "2024-08-26",
+            "rqstStDt": "2025-08-26",
             "rqstEndDt": "2026-08-25",
             "dateType": "6",
             "pttnTypeNm": "",
@@ -112,23 +129,23 @@ def main() -> None:
         }
         data = urllib.parse.urlencode(payload).encode("utf-8")
         req = urllib.request.Request(LIST, data=data, headers={"Content-Type": "application/x-www-form-urlencoded", "Referer": LIST, "X-CSRF-TOKEN": csrf}, method="POST")
-        with opener.open(req, timeout=60) as resp:
-            raw = resp.read()
-            text = decode(raw, resp.headers.get("Content-Type", ""))
+        raw, content_type, _ = open_retry(opener, req, timeout=30, attempts=6)
+        text = decode(raw, content_type)
         total, pages, rows = parse_rows(text)
-        print("SEARCH", keyword, "total", total, "pages", pages, "rows", len(rows))
-        print(json.dumps(rows[:5], ensure_ascii=False))
+        print("SEARCH", keyword, "total", total, "pages", pages, "rows", len(rows), flush=True)
+        print(json.dumps(rows[:5], ensure_ascii=False), flush=True)
         (OUT / f"search_{keyword}.html").write_bytes(raw)
         detail_samples = []
         for row in rows[:3]:
-            with opener.open(row["detail_url"], timeout=45) as resp:
-                draw = resp.read()
-                dtext = decode(draw, resp.headers.get("Content-Type", ""))
+            draw, dtype, _ = open_retry(opener, row["detail_url"], timeout=30, attempts=5)
+            dtext = decode(draw, dtype)
             parsed = parse_detail(dtext)
             parsed.update({"url": row["detail_url"], "ep_union_sn": row["ep_union_sn"], "dutySctnNm": row["dutySctnNm"]})
             detail_samples.append(parsed)
             (OUT / f"detail_{keyword}_{row['board_no']}.html").write_bytes(draw)
         result["keywords"][keyword] = {"total": total, "pages": pages, "rows": rows, "detail_samples": detail_samples}
+        encoded_partial = json.dumps(result, ensure_ascii=False, indent=2).encode("utf-8")
+        (OUT / "search_probe.partial.json").write_bytes(encoded_partial)
 
     encoded = json.dumps(result, ensure_ascii=False, indent=2).encode("utf-8")
     (OUT / "search_probe.json").write_bytes(encoded)
