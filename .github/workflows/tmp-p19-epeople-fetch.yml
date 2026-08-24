@@ -13,45 +13,64 @@ permissions:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-      - name: Fetch official ePeople API and public pages
+      - name: Install parser dependencies
+        run: python -m pip install --disable-pip-version-check requests beautifulsoup4
+      - name: Probe official ePeople search form and public details
         shell: bash
         run: |
           set -euxo pipefail
           out="$RUNNER_TEMP/p19-epeople-fetch"
           mkdir -p "$out"
           python - <<'PY'
-          import json, pathlib, urllib.request, ssl
-          out=pathlib.Path(__import__('os').environ['RUNNER_TEMP'])/'p19-epeople-fetch'
-          urls={
-            'wsdl':'https://api.epeople.go.kr/soap/CivilAppealService?wsdl=',
-            'soap_index':'https://api.epeople.go.kr/soap',
-            'list':'https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseList.npaid',
-            'detail_6903173':'https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseDetail.npaid?dutySctnNm=tqapttn&epUnionSn=6903173',
-            'detail_6902266':'https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseDetail.npaid?dutySctnNm=tqapttn&epUnionSn=6902266',
-          }
+          import json, os, pathlib, re, time
+          import requests
+          from bs4 import BeautifulSoup
+
+          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'p19-epeople-fetch'
+          base='https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseList.npaid'
+          session=requests.Session()
+          session.headers.update({'User-Agent':'Mozilla/5.0 (compatible; P19ActualSourceResearch/1.0)','Accept-Language':'ko-KR,ko;q=0.9,en;q=0.5'})
+          first=session.get(base,timeout=60)
+          first.raise_for_status()
+          (out/'list_initial.html').write_bytes(first.content)
+          soup=BeautifulSoup(first.content,'html.parser')
+          csrf=(soup.select_one('form#frm input[name=_csrf]') or {}).get('value','')
+          keywords=['주유소','석유판매업','가짜석유','혼유','위험물','세차장','폐수','면세유','선박연료','개발제한구역']
           results={}
-          ctx=ssl.create_default_context()
-          for name,url in urls.items():
-              req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 (compatible; P19Research/1.0)','Accept':'*/*'})
-              try:
-                  with urllib.request.urlopen(req,timeout=60,context=ctx) as r:
-                      data=r.read()
-                      (out/f'{name}.bin').write_bytes(data)
-                      results[name]={'url':url,'status':r.status,'content_type':r.headers.get('content-type'),'bytes':len(data)}
-              except Exception as e:
-                  results[name]={'url':url,'error':repr(e)}
-          (out/'summary.json').write_text(json.dumps(results,ensure_ascii=False,indent=2),encoding='utf-8')
-          print(json.dumps(results,ensure_ascii=False,indent=2))
+          for kw in keywords:
+              data={
+                '_csrf':csrf,'recordCountPerPage':'100','pageIndex':'1','epUnionSn':'','dutySctnNm':'',
+                'lcgovBlngInstCd':'','searchOptionClickYn':'Y','searchWordType':'0','searchWord':kw,
+                'rqstStDt':'2025-08-26','rqstEndDt':'2026-08-25','dateType':'6','pttnTypeNm':'',
+                'searchInstNm':'','searchInstCd':'all','focusPerPageYn':''
+              }
+              headers={'Referer':base}
+              if csrf: headers['X-CSRF-TOKEN']=csrf
+              r=session.post(base,data=data,headers=headers,timeout=60)
+              r.raise_for_status()
+              (out/f'search_{kw}.html').write_bytes(r.content)
+              ss=BeautifulSoup(r.content,'html.parser')
+              rows=[]
+              for a in ss.select('a.tit[onclick*="fn_detail"]'):
+                  m=re.search(r"fn_detail\(this,'([^']+)','([^']+)'\)",a.get('onclick',''))
+                  if not m: continue
+                  tr=a.find_parent('tr')
+                  cells=[' '.join(td.get_text(' ',strip=True).split()) for td in tr.find_all('td')] if tr else []
+                  rows.append({'id':m.group(1),'type':m.group(2),'title':' '.join(a.get_text(' ',strip=True).split()),'cells':cells})
+              total_text=' '.join(x.get_text(' ',strip=True) for x in ss.select('.board_info, .total, .all_num, .pagination'))
+              results[kw]={'status':r.status_code,'bytes':len(r.content),'rows':rows,'total_text':total_text,'csrf':bool(csrf)}
+              time.sleep(.3)
+          (out/'search_probe.json').write_text(json.dumps(results,ensure_ascii=False,indent=2),encoding='utf-8')
+          print(json.dumps({k:{'count':len(v['rows']),'sample':v['rows'][:3]} for k,v in results.items()},ensure_ascii=False,indent=2))
           PY
-          find "$out" -maxdepth 1 -type f -printf '%f %s bytes\n'
       - name: Upload official fetch outputs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: p19-epeople-fetch
+          name: p19-epeople-search-probe
           path: ${{ runner.temp }}/p19-epeople-fetch
           if-no-files-found: warn
           retention-days: 1
