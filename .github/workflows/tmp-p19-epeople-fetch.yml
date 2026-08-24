@@ -1,0 +1,67 @@
+name: tmp-p19-epeople-fetch
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/tmp-p19-epeople-fetch.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe Common Crawl for official ePeople detail pages
+        shell: bash
+        run: |
+          set -euxo pipefail
+          out="$RUNNER_TEMP/p19-epeople-commoncrawl-probe"; mkdir -p "$out"
+          python -m pip install --disable-pip-version-check requests warcio beautifulsoup4
+          python - <<'PY'
+          import io,json,os,pathlib,re
+          import requests
+          from warcio.archiveiterator import ArchiveIterator
+          from bs4 import BeautifulSoup
+          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'p19-epeople-commoncrawl-probe'
+          s=requests.Session(); s.headers.update({'User-Agent':'P19ActualSourceResearch/1.0 contact=research@example.invalid'})
+          cols=s.get('https://index.commoncrawl.org/collinfo.json',timeout=60).json()
+          index=cols[0]['id']
+          api=f'https://index.commoncrawl.org/{index}-index'
+          target='www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseDetail.npaid'
+          params={'url':target,'matchType':'prefix','output':'json','filter':['status:200','mime:text/html'],'collapse':'urlkey','pageSize':'100'}
+          r=s.get(api,params=params,timeout=120)
+          (out/'index_response.txt').write_bytes(r.content)
+          records=[]
+          if r.ok:
+              for line in r.text.splitlines():
+                  try: records.append(json.loads(line))
+                  except: pass
+          samples=[]
+          for rec in records[:10]:
+              try:
+                  start=int(rec['offset']); length=int(rec['length']); url='https://data.commoncrawl.org/'+rec['filename']
+                  rr=s.get(url,headers={'Range':f'bytes={start}-{start+length-1}'},timeout=120)
+                  payload=''
+                  for wrec in ArchiveIterator(io.BytesIO(rr.content)):
+                      if wrec.rec_type=='response': payload=wrec.content_stream().read().decode('utf-8','replace'); break
+                  (out/f'sample_{len(samples):02d}.html').write_text(payload,encoding='utf-8')
+                  soup=BeautifulSoup(payload,'html.parser')
+                  text=' '.join(soup.get_text(' ',strip=True).split())
+                  samples.append({'url':rec.get('url'),'timestamp':rec.get('timestamp'),'bytes':len(payload),'title':soup.title.get_text(' ',strip=True) if soup.title else '', 'keywords':{k:(k in text) for k in ['주유소','석유','위험물','세차장','폐수']},'text_prefix':text[:1000]})
+              except Exception as e: samples.append({'url':rec.get('url'),'error':repr(e)})
+          result={'index':index,'query_url':r.url,'status':r.status_code,'record_count':len(records),'records':records[:100],'samples':samples}
+          (out/'results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8'); print(json.dumps({'index':index,'status':r.status_code,'record_count':len(records),'sample_urls':[x.get('url') for x in samples]},ensure_ascii=False,indent=2))
+          PY
+      - name: Upload Common Crawl probe
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p19-epeople-commoncrawl-probe
+          path: ${{ runner.temp }}/p19-epeople-commoncrawl-probe
+          if-no-files-found: warn
+          retention-days: 1
