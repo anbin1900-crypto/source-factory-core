@@ -13,56 +13,43 @@ permissions:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - name: Probe known public ePeople detail through SOAP
+      - name: Map known public ePeople detail identifier
         shell: bash
         run: |
           set -euxo pipefail
-          out="$RUNNER_TEMP/p19-epeople-item-probe"
-          mkdir -p "$out"
+          out="$RUNNER_TEMP/p19-epeople-item-map"; mkdir -p "$out"
           python - <<'PY'
-          import hashlib, html, json, os, pathlib, ssl, urllib.error, urllib.request, uuid
+          import hashlib, json, os, pathlib, ssl, urllib.error, urllib.request, uuid
           import xml.etree.ElementTree as ET
-          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'p19-epeople-item-probe'
-          endpoint='https://api.epeople.go.kr/soap/CivilAppealService'
-          known='6903173'
+          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'p19-epeople-item-map'; endpoint='https://api.epeople.go.kr/soap/CivilAppealService'; known='6903173'
           variants=[]
-          for typ in ('tqapttn','taol','2','3',''):
-              for field in ('civilNo','petiNo','faqNo'):
-                  vals={'civilNo':'','petiNo':'','faqNo':''}; vals[field]=known
-                  variants.append((f'{typ or "blank"}_{field}',typ,vals))
-          ctx=ssl.create_default_context(); results={}
-          def local(el): return el.tag.split('}',1)[-1]
-          for name,typ,vals in variants:
-              body=f'''<?xml version="1.0" encoding="UTF-8"?>
-          <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:q="http://soap.civil.pc.acrc/" xmlns:hdr="http://apache.org/headers"><soapenv:Header><hdr:ComMsgHeader><RequestMsgID>{uuid.uuid4()}</RequestMsgID><ServiceKey></ServiceKey><RequestTime>20260825053000</RequestTime></hdr:ComMsgHeader></soapenv:Header><soapenv:Body><q:getSimilarityCaseItem><CaseItemRequest><type>{html.escape(typ)}</type><civilNo>{vals['civilNo']}</civilNo><petiNo>{vals['petiNo']}</petiNo><faqNo>{vals['faqNo']}</faqNo></CaseItemRequest></q:getSimilarityCaseItem></soapenv:Body></soapenv:Envelope>'''.encode('utf-8')
+          for field in ('civilNo','petiNo','faqNo'):
+              v={'civilNo':'','petiNo':'','faqNo':''}; v[field]=known; variants.append((field,v))
+          results={}; ctx=ssl.create_default_context()
+          for name,v in variants:
+              body=f'''<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:q="http://soap.civil.pc.acrc/" xmlns:hdr="http://apache.org/headers"><soapenv:Header><hdr:ComMsgHeader><RequestMsgID>{uuid.uuid4()}</RequestMsgID><ServiceKey></ServiceKey><RequestTime>20260825054000</RequestTime></hdr:ComMsgHeader></soapenv:Header><soapenv:Body><q:getSimilarityCaseItem><CaseItemRequest><type>tqapttn</type><civilNo>{v['civilNo']}</civilNo><petiNo>{v['petiNo']}</petiNo><faqNo>{v['faqNo']}</faqNo></CaseItemRequest></q:getSimilarityCaseItem></soapenv:Body></soapenv:Envelope>'''.encode()
               req=urllib.request.Request(endpoint,data=body,method='POST',headers={'Content-Type':'text/xml; charset=UTF-8','SOAPAction':'','User-Agent':'P19ActualSourceResearch/1.0'})
               try:
-                  with urllib.request.urlopen(req,timeout=30,context=ctx) as r: data=r.read(); status=r.status
+                  with urllib.request.urlopen(req,timeout=20,context=ctx) as r: data=r.read(); status=r.status
               except urllib.error.HTTPError as e: data=e.read(); status=e.code
               except Exception as e: results[name]={'error':repr(e)}; continue
-              (out/f'{name}.xml').write_bytes(data)
-              parsed={'status':status,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()}
+              (out/f'{name}.xml').write_bytes(data); item={}
               try:
                   root=ET.fromstring(data)
-                  item={}
                   for el in root.iter():
-                      k=local(el)
-                      if k in ('errCode','errMsg','totcnt','ancName','ansContent','catName','content','deptCode','deptName','deptTelNo','faqNo','regDate','title'):
-                          item[k]=el.text or ''
-                  parsed['item']=item
-              except Exception as e: parsed['parse_error']=repr(e)
-              results[name]=parsed
-          (out/'results.json').write_text(json.dumps(results,ensure_ascii=False,indent=2),encoding='utf-8')
-          print(json.dumps(results,ensure_ascii=False,indent=2))
+                      k=el.tag.split('}',1)[-1]
+                      if k in ('errCode','errMsg','totcnt','ancName','ansContent','catName','content','deptCode','deptName','deptTelNo','faqNo','regDate','title'): item[k]=el.text or ''
+              except Exception as e: item={'parse_error':repr(e)}
+              results[name]={'status':status,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'item':item}
+          (out/'results.json').write_text(json.dumps(results,ensure_ascii=False,indent=2),encoding='utf-8'); print(json.dumps(results,ensure_ascii=False,indent=2))
           PY
-      - name: Upload item probe
+      - name: Upload item map
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: p19-epeople-item-probe
-          path: ${{ runner.temp }}/p19-epeople-item-probe
-          if-no-files-found: warn
+          name: p19-epeople-item-map
+          path: ${{ runner.temp }}/p19-epeople-item-map
           retention-days: 1
