@@ -13,71 +13,56 @@ permissions:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
-      - name: Fetch official ePeople API guide and examples
+      - name: Probe known public ePeople detail through SOAP
         shell: bash
         run: |
           set -euxo pipefail
-          out="$RUNNER_TEMP/p19-epeople-api-guide"
+          out="$RUNNER_TEMP/p19-epeople-item-probe"
           mkdir -p "$out"
           python - <<'PY'
-          import hashlib, json, os, pathlib, re, ssl, time, urllib.parse, urllib.request
-          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'p19-epeople-api-guide'
-          starts=['https://api.epeople.go.kr/guide/','http://api.epeople.go.kr/guide/','https://api.epeople.go.kr/']
-          queue=[(u,0) for u in starts]; seen=set(); manifest=[]; ctx=ssl.create_default_context()
-          def fetch(url):
-              last=None
-              for n in range(3):
-                  try:
-                      req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 (compatible; P19ActualSourceResearch/1.0)','Accept':'text/html,application/javascript,text/css,application/json,text/plain,*/*'})
-                      with urllib.request.urlopen(req,timeout=30,context=ctx) as r:
-                          return r.geturl(),r.status,r.headers.get('content-type',''),r.read()
-                  except Exception as e: last=e; time.sleep(n+1)
-              raise last
-          while queue and len(seen)<80:
-              url,depth=queue.pop(0)
-              if url in seen: continue
-              seen.add(url)
+          import hashlib, html, json, os, pathlib, ssl, urllib.error, urllib.request, uuid
+          import xml.etree.ElementTree as ET
+          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'p19-epeople-item-probe'
+          endpoint='https://api.epeople.go.kr/soap/CivilAppealService'
+          known='6903173'
+          variants=[]
+          for typ in ('tqapttn','taol','2','3',''):
+              for field in ('civilNo','petiNo','faqNo'):
+                  vals={'civilNo':'','petiNo':'','faqNo':''}; vals[field]=known
+                  variants.append((f'{typ or "blank"}_{field}',typ,vals))
+          ctx=ssl.create_default_context(); results={}
+          def local(el): return el.tag.split('}',1)[-1]
+          for name,typ,vals in variants:
+              body=f'''<?xml version="1.0" encoding="UTF-8"?>
+          <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:q="http://soap.civil.pc.acrc/" xmlns:hdr="http://apache.org/headers"><soapenv:Header><hdr:ComMsgHeader><RequestMsgID>{uuid.uuid4()}</RequestMsgID><ServiceKey></ServiceKey><RequestTime>20260825053000</RequestTime></hdr:ComMsgHeader></soapenv:Header><soapenv:Body><q:getSimilarityCaseItem><CaseItemRequest><type>{html.escape(typ)}</type><civilNo>{vals['civilNo']}</civilNo><petiNo>{vals['petiNo']}</petiNo><faqNo>{vals['faqNo']}</faqNo></CaseItemRequest></q:getSimilarityCaseItem></soapenv:Body></soapenv:Envelope>'''.encode('utf-8')
+              req=urllib.request.Request(endpoint,data=body,method='POST',headers={'Content-Type':'text/xml; charset=UTF-8','SOAPAction':'','User-Agent':'P19ActualSourceResearch/1.0'})
               try:
-                  final,status,ctype,data=fetch(url)
-                  ext='.html'
-                  if 'javascript' in ctype or urllib.parse.urlparse(final).path.endswith('.js'): ext='.js'
-                  elif 'css' in ctype or urllib.parse.urlparse(final).path.endswith('.css'): ext='.css'
-                  elif 'json' in ctype: ext='.json'
-                  name=f'{len(manifest):03d}_'+hashlib.sha256(url.encode()).hexdigest()[:12]+ext
-                  (out/name).write_bytes(data)
-                  rec={'url':url,'final_url':final,'status':status,'content_type':ctype,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'file':name}
-                  text=data.decode('utf-8','ignore')
-                  rec['matches']={k:len(re.findall(k,text,re.I)) for k in ['ServiceKey','getSimilarityCaseList','CivilAppealService','service.?key','인증키','활용신청','키발급']}
-                  links=[]
-                  if depth<2 and ('html' in ctype or ext=='.html'):
-                      for v in re.findall(r'''(?:href|src)=["']([^"'#]+)''',text,re.I):
-                          nxt=urllib.parse.urljoin(final,v)
-                          p=urllib.parse.urlparse(nxt)
-                          if p.hostname=='api.epeople.go.kr' and ('/guide' in p.path or p.path.endswith(('.js','.css','.json','.do','.action','.html','.jsp'))):
-                              links.append(nxt)
-                              if nxt not in seen: queue.append((nxt,depth+1))
-                  rec['links']=links
-                  manifest.append(rec)
-              except Exception as e: manifest.append({'url':url,'error':repr(e)})
-          (out/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
-          searchable=[]
-          for p in out.iterdir():
-              if p.suffix in ('.html','.js','.css','.json'):
-                  t=p.read_text(encoding='utf-8',errors='ignore')
-                  for pat in ('ServiceKey','getSimilarityCaseList','CivilAppealService','인증키','활용신청','발급'):
-                      for m in re.finditer(pat,t,re.I): searchable.append({'file':p.name,'pattern':pat,'snippet':t[max(0,m.start()-300):m.end()+500]})
-          (out/'matches.json').write_text(json.dumps(searchable,ensure_ascii=False,indent=2),encoding='utf-8')
-          print(json.dumps(manifest,ensure_ascii=False,indent=2))
-          print('MATCH_COUNT',len(searchable))
+                  with urllib.request.urlopen(req,timeout=30,context=ctx) as r: data=r.read(); status=r.status
+              except urllib.error.HTTPError as e: data=e.read(); status=e.code
+              except Exception as e: results[name]={'error':repr(e)}; continue
+              (out/f'{name}.xml').write_bytes(data)
+              parsed={'status':status,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()}
+              try:
+                  root=ET.fromstring(data)
+                  item={}
+                  for el in root.iter():
+                      k=local(el)
+                      if k in ('errCode','errMsg','totcnt','ancName','ansContent','catName','content','deptCode','deptName','deptTelNo','faqNo','regDate','title'):
+                          item[k]=el.text or ''
+                  parsed['item']=item
+              except Exception as e: parsed['parse_error']=repr(e)
+              results[name]=parsed
+          (out/'results.json').write_text(json.dumps(results,ensure_ascii=False,indent=2),encoding='utf-8')
+          print(json.dumps(results,ensure_ascii=False,indent=2))
           PY
-      - name: Upload API guide files
+      - name: Upload item probe
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: p19-epeople-api-guide
-          path: ${{ runner.temp }}/p19-epeople-api-guide
+          name: p19-epeople-item-probe
+          path: ${{ runner.temp }}/p19-epeople-item-probe
           if-no-files-found: warn
           retention-days: 1
