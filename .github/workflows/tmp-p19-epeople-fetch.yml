@@ -13,54 +13,64 @@ permissions:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
-      - name: Probe official ePeople SOAP read operations
+      - name: Query official ePeople similarity-case search
         shell: bash
         run: |
           set -euxo pipefail
-          out="$RUNNER_TEMP/p19-epeople-soap-probe"
+          out="$RUNNER_TEMP/p19-epeople-query-probe"
           mkdir -p "$out"
           python - <<'PY'
-          import hashlib, json, os, pathlib, ssl, urllib.error, urllib.request, uuid
-          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'p19-epeople-soap-probe'
+          import hashlib, html, json, os, pathlib, ssl, time, urllib.error, urllib.request, uuid
+          import xml.etree.ElementTree as ET
+          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'p19-epeople-query-probe'
           endpoint='https://api.epeople.go.kr/soap/CivilAppealService'
-          def envelope(key='', qualified_children=False, include_header=True):
-              p='q:' if qualified_children else ''
-              h=''
-              if include_header:
-                  h=f'''<soapenv:Header><hdr:ComMsgHeader><RequestMsgID>{uuid.uuid4()}</RequestMsgID><ServiceKey>{key}</ServiceKey><RequestTime>20260825051000</RequestTime></hdr:ComMsgHeader></soapenv:Header>'''
-              return f'''<?xml version="1.0" encoding="UTF-8"?>
-          <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:q="http://soap.civil.pc.acrc/" xmlns:hdr="http://apache.org/headers">
-          {h}<soapenv:Body><q:getSimilarityCaseList><{p}CaseListRequest><{p}nowPageNo>1</{p}nowPageNo><{p}pageMg>10</{p}pageMg><{p}title>주유소</{p}title><{p}content>주유소</{p}content></{p}CaseListRequest></q:getSimilarityCaseList></soapenv:Body></soapenv:Envelope>'''.encode('utf-8')
-          variants=[
-            ('empty_unqualified',envelope('',False,True)),
-            ('empty_qualified',envelope('',True,True)),
-            ('test_unqualified',envelope('TEST',False,True)),
-            ('no_header',envelope('',False,False)),
+          queries=[
+            ('known_both','신용카드 부정 사용','자동세차장 키오스크에 신용카드를 넣고 세차를 하였는데 깜박하고 카드를 빼지 않아 누군가가 제 카드로 세차비를 결제 하였을때 처리 절차가 어떻게 되나요?'),
+            ('known_title','신용카드 부정 사용',''),
+            ('known_content','', '자동세차장 키오스크에 신용카드를 넣고 세차를 하였는데 깜박하고 카드를 빼지 않아 누군가가 제 카드로 세차비를 결제 하였을때 처리 절차가 어떻게 되나요?'),
+            ('station_permit','주유소 허가 변경','주유소를 신설하거나 시설을 변경할 때 필요한 허가와 등록 절차가 궁금합니다.'),
+            ('carwash_wastewater','세차장 폐수','자동세차장이나 셀프세차장에서 발생하는 폐수의 처리와 신고 절차가 궁금합니다.'),
+            ('fake_petroleum','가짜석유 품질','주유소에서 판매한 석유제품이 가짜석유 또는 품질부적합인지 검사하고 신고하는 절차가 궁금합니다.'),
+            ('hazmat_fire','주유소 위험물 화재','주유소의 위험물 시설과 화재 예방 및 흡연 단속 기준이 궁금합니다.'),
+            ('soil_vapor','주유소 토양오염 유증기','주유소 지하탱크 누출과 토양오염 또는 유증기 민원 처리 절차가 궁금합니다.'),
           ]
-          manifest=[]; ctx=ssl.create_default_context()
-          for name,body in variants:
+          ctx=ssl.create_default_context(); allres={}
+          def local(el): return el.tag.split('}',1)[-1]
+          for name,title,content in queries:
+              body=f'''<?xml version="1.0" encoding="UTF-8"?>
+          <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:q="http://soap.civil.pc.acrc/" xmlns:hdr="http://apache.org/headers"><soapenv:Header><hdr:ComMsgHeader><RequestMsgID>{uuid.uuid4()}</RequestMsgID><ServiceKey></ServiceKey><RequestTime>20260825052000</RequestTime></hdr:ComMsgHeader></soapenv:Header><soapenv:Body><q:getSimilarityCaseList><CaseListRequest><nowPageNo>1</nowPageNo><pageMg>20</pageMg><title>{html.escape(title)}</title><content>{html.escape(content)}</content></CaseListRequest></q:getSimilarityCaseList></soapenv:Body></soapenv:Envelope>'''.encode('utf-8')
               req=urllib.request.Request(endpoint,data=body,method='POST',headers={'Content-Type':'text/xml; charset=UTF-8','SOAPAction':'','User-Agent':'P19ActualSourceResearch/1.0'})
               try:
-                  with urllib.request.urlopen(req,timeout=35,context=ctx) as r:
-                      data=r.read(); status=r.status; ctype=r.headers.get('content-type')
+                  with urllib.request.urlopen(req,timeout=40,context=ctx) as r:
+                      data=r.read(); status=r.status
               except urllib.error.HTTPError as e:
-                  data=e.read(); status=e.code; ctype=e.headers.get('content-type') if e.headers else None
+                  data=e.read(); status=e.code
               except Exception as e:
-                  manifest.append({'name':name,'error':repr(e)}); continue
-              (out/f'{name}_request.xml').write_bytes(body)
-              (out/f'{name}_response.xml').write_bytes(data)
-              manifest.append({'name':name,'status':status,'content_type':ctype,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
-          (out/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
-          print(json.dumps(manifest,ensure_ascii=False,indent=2))
+                  allres[name]={'error':repr(e)}; continue
+              (out/f'{name}_request.xml').write_bytes(body); (out/f'{name}_response.xml').write_bytes(data)
+              parsed={'status':status,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'query_title':title,'query_content':content,'items':[]}
+              try:
+                  root=ET.fromstring(data)
+                  for el in root.iter():
+                      if local(el)=='CaseListResponse':
+                          for ch in list(el):
+                              if local(ch) in ('errCode','errMsg','totcnt'): parsed[local(ch)]=ch.text or ''
+                      if local(el)=='CaseListInfo':
+                          item={local(ch):(ch.text or '') for ch in list(el)}
+                          parsed['items'].append(item)
+              except Exception as e: parsed['parse_error']=repr(e)
+              allres[name]=parsed; time.sleep(.5)
+          (out/'results.json').write_text(json.dumps(allres,ensure_ascii=False,indent=2),encoding='utf-8')
+          print(json.dumps({k:{'status':v.get('status'),'totcnt':v.get('totcnt'),'items':v.get('items',[])[:5],'error':v.get('error')} for k,v in allres.items()},ensure_ascii=False,indent=2))
           PY
-      - name: Upload SOAP probe responses
+      - name: Upload query responses
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: p19-epeople-soap-probe
-          path: ${{ runner.temp }}/p19-epeople-soap-probe
+          name: p19-epeople-query-probe
+          path: ${{ runner.temp }}/p19-epeople-query-probe
           if-no-files-found: warn
           retention-days: 1
