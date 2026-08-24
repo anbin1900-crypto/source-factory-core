@@ -1,0 +1,36 @@
+name: p19-epeople-readonly
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PYTHONIOENCODING: utf-8
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch 국민신문고 public sources (read only)
+        run: python tools/p19_epeople_probe.py
+      - name: Show probe summary
+        if: always()
+        run: |
+          find p19_probe_out -maxdepth 1 -type f -printf '%f %s bytes\n' | sort || true
+          cat p19_probe_out/summary.json || true
+      - name: Upload probe artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p19-epeople-probe
+          path: p19_probe_out
+          if-no-files-found: warn
+          retention-days: 1
