@@ -7,6 +7,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: p19-epeople-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 env:
   PYTHONIOENCODING: utf-8
 
@@ -19,23 +23,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Fetch 국민신문고 public sources (read only)
-        run: python tools/p19_epeople_probe.py
       - name: Probe 국민신문고 search results and detail pages (read only)
         run: python tools/p19_epeople_search_probe.py
-      - name: Show probe summaries
+      - name: Show search probe summary
         if: always()
         run: |
-          find p19_probe_out p19_search_probe_out -maxdepth 1 -type f -printf '%p %s bytes\n' | sort || true
+          find p19_search_probe_out -maxdepth 1 -type f -printf '%p %s bytes\n' | sort || true
           cat p19_search_probe_out/search_probe.json || true
-      - name: Upload source probe artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: p19-epeople-probe
-          path: p19_probe_out
-          if-no-files-found: warn
-          retention-days: 1
       - name: Upload search probe artifact
         if: always()
         uses: actions/upload-artifact@v4
