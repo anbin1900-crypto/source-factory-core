@@ -1,0 +1,57 @@
+name: tmp-p19-epeople-fetch
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/tmp-p19-epeople-fetch.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch official ePeople API and public pages
+        shell: bash
+        run: |
+          set -euxo pipefail
+          out="$RUNNER_TEMP/p19-epeople-fetch"
+          mkdir -p "$out"
+          python - <<'PY'
+          import json, pathlib, urllib.request, ssl
+          out=pathlib.Path(__import__('os').environ['RUNNER_TEMP'])/'p19-epeople-fetch'
+          urls={
+            'wsdl':'https://api.epeople.go.kr/soap/CivilAppealService?wsdl=',
+            'soap_index':'https://api.epeople.go.kr/soap',
+            'list':'https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseList.npaid',
+            'detail_6903173':'https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseDetail.npaid?dutySctnNm=tqapttn&epUnionSn=6903173',
+            'detail_6902266':'https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseDetail.npaid?dutySctnNm=tqapttn&epUnionSn=6902266',
+          }
+          results={}
+          ctx=ssl.create_default_context()
+          for name,url in urls.items():
+              req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 (compatible; P19Research/1.0)','Accept':'*/*'})
+              try:
+                  with urllib.request.urlopen(req,timeout=60,context=ctx) as r:
+                      data=r.read()
+                      (out/f'{name}.bin').write_bytes(data)
+                      results[name]={'url':url,'status':r.status,'content_type':r.headers.get('content-type'),'bytes':len(data)}
+              except Exception as e:
+                  results[name]={'url':url,'error':repr(e)}
+          (out/'summary.json').write_text(json.dumps(results,ensure_ascii=False,indent=2),encoding='utf-8')
+          print(json.dumps(results,ensure_ascii=False,indent=2))
+          PY
+          find "$out" -maxdepth 1 -type f -printf '%f %s bytes\n'
+      - name: Upload official fetch outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p19-epeople-fetch
+          path: ${{ runner.temp }}/p19-epeople-fetch
+          if-no-files-found: warn
+          retention-days: 1
