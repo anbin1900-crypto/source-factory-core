@@ -1,0 +1,364 @@
+{
+  "object_type": "SF028_STRICT_ACTIVE_CORE_MANIFEST",
+  "schema_version": "3.0.0-STRICT",
+  "run_id": "SF028_STRICT_20260801_153614",
+  "generated_at": "2026-08-01T06:36:25+00:00",
+  "source_authority": "D:\\SOURCE FACTORY",
+  "github_role": "REPORT_LEDGER_ONLY_NOT_SOURCE_AUTHORITY",
+  "new_root": "E:\\SOURCE FACTORY\\source-factory-active-core",
+  "old_root_deleted": false,
+  "file_count_before_reports": 70,
+  "total_size_bytes_before_reports": 966859,
+  "files": [
+    {
+      "path": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "size_bytes": 259631,
+      "sha256": "c6b50d79c5f1beaa1f576c17249b0a401ce6c32d142556aa0a85f22fb178dfd0"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package-lock.json",
+      "size_bytes": 30823,
+      "sha256": "7e8957bf36f1aafa46ce68e20d22fe54e2de3bbcf3006d7acf89bff0c361a2b3"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package.json",
+      "size_bytes": 488,
+      "sha256": "6a4631644148e4d3597c35438684b47fe43b377cf945b8b02203008ed86d9a1f"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/safePanelV0106RecoveryHandlers.js",
+      "size_bytes": 39967,
+      "sha256": "d0d50c65674cfb833084d879d501b2737cd0c0d1d45821cdff5bab80e02b5da6"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "size_bytes": 24368,
+      "sha256": "5748d5695934f2a4a7d55b66f11bd97a70054fe89d5b536d63c1233653fafe27"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel.css",
+      "size_bytes": 2506,
+      "sha256": "5ff22123dda56c3cccd5d966ee08b5cb3a201c09bef9de3b0f256374009529c0"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel.html",
+      "size_bytes": 6025,
+      "sha256": "a08afb38cb227ba7aa9b47712b52e0490e5d96527b25e386ed11824f97b25ec8"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_main.js",
+      "size_bytes": 27408,
+      "sha256": "291c71a98fdf19fec9e14ef0cc10f3664daa7a9f061b299d2733c3367ee44f58"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_preload.js",
+      "size_bytes": 2924,
+      "sha256": "7779b962ae4359bc5d87ee24cb5f1e6cd7aac0cdbec53a8a2d922aabd3728303"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_renderer.js",
+      "size_bytes": 32035,
+      "sha256": "215ce8d4235c5a085c35bd989f7049adeef9361a3bebdee82c62fcdac1e46ed6"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_terminal.css",
+      "size_bytes": 3340,
+      "sha256": "505b14e2dad6e1c005a823f98695a95d3659b54282e04ff48f139304baf5aaca"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_terminal.html",
+      "size_bytes": 2885,
+      "sha256": "f9fad7376ba5cfaad0dbd7535d443675b21520814f37f0ddc061b98d9274a799"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_terminal_preload.js",
+      "size_bytes": 706,
+      "sha256": "4134806ab92ea64b90dd252a0642694ca67f44cb3c19028a6cb41f29c0761d7b"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_terminal_renderer.js",
+      "size_bytes": 7204,
+      "sha256": "8ca3223e411e823e22f70ef9ca370046884d0d37d8e96ab6f334663cf25b0d70"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/commanderReportController.js",
+      "size_bytes": 10672,
+      "sha256": "8a2f80477f7516ed3986c0ef209d8cff1aa74a38c6457d4515f904a6af834706"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/constitutionLoader.js",
+      "size_bytes": 6016,
+      "sha256": "9f5128870e49530fdeb0555177cb6f9fbc3d78539d310ef29e8e3cb0bdf23b86"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/promptBuilder.js",
+      "size_bytes": 10655,
+      "sha256": "b9cd9a2895d0a6fc70172875bba25659a59e11753a95b71ff9ab9445db8e08de"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+      "size_bytes": 18723,
+      "sha256": "b1d7b944589cc92ae306f2a0c47ace5c5e6e2b11820ef79092d67a3f0982acdd"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/taskInstructionManager.js",
+      "size_bytes": 5486,
+      "sha256": "e39ca49bd8171b7d33457ed16934b34a60ca137d4c46b47e56c18b02f241656e"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js",
+      "size_bytes": 65469,
+      "sha256": "bc2575be3cdf9e17ea0ea748d4e6fa7cf5956e0b82a5b3c209b015afa3604370"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage2IpcHandlers.js",
+      "size_bytes": 7586,
+      "sha256": "a869dafbfbf87b0d84393551f6851f774ef88d9e32937c7c7f12f1ef6b71a713"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage3IpcHandlers.js",
+      "size_bytes": 8093,
+      "sha256": "a5351080ab2dc3e79110e46862f58418b99cf933d588f49b405ae739f1f3714d"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4HardWindowControl.js",
+      "size_bytes": 10090,
+      "sha256": "bb8303c060cabfda2fa851e2f5ace7967040ae2e89334d2d3a8e4f5c518ea2ff"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelIpcHandlers.js",
+      "size_bytes": 17516,
+      "sha256": "185ce6f86eebc140b72b36d81937d06dd31881f23324391b0173bf64b1fcc2dd"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelLaunchControlV07Main.js",
+      "size_bytes": 12357,
+      "sha256": "16ed805ab71626605c9459a96d8f5c2cd68bfb9eae2a89e89916f4efbc3ea366"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelLaunchControlV08Main.js",
+      "size_bytes": 11015,
+      "sha256": "b877fc92cc64a6dbf2d07726d8bcd85e5f8c6711f53c449fa85bc5212ed67cc7"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4ProjectPanelV04MainInjection.js",
+      "size_bytes": 19007,
+      "sha256": "726265e6ba4757ad6ff068c1f7c0f69ba241d56d05a0dc5825ad93894c36f635"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4ProjectPanelV06AutoFixMain.js",
+      "size_bytes": 30443,
+      "sha256": "fadf00d0f28996cbdb786a9b947b3fbb6da4c58152dc69b0b18eb27447f3f639"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4StandaloneLaunchPanelV09Main.js",
+      "size_bytes": 12940,
+      "sha256": "5be29be81806fbe765b3ee3b60dc5a25b819206f4176de5fca9d0a6f1905be7c"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/windowManager.js",
+      "size_bytes": 10980,
+      "sha256": "b30706181d3f3d5a26a1103a2bd5f9845294c257ceb83553170f96b52386fd56"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/preload/gptPreload.js",
+      "size_bytes": 7233,
+      "sha256": "e8a061fe0752faab20e14f982722d65e8165419200261ac6b00265f2c7521da2"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/buttonHandlers.js",
+      "size_bytes": 30220,
+      "sha256": "cee1e4b9145a2849a05a062ad48e30cbe64358853403cce932c35c66f4047c18"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/index.html",
+      "size_bytes": 9059,
+      "sha256": "0c222921f945cc6d4eb212841fc09d9092d594225bf721532679001267891017"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/koreanLabels.js",
+      "size_bytes": 6146,
+      "sha256": "c34007feaf0e4f222ef0131add1e9e4e2d10ab9be27e0efc46fe1fa0e041b8b5"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage2MenuView.js",
+      "size_bytes": 9254,
+      "sha256": "f7b8a35c0ed247e028b5e62ba696f1c7f559d3de442683375bcff3f8118962ab"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3CommanderPanel.css",
+      "size_bytes": 3778,
+      "sha256": "a867ae4c724812d13a394ede36b4b594409bb4fa5a4e0af0f0eb373461f3af65"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3CommanderPanel.js",
+      "size_bytes": 12766,
+      "sha256": "4e76afc96f52ee4ba7e5a58f79ba1cf47fe45093e8a3f154dcadec6c90bd9612"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3CommanderReturnInboxPanel.css",
+      "size_bytes": 2794,
+      "sha256": "bae5708f6528646d1419f4e22a2ccd01f27d85f3b6b4e55d69d7994885db7e11"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3CommanderReturnInboxPanel.js",
+      "size_bytes": 11238,
+      "sha256": "1d358731d1047d82688dc954262e93da9a9ebf0ae74b9cc210afb044699dfca4"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3PanelAttach.js",
+      "size_bytes": 1715,
+      "sha256": "cd9409d2251e50755148f90b61ceef10c35788c24ca3561cba0e5b48a3bc5b9c"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3WorkerDispatchInboxPanel.css",
+      "size_bytes": 1780,
+      "sha256": "feab5a724f70bac48b91933513aba8bd8e587edb1319c2c594e17ecca418bb5e"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3WorkerDispatchInboxPanel.js",
+      "size_bytes": 10228,
+      "sha256": "b6e2c4bed37c6bd73b63eeadedc1ea45efd56583bdefb50b6aa4a11db9fc61c7"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3WorkerReturnPanel.css",
+      "size_bytes": 2610,
+      "sha256": "cbde7893111e6eb10dd4dec462880d6f53758aa5a5c5362ff0f04c35096d8c19"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3WorkerReturnPanel.js",
+      "size_bytes": 12216,
+      "sha256": "ff07db7c403279b59d116ba5b97757515a2b9a1965e73f03dee9a39562c71651"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4PanelAttach.js",
+      "size_bytes": 16918,
+      "sha256": "3bfe7ad392dac29c14975e2d16fe8750685aff46ba400e4be0e5331001614f18"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4PanelLaunchControlV07.css",
+      "size_bytes": 2094,
+      "sha256": "eae6bf08743c7751e0124399b3a6d52ba27190f35e2c86a40786382226d6c718"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4PanelLaunchControlV07.js",
+      "size_bytes": 9747,
+      "sha256": "8d0d69af7054edb2e4401d9e504615436a5dc8875a1a7b1981e7908701c7c22d"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4PanelLaunchControlV08.css",
+      "size_bytes": 2462,
+      "sha256": "bdf931a251ce986a6aea8dc745857961d58b766c986209a892cf2b9f646f997e"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4PanelLaunchControlV08.js",
+      "size_bytes": 9546,
+      "sha256": "782339ba0829ef755edeb0561707cd8e1e1a03779b1d16be74b7a6a83b1e1d9f"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.css",
+      "size_bytes": 3291,
+      "sha256": "7c00550b19a1803c369f143d028ded45826ebdbeacd368995e38130538e0ad96"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.html",
+      "size_bytes": 4292,
+      "sha256": "d4abc6c008e5e95740bb6e74a704058675c7e809073bca0f8bddfa05c5d55426"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.js",
+      "size_bytes": 6154,
+      "sha256": "e2a28ca37a3b2f62afad0dc92889ab74db25e1f3c2a0c5ac34320e42907edfdb"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelPipelineV02.js",
+      "size_bytes": 6420,
+      "sha256": "d707c166378c39f3c18114ad66c892c7262c2f914f61ea99f13a860cdec3e5c6"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelPipelineV03.js",
+      "size_bytes": 4876,
+      "sha256": "22e83a6439fa36594ed91ffc0913e540fa45080686d1fcc203225acd92884098"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelPipelineV04.js",
+      "size_bytes": 7529,
+      "sha256": "f50fe7be6630b409adef9b363f412d2ff7bccba2cfa5bf4484f4dd8b4264a17d"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelPipelineV05Cleanup.css",
+      "size_bytes": 1249,
+      "sha256": "1542bffa54a7e7c9e4e89be1ae295583fb130597eb76673f83d822459f7852b7"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelPipelineV05Cleanup.js",
+      "size_bytes": 11366,
+      "sha256": "e9cb890e2924a4093274962a6d15a57d7a13450ef1ed1daf8902d7c85cbf18a3"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelV06AutoFix.css",
+      "size_bytes": 1224,
+      "sha256": "08cb49a19d8533f9363867cf1605bf10ba995902e1f72d3ad76aa081ad09e162"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelV06AutoFix.js",
+      "size_bytes": 12070,
+      "sha256": "cb36b39721c33571d082e804b5e1c4927706e90830f27168bbecc5866e926eec"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelV06TopFix.css",
+      "size_bytes": 2425,
+      "sha256": "f9f154de36a262b7b10c3fdaa792a5eff3cfb4d7801e4806094ba0fd22cfae0c"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelV06TopFix.js",
+      "size_bytes": 14496,
+      "sha256": "90f554cede44ecdeece876338b760a225e1b2a29cea4ec28e37e1da25818e30c"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4StandaloneLaunchPanelV09.css",
+      "size_bytes": 3315,
+      "sha256": "194497a09114ffc044407d1fc25f2b53efef8bd3db1e9ade936eb3a2eb39586f"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4StandaloneLaunchPanelV09.html",
+      "size_bytes": 3155,
+      "sha256": "a78bf758303a215f2d24b84742579f2a927653ae67626615ea864e7e2554fe4f"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4StandaloneLaunchPanelV09.js",
+      "size_bytes": 6354,
+      "sha256": "c62a3b4e1976f00ceec7bdd87fe21fe87a112f819818aa8daaf0e21eaf56d6fa"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/statusView.js",
+      "size_bytes": 6418,
+      "sha256": "f0724351ad61f3f4c64aae7f1f4dc66b5a0c40d4664caca1f96fdf531fd30f02"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/styles.css",
+      "size_bytes": 6721,
+      "sha256": "faa4d5020ee3eafe77ceb453a5948d3bffa31106b31e68cbe9d40395b15252b5"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/windowRegistry.js",
+      "size_bytes": 3280,
+      "sha256": "48aed30496f180357f3d7f264d6695195d2c41755b2bdab117275e3de7600bb9"
+    },
+    {
+      "path": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/tools/stage4_verify_candidate.js",
+      "size_bytes": 1830,
+      "sha256": "02cf4b72c982c93a04ce51f4cf154bb2afc2127ee86f0f04c510cd28d9a6ac59"
+    },
+    {
+      "path": "INSTALL_ACTIVE_CORE_DEPENDENCIES.ps1",
+      "size_bytes": 452,
+      "sha256": "179bb5d25c2ebbd75fb9b66af6e43609c97ec2426c4e39097d690e12b0403b77"
+    },
+    {
+      "path": "RUN_SF4_ACTIVE_CORE_SAFE_PANEL.bat",
+      "size_bytes": 780,
+      "sha256": "492e9c703f37fd4dc991dcf0e0d53fe206bf8ec4104584e45649b736fe6d0ff6"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "object_type": "SF028_SOURCE_AUTHORITY_CORRECTION",
+  "schema_version": "1.0.0",
+  "task_id": "SF_028_SOURCE_FACTORY_ACTIVE_CORE_MIGRATION",
+  "created_at": "2026-08-01T05:23:00Z",
+  "status": "AUTHORITATIVE_CORRECTION",
+  "correction": {
+    "source_factory_authoritative_source": "D:\\SOURCE FACTORY",
+    "runtime_entry_authority": "D:\\SOURCE FACTORY\\RUN_SF4_SAFE_PANEL_ONLY.bat",
+    "github_connection_started": "2026-07-31",
+    "github_role": "INDEPENDENT_EXTERNAL_LEDGER_AND_COLLABORATION_REPOSITORY",
+    "github_is_source_authority": false,
+    "github_must_not_backfill_local_runtime": true,
+    "github_files_may_be_newer_or_different_from_local_runtime": true
+  },
+  "sf028_migration_policy": {
+    "extract_only_from_old_root": true,
+    "select_by_actual_runtime_reachability": true,
+    "missing_default_file_behavior": "REPORT_AS_ABSENT_IN_OLD_ROOT; DO_NOT_FETCH_FROM_GITHUB; DO_NOT_FAIL_IF_NOT_RUNTIME_REACHABLE",
+    "delete_old_root": "NOT_AUTHORIZED",
+    "production_source_modify": "NOT_RUN"
+  },
+  "supersedes_inference": "The prior inference that D:\\SOURCE FACTORY was behind GitHub main and should be supplemented from GitHub is invalid."
+}

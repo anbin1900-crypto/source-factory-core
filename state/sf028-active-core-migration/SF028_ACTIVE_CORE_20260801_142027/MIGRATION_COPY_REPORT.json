@@ -1,0 +1,3893 @@
+{
+  "object_type": "SF028_MIGRATION_COPY_REPORT",
+  "schema_version": "2.0.0",
+  "run_id": "SF028_ACTIVE_CORE_20260801_142027",
+  "generated_at": "2026-08-01T05:20:40+00:00",
+  "old_root": "D:\\SOURCE FACTORY",
+  "new_root": "E:\\SOURCE FACTORY\\source-factory-active-core",
+  "archived_incomplete_root": "E:\\SOURCE FACTORY\\SF_028_INCOMPLETE_20260801_142027",
+  "selected_file_count": 140,
+  "generated_file_count": 3,
+  "copied_file_count": 140,
+  "copy_failures": [],
+  "selection": [
+    {
+      "source": "D:\\SOURCE FACTORY\\20260701\\20260701-1.txt",
+      "destination": "20260701/20260701-1.txt",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:python_string_path"
+      ],
+      "inbound_from": [
+        "source_factory_extract_workers.py"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\20260701\\STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "destination": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/buttonHandlers.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\20260701\\source_factory_assemble_generated.py",
+      "destination": "20260701/source_factory_assemble_generated.py",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\RUN_SF4_SAFE_PANEL_ONLY.bat",
+      "destination": "RUN_SF4_SAFE_PANEL_ONLY.bat",
+      "reasons": [
+        "runtime_entry_bat"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\SOURCE_FACTORY_MASTER_STATUS.json",
+      "destination": "SOURCE_FACTORY_MASTER_STATUS.json",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:python_string_path"
+      ],
+      "inbound_from": [
+        "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+        "make_commander_report_package.py"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\_ASSEMBLY_RECORDS\\2026-07-01\\STAGE2_FINAL_BLUE_RECORD_SYNC\\NEXT_COMMANDER_HANDOFF.md",
+      "destination": "_ASSEMBLY_RECORDS/2026-07-01/STAGE2_FINAL_BLUE_RECORD_SYNC/NEXT_COMMANDER_HANDOFF.md",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:json_latest_handoff"
+      ],
+      "inbound_from": [
+        "SOURCE_FACTORY_MASTER_STATUS.json"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\_CONSTITUTION\\00_AI_SUPER_BOOT_v2_1_2_COMPACT.md",
+      "destination": "_CONSTITUTION/00_AI_SUPER_BOOT_v2_1_2_COMPACT.md",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:json_created_files",
+        "dependency:json_initial_load_required_files",
+        "dependency:json_initial_read_order"
+      ],
+      "inbound_from": [
+        "_CONSTITUTION/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+        "_CONSTITUTION/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json",
+        "_CONSTITUTION_V2_COMPACT/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+        "_CONSTITUTION_V2_COMPACT/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\_CONSTITUTION\\01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+      "destination": "_CONSTITUTION/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:json_created_files",
+        "dependency:json_initial_load_required_files",
+        "dependency:json_initial_read_order",
+        "dependency:json_json_parse_required"
+      ],
+      "inbound_from": [
+        "_CONSTITUTION/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+        "_CONSTITUTION/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json",
+        "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+        "_CONSTITUTION_V2_COMPACT/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+        "_CONSTITUTION_V2_COMPACT/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json",
+        "_CONSTITUTION_V2_COMPACT/FINAL_COMPACT_MANIFEST_v2_1_2.json"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\_CONSTITUTION\\02_WORKER_COMMANDER_CONTRACTS_COMPACT_v2_1_2.md",
+      "destination": "_CONSTITUTION/02_WORKER_COMMANDER_CONTRACTS_COMPACT_v2_1_2.md",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:json_created_files",
+        "dependency:json_optional_expansion_files",
+        "dependency:json_read_when_worker_prompting"
+      ],
+      "inbound_from": [
+        "_CONSTITUTION/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+        "_CONSTITUTION/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json",
+        "_CONSTITUTION_V2_COMPACT/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+        "_CONSTITUTION_V2_COMPACT/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\_CONSTITUTION\\03_STAGE4_AUTOMATION_CONTRACT_COMPACT_v2_1_2.md",
+      "destination": "_CONSTITUTION/03_STAGE4_AUTOMATION_CONTRACT_COMPACT_v2_1_2.md",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:json_created_files",
+        "dependency:json_optional_expansion_files",
+        "dependency:json_read_when_stage4_automation"
+      ],
+      "inbound_from": [
+        "_CONSTITUTION/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+        "_CONSTITUTION/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json",
+        "_CONSTITUTION_V2_COMPACT/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+        "_CONSTITUTION_V2_COMPACT/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\_CONSTITUTION\\04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json",
+      "destination": "_CONSTITUTION/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:json_created_files",
+        "dependency:json_json_parse_required",
+        "dependency:json_optional_expansion_files"
+      ],
+      "inbound_from": [
+        "_CONSTITUTION/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+        "_CONSTITUTION/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json",
+        "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+        "_CONSTITUTION_V2_COMPACT/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+        "_CONSTITUTION_V2_COMPACT/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json",
+        "_CONSTITUTION_V2_COMPACT/FINAL_COMPACT_MANIFEST_v2_1_2.json"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\_CONSTITUTION\\FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "destination": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:json_created_files"
+      ],
+      "inbound_from": [
+        "_CONSTITUTION/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json",
+        "_CONSTITUTION_V2_COMPACT/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\_CONSTITUTION\\V2_1_2_COMPACT_UPDATE_REPORT.md",
+      "destination": "_CONSTITUTION/V2_1_2_COMPACT_UPDATE_REPORT.md",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:json_created_files"
+      ],
+      "inbound_from": [
+        "_CONSTITUTION/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json",
+        "_CONSTITUTION_V2_COMPACT/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\_CONSTITUTION\\00_AI_SUPER_BOOT_v2_1_2_COMPACT.md",
+      "destination": "_CONSTITUTION_V2_COMPACT/00_AI_SUPER_BOOT_v2_1_2_COMPACT.md",
+      "reasons": [
+        "compact_constitution_required"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\_CONSTITUTION\\01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+      "destination": "_CONSTITUTION_V2_COMPACT/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+      "reasons": [
+        "compact_constitution_required"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\_CONSTITUTION\\02_WORKER_COMMANDER_CONTRACTS_COMPACT_v2_1_2.md",
+      "destination": "_CONSTITUTION_V2_COMPACT/02_WORKER_COMMANDER_CONTRACTS_COMPACT_v2_1_2.md",
+      "reasons": [
+        "compact_constitution_required"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\_CONSTITUTION\\03_STAGE4_AUTOMATION_CONTRACT_COMPACT_v2_1_2.md",
+      "destination": "_CONSTITUTION_V2_COMPACT/03_STAGE4_AUTOMATION_CONTRACT_COMPACT_v2_1_2.md",
+      "reasons": [
+        "compact_constitution_required"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\_CONSTITUTION\\04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json",
+      "destination": "_CONSTITUTION_V2_COMPACT/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json",
+      "reasons": [
+        "compact_constitution_required"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\_CONSTITUTION\\FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "destination": "_CONSTITUTION_V2_COMPACT/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reasons": [
+        "compact_constitution_required"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\_CONSTITUTION\\V2_1_2_COMPACT_UPDATE_REPORT.md",
+      "destination": "_CONSTITUTION_V2_COMPACT/V2_1_2_COMPACT_UPDATE_REPORT.md",
+      "reasons": [
+        "compact_constitution_required"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\src\\core\\diagnostics.js",
+      "destination": "assembled/20260701_01_STAGE1_BROWSER/src/core/diagnostics.js",
+      "reasons": [
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "src/gpt_browser_bridge/stage1SelfCheck.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\src\\core\\startupInitializer.js",
+      "destination": "assembled/20260701_01_STAGE1_BROWSER/src/core/startupInitializer.js",
+      "reasons": [
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260701_01_STAGE1_BROWSER/src/core/diagnostics.js",
+        "src/gpt_browser_bridge/diagnostics.js",
+        "src/gpt_browser_bridge/stage1SelfCheck.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\00_READ_ME_FIRST.md",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/00_READ_ME_FIRST.md",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:python_string_path"
+      ],
+      "inbound_from": [
+        "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+        "20260701/source_factory_assemble_generated.py",
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+        "make_commander_report_package.py"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\README_STAGE1_SOURCE_FACTORY_BROWSER.md",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/README_STAGE1_SOURCE_FACTORY_BROWSER.md",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "20260701/20260701-1.txt",
+        "src/gpt_browser_bridge/stage1SelfCheck.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\STAGE1_INTEGRATION_CHECKLIST.md",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/STAGE1_INTEGRATION_CHECKLIST.md",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "20260701/20260701-1.txt",
+        "src/gpt_browser_bridge/stage1SelfCheck.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\package-lock.json",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package-lock.json",
+      "reasons": [
+        "runtime_package_seed"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\package.json",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package.json",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:script_path",
+        "runtime_package_seed"
+      ],
+      "inbound_from": [
+        "20260701/20260701-1.txt",
+        "assembled/20260701_01_STAGE1_BROWSER/src/core/diagnostics.js",
+        "src/gpt_browser_bridge/diagnostics.js",
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\prompts\\stage4\\DONE_LIGHT_REPORT_GENERATOR_PROMPT.txt",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/prompts/stage4/DONE_LIGHT_REPORT_GENERATOR_PROMPT.txt",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\prompts\\stage4\\NEXT_COMMANDER_HANDOFF_GENERATOR_PROMPT.txt",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/prompts/stage4/NEXT_COMMANDER_HANDOFF_GENERATOR_PROMPT.txt",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\run\\RUN_SOURCE_FACTORY_BROWSER.bat",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/run/RUN_SOURCE_FACTORY_BROWSER.bat",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:python_string_path"
+      ],
+      "inbound_from": [
+        "20260701/source_factory_assemble_generated.py"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\run\\RUN_STAGE1_DIAGNOSTIC.bat",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/run/RUN_STAGE1_DIAGNOSTIC.bat",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:python_string_path"
+      ],
+      "inbound_from": [
+        "20260701/source_factory_assemble_generated.py"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\SAFE_PANEL_V0106_APPLY_RESULT_20260704_023835.txt",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/SAFE_PANEL_V0106_APPLY_RESULT_20260704_023835.txt",
+      "reasons": [
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\_BACKUP_SAFE_PANEL_V0106_20260704_023835\\safe_panel.html",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_BACKUP_SAFE_PANEL_V0106_20260704_023835/safe_panel.html",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_BACKUP_SAFE_PANEL_V0106_20260704_023835/safe_panel_main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\_BACKUP_SAFE_PANEL_V0106_20260704_023835\\safe_panel_main.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_BACKUP_SAFE_PANEL_V0106_20260704_023835/safe_panel_main.js",
+      "reasons": [
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\_BACKUP_SAFE_PANEL_V0106_20260704_023835\\safe_panel_preload.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_BACKUP_SAFE_PANEL_V0106_20260704_023835/safe_panel_preload.js",
+      "reasons": [
+        "dependency:electron_preload",
+        "dependency:generic_path_literal",
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_BACKUP_SAFE_PANEL_V0106_20260704_023835/safe_panel_main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\_BACKUP_SAFE_PANEL_V0106_20260704_023835\\safe_panel_renderer.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_BACKUP_SAFE_PANEL_V0106_20260704_023835/safe_panel_renderer.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset",
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_BACKUP_SAFE_PANEL_V0106_20260704_023835/safe_panel.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\_backup_current_run_strict_hotfix\\safePanelV0106RecoveryHandlers.js.bak",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_backup_current_run_strict_hotfix/safePanelV0106RecoveryHandlers.js.bak",
+      "reasons": [
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\_backup_status_clipboard_hotfix\\safePanelV0106RecoveryHandlers.js.bak",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_backup_status_clipboard_hotfix/safePanelV0106RecoveryHandlers.js.bak",
+      "reasons": [
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\_backup_status_clipboard_hotfix\\safe_panel_renderer.js.bak",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_backup_status_clipboard_hotfix/safe_panel_renderer.js.bak",
+      "reasons": [
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\_backup_syntax_hotfix_no_input\\safePanelV0106RecoveryHandlers.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_backup_syntax_hotfix_no_input/safePanelV0106RecoveryHandlers.js",
+      "reasons": [
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\ipc\\safePanelV0106RecoveryHandlers.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/safePanelV0106RecoveryHandlers.js",
+      "reasons": [
+        "dependency:js_require",
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\ipc\\stage4StationBindingHandlers.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:js_require",
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_main.js",
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\ipc\\stage4StationBindingHandlers.js.stage4_binary_safe_backup_stage4_safe_panel_v10_binary_safe_apply_20260704_144145",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js.stage4_binary_safe_backup_stage4_safe_panel_v10_binary_safe_apply_20260704_144145",
+      "reasons": [
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\safe_panel.css",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel.css",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset",
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\safe_panel.html",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel.html",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\safe_panel.html.stage4_button_ui_backup_stage4_button_ui_mount_20260704062448",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel.html.stage4_button_ui_backup_stage4_button_ui_mount_20260704062448",
+      "reasons": [
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\safe_panel_main.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_main.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "electron_main_entry",
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": [
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\safe_panel_main.js.stage4_binary_safe_backup_stage4_safe_panel_v10_binary_safe_apply_20260704_144145",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_main.js.stage4_binary_safe_backup_stage4_safe_panel_v10_binary_safe_apply_20260704_144145",
+      "reasons": [
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\safe_panel_main.js.stage4_binding_backup_stage4_safe_panel_v10_binding_apply_20260704_143501",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_main.js.stage4_binding_backup_stage4_safe_panel_v10_binding_apply_20260704_143501",
+      "reasons": [
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\safe_panel_preload.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_preload.js",
+      "reasons": [
+        "dependency:electron_preload",
+        "dependency:generic_path_literal",
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_main.js",
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\safe_panel_preload.js.stage4_binary_safe_backup_stage4_safe_panel_v10_binary_safe_apply_20260704_144145",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_preload.js.stage4_binary_safe_backup_stage4_safe_panel_v10_binary_safe_apply_20260704_144145",
+      "reasons": [
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\safe_panel_preload.js.stage4_binding_backup_stage4_safe_panel_v10_binding_apply_20260704_143501",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_preload.js.stage4_binding_backup_stage4_safe_panel_v10_binding_apply_20260704_143501",
+      "reasons": [
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\safe_panel_renderer.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_renderer.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset",
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel.html",
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\safe_panel_renderer.js.stage4_binary_safe_backup_stage4_safe_panel_v10_binary_safe_apply_20260704_144145",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_renderer.js.stage4_binary_safe_backup_stage4_safe_panel_v10_binary_safe_apply_20260704_144145",
+      "reasons": [
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\safe_panel_renderer.js.stage4_binding_backup_stage4_safe_panel_v10_binding_apply_20260704_143501",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_renderer.js.stage4_binding_backup_stage4_safe_panel_v10_binding_apply_20260704_143501",
+      "reasons": [
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\safe_terminal.css",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_terminal.css",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset",
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_terminal.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\safe_terminal.html",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_terminal.html",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\safe_terminal_preload.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_terminal_preload.js",
+      "reasons": [
+        "dependency:electron_preload",
+        "dependency:generic_path_literal",
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\safe_terminal_renderer.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_terminal_renderer.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset",
+        "safe_panel_runtime_bundle"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_terminal.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\commanderReportController.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/commanderReportController.js",
+      "reasons": [
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage2IpcHandlers.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\constitutionLoader.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/constitutionLoader.js",
+      "reasons": [
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/promptBuilder.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\panelControl\\stage4SourceFileBlockParser.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/panelControl/stage4SourceFileBlockParser.js",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4ProjectPanelV06AutoFixMain.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\panelControl\\stage4TaeraLinkExtractor.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/panelControl/stage4TaeraLinkExtractor.js",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4ProjectPanelV06AutoFixMain.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\promptBuilder.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/promptBuilder.js",
+      "reasons": [
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\stage2Finalizer.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+      "reasons": [
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage2IpcHandlers.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\core\\taskInstructionManager.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/taskInstructionManager.js",
+      "reasons": [
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/promptBuilder.js",
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\main\\main.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:json_main"
+      ],
+      "inbound_from": [
+        "20260701/20260701-1.txt",
+        "assembled/20260701_01_STAGE1_BROWSER/src/core/diagnostics.js",
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package.json",
+        "src/gpt_browser_bridge/diagnostics.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\main\\stage2IpcHandlers.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage2IpcHandlers.js",
+      "reasons": [
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\main\\stage3IpcHandlers.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage3IpcHandlers.js",
+      "reasons": [
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\main\\stage4HardWindowControl.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4HardWindowControl.js",
+      "reasons": [
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js",
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/windowManager.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\main\\stage4PanelIpcHandlers.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelIpcHandlers.js",
+      "reasons": [
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\main\\stage4PanelLaunchControlV07Main.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelLaunchControlV07Main.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\main\\stage4PanelLaunchControlV08Main.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelLaunchControlV08Main.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\main\\stage4ProjectPanelV04MainInjection.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4ProjectPanelV04MainInjection.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\main\\stage4ProjectPanelV06AutoFixMain.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4ProjectPanelV06AutoFixMain.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\main\\stage4StandaloneLaunchPanelV09Main.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4StandaloneLaunchPanelV09Main.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\main\\windowManager.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/windowManager.js",
+      "reasons": [
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\buttonHandlers.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/buttonHandlers.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/index.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\index.html",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/index.html",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "20260701/20260701-1.txt",
+        "assembled/20260701_01_STAGE1_BROWSER/src/core/diagnostics.js",
+        "src/gpt_browser_bridge/diagnostics.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\koreanLabels.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/koreanLabels.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/index.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage2MenuView.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage2MenuView.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/index.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage3CommanderPanel.css",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3CommanderPanel.css",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/index.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage3CommanderPanel.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3CommanderPanel.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/index.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage3CommanderReturnInboxPanel.css",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3CommanderReturnInboxPanel.css",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/index.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage3CommanderReturnInboxPanel.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3CommanderReturnInboxPanel.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/index.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage3PanelAttach.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3PanelAttach.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/index.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage3WorkerDispatchInboxPanel.css",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3WorkerDispatchInboxPanel.css",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/index.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage3WorkerDispatchInboxPanel.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3WorkerDispatchInboxPanel.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/index.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage3WorkerReturnPanel.css",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3WorkerReturnPanel.css",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/index.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage3WorkerReturnPanel.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage3WorkerReturnPanel.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/index.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4PanelAttach.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4PanelAttach.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/index.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4PanelLaunchControlV07.css",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4PanelLaunchControlV07.css",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4PanelLaunchControlV07.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4PanelLaunchControlV07.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4PanelLaunchControlV08.css",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4PanelLaunchControlV08.css",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4PanelLaunchControlV08.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4PanelLaunchControlV08.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4ProjectPanel.css",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.css",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js",
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4ProjectPanel.html",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.html",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4ProjectPanel.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js",
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4ProjectPanelPipelineV02.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelPipelineV02.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4ProjectPanelPipelineV03.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelPipelineV03.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4ProjectPanelPipelineV04.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelPipelineV04.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4ProjectPanelPipelineV05Cleanup.css",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelPipelineV05Cleanup.css",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4ProjectPanelPipelineV05Cleanup.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelPipelineV05Cleanup.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4ProjectPanelPreload.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelPreload.js",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4ProjectPanelV06AutoFix.css",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelV06AutoFix.css",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4ProjectPanelV06AutoFix.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelV06AutoFix.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4ProjectPanelV06TopFix.css",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelV06TopFix.css",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4ProjectPanelV06TopFix.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelV06TopFix.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanel.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4StandaloneLaunchPanelV09.css",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4StandaloneLaunchPanelV09.css",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js",
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4StandaloneLaunchPanelV09.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4StandaloneLaunchPanelV09.html",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4StandaloneLaunchPanelV09.html",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4StandaloneLaunchPanelV09.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4StandaloneLaunchPanelV09.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js",
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4StandaloneLaunchPanelV09.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\stage4StandaloneLaunchPanelV09Preload.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4StandaloneLaunchPanelV09Preload.js",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\statusView.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/statusView.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/index.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\renderer\\styles.css",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/styles.css",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:web_asset"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/index.html"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\shared\\stage4\\executionErrorReporter.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/executionErrorReporter.js",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\shared\\stage4\\executionResultCollector.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/executionResultCollector.js",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\shared\\stage4\\promptPackageVersionManager.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/promptPackageVersionManager.js",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\shared\\stage4\\promptQueueManager.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/promptQueueManager.js",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\shared\\stage4\\sequentialPromptSender.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/sequentialPromptSender.js",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\shared\\stage4\\sourceFileBlockExtractor.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/sourceFileBlockExtractor.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/sourceFileBlockExtractor.js",
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\shared\\stage4\\stores\\panelRecordExecutionStore.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/stores/panelRecordExecutionStore.js",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\shared\\stage4\\stores\\taeoRawOutputStore.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/stores/taeoRawOutputStore.js",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\shared\\stage4\\stores\\workerOutputBatchStore.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/stores/workerOutputBatchStore.js",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\shared\\stage4\\workerReportErrorExtractor.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/workerReportErrorExtractor.js",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/workerReportErrorExtractor.js",
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\src\\shared\\windowRegistry.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/windowRegistry.js",
+      "reasons": [
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/windowManager.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\templates\\WORKER_OUTPUT_FORMAT.md",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/templates/WORKER_OUTPUT_FORMAT.md",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "20260701/20260701-1.txt",
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/promptBuilder.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\tools\\stage4\\runCmdWrapper.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/tools/stage4/runCmdWrapper.js",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\tools\\stage4\\runNodeCheckWrapper.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/tools/stage4/runNodeCheckWrapper.js",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\tools\\stage4\\runPythonWrapper.js",
+      "destination": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/tools/stage4/runPythonWrapper.js",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\make_commander_report_package.py",
+      "destination": "make_commander_report_package.py",
+      "reasons": [
+        "dependency:generic_path_literal",
+        "dependency:python_string_path"
+      ],
+      "inbound_from": [
+        "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+        "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/commanderReportController.js",
+        "make_commander_report_package.py"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\source_factory_extract_workers.py",
+      "destination": "source_factory_extract_workers.py",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_02_STAGE2\\src\\renderer\\buttonHandlers.js",
+      "destination": "src/gpt_browser_bridge/buttonHandlers.js",
+      "reasons": [
+        "sf028_mandatory_runtime_support"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\src\\core\\diagnostics.js",
+      "destination": "src/gpt_browser_bridge/diagnostics.js",
+      "reasons": [
+        "sf028_mandatory_runtime_support"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\src\\core\\fileNameSafe.js",
+      "destination": "src/gpt_browser_bridge/fileNameSafe.js",
+      "reasons": [
+        "sf028_mandatory_runtime_support"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_01_STAGE1_BROWSER\\src\\core\\stage1SelfCheck.js",
+      "destination": "src/gpt_browser_bridge/stage1SelfCheck.js",
+      "reasons": [
+        "sf028_mandatory_runtime_support"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\assembled\\20260701_02_STAGE2\\src\\core\\pythonProcessRunner.js",
+      "destination": "src/queue/pythonProcessRunner.js",
+      "reasons": [
+        "sf028_mandatory_runtime_support"
+      ],
+      "inbound_from": []
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\src\\shared\\stage4\\collectorCommanderGateHandoffAdapter.js",
+      "destination": "src/shared/stage4/collectorCommanderGateHandoffAdapter.js",
+      "reasons": [
+        "dependency:generic_path_literal"
+      ],
+      "inbound_from": [
+        "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\src\\shared\\stage4\\projectPanelIdentityHelper.js",
+      "destination": "src/shared/stage4/projectPanelIdentityHelper.js",
+      "reasons": [
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "src/shared/stage4/collectorCommanderGateHandoffAdapter.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\src\\shared\\stage4\\promptPackageVersionManager.js",
+      "destination": "src/shared/stage4/promptPackageVersionManager.js",
+      "reasons": [
+        "dependency:js_require"
+      ],
+      "inbound_from": [
+        "src/shared/stage4/collectorCommanderGateHandoffAdapter.js"
+      ]
+    },
+    {
+      "source": "D:\\SOURCE FACTORY\\tools\\stage4\\ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "destination": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reasons": [
+        "verify_install_tool_candidate"
+      ],
+      "inbound_from": []
+    }
+  ],
+  "missing_required_sources": [
+    {
+      "canonical_path": "src/queue/local_claim_store.py",
+      "reason": "NOT_FOUND"
+    },
+    {
+      "canonical_path": "src/queue/terminal_receipt_store.py",
+      "reason": "NOT_FOUND"
+    },
+    {
+      "canonical_path": "src/queue/local_worker_lifecycle.py",
+      "reason": "NOT_FOUND"
+    },
+    {
+      "canonical_path": "src/queue/dailyQueueReader.js",
+      "reason": "NOT_FOUND"
+    },
+    {
+      "canonical_path": "src/pc_agent/local_command_runner.py",
+      "reason": "NOT_FOUND"
+    },
+    {
+      "canonical_path": "src/pc_agent/local_pc_agent_mvp.py",
+      "reason": "NOT_FOUND"
+    },
+    {
+      "canonical_path": "src/runtime_pipeline/SOURCE_FACTORY_RUNTIME_PIPELINE_CONTRACT_V1.json",
+      "reason": "NOT_FOUND"
+    },
+    {
+      "canonical_path": "src/runtime_pipeline/sourceFactoryRuntimePipelineRegistry.js",
+      "reason": "NOT_FOUND"
+    },
+    {
+      "canonical_path": "rules/powershell51",
+      "reason": "DIRECTORY_NOT_FOUND"
+    }
+  ],
+  "unresolved_references": [
+    {
+      "origin": "RUN_SF4_SAFE_PANEL_ONLY.bat",
+      "reference": "node_modules\\.bin\\electron.cmd",
+      "kind": "script_path"
+    },
+    {
+      "origin": "RUN_SF4_SAFE_PANEL_ONLY.bat",
+      "reference": "node_modules\\.bin\\electron.cmd",
+      "kind": "script_path"
+    },
+    {
+      "origin": "RUN_SF4_SAFE_PANEL_ONLY.bat",
+      "reference": "%SAFE%\\safe_panel_main.js",
+      "kind": "script_path"
+    },
+    {
+      "origin": "RUN_SF4_SAFE_PANEL_ONLY.bat",
+      "reference": "%SAFE%\\safe_panel_main.js",
+      "kind": "script_path"
+    },
+    {
+      "origin": "RUN_SF4_SAFE_PANEL_ONLY.bat",
+      "reference": "node_modules\\.bin\\electron.cmd",
+      "kind": "script_exec"
+    },
+    {
+      "origin": "RUN_SF4_SAFE_PANEL_ONLY.bat",
+      "reference": "node_modules\\.bin\\electron.cmd",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "RUN_SF4_SAFE_PANEL_ONLY.bat",
+      "reference": "node_modules\\.bin\\electron.cmd",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "RUN_SF4_SAFE_PANEL_ONLY.bat",
+      "reference": "%SAFE%\\safe_panel_main.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "RUN_SF4_SAFE_PANEL_ONLY.bat",
+      "reference": "%SAFE%\\safe_panel_main.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/00_AI_SUPER_BOOT_v2_1_2_COMPACT.md",
+      "kind": "json_first_read_file"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+      "kind": "json_schema_file"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/00_AI_SUPER_BOOT_v2_1_2_COMPACT.md",
+      "kind": "json_path"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+      "kind": "json_path"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/02_WORKER_COMMANDER_CONTRACTS_COMPACT_v2_1_2.md",
+      "kind": "json_path"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/03_STAGE4_AUTOMATION_CONTRACT_COMPACT_v2_1_2.md",
+      "kind": "json_path"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json",
+      "kind": "json_path"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/V2_1_2_COMPACT_UPDATE_REPORT.md",
+      "kind": "json_path"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/00_AI_SUPER_BOOT_v2_1_2_COMPACT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/00_AI_SUPER_BOOT_v2_1_2_COMPACT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/02_WORKER_COMMANDER_CONTRACTS_COMPACT_v2_1_2.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/03_STAGE4_AUTOMATION_CONTRACT_COMPACT_v2_1_2.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/V2_1_2_COMPACT_UPDATE_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package-lock.json",
+      "reference": "cli.js",
+      "kind": "json_electron"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package-lock.json",
+      "reference": "cli.js",
+      "kind": "json_extract-zip"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package-lock.json",
+      "reference": "bin/semver.js",
+      "kind": "json_semver"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package-lock.json",
+      "reference": "bin/semver.js",
+      "kind": "json_semver"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package-lock.json",
+      "reference": "cli.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package-lock.json",
+      "reference": "cli.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package-lock.json",
+      "reference": "bin/semver.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package-lock.json",
+      "reference": "bin/semver.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package.json",
+      "reference": "node tools/stage4_verify_candidate.js",
+      "kind": "json_stage4:verify"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package.json",
+      "reference": "node tools/stage4_verify_candidate.js",
+      "kind": "json_stage4:check"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package.json",
+      "reference": "node tools/stage4_verify_candidate.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package.json",
+      "reference": "node tools/stage4_verify_candidate.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_BACKUP_SAFE_PANEL_V0106_20260704_023835/safe_panel.html",
+      "reference": "./safe_panel.css",
+      "kind": "web_asset"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_BACKUP_SAFE_PANEL_V0106_20260704_023835/safe_panel.html",
+      "reference": "./safe_panel.css",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_BACKUP_SAFE_PANEL_V0106_20260704_023835/safe_panel_main.js",
+      "reference": "safe_terminal_preload.js",
+      "kind": "electron_preload"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_BACKUP_SAFE_PANEL_V0106_20260704_023835/safe_panel_main.js",
+      "reference": "safe_panel_only_v10_state.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_BACKUP_SAFE_PANEL_V0106_20260704_023835/safe_panel_main.js",
+      "reference": "safe_terminal_preload.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_BACKUP_SAFE_PANEL_V0106_20260704_023835/safe_panel_main.js",
+      "reference": "safe_terminal.html",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_backup_syntax_hotfix_no_input/safePanelV0106RecoveryHandlers.js",
+      "reference": "_gate_report.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_backup_syntax_hotfix_no_input/safePanelV0106RecoveryHandlers.js",
+      "reference": "SAFE_PANEL_V0106_MATERIALIZE_REPORT.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_backup_syntax_hotfix_no_input/safePanelV0106RecoveryHandlers.js",
+      "reference": "SAFE_PANEL_V0106_SYNTAX_REPORT.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/safePanelV0106RecoveryHandlers.js",
+      "reference": "_gate_report.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/safePanelV0106RecoveryHandlers.js",
+      "reference": "SAFE_PANEL_V0106_MATERIALIZE_REPORT.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/safePanelV0106RecoveryHandlers.js",
+      "reference": "SAFE_PANEL_V0106_SYNTAX_REPORT.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/panelInputClassifier.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/panelCommandParser.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/sourceFileBlockExtractor.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/downloadResourceExtractor.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/workerReportErrorExtractor.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/sourceFileFormatValidator.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/placeholderOmissionDetector.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/windowsRegexEscapeChecker.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/efficiencyGateStatus.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/duplicatePathConflictDetector.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/workerFileOwnershipChecker.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/apiIpcBindingConsistencyChecker.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/runtimePartialAssemblyClassifier.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/patchRequestConflictSorter.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/stores/taeoRawOutputStore.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/stores/laoSourceUnitStore.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/stores/taeraDownloadResourceStore.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/stores/workerOutputBatchStore.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/stores/panelRecordExecutionStore.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/executionResultCollector.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/executionErrorReporter.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/promptQueueManager.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/sequentialPromptSender.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/fileBatchDispatcher.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/downloadResourceManager.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/promptPackageVersionManager.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/greenOutputAssemblyQueue.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/redFixRequestGenerator.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/DONE_LIGHT_REPORT_GENERATOR_PROMPT.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+      "reference": "/NEXT_COMMANDER_HANDOFF_GENERATOR_PROMPT.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_main.js",
+      "reference": "safe_panel_only_v10_state.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260701_01_STAGE1_BROWSER/src/core/diagnostics.js",
+      "reference": "SOURCE_FACTORY_FILE_COMBINATION_CONSTITUTION_v1.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260701_01_STAGE1_BROWSER/src/core/diagnostics.js",
+      "reference": "SOURCE_FACTORY_COMMANDER_COMPLIANCE_RULES_v1.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260701_01_STAGE1_BROWSER/src/core/diagnostics.js",
+      "reference": "CURRENT_SOURCE_REVIEW_MUST_FOLLOW.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260701_01_STAGE1_BROWSER/src/core/diagnostics.js",
+      "reference": "FILE_COMBINATION_RULE_SCHEMA_v1.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "W47_FREEZE_VERIFY_HASH_MANIFEST.json",
+      "kind": "script_path"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "W47_FREEZE_LOCAL_VERIFY_RESULT.json",
+      "kind": "script_path"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "W47_FREEZE_LOCAL_VERIFY_RESULT.md",
+      "kind": "script_path"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "$env:TEMP\\st4_w47_node_stdout.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "$env:TEMP\\st4_w47_node_stderr.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "$env:TEMP\\st4_w47_node_stdout.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "$env:TEMP\\st4_w47_node_stdout.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "$env:TEMP\\st4_w47_node_stderr.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "$env:TEMP\\st4_w47_node_stderr.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "$env:TEMP\\st4_w47_require_stdout.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "$env:TEMP\\st4_w47_require_stderr.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "$env:TEMP\\st4_w47_require_stderr.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "$env:TEMP\\st4_w47_require_stderr.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "stage4_smoke\\W46_EXECUTION_PIPELINE_SMOKE_CHECKLIST.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "stage4_smoke\\W46_EXECUTION_PIPELINE_SMOKE_DEVTOOLS_OR_NODE_SCRIPT.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "stage4_smoke\\W47_FULL_PIPELINE_RUNTIME_SMOKE_CHECKLIST.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "stage4_smoke\\W47_FULL_PIPELINE_RUNTIME_SMOKE_DEVTOOLS_OR_NODE_SCRIPT.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "W47_FREEZE_VERIFY_HASH_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "W47_FREEZE_LOCAL_VERIFY_RESULT.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "W47_FREEZE_LOCAL_VERIFY_RESULT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1",
+      "reference": "W47_FREEZE_LOCAL_VERIFY_RESULT_ERROR.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/00_AI_SUPER_BOOT_v2_1_2_COMPACT.md",
+      "kind": "json_first_read_file"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+      "kind": "json_schema_file"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/00_AI_SUPER_BOOT_v2_1_2_COMPACT.md",
+      "kind": "json_path"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+      "kind": "json_path"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/02_WORKER_COMMANDER_CONTRACTS_COMPACT_v2_1_2.md",
+      "kind": "json_path"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/03_STAGE4_AUTOMATION_CONTRACT_COMPACT_v2_1_2.md",
+      "kind": "json_path"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json",
+      "kind": "json_path"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/V2_1_2_COMPACT_UPDATE_REPORT.md",
+      "kind": "json_path"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/00_AI_SUPER_BOOT_v2_1_2_COMPACT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/00_AI_SUPER_BOOT_v2_1_2_COMPACT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/01_COMPACT_RULE_SCHEMA_v2_1_2.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/02_WORKER_COMMANDER_CONTRACTS_COMPACT_v2_1_2.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/03_STAGE4_AUTOMATION_CONTRACT_COMPACT_v2_1_2.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/04_COMPACT_INSTALL_AND_REFERENCE_MAP_v2_1_2.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "_CONSTITUTION/FINAL_COMPACT_MANIFEST_v2_1_2.json",
+      "reference": "_CONSTITUTION_V2_COMPACT/V2_1_2_COMPACT_UPDATE_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js",
+      "reference": "PROJECT_PANEL_MATERIALIZE_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js",
+      "reference": "PROJECT_PANEL_V03_MATERIALIZE_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js",
+      "reference": "stage4SourceFileBlockParser.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js",
+      "reference": "stage4SourceFileBlockParser.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260701_01_STAGE1_BROWSER/src/core/diagnostics.js",
+      "reference": "SOURCE_FACTORY_FILE_COMBINATION_CONSTITUTION_v1.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260701_01_STAGE1_BROWSER/src/core/diagnostics.js",
+      "reference": "SOURCE_FACTORY_COMMANDER_COMPLIANCE_RULES_v1.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260701_01_STAGE1_BROWSER/src/core/diagnostics.js",
+      "reference": "CURRENT_SOURCE_REVIEW_MUST_FOLLOW.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260701_01_STAGE1_BROWSER/src/core/diagnostics.js",
+      "reference": "FILE_COMBINATION_RULE_SCHEMA_v1.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/windowManager.js",
+      "reference": "index.html",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/windowManager.js",
+      "reference": "gptPreload.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/taskInstructionManager.js",
+      "reference": "COMMANDER_TASK.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/taskInstructionManager.js",
+      "reference": "_TASK.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/promptBuilder.js",
+      "reference": "SOURCE_FACTORY_FILE_COMBINATION_CONSTITUTION_v1.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/promptBuilder.js",
+      "reference": "FILE_COMBINATION_RULE_SCHEMA_v1.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/promptBuilder.js",
+      "reference": "SOURCE_FACTORY_COMMANDER_COMPLIANCE_RULES_v1.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/promptBuilder.js",
+      "reference": "CURRENT_SOURCE_REVIEW_MUST_FOLLOW.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/promptBuilder.js",
+      "reference": "NEW_COMMANDER_START_PROMPT_v1.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelIpcHandlers.js",
+      "reference": "MATERIALIZE_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelIpcHandlers.js",
+      "reference": "MATERIALIZE_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4ProjectPanelV04MainInjection.js",
+      "reference": "PROJECT_PANEL_V04_MATERIALIZE_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4ProjectPanelV06AutoFixMain.js",
+      "reference": "PROJECT_PANEL_V06_MATERIALIZE_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelLaunchControlV07Main.js",
+      "reference": "panel_launch_control_v07.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelLaunchControlV07Main.js",
+      "reference": "stage4projectpanel.html",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelLaunchControlV08Main.js",
+      "reference": "panel_launch_control_v08.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelLaunchControlV08Main.js",
+      "reference": "stage4projectpanel.html",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4StandaloneLaunchPanelV09Main.js",
+      "reference": "standalone_launch_panel_v09.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4StandaloneLaunchPanelV09Main.js",
+      "reference": "stage4standalonelaunchpanelv09.html",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/constitutionLoader.js",
+      "reference": "SOURCE_FACTORY_FILE_COMBINATION_CONSTITUTION_v1.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/constitutionLoader.js",
+      "reference": "SOURCE_FACTORY_COMMANDER_COMPLIANCE_RULES_v1.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/constitutionLoader.js",
+      "reference": "CURRENT_SOURCE_REVIEW_MUST_FOLLOW.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/constitutionLoader.js",
+      "reference": "FILE_COMBINATION_RULE_SCHEMA_v1.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/constitutionLoader.js",
+      "reference": "NEW_COMMANDER_START_PROMPT_v1.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+      "reference": "ASSEMBLY_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+      "reference": "ASSEMBLY_REPORT.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+      "reference": "ASSEMBLY_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+      "reference": "FILE_HASHES.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+      "reference": "CHANGESET.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+      "reference": "PRE_STATE_INDEX.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+      "reference": "POST_STATE_INDEX.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+      "reference": "DIFF_SUMMARY.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+      "reference": "WORK_LOG.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+      "reference": "NEXT_COMMANDER_HANDOFF.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+      "reference": "NEXT_COMMANDER_PROMPT.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+      "reference": "NEXT_COMMANDER_HANDOFF.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelPipelineV04.js",
+      "reference": "path: tests/project_panel_v04/hello_v04.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelPipelineV05Cleanup.js",
+      "reference": "path: tests/project_panel_v05/hello_v05.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelV06AutoFix.js",
+      "reference": "path: tests/project_panel_v06/hello_v06.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelV06TopFix.js",
+      "reference": "path: tests/project_panel_v06_topfix/hello_v06_topfix.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "styles.css",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "koreanLabels.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "statusView.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "stage2MenuView.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "buttonHandlers.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "./stage2ResultView.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "ORIGINAL_PATH_MAP.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "GENERATION_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "FILE_HASHES.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "EXTRACTION_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "EXTRACTION_REPORT.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "GENERATION_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "EXTRACTION_REPORT.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "EXTRACTION_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "ORIGINAL_PATH_MAP.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "GENERATION_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "FILE_HASHES.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "ORIGINAL_PATH_MAP.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "GENERATION_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "FILE_HASHES.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "EXTRACTION_REPORT.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "ORIGINAL_PATH_MAP.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "GENERATION_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "FILE_HASHES.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "EXTRACTION_REPORT.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "EXTRACTION_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "ORIGINAL_PATH_MAP.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "GENERATION_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "FILE_HASHES.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "EXTRACTION_REPORT.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "ORIGINAL_PATH_MAP.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "GENERATION_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "FILE_HASHES.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "ASSEMBLY_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "ASSEMBLY_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "ASSEMBLY_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "ASSEMBLY_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "ASSEMBLY_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "ASSEMBLY_REPORT.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "ASSEMBLY_REPORT.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "ASSEMBLY_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "ASSEMBLY_REPORT.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "ASSEMBLY_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "FILE_HASHES.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "CHANGESET.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "PRE_STATE_INDEX.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "POST_STATE_INDEX.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "DIFF_SUMMARY.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "WORK_LOG.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "NEXT_COMMANDER_HANDOFF.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "NEXT_COMMANDER_PROMPT.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/STAGE2_ALL_WORKERS_OUTPUT_REPAIRED_v1.txt",
+      "reference": "NEXT_COMMANDER_HANDOFF.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "SOURCE_FACTORY_FILE_COMBINATION_CONSTITUTION_v1.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "SOURCE_FACTORY_COMMANDER_COMPLIANCE_RULES_v1.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "CURRENT_SOURCE_REVIEW_MUST_FOLLOW.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "FILE_COMBINATION_RULE_SCHEMA_v1.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "NEW_COMMANDER_START_PROMPT_v1.txt",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "README_CONSTITUTION_PACKAGE.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "source_factory_monitor.py",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "RUN_SOURCE_FACTORY_SCAN_ONCE.bat",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "RUN_SOURCE_FACTORY_MONITOR.bat",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "source_factory_assembler.py",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "RUN_SOURCE_FACTORY_ASSEMBLE.bat",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "ASSEMBLY_REPORT.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "ASSEMBLY_REPORT.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "ASSEMBLY_MANIFEST.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "FILE_HASHES.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "CHANGESET.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "PRE_STATE_INDEX.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "POST_STATE_INDEX.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "DIFF_SUMMARY.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "WORK_LOG.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "NEXT_COMMANDER_HANDOFF.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "NEXT_COMMANDER_PROMPT.txt",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "FILE_INDEX.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "latest_snapshot.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "FILE_STRUCTURE_TREE.txt",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "FILE_INDEX.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "00_READ_ME_FIRST_COMMANDER_REPORT.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "NEXT_COMMANDER_PROMPT_FROM_REPORT_PACKAGE.txt",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "COMMANDER_REPORT_PACKAGE_MANIFEST.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "ASSEMBLY_REPORT.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "SOURCE_FACTORY_FILE_COMBINATION_CONSTITUTION_v1.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "SOURCE_FACTORY_COMMANDER_COMPLIANCE_RULES_v1.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "CURRENT_SOURCE_REVIEW_MUST_FOLLOW.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "FILE_COMBINATION_RULE_SCHEMA_v1.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "NEW_COMMANDER_START_PROMPT_v1.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "README_CONSTITUTION_PACKAGE.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "source_factory_monitor.py",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "RUN_SOURCE_FACTORY_SCAN_ONCE.bat",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "RUN_SOURCE_FACTORY_MONITOR.bat",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "source_factory_assembler.py",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "RUN_SOURCE_FACTORY_ASSEMBLE.bat",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "ASSEMBLY_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "ASSEMBLY_REPORT.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "ASSEMBLY_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "FILE_HASHES.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "CHANGESET.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "PRE_STATE_INDEX.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "POST_STATE_INDEX.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "DIFF_SUMMARY.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "WORK_LOG.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "NEXT_COMMANDER_HANDOFF.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "NEXT_COMMANDER_PROMPT.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "ASSEMBLY_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "FILE_INDEX.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "latest_snapshot.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "FILE_STRUCTURE_TREE.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "FILE_INDEX.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "00_READ_ME_FIRST_COMMANDER_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "NEXT_COMMANDER_PROMPT_FROM_REPORT_PACKAGE.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "make_commander_report_package.py",
+      "reference": "COMMANDER_REPORT_PACKAGE_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "\\\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "\\s+",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "unnamed.txt",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "\\s*:\\s*(.*?)\\s*$",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "../",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "../",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "/..",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "ORIGINAL_PATH_MAP.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "GENERATION_MANIFEST.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "FILE_HASHES.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "EXTRACTION_REPORT.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "EXTRACTION_REPORT.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "INPUT_COPY.txt",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "EXTRACTION_REPORT.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "unnamed.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "ORIGINAL_PATH_MAP.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "GENERATION_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "FILE_HASHES.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "EXTRACTION_REPORT.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "EXTRACTION_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "source_factory_extract_workers.py",
+      "reference": "INPUT_COPY.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "ORIGINAL_PATH_MAP.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "GENERATION_MANIFEST.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "FILE_HASHES.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "ORIGINAL_PATH_MAP.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "ORIGINAL_PATH_MAP.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "GENERATION_MANIFEST.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "FILE_HASHES.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "EXTRACTION_REPORT.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "EXTRACTION_REPORT.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "../",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "/../",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "/..",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "ASSEMBLY_MANIFEST.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "FILE_HASHES.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "CHANGESET.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "PRE_STATE_INDEX.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "POST_STATE_INDEX.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "DIFF_SUMMARY.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "ASSEMBLY_REPORT.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "WORK_LOG.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "NEXT_COMMANDER_HANDOFF.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "NEXT_COMMANDER_PROMPT.txt",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "ASSEMBLY_REPORT.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "ASSEMBLY_MANIFEST.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "FILE_HASHES.json",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "NEXT_COMMANDER_HANDOFF.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "ASSEMBLY_REPORT.md",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "\\",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "/",
+      "kind": "python_string_path"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "ORIGINAL_PATH_MAP.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "GENERATION_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "FILE_HASHES.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "ORIGINAL_PATH_MAP.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "ORIGINAL_PATH_MAP.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "GENERATION_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "FILE_HASHES.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "EXTRACTION_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "EXTRACTION_REPORT.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "ASSEMBLY_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "FILE_HASHES.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "CHANGESET.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "PRE_STATE_INDEX.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "POST_STATE_INDEX.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "DIFF_SUMMARY.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "ASSEMBLY_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "WORK_LOG.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "NEXT_COMMANDER_HANDOFF.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "ASSEMBLY_REPORT.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "ASSEMBLY_MANIFEST.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "FILE_HASHES.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "NEXT_COMMANDER_HANDOFF.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/source_factory_assemble_generated.py",
+      "reference": "NEXT_COMMANDER_PROMPT.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "index.html",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "preload.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "./styles.css",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "./statusView.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "./buttonHandlers.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "./renderer.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "SOURCE_FACTORY_FILE_COMBINATION_CONSTITUTION_v1.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "SOURCE_FACTORY_COMMANDER_COMPLIANCE_RULES_v1.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "CURRENT_SOURCE_REVIEW_MUST_FOLLOW.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "FILE_COMBINATION_RULE_SCHEMA_v1.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "NEW_COMMANDER_START_PROMPT_v1.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "COMMANDER_TASK.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "_TASK.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "SOURCE_FACTORY_FILE_COMBINATION_CONSTITUTION_v1.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "FILE_COMBINATION_RULE_SCHEMA_v1.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "SOURCE_FACTORY_COMMANDER_COMPLIANCE_RULES_v1.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "CURRENT_SOURCE_REVIEW_MUST_FOLLOW.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "NEW_COMMANDER_START_PROMPT_v1.txt",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "state.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "SOURCE_FACTORY_FILE_COMBINATION_CONSTITUTION_v1.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "SOURCE_FACTORY_COMMANDER_COMPLIANCE_RULES_v1.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "CURRENT_SOURCE_REVIEW_MUST_FOLLOW.md",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "FILE_COMBINATION_RULE_SCHEMA_v1.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "%PROJECT_ROOT%\\package.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "%PROJECT_ROOT%\\src\\core\\stage1SelfCheck.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "20260701/20260701-1.txt",
+      "reference": "%PROJECT_ROOT%\\src\\core\\stage1SelfCheck.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/run/RUN_SOURCE_FACTORY_BROWSER.bat",
+      "reference": "%PROJECT_ROOT%\\package.json",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/run/RUN_STAGE1_DIAGNOSTIC.bat",
+      "reference": "%PROJECT_ROOT%\\src\\core\\stage1SelfCheck.js",
+      "kind": "script_exec"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/run/RUN_STAGE1_DIAGNOSTIC.bat",
+      "reference": "%PROJECT_ROOT%\\src\\core\\stage1SelfCheck.js",
+      "kind": "generic_path_literal"
+    },
+    {
+      "origin": "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/run/RUN_STAGE1_DIAGNOSTIC.bat",
+      "reference": "%PROJECT_ROOT%\\src\\core\\stage1SelfCheck.js",
+      "kind": "generic_path_literal"
+    }
+  ],
+  "external_dependencies": {
+    "02_LATEST_ASSEMBLY_RECORD": [
+      "make_commander_report_package.py"
+    ],
+    "_COMMANDER_REPORTS": [
+      "make_commander_report_package.py"
+    ],
+    "__future__": [
+      "20260701/source_factory_assemble_generated.py",
+      "make_commander_report_package.py",
+      "source_factory_extract_workers.py"
+    ],
+    "argparse": [
+      "20260701/source_factory_assemble_generated.py",
+      "make_commander_report_package.py",
+      "source_factory_extract_workers.py"
+    ],
+    "child_process": [
+      "assembled/20260701_02_STAGE2/src/core/pythonProcessRunner.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_backup_syntax_hotfix_no_input/safePanelV0106RecoveryHandlers.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/safePanelV0106RecoveryHandlers.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/commanderReportController.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4ProjectPanelV04MainInjection.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4ProjectPanelV06AutoFixMain.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/tools/stage4/runCmdWrapper.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/tools/stage4/runNodeCheckWrapper.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/tools/stage4/runPythonWrapper.js"
+    ],
+    "command": [
+      "tools/stage4/ST4_W47_BASELINE_FREEZE_LOCAL_VERIFY.ps1"
+    ],
+    "crypto": [
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/stores/panelRecordExecutionStore.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/stores/taeoRawOutputStore.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/stores/workerOutputBatchStore.js"
+    ],
+    "csv": [
+      "20260701/source_factory_assemble_generated.py",
+      "make_commander_report_package.py",
+      "source_factory_extract_workers.py"
+    ],
+    "dataclasses": [
+      "source_factory_extract_workers.py"
+    ],
+    "datetime": [
+      "20260701/source_factory_assemble_generated.py",
+      "make_commander_report_package.py",
+      "source_factory_extract_workers.py"
+    ],
+    "electron": [
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/package.json",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_BACKUP_SAFE_PANEL_V0106_20260704_023835/safe_panel_main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_BACKUP_SAFE_PANEL_V0106_20260704_023835/safe_panel_preload.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_preload.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_terminal_preload.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4HardWindowControl.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelLaunchControlV07Main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelLaunchControlV08Main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4ProjectPanelV04MainInjection.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4ProjectPanelV06AutoFixMain.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4StandaloneLaunchPanelV09Main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/windowManager.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4ProjectPanelPreload.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/renderer/stage4StandaloneLaunchPanelV09Preload.js"
+    ],
+    "fs": [
+      "assembled/20260701_01_STAGE1_BROWSER/src/core/diagnostics.js",
+      "assembled/20260701_01_STAGE1_BROWSER/src/core/stage1SelfCheck.js",
+      "assembled/20260701_01_STAGE1_BROWSER/src/core/startupInitializer.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_BACKUP_SAFE_PANEL_V0106_20260704_023835/safe_panel_main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_backup_syntax_hotfix_no_input/safePanelV0106RecoveryHandlers.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/safePanelV0106RecoveryHandlers.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/commanderReportController.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/constitutionLoader.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/promptBuilder.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/taskInstructionManager.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelIpcHandlers.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelLaunchControlV07Main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelLaunchControlV08Main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4ProjectPanelV04MainInjection.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4ProjectPanelV06AutoFixMain.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4StandaloneLaunchPanelV09Main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/windowManager.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/stores/panelRecordExecutionStore.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/stores/taeoRawOutputStore.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/stores/workerOutputBatchStore.js"
+    ],
+    "hashlib": [
+      "20260701/source_factory_assemble_generated.py",
+      "make_commander_report_package.py",
+      "source_factory_extract_workers.py"
+    ],
+    "json": [
+      "20260701/source_factory_assemble_generated.py",
+      "make_commander_report_package.py",
+      "source_factory_extract_workers.py"
+    ],
+    "npm": [
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/run/RUN_SOURCE_FACTORY_BROWSER.bat"
+    ],
+    "npx": [
+      "RUN_SF4_SAFE_PANEL_ONLY.bat"
+    ],
+    "os": [
+      "20260701/source_factory_assemble_generated.py",
+      "make_commander_report_package.py",
+      "source_factory_extract_workers.py"
+    ],
+    "path": [
+      "assembled/20260701_01_STAGE1_BROWSER/src/core/diagnostics.js",
+      "assembled/20260701_01_STAGE1_BROWSER/src/core/fileNameSafe.js",
+      "assembled/20260701_01_STAGE1_BROWSER/src/core/stage1SelfCheck.js",
+      "assembled/20260701_01_STAGE1_BROWSER/src/core/startupInitializer.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_BACKUP_SAFE_PANEL_V0106_20260704_023835/safe_panel_main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/_backup_syntax_hotfix_no_input/safePanelV0106RecoveryHandlers.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/safePanelV0106RecoveryHandlers.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/safe_panel_main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/commanderReportController.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/constitutionLoader.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/promptBuilder.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/stage2Finalizer.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/core/taskInstructionManager.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelIpcHandlers.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelLaunchControlV07Main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4PanelLaunchControlV08Main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4ProjectPanelV04MainInjection.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4ProjectPanelV06AutoFixMain.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/stage4StandaloneLaunchPanelV09Main.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/main/windowManager.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/stores/panelRecordExecutionStore.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/stores/taeoRawOutputStore.js",
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/src/shared/stage4/stores/workerOutputBatchStore.js"
+    ],
+    "pathlib": [
+      "20260701/source_factory_assemble_generated.py",
+      "make_commander_report_package.py",
+      "source_factory_extract_workers.py"
+    ],
+    "re": [
+      "source_factory_extract_workers.py"
+    ],
+    "shutil": [
+      "20260701/source_factory_assemble_generated.py",
+      "make_commander_report_package.py"
+    ],
+    "sys": [
+      "20260701/source_factory_assemble_generated.py",
+      "source_factory_extract_workers.py"
+    ],
+    "typing": [
+      "20260701/source_factory_assemble_generated.py",
+      "make_commander_report_package.py",
+      "source_factory_extract_workers.py"
+    ],
+    "vm": [
+      "assembled/20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE/safe_panel_v10/ipc/safePanelV0106RecoveryHandlers.js"
+    ],
+    "zipfile": [
+      "20260701/source_factory_assemble_generated.py",
+      "make_commander_report_package.py"
+    ]
+  },
+  "forbidden_operations": {
+    "old_root_delete": "NOT_RUN",
+    "old_root_modify": "NOT_RUN",
+    "026_oneflow_verifier": "NOT_RUN",
+    "pc_agent_service": "NOT_STARTED",
+    "gpt_browser_external_api_middleware_production_deploy": "NOT_RUN",
+    "node_modules_copy": "NOT_RUN"
+  },
+  "events": [
+    {
+      "at": "2026-08-01T05:20:27+00:00",
+      "message": "[SF_028] run_id=SF028_ACTIVE_CORE_20260801_142027"
+    },
+    {
+      "at": "2026-08-01T05:20:27+00:00",
+      "message": "[READ_ONLY_OLD_ROOT] D:\\SOURCE FACTORY"
+    },
+    {
+      "at": "2026-08-01T05:20:27+00:00",
+      "message": "[ENTRY_BAT] D:\\SOURCE FACTORY\\RUN_SF4_SAFE_PANEL_ONLY.bat"
+    },
+    {
+      "at": "2026-08-01T05:20:27+00:00",
+      "message": "[NEW_ROOT] E:\\SOURCE FACTORY\\source-factory-active-core"
+    },
+    {
+      "at": "2026-08-01T05:20:27+00:00",
+      "message": "[ARCHIVED_INCOMPLETE] E:\\SOURCE FACTORY\\SF_028_INCOMPLETE_20260801_142027"
+    },
+    {
+      "at": "2026-08-01T05:20:27+00:00",
+      "message": "[ENTRY_ANALYSIS] CAND=D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE SAFE=D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10 MAIN=D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE\\safe_panel_v10\\safe_panel_main.js"
+    },
+    {
+      "at": "2026-08-01T05:20:27+00:00",
+      "message": "[SELECT] safe panel bundle files=28"
+    },
+    {
+      "at": "2026-08-01T05:20:27+00:00",
+      "message": "[INDEX] building one-time filename index (forbidden trees pruned)"
+    },
+    {
+      "at": "2026-08-01T05:20:27+00:00",
+      "message": "[INDEX] unique_names=1130"
+    },
+    {
+      "at": "2026-08-01T05:20:27+00:00",
+      "message": "[SELECT] verified-tool candidates=1"
+    },
+    {
+      "at": "2026-08-01T05:20:31+00:00",
+      "message": "[DEPENDENCY_CLOSURE] selected=140 edges=254 unresolved=424"
+    },
+    {
+      "at": "2026-08-01T05:20:31+00:00",
+      "message": "[COPY] copied=140 failures=0"
+    },
+    {
+      "at": "2026-08-01T05:20:40+00:00",
+      "message": "[MEASURE] calculating OLD_ROOT size (read-only)"
+    }
+  ]
+}

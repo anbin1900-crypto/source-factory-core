@@ -1,0 +1,35 @@
+{
+  "object_type": "SF028_STRICT_E_DRIVE_SCOPE_POLICY",
+  "schema_version": "1.0.0",
+  "task_id": "SF_028_SOURCE_FACTORY_ACTIVE_CORE_MIGRATION",
+  "created_at": "2026-08-01T05:35:00Z",
+  "status": "AUTHORITATIVE_SCOPE_CORRECTION",
+  "source_authority": "D:\\SOURCE FACTORY",
+  "runtime_entry": "D:\\SOURCE FACTORY\\RUN_SF4_SAFE_PANEL_ONLY.bat",
+  "new_root": "E:\\SOURCE FACTORY\\source-factory-active-core",
+  "github_role": "REPORT_LEDGER_ONLY_NOT_SOURCE_AUTHORITY",
+  "final_new_root_allowlist_classes": [
+    "LIVE_RUNTIME_EXECUTION_FILE",
+    "RUNTIME_ASSET_EXPLICITLY_REACHED_FROM_ENTRY",
+    "PACKAGE_AND_LOCK_INSTALL_SEED",
+    "GENERATED_ACTIVE_CORE_LAUNCHER",
+    "GENERATED_DEPENDENCY_INSTALLER",
+    "SF028_MANIFEST_VERIFY_ROLE_DEPENDENCY_TERMINAL_WORKER_REPORT"
+  ],
+  "must_not_remain_in_new_root": [
+    "backup_or_bak_files",
+    "historic_assembly_outputs",
+    "old_reports_and_apply_results",
+    "handoff_and_checklist_documents",
+    "duplicated_constitution_tree_not_loaded_by_runtime",
+    "samples_and_old_prompt_packages_not_loaded_by_runtime",
+    ".git",
+    "node_modules",
+    "full_reports_tree",
+    "full_daily_queue_tree",
+    "full_staging_tree",
+    "files_selected_only_by_name_fallback_or_generic_text_literal"
+  ],
+  "replacement_policy": "BUILD_FRESH_STRICT_STAGE; VERIFY; REPLACE_EXISTING_E_ACTIVE_CORE; REMOVE_SF028_RESIDUE",
+  "old_root_delete": "NOT_AUTHORIZED"
+}
