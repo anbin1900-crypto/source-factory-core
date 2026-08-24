@@ -14,39 +14,58 @@ jobs:
   fetch:
     runs-on: ubuntu-latest
     timeout-minutes: 6
+    strategy:
+      fail-fast: false
+      matrix:
+        attempt: [1, 2, 3, 4, 5, 6]
     steps:
       - uses: actions/checkout@v4
-      - name: Convert ePeople onclick detail IDs into public links
+      - name: Directly fetch official ePeople search HTML
         shell: bash
+        env:
+          ATTEMPT: ${{ matrix.attempt }}
         run: |
-          set -euxo pipefail
-          out="$RUNNER_TEMP/p19-epeople-inject-probe"; mkdir -p "$out"
+          set -u
+          out="$RUNNER_TEMP/p19-epeople-direct-$ATTEMPT"; mkdir -p "$out"
           python - <<'PY'
-          import hashlib,json,os,pathlib,re,ssl,urllib.parse,urllib.request
-          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'p19-epeople-inject-probe'
-          base='https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseList.npaid'
+          import hashlib, html, json, os, pathlib, re, socket, ssl, subprocess, urllib.parse, urllib.request
+          out=pathlib.Path(os.environ['RUNNER_TEMP'])/('p19-epeople-direct-'+os.environ['ATTEMPT'])
           params={'recordCountPerPage':'100','pageIndex':'1','searchOptionClickYn':'Y','searchWordType':'0','searchWord':'주유소','rqstStDt':'2020-01-01','rqstEndDt':'2026-08-25','dateType':'6','pttnTypeNm':'','searchInstCd':'all'}
-          target=base+'?'+urllib.parse.urlencode(params)
-          script=r'''document.querySelectorAll('a.tit[onclick*="fn_detail"]').forEach(a=>{const s=a.getAttribute('onclick')||'';const m=s.match(/fn_detail\(this,\s*['\"]([^'\"]+)['\"],\s*['\"]([^'\"]+)['\"]\)/);if(m){a.href='https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseDetail.npaid?dutySctnNm='+encodeURIComponent(m[2])+'&epUnionSn='+encodeURIComponent(m[1]);a.removeAttribute('onclick');a.textContent='['+m[2]+':'+m[1]+'] '+a.textContent.trim();}});'''
-          payload={'url':target,'injectPageScript':[script]}
-          body=json.dumps(payload,ensure_ascii=False).encode('utf-8')
-          req=urllib.request.Request('https://r.jina.ai/',data=body,method='POST',headers={'User-Agent':'Mozilla/5.0','Content-Type':'application/json','Accept':'application/json','X-Engine':'browser','X-No-Cache':'true','X-Wait-For-Selector':'a.tit','X-Timeout':'120'})
-          try:
-              with urllib.request.urlopen(req,timeout=150,context=ssl.create_default_context()) as r: data=r.read(); status=r.status; ctype=r.headers.get('content-type')
-              (out/'raw.json').write_bytes(data); obj=json.loads(data); content=obj.get('data',{}).get('content','') if isinstance(obj,dict) else ''
-              if not content and isinstance(obj,dict): content=obj.get('data','') if isinstance(obj.get('data'),str) else obj.get('content','')
-              (out/'content.md').write_text(content,encoding='utf-8')
-              links=[]
-              for m in re.finditer(r'\[\[(?P<type>[^:\]]+):(?P<id>[^\]]+)\]\s*(?P<title>[^\]]+)\]\((?P<url>https://www\.epeople\.go\.kr/[^)]+)\)',content): links.append(m.groupdict())
-              result={'status':status,'content_type':ctype,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'target':target,'content_chars':len(content),'links':links,'content_prefix':content[:2000]}
-          except Exception as e:
-              result={'error':repr(e),'target':target}
-          (out/'results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8'); print(json.dumps(result,ensure_ascii=False,indent=2))
+          query=urllib.parse.urlencode(params)
+          urls=[
+            'https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseList.npaid?'+query,
+            'http://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseList.npaid?'+query,
+            'https://wwwdev.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseList.npaid?'+query,
+            'http://wwwdev.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseList.npaid?'+query,
+          ]
+          result={'attempt':os.environ['ATTEMPT'],'runner':os.environ.get('RUNNER_NAME'),'urls':[],'dns':{}}
+          for host in ('www.epeople.go.kr','wwwdev.epeople.go.kr','api.epeople.go.kr'):
+              try: result['dns'][host]=sorted({x[4][0] for x in socket.getaddrinfo(host,443,type=socket.SOCK_STREAM)})
+              except Exception as e: result['dns'][host]=repr(e)
+          headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/151.0.0.0 Safari/537.36','Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8','Accept-Language':'ko-KR,ko;q=0.9,en;q=0.5','Cache-Control':'no-cache','Pragma':'no-cache'}
+          ctx=ssl.create_default_context()
+          for i,url in enumerate(urls):
+              rec={'url':url}
+              try:
+                  req=urllib.request.Request(url,headers=headers)
+                  with urllib.request.urlopen(req,timeout=25,context=ctx) as r: data=r.read(); rec.update(status=r.status,final_url=r.geturl(),content_type=r.headers.get('content-type'),bytes=len(data),sha256=hashlib.sha256(data).hexdigest())
+                  (out/f'{i}.html').write_bytes(data)
+                  text=data.decode('utf-8','replace'); rows=[]
+                  for m in re.finditer(r"fn_detail\(this,'([^']+)','([^']+)'\)",text):
+                      a0=text.rfind('<a',0,m.start()); a1=text.find('</a>',m.end()); inner=text[text.find('>',a0)+1:a1] if a0>=0 and a1>=0 else ''
+                      title=html.unescape(re.sub(r'<[^>]+>',' ',inner)); title=re.sub(r'\s+',' ',title).strip()
+                      rows.append({'id':m.group(1),'type':m.group(2),'title':title})
+                  rec['rows']=rows; rec['fn_detail_count']=text.count('fn_detail')
+              except Exception as e: rec['error']=repr(e)
+              result['urls'].append(rec)
+          (out/'results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
+          print(json.dumps(result,ensure_ascii=False,indent=2))
           PY
-      - name: Upload injection probe
+      - name: Upload direct fetch attempt
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: p19-epeople-inject-probe
-          path: ${{ runner.temp }}/p19-epeople-inject-probe
+          name: p19-epeople-direct-${{ matrix.attempt }}
+          path: ${{ runner.temp }}/p19-epeople-direct-${{ matrix.attempt }}
+          if-no-files-found: warn
           retention-days: 1
