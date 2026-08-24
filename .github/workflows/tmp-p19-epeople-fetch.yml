@@ -13,43 +13,42 @@ permissions:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
-      - name: Map known public ePeople detail identifier
+      - name: Probe ePeople through public document reader
         shell: bash
         run: |
           set -euxo pipefail
-          out="$RUNNER_TEMP/p19-epeople-item-map"; mkdir -p "$out"
+          out="$RUNNER_TEMP/p19-epeople-reader-probe"; mkdir -p "$out"
           python - <<'PY'
-          import hashlib, json, os, pathlib, ssl, urllib.error, urllib.request, uuid
-          import xml.etree.ElementTree as ET
-          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'p19-epeople-item-map'; endpoint='https://api.epeople.go.kr/soap/CivilAppealService'; known='6903173'
-          variants=[]
-          for field in ('civilNo','petiNo','faqNo'):
-              v={'civilNo':'','petiNo':'','faqNo':''}; v[field]=known; variants.append((field,v))
-          results={}; ctx=ssl.create_default_context()
-          for name,v in variants:
-              body=f'''<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:q="http://soap.civil.pc.acrc/" xmlns:hdr="http://apache.org/headers"><soapenv:Header><hdr:ComMsgHeader><RequestMsgID>{uuid.uuid4()}</RequestMsgID><ServiceKey></ServiceKey><RequestTime>20260825054000</RequestTime></hdr:ComMsgHeader></soapenv:Header><soapenv:Body><q:getSimilarityCaseItem><CaseItemRequest><type>tqapttn</type><civilNo>{v['civilNo']}</civilNo><petiNo>{v['petiNo']}</petiNo><faqNo>{v['faqNo']}</faqNo></CaseItemRequest></q:getSimilarityCaseItem></soapenv:Body></soapenv:Envelope>'''.encode()
-              req=urllib.request.Request(endpoint,data=body,method='POST',headers={'Content-Type':'text/xml; charset=UTF-8','SOAPAction':'','User-Agent':'P19ActualSourceResearch/1.0'})
+          import hashlib,json,os,pathlib,ssl,urllib.parse,urllib.request
+          out=pathlib.Path(os.environ['RUNNER_TEMP'])/'p19-epeople-reader-probe'
+          base='https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseList.npaid'
+          params={'recordCountPerPage':'100','pageIndex':'1','searchOptionClickYn':'Y','searchWordType':'0','searchWord':'주유소','rqstStDt':'2020-01-01','rqstEndDt':'2026-08-25','dateType':'6','pttnTypeNm':'','searchInstCd':'all'}
+          search=base+'?'+urllib.parse.urlencode(params)
+          detail='https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseDetail.npaid?dutySctnNm=tqapttn&epUnionSn=6903173'
+          targets={
+            'reader_list_https':'https://r.jina.ai/https://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseList.npaid',
+            'reader_list_http':'https://r.jina.ai/http://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseList.npaid',
+            'reader_search_https':'https://r.jina.ai/'+search,
+            'reader_detail_https':'https://r.jina.ai/'+detail,
+            'reader_detail_http':'https://r.jina.ai/http://www.epeople.go.kr/nep/pttn/gnrlPttn/pttnSmlrCaseDetail.npaid?dutySctnNm=tqapttn&epUnionSn=6903173',
+          }
+          ctx=ssl.create_default_context(); result={}
+          for name,url in targets.items():
               try:
-                  with urllib.request.urlopen(req,timeout=20,context=ctx) as r: data=r.read(); status=r.status
-              except urllib.error.HTTPError as e: data=e.read(); status=e.code
-              except Exception as e: results[name]={'error':repr(e)}; continue
-              (out/f'{name}.xml').write_bytes(data); item={}
-              try:
-                  root=ET.fromstring(data)
-                  for el in root.iter():
-                      k=el.tag.split('}',1)[-1]
-                      if k in ('errCode','errMsg','totcnt','ancName','ansContent','catName','content','deptCode','deptName','deptTelNo','faqNo','regDate','title'): item[k]=el.text or ''
-              except Exception as e: item={'parse_error':repr(e)}
-              results[name]={'status':status,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'item':item}
-          (out/'results.json').write_text(json.dumps(results,ensure_ascii=False,indent=2),encoding='utf-8'); print(json.dumps(results,ensure_ascii=False,indent=2))
+                  req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0','Accept':'text/plain,text/markdown,*/*'})
+                  with urllib.request.urlopen(req,timeout=60,context=ctx) as r: data=r.read(); status=r.status; ctype=r.headers.get('content-type')
+                  (out/f'{name}.txt').write_bytes(data)
+                  result[name]={'url':url,'status':status,'content_type':ctype,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'prefix':data[:1000].decode('utf-8','replace')}
+              except Exception as e: result[name]={'url':url,'error':repr(e)}
+          (out/'results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8'); print(json.dumps(result,ensure_ascii=False,indent=2))
           PY
-      - name: Upload item map
+      - name: Upload reader probe
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: p19-epeople-item-map
-          path: ${{ runner.temp }}/p19-epeople-item-map
+          name: p19-epeople-reader-probe
+          path: ${{ runner.temp }}/p19-epeople-reader-probe
           retention-days: 1
