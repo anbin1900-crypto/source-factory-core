@@ -1,0 +1,84 @@
+{
+  "object_type": "SOURCE_FACTORY_CURRENT_STATE",
+  "version": "2026-08-01.current-state.v1",
+  "status": "CURRENT",
+  "runtime_root": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038",
+  "reusable_snapshot": "E:\\SOURCE FACTORY\\source-factory-reusable-core\\SF_REUSABLE_CORE_20260801_175708",
+  "github_repository": "anbin1900-crypto/source-factory-core",
+  "github_branch": "publish/reusable-core-20260801",
+  "github_pull_request": 2,
+  "github_release_path": "releases/SF_REUSABLE_CORE_20260801_175708",
+  "current_first_defect": "PC_AGENT_ADAPTER_NOT_INSERTED",
+  "dispatch_path": {
+    "file": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038\\safe_panel_v10\\ipc\\stage4StationBindingHandlers.js",
+    "function": "handleStage4DispatchNextPrompt",
+    "current_flow": [
+      "normalizePayload(payload)",
+      "promptPackageVersionManager",
+      "sequentialPromptSender"
+    ],
+    "target_flow": [
+      "normalizePayload(payload)",
+      "promptPackageVersionManager",
+      "PC_AGENT_DISPATCH_ADAPTER",
+      "PC Agent"
+    ]
+  },
+  "result_path": {
+    "file": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038\\safe_panel_v10\\ipc\\stage4StationBindingHandlers.js",
+    "function": "handleStage4RunCheck",
+    "current_flow": [
+      "normalizePayload(payload)",
+      "executionResultCollector"
+    ],
+    "target_flow": [
+      "PC_AGENT_RESULT_ADAPTER",
+      "normalize run result payload",
+      "handleStage4RunCheck",
+      "executionResultCollector"
+    ]
+  },
+  "storage_path": {
+    "file": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038\\safe_panel_v10\\ipc\\stage4StationBindingHandlers.js",
+    "function": "handleStage4AppendStationRecords",
+    "stores": [
+      "taeoRawOutputStore",
+      "panelRecordExecutionStore",
+      "workerOutputBatchStore"
+    ]
+  },
+  "project_panel_identity": {
+    "status": "SOURCE_PRESENT_IN_CURRENT_SNAPSHOT",
+    "api": "window.sfApi.stage4.getProjectPanelIdentity",
+    "ipc_channel": "sf:stage4-get-project-panel-identity",
+    "runtime_source": "runtime_event_registry",
+    "partial_state": "source_partial",
+    "principle": "panel_instance_id and project_id are separate identities"
+  },
+  "github_integration_status": {
+    "github_connector_available_in_chat": true,
+    "source_factory_repositories_found": [
+      "anbin1900-crypto/source-factory-core",
+      "anbin1900-crypto/source-factory-private"
+    ],
+    "runtime_app_github_integration_confirmed": false,
+    "runtime_app_github_integration_status": "NOT_CONFIRMED_FROM_E_RUNTIME"
+  },
+  "next_action": "IMPLEMENT_PC_AGENT_ADAPTER",
+  "next_action_scope": {
+    "mode": "PATCH_REQUEST_FIRST",
+    "target_file": "safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+    "must_preserve": [
+      "sequentialPromptSender fallback",
+      "executionResultCollector fallback",
+      "Project Panel Identity runtime_event_registry",
+      "source:not_found fallback",
+      "preload API names",
+      "IPC channel names",
+      "package.json"
+    ]
+  },
+  "historical_collection_required": false,
+  "architecture_audit_required": false,
+  "implementation_can_start": true
+}

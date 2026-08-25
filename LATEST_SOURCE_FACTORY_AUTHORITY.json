@@ -1,0 +1,55 @@
+{
+  "object_type": "LATEST_SOURCE_FACTORY_AUTHORITY",
+  "version": "2026-08-01.closure.v1",
+  "status": "CURRENT",
+  "repository": "anbin1900-crypto/source-factory-core",
+  "pull_request": 2,
+  "branch": "publish/reusable-core-20260801",
+  "source_snapshot_head_before_closure": "95d860be3169137f83f51f2f3eb38c102daf6d0f",
+  "release_path": "releases/SF_REUSABLE_CORE_20260801_175708",
+  "active_core": "E:\\SOURCE FACTORY\\source-factory-active-core\\SF_ACTIVE_CORE_20260801_172038",
+  "reusable_core": "E:\\SOURCE FACTORY\\source-factory-reusable-core\\SF_REUSABLE_CORE_20260801_175708",
+  "runtime_status": "PASS_E_ONLY_RUNTIME",
+  "main_branch_status": "STALE_UNTIL_PR_2_MERGED",
+  "current_authority_order": [
+    {
+      "rank": 1,
+      "authority": "source-factory-core PR #2 branch publish/reusable-core-20260801",
+      "scope": "CURRENT_REUSABLE_SOURCE_SNAPSHOT_AND_E_ACTIVE_CORE_DOCUMENTATION"
+    },
+    {
+      "rank": 2,
+      "authority": "local E: active-core runtime",
+      "scope": "CURRENT_EXECUTABLE_PC_RUNTIME"
+    },
+    {
+      "rank": 3,
+      "authority": "source-factory-core main",
+      "scope": "BASELINE_ONLY_UNTIL_PR_2_MERGED"
+    },
+    {
+      "rank": 4,
+      "authority": "source-factory-private PR #1/#2 and Stage3 snapshots",
+      "scope": "HISTORICAL_REFERENCE_ONLY"
+    }
+  ],
+  "supersedes": [
+    "source-factory-core PR #1 YELLOW migration state",
+    "source-factory-private PR #1/#2 historical Stage3 snapshots",
+    "D:\\SOURCE FACTORY\\assembled\\20260703_STAGE4_SLIM_PANEL_RUNTIME_CANDIDATE as launcher-executed source authority",
+    "Active Core manifest transition note with D: electron_home_reference before E-only dependency closure"
+  ],
+  "does_not_supersede": [
+    "local E: active-core runtime as executable source of truth",
+    "GitHub PR #2 release snapshot as reusable source archive"
+  ],
+  "current_first_defect": "PC_AGENT_ADAPTER_NOT_INSERTED",
+  "next_action": "IMPLEMENT_PC_AGENT_ADAPTER",
+  "closure_required_before_new_context": false,
+  "new_context_boot_hint": {
+    "must_read_branch": "publish/reusable-core-20260801",
+    "must_read_path": "releases/SF_REUSABLE_CORE_20260801_175708",
+    "must_not_read_main_only": true,
+    "must_treat_private_repo_as": "HISTORICAL_REFERENCE_ONLY"
+  }
+}

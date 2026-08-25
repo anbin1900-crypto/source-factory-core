@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>Source Factory SAFE Panel Only v0.10.6</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self';">
+  <link rel="stylesheet" href="./safe_panel.css">
+<style id="sf-project-panel-identity-summary-style">
+  #sf-project-panel-identity-summary { border: 1px solid rgba(148, 163, 184, 0.35); border-radius: 10px; padding: 10px 12px; margin: 10px 0; }
+  #sf-project-panel-identity-summary dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 10px; margin: 0; }
+  #sf-project-panel-identity-summary dt { font-weight: 600; }
+  #sf-project-panel-identity-summary dd { margin: 0; overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+  <header class="header">
+    <div>
+      <div class="kicker">SOURCE FACTORY SAFE MODE</div>
+      <h1>Panel Only Launcher v0.10.6</h1>
+      <div class="subtitle">기존 런타임 main.js를 우회하고, 각 Worker/Commander를 BrowserView 미니멀 터미널 Shell로 열고, 기본 3모니터 배열을 고정합니다.</div>
+    </div>
+    <div class="actions">
+      <button id="statusButton">상태 확인</button>
+      <button id="arrangeButton">기본 배열 고정</button>
+      <button id="closeButton">Worker/Commander 닫기</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card launch">
+      <h2>창 시작 컨트롤</h2>
+      <p class="note">소스공장 프로젝트 URL을 Chrome/Edge에서 복사해 아래 URL과 홈 URL에 넣으면, 새 터미널의 홈 버튼이 그 프로젝트로 복귀합니다.</p>
+
+      <div class="status-grid">
+        <div class="status"><span>API</span><strong id="apiStatus">CHECKING</strong></div>
+        <div class="status"><span>Commander</span><strong id="commanderOpen">-</strong></div>
+        <div class="status"><span>Worker</span><strong id="workerOpen">-</strong></div>
+        <div class="status"><span>Total</span><strong id="terminalTotal">-</strong></div>
+      </div>
+
+      <div class="form">
+        <label>커맨더 수<input id="commanderCount" type="number" min="0" max="10" value="1"></label>
+        <label>워커 수<input id="workerCount" type="number" min="0" max="30" value="6"></label>
+        <label class="url">시작 URL<input id="targetUrl" type="text" value="https://chatgpt.com/g/g-p-6a43a643a1148191ab9bc5697224e628/project"></label>
+        <label class="url">소스공장 프로젝트 홈 URL<input id="projectHomeUrl" type="text" value="https://chatgpt.com/g/g-p-6a43a643a1148191ab9bc5697224e628/project"></label>
+      </div>
+
+      <div class="button-grid">
+        <button id="launchButton">지정 수량으로 열기 / 작업 시작</button>
+        <button id="panelOnlyButton">Panel Only</button>
+        <button id="projectFolderButton">Project 폴더 열기</button>
+        <button id="stateFolderButton">설정 폴더 열기</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>열린 창</h2>
+      <div id="terminalList" class="terminal-list"></div>
+    </section>
+
+    <section id="sf-safe-panel-direct-intake-area" class="card span-2 sf-safe-panel-direct-intake-area" aria-label="Direct Source Intake">
+      <h2>Direct Source Intake</h2>
+      <p class="note">Worker 또는 GPT raw output의 SOURCE_FILE 블록을 붙여넣고 Intake, Gate, Materialize, Syntax Check를 실행합니다. 모든 결과는 실행 로그에 JSON으로 기록됩니다.</p>
+
+      <div id="sf-safe-panel-status-summary" class="status-grid sf-safe-panel-status-summary" aria-live="polite">
+        <div class="status"><span>Gate</span><strong data-sf-status-key="gate">waiting</strong></div>
+        <div class="status"><span>Materialize</span><strong data-sf-status-key="materialize">waiting</strong></div>
+        <div class="status"><span>Syntax</span><strong data-sf-status-key="syntax">waiting</strong></div>
+        <div class="status"><span>Generated</span><strong data-sf-status-key="generated">none</strong></div>
+      </div>
+
+      <div class="form">
+        <label class="url">Raw source output
+          <textarea id="sf-safe-panel-source-textarea" rows="12" spellcheck="false" placeholder="SOURCE_FILE 블록, Worker output, GPT raw output을 여기에 붙여넣으십시오."></textarea>
+        </label>
+      </div>
+
+      <div class="button-grid">
+        <button id="sf-textarea-intake-btn" type="button">Textarea Intake</button>
+        <button id="sf-clipboard-intake-btn" type="button">Clipboard Intake</button>
+        <button id="sf-run-gate-btn" type="button">Run Gate</button>
+        <button id="sf-materialize-btn" type="button">Materialize</button>
+        <button id="sf-syntax-check-btn" type="button">Syntax Check</button>
+        <button id="sf-open-latest-generated-btn" type="button">Open Latest Generated</button>
+      </div>
+    </section>
+
+    <section class="card span-2">
+      
+
+<!-- STAGE4_BUTTON_UI_MOUNT_START -->
+<section class="card" id="sf-stage4-control-section" data-sf-stage4-control="1">
+  <h2>Stage4 Control</h2>
+  <p>Stage 4 11개 작업소 API/IPC 버튼입니다.</p>
+  <div class="actions stage4-control-actions" id="sf-stage4-control-buttons">
+      <button id="sf-stage4-classification-run-btn" type="button">분류소</button>
+      <button id="sf-stage4-validation-run-btn" type="button">검증소</button>
+      <button id="sf-stage4-collection-run-btn" type="button">수집소</button>
+      <button id="sf-stage4-storage-save-btn" type="button">저장소</button>
+      <button id="sf-stage4-instruction-generate-btn" type="button">지시소</button>
+      <button id="sf-stage4-sender-dispatch-next-btn" type="button">전송소</button>
+      <button id="sf-stage4-execution-run-check-btn" type="button">실행소</button>
+      <button id="sf-stage4-download-manage-btn" type="button">다운로드소</button>
+      <button id="sf-stage4-assembly-build-plan-btn" type="button">결합소</button>
+      <button id="sf-stage4-report-done-light-btn" type="button">보고소</button>
+      <button id="sf-stage4-control-refresh-btn" type="button">관제소</button>
+  </div>
+</section>
+<!-- STAGE4_BUTTON_UI_MOUNT_END -->
+
+<h2>실행 로그</h2>
+      <div class="button-grid">
+        <button id="sf-clear-exec-log-btn" type="button">실행 로그 지우기</button>
+      </div>
+      
+<!-- W55_PROJECT_PANEL_UI_BINDING_START -->
+<section id="sf-project-panel-identity-summary" data-sf-project-panel-identity="true" data-stage4-anchor="w55-project-panel-identity-summary" aria-label="현재 프로젝트">
+  <h3>Project Panel Identity</h3>
+  <dl>
+    <dt>현재 프로젝트</dt><dd data-project-panel-field="project_name">-</dd>
+    <dt>프로젝트 ID</dt><dd data-project-panel-field="project_id">-</dd>
+    <dt>패널 ID</dt><dd data-project-panel-field="panel_id">-</dd>
+    <dt>패널 인스턴스</dt><dd data-project-panel-field="panel_instance_id">-</dd>
+    <dt>project_panel_identity</dt><dd data-project-panel-field="project_panel_identity">-</dd>
+  </dl>
+</section>
+<!-- W55_PROJECT_PANEL_UI_BINDING_END -->
+
+<pre id="logPanel" class="log"></pre>
+    </section>
+  </main>
+
+  <script src="./safe_panel_renderer.js"></script>
+</body>
+</html>

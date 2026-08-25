@@ -1,0 +1,43 @@
+{
+  "object_type": "SOURCE_FACTORY_MOCK_E2E_RESULT",
+  "schema_version": "1.0.0",
+  "support_cycle_id": "S2-SUPPORT-CYCLE-001-20260801",
+  "generated_at": "2026-08-01T10:45:49.057Z",
+  "handler_mode": "CONTRACT_HARNESS_LOCAL",
+  "actual_target_loaded": false,
+  "expected_target_repo_path": "releases/SF_REUSABLE_CORE_20260801_175708/safe_panel_v10/ipc/stage4StationBindingHandlers.js",
+  "flow": [
+    "dispatch",
+    "PC_AGENT_DISPATCH_ADAPTER_SOURCE",
+    "MOCK_TRANSPORT_FIXTURE",
+    "PC_AGENT_RESULT_ADAPTER_SOURCE",
+    "run_check",
+    "existing_storage_handler"
+  ],
+  "checks": {
+    "dispatch_adapter": "PASS",
+    "mock_transport_request_count": 1,
+    "mock_transport_result_count": 1,
+    "result_adapter": "PASS",
+    "run_check": "PASS",
+    "storage": "PASS",
+    "fallback_dispatch": "PASS",
+    "fallback_run_check": "PASS",
+    "project_panel_identity": "PASS"
+  },
+  "preservation": {
+    "sequentialPromptSender_fallback": true,
+    "executionResultCollector_fallback": true,
+    "preload_api_names_mutated": false,
+    "ipc_channel_names_mutated": false,
+    "project_panel_identity_preserved": true,
+    "source_not_found_fallback_mutated": false,
+    "lao_detect_queue_mutated": false,
+    "package_json_mutated": false
+  },
+  "external_effect_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false,
+  "terminal": "SOURCE_FACTORY_PC_AGENT_ADAPTER_SUPPORT_READY"
+}

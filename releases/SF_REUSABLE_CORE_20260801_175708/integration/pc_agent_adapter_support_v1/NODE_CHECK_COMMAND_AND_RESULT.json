@@ -1,0 +1,18 @@
+{
+  "object_type": "NODE_CHECK_COMMAND_AND_RESULT",
+  "schema_version": "1.0.0",
+  "support_cycle_id": "S2-SUPPORT-CYCLE-001-20260801",
+  "node_version": "v22.16.0",
+  "commands": [
+    "node --check SOURCE_FACTORY_PC_AGENT_ADAPTER_PACKAGE.js",
+    "node SOURCE_FACTORY_PC_AGENT_ADAPTER_PACKAGE.js --write-result SOURCE_FACTORY_MOCK_E2E_RESULT.json"
+  ],
+  "bundle_sha256": "bced15e549be52e243e1c08b0449c9029fed3463fb4ab8d4e71b00976d7d5958",
+  "node_check": "PASS",
+  "mock_e2e": "PASS",
+  "mock_e2e_exit_code": 0,
+  "external_effect_count": 0,
+  "production": false,
+  "ready": false,
+  "merge": false
+}
